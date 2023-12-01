@@ -41,7 +41,7 @@ const ThemeCard = ({
             color={selected ? 'norm' : 'weak'}
             id={id}
             className={clsx(
-                'theme-card-button p-0 flex flex-nowrap flex-column gap-1 flex-align-items-center',
+                'theme-card-button p-0 flex flex-nowrap flex-column gap-1 items-center',
                 selected && 'is-active no-pointer-events text-bold',
                 Component === Button && 'w-full interactive-pseudo',
                 borderRadius === 'sm' && 'rounded-sm',

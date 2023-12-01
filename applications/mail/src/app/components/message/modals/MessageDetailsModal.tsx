@@ -116,11 +116,11 @@ const MessageDetailsModal = ({
                     data-testid="message:message-expanded-header-extra"
                 >
                     {icon && (
-                        <div className="mb-2 flex flex-nowrap flex-align-items-center">
+                        <div className="mb-2 flex flex-nowrap items-center">
                             <span className="mr-2 flex">
                                 <EncryptionStatusIcon useTooltip={true} isDetailsModal {...icon} />
                             </span>
-                            <div className="pl-1 flex-item-fluid">
+                            <div className="pl-1 flex-1">
                                 <div className="flex flex-column">
                                     <span className="text-ellipsis w-full" title={icon.text}>
                                         {icon.messageEncryptionDetails ?? icon.text}
@@ -146,8 +146,8 @@ const MessageDetailsModal = ({
                         </div>
                     )}
                     {displayTrackerIcon && (
-                        <div className="mb-2 flex flex-nowrap flex-align-items-center">
-                            <span className="mr-2 relative inline-flex item-spy-tracker-link flex-align-items-center">
+                        <div className="mb-2 flex flex-nowrap items-center">
+                            <span className="mr-2 relative inline-flex item-spy-tracker-link items-center">
                                 <SpyTrackerIcon
                                     numberOfTrackers={numberOfImageTrackers + numberOfUTMTrackers}
                                     needsMoreProtection={needsMoreProtection}
@@ -156,7 +156,7 @@ const MessageDetailsModal = ({
                                     className="m-auto"
                                 />
                             </span>
-                            <span className="pl-0.5 flex-item-fluid text-ellipsis" title={imageTrackerText}>
+                            <span className="pl-0.5 flex-1 text-ellipsis" title={imageTrackerText}>
                                 {imageTrackerText}, {utmTrackerText}
                             </span>
                         </div>
@@ -165,7 +165,7 @@ const MessageDetailsModal = ({
                         <span className="mr-2 flex">
                             <Icon name="calendar-grid" className="m-auto" alt={c('Label').t`Date:`} />
                         </span>
-                        <span className="pl-1 flex-item-fluid text-ellipsis">
+                        <span className="pl-1 flex-1 text-ellipsis">
                             <ItemDate element={message.data} labelID={labelID} mode="full" />
                         </span>
                     </div>
@@ -182,7 +182,7 @@ const MessageDetailsModal = ({
                                 />
                             </span>
                         </span>
-                        <span className="pl-1 flex-item-fluid text-ellipsis" title={locationText}>
+                        <span className="pl-1 flex-1 text-ellipsis" title={locationText}>
                             {locationText}
                         </span>
                     </div>
@@ -190,7 +190,7 @@ const MessageDetailsModal = ({
                         <span className="mr-2 flex">
                             <Icon name="filing-cabinet" className="m-auto" alt={c('Label').t`Size:`} />
                         </span>
-                        <span className="pl-1 flex-item-fluid text-ellipsis" title={sizeText}>
+                        <span className="pl-1 flex-1 text-ellipsis" title={sizeText}>
                             {sizeText}
                         </span>
                     </div>
@@ -201,7 +201,7 @@ const MessageDetailsModal = ({
                                     <ItemAttachmentIcon element={message.data} />
                                 </span>
                             </span>
-                            <span className="pl-1 flex-item-fluid text-ellipsis" title={attachmentsText}>
+                            <span className="pl-1 flex-1 text-ellipsis" title={attachmentsText}>
                                 {attachmentsText}
                             </span>
                         </div>

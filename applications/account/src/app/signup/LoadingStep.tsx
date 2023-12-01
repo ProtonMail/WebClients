@@ -32,12 +32,12 @@ export const LoadingTextStepper = ({ steps }: { steps: string[] }) => {
                     <div className="text-lg" key={step}>
                         <div
                             className={clsx(
-                                'flex-no-min-children flex-align-items-center flex-nowrap',
+                                'flex children-min-size-auto items-center flex-nowrap',
                                 isCurrentStep && 'color-primary'
                             )}
                         >
                             <div
-                                className="mr-2 min-w-custom flex flex-item-noshrink"
+                                className="mr-2 min-w-custom flex shrink-0"
                                 style={{ '--min-w-custom': '2em' }}
                             >
                                 {isCurrentStep ? (
@@ -46,7 +46,7 @@ export const LoadingTextStepper = ({ steps }: { steps: string[] }) => {
                                     <Icon size={24} className="color-success" name="checkmark" />
                                 )}
                             </div>
-                            <div className="flex-item-fluid p-2 text-left">{step}</div>
+                            <div className="flex-1 p-2 text-left">{step}</div>
                         </div>
                     </div>
                 );

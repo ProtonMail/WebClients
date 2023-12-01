@@ -46,7 +46,7 @@ const TopNavbarListItemButtonBase = <E extends ElementType = typeof defaultEleme
             color={color}
             shape={shape}
             className={clsx([
-                'topnav-link inline-flex flex-nowrap flex-align-items-center flex-item-noshrink relative',
+                'topnav-link inline-flex flex-nowrap items-center shrink-0 relative',
                 className,
                 notificationDotColor && 'topnav-link--notification',
             ])}
@@ -57,7 +57,7 @@ const TopNavbarListItemButtonBase = <E extends ElementType = typeof defaultEleme
         >
             {icon &&
                 cloneElement(icon, {
-                    className: clsx([icon.props.className, 'topnav-icon mr-2 flex-item-noshrink']),
+                    className: clsx([icon.props.className, 'topnav-icon mr-2 shrink-0']),
                 })}
             <span className="navigation-title">{text}</span>
             {notificationDotColor && (

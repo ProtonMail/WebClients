@@ -15,7 +15,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
 const AddonSummary = ({ label, numberOfItems, currency, price, subline, className, ...rest }: Props) => {
     return (
         <div className={clsx('flex', className)} {...rest}>
-            <span className="flex-item-fluid">{label}</span>
+            <span className="flex-1">{label}</span>
             <div>
                 <div>
                     {numberOfItems} x <Price currency={currency}>{price}</Price>

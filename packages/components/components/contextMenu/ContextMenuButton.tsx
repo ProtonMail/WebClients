@@ -13,14 +13,14 @@ const ContextMenuButton = ({ name, icon, testId, action }: Props) => {
         <DropdownMenuButton
             key={name}
             onContextMenu={(e) => e.stopPropagation()}
-            className="flex flex-align-items-center flex-nowrap text-left"
+            className="flex items-center flex-nowrap text-left"
             onClick={(e) => {
                 e.stopPropagation();
                 action();
             }}
             data-testid={testId}
         >
-            <Icon className="mr-2 flex-item-noshrink" name={icon} />
+            <Icon className="mr-2 shrink-0" name={icon} />
             {name}
         </DropdownMenuButton>
     );

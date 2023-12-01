@@ -17,7 +17,7 @@ const VPNPassUpsellToggle = ({ currency, cycle, ...rest }: VPNPassUpsellTogglePr
     return (
         <>
             <Toggle id="toggle-upsell-pass" className="mx-1" {...rest} />
-            <label htmlFor="toggle-upsell-pass" className="flex-item-fluid text-sm">
+            <label htmlFor="toggle-upsell-pass" className="flex-1 text-sm">
                 {c('bf2023: Action').t`Add ${plan} for ${price} per month`}
             </label>
         </>

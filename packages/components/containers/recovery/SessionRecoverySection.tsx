@@ -76,8 +76,8 @@ const SessionRecoverySection = () => {
                                 .t`Allow password reset from settings`}</span>
                         </label>
                     </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="flex-item-fluid pt-2">
-                        <div className="flex flex-align-items-center">
+                    <SettingsLayoutRight className="flex-1 pt-2">
+                        <div className="flex items-center">
                             <Toggle
                                 loading={loadingSessionRecovery}
                                 checked={isSessionRecoveryEnabled}

@@ -50,7 +50,7 @@ const ContactViewAdrs = ({ vCardContact, isSignatureVerified = false }: Props) =
                         isSignatureVerified={isSignatureVerified}
                     >
                         <span className="w-full flex">
-                            <span className="mr-2 flex-item-fluid text-ellipsis">
+                            <span className="mr-2 flex-1 text-ellipsis">
                                 {lines.map((line, index) => (
                                     // No better key here and should not change in time anyway
                                     // eslint-disable-next-line react/no-array-index-key
@@ -60,7 +60,7 @@ const ContactViewAdrs = ({ vCardContact, isSignatureVerified = false }: Props) =
                                     </Fragment>
                                 ))}
                             </span>
-                            <span className="flex-item-noshrink flex py-1 contact-view-actions h-4">
+                            <span className="shrink-0 flex py-1 contact-view-actions h-4">
                                 <Copy
                                     className="ml-2 py-2 mt-0.5"
                                     value={lines.join(', ')}

@@ -70,18 +70,18 @@ const GmailSyncModal = ({ onSyncCallback, onSyncSkipCallback, source, reduceHeig
     return (
         <ModalTwo size="xlarge" fullscreenOnMobile {...rest} onClose={handleClose}>
             <ModalHeader />
-            <ModalContent className="m-8 mt-0 flex flex-row flex-align-items-center flex-nowrap gap-7">
-                <div className="flex flex-column flex-item-fluid gap-7">
+            <ModalContent className="m-8 mt-0 flex flex-row items-center flex-nowrap gap-7">
+                <div className="flex flex-column flex-1 gap-7">
                     <h1 className="text-break text-4xl">
                         <strong>{c('Gmail forwarding').t`Automatically forward`}</strong>
                         &nbsp;
                         <br className="lg:hidden" />
                         {c('Gmail forwarding').t`Gmail messages to your inbox`}
                     </h1>
-                    <div className="lg:hidden flex-item-grow-2">
+                    <div className="lg:hidden grow-2">
                         <GmailSyncModalAnimation reduceHeight={reduceHeight} />
                     </div>
-                    <div className="flex flex-column flex-align-items-center gap-4">
+                    <div className="flex flex-column items-center gap-4">
                         <SignInWithGoogle
                             onClick={handleGoogleSync}
                             loading={loading}

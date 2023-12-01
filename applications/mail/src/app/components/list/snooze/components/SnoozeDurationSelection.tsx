@@ -58,7 +58,7 @@ const SnoozeButton = ({ onClick, duration, leftText, rightText, showUpsellButton
         fullWidth
         shape="ghost"
         data-testid={`snooze-duration-${duration}`}
-        className={clsx('flex rounded-none', showUpsellButton ? 'gap-2' : 'flex-justify-space-between')}
+        className={clsx('flex rounded-none', showUpsellButton ? 'gap-2' : 'justify-space-between')}
         onClick={(e) => onClick(e, duration)}
     >
         <span>{leftText}</span>
@@ -174,7 +174,7 @@ const SnoozeDurationSelection = ({ canUnsnooze, handleUnsnoozeClick, handleSnooz
                             fullWidth
                             shape="ghost"
                             data-testid="snooze-duration-unsnooze"
-                            className="flex rounded-none flex-justify-space-between"
+                            className="flex rounded-none justify-space-between"
                             onClick={handleUnsnoozeClick}
                         >
                             {c('Action').t`Unsnooze`}

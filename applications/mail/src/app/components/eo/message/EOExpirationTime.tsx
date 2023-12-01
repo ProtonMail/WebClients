@@ -68,10 +68,10 @@ const EOExpirationTime = ({ message }: Props) => {
                     as="span"
                     color={expiresInLessThan24Hours ? 'danger' : undefined}
                     data-testid="expiration-banner"
-                    className="inline-flex flex-align-items-center w-full md:w-auto flex-justify-center md:flex-justify-start mb-3 px-2"
+                    className="inline-flex items-center w-full md:w-auto justify-center md:justify-start mb-3 px-2"
                     onClick={() => setExpirationModalOpen(true)}
                 >
-                    <Icon name="hourglass" className="flex-item-noshrink ml-1" />
+                    <Icon name="hourglass" className="shrink-0 ml-1" />
                     <span className="ml-2">{buttonMessage}</span>
                 </ButtonLike>
             </Tooltip>

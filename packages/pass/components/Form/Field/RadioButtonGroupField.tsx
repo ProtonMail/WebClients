@@ -70,7 +70,7 @@ export const RadioLabelledButton = <T extends RadioValue>({
                 value={value}
                 onChange={(e) => e.target.checked && onChange?.(value)}
             />
-            <div className="flex flex-align-items-center gap-x-3 py-4">
+            <div className="flex items-center gap-x-3 py-4">
                 {children}
                 {checked && <Icon name="checkmark" size={24} color="var(--interaction-norm)" />}
             </div>
@@ -107,7 +107,7 @@ export const RadioButtonGroupField: FC<RadioButtonGroupFieldProps> = ({ field, f
     return (
         <InputFieldTwo<typeof RadioButtonGroup>
             as={RadioButtonGroup}
-            assistContainerClassName="hidden-empty"
+            assistContainerClassName="empty:hidden"
             error={error}
             {...field}
             {...props}

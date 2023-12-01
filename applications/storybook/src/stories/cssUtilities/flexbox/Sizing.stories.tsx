@@ -17,7 +17,7 @@ export const FlexItemFluid = () => {
                 150px wide
             </div>
             <span className="bg-primary p-4 w-1/4">25% wide</span>
-            <em className="flex-item-fluid bg-info p-4">.flex-item-fluid</em>
+            <em className="flex-1 bg-info p-4">.flex-1</em>
         </div>
     );
 };
@@ -29,7 +29,7 @@ export const FlexItemFluidAuto = () => {
                 150px wide
             </div>
             <span className="bg-primary p-4 w-1/4">25% wide</span>
-            <em className="flex-item-fluid-auto bg-info p-4">.flex-item-fluid-auto</em>
+            <em className="flex-auto bg-info p-4">.flex-auto</em>
         </div>
     );
 };
@@ -41,7 +41,7 @@ export const FlexItemGrow = () => {
                 150px wide
             </div>
             <span className="bg-primary p-4 w-1/4">25% wide</span>
-            <em className="flex-item-grow-2 bg-info p-4">.flex-item-grow-2</em>
+            <em className="grow-2 bg-info p-4">.grow-2</em>
         </div>
     );
 };
@@ -53,7 +53,7 @@ export const FlexItemNoShrink = () => {
                 150px wide
             </div>
             <span className="bg-primary p-4 w-1/4">25% wide</span>
-            <em className="flex-item-noshrink bg-info p-4">.flex-item-noshrink</em>
+            <em className="shrink-0 bg-info p-4">.shrink-0</em>
         </div>
     );
 };
@@ -65,7 +65,7 @@ export const FlexItemNoGrow = () => {
                 150px wide
             </div>
             <span className="bg-primary p-4 w-1/4">25% wide</span>
-            <em className="flex-item-nogrow bg-info p-4">.flex-item-nogrow</em>
+            <em className="grow-0 bg-info p-4">.grow-0</em>
         </div>
     );
 };
@@ -77,7 +77,7 @@ export const FlexItemNoGrowNoShrink = () => {
                 150px wide
             </div>
             <span className="bg-primary p-4 w-1/4">25% wide</span>
-            <em className="flex-item-nogrow flex-item-noshrink bg-info p-4">static width</em>
+            <em className="grow-0 shrink-0 bg-info p-4">static width</em>
         </div>
     );
 };
@@ -89,7 +89,7 @@ export const FlexItemNoFlex = () => {
                 150px wide
             </div>
             <span className="bg-primary p-4 w-1/4">25% wide</span>
-            <em className="flex-item-noflex bg-info p-4">.flex-item-noflex</em>
+            <em className="flex-none bg-info p-4">.flex-none</em>
         </div>
     );
 };

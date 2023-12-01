@@ -56,7 +56,7 @@ const CalendarExportSection = ({ personalCalendars, fallbackCalendar }: Props) =
 
             <div className="flex">
                 {selectedCalendar && (
-                    <span className="flex-item-fluid mr-4">
+                    <span className="flex-1 mr-4">
                         <CalendarSelect
                             calendarID={selectedCalendar.ID}
                             options={calendarOptions}
@@ -65,7 +65,7 @@ const CalendarExportSection = ({ personalCalendars, fallbackCalendar }: Props) =
                         />
                     </span>
                 )}
-                <span className="flex-item-noshrink">
+                <span className="shrink-0">
                     <PrimaryButton onClick={handleExport} disabled={!selectedCalendar}>{c('Action')
                         .t`Download ICS`}</PrimaryButton>
                 </span>

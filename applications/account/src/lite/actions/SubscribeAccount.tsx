@@ -95,7 +95,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
     // Error in usage (this action is not meant to be shown if it cannot be triggered, so untranslated.
     if (!canEdit) {
         return (
-            <LiteLayout searchParams={searchParams} className="flex flex-justify-center flex-align-items-center">
+            <LiteLayout searchParams={searchParams} className="flex justify-center items-center">
                 <LiteBox>Please contact the administrator of the organization to manage the subscription</LiteBox>
             </LiteLayout>
         );
@@ -221,7 +221,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
 
     if (isManagedExternally(subscription)) {
         return (
-            <div className="h-full flex flex-column flex-justify-center flex-align-items-center bg-norm text-center">
+            <div className="h-full flex flex-column justify-center items-center bg-norm text-center">
                 <div className="max-w-custom p-11" style={{ '--max-w-custom': '33.3rem' }}>
                     <InAppText subscription={subscription} />
                 </div>
@@ -231,7 +231,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
 
     if (error.title && error.message) {
         return (
-            <div className="h-full flex flex-column flex-justify-center flex-align-items-center bg-norm text-center">
+            <div className="h-full flex flex-column justify-center items-center bg-norm text-center">
                 <h1 className="text-bold text-2xl mb-2">{error.title}</h1>
                 <div>{error.message}</div>
                 {error.error && <div className="mt-2 color-weak text-sm">{error.error}</div>}
@@ -242,7 +242,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
     return (
         <div className={clsx(bgClassName, 'h-full overflow-auto')}>
             <div className="min-h-custom flex flex-column flex-nowrap" style={{ '--min-h-custom': '100vh' }}>
-                <div className="flex-item-fluid-auto">
+                <div className="flex-auto">
                     <div
                         className={clsx('mb-0 sm:mb-4 pb-0 p-4 sm:pb-6 sm:p-6 m-auto max-w-custom')}
                         style={{ '--max-w-custom': '74rem' }}
@@ -250,7 +250,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
                     >
                         {logo}
                     </div>
-                    <div className="flex flex-justify-center">
+                    <div className="flex justify-center">
                         {type === SubscribeType.Subscribed || type === SubscribeType.Closed ? (
                             <LiteBox>
                                 <SubscribeAccountDone type={type} />
@@ -326,7 +326,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
                                 render={({ onSubmit, title, content, footer, step }) => {
                                     return (
                                         <LiteBox maxWidth={step === SUBSCRIPTION_STEPS.PLAN_SELECTION ? 72 : undefined}>
-                                            <div className="flex flex-nowrap flex-item-noshrink flex-align-items-start flex-justify-space-between">
+                                            <div className="flex flex-nowrap shrink-0 items-start justify-space-between">
                                                 <div>
                                                     {title && (
                                                         <>
@@ -338,7 +338,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
                                                 {!hideClose && (
                                                     <Tooltip title={c('Action').t`Close`}>
                                                         <Button
-                                                            className="flex-item-noshrink"
+                                                            className="shrink-0"
                                                             icon
                                                             shape="ghost"
                                                             onClick={handleClose}

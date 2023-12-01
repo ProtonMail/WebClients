@@ -49,10 +49,10 @@ const ExpandableRow = ({
                 className={clsx(['folder-tree-list-item', !isDisabled && 'cursor-pointer', isSelected && 'bg-strong'])}
                 onClick={handleSelect}
             >
-                <td className="flex flex-align-items-center flex-nowrap m-0 pl-custom relative">
+                <td className="flex items-center flex-nowrap m-0 pl-custom relative">
                     <div
                         className={clsx([
-                            `folder-tree-list-item-selected flex flex-item-noshrink`,
+                            `folder-tree-list-item-selected flex shrink-0`,
                             !isSelected && 'folder-tree-list-item-selected-hidden',
                         ])}
                     >
@@ -60,8 +60,8 @@ const ExpandableRow = ({
                             <Icon name="checkmark" className="p-1" size={16} />
                         </span>
                     </div>
-                    <div className="flex flex-item-noshrink folder-tree-list-item-indent" style={paddingElement}></div>
-                    <div className="folder-tree-list-item-expand flex-item-noshrink relative">
+                    <div className="flex shrink-0 folder-tree-list-item-indent" style={paddingElement}></div>
+                    <div className="folder-tree-list-item-expand shrink-0 relative">
                         <Button
                             disabled={isDisabled}
                             style={{ visibility: link.isFile ? 'hidden' : 'visible' }}
@@ -82,7 +82,7 @@ const ExpandableRow = ({
                     </div>
                     <div
                         key="Name"
-                        className="folder-tree-list-item-name flex flex-align-items-center flex-nowrap w-full"
+                        className="folder-tree-list-item-name flex items-center flex-nowrap w-full"
                     >
                         <FileIcon mimeType={link.isFile ? link.mimeType : 'Folder'} className="mr-2" />
                         <Tooltip title={link.name} originalPlacement="bottom">

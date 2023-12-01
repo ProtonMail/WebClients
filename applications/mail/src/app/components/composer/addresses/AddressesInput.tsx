@@ -213,7 +213,7 @@ const AddressesInput = ({
         <div className={clsx(['composer-addresses-autocomplete w-full flex relative', classname])}>
             <div
                 className={clsx([
-                    'composer-addresses-container flex flex-nowrap flex-item-fluid',
+                    'composer-addresses-container flex flex-nowrap flex-1',
                     !expanded && 'composer-addresses-container-closed field',
                     hasLighterFieldDesign && 'composer-light-field',
                 ])}
@@ -221,7 +221,7 @@ const AddressesInput = ({
                 aria-hidden="true"
                 {...containerDragHandlers}
             >
-                <div className="flex-item-fluid flex flex-wrap max-w-full max-h-full relative" ref={containerRef}>
+                <div className="flex-1 flex flex-wrap max-w-full max-h-full relative" ref={containerRef}>
                     {recipientsOrGroups.map((recipientOrGroup, index) => (
                         <Fragment key={getRecipientOrGroupKey(recipientOrGroup)}>
                             {index === placeholderPosition && dragPlaceholder}
@@ -247,7 +247,7 @@ const AddressesInput = ({
                         </Fragment>
                     ))}
                     {placeholderPosition === recipientsOrGroups.length && dragPlaceholder}
-                    <div className="flex-item-fluid flex flex-align-items-center composer-addresses-input-container">
+                    <div className="flex-1 flex items-center composer-addresses-input-container">
                         <AddressesAutocomplete
                             id={id}
                             anchorRef={anchorRef}
@@ -267,7 +267,7 @@ const AddressesInput = ({
                     </div>
                 </div>
                 {addContactButton ? (
-                    <span className="flex-item-noshrink flex-align-self-start sticky-top">
+                    <span className="shrink-0 self-start sticky-top">
                         <Tooltip title={c('Action').t`Insert contacts`}>
                             <Button
                                 type="button"

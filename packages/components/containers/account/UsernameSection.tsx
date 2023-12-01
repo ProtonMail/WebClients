@@ -141,7 +141,7 @@ const UsernameSection = ({ app }: Props) => {
                                     mode="banner"
                                     rounded
                                     contentCentered={false}
-                                    icon={<img width="40" src={mailCalendar} alt="" className="flex-item-noshrink" />}
+                                    icon={<img width="40" src={mailCalendar} alt="" className="shrink-0" />}
                                     description={getBoldFormattedText(
                                         c('Info')
                                             .t`**Get a ${BRAND_NAME} address** to use all ${BRAND_NAME_TWO} services including ${MAIL_SHORT_APP_NAME} and ${CALENDAR_SHORT_APP_NAME}.`
@@ -159,8 +159,8 @@ const UsernameSection = ({ app }: Props) => {
                 {canEditExternalAddress && (
                     <Card className="mb-8" rounded bordered={true} background={false}>
                         <div className="h3 text-bold mb-6">{c('Info').t`Secure your ${BRAND_NAME} Account`}</div>
-                        <div className="flex gap-4 flex-nowrap flex-align-items-start">
-                            <img className="flex-item-noshrink" width="40" height="40" src={unverified} alt="" />
+                        <div className="flex gap-4 flex-nowrap items-start">
+                            <img className="shrink-0" width="40" height="40" src={unverified} alt="" />
                             <div>
                                 <div className="mb-2 text-lg text-semibold flex">
                                     <div className="mr-2 text-ellipsis">{primaryAddress.Email}</div>
@@ -200,7 +200,7 @@ const UsernameSection = ({ app }: Props) => {
                                             <Icon
                                                 name="checkmark-circle-filled"
                                                 size={16}
-                                                className="ml-2 color-success flex-align-self-center"
+                                                className="ml-2 color-success self-center"
                                             />
                                         </Tooltip>
                                     </div>
@@ -223,7 +223,7 @@ const UsernameSection = ({ app }: Props) => {
                                                         {c('Action').t`Edit`}
                                                     </InlineLinkButton>
                                                     <Info
-                                                        className="flex-align-self-center"
+                                                        className="self-center"
                                                         title={c('Info')
                                                             .t`You can edit this once to ensure the correct email address for verification.`}
                                                     />
@@ -234,7 +234,7 @@ const UsernameSection = ({ app }: Props) => {
                                             <Icon
                                                 name="exclamation-circle-filled"
                                                 size={16}
-                                                className="mr-1 color-danger flex-align-self-center"
+                                                className="mr-1 color-danger self-center"
                                             />
                                             <span className="color-weak mr-1">
                                                 {c('Info').t`Unverified email address.`}

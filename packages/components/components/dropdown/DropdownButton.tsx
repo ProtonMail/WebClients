@@ -39,7 +39,7 @@ const DropdownButtonBase = <E extends ElementType = typeof defaultElement>(
             aria-busy={loading}
             disabled={loading ? true : disabled}
             data-testid="dropdown-button"
-            className={clsx([children && hasCaret && 'flex flex-align-items-center flex-nowrap', className])}
+            className={clsx([children && hasCaret && 'flex items-center flex-nowrap', className])}
             {...rest}
         >
             {children}
@@ -50,7 +50,7 @@ const DropdownButtonBase = <E extends ElementType = typeof defaultElement>(
             )}
             {hasCaret && (
                 <DropdownCaret
-                    className={clsx(['flex-item-noshrink', children ? ' ml-1' : '', caretClassName])}
+                    className={clsx(['shrink-0', children ? ' ml-1' : '', caretClassName])}
                     isOpen={isOpen}
                 />
             )}

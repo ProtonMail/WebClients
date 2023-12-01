@@ -14,7 +14,7 @@ interface SortingTableCellHeaderProps {
 
 export const SortingTableCellHeader = ({ content, onClick = noop, direction }: SortingTableCellHeaderProps) => {
     return (
-        <div className="flex-nowrap inline-flex-vcenter">
+        <div className="flex-nowrap inline-flex children-self-center">
             <span
                 tabIndex={0}
                 role="button"
@@ -29,7 +29,7 @@ export const SortingTableCellHeader = ({ content, onClick = noop, direction }: S
                 {content}
             </span>
             {direction === ASC || direction === DESC ? (
-                <Icon name="chevron-down" className={`flex-item-noshrink ${direction === DESC ? '' : 'rotateX-180'}`} />
+                <Icon name="chevron-down" className={`shrink-0 ${direction === DESC ? '' : 'rotateX-180'}`} />
             ) : null}
         </div>
     );

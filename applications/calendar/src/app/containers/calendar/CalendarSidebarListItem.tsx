@@ -65,14 +65,14 @@ const CalendarSidebarListItem = ({
 
     const leftNode = loadingVisibility ? (
         <div
-            className="flex flex-align-items-center flex-justify-center w-custom ml-custom"
+            className="flex items-center justify-center w-custom ml-custom"
             style={{ '--w-custom': '1.25rem', '--ml-custom': 'calc(var(--space-1) * -1)' }}
         >
             <CircleLoader size="small" color={Color} />
         </div>
     ) : (
         <Checkbox
-            className="flex-item-noshrink ml-custom"
+            className="shrink-0 ml-custom"
             labelProps={{
                 'data-testid': `calendar-checkbox-${ID}`,
                 style: { '--ml-custom': 'calc(var(--space-1) * -1)' },
@@ -103,13 +103,13 @@ const CalendarSidebarListItem = ({
                     left={leftNode}
                     className={clsx(['flex w-full gap-2', (isCalendarDisabled || isNotSyncedInfo) && 'color-weak'])}
                 >
-                    <div className="flex flex-nowrap flex-justify-space-between flex-align-items-center w-full relative">
+                    <div className="flex flex-nowrap justify-space-between items-center w-full relative">
                         <div className="flex flex-nowrap">
                             <div className="text-ellipsis" title={Name}>
                                 {Name}
                             </div>
                             {!isCalendarDisabled && isNotSyncedInfo && (
-                                <div className="flex-item-noshrink max-w-full text-ellipsis">
+                                <div className="shrink-0 max-w-full text-ellipsis">
                                     &nbsp;
                                     <Tooltip title={isNotSyncedInfo.text}>
                                         <span>({isNotSyncedInfo.label})</span>
@@ -117,7 +117,7 @@ const CalendarSidebarListItem = ({
                                 </div>
                             )}
                             {isCalendarDisabled && (
-                                <div className="flex-item-noshrink">
+                                <div className="shrink-0">
                                     &nbsp;({c('Disabled calendar name suffix').t`Disabled`})
                                 </div>
                             )}
@@ -130,7 +130,7 @@ const CalendarSidebarListItem = ({
                                 hasCaret={false}
                                 shape="ghost"
                                 size="small"
-                                className="calendar-sidebar-list-item-action group-hover:opacity-100 group-hover:opacity-100-no-width ml-2 mr-custom right-0 rounded-sm flex-item-noshrink hidden md:inline-flex"
+                                className="calendar-sidebar-list-item-action group-hover:opacity-100 group-hover:opacity-100-no-width ml-2 mr-custom right-0 rounded-sm shrink-0 hidden md:inline-flex"
                                 style={{ '--mr-custom': 'calc(var(--space-1) * -1)' }}
                                 loading={isSubscribedCalendar && loadingSubscriptionParameters}
                                 content={<Icon name="three-dots-horizontal" />}

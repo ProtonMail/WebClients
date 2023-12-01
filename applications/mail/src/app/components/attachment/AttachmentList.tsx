@@ -182,14 +182,14 @@ const AttachmentList = ({
                 outsideKey={outsideKey}
             />
             <div
-                className="flex flex-row w-full pt-2 flex-justify-space-between composer-attachment-list-wrapper"
+                className="flex flex-row w-full pt-2 justify-space-between composer-attachment-list-wrapper"
                 data-testid="attachment-list:header"
             >
                 <TagButton
                     type="button"
                     title={titleButton}
                     tabIndex={-1}
-                    className="flex flex-align-items-center outline-none"
+                    className="flex items-center outline-none"
                     onClick={handleToggleExpand}
                 >
                     {size !== 0 && (
@@ -222,7 +222,7 @@ const AttachmentList = ({
                     )}
                 </TagButton>
                 {canShowDownloadAll && (
-                    <div className="flex-item-noshrink">
+                    <div className="shrink-0">
                         <Tooltip title={c('Download attachments').t`Download all`} originalPlacement="top">
                             <Button
                                 icon

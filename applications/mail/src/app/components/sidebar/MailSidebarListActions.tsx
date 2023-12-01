@@ -44,11 +44,11 @@ const MailSidebarListActions = ({ type, items }: Props) => {
     };
 
     return (
-        <div className="flex flex-align-items-center">
+        <div className="flex items-center">
             <Tooltip title={type === 'label' ? c('Action').t`Create a new label` : c('Action').t`Create a new folder`}>
                 <button
                     type="button"
-                    className="flex navigation-link-header-group-control flex-item-noshrink"
+                    className="flex navigation-link-header-group-control shrink-0"
                     onClick={handleCreate}
                     data-testid={type === 'label' ? 'navigation-link:add-label' : 'navigation-link:add-folder'}
                 >

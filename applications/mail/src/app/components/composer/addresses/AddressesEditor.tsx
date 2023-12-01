@@ -52,14 +52,14 @@ const AddressesEditor = ({
     };
 
     return (
-        <div className="flex flex-column flex-nowrap flex-align-items-start mt-0">
+        <div className="flex flex-column flex-nowrap items-start mt-0">
             <div className="flex flex-row w-full relative flex-column md:flex-row" data-testid="composer:to-field">
                 <Label htmlFor={`to-${uid}`} className="composer-meta-label text-semibold">
                     {c('Title').t`To`}
                 </Label>
                 <div
                     className={clsx([
-                        'flex flex-nowrap field flex-align-items-center flex-nowrap md:flex-item-fluid w-full composer-to-editor composer-light-field',
+                        'flex flex-nowrap field items-center flex-nowrap md:flex-1 w-full composer-to-editor composer-light-field',
                         expanded ? 'composer-editor-expanded' : 'composer-editor-collapsed',
                     ])}
                     ref={toListAnchorRef}
@@ -73,10 +73,10 @@ const AddressesEditor = ({
                         placeholder={c('Placeholder').t`Email address`}
                         expanded={expanded}
                         dataTestId="composer:to"
-                        classname="composer-editor-to flex-item-fluid"
+                        classname="composer-editor-to flex-1"
                         anchorRef={toListAnchorRef}
                     />
-                    <span className="flex-no-min-children flex-nowrap flex-item-noshrink max-w-1/2 sm:max-w-1/3 md:max-w-none flex-align-self-start pt-2 composer-to-ccbcc-buttons sticky-top">
+                    <span className="flex children-min-size-auto flex-nowrap shrink-0 max-w-1/2 sm:max-w-1/3 md:max-w-none self-start pt-2 composer-to-ccbcc-buttons sticky-top">
                         <>
                             {!ccExpanded && (
                                 <AddressesCCButton
@@ -99,7 +99,7 @@ const AddressesEditor = ({
                                 tabIndex={-1}
                                 onClick={handleContactModal('ToList')}
                                 color="weak"
-                                className="py-2 flex-item-noshrink composer-addresses-to-contact-button"
+                                className="py-2 shrink-0 composer-addresses-to-contact-button"
                                 shape="ghost"
                                 icon
                                 data-testid="composer:to-button"
@@ -135,7 +135,7 @@ const AddressesEditor = ({
                                 inputFocusRef={inputFocusRefs.cc}
                                 addContactButton={c('Title').t`CC`}
                                 addContactAction={handleContactModal('CCList')}
-                                classname="composer-editor-cc md:flex-item-fluid"
+                                classname="composer-editor-cc md:flex-1"
                                 hasLighterFieldDesign
                                 anchorRef={ccListAnchorRef}
                             />
@@ -164,7 +164,7 @@ const AddressesEditor = ({
                                 addContactButton={c('Title').t`BCC`}
                                 inputFocusRef={inputFocusRefs.bcc}
                                 addContactAction={handleContactModal('BCCList')}
-                                classname="composer-editor-bcc md:flex-item-fluid"
+                                classname="composer-editor-bcc md:flex-1"
                                 hasLighterFieldDesign
                                 anchorRef={bccListAnchorRef}
                             />

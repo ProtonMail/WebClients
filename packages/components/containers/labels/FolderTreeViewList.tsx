@@ -26,11 +26,11 @@ interface HeaderProps {
 const Header = ({ isNarrow }: HeaderProps) => {
     return (
         <div className="flex flex-nowrap w-full border-bottom pb-2">
-            <span className="text-bold flex-item-fluid">
+            <span className="text-bold flex-1">
                 {isNarrow ? null : <Icon name="arrows-cross" className="mr-4" />}
                 {c('Header').t`Folders`}
             </span>
-            <span className="w-custom hidden md:flex flex-align-items-center gap-2" style={{ '--w-custom': '10em' }}>
+            <span className="w-custom hidden md:flex items-center gap-2" style={{ '--w-custom': '10em' }}>
                 <span className="text-bold">{c('Header').t`Notifications`}</span>
                 <Info title={c('Tooltip').t`Enable/disable desktop and mobile notifications`} />
             </span>
@@ -142,22 +142,22 @@ const FolderTreeViewList = ({ items = [] }: Props) => {
                             content={
                                 <div
                                     className={clsx([
-                                        'flex flex-nowrap flex-align-items-center flex-justify-space-between w-full py-2 treeview-item relative',
+                                        'flex flex-nowrap items-center justify-space-between w-full py-2 treeview-item relative',
                                         isOverred && position === BEFORE && 'treeview-item--move-top',
                                         isOverred && position === AFTER && 'treeview-item--move-bottom',
                                         isOverred && position === INSIDE && 'treeview-item--move-inside',
                                         grabbed && grabbed.ID === item.ID && 'treeview-item--self-grabbed',
                                     ])}
                                 >
-                                    <div className="treeview-item-name flex flex-nowrap flex-align-items-center flex-item-fluid">
+                                    <div className="treeview-item-name flex flex-nowrap items-center flex-1">
                                         {isNarrow ? null : (
                                             <Icon
                                                 name="text-align-justify"
-                                                className="mr-4 flex-item-noshrink cursor-row-resize"
+                                                className="mr-4 shrink-0 cursor-row-resize"
                                             />
                                         )}
                                         <FolderIcon
-                                            className="mr-2 flex-item-noshrink"
+                                            className="mr-2 shrink-0"
                                             folder={{ ...item, subfolders: parents[item.ID] }}
                                         />
                                         <span className="text-ellipsis" title={item.Name}>
@@ -171,7 +171,7 @@ const FolderTreeViewList = ({ items = [] }: Props) => {
                                         <ToggleNotify label={item} />
                                     </div>
                                     <div
-                                        className="w-custom md:w-custom flex flex-column flex-align-items-end"
+                                        className="w-custom md:w-custom flex flex-column items-end"
                                         style={{ '--w-custom': '6.25rem', '--md-w-custom': '10em' }}
                                     >
                                         <div className="my-auto">

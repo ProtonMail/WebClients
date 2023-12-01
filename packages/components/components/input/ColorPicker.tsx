@@ -62,7 +62,7 @@ const ColorPicker = ({ color = '#5252CC', onChange, displayColorName = true, onC
                 className={clsx([
                     className,
                     displayColorName && 'w-1/2',
-                    'field select flex flex-align-items-center py-0 pl-2',
+                    'field select flex items-center py-0 pl-2',
                 ])}
                 hasCaret
                 ref={anchorRef}
@@ -70,10 +70,10 @@ const ColorPicker = ({ color = '#5252CC', onChange, displayColorName = true, onC
                 onClick={handleToggle}
                 aria-label={colorName}
             >
-                <span className="flex-item-fluid text-left flex flex-nowrap flex-align-items-center gap-2">
+                <span className="flex-1 text-left flex flex-nowrap items-center gap-2">
                     <span className="sr-only">{c('info').t`Selected color:`}</span>
                     <Icon
-                        className="flex-item-noshrink"
+                        className="shrink-0"
                         name="circle-filled"
                         size={28}
                         color={iconColor}

@@ -228,13 +228,13 @@ const loadRecipient = async ({
 const getAddressInputItemAttributes = ({ loading, error, Address, isKeyPinned }: ExtendedRecipient) => {
     if (loading) {
         return {
-            icon: <Loader className="icon-16p pl-2 m-auto flex flex-item-noshrink" />,
+            icon: <Loader className="icon-16p pl-2 m-auto flex shrink-0" />,
         };
     }
     if (error) {
         return {
             icon: (
-                <div className="flex flex-align-items-center flex-item-noshrink ml-2">
+                <div className="flex items-center shrink-0 ml-2">
                     <Icon name="exclamation-circle" />
                 </div>
             ),
@@ -244,7 +244,7 @@ const getAddressInputItemAttributes = ({ loading, error, Address, isKeyPinned }:
     }
     return {
         icon: (
-            <span className="inline-flex pl-2 flex-item-noshrink my-auto">
+            <span className="inline-flex pl-2 shrink-0 my-auto">
                 <Icon size={16} name={isKeyPinned ? 'lock-check-filled' : 'lock-filled'} className={'color-info'} />
             </span>
         ),
@@ -618,7 +618,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                                 options={[
                                     {
                                         label: (
-                                            <span className="flex-item-fluid">
+                                            <span className="flex-1">
                                                 {c('Calendar sharing access option label')
                                                     .t`View (see all event details)`}
                                             </span>
@@ -627,7 +627,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                                     },
                                     {
                                         label: (
-                                            <span className="flex-item-fluid">
+                                            <span className="flex-1">
                                                 {c('Calendar sharing access option label')
                                                     .t`Edit (view, create and edit event details)`}
                                             </span>

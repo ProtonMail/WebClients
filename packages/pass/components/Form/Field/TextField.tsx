@@ -51,7 +51,7 @@ const BaseTextFieldRender: ForwardRefRenderFunction<HTMLInputElement, BaseTextFi
     return (
         <InputFieldTwo
             unstyled
-            assistContainerClassName="hidden-empty"
+            assistContainerClassName="empty:hidden"
             error={error}
             inputClassName={clsx('p-0 rounded-none', props.disabled ? 'color-disabled' : 'color-norm', inputClassName)}
             labelContainerClassName={clsx(

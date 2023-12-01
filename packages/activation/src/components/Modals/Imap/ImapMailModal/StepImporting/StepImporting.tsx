@@ -43,7 +43,7 @@ const StepImporting = () => {
                 />
             </ModalTwoContent>
 
-            <ModalTwoFooter className="flex-justify-end">
+            <ModalTwoFooter className="justify-end">
                 {!isCurrentLocationImportPage ? (
                     <PrimaryButton
                         onClick={() => {

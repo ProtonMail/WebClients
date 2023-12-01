@@ -35,7 +35,7 @@ const EOMessageHeader = ({ message, messageLoaded, id, numberOfReplies }: Props)
         <Button
             onClick={handleReply}
             color="norm"
-            className="ml-auto flex flex-align-items-center"
+            className="ml-auto flex items-center"
             disabled={!canReply}
             data-testid="eoreply:button"
         >
@@ -47,8 +47,8 @@ const EOMessageHeader = ({ message, messageLoaded, id, numberOfReplies }: Props)
     return (
         <div
             className={clsx([
-                'flex flex-align-items-center border-bottom px-7 py-5',
-                !canReply && 'flex-justify-space-between',
+                'flex items-center border-bottom px-7 py-5',
+                !canReply && 'justify-space-between',
             ])}
         >
             <h1 className="text-ellipsis m-0 mb-2 eo-layout-title" title={subject} data-testid="eo:subject">

@@ -64,14 +64,14 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
                         <>
                             <ul className="unstyled m-0 mb-1">
                                 {values.urls.map(({ url, id }, index) => (
-                                    <li key={id} className="flex flex-align-items-center flex-nowrap">
+                                    <li key={id} className="flex items-center flex-nowrap">
                                         <InputFieldTwo
                                             error={(errors.urls?.[index] as FormikErrors<UrlItem>)?.url}
                                             onValue={handleReplace(index)}
                                             onBlur={() => handleReplace(index)(isValidURL(url).url)}
                                             value={url}
                                             unstyled
-                                            assistContainerClassName="hidden-empty"
+                                            assistContainerClassName="empty:hidden"
                                             inputClassName="color-norm p-0 rounded-none"
                                             placeholder="https://"
                                             onKeyDown={onKeyEnter}
@@ -79,7 +79,7 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
                                         <Button
                                             icon
                                             pill
-                                            className="flex-item-noshrink ml-2"
+                                            className="shrink-0 ml-2"
                                             color="weak"
                                             onClick={handleRemove(index)}
                                             shape="ghost"
@@ -95,7 +95,7 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
                             <InputFieldTwo
                                 unstyled
                                 id="next-url-field"
-                                assistContainerClassName="hidden-empty"
+                                assistContainerClassName="empty:hidden"
                                 inputClassName="color-norm p-0 rounded-none"
                                 placeholder="https://"
                                 name="url"
@@ -117,7 +117,7 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
                                 shape="ghost"
                                 size="small"
                                 title={c('Action').t`Add`}
-                                className="flex flex-align-items-center gap-1"
+                                className="flex items-center gap-1"
                                 onClick={() => handleAdd(values.url).then(() => inputRef.current?.focus())}
                             >
                                 <Icon name="plus" /> {c('Action').t`Add`}

@@ -206,7 +206,7 @@ const MessagesSection = () => {
             </SettingsLayout>
 
             {isPageSizeSettingEnabled && (
-                <SettingsLayout className="flex-align-items-center">
+                <SettingsLayout className="items-center">
                     <SettingsLayoutLeft>
                         <label htmlFor="pageSizeSelector">
                             <span className="text-semibold mr-2">

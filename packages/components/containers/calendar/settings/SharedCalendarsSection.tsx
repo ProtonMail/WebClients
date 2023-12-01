@@ -62,7 +62,7 @@ const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalenda
     const subline = getCalendarNameSubline({ calendarType, displayEmail, memberEmail, memberPermissions });
 
     const statusHeader = (
-        <div className="flex flex-align-items-center">
+        <div className="flex items-center">
             <span className="mr-2">{c('Header').t`Status`}</span>
             <Info url={getKnowledgeBaseUrl('/calendar-status')} />
         </div>
@@ -72,8 +72,8 @@ const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalenda
         <TableRow>
             <TableCell label={c('Header').t`Name`}>
                 <div className="grid-align-icon-center">
-                    <CalendarSelectIcon color={Color} className="mr-3 flex-item-noshrink keep-left" />
-                    <div className="flex flex-align-items-center flex-nowrap overflow-hidden">
+                    <CalendarSelectIcon color={Color} className="mr-3 shrink-0 keep-left" />
+                    <div className="flex items-center flex-nowrap overflow-hidden">
                         <div className="text-ellipsis" title={calendarNameWithOwner}>
                             {calendarNameWithOwner}
                         </div>
@@ -100,7 +100,7 @@ const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalenda
                     >
                         <Icon
                             name="cog-wheel"
-                            className="flex-item-noshrink"
+                            className="shrink-0"
                             alt={c('Calendar table settings button tooltip').t`Open settings`}
                         />
                     </ButtonLike>
@@ -153,8 +153,8 @@ const InvitationRow = ({
         <TableRow>
             <TableCell>
                 <div className="grid-align-icon-center">
-                    <CalendarSelectIcon border color={Calendar.Color} className="mr-3 flex-item-noshrink keep-left" />
-                    <div className="flex flex-align-items-center flex-nowrap overflow-hidden">
+                    <CalendarSelectIcon border color={Calendar.Color} className="mr-3 shrink-0 keep-left" />
+                    <div className="flex items-center flex-nowrap overflow-hidden">
                         <div className="text-ellipsis" title={calendarNameWithOwner}>
                             {calendarNameWithOwner}
                         </div>
@@ -166,7 +166,7 @@ const InvitationRow = ({
                 <div key="status">{isInvitedAddressDisabled && <CalendarBadge {...getDisabledCalendarBadge()} />}</div>
             </TableCell>
             <TableCell>
-                <div className="flex flex-nowrap flex-justify-start lg:flex-justify-end flex-align-items-center gap-2">
+                <div className="flex flex-nowrap justify-start lg:justify-end items-center gap-2">
                     {isAcceptButtonDisabled && (
                         <Info
                             title={
@@ -174,10 +174,10 @@ const InvitationRow = ({
                                     ? c('Info').t`Enable this address to join this calendar`
                                     : c('Info').t`Remove one of your calendars to join this one`
                             }
-                            buttonClass="flex-item-noshrink"
+                            buttonClass="shrink-0"
                         />
                     )}
-                    <ButtonGroup size="small" className="flex-item-noshrink">
+                    <ButtonGroup size="small" className="shrink-0">
                         <Button loading={loadingAccept} disabled={isAcceptButtonDisabled} onClick={handleAccept}>
                             {c('Action; accept invitation to share calendar').t`Accept`}
                         </Button>

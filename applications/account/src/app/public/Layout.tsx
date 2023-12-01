@@ -37,7 +37,7 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
     const protonLogoBrand = <ProtonLogo variant="full" className={clsx(onBack && 'ml-4 md:ml-0')} />; // for the future: color="invert" will change color to white
 
     return (
-        <div className="flex-no-min-children flex-nowrap flex-column h-full scroll-if-needed relative sign-layout-bg">
+        <div className="flex children-min-size-auto flex-nowrap flex-column h-full overflow-auto relative sign-layout-bg">
             <PublicTopBanners />
             <ElectronDraggeableHeaderWrapper />
             <header
@@ -46,17 +46,17 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
                     'sign-layout-main-header gap-1 sm:gap-4 px-6 py-3 lg:px-12 md:pt-5 md:pb-10 mb-2 md:mb-0'
                 )}
             >
-                <div className="inline-flex flex-nowrap flex-item-noshrink">
-                    <div className="md:hidden flex-item-noshrink">{onBack && <BackButton onClick={onBack} />}</div>
+                <div className="inline-flex flex-nowrap shrink-0">
+                    <div className="md:hidden shrink-0">{onBack && <BackButton onClick={onBack} />}</div>
                     {hasDecoration ? (
                         <Href
-                            className="flex-item-noshrink relative interactive-pseudo-protrude rounded interactive--no-background"
+                            className="shrink-0 relative interactive-pseudo-protrude rounded interactive--no-background"
                             href={APP_NAME === APPS.PROTONVPN_SETTINGS ? 'https://protonvpn.com ' : getStaticURL('')}
                         >
                             {protonLogoBrand}
                         </Href>
                     ) : (
-                        <div className="flex-item-noshrink">{protonLogoBrand}</div>
+                        <div className="shrink-0">{protonLogoBrand}</div>
                     )}
                 </div>
                 <div>
@@ -75,14 +75,14 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
             </header>
             <div
                 className={clsx(
-                    'sign-layout-container p-0 sm:px-6 flex flex-nowrap flex-column flex-justify-space-between',
+                    'sign-layout-container p-0 sm:px-6 flex flex-nowrap flex-column justify-space-between',
                     centeredContent && 'absolute h-full w-full'
                 )}
             >
-                <main className={clsx(centeredContent && 'flex flex-item-centered-vert')}>
+                <main className={clsx(centeredContent && 'flex self-center my-auto')}>
                     {children}
                     {hasDecoration && (
-                        <div className="flex-item-noshrink text-center px-4 pt-0 pb-0 sm:px-5 sm:pt-8 sm:pb-0">
+                        <div className="shrink-0 text-center px-4 pt-0 pb-0 sm:px-5 sm:pt-8 sm:pb-0">
                             <LayoutLogos size={48} />
                         </div>
                     )}
@@ -90,7 +90,7 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
             </div>
             {hasDecoration ? (
                 <>
-                    <LayoutFooter app={APP_NAME} className="flex-item-noshrink text-center p-4" version={appVersion} />
+                    <LayoutFooter app={APP_NAME} className="shrink-0 text-center p-4" version={appVersion} />
                     <div className="static lg:fixed m-0 lg:m-8 lg:mr-12 mb-4 lg:mb-12 bottom right text-center lg:text-right text-sm sm:text-rg">
                         {bottomRight}
                     </div>

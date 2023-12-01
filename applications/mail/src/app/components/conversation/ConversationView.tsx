@@ -192,7 +192,7 @@ const ConversationView = ({
                 loading={loadingConversation}
                 element={conversation}
             />
-            <div ref={wrapperRef} className="flex-item-fluid px-4 w-full">
+            <div ref={wrapperRef} className="flex-1 px-4 w-full">
                 <div className="outline-none" ref={elementRef} tabIndex={-1}>
                     {showMessagesError ? (
                         <ConversationErrorBanner errors={conversationState?.errors} onRetry={handleRetry} />

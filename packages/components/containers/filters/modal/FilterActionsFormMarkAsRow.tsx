@@ -41,13 +41,13 @@ const FilterActionsFormMarkAsRow = ({ actions, handleUpdateActions }: Props) => 
         return (
             <div>
                 {markAs?.read && (
-                    <span className="inline-flex flex-align-items-center mr-8">
+                    <span className="inline-flex items-center mr-8">
                         <Icon name="eye" className="mr-2" />
                         {c('Label').t`Read`}
                     </span>
                 )}
                 {markAs?.starred && (
-                    <span className="inline-flex flex-align-items-center">
+                    <span className="inline-flex items-center">
                         <Icon name="star" className="mr-2" />
                         {c('Label').t`Starred`}
                     </span>

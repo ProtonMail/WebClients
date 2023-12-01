@@ -40,7 +40,7 @@ const MailRecipients = ({
         <div
             id="message-recipients"
             className={clsx([
-                'flex flex-nowrap flex-item-fluid message-recipient',
+                'flex flex-nowrap flex-1 message-recipient',
                 expanded && 'message-recipient-expanded',
             ])}
         >
@@ -63,7 +63,7 @@ const MailRecipients = ({
                 />
             )}
             {!isLoading && (
-                <div className="flex-item-noshrink flex ml-auto">
+                <div className="shrink-0 flex ml-auto">
                     <Button
                         onClick={toggleDetails}
                         aria-expanded={expanded}

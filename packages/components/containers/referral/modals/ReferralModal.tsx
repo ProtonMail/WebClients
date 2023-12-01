@@ -60,7 +60,7 @@ const ReferralModal = ({ endDate, ...rest }: Props) => {
                     // translator: complete sentence would be "Upgrade today to avoid losing the following Mail Plus benefits"
                     c('Info').t`Upgrade today to avoid losing the following ${planName} benefits.`
                 }</p>
-                <div className="flex flex-justify-center">
+                <div className="flex justify-center">
                     <img src={emptyMailboxSvg} alt="Mailbox image" />
                 </div>
                 <ReferralFeaturesList />

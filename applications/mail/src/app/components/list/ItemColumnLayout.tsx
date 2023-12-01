@@ -114,20 +114,20 @@ const ItemColumnLayout = ({
 
     return (
         <div
-            className="flex-item-fluid flex flex-nowrap flex-column flex-justify-center item-titlesender pr-1"
+            className="flex-1 flex flex-nowrap flex-column justify-center item-titlesender pr-1"
             data-testid="message-list:message"
         >
-            <div className="flex flex-align-items-center flex-nowrap">
-                <div className="flex-item-fluid">
-                    <div className="flex flex-align-items-center item-firstline">
-                        <div className="item-senders flex-item-fluid flex flex-align-items-center flex-nowrap pr-4">
+            <div className="flex items-center flex-nowrap">
+                <div className="flex-1">
+                    <div className="flex items-center item-firstline">
+                        <div className="item-senders flex-1 flex items-center flex-nowrap pr-4">
                             <ItemUnread
                                 element={element}
                                 labelID={labelID}
-                                className={clsx('item-unread-dot flex-item-noshrink', isCompactView && 'mr-1')}
+                                className={clsx('item-unread-dot shrink-0', isCompactView && 'mr-1')}
                                 isSelected={isSelected}
                             />
-                            <ItemAction element={element} className="mr-1 my-auto flex-item-noshrink" />
+                            <ItemAction element={element} className="mr-1 my-auto shrink-0" />
                             {senders && (
                                 <span
                                     className="inline-flex max-w-full text-ellipsis"
@@ -140,7 +140,7 @@ const ItemColumnLayout = ({
 
                         <span
                             className={clsx(
-                                'item-firstline-infos flex-item-noshrink flex flex-nowrap flex-align-items-center',
+                                'item-firstline-infos shrink-0 flex flex-nowrap items-center',
                                 isSnoozeDropdownOpen && 'invisible'
                             )}
                         >
@@ -153,16 +153,14 @@ const ItemColumnLayout = ({
                         </span>
                     </div>
 
-                    <div className="flex flex-nowrap flex-align-items-center item-secondline max-w-full">
-                        <div className="item-subject flex-item-fluid flex flex-nowrap flex-align-items-center">
+                    <div className="flex flex-nowrap items-center item-secondline max-w-full">
+                        <div className="item-subject flex-1 flex flex-nowrap items-center">
                             {showIcon && (
-                                <span className="flex flex-item-noshrink">
+                                <span className="flex shrink-0">
                                     <ItemLocation element={element} labelID={labelID} />
                                 </span>
                             )}
-                            {conversationMode && (
-                                <NumMessages className="mr-1 flex-item-noshrink" conversation={element} />
-                            )}
+                            {conversationMode && <NumMessages className="mr-1 shrink-0" conversation={element} />}
                             <span
                                 role="heading"
                                 aria-level={2}
@@ -174,7 +172,7 @@ const ItemColumnLayout = ({
                             </span>
                         </div>
 
-                        <div className="item-icons hidden md:flex flex-item-noshrink flex-nowrap">
+                        <div className="item-icons hidden md:flex shrink-0 flex-nowrap">
                             <span className="flex item-meta-infos">
                                 {hasLabels && isCompactView && !isSnoozeDropdownOpen && (
                                     <ItemLabels
@@ -188,7 +186,7 @@ const ItemColumnLayout = ({
                                 {hasExpiration && !isSnoozeDropdownOpen && (
                                     <ItemExpiration
                                         expirationTime={expirationTime}
-                                        className="ml-1 flex-align-self-center"
+                                        className="ml-1 self-center"
                                         element={element}
                                         labelID={labelID}
                                     />
@@ -197,29 +195,29 @@ const ItemColumnLayout = ({
                                     <ItemAttachmentIcon
                                         icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                                         element={element}
-                                        className="ml-1 flex-align-self-center"
+                                        className="ml-1 self-center"
                                     />
                                 )}
-                                <span className="ml-1 flex-flex-children flex-item-centered-vert hidden-empty">
+                                <span className="ml-1 flex children-flex self-center my-auto empty:hidden">
                                     {isStarred && !isSnoozeDropdownOpen && <ItemStar element={element} />}
                                 </span>
                             </span>
                         </div>
-                        <div className="item-icons flex flex-row flex-item-noshrink flex-nowrap md:hidden">
+                        <div className="item-icons flex flex-row shrink-0 flex-nowrap md:hidden">
                             {hasExpiration && (
                                 <ItemExpiration
                                     element={element}
                                     expirationTime={expirationTime}
-                                    className="ml-1 flex-align-self-center"
+                                    className="ml-1 self-center"
                                     labelID={labelID}
                                 />
                             )}
                             <ItemAttachmentIcon
                                 icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                                 element={element}
-                                className="ml-1 flex-align-self-center"
+                                className="ml-1 self-center"
                             />
-                            <span className="ml-1 flex-flex-children flex-item-centered-vert hidden-empty">
+                            <span className="ml-1 flex children-flex self-center my-auto empty:hidden">
                                 <ItemStar element={element} />
                             </span>
                         </div>
@@ -231,8 +229,8 @@ const ItemColumnLayout = ({
             {showThumbnails && <ItemAttachmentThumbnails attachmentsMetadata={attachmentsMetadata} className="mt-1" />}
 
             {hasLabels && !isCompactView && (
-                <div className="flex flex-nowrap flex-align-items-center max-w-full no-scroll">
-                    <div className="item-icons flex flex-item-noshrink flex-nowrap mt-1">
+                <div className="flex flex-nowrap items-center max-w-full overflow-hidden">
+                    <div className="item-icons flex shrink-0 flex-nowrap mt-1">
                         <ItemLabels
                             className="ml-2"
                             labels={labels}
@@ -249,12 +247,12 @@ const ItemColumnLayout = ({
                 <>
                     <div
                         className={clsx([
-                            'flex flex-nowrap flex-align-items-center item-secondline item-es-result max-w-4/5 no-scroll',
+                            'flex flex-nowrap items-center item-secondline item-es-result max-w-4/5 overflow-hidden',
                             isCompactView && 'mb-3',
                         ])}
                         aria-hidden="true"
                     >
-                        <div className="item-subject flex-item-fluid flex flex-nowrap flex-align-items-center">
+                        <div className="item-subject flex-1 flex flex-nowrap items-center">
                             <span className="inline-block max-w-full text-ellipsis" title={bodyTitle}>
                                 {resultJSX}
                             </span>

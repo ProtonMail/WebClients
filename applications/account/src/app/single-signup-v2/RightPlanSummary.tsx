@@ -36,27 +36,27 @@ const RightPlanSummary = ({
     return (
         <div className={clsx('w-full border rounded-xl p-6', className)}>
             <div className="text-rg text-bold mb-4">{c('Info').t`Summary`}</div>
-            <div className="flex gap-2 flex-nowrap mb-2 flex-align-items-center">
+            <div className="flex gap-2 flex-nowrap mb-2 items-center">
                 <div className="border rounded-lg p-2" title={title}>
                     {logo}
                 </div>
-                <div className="flex-item-fluid ">
+                <div className="flex-1 ">
                     <div className="flex gap-2">
-                        <div className="text-rg text-bold flex-item-fluid">{title}</div>
+                        <div className="text-rg text-bold flex-1">{title}</div>
                         <div className="text-rg text-bold">{price}</div>
                     </div>
-                    <div className="flex flex-item-fluid flex-align-items-center gap-1 text-sm">
+                    <div className="flex flex-1 items-center gap-1 text-sm">
                         {!free && <div className="color-weak text-ellipsis">{getDealDurationText(cycle)}</div>}
                         {(() => {
                             if (free) {
                                 return (
-                                    <div className="flex-item-fluid-auto color-weak">{c('Info').t`Free forever`}</div>
+                                    <div className="flex-auto color-weak">{c('Info').t`Free forever`}</div>
                                 );
                             }
                             if (discount > 0) {
                                 return (
                                     <>
-                                        <div className="flex-item-fluid-auto">
+                                        <div className="flex-auto">
                                             <SaveLabel percent={discount} />
                                         </div>
                                         <span className="inline-flex">

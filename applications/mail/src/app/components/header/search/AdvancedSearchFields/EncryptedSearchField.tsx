@@ -80,7 +80,7 @@ const EncryptedSearchField = ({ esIndexingProgressState }: Props) => {
             <span>
                 <Toggle
                     id="es-toggle"
-                    className="ml-auto flex-item-noshrink"
+                    className="ml-auto shrink-0"
                     checked={contentIndexingDone && esEnabled && !isEnablingContentSearch}
                     onChange={toggleEncryptedSearch}
                     disabled={showProgress}
@@ -101,12 +101,12 @@ const EncryptedSearchField = ({ esIndexingProgressState }: Props) => {
         />
     );
     const esHeader = showToggle ? (
-        <Label htmlFor="es-toggle" className="text-bold p-0 pr-4 flex flex-item-fluid flex-align-items-center w-full">
+        <Label htmlFor="es-toggle" className="text-bold p-0 pr-4 flex flex-1 items-center w-full">
             {esTitle}
             {info}
         </Label>
     ) : (
-        <div className="text-bold p-0 pr-4 flex flex-item-fluid flex-align-items-center">
+        <div className="text-bold p-0 pr-4 flex flex-1 items-center">
             {esTitle}
             {info}
         </div>
@@ -152,7 +152,7 @@ const EncryptedSearchField = ({ esIndexingProgressState }: Props) => {
         <Progress
             value={progressValue || 0}
             aria-describedby="timeRemaining"
-            className={clsx(['my-4 flex-item-fluid', isContentIndexingPaused ? 'progress-bar--disabled' : undefined])}
+            className={clsx(['my-4 flex-1', isContentIndexingPaused ? 'progress-bar--disabled' : undefined])}
         />
     );
     const disablePauseResumeButton = contentIndexingDone && !isEnablingContentSearch;
@@ -176,7 +176,7 @@ const EncryptedSearchField = ({ esIndexingProgressState }: Props) => {
     return (
         <div className="pt-0">
             <div className="flex flex-column">
-                <div className="flex flex-nowrap flex-align-items-center mb-4">
+                <div className="flex flex-nowrap items-center mb-4">
                     {esHeader}
                     {esCTA}
                 </div>
@@ -191,7 +191,7 @@ const EncryptedSearchField = ({ esIndexingProgressState }: Props) => {
                     >
                         {progressStatus}
                     </span>
-                    <div className="flex flex-justify-space-between">
+                    <div className="flex justify-space-between">
                         {progressBar}
                         {showPauseResumeButton && pauseResumeButton}
                     </div>

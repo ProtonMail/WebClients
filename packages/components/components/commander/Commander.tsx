@@ -87,7 +87,7 @@ const Commander = ({ onClose, list, ...rest }: Props) => {
             {...rest}
         >
             <div className="flex flex-column flex-nowrap h-full">
-                <div className="border-bottom commander-search-wrapper py-1 flex-item-noshrink">
+                <div className="border-bottom commander-search-wrapper py-1 shrink-0">
                     <label className="sr-only" htmlFor="commander-search-input">
                         {c('Label').t`Type a command...`}
                     </label>
@@ -144,9 +144,9 @@ const Commander = ({ onClose, list, ...rest }: Props) => {
                                                     onClose();
                                                 }}
                                                 isSelected={active === index}
-                                                className="w-full flex flex-align-items-center flex-justify-space-between text-left p-3"
+                                                className="w-full flex items-center justify-space-between text-left p-3"
                                             >
-                                                <span className="flex flex-align-items-center text-left text-pre">
+                                                <span className="flex items-center text-left text-pre">
                                                     <Icon name={item.icon} className="mr-4" />
                                                     <Mark value={value}>{item.label}</Mark>
                                                 </span>

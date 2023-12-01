@@ -16,21 +16,21 @@ interface PublicLayoutProps {
 const PublicLayout = ({ img, header, main, footer, below, className }: PublicLayoutProps) => {
     const width = '30rem';
     return (
-        <div className={clsx('flex flex-column flex-nowrap flex-align-items-center', className)}>
-            <ProtonLogo className="mb-4 mt-7 flex-item-noshrink" />
+        <div className={clsx('flex flex-column flex-nowrap items-center', className)}>
+            <ProtonLogo className="mb-4 mt-7 shrink-0" />
             <div
-                className="w-custom max-w-4/5 flex flex-column flex-item-noshrink flex-align-items-center mt-14 mb-8 border rounded-xl p-11"
+                className="w-custom max-w-4/5 flex flex-column shrink-0 items-center mt-14 mb-8 border rounded-xl p-11"
                 style={{ '--w-custom': width }}
             >
-                {img && <div className="mb-6 flex-item-noshrink">{img}</div>}
-                {header && <h1 className="h3 mb-6 text-bold flex-item-noshrink">{header}</h1>}
+                {img && <div className="mb-6 shrink-0">{img}</div>}
+                {header && <h1 className="h3 mb-6 text-bold shrink-0">{header}</h1>}
 
                 {main}
 
-                {footer && <div className="mt-8 w-full flex-item-noshrink">{footer}</div>}
+                {footer && <div className="mt-8 w-full shrink-0">{footer}</div>}
             </div>
-            <div className="flex-item-fluid" />
-            <div className="w-custom max-w-4/5 flex-item-noshrink" style={{ '--w-custom': width }}>
+            <div className="flex-1" />
+            <div className="w-custom max-w-4/5 shrink-0" style={{ '--w-custom': width }}>
                 {below}
             </div>
         </div>

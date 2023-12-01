@@ -63,7 +63,7 @@ const QuickReplyType = ({ referenceMessage, modelMessage, onChange, editorRef }:
                 className="flex mr-2 p-2 color-weak"
                 content={
                     <Icon
-                        className="flex-item-noshrink mr-custom"
+                        className="shrink-0 mr-custom"
                         style={{ '--mr-custom': 'calc(var(--space-2) * -1)' }}
                         name={iconName}
                     />
@@ -72,7 +72,7 @@ const QuickReplyType = ({ referenceMessage, modelMessage, onChange, editorRef }:
             >
                 <DropdownMenu>
                     <DropdownMenuButton
-                        className="flex flex-align-items-center text-left"
+                        className="flex items-center text-left"
                         onClick={() => handleChangeReplyType(REPLY)}
                         data-testid="quick-reply-type-dropdown-reply-button"
                     >
@@ -80,7 +80,7 @@ const QuickReplyType = ({ referenceMessage, modelMessage, onChange, editorRef }:
                         {c('Action').t`Reply`}
                     </DropdownMenuButton>
                     <DropdownMenuButton
-                        className="flex flex-align-items-center text-left"
+                        className="flex items-center text-left"
                         onClick={() => handleChangeReplyType(REPLY_ALL)}
                         data-testid="quick-reply-type-dropdown-reply-all-button"
                     >
@@ -91,7 +91,7 @@ const QuickReplyType = ({ referenceMessage, modelMessage, onChange, editorRef }:
             </SimpleDropdown>
 
             <div
-                className="flex-item-fluid text-ellipsis"
+                className="flex-1 text-ellipsis"
                 aria-level={2}
                 role="heading"
                 title={replyToString}

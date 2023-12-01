@@ -15,7 +15,7 @@ const Country = ({ server: { EntryCountry, ExitCountry } }) => {
     const exitCountryName = getLocalizedCountryByAbbr(correctExitCountry, userSettings.Locale || navigator.languages);
 
     return (
-        <div className="inline-flex-vcenter">
+        <div className="inline-flex children-self-center">
             <img width={20} className="mr-2 border" src={getFlagSvg(correctExitCountry)} alt={exitCountryName} />
             <p className="mx-1">{exitCountryName}</p>
             {isRouted && <span className="color-weak">{c('CountryInfo').t`(via ${entryCountryName})`}</span>}

@@ -82,7 +82,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                     />
                 }
                 {settings.Mode === ThemeModeSetting.Auto ? (
-                    <div className="flex-no-min-children flex-column gap-4 mt-1">
+                    <div className="flex children-min-size-auto flex-column gap-4 mt-1">
                         <ThemeSyncModeDropdown
                             mode="light"
                             list={themes}
@@ -92,7 +92,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                                 createNotification({ text: c('Success').t`Preference saved` });
                             }}
                             active={information.colorScheme === ColorScheme.Light}
-                            className="flex-item-noflex"
+                            className="flex-none"
                         />
                         <ThemeSyncModeDropdown
                             mode="dark"
@@ -103,7 +103,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                                 createNotification({ text: c('Success').t`Preference saved` });
                             }}
                             active={information.colorScheme === ColorScheme.Dark}
-                            className="flex-item-noflex"
+                            className="flex-none"
                         />
                     </div>
                 ) : (
@@ -124,7 +124,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                     .t`Try new ${BRAND_NAME} features, updates and products before they are released to the public. This will reload the application`}
             >
                 {/* additional div needed for tooltip */}
-                <div className="w-full flex-item-noshrink">
+                <div className="w-full shrink-0">
                     <QuickSettingsSection>
                         <QuickSettingsSectionRow
                             label={c('Label').t`Beta Access`}

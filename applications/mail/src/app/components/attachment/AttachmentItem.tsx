@@ -118,9 +118,9 @@ const AttachmentItem = ({
                     loading && 'message-attachmentList-item--loading',
                 ])}
             >
-                <span className="relative flex flex-item-fluid rounded message-attachmentPrimaryAction interactive-pseudo">
+                <span className="relative flex flex-1 rounded message-attachmentPrimaryAction interactive-pseudo">
                     <button
-                        className="pl-2 py-2 flex flex-item-noshrink message-attachmentTypeIcon"
+                        className="pl-2 py-2 flex shrink-0 message-attachmentTypeIcon"
                         type="button"
                         onClick={handleAction(true)}
                         tabIndex={-1}
@@ -133,16 +133,16 @@ const AttachmentItem = ({
                         )}
                     </button>
                     <button
-                        className="flex-item-fluid flex flex-nowrap outline-none--at-all"
+                        className="flex-1 flex flex-nowrap outline-none--at-all"
                         title={primaryActionTitle}
                         type="button"
                         onClick={handleAction(true)}
                         data-testid={`attachment-item:${name}--primary-action`}
                     >
-                        <span className="my-auto flex flex-align-items-baseline flex-nowrap pr-2">
+                        <span className="my-auto flex items-baseline flex-nowrap pr-2">
                             <FileNameDisplay text={name} />
                             <span
-                                className="message-attachmentSize sr-only align-baseline inline-block flex-item-noshrink ml-1"
+                                className="message-attachmentSize sr-only align-baseline inline-block shrink-0 ml-1"
                                 data-testid="attachment-item:size"
                             >
                                 {humanAttachmentSize}
@@ -166,7 +166,7 @@ const AttachmentItem = ({
                         >
                             {humanAttachmentSize}
                         </span>
-                        <span className="message-attachmentSecondaryAction-download flex flex-item-noshrink">
+                        <span className="message-attachmentSecondaryAction-download flex shrink-0">
                             {loading ? (
                                 <CircleLoader className="m-auto" size="small" />
                             ) : (

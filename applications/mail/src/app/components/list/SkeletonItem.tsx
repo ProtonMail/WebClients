@@ -41,7 +41,7 @@ const SkeletonItem = ({
         >
             <div
                 className={clsx([
-                    'flex-item-fluid flex flex-nowrap cursor-pointer opacity-on-hover-container unread',
+                    'flex-1 flex flex-nowrap cursor-pointer opacity-on-hover-container unread',
                     loading && 'item-is-loading',
                     columnLayout ? 'item-container item-container-column' : 'item-container-row',
                 ])}

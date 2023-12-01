@@ -197,7 +197,7 @@ const AddressesRecipientItem = ({
             >
                 <span className="relative interactive-pseudo-inset flex flex-row flex-nowrap">
                     {(icon || loading) && (
-                        <span className="flex pl-2 my-auto flex-item-noshrink">
+                        <span className="flex pl-2 my-auto shrink-0">
                             <EncryptionStatusIcon loading={loading} {...icon} shouldHaveHref={shouldHaveHref} />
                         </span>
                     )}
@@ -220,7 +220,7 @@ const AddressesRecipientItem = ({
                 <Tooltip title={c('Action').t`Remove`}>
                     <button
                         type="button"
-                        className="composer-addresses-item-remove flex flex-item-noshrink p-2 relative interactive-pseudo-inset"
+                        className="composer-addresses-item-remove flex shrink-0 p-2 relative interactive-pseudo-inset"
                         onClick={handleRemove}
                         data-testid={`remove-address-button-${recipient.Address}`}
                     >
@@ -237,43 +237,43 @@ const AddressesRecipientItem = ({
             >
                 <DropdownMenu>
                     <DropdownMenuButton
-                        className="text-left flex flex-nowrap flex-align-items-center"
+                        className="text-left flex flex-nowrap items-center"
                         onClick={handleCopy}
                     >
                         <Icon name="squares" className="mr-2" />
-                        <span className="flex-item-fluid my-auto">{c('Action').t`Copy address`}</span>
+                        <span className="flex-1 my-auto">{c('Action').t`Copy address`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
-                        className="text-left flex flex-nowrap flex-align-items-center"
+                        className="text-left flex flex-nowrap items-center"
                         onClick={handleDoubleClick}
                     >
                         <Icon name="pen" className="mr-2" />
-                        <span className="flex-item-fluid my-auto">{c('Action').t`Edit address`}</span>
+                        <span className="flex-1 my-auto">{c('Action').t`Edit address`}</span>
                     </DropdownMenuButton>
                     {ContactID ? (
                         <DropdownMenuButton
-                            className="text-left flex flex-nowrap flex-align-items-center"
+                            className="text-left flex flex-nowrap items-center"
                             onClick={handleClickContact}
                         >
                             <Icon name="user" className="mr-2" />
-                            <span className="flex-item-fluid my-auto">{c('Action').t`View contact details`}</span>
+                            <span className="flex-1 my-auto">{c('Action').t`View contact details`}</span>
                         </DropdownMenuButton>
                     ) : (
                         <DropdownMenuButton
-                            className="text-left flex flex-nowrap flex-align-items-center"
+                            className="text-left flex flex-nowrap items-center"
                             onClick={handleClickContact}
                         >
                             <Icon name="user-plus" className="mr-2" />
-                            <span className="flex-item-fluid my-auto">{c('Action').t`Create new contact`}</span>
+                            <span className="flex-1 my-auto">{c('Action').t`Create new contact`}</span>
                         </DropdownMenuButton>
                     )}
                     <DropdownMenuButton
-                        className="text-left flex flex-nowrap flex-align-items-center border-top"
+                        className="text-left flex flex-nowrap items-center border-top"
                         liClassName="dropdown-item--delete"
                         onClick={handleRemove}
                     >
                         <Icon name="cross-circle" className="mr-2" />
-                        <span className="flex-item-fluid my-auto">{c('Action').t`Remove`}</span>
+                        <span className="flex-1 my-auto">{c('Action').t`Remove`}</span>
                     </DropdownMenuButton>
                 </DropdownMenu>
             </ContextMenu>

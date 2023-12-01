@@ -65,7 +65,7 @@ const SimpleSidebarListItemHeader = ({
                 <h3 className="sr-only">{text}</h3>
                 <button
                     ref={buttonRef}
-                    className="flex flex-align-items-center flex-item-fluid flex-nowrap text-left ml-0 navigation-link-header-group-link"
+                    className="flex items-center flex-1 flex-nowrap text-left ml-0 navigation-link-header-group-link"
                     type="button"
                     onClick={() => onToggle(!toggle)}
                     title={title}
@@ -75,7 +75,7 @@ const SimpleSidebarListItemHeader = ({
                     data-testid={testId}
                 >
                     {hasCaret && (
-                        <span className="flex-item-noshrink">
+                        <span className="shrink-0">
                             <Icon
                                 name="chevron-down-filled"
                                 className={clsx(['navigation-icon--expand', !toggle && 'rotateZ-270'])}

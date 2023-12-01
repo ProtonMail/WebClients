@@ -6,7 +6,7 @@ interface Props {
     isSignatureVerified: boolean;
     className: string;
 }
-const EncryptedIcon = ({ isSignatureVerified, className = 'flex flex-item-centered' }: Props) => {
+const EncryptedIcon = ({ isSignatureVerified, className = 'flex' }: Props) => {
     const tooltipText = isSignatureVerified
         ? c('Tooltip').t`Encrypted data with verified digital signature`
         : c('Tooltip').t`Encrypted data`;

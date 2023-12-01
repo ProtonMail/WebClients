@@ -18,7 +18,7 @@ const DrawerSettingsView = ({ customAppSettings }: Props) => {
     };
 
     const defaultSettings = (
-        <div className="p-4 flex flex-column gap-2 scroll-if-needed">
+        <div className="p-4 flex flex-column gap-2 overflow-auto">
             <DefaultQuickSettings />
         </div>
     );

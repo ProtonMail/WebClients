@@ -48,7 +48,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
         >
             <div
                 data-testid="month-day-block"
-                className="flex-no-min-children flex-item-noshrink flex-align-items-baseline search-month-day"
+                className="flex children-min-size-auto shrink-0 items-baseline search-month-day"
                 aria-current={isToday ? `date` : undefined}
             >
                 <div
@@ -65,7 +65,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                 </div>
             </div>
             {Boolean(dailyEvents.length) && (
-                <div className="flex-item-grow search-day flex flex-nowrap flex-column pl-7 lg:pl-0 mt-2 lg:mt-0">
+                <div className="grow search-day flex flex-nowrap flex-column pl-7 lg:pl-0 mt-2 lg:mt-0">
                     {dailyEvents.map((event) => {
                         const {
                             UID,
@@ -101,7 +101,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                                 type="button"
                                 key={`${CalendarID}-${ID}-${fakeUTCStartDate}`}
                                 className={clsx(
-                                    'flex flex-nowrap search-event-cell flex-align-items-center text-left relative interactive-pseudo w-full color-norm rounded-sm pl-1',
+                                    'flex flex-nowrap search-event-cell items-center text-left relative interactive-pseudo w-full color-norm rounded-sm pl-1',
                                     isCancelled && 'text-strike',
                                     isOpen && 'bg-weak'
                                 )}
@@ -109,13 +109,13 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                             >
                                 <span
                                     className={clsx(
-                                        'search-calendar-border flex-item-noshrink my-1',
+                                        'search-calendar-border shrink-0 my-1',
                                         isUnanswered && 'isUnanswered'
                                     )}
                                     style={{ '--calendar-color': getColor(visualCalendar, Color) }}
                                 />
                                 <span
-                                    className="flex-no-min-children flex-nowrap flex-item-fluid search-event-time-details flex-column lg:flex-row"
+                                    className="flex children-min-size-auto flex-nowrap flex-1 search-event-time-details flex-column lg:flex-row"
                                     ref={isClosestToDate ? closestToDateRef : null}
                                 >
                                     <span
@@ -126,7 +126,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                                     </span>
                                     <span
                                         className={clsx(
-                                            'text-ellipsis lg:flex-item-fluid pl-2 lg:pl-0 search-event-summary text-bold'
+                                            'text-ellipsis lg:flex-1 pl-2 lg:pl-0 search-event-summary text-bold'
                                         )}
                                     >
                                         {getDisplayTitle(Summary)}

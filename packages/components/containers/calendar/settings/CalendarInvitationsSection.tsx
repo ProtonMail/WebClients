@@ -71,7 +71,7 @@ const CalendarInvitationsSection = ({ calendarUserSettings: { InviteLocale, Auto
                         />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt-2 flex flex-align-items-center">
+                <SettingsLayoutRight className="pt-2 flex items-center">
                     <Toggle
                         id="auto-import-invitations"
                         aria-describedby="auto-import-invitations"

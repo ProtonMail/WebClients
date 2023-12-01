@@ -22,8 +22,8 @@ const VpnUpgradeSection = () => {
 
     return (
         <SettingsSectionWide>
-            <Card className="flex flex-align-items-center" rounded>
-                <p className="m-0 mr-8 flex-item-fluid">
+            <Card className="flex items-center" rounded>
+                <p className="m-0 mr-8 flex-1">
                     {c('Upgrade').ngettext(
                         msgid`Upgrade to ${planName} to connect up to ${n} device to the VPN at once`,
                         `Upgrade to ${planName} to connect up to ${n} devices to the VPN at once`,

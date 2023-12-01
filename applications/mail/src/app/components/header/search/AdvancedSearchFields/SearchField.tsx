@@ -19,7 +19,7 @@ const SearchField = (
     { onSubmit, onChange, value, showSearchIcon = true, suffix, unstyled, esEnabled }: Props,
     ref: React.Ref<HTMLInputElement>
 ) => (
-    <div className="relative flex-item-fluid">
+    <div className="relative flex-1">
         <InputFieldTwo
             id="search-keyword"
             unstyled={unstyled}

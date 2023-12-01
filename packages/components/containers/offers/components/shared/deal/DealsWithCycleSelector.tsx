@@ -36,14 +36,14 @@ const DealsWithCycleSelector = (props: OfferProps) => {
                     ]}
                 />
             </div>
-            <div className="offer-wrapper gap-4 flex flex-nowrap flex-justify-center flex-column md:flex-row mt-11">
+            <div className="offer-wrapper gap-4 flex flex-nowrap justify-center flex-column md:flex-row mt-11">
                 {filteredDeals.map((deal) => (
                     <Deal key={deal.ref} {...props} deal={deal}>
                         <DealMostPopular />
                         <DealTitle />
                         <DealPrice />
                         <DealCTA />
-                        <div className="offer-features flex-item-fluid-auto w-full mb-4">
+                        <div className="offer-features flex-auto w-full mb-4">
                             <DealFeatures isExpanded={isExpanded} expand={() => setIsExpanded(true)} />
                         </div>
                         <DealPriceInfos />

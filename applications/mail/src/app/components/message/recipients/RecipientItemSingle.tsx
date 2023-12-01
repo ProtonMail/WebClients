@@ -76,7 +76,7 @@ const RecipientItemSingle = ({
             ariaLabelTitle={`${label} <${recipient.Address}>`}
             icon={
                 icon && (
-                    <span className="inline-flex flex-item-noshrink message-recipient-item-lock-icon mr-1">
+                    <span className="inline-flex shrink-0 message-recipient-item-lock-icon mr-1">
                         <EncryptionStatusIcon {...icon} />
                     </span>
                 )

@@ -28,7 +28,7 @@ const SpyTrackerIcon = (
             data-testid="privacy:tracker-icon"
             className={clsx(
                 needsMoreProtection ? 'color-weak' : 'color-primary',
-                'relative inline-flex item-spy-tracker-link flex-align-items-center',
+                'relative inline-flex item-spy-tracker-link items-center',
                 isStandaloneIcon && 'mr-0.5',
                 className
             )}
@@ -36,9 +36,9 @@ const SpyTrackerIcon = (
     );
 
     return (
-        <div className={clsx(['relative inline-flex item-spy-tracker-link flex-align-items-center', className])}>
+        <div className={clsx(['relative inline-flex item-spy-tracker-link items-center', className])}>
             {onClick ? (
-                <button ref={ref} onClick={onClick} className="flex flex-align-items-center">
+                <button ref={ref} onClick={onClick} className="flex items-center">
                     {icon}
                     {numberOfTrackers > 0 ? trackersText : undefined}
                 </button>

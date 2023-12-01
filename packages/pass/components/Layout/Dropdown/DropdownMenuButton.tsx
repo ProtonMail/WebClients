@@ -80,18 +80,18 @@ export const DropdownMenuButtonLabel: FC<DropdownMenuButtonLabelProps> = ({
 }) => {
     return (
         <div
-            className="flex flex-justify-space-between flex-align-items-center flex-nowrap gap-2 max-h-custom"
+            className="flex justify-space-between items-center flex-nowrap gap-2 max-h-custom"
             style={{ '--max-h-custom': '1.25rem' }}
         >
-            <div className={clsx(labelClassname, 'flex flex-align-items-center flex-nowrap gap-2')}>
+            <div className={clsx(labelClassname, 'flex items-center flex-nowrap gap-2')}>
                 {typeof icon === 'string' ? (
-                    <Icon name={icon} className={clsx(danger ? 'color-danger' : 'color-weak', 'flex-item-noshrink')} />
+                    <Icon name={icon} className={clsx(danger ? 'color-danger' : 'color-weak', 'shrink-0')} />
                 ) : (
                     icon
                 )}
                 <div
                     className={clsx(
-                        'flex flex-nowrap flex-item-fluid-auto gap-1',
+                        'flex flex-nowrap flex-auto gap-1',
                         ellipsis && 'text-ellipsis',
                         danger && 'color-danger'
                     )}
@@ -132,7 +132,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
     const extraPadding = quickActions !== undefined ? 'pr-3' : '';
 
     return (
-        <div className={clsx('relative flex-item-noshrink', parentClassName)} style={style}>
+        <div className={clsx('relative shrink-0', parentClassName)} style={style}>
             <DropdownMenuButtonCore
                 className={clsx(size === 'small' && 'text-sm', className)}
                 // translator : "Selected" is singular only
@@ -148,7 +148,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                     extra={
                         <div
                             className={clsx(
-                                'flex flex-align-items-center flex-item-noshrink flex-nowrap color-weak',
+                                'flex items-center shrink-0 flex-nowrap color-weak',
                                 extraPadding
                             )}
                         >
@@ -163,7 +163,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                 />
             </DropdownMenuButtonCore>
 
-            <div className="absolute flex flex-align-items-center h-full right top">
+            <div className="absolute flex items-center h-full right top">
                 {quickActions && <QuickActionsDropdown>{quickActions}</QuickActionsDropdown>}
             </div>
         </div>

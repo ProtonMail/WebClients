@@ -30,14 +30,14 @@ export default function SharedFilePage({ token, link }: Props) {
                 FooterComponent={<SharedPageFooter rootItem={link} items={[{ id: link.linkId, ...link }]} />}
             >
                 <SharedPageHeader rootItem={link} items={[{ id: link.linkId, ...link }]} className="mt-3 mb-4">
-                    <div className="w-full flex flex-align-items-center">
+                    <div className="w-full flex items-center">
                         <Breadcrumbs
                             token={token}
                             name={link.name}
                             linkId={link.linkId}
                             className="w-full lg:w-auto shared-folder-header-breadcrumbs pb-1"
                         />
-                        <div className="flex flex-item-fluid-auto lg:flex-row-reverse lg:flex-item-fluid">
+                        <div className="flex flex-auto lg:flex-row-reverse lg:flex-1">
                             <HeaderSecureLabel className="lg:ml-auto" />
                             {link.size ? <HeaderSize size={link.size} /> : null}
                         </div>

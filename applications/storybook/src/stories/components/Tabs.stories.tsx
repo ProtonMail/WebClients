@@ -161,7 +161,7 @@ export const Sandbox = () => {
             tabs={tabs}
             value={index}
             onChange={setIndex}
-            className="scroll-if-needed max-h-custom"
+            className="overflow-auto max-h-custom"
             {...selectedToggles.reduce<{ [key: string]: boolean }>((acc, value, i) => {
                 acc[toggles[i]] = value;
                 return acc;

@@ -1,6 +1,6 @@
 .folder-tree {
 	@extend .border;
-	@extend .scroll-if-needed;
+	@extend .overflow-auto;
 
 	border-radius: var(--border-radius-md);
 	block-size: 28em;
