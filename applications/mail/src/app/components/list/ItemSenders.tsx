@@ -62,7 +62,7 @@ const ItemSenders = ({ element, conversationMode, loading, unread, displayRecipi
                 if (isLastItem && index === 0 && !!sender.recipient?.IsProton) {
                     return (
                         <span className="inline-flex flex-nowrap max-w-full" key={`${recipientLabel}-${index}`}>
-                            <span className="flex-item-fluid text-ellipsis">
+                            <span className="flex-1 text-ellipsis">
                                 {highlightData
                                     ? highlightMetadata(recipientLabel, unread, true).resultJSX
                                     : recipientLabel}{' '}

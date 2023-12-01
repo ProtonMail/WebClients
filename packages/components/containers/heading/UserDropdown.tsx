@@ -256,10 +256,10 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                 }}
             >
                 <DropdownMenu className="pb-4">
-                    <div className="px-4 py-3 flex flex-nowrap gap-4 flex-justify-space-between text-sm">
+                    <div className="px-4 py-3 flex flex-nowrap gap-4 justify-space-between text-sm">
                         {planName ? (
                             <span
-                                className="text-semibold block flex-item-noshrink"
+                                className="text-semibold block shrink-0"
                                 data-testid="userdropdown:label:plan-name"
                             >
                                 {planName}
@@ -289,14 +289,14 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                     </div>
 
                     {!isNarrow && (
-                        <div className="px-4 pb-4 text-sm flex flex-nowrap flex-align-items-center">
+                        <div className="px-4 pb-4 text-sm flex flex-nowrap items-center">
                             <span
-                                className="my-auto text-sm rounded border p-1 inline-block relative flex flex-item-noshrink user-initials"
+                                className="my-auto text-sm rounded border p-1 inline-block relative flex shrink-0 user-initials"
                                 aria-hidden="true"
                             >
                                 <span className="m-auto">{initials}</span>
                             </span>
-                            <div className="flex-item-fluid ml-2">
+                            <div className="flex-1 ml-2">
                                 {nameToDisplay ? (
                                     <div
                                         className="text-ellipsis"
@@ -308,7 +308,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                                 ) : null}
 
                                 {Email ? (
-                                    <div className="flex flex-nowrap flex-justify-space-between flex-align-items-center">
+                                    <div className="flex flex-nowrap justify-space-between items-center">
                                         <Tooltip title={c('Action').t`Copy address`}>
                                             <button
                                                 type="button"
@@ -394,12 +394,12 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                                             app={app}
                                             appToLinkTo={appToLinkTo}
                                             user={user}
-                                            className="flex flex-nowrap flex-align-items-center color-weak text-no-decoration border-weak border-bottom interactive-pseudo relative py-1"
+                                            className="flex flex-nowrap items-center color-weak text-no-decoration border-weak border-bottom interactive-pseudo relative py-1"
                                         >
                                             <Logo
                                                 appName={appToLinkTo}
                                                 variant="glyph-only"
-                                                className="flex-item-noshrink mr-2"
+                                                className="shrink-0 mr-2"
                                             />
                                             <span className={clsx(current && 'color-norm text-semibold')} aria-hidden>
                                                 {appToLinkToName}
@@ -466,7 +466,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                             </div>
                         )}
 
-                        <div className="flex flex-nowrap mx-auto flex-justify-center">
+                        <div className="flex flex-nowrap mx-auto justify-center">
                             <a
                                 className="px-1 link link-focus color-weak text-no-decoration on-hover-color-norm"
                                 href={
@@ -479,7 +479,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                             >
                                 {c('Action').t`Help`}
                             </a>
-                            <span className="flex-align-self-center color-weak" aria-hidden="true">
+                            <span className="self-center color-weak" aria-hidden="true">
                                 •
                             </span>
                             <button

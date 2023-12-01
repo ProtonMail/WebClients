@@ -772,7 +772,7 @@ const SubscriptionContainer = ({
             )}
             {model.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && (
                 <div className="subscriptionCheckout-top-container">
-                    <div className="flex-item-fluid w-full md:w-auto pr-4 md:pr-0 lg:pr-6 pt-6">
+                    <div className="flex-1 w-full md:w-auto pr-4 md:pr-0 lg:pr-6 pt-6">
                         <div className="max-w-custom" style={{ '--max-w-custom': '50em' }}>
                             <PlanCustomization
                                 loading={loadingCheck}
@@ -824,7 +824,7 @@ const SubscriptionContainer = ({
             {model.step === SUBSCRIPTION_STEPS.CHECKOUT && (
                 <>
                     <div className="subscriptionCheckout-top-container">
-                        <div className="flex-item-fluid w-full md:w-auto pr-4 md:pr-0 lg:pr-6 pt-6">
+                        <div className="flex-1 w-full md:w-auto pr-4 md:pr-0 lg:pr-6 pt-6">
                             <div
                                 className="mx-auto max-w-custom subscriptionCheckout-options"
                                 style={{ '--max-w-custom': '37em' }}
@@ -876,7 +876,7 @@ const SubscriptionContainer = ({
                                                     {model.planIDs[PLANS.VPN_PASS_BUNDLE] &&
                                                         !hasPassPlus(subscription) && (
                                                             <Button
-                                                                className="flex flex-nowrap flex-align-items-center flex-justify-center"
+                                                                className="flex flex-nowrap items-center justify-center"
                                                                 fullWidth
                                                                 color="weak"
                                                                 shape="outline"
@@ -969,7 +969,7 @@ const SubscriptionContainer = ({
                                     gift={
                                         <>
                                             {couponCode && (
-                                                <div className="flex flex-align-items-center mb-1">
+                                                <div className="flex items-center mb-1">
                                                     <Icon name="gift" className="mr-2 mb-1" />
                                                     <Tooltip title={couponDescription}>
                                                         <code>{couponCode.toUpperCase()}</code>
@@ -1001,7 +1001,7 @@ const SubscriptionContainer = ({
             )}
             {model.step === SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION && (
                 <div className="subscriptionCheckout-top-container">
-                    <div className="flex-item-fluid w-full md:w-auto pr-4 md:pr-0 lg:pr-6 pt-6">
+                    <div className="flex-1 w-full md:w-auto pr-4 md:pr-0 lg:pr-6 pt-6">
                         <h2 className="text-2xl text-bold mb-6">{c('Label').t`Organization size`}</h2>
                         <PlanCustomization
                             loading={blockAccountSizeSelector}
@@ -1099,7 +1099,7 @@ const SubscriptionContainer = ({
                                 gift={
                                     <>
                                         {couponCode && (
-                                            <div className="flex flex-align-items-center mb-1">
+                                            <div className="flex items-center mb-1">
                                                 <Icon name="gift" className="mr-2 mb-1" />
                                                 <Tooltip title={couponDescription}>
                                                     <code>{couponCode.toUpperCase()}</code>

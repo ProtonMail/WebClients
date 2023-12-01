@@ -60,7 +60,7 @@ const GiftCodeSection = () => {
                     placeholder={c('Placeholder').t`Add gift code`}
                     onChange={handleChange}
                 />
-                <div className="flex-item-noshrink">
+                <div className="shrink-0">
                     <Button color="norm" type="submit" data-testid="submitCodeBtn" loading={loading}>
                         {c('Action').t`Submit`}
                     </Button>

@@ -104,8 +104,8 @@ const CalendarMemberRow = ({
     return (
         <TableRow>
             <TableCell>
-                <div className="flex flex-nowrap flex-align-items-center gap-2 w-full md:w-auto">
-                    <Avatar color="weak" className="flex-item-noshrink">
+                <div className="flex flex-nowrap items-center gap-2 w-full md:w-auto">
+                    <Avatar color="weak" className="shrink-0">
                         {getInitials(name)}
                     </Avatar>
 
@@ -149,9 +149,9 @@ const CalendarMemberRow = ({
                         size="small"
                         loading={isLoadingDelete}
                         onClick={handleDelete}
-                        className="inline-flex flex-align-items-center flex-nowrap"
+                        className="inline-flex items-center flex-nowrap"
                     >
-                        <Icon name="trash" alt="" className="mr-1 flex-item-noshrink" />
+                        <Icon name="trash" alt="" className="mr-1 shrink-0" />
                         <span>{deleteLabel}</span>
                     </Button>
                 </div>

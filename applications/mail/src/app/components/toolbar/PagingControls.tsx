@@ -39,7 +39,7 @@ const PagingControls = ({
     const useLoadMore = isSearch && !loading && dbExists && esEnabled && isCacheLimited && isSearchPartial;
 
     const loadMore = isSearching ? (
-        <div className="flex flex-justify-center">
+        <div className="flex justify-center">
             <EllipsisLoader />
         </div>
     ) : (
@@ -63,7 +63,7 @@ const PagingControls = ({
     );
 
     return (
-        <div className="flex flex-item-noshrink">
+        <div className="flex shrink-0">
             <ToolbarButton
                 disabled={loading || page <= 1}
                 title={c('Action').t`Previous page`}
@@ -98,7 +98,7 @@ const PagingControls = ({
                                             data-testid={`toolbar:page-number-${pageNumber}`}
                                             className={clsx(['flex flex-row'])}
                                         >
-                                            <span className="text-left flex-item-fluid">{pageNumber}</span>
+                                            <span className="text-left flex-1">{pageNumber}</span>
                                             {active ? <Icon name="checkmark" className="mt-0.5" /> : null}
                                         </DropdownMenuButton>
                                     );

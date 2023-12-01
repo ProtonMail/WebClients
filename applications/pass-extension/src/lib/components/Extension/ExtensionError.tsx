@@ -11,7 +11,7 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
  * `ui-red` themes because we don't currently
  * support weak & danger|warning buttons */
 export const PromptForReload: VFC<{ message: string }> = ({ message }) => (
-    <div key="prompt-for-reload" className="mt-12 w-full flex flex-column flex-align-items-center gap-2 anime-fade-in">
+    <div key="prompt-for-reload" className="mt-12 w-full flex flex-column items-center gap-2 anime-fade-in">
         <span className="block text-sm text-weak">{message}</span>
 
         <Button pill shape="solid" color="weak" className="ui-red w-full" onClick={() => browser.runtime.reload()}>

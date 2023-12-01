@@ -37,9 +37,9 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
         <ModalTwo data-testid="utmTrackerModal:trackers" {...rest}>
             <ModalTwoHeader title={utmTrackerText} data-testid="trackersModal:title" />
             <ModalTwoContent>
-                <div className="border rounded-lg mb-4 p-4 flex flex-nowrap flex-align-items-center">
-                    <img src={cleanLinkImg} alt="" className="flex-item-noshrink" />
-                    <p className="color-weak flex-item-fluid pl-4 my-0" data-testid="trackersModal:description">
+                <div className="border rounded-lg mb-4 p-4 flex flex-nowrap items-center">
+                    <img src={cleanLinkImg} alt="" className="shrink-0" />
+                    <p className="color-weak flex-1 pl-4 my-0" data-testid="trackersModal:description">
                         {c('Info')
                             .t`We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.`}
                         <br />
@@ -52,11 +52,11 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                         <div key={`${tracker.originalURL}`} className="mb-4">
                             <div className="flex flex-column mb-1">
                                 <span className="color-weak text-sm">{c('Label').t`Original link`}</span>
-                                <div className="flex flex-nowrap group-hover-opacity-container max-w-full flex-align-items-center">
-                                    <div className="text-ellipsis w-full flex-item-fluid" title={tracker.originalURL}>
+                                <div className="flex flex-nowrap group-hover-opacity-container max-w-full items-center">
+                                    <div className="text-ellipsis w-full flex-1" title={tracker.originalURL}>
                                         {tracker.originalURL}
                                     </div>
-                                    <div className="group-hover:opacity-100 group-hover:opacity-100-no-width flex-item-noshrink">
+                                    <div className="group-hover:opacity-100 group-hover:opacity-100-no-width shrink-0">
                                         <Tooltip title={c('Label').t`Open in a new tab`}>
                                             <Button
                                                 icon
@@ -73,11 +73,11 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                             </div>
                             <div className="flex flex-column">
                                 <span className="color-primary text-sm">{c('Label').t`Cleaned`}</span>
-                                <div className="flex flex-nowrap group-hover-opacity-container max-w-full flex-align-items-center">
-                                    <div className="text-ellipsis w-full flex-item-fluid" title={tracker.cleanedURL}>
+                                <div className="flex flex-nowrap group-hover-opacity-container max-w-full items-center">
+                                    <div className="text-ellipsis w-full flex-1" title={tracker.cleanedURL}>
                                         {tracker.cleanedURL}
                                     </div>
-                                    <div className="group-hover:opacity-100 group-hover:opacity-100-no-width flex-item-noshrink">
+                                    <div className="group-hover:opacity-100 group-hover:opacity-100-no-width shrink-0">
                                         <Tooltip title={c('Label').t`Open in a new tab`}>
                                             <Button
                                                 icon

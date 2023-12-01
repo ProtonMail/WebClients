@@ -42,7 +42,7 @@ const UpsellPanel = ({ title, features, children, ctas = [], isRecommended }: Up
         <Panel className={clsx(isRecommended ? 'border-primary border-recommended' : 'border-strong')} title={title}>
             {/* `Recommended` label */}
             {isRecommended && (
-                <label className="recommended-label absolute color-invert bg-primary rounded-full px-2 py-1 flex flex-align-items-center">
+                <label className="recommended-label absolute color-invert bg-primary rounded-full px-2 py-1 flex items-center">
                     <Icon name="star" className="mr-1" />
                     {c('upsell panel').t`Recommended`}
                 </label>

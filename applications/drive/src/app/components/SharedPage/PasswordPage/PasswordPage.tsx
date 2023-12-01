@@ -25,12 +25,12 @@ export default function PasswordPage({ submitPassword }: Props) {
 
     return (
         <SharedPageLayout>
-            <div className="flex flex-item-fluid flex-align-items-center py-7 mb-14">
+            <div className="flex flex-1 items-center py-7 mb-14">
                 <div
                     className="password-page--form-container ui-standard w-full relative shadow-lifted max-w-custom mx-auto px-8 py-11 rounded"
                     style={{ '--max-w-custom': '30rem' }}
                 >
-                    <div className="flex flex-justify-center pb-7">
+                    <div className="flex justify-center pb-7">
                         <span className="password-page--icon-container rounded p-4">
                             <Icon name="key-skeleton" className="color-primary" size={28} />
                         </span>

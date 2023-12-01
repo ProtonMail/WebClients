@@ -179,7 +179,7 @@ const ContactsWidgetGroupsContainer = ({
 
     return (
         <div className="flex flex-column flex-nowrap h-full">
-            <div className="contacts-widget-search-container flex-item-noshrink">
+            <div className="contacts-widget-search-container shrink-0">
                 <label htmlFor="id_contact-widget-search" className="sr-only">{c('Placeholder')
                     .t`Search for group name`}</label>
                 <SearchInput
@@ -193,7 +193,7 @@ const ContactsWidgetGroupsContainer = ({
                     {c('Info').ngettext(msgid`${groupCounts} group found`, `${groupCounts} groups found`, groupCounts)}
                 </span>
             </div>
-            <div className="contacts-widget-toolbar py-4 border-bottom border-weak flex-item-noshrink">
+            <div className="contacts-widget-toolbar py-4 border-bottom border-weak shrink-0">
                 <ContactsWidgetGroupsToolbar
                     allChecked={allChecked}
                     selected={selectedIDs}
@@ -209,7 +209,7 @@ const ContactsWidgetGroupsContainer = ({
                     isDrawer={isDrawer}
                 />
             </div>
-            <div className="flex-item-fluid w-full">
+            <div className="flex-1 w-full">
                 {loading ? (
                     <div className="flex h-full">
                         <CircleLoader className="m-auto color-primary" size="large" />

@@ -79,21 +79,21 @@ const FullDayEvent = ({
     })();
 
     const content = (
-        <div className="flex flex-nowrap flex-item-fluid flex-align-items-center">
+        <div className="flex flex-nowrap flex-1 items-center">
             {!isAllDay ? (
-                <Icon className="mr-2 flex-item-noshrink calendar-dayeventcell-circle" size={16} name="circle-filled" />
+                <Icon className="mr-2 shrink-0 calendar-dayeventcell-circle" size={16} name="circle-filled" />
             ) : null}
 
-            {isOutsideStart ? <Icon name="chevron-left" size={12} className="flex-item-noshrink" /> : null}
+            {isOutsideStart ? <Icon name="chevron-left" size={12} className="shrink-0" /> : null}
 
             {eventReadError ? <Icon name="lock-filled" className="calendar-dayeventcell-lock-icon" /> : null}
 
-            <span data-testid="calendar-view:all-day-event" className="flex-item-fluid text-ellipsis">
+            <span data-testid="calendar-view:all-day-event" className="flex-1 text-ellipsis">
                 {startTimeString && <span className="calendar-dayeventcell-time">{startTimeString}</span>}
                 <span className="calendar-dayeventcell-title">{titleString}</span>
             </span>
 
-            {isOutsideEnd ? <Icon name="chevron-right" size={12} className="flex-item-noshrink" /> : null}
+            {isOutsideEnd ? <Icon name="chevron-right" size={12} className="shrink-0" /> : null}
         </div>
     );
 

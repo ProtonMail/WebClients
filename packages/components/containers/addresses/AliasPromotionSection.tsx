@@ -45,7 +45,7 @@ const AliasPromotionSection = () => {
                     <Icon name="cross-big" />
                 </Button>
             </div>
-            <div className="flex flex-column flex-align-items-center text-center rounded-lg p-6 alias-promotion-section">
+            <div className="flex flex-column items-center text-center rounded-lg p-6 alias-promotion-section">
                 <h2 className="text-bold text-xl mb-2">{title}</h2>
                 <p className="mt-0 mb-4 max-w-custom" style={{ '--max-w-custom': '70ch' }}>
                     {/* translator: With Proton Pass you can generate unique aliases to hide your identity and forward emails to your main inbox. */}

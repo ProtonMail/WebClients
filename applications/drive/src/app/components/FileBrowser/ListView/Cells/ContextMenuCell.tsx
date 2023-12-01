@@ -15,7 +15,7 @@ export const ContextMenuCell = ({ item }: { item: FileBrowserBaseItem }) => {
         contextMenuControls.isOpen && selectionControls?.selectedItemIds.includes(item.id);
     return (
         <TableCell
-            className="m-0 file-browser-list--icon-column file-browser-list--context-menu-column flex flex-align-items-center"
+            className="m-0 file-browser-list--icon-column file-browser-list--context-menu-column flex items-center"
             data-testid="column-options"
         >
             <Button

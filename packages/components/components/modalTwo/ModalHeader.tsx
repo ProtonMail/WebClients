@@ -64,8 +64,8 @@ const ModalHeader = ({
         <div className="modal-two-header">
             <div
                 className={clsx(
-                    'flex flex-nowrap flex-item-noshrink flex-align-items-start',
-                    title ? 'flex-justify-space-between' : 'flex-justify-end'
+                    'flex flex-nowrap shrink-0 items-start',
+                    title ? 'justify-space-between' : 'justify-end'
                 )}
                 {...rest}
             >
@@ -85,7 +85,7 @@ const ModalHeader = ({
                     </div>
                 )}
 
-                <div className="modal-two-header-actions flex flex-item-noshrink flex-nowrap flex-align-items-stretch">
+                <div className="modal-two-header-actions flex shrink-0 flex-nowrap items-stretch">
                     {actions && (
                         <>
                             {actionsArray.map((action) =>
@@ -98,7 +98,7 @@ const ModalHeader = ({
                     {hasClose && (
                         <Tooltip title={c('Action').t`Close`}>
                             <Button
-                                className="flex-item-noshrink"
+                                className="shrink-0"
                                 icon
                                 shape="ghost"
                                 data-testid="modal:close"

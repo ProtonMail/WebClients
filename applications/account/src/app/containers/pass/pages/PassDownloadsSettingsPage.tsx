@@ -22,8 +22,8 @@ const UpgradeBanner = ({ className }: { className?: string }) => {
     const passPlusPlanName = passPlan.Title;
 
     return (
-        <Card className={clsx('flex flex-align-items-center gap-2', className)} rounded>
-            <span className="flex-item-fluid">
+        <Card className={clsx('flex items-center gap-2', className)} rounded>
+            <span className="flex-1">
                 {
                     // translator: Variable here is a plan name
                     c('Upgrade').t`Upgrade to ${passPlusPlanName} to get unlimited hide-my-email aliases`

@@ -24,7 +24,7 @@ const PaymentMethodSelector = ({ method, lastUsedMethod, options, onChange, forc
                             htmlFor={value}
                             key={value}
                             className={clsx([
-                                'py-2 flex flex-nowrap flex-align-items-center',
+                                'py-2 flex flex-nowrap items-center',
                                 lastUsedMethod?.value === value && 'border-bottom',
                             ])}
                         >
@@ -63,8 +63,8 @@ const PaymentMethodSelector = ({ method, lastUsedMethod, options, onChange, forc
             {options.flatMap((option) => {
                 const child = (
                     <Option key={option.value} value={option.value} title={option.text}>
-                        <span className="inline-flex max-w-full flex-nowrap flex-items-align-center flex-justify-start">
-                            {option.icon && <Icon className="mr-2 my-auto flex-item-noshrink" name={option.icon} />}
+                        <span className="inline-flex max-w-full flex-nowrap justify-start">
+                            {option.icon && <Icon className="mr-2 my-auto shrink-0" name={option.icon} />}
                             <span className="text-ellipsis">{option.text}</span>
                         </span>
                     </Option>

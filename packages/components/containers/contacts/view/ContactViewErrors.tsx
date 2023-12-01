@@ -89,9 +89,9 @@ const ContactViewErrors = ({
 
     if (error instanceof Error) {
         return (
-            <div className="bg-danger rounded p-2 mt-4 flex flex-nowrap flex-align-items-center">
-                <Icon name="exclamation-circle" className="flex-item-noshrink my-auto" />
-                <span className="flex-item-fluid py-2">
+            <div className="bg-danger rounded p-2 mt-4 flex flex-nowrap items-center">
+                <Icon name="exclamation-circle" className="shrink-0 my-auto" />
+                <span className="flex-1 py-2">
                     {c('Warning').t`The contact data is corrupted and cannot be displayed.`}
                 </span>
             </div>
@@ -124,9 +124,9 @@ const ContactViewErrors = ({
     };
 
     return (
-        <div className={clsx([bgColor, 'rounded p-2 mt-4 flex flex-nowrap flex-align-items-center'])}>
-            <Icon name="exclamation-circle" className="flex-item-noshrink my-auto" />
-            <span className="flex-item-fluid py-2">
+        <div className={clsx([bgColor, 'rounded p-2 mt-4 flex flex-nowrap items-center'])}>
+            <Icon name="exclamation-circle" className="shrink-0 my-auto" />
+            <span className="flex-1 py-2">
                 <span className="mr-2">{text}</span>
                 <Href
                     className="underline inline-block color-inherit"
@@ -134,7 +134,7 @@ const ContactViewErrors = ({
                 >{c('Link').t`Learn more`}</Href>
             </span>
             {!isPreview && (
-                <span className="flex-item-noshrink flex">
+                <span className="shrink-0 flex">
                     <Button size="small" shape="outline" onClick={handleAction}>
                         {buttonText}
                     </Button>

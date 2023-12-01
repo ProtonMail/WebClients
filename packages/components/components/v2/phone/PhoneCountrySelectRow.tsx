@@ -23,9 +23,9 @@ const CountrySelectRow = ({ data, style, value, onChange }: Props, ref?: Ref<HTM
                     onChange(data);
                 }}
             >
-                <img className="flex-item-noshrink" alt="" src={data.countryFlag} width="30" height="20" />
-                <span className="flex-item-fluid pl-2 text-ellipsis">{data.countryName}</span>
-                <span className="flex-item-noshrink text-bold">+{data.countryCallingCode}</span>
+                <img className="shrink-0" alt="" src={data.countryFlag} width="30" height="20" />
+                <span className="flex-1 pl-2 text-ellipsis">{data.countryName}</span>
+                <span className="shrink-0 text-bold">+{data.countryCallingCode}</span>
             </DropdownMenuButton>
         </div>
     );

@@ -121,14 +121,14 @@ const MailOnboardingModal = (props: Props) => {
                 <OnboardingContent title={c('Onboarding modal').t`Congratulations on choosing privacy`}>
                     <div className="flex gap-y-4 pt-4 sm:gap-y-8 sm:pt-6">
                         {privacyFeature.map(({ title, description, imgSrc }, index) => (
-                            <div className="flex flex-row gap-4 flex-align-items-center" key={index}>
+                            <div className="flex flex-row gap-4 items-center" key={index}>
                                 <img
-                                    className={clsx('w-custom', isNarrow && 'flex-align-self-start')}
+                                    className={clsx('w-custom', isNarrow && 'self-start')}
                                     style={{ '--w-custom': isNarrow ? '3rem' : '5rem' }}
                                     src={imgSrc}
                                     alt=""
                                 />
-                                <div className="flex-item-fluid flex gap-0">
+                                <div className="flex-1 flex gap-0">
                                     <h2 className="text-rg text-bold">{title}</h2>
                                     <p className="m-0 text-weak">{description}</p>
                                 </div>
@@ -160,7 +160,7 @@ const MailOnboardingModal = (props: Props) => {
                     title={c('Onboarding modal').t`Automatically forward emails`}
                     description={c('Onboarding modal').t`Forward Gmail messages to your inbox.`}
                 >
-                    <div className="flex gap-1 flex-justify-center">
+                    <div className="flex gap-1 justify-center">
                         <div className="text-sm w-full h-full">
                             <GmailSyncModalAnimation reduceHeight />
                         </div>

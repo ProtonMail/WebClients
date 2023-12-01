@@ -47,7 +47,7 @@ const Notifications = ({
                 const uniqueId = index === 0 ? id : `${id}-${index}`;
 
                 return (
-                    <div className="mb-2 flex flex-nowrap flex-align-items-center" key={notification.id}>
+                    <div className="mb-2 flex flex-nowrap items-center" key={notification.id}>
                         <NotificationInput
                             id={uniqueId}
                             hasWhen={hasWhen}
@@ -60,7 +60,7 @@ const Notifications = ({
                         <Tooltip title={removeNotificationText}>
                             <ButtonLike
                                 data-testid="delete-notification"
-                                className="flex flex-item-noshrink ml-2"
+                                className="flex shrink-0 ml-2"
                                 disabled={disabled}
                                 onClick={() => onChange(removeItem(notifications, index))}
                                 icon
@@ -68,7 +68,7 @@ const Notifications = ({
                                 shape="ghost"
                                 color="norm"
                             >
-                                <Icon name="trash" className="flex-item-noshrink" />
+                                <Icon name="trash" className="shrink-0" />
                                 <span className="sr-only">{removeNotificationText}</span>
                             </ButtonLike>
                         </Tooltip>
@@ -91,8 +91,8 @@ const Notifications = ({
                     }
                 >
                     {addIcon ? (
-                        <span className="flex flex-nowrap w-full flex-align-items-center">
-                            <Icon name={addIcon} className="mr-2 flex-item-centered-vert" />
+                        <span className="flex flex-nowrap w-full items-center">
+                            <Icon name={addIcon} className="mr-2 self-center my-auto" />
                             {addNotificationText}
                         </span>
                     ) : (

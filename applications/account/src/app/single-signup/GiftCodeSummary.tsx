@@ -41,14 +41,14 @@ const GiftCodeSummary = ({ coupon, onApplyCode, onRemoveCode }: Props) => {
         };
 
         return (
-            <div className="flex flex-align-items-center gap-2 my-1 text-sm">
+            <div className="flex items-center gap-2 my-1 text-sm">
                 <div>
-                    <span className="flex flex-align-items-center rounded-sm bg-success px-1 py-0.5 text-semibold">
+                    <span className="flex items-center rounded-sm bg-success px-1 py-0.5 text-semibold">
                         <span className="mr-0.5">{code}</span>
                         {removingCode ? <CircleLoader /> : <Icon onClick={handleRemoveCode} name="cross" />}
                     </span>
                 </div>
-                <div className="color-weak flex-item-fluid-auto">{description}</div>
+                <div className="color-weak flex-auto">{description}</div>
                 <Price currency={currency} className="color-weak">
                     {discount}
                 </Price>
@@ -72,8 +72,8 @@ const GiftCodeSummary = ({ coupon, onApplyCode, onRemoveCode }: Props) => {
 
     if (showInput) {
         return (
-            <div className="flex flex-nowrap flex-align-items-center flex-align-items-start">
-                <div className="pr-2 flex-item-fluid">
+            <div className="flex flex-nowrap items-center items-start">
+                <div className="pr-2 flex-1">
                     <Input
                         value={inputValue}
                         onValue={setInputValue}

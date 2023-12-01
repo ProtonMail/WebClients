@@ -86,7 +86,7 @@ const MemberAddresses = ({ addresses = [] }: MemberAddressesProps) => {
                         color="norm"
                         shape="ghost"
                         size="small"
-                        className="flex flex-align-items-center"
+                        className="flex items-center"
                     >
                         <span className="md:hidden">
                             {

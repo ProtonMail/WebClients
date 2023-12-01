@@ -129,12 +129,12 @@ const FilterConditionsFormRow = ({
             {i > 0 && <span className="mx-2 text-sm">{c('Label').t`or`}</span>}
             <span
                 key={`condition-${conditionIndex}-token-${i}`}
-                className="inline-flex flex-row flex-align-items-center mb-2 condition-token"
+                className="inline-flex flex-row items-center mb-2 condition-token"
             >
                 <span className="text-ellipsis text-no-decoration" title={token}>
                     {token}
                 </span>
-                <button type="button" className="flex flex-item-noshrink ml-2" onClick={() => onRemoveToken(i)}>
+                <button type="button" className="flex shrink-0 ml-2" onClick={() => onRemoveToken(i)}>
                     <Icon name="cross" size={11} />
                     <span className="sr-only">{c('Action').t`Remove this label`}</span>
                 </button>
@@ -144,9 +144,9 @@ const FilterConditionsFormRow = ({
 
     const renderGenericCondition = () => {
         return (
-            <div className="mt-4 flex-item-fluid">
+            <div className="mt-4 flex-1">
                 <div className="flex flex-nowrap">
-                    <span className="flex-item-fluid pr-4">
+                    <span className="flex-1 pr-4">
                         <Input
                             onChange={onChangeInputValue}
                             type="text"
@@ -284,7 +284,7 @@ const FilterConditionsFormRow = ({
                     )}
                 </div>
                 {displayDelete && (
-                    <div className="flex-item-noshrink">
+                    <div className="shrink-0">
                         <Tooltip title={c('Action').t`Delete`}>
                             <Button onClick={() => handleDelete(conditionIndex)} icon>
                                 <Icon name="trash" alt={c('Action').t`Delete`} />

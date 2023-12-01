@@ -84,7 +84,7 @@ const ContactGroupRow = ({
             data-shortcut-target="contact-container"
             data-testid={`group-item:${group.Name}`}
         >
-            <div className="flex flex-nowrap w-full h-full my-auto flex-align-items-start">
+            <div className="flex flex-nowrap w-full h-full my-auto items-start">
                 <ItemCheckbox
                     ID={ID}
                     name={Name}
@@ -93,7 +93,7 @@ const ContactGroupRow = ({
                     iconName="users"
                     color={checked ? colors[2] : Color}
                 />
-                <div className="flex-item-fluid ml-2 conversation-titlesender">
+                <div className="flex-1 ml-2 conversation-titlesender">
                     <ContactRowItemFirstLine ID={ID} Name={Name} />
 
                     <ContactRowItemSecondLine title={title}>

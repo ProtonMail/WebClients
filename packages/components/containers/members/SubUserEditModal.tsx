@@ -178,7 +178,7 @@ const SubUserEditModal = ({ member, mode, ...rest }: Props) => {
                 )}
 
                 {hasVPN && isDefault ? (
-                    <div className="flex flex-align-center mb-5">
+                    <div className="flex mb-5">
                         <label className="text-semibold mr-4" htmlFor="vpn-toggle">
                             {c('Label for new member').t`VPN connections`}
                         </label>
@@ -191,7 +191,7 @@ const SubUserEditModal = ({ member, mode, ...rest }: Props) => {
                 ) : null}
 
                 {canMakePrivate && isDefault && (
-                    <div className="flex flex-align-center mb-6">
+                    <div className="flex mb-6">
                         <label className="text-semibold mr-4" htmlFor="private-toggle">
                             {c('Label for new member').t`Private`}
                         </label>
@@ -203,7 +203,7 @@ const SubUserEditModal = ({ member, mode, ...rest }: Props) => {
                     </div>
                 )}
                 {(canMakeAdmin || canRevokeAdmin) && (
-                    <div className="flex flex-align-items-center mb-6">
+                    <div className="flex items-center mb-6">
                         <label className={clsx(['text-semibold', isVpnB2B ? 'mr-1' : 'mr-4'])} htmlFor="admin-toggle">
                             {c('Label for new member').t`Admin`}
                         </label>

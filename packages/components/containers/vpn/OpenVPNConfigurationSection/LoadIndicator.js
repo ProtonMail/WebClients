@@ -11,7 +11,7 @@ const LoadIndicator = ({ server: { Load = 0 } }) => {
     return (
         <span className="min-w-custom hidden md:inline" style={{ '--min-w-custom': '5em' }}>
             <Tooltip title={c('Info').t`Server load`}>
-                <div className="flex inline-flex-vcenter">
+                <div className="flex inline-flex children-self-center">
                     <CircularProgress progress={Load} size={22} className={className}>
                         <g className="circle-chart-info">
                             <rect x="17" y="14" width="1.55" height="9.1" className="circle-chart-percent" />

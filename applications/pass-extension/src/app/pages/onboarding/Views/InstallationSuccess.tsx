@@ -73,11 +73,11 @@ export const InstallationSuccess: VFC = () => {
         <>
             <ExtensionHead title={c('Title').t`Thank you for installing ${PASS_APP_NAME}`} />
             <div className="pass-onboarding ui-prominent w-full min-h-custom mw" style={{ '--min-h-custom': '100vh' }}>
-                <div className="m-auto p-14 color-norm flex flex-justify-center">
+                <div className="m-auto p-14 color-norm flex justify-center">
                     <div className="pass-onboarding--gradient"></div>
                     <div className="flex flex-column">
                         <div className="flex flex-column">
-                            <div className="pt-2 flex flex-align-items-center gap-2 mb-4">
+                            <div className="pt-2 flex items-center gap-2 mb-4">
                                 {
                                     <img
                                         src="/assets/protonpass-icon.svg"
@@ -92,12 +92,12 @@ export const InstallationSuccess: VFC = () => {
                                 .jt`Welcome to your new password manager!`}</h1>
                         </div>
 
-                        <div className="flex flex-align-items-center gap-2 mb-4">
+                        <div className="flex items-center gap-2 mb-4">
                             <span className="text-bold">Step {isPinned ? 2 : 1} of 2</span>
-                            <hr className="pass-installation--white-separator my-2 flex flex-item-fluid-auto" />
+                            <hr className="pass-installation--white-separator my-2 flex flex-auto" />
                         </div>
 
-                        <div className="mx-auto flex flex-justify-center flex-nowrap flex-column lg:flex-row gap-12">
+                        <div className="mx-auto flex justify-center flex-nowrap flex-column lg:flex-row gap-12">
                             {!isPinned && (
                                 <>
                                     <div className="flex flex-nowrap flex-column">
@@ -111,7 +111,7 @@ export const InstallationSuccess: VFC = () => {
                                         <div className="mb-1">
                                             <ol className="unstyled m-0">
                                                 {steps.map(({ key, icon, description }, idx) => (
-                                                    <li key={key} className="flex mb-5 flex-align-items-center">
+                                                    <li key={key} className="flex mb-5 items-center">
                                                         <div
                                                             className="pass-installation--dot rounded-50 text-center mr-3 relative"
                                                             aria-hidden="true"
@@ -131,7 +131,7 @@ export const InstallationSuccess: VFC = () => {
                                                             />
                                                         </div>
 
-                                                        <div className="flex-item-fluid text-left">{description}</div>
+                                                        <div className="flex-1 text-left">{description}</div>
                                                     </li>
                                                 ))}
                                             </ol>
@@ -145,7 +145,7 @@ export const InstallationSuccess: VFC = () => {
                                             onClick={handleNextStepClick}
                                             aria-label={c('Action').t`Done`}
                                         >
-                                            <span className="flex flex-justify-center px-4">{c('Action').t`Done`}</span>
+                                            <span className="flex justify-center px-4">{c('Action').t`Done`}</span>
                                         </Button>
                                         {BUILD_TARGET === 'chrome' && (
                                             <Button
@@ -183,7 +183,7 @@ export const InstallationSuccess: VFC = () => {
                                             onClick={() => login()}
                                             aria-label={c('Action').t`Sign in`}
                                         >
-                                            <span className="flex flex-justify-center px-4">
+                                            <span className="flex justify-center px-4">
                                                 {c('Action').t`Connect your ${BRAND_NAME} Account`}
                                             </span>
                                         </Button>
@@ -194,13 +194,13 @@ export const InstallationSuccess: VFC = () => {
                                             onClick={() => login(FORK_TYPE.SIGNUP)}
                                             aria-label={c('Action').t`Create an account`}
                                         >
-                                            <span className="flex flex-justify-center px-4">
+                                            <span className="flex justify-center px-4">
                                                 {c('Action').t`Create a ${BRAND_NAME} Account`}
                                             </span>
                                         </Button>
                                     </div>
 
-                                    <div className="flex flex-justify-center flex-align-items-center">
+                                    <div className="flex justify-center items-center">
                                         <img
                                             src="assets/onboarding-connect-illustration.svg"
                                             alt=""

@@ -135,7 +135,7 @@ function GridView<T extends FileBrowserBaseItem, T1>({
 
     return (
         <div
-            className="flex flex-no-min-children flex-item-fluid flex-column no-scroll"
+            className="flex children-min-size-auto flex-1 flex-column overflow-hidden"
             onClick={selectionControls?.clearSelections}
             onContextMenu={onViewContextMenu}
             ref={containerRef}
@@ -147,7 +147,10 @@ function GridView<T extends FileBrowserBaseItem, T1>({
                 </Table>
             </div>
 
-            <div className="flex-no-min-children flex-column flex-item-fluid w-full no-scroll" ref={contextMenuAnchorRef}>
+            <div
+                className="flex children-min-size-auto flex-column flex-1 w-full overflow-hidden"
+                ref={contextMenuAnchorRef}
+            >
                 {rect && (
                     <FixedSizeGrid
                         style={{ overflowX: 'hidden', '--padding-bottom-custom': '1.5em' }}

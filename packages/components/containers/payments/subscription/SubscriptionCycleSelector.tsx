@@ -47,7 +47,7 @@ export const getDiscountPrice = (discount: number, currency: Currency) => {
 };
 
 const singleClassName =
-    'p-4 mb-4 border rounded bg-norm flex flex-nowrap flex-align-items-stretch border-primary border-2';
+    'p-4 mb-4 border rounded bg-norm flex flex-nowrap items-stretch border-primary border-2';
 
 export const SubscriptionItemView = ({
     title,
@@ -64,20 +64,20 @@ export const SubscriptionItemView = ({
 }) => {
     return (
         <div className={singleClassName}>
-            <div className="flex-item-fluid pl-2">
-                <div className="flex flex-align-items-center">
-                    <div className="flex-item-fluid-auto mr-4">
+            <div className="flex-1 pl-2">
+                <div className="flex items-center">
+                    <div className="flex-auto mr-4">
                         <strong className="text-lg">{title}</strong>
                     </div>
-                    <strong className="text-lg flex-item-noshrink color-primary">
+                    <strong className="text-lg shrink-0 color-primary">
                         {loading ? <EllipsisLoader /> : topRight}
                     </strong>
                 </div>
-                <div className="flex flex-align-items-center">
-                    <span className="color-weak flex flex-item-fluid-auto">
+                <div className="flex items-center">
+                    <span className="color-weak flex flex-auto">
                         {loading ? <EllipsisLoader /> : bottomLeft}
                     </span>
-                    <span className="color-success flex flex-item-noshrink">{loading ? null : bottomRight}</span>
+                    <span className="color-success flex shrink-0">{loading ? null : bottomRight}</span>
                 </div>
             </div>
         </div>
@@ -106,9 +106,9 @@ const CycleItemView = ({
     cycle: CYCLE;
 }) => {
     return (
-        <div className="flex-item-fluid pl-2">
-            <div className="flex flex-align-items-center">
-                <div className="flex-item-fluid-auto mr-4">
+        <div className="flex-1 pl-2">
+            <div className="flex items-center">
+                <div className="flex-auto mr-4">
                     <strong className="text-lg">{text}</strong>
                     {freeMonths > 0 && (
                         <span className="color-success">
@@ -117,7 +117,7 @@ const CycleItemView = ({
                         </span>
                     )}
                 </div>
-                <strong className="text-lg flex-item-noshrink color-primary">
+                <strong className="text-lg shrink-0 color-primary">
                     {loading ? (
                         <EllipsisLoader />
                     ) : (
@@ -130,9 +130,9 @@ const CycleItemView = ({
                     )}
                 </strong>
             </div>
-            <div className="flex flex-align-items-center">
+            <div className="flex items-center">
                 <span
-                    className="color-weak flex flex-item-fluid-auto"
+                    className="color-weak flex flex-auto"
                     data-testid={`price-per-user-per-month-${cycle}`}
                 >
                     {loading ? (
@@ -143,7 +143,7 @@ const CycleItemView = ({
                         </Price>
                     )}
                 </span>
-                <span className="color-success flex flex-item-noshrink">
+                <span className="color-success flex shrink-0">
                     {loading ? null : getDiscountPrice(discount, currency)}
                 </span>
             </div>
@@ -276,11 +276,11 @@ const SubscriptionCycleSelector = ({
                     {cycles.map((cycle) => {
                         return (
                             <Option value={cycle} title={getShortBillingText(cycle)} key={cycle}>
-                                <div className="flex flex-justify-space-between">
-                                    <span className="flex-item-noshrink">{getShortBillingText(cycle)}</span>
+                                <div className="flex justify-space-between">
+                                    <span className="shrink-0">{getShortBillingText(cycle)}</span>
                                     <span
                                         className={clsx([
-                                            'flex-item-noshrink',
+                                            'shrink-0',
                                             cycle !== cycleSelected && 'color-success',
                                         ])}
                                     >
@@ -300,7 +300,7 @@ const SubscriptionCycleSelector = ({
             {cycles.map((cycle) => {
                 const isSelected = cycle === cycleSelected;
                 return (
-                    <li key={`${cycle}`} className="flex flex-align-items-stretch mb-4" data-testid={`cycle-${cycle}`}>
+                    <li key={`${cycle}`} className="flex items-stretch mb-4" data-testid={`cycle-${cycle}`}>
                         <button
                             className={clsx([
                                 'w-full p-4 plan-cycle-button flex flex-nowrap border rounded text-left',
@@ -312,7 +312,7 @@ const SubscriptionCycleSelector = ({
                             type="button"
                             aria-pressed={isSelected}
                         >
-                            <div className="flex-item-noshrink" aria-hidden="true">
+                            <div className="shrink-0" aria-hidden="true">
                                 <Radio
                                     id={`${cycle}`}
                                     name="cycleFakeField"

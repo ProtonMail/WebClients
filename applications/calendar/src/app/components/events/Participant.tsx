@@ -42,17 +42,17 @@ const Participant = ({
     return (
         <div
             className={clsx([
-                'participant flex flex-nowrap flex-align-items-center w-full relative interactive-pseudo interactive--no-background text-left',
+                'participant flex flex-nowrap items-center w-full relative interactive-pseudo interactive--no-background text-left',
                 className,
             ])}
         >
             <Tooltip title={tooltip}>
-                <div className="participant-display item-icon relative flex flex-item-noshrink flex-align-items-center flex-justify-center">
+                <div className="participant-display item-icon relative flex shrink-0 items-center justify-center">
                     <div className="item-abbr">{initials}</div>
                     <span className="participant-status">{icon}</span>
                 </div>
             </Tooltip>
-            <div className="ml-4 flex-item-fluid" title={title}>
+            <div className="ml-4 flex-1" title={title}>
                 <div className="max-w-full participant-text text-ellipsis">{name}</div>
                 {showEmailAddress ? (
                     <div className="max-w-full text-ellipsis participant-extra-text text-sm m-0">{email}</div>

@@ -74,7 +74,7 @@ const MiddleEllipsis = ({
                     </span>
                 )}
 
-                <span className="flex-item-noshrink text-pre" aria-hidden="true">
+                <span className="shrink-0 text-pre" aria-hidden="true">
                     {end}
                 </span>
             </span>

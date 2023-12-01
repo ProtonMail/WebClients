@@ -106,9 +106,9 @@ const ContactRow = ({
             data-shortcut-target="contact-container"
             data-testid={`contact-item:${Name}`}
         >
-            <div className="flex flex-nowrap w-full h-full my-auto flex-align-items-start">
+            <div className="flex flex-nowrap w-full h-full my-auto items-start">
                 <ItemCheckbox ID={ID} name={Name} checked={checked} onChange={onCheck} />
-                <div className="flex-item-fluid ml-2 conversation-titlesender">
+                <div className="flex-1 ml-2 conversation-titlesender">
                     <ContactRowItemFirstLine ID={ID} Name={Name} className={!!LabelIDs.length ? 'pr-4' : ''} />
                     <ContactRowItemSecondLine title={emails.join(', ')}>
                         {emails.length ? (

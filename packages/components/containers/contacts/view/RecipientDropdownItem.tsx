@@ -49,8 +49,8 @@ const RecipientDropdownItem = ({
     };
 
     return (
-        <div className="flex flex-nowrap flex-align-items-center p-2" onClick={handleClick}>
-            <span className="item-icon flex flex-item-noshrink rounded mx-2" aria-hidden="true">
+        <div className="flex flex-nowrap items-center p-2" onClick={handleClick}>
+            <span className="item-icon flex shrink-0 rounded mx-2" aria-hidden="true">
                 <span className="m-auto">
                     {simple ? (
                         <>{getInitials(label)}</>
@@ -65,7 +65,7 @@ const RecipientDropdownItem = ({
                     )}
                 </span>
             </span>
-            <div className="flex flex-column flex-item-fluid px-2" data-testid="recipient:dropdown-item--contact-name">
+            <div className="flex flex-column flex-1 px-2" data-testid="recipient:dropdown-item--contact-name">
                 <span className="text-ellipsis inline-block max-w-full user-select" title={label}>
                     {label}
                     {!simple && recipient && <ProtonBadgeType recipient={recipient} />}
@@ -77,7 +77,7 @@ const RecipientDropdownItem = ({
             {additionalAction}
             <Copy
                 value={recipient.Address}
-                className="mr-2 flex-item-noshrink"
+                className="mr-2 shrink-0"
                 onCopy={handleCopyEmail}
                 tooltipText={c('Action').t`Copy email to clipboard`}
                 shape="ghost"

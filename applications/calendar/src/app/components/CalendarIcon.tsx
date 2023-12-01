@@ -13,7 +13,7 @@ const CalendarIcon = ({ color, className }: Props) => {
     if (!iconColor) {
         return null;
     }
-    return <Icon className={clsx(['flex-item-noshrink', className])} name="calendar-grid" color={iconColor} />;
+    return <Icon className={clsx(['shrink-0', className])} name="calendar-grid" color={iconColor} />;
 };
 
 export default CalendarIcon;

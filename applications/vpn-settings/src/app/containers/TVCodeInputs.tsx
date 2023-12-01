@@ -54,8 +54,8 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
 
     return (
         <>
-            <div className="code-input-container block md:flex flex-justify-center">
-                <div className="code-input-div flex-item-fluid flex flex-column text-center pb-4 md:pb-0 pt-2 md:pt-0">
+            <div className="code-input-container block md:flex justify-center">
+                <div className="code-input-div flex-1 flex flex-column text-center pb-4 md:pb-0 pt-2 md:pt-0">
                     <Input
                         ref={refFirstInput}
                         minLength={4}
@@ -64,14 +64,14 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
                         onChange={handleOnChangeFirst}
                         onKeyUp={handleKeyUpFirst}
                         placeholder="1234"
-                        className="text-bold max-w-custom flex-align-self-end m-auto"
+                        className="text-bold max-w-custom self-end m-auto"
                         style={{ '--max-w-custom': '15em' }}
                         required
                         autoFocus
                     />
                 </div>
                 <hr className="w-custom tv-hr mx-4 mt-6 mb-auto hidden md:flex" style={{ '--w-custom': '5%' }} />
-                <div className="code-input-div flex-item-fluid flex flex-column text-center pb-4 md:pb-0 pt-2 md:pt-0">
+                <div className="code-input-div flex-1 flex flex-column text-center pb-4 md:pb-0 pt-2 md:pt-0">
                     <Input
                         ref={refSecondInput}
                         minLength={4}

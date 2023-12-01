@@ -19,11 +19,11 @@ const CustomizeMailImportModalGmailCategories = ({ hasCategories, selectedCatego
         <>
             {hasCategories && (
                 <div
-                    className="mb-4 border-bottom flex-align-items-center"
+                    className="mb-4 border-bottom items-center"
                     data-testid="CustomizeModal:gmailCategories"
                 >
                     <Row>
-                        <Label className="flex flex-align-items-center">
+                        <Label className="flex items-center">
                             {c('Label').t`Manage categories`}
                             <Tooltip
                                 title={c('Tooltip')

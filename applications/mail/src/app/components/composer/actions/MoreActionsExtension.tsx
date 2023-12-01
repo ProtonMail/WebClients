@@ -89,7 +89,7 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
             {editorMetadata.supportPlainText && [
                 <DropdownMenuButton
                     key={3}
-                    className="text-left flex flex-nowrap flex-align-items-center"
+                    className="text-left flex flex-nowrap items-center"
                     onClick={() => {
                         if (editorMetadata.isPlainText !== false) {
                             handleChangeMetadata({ isPlainText: false });
@@ -97,12 +97,12 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
                     }}
                     data-testid="editor-to-html"
                 >
-                    <span className="my-auto flex-item-fluid pl-1">{c('Info').t`Normal`}</span>
+                    <span className="my-auto flex-1 pl-1">{c('Info').t`Normal`}</span>
                     <Icon name="checkmark" className={clsx(['ml-4', getClassname(!editorMetadata.isPlainText)])} />
                 </DropdownMenuButton>,
                 <DropdownMenuButton
                     key={4}
-                    className="text-left flex flex-nowrap flex-align-items-center"
+                    className="text-left flex flex-nowrap items-center"
                     onClick={() => {
                         if (editorMetadata.isPlainText !== true) {
                             handleChangeMetadata({ isPlainText: true });
@@ -110,25 +110,25 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
                     }}
                     data-testid="editor-to-plaintext"
                 >
-                    <span className="my-auto flex-item-fluid pl-1">{c('Info').t`Plain text`}</span>
+                    <span className="my-auto flex-1 pl-1">{c('Info').t`Plain text`}</span>
                     <Icon name="checkmark" className={clsx(['ml-4', getClassname(editorMetadata.isPlainText)])} />
                 </DropdownMenuButton>,
                 <div className="dropdown-item-hr" key="hr-more-options" />,
             ]}
             <DropdownMenuButton
-                className="text-left flex flex-nowrap flex-align-items-center"
+                className="text-left flex flex-nowrap items-center"
                 onClick={handleTogglePublicKey}
                 data-testid="composer:attach-public-key-button"
             >
-                <span className="my-auto flex-item-fluid pl-1">{c('Info').t`Attach public key`}</span>
+                <span className="my-auto flex-1 pl-1">{c('Info').t`Attach public key`}</span>
                 <Icon name="checkmark" className={clsx(['ml-4', getClassname(isAttachPublicKey)])} />
             </DropdownMenuButton>
             <DropdownMenuButton
-                className="text-left flex flex-nowrap flex-align-items-center"
+                className="text-left flex flex-nowrap items-center"
                 onClick={handleToggleReceiptRequest}
                 data-testid="composer:read-receipt-button"
             >
-                <span className="my-auto flex-item-fluid pl-1">{c('Info').t`Request read receipt`}</span>
+                <span className="my-auto flex-1 pl-1">{c('Info').t`Request read receipt`}</span>
                 <Icon name="checkmark" className={clsx(['ml-4', getClassname(isReceiptRequest)])} />
             </DropdownMenuButton>
         </>

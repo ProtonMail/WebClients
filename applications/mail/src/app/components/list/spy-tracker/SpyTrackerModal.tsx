@@ -30,11 +30,11 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
 
     const getHeaderContent = (tracker: Tracker) => {
         return (
-            <div className="flex flex-align-items-center">
-                <div className="flex-item-fluid text-break">{tracker.name}</div>
+            <div className="flex items-center">
+                <div className="flex-1 text-break">{tracker.name}</div>
                 <NumberOfElementsBubble
                     numberOfElements={tracker.urls.length}
-                    className="flex-item-noshrink"
+                    className="shrink-0"
                     data-testid="privacy:icon-number-of-trackers"
                     aria-label={c('Info').ngettext(
                         msgid`${numberOfImageTrackers} email tracker blocked`,
@@ -54,9 +54,9 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
         <ModalTwo data-testid="spyTrackerModal:trackers" {...rest}>
             <ModalTwoHeader title={imageTrackerText} data-testid="trackersModal:title" />
             <ModalTwoContent>
-                <div className="border rounded-lg mb-4 p-4 flex flex-nowrap flex-align-items-center">
-                    <img src={trackersImg} alt={imageTrackerText} className="flex-item-noshrink" />
-                    <p className="color-weak flex-item-fluid pl-4 my-0" data-testid="trackersModal:description">
+                <div className="border rounded-lg mb-4 p-4 flex flex-nowrap items-center">
+                    <img src={trackersImg} alt={imageTrackerText} className="shrink-0" />
+                    <p className="color-weak flex-1 pl-4 my-0" data-testid="trackersModal:description">
                         {c('Info')
                             .t`We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.`}
                         <br />

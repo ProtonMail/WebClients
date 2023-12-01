@@ -26,7 +26,7 @@ const ManageFolders = ({ toEmail, mapping, isLabelMapping, fromEmail, onChange, 
             <ManageFoldersHeader fromLabel={c('Label').t`From: ${fromEmail}`} toLabel={c('Label').t`To: ${toEmail}`} />
 
             <div className="flex mb-4">
-                <div className="flex-item-fluid pt-2">
+                <div className="flex-1 pt-2">
                     <ul className="unstyled m-0">
                         {items.map((item, index) => {
                             // We don't display folder with categories since they are merged

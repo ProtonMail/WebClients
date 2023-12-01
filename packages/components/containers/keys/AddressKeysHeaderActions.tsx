@@ -32,7 +32,7 @@ const AddressKeysHeaderActions = ({ addresses, addressIndex, onAddKey, onImportK
     }
 
     return (
-        <div className="mb-4 flex flex-align-items-start">
+        <div className="mb-4 flex items-start">
             {addresses.length > 1 && (
                 <div className="mr-4 mb-2">
                     <Select

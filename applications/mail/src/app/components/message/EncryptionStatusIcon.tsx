@@ -40,7 +40,7 @@ const EncryptionStatusIcon = ({
     const iconName = getStatusIconName({ isEncrypted, fill });
     const tooltip = useTooltip ? text : undefined;
 
-    const spanClassNames = clsx(['inline-flex flex-item-noshrink align-middle', className]);
+    const spanClassNames = clsx(['inline-flex shrink-0 align-middle', className]);
     const icon = iconName && (
         <Icon size={16} name={iconName} className={colorClassName} alt={text || ''} data-testid="encryption-icon" />
     );
@@ -53,7 +53,7 @@ const EncryptionStatusIcon = ({
         <Tooltip title={tooltip} data-testid="encryption-icon-tooltip">
             <span className={spanClassNames}>
                 {href ? (
-                    <Href href={href} className="flex flex-item-noshrink m-auto" tabIndex={disabled ? -1 : undefined}>
+                    <Href href={href} className="flex shrink-0 m-auto" tabIndex={disabled ? -1 : undefined}>
                         {icon}
                     </Href>
                 ) : (

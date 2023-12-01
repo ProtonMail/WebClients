@@ -23,7 +23,7 @@ const AttachmentsCondition = ({ index, condition, onUpdate }: Props) => {
             <Radio
                 id={`condition-${index}-with-attachment`}
                 name={`attachment-condition-${index}`}
-                className="inline-flex flex-align-items-center mr-4 mb-2 md:mb-0"
+                className="inline-flex items-center mr-4 mb-2 md:mb-0"
                 checked={withAttachment}
                 onChange={toggleAttachment}
             >
@@ -32,7 +32,7 @@ const AttachmentsCondition = ({ index, condition, onUpdate }: Props) => {
             <Radio
                 id={`condition-${index}-without-attachment`}
                 name={`attachment-condition-${index}`}
-                className="inline-flex flex-align-items-center"
+                className="inline-flex items-center"
                 checked={!withAttachment}
                 onChange={toggleAttachment}
             >

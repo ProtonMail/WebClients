@@ -68,14 +68,14 @@ export const VaultSelectField: VFC<VaultSelectFieldProps> = ({
                             /* only allow selecting writable vaults if a downgrade was detected */
                             disabled={didDowngrade && !writableShareIds.includes(shareId)}
                         >
-                            <div className="flex gap-x-3 flex-align-items-center">
+                            <div className="flex gap-x-3 items-center">
                                 <VaultIcon
                                     icon={content.display.icon}
                                     color={content.display.color}
                                     size={16}
                                     highlighted={selected}
                                 />
-                                <span className="flex-item-fluid text-ellipsis">{content.name}</span>
+                                <span className="flex-1 text-ellipsis">{content.name}</span>
                                 {shared && (
                                     <Icon
                                         name="users"
@@ -90,14 +90,14 @@ export const VaultSelectField: VFC<VaultSelectFieldProps> = ({
                 .concat(
                     ...extraOptions.map(({ value, title, icon, color }) => (
                         <Option key={value} value={value} title={title}>
-                            <div className="flex gap-x-3 flex-align-items-center">
+                            <div className="flex gap-x-3 items-center">
                                 <VaultIcon
                                     icon={icon}
                                     size={16}
                                     color={selectedId ? VaultColor.COLOR_CUSTOM : color}
                                     highlighted={selectedId === value}
                                 />
-                                <span className="flex-item-fluid text-ellipsis">{title}</span>
+                                <span className="flex-1 text-ellipsis">{title}</span>
                             </div>
                         </Option>
                     ))

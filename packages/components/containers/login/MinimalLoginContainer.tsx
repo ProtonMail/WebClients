@@ -55,7 +55,7 @@ const UnlockForm = ({
                 value={keyPassword}
                 onValue={setKeyPassword}
             />
-            <div className="flex flex-justify-space-between">
+            <div className="flex justify-space-between">
                 <Button
                     color="norm"
                     size="large"
@@ -122,7 +122,7 @@ const TOTPForm = ({
                 setCode={setCode}
                 bigger={true}
             />
-            <div className="flex flex-justify-space-between">
+            <div className="flex justify-space-between">
                 <Button size="large" fullWidth color="norm" type="submit" loading={loading}>
                     {c('Action').t`Submit`}
                 </Button>
@@ -242,7 +242,7 @@ const LoginForm = ({
                     onValue={setPassword}
                     rootClassName="mt-2"
                 />
-                <div className="flex flex-justify-space-between mt-4">
+                <div className="flex justify-space-between mt-4">
                     {needHelp}
                     <Button color="norm" size="large" type="submit" fullWidth loading={loading} data-cy-login="submit">
                         {c('Action').t`Sign in`}

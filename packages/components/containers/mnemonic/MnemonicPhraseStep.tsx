@@ -48,14 +48,14 @@ export const MnemonicPhraseStepContent = ({
                 <>
                     <span className="text-semibold">{c('Label').t`Recovery phrase`}</span>
                     <Card
-                        className="mt-2 flex flex-justify-space-between flex-align-items-center flex-nowrap"
+                        className="mt-2 flex justify-space-between items-center flex-nowrap"
                         bordered={false}
                         rounded
                     >
                         <span className="mr-2" data-testid="account:recovery:generatedRecoveryPhrase">
                             {mnemonic}
                         </span>
-                        <Copy className="bg-norm flex-item-noshrink" value={mnemonic} onCopy={onCopy} />
+                        <Copy className="bg-norm shrink-0" value={mnemonic} onCopy={onCopy} />
                     </Card>
                 </>
             )}

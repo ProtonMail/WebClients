@@ -57,20 +57,20 @@ const CollapsibleHeader = <E extends ElementType = typeof defaultElement>({
             onClick={handleContainerClick}
             className={clsx(
                 className,
-                'flex flex-nowrap flex-align-items-center',
+                'flex flex-nowrap items-center',
                 disabled && 'no-pointer-events',
                 !disabled && !disableContainerToggle && 'collapsible-header--clickable'
             )}
         >
             <div
                 id={headerId}
-                className={clsx(!disableFullWidth && 'flex-item-fluid')}
+                className={clsx(!disableFullWidth && 'flex-1')}
                 data-testid="collapsible-header"
             >
                 {children}
             </div>
 
-            {suffix && <div className="flex flex-item-noshrink ml-2">{suffix}</div>}
+            {suffix && <div className="flex shrink-0 ml-2">{suffix}</div>}
         </Element>
     );
 };

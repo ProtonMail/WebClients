@@ -324,7 +324,7 @@ const ExtraEvent = ({
                 icon="exclamation-circle"
                 action={
                     canTryAgain && (
-                        <span className="flex-item-noshrink flex">
+                        <span className="shrink-0 flex">
                             <InlineLinkButton onClick={handleReloadWidget}>{c('Action').t`Try again`}</InlineLinkButton>
                         </span>
                     )
@@ -342,7 +342,7 @@ const ExtraEvent = ({
     return (
         <div className="calendar-widget mb-3">
             <ExtraEventTimeStatus model={model} />
-            <div className="rounded border bg-norm scroll-if-needed">
+            <div className="rounded border bg-norm overflow-auto">
                 <div className="p-5">
                     <ExtraEventSummary model={model} />
                     <ExtraEventHeader model={model} />

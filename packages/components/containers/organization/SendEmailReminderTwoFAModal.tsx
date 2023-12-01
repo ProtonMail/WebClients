@@ -67,20 +67,20 @@ const SendEmailReminderTwoFAModal = ({ onClose, members, ...rest }: Props) => {
                             const memberAddresses = memberAddressesMap?.[member.ID] || [];
                             return (
                                 <li
-                                    className="py-2 flex flex-nowrap flex-align-items-center border-bottom"
+                                    className="py-2 flex flex-nowrap items-center border-bottom"
                                     title={member.Name}
                                 >
-                                    <Avatar className="mr-2 flex-item-noshrink">{getInitials(member.Name)}</Avatar>
-                                    <div className="flex-items-fluid">
+                                    <Avatar className="mr-2 shrink-0">{getInitials(member.Name)}</Avatar>
+                                    <div>
                                         <div className="text-ellipsis max-100" title={member.Name}>
                                             {member.Name}
                                         </div>
-                                        <div className="max-w-full flex flex-">
-                                            <span className="flex-item-fluid mr-2 text-ellipsis">
+                                        <div className="max-w-full flex">
+                                            <span className="flex-1 mr-2 text-ellipsis">
                                                 {memberAddresses[0].Email}
                                             </span>
                                             {member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN && (
-                                                <span className="flex-item-noshrink">
+                                                <span className="shrink-0">
                                                     <Badge type="light">{c('Admin').t`admin`}</Badge>
                                                 </span>
                                             )}

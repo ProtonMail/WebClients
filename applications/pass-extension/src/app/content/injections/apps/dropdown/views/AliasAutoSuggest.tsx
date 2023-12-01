@@ -141,7 +141,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ hostname, prefix, visible, onClos
                 disabled={!userEmail}
                 subTitle={
                     userEmail ?? (
-                        <span className="block flex flex-align-items-center">
+                        <span className="block flex items-center">
                             <CircleLoader className="mr-1" />
                             <span>{c('Info').t`Loading...`}</span>
                         </span>
@@ -164,7 +164,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ hostname, prefix, visible, onClos
                 subTitle={(() => {
                     if (loadingText) {
                         return (
-                            <span className="block flex flex-align-items-center flex-nowrap">
+                            <span className="block flex items-center flex-nowrap">
                                 <CircleLoader className="mr-1" />
                                 <span className="block text-ellipsis">{loadingText}</span>
                             </span>

@@ -59,7 +59,7 @@ const ItemLabels = ({
     return (
         <LabelStack
             labels={labelsDescription}
-            className={clsx([className, isCollapsed && 'flex-justify-end'])}
+            className={clsx([className, isCollapsed && 'justify-end'])}
             isStacked={isCollapsed}
             maxNumber={maxNumber}
             showDropDown={showDropdown}

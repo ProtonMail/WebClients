@@ -21,8 +21,8 @@ export const useDriveWindowsGASpotlight = (
     };
 
     const content = (
-        <div className="flex flex-nowrap flex-align-items-center my-2">
-            <div className="flex-item-noshrink mr-4">
+        <div className="flex flex-nowrap items-center my-2">
+            <div className="shrink-0 mr-4">
                 <img src={devicesSpotlightIcon} className="w-custom" style={{ '--w-custom': '4em' }} alt="" />
             </div>
             <div>

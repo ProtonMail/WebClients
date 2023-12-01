@@ -148,10 +148,10 @@ const CodeMethod = ({
                         <LearnMore url={getKnowledgeBaseUrl('/human-verification')} />
                     </Text>
                     <Card bordered={false} rounded={true} className="mb-6 flex gap-2">
-                        <div className="flex-item-noshrink">
+                        <div className="shrink-0">
                             <Icon name="info-circle" className="color-primary" />
                         </div>
-                        <div className="flex-item-fluid">
+                        <div className="flex-1">
                             {c('Info').t`A phone number can only be used to verify one ${BRAND_NAME} account`}
                         </div>
                     </Card>

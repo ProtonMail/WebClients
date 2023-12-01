@@ -11,14 +11,14 @@ const TaskRunningBanner = ({ className }: Props) => {
     return (
         <div
             className={clsx([
-                'bg-weak rounded mx-2 px-4 py-2 flex flex-wrap flex-justify-start flex-align-items-center',
+                'bg-weak rounded mx-2 px-4 py-2 flex flex-wrap justify-start items-center',
                 className,
             ])}
         >
-            <div className="flex-item-noshrink flex">
+            <div className="shrink-0 flex">
                 <Icon name="clock" className="mr-2" />
             </div>
-            <div className="flex-item-fluid pl-1">{c('Info').t`Moving messages. This may take a while.`}</div>
+            <div className="flex-1 pl-1">{c('Info').t`Moving messages. This may take a while.`}</div>
         </div>
     );
 };

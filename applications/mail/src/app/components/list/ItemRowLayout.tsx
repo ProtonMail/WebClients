@@ -96,16 +96,16 @@ const ItemRowLayout = ({
 
     return (
         <div className="w-full">
-            <div className="flex flex-align-items-center flex-nowrap flex-row item-titlesender">
+            <div className="flex items-center flex-nowrap flex-row item-titlesender">
                 <div className="my-auto flex w-custom" style={{ '--w-custom': '2em' }} data-testid={unread}>
                     <ItemStar element={element} />
                 </div>
                 <div className={clsx(['item-senders flex flex-nowrap m-auto pr-4', unread && 'text-bold'])}>
                     <ItemUnread element={element} labelID={labelID} className="mr-0.5 item-unread-dot" />
-                    <ItemAction element={element} className="mr-2 flex-item-noshrink my-auto" />
+                    <ItemAction element={element} className="mr-2 shrink-0 my-auto" />
                     {senders && (
                         <span
-                            className="max-w-full text-ellipsis flex flex-align-items-center"
+                            className="max-w-full text-ellipsis flex items-center"
                             data-testid="message-row:sender-address"
                         >
                             {senders}
@@ -113,7 +113,7 @@ const ItemRowLayout = ({
                     )}
                 </div>
 
-                <div className="item-subject flex-item-fluid flex flex-align-items-center flex-nowrap m-auto">
+                <div className="item-subject flex-1 flex items-center flex-nowrap m-auto">
                     <div className="flex flex-column inline-block w-full">
                         <span
                             role="heading"
@@ -123,13 +123,13 @@ const ItemRowLayout = ({
                             data-testid="message-row:subject"
                         >
                             {showIcon && (
-                                <span className="mr-1 inline-flex flex-item-noshrink align-bottom">
+                                <span className="mr-1 inline-flex shrink-0 align-bottom">
                                     <ItemLocation element={element} labelID={labelID} />
                                 </span>
                             )}
                             {conversationMode && (
                                 <NumMessages
-                                    className={clsx(['mr-1 flex-item-noshrink', unread && 'text-bold'])}
+                                    className={clsx(['mr-1 shrink-0', unread && 'text-bold'])}
                                     conversation={element}
                                 />
                             )}
@@ -156,13 +156,13 @@ const ItemRowLayout = ({
                     element={element}
                     labelID={labelID}
                     maxNumber={1}
-                    className="flex-item-noshrink ml-auto"
+                    className="shrink-0 ml-auto"
                     showDropdown={false}
                     isCollapsed={false}
                 />
 
                 <span
-                    className="flex flex-nowrap w-custom ml-2 text-center flex-justify-end"
+                    className="flex flex-nowrap w-custom ml-2 text-center justify-end"
                     style={{ '--w-custom': '7em' }}
                 >
                     {hasExpiration && (
@@ -171,12 +171,12 @@ const ItemRowLayout = ({
                     <ItemAttachmentIcon
                         icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                         element={element}
-                        className="flex-item-noshrink ml-2"
+                        className="shrink-0 ml-2"
                     />
                 </span>
 
                 <span
-                    className="ml-4 flex w-custom flex-nowrap flex-align-items-center flex-justify-end"
+                    className="ml-4 flex w-custom flex-nowrap items-center justify-end"
                     style={{ '--w-custom': '13em' }}
                 >
                     <ItemHoverButtons
@@ -189,7 +189,7 @@ const ItemRowLayout = ({
                     />
                     <span
                         className={clsx(
-                            'item-senddate-row ml-2 flex flex-item-fluid flex-nowrap flex-justify-end flex-align-items-center',
+                            'item-senddate-row ml-2 flex flex-1 flex-nowrap justify-end items-center',
                             snoozeDropdownState && snoozedElement?.ID === element.ID && 'invisible'
                         )}
                     >
@@ -203,13 +203,13 @@ const ItemRowLayout = ({
                 </span>
             </div>
             {showThumbnails && (
-                <div className="flex flex-align-items-center flex-nowrap flex-row">
+                <div className="flex items-center flex-nowrap flex-row">
                     <div className="my-auto flex w-custom" style={{ '--w-custom': '2em' }}></div>
                     <div className={clsx(['item-senders flex pr-4'])}></div>
                     <ItemAttachmentThumbnails
                         attachmentsMetadata={attachmentsMetadata}
                         maxAttachment={MAX_ROW_ATTACHMENT_THUMBNAILS}
-                        className="flex-item-fluid attachment-thumbnail-row"
+                        className="flex-1 attachment-thumbnail-row"
                     />
                 </div>
             )}

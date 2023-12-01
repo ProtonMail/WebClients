@@ -24,8 +24,8 @@ export const Hidden = () => (
 export const HiddenEmpty = () => (
     <div className="p-7 bg-weak">
         Here are two elements, one empty, one not empty:
-        <p className="hidden-empty m-0">I'm not empty</p>
-        <p className="hidden-empty m-0">{/* I'm empty */}</p>
+        <p className="empty:hidden m-0">I'm not empty</p>
+        <p className="empty:hidden m-0">{/* I'm empty */}</p>
     </div>
 );
 
@@ -55,8 +55,8 @@ export const PointerEventsNone = () => (
 {
     /*
 
-<div class="flex flex-justify-space-between mb-8 flex-column md:flex-row">
-    <div class="w-1/2 flex-align-self-center">
+<div class="flex justify-space-between mb-8 flex-column md:flex-row">
+    <div class="w-1/2 self-center">
         Applies <code>pointer-events: none</code> to element.
         <br />
         If you need to remove pointer events on all children of an element, you may use{' '}

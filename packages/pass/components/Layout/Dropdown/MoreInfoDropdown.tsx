@@ -28,7 +28,7 @@ export const MoreInfoDropdown: VFC<Props> = ({ info }) => {
                     </CollapsibleHeaderIconButton>
                 }
             >
-                <span className="flex flex-align-items-center color-weak text-semibold">
+                <span className="flex items-center color-weak text-semibold">
                     <Icon className="mr-2" name="info-circle" />
                     <span>{c('Button').t`More info`}</span>
                 </span>
