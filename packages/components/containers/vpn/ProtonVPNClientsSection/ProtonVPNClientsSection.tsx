@@ -7,7 +7,7 @@ import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 
 import { Copy, DownloadClientCard, DropdownMenuLink, ModalProps, ModalTwo, ModalTwoContent } from '../../../components';
-import { useWelcomeFlags } from '../../../hooks';
+import { useNotifications, useWelcomeFlags } from '../../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import { OnboardingContent } from '../../onboarding';
 
@@ -48,6 +48,7 @@ const ProtonVPNClientsSection = () => {
     const history = useHistory();
     const location = useLocation();
     const [, setDone] = useWelcomeFlags();
+    const { createNotification } = useNotifications();
 
     const androidLinks = [
         {
@@ -68,7 +69,16 @@ const ProtonVPNClientsSection = () => {
                 <DropdownMenuLink className="flex-item-fluid" href={href}>
                     {children}
                 </DropdownMenuLink>
-                <Copy shape="ghost" value={href} className="flex-item-noshrink mr-2" />
+                <Copy
+                    shape="ghost"
+                    value={href}
+                    className="flex-item-noshrink mr-2"
+                    onCopy={() => {
+                        createNotification({
+                            text: c('Success').t`Link copied to clipboard`,
+                        });
+                    }}
+                />
             </div>
         );
     });
