@@ -397,7 +397,7 @@ describe('messageDraft', () => {
             const messageBlockquotesInfos = generatePreviousMessageInfos(referenceMessage, MESSAGE_ACTIONS.REPLY);
 
             const expectedString = `On ${formatFullDate(new Date(0))}, ${referenceMessage.data?.Sender
-                .Name} &lt;${referenceMessage.data?.Sender.Address}&gt; wrote:<br><br>`;
+                .Name} &lt;${referenceMessage.data?.Sender.Address}&gt; wrote:<br>`;
 
             expect(messageBlockquotesInfos).toEqual(expectedString);
         });
