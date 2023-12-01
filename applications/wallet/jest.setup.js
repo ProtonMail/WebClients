@@ -14,6 +14,12 @@ window.ResizeObserver = jest.fn().mockImplementation(() => ({
     disconnect: jest.fn(),
 }));
 
+// FIXME: temporary workaround because I could config jest in a way that allows us to run wasm
+jest.mock('proton-wallet-web', () => ({
+    __esModule: true,
+    WasmError: {},
+}));
+
 // Do not start crypto worker pool, let the single tests setup/mock the CryptoProxy as needed
 jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     __esModule: true,
