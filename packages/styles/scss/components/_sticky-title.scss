@@ -1,23 +1,3 @@
-$sticky-title-height: rem(100) !default;
-
-.sticky-title {
-	position: sticky;
-	inset-block-start: 0;
-	box-shadow: 0 5px 5px 0 rgb(0 0 0 / var(--shadow-norm-opacity));
-	padding-block: 0.5em;
-	padding-inline: 0.75em;
-	background: inherit;
-	z-index: 20;
-
-	&--on-top {
-		box-shadow: none;
-	}
-
-	&--no-padding {
-		padding: 0;
-	}
-}
-
 .container-section-sticky {
 	padding-block: 0;
 	padding-inline: 2em;
@@ -51,16 +31,11 @@ $sticky-title-height: rem(100) !default;
 /* trick for fixing anchor links */
 .header-height-anchor {
 	position: absolute;
-	inset-block-start: -#{$sticky-title-height};
+	inset-block-start: -#{rem(100)};
 }
 
 // not sticky on mobile
 @include media('<=small') {
-	.sticky-title:not(.on-mobile-remain-sticky) {
-		position: static;
-		box-shadow: none;
-	}
-
 	.container-section-sticky-section {
 		margin-block-end: rem(80);
 	}

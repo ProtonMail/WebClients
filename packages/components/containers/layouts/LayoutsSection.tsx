@@ -50,7 +50,7 @@ const LayoutsSection = () => {
                 <Loader />
             ) : (
                 <>
-                    <div className="flex flex-nowrap mb-4 on-mobile-flex-column flex-column">
+                    <div className="flex flex-nowrap mb-4 flex-column md:flex-row flex-column">
                         <span className="mb-4 text-semibold">
                             <span className="mr-2" id="layoutMode_desc">{c('Label').t`Inbox`}</span>
                             <Info
@@ -66,7 +66,7 @@ const LayoutsSection = () => {
                         />
                     </div>
 
-                    <div className="flex flex-nowrap mb-4 on-mobile-flex-column flex-column">
+                    <div className="flex flex-nowrap mb-4 flex-column md:flex-row flex-column">
                         <span className="mb-4 text-semibold">
                             <span className="mr-2" id="composerMode_desc">{c('Label').t`Composer`}</span>
                             <Info
@@ -83,7 +83,7 @@ const LayoutsSection = () => {
                         />
                     </div>
 
-                    <div className="flex flex-nowrap mb-4 on-mobile-flex-column flex-column">
+                    <div className="flex flex-nowrap mb-4 flex-column md:flex-row flex-column">
                         <span className="mb-4 text-semibold">
                             <span className="mr-2" id="densityMode_desc">{c('Label').t`Density`}</span>
                             <Info

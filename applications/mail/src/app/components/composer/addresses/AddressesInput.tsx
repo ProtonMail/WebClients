@@ -210,7 +210,7 @@ const AddressesInput = ({
     }, [recipientsOrGroups.length]);
 
     return (
-        <div className={clsx(['composer-addresses-autocomplete w-full flex flex-item-fluid relative', classname])}>
+        <div className={clsx(['composer-addresses-autocomplete w-full flex relative', classname])}>
             <div
                 className={clsx([
                     'composer-addresses-container flex flex-nowrap flex-item-fluid',

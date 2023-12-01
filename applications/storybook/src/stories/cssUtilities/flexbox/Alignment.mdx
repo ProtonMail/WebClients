@@ -6,6 +6,36 @@ import { getTitle } from '../../../helpers/title';
 
 # Alignment
 
+## Justify start
+
+Flex items are aligned at the start of the flex container, depending on the writing-mode.
+
+`className='flex flex-justify-start'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-alignment--justify-start" />
+</Canvas>
+
+## Justify center
+
+Flex items are centered in the flex container.
+
+`className='flex flex-justify-center'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-alignment--justify-center" />
+</Canvas>
+
+## Justify end
+
+Flex items are aligned towards the end of the flex container, depending on the writing-mode.
+
+`className='flex flex-justify-end'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-alignment--justify-end" />
+</Canvas>
+
 ## Justify space between
 
 Flex items are evenly distributed in the line without space around them
@@ -26,24 +56,24 @@ Flex items are evenly distributed in the line with space around them
     <Story id="css-utilities-flexbox-alignment--justify-around" />
 </Canvas>
 
-## Justify end
+## Justify space evenly
 
-Flex items are aligned towards the end of the flex container, depending on the writing-mode.
+Flex items are evenly distributed in the line with same space around them
 
-`className='flex flex-justify-end'`
+`className='flex flex-justify-space-evenly'`
 
 <Canvas>
-    <Story id="css-utilities-flexbox-alignment--justify-end" />
+    <Story id="css-utilities-flexbox-alignment--justify-evenly" />
 </Canvas>
 
-## Justify center
+## Align items at the start in a column
 
-Flex items are centered in the flex container.
+When using `.flex-column`, use `.flex-align-items-start` to align the items at the start of the flex container, depending on the writing-mode.
 
-`className='flex flex-justify-center'`
+`className='flex flex-column flex-align-items-start'`
 
 <Canvas>
-    <Story id="css-utilities-flexbox-alignment--justify-center" />
+    <Story id="css-utilities-flexbox-alignment--align-items-start-column" />
 </Canvas>
 
 ## Center items in a column
@@ -76,6 +106,14 @@ Use `.flex-align-items-start` to align the items towars the end of the flex cont
     <Story id="css-utilities-flexbox-alignment--align-items-start" />
 </Canvas>
 
+## Align items to the center of a row
+
+`className='flex flex-align-items-center'`
+
+<Canvas>
+    <Story id="css-utilities-flexbox-alignment--align-items-center" />
+</Canvas>
+
 ## Align items to the end of a row
 
 Use `.flex-align-items-end` to align the items towars the end of the flex container.
@@ -84,14 +122,6 @@ Use `.flex-align-items-end` to align the items towars the end of the flex contai
 
 <Canvas>
     <Story id="css-utilities-flexbox-alignment--align-items-end" />
-</Canvas>
-
-## Align items to the center of a row
-
-`className='flex flex-align-items-center'`
-
-<Canvas>
-    <Story id="css-utilities-flexbox-alignment--align-items-center" />
 </Canvas>
 
 ## Align items to the text baseline of a row
