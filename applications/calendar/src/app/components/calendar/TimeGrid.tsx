@@ -312,7 +312,7 @@ const TimeGrid = ({
         <div className="flex flex-column flex-nowrap w-full">
             <div
                 ref={titleRef}
-                className={clsx(['calendar-row-heading flex-item-noshrink shadow-norm bg-norm', displayViewClass])}
+                className={clsx(['calendar-row-heading shrink-0 shadow-norm bg-norm', displayViewClass])}
             >
                 <div
                     data-testid="calendar-day-week-view:week-header"
@@ -322,7 +322,7 @@ const TimeGrid = ({
                     {!isDrawerApp && <div className="calendar-aside" />}
 
                     {isDrawerApp ? (
-                        <div className="ml-4 mr-2 my-2 flex flex-align-items-end flex-justify-space-between w-full">
+                        <div className="ml-4 mr-2 my-2 flex items-end justify-space-between w-full">
                             <ButtonGroup size="small" color="weak" shape="outline">
                                 <Tooltip title={previousDay}>
                                     <Button icon onClick={handleClickPrevDay}>
@@ -346,16 +346,16 @@ const TimeGrid = ({
 
                 <div className="flex calendar-fullday-row">
                     {canDisplaySecondaryTimeZone && !isDrawerApp ? (
-                        <div className="calendar-aside text-center flex flex-column flex-justify-end">
+                        <div className="calendar-aside text-center flex flex-column justify-end">
                             <div className="calendar-secondary-timezone-cell calendar-secondary-timezone-cell--header">
                                 {secondaryTimezone}
                             </div>
                         </div>
                     ) : null}
-                    <div className="calendar-aside text-center flex flex-column flex-justify-end">
+                    <div className="calendar-aside text-center flex flex-column justify-end">
                         {isDrawerApp ? (
                             <span
-                                className="h-custom flex flex-column flex-justify-center pt-1"
+                                className="h-custom flex flex-column justify-center pt-1"
                                 style={{ '--h-custom': `${dayEventHeight / 16}rem` }}
                             >
                                 {primaryTimezone}
@@ -366,7 +366,7 @@ const TimeGrid = ({
                             </div>
                         )}
                     </div>
-                    <div className="flex-item-fluid relative">
+                    <div className="flex-1 relative">
                         <div
                             className="calendar-time-fullday h-custom"
                             style={{ '--h-custom': `${(actualRows * dayEventHeight) / 16}rem` }}
@@ -393,7 +393,7 @@ const TimeGrid = ({
                 </div>
             </div>
             <div
-                className={clsx(['flex-item-fluid scroll-if-needed h-full calendar-time-grid', displayViewClass])}
+                className={clsx(['flex-1 overflow-auto h-full calendar-time-grid', displayViewClass])}
                 ref={scrollRef}
                 {...rest}
             >
@@ -408,7 +408,7 @@ const TimeGrid = ({
                             />
                         ) : null}
                         <HourTexts className="calendar-aside calendar-primary-timezone-cell" hours={formattedHours} />
-                        <div className="flex flex-item-fluid relative calendar-grid-gridcells" ref={timeGridRef}>
+                        <div className="flex flex-1 relative calendar-grid-gridcells" ref={timeGridRef}>
                             <HourLines hours={hours} />
                             {days.map((day, dayIndex) => {
                                 const key = getKey(day);
@@ -419,7 +419,7 @@ const TimeGrid = ({
                                 return (
                                     <div
                                         data-testid="calendar-week-day-view:weekday-column"
-                                        className="flex-item-fluid relative calendar-grid-gridcell h-full"
+                                        className="flex-1 relative calendar-grid-gridcell h-full"
                                         key={key}
                                     >
                                         <DayEvents

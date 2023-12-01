@@ -32,7 +32,7 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
     const count = useMemo(() => items.length, [items]);
 
     return (
-        <div className="flex flex-justify-space-between flex-align-items-center">
+        <div className="flex justify-space-between items-center">
             <Checkbox checked={selected} onChange={(e) => onToggle(e.target.checked)}>
                 <div className="w-custom" style={{ '--w-custom': '6.25rem' }}>
                     <strong className="text-sm block text-ellipsis">{name}</strong>
@@ -55,9 +55,9 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
                             className="text-sm"
                             disabled={!allowNewVault}
                         >
-                            <span className="flex flex-align-items-center">
-                                <Icon name="plus" size={14} className="mr-3 flex-item-nogrow" />
-                                <span className="flex-item-fluid text-ellipsis">{c('Label').t`New vault`}</span>
+                            <span className="flex items-center">
+                                <Icon name="plus" size={14} className="mr-3 grow-0" />
+                                <span className="flex-1 text-ellipsis">{c('Label').t`New vault`}</span>
                             </span>
                         </Option>,
                         ...vaults.map((vault) => (
@@ -67,7 +67,7 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
                                 value={vault.shareId}
                                 className="text-sm"
                             >
-                                <span className="flex flex-align-items-center">
+                                <span className="flex items-center">
                                     <Icon
                                         name={
                                             vault.content.display.icon
@@ -75,9 +75,9 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
                                                 : 'pass-home'
                                         }
                                         size={14}
-                                        className="mr-3 flex-item-nogrow"
+                                        className="mr-3 grow-0"
                                     />
-                                    <span className="flex-item-fluid text-ellipsis">{vault.content.name}</span>
+                                    <span className="flex-1 text-ellipsis">{vault.content.name}</span>
                                 </span>
                             </Option>
                         )),

@@ -260,9 +260,9 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                                         toApp={APPS.PROTONCALENDAR}
                                         to="/"
                                         color="norm"
-                                        className="flex-item-noshrink"
+                                        className="shrink-0"
                                     >
-                                        <div className="flex flex-align-items-center">
+                                        <div className="flex items-center">
                                             <span className="mr-3">{c('Action').t`Open ${CALENDAR_APP_NAME}`}</span>
                                             <Icon name="arrow-out-square" />
                                         </div>
@@ -376,7 +376,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                 isOutdated={isOutdated}
             />
             {!isOutdated && (
-                <div className="rounded border bg-norm scroll-if-needed">
+                <div className="rounded border bg-norm overflow-auto">
                     <div className="p-5">
                         <h2 className="h3 mb-1 text-bold">{getDisplayTitle(summary?.value)}</h2>
                         <CalendarEventDateHeader

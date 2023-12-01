@@ -11,7 +11,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 
 const Toolbar = ({ children, className, ...rest }: Props) => (
     <nav
-        className={clsx(['toolbar flex flex-nowrap flex-item-noshrink no-print', className])}
+        className={clsx(['toolbar flex flex-nowrap shrink-0 no-print', className])}
         aria-label={c('Label').t`Toolbar`}
         {...rest}
     >

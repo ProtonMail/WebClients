@@ -43,7 +43,7 @@ const CheckListItem = ({
             disabled={disabled}
             onClick={() => onClick?.()}
             className={clsx(
-                'flex flex-nowrap flex-align-items-center text-left checkList-item border-none',
+                'flex flex-nowrap items-center text-left checkList-item border-none',
                 onClick !== undefined && !disabled ? 'cursor-pointer' : 'cursor-default',
                 smallVariant ? 'p-0 text-sm color-norm p-2 mb-0.5 w-full' : 'px-4 py-3 rounded-lg gap-3',
                 disabled && 'opacity-50'
@@ -55,7 +55,7 @@ const CheckListItem = ({
             data-testid={dataTestId}
         >
             <img
-                className={clsx('w-custom h-custom flex-item-noshrink', done && 'opacity-50')}
+                className={clsx('w-custom h-custom shrink-0', done && 'opacity-50')}
                 src={smallVariant ? smallIcon : largeIcon}
                 style={{
                     '--w-custom': smallVariant ? '1.75rem' : '5.5rem',
@@ -64,11 +64,11 @@ const CheckListItem = ({
                 alt=""
                 data-testid={smallVariant ? 'checklist-item-icon-small' : 'checklist-item-icon-large'}
             />
-            <span className={clsx('flex-item-fluid px-2', done && 'opacity-50')}>{text}</span>
+            <span className={clsx('flex-1 px-2', done && 'opacity-50')}>{text}</span>
             <div
                 className={clsx(
-                    'w-custom h-custom flex flex-align-self-center',
-                    done && 'bg-primary rounded-50 flex flex-align-items-center flex-justify-center flex-item-noshrink'
+                    'w-custom h-custom flex self-center',
+                    done && 'bg-primary rounded-50 flex items-center justify-center shrink-0'
                 )}
                 style={{
                     '--h-custom': smallVariant || !done ? '1rem' : '1.5rem',

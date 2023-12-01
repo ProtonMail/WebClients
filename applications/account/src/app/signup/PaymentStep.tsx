@@ -141,7 +141,7 @@ const PaymentStep = ({
         });
 
     return (
-        <div className="sign-layout-mobile-columns w-full flex flex-align-items-start flex-justify-center gap-7">
+        <div className="sign-layout-mobile-columns w-full flex items-start justify-center gap-7">
             <Main center={false}>
                 <Header
                     onBack={onBack}
@@ -191,10 +191,10 @@ const PaymentStep = ({
                     <div className="text-sm">
                         {hasGuarantee && (
                             <div className="flex flex-nowrap color-weak mb-2">
-                                <span className="flex-item-noshrink mr-2">
+                                <span className="shrink-0 mr-2">
                                     <Icon name="clock" className="align-top" />
                                 </span>
-                                <span className="flex-item-fluid">{c('Info').t`30-day money-back guarantee.`}</span>
+                                <span className="flex-1">{c('Info').t`30-day money-back guarantee.`}</span>
                             </div>
                         )}
                     </div>
@@ -239,10 +239,10 @@ const PaymentStep = ({
                                 </Button>
                                 <Alert3ds />
                                 <div className="flex flex-nowrap color-weak mb-2 text-sm mx-7">
-                                    <span className="flex-item-noshrink mr-2">
+                                    <span className="shrink-0 mr-2">
                                         <Icon name="shield" />
                                     </span>
-                                    <span className="flex-item-fluid">{c('Info')
+                                    <span className="flex-1">{c('Info')
                                         .t`Payments are protected with TLS encryption and Swiss privacy laws.`}</span>
                                 </div>
                             </>

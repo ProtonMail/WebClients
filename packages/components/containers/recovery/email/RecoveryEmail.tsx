@@ -73,7 +73,7 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
                 }}
             >
                 <div
-                    className="mr-0 mb-4 md:mr-4 md:flex-item-fluid min-w-custom"
+                    className="mr-0 mb-4 md:mr-4 md:flex-1 min-w-custom"
                     style={{ '--min-w-custom': '14em' }}
                     title={email.Value || ''}
                 >
@@ -90,7 +90,7 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
                             (email.Status !== SETTINGS_STATUS.VERIFIED ? (
                                 <>
                                     <Icon
-                                        className="color-danger flex-item-noshrink aligntop mr-1"
+                                        className="color-danger shrink-0 aligntop mr-1"
                                         name="exclamation-circle-filled"
                                     />
                                     <span className="color-norm mr-2">{c('Recovery Email')
@@ -108,7 +108,7 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
                             ) : (
                                 <>
                                     <Icon
-                                        className="color-success flex-item-noshrink aligntop mr-1"
+                                        className="color-success shrink-0 aligntop mr-1"
                                         name="checkmark-circle-filled"
                                     />
                                     <span className="mr-2">{c('Recovery Email')

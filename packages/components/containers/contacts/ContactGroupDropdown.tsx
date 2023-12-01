@@ -213,7 +213,7 @@ const ContactGroupDropdown = ({
                     onClick={handleClick}
                     hasCaret={!forToolbar}
                     disabled={disabled}
-                    className={clsx([forToolbar ? 'button-for-icon' : 'flex flex-align-items-center', className])}
+                    className={clsx([forToolbar ? 'button-for-icon' : 'flex items-center', className])}
                     {...rest}
                 >
                     {children}
@@ -230,7 +230,7 @@ const ContactGroupDropdown = ({
                 size={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
             >
                 <form onSubmit={handleSubmit}>
-                    <div className="flex flex-justify-space-between flex-align-items-center m-4 mb-0">
+                    <div className="flex justify-space-between items-center m-4 mb-0">
                         <strong>{c('Label').t`Add to group`}</strong>
                         <Tooltip
                             title={
@@ -245,7 +245,7 @@ const ContactGroupDropdown = ({
                                     color="norm"
                                     size="small"
                                     onClick={handleAdd}
-                                    className="flex flex-align-items-center"
+                                    className="flex items-center"
                                     data-prevent-arrow-navigation
                                     disabled={!canCreateNewGroup}
                                 >
@@ -263,7 +263,7 @@ const ContactGroupDropdown = ({
                             data-prevent-arrow-navigation
                         />
                     </div>
-                    <div className="scroll-if-needed mt-4 contactGroupDropdown-list-container">
+                    <div className="overflow-auto mt-4 contactGroupDropdown-list-container">
                         {filteredContactGroups.length ? (
                             <ul className="unstyled my-0">
                                 {filteredContactGroups.map(({ ID, Name, Color }) => {
@@ -271,10 +271,10 @@ const ContactGroupDropdown = ({
                                     return (
                                         <li
                                             key={ID}
-                                            className="dropdown-item w-full flex flex-nowrap flex-align-items-center py-2 px-4"
+                                            className="dropdown-item w-full flex flex-nowrap items-center py-2 px-4"
                                         >
                                             <Checkbox
-                                                className="flex-item-noshrink"
+                                                className="shrink-0"
                                                 id={checkboxId}
                                                 checked={model[ID] === CHECKED}
                                                 indeterminate={model[ID] === INDETERMINATE}
@@ -282,16 +282,16 @@ const ContactGroupDropdown = ({
                                             />
                                             <label
                                                 htmlFor={checkboxId}
-                                                className="flex flex-align-items-center flex-item-fluid flex-nowrap"
+                                                className="flex items-center flex-1 flex-nowrap"
                                                 data-testid={`contact-group-dropdown:item-${Name}`}
                                             >
                                                 <Icon
                                                     name="circle-filled"
-                                                    className="ml-1 mr-2 flex-item-noshrink"
+                                                    className="ml-1 mr-2 shrink-0"
                                                     size={16}
                                                     color={Color}
                                                 />
-                                                <span className="flex-item-fluid text-ellipsis" title={Name}>
+                                                <span className="flex-1 text-ellipsis" title={Name}>
                                                     <Mark value={keyword}>{Name}</Mark>
                                                 </span>
                                             </label>
@@ -301,7 +301,7 @@ const ContactGroupDropdown = ({
                             </ul>
                         ) : null}
                         {!filteredContactGroups.length && keyword ? (
-                            <div className="w-full flex flex-nowrap flex-align-items-center py-2 px-4">
+                            <div className="w-full flex flex-nowrap items-center py-2 px-4">
                                 <Icon name="exclamation-circle" className="mr-2" />
                                 {c('Info').t`No group found`}
                             </div>

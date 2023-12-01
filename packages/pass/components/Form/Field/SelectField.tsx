@@ -26,11 +26,11 @@ export const SelectField: FC<SelectFieldProps> = ({
 }) => {
     const { error } = useFieldControl({ field, form, meta });
     return (
-        <FieldBox className={clsx('flex-align-items-center', className)} icon={icon}>
+        <FieldBox className={clsx('items-center', className)} icon={icon}>
             <InputFieldTwo<typeof SelectTwo>
                 unstyled
                 as={SelectTwo}
-                assistContainerClassName="hidden-empty"
+                assistContainerClassName="empty:hidden"
                 caretIconName="chevron-down"
                 error={error}
                 labelContainerClassName="increase-click-surface color-weak m-0 text-normal text-sm"

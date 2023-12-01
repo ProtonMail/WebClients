@@ -60,7 +60,7 @@ const ToolbarHeaderNarrow = ({
                 ref={toolbarRef}
             >
                 <div
-                    className={clsx('flex flex-align-items-center toolbar-inner gap-2', !selectedIDs.length && 'pl-2')}
+                    className={clsx('flex items-center toolbar-inner gap-2', !selectedIDs.length && 'pl-2')}
                 >
                     <LabelName selectedIDs={selectedIDs} labelName={labelName} />
 

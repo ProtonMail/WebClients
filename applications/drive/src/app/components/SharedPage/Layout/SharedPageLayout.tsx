@@ -27,21 +27,21 @@ export default function SharedPageLayout({ FooterComponent, children, className 
     const isProtonUser = !!getCookie(IS_PROTON_USER_COOKIE_NAME);
 
     const containerClassname = clsx([
-        'shared-page-layout-bg flex-no-min-children flex-nowrap flex-column h-full scroll-if-needed relative',
+        'shared-page-layout-bg flex children-min-size-auto flex-nowrap flex-column h-full overflow-auto relative',
         className,
     ]);
 
     return (
         <UnAuthenticated>
             <div className={containerClassname}>
-                <Header className="shadow-norm flex flex-align-items-center">
+                <Header className="shadow-norm flex items-center">
                     <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
-                    <div className="logo-container flex flex-justify-space-between flex-align-items-center flex-nowrap">
+                    <div className="logo-container flex justify-space-between items-center flex-nowrap">
                         <MainLogo to="/" />
                         <UnAuthenticatedAppsDropdown />
                     </div>
 
-                    <div className="flex flex-justify-end flex-item-fluid flex-item-centered-vert">
+                    <div className="flex justify-end flex-1 self-center my-auto">
                         {isProtonUser ? (
                             <ButtonLike color="norm" as="a" href={APPS.PROTONDRIVE} target="_blank">
                                 {c('Action').t`Go to Drive`}
@@ -53,10 +53,10 @@ export default function SharedPageLayout({ FooterComponent, children, className 
                         )}
                     </div>
                 </Header>
-                <main className="shared-page-layout-container flex flex-no-min-children flex-nowrap flex-column md:flex-row flex-item-fluid">
-                    <div className="flex-item-fluid mb-4 md:mb-0 flex flex-column flex-nowrap">{children}</div>
+                <main className="shared-page-layout-container flex children-min-size-auto flex-nowrap flex-column md:flex-row flex-1">
+                    <div className="flex-1 mb-4 md:mb-0 flex flex-column flex-nowrap">{children}</div>
                 </main>
-                <Footer className="flex-justify-space-between flex-align-items-center p-0 mt-6 md:mt-0">
+                <Footer className="justify-space-between items-center p-0 mt-6 md:mt-0">
                     {FooterComponent}
                 </Footer>
             </div>

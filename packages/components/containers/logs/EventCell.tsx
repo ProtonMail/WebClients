@@ -20,8 +20,8 @@ const getIcon = (status: AuthLogStatus) => {
 const EventCell = ({ description, status }: Props) => {
     return (
         <div className="inline-flex">
-            <span className="flex-item-noshrink mr-2">{getIcon(status)}</span>
-            <span className="flex-item-fluid">{description}</span>
+            <span className="shrink-0 mr-2">{getIcon(status)}</span>
+            <span className="flex-1">{description}</span>
         </div>
     );
 };

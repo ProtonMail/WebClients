@@ -143,8 +143,8 @@ const PopoverEventContent = ({
 
             return (
                 <>
-                    <span className="text-break flex-item-fluid-auto flex-item-nogrow mr-2">{calendarName}</span>
-                    <span className="text-no-wrap flex-item-noshrink">
+                    <span className="text-break flex-auto grow-0 mr-2">{calendarName}</span>
+                    <span className="text-no-wrap shrink-0">
                         {disabledText} <Info title={tooltipText} />
                     </span>
                 </>
@@ -275,7 +275,7 @@ const PopoverEventContent = ({
             {sanitizedLocation ? (
                 <IconRow labelClassName={labelClassName} title={c('Label').t`Location`} icon="map-pin">
                     <span
-                        className="text-hyphens scroll-if-needed"
+                        className="text-hyphens overflow-auto"
                         dangerouslySetInnerHTML={{ __html: sanitizedLocation }}
                     />
                 </IconRow>
@@ -331,7 +331,7 @@ const PopoverEventContent = ({
                 </IconRow>
             )}
             <IconRow
-                className="flex-item-fluid"
+                className="flex-1"
                 labelClassName="inline-flex pt-1"
                 title={c('Label').t`Calendar`}
                 icon="calendar-grid"

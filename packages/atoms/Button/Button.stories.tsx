@@ -35,7 +35,7 @@ const sizes: Required<ButtonProps>['size'][] = ['small', 'medium', 'large'];
 
 const toggles = ['loading', 'pill', 'fullWidth', 'icon', 'disabled'] as const;
 
-const buttonContainerClassName = 'flex md:flex-item-fluid flex-align-items-center flex-justify-center border';
+const buttonContainerClassName = 'flex md:flex-1 items-center justify-center border';
 
 export const Sandbox = () => {
     const [selectedShape, setSelectedShape] = useState<Required<ButtonProps>['shape']>('solid');
@@ -64,8 +64,8 @@ export const Sandbox = () => {
     );
 
     return (
-        <div className="flex-no-min-children flex-column md:flex-row py-7">
-            <div className="flex flex-column flex-nowrap md:flex-item-fluid">
+        <div className="flex children-min-size-auto flex-column md:flex-row py-7">
+            <div className="flex flex-column flex-nowrap md:flex-1">
                 <div className="mr-8 mb-4">
                     <strong className="block mb-4">Color</strong>
                     <RadioGroup
@@ -141,7 +141,7 @@ export const Variants = () => {
                         <TableCell>{shape}</TableCell>
                         {colors.map((color) => (
                             <TableCell key={color}>
-                                <div className="flex gap-2 flex-justify-center">
+                                <div className="flex gap-2 justify-center">
                                     <Button shape={shape} color={color}>
                                         Lorem
                                     </Button>

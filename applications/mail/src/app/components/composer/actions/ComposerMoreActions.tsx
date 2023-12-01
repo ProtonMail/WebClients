@@ -68,28 +68,28 @@ const ComposerMoreActions = ({
             {toolbarExtension}
             <div className="dropdown-item-hr" key="hr-more-options" />
             <DropdownMenuButton
-                className="text-left flex flex-nowrap flex-align-items-center"
+                className="text-left flex flex-nowrap items-center"
                 onClick={onExpiration}
                 aria-pressed={isExpiration}
                 disabled={lock}
                 data-testid="composer:expiration-button"
             >
                 <Icon name="hourglass" />
-                <span className="ml-2 my-auto flex-item-fluid">
+                <span className="ml-2 my-auto flex-1">
                     {isExpiration ? c('Action').t`Set expiration time` : c('Action').t`Expiration time`}
                 </span>
             </DropdownMenuButton>
 
             {isExpiration && (
                 <DropdownMenuButton
-                    className="text-left flex flex-nowrap flex-align-items-center color-danger"
+                    className="text-left flex flex-nowrap items-center color-danger"
                     onClick={handleRemoveExpiration}
                     aria-pressed={isExpiration}
                     disabled={lock}
                     data-testid="composer:remove-expiration-button"
                 >
                     <Icon name="trash" />
-                    <span className="ml-2 my-auto flex-item-fluid">{c('Action').t`Remove expiration time`}</span>
+                    <span className="ml-2 my-auto flex-1">{c('Action').t`Remove expiration time`}</span>
                 </DropdownMenuButton>
             )}
         </ComposerMoreOptionsDropdown>

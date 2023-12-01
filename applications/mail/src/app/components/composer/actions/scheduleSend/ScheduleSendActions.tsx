@@ -82,7 +82,7 @@ const ScheduleSendActions = ({
             },
             {
                 title: (
-                    <div className="flex flex-justify-start flex-align-items-center">
+                    <div className="flex justify-start items-center">
                         <span className="pr-2">{c('Action').t`Custom`}</span>
                         {!canScheduleSendCustom && (
                             <span>
@@ -124,11 +124,11 @@ const ScheduleSendActions = ({
                 {actions.map((action) => (
                     <DropdownMenuButton
                         key={action.testId}
-                        className="flex flex-align-items-center flex-justify-space-between flex-nowrap gap-4"
+                        className="flex items-center justify-space-between flex-nowrap gap-4"
                         data-testid={action.testId}
                         onClick={action.onSubmit}
                     >
-                        <span className="flex-item-fluid text-left">{action.title}</span>
+                        <span className="flex-1 text-left">{action.title}</span>
                         <span className="text-right color-weak">{action.value}</span>
                     </DropdownMenuButton>
                 ))}
@@ -164,7 +164,7 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
             <>
                 <SimpleDropdown
                     as={Button}
-                    className="flex-item-noshrink composer-actions-secondary"
+                    className="shrink-0 composer-actions-secondary"
                     data-testid="composer:scheduled-send:open-dropdown"
                     icon
                     loading={loading}

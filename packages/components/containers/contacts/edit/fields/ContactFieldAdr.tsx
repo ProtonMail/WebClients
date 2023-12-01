@@ -58,7 +58,7 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
                     placeholder={c('Label').t`City`}
                     onChange={handleChange('locality')}
                     data-testid="city"
-                    className="flex-item-grow-2"
+                    className="grow-2"
                 />
             </div>
             {address.postOfficeBox ? (

@@ -68,7 +68,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                     }
                 }}
             >
-                <div className="mr-0 mb-4 md:mr-4 md:flex-item-fluid min-w-custom" style={{ '--min-w-custom': '14em' }}>
+                <div className="mr-0 mb-4 md:mr-4 md:flex-1 min-w-custom" style={{ '--min-w-custom': '14em' }}>
                     <InputFieldTwo
                         as={PhoneInput}
                         id="phoneInput"
@@ -82,7 +82,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                             (phone.Status !== SETTINGS_STATUS.VERIFIED ? (
                                 <>
                                     <Icon
-                                        className="color-danger flex-item-noshrink aligntop mr-1"
+                                        className="color-danger shrink-0 aligntop mr-1"
                                         name="exclamation-circle-filled"
                                     />
                                     <span className="color-norm mr-2">{c('Recovery Phone')
@@ -100,7 +100,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                             ) : (
                                 <>
                                     <Icon
-                                        className="color-success flex-item-noshrink aligntop mr-1"
+                                        className="color-success shrink-0 aligntop mr-1"
                                         name="checkmark-circle-filled"
                                     />
                                     <span className="mr-2">{c('Recovery Phone')

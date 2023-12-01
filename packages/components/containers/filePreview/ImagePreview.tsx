@@ -200,7 +200,7 @@ const ImagePreview = ({
                     <UnsupportedPreview onDownload={onDownload} type="image" />
                 ) : (
                     <div
-                        className="flex-no-min-children m-auto relative"
+                        className="flex children-min-size-auto m-auto relative"
                         style={{
                             ...imageStyles,
                             overflow: !isLowResImageHidden && placeholderSrc ? 'hidden' : 'initial',
@@ -257,7 +257,7 @@ const ImagePreview = ({
                 )}
             </div>
             {!isHiResImageRendered && !error && (
-                <div className="file-preview-loading w-full mb-8 flex flex-justify-center flex-align-items-center">
+                <div className="file-preview-loading w-full mb-8 flex justify-center items-center">
                     <CircleLoader />
                     <span className="ml-4">{c('Info').t`Loading...`}</span>
                 </div>

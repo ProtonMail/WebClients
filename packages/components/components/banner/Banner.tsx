@@ -33,7 +33,7 @@ const Banner = ({ backgroundColor = BannerBackgroundColor.NORM, icon, iconColor,
             return null;
         }
 
-        return <Icon name={icon} className={clsx(['mr-3 ml-0.5 flex-item-noshrink', `color-${iconColor}`])} />;
+        return <Icon name={icon} className={clsx(['mr-3 ml-0.5 shrink-0', `color-${iconColor}`])} />;
     };
 
     const borderColor =
@@ -46,7 +46,7 @@ const Banner = ({ backgroundColor = BannerBackgroundColor.NORM, icon, iconColor,
 
     return (
         <div
-            className={`bg-${backgroundColor} border ${borderColor} rounded px-2 py-1 mb-3 flex flex-align-items-center flex-nowrap`}
+            className={`bg-${backgroundColor} border ${borderColor} rounded px-2 py-1 mb-3 flex items-center flex-nowrap`}
         >
             {getIcon()}
             <span className={clsx([!!action && 'mr-4'])}>{children}</span>

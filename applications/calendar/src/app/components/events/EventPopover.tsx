@@ -323,7 +323,7 @@ const EventPopover = ({
     };
     const commonHeaderProps = {
         onClose,
-        className: 'flex-item-noshrink',
+        className: 'shrink-0',
     };
 
     if (eventReadError) {
@@ -332,8 +332,8 @@ const EventPopover = ({
         const actions =
             deleteButton || showReload ? (
                 <>
-                    {showReload && <div className="flex flex-nowrap flex-justify-end">{reloadButton}</div>}
-                    {deleteButton && <div className="flex flex-nowrap flex-justify-end">{deleteButton}</div>}
+                    {showReload && <div className="flex flex-nowrap justify-end">{reloadButton}</div>}
+                    {deleteButton && <div className="flex flex-nowrap justify-end">{deleteButton}</div>}
                 </>
             ) : null;
 
@@ -386,14 +386,14 @@ const EventPopover = ({
                 <div className="flex mb-4 flex-nowrap">
                     <span
                         className={clsx(
-                            'event-popover-calendar-border relative flex-item-noshrink my-1',
+                            'event-popover-calendar-border relative shrink-0 my-1',
                             isUnanswered && !isCancelled && 'isUnanswered'
                         )}
                         style={{ '--calendar-color': color }}
                     />
                     <div className="pt-2">
                         <h1
-                            className="eventpopover-title lh-rg text-hyphens scroll-if-needed mb-0"
+                            className="eventpopover-title lh-rg text-hyphens overflow-auto mb-0"
                             title={eventTitleSafe}
                         >
                             {eventTitleSafe}
@@ -405,7 +405,7 @@ const EventPopover = ({
                     </div>
                 </div>
             </PopoverHeader>
-            <div className="scroll-if-needed mb-4" ref={popoverEventContentRef}>
+            <div className="overflow-auto mb-4" ref={popoverEventContentRef}>
                 <PopoverEventContent
                     key={targetEvent.uniqueId}
                     calendar={calendarData}
@@ -418,7 +418,7 @@ const EventPopover = ({
             </div>
             {getCanReplyToEvent({ isOwnedCalendar, isCalendarWritable, isAttendee: model.isAttendee, isCancelled }) && (
                 <PopoverFooter
-                    className="flex-item-noshrink flex-align-items-start md:flex-align-items-center flex-justify-space-between gap-4 flex-column md:flex-row"
+                    className="shrink-0 items-start md:items-center justify-space-between gap-4 flex-column md:flex-row"
                     key={targetEvent.uniqueId}
                 >
                     <div>

@@ -71,14 +71,14 @@ const ToolbarColumnWide = ({
             <nav
                 className={clsx(
                     classname,
-                    'flex-justify-space-between py-1 pr-2',
+                    'justify-space-between py-1 pr-2',
                     selectedIDs.length === 0 ? 'pl-4' : 'pl-3'
                 )}
                 data-shortcut-target="mailbox-toolbar"
                 aria-label={c('Label').t`Toolbar`}
                 ref={toolbarRef}
             >
-                <div className="flex flex-align-items-center flex-nowrap toolbar-inner gap-2">
+                <div className="flex items-center flex-nowrap toolbar-inner gap-2">
                     <LabelName selectedIDs={selectedIDs} labelName={labelName} />
 
                     <ReadUnreadButtons selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
@@ -121,7 +121,7 @@ const ToolbarColumnWide = ({
                 </div>
 
                 {(!localIsTiny && selectedIDs.length > 0) || selectedIDs.length === 0 ? (
-                    <div className="flex flex-align-items-center flex-item-noshrink toolbar-inner gap-2">
+                    <div className="flex items-center shrink-0 toolbar-inner gap-2">
                         <PagingControls
                             loading={loading}
                             page={page}
@@ -133,7 +133,7 @@ const ToolbarColumnWide = ({
                 ) : undefined}
             </nav>
 
-            <div className="toolbar flex gap-2 flex-nowrap flex-justify-space-between bg-norm border-bottom border-weak pl-4 pr-2 py-1">
+            <div className="toolbar flex gap-2 flex-nowrap justify-space-between bg-norm border-bottom border-weak pl-4 pr-2 py-1">
                 <div className="mr-auto">{selectAll}</div>
 
                 <div className="ml-auto">

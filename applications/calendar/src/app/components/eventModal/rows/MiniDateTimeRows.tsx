@@ -33,12 +33,12 @@ const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStartsOn, e
             <div>
                 <div className="flex flex-nowrap mb-2">
                     <div
-                        className="flex-no-min-children flex-item-fluid flex-column flex-item-grow-custom"
+                        className="flex children-min-size-auto flex-1 flex-column grow-custom"
                         style={{ '--grow-custom': '1.25' }}
                     >
                         <DateInput
                             id={DATE_INPUT_ID}
-                            className="flex-item-fluid"
+                            className="flex-1"
                             required
                             value={model.start.date}
                             onChange={handleChangeStartDate}
@@ -52,7 +52,7 @@ const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStartsOn, e
                     {!model.isAllDay && (
                         <TimeInput
                             id="event-startTime"
-                            className="ml-2 flex-item-fluid"
+                            className="ml-2 flex-1"
                             value={model.start.time}
                             onChange={handleChangeStartTime}
                             title={c('Title').t`Select event start time`}
@@ -61,12 +61,12 @@ const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStartsOn, e
                 </div>
                 <div className="flex flex-nowrap mb-1">
                     <div
-                        className="flex-no-min-children flex-item-fluid flex-column flex-item-grow-custom"
+                        className="flex children-min-size-auto flex-1 flex-column grow-custom"
                         style={{ '--grow-custom': '1.25' }}
                     >
                         <DateInput
                             id="event-endDate"
-                            className="flex-item-fluid"
+                            className="flex-1"
                             required
                             value={model.end.date}
                             onChange={handleChangeEndDate}
@@ -81,7 +81,7 @@ const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStartsOn, e
                     {!model.isAllDay && (
                         <TimeInput
                             id="event-endTime"
-                            className="ml-2 flex-item-fluid"
+                            className="ml-2 flex-1"
                             value={model.end.time}
                             onChange={handleChangeEndTime}
                             aria-invalid={Boolean(endError)}

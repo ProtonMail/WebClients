@@ -43,10 +43,10 @@ const DMARCSection = () => {
                         cells={[
                             <code key="txt">TXT</code>,
                             <code key="dmarc">_dmarc</code>,
-                            <div className="flex flex-nowrap flex-align-items-center" key="value">
+                            <div className="flex flex-nowrap items-center" key="value">
                                 <Copy
                                     onCopy={handleCopy}
-                                    className="flex-item-noshrink mr-2"
+                                    className="shrink-0 mr-2"
                                     size="small"
                                     value={value}
                                 />{' '}

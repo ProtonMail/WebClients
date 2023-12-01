@@ -43,7 +43,7 @@ const Toggle = (
     return (
         <label
             className={clsx([
-                children ? 'flex flex-align-items-center flex-nowrap gap-2' : '',
+                children ? 'flex items-center flex-nowrap gap-2' : '',
                 'toggle-label',
                 className,
             ])}

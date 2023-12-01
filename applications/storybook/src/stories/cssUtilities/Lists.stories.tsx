@@ -11,7 +11,7 @@ export default {
 };
 
 export const Lists = () => (
-    <div className="w-1/2 flex-align-self-center">
+    <div className="w-1/2 self-center">
         <div className="flex gap-7">
             <div>
                 <ul className="m-0">

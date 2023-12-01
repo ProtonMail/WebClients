@@ -44,7 +44,7 @@ const RevisionListItem = ({
                 isCurrent={isCurrent}
             />
             <li className="revision-list-item mb-4">
-                <TimeIntl className="flex-item-fluid" options={options}>
+                <TimeIntl className="flex-1" options={options}>
                     {revision.createTime}
                 </TimeIntl>
                 <p className="text-ellipsis text-center m-0">{revision.signatureEmail}</p>

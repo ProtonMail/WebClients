@@ -66,7 +66,7 @@ const StepPrepareCalendarSummary = ({ isSelected }: Props) => {
         <>
             {derivedValues.calendarLimitReached ? (
                 <div className="flex color-danger">
-                    <Icon name="exclamation-circle-filled" className="flex-align-self-center mr-2" />
+                    <Icon name="exclamation-circle-filled" className="self-center mr-2" />
                     {c('Error').t`Calendar limit reached`}
                 </div>
             ) : (
@@ -76,7 +76,7 @@ const StepPrepareCalendarSummary = ({ isSelected }: Props) => {
             )}
             <UnderlineButton
                 onClick={() => handleDisplayCustomizeModal(true)}
-                className="flex-align-self-start pb-0"
+                className="self-start pb-0"
             >{c('Action').t`Customize`}</UnderlineButton>
             {renderCustomizeModal && (
                 <CustomizeCalendarImportModal

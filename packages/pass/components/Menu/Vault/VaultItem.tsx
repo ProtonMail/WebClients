@@ -104,12 +104,12 @@ export const VaultItem: VFC<Props> = ({
                             <Icon name="users" alt={c('Action').t`See members`} color="var(--text-weak)" />
                         </ButtonLike>
                     )}
-                    <span className="pass-vault--count flex-item-noshrink color-weak mx-1">{count}</span>
+                    <span className="pass-vault--count shrink-0 color-weak mx-1">{count}</span>
                 </>
             }
             icon={
                 <VaultIcon
-                    className="flex-item-noshrink"
+                    className="shrink-0"
                     size={14}
                     color={vault?.content.display.color}
                     icon={vault?.content.display.icon}
@@ -129,7 +129,7 @@ export const VaultItem: VFC<Props> = ({
                           allowSharing && shared && (
                               <DropdownMenuButton
                                   key="vault-manage"
-                                  className="flex flex-align-items-center py-2 px-4"
+                                  className="flex items-center py-2 px-4"
                                   icon="users"
                                   label={
                                       vault.shareRoleId === ShareRole.ADMIN
@@ -143,7 +143,7 @@ export const VaultItem: VFC<Props> = ({
                           allowSharing && !shared && (
                               <DropdownMenuButton
                                   key="vault-share"
-                                  className="flex flex-align-items-center py-2 px-4"
+                                  className="flex items-center py-2 px-4"
                                   disabled={!isWritableVault(vault)}
                                   icon="user-plus"
                                   label={c('Action').t`Share`}
@@ -166,7 +166,7 @@ export const VaultItem: VFC<Props> = ({
                           allowSharing && shared && !vault.owner ? (
                               <DropdownMenuButton
                                   key="vault-leave"
-                                  className="flex flex-align-items-center py-2 px-4"
+                                  className="flex items-center py-2 px-4"
                                   onClick={handleClickEvent(onLeave)}
                                   icon="cross-circle"
                                   label={c('Action').t`Leave vault`}

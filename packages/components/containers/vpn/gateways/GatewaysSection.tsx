@@ -150,7 +150,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                         </p>
                     </div>
                     {isAdmin && (
-                        <div className="m-4 mr-6 flex-item-noshrink flex-align-self-center">
+                        <div className="m-4 mr-6 shrink-0 self-center">
                             <Button
                                 color="norm"
                                 onClick={getCustomizeSubscriptionOpener('upsells')}
@@ -485,7 +485,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                     {renameModal}
                     {serversModal}
                     {usersModal}
-                    <div className="mb-4 flex flex-align-items-center gap-2">
+                    <div className="mb-4 flex items-center gap-2">
                         <span className="color-weak">
                             {c('Info').ngettext(
                                 msgid`You are currently using ${ipCount} of your ${ipAddresses} available dedicated server.`,

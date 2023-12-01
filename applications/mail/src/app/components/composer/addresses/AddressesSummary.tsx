@@ -39,7 +39,7 @@ const AddressesSummary = ({
     const title = getRecipientsOrGroupsLabels(getRecipientsOrGroups(recipients)).join(', ');
 
     return (
-        <div className="flex flex-row flex-nowrap flex-column md:flex-row flex-align-items-center relative my-0">
+        <div className="flex flex-row flex-nowrap flex-column md:flex-row items-center relative my-0">
             <Label
                 className={clsx([
                     'composer-meta-label composer-meta-label-to pr-2 text-semibold',
@@ -50,13 +50,13 @@ const AddressesSummary = ({
             </Label>
             <div
                 className={clsx([
-                    'field flex composer-addresses-fakefield composer-meta-fakefield-summary composer-light-field flex-row flex-align-items-center flex-nowrap flex-item-fluid w-full',
+                    'field flex composer-addresses-fakefield composer-meta-fakefield-summary composer-light-field flex-row items-center flex-nowrap flex-1 w-full',
                     disabled && 'disabled',
                 ])}
                 data-testid="composer:address"
             >
                 <span
-                    className="text-ellipsis flex-item-fluid composer-addresses-fakefield-inner pr-4"
+                    className="text-ellipsis flex-1 composer-addresses-fakefield-inner pr-4"
                     title={title}
                     onClick={onFocus}
                     onFocus={onFocus}
@@ -114,15 +114,15 @@ const AddressesSummary = ({
                         );
                     })}
                 </span>
-                <span className="flex flex-nowrap flex-item-noshrink max-w-1/2 sm:max-w-1/3 md:max-w-none">
+                <span className="flex flex-nowrap shrink-0 max-w-1/2 sm:max-w-1/3 md:max-w-none">
                     <AddressesCCButton
-                        classNames="composer-addresses-ccbcc composer-addresses-ccbcc-fakefield text-ellipsis flex-item-noshrink"
+                        classNames="composer-addresses-ccbcc composer-addresses-ccbcc-fakefield text-ellipsis shrink-0"
                         disabled={disabled}
                         onClick={toggleExpanded('CCList')}
                         type="CCList"
                     />
                     <AddressesCCButton
-                        classNames="composer-addresses-ccbcc composer-addresses-ccbcc-fakefield text-ellipsis flex-item-noshrink"
+                        classNames="composer-addresses-ccbcc composer-addresses-ccbcc-fakefield text-ellipsis shrink-0"
                         disabled={disabled}
                         onClick={toggleExpanded('BCCList')}
                         type="BCCList"
@@ -133,7 +133,7 @@ const AddressesSummary = ({
                             tabIndex={-1}
                             onClick={handleContactModal('ToList')}
                             color="weak"
-                            className="py-1 flex-item-noshrink"
+                            className="py-1 shrink-0"
                             shape="ghost"
                             icon
                             data-testid="composer:to-button"

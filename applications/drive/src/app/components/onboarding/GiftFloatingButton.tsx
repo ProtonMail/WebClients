@@ -66,10 +66,10 @@ function WelcomeActionsDoneSpotlight({ onSeen }: { onSeen: (dismiss?: boolean) =
 
     const spotlightContent = (
         <div className="flex flex-nowrap">
-            <figure className="flex-item flex-item-noshrink mr-4">
+            <figure className="shrink-0 mr-4">
                 <img src={spotlightIcon} alt="" />
             </figure>
-            <div className="flex-item">
+            <div>
                 <h6 className="text-semibold">{c('Title').t`You’ve got 1 GB of storage`}</h6>
                 <div className="mb-4 color-weak">{c('Info').t`Way to go, you’ve just doubled your free storage!`}</div>
             </div>
@@ -107,10 +107,10 @@ function WelcomeActionsSpotlight({
 
     const spotlightContent = showPopup ? (
         <div className="flex flex-nowrap">
-            <figure className="flex-item flex-item-noshrink mr-4">
+            <figure className="shrink-0 mr-4">
                 <img src={spotlightIcon} alt="" />
             </figure>
-            <div className="flex-item">
+            <div>
                 <h6 className="text-semibold">{c('Title').t`Your 500 MB bonus`}</h6>
                 {/* translator: You have X days left to claim your 500 MB welcome bonus and double your storage */}
                 {c('Info').ngettext(
@@ -278,22 +278,22 @@ function WelcomeAction({
 
     return (
         <Row
-            className={clsx(['flex flex-align-items-center rounded', !isDone && 'cursor-pointer'])}
+            className={clsx(['flex items-center rounded', !isDone && 'cursor-pointer'])}
             onClick={isDone ? undefined : action}
             onMouseEnter={() => setOnHover(true)}
             onMouseLeave={() => setOnHover(false)}
         >
             <div
                 className={clsx([
-                    'flex-item-nowrap h-custom w-custom rounded mr-2',
-                    'flex flex-justify-center flex-align-items-center',
+                    'h-custom w-custom rounded mr-2',
+                    'flex justify-center items-center',
                     isDone ? 'bg-success' : 'bg-weak',
                 ])}
                 style={{ '--w-custom': '2.5em', '--h-custom': '2.5em' }}
             >
                 <Icon name={icon} />
             </div>
-            <div className={clsx(['flex-item-fluid', isDone && 'text-strike color-weak'])}>
+            <div className={clsx(['flex-1', isDone && 'text-strike color-weak'])}>
                 {title}
                 {!isDone && text && <div className="color-weak">{text}</div>}
             </div>

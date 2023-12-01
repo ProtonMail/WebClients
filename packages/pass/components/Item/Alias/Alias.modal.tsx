@@ -70,7 +70,7 @@ export const AliasModal = <T extends AliasFormValues>({
                         actions={[
                             <Button
                                 key="modal-close-button"
-                                className="flex-item-noshrink"
+                                className="shrink-0"
                                 icon
                                 pill
                                 shape="solid"

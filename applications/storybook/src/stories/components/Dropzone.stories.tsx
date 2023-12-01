@@ -46,7 +46,7 @@ export const Custom = () => {
 
     return (
         <div className="p-7">
-            <div className="flex flex-align-items-stretch">
+            <div className="flex items-stretch">
                 <div className="mr-7">
                     <strong className="block mb-4">Size</strong>
                     <RadioGroup
@@ -137,7 +137,7 @@ export const Custom = () => {
                     )}
                 </div>
             </div>
-            <div className="mt-4 flex flex-align-items-center">
+            <div className="mt-4 flex items-center">
                 <Dropzone
                     onDrop={handleAddFile}
                     size={selectedSize}
@@ -150,7 +150,7 @@ export const Custom = () => {
                         return acc;
                     }, {})}
                 >
-                    <div className="flex flex-align-items-center w-full border p-4" style={{ minHeight: '300px' }}>
+                    <div className="flex items-center w-full border p-4" style={{ minHeight: '300px' }}>
                         <div className="flex flex-column text-center h-full w-full">
                             <span>Hover with a file to see the dropzone (or select showDragOverState toggle)</span>
                             <br />
@@ -168,9 +168,9 @@ export const Invisible = () => {
 
     return (
         <div className="p-7">
-            <div className="mt-4 flex flex-align-items-center">
+            <div className="mt-4 flex items-center">
                 <Dropzone onDrop={handleAddFile} shape="invisible">
-                    <div className="flex flex-align-items-center w-full border p-4" style={{ minHeight: '300px' }}>
+                    <div className="flex items-center w-full border p-4" style={{ minHeight: '300px' }}>
                         <div className="flex flex-column text-center h-full w-full">
                             <span>Hover with a file to see the dropzone (or select showDragOverState toggle)</span>
                             <br />

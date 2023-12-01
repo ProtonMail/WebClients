@@ -125,7 +125,7 @@ const SettingsSearch = ({ routes, path, app }: Props) => {
 
     return (
         <>
-            <div className="searchbox flex-item-centered-vert">
+            <div className="searchbox self-center my-auto">
                 <Input
                     {...inputProps}
                     placeholder={
@@ -160,7 +160,7 @@ const SettingsSearch = ({ routes, path, app }: Props) => {
                                 <div className="pr-4">
                                     <Icon name={option.icon} />
                                 </div>
-                                <div className="flex-item-fluid">
+                                <div className="flex-1">
                                     <div>
                                         <Marks chunks={chunks}>{text}</Marks>
                                     </div>

@@ -17,7 +17,7 @@ export const AliasPreview: VFC<{
     const suffixLastChars = (suffix.split('@')?.[1]?.length ?? 5) + 1;
 
     return (
-        <div className={clsx(['flex flex-column flex-align-items-center mb-4', className])}>
+        <div className={clsx(['flex flex-column items-center mb-4', className])}>
             <div className="mb-2 color-weak">{c('Info').t`You are about to create:`}</div>
             <div className="w-full text-center">
                 {loading ? (

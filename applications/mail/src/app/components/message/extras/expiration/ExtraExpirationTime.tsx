@@ -53,14 +53,14 @@ const ExtraExpirationTime = ({ message }: Props) => {
                 expiresInLessThan24Hours && 'color-danger border-danger'
             )}
         >
-            <div className="md:flex-item-fluid flex flex-nowrap mb-2 md:mb-0" data-testid="expiration-banner">
-                <Icon name="hourglass" className="mt-1 ml-0.5 flex-item-noshrink" />
-                <span className={clsx(!canExpire && 'mt-1', 'px-2 flex flex-item-fluid flex-align-items-center')}>
+            <div className="md:flex-1 flex flex-nowrap mb-2 md:mb-0" data-testid="expiration-banner">
+                <Icon name="hourglass" className="mt-1 ml-0.5 shrink-0" />
+                <span className={clsx(!canExpire && 'mt-1', 'px-2 flex flex-1 items-center')}>
                     {expirationMessage}
                 </span>
             </div>
             {canExpire ? (
-                <span className="flex-item-noshrink flex-align-items-start flex w-full md:w-auto pt-0.5">
+                <span className="shrink-0 items-start flex w-full md:w-auto pt-0.5">
                     <Tooltip title={c('Cancel expiration of the message').t`Cancel expiration`}>
                         <Button
                             onClick={handleClick}

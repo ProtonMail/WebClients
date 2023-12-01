@@ -164,7 +164,7 @@ const PlanCard = ({
                 <div className="text-bold">{title}</div>
                 <div className="color-weak">{description}</div>
             </div>
-            <div {...cycleProps} className={clsx('p-4 rounded-lg w-full flex-item-fluid-auto', cycleProps?.className)}>
+            <div {...cycleProps} className={clsx('p-4 rounded-lg w-full flex-auto', cycleProps?.className)}>
                 {children}
             </div>
         </div>
@@ -342,7 +342,7 @@ const getPlanTitle = (selected: string) => {
 };
 const FeatureItem = ({ left, text }: { left: ReactNode; text: string }) => {
     return (
-        <div className="flex flex-align-items-center text-center flex-column md:flex-row flex-justify-center">
+        <div className="flex items-center text-center flex-column md:flex-row justify-center">
             <div className="md:mr-4 text-center">{left}</div>
             <div>{text}</div>
         </div>
@@ -351,16 +351,16 @@ const FeatureItem = ({ left, text }: { left: ReactNode; text: string }) => {
 
 const BoxHeader = ({ step, title, right }: { step?: number; title: string; right?: ReactNode }) => {
     return (
-        <div className="flex flex-align-items-center flex-justify-space-between flex-nowrap">
-            <div className="flex md:flex-align-items-center flex-column md:flex-row md:gap-4 gap-2">
+        <div className="flex items-center justify-space-between flex-nowrap">
+            <div className="flex md:items-center flex-column md:flex-row md:gap-4 gap-2">
                 {step !== undefined && (
-                    <div className="flex-item-noshrink">
+                    <div className="shrink-0">
                         <StepLabel step={step} />
                     </div>
                 )}
-                <h2 className="text-bold text-4xl md:flex-item-fluid">{title}</h2>
+                <h2 className="text-bold text-4xl md:flex-1">{title}</h2>
             </div>
-            {right && <div className="flex-item-noshrink">{right}</div>}
+            {right && <div className="shrink-0">{right}</div>}
         </div>
     );
 };
@@ -1041,7 +1041,7 @@ const Step1 = ({
             background={background}
             isB2bPlan={isB2bPlan}
         >
-            <div className="flex flex-align-items-center flex-column">
+            <div className="flex items-center flex-column">
                 <div className="signup-v1-header mb-4 text-center">
                     <h1 className="m-0 large-font lg:px-4 text-semibold">
                         {(() => {
@@ -1159,7 +1159,7 @@ const Step1 = ({
                                       return (
                                           <div className="flex gap-6 flex-column lg:flex-row lg:gap-3 ">
                                               <PlanCard
-                                                  className="lg:flex-item-fluid"
+                                                  className="lg:flex-1"
                                                   title={vpnPlan?.Title}
                                                   description={c('bf2023: info')
                                                       .t`Secure browsing and premium VPN features.`}
@@ -1176,7 +1176,7 @@ const Step1 = ({
                                                       },
                                                   }}
                                               >
-                                                  <div className="flex flex-justify-space-between gap-4 flex-column lg:flex-row">
+                                                  <div className="flex justify-space-between gap-4 flex-column lg:flex-row">
                                                       <CycleSelector
                                                           bg
                                                           onGetTheDeal={(cycle) => {
@@ -1217,7 +1217,7 @@ const Step1 = ({
                                                       },
                                                   }}
                                               >
-                                                  <div className="flex flex-justify-space-between gap-4 flex-column lg:flex-row">
+                                                  <div className="flex justify-space-between gap-4 flex-column lg:flex-row">
                                                       <CycleSelector
                                                           bg
                                                           onGetTheDeal={(cycle) => {
@@ -1238,7 +1238,7 @@ const Step1 = ({
                                       );
                                   })()
                                 : checkoutMappingPlanIDs && (
-                                      <div className="flex flex-justify-space-between gap-4 flex-column lg:flex-row">
+                                      <div className="flex justify-space-between gap-4 flex-column lg:flex-row">
                                           <CycleSelector
                                               onGetTheDeal={(cycle) => {
                                                   handleUpdate('plan');
@@ -1264,7 +1264,7 @@ const Step1 = ({
                                           />
                                       </div>
                                   )}
-                            <div className="flex flex-column flex-align-items-center gap-1 lg:flex-row lg:flex-justify-space-between mt-10">
+                            <div className="flex flex-column items-center gap-1 lg:flex-row lg:justify-space-between mt-10">
                                 <span className="text-sm">
                                     <Guarantee />
                                 </span>
@@ -1290,8 +1290,8 @@ const Step1 = ({
                     </Box>
                 )}
                 <Box className="mt-8 w-full">
-                    <div className="flex flex-justify-space-between flex-column lg:flex-row ">
-                        <div className={`lg:flex-item-fluid ${padding}`}>
+                    <div className="flex justify-space-between flex-column lg:flex-row ">
+                        <div className={`lg:flex-1 ${padding}`}>
                             <BoxHeader
                                 step={showStepLabel ? step++ : undefined}
                                 title={c('Header').t`Create your account`}
@@ -1421,7 +1421,7 @@ const Step1 = ({
                                         removeBundle={
                                             options.planIDs[PLANS.VPN_PASS_BUNDLE] && (
                                                 <Button
-                                                    className="flex flex-nowrap flex-align-items-center flex-justify-center"
+                                                    className="flex flex-nowrap items-center justify-center"
                                                     color="weak"
                                                     shape="outline"
                                                     size="small"
@@ -1451,8 +1451,8 @@ const Step1 = ({
                     <Box className={`mt-8 w-full ${padding}`}>
                         <BoxHeader step={showStepLabel ? step++ : undefined} title={c('Header').t`Checkout`} />
                         <BoxContent>
-                            <div className="flex flex-justify-space-between md:gap-14 gap-6 flex-column lg:flex-row">
-                                <div className="lg:flex-item-fluid md:pr-1 order-1 lg:order-0">
+                            <div className="flex justify-space-between md:gap-14 gap-6 flex-column lg:flex-row">
+                                <div className="lg:flex-1 md:pr-1 order-1 lg:order-0">
                                     <form
                                         onFocus={(e) => {
                                             const autocomplete = e.target.getAttribute('autocomplete');
@@ -1667,7 +1667,7 @@ const Step1 = ({
                                                             />
                                                             <label
                                                                 htmlFor="toggle-upsell-plan"
-                                                                className="flex-item-fluid text-sm"
+                                                                className="flex-1 text-sm"
                                                             >
                                                                 {label}
                                                             </label>
@@ -1693,9 +1693,9 @@ const Step1 = ({
                                                                     {planInformation.logo}
                                                                 </div>
                                                             </div>
-                                                            <div className="flex-item-fluid">
+                                                            <div className="flex-1">
                                                                 <div className="flex gap-2">
-                                                                    <div className="text-rg text-bold flex-item-fluid">
+                                                                    <div className="text-rg text-bold flex-1">
                                                                         {planInformation.title}
                                                                     </div>
                                                                     {!isB2bPlan && (
@@ -1704,8 +1704,8 @@ const Step1 = ({
                                                                         </div>
                                                                     )}
                                                                 </div>
-                                                                <div className="flex-item-fluid flex flex-align-items-center gap-2">
-                                                                    <div className="flex-item-fluid text-sm">
+                                                                <div className="flex-1 flex items-center gap-2">
+                                                                    <div className="flex-1 text-sm">
                                                                         <span className="color-weak mr-1">
                                                                             {getBilledText(options.cycle)}
                                                                         </span>
@@ -1720,7 +1720,7 @@ const Step1 = ({
                                                                     </div>
 
                                                                     {free && (
-                                                                        <div className="flex-item-fluid text-sm color-weak">
+                                                                        <div className="flex-1 text-sm color-weak">
                                                                             {c('Info').t`Free forever`}
                                                                         </div>
                                                                     )}
@@ -1748,7 +1748,7 @@ const Step1 = ({
                                                         {upsell && (
                                                             <>
                                                                 <div className="border-top border-weak" />
-                                                                <div className="p-2 flex gap-1 flex-align-items-center">
+                                                                <div className="p-2 flex gap-1 items-center">
                                                                     {upsell}
                                                                 </div>
                                                             </>
@@ -1805,7 +1805,7 @@ const Step1 = ({
 
                                             {isB2bPlan && (
                                                 <>
-                                                    <div className="mx-3 text-bold flex flex-justify-space-between text-rg gap-2">
+                                                    <div className="mx-3 text-bold flex justify-space-between text-rg gap-2">
                                                         <span>{getTotalBillingText(options.cycle)}</span>
                                                         <span>
                                                             <Price currency={options.currency}>
@@ -1871,7 +1871,7 @@ const Step1 = ({
 
                                             <div className="mx-3 flex flex-column gap-2">
                                                 {showLifetimeDeal && actualCheckout.discountPercent > 0 && (
-                                                    <div className={clsx('flex flex-justify-space-between text-rg')}>
+                                                    <div className={clsx('flex justify-space-between text-rg')}>
                                                         <span>{c('specialoffer: Label').t`Lifetime deal`}</span>
                                                         <span>
                                                             <span className="color-success">
@@ -1887,7 +1887,7 @@ const Step1 = ({
                                                 <div
                                                     className={clsx(
                                                         'text-bold',
-                                                        'flex flex-justify-space-between text-rg gap-2'
+                                                        'flex justify-space-between text-rg gap-2'
                                                     )}
                                                 >
                                                     <span>

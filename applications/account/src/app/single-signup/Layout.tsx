@@ -76,7 +76,7 @@ const Layout = ({
     return (
         <div
             className={clsx(
-                'flex-no-min-children flex-nowrap flex-column h-full scroll-if-needed relative',
+                'flex children-min-size-auto flex-nowrap flex-column h-full overflow-auto relative',
                 background === 'dark'
                     ? 'signup-v1-bg--dark'
                     : background === 'bf2023'
@@ -94,31 +94,31 @@ const Layout = ({
                 logo={
                     hasDecoration && href ? (
                         <Href
-                            className="flex-item-noshrink relative interactive-pseudo-protrude rounded interactive--no-background"
+                            className="shrink-0 relative interactive-pseudo-protrude rounded interactive--no-background"
                             href={href}
                         >
                             {protonLogo}
                         </Href>
                     ) : (
-                        <div className="flex-item-noshrink flex flex-align-item-center">{protonLogo}</div>
+                        <div className="shrink-0 flex">{protonLogo}</div>
                     )
                 }
                 isDarkBg={isDarkBg && !isTinyMobile}
             />
-            <main className="flex-item-fluid-auto flex flex-nowrap flex-column flex-justify-space-between md:mx-12 mx-6">
+            <main className="flex-auto flex flex-nowrap flex-column justify-space-between md:mx-12 mx-6">
                 {children}
                 {hasDecoration && (
-                    <div className="flex flex-align-items-center flex-column">
+                    <div className="flex items-center flex-column">
                         <Box className="w-full">
                             <footer
-                                className="w-full min-h-custom pb-8 flex flex-column flex-justify-space-between gap-4"
+                                className="w-full min-h-custom pb-8 flex flex-column justify-space-between gap-4"
                                 style={{ '--min-h-custom': '12rem' }}
                             >
                                 <div className="mb-6"></div>
                                 {footer}
-                                <div className="w-full flex flex-justify-space-between flex-column md:flex-row">
+                                <div className="w-full flex justify-space-between flex-column md:flex-row">
                                     <div className="flex gap-1 flex-column md:flex-row">
-                                        <LayoutLogosV2 size={20} className="flex-justify-center md:flex-justify-start" />
+                                        <LayoutLogosV2 size={20} className="justify-center md:justify-start" />
                                         <span
                                             className={clsx(
                                                 'text-sm text-center mb-4 lg:mb-0',

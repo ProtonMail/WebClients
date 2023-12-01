@@ -19,7 +19,7 @@ const Benefits = ({ className, features, ...rest }: Props) => {
             {features.map((item) => {
                 return (
                     <li key={item.key} className="flex gap-2 py-1">
-                        <div className="flex-item-noshrink color-primary">
+                        <div className="shrink-0 color-primary">
                             <Icon
                                 size={16}
                                 name={item.icon.name}
@@ -27,7 +27,7 @@ const Benefits = ({ className, features, ...rest }: Props) => {
                                 className="align-text-top"
                             />
                         </div>
-                        <div className="flex-item-fluid color-weak text-sm">{item.text}</div>
+                        <div className="flex-1 color-weak text-sm">{item.text}</div>
                     </li>
                 );
             })}

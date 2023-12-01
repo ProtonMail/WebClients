@@ -15,7 +15,7 @@ interface AppLogosProps {
 
 const LayoutLogos = ({ size, className }: AppLogosProps) => {
     return (
-        <div className={clsx(className, 'flex flex-justify-center gap-1')}>
+        <div className={clsx(className, 'flex justify-center gap-1')}>
             {[
                 {
                     title: MAIL_APP_NAME,

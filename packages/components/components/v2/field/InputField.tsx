@@ -102,12 +102,12 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
             rootClassName,
         ]),
         labelContainer: clsx([
-            'field-two-label-container flex flex-justify-space-between flex-nowrap flex-align-items-end gap-2',
+            'field-two-label-container flex justify-space-between flex-nowrap items-end gap-2',
             labelContainerClassName,
         ]),
         inputContainer: clsx(['field-two-input-container relative', inputContainerClassName]),
         assistContainer: clsx([
-            'field-two-assist flex flex-nowrap flex-align-items-start',
+            'field-two-assist flex flex-nowrap items-start',
             isDense && 'sr-only',
             assistContainerClassName,
         ]),
@@ -117,13 +117,13 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
 
     const errorElement = error && typeof error !== 'boolean' && (
         <>
-            <Icon name="exclamation-circle-filled" className="flex-item-noshrink mr-1" />
+            <Icon name="exclamation-circle-filled" className="shrink-0 mr-1" />
             <span data-testid={dataTestId ? `error-${dataTestId}` : undefined}>{error}</span>
         </>
     );
     const warningElement = warning && typeof warning !== 'boolean' && (
         <>
-            <Icon name="exclamation-circle-filled" className="flex-item-noshrink mr-1" />
+            <Icon name="exclamation-circle-filled" className="shrink-0 mr-1" />
             <span data-testid={dataTestId ? `warning-${dataTestId}` : undefined}>{warning}</span>
         </>
     );
@@ -147,7 +147,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
                         originalPlacement="top-end"
                         isOpen={isTooltipOpen}
                     >
-                        <span className="flex flex-item-noshrink p-1">
+                        <span className="flex shrink-0 p-1">
                             <Icon name="exclamation-circle-filled" className={iconClassName} />
                         </span>
                     </Tooltip>

@@ -25,7 +25,7 @@ export const OnboardingModal: FC<SidebarModalProps> = ({ children, content, acti
         <ModalTwo {...props} size={size} className="text-center">
             <ModalTwoHeader closeButtonProps={{ pill: true, icon: true }} />
             <ModalTwoContent className="pb-4">{children}</ModalTwoContent>
-            <ModalTwoFooter className="pass-onboarding-modal--actions flex flex-justify-center">
+            <ModalTwoFooter className="pass-onboarding-modal--actions flex justify-center">
                 {actions}
             </ModalTwoFooter>
         </ModalTwo>
@@ -38,7 +38,7 @@ export const OnboardingModal: FC<SidebarModalProps> = ({ children, content, acti
                         actions={[
                             <Button
                                 key="close-modal-button"
-                                className="flex-item-noshrink"
+                                className="shrink-0"
                                 icon
                                 pill
                                 shape="solid"

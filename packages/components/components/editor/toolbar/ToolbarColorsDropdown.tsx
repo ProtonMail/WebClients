@@ -37,7 +37,7 @@ const ToolbarColorsDropdown = ({ fontColor, bgColor, setFontColor, setBgColor }:
         <ToolbarDropdown
             dropdownSize={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
             content={<Icon name="circle-half-filled" size={COMPOSER_TOOLBAR_ICON_SIZE} alt={c('Action').t`Color`} />}
-            className="flex-item-noshrink"
+            className="shrink-0"
             data-testid="editor-font-color"
             title={c('Action').t`Color`}
         >

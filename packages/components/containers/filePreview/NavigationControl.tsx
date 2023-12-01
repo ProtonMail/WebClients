@@ -41,7 +41,7 @@ const NavigationControl = ({ current, total, rootRef, onNext, onPrev }: Props) =
     ]);
 
     return (
-        <div className="flex flex-align-items-center absolute-center">
+        <div className="flex items-center absolute-center">
             <Button
                 icon
                 shape="ghost"

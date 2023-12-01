@@ -52,14 +52,14 @@ const ConfirmSignOutModal = ({ onSignOut, onClose, ...rest }: Props) => {
                 {c('Info').t`Recovery information will remain on this device unless you select to delete it.`}
             </p>
 
-            <div className="flex flex-row flex-align-items-start">
+            <div className="flex flex-row items-start">
                 <Checkbox
                     id="delete-recovery-storage"
                     className="mt-2 mr-2"
                     checked={clearData}
                     onChange={() => setClearData(!clearData)}
                 />
-                <div className="flex-item-fluid">
+                <div className="flex-1">
                     <Label htmlFor="delete-recovery-storage" className="block">
                         {c('Label').jt`Delete recovery-related information.`}{' '}
                         <Href href={getKnowledgeBaseUrl('/trusted-device/recovery/')}>{c('Link').t`What’s this?`}</Href>

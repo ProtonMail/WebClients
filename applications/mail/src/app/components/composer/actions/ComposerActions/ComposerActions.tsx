@@ -86,10 +86,10 @@ const ComposerActions = ({
     return (
         <footer
             data-testid="composer:footer"
-            className={clsx(['composer-actions flex-item-noshrink flex max-w-full', className])}
+            className={clsx(['composer-actions shrink-0 flex max-w-full', className])}
             onClick={addressesBlurRef.current}
         >
-            <div className="flex flex-row-reverse flex-align-self-center w-full ml-2 mr-6 pl-5 pr-1 mb-4">
+            <div className="flex flex-row-reverse self-center w-full ml-2 mr-6 pl-5 pr-1 mb-4">
                 <ComposerScheduleSendSpotlight
                     anchorRef={scheduleSendSpotlight.anchorRef}
                     onDisplayed={scheduleSendSpotlight.spotlight.onDisplayed}
@@ -128,7 +128,7 @@ const ComposerActions = ({
                     />
                 </ComposerScheduleSendSpotlight>
 
-                <div className="flex flex-item-fluid">
+                <div className="flex flex-1">
                     <div className="flex">
                         <Tooltip title={titleDeleteDraft}>
                             <Button
@@ -154,7 +154,7 @@ const ComposerActions = ({
                             onChange={onChange}
                         />
                     </div>
-                    <div className="flex-item-fluid flex pr-4">
+                    <div className="flex-1 flex pr-4">
                         <span className="mr-2 m-auto hidden md:flex color-weak">{dateMessage}</span>
                         <Tooltip title={titleAttachment}>
                             <AttachmentsButton

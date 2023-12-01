@@ -19,7 +19,7 @@ const ThemesModal = (props: ModalProps) => {
             <ModalTwoHeader title={c('Title').t`Select a theme`} />
             <ModalTwoContent>
                 <p className="mb-4">{c('Info').t`Customize the look and feel of ${BRAND_NAME} applications.`}</p>
-                <div className="inline-flex flex-align-item-center mb-4">
+                <div className="inline-flex mb-4">
                     <label htmlFor="themeSyncToggle" className="text-semibold">
                         <span className="mr-2">{c('Label').t`Synchronize with system`}</span>
                         <Info
@@ -37,7 +37,7 @@ const ThemesModal = (props: ModalProps) => {
                 {settings.Mode === ThemeModeSetting.Auto ? (
                     <div className="flex flex-nowrap gap-4 flex-column md:flex-row">
                         <ThemeSyncModeCard
-                            className="md:flex-item-fluid"
+                            className="md:flex-1"
                             mode="light"
                             size="small"
                             list={themes}
@@ -48,7 +48,7 @@ const ThemesModal = (props: ModalProps) => {
                             active={information.colorScheme === ColorScheme.Light}
                         />
                         <ThemeSyncModeCard
-                            className="md:flex-item-fluid"
+                            className="md:flex-1"
                             mode="dark"
                             size="small"
                             list={themes}

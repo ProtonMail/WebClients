@@ -96,7 +96,7 @@ const ProtectInboxModal = (props: ModalStateProps) => {
             <ModalContent>
                 <ProtectInboxStep {...protectedItems[step]} />
 
-                <div className="flex flex-justify-space-between mt-4">
+                <div className="flex justify-space-between mt-4">
                     <Button onClick={() => setStep((current) => current - 1)} disabled={step === 0}>{c('Action')
                         .t`Previous`}</Button>
                     <Button onClick={handleNext} color="norm">

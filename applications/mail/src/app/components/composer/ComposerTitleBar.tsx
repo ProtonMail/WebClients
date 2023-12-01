@@ -114,13 +114,13 @@ const ComposerTitleBar = ({
 
     return (
         <header
-            className="composer-title-bar ui-prominent flex flex-row flex-align-items-stretch flex-nowrap pl-4 pr-1 w-full"
+            className="composer-title-bar ui-prominent flex flex-row items-stretch flex-nowrap pl-4 pr-1 w-full"
             data-testid="composer:header"
             onDoubleClick={handleDoubleClick}
         >
             <span
                 className={clsx([
-                    'flex-item-fluid p-2 pr-4 pl-3 text-ellipsis user-select-none',
+                    'flex-1 p-2 pr-4 pl-3 text-ellipsis user-select-none',
                     (!maximized || minimized) && 'cursor-move',
                 ])}
                 onMouseDown={handleStartDragging}

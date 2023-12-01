@@ -28,16 +28,16 @@ const SignInWithGoogle = ({ loading, disabled, onClick, fullWidth, reduceHeight 
             loading={loading}
             fullWidth={fullWidth}
             disabled={loading || disabled}
-            className="flex flex-align-items-center p-1 rounded google-button"
+            className="flex items-center p-1 rounded google-button"
             style={{ '--h-custom': buttonHeight }}
         >
             <span
-                className="bg-norm rounded-sm flex flex-justify-center flex-align-items-center w-custom min-h-custom"
+                className="bg-norm rounded-sm flex justify-center items-center w-custom min-h-custom"
                 style={{ '--w-custom': googleLogoSize, '--min-h-custom': googleLogoSize }}
             >
                 <img src={googleLogo} alt="" width={googleImageSize} height={googleImageSize} aria-hidden="true" />
             </span>
-            <span className="text-semibold flex-item-fluid text-left pl-4 pr-8">{c('Gmail forwarding')
+            <span className="text-semibold flex-1 text-left pl-4 pr-8">{c('Gmail forwarding')
                 .t`Sign in with Google`}</span>
         </Button>
     );

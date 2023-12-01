@@ -32,12 +32,12 @@ const ParticipantDropdown = ({ email, isContact, anchorRef, isOpen, close, onCre
                 {!!email && (
                     <DropdownMenuButton className="text-left" onClick={handleCopy}>
                         <Icon name="squares" className="mr-2" />
-                        <span className="flex-item-fluid my-auto">{c('Action').t`Copy email address`}</span>
+                        <span className="flex-1 my-auto">{c('Action').t`Copy email address`}</span>
                     </DropdownMenuButton>
                 )}
                 <DropdownMenuButton className="text-left" onClick={onCreateOrEditContact}>
                     <Icon name={isContact ? 'user' : 'user-plus'} className="mr-2" />
-                    <span className="flex-item-fluid my-auto">
+                    <span className="flex-1 my-auto">
                         {isContact ? c('Action').t`View contact details` : c('Action').t`Create new contact`}
                     </span>
                 </DropdownMenuButton>

@@ -58,7 +58,7 @@ const ButtonNumberInput = ({ id, min, max, step, value, onValue, disabled = fals
     };
 
     return (
-        <div className={clsx('border rounded flex-item-noshrink flex flex-nowrap', className)} {...rest}>
+        <div className={clsx('border rounded shrink-0 flex flex-nowrap', className)} {...rest}>
             <button
                 type="button"
                 title={c('Action').t`Decrease`}

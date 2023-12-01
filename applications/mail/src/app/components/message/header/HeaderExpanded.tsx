@@ -198,7 +198,7 @@ const HeaderExpanded = ({
         >
             {canShowTrackersIcon && <ItemSpyTrackerIcon message={message} />}
             {isNarrow && messageLoaded && (
-                <div className="flex flex-align-items-center flex-justify-space-between my-2" onClick={handleClick}>
+                <div className="flex items-center justify-space-between my-2" onClick={handleClick}>
                     <span className="inline-flex">
                         <ItemLocation element={message.data} labelID={labelID} />
                         <ItemAttachmentIcon
@@ -215,18 +215,18 @@ const HeaderExpanded = ({
                 </div>
             )}
             <div
-                className="flex flex-nowrap flex-align-items-center message-header-from-container"
+                className="flex flex-nowrap items-center message-header-from-container"
                 onClick={handleClick}
             >
-                <span className="flex flex-item-fluid flex-nowrap mr-2">
-                    <div className={clsx(['flex flex-nowrap', !messageLoaded && 'flex-item-fluid'])}>
+                <span className="flex flex-1 flex-nowrap mr-2">
+                    <div className={clsx(['flex flex-nowrap', !messageLoaded && 'flex-1'])}>
                         {isNarrow ? (
                             <span className="message-header-recipient-mobile">{from}</span>
                         ) : (
                             <RecipientType label={c('Label Recipient').t`From`}>{from}</RecipientType>
                         )}
                         {messageLoaded && isSendingMessage && !isScheduledMessage && (
-                            <span className="ml-2 flex-item-noshrink my-auto">
+                            <span className="ml-2 shrink-0 my-auto">
                                 <span className="badge-label-primary">{c('Info').t`Sending`}</span>
                             </span>
                         )}
@@ -235,7 +235,7 @@ const HeaderExpanded = ({
 
                 {!isNarrow && (
                     <div
-                        className="message-header-metas-container flex flex-align-items-center flex-item-noshrink"
+                        className="message-header-metas-container flex items-center shrink-0"
                         data-testid="message:message-header-metas"
                     >
                         <span className="message-header-star mr-2 inline-flex">
@@ -259,7 +259,7 @@ const HeaderExpanded = ({
                     </div>
                 )}
             </div>
-            <div className="flex md:flex-nowrap flex-align-items-center mb-2 message-header-ccbcc-container">
+            <div className="flex md:flex-nowrap items-center mb-2 message-header-ccbcc-container">
                 <MailRecipients
                     message={message}
                     recipientsOrGroup={recipientsOrGroup}
@@ -273,7 +273,7 @@ const HeaderExpanded = ({
             </div>
             {showDetails && (
                 <div className="mb-2 flex flex-nowrap color-weak">
-                    <span className="flex-align-self-center mr-2 text-ellipsis">
+                    <span className="self-center mr-2 text-ellipsis">
                         <ItemDate element={message.data} labelID={labelID} mode="full" useTooltip />
                     </span>
                 </div>
@@ -290,7 +290,7 @@ const HeaderExpanded = ({
 
             {messageLoaded && (
                 <>
-                    <div className="mb-3 flex-item-noshrink flex flex-align-items-center message-header-expanded-label-container">
+                    <div className="mb-3 shrink-0 flex items-center message-header-expanded-label-container">
                         <ItemLabels
                             element={message.data}
                             labelID={labelID}
@@ -302,7 +302,7 @@ const HeaderExpanded = ({
                 </>
             )}
 
-            <div className="pt-0 flex flex-justify-space-between">
+            <div className="pt-0 flex justify-space-between">
                 <div className="flex">
                     <HeaderMoreDropdown
                         labelID={labelID}

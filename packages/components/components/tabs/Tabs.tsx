@@ -111,7 +111,7 @@ export const Tabs = ({
                         className={clsx([
                             'tabs-list unstyled flex flex-nowrap relative m-0 p-0',
                             fullWidth && 'tabs-list--fullWidth',
-                            'flex-align-items-end',
+                            'items-end',
                         ])}
                         role="tablist"
                         ref={containerRef}
@@ -144,7 +144,7 @@ export const Tabs = ({
                                             onChange(index);
                                         }}
                                         type="button"
-                                        className="tabs-list-link flex flex-justify-center relative"
+                                        className="tabs-list-link flex justify-center relative"
                                         id={label}
                                         role="tab"
                                         aria-controls={key}

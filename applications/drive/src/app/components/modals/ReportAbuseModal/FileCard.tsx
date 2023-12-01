@@ -14,9 +14,9 @@ interface Props {
 export const FileCard = ({ linkInfo, className }: Props) => {
     return (
         <div
-            className={clsx(['flex', 'flex-nowrap', 'rounded', 'border', 'p-4', 'flex-align-items-center', className])}
+            className={clsx(['flex', 'flex-nowrap', 'rounded', 'border', 'p-4', 'items-center', className])}
         >
-            <div className="flex flex-column flex-nowrap bg-grey mr-4 flex-item-noshrink">
+            <div className="flex flex-column flex-nowrap bg-grey mr-4 shrink-0">
                 <FileIcon size={28} mimeType={linkInfo.mimeType} alt={linkInfo.name} />
             </div>
             <div className="flex flex-column flex-nowrap">

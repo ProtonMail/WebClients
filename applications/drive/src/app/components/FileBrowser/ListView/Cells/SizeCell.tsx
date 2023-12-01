@@ -9,7 +9,7 @@ interface Props {
 export const SizeCell = ({ size, className }: Props) => {
     const readableSize = shortHumanSize(size);
     return (
-        <div className={clsx(['text-ellipsis flex flex-align-items-center', className])} title={readableSize}>
+        <div className={clsx(['text-ellipsis flex items-center', className])} title={readableSize}>
             <span className="text-pre">{readableSize}</span>
         </div>
     );

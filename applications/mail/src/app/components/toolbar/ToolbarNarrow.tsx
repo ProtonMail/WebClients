@@ -39,14 +39,14 @@ const ToolbarNarrow = ({
     return (
         <div>
             <nav
-                className={clsx(classname, 'flex-justify-space-between py-1 pl-3 pr-2')}
+                className={clsx(classname, 'justify-space-between py-1 pl-3 pr-2')}
                 data-shortcut-target="mailbox-toolbar"
                 aria-label={c('Label').t`Toolbar`}
                 ref={toolbarRef}
             >
-                <div className="flex flex-align-items-center toolbar-inner gap-2">{selectAll}</div>
+                <div className="flex items-center toolbar-inner gap-2">{selectAll}</div>
 
-                <div className="flex flex-align-items-center toolbar-inner gap-2">
+                <div className="flex items-center toolbar-inner gap-2">
                     <ListSettings
                         sort={sort}
                         onSort={onSort}
