@@ -19,7 +19,7 @@ const AttachmentsCondition = ({ index, condition, onUpdate }: Props) => {
     };
 
     return (
-        <div className="flex w-full mb-6 on-mobile-flex-column">
+        <div className="flex w-full mb-6 flex-column md:flex-row">
             <Radio
                 id={`condition-${index}-with-attachment`}
                 name={`attachment-condition-${index}`}

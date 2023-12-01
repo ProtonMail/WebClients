@@ -78,7 +78,8 @@ const PayPalView = ({
                     <div className="mb-4">
                         {c('Info')
                             .t`You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.`}
-                        <br />
+                    </div>
+                    <div>
                         {clickHere}
                     </div>
                 </>

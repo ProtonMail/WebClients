@@ -78,7 +78,7 @@ export const GatewayCountrySelection = ({
             {countries.map((country) => (
                 <div
                     key={'country-' + country}
-                    className="flex-no-min-children flex-nowrap flex-align-items-center mb-4 on-mobile-flex-wrap"
+                    className="flex-no-min-children md:flex-nowrap flex-align-items-center mb-4"
                 >
                     <Label htmlFor={'country-number-' + country} className="flex-item-fluid">
                         {getCountryFlagAndName(language, country, undefined, {

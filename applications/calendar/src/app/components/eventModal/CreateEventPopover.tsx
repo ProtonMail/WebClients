@@ -7,7 +7,6 @@ import { PrimaryButton, useMailSettings } from '@proton/components';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { Address } from '@proton/shared/lib/interfaces';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
-import clsx from '@proton/utils/clsx';
 import debounce from '@proton/utils/debounce';
 import throttle from '@proton/utils/throttle';
 
@@ -184,12 +183,7 @@ const CreateEventPopover = ({
                     isNarrow={isNarrow}
                     isDrawerApp={isDrawerApp}
                 />
-                <PopoverFooter
-                    className={clsx([
-                        'flex-justify-end flex-nowrap on-tiny-mobile-flex-column-reverse gap-2',
-                        isDrawerApp && 'flex-column ',
-                    ])}
-                >
+                <PopoverFooter className="flex-justify-end flex-nowrap flex-column-reverse sm:flex-row gap-2">
                     <Button
                         disabled={loadingAction}
                         data-testid="create-event-popover:more-event-options"

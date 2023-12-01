@@ -75,23 +75,29 @@ $dummy-map: ();
 	);
 }
 
+// Add `align-items` utilities to the map
+@each $align in (start, center, end, baseline, stretch, inherit) {
+	// Remove prefix when 'start' and 'end' will be recognized by browsers
+	$prefix: if($align == start or $align == end, 'flex', '');
+	$dummy-map: map.merge(
+		$dummy-map,
+		(
+			flex-align-items-#{$align}:
+				(
+					align-items: #{dash-join($prefix, $align)},
+				),
+			flex-align-self-#{$align}:
+				(
+					align-self: #{dash-join($prefix, $align)},
+				)
+		)
+	);
+}
+
 // Serialize the responsive utilities creation with the map to avoid any cascade ordering issues
 @include responsive-classes($dummy-map);
 
 // ----------------------------------------------------------------------------
-
-@each $align in (start, center, end, baseline, stretch, inherit) {
-	// Remove prefix when 'start' and 'end' will be recognized by browsers
-	$prefix: if($align == start or $align == end, 'flex', '');
-
-	.flex-align-items-#{$align} {
-		align-items: #{dash-join($prefix, $align)};
-	}
-
-	.flex-align-self-#{$align} {
-		align-self: #{dash-join($prefix, $align)};
-	}
-}
 
 .flex-flex-align-items-center > * {
 	align-items: center;
@@ -103,33 +109,41 @@ $dummy-map: ();
 	align-self: center;
 }
 
-@include responsive-classes(flex-item-fluid) {
-	flex: 1 1 0px;
-}
+@include responsive-classes(
+	(
+		flex-item-fluid: (
+			flex: 1 1 0,
+		),
 
-@include responsive-classes(flex-item-fluid-auto) {
-	flex: 1 1 auto;
-}
+		flex-item-fluid-auto: (
+			flex: 1 1 auto,
+		),
 
-@include responsive-classes(flex-item-shrink) {
-	flex-shrink: 1;
-}
+		flex-item-grow: (
+			flex-grow: 1,
+		),
 
-.flex-item-noshrink {
-	flex-shrink: 0;
-}
+		flex-item-nogrow:(
+			flex-grow: 0,
+		),
 
-.flex-item-shrink {
-	flex-shrink: 1;
-}
+		flex-item-shrink: (
+			flex-shrink: 1,
+		),
 
-.flex-item-nogrow {
-	flex-grow: 0;
-}
+		flex-item-noshrink: (
+			flex-shrink: 0,
+		),
 
-.flex-item-grow {
-	flex-grow: 1;
-}
+		flex-initial: (
+			flex: 0 1 auto,
+		),
+
+		flex-none: (
+			flex: none,
+		)
+	)
+);
 
 .flex-item-grow-2 {
 	flex-grow: 2;

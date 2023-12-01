@@ -781,7 +781,7 @@ const WireGuardConfigurationSection = () => {
                             maxLength={100}
                         />
                         <h3 className="mt-8 mb-2">{c('Title').t`2. Select platform`}</h3>
-                        <div className="flex on-mobile-flex-column">
+                        <div className="flex flex-column md:flex-row">
                             {[
                                 {
                                     value: PLATFORM.ANDROID,

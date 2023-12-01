@@ -53,13 +53,13 @@ const AddressesEditor = ({
 
     return (
         <div className="flex flex-column flex-nowrap flex-align-items-start mt-0">
-            <div className="flex flex-row w-full relative on-mobile-flex-column" data-testid="composer:to-field">
+            <div className="flex flex-row w-full relative flex-column md:flex-row" data-testid="composer:to-field">
                 <Label htmlFor={`to-${uid}`} className="composer-meta-label text-semibold">
                     {c('Title').t`To`}
                 </Label>
                 <div
                     className={clsx([
-                        'flex flex-nowrap field flex-align-items-center flex-nowrap flex-item-fluid composer-to-editor composer-light-field',
+                        'flex flex-nowrap field flex-align-items-center flex-nowrap md:flex-item-fluid w-full composer-to-editor composer-light-field',
                         expanded ? 'composer-editor-expanded' : 'composer-editor-collapsed',
                     ])}
                     ref={toListAnchorRef}
@@ -73,7 +73,7 @@ const AddressesEditor = ({
                         placeholder={c('Placeholder').t`Email address`}
                         expanded={expanded}
                         dataTestId="composer:to"
-                        classname="composer-editor-to"
+                        classname="composer-editor-to flex-item-fluid"
                         anchorRef={toListAnchorRef}
                     />
                     <span className="flex-no-min-children flex-nowrap flex-item-noshrink max-w-1/2 sm:max-w-1/3 md:max-w-none flex-align-self-start pt-2 composer-to-ccbcc-buttons sticky-top">
@@ -114,7 +114,7 @@ const AddressesEditor = ({
                 <>
                     {ccExpanded && (
                         <div
-                            className="flex flex-row on-mobile-flex-column w-full mb-0"
+                            className="flex flex-row flex-column md:flex-row w-full mb-0"
                             ref={ccListAnchorRef}
                             data-testid="composer:cc-field"
                         >
@@ -135,7 +135,7 @@ const AddressesEditor = ({
                                 inputFocusRef={inputFocusRefs.cc}
                                 addContactButton={c('Title').t`CC`}
                                 addContactAction={handleContactModal('CCList')}
-                                classname="composer-editor-cc"
+                                classname="composer-editor-cc md:flex-item-fluid"
                                 hasLighterFieldDesign
                                 anchorRef={ccListAnchorRef}
                             />
@@ -143,7 +143,7 @@ const AddressesEditor = ({
                     )}
                     {bccExpanded && (
                         <div
-                            className="flex flex-row on-mobile-flex-column w-full"
+                            className="flex flex-row flex-column md:flex-row w-full"
                             ref={bccListAnchorRef}
                             data-testid="composer:bcc-field"
                         >
@@ -164,7 +164,7 @@ const AddressesEditor = ({
                                 addContactButton={c('Title').t`BCC`}
                                 inputFocusRef={inputFocusRefs.bcc}
                                 addContactAction={handleContactModal('BCCList')}
-                                classname="composer-editor-bcc"
+                                classname="composer-editor-bcc md:flex-item-fluid"
                                 hasLighterFieldDesign
                                 anchorRef={bccListAnchorRef}
                             />

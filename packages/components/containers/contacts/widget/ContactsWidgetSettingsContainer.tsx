@@ -40,7 +40,7 @@ const ContactsWidgetSettingsContainer = ({ onImport, onExport, onClose }: Props)
                 </div>
             ) : (
                 <div className="p-4 pt-0 scroll-if-needed h-full">
-                    <div className="flex mb-4 on-mobile-flex-column">
+                    <div className="flex mb-4 flex-column md:flex-row">
                         <Label htmlFor="saveContactToggle">
                             <span className="mr-2 text-semibold" role="heading" aria-level={2}>{c('Label')
                                 .t`Automatically save contacts`}</span>

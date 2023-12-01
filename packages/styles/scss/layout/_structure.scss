@@ -113,7 +113,11 @@ html,
 .sidebar {
 	inline-size: rem($width-sidebar);
 	visibility: visible;
-	transition: visibility 0s ease, transform 0s ease, inline-size 0s ease, opacity 1s ease;
+	transition:
+		visibility 0s ease,
+		transform 0s ease,
+		inline-size 0s ease,
+		opacity 1s ease;
 	transition-delay: 0s;
 	overflow: auto;
 	background-color: var(--sidebar-background-color);
@@ -128,7 +132,11 @@ html,
 		max-block-size: none;
 		padding-block-start: 1em;
 		transform-origin: 0 50%;
-		transition: 0s visibility ease, 0.25s transform ease, inline-size 0s ease, opacity 1s ease;
+		transition:
+			0s visibility ease,
+			0.25s transform ease,
+			inline-size 0s ease,
+			opacity 1s ease;
 		transition-delay: 0s;
 
 		&[data-expanded='false'] {
@@ -188,13 +196,6 @@ html,
 	@include media('<=small') {
 		flex-shrink: 0; // this has to stay
 		margin-inline-end: 0.1em; // just for not touching the text on hover state :)
-	}
-}
-
-.topnav-container {
-	@include media('<=small') {
-		flex-shrink: 0; // this has to stay
-		margin-inline-start: auto; // case of mail display
 	}
 }
 

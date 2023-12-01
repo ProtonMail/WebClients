@@ -35,35 +35,6 @@
 	}
 
 	.on-tablet {
-		&-flex-column {
-			flex-direction: column;
-
-			& > * {
-				inline-size: 100%;
-				flex-basis: auto;
-			}
-		}
-
-		&-flex-shrink {
-			flex-shrink: 1;
-		}
-
-		&-flex-justify-start {
-			justify-content: start;
-		}
-
-		&-flex-justify-end {
-			justify-content: end;
-		}
-
-		&-flex-justify-center {
-			justify-content: center;
-		}
-
-		&-order-1 {
-			order: 1;
-		}
-
 		@for $i from 2 through 3 {
 			&-hide-td#{$i} td:nth-child(#{$i}) {
 				display: none;
@@ -96,75 +67,6 @@
 	}
 
 	.on-mobile {
-		&-flex {
-			display: flex;
-		}
-
-		&-inline-flex {
-			display: inline-flex;
-		}
-
-		&-flex-column {
-			flex-direction: column;
-
-			& > * {
-				inline-size: 100%;
-				flex-basis: auto;
-			}
-		}
-
-		&-flex-column-no-stretch {
-			flex-direction: column;
-
-			& > * {
-				align-self: center;
-			}
-		}
-
-		&-flex-item-fluid {
-			flex: 1 1 0px;
-		}
-
-		&-flex-item-fluid-auto {
-			flex: 1 1 auto;
-		}
-
-		&-no-flex {
-			flex: 0 0 auto;
-		}
-
-		&-flex-shrink {
-			flex-shrink: 1;
-		}
-
-		&-flex-align-self-start {
-			align-self: start;
-		}
-
-		&-flex-align-self-center {
-			align-self: center;
-		}
-
-		&-flex-justify-start {
-			justify-content: start;
-		}
-
-		&-flex-justify-end {
-			justify-content: start;
-		}
-
-		&-flex-justify-center {
-			justify-content: center;
-		}
-
-		&-flex-wrap {
-			flex-wrap: wrap;
-		}
-
-		&-order-1 {
-			order: 1;
-		}
-
 		&-border-none {
 			border: 0;
 		}
@@ -196,43 +98,6 @@
 	}
 
 	.on-tiny-mobile {
-		&-flex-align-self-start {
-			align-self: flex-start;
-		}
-
-		&-flex-column {
-			flex-direction: column;
-
-			& > * {
-				inline-size: 100%;
-				flex-basis: auto;
-			}
-		}
-
-		&-flex-column-no-stretch {
-			flex-direction: column;
-
-			& > * {
-				align-self: center;
-			}
-		}
-
-		&-flex-column-reverse {
-			flex-direction: column-reverse;
-		}
-
-		&-flex-item-grow-1-5 {
-			flex-grow: 1.5;
-		}
-
-		&-flex-item-grow-3 {
-			flex-grow: 3;
-		}
-
-		&-flex-item-grow-custom {
-			flex-grow: var(--xs-grow-custom);
-		}
-
 		&-hide-td3 td:nth-child(3) {
 			display: none;
 		}

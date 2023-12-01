@@ -155,7 +155,7 @@ function GeneratedLinkState({
                 <div ref={contentRef}>
                     <p data-testid="shareable-info-text">{c('Info').jt`Shareable link for ${boldNameText}`} </p>
                     <Row className="mb-2 md:mb-0">
-                        <div className="flex flex-item-fluid mb-2 md:mb-0">
+                        <div className="flex md:flex-item-fluid mb-2 md:mb-0">
                             <Input
                                 readOnly
                                 value={url}
@@ -192,7 +192,7 @@ function GeneratedLinkState({
                             </Alert>
                         ) : (
                             <>
-                                <div className="flex-no-min-children flex-nowrap mb-4 on-mobile-flex-column mb-2 md:mb-0">
+                                <div className="flex-no-min-children flex-nowrap mb-4 flex-column md:flex-row mb-2 md:mb-0">
                                     <Label htmlFor="passwordModeToggle">
                                         <span className="mr-2">{c('Label').t`Protect with password`}</span>
                                     </Label>
@@ -213,7 +213,7 @@ function GeneratedLinkState({
                                             }}
                                         />
                                     </div>
-                                    <div className="flex-no-min-children flex-item-fluid mb-2 md:mb-0 field-two-icon-container-empty min-h-0 md:min-h-none">
+                                    <div className="flex-no-min-children md:flex-item-fluid mb-2 md:mb-0 field-two-icon-container-empty min-h-0 md:min-h-none">
                                         {passwordToggledOn && (
                                             <>
                                                 <InputFieldTwo
@@ -239,7 +239,7 @@ function GeneratedLinkState({
                                         )}
                                     </div>
                                 </div>
-                                <div className="flex-no-min-children flex-nowrap on-mobile-flex-column mb-2 md:mb-4">
+                                <div className="flex-no-min-children flex-nowrap flex-column md:flex-row mb-2 md:mb-4">
                                     <Label htmlFor="expirationTimeModeToggle">
                                         <span className="mr-2">{c('Label').t`Set expiration date`}</span>
                                     </Label>
@@ -255,7 +255,7 @@ function GeneratedLinkState({
                                             onChange={onIncludeExpirationTimeToogle}
                                         />
                                     </div>
-                                    <div className="flex-no-min-children flex-item-fluid flex-align-items-center mb-2 md:mb-0 field-two-icon-container-empty min-h-0 md:min-h-none">
+                                    <div className="flex-no-min-children md:flex-item-fluid flex-align-items-center mb-2 md:mb-0 field-two-icon-container-empty min-h-0 md:min-h-none">
                                         {expirationToggledOn && (
                                             <ExpirationTimeDatePicker
                                                 disabled={saving}

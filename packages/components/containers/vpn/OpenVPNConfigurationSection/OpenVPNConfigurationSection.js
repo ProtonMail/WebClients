@@ -165,7 +165,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                         `}
                             </SettingsParagraph>
                             <h3 className="mt-8 mb-2">{c('Title').t`1. Select platform`}</h3>
-                            <div className="flex on-mobile-flex-column">
+                            <div className="flex flex-column md:flex-row">
                                 {[
                                     {
                                         value: PLATFORM.ANDROID,
@@ -219,7 +219,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                             </div>
 
                             <h3 className="mt-8 mb-2">{c('Title').t`2. Select protocol`}</h3>
-                            <div className="flex on-mobile-flex-column mb-2">
+                            <div className="flex flex-column md:flex-row mb-2">
                                 <RadioGroup
                                     name="protocol"
                                     value={protocol}
@@ -238,7 +238,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                             <h3 className="mt-8 mb-2">{c('Title').t`3. Select config file and download`}</h3>
                         </>
                     )}
-                    <div className="flex on-mobile-flex-column mb-6">
+                    <div className="flex flex-column md:flex-row mb-6">
                         <RadioGroup
                             name={'category' + (listOnly ? '-list' : '')}
                             value={selectedCategory}
@@ -361,7 +361,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                                     // translator: ${vpnPlus} is "VPN Plus" (taken from plan title)
                                     c('Title').t`Get ${vpnPlus} to access all servers`
                                 }</h3>
-                                <ul className="unstyled inline-flex mt-0 mb-8 on-mobile-flex-column">
+                                <ul className="unstyled inline-flex mt-0 mb-8 flex-column md:flex-row">
                                     <li className="flex flex-nowrap flex-align-items-center mr-4">
                                         <Icon name="checkmark" className="color-success mr-2" />
                                         <span className="text-bold">{c('Feature').t`Access to all countries`}</span>
