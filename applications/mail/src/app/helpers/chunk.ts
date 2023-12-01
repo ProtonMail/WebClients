@@ -46,7 +46,10 @@ export const runParallelChunkedActions = async ({
                 }
 
                 // Do the action on the chunk
-                const res = await api<{ UndoToken: { Token: string } }>({ ...action(chunk), silence: true });
+                const res = await api<{ UndoToken: { Token: string } }>({
+                    ...action(chunk),
+                    silence: true,
+                });
 
                 // If we can undo the request, return the Undo token
                 if (canUndo) {

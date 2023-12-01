@@ -110,127 +110,176 @@ export const useOptimisticMarkAs = () => {
     const history = useHistory();
     const getConversation = useGetConversation();
 
-    const optimisticMarkAs = useHandler((elements: Element[], labelID: string, changes: MarkAsChanges) => {
-        const rollbackChanges = [] as { element: Element; changes: MarkAsChanges }[];
-        const updatedElements = [] as Element[];
-        let { value: messageCounters } = globalCache.get(MessageCountsModel.key) as CacheEntry<LabelCount[]>;
-        let { value: conversationCounters } = globalCache.get(ConversationCountsModel.key) as CacheEntry<LabelCount[]>;
+    const optimisticMarkAs = useHandler(
+        (elements: Element[], labelID: string, inputChanges: MarkAsChanges | MarkAsChanges[]) => {
+            const rollbackChanges = [] as { element: Element; changes: MarkAsChanges }[];
+            const updatedElements = [] as Element[];
+            const updatedElementsChangeRollback: MarkAsChanges[] = [];
+            let { value: messageCounters } = globalCache.get(MessageCountsModel.key) as CacheEntry<LabelCount[]>;
+            let { value: conversationCounters } = globalCache.get(ConversationCountsModel.key) as CacheEntry<
+                LabelCount[]
+            >;
+            const isRollback = Array.isArray(inputChanges);
 
-        // Counters can be undefined if they are not yet fetched
-        if (!messageCounters || !conversationCounters) {
-            return;
-        }
+            // Counters can be undefined if they are not yet fetched
+            if (!messageCounters || !conversationCounters) {
+                return;
+            }
 
-        elements.forEach((element) => {
-            rollbackChanges.push({ element, changes: computeRollbackMarkAsChanges(element, labelID, changes) });
+            elements.forEach((element, index) => {
+                const changes = isRollback ? inputChanges[index] : inputChanges;
+                rollbackChanges.push({ element, changes: computeRollbackMarkAsChanges(element, labelID, changes) });
 
-            if (testIsMessage(element)) {
-                const message = element as Message;
+                if (testIsMessage(element)) {
+                    const message = element as Message;
 
-                dispatch(optimisticMarkAsMessageAction({ ID: message.ID, changes }));
+                    dispatch(optimisticMarkAsMessageAction({ ID: message.ID, changes }));
 
-                // Update in conversation cache
-                const conversationState = getConversation(message.ConversationID);
-                if (conversationState && conversationState.Conversation) {
-                    const conversation = conversationState.Conversation;
-                    const updatedConversation = applyMarkAsChangesOnConversationWithMessages(
-                        conversation,
-                        labelID,
-                        changes
-                    );
+                    // Update in conversation cache
+                    const conversationState = getConversation(message.ConversationID);
+                    if (conversationState && conversationState.Conversation) {
+                        const conversation = conversationState.Conversation;
+                        const updatedConversation = applyMarkAsChangesOnConversationWithMessages(
+                            conversation,
+                            labelID,
+                            changes
+                        );
 
-                    dispatch(
-                        optimisticMarkAsConversationMessages({
-                            ID: message.ConversationID,
-                            messageID: message.ID,
+                        dispatch(
+                            optimisticMarkAsConversationMessages({
+                                ID: message.ConversationID,
+                                messageID: message.ID,
+                                updatedConversation,
+                                changes,
+                            })
+                        );
+
+                        // Update conversation count when the conversation is loaded
+                        conversationCounters = updateCountersForMarkAs(
+                            conversation,
                             updatedConversation,
-                            changes,
-                        })
-                    );
+                            conversationCounters
+                        );
+                    }
 
-                    // Update conversation count when the conversation is loaded
-                    conversationCounters = updateCountersForMarkAs(
-                        conversation,
-                        updatedConversation,
-                        conversationCounters
-                    );
-                }
-
-                // Updates in elements cache if message mode
-                const messageElement = getElementByID(message.ID);
-                if (messageElement && messageElement.ID) {
-                    const updatedMessage = applyMarkAsChangesOnMessage(messageElement as Message, changes);
-                    updatedElements.push(updatedMessage);
-
-                    // Update counters
-                    messageCounters = updateCountersForMarkAs(message, updatedMessage, messageCounters);
-                }
-
-                // Update in elements cache if conversation mode
-                const conversationElement = getElementByID(message.ConversationID);
-                if (conversationElement && conversationElement.ID) {
-                    updatedElements.push(
-                        applyMarkAsChangesOnConversationWithMessages(conversationElement, labelID, changes)
-                    );
-                }
-            } else {
-                // isConversation
-                const conversation = element as RequireSome<Conversation, 'ID'>;
-
-                // Update in conversation cache
-                dispatch(optimisticMarkAsConversation({ ID: conversation.ID, labelID, changes }));
-
-                // Update in elements cache if conversation mode
-                const conversationElement = getElementByID(conversation.ID);
-                if (conversationElement && conversationElement.ID) {
-                    const updatedConversation = applyMarkAsChangesOnConversation(conversationElement, labelID, changes);
-                    updatedElements.push(updatedConversation);
-
-                    // Update counters
-                    conversationCounters = updateCountersForMarkAs(
-                        conversationElement,
-                        updatedConversation,
-                        conversationCounters
-                    );
-                }
-
-                // Update messages from the conversation (if loaded)
-                if (changes.status === MARK_AS_STATUS.READ) {
-                    const messages = getConversation(conversation.ID)?.Messages;
-                    messages?.forEach((message) => {
-                        if (!message.LabelIDs.find((id) => id === labelID)) {
-                            return;
+                    // Updates in elements cache if message mode
+                    const messageElement = getElementByID(message.ID);
+                    if (messageElement && messageElement.ID) {
+                        const updatedMessage = applyMarkAsChangesOnMessage(messageElement as Message, changes);
+                        updatedElements.push(updatedMessage);
+                        if (isRollback) {
+                            updatedElementsChangeRollback.push(inputChanges[index]);
                         }
 
-                        dispatch(optimisticMarkAsMessageAction({ ID: message.ID, changes }));
+                        // Update counters
+                        messageCounters = updateCountersForMarkAs(message, updatedMessage, messageCounters);
+                    }
+
+                    // Update in elements cache if conversation mode
+                    const conversationElement = getElementByID(message.ConversationID);
+                    if (conversationElement && conversationElement.ID) {
+                        updatedElements.push(
+                            applyMarkAsChangesOnConversationWithMessages(conversationElement, labelID, changes)
+                        );
+                        if (isRollback) {
+                            updatedElementsChangeRollback.push(inputChanges[index]);
+                        }
+                    }
+                } else {
+                    // isConversation
+                    const conversation = element as RequireSome<Conversation, 'ID'>;
+
+                    // Update in conversation cache
+                    dispatch(optimisticMarkAsConversation({ ID: conversation.ID, labelID, changes }));
+
+                    // Update in elements cache if conversation mode
+                    const conversationElement = getElementByID(conversation.ID);
+                    if (conversationElement && conversationElement.ID) {
+                        const updatedConversation = applyMarkAsChangesOnConversation(
+                            conversationElement,
+                            labelID,
+                            changes
+                        );
+                        updatedElements.push(updatedConversation);
+                        if (isRollback) {
+                            updatedElementsChangeRollback.push(inputChanges[index]);
+                        }
+
+                        // Update counters
+                        conversationCounters = updateCountersForMarkAs(
+                            conversationElement,
+                            updatedConversation,
+                            conversationCounters
+                        );
+                    }
+
+                    // Update messages from the conversation (if loaded)
+                    if (changes.status === MARK_AS_STATUS.READ) {
+                        const messages = getConversation(conversation.ID)?.Messages;
+                        messages?.forEach((message) => {
+                            if (!message.LabelIDs.find((id) => id === labelID)) {
+                                return;
+                            }
+
+                            dispatch(optimisticMarkAsMessageAction({ ID: message.ID, changes }));
+                        });
+                    }
+                }
+            });
+
+            if (updatedElements.length) {
+                // When changing the read / unread status of an element
+                // We want them to stay on the current filter even if it doesn't match the filter anymore
+                // So we manually update the elements cache to mark these ids to bypass the filter logic
+                // This will last as long as the cache is not reset (cf useElements shouldResetElementsState)
+                const conversationMode = isConversationMode(labelID, mailSettings, history.location);
+                if (isRollback) {
+                    // For rollbacks, we cannot use a single mark as status.
+                    // The selection could be mark as read but an element was already read, so we don't want to unread it
+                    // TODO improve in two dispatchs => marks a read / mark as unread elements
+                    updatedElements.forEach((element, index) => {
+                        dispatch(
+                            optimisticMarkAsElementAction({
+                                elements: [element],
+                                bypass: true,
+                                conversationMode,
+                                markAsStatus: updatedElementsChangeRollback[index].status,
+                            })
+                        );
                     });
+                } else {
+                    dispatch(
+                        optimisticMarkAsElementAction({
+                            elements: updatedElements,
+                            bypass: true,
+                            conversationMode,
+                            markAsStatus: inputChanges.status,
+                        })
+                    );
                 }
             }
-        });
 
-        if (updatedElements.length) {
-            // When changing the read / unread status of an element
-            // We want them to stay on the current filter even if it doesn't match the filter anymore
-            // So we manually update the elements cache to mark these ids to bypass the filter logic
-            // This will last as long as the cache is not reset (cf useElements shouldResetElementsState)
-            const conversationMode = isConversationMode(labelID, mailSettings, history.location);
-            dispatch(
-                optimisticMarkAsElementAction({
-                    elements: updatedElements,
-                    bypass: true,
-                    conversationMode,
-                    markAsStatus: changes.status,
-                })
-            );
+            globalCache.set(MessageCountsModel.key, { value: messageCounters, status: STATUS.RESOLVED });
+            globalCache.set(ConversationCountsModel.key, { value: conversationCounters, status: STATUS.RESOLVED });
+
+            return () => {
+                // Building elements and changes so that we do the optimistic update in a single call
+                const { elements, inputChanges } = rollbackChanges.reduce<{
+                    elements: Element[];
+                    inputChanges: MarkAsChanges[];
+                }>(
+                    (acc, rollbackChange) => {
+                        acc.elements.push(rollbackChange.element);
+                        acc.inputChanges.push(rollbackChange.changes);
+                        return acc;
+                    },
+                    { elements: [], inputChanges: [] }
+                );
+
+                optimisticMarkAs(elements, labelID, inputChanges);
+            };
         }
-
-        globalCache.set(MessageCountsModel.key, { value: messageCounters, status: STATUS.RESOLVED });
-        globalCache.set(ConversationCountsModel.key, { value: conversationCounters, status: STATUS.RESOLVED });
-
-        return () => {
-            rollbackChanges.forEach(({ element, changes }) => optimisticMarkAs([element], labelID, changes));
-        };
-    });
+    );
 
     return optimisticMarkAs;
 };
