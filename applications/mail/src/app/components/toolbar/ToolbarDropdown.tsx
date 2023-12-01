@@ -40,6 +40,8 @@ interface Props extends Omit<DropdownButtonProps<'button'>, 'title' | 'content'>
     additionalDropdowns?: DropdownRender[];
     externalToggleRef?: Ref<() => void>;
     externalCloseRef?: Ref<() => void>;
+    // Used to know when the button is clicked and perform action afterwards
+    clickCallback?: () => void;
 }
 
 const ToolbarDropdown = ({
@@ -55,6 +57,7 @@ const ToolbarDropdown = ({
     additionalDropdowns,
     externalToggleRef,
     externalCloseRef,
+    clickCallback,
     ...rest
 }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
@@ -78,7 +81,10 @@ const ToolbarDropdown = ({
                     type="button"
                     ref={anchorRef}
                     isOpen={isOpen}
-                    onClick={toggle}
+                    onClick={() => {
+                        toggle();
+                        clickCallback?.();
+                    }}
                     hasCaret={hasCaret}
                     disabled={disabled}
                     caretClassName="toolbar-icon"
