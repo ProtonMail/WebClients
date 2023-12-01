@@ -5,27 +5,62 @@ import { ChartData, ChartDataset } from 'chart.js';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 
 import { useBalanceEvolution } from '../../hooks/useBalanceEvolution';
-import { Transaction, Wallet } from '../../types';
+import { WalletWithAccountsWithBalanceAndTxs } from '../../types';
 
 type WalletBalanceAcc = [string[], { label: string; data: number[]; backgroundColor: string[]; borderWidth: number }[]];
 
-const formatWalletToDoughnutChart = (wallets: Wallet[]) => {
-    const [labels, datasets] = wallets.reduce(
-        ([accLabels, [accDataset]]: WalletBalanceAcc, wallet) => {
-            const label = wallet.name;
-            let color = getRandomAccentColor();
-            let tries = 0;
-            while (accDataset.backgroundColor.includes(color) && tries < 3) {
-                color = getRandomAccentColor();
-                tries++;
-            }
+type BalanceDistributionChartData = ChartData<'doughnut', number[], unknown>;
+type WalletBalanceEvolutionChartDataset = ChartDataset<
+    'line',
+    {
+        x: number | string;
+        y: number | string;
+    }[]
+>;
+
+const getWalletBalance = (wallet: WalletWithAccountsWithBalanceAndTxs) => {
+    return wallet.accounts.reduce((acc, cur) => acc + Number(cur.balance.confirmed), 0);
+};
+
+const getWalletTransactions = (wallet: WalletWithAccountsWithBalanceAndTxs) => {
+    return wallet.accounts.flatMap(({ transactions }) => transactions);
+};
+
+const getNewRandomColor = (backgroundColors: string[]) => {
+    let color = getRandomAccentColor();
+    let tries = 0;
+    while (backgroundColors.includes(color) && tries < 3) {
+        color = getRandomAccentColor();
+        tries++;
+    }
+
+    return color;
+};
+
+/**
+ * When a single wallet is provided, then it returns doughnut data to show distribution accross wallet's accounts
+ * When multiple wallets are provided, it returns doughnut data to display distribution accross user's wallets
+ */
+const formatWalletToDoughnutChart = (
+    data: WalletWithAccountsWithBalanceAndTxs | WalletWithAccountsWithBalanceAndTxs[]
+) => {
+    const raw = 'accounts' in data ? data.accounts : data;
+
+    const [labels, datasets] = raw.reduce(
+        ([accLabels, [accDataset]]: WalletBalanceAcc, walletOrAccount) => {
+            const [label, balance] =
+                'accounts' in walletOrAccount
+                    ? [walletOrAccount.Name, getWalletBalance(walletOrAccount)]
+                    : [walletOrAccount.Label, Number(walletOrAccount.balance.confirmed)];
+
+            const color = getNewRandomColor(accDataset.backgroundColor);
 
             return [
                 [...accLabels, label],
                 [
                     {
                         ...accDataset,
-                        data: [...accDataset.data, wallet.balance],
+                        data: [...accDataset.data, balance],
                         backgroundColor: [...accDataset.backgroundColor, color],
                         cutout: '70%',
                     },
@@ -38,12 +73,22 @@ const formatWalletToDoughnutChart = (wallets: Wallet[]) => {
     return { labels, datasets };
 };
 
-export const useBalanceOverview = (wallets: Wallet[], transactions: Transaction[]) => {
-    const totalBalance = wallets.reduce((acc, wallet) => acc + wallet.balance, 0);
+/**
+ * Returns balance overview either for Single wallet dashboard or Many wallets ones
+ */
+export const useBalanceOverview = (
+    data: WalletWithAccountsWithBalanceAndTxs | WalletWithAccountsWithBalanceAndTxs[]
+) => {
+    const [transactions, totalBalance] = Array.isArray(data)
+        ? [
+              data.flatMap((wallet) => getWalletTransactions(wallet)),
+              data.reduce((acc, wallet) => acc + getWalletBalance(wallet), 0),
+          ]
+        : [getWalletTransactions(data), getWalletBalance(data)];
 
-    const balanceDistributionDoughnutChartData: ChartData<'doughnut', number[], unknown> = useMemo(
-        () => formatWalletToDoughnutChart(wallets),
-        [wallets]
+    const balanceDistributionDoughnutChartData: BalanceDistributionChartData = useMemo(
+        () => formatWalletToDoughnutChart(data),
+        [data]
     );
 
     const { evolutionByDay, balanceDifference: last7DaysBalanceDifference } = useBalanceEvolution(
@@ -51,16 +96,14 @@ export const useBalanceOverview = (wallets: Wallet[], transactions: Transaction[
         transactions
     );
 
-    const balanceEvolutionLineChartData: ChartDataset<
-        'line',
-        {
-            x: number | string;
-            y: number | string;
-        }[]
-    > = useMemo(() => ({ data: evolutionByDay.map(({ balance, day }) => ({ x: day, y: balance })) }), [evolutionByDay]);
+    const balanceEvolutionLineChartData: WalletBalanceEvolutionChartDataset = useMemo(
+        () => ({ data: evolutionByDay.map(({ balance, day }) => ({ x: day, y: balance })) }),
+        [evolutionByDay]
+    );
 
     return {
         totalBalance,
+        transactions,
         last7DaysBalanceDifference,
         balanceDistributionDoughnutChartData,
         balanceEvolutionLineChartData,

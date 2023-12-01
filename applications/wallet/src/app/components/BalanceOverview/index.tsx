@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import clsx from '@proton/utils/clsx';
 
 import { BitcoinAmount } from '../../atoms';
-import { BitcoinUnit, Transaction, Wallet } from '../../types';
+import { BitcoinUnit, WalletWithAccountsWithBalanceAndTxs } from '../../types';
 import { DoughnutChart } from '../charts/DoughnutChart';
 import { LineChart } from '../charts/LineChart';
 import { WelcomeCard } from './WelcomeCard';
@@ -15,21 +15,29 @@ import { useBalanceOverview } from './useBalanceOverview';
 const fiatCurrency = 'USD';
 const bitcoinUnit = BitcoinUnit.BTC;
 
-interface Props {
-    wallets: Wallet[];
-    transactions: Transaction[];
+interface SingleWalletBalanceOverviewProps {
+    wallet: WalletWithAccountsWithBalanceAndTxs;
 }
 
-export const BalanceOverview = ({ wallets, transactions }: Props) => {
+interface ManyWalletsBalanceOverviewProps {
+    wallets: WalletWithAccountsWithBalanceAndTxs[];
+}
+
+type Props = SingleWalletBalanceOverviewProps | ManyWalletsBalanceOverviewProps;
+
+export const BalanceOverview = (props: Props) => {
+    const data = 'wallet' in props ? props.wallet : props.wallets;
+
     const {
         totalBalance,
+        transactions,
         balanceDistributionDoughnutChartData,
         balanceEvolutionLineChartData,
         last7DaysBalanceDifference,
-    } = useBalanceOverview(wallets, transactions);
+    } = useBalanceOverview(data);
 
     if (!transactions) {
-        return <WelcomeCard wallet={wallets.length === 1 ? wallets[0] : undefined} />;
+        return <WelcomeCard wallet={'wallet' in props ? props.wallet : undefined} />;
     }
 
     return (
@@ -44,14 +52,12 @@ export const BalanceOverview = ({ wallets, transactions }: Props) => {
                     </BitcoinAmount>
                 </div>
 
-                {wallets.length > 1 && (
-                    <div
-                        className="mt-8 mr-10 h-custom flex flex-column flex-justify-center"
-                        style={{ '--h-custom': '6rem' }}
-                    >
-                        <DoughnutChart data={balanceDistributionDoughnutChartData} />
-                    </div>
-                )}
+                <div
+                    className="mt-8 mr-10 h-custom flex flex-column flex-justify-center"
+                    style={{ '--h-custom': '6rem' }}
+                >
+                    <DoughnutChart data={balanceDistributionDoughnutChartData} />
+                </div>
 
                 <div
                     data-testid="7DaysDifference"

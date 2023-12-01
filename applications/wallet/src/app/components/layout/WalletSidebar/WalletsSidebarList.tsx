@@ -9,11 +9,15 @@ import {
     useToggle,
 } from '@proton/components';
 
-import { wallets } from '../../../tests';
+import { WalletWithAccountsWithBalanceAndTxs } from '../../../types';
 import { SidebarItemContent } from './SidebarItemContent';
 import { WalletExpandButton } from './WalletExpandButton';
 
-export const WalletsSidebarList = () => {
+interface Props {
+    wallets: WalletWithAccountsWithBalanceAndTxs[];
+}
+
+export const WalletsSidebarList = ({ wallets }: Props) => {
     const { state: showWallets, toggle: toggleShowWallets } = useToggle(true);
 
     return (
@@ -39,18 +43,19 @@ export const WalletsSidebarList = () => {
 
             <div className="ml-6">
                 {showWallets &&
-                    wallets.map((wallet) => (
-                        <SidebarListItem key={wallet.id} className="mt-1">
-                            <SidebarListItemLabel htmlFor={`wallet-${wallet.id}`} className="px-0">
+                    wallets.map((wallet) => {
+                        return (
+                            <SidebarListItem key={wallet.WalletID} className="mt-1">
                                 <SidebarItemContent
                                     icon="wallet"
-                                    label={wallet.name}
-                                    to={`/wallets/${wallet.id}`}
+                                    label={wallet.Name}
+                                    to={`/wallets/${wallet.WalletID}`}
                                     data-testid="wallet-sidebar:wallet-item"
+                                    disabled={!wallet.accounts.length}
                                 />
-                            </SidebarListItemLabel>
-                        </SidebarListItem>
-                    ))}
+                            </SidebarListItem>
+                        );
+                    })}
             </div>
         </div>
     );

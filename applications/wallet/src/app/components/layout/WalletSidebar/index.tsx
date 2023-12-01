@@ -4,6 +4,7 @@ import { AppVersion, AppsDropdown, MainLogo, Sidebar, SidebarList, SidebarNav } 
 import { APPS } from '@proton/shared/lib/constants';
 
 import changelog from '../../../../../CHANGELOG.md';
+import { WalletWithAccountsWithBalanceAndTxs } from '../../../types';
 import { BitcoinMovementNavItems } from './BitcoinMovementNavItems';
 import { SecurityChecklist } from './SecurityChecklist';
 import { TransactionsNavItem } from './TransactionsNavItem';
@@ -11,9 +12,10 @@ import { WalletsSidebarList } from './WalletsSidebarList';
 
 interface Props {
     expanded?: boolean;
+    wallets: WalletWithAccountsWithBalanceAndTxs[];
 }
 
-const WalletSidebar = ({ expanded = false }: Props) => {
+const WalletSidebar = ({ expanded = false, wallets }: Props) => {
     return (
         <>
             <Sidebar
@@ -26,7 +28,7 @@ const WalletSidebar = ({ expanded = false }: Props) => {
                     <div className="outline-none flex flex-column flex-justify-space-between flex-item-grow">
                         <div className="flex-item-grow">
                             <SidebarList>
-                                <WalletsSidebarList />
+                                <WalletsSidebarList wallets={wallets} />
                                 <TransactionsNavItem />
                                 <BitcoinMovementNavItems />
                             </SidebarList>

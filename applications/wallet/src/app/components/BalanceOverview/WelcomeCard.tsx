@@ -6,16 +6,16 @@ import { ButtonLike } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 
-import { Wallet } from '../../types';
+import { WalletWithAccountsWithBalanceAndTxs } from '../../types';
 
 interface Props {
-    wallet?: Wallet;
+    wallet?: WalletWithAccountsWithBalanceAndTxs;
 }
 
 export const WelcomeCard = ({ wallet }: Props) => {
     const user = { name: 'Eric' };
 
-    const walletName = wallet ? c('Wallet Dashboard').t`your wallet ${wallet.name}` : WALLET_APP_NAME;
+    const walletName = wallet ? c('Wallet Dashboard').t`your wallet '${wallet.Name}'` : WALLET_APP_NAME;
 
     return (
         <Card className="w-full colored-gradient-card ui-prominent flex flex-column py-12" bordered={false} rounded>
@@ -29,7 +29,7 @@ export const WelcomeCard = ({ wallet }: Props) => {
                 ).t`Buy bitcoins`}</ButtonLike>
                 <ButtonLike
                     as={Link}
-                    to={wallet ? `/transfer#walletId=${wallet?.id}` : '/transfer'}
+                    to={wallet ? `/transfer#walletId=${wallet?.WalletID}` : '/transfer'}
                     className="ui-standard rounded-full border-none"
                 >{c('Wallet Dashboard').t`Transfer bitcoins`}</ButtonLike>
             </div>

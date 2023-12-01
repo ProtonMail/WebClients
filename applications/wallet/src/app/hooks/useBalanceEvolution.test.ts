@@ -1,39 +1,65 @@
 import { renderHook } from '@testing-library/react-hooks';
 import { format, set } from 'date-fns';
 
+import { WasmSimpleTransaction } from '../../pkg';
 import { BITCOIN } from '../constants';
-import { Transaction } from '../types';
 import { useBalanceEvolution } from './useBalanceEvolution';
 
 describe('useBalanceEvolution', () => {
-    const baseDate = set(new Date(), { year: 2023, month: 10 });
-    const simpleTransactions: Transaction[] = [
-        {
-            id: '1',
-            timestamp: set(baseDate, { date: 22, hours: 13 }).getTime(),
-            value: -0.24 * BITCOIN,
-        },
-        {
-            id: '2',
-            timestamp: set(baseDate, { date: 22, hours: 6 }).getTime(),
-            value: 0.04 * BITCOIN,
-        },
-        {
-            id: '3',
-            timestamp: set(baseDate, { date: 21, hours: 7 }).getTime(),
-            value: 0.8 * BITCOIN,
-        },
-        {
-            id: '4',
-            timestamp: set(baseDate, { date: 21, hours: 8 }).getTime(),
-            value: -0.05 * BITCOIN,
-        },
-        {
-            id: '5',
-            timestamp: set(baseDate, { date: 21, hours: 9 }).getTime(),
-            value: -0.05 * BITCOIN,
-        },
-    ];
+    let simpleTransactions: WasmSimpleTransaction[];
+
+    beforeEach(() => {
+        jest.useFakeTimers();
+        jest.setSystemTime(new Date('11/23/2023'));
+
+        const baseDate = set(new Date(), { year: 2023, month: 10 });
+        simpleTransactions = [
+            {
+                txid: '1',
+                confirmation: {
+                    confirmed: true,
+                    confirmation_time: BigInt(Math.floor(set(baseDate, { date: 22, hours: 13 }).getTime() / 1000)),
+                },
+                value: BigInt(-0.24 * BITCOIN),
+            } as WasmSimpleTransaction,
+            {
+                txid: '2',
+                confirmation: {
+                    confirmed: true,
+                    confirmation_time: BigInt(Math.floor(set(baseDate, { date: 22, hours: 6 }).getTime() / 1000)),
+                },
+                value: BigInt(0.04 * BITCOIN),
+            } as WasmSimpleTransaction,
+            {
+                txid: '3',
+                confirmation: {
+                    confirmed: true,
+                    confirmation_time: BigInt(Math.floor(set(baseDate, { date: 21, hours: 7 }).getTime() / 1000)),
+                },
+                value: BigInt(0.8 * BITCOIN),
+            } as WasmSimpleTransaction,
+            {
+                txid: '4',
+                confirmation: {
+                    confirmed: true,
+                    confirmation_time: BigInt(Math.floor(set(baseDate, { date: 21, hours: 8 }).getTime() / 1000)),
+                },
+                value: BigInt(-0.05 * BITCOIN),
+            } as WasmSimpleTransaction,
+            {
+                txid: '5',
+                confirmation: {
+                    confirmed: true,
+                    confirmation_time: BigInt(Math.floor(set(baseDate, { date: 21, hours: 9 }).getTime() / 1000)),
+                },
+                value: BigInt(-0.05 * BITCOIN),
+            } as WasmSimpleTransaction,
+        ];
+    });
+
+    afterEach(() => {
+        jest.useRealTimers();
+    });
 
     describe('evolutionByTx', () => {
         // TODO when/if used
@@ -58,18 +84,14 @@ describe('useBalanceEvolution', () => {
             const { result } = renderHook(() => useBalanceEvolution(1 * BITCOIN, simpleTransactions));
 
             expect(result.current.evolutionByDay).toStrictEqual([
-                {
-                    balance: 0.5 * BITCOIN,
-                    day: '11/21/2023',
-                },
-                {
-                    balance: 1.2 * BITCOIN,
-                    day: '11/22/2023',
-                },
-                {
-                    balance: 1 * BITCOIN,
-                    day: '11/22/2023',
-                },
+                { balance: 0.5 * BITCOIN, day: '11/17/2023' },
+                { balance: 0.5 * BITCOIN, day: '11/18/2023' },
+                { balance: 0.5 * BITCOIN, day: '11/19/2023' },
+                { balance: 0.5 * BITCOIN, day: '11/20/2023' },
+                { balance: 0.5 * BITCOIN, day: '11/21/2023' },
+                { balance: 1.2 * BITCOIN, day: '11/22/2023' },
+                { balance: 1 * BITCOIN, day: '11/23/2023' },
+                { balance: 1 * BITCOIN, day: '11/23/2023' },
             ]);
         });
 

@@ -5,16 +5,28 @@ import {
     SidebarListItemLink,
 } from '@proton/components/components';
 
+import './SidebarItemContent.scss';
+
 interface Props {
     label: string;
     to: string;
     icon: IconProps['name'];
     'data-testid'?: string;
+    disabled?: boolean;
 }
 
-export const SidebarItemContent = ({ label, to, icon, ...props }: Props) => {
+export const SidebarItemContent = ({ label, to, icon, disabled, ...props }: Props) => {
     return (
-        <SidebarListItemLink to={to}>
+        <SidebarListItemLink
+            to={to}
+            onClick={(e) => {
+                if (disabled) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+            }}
+            className={disabled ? 'disabled-sidebar-link' : ''}
+        >
             <SidebarListItemContent
                 data-testid={props['data-testid']}
                 left={<SidebarListItemContentIcon name={icon} />}

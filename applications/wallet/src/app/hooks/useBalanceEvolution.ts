@@ -1,12 +1,12 @@
 import { useMemo } from 'react';
 
-import { format } from 'date-fns';
+import { format, sub } from 'date-fns';
 import { groupBy } from 'lodash';
 
-import { Transaction } from '../types';
-import { sortTransactionsByTime } from '../utils';
+import { WasmSimpleTransaction } from '../../pkg';
+import { sortTransactionsByTime, transactionTime } from '../utils';
 
-export const useBalanceEvolution = (currentBalance: any, lastTransactions: Transaction[]) => {
+export const useBalanceEvolution = (currentBalance: number, lastTransactions: WasmSimpleTransaction[]) => {
     /**
      * Balance evolution from oldest transaction to newest one
      */
@@ -25,9 +25,20 @@ export const useBalanceEvolution = (currentBalance: any, lastTransactions: Trans
             (acc, transaction) => {
                 const [lastAccTx] = acc;
 
-                return [{ balance: lastAccTx.balance - transaction.value, timestamp: transaction.timestamp }, ...acc];
+                return [
+                    {
+                        balance: lastAccTx.balance - Number(transaction.value),
+                        timestamp: transactionTime(transaction),
+                    },
+                    ...acc,
+                ];
             },
-            [{ balance: currentBalance, timestamp: mostRecentTx.timestamp }]
+            [
+                {
+                    balance: currentBalance,
+                    timestamp: transactionTime(mostRecentTx),
+                },
+            ]
         );
     }, [currentBalance, lastTransactions]);
 
@@ -40,20 +51,24 @@ export const useBalanceEvolution = (currentBalance: any, lastTransactions: Trans
             return new Array(2).fill({ balance: currentBalance, day: format(new Date(), 'MM/dd/yyyy') });
         }
 
-        const txGroupedByDay = groupBy(lastTransactions, (tx) => format(new Date(tx.timestamp), 'MM/dd/yyyy'));
+        const today = new Date();
+        const lastSevenDays = new Array(7).fill(null).map((_, index) => {
+            const day = sub(today, { days: index });
+            return format(day, 'MM/dd/yyyy');
+        });
 
-        // Sort tx days from most recent day to oldest day
-        const sortedDays = Object.keys(txGroupedByDay).sort(
-            (dayA, dayB) => new Date(dayB).getTime() - new Date(dayA).getTime()
-        );
+        const txGroupedByDay = groupBy(lastTransactions, (tx) => {
+            const date = new Date(transactionTime(tx));
+            return format(date, 'MM/dd/yyyy');
+        });
 
-        const [mostRecentDay] = sortedDays;
-        return sortedDays.reduce(
+        const [mostRecentDay] = lastSevenDays;
+        return lastSevenDays.reduce(
             (acc, day) => {
-                const dayTxs = txGroupedByDay[day];
+                const txs = txGroupedByDay[day];
                 const [lastAccDay] = acc;
 
-                const dayBalance = dayTxs.reduce((acc, tx) => acc + tx.value, 0);
+                const dayBalance = txs?.reduce((acc, tx) => acc + Number(tx.value), 0) ?? 0;
                 return [{ balance: lastAccDay.balance - dayBalance, day }, ...acc];
             },
             [{ balance: currentBalance, day: mostRecentDay }]
@@ -63,5 +78,6 @@ export const useBalanceEvolution = (currentBalance: any, lastTransactions: Trans
     const [oldestBalance] = evolutionByTx;
 
     const balanceDifference = evolutionByTx.length >= 1 ? currentBalance - oldestBalance.balance : 0;
+
     return { balanceDifference, evolutionByTx, evolutionByDay };
 };

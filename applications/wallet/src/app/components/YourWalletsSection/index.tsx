@@ -8,10 +8,11 @@ import { Badge } from '@proton/components/components';
 
 import { BitcoinAmount } from '../../atoms';
 import { useBalanceDistribution } from '../../hooks/useBalanceDistribution';
-import { BitcoinUnit, Wallet } from '../../types';
+import { BitcoinUnit, WalletWithAccountsWithBalanceAndTxs } from '../../types';
+import { WalletType } from '../../types/api';
 
 interface Props {
-    wallets: Wallet[];
+    wallets: WalletWithAccountsWithBalanceAndTxs[];
 }
 
 // TODO: change this when wallet settings API is ready
@@ -19,7 +20,10 @@ const fiatCurrency = 'USD';
 const bitcoinUnit = BitcoinUnit.BTC;
 
 export const YourWalletsSection = ({ wallets }: Props) => {
-    const { LIGHTNING: lightningBalance, ONCHAIN: onchainBalance } = useBalanceDistribution(wallets);
+    const distribution = useBalanceDistribution(wallets);
+
+    const lightningBalance = distribution[WalletType.Lightning];
+    const onchainBalance = distribution[WalletType.OnChain];
 
     return (
         <div className="mt-14">

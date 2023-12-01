@@ -2,7 +2,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { render, screen } from '@testing-library/react';
 
-import { wallets } from '../../tests';
+import { walletsWithAccountsWithBalanceAndTxs } from '../../tests';
 import { WelcomeCard } from './WelcomeCard';
 
 describe('WelcomeCard', () => {
@@ -34,15 +34,15 @@ describe('WelcomeCard', () => {
 
     describe('when wallet is provided', () => {
         it('should render wallet message', () => {
-            render(<WelcomeCard wallet={wallets[1]} />, { wrapper: BrowserRouter });
+            render(<WelcomeCard wallet={walletsWithAccountsWithBalanceAndTxs[1]} />, { wrapper: BrowserRouter });
 
             expect(
-                screen.getByText('Start using your wallet Bitcoin 01 by either buying or transfering bitcoins.')
+                screen.getByText("Start using your wallet 'Savings on Jade' by either buying or transfering bitcoins.")
             ).toBeInTheDocument();
         });
 
         it('should render simplelink to wallet transfer', () => {
-            render(<WelcomeCard wallet={wallets[1]} />, { wrapper: BrowserRouter });
+            render(<WelcomeCard wallet={walletsWithAccountsWithBalanceAndTxs[1]} />, { wrapper: BrowserRouter });
 
             const transferLink = screen.getByRole('link', { name: 'Transfer bitcoins' });
             expect(transferLink).toBeInTheDocument();
