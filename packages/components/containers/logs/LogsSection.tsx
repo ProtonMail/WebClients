@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import { clearLogs, queryLogs } from '@proton/shared/lib/api/logs';
 import { updateLogAuth } from '@proton/shared/lib/api/settings';
 import { AuthLog } from '@proton/shared/lib/authlog';
@@ -32,6 +33,7 @@ const INITIAL_STATE = {
 const PAGE_SIZE = 10;
 
 const LogsSection = () => {
+    const isMounted = useIsMounted();
     const [settings] = useUserSettings();
     const { createModal } = useModals();
     const [logAuth, setLogAuth] = useState(settings.LogAuth);
@@ -120,12 +122,16 @@ const LogsSection = () => {
             if (latestRef.current !== latest) {
                 return;
             }
-            setState({ logs: Logs, total: Total });
+            if (isMounted()) {
+                setState({ logs: Logs, total: Total });
+            }
         } catch (e: any) {
             if (latestRef.current !== latest) {
                 return;
             }
-            setError(true);
+            if (isMounted()) {
+                setError(true);
+            }
         }
     };
 
