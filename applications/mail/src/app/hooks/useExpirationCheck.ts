@@ -1,6 +1,5 @@
-import { serverTime } from 'pmcrypto';
-
 import { useInterval } from '@proton/components';
+import { serverTime } from '@proton/crypto';
 
 import { isExpired } from 'proton-mail/helpers/expiration';
 
