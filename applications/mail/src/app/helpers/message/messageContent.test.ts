@@ -53,14 +53,13 @@ describe('messageContent', () => {
     const plainTextContent = `${plaintextReplyContent} ${data.protonSignature}
 On Friday, January 1st, 2021 at 12:00 AM, ${fromFields.fromName} <${fromFields.fromAddress}> wrote:
 
-
 > ${plaintextReferenceMessageBody}`;
 
     const htmlReferenceMessageBody = '<div>Hello this is the reference message</div>';
     const htmlReplyContent = '<div>Hello this is the reply<div>';
     const htmlTextContent = `${htmlReplyContent} ${data.protonSignature}
 <div class=\"protonmail_quote\">
-        On Friday, January 1st, 2021 at 12:00 AM, ${fromFields.fromName} &lt;${fromFields.fromAddress}&gt; wrote:<br><br>
+        On Friday, January 1st, 2021 at 12:00 AM, ${fromFields.fromName} &lt;${fromFields.fromAddress}&gt; wrote:<br>
         <blockquote class=\"protonmail_quote\" type=\"cite\">
             <div>Hello this is the reference message</div>
         </blockquote><br>
