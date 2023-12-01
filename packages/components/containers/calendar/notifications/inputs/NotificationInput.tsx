@@ -76,19 +76,21 @@ const NotificationInput = ({
     return (
         <div
             className={clsx(
-                'flex flex-nowrap flex-item-fluid',
+                'flex flex-column flex-nowrap flex-item-fluid',
                 className,
-                fullWidth ? 'on-mobile-flex-column' : 'on-tablet-flex-column'
+                fullWidth ? 'md:flex-row' : 'lg:flex-row'
             )}
         >
             {hasType && (
                 <span
                     className={clsx(
-                        'flex flex-nowrap mr-2 my-2',
-                        fullWidth ? 'md:my-0' : 'lg:my-0',
-                        !(isAllDay && at) && 'w-custom'
+                        'flex flex-nowrap my-2',
+                        fullWidth ? 'md:my-0 md:mr-2' : 'lg:my-0 lg:mr-2',
+                        !(isAllDay && at) && `w-full ${fullWidth ? 'md:w-custom' : 'lg:w-custom'}`
                     )}
-                    style={!(isAllDay && at) ? { '--w-custom': '10em' } : undefined}
+                    style={
+                        !(isAllDay && at) ? { [`--${fullWidth ? 'md' : 'lg'}-w-custom`]: '10em' } : undefined
+                    }
                 >
                     <SelectTwo
                         id={id}
@@ -108,7 +110,7 @@ const NotificationInput = ({
                     </SelectTwo>
                 </span>
             )}
-            <span className="flex flex-nowrap flex-item-fluid">
+            <span className={clsx('flex flex-nowrap', fullWidth ? 'md:flex-item-fluid' : 'lg:flex-item-fluid')}>
                 {hasValueInput && (
                     <span className="flex-item-noshrink mr-2 w-custom" style={{ '--w-custom': '5em' }}>
                         <IntegerInput
@@ -161,11 +163,11 @@ const NotificationInput = ({
                 </SelectTwo>
             </span>
             {isAllDay && at && (
-                <span className="flex on-tiny-mobile-flex-column flex-nowrap">
+                <span className="flex flex-column sm:flex-row flex-nowrap">
                     {isAllDay && at && (
                         <span
                             className={clsx(
-                                'flex flex-nowrap flex-item-fluid flex-align-items-center mt-2',
+                                'flex flex-nowrap sm:flex-item-fluid flex-align-items-center mt-2',
                                 fullWidth ? 'md:mt-0' : 'lg:mt-0'
                             )}
                         >

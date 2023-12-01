@@ -131,14 +131,13 @@ const CreateEventModal = ({
             onClick={loadingAction ? noop : handleDeleteWithNotice}
             loading={loadingAction && lastAction === ACTION.DELETE}
             disabled={loadingAction}
-            className="mr-0 mt-2 sm:my-0 sm:mr-2"
         >{c('Action').t`Delete`}</Button>
     );
 
     const endAlignedButtons = isCreateEvent ? (
         submitButton
     ) : (
-        <div className="flex w-full sm:w-auto on-tiny-mobile-flex-column on-tiny-mobile-flex-column-reverse">
+        <div className="flex w-full sm:w-auto flex-column-reverse sm:flex-row gap-2">
             {getCanDeleteEvent({
                 isOwnedCalendar,
                 isCalendarWritable,

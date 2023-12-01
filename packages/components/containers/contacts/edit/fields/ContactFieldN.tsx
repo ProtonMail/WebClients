@@ -45,8 +45,8 @@ const ContactFieldN = (
     const requiredError = !vCardContact.fn?.[0].value && isSubmitted && !givenName && !familyName;
 
     return (
-        <div className="flex on-mobile-flex-column gap-2">
-            <div className="flex-item-fluid">
+        <div className="flex flex-column md:flex-row gap-2">
+            <div className="md:flex-item-fluid">
                 <ContactFieldString
                     ref={firstNameFieldRef}
                     placeholder={c('Placeholder').t`First name`}
@@ -58,7 +58,7 @@ const ContactFieldN = (
                 />
                 {givenNameTooLong ? <ErrorZone>{c('Error').t`First name is too long`}</ErrorZone> : null}
             </div>
-            <div className="flex-item-fluid">
+            <div className="md:flex-item-fluid">
                 <ContactFieldString
                     placeholder={c('Placeholder').t`Last name`}
                     data-testid="Last name"

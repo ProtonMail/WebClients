@@ -477,7 +477,7 @@ const Step1 = ({
                                 />
                             )}
                             {model.upsell.mode === UpsellTypes.PLANS && (
-                                <div className="flex flex-justify-end mt-1 on-tablet-flex-justify-center gap-4">
+                                <div className="flex flex-justify-start lg:flex-justify-end mt-1 flex-justify-center gap-4">
                                     <div className="color-primary">
                                         <CurrencySelector
                                             mode="select-two"

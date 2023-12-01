@@ -8,14 +8,9 @@
 $field-container: rem(260) !default;
 
 .field-container {
-	inline-size: $field-container;
-	max-inline-size: 100%;
+	inline-size: 100%;
 	display: inline-block;
 	position: relative;
-
-	&.auto {
-		@extend .auto;
-	}
 }
 
 .field {

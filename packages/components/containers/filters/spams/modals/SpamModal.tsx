@@ -115,17 +115,21 @@ const SpamModal = ({ type, onAdd, modalProps }: Props) => {
                     <Label htmlFor={`${mode}Input`}>
                         {mode === 'email' ? c('Label').t`Email` : c('Label').t`Domain`}
                     </Label>
-                    <Input
-                        id={`${mode}Input`}
-                        ref={inputElementRef}
-                        value={mode === 'email' ? email : domain}
-                        type={mode === 'email' ? 'email' : 'text'}
-                        placeholder={
-                            mode === 'email' ? c('Placeholder').t`example@domain.com` : c('Placeholder').t`domain.com`
-                        }
-                        onChange={(e) => (mode === 'email' ? setEmail(e.target.value) : setDomain(e.target.value))}
-                        error={error}
-                    />
+                    <div>
+                        <Input
+                            id={`${mode}Input`}
+                            ref={inputElementRef}
+                            value={mode === 'email' ? email : domain}
+                            type={mode === 'email' ? 'email' : 'text'}
+                            placeholder={
+                                mode === 'email'
+                                    ? c('Placeholder').t`example@domain.com`
+                                    : c('Placeholder').t`domain.com`
+                            }
+                            onChange={(e) => (mode === 'email' ? setEmail(e.target.value) : setDomain(e.target.value))}
+                            error={error}
+                        />
+                    </div>
                 </Row>
             </ModalTwoContent>
             <ModalTwoFooter>

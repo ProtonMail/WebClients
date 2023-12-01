@@ -11,7 +11,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
 
-import { Alert, AttachedFile, Dropzone, Field, FileInput, Label, LearnMore, Row } from '../../../components';
+import { Alert, AttachedFile, Dropzone, FileInput, Label, LearnMore, Row } from '../../../components';
 import CalendarSelect from '../../../components/calendarSelect/CalendarSelect';
 
 interface Props {
@@ -71,14 +71,14 @@ const AttachingModalContent = ({ model, calendars, onSelectCalendar, onAttach, o
                     <Label style={{ '--label-width': 'auto' }} htmlFor="import-calendar-select">
                         {c('Label').t`Import to:`}
                     </Label>
-                    <Field>
+                    <div className="w-full md:w-custom" style={{ '--md-w-custom': '16.25rem' }}>
                         <CalendarSelect
                             id="import-calendar-select"
                             calendarID={model.calendar.ID}
                             options={options}
                             onChange={handleChange}
                         />
-                    </Field>
+                    </div>
                 </Row>
             )}
         </>

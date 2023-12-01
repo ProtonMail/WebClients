@@ -43,7 +43,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
 
     return (
         <div
-            className="flex flex-nowrap border-bottom border-weak search-result-line w-full px-4 py-2 on-tablet-flex-column"
+            className="flex flex-nowrap border-bottom border-weak search-result-line w-full px-4 py-2 flex-column lg:flex-row"
             style={{ scrollPaddingTop: '5em' }}
         >
             <div
@@ -115,7 +115,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                                     style={{ '--calendar-color': getColor(visualCalendar, Color) }}
                                 />
                                 <span
-                                    className="flex-no-min-children flex-nowrap flex-item-fluid search-event-time-details on-tablet-flex-column"
+                                    className="flex-no-min-children flex-nowrap flex-item-fluid search-event-time-details flex-column lg:flex-row"
                                     ref={isClosestToDate ? closestToDateRef : null}
                                 >
                                     <span
@@ -126,7 +126,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                                     </span>
                                     <span
                                         className={clsx(
-                                            'text-ellipsis flex-item-fluid pl-2 lg:pl-0 search-event-summary text-bold'
+                                            'text-ellipsis lg:flex-item-fluid pl-2 lg:pl-0 search-event-summary text-bold'
                                         )}
                                     >
                                         {getDisplayTitle(Summary)}

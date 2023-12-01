@@ -418,7 +418,7 @@ const EventPopover = ({
             </div>
             {getCanReplyToEvent({ isOwnedCalendar, isCalendarWritable, isAttendee: model.isAttendee, isCancelled }) && (
                 <PopoverFooter
-                    className="flex-item-noshrink flex-align-items-center flex-justify-space-between gap-4 on-mobile-flex-column"
+                    className="flex-item-noshrink flex-align-items-start md:flex-align-items-center flex-justify-space-between gap-4 flex-column md:flex-row"
                     key={targetEvent.uniqueId}
                 >
                     <div>

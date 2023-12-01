@@ -70,7 +70,7 @@ const ExtraImages = ({ messageImages, type, onLoadImages, mailSettings }: Props)
                 <Button
                     onClick={onLoadImages}
                     data-testid="embedded-content:load"
-                    className="inline-flex flex-align-items-center w-full md:w-auto on-mobile-flex-justify-center mr-0 md:mr-0 mb-3 px-2"
+                    className="inline-flex flex-align-items-center w-full md:w-auto flex-justify-center md:flex-justify-start mr-0 md:mr-0 mb-3 px-2"
                 >
                     <Icon name="image" className="flex-item-noshrink ml-1" />
                     <span className="ml-2">{actionText}</span>
