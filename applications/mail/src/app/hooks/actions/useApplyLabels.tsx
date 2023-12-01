@@ -7,6 +7,7 @@ import { labelConversations, unlabelConversations } from '@proton/shared/lib/api
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { getFilteredUndoTokens, runParallelChunkedActions } from 'proton-mail/helpers/chunk';
 
@@ -85,6 +86,15 @@ const getNotificationTextAdded = (isMessage: boolean, elementsCount: number, lab
     );
 };
 
+export class ApplyLabelsError extends Error {
+    errors: any;
+
+    constructor(errors: any[]) {
+        super();
+        this.errors = errors;
+        Object.setPrototypeOf(this, ApplyLabelsError.prototype);
+    }
+}
 export const useApplyLabels = () => {
     const api = useApi();
     const { call, stop, start } = useEventManager();
@@ -147,6 +157,7 @@ export const useApplyLabels = () => {
                     stop();
                     dispatch(backendActionStarted());
 
+                    const errors: any[] = [];
                     const [apiResults] = await Promise.all([
                         Promise.all(
                             changesKeys.map(async (LabelID) => {
@@ -160,22 +171,34 @@ export const useApplyLabels = () => {
                                         action: (chunk) => action({ LabelID, IDs: chunk }),
                                     });
                                 } catch (error: any) {
-                                    rollbacks[LabelID]();
-                                    throw error;
+                                    errors.push(error);
                                 }
                             })
                         ),
                         createFilters ? doCreateFilters(elements, selectedLabelIDs, false) : undefined,
                     ]);
 
-                    tokens = apiResults.flat();
+                    // In apply labels, we send a request per label applied/removed
+                    // It means that one of the request failed during the process, throwing an error too early would prevent us to Undo all actions
+                    // (e.g. apply labelA and labelB. labelA fails, so we have an error, but we also need to Undo labelB.)
+                    // That's why we need to wait for all api results, and throw an error when we have them all.
+                    if (errors.length > 0) {
+                        throw new ApplyLabelsError(errors);
+                    }
+
+                    tokens = apiResults.filter(isTruthy).flat();
                 } catch (error: any) {
                     createNotification({
                         text: c('Error').t`Something went wrong. Please try again.`,
                         type: 'error',
                     });
 
-                    await handleUndo(error.data);
+                    if (error instanceof ApplyLabelsError) {
+                        error.errors.map(async (error: any) => {
+                            await handleUndo(error.data);
+                        });
+                    }
+
                     throw error;
                 } finally {
                     dispatch(backendActionFinished());
