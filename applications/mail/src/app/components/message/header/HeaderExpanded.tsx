@@ -259,7 +259,7 @@ const HeaderExpanded = ({
                     </div>
                 )}
             </div>
-            <div className="flex flex-nowrap flex-align-items-center mb-2 on-mobile-flex-wrap message-header-ccbcc-container">
+            <div className="flex md:flex-nowrap flex-align-items-center mb-2 message-header-ccbcc-container">
                 <MailRecipients
                     message={message}
                     recipientsOrGroup={recipientsOrGroup}

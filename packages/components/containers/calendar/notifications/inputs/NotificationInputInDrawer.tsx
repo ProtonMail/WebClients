@@ -120,9 +120,12 @@ const NotificationInputInDrawer = ({
                     </span>
                 </span>
             )}
-            <span className={clsx('flex gap-2', fullWidth ? 'on-mobile-flex-column' : 'on-tablet-flex-column')}>
+            <span className={clsx('flex flex-column gap-2', fullWidth ? 'md:flex-row' : 'lg:flex-row')}>
                 <span
-                    className="flex flex-nowrap gap-2 flex-item-grow-custom flex-item-fluid"
+                    className={clsx(
+                        'flex flex-nowrap gap-2 flex-item-grow-custom',
+                        fullWidth ? 'md:flex-item-fluid' : 'lg:flex-item-fluid'
+                    )}
                     style={{ '--grow-custom': '1.5' }}
                 >
                     {hasValueInput && (
@@ -151,7 +154,7 @@ const NotificationInputInDrawer = ({
                             />
                         </span>
                     )}
-                    <span className="flex-item-fluid">
+                    <span className={clsx(fullWidth ? 'md:flex-item-fluid' : 'lg:flex-item-fluid')}>
                         <SelectTwo
                             data-testid="notification-time-dropdown"
                             value={optionsValue}
@@ -177,7 +180,7 @@ const NotificationInputInDrawer = ({
                     </span>
                 </span>
                 {isAllDay && at && (
-                    <span className="flex-item-fluid">
+                    <span className={clsx(fullWidth ? 'md:flex-item-fluid' : 'lg:flex-item-fluid')}>
                         <TimeInput
                             data-testid="notification-time-at"
                             value={at}

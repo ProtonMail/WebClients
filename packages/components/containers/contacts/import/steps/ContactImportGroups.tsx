@@ -200,12 +200,12 @@ const ContactImportGroups = ({ model, setModel, onClose }: Props) => {
         return (
             <div
                 key={name}
-                className="flex flex-nowrap flex-item-fluid flex-align-items-center on-tiny-mobile-flex-column mb-4"
+                className="flex flex-nowrap flex-item-fluid flex-align-items-stretch sm:flex-align-items-center flex-column sm:flex-row mb-4 gap-2"
             >
-                <div className="flex-item-fluid text-ellipsis mr-4" title={categoryString}>
+                <div className="sm:flex-item-fluid text-ellipsis" title={categoryString}>
                     {categoryString}
                 </div>
-                <div className="flex-item-fluid mr-0 md:mr-1">
+                <div className="sm:flex-item-fluid">
                     <SelectGroupAction
                         action={action}
                         index={index}
@@ -213,7 +213,7 @@ const ContactImportGroups = ({ model, setModel, onClose }: Props) => {
                         onChange={handleChangeAction}
                     />
                 </div>
-                <div className="flex-item-fluid w-3/10">
+                <div className="sm:flex-item-fluid sm:w-3/10">
                     <SelectGroup
                         contactGroups={model.contactGroups}
                         action={action}

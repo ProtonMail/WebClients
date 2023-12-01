@@ -101,11 +101,11 @@ const ContactEditProperty = (
                     <Icon name="text-align-justify" className="visibility-hidden" />
                 </div>
             )}
-            <div className="contact-modal-field relative flex flex-nowrap on-mobile-flex-column w-full flex-align-items-start">
+            <div className="contact-modal-field relative flex flex-nowrap flex-column md:flex-row w-full flex-align-items-stretch md:flex-align-items-start">
                 <span
                     className={clsx([
-                        'contact-modal-select flex flex-nowrap mb-2 md:mb-4 flex-align-items-start on-mobile-flex-align-self-start',
-                        labelWidthClassName || 'w-3/10',
+                        'contact-modal-select flex flex-nowrap mb-2 md:mb-4 flex-align-items-start',
+                        labelWidthClassName || 'md:w-3/10',
                     ])}
                 >
                     <ContactEditLabel
@@ -116,7 +116,7 @@ const ContactEditProperty = (
                     />
                 </span>
 
-                <div className="flex flex-nowrap flex-align-items-startoupas flex-item-fluid flex-item-noshrink">
+                <div className="flex flex-nowrap flex-align-items-startoupas md:flex-item-fluid flex-item-noshrink">
                     <span className="flex-item-fluid mb-4">
                         <ContactFieldProperty
                             ref={ref}
