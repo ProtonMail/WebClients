@@ -55,7 +55,7 @@ export const ExtensionConnect = <T extends ClientEndpoint>({
 }: ExtensionConnectProps<T>) => {
     const dispatch = useDispatch();
     const { tabId } = ExtensionContext.get();
-    const activityProbe = useExtensionActivityProbe();
+    const activityProbe = useExtensionActivityProbe(messageFactory);
 
     const [state, setState] = useState<AppState>(INITIAL_WORKER_STATE);
     const wakeupLoading = useSelector(selectRequestInFlight(wakeupRequest({ endpoint, tabId })));

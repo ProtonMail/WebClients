@@ -72,7 +72,7 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
     const [userEmail, setUserEmail] = useState<MaybeNull<string>>(null);
     const [visible, setVisible] = useState<boolean>(false);
     const [locale, setLocale] = useState(DEFAULT_LOCALE);
-    const activityProbe = useExtensionActivityProbe();
+    const activityProbe = useExtensionActivityProbe(contentScriptMessage);
 
     const destroyFrame = () => {
         logger.info(`[IFrame::${endpoint}] Unauthorized iframe injection`);
