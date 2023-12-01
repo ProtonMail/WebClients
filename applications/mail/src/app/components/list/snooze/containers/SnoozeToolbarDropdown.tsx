@@ -38,10 +38,11 @@ const SnoozeToolbarDropdown = ({ selectedIDs }: Props) => {
                 disabled={!selectedIDs || !selectedIDs.length}
                 content={
                     <SnoozeSpotlight show={show} onDisplayed={onDisplayed} onClose={onClose}>
-                        <Icon className="toolbar-icon" name="clock" />
+                        <Icon className="toolbar-icon flex" name="clock" alt={c('Title').t`Snooze`} />
                     </SnoozeSpotlight>
                 }
                 title={tooltipTitle}
+                clickCallback={onClose}
                 data-testid="toolbar:snooze"
                 hasCaret={false}
                 autoClose={false}
