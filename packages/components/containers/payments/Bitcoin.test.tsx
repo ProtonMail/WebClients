@@ -2,7 +2,7 @@ import { render, waitFor } from '@testing-library/react';
 
 import { createToken, getTokenStatus } from '@proton/shared/lib/api/payments';
 import { Api, Currency } from '@proton/shared/lib/interfaces';
-import { addApiMock, apiMock, flushPromises } from '@proton/testing';
+import { addApiMock, apiMock, applyHOCs, flushPromises, withNotifications } from '@proton/testing';
 
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '../../payments/core';
 import Bitcoin from './Bitcoin';
@@ -20,6 +20,8 @@ type InnerProps = {
     processingToken: boolean;
 };
 
+const BitcoinContext = applyHOCs(withNotifications())(Bitcoin);
+
 const BitcoinTestComponent = (props: InnerProps) => {
     const bitcoinHook = useBitcoin({
         api: props.api,
@@ -30,7 +32,7 @@ const BitcoinTestComponent = (props: InnerProps) => {
         enablePolling: true,
     });
 
-    return <Bitcoin {...props} {...bitcoinHook} />;
+    return <BitcoinContext {...props} {...bitcoinHook} />;
 };
 
 beforeAll(() => {
