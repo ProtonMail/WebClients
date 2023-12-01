@@ -3,6 +3,7 @@ import type { Store } from 'redux';
 import { PASS_BF_2023_DATES } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import {
+    selectCreatedItemsCount,
     selectFeatureFlag,
     selectHasRegisteredLock,
     selectPassPlan,
@@ -99,7 +100,7 @@ export const createUserRatingRule = (store: Store<State>) =>
         message: OnboardingMessage.USER_RATING,
         when: (previous) => {
             const PROMPT_ITEM_COUNT = 10;
-            const { createdItemsCount } = store.getState().settings;
+            const createdItemsCount = selectCreatedItemsCount(store.getState());
             return !previous && createdItemsCount >= PROMPT_ITEM_COUNT;
         },
     });
