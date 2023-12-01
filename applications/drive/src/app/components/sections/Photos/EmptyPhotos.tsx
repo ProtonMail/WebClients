@@ -26,7 +26,10 @@ export const EmptyPhotos: FC<Props> = () => {
                 c('Info').t`Get the app to backup photos from your phone.`
             }
         >
-            <div className="mt-10 flex flex-align-items-center flex-justify-center gap-4">
+            <div
+                className="mt-10 flex flex-align-items-center flex-justify-center gap-4"
+                data-testid="photos-empty-page:mobile-apps"
+            >
                 <Href href={DRIVE_ANDROID_APP}>
                     <img width="140" src={playStoreSvg} alt={c('Info').t`${DRIVE_APP_NAME} on Play Store`} />
                 </Href>
