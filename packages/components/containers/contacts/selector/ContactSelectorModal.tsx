@@ -56,7 +56,7 @@ const allContactsGroup: Pick<ContactGroup, 'Name' | 'ID'> = {
 type Props = ContactSelectorProps & ContactSelectorResolver & ModalProps;
 
 const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails, onEdit, ...rest }: Props) => {
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     const searchInputRef = useRef<HTMLInputElement>(null);
     const [contactEmails, loadingContactEmails] = useContactEmailsSortedByName();
@@ -212,7 +212,7 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                     <ContactSelectorEmptyContacts onClose={rest.onClose} onEdit={onEdit} />
                 ) : (
                     <>
-                        <div className={clsx(['mb-2 flex flex-nowrap gap-4', isNarrow && 'flex-column'])}>
+                        <div className={clsx(['mb-2 flex flex-nowrap gap-4', viewportWidth['<=small'] && 'flex-column'])}>
                             <div className="grow-2">
                                 <SearchInput
                                     ref={searchInputRef}
@@ -221,7 +221,7 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                                     placeholder={c('Placeholder').t`Search name, email or group`}
                                 />
                             </div>
-                            <div className={clsx([!isNarrow && 'w-1/3'])}>
+                            <div className={clsx([!viewportWidth['<=small'] && 'w-1/3'])}>
                                 <SelectTwo
                                     onChange={({ value }) => setSelectedGroup(value)}
                                     value={selectedGroup}
@@ -237,7 +237,7 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                         </div>
                         {filteredContactEmails.length ? (
                             <>
-                                {!isNarrow && (
+                                {!viewportWidth['<=small'] && (
                                     <div className="flex flex-nowrap flex-1 contact-list-row p-4">
                                         <div>
                                             <Checkbox
@@ -259,7 +259,7 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                                 <ContactSelectorList
                                     rowCount={filteredContactEmails.length}
                                     userSettings={userSettings}
-                                    className={clsx([isNarrow && 'mt-4'])}
+                                    className={clsx([viewportWidth['<=small'] && 'mt-4'])}
                                     rowRenderer={({ index, style }) => (
                                         <ContactSelectorRow
                                             onCheck={handleCheck}
@@ -267,7 +267,7 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                                             key={filteredContactEmails[index].ID}
                                             contact={filteredContactEmails[index]}
                                             checked={!!checkedContactEmailMap[filteredContactEmails[index].ID]}
-                                            isNarrow={isNarrow}
+                                            isSmallViewport={viewportWidth['<=small']}
                                         />
                                     )}
                                 />

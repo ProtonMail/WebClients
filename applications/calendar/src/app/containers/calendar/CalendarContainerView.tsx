@@ -87,7 +87,7 @@ const localToUtcDate = (date: Date) => new Date(Date.UTC(date.getFullYear(), dat
 interface Props {
     calendars: VisualCalendar[];
     isLoading?: boolean;
-    isNarrow?: boolean;
+    isSmallViewport?: boolean;
     displayWeekNumbers?: boolean;
     weekStartsOn?: WeekStartsOn;
     tzid: string;
@@ -117,7 +117,7 @@ interface Props {
 const CalendarContainerView = ({
     calendars,
     isLoading = false,
-    isNarrow = false,
+    isSmallViewport = false,
     displayWeekNumbers = false,
     weekStartsOn = 0,
 
@@ -404,7 +404,7 @@ const CalendarContainerView = ({
     const [{ isWelcomeFlow }] = useWelcomeFlags();
     const { show: showSharingSpotlight, onDisplayed: onSharingSpotlightDisplayed } = useSpotlightOnFeature(
         FeatureCode.CalendarSharingSpotlight,
-        !isWelcomeFlow && !isDrawerApp && !isNarrow && calendarSharingEnabled && hasPaidMail(user),
+        !isWelcomeFlow && !isDrawerApp && !isSmallViewport && calendarSharingEnabled && hasPaidMail(user),
         {
             alpha: 0,
             beta: Date.UTC(2023, 3, 5, 12),
@@ -416,7 +416,7 @@ const CalendarContainerView = ({
         show: showSearchSpotlight,
         onDisplayed: onSearchSpotlightDisplayed,
         onClose: onCloseSearchSpotlight,
-    } = useSpotlightOnFeature(FeatureCode.CalendarEncryptedSearchSpotlight, !isNarrow && !isWelcomeFlow, {
+    } = useSpotlightOnFeature(FeatureCode.CalendarEncryptedSearchSpotlight, !isSmallViewport && !isWelcomeFlow, {
         alpha: Date.UTC(2023, 8, 13, 12),
         beta: Date.UTC(2023, 8, 20, 12),
         default: Date.UTC(2023, 9, 19, 12),
@@ -592,9 +592,9 @@ const CalendarContainerView = ({
                 title={c('Title').t`Calendar`}
                 expanded={expanded}
                 onToggleExpand={onToggleExpand}
-                isNarrow={isNarrow}
+                isSmallViewport={isSmallViewport}
                 actionArea={!isDrawerApp ? toolbar : null}
-                hideUpsellButton={isNarrow}
+                hideUpsellButton={isSmallViewport}
                 settingsButton={drawerSettingsButton}
             />
 
@@ -631,7 +631,7 @@ const CalendarContainerView = ({
             calendarUserSettings={calendarUserSettings}
             logo={logo}
             expanded={expanded}
-            isNarrow={isNarrow}
+            isSmallViewport={isSmallViewport}
             onToggleExpand={onToggleExpand}
             onCreateEvent={onCreateEvent ? () => onCreateEvent?.() : undefined}
             onCreateCalendar={onCreateCalendarFromSidebar}

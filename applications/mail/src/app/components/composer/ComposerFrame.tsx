@@ -1,6 +1,7 @@
 import { DragEvent, useEffect, useRef, useState } from 'react';
 
 import { ErrorBoundary, useHandler, useToggle, useWindowSize } from '@proton/components';
+import { Breakpoints } from '@proton/components/hooks/useActiveBreakpoint';
 import { COMPOSER_MODE } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
 
@@ -10,7 +11,6 @@ import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, DRAG_ADDRESS_KEY } from '../../con
 import { computeComposerStyle, getComposerDimension, shouldBeMaximized } from '../../helpers/composerPositioning';
 import useComposerDrag from '../../hooks/composer/useComposerDrag';
 import { ComposerID } from '../../logic/composers/composerTypes';
-import { Breakpoints } from '../../models/utils';
 import Composer, { ComposerAction } from './Composer';
 import ComposerTitleBar from './ComposerTitleBar';
 
@@ -59,7 +59,7 @@ const ComposerFrame = ({
         count,
         minimized,
         maximized,
-        isNarrow: breakpoints.isNarrow,
+        isSmallViewport: breakpoints.viewportWidth['<=small'],
         drawerOffset,
     });
 

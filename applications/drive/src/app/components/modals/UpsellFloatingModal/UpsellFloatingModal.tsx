@@ -43,8 +43,9 @@ const UpsellFloatingModalContent = ({ onClose }: Pick<ChildProps, 'onClose'>) =>
                 </p>
             </div>
             <ModalTwoFooter>
-                <ButtonLike as="a" href={DRIVE_PRICING_PAGE} target="_blank" className="w-full" color="norm">{c('Action')
-                    .t`Get ${DRIVE_APP_NAME}`}</ButtonLike>
+                <ButtonLike as="a" href={DRIVE_PRICING_PAGE} target="_blank" className="w-full" color="norm">{c(
+                    'Action'
+                ).t`Get ${DRIVE_APP_NAME}`}</ButtonLike>
             </ModalTwoFooter>
         </>
     );
@@ -127,7 +128,7 @@ interface Props {
     onlyOnce: boolean;
 }
 const UpsellFloatingModal = ({ onlyOnce = false, ...modalProps }: Props & ModalStateProps) => {
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
     const [wasOpened, setWasOpened] = useState(false);
 
     const handleBlockNewOpening = () => {
@@ -145,7 +146,7 @@ const UpsellFloatingModal = ({ onlyOnce = false, ...modalProps }: Props & ModalS
         return null;
     }
 
-    if (isNarrow) {
+    if (viewportWidth['<=small']) {
         return <MobileUpsellFloatingModal {...props} />;
     }
 

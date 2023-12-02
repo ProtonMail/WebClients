@@ -2,6 +2,7 @@ import { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
+import { Breakpoints } from '@proton/components/hooks';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import {
@@ -15,7 +16,6 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { MessageState } from '../../../logic/messages/messagesTypes';
-import { Breakpoints } from '../../../models/utils';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
@@ -108,7 +108,7 @@ const HeaderCollapsed = ({
                             element={message.data}
                             labels={labels}
                             labelID={labelID}
-                            maxNumber={breakpoints.isTablet ? 1 : 5}
+                            maxNumber={breakpoints.viewportWidth.medium ? 1 : 5}
                             isCollapsed={false}
                             data-testid="message-header-collapsed:labels"
                         />

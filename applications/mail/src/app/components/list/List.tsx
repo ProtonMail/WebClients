@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { useConversationCounts, useItemsDraggable, useMessageCounts } from '@proton/components';
+import { Breakpoints, useConversationCounts, useItemsDraggable, useMessageCounts } from '@proton/components';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { CHECKLIST_DISPLAY_TYPE, UserSettings } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -20,7 +20,6 @@ import { PLACEHOLDER_ID_PREFIX, usePlaceholders } from '../../hooks/usePlacehold
 import { pageSize as pageSizeSelector } from '../../logic/elements/elementsSelectors';
 import { Element } from '../../models/element';
 import { Filter } from '../../models/tools';
-import { Breakpoints } from '../../models/utils';
 import UsersOnboardingChecklist from '../checklist/UsersOnboardingChecklist';
 import EmptyListPlaceholder from '../view/EmptyListPlaceholder';
 import Item from './Item';
@@ -187,7 +186,7 @@ const List = (
 
                 <div
                     className={clsx(
-                        breakpoints.isDesktop && 'items-column-list-inner bg-norm',
+                        breakpoints.viewportWidth['>=large'] && 'items-column-list-inner bg-norm',
                         !columnLayout && 'items-column-list-inner--border-none',
                         'flex flex-nowrap flex-column relative items-column-list-inner--mail overflow-hidden h-full'
                     )}

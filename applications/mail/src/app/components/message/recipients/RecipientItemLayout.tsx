@@ -24,7 +24,7 @@ interface Props {
     ariaLabelTitle?: string;
     icon?: ReactNode;
     isLoading?: boolean;
-    isNarrow?: boolean;
+    isSmallViewport?: boolean;
     dropdownContent?: ReactNode;
     dropdrownAnchorRef: RefObject<HTMLButtonElement>;
     dropdownToggle?: () => void;
@@ -52,7 +52,7 @@ const RecipientItemLayout = ({
     ariaLabelTitle,
     icon,
     isLoading = false,
-    isNarrow,
+    isSmallViewport,
     dropdownContent,
     dropdrownAnchorRef,
     dropdownToggle,
@@ -153,7 +153,7 @@ const RecipientItemLayout = ({
                             className={clsx([
                                 'message-recipient-item-label',
                                 isLoading && 'inline-block',
-                                isNarrow && 'text-strong',
+                                isSmallViewport && 'text-strong',
                             ])}
                             data-testid="recipient-label"
                         >

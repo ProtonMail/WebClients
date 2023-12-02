@@ -17,7 +17,7 @@ const useUpsellFloatingModal = (): ReturnType<typeof useModalTwo<ModalProps, unk
         UpsellFloatingModal,
         false
     );
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
     const { hasDownloads } = useDownload();
     // If user is proton user we disable upsell auto-show
     const isProtonUser = !!getCookie(IS_PROTON_USER_COOKIE_NAME);
@@ -32,7 +32,7 @@ const useUpsellFloatingModal = (): ReturnType<typeof useModalTwo<ModalProps, unk
     }, [hasDownloads, isProtonUser]);
 
     useEffect(() => {
-        if (isNarrow || isProtonUser) {
+        if (viewportWidth['<=small'] || isProtonUser) {
             return;
         }
         const timeout = setTimeout(() => {
@@ -42,7 +42,7 @@ const useUpsellFloatingModal = (): ReturnType<typeof useModalTwo<ModalProps, unk
         return () => {
             clearTimeout(timeout);
         };
-    }, [isNarrow, isProtonUser]);
+    }, [viewportWidth['<=small'], isProtonUser]);
 
     return [renderUpsellFloatingModal, showUpsellFloatingModal];
 };

@@ -113,7 +113,7 @@ const Step1 = ({
     features: { key: Key; text: ReactNode; left: ReactNode }[];
     selectedPlan: Plan;
     planCards: PlanCard[];
-    isDesktop: boolean;
+    isLargeViewport: boolean;
     vpnServersCountData: VPNServersCountData;
     measure: Measure;
     onComplete: (

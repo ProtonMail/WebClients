@@ -22,7 +22,7 @@ interface Props {
     isLoading: boolean;
     signingPublicKey?: PublicKeyReference;
     attachedPublicKey?: PublicKeyReference;
-    isNarrow?: boolean;
+    isSmallViewport?: boolean;
     showDropdown?: boolean;
     isOutside?: boolean;
     hideAddress?: boolean;
@@ -41,7 +41,7 @@ const RecipientItem = ({
     isLoading,
     signingPublicKey,
     attachedPublicKey,
-    isNarrow,
+    isSmallViewport,
     showDropdown,
     isOutside = false,
     hideAddress,
@@ -81,7 +81,7 @@ const RecipientItem = ({
                     globalIcon={globalIcon}
                     signingPublicKey={signingPublicKey}
                     attachedPublicKey={attachedPublicKey}
-                    isNarrow={isNarrow}
+                    isSmallViewport={isSmallViewport}
                     showDropdown={showDropdown}
                     isOutside={isOutside}
                     hideAddress={hideAddress}

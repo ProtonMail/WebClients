@@ -29,7 +29,7 @@ const MailSidebarDriveSpotlight = ({ renderDropdown }: Props) => {
     const { show, onDisplayed } = useSpotlightOnFeature(FeatureCode.DriveWindowsGAMailSpotlight, isSpotlightActive);
     const userAccountHasMoreThanTwoDays = new Date() > addDays(fromUnixTime(user.CreateTime), 2);
 
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
     const [{ isDone }] = useWelcomeFlags();
     const hideSpotlight = useCallback(() => setShowSpotlight(false), []);
 
@@ -42,7 +42,12 @@ const MailSidebarDriveSpotlight = ({ renderDropdown }: Props) => {
      * 6. User has created his account more than 2 days ago
      */
     const displaySpotlight =
-        isSpotlightActive && show && isWindows() && !isNarrow && isDone && userAccountHasMoreThanTwoDays;
+        isSpotlightActive &&
+        show &&
+        isWindows() &&
+        !viewportWidth['<=small'] &&
+        isDone &&
+        userAccountHasMoreThanTwoDays;
 
     if (displaySpotlight) {
         // Render children (AppsDropdown) with onDropdownClick to close the Spotlight

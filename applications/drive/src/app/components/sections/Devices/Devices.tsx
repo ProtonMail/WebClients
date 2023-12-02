@@ -25,12 +25,12 @@ interface Props {
 
 const { ContextMenuCell } = Cells;
 
-const desktopCells: React.FC<{ item: DeviceItem }>[] = [DeviceNameCell, ContextMenuCell];
-const mobileCells = [DeviceNameCell, ContextMenuCell];
+const largeScreenCells: React.FC<{ item: DeviceItem }>[] = [DeviceNameCell, ContextMenuCell];
+const smallScreenCells = [DeviceNameCell, ContextMenuCell];
 
-const headerItemsDesktop: ListViewHeaderItem[] = [headerCells.name, headerCellsCommon.placeholder];
+const headerItemsLargeScreen: ListViewHeaderItem[] = [headerCells.name, headerCellsCommon.placeholder];
 
-const headerItemsMobile: ListViewHeaderItem[] = [headerCells.name, headerCellsCommon.placeholder];
+const headerItemsSmallScreen: ListViewHeaderItem[] = [headerCells.name, headerCellsCommon.placeholder];
 
 function Devices({ view }: Props) {
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
@@ -38,7 +38,7 @@ function Devices({ view }: Props) {
     const { navigateToLink } = useNavigate();
     const browserItemContextMenu = useItemContextMenu();
     const selectionControls = useSelection();
-    const { isDesktop } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     const { layout, items: browserItems, isLoading } = view;
     const sectionTitle = getDevicesSectionName();
@@ -73,8 +73,8 @@ function Devices({ view }: Props) {
         return <EmptyDevices />;
     }
 
-    const Cells = isDesktop ? desktopCells : mobileCells;
-    const headerItems = isDesktop ? headerItemsDesktop : headerItemsMobile;
+    const Cells = viewportWidth['>=large'] ? largeScreenCells : smallScreenCells;
+    const headerItems = viewportWidth['>=large'] ? headerItemsLargeScreen : headerItemsSmallScreen;
 
     return (
         <>

@@ -114,7 +114,7 @@ const MainContainer = () => {
     const [incomingAddressForwardings = [], loadingIncomingAddressForwardings] = useIncomingAddressForwarding();
     const location = useLocation();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
-    const { isNarrow, isDesktop } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     const { featuresFlags, getFeature } = useFeatures([
         FeatureCode.ReferralProgram,
@@ -205,8 +205,8 @@ const MainContainer = () => {
             title={c('Title').t`Settings`}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
-            isNarrow={isNarrow}
-            actionArea={isDesktop && <SettingsSearch routes={routes} path={prefixPath} app={app} />}
+            isSmallViewport={viewportWidth['<=small']}
+            actionArea={viewportWidth['>=large'] && <SettingsSearch routes={routes} path={prefixPath} app={app} />}
             app={app}
         />
     );

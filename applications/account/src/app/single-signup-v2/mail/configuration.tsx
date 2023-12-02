@@ -76,13 +76,13 @@ export const getCustomMailFeatures = (plan: Plan | undefined) => {
 };
 
 export const getMailConfiguration = ({
-    isDesktop,
+    isLargeViewport,
     vpnServersCountData,
     hideFreePlan,
     plansMap,
 }: {
     hideFreePlan: boolean;
-    isDesktop: boolean;
+    isLargeViewport: boolean;
     vpnServersCountData: VPNServersCountData;
     plansMap?: PlansMap;
 }): SignupConfiguration => {
@@ -90,7 +90,7 @@ export const getMailConfiguration = ({
 
     const title = <>{c('mail_signup_2023: Info').t`Secure email that protects your privacy`}</>;
 
-    const features = getGenericFeatures(isDesktop);
+    const features = getGenericFeatures(isLargeViewport);
 
     const planCards: PlanCard[] = [
         !hideFreePlan && {

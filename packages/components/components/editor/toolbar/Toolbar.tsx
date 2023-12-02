@@ -35,9 +35,9 @@ interface ToolbarProps {
 }
 
 const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className, simple }: ToolbarProps) => {
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
-    const showMoreDropdown = metadata.supportRightToLeft || metadata.supportPlainText || isNarrow;
+    const showMoreDropdown = metadata.supportRightToLeft || metadata.supportPlainText || viewportWidth['<=small'];
 
     if (metadata.isPlainText) {
         return null;
@@ -127,7 +127,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     />
                 </ToolbarButton>
             </>
-            {!isNarrow ? (
+            {!viewportWidth['<=small'] ? (
                 <>
                     <ToolbarButton
                         onClick={config.unorderedList.toggle}
@@ -228,7 +228,9 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     )}
                 </>
             ) : null}
-            {showMoreDropdown && <ToolbarMoreDropdown config={config} metadata={metadata} isNarrow={isNarrow} />}
+            {showMoreDropdown && (
+                <ToolbarMoreDropdown config={config} metadata={metadata} isNarrow={viewportWidth['<=small']} />
+            )}
         </ButtonGroup>
     );
 };

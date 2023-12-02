@@ -1,5 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 
+import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
+
 import useSnooze from '../../hooks/actions/useSnooze';
 import { useLabelActions } from '../../hooks/useLabelActions';
 import MoreDropdown from './MoreDropdown';
@@ -13,17 +15,7 @@ jest.mock('../../hooks/actions/useMoveAll', () => ({
     useMoveAll: () => ({ moveAll: '', modal: null }),
 }));
 
-const BREAKPOINTS = {
-    breakpoint: '',
-    isLargeDesktop: false,
-    isMediumDesktop: false,
-    isSmallDesktop: false,
-    isDesktop: false,
-    isTablet: false,
-    isMobile: false,
-    isTinyMobile: false,
-    isNarrow: false,
-};
+const BREAKPOINTS = mockDefaultBreakpoints;
 
 const props = {
     labelID: '1',
