@@ -168,7 +168,7 @@ const CreateEventModal = ({
             footer={
                 <>
                     <Button
-                        className="no-tiny-mobile"
+                        className="hidden sm:inline-block"
                         data-testid="event-creation-modal:cancel-event-creation"
                         disabled={loadingAction}
                         onClick={onClose}
