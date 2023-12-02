@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
-import clsx from '@proton/utils/clsx';
 
 import { Icon } from '../../components';
 import { useDocumentTitle } from '../../hooks';
