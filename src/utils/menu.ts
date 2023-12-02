@@ -71,7 +71,7 @@ export const setApplicationMenu = (isPackaged: boolean) => {
         },
         {
             label: "Window",
-            submenu: [{ role: "minimize" }, { role: "zoom" }],
+            submenu: [{ role: "minimize" }, { role: "close" }, { role: "zoom" }],
         },
     ];
 
@@ -115,13 +115,6 @@ export const setApplicationMenu = (isPackaged: boolean) => {
                 submenu: [{ role: "startSpeaking" }, { role: "stopSpeaking" }],
             },
         ],
-    });
-
-    insertInMenu({
-        menu: temp,
-        key: "Window",
-        otherOsEntries: [{ role: "close" }],
-        macEntries: [{ type: "separator" }, { role: "front" }, { type: "separator" }, { role: "window" }],
     });
 
     if (!isPackaged) {
