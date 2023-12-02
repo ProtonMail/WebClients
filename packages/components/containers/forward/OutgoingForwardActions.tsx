@@ -146,12 +146,12 @@ const OutgoingForwardActions = ({ user, forward, addresses, forwardings }: Props
         },
     ].filter(isTruthy);
 
-    const { isDesktop } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     return (
         <>
             <DropdownActions
-                iconName={isDesktop ? 'three-dots-vertical' : undefined}
+                iconName={viewportWidth['>=large'] ? 'three-dots-vertical' : undefined}
                 list={list}
                 size="small"
                 shape="ghost"

@@ -185,7 +185,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
         return `${href}${search}`;
     }, [location.pathname]);
 
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
     // DisplayName is null for VPN users without any addresses, cast to undefined in case Name would be null too.
     const initials = getInitials(nameToDisplay || Email || '');
 
@@ -288,7 +288,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                         ) : null}
                     </div>
 
-                    {!isNarrow && (
+                    {!viewportWidth['<=small'] && (
                         <div className="px-4 pb-4 text-sm flex flex-nowrap items-center">
                             <span
                                 className="my-auto text-sm rounded border p-1 inline-block relative flex shrink-0 user-initials"
@@ -381,7 +381,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                         </Button>
                     </div>
 
-                    {isNarrow && hasAppLinks ? (
+                    {viewportWidth['<=small'] && hasAppLinks ? (
                         <ul className="px-4 pb-4 unstyled text-sm">
                             {apps(user).map((appToLinkTo) => {
                                 const appToLinkToName = getAppShortName(appToLinkTo);

@@ -16,7 +16,7 @@ interface Props {
 
 const UpsellPlanCard = ({ plan, price, footer, button, icon }: Props) => {
     const [isExpanded, setIsExpanded] = useState(false);
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     const footerWrapper = footer ? (
         <p className="text-sm m-0 plan-selection-additionnal-mentions color-weak">{footer}</p>
@@ -27,7 +27,7 @@ const UpsellPlanCard = ({ plan, price, footer, button, icon }: Props) => {
             <div className="mt-5 mb-2 md:mb-4">{price}</div>
             <div className="mb-0 md:mb-6">{button}</div>
 
-            {!isNarrow ? (
+            {!viewportWidth['<=small'] ? (
                 <>
                     <div>
                         <PlanCardFeatureList features={plan.features} icon={icon} />

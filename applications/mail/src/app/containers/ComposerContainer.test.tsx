@@ -4,6 +4,7 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, MIME_TYPES } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { FORWARDED_MESSAGE } from '@proton/shared/lib/mail/messages';
+import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
 import { MESSAGE_ACTIONS } from '../constants';
 import { formatFullDate } from '../helpers/date';
@@ -11,7 +12,6 @@ import { addAddressToCache, clearAll, minimalCache, render, tick } from '../help
 import { preparePlainText } from '../helpers/transforms/transforms';
 import { ComposeTypes, OnCompose } from '../hooks/composer/useCompose';
 import { MessageState } from '../logic/messages/messagesTypes';
-import { Breakpoints } from '../models/utils';
 import { useOnCompose } from './ComposeProvider';
 import ComposerContainer from './ComposerContainer';
 
@@ -61,7 +61,7 @@ with a link -> https://protonmail.com/`;
         };
 
         const { findByTestId, unmount } = await render(
-            <ComposerContainer breakpoints={{} as Breakpoints}>
+            <ComposerContainer breakpoints={mockDefaultBreakpoints}>
                 <Inside />
             </ComposerContainer>,
             false
@@ -138,7 +138,7 @@ with a link -> https://protonmail.com/`;
         };
 
         const { findByTestId, unmount } = await render(
-            <ComposerContainer breakpoints={{} as Breakpoints}>
+            <ComposerContainer breakpoints={mockDefaultBreakpoints}>
                 <Inside />
             </ComposerContainer>,
             false

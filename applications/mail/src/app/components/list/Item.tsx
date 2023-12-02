@@ -1,6 +1,6 @@
 import { ChangeEvent, DragEvent, MouseEvent, memo, useMemo, useRef } from 'react';
 
-import { ItemCheckbox, useLabels } from '@proton/components';
+import { Breakpoints, ItemCheckbox, useLabels } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
@@ -19,7 +19,6 @@ import { selectSnoozeDropdownState } from '../../logic/snooze/snoozeSliceSelecto
 import { useAppSelector } from '../../logic/store';
 import { Element } from '../../models/element';
 import { ESMessage } from '../../models/encryptedSearch';
-import { Breakpoints } from '../../models/utils';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
 import ItemSenders from './ItemSenders';
@@ -95,8 +94,8 @@ const Item = ({
     const senders = conversationMode
         ? getSenders(element)
         : getSender(element as Message)
-        ? [getSender(element as Message)]
-        : [];
+          ? [getSender(element as Message)]
+          : [];
     const recipients = conversationMode ? getConversationRecipients(element) : getMessageRecipients(element as Message);
     const sendersLabels = useMemo(() => senders.map((sender) => getRecipientLabel(sender, true)), [senders]);
     const recipientsOrGroup = getRecipientsOrGroups(recipients);

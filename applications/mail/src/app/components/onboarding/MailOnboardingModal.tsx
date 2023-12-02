@@ -36,7 +36,7 @@ interface Props {
 
 const MailOnboardingModal = (props: Props) => {
     const { markItemsAsDone } = useGetStartedChecklist();
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     const isImporterInMaintenance = useFlag('MaintenanceImporter');
 
@@ -123,8 +123,8 @@ const MailOnboardingModal = (props: Props) => {
                         {privacyFeature.map(({ title, description, imgSrc }, index) => (
                             <div className="flex flex-row gap-4 items-center" key={index}>
                                 <img
-                                    className={clsx('w-custom', isNarrow && 'self-start')}
-                                    style={{ '--w-custom': isNarrow ? '3rem' : '5rem' }}
+                                    className={clsx('w-custom', viewportWidth['<=small'] && 'self-start')}
+                                    style={{ '--w-custom': viewportWidth['<=small'] ? '3rem' : '5rem' }}
                                     src={imgSrc}
                                     alt=""
                                 />

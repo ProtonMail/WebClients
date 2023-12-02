@@ -16,10 +16,10 @@ interface Props {
 }
 
 const SignInWithGoogle = ({ loading, disabled, onClick, fullWidth, reduceHeight }: Props) => {
-    const { isNarrow } = useActiveBreakpoint();
-    const buttonHeight = !isNarrow && reduceHeight ? '2.5rem' : '3rem';
-    const googleLogoSize = !isNarrow && reduceHeight ? '2rem' : '2.5rem';
-    const googleImageSize = !isNarrow && reduceHeight ? 18 : 20;
+    const { viewportWidth } = useActiveBreakpoint();
+    const buttonHeight = !viewportWidth['<=small'] && reduceHeight ? '2.5rem' : '3rem';
+    const googleLogoSize = !viewportWidth['<=small'] && reduceHeight ? '2rem' : '2.5rem';
+    const googleImageSize = !viewportWidth['<=small'] && reduceHeight ? 18 : 20;
 
     return (
         <Button

@@ -30,18 +30,18 @@ import { ModifiedCell, NameCell, SizeCell } from '../components/sections/FileBro
 import headerItems from '../components/sections/FileBrowser/headerCells';
 import ToolbarRow from '../components/sections/ToolbarRow/ToolbarRow';
 
-const desktopCells: React.FC<{ item: DriveItem }>[] = [NameCell, ModifiedCell, SizeCell];
-const mobileCells = [NameCell];
+const largeScreenCells: React.FC<{ item: DriveItem }>[] = [NameCell, ModifiedCell, SizeCell];
+const smallScreenCells = [NameCell];
 
-const headerItemsDesktop: ListViewHeaderItem[] = [headerItems.name, headerItems.modificationDate, headerItems.size];
+const headerItemsLargeScreen: ListViewHeaderItem[] = [headerItems.name, headerItems.modificationDate, headerItems.size];
 
-const headerItemsMobile: ListViewHeaderItem[] = [headerItems.name, headerItems.placeholder];
+const headerItemsSmallScreen: ListViewHeaderItem[] = [headerItems.name, headerItems.placeholder];
 
 const DriveDummyContainer = () => {
     const [user] = useUser();
     const scrollAreaRef = useRef<HTMLDivElement>(null);
     const { state: expanded, toggle: toggleExpanded } = useToggle();
-    const { isDesktop } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     const logo = <MainLogo to="/" />;
     const dummyUploadButton = (
@@ -85,9 +85,9 @@ const DriveDummyContainer = () => {
         },
     ];
 
-    const headerItems = isDesktop ? headerItemsDesktop : headerItemsMobile;
+    const headerItems = viewportWidth['>=large'] ? headerItemsLargeScreen : headerItemsSmallScreen;
 
-    const Cells = isDesktop ? desktopCells : mobileCells;
+    const Cells = viewportWidth['>=large'] ? largeScreenCells : smallScreenCells;
 
     const permissions = getDriveDrawerPermissions({ user });
     const drawerSidebarButtons = [

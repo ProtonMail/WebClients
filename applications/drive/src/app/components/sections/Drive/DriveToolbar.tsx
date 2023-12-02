@@ -37,7 +37,7 @@ interface Props {
 
 const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLinkReadOnly }: Props) => {
     const isDesktop = !getDevice()?.type;
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
     const selectionControls = useSelection()!;
     const isEditEnabled = useIsEditEnabled();
 
@@ -75,7 +75,7 @@ const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true, isLink
             <>
                 <PreviewButton selectedLinks={selectedItems} />
                 <DownloadButton selectedLinks={selectedItems} />
-                {isNarrow ? (
+                {viewportWidth['<=small'] ? (
                     <ActionsDropdown shareId={shareId} selectedLinks={selectedItems} />
                 ) : (
                     <>

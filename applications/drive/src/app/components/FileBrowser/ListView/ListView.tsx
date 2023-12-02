@@ -129,7 +129,7 @@ export const ListView = <T extends FileBrowserBaseItem, T1>({
 
     getDragMoveControls,
 }: Props<T, T1>) => {
-    const { isDesktop } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
     const [isRTL] = useRightToLeft();
     const selectionControls = useSelection();
 
@@ -141,7 +141,7 @@ export const ListView = <T extends FileBrowserBaseItem, T1>({
 
     const itemData = {
         items,
-        isDesktop,
+        isLargeViewport: viewportWidth['>=large'],
         itemCount,
         loading,
 

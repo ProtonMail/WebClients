@@ -9,14 +9,16 @@ interface Props extends DownloadButtonProps {
 }
 
 export default function SharedPageHeader({ children, rootItem, items, className }: Props) {
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     return (
         <div className={clsx('flex flex-nowrap justify-space-between items-center', className)}>
             <div className="flex flex-nowrap flex-1 items-center mb-0 pb-0 mr-4 shared-page-layout-header">
                 {children}
             </div>
-            {isNarrow || items.length === 0 ? null : <DownloadButton rootItem={rootItem} items={items} />}
+            {viewportWidth['<=small'] || items.length === 0 ? null : (
+                <DownloadButton rootItem={rootItem} items={items} />
+            )}
         </div>
     );
 }

@@ -75,10 +75,10 @@ export const ModifiedCellDevice = ({ item }: { item: DeviceItem }) => {
 };
 
 export function SizeCell({ item }: { item: DriveItem | TrashItem }) {
-    const { isDesktop } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
     return (
         <TableCell
-            className={clsx(['flex items-center m-0', isDesktop ? 'w-1/10' : 'w-1/6'])}
+            className={clsx(['flex items-center m-0', viewportWidth['>=large'] ? 'w-1/10' : 'w-1/6'])}
             data-testid="column-size"
         >
             {item.isFile ? <SizeCellBase size={item.size} /> : '-'}
@@ -103,11 +103,14 @@ export const CreatedCell = ({ item }: { item: TrashItem }) => {
 };
 
 export const LocationCell = ({ item }: { item: TrashItem | SharedLinkItem }) => {
-    const { isDesktop } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
     const shareId = item.rootShareId;
 
     return (
-        <TableCell className={clsx(['m-0', isDesktop ? 'w-1/5' : 'w-1/4'])} data-testid="column-location">
+        <TableCell
+            className={clsx(['m-0', viewportWidth['>=large'] ? 'w-1/5' : 'w-1/4'])}
+            data-testid="column-location"
+        >
             <LocationCellBase shareId={shareId} parentLinkId={item.parentLinkId} />
         </TableCell>
     );
@@ -122,9 +125,9 @@ export const AccessCountCell = ({ item }: { item: TrashItem }) => {
 };
 
 export const ExpirationCell = ({ item }: { item: TrashItem }) => {
-    const { isDesktop } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
-    const expiredPart = isDesktop ? (
+    const expiredPart = viewportWidth['>=large'] ? (
         <span className="ml-1">{c('Label').t`(Expired)`}</span>
     ) : (
         <span>{c('Label').t`Expired`}</span>
@@ -134,7 +137,7 @@ export const ExpirationCell = ({ item }: { item: TrashItem }) => {
     if (item.shareUrl) {
         expiration = item.shareUrl.expireTime ? (
             <div className="flex flex-nowrap">
-                {(isDesktop || !item.shareUrl.isExpired) && <TimeCell time={item.shareUrl.expireTime} />}
+                {(viewportWidth['>=large'] || !item.shareUrl.isExpired) && <TimeCell time={item.shareUrl.expireTime} />}
                 {item.shareUrl.isExpired ? expiredPart : null}
             </div>
         ) : (

@@ -2,6 +2,7 @@ import { ReactNode, memo, useCallback } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import {
+    Breakpoints,
     FloatingButton,
     Icon,
     PrivateHeader,
@@ -25,7 +26,6 @@ import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { layoutActions } from '../../logic/layout/layoutSlice';
 import { selectLayoutIsExpanded } from '../../logic/layout/layoutSliceSelectors';
 import { useAppDispatch, useAppSelector } from '../../logic/store';
-import { Breakpoints } from '../../models/utils';
 import MailSearch from './search/MailSearch';
 
 interface Props {
@@ -51,9 +51,10 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], breakpoints, toolbar
 
     const [feedbackModalProps, setFeedbackModalOpen] = useModalState();
 
-    const hideMenuButton = breakpoints.isNarrow && !!elementID;
+    const hideMenuButton = breakpoints.viewportWidth['<=small'] && !!elementID;
     const hideUpsellButton =
-        (breakpoints.isNarrow || breakpoints.isTablet) && (!!elementID || selectedIDs.length !== 0);
+        (breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium) &&
+        (!!elementID || selectedIDs.length !== 0);
     const labelName = getLabelName(labelID, labels, folders);
 
     const isColumn = isColumnMode(mailSettings);
@@ -74,7 +75,7 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], breakpoints, toolbar
                     ) : null
                 }
                 actionArea={
-                    breakpoints.isNarrow || breakpoints.isTablet || (breakpoints.isSmallDesktop && elementID) ? (
+                    breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium || (breakpoints.viewportWidth.large && elementID) ? (
                         <div className="flex flex-nowrap justify-space-between">
                             {toolbar}
                             {!elementID && (
@@ -99,7 +100,7 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], breakpoints, toolbar
                 }
                 expanded={expanded}
                 onToggleExpand={onToggleExpand}
-                isNarrow={breakpoints.isNarrow}
+                isSmallViewport={breakpoints.viewportWidth['<=small']}
                 settingsButton={settingsButton}
                 floatingButton={
                     <FloatingButton

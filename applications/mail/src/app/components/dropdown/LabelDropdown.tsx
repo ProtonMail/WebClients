@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
+    Breakpoints,
     Checkbox,
     Icon,
     LabelsUpsellModal,
@@ -33,7 +34,6 @@ import { useCreateFilters } from '../../hooks/actions/useCreateFilters';
 import { useMoveToFolder } from '../../hooks/actions/useMoveToFolder';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { Element } from '../../models/element';
-import { Breakpoints } from '../../models/utils';
 
 import './LabelDropdown.scss';
 
@@ -155,15 +155,18 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
     const changes = useMemo(() => {
         const elements = getElementsFromIDs(selectedIDs);
         const initialState = getInitialState(labels, elements);
-        return Object.keys(selectedLabelIDs).reduce((acc, LabelID) => {
-            if (selectedLabelIDs[LabelID] === LabelState.On && initialState[LabelID] !== LabelState.On) {
-                acc[LabelID] = true;
-            }
-            if (selectedLabelIDs[LabelID] === LabelState.Off && initialState[LabelID] !== LabelState.Off) {
-                acc[LabelID] = false;
-            }
-            return acc;
-        }, {} as { [labelID: string]: boolean });
+        return Object.keys(selectedLabelIDs).reduce(
+            (acc, LabelID) => {
+                if (selectedLabelIDs[LabelID] === LabelState.On && initialState[LabelID] !== LabelState.On) {
+                    acc[LabelID] = true;
+                }
+                if (selectedLabelIDs[LabelID] === LabelState.Off && initialState[LabelID] !== LabelState.Off) {
+                    acc[LabelID] = false;
+                }
+                return acc;
+            },
+            {} as { [labelID: string]: boolean }
+        );
     }, [selectedIDs, initialState, selectedLabelIDs]);
 
     // Always checkbox should be disabled when we don't find senders OR there are no labels checked (so no filter based on labels to create)
@@ -195,7 +198,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
     const alwaysCheckID = `${uid}-always`;
     const labelCheckID = (ID: string) => `${uid}-${ID}`;
     const applyDisabled = getIsApplyDisabled(initialState, selectedLabelIDs, checkedIDs, always, alsoArchive);
-    const autoFocusSearch = !breakpoints.isNarrow;
+    const autoFocusSearch = !breakpoints.viewportWidth['<=small'];
     const normSearch = normalize(search, true);
     const list = labels.filter(({ Name = '' }) => {
         if (!search) {
