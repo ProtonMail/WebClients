@@ -63,7 +63,15 @@ const createWindow = (session: Session, url: string, visible: boolean, windowCon
     setApplicationMenu(app.isPackaged);
     window.loadURL(url);
 
-    visible ? window.show() : window.hide();
+    if (visible) {
+        window.showInactive();
+        window.setOpacity(1);
+        window.focus();
+    } else {
+        window.hide();
+        window.setOpacity(0);
+    }
+
     return window;
 };
 
@@ -72,6 +80,7 @@ const createGenericWindow = (session: Session, url: string, mapKey: APP, visible
     window.on("close", (ev) => {
         ev.preventDefault();
         window.hide();
+        window.setOpacity(0);
     });
 
     windowMap.set(mapKey, window);
@@ -99,15 +108,21 @@ export const createCalendarWindow = (session: Session, visible = true) => {
 export const initialWindowCreation = ({ session, mailVisible, calendarVisible }: WindowCreationProps) => {
     const mailWindow = createMailWindow(session, mailVisible);
     mailWindow.webContents.on("did-finish-load", () => {
-        const calendarWindow = createCalendarWindow(session, calendarVisible);
-        calendarWindow.hide();
+        if (windowMap.get("CALENDAR")) return;
+
+        createCalendarWindow(session, calendarVisible);
     });
 };
 
 const handleWindowVisibility = (contents: WebContents, mapKey: APP, creationMethod: (session: Session) => void) => {
     const window = windowMap.get(mapKey);
     if (window) {
-        window.isVisible() ? window.focus() : window.show();
+        if (window.isVisible()) {
+            window.focus();
+        } else {
+            window.show();
+            window.setOpacity(1);
+        }
     } else {
         creationMethod(contents.session);
     }

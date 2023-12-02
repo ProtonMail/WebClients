@@ -83,12 +83,12 @@ app.on("web-contents-created", (_ev, contents) => {
 
         if (isHostCalendar(url)) {
             handleCalendarWindow(contents);
-            return;
+            return { action: "deny" };
         }
 
         if (isHostMail(url)) {
             handleMailWindow(contents);
-            return;
+            return { action: "deny" };
         }
 
         if (isHostAllowed(url, app.isPackaged)) {
