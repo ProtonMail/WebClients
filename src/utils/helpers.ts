@@ -5,6 +5,7 @@ import { getConfig } from "./config";
 import { setWindowState } from "./windowsStore";
 
 export const isMac = process.platform === "darwin";
+export const isWindows = process.platform === "win32";
 
 export const getBasePath = (): string => {
     const basePath = app.getPath("exe");

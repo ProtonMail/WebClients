@@ -1,9 +1,9 @@
-import { BrowserWindow, Rectangle, Session, WebContents, app } from "electron";
+import { BrowserWindow, BrowserWindowConstructorOptions, Rectangle, Session, WebContents, app } from "electron";
 import contextMenu from "electron-context-menu";
 import log from "electron-log/main";
 import { getConfig } from "./config";
 import { APP, WINDOW_SIZES } from "./constants";
-import { isMac } from "./helpers";
+import { isMac, isWindows } from "./helpers";
 import { setApplicationMenu } from "./menu";
 import { getWindowState, setWindowState } from "./windowsStore";
 
@@ -21,6 +21,20 @@ contextMenu({
     showSaveImage: true,
 });
 
+const windowOSConfig: BrowserWindowConstructorOptions = {
+    frame: true,
+    transparent: true,
+    backgroundMaterial: "mica",
+};
+
+const macOSConfig: BrowserWindowConstructorOptions = {
+    frame: false,
+    transparent: true,
+    titleBarStyle: "hidden",
+    vibrancy: "under-window",
+    trafficLightPosition: { x: 12, y: 8 },
+};
+
 const createWindow = (session: Session, url: string, visible: boolean, windowConfig: Rectangle): BrowserWindow => {
     const { x, y, width, height } = windowConfig;
 
@@ -33,12 +47,8 @@ const createWindow = (session: Session, url: string, visible: boolean, windowCon
         height,
         minHeight: WINDOW_SIZES.MIN_HEIGHT,
         minWidth: WINDOW_SIZES.MIN_WIDTH,
-        // We only hide the frame and the title bar on macOS
-        titleBarStyle: isMac ? "hidden" : "default",
-        trafficLightPosition: { x: 12, y: 8 },
-        vibrancy: "under-window",
-        transparent: isMac,
-        frame: !isMac,
+        ...(isMac ? macOSConfig : {}),
+        ...(isWindows ? windowOSConfig : {}),
         webPreferences: {
             devTools: true,
             spellcheck: true,
