@@ -27,6 +27,11 @@ const setup = async (messageVerification: MessageVerification) => {
     return component;
 };
 
+jest.mock('@proton/components/hooks/useGetEncryptionPreferences', () => ({
+    __esModule: true,
+    default: () => async () => ({ pinnedKeys: [] }),
+}));
+
 describe('Extra ask resign banner', () => {
     beforeAll(async () => {
         await setupCryptoProxyForTesting();
