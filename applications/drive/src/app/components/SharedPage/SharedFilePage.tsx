@@ -22,7 +22,7 @@ interface Props {
 export default function SharedFilePage({ token, link }: Props) {
     const { isLinkLoading, isContentLoading, error, contents, downloadFile } = usePublicFileView(token, link.linkId);
     const [renderUpsellFloatingModal] = useUpsellFloatingModal();
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     return (
         <FileBrowserStateProvider itemIds={[link.linkId]}>
@@ -46,7 +46,7 @@ export default function SharedFilePage({ token, link }: Props) {
                 <FilePreviewContent
                     isMetaLoading={isLinkLoading}
                     isLoading={isContentLoading}
-                    onDownload={!isNarrow ? downloadFile : undefined}
+                    onDownload={!viewportWidth['<=small'] ? downloadFile : undefined}
                     error={error ? error.message || error.toString?.() || c('Info').t`Unknown error` : undefined}
                     contents={contents}
                     fileName={link?.name}

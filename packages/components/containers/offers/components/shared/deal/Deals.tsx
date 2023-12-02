@@ -15,17 +15,17 @@ import DealTitle from './DealTitle';
 const Deals = (props: OfferProps) => {
     const { deals } = props.offer;
     const [isExpanded, setIsExpanded] = useState(true);
-    const { isNarrow, isMediumDesktop } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     useEffect(() => {
-        if (isNarrow) {
+        if (viewportWidth['<=small']) {
             setIsExpanded(false);
         }
 
-        if (isMediumDesktop && deals.length > 3) {
+        if (viewportWidth.xlarge && deals.length > 3) {
             setIsExpanded(false);
         }
-    }, [isNarrow, isMediumDesktop]);
+    }, [viewportWidth['<=small'], viewportWidth.xlarge]);
 
     return (
         <div className="offer-wrapper gap-4 flex flex-nowrap justify-center flex-column md:flex-row mt-11">

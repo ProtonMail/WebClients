@@ -16,7 +16,7 @@ import PopoverContainer from './PopoverContainer';
 import PopoverHeader from './PopoverHeader';
 
 interface Props {
-    isNarrow: boolean;
+    isSmallViewport: boolean;
     date: Date;
     now: Date;
     onClose: () => void;
@@ -30,7 +30,7 @@ interface Props {
     tzid: string;
 }
 const MorePopoverEvent = ({
-    isNarrow,
+    isSmallViewport,
     date,
     now,
     onClose,
@@ -77,7 +77,7 @@ const MorePopoverEvent = ({
 
     return (
         <PopoverContainer
-            style={isNarrow ? undefined : style}
+            style={isSmallViewport ? undefined : style}
             className="eventpopover flex flex-nowrap flex-column py-7 px-5"
             ref={popoverRef}
         >

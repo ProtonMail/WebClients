@@ -252,7 +252,7 @@ interface Props extends SharedViewProps {
 const InteractiveCalendarView = ({
     view,
     isLoading,
-    isNarrow,
+    isSmallViewport,
     isEventCreationDisabled,
 
     tzid,
@@ -430,7 +430,7 @@ const InteractiveCalendarView = ({
     }, [temporaryEvent, sortedEvents]);
 
     const changeDate = (start: Date, hasStartChanged = true) => {
-        const isInRange = isNarrow ? isSameDay(date, start) : start >= dateRange[0] && dateRange[1] >= start;
+        const isInRange = isSmallViewport ? isSameDay(date, start) : start >= dateRange[0] && dateRange[1] >= start;
 
         if (!isInRange && hasStartChanged) {
             onChangeDate(start);
@@ -1667,7 +1667,7 @@ const InteractiveCalendarView = ({
                     calendars={calendars}
                     calendarsEventsCacheRef={calendarsEventsCacheRef}
                     view={view}
-                    isNarrow={isNarrow}
+                    isSmallViewport={isSmallViewport}
                     isInteractionEnabled={!isLoading}
                     onMouseDown={handleMouseDown}
                     tzid={tzid}
@@ -1712,8 +1712,8 @@ const InteractiveCalendarView = ({
                     if (targetEvent.uniqueId === 'tmp' && tmpData) {
                         return (
                             <CreateEventPopover
-                                isDraggingDisabled={isNarrow || isDrawerApp}
-                                isNarrow={isNarrow}
+                                isDraggingDisabled={isSmallViewport || isDrawerApp}
+                                isSmallViewport={isSmallViewport}
                                 isCreateEvent={isCreatingEvent}
                                 isInvitation={isInvitation}
                                 style={style}
@@ -1756,7 +1756,7 @@ const InteractiveCalendarView = ({
                     }
                     return (
                         <EventPopover
-                            isNarrow={isNarrow}
+                            isSmallViewport={isSmallViewport}
                             style={style}
                             popoverRef={ref}
                             event={targetEvent}
@@ -1879,7 +1879,7 @@ const InteractiveCalendarView = ({
                     return (
                         <MorePopoverEvent
                             tzid={tzid}
-                            isNarrow={isNarrow}
+                            isSmallViewport={isSmallViewport}
                             style={style}
                             popoverRef={ref}
                             now={now}
@@ -1905,7 +1905,7 @@ const InteractiveCalendarView = ({
             />
             {!!tmpData && (
                 <CreateEventModal
-                    isNarrow={isNarrow}
+                    isSmallViewport={isSmallViewport}
                     displayWeekNumbers={!isDrawerApp && displayWeekNumbers}
                     weekStartsOn={weekStartsOn}
                     tzid={tzid}

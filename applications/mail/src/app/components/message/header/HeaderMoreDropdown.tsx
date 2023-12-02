@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import { Button, Kbd } from '@proton/atoms';
 import {
+    Breakpoints,
     ButtonGroup,
     DropdownMenu,
     DropdownMenuButton,
@@ -49,7 +50,6 @@ import { expireMessages } from '../../../logic/messages/expire/messagesExpireAct
 import { MessageState, MessageStateWithData, MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
 import { useAppDispatch } from '../../../logic/store';
 import { Element } from '../../../models/element';
-import { Breakpoints } from '../../../models/utils';
 import CustomFilterDropdown from '../../dropdown/CustomFilterDropdown';
 import LabelDropdown, { labelDropdownContentProps } from '../../dropdown/LabelDropdown';
 import MoveDropdown, { moveDropdownContentProps } from '../../dropdown/MoveDropdown';
@@ -201,8 +201,8 @@ const HeaderMoreDropdown = ({
     const isSpam = messageLabelIDs.includes(SPAM);
     const isInTrash = messageLabelIDs.includes(TRASH);
     const fromFolderID = getCurrentFolderID(messageLabelIDs, folders);
-    const { isNarrow } = breakpoints;
-    const additionalDropdowns: DropdownRender[] | undefined = isNarrow
+    const { viewportWidth } = breakpoints;
+    const additionalDropdowns: DropdownRender[] | undefined = viewportWidth['<=small']
         ? [
               {
                   contentProps: moveDropdownContentProps,
@@ -349,7 +349,7 @@ const HeaderMoreDropdown = ({
                         </Button>
                     </Tooltip>
                 )}
-                {!isNarrow && [
+                {!viewportWidth['<=small'] && [
                     <HeaderDropdown
                         key="message-header-expanded:folder-dropdown"
                         icon
@@ -460,7 +460,7 @@ const HeaderMoreDropdown = ({
                                         <Icon name="archive-box" className="mr-2" />
                                         <span className="flex-1 my-auto">{c('Action').t`Archive`}</span>
                                     </DropdownMenuButton>
-                                    {isNarrow && (
+                                    {viewportWidth['<=small'] && (
                                         <DropdownMenuButton
                                             className="text-left flex flex-nowrap items-center"
                                             onClick={() => onOpenAdditional(0)}
@@ -469,7 +469,7 @@ const HeaderMoreDropdown = ({
                                             <span className="flex-1 my-auto">{c('Action').t`Move to...`}</span>
                                         </DropdownMenuButton>
                                     )}
-                                    {isNarrow && (
+                                    {viewportWidth['<=small'] && (
                                         <DropdownMenuButton
                                             className="text-left flex flex-nowrap items-center"
                                             onClick={() => onOpenAdditional(1)}
@@ -479,7 +479,7 @@ const HeaderMoreDropdown = ({
                                                 .t`Label as...`}</span>
                                         </DropdownMenuButton>
                                     )}
-                                    {isNarrow && (
+                                    {viewportWidth['<=small'] && (
                                         <DropdownMenuButton
                                             className="text-left flex flex-nowrap items-center"
                                             onClick={() => onOpenAdditional(2)}

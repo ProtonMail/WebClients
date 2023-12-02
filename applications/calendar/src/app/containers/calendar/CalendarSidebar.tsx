@@ -54,7 +54,7 @@ export interface CalendarSidebarProps {
     calendars: VisualCalendar[];
     calendarUserSettings: CalendarUserSettings;
     expanded?: boolean;
-    isNarrow: boolean;
+    isSmallViewport: boolean;
     logo?: ReactNode;
     miniCalendar: ReactNode;
     onToggleExpand: () => void;
@@ -68,7 +68,7 @@ const CalendarSidebar = ({
     calendarUserSettings,
     logo,
     expanded = false,
-    isNarrow,
+    isSmallViewport,
     onToggleExpand,
     miniCalendar,
     onCreateEvent,
@@ -121,7 +121,7 @@ const CalendarSidebar = ({
         onClose: onCloseHolidaysSpotlight,
     } = useSpotlightOnFeature(
         FeatureCode.HolidaysCalendarsSpotlight,
-        !isWelcomeFlow && !isNarrow && !holidaysCalendars.length,
+        !isWelcomeFlow && !isSmallViewport && !holidaysCalendars.length,
         {
             alpha: Date.UTC(2023, 4, 25, 12),
             beta: Date.UTC(2023, 7, 7, 12),

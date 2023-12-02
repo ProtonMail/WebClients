@@ -1,8 +1,8 @@
 import { getCustomSizingClasses } from '@proton/components';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
-export const MAX_ACTIVE_COMPOSER_DESKTOP = 3;
-export const MAX_ACTIVE_COMPOSER_MOBILE = 1;
+export const MAX_ACTIVE_COMPOSER_LARGE_SCREEN = 3;
+export const MAX_ACTIVE_COMPOSER_SMALL_SCREEN = 1;
 
 export const getComposerDimension = () => {
     const root = rootFontSize();
@@ -19,7 +19,7 @@ export const getComposerDimension = () => {
 
 export type ComposerDimension = ReturnType<typeof getComposerDimension>;
 
-const COMPOSER_NARROW_STYLES = {
+const COMPOSER_SMALL_SCREEN_STYLES = {
     position: 'fixed',
     '--top-custom': 0,
     '--bottom-custom': 0,
@@ -69,7 +69,7 @@ interface ComputeComposerStyleOptions {
     count: number;
     minimized: boolean;
     maximized: boolean;
-    isNarrow: boolean;
+    isSmallViewport: boolean;
     drawerOffset: number;
 }
 
@@ -84,7 +84,7 @@ export const computeComposerStyle = ({
     count,
     minimized,
     maximized,
-    isNarrow,
+    isSmallViewport,
     drawerOffset,
 }: ComputeComposerStyleOptions): ComputeComposerStyleReturns => {
     // Use window.innerWidth and innerHeight instead of useWindowSize to avoid composer cut off issue (CLIENT-4854)
@@ -95,8 +95,8 @@ export const computeComposerStyle = ({
         computeHeight: `${computeHeight(composerDimension, windowHeight)}px`,
     };
 
-    if (isNarrow) {
-        style = COMPOSER_NARROW_STYLES;
+    if (isSmallViewport) {
+        style = COMPOSER_SMALL_SCREEN_STYLES;
     } else if (minimized) {
         style['--h-custom'] = '2.5em';
     } else if (maximized) {

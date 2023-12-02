@@ -5,9 +5,9 @@ import ReportAbuseButton from './ReportAbuseButton';
 
 interface Props extends DownloadButtonProps {}
 const SharedPageFooter = ({ rootItem, items }: Props) => {
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
-    if (isNarrow && items.length > 0) {
+    if (viewportWidth['<=small'] && items.length > 0) {
         return (
             <div className="fixed bottom p-4 flex justify-center bg-weak w-full">
                 <DownloadButton className="flex-1" rootItem={rootItem} items={items} />

@@ -30,8 +30,8 @@ interface TransferListEntry<T extends TransferType> {
     type: T;
 }
 
-const MAX_VISIBLE_TRANSFERS = 5;
-const MAX_VISIBLE_TRANSFERS_MOBILE = 3;
+const MAX_VISIBLE_TRANSFERS_LARGE_SCREEN = 5;
+const MAX_VISIBLE_TRANSFERS_SMALL_SCREEN = 3;
 
 type ListItemData = {
     entries: (TransferListEntry<TransferType.Download> | TransferListEntry<TransferType.Upload>)[];
@@ -110,7 +110,7 @@ const TransferManager = ({
     const rectHeader = useElementRect(headerRef);
     const { state: minimized, toggle: toggleMinimized } = useToggle();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
     const [isRTL] = useRightToLeft();
 
     const ROW_HEIGHT_PX = 4.375 * rootFontSize(); // 4.375 * 16 =  we want 70px by default
@@ -207,7 +207,9 @@ const TransferManager = ({
         onClear();
     };
 
-    const maxVisibleTransfers = isNarrow ? MAX_VISIBLE_TRANSFERS_MOBILE : MAX_VISIBLE_TRANSFERS;
+    const maxVisibleTransfers = viewportWidth['<=small']
+        ? MAX_VISIBLE_TRANSFERS_SMALL_SCREEN
+        : MAX_VISIBLE_TRANSFERS_LARGE_SCREEN;
 
     const calcultateItemsHeight = useCallback(
         (itemCount: number) => {
@@ -307,7 +309,7 @@ const TransferManager = ({
                                     setActiveTabIndex(groupValue as TabIndices);
                                 }}
                             />
-                            {!isNarrow && (
+                            {!viewportWidth['<=small'] && (
                                 <HeaderButtons
                                     className="transfers-manager-header-buttons p-2 pr-4"
                                     entries={entries}

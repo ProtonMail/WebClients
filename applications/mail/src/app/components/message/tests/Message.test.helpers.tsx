@@ -6,6 +6,7 @@ import loudRejection from 'loud-rejection';
 
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import noop from '@proton/utils/noop';
 
 import * as messageDecrypt from '../../../helpers/message/messageDecrypt';
@@ -14,7 +15,6 @@ import { render } from '../../../helpers/test/render';
 import { MessageState, PartialMessageState } from '../../../logic/messages/messagesTypes';
 import { initialize } from '../../../logic/messages/read/messagesReadActions';
 import { store } from '../../../logic/store';
-import { Breakpoints } from '../../../models/utils';
 import MessageView, { MessageViewRef } from '../MessageView';
 import { MESSAGE_IFRAME_ROOT_ID } from '../constants';
 
@@ -37,7 +37,7 @@ export const defaultProps: MessageViewProps = {
     message: { ID: messageID, AddressID: addressID } as Message,
     mailSettings: {} as MailSettings,
     onBack: jest.fn(),
-    breakpoints: {} as Breakpoints,
+    breakpoints: mockDefaultBreakpoints,
     onFocus: noop,
     isComposerOpened: false,
 };

@@ -23,7 +23,7 @@ export const ModalContent = ({
     selectedLinkId,
     onSelect,
     title,
-    isMobile,
+    isSmallViewport,
     onCreate,
 }: {
     rootItems: TreeItem[];
@@ -33,7 +33,7 @@ export const ModalContent = ({
     toggleExpand: (linkId: string) => void;
     onSelect: (link: DecryptedLink) => void;
     title: string;
-    isMobile: boolean;
+    isSmallViewport: boolean;
     selectedLinkId: string | undefined;
     onCreate: (selectedFolder?: string) => void;
 }) => {
@@ -61,7 +61,7 @@ export const ModalContent = ({
             </ModalTwoContent>
             <ModalTwoFooter>
                 <div className="flex justify-space-between w-full flex-nowrap">
-                    {isMobile ? (
+                    {isSmallViewport ? (
                         <Button
                             icon
                             disabled={isLoading || !selectedLinkId}

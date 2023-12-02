@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { DropdownMenu, DropdownMenuButton, Icon, useModalState } from '@proton/components';
+import { Breakpoints, DropdownMenu, DropdownMenuButton, Icon, useModalState } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
@@ -9,7 +9,6 @@ import { useEmptyLabel } from '../../hooks/actions/useEmptyLabel';
 import { useMoveAll } from '../../hooks/actions/useMoveAll';
 import useSnooze from '../../hooks/actions/useSnooze';
 import { useLabelActions } from '../../hooks/useLabelActions';
-import { Breakpoints } from '../../models/utils';
 import LabelDropdown, { labelDropdownContentProps } from '../dropdown/LabelDropdown';
 import MoveDropdown, { moveDropdownContentProps } from '../dropdown/MoveDropdown';
 import SnoozeUpsellModal from '../list/snooze/components/SnoozeUpsellModal';

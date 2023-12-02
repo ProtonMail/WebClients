@@ -3,7 +3,7 @@ import { ReactNode, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useFlag } from '@proton/components/containers/unleash';
-import { useUserSettings } from '@proton/components/hooks/';
+import { Breakpoints, useUserSettings } from '@proton/components/hooks';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
@@ -20,7 +20,6 @@ import { selectSnoozeDropdownState, selectSnoozeElement } from '../../logic/snoo
 import { useAppSelector } from '../../logic/store';
 import { Element } from '../../models/element';
 import { ESMessage } from '../../models/encryptedSearch';
-import { Breakpoints } from '../../models/utils';
 import NumMessages from '../conversation/NumMessages';
 import ItemAction from './ItemAction';
 import ItemAttachmentIcon from './ItemAttachmentIcon';
@@ -236,7 +235,7 @@ const ItemColumnLayout = ({
                             labels={labels}
                             element={element}
                             labelID={labelID}
-                            maxNumber={breakpoints.isNarrow ? 1 : 5}
+                            maxNumber={breakpoints.viewportWidth['<=small'] ? 1 : 5}
                             isCollapsed={false}
                         />
                     </div>
