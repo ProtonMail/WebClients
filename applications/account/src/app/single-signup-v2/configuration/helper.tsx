@@ -40,7 +40,7 @@ export const getGenericBenefits = (): BenefitItem[] => {
     ];
 };
 
-export const getGenericFeatures = (isDesktop: boolean) => {
+export const getGenericFeatures = (isLargeViewport: boolean) => {
     return [
         {
             key: 1,
@@ -55,7 +55,7 @@ export const getGenericFeatures = (isDesktop: boolean) => {
         {
             key: 3,
             left: <img width="24" alt="" src={swissFlag} />,
-            text: isDesktop
+            text: isLargeViewport
                 ? c('pass_signup_2023: Feature').t`Protected by Swiss privacy laws`
                 : c('pass_signup_2023: Feature').t`Swiss based`,
         },

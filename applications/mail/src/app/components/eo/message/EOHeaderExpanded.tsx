@@ -2,7 +2,7 @@ import { MouseEvent } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, useToggle } from '@proton/components';
+import { Breakpoints, Icon, useToggle } from '@proton/components';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
@@ -11,7 +11,6 @@ import noop from '@proton/utils/noop';
 
 import { recipientsToRecipientOrGroup } from '../../../helpers/message/messageRecipients';
 import { MessageState } from '../../../logic/messages/messagesTypes';
-import { Breakpoints } from '../../../models/utils';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
 import ExtraImages from '../../message/extras/ExtraImages';
@@ -41,7 +40,7 @@ const EOHeaderExpanded = ({
 }: Props) => {
     const { state: showDetails, toggle: toggleDetails } = useToggle();
 
-    const { isNarrow } = breakpoints;
+    const { viewportWidth } = breakpoints;
     const recipients = getRecipients(message.data);
     const recipientsOrGroup = recipientsToRecipientOrGroup(recipients);
 
@@ -92,7 +91,7 @@ const EOHeaderExpanded = ({
                                     className="ml-2"
                                 />
                             </span>
-                            {!isNarrow && (
+                            {!viewportWidth['<=small'] && (
                                 <ItemDate className="ml-2" element={message.data} labelID={labelID} useTooltip />
                             )}
                         </>
@@ -120,7 +119,7 @@ const EOHeaderExpanded = ({
                 </div>
             )}
 
-            {!showDetails && isNarrow && (
+            {!showDetails && viewportWidth['<=small'] && (
                 <div className="flex justify-space-between items-center border-top mx-0 sm:mx-8 pt-2 mb-2">
                     {messageLoaded ? (
                         <>

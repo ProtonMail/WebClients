@@ -20,14 +20,14 @@ const AFTER = 'after';
 const BEFORE = 'before';
 
 interface HeaderProps {
-    isNarrow: boolean;
+    isSmallViewport: boolean;
 }
 
-const Header = ({ isNarrow }: HeaderProps) => {
+const Header = ({ isSmallViewport }: HeaderProps) => {
     return (
         <div className="flex flex-nowrap w-full border-bottom pb-2">
             <span className="text-bold flex-1">
-                {isNarrow ? null : <Icon name="arrows-cross" className="mr-4" />}
+                {isSmallViewport ? null : <Icon name="arrows-cross" className="mr-4" />}
                 {c('Header').t`Folders`}
             </span>
             <span className="w-custom hidden md:flex items-center gap-2" style={{ '--w-custom': '10em' }}>
@@ -46,7 +46,7 @@ interface Props {
 
 const FolderTreeViewList = ({ items = [] }: Props) => {
     const api = useApi();
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
     const [grabbed, setGrabbed] = useState<Folder>();
@@ -133,7 +133,7 @@ const FolderTreeViewList = ({ items = [] }: Props) => {
                                 }
                             }}
                             onDrop={() => withLoading(handleDrop())}
-                            draggable={!isNarrow}
+                            draggable={!viewportWidth['<=small']}
                             disabled={loading}
                             key={item.ID}
                             toggled
@@ -150,7 +150,7 @@ const FolderTreeViewList = ({ items = [] }: Props) => {
                                     ])}
                                 >
                                     <div className="treeview-item-name flex flex-nowrap items-center flex-1">
-                                        {isNarrow ? null : (
+                                        {viewportWidth['<=small'] ? null : (
                                             <Icon
                                                 name="text-align-justify"
                                                 className="mr-4 shrink-0 cursor-row-resize"
@@ -199,7 +199,7 @@ const FolderTreeViewList = ({ items = [] }: Props) => {
 
     return (
         <>
-            <Header isNarrow={isNarrow} />
+            <Header isSmallViewport={viewportWidth['<=small']} />
             {buildTreeView(rootFolders)}
         </>
     );

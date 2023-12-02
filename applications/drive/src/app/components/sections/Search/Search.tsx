@@ -41,7 +41,7 @@ interface Props {
 
 const { CheckboxCell, ContextMenuCell } = Cells;
 
-const desktopCells: React.FC<{ item: SearchItem }>[] = [
+const largeScreenCells: React.FC<{ item: SearchItem }>[] = [
     CheckboxCell,
     NameCell,
     LocationCell,
@@ -49,9 +49,9 @@ const desktopCells: React.FC<{ item: SearchItem }>[] = [
     SizeCell,
     ContextMenuCell,
 ];
-const mobileCells = [CheckboxCell, NameCell, ContextMenuCell];
+const smallScreenCells = [CheckboxCell, NameCell, ContextMenuCell];
 
-const headerItemsDesktop: ListViewHeaderItem[] = [
+const headerItemsLargeScreen: ListViewHeaderItem[] = [
     headerItems.checkbox,
     headerItems.name,
     headerItems.location,
@@ -60,7 +60,7 @@ const headerItemsDesktop: ListViewHeaderItem[] = [
     headerItems.placeholder,
 ];
 
-const headerItemsMobile: ListViewHeaderItem[] = [headerItems.checkbox, headerItems.name, headerItems.placeholder];
+const headerItemsSmallScreen: ListViewHeaderItem[] = [headerItems.checkbox, headerItems.name, headerItems.placeholder];
 
 type SearchSortFields = Extract<SortField, SortField.name | SortField.fileModifyTime | SortField.size>;
 const SORT_FIELDS: SearchSortFields[] = [SortField.name, SortField.size, SortField.fileModifyTime];
@@ -72,7 +72,7 @@ export const Search = ({ shareId, searchView }: Props) => {
     const thumbnails = useThumbnailsDownload();
     const { navigateToLink } = useNavigate();
     const selectionControls = useSelection();
-    const { isDesktop } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     const { layout, items, sortParams, setSorting, isLoading } = searchView;
 
@@ -124,8 +124,8 @@ export const Search = ({ shareId, searchView }: Props) => {
         [navigateToLink, shareId, browserItems]
     );
 
-    const Cells = isDesktop ? desktopCells : mobileCells;
-    const headerItems = isDesktop ? headerItemsDesktop : headerItemsMobile;
+    const Cells = viewportWidth['>=large'] ? largeScreenCells : smallScreenCells;
+    const headerItems = viewportWidth['>=large'] ? headerItemsLargeScreen : headerItemsSmallScreen;
 
     if (!items.length && !isLoading) {
         return <NoSearchResultsView />;

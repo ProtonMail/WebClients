@@ -43,7 +43,7 @@ const UsersOnboardingChecklist = ({
     hideDismissButton = false,
 }: Props) => {
     const mailSettings = useMailModel('MailSettings');
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
     const [user] = useUser();
 
     const isImporterInMaintenance = useFlag('MaintenanceImporter');
@@ -100,8 +100,8 @@ const UsersOnboardingChecklist = ({
                         'w-full flex flex-column shrink-0',
                         // The checklist is displayed on both the list and details (right side when column mode), we need to hide it on the list when the side details view is visible
                         displayOnMobile && 'free-checklist--container',
-                        isColumnMode(mailSettings) && !smallVariant && !isNarrow && 'justify-center h-full',
-                        !isNarrow && !smallVariant && 'm-auto',
+                        isColumnMode(mailSettings) && !smallVariant && !viewportWidth['<=small'] && 'justify-center h-full',
+                        !viewportWidth['<=small'] && !smallVariant && 'm-auto',
                         smallVariant
                             ? 'px-2 self-end'
                             : 'max-w-full md:max-w-custom p-3 md:p-6 px-4 md:px-0 my-3 md:my-auto gap-6'

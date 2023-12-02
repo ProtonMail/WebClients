@@ -15,7 +15,7 @@ interface Props {
 }
 
 const UnsupportedPreview = ({ onDownload, type = 'file', browser = false, tooLarge = false }: Props) => {
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     let message = c('Info').t`Preview for this file type is not supported`;
 
@@ -36,7 +36,7 @@ const UnsupportedPreview = ({ onDownload, type = 'file', browser = false, tooLar
             />
 
             <h2
-                className={clsx(['p-1 text-bold', isNarrow && 'h3'])}
+                className={clsx(['p-1 text-bold', viewportWidth['<=small'] && 'h3'])}
                 data-testid="file-preview:unsupported-preview-text"
             >
                 {message}
@@ -45,7 +45,7 @@ const UnsupportedPreview = ({ onDownload, type = 'file', browser = false, tooLar
 
             {onDownload && (
                 <PrimaryButton
-                    size={!isNarrow ? 'large' : undefined}
+                    size={!viewportWidth['<=small'] ? 'large' : undefined}
                     className="text-bold mt-8"
                     onClick={onDownload}
                 >{c('Action').t`Download`}</PrimaryButton>

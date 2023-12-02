@@ -80,11 +80,19 @@ const initializeModel = (history: History, selectedLabelID: string, searchInputV
 };
 
 // Get right keyword value depending on the current situation
-const getKeyword = ({ keyword, reset, isNarrow }: { keyword: string; reset?: boolean; isNarrow: boolean }) => {
+const getKeyword = ({
+    keyword,
+    reset,
+    isSmallViewport,
+}: {
+    keyword: string;
+    reset?: boolean;
+    isSmallViewport: boolean;
+}) => {
     if (reset) {
         return UNDEFINED;
     }
-    const value = isNarrow ? keyword : keywordToString(keyword);
+    const value = isSmallViewport ? keyword : keywordToString(keyword);
     if (value) {
         return value;
     }
@@ -92,7 +100,7 @@ const getKeyword = ({ keyword, reset, isNarrow }: { keyword: string; reset?: boo
 };
 
 interface Props {
-    isNarrow: boolean;
+    isSmallViewport: boolean;
     showEncryptedSearch: boolean;
     onClose: () => void;
     esIndexingProgressState: ESIndexingState;
@@ -103,7 +111,7 @@ interface Props {
 }
 
 const AdvancedSearch = ({
-    isNarrow,
+    isSmallViewport,
     showEncryptedSearch,
     onClose,
     esIndexingProgressState,
@@ -143,7 +151,7 @@ const AdvancedSearch = ({
 
         history.push(
             changeSearchParams(`/${getHumanLabelID(model.labelID)}`, history.location.hash, {
-                keyword: getKeyword({ keyword, reset, isNarrow }),
+                keyword: getKeyword({ keyword, reset, isSmallViewport }),
                 from: from.length ? formatRecipients(from) : UNDEFINED,
                 to: to.length ? formatRecipients(to) : UNDEFINED,
                 address: address === ALL_ADDRESSES ? UNDEFINED : address,
@@ -245,7 +253,7 @@ const AdvancedSearch = ({
                         <div
                             className={clsx(
                                 'mb-2 flex justify-space-between flex-column md:flex-row',
-                                isNarrow ? 'gap-2' : 'gap-4'
+                                isSmallViewport ? 'gap-2' : 'gap-4'
                             )}
                         >
                             <div className="md:flex-1">

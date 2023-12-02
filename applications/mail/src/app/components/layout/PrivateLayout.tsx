@@ -1,7 +1,7 @@
 import { ReactNode, Ref, forwardRef, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { DrawerApp, PrivateAppContainer, TopBanners } from '@proton/components';
+import { Breakpoints, DrawerApp, PrivateAppContainer, TopBanners } from '@proton/components';
 import { Recipient } from '@proton/shared/lib/interfaces';
 
 import { MESSAGE_ACTIONS } from '../../constants';
@@ -9,7 +9,6 @@ import { useOnCompose, useOnMailTo } from '../../containers/ComposeProvider';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { layoutActions } from '../../logic/layout/layoutSlice';
 import { useAppDispatch } from '../../logic/store';
-import { Breakpoints } from '../../models/utils';
 import MailQuickSettings from '../drawer/MailQuickSettings';
 import MailSidebar from '../sidebar/MailSidebar';
 

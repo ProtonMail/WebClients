@@ -41,7 +41,7 @@ interface Props {
 }
 
 const MainContainerSetup = ({ user, addresses, calendars, drawerView, hasReactivatedCalendarsRef }: Props) => {
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
     const [userSettings] = useUserSettings();
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS] = useCalendarUserSettings();
 
@@ -111,7 +111,7 @@ const MainContainerSetup = ({ user, addresses, calendars, drawerView, hasReactiv
                             <CalendarContainer
                                 tzid={tzid}
                                 setCustomTzid={setCustomTzid}
-                                isNarrow={isNarrow}
+                                isSmallViewport={viewportWidth['<=small']}
                                 drawerView={drawerView}
                                 user={user}
                                 addresses={addresses}

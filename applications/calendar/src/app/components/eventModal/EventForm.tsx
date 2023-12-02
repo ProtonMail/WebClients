@@ -52,7 +52,7 @@ export interface EventFormProps {
     isOwnedCalendar?: boolean;
     isCalendarWritable?: boolean;
     isDrawerApp?: boolean;
-    isNarrow: boolean;
+    isSmallViewport: boolean;
 }
 
 const EventForm = ({
@@ -72,7 +72,7 @@ const EventForm = ({
     isOwnedCalendar = true,
     isCalendarWritable = true,
     isDrawerApp,
-    isNarrow,
+    isSmallViewport,
     ...props
 }: EventFormProps & HTMLAttributes<HTMLDivElement>) => {
     const isColorPerEventEnabled = useFlag('ColorPerEventWeb');
@@ -360,7 +360,7 @@ const EventForm = ({
                 isColorPerEventEnabled={isColorPerEventEnabled}
             />
             {isColorPerEventEnabled && (
-                <EventColorSelect model={model} setModel={setModel} isNarrow={isNarrow} isDrawerApp={isDrawerApp} />
+                <EventColorSelect model={model} setModel={setModel} isSmallViewport={isSmallViewport} isDrawerApp={isDrawerApp} />
             )}
         </IconRow>
     );

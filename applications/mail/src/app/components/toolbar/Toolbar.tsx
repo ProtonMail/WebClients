@@ -1,9 +1,9 @@
 import { Ref, memo } from 'react';
 
+import { Breakpoints } from '@proton/components/hooks';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { Breakpoints } from '../../models/utils';
 import { Props as ListSettingsProps } from '../list/ListSettings';
 import SelectAll from './SelectAll';
 import ToolbarColumnWide from './ToolbarColumnWide';
@@ -55,7 +55,7 @@ type Variant =
 
 const Toolbar = (props: Props) => {
     const { elementID, columnMode, breakpoints, selectedIDs = defaultSelectedIDs, toolbarInHeader } = props;
-    const viewPortIsNarrow = breakpoints.isNarrow || breakpoints.isTablet;
+    const viewPortIsNarrow = breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium;
     const listInView = columnMode || !elementID;
 
     const variant = Object.entries({

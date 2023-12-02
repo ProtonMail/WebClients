@@ -5,6 +5,7 @@ import { RenderResult, fireEvent } from '@testing-library/react';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
 import { mergeMessages } from '../../../helpers/message/messages';
 import {
@@ -22,7 +23,6 @@ import { composerActions } from '../../../logic/composers/composersSlice';
 import { MessageStateWithData, PartialMessageState } from '../../../logic/messages/messagesTypes';
 import { initialize } from '../../../logic/messages/read/messagesReadActions';
 import { store } from '../../../logic/store';
-import { Breakpoints } from '../../../models/utils';
 import Composer from '../Composer';
 
 // Fake timers fails for the complexe send action
@@ -44,7 +44,7 @@ export const props = {
     composerID: 'ComposerID',
     messageID: ID,
     composerFrameRef: { current: document.body as HTMLDivElement },
-    breakpoints: {} as Breakpoints,
+    breakpoints: mockDefaultBreakpoints,
     onFocus: jest.fn(),
     onClose: jest.fn(),
     onCompose: jest.fn(),
