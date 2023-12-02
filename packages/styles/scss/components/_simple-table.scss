@@ -23,13 +23,6 @@
 	// NEW RESPONSIVE TABLES
 	&--responsive {
 		@include media('<=medium') {
-			td:not(.no-mobile, .no-tablet) {
-				display: block;
-				margin: 0;
-				padding: 0;
-				border: none;
-			}
-
 			thead {
 				display: none;
 			}
