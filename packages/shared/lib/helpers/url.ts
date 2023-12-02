@@ -280,7 +280,7 @@ export const getEasySwitchURL = () => {
 };
 
 export const getImportExportAppUrl = () => {
-    return getStaticURL('/support/export-emails-import-export-app');
+    return getStaticURL('/support/proton-mail-export-tool');
 };
 
 export const getShopURL = () => {

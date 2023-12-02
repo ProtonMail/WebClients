@@ -194,7 +194,7 @@ export const getMailAppRoutes = ({
                 available: !user.isFree,
                 subsections: [
                     {
-                        text: c('Title').t`Import-Export app`,
+                        text: c('Title').t`${MAIL_APP_NAME} Export Tool`,
                         id: 'import-export',
                     },
                 ],
