@@ -1,7 +1,7 @@
 {
     "name": "proton-mail",
     "productName": "Proton Mail",
-    "version": "0.6.0",
+    "version": "0.6.1",
     "description": "Proton official desktop application for Proton Mail and Proton Calendar",
     "main": ".webpack/main",
     "scripts": {
@@ -12,7 +12,8 @@
         "lint": "eslint --ext .ts,.tsx .",
         "pretty": "prettier . --write",
         "make-win": "npx electron-forge make",
-        "negativity": "electronegativity -i ./src"
+        "negativity": "electronegativity -i ./src",
+        "create-uninstaller": "npx appify ./src/macos/uninstall.sh './src/macos/Uninstall Proton Mail.app' ./assets/icons/uninstallIcon.icns"
     },
     "keywords": [],
     "author": {

@@ -1,5 +1,6 @@
 import { app, BrowserWindow, session, shell } from "electron";
 import log from "electron-log/main";
+import { moveUninstaller } from "./macos/uninstall";
 import { manageSessionIDStore } from "./utils/authStore";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./utils/constants";
 import { isHostAllowed, isHostCalendar, isHostMail, isMac, saveWindowsPosition } from "./utils/helpers";
@@ -17,6 +18,8 @@ saveHardcodedURLs();
 
 log.initialize({ preload: true });
 log.info("App start");
+
+moveUninstaller();
 
 // Used to make the app run on Parallels Desktop
 // app.commandLine.appendSwitch("no-sandbox");

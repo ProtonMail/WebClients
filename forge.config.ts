@@ -1,6 +1,7 @@
 import { AutoUnpackNativesPlugin } from "@electron-forge/plugin-auto-unpack-natives";
 import { WebpackPlugin } from "@electron-forge/plugin-webpack";
 import type { ForgeConfig } from "@electron-forge/shared-types";
+import { type } from "os";
 
 import { mainConfig } from "./webpack.main.config";
 import { rendererConfig } from "./webpack.renderer.config";
@@ -9,6 +10,7 @@ const config: ForgeConfig = {
     packagerConfig: {
         icon: __dirname + "/assets/icons/icon",
         asar: true,
+        extraResource: type() === "Darwin" ? ["./src/macos/Uninstall Proton Mail.app", "./src/macos/uninstall.sh"] : [],
     },
     rebuildConfig: {},
     makers: [
