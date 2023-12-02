@@ -1,0 +1,17 @@
+@include media('<=small') {
+	.on-mobile {
+		@for $i from 2 through 3 {
+			&-hide-td#{$i} td:nth-child(#{$i}) {
+				display: none;
+			}
+		}
+	}
+}
+
+@include media('<=xsmall') {
+	.on-tiny-mobile {
+		&-hide-td3 td:nth-child(3) {
+			display: none;
+		}
+	}
+}

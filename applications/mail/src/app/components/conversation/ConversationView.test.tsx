@@ -4,6 +4,7 @@ import { act } from '@testing-library/react';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import range from '@proton/utils/range';
 
 import { addApiKeys, addApiMock, assertFocus, clearAll, mockConsole, render, tick } from '../../helpers/test/helper';
@@ -16,7 +17,6 @@ import * as messageDraftActions from '../../logic/messages/draft/messagesDraftAc
 import { initialize as initializeMessage } from '../../logic/messages/read/messagesReadActions';
 import { store } from '../../logic/store';
 import { Conversation } from '../../models/conversation';
-import { Breakpoints } from '../../models/utils';
 import ConversationView from './ConversationView';
 
 jest.setTimeout(20000);
@@ -29,7 +29,7 @@ describe('ConversationView', () => {
         mailSettings: {} as MailSettings,
         onBack: jest.fn(),
         onCompose: jest.fn(),
-        breakpoints: {} as Breakpoints,
+        breakpoints: mockDefaultBreakpoints,
         onMessageReady: jest.fn(),
         columnLayout: true,
         isComposerOpened: false,
@@ -148,7 +148,7 @@ describe('ConversationView', () => {
                     Attachments: [] as any,
                     Flags: {},
                     ConversationID: conversationID,
-                } as Message);
+                }) as Message;
             const conversationState = {
                 Conversation: { ID: conversationID, Subject: 'a subject' },
                 Messages: [
@@ -308,7 +308,7 @@ describe('ConversationView', () => {
                     ({
                         ID: `messageID${i}`,
                         Subject: `message subject ${i}`,
-                    } as Message)
+                    }) as Message
             );
             const conversationState = {
                 Conversation: conversation,

@@ -7,6 +7,7 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
+import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
@@ -31,7 +32,6 @@ import { render } from 'proton-mail/helpers/test/render';
 import { addAttachment } from 'proton-mail/logic/attachments/attachmentsActions';
 import { store } from 'proton-mail/logic/store';
 import { Conversation } from 'proton-mail/models/conversation';
-import { Breakpoints } from 'proton-mail/models/utils';
 
 jest.mock('@proton/shared/lib/helpers/downloadFile', () => {
     return jest.fn();
@@ -76,7 +76,7 @@ const setup = async (attachmentsMetadata: AttachmentsMetadata[], numAttachments:
             conversationMode={true}
             showIcon={true}
             senders={<>Sender</>}
-            breakpoints={{} as Breakpoints}
+            breakpoints={mockDefaultBreakpoints}
             unread={false}
             onBack={jest.fn()}
             isSelected={false}

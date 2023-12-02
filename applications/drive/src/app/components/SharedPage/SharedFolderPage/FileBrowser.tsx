@@ -9,7 +9,12 @@ import { DecryptedLink, useThumbnailsDownload } from '../../../store';
 import { SortField } from '../../../store/_views/utils/useSorting';
 import FileBrowser, { BrowserItemId, SortParams } from '../../FileBrowser';
 import { PublicLink } from '../interface';
-import { contentCellsDesktop, contentCellsMobile, headerCellsDesktop, headerCellsMobile } from './CellComponents';
+import {
+    contentCellsLargeScreen,
+    contentCellsSmallScreen,
+    headerCellsLargeScreen,
+    headerCellsSmallScreen,
+} from './CellComponents';
 import { EmptyPlaceholder } from './EmptyPlaceholder';
 
 import './FileBrowser.scss';
@@ -24,7 +29,7 @@ interface Props {
 }
 
 export default function SharedFileBrowser({ folderName, items, isLoading, sortParams, setSorting, onItemOpen }: Props) {
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
     const thumbnails = useThumbnailsDownload();
 
     const { token } = usePublicToken();
@@ -40,10 +45,10 @@ export default function SharedFileBrowser({ folderName, items, isLoading, sortPa
         [items]
     );
 
-    const contentCells = isNarrow ? contentCellsMobile : contentCellsDesktop;
-    const headerCells = isNarrow ? headerCellsMobile : headerCellsDesktop;
+    const contentCells = viewportWidth['<=small'] ? contentCellsSmallScreen : contentCellsLargeScreen;
+    const headerCells = viewportWidth['<=small'] ? headerCellsSmallScreen : headerCellsLargeScreen;
 
-    const classname = clsx(['flex flex-column flex-nowrap shared-url-file-browser', isNarrow && 'flex-1']);
+    const classname = clsx(['flex flex-column flex-nowrap shared-url-file-browser', viewportWidth['<=small'] && 'flex-1']);
 
     const isListEmpty = items.length === 0 && !isLoading;
 

@@ -15,7 +15,7 @@ interface Props {
     groups: ContactGroup[];
     groupsEmailsMap: SimpleMap<ContactEmail[]>;
     onCheckOne: (event: ChangeEvent, contactID: string) => void;
-    isDesktop: boolean;
+    isLargeViewport: boolean;
     checkedIDs: string[];
     onClick: (contactID: string) => void;
     isDrawer?: boolean;
@@ -26,7 +26,7 @@ const ContactsGroupsList = ({
     groups,
     groupsEmailsMap,
     onCheckOne,
-    isDesktop = true,
+    isLargeViewport = true,
     checkedIDs,
     onClick,
     isDrawer = false,
@@ -61,7 +61,7 @@ const ContactsGroupsList = ({
     );
 
     return (
-        <div ref={elementRef} className={clsx(isDesktop ? 'items-column-list' : 'items-column-list--mobile')}>
+        <div ref={elementRef} className={clsx(isLargeViewport ? 'items-column-list' : 'items-column-list--mobile')}>
             <div ref={listContainerRef} className="items-column-list-inner items-column-list-inner--border-none">
                 <AutoSizer>
                     {({ height, width }) => (

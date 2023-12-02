@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Kbd, Vr } from '@proton/atoms';
-import { Icon, ToolbarButton, useLabels } from '@proton/components';
+import { Breakpoints, Icon, ToolbarButton, useLabels } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
@@ -10,7 +10,6 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { isCustomLabel, labelIncludes } from '../../helpers/labels';
 import { useEmptyLabel } from '../../hooks/actions/useEmptyLabel';
-import { Breakpoints } from '../../models/utils';
 
 const { DRAFTS, ALL_DRAFTS, ALL_MAIL, ALMOST_ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED, TRASH, SPAM } =
     MAILBOX_LABEL_IDS;
@@ -28,7 +27,7 @@ const EmptyButton = ({ labelID = '', breakpoints, elementIDs }: Props) => {
     const { Shortcuts } = useMailModel('MailSettings');
 
     const displayEmpty =
-        !breakpoints.isNarrow &&
+        !breakpoints.viewportWidth['<=small'] &&
         !labelIncludes(labelID, INBOX, DRAFTS, ALL_DRAFTS, STARRED, SENT, ALL_SENT, ARCHIVE, ALL_MAIL, ALMOST_ALL_MAIL);
 
     if (!displayEmpty) {

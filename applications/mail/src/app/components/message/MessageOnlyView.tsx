@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { Scroll } from '@proton/atoms';
-import { useHotkeys, useLabels } from '@proton/components';
+import { Breakpoints, useHotkeys, useLabels } from '@proton/components';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
@@ -14,7 +14,6 @@ import { useMessage } from '../../hooks/message/useMessage';
 import useShouldMoveOut from '../../hooks/useShouldMoveOut';
 import { removeAllQuickReplyFlags } from '../../logic/messages/draft/messagesDraftActions';
 import { MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
-import { Breakpoints } from '../../models/utils';
 import ConversationHeader from '../conversation/ConversationHeader';
 import MessageView, { MessageViewRef } from './MessageView';
 
