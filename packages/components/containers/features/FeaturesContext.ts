@@ -120,6 +120,7 @@ export enum FeatureCode {
     UsedContactsImport = 'UsedContactsImport',
     UsedMailMobileApp = 'UsedMailMobileApp',
     WelcomeImportModalShown = 'WelcomeImportModalShown',
+    ElectronESInboxThreshold = 'ElectronESInboxThreshold',
 }
 
 export interface FeaturesContextValue {
