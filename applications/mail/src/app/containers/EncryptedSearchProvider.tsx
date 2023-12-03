@@ -10,6 +10,7 @@ import {
     useFeature,
     useGetMessageCounts,
     useGetUserKeys,
+    useISESEnabledElectron,
     useSubscribeEventManager,
     useUser,
     useWelcomeFlags,
@@ -24,7 +25,6 @@ import {
 import { SECOND } from '@proton/shared/lib/constants';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { isFree } from '@proton/shared/lib/user/helpers';
 
@@ -57,6 +57,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const getMessageCounts = useGetMessageCounts();
     const api = useApi();
     const [welcomeFlags] = useWelcomeFlags();
+    const { isESEnabledInbox } = useISESEnabledElectron();
     const { feature: featureES, update: updateSpotlightES } = useFeature(FeatureCode.SpotlightEncryptedSearch);
     const { feature: esAutomaticBackgroundIndexingFeature } = useFeature(FeatureCode.ESAutomaticBackgroundIndexing);
     const { isSearch, page } = parseSearchParams(history.location);
@@ -132,7 +133,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
      * Initialize ES
      */
     const initializeESMail = async () => {
-        if (isElectronApp() || (isFree(user) && !!esAutomaticBackgroundIndexingFeature?.Value)) {
+        if (isESEnabledInbox || (isFree(user) && !!esAutomaticBackgroundIndexingFeature?.Value)) {
             if (!(await checkVersionedESDB(user.ID))) {
                 // Avoid indexing for incognito users, and users that only log in on a device once
                 // If initialIndexing is set, it means that the user is most likely not in incognito mode, since they have persistent storage
@@ -156,7 +157,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
         // Enable encrypted search for all new users. For paid users only,
         // automatically enable content search too
-        if (isElectronApp() || (welcomeFlags.isWelcomeFlow && !isMobile())) {
+        if (isESEnabledInbox || (welcomeFlags.isWelcomeFlow && !isMobile())) {
             // Prevent showing the spotlight for ES to them (as long as the spotlight feature exists)
             if (featureES !== undefined) {
                 await updateSpotlightES(false);
