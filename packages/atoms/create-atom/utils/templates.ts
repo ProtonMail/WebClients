@@ -1,5 +1,5 @@
 import fs from 'fs/promises';
-import { render } from 'mustache';
+import mustache from 'mustache';
 
 import { logItemCompletion } from './log';
 import prettify from './prettify';
@@ -16,32 +16,32 @@ export const getWriteTemplate = (atomDir: string) => async (fileName: string, te
 
 export const getAtomTemplate = async (atomName: string, rootHtmlTag: string) => {
     const template = await getTemplateFile(`Atom.tsx.mustache`);
-    return prettify(render(template, { atomName, rootHtmlTag }));
+    return prettify(mustache.render(template, { atomName, rootHtmlTag }));
 };
 
 export const getIndexTemplate = async (atomName: string) => {
     const template = await getTemplateFile(`index.ts.mustache`);
-    return prettify(render(template, { atomName }));
+    return prettify(mustache.render(template, { atomName }));
 };
 
 export const getTestTemplate = async (atomName: string) => {
     const template = await getTemplateFile(`Atom.test.tsx.mustache`);
-    return prettify(render(template, { atomName }));
+    return prettify(mustache.render(template, { atomName }));
 };
 
 export const getStylesTemplate = async (atomName: string) => {
     const template = await getTemplateFile(`Atom.scss.mustache`);
-    return prettify(render(template, { kebabCaseName: toKebabCase(atomName) }), 'scss');
+    return prettify(mustache.render(template, { kebabCaseName: toKebabCase(atomName) }), 'scss');
 };
 
 export const getMdxTemplate = async (atomName: string) => {
     const template = await getTemplateFile(`Atom.mdx.mustache`);
-    return prettify(render(template, { atomName, atomNameLowercase: atomName.toLowerCase() }), 'mdx');
+    return prettify(mustache.render(template, { atomName, atomNameLowercase: atomName.toLowerCase() }), 'mdx');
 };
 
 export const getStoriesTemplate = async (atomName: string) => {
     const template = await getTemplateFile(`Atom.stories.tsx.mustache`);
-    return prettify(render(template, { atomName }));
+    return prettify(mustache.render(template, { atomName }));
 };
 
 export const appendAtomToIndex = async (atomsDir: string, atomName: string) => {
