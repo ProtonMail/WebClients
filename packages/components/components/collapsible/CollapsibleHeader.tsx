@@ -1,6 +1,6 @@
 import { ElementType, ReactNode, useContext } from 'react';
-import { PolymorphicPropsWithoutRef } from 'react-polymorphic-types';
 
+import { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
 import CollapsibleContext from './CollapsibleContext';
@@ -62,11 +62,7 @@ const CollapsibleHeader = <E extends ElementType = typeof defaultElement>({
                 !disabled && !disableContainerToggle && 'collapsible-header--clickable'
             )}
         >
-            <div
-                id={headerId}
-                className={clsx(!disableFullWidth && 'flex-1')}
-                data-testid="collapsible-header"
-            >
+            <div id={headerId} className={clsx(!disableFullWidth && 'flex-1')} data-testid="collapsible-header">
                 {children}
             </div>
 
