@@ -3,8 +3,14 @@ import log from "electron-log/main";
 import { moveUninstaller } from "./macos/uninstall";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./utils/constants";
 import { isHostAllowed, isHostCalendar, isHostMail, isMac, saveWindowsPosition } from "./utils/helpers";
+import { getSessionID } from "./utils/urlHelpers";
 import { saveHardcodedURLs } from "./utils/urlStore";
-import { handleCalendarWindow, handleMailWindow, initialWindowCreation } from "./utils/windowManagement";
+import {
+    handleCalendarWindow,
+    handleMailWindow,
+    initialWindowCreation,
+    refreshCalendarPage,
+} from "./utils/windowManagement";
 
 if (require("electron-squirrel-startup")) {
     app.quit();
@@ -67,6 +73,17 @@ app.on("web-contents-created", (_ev, contents) => {
     const preventDefault = (ev: Electron.Event) => {
         ev.preventDefault();
     };
+
+    contents.on("did-navigate-in-page", (ev, url) => {
+        if (!isHostAllowed(url, app.isPackaged)) {
+            return preventDefault(ev);
+        }
+
+        const sessionID = getSessionID(url);
+        if (isHostMail(url) && sessionID && !isNaN(sessionID as unknown as any)) {
+            refreshCalendarPage(+sessionID);
+        }
+    });
 
     contents.on("will-attach-webview", preventDefault);
 

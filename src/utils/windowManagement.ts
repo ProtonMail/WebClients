@@ -4,6 +4,7 @@ import { getConfig } from "./config";
 import { APP, WINDOW_SIZES } from "./constants";
 import { isMac, isWindows } from "./helpers";
 import { setApplicationMenu } from "./menu";
+import { getSessionID } from "./urlHelpers";
 import { getWindowState, setWindowState } from "./windowsStore";
 
 interface WindowCreationProps {
@@ -134,4 +135,17 @@ export const handleMailWindow = (contents: WebContents) => {
 
 export const handleCalendarWindow = (contents: WebContents) => {
     handleWindowVisibility(contents, "CALENDAR", createCalendarWindow);
+};
+
+export const refreshCalendarPage = (sessionID: number) => {
+    const calendarWindow = windowMap.get("CALENDAR");
+    if (calendarWindow) {
+        const calendarURL = calendarWindow.webContents.getURL();
+        const calendarHasSessionID = getSessionID(calendarURL);
+        if (calendarHasSessionID) {
+            return;
+        }
+        const newCalendarUrl = `${config.url.calendar}/${sessionID}/`;
+        calendarWindow.loadURL(newCalendarUrl);
+    }
 };
