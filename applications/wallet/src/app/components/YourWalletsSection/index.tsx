@@ -13,13 +13,14 @@ import { WalletType } from '../../types/api';
 
 interface Props {
     wallets: WalletWithAccountsWithBalanceAndTxs[];
+    onAddWallet: () => void;
 }
 
 // TODO: change this when wallet settings API is ready
 const fiatCurrency = 'USD';
 const bitcoinUnit = BitcoinUnit.BTC;
 
-export const YourWalletsSection = ({ wallets }: Props) => {
+export const YourWalletsSection = ({ wallets, onAddWallet }: Props) => {
     const distribution = useBalanceDistribution(wallets);
 
     const lightningBalance = distribution[WalletType.Lightning];
@@ -82,7 +83,7 @@ export const YourWalletsSection = ({ wallets }: Props) => {
                     style={{ '--w-custom': '16rem', '--h-custom': '8.5rem' }}
                     as={Card}
                     onClick={() => {
-                        // TODO: open wallet setup modal here
+                        onAddWallet();
                     }}
                 >
                     <div className="m-auto color-primary text-2xl">Add wallet</div>

@@ -12,8 +12,8 @@ interface Props {
 export const SetupModeSelect = ({ onModeSelection }: Props) => {
     return (
         <div className="pb-8">
-            <div className="flex flex-column colored-gradient-card py-12">
-                <span className="block color-white mx-auto mb-2 text-semibold">{c('Wallet setup').t`Welcome to`}</span>
+            <div className="ui-prominent flex flex-column colored-gradient-card py-12">
+                <span className="block mx-auto mb-2 text-semibold">{c('Wallet setup').t`Welcome to`}</span>
                 <WalletLogo className="mx-auto" />
             </div>
 

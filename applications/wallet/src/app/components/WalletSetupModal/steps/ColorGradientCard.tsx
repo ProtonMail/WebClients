@@ -10,15 +10,16 @@ interface Props {
     width: number;
 }
 
-export const BankCard = ({ children, width }: Props) => {
+export const ColorGradientCard = ({ children, width }: Props) => {
     return (
         <Card
-            className="relative colored-gradient-card flex my-4 mx-auto overflow-hidden h-custom w-custom color-white"
+            className="ui-prominent relative colored-gradient-card flex my-4 mx-auto overflow-hidden h-custom w-custom"
             style={{
                 '--h-custom': `${width / 1.78}rem`,
                 '--w-custom': `${width}rem`,
             }}
             rounded
+            bordered={false}
         >
             {children}
         </Card>

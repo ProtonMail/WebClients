@@ -6,68 +6,6 @@
 export function library_version(): string;
 /**
 */
-export enum WasmWordCount {
-  Words12 = 0,
-  Words15 = 1,
-  Words18 = 2,
-  Words21 = 3,
-  Words24 = 4,
-}
-/**
-*/
-export enum WasmLanguage {
-  English = 0,
-  SimplifiedChinese = 1,
-  TraditionalChinese = 2,
-  Czech = 3,
-  French = 4,
-  Italian = 5,
-  Japanese = 6,
-  Korean = 7,
-  Spanish = 8,
-}
-/**
-*/
-export enum WasmKeychainKind {
-/**
-* External keychain, used for deriving recipient addresses.
-*/
-  External = 0,
-/**
-* Internal keychain, used for deriving change addresses.
-*/
-  Internal = 1,
-}
-/**
-*/
-export enum WasmSupportedBIPs {
-  Bip44 = 0,
-  Bip49 = 1,
-  Bip84 = 2,
-  Bip86 = 3,
-}
-/**
-*/
-export enum WasmNetwork {
-/**
-* Mainnet Bitcoin.
-*/
-  Bitcoin = 0,
-/**
-* Bitcoin's testnet network.
-*/
-  Testnet = 1,
-/**
-* Bitcoin's signet network.
-*/
-  Signet = 2,
-/**
-* Bitcoin's regtest network.
-*/
-  Regtest = 3,
-}
-/**
-*/
 export enum WasmError {
   InvalidSecretKey = 0,
   InvalidDescriptor = 1,
@@ -107,6 +45,68 @@ export enum WasmError {
   MiniscriptPsbt = 35,
   Bip32 = 36,
   Psbt = 37,
+}
+/**
+*/
+export enum WasmLanguage {
+  English = 0,
+  SimplifiedChinese = 1,
+  TraditionalChinese = 2,
+  Czech = 3,
+  French = 4,
+  Italian = 5,
+  Japanese = 6,
+  Korean = 7,
+  Spanish = 8,
+}
+/**
+*/
+export enum WasmSupportedBIPs {
+  Bip44 = 0,
+  Bip49 = 1,
+  Bip84 = 2,
+  Bip86 = 3,
+}
+/**
+*/
+export enum WasmNetwork {
+/**
+* Mainnet Bitcoin.
+*/
+  Bitcoin = 0,
+/**
+* Bitcoin's testnet network.
+*/
+  Testnet = 1,
+/**
+* Bitcoin's signet network.
+*/
+  Signet = 2,
+/**
+* Bitcoin's regtest network.
+*/
+  Regtest = 3,
+}
+/**
+*/
+export enum WasmWordCount {
+  Words12 = 0,
+  Words15 = 1,
+  Words18 = 2,
+  Words21 = 3,
+  Words24 = 4,
+}
+/**
+*/
+export enum WasmKeychainKind {
+/**
+* External keychain, used for deriving recipient addresses.
+*/
+  External = 0,
+/**
+* Internal keychain, used for deriving change addresses.
+*/
+  Internal = 1,
 }
 /**
 */
@@ -226,17 +226,6 @@ export class WasmBalance {
 }
 /**
 */
-export class WasmBdkMnemonic {
-  free(): void;
-/**
-*/
-  lang: WasmLanguage;
-/**
-*/
-  words: string;
-}
-/**
-*/
 export class WasmConfirmation {
   free(): void;
 /**
@@ -312,8 +301,9 @@ export class WasmMnemonic {
 */
   asString(): string;
 /**
+* @returns {(string)[]}
 */
-  inner: WasmBdkMnemonic;
+  toWords(): (string)[];
 }
 /**
 * Serialised Outpoint under the form <txid>:<index>
@@ -529,6 +519,10 @@ export class WasmWallet {
 * @returns {Promise<WasmBalance>}
 */
   get_balance(): Promise<WasmBalance>;
+/**
+* @returns {string}
+*/
+  get_fingerprint(): string;
 }
 /**
 */
