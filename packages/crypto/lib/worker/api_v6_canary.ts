@@ -132,8 +132,8 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
                 throw new Error('Unsupported algorithm');
             default:
                 const result: AlgorithmInfo = { algorithm: algorithmInfo.algorithm };
-                algorithmInfo.curve ?? (result.curve = algorithmInfo.curve as AlgorithmInfo['curve']);
-                algorithmInfo.bits ?? (result.bits = algorithmInfo.bits);
+                if (algorithmInfo.curve !== undefined) { result.curve = algorithmInfo.curve as AlgorithmInfo['curve'] };
+                if (algorithmInfo.bits !== undefined) { result.bits = algorithmInfo.bits };
                 return result;
         }
     };

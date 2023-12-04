@@ -1300,6 +1300,7 @@ siLL+xMJ+Hy4AhsMAAAKagEA4Knj6S6nG24nuXfqkkytPlFTHwzurjv3+qqXwWL6
                     userIDs: { name: 'name', email: 'email@test.com' },
                     format: 'object',
                     passphrase,
+                    subkeys: [{}, { type: 'rsa' }]
                 });
 
                 const importedKeyRef = await CryptoWorker.importPrivateKey({
