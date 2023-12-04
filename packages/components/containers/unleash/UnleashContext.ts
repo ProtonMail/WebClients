@@ -2,13 +2,6 @@
  * Feature flag list from Unleash
  * Format should be FeatureFlagName = 'FeatureFlagName'
  */
-enum MailFeatureFlag {
-    AttachmentThumbnails = 'AttachmentThumbnails',
-    WebMailPageSizeSetting = 'WebMailPageSizeSetting',
-    EmailForwarding = 'EmailForwarding',
-    SnoozeFeature = 'SnoozeFeature',
-}
-
 enum CommonFeatureFlag {
     ColorPerEventWeb = 'ColorPerEventWeb',
     AutoReloadPage = 'AutoReloadPage',
@@ -24,9 +17,25 @@ enum AccountFlag {
     MaintenanceImporter = 'MaintenanceImporter',
 }
 
+enum CalendarFeatureFlag {
+    CancelSingleOccurrenceWeb = 'CancelSingleOccurrenceWeb',
+}
+
 enum DriveFeatureFlag {
     DrivePhotos = 'DrivePhotos',
     DrivePhotosUploadDisabled = 'DrivePhotosUploadDisabled',
 }
 
-export type FeatureFlag = `${MailFeatureFlag}` | `${AccountFlag}` | `${CommonFeatureFlag}` | `${DriveFeatureFlag}`;
+enum MailFeatureFlag {
+    AttachmentThumbnails = 'AttachmentThumbnails',
+    WebMailPageSizeSetting = 'WebMailPageSizeSetting',
+    EmailForwarding = 'EmailForwarding',
+    SnoozeFeature = 'SnoozeFeature',
+}
+
+export type FeatureFlag =
+    | `${CommonFeatureFlag}`
+    | `${AccountFlag}`
+    | `${CalendarFeatureFlag}`
+    | `${DriveFeatureFlag}`
+    | `${MailFeatureFlag}`;
