@@ -39,7 +39,7 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
                         title={todayTitle}
                         onClick={onToday}
                     >
-                        <Icon name="calendar-today" />
+                        <Icon name="calendar-today" alt={c('Action').t`Today`} />
                     </ToolbarButton>
                 </span>
                 <Vr className="mx-1 md:hidden" />
