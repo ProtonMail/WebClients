@@ -1,0 +1,28 @@
+{
+    "name": "@proton/react-polymorphic-types",
+    "description": "Zero-runtime polymorphic component definitions for React",
+    "license": "MIT",
+    "author": "Kristóf Poduszló <kripod@protonmail.com>",
+    "sideEffects": false,
+    "exports": {
+        "types": "./index.d.ts",
+        "default": "./empty.js",
+        "import": "./empty.js"
+    },
+    "main": "./empty.js",
+    "types": "./index.d.ts",
+    "files": [
+        "index.d.ts",
+        "empty.js"
+    ],
+    "scripts": {
+        "check-types": "tsc"
+    },
+    "devDependencies": {
+        "@types/react": "^17.0.3",
+        "typescript": "^5.3.2"
+    },
+    "peerDependencies": {
+        "@types/react": ">=16.8.6"
+    }
+}

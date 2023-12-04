@@ -1,6 +1,6 @@
 import { ElementType } from 'react';
-import { PolymorphicPropsWithoutRef } from 'react-polymorphic-types';
 
+import { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
 import './Avatar.scss';
