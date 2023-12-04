@@ -13,7 +13,6 @@ import {
     ProtonLogo,
     Tooltip,
     VpnLogo,
-    useFlag,
     useOrganization,
     usePlans,
     useSubscription,
@@ -78,9 +77,6 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
     const [plans = [], loadingPlans] = usePlans();
     const [organization, loadingOrganization] = useOrganization();
     const [error, setError] = useState({ title: '', message: '', error: '' });
-
-    const bf2023IsExpiredFlag = useFlag('BF2023IsExpired');
-    const bf2023OfferCheck = useFlag('BF2023OfferCheck');
 
     const canEdit = canPay(user);
 
@@ -186,7 +182,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
         handleNotify(SubscribeType.Subscribed);
     };
 
-    const bf2023IsExpired = bf2023IsExpiredFlag && coupon?.toLocaleUpperCase() === COUPON_CODES.BLACK_FRIDAY_2023;
+    const bf2023IsExpired = coupon?.toLocaleUpperCase() === COUPON_CODES.BLACK_FRIDAY_2023;
     if (bf2023IsExpired) {
         return <PromotionExpired />;
     }
@@ -275,7 +271,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
                                 onCancel={handleClose}
                                 onCheck={(data) => {
                                     // If the initial check completes, it's handled by the container itself
-                                    if (data.model.initialCheckComplete || !bf2023OfferCheck) {
+                                    if (data.model.initialCheckComplete) {
                                         return;
                                     }
 
