@@ -1,8 +1,8 @@
 import { type ElementType, createContext, useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { type PolymorphicPropsWithoutRef } from 'react-polymorphic-types';
 
 import useInstance from '@proton/hooks/useInstance';
 import usePrevious from '@proton/hooks/usePrevious';
+import { type PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
 import { modalTwoRootClassName } from '@proton/shared/lib/busy';
 import clsx from '@proton/utils/clsx';
 
