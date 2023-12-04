@@ -2,7 +2,7 @@ import { BrowserWindow, BrowserWindowConstructorOptions, Rectangle, Session, Web
 import contextMenu from "electron-context-menu";
 import { getConfig } from "./config";
 import { APP, WINDOW_SIZES } from "./constants";
-import { isMac, isWindows } from "./helpers";
+import { areAllWindowsClosedOrHidden, isMac, isWindows } from "./helpers";
 import { setApplicationMenu } from "./menu";
 import { getSessionID } from "./urlHelpers";
 import { getWindowState, setWindowState } from "./windowsStore";
@@ -78,10 +78,27 @@ const createWindow = (session: Session, url: string, visible: boolean, windowCon
 
 const createGenericWindow = (session: Session, url: string, mapKey: APP, visible: boolean, windowConfig: Rectangle) => {
     const window = createWindow(session, url, visible, windowConfig);
+
     window.on("close", (ev) => {
-        ev.preventDefault();
-        window.hide();
-        window.setOpacity(0);
+        // todo make sure the state is saved
+        setWindowState(window.getBounds(), mapKey);
+        if (isWindows) {
+            console.log("close");
+
+            window.removeAllListeners("close");
+            window.destroy();
+
+            // Close the application if all windows are closed
+            if (areAllWindowsClosedOrHidden()) {
+                console.log("quit");
+
+                app.quit();
+            }
+        } else if (isMac) {
+            ev.preventDefault();
+            window.hide();
+            window.setOpacity(0);
+        }
     });
 
     windowMap.set(mapKey, window);
@@ -91,18 +108,11 @@ const createGenericWindow = (session: Session, url: string, mapKey: APP, visible
 export const createMailWindow = (session: Session, visible = true) => {
     const state = getWindowState("MAIL");
     const window = createGenericWindow(session, config.url.mail, "MAIL", visible, state);
-    window.on("close", () => {
-        setWindowState(window.getBounds(), "MAIL");
-    });
-
     return window;
 };
 export const createCalendarWindow = (session: Session, visible = true) => {
     const state = getWindowState("CALENDAR");
     const window = createGenericWindow(session, config.url.calendar, "CALENDAR", visible, state);
-    window.on("close", () => {
-        setWindowState(window.getBounds(), "CALENDAR");
-    });
     return window;
 };
 

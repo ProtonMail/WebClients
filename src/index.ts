@@ -58,12 +58,19 @@ app.whenReady().then(() => {
     });
 });
 
+// todo test on macos and remove if not used
 app.on("before-quit", () => {
     saveWindowsPosition(true);
+    console.log("before-quit");
 });
 
+// todo test on macos and remove if not used
 app.on("window-all-closed", () => {
+    console.log("window-all-closed");
+
     if (!isMac) {
+        console.log("quit");
+
         app.quit();
     }
 });
@@ -88,6 +95,7 @@ app.on("web-contents-created", (_ev, contents) => {
     contents.on("will-attach-webview", preventDefault);
 
     contents.on("will-navigate", (details) => {
+        console.log("will-navigate", contents.getURL());
         if (!isHostAllowed(details.url, app.isPackaged)) {
             return preventDefault(details);
         }

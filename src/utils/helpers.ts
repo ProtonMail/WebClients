@@ -100,6 +100,10 @@ export const openLogFolder = () => {
     }
 };
 
+export const areAllWindowsClosedOrHidden = () => {
+    return BrowserWindow.getAllWindows().every((window) => !window.isVisible());
+};
+
 export const saveWindowsPosition = (shouldDestroy: boolean) => {
     BrowserWindow.getAllWindows().forEach((window) => {
         if (window.isVisible()) {
@@ -115,8 +119,4 @@ export const saveWindowsPosition = (shouldDestroy: boolean) => {
             window.destroy();
         }
     });
-};
-export const quitApplication = () => {
-    saveWindowsPosition(true);
-    app.quit();
 };
