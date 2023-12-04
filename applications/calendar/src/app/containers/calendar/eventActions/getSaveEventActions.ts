@@ -24,7 +24,8 @@ import {
     CleanSendIcsActionData,
     INVITE_ACTION_TYPES,
     InviteActions,
-    ReencryptInviteActionData, SendIcs,
+    ReencryptInviteActionData,
+    SendIcs,
     SendIcsActionData,
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
@@ -160,6 +161,7 @@ interface Arguments {
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
     onSendPrefsErrors: (data: SendIcsActionData) => Promise<CleanSendIcsActionData>;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
+    cancelSingleOccurrenceEnabled: boolean;
 }
 
 const getSaveEventActions = async ({
@@ -180,6 +182,7 @@ const getSaveEventActions = async ({
     reencryptSharedEvent,
     onSendPrefsErrors,
     handleSyncActions,
+    cancelSingleOccurrenceEnabled,
 }: Arguments): Promise<{
     syncActions: SyncEventActionOperations[];
     updatePartstatActions?: UpdatePartstatOperation[];
@@ -385,6 +388,7 @@ const getSaveEventActions = async ({
         recurrence: actualEventRecurrence,
         isOrganizer,
         hasSingleEdits: singleEdits.length >= 1,
+        cancelSingleOccurrenceEnabled,
     });
     const isBreakingChange = hasModifiedDateTimes || !isRruleEqual;
 

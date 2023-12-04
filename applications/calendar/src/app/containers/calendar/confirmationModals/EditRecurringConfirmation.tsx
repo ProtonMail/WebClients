@@ -134,6 +134,7 @@ const getRecurringWarningText = ({
     isOrganizer,
     isBreakingChange,
     canEditOnlyPersonalPart,
+    cancelSingleOccurrenceEnabled,
 }: {
     inviteActions: InviteActions;
     hasPreviousSingleEdits: boolean;
@@ -141,6 +142,7 @@ const getRecurringWarningText = ({
     isOrganizer: boolean;
     isBreakingChange: boolean;
     canEditOnlyPersonalPart: boolean;
+    cancelSingleOccurrenceEnabled: boolean;
 }) => {
     if (canEditOnlyPersonalPart) {
         return;
@@ -151,7 +153,7 @@ const getRecurringWarningText = ({
     if (inviteActions.resetSingleEditsPartstat) {
         return c('Info').t`Some of your answers to occurrences previously updated by the organizer will be lost.`;
     }
-    if (isOrganizer && !isBreakingChange && !hasPreviousSingleEdits) {
+    if (cancelSingleOccurrenceEnabled && isOrganizer && !isBreakingChange && !hasPreviousSingleEdits) {
         return;
     }
     return c('Info').t`Previous modifications on this series will be lost.`;
@@ -177,6 +179,7 @@ interface Props {
     onConfirm: ({ type, inviteActions }: { type: RECURRING_TYPES; inviteActions: InviteActions }) => void;
     onClose: () => void;
     isOpen: boolean;
+    cancelSingleOccurrenceEnabled: boolean;
 }
 const EditRecurringConfirmModal = ({
     types,
@@ -194,6 +197,7 @@ const EditRecurringConfirmModal = ({
     onConfirm,
     onClose,
     isOpen,
+    cancelSingleOccurrenceEnabled,
 }: Props) => {
     const [type, setType] = useState(types[0]);
 
@@ -211,6 +215,7 @@ const EditRecurringConfirmModal = ({
         isOrganizer,
         isBreakingChange,
         canEditOnlyPersonalPart,
+        cancelSingleOccurrenceEnabled,
     });
 
     const showRruleWarning = !isAttendee && type === RECURRING_TYPES.SINGLE && hasRruleModification;
