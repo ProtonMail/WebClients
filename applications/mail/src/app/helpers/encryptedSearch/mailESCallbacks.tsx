@@ -45,6 +45,7 @@ import {
 } from '../../models/encryptedSearch';
 import { Event } from '../../models/event';
 import { decryptMessage } from '../message/messageDecrypt';
+import ESdeletedConversationIdsCache from './ESDeletedConversationsCache';
 import { queryConversation, queryEvents, queryMessage } from './esAPI';
 import { cleanText, externalIDExists, fetchMessage, getBaseMessage, getExternalID } from './esBuild';
 import { shouldOnlySortResults, testMetadata, transformRecipients } from './esSearch';
@@ -304,11 +305,15 @@ export const getESCallbacks = ({
     // whose In-Reply-To header exists but doesn't belong to the mailbox
     const onContentDeletion = async (ID: string, indexKey: CryptoKey) => {
         const metadata = await readMetadataItem<ESBaseMessage>(userID, ID, indexKey);
-        if (!metadata) {
+
+        if (!metadata || ESdeletedConversationIdsCache.hasElement(metadata.ConversationID)) {
             return;
         }
 
+        ESdeletedConversationIdsCache.addElement(metadata.ConversationID);
+
         const { ConversationID, Time: deletedTime, Order: deletedOrder } = metadata;
+
         const messages = (await queryConversation(api, ConversationID)) || []; // We fallback to [] because the conversation may not exist anymore
         const messagesToAdd: EncryptedItemWithInfo[] = (
             await Promise.all(
