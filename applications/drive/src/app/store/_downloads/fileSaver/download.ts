@@ -60,6 +60,7 @@ export async function initDownloadSW() {
     if (isUnsupported()) {
         throw new Error('Saving file via download is unsupported by this browser');
     }
+
     await navigator.serviceWorker.register(
         /* webpackChunkName: "downloadSW" */
         new URL('./downloadSW', import.meta.url),
@@ -67,6 +68,7 @@ export async function initDownloadSW() {
             scope: `/${stripLeadingAndTrailingSlash(PUBLIC_PATH)}`,
         }
     );
+
     serviceWorkerKeepAlive();
 }
 
