@@ -1,5 +1,6 @@
 import { ElementType, useContext } from 'react';
-import { PolymorphicPropsWithoutRef } from 'react-polymorphic-types';
+
+import { PolymorphicPropsWithoutRef } from '@proton/react-polymorphic-types';
 
 import CollapsibleContext from './CollapsibleContext';
 

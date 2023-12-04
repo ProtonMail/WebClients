@@ -1,11 +1,11 @@
 import { ElementType, ForwardedRef, ReactElement, forwardRef } from 'react';
-import { PolymorphicPropsWithRef } from 'react-polymorphic-types';
 
 import ButtonLike, { ButtonLikeProps } from '@proton/atoms/Button/ButtonLike';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, IconName, IconSize } from '@proton/components/components';
 import { useActiveBreakpoint } from '@proton/components/hooks';
 import useUid from '@proton/components/hooks/useUid';
+import { PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
 import './PromotionButton.scss';
