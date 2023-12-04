@@ -126,7 +126,6 @@ const ToolbarRowWide = ({
                         filter={filter}
                         conversationMode={conversationMode}
                         mailSettings={mailSettings}
-                        isSearch={isSearch}
                         labelID={labelID}
                         filterAsDropdown={localIsNarrowAndMedium}
                     />
