@@ -96,7 +96,6 @@ const KeysTable = ({
                                     onSetNotObsolete={permissions.canSetNotObsolete ? onSetNotObsolete : undefined}
                                 />,
                             ]}
-                            className="xon-mobile-hide-td2 xon-tiny-mobile-hide-td3"
                         />
                     );
                 })}
