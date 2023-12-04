@@ -33,7 +33,7 @@ const MailDensityModal = (props: ModalProps) => {
         <ModalTwo {...props}>
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
-                <div className="flex flex-nowrap mb-4 flex-column md:flex-row flex-column">
+                <div className="flex flex-column flex-nowrap mb-4">
                     <span className="mb-4" id="densityMode_desc">
                         {c('Label').t`Select what your list of messages looks like by default.`}
                     </span>
