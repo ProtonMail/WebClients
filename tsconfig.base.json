@@ -8,7 +8,7 @@
         "lib": ["dom", "dom.iterable", "esnext"],
         "maxNodeModuleJsDepth": 10,
         "module": "esnext",
-        "moduleResolution": "node",
+        "moduleResolution": "bundler",
         "noEmit": true,
         "noImplicitAny": true,
         "noUnusedLocals": true,
