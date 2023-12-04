@@ -9,7 +9,7 @@ import {
 } from '@proton/activation/src/interface';
 import { changeOAuthStep, resetOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import { ImporterCalendar, ImporterData } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.interface';
-import { createCalendar, removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
+import { createCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { setupCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/setupCalendarKeys';
 import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
@@ -150,15 +150,14 @@ export const createImporterTask = async ({
                 ...createdCalendars.map((calendar) => {
                     return {
                         Source: calendar.id,
-                        Description: calendar.description,
                         Destination: calendar.destination,
+                        NewCalendar: 1,
                     };
                 }),
                 ...calendarToBeMerged.map((calendar) => {
                     if (calendar.mergedTo?.ID) {
                         return {
                             Source: calendar.id,
-                            Description: calendar.description,
                             Destination: calendar.mergedTo.ID,
                         };
                     }
@@ -240,7 +239,6 @@ export const createImporterTask = async ({
         dispatch(changeOAuthStep('success'));
     } catch (error) {
         if (createdCalendars) {
-            await Promise.all(createdCalendars.map(async (cal) => api(removeCalendar(cal.destination))));
             await call();
         }
         errorHandler(error);
