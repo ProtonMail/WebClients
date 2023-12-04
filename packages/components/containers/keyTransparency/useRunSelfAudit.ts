@@ -104,7 +104,6 @@ const useRunSelfAudit = () => {
     }, [getUserKeys]);
 
     const createSelfAuditStateAddressKeys = useCallback(async () => {
-        const epoch = await getLatestEpoch(true);
         await waitForAddressUpdates();
         const addressesWithoutKeys = await getAddresses();
         const addressesKeys = await Promise.all(addressesWithoutKeys.map((address) => getAddressKeys(address.ID)));
@@ -153,11 +152,11 @@ const useRunSelfAudit = () => {
                     addressKeys: selfAuditAddressesKeys[index],
                 };
             });
-            return { epoch, addresses };
+            return { addresses };
         } finally {
             exportedAddressesKeys.forEach((keys) => keys.forEach(({ privateKey }) => privateKey.fill(0)));
         }
-    }, [getLatestEpoch, getAddresses, getAddressKeys]);
+    }, [getAddresses, getAddressKeys]);
 
     const createSelfAuditState = async (lastSelfAudit: SelfAuditResult | undefined): Promise<SelfAuditState> => {
         const [userKeys, addressKeys] = await Promise.all([
@@ -189,7 +188,16 @@ const useRunSelfAudit = () => {
             throw new Error('User has no user keys');
         }
         try {
-            const selfAuditResult = await selfAudit(userID, state, api, ktLSAPI, saveSKLToLS, uploadMissingSKL);
+            const selfAuditResult = await selfAudit(
+                userID,
+                state,
+                api,
+                ktLSAPI,
+                saveSKLToLS,
+                uploadMissingSKL,
+                getLatestEpoch
+            );
+
             // Update local storage value
             document.dispatchEvent(
                 new CustomEvent(KEY_TRANSPARENCY_REMINDER_UPDATE, {
