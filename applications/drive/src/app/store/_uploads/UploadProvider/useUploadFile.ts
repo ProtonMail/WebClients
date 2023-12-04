@@ -22,6 +22,8 @@ import { TransferCancel } from '../../../components/TransferManager/transfer';
 import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
 import { logError } from '../../../utils/errorHandling';
 import { ValidationError } from '../../../utils/errorHandling/ValidationError';
+import retryOnError from '../../../utils/retryOnError';
+import { isPhotosDisabledUploadError } from '../../../utils/transfer';
 import { useDebouncedRequest } from '../../_api';
 import { useDriveEventManager } from '../../_events';
 import { DecryptedLink, useLink, useLinksActions, validateLinkName } from '../../_links';
@@ -108,24 +110,41 @@ export default function useUploadFile() {
 
             // Do not abort using signal - file could be created and we
             // wouldn't know ID to do proper cleanup.
-            const { File: createdFile } = await debouncedRequest<CreateFileResult>(
-                queryCreateFile(shareId, {
-                    ContentKeyPacket: keys.contentKeyPacket,
-                    ContentKeyPacketSignature: keys.contentKeyPacketSignature,
-                    Hash: hash,
-                    MIMEType: mimeType,
-                    Name,
-                    NodeKey: keys.nodeKey,
-                    NodePassphrase: keys.nodePassphrase,
-                    NodePassphraseSignature: keys.nodePassphraseSignature,
-                    ParentLinkID: parentId,
-                    SignatureAddress: addressKeyInfo.address.Email,
-                    ClientUID: clientUid,
-                })
-            ).catch((err) => {
-                uploadFailed();
-                throw err;
+            const createFilePromise = () =>
+                debouncedRequest<CreateFileResult>(
+                    queryCreateFile(shareId, {
+                        ContentKeyPacket: keys.contentKeyPacket,
+                        ContentKeyPacketSignature: keys.contentKeyPacketSignature,
+                        Hash: hash,
+                        MIMEType: mimeType,
+                        Name,
+                        NodeKey: keys.nodeKey,
+                        NodePassphrase: keys.nodePassphrase,
+                        NodePassphraseSignature: keys.nodePassphraseSignature,
+                        ParentLinkID: parentId,
+                        SignatureAddress: addressKeyInfo.address.Email,
+                        ClientUID: clientUid,
+                    })
+                ).catch((err) => {
+                    uploadFailed();
+                    // See RFC Feature flag handling for more info
+                    if (err.status === 424 && err.data?.Code === 2032 && isForPhotos) {
+                        const error = new Error(
+                            c('Error').t`Photos upload is temporarily disabled. Please try again later`
+                        );
+                        error.name = 'PhotosUploadDisabled';
+                        throw error;
+                    }
+                    throw err;
+                });
+            const createFile = retryOnError<CreateFileResult>({
+                fn: () => createFilePromise(),
+                shouldRetryBasedOnError: (error: unknown) => isPhotosDisabledUploadError(error as Error),
+                maxRetriesNumber: 3,
+                backoff: true,
             });
+
+            const { File: createdFile } = await createFile();
 
             return {
                 fileID: createdFile.ID,
