@@ -72,6 +72,7 @@ export type UpdateCallbackParams = {
     resumeState?: TransferState;
     parentId?: string;
     file?: File;
+    isForPhotos?: boolean;
 };
 
 export type ConflictStrategyHandler = (
