@@ -27,7 +27,12 @@ export const MultiWalletDashboardContainer = ({ wallets }: Props) => {
             <div className="flex flex-row w-full h-full flex-nowrap flex-item-grow">
                 <div className="flex-item-fluid p-8">
                     <BalanceOverview wallets={wallets} />
-                    <YourWalletsSection wallets={wallets} />
+                    <YourWalletsSection
+                        wallets={wallets}
+                        onAddWallet={() => {
+                            setIsSetupModalOpenned(true);
+                        }}
+                    />
                     <ExploreProtonWalletSection />
                 </div>
 

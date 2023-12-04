@@ -4,31 +4,20 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
-import { WalletLogo } from '@proton/components/components';
 
-import { BankCard } from './BankCard';
+import { WasmMnemonic, WasmNetwork, WasmWallet, WasmWalletConfig } from '../../../../pkg';
+import { CreditCard } from './CreditCard';
 
 interface Props {
+    mnemonic?: WasmMnemonic;
     onContinue: () => void;
 }
 
-export const MnemonicBackup = ({ onContinue }: Props) => {
+export const MnemonicBackup = ({ mnemonic, onContinue }: Props) => {
     const [showMnemonic, setShowMnemonic] = useState(false);
 
-    const mnemonic = [
-        'desk',
-        'house',
-        'hungry',
-        'behave',
-        'prevent',
-        'idle',
-        'husband',
-        'simple',
-        'room',
-        'member',
-        'moment',
-        'enhance',
-    ];
+    const walletConfig = new WasmWalletConfig(WasmNetwork.Testnet);
+    const wallet = mnemonic ? new WasmWallet(mnemonic.asString(), undefined, walletConfig) : null;
 
     return (
         <div className="p-6 flex flex-column">
@@ -41,7 +30,7 @@ export const MnemonicBackup = ({ onContinue }: Props) => {
 
                     {/* Mnemonic words */}
                     <Card rounded bordered={false} className="flex flex-row flex-justify-center">
-                        {mnemonic.map((word, index) => (
+                        {mnemonic?.toWords().map((word, index) => (
                             // TODO: use Pills component here
                             <span
                                 className="block m-2 p-1 px-2 rounded text-sm"
@@ -69,23 +58,8 @@ export const MnemonicBackup = ({ onContinue }: Props) => {
                         .t`Your Bitcoin Wallet is created`}</span>
 
                     {/* Credit card design */}
-
-                    <BankCard width={24}>
-                        <div
-                            className="w-full flex flex-column flex-justify-space-between h-custom"
-                            style={{ '--h-custom': '11rem' }}
-                        >
-                            <WalletLogo variant="glyph-only" />
-
-                            <div className="w-full flex flex-row flex-justify-space-between flex-align-items-end">
-                                <span className="text-semibold">O BTC</span>
-                                <div>
-                                    <span className="block text-right color-disabled">Bitcoin Wallet</span>
-                                    <span className="block text-right text-semibold">bc1p54***3297</span>
-                                </div>
-                            </div>
-                        </div>
-                    </BankCard>
+                    {/* TODO: add name input somewhere or generated it randomly? */}
+                    {wallet && <CreditCard walletName="Bitcoin 01" walletFingerprint={wallet.get_fingerprint()} />}
 
                     <p className="my-0 block text-center color-weak">{c('Wallet setup')
                         .t`Your new wallet is created. Make sure you back it up`}</p>

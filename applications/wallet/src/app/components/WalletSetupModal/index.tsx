@@ -14,15 +14,14 @@ import {
 import { WalletSetupStep } from './type';
 import { useWalletSetupModal } from './useWalletSetupModal';
 
-import './WalletSetupModal.scss';
-
 interface Props {
     isOpen: boolean;
     onClose: () => void;
 }
 
 export const WalletSetupModal = ({ isOpen, onClose }: Props) => {
-    const { currentStep, onSelectSetupMode, onNextStep } = useWalletSetupModal({ onSetupFinish: onClose });
+    const { currentStep, mnemonic, passphrase, onSelectSetupMode, onMnemonicGenerated, onNextStep, onSaveNewWallet } =
+        useWalletSetupModal({ isOpen, onSetupFinish: onClose });
 
     const step = useMemo(() => {
         switch (currentStep) {
@@ -31,18 +30,18 @@ export const WalletSetupModal = ({ isOpen, onClose }: Props) => {
             case WalletSetupStep.MnemonicInput:
                 return <MnemonicInput />;
             case WalletSetupStep.MnemonicGeneration:
-                return <MnemonicGeneration onGenerated={onNextStep} />;
+                return <MnemonicGeneration onGenerated={onMnemonicGenerated} />;
             case WalletSetupStep.MnemonicBackup:
-                return <MnemonicBackup onContinue={onNextStep} />;
+                return <MnemonicBackup mnemonic={mnemonic} onContinue={onNextStep} />;
             case WalletSetupStep.PassphraseInput:
-                return <PassphraseInput onContinue={onNextStep} />;
+                return <PassphraseInput onContinue={onSaveNewWallet} />;
             case WalletSetupStep.Confirmation:
-                return <SetupConfirmation onOpenWallet={onNextStep} />;
+                return <SetupConfirmation mnemonic={mnemonic} passphrase={passphrase} onOpenWallet={onNextStep} />;
         }
-    }, [currentStep, onNextStep, onSelectSetupMode]);
+    }, [currentStep, onMnemonicGenerated, mnemonic, onNextStep, onSaveNewWallet, passphrase, onSelectSetupMode]);
 
     return (
-        <ModalTwo className="p-0" open={isOpen} onClose={onClose}>
+        <ModalTwo className="p-0" open={isOpen} onClose={onClose} enableCloseWhenClickOutside>
             <ModalContent className="p-0 m-0">{step}</ModalContent>
         </ModalTwo>
     );
