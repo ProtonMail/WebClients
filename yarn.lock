@@ -28920,6 +28920,7 @@ __metadata:
   resolution: "proton-drive@workspace:applications/drive"
   dependencies:
     "@mattiasbuelens/web-streams-adapter": "npm:0.1.0"
+    "@openpgp/asmcrypto.js": "npm:^2.3.3-0"
     "@openpgp/web-stream-tools": "npm:^0.0.13"
     "@proton/components": "workspace:packages/components"
     "@proton/cross-storage": "workspace:packages/cross-storage"
