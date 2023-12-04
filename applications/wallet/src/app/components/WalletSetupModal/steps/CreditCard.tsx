@@ -10,10 +10,10 @@ interface Props {
 export const CreditCard = ({ walletFingerprint, walletName }: Props) => {
     return (
         <ColorGradientCard width={24}>
-            <div className="w-full flex flex-column flex-justify-space-between h-full">
+            <div className="w-full flex flex-column justify-space-between h-full">
                 <WalletLogo variant="glyph-only" />
 
-                <div className="w-full flex flex-row flex-justify-space-between flex-align-items-end">
+                <div className="w-full flex flex-row justify-space-between items-end">
                     <span className="text-semibold">O BTC</span>
                     <div>
                         <span className="block text-right">{walletName}</span>

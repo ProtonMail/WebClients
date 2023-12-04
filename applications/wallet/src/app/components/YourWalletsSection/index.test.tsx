@@ -1,11 +1,11 @@
-import { render, screen, within } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 
 import { YourWalletsSection } from '.';
 import { walletsWithAccountsWithBalanceAndTxs } from '../../tests';
 
 describe('YourWalletsSection', () => {
     it('should display lightning wallets total balance and fiat amount', () => {
-        render(<YourWalletsSection wallets={walletsWithAccountsWithBalanceAndTxs} />);
+        render(<YourWalletsSection wallets={walletsWithAccountsWithBalanceAndTxs} onAddWallet={jest.fn()} />);
 
         const lightningBalanceContainer = screen.getByTestId('lightning-balance-card');
         expect(lightningBalanceContainer).toBeInTheDocument();
@@ -17,7 +17,7 @@ describe('YourWalletsSection', () => {
     });
 
     it('should display onchain wallets total balance and fiat amount', () => {
-        render(<YourWalletsSection wallets={walletsWithAccountsWithBalanceAndTxs} />);
+        render(<YourWalletsSection wallets={walletsWithAccountsWithBalanceAndTxs} onAddWallet={jest.fn()} />);
 
         const onchainBalanceContainer = screen.getByTestId('onchain-balance-card');
         expect(onchainBalanceContainer).toBeInTheDocument();
@@ -29,6 +29,20 @@ describe('YourWalletsSection', () => {
     });
 
     describe('when user clicks on `Add wallet` card', () => {
-        // TODO
+        it('should call provided `onAddWallet`', () => {
+            const mockedOnAddWallet = jest.fn();
+
+            render(
+                <YourWalletsSection wallets={walletsWithAccountsWithBalanceAndTxs} onAddWallet={mockedOnAddWallet} />
+            );
+
+            const addWalletButton = screen.getByRole('button', { name: 'Add wallet' });
+            expect(addWalletButton).toBeInTheDocument();
+
+            fireEvent.click(addWalletButton);
+
+            expect(mockedOnAddWallet).toHaveBeenCalledTimes(1);
+            expect(mockedOnAddWallet).toHaveBeenCalledWith();
+        });
     });
 });
