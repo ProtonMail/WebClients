@@ -523,7 +523,7 @@ const CalendarContainerView = ({
                     >
                         <ToolbarButton
                             ref={searchSpotlightAnchorRef}
-                            icon={<Icon name="magnifier" />}
+                            icon={<Icon name="magnifier" alt={c('Action').t`Search`} />}
                             title={c('Header').t`Search`}
                             onClick={handleClickSearch}
                         />
