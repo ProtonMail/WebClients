@@ -11,6 +11,7 @@ import { TransferCancel, TransferState } from '../../../components/TransferManag
 import { FileThresholdModalType, useFileThresholdModal } from '../../../components/modals/FileThresholdModal';
 import { sendErrorReport } from '../../../utils/errorHandling';
 import {
+    isPhotosDisabledUploadError,
     isTransferCancelError,
     isTransferOngoing,
     isTransferPausedByConnection,
@@ -229,7 +230,9 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
                     queue.updateState(nextFileUpload.id, TransferState.Done);
                 })
                 .catch((error) => {
-                    if (isTransferCancelError(error)) {
+                    if (isPhotosDisabledUploadError(error)) {
+                        queue.updateWithData((params) => !!params.isForPhotos, TransferState.Error, { error });
+                    } else if (isTransferCancelError(error)) {
                         queue.updateState(nextFileUpload.id, TransferState.Canceled);
                     } else if (isTransferRetry(error)) {
                         queue.updateState(nextFileUpload.id, ({ parentId }) =>
