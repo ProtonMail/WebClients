@@ -10,7 +10,7 @@ interface Props {
 }
 
 const WalletHeader = ({ isHeaderExpanded, toggleHeaderExpanded, title = c('Title').t`Wallet` }: Props) => {
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     return (
         <PrivateHeader
@@ -18,7 +18,7 @@ const WalletHeader = ({ isHeaderExpanded, toggleHeaderExpanded, title = c('Title
             title={title}
             expanded={isHeaderExpanded}
             onToggleExpand={toggleHeaderExpanded}
-            isNarrow={isNarrow}
+            isSmallViewport={viewportWidth['<=small']}
             settingsButton={<QuickSettingsAppButton />}
         />
     );
