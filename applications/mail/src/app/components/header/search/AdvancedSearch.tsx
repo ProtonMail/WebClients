@@ -16,6 +16,7 @@ import { changeSearchParams, getSearchParams } from '@proton/shared/lib/helpers/
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import clsx from '@proton/utils/clsx';
 
+import AddressInput from 'proton-mail/components/composer/addresses/AddressInput';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
@@ -29,7 +30,7 @@ import SearchField from './AdvancedSearchFields/SearchField';
 interface SearchModel {
     keyword: string;
     labelID: string;
-    from: Recipient[];
+    from?: string;
     to: Recipient[];
     address?: string;
     begin?: Date;
@@ -45,7 +46,7 @@ const { ALL_MAIL, ALMOST_ALL_MAIL } = MAILBOX_LABEL_IDS;
 
 const DEFAULT_MODEL_WITHOUT_LABEL_ID: Omit<SearchModel, 'labelID'> = {
     keyword: '',
-    from: [],
+    from: '',
     to: [],
     address: ALL_ADDRESSES,
     wildcard: AUTO_WILDCARD,
@@ -71,7 +72,7 @@ const initializeModel = (history: History, selectedLabelID: string, searchInputV
         keyword: searchInputValue ? keyword || '' : '',
         address: address || ALL_ADDRESSES,
         wildcard,
-        from: getRecipients(from),
+        from,
         to: getRecipients(to),
         begin: begin ? fromUnixTime(begin) : UNDEFINED,
         end: end ? sub(fromUnixTime(end), { days: 1 }) : UNDEFINED,
@@ -152,7 +153,7 @@ const AdvancedSearch = ({
         history.push(
             changeSearchParams(`/${getHumanLabelID(model.labelID)}`, history.location.hash, {
                 keyword: getKeyword({ keyword, reset, isSmallViewport }),
-                from: from.length ? formatRecipients(from) : UNDEFINED,
+                from: from ? String(from) : UNDEFINED,
                 to: to.length ? formatRecipients(to) : UNDEFINED,
                 address: address === ALL_ADDRESSES ? UNDEFINED : address,
                 begin: begin ? String(getUnixTime(begin)) : UNDEFINED,
@@ -287,10 +288,10 @@ const AdvancedSearch = ({
                                 className="advanced-search-label text-semibold"
                                 htmlFor="from"
                             >{c('Label').t`Sender`}</Label>
-                            <AddressesInput
+                            <AddressInput
                                 id="from"
                                 dataTestId="advanced-search:sender"
-                                recipients={model.from}
+                                value={model.from}
                                 onChange={(from) => updateModel({ ...model, from })}
                                 placeholder={c('Placeholder').t`Name or email address`}
                                 anchorRef={senderListAnchorRef}
