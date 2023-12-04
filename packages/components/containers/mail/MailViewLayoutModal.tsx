@@ -33,7 +33,7 @@ const MailViewLayoutModal = (props: ModalProps) => {
         <ModalTwo {...props}>
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
-                <div className="flex flex-nowrap mb-4 flex-column md:flex-row flex-column">
+                <div className="flex flex-column flex-nowrap mb-4">
                     <span className="mb-4" id="layoutMode_desc">
                         {c('Label').t`Select what your mailbox looks like by default.`}
                     </span>
