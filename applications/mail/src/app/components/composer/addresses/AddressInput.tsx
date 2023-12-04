@@ -20,13 +20,14 @@ interface Props {
     onChange: (recipient: string | undefined) => void;
     dataTestId?: string;
     placeholder?: string;
+    classname?: string;
 }
 
 /**
  * Search a recipient from contacts list or enter a custom value
  * Contact groups not supported  because it implies multiple recipients.
  */
-const AddressInput = ({ id, anchorRef, onChange, value, dataTestId, placeholder }: Props) => {
+const AddressInput = ({ id, anchorRef, onChange, value, dataTestId, placeholder, classname }: Props) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const [search, setSearch] = useState(value || '');
     const [contactEmails] = useContactEmails();
@@ -61,6 +62,7 @@ const AddressInput = ({ id, anchorRef, onChange, value, dataTestId, placeholder 
     return (
         <div className="composer-addresses-autocomplete w-full flex-item-fluid relative">
             <Input
+                className={classname}
                 data-testid={dataTestId}
                 type="search"
                 value={search}
