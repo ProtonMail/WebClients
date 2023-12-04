@@ -38,7 +38,7 @@ const DEFAULT_VOLUME_INITIAL_STATE: {
 };
 
 const InitContainer = () => {
-    const { getDefaultShare } = useDefaultShare();
+    const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
     const [loading, withLoading] = useLoading(true);
     const [error, setError] = useState();
     const [defaultShareRoot, setDefaultShareRoot] =
@@ -46,6 +46,7 @@ const InitContainer = () => {
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
     const { searchEnabled } = useSearchControl();
     const driveEventManager = useDriveEventManager();
+    const [hasPhotosShare, setHasPhotosShare] = useState(false);
     const isPhotosEnabled = usePhotosFeatureFlag();
 
     useEffect(() => {
@@ -53,6 +54,8 @@ const InitContainer = () => {
             .then(({ shareId, rootLinkId: linkId, volumeId }) => {
                 setDefaultShareRoot({ volumeId, shareId, linkId });
             })
+            // We fetch it after, so we don't make to user share requests
+            .then(() => getDefaultPhotosShare().then((photosShare) => setHasPhotosShare(!!photosShare)))
             .catch((err) => {
                 setError(err);
             });
@@ -105,7 +108,7 @@ const InitContainer = () => {
                     <Route path="/devices" component={DevicesContainer} />
                     <Route path="/trash" component={TrashContainer} />
                     <Route path="/shared-urls" component={SharedURLsContainer} />
-                    {isPhotosEnabled && <Route path="/photos" component={PhotosContainer} />}
+                    {(isPhotosEnabled || hasPhotosShare) && <Route path="/photos" component={PhotosContainer} />}
                     {searchEnabled && <Route path="/search" component={SearchContainer} />}
                     <Route path="/:shareId?/:type/:linkId?" component={FolderContainer} />
                     <Redirect to={`/${defaultShareRoot?.shareId}/folder/${defaultShareRoot?.linkId}`} />
