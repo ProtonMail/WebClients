@@ -9,12 +9,12 @@ import React, {
     useRef,
     useState,
 } from 'react';
-import { PolymorphicPropsWithRef } from 'react-polymorphic-types';
 
 import { isFocusable } from 'tabbable';
 
 import { Input } from '@proton/atoms';
 import useInstance from '@proton/hooks/useInstance';
+import { PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
 import { FormContext } from '../../../components';

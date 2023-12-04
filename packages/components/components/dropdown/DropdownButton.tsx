@@ -1,7 +1,7 @@
 import { ElementType, ReactElement, forwardRef } from 'react';
-import { PolymorphicPropsWithRef } from 'react-polymorphic-types';
 
 import { Button, CircleLoader } from '@proton/atoms';
+import { PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
 import DropdownCaret from './DropdownCaret';
