@@ -58,20 +58,10 @@ app.whenReady().then(() => {
     });
 });
 
-// todo test on macos and remove if not used
+// Only used on macOS to save the windows position when CMD+Q is used
 app.on("before-quit", () => {
-    saveWindowsPosition(true);
-    console.log("before-quit");
-});
-
-// todo test on macos and remove if not used
-app.on("window-all-closed", () => {
-    console.log("window-all-closed");
-
-    if (!isMac) {
-        console.log("quit");
-
-        app.quit();
+    if (isMac) {
+        saveWindowsPosition(true);
     }
 });
 

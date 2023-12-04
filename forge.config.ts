@@ -11,6 +11,13 @@ const config: ForgeConfig = {
         icon: __dirname + "/assets/icons/icon",
         asar: true,
         extraResource: type() === "Darwin" ? ["./src/macos/Uninstall Proton Mail.app", "./src/macos/uninstall.sh"] : [],
+        // osxSign: {},
+        // osxNotarize: {
+        //     tool: "notarytool",
+        //     appleId: process.env.APPLE_ID,
+        //     appleIdPassword: process.env.APPLE_PASSWORD,
+        //     teamId: process.env.APPLE_TEAM_ID,
+        // },
     },
     rebuildConfig: {},
     makers: [

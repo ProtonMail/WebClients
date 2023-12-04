@@ -80,7 +80,6 @@ const createGenericWindow = (session: Session, url: string, mapKey: APP, visible
     const window = createWindow(session, url, visible, windowConfig);
 
     window.on("close", (ev) => {
-        // todo make sure the state is saved
         setWindowState(window.getBounds(), mapKey);
         if (isWindows) {
             console.log("close");
