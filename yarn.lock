@@ -5285,6 +5285,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/pack": "workspace:packages/pack"
+    "@proton/react-polymorphic-types": "workspace:^"
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
     "@proton/testing": "workspace:packages/testing"
@@ -5314,7 +5315,6 @@ __metadata:
     prettier: "npm:^3.1.0"
     react: "npm:^17.0.2"
     react-dom: "npm:^17.0.2"
-    react-polymorphic-types: "npm:^2.0.0"
     ts-loader: "npm:^9.5.1"
     ts-node: "npm:^10.9.1"
     ttag: "npm:^1.7.29"
@@ -5363,6 +5363,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/metrics": "workspace:packages/metrics"
+    "@proton/react-polymorphic-types": "workspace:^"
     "@proton/shared": "workspace:packages/shared"
     "@proton/sieve": "workspace:packages/sieve"
     "@proton/styles": "workspace:packages/styles"
@@ -5406,7 +5407,6 @@ __metadata:
     react: "npm:^17.0.2"
     react-codemirror2: "npm:^7.3.0"
     react-dom: "npm:^17.0.2"
-    react-polymorphic-types: "npm:^2.0.0"
     react-router: "npm:^5.3.4"
     react-router-dom: "npm:^5.3.4"
     react-sortable-hoc: "npm:^2.0.0"
@@ -5722,6 +5722,17 @@ __metadata:
     regenerator-runtime: "npm:^0.14.0"
     resize-observer: "npm:^1.0.4"
     yetch: "npm:^1.1.1"
+  languageName: unknown
+  linkType: soft
+
+"@proton/react-polymorphic-types@workspace:^, @proton/react-polymorphic-types@workspace:packages/react-polymorphic-types":
+  version: 0.0.0-use.local
+  resolution: "@proton/react-polymorphic-types@workspace:packages/react-polymorphic-types"
+  dependencies:
+    "@types/react": "npm:^17.0.3"
+    typescript: "npm:^5.3.2"
+  peerDependencies:
+    "@types/react": ">=16.8.6"
   languageName: unknown
   linkType: soft
 
@@ -30281,15 +30292,6 @@ __metadata:
     overlap-area: "npm:^1.0.0"
     react-css-styled: "npm:^1.0.3"
   checksum: 7b0d8663bab304d3d1501fcf22e27ebba6ab3479ecd86ca26c848b5681edd0a5408322f150ec3005411e7d2d89230d17c731b1bb17cad3a273cc93d4d3af7de0
-  languageName: node
-  linkType: hard
-
-"react-polymorphic-types@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "react-polymorphic-types@npm:2.0.0"
-  peerDependencies:
-    "@types/react": ">=16.8.6"
-  checksum: c27b49001fcb8b15e948a657a308165b0e99736cd3daf493b390c795f448be9499dc12d01bfe2958cf78da21269d76866b2473726366508b417171dfa61c4b71
   languageName: node
   linkType: hard
 
