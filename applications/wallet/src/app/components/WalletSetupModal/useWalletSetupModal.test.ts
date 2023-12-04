@@ -7,7 +7,7 @@ describe('useWalletSetupModal', () => {
     describe('onSelectSetupMode', () => {
         describe('when Creation is selected', () => {
             it("should set mode and move to mod's first step", () => {
-                const { result } = renderHook(() => useWalletSetupModal({ onSetupFinish: jest.fn() }));
+                const { result } = renderHook(() => useWalletSetupModal({ isOpen: true, onSetupFinish: jest.fn() }));
 
                 act(() => {
                     result.current.onSelectSetupMode(WalletSetupMode.Creation);
@@ -20,7 +20,7 @@ describe('useWalletSetupModal', () => {
 
         describe('when Import is selected', () => {
             it("should set mode and move to mod's first step", () => {
-                const { result } = renderHook(() => useWalletSetupModal({ onSetupFinish: jest.fn() }));
+                const { result } = renderHook(() => useWalletSetupModal({ isOpen: true, onSetupFinish: jest.fn() }));
 
                 act(() => {
                     result.current.onSelectSetupMode(WalletSetupMode.Import);
@@ -36,7 +36,7 @@ describe('useWalletSetupModal', () => {
         describe('Import', () => {
             it('should go to next step each time, then call `onSetupFinish` last time', () => {
                 const onSetupFinish = jest.fn();
-                const { result } = renderHook(() => useWalletSetupModal({ onSetupFinish }));
+                const { result } = renderHook(() => useWalletSetupModal({ isOpen: true, onSetupFinish }));
 
                 act(() => result.current.onSelectSetupMode(WalletSetupMode.Import));
 
@@ -55,7 +55,7 @@ describe('useWalletSetupModal', () => {
         describe('Creation', () => {
             it('should go to next step each time, then call `onSetupFinish` last time', () => {
                 const onSetupFinish = jest.fn();
-                const { result } = renderHook(() => useWalletSetupModal({ onSetupFinish }));
+                const { result } = renderHook(() => useWalletSetupModal({ isOpen: true, onSetupFinish }));
 
                 act(() => result.current.onSelectSetupMode(WalletSetupMode.Creation));
 
@@ -72,6 +72,21 @@ describe('useWalletSetupModal', () => {
                 expect(onSetupFinish).toHaveBeenCalledTimes(1);
                 expect(onSetupFinish).toHaveBeenCalledWith();
             });
+        });
+    });
+
+    describe('onMnemonicGenerated', () => {
+        it.todo('should set mnemonic');
+        it.todo('should jump to next step');
+    });
+
+    describe('onSaveNewWallet', () => {
+        it.todo('should set passphrase');
+        it.todo('should call API to create a wallet');
+        it.todo('should jump to next step');
+
+        describe('when passphrase is non-null', () => {
+            it.todo('should call API to create a wallet with passphrase');
         });
     });
 });

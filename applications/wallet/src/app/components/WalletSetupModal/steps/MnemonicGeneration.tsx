@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,12 +6,13 @@ import { Button } from '@proton/atoms/Button';
 import { WalletLogo } from '@proton/components/components';
 import { SECOND, WALLET_APP_NAME } from '@proton/shared/lib/constants';
 
-import { BankCard } from './BankCard';
+import { WasmMnemonic, WasmWordCount } from '../../../../pkg';
+import { ColorGradientCard } from './ColorGradientCard';
 
 import './MnemonicGeneration.scss';
 
 interface Props {
-    onGenerated: () => void;
+    onGenerated: (mnemonic: WasmMnemonic) => void;
 }
 
 const getRandomNumber = (min: number, max: number): number => {
@@ -52,17 +53,27 @@ const Sparkle = () => {
 };
 
 export const MnemonicGeneration = ({ onGenerated }: Props) => {
+    const mnemonicRef = useRef<WasmMnemonic | null>();
+
     useEffect(() => {
-        setTimeout(() => {
-            onGenerated();
+        mnemonicRef.current = new WasmMnemonic(WasmWordCount.Words12);
+    }, []);
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            if (mnemonicRef.current) {
+                onGenerated(mnemonicRef.current);
+            }
         }, 5 * SECOND);
+
+        return () => clearTimeout(timeout);
     }, [onGenerated]);
 
     return (
         <div className="p-6 flex flex-column">
             <span className="block h4 text-bold mx-auto">{c('Wallet setup').t`Welcome to ${WALLET_APP_NAME}`}</span>
 
-            <BankCard width={24}>
+            <ColorGradientCard width={24}>
                 {new Array(40).fill(null).map((_, index) => (
                     <Sparkle key={`sparkle_${index}`} />
                 ))}
@@ -72,10 +83,9 @@ export const MnemonicGeneration = ({ onGenerated }: Props) => {
                     style={{ backdropFilter: 'blur(10px)' }}
                 >
                     <WalletLogo variant="glyph-only" className="mr-1" />
-                    <span className="color-white text-semibold text-rg">{c('Wallet setup')
-                        .t`Creating your wallet...`}</span>
+                    <span className="text-semibold text-rg">{c('Wallet setup').t`Creating your wallet...`}</span>
                 </div>
-            </BankCard>
+            </ColorGradientCard>
 
             <p className="my-0 block text-center color-weak">{c('Wallet setup')
                 .t`Crafting a secure wallet with cryptographic entropy`}</p>
