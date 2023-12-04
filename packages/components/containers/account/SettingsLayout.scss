@@ -5,7 +5,7 @@
 	flex-wrap: nowrap;
 	margin-block-end: 1em;
 
-	@include media('<=small') {
+	@include media('<=#{em(820, 16)}') {
 		flex-direction: column;
 	}
 
