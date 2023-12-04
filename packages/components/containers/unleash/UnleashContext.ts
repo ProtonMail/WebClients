@@ -15,14 +15,12 @@ enum CommonFeatureFlag {
     SignedInAccountRecovery = 'SignedInAccountRecovery',
     KeyTransparencyShowUI = 'KeyTransparencyShowUI',
     KeyTransparencyLogOnly = 'KeyTransparencyLogOnly',
-    EdDSAFaultySignatureCheck = 'EdDSAFaultySignatureCheck'
+    EdDSAFaultySignatureCheck = 'EdDSAFaultySignatureCheck',
 }
 
 enum AccountFlag {
     TrustedDeviceRecovery = 'TrustedDeviceRecovery',
     MaintenanceImporter = 'MaintenanceImporter',
-    BF2023IsExpired = 'BF2023IsExpired',
-    BF2023OfferCheck = 'BF2023OfferCheck',
 }
 
 enum DriveFeatureFlag {
