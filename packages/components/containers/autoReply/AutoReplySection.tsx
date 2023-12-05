@@ -210,11 +210,11 @@ const AutoReplySection = () => {
 
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label htmlFor="autoReplyToggle" className="pb-0 text-semibold">
+                    <label htmlFor="autoReplyToggle" className="text-semibold">
                         {c('Label').t`Auto-reply`}
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt-2">
+                <SettingsLayoutRight isToggleContainer>
                     <Toggle
                         id="autoReplyToggle"
                         loading={enablingLoading}

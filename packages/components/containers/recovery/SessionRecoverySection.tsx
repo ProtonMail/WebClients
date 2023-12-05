@@ -80,7 +80,7 @@ const SessionRecoverySection = () => {
                             </span>
                         </label>
                     </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="flex-1 pt-2">
+                    <SettingsLayoutRight isToggleContainer>
                         <div className="flex items-center">
                             <Toggle
                                 loading={loadingSessionRecovery}
