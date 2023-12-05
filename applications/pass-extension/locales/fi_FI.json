@@ -497,6 +497,9 @@
       "Failed to edit user's access.": [
         "Käyttäjän käyttöoikeuden muutos epäonnistui."
       ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Kohteiden siirto paikasta \"${ payload.content.name }\" ei onnistunut"
+      ],
       "Failed to remove user's access.": [
         "Käyttäjän käyttöoikeuden poisto epäonnistui."
       ],
@@ -734,11 +737,17 @@
       "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
         "${ PASS_APP_NAME }in lukituksen avaus vaatii PIN-koodin"
       ],
+      "Access your passwords on the go with our mobile apps.": [
+        "Mobiilisovelluksillamme tavoitat salasanasi myös liikkeellä ollessasi."
+      ],
       "Admin": [
         "Ylläpito"
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" siirrettiin roskakoriin, eikä se enää ohjaa viestejä postilaatikkoosi."
+      ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Kaikki kohteet paikasta \"${ payload.content.name }\" siirretty onnistuneesti"
       ],
       "All trashed items permanently deleted": [
         "Kaikki roskakorin kohteet poistettiin pysyvästi"
@@ -754,6 +763,9 @@
       ],
       "Auto-lock successfully disabled": [
         "Automaattilukitus poistettiin käytöstä"
+      ],
+      "Autosaved on ${ submissionURL }": [
+        "Automaattitallennettiin osoitteesta ${ submissionURL }"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Voi luoda, muokata, poistaa ja viedä holvin kohteita."
@@ -800,11 +812,17 @@
       "Drop to import": [
         "Tuo pudottamalla"
       ],
+      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
+        "Tuo olemassa olevat salasanasi ${ PASS_APP_NAME }iin helposti."
+      ],
       "Editor": [
         "Muokkaus"
       ],
       "Emptying trash...": [
         "Tyhjennetään roskakoria..."
+      ],
+      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
+        "Ota ${ PASS_APP_NAME } käyttöön yhdistämällä ${ BRAND_NAME }-tilisi"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Syötä vahvistuskoodi. Numero ${ digit }."
@@ -912,6 +930,9 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } on muutakin kuin pelkkä salasanahallinta, sillä se voi salasanojesi lisäksi suojata myös sähköpostiosoitteesi sähköpostialiaksilla. Tietosi ovat päästä päähän -salattuja ${ MAIL_APP_NAME }in käyttämällä tekniikalla ja vain sinä pääset niihin käsiksi."
+      ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Siirretään kaikkia kohteita paikasta \"${ payload.content.name }\""
       ],
       "Multiple vaults": [
         "Useita holveja"
@@ -1727,6 +1748,9 @@
       ],
       "Share with": [
         "Jaa käyttäjille"
+      ],
+      "Switching to ${ PASS_APP_NAME }?": [
+        "Oletko vaihtamassa ${ PASS_APP_NAME }iin?"
       ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Kiitos, kun asensit sovelluksen ${ PASS_APP_NAME }"
