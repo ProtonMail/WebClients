@@ -145,6 +145,7 @@ export type IconName =
     | 'cross-small'
     | 'density-low'
     | 'density-high'
+    | 'dots'
     | 'drive'
     | 'earth'
     | 'emoji'
