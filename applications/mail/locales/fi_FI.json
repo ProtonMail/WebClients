@@ -710,10 +710,10 @@
       "Not saved": [
         "Tallentamaton"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -6252,6 +6252,9 @@
       ],
       "Optional": [
         "Valinnainen"
+      ],
+      "Selected color:": [
+        "Valittu väri:"
       ]
     },
     "Info on errors": {
@@ -7495,6 +7498,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalenteri",
+        "${ maximumNumberOfCalendars } kalenteria"
+      ],
       "Auto-delete spam and trashed messages": [
         "Poista roskakorin ja roskapostin viestit automaattisesti"
       ],
@@ -7594,6 +7601,41 @@
         "Valitse, mitä ${ BRAND_NAME } voi käyttää: tarkastele sähköpostiviestejäsi ja -asetuksiasi, tarkastele ja lataa yhteystietojasi, tarkastele ja lataa kaikkia esityslistoja, joita käytät Google Agendasta."
       ]
     },
+    "Onboarding modal": {
+      "Automatically forward emails": [
+        "Ohjaa sähköpostit automaattisesti"
+      ],
+      "Block email communications from scammers permanently. ${ kbLinkSender }": [
+        "Estä huijareiden sähköpostiviestintä pysyvästi. ${ kbLinkSender }"
+      ],
+      "Block unsavory senders": [
+        "Estä epämiellyttävät lähettäjät"
+      ],
+      "Congratulations on choosing privacy": [
+        "Onnittelut yksityisyyden valinnasta"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
+        "Salaus on niin vahva, että vain sinä ja tarkoitetut vastaanottajat näkevät sähköpostisi. ${ kbLinkEncryption }"
+      ],
+      "For your eyes only": [
+        "Vain silmillesi"
+      ],
+      "Forward Gmail messages to your inbox.": [
+        "Oohjaa Gmail-viestit postilaatikkoosi."
+      ],
+      "Next": [
+        "Seuraava"
+      ],
+      "Protection from trackers": [
+        "Suojaus jäljittäjiltä"
+      ],
+      "Skip": [
+        "Ohita"
+      ],
+      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
+        "Estämme mainostajia ja tiedonkerääjiä profiloimasta sinua. ${ kbLinkPrivacy }"
+      ]
+    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Määritä organisaatiosi, liitä oma verkkotunnuksesi ja luo käyttäjätilit varmistaaksesi, että kaikki organisaatiosi jäsenet on suojattu."
@@ -7601,8 +7643,14 @@
       "Discover all ${ BRAND_NAME } services": [
         "Tutustu kaikkiin ${ BRAND_NAME }-palveluihin"
       ],
+      "Pick a theme": [
+        "Valitse teema"
+      ],
       "Set up your organization": [
         "Määritä organisaatiosi"
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Voit muuttaa teemaasi milloin tahansa asetuksista."
       ]
     },
     "Online accounts": {

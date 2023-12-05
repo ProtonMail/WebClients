@@ -710,10 +710,10 @@
       "Not saved": [
         "No s'ha desat"
       ],
-      "Ok": [
+      "OK": [
         "D'acord"
       ],
-      "OK": [
+      "Ok": [
         "D'acord"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -801,7 +801,7 @@
         "Esborra ${ attachmentName }"
       ],
       "Remove encryption": [
-        "Esborra el xifrat"
+        "Esborra el xifratge"
       ],
       "Remove expiration time": [
         "Esborra el temps de caducitat"
@@ -6196,6 +6196,9 @@
       ],
       "Optional": [
         "Opcional"
+      ],
+      "Selected color:": [
+        "Color seleccionat:"
       ]
     },
     "Info on errors": {
@@ -7439,6 +7442,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendari",
+        "${ maximumNumberOfCalendars } calendaris"
+      ],
       "Auto-delete spam and trashed messages": [
         "Suprimeix automàticament el correu brossa i els missatges enviats a la paperera"
       ],
@@ -7539,6 +7546,9 @@
       "Block unsavory senders": [
         "Bloqueja els remitents no desitjats"
       ],
+      "Congratulations on choosing privacy": [
+        "Felicitats per triar la privacitat"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
         "Xifratge tan fort que només vós i els destinataris escollits poden veure els vostres correus electrònics. ${ kbLinkEncryption }"
       ],
@@ -7547,6 +7557,9 @@
       ],
       "Next": [
         "Següent"
+      ],
+      "Protection from trackers": [
+        "Protecció contra els rastrejadors"
       ],
       "Skip": [
         "Omet"
@@ -7561,6 +7574,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "Descobriu tots els serveis de ${ BRAND_NAME }"
+      ],
+      "Pick a theme": [
+        "Escolliu un tema"
       ],
       "Set up your organization": [
         "Configureu la vostra organització"
@@ -8405,7 +8421,7 @@
         "Accediu al contingut dels serveis de retransmissió, com ara Netflix, Disney+ i Prime Video, des de qualsevol lloc."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per a 10 dominis personalitzats, àlies hide-my-email il·limitats, compartició de calendaris, emmagatzematge al núvol encriptat, compartició de fitxers, i més."
+        "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per a 10 dominis personalitzats, àlies hide-my-email il·limitats, compartició de calendaris, emmagatzematge al núvol encriptat, compartició de fitxers, etc."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inclou suport per a 3 dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, àlies il·limitats de hide-my-email, compartició de calendari i més."
@@ -9364,7 +9380,7 @@
         "Posposa"
       ],
       "Snooze message": [
-        "Missatge de posposició"
+        "Posposa el missatge"
       ],
       "Sort conversations": [
         "Ordenar converses"

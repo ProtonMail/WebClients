@@ -710,10 +710,10 @@
       "Not saved": [
         "Kaydedilmemiş"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -6252,6 +6252,9 @@
       ],
       "Optional": [
         "İsteğe bağlı"
+      ],
+      "Selected color:": [
+        "Seçilmiş renk:"
       ]
     },
     "Info on errors": {
@@ -7495,6 +7498,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } takvim",
+        "${ maximumNumberOfCalendars } takvim"
+      ],
       "Auto-delete spam and trashed messages": [
         "İstenmeyen ve çöp kutularındaki iletileri otomatik olarak silin"
       ],
@@ -7594,6 +7601,41 @@
         "${ BRAND_NAME } uygulamasının nelere erişebileceğini seçin: E-posta iletilerinizi ve ayarlarınızı görüntüleme, kişilerinizi görüntüleme ve indirme, Google Takvim üzerinde eriştiğiniz tüm takvimleri görüntüleme ve indirme."
       ]
     },
+    "Onboarding modal": {
+      "Automatically forward emails": [
+        "E-postaları otomatik olarak iletin"
+      ],
+      "Block email communications from scammers permanently. ${ kbLinkSender }": [
+        "Dolandırıcılardan gelen e-postaları kalıcı olarak engelleyin. ${ kbLinkSender }"
+      ],
+      "Block unsavory senders": [
+        "İstemediğiniz göndericileri engelleme"
+      ],
+      "Congratulations on choosing privacy": [
+        "Gizliliği korumayı seçtiğiniz için teşekkürler"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
+        "Kullanılan şifreleme o kadar güçlü ki e-postalarınızı yalnızca siz ve hedeflediğiniz alıcılar görebilir. ${ kbLinkEncryption }"
+      ],
+      "For your eyes only": [
+        "Yalnızca sizin gözleriniz için"
+      ],
+      "Forward Gmail messages to your inbox.": [
+        "Gmail iletilerini gelen kutunuza iletin."
+      ],
+      "Next": [
+        "Sonraki"
+      ],
+      "Protection from trackers": [
+        "İzleyicilere karşı koruma"
+      ],
+      "Skip": [
+        "Atla"
+      ],
+      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
+        "Reklam verenlerin ve veri toplayıcıların profilinizi çıkarmasını durdurun. ${ kbLinkPrivacy }"
+      ]
+    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Kuruluşunuzun tüm üyelerinin korunduğundan emin olmak için kuruluşunuzu yapılandırın, etki alanı adınızı bağlayın ve hesaplar ekleyin."
@@ -7601,8 +7643,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "Tüm ${ BRAND_NAME } hizmetlerini keşfedin"
       ],
+      "Pick a theme": [
+        "Bir tema seçin"
+      ],
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Tüm ${ BRAND_NAME } hizmetlerine erişmek için sol üstteki uygulama seçiciyi kullanın: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Temanızı istediğiniz zaman ayarlar bölümünden değiştirebilirsiniz."
       ]
     },
     "Online accounts": {

@@ -704,11 +704,11 @@
       "Not saved": [
         "Niet opgeslagen"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Open ${ CALENDAR_APP_NAME }"
@@ -986,6 +986,9 @@
       "Skip verification": [
         "Verificatie overslaan"
       ],
+      "Snooze": [
+        "Uitstellen"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "Sommige afbeeldingen konden niet geladen worden met bescherming tegen tracking."
       ],
@@ -1015,6 +1018,9 @@
       ],
       "This message contains remote content.": [
         "Dit bericht bevat externe inhoud."
+      ],
+      "This weekend": [
+        "Dit weekend"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Om uw e-mails veilig te zoeken, moeten we een kopie van uw berichten downloaden naar uw browser. De aanvankelijke download kan even duren."
@@ -1067,6 +1073,9 @@
       ],
       "Unordered list": [
         "Ongenummerde lijst"
+      ],
+      "Unsnooze": [
+        "Ontsluimeren"
       ],
       "Unstar": [
         "Ster verwijderen"
@@ -5617,6 +5626,9 @@
       "Right-click for options": [
         "Rechtsklik voor opties"
       ],
+      "Sat, ${ formatTime }": [
+        "Zat., ${ formatTime }"
+      ],
       "Saved at ${ dateString }": [
         "Opgeslagen op ${ dateString }"
       ],
@@ -5889,6 +5901,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "U moet een of meerdere beschikbare openbare sleutels vertrouwen, als u adresverificatie wil gebruiken. Dit betreft ook de sleutels die u wil gebruiken voor het versturen. Het voorkomt dat er misbruik gemaakt wordt van de sleutels."
+      ],
+      "Tomorrow, ${ formattedTime }": [
+        "Morgen, ${ formattedTime }"
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Te veel berichten die wachten om te worden verzonden. Wacht tot een ander bericht is verzonden om dit bericht te plannen."
@@ -6192,6 +6207,9 @@
       ],
       "Optional": [
         "Optioneel"
+      ],
+      "Selected color:": [
+        "Geselecteerde kleur:"
       ]
     },
     "Info on errors": {
@@ -7098,6 +7116,12 @@
       "Sign up for free": [
         "Gratis inschrijven"
       ],
+      "Snooze": [
+        "Uitstellen"
+      ],
+      "Snoozed": [
+        "Uitgesteld"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -7429,6 +7453,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } agenda",
+        "${ maximumNumberOfCalendars } agenda's"
+      ],
       "Auto-delete spam and trashed messages": [
         "Automatisch spam en verwijderde berichten verwijderen"
       ],
@@ -7522,6 +7550,32 @@
         "Selecteer waar ${ BRAND_NAME } toegang toe heeft: uw e-mailberichten en -instellingen bekijken, uw contacten bekijken en downloaden, al uw agenda's bekijken en downloaden die u gebruikt vanuit Google Calendar."
       ]
     },
+    "Onboarding modal": {
+      "Block unsavory senders": [
+        "Blokkeer ongewenste afzenders"
+      ],
+      "Congratulations on choosing privacy": [
+        "Gefeliciteerd om voor privacy te kiezen"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
+        "Versleuteling zo sterk dat alleen u en de beoogde ontvangers uw e-mails kunnen bekijken. ${ kbLinkEncryption }"
+      ],
+      "For your eyes only": [
+        "Alleen voor uw ogen"
+      ],
+      "Next": [
+        "Volgende"
+      ],
+      "Protection from trackers": [
+        "Bescherming van trackers"
+      ],
+      "Skip": [
+        "Overslaan"
+      ],
+      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
+        "We stoppen adverteerders en gegevens verzamelaars om een profiel van u te maken. ${ kbLinkPrivacy }"
+      ]
+    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configureer uw organisatie, koppel uw domeinnaam, en maak accounts aan om ervoor te zorgen dat alle leden van uw organisatie beveiligd zijn."
@@ -7529,8 +7583,14 @@
       "Discover all ${ BRAND_NAME } services": [
         "Ontdek alle ${ BRAND_NAME }-diensten"
       ],
+      "Pick a theme": [
+        "Thema selecteren"
+      ],
       "Set up your organization": [
         "Stel uw organisatie in"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Gebruik de app-kiezer linksboven voor de toegang tot alle ${ BRAND_NAME }-diensten: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "Online accounts": {
@@ -9297,6 +9357,9 @@
       "Sign out": [
         "Uitloggen"
       ],
+      "Snooze": [
+        "Uitstellen"
+      ],
       "Sort conversations": [
         "Gesprekken sorteren"
       ],
@@ -9559,6 +9622,17 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Uw gratis proefversie eindigt op ${ textDate }. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Man., ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "Zat., ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "Zon., ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {
