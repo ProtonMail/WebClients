@@ -82,15 +82,11 @@ const createGenericWindow = (session: Session, url: string, mapKey: APP, visible
     window.on("close", (ev) => {
         setWindowState(window.getBounds(), mapKey);
         if (isWindows) {
-            console.log("close");
-
             window.removeAllListeners("close");
             window.destroy();
 
             // Close the application if all windows are closed
             if (areAllWindowsClosedOrHidden()) {
-                console.log("quit");
-
                 app.quit();
             }
         } else if (isMac) {

@@ -6,6 +6,8 @@ EOF`
 
 if [[ "$CHOICE" == "Uninstall" ]]
 then
+  osascript -e 'quit app "Proton Mail"'
+
   rm -rf $HOME/Library/Application\ Support/Proton\ Mail/
   rm -rf $HOME/Library/Logs/Proton\ Mail/
   rm -rf Applications/Proton\ Mail.app

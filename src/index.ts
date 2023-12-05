@@ -85,7 +85,6 @@ app.on("web-contents-created", (_ev, contents) => {
     contents.on("will-attach-webview", preventDefault);
 
     contents.on("will-navigate", (details) => {
-        console.log("will-navigate", contents.getURL());
         if (!isHostAllowed(details.url, app.isPackaged)) {
             return preventDefault(details);
         }
