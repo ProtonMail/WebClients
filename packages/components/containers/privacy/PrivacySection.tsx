@@ -41,7 +41,7 @@ const PrivacySection = () => {
                         <span className="mr-2">{c('Label').t`Collect usage diagnostics`}</span>
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt-2">
+                <SettingsLayoutRight isToggleContainer>
                     <Toggle
                         id="telemetry"
                         checked={telemetryEnabled}
@@ -64,7 +64,7 @@ const PrivacySection = () => {
                         <span className="mr-2">{c('Label').t`Send crash reports`}</span>
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt-2">
+                <SettingsLayoutRight isToggleContainer>
                     <Toggle
                         id="crashReports"
                         checked={crashReportsEnabled}
