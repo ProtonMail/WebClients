@@ -773,8 +773,39 @@
       ]
     },
     "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } ストレージ"
+      ],
+      "Ad-blocker and malware protection": [
+        "広告ブロッカーとマルウェア防止"
+      ],
       "Extended version history": [
         "拡張バージョン履歴"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }と${ CALENDAR_SHORT_APP_NAME }プレミアム"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium Password Manager": [
+        "プレミアムパスワードマネージャー"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30 日間返金保証"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "1 件の独自メールドメイン対応、10 件のメールアドレス、10 件の hide-my-email エイリアス、カレンダー共有などが含まれます。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "暗号化されたクラウドストレージでファイルの安全性を保ちましょう。バージョン履歴、暗号化済みファイル共有などが含まれています。"
       ]
     },
     "Bug category": {
@@ -2071,6 +2102,9 @@
       ]
     },
     "Description": {
+      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
+        "カテゴリ別またはエネルギーレベル別にイベントを色分けすることで、効率を高め、時間を追跡します。 有料プランでは、これだけでなくさらに多くの機能を利用できます。"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "連絡先を復号しています… これには数分かかります。完了するとエクスポートされたすべての連絡先がダウンロードできるようになります。"
       ],
@@ -4992,6 +5026,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendars": [
+        "${ maximumNumberOfCalendars } 件のカレンダー"
+      ],
       "Auto-delete spam and trashed messages": [
         "迷惑メールとごみ箱のメッセージを自動削除"
       ],
@@ -5026,6 +5063,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "SimpleLogin by ${ BRAND_NAME } で無制限にエイリアスを作成"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "メッセージをスヌーズし、必要なときに再通知します"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
@@ -5897,6 +5937,9 @@
       "Add your country's public holidays to your calendar.": [
         "あなたの国の祝日をカレンダーに追加します。"
       ],
+      "Color-coding is here!": [
+        "色分けはこちら！"
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "新しい検索機能でお探しの予定を簡単に見つけることができます。"
       ],
@@ -5911,6 +5954,9 @@
       ],
       "Search for events": [
         "予定を検索"
+      ],
+      "With customizable event colors, you can color-code the chaos and conquer your day.": [
+        "カスタマイズ可能なイベントの色を使用して、混乱を色分けして、一日を征服できます。"
       ]
     },
     "Storage": {
@@ -6213,6 +6259,9 @@
       ],
       "Add participants": [
         "参加者を追加"
+      ],
+      "Add some color to your day": [
+        "あなたの一日に彩りを添えましょう"
       ],
       "Add to ${ groupCount } groups": [
         "${ groupCount } グループに追加"

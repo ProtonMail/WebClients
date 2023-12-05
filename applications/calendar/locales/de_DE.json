@@ -2178,6 +2178,9 @@
       ]
     },
     "Description": {
+      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
+        "Steigere deine Effizienz und verfolge deine Zeit, indem du Termine nach Kategorie oder Energielevel farblich kennzeichnest. Dies und vieles mehr erhältst du mit einem kostenpflichtigen Abonnement."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Kontakte werden entschlüsselt… Dies kann einige Minuten dauern. Wenn der Prozess abgeschlossen ist, kannst du die Datei mit allen deinen exportierten Kontakten herunterladen."
       ],
@@ -4348,6 +4351,11 @@
         "Deine Systemzeitzone scheint sich auf ${ timezone } geändert zu haben. Möchtest du deine Zeitzoneneinstellung aktualisieren?"
       ]
     },
+    "info": {
+      "Selected color:": [
+        "Ausgewählte Farbe:"
+      ]
+    },
     "Info calendar search": {
       "You can either update your search query or close search to go back to calendar views": [
         "Du kannst entweder deine Suchanfrage aktualisieren oder die Suche schließen, um zur Kalenderansicht zurückzukehren."
@@ -5175,6 +5183,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } Kalender",
+        "${ maximumNumberOfCalendars } Kalender"
+      ],
       "Auto-delete spam and trashed messages": [
         "Automatisches Bereinigen von Spam und gelöschten Nachrichten"
       ],
@@ -5424,8 +5436,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "Entdecke alle ${ BRAND_NAME }-Dienste"
       ],
+      "Pick a theme": [
+        "Wähle ein Theme"
+      ],
       "Set up your organization": [
         "Organisation einrichten"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Verwende die App-Auswahl oben links, um auf alle ${ BRAND_NAME }-Dienste zuzugreifen: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Du kannst dein Farbschema jederzeit in den Einstellungen ändern."
       ]
     },
     "Option": {
@@ -6459,6 +6480,9 @@
       ],
       "Add participants": [
         "Teilnehmer hinzufügen"
+      ],
+      "Add some color to your day": [
+        "Bring etwas Farbe in deinen Tag"
       ],
       "Add to ${ groupCount } group": [
         "Zu ${ groupCount } Gruppe hinzufügen",
