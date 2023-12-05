@@ -704,10 +704,10 @@
       "Not saved": [
         "Nincs mentve"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1018,6 +1018,9 @@
       ],
       "This message contains remote content.": [
         "Ez az üzenet \"Távoli tartalmat\" tartalmaz."
+      ],
+      "This weekend": [
+        "Ezen a hétvégén"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Az e-mailekben való biztonságos kereséshez, először le kell tölteni az üzeneteket a böngészőbe. Az első letöltés eltarthat egy kis ideig."
@@ -5833,6 +5836,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "A cím hitelesítés használatához egy vagy több nyilvános kulcsot megbízhatóként kell megjelölnie, beleértve azt is amelyiket a küldéshez szeretné használni. Ez megakadályozza hamisított titkosítási kulcsok használatát."
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "Holnap, ${ formattedTime }"
+      ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Túl sok üzenet vár elküldésre. Várjon amíg elküldődik egy üzenet, mielőtt ezt ütemezné."
       ],
@@ -7375,6 +7381,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } naptár",
+        "${ maximumNumberOfCalendars } naptár"
+      ],
       "Auto-delete spam and trashed messages": [
         "A Levélszemét és a Lomtár mappában lévő üzenetek automatikus törlése"
       ],
@@ -7466,6 +7476,26 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "Válassza ki, ${ BRAND_NAME } mihez tud hozzáférni: megnézheti az e-mailjeit és beállításait, megnézheti és letöltheti a kapcsolatait és letöltheti az összes naptárát, amihez a Google Naptárból hozzá tud férni."
+      ]
+    },
+    "Onboarding modal": {
+      "Block unsavory senders": [
+        "Blokkolja a kellemetlen feladókat"
+      ],
+      "Congratulations on choosing privacy": [
+        "Gratulálunk, hogy a magánszféra védelmét választotta"
+      ],
+      "For your eyes only": [
+        "Csak Önnek látható"
+      ],
+      "Next": [
+        "Következő"
+      ],
+      "Protection from trackers": [
+        "Védelem a nyomkövetőkkel szemben"
+      ],
+      "Skip": [
+        "Kihagyás"
       ]
     },
     "Onboarding Proton": {

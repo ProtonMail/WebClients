@@ -2195,6 +2195,9 @@
       ]
     },
     "Description": {
+      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
+        "Creșteți eficiența și urmăriți-vă timpul prin marcarea evenimentelor prin culori în funcție de categorie sau de nivelurile de energie personală. Obțineți asta și multe altele cu un plan cu plată."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Se decriptează contactele… Ar putea dura câteva minute. După finalizarea operației, veți putea descărca fișierul cu contactele exportate."
       ],
@@ -4419,6 +4422,11 @@
         "Fusul orar al sistemului pare să se fi schimbat la ${ timezone }. Actualizați fusul orar preferat?"
       ]
     },
+    "info": {
+      "Selected color:": [
+        "Culoare selectată:"
+      ]
+    },
     "Info calendar search": {
       "You can either update your search query or close search to go back to calendar views": [
         "Puteți modifica textul căutat sau să închideți căutarea și să reveniți la afișarea calendarului."
@@ -5256,6 +5264,11 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendar",
+        "${ maximumNumberOfCalendars } calendare",
+        "${ maximumNumberOfCalendars } de calendare"
+      ],
       "Auto-delete spam and trashed messages": [
         "Ștergere automată mesaje nedorite și din gunoi"
       ],
@@ -6264,6 +6277,9 @@
       "Add your country's public holidays to your calendar.": [
         "Adăugați sărbătorile publice ale propriei țări în calendarul personal."
       ],
+      "Color-coding is here!": [
+        "Marcarea prin culori este aici!"
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Căutați ușor evenimentul dorit cu noua funcție de căutare."
       ],
@@ -6278,6 +6294,9 @@
       ],
       "Search for events": [
         "Căutare evenimente"
+      ],
+      "With customizable event colors, you can color-code the chaos and conquer your day.": [
+        "Prin personalizarea evenimentelor prin culori, vă ajută să vă gestionați mai bine programul."
       ]
     },
     "Storage": {
@@ -6603,6 +6622,9 @@
       ],
       "Add participants": [
         "Adăugare participanți"
+      ],
+      "Add some color to your day": [
+        "Adaugă puțină culoare zilei"
       ],
       "Add to ${ groupCount } group": [
         "Adăugare la un grup",

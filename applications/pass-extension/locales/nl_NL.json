@@ -65,6 +65,12 @@
       "Continue": [
         "Doorgaan"
       ],
+      "Continue without pinning": [
+        "Doorgaan zonder vastpinnen"
+      ],
+      "Copy & fill in": [
+        "Kopieer en vul in"
+      ],
       "Copy and close": [
         "Kopiëren en sluiten"
       ],
@@ -176,6 +182,9 @@
       "Import": [
         "Importeren"
       ],
+      "Import your passwords": [
+        "Uw wachtwoorden importeren"
+      ],
       "Importing": [
         "Importeren"
       ],
@@ -232,6 +241,9 @@
       ],
       "Move to trash": [
         "Naar prullenbak verplaatsen"
+      ],
+      "Not now": [
+        "Niet nu"
       ],
       "OK": [
         "OK"
@@ -341,6 +353,9 @@
       "Update vault": [
         "Kluis bijwerken"
       ],
+      "Updating": [
+        "Bijwerken"
+      ],
       "Upgrade": [
         "Upgraden"
       ],
@@ -388,6 +403,11 @@
         "Uitvouwen"
       ]
     },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Lijst van domeinen waar bepaalde automatische functies in ${ PASS_SHORT_APP_NAME } (Automatisch invullen, automatisch suggesties geven, automatisch opslaan) niet mogen uitgevoerd worden. ${ infoText }"
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider }-bestand kon niet worden verwerkt. ${ errorDetail }"
@@ -403,6 +423,9 @@
       ],
       "Auto-lock could not be disabled": [
         "Auto-vergrendeken kon niet uitgeschakeld worden"
+      ],
+      "Cannot create alias (${ error }).": [
+        "Kan alias niet aanmaken (${ error })."
       ],
       "Cannot send invitation to this address at the moment": [
         "Kan op dit moment geen uitnodiging sturen naar dit adres"
@@ -515,6 +538,9 @@
       ],
       "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
         "Verleen de vereiste extensie-toestemmingen aan ${ PASS_APP_NAME } om verder te gaan."
+      ],
+      "Please pin the extension or select \"Continue without pinning\".": [
+        "Pin de extensie vast of kies \"Doorgaan zonder vastpinnen\"."
       ],
       "Request timed out": [
         "Reactietijd verzoek overschreden"
@@ -662,6 +688,9 @@
         "${ memberCount } lid",
         "${ memberCount } leden"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } zal het favicon van het item weergeven via de geanonimiseerde afbeeldingsproxy van ${ BRAND_NAME }."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } zal enkel logins, notities en kredietkaarten importeren."
       ],
@@ -702,6 +731,9 @@
       "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
         "Voor toegang tot ${ PASS_APP_NAME } is een pincode vereist om uw sessie te ontgrendelen"
       ],
+      "Access your passwords on the go with our mobile apps.": [
+        "Krijg onderweg toegang tot uw wachtwoorden met onze mobiele apps."
+      ],
       "Admin": [
         "Beheerder"
       ],
@@ -722,6 +754,9 @@
       ],
       "Auto-lock successfully disabled": [
         "Auto-vergrendelen succesvol ingeschakeld"
+      ],
+      "Autosaved on ${ submissionURL }": [
+        "Automatisch bewaard op ${ submissionURL }"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Kan items aanmaken, bewerken, verwijderen en exporteren in deze kluis."
@@ -744,6 +779,9 @@
       "Copied to clipboard": [
         "Gekopieerd naar het klembord"
       ],
+      "Creating alias...": [
+        "Alias aanmaken..."
+      ],
       "Credit cards, Custom fields": [
         "Kredietkaarten, Aangepaste velden"
       ],
@@ -756,17 +794,26 @@
       "Deleting \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" verwijderen"
       ],
+      "Discover ${ PASS_APP_NAME } Youtube Video": [
+        "Ontdek ${ PASS_APP_NAME } YouTube-video"
+      ],
       "Drop file here to upload": [
         "Sleep bestand hier om te uploaden"
       ],
       "Drop to import": [
         "Neerzetten om te importeren"
       ],
+      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
+        "Importeer eenvoudig uw bestaande wachtwoorden in ${ PASS_APP_NAME }."
+      ],
       "Editor": [
         "Bewerker"
       ],
       "Emptying trash...": [
         "Prullenbak leegmaken..."
+      ],
+      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
+        "Schakel ${ PASS_APP_NAME } in door uw ${ BRAND_NAME }-account te verbinden"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Voer verificatiecode in. Cijfer ${ digit }."
@@ -789,8 +836,14 @@
       "Generated passwords will be stored for a period of one day.": [
         "Gegenereerde wachtwoorden zullen voor een dag bewaard worden."
       ],
+      "Generating alias...": [
+        "Alias genereren..."
+      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Krijg ongelimiteerde aliassen, geniet van exclusieve functies, en ondersteun ons door te abonneren op Pass Plus."
+      ],
+      "Here you will find all the necessary information to get you started.": [
+        "Hier vindt u alle nodige informatie om aan de slag te gaan."
       ],
       "Import in progress:": [
         "Bezig met importeren:"
@@ -857,6 +910,9 @@
       "Loading": [
         "Laden"
       ],
+      "Loading ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } laden"
+      ],
       "Loading...": [
         "Laden..."
       ],
@@ -871,6 +927,12 @@
       ],
       "Multiple vaults": [
         "Meerdere kluizen"
+      ],
+      "Never": [
+        "Nooit"
+      ],
+      "No login found": [
+        "Geen login gevonden"
       ],
       "None": [
         "Geen"
@@ -887,11 +949,17 @@
       "Pass Plus trial": [
         "Proton Pass Plus-proefversie"
       ],
+      "Password copied": [
+        "Wachtwoord gekopieerd"
+      ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Wachtwoorden ouder dan een dag worden automatisch gewist uit geschiedenis."
       ],
       "Pending access to the shared data": [
         "Toegang tot gedeelde data in afwachting"
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "Zet ${ PASS_APP_NAME } vast op uw werkbalk"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Pincode succesvol geregistreerd. Gebruik ze om ${ PASS_APP_NAME } te ontgrendelen"
@@ -920,6 +988,9 @@
       "Restoring trashed items...": [
         "Verwijderde items herstellen..."
       ],
+      "Save login": [
+        "Bewaar login"
+      ],
       "Select destination vault": [
         "Kies bestemmingskluis"
       ],
@@ -940,6 +1011,9 @@
       ],
       "Share with 10 others": [
         "Deel met 10 anderen"
+      ],
+      "Sign in or create an account to continue.": [
+        "Log in of maak een account aan om verder te gaan."
       ],
       "Sign in to your account": [
         "Inloggen bij uw account"
@@ -996,6 +1070,12 @@
       "Unlock it with your PIN to access the settings": [
         "Ontgrendel het met uw pincode om toegang te krijgen tot de instellingen"
       ],
+      "Update login": [
+        "Update login"
+      ],
+      "Upgrade ${ PASS_APP_NAME }": [
+        "Upgrade ${ PASS_APP_NAME }"
+      ],
       "Use vaults to share this item with others.": [
         "Gebruik kluizen om dit item met anderen te delen."
       ],
@@ -1016,6 +1096,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Kluis \"${ share.content.name }\" werd verwijderd"
+      ],
+      "Verification code": [
+        "Verificatiecode"
       ],
       "Viewer": [
         "Bekijken"
@@ -1053,6 +1136,9 @@
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "U gebruikt deze pincode om ${ PASS_APP_NAME } te ontgrendelen zodra deze automatisch wordt vergrendeld na een periode van inactiviteit."
+      ],
+      "You're about to create": [
+        "U staat op het punt volgende aan te maken"
       ],
       "You're invited to a vault.": [
         "U bent uitgenodigd tot een kluis."
@@ -1280,6 +1366,9 @@
       "Modified": [
         "Gewijzigd"
       ],
+      "More than a month": [
+        "Meer dan een maand"
+      ],
       "Most recent": [
         "Meest recent"
       ],
@@ -1465,6 +1554,9 @@
       "Hyphens": [
         "Koppeltekens"
       ],
+      "Memorizable Password": [
+        "Memorabel wachtwoord"
+      ],
       "Numbers": [
         "Nummers"
       ],
@@ -1598,8 +1690,17 @@
       "Enter your PIN": [
         "Voer uw pincode in"
       ],
+      "Fill & copy password": [
+        "Wachtwoord invullen en kopiëren"
+      ],
+      "Get the mobile apps": [
+        "Download de mobiele apps"
+      ],
       "Grant permissions": [
         "Toestemmingen verlenen"
+      ],
+      "Hide my email": [
+        "Hide-my-email"
       ],
       "Import - ${ date }": [
         "Importeren - ${ date }"
@@ -1609,6 +1710,9 @@
       ],
       "Leave vault ?": [
         "De kluis verlaten?"
+      ],
+      "Log in as...": [
+        "Log in als..."
       ],
       "Low disk space": [
         "Weinig schijfruimte"
@@ -1631,6 +1735,9 @@
       "Permanently remove all items ?": [
         "Alle items permanent verwijderen?"
       ],
+      "Pin the extension": [
+        "Extensie vastpinnen"
+      ],
       "Secure your data": [
         "Beveilig uw gegevens"
       ],
@@ -1639,6 +1746,15 @@
       ],
       "Share with": [
         "Deel met"
+      ],
+      "Switching to ${ PASS_APP_NAME }?": [
+        "Stapt u over naar ${ PASS_APP_NAME }?"
+      ],
+      "Thank you for installing ${ PASS_APP_NAME }": [
+        "Bedankt voor het installeren van ${ PASS_APP_NAME }"
+      ],
+      "The extension is now ready to use.": [
+        "De extensie is nu klaar voor gebruik."
       ],
       "Transfer ownership": [
         "Eigendom overdragen"
@@ -1649,8 +1765,14 @@
       "Unlock ${ brandNameJSX }": [
         "Ontgrendel ${ brandNameJSX }"
       ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Ontgrendel ${ PASS_APP_NAME }"
+      ],
       "Update available": [
         "Update beschikbaar"
+      ],
+      "Use my email": [
+        "Gebruik mijn e-mail"
       ],
       "Vault shared with you": [
         "Kluis gedeeld met u"
@@ -1783,6 +1905,9 @@
       "Trash alias ?": [
         "Prullenbak alias?"
       ],
+      "Unable to save": [
+        "Kan niet opslaan"
+      ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Kan niet inloggen bij ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
@@ -1812,6 +1937,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "U zult geen toegang meer hebben tot deze kluis. Om opnieuw deel te nemen, heeft u een nieuwe uitnodiging nodig."
+      ],
+      "Your plan does not allow you to create more aliases": [
+        "Met uw abonnement kunt u niet meer aliassen maken"
+      ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Met uw abonnement kunt u alleen automatisch aanvullen vanuit uw eerste twee kluizen"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Met uw abonnement kunt u niet meerdere kluizen maken. Alle items worden geïmporteerd in uw eerste kluis. Upgrade uw abonnement om in meerdere kluizen te importeren."

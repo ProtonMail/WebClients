@@ -2069,6 +2069,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" ya existe"
       ],
+      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
+        "Se actualizó ${ DRIVE_APP_NAME }. Vuelva a cargar la página."
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. También puede comprobar nuestra ${ statusPageLink }"
       ],
@@ -2226,6 +2229,9 @@
       ],
       "Passwords do not match": [
         "Las contraseñas no coinciden"
+      ],
+      "Photos upload is temporarily disabled. Please try again later": [
+        "La carga de imágenes está temporalmente desactivada. Intente de nuevo más tarde."
       ],
       "Please activate your search again": [
         "Active de nuevo su búsqueda"

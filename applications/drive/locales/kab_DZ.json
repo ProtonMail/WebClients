@@ -22,6 +22,9 @@
       "Add address": [
         "Rnu tansa"
       ],
+      "Add birthday": [
+        "Rnu azemz n tlalit"
+      ],
       "Add contact": [
         "Rnu anermis"
       ],
@@ -36,6 +39,9 @@
       ],
       "Add new group": [
         "Rnu agraw amaynut"
+      ],
+      "Add note": [
+        "Rnu tazmilt"
       ],
       "Add phone number": [
         "Rnu uṭṭun n usawal"
@@ -147,6 +153,9 @@
       ],
       "Continue with Google": [
         "Kemmel s Google"
+      ],
+      "Continue with Outlook": [
+        "Kemmel s Outlook"
       ],
       "Copy address": [
         "Nɣel tansa"
@@ -342,6 +351,9 @@
       "Import from .csv or vCard": [
         "Kter si .csv neɣ vCard"
       ],
+      "Import from Google": [
+        "Kter seg Google"
+      ],
       "Learn more": [
         "Issin ugar"
       ],
@@ -350,6 +362,9 @@
       ],
       "Load image": [
         "Sali-d tugniwin"
+      ],
+      "Loading link": [
+        "Asali n useɣwen"
       ],
       "Manage folders": [
         "Sefrek ikaramen"
@@ -468,6 +483,9 @@
       "Report a problem": [
         "Azen aneqqis n wugur"
       ],
+      "Report an issue": [
+        "Azen aneqqis ɣef ugur"
+      ],
       "Request a feature": [
         "Suter tamahilt"
       ],
@@ -581,6 +599,9 @@
       ],
       "Skip verification": [
         "Zgel asenqed"
+      ],
+      "Start": [
+        "Bdu"
       ],
       "Start import": [
         "Bdu taktert"
@@ -764,6 +785,25 @@
         "Tadyant ur nettusefrak ara"
       ]
     },
+    "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } n uḥraz"
+      ],
+      "1 user": [
+        "1 useqdac"
+      ],
+      "6 users": [
+        "6 yiseqdacen"
+      ],
+      "Premium Password Manager": [
+        "Amsefrak n wawal uffir premium"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Aɣram ɣef 30 n wussan yettwaḍmen"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Ugur n usnas"
@@ -928,8 +968,14 @@
       "Birthday": [
         "Amulli"
       ],
+      "Display name": [
+        "Isem n uskan"
+      ],
       "Email": [
         "Imayl"
+      ],
+      "First name": [
+        "Isem"
       ],
       "Gender": [
         "Taswit"
@@ -939,6 +985,9 @@
       ],
       "Language": [
         "Tutlayt"
+      ],
+      "Last name": [
+        "Isem n tmagit"
       ],
       "Logo": [
         "Alugu"
@@ -2371,6 +2420,12 @@
         "(ulac azwel)"
       ]
     },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } ccḍen",
+        "${ countOfFailedLinks } ccḍen"
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 TAṬ seg uḥraz asemday"
@@ -2829,6 +2884,12 @@
         "${ doneUploadsCount } yuli",
         "${ doneUploadsCount } ulin"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } ɣef App Store"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } ɣef Play Store"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } yecceḍ",
         "${ errorCount } ccḍen"
@@ -2858,6 +2919,10 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } seg ${ providerCalendars.length } n uwitay",
         "${ selectedCalendarsTotal } seg ${ providerCalendars.length } n yiwitayen"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } yettwafernen",
+        "${ selectedCount } yettwafernen"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } d akaram yettwafernen",
@@ -3480,6 +3545,9 @@
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "Aseɣwen-a dayen ad yens. Yiwen ur izemmer ad yekcem ɣer ukaram inek•inem s useɣwen-a. Akken ad tebḍuḍ akaram tikkelt-nniḍen, ilaq-ak•am aseɣwen amaynut."
       ],
+      "This month": [
+        "Ayyur-a"
+      ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Ayagi ad ikkes aseɣwen yerna ad ikkes adduf ɣer afaylu-inek neɣ akaram i yal yiwen yesɛan aseɣwen-nni.",
         "Ayagi ad ikkes aseɣwen yerna ad ikkes adduf ɣer ifuyla-inek neɣ ikaramen i yal yiwen yesɛan aseɣwen-nni."
@@ -3526,6 +3594,9 @@
       "Trash": [
         "Taqecwalt"
       ],
+      "Trash is empty": [
+        "Taqecwalt d tilemt"
+      ],
       "Unknown error": [
         "Tuccḍa tarussint"
       ],
@@ -3537,6 +3608,9 @@
       ],
       "Unsupported file": [
         "Afaylu ur yettwadhel ara"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Alamma d ${ FAMILY_MAX_USERS } yiseqdacen"
       ],
       "Updating drive search...": [
         "Akeqqem n unadi n yimeɣri..."
@@ -4032,6 +4106,9 @@
       "Phone number": [
         "Uṭṭun n tiliɣri"
       ],
+      "Photo": [
+        "Tawlaft"
+      ],
       "Please provide full details to help us take appropriate action": [
         "Ttxil-k mudd-d akk umlan ilaqen i wakken ad aɣ-yall ad neg ayen ilaqen."
       ],
@@ -4197,6 +4274,9 @@
       "Pay invoice": [
         "Xelleṣ tafaturt"
       ],
+      "Photos": [
+        "Tiwlafin"
+      ],
       "Reactivate now": [
         "Rmed tura"
       ],
@@ -4301,6 +4381,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } uwitay",
+        "${ maximumNumberOfCalendars } yiwitayen"
+      ],
       "Calendar sharing": [
         "Beṭṭu n uwitay"
       ],
@@ -4480,6 +4564,9 @@
       "File or folder is missing a name": [
         "Afaylu neɣ akaram ixuṣṣ-as yisem"
       ],
+      "Link copied to clipboard": [
+        "Aseɣwen yettwanɣel ɣer ɣefwafus"
+      ],
       "Move ${ itemsToMoveCount } file": [
         "Smutti ${ itemsToMoveCount } n ufaylu",
         "Smutti ifuyla ${ itemsToMoveCount }"
@@ -4641,6 +4728,9 @@
       "Filter groups": [
         "Sti igrawen"
       ],
+      "First name": [
+        "Isem"
+      ],
       "Group name": [
         "Isem n ugraw"
       ],
@@ -4748,6 +4838,45 @@
         "Ali"
       ]
     },
+    "session_recovery:available:action": {
+      "Reset password": [
+        "Ales awennez n wawal uffir"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Please generate keys before you try to change your password": [
+        "Ttxil sirew-d tisura send ad tɛerḍeḍ ad tbeddeleḍ awal-inek n uɛeddi"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } n wass",
+        "${ timeRemaining.inDays } n wussan"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } n usrag",
+        "${ timeRemaining.inHours } n yisragen"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Got it": [
+        "Gziɣ-t"
+      ],
+      "Learn more": [
+        "Issin ugar"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } n usrag",
+        "${ gracePeriodHoursRemaining } n yisragen"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Awennez n wawal uffir"
+      ]
+    },
     "Signing preference for emails": {
       "Don't sign": [
         "Ur sizmil ara"
@@ -4797,6 +4926,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 useqdac"
+      ],
       "3 TB": [
         "3 TAṬ"
       ],
@@ -4842,6 +4974,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } wayyur",
+        "${ n } wayyuren"
+      ],
       "/ month": [
         "/ n wayyur"
       ],
@@ -4884,6 +5020,9 @@
       ]
     },
     "Storage": {
+      "Get more storage": [
+        "Awi ugar n uḥraz"
+      ],
       "Release notes": [
         "Tizmilin n llqem"
       ],
@@ -5003,6 +5142,9 @@
       "Display name": [
         "Isem ara d-yettwaskanen"
       ],
+      "First name": [
+        "Isem"
+      ],
       "Import": [
         "Kter"
       ],
@@ -5088,6 +5230,9 @@
       ],
       "Are you sure you want to close the preview?": [
         "D tidet tebɣiḍ ad tmedleḍ taskant?"
+      ],
+      "Birthday": [
+        "Amulli"
       ],
       "Browser might run out of memory": [
         "Yezmer ad tfakk tkatut n yiminig"
@@ -5306,6 +5451,9 @@
       "No results found": [
         "Ulac igmaḍ"
       ],
+      "Notes": [
+        "Tizmilin"
+      ],
       "Number of items": [
         "Amḍan n yiferdisen"
       ],
@@ -5323,6 +5471,9 @@
       ],
       "Phone numbers": [
         "Uṭṭunen n tiliɣṛi"
+      ],
+      "Photos": [
+        "Tiwlafin"
       ],
       "Preview": [
         "Taskant"

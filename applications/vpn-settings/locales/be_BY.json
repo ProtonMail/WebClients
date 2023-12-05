@@ -749,7 +749,7 @@
         "Эканомце з прапановамі \"Кібертыдня\" на высакахуткасным швейцарскім VPN"
       ],
       "Save with End of Year deals on a high-speed Swiss VPN": [
-        "Эканомце з прапановамі \"Канец года\" на высакахуткасным швейцарскім VPN"
+        "Эканомце са спецыяльнай прапановай, якая прысвечана канцу года на высакахуткасным швейцарскім VPN"
       ],
       "Select your Black Friday offer": [
         "Выберыце прапанову \"Чорнай пятніцы\""
@@ -758,7 +758,7 @@
         "Выберыце прапанову \"Кібертыдзень\""
       ],
       "Select your End of Year offer": [
-        "Выберыце прапанову \"Канец года\""
+        "Выберыце прапанову прысвечаную канцу года"
       ]
     },
     "bf2023: info": {
@@ -5756,10 +5756,10 @@
         "Стварэнне вашага ўліковага запісу"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Усяго за **${ relativePrice } у месяц** вы атрымаеце доступ да прэміяльнага менеджара пароляў ${ BRAND_NAME }!"
+        "Усяго за **${ relativePrice } дадатковай платы ў месяц** вы атрымаеце доступ да прэміяльнага менеджара пароляў ${ BRAND_NAME }!"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Усяго за **${ relativePrice } у месяц** вы атрымаеце доступ да прэміяльнага сэрвісу VPN ${ BRAND_NAME }!"
+        "Усяго за **${ relativePrice } дадатковай платы ў месяц** вы атрымаеце доступ да прэміяльнага сэрвісу VPN ${ BRAND_NAME }!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Усяго за **${ relativePrice } у месяц** вы атрымаеце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }!"
@@ -6757,6 +6757,9 @@
       "Code sent to ${ methodTo }": [
         "Код адпраўлены на ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Скапіявана ў буфер абмену"
+      ],
       "Credits added": [
         "Крэдыты дабаўлены"
       ],
@@ -6793,11 +6796,17 @@
       "Keys updated": [
         "Ключы абноўлены"
       ],
+      "Link copied to clipboard": [
+        "Спасылка скапіявана ў буфер абмену"
+      ],
       "Locale updated": [
         "Лакаль абноўлена"
       ],
       "Organization activated": [
         "Арганізацыя актывавана"
+      ],
+      "Password copied to clipboard": [
+        "Пароль скапіяваны ў буфер абмену"
       ],
       "Password updated": [
         "Пароль абноўлены"
@@ -6822,6 +6831,9 @@
       ],
       "User updated": [
         "Карыстальнік абноўлены"
+      ],
+      "Username copied to clipboard": [
+        "Імя карыстальніка скапіявана ў буфер абмену"
       ],
       "Verification successful": [
         "Паспяхова праверана"

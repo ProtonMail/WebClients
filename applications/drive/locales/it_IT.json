@@ -2069,6 +2069,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" esiste già"
       ],
+      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
+        "${ DRIVE_APP_NAME } è stato aggiornato. Aggiorna la pagina."
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Puoi anche controllare il nostro ${ statusPageLink }"
       ],
@@ -2226,6 +2229,9 @@
       ],
       "Passwords do not match": [
         "Le password non corrispondono"
+      ],
+      "Photos upload is temporarily disabled. Please try again later": [
+        "Il caricamento delle foto è temporaneamente disabilitato. Riprova più tardi"
       ],
       "Please activate your search again": [
         "Attiva nuovamente la tua ricerca"
@@ -4743,7 +4749,7 @@
         "Modificato"
       ],
       "Move to Archive": [
-        "Sposta in archivio"
+        "Sposta nell'archivio"
       ],
       "Move to Inbox": [
         "Sposta nella posta in arrivo"

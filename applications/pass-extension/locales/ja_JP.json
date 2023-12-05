@@ -59,8 +59,14 @@
       "Confirm access": [
         "アクセスを確認する"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } アカウントを接続してください"
+      ],
       "Continue": [
         "続行"
+      ],
+      "Continue without pinning": [
+        "ピンを留めずに続ける"
       ],
       "Copy and close": [
         "コピーして閉じる"
@@ -73,6 +79,9 @@
       ],
       "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } アカウントを作成"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } アカウントを作成する"
       ],
       "Create a new vault to share": [
         "共有する新しい保管庫を作成する"
@@ -169,6 +178,9 @@
       ],
       "Import": [
         "インポート"
+      ],
+      "Import your passwords": [
+        "パスワードをインポートする"
       ],
       "Importing": [
         "インポート"
@@ -354,6 +366,11 @@
         "パスワード マネージャーがここにいませんか? リクエストしてください。"
       ]
     },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "ブラック フライデー オファー"
+      ]
+    },
     "Button": {
       "More info": [
         "詳細はこちら"
@@ -382,6 +399,9 @@
       ],
       "Auto-lock could not be disabled": [
         "自動ロックを無効化出来ませんでした"
+      ],
+      "Cannot create alias (${ error }).": [
+        "エイリアスを作成できません (${ error })。"
       ],
       "Cannot send invitation to this address at the moment": [
         "現在、このアドレスに招待を送信することができません。"
@@ -490,6 +510,9 @@
       ],
       "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
         "続行するには、${ PASS_APP_NAME } に必要な拡張機能の権限を付与してください"
+      ],
+      "Please pin the extension or select \"Continue without pinning\".": [
+        "拡張機能をピン留めするか、「ピン留めせずに続行」を選択してください。"
       ],
       "Request timed out": [
         "リクエストがタイムアウトしました"
@@ -643,6 +666,9 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "${ PASS_APP_NAME } の新しいバージョンが利用可能です。 最新の機能やバグ修正をお楽しみいただくには、更新してください。"
       ],
+      "Access your passwords on the go with our mobile apps.": [
+        "モバイルアプリで外出先からパスワードにアクセス。"
+      ],
       "Admin": [
         "管理者"
       ],
@@ -654,6 +680,9 @@
       ],
       "Auto-lock successfully disabled": [
         "オートロックは正常に無効化された"
+      ],
+      "Autosaved on ${ submissionURL }": [
+        "${ submissionURL } に自動保存されました"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "このフォルダー内のアイテムを作成、編集、削除、エクスポートすることができます。"
@@ -673,6 +702,9 @@
       "Copied to clipboard": [
         "クリップボードにコピーされました"
       ],
+      "Creating alias...": [
+        "エイリアスを作成中..."
+      ],
       "Credit cards, Custom fields": [
         "クレジットカード、カスタムフィールド"
       ],
@@ -682,17 +714,26 @@
       "Deleted items will be moved here first": [
         "削除された項目は、まずここに移動されます"
       ],
+      "Discover ${ PASS_APP_NAME } Youtube Video": [
+        "${ PASS_APP_NAME } の YouTube 動画をご覧ください"
+      ],
       "Drop file here to upload": [
         "アップロードするファイルをここにドロップ"
       ],
       "Drop to import": [
         "ドロップしてインポート"
       ],
+      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
+        "既存のパスワードを ${ PASS_APP_NAME } に簡単にインポートします。"
+      ],
       "Editor": [
         "エディター"
       ],
       "Emptying trash...": [
         "ごみ箱を空にしています..."
+      ],
+      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } アカウントを接続して ${ PASS_APP_NAME } を有効にします"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "検証コードを入力してください。桁数は ${ digit } 桁です。"
@@ -708,6 +749,15 @@
       ],
       "Generated passwords will be stored for a period of one day.": [
         "生成されたパスワードは1日間保存されます。"
+      ],
+      "Generating alias...": [
+        "エイリアスを生成中..."
+      ],
+      "Here you will find all the necessary information to get you started.": [
+        "ここでは、必要なすべての情報をご覧いただけます。"
+      ],
+      "Import in progress:": [
+        "インポートが進行中:"
       ],
       "Imported ${ payload.total } items": [
         "${ payload.total } 件のアイテムをインポートしました"
@@ -729,6 +779,9 @@
       ],
       "Invite successfully resent": [
         "招待を正常に再送しました。"
+      ],
+      "Invite successfully sent": [
+        "招待が正常に送信されました。"
       ],
       "invites you to access items in": [
         "あなたにアイテムへのアクセスを招待しています。"
@@ -796,6 +849,12 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "1日以上前のパスワードは履歴から自動的に削除されます。"
       ],
+      "Pending access to the shared data": [
+        "共有データへのアクセスが保留中です"
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "${ PASS_APP_NAME } をツールバーに固定します"
+      ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PINコードの登録が完了しました。 それを使用して ${ PASS_APP_NAME } のロックを解除します"
       ],
@@ -841,6 +900,9 @@
       "Share with 10 others": [
         "他の 10 人と共有する"
       ],
+      "Sign in or create an account to continue.": [
+        "サインインするか、アカウントを作成してください。"
+      ],
       "Sign in to your account": [
         "アカウントにサインインする"
       ],
@@ -861,6 +923,9 @@
       ],
       "Thank you, the problem has been reported": [
         "ありがとう、問題は報告されました"
+      ],
+      "The following ${ result.ignored.length } items could not be imported:": [
+        "次の ${ result.ignored.length } つのアイテムをインポート出来ませんでした:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "貼り付けようとしているテキストは、許容される最大長の ${ maxLength } 文字を超えています。"
@@ -886,6 +951,9 @@
       "Update login": [
         "ログインを更新"
       ],
+      "Upgrade ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } をアップグレードします"
+      ],
       "User's access removed": [
         "ユーザーのアクセス権を削除しました。"
       ],
@@ -900,6 +968,9 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "保管庫「${ payload.share.content.name }」が正常に更新されました"
+      ],
+      "Verification code": [
+        "検証コード"
       ],
       "Viewer": [
         "ビューアー"
@@ -933,6 +1004,9 @@
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "このPINを使用して、${ PASS_APP_NAME }が一定期間使用されずに自動ロックされた後、ロックを解除します。"
+      ],
+      "You're about to create": [
+        "これから作成しようとしています"
       ],
       "You're invited to a vault.": [
         "フォルダーへの招待があります。"
@@ -1449,6 +1523,9 @@
       "Confirm PIN code": [
         "PINコードの確認"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } アカウントを接続してください"
+      ],
       "Create PIN code": [
         "PINコードの作成"
       ],
@@ -1466,6 +1543,12 @@
       ],
       "Enter your PIN": [
         "PIN を入力してください"
+      ],
+      "Fill & copy password": [
+        "パスワードを入力してコピー"
+      ],
+      "Get the mobile apps": [
+        "モバイルアプリを入手する"
       ],
       "Grant permissions": [
         "権限を付与する"
@@ -1497,6 +1580,9 @@
       "Permanently remove all items ?": [
         "すべてのアイテムを永久に削除しますか？"
       ],
+      "Pin the extension": [
+        "拡張機能をピン留めする"
+      ],
       "Secure your data": [
         "データの保護"
       ],
@@ -1506,6 +1592,15 @@
       "Share with": [
         "と共有する"
       ],
+      "Switching to ${ PASS_APP_NAME }?": [
+        "${ PASS_APP_NAME } に切り替えますか?"
+      ],
+      "Thank you for installing ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } をインストールしていただきありがとうございます"
+      ],
+      "The extension is now ready to use.": [
+        "これで拡張機能を使用する準備が整った。"
+      ],
       "Transfer ownership": [
         "所有権の移行"
       ],
@@ -1514,6 +1609,9 @@
       ],
       "Unlock ${ brandNameJSX }": [
         "${ brandNameJSX } のロックを解除します"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }のロックを解除します"
       ],
       "Update available": [
         "更新あり"
@@ -1526,6 +1624,9 @@
       ],
       "Welcome to ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } へようこそ"
+      ],
+      "Welcome to your new password manager!": [
+        "新しいパスワード マネージャーへようこそ!"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } を使用する理由"
@@ -1674,6 +1775,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "あなたはこのフォルダーへのアクセスを持たなくなります。再度参加するには、新しい招待が必要です。"
+      ],
+      "Your plan does not allow you to create more aliases": [
+        "あなたのプランでは、それ以上のエイリアスを作成することはできません。"
+      ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "あなたのプランでは、最初の2つのフォルダーからのみ自動入力が許可されています。"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "あなたのサブスクリプションでは、複数のフォルダーを作成することはできません。すべてのアイテムは最初のフォルダーにインポートされます。複数のフォルダーにインポートするには、サブスクリプションをアップグレードしてください。"
