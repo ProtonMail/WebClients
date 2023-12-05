@@ -306,6 +306,9 @@
       "Import from .csv or vCard": [
         "Importar de .csv ou vCard"
       ],
+      "Import from Google": [
+        "Importar do Google"
+      ],
       "Join calendar": [
         "Junte-se ao calendário"
       ],
@@ -771,6 +774,9 @@
       ]
     },
     "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } de armazenamento"
+      ],
       "1 user": [
         "1 utilizador"
       ],
@@ -782,6 +788,31 @@
       ],
       "High speed streaming": [
         "Streaming de alta velocidade"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Versão premium do gestor de palavras-passe"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Garantia de devolução do seu dinheiro em até 30 dias"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui histórico de versões, partilha de ficheiros encriptados e muito mais."
       ]
     },
     "Bug category": {
@@ -4268,12 +4299,12 @@
     },
     "Info; reset calendar keys modal; part 3": {
       "You can recover your encrypted data with a recovery file, recovery phrase, or your old password.": [
-        "Pode recuperar os seus dados encriptados com um ficheiro ou frase de recuperação, ou com sua antiga palavra-passe."
+        "Pode recuperar os seus dados encriptados com um ficheiro ou frase de recuperação, ou com a sua antiga palavra-passe."
       ]
     },
     "Info; reshare calendar modal; part 1": {
       "Calendar sharing was disabled following your recent password reset.": [
-        "O partilhamento de calendário foi desabilitado após a sua redefinição de palavra-passe recente."
+        "A partilha de calendário foi desativada após a sua recente reposição da palavra-passe."
       ]
     },
     "Info; reshare calendar modal; part 2": {
@@ -4282,6 +4313,10 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "É permitido no máximo ${ maxAttendees } participante por convite.",
+        "São permitidos no máximo ${ maxAttendees } participantes por convite."
+      ],
       "Creating invites in a shared calendar is not allowed": [
         "Não é permitido criar convites num calendário partilhado."
       ]
@@ -5051,6 +5086,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendário",
+        "${ maximumNumberOfCalendars } calendários"
+      ],
       "Auto-delete spam and trashed messages": [
         "Eliminar automaticamente mensagens de spam e de lixo"
       ],

@@ -2178,6 +2178,9 @@
       ]
     },
     "Description": {
+      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
+        "Lisää tehokkuutta ja seuraa aikaasi värikoodaamalla tapahtumia kategorian tai energiatasosi mukaan. Hanki tämä ja paljon muuta maksullisella paketilla."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Yhteystietojen salausta puretaan… Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit ladata tiedoston, joka sisältää kaikki viedyt yhteystietosi."
       ],
@@ -4348,6 +4351,11 @@
         "Järjestelmäsi aikavyöhykkeeksi näyttää vaihtuneen ${ timezone }. Haluatko päivittää aikavyöhykeasetuksesi?"
       ]
     },
+    "info": {
+      "Selected color:": [
+        "Valittu väri:"
+      ]
+    },
     "Info calendar search": {
       "You can either update your search query or close search to go back to calendar views": [
         "Voit joko muokata hakuasi tai palata kalenterinäkymiin sulkemalla sen"
@@ -5175,6 +5183,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalenteri",
+        "${ maximumNumberOfCalendars } kalenteria"
+      ],
       "Auto-delete spam and trashed messages": [
         "Poista roskakorin ja roskapostin viestit automaattisesti"
       ],
@@ -5424,8 +5436,14 @@
       "Discover all ${ BRAND_NAME } services": [
         "Tutustu kaikkiin ${ BRAND_NAME }-palveluihin"
       ],
+      "Pick a theme": [
+        "Valitse teema"
+      ],
       "Set up your organization": [
         "Määritä organisaatiosi"
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Voit muuttaa teemaasi milloin tahansa asetuksista."
       ]
     },
     "Option": {
@@ -6130,6 +6148,9 @@
       "Add your country's public holidays to your calendar.": [
         "Lisää oman maasi yleiset vapaapäivät kalenteriisi."
       ],
+      "Color-coding is here!": [
+        "Värikoodaus on täällä!"
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Löydä etsimäsi tapahtuma helposti uudella hakutoiminnollamme."
       ],
@@ -6144,6 +6165,9 @@
       ],
       "Search for events": [
         "Etsi tapahtumia"
+      ],
+      "With customizable event colors, you can color-code the chaos and conquer your day.": [
+        "Mukautettavien tapahtumavärien avulla voit värikoodata kaaoksen ja valloittaa päiväsi."
       ]
     },
     "Storage": {
@@ -6459,6 +6483,9 @@
       ],
       "Add participants": [
         "Lisää osallistujia"
+      ],
+      "Add some color to your day": [
+        "Lisää väriä päivääsi"
       ],
       "Add to ${ groupCount } group": [
         "Lisää ${ groupCount } ryhmään",

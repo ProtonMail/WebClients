@@ -34,7 +34,7 @@
         "加入電郵位址"
       ],
       "Add birthday": [
-        "添加生日"
+        "新增生日"
       ],
       "Add contact": [
         "加入聯絡人"
@@ -298,7 +298,7 @@
         "匯入聯絡人"
       ],
       "Import emails": [
-        "匯入電郵"
+        "匯入郵件"
       ],
       "Import events": [
         "匯入事件"
@@ -340,7 +340,7 @@
         "管理標籤"
       ],
       "Mark for deletion": [
-        "標記作刪除"
+        "標記為刪除"
       ],
       "Maybe": [
         "也許"
@@ -577,7 +577,7 @@
         "解鎖資料"
       ],
       "Unmark for deletion": [
-        "取消標記作刪除"
+        "取消標記為刪除"
       ],
       "Untrust": [
         "不信任"
@@ -825,8 +825,17 @@
       ]
     },
     "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
       "Includes support for 3 custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "包含對 3 組自訂電子郵件網域、${ addresses } 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "儲存空間於${ BRAND_NAME }共用。"
       ]
     },
     "Bug category": {
@@ -2321,7 +2330,7 @@
         "無法儲存聯絡人"
       ],
       "Contact name is too long": [
-        "聯絡人名稱太長"
+        "聯絡人名稱過長"
       ],
       "Contact signature could not be verified": [
         "無法驗證聯絡人簽章"
@@ -2603,7 +2612,7 @@
         "此資料夾名稱不適用。請選擇其它名稱。"
       ],
       "This label name is not available. Please choose a different name.": [
-        "此標籤名稱不適用。請選擇其它名稱。"
+        "此標籤名稱無法使用。請選擇其它名稱。"
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "此郵件可能包含某些您目前的瀏覽器無法正確開啟的連結 URL。"
@@ -2630,7 +2639,7 @@
         "您已新增此假期行事曆"
       ],
       "You can't send a mail to more than ${ maxContacts } recipients": [
-        "您無法將電子郵件傳送給超過 ${ maxContacts } 位收件人"
+        "您無法將郵件傳送給超過 ${ maxContacts } 位收件人"
       ],
       "You have reached the contacts limit for your account": [
         "您的帳號已達聯絡人數量限制"
@@ -2658,7 +2667,7 @@
         "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "上載您的檔案 ${ formattedFilename } 時發生錯誤。僅允許 ICS 檔案格式。"
+        "上傳檔案 ${ formattedFilename } 時發生錯誤。僅允許 ICS 檔案格式。"
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "上載您的檔案時發生錯誤。未選取任何檔案。"
@@ -3124,13 +3133,13 @@
         "位元組"
       ],
       "Gigabytes": [
-        "十億位元組"
+        "GB"
       ],
       "Kilobytes": [
         "千位元組"
       ],
       "Megabytes": [
-        "百萬位元組"
+        "MB"
       ],
       "Terabytes": [
         "TB"
@@ -3577,7 +3586,7 @@
         "全部 (${ totalFoldersCount } 個標籤)"
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "您所有的聯絡人都已匯入，已達 ${ MAX_CONTACTS_PER_USER } 的限制"
+        "所有聯絡人都已匯入，已達 ${ MAX_CONTACTS_PER_USER } 的限制"
       ],
       "An invitation will be sent to added participants.": [
         "邀請將傳送給已加入參與者。"
@@ -3772,7 +3781,7 @@
         "匯入進行中"
       ],
       "Import mailbox": [
-        "匯入郵箱"
+        "匯入信箱"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
@@ -3865,10 +3874,10 @@
         "參與者無一能知悉您的變更："
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "上載的金鑰皆無法用於加密。為能夠傳送郵件至此電郵位址，請上載有效的金鑰或是停用「加密電郵」。"
+        "上傳的金鑰皆無法用於加密。為能夠傳送郵件至此電子信箱，請上傳有效的金鑰或是停用「加密郵件」。"
       ],
       "Not a valid URL": [
-        "非有效的圖像網址"
+        "無效的網址"
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "召集人先前更新的事件將會保留，但您的某些回答將會遺失。"
@@ -4217,6 +4226,11 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "您的系統時區似乎已更改為 ${ timezone }。您要更新您的時區喜好設定嗎？"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "已選取的色彩:"
       ]
     },
     "Info calendar search": {
@@ -5036,6 +5050,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendars": [
+        "${ maximumNumberOfCalendars } 個行事曆"
+      ],
       "Auto-delete spam and trashed messages": [
         "自動刪除垃圾郵件與垃圾桶中的訊息"
       ],
@@ -5261,8 +5278,14 @@
       "Discover all ${ BRAND_NAME } services": [
         "探索所有 ${ BRAND_NAME } 服務"
       ],
+      "Pick a theme": [
+        "選擇主題"
+      ],
       "Set up your organization": [
         "設定您的組織"
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "您可於設定隨時變更布景主題。"
       ]
     },
     "Option": {
@@ -5554,10 +5577,10 @@
         "${ timeRemaining.inHours }小時"
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
-        "重設密碼請求已核准 (${ user.Email })。您可以在${ timeRemaining.inDays }天內重設您的密碼。"
+        "重設密碼請求已批准 (${ user.Email })。您可以在${ timeRemaining.inDays }天內重設您的密碼。"
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
-        "重設密碼請求已核准 (${ user.Email })。您可以在${ timeRemaining.inHours }小時內重設您的密碼。"
+        "重設密碼請求已批准 (${ user.Email })。您可以在${ timeRemaining.inHours }小時內重設您的密碼。"
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "請前往已登入的裝置（在發起請求的工作階段中）變更您的密碼。"
@@ -6334,7 +6357,7 @@
         "自訂您的郵件匯入"
       ],
       "Day theme": [
-        "白天佈景主題"
+        "日間佈景主題"
       ],
       "Delete ${ count } contact groups": [
         "刪除 ${ count } 個聯絡人群組"
@@ -6355,7 +6378,7 @@
         "正在刪除聯絡人"
       ],
       "Drop to upload": [
-        "拖放到此處以上載"
+        "拖放到此處以上傳"
       ],
       "Edit contact": [
         "編輯聯絡人"
@@ -6813,13 +6836,13 @@
         "每 ${ interval } 個星期的${ multipleDaysString }，${ untilString }"
       ],
       "Every ${ interval } weeks on all days": [
-        "每${ interval }個星期，週中每一日"
+        "每${ interval }個星期，整週"
       ],
       "Every ${ interval } weeks on all days, ${ timesString }": [
-        "每 ${ interval } 個星期，週中每一日，${ timesString }"
+        "每 ${ interval } 個星期，整周，${ timesString }"
       ],
       "Every ${ interval } weeks on all days, ${ untilString }": [
-        "每 ${ interval } 個星期，週中每一日，${ untilString }"
+        "每 ${ interval } 個星期，整週，${ untilString }"
       ],
       "Every ${ interval } weeks on Friday": [
         "每 ${ interval } 個星期的週五"
