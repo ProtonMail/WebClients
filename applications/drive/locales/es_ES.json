@@ -2069,6 +2069,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" ya existe."
       ],
+      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
+        "Se ha actualizado ${ DRIVE_APP_NAME }. Vuelve a cargar la página."
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. También puedes comprobar nuestra ${ statusPageLink }"
       ],
@@ -2226,6 +2229,9 @@
       ],
       "Passwords do not match": [
         "Las contraseñas no coinciden."
+      ],
+      "Photos upload is temporarily disabled. Please try again later": [
+        "La carga de fotos está temporalmente desactivada. Inténtalo de nuevo más tarde."
       ],
       "Please activate your search again": [
         "Activa de nuevo tu búsqueda."
@@ -4397,6 +4403,11 @@
         "Tu frase de recuperación anterior"
       ]
     },
+    "info": {
+      "Selected color:": [
+        "Color seleccionado:"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Haz clic para más detalles."
@@ -5083,6 +5094,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendario",
+        "${ maximumNumberOfCalendars } calendarios"
+      ],
       "Auto-delete spam and trashed messages": [
         "Eliminar automáticamente spam y mensajes de la papelera"
       ],

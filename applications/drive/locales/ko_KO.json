@@ -376,6 +376,9 @@
       "Load image": [
         "이미지 불러오기"
       ],
+      "Loading link": [
+        "링크를 불러오는 중"
+      ],
       "Manage folders": [
         "폴더 관리"
       ],
@@ -2145,7 +2148,7 @@
         "IMAP 서버가 필요함"
       ],
       "Incorrect login credentials. Please try again.": [
-        "잘못된 로그인 자격 증명이에요. 다시 시도해주세요."
+        "이메일 (사용자 이름) 또는 비밀번호가 잘못되었습니다. 다시 시도하세요."
       ],
       "Incorrect mailbox password. Please try again.": [
         "잘못된 메일함 암호입니다. 다시 시도해 주세요."
@@ -4139,6 +4142,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "안타깝지만 파일이나 일부 데이터를 복호화할 수 없는 것으로 보입니다."
       ],
+      "Unknown date": [
+        "알 수 없는 날짜"
+      ],
       "Unknown error": [
         "알 수 없는 오류"
       ],
@@ -4318,6 +4324,11 @@
       ],
       "Your previous recovery phrase": [
         "내 이전 복구 문구"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "선택한 색상:"
       ]
     },
     "Info on errors": {
@@ -4998,6 +5009,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendars": [
+        "${ maximumNumberOfCalendars } 캘린더"
+      ],
       "Auto-delete spam and trashed messages": [
         "스팸 및 휴지통의 메시지를 자동 삭제"
       ],
@@ -5285,8 +5299,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "모든 ${ BRAND_NAME } 서비스를 둘러보기"
       ],
+      "Pick a theme": [
+        "테마 선택"
+      ],
       "Set up your organization": [
         "조직 설정"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "모든 ${ BRAND_NAME } 서비스에 접근하려면 상단 좌측의 앱 선택기를 사용하세요: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } 및 ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "설정에서 테마를 언제든지 바꿀 수 있습니다."
       ]
     },
     "Onboarding Title": {
@@ -6209,7 +6232,7 @@
         "드라이브 검색 활성화"
       ],
       "Enter your password": [
-        "비밀번호를 입력하십시오"
+        "비밀번호를 입력하세요"
       ],
       "Exporting contacts": [
         "연락처 내보내기"

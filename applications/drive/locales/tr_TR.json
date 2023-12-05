@@ -379,6 +379,9 @@
       "Load image": [
         "Görsel yükle"
       ],
+      "Loading link": [
+        "Bağlantı yükleniyor"
+      ],
       "Manage folders": [
         "Klasör yönetimi"
       ],
@@ -4209,6 +4212,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Ne yazık ki, bu dosyanın ya da dosyanın bazı verilerinin şifresi çözülemedi."
       ],
+      "Unknown date": [
+        "Tarih bilinmiyor"
+      ],
       "Unknown error": [
         "Bilinmeyen sorun"
       ],
@@ -4389,6 +4395,11 @@
       ],
       "Your previous recovery phrase": [
         "Önceki kurtarma ifadeniz"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Seçilmiş renk:"
       ]
     },
     "Info on errors": {
@@ -5077,6 +5088,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } takvim",
+        "${ maximumNumberOfCalendars } takvim"
+      ],
       "Auto-delete spam and trashed messages": [
         "İstenmeyen ve çöp kutularındaki iletileri otomatik olarak silin"
       ],
@@ -5383,8 +5398,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "Tüm ${ BRAND_NAME } hizmetlerini keşfedin"
       ],
+      "Pick a theme": [
+        "Bir tema seçin"
+      ],
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Tüm ${ BRAND_NAME } hizmetlerine erişmek için sol üstteki uygulama seçiciyi kullanın: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Temanızı istediğiniz zaman ayarlar bölümünden değiştirebilirsiniz."
       ]
     },
     "Onboarding Title": {
