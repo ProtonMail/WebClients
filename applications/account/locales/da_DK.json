@@ -36,6 +36,9 @@
       "Activate ${ Name }@pm.me": [
         "Aktiver ${ Name }@pm.me"
       ],
+      "Activate ${ user.Name }@pm.me": [
+        "Aktivér ${ user.Name }@pm.me"
+      ],
       "Activate organization key": [
         "Aktivér organisationsnøgle"
       ],
@@ -53,6 +56,9 @@
       ],
       "Add address or domain": [
         "Tilføj adresse eller domæne"
+      ],
+      "Add calendar from URL": [
+        "Tilføj kalender fra URL"
       ],
       "Add condition": [
         "Tilføj betingelse"
@@ -282,6 +288,9 @@
       "Delete Gateway": [
         "Slet gateway"
       ],
+      "Delete link": [
+        "Slet link"
+      ],
       "Delete permanently": [
         "Slet permanent"
       ],
@@ -417,6 +426,9 @@
       "Extend": [
         "Forlæng"
       ],
+      "Filters are being applied. This might take a few minutes.": [
+        "Filtre anvendes. Dette kan tage et par minutter."
+      ],
       "Fit to window": [
         "Tilpas til vinduet"
       ],
@@ -500,6 +512,9 @@
       ],
       "Import from Google": [
         "Importér fra Google"
+      ],
+      "Import from ICS": [
+        "Importér fra ICS"
       ],
       "Import from Outlook": [
         "Importér fra Outlook"
@@ -635,6 +650,9 @@
       ],
       "Quote": [
         "Anførselstegn"
+      ],
+      "Reactivate keys": [
+        "Genaktivér nøgler"
       ],
       "Reconnect": [
         "Tilslut igen"
@@ -776,6 +794,9 @@
       ],
       "Select files": [
         "Vælg filer"
+      ],
+      "Select language for invitation emails": [
+        "Vælg sprog for invitationsmails"
       ],
       "Select time zone": [
         "Vælg tidszone"
@@ -972,6 +993,9 @@
       "Use your current email instead": [
         "Brug din nuværende e-mail i stedet"
       ],
+      "Use “${ label }” setting": [
+        "Brug “${ label }” indstilling"
+      ],
       "User": [
         "Bruger"
       ],
@@ -1037,6 +1061,16 @@
     "Action subscription": {
       "Reactivate": [
         "Genaktiver"
+      ]
+    },
+    "Action; accept invitation to share calendar": {
+      "Accept": [
+        "Acceptér"
+      ]
+    },
+    "Action; decline invitation to share calendar": {
+      "Decline": [
+        "Afslå"
       ]
     },
     "Addon": {
@@ -1198,6 +1232,16 @@
       ],
       "Unsupported event": [
         "Ikke-understøttet begivenhed"
+      ]
+    },
+    "Auto import invitations setting": {
+      "Add to calendar and mark as pending": [
+        "Føj til kalender og markér som afventende"
+      ]
+    },
+    "Autoresponse": {
+      "I'm out of the office with limited access to my email.": [
+        "Jeg har kun begrænset adgang til mine e-mails i øjeblikket."
       ]
     },
     "Badge for domain": {
@@ -1452,6 +1496,11 @@
         "To-År"
       ]
     },
+    "Bridge version load failed": {
+      "Failed to find latest version": [
+        "Kunne ikke finde seneste version"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Applikationsproblem"
@@ -1551,6 +1600,26 @@
         "Tilføj personer eller grupper"
       ]
     },
+    "Calendar export section description": {
+      "Download an ICS file with all the events from the selected calendar.": [
+        "Download en ICS-fil med alle begivenhederne fra den valgte kalender."
+      ]
+    },
+    "Calendar import section description": {
+      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
+        "Du kan importere ICS-filer fra en anden kalender til ${ CALENDAR_APP_NAME }. Dette lader dig hurtigt importere en begivenhed eller hele din dagsorden."
+      ]
+    },
+    "Calendar invite status label": {
+      "Invite sent": [
+        "Invitation sendt"
+      ]
+    },
+    "Calendar link purpose update success message": {
+      "Label added": [
+        "Etiket tilføjet"
+      ]
+    },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
         "Kun du kan se etiketten"
@@ -1571,9 +1640,36 @@
         "Du har allerede adgang til denne kalender"
       ]
     },
+    "Calendar settings link share description": {
+      "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
+        "Opret et link til din kalender og del det med enhver uden for ${ BRAND_NAME }. Kun du kan tilføje eller fjerne begivenheder."
+      ]
+    },
+    "Calendar settings private share description": {
+      "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
+        "Del din kalender med andre brugere af ${ BRAND_NAME }. Gør det muligt at samarbejde ved at give dem mulighed for at tilføje og redigere begivenheder i din kalender. Du kan ændre brugertilladelserne når som helst."
+      ]
+    },
+    "Calendar settings section title": {
+      "Share calendar": [
+        "Del kalender"
+      ],
+      "Share outside ${ BRAND_NAME }": [
+        "Del uden for ${ BRAND_NAME }"
+      ],
+      "Share with ${ BRAND_NAME } users": [
+        "Del med ${ BRAND_NAME }-brugere"
+      ],
+      "Share with anyone": [
+        "Del med enhver"
+      ]
+    },
     "Calendar share permission label": {
       "Edit event details": [
         "Rediger begivenhedsdetaljer"
+      ],
+      "See all event details": [
+        "Se alle detaljer om begivenheden"
       ]
     },
     "Calendar sharing access option label": {
@@ -1587,6 +1683,11 @@
     "Calendar sharing error": {
       "Failed to retrieve contact information for ${ address }": [
         "Kunne ikke hente kalenderinformation for ${ address }"
+      ]
+    },
+    "Calendar sharing permission change notification": {
+      "Permissions changed for ${ email }": [
+        "Tilladelser ændret for ${ email }"
       ]
     },
     "Calendar status": {
@@ -2877,6 +2978,9 @@
       ]
     },
     "Delete calendar section description": {
+      "All events in this calendar will be deleted.": [
+        "Alle begivenheder i denne kalender vil blive slettet."
+      ],
       "You will no longer have access to this calendar.": [
         "Du vil ikke længere have adgang til denne kalender."
       ]
@@ -3039,6 +3143,11 @@
         "Hjælp os med at blive bedre!"
       ]
     },
+    "drive_signup_2023: Info": {
+      "Advanced sharing security": [
+        "Avanceret delingssikkerhed"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 minutter"
@@ -3164,6 +3273,11 @@
         "Du afmeldte dig fra ${ categoriesJsx } e-mails."
       ]
     },
+    "Email Unsubscribe Categories": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } og ${ lastCategoryTitle }"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "Bekræftelses e-mail afsendt til ${ address }"
@@ -3176,11 +3290,35 @@
       "Add forwarding rule": [
         "Tilføj regel for videresendelse"
       ],
+      "Back": [
+        "Tilbage"
+      ],
+      "Cancel": [
+        "Annuller"
+      ],
       "Decline": [
         "Afslå"
       ],
+      "Delete": [
+        "Slet"
+      ],
+      "Next": [
+        "Næste"
+      ],
+      "Pause": [
+        "Sæt på pause"
+      ],
       "Remove “${ value }”": [
         "Fjern “${ value }”"
+      ],
+      "Request confirmation": [
+        "Anmod om bekræftelse"
+      ],
+      "Resume": [
+        "Genoptag"
+      ],
+      "Save": [
+        "Gem"
       ],
       "Set up email forwarding": [
         "Indstil videresendelse af e-mail"
@@ -3194,11 +3332,17 @@
     "email_forwarding_2023: Header": {
       "Actions": [
         "Handlinger"
+      ],
+      "Status": [
+        "Status"
       ]
     },
     "email_forwarding_2023: Info": {
       "Automatically forward emails to another email address.": [
         "Videresend automatisk e-mails til en anden e-mailadresse."
+      ],
+      "You can safely close this tab.": [
+        "Du kan godt lukke denne fane."
       ],
       "You won't receive emails forwarded automatically from ${ boldForwarderEmail }.": [
         "Du vil ikke modtage e-mails, der videresendes automatisk fra ${ boldForwarderEmail }."
@@ -3208,11 +3352,20 @@
       "And": [
         "Og"
       ],
+      "Forward to": [
+        "Videresend til"
+      ],
       "or": [
         "eller"
       ],
       "Or": [
         "Eller"
+      ],
+      "With attachment": [
+        "Med vedhæftning"
+      ],
+      "Without attachment": [
+        "Uden vedhæftning"
       ]
     },
     "email_forwarding_2023: Link": {
@@ -3425,6 +3578,12 @@
       "Invalid postal code": [
         "Ugyldigt postnummer"
       ],
+      "Invalid private key file": [
+        "Ugyldig privatnøglefil"
+      ],
+      "Invalid Sieve code": [
+        "Ugyldig Sieve-kode"
+      ],
       "Invalid verification code": [
         "Ugyldig verifikationskode"
       ],
@@ -3519,6 +3678,9 @@
       ],
       "Please set a recovery phone number first": [
         "Angiv først et gendannelsestelefonnummer"
+      ],
+      "Please set a recovery/notification email first": [
+        "Angiv en gendannelses-/notifikations-e-mail"
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Opgrader venligst til et erhversabonnement med mere end 1 bruger for at få support til flere brugere"
@@ -3721,6 +3883,9 @@
       ],
       "You must set a name": [
         "Du skal angive et navn"
+      ],
+      "You need to have a custom domain address in order to generate an SMTP submission token.": [
+        "Du skal have en brugerdomæneadresse for at kunne generere et SMTP-indsendelses-token."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Din konto eller organisation har en forfalden faktura. Betal venligst alle udestående fakturaer."
@@ -3950,6 +4115,9 @@
       ]
     },
     "Error message, recovery": {
+      "Contact ${ BRAND_NAME }": [
+        "Kontakt ${ BRAND_NAME }"
+      ],
       "Please ${ signIn } to resend a recovery email verification request.": [
         "${ signIn } for at sende en ny anmodning om bekræftelse af e-mail til gendannelse."
       ],
@@ -3985,6 +4153,14 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Intet billede valgt"
+      ]
+    },
+    "Error when exporting event from calendar": {
+      "Event @ ${ timeString }": [
+        "Begivenhed @ ${ timeString }"
+      ],
+      "Event from ${ timeString }, ${ rruleString }": [
+        "Begivenhed fra ${ timeString }, ${ rruleString }"
       ]
     },
     "Event invitation error": {
@@ -4041,8 +4217,47 @@
         "${ totalProcessed }/${ totalToProcess } begivenhed eksporteret",
         "${ totalProcessed }/${ totalToProcess } begivenheder eksporteret"
       ],
+      "Calendar successfully exported. You can now save the ICS file.": [
+        "Kalender eksporteret. Du kan nu gemme ICS-filen."
+      ],
+      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
+        "Dekrypterer begivenheder fra din kalender: ${ totalProcessed }/${ totalToProcess }"
+      ],
+      "Due to a password reset, none of your events could be decrypted and exported.": [
+        "På grund af en nulstilling af adgangskoden, kunne nogle af dine begivenheder ikke dekrypteres og eksporteres."
+      ],
+      "Due to a password reset, some of your events could not be decrypted and exported.": [
+        "På grund af en nulstilling af adgangskoden, kunne nogle af dine begivenheder ikke dekrypteres og eksporteres."
+      ],
+      "Error decrypting event": [
+        "Fejl under dekryptering af begivenhed"
+      ],
+      "Learn how to restore encrypted events with old password": [
+        "Lær at gendanne krypterede begivenheder med gammel adgangskode"
+      ],
       "Loading events": [
         "Indlæser begivenheder"
+      ],
+      "None of the events could be exported.": [
+        "Ingen af begivenhederne kunne eksporteres."
+      ],
+      "Password reset - event cannot be decrypted": [
+        "Nulstilling af adgangskode - begivenhed kan ikke dekrypteres"
+      ],
+      "Password reset - multiple events cannot be decrypted": [
+        "Nulstilling af adgangskode - flere begivenheder kan ikke dekrypteres"
+      ],
+      "Please don't close the tab before the exporting process is finished.": [
+        "Luk ikke fanen før eksportprocessen er afsluttet."
+      ],
+      "Some of your events could not be exported.": [
+        "Nogle af dine begivenheder kunne ikke eksporteres."
+      ],
+      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
+        "Internetforbindelsen blev afbrudt, hvilket fik eksportprocessen til at mislykkes. Prøv venligst igen."
+      ],
+      "You can save an ICS file of the events that were successfully exported.": [
+        "Du kan gemme en ICS-fil med de begivenheder, der blev eksporteret."
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4496,6 +4711,9 @@
       ]
     },
     "FilterSettings": {
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
+        "Brug et brugerdefineret filter til at udføre visse handlinger automatisk, så som at tilføje etiketter eller arkivere beskeder."
+      ],
       "Allow:": [
         "Tillad:"
       ],
@@ -4508,6 +4726,9 @@
       "Spam:": [
         "Spam:"
       ],
+      "Take control over what lands in your inbox by creating the following lists:": [
+        "Tag kontrol over, hvad der lander i din indbakke, ved at oprette følgende lister:"
+      ],
       "Take control over what lands in your organization members' inboxes by creating the following lists:": [
         "Tag kontrol over, hvad der lander i dine organisationsmedlemmers indbakker ved at oprette følgende lister:"
       ],
@@ -4519,6 +4740,12 @@
       ],
       "To prevent junk mail from clogging up inboxes": [
         "For at forhindre junkmail i at fylde indbakker."
+      ],
+      "To prevent junk mail from clogging up your inbox": [
+        "For at forhindre junkmail i at fylde din indbakke."
+      ],
+      "To stop phishing or suspicious emails from entering your email system": [
+        "For at forhindre phishing eller mistænkelige e-mails i at komme ind i dit e-mailsystem"
       ],
       "To stop phishing or suspicious emails from entering your organization's email system": [
         "For at forhindre phishing eller mistænkelige e-mails i at komme ind i din organisations e-mailsystem"
@@ -4656,6 +4883,12 @@
       ]
     },
     "Header": {
+      "Access": [
+        "Adgang"
+      ],
+      "Action": [
+        "Handling"
+      ],
       "Actions": [
         "Handlinger"
       ],
@@ -4680,11 +4913,17 @@
       "Event": [
         "Begivenhed"
       ],
+      "Folders": [
+        "Mapper"
+      ],
       "IP address": [
         "IP-adresse"
       ],
       "Key type": [
         "Nøgletype"
+      ],
+      "Label": [
+        "Etikette"
       ],
       "Location": [
         "Placering"
@@ -4700,6 +4939,9 @@
       ],
       "Organization key fingerprint": [
         "Organisationsnøgle-fingeraftryk"
+      ],
+      "Permissions": [
+        "Tilladelser"
       ],
       "Protection": [
         "Beskyttelse"
@@ -4721,6 +4963,9 @@
       ],
       "Time": [
         "Tid"
+      ],
+      "User": [
+        "Bruger"
       ]
     },
     "Header for addresses table": {
@@ -4760,6 +5005,12 @@
     "Header for table": {
       "Actions": [
         "Handlinger"
+      ],
+      "Created": [
+        "Oprettet"
+      ],
+      "Token name": [
+        "Tokennavn"
       ]
     },
     "Header; Table with list of calendars arranged by type": {
@@ -5047,6 +5298,11 @@
         "Vælg ${ boldExport } for at eksportere kalenderen som en ICS-fil."
       ]
     },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        "Er du sikker på, at du vil importere en privat nøgle? Hvis du importerer en usikkert genereret eller lækket privat nøgle, kan det skade dine e-mailes sikkerhed.\n\nBemærk også, at den offentlige nøgle, der svarer til denne private nøgle, vil være offentligt tilgængelig fra vores nøgleserver. Hvis nøglen indeholder personlige oplysninger (f.eks. dit fulde navn), som du ikke ønsker at offentliggøre, skal du redigere nøglen, før du importerer den."
+      ]
+    },
     "Import provider": {
       "Import from ${ provider }": [
         "Importér fra ${ provider }"
@@ -5119,6 +5375,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "En del af dit kalenderindhold er ikke understøttet og vil ikke blive importeret."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøgle ${ fingerprint } er allerede blevet uploadet"
+      ],
+      "Selected color:": [
+        "Valgte farve:"
       ]
     },
     "Info": {
@@ -5228,6 +5495,10 @@
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } mere",
         "${ remainingAddresses.length } mere"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } adresse mere",
+        "${ remainingAddresses.length } adresser mere"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalender",
@@ -5736,6 +6007,9 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Download din favoritapp i dag og tag dit privatliv med dig overalt."
       ],
+      "Download your PGP keys for use with other PGP-compatible services.": [
+        "Download dine PGP-nøgler til brug sammen med andre PGP-kompatible tjenester."
+      ],
       "Drop file here to upload": [
         "Træk fil hertil for at uploade"
       ],
@@ -5879,6 +6153,9 @@
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Giv tokenet et beskrivende navn, såsom den tjeneste, du planlægger at bruge det til, og vælg en af dine aktive brugerdefinerede domæneadresser. Kun denne adresse vil kunne sende e-mails med dette token."
+      ],
+      "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
+        "Giv din offentlige nøgle til dine venner, eller offentliggør den online, så alle kan sende dig end-to-end krypterede e-mails!"
       ],
       "here": [
         "hér"
@@ -6053,6 +6330,9 @@
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Behold disse poster i din DNS, så længe du ønsker at bruge DKIM."
       ],
+      "Key deletion is irreversible!": [
+        "Sletning af nøgle er uigenkaldelig!"
+      ],
       "Label all imported messages as": [
         "Mærk alle importerede beskeder som"
       ],
@@ -6094,6 +6374,9 @@
       ],
       "Link type": [
         "Link-type"
+      ],
+      "Loaded content is being protected by our proxy when tracker protection is activated.": [
+        "Indlæst indhold er beskyttet af vores proxy, når sporingsbeskyttelse er aktiveret."
       ],
       "Loading": [
         "Indlæser"
@@ -6151,6 +6434,9 @@
       ],
       "New": [
         "Ny"
+      ],
+      "No account keys exist": [
+        "Der findes ingen kontonøgler"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Ingen metode til gendannelse indstillet. Du risikerer at miste adgang til din konto"
@@ -6218,6 +6504,9 @@
       "One account. All ${ BRAND_NAME } services.": [
         "Én konto. Alle ${ BRAND_NAME }-tjenester."
       ],
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Ændr kun disse indstillinger, hvis du benytter PGP ifm. ikke-${ BRAND_NAME }-modtagere."
+      ],
       "Only you can see the labels.": [
         "Kun du kan se etiketterne."
       ],
@@ -6278,6 +6567,9 @@
       ],
       "per month, billed every 24 months": [
         "Pr. måned, faktureres hver 24. måned"
+      ],
+      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
+        "PGP-klienter er mere tilbøjelige til automatisk at registrere dine PGP-nøgler, hvis udgående beskeder er signerede."
       ],
       "Phone number": [
         "Telefonnummer"
@@ -6521,6 +6813,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
+        "SMTP-indsendelse giver tredjepartstjenester eller -enheder mulighed for at sende e-mails via ${ MAIL_APP_NAME } for dine brugerdomæne-adresser. For at anmode om adgang, skal du ${ createTicket } der beskriver dine brugsscenarier, hvilke brugerdomæner, du gerne vil bruge, og forventede timemæssige og daglige e-mailmængder."
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
+        "SMTP-indsendelse giver tredjepartstjenester eller -enheder mulighed for at sende e-mails via ${ MAIL_APP_NAME } for dine brugerdomæne-adresser. For at bruge denne funktion, skal du starte med at generere et nyt token."
+      ],
       "Some keys successfully reactivated": [
         "Nogle nøgler er genaktiveret med succes"
       ],
@@ -6548,6 +6846,9 @@
       ],
       "Storage used by this user": [
         "Lagerplads brugt af denne bruger"
+      ],
+      "Store this password and file in a safe place. You’ll need them again to import your key.": [
+        "Gem denne adgangskode og fil på et sikkert sted. Du skal bruge dem igen for at importere din nøgle."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Indsend et depositum ved hjælp af følgende adresse eller scan QR-koden. Din indbetaling vil blive afspejlet på din konto efter bekræftelse."
@@ -6714,6 +7015,9 @@
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Dette deaktiverer din nuværende gendannelsessætning. Du vil ikke kunne bruge den til at få adgang til din konto eller dekryptere dine data."
       ],
+      "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
+        "Dette vil downloade en fil med din private nøgle. Beskyt denne fil ved at kryptere den med en adgangskode."
+      ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dette gør det muligt at benytte PayPal til betaling af dit ${ BRAND_NAME }-abonnement. Du omdirigeres til PayPal i en ny browserfane. Benytter du pop-up blockers, bedes du deaktivere disse for at fortsætte."
       ],
@@ -6734,6 +7038,9 @@
       ],
       "to ${ product } Business": [
         "til ${ product } Business"
+      ],
+      "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
+        "For at undgå tab af data skal du kun slette den, hvis du ved, hvad du gør, eller hvis du har eksporteret en kopi."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Kontakt os for at opsige dit abonnement."
@@ -7110,6 +7417,9 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere notifikationer for at få alarmer, når nye e-mails ankommer i denne mappe."
       ],
+      "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "Du kan bruge ${ MAIL_APP_NAME } med enhver desktop e-mail-klient, der understøtter IMAP/SMTP, herunder Outlook, Apple Mail, og Thunderbird."
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Du kan bruge følgende legitimationsoplysninger til at oprette forbindelse til en ${ VPN_APP_NAME }-server ved hjælp af en tredjeparts, open source VPN-app, såsom Tunnelblick til macOS eller OpenVPN til GNU/Linux."
       ],
@@ -7163,6 +7473,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Du har brugt 100% af din lagerkapacitet. Du kan ikke sende eller modtage nye e-mails. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You should export a backup of this key in case you need to restore data it encrypted.": [
+        "Du bør eksportere en sikkerhedskopi af denne nøgle, hvis du har brug for at gendanne data, som den krypterede nøgle har krypteret."
+      ],
       "You still need to reply to invitations for the host to see your response.": [
         "Du bliver stadig nødt til at svare på invitationer, for at værten kan se dit svar."
       ],
@@ -7178,14 +7491,17 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du skal bruge en ${ BRAND_NAME }-adresse for at bruge ${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME }"
       ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
+        "Du vil IKKE kunne dekryptere meddelelser, filer og andre data, der er krypteret med denne nøgle. Alle data, der er signeret med denne nøgle, vil ikke længere være verificeret af ${ BRAND_NAME }-applikationer."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du omdirigeres snart til PayPal for at bekræfte din betaling."
       ],
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Du vil ikke kunne gendanne låste data ved hjælp af dine downloadede gendannelsesfiler."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
-        "Du vil ikke kunne gendanne låste data ved hjælp af dine downloadede gendannelsesfiler. Dette vil også ugyldiggøre gendannelsesoplysninger om betroede enheder."
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
+        "Du vil ikke være i stand til at gendanne låste data ved hjælp af dine downloadede gendannelsesfiler. Dette vil også deaktivere gendannelse af betroede enheder."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Du vil forblive logget på selv efter du lukker browseren."
@@ -7219,6 +7535,9 @@
       ],
       "Your account recovery method is set": [
         "Din metode til kontogendannelse er indstillet"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Din konto er blevet opdateret med denne kampagne"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Din konto vil blive opdateret, når betalingen er godkendt."
@@ -7279,12 +7598,9 @@
         "Dit abonnement håndteres af Mozilla. Kontakt venligst Mozilla-support."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøgle ${ fingerprint } er allerede blevet uploadet"
+    "Info - folder colouring feature": {
+      "When enabled, sub-folders inherit the color of the parent folder.": [
+        "Når aktiveret, arver undermapper farven på den overordnede mappe."
       ]
     },
     "Info for cash payment method": {
@@ -7388,6 +7704,37 @@
       ],
       "Subscription": [
         "Abonnement"
+      ]
+    },
+    "Key generation": {
+      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
+        "Der findes allerede en nøgle med den samme krypteringsalgoritme. Hvis du genererer en ny nøgle, vil det medføre en langsommere indlæsning af kontoen. Er du sikker på, at du vil fortsætte?"
+      ],
+      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
+        "En nøgle med den samme krypteringsalgoritme er allerede aktiv på denne adresse.\nGenerering af en anden nøgle vil medføre langsommere kontoindlæsning, og sletning af denne nøgle kan forårsage problemer. Genererer du en ny nøgle, fordi den gamle er kompromitteret, så markér venligst din gamle nøgle som kompromitteret. Er du sikker på, at du vil fortsætte?"
+      ],
+      "Key with fingerprint ${ fp } successfully created.": [
+        "Nøgle med fingeraftryk ${ fp } er nu oprettet."
+      ],
+      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
+        "Krypteringsnøglerne genereres. Dette kan tage flere minutter og fastfryse din browser midlertidigt."
+      ],
+      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
+        "Krypteringsnøglerne til din adresse genereres. Dette kan tage flere minutter og fastfryse din browser midlertidigt."
+      ],
+      "You can generate a new encryption key if you think your previous key has been compromised.": [
+        "Du kan generere en ny krypteringsnøgle, hvis du tror, at din forrige nøgle er blevet kompromitteret."
+      ]
+    },
+    "Key state badge": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Compromised": [
+        "Kompromitteret"
+      ],
+      "Primary": [
+        "Primær"
       ]
     },
     "Key type option": {
@@ -7580,8 +7927,35 @@
       ]
     },
     "Keys actions": {
+      "Delete": [
+        "Slet"
+      ],
+      "Disables encryption with this key": [
+        "Deaktiverer kruptering med denne nøgle"
+      ],
+      "Disables signature verification and encryption with this key": [
+        "Deaktiverer signaturverifikation og kryptering med denne nøgle"
+      ],
+      "Enable encryption with this key": [
+        "Aktivér kryptering med denne nøgle"
+      ],
+      "Enable signature verification and encryption with this key": [
+        "Aktivér signaturbekræftelse og kryptering med denne nøgle"
+      ],
+      "Export private key": [
+        "Importér privat nøgle"
+      ],
       "Export public key": [
         "Eksportér offentlig nøgle"
+      ],
+      "Mark compromised": [
+        "Markér som kompromitteret"
+      ],
+      "Mark not compromised": [
+        "Markér ikke-kompromitteret"
+      ],
+      "Mark not obsolete": [
+        "Markér som ikke-forældet"
       ]
     },
     "Knowledge base link label": {
@@ -7607,6 +7981,9 @@
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME }-adresse"
+      ],
+      "${ MAIL_APP_NAME } footer": [
+        "${ MAIL_APP_NAME } sidefod"
       ],
       "${ n } month": [
         "${ n } måned",
@@ -7693,11 +8070,20 @@
       "Apply filter to existing emails": [
         "Anvend filter på eksisterende e-mails"
       ],
+      "Attach public key": [
+        "Vedhæft offentlig nøgle"
+      ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
       "Authenticator app": [
         "Godkendelsesapp"
+      ],
+      "Auto show embedded images": [
+        "Vis automatisk indlejrede billeder"
+      ],
+      "Auto show remote images": [
+        "Auto-vis eksterne billeder"
       ],
       "Auto-delete unwanted messages": [
         "Slet uønskede beskeder automatisk"
@@ -7707,6 +8093,9 @@
       ],
       "Auto-reply": [
         "Autosvar"
+      ],
+      "Auto-unsubscribe": [
+        "Auto-afmelding"
       ],
       "Awarded": [
         "Belønnet"
@@ -7719,6 +8108,9 @@
       ],
       "Block": [
         "Blokér"
+      ],
+      "Block email tracking": [
+        "Blokér sporing af e-mail"
       ],
       "Block malware only": [
         "Blokér kun malware"
@@ -7780,6 +8172,12 @@
       "Composer": [
         "Skrivevindue"
       ],
+      "Composer default font/size": [
+        "Skrivevinduets standardfont/størrelse"
+      ],
+      "Composer text direction": [
+        "Skrivesession, tekstretning"
+      ],
       "Conditions": [
         "Betingelser"
       ],
@@ -7788,6 +8186,9 @@
       ],
       "Confirm email": [
         "Bekræft e-mail"
+      ],
+      "Confirm link URLs": [
+        "Bekræft link-URLs"
       ],
       "Confirm login password": [
         "Bekræft adgangskode til login"
@@ -7806,6 +8207,12 @@
       ],
       "Contacts": [
         "Kontakter"
+      ],
+      "Conversation grouping": [
+        "Samtalegruppering"
+      ],
+      "Conversations per page": [
+        "Samtaler pr. side"
       ],
       "Copy": [
         "Kopiér"
@@ -7854,6 +8261,9 @@
       ],
       "Default language (${ defaultLanguage })": [
         "Standardsprog (${ defaultLanguage })"
+      ],
+      "Default PGP scheme": [
+        "Standard PGP-metode"
       ],
       "Default scrollbars": [
         "Standard rullebjælker"
@@ -7951,6 +8361,9 @@
       "Event notifications": [
         "Begivenhedsnotifikationer"
       ],
+      "Exclude Spam/Trash from All mail": [
+        "Ekskluder spam/papirkurv fra Alle e-mails"
+      ],
       "Expiration (${ patternExpiration })": [
         "Udløb (${ patternExpiration })"
       ],
@@ -8014,6 +8427,9 @@
       "Inbox": [
         "Indbakke"
       ],
+      "Inherit color from parent folder": [
+        "Nedarv farve fra overordnet mappe"
+      ],
       "Interval": [
         "Interval"
       ],
@@ -8022,6 +8438,9 @@
       ],
       "Keep me signed in": [
         "Hold mig logget ind"
+      ],
+      "Keep messages in Sent/Drafts": [
+        "Behold beskeder i Sendt/Kladder"
       ],
       "Key": [
         "Nøgle"
@@ -8073,6 +8492,9 @@
       ],
       "Message": [
         "Besked"
+      ],
+      "Messages per page": [
+        "Beskeder pr. side"
       ],
       "Moderate NAT": [
         "Moderat NAT"
@@ -8203,6 +8625,9 @@
       "Please add the following TXT record. Note, DNS records can take several hours to update.": [
         "Tilføj følgende TXT-post. Bemærk at DNS-poster kan tage flere timer at opdatere."
       ],
+      "Please select files to upload": [
+        "Vælg filer til upload"
+      ],
       "Please share any feedback to help us improve.": [
         "Del gerne feedback, så vi kan forbedre os."
       ],
@@ -8215,8 +8640,14 @@
       "Previous password": [
         "Tidligere adgangskode"
       ],
+      "Prompt to trust keys": [
+        "Spørg om at stole på nøgler"
+      ],
       "Proration": [
         "Proration"
+      ],
+      "Protection mode": [
+        "Beskyttelsestilstand"
       ],
       "Read": [
         "Læst"
@@ -8272,8 +8703,20 @@
       "Show week numbers": [
         "Vis ugenumre"
       ],
+      "Sign external messages": [
+        "Signér eksterne beskeder"
+      ],
       "Signature": [
         "Signatur"
+      ],
+      "SMTP server": [
+        "SMTP-server"
+      ],
+      "SMTP token": [
+        "SMTP-token"
+      ],
+      "SMTP username": [
+        "SMTP-brugernavn"
       ],
       "Spam": [
         "Spam"
@@ -8295,6 +8738,9 @@
       ],
       "Statement": [
         "Udsagn"
+      ],
+      "Sticky labels": [
+        "Klæbende etiketter"
       ],
       "Subscription options": [
         "Abonnementsmuligheder"
@@ -8346,6 +8792,9 @@
       ],
       "URL": [
         "URL"
+      ],
+      "Use folder colors": [
+        "Brug mappefarver"
       ],
       "User": [
         "Bruger"
@@ -8497,6 +8946,27 @@
         "Beta"
       ]
     },
+    "Label to change composer mode": {
+      "Normal": [
+        "Normal"
+      ]
+    },
+    "Label to change density": {
+      "Comfortable": [
+        "Komfortabel"
+      ],
+      "Compact": [
+        "Kompakt"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "Kolonne"
+      ],
+      "Row": [
+        "Række"
+      ]
+    },
     "Label, credit card": {
       "ZIP code": [
         "Postnummer"
@@ -8519,6 +8989,12 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } oprettet"
+      ],
+      "${ label.Name } updated": [
+        "${ label.Name } opdateret"
+      ],
+      "Preference saved": [
+        "Præference gemt"
       ]
     },
     "Limit of calendars reached": {
@@ -8559,6 +9035,9 @@
       ],
       "Contact us": [
         "Kontakt os"
+      ],
+      "create a ticket": [
+        "opret en sag"
       ],
       "Create account": [
         "Opret konto"
@@ -8613,6 +9092,9 @@
       ],
       "Reset password": [
         "Nulstil adgangskode"
+      ],
+      "Set email address": [
+        "Indstil e-mailadresse"
       ],
       "Sign in": [
         "Log ind"
@@ -8764,6 +9246,9 @@
       ],
       "${ appName }: Sign-up": [
         "${ appName }: Tilmelding"
+      ],
+      "${ BRAND_NAME } Account": [
+        "${ BRAND_NAME }-konto"
       ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "Opret en ${ BRAND_NAME }-konto for at bruge alle krypterede ${ BRAND_NAME }-tjenester som ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mere, med blot et login. Få en gratis ${ BRAND_NAME }-konto."
@@ -9081,9 +9566,17 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalender",
+        "${ maximumNumberOfCalendars } kalendere"
+      ],
       "${ n } calendar": [
         "${ n } kalender",
         "${ n } kalendere"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalender pr. bruger",
+        "${ n } kalendere pr. bruger"
       ],
       "${ n } custom email domain": [
         "${ n } brugerdefineret e-maildomæne",
@@ -9449,6 +9942,17 @@
         "Brugeradministration"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din prøveperiode slutter ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutter med ${ last4 }"
@@ -9538,17 +10042,6 @@
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din prøveperiode slutter ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } af ${ humanMaxSpace }"
@@ -9623,6 +10116,9 @@
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Beskyt dine e-mails med end-to-end kryptering. Inkluderer understøttelse af brugerdefinerede e-mail-domæner, 15 e-mail-adresser, ubegrænsede hide-my-email-aliaser, og mere."
       ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
+        "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+ og Prime Video, hvor som helst"
+      ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
         "Tillader at du forbinder til mere end ét netværk samtidigt, eks. kan du streame en film fra et andet land, samtidigt med at du får lokale søgeresultater"
       ],
@@ -9639,8 +10135,14 @@
         "Opret op til ${ n } kalender eller tilføj kalendere fra venner, familie, kollegaer og organisationer",
         "Opret op til ${ n } kalendere eller tilføj kalendere fra venner, familie, kollegaer og organisationer"
       ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
+        "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Afværger trussel mod VPN-privatliv ved at sende din internettrafik gennem flere servere"
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
+        "Afværger trussel mod VPN-privatliv ved at sende din internettrafik gennem flere servere."
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Du kan nemt dele dine kalendere med dine kolleger, familie eller venner via et link"
@@ -9769,6 +10271,9 @@
       "Auto-connect": [
         "Forbind automatisk"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Forøg din lagerplads til ${ bundleStorage } i alt"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Forøg din lagerplads til ${ bundleStorage } i alt"
       ],
@@ -9802,6 +10307,9 @@
       "IP Address copied to clipboard": [
         "IP-adresse kopieret ti udklipsholder"
       ],
+      "Key with fingerprint ${ fp } has been deleted.": [
+        "Nøgle med fingeraftryk ${ fp } slettet."
+      ],
       "Link copied to clipboard": [
         "Link kopieret til udklipsholder"
       ],
@@ -9833,9 +10341,18 @@
       ]
     },
     "Notification in share calendar modal": {
+      "Invitation deleted": [
+        "Invitation slettet"
+      ],
+      "Invitation revoked": [
+        "Invitation tilbagekaldt"
+      ],
       "Member added": [
         "Medlem tilføjet",
         "Medlemmer tilføjet"
+      ],
+      "Member deleted": [
+        "Medlem slettet"
       ]
     },
     "Notification in shared calendar modal": {
@@ -9912,6 +10429,99 @@
       ]
     },
     "Option": {
+      "10th of the month": [
+        "Månedligt d. 10."
+      ],
+      "11th of the month": [
+        "Månedligt d. 11."
+      ],
+      "12th of the month": [
+        "Månedligt d. 12."
+      ],
+      "13th of the month": [
+        "Månedligt d. 13."
+      ],
+      "14th of the month": [
+        "Månedligt d. 14."
+      ],
+      "15th of the month": [
+        "Månedligt d. 15."
+      ],
+      "16th of the month": [
+        "Månedligt d. 16."
+      ],
+      "17th of the month": [
+        "Månedligt d. 17."
+      ],
+      "18th of the month": [
+        "Månedligt d. 18."
+      ],
+      "19th of the month": [
+        "Månedligt d. 19."
+      ],
+      "1st of the month": [
+        "Månedligt d. 1."
+      ],
+      "20th of the month": [
+        "Månedligt d. 20."
+      ],
+      "21st of the month": [
+        "Månedligt d. 21."
+      ],
+      "22nd of the month": [
+        "Månedligt d. 22."
+      ],
+      "23rd of the month": [
+        "Månedligt d. 23."
+      ],
+      "24th of the month": [
+        "Månedligt d. 24."
+      ],
+      "25th of the month": [
+        "Månedligt d. 25."
+      ],
+      "26th of the month": [
+        "Månedligt d. 26."
+      ],
+      "27th of the month": [
+        "Månedligt d. 27."
+      ],
+      "28th of the month": [
+        "Månedligt d. 28."
+      ],
+      "29th of the month": [
+        "Månedligt d. 29."
+      ],
+      "2nd of the month": [
+        "Månedligt d. 2."
+      ],
+      "30th of the month": [
+        "Månedligt d. 30."
+      ],
+      "31st of the month": [
+        "Månedligt d. 31."
+      ],
+      "3rd of the month": [
+        "Månedligt d. 3."
+      ],
+      "4th of the month": [
+        "Månedligt d. 4."
+      ],
+      "5th of the month": [
+        "Månedligt d. 5."
+      ],
+      "6th of the month": [
+        "Månedligt d. 6."
+      ],
+      "7th of the month": [
+        "Månedligt d. 7."
+      ],
+      "8th of the month": [
+        "Månedligt d. 8."
+      ],
+      "9th of the month": [
+        "Månedligt d. 9."
+      ],
       "Add to existing group": [
         "Føj til eksisterende gruppe"
       ],
@@ -9960,11 +10570,20 @@
       "No parent folder": [
         "Ingen overordnet mappe"
       ],
+      "Normal": [
+        "Normal"
+      ],
       "Off": [
         "Fra"
       ],
       "On": [
         "Til"
+      ],
+      "Plain text": [
+        "Simpel tekst"
+      ],
+      "Repeat monthly": [
+        "Gentag månedligt"
       ],
       "Router": [
         "Router"
@@ -9980,6 +10599,14 @@
       ],
       "The whole organization": [
         "Hele organisationen"
+      ]
+    },
+    "Option delay send seconds": {
+      "10 seconds": [
+        "10 sekunder"
+      ],
+      "20 seconds": [
+        "20 sekunder"
       ]
     },
     "Option group": {
@@ -10001,6 +10628,14 @@
         "Flet med kalender"
       ]
     },
+    "Option protection mode": {
+      "Load content via proxy (recommended)": [
+        "Indlæs indhold via proxy (anbefales)"
+      ],
+      "Load content via proxy and store as attachments": [
+        "Indlæs indhold via proxy og gem som vedhæftede filer"
+      ]
+    },
     "Organization capacity error": {
       "Your plan includes a maximum of ${ availableAddresses } more address.": [
         "Dit abonnement har et maksimum ${ availableAddresses } adresse.",
@@ -10016,6 +10651,20 @@
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Dit abonnement har et maksimum ${ humanReadableAvailableSpace } mere lagerplads."
+      ]
+    },
+    "OS compatibility": {
+      ".deb (for Debian/Ubuntu)": [
+        ".deb (til Debian/Ubuntu)"
+      ],
+      ".dmg (10.12 or later)": [
+        ".dmg (10,12 eller senere)"
+      ],
+      ".rpm (for Fedora/openSUSE)": [
+        ".rpm (til Fedora/openSUSE)"
+      ],
+      "PKGBUILD (for other distributions)": [
+        "PKGBUILD (til andre distributioner)"
       ]
     },
     "Participant name": {
@@ -10252,6 +10901,9 @@
       "You currently have": [
         "Du har i øjeblikket"
       ],
+      "You have been invited to join ${ PASS_APP_NAME }": [
+        "Du er blevet inviteret til at blive medlem af ${ PASS_APP_NAME }"
+      ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "Din organisation har adgang til ${ free }. Hvis du vil have adgang til premium ${ appName }-funktioner, skal du bede din organisations administrator om at opgradere."
       ]
@@ -10282,6 +10934,11 @@
       ],
       "New credit/debit card": [
         "Nyt kredit/debetkort"
+      ]
+    },
+    "Personal calendar section description": {
+      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
+        "Opret en kalender, så du kan holde styr på din tidsplan, samtidig med at dine data er sikre."
       ]
     },
     "PGP key warning": {
@@ -10405,6 +11062,14 @@
     "Price": {
       "Free": [
         "Gratis"
+      ]
+    },
+    "Primary timezone": {
+      "Primary time zone": [
+        "Primær tidszone"
+      ],
+      "Secondary time zone": [
+        "Sekundær tidszone"
       ]
     },
     "Private Member": {
@@ -10808,6 +11473,9 @@
       ]
     },
     "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "Anmod om nulstilling af adgangskode?"
+      ],
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
         "Du kan nulstille din adgangskode om ${ gracePeriodHoursRemaining } time",
         "Du kan nulstille din adgangskode om ${ gracePeriodHoursRemaining } timer"
@@ -10892,9 +11560,36 @@
         "Kunne ikke opdatere indstillinger"
       ]
     },
+    "Settings/filters": {
+      "Filters": [
+        "Filtre"
+      ]
+    },
+    "Settings/filters - table": {
+      "Action": [
+        "Handling"
+      ],
+      "Name": [
+        "Navn"
+      ],
+      "Order": [
+        "Sortering"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
+    "Settings/labels": {
+      "Labels/Folders": [
+        "Etiketter/Mapper"
+      ]
+    },
     "Settings/labels - table": {
       "Actions": [
         "Handlinger"
+      ],
+      "Labels": [
+        "Etiketter"
       ]
     },
     "Share calendar assistive text": {
@@ -11227,6 +11922,9 @@
       ]
     },
     "Subscribed calendar section description": {
+      "Add public, external, or shared calendars using a URL.": [
+        "Tilføj offentlige, eksterne eller delte kalendere ved hjælp af en URL."
+      ],
       "Add public, external, or shared calendars.": [
         "Tilføj offentlige, eksterne eller delte kalendere."
       ]
@@ -11386,6 +12084,9 @@
       "Address added": [
         "Adresse tilføjet"
       ],
+      "Address updated": [
+        "Adresse opdateret"
+      ],
       "Auto-reply disabled": [
         "Autosvar deaktiveret"
       ],
@@ -11419,8 +12120,14 @@
       "Code sent to ${ methodTo }": [
         "Kode sendt til ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Kopieret til udklipsholder"
+      ],
       "Credits added": [
         "Kreditter tilføjet"
+      ],
+      "Default calendar updated": [
+        "Standardkalender opdateret"
       ],
       "Display name updated": [
         "Visningsnavnet opdateret"
@@ -11439,6 +12146,9 @@
       ],
       "Email updated": [
         "E-mail opdateret"
+      ],
+      "Fingerprint copied to clipboard": [
+        "Fingeraftryk kopieret til udklipsholder"
       ],
       "Gift code applied": [
         "Gavekode anvendt"
@@ -11467,11 +12177,17 @@
       "Keys updated": [
         "Nøgler opdateret"
       ],
+      "Link copied to clipboard": [
+        "Link kopieret til udklipsholder"
+      ],
       "Locale updated": [
         "Lokalisering opdateret"
       ],
       "Organization activated": [
         "Organisation aktiveret"
+      ],
+      "Password copied to clipboard": [
+        "Adgangskode kopieret til udklipsholder"
       ],
       "Password updated": [
         "Adgangskode opdateret"
@@ -11488,11 +12204,20 @@
       "Phone number updated": [
         "Telefonnummer opdateret"
       ],
+      "Port copied to clipboard": [
+        "Port kopieret til udklipsholder."
+      ],
       "Preference saved": [
         "Præferencer gemt"
       ],
+      "Premium address created": [
+        "Premium-adresse oprettet"
+      ],
       "Resuming import": [
         "Genoptager import"
+      ],
+      "Server copied to clipboard": [
+        "Server kopieret til Udklipsholder."
       ],
       "Session revoked": [
         "Session tilbagekaldt"
@@ -11500,8 +12225,14 @@
       "Sessions revoked": [
         "Sessioner tilbagekaldt"
       ],
+      "SMTP token deleted": [
+        "SMTP-token slettet"
+      ],
       "SPF value copied to clipboard": [
         "SPF-værdi kopieret til udklipsholder"
+      ],
+      "Token copied to clipboard": [
+        "Token kopieret til udklipsholder."
       ],
       "Undo in progress": [
         "Annullering i gang"
@@ -11511,6 +12242,9 @@
       ],
       "User updated": [
         "Bruger opdateret"
+      ],
+      "Username copied to clipboard": [
+        "Brugernavn kopieret til udklipsholder"
       ],
       "Value copied to clipboard": [
         "Værdi kopieret til udklipsholder"
@@ -11539,6 +12273,11 @@
         "Bruger slettet"
       ]
     },
+    "Success message after sorting folders": {
+      "Folders sorted": [
+        "Mapper sorteret"
+      ]
+    },
     "Success notification": {
       "${ label.Name } removed": [
         "${ label.Name } fjernet"
@@ -11564,8 +12303,14 @@
       "Creating config file for ${ serverName }": [
         "Opretter konfigurationsfil for ${ serverName }"
       ],
+      "Filter removed": [
+        "Filter fjernet"
+      ],
       "Preference updated": [
         "Præference opdateret"
+      ],
+      "Status updated": [
+        "Status opdateret"
       ]
     },
     "Suffix": {
@@ -11579,6 +12324,11 @@
     "Suffix for price": {
       "per month": [
         "pr. måned"
+      ]
+    },
+    "Summary of errors during export calendar": {
+      "Details about events that couldn't be exported": [
+        "Detaljer om begivenheder, der ikke kunne eksporteres"
       ]
     },
     "summer2023: Deal details": {
@@ -11617,6 +12367,11 @@
       ],
       "For individuals": [
         "Til enkeltpersoner"
+      ]
+    },
+    "Table header; invitations to share calendar": {
+      "Shared with me": [
+        "Delt med mig"
       ]
     },
     "TableHeader": {
@@ -11679,6 +12434,11 @@
       ],
       "vCard field": [
         "vCard-felt"
+      ]
+    },
+    "TableRow": {
+      "No SMTP tokens found": [
+        "Ingen SMTP-token fundet"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -11802,6 +12562,9 @@
       "Add servers": [
         "Tilføj servere"
       ],
+      "Add Sieve filter": [
+        "Tilføj Sieve-filter"
+      ],
       "Add to allow list": [
         "Føj til tillad-liste"
       ],
@@ -11835,6 +12598,9 @@
       "Appearance": [
         "Udseende"
       ],
+      "Apply filter to existing messages": [
+        "Anvend filter på eksisterende beskeder"
+      ],
       "Apply gift code": [
         "Tilføj gavekode"
       ],
@@ -11850,11 +12616,17 @@
       "Auto-reply": [
         "Autosvar"
       ],
+      "Automatically sign outgoing messages?": [
+        "Auto-signér udgående beskeder?"
+      ],
       "Backup and export": [
         "Backup og eksport"
       ],
       "Billing cycle": [
         "Faktureringscyklus"
+      ],
+      "Bridge for ${ platform }": [
+        "Bridge til ${ platform }"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Opsig abonnement på ${ MAIL_SHORT_APP_NAME }"
@@ -12016,14 +12788,26 @@
       "Delete ${ email }": [
         "Slet ${ email }"
       ],
+      "Delete ${ filterName }": [
+        "Slet ${ filterName }"
+      ],
       "Delete ${ label.Name } folder": [
         "Slet ${ label.Name }-mappe"
       ],
       "Delete ${ label.Name } label": [
         "Slet ${ label.Name }-etikette"
       ],
+      "Delete ${ tokenNameToRemove }?": [
+        "Slet ${ tokenNameToRemove }?"
+      ],
       "Delete account": [
         "Slet konto"
+      ],
+      "Delete calendar": [
+        "Slet kalender"
+      ],
+      "Delete key permanently?": [
+        "Slet nøgle permanent?"
       ],
       "Delete logs": [
         "Slet logs"
@@ -12086,6 +12870,9 @@
       "Edit servers": [
         "Redigér servere"
       ],
+      "Edit Sieve filter": [
+        "Rediger Sieve-filter"
+      ],
       "Edit the list of servers of the gateway": [
         "Rediger listen over gatewayens servere"
       ],
@@ -12131,6 +12918,15 @@
       "Export": [
         "Exportér"
       ],
+      "Export calendar": [
+        "Eksportér kalender"
+      ],
+      "Export private key": [
+        "Importér privat nøgle"
+      ],
+      "Export public key": [
+        "Eksportér offentlig nøgle"
+      ],
       "External PGP settings": [
         "Eksterne PGP-indstillinger"
       ],
@@ -12167,6 +12963,9 @@
       ],
       "Generate new recovery phrase?": [
         "Opret ny gendannelsessætning?"
+      ],
+      "Generate SMTP token": [
+        "Generér SMTP-token"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "Få ${ vpnPlus } for at få adgang til alle servere"
@@ -12211,14 +13010,14 @@
       "Import failed": [
         "Import mislykkedes"
       ],
+      "Import key": [
+        "Importer nøgle"
+      ],
       "Import messages": [
         "Importér beskeder"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importer via ${ PRODUCT_NAMES.EASY_SWITCH }"
-      ],
-      "Import-Export app": [
-        "Import-eksport-app"
       ],
       "Increase your privacy with more addresses": [
         "Forøg beskyttelsen af dit privatliv med flere adresser"
@@ -12234,6 +13033,9 @@
       ],
       "Keep your inbox organized": [
         "Hold din indbakke organiseret"
+      ],
+      "Keyboard shortcuts": [
+        "Tastaturgenveje"
       ],
       "Labels": [
         "Etiketter"
@@ -12439,6 +13241,9 @@
       "Set organization password": [
         "Angiv organisationsadgangskode"
       ],
+      "Set up a recovery method": [
+        "Indstil gendannelsesmetode"
+      ],
       "Set up forwarding": [
         "Indstil videresendelse"
       ],
@@ -12484,6 +13289,12 @@
       "SMTP submission": [
         "SMTP-indsendelse"
       ],
+      "Sort folders alphabetically": [
+        "Sortér mapper alfabetisk"
+      ],
+      "Sort labels alphabetically": [
+        "Sortér etiketter alfabetisk"
+      ],
       "Spam, block, and allow lists": [
         "Spam-, blokerings- og tillad-lister"
       ],
@@ -12495,6 +13306,9 @@
       ],
       "Status": [
         "Status"
+      ],
+      "Success": [
+        "Lykkedes"
       ],
       "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
         "Oprettede ${ localSuccessfullyCreatedUsers.length } brugerkonto",
@@ -12606,6 +13420,9 @@
       "Your recovery status": [
         "Din gendannelsesstatus"
       ],
+      "Your SMTP token": [
+        "Dit SMTP-token"
+      ],
       "Your subscriptions": [
         "Dine abonnementer"
       ],
@@ -12665,6 +13482,12 @@
     "Title header for keys table": {
       "Actions": [
         "Handlinger"
+      ],
+      "Fingerprint": [
+        "Fingeraftryk"
+      ],
+      "Status": [
+        "Status"
       ]
     },
     "Title header for members table": {
@@ -12711,6 +13534,9 @@
       ]
     },
     "Tooltip": {
+      "${ MAIL_APP_NAME } users will use this key by default for sending": [
+        "Brugere af ${ MAIL_APP_NAME } vil som standard bruge denne nøgle til afsendelse"
+      ],
       "Account is disconnected": [
         "Kontoforbindelse er afbrudt"
       ],
@@ -12756,17 +13582,38 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserer automatisk nogle e-mails som f.eks. Sociale netværk eller Promoveringer. Du kan vælge, hvor du vil importere disse e-mails til."
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "Gruppér e-mails i den samme samtale sammen i din indbakke, eller vis dem separat."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Hvis du har købt en gavekode eller modtaget en fra vores supportteam, kan du indtaste den her."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Medlemmer, der ikke bruger 2FA, vil modtage en e-mail, der beder dem om at aktivere det hurtigst muligt."
       ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Beskeder i Sendt eller Kladder vil fortsætte med at blive vist i de mapper, selvom du flytter dem til en anden mappe."
+      ],
       "See number of unread messages in the tab icon": [
         "Se antallet af ulæste beskeder i fane-ikonet"
       ],
+      "Set how your list of messages looks like by default.": [
+        "Vælg hvordan din liste over beskeder ser ud som standard."
+      ],
+      "Set the default Composer popup size as small or full screen.": [
+        "Indstil standard-editorens popup-størrelse som lille eller fuld skærm."
+      ],
+      "Set the default layout for your Inbox.": [
+        "Indstil standardlayout for din indbakke."
+      ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Indstiller følgende sidefod i de e-mails, du sender: ${ signature } Linket peger på dit henvisningslink. Sidefoden vises under din signatur. Du kan til enhver tid tilpasse din signatur i indstillingerne."
+      ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "Viser hver afsenders billede i meddelelseslisten. Afsenderens initialer vises, hvis der ikke er et billede til rådighed."
+      ],
+      "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
+        "Signaturer genereret af denne nøgle behandles som ugyldige, og denne nøgle kan ikke benyttes til kryptering"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }"
@@ -12789,11 +13636,26 @@
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Det valgte tema vil blive aktiveret når dit system er sat til \"lys tilstand\""
       ],
+      "This address has been disabled": [
+        "Denne adresse er deaktiveret"
+      ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "Denne funktion forsinker afsendelse af dine e-mails. Du kan fortryde afsendelse inden for den valgte tidsramme."
+      ],
       "This feature is only available for paid users": [
         "Denne funktion er kun tilgængelig for betalende brugere"
       ],
       "This feature is only available on Beta": [
         "Denne funktion er kun tilgængelig på Beta"
+      ],
+      "This key cannot be used for encryption": [
+        "Nøglen kanm ikke benyttes til kryptering"
+      ],
+      "This key is encrypted with an old password": [
+        "Denne nøgle er krypteret med en gammel adgangskode"
+      ],
+      "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
+        "Denne nøgle bruges af ${ MAIL_APP_NAME } til at kryptere dine kontaktdata"
       ],
       "This key is used for email forwarding": [
         "Denne nøgle bruges til e-mail-videresendelse"
@@ -12813,6 +13675,18 @@
       "When enabled, animations and transitions will not show": [
         "Når det er aktiveret, vises animationer og overgange ikke."
       ],
+      "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
+        "Når du tilføjer en etikette til en besked i en samtale, vil den automatisk blive anvendt på alle fremtidige beskeder, du sender eller modtager i denne samtale."
+      ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "Når du klikker på et link, vil denne anti-phishing-funktion bede dig om at bekræfte webadressen (URL) på websiden."
+      ],
+      "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
+        "Når du flytter en e-mail til spam, bliver du automatisk afmeldt fra afsenderens mailinglister."
+      ],
+      "You have locally decrypted this key": [
+        "Du har dekrypteres denne nøgle lokalt"
+      ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "Din indbakke i ${ MAIL_APP_NAME } er næsten fuld"
       ],
@@ -12823,9 +13697,24 @@
         "Din eksterne konto har muligvis nået sin 24-timers båndbreddegrænse. ${ BRAND_NAME } vil forsøge at genoptage importen så hurtig som muligt."
       ]
     },
+    "Tooltip automatically attach public key": {
+      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
+        "Dette føjer automatisk din offentlige nøgle til hver besked, du afsender. Modtagere kan benytte denne til at bekræfte ægtheden af dine beskeder og sende krypterede beskeder til dig."
+      ]
+    },
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "Vælg de PGP-standardindstillinger, der bruges til at signere eller kryptere beskeder med brugere, som ikke benytter ${ BRAND_NAME }. Bemærk at Inline PGP fremtvinger almindelige tekstbeskeder."
+      ]
+    },
+    "Tooltip prompt to trust keys": {
+      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "Når du modtager en e-mail fra en anden bruger af ${ MAIL_APP_NAME }, som ikke har betroede nøgler i dine kontakter, vil et banner vil spørge, om du vil aktivere betroede nøgler."
+      ]
+    },
+    "Tooltip sign external messages": {
+      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
+        "Signér automatisk alle dine udgående beskeder, så brugerne kan bekræfte ægtheden af dine beskeder. Dette gøres i kombination med den standard PGP-konfiguration, der kan vælges nedenfor."
       ]
     },
     "Tooltip; share calendar modal ": {
@@ -13025,6 +13914,9 @@
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Dato- og tidsindstillingerne på din enhed er ikke synkroniseret. ${ learnMore }"
       ],
+      "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
+        "Enheden eller tjenesten der bruger dette token vil ikke længere kunne sende e-mails gennem ${ MAIL_APP_NAME }."
+      ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Denne import kan overstige den lagerkapacitet, der i øjeblikket er tilgængelig på din ${ BRAND_NAME }-konto. Overvej venligst at tilpasse din import."
       ],
@@ -13065,6 +13957,11 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "DNS-ændringer kan tage op til én dag at effektuere."
+      ]
+    },
+    "Weak personal key warning": {
+      "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
+        "Denne nøgle opfylder ikke længere vores sikkerhedsstandarder. Vi foreslår, at du markerer den som forældet og genererer en ny nøgle."
       ]
     },
     "Weekly recurring event, frequency": {

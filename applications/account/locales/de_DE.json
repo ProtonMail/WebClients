@@ -245,6 +245,9 @@
       "Copy address": [
         "E-Mail-Adresse kopieren"
       ],
+      "Copy key to the clipboard": [
+        "Schlüssel in die Zwischenablage kopieren"
+      ],
       "Copy link": [
         "Link kopieren"
       ],
@@ -376,9 +379,6 @@
       ],
       "Download recovery file": [
         "Wiederherstellungsdatei herunterladen"
-      ],
-      "Download the Import-Export app": [
-        "Import-Export-App herunterladen"
       ],
       "Edit": [
         "Bearbeiten"
@@ -5714,6 +5714,17 @@
         "Ein Teil deines Kalenderinhalts wird nicht unterstützt und wird nicht importiert."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
+      ],
+      "Selected color:": [
+        "Ausgewählte Farbe:"
+      ]
+    },
     "Info": {
       "${ amountOfAddresses } address": [
         "${ amountOfAddresses } Adresse",
@@ -7257,9 +7268,6 @@
       "The format of your CSV file is incorrect.": [
         "Das Format der CSV-Datei ist ungültig."
       ],
-      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        "Mit der Import-Export-App kannst du Nachrichten als lokale Datensicherung exportieren und frühere Sicherungen in deinem Konto wiederherstellen."
-      ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Der Link zur Meldung, dass du kein ${ BRAND_NAME }-Konto eingerichtet hast, ist abgelaufen. Bitte setze dich mit unserem Support-Team in Verbindung, um dieses Problem zu lösen."
       ],
@@ -7835,7 +7843,7 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Du kannst verschlüsselte Daten nach dem Zurücksetzen des Kontos mit den heruntergeladenen Wiederherstellungsdateien nicht mehr wiederherstellen."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
         "Verschlüsselte Daten können mit den heruntergeladenen Wiederherstellungsdateien nicht wiederhergestellt werden. Dadurch werden auch vertrauenswürdige Informationen zur Wiederherstellung des Geräts ungültig."
       ],
       "You'll stay signed in even after you close the browser.": [
@@ -7931,14 +7939,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Dein Abonnement wird von Mozilla verwaltet. Bitte kontaktiere den Mozilla-Support."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
       ]
     },
     "Info - folder colouring feature": {
@@ -9985,6 +9985,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } Kalender",
+        "${ maximumNumberOfCalendars } Kalender"
+      ],
       "${ n } calendar": [
         "${ n } Kalender",
         "${ n } Kalender"
@@ -10363,6 +10367,17 @@
         "Teamverwaltung"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deine Testversion endet am ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } mit den Endziffern ${ last4 }"
@@ -10450,17 +10465,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Bei deinem aktuellen Abonnement profitierst du von einem Sonderangebotspreis. Wenn du dein Konto downgradest, können wir ihn dir nicht mehr ermöglichen, wenn du ein neues Abonnement abschließt."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Andernfalls wird der Zugang zu deinem Konto eingeschränkt und letztendlich deaktiviert."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Um ${ MAIL_APP_NAME } weiterhin mit Premium-Funktionen nutzen zu können, wähle deine Abonnement- und Zahlungsoptionen."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deine Testversion endet am ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10823,6 +10827,9 @@
       ],
       "IP Address copied to clipboard": [
         "IP-Adresse in Zwischenablage kopiert"
+      ],
+      "Key copied to the clipboard": [
+        "Schlüssel in die Zwischenablage kopiert"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Schlüssel mit dem Fingerabdruck ${ fp } wurde gelöscht."
@@ -11369,6 +11376,12 @@
       ],
       "End-to-end encryption": [
         "Ende-zu-Ende-Verschlüsselung"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Für nur **${ relativePrice } mehr pro Monat** erhältst du Zugang zu ${ BRAND_NAME }'s Premium Passwortmanager!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Für nur **${ relativePrice } mehr pro Monat** erhältst du Zugang zu ${ BRAND_NAME }'s Premium VPN-Diensten!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Für nur **${ relativePrice } mehr pro Monat** erhältst du Zugang zu allen ${ BRAND_NAME }-Premiumdiensten!"
@@ -12749,6 +12762,9 @@
       "Code sent to ${ methodTo }": [
         "Code gesendet an ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "In die Zwischenablage kopiert"
+      ],
       "Credits added": [
         "Guthaben hinzugefügt"
       ],
@@ -12772,6 +12788,9 @@
       ],
       "Email updated": [
         "E‐Mail aktualisiert"
+      ],
+      "Fingerprint copied to clipboard": [
+        "Fingerabdruck in die Zwischenablage kopiert"
       ],
       "Gift code applied": [
         "Gutscheincode eingelöst"
@@ -12800,11 +12819,17 @@
       "Keys updated": [
         "Schlüssel aktualisiert"
       ],
+      "Link copied to clipboard": [
+        "Link in die Zwischenablage kopiert"
+      ],
       "Locale updated": [
         "Gebietsschema aktualisiert"
       ],
       "Organization activated": [
         "Organisation aktiviert"
+      ],
+      "Password copied to clipboard": [
+        "Passwort in die Zwischenablage kopiert"
       ],
       "Password updated": [
         "Passwort aktualisiert"
@@ -12859,6 +12884,9 @@
       ],
       "User updated": [
         "Benutzer aktualisiert"
+      ],
+      "Username copied to clipboard": [
+        "Benutzername in die Zwischenablage kopiert"
       ],
       "Value copied to clipboard": [
         "Wert wurde in die Zwischenablage kopiert"
@@ -13638,9 +13666,6 @@
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importieren mit ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
-      "Import-Export app": [
-        "Import-Export-App"
-      ],
       "Increase your privacy with more addresses": [
         "Erhöhe deine Privatsphäre mit zusätzlichen Adressen"
       ],
@@ -13752,6 +13777,9 @@
       "PayPal verification failed": [
         "PayPal-Verifizierung fehlgeschlagen"
       ],
+      "Personalise your e-mail footer": [
+        "Personalisiere deine E-Mail-Fußzeile"
+      ],
       "Phone": [
         "Telefon"
       ],
@@ -13853,6 +13881,9 @@
       ],
       "Session management": [
         "Sitzungsverwaltung"
+      ],
+      "Set a display name": [
+        "Anzeigename festlegen"
       ],
       "Set new password": [
         "Neues Passwort festlegen"
