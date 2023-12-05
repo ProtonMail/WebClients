@@ -64,7 +64,7 @@ export default function FoldersSection() {
                                 {c('Label').t`Use folder colors`}
                             </label>
                         </SettingsLayoutLeft>
-                        <SettingsLayoutRight className="pt-2">
+                        <SettingsLayoutRight isToggleContainer>
                             <ToggleEnableFolderColor id="folder-colors" />
                         </SettingsLayoutRight>
                     </SettingsLayout>
@@ -72,18 +72,15 @@ export default function FoldersSection() {
                     {mailSettings?.EnableFolderColor ? (
                         <SettingsLayout>
                             <SettingsLayoutLeft>
-                                <label
-                                    htmlFor="parent-folder-color"
-                                    className="text-semibold flex items-center gap-2"
-                                >
-                                    <span>{c('Label').t`Inherit color from parent folder`}</span>
+                                <label htmlFor="parent-folder-color" className="text-semibold">
+                                    <span className="mr-1">{c('Label').t`Inherit color from parent folder`}</span>
                                     <Info
                                         title={c('Info - folder colouring feature')
                                             .t`When enabled, sub-folders inherit the color of the parent folder.`}
                                     />
                                 </label>
                             </SettingsLayoutLeft>
-                            <SettingsLayoutRight className="pt-2">
+                            <SettingsLayoutRight isToggleContainer>
                                 <ToggleInheritParentFolderColor id="parent-folder-color" />
                             </SettingsLayoutRight>
                         </SettingsLayout>

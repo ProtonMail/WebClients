@@ -87,7 +87,7 @@ const MessagesSection = () => {
                         />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt-2">
+                <SettingsLayoutRight isToggleContainer>
                     <EmbeddedToggle
                         id="embeddedToggle"
                         hideEmbeddedImages={hideEmbeddedImages}
@@ -105,7 +105,7 @@ const MessagesSection = () => {
                         />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt-2">
+                <SettingsLayoutRight isToggleContainer>
                     <ShowMovedToggle id="showMovedToggle" />
                 </SettingsLayoutRight>
             </SettingsLayout>
@@ -118,7 +118,7 @@ const MessagesSection = () => {
                                 <Info title={c('Info').t`Not yet available in our Android mobile app.`} />
                             </label>
                         </SettingsLayoutLeft>
-                        <SettingsLayoutRight className="pt-2">
+                        <SettingsLayoutRight isToggleContainer>
                             <AlmostAllMailToggle id="almostAllMail" showAlmostAllMail={AlmostAllMail} />
                         </SettingsLayoutRight>
                     </>
@@ -134,7 +134,7 @@ const MessagesSection = () => {
                         />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt-2">
+                <SettingsLayoutRight isToggleContainer>
                     <RequestLinkConfirmationToggle confirmLink={ConfirmLink} id="requestLinkConfirmationToggle" />
                 </SettingsLayoutRight>
             </SettingsLayout>
@@ -150,7 +150,7 @@ const MessagesSection = () => {
                     </label>
                 </SettingsLayoutLeft>
 
-                <SettingsLayoutRight className="pt-2">
+                <SettingsLayoutRight isToggleContainer>
                     <ViewModeToggle
                         id="viewMode"
                         viewMode={ViewMode}
@@ -173,7 +173,7 @@ const MessagesSection = () => {
                         />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt-2">
+                <SettingsLayoutRight isToggleContainer>
                     <StickyLabelsToggle
                         id="stickyLabelsToggle"
                         stickyLabels={StickyLabels}
@@ -216,7 +216,7 @@ const MessagesSection = () => {
                             </span>
                         </label>
                     </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="pt-2">
+                    <SettingsLayoutRight isToggleContainer>
                         <PageSizeSelector id="pageSizeSelector" />
                     </SettingsLayoutRight>
                 </SettingsLayout>
