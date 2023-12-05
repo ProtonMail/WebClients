@@ -1,13 +1,15 @@
 import { ReactNode, useEffect, useState } from 'react';
 
 import useApiStatus from '@proton/components/hooks/useApiStatus';
+import { serverTime } from '@proton/crypto';
 import { ktSentryReportError } from '@proton/key-transparency/lib';
 import { APP_NAMES, SECOND } from '@proton/shared/lib/constants';
-import { KeyTransparencyActivation, KeyTransparencyState } from '@proton/shared/lib/interfaces';
+import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 import { useOnline } from '../../hooks';
 import { KTContext } from './ktContext';
 import useKTActivation from './useKTActivation';
+import useKTState from './useKTState';
 import { KeyTransparencyContext } from './useKeyTransparencyContext';
 import useRunSelfAudit from './useRunSelfAudit';
 import useVerifyOutboundPublicKeys from './useVerifyOutboundPublicKeys';
@@ -20,9 +22,7 @@ interface Props {
 const KeyTransparencyManager = ({ children }: Props) => {
     const ktActivation = useKTActivation();
 
-    const [ktState, setKTState] = useState<KeyTransparencyState>({
-        selfAuditResult: undefined,
-    });
+    const [ktStateLoaded, ktState, setKTState] = useKTState();
 
     const [selfAuditPending, setSelfAuditPending] = useState(false);
 
@@ -37,7 +37,7 @@ const KeyTransparencyManager = ({ children }: Props) => {
     useEffect(() => {
         const run = async () => {
             try {
-                const { selfAuditResult } = await runSelfAudit();
+                const { selfAuditResult } = await runSelfAudit(ktState.selfAuditResult);
                 setKTState({ selfAuditResult });
             } catch (error) {
                 ktSentryReportError(error, { context: 'runSelfAuditPeriodically' });
@@ -50,13 +50,21 @@ const KeyTransparencyManager = ({ children }: Props) => {
     }, [selfAuditPending, ktActivation, safeIsOnline]);
 
     useEffect(() => {
-        const startDelay = 10 * SECOND;
-        const delay = ktState?.selfAuditResult
-            ? ktState.selfAuditResult.nextAuditTime - ktState.selfAuditResult.auditTime
-            : startDelay;
+        if (!ktStateLoaded) {
+            return;
+        }
+        // Determine when the next self-audit should happen.
+        const pendingDelay = 10 * SECOND;
+        const now = +serverTime();
+        // If the self-audit result does not exist or the nextAuditTime has passed
+        // run the self-audit after pendingDelay else run it at nextAuditTime.
+        const delay =
+            ktState.selfAuditResult && ktState.selfAuditResult.nextAuditTime > now
+                ? ktState.selfAuditResult.nextAuditTime - now
+                : pendingDelay;
         const timeoutID = setTimeout(() => setSelfAuditPending(true), delay);
         return () => clearTimeout(timeoutID);
-    }, [ktState]);
+    }, [ktStateLoaded, ktState]);
 
     const ktFunctions: KTContext = {
         ktState,

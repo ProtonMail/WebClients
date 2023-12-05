@@ -177,9 +177,8 @@ export const getAuditResult = async (
             const decrypted = await CryptoProxy.decryptMessage({
                 armoredMessage,
                 decryptionKeys: userPrivateKeys,
-            }).catch((error) => {
-                console.warn(error, 'This is expected after a password reset');
-                return null;
+            }).catch(() => {
+                return;
             });
             if (!decrypted) {
                 return;
