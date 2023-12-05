@@ -2069,6 +2069,9 @@
       "\"${ name }\" already exists": [
         "”${ name }” finns redan"
       ],
+      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
+        "${ DRIVE_APP_NAME } har uppdaterats. Uppdatera sidan."
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan också kontrollera vår ${ statusPageLink }"
       ],
@@ -2226,6 +2229,9 @@
       ],
       "Passwords do not match": [
         "Lösenorden matchar inte"
+      ],
+      "Photos upload is temporarily disabled. Please try again later": [
+        "Fotouppladdning är tillfälligt inaktiverad. Försök igen senare"
       ],
       "Please activate your search again": [
         "Aktivera din sökning igen"

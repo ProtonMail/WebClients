@@ -364,6 +364,9 @@
       "Import from .csv or vCard": [
         "Імпортувати з .csv або vCard"
       ],
+      "Import from Google": [
+        "Імпортувати з Google"
+      ],
       "Learn more": [
         "Докладніше"
       ],
@@ -491,6 +494,9 @@
         "Замінити файл"
       ],
       "Report a problem": [
+        "Повідомити про проблему"
+      ],
+      "Report an issue": [
         "Повідомити про проблему"
       ],
       "Request a feature": [
@@ -805,8 +811,27 @@
       ]
     },
     "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } сховища"
+      ],
       "6 users": [
         "6 користувачів"
+      ],
+      "Premium Password Manager": [
+        "Premium Менеджер паролів"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Гарантія повернення коштів протягом 30 днів"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включає підтримку 1 власного домену, 10 адрес електронної пошти, 10 псевдонімів hide-my-email, спільний доступ до календаря та інші можливості."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з історією версій, спільним доступом та іншими можливостями."
       ]
     },
     "Bug category": {
@@ -2544,6 +2569,14 @@
         "(без назви)"
       ]
     },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } не вдалося",
+        "${ countOfFailedLinks } не вдалося",
+        "${ countOfFailedLinks } не вдалося",
+        "${ countOfFailedLinks } не вдалося"
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "Усього 3 ТБ сховища"
@@ -3181,6 +3214,12 @@
         "${ doneUploadsCount } вивантажено",
         "${ doneUploadsCount } вивантажено"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } в App Store"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } у Play Маркеті"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } не вдалося",
         "${ errorCount } не вдалося",
@@ -3228,6 +3267,12 @@
         "Вибрано ${ selectedContactsLength } контакти з ${ contactsLength }",
         "Вибрано ${ selectedContactsLength } контактів з ${ contactsLength }",
         "Вибрано ${ selectedContactsLength } контактів з ${ contactsLength }"
+      ],
+      "${ selectedCount } selected": [
+        "вибрано ${ selectedCount }",
+        "вибрано ${ selectedCount }",
+        "вибрано ${ selectedCount }",
+        "вибрано ${ selectedCount }"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } вибрана тека",
@@ -4156,6 +4201,9 @@
       "Way to go, you’ve just doubled your free storage!": [
         "Усе готово! Ви щойно подвоїли обсяг свого безплатного сховища!"
       ],
+      "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
+        "У зв'язку з технічними проблемами, вивантаження нових фотографій тимчасово вимкнено."
+      ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Ми не можемо підтвердити, що ${ emailAddress } вивантажив ${ fileName }."
       ],
@@ -4982,6 +5030,12 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } календар",
+        "${ maximumNumberOfCalendars } календарі",
+        "${ maximumNumberOfCalendars } календарів",
+        "${ maximumNumberOfCalendars } календарів"
+      ],
       "Auto-delete spam and trashed messages": [
         "Автоматичне видалення спаму та повідомлень зі смітника"
       ],
@@ -5193,6 +5247,9 @@
       ],
       "File or folder is missing a name": [
         "Файл чи тека не мають назви"
+      ],
+      "Link copied to clipboard": [
+        "Посилання скопійовано в буфер обміну"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Перемістити ${ itemsToMoveCount } файл",
@@ -5523,9 +5580,48 @@
         "Скинути пароль"
       ]
     },
+    "session_recovery:available:error": {
+      "Please generate keys before you try to change your password": [
+        "Згенеруйте ключі, перш ніж змінювати пароль"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } день",
+        "${ timeRemaining.inDays } дні",
+        "${ timeRemaining.inDays } днів",
+        "${ timeRemaining.inDays } днів"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } година",
+        "${ timeRemaining.inHours } години",
+        "${ timeRemaining.inHours } годин",
+        "${ timeRemaining.inHours } годин"
+      ]
+    },
     "session_recovery:available:notification": {
       "Password saved": [
         "Пароль збережено"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Скинути пароль"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Скасувати скидання пароля"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Скидання пароля скасовано"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Скасувати скидання пароля?"
       ]
     },
     "session_recovery:in_progress:action": {
@@ -5544,12 +5640,25 @@
         "Переглянути запит"
       ]
     },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Подано запит на скидання пароля"
+      ]
+    },
     "session_recovery:sign_out:action": {
       "Sign out": [
         "Вийти"
       ],
       "Stay signed in": [
         "Залишатися в системі"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } година",
+        "${ gracePeriodHoursRemaining } години",
+        "${ gracePeriodHoursRemaining } годин",
+        "${ gracePeriodHoursRemaining } годин"
       ]
     },
     "Signing preference for emails": {
@@ -5656,6 +5765,12 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } місяць",
+        "${ n } місяці",
+        "${ n } місяців",
+        "${ n } місяців"
+      ],
       "/ month": [
         "/ місяць"
       ],
@@ -5763,6 +5878,9 @@
       ]
     },
     "Storage": {
+      "Get more storage": [
+        "Збільшити сховище"
+      ],
       "Release notes": [
         "Примітки до випуску"
       ],
