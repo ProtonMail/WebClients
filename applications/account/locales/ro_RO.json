@@ -380,8 +380,8 @@
       "Download recovery file": [
         "Descărcare fișier de recuperare"
       ],
-      "Download the Import-Export app": [
-        "Descărcare aplicație „Import-Export”"
+      "Download the ${ MAIL_APP_NAME } Export Tool": [
+        "Descărcați instrumentul de exportare ${ MAIL_APP_NAME }"
       ],
       "Edit": [
         "Editare"
@@ -5754,6 +5754,17 @@
         "O parte din conținutul calendarului nu este suportat și nu va fi importat."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Cheia ${ fingerprint } a fost deja încărcată."
+      ],
+      "Selected color:": [
+        "Culoare selectată:"
+      ]
+    },
     "Info": {
       "${ amountOfAddresses } address": [
         "${ amountOfAddresses } adresă",
@@ -7312,6 +7323,9 @@
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Mesajul ${ boldDataLocked } nu va mai fi afișat, dar încă puteți să vă deblocați datele de la ${ encryptionAndKeysLink }."
       ],
+      "The ${ MAIL_APP_NAME } Export Tool lets you export decrypted emails from your ${ MAIL_APP_NAME } account to your device. You can then view the messages or import them into another email account or email client.": [
+        "Instrumentul de export ${ MAIL_APP_NAME } vă permite să exportați e-mailuri decriptate din contul ${ MAIL_APP_NAME } pe dispozitiv. Apoi puteți vizualiza mesajele sau le puteți importa într-un alt cont de e-mail sau client de e-mail."
+      ],
       "The calendar will be removed from your account.": [
         "Calendarul va fi eliminat din cont."
       ],
@@ -7341,9 +7355,6 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Formatul fișierului CSV nu este corect."
-      ],
-      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        "Aplicația Import-Export vă permite să exportați mesajele pentru conservare locală și să restaurați datele anterioare în cont."
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Legătura spre raportul că nu ați setat un cont ${ BRAND_NAME } a expirat. Contactați echipa noastră de asistență pentru a rezolva această problemă."
@@ -7928,8 +7939,8 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Nu veți putea recupera datele blocate folosind fișierele de recuperare descărcate."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
-        "Nu veți putea recupera datele blocate folosind fișierele de recuperare descărcate. Aceasta va goli și informațiile de recuperare de încredere aflate pe dispozitiv."
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
+        "Nu veți putea recupera datele blocate folosind fișierele de recuperare descărcate. Aceasta va dezactiva și dispozitivul de recuperare aprobat."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Conexiunea va rămâne activă chiar și după ce închideți navigatorul."
@@ -8025,14 +8036,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Abonamentul vă este gestionat de Mozilla. Contactați Mozilla pentru suport."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Cheia ${ fingerprint } a fost deja încărcată."
       ]
     },
     "Info - folder colouring feature": {
@@ -10097,6 +10100,11 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendar",
+        "${ maximumNumberOfCalendars } calendare",
+        "${ maximumNumberOfCalendars } de calendare"
+      ],
       "${ n } calendar": [
         "${ n } calendar",
         "${ n } calendare",
@@ -10494,6 +10502,17 @@
         "Gestionare echipă"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Perioada de probare se termină ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -10581,17 +10600,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Perioada de probare se termină ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12955,6 +12963,9 @@
       "Code sent to ${ methodTo }": [
         "Cod trimis la ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Copiat în memorie."
+      ],
       "Credits added": [
         "Credite adăugate"
       ],
@@ -12978,6 +12989,9 @@
       ],
       "Email updated": [
         "E-mail actualizat"
+      ],
+      "Fingerprint copied to clipboard": [
+        "Amprenta a fost copiată în memorie"
       ],
       "Gift code applied": [
         "Cod cadou aplicat"
@@ -13006,11 +13020,17 @@
       "Keys updated": [
         "Chei actualizate"
       ],
+      "Link copied to clipboard": [
+        "Legătura a fost copiată în memorie."
+      ],
       "Locale updated": [
         "Limbă actualizată"
       ],
       "Organization activated": [
         "Organizație activată"
+      ],
+      "Password copied to clipboard": [
+        "Parola a fost copiată în memorie."
       ],
       "Password updated": [
         "Parolă actualizată"
@@ -13065,6 +13085,9 @@
       ],
       "User updated": [
         "Utilizator actualizat"
+      ],
+      "Username copied to clipboard": [
+        "Numele de utilizator s-a copiat în memorie."
       ],
       "Value copied to clipboard": [
         "Valoarea a fost copiată în memorie"
@@ -13308,6 +13331,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } gratuit"
+      ],
+      "${ MAIL_APP_NAME } Export Tool": [
+        "Instrumentul de exportare ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Combinații de taste ${ MAIL_APP_NAME }"
@@ -13853,9 +13879,6 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importare prin ${ PRODUCT_NAMES.EASY_SWITCH }"
-      ],
-      "Import-Export app": [
-        "Aplicația „Import-Export”"
       ],
       "Increase your privacy with more addresses": [
         "Măriți-vă intimitatea cu adrese mai multe"

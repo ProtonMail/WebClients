@@ -374,9 +374,6 @@
       "Download recovery file": [
         "Herstelbestand downloaden"
       ],
-      "Download the Import-Export app": [
-        "Download de Import-Export app"
-      ],
       "Edit": [
         "Bewerken"
       ],
@@ -1393,11 +1390,17 @@
       "Save with Cyber Week deals on a high-speed Swiss VPN": [
         "Bespaar met Cyber Week-deals op supersnel Swiss VPN"
       ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Bespaar met een eindejaarsdeal op een snelle Zwitserse VPN"
+      ],
       "Select your Black Friday offer": [
         "Selecteer uw Black Friday-aanbieding"
       ],
       "Select your Cyber Week offer": [
         "Selecteer uw Cyber Week-aanbieding"
+      ],
+      "Select your End of Year offer": [
+        "Selecteer uw eindejaarsaanbieding"
       ]
     },
     "bf2023: info": {
@@ -3708,6 +3711,9 @@
       "Contact signature not verified": [
         "Handtekening van contact niet geverifieerd"
       ],
+      "Could not save preference": [
+        "Kon voorkeuren niet opslaan"
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Deselecteer tenminste ${ calendarsToFixCount } agenda",
         "Deselecteer tenminste ${ calendarsToFixCount } agenda's"
@@ -5693,6 +5699,17 @@
         "Een deel van je agenda-inhoud wordt niet ondersteund en zal niet worden geïmporteerd."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Sleutel ${ fingerprint } is al geüpload"
+      ],
+      "Selected color:": [
+        "Geselecteerde kleur:"
+      ]
+    },
     "Info": {
       "${ amountOfAddresses } address": [
         "${ amountOfAddresses } adres",
@@ -7236,9 +7253,6 @@
       "The format of your CSV file is incorrect.": [
         "Het formaat van uw CSV-bestand is onjuist."
       ],
-      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        "Met de app Import-Export kunt u berichten exporteren voor lokale back-ups en eerdere back-ups terugzetten naar uw account."
-      ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "De link om te melden dat je geen ${ BRAND_NAME }-account hebt ingesteld, is verlopen. Neem contact op met ons ondersteuningsteam om dit probleem op te lossen."
       ],
@@ -7811,9 +7825,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "U zult niet in staat zijn om vergrendelde gegevens te herstellen met behulp van uw gedownloade herstelbestanden."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
-        "U zult niet in staat zijn om vergrendelde gegevens te herstellen met behulp van uw gedownloade herstelbestanden. Hierdoor vervalt ook vertrouwde apparaatherstelinformatie."
-      ],
       "You'll stay signed in even after you close the browser.": [
         "U zult ingelogd blijven, zelfs als u de browser sluit."
       ],
@@ -7907,14 +7918,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Uw abonnement wordt beheerd door Mozilla. Neem contact op met Mozilla support."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Sleutel ${ fingerprint } is al geüpload"
       ]
     },
     "Info - folder colouring feature": {
@@ -8290,6 +8293,15 @@
       "Make primary": [
         "Primair"
       ],
+      "Mark compromised": [
+        "Markeren als"
+      ],
+      "Mark not compromised": [
+        "Markeren als"
+      ],
+      "Mark not obsolete": [
+        "Markeren als niet verouderd"
+      ],
       "Mark obsolete": [
         "Markeren als uitgelekt"
       ]
@@ -8549,6 +8561,9 @@
       ],
       "Conversation grouping": [
         "Gesprek groeperen"
+      ],
+      "Conversations per page": [
+        "Gesprekken per pagina"
       ],
       "Copy": [
         "Kopiëren"
@@ -8831,6 +8846,9 @@
       ],
       "Message": [
         "Bericht"
+      ],
+      "Messages per page": [
+        "Berichten per pagina"
       ],
       "Moderate NAT": [
         "Gemiddelde NAT"
@@ -9943,6 +9961,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } agenda",
+        "${ maximumNumberOfCalendars } agenda's"
+      ],
       "${ n } calendar": [
         "${ n } agenda",
         "${ n } agenda's"
@@ -10315,6 +10337,17 @@
         "Teambeheer"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
@@ -10402,17 +10435,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12701,6 +12723,9 @@
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Gekopieerd naar het klembord"
+      ],
       "Credits added": [
         "Tegoed toegevoegd"
       ],
@@ -12724,6 +12749,9 @@
       ],
       "Email updated": [
         "E-mail bijgewerkt"
+      ],
+      "Fingerprint copied to clipboard": [
+        "Vingerafdruk gekopieerd naar klembord"
       ],
       "Gift code applied": [
         "Geschenkcode toegepast"
@@ -12752,11 +12780,17 @@
       "Keys updated": [
         "Sleutels gewijzigd"
       ],
+      "Link copied to clipboard": [
+        "Link gekopieerd naar klembord"
+      ],
       "Locale updated": [
         "Landinstelling bijgewerkt"
       ],
       "Organization activated": [
         "Organisatie geactiveerd"
+      ],
+      "Password copied to clipboard": [
+        "Wachtwoord gekopieerd naar klembord"
       ],
       "Password updated": [
         "Wachtwoord bijgewerkt"
@@ -12811,6 +12845,9 @@
       ],
       "User updated": [
         "Gebruiker bijgewerkt"
+      ],
+      "Username copied to clipboard": [
+        "De Gebruikersnaam is naar het klembord gekopieerd"
       ],
       "Value copied to clipboard": [
         "Waarde gekopieerd naar klembord"
@@ -13517,6 +13554,9 @@
       "Folders and labels": [
         "Mappen en labels"
       ],
+      "Forward and auto-reply": [
+        "Doorsturen en automatisch beantwoorden"
+      ],
       "Forward emails": [
         "Stuur e-mails door"
       ],
@@ -13586,9 +13626,6 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importeren via ${ PRODUCT_NAMES.EASY_SWITCH }"
-      ],
-      "Import-Export app": [
-        "Import-Export app"
       ],
       "Increase your privacy with more addresses": [
         "Verbeter uw privacy met meer adressen"
@@ -13701,6 +13738,9 @@
       "PayPal verification failed": [
         "PayPal verificatie mislukt"
       ],
+      "Personalise your e-mail footer": [
+        "Personaliseer de voettekst van uw e-mail"
+      ],
       "Phone": [
         "Telefoon"
       ],
@@ -13811,6 +13851,9 @@
       ],
       "Set organization password": [
         "Stel organisatiewachtwoord in"
+      ],
+      "Set up a recovery method": [
+        "Een herstelmethode instellen"
       ],
       "Set up forwarding": [
         "Doorsturen instellen"
@@ -14298,7 +14341,7 @@
     },
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "Automatisch al uw uitgaande berichten ondertekene, zodat gebruikers de authenticiteit van uw berichten kunnen verifiëren. Dit wordt gedaan in combinatie met de standaard PGP-instellingen, welke hieronder kunnen worden geconfigureerd."
+        "Automatisch al uw uitgaande berichten ondertekenen, zodat gebruikers de authenticiteit van uw berichten kunnen verifiëren. Dit wordt gedaan in combinatie met de standaard PGP-instellingen, welke hieronder kunnen worden geconfigureerd."
       ]
     },
     "Tooltip; share calendar modal ": {
@@ -14565,7 +14608,7 @@
     },
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
-        "Verwijder na een succesvolle verificatie, dit TXT-record niet omdat het nodig is om te bevestigen dat u de eigenaar van het domein blijft."
+        "Na een succesvolle verificatie mag u dit TXT-record niet verwijderen, omdat het nodig is om te bevestigen dat u de eigenaar van het domein blijft."
       ],
       "It can take up to a day for DNS changes to update.": [
         "Het kan een dag duren voordat DNS-veranderingen zijn bijgewerkt."
