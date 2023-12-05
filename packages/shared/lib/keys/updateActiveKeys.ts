@@ -14,9 +14,7 @@ export const hasActiveKeysMismatch = (address: Address, decryptedKeys: Decrypted
         return false;
     }
     const activeKeysIDs = new Set(decryptedKeys.map((key) => key.ID));
-    return address.Keys.reduce<Boolean>((mismatch, key) => {
-        return mismatch ? mismatch : key.Active ? !activeKeysIDs.has(key.ID) : false;
-    }, false);
+    return address.Keys.some((key) => key.Active && !activeKeysIDs.has(key.ID));
 };
 
 /**
