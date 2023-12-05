@@ -1,5 +1,6 @@
 import { serverTime } from '@proton/crypto';
 import { KT_DATA_VALIDITY_PERIOD, KT_DOMAINS, ctLogs, getBaseDomain } from '@proton/key-transparency';
+import { HOUR } from '@proton/shared/lib/constants';
 import { isIos11, isSafari11 } from '@proton/shared/lib/helpers/browser';
 
 export enum KtFeatureEnum {
@@ -17,6 +18,7 @@ export const isKTActive = (feature: KT_FF) => {
     //  - BigInt is not supported (it is needed for VRF verification);
     //  - BigInt is only partially implemented and does not support -- (it is needed for VRF verification)
     //  - the hardcoded KT certificate data is older than 6 months.
+    //  - the server time compared to the client time is off for more than 24 hours
     if (feature === undefined || feature === KtFeatureEnum.DISABLE) {
         return false;
     }
@@ -46,6 +48,11 @@ export const isKTActive = (feature: KT_FF) => {
     const ctLogTimestamp = new Date(ctLogs.log_list_timestamp);
     const keyTransparencyDataAge = serverTime().getTime() - ctLogTimestamp.getTime();
     if (keyTransparencyDataAge > KT_DATA_VALIDITY_PERIOD) {
+        return false;
+    }
+    
+    const timeOffset = serverTime().getTime() - Date.now();
+    if (Math.abs(timeOffset) > 24 * HOUR) {
         return false;
     }
 
