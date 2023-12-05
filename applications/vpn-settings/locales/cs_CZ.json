@@ -101,6 +101,9 @@
       "Copy address": [
         "Kopírovat adresu"
       ],
+      "Copy key to the clipboard": [
+        "Zkopírovat klíč do schránky"
+      ],
       "Create": [
         "Vytvořit"
       ],
@@ -4794,6 +4797,12 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalendář",
+        "${ maximumNumberOfCalendars } kalendáře",
+        "${ maximumNumberOfCalendars } kalendářů",
+        "${ maximumNumberOfCalendars } kalendářů"
+      ],
       "${ n } calendar": [
         "${ n } kalendář",
         "${ n } kalendáře",
@@ -5613,6 +5622,9 @@
       ],
       "IP Address copied to clipboard": [
         "IP adresa zkopírována do schránky"
+      ],
+      "Key copied to the clipboard": [
+        "Klíč byl zkopírován do schránky"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 údaje byly obnoveny"
@@ -6754,6 +6766,9 @@
       "Code sent to ${ methodTo }": [
         "Kód zaslán na ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Zkopírováno do schránky"
+      ],
       "Credits added": [
         "Kredity byly přidány"
       ],
@@ -6790,11 +6805,17 @@
       "Keys updated": [
         "Klíče aktualizovány"
       ],
+      "Link copied to clipboard": [
+        "Odkaz zkopírován do schránky"
+      ],
       "Locale updated": [
         "Místní aktualizace"
       ],
       "Organization activated": [
         "Organizace byla aktivována"
+      ],
+      "Password copied to clipboard": [
+        "Heslo bylo zkopírované do schránky"
       ],
       "Password updated": [
         "Heslo bylo změněno"
@@ -6819,6 +6840,9 @@
       ],
       "User updated": [
         "Uživatel aktualizován"
+      ],
+      "Username copied to clipboard": [
+        "Uživatelské jméno bylo zkopírováno do schránky"
       ],
       "Verification successful": [
         "Ověření proběhlo úspěšně"

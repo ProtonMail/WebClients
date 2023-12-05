@@ -379,6 +379,9 @@
       "Load image": [
         "Afbeelding laden"
       ],
+      "Loading link": [
+        "Koppeling laden"
+      ],
       "Manage folders": [
         "Mappen beheren"
       ],
@@ -498,6 +501,9 @@
       ],
       "Report a problem": [
         "Meld een probleem"
+      ],
+      "Report an issue": [
+        "Een probleem melden"
       ],
       "Request a feature": [
         "Vraag een functie aan"
@@ -3237,6 +3243,12 @@
         "${ doneUploadsCount } geüpload",
         "${ doneUploadsCount } geüpload"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } in de App Store"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } in de Play Store"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } mislukt",
         "${ errorCount } mislukt"
@@ -4152,6 +4164,9 @@
       "Trash": [
         "Prullenbak"
       ],
+      "Trash is empty": [
+        "Uw prullenbak is leeg."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Probeer de nieuwe ${ BRAND_NAME } mogelijkheden, updates en producten voordat ze publiekelijk gelanceerd worden. Dit herlaadt de applicatie"
       ],
@@ -4160,6 +4175,9 @@
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Helaas lijkt het erop dat het bestand of een deel van de gegevens ervan niet kan worden gedecodeerd."
+      ],
+      "Unknown date": [
+        "Onbekende datum"
       ],
       "Unknown error": [
         "Onbekende fout"
@@ -4338,6 +4356,11 @@
       ],
       "Your previous recovery phrase": [
         "Uw vorige herstelzin"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Geselecteerde kleur:"
       ]
     },
     "Info on errors": {
@@ -5026,6 +5049,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } agenda",
+        "${ maximumNumberOfCalendars } agenda's"
+      ],
       "Auto-delete spam and trashed messages": [
         "Automatisch spam en verwijderde berichten verwijderen"
       ],
@@ -5326,8 +5353,14 @@
       "Discover all ${ BRAND_NAME } services": [
         "Ontdek alle ${ BRAND_NAME }-diensten"
       ],
+      "Pick a theme": [
+        "Thema selecteren"
+      ],
       "Set up your organization": [
         "Stel uw organisatie in"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Gebruik de app-kiezer linksboven voor de toegang tot alle ${ BRAND_NAME }-diensten: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "Onboarding Title": {

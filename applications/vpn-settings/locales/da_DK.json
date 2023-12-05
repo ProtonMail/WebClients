@@ -2701,6 +2701,10 @@
         "${ remainingAddresses.length } mere",
         "${ remainingAddresses.length } mere"
       ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } adresse mere",
+        "${ remainingAddresses.length } adresser mere"
+      ],
       "${ storage } storage": [
         "${ storage } lagerplads"
       ],
@@ -3822,6 +3826,9 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "Din konto har mindst én faktura, der er forfalden. Din konto er begrænset. Fortsat manglende betaling vil blokere dine e-mails og delingslinks. ${ payInvoiceLink }"
       ],
+      "Your account was successfully updated with this promotion": [
+        "Din konto er blevet opdateret med denne kampagne"
+      ],
       "Your account will be updated once the payment is cleared.": [
         "Din konto vil blive opdateret, når betalingen er godkendt."
       ],
@@ -4601,9 +4608,17 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalender",
+        "${ maximumNumberOfCalendars } kalendere"
+      ],
       "${ n } calendar": [
         "${ n } kalender",
         "${ n } kalendere"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalender pr. bruger",
+        "${ n } kalendere pr. bruger"
       ],
       "${ n } custom email domain": [
         "${ n } brugerdefineret e-maildomæne",
@@ -5104,6 +5119,9 @@
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Beskyt dine e-mails med end-to-end kryptering. Inkluderer understøttelse af brugerdefinerede e-mail-domæner, 15 e-mail-adresser, ubegrænsede hide-my-email-aliaser, og mere."
       ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
+        "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+ og Prime Video, hvor som helst"
+      ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
         "Tillader at du forbinder til mere end ét netværk samtidigt, eks. kan du streame en film fra et andet land, samtidigt med at du får lokale søgeresultater"
       ],
@@ -5120,8 +5138,14 @@
         "Opret op til ${ n } kalender eller tilføj kalendere fra venner, familie, kollegaer og organisationer",
         "Opret op til ${ n } kalendere eller tilføj kalendere fra venner, familie, kollegaer og organisationer"
       ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
+        "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Afværger trussel mod VPN-privatliv ved at sende din internettrafik gennem flere servere"
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
+        "Afværger trussel mod VPN-privatliv ved at sende din internettrafik gennem flere servere."
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Du kan nemt dele dine kalendere med dine kolleger, familie eller venner via et link"
@@ -5244,6 +5268,9 @@
       ],
       "Auto-connect": [
         "Forbind automatisk"
+      ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Forøg din lagerplads til ${ bundleStorage } i alt"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Forøg din lagerplads til ${ bundleStorage } i alt"
@@ -5784,6 +5811,9 @@
       ]
     },
     "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "Anmod om nulstilling af adgangskode?"
+      ],
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
         "Du kan nulstille din adgangskode om ${ gracePeriodHoursRemaining } time",
         "Du kan nulstille din adgangskode om ${ gracePeriodHoursRemaining } timer"
@@ -6245,6 +6275,9 @@
       "Code sent to ${ methodTo }": [
         "Kode sendt til ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Kopieret til udklipsholder"
+      ],
       "Credits added": [
         "Kreditter tilføjet"
       ],
@@ -6281,11 +6314,17 @@
       "Keys updated": [
         "Nøgler opdateret"
       ],
+      "Link copied to clipboard": [
+        "Link kopieret til udklipsholder"
+      ],
       "Locale updated": [
         "Lokalisering opdateret"
       ],
       "Organization activated": [
         "Organisation aktiveret"
+      ],
+      "Password copied to clipboard": [
+        "Adgangskode kopieret til udklipsholder"
       ],
       "Password updated": [
         "Adgangskode opdateret"
@@ -6310,6 +6349,9 @@
       ],
       "User updated": [
         "Bruger opdateret"
+      ],
+      "Username copied to clipboard": [
+        "Brugernavn kopieret til udklipsholder"
       ],
       "Verification successful": [
         "Bekræftelse gennemført"

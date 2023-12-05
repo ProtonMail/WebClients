@@ -710,10 +710,10 @@
       "Not saved": [
         "Ikke gemt"
       ],
-      "Ok": [
+      "OK": [
         "Ok"
       ],
-      "OK": [
+      "Ok": [
         "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -6249,6 +6249,9 @@
       ],
       "Optional": [
         "Valgfrit"
+      ],
+      "Selected color:": [
+        "Valgte farve:"
       ]
     },
     "Info on errors": {
@@ -7492,6 +7495,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalender",
+        "${ maximumNumberOfCalendars } kalendere"
+      ],
       "Auto-delete spam and trashed messages": [
         "Slet automatisk spam og beskeder i papirkurven"
       ],

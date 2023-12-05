@@ -4397,6 +4397,11 @@
         "Sua frase de recuperação anterior"
       ]
     },
+    "info": {
+      "Selected color:": [
+        "Cor selecionada:"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Clique para ver detalhes"
@@ -5083,6 +5088,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendário",
+        "${ maximumNumberOfCalendars } calendários"
+      ],
       "Auto-delete spam and trashed messages": [
         "Excluir automaticamente spam e mensagens da lixeira"
       ],
@@ -5394,6 +5403,9 @@
       ],
       "Set up your organization": [
         "Configure a sua organização"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Use o seletor de aplicativos no canto superior esquerdo para acessar todos${ BRAND_NAME }Serviços:${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }e ${ PASS_SHORT_APP_NAME }"
       ],
       "You will be able to change your theme any time in your settings.": [
         "Você poderá alterar seu tema a qualquer momento nas configurações."

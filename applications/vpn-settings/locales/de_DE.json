@@ -101,6 +101,9 @@
       "Copy address": [
         "E-Mail-Adresse kopieren"
       ],
+      "Copy key to the clipboard": [
+        "Schlüssel in die Zwischenablage kopieren"
+      ],
       "Create": [
         "Erstellen"
       ],
@@ -4706,6 +4709,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } Kalender",
+        "${ maximumNumberOfCalendars } Kalender"
+      ],
       "${ n } calendar": [
         "${ n } Kalender",
         "${ n } Kalender"
@@ -5482,6 +5489,9 @@
       "IP Address copied to clipboard": [
         "IP-Adresse in Zwischenablage kopiert"
       ],
+      "Key copied to the clipboard": [
+        "Schlüssel in die Zwischenablage kopiert"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN/IKEv2-Zugangsdaten wiederhergestellt"
       ],
@@ -5598,6 +5608,12 @@
       ],
       "Creating your account": [
         "Dein Konto wird erstellt"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Für nur **${ relativePrice } mehr pro Monat** erhältst du Zugang zu ${ BRAND_NAME }'s Premium Passwortmanager!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Für nur **${ relativePrice } mehr pro Monat** erhältst du Zugang zu ${ BRAND_NAME }'s Premium VPN-Diensten!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Für nur **${ relativePrice } mehr pro Monat** erhältst du Zugang zu allen ${ BRAND_NAME }-Premiumdiensten!"
@@ -6529,6 +6545,9 @@
       "Code sent to ${ methodTo }": [
         "Code gesendet an ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "In die Zwischenablage kopiert"
+      ],
       "Credits added": [
         "Guthaben hinzugefügt"
       ],
@@ -6565,11 +6584,17 @@
       "Keys updated": [
         "Schlüssel aktualisiert"
       ],
+      "Link copied to clipboard": [
+        "Link in die Zwischenablage kopiert"
+      ],
       "Locale updated": [
         "Gebietsschema aktualisiert"
       ],
       "Organization activated": [
         "Organisation aktiviert"
+      ],
+      "Password copied to clipboard": [
+        "Passwort in die Zwischenablage kopiert"
       ],
       "Password updated": [
         "Passwort aktualisiert"
@@ -6594,6 +6619,9 @@
       ],
       "User updated": [
         "Benutzer aktualisiert"
+      ],
+      "Username copied to clipboard": [
+        "Benutzername in die Zwischenablage kopiert"
       ],
       "Verification successful": [
         "Verifizierung erfolgreich"

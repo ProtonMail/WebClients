@@ -739,11 +739,17 @@
       "Save with Cyber Week deals on a high-speed Swiss VPN": [
         "Bespaar met Cyber Week-deals op supersnel Swiss VPN"
       ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Bespaar met een eindejaarsdeal op een snelle Zwitserse VPN"
+      ],
       "Select your Black Friday offer": [
         "Selecteer uw Black Friday-aanbieding"
       ],
       "Select your Cyber Week offer": [
         "Selecteer uw Cyber Week-aanbieding"
+      ],
+      "Select your End of Year offer": [
+        "Selecteer uw eindejaarsaanbieding"
       ]
     },
     "bf2023: info": {
@@ -4688,6 +4694,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } agenda",
+        "${ maximumNumberOfCalendars } agenda's"
+      ],
       "${ n } calendar": [
         "${ n } agenda",
         "${ n } agenda's"
@@ -6505,6 +6515,9 @@
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Gekopieerd naar het klembord"
+      ],
       "Credits added": [
         "Tegoed toegevoegd"
       ],
@@ -6541,11 +6554,17 @@
       "Keys updated": [
         "Sleutels gewijzigd"
       ],
+      "Link copied to clipboard": [
+        "Link gekopieerd naar klembord"
+      ],
       "Locale updated": [
         "Landinstelling bijgewerkt"
       ],
       "Organization activated": [
         "Organisatie geactiveerd"
+      ],
+      "Password copied to clipboard": [
+        "Wachtwoord gekopieerd naar klembord"
       ],
       "Password updated": [
         "Wachtwoord bijgewerkt"
@@ -6570,6 +6589,9 @@
       ],
       "User updated": [
         "Gebruiker bijgewerkt"
+      ],
+      "Username copied to clipboard": [
+        "De Gebruikersnaam is naar het klembord gekopieerd"
       ],
       "Verification successful": [
         "Verificatie gelukt"

@@ -428,8 +428,17 @@
       "Sign in": [
         "Увійти"
       ],
+      "Sign in with password": [
+        "Увійти за допомогою пароля"
+      ],
+      "Sign in with SSO": [
+        "Увійти за допомогою SSO"
+      ],
       "Sign out": [
         "Вийти"
+      ],
+      "sign up for free": [
+        "зареєструватися безплатно"
       ],
       "Signing in": [
         "Виконується вхід"
@@ -636,9 +645,33 @@
         "Це від'єднає всі маршрутизатори та клієнти, котрі використовують цей сертифікат."
       ]
     },
+    "bf2023: Action": {
+      "Remove ${ PASS_APP_NAME }": [
+        "Вилучити ${ PASS_APP_NAME }"
+      ]
+    },
     "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } сховища"
+      ],
       "6 users": [
         "6 користувачів"
+      ],
+      "Premium Password Manager": [
+        "Premium Менеджер паролів"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Гарантія повернення коштів протягом 30 днів"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включає підтримку 1 власного домену, 10 адрес електронної пошти, 10 псевдонімів hide-my-email, спільний доступ до календаря та інші можливості."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з історією версій, спільним доступом та іншими можливостями."
       ]
     },
     "Billing cycle": {
@@ -2531,6 +2564,12 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } адреса",
+        "${ amountOfAddresses } адреси",
+        "${ amountOfAddresses } адрес",
+        "${ amountOfAddresses } адрес"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
       ],
@@ -2572,6 +2611,12 @@
         "${ provisioningCounter } сервери все ще налаштовуються. Зазвичай це триває приблизно ${ provisioningDuration }.",
         "${ provisioningCounter } серверів все ще налаштовуються. Зазвичай це триває приблизно ${ provisioningDuration }.",
         "${ provisioningCounter } серверів все ще налаштовуються. Зазвичай це триває приблизно ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "ще ${ remainingAddresses.length }",
+        "ще ${ remainingAddresses.length }",
+        "ще ${ remainingAddresses.length }",
+        "ще ${ remainingAddresses.length }"
       ],
       "${ storage } storage": [
         "${ storage } сховища"
@@ -2921,6 +2966,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Якщо ви вважаєте, що це помилка, зв'яжіться з нами ${ contactLink }."
       ],
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Якщо ви скасуєте передплату ${ planTitle }, її не буде поновлено після завершення ${ expiryDate }."
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
       ],
@@ -3197,6 +3245,9 @@
       "Revoke certificate ${ name }": [
         "Відкликати сертифікат ${ name }"
       ],
+      "Save ${ percentage }": [
+        "Заощадьте ${ percentage }"
+      ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Збережіть пароль у надійному місці. Клацніть на піктограму, щоб підтвердити правильність його введення."
       ],
@@ -3318,7 +3369,7 @@
         "Ці конфігурації передбачені для роботи з маршрутизаторами WireGuard і офіційними клієнтами."
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
-        "Ці облікові дані не можуть бути використані для входу у наші офіційні програми ${ VPN_APP_NAME }. ${ learnMore }"
+        "Ці облікові дані не можна використати для входу в наші офіційні програми ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Цей обліковий запис було призупинено через потенційне порушення правил."
@@ -3553,6 +3604,9 @@
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "З тарифним планом Business або Enterprise ви можете придбати ${ boldDedicatedServers } для своєї організації та налаштувати ${ boldGateways }, щоб контролювати, які користувачі можуть отримати до них доступ."
+      ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Маючи зашифровану адресу ${ BRAND_NAME }, ви можете користуватися всіма службами ${ BRAND_NAME }"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Без активації ви не зможете створювати нових користувачів, додавати адреси для наявних користувачів або мати доступ до не приватних облікових записів."
@@ -4464,6 +4518,12 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } календар",
+        "${ maximumNumberOfCalendars } календарі",
+        "${ maximumNumberOfCalendars } календарів",
+        "${ maximumNumberOfCalendars } календарів"
+      ],
       "${ n } calendar": [
         "${ n } календар",
         "${ n } календарі",
@@ -4763,6 +4823,9 @@
       ],
       "Sign in as user": [
         "Увійти як користувач"
+      ],
+      "SMTP submission": [
+        "Надсилання через SMTP"
       ],
       "Split tunneling (Android and Windows)": [
         "Розділене тунелювання (Android і Windows)"
@@ -5596,8 +5659,33 @@
       ]
     },
     "session_recovery:available:action": {
+      "Cancel password reset": [
+        "Скасувати скидання пароля"
+      ],
       "Reset password": [
         "Скинути пароль"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Please generate keys before you try to change your password": [
+        "Згенеруйте ключі, перш ніж змінювати пароль"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } день",
+        "${ timeRemaining.inDays } дні",
+        "${ timeRemaining.inDays } днів",
+        "${ timeRemaining.inDays } днів"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } година",
+        "${ timeRemaining.inHours } години",
+        "${ timeRemaining.inHours } годин",
+        "${ timeRemaining.inHours } годин"
+      ],
+      "You can now reset your password": [
+        "Тепер ви можете скинути пароль"
       ]
     },
     "session_recovery:available:notification": {
@@ -5605,7 +5693,30 @@
         "Пароль збережено"
       ]
     },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Скинути пароль"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Скасувати скидання пароля"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Скидання пароля скасовано"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Скасувати скидання пароля?"
+      ]
+    },
     "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "Скасувати скидання пароля"
+      ],
       "Cancel request": [
         "Скасувати запит"
       ],
@@ -5621,12 +5732,25 @@
         "Переглянути запит"
       ]
     },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Подано запит на скидання пароля"
+      ]
+    },
     "session_recovery:sign_out:action": {
       "Sign out": [
         "Вийти"
       ],
       "Stay signed in": [
         "Залишатися в системі"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } година",
+        "${ gracePeriodHoursRemaining } години",
+        "${ gracePeriodHoursRemaining } годин",
+        "${ gracePeriodHoursRemaining } годин"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -5749,6 +5873,12 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } місяць",
+        "${ n } місяці",
+        "${ n } місяців",
+        "${ n } місяців"
+      ],
       "/ month": [
         "/ місяць"
       ],
@@ -6060,6 +6190,9 @@
       "Code sent to ${ methodTo }": [
         "Код надісланий на ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Скопійовано до буфера обміну"
+      ],
       "Credits added": [
         "Кошти зараховано"
       ],
@@ -6096,11 +6229,17 @@
       "Keys updated": [
         "Ключі оновлено"
       ],
+      "Link copied to clipboard": [
+        "Посилання скопійовано в буфер обміну"
+      ],
       "Locale updated": [
         "Локаль оновлено"
       ],
       "Organization activated": [
         "Організацію активовано"
+      ],
+      "Password copied to clipboard": [
+        "Пароль скопійовано до буфера обміну"
       ],
       "Password updated": [
         "Пароль оновлено"
@@ -6125,6 +6264,9 @@
       ],
       "User updated": [
         "Користувача оновлено"
+      ],
+      "Username copied to clipboard": [
+        "Ім'я користувача скопійовано до буфера обміну"
       ],
       "Verification successful": [
         "Перевірка пройшла успішно"
@@ -6652,10 +6794,10 @@
         "Скинути ключі організації"
       ],
       "Reset password": [
-        "Відновити пароль"
+        "Скинути пароль"
       ],
       "Reset password?": [
-        "Відновити пароль?"
+        "Скинути пароль?"
       ],
       "Restore administrator privileges": [
         "Відновити права адміністратора"
@@ -6695,6 +6837,9 @@
       ],
       "Sign in to join the Beta program": [
         "Увійдіть, щоб приєднатися до програми бета-тестування"
+      ],
+      "Sign in to your organization": [
+        "Увійдіть до своєї організації"
       ],
       "Sign in with 2FA": [
         "Увійти з двоетапною перевіркою"

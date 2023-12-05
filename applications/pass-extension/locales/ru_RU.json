@@ -56,6 +56,9 @@
       "Continue": [
         "Продолжить"
       ],
+      "Continue without pinning": [
+        "Продолжить без закрепления"
+      ],
       "Copy and close": [
         "Скопировать и закрыть"
       ],
@@ -155,8 +158,14 @@
       "Import": [
         "Импортировать"
       ],
+      "Import your passwords": [
+        "Импортировать ваши пароли"
+      ],
       "Importing": [
         "Идёт импорт"
+      ],
+      "Join shared vault": [
+        "Присоединиться к общему хранилищу"
       ],
       "Learn more": [
         "Подробнее"
@@ -202,6 +211,9 @@
       ],
       "Regenerate": [
         "Перегенерировать"
+      ],
+      "Reject invitation": [
+        "Отклонить приглашение"
       ],
       "Reload extension": [
         "Перезагрузить расширение"
@@ -317,6 +329,9 @@
       "Auto-lock could not be disabled": [
         "Автоблокировка не может быть выключена"
       ],
+      "Cannot create alias (${ error }).": [
+        "Не могу создать псевдоним (${ error })."
+      ],
       "Cannot send invitation to this address at the moment": [
         "Не могу отправить приглашение на этот адрес в данный момент."
       ],
@@ -430,6 +445,9 @@
       ],
       "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
         "Пожалуйста, предоставьте ${ PASS_APP_NAME } необходимые разрешения для расширения, чтобы продолжить"
+      ],
+      "Please pin the extension or select \"Continue without pinning\".": [
+        "Пожалуйста, закрепите расширение или выберите \"Продолжить без закрепления\"."
       ],
       "Request timed out": [
         "Время запроса истекло"
@@ -619,6 +637,9 @@
       "Access successfully confirmed": [
         "Доступ успешно подтверждён"
       ],
+      "Access your passwords on the go with our mobile apps.": [
+        "Получайте доступ к своим паролям на ходу с нашими мобильными приложениями."
+      ],
       "Admin": [
         "Админ"
       ],
@@ -637,6 +658,9 @@
       "Auto-lock successfully disabled": [
         "Автоблокировка успешно отключена"
       ],
+      "Autosaved on ${ submissionURL }": [
+        "Автосохранено ${ submissionURL }"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Может создавать, редактировать, удалять и экспортировать элементы этого хранилища."
       ],
@@ -652,6 +676,9 @@
       "Copied to clipboard": [
         "Скопировано в буфер обмена"
       ],
+      "Creating alias...": [
+        "Создание псевдонима..."
+      ],
       "Credit cards, Custom fields": [
         "Кредитные карты, настраиваемые поля"
       ],
@@ -664,17 +691,26 @@
       "Deleting \"${ payload.content.name }\"": [
         "Удаление \"${ payload.content.name }\""
       ],
+      "Discover ${ PASS_APP_NAME } Youtube Video": [
+        "Откройте видео ${ PASS_APP_NAME } на YouTube"
+      ],
       "Drop file here to upload": [
         "Переместите файл сюда, чтобы скачать"
       ],
       "Drop to import": [
         "Импортировать"
       ],
+      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
+        "Легко импортируйте ваше существующие пароли в ${ PASS_APP_NAME }."
+      ],
       "Editor": [
         "Редактор"
       ],
       "Emptying trash...": [
         "Очистка корзины..."
+      ],
+      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
+        "Включите ${ PASS_APP_NAME }, подключив вашу учетную запись ${ BRAND_NAME }"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Введите код подтверждения. Цифра ${ digit }."
@@ -691,8 +727,17 @@
       "Generated passwords will be stored for a period of one day.": [
         "Сгенерированные пароли сохранятся в течение одного дня."
       ],
+      "Generating alias...": [
+        "Генерация псевдонима..."
+      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Получите неограниченное количество псевдонимов, наслаждайтесь эксклюзивными функциями и поддержите нас, подписавшись на Pass Plus."
+      ],
+      "Here you will find all the necessary information to get you started.": [
+        "Здесь вы найдете всю необходимую информацию для начала работы."
+      ],
+      "Import in progress:": [
+        "Выполняется импорт:"
       ],
       "Imported ${ payload.total } item": [
         "Импортирован ${ payload.total } элемент",
@@ -757,6 +802,9 @@
       "Loading": [
         "Загрузка"
       ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Загрузка ${ PASS_APP_NAME }"
+      ],
       "Loading...": [
         "Загрузка..."
       ],
@@ -787,8 +835,14 @@
       "Pass Plus trial": [
         "Проба Pass Plus"
       ],
+      "Password copied": [
+        "Пароль скопирован"
+      ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Пароли старше 1 дня автоматически удаляются из истории."
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "Закрепить ${ PASS_APP_NAME } на панели инструментов."
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-код успешно зарегистрирован. Используйте его для разблокировки ${ PASS_APP_NAME }"
@@ -834,6 +888,9 @@
       ],
       "Share with 10 others": [
         "Делитесь с 10 другими"
+      ],
+      "Sign in or create an account to continue.": [
+        "Войдите или создайте аккаунт для продолжения."
       ],
       "Sign in to your account": [
         "Войти в ваш аккаунт"
@@ -883,6 +940,9 @@
       "Unlock it with your PIN to access the settings": [
         "Разблокируйте его с помощью вашего PIN-кода, чтобы получить доступ к настройкам"
       ],
+      "Upgrade ${ PASS_APP_NAME }": [
+        "Улучшить ${ PASS_APP_NAME }"
+      ],
       "User's access removed": [
         "Доступ пользователя удален"
       ],
@@ -900,6 +960,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Хранилище \"${ share.content.name }\" было удалено"
+      ],
+      "Verification code": [
+        "Код подтверждения"
       ],
       "Viewer": [
         "Читатель"
@@ -930,6 +993,9 @@
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Вы будете использовать этот ПИН-код, чтобы разблокировать ${ PASS_APP_NAME }, когда он автоматически заблокируется после бездействия."
+      ],
+      "You're about to create": [
+        "Вы собираетесь создать"
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Ваш сеанс ${ PASS_APP_NAME } заблокирован"
@@ -1445,6 +1511,12 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Наслаждаетесь ${ PASS_APP_NAME }?"
       ],
+      "Fill & copy password": [
+        "Заполнить и скопировать пароль"
+      ],
+      "Get the mobile apps": [
+        "Получить мобильные приложения"
+      ],
       "Grant permissions": [
         "Предоставить разрешения"
       ],
@@ -1463,14 +1535,29 @@
       "Permanently remove all items ?": [
         "Безвозвратно удалить все элементы?"
       ],
+      "Pin the extension": [
+        "Закрепить расширение"
+      ],
       "Secure your data": [
         "Защитите свои данные"
+      ],
+      "Switching to ${ PASS_APP_NAME }?": [
+        "Переключаетесь на ${ PASS_APP_NAME }?"
+      ],
+      "Thank you for installing ${ PASS_APP_NAME }": [
+        "Спасибо за установку ${ PASS_APP_NAME }"
+      ],
+      "The extension is now ready to use.": [
+        "Расширение теперь готово к использованию"
       ],
       "Trash empty": [
         "Корзина пуста"
       ],
       "Unlock ${ brandNameJSX }": [
         "Разблокировать ${ brandNameJSX }"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Разблокировать ${ PASS_APP_NAME }"
       ],
       "Update available": [
         "Доступно обновление"
@@ -1586,6 +1673,9 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "У вас больше не будет доступа к этому хранилищу. Чтобы присоединиться снова, вам понадобится новое приглашение."
+      ],
+      "Your plan does not allow you to create more aliases": [
+        "Ваш тариф не позволяет вам создать больше псевдонимов"
       ]
     }
   }

@@ -94,6 +94,9 @@
       "Antigua and Barbuda": [
         "Antigva i Barbuda"
       ],
+      "Argentina": [
+        "Argentina"
+      ],
       "Armenia": [
         "Armenija"
       ],
@@ -403,6 +406,9 @@
       "Japan": [
         "Japan"
       ],
+      "Jersey": [
+        "Jersey"
+      ],
       "Jordan": [
         "Jordan"
       ],
@@ -483,6 +489,9 @@
       ],
       "Mauritius": [
         "Mauricijus"
+      ],
+      "Mayotte": [
+        "Mayotte"
       ],
       "Mexico": [
         "Meksiko"
@@ -832,19 +841,52 @@
       ],
       "Unknown error": [
         "Nepoznata pogreška"
+      ],
+      "Username must begin with a letter or digit": [
+        "Korisničko ime mora započeti s slovom ili brojkom"
+      ],
+      "Username must end with a letter or digit": [
+        "Korisničko ime mora završiti s slovom ili brojkom"
       ]
     },
     "Error message": {
       "Error: ${ errorMessage }": [
         "Pogreška: ${ errorMessage }"
+      ],
+      "Something went wrong": [
+        "Nešto je pošlo po zlu"
+      ]
+    },
+    "fido2: Info": {
+      "Security key": [
+        "Sigurnosni ključ"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sigurnosni ključ"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Zadani sustav"
       ]
     },
     "Font size option": {
       "Large": [
         "Veliko"
       ],
+      "Medium (recommended)": [
+        "Srednjo (preporučeno)"
+      ],
       "Small": [
         "Malo"
+      ],
+      "Very large": [
+        "Jako veliko"
+      ],
+      "Very small": [
+        "Jako malo"
       ]
     },
     "Human verification method": {
@@ -861,6 +903,12 @@
     "Info": {
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
+      ],
+      "Country code": [
+        "Kod države"
+      ],
+      "Edit email address": [
+        "Uredi adresu e-pošte"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Unesite potvrdni kôd koji je poslan na ${ destinationText }."
@@ -900,6 +948,12 @@
       ]
     },
     "Label": {
+      "Authenticator app": [
+        "Aplikacija autentifikatora"
+      ],
+      "Code is 6 digits without spaces": [
+        "Kod se sastoji od 6 znamenki bez razmaka."
+      ],
       "Email address": [
         "Adresa e-pošte"
       ],

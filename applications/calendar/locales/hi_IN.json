@@ -503,6 +503,9 @@
       "Show more": [
         "और दिखाएँ"
       ],
+      "Show side panel": [
+        "साइड पैनल दिखाएं"
+      ],
       "Show time zones": [
         "समय क्षेत्र दिखाएं"
       ],
@@ -532,6 +535,9 @@
       ],
       "Submit": [
         "जमा करें"
+      ],
+      "Switch or add account": [
+        "खाता बदलें अथवा जोड़ें"
       ],
       "Today": [
         "आज"
@@ -640,6 +646,10 @@
       ]
     },
     "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } कस्टम डोमेन",
+        "${ domains } कस्टम डोमेन"
+      ],
       "${ ips } server": [
         "${ ips } सर्वर",
         "${ ips } सर्वर"
@@ -778,6 +788,11 @@
     "bf2023: Footer": {
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "आपकी सदस्यता आपके बिलिंग चक्र के अंत में मानक रियायती दर और अवधि पर स्वचालित रूप से नवीनीकृत हो जाएगी"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30 दिन की पैसे-वापस गारंटी"
       ]
     },
     "bf2023: Tooltip": {
@@ -1022,6 +1037,9 @@
       ]
     },
     "Calendar view": {
+      "Custom": [
+        "कस्टम"
+      ],
       "Day": [
         "दिन"
       ],
@@ -2343,6 +2361,9 @@
       "Error: ${ errorMessage }": [
         "त्रुटि: ${ errorMessage }"
       ],
+      "Event not found": [
+        "इवेंट नहीं मिला"
+      ],
       "Failed to get original occurrence in series": [
         "सीरीज़ से असली घटना लाने में असफल"
       ],
@@ -3504,8 +3525,14 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "इस लिंक के साथ कोई भी इंसान देख सकता है कि आप खाली है या अपने कैलेंडर में व्यस्त है। वो शीर्षक, स्थान या प्रतिभागियों जैसे इवेंट जानकारी नहीं देख सकते है।"
       ],
+      "Are you sure you want to discard your import?": [
+        "क्या आप वाकई अपना आयात छोड़ना चाहते हैं?"
+      ],
       "Attention required": [
         "ध्यान देने की आवश्यकता है"
+      ],
+      "Based on your time zone": [
+        "आपके समय क्षेत्र के हिसाब से"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "नए सत्यापन कोड का अनुरोध करने से पहले, अपना स्पैम फ़ोल्डर जांचें और जांचें कि ${ strong } सही पता है।"
@@ -3671,6 +3698,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "अपने डेटा को ${ importedEmailAddress } से ${ toEmail } में आयात करना।"
+      ],
+      "Indexing paused": [
+        "अनुक्रमण रोका गया"
       ],
       "Inherited from parent folder": [
         "मूल फ़ोल्डर से इनहेरिट की गई"
@@ -4097,6 +4127,11 @@
         "आपका सिस्टम समय क्षेत्र ${ timezone } में बदल गया है। अपने समय क्षेत्र पसंद को अपडेट करें?"
       ]
     },
+    "Info message": {
+      "No results found": [
+        "कोई नतीजा नहीं मिला"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "विवरण देखने के लिए क्लिक करें"
@@ -4141,6 +4176,10 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "हर न्योते पे ज़्यादा-से-ज़्यादा ${ maxAttendees } प्रतिभागी के होने की अनुमति है",
+        "हर न्योते पे ज़्यादा-से-ज़्यादा ${ maxAttendees } प्रतिभागीयों के होने की अनुमति है"
+      ],
       "Creating invites in a shared calendar is not allowed": [
         "शेयर किए कैलेंडर में न्योता बनाने की अनुमति नहीं"
       ]
@@ -4898,6 +4937,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } कैलेंडर",
+        "${ maximumNumberOfCalendars } कैलेंडर"
+      ],
       "Auto-delete spam and trashed messages": [
         "स्पैम और कचरे के संदेशो को अपनेआप मिटाएं"
       ],
@@ -4953,11 +4996,17 @@
       ],
       "Contact group updated": [
         "संपर्क समूह अपडेट किया गया"
+      ],
+      "Link copied to clipboard": [
+        "लिंक को क्लिपबोर्ड पर कॉपी किया गया"
       ]
     },
     "Notification in holidays calendar modal": {
       "Calendar added": [
         "कैलेंडर जोड़ा गया"
+      ],
+      "Calendar updated": [
+        "कैलेंडर अपडेट किया गया"
       ]
     },
     "Notification in share calendar modal": {
@@ -5131,6 +5180,9 @@
       ],
       "Set up your organization": [
         "अपना संगठन स्थापित करें"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "${ BRAND_NAME } की सभी सेवाओं तक पहुंचने के लिए ऊपर बाईं ओर ऐप चयनकर्ता का उपयोग करें: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } और ${ PASS_SHORT_APP_NAME }।"
       ]
     },
     "Option": {
@@ -5265,6 +5317,9 @@
       "Filter groups": [
         "फ़िल्टर समूह"
       ],
+      "First name": [
+        "पहला नाम"
+      ],
       "Group name": [
         "समूह नाम"
       ],
@@ -5392,6 +5447,11 @@
         "पासवर्ड रीसेट करें"
       ]
     },
+    "session_recovery:available:error": {
+      "Please generate keys before you try to change your password": [
+        "अपना पासवर्ड बदलने का प्रयास करने से पहले कृपया कुंजियाँ बनाएँ।"
+      ]
+    },
     "session_recovery:available:info": {
       "${ timeRemaining.inDays } day": [
         "${ timeRemaining.inDays } दिन",
@@ -5412,6 +5472,11 @@
         "पासवर्ड सहेजा गया"
       ]
     },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "पासवर्ड रीसेट रद्द करें?"
+      ]
+    },
     "session_recovery:cancelled:link": {
       "change your password now": [
         "अपना पासवर्ड अभी बदलें"
@@ -5430,9 +5495,17 @@
         "यह सुनिश्चित करने के लिए कि वास्तव में आप ही अपना पासवर्ड रीसेट करने का प्रयास कर रहे हैं, हम अनुरोधों को स्वीकृत करने से पहले 72 घंटे तक प्रतीक्षा करते हैं। आप अपना पासवर्ड ${ boldTimeLeft } में बदल सकते हैं। ${ viewRequest }"
       ]
     },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "पासवर्ड रीसेट का अनुरोध किया गया"
+      ]
+    },
     "session_recovery:sign_out:action": {
       "Sign out": [
         "साइन आउट करें"
+      ],
+      "Stay signed in": [
+        "साइन्ड इन रहें"
       ]
     },
     "session_recovery:sign_out:info": {
@@ -5563,8 +5636,14 @@
       "Highest VPN speed": [
         "सबसे तेज़ वीपीएन रफ्तार"
       ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "प्रीमियम ${ MAIL_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
         "प्रीमियम ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } और ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "प्रीमियम ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "प्रीमियम जल्दी एक्सेस"
@@ -5678,6 +5757,9 @@
       ],
       "Public holidays are here!": [
         "सार्वजनिक छुट्टियां है आई!"
+      ],
+      "Search for events": [
+        "इवेंट खोजें"
       ]
     },
     "Storage": {
@@ -5853,6 +5935,14 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "फीडबैक भेजा गया"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "प्रीमियम ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "प्रीमियम ${ MAIL_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {
@@ -6368,8 +6458,14 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "जीमेल अपने आप कुछ ईपत्रों को 'समाचिक' अथवा 'प्रचार ' जैसी श्रेणियों में डालता है। आप चुन सकते हैं कि इन ईपत्र को कहा पर आयात करना है।"
       ],
+      "Hide side panel": [
+        "साइड पैनल छुपाएं"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "उपयोगकर्ता को हस्ताक्षर या एन्क्रिप्ट करते समय उपयोग की जाने वाली PGP योजना का चयन करें। ध्यान दें कि PGP/Inline सादे पाठ संदेशों को बाध्य करता है"
+      ],
+      "Show side panel": [
+        "साइड पैनल दिखाएं"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "तान्त्रिक उपसञ्चय ${ MAIL_APP_NAME } में अलग सञ्चय जैसे दिखेंगे"

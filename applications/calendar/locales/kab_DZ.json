@@ -27,6 +27,9 @@
       "Add address": [
         "Rnu tansa"
       ],
+      "Add birthday": [
+        "Rnu azemz n tlalit"
+      ],
       "Add contact": [
         "Rnu anermis"
       ],
@@ -41,6 +44,9 @@
       ],
       "Add new group": [
         "Rnu agraw amaynut"
+      ],
+      "Add note": [
+        "Rnu tazmilt"
       ],
       "Add notification": [
         "Rnu alɣu"
@@ -131,6 +137,9 @@
       ],
       "Continue with Google": [
         "Kemmel s Google"
+      ],
+      "Continue with Outlook": [
+        "Kemmel s Outlook"
       ],
       "Copy address": [
         "Nɣel tansa"
@@ -283,6 +292,9 @@
       ],
       "Import from .csv or vCard": [
         "Kter si .csv neɣ vCard"
+      ],
+      "Import from Google": [
+        "Kter seg Google"
       ],
       "Join calendar": [
         "Rnu ɣer uwitay"
@@ -726,6 +738,25 @@
         "Afrayan"
       ]
     },
+    "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } n uḥraz"
+      ],
+      "1 user": [
+        "1 useqdac"
+      ],
+      "6 users": [
+        "6 yiseqdacen"
+      ],
+      "Premium Password Manager": [
+        "Amsefrak n wawal uffir premium"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Aɣram ɣef 30 n wussan yettwaḍmen"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Ugur n usnas"
@@ -1034,8 +1065,14 @@
       "Birthday": [
         "Amulli"
       ],
+      "Display name": [
+        "Isem n uskan"
+      ],
       "Email": [
         "Imayl"
+      ],
+      "First name": [
+        "Isem"
       ],
       "Gender": [
         "Taswit"
@@ -1045,6 +1082,9 @@
       ],
       "Language": [
         "Tutlayt"
+      ],
+      "Last name": [
+        "Isem n tmagit"
       ],
       "Logo": [
         "Alugu"
@@ -3638,6 +3678,9 @@
       "Total VPN connections": [
         "Asemday n tuqqniwin VPN"
       ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Alamma d ${ FAMILY_MAX_USERS } yiseqdacen"
+      ],
       "Update recurring event": [
         "Leqqem tadyant d-ittuɣalen"
       ],
@@ -4523,6 +4566,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } uwitay",
+        "${ maximumNumberOfCalendars } yiwitayen"
+      ],
       "Calendar sharing": [
         "Beṭṭu n uwitay"
       ],
@@ -4572,6 +4619,9 @@
       ],
       "Contact group updated": [
         "Agraw n unermes yettwasnifel"
+      ],
+      "Link copied to clipboard": [
+        "Aseɣwen yettwanɣel ɣer ɣefwafus"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -4855,6 +4905,9 @@
       "Filter groups": [
         "Sti igrawen"
       ],
+      "First name": [
+        "Isem"
+      ],
       "Group name": [
         "Isem n ugraw"
       ],
@@ -4980,6 +5033,45 @@
         "Ulac igmaḍ"
       ]
     },
+    "session_recovery:available:action": {
+      "Reset password": [
+        "Ales awennez n wawal uffir"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Please generate keys before you try to change your password": [
+        "Ttxil sirew-d tisura send ad tɛerḍeḍ ad tbeddeleḍ awal-inek n uɛeddi"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } n wass",
+        "${ timeRemaining.inDays } n wussan"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } n usrag",
+        "${ timeRemaining.inHours } n yisragen"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Got it": [
+        "Gziɣ-t"
+      ],
+      "Learn more": [
+        "Issin ugar"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } n usrag",
+        "${ gracePeriodHoursRemaining } n yisragen"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Awennez n wawal uffir"
+      ]
+    },
     "Settings update growler warning": {
       "Failed to update settings": [
         "Yecceḍ uleqqem n yiɣewwaren"
@@ -5065,6 +5157,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 useqdac"
+      ],
       "3 TB": [
         "3 TAṬ"
       ],
@@ -5110,6 +5205,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } wayyur",
+        "${ n } wayyuren"
+      ],
       "/ month": [
         "/ n wayyur"
       ],
@@ -5363,6 +5462,9 @@
       "Display name": [
         "Isem ara d-yettwaskanen"
       ],
+      "First name": [
+        "Isem"
+      ],
       "Import": [
         "Kter"
       ],
@@ -5444,6 +5546,9 @@
       ],
       "All settings": [
         "Akk iɣewwaren"
+      ],
+      "Birthday": [
+        "Amulli"
       ],
       "Calendar": [
         "Awitay"
@@ -5606,6 +5711,9 @@
       ],
       "Night theme": [
         "Asentel n yiḍ"
+      ],
+      "Notes": [
+        "Tizmilin"
       ],
       "Open actions dropdown": [
         "Ldi ummuɣ n tigawin"

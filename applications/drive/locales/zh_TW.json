@@ -26,7 +26,7 @@
         "加入電郵位址"
       ],
       "Add birthday": [
-        "添加生日"
+        "新增生日"
       ],
       "Add contact": [
         "加入聯絡人"
@@ -356,7 +356,7 @@
         "匯入聯絡人"
       ],
       "Import emails": [
-        "匯入電郵"
+        "匯入郵件"
       ],
       "Import from .csv or vCard": [
         "從 .csv 或 vCard 匯入"
@@ -376,6 +376,9 @@
       "Load image": [
         "載入圖像"
       ],
+      "Loading link": [
+        "載入連結"
+      ],
       "Manage folders": [
         "管理資料夾"
       ],
@@ -386,7 +389,7 @@
         "管理連結"
       ],
       "Mark for deletion": [
-        "標記作刪除"
+        "標記為刪除"
       ],
       "Maximize transfers": [
         "傳輸最大化"
@@ -674,7 +677,7 @@
         "解鎖資料"
       ],
       "Unmark for deletion": [
-        "取消標記作刪除"
+        "取消標記為刪除"
       ],
       "Untrust": [
         "不信任"
@@ -857,8 +860,17 @@
       ]
     },
     "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
       "Includes support for 3 custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "包含對 3 組自訂電子郵件網域、${ addresses } 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "儲存空間於${ BRAND_NAME }共用。"
       ]
     },
     "Bug category": {
@@ -2039,7 +2051,7 @@
         "無法儲存聯絡人"
       ],
       "Contact name is too long": [
-        "聯絡人名稱太長"
+        "聯絡人名稱過長"
       ],
       "Contact signature not verified": [
         "聯絡人簽章尚未驗證"
@@ -2276,7 +2288,7 @@
         "此資料夾名稱不適用。請選擇其它名稱。"
       ],
       "This label name is not available. Please choose a different name.": [
-        "此標籤名稱不適用。請選擇其它名稱。"
+        "此標籤名稱無法使用。請選擇其它名稱。"
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "此郵件可能包含某些您目前的瀏覽器無法正確開啟的連結 URL。"
@@ -2294,7 +2306,7 @@
         "使用者名稱的結尾必須為字母或數字"
       ],
       "You can't send a mail to more than ${ maxContacts } recipients": [
-        "您無法將電子郵件傳送給超過 ${ maxContacts } 位收件人"
+        "您無法將郵件傳送給超過 ${ maxContacts } 位收件人"
       ],
       "You have reached the contacts limit for your account": [
         "您的帳號已達聯絡人數量限制"
@@ -2320,7 +2332,7 @@
         "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "上載您的檔案 ${ formattedFilename } 時發生錯誤。僅允許 ICS 檔案格式。"
+        "上傳檔案 ${ formattedFilename } 時發生錯誤。僅允許 ICS 檔案格式。"
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "上載您的檔案時發生錯誤。未選取任何檔案。"
@@ -2750,13 +2762,13 @@
         "位元組"
       ],
       "Gigabytes": [
-        "十億位元組"
+        "GB"
       ],
       "Kilobytes": [
         "千位元組"
       ],
       "Megabytes": [
-        "百萬位元組"
+        "MB"
       ],
       "Terabytes": [
         "TB"
@@ -3148,6 +3160,12 @@
       "${ doneUploadsCount } uploaded": [
         "已完成 ${ doneUploadsCount } 個上載任務"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "App Store的${ DRIVE_APP_NAME }"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "Play 商店的${ DRIVE_APP_NAME }"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } 個任務失敗"
       ],
@@ -3230,7 +3248,7 @@
         "一切您所作的變更將會消失。"
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "您所有的聯絡人都已匯入，已達 ${ MAX_CONTACTS_PER_USER } 的限制"
+        "所有聯絡人都已匯入，已達 ${ MAX_CONTACTS_PER_USER } 的限制"
       ],
       "Also try looking in Trash.": [
         "也別忘記看看垃圾桶。"
@@ -3509,7 +3527,7 @@
         "資料夾遺失簽章。我們無法驗證 ${ fileName } 是由 ${ emailAddress } 上載。"
       ],
       "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "資料夾遺失簽章。我們無法驗證 ${ fileName } 由誰上載。"
+        "資料夾遺失簽章。我們無法驗證 ${ fileName } 由誰上傳。"
       ],
       "Folder will not be uploaded": [
         "資料夾將不會被上載"
@@ -3569,7 +3587,7 @@
         "匯入進行中"
       ],
       "Import mailbox": [
-        "匯入郵箱"
+        "匯入信箱"
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
@@ -3698,10 +3716,10 @@
         "無已同步的資料夾"
       ],
       "None of the uploaded keys are valid for encryption. To be able to send messages to this address, please upload a valid key or disable \"Encrypt emails\".": [
-        "上載的金鑰皆無法用於加密。為能夠傳送郵件至此電郵位址，請上載有效的金鑰或是停用「加密電郵」。"
+        "上傳的金鑰皆無法用於加密。為能夠傳送郵件至此電子信箱，請上傳有效的金鑰或是停用「加密郵件」。"
       ],
       "Not a valid URL": [
-        "非有效的圖像網址"
+        "無效的網址"
       ],
       "Not all files were transferred. Try uploading or downloading the files again.": [
         "並非所有檔案皆已傳輸。請嘗試重新上載或下載檔案。"
@@ -3729,6 +3747,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "僅同時擁有連結與密碼的人才能存取此檔案。"
+      ],
+      "Or use the \"+ New\" button": [
+        "或使用\"+\"按鈕"
       ],
       "Paused": [
         "已暫停"
@@ -3837,6 +3858,9 @@
       ],
       "Restored files ${ formattedDate }": [
         "已還原的檔案 ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "復原照片中...請保持分頁開啟。"
       ],
       "Search cannot be enabled in this browser": [
         "此瀏覽器無法啟用搜索功能"
@@ -4051,6 +4075,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "不幸的是，該檔案或其部份資料似乎無法解密。"
       ],
+      "Unknown date": [
+        "日期未知"
+      ],
       "Unknown error": [
         "未知錯誤"
       ],
@@ -4093,11 +4120,14 @@
       "Way to go, you’ve just doubled your free storage!": [
         "成功了，您的免費儲存空間加倍了！"
       ],
+      "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
+        "我們遇到技術問題。暫時停用上傳新照片的功能。"
+      ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "我們無法驗證 ${ fileName } 是由 ${ emailAddress } 上載。"
+        "我們無法驗證 ${ fileName } 是由 ${ emailAddress } 上傳"
       ],
       "We couldn’t verify who uploaded ${ fileName }.": [
-        "我們無法驗證 ${ fileName } 由誰上載。"
+        "我們無法驗證 ${ fileName } 由誰上傳"
       ],
       "We'll notify you when the import is done.": [
         "我們將會在匯入完成後通知你。"
@@ -4158,6 +4188,9 @@
       ],
       "You cannot undo this action.": [
         "此操作無法復原。"
+      ],
+      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
+        "您還有${ expiresInDays }天的時間領取您的 500 MB 歡迎獎勵，以及 "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "您已使用 ${ spaceDisplayed }% 儲存空間。${ freeUpMessage } ${ upgradeLink }"
@@ -4221,6 +4254,11 @@
       ],
       "Your previous recovery phrase": [
         "您先前的恢复短語"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "已選取的色彩:"
       ]
     },
     "Info on errors": {
@@ -4901,6 +4939,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendars": [
+        "${ maximumNumberOfCalendars } 個行事曆"
+      ],
       "Auto-delete spam and trashed messages": [
         "自動刪除垃圾郵件與垃圾桶中的訊息"
       ],
@@ -5185,8 +5226,14 @@
       "Discover all ${ BRAND_NAME } services": [
         "探索所有 ${ BRAND_NAME } 服務"
       ],
+      "Pick a theme": [
+        "選擇主題"
+      ],
       "Set up your organization": [
         "設定您的組織"
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "您可於設定隨時變更布景主題。"
       ]
     },
     "Onboarding Title": {
@@ -5401,10 +5448,10 @@
         "${ timeRemaining.inHours }小時"
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
-        "重設密碼請求已核准 (${ user.Email })。您可以在${ timeRemaining.inDays }天內重設您的密碼。"
+        "重設密碼請求已批准 (${ user.Email })。您可以在${ timeRemaining.inDays }天內重設您的密碼。"
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
-        "重設密碼請求已核准 (${ user.Email })。您可以在${ timeRemaining.inHours }小時內重設您的密碼。"
+        "重設密碼請求已批准 (${ user.Email })。您可以在${ timeRemaining.inHours }小時內重設您的密碼。"
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "請前往已登入的裝置（在發起請求的工作階段中）變更您的密碼。"
@@ -6043,7 +6090,7 @@
         "日期"
       ],
       "Day theme": [
-        "白天佈景主題"
+        "日間佈景主題"
       ],
       "Delete ${ count } contact groups": [
         "刪除 ${ count } 個聯絡人群組"
@@ -6076,7 +6123,7 @@
         "要下載未驗證的資料夾嗎？"
       ],
       "Drop to upload": [
-        "拖放到此處以上載"
+        "拖放到此處以上傳"
       ],
       "Duplicate file found": [
         "發現重複檔案"

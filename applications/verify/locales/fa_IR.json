@@ -871,11 +871,20 @@
       ],
       "Unknown error": [
         "خطای ناشناخته"
+      ],
+      "Username must begin with a letter or digit": [
+        "نام کاربری میبایست با یک حرف یا رقم آغاز شود"
+      ],
+      "Username must end with a letter or digit": [
+        "نام کاربری میبایست با یک حرف یا رقم پایان پذیرد"
       ]
     },
     "Error message": {
       "Error: ${ errorMessage }": [
         "خطا: ${ errorMessage }"
+      ],
+      "Something went wrong": [
+        "مشکلی پیش آمد"
       ]
     },
     "fido2: Error": {
@@ -916,6 +925,9 @@
       ],
       "Each code can only be used once": [
         "هر کد تنها یک بار می‌تواند استفاده شود"
+      ],
+      "Edit email address": [
+        "ویرایش رایانشانی"
       ],
       "Enter the code from your authenticator app": [
         "کد سامانه تایید کننده را وارد نمایید"

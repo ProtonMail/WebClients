@@ -361,6 +361,9 @@
       "Import from .csv or vCard": [
         "Importar de .csv ou vCard"
       ],
+      "Import from Google": [
+        "Importar do Google"
+      ],
       "Learn more": [
         "Saber mais"
       ],
@@ -803,6 +806,9 @@
       ]
     },
     "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } de armazenamento"
+      ],
       "1 user": [
         "1 utilizador"
       ],
@@ -814,6 +820,31 @@
       ],
       "High speed streaming": [
         "Streaming de alta velocidade"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Versão premium do gestor de palavras-passe"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Garantia de devolução do seu dinheiro em até 30 dias"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui histórico de versões, partilha de ficheiros encriptados e muito mais."
       ]
     },
     "Bug category": {
@@ -3407,7 +3438,7 @@
         "dobrar o seu armazenamento"
       ],
       "Download ${ name } app": [
-        "Faça o 'download' da aplicação ${ name }"
+        "Transfira a app ${ name }"
       ],
       "Download canceled": [
         "A transferência foi cancelada."
@@ -3516,7 +3547,7 @@
         "O ficheiro não tem assinatura. Não é possível verificar quem carregou ${ fileName }."
       ],
       "File will not be updated": [
-        "O ficheiro não será actualizado."
+        "O ficheiro não será atualizado."
       ],
       "Finalizing": [
         "A finalizar"
@@ -4096,7 +4127,7 @@
         "Até ${ FAMILY_MAX_USERS } utilizadores"
       ],
       "Updating drive search...": [
-        "Actualização da pesquisa na unidade..."
+        "Atualização da pesquisa na unidade..."
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualize agora para ter acesso a recursos, produtos e armazenamento premium por um preço especial."
@@ -4456,7 +4487,7 @@
         "Transferir assim mesmo"
       ],
       "Downloading ${ percentageValue }%": [
-        "Transferência ${ percentageValue }%"
+        "A transferir ${ percentageValue }%"
       ],
       "Duplicate found": [
         "Duplicado encontrado"
@@ -4945,6 +4976,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendário",
+        "${ maximumNumberOfCalendars } calendários"
+      ],
       "Auto-delete spam and trashed messages": [
         "Eliminar automaticamente mensagens de spam e de lixo"
       ],
@@ -6431,10 +6466,10 @@
         "A ligação expirou."
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        "Este ficheir tem uma assinatura em falta ou inválida. Ir para Menu (⋮) → Detalhes para obter informações."
+        "Este ficheiro tem uma assinatura em falta ou inválida. Vá a Menu (⋮) → Detalhes para obter informações."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        "Esta pasta tem uma assinatura em falta ou inválida. Ir para Menu (⋮) → Detalhes para obter informações."
+        "Esta pasta tem uma assinatura em falta ou inválida. Vá a Menu (⋮) → Detalhes para obter informações."
       ],
       "This link is password protected": [
         "Esta ligação está protegida por palavra-passe."
@@ -6497,7 +6532,7 @@
         "O seu teste gratuito do Mail Plus finaliza em ${ textDate }"
       ],
       "Your welcome actions": [
-        "As suas acções de boas-vindas"
+        "As suas ações de boas-vindas"
       ],
       "You’ve got 1 GB of storage": [
         "Tem 1 GB de armazenamento."
