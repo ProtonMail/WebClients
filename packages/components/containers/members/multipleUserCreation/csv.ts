@@ -184,7 +184,7 @@ export const parseMultiUserCsv = async (files: File[], mode: UserManagementMode)
     if (parseCsvErrors.length) {
         const rowsThatErrored = parseCsvErrors.map(({ row }) => {
             // Row is indexed by 0
-            const rowNumber = row + 1;
+            const rowNumber = (row || 0) + 1;
             return `${rowNumber}`;
         });
         throw new CsvFormatError({ type: CSV_FORMAT_ERROR_TYPE.PARSED_CSV_ERRORS, rowsThatErrored });
