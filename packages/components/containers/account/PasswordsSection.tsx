@@ -8,8 +8,15 @@ import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 
 import { Info, Loader, Toggle } from '../../components';
 import useModalState from '../../components/modalTwo/useModalState';
-import { useSearchParamsEffect, useUser, useUserSettings } from '../../hooks';
+import {
+    useAvailableRecoveryMethods,
+    useIsSessionRecoveryInitiationAvailable,
+    useSearchParamsEffect,
+    useUser,
+    useUserSettings,
+} from '../../hooks';
 import ChangePasswordModal, { MODES } from './ChangePasswordModal';
+import RecoveryModal from './RecoveryModal';
 import SettingsLayout from './SettingsLayout';
 import SettingsLayoutLeft from './SettingsLayoutLeft';
 import SettingsLayoutRight from './SettingsLayoutRight';
@@ -22,9 +29,14 @@ const PasswordsSection = () => {
     const [user, loadingUser] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
 
+    const [availableRecoveryMethods] = useAvailableRecoveryMethods();
+    const hasRecoveryMethod = availableRecoveryMethods.length > 0;
+    const isSessionRecoveryInitiationAvailable = useIsSessionRecoveryInitiationAvailable();
+
     const [tmpPasswordMode, setTmpPasswordMode] = useState<MODES>();
     const [changePasswordModal, setChangePasswordModalOpen, renderChangePasswordModal] = useModalState();
     const [sessionRecoveryModal, setSessionRecoveryModalOpen, renderSessionRecoveryModal] = useModalState();
+    const [recoveryModal, setRecoveryModalOpen, renderRecoveryModal] = useModalState();
     const [
         sessionRecoveryPasswordResetModal,
         setSessionRecoveryPasswordResetModalOpen,
@@ -82,22 +94,59 @@ const PasswordsSection = () => {
     // Don't allow them to change two-password mode.
     const hasTwoPasswordOption = user.Keys.length > 0;
 
+    const onRecoveryClick = (() => {
+        if (hasRecoveryMethod) {
+            return () => {
+                changePasswordModal.onClose();
+                setRecoveryModalOpen(true);
+            };
+        }
+
+        if (isSessionRecoveryInitiationAvailable) {
+            return () => {
+                changePasswordModal.onClose();
+                setSessionRecoveryModalOpen(true);
+            };
+        }
+
+        return undefined;
+    })();
+
     return (
         <>
             {renderChangePasswordModal && tmpPasswordMode && (
                 <ChangePasswordModal
                     mode={tmpPasswordMode}
-                    onSessionRecovery={() => {
-                        changePasswordModal.onClose();
-                        setSessionRecoveryModalOpen(true);
-                    }}
+                    onRecoveryClick={onRecoveryClick}
                     onSuccess={() => {
                         dismissSessionRecoveryCancelled();
                     }}
                     {...changePasswordModal}
                 />
             )}
-            {renderSessionRecoveryModal && <InitiateSessionRecoveryModal {...sessionRecoveryModal} />}
+            {renderSessionRecoveryModal && (
+                <InitiateSessionRecoveryModal
+                    onUseRecoveryMethodClick={() => {
+                        sessionRecoveryModal.onClose();
+                        setRecoveryModalOpen(true);
+                    }}
+                    {...sessionRecoveryModal}
+                />
+            )}
+            {renderRecoveryModal && (
+                <RecoveryModal
+                    onBack={() => {
+                        recoveryModal.onClose();
+                        setChangePasswordModalOpen(true);
+                    }}
+                    onInitiateSessionRecoveryClick={() => {
+                        recoveryModal.onClose();
+                        setSessionRecoveryModalOpen(true);
+                    }}
+                    availableRecoveryMethods={availableRecoveryMethods}
+                    {...recoveryModal}
+                />
+            )}
             {renderSessionRecoveryPasswordResetModal && (
                 <PasswordResetAvailableAccountModal
                     skipInfoStep={skipInfoStep}

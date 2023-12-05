@@ -6,6 +6,7 @@ import { useInterval } from '@proton/hooks';
 import { APPS, DAY, HOUR, MINUTE, SECOND } from '@proton/shared/lib/constants';
 import { MNEMONIC_STATUS, SessionRecoveryState } from '@proton/shared/lib/interfaces';
 import { getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { useSessionRecoveryLocalStorage } from '../containers/account/sessionRecovery/SessionRecoveryLocalStorageManager';
 import { useFlag } from '../containers/unleash';
@@ -42,16 +43,21 @@ export const useIsSessionRecoveryEnabled = () => {
     return !!userSettings?.SessionAccountRecovery;
 };
 
-export const useHasRecoveryMethod = () => {
+export const useAvailableRecoveryMethods = () => {
     const [user] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
 
-    const hasRecoveryEmail = !!userSettings?.Email.Reset && !!userSettings?.Email.Value;
-    const hasRecoveryPhone = !!userSettings?.Phone.Reset && !!userSettings?.Phone.Value;
-    const hasRecoveryPhrase = user.MnemonicStatus === MNEMONIC_STATUS.SET;
-    const hasRecoveryMethod = hasRecoveryEmail || hasRecoveryPhone || hasRecoveryPhrase;
+    const recoveryPhrase = user.MnemonicStatus === MNEMONIC_STATUS.SET;
+    const recoveryEmail = !!userSettings?.Email.Reset && !!userSettings?.Email.Value;
+    const recoveryPhone = !!userSettings?.Phone.Reset && !!userSettings?.Phone.Value;
 
-    return [hasRecoveryMethod, loadingUserSettings] as const;
+    const availableRecoveryMethods = [
+        recoveryEmail && ('email' as const),
+        recoveryPhone && ('sms' as const),
+        recoveryPhrase && ('mnemonic' as const),
+    ].filter(isTruthy);
+
+    return [availableRecoveryMethods, loadingUserSettings] as const;
 };
 
 export const useIsSessionRecoveryAvailable = () => {
