@@ -59,7 +59,9 @@ const INITIAL_STATE: SettingsState = {
 const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
     if (syncLocalSettings.match(action)) return partialMerge<SettingsState>(state, action.payload);
     if (passwordOptionsEdit.match(action)) return { ...state, passwordOptions: action.payload };
-    if (itemCreationSuccess.match(action)) partialMerge(state, { createdItemsCount: state.createdItemsCount + 1 });
+    if (itemCreationSuccess.match(action)) {
+        return partialMerge(state, { createdItemsCount: state.createdItemsCount + 1 });
+    }
 
     if (sessionLockEnableSuccess.match(action)) {
         return partialMerge(state, {
