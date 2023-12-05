@@ -99,20 +99,18 @@ function FilterItemRow({ filter, filters, index, onApplyFilter, ...rest }: Props
                 index={index}
                 cells={[
                     <div key="name" className="text-ellipsis max-w-full" title={Name}>
-                        {Name}
-                    </div>,
-                    <div key="toggle" className="w-1/10 flex">
                         <Toggle
                             id={`item-${ID}`}
                             loading={loading}
                             checked={Status === FILTER_STATUS.ENABLED}
                             onChange={handleChange}
+                            className="mr-2"
                         />
+                        {Name}
                     </div>,
                     <DropdownActions key="dropdown" size="small" list={list} />,
                 ]}
                 {...rest}
-                className="on-mobile-hide-td3"
             />
             {renderFilterModal && <FilterModal {...filterModalProps} filter={filter} />}
             {renderAdvancedFilterModal && <AdvancedFilterModal {...advancedFilterModalProps} filter={filter} />}
