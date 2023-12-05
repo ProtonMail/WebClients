@@ -163,18 +163,18 @@ const KeyBackgroundManager = ({
                     return true;
                 })
             );
-            if (updatesHappened.some((happened) => happened)) {
+            if (updatesHappened.some(Boolean)) {
                 const userKeys = await getUserKeys();
                 await keyTransparencyCommit(userKeys);
             }
         };
 
         if (!(hasMemberKeyMigration || hasPrivateMemberKeyGeneration || hasReadableMemberKeyActivation)) {
-            runActiveKeysCheck().catch(noop);
+            void runActiveKeysCheck().catch(noop);
             return;
         }
 
-        run()
+        void run()
             .then(() =>
                 hasMemberKeyMigration
                     ? runMigration().catch((e) => {
