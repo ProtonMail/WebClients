@@ -9,6 +9,7 @@ export interface Store<T = any, K extends StorageKeys<T> = StorageKeys<T>> {
 export interface Storage<T = any, K extends StorageKeys<T> = StorageKeys<T>> {
     setItem: (key: K, value: T[K]) => MaybePromise<void>;
     getItem: (key: K) => MaybePromise<MaybeNull<T[K]>>;
+    removeItem: (key: K) => MaybePromise<void>;
     clear: () => MaybePromise<void>;
 }
 

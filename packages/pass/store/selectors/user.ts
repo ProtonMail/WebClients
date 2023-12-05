@@ -48,7 +48,7 @@ export const selectTrialDaysRemaining = ({ user: { plan } }: State): MaybeNull<n
     return Math.ceil(Math.max((plan.TrialEnd - getEpoch()) / UNIX_DAY, 0));
 };
 /* user tier is only used for telemetry */
-export const selectUserTier = ({ user: { user, plan } }: State) =>
+export const selectUserTier = ({ user: { user, plan } }: State): string | undefined =>
     user?.Type === UserType.MANAGED ? 'subuser' : plan?.InternalName;
 
 export const selectAllAddresses = ({ user: { addresses } }: State): Address[] => Object.values(addresses);
