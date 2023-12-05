@@ -31,8 +31,8 @@ export default function SharedFilePage({ token, link }: Props) {
             >
                 <SharedPageHeader rootItem={link} items={[{ id: link.linkId, ...link }]} className="mt-3 mb-4">
                     <div className="w-full flex items-center">
-                        <FileNameDisplay className="text-4xl text-bold p-1" text={link.name} />
-                        <div className="flex flex-auto lg:flex-row-reverse lg:flex-1">
+                        <FileNameDisplay className="flex-1 text-4xl text-bold p-1" text={link.name} />
+                        <div className="w-full lg:w-auto flex lg:gap-4 lg:flex-row-reverse">
                             <HeaderSecureLabel className="lg:ml-auto" />
                             {link.size ? <HeaderSize size={link.size} /> : null}
                         </div>
