@@ -164,6 +164,7 @@ const getDefaultIgnoreErrors = (): SentryIgnoreErrors => {
         // Avast extension error
         '_avast_submit',
         'AbortError',
+        /unleash/i,
     ];
 };
 
