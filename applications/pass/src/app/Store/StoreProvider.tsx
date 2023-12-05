@@ -19,6 +19,7 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 
 import { authStore } from '../../lib/core';
 import { deletePassDB, getDBCache, writeDBCache } from '../../lib/database';
+import { telemetry } from '../../lib/telemetry';
 import { useAuthService } from '../Context/AuthServiceProvider';
 import { useClientRef } from '../Context/ClientProvider';
 import { type ServiceWorkerMessageHandler, useServiceWorker } from '../ServiceWorker/ServiceWorkerProvider';
@@ -42,10 +43,11 @@ export const StoreProvider: FC = ({ children }) => {
                 getCache: () => getDBCache(authStore.getUserID()!),
                 getEventInterval: () => ACTIVE_POLLING_TIMEOUT,
                 getLocalSettings: async () => INITIAL_SETTINGS,
-                getTelemetry: () => null,
+                getTelemetry: () => telemetry,
                 onBoot: (res) => {
                     if (res.ok) {
                         client.current.setStatus(AppStatus.READY);
+                        telemetry.start();
                         store.dispatch(draftsGarbageCollect());
                         store.dispatch(passwordHistoryGarbageCollect());
                         if (isDocumentVisible()) store.dispatch(startEventPolling());
