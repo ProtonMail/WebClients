@@ -90,9 +90,9 @@ export const Sandbox = () => {
     );
 
     return (
-        <div className="my-8">
-            <div className="flex items-stretch">
-                <div className="mr-8">
+        <div className="flex children-min-size-auto flex-column md:flex-row py-7">
+            <div className="flex flex-column flex-nowrap md:flex-1">
+                <div className="mr-8 mb-4">
                     <strong className="block mb-4">Color</strong>
                     <RadioGroup
                         name="selected-color"
@@ -101,7 +101,7 @@ export const Sandbox = () => {
                         options={colors.map((color) => ({ value: color, label: color }))}
                     />
                 </div>
-                <div className="mr-8">
+                <div className="mr-8 mb-4">
                     <strong className="block mb-4">Shape</strong>
                     <RadioGroup
                         name="selected-shape"
@@ -110,7 +110,7 @@ export const Sandbox = () => {
                         options={shapes.map((shape) => ({ value: shape, label: shape }))}
                     />
                 </div>
-                <div className="mr-8">
+                <div className="mr-8 mb-4">
                     <strong className="block mb-4">Size</strong>
                     <RadioGroup
                         name="selected-size"
@@ -119,8 +119,8 @@ export const Sandbox = () => {
                         options={sizes.map((size) => ({ value: size, label: size }))}
                     />
                 </div>
-                <div className={buttonContainerClassName}>{buttonGroup}</div>
             </div>
+            <div className={buttonContainerClassName}>{buttonGroup}</div>
         </div>
     );
 };
