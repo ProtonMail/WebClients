@@ -101,6 +101,9 @@
       "Copy address": [
         "Copiar endereço"
       ],
+      "Copy key to the clipboard": [
+        "Copiado para a área de transferência"
+      ],
       "Create": [
         "Criar"
       ],
@@ -2763,7 +2766,7 @@
         "${ plan } removido. Oferta de pacote não disponível em um plano de 1 mês."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
-        "${ plan.Title } requer pelo menos 1 servidor dedicado servidor${ serverPricePerMonth }"
+        "${ plan.Title } requer pelo menos 1 servidor dedicado ${ serverPricePerMonth }"
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } servidor ainda está sendo configurado. Isso geralmente leva cerca de ${ provisioningDuration }.",
@@ -3466,7 +3469,7 @@
         "Armazenamento usado por este usuário"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Envie um depósito usado o seguinte endereço ou digitalize o código QR. O seu depósito aparecerá na sua conta após confirmação."
+        "Envie um depósito usado o seguinte endereço ou escaneie o código QR. O seu depósito aparecerá na sua conta após confirmação."
       ],
       "Subscription auto-renews every 12 months.": [
         "A assinatura é renovada automaticamente a cada 12 meses."
@@ -3667,7 +3670,7 @@
         "Use o melhor servidor de acordo com a carga atual e a posição: ${ formattedBestServerName }"
       ],
       "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Use os diferentes tipos de endereços de e-mail e aliases oferecidas por ${ BRAND_NAME }."
+        "Use os diferentes tipos de endereços de e-mail e aliases oferecidas pela ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Use as credenciais a seguir ao se conectar aos servidores ${ VPN_APP_NAME } sem o aplicativo. Exemplo: Tunnelblick no macOS, OpenVPN no GNU/Linux."
@@ -3793,8 +3796,8 @@
         "Você está atualmente iniciado sessão como ${ user.Name } (${ user.Email })."
       ],
       "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
-        "Você está atualmente usando ${ ipCount } dos seus ${ ipAddresses } servidores dedicados disponíveis.",
-        "Você está atualmente usando ${ ipCount } dos seus ${ ipAddresses } servidores dedicados disponíveis."
+        "Atualmente você está usando ${ ipCount } de ${ ipAddresses } do seu servidor dedicado disponível.",
+        "Atualmente você está usando ${ ipCount } de ${ ipAddresses } dos seus servidores dedicados disponíveis."
       ],
       "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
         "Você está usando atualmente ${ organization.UsedMembers } de sua ${ organization.MaxMembers } licença de usuário disponível.",
@@ -4569,7 +4572,7 @@
         "Abrir formulário de suporte"
       ],
       "Upgrade subscription": [
-        "Atualizar Assinatura"
+        "Fazer upgrade da assinatura"
       ],
       "Upgrade to unlock chat support and other premium features, or use our free support form to report your issue.": [
         "Faça o upgrade para desbloquear o suporte de chat e outros recursos premium, ou use o suporte grátis para reportar o seu problema."
@@ -4709,6 +4712,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendário",
+        "${ maximumNumberOfCalendars } calendários"
+      ],
       "${ n } calendar": [
         "${ n } calendário",
         "${ n } calendários"
@@ -4933,7 +4940,7 @@
         "Política de nenhum registro"
       ],
       "Organize items with multiple vaults": [
-        "Organize itens em múltiplos cofres"
+        "Organize itens com múltiplos cofres"
       ],
       "Password-protected Emails": [
         "E-mails protegidos por senha"
@@ -5485,6 +5492,9 @@
       "IP Address copied to clipboard": [
         "Endereço de IP copiado para a área de transferência"
       ],
+      "Key copied to the clipboard": [
+        "Link copiado para a área de transferência"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credenciais OpenVPN / IKEv2 regeneradas"
       ],
@@ -5610,6 +5620,12 @@
       ],
       "Creating your account": [
         "Criando sua conta"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Por apenas mais **${ relativePrice } por mês**, você tem acesso ao gerenciador de senhas premium de ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Por apenas mais **${ relativePrice } por mês**, você obtém acesso ao serviço VPN premium de ${ BRAND_NAME }!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Por apenas **${ relativePrice } adicionais por mês**, você tem acesso a todos os serviços premium da ${ BRAND_NAME }"
@@ -6541,6 +6557,9 @@
       "Code sent to ${ methodTo }": [
         "Código enviado para ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Copiado para a área de transferência"
+      ],
       "Credits added": [
         "Créditos adicionados"
       ],
@@ -6577,11 +6596,17 @@
       "Keys updated": [
         "Chaves atualizada"
       ],
+      "Link copied to clipboard": [
+        "O link foi copiado para área de transferência."
+      ],
       "Locale updated": [
         "Idioma atualizado"
       ],
       "Organization activated": [
         "Organização ativada"
+      ],
+      "Password copied to clipboard": [
+        "Senha copiada para a área de transferência"
       ],
       "Password updated": [
         "Senha atualizada"
@@ -6606,6 +6631,9 @@
       ],
       "User updated": [
         "Usuário atualizado"
+      ],
+      "Username copied to clipboard": [
+        "O nome de usuário foi copiado para a área de transferência."
       ],
       "Verification successful": [
         "Verificado com sucesso"

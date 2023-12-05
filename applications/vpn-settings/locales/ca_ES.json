@@ -101,6 +101,9 @@
       "Copy address": [
         "Copiar l'adreça"
       ],
+      "Copy key to the clipboard": [
+        "Copia la clau al porta-retalls"
+      ],
       "Create": [
         "Crear"
       ],
@@ -4479,6 +4482,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendari",
+        "${ maximumNumberOfCalendars } calendaris"
+      ],
       "${ n } calendar": [
         "${ n } calendari",
         "${ n } calendaris"
@@ -6015,7 +6022,7 @@
         "Accediu al contingut dels serveis de retransmissió, com ara Netflix, Disney+ i Prime Video, des de qualsevol lloc."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
-        "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per a 10 dominis personalitzats, àlies hide-my-email il·limitats, compartició de calendaris, emmagatzematge al núvol encriptat, compartició de fitxers, i més."
+        "Tots els nostres serveis prèmium al seu límit màxim: 100 adreces de correu electrònic, suport per a 10 dominis personalitzats, àlies hide-my-email il·limitats, compartició de calendaris, emmagatzematge al núvol encriptat, compartició de fitxers, etc."
       ],
       "Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inclou suport per a 3 dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, àlies il·limitats de hide-my-email, compartició de calendari i més."
@@ -6224,6 +6231,9 @@
       "Code sent to ${ methodTo }": [
         "Codi enviat a ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "S'ha copiat al porta-retalls."
+      ],
       "Credits added": [
         "Crèdits afegits"
       ],
@@ -6260,11 +6270,17 @@
       "Keys updated": [
         "Claus actualitzades"
       ],
+      "Link copied to clipboard": [
+        "S'ha copiat l'enllaç al porta-retalls."
+      ],
       "Locale updated": [
         "S'ha actualitzat l'idioma"
       ],
       "Organization activated": [
         "Organització activada"
+      ],
+      "Password copied to clipboard": [
+        "La contrasenya s'ha copiat al porta-retalls"
       ],
       "Password updated": [
         "Contrasenya actualitzada"
@@ -6289,6 +6305,9 @@
       ],
       "User updated": [
         "S'ha actualitzat l'usuari"
+      ],
+      "Username copied to clipboard": [
+        "S'ha copiat el nom d'usuari al porta-retalls."
       ],
       "Verification successful": [
         "Èxit de verificació"
