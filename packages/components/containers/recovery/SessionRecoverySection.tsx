@@ -8,12 +8,13 @@ import { updateSessionAccountRecovery } from '@proton/shared/lib/api/sessionReco
 import { Toggle, useModalState } from '../../components';
 import {
     useApi,
+    useAvailableRecoveryMethods,
     useEventManager,
-    useHasRecoveryMethod,
     useIsSessionRecoveryEnabled,
     useIsSessionRecoveryInitiationAvailable,
     useNotifications,
 } from '../../hooks';
+import RecoveryModal from '../account/RecoveryModal';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
@@ -29,13 +30,15 @@ const SessionRecoverySection = () => {
     const [loadingSessionRecovery, withLoadingSessionRecovery] = useLoading();
 
     const [sessionRecoveryModal, setSessionRecoveryModalOpen, renderSessionRecoveryModal] = useModalState();
+    const [recoveryModal, setRecoveryModalOpen, renderRecoveryModal] = useModalState();
     const [
         confirmDisableSessionRecoveryModal,
         setConfirmDisableSessionRecoveryModalOpen,
         renderConfirmDisableSessionRecoveryModal,
     ] = useModalState();
 
-    const [hasRecoveryMethod, loadingUseHasRecoveryMethod] = useHasRecoveryMethod();
+    const [availableRecoveryMethods, loadingUseHasRecoveryMethod] = useAvailableRecoveryMethods();
+    const hasRecoveryMethod = availableRecoveryMethods.length > 0;
     const isSessionRecoveryEnabled = useIsSessionRecoveryEnabled();
     const isSessionRecoveryInitiationAvailable = useIsSessionRecoveryInitiationAvailable();
 
@@ -59,7 +62,30 @@ const SessionRecoverySection = () => {
 
     return (
         <>
-            {renderSessionRecoveryModal && <InitiateSessionRecoveryModal confirmedStep {...sessionRecoveryModal} />}
+            {renderSessionRecoveryModal && (
+                <InitiateSessionRecoveryModal
+                    onUseRecoveryMethodClick={() => {
+                        sessionRecoveryModal.onClose();
+                        setRecoveryModalOpen(true);
+                    }}
+                    confirmedStep
+                    {...sessionRecoveryModal}
+                />
+            )}
+            {renderRecoveryModal && (
+                <RecoveryModal
+                    onBack={() => {
+                        recoveryModal.onClose();
+                        setSessionRecoveryModalOpen(true);
+                    }}
+                    onInitiateSessionRecoveryClick={() => {
+                        recoveryModal.onClose();
+                        setSessionRecoveryModalOpen(true);
+                    }}
+                    availableRecoveryMethods={availableRecoveryMethods}
+                    {...recoveryModal}
+                />
+            )}
             {renderConfirmDisableSessionRecoveryModal && (
                 <ConfirmDisableSessionRecoveryModal {...confirmDisableSessionRecoveryModal} />
             )}
