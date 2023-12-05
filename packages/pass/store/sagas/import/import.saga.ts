@@ -124,7 +124,7 @@ function* importWorker(
             }
         }
 
-        void telemetry?.pushEvent(
+        void telemetry?.push(
             createTelemetryEvent(
                 TelemetryEventName.ImportCompletion,
                 { item_count: totalItems, vaults: importVaults.length },
