@@ -1,18 +1,16 @@
 @use 'sass:math';
 
 .button-group {
-	@extend .inline-flex;
-	@extend .flex-nowrap;
-	@extend .items-stretch;
-
+	display: inline-flex;
+	flex-wrap: nowrap;
+	align-items: stretch;
 	border-radius: var(--border-radius-md);
 	background-color: var(--background-norm);
+	vertical-align: middle;
 
 	&--no-bg-color {
 		background-color: transparent;
 	}
-
-	vertical-align: middle;
 
 	&-item {
 		&.is-selected {
@@ -20,14 +18,11 @@
 		}
 	}
 
-	/*
-	 * Solid variant
-	 */
+	///
+	/// Solid variant
+	///
 
-	// medium item
 	&[class*='button-group-solid'] &-item {
-		padding-inline: em(12);
-
 		&:not(:first-child) {
 			border-start-start-radius: 0;
 			border-end-start-radius: 0;
@@ -39,77 +34,65 @@
 		}
 	}
 
-	// small item
 	&-small[class*='button-group-solid'] &-item {
 		padding-inline: em(7);
 	}
 
-	// large item
+	&-medium[class*='button-group-solid'] &-item {
+		padding-inline: em(12);
+	}
+
 	&-large[class*='button-group-solid'] &-item {
 		padding-inline: em(17, 16);
 	}
 
-	/*
-	 * Ghost variant
-	 */
+	///
+	/// Ghost variant
+	///
 
-	// medium vr
-	&[class*='button-group-ghost'] .vr {
-		margin-block: em(6);
-		margin-inline: em(3);
-	}
-
-	// small vr
 	&-small[class*='button-group-ghost'] .vr {
 		margin-block: em(4);
 		margin-inline: em(3);
 	}
 
-	// large vr
+	&-small[class*='button-group-ghost'] &-item {
+		padding-inline: em(5);
+	}
+
+	&-medium[class*='button-group-ghost'] .vr {
+		margin-block: em(6);
+		margin-inline: em(3);
+	}
+
+	&-medium[class*='button-group-ghost'] &-item {
+		padding-inline: em(10);
+	}
+
 	&-large[class*='button-group-ghost'] .vr {
 		margin-block: em(8);
 		margin-inline: em(3);
 	}
 
-	// medium item
-	&[class*='button-group-ghost'] &-item {
-		padding-inline: em(10);
-	}
-
-	// small item
-	&-small[class*='button-group-ghost'] &-item {
-		padding-inline: em(5);
-	}
-
-	// large item
 	&-large[class*='button-group-ghost'] &-item {
 		padding-inline: em(15);
 	}
 
-	/*
-	 * Outline variant
-	 */
+	///
+	/// Outline variant
+	///
 
-	// medium
+	// default
 	&[class*='button-group-outline'] {
-		padding: em(3);
 		border: 1px solid var(--button-group-border-color, transparent);
 
 		.vr {
 			margin-block: em(2);
-			margin-inline: em(3);
 		}
 	}
 
-	// medium item
+	// default item
 	&[class*='button-group-outline'] &-item {
-		padding-block: em(3);
-		padding-inline: em(8);
 		border-radius: var(--border-radius-sm);
-
-		&.button-for-icon {
-			padding: em(6);
-		}
 
 		&[aria-expanded='true']:not([aria-controls]) {
 			border-color: transparent;
@@ -128,7 +111,7 @@
 		padding: em(2);
 
 		.vr {
-			margin: em(2);
+			margin-inline: em(2);
 		}
 	}
 
@@ -142,12 +125,30 @@
 		}
 	}
 
+	// medium
+	&-medium[class*='button-group-outline'] {
+		padding: em(3);
+
+		.vr {
+			margin-inline: em(3);
+		}
+	}
+
+	// medium item
+	&-medium[class*='button-group-outline'] &-item {
+		padding-block: em(3);
+		padding-inline: em(8);
+
+		&.button-for-icon {
+			padding: em(6);
+		}
+	}
+
 	// large
 	&-large[class*='button-group-outline'] {
 		padding: em(4);
 
 		.vr {
-			margin-block: em(2);
 			margin-inline: em(4);
 		}
 	}
@@ -158,8 +159,7 @@
 		padding-inline: em(12, 16);
 
 		&.button-for-icon {
-			padding-block: em(7, 16);
-			padding-inline: em(7, 16);
+			padding: em(7, 16);
 		}
 	}
 }
