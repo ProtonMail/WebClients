@@ -186,3 +186,15 @@ export const payload = (data: ChallengePayload) => ({
         Payload: data,
     },
 });
+
+export const reauthMnemonic = (data: {
+    Username: string;
+    PersistentCookies: boolean;
+}) => ({
+    method: 'post',
+    url: 'auth/v4/mnemonic/reauth',
+    data: {
+        ...data,
+        PersistentCookies: Number(data.PersistentCookies),
+    },
+});
