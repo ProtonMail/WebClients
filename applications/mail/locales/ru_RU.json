@@ -709,10 +709,10 @@
       "Not saved": [
         "Не сохранено"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1214,6 +1214,18 @@
       ]
     },
     "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } свой домен",
+        "${ domains } своих доменов",
+        "${ domains } своих домена",
+        "${ domains } своих домена"
+      ],
+      "${ ips } server": [
+        "${ ips } сервер",
+        "${ ips } сервера",
+        "${ ips } серверов",
+        "${ ips } серверов"
+      ],
       "${ users } user": [
         "${ users } пользователь",
         "${ users } пользователя",
@@ -6014,6 +6026,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Чтобы использовать проверку адреса, вы должны доверять одному или нескольким из доступных публичных ключей, включая тот, который вы хотите использовать для отправки. Это предотвращает подделку ключей шифрования."
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "Завтра, ${ formattedTime }"
+      ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Слишком много сообщений, ожидающих отправки. Пожалуйста, подождите, пока не будет отправлено другое сообщение, чтобы запланировать это."
       ],
@@ -7593,6 +7608,12 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } календарь",
+        "${ maximumNumberOfCalendars } календаря",
+        "${ maximumNumberOfCalendars } календарей",
+        "${ maximumNumberOfCalendars } календарей"
+      ],
       "Auto-delete spam and trashed messages": [
         "Автоудаление спама и удаленных сообщений"
       ],
@@ -7684,6 +7705,26 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "Укажите, к чему ${ BRAND_NAME } может получить доступ: просмотр электронных писем и настроек, просмотр и скачивание контактов, просмотр и скачивание всех расписаний из Календаря Google."
+      ]
+    },
+    "Onboarding modal": {
+      "Block unsavory senders": [
+        "Блокировка нежелательных отправителей"
+      ],
+      "Congratulations on choosing privacy": [
+        "Поздравляем с выбором конфиденциальности"
+      ],
+      "For your eyes only": [
+        "Только для ваших глаз"
+      ],
+      "Next": [
+        "Далее"
+      ],
+      "Protection from trackers": [
+        "Защита от трекеров"
+      ],
+      "Skip": [
+        "Пропустить"
       ]
     },
     "Onboarding Proton": {
@@ -8205,6 +8246,11 @@
         "Отменить сброс пароля"
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Сброс пароля отменен"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Отменить сброс пароля?"
@@ -8244,6 +8290,11 @@
     "session_recovery:in_progress:link": {
       "View request": [
         "Посмотреть запрос"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Получен запрос на сброс пароля"
       ]
     },
     "session_recovery:sign_out:info": {
@@ -8401,14 +8452,26 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "первый ${ n } месяц",
+        "${ n } месяцев",
+        "${ n } месяца",
+        "${ n } месяца"
+      ],
       "/ month": [
         "/ месяц"
       ],
       "1 year": [
         "1 год"
       ],
+      "15 months": [
+        "15 месяца"
+      ],
       "2 years": [
         "2 года"
+      ],
+      "30 months": [
+        "30 месяца"
       ],
       "Billed at ${ amount } for 1 month": [
         "Оплата ${ amount } за 1 месяц."

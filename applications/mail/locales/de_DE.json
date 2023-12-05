@@ -710,11 +710,11 @@
       "Not saved": [
         "Nicht gespeichert"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } öffnen"
@@ -6252,6 +6252,9 @@
       ],
       "Optional": [
         "Optional"
+      ],
+      "Selected color:": [
+        "Ausgewählte Farbe:"
       ]
     },
     "Info on errors": {
@@ -7495,6 +7498,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } Kalender",
+        "${ maximumNumberOfCalendars } Kalender"
+      ],
       "Auto-delete spam and trashed messages": [
         "Automatisches Bereinigen von Spam und gelöschten Nachrichten"
       ],
@@ -7594,6 +7601,35 @@
         "Wähle aus, worauf ${ BRAND_NAME } zugreifen darf: Deine E-Mail-Nachrichten und -Einstellungen anzeigen, deine Kontakte anzeigen und herunterladen, alle Terminkalender, auf die du über Google Agenda zugreifst, anzeigen und herunterladen."
       ]
     },
+    "Onboarding modal": {
+      "Block email communications from scammers permanently. ${ kbLinkSender }": [
+        "Blockiere die E-Mail-Kommunikation von Betrügern dauerhaft. ${ kbLinkSender }"
+      ],
+      "Block unsavory senders": [
+        "Blockiere unerwünschte Absender"
+      ],
+      "Congratulations on choosing privacy": [
+        "Herzlichen Glückwunsch zur Entscheidung für den Datenschutz"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
+        "Eine so starke Verschlüsselung, dass nur du und die beabsichtigten Empfänger deine E-Mails einsehen können. ${ kbLinkEncryption }"
+      ],
+      "For your eyes only": [
+        "Nur für dich"
+      ],
+      "Next": [
+        "Weiter"
+      ],
+      "Protection from trackers": [
+        "Schutz vor Trackern"
+      ],
+      "Skip": [
+        "Überspringen"
+      ],
+      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
+        "Wir hindern Werbetreibende und Datensammler daran, ein Profil von dir zu erstellen. ${ kbLinkPrivacy }"
+      ]
+    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Konfiguriere deine Organisation, verknüpfe deinen Domainnamen und erstelle Konten, um sicherzustellen, dass alle Mitglieder deiner Organisation geschützt sind."
@@ -7601,8 +7637,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "Entdecke alle ${ BRAND_NAME }-Dienste"
       ],
+      "Pick a theme": [
+        "Wähle ein Theme"
+      ],
       "Set up your organization": [
         "Organisation einrichten"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Verwende die App-Auswahl oben links, um auf alle ${ BRAND_NAME }-Dienste zuzugreifen: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Du kannst dein Farbschema jederzeit in den Einstellungen ändern."
       ]
     },
     "Online accounts": {

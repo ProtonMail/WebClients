@@ -26,13 +26,13 @@
         "Pridať adresu"
       ],
       "Add Bcc recipients": [
-        "Pridať príjemcov skrytej kópie"
+        "Pridať príjemcov skrytej kópie (Bcc)"
       ],
       "Add birthday": [
         "Pridať narodeniny"
       ],
       "Add Cc recipients": [
-        "Pridať príjemcov kópie"
+        "Pridať príjemcov kópie (Cc)"
       ],
       "Add condition": [
         "Pridať podmienku"
@@ -718,11 +718,11 @@
       "Not saved": [
         "Neuložené"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Otvoriť ${ CALENDAR_APP_NAME }"
@@ -6478,6 +6478,9 @@
       ],
       "Optional": [
         "Voliteľné"
+      ],
+      "Selected color:": [
+        "Vybraná farba:"
       ]
     },
     "Info on errors": {
@@ -6788,7 +6791,7 @@
         "Zlé"
       ],
       "BCC": [
-        "Skrytá kópia"
+        "Skrytá kópia (BCC)"
       ],
       "Beta Access": [
         "Beta prístup"
@@ -6815,7 +6818,7 @@
         "Kategória"
       ],
       "CC": [
-        "Kópia"
+        "Kópia (CC)"
       ],
       "City": [
         "Mesto"
@@ -7741,6 +7744,12 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalendár",
+        "${ maximumNumberOfCalendars } kalendáre",
+        "${ maximumNumberOfCalendars } kalendárov",
+        "${ maximumNumberOfCalendars } kalendárov"
+      ],
       "Auto-delete spam and trashed messages": [
         "Automaticky mazať správy v spame a koši"
       ],
@@ -7840,6 +7849,35 @@
         "Vyberte, k čomu môže ${ BRAND_NAME } pristupovať: prezerajte si emailové správy a nastavenia, prezerajte a sťahujte svoje kontakty, zobrazujte a sťahujte všetky agendy, ku ktorým máte prístup z Agendy Google."
       ]
     },
+    "Onboarding modal": {
+      "Block email communications from scammers permanently. ${ kbLinkSender }": [
+        "Natrvalo zablokujte emailovú komunikáciu od podvodníkov. ${ kbLinkSender }"
+      ],
+      "Block unsavory senders": [
+        "Zablokujte nepríjemných odosielateľov"
+      ],
+      "Congratulations on choosing privacy": [
+        "Gratulujeme k výberu súkromia"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
+        "Šifrovanie je také silné, že emaily môžete zobraziť iba vy a určení príjemcovia. ${ kbLinkEncryption }"
+      ],
+      "For your eyes only": [
+        "Iba pre vaše oči"
+      ],
+      "Next": [
+        "Ďalej"
+      ],
+      "Protection from trackers": [
+        "Ochrana pred trackermi"
+      ],
+      "Skip": [
+        "Preskočiť"
+      ],
+      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
+        "Zabraňujeme inzerentom a zberačom dát v tom, aby vás profilovali. ${ kbLinkPrivacy }"
+      ]
+    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Vykonajte konfiguráciu svojej organizácie, priraďte doménové meno a vytvorte účty členov, aby všetci boli chránení."
@@ -7847,8 +7885,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "Objavte všetky služby ${ BRAND_NAME }"
       ],
+      "Pick a theme": [
+        "Vyberte si tému"
+      ],
       "Set up your organization": [
         "Nastavenie organizácie"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Výberom aplikácie v ľavom hornom rohu získate prístup ku všetkým službám ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Tému môžete kedykoľvek zmeniť v nastaveniach."
       ]
     },
     "Online accounts": {
@@ -9328,7 +9375,7 @@
         "Prílohy"
       ],
       "BCC": [
-        "Skrytá kópia"
+        "Skrytá kópia (BCC)"
       ],
       "Birthday": [
         "Narodeniny"
@@ -9346,7 +9393,7 @@
         "Kópia"
       ],
       "CC": [
-        "Kópia"
+        "Kópia (CC)"
       ],
       "Change my answer": [
         "Zmeniť odpoveď"
