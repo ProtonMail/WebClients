@@ -312,6 +312,9 @@
       "Import from .csv or vCard": [
         "Імпортувати з .csv або vCard"
       ],
+      "Import from Google": [
+        "Імпортувати з Google"
+      ],
       "Join calendar": [
         "Приєднатися до календаря"
       ],
@@ -785,8 +788,27 @@
       ]
     },
     "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } сховища"
+      ],
       "6 users": [
         "6 користувачів"
+      ],
+      "Premium Password Manager": [
+        "Premium Менеджер паролів"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Гарантія повернення коштів протягом 30 днів"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включає підтримку 1 власного домену, 10 адрес електронної пошти, 10 псевдонімів hide-my-email, спільний доступ до календаря та інші можливості."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з історією версій, спільним доступом та іншими можливостями."
       ]
     },
     "Bug category": {
@@ -5194,6 +5216,12 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } календар",
+        "${ maximumNumberOfCalendars } календарі",
+        "${ maximumNumberOfCalendars } календарів",
+        "${ maximumNumberOfCalendars } календарів"
+      ],
       "Auto-delete spam and trashed messages": [
         "Автоматичне видалення спаму та повідомлень зі смітника"
       ],
@@ -5252,6 +5280,9 @@
       ],
       "Contact group updated": [
         "Групу контактів оновлено"
+      ],
+      "Link copied to clipboard": [
+        "Посилання скопійовано в буфер обміну"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -5771,9 +5802,48 @@
         "Скинути пароль"
       ]
     },
+    "session_recovery:available:error": {
+      "Please generate keys before you try to change your password": [
+        "Згенеруйте ключі, перш ніж змінювати пароль"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } день",
+        "${ timeRemaining.inDays } дні",
+        "${ timeRemaining.inDays } днів",
+        "${ timeRemaining.inDays } днів"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } година",
+        "${ timeRemaining.inHours } години",
+        "${ timeRemaining.inHours } годин",
+        "${ timeRemaining.inHours } годин"
+      ]
+    },
     "session_recovery:available:notification": {
       "Password saved": [
         "Пароль збережено"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Скинути пароль"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Скасувати скидання пароля"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Скидання пароля скасовано"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Скасувати скидання пароля?"
       ]
     },
     "session_recovery:in_progress:action": {
@@ -5792,12 +5862,25 @@
         "Переглянути запит"
       ]
     },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Подано запит на скидання пароля"
+      ]
+    },
     "session_recovery:sign_out:action": {
       "Sign out": [
         "Вийти"
       ],
       "Stay signed in": [
         "Залишатися в системі"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } година",
+        "${ gracePeriodHoursRemaining } години",
+        "${ gracePeriodHoursRemaining } годин",
+        "${ gracePeriodHoursRemaining } годин"
       ]
     },
     "Settings update growler warning": {
@@ -5955,6 +6038,12 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } місяць",
+        "${ n } місяці",
+        "${ n } місяців",
+        "${ n } місяців"
+      ],
       "/ month": [
         "/ місяць"
       ],

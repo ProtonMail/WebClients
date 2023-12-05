@@ -2178,6 +2178,9 @@
       ]
     },
     "Description": {
+      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
+        "Gagnez en efficacité et organisez votre emploi du temps en classant les événements par catégorie ou selon vos priorités. Profitez de cette fonctionnalité et de bien d'autres avec un abonnement payant."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Déchiffrement des contacts en cours… Cela peut prendre quelques minutes. Une fois le processus terminé, vous pourrez télécharger le fichier avec tous vos contacts exportés."
       ],
@@ -4348,6 +4351,11 @@
         "Le fuseau horaire de votre système semble avoir changé pour ${ timezone }. Voulez-vous mettre à jour votre préférence de fuseau horaire ?"
       ]
     },
+    "info": {
+      "Selected color:": [
+        "Couleur sélectionnée :"
+      ]
+    },
     "Info calendar search": {
       "You can either update your search query or close search to go back to calendar views": [
         "Vous pouvez mettre à jour votre recherche ou la fermer pour revenir aux vues du calendrier."
@@ -5175,6 +5183,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendrier",
+        "${ maximumNumberOfCalendars } calendriers"
+      ],
       "Auto-delete spam and trashed messages": [
         "Suppression automatique des messages dans les dossiers Indésirables/spam et Corbeille"
       ],
@@ -6139,6 +6151,9 @@
       "Add your country's public holidays to your calendar.": [
         "Ajoutez les jours fériés de votre pays à votre calendrier."
       ],
+      "Color-coding is here!": [
+        "Vous pouvez utiliser les couleurs pour vos événements !"
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Trouvez facilement l'événement que vous recherchez avec notre nouvelle fonctionnalité de recherche."
       ],
@@ -6153,6 +6168,9 @@
       ],
       "Search for events": [
         "Rechercher des événements"
+      ],
+      "With customizable event colors, you can color-code the chaos and conquer your day.": [
+        "La personnalisation des couleurs de vos événements vous aide à mieux gérer votre emploi du temps."
       ]
     },
     "Storage": {
@@ -6468,6 +6486,9 @@
       ],
       "Add participants": [
         "Ajouter des participants"
+      ],
+      "Add some color to your day": [
+        "Mettez de la couleur dans votre journée"
       ],
       "Add to ${ groupCount } group": [
         "Ajouter à ${ groupCount } groupe",

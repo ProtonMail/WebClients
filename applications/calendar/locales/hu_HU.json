@@ -5114,6 +5114,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } naptár",
+        "${ maximumNumberOfCalendars } naptár"
+      ],
       "Auto-delete spam and trashed messages": [
         "A Levélszemét és a Lomtár mappában lévő üzenetek automatikus törlése"
       ],
