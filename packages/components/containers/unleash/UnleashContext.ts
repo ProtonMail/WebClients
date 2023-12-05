@@ -11,6 +11,7 @@ enum MailFeatureFlag {
 
 enum CommonFeatureFlag {
     ColorPerEventWeb = 'ColorPerEventWeb',
+    AutoReloadPage = 'AutoReloadPage',
     DisableElectronMail = 'DisableElectronMail',
     SignedInAccountRecovery = 'SignedInAccountRecovery',
     KeyTransparencyShowUI = 'KeyTransparencyShowUI',
@@ -28,4 +29,4 @@ enum DriveFeatureFlag {
     DrivePhotosUploadDisabled = 'DrivePhotosUploadDisabled',
 }
 
-export type FeatureFlag = `${MailFeatureFlag}` | `${AccountFlag}` | `${DriveFeatureFlag}` | `${CommonFeatureFlag}`;
+export type FeatureFlag = `${MailFeatureFlag}` | `${AccountFlag}` | `${CommonFeatureFlag}` | `${DriveFeatureFlag}`;

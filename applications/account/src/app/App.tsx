@@ -25,7 +25,7 @@ metrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
 const App = () => {
     return (
         <ProtonApp authentication={authentication} config={config}>
-            <ErrorBoundary component={<StandardErrorPage big />}>
+            <ErrorBoundary big component={<StandardErrorPage big />}>
                 <Setup />
             </ErrorBoundary>
         </ProtonApp>
