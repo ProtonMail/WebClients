@@ -151,10 +151,7 @@ const FolderTreeViewList = ({ items = [] }: Props) => {
                                 >
                                     <div className="treeview-item-name flex flex-nowrap items-center flex-1">
                                         {viewportWidth['<=small'] ? null : (
-                                            <Icon
-                                                name="text-align-justify"
-                                                className="mr-4 shrink-0 cursor-row-resize"
-                                            />
+                                            <Icon name="dots" className="mr-4 shrink-0 cursor-grab color-hint" />
                                         )}
                                         <FolderIcon
                                             className="mr-2 shrink-0"

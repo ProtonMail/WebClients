@@ -21,12 +21,11 @@ const FilterSortableList = ({ items, onApplyFilter, ...rest }: Props) => (
                 <th scope="col" className="w-custom" style={{ '--w-custom': '5%' }}>
                     <span className="sr-only">{c('Settings/filters - table').t`Order`}</span>
                 </th>
-                <th scope="col">{c('Settings/filters - table').t`Name`}</th>
-                <th scope="col" className="w-custom hidden md:table-cell" style={{ '--w-custom': '8em' }}>
-                    {c('Settings/filters - table').t`Status`}
+                <th scope="col">
+                    <span className="sr-only">{c('Settings/filters - table').t`Name`}</span>
                 </th>
                 <th scope="col" className="w-custom" style={{ '--w-custom': '10em' }}>
-                    {c('Settings/filters - table').t`Action`}
+                    <span className="sr-only">{c('Settings/filters - table').t`Action`}</span>
                 </th>
             </tr>
         </OrderableTableHeader>
