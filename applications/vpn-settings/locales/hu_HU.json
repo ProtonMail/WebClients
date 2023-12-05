@@ -416,6 +416,9 @@
       "Sign out": [
         "Kijelentkezés"
       ],
+      "sign up for free": [
+        "regisztráljon ingyenesen"
+      ],
       "Signing in": [
         "Bejelentkezés"
       ],
@@ -1709,6 +1712,11 @@
         "Segítsen fejlődni!"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Az ellenőrző e-mailt elküldtük erre a címre: ${ address }"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "Kétfaktoros hitelesítés"
@@ -2685,6 +2693,9 @@
       "Gateways": [
         "Átjárók"
       ],
+      "Get ${ upsellPlanName }": [
+        "${ upsellPlanName } beszerzése"
+      ],
       "here": [
         "ide"
       ],
@@ -3075,6 +3086,9 @@
       "To confirm, please enter the name of the user you wish to delete.": [
         "A jóváhagyáshoz írja be a törölni kívánt felhasználó nevét."
       ],
+      "to continue to ${ product }": [
+        "alkalmazás: ${ product }"
+      ],
       "to continue to ${ toAppName }": [
         "alkalmazás: ${ toAppName }"
       ],
@@ -3230,6 +3244,9 @@
       ],
       "Why?": [
         "Miért?"
+      ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Egy titkosított ${ BRAND_NAME } címmel hozzáférhet az összes ${ BRAND_NAME } szolgáltatáshoz"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Aktiválás nélkül nem fog tudni új felhasználókat létrehozni, címeket felvenni meglévő felhasználókhoz, vagy nem-privát fiókokat elérni."
@@ -4051,6 +4068,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } naptár",
+        "${ maximumNumberOfCalendars } naptár"
+      ],
       "${ n } calendar": [
         "${ n } naptár",
         "${ n } naptár"
@@ -4633,6 +4654,9 @@
       "Auto-connect": [
         "Automatikus csatlakozás"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Emelje meg tárhelyét felhasználónként ${ bundleStorage } méretűre"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Emelje meg tárhelyét ${ bundleStorage } méretűre"
       ],
@@ -4674,6 +4698,9 @@
       ]
     },
     "Onboarding": {
+      "Welcome to ${ product }": [
+        "Üdvözli a ${ product }"
+      ],
       "Welcome to ${ VPN_APP_NAME }": [
         "Üdvözli a ${ VPN_APP_NAME }"
       ]
@@ -5107,6 +5134,9 @@
       ]
     },
     "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "Jelszóváltoztatás kérése?"
+      ],
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
         "A jelszavát ${ gracePeriodHoursRemaining } múlva tudja visszaállítani.",
         "A jelszavát ${ gracePeriodHoursRemaining } múlva tudja visszaállítani."
@@ -5522,6 +5552,9 @@
       "Code sent to ${ methodTo }": [
         "Kód elküldve: ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Vágólapra másolva"
+      ],
       "Credits added": [
         "Kredit hozzáadva"
       ],
@@ -5555,11 +5588,17 @@
       "Keys updated": [
         "Kulcsok frissítve"
       ],
+      "Link copied to clipboard": [
+        "Hivatkozás a vágólapra másolva"
+      ],
       "Locale updated": [
         "Nyelv frissítve"
       ],
       "Organization activated": [
         "Szervezet aktiválva"
+      ],
+      "Password copied to clipboard": [
+        "Jelszó a vágólapra másolva"
       ],
       "Password updated": [
         "Jelszó frissítve"
@@ -5584,6 +5623,9 @@
       ],
       "User updated": [
         "Felhasználó frissítve"
+      ],
+      "Username copied to clipboard": [
+        "Felhasználónév másolva a vágólapra"
       ],
       "Verification successful": [
         "Sikeres ellenőrzés"

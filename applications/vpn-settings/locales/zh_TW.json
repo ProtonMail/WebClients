@@ -44,6 +44,9 @@
       "Authenticate": [
         "驗證"
       ],
+      "Authenticating": [
+        "正在驗證"
+      ],
       "Back": [
         "返回"
       ],
@@ -738,8 +741,17 @@
       ]
     },
     "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
       "Includes support for 3 custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "包含對 3 組自訂電子郵件網域、${ addresses } 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "儲存空間於${ BRAND_NAME }共用。"
       ]
     },
     "Billing cycle": {
@@ -2034,13 +2046,13 @@
         "讀取您的檔案「${ formattedFilename }」時發生錯誤。檔案格式不正確。"
       ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
+        "上傳您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "上載您的檔案時發生錯誤。未選取任何檔案。"
       ],
       "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
-        "上載一個載有不多於 ${ MAX_NUMBER_OF_USER_ROWS } 個使用者帳號的 CSV 檔案。"
+        "上傳一個少於 ${ MAX_NUMBER_OF_USER_ROWS } 個使用者帳號的 CSV 檔案。"
       ],
       "Your file \"${ formattedFilename }\" is empty.": [
         "您的檔案 \"${ formattedFilename }\" 是空的。"
@@ -2419,7 +2431,7 @@
         "使用實體 U2F 或 FIDO2 金鑰來確保您的身份"
       ],
       "Your two-factor authentication key is ready to use.": [
-        "您的雙重驗證金鑰已準備就緒。"
+        "您的兩步驟驗證金鑰已準備就緒"
       ]
     },
     "fido2: Label": {
@@ -2472,13 +2484,13 @@
         "位元組"
       ],
       "Gigabytes": [
-        "十億位元組"
+        "GB"
       ],
       "Kilobytes": [
         "千位元組"
       ],
       "Megabytes": [
-        "百萬位元組"
+        "MB"
       ],
       "Terabytes": [
         "TB"
@@ -2642,7 +2654,7 @@
         "${ fileName }：低解析度預覽"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } 也可使用單一密碼取代登入密碼和郵箱密碼。如要切換為單一密碼模式，請輸入您想使用的單一密碼，然後按一下「儲存」。"
+        "${ MAIL_APP_NAME } 也可使用單一密碼取代登入密碼和信箱密碼。如要切換為單一密碼模式，請輸入您想使用的單一密碼，然後按一下「儲存」。"
       ],
       "${ number } cities": [
         "${ number } 座城市"
@@ -2995,6 +3007,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "若您認為箇中有誤，請聯絡我們：${ contactLink }。"
       ],
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "若您取消，您的${ planTitle }訂閱將會於${ expiryDate }到期"
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
       ],
@@ -3020,7 +3035,7 @@
         "若您想要將此帳號與其它的結合，則請不要刪除它。"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "重要：請確定您將復原代碼儲存到其它地方了。否則在您遺失您的兩步驟驗證裝置時，您也會永久失去對您的帳號的存取權。"
+        "重要：請確認你已將復原代碼儲存到其它地方。否則在你遺失兩步驟驗證裝置時，你將會永久失去你的帳號"
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "在下一步驟裡，您將可以使用比特幣數位錢包，提交單筆存款。"
@@ -3488,10 +3503,10 @@
         "兩步驟驗證已啟用"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "雙重密碼模式需要兩個密碼：一個用來登入您的帳號，另一個用來解密您的郵件信箱。(進階)"
+        "雙重密碼模式需要兩個密碼：一個用來登入您的帳號，另一個用來解密您的信箱 (進階)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "雙重密碼模式即是使用者使用不同的密碼作登入和解密郵箱。在某些情況下，這可能稍微提高安全性，但我們建議大部份使用者使用單一密碼模式。如要切換為雙重密碼模式，請首先設定登入密碼，然後設定郵箱密碼。"
+        "雙重密碼模式即是使用者使用不同的密碼作登入和解密信箱。在某些情況下，這可能稍微提高安全性，但我們建議大部份使用者使用單一密碼模式。如要切換為雙重密碼模式，請首先設定登入密碼，然後設定信箱密碼。"
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "很遺憾，此帳號未有儲存任何復原方法。"
@@ -3956,7 +3971,7 @@
         "確認登入密碼"
       ],
       "Confirm mailbox password": [
-        "確認郵箱密碼"
+        "確認信箱密碼"
       ],
       "Confirm new password": [
         "確認新密碼"
@@ -4088,7 +4103,7 @@
         "新的登入密碼"
       ],
       "New mailbox password": [
-        "新的郵箱密碼"
+        "新的信箱密碼"
       ],
       "New organization password": [
         "新的組織密碼"
@@ -4520,6 +4535,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendars": [
+        "${ maximumNumberOfCalendars } 個行事曆"
+      ],
       "${ n } calendars": [
         "${ n } 個行事曆"
       ],
@@ -5651,10 +5669,10 @@
         "若您沒有請求重設密碼，請立刻取消請求。"
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
-        "重設密碼請求已核准 (${ user.Email })。您可以在${ timeRemaining.inDays }天內重設您的密碼。"
+        "重設密碼請求已批准 (${ user.Email })。您可以在${ timeRemaining.inDays }天內重設您的密碼。"
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
-        "重設密碼請求已核准 (${ user.Email })。您可以在${ timeRemaining.inHours }小時內重設您的密碼。"
+        "重設密碼請求已批准 (${ user.Email })。您可以在${ timeRemaining.inHours }小時內重設您的密碼。"
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "請前往已登入的裝置（在發起請求的工作階段中）變更您的密碼。"
@@ -6265,6 +6283,9 @@
       "Code sent to ${ methodTo }": [
         "驗證碼已發送至 ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "已複製到剪貼簿"
+      ],
       "Credits added": [
         "餘額已增加"
       ],
@@ -6301,11 +6322,17 @@
       "Keys updated": [
         "金鑰已更新"
       ],
+      "Link copied to clipboard": [
+        "已複製連結到剪貼簿"
+      ],
       "Locale updated": [
         "語言設定已更新"
       ],
       "Organization activated": [
         "組織機構已啟用"
+      ],
+      "Password copied to clipboard": [
+        "密碼以複製到剪貼簿"
       ],
       "Password updated": [
         "密碼已更新"
@@ -6330,6 +6357,9 @@
       ],
       "User updated": [
         "使用者已更新"
+      ],
+      "Username copied to clipboard": [
+        "已複製使用者名稱到剪貼簿"
       ],
       "Verification successful": [
         "驗證成功"
@@ -6643,7 +6673,7 @@
         "日期"
       ],
       "Day theme": [
-        "白天佈景主題"
+        "日間佈景主題"
       ],
       "Delete": [
         "刪除"
