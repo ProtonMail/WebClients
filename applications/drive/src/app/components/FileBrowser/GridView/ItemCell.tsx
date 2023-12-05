@@ -68,7 +68,7 @@ const ItemCell = <T extends FileBrowserBaseItem>({
                 tabIndex={0}
                 draggable={draggable}
                 className={clsx([
-                    'file-browser-grid-item m-2 flex flex-column w-full h-full rounded border text-align-left',
+                    'file-browser-grid-item m-2 flex flex-column w-full rounded border text-align-left',
                     isSelected && 'border-primary',
                     (isSelected || dragMoveControls?.isActiveDropTarget || item.isLocked) &&
                         'file-browser-grid-item--highlight',
