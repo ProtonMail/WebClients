@@ -110,7 +110,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
             {showDuration && (
                 <SettingsLayout stackEarlier className="mt-8">
                     <SettingsLayoutLeft>
-                        <label htmlFor="event-duration" className="text-semibold">
+                        <label htmlFor="event-duration" id="label-event-duration" className="text-semibold">
                             {c('Label for default event settings').t`Duration`}
                         </label>
                     </SettingsLayoutLeft>
@@ -119,6 +119,7 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, canEdit }: Props) =
                             disabled={loadingDuration || cannotEdit}
                             as={SelectTwo}
                             id="event-duration"
+                            aria-labelledby="label-event-duration"
                             data-testid="create-calendar/event-settings:event-duration"
                             value={model.duration}
                             // @ts-ignore
