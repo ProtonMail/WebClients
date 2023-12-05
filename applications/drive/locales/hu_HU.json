@@ -379,6 +379,9 @@
       "Load image": [
         "Kép betöltése"
       ],
+      "Loading link": [
+        "Link betöltése"
+      ],
       "Manage folders": [
         "Mappák kezelése"
       ],
@@ -2589,6 +2592,12 @@
         "(névtelen)"
       ]
     },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } sikertelen",
+        "${ countOfFailedLinks } sikertelen"
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 TB teljes tárhely"
@@ -3185,6 +3194,12 @@
         "${ doneUploadsCount } feltöltve",
         "${ doneUploadsCount } feltöltve"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } az App Store-ban"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } a Play Áruházban"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } sikertelen",
         "${ errorCount } sikertelen"
@@ -3218,6 +3233,10 @@
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ selectedContactsLength }/${ contactsLength } névjegy kiválasztva",
         "${ selectedContactsLength }/${ contactsLength } névjegy kiválasztva"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } kijelölve",
+        "${ selectedCount } kijelölve"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } mappa kiválasztva",
@@ -4074,6 +4093,9 @@
       ],
       "Trash": [
         "Lomtár"
+      ],
+      "Trash is empty": [
+        "A lomtár üres"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Próbálja ki a ${ BRAND_NAME } új funkcióit, frissítéseit és termékeit mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez újra fogja tölteni az alkalmazást"
@@ -4945,6 +4967,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } naptár",
+        "${ maximumNumberOfCalendars } naptár"
+      ],
       "Auto-delete spam and trashed messages": [
         "A Levélszemét és a Lomtár mappában lévő üzenetek automatikus törlése"
       ],

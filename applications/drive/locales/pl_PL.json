@@ -2087,6 +2087,9 @@
       "\"${ name }\" already exists": [
         "Plik \"${ name }\" już istnieje"
       ],
+      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
+        "${ DRIVE_APP_NAME } został zaktualizowany. Odśwież stronę."
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Możesz również sprawdzić naszą ${ statusPageLink }"
       ],
@@ -2254,6 +2257,9 @@
       ],
       "Passwords do not match": [
         "Hasła nie pasują do siebie"
+      ],
+      "Photos upload is temporarily disabled. Please try again later": [
+        "Przesyłanie zdjęć jest tymczasowo wyłączone. Spróbuj ponownie później"
       ],
       "Please activate your search again": [
         "Włącz ponownie wyszukiwanie"
@@ -2686,10 +2692,10 @@
     },
     "Failed": {
       "${ countOfFailedLinks } failed": [
-        "Odzyskanie ${ countOfFailedLinks } zdjęcia nie powiodło się",
-        "Odzyskanie ${ countOfFailedLinks } zdjęć nie powiodło się",
-        "Odzyskanie ${ countOfFailedLinks } zdjęć nie powiodło się",
-        "Odzyskanie ${ countOfFailedLinks } zdjęć nie powiodło się"
+        "Odzyskanie ${ countOfFailedLinks } elementu nie powiodło się",
+        "Odzyskanie ${ countOfFailedLinks } elementów nie powiodło się",
+        "Odzyskanie ${ countOfFailedLinks } elementów nie powiodło się",
+        "Odzyskanie ${ countOfFailedLinks } elementów nie powiodło się"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -3876,7 +3882,7 @@
         "Elementy w Koszu pozostaną tutaj, dopóki nie zostaną trwale usunięte"
       ],
       "Items moved to the trash will stay here until deleted": [
-        "Przedmioty przeniesione do kosza pozostaną tam do momentu ich usunięcia"
+        "Elementy w Koszu pozostaną tutaj, dopóki nie zostaną trwale usunięte"
       ],
       "It’s easy and secure": [
         "To łatwe i bezpieczne"
@@ -4449,7 +4455,7 @@
         "Wczoraj"
       ],
       "You are about to open another browser tab and visit:": [
-        "Masz zamiar otworzyć nową kartę przeglądarki i przejść do:"
+        "Uruchomisz nową kartę przeglądarki i przejdziesz do:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Zalogowano jako ${ user.Name } (${ user.Email })."
@@ -5606,7 +5612,7 @@
         "Otwórz menu aplikacji w lewym górnym rogu, aby uzyskać dostęp do wszystkich usług ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }."
       ],
       "You will be able to change your theme any time in your settings.": [
-        "Będziesz mógł zmienić motyw w dowolnym momencie w ustawieniach."
+        "Możesz w ustawieniach zmienić motyw w dowolnym momencie."
       ]
     },
     "Onboarding Title": {
@@ -6249,10 +6255,10 @@
         "${ countMergeableContacts } kontaktów wygląda identycznie."
       ],
       "${ countOfUnrecoveredLinksLeft } left": [
-        "Pozostało ${ countOfUnrecoveredLinksLeft } zdjęcie",
-        "Pozostały ${ countOfUnrecoveredLinksLeft } zdjęcia",
-        "Pozostało ${ countOfUnrecoveredLinksLeft } zdjęć",
-        "Pozostało ${ countOfUnrecoveredLinksLeft } zdjęć"
+        "Pozostał ${ countOfUnrecoveredLinksLeft } element",
+        "Pozostały ${ countOfUnrecoveredLinksLeft } elementy",
+        "Pozostało ${ countOfUnrecoveredLinksLeft } elementów",
+        "Pozostało ${ countOfUnrecoveredLinksLeft } elementów"
       ],
       "Address copied to clipboard": [
         "Adres został skopiowany do schowka"

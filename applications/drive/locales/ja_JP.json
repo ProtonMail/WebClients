@@ -496,6 +496,9 @@
       "Report a problem": [
         "問題を報告"
       ],
+      "Report an issue": [
+        "問題を報告"
+      ],
       "Request a feature": [
         "機能を提案"
       ],
@@ -802,8 +805,39 @@
       ]
     },
     "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } ストレージ"
+      ],
+      "Ad-blocker and malware protection": [
+        "広告ブロッカーとマルウェア防止"
+      ],
       "Extended version history": [
         "拡張バージョン履歴"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }と${ CALENDAR_SHORT_APP_NAME }プレミアム"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium Password Manager": [
+        "プレミアムパスワードマネージャー"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30 日間返金保証"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "1 件の独自メールドメイン対応、10 件のメールアドレス、10 件の hide-my-email エイリアス、カレンダー共有などが含まれます。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "暗号化されたクラウドストレージでファイルの安全性を保ちましょう。バージョン履歴、暗号化済みファイル共有などが含まれています。"
       ]
     },
     "Bug category": {
@@ -2528,6 +2562,11 @@
         "(タイトルなし)"
       ]
     },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "失敗 ${ countOfFailedLinks } 件"
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "合計 3 TB のストレージ"
@@ -3095,6 +3134,12 @@
       ],
       "${ doneUploadsCount } uploaded": [
         "アップロード完了 ${ doneUploadsCount } 件"
+      ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "App Store での ${ DRIVE_APP_NAME }"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "Play Store での ${ DRIVE_APP_NAME }"
       ],
       "${ errorCount } failed": [
         "失敗 ${ errorCount } 件"
@@ -4828,6 +4873,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendars": [
+        "${ maximumNumberOfCalendars } 件のカレンダー"
+      ],
       "Auto-delete spam and trashed messages": [
         "迷惑メールとごみ箱のメッセージを自動削除"
       ],
@@ -4862,6 +4910,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "SimpleLogin by ${ BRAND_NAME } で無制限にエイリアスを作成"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "メッセージをスヌーズし、必要なときに再通知します"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
