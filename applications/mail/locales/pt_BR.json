@@ -234,7 +234,7 @@
         "Continuar com Outlook"
       ],
       "Contract composer": [
-        "Rest. tamanho"
+        "Restaurar tamanho"
       ],
       "Copy address": [
         "Copiar endereço"
@@ -710,11 +710,11 @@
       "Not saved": [
         "Não salvo"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
@@ -3067,7 +3067,7 @@
         "Para importar seus contatos do Google o Outlook, ${ easySwitchLink }."
       ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
-        "Ative proteção de rastreador de e-mail para prevenir que anunciantes e outros de rastrear sua localização e atividade on-line."
+        "Ative a proteção do rastreador de e-mail para evitar que anunciantes e outras pessoas rastreiem sua localização e atividade online."
       ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Desbloqueie o agendamento de mensagens personalizado e outros benefícios ao fazer upgrade do seu plano."
@@ -4298,7 +4298,7 @@
         "${ MAIL_APP_NAME } na Play Store"
       ],
       "account logins": [
-        "os dados da conta"
+        "acessos da conta"
       ],
       "Auto-forward Gmail": [
         "Encaminhamento automático do Gmail"
@@ -6252,6 +6252,9 @@
       ],
       "Optional": [
         "Opcional"
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
       ]
     },
     "Info on errors": {
@@ -7495,6 +7498,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendário",
+        "${ maximumNumberOfCalendars } calendários"
+      ],
       "Auto-delete spam and trashed messages": [
         "Excluir automaticamente spam e mensagens da lixeira"
       ],
@@ -7641,6 +7648,9 @@
       ],
       "Set up your organization": [
         "Configure a sua organização"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Use o seletor de aplicativos no canto superior esquerdo para acessar todos${ BRAND_NAME }Serviços:${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }e ${ PASS_SHORT_APP_NAME }"
       ],
       "You will be able to change your theme any time in your settings.": [
         "Você poderá alterar seu tema a qualquer momento nas configurações."
@@ -9508,8 +9518,8 @@
         "Aviso: Site suspeito de ser falso"
       ],
       "We protected you from ${ trackersCount } tracker": [
-        "Temos protegidos você de ${ trackersCount } rastreador",
-        "Temos protegidos você de ${ trackersCount } rastreadores"
+        "Temos protegido você de ${ trackersCount } rastreador",
+        "Temos protegido você de ${ trackersCount } rastreadores"
       ],
       "Welcome": [
         "Bem-vindo"

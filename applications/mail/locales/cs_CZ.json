@@ -718,11 +718,11 @@
       "Not saved": [
         "Neuloženo"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Otevřít ${ CALENDAR_APP_NAME }"
@@ -6475,6 +6475,9 @@
       ],
       "Optional": [
         "Volitelné"
+      ],
+      "Selected color:": [
+        "Vybraná barva:"
       ]
     },
     "Info on errors": {
@@ -7738,6 +7741,12 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalendář",
+        "${ maximumNumberOfCalendars } kalendáře",
+        "${ maximumNumberOfCalendars } kalendářů",
+        "${ maximumNumberOfCalendars } kalendářů"
+      ],
       "Auto-delete spam and trashed messages": [
         "Automaticky mazat zprávy ve spamu a koši"
       ],
@@ -7835,6 +7844,26 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "Vyberte, k čemu může ${ BRAND_NAME } přistupovat: zobrazit e-mailové zprávy a nastavení, zobrazit a stáhnout kontakty, zobrazit a stáhnout všechny denní události, ke kterým máte přístup z kalendáře Google."
+      ]
+    },
+    "Onboarding modal": {
+      "Block unsavory senders": [
+        "Blokování nevhodných odesílatelů"
+      ],
+      "Congratulations on choosing privacy": [
+        "Gratulujeme k volbě soukromí"
+      ],
+      "For your eyes only": [
+        "Pouze pro vaše oči"
+      ],
+      "Next": [
+        "Další"
+      ],
+      "Protection from trackers": [
+        "Ochrana před sledováním"
+      ],
+      "Skip": [
+        "Přeskočit"
       ]
     },
     "Onboarding Proton": {

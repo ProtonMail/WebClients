@@ -710,10 +710,10 @@
       "Not saved": [
         "არაა შენახული"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -6252,6 +6252,9 @@
       ],
       "Optional": [
         "არასავალდებულო"
+      ],
+      "Selected color:": [
+        "არჩეული ფერი:"
       ]
     },
     "Info on errors": {
@@ -7495,6 +7498,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } კალენდარი",
+        "${ maximumNumberOfCalendars } კალენდარი"
+      ],
       "Auto-delete spam and trashed messages": [
         "სპამისა და სანაგვე ყუთში მდებარე შეტყობინებების ავტომატური წაშლა"
       ],
@@ -7594,6 +7601,41 @@
         "აირჩიეთ, რასთან აქვს ${ BRAND_NAME }-ს წვდომა: ნახოს თქვენი ელფოსტის შეტყობინებები დ პარამეტრები, ნახოს და გადმოწეროს თქვენი კონტაქტები; გადმოწეროს და ნახოს ყველა გეგმა Google Agenda-დან."
       ]
     },
+    "Onboarding modal": {
+      "Automatically forward emails": [
+        "ელფოსტების ავტომატური გადაგზავნა"
+      ],
+      "Block email communications from scammers permanently. ${ kbLinkSender }": [
+        "სამუდამოდ დაბლოკეთ ელფოსტით კომუნიკაცია სკამერებისგან. ${ kbLinkSender }"
+      ],
+      "Block unsavory senders": [
+        "დაბლოკეთ უსიამოვნო მგზავნლები"
+      ],
+      "Congratulations on choosing privacy": [
+        "გილოცავთ კონფიდენციალობის დაცვის არჩევას"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
+        "დაშიფვრა, რომელიც ისეთი ძლიერია, რომ თქვენი ელფოსტების გახსნა, მხოლოდ, მისთვის განკუთვნილ მიმღებებს შეუძლიათ. ${ kbLinkEncryption }"
+      ],
+      "For your eyes only": [
+        "მხოლოდ, თქვენს დასანახად"
+      ],
+      "Forward Gmail messages to your inbox.": [
+        "გადმოაგზავნეთ Gmail-ის შეტყობინებები თქვენს საფოსტო ყუთში."
+      ],
+      "Next": [
+        "შემდეგი"
+      ],
+      "Protection from trackers": [
+        "ტრეკერებისგან დაცვა"
+      ],
+      "Skip": [
+        "გამოტოვება"
+      ],
+      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
+        "ჩვენ ხელს ვუშლით რეკლამის გამავრცელებლებს და მონაცემების შემგროვებლებს თქვენს პროფილირებაში. ${ kbLinkPrivacy }"
+      ]
+    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "მოირგეთ თქვენი ორგანიზაცია, მიაბით თქვენი დომენური სახელი და შექმენით ანგარშები, რომ დარწმუნდეთ, რომ თქვენი ორგანიზაციის ყველა წევრი დაცულია."
@@ -7601,8 +7643,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "აღმოაჩინეთ ${ BRAND_NAME }-ის ყველა სერვისი"
       ],
+      "Pick a theme": [
+        "აირჩიეთ თემა"
+      ],
       "Set up your organization": [
         "ორგანიზაციის მორგება"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "გამოიყენეთ აპის ამრჩევი ზედა მარცხენა კუთხეში ${ BRAND_NAME }-ის ყველა სერვისთან წვდომისთვის: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } და ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "თქვენი თემის შეცვლა ნებისმიერ დროს შეგიძლიათ, მორგების ფანჯარაში."
       ]
     },
     "Online accounts": {

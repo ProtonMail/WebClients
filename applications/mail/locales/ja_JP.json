@@ -700,11 +700,11 @@
       "Not saved": [
         "未保存"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } を開く"
@@ -883,6 +883,9 @@
       "Select all messages": [
         "すべてのメッセージを選択"
       ],
+      "Select date and time": [
+        "日時を選択"
+      ],
       "Self-destruct in 7 days": [
         "有効期限を 7 日後に設定"
       ],
@@ -982,6 +985,9 @@
       "Skip verification": [
         "検証をスキップする"
       ],
+      "Snooze": [
+        "スヌーズを設定"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "トラッキング防止が一部の画像の読み込みをブロックしました。"
       ],
@@ -1062,6 +1068,9 @@
       ],
       "Unordered list": [
         "箇条書き"
+      ],
+      "Unsnooze": [
+        "スヌーズを解除"
       ],
       "Unstar": [
         "星印を外す"
@@ -1307,8 +1316,39 @@
       ]
     },
     "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } ストレージ"
+      ],
+      "Ad-blocker and malware protection": [
+        "広告ブロッカーとマルウェア防止"
+      ],
       "Extended version history": [
         "拡張バージョン履歴"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }と${ CALENDAR_SHORT_APP_NAME }プレミアム"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium Password Manager": [
+        "プレミアムパスワードマネージャー"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30 日間返金保証"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "1 件の独自メールドメイン対応、10 件のメールアドレス、10 件の hide-my-email エイリアス、カレンダー共有などが含まれます。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "暗号化されたクラウドストレージでファイルの安全性を保ちましょう。バージョン履歴、暗号化済みファイル共有などが含まれています。"
       ]
     },
     "Bug category": {
@@ -5691,6 +5731,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "アドレスの検証を利用するには、送信で使う鍵を含む 1 つ以上の公開鍵を信頼する必要があります。これにより、暗号鍵の偽装を防ぐことができます。"
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "明日、${ formattedTime }"
+      ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "送信予約メッセージが多すぎます。他のメッセージが送信されれば、このメッセージを送信予約できます。"
       ],
@@ -7210,6 +7253,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendars": [
+        "${ maximumNumberOfCalendars } 件のカレンダー"
+      ],
       "Auto-delete spam and trashed messages": [
         "迷惑メールとごみ箱のメッセージを自動削除"
       ],
@@ -7244,6 +7290,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "SimpleLogin by ${ BRAND_NAME } で無制限にエイリアスを作成"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "メッセージをスヌーズし、必要なときに再通知します"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
@@ -7301,6 +7350,17 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "${ BRAND_NAME } のアクセス権を選択してください: メールメッセージと設定の閲覧 / 連絡先の閲覧とダウンロード / Google Agendaの全アジェンダの閲覧とダウンロード。"
+      ]
+    },
+    "Onboarding modal": {
+      "Block unsavory senders": [
+        "不適切な送信者をブロックする"
+      ],
+      "For your eyes only": [
+        "あなたの目だけに"
+      ],
+      "Protection from trackers": [
+        "トラッカーからの保護"
       ]
     },
     "Onboarding Proton": {
@@ -7919,6 +7979,14 @@
         "署名"
       ]
     },
+    "Snooze message": {
+      "Snooze Message": [
+        "メッセージのスヌーズ"
+      ],
+      "When should the message reappear in your inbox?": [
+        "いつメッセージを受信トレイに再表示しますか？"
+      ]
+    },
     "Sort option": {
       "Largest first": [
         "容量の大きい順"
@@ -8145,6 +8213,12 @@
       ],
       "Search just got smarter and faster": [
         "検索がより賢く、より速く"
+      ],
+      "Set when an email should reappear in your inbox with the new snooze feature.": [
+        "新しいスヌーズ機能で、メールが受信トレイに再表示されるタイミングを設定できます。"
+      ],
+      "Snooze it for later": [
+        "スヌーズで再通知する"
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "スパムメールとゴミ箱メールがすべてのメールから自動的に除外されるようになりました。 ${ settingsLink }"
@@ -9010,6 +9084,9 @@
       ],
       "Sign out": [
         "サインアウト"
+      ],
+      "Snooze message": [
+        "メッセージのスヌーズ"
       ],
       "Sort conversations": [
         "会話の並べ替え"

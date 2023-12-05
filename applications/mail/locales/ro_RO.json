@@ -714,10 +714,10 @@
       "Not saved": [
         "Nesalvat"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -6365,6 +6365,9 @@
       ],
       "Optional": [
         "Opțional"
+      ],
+      "Selected color:": [
+        "Culoare selectată:"
       ]
     },
     "Info on errors": {
@@ -7618,6 +7621,11 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendar",
+        "${ maximumNumberOfCalendars } calendare",
+        "${ maximumNumberOfCalendars } de calendare"
+      ],
       "Auto-delete spam and trashed messages": [
         "Ștergere automată mesaje nedorite și din gunoi"
       ],
