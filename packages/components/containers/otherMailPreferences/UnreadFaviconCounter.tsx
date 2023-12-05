@@ -13,7 +13,7 @@ export const UnreadFaviconCounter = () => {
                     <Info title={c('Tooltip').t`See number of unread messages in the tab icon`} />
                 </label>
             </SettingsLayoutLeft>
-            <SettingsLayoutRight className="pt-2">
+            <SettingsLayoutRight isToggleContainer>
                 <UnreadFaviconCounterToggle className="mr-4" id="unreadFaviconCounterToggle" />
             </SettingsLayoutRight>
         </SettingsLayout>

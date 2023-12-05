@@ -128,7 +128,7 @@ const PasswordsSection = () => {
                                     />
                                 </label>
                             </SettingsLayoutLeft>
-                            <SettingsLayoutRight className="pt-2">
+                            <SettingsLayoutRight isToggleContainer>
                                 <Toggle
                                     loading={loadingUserSettings}
                                     checked={!isOnePasswordMode}

@@ -114,7 +114,7 @@ const ExternalPGPSettingsSection = () => {
                         />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt-2">
+                <SettingsLayoutRight isToggleContainer>
                     <Toggle
                         id="signToggle"
                         checked={!!Sign}
@@ -136,7 +136,7 @@ const ExternalPGPSettingsSection = () => {
                         />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt-2">
+                <SettingsLayoutRight isToggleContainer>
                     <Toggle
                         id="attachPublicKeyToggle"
                         checked={!!AttachPublicKey}
