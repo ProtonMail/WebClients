@@ -25,6 +25,9 @@
       "Add Bcc recipients": [
         "Rnu anɣal uffir n yiɣarwaḍen"
       ],
+      "Add birthday": [
+        "Rnu azemz n tlalit"
+      ],
       "Add Cc recipients": [
         "Rnu anɣal n yiɣarwaḍen"
       ],
@@ -45,6 +48,9 @@
       ],
       "Add new group": [
         "Rnu agraw amaynut"
+      ],
+      "Add note": [
+        "Rnu tazmilt"
       ],
       "Add participant": [
         "Rnu amttekki"
@@ -213,6 +219,9 @@
       ],
       "Continue with Google": [
         "Kemmel s Google"
+      ],
+      "Continue with Outlook": [
+        "Kemmel s Outlook"
       ],
       "Contract composer": [
         "Sekmec amsuddes"
@@ -476,6 +485,9 @@
       ],
       "Import from .csv or vCard": [
         "Kter si .csv neɣ vCard"
+      ],
+      "Import from Google": [
+        "Kter seg Google"
       ],
       "In the morning": [
         "Taṣebḥit"
@@ -952,6 +964,9 @@
       "Skip verification": [
         "Zgel asenqed"
       ],
+      "Snooze": [
+        "Ales"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "Kra n tugniwin ulamek ara d-alint s ummesten n yineḍfaren."
       ],
@@ -1269,6 +1284,25 @@
       ],
       "Sender verification passed": [
         "Asenqed n umesgal yella-d akken iwata"
+      ]
+    },
+    "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } n uḥraz"
+      ],
+      "1 user": [
+        "1 useqdac"
+      ],
+      "6 users": [
+        "6 yiseqdacen"
+      ],
+      "Premium Password Manager": [
+        "Amsefrak n wawal uffir premium"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Aɣram ɣef 30 n wussan yettwaḍmen"
       ]
     },
     "Bug category": {
@@ -1843,8 +1877,14 @@
       "Birthday": [
         "Amulli"
       ],
+      "Display name": [
+        "Isem n uskan"
+      ],
       "Email": [
         "Imayl"
+      ],
+      "First name": [
+        "Isem"
       ],
       "Gender": [
         "Taswit"
@@ -1854,6 +1894,9 @@
       ],
       "Language": [
         "Tutlayt"
+      ],
+      "Last name": [
+        "Isem n tmagit"
       ],
       "Logo": [
         "Alugu"
@@ -5162,6 +5205,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "I useqdec n usenqed n tansa, issefk ad tettekleḍ ɣef yiwet neɣ ugar seg tsura tizuyaz i yellan, ula d tin i tebɣiḍ ad tt-tesqedceḍ i tuzna. Aya ad isewḥel abeddel n tsura n uwgelhen."
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "Azekka, ${ formattedTime }"
+      ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Aṭas n yimaylen i yettraǧun ad ttwaznen. Ttxil raǧu almi yettwazen yimayl-nniḍen akken ad tesɣiwseḍ wa."
       ],
@@ -5188,6 +5234,9 @@
       ],
       "Unsupported file": [
         "Afaylu ur yettwadhel ara"
+      ],
+      "Up to ${ FAMILY_MAX_USERS } users": [
+        "Alamma d ${ FAMILY_MAX_USERS } yiseqdacen"
       ],
       "Updating message content search...": [
         "Aleqqem n unadi n ugbur n yizen..."
@@ -6286,6 +6335,9 @@
       "Sign up for free": [
         "Jerred baṭel"
       ],
+      "Snooze": [
+        "Ales"
+      ],
       "Spam": [
         "Aspam"
       ],
@@ -6601,6 +6653,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } uwitay",
+        "${ maximumNumberOfCalendars } yiwitayen"
+      ],
       "Calendar sharing": [
         "Beṭṭu n uwitay"
       ],
@@ -6657,6 +6713,9 @@
       "Contact group updated": [
         "Agraw n unermes yettwasnifel"
       ],
+      "Link copied to clipboard": [
+        "Aseɣwen yettwanɣel ɣer ɣefwafus"
+      ],
       "Password has been set successfully": [
         "Awal uffir yettusbadu akken iwata"
       ],
@@ -6665,6 +6724,23 @@
       ],
       "Senders blocked": [
         "Ttusweḥlen imazanen"
+      ]
+    },
+    "Onboarding modal": {
+      "Block unsavory senders": [
+        "Weḥlen yir yimazanen"
+      ],
+      "For your eyes only": [
+        "I wallen-ik kan"
+      ],
+      "Next": [
+        "Ɣer sdat"
+      ],
+      "Protection from trackers": [
+        "Ammesten mgal ineḍfaren"
+      ],
+      "Skip": [
+        "Zgel"
       ]
     },
     "Onboarding Proton": {
@@ -6778,6 +6854,9 @@
       ],
       "Filter labels": [
         "Sizdeg tibzimin"
+      ],
+      "First name": [
+        "Isem"
       ],
       "Group name": [
         "Isem n ugraw"
@@ -7079,6 +7158,45 @@
         "Yettwaḥrez s uwgelhen ilem n unekcum"
       ]
     },
+    "session_recovery:available:action": {
+      "Reset password": [
+        "Ales awennez n wawal uffir"
+      ]
+    },
+    "session_recovery:available:error": {
+      "Please generate keys before you try to change your password": [
+        "Ttxil sirew-d tisura send ad tɛerḍeḍ ad tbeddeleḍ awal-inek n uɛeddi"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } n wass",
+        "${ timeRemaining.inDays } n wussan"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } n usrag",
+        "${ timeRemaining.inHours } n yisragen"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Got it": [
+        "Gziɣ-t"
+      ],
+      "Learn more": [
+        "Issin ugar"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } n usrag",
+        "${ gracePeriodHoursRemaining } n yisragen"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Awennez n wawal uffir"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "Izen i yettwawgelhen n PGP. Asenqed n umazan yecceḍ: ${ verificationErrorsMessage }"
@@ -7162,6 +7280,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 useqdac"
+      ],
       "3 TB": [
         "3 TAṬ"
       ],
@@ -7207,6 +7328,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } wayyur",
+        "${ n } wayyuren"
+      ],
       "/ month": [
         "/ n wayyur"
       ],
@@ -7596,6 +7721,9 @@
       "Display name": [
         "Isem ara d-yettwaskanen"
       ],
+      "First name": [
+        "Isem"
+      ],
       "Import": [
         "Kter"
       ],
@@ -7690,6 +7818,9 @@
       ],
       "BCC": [
         "Anɣ. Uff. I"
+      ],
+      "Birthday": [
+        "Amulli"
       ],
       "Blind Carbon Copy": [
         "Anɣal n Blind Carbon"
@@ -8003,6 +8134,9 @@
       "No trackers found": [
         "Ulac ineḍfaren yettwafen"
       ],
+      "Notes": [
+        "Tizmilin"
+      ],
       "Open actions dropdown": [
         "Ldi ummuɣ n tigawin"
       ],
@@ -8119,6 +8253,9 @@
       ],
       "Sign out": [
         "Ffeɣ"
+      ],
+      "Snooze": [
+        "Ales"
       ],
       "Sort conversations": [
         "Smizzwer idiwenniyen"
