@@ -499,6 +499,9 @@
       "Import from .csv or vCard": [
         "Імпортувати з .csv або vCard"
       ],
+      "Import from Google": [
+        "Імпортувати з Google"
+      ],
       "In the morning": [
         "Зранку"
       ],
@@ -700,11 +703,11 @@
       "Not saved": [
         "Не збережено"
       ],
-      "Ok": [
-        "Гаразд"
-      ],
       "OK": [
         "Застосувати"
+      ],
+      "Ok": [
+        "Гаразд"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Відкрити ${ CALENDAR_APP_NAME }"
@@ -1322,8 +1325,27 @@
       ]
     },
     "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } сховища"
+      ],
       "6 users": [
         "6 користувачів"
+      ],
+      "Premium Password Manager": [
+        "Premium Менеджер паролів"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Гарантія повернення коштів протягом 30 днів"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Включає підтримку 1 власного домену, 10 адрес електронної пошти, 10 псевдонімів hide-my-email, спільний доступ до календаря та інші можливості."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Безпечно зберігайте свої файли у зашифрованому хмарному сховищі з історією версій, спільним доступом та іншими можливостями."
       ]
     },
     "Bug category": {
@@ -5942,6 +5964,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Для використання перевірки адреси ви повинні зробити довіреним один чи декілька доступних відкритих ключів, включаючи той, який ви хочете використовувати для надсилання. Це запобігає підроблюванню ключів шифрування."
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "Завтра, ${ formattedTime }"
+      ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Забагато повідомлень очікують надсилання. Зачекайте, доки буде відправлено інше повідомлення, щоб запланувати це."
       ],
@@ -7518,6 +7543,12 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } календар",
+        "${ maximumNumberOfCalendars } календарі",
+        "${ maximumNumberOfCalendars } календарів",
+        "${ maximumNumberOfCalendars } календарів"
+      ],
       "Auto-delete spam and trashed messages": [
         "Автоматичне видалення спаму та повідомлень зі смітника"
       ],
@@ -7583,6 +7614,9 @@
       "Contact group updated": [
         "Групу контактів оновлено"
       ],
+      "Link copied to clipboard": [
+        "Посилання скопійовано в буфер обміну"
+      ],
       "Password has been set successfully": [
         "Пароль успішно встановлено"
       ],
@@ -7606,6 +7640,20 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "Оберіть, до чого ${ BRAND_NAME } може мати доступ: переглядати ваші поштові повідомлення та налаштування, переглядати й завантажувати ваші контакти, переглядати й завантажувати усі заплановані події з календаря Google."
+      ]
+    },
+    "Onboarding modal": {
+      "Block unsavory senders": [
+        "Блокувати небажаних відправників"
+      ],
+      "Congratulations on choosing privacy": [
+        "Вітаємо з вибором приватності"
+      ],
+      "For your eyes only": [
+        "Ніхто крім вас"
+      ],
+      "Protection from trackers": [
+        "Захист від стеження"
       ]
     },
     "Onboarding Proton": {
@@ -8071,9 +8119,48 @@
         "Скинути пароль"
       ]
     },
+    "session_recovery:available:error": {
+      "Please generate keys before you try to change your password": [
+        "Згенеруйте ключі, перш ніж змінювати пароль"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } день",
+        "${ timeRemaining.inDays } дні",
+        "${ timeRemaining.inDays } днів",
+        "${ timeRemaining.inDays } днів"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } година",
+        "${ timeRemaining.inHours } години",
+        "${ timeRemaining.inHours } годин",
+        "${ timeRemaining.inHours } годин"
+      ]
+    },
     "session_recovery:available:notification": {
       "Password saved": [
         "Пароль збережено"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Скинути пароль"
+      ]
+    },
+    "session_recovery:cancellation:action": {
+      "Cancel password reset": [
+        "Скасувати скидання пароля"
+      ]
+    },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Скидання пароля скасовано"
+      ]
+    },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "Скасувати скидання пароля?"
       ]
     },
     "session_recovery:in_progress:action": {
@@ -8092,12 +8179,25 @@
         "Переглянути запит"
       ]
     },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Подано запит на скидання пароля"
+      ]
+    },
     "session_recovery:sign_out:action": {
       "Sign out": [
         "Вийти"
       ],
       "Stay signed in": [
         "Залишатися в системі"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } година",
+        "${ gracePeriodHoursRemaining } години",
+        "${ gracePeriodHoursRemaining } годин",
+        "${ gracePeriodHoursRemaining } годин"
       ]
     },
     "Signature verification warning": {
@@ -8238,6 +8338,12 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } місяць",
+        "${ n } місяці",
+        "${ n } місяців",
+        "${ n } місяців"
+      ],
       "/ month": [
         "/ місяць"
       ],

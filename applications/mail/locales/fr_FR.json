@@ -710,10 +710,10 @@
       "Not saved": [
         "Non enregistré"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -6252,6 +6252,9 @@
       ],
       "Optional": [
         "Facultatif"
+      ],
+      "Selected color:": [
+        "Couleur sélectionnée :"
       ]
     },
     "Info on errors": {
@@ -7495,6 +7498,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendrier",
+        "${ maximumNumberOfCalendars } calendriers"
+      ],
       "Auto-delete spam and trashed messages": [
         "Suppression automatique des messages dans les dossiers Indésirables/spam et Corbeille"
       ],

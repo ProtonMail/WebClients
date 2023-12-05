@@ -683,6 +683,18 @@
       ]
     },
     "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } свой домен",
+        "${ domains } своих доменов",
+        "${ domains } своих домена",
+        "${ domains } своих домена"
+      ],
+      "${ ips } server": [
+        "${ ips } сервер",
+        "${ ips } сервера",
+        "${ ips } серверов",
+        "${ ips } серверов"
+      ],
       "${ users } user": [
         "${ users } пользователь",
         "${ users } пользователя",
@@ -4488,6 +4500,12 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Приглашение можно отправить не более чем ${ maxAttendees } участнику",
+        "Приглашение можно отправить не более чем ${ maxAttendees } участникам",
+        "Приглашение можно отправить не более чем ${ maxAttendees } участникам",
+        "Приглашение можно отправить не более чем ${ maxAttendees } участникам"
+      ],
       "Creating invites in a shared calendar is not allowed": [
         "Создание приглашений в общем календаре не разрешается"
       ]
@@ -5275,6 +5293,12 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } календарь",
+        "${ maximumNumberOfCalendars } календаря",
+        "${ maximumNumberOfCalendars } календарей",
+        "${ maximumNumberOfCalendars } календарей"
+      ],
       "Auto-delete spam and trashed messages": [
         "Автоудаление спама и удаленных сообщений"
       ],
@@ -5911,6 +5935,11 @@
         "Отменить сброс пароля"
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Сброс пароля отменен"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Отменить сброс пароля?"
@@ -5950,6 +5979,11 @@
     "session_recovery:in_progress:link": {
       "View request": [
         "Посмотреть запрос"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Получен запрос на сброс пароля"
       ]
     },
     "session_recovery:sign_out:info": {
@@ -6124,14 +6158,26 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "первый ${ n } месяц",
+        "${ n } месяцев",
+        "${ n } месяца",
+        "${ n } месяца"
+      ],
       "/ month": [
         "/ месяц"
       ],
       "1 year": [
         "1 год"
       ],
+      "15 months": [
+        "15 месяца"
+      ],
       "2 years": [
         "2 года"
+      ],
+      "30 months": [
+        "30 месяца"
       ],
       "Billed at ${ amount } for 1 month": [
         "Оплата ${ amount } за 1 месяц."

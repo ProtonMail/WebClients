@@ -434,8 +434,17 @@
       "Sign in": [
         "Iniciar sessão"
       ],
+      "Sign in with password": [
+        "Iniciar sessão com a palavra-passe"
+      ],
+      "Sign in with SSO": [
+        "Iniciar sessão com SSO"
+      ],
       "Sign out": [
         "Terminar sessão"
+      ],
+      "sign up for free": [
+        "registe-se gratuitamente"
       ],
       "Signing in": [
         "A iniciar sessão"
@@ -657,6 +666,9 @@
       ]
     },
     "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } de armazenamento"
+      ],
       "1 user": [
         "1 utilizador"
       ],
@@ -668,6 +680,37 @@
       ],
       "High speed streaming": [
         "Streaming de alta velocidade"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Versão premium do gestor de palavras-passe"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Garantia de devolução do seu dinheiro em até 30 dias"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui histórico de versões, partilha de ficheiros encriptados e muito mais."
+      ]
+    },
+    "Billing cycle": {
+      "${ n } month": [
+        "${ n } mês",
+        "${ n } meses"
       ]
     },
     "Billing cycle option": {
@@ -2542,6 +2585,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } endereço",
+        "${ amountOfAddresses } endereços"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
@@ -2577,6 +2624,10 @@
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } servidor ainda está a ser configurado. Geralmente, isto demora ${ provisioningDuration }.",
         "${ provisioningCounter } servidores ainda estão a ser configurados. Geralmente, isto demora ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } mais",
+        "${ remainingAddresses.length } mais"
       ],
       "${ storage } storage": [
         "${ storage } de armazenamento"
@@ -3192,6 +3243,9 @@
       ],
       "Revoke certificate ${ name }": [
         "Revogar o certificado ${ name }"
+      ],
+      "Save ${ percentage }": [
+        "Poupe ${ percentage }"
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Guarde a sua palavra-passe num lugar seguro. Clique no ícone para confirmar que digitou a sua palavra-passe corretamente."
@@ -4439,6 +4493,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendário",
+        "${ maximumNumberOfCalendars } calendários"
+      ],
       "${ n } calendar": [
         "${ n } calendário",
         "${ n } calendários"
@@ -5547,6 +5605,9 @@
       ]
     },
     "session_recovery:available:action": {
+      "Cancel password reset": [
+        "Cancelar a reposição da palavra-passe"
+      ],
       "Cancel reset": [
         "Cancelar reposição"
       ],
@@ -5595,6 +5656,9 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Agora pode mudar a sua palavra-passe para a conta ${ boldEmail } gratuitamente por ${ boldDaysRemaining }."
+      ],
+      "You can now reset your password": [
+        "Pode reinicializar a sua palavra-passe"
       ]
     },
     "session_recovery:available:link": {
@@ -5643,6 +5707,9 @@
       ]
     },
     "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "Cancelar a reposição da palavra-passe"
+      ],
       "Cancel request": [
         "Cancelar pedido"
       ],
@@ -6164,6 +6231,9 @@
       "Code sent to ${ methodTo }": [
         "Código enviado para ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Copiado para a área de transferência"
+      ],
       "Credits added": [
         "Créditos adicionados"
       ],
@@ -6200,11 +6270,17 @@
       "Keys updated": [
         "Chaves atualizadas"
       ],
+      "Link copied to clipboard": [
+        "Ligação copiada para a área de transferência"
+      ],
       "Locale updated": [
         "Idioma atualizado"
       ],
       "Organization activated": [
         "Organização ativada"
+      ],
+      "Password copied to clipboard": [
+        "A palavra-passe é copiada para a área de transferência."
       ],
       "Password updated": [
         "Palavra-passe atualizada"
@@ -6229,6 +6305,9 @@
       ],
       "User updated": [
         "Utilizador atualizado"
+      ],
+      "Username copied to clipboard": [
+        "O nome de usuário foi copiado para a área de transferência."
       ],
       "Verification successful": [
         "A verificação é terminada."
@@ -6594,6 +6673,9 @@
       "Edit Gateway ${ currentName }": [
         "Editar Gateway ${ currentName }"
       ],
+      "Edit invoice details": [
+        "Editar os detalhes da fatura"
+      ],
       "Edit servers": [
         "Editar servidores"
       ],
@@ -6801,6 +6883,9 @@
       ],
       "Sign in to join the Beta program": [
         "Inicie sessão para aderir ao programa Beta"
+      ],
+      "Sign in to your organization": [
+        "Faça o login na sua organização"
       ],
       "Sign in with 2FA": [
         "Autenticação com 2FA"

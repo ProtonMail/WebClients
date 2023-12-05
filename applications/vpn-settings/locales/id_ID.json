@@ -101,6 +101,9 @@
       "Copy address": [
         "Salin alamat"
       ],
+      "Copy key to the clipboard": [
+        "Salin ke papan klip"
+      ],
       "Create": [
         "Buat"
       ],
@@ -3511,7 +3514,7 @@
         "Berkas ini terlalu besar untuk dipratinjau"
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
-        "Pengguna ini saat ini bertanggung jawab atas pembayaran untuk organisasi Anda. Dengan menurunkan anggota ini, Anda akan bertanggung jawab atas pembayaran untuk organisasi Anda."
+        "Pengguna ini sedang bertanggung jawab atas pembayaran untuk organisasi Anda. Dengan menurunkan anggota ini, Anda akan bertanggung jawab atas pembayaran untuk organisasi Anda."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Tindakan ini akan membatalkan langganan berbayar Anda saat ini dan Anda akan kehilangan manfaat loyalitas yang telah Anda kumpulkan."
@@ -4659,6 +4662,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendars": [
+        "${ maximumNumberOfCalendars } kalender"
+      ],
       "${ n } calendars": [
         "${ n } kalender"
       ],
@@ -5413,6 +5419,9 @@
       "IP Address copied to clipboard": [
         "Alamat IP disalin ke papan klip"
       ],
+      "Key copied to the clipboard": [
+        "Kunci tersalin ke papan klip"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Kredensial OpenVPN / IKEv2 berhasil dibuat ulang"
       ],
@@ -5526,6 +5535,12 @@
       ],
       "Creating your account": [
         "Membuat akun Anda"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Hanya dengan **${ relativePrice } lagi per bulan**, Anda mendapat akses pengatur sandi premium ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Hanya dengan **${ relativePrice } lagi per bulan**, Anda mendapat akses layanan VPN premium ${ BRAND_NAME }!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Dengan menambahkan hanya **${ relativePrice } per bulannya**, Anda akan dapat mengakses seluruh fitur premium ${ BRAND_NAME }!"
@@ -6424,6 +6439,9 @@
       "Code sent to ${ methodTo }": [
         "Kode dikirim ke ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Disalin ke papan klip"
+      ],
       "Credits added": [
         "Saldo ditambahkan"
       ],
@@ -6460,11 +6478,17 @@
       "Keys updated": [
         "Kunci berhasil diperbarui"
       ],
+      "Link copied to clipboard": [
+        "Tautan disalin ke papan klip"
+      ],
       "Locale updated": [
         "Bahasa diperbarui"
       ],
       "Organization activated": [
         "Organisasi berhasil diaktifkan"
+      ],
+      "Password copied to clipboard": [
+        "Kata sandi disalin ke papan klip"
       ],
       "Password updated": [
         "Kata sandi berhasil diperbarui"
@@ -6489,6 +6513,9 @@
       ],
       "User updated": [
         "Pengguna berhasil diperbarui"
+      ],
+      "Username copied to clipboard": [
+        "Nama pengguna disalin ke papan klip"
       ],
       "Verification successful": [
         "Verifikasi berhasil"

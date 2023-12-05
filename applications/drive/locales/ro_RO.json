@@ -2078,6 +2078,9 @@
       "\"${ name }\" already exists": [
         "„${ name }” există deja."
       ],
+      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
+        "${ DRIVE_APP_NAME } s-a actualizat. Împrospătați pagina."
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Puteți verifica situația și pe ${ statusPageLink }."
       ],
@@ -2240,6 +2243,9 @@
       ],
       "Passwords do not match": [
         "Parolele nu coincid"
+      ],
+      "Photos upload is temporarily disabled. Please try again later": [
+        "Încărcarea fotografiilor este momentan dezactivată. Reîncercați mai târziu."
       ],
       "Please activate your search again": [
         "Reactivați căutarea."
@@ -4468,6 +4474,11 @@
         "Fraza anterioară de recuperare"
       ]
     },
+    "info": {
+      "Selected color:": [
+        "Culoare selectată:"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Apăsați pentru detalii"
@@ -5162,6 +5173,11 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendar",
+        "${ maximumNumberOfCalendars } calendare",
+        "${ maximumNumberOfCalendars } de calendare"
+      ],
       "Auto-delete spam and trashed messages": [
         "Ștergere automată mesaje nedorite și din gunoi"
       ],

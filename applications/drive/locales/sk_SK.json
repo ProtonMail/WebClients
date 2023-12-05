@@ -385,6 +385,9 @@
       "Load image": [
         "Načítať obrázok"
       ],
+      "Loading link": [
+        "Načítanie odkazu"
+      ],
       "Manage folders": [
         "Spravovať priečinky"
       ],
@@ -2084,6 +2087,9 @@
       "\"${ name }\" already exists": [
         "„${ name }“ už existuje"
       ],
+      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
+        "${ DRIVE_APP_NAME } bol aktualizovaný. Obnovte stránku, prosím."
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Môžete tiež pozrieť, čo hovorí naša ${ statusPageLink }"
       ],
@@ -2251,6 +2257,9 @@
       ],
       "Passwords do not match": [
         "Heslá sa nezhodujú"
+      ],
+      "Photos upload is temporarily disabled. Please try again later": [
+        "Nahrávanie fotografií je dočasne nedostupné. Skúste to znova, prosím."
       ],
       "Please activate your search again": [
         "Aktivujte znovu vyhľadávanie"
@@ -4349,6 +4358,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Bohužiaľ, zdá sa, že súbor alebo niektoré jeho údaje nemôžu byť dešifrované."
       ],
+      "Unknown date": [
+        "Neznámy dátum"
+      ],
       "Unknown error": [
         "Neznáma chyba"
       ],
@@ -4531,6 +4543,11 @@
       ],
       "Your previous recovery phrase": [
         "Vaša predchádzajúca obnovovacia fráza"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Vybraná farba:"
       ]
     },
     "Info on errors": {
@@ -5235,6 +5252,12 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalendár",
+        "${ maximumNumberOfCalendars } kalendáre",
+        "${ maximumNumberOfCalendars } kalendárov",
+        "${ maximumNumberOfCalendars } kalendárov"
+      ],
       "Auto-delete spam and trashed messages": [
         "Automaticky mazať správy v spame a koši"
       ],
@@ -5579,8 +5602,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "Objavte všetky služby ${ BRAND_NAME }"
       ],
+      "Pick a theme": [
+        "Vyberte si tému"
+      ],
       "Set up your organization": [
         "Nastavenie organizácie"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Výberom aplikácie v ľavom hornom rohu získate prístup ku všetkým službám ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Tému môžete kedykoľvek zmeniť v nastaveniach."
       ]
     },
     "Onboarding Title": {

@@ -376,6 +376,9 @@
       "Load image": [
         "Muat gambar"
       ],
+      "Loading link": [
+        "Memuat tautan"
+      ],
       "Manage folders": [
         "Kelola folder"
       ],
@@ -2057,6 +2060,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" telah ada"
       ],
+      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
+        "${ DRIVE_APP_NAME } telah diperbarui. Silakan muat ulang halaman."
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Anda juga dapat mengunjungi ${ statusPageLink } kami"
       ],
@@ -2203,6 +2209,9 @@
       ],
       "Passwords do not match": [
         "Kata sandi tidak cocok"
+      ],
+      "Photos upload is temporarily disabled. Please try again later": [
+        "Unggahan foto untuk sementara dinonaktifkan. Silakan coba lagi nanti"
       ],
       "Please activate your search again": [
         "Silakan aktifkan kembali pencarian konten Anda"
@@ -4139,6 +4148,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Sayangnya, berkas ini atau sebagian data yang terkandung di dalamnya tidak dapat didekripsi."
       ],
+      "Unknown date": [
+        "Tanggal tidak diketahui"
+      ],
       "Unknown error": [
         "Kesalahan yang tidak diketahui"
       ],
@@ -4318,6 +4330,11 @@
       ],
       "Your previous recovery phrase": [
         "Frasa pemulihan Anda sebelumnya"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Warna terpilih:"
       ]
     },
     "Info on errors": {
@@ -4998,6 +5015,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendars": [
+        "${ maximumNumberOfCalendars } kalender"
+      ],
       "Auto-delete spam and trashed messages": [
         "Hapus pesan spam dan sampah secara otomatis"
       ],
@@ -5290,6 +5310,9 @@
       ],
       "Set up your organization": [
         "Siapkan organisasi Anda"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Gunakan pemilih aplikasi di kiri atas untuk mengakses layanan ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } dan ${ PASS_SHORT_APP_NAME }."
       ],
       "You will be able to change your theme any time in your settings.": [
         "Anda akan dapat mengubah tema Anda kapan pun pada menu pengaturan."

@@ -245,6 +245,9 @@
       "Copy address": [
         "Kopioi osoite"
       ],
+      "Copy key to the clipboard": [
+        "Kopioi avain leikepöydälle"
+      ],
       "Copy link": [
         "Kopioi linkki"
       ],
@@ -373,9 +376,6 @@
       ],
       "Download recovery file": [
         "Lataa palautustiedosto"
-      ],
-      "Download the Import-Export app": [
-        "Lataa Import-Export-sovellus"
       ],
       "Edit": [
         "Muokkaa"
@@ -4403,6 +4403,9 @@
     "Error when exporting event from calendar": {
       "Event @ ${ timeString }": [
         "Tapahtuma @ ${ timeString }"
+      ],
+      "Event from ${ timeString }, ${ rruleString }": [
+        "Tapahtuma ajalta ${ timeString }, ${ rruleString }"
       ]
     },
     "Event invitation error": {
@@ -5699,6 +5702,17 @@
         "Osaa kalenterisi sisällöstä ei tueta, eikä sitä tämän vuoksi tuoda."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Avain ${ fingerprint } on jo ladattu"
+      ],
+      "Selected color:": [
+        "Valittu väri:"
+      ]
+    },
     "Info": {
       "${ amountOfAddresses } address": [
         "${ amountOfAddresses } -osoite",
@@ -6665,6 +6679,9 @@
       "Learn more": [
         "Lue lisää"
       ],
+      "learn more about Sieve programming language": [
+        "Lue lisää Sieve-ohjelmointikielestä"
+      ],
       "Left to Right": [
         "Vasemmalta oikealle"
       ],
@@ -7239,9 +7256,6 @@
       "The format of your CSV file is incorrect.": [
         "CSV-tiedoston muoto on virheellinen."
       ],
-      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        "Import-Export-sovellus mahdollistaa viestiesi viennin paikallista varmuuskopiointia varten ja aiempien varmistuksien palautuksen tilillesi."
-      ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Linkki, jolla ilmoitetaan, ettet määrittänyt ${ BRAND_NAME }-tiliä on vanhentunut. Ota yhteyttä asiakaspalveluun ongelman ratkaisemiseksi."
       ],
@@ -7814,9 +7828,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Et voi palauttaa lukittua tietoa ladattujen palautustiedostojen avulla."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
-        "Et voi palauttaa lukittuja tietoja ladatuilla palautustiedoillasi. Tämä mitätöi myös luotetut palautuslaitetiedot."
-      ],
       "You'll stay signed in even after you close the browser.": [
         "Pysyt kirjautuneena myös selaimen sulun jälkeen."
       ],
@@ -7910,14 +7921,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Tilaustasi hallinnoi Mozilla. Ota yhteyttä Mozillan tukeen."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Avain ${ fingerprint } on jo ladattu"
       ]
     },
     "Info - folder colouring feature": {
@@ -8609,6 +8612,9 @@
       ],
       "Default language (${ defaultLanguage })": [
         "Oletuskieli (${ defaultLanguage })"
+      ],
+      "Default PGP scheme": [
+        "Oletus PGP-järjestelmä"
       ],
       "Default scrollbars": [
         "Oletusarvoiset vierityspalkit"
@@ -9958,6 +9964,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalenteri",
+        "${ maximumNumberOfCalendars } kalenteria"
+      ],
       "${ n } calendar": [
         "${ n } kalenteri",
         "${ n } kalenteria"
@@ -10336,6 +10346,17 @@
         "Tiimin hallinta"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Jatkaaksesi ${ MAIL_APP_NAME }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, päättyy ${ last4 }"
@@ -10423,17 +10444,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Jatkaaksesi ${ MAIL_APP_NAME }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10796,6 +10806,9 @@
       ],
       "IP Address copied to clipboard": [
         "IP-osoite kopioitiin leikepöydälle"
+      ],
+      "Key copied to the clipboard": [
+        "Avain kopioitu leikepöydälle"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Avain sormenjäljellä ${ fp } on poistettu."
@@ -12716,6 +12729,9 @@
       "Code sent to ${ methodTo }": [
         "Koodi lähetettiin kohteeseen ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Kopioitu leikepöydälle"
+      ],
       "Credits added": [
         "Krediitit lisättiin"
       ],
@@ -12739,6 +12755,9 @@
       ],
       "Email updated": [
         "Sähköpostiosoite vaihdettiin"
+      ],
+      "Fingerprint copied to clipboard": [
+        "Sormenjälki kopioitiin leikepöydälle"
       ],
       "Gift code applied": [
         "Lahjakoodi käytetty"
@@ -12767,11 +12786,17 @@
       "Keys updated": [
         "Avaimet päivitettiin"
       ],
+      "Link copied to clipboard": [
+        "Linkki kopioitu leikepöydälle"
+      ],
       "Locale updated": [
         "Kieliasetus vaihdettiin"
       ],
       "Organization activated": [
         "Organisaatio aktivoitiin"
+      ],
+      "Password copied to clipboard": [
+        "Salasana kopioitiin leikepöydälle"
       ],
       "Password updated": [
         "Salasana vaihdettiin"
@@ -12826,6 +12851,9 @@
       ],
       "User updated": [
         "Käyttäjä päivitettiin"
+      ],
+      "Username copied to clipboard": [
+        "Käyttäjätunnus kopioitiin leikepöydälle"
       ],
       "Value copied to clipboard": [
         "Arvo kopioitiin leikepöydälle"
@@ -13605,9 +13633,6 @@
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "${ PRODUCT_NAMES.EASY_SWITCH } -tuonti"
       ],
-      "Import-Export app": [
-        "Import-Export-sovellus"
-      ],
       "Increase your privacy with more addresses": [
         "Paranna yksityisyyttäsi lisäosoitteilla"
       ],
@@ -13820,6 +13845,9 @@
       ],
       "Session management": [
         "Istuntojen hallinta"
+      ],
+      "Set a display name": [
+        "Aseta näyttönimi"
       ],
       "Set new password": [
         "Aseta uusi salasana"
