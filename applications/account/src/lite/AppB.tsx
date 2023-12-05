@@ -135,6 +135,7 @@ const App = () => {
                                                                 <FeaturesProvider>
                                                                     <NotificationsChildren />
                                                                     <ErrorBoundary
+                                                                        big
                                                                         component={<StandardErrorPage big />}
                                                                     >
                                                                         {isLogout ? null : (
