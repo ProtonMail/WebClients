@@ -379,6 +379,9 @@
       "Load image": [
         "Bild laden"
       ],
+      "Loading link": [
+        "Link wird geladen"
+      ],
       "Manage folders": [
         "Ordner verwalten"
       ],
@@ -2223,6 +2226,9 @@
       ],
       "Passwords do not match": [
         "Die Passwörter stimmen nicht überein"
+      ],
+      "Photos upload is temporarily disabled. Please try again later": [
+        "Das Hochladen von Fotos ist vorübergehend deaktiviert. Bitte versuche es später erneut."
       ],
       "Please activate your search again": [
         "Bitte aktiviere die Inhaltssuche erneut."
@@ -4209,6 +4215,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Leider scheint es, dass die Datei oder einige ihrer Daten nicht entschlüsselt werden können."
       ],
+      "Unknown date": [
+        "Unbekanntes Datum"
+      ],
       "Unknown error": [
         "Unbekannter Fehler"
       ],
@@ -4389,6 +4398,11 @@
       ],
       "Your previous recovery phrase": [
         "Deine bisherige Wiederherstellungsphrase"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Ausgewählte Farbe:"
       ]
     },
     "Info on errors": {
@@ -5077,6 +5091,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } Kalender",
+        "${ maximumNumberOfCalendars } Kalender"
+      ],
       "Auto-delete spam and trashed messages": [
         "Automatisches Bereinigen von Spam und gelöschten Nachrichten"
       ],
@@ -5383,8 +5401,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "Entdecke alle ${ BRAND_NAME }-Dienste"
       ],
+      "Pick a theme": [
+        "Wähle ein Theme"
+      ],
       "Set up your organization": [
         "Organisation einrichten"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Verwende die App-Auswahl oben links, um auf alle ${ BRAND_NAME }-Dienste zuzugreifen: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } und ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Du kannst dein Farbschema jederzeit in den Einstellungen ändern."
       ]
     },
     "Onboarding Title": {

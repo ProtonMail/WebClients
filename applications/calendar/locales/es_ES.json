@@ -2178,6 +2178,9 @@
       ]
     },
     "Description": {
+      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
+        "Aumenta la eficiencia y gestiona tu tiempo codificando por colores los eventos por categoría o tus prioridades. Obtén esto y mucho más con un plan de pago."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Descifrando contactos... Esto puede tardar unos minutos. Cuando se finaliza el proceso, podrás descargar el archivo con todos tus contactos exportados."
       ],
@@ -4348,6 +4351,11 @@
         "La zona horaria del sistema parece haber cambiado a ${ timezone }. ¿Quieres actualizar tu preferencia de zona horaria?"
       ]
     },
+    "info": {
+      "Selected color:": [
+        "Color seleccionado:"
+      ]
+    },
     "Info calendar search": {
       "You can either update your search query or close search to go back to calendar views": [
         "Puedes actualizar tu consulta de búsqueda o cerrarla para volver a la vista del calendario."
@@ -5175,6 +5183,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendario",
+        "${ maximumNumberOfCalendars } calendarios"
+      ],
       "Auto-delete spam and trashed messages": [
         "Eliminar automáticamente spam y mensajes de la papelera"
       ],
@@ -6139,6 +6151,9 @@
       "Add your country's public holidays to your calendar.": [
         "Añade los días festivos de tu país a tu calendario."
       ],
+      "Color-coding is here!": [
+        "¡La codificación por colores ya está aquí!"
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Encuentra fácilmente el evento que estás buscando con nuestra función de búsqueda nueva."
       ],
@@ -6153,6 +6168,9 @@
       ],
       "Search for events": [
         "Buscar eventos"
+      ],
+      "With customizable event colors, you can color-code the chaos and conquer your day.": [
+        "Con los colores personalizables de eventos, puedes codificar por colores el caos y conquistar tu día."
       ]
     },
     "Storage": {
@@ -6468,6 +6486,9 @@
       ],
       "Add participants": [
         "Añadir participantes"
+      ],
+      "Add some color to your day": [
+        "Añade un poco de color a tu día"
       ],
       "Add to ${ groupCount } group": [
         "Añadir a ${ groupCount } grupo",

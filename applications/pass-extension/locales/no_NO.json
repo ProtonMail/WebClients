@@ -1,0 +1,1991 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "no_NO"
+  },
+  "contexts": {
+    "Action": {
+      "Add": [
+        "Legg til"
+      ],
+      "Add current URL": [
+        "Legg til gjeldende nettadresse"
+      ],
+      "Add domain to pause list": [
+        "Legg domene til pauselisten"
+      ],
+      "Add more": [
+        "Legg til flere"
+      ],
+      "Add new item": [
+        "Legg til nytt element"
+      ],
+      "Advanced": [
+        "Avansert"
+      ],
+      "Advanced options": [
+        "Avanserte innstillinger"
+      ],
+      "Back": [
+        "Tilbake"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Change": [
+        "Endre"
+      ],
+      "Choose a file or drag it here": [
+        "Velg en fil eller dra den hit"
+      ],
+      "Clear": [
+        "Tøm"
+      ],
+      "Clear search": [
+        "Tøm søk"
+      ],
+      "Close": [
+        "Lukk"
+      ],
+      "Close advanced options": [
+        "Lukk avanserte innstillinger"
+      ],
+      "Close navigation": [
+        "Lukk navigasjonsmeny"
+      ],
+      "Confirm": [
+        "Bekreft"
+      ],
+      "Confirm access": [
+        "Bekreft tilgang"
+      ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Koble til ${ BRAND_NAME }-kontoen din"
+      ],
+      "Continue": [
+        "Fortsett"
+      ],
+      "Continue without pinning": [
+        "Fortsett uten å feste"
+      ],
+      "Copy & fill in": [
+        "Kopier og fyll ut"
+      ],
+      "Copy and close": [
+        "Kopier og lukk"
+      ],
+      "Copy to clipboard": [
+        "Kopier til utklippstavlen"
+      ],
+      "Create": [
+        "Opprett"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Opprett en ${ BRAND_NAME }-konto"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Opprett en ${ BRAND_NAME }-konto"
+      ],
+      "Create a new vault to share": [
+        "Opprett et nytt hvelv du vil dele"
+      ],
+      "Create alias": [
+        "Opprett alias"
+      ],
+      "Create an account": [
+        "Opprett en konto"
+      ],
+      "Create card": [
+        "Opprett kort"
+      ],
+      "Create login": [
+        "Opprett pålogging"
+      ],
+      "Create note": [
+        "Opprett notat"
+      ],
+      "Create vault": [
+        "Opprett hvelv"
+      ],
+      "Creating vault": [
+        "Oppretter hvelv"
+      ],
+      "Customize": [
+        "Tilpass"
+      ],
+      "Delete": [
+        "Slett"
+      ],
+      "Delete alias": [
+        "Slett alias"
+      ],
+      "Delete all": [
+        "Slett alle"
+      ],
+      "Delete password": [
+        "Slett passord"
+      ],
+      "Delete permanently": [
+        "Slett permanent"
+      ],
+      "Delete vault": [
+        "Slett hvelv"
+      ],
+      "Disable autosave on this website": [
+        "Deaktiver automatisk lagring på dette nettstedet"
+      ],
+      "Discard": [
+        "Forkast"
+      ],
+      "Dismiss": [
+        "Avvis"
+      ],
+      "Do not show on this website": [
+        "Ikke vis på dette nettstedet"
+      ],
+      "Do not suggest on this website": [
+        "Ikke foreslå på dette nettstedet"
+      ],
+      "Done": [
+        "Ferdig"
+      ],
+      "Edit": [
+        "Rediger"
+      ],
+      "Edit vault": [
+        "Rediger hvelv"
+      ],
+      "Export": [
+        "Eksport"
+      ],
+      "Feedback": [
+        "Tilbakemelding"
+      ],
+      "Fill password": [
+        "Fyll ut passord"
+      ],
+      "Filter vault items": [
+        "Filtrer hvelvelementer"
+      ],
+      "Generate alias": [
+        "Generer alias"
+      ],
+      "Generate password": [
+        "Generer passord"
+      ],
+      "Generated passwords": [
+        "Generert passord"
+      ],
+      "Get mobile apps": [
+        "Få mobilapper"
+      ],
+      "Help us improve": [
+        "Hjelp oss å bli bedre"
+      ],
+      "Hide": [
+        "Skjul"
+      ],
+      "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
+        "Hvordan eksporterer jeg mine data fra ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
+      ],
+      "Import": [
+        "Importer"
+      ],
+      "Import your passwords": [
+        "Importer passordene dine"
+      ],
+      "Importing": [
+        "Importerer"
+      ],
+      "Invite others": [
+        "Inviter andre"
+      ],
+      "Join shared vault": [
+        "Bli med delt hvelv"
+      ],
+      "Learn more": [
+        "Lær mer"
+      ],
+      "Leave": [
+        "Forlat"
+      ],
+      "Leave vault": [
+        "Forlat hvelv"
+      ],
+      "Lock extension": [
+        "Lås utvidelse"
+      ],
+      "Make admin": [
+        "Gjør til administrator"
+      ],
+      "Make editor": [
+        "Gi redigeringtillatelse"
+      ],
+      "Make viewer": [
+        "Gi lesetillatelse"
+      ],
+      "Manage access": [
+        "Administrer tilgang"
+      ],
+      "Manually sync your data": [
+        "Synkroniser dine data manuelt"
+      ],
+      "More info: ${ safeTitle }": [
+        "Mer informasjon: ${ safeTitle }"
+      ],
+      "More options": [
+        "Flere valg"
+      ],
+      "Move all items": [
+        "Flytt alle elementer"
+      ],
+      "Move to a shared vault": [
+        "Flytt til et delt hvelv"
+      ],
+      "Move to another vault": [
+        "Flytt til annet hvelv"
+      ],
+      "Move to Trash": [
+        "Flytt til papirkurven"
+      ],
+      "Move to trash": [
+        "Flytt til papirkurven"
+      ],
+      "Not now": [
+        "Ikke nå"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "Open in a window": [
+        "Åpne i nytt vindu"
+      ],
+      "Open navigation": [
+        "Åpne navigasjonsmeny"
+      ],
+      "Pass for Android": [
+        "Pass for Android"
+      ],
+      "Pass for iOS": [
+        "Pass for iOS"
+      ],
+      "Refresh the page": [
+        "Oppdater siden"
+      ],
+      "Regenerate": [
+        "Generer på nytt"
+      ],
+      "Reject": [
+        "Avvis"
+      ],
+      "Reject invitation": [
+        "Avslå invitasjon"
+      ],
+      "Reload extension": [
+        "Last inn utvidelse på nytt"
+      ],
+      "Remove": [
+        "Fjern"
+      ],
+      "Remove access": [
+        "Fjern tilgang"
+      ],
+      "Request a feature": [
+        "Foreslå ny funksjon"
+      ],
+      "Resend invitation": [
+        "Send invitasjon på nytt"
+      ],
+      "Restore item": [
+        "Gjenopprett element"
+      ],
+      "Retry": [
+        "Prøv på nytt"
+      ],
+      "Save": [
+        "Lagre"
+      ],
+      "Saving": [
+        "Lagrer"
+      ],
+      "See members": [
+        "Vis medlemmer"
+      ],
+      "Send invite": [
+        "Send invitasjon"
+      ],
+      "Send us a message": [
+        "Send oss en melding"
+      ],
+      "Share": [
+        "Del"
+      ],
+      "Share this vault": [
+        "Del dette hvelvet"
+      ],
+      "Share vault": [
+        "Del hvelv"
+      ],
+      "Show": [
+        "Vis"
+      ],
+      "Sign back in": [
+        "Logg på igjen"
+      ],
+      "Sign in": [
+        "Logg på"
+      ],
+      "Sign in with ${ BRAND_NAME }": [
+        "Logg på med ${ BRAND_NAME }"
+      ],
+      "Sign out": [
+        "Logg av"
+      ],
+      "Sort vault items": [
+        "Sorter hvelvelementer"
+      ],
+      "Submit": [
+        "Send inn"
+      ],
+      "Submitting report...": [
+        "Sender inn rapport..."
+      ],
+      "Transfer ownership": [
+        "Overfør eierskap"
+      ],
+      "Try again": [
+        "Prøv igjen"
+      ],
+      "Update": [
+        "Oppdater"
+      ],
+      "Update vault": [
+        "Oppdater hvelv"
+      ],
+      "Updating": [
+        "Oppdaterer"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
+      ],
+      "Upgrade now to share with more people": [
+        "Oppgrader nå for å dele med flere"
+      ],
+      "Write us on Reddit": [
+        "Skriv til oss på Reddit"
+      ],
+      "Write us on Twitter": [
+        "Skriv til oss på Twitter"
+      ],
+      "Your password manager not here? Request it.": [
+        "Passordbehandleren din er ikke her? Be om den."
+      ]
+    },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "Spar smart. Få et år med Pass Plus for bare ${ relativePrice } per måned."
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "Få avtalen"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "Black Friday-tilbud"
+      ]
+    },
+    "Button": {
+      "More info": [
+        "Mer informasjon"
+      ]
+    },
+    "Collapsible tooltip": {
+      "Collapse": [
+        "Skjul"
+      ],
+      "Expand": [
+        "Utvid"
+      ]
+    },
+    "Description": {
+      "A checked box means the feature is disabled.": [
+        "En avmerket boks betyr at funksjonen er deaktivert."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Liste over domener der visse autofunksjoner i ${ PASS_SHORT_APP_NAME } (Autofyll, Autoforslag, Autolagre) ikke skal kjøres. ${ infoText }"
+      ]
+    },
+    "Error": {
+      "${ provider } file could not be parsed. ${ errorDetail }": [
+        "${ provider }-fil kunne ikke deles opp. ${ errorDetail }"
+      ],
+      "Alias options could not be resolved": [
+        "Aliasalternativene kunne ikke løses"
+      ],
+      "Authentication error": [
+        "Autentiseringsfeil"
+      ],
+      "Auto-lock could not be activated": [
+        "Auto-lås kunne ikke aktiveres"
+      ],
+      "Auto-lock could not be disabled": [
+        "Auto-lås kunne ikke deaktiveres"
+      ],
+      "Cannot create alias (${ error }).": [
+        "Kan ikke opprette alias (${ error })."
+      ],
+      "Cannot send invitation to this address at the moment": [
+        "Kan ikke sende invitasjon til denne adressen for øyeblikket."
+      ],
+      "Could not confirm this invite at the moment": [
+        "Kunne ikke bekrefte denne invitasjonen for øyeblikket."
+      ],
+      "Could not leave vault.": [
+        "Kunne ikke forlate hvelvet."
+      ],
+      "Could not open created vault": [
+        "Kunne ikke åpne opprettet hvelv"
+      ],
+      "Could not open invited vault": [
+        "Kunne ikke åpne invitert hvelv"
+      ],
+      "Could not open updated vault": [
+        "Kunne ikke åpne oppdatert hvelv"
+      ],
+      "Could not resolve share members": [
+        "Kunne ikke nøste opp medlemmene av delt ressurs."
+      ],
+      "CSV file is missing expected headers: ${ missingHeaders }": [
+        "CSV-fil mangler forventede meldingshoder: ${ missingHeaders }"
+      ],
+      "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
+        "Dekryptering av din ${ PASS_APP_NAME }-eksportfil mislyktes. ${ errorDetail }"
+      ],
+      "Deleting item failed": [
+        "Sletting av element mislyktes"
+      ],
+      "Deleting vault \"${ payload.content.name }\" failed": [
+        "Sletting av hvelv \"${ payload.content.name }\" mislyktes."
+      ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Oppdaget ${ errors.length } korrupt csv-rad",
+        "Oppdaget ${ errors.length } korrupte csv-rader"
+      ],
+      "Editing item failed": [
+        "Redigering av element mislyktes"
+      ],
+      "Empty CSV file": [
+        "Tom CSV-fil"
+      ],
+      "Emptying trash failed": [
+        "Tømming av papirkurven mislyktes"
+      ],
+      "Encrypted JSON not supported": [
+        "Kryptert JSON ikke støttet"
+      ],
+      "Error reporting problem": [
+        "Problem med feilrapportering"
+      ],
+      "Failed removing the invite.": [
+        "Fjerning av invitasjonen mislyktes."
+      ],
+      "Failed resending invite.": [
+        "Sending av invitering på nytt mislyktes."
+      ],
+      "Failed to edit user's access.": [
+        "Kunne ikke redigere brukerens tilgang."
+      ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Kunne ikke flytte alle elementer fra \"${ payload.content.name }\""
+      ],
+      "Failed to remove user's access.": [
+        "Kunne ikke fjerne brukerens tilgang."
+      ],
+      "Failed to transfer this vault's ownership.": [
+        "Kunne ikke overføre hvelvets eierskap."
+      ],
+      "File could not be parsed": [
+        "Fil kunne ikke deles opp"
+      ],
+      "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
+        "Import mislyktes for hvelv \"${ vaultData.name }\" : ${ description }"
+      ],
+      "Importing items failed": [
+        "Import av elementer mislyktes"
+      ],
+      "Invalid password manager": [
+        "Ugyldig passordbehandler"
+      ],
+      "Invalid URL": [
+        "Ugyldig nettadresse"
+      ],
+      "Invitation could not be accepted": [
+        "Invitasjon kunne ikke aksepteres"
+      ],
+      "Invitation could not be rejected": [
+        "Invitasjon kunne ikke avvises"
+      ],
+      "Item content cannot exceed 40KB": [
+        "Elementinnhold kan ikke overskride 40KB"
+      ],
+      "Item creation failed": [
+        "Opprettelse av element mislyktes"
+      ],
+      "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
+        "LastPass vil eksportere en ødelagt CSV-fil hvis noen av elementfeltene dine inneholder uventede komma, anførselstegn eller flere linjer."
+      ],
+      "Moving item failed": [
+        "Flytting av element mislyktes"
+      ],
+      "Passphrase is incorrect": [
+        "Passfrase er feil"
+      ],
+      "PIN codes do not match": [
+        "PIN-kodene samsvarer ikke"
+      ],
+      "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
+        "Vennligst gi ${ PASS_APP_NAME } de nødvendige utvidelsestillatelsene for å fortsette."
+      ],
+      "Please pin the extension or select \"Continue without pinning\".": [
+        "Vennligst fest utvidelsen eller velg \"fortsett uten å feste\"."
+      ],
+      "Request timed out": [
+        "Forespørselen ble tidsavbrutt"
+      ],
+      "Requesting alias options failed": [
+        "Forespørsel om aliasalternativer mislyktes"
+      ],
+      "Restoring item failed": [
+        "Gjenoppretting av element mislyktes"
+      ],
+      "Restoring trashed items failed": [
+        "Gjennoppretting av elementer fra papirkurven mislyktes."
+      ],
+      "Settings update failed": [
+        "Oppdatering av innstillinger mislyktes"
+      ],
+      "Signature verification failed": [
+        "Signaturbekreftelse mislyktes"
+      ],
+      "Some vaults are no longer accessible due to a password reset. Reactivate your account keys in order to regain access. ${ reactivateLink }": [
+        "Noen hvelv er ikke lenger tilgjengelige på grunn av tilbakestilling av passord. Aktiver kontonøklene dine på nytt for å få tilgang igjen. ${ reactivateLink }"
+      ],
+      "Something went wrong": [
+        "Noe gikk galt"
+      ],
+      "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
+        "Noe gikk galt. Vennligst last inn ${ PASS_APP_NAME }-utvidelsen på nytt. Problemet er loggført."
+      ],
+      "The file you are trying to import is empty": [
+        "Filen du prøver å importere er tom"
+      ],
+      "The URL is in the list": [
+        "Nettadressen er i listen"
+      ],
+      "Too many failed attempts. Please sign in again.": [
+        "For mange mislykkede forsøk. Vennligst logg på igjen."
+      ],
+      "Trashing item failed": [
+        "Sletting av element til papirkurv mislyktes"
+      ],
+      "Unable to boot": [
+        "Ikke i stand til å starte opp"
+      ],
+      "Unable to generate an OTP code for this item": [
+        "Ikke i stand tl å generere en OTP-kode for dette elementet."
+      ],
+      "Unable to sync": [
+        "Ikke i stand til å synkronisere"
+      ],
+      "Unknown error": [
+        "Ukjent feil"
+      ],
+      "Unknown invite": [
+        "Ukjent invitasjon"
+      ],
+      "Unsupported ${ PASS_APP_NAME } file format": [
+        "Ikke støttet ${ PASS_APP_NAME }-filformat"
+      ],
+      "Unsupported 1Password file format": [
+        "Ikke støttet 1Password-filformat"
+      ],
+      "Updating vault \"${ payload.content.name }\" failed": [
+        "Oppdatering av hvelv \"${ payload.content.name }\" mislyktes."
+      ],
+      "Vault \"${ payload.content.name }\" creation failed": [
+        "Opprettelse av hvelv \"${ payload.content.name }\" mislyktes."
+      ],
+      "Vault \"${ vaultData.name }\" could not be created": [
+        "Hvelv \"${ vaultData.name }\" kunne ikke opprettes"
+      ],
+      "Vault name does not match": [
+        "Hvelvnavn samsvarer ikke"
+      ],
+      "Wrong PIN code. Try again.": [
+        "Feil PIN-kode. Prøv igjen."
+      ]
+    },
+    "Error message": {
+      "Please refresh the page or try again later.": [
+        "Vennligst oppdater siden eller forsøk igjen senere."
+      ],
+      "Something went wrong": [
+        "Noe gikk galt"
+      ]
+    },
+    "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ]
+    },
+    "Info": {
+      " Upgrade to a paid plan to create multiple vaults.": [
+        " Oppgrader til en betalt plan for å opprette flere hvelv."
+      ],
+      "\"${ payload.item.data.metadata.name }\" item was dismissed": [
+        "\"${ payload.item.data.metadata.name }\"-element ble avvist"
+      ],
+      "\"${ payload.item.data.metadata.name }\" update was dismissed": [
+        "\"${ payload.item.data.metadata.name }\" oppdatering ble avvist"
+      ],
+      "${ count } item": [
+        "${ count } element",
+        "${ count } elementer"
+      ],
+      "${ itemCount } item": [
+        "${ itemCount } element",
+        "${ itemCount } elementer"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } medlem",
+        "${ memberCount } medlemmer"
+      ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } vil vise elementfavorittikonet via ${ BRAND_NAME }s anonymiserte bildeproxy."
+      ],
+      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
+        "${ PASS_APP_NAME } vil bare importere pålogginger, notater og kredittkort."
+      ],
+      "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
+        "${ PASS_APP_NAME } vil be deg om å lagre eller oppdatere påloggingsinformasjon."
+      ],
+      "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
+        "${ PASS_APP_NAME } vil foreslå å opprette et e-postalias i registreringsskjemaer."
+      ],
+      "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
+        "${ PASS_APP_NAME } vil foreslå å opprette sterke passord på registreringsskjemaer."
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } gang",
+        "${ revisionNumber } ganger"
+      ],
+      "${ totalImportedItems } item": [
+        "${ totalImportedItems } element",
+        "${ totalImportedItems } elementer"
+      ],
+      "${ totalItems } item": [
+        "${ totalItems } element",
+        "${ totalItems } elementer"
+      ],
+      "${ trialDaysLeft } day left": [
+        "${ trialDaysLeft } dag igjen",
+        "${ trialDaysLeft } dager igjen"
+      ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "7 dager for å prøve premiumfunksjoner gratis. Bare i løpet av den første uken med ${ BRAND_NAME }."
+      ],
+      "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
+        "En ny versjon av ${ PASS_APP_NAME } er tilgjengelig. Oppdater den for å nyte de nyeste funksjonene og feilrettingene."
+      ],
+      "Access successfully confirmed": [
+        "Tilgang bekreftet"
+      ],
+      "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
+        "Tilgang til ${ PASS_APP_NAME } krever en PIN-kode for å låse opp økten."
+      ],
+      "Access your passwords on the go with our mobile apps.": [
+        "Få tilgang til passordene dine mens du er på farten med mobilappene våre."
+      ],
+      "Admin": [
+        "Administrator"
+      ],
+      "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
+        "Alias \"${ item.aliasEmail }\" flyttet til papirkurven - det vil slutte å videresende e-post til postkassen din."
+      ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Alle elementer fra \"${ payload.content.name }\" flyttet"
+      ],
+      "All trashed items permanently deleted": [
+        "Alle papirkurvelementer slettet permanent"
+      ],
+      "All trashed items successfully restored": [
+        "Alle papirkurvelementer gjenopprettet"
+      ],
+      "An item previously shared with you was removed": [
+        "Et element som tidligere er delt med deg, ble fjernet."
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Er du sikker på at du vil flytte alle elementer fra \"${ fromVaultName }\" til \"${ toVaultName }\"?"
+      ],
+      "Auto-lock successfully disabled": [
+        "Auto-lås deaktivert"
+      ],
+      "Autosaved on ${ submissionURL }": [
+        "Autolagret på ${ submissionURL }"
+      ],
+      "Can create, edit, delete, and export items in this vault.": [
+        "Kan opprette, redigere, slette og eksportere elementer i dette hvelvet."
+      ],
+      "Can grant and revoke access to this vault, and delete it.": [
+        "Kan innvilge og oppheve tilgang til dette hvelvet, og slette det."
+      ],
+      "Can grant and revoke access to this vault.": [
+        "Kan innvilge og oppheve tilgang til dette hvelvet."
+      ],
+      "Can view items in this vault.": [
+        "Kan se elementer i dette hvelvet."
+      ],
+      "Click the icon to open it anytime.": [
+        "Klikk på ikonet for å åpne det når som helst."
+      ],
+      "Congratulations, your access has been confirmed": [
+        "Gratulerer, tilgangen din er bekreftet"
+      ],
+      "Copied to clipboard": [
+        "Kopiert til utklippstavlen"
+      ],
+      "Creating alias...": [
+        "Oppretter alias..."
+      ],
+      "Credit cards, Custom fields": [
+        "Kredittkort, tilpassede felt"
+      ],
+      "Decrypting your data": [
+        "Dekrypterer dataene dine"
+      ],
+      "Deleted items will be moved here first": [
+        "Slettede elementer flyttes hit først"
+      ],
+      "Deleting \"${ payload.content.name }\"": [
+        "Sletter \"${ payload.content.name }\""
+      ],
+      "Discover ${ PASS_APP_NAME } Youtube Video": [
+        "Oppdag ${ PASS_APP_NAME }-YouTube Video"
+      ],
+      "Drop file here to upload": [
+        "Slipp fil her for å laste opp"
+      ],
+      "Drop to import": [
+        "Slipp for å importere"
+      ],
+      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
+        "Importer enkelt dine eksisterende passord til ${ PASS_APP_NAME }."
+      ],
+      "Editor": [
+        "Redigeringsprogram"
+      ],
+      "Emptying trash...": [
+        "Tømming av papirkurven..."
+      ],
+      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
+        "Aktiver ${ PASS_APP_NAME } ved å koble til ${ BRAND_NAME }-kontoen din"
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Skriv inn verifiseringskode. Siffer ${ digit }."
+      ],
+      "Enter your PIN code": [
+        "Skriv inn din PIN-kode"
+      ],
+      "Export is encrypted using PGP and requires a strong passphrase.": [
+        "Eksport krypteres ved hjelp av PGP og krever en sterk passfrase."
+      ],
+      "For easy access to your passwords and more.": [
+        "For enkel tilgang til passordene dine og mer."
+      ],
+      "For security reason, your access needs to be confirmed": [
+        "Av sikkerhetsgrunner må tilgangen din bekreftes."
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "Av sikkerhetsgrunner må tilgangen din bekreftes"
+      ],
+      "Generated passwords will be stored for a period of one day.": [
+        "Genererte passord vil bli lagret i en periode på én dag."
+      ],
+      "Generating alias...": [
+        "Genererer alias..."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Få ubegrensede aliaser, nyt eksklusive funksjoner og støtt oss ved å abonnere på Pass Plus."
+      ],
+      "Here you will find all the necessary information to get you started.": [
+        "Her finner du all nødvendig informasjon for å komme i gang."
+      ],
+      "Import in progress:": [
+        "Import pågår:"
+      ],
+      "Imported ${ payload.total } item": [
+        "Importerte ${ payload.total } element",
+        "Importerte ${ payload.total } elementer"
+      ],
+      "Imported on ${ date }": [
+        "Importert på ${ date }."
+      ],
+      "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
+        "For å få den beste opplevelsen ut av ${ PASS_APP_NAME }, vennligst gi de nødvendige utvidelsestillatelsene."
+      ],
+      "Internet connection lost": [
+        "Mistet internettilkobling"
+      ],
+      "Invitation sent": [
+        "Invitasjon sendt"
+      ],
+      "Invite successfully removed": [
+        "Invitasjon fjernet"
+      ],
+      "Invite successfully resent": [
+        "Invitasjon sendt på nytt"
+      ],
+      "Invite successfully sent": [
+        "Invitasjon sendt"
+      ],
+      "invites you to access items in": [
+        "inviterer deg til å få tilgang til elementer i"
+      ],
+      "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
+        "Det ser ut til at du allerede er logget inn på ${ PASS_APP_NAME }. Hvis du prøver å logge på med en annen konto, må du først logge av fra utvidelsen."
+      ],
+      "item": [
+        "element",
+        "elementer"
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" created": [
+        "Element \"${ payload.item.data.metadata.name }\" opprettet"
+      ],
+      "Item \"${ payload.item.data.metadata.name }\" updated": [
+        "Element \"${ payload.item.data.metadata.name }\" oppdatert"
+      ],
+      "Item moved to trash": [
+        "Element flyttet til papirkurv"
+      ],
+      "Item permanently deleted": [
+        "Element slettet permanent"
+      ],
+      "Item restored": [
+        "Element gjenopprettet"
+      ],
+      "Item successfully moved": [
+        "Element flyttet"
+      ],
+      "Leaving vault...": [
+        "Forlater hvelv..."
+      ],
+      "Let's get you started by creating your first item": [
+        "Kom i gang ved å opprette ditt første element"
+      ],
+      "Loading": [
+        "Laster"
+      ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Laster ${ PASS_APP_NAME }"
+      ],
+      "Loading...": [
+        "Laster..."
+      ],
+      "me": [
+        "meg"
+      ],
+      "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
+        "Mer enn en passordbehandler, ${ PASS_APP_NAME } beskytter passordet ditt og din personlige e-postadresse via e-postaliaser. Drevet av den samme teknologien bak ${ MAIL_APP_NAME }, er dataene dine kryptert fra ende til ende og er bare tilgjengelige for deg."
+      ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Flytter alle elementer fra \"${ payload.content.name }\""
+      ],
+      "Multiple vaults": [
+        "Flere hvelv"
+      ],
+      "Never": [
+        "Aldri"
+      ],
+      "No login found": [
+        "Ingen pålogging funnet"
+      ],
+      "None": [
+        "Ingen"
+      ],
+      "Open the Extensions menu": [
+        "Åpne utvidelsesmenyen"
+      ],
+      "Owner": [
+        "Eier"
+      ],
+      "Ownership successfully transfered. You are no long the owner of this vault.": [
+        "Eierskap overført. Du er ikke lenger eier av dette hvelvet."
+      ],
+      "Pass Plus trial": [
+        "Pass Plus-prøveversjon"
+      ],
+      "Password copied": [
+        "Passord kopiert"
+      ],
+      "Passwords older than 1 day are automatically deleted from history.": [
+        "Passord eldre enn 1 dag slettes automatisk fra historikken."
+      ],
+      "Pending access to the shared data": [
+        "Venter på tilgang til de delte dataene"
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "Fest ${ PASS_APP_NAME } til verktøylinjen din."
+      ],
+      "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
+        "PIN-koden er registrert. Bruk den til å låse opp ${ PASS_APP_NAME }."
+      ],
+      "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
+        "Vennligst bekreft PIN-koden din for å avregistrere din nåværende lås.\n${ PASS_APP_NAME } vil deretter aldri låses."
+      ],
+      "Please confirm your PIN code to edit this setting.": [
+        "Vennligst bekreft PIN-koden for å redigere denne innstillingen."
+      ],
+      "Please confirm your PIN code to finish registering your auto-lock settings.": [
+        "Bekreft PIN-koden din for å fullføre registreringen av innstillingene for automatisk låsing."
+      ],
+      "Please consider leaving a review.": [
+        "Vennligst vurder å legge igjen en anmeldelse."
+      ],
+      "Please enter your current PIN code to continue": [
+        "Vennligst skriv inn din nåværende PIN-kode for å fortsette."
+      ],
+      "Press Enter to copy": [
+        "Trykk Enter for å kopiere"
+      ],
+      "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
+        "Personvern er en stor bekymring for oss. Finn ut hvorfor ${ PASS_APP_NAME } er annerledes."
+      ],
+      "Restoring trashed items...": [
+        "Gjenoppretter elementer fra papirkurven..."
+      ],
+      "Save login": [
+        "Lagre pålogging"
+      ],
+      "Select destination vault": [
+        "Velg destinasjonshvelv"
+      ],
+      "Select where you want your imported vault(s) to be saved.": [
+        "Velg hvor du ønsker det/de importerte hvelvet(ene) skal lagres."
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Tjenerne er utilgjengelige. Vennligst prøv på nytt om noen få minutter."
+      ],
+      "Session timed out": [
+        "Økten ble tidsavbrutt"
+      ],
+      "Set up a PIN code to easily lock your data": [
+        "Sett opp en PIN-kode for enkelt å låse dataene dine"
+      ],
+      "Settings successfully updated": [
+        "Innstillinger oppdatert"
+      ],
+      "Share with 10 others": [
+        "Del med 10 andre"
+      ],
+      "Sign in or create an account to continue.": [
+        "Logg på eller opprett en konto for å fortsette."
+      ],
+      "Sign in to your account": [
+        "Logg på kontoen din"
+      ],
+      "Signing you in": [
+        "Logger deg på"
+      ],
+      "Successfully exported all your items": [
+        "Eksporterte alle elementene dine"
+      ],
+      "Successfully left the vault": [
+        "Forlot hvelvet"
+      ],
+      "Successfully synced all vaults": [
+        "Alle hvelv synkronisert"
+      ],
+      "Switch to another vault or create an item in this vault": [
+        "Bytt til et annet hvelv eller opprett et element i dette hvelvet."
+      ],
+      "Syncing your vaults…": [
+        "Synkroniserer dine hvelv…"
+      ],
+      "Thank you, the problem has been reported": [
+        "Takk, problemet er rapportert"
+      ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "Autofyll-rullegardinmenyen åpnes automatisk når du klikker eller fokuserer på feltet."
+      ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "Følgende ${ result.ignored.length } element kan ikke importeres:",
+        "Følgende ${ result.ignored.length } elementer kan ikke importeres:"
+      ],
+      "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
+        "Teksten du prøver å lime inn, er lengre enn den maksimalt tillatte lengden på ${ maxLength }-tegn."
+      ],
+      "The user did not accept the invitation yet.": [
+        "Brukeren har ikke akseptert invitasjonen enda."
+      ],
+      "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
+        "Denne eksporten vil være ukryptert, og alle med tilgang til den eksporterte filen vil kunne se passordene dine. For sikkerhets skyld, vennligst slett den etter at du er ferdig med å bruke den."
+      ],
+      "This vault is not currently shared with anyone. Invite people to share it with others.": [
+        "Hvelvet er for øyeblikket ikke delt med noen. Inviter folk til å dele det med andre."
+      ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "For å migrere data fra en annen passordbehandler, gå til passordbehandleren, eksporter dataene dine og last dem deretter opp til ${ PASS_APP_NAME }. Når dataene er importert, sletter du den eksporterte filen."
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "For å se gjennom de importerte dataene dine, klikk på Pass-ikonet i nettleserens verktøylinje."
+      ],
+      "Unable to copy to clipboard": [
+        "Ikke i stand til å kopiere til utklippstavlen"
+      ],
+      "Unlimited Aliases": [
+        "Ubegrenset antall aliaser"
+      ],
+      "Unlock it with your PIN to access the settings": [
+        "Lås den opp med PIN-koden din for å få tilgang til innstillingene"
+      ],
+      "Update login": [
+        "Oppdater pålogging"
+      ],
+      "Upgrade ${ PASS_APP_NAME }": [
+        "Oppgrader ${ PASS_APP_NAME }"
+      ],
+      "Use vaults to share this item with others.": [
+        "Bruk hvelv for å dele dette elementet med andre."
+      ],
+      "User's access removed": [
+        "Brukerns tilgang fjernet"
+      ],
+      "User's access sucessfuly updated": [
+        "Brukerens tilgang oppdatert"
+      ],
+      "Vault \"${ payload.content.name }\" successfully deleted": [
+        "Hvelv \"${ payload.content.name }\" slettet"
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully created": [
+        "Hvelv \"${ payload.share.content.name }\" opprettet"
+      ],
+      "Vault \"${ payload.share.content.name }\" successfully updated": [
+        "Hvelv \"${ payload.share.content.name }\" oppdatert"
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "Hvelv \"${ share.content.name }\" ble fjernet."
+      ],
+      "Verification code": [
+        "Verifiseringskode"
+      ],
+      "Viewer": [
+        "Leser"
+      ],
+      "We are having trouble syncing data to your local storage. Please make sure you have sufficient disk space for ${ PASS_SHORT_APP_NAME } to work smoothly.": [
+        "Vi har problemer med å synkronisere data til din lokale lagring. Forsikre deg om at du har nok diskplass til at ${ PASS_SHORT_APP_NAME } kan fungere problemfritt."
+      ],
+      "You are about to create:": [
+        "Du er i ferd med å opprette:"
+      ],
+      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
+        "Du kan raskt fylle ut påloggingsinformasjonen din automatisk ved å klikke på ${ PASS_APP_NAME }-ikonet."
+      ],
+      "You cannot change the mailboxes for this alias.": [
+        "Du kan ikke endre postboksene for dette aliaset."
+      ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Du har ${ daysRemaining } dag igjen til å prøve disse og andre premiumfunksjoner.",
+        "Du har ${ daysRemaining } dager igjen til å prøve disse og andre premiumfunksjoner."
+      ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Du har overskredet antall hvelv som er inkludert i abonnementet ditt. Elementer kan bare opprettes i de to første hvelvene. For å flytte elementer mellom alle hvelv, oppgraderer du abonnementet."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Du har overskredet antall hvelv som er inkludert i abonnementet ditt. Nye elementer kan bare opprettes i de to første hvelvene. Hvis du vil opprette nye elementer i alle hvelv, oppgraderer du abonnementet."
+      ],
+      "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
+        "Du har nådd grensen for aliaser du kan opprette. Opprett et ubegrenset antall aliaser når du oppgraderer abonnementet."
+      ],
+      "You have reached the limit of vaults you can create.": [
+        "Du har nådd grensen for hvor mange hvelv du kan opprette."
+      ],
+      "You have reached the maximum allowed length of ${ maxLength } characters.": [
+        "Du har nådd den maksimalt tillatte lengden på ${ maxLength }-tegn."
+      ],
+      "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
+        "Du vil bruke denne PIN-koden til å låse opp ${ PASS_APP_NAME } når den låses automatisk etter en periode med inaktivitet."
+      ],
+      "You're about to create": [
+        "Du er i ferd med å opprette"
+      ],
+      "You're invited to a vault.": [
+        "Du er invitert til et hvelv."
+      ],
+      "Your ${ PASS_APP_NAME } session is locked": [
+        "Økten din til ${ PASS_APP_NAME } er låst"
+      ],
+      "Your files will be encrypted and then saved": [
+        "Filene dine vil bli kryptert og deretter lagret"
+      ]
+    },
+    "Label": {
+      "${ passwordOptions.options.length } character": [
+        "${ passwordOptions.options.length } tegn",
+        "${ passwordOptions.options.length } tegn"
+      ],
+      "${ passwordOptions.options.wordCount } word": [
+        "${ passwordOptions.options.wordCount } ord",
+        "${ passwordOptions.options.wordCount } ord"
+      ],
+      "1 hour": [
+        "1 time"
+      ],
+      "1 minute": [
+        "1 minutt"
+      ],
+      "10 minutes": [
+        "10 minutter"
+      ],
+      "15 minutes": [
+        "15 minutter"
+      ],
+      "2FA secret key (TOTP)": [
+        "2FA-hemmelig nøkkel (TOTP)"
+      ],
+      "2FA token (TOTP)": [
+        "2FA-token (TOTP)"
+      ],
+      "30 minutes": [
+        "30 minutter"
+      ],
+      "30 seconds": [
+        "30 sekunder"
+      ],
+      "5 minutes": [
+        "5 minutter"
+      ],
+      "A-Z": [
+        "A-Å"
+      ],
+      "Alias": [
+        "Alias"
+      ],
+      "Alias address": [
+        "Aliasadresse"
+      ],
+      "Aliases": [
+        "Aliaser"
+      ],
+      "All": [
+        "Alle"
+      ],
+      "All vaults": [
+        "Alle hvelv"
+      ],
+      "Alphabetical": [
+        "Alfabetisk"
+      ],
+      "Application logs": [
+        "Applikasjonslogger"
+      ],
+      "Auto-lock ${ PASS_APP_NAME }": [
+        "Auto-lås ${ PASS_APP_NAME }"
+      ],
+      "Auto-lock after": [
+        "Auto-lås etter"
+      ],
+      "Autofill": [
+        "Autofyll"
+      ],
+      "Autofill 2FA": [
+        "Autofyll 2FA"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "Åpne autofyll automatisk når det er fokus på et påloggingsfelt"
+      ],
+      "Autosave": [
+        "Automatisk lagring"
+      ],
+      "Autosave vault": [
+        "Autolagringshvelv"
+      ],
+      "Autosuggest": [
+        "Autoforeslå"
+      ],
+      "Capital letters (A-Z)": [
+        "Store bokstaver (A–Å)"
+      ],
+      "Capitalise": [
+        "Gjør om til store bokstaver"
+      ],
+      "Card": [
+        "Kort"
+      ],
+      "Card number": [
+        "Kortnummer"
+      ],
+      "Cards": [
+        "Kort"
+      ],
+      "Confirm vault name": [
+        "Bekreft hvelvnavn"
+      ],
+      "Create a credit card": [
+        "Opprett et kredittkort"
+      ],
+      "Create a hide-my-email alias": [
+        "Opprett et hide-my-email-alias"
+      ],
+      "Create a login": [
+        "Opprett en pålogging"
+      ],
+      "Create an encrypted note": [
+        "Opprett et kryptert notat"
+      ],
+      "Create new vault": [
+        "Opprett nytt hvelv"
+      ],
+      "Created": [
+        "Opprettet"
+      ],
+      "Display": [
+        "Vis"
+      ],
+      "Display ${ PASS_APP_NAME } icon on login fields": [
+        "Vis ${ PASS_APP_NAME }-ikonet på påloggingsfelt"
+      ],
+      "Domain": [
+        "Domene"
+      ],
+      "Domains": [
+        "Domener"
+      ],
+      "Download logs": [
+        "Last ned logger"
+      ],
+      "Email aliases": [
+        "E-postaliaser"
+      ],
+      "Empty trash": [
+        "Tøm papirkurven"
+      ],
+      "Encrypt your ${ PASS_APP_NAME } data export file": [
+        "Krypter dataeksportfil til ${ PASS_APP_NAME }"
+      ],
+      "Expiration date": [
+        "Utløpsdato"
+      ],
+      "Export": [
+        "Eksport"
+      ],
+      "Field name": [
+        "Feltnavn"
+      ],
+      "Forwards to": [
+        "Videresendes til"
+      ],
+      "General": [
+        "Generelt"
+      ],
+      "Grant": [
+        "Gi"
+      ],
+      "Hidden": [
+        "Skjult"
+      ],
+      "Hide password": [
+        "Skjul passord"
+      ],
+      "Import": [
+        "Import"
+      ],
+      "Import passwords": [
+        "Importer passord"
+      ],
+      "Imported from : ": [
+        "Importert fra : "
+      ],
+      "Imported on : ": [
+        "Importert på : "
+      ],
+      "Include numbers": [
+        "Inkluder tall"
+      ],
+      "Include numbers (0-9)": [
+        "Inkluder tall (0-9)"
+      ],
+      "Invitations": [
+        "Invitasjoner"
+      ],
+      "Language": [
+        "Språk"
+      ],
+      "Last 2 weeks": [
+        "Siste 2 uker"
+      ],
+      "Last autofill": [
+        "Siste autofyll"
+      ],
+      "Last month": [
+        "Siste måned"
+      ],
+      "Last week": [
+        "Forrige uke"
+      ],
+      "Latest import": [
+        "Seneste import"
+      ],
+      "Learn more": [
+        "Lær mer"
+      ],
+      "Login": [
+        "Pålogging"
+      ],
+      "Logins": [
+        "Pålogginger"
+      ],
+      "Members": [
+        "Medlemmer"
+      ],
+      "Modified": [
+        "Endret"
+      ],
+      "More than a month": [
+        "Mer enn én måned"
+      ],
+      "Most recent": [
+        "Nyeste"
+      ],
+      "Name": [
+        "Navn"
+      ],
+      "Name on card": [
+        "Navn på kortet"
+      ],
+      "Need help ?": [
+        "Trenger du hjelp?"
+      ],
+      "New vault": [
+        "Nytt hvelv"
+      ],
+      "New-Old": [
+        "Ny-Gammel"
+      ],
+      "Newest to oldest": [
+        "Nyeste til eldste"
+      ],
+      "No history": [
+        "Ingen historikk"
+      ],
+      "Note": [
+        "Notat"
+      ],
+      "Notes": [
+        "Notater"
+      ],
+      "Old-New": [
+        "Gammel-Ny"
+      ],
+      "Oldest to newest": [
+        "Eldste til nyeste"
+      ],
+      "Passphrase": [
+        "Passfrase"
+      ],
+      "Password": [
+        "Passord"
+      ],
+      "Password history": [
+        "Passordhistorikk"
+      ],
+      "Passwords": [
+        "Passord"
+      ],
+      "Pause list": [
+        "Pauseliste"
+      ],
+      "PIN": [
+        "PIN"
+      ],
+      "Prefix": [
+        "Prefiks"
+      ],
+      "Prompt for auto-save": [
+        "Be om auto-lagring"
+      ],
+      "Rate us": [
+        "Vurder oss"
+      ],
+      "Recent": [
+        "Nylig"
+      ],
+      "Report a problem": [
+        "Rapporter et problem"
+      ],
+      "Restore all items": [
+        "Gjenopprett alle elementer"
+      ],
+      "Reveal password": [
+        "Avslør passord"
+      ],
+      "Security": [
+        "Sikkerhet"
+      ],
+      "Security code": [
+        "Sikkerhetskode"
+      ],
+      "Select an email address": [
+        "Velg en e-postadresse"
+      ],
+      "Select preferred language": [
+        "Velg ønsket språk"
+      ],
+      "Select your password manager": [
+        "Velg din passordbehandler"
+      ],
+      "Selected": [
+        "Valgt"
+      ],
+      "Session locking": [
+        "Låsing av økt"
+      ],
+      "Set PIN code": [
+        "Angi PIN-kode"
+      ],
+      "Settings": [
+        "Innstillinger"
+      ],
+      "Show website favicons": [
+        "Vis favorittikon for nettsted"
+      ],
+      "Special characters (!&*)": [
+        "Spesialtegn (!&*)"
+      ],
+      "Suffix": [
+        "Suffiks"
+      ],
+      "Support": [
+        "Brukerstøtte"
+      ],
+      "Text": [
+        "Tekst"
+      ],
+      "Title": [
+        "Tittel"
+      ],
+      "Today": [
+        "I dag"
+      ],
+      "Total imported items : ": [
+        "Totalt antall importerte elementer : "
+      ],
+      "Total items : ": [
+        "Totalt antall elementer : "
+      ],
+      "TOTP": [
+        "TOTP"
+      ],
+      "Trash": [
+        "Papirkurv"
+      ],
+      "Type": [
+        "Type"
+      ],
+      "Unnamed Credit Card": [
+        "Ikke navngitt kredittkort"
+      ],
+      "Unnamed item": [
+        "Ikke navngitt element"
+      ],
+      "Unnamed note": [
+        "Ikke navngitt notat"
+      ],
+      "Untitled": [
+        "Uten tittel"
+      ],
+      "Update": [
+        "Oppdater"
+      ],
+      "Username": [
+        "Brukernavn"
+      ],
+      "Username (alias)": [
+        "Brukernavn (alias)"
+      ],
+      "Username (new alias)": [
+        "Brukernavn (nytt alias)"
+      ],
+      "Vault": [
+        "Hvelv"
+      ],
+      "View details": [
+        "Vis detaljer"
+      ],
+      "View logs": [
+        "Se logger"
+      ],
+      "Websites": [
+        "Nettsteder"
+      ],
+      "You are about to create": [
+        "Du er i ferd med å opprette"
+      ]
+    },
+    "Option": {
+      "Commas": [
+        "Kommaer"
+      ],
+      "Hyphens": [
+        "Bindestreker"
+      ],
+      "Memorizable Password": [
+        "Minneverdig passord"
+      ],
+      "Numbers": [
+        "Tall"
+      ],
+      "Numbers and Symbols": [
+        "Tall og symboler"
+      ],
+      "Periods": [
+        "Punktum"
+      ],
+      "Random Password": [
+        "Tilfeldig passord"
+      ],
+      "Spaces": [
+        "Mellomrom"
+      ],
+      "Underscores": [
+        "Understrekingstegn"
+      ]
+    },
+    "Placeholder": {
+      "Add 2FA secret key": [
+        "Legg til 2FA-hemmelig nøkkel"
+      ],
+      "Add hidden text": [
+        "Legg til skjult tekst"
+      ],
+      "Add note": [
+        "Legg til notat"
+      ],
+      "Add text": [
+        "Legg til tekst"
+      ],
+      "Email address": [
+        "E-postadresse"
+      ],
+      "Enter a note...": [
+        "Skriv et notat..."
+      ],
+      "Enter a prefix": [
+        "Angi et prefiks"
+      ],
+      "Enter email or username": [
+        "Skriv inn e-post eller brukernavn"
+      ],
+      "Enter password": [
+        "Skriv inn passord"
+      ],
+      "Full Name": [
+        "Fullt navn"
+      ],
+      "MM/YYYY": [
+        "MM/ÅÅÅÅ"
+      ],
+      "Other": [
+        "Annen"
+      ],
+      "Pick a vault": [
+        "Velg et hvelv"
+      ],
+      "Please describe the problem and include any error messages": [
+        "Vennligst beskriv problemet og inkluder eventuelle feilmeldinger."
+      ],
+      "Retype \"${ vaultName }\" to confirm deletion": [
+        "Skriv inn \"${ vaultName }\" for å bekrefte sletting"
+      ],
+      "Search ${ pluralItemType } in ${ vault.content.name }": [
+        "Søk ${ pluralItemType } i ${ vault.content.name }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Søk ${ pluralItemType } i alle hvelv"
+      ],
+      "Search in ${ vault.content.name }": [
+        "Søk i ${ vault.content.name }"
+      ],
+      "Search in all vaults": [
+        "Søk i alle hvelv"
+      ],
+      "Search in Trash": [
+        "Søk i papirkurven…"
+      ],
+      "Select a suffix": [
+        "Velg et prefiks"
+      ],
+      "Shared vault": [
+        "Delt hvelv"
+      ],
+      "Unknown origin": [
+        "Ukjent opprinnelse"
+      ],
+      "Untitled": [
+        "Uten tittel"
+      ],
+      "Used on ${ url }": [
+        "Brukt på ${ url }"
+      ],
+      "Write your note": [
+        "Skriv notatet ditt"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Hvelv kan ikke inneholde mer enn ${ vault.targetMaxMembers } bruker.",
+        "Hvelv kan ikke inneholde mer enn ${ vault.targetMaxMembers } brukere."
+      ]
+    },
+    "Title": {
+      "${ PASS_APP_NAME } Settings": [
+        "${ PASS_APP_NAME }-innstillinger"
+      ],
+      "Auto-lock update": [
+        "Oppdatering av auto-lås"
+      ],
+      "Confirm PIN code": [
+        "Bekreft PIN-kode"
+      ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Koble til ${ BRAND_NAME }-kontoen din"
+      ],
+      "Create PIN code": [
+        "Opprett PIN-kode"
+      ],
+      "Delete vault \"${ vaultName }\" ?": [
+        "Slett hvelv \"${ vaultName }\" ?"
+      ],
+      "Discard changes?": [
+        "Forkaste endringer?"
+      ],
+      "Email": [
+        "E-post"
+      ],
+      "Enjoying ${ PASS_APP_NAME }?": [
+        "Koser du deg med ${ PASS_APP_NAME }?"
+      ],
+      "Enter your PIN": [
+        "Skriv inn PIN-koden din"
+      ],
+      "Fill & copy password": [
+        "Fyll ut & kopier passord"
+      ],
+      "Get the mobile apps": [
+        "Få mobilappene"
+      ],
+      "Grant permissions": [
+        "Gi tillatelser"
+      ],
+      "Hide my email": [
+        "Hide-my-email"
+      ],
+      "Import - ${ date }": [
+        "Import - ${ date }"
+      ],
+      "Import to vault(s)": [
+        "Importer til hvelv"
+      ],
+      "Leave vault ?": [
+        "Forlate hvelvet?"
+      ],
+      "Log in as...": [
+        "Logg på som..."
+      ],
+      "Low disk space": [
+        "Lite diskplass"
+      ],
+      "Member limit": [
+        "Medlemsgrense"
+      ],
+      "Move all items ?": [
+        "Flytte alle elementer?"
+      ],
+      "Our welcome gift to you": [
+        "Vår velkomstgave til deg"
+      ],
+      "Password": [
+        "Passord"
+      ],
+      "Pending access to the shared data": [
+        "Venter på tilgang til de delte dataene"
+      ],
+      "Permanently remove all items ?": [
+        "Vil du fjerne alle elementene permanent?"
+      ],
+      "Pin the extension": [
+        "Fest utvidelsen"
+      ],
+      "Secure your data": [
+        "Sikre dataene dine"
+      ],
+      "Set access level": [
+        "Sett tilgangsnivå"
+      ],
+      "Share with": [
+        "Del med"
+      ],
+      "Switching to ${ PASS_APP_NAME }?": [
+        "Bytte til ${ PASS_APP_NAME }?"
+      ],
+      "Thank you for installing ${ PASS_APP_NAME }": [
+        "Takk for at du installerte ${ PASS_APP_NAME }"
+      ],
+      "The extension is now ready to use.": [
+        "Utvidelsen er nå klar til å brukes."
+      ],
+      "Transfer ownership": [
+        "Overfør eierskap"
+      ],
+      "Trash empty": [
+        "Papirkurven er tom"
+      ],
+      "Unlock ${ brandNameJSX }": [
+        "Lås opp ${ brandNameJSX }"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Lås opp ${ PASS_APP_NAME }"
+      ],
+      "Update available": [
+        "Oppdatering tilgjengelig"
+      ],
+      "Use my email": [
+        "Bruk min e-post"
+      ],
+      "Vault shared with you": [
+        "Hvelv delt med deg"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Velkommen til ${ brandNameJSX }"
+      ],
+      "Welcome to ${ PASS_APP_NAME }": [
+        "Velkommen til ${ PASS_APP_NAME }"
+      ],
+      "Welcome to your new password manager!": [
+        "Velkommen til din nye passordbehandler!"
+      ],
+      "Why ${ PASS_APP_NAME }?": [
+        "Hvorfor ${ PASS_APP_NAME }?"
+      ],
+      "Your vault is empty": [
+        "Hvelvet ditt er tomt"
+      ]
+    },
+    "Validation": {
+      "Duplicated URL": [
+        "Duplisert nettadresse"
+      ],
+      "Field name is required": [
+        "Feltnavn er obligatorisk"
+      ],
+      "OTP secret or URI is invalid": [
+        "OTP-hemmelighet eller URI er ugyldig"
+      ],
+      "OTP secret or URI required": [
+        "OTP-hemmelighet eller URI kreves"
+      ],
+      "Url already exists": [
+        "Nettadresse finnes allerede"
+      ],
+      "URL cannot be empty": [
+        "Nettadresse kan ikke være tom"
+      ],
+      "Url is invalid": [
+        "Nettadresse er ugyldig"
+      ],
+      "URL is invalid": [
+        "Nettadresse er ugyldig"
+      ]
+    },
+    "Warning": {
+      "A description of the problem is required": [
+        "En beskrivelse av problemet er nødvendig"
+      ],
+      "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
+        "Alias \"${ name }\" brukes for øyeblikket i påloggingselement \"${ relatedLoginName }\". Du vil også slutte å motta e-poster sendt til \"${ aliasEmail }\""
+      ],
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
+        "Alle dine elementer i papirkurven blir slettet permanent. Du kan ikke angre denne handlingen."
+      ],
+      "An error occured while exporting your data": [
+        "Det oppstod en feil under eksport av dataene dine"
+      ],
+      "Cannot retrieve mailboxes for this alias right now": [
+        "Kan ikke hente postbokser for dette aliaset akkurat nå."
+      ],
+      "Could not create vault \"${ vaultName }\"": [
+        "Kunne ikke opprette hvelv \"${ vaultName }\""
+      ],
+      "Empty note": [
+        "Tomt notat"
+      ],
+      "Expiration Date is incomplete": [
+        "Utløpsdato er ufullstendig"
+      ],
+      "Invalid alias prefix": [
+        "Ugyldig aliasprefiks"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Maksimal lengde er ${ maxLength } tegn",
+        "Maksimal lengde er ${ maxLength } tegn"
+      ],
+      "Missing alias prefix": [
+        "Mangler aliasprefiks"
+      ],
+      "Missing alias suffix": [
+        "Mangler aliasprefiks"
+      ],
+      "No items": [
+        "Ingen elementer"
+      ],
+      "No items in trash matching": [
+        "Ingen elementer i papirkurven samsvarer"
+      ],
+      "No items matching": [
+        "Ingen elementer samsvarer"
+      ],
+      "No password manager selected": [
+        "Ingen passordbehandler valgt"
+      ],
+      "Only alphanumeric characters, dots, hyphens and underscores are allowed": [
+        "Bare alfanumeriske tegn, prikker, bindestreker og understrekingstegn er tillatt."
+      ],
+      "Passphrase is required": [
+        "Passfrase kreves"
+      ],
+      "PGP encrypted export file requires passphrase": [
+        "PGP-kryptert eksportfil krever passfrase."
+      ],
+      "Please enter a valid email address": [
+        "Vennligst oppgi en gyldig e-postadresse"
+      ],
+      "Please verify your email address in order to use email aliases": [
+        "Vennligst bekreft e-postadressen din for å kunne bruke e-postaliaser."
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Vennligst bekreft e-postadressen din for å kunne bruke hvelvdeling."
+      ],
+      "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
+        "Feilrapporter er ikke ende-til-ende kryptert, vennligst ikke send noe sensitiv informasjon."
+      ],
+      "Something went wrong while starting ${ PASS_APP_NAME }. Please try refreshing or reloading the extension": [
+        "Noe gikk galt under oppstart av ${ PASS_APP_NAME }. Vennligst prøv å oppdatere eller laste inn utvidelsen på nytt."
+      ],
+      "The alias prefix cannot be longer than 40 characters": [
+        "Aliasprefikset kan ikke være lenger enn 40 tegn."
+      ],
+      "Title is required": [
+        "Tittel kreves"
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Overføre eierskap av dette hvelvet til ${ email }?"
+      ],
+      "Trash alias ?": [
+        "Slette alias?"
+      ],
+      "Unable to save": [
+        "Ikke i stand til å lagre"
+      ],
+      "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
+        "Ikke i stand til å logge på ${ PASS_APP_NAME }. ${ additionalMessage }"
+      ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Hvelv \"${ vaultName }\" og alle dets elementer vil slettes permanent. Du kan ikke angre denne handlingen."
+      ],
+      "Vault name is required": [
+        "Hvelvnavn kreves"
+      ],
+      "You cannot create more vaults than your subscription allows.": [
+        "Du kan ikke opprette flere hvelv enn det abonnementet ditt tillater."
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "Du har nådd grensen for medlemmer som kan ha tilgang til dette hvelvet."
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Du har nådd grensen for brukere i dette hvelvet. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Du har nådd grensen for hvor mange hvelv du kan ha i planen din."
+      ],
+      "You have unsaved changes.": [
+        "Du har ulagrede endringer."
+      ],
+      "You must select at least one mailbox": [
+        "Du må velge minst en postboks"
+      ],
+      "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
+        "Du vil ikke lenger ha tilgang til dette hvelvet. For å bli med i det igjen, trenger du en ny invitasjon."
+      ],
+      "Your plan does not allow you to create more aliases": [
+        "Planen din tillater ikke deg å opprette flere aliaser."
+      ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Planen din lar deg bare fylle ut automatisk fra de to første hvelvene dine."
+      ],
+      "Your session could not be authorized.": [
+        "Økten din kunne ikke autoriseres."
+      ],
+      "Your session could not be resumed.": [
+        "Økten din kunne ikke gjenopptas."
+      ],
+      "Your session is inactive. Please log back in.": [
+        "Økten din er inaktiv. Vennligst logg på igjen."
+      ],
+      "Your session was locked.": [
+        "Økten din ble låst."
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Abonnementet ditt lar deg ikke opprette flere hvelv. Alle elementer vil bli importert til ditt første hvelv. Hvis du vil importere til flere hvelv, oppgraderer du abonnementet."
+      ]
+    }
+  }
+}

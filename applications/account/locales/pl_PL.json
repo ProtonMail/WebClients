@@ -245,6 +245,9 @@
       "Copy address": [
         "Kopiuj adres"
       ],
+      "Copy key to the clipboard": [
+        "Kopiuj klucz do schowka"
+      ],
       "Copy link": [
         "Kopiuj link"
       ],
@@ -377,8 +380,8 @@
       "Download recovery file": [
         "Pobierz plik odzyskiwania"
       ],
-      "Download the Import-Export app": [
-        "Pobierz aplikację Import-Export"
+      "Download the ${ MAIL_APP_NAME } Export Tool": [
+        "Pobierz ${ MAIL_APP_NAME } Export Tool"
       ],
       "Edit": [
         "Edytuj"
@@ -1400,10 +1403,10 @@
         "Oszczędź na szybkich, szwajcarskich usługach VPN z okazji Czarnego Piątku"
       ],
       "Save with Cyber Week deals on a high-speed Swiss VPN": [
-        "Oszczędź na szybkich, szwajcarskich usługach VPN z okazji Cyber Tygodnia"
+        "Zaoszczędź na szybkiej szwajcarskiej usłudze VPN z okazji Cyber Tygodnia"
       ],
       "Save with End of Year deals on a high-speed Swiss VPN": [
-        "Oszczędzaj dzięki ofertom na koniec roku na szybką szwajcarską sieć VPN"
+        "Zaoszczędź na szybkiej szwajcarskiej usłudze VPN dzięki ofertom końcoworocznym"
       ],
       "Select your Black Friday offer": [
         "Wybierz ofertę na Czarny Piątek"
@@ -1412,7 +1415,7 @@
         "Wybierz ofertę Cyber Tygodnia"
       ],
       "Select your End of Year offer": [
-        "Wybierz ofertę na koniec roku"
+        "Wybierz ofertę końcoworoczną"
       ]
     },
     "bf2023: info": {
@@ -5788,6 +5791,17 @@
         "Część zawartości kalendarza nie jest obsługiwana i nie zostanie zaimportowana."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Klucz ${ fingerprint } został już przesłany"
+      ],
+      "Selected color:": [
+        "Wybrany kolor:"
+      ]
+    },
     "Info": {
       "${ amountOfAddresses } address": [
         "${ amountOfAddresses } adres",
@@ -7287,7 +7301,7 @@
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "Przesyłanie SMTP umożliwia usługom lub urządzeniom innych firm wysyłanie wiadomości e-mail za pośrednictwem ${ MAIL_APP_NAME } dla niestandardowych adresów domen. Ta funkcja jest dostępna tylko dla ${ BRAND_NAME } użytkowników biznesowych z domenami niestandardowymi."
+        "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domeny w ${ MAIL_APP_NAME }. Funkcja jest dostępna dla użytkowników ${ BRAND_NAME } for Business z niestandardową domeną."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domeny w ${ MAIL_APP_NAME }. Aby uzyskać dostęp do tej funkcji, ${ createTicket } i opisz swoje potrzeby. Napisz jakiej niestandardowej domeny chcesz użyć i oszacuj zapotrzebowanie wiadomości."
@@ -7379,6 +7393,9 @@
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Wiadomość \"${ boldDataLocked }\" nie będzie pokazywana, ale możesz nadal odblokować dane w sekcji ${ encryptionAndKeysLink }."
       ],
+      "The ${ MAIL_APP_NAME } Export Tool lets you export decrypted emails from your ${ MAIL_APP_NAME } account to your device. You can then view the messages or import them into another email account or email client.": [
+        "${ MAIL_APP_NAME } narzędzie eksportu umożliwia eksportowanie odszyfrowanych wiadomości e-mail z konta ${ MAIL_APP_NAME } na urządzenie. Następnie można wyświetlić wiadomości lub zaimportować je do innego konta e-mail lub klienta poczty e-mail."
+      ],
       "The calendar will be removed from your account.": [
         "Kalendarz zostanie usunięty."
       ],
@@ -7411,9 +7428,6 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Format pliku CSV jest nieprawidłowy."
-      ],
-      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        "Aplikacja Import-Export pozwala wyeksportować wiadomości na potrzeby lokalnej kopii zapasowej i przywrócić poprzednie dane na konto."
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Link umożliwiający zgłoszenie, że to nie jest Twoje konto ${ BRAND_NAME } wygasł. Skontaktuj się z naszym zespołem pomocy technicznej, aby rozwiązać ten problem."
@@ -7848,7 +7862,7 @@
         "Posiadasz już darmowe konto"
       ],
       "You are about to open another browser tab and visit:": [
-        "Masz zamiar otworzyć nową kartę przeglądarki i przejść do:"
+        "Uruchomisz nową kartę przeglądarki i przejdziesz do:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Zalogowano jako ${ user.Name } (${ user.Email })."
@@ -8006,8 +8020,8 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Nie będziesz mógł odzyskać zablokowanych danych za pomocą plików odzyskiwania."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
-        "Nie będziesz mógł odzyskać zablokowanych danych za pomocą plików odzyskiwania. Ta czynność spowoduje również unieważnienie informacji o odzyskiwaniu zaufanego urządzenia."
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
+        "Nie będziesz mógł odzyskać zablokowanych danych za pomocą plików odzyskiwania. Ta czynność spowoduje również wyłączenie odzyskiwania zaufanego urządzenia."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Pozostaniesz zalogowany, nawet po zamknięciu przeglądarki."
@@ -8104,17 +8118,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Twoja subskrypcja jest zarządzana przez Mozillę. Skontaktuj się z pomocą techniczną Mozilli."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Klucz ${ fingerprint } został już przesłany"
-      ],
-      "Selected color:": [
-        "Wybrany kolor:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10613,6 +10616,17 @@
         "Zarządzanie zespołem"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } kończąca się na ${ last4 }"
@@ -10700,17 +10714,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10874,7 +10877,7 @@
         "Zablokuj firmowe zasoby w publicznym Internecie i udostępniaj je za pomocą prywatnych bram"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
-        "Zarządzaj subskrypcją i dostosuj plan. Akceptowanymi metodami płatności są karty kredytowe, konto PayPal, kryptowaluty i przelewy bankowe."
+        "Zarządzaj subskrypcją i dostosuj plan. Akceptowanymi metodami płatności są karty płatnicze, konto PayPal, kryptowaluty i przelewy bankowe."
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "W dni robocze otrzymasz odpowiedź od zespołu wsparcia klienta ${ BRAND_NAME } w ciągu 24 godzin od zgłoszenia"
@@ -11646,10 +11649,10 @@
         "Szyfrowanie end-to-end"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Za jedyne **${ relativePrice } miesięcznie** więcej, otrzymasz dostęp do menedżera haseł premium ${ BRAND_NAME }!"
+        "Za jedyne **${ relativePrice } miesięcznie** więcej, otrzymasz dostęp do menadżera haseł ${ BRAND_NAME } w wersji premium!"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Za jedyne **${ relativePrice } miesięcznie** więcej, otrzymasz dostęp do najwyższej jakości usługi VPN ${ BRAND_NAME }!"
+        "Za jedyne **${ relativePrice } miesięcznie** więcej, otrzymasz dostęp do usługi ${ BRAND_NAME } VPN w wersji premium!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Za **${ relativePrice } miesięcznie** więcej uzyskasz dostęp do wszystkich funkcji premium usług ${ BRAND_NAME }!"
@@ -13098,6 +13101,9 @@
       "Code sent to ${ methodTo }": [
         "Kod został wysłany na ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Skopiowano do schowka"
+      ],
       "Credits added": [
         "Środki zostały dodane"
       ],
@@ -13121,6 +13127,9 @@
       ],
       "Email updated": [
         "Adres e-mail został zaktualizowany"
+      ],
+      "Fingerprint copied to clipboard": [
+        "Odcisk klucza został skopiowany do schowka"
       ],
       "Gift code applied": [
         "Kod podarunkowy został zastosowany"
@@ -13149,11 +13158,17 @@
       "Keys updated": [
         "Klucze zostały zaktualizowane"
       ],
+      "Link copied to clipboard": [
+        "Link został skopiowany do schowka"
+      ],
       "Locale updated": [
         "Ustawienia językowe zostały zaktualizowane"
       ],
       "Organization activated": [
         "Organizacja została aktywowana"
+      ],
+      "Password copied to clipboard": [
+        "Hasło zostało skopiowane do schowka"
       ],
       "Password updated": [
         "Hasło zostało zaktualizowane"
@@ -13208,6 +13223,9 @@
       ],
       "User updated": [
         "Użytkownik został zaktualizowany"
+      ],
+      "Username copied to clipboard": [
+        "Nazwa użytkownika została skopiowana do schowka"
       ],
       "Value copied to clipboard": [
         "Wartość została skopiowana do schowka"
@@ -13457,6 +13475,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ MAIL_APP_NAME } Export Tool": [
+        "${ MAIL_APP_NAME } Export Tool"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Skróty klawiszowe ${ MAIL_APP_NAME }"
@@ -14006,9 +14027,6 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importuj przez ${ PRODUCT_NAMES.EASY_SWITCH }"
-      ],
-      "Import-Export app": [
-        "Aplikacja Import-Export"
       ],
       "Increase your privacy with more addresses": [
         "Zwiększ swoją prywatność dzięki większej liczbie adresów"
@@ -14680,7 +14698,7 @@
         "Po włączeniu tej opcji, animacje i przejścia nie będą wyświetlane"
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
-        "Po dodaniu etykiety do wiadomości w wątku, wszystkie przyszłe wiadomości przychodzące i wychodzące będą otrzymywać tę samą etykietę."
+        "Po dodaniu etykiety do wiadomości w wątku wszystkie przyszłe wiadomości przychodzące i wychodzące będą otrzymywać tę samą etykietę."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "Po kliknięciu na link, funkcja zapobiegająca próbie wyłudzenia informacji poprosi Cię o potwierdzenie adresu URL strony internetowej, który chcesz otworzyć."

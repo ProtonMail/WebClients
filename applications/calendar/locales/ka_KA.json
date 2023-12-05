@@ -2178,6 +2178,9 @@
       ]
     },
     "Description": {
+      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
+        "აიმაღლეთ ეფექტურობა და ადევნეთ თვალყური თქვენს დროს მოვლენების ფერებით მონიშვნით, კატეგორიების ან თქვენი ენერგიის დონის მიხედვით. მიიღეთ ეს და ბევრი სხვა რამ ფასიან ტარიფთან ერთად."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "მიმდინარეობს კონტაქტების გაშიფვრა… ამას რამდენიმე წუთი შეიძლება, დასჭირდეს. როცა პროცესი დასრულდება, თქვენ შეგეძლებათ, გადმოწეროთ ფაილი ყველა თქვენი კონტაქტით."
       ],
@@ -4348,6 +4351,11 @@
         "თქვენი სისტემის დროის სარტყელი, როგორც ჩანს, შეიცვალა ${ timezone }-ზე. გსურთ, განაახლოთ თქვენი დროის სარტყელის პარამეტრი?"
       ]
     },
+    "info": {
+      "Selected color:": [
+        "არჩეული ფერი:"
+      ]
+    },
     "Info calendar search": {
       "You can either update your search query or close search to go back to calendar views": [
         "შეგიძლიათ განაახლოთ ძებნის პირობა ან დახუროთ ძებნა და უკან, კალენდრის ხედზე დაბრუნდეთ"
@@ -5175,6 +5183,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } კალენდარი",
+        "${ maximumNumberOfCalendars } კალენდარი"
+      ],
       "Auto-delete spam and trashed messages": [
         "სპამისა და სანაგვე ყუთში მდებარე შეტყობინებების ავტომატური წაშლა"
       ],
@@ -5424,8 +5436,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "აღმოაჩინეთ ${ BRAND_NAME }-ის ყველა სერვისი"
       ],
+      "Pick a theme": [
+        "აირჩიეთ თემა"
+      ],
       "Set up your organization": [
         "ორგანიზაციის მორგება"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "გამოიყენეთ აპის ამრჩევი ზედა მარცხენა კუთხეში ${ BRAND_NAME }-ის ყველა სერვისთან წვდომისთვის: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } და ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "თქვენი თემის შეცვლა ნებისმიერ დროს შეგიძლიათ, მორგების ფანჯარაში."
       ]
     },
     "Option": {
@@ -6130,6 +6151,9 @@
       "Add your country's public holidays to your calendar.": [
         "დაამატეთ თქვენი ქვეყნის საჯარო დასვენებები თქვენს კალენდარში."
       ],
+      "Color-coding is here!": [
+        "ფერების-კოდირება აქაა!"
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "იპოვეთ ადვილად მოვლენა, რომელსაც ეძებდით, ჩვენს ახალ ძებნის ფუნქციასთან ერთად."
       ],
@@ -6144,6 +6168,9 @@
       ],
       "Search for events": [
         "მოვლენების ძებნა"
+      ],
+      "With customizable event colors, you can color-code the chaos and conquer your day.": [
+        "მორგებადი მოვლენის ფერებთან ერთად ასევე შეგიძლიათ ქაოსში ფერებით დალაგება შეიტანოთ და დღე თქვენს ნებაზე წარმართოთ."
       ]
     },
     "Storage": {
@@ -6459,6 +6486,9 @@
       ],
       "Add participants": [
         "მონაწილეების დამატება"
+      ],
+      "Add some color to your day": [
+        "დაამატეთ ფერები თქვენს დღეს"
       ],
       "Add to ${ groupCount } group": [
         "${ groupCount } ჯგუფში ჩამატება",

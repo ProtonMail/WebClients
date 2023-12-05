@@ -380,9 +380,6 @@
       "Download recovery file": [
         "Κατέβασμα αρχείου ανάκτησης"
       ],
-      "Download the Import-Export app": [
-        "Κατεβάστε την εφαρμογή Εισαγωγής-Εξαγωγής (Import-Export)"
-      ],
       "Edit": [
         "Επεξεργασία"
       ],
@@ -5717,6 +5714,17 @@
         "Μέρος του περιεχομένου του ημερολογίου σας δεν υποστηρίζεται και δεν θα εισαχθεί."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
+      ],
+      "Selected color:": [
+        "Επιλεγμένο χρώμα:"
+      ]
+    },
     "Info": {
       "${ amountOfAddresses } address": [
         "${ amountOfAddresses } διεύθυνση",
@@ -7263,9 +7271,6 @@
       "The format of your CSV file is incorrect.": [
         "Η μορφή του αρχείου CSV είναι εσφαλμένη."
       ],
-      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        "Η εφαρμογή Import-Export επιτρέπει την εξαγωγή μηνυμάτων για τοπικά αντίγραφα ασφαλείας και την επαναφορά προηγουμένων αντιγράφων ασφαλείας στον λογαριασμό σας."
-      ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Ο σύνδεσμος αναφοράς ότι δε δημιουργήσατε ${ BRAND_NAME } Λογαριασμό έχει λήξει. Παρακαλούμε επικοινωνήστε με την ομάδα υποστήριξής μας για να επιλύσετε αυτό το ζήτημα."
       ],
@@ -7841,8 +7846,8 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Δε θα μπορείτε να ανακτήσετε κλειδωμένα δεδομένα χρησιμοποιώντας τα ληφθέντα αρχεία ανάκτησης."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
-        "Δε θα μπορείτε να ανακτήσετε κλειδωμένα δεδομένα χρησιμοποιώντας τα ληφθέντα αρχεία ανάκτησης. Αυτό θα ακυρώσει επίσης αξιόπιστες πληροφορίες ανάκτησης συσκευής."
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
+        "Δε θα μπορείτε να ανακτήσετε κλειδωμένα δεδομένα χρησιμοποιώντας τα ληφθέντα αρχεία ανάκτησης. Αυτό θα απενεργοποιήσει επίσης την ανάκτηση αξιόπιστης συσκευής."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Η είσοδός σας θα διατηρηθεί ακόμα και μετά το κλείσιμο του περιηγητή."
@@ -7937,17 +7942,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Η συνδρομή σας διαχειρίζεται απο το Mozilla. Επικοινωνήστε με την υποστήριξη του Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
-      ],
-      "Selected color:": [
-        "Επιλεγμένο χρώμα:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10376,6 +10370,17 @@
         "Διαχείριση ομάδας"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
@@ -10463,17 +10468,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12771,6 +12765,9 @@
       "Code sent to ${ methodTo }": [
         "Ο κωδικός στάλθηκε στο ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Αντιγράφηκε στο πρόχειρο"
+      ],
       "Credits added": [
         "Οι μονάδες προστέθηκαν"
       ],
@@ -12794,6 +12791,9 @@
       ],
       "Email updated": [
         "Το E-mail ενημερώθηκε"
+      ],
+      "Fingerprint copied to clipboard": [
+        "Το αποτύπωμα αντιγράφηκε στο πρόχειρο"
       ],
       "Gift code applied": [
         "Εφαρμόστηκε ο κωδικός δώρου"
@@ -12822,11 +12822,17 @@
       "Keys updated": [
         "Τα κλειδιά ενημερώθηκαν"
       ],
+      "Link copied to clipboard": [
+        "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
+      ],
       "Locale updated": [
         "Η εντοπιότητα ενημερώθηκε"
       ],
       "Organization activated": [
         "Ο οργανισμός ενεργοποιήθηκε"
+      ],
+      "Password copied to clipboard": [
+        "Ο κωδικός πρόσβασης αντιγράφηκε στο πρόχειρο"
       ],
       "Password updated": [
         "Ο κωδικός πρόσβασης ενημερώθηκε"
@@ -12881,6 +12887,9 @@
       ],
       "User updated": [
         "Ο χρήστης ενημερώθηκε"
+      ],
+      "Username copied to clipboard": [
+        "Το όνομα χρήστη αντιγράφηκε στο πρόχειρο"
       ],
       "Value copied to clipboard": [
         "Η τιμή αντιγράφηκε στο πρόχειρο"
@@ -13656,9 +13665,6 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Εισαγωγή μέσω ${ PRODUCT_NAMES.EASY_SWITCH }"
-      ],
-      "Import-Export app": [
-        "Εφαρμογή εισαγωγής-εξαγωγής"
       ],
       "Increase your privacy with more addresses": [
         "Αυξήστε το απόρρητό σας με περισσότερες διευθύνσεις"

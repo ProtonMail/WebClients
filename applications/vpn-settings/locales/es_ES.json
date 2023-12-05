@@ -4709,6 +4709,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendario",
+        "${ maximumNumberOfCalendars } calendarios"
+      ],
       "${ n } calendar": [
         "${ n } calendario",
         "${ n } calendarios"
@@ -6541,6 +6545,9 @@
       "Code sent to ${ methodTo }": [
         "Código enviado a ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Copiado al portapapeles"
+      ],
       "Credits added": [
         "Créditos añadidos"
       ],
@@ -6577,11 +6584,17 @@
       "Keys updated": [
         "Claves actualizadas"
       ],
+      "Link copied to clipboard": [
+        "El enlace ha sido copiado al portapapeles."
+      ],
       "Locale updated": [
         "Idioma actualizado"
       ],
       "Organization activated": [
         "Organización activada"
+      ],
+      "Password copied to clipboard": [
+        "Contraseña copiada al portapapeles"
       ],
       "Password updated": [
         "Contraseña actualizada"
@@ -6606,6 +6619,9 @@
       ],
       "User updated": [
         "Usuario actualizado"
+      ],
+      "Username copied to clipboard": [
+        "El nombre de usuario ha sido copiado al portapapeles."
       ],
       "Verification successful": [
         "Verificación completada"

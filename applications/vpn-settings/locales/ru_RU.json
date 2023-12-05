@@ -113,6 +113,9 @@
       "Delete": [
         "Удалить"
       ],
+      "Delete user": [
+        "Удалить пользователя"
+      ],
       "Delete your account": [
         "Удалить учётную запись"
       ],
@@ -383,8 +386,17 @@
       "Sign in": [
         "Войти"
       ],
+      "Sign in with password": [
+        "Войти с помощью пароля"
+      ],
+      "Sign in with SSO": [
+        "Войти с помощью системы единого входа"
+      ],
       "Sign out": [
         "Выйти"
+      ],
+      "sign up for free": [
+        "зарегистрироваться бесплатно"
       ],
       "Signing in": [
         "Выполняется вход"
@@ -486,6 +498,18 @@
       ]
     },
     "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } свой домен",
+        "${ domains } своих доменов",
+        "${ domains } своих домена",
+        "${ domains } своих домена"
+      ],
+      "${ ips } server": [
+        "${ ips } сервер",
+        "${ ips } сервера",
+        "${ ips } серверов",
+        "${ ips } серверов"
+      ],
       "${ price } per dedicated server": [
         "${ price } за выделенный сервер"
       ],
@@ -511,6 +535,12 @@
       ],
       "Disallow unsigned mail": [
         "Запретить почту без подписи"
+      ],
+      "Edit": [
+        "Изменить"
+      ],
+      "Edit address": [
+        "Изменить адрес"
       ],
       "Enable": [
         "Включить"
@@ -652,11 +682,17 @@
       "Save with Cyber Week deals on a high-speed Swiss VPN": [
         "Скидки в Кибернеделе на высокоскоростной швейцарский VPN"
       ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Новогодние скидки на высокоскоростной швейцарский VPN"
+      ],
       "Select your Black Friday offer": [
         "Выберите предложение Черной пятницы"
       ],
       "Select your Cyber Week offer": [
         "Выберите предложение Кибернедели"
+      ],
+      "Select your End of Year offer": [
+        "Выберите Новогоднее предложение"
       ]
     },
     "bf2023: info": {
@@ -736,6 +772,14 @@
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Храните до 200 версий каждого файла сроком до 10 лет."
+      ]
+    },
+    "Billing cycle": {
+      "${ n } month": [
+        "первый ${ n } месяц",
+        "${ n } месяцев",
+        "${ n } месяца",
+        "${ n } месяца"
       ]
     },
     "Billing cycle option": {
@@ -2543,14 +2587,26 @@
       "Checkout": [
         "Оформление покупки"
       ],
+      "Country": [
+        "Страна"
+      ],
       "Create your account": [
         "Создать аккаунт"
+      ],
+      "Members": [
+        "Участники"
       ],
       "Name": [
         "Название"
       ],
       "Select your pricing plan": [
         "Выберите себе ценовой план"
+      ],
+      "Server": [
+        "Сервер"
+      ],
+      "Servers": [
+        "Серверы"
       ],
       "Status": [
         "Состояние"
@@ -2582,6 +2638,12 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } адрес",
+        "${ amountOfAddresses } адреса",
+        "${ amountOfAddresses } адресов",
+        "${ amountOfAddresses } адресов"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
       ],
@@ -2617,6 +2679,12 @@
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } требует минимум 1 выделенный сервер ${ serverPricePerMonth }"
+      ],
+      "${ remainingAddresses.length } more": [
+        "Ещё ${ remainingAddresses.length }",
+        "Ещё ${ remainingAddresses.length }",
+        "Ещё ${ remainingAddresses.length }",
+        "Ещё ${ remainingAddresses.length }"
       ],
       "${ storage } storage": [
         "${ storage } хранилища"
@@ -2795,6 +2863,9 @@
       "Dedicated servers": [
         "Выделенные серверы"
       ],
+      "dedicated servers": [
+        "выделенные серверы"
+      ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа."
       ],
@@ -2897,6 +2968,9 @@
       "Free up some space or contact your administrator.": [
         "Освободите место или свяжитесь с вашим администратором."
       ],
+      "Gateways": [
+        "Шлюзы"
+      ],
       "Get ${ upsellPlanName }": [
         "Получить ${ upsellPlanName }"
       ],
@@ -2914,6 +2988,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
+      ],
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Если вы отмените, ваша подписка ${ planTitle } не будет продлена после истечения её срока действия ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
@@ -2944,6 +3021,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "На следующем шаге вы сможете отправить депозит, используя адрес Bitcoin."
+      ],
+      "inactive": [
+        "неактивно"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Установите конфигурационный файл страны для подключения к случайно выбранному серверу в выбранной стране."
@@ -3152,6 +3232,9 @@
       "Revoke certificate ${ name }": [
         "Отозвать сертификат ${ name }"
       ],
+      "Save ${ percentage }": [
+        "Сэкономьте ${ percentage }"
+      ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Сохраните свой пароль в безопасном месте. Нажмите на значок, чтобы подтвердить правильность ввода пароля."
       ],
@@ -3329,6 +3412,9 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Пополняйте свой счет кредитами, которые вы можете использовать для подписки на новый тариф или продления своего текущего тарифа. Вы получаете один кредит за каждый потраченный ${ i18nCurrency }."
       ],
+      "Tor": [
+        "Tor"
+      ],
       "Total email addresses": [
         "Всего адресов электронной почты"
       ],
@@ -3469,6 +3555,9 @@
       ],
       "Why?": [
         "Почему?"
+      ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Имея зашифрованный адрес ${ BRAND_NAME }, вы можете пользоваться всеми услугами ${ BRAND_NAME }"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Без активации вы не сможете создавать новых пользователей, добавлять адреса существующим пользователям или получать доступ к неконфиденциальным учётным записям."
@@ -3950,6 +4039,9 @@
       "Organization password": [
         "Пароль организации"
       ],
+      "Organization size": [
+        "Размер организации"
+      ],
       "Other amount": [
         "Другая сумма"
       ],
@@ -3997,6 +4089,9 @@
       ],
       "Security code (${ codeName })": [
         "Код безопасности (${ codeName })"
+      ],
+      "Select your plan": [
+        "Выберете себе план"
       ],
       "Start date": [
         "Дата начала"
@@ -4109,6 +4204,9 @@
       "Common sign up issues": [
         "Частые проблемы при регистрации"
       ],
+      "Contact us": [
+        "Связаться с нами"
+      ],
       "Create account": [
         "Создать аккаунт"
       ],
@@ -4196,6 +4294,9 @@
       ]
     },
     "Member action": {
+      "Change password": [
+        "Изменить пароль"
+      ],
       "Delete": [
         "Удалить"
       ],
@@ -4317,6 +4418,12 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } календарь",
+        "${ maximumNumberOfCalendars } календаря",
+        "${ maximumNumberOfCalendars } календарей",
+        "${ maximumNumberOfCalendars } календарей"
+      ],
       "${ n } calendar": [
         "${ n } календарь",
         "${ n } календаря",
@@ -4427,6 +4534,9 @@
       ],
       "99.95% SLA": [
         "99,95% SLA"
+      ],
+      "Ad-blocker and malware protection": [
+        "Блокировщик рекламы и защита от вредоносных программ"
       ],
       "Admin console": [
         "Панель администратора"
@@ -4592,6 +4702,9 @@
       ],
       "Sign in as user": [
         "Войти как пользователь"
+      ],
+      "SMTP submission": [
+        "Отправки через SMTP"
       ],
       "Split tunneling (Android and Windows)": [
         "Раздельное туннелирование (Android и Windows)"
@@ -4825,6 +4938,9 @@
         "Создайте до ${ n } календарей или добавляйте календари друзей, семьи, коллег и организаций",
         "Создайте до ${ n } календарей или добавляйте календари друзей, семьи, коллег и организаций"
       ],
+      "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
+        "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа"
+      ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Защищает конфиденциальность VPN от угроз, передавая ваш интернет-трафик через несколько серверов"
       ],
@@ -4977,6 +5093,12 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "Увеличьте объем хранилища в общей сложности до ${ bundleStorage }"
       ],
+      "Browser extension": [
+        "Расширение для браузера"
+      ],
+      "Central control panel": [
+        "Центральная панель управления"
+      ],
       "Cover more ground with support for 10 custom email domains": [
         "Расширьте возможности с поддержкой 10 пользовательских доменов электронной почты"
       ],
@@ -4985,6 +5107,12 @@
         "Создайте до ${ n } календарей",
         "Создайте до ${ n } календарей",
         "Создайте до ${ n } календарей"
+      ],
+      "Multi-platform support": [
+        "Мультиплатформенная поддержка"
+      ],
+      "Private gateways": [
+        "Частные шлюзы"
       ]
     },
     "Notification": {
@@ -5014,6 +5142,9 @@
       ]
     },
     "Onboarding": {
+      "Welcome to ${ product }": [
+        "Добро пожаловать в ${ product }"
+      ],
       "Welcome to ${ VPN_APP_NAME }": [
         "Добро пожаловать в ${ VPN_APP_NAME }"
       ]
@@ -5308,6 +5439,14 @@
         "По причине смены пароля ваши полномочия администратора организации были ограничены. Указанные действия более не разрешены:"
       ]
     },
+    "Role": {
+      "Admin": [
+        "Администратор"
+      ],
+      "User": [
+        "Пользователь"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "Загрузить файл CSV"
@@ -5328,6 +5467,9 @@
       ]
     },
     "session_recovery:available:action": {
+      "Cancel password reset": [
+        "Отменить сброс пароля"
+      ],
       "Cancel reset": [
         "Отменить сброс"
       ],
@@ -5376,6 +5518,9 @@
         "Это разрешение истекает в течение ${ timeRemaining.inHours } часов",
         "Это разрешение истекает в течение ${ timeRemaining.inHours } часов",
         "Это разрешение истекает в течение ${ timeRemaining.inHours } часов"
+      ],
+      "You can now reset your password": [
+        "Теперь вы можете сбросить свой пароль"
       ]
     },
     "session_recovery:available:link": {
@@ -5388,12 +5533,20 @@
         "Отменить сброс пароля"
       ]
     },
+    "session_recovery:cancellation:notification": {
+      "Password reset cancelled": [
+        "Сброс пароля отменен"
+      ]
+    },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
         "Отменить сброс пароля?"
       ]
     },
     "session_recovery:in_progress:action": {
+      "Cancel password reset": [
+        "Отменить сброс пароля"
+      ],
       "Cancel request": [
         "Отменить запрос"
       ],
@@ -5427,6 +5580,16 @@
     "session_recovery:in_progress:link": {
       "View request": [
         "Посмотреть запрос"
+      ]
+    },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "Получен запрос на сброс пароля"
+      ]
+    },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Применить"
       ]
     },
     "session_recovery:initiation:info": {
@@ -5576,14 +5739,26 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "первый ${ n } месяц",
+        "${ n } месяцев",
+        "${ n } месяца",
+        "${ n } месяца"
+      ],
       "/ month": [
         "/ месяц"
       ],
       "1 year": [
         "1 год"
       ],
+      "15 months": [
+        "15 месяца"
+      ],
       "2 years": [
         "2 года"
+      ],
+      "30 months": [
+        "30 месяца"
       ],
       "Billed at ${ amount } for 1 month": [
         "Оплата ${ amount } за 1 месяц."
@@ -5881,6 +6056,9 @@
       "Code sent to ${ methodTo }": [
         "Код отправлен на ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Скопировано в буфер обмена"
+      ],
       "Credits added": [
         "Кредиты добавлены"
       ],
@@ -5914,11 +6092,17 @@
       "Keys updated": [
         "Ключи обновлены"
       ],
+      "Link copied to clipboard": [
+        "Ссылка скопирована в буфер обмена"
+      ],
       "Locale updated": [
         "Локаль обновлена"
       ],
       "Organization activated": [
         "Организация активирована"
+      ],
+      "Password copied to clipboard": [
+        "Пароль скопирован в буфер обмена"
       ],
       "Password updated": [
         "Пароль обновлён"
@@ -5943,6 +6127,9 @@
       ],
       "User updated": [
         "Пользователь обновлён"
+      ],
+      "Username copied to clipboard": [
+        "Имя пользователя скопировано в буфер обмена"
       ],
       "Verification successful": [
         "Проверка прошла успешно"
@@ -6046,6 +6233,9 @@
       ],
       "Display name": [
         "Отображаемое имя"
+      ],
+      "Email": [
+        "Электронная почта"
       ],
       "Email addresses": [
         "Адреса электронной почты"
@@ -6294,6 +6484,9 @@
       "Find email or username": [
         "Найти адрес электнонной почты или имя пользователя"
       ],
+      "Gateways": [
+        "Шлюзы"
+      ],
       "General": [
         "Основные"
       ],
@@ -6453,6 +6646,9 @@
       "Sign in to join the Beta program": [
         "Войдите, чтобы присоединиться к программе \"Бета\""
       ],
+      "Sign in to your organization": [
+        "Войдите в вашу организацию"
+      ],
       "Sign in with 2FA": [
         "Войти с помощью двухфакторной аутентификации"
       ],
@@ -6513,6 +6709,9 @@
       "Upload CSV file to create multiple accounts": [
         "Загрузите файл CSV, чтобы создать множество пользователей"
       ],
+      "Users": [
+        "Пользователи"
+      ],
       "Verification failed": [
         "Проверка не удалась"
       ],
@@ -6566,6 +6765,9 @@
     "Title header for members table": {
       "Addresses": [
         "Адреса"
+      ],
+      "Email": [
+        "Электронная почта"
       ],
       "Features": [
         "Функции"

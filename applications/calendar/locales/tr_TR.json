@@ -2178,6 +2178,9 @@
       ]
     },
     "Description": {
+      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
+        "Etkinlikleri kategoriye ya da enerji düzeylerine göre renklendirerek verimliliği artırın ve zamanınızı izleyin. Ücretli bir tarifeye geçerek bunun gibi başka pek çok özelliği edinin."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Kişilerin şifresi çözülüyor… Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında dışa aktardığınız tüm kişilerin bulunduğu dosyayı indirebilirsiniz."
       ],
@@ -4348,6 +4351,11 @@
         "Sistem saat diliminiz ${ timezone } olarak değişmiş gibi görünüyor. Saat dilimi ayarınızı güncellemek ister misiniz?"
       ]
     },
+    "info": {
+      "Selected color:": [
+        "Seçilmiş renk:"
+      ]
+    },
     "Info calendar search": {
       "You can either update your search query or close search to go back to calendar views": [
         "Takvim görünümlerine geri dönmek için arama sorgunuzu güncelleyebilir ya da aramayı kapatabilirsiniz."
@@ -5175,6 +5183,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } takvim",
+        "${ maximumNumberOfCalendars } takvim"
+      ],
       "Auto-delete spam and trashed messages": [
         "İstenmeyen ve çöp kutularındaki iletileri otomatik olarak silin"
       ],
@@ -5424,8 +5436,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "Tüm ${ BRAND_NAME } hizmetlerini keşfedin"
       ],
+      "Pick a theme": [
+        "Bir tema seçin"
+      ],
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Tüm ${ BRAND_NAME } hizmetlerine erişmek için sol üstteki uygulama seçiciyi kullanın: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ve ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Temanızı istediğiniz zaman ayarlar bölümünden değiştirebilirsiniz."
       ]
     },
     "Option": {
@@ -6130,6 +6151,9 @@
       "Add your country's public holidays to your calendar.": [
         "Ülkenizin resmi tatillerini takviminize ekleyin."
       ],
+      "Color-coding is here!": [
+        "Renklendirme burada!"
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Yeni arama özelliğimizle aradığınız etkinliği kolayca bulabilirsiniz."
       ],
@@ -6144,6 +6168,9 @@
       ],
       "Search for events": [
         "Etkinlik ara"
+      ],
+      "With customizable event colors, you can color-code the chaos and conquer your day.": [
+        "Özelleştirilebilir etkinlik renklerini kullanarak karmaşayı renklendirebilir ve gününüzü yönetebilirsiniz."
       ]
     },
     "Storage": {
@@ -6459,6 +6486,9 @@
       ],
       "Add participants": [
         "Katılımcı ekle"
+      ],
+      "Add some color to your day": [
+        "Gününüzü renklendirin"
       ],
       "Add to ${ groupCount } group": [
         "${ groupCount } gruba ekle",

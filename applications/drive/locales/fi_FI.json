@@ -379,6 +379,9 @@
       "Load image": [
         "Lataa kuva"
       ],
+      "Loading link": [
+        "Ladataan linkkiä"
+      ],
       "Manage folders": [
         "Hallitse kansioita"
       ],
@@ -4209,6 +4212,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Valitettavasti näyttää siltä, että tiedoston tai joidenkin sen tietojen salausta ei voida purkaa."
       ],
+      "Unknown date": [
+        "Tuntematon päivämäärä"
+      ],
       "Unknown error": [
         "Tuntematon virhe"
       ],
@@ -4389,6 +4395,11 @@
       ],
       "Your previous recovery phrase": [
         "Edellinen palautuslausekkeesi"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Valittu väri:"
       ]
     },
     "Info on errors": {
@@ -5077,6 +5088,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalenteri",
+        "${ maximumNumberOfCalendars } kalenteria"
+      ],
       "Auto-delete spam and trashed messages": [
         "Poista roskakorin ja roskapostin viestit automaattisesti"
       ],
@@ -5383,8 +5398,14 @@
       "Discover all ${ BRAND_NAME } services": [
         "Tutustu kaikkiin ${ BRAND_NAME }-palveluihin"
       ],
+      "Pick a theme": [
+        "Valitse teema"
+      ],
       "Set up your organization": [
         "Määritä organisaatiosi"
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Voit muuttaa teemaasi milloin tahansa asetuksista."
       ]
     },
     "Onboarding Title": {
