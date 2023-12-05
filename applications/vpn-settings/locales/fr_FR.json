@@ -4709,6 +4709,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendrier",
+        "${ maximumNumberOfCalendars } calendriers"
+      ],
       "${ n } calendar": [
         "${ n } calendrier",
         "${ n } calendriers"
@@ -6541,6 +6545,9 @@
       "Code sent to ${ methodTo }": [
         "Le code a été envoyé à ${ methodTo }."
       ],
+      "Copied to clipboard": [
+        "Copié dans le presse-papiers"
+      ],
       "Credits added": [
         "Les crédits ont été ajoutés."
       ],
@@ -6577,11 +6584,17 @@
       "Keys updated": [
         "Les clés ont été mises à jour."
       ],
+      "Link copied to clipboard": [
+        "Le lien est copié dans le presse-papiers."
+      ],
       "Locale updated": [
         "La langue a été mise à jour."
       ],
       "Organization activated": [
         "L'organisation a été activée."
+      ],
+      "Password copied to clipboard": [
+        "Le mot de passe a été copié dans le presse-papiers."
       ],
       "Password updated": [
         "Le mot de passe a été mis à jour."
@@ -6606,6 +6619,9 @@
       ],
       "User updated": [
         "L'utilisateur a été mis à jour."
+      ],
+      "Username copied to clipboard": [
+        "Le nom d'utilisateur a été copié dans le presse-papiers."
       ],
       "Verification successful": [
         "La vérification a abouti."
