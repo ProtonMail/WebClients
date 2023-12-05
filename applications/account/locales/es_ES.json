@@ -380,8 +380,8 @@
       "Download recovery file": [
         "Descargar archivo de recuperación"
       ],
-      "Download the Import-Export app": [
-        "Descargar la aplicación Import-Export"
+      "Download the ${ MAIL_APP_NAME } Export Tool": [
+        "Descargar la herramienta de exportación de ${ MAIL_APP_NAME }"
       ],
       "Edit": [
         "Editar"
@@ -5717,6 +5717,17 @@
         "Parte del contenido de tu calendario no es compatible y no se importará."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Se han detectado claves duplicadas adicionales. Cárgalas individualmente para obtener más información."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clave ${ fingerprint } ya ha sido cargada."
+      ],
+      "Selected color:": [
+        "Color seleccionado:"
+      ]
+    },
     "Info": {
       "${ amountOfAddresses } address": [
         "${ amountOfAddresses } dirección",
@@ -7236,6 +7247,9 @@
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "El mensaje ${ boldDataLocked } ya no se mostrará, pero podrás seguir desbloqueando tus datos en ${ encryptionAndKeysLink }."
       ],
+      "The ${ MAIL_APP_NAME } Export Tool lets you export decrypted emails from your ${ MAIL_APP_NAME } account to your device. You can then view the messages or import them into another email account or email client.": [
+        "La herramienta de exportación de ${ MAIL_APP_NAME } te permite exportar correos descifrados de tu cuenta de ${ MAIL_APP_NAME } a tu dispositivo. Luego podrás ver los mensajes o importarlos a otra cuenta de correo o cliente de correo electrónico."
+      ],
       "The calendar will be removed from your account.": [
         "El calendario se eliminará de tu cuenta."
       ],
@@ -7262,9 +7276,6 @@
       ],
       "The format of your CSV file is incorrect.": [
         "El formato de tu archivo CSV es incorrecto."
-      ],
-      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        "La aplicación Import-Export te permite exportar mensajes para crear copias de seguridad locales y restaurar copias de seguridad anteriores en tu cuenta."
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "El enlace para notificar que no has configurado una cuenta de ${ BRAND_NAME } ha expirado. Pónte en contacto con nuestro equipo de soporte para resolver este problema."
@@ -7841,8 +7852,8 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "No podrás recuperar los datos cifrados después de un restablecimiento de la cuenta utilizando los archivos de recuperación descargados."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
-        "No podrás recuperar datos bloqueados utilizando tus archivos de recuperación descargados. Esto también invalidará la información de recuperación del dispositivo de confianza."
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
+        "No podrás recuperar datos bloqueados utilizando tus archivos de recuperación descargados. Esto también desactivará la recuperación del dispositivo de confianza."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Seguirás conectado incluso después de cerrar el navegador."
@@ -7937,14 +7948,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Tu suscripción está gestionada por Mozilla. Contacta con el soporte de Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Se han detectado claves duplicadas adicionales. Cárgalas individualmente para obtener más información."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clave ${ fingerprint } ya ha sido cargada."
       ]
     },
     "Info - folder colouring feature": {
@@ -9991,6 +9994,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendario",
+        "${ maximumNumberOfCalendars } calendarios"
+      ],
       "${ n } calendar": [
         "${ n } calendario",
         "${ n } calendarios"
@@ -10369,6 +10376,17 @@
         "Gestión de equipos"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para seguir utilizando ${ MAIL_APP_NAME } con las funciones premium, suscríbete y elige el método de pago."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina con ${ last4 }"
@@ -10456,17 +10474,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para seguir utilizando ${ MAIL_APP_NAME } con las funciones premium, suscríbete y elige el método de pago."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -12764,6 +12771,9 @@
       "Code sent to ${ methodTo }": [
         "Código enviado a ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Copiado al portapapeles"
+      ],
       "Credits added": [
         "Créditos añadidos"
       ],
@@ -12787,6 +12797,9 @@
       ],
       "Email updated": [
         "Correo electrónico actualizado"
+      ],
+      "Fingerprint copied to clipboard": [
+        "Huella digital copiada al portapapeles"
       ],
       "Gift code applied": [
         "Código promocional aplicado"
@@ -12815,11 +12828,17 @@
       "Keys updated": [
         "Claves actualizadas"
       ],
+      "Link copied to clipboard": [
+        "El enlace ha sido copiado al portapapeles."
+      ],
       "Locale updated": [
         "Idioma actualizado"
       ],
       "Organization activated": [
         "Organización activada"
+      ],
+      "Password copied to clipboard": [
+        "Contraseña copiada al portapapeles"
       ],
       "Password updated": [
         "Contraseña actualizada"
@@ -12874,6 +12893,9 @@
       ],
       "User updated": [
         "Usuario actualizado"
+      ],
+      "Username copied to clipboard": [
+        "El nombre de usuario ha sido copiado al portapapeles."
       ],
       "Value copied to clipboard": [
         "Valor copiado en el portapapeles"
@@ -13111,6 +13133,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ MAIL_APP_NAME } Export Tool": [
+        "Herramienta de exportación de ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Atajos de teclado de ${ MAIL_APP_NAME }"
@@ -13652,9 +13677,6 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importar con ${ PRODUCT_NAMES.EASY_SWITCH }"
-      ],
-      "Import-Export app": [
-        "Aplicación Import-Export"
       ],
       "Increase your privacy with more addresses": [
         "Protege aún más tu privacidad con más direcciones"

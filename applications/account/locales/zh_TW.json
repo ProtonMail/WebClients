@@ -50,6 +50,9 @@
       "activate": [
         "啟用"
       ],
+      "Activate ${ Name }@pm.me": [
+        "啟用 ${ Name }@pm.me"
+      ],
       "Activate ${ user.Name }@pm.me": [
         "啟用 ${ user.Name }@pm.me"
       ],
@@ -107,6 +110,9 @@
       "Add public holidays": [
         "新增公眾假期"
       ],
+      "Add sieve filter": [
+        "加入 Sieve 篩選器"
+      ],
       "Add user": [
         "加入使用者"
       ],
@@ -136,6 +142,9 @@
       ],
       "Authenticate": [
         "驗證"
+      ],
+      "Authenticating": [
+        "正在驗證"
       ],
       "Back": [
         "返回"
@@ -308,6 +317,9 @@
       "Delete user": [
         "刪除使用者"
       ],
+      "Delete without exporting": [
+        "刪除且略過匯出金鑰"
+      ],
       "Delete your account": [
         "刪除您的帳號"
       ],
@@ -361,9 +373,6 @@
       ],
       "Download recovery file": [
         "下載帳號救援檔案"
-      ],
-      "Download the Import-Export app": [
-        "下載 Import-Export 應用程式"
       ],
       "Edit": [
         "編輯"
@@ -482,6 +491,9 @@
       "Get more folders": [
         "獲得更多資料夾"
       ],
+      "Get more labels": [
+        "取得更多標籤"
+      ],
       "Get more licenses": [
         "取得授權"
       ],
@@ -519,7 +531,7 @@
         "匯入聯絡人"
       ],
       "Import emails": [
-        "匯入電郵"
+        "匯入郵件"
       ],
       "Import from Google": [
         "從 Google 匯入"
@@ -661,6 +673,9 @@
       ],
       "Quote": [
         "引文"
+      ],
+      "Reactivate keys": [
+        "重新啟用金鑰"
       ],
       "Reconnect": [
         "重新連線"
@@ -1379,8 +1394,17 @@
       ]
     },
     "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
       "Includes support for 3 custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "包含對 3 組自訂電子郵件網域、${ addresses } 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "儲存空間於${ BRAND_NAME }共用。"
       ]
     },
     "Billing cycle": {
@@ -2962,6 +2986,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "從 Google 或 Outlook, ${ easySwitchLink } 來匯入你的聯絡人"
       ],
+      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
+        "移除${ MAIL_APP_NAME }頁尾，升級以解鎖付費版功能"
+      ],
       "Track the status and activity of your referrals.": [
         "追蹤您推介的狀態和活動。"
       ],
@@ -3336,6 +3363,9 @@
       "Or": [
         "或"
       ],
+      "With attachment": [
+        "連同附件"
+      ],
       "Without attachment": [
         "不帶附件"
       ]
@@ -3356,6 +3386,9 @@
       ],
       "Enter email address": [
         "輸入電子郵件地址"
+      ],
+      "Type text or keyword": [
+        "鍵入文字或關鍵詞"
       ]
     },
     "email_forwarding_2023: Prompt": {
@@ -3458,6 +3491,12 @@
       "Authentication error.": [
         "認證錯誤。"
       ],
+      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
+        "自動回覆是一項付費功能。請升級至付款帳號以便使用。"
+      ],
+      "Calendar cannot be found": [
+        "找不到行事曆"
+      ],
       "Calendar limit reached": [
         "行事曆數量已達上限"
       ],
@@ -3472,6 +3511,9 @@
       ],
       "Contact signature not verified": [
         "聯絡人簽章尚未驗證"
+      ],
+      "Could not save preference": [
+        "無法儲存偏好設定"
       ],
       "Deselect at least ${ calendarsToFixCount } calendars": [
         "請取消選取至少 ${ calendarsToFixCount } 個行事曆"
@@ -3516,7 +3558,7 @@
         "無法取得使用中工作階段。請 ${ refresh } 或稍後再試。"
       ],
       "Filter with this name already exists": [
-        "以此為名的篩選器已存在"
+        "已經有一個相同名稱的篩選器"
       ],
       "Folder name cannot be empty.": [
         "資料夾名稱不能留空。"
@@ -3571,6 +3613,9 @@
       ],
       "Invalid postal code": [
         "郵遞區號無效"
+      ],
+      "Invalid private key file": [
+        "無效的私鑰檔案"
       ],
       "Invalid Sieve code": [
         "Sieve 代碼無效"
@@ -3667,6 +3712,9 @@
       ],
       "Please set a recovery phone number first": [
         "請先設定一個復原手機號碼"
+      ],
+      "Please set a recovery/notification email first": [
+        "請先設定一個復原/通知電郵"
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "請升級至選用多於 1 位使用者的企業方案，以便享用多使用者支援"
@@ -3795,7 +3843,7 @@
         "此資料夾名稱不適用。請選擇其它名稱。"
       ],
       "This label name is not available. Please choose a different name.": [
-        "此標籤名稱不適用。請選擇其它名稱。"
+        "此標籤名稱無法使用。請選擇其它名稱。"
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "此郵件可能包含某些您目前的瀏覽器無法正確開啟的連結 URL。"
@@ -3816,10 +3864,10 @@
         "未知的付款權仗狀態"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        "上載的檔案不是有效的私鑰。請驗證並再試一次。"
+        "上傳的檔案並非正確的私鑰。請驗證後再試一次。"
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
-        "上載的檔案不是有效的私鑰。請驗證並再試一次。"
+        "上傳的檔案不是有效的私鑰。請確認後再試一次。"
       ],
       "Username must begin with a letter or digit": [
         "使用者名稱的開頭必須為字母或數字"
@@ -3869,6 +3917,9 @@
       "You must set a name": [
         "您必須設定名稱"
       ],
+      "You need to have a custom domain address in order to generate an SMTP submission token.": [
+        "若要產生 SMTP 傳送通證，您需要擁有一個自訂網域位址。"
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "您的帳號或組織有待繳清的繳款單。請儘速繳納所有未付繳款單。"
       ],
@@ -3890,7 +3941,7 @@
         "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
       ],
       "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
-        "上載您的檔案 ${ formattedFilename } 時發生錯誤。僅允許 ICS 檔案格式。"
+        "上傳檔案 ${ formattedFilename } 時發生錯誤。僅允許 ICS 檔案格式。"
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "上載您的檔案時發生錯誤。未選取任何檔案。"
@@ -4051,13 +4102,13 @@
         "讀取您的檔案「${ formattedFilename }」時發生錯誤。檔案格式不正確。"
       ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
+        "上傳您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "上載您的檔案時發生錯誤。未選取任何檔案。"
       ],
       "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
-        "上載一個載有不多於 ${ MAX_NUMBER_OF_USER_ROWS } 個使用者帳號的 CSV 檔案。"
+        "上傳一個少於 ${ MAX_NUMBER_OF_USER_ROWS } 個使用者帳號的 CSV 檔案。"
       ],
       "Your file \"${ formattedFilename }\" is empty.": [
         "您的檔案 \"${ formattedFilename }\" 是空的。"
@@ -4625,7 +4676,7 @@
         "使用實體 U2F 或 FIDO2 金鑰來確保您的身份"
       ],
       "Your two-factor authentication key is ready to use.": [
-        "您的雙重驗證金鑰已準備就緒。"
+        "您的兩步驟驗證金鑰已準備就緒"
       ]
     },
     "fido2: Label": {
@@ -4678,13 +4729,13 @@
         "位元組"
       ],
       "Gigabytes": [
-        "十億位元組"
+        "GB"
       ],
       "Kilobytes": [
         "千位元組"
       ],
       "Megabytes": [
-        "百萬位元組"
+        "MB"
       ],
       "Terabytes": [
         "TB"
@@ -4755,6 +4806,9 @@
       ]
     },
     "FilterSettings": {
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
+        "新增自訂篩選規則以自動執行特定動作，例如加上標籤或封存郵件。"
+      ],
       "Allow:": [
         "允許:"
       ],
@@ -4766,6 +4820,9 @@
       ],
       "Spam:": [
         "垃圾郵件:"
+      ],
+      "Take control over what lands in your inbox by creating the following lists:": [
+        "透過以下控制您的收件匣:"
       ],
       "Take control over what lands in your organization members' inboxes by creating the following lists:": [
         "透過以下控制您組織成員的收件匣:"
@@ -5410,6 +5467,17 @@
         "您的行事曆中有部分內容未受支援，因此不會匯入。"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "金鑰 ${ fingerprint } 已上傳"
+      ],
+      "Selected color:": [
+        "已選取的色彩:"
+      ]
+    },
     "Info": {
       "${ amountOfAddresses } addresses": [
         "${ amountOfAddresses } 個電郵位址"
@@ -5469,7 +5537,7 @@
         "${ inviterEmailJSX }希望與您使用${ PASS_APP_NAME }共享檔案"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        "${ MAIL_APP_NAME } 也可使用單一密碼取代登入密碼和郵箱密碼。如要切換為單一密碼模式，請輸入您想使用的單一密碼，然後按一下「儲存」。"
+        "${ MAIL_APP_NAME } 也可使用單一密碼取代登入密碼和信箱密碼。如要切換為單一密碼模式，請輸入您想使用的單一密碼，然後按一下「儲存」。"
       ],
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
         "${ MAIL_APP_NAME } 支援自訂網域的 DKIM 簽章。如要使用 DKIM 驗證，請在此網域的 DNS 設定中加入以下的 CNAME 記錄。這通常可以在您的網域名稱註冊商提供的控制面板上完成。"
@@ -5487,7 +5555,7 @@
         "${ number } 個伺服器"
       ],
       "${ numberOfNonPrivateKeys } uploaded files are not valid private keys. Please verify and try again.": [
-        "${ numberOfNonPrivateKeys } 個上載的檔案不是有效的私鑰。請驗證並再試一次。"
+        "${ numberOfNonPrivateKeys } 個上傳的檔案並非正確的私鑰。請確認後再試一次"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
@@ -5679,7 +5747,7 @@
         "一切您所作的變更將會消失。"
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "您所有的聯絡人都已匯入，已達 ${ MAX_CONTACTS_PER_USER } 的限制"
+        "所有聯絡人都已匯入，已達 ${ MAX_CONTACTS_PER_USER } 的限制"
       ],
       "Allocated": [
         "已分配"
@@ -5735,8 +5803,17 @@
       "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
         "您確定刪除此行事曆嗎？ 所有已授權的郵件位址將無法繼續存取此行事曆。"
       ],
+      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
+        "您確認刪除此行事曆嗎？所有相關行程將會被刪除。"
+      ],
+      "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
+        "您確定要刪除此行事曆嗎？您之後可再次新增假期行事曆。"
+      ],
       "Are you sure you want to delete this domain?": [
         "您確定要刪除此網域嗎？"
+      ],
+      "Are you sure you want to delete this filter?": [
+        "您確定要刪除此篩選器嗎？"
       ],
       "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
         "您確定您要刪除此資料夾嗎？所有下層資料夾也都將會被刪除。"
@@ -5773,6 +5850,12 @@
       ],
       "Auto-reply is active from the start time to the end time.": [
         "由開始時間直到結束時間啟用自動回覆。"
+      ],
+      "Auto-reply is active until you turn it off.": [
+        "啟用自動回覆，直到您自行關閉。"
+      ],
+      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
+        "自動回覆在您選取的日期中的選定時段內總是啟用。"
       ],
       "Available on macOS, Windows, and Linux.": [
         "可以在 macOS, Windows, 和 Linux上使用"
@@ -5976,7 +6059,7 @@
         "降級將中斷任何與付費 ${ VPN_APP_NAME } 伺服器的連線。"
       ],
       "Download our CSV template, fill in the user details, and then upload your completed CSV file to create accounts for these users.": [
-        "下載我們的 CSV 範本，依序填入使用者相關詳細資料，接著上載您完成的 CSV 檔案，即可創建這些使用者的帳號。"
+        "下載我們的 CSV 範本，依序填入使用者相關詳細資料，接著上傳您完成的 CSV 檔案，即可創建這些使用者的帳號。"
       ],
       "Download recovery file": [
         "下載帳號救援檔案"
@@ -6022,6 +6105,9 @@
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "帶有此標籤的電郵不會被刪除，仍可在對應的資料夾中找到。"
+      ],
+      "Enable this address to join this calendar": [
+        "啟用此地址來加入這個行事曆"
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "若外部服務支援，啟用TLS或SSL。"
@@ -6155,6 +6241,9 @@
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "若您認為箇中有誤，請聯絡我們：${ contactLink }。"
       ],
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "若您取消，您的${ planTitle }訂閱將會於${ expiryDate }到期"
+      ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
       ],
@@ -6216,13 +6305,13 @@
         "匯入進行中"
       ],
       "Import mailbox": [
-        "匯入郵箱"
+        "匯入信箱"
       ],
       "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
         "從其它服務匯入您的電子郵件、行事曆與通訊錄至 ${ BRAND_NAME }。"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "重要：請確定您將復原代碼儲存到其它地方了。否則在您遺失您的兩步驟驗證裝置時，您也會永久失去對您的帳號的存取權。"
+        "重要：請確認你已將復原代碼儲存到其它地方。否則在你遺失兩步驟驗證裝置時，你將會永久失去你的帳號"
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "重要提示：一些註冊機構不接受 (相反某些則要求) CNAME 數值以英文句號作結尾。如果您的註冊機構不接受您的 CNAME 記錄，請刪除每個 CNAME 數值結尾的英文句號，然後再試一次。"
@@ -6317,6 +6406,9 @@
       "Learn more": [
         "瞭解詳情"
       ],
+      "learn more about Sieve programming language": [
+        "了解更多有關 Sieve 程式語言"
+      ],
       "Left to Right": [
         "由左至右"
       ],
@@ -6337,6 +6429,9 @@
       ],
       "Link type": [
         "連結類型"
+      ],
+      "Loaded content is being protected by our proxy when tracker protection is activated.": [
+        "開啟追蹤程式保護功能，代理伺服器會保護已載入的內容。"
       ],
       "Loading": [
         "正在載入"
@@ -6395,6 +6490,9 @@
       "New": [
         "加入"
       ],
+      "No account keys exist": [
+        "無帳號金鑰存在"
+      ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "沒有設定任何帳號恢復手段，您有可能會無法存取您的資料"
       ],
@@ -6435,7 +6533,10 @@
         "找不到相符的結果"
       ],
       "Not a valid URL": [
-        "非有效的圖像網址"
+        "無效的網址"
+      ],
+      "Not yet available in our Android mobile app.": [
+        "尚不支援 Android 應用程式。"
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "不是您的裝置？請使用隱私瀏覽視窗登入並在完成後關閉它。${ learnMore }"
@@ -6457,6 +6558,9 @@
       ],
       "One account. All ${ BRAND_NAME } services.": [
         "單一帳號用於所有 ${ BRAND_NAME } 服務。"
+      ],
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "當您使用 PGP 傳送郵件給非 ${ BRAND_NAME } 收件人時，才需變更下列設定。"
       ],
       "Only you can see the labels.": [
         "只有您可以看到標籤。"
@@ -6517,6 +6621,9 @@
       ],
       "per month, billed every 24 months": [
         "每月，每24個月收費"
+      ],
+      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
+        "若外寄郵件已被簽署，PGP 用戶端很可能會自動偵測您的 PGP 金鑰。"
       ],
       "Phone number": [
         "手機號碼"
@@ -6662,6 +6769,9 @@
       "Remember to share the user's sign in details with them.": [
         "請記得與使用者分享其登入詳細資料。"
       ],
+      "Remove one of your calendars to join this one": [
+        "移除其中一個行事曆以加入目前這個"
+      ],
       "Report link expired": [
         "回報逾期連結"
       ],
@@ -6785,6 +6895,9 @@
       "Storage used by this user": [
         "儲存空間已被這個使用者所使用"
       ],
+      "Store this password and file in a safe place. You’ll need them again to import your key.": [
+        "將此密碼以及檔案存放在另一處安全的地方。日後匯入金鑰時，就得派上用場。"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "提交單筆存款時，可使用以下位址或者掃描 QR 代碼。該筆存入款項在確認後，就會顯示在您的帳號裡。"
       ],
@@ -6854,9 +6967,6 @@
       "The format of your CSV file is incorrect.": [
         "您的 CSV 檔案格式不正確。"
       ],
-      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        "Import-Export 應用程式讓您能夠匯出訊息到您本機儲存，也可以讓您匯入先前的備份到您的帳號。"
-      ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "您回報未設定${ BRAND_NAME }帳號的訊息已過期。請與我們聯絡以解決問題。"
       ],
@@ -6914,6 +7024,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此連結可能是同形異義字攻擊，請核對此連結是否是您想要造訪的連結，否則請不要開啟。"
       ],
+      "This token won’t be available after you close this window, and you should not share it with anyone.": [
+        "這個權杖在您關閉這個視窗後將無法使用，而且您不該將它分享給任何人。"
+      ],
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "此取消訂閱連結已過期。請開啟來自此郵寄清單的一封較近期的電子郵件。"
       ],
@@ -6958,6 +7071,9 @@
       ],
       "to ${ product } Business": [
         "至${ product }商業版"
+      ],
+      "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
+        "為避免資料遺失，最好只刪除您知道的檔案，或是匯出複本。"
       ],
       "To cancel your subscription, please reach out to us.": [
         "要取消您的訂閱，請聯絡我們。"
@@ -7007,6 +7123,9 @@
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "若要使用 ${ toAppName }，您需要一個 ${ MAIL_APP_NAME } 電子郵件位址。"
       ],
+      "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
+        "正常運作情況下，每一個篩選器必須包含至少一個名稱及一個有效的 Sieve 程序檔。您可查看 ${ link }。"
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "為您的帳號儲值，以便訂閱新方案或為您目前的方案續期。每儲值一${ i18nCurrency }，帳號餘額將會增加一單位（這些貨幣對餘額來說是一樣的）。"
       ],
@@ -7035,10 +7154,10 @@
         "兩步驟驗證已啟用"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "雙重密碼模式需要兩個密碼：一個用來登入您的帳號，另一個用來解密您的郵件信箱。(進階)"
+        "雙重密碼模式需要兩個密碼：一個用來登入您的帳號，另一個用來解密您的信箱 (進階)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "雙重密碼模式即是使用者使用不同的密碼作登入和解密郵箱。在某些情況下，這可能稍微提高安全性，但我們建議大部份使用者使用單一密碼模式。如要切換為雙重密碼模式，請首先設定登入密碼，然後設定郵箱密碼。"
+        "雙重密碼模式即是使用者使用不同的密碼作登入和解密信箱。在某些情況下，這可能稍微提高安全性，但我們建議大部份使用者使用單一密碼模式。如要切換為雙重密碼模式，請首先設定登入密碼，然後設定信箱密碼。"
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "無法驗證復原檔案的簽章。請聯絡我們。"
@@ -7098,7 +7217,7 @@
         "上傳完成的CSV檔以創建"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        "上載的檔案不是有效的私鑰。請驗證並再試一次。"
+        "上傳的檔案並非正確的私鑰。請驗證後再試一次"
       ],
       "URL link": [
         "URL 連結"
@@ -7222,6 +7341,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "我們正進行您現有方案升等，除了晉級方案維持原價，還提供更多服務。在系統更新階段時，您可能無法做任何變更。稍後作業完成，我們會立即電郵通知您。"
+      ],
+      "When disabled, this prevents image files from loading on your device without your knowledge.": [
+        "功能停用時，即可防止在您不知情的狀況下，圖像檔案意外載入至您的裝置。"
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "當您啟用通知功能後，接著您的 ${ MAIL_APP_NAME } 帳號中收到新郵件訊息時，我們會傳送提醒函至您設定的復原電郵位址。"
@@ -7364,11 +7486,20 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "您的 PayPal 帳號須先連結信用卡或銀行賬戶。如果您的 PayPal 帳號沒有，請按一下以下按鈕。"
       ],
+      "You need to have an active personal calendar to import your events from ICS.": [
+        "您需要有使用中的個人行事曆才可以從 ICS 匯入您的行程。"
+      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "您已使用 ${ spaceDisplayed }% 儲存空間。${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "您的儲存空間容量已達到 100%。您無法傳送或接收新的電郵。${ freeUpMessage }${ upgradeLink }"
+      ],
+      "You should export a backup of this key in case you need to restore data it encrypted.": [
+        "您最好匯出一份此金鑰的備份，以備用於還原加密的資料。"
+      ],
+      "You still need to reply to invitations for the host to see your response.": [
+        "您仍需回覆邀請以便主辦者了解您的回覆。"
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "登入後，您將會被重新導向至 ${ destination }。"
@@ -7384,9 +7515,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "您無法使用下載的復原檔案進行鎖定資料復原。"
-      ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
-        "您無法使用下載的復原檔案進行鎖定資料復原。此舉亦將廢止原受信任裝置的復原資訊。"
       ],
       "You'll stay signed in even after you close the browser.": [
         "即使關閉瀏覽器，您仍會維持登入狀態。"
@@ -7477,14 +7605,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "您的訂閱是由 Mozilla 管理。請聯絡 Mozilla 支援。"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "偵測到其它重複的金鑰。請單獨上載以取得更多資訊。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "金鑰 ${ fingerprint } 已上載"
       ]
     },
     "Info - folder colouring feature": {
@@ -7613,6 +7733,9 @@
       ],
       "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
         "正在為您的電郵位址生成加密金鑰。這可能需時數分鐘，您的瀏覽器在此期間可能會暫時停止回應。"
+      ],
+      "You can generate a new encryption key if you think your previous key has been compromised.": [
+        "若您認為之前的金鑰已外洩，您可以生成一組全新的加密金鑰。"
       ]
     },
     "Key state badge": {
@@ -7639,7 +7762,7 @@
         "加入加密"
       ],
       "Add expiration time": [
-        "加入到期時間"
+        "新增限時"
       ],
       "Apply / open": [
         "套用 / 開啟"
@@ -7702,7 +7825,7 @@
         "加上標籤..."
       ],
       "Load embedded images": [
-        "載入內崁圖像"
+        "載入內嵌圖片"
       ],
       "Load remote content": [
         "載入遠端內容"
@@ -7732,7 +7855,7 @@
         "移動到收件匣"
       ],
       "Move to Spam": [
-        "移動到垃圾郵件"
+        "移至垃圾郵件"
       ],
       "Move to Trash": [
         "移至垃圾桶"
@@ -7747,7 +7870,7 @@
         "撰寫"
       ],
       "Open command panel": [
-        "開啟命令面板"
+        "開啟指令面板"
       ],
       "Open next message": [
         "開啟下一則訊息"
@@ -7771,7 +7894,7 @@
         "搜尋"
       ],
       "Select / unselect": [
-        "選擇 / 反選"
+        "選擇 / 反向選擇"
       ],
       "Select / unselect all": [
         "全選 / 全不選"
@@ -7840,6 +7963,12 @@
       "Make primary": [
         "設為主要"
       ],
+      "Mark compromised": [
+        "標記為已洩漏"
+      ],
+      "Mark not compromised": [
+        "取消標記為已洩漏"
+      ],
       "Mark not obsolete": [
         "取消標記為已過時"
       ],
@@ -7870,6 +7999,9 @@
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } 位址"
+      ],
+      "${ MAIL_APP_NAME } footer": [
+        "${ MAIL_APP_NAME } 頁尾"
       ],
       "${ n } months": [
         "${ n } 月"
@@ -8079,7 +8211,7 @@
         "確認登入密碼"
       ],
       "Confirm mailbox password": [
-        "確認郵箱密碼"
+        "確認信箱密碼"
       ],
       "Confirm new password": [
         "確認新密碼"
@@ -8095,6 +8227,9 @@
       ],
       "Conversation grouping": [
         "會話群組"
+      ],
+      "Conversations per page": [
+        "每頁的對話"
       ],
       "Copy": [
         "複製"
@@ -8134,6 +8269,9 @@
       ],
       "Date format": [
         "日期格式"
+      ],
+      "Days of the week": [
+        "星期"
       ],
       "Default language": [
         "預設語言"
@@ -8375,6 +8513,9 @@
       "Message": [
         "郵件"
       ],
+      "Messages per page": [
+        "每頁訊息"
+      ],
       "Moderate NAT": [
         "中等 NAT"
       ],
@@ -8409,7 +8550,7 @@
         "新的登入密碼"
       ],
       "New mailbox password": [
-        "新的郵箱密碼"
+        "新的信箱密碼"
       ],
       "New organization password": [
         "新的組織密碼"
@@ -8505,7 +8646,7 @@
         "請加入以下的 TXT 記錄。請注意：DNS 記錄可能需時數小時更新。"
       ],
       "Please select files to upload": [
-        "請選取要上載的檔案"
+        "請選取要上傳的檔案"
       ],
       "Please share any feedback to help us improve.": [
         "請提供任何意見回饋以協助我們改進。"
@@ -8674,6 +8815,9 @@
       ],
       "URL": [
         "網址"
+      ],
+      "Use folder colors": [
+        "使用資料夾顏色"
       ],
       "User": [
         "使用者"
@@ -8874,6 +9018,12 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } 已建立"
+      ],
+      "${ label.Name } updated": [
+        "${ label.Name } 已更新"
+      ],
+      "Preference saved": [
+        "偏好設定已儲存"
       ]
     },
     "Limit of calendars reached": {
@@ -8914,6 +9064,9 @@
       ],
       "Contact us": [
         "聯絡我們"
+      ],
+      "create a ticket": [
+        "新增申請"
       ],
       "Create account": [
         "創建帳號"
@@ -9448,6 +9601,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendars": [
+        "${ maximumNumberOfCalendars } 個行事曆"
+      ],
       "${ n } calendars": [
         "${ n } 個行事曆"
       ],
@@ -9804,6 +9960,17 @@
         "團隊管理"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "您的試用期結束於 ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 後四碼 ${ last4 }"
@@ -9874,6 +10041,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "為您的日常通訊提供進階功能的安全電子郵件。"
       ],
+      "Set automatic replies to inform senders you are out of the office or unable to respond.": [
+        "設定自動回覆，可告知聯絡人您不在辦公室或暫時無法親自回應。"
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "為具有特定安全需求的大型組織量身訂作的解決方案"
       ],
@@ -9888,17 +10058,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的計畫中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "您的試用期結束於 ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10259,6 +10418,9 @@
       "IP Address copied to clipboard": [
         "IP地址已復製到剪貼簿。"
       ],
+      "Key with fingerprint ${ fp } has been deleted.": [
+        "指紋為 ${ fp } 的金鑰已刪除。"
+      ],
       "Link copied to clipboard": [
         "連結已複製到剪貼簿"
       ],
@@ -10403,6 +10565,9 @@
       "19th of the month": [
         "每月19日"
       ],
+      "1st of the month": [
+        "每月1日"
+      ],
       "20th of the month": [
         "每月20日"
       ],
@@ -10433,11 +10598,35 @@
       "29th of the month": [
         "每月29日"
       ],
+      "2nd of the month": [
+        "每月2日"
+      ],
       "30th of the month": [
         "每月30日"
       ],
       "31st of the month": [
         "每月31日"
+      ],
+      "3rd of the month": [
+        "每月3日"
+      ],
+      "4th of the month": [
+        "每月4日"
+      ],
+      "5th of the month": [
+        "每月5日"
+      ],
+      "6th of the month": [
+        "每月6日"
+      ],
+      "7th of the month": [
+        "每月7日"
+      ],
+      "8th of the month": [
+        "每月8日"
+      ],
+      "9th of the month": [
+        "每月9日"
       ],
       "Add to existing group": [
         "加入至現有群組"
@@ -10486,6 +10675,9 @@
       ],
       "No parent folder": [
         "無上層資料夾"
+      ],
+      "Normal": [
+        "標準"
       ],
       "Off": [
         "關閉"
@@ -10589,6 +10781,12 @@
       ]
     },
     "OS compatibility": {
+      ".deb (for Debian/Ubuntu)": [
+        ".deb（適用於 Debian/Ubuntu）"
+      ],
+      ".dmg (10.12 or later)": [
+        ".dmg（10.12 或更新）"
+      ],
       ".exe (64-bit)": [
         ".exe（64 位元）"
       ],
@@ -10863,6 +11061,11 @@
       ],
       "New credit/debit card": [
         "加入信用卡/扣帳卡"
+      ]
+    },
+    "Personal calendar section description": {
+      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
+        "創建行事曆以隨時掌握您的日程安排，同時確保您的資料安全無虞。"
       ]
     },
     "PGP key warning": {
@@ -11177,7 +11380,7 @@
         "上載"
       ],
       "Upload additional files": [
-        "上載額外的檔案"
+        "上傳額外的檔案"
       ]
     },
     "Select search results": {
@@ -11235,10 +11438,10 @@
         "若您沒有請求重設密碼，請立刻取消請求。"
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
-        "重設密碼請求已核准 (${ user.Email })。您可以在${ timeRemaining.inDays }天內重設您的密碼。"
+        "重設密碼請求已批准 (${ user.Email })。您可以在${ timeRemaining.inDays }天內重設您的密碼。"
       ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
-        "重設密碼請求已核准 (${ user.Email })。您可以在${ timeRemaining.inHours }小時內重設您的密碼。"
+        "重設密碼請求已批准 (${ user.Email })。您可以在${ timeRemaining.inHours }小時內重設您的密碼。"
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "請前往已登入的裝置（在發起請求的工作階段中）變更您的密碼。"
@@ -11504,7 +11707,15 @@
         "未能更新設定"
       ]
     },
+    "Settings/filters": {
+      "Filters": [
+        "篩選器"
+      ]
+    },
     "Settings/filters - table": {
+      "Action": [
+        "操作"
+      ],
       "Name": [
         "名稱"
       ],
@@ -12038,8 +12249,14 @@
       "Code sent to ${ methodTo }": [
         "驗證碼已發送至 ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "已複製到剪貼簿"
+      ],
       "Credits added": [
         "餘額已增加"
+      ],
+      "Default calendar updated": [
+        "預設行事曆已更新"
       ],
       "Display name updated": [
         "已更新顯示名稱"
@@ -12058,6 +12275,9 @@
       ],
       "Email updated": [
         "電郵已更新"
+      ],
+      "Fingerprint copied to clipboard": [
+        "指紋已複製到剪貼簿"
       ],
       "Gift code applied": [
         "禮品代碼已套用"
@@ -12086,11 +12306,17 @@
       "Keys updated": [
         "金鑰已更新"
       ],
+      "Link copied to clipboard": [
+        "已複製連結到剪貼簿"
+      ],
       "Locale updated": [
         "語言設定已更新"
       ],
       "Organization activated": [
         "組織機構已啟用"
+      ],
+      "Password copied to clipboard": [
+        "密碼以複製到剪貼簿"
       ],
       "Password updated": [
         "密碼已更新"
@@ -12107,8 +12333,14 @@
       "Phone number updated": [
         "手機號碼已更新"
       ],
+      "Port copied to clipboard": [
+        "通訊埠已複製到剪貼簿"
+      ],
       "Preference saved": [
         "設定已儲存"
+      ],
+      "Premium address created": [
+        "Premium 電郵位址已建立"
       ],
       "Resuming import": [
         "正在恢復匯入"
@@ -12128,6 +12360,9 @@
       "SPF value copied to clipboard": [
         "SFP 字串已複製到剪貼簿"
       ],
+      "Token copied to clipboard": [
+        "通證已複製到剪貼簿"
+      ],
       "Undo in progress": [
         "復原進行中"
       ],
@@ -12136,6 +12371,9 @@
       ],
       "User updated": [
         "使用者已更新"
+      ],
+      "Username copied to clipboard": [
+        "已複製使用者名稱到剪貼簿"
       ],
       "Value copied to clipboard": [
         "值已複製到剪貼簿"
@@ -12194,6 +12432,9 @@
       "Creating config file for ${ serverName }": [
         "創建組態檔供用於伺服器 ${ serverName }"
       ],
+      "Filter removed": [
+        "已移除篩選器"
+      ],
       "Preference updated": [
         "偏好設定已更新"
       ]
@@ -12209,6 +12450,11 @@
     "Suffix for price": {
       "per month": [
         "每月"
+      ]
+    },
+    "Summary of errors during export calendar": {
+      "Details about events that couldn't be exported": [
+        "無法匯出行程的詳細資訊"
       ]
     },
     "summer2023: Deal details": {
@@ -12316,6 +12562,11 @@
         "vCard 欄位"
       ]
     },
+    "TableRow": {
+      "No SMTP tokens found": [
+        "找不到 SMTP 權杖"
+      ]
+    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours }小時"
@@ -12392,6 +12643,9 @@
       "Action": [
         "動作"
       ],
+      "Activate @pm.me": [
+        "啟用 @pm.me"
+      ],
       "Activate account and generate keys": [
         "啟用帳戶並生成金鑰"
       ],
@@ -12427,6 +12681,9 @@
       ],
       "Add servers": [
         "新增伺服器"
+      ],
+      "Add Sieve filter": [
+        "加入 Sieve 篩選器"
       ],
       "Add to allow list": [
         "新增至允許清單"
@@ -12487,6 +12744,9 @@
       ],
       "Billing cycle": [
         "繳款單週期"
+      ],
+      "Bridge for ${ platform }": [
+        "適用於 ${ platform } 的 Bridge"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "取消 ${ MAIL_SHORT_APP_NAME } 訂閱"
@@ -12636,7 +12896,7 @@
         "日期"
       ],
       "Day theme": [
-        "白天佈景主題"
+        "日間佈景主題"
       ],
       "Decrypt key": [
         "解密金鑰"
@@ -12727,6 +12987,9 @@
       ],
       "Edit servers": [
         "編輯伺服器"
+      ],
+      "Edit Sieve filter": [
+        "編輯 Sieve 篩選器"
       ],
       "Edit the list of servers of the gateway": [
         "編輯閘道器伺服器清單"
@@ -12868,9 +13131,6 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "使用${ PRODUCT_NAMES.EASY_SWITCH }匯入"
-      ],
-      "Import-Export app": [
-        "Import-Export 應用程式"
       ],
       "Increase your privacy with more addresses": [
         "使用更多地址增加您的隱私"
@@ -13085,6 +13345,9 @@
       "Session management": [
         "工作階段管理"
       ],
+      "Set a display name": [
+        "設定顯示名稱"
+      ],
       "Set new password": [
         "設定新密碼"
       ],
@@ -13093,6 +13356,9 @@
       ],
       "Set organization password": [
         "設定組織密碼"
+      ],
+      "Set up a recovery method": [
+        "設定復原方法"
       ],
       "Set up forwarding": [
         "設定郵件轉寄"
@@ -13268,6 +13534,9 @@
       "Your recovery status": [
         "你的復原狀態"
       ],
+      "Your SMTP token": [
+        "您的 SMTP 通證"
+      ],
       "Your subscriptions": [
         "您的訂購授權"
       ],
@@ -13424,6 +13693,9 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail 會自動將一些電子郵件分類，例如促銷內容或社交網路。您可以自行決定要將這些郵件匯入的地方。"
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "將同一對話中的電郵在 [收件匣] 分組顯示，還是獨立顯示。"
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "若您已購買或從我們的支援團隊收到禮品代碼，您可在此輸入。"
       ],
@@ -13432,6 +13704,9 @@
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
         "在 [已傳送] 或 [草稿] 資料夾中的郵件將繼續保留原處，即使您將郵件移動至另一個資料夾。"
+      ],
+      "See number of unread messages in the tab icon": [
+        "於分頁圖示查看未讀的訊息"
       ],
       "Set how your list of messages looks like by default.": [
         "設定電郵清單的預設外觀。"
@@ -13447,6 +13722,9 @@
       ],
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "郵件列表裡顯示每一寄件者的圖像。如無可用圖像，則將顯示寄件者的姓名首字母。"
+      ],
+      "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
+        "此金鑰產生的簽章被視作無效，不能用於加密"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "系統子資料夾將在 ${ MAIL_APP_NAME } 中顯示成獨立資料夾"
@@ -13481,6 +13759,9 @@
       "This feature is only available on Beta": [
         "此功能僅在測試版提供"
       ],
+      "This key cannot be used for encryption": [
+        "此金鑰不能用於加密"
+      ],
       "This key is encrypted with an old password": [
         "此金鑰以舊密碼加密"
       ],
@@ -13507,6 +13788,12 @@
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "當您為對話中的郵件加入標籤，該標籤將自動套用至日後在該會話中傳送或接收的所有郵件。"
+      ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "當您按下一則連結時，此防釣魚功能將詢問您以確認網頁的 URL。"
+      ],
+      "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
+        "當您將電郵移動至垃圾信件時，您將會自動地從寄件者的傳送清單中移除。"
       ],
       "You have locally decrypted this key": [
         "您已在本機解密此金鑰"
@@ -13820,13 +14107,13 @@
         "每 ${ interval } 個星期的${ multipleDaysString }，${ untilString }"
       ],
       "Every ${ interval } weeks on all days": [
-        "每${ interval }個星期，週中每一日"
+        "每${ interval }個星期，整週"
       ],
       "Every ${ interval } weeks on all days, ${ timesString }": [
-        "每 ${ interval } 個星期，週中每一日，${ timesString }"
+        "每 ${ interval } 個星期，整周，${ timesString }"
       ],
       "Every ${ interval } weeks on all days, ${ untilString }": [
-        "每 ${ interval } 個星期，週中每一日，${ untilString }"
+        "每 ${ interval } 個星期，整週，${ untilString }"
       ],
       "Every ${ interval } weeks on Friday": [
         "每 ${ interval } 個星期的週五"

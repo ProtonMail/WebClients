@@ -114,6 +114,9 @@
       "Apply": [
         "应用"
       ],
+      "Apply to existing messages": [
+        "应用于现有邮件"
+      ],
       "Attach screenshot(s)": [
         "添加截图"
       ],
@@ -339,9 +342,6 @@
       "Download recovery file": [
         "下载恢复文件"
       ],
-      "Download the Import-Export app": [
-        "下载导入导出应用"
-      ],
       "Edit": [
         "更改"
       ],
@@ -395,6 +395,9 @@
       ],
       "Export key": [
         "导出密钥"
+      ],
+      "Export key before deleting": [
+        "删除前导出密钥"
       ],
       "Extend": [
         "续期"
@@ -1236,11 +1239,17 @@
       "High speed streaming": [
         "高速看视频"
       ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "高级 ${ DRIVE_SHORT_APP_NAME } 账户"
+      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "高级 ${ MAIL_SHORT_APP_NAME } 与 ${ CALENDAR_SHORT_APP_NAME } 账户"
       ],
       "Premium ${ VPN_SHORT_APP_NAME }": [
         "高级 ${ VPN_SHORT_APP_NAME } 账户"
+      ],
+      "Premium Password Manager": [
+        "高级密码管理器"
       ]
     },
     "bf2023: Footer": {
@@ -3141,6 +3150,11 @@
         "您已取消订阅 ${ categoriesJsx } 电子邮件。"
       ]
     },
+    "Email Unsubscribe Categories": {
+      "${ allCategoryTitlesExceptTheLastOne } and ${ lastCategoryTitle }": [
+        "${ allCategoryTitlesExceptTheLastOne } 和 ${ lastCategoryTitle }"
+      ]
+    },
     "Email verification": {
       "Verification email sent to ${ address }": [
         "验证邮件已发至 ${ address }"
@@ -3181,6 +3195,9 @@
       ],
       "With attachment": [
         "含有附件"
+      ],
+      "Without attachment": [
+        "不含附件"
       ]
     },
     "email_forwarding_2023: Link": {
@@ -3281,6 +3298,9 @@
       ],
       "Contact signature not verified": [
         "未验证联系人签名"
+      ],
+      "Could not save preference": [
+        "设置保存失败"
       ],
       "Deselect at least ${ calendarsToFixCount } calendars": [
         "至少取消选择 ${ calendarsToFixCount } 个日历"
@@ -3893,6 +3913,9 @@
       ]
     },
     "Error message, recovery": {
+      "Contact ${ BRAND_NAME }": [
+        "联系人 ${ BRAND_NAME }"
+      ],
       "Please ${ signIn } to resend a recovery email verification request.": [
         "请${ signIn }后重新发送验证邮件。"
       ],
@@ -4065,6 +4088,9 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "高级 ${ DRIVE_SHORT_APP_NAME } 账户"
+      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "高级 ${ MAIL_SHORT_APP_NAME } 与 ${ CALENDAR_SHORT_APP_NAME } 账户"
       ],
@@ -4977,6 +5003,14 @@
         "您的日程中有部分内容我们不支持，这些日程将不会被导入。"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "检测到多余的重复密钥，请单独上传以获取更多信息。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "密钥 ${ fingerprint } 已上传"
+      ]
+    },
     "Info": {
       "${ amountOfAddresses } addresses": [
         "${ amountOfAddresses } 个地址"
@@ -5452,6 +5486,9 @@
       "Create in": [
         "创建于"
       ],
+      "Create your first Gateway": [
+        "创建您的第一个网关"
+      ],
       "Creating gateway servers: ${ serverNumber } / ${ total }": [
         "创建网关服务器：${ serverNumber }/${ total }"
       ],
@@ -5715,6 +5752,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "如有异议，请点击${ contactLink }联系我们。"
+      ],
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "如果您取消，您的 ${ planTitle } 订阅在 ${ expiryDate } 到期后将不会续订。"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
@@ -6223,6 +6263,9 @@
       "Right to Left": [
         "从右到左"
       ],
+      "Save ${ percentage }": [
+        "节省 ${ percentage }"
+      ],
       "Save your password somewhere safe.": [
         "将您的密码保存到安全的地方。"
       ],
@@ -6396,9 +6439,6 @@
       ],
       "The format of your CSV file is incorrect.": [
         "您的 csv 文件格式错误。"
-      ],
-      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        "Import-Export 应用程序能让您对邮件进行本地备份，以及恢复先前的备份到您的账户。"
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "用于报告您未设置 ${ BRAND_NAME } 账户的链接已过期。请联系我们的支持团队来解决此问题。"
@@ -6937,9 +6977,6 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "重置密码时您将无法再通过此前下载的恢复文件解锁账户数据。"
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
-        "重置密码时您将无法再通过此前下载的恢复文件解锁账户数据。此操作还会使所有可信设备一并失效。"
-      ],
       "You'll stay signed in even after you close the browser.": [
         "即使您关闭浏览器也不会退出账户。"
       ],
@@ -7029,14 +7066,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "您的账户是由 Mozilla 管理的，请联系 Mozilla 获取帮助。"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "检测到多余的重复密钥，请单独上传以获取更多信息。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "密钥 ${ fingerprint } 已上传"
       ]
     },
     "Info - folder colouring feature": {
@@ -7369,11 +7398,17 @@
       "Enable encryption with this key": [
         "允许使用此密钥加密"
       ],
+      "Enable signature verification and encryption with this key": [
+        "允许使用此密钥加密及验证数字签名"
+      ],
       "Export private key": [
         "导出私钥"
       ],
       "Export public key": [
         "导出公钥"
+      ],
+      "Mark compromised": [
+        "标为已泄露"
       ],
       "Mark not compromised": [
         "标为未泄露"
@@ -7595,6 +7630,9 @@
       "Composer": [
         "编辑窗"
       ],
+      "Composer default font/size": [
+        "编辑窗默认字体与字号"
+      ],
       "Composer text direction": [
         "编辑窗文字方向"
       ],
@@ -7630,6 +7668,9 @@
       ],
       "Conversation grouping": [
         "会话分组"
+      ],
+      "Conversations per page": [
+        "每页会话数量"
       ],
       "Copy": [
         "复制"
@@ -8868,6 +8909,9 @@
       "Get ${ BRAND_NAME } for free": [
         "免费获得 ${ BRAND_NAME }"
       ],
+      "Get ${ mostPopularShortPlan.title }": [
+        "开通 ${ mostPopularShortPlan.title }"
+      ],
       "Get ${ planName }": [
         "开通 ${ planName }"
       ],
@@ -8891,6 +8935,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendars": [
+        "${ maximumNumberOfCalendars } 个日历"
+      ],
       "${ n } calendars": [
         "${ n } 个日历"
       ],
@@ -9205,6 +9252,17 @@
         "团队管理"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "您的体验期将于 ${ formattedPeriodEndDate } 结束"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 在${ last4 } 结束"
@@ -9279,14 +9337,6 @@
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "共 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
@@ -9352,6 +9402,9 @@
       ]
     },
     "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } $ 试用"
+      ],
       "Your account's usage": [
         "您的账户使用情况"
       ]
@@ -9523,11 +9576,17 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "15 个邮箱地址和 3 个自有域名供您选择"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "每位用户存储空间可升至 ${ bundleStorage }"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "总存储空间升至 ${ bundleStorage }"
       ],
       "Browser extension": [
         "浏览器扩展"
+      ],
+      "Central control panel": [
+        "中央控制面板"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "10 个自有域名更显游刃有余"
@@ -9655,6 +9714,9 @@
       ]
     },
     "Onboarding": {
+      "Welcome to ${ product }": [
+        "欢迎来到 ${ product }"
+      ],
       "Welcome to ${ VPN_APP_NAME }": [
         "欢迎来到 ${ VPN_APP_NAME }"
       ]
@@ -9894,8 +9956,14 @@
       ".deb (for Debian/Ubuntu)": [
         ".deb（Debian/Ubuntu）"
       ],
+      ".dmg (10.12 or later)": [
+        ".dmg（10.12 或更高版本）"
+      ],
       ".exe (64-bit)": [
         ".exe（64 位）"
+      ],
+      ".rpm (for Fedora/openSUSE)": [
+        ".rpm（Fedora/openSUSE）"
       ],
       "PKGBUILD (for other distributions)": [
         "PKGBUILD（其他发行版）"
@@ -9909,6 +9977,9 @@
     "pass_signup_2023: Action": {
       "Check out ${ appName } features": [
         "开通 ${ appName } 高级功能"
+      ],
+      "Continue to ${ free }": [
+        "继续使用 ${ free }"
       ],
       "create a new account": [
         "创建新账户"
@@ -9976,8 +10047,14 @@
       "By continuing, you agree to our ${ termsAndConditions }": [
         "继续操作即表示您同意我们的${ termsAndConditions }"
       ],
+      "Creating your account": [
+        "正在为您创建账户"
+      ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
         "体验 ${ PASS_APP_NAME }，${ br }我们的全新密码加密管理器"
+      ],
+      "End-to-end encryption": [
+        "端到端加密"
       ],
       "per month": [
         "每月"
@@ -10283,6 +10360,9 @@
       ]
     },
     "Remove calendar section title": {
+      "Delete calendar?": [
+        "删除日历?"
+      ],
       "Leave calendar?": [
         "移除日历？"
       ],
@@ -10348,6 +10428,9 @@
       ]
     },
     "session_recovery:available:action": {
+      "Cancel password reset": [
+        "取消密码重置"
+      ],
       "Cancel reset": [
         "取消重置请求"
       ],
@@ -10505,6 +10588,9 @@
       ]
     },
     "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "请求重置密码?"
+      ],
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hours": [
         "您可以在 ${ gracePeriodHoursRemaining } 小时内重置密码"
       ]
@@ -10636,6 +10722,9 @@
       ]
     },
     "Signup label": {
+      "Confirm password": [
+        "确认密码"
+      ],
       "Display name": [
         "称呼"
       ],
@@ -11059,6 +11148,9 @@
       "Code sent to ${ methodTo }": [
         "验证码已发至 ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "已复制到剪贴板"
+      ],
       "Credits added": [
         "信用已添加"
       ],
@@ -11082,6 +11174,9 @@
       ],
       "Email updated": [
         "邮箱已更改"
+      ],
+      "Fingerprint copied to clipboard": [
+        "指纹已复制到剪贴板"
       ],
       "Gift code applied": [
         "成功使用礼品码"
@@ -11110,11 +11205,17 @@
       "Keys updated": [
         "密钥已更新"
       ],
+      "Link copied to clipboard": [
+        "链接已复制到剪贴板"
+      ],
       "Locale updated": [
         "语言设置已生效"
       ],
       "Organization activated": [
         "机构已激活"
+      ],
+      "Password copied to clipboard": [
+        "密码已复制到剪贴板"
       ],
       "Password updated": [
         "密码已更新"
@@ -11143,6 +11244,9 @@
       "Resuming import": [
         "正在恢复导入"
       ],
+      "Server copied to clipboard": [
+        "服务器已复制"
+      ],
       "Session revoked": [
         "该设备已下线"
       ],
@@ -11166,6 +11270,9 @@
       ],
       "User updated": [
         "用户已更新"
+      ],
+      "Username copied to clipboard": [
+        "用户名已复制到剪贴板"
       ],
       "Value copied to clipboard": [
         "内容已复制到剪贴板"
@@ -11258,6 +11365,9 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "高级 ${ DRIVE_SHORT_APP_NAME } 账户"
+      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "高级 ${ MAIL_SHORT_APP_NAME } 与 ${ CALENDAR_SHORT_APP_NAME } 账户"
       ]
@@ -11881,9 +11991,6 @@
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "通过 ${ PRODUCT_NAMES.EASY_SWITCH } 导入"
       ],
-      "Import-Export app": [
-        "「导入/导出」应用程序"
-      ],
       "Increase your privacy with more addresses": [
         "通过更多地址增强您的隐私"
       ],
@@ -12102,6 +12209,9 @@
       ],
       "Set organization password": [
         "设定机构密码"
+      ],
+      "Set up a recovery method": [
+        "设置恢复方法"
       ],
       "Set up forwarding": [
         "设置邮件自动转发"
