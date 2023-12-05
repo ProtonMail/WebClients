@@ -13,4 +13,7 @@
 !/package.json
 !/**/*/package.json
 
+# Needed to be able to run postinstall in all workspaces
 !/packages/pack
+!/packages/config
+!/applications/pass-extension/manifest-chrome.json
