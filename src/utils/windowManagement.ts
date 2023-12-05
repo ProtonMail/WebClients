@@ -1,10 +1,10 @@
-import { BrowserWindow, Rectangle, Session, WebContents, app } from "electron";
+import { BrowserWindow, BrowserWindowConstructorOptions, Rectangle, Session, WebContents, app } from "electron";
 import contextMenu from "electron-context-menu";
-import log from "electron-log/main";
 import { getConfig } from "./config";
 import { APP, WINDOW_SIZES } from "./constants";
-import { isMac } from "./helpers";
+import { areAllWindowsClosedOrHidden, isMac, isWindows } from "./helpers";
 import { setApplicationMenu } from "./menu";
+import { getSessionID } from "./urlHelpers";
 import { getWindowState, setWindowState } from "./windowsStore";
 
 interface WindowCreationProps {
@@ -21,6 +21,23 @@ contextMenu({
     showSaveImage: true,
 });
 
+const windowOSConfig: BrowserWindowConstructorOptions = {};
+
+const macOSConfig: BrowserWindowConstructorOptions = {
+    frame: false,
+    transparent: true,
+    titleBarStyle: "hidden",
+    vibrancy: "under-window",
+    trafficLightPosition: { x: 12, y: 8 },
+};
+
+const getOSSpecificConfig = () => {
+    if (isMac) {
+        return macOSConfig;
+    }
+    return windowOSConfig;
+};
+
 const createWindow = (session: Session, url: string, visible: boolean, windowConfig: Rectangle): BrowserWindow => {
     const { x, y, width, height } = windowConfig;
 
@@ -33,12 +50,7 @@ const createWindow = (session: Session, url: string, visible: boolean, windowCon
         height,
         minHeight: WINDOW_SIZES.MIN_HEIGHT,
         minWidth: WINDOW_SIZES.MIN_WIDTH,
-        // We only hide the frame and the title bar on macOS
-        titleBarStyle: isMac ? "hidden" : "default",
-        trafficLightPosition: { x: 12, y: 8 },
-        vibrancy: "under-window",
-        transparent: isMac,
-        frame: !isMac,
+        ...getOSSpecificConfig(),
         webPreferences: {
             devTools: true,
             spellcheck: true,
@@ -54,62 +66,71 @@ const createWindow = (session: Session, url: string, visible: boolean, windowCon
     setApplicationMenu(app.isPackaged);
     window.loadURL(url);
 
-    visible ? window.show() : window.hide();
+    if (visible) {
+        window.showInactive();
+        window.setOpacity(1);
+        window.focus();
+    } else {
+        window.hide();
+        window.setOpacity(0);
+    }
+
     return window;
 };
 
 const createGenericWindow = (session: Session, url: string, mapKey: APP, visible: boolean, windowConfig: Rectangle) => {
     const window = createWindow(session, url, visible, windowConfig);
+
     window.on("close", (ev) => {
-        ev.preventDefault();
-        window.hide();
+        setWindowState(window.getBounds(), mapKey);
+        if (isWindows) {
+            window.removeAllListeners("close");
+            window.destroy();
+
+            // Close the application if all windows are closed
+            if (areAllWindowsClosedOrHidden()) {
+                app.quit();
+            }
+        } else if (isMac) {
+            ev.preventDefault();
+            window.hide();
+            window.setOpacity(0);
+        }
     });
 
     windowMap.set(mapKey, window);
     return window;
 };
 
-const addTagCookie = (session: Session) => {
-    try {
-        session.cookies.set({ url: config.url.account, name: "Tag", value: "alpha" });
-        session.cookies.set({ url: config.url.mail, name: "Tag", value: "alpha" });
-        session.cookies.set({ url: config.url.calendar, name: "Tag", value: "alpha" });
-    } catch (error) {
-        log.error(error);
-    }
-};
-
 export const createMailWindow = (session: Session, visible = true) => {
     const state = getWindowState("MAIL");
     const window = createGenericWindow(session, config.url.mail, "MAIL", visible, state);
-    window.on("close", () => {
-        setWindowState(window.getBounds(), "MAIL");
-    });
-
     return window;
 };
 export const createCalendarWindow = (session: Session, visible = true) => {
     const state = getWindowState("CALENDAR");
     const window = createGenericWindow(session, config.url.calendar, "CALENDAR", visible, state);
-    window.on("close", () => {
-        setWindowState(window.getBounds(), "CALENDAR");
-    });
     return window;
 };
 
 export const initialWindowCreation = ({ session, mailVisible, calendarVisible }: WindowCreationProps) => {
-    addTagCookie(session);
     const mailWindow = createMailWindow(session, mailVisible);
     mailWindow.webContents.on("did-finish-load", () => {
-        const calendarWindow = createCalendarWindow(session, calendarVisible);
-        calendarWindow.hide();
+        if (windowMap.get("CALENDAR")) return;
+
+        createCalendarWindow(session, calendarVisible);
     });
 };
 
 const handleWindowVisibility = (contents: WebContents, mapKey: APP, creationMethod: (session: Session) => void) => {
     const window = windowMap.get(mapKey);
     if (window) {
-        window.isVisible() ? window.focus() : window.show();
+        if (window.isVisible()) {
+            window.focus();
+        } else {
+            window.show();
+            window.setOpacity(1);
+        }
     } else {
         creationMethod(contents.session);
     }
@@ -121,4 +142,17 @@ export const handleMailWindow = (contents: WebContents) => {
 
 export const handleCalendarWindow = (contents: WebContents) => {
     handleWindowVisibility(contents, "CALENDAR", createCalendarWindow);
+};
+
+export const refreshCalendarPage = (sessionID: number) => {
+    const calendarWindow = windowMap.get("CALENDAR");
+    if (calendarWindow) {
+        const calendarURL = calendarWindow.webContents.getURL();
+        const calendarHasSessionID = getSessionID(calendarURL);
+        if (calendarHasSessionID) {
+            return;
+        }
+        const newCalendarUrl = `${config.url.calendar}/${sessionID}/`;
+        calendarWindow.loadURL(newCalendarUrl);
+    }
 };

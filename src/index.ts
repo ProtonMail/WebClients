@@ -1,11 +1,16 @@
 import { app, BrowserWindow, session, shell } from "electron";
 import log from "electron-log/main";
 import { moveUninstaller } from "./macos/uninstall";
-import { manageSessionIDStore } from "./utils/authStore";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./utils/constants";
 import { isHostAllowed, isHostCalendar, isHostMail, isMac, saveWindowsPosition } from "./utils/helpers";
+import { getSessionID } from "./utils/urlHelpers";
 import { saveHardcodedURLs } from "./utils/urlStore";
-import { handleCalendarWindow, handleMailWindow, initialWindowCreation } from "./utils/windowManagement";
+import {
+    handleCalendarWindow,
+    handleMailWindow,
+    initialWindowCreation,
+    refreshCalendarPage,
+} from "./utils/windowManagement";
 
 if (require("electron-squirrel-startup")) {
     app.quit();
@@ -53,28 +58,29 @@ app.whenReady().then(() => {
     });
 });
 
+// Only used on macOS to save the windows position when CMD+Q is used
 app.on("before-quit", () => {
-    saveWindowsPosition(true);
-});
-
-app.on("window-all-closed", () => {
-    if (!isMac) {
-        app.quit();
+    if (isMac) {
+        saveWindowsPosition(true);
     }
 });
 
 // Security addition
 app.on("web-contents-created", (_ev, contents) => {
-    contents.on("did-navigate-in-page", (ev, url) => {
-        if (!isHostAllowed(url, app.isPackaged)) {
-            ev.preventDefault();
-        }
-        manageSessionIDStore(url);
-    });
-
     const preventDefault = (ev: Electron.Event) => {
         ev.preventDefault();
     };
+
+    contents.on("did-navigate-in-page", (ev, url) => {
+        if (!isHostAllowed(url, app.isPackaged)) {
+            return preventDefault(ev);
+        }
+
+        const sessionID = getSessionID(url);
+        if (isHostMail(url) && sessionID && !isNaN(sessionID as unknown as any)) {
+            refreshCalendarPage(+sessionID);
+        }
+    });
 
     contents.on("will-attach-webview", preventDefault);
 
@@ -91,12 +97,12 @@ app.on("web-contents-created", (_ev, contents) => {
 
         if (isHostCalendar(url)) {
             handleCalendarWindow(contents);
-            return;
+            return { action: "deny" };
         }
 
         if (isHostMail(url)) {
             handleMailWindow(contents);
-            return;
+            return { action: "deny" };
         }
 
         if (isHostAllowed(url, app.isPackaged)) {

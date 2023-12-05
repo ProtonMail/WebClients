@@ -5,6 +5,7 @@ import { getConfig } from "./config";
 import { setWindowState } from "./windowsStore";
 
 export const isMac = process.platform === "darwin";
+export const isWindows = process.platform === "win32";
 
 export const getBasePath = (): string => {
     const basePath = app.getPath("exe");
@@ -99,6 +100,10 @@ export const openLogFolder = () => {
     }
 };
 
+export const areAllWindowsClosedOrHidden = () => {
+    return BrowserWindow.getAllWindows().every((window) => !window.isVisible());
+};
+
 export const saveWindowsPosition = (shouldDestroy: boolean) => {
     BrowserWindow.getAllWindows().forEach((window) => {
         if (window.isVisible()) {
@@ -114,8 +119,4 @@ export const saveWindowsPosition = (shouldDestroy: boolean) => {
             window.destroy();
         }
     });
-};
-export const quitApplication = () => {
-    saveWindowsPosition(true);
-    app.quit();
 };

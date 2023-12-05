@@ -1,5 +1,4 @@
 import Store from "electron-store";
-import { getSessionID } from "./authStore";
 import { URLConfig } from "./config";
 
 const store = new Store();
@@ -17,15 +16,5 @@ export const saveHardcodedURLs = () => {
 };
 
 export const getHardcodedURLs = (): URLConfig => {
-    const sessionID = getSessionID();
-    const urls = (store.get("HardcodedUrls") as URLConfig) ?? hardcodedUrl;
-    if (sessionID) {
-        return {
-            account: `${urls.account}/u/${sessionID}/`,
-            mail: `${urls.mail}/u/${sessionID}/`,
-            calendar: `${urls.calendar}/u/${sessionID}/`,
-        };
-    }
-
-    return urls;
+    return (store.get("HardcodedUrls") as URLConfig) ?? hardcodedUrl;
 };
