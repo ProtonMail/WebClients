@@ -71,10 +71,11 @@ const options: RootSagaOptions = {
             void ctx.service.telemetry?.start();
             ctx.setStatus(AppStatus.READY);
             WorkerMessageBroker.buffer.flush();
+
         } else {
-            ctx.service.telemetry?.stop();
             ctx.setStatus(AppStatus.ERROR);
             if (res.clearCache) await ctx.service.storage.local.removeItems(['salt', 'state', 'snapshot']);
+            ctx.service.telemetry?.stop();
         }
     }),
 

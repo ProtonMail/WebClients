@@ -115,10 +115,12 @@ export const createWorkerContext = (config: ProtonConfig) => {
 
                     context.service.formTracker.clear();
                     context.service.onboarding.reset();
+                    context.service.telemetry?.stop();
                     context.service.autofill.clearTabsBadgeCount();
                     context.service.cacheProxy.clear?.().catch(noop);
                     void context.service.storage.session.clear();
                     void context.service.storage.local.clear();
+
                     browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
                 },
                 onSessionInvalid: () => {
@@ -194,7 +196,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             settings: createSettingsService(),
             storage,
             store: createStoreService(),
-            telemetry: BUILD_TARGET !== 'firefox' ? createTelemetryService() : null,
+            telemetry: BUILD_TARGET !== 'firefox' ? createTelemetryService(storage.local) : null,
         },
 
         async ensureReady() {

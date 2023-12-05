@@ -42,6 +42,7 @@ export const createStorageService = () => {
                 }),
         setItems: (items) => localStorage.setItems(items).catch(noop),
         remove: (key) => localStorage.removeItem(key).catch(noop),
+        removeItem: localStorage.removeItem,
         removeItems: (keys) => localStorage.removeItems(keys).catch(noop),
         clear: () => localStorage.clear().catch(noop),
     };
@@ -56,6 +57,7 @@ export const createStorageService = () => {
         setItem: (key, value) => sessionStorage.setItem(key, value).catch(noop),
         setItems: (items) => sessionStorage.setItems(items).catch(noop),
         remove: (key) => sessionStorage.removeItem(key).catch(noop),
+        removeItem: sessionStorage.removeItem,
         removeItems: (keys) => sessionStorage.removeItems(keys).catch(noop),
         clear: () => sessionStorage.clear().catch(noop),
     };
