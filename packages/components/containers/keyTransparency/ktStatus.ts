@@ -19,6 +19,7 @@ export const isKTActive = (feature: KT_FF) => {
     //  - BigInt is only partially implemented and does not support -- (it is needed for VRF verification)
     //  - the hardcoded KT certificate data is older than 6 months.
     //  - the server time compared to the client time is off by more than 24 hours -- (UI warning is shown to prevent attacks)
+    //  - Webcrypto is only partially supported (it is needed for certificate verification in pki.js)
     if (feature === undefined || feature === KtFeatureEnum.DISABLE) {
         return false;
     }
@@ -54,6 +55,17 @@ export const isKTActive = (feature: KT_FF) => {
     const timeOffset = serverTime().getTime() - Date.now();
     if (Math.abs(timeOffset) > 24 * HOUR) {
         return false;
+    }
+    
+    // If in browser test for webcrypto support required by pki.js
+    if (typeof self !== 'undefined') {
+        const hasWebCryptoSupport =
+            'crypto' in self &&
+            'getRandomValues' in self.crypto &&
+            ('subtle' in self.crypto || 'webkitSubtle' in self.crypto);
+        if (!hasWebCryptoSupport) {
+            return false;
+        }
     }
 
     return true;
