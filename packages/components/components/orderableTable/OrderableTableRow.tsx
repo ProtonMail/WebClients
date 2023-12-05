@@ -22,7 +22,7 @@ const OrderableTableRow = ({ index, cells = [], className, disableSort, ...rest 
                 cells={[
                     <OrderableHandle key="icon">
                         <span className="flex" data-testid="table:order-icon">
-                            <Icon className="my-auto cursor-row-resize" name="text-align-justify" />
+                            <Icon className="my-auto cursor-grab color-hint" name="dots" />
                         </span>
                     </OrderableHandle>,
                     ...cells,
