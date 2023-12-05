@@ -94,7 +94,9 @@ $dummy-map: ();
 @include responsive-classes(
 	(
 		flex-1: (
-			flex: 1 1 0%,
+			// Do not use `0%` for basis:
+			// Percentage depends on explicit size of the container, which causes issues with auto height
+			flex: 1 1 0,
 		),
 
 		flex-auto: (
