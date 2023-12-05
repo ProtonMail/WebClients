@@ -4,19 +4,16 @@ import { CryptoProxy, serverTime } from '@proton/crypto';
 import {
     SelfAuditResult,
     StaleEpochError,
-    getAuditResult,
     getKTLocalStorage,
     getSelfAuditInterval,
     ktSentryReportError,
     selfAudit,
-    storeAuditResult,
 } from '@proton/key-transparency/lib';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { INTERVAL_EVENT_TIMER, MINUTE } from '@proton/shared/lib/constants';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE } from '@proton/shared/lib/drawer/interfaces';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { DecryptedAddressKey, KeyPair, SelfAuditState } from '@proton/shared/lib/interfaces';
-import { getPrimaryKey } from '@proton/shared/lib/keys';
 import { AddressesModel } from '@proton/shared/lib/models';
 
 import {
@@ -162,13 +159,14 @@ const useRunSelfAudit = () => {
         }
     }, [getLatestEpoch, getAddresses, getAddressKeys]);
 
-    const createSelfAuditState = async (): Promise<SelfAuditState> => {
+    const createSelfAuditState = async (lastSelfAudit: SelfAuditResult | undefined): Promise<SelfAuditState> => {
         const [userKeys, addressKeys] = await Promise.all([
             createSelfAuditStateUserKeys(),
             createSelfAuditStateAddressKeys(),
         ]);
         return {
             userKeys,
+            lastSelfAudit,
             ...addressKeys,
         };
     };
@@ -186,21 +184,12 @@ const useRunSelfAudit = () => {
     }, []);
 
     const runSelfAuditWithState = async (state: SelfAuditState) => {
-        const userPrivateKeys = state.userKeys.map(({ privateKey }) => privateKey);
-        const { publicKey: userPrimaryPublicKey } = getPrimaryKey(state.userKeys) || {};
         const ktLSAPI = await ktLSAPIPromise;
-        if (!userPrimaryPublicKey) {
+        if (state.userKeys.length === 0) {
             throw new Error('User has no user keys');
         }
-        const lastSelfAudit = await getAuditResult(userID, userPrivateKeys, ktLSAPI);
-        const now = +serverTime();
-        if (lastSelfAudit && lastSelfAudit.nextAuditTime > now) {
-            return { selfAuditResult: lastSelfAudit, nextSelfAuditInterval: lastSelfAudit.nextAuditTime - now };
-        }
-
         try {
             const selfAuditResult = await selfAudit(userID, state, api, ktLSAPI, saveSKLToLS, uploadMissingSKL);
-
             // Update local storage value
             document.dispatchEvent(
                 new CustomEvent(KEY_TRANSPARENCY_REMINDER_UPDATE, {
@@ -211,10 +200,9 @@ const useRunSelfAudit = () => {
             );
 
             await reportSelfAuditErrors(selfAuditResult);
-            await storeAuditResult(userID, selfAuditResult, userPrimaryPublicKey, ktLSAPI);
-            return { selfAuditResult, nextSelfAuditInterval: selfAuditBaseInterval };
+            return { selfAuditResult };
         } catch (error: any) {
-            const failedTrials = (lastSelfAudit?.error?.failedTrials ?? 0) + 1;
+            const failedTrials = (state.lastSelfAudit?.error?.failedTrials ?? 0) + 1;
             const tooManyRetries = failedTrials >= SELF_AUDIT_MAX_TRIALS;
             const currentTime = +serverTime();
             const nextSelfAuditInterval = tooManyRetries
@@ -230,13 +218,12 @@ const useRunSelfAudit = () => {
             };
             reportError(error, tooManyRetries);
             await reportSelfAuditErrors(selfAuditResult);
-            await storeAuditResult(userID, selfAuditResult, userPrimaryPublicKey, ktLSAPI);
-            return { selfAuditResult, nextSelfAuditInterval };
+            return { selfAuditResult };
         }
     };
 
-    const runSelfAudit = async () => {
-        const state = await createSelfAuditState();
+    const runSelfAudit = async (lastSelfAudit: SelfAuditResult | undefined) => {
+        const state = await createSelfAuditState(lastSelfAudit);
         try {
             return await runSelfAuditWithState(state);
         } finally {
