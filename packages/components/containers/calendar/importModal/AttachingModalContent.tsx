@@ -68,12 +68,17 @@ const AttachingModalContent = ({ model, calendars, onSelectCalendar, onAttach, o
             </Dropzone>
             {calendars.length > 1 && (
                 <Row>
-                    <Label style={{ '--label-width': 'auto' }} htmlFor="import-calendar-select">
+                    <Label
+                        style={{ '--label-width': 'auto' }}
+                        htmlFor="import-calendar-select"
+                        id="label-import-calendar-select"
+                    >
                         {c('Label').t`Import to:`}
                     </Label>
                     <div className="w-full md:w-custom" style={{ '--md-w-custom': '16.25rem' }}>
                         <CalendarSelect
                             id="import-calendar-select"
+                            aria-labelledby="label-import-calendar-select"
                             calendarID={model.calendar.ID}
                             options={options}
                             onChange={handleChange}
