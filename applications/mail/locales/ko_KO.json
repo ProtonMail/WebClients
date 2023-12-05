@@ -706,10 +706,10 @@
       "Not saved": [
         "저장되지 않음"
       ],
-      "Ok": [
+      "OK": [
         "확인"
       ],
-      "OK": [
+      "Ok": [
         "확인"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -3350,7 +3350,7 @@
         "IMAP 서버가 필요함"
       ],
       "Incorrect login credentials. Please try again.": [
-        "잘못된 로그인 자격 증명이에요. 다시 시도해주세요."
+        "이메일 (사용자 이름) 또는 비밀번호가 잘못되었습니다. 다시 시도하세요."
       ],
       "Incorrect mailbox password. Please try again.": [
         "잘못된 메일함 암호입니다. 다시 시도해 주세요."
@@ -6139,6 +6139,9 @@
       ],
       "Optional": [
         "선택 사항"
+      ],
+      "Selected color:": [
+        "선택한 색상:"
       ]
     },
     "Info on errors": {
@@ -7372,6 +7375,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendars": [
+        "${ maximumNumberOfCalendars } 캘린더"
+      ],
       "Auto-delete spam and trashed messages": [
         "스팸 및 휴지통의 메시지를 자동 삭제"
       ],
@@ -7471,6 +7477,41 @@
         "${ BRAND_NAME }이 접근할 수 있는 것을 선택하세요: 이메일 메시지와 설정을 확인하고, 연락처를 확인 및 다운로드하고, Google Agenda에서 액세스하는 모든 아젠다를 확인하고 다운로드하세요."
       ]
     },
+    "Onboarding modal": {
+      "Automatically forward emails": [
+        "자동으로 Gmail에서 당신의 받은 편지함으로"
+      ],
+      "Block email communications from scammers permanently. ${ kbLinkSender }": [
+        "사기꾼으로부터의 이메일의 수발신을 영구적으로 차단합니다. ${ kbLinkSender }"
+      ],
+      "Block unsavory senders": [
+        "보낸 사람을 차단하기."
+      ],
+      "Congratulations on choosing privacy": [
+        "프라이버시를 선택하신 것을 축하합니다"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
+        "강력한 암호화로, 이메일은 오직 당신과 주고 받는 사람간에서만 볼 수 있습니다. ${ kbLinkEncryption }"
+      ],
+      "For your eyes only": [
+        "눈으로만 보세요"
+      ],
+      "Forward Gmail messages to your inbox.": [
+        "메시지를 가져오세요."
+      ],
+      "Next": [
+        "다음"
+      ],
+      "Protection from trackers": [
+        "트래커로부터 보호"
+      ],
+      "Skip": [
+        "건너뛰기"
+      ],
+      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
+        "당신을 프로파일링하는 광고주와 데이터 수집자들을 차단합니다. ${ kbLinkPrivacy }"
+      ]
+    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "조직을 구성하고, 도메인 이름을 연결하고, 계정을 만들어 조직의 모든 구성원이 보호되도록 하십시오."
@@ -7478,8 +7519,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "모든 ${ BRAND_NAME } 서비스를 둘러보기"
       ],
+      "Pick a theme": [
+        "테마 선택"
+      ],
       "Set up your organization": [
         "조직 설정"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "모든 ${ BRAND_NAME } 서비스에 접근하려면 상단 좌측의 앱 선택기를 사용하세요: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } 및 ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "설정에서 테마를 언제든지 바꿀 수 있습니다."
       ]
     },
     "Online accounts": {
@@ -8935,7 +8985,7 @@
         "메시지 컨텐츠 검색 활성화"
       ],
       "Enter your password": [
-        "비밀번호를 입력하십시오"
+        "비밀번호를 입력하세요"
       ],
       "Error": [
         "오류"

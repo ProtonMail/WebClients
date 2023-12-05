@@ -86,6 +86,9 @@
       "Add folder": [
         "Új mappa"
       ],
+      "Add label": [
+        "Új címke"
+      ],
       "Add multiple users": [
         "Több felhasználó hozzáadása"
       ],
@@ -428,6 +431,9 @@
       "Generate recovery phrase": [
         "Helyreállító jelmondat létrehozása"
       ],
+      "Generate token": [
+        "Token létrehozása"
+      ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } választása"
       ],
@@ -490,6 +496,9 @@
       ],
       "Import from Google": [
         "Importálás a Google-ból"
+      ],
+      "Import from ICS": [
+        "Importálás ICS fájlból"
       ],
       "Import from Outlook": [
         "Importálás az Outlookból"
@@ -847,6 +856,9 @@
       ],
       "Sign out of all accounts": [
         "Minden fiók kiléptetése"
+      ],
+      "sign up for free": [
+        "regisztráljon ingyenesen"
       ],
       "Signing in": [
         "Bejelentkezés"
@@ -1287,6 +1299,11 @@
     "breadcrumb": {
       "Calendars": [
         "Naptárak"
+      ]
+    },
+    "Bridge version load failed": {
+      "Failed to find latest version": [
+        "Hiba a legutóbbi verzió megkeresésekor"
       ]
     },
     "Bug category": {
@@ -3067,6 +3084,11 @@
         "${ allCategoryTitlesExceptTheLastOne } és ${ lastCategoryTitle }"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "Az ellenőrző e-mailt elküldtük erre a címre: ${ address }"
+      ]
+    },
     "email_forwarding_2023: Action": {
       "Accept": [
         "Elfogadás"
@@ -3237,6 +3259,9 @@
       ],
       "Contact signature not verified": [
         "Névjegy aláírása nincs ellenőrizve"
+      ],
+      "Could not save preference": [
+        "Nem sikerült menteni a preferenciát."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál",
@@ -3858,6 +3883,9 @@
       ]
     },
     "Error message, recovery": {
+      "Contact ${ BRAND_NAME }": [
+        "Névjegy ${ BRAND_NAME }"
+      ],
       "Please ${ signIn } to resend a recovery email verification request.": [
         "Kérjük menjen a ${ signIn }, hogy újraküldjük a helyreállítási e-mail cím megerősítő levelet."
       ],
@@ -3896,6 +3924,9 @@
       ]
     },
     "Error when exporting event from calendar": {
+      "Event @ ${ timeString }": [
+        "Esemény @ ${ timeString }"
+      ],
       "Event from ${ timeString }, ${ rruleString }": [
         "Esemény ekkortól: ${ timeString }, ${ rruleString }"
       ]
@@ -4538,6 +4569,9 @@
       "Name": [
         "Név"
       ],
+      "Notifications": [
+        "Emlékeztetők"
+      ],
       "Organization key fingerprint": [
         "Szervezeti kulcs ujjlenyomata"
       ],
@@ -4606,6 +4640,9 @@
       ],
       "Created": [
         "Létrehozva"
+      ],
+      "Email address": [
+        "E-mail cím"
       ],
       "Token name": [
         "Token neve"
@@ -4959,6 +4996,14 @@
         "A naptár tartalmának bizonyos részei nem támogatottak és nem kerülnek importálásra."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A kulcs ${ fingerprint } már feltöltésre került"
+      ]
+    },
     "Info": {
       "${ amountOfAddresses } address": [
         "${ amountOfAddresses } cím",
@@ -5183,6 +5228,9 @@
       "active": [
         "aktív"
       ],
+      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
+        "Hozzon létre @pm.me címet a fiókjához. Ez a rövid név a \"${ MAIL_APP_NAME } nekem\", vagy \"személyes üzenet nekem\" (Private Message me) rövidítésre utal"
+      ],
       "Add a recovery email address": [
         "Helyreállító e-mail cím hozzáadása"
       ],
@@ -5338,6 +5386,9 @@
       ],
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "Az automatikus válasz mindig aktív a hét kiválasztott napjain a választott órák között."
+      ],
+      "Available on macOS, Windows, and Linux.": [
+        "Elérhető macOS, Windows és Linux rendszerekhez."
       ],
       "Awaiting transaction": [
         "Tranzakcióra várakozás."
@@ -5650,6 +5701,9 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Új helyreállító jelmondat létrehozása érvényteleníti a korábbit."
       ],
+      "Get ${ upsellPlanName }": [
+        "${ upsellPlanName } beszerzése"
+      ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Adjon a tokennek egy leíró nevet, például annak a szolgáltatásnak, amellyel használni kívánja, és válassza ki az egyik aktív egyéni tartománycímet. Csak ez a cím tud majd e-mailt küldeni ezzel a tokennel."
       ],
@@ -5667,6 +5721,9 @@
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Ha nem felel meg önnek, visszafizetjük a pénzét."
+      ],
+      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
+        "Amikor a rendszer időzónája eltér az aktuális időzóna beállításától, rákérdez, hogy frissítse-e a beállítást (maximum naponta egyszer)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Ha erre a domain névre jelenleg is érkeznek levelek, a zökkenőmentes átálláshoz, válassza ki a ${ boldAddresses } fület és hozza létre az összes már létező e-mail címet, mielőtt megváltoztatná az MX rekordokat."
@@ -5862,6 +5919,9 @@
       "Link type": [
         "Hivatkozás típusa"
       ],
+      "Loaded content is being protected by our proxy when tracker protection is activated.": [
+        "A betöltött tartalmat a proxy szervereink védik, amennyiben a követés elleni védelem be van kapcsolva."
+      ],
       "Loading": [
         "Betöltés"
       ],
@@ -5963,6 +6023,9 @@
       ],
       "One account. All ${ BRAND_NAME } services.": [
         "Egy fiók minden ${ BRAND_NAME } szolgáltatáshoz."
+      ],
+      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
+        "Csak akkor változtassa meg ezeket a beállításokat, ha PGP-t használ a nem ${ BRAND_NAME } címzettekhez."
       ],
       "Only you can see the labels.": [
         "Csak ön láthatja a címkéket."
@@ -6268,6 +6331,9 @@
       "Storage used by this user": [
         "A felhasználó által használt tárhely"
       ],
+      "Store this password and file in a safe place. You’ll need them again to import your key.": [
+        "Tárolja a jelszót és a fájlt egy biztos helyen. Szüksége lesz rá később a kulcsa importálásához."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Az előfizetés megszűnik: Aktiválja újra eddig: ${ byDate } , hogy megtarthassa ezen csomagjának előnyeit: ${ planName } ${ reactivateLink }"
       ],
@@ -6327,9 +6393,6 @@
       ],
       "The format of your CSV file is incorrect.": [
         "A CSV fájl formátuma hibás."
-      ],
-      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        "Az Import-Export alkalmazás lehetőséget biztosít az üzenetek saját gépre történő biztonsági mentésére vagy egy korábbi mentés visszatöltésére."
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "A hivatkozás annak jelentésére, hogy nem hozott létre egy ${ BRAND_NAME } fiókot, lejárt. Lépjen kapcsolatba támogatási csoportunkkal a probléma megoldásához."
@@ -6438,6 +6501,9 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "A jóváhagyáshoz írja be a törölni kívánt felhasználó nevét."
+      ],
+      "to continue to ${ product }": [
+        "alkalmazás: ${ product }"
       ],
       "to continue to ${ toAppName }": [
         "alkalmazás: ${ toAppName }"
@@ -6679,6 +6745,9 @@
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Kikapcsolása megakadályozza, hogy az ön értesítése nélkül töltődjenek le képek az eszközére."
       ],
+      "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
+        "Amennyiben engedélyezi az értesítéseket, a ${ MAIL_APP_NAME } fiókjába érkező új üzenetekről a helyreállítási/értesítési címén tájékoztatjuk."
+      ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "Ha előfizetnek a csomagra, krediteket fog kapni, amelyeket felhasználhat az előfizetéséhez."
       ],
@@ -6690,6 +6759,9 @@
       ],
       "Why?": [
         "Miért?"
+      ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Egy titkosított ${ BRAND_NAME } címmel hozzáférhet az összes ${ BRAND_NAME } szolgáltatáshoz"
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
         "A jelenlegi terveiddel csak fogadni tudsz üzeneteket a @pm.me címeden. Frissítsd a terveidet, hogy üzeneteket küldhess és létrehozhass további címeket a @pm.me használatával."
@@ -6765,6 +6837,9 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bekapcsolhatja az értesítéseket az ebbe a mappába érkező új üzenetekhez."
       ],
+      "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "A ${ MAIL_APP_NAME } szolgáltatásait bármilyen e-mail kliens programmal használhatja, amik támogatják a IMAP/SMTP protokollt: ilyenek pl.: az Outlook, Apple Mail, és a Thunderbird alkalmazások."
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Az alábbi bejelentkezéssel csatlakozhat a ${ VPN_APP_NAME } szerverekhez ha valamilyen külső VPN alkalmazást használ, mint például Tunnelblick macOS-en vagy OpenVPN GNU/Linux-on."
       ],
@@ -6814,6 +6889,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Teljesen megtelt a tárhelye. Nem küldhet vagy fogadhat új e-maileket. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You should export a backup of this key in case you need to restore data it encrypted.": [
+        "Exportáljon egy biztonsági mentést erről a kulcsról, abban az esetben, ha szüksége lenne visszaállítani azokat az adatokat, amelyeket titkosított vele."
+      ],
       "You still need to reply to invitations for the host to see your response.": [
         "Még válaszolnia kell a meghívókra, hogy a szervező lássa a válaszát."
       ],
@@ -6831,9 +6909,6 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Nem fogja tudni helyreállítani az zárolt adatait, a letöltött helyreállítási fájlokkal."
-      ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
-        "Nem fogja tudni helyreállítani az zárolt adatait, a letöltött helyreállítási fájlokkal. Ez a megbízható eszközökkel való helyreállítási információkat is érvényteleníti."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Bejelentkezve marad, a böngésző bezárása után is."
@@ -6916,14 +6991,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Az előfizetését a Mozilla kezeli. Kérjük, forduljon a Mozilla ügyfélszolgálatához az előfizetés lemondásához."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A kulcs ${ fingerprint } már feltöltésre került"
       ]
     },
     "Info - folder colouring feature": {
@@ -7030,6 +7097,9 @@
       ]
     },
     "Key generation": {
+      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
+        "Már létezik kulcs ugyanezzel a titkosítási algoritmussal. Újabb kulcs létrehozása lassítani fogja a fiók betöltését. Biztos benne, hogy folytatja?"
+      ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
         "Ehhez a címhez már vagy egy aktív kulcs ugyanilyen titkosítási algoritmussal. Újabb kulcs létrehozása le fogja lassítani a fiók betöltését és a kulcs törlése problémákat okozhat. Amennyiben azért hoz létre új kulcsot, mert a korábbi kompromittált, akkor jelölje meg azt a kulcsot kompromittáltként. Biztos, hogy folytatja?"
       ],
@@ -7055,6 +7125,12 @@
       ],
       "Compromised": [
         "Kompromittált"
+      ],
+      "Inactive": [
+        "Kikapcsolva"
+      ],
+      "Obsolete": [
+        "Elavult"
       ],
       "Primary": [
         "Elsődleges"
@@ -7253,6 +7329,9 @@
       "Delete": [
         "Törlés"
       ],
+      "Disables encryption with this key": [
+        "Letiltja ezzel a kulccsal való titkosítást"
+      ],
       "Disables signature verification and encryption with this key": [
         "Letiltja ezzel a kulccsal való aláírás ellenőrzést és titkosítást"
       ],
@@ -7274,8 +7353,14 @@
       "Mark compromised": [
         "Megjelölés kompromittáltként"
       ],
+      "Mark not compromised": [
+        "Megjelölés nem kompromittáltként"
+      ],
       "Mark not obsolete": [
         "Megjelölés nem elavultként"
+      ],
+      "Mark obsolete": [
+        "Megjelölés elavultként"
       ]
     },
     "Knowledge base link label": {
@@ -7301,6 +7386,9 @@
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } cím"
+      ],
+      "${ MAIL_APP_NAME } footer": [
+        "${ MAIL_APP_NAME } lábléc"
       ],
       "${ n } month": [
         "${ n } hónap",
@@ -7396,6 +7484,9 @@
       "Authenticator app": [
         "Hitelesítő alkalmazás"
       ],
+      "Auto show embedded images": [
+        "Beágyazott képek automatikus megjelenítése"
+      ],
       "Auto show remote images": [
         "Távoli képek automatikus megjelenítése"
       ],
@@ -7489,6 +7580,9 @@
       "Composer default font/size": [
         "Szerkesztő betűtípusa és mérete"
       ],
+      "Composer mode": [
+        "Szerkesztő módja"
+      ],
       "Composer text direction": [
         "Szerkesztő szövegiránya"
       ],
@@ -7525,6 +7619,9 @@
       "Conversation grouping": [
         "Beszélgetések csoportosítása"
       ],
+      "Conversations per page": [
+        "Beszélgetések oldalanként."
+      ],
       "Copy": [
         "Másolás"
       ],
@@ -7554,6 +7651,9 @@
       ],
       "Current email": [
         "Jelenlegi e-mail"
+      ],
+      "Daily email notifications": [
+        "Napi e-mail értesítések"
       ],
       "Date": [
         "Dátum"
@@ -7618,6 +7718,9 @@
       "Don't keep versions": [
         "Ne tartsa meg a korábbi változatokat"
       ],
+      "Duration": [
+        "Időtartam"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -7642,8 +7745,14 @@
       "Emails (last month)": [
         "E-mailek (utolsó hónap)"
       ],
+      "End date": [
+        "Befejező dátum"
+      ],
       "End day of month": [
         "A hónap befejező napja"
+      ],
+      "End time": [
+        "Befejezés"
       ],
       "End weekday": [
         "A hét befejező napja"
@@ -7791,6 +7900,9 @@
       ],
       "Message": [
         "Üzenet"
+      ],
+      "Messages per page": [
+        "Üzenetek oldalanként."
       ],
       "Moderate NAT": [
         "Mérsékelt NAT"
@@ -7993,6 +8105,12 @@
       "Show week numbers": [
         "Hetek sorszámának megjelenítése"
       ],
+      "Sign external messages": [
+        "Külső üzenetek aláírása"
+      ],
+      "Signature": [
+        "Aláírás"
+      ],
       "SMTP port": [
         "SMTP port"
       ],
@@ -8001,6 +8119,9 @@
       ],
       "SMTP token": [
         "SMTP token"
+      ],
+      "SMTP username": [
+        "SMTP felhasználónév"
       ],
       "Spam": [
         "Levélszemét"
@@ -8013,6 +8134,9 @@
       ],
       "Start day of month": [
         "A hónap kezdőnapja"
+      ],
+      "Start weekday": [
+        "A hét kezdőnapja"
       ],
       "Statement": [
         "Feltétel"
@@ -8058,6 +8182,9 @@
       ],
       "Two-password mode": [
         "Kétjelszavas mód"
+      ],
+      "Undo send": [
+        "Küldés visszavonása"
       ],
       "Upload 1 or more encryption keys": [
         "Töltsön fel egy vagy több titkosítási kulcsot"
@@ -8258,6 +8385,9 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } létrehozva"
+      ],
+      "${ label.Name } updated": [
+        "${ label.Name } frissítve"
       ],
       "Preference saved": [
         "Beállítások mentve"
@@ -8504,6 +8634,11 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "A ${ appName } új verziója érhető el. ${ reloadButton }."
+      ]
+    },
+    "Metadata title": {
+      "${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } fiók"
       ]
     },
     "Modal title": {
@@ -8771,6 +8906,9 @@
       "Get ${ BRAND_NAME } for free": [
         "Legyen ${ BRAND_NAME }os ingyen"
       ],
+      "Get ${ mostPopularShortPlan.title }": [
+        "${ mostPopularShortPlan.title } beszerzése"
+      ],
       "Get ${ planName }": [
         "${ planName } megszerzése"
       ],
@@ -8794,6 +8932,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } naptár",
+        "${ maximumNumberOfCalendars } naptár"
+      ],
       "${ n } calendar": [
         "${ n } naptár",
         "${ n } naptár"
@@ -9106,6 +9248,17 @@
         "Csoport menedzsment"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Próbaideje véget ér: ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -9181,17 +9334,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Próbaideje véget ér: ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -9429,6 +9571,9 @@
       "Auto-connect": [
         "Automatikus csatlakozás"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "Emelje meg tárhelyét felhasználónként ${ bundleStorage } méretűre"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Emelje meg tárhelyét ${ bundleStorage } méretűre"
       ],
@@ -9576,6 +9721,9 @@
       ]
     },
     "Onboarding": {
+      "Welcome to ${ product }": [
+        "Üdvözli a ${ product }"
+      ],
       "Welcome to ${ VPN_APP_NAME }": [
         "Üdvözli a ${ VPN_APP_NAME }"
       ]
@@ -9593,8 +9741,56 @@
       "13th of the month": [
         "a hónap 13-ik napja"
       ],
+      "14th of the month": [
+        "a hónap 14-ik napja"
+      ],
+      "15th of the month": [
+        "a hónap 15-ik napja"
+      ],
+      "16th of the month": [
+        "a hónap 16-ik napja"
+      ],
+      "17th of the month": [
+        "a hónap 17-ik napja"
+      ],
+      "18th of the month": [
+        "a hónap 18-ik napja"
+      ],
+      "19th of the month": [
+        "a hónap 19-ik napja"
+      ],
       "1st of the month": [
         "a hónap első napja"
+      ],
+      "20th of the month": [
+        "a hónap 20-ik napja"
+      ],
+      "21st of the month": [
+        "a hónap 21-ik napja"
+      ],
+      "22nd of the month": [
+        "a hónap 22-ik napja"
+      ],
+      "23rd of the month": [
+        "a hónap 23-ik napja"
+      ],
+      "24th of the month": [
+        "a hónap 24-ik napja"
+      ],
+      "25th of the month": [
+        "a hónap 25-ik napja"
+      ],
+      "26th of the month": [
+        "a hónap 26-ik napja"
+      ],
+      "27th of the month": [
+        "a hónap 27-ik napja"
+      ],
+      "28th of the month": [
+        "a hónap 28-ik napja"
+      ],
+      "29th of the month": [
+        "a hónap 29-ik napja"
       ],
       "2nd of the month": [
         "a hónap 2-ik napja"
@@ -9629,6 +9825,9 @@
       "Add to existing group": [
         "Hozzáadás meglévő csoporthoz"
       ],
+      "Ask each time": [
+        "Mindig kérdezze"
+      ],
       "Auto": [
         "Automatikus"
       ],
@@ -9643,6 +9842,9 @@
       ],
       "Create new group": [
         "Új csoport létrehozása"
+      ],
+      "Fixed duration": [
+        "Fix időtartam"
       ],
       "Free server configs": [
         "Ingyenes szerver konfigurációk"
@@ -9662,6 +9864,9 @@
       "It's too expensive": [
         "Túl drága"
       ],
+      "Left to Right": [
+        "Balról jobbra"
+      ],
       "My reason isn't listed": [
         "Más okból"
       ],
@@ -9671,11 +9876,23 @@
       "Normal": [
         "Normál"
       ],
+      "Permanent": [
+        "Állandó"
+      ],
       "Plain text": [
         "Egyszerű szöveg"
       ],
       "Repeat daily": [
         "Ismétlés naponta"
+      ],
+      "Repeat monthly": [
+        "Ismétlés havonta"
+      ],
+      "Repeat weekly": [
+        "Ismétlés hetente"
+      ],
+      "Right to Left": [
+        "Jobbról balra"
       ],
       "Router": [
         "Router"
@@ -9688,6 +9905,9 @@
       ]
     },
     "Option delay send seconds": {
+      "0 seconds": [
+        "0 másodperc"
+      ],
       "10 seconds": [
         "10 másodperc"
       ],
@@ -9720,6 +9940,9 @@
     "Option protection mode": {
       "Load content via proxy (recommended)": [
         "Tartalmak betöltése proxy szerveren keresztül (javasolt)"
+      ],
+      "Load content via proxy and store as attachments": [
+        "Tartalmak betöltése proxy szerveren keresztül és tárolás mellékletként"
       ]
     },
     "Organization capacity error": {
@@ -9752,8 +9975,14 @@
       ]
     },
     "OS compatibility": {
+      ".deb (for Debian/Ubuntu)": [
+        ".deb (Debian/Ubuntu)"
+      ],
       ".dmg (10.12 or later)": [
         ".dmg (10.12 vagy újabb)"
+      ],
+      ".exe (64-bit)": [
+        ".exe (64 bit)"
       ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (Fedora/openSUSE)"
@@ -9836,6 +10065,9 @@
       ],
       "You currently have": [
         "Jelenleg a következővel rendelkezik"
+      ],
+      "You have been invited to join ${ PASS_APP_NAME }": [
+        "Meghívást kapott a következőhöz: ${ PASS_APP_NAME }"
       ]
     },
     "pass_signup_2023: Title": {
@@ -9888,6 +10120,9 @@
       ],
       "Confirm": [
         "Jóváhagyás"
+      ],
+      "domain.com": [
+        "domain.hu"
       ],
       "E.g., ": [
         "Pl., "
@@ -10322,6 +10557,9 @@
       ]
     },
     "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "Jelszóváltoztatás kérése?"
+      ],
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
         "A jelszavát ${ gracePeriodHoursRemaining } múlva tudja visszaállítani.",
         "A jelszavát ${ gracePeriodHoursRemaining } múlva tudja visszaállítani."
@@ -10408,6 +10646,11 @@
       ],
       "Status": [
         "Állapot"
+      ]
+    },
+    "Settings/labels": {
+      "Labels/Folders": [
+        "Címkék és mappák"
       ]
     },
     "Settings/labels - table": {
@@ -10900,6 +11143,9 @@
       "Code sent to ${ methodTo }": [
         "Kód elküldve: ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Vágólapra másolva"
+      ],
       "Credits added": [
         "Kredit hozzáadva"
       ],
@@ -10920,6 +11166,9 @@
       ],
       "Email updated": [
         "E-mail frissítve"
+      ],
+      "Fingerprint copied to clipboard": [
+        "Ujjlenyomat a vágólapra másolva"
       ],
       "Gift code applied": [
         "Ajándék kód alkalmazva"
@@ -10948,11 +11197,17 @@
       "Keys updated": [
         "Kulcsok frissítve"
       ],
+      "Link copied to clipboard": [
+        "Hivatkozás a vágólapra másolva"
+      ],
       "Locale updated": [
         "Nyelv frissítve"
       ],
       "Organization activated": [
         "Szervezet aktiválva"
+      ],
+      "Password copied to clipboard": [
+        "Jelszó a vágólapra másolva"
       ],
       "Password updated": [
         "Jelszó frissítve"
@@ -10996,6 +11251,9 @@
       "User updated": [
         "Felhasználó frissítve"
       ],
+      "Username copied to clipboard": [
+        "Felhasználónév másolva a vágólapra"
+      ],
       "Value copied to clipboard": [
         "Az érték a vágólapra másolva"
       ],
@@ -11023,6 +11281,16 @@
         "Felhasználó törölve"
       ]
     },
+    "Success message after sorting folders": {
+      "Folders sorted": [
+        "Mappák rendezve"
+      ]
+    },
+    "Success message after sorting labels": {
+      "Labels sorted": [
+        "Rendezett címkék"
+      ]
+    },
     "Success notification": {
       "${ label.Name } removed": [
         "${ label.Name } törölve"
@@ -11048,8 +11316,14 @@
       "Creating config file for ${ serverName }": [
         "Beállítás fájl létrehozása ehhez: ${ serverName }"
       ],
+      "Filter removed": [
+        "Szűrő eltávolítva"
+      ],
       "Preference updated": [
         "Preferenciák frissítve"
+      ],
+      "Status updated": [
+        "Állapot frissítve"
       ]
     },
     "Suffix": {
@@ -11338,6 +11612,9 @@
       "Auto-reply": [
         "Automatikus válasz"
       ],
+      "Automatically sign outgoing messages?": [
+        "Automatikusan aláírja a kimenő üzeneteket?"
+      ],
       "Backup and export": [
         "Mentés és exportálás"
       ],
@@ -11501,6 +11778,9 @@
       "Delete ${ label.Name } label": [
         "${ label.Name } címke törlése"
       ],
+      "Delete ${ tokenNameToRemove }?": [
+        "${ tokenNameToRemove } törlése?"
+      ],
       "Delete account": [
         "Fiók törlése"
       ],
@@ -11626,6 +11906,9 @@
       "Folders and labels": [
         "Mappák és címkék"
       ],
+      "Forward and auto-reply": [
+        "Továbbít és automatikus válasz"
+      ],
       "Forward emails": [
         "E-mailek továbbítása"
       ],
@@ -11695,9 +11978,6 @@
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Importálás ${ PRODUCT_NAMES.EASY_SWITCH } segítségével"
-      ],
-      "Import-Export app": [
-        "Import-Export alkalmazás"
       ],
       "Increase your privacy with more addresses": [
         "Növelje adatai védelmét további e-mail címek használatával"
@@ -11917,6 +12197,9 @@
       ],
       "Set organization password": [
         "Szervezeti jelszó beállítása"
+      ],
+      "Set up a recovery method": [
+        "Helyreállítási módszer hozzáadása"
       ],
       "Set up forwarding": [
         "Továbbítás beállítása"
@@ -12157,6 +12440,9 @@
       "Fingerprint": [
         "Ujjlenyomat"
       ],
+      "Key type": [
+        "Kulcs típusa"
+      ],
       "Status": [
         "Állapot"
       ]
@@ -12244,14 +12530,23 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "A Gmail bizonyos üzeneteket automatikusan Promócióként és Közösségiként osztályoz. Kiválaszthatja, hogy ezek hova kerüljenek importálásra."
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "A levelező csoportosítsa az e-maileket beszélgetésenként vagy jelenítse meg külön."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Itt adhatja meg a vásárolt, vagy a rendszertámogató csapattól kapott ajándékutalvány kódját."
+      ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "Az üzenetek továbbra is megjelennek az Elküldött elemek és a Piszkozatok közt, akkor is, ha áthelyezi őket egy másik mappába."
       ],
       "Set how your list of messages looks like by default.": [
         "Kiválasztja, hogy alapértelmezetten hogyan jelenjen meg az üzenetek listája."
       ],
       "Set the default Composer popup size as small or full screen.": [
         "A levél szerkesztő alapértelmezett méretének beállítása kicsire vagy teljes képernyősre."
+      ],
+      "Set the default layout for your Inbox.": [
+        "A levelező alapértelmezett elrendezésének beállítása."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Beállítja az alábbi láblécet az elküldött üzeneteiben: ${ signature } A hivatkozás az ajánló hivatkozására mutat. A lábléc az aláírása alatt fog megjelenni. Az aláírását személyre szabhatja a beállítások között."
@@ -12271,11 +12566,17 @@
       "The selected theme will be active when your system is set to \"light mode\"": [
         "A kiválasztott téma akkor lesz aktív, ha a rendszer \"világos üzemmódba\" van állítva."
       ],
+      "This address has been disabled": [
+        "Ez a cím van letiltva"
+      ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Ezzel késleltetheti az e-mailek elüldését, lehetőséget kapva, a kiválasztott időtartamon belül, a küldés visszavonására."
       ],
       "This feature is only available for paid users": [
         "Ez a lehetőség csak előfizetéses csomagokban érhető érhető el"
+      ],
+      "This key cannot be used for encryption": [
+        "Ez a kulcs nem használható titkosításhoz"
       ],
       "This key is encrypted with an old password": [
         "Ez a kulcs egy régebbi jelszóval van titkosítva"
@@ -12288,6 +12589,9 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "A DKIM aláírás felfüggesztésre került a DNS beállítási hibája miatt. Kövesse az útmutatót a DKIM aláírás helyreállításához."
+      ],
+      "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
+        "Ha egy beszélgetésben szereplő levélhez rendel címkét, akkor abban a beszélgetésben az összes fogadott és küldött új üzenetre érvényes lesz."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "A csaló weboldalak elkerülése érdekében, egy jóváhagyás jelenik meg a teljes URL-lel, amikor egy hivatkozásra kattint."
@@ -12308,9 +12612,24 @@
         "A külső fiókja nagy eséllyel elérte a 24-órás sávszélesség korlátját. A ${ BRAND_NAME } meg fogja próbálni folytatni az importálást amilyen hamar csak lehetséges."
       ]
     },
+    "Tooltip automatically attach public key": {
+      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
+        "Bekapcsolásakor a nyilvános kulcs automatikusan csatolásra kerül minden kimenő üzenethez. A címzettek ezt használhatják a levél hitelességének ellenőrzésére és titkosított üzenetek küldésére önnek."
+      ]
+    },
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "Válassza ki a nem ${ BRAND_NAME } PGP felhasználók számára küldött üzenetek alapértelmezett PGP titkosítási és aláírási beállításait. Az Inline PGP csak egyszerű szöveges üzenetekkel működik."
+      ]
+    },
+    "Tooltip prompt to trust keys": {
+      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "Ha egy olyan ${ MAIL_APP_NAME } felhasználótól kap levelet, akinek még nincs megbízható kulcsa a névjegyei közt, egy kérdés fog megjelenni a kulcsok megbízhatóként megjelöléséhez."
+      ]
+    },
+    "Tooltip sign external messages": {
+      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
+        "Bekapcsolásakor a kimenő üzenetek automatikusan aláírásra kerülnek, így a címzettek ellenőrizhetik az üzenet hitelességét. Ez együtt működik a lentebb beállított alapértelmezett PGP beállításokkal."
       ]
     },
     "Tooltip; share calendar modal ": {

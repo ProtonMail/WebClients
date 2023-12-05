@@ -2161,6 +2161,9 @@
       ]
     },
     "Description": {
+      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
+        "카테고리 또는 에너지 레벨별로 이벤트를 컬러 코딩하여 효율성을 높이고 시간을 추적하세요. 유료 플랜에서 이 기능과 그 외 특전을 누리세요."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "연락처 복호화 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 내보낼 모든 연락처 다운로드가 가능합니다."
       ],
@@ -2436,7 +2439,7 @@
         "IMAP 서버가 필요함"
       ],
       "Incorrect login credentials. Please try again.": [
-        "잘못된 로그인 자격 증명이에요. 다시 시도해주세요."
+        "이메일 (사용자 이름) 또는 비밀번호가 잘못되었습니다. 다시 시도하세요."
       ],
       "Incorrect mailbox password. Please try again.": [
         "잘못된 메일함 암호입니다. 다시 시도해 주세요."
@@ -4277,6 +4280,11 @@
         "시스템 시간대가 ${ timezone } 로 변경된 것 같습니다. 여기의 시간대도 변경하시겠습니까?"
       ]
     },
+    "info": {
+      "Selected color:": [
+        "선택한 색상:"
+      ]
+    },
     "Info calendar search": {
       "You can either update your search query or close search to go back to calendar views": [
         "검색 쿼리를 갱신하거나 캘린더 보기로 돌아가기 위해서 검색을 닫을 수 있습니다"
@@ -5094,6 +5102,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendars": [
+        "${ maximumNumberOfCalendars } 캘린더"
+      ],
       "Auto-delete spam and trashed messages": [
         "스팸 및 휴지통의 메시지를 자동 삭제"
       ],
@@ -5322,8 +5333,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "모든 ${ BRAND_NAME } 서비스를 둘러보기"
       ],
+      "Pick a theme": [
+        "테마 선택"
+      ],
       "Set up your organization": [
         "조직 설정"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "모든 ${ BRAND_NAME } 서비스에 접근하려면 상단 좌측의 앱 선택기를 사용하세요: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } 및 ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "설정에서 테마를 언제든지 바꿀 수 있습니다."
       ]
     },
     "Option": {
@@ -6005,6 +6025,9 @@
       "Add your country's public holidays to your calendar.": [
         "거주하는 국가의 공휴일을 사용자의 캘린더에 추가하세요."
       ],
+      "Color-coding is here!": [
+        "컬러 코딩이 새로 생겼습니다!"
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "새로운 검색 기능을 사용해서 원하는 이벤트를 쉽게 찾아보세요."
       ],
@@ -6019,6 +6042,9 @@
       ],
       "Search for events": [
         "이벤트 검색"
+      ],
+      "With customizable event colors, you can color-code the chaos and conquer your day.": [
+        "이제 새로운 사용자화 가능한 이벤트 색상으로, 당신은 기분을 색으로 코딩하는 시간을 가져보세요."
       ]
     },
     "Storage": {
@@ -6322,6 +6348,9 @@
       "Add participants": [
         "참가자 추가"
       ],
+      "Add some color to your day": [
+        "당신의 하루에 색을 더하세요."
+      ],
       "Add to ${ groupCount } groups": [
         "${ groupCount } 그룹에 추가"
       ],
@@ -6440,7 +6469,7 @@
         "암호화된 이벤트"
       ],
       "Enter your password": [
-        "비밀번호를 입력하십시오"
+        "비밀번호를 입력하세요"
       ],
       "Error": [
         "오류"

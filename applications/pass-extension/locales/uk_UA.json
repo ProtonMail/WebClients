@@ -56,6 +56,9 @@
       "Continue": [
         "Продовжити"
       ],
+      "Continue without pinning": [
+        "Продовжити без закріплення"
+      ],
       "Copy and close": [
         "Скопіювати та закрити"
       ],
@@ -154,6 +157,9 @@
       ],
       "Import": [
         "Імпорт"
+      ],
+      "Import your passwords": [
+        "Імпортуйте свої паролі"
       ],
       "Importing": [
         "Імпортування"
@@ -315,6 +321,11 @@
         "Напишіть нам у Twitter"
       ]
     },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "Пропозиція з нагоди Чорної П'ятниці"
+      ]
+    },
     "Button": {
       "More info": [
         "Докладніше"
@@ -343,6 +354,9 @@
       ],
       "Auto-lock could not be disabled": [
         "Не вдалося вимкнути автоблокування"
+      ],
+      "Cannot create alias (${ error }).": [
+        "Неможливо створити псевдонім (${ error })."
       ],
       "Could not leave vault.": [
         "Не вдалося покинути сховище."
@@ -433,6 +447,9 @@
       ],
       "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
         "Надайте розширенню ${ PASS_APP_NAME } необхідні дозволи, щоб продовжити."
+      ],
+      "Please pin the extension or select \"Continue without pinning\".": [
+        "Закріпіть розширення або виберіть \"Продовжити без закріплення\"."
       ],
       "Request timed out": [
         "Час очікування запиту завершився"
@@ -613,6 +630,9 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Доступна нова версія ${ PASS_APP_NAME }. Оновіть його, щоб отримати найновіші функції та виправлення помилок."
       ],
+      "Access your passwords on the go with our mobile apps.": [
+        "Отримуйте доступ до своїх паролів на ходу за допомогою наших програм для мобільних пристроїв."
+      ],
       "Admin": [
         "Адміністратор"
       ],
@@ -621,6 +641,9 @@
       ],
       "Auto-lock successfully disabled": [
         "Автоблокування успішно вимкнено"
+      ],
+      "Autosaved on ${ submissionURL }": [
+        "Автоматично збережено ${ submissionURL }"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Може створювати, редагувати, видаляти й експортувати елементи в цьому сховищі."
@@ -637,11 +660,17 @@
       "Copied to clipboard": [
         "Скопійовано до буфера обміну"
       ],
+      "Creating alias...": [
+        "Створення псевдоніма..."
+      ],
       "Decrypting your data": [
         "Розшифрування ваших даних"
       ],
       "Deleted items will be moved here first": [
         "Видалені елементи спочатку будуть переміщені сюди"
+      ],
+      "Discover ${ PASS_APP_NAME } Youtube Video": [
+        "Перегляньте відео про ${ PASS_APP_NAME } на Youtube"
       ],
       "Drop file here to upload": [
         "Перетягніть файл сюди, щоб вивантажити"
@@ -649,8 +678,14 @@
       "Drop to import": [
         "Перетягніть, щоб імпортувати"
       ],
+      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
+        "Легко імпортуйте наявні паролі в ${ PASS_APP_NAME }."
+      ],
       "Editor": [
         "Редактор"
+      ],
+      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
+        "Ввімкніть ${ PASS_APP_NAME }, під'єднавши обліковий запис ${ BRAND_NAME }"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Введіть код підтвердження. Цифри ${ digit }."
@@ -663,6 +698,15 @@
       ],
       "Generated passwords will be stored for a period of one day.": [
         "Згенеровані паролі зберігатимуться протягом одного дня."
+      ],
+      "Generating alias...": [
+        "Генерування псевдоніма..."
+      ],
+      "Here you will find all the necessary information to get you started.": [
+        "Тут ви знайдете всю необхідну інформацію для початку роботи."
+      ],
+      "Import in progress:": [
+        "Виконується імпорт:"
       ],
       "Imported ${ payload.total } item": [
         "Імпортовано ${ payload.total } елемент",
@@ -686,6 +730,9 @@
         "Запрошення успішно вилучено"
       ],
       "Invite successfully resent": [
+        "Запрошення успішно надіслано"
+      ],
+      "Invite successfully sent": [
         "Запрошення успішно надіслано"
       ],
       "invites you to access items in": [
@@ -724,6 +771,9 @@
       "Loading": [
         "Завантаження"
       ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Завантажується ${ PASS_APP_NAME }"
+      ],
       "Loading...": [
         "Завантаження..."
       ],
@@ -745,8 +795,17 @@
       "Owner": [
         "Власник"
       ],
+      "Pass Plus trial": [
+        "Пробна версія Pass Plus"
+      ],
+      "Password copied": [
+        "Пароль скопійовано"
+      ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Паролі давніші 1 дня автоматично видаляються з історії."
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "Закріпіть ${ PASS_APP_NAME } на панелі інструментів"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-код успішно зареєстровано. Використовуйте його для розблокування ${ PASS_APP_NAME }"
@@ -781,6 +840,9 @@
       "Settings successfully updated": [
         "Налаштування успішно оновлені!"
       ],
+      "Sign in or create an account to continue.": [
+        "Увійдіть або створіть обліковий запис, щоб продовжити."
+      ],
       "Sign in to your account": [
         "Увійдіть у свій обліковий запис"
       ],
@@ -814,6 +876,9 @@
       "Unlock it with your PIN to access the settings": [
         "Розблокуйте за допомогою PIN-коду, щоб отримати доступ до налаштувань"
       ],
+      "Upgrade ${ PASS_APP_NAME }": [
+        "Покращити ${ PASS_APP_NAME }"
+      ],
       "User's access removed": [
         "Доступ користувача вилучено"
       ],
@@ -825,6 +890,9 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Сховище \"${ payload.share.content.name }\" успішно оновлено"
+      ],
+      "Verification code": [
+        "Код підтвердження"
       ],
       "Viewer": [
         "Користувач"
@@ -846,6 +914,9 @@
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Цей PIN-код потрібен для отримання доступу до ${ PASS_APP_NAME } після автоматичного блокування."
+      ],
+      "You're about to create": [
+        "Ви збираєтеся створити"
       ],
       "You're invited to a vault.": [
         "Вас запросили до сховища."
@@ -1365,6 +1436,12 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Вам подобається ${ PASS_APP_NAME }?"
       ],
+      "Fill & copy password": [
+        "Заповнення та копіювання пароля"
+      ],
+      "Get the mobile apps": [
+        "Отримати програму для мобільного пристрою"
+      ],
       "Grant permissions": [
         "Надати дозволи"
       ],
@@ -1386,6 +1463,9 @@
       "Permanently remove all items ?": [
         "Остаточно видалити всі елементи ?"
       ],
+      "Pin the extension": [
+        "Закріпити розширення"
+      ],
       "Secure your data": [
         "Захист ваших даних"
       ],
@@ -1395,6 +1475,15 @@
       "Share with": [
         "Поділитися"
       ],
+      "Switching to ${ PASS_APP_NAME }?": [
+        "Перейти на ${ PASS_APP_NAME }?"
+      ],
+      "Thank you for installing ${ PASS_APP_NAME }": [
+        "Дякуємо, що встановили ${ PASS_APP_NAME }"
+      ],
+      "The extension is now ready to use.": [
+        "Тепер розширення готове до роботи."
+      ],
       "Transfer ownership": [
         "Передати право власності"
       ],
@@ -1403,6 +1492,9 @@
       ],
       "Unlock ${ brandNameJSX }": [
         "Розблокувати ${ brandNameJSX }"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Розблокувати ${ PASS_APP_NAME }"
       ],
       "Update available": [
         "Доступне оновлення"
@@ -1515,6 +1607,12 @@
       ],
       "You must select at least one mailbox": [
         "Виберіть принаймні одну поштову скриньку"
+      ],
+      "Your plan does not allow you to create more aliases": [
+        "Ваш план не дозволяє створювати більше псевдонімів"
+      ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Ваш план дозволяє автозаповнення лише з перших двох сховищ"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша передплата не дозволяє створювати кілька сховищ. Всі елементи будуть імпортовані до вашого першого сховища. Щоб імпортувати дані до кількох сховищ, передплатіть тарифний план вищого рівня."

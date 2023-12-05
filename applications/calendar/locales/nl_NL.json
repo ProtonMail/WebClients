@@ -4336,6 +4336,11 @@
         "Uw systeemtijdzone lijkt te zijn veranderd naar ${ timezone }. Wilt u uw voorkeur voor uw tijdzone bijwerken?"
       ]
     },
+    "info": {
+      "Selected color:": [
+        "Geselecteerde kleur:"
+      ]
+    },
     "Info calendar search": {
       "You can either update your search query or close search to go back to calendar views": [
         "U kunt uw zoekopdracht bijwerken of de zoekopdracht sluiten om terug te keren naar de agendaweergaven"
@@ -5163,6 +5168,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } agenda",
+        "${ maximumNumberOfCalendars } agenda's"
+      ],
       "Auto-delete spam and trashed messages": [
         "Automatisch spam en verwijderde berichten verwijderen"
       ],
@@ -5406,8 +5415,14 @@
       "Discover all ${ BRAND_NAME } services": [
         "Ontdek alle ${ BRAND_NAME }-diensten"
       ],
+      "Pick a theme": [
+        "Thema selecteren"
+      ],
       "Set up your organization": [
         "Stel uw organisatie in"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Gebruik de app-kiezer linksboven voor de toegang tot alle ${ BRAND_NAME }-diensten: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } en ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "Option": {

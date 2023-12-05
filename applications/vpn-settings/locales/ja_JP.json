@@ -101,6 +101,9 @@
       "Copy address": [
         "アドレスをコピー"
       ],
+      "Copy key to the clipboard": [
+        "キーをクリップボードにコピーします"
+      ],
       "Create": [
         "作成"
       ],
@@ -443,6 +446,9 @@
       "Sign out": [
         "サインアウト"
       ],
+      "sign up for free": [
+        "無料でサインアップ"
+      ],
       "Signing in": [
         "サインイン中"
       ],
@@ -640,6 +646,15 @@
       ]
     },
     "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "**暗号化パスワード マネージャーを追加** わずか ${ price }"
+      ],
+      "Add ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } を追加"
+      ],
+      "Add ${ plan } for ${ price } per month": [
+        "月額 ${ plan } で ${ price } を追加"
+      ],
       "Cancel": [
         "キャンセル"
       ],
@@ -648,16 +663,106 @@
       ],
       "Remove": [
         "削除"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } を削除"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "15 か月間購読すると、**暗号化パスワード マネージャー**を月額わずか ${ priceNoSuffix } の追加料金で入手できます。"
       ]
     },
     "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } ストレージ"
+      ],
+      "Ad-blocker and malware protection": [
+        "広告ブロッカーとマルウェア防止"
+      ],
       "Extended version history": [
         "拡張バージョン履歴"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME }と${ CALENDAR_SHORT_APP_NAME }プレミアム"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } プレミアム"
+      ],
+      "Premium Password Manager": [
+        "プレミアムパスワードマネージャー"
+      ]
+    },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "スイスの高速 VPN のブラック フライデー セールで節約しましょう"
+      ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "スイスの高速 VPN の Cyber Week セールで節約しましょう"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "スイスの高速 VPN の年末セールで節約しましょう"
+      ],
+      "Select your Black Friday offer": [
+        "ブラック フライデー オファーを選択してください"
+      ],
+      "Select your Cyber Week offer": [
+        "サイバーウィークのオファーを選択してください"
+      ],
+      "Select your End of Year offer": [
+        "年末オファーを選択してください"
+      ]
+    },
+    "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "すべてのプレミアム ${ BRAND_NAME } サービス。 1 回の簡単なサブスクリプション。"
+      ],
+      "Secure browsing and premium VPN features.": [
+        "安全なブラウジングとプレミアム VPN 機能。"
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "申し訳ございませんが、この特典は現在のプランではご利用いただけません。 ただし、**${ discountPercentage }** 定期購入すると、${ plan.Title }** から **${ months } 割引を受けることができます。"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30 日間返金保証"
+      ]
+    },
+    "bf2023: renew": {
+      "the first month": [
+        "最初の月"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "${ discountedPrice } の特別割引価格は、${ discountedMonths } の間有効です。 その後、${ nextMonths } の ${ nextPrice } の割引価格で自動的に更新されます。 いつでもキャンセルできます。"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "特別割引価格 ${ discountedPrice } は最初の 1 か月間有効です。 その後、毎月 ${ nextPrice } で自動的に更新されます。 いつでもキャンセルできます。"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "オファーは利用できません"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "1 件の独自メールドメイン対応、10 件のメールアドレス、10 件の hide-my-email エイリアス、カレンダー共有などが含まれます。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "暗号化されたクラウドストレージでファイルの安全性を保ちましょう。バージョン履歴、暗号化済みファイル共有などが含まれています。"
       ]
     },
     "Billing cycle": {
       "${ n } months": [
         "${ n } 月"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "${ renewPrice }、${ renewalLength } で自動的に更新されます"
       ]
     },
     "Billing cycle option": {
@@ -2533,6 +2638,9 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } addresses": [
+        "${ amountOfAddresses } アドレス"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
@@ -2568,6 +2676,9 @@
       ],
       "${ provisioningCounter } servers are still being set up. This usually takes around ${ provisioningDuration }.": [
         "${ provisioningCounter } サーバーはまだセットアップ中です。 通常、これには ${ provisioningDuration } 程度かかります。"
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } 以上"
       ],
       "${ storage } storage": [
         "${ storage } ストレージ"
@@ -3705,6 +3816,11 @@
         "自動的にサブスクリプションを更新するための支払い方法を追加することができます。その他のお支払方法も同様に利用可能です。"
       ]
     },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "あなた自身またはあなたの組織の名前と住所を入力します。 これらの詳細は、個人と組織の両方の請求書に追加されます。"
+      ]
+    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "サブスクリプションを再度有効にすることで、有効期限切れを防ぐことができます。"
@@ -4192,8 +4308,23 @@
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME } プロダクトのお知らせ"
       ],
+      "${ BRAND_NAME } user survey": [
+        "${ BRAND_NAME } ユーザーアンケート"
+      ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } ウェルカムメール"
+      ],
+      "${ DRIVE_APP_NAME } product updates": [
+        "${ DRIVE_APP_NAME } 製品のアップデート"
+      ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
+        "${ MAIL_APP_NAME } と ${ CALENDAR_SHORT_APP_NAME } の新機能"
+      ],
+      "${ PASS_APP_NAME } product updates": [
+        "${ PASS_APP_NAME } 製品のアップデート"
+      ],
+      "${ VPN_APP_NAME } product updates": [
+        "${ VPN_APP_NAME } 製品のアップデート"
       ]
     },
     "Label on payment method": {
@@ -4357,6 +4488,9 @@
       "Create a new ${ appName } account": [
         "新しい ${ appName } アカウントを作成する"
       ],
+      "Find your ${ BRAND_NAME } Account username": [
+        "${ BRAND_NAME } アカウントのユーザー名を見つける"
+      ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "${ BRAND_NAME } アカウントのパスワードをお忘れですか? ここで回復コード、メール、または SMS を使用してリセットすると、${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } などに再びアクセスできるようになります。"
       ],
@@ -4442,8 +4576,14 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendars": [
+        "${ maximumNumberOfCalendars } 件のカレンダー"
+      ],
       "${ n } calendars": [
         "${ n } カレンダー"
+      ],
+      "${ n } calendars per user": [
+        "1 ユーザーあたり ${ n } 件のカレンダー"
       ],
       "${ n } custom email domains": [
         "${ n } 件の独自メールドメイン"
@@ -4774,6 +4914,9 @@
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "SimpleLogin by ${ BRAND_NAME } で無制限にエイリアスを作成"
       ],
+      "Snooze messages and get reminded when you want": [
+        "メッセージをスヌーズし、必要なときに再通知します"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
       ],
@@ -4917,6 +5060,18 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: エンドツーエンドの暗号化でスケジュールを保護します。 カスタム カレンダー、カレンダー共有などのサポートが含まれます。"
+      ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: 暗号化されたクラウド ストレージでファイルを保護します。 バージョン履歴、暗号化されたファイル共有などが含まれます。"
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: エンドツーエンド暗号化でメールを保護します。 カスタム電子メール ドメイン、15 個の電子メール アドレス、無制限の hide-my-email エイリアスなどのサポートが含まれます。"
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: ブロックされたコンテンツにアクセスし、プライベートに閲覧します。 ${ serversAndCountries }、最高の VPN 速度、世界中のストリーミング サービスへのアクセス、マルウェアと広告ブロッカー、高速 BitTorrent ダウンロードなどが含まれます。"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "どこでも Netflix や Disney+ および Prime Video を含むストリーミングサービスにアクセスします"
       ],
@@ -5172,6 +5327,9 @@
       "IP Address copied to clipboard": [
         "IP アドレスがクリップボードにコピーされました"
       ],
+      "Key copied to the clipboard": [
+        "キーがクリップボードにコピーされました"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 認証情報を更新しました"
       ],
@@ -5261,6 +5419,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "このプランを維持してください"
+      ],
       "Start using ${ appName }": [
         "${ appName } の使用を開始する"
       ],
@@ -5283,11 +5444,23 @@
       "Creating your account": [
         "アカウントの作成"
       ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "月額 **${ relativePrice }** を追加するだけで、${ BRAND_NAME } のプレミアム パスワード マネージャーにアクセスできるようになります。"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "月額わずか **${ relativePrice }** 追加で、${ BRAND_NAME } のプレミアム VPN サービスにアクセスできます。"
+      ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "**月額 ${ relativePrice }** を追加するだけで、すべてのプレミアム ${ BRAND_NAME } サービスにアクセスできるようになります。"
       ],
       "Free forever": [
         "永久無料"
+      ],
+      "Includes:": [
+        "含まれるもの:"
+      ],
+      "per month": [
+        "月あたり"
       ],
       "per month, billed annually": [
         "月払い、年払い"
@@ -5378,6 +5551,11 @@
       ],
       "Select a reason": [
         "理由を選択"
+      ]
+    },
+    "plan customizer, ips": {
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "プランに含める IP の数を選択します。 追加の IP ごとに ${ price } の費用がかかります。"
       ]
     },
     "plan customizer, users": {
@@ -5478,6 +5656,9 @@
       ],
       "Changing organization password": [
         "組織のパスワードを変更しています"
+      ],
+      "Creating or accessing non-private users": [
+        "非プライベート ユーザーの作成またはアクセス"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "パスワードの変更のために、組織の管理権限が制限されています。次の操作は許可されなくなりました。"
@@ -6008,6 +6189,12 @@
       "Billed every 2 years": [
         "2年ごとに請求"
       ],
+      "Billed for 15 months": [
+        "15 か月分の請求"
+      ],
+      "Billed for 30 months": [
+        "30 か月分の請求"
+      ],
       "Billed monthly": [
         "毎月請求"
       ],
@@ -6154,6 +6341,9 @@
       "Code sent to ${ methodTo }": [
         "${ methodTo } にコードを送信しました"
       ],
+      "Copied to clipboard": [
+        "クリップボードにコピーされました"
+      ],
       "Credits added": [
         "クレジットが追加されました"
       ],
@@ -6190,11 +6380,17 @@
       "Keys updated": [
         "キーが更新されました"
       ],
+      "Link copied to clipboard": [
+        "クリップボードにリンクがコピーされました"
+      ],
       "Locale updated": [
         "言語設定が更新されました"
       ],
       "Organization activated": [
         "組織が有効になりました"
+      ],
+      "Password copied to clipboard": [
+        "パスワードがクリップボードにコピーされました"
       ],
       "Password updated": [
         "パスワードを更新しました。"
@@ -6219,6 +6415,9 @@
       ],
       "User updated": [
         "ユーザが更新されました。"
+      ],
+      "Username copied to clipboard": [
+        "クリップボードにコピーされたユーザー名"
       ],
       "Verification successful": [
         "検証に成功しました"
@@ -6956,6 +7155,19 @@
         "検証済みのメールアドレス"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: すべてのデバイスで安全なログインを実現します。 無制限のエイリアス、共有、統合 2FA などが含まれます。"
+      ]
+    },
+    "Tooltip for news": {
+      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
+        "最新のプライバシー ニュースと ${ BRAND_NAME } の世界で何が起こっているのかを入手してください"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "${ BRAND_NAME } サービスを改善するためのアンケートに参加してください"
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "安定版"
@@ -6978,6 +7190,16 @@
       ],
       "Primary admin": [
         "管理責任者"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "ID プロバイダーによって提供された SSO ユーザー"
       ]
     },
     "Validation": {
@@ -7066,6 +7288,11 @@
       ],
       "Your ${ selected } plan": [
         "あなたの ${ selected } プラン"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "セキュアなコア サーバー、高速 P2P/BitTorrent ダウンロード、Tor over VPN などへのアクセス。"
       ]
     },
     "Warning": {

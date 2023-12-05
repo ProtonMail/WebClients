@@ -245,6 +245,9 @@
       "Copy address": [
         "Salin alamat"
       ],
+      "Copy key to the clipboard": [
+        "Salin ke papan klip"
+      ],
       "Copy link": [
         "Salin tautan"
       ],
@@ -377,8 +380,8 @@
       "Download recovery file": [
         "Unduh berkas pemulihan"
       ],
-      "Download the Import-Export app": [
-        "Unduh aplikasi Import-Export"
+      "Download the ${ MAIL_APP_NAME } Export Tool": [
+        "Unduh ${ MAIL_APP_NAME } Export Tool"
       ],
       "Edit": [
         "Sunting"
@@ -5677,6 +5680,17 @@
         "Sebagian isi kalender Anda tidak didukung dan tidak akan diimpor."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kunci ${ fingerprint } sudah diunggah"
+      ],
+      "Selected color:": [
+        "Warna terpilih:"
+      ]
+    },
     "Info": {
       "${ amountOfAddresses } addresses": [
         "${ amountOfAddresses } alamat"
@@ -7070,6 +7084,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "Submisi SMTP memungkinkan layanan atau perangkat milik pihak ketiga untuk mengirimkan email melalui ${ MAIL_APP_NAME } kepada alamat domain khusus milik Anda. Fitur ini hanya tersedia bagi pengguna ${ BRAND_NAME } for Business yang memiliki domain khusus."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Pengiriman SMTP memungkinkan layanan atau perangkat pihak ketiga untuk mengirim email melalui ${ MAIL_APP_NAME } untuk alamat domain khusus Anda. Untuk meminta akses, silakan ${ createTicket } yang menyertakan rincian penggunaan Anda, domain khusus apa saja yang Anda ingin gunakan, dan kisaran volume email yang masuk per jamnya dan per harinya."
       ],
@@ -7157,6 +7174,9 @@
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Pesan ${ boldDataLocked } tidak akan lagi muncul, namun Anda akan tetap dapat membuka kunci data Anda melalui ${ encryptionAndKeysLink }."
       ],
+      "The ${ MAIL_APP_NAME } Export Tool lets you export decrypted emails from your ${ MAIL_APP_NAME } account to your device. You can then view the messages or import them into another email account or email client.": [
+        "${ MAIL_APP_NAME } Export Tool memungkinkan Anda untuk mengekspor email yang terdekripsi dari akun ${ MAIL_APP_NAME } Anda ke perangkat Anda. Setelahnya, Anda akan dapat melihat isi pesan ini atau mengimpornya ke alamat email atau klien email lain."
+      ],
       "The calendar will be removed from your account.": [
         "Kalender ini akan dihapus dari akun Anda."
       ],
@@ -7180,9 +7200,6 @@
       ],
       "The format of your CSV file is incorrect.": [
         "Format berkas CSV Anda tidak sesuai."
-      ],
-      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        "Aplikasi Import-Export memungkinkan Anda untuk mencadangkan pesan secara lokal dan mengembalikan salinan cadangan ke akun Anda."
       ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Tautan untuk melaporkan bahwa Anda belum menyiapkan sebuah Akun ${ BRAND_NAME } telah kedaluwarsa. Silakan hubungi tim bantuan kami untuk menyelesaikan masalah ini."
@@ -7257,7 +7274,7 @@
         "Tautan pembatalan langganan ini telah kedaluwarsa. Silakan periksa surel yang lebih baru dari milis ini."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
-        "Pengguna ini saat ini bertanggung jawab atas pembayaran untuk organisasi Anda. Dengan menurunkan anggota ini, Anda akan bertanggung jawab atas pembayaran untuk organisasi Anda."
+        "Pengguna ini sedang bertanggung jawab atas pembayaran untuk organisasi Anda. Dengan menurunkan anggota ini, Anda akan bertanggung jawab atas pembayaran untuk organisasi Anda."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Tindakan ini akan membatalkan langganan berbayar Anda saat ini dan Anda akan kehilangan manfaat loyalitas yang telah Anda kumpulkan."
@@ -7751,8 +7768,8 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Anda tidak akan lagi dapat memulihkan data yang terkunci dengan menggunakan berkas pemulihan yang Anda unduh."
       ],
-      "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
-        "Anda tidak akan lagi dapat memulihkan data yang terkunci dengan menggunakan berkas pemulihan yang Anda unduh. Tindakan ini juga akan menganulir segala informasi pemulihan yang ada pada perangkat yang dipercaya."
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
+        "Anda tidak dapat mengembalikan data terkunci dengan berkas pemulihan yang Anda unduh. Ini juga menonaktifkan pemulihan perangkat tepercaya."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Anda akan tetap masuk bahkan setelah Anda menutup browser."
@@ -7846,14 +7863,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Langganan Anda dikelola oleh Mozilla. Silakan hubungi layanan dukungan Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kunci ${ fingerprint } sudah diunggah"
       ]
     },
     "Info - folder colouring feature": {
@@ -9885,6 +9894,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendars": [
+        "${ maximumNumberOfCalendars } kalender"
+      ],
       "${ n } calendars": [
         "${ n } kalender"
       ],
@@ -10244,6 +10256,17 @@
         "Manajemen tim"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -10331,17 +10354,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10701,6 +10713,9 @@
       ],
       "IP Address copied to clipboard": [
         "Alamat IP disalin ke papan klip"
+      ],
+      "Key copied to the clipboard": [
+        "Kunci tersalin ke papan klip"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Kunci dengan kode sidik jari ${ fp } telah dihapus."
@@ -11239,6 +11254,12 @@
       ],
       "End-to-end encryption": [
         "Enkripsi end-to-end"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Hanya dengan **${ relativePrice } lagi per bulan**, Anda mendapat akses pengatur sandi premium ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Hanya dengan **${ relativePrice } lagi per bulan**, Anda mendapat akses layanan VPN premium ${ BRAND_NAME }!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Dengan menambahkan hanya **${ relativePrice } per bulannya**, Anda akan dapat mengakses seluruh fitur premium ${ BRAND_NAME }!"
@@ -12585,6 +12606,9 @@
       "Code sent to ${ methodTo }": [
         "Kode dikirim ke ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Disalin ke papan klip"
+      ],
       "Credits added": [
         "Saldo ditambahkan"
       ],
@@ -12608,6 +12632,9 @@
       ],
       "Email updated": [
         "Surel diperbarui"
+      ],
+      "Fingerprint copied to clipboard": [
+        "Sidik jari disalin ke papan klip"
       ],
       "Gift code applied": [
         "Kode hadiah berhasil digunakan"
@@ -12636,11 +12663,17 @@
       "Keys updated": [
         "Kunci berhasil diperbarui"
       ],
+      "Link copied to clipboard": [
+        "Tautan disalin ke papan klip"
+      ],
       "Locale updated": [
         "Bahasa diperbarui"
       ],
       "Organization activated": [
         "Organisasi berhasil diaktifkan"
+      ],
+      "Password copied to clipboard": [
+        "Kata sandi disalin ke papan klip"
       ],
       "Password updated": [
         "Kata sandi berhasil diperbarui"
@@ -12695,6 +12728,9 @@
       ],
       "User updated": [
         "Pengguna berhasil diperbarui"
+      ],
+      "Username copied to clipboard": [
+        "Nama pengguna disalin ke papan klip"
       ],
       "Value copied to clipboard": [
         "Nilai disalin ke papan klip"
@@ -12926,6 +12962,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ MAIL_APP_NAME } Export Tool": [
+        "${ MAIL_APP_NAME } Export Tool"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Pintasan Keyboard ${ MAIL_APP_NAME }"
@@ -13464,9 +13503,6 @@
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
         "Impor melalui ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
-      "Import-Export app": [
-        "Aplikasi Import-Export"
-      ],
       "Increase your privacy with more addresses": [
         "Tingkatkan privasi Anda dengan lebih banyak alamat"
       ],
@@ -13578,6 +13614,9 @@
       "PayPal verification failed": [
         "Verifikasi PayPal gagal"
       ],
+      "Personalise your e-mail footer": [
+        "Sesuaikan footer email Anda"
+      ],
       "Phone": [
         "Telepon"
       ],
@@ -13679,6 +13718,9 @@
       ],
       "Session management": [
         "Pengelolaan sesi"
+      ],
+      "Set a display name": [
+        "Tentukan nama tampilan"
       ],
       "Set new password": [
         "Atur kata sandi baru"

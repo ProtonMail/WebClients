@@ -1,0 +1,1123 @@
+{
+  "headers": {
+    "plural-forms": "nplurals=2; plural=(n != 1);",
+    "language": "no_NO"
+  },
+  "contexts": {
+    "Action": {
+      "Authenticate": [
+        "Autentiser"
+      ],
+      "Back": [
+        "Tilbake"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Close": [
+        "Lukk"
+      ],
+      "Continue": [
+        "Fortsett"
+      ],
+      "Don't know your password?": [
+        "Vet ikke passordet ditt?"
+      ],
+      "Edit email address": [
+        "Rediger e-postadresse"
+      ],
+      "Edit phone number": [
+        "Rediger telefonnummer"
+      ],
+      "Edit sign-in details": [
+        "Rediger påloggingsinformasjon"
+      ],
+      "Get verification code": [
+        "Få verifiseringskode"
+      ],
+      "More info: ${ safeTitle }": [
+        "Mer informasjon: ${ safeTitle }"
+      ],
+      "Refresh the page": [
+        "Oppdater siden"
+      ],
+      "Request new code": [
+        "Be om en ny kode"
+      ],
+      "Resend code": [
+        "Send kode på nytt"
+      ],
+      "Search countries": [
+        "Søk etter land"
+      ],
+      "Submit": [
+        "Send inn"
+      ],
+      "Try another method": [
+        "Prøv annen metode"
+      ],
+      "Use authentication code": [
+        "Bruk autentiseringskode"
+      ],
+      "Use recovery code": [
+        "Bruk gjenopprettingskode"
+      ],
+      "Verify": [
+        "Verifiser"
+      ],
+      "Verify account": [
+        "Verifiser konto"
+      ],
+      "View invoice": [
+        "Vis faktura"
+      ]
+    },
+    "Country name": {
+      "Abkhazia": [
+        "Abkhasia"
+      ],
+      "Afghanistan": [
+        "Afghanistan"
+      ],
+      "Albania": [
+        "Albania"
+      ],
+      "Algeria": [
+        "Algerie"
+      ],
+      "American Samoa": [
+        "Amerikansk Samoa"
+      ],
+      "Andorra": [
+        "Andorra"
+      ],
+      "Angola": [
+        "Angola"
+      ],
+      "Anguilla": [
+        "Anguilla"
+      ],
+      "Antarctica": [
+        "Antarktis"
+      ],
+      "Antigua and Barbuda": [
+        "Antigua og Barbuda"
+      ],
+      "Argentina": [
+        "Argentina"
+      ],
+      "Armenia": [
+        "Armenia"
+      ],
+      "Aruba": [
+        "Aruba"
+      ],
+      "Ascension Island": [
+        "Ascension"
+      ],
+      "Australia": [
+        "Australia"
+      ],
+      "Austria": [
+        "Østerrike"
+      ],
+      "Azerbaijan": [
+        "Aserbajdsjan"
+      ],
+      "Bahamas": [
+        "Bahamas"
+      ],
+      "Bahrain": [
+        "Bahrain"
+      ],
+      "Bangladesh": [
+        "Bangladesh"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
+      "Belarus": [
+        "Hviterussland"
+      ],
+      "Belgium": [
+        "Belgia"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
+      ],
+      "Bermuda": [
+        "Bermuda"
+      ],
+      "Bhutan": [
+        "Bhutan"
+      ],
+      "Bolivia": [
+        "Bolivia"
+      ],
+      "Bonaire, Sint Eustatius and Saba": [
+        "Bonaire Sint Eustatius og Saba"
+      ],
+      "Bosnia and Herzegovina": [
+        "Bosnia-Hercegovina"
+      ],
+      "Botswana": [
+        "Botswana"
+      ],
+      "Bouvet Island": [
+        "Bouvetøya"
+      ],
+      "Brazil": [
+        "Brasil"
+      ],
+      "British Indian Ocean Territory": [
+        "Britisk Indiske hav-territorium"
+      ],
+      "Brunei Darussalam": [
+        "Brunei Darussalam"
+      ],
+      "Bulgaria": [
+        "Bulgaria"
+      ],
+      "Burkina Faso": [
+        "Bukina Faso"
+      ],
+      "Burundi": [
+        "Burundi"
+      ],
+      "Cambodia": [
+        "Kambodsja"
+      ],
+      "Cameroon": [
+        "Kamerun"
+      ],
+      "Canada": [
+        "Canada"
+      ],
+      "Cape Verde": [
+        "Kapp Verde"
+      ],
+      "Cayman Islands": [
+        "Caymanøyene"
+      ],
+      "Central African Republic": [
+        "Den sentralafrikanske republikk"
+      ],
+      "Chad": [
+        "Tsjad"
+      ],
+      "Chile": [
+        "Chile"
+      ],
+      "China": [
+        "Kina"
+      ],
+      "Christmas Island": [
+        "Christmasøya"
+      ],
+      "Cocos (Keeling) Islands": [
+        "Cocosøyene (Keeling)"
+      ],
+      "Colombia": [
+        "Colombia"
+      ],
+      "Comoros": [
+        "Komorene"
+      ],
+      "Congo": [
+        "Republikken Kongo"
+      ],
+      "Congo, Democratic Republic of the": [
+        "Kongo, Den demokratiske republikken"
+      ],
+      "Cook Islands": [
+        "Cookøyene"
+      ],
+      "Costa Rica": [
+        "Costa Rica"
+      ],
+      "Croatia": [
+        "Kroatia"
+      ],
+      "Cuba": [
+        "Cuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
+      ],
+      "Cyprus": [
+        "Kypros"
+      ],
+      "Czech Republic": [
+        "Tsjekkia"
+      ],
+      "Côte d'Ivoire": [
+        "Elfenbenskysten"
+      ],
+      "Denmark": [
+        "Danmark"
+      ],
+      "Djibouti": [
+        "Djibouti"
+      ],
+      "Dominica": [
+        "Dominica"
+      ],
+      "Dominican Republic": [
+        "Den dominikanske republikk"
+      ],
+      "Ecuador": [
+        "Ecuador"
+      ],
+      "Egypt": [
+        "Egypt"
+      ],
+      "El Salvador": [
+        "El Salvador"
+      ],
+      "Equatorial Guinea": [
+        "Ekvatorial-Guinea"
+      ],
+      "Eritrea": [
+        "Eritrea"
+      ],
+      "Estonia": [
+        "Estland"
+      ],
+      "Eswatini": [
+        "Eswatini"
+      ],
+      "Ethiopia": [
+        "Etiopia"
+      ],
+      "Falkland Islands": [
+        "Falklandsøyene"
+      ],
+      "Faroe Islands": [
+        "Færøyene"
+      ],
+      "Federated States of Micronesia": [
+        "Mikronesiaføderasjonen"
+      ],
+      "Fiji": [
+        "Fiji"
+      ],
+      "Finland": [
+        "Finland"
+      ],
+      "France": [
+        "Frankrike"
+      ],
+      "French Guiana": [
+        "Fransk Guyana"
+      ],
+      "French Polynesia": [
+        "Fransk Polynesia"
+      ],
+      "French Southern Territories": [
+        "Franske sørlige territorier"
+      ],
+      "Gabon": [
+        "Gabon"
+      ],
+      "Gambia": [
+        "Gambia"
+      ],
+      "Georgia": [
+        "Georgia"
+      ],
+      "Germany": [
+        "Tyskland"
+      ],
+      "Ghana": [
+        "Ghana"
+      ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
+      "Greece": [
+        "Hellas"
+      ],
+      "Greenland": [
+        "Grønland"
+      ],
+      "Grenada": [
+        "Grenada"
+      ],
+      "Guadeloupe": [
+        "Guadeloupe"
+      ],
+      "Guam": [
+        "Guam"
+      ],
+      "Guatemala": [
+        "Guatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
+      ],
+      "Guinea": [
+        "Guinea"
+      ],
+      "Guinea-Bissau": [
+        "Guinea-Bissau"
+      ],
+      "Guyana": [
+        "Guyana"
+      ],
+      "Haiti": [
+        "Haiti"
+      ],
+      "Heard Island and McDonald Islands": [
+        "Heardøya og McDonaldøyene"
+      ],
+      "Holy See (Vatican City State)": [
+        "Den hellige stol (Vatikanstaten)"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hongkong"
+      ],
+      "Hungary": [
+        "Ungarn"
+      ],
+      "Iceland": [
+        "Island"
+      ],
+      "India": [
+        "India"
+      ],
+      "Indonesia": [
+        "Indonesia"
+      ],
+      "International": [
+        "Internasjonal"
+      ],
+      "Iran": [
+        "Iran"
+      ],
+      "Iraq": [
+        "Irak"
+      ],
+      "Ireland": [
+        "Irland"
+      ],
+      "Isle of Man": [
+        "Man"
+      ],
+      "Israel": [
+        "Israel"
+      ],
+      "Italy": [
+        "Italia"
+      ],
+      "Jamaica": [
+        "Jamaica"
+      ],
+      "Japan": [
+        "Japan"
+      ],
+      "Jersey": [
+        "Jersey"
+      ],
+      "Jordan": [
+        "Jordan"
+      ],
+      "Kazakhstan": [
+        "Kasakhstan"
+      ],
+      "Kenya": [
+        "Kenya"
+      ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
+      "Kuwait": [
+        "Kuwait"
+      ],
+      "Kyrgyzstan": [
+        "Kirgisistan"
+      ],
+      "Laos": [
+        "Laos"
+      ],
+      "Latvia": [
+        "Latvia"
+      ],
+      "Lebanon": [
+        "Libanon"
+      ],
+      "Lesotho": [
+        "Lesotho"
+      ],
+      "Liberia": [
+        "Liberia"
+      ],
+      "Libya": [
+        "Libya"
+      ],
+      "Liechtenstein": [
+        "Liechtenstein"
+      ],
+      "Lithuania": [
+        "Litauen"
+      ],
+      "Luxembourg": [
+        "Luxemburg"
+      ],
+      "Macao": [
+        "Macao"
+      ],
+      "Madagascar": [
+        "Madagaskar"
+      ],
+      "Malawi": [
+        "Malawi"
+      ],
+      "Malaysia": [
+        "Malaysia"
+      ],
+      "Maldives": [
+        "Maldivene"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
+      ],
+      "Marshall Islands": [
+        "Marshalløyene"
+      ],
+      "Martinique": [
+        "Martinique"
+      ],
+      "Mauritania": [
+        "Mauretania"
+      ],
+      "Mauritius": [
+        "Mauritius"
+      ],
+      "Mayotte": [
+        "Mayotte"
+      ],
+      "Mexico": [
+        "Mexico"
+      ],
+      "Moldova": [
+        "Moldova"
+      ],
+      "Monaco": [
+        "Monako"
+      ],
+      "Mongolia": [
+        "Mongolia"
+      ],
+      "Montenegro": [
+        "Montenegro"
+      ],
+      "Montserrat": [
+        "Montserrat"
+      ],
+      "Morocco": [
+        "Marokko"
+      ],
+      "Mozambique": [
+        "Mozambik"
+      ],
+      "Myanmar": [
+        "Myanmar"
+      ],
+      "Namibia": [
+        "Namibia"
+      ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
+      "Netherlands": [
+        "Nederland"
+      ],
+      "New Caledonia": [
+        "Ny-Kaledonia"
+      ],
+      "New Zealand": [
+        "New Zealand"
+      ],
+      "Nicaragua": [
+        "Nicaragua"
+      ],
+      "Niger": [
+        "Niger"
+      ],
+      "Nigeria": [
+        "Nigeria"
+      ],
+      "Niue": [
+        "Niue"
+      ],
+      "Norfolk Island": [
+        "Norfolkøya"
+      ],
+      "North Korea": [
+        "Nord-Korea"
+      ],
+      "North Macedonia": [
+        "Nord-Makedonia"
+      ],
+      "Northern Mariana Islands": [
+        "Nordlige Marianaøyer"
+      ],
+      "Norway": [
+        "Norge"
+      ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
+      "Palestine": [
+        "Palestina"
+      ],
+      "Panama": [
+        "Panama"
+      ],
+      "Papua New Guinea": [
+        "Papua Ny-Guinea"
+      ],
+      "Paraguay": [
+        "Paraguay"
+      ],
+      "Peru": [
+        "Peru"
+      ],
+      "Philippines": [
+        "Filippinene"
+      ],
+      "Pitcairn": [
+        "Pitcairn"
+      ],
+      "Poland": [
+        "Polen"
+      ],
+      "Portugal": [
+        "Portugal"
+      ],
+      "Puerto Rico": [
+        "Puerto Rico"
+      ],
+      "Qatar": [
+        "Qatar"
+      ],
+      "Reunion": [
+        "Réunion"
+      ],
+      "Romania": [
+        "Romania"
+      ],
+      "Russia": [
+        "Russland"
+      ],
+      "Rwanda": [
+        "Rwanda"
+      ],
+      "Saint Barthélemy": [
+        "Saint-Barthélemy"
+      ],
+      "Saint Helena": [
+        "St. Helena"
+      ],
+      "Saint Kitts and Nevis": [
+        "Saint Kitts og Nevis"
+      ],
+      "Saint Lucia": [
+        "Saint-Lucia"
+      ],
+      "Saint Martin (French Part)": [
+        "Saint-Martin (fransk del)"
+      ],
+      "Saint Pierre and Miquelon": [
+        "St. Pierre og Miquelon"
+      ],
+      "Saint Vincent and the Grenadines": [
+        "Saint Vincent og Grenadinene"
+      ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
+      "Sao Tome and Principe": [
+        "São Tomé og Príncipe"
+      ],
+      "Saudi Arabia": [
+        "Saudi-Arabia"
+      ],
+      "Senegal": [
+        "Senegal"
+      ],
+      "Serbia": [
+        "Serbia"
+      ],
+      "Seychelles": [
+        "Seychellene"
+      ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
+      "Singapore": [
+        "Singapore"
+      ],
+      "Sint Maarten": [
+        "Saint-Martin"
+      ],
+      "Slovakia": [
+        "Slovakia"
+      ],
+      "Slovenia": [
+        "Slovenia"
+      ],
+      "Solomon Islands": [
+        "Salomonøyene"
+      ],
+      "Somalia": [
+        "Somalia"
+      ],
+      "South Africa": [
+        "Sør-Afrika"
+      ],
+      "South Georgia and the South Sandwich Islands": [
+        "Sør-Georgia og Sør-Sandwichøyene"
+      ],
+      "South Korea": [
+        "Sør-Korea"
+      ],
+      "South Ossetia": [
+        "Sør-Ossetia"
+      ],
+      "South Sudan": [
+        "Sør-Sudan"
+      ],
+      "Spain": [
+        "Spania"
+      ],
+      "Sri Lanka": [
+        "Sri Lanka"
+      ],
+      "Sudan": [
+        "Sudan"
+      ],
+      "Suriname": [
+        "Surinam"
+      ],
+      "Svalbard and Jan Mayen": [
+        "Svalbard og Jan Mayen"
+      ],
+      "Sweden": [
+        "Sverige"
+      ],
+      "Switzerland": [
+        "Sveits"
+      ],
+      "Syria": [
+        "Syria"
+      ],
+      "Taiwan": [
+        "Taiwan"
+      ],
+      "Tajikistan": [
+        "Tadsjikistan"
+      ],
+      "Tanzania": [
+        "Tanzania"
+      ],
+      "Thailand": [
+        "Thailand"
+      ],
+      "Timor-Leste": [
+        "Øst-Timor"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
+      ],
+      "Trinidad and Tobago": [
+        "Trinidad og Tobago"
+      ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
+      "Tunisia": [
+        "Tunisia"
+      ],
+      "Turkey": [
+        "Tyrkia"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
+      ],
+      "Turks and Caicos Islands": [
+        "Turks- og Caicosøyene"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
+      ],
+      "Ukraine": [
+        "Ukraina"
+      ],
+      "United Arab Emirates": [
+        "Forente Arabiske Emirater"
+      ],
+      "United Kingdom": [
+        "Storbritannia"
+      ],
+      "United States": [
+        "Amerikas forente stater"
+      ],
+      "United States Minor Outlying Islands": [
+        "Amerikas forente staters ytre småøyer"
+      ],
+      "Uruguay": [
+        "Uruguay"
+      ],
+      "Uzbekistan": [
+        "Usbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
+      ],
+      "Venezuela": [
+        "Venezuela"
+      ],
+      "Vietnam": [
+        "Vietnam"
+      ],
+      "Virgin Islands, British": [
+        "Jomfruøyene, Britisk"
+      ],
+      "Virgin Islands, U.S.": [
+        "Jomfruøyene, Amerikas forente stater"
+      ],
+      "Wallis and Futuna": [
+        "Wallis og Futuna"
+      ],
+      "Western Sahara": [
+        "Vest-Sahara"
+      ],
+      "Yemen": [
+        "Jemen"
+      ],
+      "Zambia": [
+        "Zambia"
+      ],
+      "Zimbabwe": [
+        "Zimbabwe"
+      ],
+      "Åland Islands": [
+        "Åland"
+      ]
+    },
+    "Delinquent modal title": {
+      "Overdue invoice": [
+        "Forfalt faktura"
+      ]
+    },
+    "Error": {
+      "Email is not valid": [
+        "E-post er ikke gyldig"
+      ],
+      "Enter 6 digits": [
+        "Skriv inn 6 sifre"
+      ],
+      "Incorrect username": [
+        "Uriktig brukernavn"
+      ],
+      "Invalid verification code": [
+        "Ugyldig verifiseringskode"
+      ],
+      "Not a valid number": [
+        "Ikke et gyldig tall"
+      ],
+      "Passwords do not match": [
+        "Passordene samsvarer ikke"
+      ],
+      "Request timed out": [
+        "Forespørselen ble tidsavbrutt"
+      ],
+      "The email addresses do not match": [
+        "E-postadressene samsvarer ikke"
+      ],
+      "This field exceeds the maximum of ${ maximumLength } characters.": [
+        "Dette feltet overskrider maksimalt tillatt ${ maximumLength } tegn."
+      ],
+      "This field is required": [
+        "Dette feltet er obligatorisk"
+      ],
+      "This field requires a minimum of ${ minimumLength } characters.": [
+        "Dette feltet krever minimum ${ minimumLength } tegn."
+      ],
+      "Try using only letters, numerals, and _.-": [
+        "Prøv å bruke bare bokstaver, tall og _.-"
+      ],
+      "Unknown error": [
+        "Ukjent feil"
+      ],
+      "Username must begin with a letter or digit": [
+        "Brukernavn må begynne med en bokstav eller ett tall"
+      ],
+      "Username must end with a letter or digit": [
+        "Brukernavn må ende med en bokstav eller ett tall"
+      ]
+    },
+    "Error message": {
+      "Error: ${ errorMessage }": [
+        "Feil: ${ errorMessage }"
+      ],
+      "Please refresh the page or try again later.": [
+        "Vennligst oppdater siden eller forsøk igjen senere."
+      ],
+      "Something went wrong": [
+        "Noe gikk galt"
+      ],
+      "We couldn't load this page. Please refresh the page or check your internet connection.": [
+        "Vi kunne ikke laste denne siden. Vennligst oppdater siden eller undersøk internettforbindelsen din."
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Noe gikk galt under godkjenning med sikkerhetsnøkkelen din. Vennligst prøv på nytt."
+      ]
+    },
+    "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Sett inn en sikkerhetsnøkkel som er koblet til ${ BRAND_NAME }-kontoen."
+      ],
+      "Security key": [
+        "Sikkerhetsnøkkel"
+      ]
+    },
+    "fido2: Label": {
+      "Security key": [
+        "Sikkerhetsnøkkel"
+      ]
+    },
+    "Font face option": {
+      "System default": [
+        "Systemstandard"
+      ],
+      "Theme font": [
+        "Temaskrifttype"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Stor"
+      ],
+      "Medium (recommended)": [
+        "Medium (anbefalt)"
+      ],
+      "Small": [
+        "Liten"
+      ],
+      "Very large": [
+        "Veldig stor"
+      ],
+      "Very small": [
+        "Veldig liten"
+      ]
+    },
+    "Human verification method": {
+      "Email": [
+        "E-post"
+      ],
+      "Manual": [
+        "Manuell"
+      ],
+      "No verification method available": [
+        "Ingen verifiseringsmetode tilgjengelig"
+      ]
+    },
+    "Info": {
+      "A phone number can only be used to verify one ${ BRAND_NAME } account": [
+        "Et telefonnummer kan bare brukes til å bekrefte en ${ BRAND_NAME }-konto"
+      ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Før du ber om en ny verifiseringskode, sjekk søppelpostmappen din og sjekk at ${ strong } er riktig adresse."
+      ],
+      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
+        "Klikk \"be om ny kode\" for å få en ny verifiseringskode sendt til ${ strong }. Hvis dette telefonnummeret er feil, klikker du \"rediger\" for å rette det opp."
+      ],
+      "Country code": [
+        "Landskode"
+      ],
+      "Each code can only be used once": [
+        "Hver kode kan kun bli brukt en gang"
+      ],
+      "Edit email address": [
+        "Rediger e-postadresse"
+      ],
+      "Enter the code from your authenticator app": [
+        "Skriv inn koden fra autentiseringsappen"
+      ],
+      "Enter the verification code that was sent to ${ destinationText }.": [
+        "Skriv inn verifiseringskoden som ble sendt til ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Skriv inn verifiseringskode. Siffer ${ digit }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Skriv inn ditt eget passord (som organisasjonsadministrator)."
+      ],
+      "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
+        "Hvis du har problemer med å opprette kontoen din, vennligst be om en invitasjon og vi vil svare innen en arbeidsdag."
+      ],
+      "If you don't find the email in your inbox, please check your spam folder.": [
+        "Hvis du ikke finner e-posten i innboksen din, vennligst sjekk søppelposten."
+      ],
+      "Internet connection lost": [
+        "Mistet internettilkobling"
+      ],
+      "Learn more": [
+        "Lær mer"
+      ],
+      "Loading": [
+        "Laster"
+      ],
+      "No results found": [
+        "Ingen resultater funnet"
+      ],
+      "Servers are unreachable. Please try again in a few minutes": [
+        "Tjenerne er utilgjengelige. Vennligst prøv på nytt om noen få minutter."
+      ],
+      "Session timed out": [
+        "Økten ble tidsavbrutt"
+      ],
+      "To fight spam and abuse, please verify you are human.": [
+        "For å bekjempe søppelpost og misbruk, vennligst verifiser at du er et menneske."
+      ],
+      "We'll send a new verification code to ${ strong }": [
+        "Vi vil sende en ny verifiseringskode til ${ strong }"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Når du konfigurerer totrinnsverifisering, oppgir vi gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen."
+      ],
+      "Would you like to receive a new verification code or use an alternative verification method?": [
+        "Ønsker du å motta en ny verifiseringskode eller å bruke en alternativ verifiseringsmetode?"
+      ],
+      "Would you like to receive a new verification code?": [
+        "Ønsker du å motta en ny verifiseringskode?"
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
+        "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. Etter 28 dager blir ikke e-poster lenger levert til innboksen din, dine Drive-delekoblinger blir blokkert, og du kan ikke laste opp nye filer. For å gjenoppta normal tjeneste, vennligst betal eventuelle forfalte fakturaer."
+      ],
+      "Your ${ BRAND_NAME } account is currently suspended. Emails are no longer being delivered to your inbox. Your Drive sharing links are no longer active, and you cannot upload new files. To continue using your account, please pay any overdue invoices.": [
+        "${ BRAND_NAME }-kontoen din er for øyeblikket suspendert. E-poster blir ikke lenger levert til innboksen din. Drive-delekoblingene dine er ikke lenger aktive, og du kan ikke laste opp nye filer. For å fortsette å bruke kontoen din, vennligst betal eventuelle forfalte fakturaer."
+      ],
+      "Your email will only be used for this one-time verification.": [
+        "E-posten din vil kun bli brukt til denne engangsbekreftelsen."
+      ],
+      "Your phone number will only be used for this one-time verification.": [
+        "Telefonnummeret ditt vil kun bli brukt til denne engangsbekreftelsen."
+      ]
+    },
+    "Label": {
+      "Authenticator app": [
+        "Autentiseringsapp"
+      ],
+      "Code is 6 digits without spaces": [
+        "Koden består av 6 sifre uten mellomrom"
+      ],
+      "Email address": [
+        "E-postadresse"
+      ],
+      "Hide password": [
+        "Skjul passord"
+      ],
+      "Password": [
+        "Passord"
+      ],
+      "Phone number": [
+        "Telefonnummer"
+      ],
+      "Reveal password": [
+        "Avslør passord"
+      ],
+      "Verification code": [
+        "Verifiseringskode"
+      ],
+      "Your password (admin)": [
+        "Ditt passord (admin)"
+      ]
+    },
+    "Link": {
+      "Learn more": [
+        "Lær mer"
+      ],
+      "Request an invite": [
+        "Be om en invitasjon"
+      ]
+    },
+    "Placeholder": {
+      "Password": [
+        "Passord"
+      ]
+    },
+    "Success": {
+      "Code sent to ${ methodTo }": [
+        "Kode sendt til ${ methodTo }"
+      ],
+      "Verification successful": [
+        "Vellykket verifisering"
+      ]
+    },
+    "Title": {
+      "Enter your password": [
+        "Skriv inn passord"
+      ],
+      "Human verification": [
+        "Menneskelig verifisering"
+      ],
+      "Invalid verification code": [
+        "Ugyldig verifiseringskode"
+      ],
+      "Request new code": [
+        "Be om en ny kode"
+      ],
+      "Sign in with 2FA": [
+        "Logg på med 2FA"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Passord må inneholde minst ${ length } tegn",
+        "Passord må inneholde minst ${ length } tegn"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prøv et kortere brukernavn (maks ${ n } tegn)",
+        "Prøv et kortere brukernavn (maks ${ n } tegn)"
+      ]
+    }
+  }
+}

@@ -4490,6 +4490,11 @@
         "Zdá se, že se vaše systémové časové pásmo změnilo na ${ timezone }. Chcete aktualizovat nastavení časového pásma?"
       ]
     },
+    "info": {
+      "Selected color:": [
+        "Vybraná barva:"
+      ]
+    },
     "Info calendar search": {
       "You can either update your search query or close search to go back to calendar views": [
         "Můžete buď aktualizovat vyhledávací dotaz, nebo zavřít vyhledávání a vrátit se do zobrazení kalendáře"
@@ -5337,6 +5342,12 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalendář",
+        "${ maximumNumberOfCalendars } kalendáře",
+        "${ maximumNumberOfCalendars } kalendářů",
+        "${ maximumNumberOfCalendars } kalendářů"
+      ],
       "Auto-delete spam and trashed messages": [
         "Automaticky mazat zprávy ve spamu a koši"
       ],

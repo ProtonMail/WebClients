@@ -493,6 +493,9 @@
       "Import from .csv or vCard": [
         "Importar de .csv ou vCard"
       ],
+      "Import from Google": [
+        "Importar do Google"
+      ],
       "In the morning": [
         "Pela manhã"
       ],
@@ -692,11 +695,11 @@
       "Not saved": [
         "Não guardado"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "Aceitar"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
@@ -1304,6 +1307,9 @@
       ]
     },
     "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } de armazenamento"
+      ],
       "1 user": [
         "1 utilizador"
       ],
@@ -1315,6 +1321,31 @@
       ],
       "High speed streaming": [
         "Streaming de alta velocidade"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Versão premium do gestor de palavras-passe"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Garantia de devolução do seu dinheiro em até 30 dias"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui histórico de versões, partilha de ficheiros encriptados e muito mais."
       ]
     },
     "Bug category": {
@@ -5768,6 +5799,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Para usar a verificação de endereço, tem de confiar numa ou mais chaves públicas disponíveis, incluindo a que pretende utilizar para envio. Isto impede que as chaves de encriptação sejam falsificadas."
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "Amanhã, às ${ formattedTime }"
+      ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Há demasiadas mensagens à espera de serem enviadas. Aguarde que seja enviada outra mensagem para agendar uma nova."
       ],
@@ -7304,6 +7338,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendário",
+        "${ maximumNumberOfCalendars } calendários"
+      ],
       "Auto-delete spam and trashed messages": [
         "Eliminar automaticamente mensagens de spam e de lixo"
       ],
@@ -7395,6 +7433,20 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "Selecione o que ${ BRAND_NAME } pode aceder: ver mensagens de e-mail e definições, ver e transferir contactos, ver e transferir todas as agendas do Google Agenda."
+      ]
+    },
+    "Onboarding modal": {
+      "Block unsavory senders": [
+        "Bloqueie remetentes indesejados"
+      ],
+      "Congratulations on choosing privacy": [
+        "Parabéns por escolher a privacidade"
+      ],
+      "For your eyes only": [
+        "Só para si"
+      ],
+      "Protection from trackers": [
+        "Proteção contra rastreadores"
       ]
     },
     "Onboarding Proton": {

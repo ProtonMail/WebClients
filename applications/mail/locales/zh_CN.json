@@ -691,10 +691,10 @@
       "Not saved": [
         "未保存"
       ],
-      "Ok": [
+      "OK": [
         "确定"
       ],
-      "OK": [
+      "Ok": [
         "确定"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1325,11 +1325,17 @@
       "High speed streaming": [
         "高速看视频"
       ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "高级 ${ DRIVE_SHORT_APP_NAME } 账户"
+      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "高级 ${ MAIL_SHORT_APP_NAME } 与 ${ CALENDAR_SHORT_APP_NAME } 账户"
       ],
       "Premium ${ VPN_SHORT_APP_NAME }": [
         "高级 ${ VPN_SHORT_APP_NAME } 账户"
+      ],
+      "Premium Password Manager": [
+        "高级密码管理器"
       ]
     },
     "bf2023: Footer": {
@@ -3853,6 +3859,9 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "高级 ${ DRIVE_SHORT_APP_NAME } 账户"
+      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "高级 ${ MAIL_SHORT_APP_NAME } 与 ${ CALENDAR_SHORT_APP_NAME } 账户"
       ],
@@ -5660,6 +5669,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "开启地址密钥验证前，您需要先信任其若干个公钥，包括您要用于发送邮件的密钥。这样可以防止其密钥被伪造。"
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "明天，${ formattedTime }"
+      ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "待发送的邮件过多，请静待另一封邮件发送后陆续发送此邮件。"
       ],
@@ -7173,6 +7185,9 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendars": [
+        "${ maximumNumberOfCalendars } 个日历"
+      ],
       "Auto-delete spam and trashed messages": [
         "自动删除垃圾邮件和废件箱中邮件"
       ],
@@ -7264,6 +7279,17 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "选择 ${ BRAND_NAME } 可以访问的内容：查看您的电子邮件和设置、查看和下载您的联系人、查看和下载您从 Google 议程访问的所有议程。"
+      ]
+    },
+    "Onboarding modal": {
+      "Block unsavory senders": [
+        "阻止不良发件人"
+      ],
+      "For your eyes only": [
+        "密不透风"
+      ],
+      "Protection from trackers": [
+        "抵御追踪脚本"
       ]
     },
     "Onboarding Proton": {
@@ -8387,6 +8413,9 @@
       ]
     },
     "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "高级 ${ DRIVE_SHORT_APP_NAME } 账户"
+      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "高级 ${ MAIL_SHORT_APP_NAME } 与 ${ CALENDAR_SHORT_APP_NAME } 账户"
       ]
