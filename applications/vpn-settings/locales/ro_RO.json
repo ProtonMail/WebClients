@@ -4762,6 +4762,11 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendar",
+        "${ maximumNumberOfCalendars } calendare",
+        "${ maximumNumberOfCalendars } de calendare"
+      ],
       "${ n } calendar": [
         "${ n } calendar",
         "${ n } calendare",
@@ -6673,6 +6678,9 @@
       "Code sent to ${ methodTo }": [
         "Cod trimis la ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Copiat în memorie."
+      ],
       "Credits added": [
         "Credite adăugate"
       ],
@@ -6709,11 +6717,17 @@
       "Keys updated": [
         "Chei actualizate"
       ],
+      "Link copied to clipboard": [
+        "Legătura a fost copiată în memorie."
+      ],
       "Locale updated": [
         "Limbă actualizată"
       ],
       "Organization activated": [
         "Organizație activată"
+      ],
+      "Password copied to clipboard": [
+        "Parola a fost copiată în memorie."
       ],
       "Password updated": [
         "Parolă actualizată"
@@ -6738,6 +6752,9 @@
       ],
       "User updated": [
         "Utilizator actualizat"
+      ],
+      "Username copied to clipboard": [
+        "Numele de utilizator s-a copiat în memorie."
       ],
       "Verification successful": [
         "Verificare reușită"

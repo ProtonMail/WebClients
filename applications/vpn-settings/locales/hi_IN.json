@@ -407,6 +407,9 @@
       "Switch account": [
         "खाता बदलें"
       ],
+      "Switch or add account": [
+        "खाता बदलें अथवा जोड़ें"
+      ],
       "Top up": [
         "ऊपर से"
       ],
@@ -484,6 +487,10 @@
       ]
     },
     "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } कस्टम डोमेन",
+        "${ domains } कस्टम डोमेन"
+      ],
       "${ ips } server": [
         "${ ips } सर्वर",
         "${ ips } सर्वर"
@@ -603,6 +610,11 @@
         "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लान के साथ उपलब्ध नहीं है। लेकिन जब आप **${ months }** के लिए सदस्यता लेते हैं तो आप **${ plan.Title } पर ${ discountPercentage }** की छूट पा सकते हैं।"
       ]
     },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30 दिन की पैसे-वापस गारंटी"
+      ]
+    },
     "bf2023: renew": {
       "the first month": [
         "पहला महीना"
@@ -624,6 +636,12 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "अपने ईमेल और शेड्यूल को एंड-टू-एंड एन्क्रिप्शन के साथ सुरक्षित करें। इसमें कस्टम ईमेल डोमेन, 15 ईमेल पते, असीमित hide-my-email उपनाम, कैलेंडर साझाकरण और बहुत कुछ के लिए समर्थन शामिल है।"
+      ]
+    },
+    "Billing cycle": {
+      "${ n } month": [
+        "${ n } महीना",
+        "${ n } महीने"
       ]
     },
     "Billing cycle option": {
@@ -1662,6 +1680,11 @@
         "हमें सुधरने में मदद करें!"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "सत्यापन ईमेल ${ address } पर भेजा गया"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2-एफए"
@@ -1688,6 +1711,9 @@
       ],
       "Domain not available, try again later": [
         "डोमेन मौजूद नहीं, बाद में वापिस कोशिश करें"
+      ],
+      "Email address is invalid": [
+        "ईमेल पता अमान्य है"
       ],
       "Email is not valid": [
         "ईमेल मान्य नहीं है"
@@ -1973,6 +1999,9 @@
       ],
       "customer support": [
         "ग्राहक सहायता"
+      ],
+      "Invitation from ${ invitation.OrganizationName }": [
+        "${ invitation.OrganizationName } से न्योता"
       ],
       "Invited by: ${ inviteEmail }": [
         "इन्होने न्योता भेजा: ${ inviteEmail }"
@@ -2333,6 +2362,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } पता",
+        "${ amountOfAddresses } पते"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } के लिए आपकी अनुमति की आवश्यकता है ${ enableDesktopNotifications }"
       ],
@@ -2358,6 +2391,10 @@
       "${ number } server": [
         "${ number } सर्वर",
         "${ number } सर्वर"
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } और",
+        "${ remainingAddresses.length } और"
       ],
       "${ storage } storage": [
         "${ storage } स्टोरेज"
@@ -2855,6 +2892,9 @@
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "अपना पासवर्ड कहीं सुरक्षित रखें। यह पुष्टि करने के लिए कि आपने अपना पासवर्ड सही टाइप किया है, आइकन पर क्लिक करें।"
       ],
+      "Saving your password": [
+        "अपना पासवर्ड सेव कर रहे"
+      ],
       "Scan QR code instead": [
         "इसके बजाय QR कोड स्कैन करें"
       ],
@@ -2975,6 +3015,9 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "पुष्टि करने के लिए, कृपया उस उपयोगकर्ता का नाम दर्ज करें जिसे आप हटाना चाहते हैं।"
+      ],
+      "to continue to ${ product }": [
+        "${ product } को जारी रखने के लिए"
       ],
       "to continue to ${ toAppName }": [
         "${ toAppName } को जारी रखने के लिए"
@@ -3791,6 +3834,9 @@
       ]
     },
     "Member action": {
+      "Change password": [
+        "पासवर्ड परिवर्तित करें"
+      ],
       "Delete": [
         "मिटाए"
       ],
@@ -3897,6 +3943,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } कैलेंडर",
+        "${ maximumNumberOfCalendars } कैलेंडर"
+      ],
       "${ n } calendar": [
         "${ n } कैलेंडर",
         "${ n } कैलेंडर"
@@ -3970,6 +4020,9 @@
       "99.95% SLA": [
         "99.95% एसएलए"
       ],
+      "Ad-blocker and malware protection": [
+        "ऐड-ब्लॉकर और मालवेयर सुरक्षा"
+      ],
       "Admin console": [
         "एडमिन कंसोल"
       ],
@@ -3999,6 +4052,9 @@
       ],
       "Contact groups management": [
         "समूह मैनेजमेंट से संपर्क करें"
+      ],
+      "Custom domains for email aliases": [
+        "ईमेल नकलीनाम के लिए कस्टम डोमेन"
       ],
       "Custom email domains": [
         "कस्टम ईमेल डोमेन"
@@ -4148,6 +4204,9 @@
       ],
       "Unlimited labels": [
         "असीमित लेबल"
+      ],
+      "Unlimited logins and notes": [
+        "असीम लॉगइन और नोट"
       ],
       "Unlimited messages per day": [
         "असीमित संदेश हर दिन"
@@ -4299,6 +4358,9 @@
       ]
     },
     "new_plans: Title": {
+      "${ shortPlan.title } Trial": [
+        "${ shortPlan.title } ट्रायल"
+      ],
       "Your account's usage": [
         "आपका खाते का इस्तेमाल"
       ]
@@ -4472,6 +4534,9 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "15 ईमेल पतो और 3 कस्टम ईमेल डोमेन के सपोर्ट के साथ अपने पसंद के हिसाब से इस्तेमाल करें"
       ],
+      "Boost your storage space to ${ bundleStorage } per user": [
+        "अपने स्टोरेज जगह को ${ bundleStorage } हर यूज़र तक बढ़ाएं"
+      ],
       "Boost your storage space to ${ bundleStorage } total": [
         "अपना स्टोरेज जगह ${ bundleStorage } तक ले जाएं"
       ],
@@ -4495,6 +4560,9 @@
       ]
     },
     "Onboarding": {
+      "Welcome to ${ product }": [
+        "${ product } में स्वागत"
+      ],
       "Welcome to ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME } में स्वागत"
       ]
@@ -4563,6 +4631,22 @@
     "pass_signup_2023: Action": {
       "Keep this plan": [
         "यह योजना रखें"
+      ],
+      "Start using ${ appName }": [
+        "${ appName } का उपयोग प्रारंभ करें"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Limited time offer": [
+        "सीमित समय ऑफर"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "Creating your account": [
+        "आपका खाता बन रहा है"
+      ],
+      "Verifying your payment": [
+        "आपका भुगतान सत्यापित कर रहे"
       ]
     },
     "Payment method option": {
@@ -4740,6 +4824,11 @@
         "पासवर्ड रीसेट करें"
       ]
     },
+    "session_recovery:available:error": {
+      "Please generate keys before you try to change your password": [
+        "अपना पासवर्ड बदलने का प्रयास करने से पहले कृपया कुंजियाँ बनाएँ।"
+      ]
+    },
     "session_recovery:available:info": {
       "${ timeRemaining.inDays } day": [
         "${ timeRemaining.inDays } दिन",
@@ -4760,6 +4849,11 @@
         "पासवर्ड सहेजा गया"
       ]
     },
+    "session_recovery:cancellation:title": {
+      "Cancel password reset?": [
+        "पासवर्ड रीसेट रद्द करें?"
+      ]
+    },
     "session_recovery:cancelled:link": {
       "change your password now": [
         "अपना पासवर्ड अभी बदलें"
@@ -4778,6 +4872,11 @@
         "यह सुनिश्चित करने के लिए कि वास्तव में आप ही अपना पासवर्ड रीसेट करने का प्रयास कर रहे हैं, हम अनुरोधों को स्वीकृत करने से पहले 72 घंटे तक प्रतीक्षा करते हैं। आप अपना पासवर्ड ${ boldTimeLeft } में बदल सकते हैं। ${ viewRequest }"
       ]
     },
+    "session_recovery:in_progress:title": {
+      "Password reset requested": [
+        "पासवर्ड रीसेट का अनुरोध किया गया"
+      ]
+    },
     "session_recovery:initiation:action": {
       "Got it": [
         "समझ गया"
@@ -4791,6 +4890,9 @@
     "session_recovery:sign_out:action": {
       "Sign out": [
         "साइन आउट करें"
+      ],
+      "Stay signed in": [
+        "साइन्ड इन रहें"
       ]
     },
     "session_recovery:sign_out:info": {
@@ -4808,6 +4910,9 @@
       ]
     },
     "Signup label": {
+      "Confirm password": [
+        "पासवर्ड की पुष्टि करें"
+      ],
       "Email address": [
         "ईमेल पता"
       ],
@@ -4877,8 +4982,14 @@
       "Highest VPN speed": [
         "सबसे तेज़ वीपीएन रफ्तार"
       ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "प्रीमियम ${ MAIL_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
         "प्रीमियम ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } और ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "प्रीमियम ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "प्रीमियम जल्दी एक्सेस"
@@ -5158,6 +5269,9 @@
       "Code sent to ${ methodTo }": [
         "${ methodTo } को कोड भेजा गया"
       ],
+      "Copied to clipboard": [
+        "क्लिपबोर्ड पे कॉपी किया"
+      ],
       "Credits added": [
         "क्रेडिट जोड़े गए"
       ],
@@ -5191,11 +5305,17 @@
       "Keys updated": [
         "कुंजी अद्यतन की गई"
       ],
+      "Link copied to clipboard": [
+        "लिंक को क्लिपबोर्ड पर कॉपी किया गया"
+      ],
       "Locale updated": [
         "लोकेल अपडेट किया गया"
       ],
       "Organization activated": [
         "संगठन सक्रिय"
+      ],
+      "Password copied to clipboard": [
+        "पासवर्ड क्लिपबोर्ड पर कॉपी किया गया"
       ],
       "Password updated": [
         "पासवर्ड अपडेट किया गया"
@@ -5273,6 +5393,14 @@
     "Suffix for price": {
       "per month": [
         "हर महीने"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "प्रीमियम ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "प्रीमियम ${ MAIL_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {
@@ -5401,6 +5529,9 @@
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } सदस्यता रद्द करें"
       ],
+      "Cancel subscription": [
+        "सदस्यता रद्द करें"
+      ],
       "Card verification": [
         "कार्ड सत्यापन"
       ],
@@ -5500,6 +5631,9 @@
       ],
       "Edit display name": [
         "डिस्प्ले नाम बदले"
+      ],
+      "Edit email address": [
+        "ईमेल पता संपादित करें"
       ],
       "Edit user": [
         "यूजर को संपादित करो"
@@ -5670,6 +5804,9 @@
       "Sign in": [
         "साइन इन करें"
       ],
+      "Sign in to your organization": [
+        "अपने संगठन में साइन इन करें"
+      ],
       "Sign in with 2FA": [
         "2-एफए से साइनइन करें"
       ],
@@ -5812,6 +5949,9 @@
       ]
     },
     "VPN B2B cancellation reason": {
+      "I found another service that I like better": [
+        "मुझे एक और सेवा मिली जो मुझे बेहतर लगी"
+      ],
       "It’s too expensive": [
         "यह बहुत महंगा है"
       ],

@@ -101,6 +101,9 @@
       "Copy address": [
         "Adresi kopyala"
       ],
+      "Copy key to the clipboard": [
+        "Anahtarı panoya kopyala"
+      ],
       "Create": [
         "Ekle"
       ],
@@ -381,7 +384,7 @@
         "Geçersiz kıl"
       ],
       "Revoke ${ name }": [
-        "${ name } geçersiz kıl"
+        "${ name } sertifikasını geçersiz kıl"
       ],
       "Save": [
         "Kaydet"
@@ -4706,6 +4709,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } takvim",
+        "${ maximumNumberOfCalendars } takvim"
+      ],
       "${ n } calendar": [
         "${ n } takvim",
         "${ n } takvim"
@@ -5482,6 +5489,9 @@
       "IP Address copied to clipboard": [
         "IP adresi panoya kopyalandı"
       ],
+      "Key copied to the clipboard": [
+        "Anahtar panoya kopyalandı"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 kimlik bilgileri yeniden oluşturuldu"
       ],
@@ -5598,6 +5608,12 @@
       ],
       "Creating your account": [
         "Hesabınız oluşturuluyor"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Ayda yalnızca **${ relativePrice } daha fazla** ödeyerek ücretli ${ BRAND_NAME } parola yöneticisine erişebilirsiniz!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Ayda yalnızca **${ relativePrice } daha fazla** ödeyerek ücretli ${ BRAND_NAME } hizmetlerine erişebilirsiniz!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Ayda yalnızca **${ relativePrice }** daha ödeyerek tüm ücretli ${ BRAND_NAME } hizmetlerine erişebilirsiniz!"
@@ -6529,6 +6545,9 @@
       "Code sent to ${ methodTo }": [
         "Kod ${ methodTo } alıcısına gönderildi"
       ],
+      "Copied to clipboard": [
+        "Panoya kopyalandı"
+      ],
       "Credits added": [
         "Kredi eklendi"
       ],
@@ -6565,11 +6584,17 @@
       "Keys updated": [
         "Anahtarlar güncellendi"
       ],
+      "Link copied to clipboard": [
+        "Bağlantı panoya kopyalandı"
+      ],
       "Locale updated": [
         "Yerel ayarlar güncellendi"
       ],
       "Organization activated": [
         "Kuruluş kullanıma alındı"
+      ],
+      "Password copied to clipboard": [
+        "Parola panoya kopyalandı"
       ],
       "Password updated": [
         "Parola güncellendi"
@@ -6594,6 +6619,9 @@
       ],
       "User updated": [
         "Kullanıcı güncellendi"
+      ],
+      "Username copied to clipboard": [
+        "Kullanıcı adı panoya kopyalandı"
       ],
       "Verification successful": [
         "Doğrulandı"
