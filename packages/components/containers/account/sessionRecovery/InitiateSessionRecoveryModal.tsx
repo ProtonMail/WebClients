@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
@@ -16,9 +16,8 @@ import {
     ModalTwoFooter as ModalFooter,
     ModalTwoHeader as ModalHeader,
     ModalProps,
-    SettingsLink,
 } from '../../../components';
-import { useApi, useEventManager, useHasRecoveryMethod, useNotifications, useUser } from '../../../hooks';
+import { useApi, useAvailableRecoveryMethods, useEventManager, useNotifications, useUser } from '../../../hooks';
 import SessionRecoveryResetConfirmedPrompt from './SessionRecoveryResetConfirmedPrompt';
 import sessionRecoveryIllustration from './session-recovery-illustration.svg';
 
@@ -29,14 +28,16 @@ enum STEP {
 
 interface Props extends ModalProps {
     confirmedStep?: boolean;
+    onUseRecoveryMethodClick: () => void;
 }
 
-const InitiateSessionRecoveryModal = ({ confirmedStep = false, onClose, ...rest }: Props) => {
+const InitiateSessionRecoveryModal = ({ confirmedStep = false, onUseRecoveryMethodClick, onClose, ...rest }: Props) => {
     const [user] = useUser();
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const [hasRecoveryMethod] = useHasRecoveryMethod();
+    const [availableRecoveryMethods] = useAvailableRecoveryMethods();
+    const hasRecoveryMethod = availableRecoveryMethods.length > 0;
 
     const [step, setStep] = useState<STEP>(STEP.PROMPT);
 
@@ -126,9 +127,9 @@ const InitiateSessionRecoveryModal = ({ confirmedStep = false, onClose, ...rest 
             </ModalContent>
             <ModalFooter>
                 {hasRecoveryMethod ? (
-                    <ButtonLike as={SettingsLink} path="/recovery" onClick={onClose} disabled={submitting}>
+                    <Button onClick={onUseRecoveryMethodClick} disabled={submitting}>
                         {c('session_recovery:initiation:action').t`Use recovery method`}
-                    </ButtonLike>
+                    </Button>
                 ) : (
                     <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
                 )}
