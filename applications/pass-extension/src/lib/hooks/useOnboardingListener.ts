@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { useOnboardingMessages } from '@proton/pass/hooks/useOnboardingMessages';
 import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { selectCreatedItemsCount } from '@proton/pass/store/selectors';
 import type { WorkerMessageWithSender } from '@proton/pass/types';
 import { OnboardingMessage, WorkerMessageType } from '@proton/pass/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -12,6 +14,7 @@ import { useExtensionConnectContext } from './useExtensionConnectContext';
 export const useOnboardingListener = () => {
     const { setOnboardingMessage, setPendingShareAccess } = useSpotlight();
     const { context: extensionContext } = useExtensionConnectContext();
+    const createdItemsCount = useSelector(selectCreatedItemsCount);
     const definitions = useOnboardingMessages();
 
     useEffect(() => {
@@ -39,5 +42,5 @@ export const useOnboardingListener = () => {
 
         extensionContext?.port.onMessage.addListener(handleMessage);
         return () => extensionContext?.port.onMessage.removeListener(handleMessage);
-    }, [extensionContext]);
+    }, [extensionContext, createdItemsCount]);
 };
