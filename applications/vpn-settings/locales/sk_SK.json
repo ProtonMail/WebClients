@@ -101,6 +101,9 @@
       "Copy address": [
         "Kopírovať adresu"
       ],
+      "Copy key to the clipboard": [
+        "Skopírovať kľúč do schránky"
+      ],
       "Create": [
         "Vytvoriť"
       ],
@@ -4800,6 +4803,12 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalendár",
+        "${ maximumNumberOfCalendars } kalendáre",
+        "${ maximumNumberOfCalendars } kalendárov",
+        "${ maximumNumberOfCalendars } kalendárov"
+      ],
       "${ n } calendar": [
         "${ n } kalendár",
         "${ n } kalendáre",
@@ -5620,6 +5629,9 @@
       "IP Address copied to clipboard": [
         "IP adresa bola skopírovaná do schránky"
       ],
+      "Key copied to the clipboard": [
+        "Kľúč skopírovaný do schránky"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 poverenia boli obnovené"
       ],
@@ -5742,6 +5754,12 @@
       ],
       "Creating your account": [
         "Vytvárame váš účet"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Len za **${ relativePrice } mesačne** navyše, získate prístup k prémiovému správcovi hesiel ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Len za **${ relativePrice } mesačne** navyše, získate prístup k prémiovej službe ${ BRAND_NAME } VPN!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Len za ďalšie **${ relativePrice } mesačne**, získate prístup ku všetkým prémiovým službám ${ BRAND_NAME }!"
@@ -6739,6 +6757,9 @@
       "Code sent to ${ methodTo }": [
         "Kód zaslaný na ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Skopírované do schránky"
+      ],
       "Credits added": [
         "Kredity boli pridané"
       ],
@@ -6775,11 +6796,17 @@
       "Keys updated": [
         "Kľúče aktualizované"
       ],
+      "Link copied to clipboard": [
+        "Odkaz bol skopírovaný do schránky"
+      ],
       "Locale updated": [
         "Jazyk aktualizovaný"
       ],
       "Organization activated": [
         "Organizácia bola aktivovaná"
+      ],
+      "Password copied to clipboard": [
+        "Heslo bolo skopírované do schránky"
       ],
       "Password updated": [
         "Heslo bolo aktualizované"
@@ -6804,6 +6831,9 @@
       ],
       "User updated": [
         "Používateľ aktualizovaný"
+      ],
+      "Username copied to clipboard": [
+        "Používateľské meno bolo skopírované do schránky"
       ],
       "Verification successful": [
         "Overenie prebehlo úspešne"

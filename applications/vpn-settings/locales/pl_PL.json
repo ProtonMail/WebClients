@@ -101,6 +101,9 @@
       "Copy address": [
         "Kopiuj adres"
       ],
+      "Copy key to the clipboard": [
+        "Kopiuj klucz do schowka"
+      ],
       "Create": [
         "Utwórz"
       ],
@@ -743,10 +746,10 @@
         "Oszczędź na szybkich, szwajcarskich usługach VPN z okazji Czarnego Piątku"
       ],
       "Save with Cyber Week deals on a high-speed Swiss VPN": [
-        "Oszczędź na szybkich, szwajcarskich usługach VPN z okazji Cyber Tygodnia"
+        "Zaoszczędź na szybkiej szwajcarskiej usłudze VPN z okazji Cyber Tygodnia"
       ],
       "Save with End of Year deals on a high-speed Swiss VPN": [
-        "Oszczędzaj dzięki ofertom na koniec roku na szybką szwajcarską sieć VPN"
+        "Zaoszczędź na szybkiej szwajcarskiej usłudze VPN dzięki ofertom końcoworocznym"
       ],
       "Select your Black Friday offer": [
         "Wybierz ofertę na Czarny Piątek"
@@ -755,7 +758,7 @@
         "Wybierz ofertę Cyber Tygodnia"
       ],
       "Select your End of Year offer": [
-        "Wybierz ofertę na koniec roku"
+        "Wybierz ofertę końcoworoczną"
       ]
     },
     "bf2023: info": {
@@ -5435,7 +5438,7 @@
         "Zablokuj firmowe zasoby w publicznym Internecie i udostępniaj je za pomocą prywatnych bram"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
-        "Zarządzaj subskrypcją i dostosuj plan. Akceptowanymi metodami płatności są karty kredytowe, konto PayPal, kryptowaluty i przelewy bankowe."
+        "Zarządzaj subskrypcją i dostosuj plan. Akceptowanymi metodami płatności są karty płatnicze, konto PayPal, kryptowaluty i przelewy bankowe."
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "W dni robocze otrzymasz odpowiedź od zespołu wsparcia klienta ${ BRAND_NAME } w ciągu 24 godzin od zgłoszenia"
@@ -5753,10 +5756,10 @@
         "Tworzenie konta"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
-        "Za jedyne **${ relativePrice } miesięcznie** więcej, otrzymasz dostęp do menedżera haseł premium ${ BRAND_NAME }!"
+        "Za jedyne **${ relativePrice } miesięcznie** więcej, otrzymasz dostęp do menadżera haseł ${ BRAND_NAME } w wersji premium!"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "Za jedyne **${ relativePrice } miesięcznie** więcej, otrzymasz dostęp do najwyższej jakości usługi VPN ${ BRAND_NAME }!"
+        "Za jedyne **${ relativePrice } miesięcznie** więcej, otrzymasz dostęp do usługi ${ BRAND_NAME } VPN w wersji premium!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Za **${ relativePrice } miesięcznie** więcej uzyskasz dostęp do wszystkich funkcji premium usług ${ BRAND_NAME }!"
@@ -6754,6 +6757,9 @@
       "Code sent to ${ methodTo }": [
         "Kod został wysłany na ${ methodTo }"
       ],
+      "Copied to clipboard": [
+        "Skopiowano do schowka"
+      ],
       "Credits added": [
         "Środki zostały dodane"
       ],
@@ -6790,11 +6796,17 @@
       "Keys updated": [
         "Klucze zostały zaktualizowane"
       ],
+      "Link copied to clipboard": [
+        "Link został skopiowany do schowka"
+      ],
       "Locale updated": [
         "Ustawienia językowe zostały zaktualizowane"
       ],
       "Organization activated": [
         "Organizacja została aktywowana"
+      ],
+      "Password copied to clipboard": [
+        "Hasło zostało skopiowane do schowka"
       ],
       "Password updated": [
         "Hasło zostało zaktualizowane"
@@ -6819,6 +6831,9 @@
       ],
       "User updated": [
         "Użytkownik został zaktualizowany"
+      ],
+      "Username copied to clipboard": [
+        "Nazwa użytkownika została skopiowana do schowka"
       ],
       "Verification successful": [
         "Weryfikacja powiodła się"
