@@ -21,11 +21,7 @@ contextMenu({
     showSaveImage: true,
 });
 
-const windowOSConfig: BrowserWindowConstructorOptions = {
-    frame: true,
-    transparent: true,
-    backgroundMaterial: "mica",
-};
+const windowOSConfig: BrowserWindowConstructorOptions = {};
 
 const macOSConfig: BrowserWindowConstructorOptions = {
     frame: false,
@@ -33,6 +29,13 @@ const macOSConfig: BrowserWindowConstructorOptions = {
     titleBarStyle: "hidden",
     vibrancy: "under-window",
     trafficLightPosition: { x: 12, y: 8 },
+};
+
+const getOSSpecificConfig = () => {
+    if (isMac) {
+        return macOSConfig;
+    }
+    return windowOSConfig;
 };
 
 const createWindow = (session: Session, url: string, visible: boolean, windowConfig: Rectangle): BrowserWindow => {
@@ -47,8 +50,7 @@ const createWindow = (session: Session, url: string, visible: boolean, windowCon
         height,
         minHeight: WINDOW_SIZES.MIN_HEIGHT,
         minWidth: WINDOW_SIZES.MIN_WIDTH,
-        ...(isMac ? macOSConfig : {}),
-        ...(isWindows ? windowOSConfig : {}),
+        ...getOSSpecificConfig(),
         webPreferences: {
             devTools: true,
             spellcheck: true,
