@@ -1,7 +1,5 @@
 import { ThemeColor } from '@proton/colors';
 
-
-
 import { Card } from '..';
 import NotificationDot from './NotificationDot';
 import mdx from './NotificationDot.mdx';
@@ -26,11 +24,11 @@ export const PositionHelper = () => (
     <>
         <Card className="relative mb-4">
             With helper
-            <NotificationDot className="absolute top right notification-dot--top-right" />
+            <NotificationDot className="absolute top-0 right-0 notification-dot--top-right" />
         </Card>
         <Card className="relative">
             Without helper
-            <NotificationDot className="absolute top right" />
+            <NotificationDot className="absolute top-0 right-0" />
         </Card>
     </>
 );

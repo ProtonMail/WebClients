@@ -56,7 +56,7 @@ export const ApplicationLogs: VFC = () => {
                         color="weak"
                         size="small"
                         onClick={() => setShowLogs(false)}
-                        className="absolute top right mt-2 mr-2"
+                        className="absolute top-0 right-0 mt-2 mr-2"
                     >
                         <Icon name="cross" size={12} />
                     </Button>

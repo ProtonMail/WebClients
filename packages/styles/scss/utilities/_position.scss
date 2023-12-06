@@ -69,59 +69,60 @@
 	z-index: $layer-upper;
 }
 
-/*
- * Placements
- */
-.top,
+///
+/// Placements
+///
 .top-0 {
 	inset-block-start: 0;
 }
 
-.right,
-.right-0 {
-	inset-inline-end: 0;
-}
-
-.bottom,
 .bottom-0 {
 	inset-block-end: 0;
 }
 
-.left,
-.left-0 {
+.left-0,
+.start-0 {
 	inset-inline-start: 0;
 }
 
-.inset,
+.right-0,
+.end-0 {
+	inset-inline-end: 0;
+}
+
 .inset-0 {
 	inset: 0;
 }
 
-/*
- * set up to use inline style with custom props
- * to avoid having logical props in JS, postCSS can't process them
- * Specificity issue with composer and others -_-v
-*/
+///
+/// set up to use inline style with custom props
+/// to avoid having logical props in JS, postCSS can't process them
+/// Specificity issue with composer and others -_-v
+///
 .top-custom {
-	&#{&} {
-		inset-block-start: var(--top-custom);
-	}
-}
-
-.right-custom {
-	&#{&} {
-		inset-inline-end: var(--right-custom);
-	}
+	inset-block-start: var(--top-custom);
 }
 
 .bottom-custom {
-	&#{&} {
-		inset-block-end: var(--bottom-custom);
-	}
+	inset-block-end: var(--bottom-custom);
 }
 
 .left-custom {
-	&#{&} {
-		inset-inline-start: var(--left-custom);
-	}
+	inset-inline-start: var(--left-custom);
+}
+
+.start-custom {
+	inset-inline-start: var(--start-custom);
+}
+
+.right-custom {
+	inset-inline-end: var(--right-custom);
+}
+
+.end-custom {
+	inset-inline-end: var(--end-custom);
+}
+
+.inset-custom {
+	inset: var(--inset-custom);
 }
