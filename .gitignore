@@ -37,6 +37,8 @@ build
 tests/**/*.png
 !tests/**/*-linux.png
 !tests/mail/**/*.png
+tests/mail/old/binaries/credentials.json
+tests/mail/old/binaries/tokens.json
 # ignore Zone.identifier
 # https://github.com/microsoft/WSL/issues/7456
 *:Zone.Identifier
