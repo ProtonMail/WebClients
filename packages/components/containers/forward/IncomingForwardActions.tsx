@@ -2,7 +2,9 @@ import { c } from 'ttag';
 
 import useLoading from '@proton/hooks/useLoading';
 import { deleteForwarding, rejectForwarding } from '@proton/shared/lib/api/forwardings';
+import { replaceAddressTokens } from '@proton/shared/lib/api/keys';
 import { Address, ForwardingState, IncomingAddressForwarding } from '@proton/shared/lib/interfaces';
+import { getHasMigratedAddressKeys, getReplacedAddressKeyTokens } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useKTVerifier } from '..';
@@ -38,7 +40,24 @@ const IncomingForwardActions = ({ forward, addresses }: Props) => {
             throw new Error('No address');
         }
 
-        const [userKeys, addressKeys] = await Promise.all([getUserKeys(), getAddressKeys(address.ID)]);
+        const userKeys = await getUserKeys();
+
+        if (getHasMigratedAddressKeys(addresses) && userKeys.length > 1) {
+            // The token is validated with the primary user key, and this is to ensure that the address tokens are encrypted to the primary user key.
+            // NOTE: Reencrypting address token happens automatically when generating a new user key, but there are users who generated user keys before that functionality existed.
+            const primaryUserKey = userKeys[0].privateKey;
+            const replacedResult = await getReplacedAddressKeyTokens({
+                userKeys,
+                addresses,
+                privateKey: primaryUserKey,
+            });
+            if (replacedResult.AddressKeyTokens.length) {
+                await api(replaceAddressTokens(replacedResult));
+                await call();
+            }
+        }
+
+        const addressKeys = await getAddressKeys(address.ID);
 
         await acceptIncomingForwarding({
             api,
