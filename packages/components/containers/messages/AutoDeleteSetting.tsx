@@ -53,7 +53,7 @@ const AutoDeleteSetting = ({ settingValue = AUTO_DELETE_SPAM_AND_TRASH_DAYS.DISA
                     </label>
                 </SettingsLayoutLeft>
 
-                <SettingsLayoutRight className="pt-2">
+                <SettingsLayoutRight isToggleContainer>
                     <Toggle
                         id="autoDelete"
                         loading={loadingAutoDelete}

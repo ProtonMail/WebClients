@@ -45,7 +45,7 @@ const EmailPrivacySection = () => {
                         />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt-2">
+                <SettingsLayoutRight isToggleContainer>
                     <RemoteToggle
                         id="remoteToggle"
                         hideRemoteImages={hideRemoteImages}
@@ -65,7 +65,7 @@ const EmailPrivacySection = () => {
                             />
                         </label>
                     </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="pt-2">
+                    <SettingsLayoutRight isToggleContainer>
                         <PreventTrackingToggle
                             id="preventTrackingToggle"
                             preventTracking={ImageProxy}
@@ -85,7 +85,7 @@ const EmailPrivacySection = () => {
                                 />
                             </label>
                         </SettingsLayoutLeft>
-                        <SettingsLayoutRight className="pt-2">
+                        <SettingsLayoutRight isToggleContainer>
                             <ProtectionModeSelect
                                 id="protectiontModeToggle"
                                 defaultProtectionMode={ImageProxy}

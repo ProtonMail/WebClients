@@ -52,17 +52,16 @@ const CalendarLayoutSection = ({ calendarUserSettings: { ViewPreference, Display
                     />
                 </SettingsLayoutRight>
             </SettingsLayout>
-            <WeekStartSection/>
+            <WeekStartSection />
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label className="text-semibold" htmlFor="week-numbers-display" id="label-week-numbers-display">
                         <span className="mr-2">{c('Label').t`Show week numbers`}</span>
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt-2 flex items-center">
+                <SettingsLayoutRight isToggleContainer>
                     <Toggle
                         id="week-numbers-display"
-                        aria-describedby="week-numbers-display"
                         checked={!!DisplayWeekNumber}
                         loading={loadingWeekNumberDisplay}
                         onChange={({ target: { checked } }) =>
