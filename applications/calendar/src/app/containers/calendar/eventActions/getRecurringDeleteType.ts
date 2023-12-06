@@ -24,6 +24,7 @@ interface Arguments {
     veventComponent?: VcalVeventComponent;
     canOnlyDeleteAll: boolean;
     canOnlyDeleteThis: boolean;
+    cannotDeleteThisAndFuture: boolean;
     isCalendarDisabled: boolean;
     isAttendee: boolean;
     onDeleteConfirmation: OnDeleteConfirmationCb;
@@ -35,6 +36,7 @@ const getRecurringDeleteType = ({
     recurrence,
     canOnlyDeleteAll,
     canOnlyDeleteThis,
+    cannotDeleteThisAndFuture,
     isCalendarDisabled,
     isAttendee,
     onDeleteConfirmation,
@@ -46,7 +48,7 @@ const getRecurringDeleteType = ({
         deleteTypes = [RECURRING_TYPES.ALL];
     } else if (canOnlyDeleteThis) {
         deleteTypes = [RECURRING_TYPES.SINGLE];
-    } else if (getHasFutureOption(originalEditEventData.veventComponent, recurrence)) {
+    } else if (getHasFutureOption(originalEditEventData.veventComponent, recurrence) && !cannotDeleteThisAndFuture) {
         deleteTypes = [RECURRING_TYPES.SINGLE, RECURRING_TYPES.FUTURE, RECURRING_TYPES.ALL];
     } else {
         deleteTypes = [RECURRING_TYPES.SINGLE, RECURRING_TYPES.ALL];

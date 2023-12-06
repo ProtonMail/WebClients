@@ -91,6 +91,14 @@ export const getEquivalentAttendeesSend = (vevent: VcalVeventComponent, inviteAc
     }
 };
 
+export const getHasProtonAttendees = (
+    veventComponent: VcalVeventComponent,
+    sendPreferencesMap: SimpleMap<AugmentedSendPreferences>
+) => {
+    const attendeeEmails = (veventComponent.attendee || []).map((attendee) => getAttendeeEmail(attendee));
+    return attendeeEmails.some((email) => !!sendPreferencesMap[email]?.isInternal);
+};
+
 const extractProtonAttendeePublicKey = (email: string, sendPreferencesMap: SimpleMap<AugmentedSendPreferences>) => {
     const sendPreferences = sendPreferencesMap[email];
     if (!sendPreferences) {

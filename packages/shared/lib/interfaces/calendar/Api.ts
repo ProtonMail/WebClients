@@ -113,6 +113,7 @@ export interface CalendarCreateOrUpdateEventBlobData {
     Color: Nullable<string>;
     AttendeesEventContent?: Omit<CalendarEventData, 'Author'>[];
     Attendees?: Omit<Attendee, 'UpdateTime' | 'ID'>[];
+    CancelledOccurrenceContent?: Omit<CalendarEventData, 'Author'>[];
 }
 export type CalendarCreateEventBlobData = RequireSome<
     CalendarCreateOrUpdateEventBlobData,
@@ -132,7 +133,6 @@ interface CalendarCreateOrUpdateEventMetaData {
 export interface CreateOrUpdateCalendarEventData
     extends CalendarCreateOrUpdateEventBlobData,
         CalendarCreateOrUpdateEventMetaData {}
-
 export interface CreateSinglePersonalEventData {
     Notifications: Nullable<CalendarNotificationSettings[]>;
     Color: Nullable<string>;

@@ -37,6 +37,7 @@ export interface CreateEventActionOperation {
     data: {
         veventComponent: VcalVeventComponent;
         hasDefaultNotifications: boolean;
+        isCancellingSingleOccurrence?: boolean;
         addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
         color?: string;
     };
@@ -46,8 +47,10 @@ export interface UpdateEventActionOperation {
     data: {
         calendarEvent: CalendarEvent;
         veventComponent: VcalVeventComponent;
+        cancelledOccurrenceVevent?: VcalVeventComponent;
         hasDefaultNotifications: boolean;
         isAttendee: boolean;
+        isBreakingChange?: boolean;
         removedAttendeesEmails?: string[];
         addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
         color?: string;
@@ -96,9 +99,11 @@ export const getCreateSyncOperation = (data: {
 });
 export const getUpdateSyncOperation = (data: {
     veventComponent: VcalVeventComponent;
+    cancelledOccurrenceVevent?: VcalVeventComponent;
     calendarEvent: CalendarEvent;
     hasDefaultNotifications: boolean;
     isAttendee: boolean;
+    isBreakingChange?: boolean;
     removedAttendeesEmails?: string[];
     addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
 }): UpdateEventActionOperation => ({
@@ -107,6 +112,9 @@ export const getUpdateSyncOperation = (data: {
         ...data,
         veventComponent: withoutRedundantDtEnd(data.veventComponent),
         color: getVeventColorValue(data.veventComponent),
+        cancelledOccurrenceVevent: data.cancelledOccurrenceVevent
+            ? withoutRedundantDtEnd(data.cancelledOccurrenceVevent)
+            : undefined,
     },
 });
 
@@ -218,8 +226,10 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                     calendarEvent,
                     hasDefaultNotifications,
                     isAttendee,
+                    isBreakingChange,
                     removedAttendeesEmails,
                     addedAttendeesPublicKeysMap,
+                    cancelledOccurrenceVevent,
                 } = operation.data;
                 const {
                     CalendarID: oldCalendarID,
@@ -234,6 +244,7 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
 
                 const data = await createCalendarEvent({
                     eventComponent: veventComponent,
+                    cancelledOccurrenceVevent,
                     removedAttendeesEmails,
                     addedAttendeesPublicKeysMap,
                     isCreateEvent: false,
@@ -249,10 +260,12 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                     })),
                 });
                 const isOrganizerData = { IsOrganizer: booleanToNumber(!isAttendee) };
+                const isBreakingChangeData = { IsBreakingChange: booleanToNumber(isBreakingChange || false) };
 
                 const dataComplete = {
                     ...permissionData,
                     ...isOrganizerData,
+                    ...isBreakingChangeData,
                     ...data,
                 };
 
