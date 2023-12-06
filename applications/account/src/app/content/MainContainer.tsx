@@ -152,6 +152,8 @@ const MainContainer = () => {
     const app = appFromPathname || getToApp(undefined, user);
     const appSlug = getSlugFromApp(app);
 
+    const isPassWebAppLinkEnabled = useFlag('PassWebAppLink');
+
     const routes = getRoutes({
         app,
         user,
@@ -185,7 +187,9 @@ const MainContainer = () => {
      * vpn web app is also settings which you are already in. Redirect to
      * the default path in account in that case.
      */
-    const isLocal = [APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS].includes(app as any);
+    const isLocal = [APPS.PROTONVPN_SETTINGS, ...(!isPassWebAppLinkEnabled ? [APPS.PROTONPASS] : [])].includes(
+        app as any
+    );
     const toApp = isLocal ? APPS.PROTONACCOUNT : app;
     const to = isLocal ? `/${getSlugFromApp(app)}` : '/';
     const prefixPath = `/${appSlug}`;
