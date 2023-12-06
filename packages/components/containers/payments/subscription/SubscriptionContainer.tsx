@@ -784,7 +784,10 @@ const SubscriptionContainer = ({
                         </div>
                     </div>
                     <div className="subscriptionCheckout-column bg-weak rounded">
-                        <div className="subscriptionCheckout-container sticky-top" data-testid="subscription-checkout">
+                        <div
+                            className="subscriptionCheckout-container sticky top-0"
+                            data-testid="subscription-checkout"
+                        >
                             <SubscriptionCheckout
                                 submit={
                                     <Button
@@ -937,7 +940,7 @@ const SubscriptionContainer = ({
                         </div>
                         <div className="subscriptionCheckout-column bg-weak rounded">
                             <div
-                                className="subscriptionCheckout-container sticky-top"
+                                className="subscriptionCheckout-container sticky top-0"
                                 data-testid="subscription-checkout"
                             >
                                 <SubscriptionCheckout
@@ -1069,7 +1072,10 @@ const SubscriptionContainer = ({
                         </div>
                     </div>
                     <div className="subscriptionCheckout-column bg-weak rounded">
-                        <div className="subscriptionCheckout-container sticky-top" data-testid="subscription-checkout">
+                        <div
+                            className="subscriptionCheckout-container sticky top-0"
+                            data-testid="subscription-checkout"
+                        >
                             <SubscriptionCheckout
                                 submit={
                                     <SubscriptionSubmitButton
