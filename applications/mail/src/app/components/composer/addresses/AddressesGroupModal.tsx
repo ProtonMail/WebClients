@@ -52,13 +52,13 @@ const AddressesGroupModalRow = ({ contact, uid, isChecked, messageSendInfo, onCh
 
     return (
         <li className="mb-2">
-            <Checkbox id={id} checked={isChecked(contact)} onChange={onChange} />
-            <span className="min-w-custom inline-flex align-middle" style={{'--min-w-custom': '1.4em'}}>
+            <Checkbox id={id} checked={isChecked(contact)} onChange={onChange} className="mr-2" />
+            <span className="min-w-custom inline-flex align-middle" style={{ '--min-w-custom': '1.4em' }}>
                 {(icon || loading) && (
                     <EncryptionStatusIcon loading={loading} {...icon} shouldHaveHref={shouldHaveHref} />
                 )}
             </span>
-            <Label htmlFor={id} className={clsx(['pt-0 pl-2', cannotSend && 'color-danger'])}>
+            <Label htmlFor={id} className={clsx(['pt-0 pl-2 align-middle text-break', cannotSend && 'color-danger'])}>
                 {contactToInput(contact)}
             </Label>
         </li>

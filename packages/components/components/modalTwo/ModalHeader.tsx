@@ -74,7 +74,7 @@ const ModalHeader = ({
                         <h1
                             id={id}
                             className={clsx(
-                                'text-bold',
+                                'text-bold text-break',
                                 ['large', 'full'].includes(size) ? 'text-4xl' : 'text-2xl',
                                 titleClassName
                             )}
