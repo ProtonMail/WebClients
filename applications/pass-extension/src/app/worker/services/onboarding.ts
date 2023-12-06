@@ -22,7 +22,7 @@ import { withContext } from '../context';
 import store from '../store';
 
 export const createOnboardingService = (storage: Storage<OnboardingStorageData>) => {
-    const { acknowledge, init, setState, getMessage } = createCoreOnboardingService({
+    const { acknowledge, init, setState, getMessage, checkMessage } = createCoreOnboardingService({
         storage,
         rules: [
             createPendingShareAccessRule(store),
@@ -47,6 +47,7 @@ export const createOnboardingService = (storage: Storage<OnboardingStorageData>)
     };
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.ONBOARDING_ACK, withPayloadLens('message', acknowledge));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.ONBOARDING_CHECK, withPayloadLens('message', checkMessage));
     WorkerMessageBroker.registerMessage(WorkerMessageType.ONBOARDING_REQUEST, getMessage);
 
     /* when reaching `account.proton.me/auth-ext` we want to
