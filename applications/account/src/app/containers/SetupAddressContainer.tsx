@@ -12,6 +12,7 @@ import {
     useApi,
     useAuthentication,
     useErrorHandler,
+    useFlag,
     useGetUser,
     useModalState,
     useTheme,
@@ -58,7 +59,7 @@ const defaultToResult = { type: 'app', app: APPS.PROTONMAIL, path: '/' } as cons
 const defaultFromResult = { type: 'switch', app: APPS.PROTONACCOUNT, path: '/dashboard' } as const;
 
 const getApp = (app: string) => {
-    if (app === APPS.PROTONVPN_SETTINGS || app === APPS.PROTONPASS) {
+    if (app === APPS.PROTONVPN_SETTINGS) {
         return app;
     }
     return getValidatedApp(app);
@@ -136,6 +137,8 @@ const SetupAddressContainer = () => {
 
     const generateAddressRef = useRef<AddressGeneration | undefined>(undefined);
 
+    const isPassWebAppLinkEnabled = useFlag('PassWebAppLink');
+
     const handleBack = () => {
         const from = fromRef.current;
         if (from.type === 'switch') {
@@ -144,7 +147,11 @@ const SetupAddressContainer = () => {
         }
         let url = '';
         const localID = authentication.getLocalID();
-        if (from.app === APPS.PROTONVPN_SETTINGS || from.app === APPS.PROTONPASS || from.type === 'settings') {
+        if (
+            from.app === APPS.PROTONVPN_SETTINGS ||
+            (from.app === APPS.PROTONPASS && !isPassWebAppLinkEnabled) ||
+            from.type === 'settings'
+        ) {
             url = getAppHref(
                 `/${getSlugFromApp(from.app)}${stripSlugFromPathname(from.path)}`,
                 APPS.PROTONACCOUNT,

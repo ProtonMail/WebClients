@@ -11,6 +11,7 @@ enum CommonFeatureFlag {
     KeyTransparencyLogOnly = 'KeyTransparencyLogOnly',
     EdDSAFaultySignatureCheck = 'EdDSAFaultySignatureCheck',
     CryptoCanaryOpenPGPjsV6 = 'CryptoCanaryOpenPGPjsV6',
+    PassWebAppLink = 'PassWebAppLink',
 }
 
 enum AccountFlag {
