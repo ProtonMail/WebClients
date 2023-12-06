@@ -79,7 +79,7 @@ export const PasswordAutoSuggest: VFC<Props> = ({ hostname, passwordOptions, vis
                           onClick: handleClick,
                       })}
             />
-            <input ref={inputRef} className="absolute" style={{ top: -9999, left: -9990 }} value={password} readOnly />
+            <input ref={inputRef} className="invisible" value={password} readOnly />
         </>
     );
 };
