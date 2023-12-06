@@ -39,7 +39,7 @@ const EmailSubscriptionToggles = ({
                 };
 
                 return (
-                    <li key={id} className="mb-4 flex flex-nowrap gap-4">
+                    <li key={id} className="mb-4 flex items-center flex-nowrap gap-4">
                         <Toggle
                             id={id}
                             className="shrink-0"
@@ -50,7 +50,11 @@ const EmailSubscriptionToggles = ({
                         <label htmlFor={id} className="flex flex-column md:flex-row">
                             <span className="mr-1">{title}</span>
                             {frequency && <span className="mr-1">{frequency}</span>}
-                            {tooltip && <Info title={tooltip} />}
+                            {tooltip && (
+                                <span className="text-left">
+                                    <Info title={tooltip} />
+                                </span>
+                            )}
                         </label>
                     </li>
                 );
