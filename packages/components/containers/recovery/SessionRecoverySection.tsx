@@ -65,15 +65,19 @@ const SessionRecoverySection = () => {
             )}
             <SettingsSection>
                 <SettingsParagraph>
-                    {c('session_recovery:settings:action')
-                        .t`Request a password reset from your Account settings. No recovery method needed.`}
+                    {c('session_recovery:settings:info')
+                        .t`In case no recovery method is set, or access to them has been lost, you can request a credential-less password reset from your account settings.`}
+                </SettingsParagraph>
+                <SettingsParagraph>
+                    {c('session_recovery:settings:info').t`Regular password reset cannot be disabled.`}
                 </SettingsParagraph>
 
                 <SettingsLayout>
                     <SettingsLayoutLeft>
                         <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="signedInReset">
-                            <span className="mr-2">{c('session_recovery:settings:action')
-                                .t`Allow password reset from settings`}</span>
+                            <span className="mr-2">
+                                {c('session_recovery:settings:action').t`Allow password reset from settings`}
+                            </span>
                         </label>
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight className="flex-1 pt-2">
@@ -86,7 +90,7 @@ const SessionRecoverySection = () => {
                                 onChange={({ target: { checked } }) => {
                                     if (!hasRecoveryMethod && !checked) {
                                         createNotification({
-                                            text: c('session_recovery:settings:action')
+                                            text: c('session_recovery:settings:info')
                                                 .t`To disallow password reset, you must have a recovery method set up.`,
                                         });
                                         return;
