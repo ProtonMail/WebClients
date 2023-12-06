@@ -18,6 +18,10 @@
         {
             "groupName": "pdfme",
             "matchPackagePatterns": ["@pdfme/*"]
+        },
+        {
+            "groupName": "redux",
+            "matchPackagePatterns": ["redux"]
         }
     ]
 }
