@@ -84,11 +84,17 @@ const createGenericWindow = (session: Session, url: string, mapKey: APP, visible
     window.on("close", (ev) => {
         setWindowState(window.getBounds(), mapKey);
         if (isWindows) {
-            window.removeAllListeners("close");
-            window.destroy();
+            ev.preventDefault();
+            console.log("close", mapKey);
+
+            // window.removeAllListeners("close");
+            // window.destroy();
+            window.hide();
+            window.setOpacity(0);
 
             // Close the application if all windows are closed
             if (areAllWindowsClosedOrHidden()) {
+                BrowserWindow.getAllWindows().forEach((window) => window.destroy());
                 app.quit();
             }
         } else if (isMac) {
@@ -124,15 +130,18 @@ export const initialWindowCreation = ({ session, mailVisible, calendarVisible }:
 
 const handleWindowVisibility = (contents: WebContents, mapKey: APP, creationMethod: (session: Session) => void) => {
     const window = windowMap.get(mapKey);
-    if (window) {
+    console.log("handleWindowVisibility", "isDestroyed", window.isDestroyed());
+
+    if (window.isDestroyed()) {
+        windowMap.delete(mapKey);
+        creationMethod(contents.session);
+    } else {
         if (window.isVisible()) {
             window.focus();
         } else {
             window.show();
             window.setOpacity(1);
         }
-    } else {
-        creationMethod(contents.session);
     }
 };
 
@@ -146,7 +155,17 @@ export const handleCalendarWindow = (contents: WebContents) => {
 
 export const refreshCalendarPage = (sessionID: number) => {
     const calendarWindow = windowMap.get("CALENDAR");
-    if (calendarWindow) {
+    const mailWindow = windowMap.get("MAIL");
+    console.log("refreshCalendarPage", sessionID);
+
+    if (calendarWindow.isDestroyed()) {
+        console.log("refreshCalendarPage", sessionID, "isDestroyed");
+
+        windowMap.delete("CALENDAR");
+        createCalendarWindow(mailWindow.webContents.session, false);
+    } else {
+        console.log("refreshCalendarPage", sessionID, calendarWindow.webContents.getURL());
+
         const calendarURL = calendarWindow.webContents.getURL();
         const calendarHasSessionID = getSessionID(calendarURL);
         if (calendarHasSessionID) {
