@@ -155,7 +155,11 @@ const finalizeLogin = async ({
                 );
 
                 if (userSettings.DeviceRecovery) {
-                    await storeDeviceRecovery({ api, user, userKeys });
+                    if (await storeDeviceRecovery({ api, user, userKeys })) {
+                        // Storing device recovery (when setting a new recovery secret) modifies the user object
+                        cache.data.user = undefined;
+                        user = await syncUser(cache);
+                    }
                     trusted = true;
                 }
             }
