@@ -53,6 +53,13 @@ export interface CleanSendIcsActionData extends SendIcsActionData {
     sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
 }
 
+export type SendIcs = (data: SendIcsActionData, calendarID?: string) => Promise<{
+    veventComponent?: VcalVeventComponent;
+    inviteActions: InviteActions;
+    timestamp: number;
+    sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
+}>
+
 export interface UpdatePartstatOperation {
     data: {
         calendarID: string;
