@@ -146,12 +146,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                     label={label}
                     labelClassname={labelClassname}
                     extra={
-                        <div
-                            className={clsx(
-                                'flex items-center shrink-0 flex-nowrap color-weak',
-                                extraPadding
-                            )}
-                        >
+                        <div className={clsx('flex items-center shrink-0 flex-nowrap color-weak', extraPadding)}>
                             {isSelected && (
                                 <div className={clsx('ml-auto')}>
                                     <Icon name="checkmark" color="var(--interaction-norm-major-1)" />
@@ -163,7 +158,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                 />
             </DropdownMenuButtonCore>
 
-            <div className="absolute flex items-center h-full right top">
+            <div className="absolute flex items-center h-full right-0 top-0">
                 {quickActions && <QuickActionsDropdown>{quickActions}</QuickActionsDropdown>}
             </div>
         </div>

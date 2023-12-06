@@ -9,12 +9,12 @@ const SharedPageFooter = ({ rootItem, items }: Props) => {
 
     if (viewportWidth['<=small'] && items.length > 0) {
         return (
-            <div className="fixed bottom p-4 flex justify-center bg-weak w-full">
+            <div className="fixed bottom-0 p-4 flex justify-center bg-weak w-full">
                 <DownloadButton className="flex-1" rootItem={rootItem} items={items} />
             </div>
         );
     }
-    return <ReportAbuseButton className="ml-1 mb-4 fixed left bottom" linkInfo={rootItem} />;
+    return <ReportAbuseButton className="ml-1 mb-4 fixed left-0 bottom-0" linkInfo={rootItem} />;
 };
 
 export default SharedPageFooter;

@@ -129,7 +129,7 @@ const Sidebar = ({
                 <Hamburger
                     expanded={expanded}
                     onToggle={onToggleExpand}
-                    className="md:hidden shrink-0 absolute right mr-5 mt-2 opacity-0 focus:opacity-100 bg-norm"
+                    className="md:hidden shrink-0 absolute right-0 mr-5 mt-2 opacity-0 focus:opacity-100 bg-norm"
                 />
 
                 <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
