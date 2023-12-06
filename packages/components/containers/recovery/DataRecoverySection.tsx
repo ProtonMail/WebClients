@@ -153,7 +153,7 @@ const DataRecoverySection = () => {
                                     />
                                 </label>
                             </SettingsLayoutLeft>
-                            <SettingsLayoutRight className="flex-1 pt-2">
+                            <SettingsLayoutRight isToggleContainer={user.MnemonicStatus !== MNEMONIC_STATUS.OUTDATED}>
                                 {user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED ? (
                                     <Button color="norm" onClick={() => setGenerateMnemonicModalButtonOpen(true)}>
                                         {c('Action').t`Update recovery phrase`}
@@ -178,7 +178,7 @@ const DataRecoverySection = () => {
                                             <label
                                                 data-testid="account:recovery:mnemonicToggle"
                                                 htmlFor="mnemonicToggle"
-                                                className="flex-1"
+                                                className="flex-1 mt-0.5"
                                             >
                                                 {c('Label').t`Allow recovery by recovery phrase`}
                                             </label>
@@ -215,7 +215,7 @@ const DataRecoverySection = () => {
                                         />
                                     </label>
                                 </SettingsLayoutLeft>
-                                <SettingsLayoutRight className="flex-1 pt-2">
+                                <SettingsLayoutRight isToggleContainer>
                                     <div className="flex items-start">
                                         <Toggle
                                             className="mr-2"
@@ -228,7 +228,7 @@ const DataRecoverySection = () => {
                                         />
                                         <label
                                             htmlFor="deviceRecoveryToggle"
-                                            className="flex-1"
+                                            className="flex-1 mt-0.5"
                                             data-testid="account:recovery:trustedDevice"
                                         >
                                             {c('Label').t`Allow recovery using a trusted device`}
@@ -267,11 +267,7 @@ const DataRecoverySection = () => {
                         </SettingsLayout>
                         {hasOutdatedRecoveryFile && (
                             <p className="color-danger flex flex-nowrap">
-                                <Icon
-                                    className="mr-2 shrink-0 mt-0.5"
-                                    name="exclamation-circle-filled"
-                                    size={14}
-                                />
+                                <Icon className="mr-2 shrink-0 mt-0.5" name="exclamation-circle-filled" size={14} />
                                 <span className="flex-1">{c('Warning')
                                     .t`Your recovery file is outdated. It can't recover new data if you reset your account again.`}</span>
                             </p>

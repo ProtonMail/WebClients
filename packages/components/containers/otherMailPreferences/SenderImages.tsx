@@ -16,7 +16,7 @@ export const SenderImages = () => {
                     />
                 </label>
             </SettingsLayoutLeft>
-            <SettingsLayoutRight className="pt-2">
+            <SettingsLayoutRight isToggleContainer>
                 <SenderImagesToggle className="mr-4" id="senderImagesToggle" />
             </SettingsLayoutRight>
         </SettingsLayout>

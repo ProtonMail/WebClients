@@ -130,7 +130,7 @@ const SentinelSection = ({ app }: Props) => {
                                 <span className="mr-2">{c('Log preference').t`Enable ${PROTON_SENTINEL_NAME}`}</span>
                             </label>
                         </SettingsLayoutLeft>
-                        <SettingsLayoutRight className="pt-2">
+                        <SettingsLayoutRight isToggleContainer>
                             <Toggle
                                 ref={sentinelToggleRef}
                                 id="high-security-toggle"
