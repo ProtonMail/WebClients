@@ -9,9 +9,9 @@ import { hasTwoFARequiredForAdminOnly, hasTwoFARequiredForAll } from '@proton/sh
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Organization } from '@proton/shared/lib/interfaces';
 
-import { Label, Loader, Row, Toggle } from '../../components';
+import { Loader, Toggle } from '../../components';
 import { useConfig, useNotifications } from '../../hooks';
-import { SettingsParagraph } from '../account';
+import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight, SettingsParagraph } from '../account';
 
 interface Props {
     organization?: Organization;
@@ -70,10 +70,10 @@ const OrganizationTwoFAEnforcementSection = ({ organization }: Props) => {
                 {c('Info')
                     .t`We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.`}
             </SettingsParagraph>
-            <Row>
-                <Label>
-                    <span className="mr-0.5">{c('Label').t`Require 2FA for administrators`}</span>
-                    <span className="hidden md:inline">
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <label htmlFor="two-fa-admin" className="text-semibold">
+                        <span className="mr-0.5">{c('Label').t`Require 2FA for administrators`}</span>
                         <Info
                             url={
                                 APP_NAME === APPS.PROTONVPN_SETTINGS
@@ -81,12 +81,11 @@ const OrganizationTwoFAEnforcementSection = ({ organization }: Props) => {
                                     : getKnowledgeBaseUrl('/two-factor-authentication-2fa')
                             }
                         />
-                    </span>
-                </Label>
-                <div className="flex items-center">
+                    </label>
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight isToggleContainer>
                     <Toggle
                         id="two-fa-admin"
-                        className="mr-0.5 pt-0.5"
                         checked={isTwoFARequiredForAdminOnlyChecked || isTwoFARequiredForAllChecked}
                         disabled={isTwoFARequiredForAllChecked}
                         onChange={() =>
@@ -95,12 +94,13 @@ const OrganizationTwoFAEnforcementSection = ({ organization }: Props) => {
                                 : handleRemoveTwoFA()
                         }
                     />
-                </div>
-            </Row>
-            <Row>
-                <Label>
-                    <span className="mr-0.5">{c('Label').t`Require 2FA for everyone`}</span>
-                    <span className="hidden md:inline">
+                </SettingsLayoutRight>
+            </SettingsLayout>
+
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <label htmlFor="two-fa-member" className="text-semibold">
+                        <span className="mr-0.5">{c('Label').t`Require 2FA for everyone`}</span>
                         <Info
                             url={
                                 APP_NAME === APPS.PROTONVPN_SETTINGS
@@ -108,12 +108,11 @@ const OrganizationTwoFAEnforcementSection = ({ organization }: Props) => {
                                     : getKnowledgeBaseUrl('/two-factor-authentication-2fa')
                             }
                         />
-                    </span>
-                </Label>
-                <div className="flex items-center">
+                    </label>
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight isToggleContainer>
                     <Toggle
                         id="two-fa-member"
-                        className="mr-0.5 pt-0.5"
                         checked={isTwoFARequiredForAllChecked}
                         onChange={() =>
                             !isTwoFARequiredForAllChecked
@@ -121,8 +120,8 @@ const OrganizationTwoFAEnforcementSection = ({ organization }: Props) => {
                                 : handleRemoveTwoFA()
                         }
                     />
-                </div>
-            </Row>
+                </SettingsLayoutRight>
+            </SettingsLayout>
         </>
     );
 };

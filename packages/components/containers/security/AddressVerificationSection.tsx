@@ -27,7 +27,7 @@ const AddressVerificationSection = () => {
                         />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt-2">
+                <SettingsLayoutRight isToggleContainer>
                     <PromptPinToggle id="prompt-pin-toggle" />
                 </SettingsLayoutRight>
             </SettingsLayout>
@@ -40,7 +40,7 @@ const AddressVerificationSection = () => {
                             <Info url={getKnowledgeBaseUrl('/key-transparency')} />
                         </label>
                     </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="pt-2">
+                    <SettingsLayoutRight isToggleContainer>
                         <KTToggle id="kt-toggle" />
                     </SettingsLayoutRight>
                 </SettingsLayout>
