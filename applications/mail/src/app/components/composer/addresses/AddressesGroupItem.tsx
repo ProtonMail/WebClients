@@ -94,7 +94,7 @@ const AddressesGroupItem = ({
         <>
             <div
                 className={clsx([
-                    'composer-addresses-item my-4 mr-2 flex flex-nowrap flex-row max-w-full overflow-hidden stop-propagation cursor-grab rounded',
+                    'composer-addresses-item flex flex-nowrap flex-row max-w-full overflow-hidden stop-propagation cursor-grab rounded',
                     dragged && 'composer-addresses-item-dragged',
                 ])}
                 draggable
@@ -104,7 +104,7 @@ const AddressesGroupItem = ({
                 {...dragHandlers}
             >
                 <span className="relative interactive-pseudo-inset flex flex-row flex-nowrap">
-                    <span className="inline-flex composer-addresses-item-icon px-2 ml-0.5 no-pointer-events-children h-full">
+                    <span className="inline-flex shrink-0 composer-addresses-item-icon px-2 ml-0.5 no-pointer-events-children h-full">
                         <Icon name="users" size={12} color={recipientGroup?.group?.Color} className="m-auto" />
                     </span>
                     <Tooltip title={c('Info').t`Click to view group details`}>
@@ -121,7 +121,7 @@ const AddressesGroupItem = ({
                 <Tooltip title={c('Action').t`Remove`}>
                     <button
                         type="button"
-                        className="composer-addresses-item-remove inline-flex p-2 no-pointer-events-children h-full relative interactive-pseudo-inset"
+                        className="composer-addresses-item-remove inline-flex shrink-0 p-2 no-pointer-events-children h-full relative interactive-pseudo-inset"
                         onClick={handleRemove}
                     >
                         <Icon name="cross" size={12} className="m-auto" />
