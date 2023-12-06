@@ -109,8 +109,9 @@ const EditAddressesSection = ({ address }: Props) => {
                 </SettingsLayoutRight>
             </SettingsLayout>
 
-            <SettingsLayout>
+            <SettingsLayout stackEarlier className="max-w-custom" style={{ '--max-w-custom': '49em' }}>
                 <SettingsLayoutLeft>
+                    {/* eslint-disable-next-line */}
                     <label htmlFor="editor" className="text-semibold" onClick={() => editorRef.current?.focus()}>
                         {c('Label').t`Signature`}
                     </label>
@@ -129,6 +130,7 @@ const EditAddressesSection = ({ address }: Props) => {
                             modalLink={modalLink}
                             modalImage={modalImage}
                             modalDefaultFont={modalDefaultFont}
+                            isInSettings
                         />
                     </div>
 
