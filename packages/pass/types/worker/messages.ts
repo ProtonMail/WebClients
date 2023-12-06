@@ -65,6 +65,7 @@ export enum WorkerMessageType {
     LOG_REQUEST = 'LOG_REQUEST',
     NOTIFICATION = 'NOTIFICATION',
     ONBOARDING_ACK = 'ONBOARDING_ACK',
+    ONBOARDING_CHECK = 'ONBOARDING_CHECK',
     ONBOARDING_REQUEST = 'ONBOARDING_REQUEST',
     OTP_CODE_GENERATE = 'OTP_CODE_GENERATE',
     PAUSE_WEBSITE = 'PAUSE_WEBSITE',
@@ -118,6 +119,7 @@ export type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: st
 export type LogRequestMessage = { type: WorkerMessageType.LOG_REQUEST };
 export type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { notification: Notification }>;
 export type OnboardingAckMessage = WithPayload<WorkerMessageType.ONBOARDING_ACK, { message: OnboardingMessage }>;
+export type OnboardingCheckMessage = WithPayload<WorkerMessageType.ONBOARDING_CHECK, { message: OnboardingMessage }>;
 export type OnboardingRequestMessage = { type: WorkerMessageType.ONBOARDING_REQUEST };
 export type OTPCodeGenerateMessage = WithPayload<WorkerMessageType.OTP_CODE_GENERATE, OtpRequest>;
 export type PauseWebsiteMessage = WithPayload<WorkerMessageType.PAUSE_WEBSITE, PauseListEntry>;
@@ -168,6 +170,7 @@ export type WorkerMessage =
     | LogRequestMessage
     | NotificationMessage
     | OnboardingAckMessage
+    | OnboardingCheckMessage
     | OnboardingRequestMessage
     | OTPCodeGenerateMessage
     | PauseWebsiteMessage
