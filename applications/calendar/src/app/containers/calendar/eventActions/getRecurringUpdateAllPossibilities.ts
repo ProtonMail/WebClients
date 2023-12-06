@@ -4,6 +4,7 @@ import {
     getDtendProperty,
     propertyToUTCDate,
 } from '@proton/shared/lib/calendar/vcalConverter';
+import { getHasRecurrenceId } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
 import { addDays, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
@@ -32,12 +33,13 @@ const getRecurringUpdateAllPossibilities = ({
     isOrganizer: boolean;
     hasSingleEdits: boolean;
 }) => {
+    const isEditingSingleEdit = getHasRecurrenceId(oldVeventComponent);
     // If editing a single edit, we can use the dtstart as is...
-    const oldStartProperty = oldVeventComponent['recurrence-id']
+    const oldStartProperty = isEditingSingleEdit
         ? oldVeventComponent.dtstart
         : getDateOrDateTimeProperty(oldVeventComponent.dtstart, recurrence.localStart);
     const modifiedLocalEnd = getIsAllDay(oldVeventComponent) ? addDays(recurrence.localEnd, +1) : recurrence.localEnd;
-    const oldEndProperty = oldVeventComponent['recurrence-id']
+    const oldEndProperty = isEditingSingleEdit
         ? getDtendProperty(oldVeventComponent)
         : getDateOrDateTimeProperty(getDtendProperty(oldVeventComponent), modifiedLocalEnd);
     const newStartProperty = newVeventComponent.dtstart;
@@ -65,7 +67,7 @@ const getRecurringUpdateAllPossibilities = ({
      * For series with attendees and single modifications,
      * when the change is not a breaking one we want to preserve the modifications
      */
-    if (isOrganizer && !hasModifiedDateTimes && isRruleEqual && !hasSingleEdits) {
+    if (isOrganizer && !hasModifiedDateTimes && isRruleEqual && !hasSingleEdits && !isEditingSingleEdit) {
         return {
             updateAllPossibilities: UpdateAllPossibilities.KEEP_SINGLE_MODIFICATIONS,
             hasModifiedDateTimes,
