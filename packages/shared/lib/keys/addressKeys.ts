@@ -242,6 +242,24 @@ export const generateAddressKey = async ({
     return { privateKey, privateKeyArmored };
 };
 
+export const getIsTokenEncryptedToKeys = async ({
+    addressKey,
+    decryptionKeys,
+}: {
+    addressKey: AddressKey;
+    decryptionKeys: PrivateKeyReference[];
+}) => {
+    try {
+        const sessionKey = await CryptoProxy.decryptSessionKey({
+            armoredMessage: addressKey.Token,
+            decryptionKeys,
+        });
+        return !!sessionKey;
+    } catch (e) {
+        return false;
+    }
+};
+
 interface ReplaceAddressTokens {
     privateKey: PrivateKeyReference;
     userKeys: DecryptedKey[];
@@ -298,6 +316,10 @@ export const getReplacedAddressKeyTokens = async ({ addresses, userKeys, private
             const result = await Promise.all(
                 address.Keys.map(async (addressKey) => {
                     try {
+                        // If the address key token is already encrypted to the new key, let's ignore this action.
+                        if (await getIsTokenEncryptedToKeys({ addressKey, decryptionKeys: [privateKey] })) {
+                            return undefined;
+                        }
                         const result = await replaceAddressKeyToken({
                             addressKey,
                             encryptionKey: privateKey,
