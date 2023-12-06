@@ -13,6 +13,11 @@
 			z-index: 1,
 		),
 
+		sticky: (
+			position: sticky,
+			z-index: 1,
+		),
+
 		fixed: (
 			position: fixed,
 		),
@@ -47,22 +52,6 @@
 .absolute-cover {
 	position: absolute;
 	inset: 0;
-}
-
-.sticky {
-	&-top,
-	&-bottom {
-		position: sticky;
-		z-index: 1;
-	}
-
-	&-top {
-		inset-block-start: 0;
-	}
-
-	&-bottom {
-		inset-block-end: 0;
-	}
 }
 
 .upper-layer {
