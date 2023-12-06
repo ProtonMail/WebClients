@@ -38,6 +38,7 @@ export interface Breakpoints {
 
         // Custom ones
         '<=small': boolean;
+        '<=medium': boolean;
         '>=large': boolean;
     };
 }
@@ -83,10 +84,12 @@ const useActiveBreakpoint = () => {
 
             // Custom ones
             '<=small': false,
+            '<=medium': false,
             '>=large': false,
         };
 
         viewportWidth['<=small'] = viewportWidth.small || viewportWidth.xsmall;
+        viewportWidth['<=medium'] = viewportWidth.small || viewportWidth.xsmall || viewportWidth.medium;
         viewportWidth['>=large'] = viewportWidth['2xlarge'] || viewportWidth.xlarge || viewportWidth.large;
 
         return {
