@@ -103,7 +103,7 @@ export const getDeleteRecurringEventActions = async ({
         const singleDeleteOperation = isSingleEdit ? getDeleteSyncOperation(oldEvent) : undefined;
 
         const originalExdateOperation =
-            isAttendee && originalEvent.IsProtonProtonInvite
+            (isAttendee && originalEvent.IsProtonProtonInvite) || !updatedVeventComponent
                 ? // attendees cannot add EXDATEs (the organizer added it already anyway)
                   undefined
                 : getUpdateSyncOperation({
