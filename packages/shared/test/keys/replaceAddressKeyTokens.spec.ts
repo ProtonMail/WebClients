@@ -5,7 +5,7 @@ import { Address as tsAddress, User as tsUser } from '../../lib/interfaces';
 import { getDecryptedUserKeysHelper, getReplacedAddressKeyTokens } from '../../lib/keys';
 import { getAddressKey, getUserKey } from './keyDataHelper';
 
-const getSetup = async () => {
+const getSetup = async (forceSameUserKey = false) => {
     const keyPassword = '1';
     const userKeysFull = await Promise.all([
         getUserKey('1', keyPassword),
@@ -20,21 +20,24 @@ const getSetup = async () => {
     const address2 = 'test2@test.com';
     const address3 = 'test3@test.com';
     const userKeys = await getDecryptedUserKeysHelper(User, keyPassword);
+    const getUserPrivateKey = (index: number) => {
+        return userKeysFull[forceSameUserKey ? 0 : index].key.privateKey;
+    };
     const addressKeysFull = await Promise.all([
-        getAddressKey('a', userKeysFull[0].key.privateKey, address1),
-        getAddressKey('b', userKeysFull[0].key.privateKey, address1),
-        getAddressKey('c', userKeysFull[1].key.privateKey, address1),
-        getAddressKey('d', userKeysFull[1].key.privateKey, address1),
-        getAddressKey('e', userKeysFull[1].key.privateKey, address1),
-        getAddressKey('f', userKeysFull[2].key.privateKey, address1),
+        getAddressKey('a', getUserPrivateKey(0), address1),
+        getAddressKey('b', getUserPrivateKey(0), address1),
+        getAddressKey('c', getUserPrivateKey(1), address1),
+        getAddressKey('d', getUserPrivateKey(1), address1),
+        getAddressKey('e', getUserPrivateKey(1), address1),
+        getAddressKey('f', getUserPrivateKey(2), address1),
     ]);
     const address2KeysFull = await Promise.all([
-        getAddressKey('g', userKeysFull[0].key.privateKey, address2),
-        getAddressKey('h', userKeysFull[1].key.privateKey, address2),
+        getAddressKey('g', getUserPrivateKey(0), address2),
+        getAddressKey('h', getUserPrivateKey(1), address2),
     ]);
     const address3KeysFull = await Promise.all([
-        getAddressKey('i', userKeysFull[2].key.privateKey, address3),
-        getAddressKey('j', userKeysFull[2].key.privateKey, address3),
+        getAddressKey('i', getUserPrivateKey(2), address3),
+        getAddressKey('j', getUserPrivateKey(2), address3),
     ]);
     const Addresses = [
         {
@@ -78,6 +81,25 @@ describe('re-encrypt address keys', () => {
                 return true;
             })
         );
-        expect(decryptedTokens.length).toBe(setup.Addresses.reduce((acc, address) => acc + address.Keys.length, 0));
+        expect(decryptedTokens.length).toBe(7);
+    });
+
+    it('should not re-encrypt tokens to the same user key', async () => {
+        const setup = await getSetup(true);
+        const tokens = await getReplacedAddressKeyTokens({
+            userKeys: setup.userKeys,
+            addresses: setup.Addresses,
+            privateKey: setup.userKeys[0].privateKey,
+        });
+        const decryptedTokens = await Promise.all(
+            tokens.AddressKeyTokens.map(async (addressKeyToken) => {
+                await CryptoProxy.decryptSessionKey({
+                    binaryMessage: base64StringToUint8Array(addressKeyToken.KeyPacket),
+                    decryptionKeys: [setup.userKeys[0].privateKey],
+                });
+                return true;
+            })
+        );
+        expect(decryptedTokens.length).toBe(0);
     });
 });
