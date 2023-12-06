@@ -3,14 +3,26 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ErrorButton, Prompt, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
+import {
+    ErrorButton,
+    FeatureCode,
+    Prompt,
+    useApi,
+    useEventManager,
+    useFeature,
+    useModalState,
+    useNotifications,
+} from '@proton/components';
 import { deleteConversations } from '@proton/shared/lib/api/conversations';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
+import { runParallelChunkedActions } from 'proton-mail/helpers/chunk';
+
 import { isConversation } from '../../helpers/elements';
 import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
 import { useAppDispatch } from '../../logic/store';
+import { Element } from '../../models/element';
 import { useGetElementsFromIDs } from '../mailbox/useElements';
 import useOptimisticDelete from '../optimistic/useOptimisticDelete';
 
@@ -138,6 +150,7 @@ export const usePermanentDelete = (labelID: string) => {
     const getElementsFromIDs = useGetElementsFromIDs();
     const optimisticDelete = useOptimisticDelete();
     const dispatch = useAppDispatch();
+    const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
 
     const [selectedIDs, setSelectedIDs] = useState<string[]>([]);
     const [deleteModalProps, setDeleteModalOpen] = useModalState();
@@ -161,17 +174,31 @@ export const usePermanentDelete = (labelID: string) => {
 
     const handleSubmit = async () => {
         deleteModalProps.onClose();
-        let rollback = () => {};
 
         try {
             dispatch(backendActionStarted());
-            rollback = optimisticDelete(elements, labelID);
-            const action = conversationMode ? deleteConversations(selectedIDs, labelID) : deleteMessages(selectedIDs);
-            await api(action);
+
+            await runParallelChunkedActions({
+                api,
+                items: elements,
+                chunkSize: mailActionsChunkSize,
+                action: (chunk: Element[]) => {
+                    // Delete action is done performed on a list of IDs
+                    const itemIDs = chunk.map((c: Element) => c.ID);
+                    return conversationMode ? deleteConversations(itemIDs, labelID) : deleteMessages(itemIDs);
+                },
+                canUndo: false,
+                // In permanent delete, we have no UndoToken. So if a chunk fails, we want to undo the part which failed only
+                optimisticAction: (items) => optimisticDelete(items, labelID),
+            });
+
             const notificationText = getNotificationText(draft, conversationMode, selectedItemsCount, totalMessages);
             createNotification({ text: notificationText });
-        } catch {
-            rollback();
+        } catch (error: any) {
+            createNotification({
+                text: c('Error').t`Something went wrong. Please try again.`,
+                type: 'error',
+            });
         } finally {
             dispatch(backendActionFinished());
         }
