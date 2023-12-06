@@ -166,7 +166,7 @@ export const useUpdateRecipientSendInfo = (
 
                 return updateRecipientIcon();
             }
-            const sendIcon = getSendStatusIcon(sendPreferences, ktActivation);
+            const sendIcon = getSendStatusIcon(sendPreferences);
             const contactSignatureInfo = {
                 isVerified: encryptionPreferences.isContactSignatureVerified,
                 creationTime: encryptionPreferences.contactSignatureTimestamp,
@@ -264,7 +264,7 @@ export const useUpdateGroupSendInfo = (
                 contactEmailsMap: contactsMap,
             });
             const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
-            const sendIcon = getSendStatusIcon(sendPreferences, ktActivation);
+            const sendIcon = getSendStatusIcon(sendPreferences);
             const contactSignatureInfo = {
                 isVerified: encryptionPreferences.isContactSignatureVerified,
                 creationTime: encryptionPreferences.contactSignatureTimestamp,
@@ -382,7 +382,7 @@ const getUpdatedSendInfo = async (
         contactEmailsMap: contactsMap,
     });
     const sendPreferences = getSendPreferences(encryptionPreferences, message.data);
-    const sendIcon = getSendStatusIcon(sendPreferences, ktActivation);
+    const sendIcon = getSendStatusIcon(sendPreferences);
     const contactSignatureInfo = {
         isVerified: encryptionPreferences.isContactSignatureVerified,
         creationTime: encryptionPreferences.contactSignatureTimestamp,
