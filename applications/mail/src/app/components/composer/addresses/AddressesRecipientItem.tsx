@@ -180,7 +180,7 @@ const AddressesRecipientItem = ({
         <>
             <div
                 className={clsx([
-                    'composer-addresses-item my-1 mr-2 flex flex-nowrap flex-row max-w-full overflow-hidden stop-propagation rounded',
+                    'composer-addresses-item flex flex-nowrap flex-row max-w-full overflow-hidden stop-propagation rounded',
                     !valid && 'invalid',
                     cannotSend && 'color-danger invalid',
                     dragged && 'composer-addresses-item-dragged',
