@@ -85,7 +85,6 @@ const createGenericWindow = (session: Session, url: string, mapKey: APP, visible
         setWindowState(window.getBounds(), mapKey);
         if (isWindows) {
             ev.preventDefault();
-            console.log("close", mapKey);
 
             // window.removeAllListeners("close");
             // window.destroy();
@@ -130,7 +129,6 @@ export const initialWindowCreation = ({ session, mailVisible, calendarVisible }:
 
 const handleWindowVisibility = (contents: WebContents, mapKey: APP, creationMethod: (session: Session) => void) => {
     const window = windowMap.get(mapKey);
-    console.log("handleWindowVisibility", "isDestroyed", window.isDestroyed());
 
     if (window.isDestroyed()) {
         windowMap.delete(mapKey);
@@ -156,16 +154,12 @@ export const handleCalendarWindow = (contents: WebContents) => {
 export const refreshCalendarPage = (sessionID: number) => {
     const calendarWindow = windowMap.get("CALENDAR");
     const mailWindow = windowMap.get("MAIL");
-    console.log("refreshCalendarPage", sessionID);
 
     if (calendarWindow.isDestroyed()) {
-        console.log("refreshCalendarPage", sessionID, "isDestroyed");
-
         windowMap.delete("CALENDAR");
-        createCalendarWindow(mailWindow.webContents.session, false);
+        const visible = areAllWindowsClosedOrHidden();
+        createCalendarWindow(mailWindow.webContents.session, visible);
     } else {
-        console.log("refreshCalendarPage", sessionID, calendarWindow.webContents.getURL());
-
         const calendarURL = calendarWindow.webContents.getURL();
         const calendarHasSessionID = getSessionID(calendarURL);
         if (calendarHasSessionID) {
