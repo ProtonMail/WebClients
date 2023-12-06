@@ -66,10 +66,7 @@ const SessionRecoverySection = () => {
             <SettingsSection>
                 <SettingsParagraph>
                     {c('session_recovery:settings:info')
-                        .t`In case no recovery method is set, or access to them has been lost, you can request a credential-less password reset from your account settings.`}
-                </SettingsParagraph>
-                <SettingsParagraph>
-                    {c('session_recovery:settings:info').t`Regular password reset cannot be disabled.`}
+                        .t`To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.`}
                 </SettingsParagraph>
 
                 <SettingsLayout>
