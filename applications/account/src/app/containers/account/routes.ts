@@ -156,7 +156,7 @@ export const getAccountAppRoutes = ({
                         available: isDataRecoveryAvailable,
                     },
                     {
-                        text: c('Title').t`Password reset`,
+                        text: c('Title').t`Password reset settings`,
                         id: 'password-reset',
                         available: isSessionRecoveryAvailable,
                     },
