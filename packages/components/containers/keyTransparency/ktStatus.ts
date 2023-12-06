@@ -1,4 +1,6 @@
-import { KT_DOMAINS, getBaseDomain } from '@proton/key-transparency';
+import { serverTime } from '@proton/crypto';
+import { KT_DOMAINS, getBaseDomain, keyTransparencyDataTimestamp } from '@proton/key-transparency';
+import { MONTH } from '@proton/shared/lib/constants';
 import { isIos11, isSafari11 } from '@proton/shared/lib/helpers/browser';
 
 export enum KtFeatureEnum {
@@ -15,6 +17,7 @@ export const isKTActive = (feature: KT_FF) => {
     //  - safari 11 or ios 11 is used due to issues with the CryptoProxy
     //  - BigInt is not supported (it is needed for VRF verification);
     //  - BigInt is only partially implemented and does not support -- (it is needed for VRF verification)
+    //  - the hardcoded KT certificate data is older than 6 months.
     if (feature === undefined || feature === KtFeatureEnum.DISABLE) {
         return false;
     }
@@ -38,6 +41,11 @@ export const isKTActive = (feature: KT_FF) => {
         let check = BigInt('0x1'); // eslint-disable-line @typescript-eslint/no-unused-vars
         check--; // eslint-disable-line @typescript-eslint/no-unused-vars
     } catch {
+        return false;
+    }
+
+    const keyTransparencyDataAge = serverTime().getTime() - keyTransparencyDataTimestamp;
+    if (keyTransparencyDataAge > 6 * MONTH) {
         return false;
     }
 
