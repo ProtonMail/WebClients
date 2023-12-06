@@ -200,7 +200,7 @@ export const storeDeviceRecovery = async ({
         );
 
         await storeRecoveryMessage({ user, userKeys, recoverySecret });
-        return;
+        return true;
     }
 
     const valid = await validateRecoverySecret(primaryRecoverySecret, primaryUserKey.publicKey).catch(noop);
