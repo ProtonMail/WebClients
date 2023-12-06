@@ -99,7 +99,7 @@ const TwoFactorSection = () => {
                         />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt-2">
+                <SettingsLayoutRight isToggleContainer>
                     <Toggle checked={hasTOTPEnabled} id="twoFactorToggle" onChange={handleChangeTOTP} />
                 </SettingsLayoutRight>
             </SettingsLayout>
@@ -141,7 +141,7 @@ const TwoFactorSection = () => {
                                 />
                             </label>
                         </SettingsLayoutLeft>
-                        <SettingsLayoutRight className="pt-2">
+                        <SettingsLayoutRight isToggleContainer>
                             <Tooltip
                                 title={
                                     !canEnableFido2

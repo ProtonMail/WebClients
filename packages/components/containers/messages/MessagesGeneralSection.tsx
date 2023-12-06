@@ -83,7 +83,7 @@ const MessagesGeneralSection = () => {
                             </button>
                         </label>
                     </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="flex flex-1 items-center">
+                    <SettingsLayoutRight isToggleContainer>
                         <ShortcutsToggle className="mr-4" id="shortcutsToggle" />
                     </SettingsLayoutRight>
                 </SettingsLayout>

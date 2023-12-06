@@ -128,7 +128,7 @@ const AccessibilitySection = () => {
 
             <SettingsLayout className="py-1">
                 <SettingsLayoutLeft>
-                    <label htmlFor="scrollbarsToggle" className="text-semibold align-top">
+                    <label htmlFor="scrollbarsToggle" className="text-semibold">
                         <span className="mr-2">{c('Label').t`Default scrollbars`}</span>
                         <Info
                             title={c('Tooltip')
@@ -136,7 +136,7 @@ const AccessibilitySection = () => {
                         />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt-1">
+                <SettingsLayoutRight isToggleContainer>
                     <Toggle
                         id="scrollbarsToggle"
                         checked={information.features.scrollbars}
@@ -150,15 +150,12 @@ const AccessibilitySection = () => {
 
             <SettingsLayout className="py-1">
                 <SettingsLayoutLeft>
-                    <label
-                        htmlFor="animationsToggle"
-                        className={clsx('text-semibold align-top', reduceMotion && 'color-weak')}
-                    >
+                    <label htmlFor="animationsToggle" className={clsx('text-semibold', reduceMotion && 'color-weak')}>
                         <span className="mr-2">{c('Label').t`Disable animations`}</span>
                         <Info title={c('Tooltip').t`When enabled, animations and transitions will not show`} />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="pt-1">
+                <SettingsLayoutRight isToggleContainer>
                     <Tooltip
                         title={
                             reduceMotion
@@ -168,17 +165,15 @@ const AccessibilitySection = () => {
                         closeDelay={0}
                         openDelay={0}
                     >
-                        <span className="inline-flex">
-                            <Toggle
-                                id="animationsToggle"
-                                checked={reduceMotion ? true : information.features.animations}
-                                disabled={reduceMotion}
-                                onChange={(e) => {
-                                    setFeature(ThemeFeatureSetting.ANIMATIONS_OFF, e.target.checked);
-                                    notifyPreferenceSaved();
-                                }}
-                            />
-                        </span>
+                        <Toggle
+                            id="animationsToggle"
+                            checked={reduceMotion ? true : information.features.animations}
+                            disabled={reduceMotion}
+                            onChange={(e) => {
+                                setFeature(ThemeFeatureSetting.ANIMATIONS_OFF, e.target.checked);
+                                notifyPreferenceSaved();
+                            }}
+                        />
                     </Tooltip>
                 </SettingsLayoutRight>
             </SettingsLayout>

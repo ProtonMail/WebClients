@@ -3,6 +3,14 @@
 .settings-layout-right {
 	min-inline-size: em(240);
 
+	&--toggle-container {
+		padding-block-start: 0.4rem; // to get it horizontally centered with text
+
+		@include media('<=#{em(820, 16)}') {
+			padding-block-start: 0;
+		}
+	}
+
 	&-fixed-size {
 		max-inline-size: em(240);
 		@include media('<=small') {

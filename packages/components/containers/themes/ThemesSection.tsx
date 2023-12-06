@@ -32,7 +32,7 @@ const ThemesSection = () => {
 
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label htmlFor="themeSyncToggle" className="text-semibold align-top">
+                    <label htmlFor="themeSyncToggle" className="text-semibold">
                         <span className="mr-2">{c('Label').t`Synchronize with system`}</span>
                         <Info
                             title={c('Tooltip')
@@ -40,7 +40,7 @@ const ThemesSection = () => {
                         />
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="flex pt-1">
+                <SettingsLayoutRight isToggleContainer>
                     <Toggle
                         id="themeSyncToggle"
                         checked={settings.Mode === ThemeModeSetting.Auto}
@@ -53,9 +53,9 @@ const ThemesSection = () => {
             </SettingsLayout>
 
             {settings.Mode === ThemeModeSetting.Auto ? (
-                <SettingsSectionWide className="flex mt-6 flex-nowrap gap-4 flex-column md:flex-row">
+                <SettingsSectionWide className="flex mt-6 flex-nowrap gap-4 flex-column lg:flex-row">
                     <ThemeSyncModeCard
-                        className="md:flex-1"
+                        className="lg:flex-1"
                         mode="light"
                         list={themes}
                         themeIdentifier={settings.LightTheme}
@@ -66,7 +66,7 @@ const ThemesSection = () => {
                         active={information.colorScheme === ColorScheme.Light}
                     />
                     <ThemeSyncModeCard
-                        className="md:flex-1"
+                        className="lg:flex-1"
                         mode="dark"
                         list={themes}
                         themeIdentifier={settings.DarkTheme}
