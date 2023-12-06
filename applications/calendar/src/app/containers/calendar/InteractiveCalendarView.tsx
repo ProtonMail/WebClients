@@ -22,6 +22,7 @@ import {
     useConfig,
     useContactEmails,
     useEventManager,
+    useFlag,
     useGetAddressKeys,
     useGetCalendarEventRaw,
     useGetEncryptionPreferences,
@@ -200,12 +201,16 @@ type ModalsMap = {
     editRecurringConfirmModal: ModalWithProps<{
         data: {
             types: RECURRING_TYPES[];
-            hasSingleModifications: boolean;
-            hasSingleModificationsAfter: boolean;
+            hasSingleEdits: boolean;
+            hasSingleDeletes: boolean;
+            hasSingleEditsAfter: boolean;
+            hasSingleDeletesAfter: boolean;
             hasRruleModification: boolean;
             hasCalendarModification: boolean;
+            isBreakingChange: boolean;
         };
         inviteActions: InviteActions;
+        isOrganizer: boolean;
         isAttendee: boolean;
         canEditOnlyPersonalPart: boolean;
     }>;
@@ -304,6 +309,8 @@ const InteractiveCalendarView = ({
     const config = useConfig();
     const [{ hasPaidMail }] = useUser();
     const isSavingEvent = useRef(false);
+
+    const cancelSingleOccurrenceEnabled = useFlag('CancelSingleOccurrenceWeb');
 
     const isDrawerApp = getIsCalendarAppInDrawer(view);
     const isSearchView = view === VIEWS.SEARCH;
@@ -971,6 +978,7 @@ const InteractiveCalendarView = ({
     const handleSaveConfirmation = ({
         type,
         data,
+        isOrganizer,
         isAttendee,
         canEditOnlyPersonalPart,
         inviteActions,
@@ -983,6 +991,7 @@ const InteractiveCalendarView = ({
                     props: {
                         data,
                         inviteActions,
+                        isOrganizer,
                         isAttendee,
                         canEditOnlyPersonalPart,
                     },
@@ -1298,6 +1307,7 @@ const InteractiveCalendarView = ({
                 reencryptSharedEvent: handleReencryptSharedEvent,
                 onSendPrefsErrors: handleSendPrefsErrors,
                 handleSyncActions,
+                cancelSingleOccurrenceEnabled,
             });
             hasStartChanged = hasStartChangedProp;
             const [syncResponses, updatePartstatResponses, updatePersonalPartResponses] = await Promise.all([
@@ -1371,6 +1381,7 @@ const InteractiveCalendarView = ({
                 getCalendarKeys,
                 inviteActions,
                 sendIcs: handleSendIcs,
+                cancelSingleOccurrenceEnabled,
             });
             // some operations may refer to the events to be deleted, so we execute those first
             const [updatePartstatResponses, updatePersonalPartResponses] = await Promise.all([
@@ -1623,6 +1634,7 @@ const InteractiveCalendarView = ({
                 <EditRecurringConfirmModal
                     isOpen={editRecurringConfirmModal.isOpen}
                     {...editRecurringConfirmModal.props.data}
+                    isOrganizer={editRecurringConfirmModal.props.isOrganizer}
                     isAttendee={editRecurringConfirmModal.props.isAttendee}
                     canEditOnlyPersonalPart={editRecurringConfirmModal.props.canEditOnlyPersonalPart}
                     inviteActions={editRecurringConfirmModal.props.inviteActions}
@@ -1634,6 +1646,7 @@ const InteractiveCalendarView = ({
                         closeModal('editRecurringConfirmModal');
                         confirm.current?.resolve(data);
                     }}
+                    cancelSingleOccurrenceEnabled={cancelSingleOccurrenceEnabled}
                 />
             )}
             {!!editSingleConfirmModal.props && (

@@ -39,14 +39,15 @@ const updateAllRecurrence = ({ component, originalComponent, mode, isAttendee }:
     const veventWithOldUID = {
         ...omit(component, ['recurrence-id']),
         uid: { value: originalComponent.uid.value },
-    } as VcalVeventComponent;
+    };
 
-    if (mode === UpdateAllPossibilities.KEEP_SINGLE_EDITS || isAttendee) {
+    if (mode === UpdateAllPossibilities.KEEP_SINGLE_MODIFICATIONS || isAttendee) {
+        const mergedDtstart = getStartDateTimeMerged(component.dtstart, originalComponent.dtstart);
+
         return {
             ...veventWithOldUID,
-            // If single edits are to be kept, the start time can not change, shouldn't get here if not but just to be sure
             dtstart: originalComponent.dtstart,
-            dtend: getEndDateTimeMerged(component.dtstart, getDtendProperty(component), veventWithOldUID.dtstart),
+            dtend: getEndDateTimeMerged(component.dtstart, getDtendProperty(component), mergedDtstart),
             // Copy over the exdates, if any
             ...(originalComponent.exdate && { exdate: originalComponent.exdate }),
         };

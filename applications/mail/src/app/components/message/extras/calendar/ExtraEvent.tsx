@@ -147,7 +147,6 @@ const ExtraEvent = ({
             let reencryptionData;
             let reinviteEventID;
             let isPartyCrasher = isPartyCrasherIcs;
-            const supportedInvitationIcs = invitationIcs;
             try {
                 // check if an event with the same uid exists in the calendar already
                 const {
@@ -158,7 +157,6 @@ const ExtraEvent = ({
                     singleEditData: singleData,
                     reencryptionData: reencryptData,
                     hasDecryptionError: hasDecryptError,
-                    supportedRecurrenceId,
                 } = await fetchEventInvitation({
                     veventComponent: invitationIcs.vevent,
                     legacyUid: invitationIcs.legacyUid,
@@ -189,9 +187,6 @@ const ExtraEvent = ({
                 if (parentInvitation) {
                     parentInvitationApi = parentInvitation;
                 }
-                if (supportedRecurrenceId) {
-                    supportedInvitationIcs.vevent['recurrence-id'] = supportedRecurrenceId;
-                }
                 isPartyCrasher = await getIsPartyCrasher({
                     isOrganizerMode,
                     invitationApi,
@@ -203,7 +198,7 @@ const ExtraEvent = ({
                 if (isMounted()) {
                     setModel({
                         ...model,
-                        invitationIcs: supportedInvitationIcs,
+                        invitationIcs,
                         invitationApi,
                         parentInvitationApi,
                         isOutdated,
@@ -236,7 +231,7 @@ const ExtraEvent = ({
             try {
                 const { action: updateAction, invitation: updatedInvitationApi } = await updateEventInvitation({
                     isOrganizerMode,
-                    invitationIcs: supportedInvitationIcs,
+                    invitationIcs,
                     invitationApi,
                     api,
                     getCanonicalEmailsMap,
@@ -253,22 +248,22 @@ const ExtraEvent = ({
                     updateAction !== UPDATE_ACTION.NONE
                         ? false
                         : getIsInvitationOutdated({
-                              invitationIcs: supportedInvitationIcs,
+                              invitationIcs,
                               invitationApi: newInvitationApi,
                               isOrganizerMode,
                           });
                 const isFromFuture = getIsInvitationFromFuture({
-                    invitationIcs: supportedInvitationIcs,
+                    invitationIcs,
                     invitationApi: newInvitationApi,
                     isOrganizerMode,
                 });
                 const isProtonInvite = getIsProtonInvite({
-                    invitationIcs: supportedInvitationIcs,
+                    invitationIcs,
                     calendarEvent: newInvitationApi.calendarEvent,
                     pmData,
                 });
                 const isReinvite = getIsReinvite({
-                    invitationIcs: supportedInvitationIcs,
+                    invitationIcs,
                     calendarEvent: newInvitationApi.calendarEvent,
                     isOrganizerMode,
                     isOutdated,
@@ -276,7 +271,7 @@ const ExtraEvent = ({
                 if (isMounted()) {
                     setModel({
                         ...model,
-                        invitationIcs: supportedInvitationIcs,
+                        invitationIcs,
                         invitationApi: newInvitationApi,
                         parentInvitationApi,
                         calendarData,

@@ -11,7 +11,6 @@ import {
     signPart,
 } from './crypto/encrypt';
 import { formatData } from './formatData';
-import { getIsEventComponent } from './vcalHelper';
 import { getVeventParts } from './veventHelper';
 
 const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR_TEXT } = CALENDAR_CARD_TYPE;
@@ -20,9 +19,6 @@ const { ENCRYPTED_AND_SIGNED, SIGNED, CLEAR_TEXT } = CALENDAR_CARD_TYPE;
  * Split the properties of the component into parts.
  */
 const getParts = (eventComponent: VcalVeventComponent) => {
-    if (!getIsEventComponent(eventComponent)) {
-        throw new Error('Type other than vevent not supported');
-    }
     return getVeventParts(eventComponent);
 };
 
@@ -31,6 +27,7 @@ const getParts = (eventComponent: VcalVeventComponent) => {
  */
 interface CreateCalendarEventArguments {
     eventComponent: VcalVeventComponent;
+    cancelledOccurrenceVevent?: VcalVeventComponent;
     publicKey: PublicKeyReference;
     privateKey: PrivateKeyReference;
     sharedSessionKey?: SessionKey;
@@ -44,6 +41,7 @@ interface CreateCalendarEventArguments {
 }
 export const createCalendarEvent = async ({
     eventComponent,
+    cancelledOccurrenceVevent,
     publicKey,
     privateKey,
     sharedSessionKey: oldSharedSessionKey,
@@ -56,6 +54,7 @@ export const createCalendarEvent = async ({
     addedAttendeesPublicKeysMap,
 }: CreateCalendarEventArguments) => {
     const { sharedPart, calendarPart, notificationsPart, attendeesPart } = getParts(eventComponent);
+    const cancelledOccurrenceSharedPart = cancelledOccurrenceVevent ? getParts(cancelledOccurrenceVevent).sharedPart : undefined;
 
     const isCreateOrSwitchCalendar = isCreateEvent || isSwitchCalendar;
     const isAttendeeSwitchingCalendar = isSwitchCalendar && isAttendee;
@@ -76,6 +75,7 @@ export const createCalendarEvent = async ({
         calendarEncryptedPart,
         attendeesEncryptedPart,
         attendeesEncryptedSessionKeysMap,
+        cancelledOccurrenceSignedPart
     ] = await Promise.all([
         // If we're updating an event (but not switching calendar), no need to encrypt again the session keys
         isCreateOrSwitchCalendar && calendarSessionKey
@@ -88,17 +88,21 @@ export const createCalendarEvent = async ({
             ? undefined
             : encryptPart(sharedPart[ENCRYPTED_AND_SIGNED], privateKey, sharedSessionKey),
         signPart(calendarPart[SIGNED], privateKey),
-        calendarSessionKey && encryptPart(calendarPart[ENCRYPTED_AND_SIGNED], privateKey, calendarSessionKey),
+        calendarSessionKey
+            ? encryptPart(calendarPart[ENCRYPTED_AND_SIGNED], privateKey, calendarSessionKey)
+            : undefined,
         // attendees are not allowed to change the SharedEventContent, so they shouldn't send it (API will complain otherwise)
         isAttendeeSwitchingCalendar
             ? undefined
             : encryptPart(attendeesPart[ENCRYPTED_AND_SIGNED], privateKey, sharedSessionKey),
         getEncryptedSessionKeysMap(sharedSessionKey, addedAttendeesPublicKeysMap),
+        cancelledOccurrenceSharedPart ? signPart(cancelledOccurrenceSharedPart[SIGNED], privateKey) : undefined
     ]);
 
     return formatData({
         sharedSignedPart,
         sharedEncryptedPart,
+        cancelledOccurrenceSignedPart,
         sharedSessionKey: encryptedSharedSessionKey,
         calendarSignedPart,
         calendarEncryptedPart,
