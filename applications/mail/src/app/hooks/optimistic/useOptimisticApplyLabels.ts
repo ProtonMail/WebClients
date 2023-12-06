@@ -64,7 +64,7 @@ export const useOptimisticApplyLabels = () => {
     const optimisticApplyLabels = useHandler(
         (
             elements: Element[],
-            inputChanges: LabelChanges,
+            inputChanges: LabelChanges | LabelChanges[],
             isMove = false,
             unreadStatuses?: UnreadStatus[],
             currentLabelID?: string
@@ -79,8 +79,8 @@ export const useOptimisticApplyLabels = () => {
             >;
 
             // Updates in message cache
-            elements.forEach((element) => {
-                const changes = { ...inputChanges };
+            elements.forEach((element, index) => {
+                const changes = Array.isArray(inputChanges) ? { ...inputChanges[index] } : { ...inputChanges };
 
                 if (isMove) {
                     const currentFolderIDs = ([SENT, DRAFTS] as string[]).includes(currentLabelID || '')
@@ -197,14 +197,20 @@ export const useOptimisticApplyLabels = () => {
             globalCache.set(ConversationCountsModel.key, { value: conversationCounters, status: STATUS.RESOLVED });
 
             return () => {
-                rollbackChanges.forEach((rollbackChange) => {
-                    optimisticApplyLabels(
-                        [rollbackChange.element],
-                        rollbackChange.changes,
-                        false,
-                        elementsUnreadStatuses
-                    );
-                });
+                // Building elements and changes so that we do the optimistic update in a single call
+                const { elements, inputChanges } = rollbackChanges.reduce<{
+                    elements: Element[];
+                    inputChanges: LabelChanges[];
+                }>(
+                    (acc, rollbackChange) => {
+                        acc.elements.push(rollbackChange.element);
+                        acc.inputChanges.push(rollbackChange.changes);
+                        return acc;
+                    },
+                    { elements: [], inputChanges: [] }
+                );
+
+                optimisticApplyLabels(elements, inputChanges, false, elementsUnreadStatuses);
             };
         }
     );
