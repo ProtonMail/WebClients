@@ -63,6 +63,7 @@ export enum FeatureCode {
     HolidaysCalendars = 'HolidaysCalendars',
     HolidaysCalendarsSpotlight = 'HolidaysCalendarsSpotlight',
     LegacyMessageMigrationEnabled = 'LegacyMessageMigrationEnabled',
+    MailActionsChunkSize = 'MailActionsChunkSize',
     MailDisableE2EE = 'MailDisableE2EE',
     MailFeedbackEnabled = 'MailFeedbackEnabled',
     MailServiceWorker = 'MailServiceWorker',
