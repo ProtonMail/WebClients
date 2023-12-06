@@ -8,7 +8,6 @@ import withVeventRruleWkst from '@proton/shared/lib/calendar/recurrence/rruleWks
 import { buildVcalOrganizer, dayToNumericDay } from '@proton/shared/lib/calendar/vcalConverter';
 import { getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { Address, Api, SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarBootstrap, SyncMultipleApiResponse } from '@proton/shared/lib/interfaces/calendar';
@@ -26,6 +25,7 @@ import {
     INVITE_ACTION_TYPES,
     InviteActions,
     ReencryptInviteActionData,
+    SendIcs,
     SendIcsActionData,
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
@@ -42,7 +42,7 @@ import getRecurringUpdateAllPossibilities from './getRecurringUpdateAllPossibili
 import getSaveRecurringEventActions from './getSaveRecurringEventActions';
 import getSaveSingleEventActions from './getSaveSingleEventActions';
 import { getEquivalentAttendeesSend, getUpdatedSaveInviteActions } from './inviteActions';
-import { getOriginalEvent } from './recurringHelper';
+import { getOriginalEvent, getRecurrenceEvents } from './recurringHelper';
 import { withVeventSequence } from './sequence';
 
 const getSaveSingleEventActionsHelper = async ({
@@ -57,6 +57,7 @@ const getSaveSingleEventActionsHelper = async ({
     inviteActions,
     hasDefaultNotifications,
     canEditOnlyPersonalPart,
+    isOrganizer,
     isAttendee,
     onEquivalentAttendees,
     handleSyncActions,
@@ -65,15 +66,7 @@ const getSaveSingleEventActionsHelper = async ({
     oldEditEventData: EventOldData;
     getAddressKeys: GetAddressKeys;
     getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
-    sendIcs: (
-        data: SendIcsActionData,
-        calendarID?: string
-    ) => Promise<{
-        veventComponent?: VcalVeventComponent;
-        inviteActions: InviteActions;
-        timestamp: number;
-        sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
-    }>;
+    sendIcs: SendIcs;
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
     onSendPrefsErrors: (data: SendIcsActionData) => Promise<CleanSendIcsActionData>;
     onSaveConfirmation: OnSaveConfirmationCb;
@@ -81,6 +74,7 @@ const getSaveSingleEventActionsHelper = async ({
     inviteActions: InviteActions;
     hasDefaultNotifications: boolean;
     canEditOnlyPersonalPart: boolean;
+    isOrganizer: boolean;
     isAttendee: boolean;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
 }) => {
@@ -120,6 +114,7 @@ const getSaveSingleEventActionsHelper = async ({
         inviteActions: updatedInviteActions,
         hasDefaultNotifications,
         canEditOnlyPersonalPart,
+        isOrganizer,
         isAttendee,
         sendIcs,
         reencryptSharedEvent,
@@ -166,6 +161,7 @@ interface Arguments {
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
     onSendPrefsErrors: (data: SendIcsActionData) => Promise<CleanSendIcsActionData>;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
+    cancelSingleOccurrenceEnabled: boolean;
 }
 
 const getSaveEventActions = async ({
@@ -186,6 +182,7 @@ const getSaveEventActions = async ({
     reencryptSharedEvent,
     onSendPrefsErrors,
     handleSyncActions,
+    cancelSingleOccurrenceEnabled,
 }: Arguments): Promise<{
     syncActions: SyncEventActionOperations[];
     updatePartstatActions?: UpdatePartstatOperation[];
@@ -274,6 +271,7 @@ const getSaveEventActions = async ({
             },
             hasDefaultNotifications,
             canEditOnlyPersonalPart,
+            isOrganizer,
             isAttendee,
             selfAddress,
             inviteActions: updatedInviteActions,
@@ -325,6 +323,7 @@ const getSaveEventActions = async ({
             inviteActions: inviteActionsWithSelfAddress,
             hasDefaultNotifications,
             canEditOnlyPersonalPart,
+            isOrganizer,
             isAttendee,
             getAddressKeys,
             getCalendarKeys,
@@ -348,6 +347,7 @@ const getSaveEventActions = async ({
             inviteActions: inviteActionsWithSelfAddress,
             hasDefaultNotifications,
             canEditOnlyPersonalPart,
+            isOrganizer,
             isAttendee,
             getAddressKeys,
             getCalendarKeys,
@@ -374,20 +374,28 @@ const getSaveEventActions = async ({
     const actualEventRecurrence =
         eventRecurrence ||
         getSingleEditRecurringData(originalEditEventData.mainVeventComponent, oldEditEventData.mainVeventComponent);
+    const singleEdits = getRecurrenceEvents(recurrences, originalEditEventData.eventData)
+        // Since this is inclusive, ignore this single edit instance event since that would always become the new start
+        .filter((event) => {
+            return event.ID !== oldEditEventData.eventData.ID;
+        });
+    const exdates = originalEditEventData.mainVeventComponent.exdate || [];
 
-    const { updateAllPossibilities, hasModifiedDateTimes } = getRecurringUpdateAllPossibilities(
-        originalEditEventData.mainVeventComponent,
-        oldEditEventData.mainVeventComponent,
-        newEditEventData.veventComponent,
-        actualEventRecurrence
-    );
+    const { updateAllPossibilities, hasModifiedDateTimes, isRruleEqual } = getRecurringUpdateAllPossibilities({
+        originalVeventComponent: originalEditEventData.mainVeventComponent,
+        oldVeventComponent: oldEditEventData.mainVeventComponent,
+        newVeventComponent: newEditEventData.veventComponent,
+        recurrence: actualEventRecurrence,
+        isOrganizer,
+        hasSingleEdits: singleEdits.length >= 1,
+        cancelSingleOccurrenceEnabled,
+    });
+    const isBreakingChange = hasModifiedDateTimes || !isRruleEqual;
 
     const selfAttendeeToken = getSelfAttendeeToken(newEditEventData.veventComponent, addresses);
     const hasModifiedCalendar = originalEditEventData.calendarID !== newEditEventData.calendarID;
     // check if the rrule has been explicitly modified. Modifications due to WKST change are ignored here
-    const hasModifiedRrule =
-        tmpData.hasTouchedRrule &&
-        !isDeepEqual(originalEditEventData.mainVeventComponent.rrule, newEditEventData.veventComponent.rrule);
+    const hasModifiedRrule = tmpData.hasTouchedRrule && !isRruleEqual;
     const updatedSaveInviteActions = getUpdatedSaveInviteActions({
         inviteActions: inviteActionsWithSelfAddress,
         newVevent: newEditEventData.veventComponent,
@@ -402,7 +410,6 @@ const getSaveEventActions = async ({
 
     const { type: saveType, inviteActions: updatedInviteActions } = await getRecurringSaveType({
         originalEditEventData,
-        oldEditEventData,
         canOnlySaveAll:
             actualEventRecurrence.isSingleOccurrence ||
             hasModifiedCalendar ||
@@ -411,10 +418,13 @@ const getSaveEventActions = async ({
         canOnlySaveThis: canEditOnlyPersonalPart && isSingleEdit,
         hasModifiedRrule,
         hasModifiedCalendar,
+        isBreakingChange,
         inviteActions: updatedSaveInviteActions,
         onSaveConfirmation,
         recurrence: actualEventRecurrence,
-        recurrences,
+        singleEdits,
+        exdates,
+        isOrganizer,
         isAttendee,
         canEditOnlyPersonalPart,
         selfAttendeeToken,
@@ -439,7 +449,9 @@ const getSaveEventActions = async ({
         inviteActions: updatedInviteActions,
         hasDefaultNotifications,
         canEditOnlyPersonalPart,
+        isOrganizer,
         isAttendee,
+        isBreakingChange,
         sendIcs,
         reencryptSharedEvent,
         selfAttendeeToken,

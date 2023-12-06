@@ -40,7 +40,7 @@ import getChangePartstatActions from './getChangePartstatActions';
 import { UpdateAllPossibilities } from './getRecurringUpdateAllPossibilities';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
 import { getAddedAttendeesPublicKeysMap } from './inviteActions';
-import { getCurrentEvent, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
+import { getCurrentVevent, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
 import { withIncrementedSequence, withUpdatedDtstampAndSequence, withVeventSequence } from './sequence';
 
 interface SaveRecurringArguments {
@@ -55,7 +55,9 @@ interface SaveRecurringArguments {
     getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
     hasDefaultNotifications: boolean;
     canEditOnlyPersonalPart: boolean;
+    isOrganizer: boolean;
     isAttendee: boolean;
+    isBreakingChange: boolean;
     inviteActions: InviteActions;
     sendIcs: (data: SendIcsActionData) => Promise<{
         veventComponent?: VcalVeventComponent;
@@ -92,6 +94,7 @@ const getSaveRecurringEventActions = async ({
     hasDefaultNotifications,
     canEditOnlyPersonalPart,
     isAttendee,
+    isBreakingChange,
     sendIcs,
     reencryptSharedEvent,
     selfAttendeeToken,
@@ -170,7 +173,7 @@ const getSaveRecurringEventActions = async ({
             };
             const oldVeventWithSequence = oldVeventComponent.sequence
                 ? oldVeventWithSafeSequence
-                : withVeventSequence(oldVeventComponent, getCurrentEvent(originalVeventWithSequence, recurrence));
+                : withVeventSequence(oldVeventComponent, getCurrentVevent(originalVeventWithSequence, recurrence));
             const newVeventWithSequence = withUpdatedDtstampAndSequence(
                 updateSingleRecurrence(newVeventComponent),
                 oldVeventWithSequence
@@ -197,7 +200,7 @@ const getSaveRecurringEventActions = async ({
             };
         }
 
-        const oldRecurrenceVeventComponent = getCurrentEvent(originalVeventWithSequence, recurrence);
+        const oldRecurrenceVeventComponent = getCurrentVevent(originalVeventWithSequence, recurrence);
         const newRecurrenceVeventComponent = createSingleRecurrence(
             newVeventComponent,
             originalVeventComponent,
@@ -260,7 +263,7 @@ const getSaveRecurringEventActions = async ({
             hasDefaultNotifications,
         });
 
-        const oldRecurrenceVeventComponent = getCurrentEvent(originalVeventWithSequence, recurrence);
+        const oldRecurrenceVeventComponent = getCurrentVevent(originalVeventWithSequence, recurrence);
         const hasStartChanged = getHasStartChanged(newVeventWithSequence, oldRecurrenceVeventComponent);
 
         return {
@@ -283,11 +286,22 @@ const getSaveRecurringEventActions = async ({
         const singleEditRecurrences = getRecurrenceEvents(recurrences, originalEvent);
         // For an invitation, we do not want to delete single edits as we want to keep in sync with the organizer's event
         const deleteOperations = isAttendee ? [] : singleEditRecurrences.map(unary(getDeleteSyncOperation));
+        const newRecurrentVevent = updateAllRecurrence({
+            component: newVeventComponent,
+            originalComponent: originalVeventComponent,
+            mode: updateAllPossibilities,
+            isSingleEdit,
+            isAttendee,
+        });
+        const newRecurrentVeventWithSequence = withUpdatedDtstampAndSequence(
+            newRecurrentVevent,
+            originalVeventComponent
+        );
         if (selfAttendeeToken && invitePartstat) {
             // the attendee changes answer
             const { updatePartstatActions, updatePersonalPartActions, sendActions } = await getChangePartstatActions({
                 inviteActions,
-                eventComponent: newVeventComponent,
+                eventComponent: newRecurrentVeventWithSequence,
                 hasDefaultNotifications,
                 event: oldEvent,
                 addressID: newAddressID,
@@ -328,7 +342,7 @@ const getSaveRecurringEventActions = async ({
         if (canEditOnlyPersonalPart && !isSwitchCalendar) {
             // We change notifications through the updatePersonalPart route
             return getUpdatePersonalPartActions({
-                eventComponent: newVeventComponent,
+                eventComponent: newRecurrentVeventWithSequence,
                 hasDefaultNotifications,
                 event: oldEvent,
                 addressID: newAddressID,
@@ -337,17 +351,6 @@ const getSaveRecurringEventActions = async ({
                 reencryptSharedEvent,
             });
         }
-        const newRecurrentVevent = updateAllRecurrence({
-            component: newVeventComponent,
-            originalComponent: originalVeventComponent,
-            mode: updateAllPossibilities,
-            isSingleEdit,
-            isAttendee,
-        });
-        const newRecurrentVeventWithSequence = withUpdatedDtstampAndSequence(
-            newRecurrentVevent,
-            originalVeventComponent
-        );
         const isSendInviteType = [INVITE_ACTION_TYPES.SEND_INVITATION, INVITE_ACTION_TYPES.SEND_UPDATE].includes(
             inviteActions.type
         );
@@ -400,6 +403,7 @@ const getSaveRecurringEventActions = async ({
             calendarEvent: originalEvent,
             hasDefaultNotifications,
             isAttendee,
+            isBreakingChange,
             removedAttendeesEmails: updatedInviteActions.removedAttendees?.map(unary(getAttendeeEmail)),
             addedAttendeesPublicKeysMap,
         });

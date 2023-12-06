@@ -112,12 +112,16 @@ export interface OnSaveConfirmationArgs {
     type: SAVE_CONFIRMATION_TYPES;
     data?: {
         types: RECURRING_TYPES[];
-        hasSingleModifications: boolean;
-        hasSingleModificationsAfter: boolean;
+        hasSingleEdits: boolean;
+        hasSingleDeletes: boolean;
+        hasSingleEditsAfter: boolean;
+        hasSingleDeletesAfter: boolean;
         hasRruleModification: boolean;
         hasCalendarModification: boolean;
+        isBreakingChange: boolean;
     };
     inviteActions: InviteActions;
+    isOrganizer: boolean;
     isAttendee: boolean;
     canEditOnlyPersonalPart: boolean;
 }

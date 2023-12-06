@@ -476,11 +476,45 @@ Description: I am a good description`;
         ).toEqual(expected);
     });
 
-    it('should return the expected body for a cancellation of a part-day event with both location and description', () => {
+    it('should return the expected body for a cancellation of a part-day event with location', () => {
         const expected = '(no title) has been canceled.';
         expect(
             generateEmailBody({
                 vevent: exampleVevent,
+                method: ICAL_METHOD.CANCEL,
+                isCreateEvent: false,
+                options: { locale: enUS },
+            })
+        ).toEqual(expected);
+    });
+
+    it('should return the expected body for a single-cancellation of an all-day event', () => {
+        const vevent = {
+            ...exampleVevent,
+            summary: { value: 'A boring recurring meeting' },
+            dtstart: {
+                value: { year: 2020, month: 10, day: 12 },
+                parameters: { type: 'date' },
+            },
+            dtend: {
+                value: { year: 2020, month: 10, day: 13 },
+                parameters: { type: 'date' },
+            },
+            'recurrence-id': {
+                value: {
+                    year: 2023,
+                    month: 11,
+                    day: 29,
+                },
+                parameters: {
+                    type: 'date',
+                },
+            },
+        };
+        const expected = 'This occurrence of A boring recurring meeting has been canceled.';
+        expect(
+            generateEmailBody({
+                vevent,
                 method: ICAL_METHOD.CANCEL,
                 isCreateEvent: false,
                 options: { locale: enUS },
