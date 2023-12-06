@@ -1,6 +1,6 @@
 import { toUTCDate } from '../date/timezone';
 import { DateTimeValue } from '../interfaces/calendar';
-import { VcalDateOrDateTimeProperty, VcalDateProperty, VcalDateTimeProperty } from '../interfaces/calendar/VcalModel';
+import { VcalDateOrDateTimeProperty } from '../interfaces/calendar/VcalModel';
 import { getDateProperty, getDateTimeProperty } from './vcalConverter';
 
 export const createExdateMap = (exdate: VcalDateOrDateTimeProperty[] = []) => {
@@ -13,7 +13,7 @@ export const createExdateMap = (exdate: VcalDateOrDateTimeProperty[] = []) => {
 
 export const toExdate = (dateObject: DateTimeValue, isAllDay: boolean, tzid = 'UTC'): VcalDateOrDateTimeProperty => {
     if (isAllDay) {
-        return getDateProperty(dateObject) as VcalDateProperty;
+        return getDateProperty(dateObject);
     }
-    return getDateTimeProperty(dateObject, tzid) as VcalDateTimeProperty;
+    return getDateTimeProperty(dateObject, tzid);
 };
