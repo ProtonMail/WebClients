@@ -85,9 +85,6 @@ const createGenericWindow = (session: Session, url: string, mapKey: APP, visible
         setWindowState(window.getBounds(), mapKey);
         if (isWindows) {
             ev.preventDefault();
-
-            // window.removeAllListeners("close");
-            // window.destroy();
             window.hide();
             window.setOpacity(0);
 
