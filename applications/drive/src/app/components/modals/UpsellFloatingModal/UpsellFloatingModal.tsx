@@ -28,7 +28,7 @@ const UpsellFloatingModalContent = ({ onClose }: Pick<ChildProps, 'onClose'>) =>
     return (
         <div className="upsell-floating-modal-container relative">
             <Tooltip
-                className="upsell-floating-modal-tooltip absolute right top mr-1"
+                className="upsell-floating-modal-tooltip absolute right-0 top-0 mr-1"
                 title={c('Action').t`Close`}
                 onClick={onClose}
             >

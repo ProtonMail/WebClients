@@ -39,7 +39,7 @@ const DrawerAppButton = ({
             {buttonContent}
             {notificationDotColor && (
                 <NotificationDot
-                    className="top right notification-dot--top-right"
+                    className="top-0 right-0 notification-dot--top-right"
                     color={notificationDotColor}
                     alt={c('Action').t`Attention required`}
                 />

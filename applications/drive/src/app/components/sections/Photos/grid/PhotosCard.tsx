@@ -147,7 +147,7 @@ export const PhotosCard: FC<Props> = ({
                         </div>
                     )}
                     {(photo.signatureIssues || photo.isShared) && (
-                        <div className="absolute top right mr-2 mt-2 flex items-center gap-1">
+                        <div className="absolute top-0 right-0 mr-2 mt-2 flex items-center gap-1">
                             {photo.signatureIssues && (
                                 <SignatureIcon
                                     isFile
@@ -163,7 +163,7 @@ export const PhotosCard: FC<Props> = ({
                         </div>
                     )}
                     {photo.mimeType && isVideo(photo.mimeType) && (
-                        <div className="w-full absolute bottom flex justify-end items-center px-2 py-2 photos-card-video-info">
+                        <div className="w-full absolute bottom-0 flex justify-end items-center px-2 py-2 photos-card-video-info">
                             {photo.duration && (
                                 <time
                                     className="text-semibold mr-1"
