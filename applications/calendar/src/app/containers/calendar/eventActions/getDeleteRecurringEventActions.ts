@@ -85,7 +85,6 @@ export const getDeleteRecurringEventActions = async ({
             updatedInviteActions = cleanInviteActions;
         }
 
-        // TODO: what happens with CANCEL_DISABLED?
         if (isCancelInvitation) {
             cancelledOccurrenceVevent = createSingleCancelledRecurrence(
                 getCurrentVevent(oldVeventComponent, recurrence)
