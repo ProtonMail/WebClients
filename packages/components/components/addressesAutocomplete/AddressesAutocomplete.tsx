@@ -12,11 +12,13 @@ import Icon from '../icon/Icon';
 import Input, { Props as InputProps } from '../input/Input';
 import { Option } from '../option';
 import { Marks } from '../text';
+import { Tooltip } from '../tooltip';
 import {
     AddressesAutocompleteItem,
     GroupsWithContactsMap,
     getContactGroupsAutocompleteItems,
     getContactsAutocompleteItems,
+    getNumberOfMembersCount,
     getNumberOfMembersText,
     getRecipientFromAutocompleteItem,
 } from './helper';
@@ -178,17 +180,21 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
                                 onChange={handleSelect}
                             >
                                 {option.type === 'group' ? (
-                                    <div className="flex flex-nowrap children-items-center">
+                                    <div className="flex flex-nowrap children-items-center gap-2">
                                         <Icon
                                             name="circle-filled"
                                             color={option.value.Color}
                                             size={12}
-                                            className="mr-2 shrink-0 self-center my-auto"
+                                            className="shrink-0 self-center my-auto"
                                         />
-                                        <span className="mr-2 text-ellipsis">
+                                        <span className="text-ellipsis">
                                             <Marks chunks={chunks}>{text}</Marks>
                                         </span>
-                                        {getNumberOfMembersText(option.value.ID, groupsWithContactsMap)}
+                                        <Tooltip title={getNumberOfMembersText(option.value.ID, groupsWithContactsMap)}>
+                                            <span className="shrink-0">
+                                                {getNumberOfMembersCount(option.value.ID, groupsWithContactsMap)}
+                                            </span>
+                                        </Tooltip>
                                     </div>
                                 ) : (
                                     <Marks chunks={chunks}>{text}</Marks>
