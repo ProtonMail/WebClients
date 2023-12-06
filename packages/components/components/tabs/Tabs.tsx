@@ -1,6 +1,7 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
 
 import { equivalentReducer } from '@proton/components/hooks/useElementRect';
+import clamp from '@proton/utils/clamp';
 import clsx from '@proton/utils/clsx';
 import debounce from '@proton/utils/debounce';
 
@@ -10,6 +11,7 @@ import { Tab } from './index.d';
 import './Tabs.scss';
 
 const toKey = (index: number, prefix = '') => `${prefix}${index}`;
+
 interface Props {
     tabs?: Tab[];
     gap?: ReactNode;
@@ -32,7 +34,7 @@ interface Props {
 }
 
 export const Tabs = ({
-    value,
+    value: unsafeValue,
     onChange,
     tabs,
     gap,
@@ -45,9 +47,8 @@ export const Tabs = ({
     contentClassName,
     variant = 'underline',
 }: Props) => {
-    const key = toKey(value, 'key_');
-    const label = toKey(value, 'label_');
     const tabList = tabs || children || [];
+    const value = clamp(unsafeValue, 0, tabList.length - 1);
     const content = tabList[value]?.content;
     const containerRef = useRef<HTMLUListElement>(null);
     const [selectedTabEl, setSelectedTabEl] = useState<HTMLLIElement | null>(null);
@@ -96,6 +97,9 @@ export const Tabs = ({
     if (!tabs?.length) {
         return null;
     }
+
+    const key = toKey(value, 'key_');
+    const label = toKey(value, 'label_');
 
     return (
         <div className={clsx(['tabs', 'tabs--' + variant, className])}>
