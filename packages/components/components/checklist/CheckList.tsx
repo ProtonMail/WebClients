@@ -33,7 +33,7 @@ export const CheckListProtectInbox = ({
     'data-testid': dataTestId,
 }: CheckListItemProps) => {
     // translator: This text is in bold inside the sentence "Discover how our privacy features protect you"
-    const strongText = <strong>{c('Get started checklist instructions').t`privacy features`}</strong>;
+    const strongText = <strong key="privacy">{c('Get started checklist instructions').t`privacy features`}</strong>;
     // translator: The whole sentence is "Discover how our privacy features protect you" with privacy feature in bold
     const text = c('Get started checklist instructions').jt`Discover how our ${strongText} protect you`;
     const smallText = c('Get started checklist instructions').t`Discover privacy features`;
@@ -102,7 +102,7 @@ export const CheckListAccountLogin = ({
     'data-testid': dataTestId,
 }: CheckListItemProps) => {
     // translator: This text is in bold inside the sentence "Change account logins to your Proton address"
-    const strongText = <strong>{c('Get started checklist instructions').t`account logins`}</strong>;
+    const strongText = <strong key="logins">{c('Get started checklist instructions').t`account logins`}</strong>;
     // translator: The whole sentence is "Change account logins to your Proton address" with "account logins" in bold
     const text = c('Get started checklist instructions').jt`Change ${strongText} to your ${BRAND_NAME} address`;
     const smallText = c('Get started checklist instructions').t`Update your logins`;
@@ -130,7 +130,7 @@ export const CheckListMobileStores = ({
     disabled = false,
     'data-testid': dataTestId,
 }: CheckListItemProps) => {
-    const strongText = <strong>{c('Get started checklist instructions').t`${MAIL_APP_NAME} app`}</strong>;
+    const strongText = <strong key="app">{c('Get started checklist instructions').t`${MAIL_APP_NAME} app`}</strong>;
     // translator: The whole sentence is "Get the ProtonMail app on Google Play or App Store", where "Proton Mail app" is in bold
     const text = c('Get started checklist instructions').jt`Get the ${strongText} on Android or iOS`;
     const smallText = c('Get started checklist instructions').t`Get the App`;
