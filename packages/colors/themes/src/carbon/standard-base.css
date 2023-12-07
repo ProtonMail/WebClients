@@ -57,9 +57,6 @@
     --optional-background-elevated     : #1e1c26;
 	--optional-background-lowered      : var(--background-norm);
 
-    --optional-email-item-unread-background-color: var(--optional-background-elevated);
-
-    --optional-email-item-read-background-color: var(--optional-background-lowered);
     --optional-email-item-read-text-color: var(--text-weak);
 
     --optional-mini-calendar-today-color: white;

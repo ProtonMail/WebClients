@@ -37,7 +37,9 @@ export const useMailboxFocus = ({
         // Selecting on index may fail during loading time with placeholders
         // Selecting by sibblings is a bit more stable but we have to skip "ListSettings"
         const element = listRef.current?.querySelector(
-            `.item-container-wrapper:nth-child(${index + 1}) [data-shortcut-target="item-container"]`
+            `[data-shortcut-target="item-container-wrapper"]:nth-child(${
+                index + 1
+            }) [data-shortcut-target="item-container"]`
         ) as HTMLElement;
         element?.focus();
     };

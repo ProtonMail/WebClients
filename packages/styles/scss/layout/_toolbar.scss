@@ -12,10 +12,6 @@
 		border-block-end: 1px solid var(--toolbar-border-bottom-color);
 	}
 
-	// this adds the same border radius as .main
-	// needed to fix a bug in safari where the toolbar escapes overflow: hidden
-	border-start-start-radius: var(--border-radius-md);
-
 	// only set border radius when drawer is shown
 	// same naming as .main--bordered
 	&--bordered {

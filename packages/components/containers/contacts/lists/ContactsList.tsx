@@ -5,7 +5,6 @@ import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import { Recipient, UserModel } from '@proton/shared/lib/interfaces';
 import { ContactFormatted, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import clsx from '@proton/utils/clsx';
 
 import { useContactFocus } from '../../../hooks/useContactFocus';
 import { useContactHotkeys } from '../../../hooks/useContactHotkeys';
@@ -32,7 +31,6 @@ const ContactsList = ({
     contactGroupsMap,
     onCheckOne,
     user,
-    isLargeViewport = true,
     onCheck,
     checkedIDs,
     onClick,
@@ -80,8 +78,8 @@ const ContactsList = ({
     const contactRowHeightComfort = 4 * rootFontSize() + 8; // 4 * 16 = we want 72px by default
 
     return (
-        <div ref={elementRef} className={clsx(isLargeViewport ? 'items-column-list' : 'items-column-list--mobile')}>
-            <div ref={listContainerRef} className="items-column-list-inner items-column-list-inner--border-none">
+        <div ref={elementRef} className="h-full">
+            <div ref={listContainerRef} className="min-h-full">
                 <AutoSizer>
                     {({ height, width }) => (
                         <List
