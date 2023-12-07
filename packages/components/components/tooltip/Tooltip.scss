@@ -18,6 +18,10 @@
 	word-break: break-word;
 	animation-fill-mode: both;
 
+	&--no-max-width {
+		max-inline-size: 100vw;
+	}
+
 	&-in-first {
 		animation: anime-tooltip-in-first 0.2s easing(ease-out-quart);
 
