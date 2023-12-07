@@ -1,7 +1,7 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "no_NO"
+    "language": "nb_NO"
   },
   "contexts": {
     "account": {
@@ -224,7 +224,7 @@
         "Slett versjon"
       ],
       "Deselect all": [
-        "Fjern merkingen av alle"
+        "Fjern merket for alle"
       ],
       "Details": [
         "Detaljer"
@@ -506,7 +506,7 @@
         "Rapporter et problem"
       ],
       "Request a feature": [
-        "Foreslå ny funksjon"
+        "Be om en funksjon"
       ],
       "Request new code": [
         "Be om en ny kode"
@@ -632,7 +632,7 @@
         "Begynn å gjenopprette"
       ],
       "Start setup": [
-        "Start oppsett"
+        "Start oppsettet"
       ],
       "Stay": [
         "Bli"
@@ -713,7 +713,7 @@
         "Last opp bilde"
       ],
       "Use ${ label } theme": [
-        "Bruk tema ${ label }"
+        "Bruk ${ label }-temaet"
       ],
       "Use authentication code": [
         "Bruk autentiseringskode"
@@ -1008,7 +1008,7 @@
         "gulrot"
       ],
       "cerise": [
-        "cerise"
+        "kirsebærrød"
       ],
       "cobalt": [
         "kobolt"
@@ -1956,10 +1956,10 @@
         "Dekrypterer kontakter...Dette kan ta noen få minutter. Når prosessen er fullført, vil du være i stand til å laste ned filen med alle dine kontakter eksportert."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Sletter kontakter... Dette kan ta noen få minutter. Når prosessen er fullført, kan du lukke denne modalen."
+        "Sletter kontakter... Dette kan ta noen få minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Krypterer og importerer kontakter... Dette kan ta noen minutter. Når prosessen er fullført, kan du lukke denne modalen."
+        "Krypterer og importerer kontakter... Dette kan ta noen minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
       ],
       "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "For import via CSV- og VCF-fil, forsikre deg om at filen ikke overskrider ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis filen er større, vennligst del den opp i mindre filer. ${ learnMoreLink }."
@@ -1968,7 +1968,7 @@
         "Det ser ut til at kontaktlisten du importerer, inneholder noen grupper. Se gjennom hvordan disse gruppene skal importeres."
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "Slår sammen kontakter... Dette kan ta noen få minutter. Når prosessen er fullført, kan du lukke denne modalen."
+        "Slår sammen kontakter... Dette kan ta noen få minutter. Når prosessen er fullført, kan du lukke dette hjelpevinduet."
       ],
       "ProtonMail logo and a plus sign": [
         "Proton Mail logo og et plusstegn"
@@ -2047,22 +2047,22 @@
     },
     "Email subject": {
       "Cancellation of an event on ${ formattedStart }": [
-        "Avlysning av en hendelse ${ formattedStart }."
+        "Avlysning av en hendelse den ${ formattedStart }."
       ],
       "Cancellation of an event starting on ${ formattedStart }": [
-        "Avlysning av en hendelse som starter ${ formattedStart }."
+        "Avlysning av en hendelse med start den ${ formattedStart }."
       ],
       "Invitation for an event on ${ formattedStart }": [
-        "Invitasjon til en hendelse ${ formattedStart }."
+        "Invitasjon til en hendelse den ${ formattedStart }."
       ],
       "Invitation for an event starting on ${ formattedStart }": [
-        "Invitasjon til en hendelse som starter ${ formattedStart }."
+        "Invitasjon til en hendelse med start den ${ formattedStart }."
       ],
       "Update for an event on ${ formattedStart }": [
-        "Oppdatering til en hendelse ${ formattedStart }."
+        "Oppdatering til en hendelse den ${ formattedStart }."
       ],
       "Update for an event starting on ${ formattedStart }": [
-        "Oppdatering til en hendelse som starter ${ formattedStart }."
+        "Oppdatering til en hendelse med start den ${ formattedStart }."
       ]
     },
     "Error": {
@@ -2401,10 +2401,10 @@
         "Filen din ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_EVENTS_STRING } hendelser."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Filen ${ formattedFilename } her en ugyldig metode og kan ikke importeres."
+        "Filen ${ formattedFilename } har en ugyldig metode og kan ikke importeres."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        "Filen ${ formattedFilename } her ingen hendelser å importere."
+        "Filen ${ formattedFilename } har ingen hendelser å importere."
       ],
       "Your file ${ formattedFilename } is empty.": [
         "Filen ${ formattedFilename } er tom."
@@ -3063,7 +3063,7 @@
         "Din e-postkonto krever ett for å eksportere dine data."
       ],
       "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "Din e-postadresse og app-passord er korrekt. Bruk ${ boldNot } ditt normale passord."
+        "E-postadressen og app-passordet er riktig. Bruk ${ boldNot } ditt normale passord."
       ],
       "Your email address and password are correct.": [
         "e-postadressen og passordet er riktig."
@@ -3126,7 +3126,7 @@
         "app-passord"
       ],
       "Export": [
-        "Eksport"
+        "Eksporter"
       ],
       "Export to CSV file": [
         "Eksporter til CSV-fil"
@@ -5093,7 +5093,7 @@
         "${ maximumNumberOfCalendars } kalendere"
       ],
       "Auto-delete spam and trashed messages": [
-        "Auto-slett søppelpost og meldinger i papirkurven"
+        "Autoslett søppelpost og meldinger i papirkurven"
       ],
       "Calendar sharing": [
         "Kalenderdeling"
@@ -6213,7 +6213,7 @@
         "Aktiv"
       ],
       "Add contact group name": [
-        "Legg til navn på kontaktgruppe"
+        "Legg til navn på kontaktgruppen"
       ],
       "Add to ${ groupCount } group": [
         "Legg til ${ groupCount } gruppe",
@@ -6530,7 +6530,7 @@
         "Søker..."
       ],
       "Select action to take on contact group": [
-        "Velg handling for å utføre på kontaktgruppe"
+        "Velg handling som skal utføres på kontaktgruppen"
       ],
       "Select contact group": [
         "Velg kontaktgruppe"
@@ -6656,7 +6656,7 @@
         "Endringene dine er ikke synkronisert enda"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
-        "Din gratis prøveversjon av Mail Plus slutter på ${ textDate }."
+        "Din gratis prøveversjon av Mail Plus slutter den ${ textDate }."
       ],
       "Your welcome actions": [
         "Dine velkomne handlinger"
