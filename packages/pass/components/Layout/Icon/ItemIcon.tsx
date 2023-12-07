@@ -93,7 +93,7 @@ export const OptimisticItemIcon: VFC<ItemIconProps> = ({ item, size, className }
         }
 
         if (optimistic) {
-            return <CircleLoader size="small" className="upper-layer color-primary absolute inset-center opacity-60" />;
+            return <CircleLoader size="small" className="z-up color-primary absolute inset-center opacity-60" />;
         }
     };
 

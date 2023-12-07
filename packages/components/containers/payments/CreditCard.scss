@@ -1,3 +1,4 @@
+@use "sass:map";
 @import '~@proton/styles/scss/lib';
 
 .card-information {
@@ -69,12 +70,12 @@
 .exp--small,
 .cvv--small {
 	&.error {
-		z-index: $layer-upper;
+		z-index: map.get($z-indexes, 'up');
 	}
 
 	&:focus-within {
 		// we want the focus frame to be displayed over error frame
-		z-index: $layer-upper + 1;
+		z-index: map.get($z-indexes, 'up') + 1;
 	}
 }
 

@@ -1,8 +1,9 @@
+@use "sass:map";
 @import '~@proton/styles/scss/lib';
 
 .modal-two-backdrop {
 	position: fixed;
-	z-index: $layer-modals;
+	z-index: map.get($z-indexes, 'modals');
 	inset: 0;
 	background: var(--backdrop-norm);
 	animation: 0.1s ease-out forwards;

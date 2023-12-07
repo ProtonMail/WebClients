@@ -1,3 +1,4 @@
+@use "sass:map";
 @import '~@proton/styles/scss/lib';
 
 .floating-ellipsis {
@@ -8,7 +9,7 @@
 	background: linear-gradient(to right, transparent 0, var(--background-norm) 8px);
 	position: absolute;
 	opacity: 1;
-	z-index: $layer-notifications;
+	z-index: map.get($z-indexes, 'notifications');
 	pointer-events: none;
 	transition: opacity 150ms ease-in;
 

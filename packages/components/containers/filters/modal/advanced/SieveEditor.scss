@@ -1,8 +1,9 @@
+@use "sass:map";
 @import '~@proton/styles/scss/lib';
 
 .CodeMirror-lint-tooltip {
 	&#{&} {
-		z-index: $layer-tooltips;
+		z-index: map.get($z-indexes, 'tooltips');
 	}
 }
 
