@@ -10,7 +10,14 @@ import { Address } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
 
 import { Editor, EditorActions } from '../../components';
-import { useApi, useEventManager, useHotkeys, useMailSettings, useNotifications } from '../../hooks';
+import {
+    useActiveBreakpoint,
+    useApi,
+    useEventManager,
+    useHotkeys,
+    useMailSettings,
+    useNotifications,
+} from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
@@ -32,6 +39,7 @@ const EditAddressesSection = ({ address }: Props) => {
     const [displayName, setDisplayName] = useState(address.DisplayName);
     const [signatureUpdated, setSignatureUpdated] = useState(false);
     const { createNotification } = useNotifications();
+    const { viewportWidth } = useActiveBreakpoint();
 
     const editorWrapperRef = useRef<HTMLDivElement>(null);
     const editorRef = useRef<EditorActions>();
@@ -130,7 +138,7 @@ const EditAddressesSection = ({ address }: Props) => {
                             modalLink={modalLink}
                             modalImage={modalImage}
                             modalDefaultFont={modalDefaultFont}
-                            isInSettings
+                            isSmallViewportForToolbar={viewportWidth['<=medium']}
                         />
                     </div>
 
