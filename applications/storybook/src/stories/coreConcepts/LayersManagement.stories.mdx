@@ -8,48 +8,48 @@ import { getTitle } from '../../helpers/title';
 
 ## TLDR
 
-We have create some SASS variables for managing layer stack.
+We have create a SASS map for managing layer stack, named `$z-indexes`.
 
 ## Variable list
 
-Here are the available variables. Remember that you don't really need to take care of their value for **abstraction purposes**, so let's consider them as from higher to lower level layer.
+Here are the available entries of `$z-indexes` SASS map. Remember that you don't really need to take care of their value for **abstraction purposes**, so let's consider them as from higher to lower level layer.
 
--   **`$layer-tooltips`** for tooltips
+-   **`tooltips`** for tooltips
 
--   **`$layer-notifications`** for notifications
+-   **`notifications`** for notifications
 
--   **`$layer-modals`** for modals and dropdowns
+-   **`modals`** for modals and dropdowns
 
--   **`$layer-mobile-navigation`** for navigation bar on mobile
+-   **`mobile-navigation`** for navigation bar on mobile
 
--   **`$layer-previewer`** for file preview
+-   **`transfer-manager`** for transfer manager in Drive
 
--   **`$layer-floating-frames`** for floating frames, sush as the composer or transfer manager
+-   **`previewer`** for file preview
 
--   **`$layer-floating-action-buttons`** for floating action buttons, sush as new message on mobile
+-   **`floating-frames`** for floating frames, sush as the composer
 
--   **`$layer-dropzone`** for drag and drop zone area
+-   **`drawer`** for the drawer
 
-## Example
+-   **`floating-action-buttons`** for floating action buttons, sush as new message on mobile
 
-<Source
-    language="css"
-    format
-    copy={false}
-    code={`
+-   **`dropzone`** for drag and drop zone area
+
+## How to use
+
+```css
+@use 'sass:map';
 @import '~@proton/styles/scss/lib';
- 
+
 .transfers-manager {
     position: fixed;
-    z-index: $layer-floating-frames;
+    z-index: map.get($z-indexes, 'floating-frames');
     /* … */
 }
-`}
-/>
+```
 
 ## Special treatment
 
-There's a helper that can be used to make sure that a component is over other ones: **`.upper-layer`**, which is using **`$layer-upper`** variable. This variable has a lower value than any other layer variable.
+There's a helper that can be used to make sure that a component is over other ones: **`.z-up`**, which is using **`map.get($z-indexes, 'up')`** variable. This variable has a lower value than any other layer variable.
 
 ## Why?
 

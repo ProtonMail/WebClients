@@ -1,10 +1,11 @@
+@use "sass:map";
 @use 'sass:math';
 
 .spotlight {
 	$arrow-width: 1em;
 
 	position: fixed;
-	z-index: $layer-tooltips;
+	z-index: map.get($z-indexes, 'tooltips');
 	min-inline-size: 10em;
 	max-inline-size: 20em;
 	transform: scale(1);
