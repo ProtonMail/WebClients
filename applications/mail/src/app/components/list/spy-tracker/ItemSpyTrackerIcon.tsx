@@ -43,13 +43,13 @@ const ItemSpyTrackerIcon = ({ message }: Props) => {
         <span>{c('Info').t`Email tracker protection is disabled`}</span>
     ) : (
         <>
-            <div className="flex justify-space-between">
-                <span>{c('Info').t`Trackers blocked:`}</span>
+            <div className="flex flex-nowrap justify-space-between">
+                <span className="text-left">{c('Info').t`Trackers blocked:`}</span>
                 <span className="pl-4 text-tabular-nums">{numberOfImageTrackers}</span>
             </div>
             {canCleanUTMTrackers && (
-                <div className="flex justify-space-between">
-                    <span>{c('Info').t`Links cleaned:`}</span>
+                <div className="flex flex-nowrap justify-space-between">
+                    <span className="text-left">{c('Info').t`Links cleaned:`}</span>
                     <span className="pl-4 text-tabular-nums">{numberOfUTMTrackers}</span>
                 </div>
             )}
@@ -73,7 +73,7 @@ const ItemSpyTrackerIcon = ({ message }: Props) => {
             >
                 <div>
                     {/* Need to wrap the Tooltip by a div to avoid ref warning because Spotlight is cloning the element and applying refs on top of it */}
-                    <Tooltip title={trackerText}>
+                    <Tooltip title={trackerText} tooltipClassName="tooltip--no-max-width">
                         <div className="flex" ref={anchorRef}>
                             <PrivacyDropdown message={message} />
                         </div>
