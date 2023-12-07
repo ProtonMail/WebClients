@@ -44,6 +44,7 @@ interface Props {
     modalDefaultFont: any;
     hasToolbar?: boolean;
     hasDropzone?: boolean;
+    isInSettings?: boolean;
 }
 
 const DROPZONE_COMPOSER_SETTINGS: DropzoneContentProps = {
@@ -75,6 +76,7 @@ const Editor = ({
     modalDefaultFont,
     hasToolbar = true,
     hasDropzone = true,
+    isInSettings = false,
 }: Props) => {
     /**
      * Set to true when editor setContent is called by parent components
@@ -143,6 +145,7 @@ const Editor = ({
                         className={editorToolbarClassname}
                         openEmojiPickerRef={openEmojiPickerRef}
                         simple={simple}
+                        isInSettings={isInSettings}
                     />
                 )}
             </div>
