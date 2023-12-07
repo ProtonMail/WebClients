@@ -2,12 +2,15 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
+import { CircleLoader } from '@proton/atoms/CircleLoader';
 
 import { Selector } from '../../atoms/Selector';
 import { WalletWithAccountsWithBalanceAndTxs } from '../../types';
 import { WalletType } from '../../types/api';
 import { OnChainFeesSelector } from '../OnchainFeesSelector';
 import { OnchainTransactionAdvancedOptions } from '../OnchainTransactionAdvancedOptions';
+import { OnchainTransactionBroadcastConfirmation } from '../OnchainTransactionBroadcastConfirmation';
+import { OnchainTransactionDetails } from '../OnchainTransactionDetails';
 import { RecipientList } from './RecipientList';
 import { useOnchainTransactionBuilder } from './useOnchainTransactionBuilder';
 
@@ -22,13 +25,19 @@ export const OnchainTransactionBuilder = ({ defaultWalletId, wallets }: Props) =
     const {
         selectedWallet,
         selectedAccount,
-        recipients,
         handleSelectWallet,
         handleSelectAccount,
         addRecipient,
         removeRecipient,
         updateRecipient,
-        updateRecipientAmount,
+        txBuilder,
+        updateTxBuilder,
+        createPsbt,
+        finalPsbt,
+        backToTxBuilder,
+        txid,
+        handleSignAndSend,
+        loadindBroadcast,
     } = useOnchainTransactionBuilder(wallets, defaultWalletId);
 
     const [walletSelectorLabel, accountSelectorLabel] = [
@@ -36,23 +45,52 @@ export const OnchainTransactionBuilder = ({ defaultWalletId, wallets }: Props) =
         c('Wallet Send').t`with account`,
     ];
 
+    if (loadindBroadcast) {
+        return (
+            <Card
+                className="flex flex-column transaction-builder-card bg-norm flex-1 overflow-y-auto flex-nowrap mx-4"
+                bordered={false}
+                background={false}
+                rounded
+            >
+                <CircleLoader size="large" className="mx-auto my-14" />
+            </Card>
+        );
+    }
+
+    if (txid) {
+        return <OnchainTransactionBroadcastConfirmation txid={txid} />;
+    }
+
+    if (finalPsbt && selectedAccount) {
+        return (
+            <OnchainTransactionDetails
+                from={{ accountName: selectedAccount?.Label ?? '', walletName: selectedWallet?.Name ?? '' }}
+                psbt={finalPsbt}
+                account={selectedAccount?.wasmAccount}
+                onBack={backToTxBuilder}
+                onSignAndSend={() => handleSignAndSend()}
+            />
+        );
+    }
+
     return (
-        <div className="pb-6 px-8">
+        <div className="pb-6 px-8 h-full flex flex-column">
             {/* Wallet selector */}
             <div className="flex w-full flex-row">
                 <Selector
                     id="wallet-selector"
                     label={walletSelectorLabel}
-                    selected={selectedWallet.WalletID}
+                    selected={selectedWallet?.WalletID}
                     onSelect={handleSelectWallet}
                     options={wallets.map((wallet) => ({ value: wallet.WalletID, label: wallet.Name }))}
                 />
 
-                {selectedWallet.Type === WalletType.OnChain && (
+                {selectedWallet?.Type === WalletType.OnChain && (
                     <Selector
                         id="account-selector"
                         label={accountSelectorLabel}
-                        selected={selectedAccount.WalletAccountID}
+                        selected={selectedAccount?.WalletAccountID}
                         onSelect={handleSelectAccount}
                         options={selectedWallet.accounts.map((account) => ({
                             value: account.WalletAccountID,
@@ -68,26 +106,35 @@ export const OnchainTransactionBuilder = ({ defaultWalletId, wallets }: Props) =
 
                 <RecipientList
                     selectedAccount={selectedAccount}
-                    recipients={recipients}
+                    recipients={txBuilder.get_recipients()}
                     onRecipientAddition={addRecipient}
                     onRecipientRemove={removeRecipient}
                     onRecipientUpdate={updateRecipient}
-                    onRecipientAmountUpdate={updateRecipientAmount}
                 />
             </div>
 
             <Card
-                className="flex flex-column transaction-builder-card bg-norm"
+                className="flex flex-column transaction-builder-card bg-norm flex-1 overflow-y-auto flex-nowrap"
                 bordered={false}
                 background={false}
                 rounded
             >
-                <OnChainFeesSelector />
+                <OnChainFeesSelector txBuilder={txBuilder} updateTxBuilder={updateTxBuilder} />
                 <hr className="my-2 bg-weak" />
-                <OnchainTransactionAdvancedOptions />
+                <OnchainTransactionAdvancedOptions
+                    txBuilder={txBuilder}
+                    updateTxBuilder={updateTxBuilder}
+                    account={selectedAccount}
+                />
                 <hr className="my-2 bg-weak" />
                 {/* TODO: Connect this to proton-wallet-common lib */}
-                <Button color="norm" className="mt-4 ml-auto">
+                <Button
+                    color="norm"
+                    className="mt-4 ml-auto"
+                    onClick={() => {
+                        createPsbt();
+                    }}
+                >
                     {c('Wallet Send').t`Review transaction`}
                 </Button>
             </Card>

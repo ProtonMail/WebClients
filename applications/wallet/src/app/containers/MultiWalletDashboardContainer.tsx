@@ -24,8 +24,8 @@ export const MultiWalletDashboardContainer = ({ wallets }: Props) => {
 
     return (
         <>
-            <div className="flex flex-row w-full h-full flex-nowrap flex-item-grow">
-                <div className="flex-item-fluid p-8">
+            <div className="flex flex-row w-full h-full flex-nowrap grow">
+                <div className="flex-1 p-8">
                     <BalanceOverview wallets={wallets} />
                     <YourWalletsSection
                         wallets={wallets}

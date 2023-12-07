@@ -18,14 +18,14 @@ export const SecurityChecklistItem = ({ label, done, loading, path }: Props) => 
     const commonProps = {
         className: clsx(
             'checklist-item',
-            'h-custom flex flex-row px-2 flex-align-items-center flex-justify-space-between text-no-decoration',
+            'h-custom flex flex-row px-2 items-center justify-space-between text-no-decoration',
             done ? '' : 'cursor-pointer'
         ),
     };
 
     const child = (
         <>
-            <div className="flex flex-row flex-align-items-center">
+            <div className="flex flex-row items-center">
                 <img
                     src={security}
                     className="w-custom mt-1"

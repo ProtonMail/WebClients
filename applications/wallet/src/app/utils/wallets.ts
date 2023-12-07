@@ -8,3 +8,9 @@ export const getWalletBalance = (wallet: WalletWithAccountsWithBalanceAndTxs) =>
 export const getWalletTransactions = (wallet: WalletWithAccountsWithBalanceAndTxs) => {
     return wallet.accounts.flatMap(({ transactions }) => transactions);
 };
+
+export const getSelectedWallet = (
+    wallets: WalletWithAccountsWithBalanceAndTxs[],
+    walletId?: number
+): WalletWithAccountsWithBalanceAndTxs | undefined =>
+    wallets.find(({ WalletID }) => walletId === WalletID) ?? wallets[0];

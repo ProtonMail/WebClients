@@ -24,11 +24,11 @@ export const TransactionHistoryOverview = ({ transactions, max = 7 }: Props) => 
                             <li
                                 // same transaction can appear several time with different values or sign when user did a self-transfer or used several wallets/accounts to do the transaction
                                 key={`${transaction.txid}_${transaction.value}`}
-                                className="flex flex-row flex-justify-space-between flex-align-items-end border-weak border-bottom py-2 px-0"
+                                className="flex flex-row justify-space-between items-end border-weak border-bottom py-2 px-0"
                             >
                                 <div className="flex flex-column">
                                     <span className="block color-weak text-sm">
-                                        {confirmationTimeToHumanReadable(transaction)}
+                                        {confirmationTimeToHumanReadable(transaction.confirmation)}
                                     </span>
                                     <Tooltip title={transaction.txid}>
                                         <span className="block text-sm">

@@ -1,4 +1,4 @@
-import { WasmBalance } from '../../../pkg';
+import { WasmAccount, WasmBalance } from '../../../pkg';
 import { WalletWithAccountsWithBalanceAndTxs } from '../../types';
 import { ScriptType, WalletPassphrase, WalletSetupMode, WalletStatus, WalletType } from '../../types/api';
 import { wallets as apiWallets } from '../fixtures/api';
@@ -10,11 +10,15 @@ export const walletsWithAccountsWithBalanceAndTxs: WalletWithAccountsWithBalance
         accounts: [
             {
                 ...apiWallets[0].accounts[0],
+                utxos: [],
+                wasmAccount: {} as WasmAccount, // TODO: change that when tests are fixed
                 balance: { confirmed: BigInt(100067) } as WasmBalance,
                 transactions: simpleTransactions.slice(0, 4),
             },
             {
                 ...apiWallets[0].accounts[1],
+                utxos: [],
+                wasmAccount: {} as WasmAccount, // TODO: change that when tests are fixed
                 balance: { confirmed: BigInt(11783999) } as WasmBalance,
                 transactions: simpleTransactions.slice(4, 8),
             },
@@ -25,11 +29,15 @@ export const walletsWithAccountsWithBalanceAndTxs: WalletWithAccountsWithBalance
         accounts: [
             {
                 ...apiWallets[1].accounts[0],
+                utxos: [],
+                wasmAccount: {} as WasmAccount, // TODO: change that when tests are fixed
                 balance: { confirmed: BigInt(8287263) } as WasmBalance,
                 transactions: simpleTransactions.slice(8, 12),
             },
             {
                 ...apiWallets[1].accounts[1],
+                utxos: [],
+                wasmAccount: {} as WasmAccount, // TODO: change that when tests are fixed
                 balance: { confirmed: BigInt(97536) } as WasmBalance,
                 transactions: simpleTransactions.slice(12, 16),
             },
@@ -40,6 +48,8 @@ export const walletsWithAccountsWithBalanceAndTxs: WalletWithAccountsWithBalance
         accounts: [
             {
                 ...apiWallets[2].accounts[0],
+                utxos: [],
+                wasmAccount: {} as WasmAccount, // TODO: change that when tests are fixed
                 balance: { confirmed: BigInt(2612374) } as WasmBalance,
                 transactions: simpleTransactions.slice(16, 20),
             },
@@ -72,6 +82,8 @@ export const walletsWithAccountsWithBalanceAndTxs: WalletWithAccountsWithBalance
                 ScriptType: ScriptType.NativeSegwit,
                 CreateTime: 1701139393899,
                 ModifyTime: 1701139393899,
+                utxos: [],
+                wasmAccount: {} as WasmAccount, // TODO: change that when tests are fixed
             },
         ],
     },
