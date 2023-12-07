@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { DrawerApp, PrivateAppContainer, PrivateMainArea, TopBanners, useToggle } from '@proton/components';
 
 import { WalletWithAccountsWithBalanceAndTxs } from '../../types';
@@ -10,11 +9,10 @@ import WalletSidebar from './WalletSidebar';
 
 interface Props {
     children: ReactNode;
-    contentLoading?: boolean;
-    wallets: WalletWithAccountsWithBalanceAndTxs[];
+    wallets: WalletWithAccountsWithBalanceAndTxs[] | null;
 }
 
-export const PrivateWalletLayout = ({ children, wallets, contentLoading }: Props) => {
+export const PrivateWalletLayout = ({ children, wallets }: Props) => {
     const { state: expanded, toggle: toggleExpanded } = useToggle();
 
     return (
@@ -25,13 +23,7 @@ export const PrivateWalletLayout = ({ children, wallets, contentLoading }: Props
             drawerApp={<DrawerApp customAppSettings={<WalletQuickSettings />} />}
         >
             <PrivateMainArea hasToolbar className="full-height-content" data-testid="wallet-view:events-area">
-                {contentLoading ? (
-                    <div className="m-auto">
-                        <CircleLoader size="large" className="color-primary" />
-                    </div>
-                ) : (
-                    children
-                )}
+                {children}
             </PrivateMainArea>
         </PrivateAppContainer>
     );

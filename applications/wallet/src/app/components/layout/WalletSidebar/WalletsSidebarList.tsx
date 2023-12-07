@@ -14,7 +14,7 @@ import { SidebarItemContent } from './SidebarItemContent';
 import { WalletExpandButton } from './WalletExpandButton';
 
 interface Props {
-    wallets: WalletWithAccountsWithBalanceAndTxs[];
+    wallets: WalletWithAccountsWithBalanceAndTxs[] | null;
 }
 
 export const WalletsSidebarList = ({ wallets }: Props) => {
@@ -43,6 +43,7 @@ export const WalletsSidebarList = ({ wallets }: Props) => {
 
             <div className="ml-6">
                 {showWallets &&
+                    wallets &&
                     wallets.map((wallet) => {
                         return (
                             <SidebarListItem key={wallet.WalletID} className="mt-1">

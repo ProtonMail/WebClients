@@ -5,6 +5,7 @@ import { WasmRecipient } from '../../../pkg';
 import { walletsWithAccountsWithBalanceAndTxs } from '../../tests';
 import { BitcoinUnit } from '../../types';
 import { RecipientList } from './RecipientList';
+import { vi } from 'vitest';
 
 const buildWasmRecipient = (uuid: string) => {
     return [uuid, '', BigInt(0)] as unknown as WasmRecipient;

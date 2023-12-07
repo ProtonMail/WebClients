@@ -185,7 +185,7 @@ const walletAccountThree: WalletAccount = {
 export const wallets = [
     { ...walletOne, accounts: [walletAccountOneA, walletAccountOneB], settings: walletSettingsOne, key: walletKeyOne },
     { ...walletTwo, accounts: [walletAccountTwoA, walletAccountTwoB], settings: walletSettingsTwo, key: walletKeyTwo },
-    { ...walletThree, accounts: [walletAccountThree], settings: walletSettingsThree, key: walletKeyThree },
+    // { ...walletThree, accounts: [walletAccountThree], settings: walletSettingsThree, key: walletKeyThree },
 ];
 
 const bitcoinUnitA: BitcoinUnit = {

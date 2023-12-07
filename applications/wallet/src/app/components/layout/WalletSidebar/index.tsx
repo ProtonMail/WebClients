@@ -12,35 +12,33 @@ import { WalletsSidebarList } from './WalletsSidebarList';
 
 interface Props {
     expanded?: boolean;
-    wallets: WalletWithAccountsWithBalanceAndTxs[];
+    wallets: WalletWithAccountsWithBalanceAndTxs[] | null;
 }
 
 const WalletSidebar = ({ expanded = false, wallets }: Props) => {
     return (
-        <>
-            <Sidebar
-                expanded={expanded}
-                appsDropdown={<AppsDropdown app={APPS.PROTONWALLET} />}
-                logo={<MainLogo to="/" data-testid="main-logo" />}
-                version={<AppVersion changelog={changelog} />}
-            >
-                <SidebarNav className="flex mt-6">
-                    <div className="outline-none flex flex-column justify-space-between grow">
-                        <div className="grow">
-                            <SidebarList>
-                                <WalletsSidebarList wallets={wallets} />
-                                <TransactionsNavItem />
-                                <BitcoinMovementNavItems />
-                            </SidebarList>
-                        </div>
-
-                        <div className="mb-4 mx-4">
-                            <SecurityChecklist />
-                        </div>
+        <Sidebar
+            expanded={expanded}
+            appsDropdown={<AppsDropdown app={APPS.PROTONWALLET} />}
+            logo={<MainLogo to="/" data-testid="main-logo" />}
+            version={<AppVersion changelog={changelog} />}
+        >
+            <SidebarNav className="flex mt-6">
+                <div className="outline-none flex flex-column justify-space-between grow">
+                    <div className="grow">
+                        <SidebarList>
+                            <WalletsSidebarList wallets={wallets} />
+                            <TransactionsNavItem />
+                            <BitcoinMovementNavItems />
+                        </SidebarList>
                     </div>
-                </SidebarNav>
-            </Sidebar>
-        </>
+
+                    <div className="mb-4 mx-4">
+                        <SecurityChecklist />
+                    </div>
+                </div>
+            </SidebarNav>
+        </Sidebar>
     );
 };
 
