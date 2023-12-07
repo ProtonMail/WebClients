@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Icon } from '@proton/components';
+import { Icon, useFlag } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
@@ -8,10 +8,13 @@ interface Props {
 }
 
 const TaskRunningBanner = ({ className }: Props) => {
+    const isDelightMailListEnabled = useFlag('DelightMailList');
+
     return (
         <div
             className={clsx([
-                'bg-weak rounded mx-2 px-4 py-2 flex flex-wrap justify-start items-center',
+                'rounded mx-2 px-4 py-2 flex flex-wrap justify-start items-center',
+                !isDelightMailListEnabled && 'bg-weak',
                 className,
             ])}
         >

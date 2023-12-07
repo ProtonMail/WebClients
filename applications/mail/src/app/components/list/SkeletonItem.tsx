@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import { ItemCheckbox } from '@proton/components/containers';
+import { ItemCheckbox, useFlag } from '@proton/components/containers';
 import { Breakpoints } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
@@ -32,6 +32,8 @@ const SkeletonItem = ({
 }: Props) => {
     const ItemLayout = columnLayout ? ItemColumnLayout : ItemRowLayout;
 
+    const isDelightMailListEnabled = useFlag('DelightMailList');
+
     return (
         <div
             className={clsx(
@@ -41,9 +43,15 @@ const SkeletonItem = ({
         >
             <div
                 className={clsx([
-                    'flex-1 flex flex-nowrap cursor-pointer opacity-on-hover-container unread',
+                    'flex-1 flex flex-nowrap cursor-pointer group-hover-opacity-container unread',
                     loading && 'item-is-loading',
-                    columnLayout ? 'item-container item-container-column' : 'item-container-row',
+                    ...(isDelightMailListEnabled
+                        ? [
+                              columnLayout
+                                  ? 'delight-item-container delight-item-container--column'
+                                  : 'delight-item-container delight-item-container--row',
+                          ]
+                        : [columnLayout ? 'item-container item-container-column' : 'item-container-row']),
                 ])}
                 style={{ '--index': index }}
                 data-element-id={element.ID}
@@ -55,7 +63,10 @@ const SkeletonItem = ({
                     ID={element.ID}
                     checked={false}
                     compactClassName="mr-3 stop-propagation"
-                    normalClassName={clsx(['ml-0.5', columnLayout ? 'mr-2 mt-0.5' : 'mr-2'])}
+                    normalClassName={
+                        isDelightMailListEnabled ? 'mr-3' : clsx(['ml-0.5', columnLayout ? 'mr-2 mt-0.5' : 'mr-2'])
+                    }
+                    variant={isDelightMailListEnabled ? 'small' : undefined}
                 />
                 <ItemLayout
                     isCompactView={isCompactView}

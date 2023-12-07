@@ -61,7 +61,10 @@ const ItemSenders = ({ element, conversationMode, loading, unread, displayRecipi
                 // this fix works when there is 1 official recipient only (not with multiple), to be sure the official badge is shown
                 if (isLastItem && index === 0 && !!sender.recipient?.IsProton) {
                     return (
-                        <span className="inline-flex flex-nowrap max-w-full" key={`${recipientLabel}-${index}`}>
+                        <span
+                            className="inline-flex items-center flex-nowrap max-w-full"
+                            key={`${recipientLabel}-${index}`}
+                        >
                             <span className="flex-1 text-ellipsis">
                                 {highlightData
                                     ? highlightMetadata(recipientLabel, unread, true).resultJSX

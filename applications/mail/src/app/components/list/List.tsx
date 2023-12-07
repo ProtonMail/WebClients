@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { Breakpoints, useConversationCounts, useItemsDraggable, useMessageCounts } from '@proton/components';
+import { Breakpoints, useConversationCounts, useFlag, useItemsDraggable, useMessageCounts } from '@proton/components';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { CHECKLIST_DISPLAY_TYPE, UserSettings } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -29,6 +29,8 @@ import { ResizeHandle } from './ResizeHandle';
 import SkeletonItem from './SkeletonItem';
 import useEncryptedSearchList from './useEncryptedSearchList';
 import { useItemContextMenu } from './useItemContextMenu';
+
+import './delight/DelightList.scss';
 
 const defaultCheckedIDs: string[] = [];
 const defaultElements: Element[] = [];
@@ -176,8 +178,17 @@ const List = (
         return (counters || []).find((counter) => counter.LabelID === labelID)?.Unread || 0;
     }, [conversationMode, labelID, conversationCounts, messageCounts]);
 
+    const isDelightMailListEnabled = useFlag('DelightMailList');
+
     return (
-        <div className={clsx(['relative items-column-list', !show && 'hidden'])}>
+        <div
+            className={clsx([
+                'relative',
+                !show && 'hidden',
+                isDelightMailListEnabled ? 'delight-items-column-list' : 'items-column-list',
+                showContentPanel ? 'is-column' : 'is-row',
+            ])}
+        >
             <div ref={ref} className={clsx(['h-full', isCompactView && 'list-compact'])}>
                 <h1 className="sr-only">
                     {conversationMode ? c('Title').t`Conversation list` : c('Title').t`Message list`}{' '}
@@ -186,22 +197,31 @@ const List = (
 
                 <div
                     className={clsx(
-                        breakpoints.viewportWidth['>=large'] && 'items-column-list-inner bg-norm',
-                        !columnLayout && 'items-column-list-inner--border-none',
-                        'flex flex-nowrap flex-column relative items-column-list-inner--mail overflow-hidden h-full'
+                        breakpoints.viewportWidth['>=large'] && isDelightMailListEnabled
+                            ? 'delight-items-column-list-inner'
+                            : 'items-column-list-inner',
+                        !columnLayout && 'border-none',
+                        'flex flex-nowrap flex-column relative overflow-hidden h-full',
+                        isDelightMailListEnabled
+                            ? 'delight-items-column-list-inner--mail'
+                            : 'items-column-list-inner--mail'
                     )}
                     data-testid={`message-list-${loading ? 'loading' : 'loaded'}`}
+                    data-shortcut-target="items-column-list-inner"
                 >
                     <div className="shrink-0">{toolbar}</div>
-                    <div className="h-full overflow-auto flex flex-column flex-nowrap w-full">
-                        <div className="shrink-0">
-                            <ListBanners
-                                labelID={labelID}
-                                columnLayout={columnLayout}
-                                userSettings={userSettings}
-                                esState={{ isESLoading, isSearch, showESSlowToolbar }}
-                            />
-                        </div>
+                    <div
+                        className={clsx(
+                            isDelightMailListEnabled && 'delight-items-column-list-container',
+                            'h-full overflow-auto flex flex-column flex-nowrap w-full'
+                        )}
+                    >
+                        <ListBanners
+                            labelID={labelID}
+                            columnLayout={columnLayout}
+                            userSettings={userSettings}
+                            esState={{ isESLoading, isSearch, showESSlowToolbar }}
+                        />
                         {elements.length === 0 && displayState !== FULL && (
                             <EmptyListPlaceholder
                                 labelID={labelID}
@@ -215,7 +235,7 @@ const List = (
                                 {/* div needed here for focus management */}
                                 <div
                                     className={clsx(
-                                        !columnLayout && 'border-right border-weak',
+                                        !isDelightMailListEnabled && 'border-right border-weak',
                                         'w-full shrink-0'
                                     )}
                                 >
