@@ -1,7 +1,7 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "no_NO"
+    "language": "nb_NO"
   },
   "contexts": {
     "Action": {
@@ -219,10 +219,10 @@
         "Gjør til administrator"
       ],
       "Make editor": [
-        "Gi redigeringtillatelse"
+        "Gjør til redaktør"
       ],
       "Make viewer": [
-        "Gi lesetillatelse"
+        "Gjør til leser"
       ],
       "Manage access": [
         "Administrer tilgang"
@@ -291,7 +291,7 @@
         "Fjern tilgang"
       ],
       "Request a feature": [
-        "Foreslå ny funksjon"
+        "Be om en funksjon"
       ],
       "Resend invitation": [
         "Send invitasjon på nytt"
@@ -417,12 +417,12 @@
         "En avmerket boks betyr at funksjonen er deaktivert."
       ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
-        "Liste over domener der visse autofunksjoner i ${ PASS_SHORT_APP_NAME } (Autofyll, Autoforslag, Autolagre) ikke skal kjøres. ${ infoText }"
+        "Liste over domener der visse autofunksjoner i ${ PASS_SHORT_APP_NAME } (autofyll, autoforslag, autolagre) ikke skal kjøres. ${ infoText }"
       ]
     },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
-        "${ provider }-fil kunne ikke deles opp. ${ errorDetail }"
+        "${ provider }-fil kunne ikke tolkes. ${ errorDetail }"
       ],
       "Alias options could not be resolved": [
         "Aliasalternativene kunne ikke løses"
@@ -431,10 +431,10 @@
         "Autentiseringsfeil"
       ],
       "Auto-lock could not be activated": [
-        "Auto-lås kunne ikke aktiveres"
+        "Autolås kunne ikke aktiveres"
       ],
       "Auto-lock could not be disabled": [
-        "Auto-lås kunne ikke deaktiveres"
+        "Autolås kunne ikke deaktiveres"
       ],
       "Cannot create alias (${ error }).": [
         "Kan ikke opprette alias (${ error })."
@@ -461,7 +461,7 @@
         "Kunne ikke nøste opp medlemmene av delt ressurs."
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
-        "CSV-fil mangler forventede meldingshoder: ${ missingHeaders }"
+        "CSV-fil mangler forventede overskrifter: ${ missingHeaders }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
         "Dekryptering av din ${ PASS_APP_NAME }-eksportfil mislyktes. ${ errorDetail }"
@@ -510,7 +510,7 @@
         "Kunne ikke overføre hvelvets eierskap."
       ],
       "File could not be parsed": [
-        "Fil kunne ikke deles opp"
+        "Fil kunne ikke tolkes"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "Import mislyktes for hvelv \"${ vaultData.name }\" : ${ description }"
@@ -768,7 +768,7 @@
         "Er du sikker på at du vil flytte alle elementer fra \"${ fromVaultName }\" til \"${ toVaultName }\"?"
       ],
       "Auto-lock successfully disabled": [
-        "Auto-lås deaktivert"
+        "Autolås deaktivert"
       ],
       "Autosaved on ${ submissionURL }": [
         "Autolagret på ${ submissionURL }"
@@ -868,7 +868,7 @@
         "Importerte ${ payload.total } elementer"
       ],
       "Imported on ${ date }": [
-        "Importert på ${ date }."
+        "Importert den ${ date }."
       ],
       "In order to get the best experience out of ${ PASS_APP_NAME }, please grant the necessary extension permissions": [
         "For å få den beste opplevelsen ut av ${ PASS_APP_NAME }, vennligst gi de nødvendige utvidelsestillatelsene."
@@ -905,7 +905,7 @@
         "Element \"${ payload.item.data.metadata.name }\" oppdatert"
       ],
       "Item moved to trash": [
-        "Element flyttet til papirkurv"
+        "Element flyttet til papirkurven"
       ],
       "Item permanently deleted": [
         "Element slettet permanent"
@@ -1229,10 +1229,10 @@
         "Applikasjonslogger"
       ],
       "Auto-lock ${ PASS_APP_NAME }": [
-        "Auto-lås ${ PASS_APP_NAME }"
+        "Autolås ${ PASS_APP_NAME }"
       ],
       "Auto-lock after": [
-        "Auto-lås etter"
+        "Autolås etter"
       ],
       "Autofill": [
         "Autofyll"
@@ -1250,7 +1250,7 @@
         "Autolagringshvelv"
       ],
       "Autosuggest": [
-        "Autoforeslå"
+        "Foreslå automatisk"
       ],
       "Capital letters (A-Z)": [
         "Store bokstaver (A–Å)"
@@ -1337,7 +1337,7 @@
         "Skjul passord"
       ],
       "Import": [
-        "Import"
+        "Importer"
       ],
       "Import passwords": [
         "Importer passord"
@@ -1346,7 +1346,7 @@
         "Importert fra : "
       ],
       "Imported on : ": [
-        "Importert på : "
+        "Importert den : "
       ],
       "Include numbers": [
         "Inkluder tall"
@@ -1451,7 +1451,7 @@
         "Prefiks"
       ],
       "Prompt for auto-save": [
-        "Be om auto-lagring"
+        "Be om autolagring"
       ],
       "Rate us": [
         "Vurder oss"
@@ -1481,7 +1481,7 @@
         "Velg ønsket språk"
       ],
       "Select your password manager": [
-        "Velg din passordbehandler"
+        "Velg passordbehandleren din"
       ],
       "Selected": [
         "Valgt"
@@ -1691,7 +1691,7 @@
         "${ PASS_APP_NAME }-innstillinger"
       ],
       "Auto-lock update": [
-        "Oppdatering av auto-lås"
+        "Oppdatering av autolås"
       ],
       "Confirm PIN code": [
         "Bekreft PIN-kode"
@@ -1840,10 +1840,10 @@
         "Nettadresse kan ikke være tom"
       ],
       "Url is invalid": [
-        "Nettadresse er ugyldig"
+        "Nettadressen er ugyldig"
       ],
       "URL is invalid": [
-        "Nettadresse er ugyldig"
+        "Nettadressen er ugyldig"
       ]
     },
     "Warning": {
