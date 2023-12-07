@@ -324,6 +324,9 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                 if (domainModel.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD) {
                     return next();
                 }
+                if (!domainModel.ID) {
+                    throw new Error('Missing domain id');
+                }
 
                 const { Domain } = await api<{ Domain: Domain }>(getDomain(domainModel.ID));
 
@@ -406,10 +409,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                         <Button
                             icon
                             key={label}
-                            className={clsx([
-                                'flex flex-nowrap items-center',
-                                index === step && 'is-selected',
-                            ])}
+                            className={clsx(['flex flex-nowrap items-center', index === step && 'is-selected'])}
                             disabled={
                                 (index > STEPS.DOMAIN && !domainModel.ID) ||
                                 (index > STEPS.VERIFY && domainModel.VerifyState !== VERIFY_STATE.VERIFY_STATE_GOOD)
