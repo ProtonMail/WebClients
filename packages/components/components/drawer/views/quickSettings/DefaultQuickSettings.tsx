@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Info, Toggle, Tooltip } from '@proton/components/components';
 import { ThemeCards, useTheme } from '@proton/components/containers';
 import ThemeSyncModeDropdown from '@proton/components/containers/themes/ThemeSyncModeDropdown';
-import { useEarlyAccess, useNotifications } from '@proton/components/hooks';
+import { useEarlyAccess, useIsInboxElectronApp, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
@@ -25,6 +25,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
     const { information, settings, setTheme, setAutoTheme } = useTheme();
     const themes = getThemes();
     const { createNotification } = useNotifications();
+    const { isElectron } = useIsInboxElectronApp();
 
     const earlyAccess = useEarlyAccess();
 
@@ -41,84 +42,87 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
 
     return (
         <>
-            <QuickSettingsSection className="pb-4">
-                <div>
-                    {settings.Mode === ThemeModeSetting.Auto ? (
-                        <>
-                            <QuickSettingsSectionHeadline>{c('Label').t`Theme`}</QuickSettingsSectionHeadline>
-                        </>
-                    ) : (
-                        <>
-                            <QuickSettingsSectionHeadline>
-                                {c('Label').t`Theme`}:
-                                <span
-                                    className="color-weak ml-1 text-no-bold"
-                                    data-testid="drawer-quick-settings:current-theme"
-                                >
-                                    {PROTON_THEMES_MAP[information.theme].label}
-                                </span>
-                            </QuickSettingsSectionHeadline>
-                        </>
-                    )}
-                </div>
-                {
-                    <QuickSettingsSectionRow
-                        label={c('Label').t`Sync with system`}
-                        labelInfo={
-                            <Info
-                                title={c('Tooltip')
-                                    .t`Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes`}
-                            />
-                        }
-                        action={
-                            <Toggle
-                                id="themeSyncToggle"
-                                className="ml-6"
-                                checked={settings.Mode === ThemeModeSetting.Auto}
-                                onChange={(e) => setAutoTheme(e.target.checked)}
-                                data-testid="drawer-quick-settings:auto-theme-toggle"
-                            />
-                        }
-                        ellipsisOnText={false}
-                    />
-                }
-                {settings.Mode === ThemeModeSetting.Auto ? (
-                    <div className="flex children-min-size-auto flex-column gap-4 mt-1">
-                        <ThemeSyncModeDropdown
-                            mode="light"
-                            list={themes}
-                            themeIdentifier={settings.LightTheme}
-                            onChange={(themeType) => {
-                                setTheme(themeType, ThemeModeSetting.Light);
-                                createNotification({ text: c('Success').t`Preference saved` });
-                            }}
-                            active={information.colorScheme === ColorScheme.Light}
-                            className="flex-none"
-                        />
-                        <ThemeSyncModeDropdown
-                            mode="dark"
-                            list={themes}
-                            themeIdentifier={settings.DarkTheme}
-                            onChange={(themeType) => {
-                                setTheme(themeType, ThemeModeSetting.Dark);
-                                createNotification({ text: c('Success').t`Preference saved` });
-                            }}
-                            active={information.colorScheme === ColorScheme.Dark}
-                            className="flex-none"
-                        />
+            {/* We hide the theme section in the electron app since theme are fixed */}
+            {!isElectron && (
+                <QuickSettingsSection className="pb-4">
+                    <div>
+                        {settings.Mode === ThemeModeSetting.Auto ? (
+                            <>
+                                <QuickSettingsSectionHeadline>{c('Label').t`Theme`}</QuickSettingsSectionHeadline>
+                            </>
+                        ) : (
+                            <>
+                                <QuickSettingsSectionHeadline>
+                                    {c('Label').t`Theme`}:
+                                    <span
+                                        className="color-weak ml-1 text-no-bold"
+                                        data-testid="drawer-quick-settings:current-theme"
+                                    >
+                                        {PROTON_THEMES_MAP[information.theme].label}
+                                    </span>
+                                </QuickSettingsSectionHeadline>
+                            </>
+                        )}
                     </div>
-                ) : (
-                    <ThemeCards
-                        list={themes}
-                        themeIdentifier={information.theme}
-                        size="medium"
-                        onChange={(themeType) => {
-                            setTheme(themeType);
-                            createNotification({ text: c('Success').t`Preference saved` });
-                        }}
-                    />
-                )}
-            </QuickSettingsSection>
+                    {
+                        <QuickSettingsSectionRow
+                            label={c('Label').t`Sync with system`}
+                            labelInfo={
+                                <Info
+                                    title={c('Tooltip')
+                                        .t`Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes`}
+                                />
+                            }
+                            action={
+                                <Toggle
+                                    id="themeSyncToggle"
+                                    className="ml-6"
+                                    checked={settings.Mode === ThemeModeSetting.Auto}
+                                    onChange={(e) => setAutoTheme(e.target.checked)}
+                                    data-testid="drawer-quick-settings:auto-theme-toggle"
+                                />
+                            }
+                            ellipsisOnText={false}
+                        />
+                    }
+                    {settings.Mode === ThemeModeSetting.Auto ? (
+                        <div className="flex children-min-size-auto flex-column gap-4 mt-1">
+                            <ThemeSyncModeDropdown
+                                mode="light"
+                                list={themes}
+                                themeIdentifier={settings.LightTheme}
+                                onChange={(themeType) => {
+                                    setTheme(themeType, ThemeModeSetting.Light);
+                                    createNotification({ text: c('Success').t`Preference saved` });
+                                }}
+                                active={information.colorScheme === ColorScheme.Light}
+                                className="flex-none"
+                            />
+                            <ThemeSyncModeDropdown
+                                mode="dark"
+                                list={themes}
+                                themeIdentifier={settings.DarkTheme}
+                                onChange={(themeType) => {
+                                    setTheme(themeType, ThemeModeSetting.Dark);
+                                    createNotification({ text: c('Success').t`Preference saved` });
+                                }}
+                                active={information.colorScheme === ColorScheme.Dark}
+                                className="flex-none"
+                            />
+                        </div>
+                    ) : (
+                        <ThemeCards
+                            list={themes}
+                            themeIdentifier={information.theme}
+                            size="medium"
+                            onChange={(themeType) => {
+                                setTheme(themeType);
+                                createNotification({ text: c('Success').t`Preference saved` });
+                            }}
+                        />
+                    )}
+                </QuickSettingsSection>
+            )}
 
             <Tooltip
                 title={c('Info')

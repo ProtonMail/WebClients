@@ -1,7 +1,9 @@
 import { ReactNode, createContext, useCallback, useContext, useEffect, useLayoutEffect, useState } from 'react';
 
+import { useConfig } from '@proton/components/hooks';
 import { clearBit, hasBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
+import { isElectronOnSupportedApps } from '@proton/shared/lib/helpers/desktop';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
@@ -147,6 +149,7 @@ const darkThemes = getDarkThemes();
 const prominentHeaderThemes = getProminentHeaderThemes();
 
 const ThemeProvider = ({ children }: Props) => {
+    const { APP_NAME } = useConfig();
     const [themeSetting, setThemeSettingDefault] = useState(() => {
         return getParsedThemeSetting(storedTheme);
     });
@@ -195,6 +198,11 @@ const ThemeProvider = ({ children }: Props) => {
     };
 
     const setTheme = (themeType: ThemeTypes, mode?: ThemeModeSetting) => {
+        // Electron app cannot change theme
+        if (isElectronOnSupportedApps(APP_NAME)) {
+            return;
+        }
+
         if (mode) {
             syncThemeSettingValue({
                 ...themeSetting,
