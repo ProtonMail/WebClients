@@ -53,7 +53,7 @@ const UnreadMessages = ({ conversationID, messages, onClick }: Props) => {
     const text = c('Info').ngettext(msgid`${count} unread message`, `${count} unread messages`, count);
 
     return (
-        <span className="absolute absolute-center-x bottom-0 pb-4" aria-live="assertive" aria-atomic="true">
+        <span className="absolute inset-x-center bottom-0 pb-4" aria-live="assertive" aria-atomic="true">
             <Button
                 pill
                 color="norm"
