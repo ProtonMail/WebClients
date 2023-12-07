@@ -112,7 +112,9 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
     };
 
     const handleSubmit = () => {
-        onFormSubmit();
+        if (!onFormSubmit()) {
+            return;
+        }
 
         const secondsDelta = differenceInSeconds(date, currentDate);
 
