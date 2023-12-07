@@ -6,6 +6,13 @@
 export function library_version(): string;
 /**
 */
+export enum WasmChangeSpendPolicy {
+  ChangeAllowed = 0,
+  OnlyChange = 1,
+  ChangeForbidden = 2,
+}
+/**
+*/
 export enum WasmNetwork {
 /**
 * Mainnet Bitcoin.
@@ -23,6 +30,15 @@ export enum WasmNetwork {
 * Bitcoin's regtest network.
 */
   Regtest = 3,
+}
+/**
+*/
+export enum WasmWordCount {
+  Words12 = 0,
+  Words15 = 1,
+  Words18 = 2,
+  Words21 = 3,
+  Words24 = 4,
 }
 /**
 */
@@ -51,10 +67,11 @@ export enum WasmKeychainKind {
 }
 /**
 */
-export enum WasmChangeSpendPolicy {
-  ChangeAllowed = 0,
-  OnlyChange = 1,
-  ChangeForbidden = 2,
+export enum WasmCoinSelection {
+  BranchAndBound = 0,
+  LargestFirst = 1,
+  OldestFirst = 2,
+  Manual = 3,
 }
 /**
 */
@@ -63,23 +80,6 @@ export enum WasmSupportedBIPs {
   Bip49 = 1,
   Bip84 = 2,
   Bip86 = 3,
-}
-/**
-*/
-export enum WasmWordCount {
-  Words12 = 0,
-  Words15 = 1,
-  Words18 = 2,
-  Words21 = 3,
-  Words24 = 4,
-}
-/**
-*/
-export enum WasmCoinSelection {
-  BranchAndBound = 0,
-  LargestFirst = 1,
-  OldestFirst = 2,
-  Manual = 3,
 }
 /**
 */
@@ -99,32 +99,38 @@ export enum WasmError {
   InvalidSeed = 12,
   CannotGetFeeEstimation = 13,
   CannotSignPsbt = 14,
-  Generic = 15,
-  NoRecipients = 16,
-  NoUtxosSelected = 17,
-  OutputBelowDustLimit = 18,
-  InsufficientFunds = 19,
-  BnBTotalTriesExceeded = 20,
-  BnBNoExactMatch = 21,
-  UnknownUtxo = 22,
-  TransactionNotFound = 23,
-  TransactionConfirmed = 24,
-  IrreplaceableTransaction = 25,
-  FeeRateTooLow = 26,
-  FeeTooLow = 27,
-  FeeRateUnavailable = 28,
-  MissingKeyOrigin = 29,
-  Key = 30,
-  ChecksumMismatch = 31,
-  SpendingPolicyRequired = 32,
-  InvalidPolicyPathError = 33,
-  Signer = 34,
-  InvalidOutpoint = 35,
-  Descriptor = 36,
-  Miniscript = 37,
-  MiniscriptPsbt = 38,
-  Bip32 = 39,
-  Psbt = 40,
+  NoWindowContext = 15,
+  CannotGetLocalStorage = 16,
+  CannotSerializePersistedData = 17,
+  CannotPersistData = 18,
+  CannotFindPersistedData = 19,
+  CannotParsePersistedData = 20,
+  Generic = 21,
+  NoRecipients = 22,
+  NoUtxosSelected = 23,
+  OutputBelowDustLimit = 24,
+  InsufficientFunds = 25,
+  BnBTotalTriesExceeded = 26,
+  BnBNoExactMatch = 27,
+  UnknownUtxo = 28,
+  TransactionNotFound = 29,
+  TransactionConfirmed = 30,
+  IrreplaceableTransaction = 31,
+  FeeRateTooLow = 32,
+  FeeTooLow = 33,
+  FeeRateUnavailable = 34,
+  MissingKeyOrigin = 35,
+  Key = 36,
+  ChecksumMismatch = 37,
+  SpendingPolicyRequired = 38,
+  InvalidPolicyPathError = 39,
+  Signer = 40,
+  InvalidOutpoint = 41,
+  Descriptor = 42,
+  Miniscript = 43,
+  MiniscriptPsbt = 44,
+  Bip32 = 45,
+  Psbt = 46,
 }
 /**
 */
@@ -152,15 +158,9 @@ export class ExportedStringVec {
 export class WasmAccount {
   free(): void;
 /**
-* @param {string} mnemonic_str
-* @param {string | undefined} passphrase
-* @param {WasmAccountConfig} config
+* @returns {boolean}
 */
-  constructor(mnemonic_str: string, passphrase: string | undefined, config: WasmAccountConfig);
-/**
-* @returns {Promise<void>}
-*/
-  sync(): Promise<void>;
+  has_sync_data(): boolean;
 /**
 * @param {number | undefined} [index]
 * @param {bigint | undefined} [amount]
@@ -178,6 +178,10 @@ export class WasmAccount {
 * @returns {WasmBalance}
 */
   get_balance(): WasmBalance;
+/**
+* @returns {string}
+*/
+  get_derivation_path(): string;
 /**
 * @returns {(WasmUtxo)[]}
 */
@@ -284,7 +288,7 @@ export class WasmBalance {
 }
 /**
 */
-export class WasmClient {
+export class WasmChain {
   free(): void;
 /**
 * Generates a Mnemonic with a random entropy based on the given word count.
@@ -294,6 +298,16 @@ export class WasmClient {
 * @returns {Promise<Map<string, number>>}
 */
   get_fees_estimation(): Promise<Map<string, number>>;
+/**
+* @param {WasmAccount} account
+* @returns {Promise<void>}
+*/
+  full_sync(account: WasmAccount): Promise<void>;
+/**
+* @param {WasmAccount} account
+* @returns {Promise<void>}
+*/
+  partial_sync(account: WasmAccount): Promise<void>;
 /**
 * @param {WasmPartiallySignedTransaction} psbt
 * @returns {Promise<string>}
@@ -416,11 +430,6 @@ export class WasmPartiallySignedTransaction {
 * @returns {WasmPartiallySignedTransaction}
 */
   sign(wasm_account: WasmAccount, network: WasmNetwork): WasmPartiallySignedTransaction;
-/**
-* @param {WasmClient} client
-* @returns {Promise<void>}
-*/
-  broadcast(client: WasmClient): Promise<void>;
 /**
 */
   recipients: (WasmPsbtRecipient)[];
@@ -627,11 +636,10 @@ export class WasmTxBuilder {
 *
 *     * Final
 *     
-* @param {WasmAccount} wasm_account
 * @param {WasmNetwork} network
 * @returns {WasmPartiallySignedTransaction}
 */
-  create_pbst(wasm_account: WasmAccount, network: WasmNetwork): WasmPartiallySignedTransaction;
+  create_pbst(network: WasmNetwork): WasmPartiallySignedTransaction;
 }
 /**
 */
@@ -697,13 +705,19 @@ export class WasmWallet {
 /**
 * @param {WasmSupportedBIPs} bip
 * @param {number} account_index
-* @returns {Promise<void>}
+* @returns {string}
 */
-  add_account(bip: WasmSupportedBIPs, account_index: number): Promise<void>;
+  add_account(bip: WasmSupportedBIPs, account_index: number): string;
 /**
-* @returns {Promise<WasmBalance>}
+* @param {WasmSupportedBIPs} bip
+* @param {number} account_index
+* @returns {WasmAccount | undefined}
 */
-  get_balance(): Promise<WasmBalance>;
+  get_account(bip: WasmSupportedBIPs, account_index: number): WasmAccount | undefined;
+/**
+* @returns {WasmBalance}
+*/
+  get_balance(): WasmBalance;
 /**
 * @returns {string}
 */

@@ -1,16 +1,16 @@
 {
   "name": "proton-wallet-web",
   "version": "0.1.0",
-  "sideEffects": [
-    "./index.js",
-    "./snippets/*"
-  ],
-  "module": "index.js",
-  "types": "index.d.ts",
   "files": [
     "index_bg.wasm",
     "index.js",
     "index_bg.js",
     "index.d.ts"
+  ],
+  "module": "index.js",
+  "types": "index.d.ts",
+  "sideEffects": [
+    "./index.js",
+    "./snippets/*"
   ]
 }
