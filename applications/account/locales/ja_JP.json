@@ -5534,14 +5534,6 @@
         "カレンダーの内容の一部がサポートされていないため、インポートされません。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "鍵 ${ fingerprint } は正常にアップロードされました"
-      ]
-    },
     "Info": {
       "${ amountOfAddresses } addresses": [
         "${ amountOfAddresses } アドレス"
@@ -7699,6 +7691,14 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "あなたのサブスクリプションはMozillaによって管理されています。Mozillaのサポートへお問い合わせください。"
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "鍵 ${ fingerprint } は正常にアップロードされました"
       ]
     },
     "Info - folder colouring feature": {
@@ -10029,17 +10029,6 @@
         "チームマネジメント"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "トライアルは ${ formattedPeriodEndDate } に終了します"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -10127,6 +10116,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "現在ご契約中のプランでは、キャンペーン価格をご利用いただけます。アカウントをダウングレードすると、キャンペーン価格が適用されなくなります。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "トライアルは ${ formattedPeriodEndDate } に終了します"
       ]
     },
     "new_plans: Label": {
@@ -11726,14 +11726,8 @@
       "Allow password reset from settings": [
         "設定からパスワードリセットを許可する"
       ],
-      "Request a password reset from your Account settings. No recovery method needed.": [
-        "アカウント設定からパスワードリセットを要求してください。復旧方法は必要ありません。"
-      ],
       "Request password reset": [
         "パスワードリセットを要求する"
-      ],
-      "To disallow password reset, you must have a recovery method set up.": [
-        "パスワードリセットを禁止するには、復旧方法を設定する必要があります"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -13336,9 +13330,6 @@
       ],
       "Password and keys": [
         "パスワードと鍵"
-      ],
-      "Password reset": [
-        "パスワードリセット"
       ],
       "Pay invoice": [
         "請求の支払い"

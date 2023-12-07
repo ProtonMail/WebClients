@@ -3285,6 +3285,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } ha sido actualizado.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Esta incidencia de ${ eventTitle } ha sido cancelada."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Está invitado a ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -5717,17 +5720,6 @@
         "Parte del contenido de su calendario es incompatible y no será importado."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Se detectaron claves duplicadas adicionales. Cárguelas individualmente para obtener más información."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clave ${ fingerprint } ya ha sido cargada"
-      ],
-      "Selected color:": [
-        "Color seleccionado:"
-      ]
-    },
     "Info": {
       "${ amountOfAddresses } address": [
         "${ amountOfAddresses } dirección",
@@ -7948,6 +7940,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Su suscripción es gestionada por Mozilla. Contacte con el soporte de Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Se detectaron claves duplicadas adicionales. Cárguelas individualmente para obtener más información."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clave ${ fingerprint } ya ha sido cargada"
+      ],
+      "Selected color:": [
+        "Color seleccionado:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10376,17 +10379,6 @@
         "Gestión de equipos"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente desactivada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Su prueba termina el ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina en ${ last4 }"
@@ -10474,6 +10466,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está disfrutando de un precio promocional en su plan actual. Si pasa a un plan inferior, perderá el precio promocional y no estará disponible si crea una cuenta nueva."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente desactivada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando ${ MAIL_APP_NAME } con funciones premium, elija su suscripción y opciones de pago."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Su prueba termina el ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12114,14 +12117,16 @@
       "Allow password reset from settings": [
         "Permitir el restablecimiento de contraseña desde los ajustes"
       ],
-      "Request a password reset from your Account settings. No recovery method needed.": [
-        "Solicite un restablecimiento de contraseña desde los ajustes de su cuenta. No se necesita un método de recuperación."
-      ],
       "Request password reset": [
         "Solicitar el restablecimiento de contraseña"
-      ],
+      ]
+    },
+    "session_recovery:settings:info": {
       "To disallow password reset, you must have a recovery method set up.": [
-        "Para desactivar el restablecimiento de contraseña, debe tener configurado un método de recuperación."
+        "Para desactivar el restablecimiento de contraseña, debe configurar un método de recuperación."
+      ],
+      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
+        "Para mejorar la seguridad de su cuenta y proteger sus datos, puede solicitar un restablecimiento de contraseña desde los ajustes de su cuenta en la aplicación web."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -13771,8 +13776,8 @@
       "Password and keys": [
         "Contraseña y claves"
       ],
-      "Password reset": [
-        "Restablecimiento de contraseña"
+      "Password reset settings": [
+        "Ajustes de restablecimiento de contraseña"
       ],
       "Pay invoice": [
         "Pagar factura"
