@@ -1,7 +1,7 @@
 {
   "headers": {
     "plural-forms": "nplurals=2; plural=(n != 1);",
-    "language": "no_NO"
+    "language": "nb_NO"
   },
   "contexts": {
     "Action": {
@@ -351,7 +351,7 @@
         "Rapporter et problem"
       ],
       "Request a feature": [
-        "Foreslå ny funksjon"
+        "Be om en funksjon"
       ],
       "Request new code": [
         "Be om en ny kode"
@@ -498,7 +498,7 @@
         "Oppgrader planen din"
       ],
       "Use ${ label } theme": [
-        "Bruk tema ${ label }"
+        "Bruk ${ label }-temaet"
       ],
       "Use a different card": [
         "Bruk et annet kort"
@@ -972,7 +972,7 @@
         "gulrot"
       ],
       "cerise": [
-        "cerise"
+        "kirsebærrød"
       ],
       "cobalt": [
         "kobolt"
@@ -1925,7 +1925,7 @@
         "Domenet er ikke tilgjengelig. Prøv igjen senere."
       ],
       "Email address is invalid": [
-        "E-postadresse er ugyldig"
+        "E-postadressen er ugyldig"
       ],
       "Email is not valid": [
         "E-post er ikke gyldig"
@@ -2125,19 +2125,19 @@
     },
     "Error importing users": {
       "An error occurred reading your file \"${ formattedFilename }\". Incorrect file format.": [
-        "Det oppsto en feil under lesing av filen \"${ formattedFilename }\". Filen har ikke riktig format."
+        "Det oppstod en feil under lesing av filen \"${ formattedFilename }\". Filen har ikke riktig format."
       ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Det oppsto en feil under opplasting av filen \"${ formattedFilename }\". Maksimum filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file. No file has been selected.": [
-        "Det oppsto en feil under opplasting av filen. Ingen fil er valgt."
+        "Det oppstod en feil under opplasting av filen. Ingen fil er valgt."
       ],
       "Upload a CSV file with ${ MAX_NUMBER_OF_USER_ROWS } user accounts or less.": [
         "Last opp en CSV-fil med ${ MAX_NUMBER_OF_USER_ROWS } brukerkontoer eller mindre."
       ],
       "Your file \"${ formattedFilename }\" is empty.": [
-        "Din fil \"${ formattedFilename }\" er tom."
+        "Filen \"${ formattedFilename }\" er tom."
       ]
     },
     "Error message": {
@@ -4819,10 +4819,10 @@
         "Avansert delingssikkerhet"
       ],
       "Auto-delete spam and trashed messages": [
-        "Auto-slett søppelpost og meldinger i papirkurven"
+        "Autoslett søppelpost og meldinger i papirkurven"
       ],
       "Auto-reply": [
-        "Auto-svar"
+        "Autosvar"
       ],
       "Autofill credit cards (coming soon)": [
         "Automatisk utfylling av kredittkort (kommer snart)"
@@ -5248,7 +5248,7 @@
         "Tillater deg å koble til flere enn ett nettverk samtidig, f.eks., strøm en fil fra et annet land mens du fortsatt får lokale søkeresultater"
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
-        "Lar deg sette opp automatiske svar (auto-svar) for dine innkommende meldinger"
+        "Lar deg sette opp automatiske svar (autosvar) for dine innkommende meldinger"
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Massesending av salgsfremmende eller programmatisk e-post støttes for øyeblikket ikke. Vi anbefaler at du bruker en dedikert e-postleverandør for dette brukstilfellet."
@@ -5439,7 +5439,7 @@
         "AES 256-biter VPN-kryptering"
       ],
       "Auto-connect": [
-        "Auto-tilkobling"
+        "Koble til automatisk"
       ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "Øk lagringsplassen din til totalt ${ bundleStorage } per bruker"
@@ -6522,19 +6522,19 @@
         "Er du sikker?"
       ],
       "Auto-pay is disabled": [
-        "Auto-betaling er deaktivert"
+        "Automatisk betaling er deaktivert"
       ],
       "Auto-pay is enabled": [
-        "Auto-betaling er aktivert"
+        "Automatisk betaling er aktivert"
       ],
       "Disable": [
         "Deaktiver"
       ],
       "Enable auto-pay support": [
-        "Aktiver auto-betaling støtte"
+        "Aktiver støtte for automatisk betaling"
       ],
       "Keep auto-pay": [
-        "Behold auto-betaling"
+        "Behold automatisk betaling"
       ],
       "Our system will no longer auto-charge you using this payment method, but your subscription will still renew at the end of the billing cycle. If you want to downgrade or change your subscription, you still need to do that yourself before the end of the billing period. Furthermore, if you forget to make a manual payment and auto-pay is disabled for all payment methods, we may auto-downgrade your account which will lead to the loss of many features.": [
         "Systemet vårt vil ikke lenger belaste deg automatisk ved hjelp av denne betalingsmåten, men abonnementet ditt vil fortsatt fornyes på slutten av faktureringssyklusen. Hvis du vil nedgradere eller endre abonnementet, må du likevel gjøre det selv før slutten av faktureringsperioden. Videre, hvis du glemmer å foreta en manuell betaling og automatisk betaling er deaktivert for alle betalingsmåter, kan vi automatisk nedgradere kontoen din, noe som vil føre til tap av mange funksjoner."
@@ -7309,7 +7309,7 @@
         "Din gjeldende plan"
       ],
       "Your Mail Plus free trial ends on ${ textDate }": [
-        "Din gratis prøveversjon av Mail Plus slutter på ${ textDate }."
+        "Din gratis prøveversjon av Mail Plus slutter den ${ textDate }."
       ],
       "Your plan": [
         "Din plan"
