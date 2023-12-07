@@ -3137,6 +3137,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } har uppdaterats. ${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Denna förekomst av ${ eventTitle } har avbrutits."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Du är inbjuden till ${ eventTitle } ${ eventDetailsText }"
       ]
@@ -3533,6 +3536,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Något gick fel, ${ refresh } för att fortsätta. Om du fortfarande ser detta felmeddelande, kontakta vårt ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Något gick fel. Försök igen."
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "${ BRAND_NAME } kan inte dekryptera ditt meddelande. Kontrollera att alla dina nycklar är aktiva."
