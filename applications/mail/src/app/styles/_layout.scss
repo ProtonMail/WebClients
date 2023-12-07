@@ -1,9 +1,11 @@
+@use "sass:map";
+
 .resize-area {
 	&-container {
 		position: absolute;
 		inset-block: 0;
 		inset-inline-end: 0;
-		z-index: $layer-upper; // Because filter toolbar has `.upper-layer` helper
+		z-index: map.get($z-indexes, 'up'); // Because filter toolbar has `.z-up` helper
 		inline-size: 0;
 		overflow: visible;
 	}

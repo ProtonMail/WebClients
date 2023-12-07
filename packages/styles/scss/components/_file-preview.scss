@@ -1,7 +1,9 @@
+@use "sass:map";
+
 .file-preview {
 	position: fixed;
 	inset: 0;
-	z-index: $layer-previewer;
+	z-index: map.get($z-indexes, 'previewer');
 	display: flex;
 	flex: 1 1 auto;
 	flex-direction: column;

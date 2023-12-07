@@ -1,3 +1,4 @@
+@use "sass:map";
 @import '~@proton/styles/scss/lib';
 
 $field-container: rem(260) !default;
@@ -49,8 +50,7 @@ $modal-full-dimension: 98% !default;
 
 	&-content-inner {
 		position: relative;
-		overflow-x: hidden;
-		overflow-y: auto;
+		overflow: hidden auto;
 		flex: 1 1 auto;
 		padding-block: 0;
 		padding-inline: rem(30);
@@ -105,7 +105,7 @@ $modal-full-dimension: 98% !default;
 		position: fixed;
 		inset: 0;
 		background: var(--backdrop-norm);
-		z-index: $layer-modals;
+		z-index: map.get($z-indexes, 'modals');
 		animation: anime-inner-modal-overlay-in ease 0.5s 1 normal;
 	}
 
@@ -120,10 +120,10 @@ $modal-full-dimension: 98% !default;
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
-		z-index: $layer-modals;
+		z-index: map.get($z-indexes, 'modals');
 
 		&.is-behind-backdrop {
-			z-index: $layer-modals - 1;
+			z-index: map.get($z-indexes, 'modals') - 1;
 		}
 
 		/* for very large inputs in modals, like rich text editor */
@@ -191,8 +191,7 @@ $modal-full-dimension: 98% !default;
 	}
 
 	.inner-modal-header {
-		padding-block-start: rem(10);
-		padding-block-end: rem(5);
+		padding-block: rem(10) rem(5);
 	}
 }
 

@@ -226,7 +226,7 @@ const SwitchAccountContainer = ({ metaTags, toAppName, onLogin, activeSessions, 
                             </button>
                             <div>
                                 <InlineLinkButton
-                                    className="relative upper-layer"
+                                    className="relative z-up"
                                     title={signOutText}
                                     aria-label={signOutText}
                                     onClick={() => {
