@@ -32,12 +32,23 @@ interface ToolbarProps {
     className?: string;
     openEmojiPickerRef: Ref<() => void>;
     simple?: boolean;
+    isInSettings?: boolean;
 }
 
-const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className, simple }: ToolbarProps) => {
+const Toolbar = ({
+    config,
+    metadata,
+    mailSettings,
+    openEmojiPickerRef,
+    className,
+    simple,
+    isInSettings,
+}: ToolbarProps) => {
     const { viewportWidth } = useActiveBreakpoint();
 
-    const showMoreDropdown = metadata.supportRightToLeft || metadata.supportPlainText || viewportWidth['<=small'];
+    const smallViewport = isInSettings ? viewportWidth['<=medium'] : viewportWidth['<=small'];
+
+    const showMoreDropdown = metadata.supportRightToLeft || metadata.supportPlainText || smallViewport;
 
     if (metadata.isPlainText) {
         return null;
@@ -127,7 +138,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     />
                 </ToolbarButton>
             </>
-            {!viewportWidth['<=small'] ? (
+            {!smallViewport ? (
                 <>
                     <ToolbarButton
                         onClick={config.unorderedList.toggle}
@@ -228,9 +239,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     )}
                 </>
             ) : null}
-            {showMoreDropdown && (
-                <ToolbarMoreDropdown config={config} metadata={metadata} isNarrow={viewportWidth['<=small']} />
-            )}
+            {showMoreDropdown && <ToolbarMoreDropdown config={config} metadata={metadata} isNarrow={smallViewport} />}
         </ButtonGroup>
     );
 };
