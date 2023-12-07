@@ -44,7 +44,7 @@ export const BalanceOverview = (props: Props) => {
         <div>
             <h2 className="h4 text-semibold">{c('Wallet Dashboard').t`Your current balance`}</h2>
 
-            <div className="flex flex-row flex-justify-space-evenly">
+            <div className="flex flex-row justify-space-evenly">
                 <div data-testid="balance" className="mt-8 mr-3 w-custom text-no-wrap" style={{ '--w-custom': '8rem' }}>
                     <p className="color-hint text-sm m-0">{c('Wallet Dashboard').t`My assets`}</p>
                     <BitcoinAmount unit={bitcoinUnit} fiat={fiatCurrency} className="my-0.5 text-xl">
@@ -52,10 +52,7 @@ export const BalanceOverview = (props: Props) => {
                     </BitcoinAmount>
                 </div>
 
-                <div
-                    className="mt-8 mr-10 h-custom flex flex-column flex-justify-center"
-                    style={{ '--h-custom': '6rem' }}
-                >
+                <div className="mt-8 mr-10 h-custom flex flex-column justify-center" style={{ '--h-custom': '6rem' }}>
                     <DoughnutChart data={balanceDistributionDoughnutChartData} />
                 </div>
 
@@ -78,7 +75,7 @@ export const BalanceOverview = (props: Props) => {
                 </div>
 
                 <div
-                    className="mt-8 w-custom h-custom flex flex-column flex-justify-center"
+                    className="mt-8 w-custom h-custom flex flex-column justify-center"
                     style={{ '--w-custom': '14rem', '--h-custom': '6rem' }}
                 >
                     <LineChart dataset={balanceEvolutionLineChartData} />

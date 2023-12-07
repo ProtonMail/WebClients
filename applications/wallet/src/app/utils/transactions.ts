@@ -2,7 +2,7 @@ import { format } from 'date-fns';
 
 import { SECOND } from '@proton/shared/lib/constants';
 
-import { WasmSimpleTransaction } from '../../pkg';
+import { WasmConfirmation, WasmSimpleTransaction } from '../../pkg';
 
 export const sortTransactionsByTime = (transactions: WasmSimpleTransaction[]) => {
     return [...transactions].sort(
@@ -11,8 +11,17 @@ export const sortTransactionsByTime = (transactions: WasmSimpleTransaction[]) =>
     );
 };
 
-export const confirmationTimeToHumanReadable = (transaction: WasmSimpleTransaction) =>
-    format(new Date(Number(transaction.confirmation.confirmation_time) * 1000), 'dd MMM yyyy, hh:mm');
+export const confirmationTimeToHumanReadable = (confirmation: WasmConfirmation): string => {
+    if (confirmation.confirmed && confirmation.confirmation_time) {
+        return format(new Date(Number(confirmation.confirmation_time) * 1000), 'dd MMM yyyy, hh:mm');
+    }
+
+    if (confirmation.last_seen) {
+        return `(${format(new Date(Number(confirmation.last_seen) * 1000), 'dd MMM yyyy, hh:mm')})`;
+    }
+
+    return '-';
+};
 
 const toMsTimestamp = (ts: number | BigInt) => {
     return Number(ts) * SECOND;

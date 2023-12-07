@@ -16,7 +16,7 @@ interface Props {
 export const DashboardSideContent = ({ transactions, walletId }: Props) => {
     return (
         <div className="bg-weak py-4 px-6 h-full">
-            <div className="flex flex-column flex-align-items-center">
+            <div className="flex flex-column items-center">
                 <h2 className="h4 text-left w-full text-semibold">{c('Wallet Dashboard').t`Quick actions`}</h2>
 
                 <ButtonLike

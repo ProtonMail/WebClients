@@ -21,7 +21,7 @@ const CopyPasteButton = ({ value }: { value: string }) => {
         <div className="mt-8">
             <Copy
                 value={value}
-                className="flex flex-row flex-align-items-center"
+                className="flex flex-row items-center"
                 shape="solid"
                 color="norm"
                 size="small"
@@ -67,7 +67,7 @@ export const BitcoinReceiveInfoGenerator = ({ defaultWalletId, wallets }: Props)
     ];
 
     return (
-        <div className="flex flex-column flex-align-items-center">
+        <div className="flex flex-column items-center">
             {/* Wallets and Account/format selector */}
             <div className="flex w-full flex-row px-8">
                 <Selector
@@ -108,7 +108,6 @@ export const BitcoinReceiveInfoGenerator = ({ defaultWalletId, wallets }: Props)
                             title={amountInputLabel}
                             label={amountInputLabel}
                             type="number"
-                            min={0}
                             className="mt-2"
                             id="amount-input"
                             data-testid="amount-input"
@@ -120,7 +119,7 @@ export const BitcoinReceiveInfoGenerator = ({ defaultWalletId, wallets }: Props)
                         />
                     </div>
                 ) : (
-                    <div className="mt-6 w-3/10 flex flex-row flex-justify-center">
+                    <div className="mt-6 w-3/10 flex flex-row justify-center">
                         <Button
                             shape="underline"
                             data-testid="show-amount-input-button"
@@ -140,7 +139,7 @@ export const BitcoinReceiveInfoGenerator = ({ defaultWalletId, wallets }: Props)
             {/* Payment info data */}
             {serializedPaymentInformation && (
                 <Card
-                    className="flex flex-row flex-item-shrink bg-norm mx-auto mb-8 p-8"
+                    className="flex flex-row shrink bg-norm mx-auto mb-8 p-8"
                     rounded
                     background={false}
                     bordered={false}
@@ -148,10 +147,7 @@ export const BitcoinReceiveInfoGenerator = ({ defaultWalletId, wallets }: Props)
                     <div className="mr-8 w-custom" style={{ '--w-custom': '15rem' }}>
                         <QRCode data-testid="serialized-payment-info-qrcode" value={serializedPaymentInformation} />
                     </div>
-                    <div
-                        className="flex flex-column w-custom flex-justify-space-between"
-                        style={{ '--w-custom': '15rem' }}
-                    >
+                    <div className="flex flex-column w-custom justify-space-between" style={{ '--w-custom': '15rem' }}>
                         <h3 className="text-lg text-semibold mt-4">{selectedWallet?.Name}</h3>
                         <Tooltip title={serializedPaymentInformation}>
                             <p
