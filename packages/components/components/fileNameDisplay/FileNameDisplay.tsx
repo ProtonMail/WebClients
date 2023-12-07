@@ -11,9 +11,10 @@ interface Props extends HTMLProps<HTMLSpanElement> {
     text?: string;
     className?: string;
     charsToDisplayEnd?: number;
+    displayTooltip?: boolean;
 }
 
-const FileNameDisplay = ({ text = '', className, charsToDisplayEnd = 6, ...rest }: Props) => {
+const FileNameDisplay = ({ text = '', className, charsToDisplayEnd = 6, displayTooltip = true, ...rest }: Props) => {
     const sanitized = rtlSanitize(text);
     const [, extension] = splitExtension(sanitized);
     const extensionOffset =
@@ -24,7 +25,7 @@ const FileNameDisplay = ({ text = '', className, charsToDisplayEnd = 6, ...rest 
             className={className}
             text={sanitized}
             displayTitle={false}
-            displayTooltip
+            displayTooltip={displayTooltip}
             {...rest}
         />
     );
