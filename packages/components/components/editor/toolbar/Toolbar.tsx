@@ -32,7 +32,7 @@ interface ToolbarProps {
     className?: string;
     openEmojiPickerRef: Ref<() => void>;
     simple?: boolean;
-    isInSettings?: boolean;
+    isSmallViewportForToolbar?: boolean;
 }
 
 const Toolbar = ({
@@ -42,11 +42,11 @@ const Toolbar = ({
     openEmojiPickerRef,
     className,
     simple,
-    isInSettings,
+    isSmallViewportForToolbar,
 }: ToolbarProps) => {
     const { viewportWidth } = useActiveBreakpoint();
 
-    const smallViewport = isInSettings ? viewportWidth['<=medium'] : viewportWidth['<=small'];
+    const smallViewport = isSmallViewportForToolbar ?? viewportWidth['<=small'];
 
     const showMoreDropdown = metadata.supportRightToLeft || metadata.supportPlainText || smallViewport;
 
