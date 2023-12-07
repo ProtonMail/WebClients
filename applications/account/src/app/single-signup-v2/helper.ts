@@ -124,7 +124,7 @@ const getUnlockPlanName = (toApp: APP_NAMES) => {
     if (toApp === APPS.PROTONDRIVE) {
         return PLANS.DRIVE;
     }
-    throw new Error('Unknown unlock plan name');
+    return PLANS.MAIL;
 };
 
 const getSafePlan = (plansMap: PlansMap, planName: PLANS | ADDON_NAMES) => {
