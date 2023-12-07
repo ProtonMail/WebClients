@@ -11,6 +11,7 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
+    useFlag,
     useModalState,
     useVPNServersCount,
 } from '@proton/components';
@@ -118,7 +119,9 @@ const subscriptionDataCycleMapping = [
 ];
 
 const getSignupTheme = (toApp: APP_NAMES, signupParameters: SignupParameters2): SignupTheme => {
-    const blackFriday = signupParameters.coupon === COUPON_CODES.BLACK_FRIDAY_2023;
+    const blackFriday =
+        signupParameters.coupon === COUPON_CODES.BLACK_FRIDAY_2023 ||
+        signupParameters.preSelectedPlan === PLANS.NEW_VISIONARY;
     return {
         type: blackFriday ? ThemeTypes.Carbon : undefined,
         background: blackFriday ? 'bf' : undefined,
@@ -192,6 +195,7 @@ const SingleSignupContainerV2 = ({
     const location = useLocationWithoutLocale();
     const ktActivation = useKTActivation();
     const { APP_NAME } = useConfig();
+    const visionarySignupEnabled = useFlag('VisionarySignup');
 
     useMetaTags(metaTags);
 
@@ -227,6 +231,11 @@ const SingleSignupContainerV2 = ({
 
     const [signupParameters, setSignupParameters] = useState((): SignupParameters2 => {
         const searchParams = new URLSearchParams(location.search);
+        if (!visionarySignupEnabled) {
+            if (searchParams.get('plan') === PLANS.NEW_VISIONARY) {
+                searchParams.delete('plan');
+            }
+        }
         const result = getSignupSearchParams(location.pathname, searchParams);
 
         const localID = Number(searchParams.get('u'));
@@ -253,6 +262,8 @@ const SingleSignupContainerV2 = ({
         };
     });
 
+    const selectedPlan = getPlanFromPlanIDs(model.plansMap, model.subscriptionData.planIDs) || FREE_PLAN;
+
     const {
         logo,
         features,
@@ -270,6 +281,9 @@ const SingleSignupContainerV2 = ({
         generateMnemonic,
         CustomStep,
     } = (() => {
+        const planIDs = model.optimistic.planIDs || model.subscriptionData.planIDs;
+        const plan = model.optimistic.plan || selectedPlan;
+
         if (toApp === APPS.PROTONDRIVE) {
             return getDriveConfiguration({
                 plansMap: model.plansMap,
@@ -280,6 +294,7 @@ const SingleSignupContainerV2 = ({
         }
         if (toApp === APPS.PROTONMAIL || toApp === APPS.PROTONCALENDAR) {
             return getMailConfiguration({
+                plan,
                 plansMap: model.plansMap,
                 isLargeViewport: viewportWidth['>=large'],
                 vpnServersCountData,
@@ -287,7 +302,6 @@ const SingleSignupContainerV2 = ({
             });
         }
         if (toApp === APPS.PROTONPASS) {
-            const planIDs = model.optimistic.planIDs || model.subscriptionData.planIDs;
             return getPassConfiguration({
                 isLargeViewport: viewportWidth['>=large'],
                 vpnServersCountData,
@@ -378,7 +392,6 @@ const SingleSignupContainerV2 = ({
         }).catch(noop);
     };
 
-    const selectedPlan = getPlanFromPlanIDs(model.plansMap, model.subscriptionData.planIDs) || FREE_PLAN;
     const upsellPlanCard = planCards.find((planCard) => planCard.type === 'best');
 
     const triggerModals = (

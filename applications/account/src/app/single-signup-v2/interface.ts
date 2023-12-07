@@ -157,6 +157,7 @@ export interface SignupConfiguration {
 export interface PlanParameters {
     defined: boolean;
     planIDs: PlanIDs;
+    plan: Plan;
 }
 
 export interface SignupParameters2 extends Omit<ReturnType<typeof getSignupSearchParams>, 'invite'> {

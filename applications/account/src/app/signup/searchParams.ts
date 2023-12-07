@@ -13,6 +13,7 @@ import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
 import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import { Currency, Plan, getPlanMaxIPs } from '@proton/shared/lib/interfaces';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import clamp from '@proton/utils/clamp';
 
 import { PlanParameters, SignupDefaults } from '../single-signup-v2/interface';
@@ -119,6 +120,7 @@ export const getPlanIDsFromParams = (
     const freePlanIDs = {};
     const defaultResponse = {
         planIDs: defaults.plan === PLANS.FREE ? freePlanIDs : { [defaults.plan]: 1 },
+        plan: FREE_PLAN,
         defined: false,
     };
 
@@ -127,7 +129,7 @@ export const getPlanIDsFromParams = (
     }
 
     if (signupParameters.preSelectedPlan === 'free') {
-        return { planIDs: freePlanIDs, defined: true };
+        return { planIDs: freePlanIDs, defined: true, plan: FREE_PLAN };
     }
 
     const plan = plans.find((plan) => {
@@ -177,5 +179,5 @@ export const getPlanIDsFromParams = (
         }
     }
 
-    return { planIDs, defined: true };
+    return { planIDs, defined: true, plan };
 };
