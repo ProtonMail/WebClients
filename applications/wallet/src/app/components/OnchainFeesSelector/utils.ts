@@ -1,4 +1,4 @@
-import { WasmClient } from '../../../pkg';
+import { WasmChain } from '../../../pkg';
 
 export const findNearestBlockTargetFeeRate = (blockEstimate: number, blockEstimationKeys: [number, number][]) => {
     const nearest = blockEstimationKeys.find(([block]) => {
@@ -18,5 +18,5 @@ export const findLowestBlockTargetByFeeRate = (feeRate: number, blockEstimationK
 
 // TODO: move this to BlockchainContext
 export const getFeesEstimation = () => {
-    return new WasmClient().get_fees_estimation();
+    return new WasmChain().get_fees_estimation();
 };

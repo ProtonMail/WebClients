@@ -6,7 +6,7 @@ import { SelectChangeEvent } from '@proton/components/components/selectTwo/selec
 import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 
-import { WasmClient, WasmNetwork, WasmPartiallySignedTransaction, WasmTxBuilder } from '../../../pkg';
+import { WasmChain, WasmNetwork, WasmPartiallySignedTransaction, WasmTxBuilder } from '../../../pkg';
 import { BitcoinUnit, WalletWithAccountsWithBalanceAndTxs } from '../../types';
 import { getDefaultAccount, getSelectedAccount, getSelectedWallet, tryHandleWasmError } from '../../utils';
 
@@ -84,7 +84,7 @@ export const useOnchainTransactionBuilder = (
     const createPsbt = () => {
         if (selectedAccount) {
             try {
-                const psbt = txBuilder.create_pbst(selectedAccount.wasmAccount, WasmNetwork.Testnet);
+                const psbt = txBuilder.create_pbst(WasmNetwork.Testnet);
 
                 setFinalPsbt(psbt);
             } catch (err) {
@@ -104,7 +104,7 @@ export const useOnchainTransactionBuilder = (
 
             const signed = finalPsbt.sign(selectedAccount?.wasmAccount, WasmNetwork.Testnet);
             try {
-                const txid = await new WasmClient().broadcast_psbt(signed);
+                const txid = await new WasmChain().broadcast_psbt(signed);
                 setTxid(txid);
             } catch (err) {
                 const msg = tryHandleWasmError(err);

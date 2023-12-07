@@ -12,6 +12,17 @@ export type WalletWithAccountsWithBalanceAndTxs = ApiWallet & {
     accounts: AccountWithBlockchainData[];
 };
 
+export type BlockchainAccountRecord = Partial<Record<string, AccountWithBlockchainData>>;
+
+export type BlockchainWalletRecord = Partial<
+    Record<
+        string,
+        ApiWallet & {
+            accounts: BlockchainAccountRecord;
+        }
+    >
+>;
+
 export type WalletWithAccounts = ApiWallet & {
     accounts: WalletAccount[];
 };
