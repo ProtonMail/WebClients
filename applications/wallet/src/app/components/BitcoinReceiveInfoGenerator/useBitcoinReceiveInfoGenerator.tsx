@@ -2,7 +2,8 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 
-import { AccountWithBalanceAndTxs, LightningUriFormat, WalletWithAccountsWithBalanceAndTxs } from '../../types';
+import { AccountWithBlockchainData, LightningUriFormat, WalletWithAccountsWithBalanceAndTxs } from '../../types';
+import { getDefaultAccount, getSelectedAccount, getSelectedWallet } from '../../utils';
 import { getLightningFormatOptions } from './constants';
 
 export interface UseBitcoinReceiveInfoGeneratorHelper {
@@ -13,7 +14,7 @@ export interface UseBitcoinReceiveInfoGeneratorHelper {
     selectedWallet?: WalletWithAccountsWithBalanceAndTxs;
     walletsOptions: { value: number; label: string; disabled: boolean }[];
     accountsOptions?: { value: number; label: string }[];
-    selectedAccount?: AccountWithBalanceAndTxs;
+    selectedAccount?: AccountWithBlockchainData;
     selectedFormat: {
         name: string;
         value: LightningUriFormat;
@@ -26,21 +27,6 @@ export interface UseBitcoinReceiveInfoGeneratorHelper {
     handleChangeAmount: (amount?: number) => void;
     showAmountInput: () => void;
 }
-
-const getSelectedWallet = (
-    wallets: WalletWithAccountsWithBalanceAndTxs[],
-    walletId?: number
-): WalletWithAccountsWithBalanceAndTxs | undefined =>
-    wallets.find(({ WalletID }) => walletId === WalletID) ?? wallets[0];
-
-const getDefaultAccount = (wallet?: WalletWithAccountsWithBalanceAndTxs): AccountWithBalanceAndTxs | undefined =>
-    wallet?.accounts?.[0];
-
-const getSelectedAccount = (
-    wallet?: WalletWithAccountsWithBalanceAndTxs,
-    accountId?: number
-): AccountWithBalanceAndTxs | undefined =>
-    wallet?.accounts?.find?.(({ WalletAccountID }) => WalletAccountID === accountId);
 
 export const useBitcoinReceiveInfoGenerator = (
     wallets: WalletWithAccountsWithBalanceAndTxs[],

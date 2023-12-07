@@ -18,15 +18,20 @@ export const BitcoinTransferContainer = ({ wallets }: Props) => {
     const [tabIndex, setTabIndex] = useState(params.mode === 'send' ? 1 : 0);
 
     return (
-        <div className="flex flex-column flex-item-grow p-8">
+        <div className="flex flex-column grow p-8">
             <h2 className="text-semibold text-2xl mb-4">{c('Wallet Transfer').t`Transfer bitcoins`}</h2>
 
-            <div className="w-full max-w-custom rounded overflow-hidden" style={{ '--max-w-custom': '40rem' }}>
+            <div
+                className="w-full max-w-custom rounded overflow-hidden flex flex-column flex-1"
+                style={{ '--max-w-custom': '40rem' }}
+            >
                 <Tabs
-                    className="bg-weak w-full"
+                    className="w-full flex flex-column flex-0"
                     fullWidth
                     value={tabIndex}
                     onChange={setTabIndex}
+                    variant="modern"
+                    contentClassName="flex-1"
                     tabs={[
                         {
                             title: c('Wallet Transfer').t`Receive bitcoins`,
@@ -40,13 +45,13 @@ export const BitcoinTransferContainer = ({ wallets }: Props) => {
                         {
                             title: c('Wallet Transfer').t`Send bitcoins`,
                             content: (
-                                <div>
+                                <>
                                     {/* TODO: Put send method selection before. Will be done once design finished */}
                                     <OnchainTransactionBuilder
                                         wallets={wallets}
                                         defaultWalletId={Number(params.walletId)}
                                     />
-                                </div>
+                                </>
                             ),
                         },
                     ]}

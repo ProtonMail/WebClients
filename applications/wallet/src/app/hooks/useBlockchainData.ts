@@ -4,7 +4,7 @@ import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 
 import { WasmAccount, WasmAccountConfig, WasmNetwork, WasmPagination, WasmSupportedBIPs } from '../../pkg';
-import { AccountWithBalanceAndTxs, WalletWithAccounts, WalletWithAccountsWithBalanceAndTxs } from '../types';
+import { AccountWithBlockchainData, WalletWithAccounts, WalletWithAccountsWithBalanceAndTxs } from '../types';
 import { ScriptType } from '../types/api';
 import { tryHandleWasmError } from '../utils/wasm/errors';
 
@@ -30,7 +30,7 @@ export const useBlockchainData = (wallets: WalletWithAccounts[]) => {
         const tmpWallets: WalletWithAccountsWithBalanceAndTxs[] = [];
 
         for (const wallet of wallets) {
-            const tmpAccounts: AccountWithBalanceAndTxs[] = [];
+            const tmpAccounts: AccountWithBlockchainData[] = [];
             for (const account of wallet.accounts) {
                 try {
                     const config = new WasmAccountConfig(scriptTypeToBip[account.ScriptType], NETWORK, account.Index);
@@ -43,8 +43,9 @@ export const useBlockchainData = (wallets: WalletWithAccounts[]) => {
 
                     const pagination = new WasmPagination(0, 10);
                     const transactions = wasmAccount.get_transactions(pagination);
+                    const utxos = wasmAccount.get_utxos();
 
-                    tmpAccounts.push({ ...account, balance, transactions });
+                    tmpAccounts.push({ ...account, balance, transactions, utxos, wasmAccount });
                 } catch (error) {
                     const errorMessage = tryHandleWasmError(error);
 

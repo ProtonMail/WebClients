@@ -30,14 +30,14 @@ export const YourWalletsSection = ({ wallets, onAddWallet }: Props) => {
         <div className="mt-14">
             <h2 className="h4 text-semibold">{c('Wallet Dashboard').t`Your wallets`}</h2>
 
-            <div className="flex flex-row flex-justify-space-evenly">
+            <div className="flex flex-row justify-space-evenly">
                 <Card
                     data-testid="lightning-balance-card"
                     rounded
-                    className="light-gradient-card flex flex-column flex-align-items-end w-custom h-custom mr-6 mt-4"
+                    className="light-gradient-card flex flex-column align-items-end w-custom h-custom mr-6 mt-4"
                     style={{ '--w-custom': '16rem', '--h-custom': '8.5rem' }}
                 >
-                    <div className="flex flex-row flex-justify-space-between w-full mt-1">
+                    <div className="flex flex-row justify-space-between w-full mt-1">
                         <h3 className="text-lg">{c('Wallet Dashboard').t`Your checking`}</h3>
                         <Badge className="mr-0 mt-0.5" type="warning">
                             Lightning
@@ -57,10 +57,10 @@ export const YourWalletsSection = ({ wallets, onAddWallet }: Props) => {
                 <Card
                     data-testid="onchain-balance-card"
                     rounded
-                    className="light-gradient-card flex flex-column flex-align-items-end w-custom h-custom mr-6 mt-4"
+                    className="light-gradient-card flex flex-column align-items-end w-custom h-custom mr-6 mt-4"
                     style={{ '--w-custom': '16rem', '--h-custom': '8.5rem' }}
                 >
-                    <div className="flex flex-row flex-justify-space-between w-full mt-1">
+                    <div className="flex flex-row justify-space-between w-full mt-1">
                         <h3 className="text-lg">{c('Wallet Dashboard').t`Your saving`}</h3>
                         <Badge className="mr-0 mt-0.5" type="info">
                             OnChain
@@ -86,7 +86,7 @@ export const YourWalletsSection = ({ wallets, onAddWallet }: Props) => {
                         onAddWallet();
                     }}
                 >
-                    <div className="m-auto color-primary text-2xl">Add wallet</div>
+                    <div className="m-auto color-primary text-2xl">{c('Wallet Dashboard').t`Add wallet`}</div>
                 </ButtonLike>
             </div>
         </div>

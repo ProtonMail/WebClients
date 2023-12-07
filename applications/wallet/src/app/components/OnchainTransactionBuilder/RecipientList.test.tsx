@@ -1,15 +1,15 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
+import { WasmRecipient } from '../../../pkg';
 import { walletsWithAccountsWithBalanceAndTxs } from '../../tests';
 import { BitcoinUnit } from '../../types';
 import { RecipientList } from './RecipientList';
-import { TempRecipient } from './useOnchainTransactionBuilder';
 
-const recipients: TempRecipient[] = [
-    { uuid: 1, address: '', amount: 0, unit: BitcoinUnit.SATS },
-    { uuid: 2, address: '', amount: 0, unit: BitcoinUnit.SATS },
-    { uuid: 3, address: '', amount: 0, unit: BitcoinUnit.SATS },
-];
+const buildWasmRecipient = (uuid: string) => {
+    return [uuid, '', BigInt(0)] as unknown as WasmRecipient;
+};
+
+const recipients: WasmRecipient[] = [buildWasmRecipient('1'), buildWasmRecipient('2'), buildWasmRecipient('3')];
 
 describe('RecipientList', () => {
     let baseProps: Parameters<typeof RecipientList>[0];
@@ -20,7 +20,6 @@ describe('RecipientList', () => {
             selectedAccount: testAccount,
             recipients,
             onRecipientUpdate: jest.fn(),
-            onRecipientAmountUpdate: jest.fn(),
             onRecipientAddition: jest.fn(),
             onRecipientRemove: jest.fn(),
         };
@@ -92,8 +91,8 @@ describe('RecipientList', () => {
             const [, , thirdAddressInput] = amountInputs;
 
             fireEvent.change(thirdAddressInput, { target: { value: 10087 } });
-            expect(baseProps.onRecipientAmountUpdate).toHaveBeenCalledTimes(1);
-            expect(baseProps.onRecipientAmountUpdate).toHaveBeenCalledWith(2, 10087);
+            expect(baseProps.onRecipientUpdate).toHaveBeenCalledTimes(1);
+            expect(baseProps.onRecipientUpdate).toHaveBeenCalledWith(2, { amount: 10087 });
         });
     });
 
@@ -131,8 +130,8 @@ describe('RecipientList', () => {
                     const maxAmountButton = screen.getByText('Maximum amount');
                     fireEvent.click(maxAmountButton);
 
-                    expect(baseProps.onRecipientAmountUpdate).toHaveBeenCalledTimes(1);
-                    expect(baseProps.onRecipientAmountUpdate).toHaveBeenCalledWith(0, 100067);
+                    expect(baseProps.onRecipientUpdate).toHaveBeenCalledTimes(1);
+                    expect(baseProps.onRecipientUpdate).toHaveBeenCalledWith(0, { amount: 100067 });
                 });
             });
         });

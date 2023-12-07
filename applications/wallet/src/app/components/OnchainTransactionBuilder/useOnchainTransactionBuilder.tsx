@@ -1,51 +1,34 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
+import { c } from 'ttag';
 
+import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
+import { useNotifications } from '@proton/components/hooks';
+import useLoading from '@proton/hooks/useLoading';
+
+import { WasmClient, WasmNetwork, WasmPartiallySignedTransaction, WasmTxBuilder } from '../../../pkg';
 import { BitcoinUnit, Recipient, WalletWithAccountsWithBalanceAndTxs } from '../../types';
-import { getAccountBalance } from '../../utils';
+import { getDefaultAccount, getSelectedAccount, getSelectedWallet, tryHandleWasmError } from '../../utils';
 
 export type TempRecipient = Recipient & { uuid: number; unit: BitcoinUnit };
-
-const EMPTY_RECIPIENT = { address: '', amount: 0, unit: BitcoinUnit.SATS };
-let uuid = 0;
-
-type ReallocateNewBalanceAcc = { remainingAmount: number; recipients: TempRecipient[] };
-
-/**
- * This functions allocates a given balance accross the provided recipients.
- * If recipients total amount is greater than provided balance, the last recipients will be allocated less than initially.
- * "First come, first served"
- */
-const allocateNewBalance = (recipients: TempRecipient[], balance: number) => {
-    const { recipients: updatedRecipients } = recipients.reduce(
-        (acc: ReallocateNewBalanceAcc, current) => {
-            // If remainingAmount = 123 and recipient's amount is 100, we'll allocate 100
-            // If remainingAmount = 73 and recipient's amount is 100, we'll allocate only 73
-            const amountToAllocate = Math.min(acc.remainingAmount, current.amount);
-            const nextRemainingBalance = acc.remainingAmount - amountToAllocate;
-
-            return {
-                remainingAmount: nextRemainingBalance,
-                recipients: [...acc.recipients, { ...current, amount: amountToAllocate }],
-            };
-        },
-        { remainingAmount: balance, recipients: [] }
-    );
-
-    return updatedRecipients;
-};
 
 export const useOnchainTransactionBuilder = (
     wallets: WalletWithAccountsWithBalanceAndTxs[],
     defaultWalletId?: number
 ) => {
-    const defaultWallet = wallets.find(({ WalletID }) => defaultWalletId === WalletID) ?? wallets[0];
-
+    const { createNotification } = useNotifications();
+    const defaultWallet = getSelectedWallet(wallets, defaultWalletId);
     const [selectedWallet, setSelectedWallet] = useState(defaultWallet);
-    const [selectedAccount, setSelectedAccount] = useState(selectedWallet.accounts[0]);
+    const [finalPsbt, setFinalPsbt] = useState<WasmPartiallySignedTransaction>();
+    const [txid, setTxid] = useState<string>();
+    const [loadindBroadcast, withLoadingBroadcast] = useLoading();
 
-    const [recipients, setRecipients] = useState<TempRecipient[]>([{ ...EMPTY_RECIPIENT, uuid: uuid++ }]);
+    const [selectedAccount, setSelectedAccount] = useState(getDefaultAccount(selectedWallet));
+    const [txBuilder, setTxBuilder] = useState<WasmTxBuilder>(new WasmTxBuilder());
+
+    const updateTxBuilder = (updater: (txBuilder: WasmTxBuilder) => WasmTxBuilder) => {
+        setTxBuilder(updater);
+    };
 
     const handleSelectWallet = ({ value }: SelectChangeEvent<number>) => {
         const wallet = wallets.find(({ WalletID }) => WalletID === value);
@@ -55,76 +38,93 @@ export const useOnchainTransactionBuilder = (
     };
 
     const handleSelectAccount = ({ value }: SelectChangeEvent<number>) => {
-        const account = selectedWallet.accounts.find(({ WalletAccountID }) => WalletAccountID === value);
+        const account = getSelectedAccount(selectedWallet, value);
         if (account) {
             setSelectedAccount(account);
         }
     };
 
     useEffect(() => {
-        setSelectedAccount(selectedWallet.accounts[0]);
+        setSelectedAccount(getDefaultAccount(selectedWallet));
     }, [selectedWallet]);
 
-    // TOCHECK
     useEffect(() => {
-        const updatedRecipients = allocateNewBalance(recipients, getAccountBalance(selectedAccount));
-        setRecipients(updatedRecipients);
-        // We manually update recipient on the `addRecipient` fn below, here we only want to constrain allocatedBalance based on selectedAccount
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+        if (selectedAccount) {
+            updateTxBuilder((txBuilder) => txBuilder.set_account(selectedAccount.wasmAccount));
+        }
     }, [selectedAccount]);
 
     const addRecipient = useCallback(() => {
-        setRecipients((prev) => [...prev, { ...EMPTY_RECIPIENT, uuid: uuid++ }]);
+        updateTxBuilder((txBuilder) => txBuilder.add_recipient());
     }, []);
 
     const removeRecipient = useCallback((index) => {
-        setRecipients((prev) => [...prev.slice(0, index), ...prev.slice(index + 1)]);
+        updateTxBuilder((txBuilder) => txBuilder.remove_recipient(index));
     }, []);
 
     const updateRecipient = useCallback(
-        (index, update: Partial<Omit<TempRecipient, 'amount'>>) => {
-            if (!recipients[index]) {
+        (index: number, update: Partial<TempRecipient>) => {
+            if (!txBuilder.get_recipients()[index]) {
                 return;
             }
 
-            setRecipients([
-                ...recipients.slice(0, index),
-                { ...recipients[index], ...update },
-                ...recipients.slice(index + 1),
-            ]);
+            updateTxBuilder((txBuilder) =>
+                txBuilder.update_recipient(index, update.address, update.amount ? BigInt(update.amount) : undefined)
+            );
         },
-        [recipients]
+        [txBuilder]
     );
 
-    const updateRecipientAmount = (index: number, amount: number) => {
-        if (!recipients[index]) {
-            return;
+    const createPsbt = () => {
+        if (selectedAccount) {
+            try {
+                const psbt = txBuilder.create_pbst(selectedAccount.wasmAccount, WasmNetwork.Testnet);
+
+                setFinalPsbt(psbt);
+            } catch (err) {
+                const msg = tryHandleWasmError(err);
+                if (msg) {
+                    createNotification({ text: msg, type: 'error' });
+                }
+            }
         }
+    };
 
-        const before = recipients.slice(0, index);
-        const after = recipients.slice(index + 1);
+    const handleSignAndSend = () => {
+        void withLoadingBroadcast(async () => {
+            if (!finalPsbt || !selectedAccount) {
+                return;
+            }
 
-        const recipient = recipients[index];
-
-        const otherRecipients = [...before, ...after];
-        const totalAllocated = otherRecipients.reduce((acc, recipient) => acc + recipient.amount, 0);
-        const remainingAmount = getAccountBalance(selectedAccount) - totalAllocated;
-
-        // If remainingAmount = 123 and update's amount is 100, we'll allocate 100
-        // If remainingAmount = 73 and update's amount is 100, we'll allocate only 73
-        amount = Math.min(remainingAmount, amount);
-        setRecipients([...before, { ...recipient, amount }, ...after]);
+            const signed = finalPsbt.sign(selectedAccount?.wasmAccount, WasmNetwork.Testnet);
+            try {
+                const txid = await new WasmClient().broadcast_psbt(signed);
+                setTxid(txid);
+            } catch (err) {
+                const msg = tryHandleWasmError(err);
+                createNotification({ text: msg ?? c('Wallet Send').t`Could not broadcast transaction`, type: 'error' });
+            }
+        });
     };
 
     return {
         selectedWallet,
         selectedAccount,
-        recipients,
         handleSelectWallet,
         handleSelectAccount,
         addRecipient,
-        updateRecipient,
-        updateRecipientAmount,
         removeRecipient,
+        updateRecipient,
+
+        updateTxBuilder,
+        txBuilder,
+
+        createPsbt,
+        finalPsbt,
+        backToTxBuilder: () => setFinalPsbt(undefined),
+
+        handleSignAndSend,
+        txid,
+        loadindBroadcast,
     };
 };

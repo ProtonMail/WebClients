@@ -4,16 +4,16 @@ import { Button } from '@proton/atoms/Button';
 import { Input } from '@proton/atoms/Input';
 import { ButtonGroup } from '@proton/components/components';
 
-import { AccountWithBalanceAndTxs, BitcoinUnit } from '../../types';
+import { WasmRecipient } from '../../../pkg';
+import { AccountWithBlockchainData, BitcoinUnit } from '../../types';
 import { getAccountBalance } from '../../utils';
-import { TempRecipient, useOnchainTransactionBuilder } from './useOnchainTransactionBuilder';
+import { useOnchainTransactionBuilder } from './useOnchainTransactionBuilder';
 
 interface Props {
-    selectedAccount: AccountWithBalanceAndTxs;
-    recipients: TempRecipient[];
+    selectedAccount?: AccountWithBlockchainData;
+    recipients: WasmRecipient[];
     onRecipientAddition: ReturnType<typeof useOnchainTransactionBuilder>['addRecipient'];
     onRecipientUpdate: ReturnType<typeof useOnchainTransactionBuilder>['updateRecipient'];
-    onRecipientAmountUpdate: ReturnType<typeof useOnchainTransactionBuilder>['updateRecipientAmount'];
     onRecipientRemove: ReturnType<typeof useOnchainTransactionBuilder>['removeRecipient'];
 }
 
@@ -21,7 +21,6 @@ export const RecipientList = ({
     selectedAccount,
     recipients,
     onRecipientUpdate,
-    onRecipientAmountUpdate,
     onRecipientAddition,
     onRecipientRemove,
 }: Props) => {
@@ -31,13 +30,13 @@ export const RecipientList = ({
                 const isLastRecipientItem = index === recipients.length - 1;
 
                 return (
-                    <li className="overflow-hidden py-3 border-bottom border-weak" key={recipient.uuid}>
+                    <li className="overflow-hidden py-3 border-bottom border-weak" key={recipient[0]}>
                         <div className="flex flex-row">
                             <div className="w-2/3">
                                 <Input
                                     data-testid="recipient-address-input"
                                     placeholder={c('Wallet Send').t`Recipient address`}
-                                    value={recipient.address}
+                                    value={recipient[1]}
                                     onChange={(event) => {
                                         onRecipientUpdate(index, { address: event.target.value });
                                     }}
@@ -62,17 +61,16 @@ export const RecipientList = ({
                                     data-testid="recipient-amount-input"
                                     placeholder={c('Wallet Send').t`Amount`}
                                     type="number"
-                                    min={0}
-                                    value={recipient.amount}
+                                    value={Number(recipient[2])}
                                     onChange={(event) => {
-                                        onRecipientAmountUpdate(index, parseInt(event.target.value));
+                                        onRecipientUpdate(index, { amount: parseInt(event.target.value) });
                                     }}
                                 />
                             </div>
                             <ButtonGroup className="ml-3">
                                 <Button
                                     data-testid="recipient-sats-display-button"
-                                    selected={recipient.unit === BitcoinUnit.SATS}
+                                    // selected={recipient.unit === BitcoinUnit.SATS} TODO: fix this
                                     onClick={() => {
                                         onRecipientUpdate(index, { unit: BitcoinUnit.SATS });
                                     }}
@@ -81,7 +79,7 @@ export const RecipientList = ({
                                 </Button>
                                 <Button
                                     data-testid="recipient-btc-display-button"
-                                    selected={recipient.unit === BitcoinUnit.BTC}
+                                    // selected={recipient.unit === BitcoinUnit.BTC} TODO: fix this
                                     onClick={() => {
                                         onRecipientUpdate(index, { unit: BitcoinUnit.BTC });
                                     }}
@@ -89,13 +87,15 @@ export const RecipientList = ({
                                     BTC
                                 </Button>
                             </ButtonGroup>
-                            {recipients.length === 1 && (
+                            {recipients.length === 1 && selectedAccount && (
                                 <Button
                                     className="ml-3"
                                     shape="underline"
                                     color="norm"
                                     onClick={() => {
-                                        onRecipientAmountUpdate(index, getAccountBalance(selectedAccount));
+                                        onRecipientUpdate(index, {
+                                            amount: getAccountBalance(selectedAccount),
+                                        });
                                     }}
                                 >{c('Wallet Send').t`Maximum amount`}</Button>
                             )}

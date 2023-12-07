@@ -20,7 +20,7 @@ const ExploreProtonWalletItem = ({ iconSize, color, icon, title, content }: Expl
     return (
         <Card
             rounded
-            className="light-gradient-card mt-4 flex flex-column flex-align-items-start flex-item-grow max-w-custom mr-6"
+            className="light-gradient-card mt-4 flex flex-column items-start grow max-w-custom mr-6"
             style={{
                 '--max-w-custom': '11rem',
                 background: `linear-gradient(90deg, ${color}15 0%, var(--background-norm) 100%)`,
@@ -43,7 +43,7 @@ export const ExploreProtonWalletSection = () => {
         <div className="mt-14">
             <h2 className="h4 text-semibold">{c('Wallet Dashboard').t`Explore ${WALLET_APP_NAME}`}</h2>
 
-            <div className="flex flex-row flex-justify-space-evenly">
+            <div className="flex flex-row justify-space-evenly">
                 <Href
                     className="text-no-decoration"
                     // TODO: change this with real KB link

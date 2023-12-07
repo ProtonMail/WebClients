@@ -79,7 +79,7 @@ export const MnemonicGeneration = ({ onGenerated }: Props) => {
                 ))}
 
                 <div
-                    className="flex flex-row flex-align-items-center m-auto upper-layer p-2 rounded"
+                    className="flex flex-row items-center m-auto upper-layer p-2 rounded"
                     style={{ backdropFilter: 'blur(10px)' }}
                 >
                     <WalletLogo variant="glyph-only" className="mr-1" />

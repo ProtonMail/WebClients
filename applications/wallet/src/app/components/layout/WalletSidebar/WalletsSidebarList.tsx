@@ -31,7 +31,7 @@ export const WalletsSidebarList = ({ wallets }: Props) => {
                             right={<WalletExpandButton expanded={showWallets} onClick={toggleShowWallets} />}
                             className="flex w-full gap-2"
                         >
-                            <div className="ml-1 flex flex-nowrap flex-justify-space-between flex-align-items-center w-full relative">
+                            <div className="ml-1 flex flex-nowrap justify-space-between items-center w-full relative">
                                 <div className="text-ellipsis" title={'Wallet'}>
                                     {c('Wallet Sidebar').t`Wallets`}
                                 </div>

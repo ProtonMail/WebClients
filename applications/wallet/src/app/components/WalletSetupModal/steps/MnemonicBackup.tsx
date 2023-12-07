@@ -29,7 +29,7 @@ export const MnemonicBackup = ({ mnemonic, onContinue }: Props) => {
                         .t`This is your secret recovery phrase. If you lose access to your account, this phrase will let you recover your wallet.`}</p>
 
                     {/* Mnemonic words */}
-                    <Card rounded bordered={false} className="flex flex-row flex-justify-center">
+                    <Card rounded bordered={false} className="flex flex-row justify-center">
                         {mnemonic?.toWords().map((word, index) => (
                             // TODO: use Pills component here
                             <span

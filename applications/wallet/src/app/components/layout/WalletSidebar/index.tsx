@@ -25,8 +25,8 @@ const WalletSidebar = ({ expanded = false, wallets }: Props) => {
                 version={<AppVersion changelog={changelog} />}
             >
                 <SidebarNav className="flex mt-6">
-                    <div className="outline-none flex flex-column flex-justify-space-between flex-item-grow">
-                        <div className="flex-item-grow">
+                    <div className="outline-none flex flex-column justify-space-between grow">
+                        <div className="grow">
                             <SidebarList>
                                 <WalletsSidebarList wallets={wallets} />
                                 <TransactionsNavItem />
