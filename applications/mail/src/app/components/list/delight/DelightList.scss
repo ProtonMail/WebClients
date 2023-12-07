@@ -1,0 +1,45 @@
+@use 'sass:math';
+
+@import '~@proton/styles/scss/lib';
+
+.delight-items-column-list {
+	background-color: var(--background-lowered, var(--bg-weak));
+
+	&.is-column {
+		inline-size: var(--width-conversation-column, calc(100vw * #{math.div($conversations-column-width, 100%)}));
+		min-inline-size: 360px; // Subjective value
+		max-inline-size: calc(100vw - 450px - #{$width-sidebar}px - var(--drawer-width, 0rem)); // Subjective value
+	}
+
+	&.is-row {
+		inline-size: 100%;
+		min-inline-size: initial;
+		max-inline-size: initial;
+	}
+}
+
+.delight-items-column-list-inner {
+	border-inline-end: 1px solid var(--border-weak);
+	min-block-size: 100%;
+}
+
+html:not(.feature-scrollbars-off) .delight-items-column-list-container {
+	&::-webkit-scrollbar-track {
+		border-inline-start: 1px solid var(--border-weak);
+	}
+}
+
+// prevent double border on the right
+.main-area--row-mode .delight-items-column-list-inner {
+	margin-inline-end: -1px;
+}
+
+.delight-items-column-list--mobile {
+	inline-size: 100%;
+}
+
+.delight-items-column-list,
+.delight-items-column-list--mobile,
+.delight-view-column-detail {
+	block-size: 100%;
+}

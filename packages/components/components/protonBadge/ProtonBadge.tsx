@@ -14,12 +14,12 @@ const ProtonBadge = ({ text, tooltipText, selected = false }: Props) => {
         <Tooltip title={tooltipText}>
             <span
                 className={clsx(
-                    'label-proton-badge inline-flex rounded bg-weak shrink-0 text-ellipsis text-semibold ml-2 text-sm mr-1',
+                    'label-proton-badge inline-flex rounded-sm bg-weak shrink-0 text-ellipsis text-semibold text-sm ml-2 mr-1',
                     selected && 'label-proton-badge--selected'
                 )}
                 data-testid="proton-badge"
             >
-                <span className="label-proton-badge-text color-primary m-auto">{text}</span>
+                <span className="label-proton-badge-text m-auto">{text}</span>
             </span>
         </Tooltip>
     );

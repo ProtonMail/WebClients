@@ -94,7 +94,7 @@ const ContactRow = ({
             onDragStart={onDragStart}
             onDragEnd={onDragEnd}
             className={clsx(
-                'item-container item-contact flex cursor-pointer bg-global-white group-hover-opacity-container',
+                'contact-item-container item-contact flex cursor-pointer bg-global-white group-hover-opacity-container interactive-pseudo-inset interactive--no-background',
                 isDrawer && 'item-in-drawer',
                 dragged && 'item-dragging',
                 hasFocus && 'item-is-focused'
@@ -130,7 +130,7 @@ const ContactRow = ({
                 {emails[0] && (
                     <span className="flex gap-4">
                         {onCompose && (
-                            <div className="item-hover-action-buttons">
+                            <div className="contact-item-hover-action-buttons">
                                 <Tooltip title={c('Action').t`Compose`}>
                                     <Button color="weak" shape="ghost" icon onClick={handleCompose}>
                                         <Icon name="pen-square" alt={c('Action').t`Compose`} />
@@ -138,7 +138,7 @@ const ContactRow = ({
                                 </Tooltip>
                             </div>
                         )}
-                        <div className="item-hover-action-buttons">
+                        <div className="contact-item-hover-action-buttons">
                             <Copy
                                 value={emails[0]}
                                 className={clsx(isDrawer && 'mr-1')}

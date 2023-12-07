@@ -1,0 +1,193 @@
+@import '~@proton/styles/scss/lib';
+@import '~@proton/styles/scss/specifics/placeholder-loading';
+
+$item-container-height: rem(64);
+
+.delight-item {
+	&-container {
+		@extend %appearing-container;
+
+		--item-container-padding-inline: #{rem(16)};
+
+		padding-block: var(--item-container-padding-block);
+		padding-inline: var(--item-container-padding-inline);
+		scroll-margin-block-start: $item-container-height;
+		margin-block-start: -1px; // prevent double border
+		transition:
+			box-shadow 0 easing(ease-in-cubic),
+			color 100ms easing(ease-in),
+			background-color 100ms easing(ease-in);
+		animation: fadeInItem 150ms easing(ease-out) both;
+		box-shadow: none;
+
+		.is-comfortable .is-column & {
+			--item-container-padding-block: #{rem(12)};
+		}
+
+		.is-compact .is-column & {
+			--item-container-padding-block: #{rem(8)};
+
+			.item-icon-compact {
+				margin-inline-start: var(--space-1);
+				block-size: rem(28);
+			}
+		}
+
+		.is-comfortable .is-row & {
+			--item-container-padding-block: #{rem(10)};
+		}
+
+		.is-compact .is-row & {
+			--item-container-padding-block: #{rem(6)};
+
+			.item-icon-compact {
+				margin-block-start: 0;
+				margin-inline-start: var(--space-1);
+				block-size: rem(28);
+			}
+		}
+
+		&:hover {
+			z-index: 2;
+			box-shadow: var(--shadow-lifted);
+			transition:
+				box-shadow 150ms easing(ease-in-cubic),
+				color 100ms easing(ease-in),
+				background-color 100ms easing(ease-in);
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: $focus-ring-size;
+			border: 1px solid transparent;
+			border-radius: var(--border-radius-sm);
+			pointer-events: none;
+			transition: 0.15s easing(ease-out-quad);
+		}
+
+		@supports not selector(:focus-visible) {
+			&:focus {
+				border-color: transparent;
+				z-index: 2;
+			}
+
+			&:focus::after {
+				z-index: 1;
+				border-color: var(--focus-outline);
+				box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			}
+		}
+
+		@supports selector(:focus-visible) {
+			&:focus-visible {
+				border-color: transparent;
+				z-index: 2;
+			}
+
+			&:focus-visible::after {
+				z-index: 1;
+				border-color: var(--focus-outline);
+				box-shadow: 0 0 0 #{$focus-ring-size} var(--focus-ring);
+			}
+		}
+
+		&.unread {
+			--item-checkbox-background-color: var(--email-item-unread-icon-background-color);
+			--item-checkbox-icon-text-color: var(--email-item-unread-icon-text-color);
+
+			background-color: var(--email-item-unread-background-color);
+			color: var(--email-item-unread-text-color);
+		}
+
+		&.read {
+			--item-checkbox-background-color: var(--email-item-read-icon-background-color);
+			--item-checkbox-icon-text-color: var(--email-item-read-icon-text-color);
+
+			background-color: var(--email-item-read-background-color);
+			color: var(--email-item-read-text-color);
+		}
+
+		&.item-is-selected {
+			--item-checkbox-background-color: var(--email-item-selected-icon-background-color);
+			--item-checkbox-icon-text-color: var(--email-item-selected-icon-text-color);
+
+			background-color: var(--email-item-selected-background-color);
+			color: var(--email-item-selected-text-color);
+
+			.button[disabled],
+			.button[aria-expanded='true'] {
+				color: var(--email-item-selected-text-color);
+			}
+		}
+	}
+
+	&-firstline,
+	&-secondline {
+		block-size: rem(20);
+		line-height: calc(20 * 1.5 / 21);
+	}
+
+	&-secondline:empty::before {
+		content: ' ';
+	}
+
+	&-unread-dot {
+		.is-compact .is-column &,
+		.is-compact .is-row & {
+			margin-inline-end: var(--space-0-5);
+		}
+
+		.is-comfortable .is-column & {
+			position: absolute;
+			inset-block-start: rem(19);
+			inset-inline-start: rem(2);
+		}
+
+		.is-comfortable .is-row & {
+			position: absolute;
+			inset-block-start: rem(18);
+			inset-inline-start: rem(2);
+		}
+	}
+
+	@include media('mouse', '>small') {
+		.is-column &-hover-action-buttons {
+			margin-inline-end: rem(-6); // Magic number to get perfect alignment with star on hover
+			inset-block-start: rem(10);
+		}
+
+		.is-row &-hover-action-buttons {
+			margin-inline-end: rem(-6);
+			margin-block-start: rem(-8);
+			inset-block-start: rem(4);
+		}
+
+		&-container:hover &-hover-action-buttons,
+		&-container--row:hover &-hover-action-buttons {
+			display: inline-flex;
+			position: relative;
+		}
+
+		&-container:hover .item-meta-infos,
+		&-container:hover .delight-item-firstline-infos,
+		&-container--row:hover .item-senddate-row {
+			display: none;
+		}
+	}
+
+	// Used to keep the buttons visible when a dropdown is open regardless of hover state
+	&-hover-action-buttons--dropdown-open {
+		display: inline-flex;
+	}
+}
+
+@keyframes fadeInItem {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
