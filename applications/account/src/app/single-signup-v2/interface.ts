@@ -16,7 +16,14 @@ import type {
 } from '@proton/shared/lib/interfaces';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
-import type { InviteData, ReferralData, SessionData, SubscriptionData, UserCacheResult } from '../signup/interfaces';
+import type {
+    InviteData,
+    ReferralData,
+    SessionData,
+    SignupActionDoneResponse,
+    SubscriptionData,
+    UserCacheResult,
+} from '../signup/interfaces';
 import { SignupCacheResult, SignupType } from '../signup/interfaces';
 import { getSignupSearchParams } from '../signup/searchParams';
 import { PlanCard } from './PlanCardSelector';
@@ -114,7 +121,7 @@ export enum SignupMode {
 export interface SignupTheme {
     type?: ThemeTypes;
     background?: 'bf';
-    intent: APP_NAMES;
+    intent: APP_NAMES | undefined;
 }
 
 export interface SignupDefaults {
@@ -125,7 +132,7 @@ export interface SignupDefaults {
 export interface SignupCustomStepProps {
     theme: SignupTheme;
     logo: ReactNode;
-    onSetup: (cache: SignupCacheResult | UserCacheResult) => Promise<void>;
+    onSetup: (cache: { type: 'signup'; payload: SignupActionDoneResponse } | UserCacheResult) => Promise<void>;
     model: SignupModelV2;
     onChangeModel: (diff: Partial<SignupModelV2>) => void;
     fork: boolean;
