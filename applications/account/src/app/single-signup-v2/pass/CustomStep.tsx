@@ -10,6 +10,7 @@ import { isIos, isIpad } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
+import { handleDone } from '../../signup/signupActions';
 import Layout from '../Layout';
 import Step2 from '../Step2';
 import { SignupCustomStepProps } from '../interface';
@@ -136,7 +137,12 @@ const CustomStep = ({
                             if (!model.cache) {
                                 throw new Error('Missing cache');
                             }
-                            await onSetup(model.cache);
+                            if (model.cache.type === 'user') {
+                                await onSetup(model.cache);
+                            } else {
+                                const signupActionResponse = handleDone({ cache: model.cache });
+                                await onSetup({ type: 'signup', payload: signupActionResponse });
+                            }
                         }
 
                         await sendExtensionMessage<{ type: 'pass-onboarding' }>(

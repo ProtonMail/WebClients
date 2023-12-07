@@ -564,13 +564,9 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                             >
                                                 {(() => {
                                                     if (
-                                                        (hasBFCoupon ||
-                                                            searchParams.get('plan') === PLANS.NEW_VISIONARY) &&
-                                                        [
-                                                            APPS.PROTONMAIL,
-                                                            APPS.PROTONCALENDAR,
-                                                            APPS.PROTONDRIVE,
-                                                        ].includes(maybePreAppIntent as any)
+                                                        hasBFCoupon ||
+                                                        searchParams.get('mode') === 'sps' ||
+                                                        searchParams.get('plan') === PLANS.NEW_VISIONARY
                                                     ) {
                                                         return (
                                                             <SingleSignupContainerV2
@@ -578,7 +574,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                                 metaTags={getSignupMeta(maybePreAppIntent)}
                                                                 activeSessions={activeSessions}
                                                                 loader={loader}
-                                                                productParam={maybePreAppIntent}
+                                                                productParam={productParam}
                                                                 clientType={clientType}
                                                                 toApp={maybePreAppIntent}
                                                                 toAppName={toAppName}
