@@ -5,9 +5,10 @@ import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getLocalPart } from '@proton/shared/lib/keys';
 
 import CongratulationsStep from '../../signup/CongratulationsStep';
+import ExploreStep from '../../signup/ExploreStep';
 import RecoveryStep from '../../signup/RecoveryStep';
-import { SignupCacheResult, SignupType } from '../../signup/interfaces';
-import { handleDisplayName, handleSaveRecovery } from '../../signup/signupActions';
+import { SignupCacheResult, SignupSteps, SignupType } from '../../signup/interfaces';
+import { handleDisplayName, handleDone, handleSaveRecovery } from '../../signup/signupActions';
 import { useFlowRef } from '../../useFlowRef';
 import Layout from '../Layout';
 import { SignupCustomStepProps } from '../interface';
@@ -15,6 +16,7 @@ import { SignupCustomStepProps } from '../interface';
 enum Step {
     Congratulations,
     SaveRecovery,
+    Explore,
 }
 
 const CustomStep = ({ model, onSetup, theme, logo }: SignupCustomStepProps) => {
@@ -92,12 +94,38 @@ const CustomStep = ({ model, onSetup, theme, logo }: SignupCustomStepProps) => {
 
                             if (validateFlow()) {
                                 cacheRef.current = signupActionResponse.cache;
-                                await onSetup(signupActionResponse.cache);
+                                if (signupActionResponse.to === SignupSteps.Done) {
+                                    await onSetup({ type: 'signup', payload: signupActionResponse });
+                                } else {
+                                    setStep(Step.Explore);
+                                }
                             }
                         } catch (error) {
                             handleError(error);
                         } finally {
                             createFlow.reset();
+                        }
+                    }}
+                />
+            )}
+            {step === Step.Explore && (
+                <ExploreStep
+                    onExplore={async (app) => {
+                        try {
+                            if (!cache || cache.type !== 'signup') {
+                                throw new Error('Missing cache');
+                            }
+                            const validateFlow = createFlow();
+                            const signupActionResponse = handleDone({
+                                cache,
+                                appIntent: { app, ref: 'product-switch' },
+                            });
+
+                            if (validateFlow()) {
+                                await onSetup({ type: 'signup', payload: signupActionResponse });
+                            }
+                        } catch (error) {
+                            handleError(error);
                         }
                     }}
                 />
