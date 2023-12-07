@@ -13,7 +13,8 @@
                 "https://pass.proton.me/*",
                 "https://pass.proton.local/*",
                 "https://pass.proton.black/*",
-                "https://pass.proton.pink/*"
+                "https://pass.proton.pink/*",
+                "https://pass.protontech.ch/*"
             ],
             "js": ["orchestrator.js"],
             "all_frames": false,
@@ -24,7 +25,8 @@
                 "https://*.proton.me/*",
                 "https://*.proton.black/*",
                 "https://*.proton.pink/*",
-                "https://*.proton.local/*"
+                "https://*.proton.local/*",
+                "https://*.protontech.ch/*"
             ],
             "js": ["account.js"],
             "all_frames": false,
