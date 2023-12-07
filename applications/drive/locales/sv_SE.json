@@ -2014,6 +2014,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } har uppdaterats. ${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Denna förekomst av ${ eventTitle } har avbrutits."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Du är inbjuden till ${ eventTitle } ${ eventDetailsText }"
       ]
@@ -3454,6 +3457,9 @@
       ],
       "Close this screen to exit.": [
         "Stäng denna skärm för att avsluta."
+      ],
+      "Coming soon": [
+        "Kommer snart"
       ],
       "Conflict": [
         "Konflikt"
