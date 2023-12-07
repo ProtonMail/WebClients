@@ -88,6 +88,7 @@ export type IconName =
     | 'brand-proton-mail'
     | 'brand-proton-mail-filled'
     | 'brand-proton-mail-filled-plus'
+    | 'brand-proton-pass'
     | 'brand-proton-vpn'
     | 'brand-reddit'
     | 'brand-simple-login'
