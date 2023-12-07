@@ -2295,6 +2295,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } è stato aggiornato.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Questa occorrenza di ${ eventTitle } è stata cancellata."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Sei invitato a ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -3700,6 +3703,9 @@
         "Tutta la (${ totalFoldersCount } etichetta)",
         "Tutte le (${ totalFoldersCount } etichette)"
       ],
+      "All participants will get a cancellation email. Which event would you like to delete?": [
+        "Tutti i partecipanti riceveranno un'email di cancellazione. Quale evento vorresti eliminare?"
+      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Tutti i tuoi contatti verranno importati, fino a un limite di ${ MAX_CONTACTS_PER_USER }",
         "Tutti i tuoi contatti verranno importati, fino a un limite di ${ MAX_CONTACTS_PER_USER }"
@@ -3915,7 +3921,7 @@
         "Indicizzazione in pausa"
       ],
       "Inherited from parent folder": [
-        "Ereditato dalla cartella principale"
+        "Preso dalla cartella principale"
       ],
       "Internet connection lost": [
         "Connessione ad Internet interrotta"

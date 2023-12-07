@@ -2295,6 +2295,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } ha sido actualizado.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Esta incidencia de ${ eventTitle } ha sido cancelada."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Está invitado a ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -3699,6 +3702,9 @@
       "All (${ totalFoldersCount } label)": [
         "Todo (${ totalFoldersCount } etiqueta)",
         "Todo (${ totalFoldersCount } etiquetas)"
+      ],
+      "All participants will get a cancellation email. Which event would you like to delete?": [
+        "Todos los participantes recibirán un correo electrónico de cancelación. ¿Qué evento desea eliminar?"
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Todos sus contactos serán importados, hasta un límite de ${ MAX_CONTACTS_PER_USER }",
