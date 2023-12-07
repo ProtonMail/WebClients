@@ -116,7 +116,7 @@ export const InstallationSuccess: VFC = () => {
                                                             className="pass-installation--dot rounded-50 text-center mr-3 relative"
                                                             aria-hidden="true"
                                                         >
-                                                            <span className="absolute absolute-center">{idx + 1}</span>
+                                                            <span className="absolute inset-center">{idx + 1}</span>
                                                         </div>
                                                         <div
                                                             className="w-custom text-center mr-2"
