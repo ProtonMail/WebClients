@@ -25,7 +25,7 @@ const SubscriptionThanks = ({ paymentMethodType, onClose, loading, showDownloads
     return (
         <div className="relative">
             {loading && (
-                <div className="text-center absolute absolute-center pb-14">
+                <div className="text-center absolute inset-center pb-14">
                     <CircleLoader size="large" className="color-primary" />
                 </div>
             )}

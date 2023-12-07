@@ -101,7 +101,7 @@ export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, o
                                     >
                                         <Icon
                                             name={itemTypeToIconName[type]}
-                                            className="absolute-center"
+                                            className="absolute inset-center"
                                             color="var(--interaction-norm)"
                                         />
                                     </span>
@@ -118,7 +118,11 @@ export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, o
                                     className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon shrink-0"
                                     style={{ '--w-custom': `2em`, '--h-custom': `2em` }}
                                 >
-                                    <Icon name="key" className="absolute-center" color="var(--interaction-norm)" />
+                                    <Icon
+                                        name="key"
+                                        className="absolute inset-center"
+                                        color="var(--interaction-norm)"
+                                    />
                                 </span>
                             }
                         />

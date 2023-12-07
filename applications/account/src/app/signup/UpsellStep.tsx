@@ -138,7 +138,7 @@ const UpsellStep = ({
 
         return (
             <Main center={false} disableShadow className="sign-layout-upsell sign-layout-upsell-most-popular">
-                <div className="absolute top-0 left-0 w-full absolute-center-y absolute-center-x flex justify-center">
+                <div className="absolute top-0 left-0 w-full inset-center flex justify-center">
                     <div className="rounded-full bg-primary text-uppercase text-semibold px-4 py-1">{c(
                         'new_plans: info'
                     ).t`Most popular`}</div>
