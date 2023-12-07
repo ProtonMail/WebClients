@@ -110,9 +110,11 @@ export const getPermissions = ({
         }
     }
 
-    const canEditInternalAddress = Type !== ADDRESS_TYPE.TYPE_EXTERNAL;
+    const canEditInternalAddress = Type !== ADDRESS_TYPE.TYPE_EXTERNAL && isSelf;
     const canEditExternalAddress =
-        Type === ADDRESS_TYPE.TYPE_EXTERNAL && ConfirmationState !== AddressConfirmationState.CONFIRMATION_CONFIRMED;
+        Type === ADDRESS_TYPE.TYPE_EXTERNAL &&
+        ConfirmationState !== AddressConfirmationState.CONFIRMATION_CONFIRMED &&
+        isSelf;
 
     return {
         canMakeDefault,
