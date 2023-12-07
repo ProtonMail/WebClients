@@ -8,7 +8,7 @@ import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features'
 import { getCalendarAppFeature, getNCalendarsFeature } from './calendar';
 import { getDriveAppFeature, getStorageFeature, getStorageFeatureB2B } from './drive';
 import { getSentinel, getSupport, getUsersFeature } from './highlights';
-import { ShortPlan, ShortPlanLike } from './interface';
+import { PlanCardFeatureDefinition, ShortPlan, ShortPlanLike } from './interface';
 import {
     getContactGroupsManagement,
     getFoldersAndLabelsFeature,
@@ -59,6 +59,20 @@ import {
     getVPNConnections,
     getVPNSpeed,
 } from './vpn';
+
+export const getAllAppsFeature = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: info').t`All ${BRAND_NAME} apps and their premium features`,
+        included: true,
+    };
+};
+
+export const getEarlyAccessFeature = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: info').t`Early access to new apps and features`,
+        included: true,
+    };
+};
 
 const getCTA = (planName: string) => {
     return c('new_plans: action').t`Get ${planName}`;

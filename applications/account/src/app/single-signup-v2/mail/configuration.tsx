@@ -13,6 +13,7 @@ import {
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import {
     APPS,
+    BRAND_NAME,
     CALENDAR_APP_NAME,
     CYCLE,
     MAIL_APP_NAME,
@@ -75,12 +76,23 @@ export const getCustomMailFeatures = (plan: Plan | undefined) => {
     ];
 };
 
+export const getPlanTitle = (plan: Plan | undefined) => {
+    if (!plan) {
+        return;
+    }
+    if (plan.Name === PLANS.NEW_VISIONARY) {
+        return c('mail_signup_2023: Info').t`Become a Visionary and be part of ${BRAND_NAME}'s story`;
+    }
+};
+
 export const getMailConfiguration = ({
+    plan,
     isLargeViewport,
     vpnServersCountData,
     hideFreePlan,
     plansMap,
 }: {
+    plan: Plan | undefined;
     hideFreePlan: boolean;
     isLargeViewport: boolean;
     vpnServersCountData: VPNServersCountData;
@@ -88,7 +100,9 @@ export const getMailConfiguration = ({
 }): SignupConfiguration => {
     const logo = <MailLogo />;
 
-    const title = <>{c('mail_signup_2023: Info').t`Secure email that protects your privacy`}</>;
+    const title = (() => {
+        return <>{getPlanTitle(plan) || c('mail_signup_2023: Info').t`Secure email that protects your privacy`}</>;
+    })();
 
     const features = getGenericFeatures(isLargeViewport);
 
