@@ -8,7 +8,7 @@ export const getPassAppFeature = (): PlanCardFeatureDefinition => {
     return {
         text: PASS_APP_NAME,
         included: true,
-        icon: 'brand-proton',
+        icon: 'brand-proton-pass',
         tooltip: c('tooltip')
             .t`${PASS_APP_NAME}: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.`,
     };
