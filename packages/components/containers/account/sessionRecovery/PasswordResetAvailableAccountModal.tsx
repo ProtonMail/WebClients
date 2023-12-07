@@ -120,12 +120,14 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
 
     const infoSubline =
         timeRemaining.inDays === 0
-            ? c('session_recovery:available:info').ngettext(
+            ? // translator: Full sentence "This permission expires in N hours (1, 2, 3, etc.)"
+              c('session_recovery:available:info').ngettext(
                   msgid`This permission expires in ${timeRemaining.inHours} hour`,
                   `This permission expires in ${timeRemaining.inHours} hours`,
                   timeRemaining.inHours
               )
-            : c('session_recovery:available:info').ngettext(
+            : // translator: Full sentence "This permission expires in N days (1, 2, 3, etc.)"
+              c('session_recovery:available:info').ngettext(
                   msgid`This permission expires in ${timeRemaining.inDays} day`,
                   `This permission expires in ${timeRemaining.inDays} days`,
                   timeRemaining.inDays
@@ -140,12 +142,14 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
     const boldDaysRemaining = (
         <b key="bold-days-remaining">
             {timeRemaining.inDays === 0
-                ? c('session_recovery:available:info').ngettext(
+                ? // translator: Full sentence "You can now change your password for the account <user@email.com> freely for <N hours>.
+                  c('session_recovery:available:info').ngettext(
                       msgid`${timeRemaining.inHours} hour`,
                       `${timeRemaining.inHours} hours`,
                       timeRemaining.inHours
                   )
-                : c('session_recovery:available:info').ngettext(
+                : // translator: Full sentence "You can now change your password for the account <user@email.com> freely for <N days>.
+                  c('session_recovery:available:info').ngettext(
                       msgid`${timeRemaining.inDays} day`,
                       `${timeRemaining.inDays} days`,
                       timeRemaining.inDays
@@ -166,8 +170,11 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
                             <img src={passwordResetIllustration} alt="" />
                         </div>
                         <div>
-                            {c('session_recovery:available:info')
-                                .jt`You can now change your password for the account ${boldEmail} freely for ${boldDaysRemaining}.`}
+                            {
+                                // translator: Full sentence "You can now change your password for the account <user@email.com> freely for <N days/hours>.
+                                c('session_recovery:available:info')
+                                    .jt`You can now change your password for the account ${boldEmail} freely for ${boldDaysRemaining}.`
+                            }
                         </div>
                         <div>
                             {c('session_recovery:available:info')
