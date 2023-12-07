@@ -20,6 +20,9 @@ import passTheme from '@proton/colors/themes/dist/pass.theme.css';
 import snowTheme from '@proton/colors/themes/dist/snow.theme.css';
 import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
 
+import { getPersistedSessions } from '../authentication/persistedSessionStorage';
+import { isElectronApp } from '../helpers/desktop';
+
 export enum ThemeTypes {
     Duotone = 0,
     Carbon = 1,
@@ -287,7 +290,7 @@ export interface ThemeSetting {
 }
 
 export const getDefaultThemeSetting = (themeType?: ThemeTypes): ThemeSetting => {
-    return {
+    const theme = {
         Mode: ThemeModeSetting.Light,
         LightTheme: themeType || PROTON_DEFAULT_THEME,
         DarkTheme: ThemeTypes.Carbon,
@@ -295,6 +298,22 @@ export const getDefaultThemeSetting = (themeType?: ThemeTypes): ThemeSetting => 
         FontFace: ThemeFontFaceSetting.DEFAULT,
         Features: ThemeFeatureSetting.DEFAULT,
     };
+
+    // Electron follow system settings and only Snow and Carbon theme
+    if (isElectronApp()) {
+        // We only force the theme once the user is looged in
+        const session = getPersistedSessions();
+        if (session.length) {
+            return {
+                ...theme,
+                Mode: ThemeModeSetting.Auto,
+                LightTheme: ThemeTypes.Snow,
+                DarkTheme: ThemeTypes.Carbon,
+            };
+        }
+    }
+
+    return theme;
 };
 
 const getValidatedThemeType = (themeType: number): ThemeTypes | undefined => {
@@ -344,6 +363,11 @@ const getValidatedFeatures = (maybeFeatures: number | undefined) => {
 };
 
 export const getParsedThemeSetting = (storedThemeSetting: string | undefined): ThemeSetting => {
+    // Electron follow system settings and only Snow and Carbon theme
+    if (isElectronApp()) {
+        return getDefaultThemeSetting();
+    }
+
     // The theme cookie used to contain just the theme number type.
     if (storedThemeSetting && storedThemeSetting?.length === 1) {
         const maybeParsedThemeType = getParsedThemeType(storedThemeSetting);
