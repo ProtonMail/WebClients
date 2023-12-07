@@ -25,10 +25,9 @@ const windowOSConfig: BrowserWindowConstructorOptions = {};
 
 const macOSConfig: BrowserWindowConstructorOptions = {
     frame: false,
-    transparent: true,
     titleBarStyle: "hidden",
-    vibrancy: "under-window",
-    trafficLightPosition: { x: 12, y: 8 },
+    vibrancy: "sidebar",
+    trafficLightPosition: { x: 12, y: 18 },
 };
 
 const getOSSpecificConfig = () => {
