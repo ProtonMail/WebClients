@@ -1,3 +1,5 @@
+@use "sass:map";
+
 @include responsive-classes(
 	(
 		static: (
@@ -24,6 +26,10 @@
 	)
 );
 
+.inset-0 {
+	inset: 0;
+}
+
 .inset-center {
 	inset-block-start: 50%;
 	inset-inline-start: 50%;
@@ -48,13 +54,6 @@
 	transform: translateY(-50%);
 }
 
-.upper-layer {
-	z-index: $layer-upper;
-}
-
-///
-/// Placements
-///
 .top-0 {
 	inset-block-start: 0;
 }
@@ -73,14 +72,9 @@
 	inset-inline-end: 0;
 }
 
-.inset-0 {
-	inset: 0;
-}
-
 ///
 /// set up to use inline style with custom props
 /// to avoid having logical props in JS, postCSS can't process them
-/// Specificity issue with composer and others -_-v
 ///
 .top-custom {
 	inset-block-start: var(--top-custom);
@@ -108,4 +102,22 @@
 
 .inset-custom {
 	inset: var(--inset-custom);
+}
+
+/// ---
+
+.z-0 {
+	z-index: 0;
+}
+
+.z-1 {
+	z-index: 1;
+}
+
+.z-up {
+	z-index: map.get($z-indexes, 'up');
+}
+
+.z-custom {
+	z-index: var(--z-custom);
 }
