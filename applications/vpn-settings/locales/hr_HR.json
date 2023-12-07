@@ -89,6 +89,18 @@
       "Create": [
         "Stvori"
       ],
+      "Create Gateway": [
+        "Stvori pristupnik"
+      ],
+      "Create user": [
+        "Stvori korisnika"
+      ],
+      "Create users": [
+        "Stvori korisnike"
+      ],
+      "Current plan": [
+        "Trenutni plan"
+      ],
       "Decrease": [
         "Smanji"
       ],
@@ -131,20 +143,38 @@
       "Edit": [
         "Uredi"
       ],
+      "Edit billing details": [
+        "Uredi detalje naplate"
+      ],
       "Edit display name": [
         "Uredi zaslonski naziv"
       ],
       "Edit email address": [
         "Uredi adresu e-pošte"
       ],
+      "Edit Gateway": [
+        "Uredi pristupnik"
+      ],
       "Edit invoice details": [
         "Uredite detalje fakture"
+      ],
+      "Edit name": [
+        "Uredi ime"
+      ],
+      "Edit password": [
+        "Uredi lozinku"
       ],
       "Edit phone number": [
         "Uredi broj telefona"
       ],
+      "Edit servers": [
+        "Uredi poslužitelje"
+      ],
       "Edit sign-in details": [
         "Uredite detalje za prijavu"
+      ],
+      "Edit users": [
+        "Uredi korisnike"
       ],
       "enable desktop notifications": [
         "omogući obavijesti radne površine"
@@ -163,6 +193,9 @@
       ],
       "Get ${ vpnPlus }": [
         "Nabavite ${ vpnPlus }"
+      ],
+      "Get the deal": [
+        "Ugrabite ponudu"
       ],
       "Get verification code": [
         "Nabavi kôd za provjeru"
@@ -431,6 +464,9 @@
       ],
       "Edit": [
         "Uredi"
+      ],
+      "Edit address": [
+        "Uredi adresu"
       ],
       "Enable": [
         "Omogući"
@@ -793,6 +829,9 @@
       ],
       "Bulgaria": [
         "Bugarska"
+      ],
+      "Burkina Faso": [
+        "Burkina Faso"
       ],
       "Burundi": [
         "Burundi"
@@ -1283,8 +1322,14 @@
       "Seychelles": [
         "Sejšeli"
       ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
       "Singapore": [
         "Singapur"
+      ],
+      "Sint Maarten": [
+        "Sveti Martin"
       ],
       "Slovakia": [
         "Slovačka"
@@ -1369,6 +1414,9 @@
       ],
       "Turkey": [
         "Turska"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
       ],
       "Turks and Caicos Islands": [
         "Otoci Turks i Caicos"
@@ -1619,6 +1667,9 @@
       ]
     },
     "familyOffer_2023:Action": {
+      "Create a new user": [
+        "Stvori novog korisnika"
+      ],
       "Got it": [
         "Shvaćam"
       ],
@@ -1818,6 +1869,9 @@
     "Header": {
       "Best deal": [
         "Najbolja ponuda"
+      ],
+      "Country": [
+        "Država"
       ],
       "IP address": [
         "IP adresa"
@@ -2403,6 +2457,11 @@
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } adresa"
       ],
+      "${ n } month": [
+        "${ n } mjesec",
+        "${ n } mjeseca",
+        "${ n } mjeseci"
+      ],
       "${ nbDay } day": [
         "${ nbDay } dan",
         "${ nbDay } dana",
@@ -2443,6 +2502,9 @@
       ],
       "Browser version": [
         "Verzija preglednika"
+      ],
+      "Card details": [
+        "Pojedinosti o kartici"
       ],
       "Card holder": [
         "Vlasnik kartice"
@@ -2551,6 +2613,9 @@
       ],
       "New password": [
         "Nova lozinka"
+      ],
+      "New plan": [
+        "Novi plan"
       ],
       "OpenVPN / IKEv2 password": [
         "OpenVPN / IKEv2 lozinka"
@@ -2795,15 +2860,20 @@
         "${ n } kalendara po korisniku",
         "${ n } kalendara po korisniku"
       ],
+      "${ n } email address": [
+        "${ n } adresa e-pošte",
+        "${ n } adresa e-pošte/pseudonim",
+        "${ n } adresa e-pošte/pseudonima"
+      ],
       "${ n } email address per user": [
         "${ n } e-pošta po korisniku",
         "${ n } e-pošte po korisniku",
         "${ n } e-pošte po korisniku"
       ],
       "${ n } filter": [
-        "${ n } filter",
-        "${ n } filtera",
-        "${ n } filtera"
+        "${ n } filtar",
+        "${ n } filtara",
+        "${ n } filtara"
       ],
       "${ n } folder": [
         "${ n } mapa",
@@ -2863,6 +2933,9 @@
       "Strict no-logs policy": [
         "Stroga politika ne spremanja zapisa"
       ],
+      "Tor over VPN": [
+        "Tor preko VPN-a"
+      ],
       "Two-factor authentication": [
         "Dvofaktorska autentikacija"
       ],
@@ -2913,6 +2986,9 @@
       ]
     },
     "Notification": {
+      "Invalid code": [
+        "Nevažeći kôd"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 vjerodajnice su ponovno stvorene"
       ]
@@ -2957,6 +3033,9 @@
     "pass_signup_2023: Action": {
       "Start using ${ appName }": [
         "Započnite koristiti ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Nadogradi moj plan"
       ]
     },
     "pass_signup_2023: Header": {
@@ -3119,6 +3198,11 @@
         "${ timeRemaining.inHours } sat",
         "${ timeRemaining.inHours } sata",
         "${ timeRemaining.inHours } sati"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Lozinka spremljena"
       ]
     },
     "session_recovery:cancellation:action": {
@@ -3616,6 +3700,9 @@
       "Contact us": [
         "Kontaktirajte nas"
       ],
+      "Create Gateway": [
+        "Stvori pristupnik"
+      ],
       "Credits": [
         "Kredit"
       ],
@@ -3639,6 +3726,9 @@
       ],
       "Delete user": [
         "Izbriši korisnika"
+      ],
+      "Delete user?": [
+        "Izbriši korisnika?"
       ],
       "Device connected!": [
         "Uređaj je povezan!"
@@ -3667,8 +3757,14 @@
       "Edit invoice details": [
         "Uredite detalje fakture"
       ],
+      "Edit servers": [
+        "Uredi poslužitelje"
+      ],
       "Edit user": [
         "Uređivanje korisnika"
+      ],
+      "Edit users": [
+        "Uredi korisnike"
       ],
       "Email": [
         "E-pošta"
