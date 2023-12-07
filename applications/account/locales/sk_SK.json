@@ -5791,17 +5791,6 @@
         "Časť obsahu vášho kalendára nie je podporovaná a nebude importovaná."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Boli zistené ďalšie duplicitné kľúče. Pre viac informácií ich prosím nahrajte jednotlivo."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kľúč ${ fingerprint } už bol nahraný"
-      ],
-      "Selected color:": [
-        "Vybraná farba:"
-      ]
-    },
     "Info": {
       "${ amountOfAddresses } address": [
         "${ amountOfAddresses } adresa",
@@ -8021,7 +8010,7 @@
         "Uzamknuté údaje nebudete môcť obnoviť pomocou stiahnutých súborov na obnovenie."
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "You won’t be able to recover locked data using your downloaded recovery files. Tým sa zakáže aj obnovenie z dôveryhodného zariadenia."
+        "Uzamknuté údaje nebudete môcť obnoviť pomocou súborov obnovy. Tým sa zakáže aj obnovenie z dôveryhodného zariadenia."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Vaše prihlásenie zostane zachované aj po zatvorení prehliadača."
@@ -8118,6 +8107,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Vaše predplatné je spravované Mozillou. Kontaktujte prosím Mozilla podporu."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Boli zistené ďalšie duplicitné kľúče. Pre viac informácií ich prosím nahrajte jednotlivo."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kľúč ${ fingerprint } už bol nahraný"
+      ],
+      "Selected color:": [
+        "Vybraná farba:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10616,17 +10616,6 @@
         "Tímový manažment"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačnom prípade bude prístup k vášmu účtu obmedzený a váš účet bude nakoniec deaktivovaný."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ak chcete naďalej používať ${ MAIL_APP_NAME } s prémiovými funkciami, vyberte si predplatné a možnosti platby."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Skúšobná verzia končí ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končiaca na ${ last4 }"
@@ -10714,6 +10703,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačnom prípade bude prístup k vášmu účtu obmedzený a váš účet bude nakoniec deaktivovaný."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ak chcete naďalej používať ${ MAIL_APP_NAME } s prémiovými funkciami, vyberte si predplatné a možnosti platby."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Skúšobná verzia končí ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12400,14 +12400,8 @@
       "Allow password reset from settings": [
         "Povoliť obnovenie hesla z nastavení"
       ],
-      "Request a password reset from your Account settings. No recovery method needed.": [
-        "Vyžiadajte si obnovenie hesla v nastaveniach účtu. Nie je potrebný žiadny spôsob obnovy."
-      ],
       "Request password reset": [
         "Žiadosť o obnovenie hesla"
-      ],
-      "To disallow password reset, you must have a recovery method set up.": [
-        "Ak chcete zakázať obnovenie hesla, musíte mať nastavený spôsob obnovenia."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -14120,9 +14114,6 @@
       ],
       "Password and keys": [
         "Heslo a kľúče"
-      ],
-      "Password reset": [
-        "Obnovenie hesla"
       ],
       "Pay invoice": [
         "Zaplatiť faktúru"

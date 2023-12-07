@@ -300,6 +300,9 @@
       "Edit email address": [
         "Uredi adresu e-pošte"
       ],
+      "Edit encryption": [
+        "Uredi enkripciju"
+      ],
       "Edit folder": [
         "Uredi mapu"
       ],
@@ -527,6 +530,9 @@
       "Move": [
         "Premjesti"
       ],
+      "Move all to trash": [
+        "Premjesti sve u otpad"
+      ],
       "move emails to": [
         "premjesti e-poštu u"
       ],
@@ -670,6 +676,9 @@
       ],
       "Remove ${ attachmentName }": [
         "Izbriši ${ attachmentName }"
+      ],
+      "Remove encryption": [
+        "Ukloni šifriranje"
       ],
       "Remove this label": [
         "Ukloni ovu oznaku"
@@ -1713,6 +1722,9 @@
       "Bulgaria": [
         "Bugarska"
       ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
       "Burundi": [
         "Burundi"
       ],
@@ -2202,8 +2214,14 @@
       "Seychelles": [
         "Sejšeli"
       ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
       "Singapore": [
         "Singapur"
+      ],
+      "Sint Maarten": [
+        "Sveti Martin"
       ],
       "Slovakia": [
         "Slovačka"
@@ -2288,6 +2306,9 @@
       ],
       "Turkey": [
         "Turska"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
       ],
       "Turks and Caicos Islands": [
         "Otoci Turks i Caicos"
@@ -2858,6 +2879,9 @@
       "Component with wrong format": [
         "Komponenta s pogrešnim formatom"
       ],
+      "Custom time zone": [
+        "Prilagođena vremenska zona"
+      ],
       "Edited event not supported": [
         "Uređeni događaj nije podržan"
       ],
@@ -3096,6 +3120,9 @@
     "Filter Actions": {
       "Archive": [
         "Arhiva"
+      ],
+      "Do not move": [
+        "Ne premještaj"
       ],
       "Inbox": [
         "Pristigla pošta"
@@ -3765,6 +3792,9 @@
       ],
       "Edit email address": [
         "Uredi adresu e-pošte"
+      ],
+      "Edit encryption": [
+        "Uredi enkripciju"
       ],
       "Edit link": [
         "Uredi poveznicu"
@@ -4559,6 +4589,9 @@
       "Awful": [
         "Užasno"
       ],
+      "Bad": [
+        "Loše"
+      ],
       "BCC": [
         "Skrivena kopija"
       ],
@@ -4772,6 +4805,9 @@
       "OK": [
         "U redu"
       ],
+      "Open in a new tab": [
+        "Otvori u novoj kartici"
+      ],
       "Operating system": [
         "Operativni sustav"
       ],
@@ -4926,6 +4962,11 @@
     "Label attach to date input to select a date": {
       "Date": [
         "Datum"
+      ]
+    },
+    "Label attach to time input to select hours": {
+      "Time": [
+        "Vrijeme"
       ]
     },
     "Label for contact group color": {
@@ -5367,6 +5408,9 @@
       ]
     },
     "Online Accounts Name": {
+      "Banking": [
+        "Financije"
+      ],
       "Crypto": [
         "Kripto"
       ],
@@ -5412,6 +5456,11 @@
       ],
       "Move to...": [
         "Premjesti u..."
+      ]
+    },
+    "Option group label": {
+      "Create new calendar": [
+        "Stvori novi kalendar"
       ]
     },
     "Participant name": {
@@ -5728,6 +5777,11 @@
         "${ timeRemaining.inHours } sat",
         "${ timeRemaining.inHours } sata",
         "${ timeRemaining.inHours } sati"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Lozinka spremljena"
       ]
     },
     "session_recovery:cancellation:action": {
@@ -6239,7 +6293,7 @@
         "Dodaj naziv grupi kontakata"
       ],
       "Add filter": [
-        "Dodaj filter"
+        "Dodaj filtar"
       ],
       "Add to ${ groupCount } group": [
         "Dodaj u ${ groupCount } grupu",
@@ -6371,7 +6425,7 @@
         "Uredi grupu kontakata"
       ],
       "Edit filter": [
-        "Uredi filter"
+        "Uredi filtar"
       ],
       "Edit image": [
         "Uredi sliku"

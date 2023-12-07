@@ -3586,6 +3586,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Došlo k chybě, prosíme ${ refresh } stránku pro pokračování. Pokud stále vidíte tuto chybu, kontaktujte náš ${ supportTeam }."
       ],
+      "Something went wrong. Please try again.": [
+        "Něco se pokazilo, prosím zkuste to později."
+      ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Omlouváme se, ${ BRAND_NAME } nemůže dešifrovat vaší zprávu. Prosím zkontrolujte, že jsou všechny vaše klíče aktivní."
       ],
@@ -7847,11 +7850,17 @@
       ]
     },
     "Onboarding modal": {
+      "Block email communications from scammers permanently. ${ kbLinkSender }": [
+        "Natrvalo zablokujte emailovou komunikaci od podvodníků. ${ kbLinkSender }"
+      ],
       "Block unsavory senders": [
         "Blokování nevhodných odesílatelů"
       ],
       "Congratulations on choosing privacy": [
         "Gratulujeme k volbě soukromí"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
+        "Šifrování je tak silné, že e-maily můžete zobrazit pouze vy a určení příjemci. ${ kbLinkEncryption }"
       ],
       "For your eyes only": [
         "Pouze pro vaše oči"
@@ -7864,6 +7873,9 @@
       ],
       "Skip": [
         "Přeskočit"
+      ],
+      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
+        "Zabraňujeme inzerentům a sběračům dat v tom, aby vás profilovali. ${ kbLinkPrivacy }"
       ]
     },
     "Onboarding Proton": {
@@ -7873,8 +7885,14 @@
       "Discover all ${ BRAND_NAME } services": [
         "Objevte všechny služby ${ BRAND_NAME }"
       ],
+      "Pick a theme": [
+        "Vyberte si téma"
+      ],
       "Set up your organization": [
         "Nastavení organizace"
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Téma můžete kdykoli změnit v nastaveních."
       ]
     },
     "Online accounts": {
@@ -8799,6 +8817,9 @@
       ],
       "Search just got smarter and faster": [
         "Vyhledávání se právě stalo chytřejším a rychlejším"
+      ],
+      "Set when an email should reappear in your inbox with the new snooze feature.": [
+        "Nastavte si, kdy se má e-mail znovu objevit v doručené poště, pomocí nové funkce odložení."
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "Zprávy ve složkách Spam a Koš jsou nyní automaticky vyloučeny z Všechna pošta. ${ settingsLink }"

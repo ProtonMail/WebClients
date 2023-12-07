@@ -2014,6 +2014,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } ha sido actualizado.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Esta incidencia de ${ eventTitle } ha sido cancelada."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Está invitado a ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -3454,6 +3457,9 @@
       ],
       "Close this screen to exit.": [
         "Cierre esta pantalla para salir."
+      ],
+      "Coming soon": [
+        "Próximamente"
       ],
       "Conflict": [
         "Conflicto"
