@@ -79,6 +79,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                                 data-testid="drawer-quick-settings:auto-theme-toggle"
                             />
                         }
+                        ellipsisOnText={false}
                     />
                 }
                 {settings.Mode === ThemeModeSetting.Auto ? (
