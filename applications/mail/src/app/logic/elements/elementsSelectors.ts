@@ -48,6 +48,7 @@ const currentESDBStatus = (
     }
 ) => esStatus;
 const currentCounts = (_: RootState, { counts }: { counts: { counts: LabelCount[]; loading: boolean } }) => counts;
+const currentLabelID = (_: RootState, { labelID }: { labelID?: string }) => labelID;
 
 export const elements = createSelector(
     [elementsMap, params, page, pageSize, pages, bypassFilter],
@@ -254,14 +255,19 @@ export const messagesToLoadMoreES = createSelector(
  * Computed up to date total of elements for the current parameters
  * Warning: this value has been proved not to be 100% consistent
  * Has to be used only for non sensitive behaviors
+ *
+ * labelID - string | undefined - This label ID is the one we use in useElement which is based on the URL value
+ * We prefer using this value when present because store one is not immediately up to date when switching labels
  */
 export const dynamicTotal = createSelector(
-    [params, currentCounts, bypassFilter],
-    (params, { counts, loading }, bypassFilter) => {
+    [params, currentCounts, bypassFilter, currentLabelID],
+    (params, props, bypassFilter, labelID) => {
+        const { counts, loading } = props;
         if (isSearch(params.search) || hasAttachmentsFilter(params.filter) || loading) {
             return undefined;
         }
-        return getTotal(counts, params.labelID, params.filter, bypassFilter.length);
+
+        return getTotal(counts, labelID || params.labelID, params.filter, bypassFilter.length);
     }
 );
 
