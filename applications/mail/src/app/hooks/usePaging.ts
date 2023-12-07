@@ -9,7 +9,6 @@ const getTotalPagesCount = (currentTotalPages: number | undefined, inputPageSize
     currentTotalPages === undefined ? 0 : pageCount(currentTotalPages, inputPageSize);
 
 const PAGE_CLICK_DEBOUNCE_TIMEOUT = 300;
-const PROP_CHANGE_TIMEOUT = 60;
 
 export const usePaging = (
     currentPage: number,
@@ -25,11 +24,6 @@ export const usePaging = (
             callback();
         }, PAGE_CLICK_DEBOUNCE_TIMEOUT)
     );
-    const debouncedUseEffectCallbackRef = useRef(
-        debounce((callback: () => void) => {
-            callback();
-        }, PROP_CHANGE_TIMEOUT)
-    );
 
     const optimisticChange = (nextPage: number, currentPage: number) => {
         if (nextPage === currentPage) {
@@ -41,16 +35,14 @@ export const usePaging = (
     };
 
     useEffect(() => {
-        debouncedUseEffectCallbackRef.current(() => {
-            if (currentPageDisplay !== page) {
-                setPage(currentPageDisplay);
-            }
+        if (currentPageDisplay !== page) {
+            setPage(currentPageDisplay);
+        }
 
-            const newTotal = getTotalPagesCount(currentTotalPages, pageSize);
-            if (currentTotalPages !== newTotal) {
-                setTotal(getTotalPagesCount(currentTotalPages, pageSize));
-            }
-        });
+        const newTotal = getTotalPagesCount(currentTotalPages, pageSize);
+        if (currentTotalPages !== newTotal) {
+            setTotal(getTotalPagesCount(currentTotalPages, pageSize));
+        }
     }, [currentPage, currentTotalPages, pageSize]);
 
     return {
