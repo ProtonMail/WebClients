@@ -3137,6 +3137,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } è stato aggiornato.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Questa occorrenza di ${ eventTitle } è stata cancellata."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Sei invitato a ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -3533,6 +3536,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Qualcosa è andato storto, ${ refresh } per procedere. Se continui a vedere questo errore contatta il nostro ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Qualcosa è andato storto, riprova più tardi."
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Siamo spiacenti, ${ BRAND_NAME } non può decrittografare il messaggio. Controlla che tutte le tue chiavi siano attive."
@@ -5368,7 +5374,7 @@
         "Includi spam/cestino."
       ],
       "Inherited from parent folder": [
-        "Ereditato dalla cartella principale"
+        "Preso dalla cartella principale"
       ],
       "Insert image": [
         "Inserisci immagine"

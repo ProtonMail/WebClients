@@ -3463,6 +3463,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
       ],
+      "Something went wrong. Please try again.": [
+        "Сталася помилка. Повторіть спробу пізніше."
+      ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Перепрошуємо, але ${ BRAND_NAME } не може розшифрувати ваше повідомлення. Переконайтеся, що всі ваші ключі активні."
       ],
@@ -7648,6 +7651,9 @@
       ],
       "Congratulations on choosing privacy": [
         "Вітаємо з вибором приватності"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
+        "Шифрування настільки надійне, що ніхто крім вас і ваших отримувачів не зможе переглядати ваші листи. ${ kbLinkEncryption }"
       ],
       "For your eyes only": [
         "Ніхто крім вас"
