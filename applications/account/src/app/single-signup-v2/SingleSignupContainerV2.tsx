@@ -61,7 +61,7 @@ import noop from '@proton/utils/noop';
 import { Paths } from '../content/helper';
 import { SessionData, SignupCacheResult, SubscriptionData, UserCacheResult } from '../signup/interfaces';
 import { getPlanIDsFromParams, getSignupSearchParams } from '../signup/searchParams';
-import { handleDone, handleSetupMnemonic, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
+import { handleSetupMnemonic, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import { MetaTags, useMetaTags } from '../useMetaTags';
@@ -69,6 +69,7 @@ import LoginModal from './LoginModal';
 import Step1, { Step1Rref } from './Step1';
 import Step2 from './Step2';
 import { getDriveConfiguration } from './drive/configuration';
+import { getGenericConfiguration } from './generic/configuration';
 import {
     getFreeSubscriptionData,
     getHasBusinessUpsell,
@@ -118,13 +119,13 @@ const subscriptionDataCycleMapping = [
     },
 ];
 
-const getSignupTheme = (toApp: APP_NAMES, signupParameters: SignupParameters2): SignupTheme => {
-    const blackFriday =
+const getSignupTheme = (toApp: APP_NAMES | undefined, signupParameters: SignupParameters2): SignupTheme => {
+    const darkTheme =
         getHas2023OfferCoupon(signupParameters.coupon) || signupParameters.preSelectedPlan === PLANS.NEW_VISIONARY;
     return {
-        type: blackFriday ? ThemeTypes.Carbon : undefined,
-        background: blackFriday ? 'bf' : undefined,
-        intent: toApp,
+        type: darkTheme ? ThemeTypes.Carbon : undefined,
+        background: darkTheme ? 'bf' : undefined,
+        intent: toApp || darkTheme ? APPS.PROTONMAIL : undefined,
     };
 };
 
@@ -318,7 +319,13 @@ const SingleSignupContainerV2 = ({
                 ].some((plan) => planIDs[plan]),
             });
         }
-        throw new Error('Unknown app');
+        return getGenericConfiguration({
+            plan,
+            plansMap: model.plansMap,
+            isLargeViewport: viewportWidth['>=large'],
+            vpnServersCountData,
+            hideFreePlan: signupParameters.hideFreePlan,
+        });
     })();
 
     useEffect(() => {
@@ -378,7 +385,7 @@ const SingleSignupContainerV2 = ({
                 }
                 return 'pass_signup';
             }
-            throw new Error('Unknown telemetry flow');
+            return 'generic_signup';
         })();
         return sendTelemetryReport({
             api: unauthApi,
@@ -496,7 +503,7 @@ const SingleSignupContainerV2 = ({
                             cycle,
                             coupon: signupParameters.coupon,
                         },
-                        toApp,
+                        toApp: product,
                     }),
                 ]);
 
@@ -637,7 +644,7 @@ const SingleSignupContainerV2 = ({
                 plans: model.plans,
                 plansMap: model.plansMap,
                 upsellPlanCard,
-                toApp,
+                toApp: product,
             });
 
             measure({ event: TelemetryAccountSignupEvents.beSignOutSuccess, dimensions: {} });
@@ -680,7 +687,7 @@ const SingleSignupContainerV2 = ({
                 planIDs: model.subscriptionData.planIDs,
                 coupon: model.subscriptionData.checkResult?.Coupon?.Code,
             },
-            toApp,
+            toApp: product,
         });
 
         const session: SessionData = {
@@ -902,7 +909,7 @@ const SingleSignupContainerV2 = ({
             {renderAccessModal && (
                 <AccessModal
                     {...accessModalProps}
-                    app={toApp}
+                    app={product}
                     onSignOut={() => {
                         return handleSignOut(true);
                     }}
@@ -1008,7 +1015,7 @@ const SingleSignupContainerV2 = ({
                                     appIntent: undefined,
                                     productParam,
                                     // Internal app or oauth app or vpn
-                                    ignoreExplore: true,
+                                    ignoreExplore: toApp !== undefined,
                                     accountData,
                                     subscriptionData,
                                     inviteData: model.inviteData,
@@ -1137,15 +1144,13 @@ const SingleSignupContainerV2 = ({
                         productAppName={productAppName}
                         setupImg={setupImg}
                         logo={logo}
-                        onSetup={async (cache: SignupCacheResult | UserCacheResult) => {
-                            if (cache.type === 'user') {
-                                return handleLoginUser(cache);
+                        onSetup={async (result) => {
+                            if (result.type === 'user') {
+                                return handleLoginUser(result);
                             }
-
-                            if (cache.type === 'signup') {
+                            if (result.type === 'signup') {
                                 try {
-                                    const result = await handleDone({ cache });
-                                    await onLogin(result.session);
+                                    await onLogin(result.payload.session);
                                 } catch (error) {
                                     handleError(error);
                                 }
