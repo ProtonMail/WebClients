@@ -39,7 +39,7 @@ import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string'
 import { getPathFromLocation } from '@proton/shared/lib/helpers/url';
 import { isProtonSentinelEligible } from '@proton/shared/lib/helpers/userSettings';
 import { UserModel } from '@proton/shared/lib/interfaces';
-import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
+import { getIsSSOVPNOnlyAccount, getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
@@ -264,6 +264,10 @@ const MainContainer = () => {
     if (getRequiresAddressSetup(app, user)) {
         const toPath = `/${stripLeadingAndTrailingSlash(stripLocalBasenameFromPathname(location.pathname))}`;
         return <Redirect to={`${SETUP_ADDRESS_PATH}?to=${app}&to-type=settings&to-path=${toPath}`} />;
+    }
+
+    if (getIsSSOVPNOnlyAccount(user) && appFromPathname !== APPS.PROTONVPN_SETTINGS) {
+        return <Redirect to={`/${getSlugFromApp(APPS.PROTONVPN_SETTINGS)}`} />;
     }
 
     return (
