@@ -48,10 +48,10 @@ interface ContactSelectorResolver {
     onReject: () => void;
 }
 
-const allContactsGroup: Pick<ContactGroup, 'Name' | 'ID'> = {
+const allContactsGroup = (): Pick<ContactGroup, 'Name' | 'ID'> => ({
     ID: 'default',
     Name: c('Label').t`All contacts`,
-};
+});
 
 type Props = ContactSelectorProps & ContactSelectorResolver & ModalProps;
 
@@ -62,9 +62,9 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
     const [contactEmails, loadingContactEmails] = useContactEmailsSortedByName();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [contactGroups = [], loadingContactGroups] = useContactGroups();
-    const [selectedGroup, setSelectedGroup] = useState<string>(allContactsGroup.ID);
+    const [selectedGroup, setSelectedGroup] = useState<string>(allContactsGroup().ID);
 
-    const contactGroupsWithDefault = [allContactsGroup, ...contactGroups];
+    const contactGroupsWithDefault = [allContactsGroup(), ...contactGroups];
 
     const emailsFromInput = inputValue.map((e: any) => e.Address);
     const contactGroupsMap = toMap(contactGroups);
@@ -158,7 +158,7 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
 
     const filterContactsByGroup = useMemo(() => {
         const filteredContacts = contactEmails;
-        if (selectedGroup === allContactsGroup.ID) {
+        if (selectedGroup === allContactsGroup().ID) {
             return filteredContacts;
         }
 
@@ -212,7 +212,9 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                     <ContactSelectorEmptyContacts onClose={rest.onClose} onEdit={onEdit} />
                 ) : (
                     <>
-                        <div className={clsx(['mb-2 flex flex-nowrap gap-4', viewportWidth['<=small'] && 'flex-column'])}>
+                        <div
+                            className={clsx(['mb-2 flex flex-nowrap gap-4', viewportWidth['<=small'] && 'flex-column'])}
+                        >
                             <div className="grow-2">
                                 <SearchInput
                                     ref={searchInputRef}
