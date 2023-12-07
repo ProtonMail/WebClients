@@ -24,17 +24,17 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
         const { APP_NAME } = useConfig();
         const isElectron = isElectronApp();
 
+        const availableApps = apps(user);
+
+        if (availableApps.length <= 1) {
+            return null;
+        }
+
         return (
             <SimpleDropdown
                 type="button"
                 hasCaret={false}
-                content={
-                    <Icon
-                        name="app-switch"
-                        size={24}
-                        className="apps-dropdown-button-icon shrink-0 no-print"
-                    />
-                }
+                content={<Icon name="app-switch" size={24} className="apps-dropdown-button-icon shrink-0 no-print" />}
                 className="apps-dropdown-button shrink-0"
                 dropdownClassName="apps-dropdown rounded-lg"
                 originalPlacement="bottom-start"
@@ -46,7 +46,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
                 as="button"
             >
                 <ul className="unstyled my-0 p-4" style={{ '--apps-dropdown-repeat': isElectron ? '2' : '3' }}>
-                    {apps(user).map((appToLinkTo) => {
+                    {availableApps.map((appToLinkTo) => {
                         const appToLinkToName = getAppShortName(appToLinkTo);
                         const current = app && appToLinkTo === app;
 
