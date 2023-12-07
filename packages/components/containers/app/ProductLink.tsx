@@ -4,16 +4,16 @@ import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProton
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
-import { getAppStaticUrl } from '@proton/shared/lib/helpers/url';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { getAppStaticUrl } from '@proton/shared/lib/helpers/url';
 import { UserModel } from '@proton/shared/lib/interfaces';
-import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
+import { getIsSSOVPNOnlyAccount, getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { AppLink, SettingsLink } from '../../components';
 
 export const apps = (user?: UserModel) => {
-    if (user && user.Flags.sso && !user.Keys.length) {
+    if (getIsSSOVPNOnlyAccount(user)) {
         return [APPS.PROTONVPN_SETTINGS];
     }
     if (isElectronApp()) {
