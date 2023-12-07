@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { updateFlags, updateWelcomeFlags } from '@proton/shared/lib/api/settings';
+import { isElectronOnSupportedApps } from '@proton/shared/lib/helpers/desktop';
 import { hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import { PROTON_THEMES_MAP, ThemeTypes } from '@proton/shared/lib/themes/themes';
 import isTruthy from '@proton/utils/isTruthy';
@@ -11,7 +12,15 @@ import noop from '@proton/utils/noop';
 import range from '@proton/utils/range';
 
 import { ModalTwoContent as ModalContent, ModalSize, ModalTwo, StepDot, StepDots } from '../../components';
-import { useApi, useOrganization, useSubscription, useUser, useUserSettings, useWelcomeFlags } from '../../hooks';
+import {
+    useApi,
+    useConfig,
+    useOrganization,
+    useSubscription,
+    useUser,
+    useUserSettings,
+    useWelcomeFlags,
+} from '../../hooks';
 import { useTheme } from '../themes/ThemeProvider';
 import OnboardingDiscoverApps from './OnboardingDiscoverApps';
 import OnboardingSetupOrganization from './OnboardingSetupOrganization';
@@ -41,6 +50,7 @@ const OnboardingModal = ({
     extraProductStep,
     ...rest
 }: Props) => {
+    const { APP_NAME } = useConfig();
     const [user] = useUser();
     const [userSettings] = useUserSettings();
     const [organization, loadingOrganization] = useOrganization();
@@ -136,9 +146,11 @@ const OnboardingModal = ({
 
     const displayGenericSteps = welcomeFlags?.hasGenericWelcomeStep || showGenericSteps;
     const genericSteps = displayGenericSteps
-        ? [themesStep, canSetupOrganization && setupOrganizationStep, !hideDiscoverApps && discoverAppsStep].filter(
-              isTruthy
-          )
+        ? [
+              !isElectronOnSupportedApps(APP_NAME) && themesStep,
+              canSetupOrganization && setupOrganizationStep,
+              !hideDiscoverApps && discoverAppsStep,
+          ].filter(isTruthy)
         : [];
 
     const productSteps = children
