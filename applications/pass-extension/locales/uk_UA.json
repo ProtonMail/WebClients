@@ -1599,6 +1599,9 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Неможливо увійти в ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Vault \"${ vaultName }\" і всі його елементи будуть остаточно видалені. Ви не зможете скасувати цю дію."
+      ],
       "Vault name is required": [
         "Потрібно вказати назву сховища"
       ],

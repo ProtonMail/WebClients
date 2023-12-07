@@ -2032,6 +2032,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } было абноўлена.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Гэта паўтарэнне ${ eventTitle } было скасавана."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Вас запрасілі на ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -2086,6 +2089,9 @@
     "Error": {
       "\"${ name }\" already exists": [
         "\"${ name }\" ужо існуе"
+      ],
+      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
+        "${ DRIVE_APP_NAME } абноўлены. Абнавіце старонку."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можаце таксама праверыць наш ${ statusPageLink }"
@@ -2254,6 +2260,9 @@
       ],
       "Passwords do not match": [
         "Паролі не супадаюць"
+      ],
+      "Photos upload is temporarily disabled. Please try again later": [
+        "Запампоўванне фатаграфій часова адключана. Паспрабуйце яшчэ раз пазней"
       ],
       "Please activate your search again": [
         "Актывуйце пошук яшчэ раз"
@@ -3574,6 +3583,9 @@
       ],
       "Close this screen to exit.": [
         "Закрыйце гэта акно, каб выйсці."
+      ],
+      "Coming soon": [
+        "Неўзабаве з'явіцца"
       ],
       "Conflict": [
         "Канфлікт"

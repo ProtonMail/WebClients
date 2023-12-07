@@ -3169,6 +3169,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } было абноўлена.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Гэта паўтарэнне ${ eventTitle } было скасавана."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Вас запрасілі на ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -3585,6 +3588,9 @@
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Нешта пайшло не так. ${ refresh } для працягу. Калі вы ўсё яшчэ бачыце паведамленне з памылкай, напішыце ў нашу ${ supportTeam }."
+      ],
+      "Something went wrong. Please try again.": [
+        "Нешта пайшло не так. Паспрабуйце яшчэ раз."
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "На жаль, ${ BRAND_NAME } не змог расшыфраваць ваша паведамленне. Пераканайцеся, што ўсе вашы ключы актыўныя."

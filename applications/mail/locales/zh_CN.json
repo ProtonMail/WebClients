@@ -529,6 +529,9 @@
       "label emails as": [
         "给邮件加标签"
       ],
+      "Later this week": [
+        "本周稍后"
+      ],
       "Learn more": [
         "了解详情"
       ],
@@ -552,6 +555,9 @@
       ],
       "Manage labels": [
         "管理标签"
+      ],
+      "Manage Snooze": [
+        "管理代办事项"
       ],
       "Mark as read": [
         "标为已读"
@@ -874,6 +880,9 @@
       "Select all messages": [
         "选择所有邮件"
       ],
+      "Select date and time": [
+        "请选择日期与时间"
+      ],
       "Self-destruct in 7 days": [
         "七天后自动销毁"
       ],
@@ -973,6 +982,9 @@
       "Skip verification": [
         "跳过验证"
       ],
+      "Snooze": [
+        "延后"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "部分图片在跟踪防护模式下无法加载。"
       ],
@@ -1002,6 +1014,9 @@
       ],
       "This message contains remote content.": [
         "此邮件含有外链内容。"
+      ],
+      "This weekend": [
+        "本周末"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "为了安全地搜索您的邮件内容，我们需要在浏览器后台下载您的所有往来邮件。首次下载可能需要耗费一些时间。"
@@ -1053,6 +1068,9 @@
       ],
       "Unordered list": [
         "无标号列表"
+      ],
+      "Unsnooze": [
+        "撤销待办"
       ],
       "Unstar": [
         "取消星标"
@@ -3438,6 +3456,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
       ],
+      "Something went wrong. Please try again.": [
+        "出现了一些问题。请重试。"
+      ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "对不起，${ BRAND_NAME } 无法解密您的邮件。请确认您的密钥是否已全部启用。"
       ],
@@ -3991,6 +4012,9 @@
       ],
       "MB": [
         "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "file size format, long": {
@@ -4243,6 +4267,9 @@
       ],
       "Storage unlocked": [
         "存储空间已解锁"
+      ],
+      "This feature is currently unavailable": [
+        "此功能当前不可用。"
       ],
       "Using your mobile device, scan this QR code or visit the iOS or Android store.": [
         "使用您的移动设备扫描此二维码或访问 iOS 或 Android 商店。"
@@ -5964,6 +5991,9 @@
       ],
       "Optional": [
         "可选"
+      ],
+      "Selected color:": [
+        "所选颜色"
       ]
     },
     "Info on errors": {
@@ -6862,6 +6892,12 @@
       "Sign up for free": [
         "免费注册"
       ],
+      "Snooze": [
+        "延后"
+      ],
+      "Snoozed": [
+        "已待办"
+      ],
       "Spam": [
         "垃圾邮件"
       ],
@@ -7197,6 +7233,9 @@
       "Custom email domains": [
         "自有域名"
       ],
+      "Custom snooze time": [
+        "设置待办事件"
+      ],
       "Hide-my-email aliases": [
         "Hide My Email 邮箱别名"
       ],
@@ -7282,6 +7321,9 @@
       ]
     },
     "Onboarding modal": {
+      "Block email communications from scammers permanently. ${ kbLinkSender }": [
+        "阻止骗子 ${ kbLinkSender }的邮件"
+      ],
       "Block unsavory senders": [
         "阻止不良发件人"
       ],
@@ -7298,6 +7340,9 @@
       ],
       "Discover all ${ BRAND_NAME } services": [
         "探索各类 ${ BRAND_NAME } 服务"
+      ],
+      "Pick a theme": [
+        "选择主题"
       ],
       "Set up your organization": [
         "填写机构信息"
@@ -8996,6 +9041,12 @@
       ],
       "Sign out": [
         "退出"
+      ],
+      "Snooze": [
+        "延后"
+      ],
+      "Snooze message": [
+        "* 稍后提醒"
       ],
       "Sort conversations": [
         "会话排序"
