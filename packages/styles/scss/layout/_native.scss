@@ -1,0 +1,50 @@
+.is-electron-mac {
+	&,
+	.content,
+	.sidebar {
+		background: transparent;
+	}
+
+	.sidebar {
+		.navigation-link,
+		.navigation-link-header-group-link {
+			@media (prefers-color-scheme: light) {
+				--navigation-current-item-background-color: var(--interaction-weak-major-3);
+
+				&:hover {
+					background: rgb(0 0 0 / 0.1);
+				}
+			}
+		}
+	}
+
+	.header {
+		block-size: rem(52);
+		padding-block: var(--space-2);
+	}
+
+	.main {
+		@media (prefers-color-scheme: light) {
+			box-shadow: 0 0 2px 0 #00000026;
+		}
+	}
+
+	.is-in-background {
+		.header,
+		.drawer-sidebar,
+		.main {
+			@media (prefers-color-scheme: light) {
+				background: var(--background-weak);
+			}
+		}
+
+		.header,
+		.drawer-sidebar,
+		.sidebar {
+			> * {
+				filter: saturate(0.8) brightness(0.95);
+				opacity: 0.8;
+			}
+		}
+	}
+}
