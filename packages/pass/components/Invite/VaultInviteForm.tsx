@@ -60,7 +60,7 @@ export const VaultInviteForm: VFC<Props> = ({ form, autoFocus }) => {
                     >
                         <IconBox size={18} mode="icon" className="shrink-0">
                             <Icon
-                                className={'absolute-center'}
+                                className={'absolute inset-center'}
                                 color="var(--interaction-norm)"
                                 name={'envelope'}
                                 size={16}

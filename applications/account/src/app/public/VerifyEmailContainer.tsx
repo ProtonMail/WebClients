@@ -63,7 +63,7 @@ const VerifyEmailContainer = ({ onSubscribe }: Props) => {
                 if (error) {
                     if (error.type === ErrorType.Expired) {
                         return (
-                            <div className="absolute-center">
+                            <div className="absolute inset-center">
                                 <ExpiredError type="email" />
                             </div>
                         );
@@ -74,7 +74,7 @@ const VerifyEmailContainer = ({ onSubscribe }: Props) => {
                         </a>
                     );
                     return (
-                        <div className="absolute-center">
+                        <div className="absolute inset-center">
                             <GenericError className="text-center">
                                 <span>{c('Error message, recovery')
                                     .t`There was a problem verifying your email address.`}</span>
@@ -86,7 +86,7 @@ const VerifyEmailContainer = ({ onSubscribe }: Props) => {
                 }
                 if (loading) {
                     return (
-                        <div className="absolute-center text-center">
+                        <div className="absolute inset-center text-center">
                             <CircleLoader size="large" />
                         </div>
                     );

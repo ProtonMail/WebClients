@@ -46,7 +46,7 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
         >
             {(() => {
                 if (state === null || clientBusy(status)) {
-                    return <CircleLoader className="absolute-center m-auto" />;
+                    return <CircleLoader className="absolute inset-center m-auto" />;
                 }
 
                 if (status === AppStatus.LOCKED) {
