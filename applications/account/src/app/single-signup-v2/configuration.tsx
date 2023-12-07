@@ -5,9 +5,11 @@ import { getUsersFeature } from '@proton/components/containers/payments/features
 import { getMailAppFeature } from '@proton/components/containers/payments/features/mail';
 import { getPassAppFeature } from '@proton/components/containers/payments/features/pass';
 import {
+    getAllAppsFeature,
     getBundlePlan,
     getBundleProPlan,
     getDrivePlan,
+    getEarlyAccessFeature,
     getFamilyPlan,
     getMailPlan,
     getNewVisionaryPlan,
@@ -126,11 +128,9 @@ export const getSummaryPlan = (plan: Plan | undefined, vpnServersCountData: VPNS
             plan,
             features: [
                 getStorageFeature(plan.MaxSpace, { visionary: true }),
-                getMailAppFeature(),
-                getCalendarAppFeature(),
-                getDriveAppFeature(),
-                getVPNAppFeature({ serversCount: vpnServersCountData }),
-                getPassAppFeature(),
+                getUsersFeature(plan.MaxMembers),
+                getAllAppsFeature(),
+                getEarlyAccessFeature(),
             ],
         };
     }
