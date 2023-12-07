@@ -1,6 +1,6 @@
 import UAParser from 'ua-parser-js';
 
-import { isMac } from './browser';
+import { isMac, isWindows } from './browser';
 
 const uaParser = new UAParser();
 const ua = uaParser.getResult();
@@ -11,4 +11,8 @@ export const isElectronApp = () => {
 
 export const isElectronOnMac = () => {
     return isElectronApp() && isMac();
+};
+
+export const isElectronOnWindows = () => {
+    return isElectronApp() && isWindows();
 };

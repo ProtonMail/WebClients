@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
-import { isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
+import { isElectronApp, isElectronOnMac, isElectronOnWindows } from '@proton/shared/lib/helpers/desktop';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { hasMailProfessional, hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import { addUpsellPath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
@@ -75,7 +75,9 @@ const Sidebar = ({
     const { UsedSpace, MaxSpace, isMember, isSubUser } = user;
     const spacePercentage = percentage(MaxSpace, UsedSpace);
     const { viewportWidth } = useActiveBreakpoint();
-    const isElectron = isElectronOnMac();
+    const isElectron = isElectronApp();
+    const isElectronMac = isElectronOnMac();
+    const isElectronWindows = isElectronOnWindows();
 
     const upsellRef = getUpsellRefFromApp({
         app: APP_NAME,
@@ -118,7 +120,7 @@ const Sidebar = ({
         <>
             <div
                 ref={rootRef}
-                className={clsx('sidebar flex flex-nowrap flex-column no-print outline-none', isElectron && 'mt-3')}
+                className={clsx('sidebar flex flex-nowrap flex-column no-print outline-none', isElectron && 'mt-2')}
                 data-expanded={expanded}
                 {...rest}
                 {...focusTrapProps}
@@ -130,10 +132,22 @@ const Sidebar = ({
                 />
 
                 <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
-                <div className="logo-container hidden md:flex shrink-0 justify-space-between items-center flex-nowrap">
-                    {logo}
-                    <div className="hidden md:block">{appsDropdown}</div>
-                </div>
+
+                {!isElectron && (
+                    <div className="logo-container hidden md:flex shrink-0 justify-space-between items-center flex-nowrap">
+                        {logo}
+                        <div className="hidden md:block">{appsDropdown}</div>
+                    </div>
+                )}
+
+                {isElectronMac && <div className="ml-auto mr-3 mb-4">{appsDropdown}</div>}
+
+                {isElectronWindows && (
+                    <div className="flex gap-4 justify-between items-center flex-nowrap px-3 pb-2 pt-1">
+                        {primary && <div className="shrink-0 flex-1 hidden md:block">{primary}</div>}
+                        <div className="shrink-0">{appsDropdown}</div>
+                    </div>
+                )}
 
                 {viewportWidth['<=small'] && (
                     <div className="px-3 shrink-0 md:hidden">
@@ -141,7 +155,7 @@ const Sidebar = ({
                     </div>
                 )}
 
-                {primary ? <div className="px-3 pb-2 shrink-0 hidden md:block">{primary}</div> : null}
+                {primary && !isElectronMac ? <div className="px-3 pb-2 shrink-0 hidden md:block">{primary}</div> : null}
                 <div className="mt-1 md:mt-0" aria-hidden="true" />
                 <div
                     className={clsx(
