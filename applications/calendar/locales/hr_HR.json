@@ -131,6 +131,9 @@
       "Create a new contact group": [
         "Kreiraj novu grupu kontakata"
       ],
+      "Create calendar": [
+        "Stvori kalendar"
+      ],
       "Create event": [
         "Stvori događaj"
       ],
@@ -1040,6 +1043,9 @@
       "Bulgaria": [
         "Bugarska"
       ],
+      "Burkina Faso": [
+        "Burkina Faso"
+      ],
       "Burundi": [
         "Burundi"
       ],
@@ -1529,8 +1535,14 @@
       "Seychelles": [
         "Sejšeli"
       ],
+      "Sierra Leone": [
+        "Sierra Leone"
+      ],
       "Singapore": [
         "Singapur"
+      ],
+      "Sint Maarten": [
+        "Sveti Martin"
       ],
       "Slovakia": [
         "Slovačka"
@@ -1615,6 +1627,9 @@
       ],
       "Turkey": [
         "Turska"
+      ],
+      "Turkmenistan": [
+        "Turkmenistan"
       ],
       "Turks and Caicos Islands": [
         "Otoci Turks i Caicos"
@@ -1768,6 +1783,11 @@
         "Koristite globalnu zadanu postavku (${ globalDefaultText })"
       ]
     },
+    "Delete event button tooltip": {
+      "Delete event": [
+        "Izbriši događaj"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Neplaćena faktura"
@@ -1814,6 +1834,11 @@
     "Don't ask to update timezone checkbox label": {
       "Don't ask again": [
         "Ne pitaj ponovno"
+      ]
+    },
+    "Dropdown action icon tooltip": {
+      "Add calendar": [
+        "Dodaj kalendar"
       ]
     },
     "Duration": {
@@ -2160,6 +2185,9 @@
       ],
       "Component with wrong format": [
         "Komponenta s pogrešnim formatom"
+      ],
+      "Custom time zone": [
+        "Prilagođena vremenska zona"
       ],
       "Edited event not supported": [
         "Uređeni događaj nije podržan"
@@ -3210,6 +3238,9 @@
       "Awful": [
         "Užasno"
       ],
+      "Bad": [
+        "Loše"
+      ],
       "Beta Access": [
         "Beta pristup"
       ],
@@ -3251,6 +3282,9 @@
       ],
       "Country": [
         "Država"
+      ],
+      "Default view": [
+        "Zadani prikaz"
       ],
       "Delete": [
         "Izbriši"
@@ -3386,6 +3420,11 @@
       ],
       "Organizer": [
         "Organizator"
+      ],
+      "participant": [
+        "sudionik",
+        "sudionika",
+        "sudionika"
       ],
       "Participants": [
         "Sudionici"
@@ -3570,6 +3609,14 @@
     "Modal action": {
       "Cancel": [
         "Poništi"
+      ],
+      "Upgrade": [
+        "Nadogradi"
+      ]
+    },
+    "Modal for received invitation to share calendar; Title": {
+      "Join calendar": [
+        "Pridružite se kalendaru"
       ]
     },
     "Modal title": {
@@ -3581,6 +3628,11 @@
       ],
       "Time zone changed": [
         "Vremenska zona je promijenjena"
+      ]
+    },
+    "Modal title and action": {
+      "Add calendar": [
+        "Dodaj kalendar"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -3777,6 +3829,9 @@
     "Notification type": {
       "email": [
         "e-pošta"
+      ],
+      "notification": [
+        "obavijest"
       ]
     },
     "Notification when": {
@@ -3989,6 +4044,11 @@
         "Godina"
       ]
     },
+    "Option group label": {
+      "Create new calendar": [
+        "Stvori novi kalendar"
+      ]
+    },
     "Participant name": {
       "You": [
         "Vi"
@@ -4162,6 +4222,11 @@
         "${ timeRemaining.inHours } sati"
       ]
     },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Lozinka spremljena"
+      ]
+    },
     "session_recovery:cancellation:action": {
       "Cancel password reset": [
         "Poništi ponovno postavljanje lozinke"
@@ -4321,6 +4386,11 @@
       ],
       "Your current storage:": [
         "Vaš trenutni prostor za pohranu:"
+      ]
+    },
+    "Subscribe to calendar modal": {
+      "Calendar URL": [
+        "URL kalendara"
       ]
     },
     "Success": {
@@ -4849,6 +4919,11 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Odaberite broj"
+      ]
+    },
+    "Title; create calendar modal": {
+      "Create calendar": [
+        "Stvori kalendar"
       ]
     },
     "Title; edit calendar modal": {
