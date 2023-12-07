@@ -57,3 +57,5 @@ export enum MARK_AS_STATUS {
     READ = 'read',
     UNREAD = 'unread',
 }
+
+export const AUTO_REPLY_CHARACTER_COUNT_LIMIT = 4000;
