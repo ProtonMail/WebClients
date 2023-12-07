@@ -3534,6 +3534,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ein Problem ist aufgetreten. Bitte ${ refresh }, um fortzufahren. Wenn dir diese Fehlermeldung weiterhin angezeigt wird, wende dich bitte an unser ${ supportTeam }."
       ],
+      "Something went wrong. Please try again.": [
+        "Etwas ist schief gelaufen. Bitte versuche es später erneut."
+      ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Entschuldigung, ${ BRAND_NAME } kann deine Nachricht nicht entschlüsseln. Bitte prüfe, dass alle deine Schlüssel aktiv sind."
       ],
@@ -7602,6 +7605,9 @@
       ]
     },
     "Onboarding modal": {
+      "Automatically forward emails": [
+        "E-Mails automatisch weiterleiten"
+      ],
       "Block email communications from scammers permanently. ${ kbLinkSender }": [
         "Blockiere die E-Mail-Kommunikation von Betrügern dauerhaft. ${ kbLinkSender }"
       ],
@@ -7616,6 +7622,9 @@
       ],
       "For your eyes only": [
         "Nur für dich"
+      ],
+      "Forward Gmail messages to your inbox.": [
+        "Leite Gmail-Nachrichten automatisch an dein Postfach weiter."
       ],
       "Next": [
         "Weiter"
