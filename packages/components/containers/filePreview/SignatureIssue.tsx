@@ -16,7 +16,7 @@ const SignatureIssue = ({
 
     return (
         <div className="file-preview-container">
-            <div className="absolute-center w-full">
+            <div className="absolute inset-center w-full">
                 <div
                     className="mx-auto w-custom"
                     style={{ '--w-custom': viewportWidth['<=small'] ? '18.75rem' : '31.25rem' }}

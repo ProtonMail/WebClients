@@ -53,7 +53,7 @@ export const ItemIcon: VFC<BaseItemIconProps> = ({
 
             {loadImage && (
                 <DomainIcon
-                    className={clsx('w-custom h-custom absolute-center', iconClassName)}
+                    className={clsx('w-custom h-custom absolute inset-center', iconClassName)}
                     style={{ '--w-custom': `${size}px`, '--h-custom': `${size}px` }}
                     onStatusChange={handleStatusChange}
                     status={imageStatus}
@@ -63,7 +63,7 @@ export const ItemIcon: VFC<BaseItemIconProps> = ({
 
             {imageStatus !== ImageStatus.READY && (
                 <Icon
-                    className={clsx('absolute-center', iconClassName)}
+                    className={clsx('absolute inset-center', iconClassName)}
                     color="var(--interaction-norm)"
                     name={icon}
                     size={size}
@@ -84,7 +84,7 @@ export const OptimisticItemIcon: VFC<ItemIconProps> = ({ item, size, className }
         if (failed) {
             return (
                 <Icon
-                    className="absolute-center"
+                    className="absolute inset-center"
                     color="var(--signal-warning)"
                     name="exclamation-circle-filled"
                     size={size}
@@ -93,7 +93,7 @@ export const OptimisticItemIcon: VFC<ItemIconProps> = ({ item, size, className }
         }
 
         if (optimistic) {
-            return <CircleLoader size="small" className="upper-layer color-primary absolute-center opacity-60" />;
+            return <CircleLoader size="small" className="upper-layer color-primary absolute inset-center opacity-60" />;
         }
     };
 

@@ -26,7 +26,7 @@ const UnsupportedPreview = ({ onDownload, type = 'file', browser = false, tooLar
     }
 
     return (
-        <div className="absolute-center text-center w-full px-4">
+        <div className="absolute inset-center text-center w-full px-4">
             <img
                 className="mb-4 w-custom"
                 style={{ '--w-custom': '5rem' }}

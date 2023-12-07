@@ -54,14 +54,14 @@ const RemoveEmailContainer = () => {
                 if (error) {
                     if (error.type === ErrorType.Expired) {
                         return (
-                            <div className="absolute-center">
+                            <div className="absolute inset-center">
                                 <ExpiredError type="email" />
                             </div>
                         );
                     }
 
                     return (
-                        <div className="absolute-center text-center">
+                        <div className="absolute inset-center text-center">
                             <GenericError>
                                 <span>
                                     {c('Error message, recovery').t`There was a problem removing your email address.`}
@@ -73,7 +73,7 @@ const RemoveEmailContainer = () => {
                 }
                 if (loading) {
                     return (
-                        <div className="absolute-center text-center">
+                        <div className="absolute inset-center text-center">
                             <CircleLoader size="large" />
                         </div>
                     );

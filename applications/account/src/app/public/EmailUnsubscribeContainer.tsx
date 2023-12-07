@@ -158,7 +158,7 @@ const EmailUnsubscribeContainer = () => {
                 if (error) {
                     if (error.type === ErrorType.Expired) {
                         return (
-                            <div className="absolute-center">
+                            <div className="absolute inset-center">
                                 <ExpiredError type="unsubscribe" />
                             </div>
                         );
@@ -170,7 +170,7 @@ const EmailUnsubscribeContainer = () => {
                     );
 
                     return (
-                        <div className="absolute-center text-center">
+                        <div className="absolute inset-center text-center">
                             <GenericError>
                                 <span>{c('Error message, unsubscribe').t`There was a problem unsubscribing you.`}</span>
                                 <span>{c('Error message, unsubscribe')
@@ -181,7 +181,7 @@ const EmailUnsubscribeContainer = () => {
                 }
                 if (news === null) {
                     return (
-                        <div className="absolute-center text-center">
+                        <div className="absolute inset-center text-center">
                             <CircleLoader size="large" />
                         </div>
                     );

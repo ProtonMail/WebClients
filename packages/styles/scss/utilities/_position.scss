@@ -24,8 +24,7 @@
 	)
 );
 
-.absolute-center {
-	position: absolute;
+.inset-center {
 	inset-block-start: 50%;
 	inset-inline-start: 50%;
 	transform: translate(-50%, -50%);
@@ -35,7 +34,7 @@
 	}
 }
 
-.absolute-center-x {
+.inset-x-center {
 	inset-inline-start: 50%;
 	transform: translate(-50%, 0%);
 
@@ -44,14 +43,9 @@
 	}
 }
 
-.absolute-center-y {
+.inset-y-center {
 	inset-block-start: 50%;
 	transform: translateY(-50%);
-}
-
-.absolute-cover {
-	position: absolute;
-	inset: 0;
 }
 
 .upper-layer {
