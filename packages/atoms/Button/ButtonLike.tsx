@@ -104,7 +104,7 @@ const ButtonLikeBase = <E extends ElementType = typeof defaultElement>(
         !isUnderlineShape && fullWidth && 'w-full',
         group && 'button-group-item',
         group && selected && 'is-selected',
-        size !== 'medium' && `button-${size}`,
+        `button-${size}`,
         `button-${shape}-${color}`,
         Element !== 'button' && 'inline-block text-center',
         className
