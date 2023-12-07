@@ -3285,6 +3285,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } è stato aggiornato.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Questa occorrenza di ${ eventTitle } è stata cancellata."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Sei invitato a ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -5717,17 +5720,6 @@
         "Parte del contenuto del calendario non è supportata e non sarà importata."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La chiave ${ fingerprint } è già stata caricata"
-      ],
-      "Selected color:": [
-        "Colore selezionato:"
-      ]
-    },
     "Info": {
       "${ amountOfAddresses } address": [
         "${ amountOfAddresses } indirizzo",
@@ -6622,7 +6614,7 @@
         "Aumenta la sicurezza del tuo account verificando il tuo indirizzo email."
       ],
       "Inherited from parent folder": [
-        "Ereditato dalla cartella principale"
+        "Preso dalla cartella principale"
       ],
       "Insert image": [
         "Inserisci immagine"
@@ -7951,6 +7943,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Il tuo abbonamento è gestito da Mozilla. Contatta l'assistenza di Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La chiave ${ fingerprint } è già stata caricata"
+      ],
+      "Selected color:": [
+        "Colore selezionato:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10382,17 +10385,6 @@
         "Gestione del team"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "La tua prova termina ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } che termina con ${ last4 }"
@@ -10480,6 +10472,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "La tua prova termina ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12144,14 +12147,16 @@
       "Allow password reset from settings": [
         "Consenti la reimpostazione della password dalle impostazioni"
       ],
-      "Request a password reset from your Account settings. No recovery method needed.": [
-        "Richiedi la reimpostazione della password dalle impostazioni dell'account. Non è necessario alcun metodo di recupero."
-      ],
       "Request password reset": [
         "Richiedi reimpostazione della password"
-      ],
+      ]
+    },
+    "session_recovery:settings:info": {
       "To disallow password reset, you must have a recovery method set up.": [
-        "Per impedire la reimpostazione della password è necessario indicare un metodo di recupero."
+        "Per vietare la reimpostazione della password, devi avere un metodo di recupero impostato."
+      ],
+      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
+        "Per migliorare la sicurezza del tuo account e proteggere i tuoi dati, puoi richiedere la reimpostazione della password dalle impostazioni del tuo account nell'applicazione web."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -13261,7 +13266,7 @@
         "Aggiungi alla lista bloccati"
       ],
       "Add to spam list": [
-        "Aggiungi alla lista degli spam"
+        "Aggiungi alla lista spam"
       ],
       "Add user accounts": [
         "Aggiungi account utente"
@@ -13801,8 +13806,8 @@
       "Password and keys": [
         "Password e chiavi"
       ],
-      "Password reset": [
-        "Reimpostazione della password"
+      "Password reset settings": [
+        "Impostazioni per la reimpostazione della password"
       ],
       "Pay invoice": [
         "Pagamento della fattura"

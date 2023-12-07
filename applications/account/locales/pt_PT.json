@@ -1328,6 +1328,12 @@
         "Garantia de devolução do seu dinheiro em até 30 dias"
       ]
     },
+    "bf2023: renew": {
+      "${ n } month": [
+        "${ n } mês",
+        "os primeiros ${ n } meses"
+      ]
+    },
     "bf2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
@@ -1597,7 +1603,7 @@
         "Não foi possível desencriptar o calendário."
       ],
       "Calendar is syncing": [
-        "Calendário a sincronizar"
+        "O calendário está a sincronizar."
       ],
       "Calendar is syncing: it may take several minutes for all of its events to show up.": [
         "O calendário está a sincronizar: a exibição de todos os eventos, poderá demorar vários minutos."
@@ -5315,14 +5321,6 @@
         "Parte do conteúdo do seu calendário não é suportado e não será importado."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Foram detetadas chaves duplicadas adicionais. Carregue individualmente para obter mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A chave ${ fingerprint } já foi carregada."
-      ]
-    },
     "Info": {
       "${ amountOfAddresses } address": [
         "${ amountOfAddresses } endereço",
@@ -5975,7 +5973,7 @@
         "Se ativar novamente a recuperação por frase, será gerada uma nova frase de recuperação."
       ],
       "Encryption setting updated": [
-        "Definição de encriptação actualizada"
+        "Definição de encriptação atualizada"
       ],
       "Enhance your network security": [
         "Melhore a sua segurança da rede"
@@ -6485,7 +6483,7 @@
         "por mês, faturado a cada 24 meses"
       ],
       "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
-        "É mais provável que clientes PGP detectem automaticamente as suas chaves PGP se as mensagens de saída forem assinadas."
+        "É mais provável que clientes PGP detetem automaticamente as suas chaves PGP se as mensagens de saída forem assinadas."
       ],
       "Phone number": [
         "Número de telefone"
@@ -6529,7 +6527,7 @@
         "Note que se eliminar este domínio. Todos os endereços a ele associados serão desativados."
       ],
       "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Note que se eliminar este filtro, deixaremos de processar todas as acções automáticas que ele provoca."
+        "Note que se eliminar este filtro, deixaremos de processar todas as ações automáticas que ele provoca."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Note que ao clicar em Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
@@ -7058,7 +7056,7 @@
         "Atualize para adicionar um endereço @pm.me mais curto à sua conta que seja mais fácil de partilhar. Significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privada para mim\"."
       ],
       "Upgrade to unlock": [
-        "Actualize para desbloquear"
+        "Atualize para desbloquear"
       ],
       "Upload picture": [
         "Enviar imagem"
@@ -7458,6 +7456,14 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "A sua subscrição é gerida pela Mozilla. Contacte o suporte da Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Foram detetadas chaves duplicadas adicionais. Carregue individualmente para obter mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A chave ${ fingerprint } já foi carregada."
       ]
     },
     "Info - folder colouring feature": {
@@ -9797,17 +9803,6 @@
         "Gestão de equipa"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar a utilizar ${ MAIL_APP_NAME } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "A sua avaliação termina em ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina com ${ last4 }"
@@ -9895,6 +9890,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Está a beneficiar de um preço promocional no seu plano atual. Ao alterar a sua subscrição da sua conta, perderá o preço promocional e este não estará disponível se tentar subscrever novamente."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar a utilizar ${ MAIL_APP_NAME } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "A sua avaliação termina em ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -13026,9 +13032,6 @@
       ],
       "Password and keys": [
         "Palavra-passe e chaves"
-      ],
-      "Password reset": [
-        "Redefinir a palavra-passe"
       ],
       "Pay invoice": [
         "Pagar fatura"
