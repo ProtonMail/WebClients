@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
-import { CircularProgress, FileIcon, FileNameDisplay, Icon } from '@proton/components';
+import { CircularProgress, FileIcon, FileNameDisplay, Icon, Tooltip } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -132,7 +132,9 @@ const AttachmentItem = ({
                             <FileIcon mimeType={attachment?.MIMEType || 'unknown'} size={20} className="mr-2" />
                         )}
                     </button>
+                    <Tooltip title={primaryActionTitle}>
                     <button
+                        aria-label={primaryActionTitle}
                         className="flex-1 flex flex-nowrap outline-none--at-all"
                         title={primaryActionTitle}
                         type="button"
@@ -140,7 +142,7 @@ const AttachmentItem = ({
                         data-testid={`attachment-item:${name}--primary-action`}
                     >
                         <span className="my-auto flex items-baseline flex-nowrap pr-2">
-                            <FileNameDisplay text={name} />
+                            <FileNameDisplay text={name} displayTooltip={false} />
                             <span
                                 className="message-attachmentSize sr-only align-baseline inline-block shrink-0 ml-1"
                                 data-testid="attachment-item:size"
@@ -148,7 +150,8 @@ const AttachmentItem = ({
                                 {humanAttachmentSize}
                             </span>
                         </span>
-                    </button>
+                        </button>
+                    </Tooltip>
                 </span>
                 {showSecondaryAction && (
                     <button
