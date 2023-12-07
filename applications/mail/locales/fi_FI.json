@@ -3534,6 +3534,9 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Jotain meni pieleen, ${ refresh } jatkaaksesi. Jos näet virheilmoituksen edelleen, ota yhteyttä ${ supportTeam }."
       ],
+      "Something went wrong. Please try again.": [
+        "Jotain meni pieleen. Yritä myöhemmin uudelleen."
+      ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
         "Valitettavasti ${ BRAND_NAME } ei voi purkaa viestin salausta. Tarkista, että kaikki avaimesi ovat aktiivisia."
       ],
@@ -7648,6 +7651,9 @@
       ],
       "Set up your organization": [
         "Määritä organisaatiosi"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Vasemman yläkulman sovellusvalitsimesta pääset kaikkiin ${ BRAND_NAME } -palveluihin: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ PASS_SHORT_APP_NAME }."
       ],
       "You will be able to change your theme any time in your settings.": [
         "Voit muuttaa teemaasi milloin tahansa asetuksista."

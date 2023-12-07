@@ -5377,17 +5377,6 @@
         "En del af dit kalenderindhold er ikke understøttet og vil ikke blive importeret."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøgle ${ fingerprint } er allerede blevet uploadet"
-      ],
-      "Selected color:": [
-        "Valgte farve:"
-      ]
-    },
     "Info": {
       "${ amountOfAddresses } address": [
         "${ amountOfAddresses } adresse",
@@ -7596,6 +7585,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Dit abonnement håndteres af Mozilla. Kontakt venligst Mozilla-support."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøgle ${ fingerprint } er allerede blevet uploadet"
+      ],
+      "Selected color:": [
+        "Valgte farve:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9942,17 +9942,6 @@
         "Brugeradministration"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din prøveperiode slutter ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutter med ${ last4 }"
@@ -10040,6 +10029,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din prøveperiode slutter ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11485,14 +11485,8 @@
       "Allow password reset from settings": [
         "Tillad nulstilling af adgangskode fra indstillinger"
       ],
-      "Request a password reset from your Account settings. No recovery method needed.": [
-        "Anmod om nulstilling af adgangskode fra dine kontoindstillinger. Ingen gendannelsesmetode nødvendig."
-      ],
       "Request password reset": [
         "Anmod om nulstilling af adgangskode"
-      ],
-      "To disallow password reset, you must have a recovery method set up.": [
-        "Hvis du ikke vil tillade nulstilling af adgangskoden, skal du have opsat en gendannelsesmetode."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -13111,9 +13105,6 @@
       ],
       "Password and keys": [
         "Adgangskode og nøgler"
-      ],
-      "Password reset": [
-        "Nulstilling af adgangskode"
       ],
       "Pay invoice": [
         "Betal faktura"
