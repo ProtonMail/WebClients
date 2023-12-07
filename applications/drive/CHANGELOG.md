@@ -1,3 +1,35 @@
+# Version 5.0.18.0
+
+You may have noticed there's a new cool kid on the block...
+
+Many of you wanted us to bring you a way to manage and automatically sync photos natively within Proton Drive - we heard you!
+
+## 🌈 Introducing: Photos
+
+### 📸 Memories, meet security
+
+Our fresh "Photos" tab is your go-to spot for photos backed-up from your mobile device, all end-to-end encrypted for your peace of mind.
+
+### 💻 Drag, drop, encrypt
+
+Easily upload photos from your computer with our drag-and-drop feature. Whether you're on your phone or your computer, there is always a way to manage your photos securely.
+
+### ✨ Simplicity + Security = Photos
+
+Manage and upload your photos securely and effortlessly, all within one intuitive dedicated space.
+
+On mobile, set up Photos backup to enjoy the convenience of automatic backup. We'll take care of securely storing and encrypting all of your precious memories - just sit back and relax.
+
+## Other changes
+
+As with every new Proton Drive version, we included numerous under-the-hood improvements and bug fixes.
+
+Let us know what you think on our social channels!
+
+# Release 5.0.17.0
+
+Various bug fixes and improvements.
+
 # Release 5.0.16.0 - October 11, 2023
 
 ## Improved
