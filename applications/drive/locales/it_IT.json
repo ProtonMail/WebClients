@@ -2014,6 +2014,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } è stato aggiornato.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Questa occorrenza di ${ eventTitle } è stata cancellata."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Sei invitato a ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -2231,7 +2234,7 @@
         "Le password non corrispondono"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
-        "Il caricamento delle foto è temporaneamente disabilitato. Riprova più tardi"
+        "Il caricamento delle foto è temporaneamente disabilitato. Riprova più tardi."
       ],
       "Please activate your search again": [
         "Attiva nuovamente la tua ricerca"
@@ -3455,6 +3458,9 @@
       "Close this screen to exit.": [
         "Chiudi questa schermata per uscire."
       ],
+      "Coming soon": [
+        "Prossimamente"
+      ],
       "Conflict": [
         "Conflitto"
       ],
@@ -3727,7 +3733,7 @@
         "Indicizzazione dei risultati di ricerca…"
       ],
       "Inherited from parent folder": [
-        "Ereditato dalla cartella principale"
+        "Preso dalla cartella principale"
       ],
       "Initializing": [
         "Avvio in corso"
