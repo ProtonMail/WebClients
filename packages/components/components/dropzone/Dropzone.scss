@@ -1,3 +1,4 @@
+@use "sass:map";
 @import '~@proton/styles/scss/lib';
 
 .dropzone {
@@ -9,7 +10,7 @@
 		background-color: var(--background-norm);
 
 		&--hovered {
-			z-index: $layer-dropzone;
+			z-index: map.get($z-indexes, 'dropzone');
 		}
 
 		&--embedded {
