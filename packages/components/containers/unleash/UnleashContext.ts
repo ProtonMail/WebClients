@@ -31,6 +31,8 @@ enum MailFeatureFlag {
     WebMailPageSizeSetting = 'WebMailPageSizeSetting',
     EmailForwarding = 'EmailForwarding',
     SnoozeFeature = 'SnoozeFeature',
+    DelightMailList = 'DelightMailList',
+    DelightMailListHideUnreadButton = 'DelightMailListHideUnreadButton',
 }
 
 export type FeatureFlag =

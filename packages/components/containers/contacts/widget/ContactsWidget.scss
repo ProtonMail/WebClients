@@ -6,7 +6,7 @@
 
 	&-search-container,
 	&-toolbar,
-	.item-container {
+	.contact-item-container {
 		padding-inline: var(--space-4);
 	}
 
@@ -24,10 +24,11 @@
 		}
 	}
 
-	.item-container {
+	.contact-item-container {
 		border-radius: 0;
 		margin-inline: 0;
 		padding-block: var(--space-2);
+		padding-inline: rem(16) rem(12);
 
 		&:not(.item-in-drawer) {
 			border-block-end: 1px solid var(--border-weak);
@@ -38,4 +39,31 @@
 .contacts-modal {
 	// Special case otherwise contacts are not properly displayed
 	--size: #{rem(740)};
+}
+
+.ReactVirtualized__Grid__innerScrollContainer {
+	min-block-size: 100%;
+}
+
+.item-contact {
+	&:hover {
+		z-index: 2;
+		box-shadow: var(--shadow-norm);
+	}
+}
+
+.contact-item-hover-action-buttons {
+	display: none;
+}
+
+@include media('mouse', '>small') {
+	.contact-item-hover-action-buttons {
+		margin-inline-end: rem(-6); // Magic number to get perfect alignment with star on hover :D
+	}
+
+	.contact-item-container:hover {
+		.contact-item-hover-action-buttons {
+			display: inline-flex; // We don't want any transition, so we can use `display`.
+		}
+	}
 }

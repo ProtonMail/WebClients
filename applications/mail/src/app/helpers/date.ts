@@ -1,4 +1,11 @@
-import { formatDistanceToNow as dateFnsFormatDistanceToNow, format, isThisWeek, isToday, isYesterday } from 'date-fns';
+import {
+    formatDistanceToNow as dateFnsFormatDistanceToNow,
+    format,
+    isThisWeek,
+    isThisYear,
+    isToday,
+    isYesterday,
+} from 'date-fns';
 import { c } from 'ttag';
 
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -12,6 +19,9 @@ export const formatSimpleDate = (date: Date) => {
     }
     if (isThisWeek(date)) {
         return format(date, 'EEEE', { locale: dateLocale });
+    }
+    if (isThisYear(date)) {
+        return format(date, 'MMM d', { locale: dateLocale });
     }
     return format(date, 'PP', { locale: dateLocale });
 };
