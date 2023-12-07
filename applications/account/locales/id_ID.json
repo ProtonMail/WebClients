@@ -5680,17 +5680,6 @@
         "Sebagian isi kalender Anda tidak didukung dan tidak akan diimpor."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kunci ${ fingerprint } sudah diunggah"
-      ],
-      "Selected color:": [
-        "Warna terpilih:"
-      ]
-    },
     "Info": {
       "${ amountOfAddresses } addresses": [
         "${ amountOfAddresses } alamat"
@@ -6962,7 +6951,7 @@
         "Berkas-berkas pemulihan telah dianulir"
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
-        "Informasi pemulihan akan tetap terdapat pada perangkat ini kecuali Anda memilih untuk menghapusnya."
+        "Informasi pemulihan akan tetap tersimpan pada perangkat ini kecuali Anda memilih untuk menghapusnya."
       ],
       "Recovery kit copied to clipboard": [
         "Kit pemulihan disalin ke papan klip"
@@ -7826,7 +7815,7 @@
         "Pesan, kalender, atau kontak Anda yang masih ada akan dikunci. Untuk memulihkan data ini, Anda memerlukan frasa pemulihan atau ${ oldPassword }."
       ],
       "Your files will be encrypted and then saved": [
-        "Berkas Anda akan dienkripsi lalu disimpan"
+        "Berkas Anda akan dienkripsi dan kemudian disimpan"
       ],
       "Your imports from ${ accounts } are temporarily delayed.": [
         "Impor Anda dari ${ accounts } ditunda sementara."
@@ -7863,6 +7852,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Langganan Anda dikelola oleh Mozilla. Silakan hubungi layanan dukungan Mozilla."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kunci ${ fingerprint } sudah diunggah"
+      ],
+      "Selected color:": [
+        "Warna terpilih:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10256,17 +10256,6 @@
         "Manajemen tim"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -10354,6 +10343,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11971,14 +11971,8 @@
       "Allow password reset from settings": [
         "Izinkan pengaturan ulang kata sandi dari menu pengaturan"
       ],
-      "Request a password reset from your Account settings. No recovery method needed.": [
-        "Minta atur ulang sandi dari pengaturan akun Anda. Tidak dibutuhkan metode pemulihan."
-      ],
       "Request password reset": [
         "Minta pengaturan ulang kata sandi"
-      ],
-      "To disallow password reset, you must have a recovery method set up.": [
-        "Untuk menghapus izin atur ulang sandi, Anda harus mengatur metode pemulihan."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -13595,9 +13589,6 @@
       ],
       "Password and keys": [
         "Kata sandi dan kunci"
-      ],
-      "Password reset": [
-        "Pengaturan ulang kata sandi"
       ],
       "Pay invoice": [
         "Bayar tagihan"

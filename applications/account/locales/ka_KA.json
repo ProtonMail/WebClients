@@ -5717,17 +5717,6 @@
         "თქვენი კალენდრის შემცველობის ნაწილი მხარდაუჭერელია და შემოტანილი არ იქნება."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "გასაღები ${ fingerprint } უკვე ატვირთულია"
-      ],
-      "Selected color:": [
-        "არჩეული ფერი:"
-      ]
-    },
     "Info": {
       "${ amountOfAddresses } address": [
         "${ amountOfAddresses } მისამართი",
@@ -7942,6 +7931,17 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "თქვენი გამოწერა Mozilla-ს მიერ იმართება. დაუკავშირდით მათ მხარდაჭერის გუნდს."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "გასაღები ${ fingerprint } უკვე ატვირთულია"
+      ],
+      "Selected color:": [
+        "არჩეული ფერი:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10370,17 +10370,6 @@
         "ჯგუფის მართვა"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "სხვაგვარად თქვენს ანგარიშთან წვდომა შეზღუდული გექნებათ და ცოტა ხანში საერთოდ გაგეთიშებათ."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME }-ის ფასიანი თვისებებით გამოყენების გასაგრძელებლად აირჩიეთ თქვენი გამოწერის ტარიფი და გადახდის ვარიანტი."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "სატესტო პერიოდის დასრულების თარიღია ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } დასრულდება ${ last4 }"
@@ -10468,6 +10457,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "სხვაგვარად თქვენს ანგარიშთან წვდომა შეზღუდული გექნებათ და ცოტა ხანში საერთოდ გაგეთიშებათ."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME }-ის ფასიანი თვისებებით გამოყენების გასაგრძელებლად აირჩიეთ თქვენი გამოწერის ტარიფი და გადახდის ვარიანტი."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "სატესტო პერიოდის დასრულების თარიღია ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12108,14 +12108,8 @@
       "Allow password reset from settings": [
         "მორგების ფანჯრიდან პაროლის შეცვლის დაშვება"
       ],
-      "Request a password reset from your Account settings. No recovery method needed.": [
-        "მოითხოვეთ პაროლის შეცვლა თქვენი ანგრიშის მორგების ფანჯრიდან. აღდგენის მეთოდი საჭირო არაა."
-      ],
       "Request password reset": [
         "პაროლის შეცვლის მოთხოვნა"
-      ],
-      "To disallow password reset, you must have a recovery method set up.": [
-        "პაროლის შეცვლის ასაკრძალად აღდგენის მეთოდი დაყენებული უნდა გქონდეთ."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -13764,9 +13758,6 @@
       ],
       "Password and keys": [
         "პაროლები და გასაღებები"
-      ],
-      "Password reset": [
-        "პაროლის შეცვლა"
       ],
       "Pay invoice": [
         "ინვოისის გადახდა"
