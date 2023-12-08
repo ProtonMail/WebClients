@@ -6,7 +6,7 @@
 
 ## React component stories
 
-The main way we intend to convey documentation about React Components in this Storybook is via Storybook's [MDX Docs Suppport](https://storybook.js.org/docs/react/writing-docs/mdx).
+The main way we intend to convey documentation about React Components in this Storybook is via Storybook's [MDX Docs Support](https://storybook.js.org/docs/react/writing-docs/mdx).
 
 For that we employ the pattern of writing a couple of stories in a `Component.stories.tsx` file and linking them to an mdx documentation page through the `<Story />` Storybook Block by referencing the story's id like so:
 
