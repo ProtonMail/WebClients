@@ -64,7 +64,6 @@ export { default as useHasOutdatedRecoveryFile } from './useHasOutdatedRecoveryF
 export { default as useHandler, useEventListener, useSubscribeEventManager, useInterval } from './useHandler';
 export { default as useHasSuspendedCounter } from './useHasSuspendedCounter';
 export * from './useHotkeys';
-export * from './useImporters';
 export { default as useIsClosing } from './useIsClosing';
 export { default as useKeyPress } from './useKeyPress';
 export { default as useLoad } from './useLoad';
