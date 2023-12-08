@@ -8,7 +8,7 @@ import { pageCount } from '../helpers/paging';
 const getTotalPagesCount = (currentTotalPages: number | undefined, inputPageSize: MAIL_PAGE_SIZE) =>
     currentTotalPages === undefined ? 0 : pageCount(currentTotalPages, inputPageSize);
 
-const PAGE_CLICK_DEBOUNCE_TIMEOUT = 300;
+const PAGE_CLICK_DEBOUNCE_TIMEOUT = 100;
 
 export const usePaging = (
     currentPage: number,
