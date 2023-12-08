@@ -8,7 +8,6 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import { ImportReportsModel, ImportersModel } from '@proton/shared/lib/models';
 import noop from '@proton/utils/noop';
 
 import { useAccountDispatch } from '../store/hooks';
@@ -72,7 +71,6 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
                 };
             }}
             locales={locales}
-            eventModels={[ImportReportsModel, ImportersModel]}
             hasPrivateMemberKeyGeneration
             hasReadableMemberKeyActivation
             hasMemberKeyMigration
