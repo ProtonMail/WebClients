@@ -258,6 +258,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
         },
 
         lock: async (options: { soft: boolean; broadcast?: boolean }): Promise<void> => {
+            if (authStore.getLockStatus() === SessionLockStatus.LOCKED) return;
+
             logger.info(`[AuthService] Locking session [soft: ${options.soft}]`);
             if (!options?.soft) await forceSessionLock().catch(noop);
 
