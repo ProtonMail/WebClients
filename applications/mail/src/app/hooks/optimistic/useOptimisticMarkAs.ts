@@ -1,12 +1,17 @@
 import { useHistory } from 'react-router-dom';
 
-import { useCache, useHandler } from '@proton/components';
-import { LabelCount } from '@proton/shared/lib/interfaces/Label';
+import { useHandler } from '@proton/components';
+import {
+    conversationCountsActions,
+    messageCountsActions,
+    selectConversationCounts,
+    selectMessageCounts,
+} from '@proton/mail';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
-import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
-import { STATUS } from '@proton/shared/lib/models/cache';
+
+import { useMailStore } from 'proton-mail/store/hooks';
 
 import { updateCountersForMarkAs } from '../../helpers/counter';
 import { isUnread, isMessage as testIsMessage } from '../../helpers/elements';
@@ -23,7 +28,6 @@ import { optimisticMarkAs as optimisticMarkAsMessageAction } from '../../logic/m
 import { useAppDispatch } from '../../logic/store';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
-import { CacheEntry } from '../../models/tools';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetElementByID } from '../mailbox/useElements';
 
@@ -103,9 +107,9 @@ const applyMarkAsChangesOnConversationWithMessages = (
 };
 
 export const useOptimisticMarkAs = () => {
+    const mailStore = useMailStore();
     const dispatch = useAppDispatch();
     const getElementByID = useGetElementByID();
-    const globalCache = useCache();
     const mailSettings = useMailModel('MailSettings');
     const history = useHistory();
     const getConversation = useGetConversation();
@@ -115,10 +119,8 @@ export const useOptimisticMarkAs = () => {
             const rollbackChanges = [] as { element: Element; changes: MarkAsChanges }[];
             const updatedElements = [] as Element[];
             const updatedElementsChangeRollback: MarkAsChanges[] = [];
-            let { value: messageCounters } = globalCache.get(MessageCountsModel.key) as CacheEntry<LabelCount[]>;
-            let { value: conversationCounters } = globalCache.get(ConversationCountsModel.key) as CacheEntry<
-                LabelCount[]
-            >;
+            let { value: conversationCounters = [] } = selectConversationCounts(mailStore.getState());
+            let { value: messageCounters = [] } = selectMessageCounts(mailStore.getState());
             const isRollback = Array.isArray(inputChanges);
 
             // Counters can be undefined if they are not yet fetched
@@ -259,8 +261,8 @@ export const useOptimisticMarkAs = () => {
                 }
             }
 
-            globalCache.set(MessageCountsModel.key, { value: messageCounters, status: STATUS.RESOLVED });
-            globalCache.set(ConversationCountsModel.key, { value: conversationCounters, status: STATUS.RESOLVED });
+            mailStore.dispatch(messageCountsActions.set(messageCounters));
+            mailStore.dispatch(conversationCountsActions.set(conversationCounters));
 
             return () => {
                 // Building elements and changes so that we do the optimistic update in a single call

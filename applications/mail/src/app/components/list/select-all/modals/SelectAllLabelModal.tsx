@@ -35,7 +35,12 @@ const SelectAllLabelModal = ({
     const [conversationCounts] = useConversationCounts();
     const [messageCounts] = useMessageCounts();
     const isConversation = isConversationMode(labelID, mailSettings);
-    const elementsCount = getLocationElementsCount(labelID, conversationCounts, messageCounts, isConversation);
+    const elementsCount = getLocationElementsCount(
+        labelID,
+        conversationCounts || [],
+        messageCounts || [],
+        isConversation
+    );
 
     const getModalTitle = () => {
         return isMessage ? c('Title').t`Action all messages` : c('Title').t`Action all conversations`;

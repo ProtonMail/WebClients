@@ -19,7 +19,7 @@ import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { getMinScheduleTime } from '../../../helpers/schedule';
 import { addApiMock, getFeatureFlags } from '../../../helpers/test/api';
-import { addToCache, minimalCache } from '../../../helpers/test/cache';
+import { minimalCache } from '../../../helpers/test/cache';
 import { addApiKeys, clearAll, getDropdown, render } from '../../../helpers/test/helper';
 import Composer from '../Composer';
 import { ID, prepareMessage, props } from './Composer.test.helpers';
@@ -43,10 +43,12 @@ const getPreloadState = ({
     hasPaidMail,
     featureFlagActive = true,
     showSpotlight = false,
+    scheduledTotalCount = 4,
 }: {
     hasPaidMail: boolean;
     featureFlagActive?: boolean;
     showSpotlight?: boolean;
+    scheduledTotalCount?: number;
 }) => {
     return {
         preloadedState: {
@@ -56,13 +58,19 @@ const getPreloadState = ({
                 [FeatureCode.ScheduledSendFreemium, featureFlagActive],
                 [FeatureCode.SpotlightScheduledSend, showSpotlight],
             ]),
+            messageCounts: getModelState([
+                {
+                    LabelID: MAILBOX_LABEL_IDS.SCHEDULED,
+                    Unread: 1,
+                    Total: scheduledTotalCount,
+                },
+            ]),
         },
     };
 };
 
-const setupTest = ({ scheduledTotalCount = 4 }: { scheduledTotalCount?: number } = {}) => {
+const setupTest = () => {
     minimalCache();
-    addToCache('MessageCounts', [{ LabelID: MAILBOX_LABEL_IDS.SCHEDULED, Unread: 1, Total: scheduledTotalCount }]);
 
     addApiKeys(false, user.Address, []);
 };
@@ -333,12 +341,12 @@ describe('Composer scheduled messages', () => {
 
     it('should show a modal when the user reached scheduled messages limit', async () => {
         const { composerID } = setupMessage('Subject', [user as Recipient]);
-        setupTest({ scheduledTotalCount: 100 });
+        setupTest();
 
         const { getByTestId, getByText } = await render(
             <Composer {...props} composerID={composerID} />,
             false,
-            getPreloadState({ hasPaidMail: true })
+            getPreloadState({ hasPaidMail: true, scheduledTotalCount: 100 })
         );
 
         const sendActions = getByTestId('composer:send-actions');
@@ -356,7 +364,7 @@ describe('Composer scheduled messages', () => {
 
     it('should show a modal when trying to schedule a message without a recipient', async () => {
         const { composerID } = setupMessage();
-        setupTest({});
+        setupTest();
 
         const { getByTestId } = await render(
             <Composer {...props} composerID={composerID} />,
@@ -378,7 +386,7 @@ describe('Composer scheduled messages', () => {
 
     it('Should show a modal when trying to schedule a message with a recipient and without subject', async () => {
         const { composerID } = setupMessage('', [user as Recipient]);
-        setupTest({});
+        setupTest();
 
         await render(<Composer {...props} composerID={composerID} />, false, getPreloadState({ hasPaidMail: true }));
 
@@ -415,7 +423,7 @@ describe('Composer scheduled messages', () => {
 
         it('should open schedule time and see tomorrow as default value', async () => {
             const { composerID } = setupMessage('Subject', [user as Recipient]);
-            setupTest({});
+            setupTest();
 
             const { getByTestId } = await render(
                 <Composer {...props} composerID={composerID} />,
@@ -444,7 +452,7 @@ describe('Composer scheduled messages', () => {
 
         it('should open schedule send modal and change date to today', async () => {
             const { composerID } = setupMessage('Subject', [user as Recipient]);
-            setupTest({});
+            setupTest();
 
             const { getByTestId } = await render(
                 <Composer {...props} composerID={composerID} />,
@@ -493,7 +501,7 @@ describe('Composer scheduled messages', () => {
 
         it('should open schedule send modal and change date to future', async () => {
             const { composerID } = setupMessage('Subject', [user as Recipient]);
-            setupTest({});
+            setupTest();
 
             const { getByTestId } = await render(
                 <Composer {...props} composerID={composerID} />,
@@ -529,7 +537,7 @@ describe('Composer scheduled messages', () => {
 
         it('should disable schedule send button display if date is not valid', async () => {
             const { composerID } = setupMessage('Subject', [user as Recipient]);
-            setupTest({});
+            setupTest();
 
             const { getByTestId } = await render(
                 <Composer {...props} composerID={composerID} />,

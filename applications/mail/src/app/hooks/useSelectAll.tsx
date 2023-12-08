@@ -33,7 +33,7 @@ export const useSelectAll = ({ labelID }: Props) => {
     const selectAllAvailable = useFlag('SelectAll');
 
     const locationCount = useMemo(() => {
-        return getLocationElementsCount(labelID, conversationCounts, messageCounts, isConversation);
+        return getLocationElementsCount(labelID, conversationCounts || [], messageCounts || [], isConversation);
     }, [conversationCounts, messageCounts, labelID]);
 
     const getBannerText = useCallback(() => {

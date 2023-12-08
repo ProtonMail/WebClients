@@ -4,7 +4,7 @@ import { Provider, type TypedUseSelectorHook } from 'react-redux';
 import type { Action } from '@reduxjs/toolkit';
 import type { AnyAction, Store } from 'redux';
 
-import { ProtonStoreContext, baseUseDispatch, baseUseSelector } from './sharedContext';
+import { ProtonStoreContext, baseUseDispatch, baseUseSelector, baseUseStore } from './sharedContext';
 import type { SharedStore } from './sharedStore';
 
 type UseProtonDispatch = SharedStore['dispatch'];
@@ -23,5 +23,6 @@ export const ProtonStoreProvider = ({ children, store }: ProtonStoreProviderProp
     );
 };
 
+export let useStore: () => SharedStore = baseUseStore;
 export let useDispatch: () => UseProtonDispatch = baseUseDispatch;
 export let useSelector: TypedUseSelectorHook<SharedState> = baseUseSelector;

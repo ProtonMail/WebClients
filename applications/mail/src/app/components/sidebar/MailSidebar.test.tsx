@@ -7,6 +7,7 @@ import loudRejection from 'loud-rejection';
 import { getModelState } from '@proton/account/test';
 import { getAppVersion } from '@proton/components';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import { conversationCountsActions } from '@proton/mail';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { CHECKLIST_DISPLAY_TYPE, Label } from '@proton/shared/lib/interfaces';
@@ -18,7 +19,6 @@ import {
     useGetStartedChecklist,
 } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import {
-    addToCache,
     assertFocus,
     clearAll,
     config,
@@ -102,13 +102,11 @@ const scheduledMessages = { LabelID: MAILBOX_LABEL_IDS.SCHEDULED, Unread: 1, Tot
 const folderMessages = { LabelID: folder.ID, Unread: 1, Total: 2 };
 const labelMessages = { LabelID: label.ID, Unread: 2, Total: 3 };
 
-const setupTest = (messageCounts: any[] = [], conversationCounts: any[] = []) => {
+const setupTest = () => {
     // open the more section otherwise it's closed by default
     setItem('item-display-more-items', 'true');
 
     minimalCache();
-    addToCache('MessageCounts', messageCounts);
-    addToCache('ConversationCounts', conversationCounts);
 
     mockedReturn.mockReturnValue({
         displayState: CHECKLIST_DISPLAY_TYPE.FULL,
@@ -207,11 +205,12 @@ describe('MailSidebar', () => {
     });
 
     it('should show unread counters', async () => {
-        setupTest([], [inboxMessages, allMailMessages, folderMessages, labelMessages]);
+        setupTest();
 
         const { getByTestId } = await render(<MailSidebar {...props} />, false, {
             preloadedState: {
                 categories: getModelState([folder, label, ...systemFolders]),
+                conversationCounts: getModelState([inboxMessages, allMailMessages, folderMessages, labelMessages]),
             },
         });
 
@@ -296,11 +295,12 @@ describe('MailSidebar', () => {
     });
 
     it('should be updated when counters are updated', async () => {
-        setupTest([], [inboxMessages]);
+        setupTest();
 
-        const { getByTestId } = await render(<MailSidebar {...props} />, false, {
+        const { getByTestId, store } = await render(<MailSidebar {...props} />, false, {
             preloadedState: {
                 categories: getModelState(systemFolders),
+                conversationCounts: getModelState([inboxMessages]),
             },
         });
 
@@ -312,18 +312,19 @@ describe('MailSidebar', () => {
         const inboxMessagesUpdated = { LabelID: '0', Unread: 7, Total: 21 };
 
         act(() => {
-            addToCache('ConversationCounts', [inboxMessagesUpdated]);
+            store.dispatch(conversationCountsActions.set([inboxMessagesUpdated]));
         });
 
         expect(inBoxLocationAside?.innerHTML).toBe(`${inboxMessagesUpdated.Unread}`);
     });
 
     it('should not show scheduled sidebar item when feature flag is disabled', async () => {
-        setupTest([], [scheduledMessages]);
+        setupTest();
 
         const { queryByTestId } = await render(<MailSidebar {...props} />, false, {
             preloadedState: {
                 categories: getModelState(systemFolders),
+                conversationCounts: getModelState([scheduledMessages]),
             },
         });
 
@@ -331,11 +332,12 @@ describe('MailSidebar', () => {
     });
 
     it('should show scheduled sidebar item if scheduled messages', async () => {
-        setupTest([], [scheduledMessages]);
+        setupTest();
 
         const { getByTestId } = await render(<MailSidebar {...props} />, false, {
             preloadedState: {
                 categories: getModelState(systemFolders),
+                conversationCounts: getModelState([scheduledMessages]),
             },
         });
 
@@ -346,7 +348,7 @@ describe('MailSidebar', () => {
     });
 
     it('should not show scheduled sidebar item without scheduled messages', async () => {
-        setupTest([], []);
+        setupTest();
 
         const { queryByTestId } = await render(<MailSidebar {...props} />, false);
 
