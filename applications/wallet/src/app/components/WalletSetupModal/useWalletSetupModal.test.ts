@@ -1,4 +1,5 @@
 import { act, renderHook } from '@testing-library/react-hooks';
+import { vi } from 'vitest';
 
 import { WalletSetupMode, WalletSetupStep } from './type';
 import { useWalletSetupModal } from './useWalletSetupModal';
@@ -7,7 +8,7 @@ describe('useWalletSetupModal', () => {
     describe('onSelectSetupMode', () => {
         describe('when Creation is selected', () => {
             it("should set mode and move to mod's first step", () => {
-                const { result } = renderHook(() => useWalletSetupModal({ isOpen: true, onSetupFinish: jest.fn() }));
+                const { result } = renderHook(() => useWalletSetupModal({ isOpen: true, onSetupFinish: vi.fn() }));
 
                 act(() => {
                     result.current.onSelectSetupMode(WalletSetupMode.Creation);
@@ -20,7 +21,7 @@ describe('useWalletSetupModal', () => {
 
         describe('when Import is selected', () => {
             it("should set mode and move to mod's first step", () => {
-                const { result } = renderHook(() => useWalletSetupModal({ isOpen: true, onSetupFinish: jest.fn() }));
+                const { result } = renderHook(() => useWalletSetupModal({ isOpen: true, onSetupFinish: vi.fn() }));
 
                 act(() => {
                     result.current.onSelectSetupMode(WalletSetupMode.Import);

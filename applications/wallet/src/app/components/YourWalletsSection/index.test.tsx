@@ -1,11 +1,12 @@
 import { fireEvent, render, screen, within } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import { YourWalletsSection } from '.';
 import { walletsWithAccountsWithBalanceAndTxs } from '../../tests';
 
 describe('YourWalletsSection', () => {
     it('should display lightning wallets total balance and fiat amount', () => {
-        render(<YourWalletsSection wallets={walletsWithAccountsWithBalanceAndTxs} onAddWallet={jest.fn()} />);
+        render(<YourWalletsSection wallets={walletsWithAccountsWithBalanceAndTxs} onAddWallet={vi.fn()} />);
 
         const lightningBalanceContainer = screen.getByTestId('lightning-balance-card');
         expect(lightningBalanceContainer).toBeInTheDocument();
@@ -17,7 +18,7 @@ describe('YourWalletsSection', () => {
     });
 
     it('should display onchain wallets total balance and fiat amount', () => {
-        render(<YourWalletsSection wallets={walletsWithAccountsWithBalanceAndTxs} onAddWallet={jest.fn()} />);
+        render(<YourWalletsSection wallets={walletsWithAccountsWithBalanceAndTxs} onAddWallet={vi.fn()} />);
 
         const onchainBalanceContainer = screen.getByTestId('onchain-balance-card');
         expect(onchainBalanceContainer).toBeInTheDocument();
@@ -30,7 +31,7 @@ describe('YourWalletsSection', () => {
 
     describe('when user clicks on `Add wallet` card', () => {
         it('should call provided `onAddWallet`', () => {
-            const mockedOnAddWallet = jest.fn();
+            const mockedOnAddWallet = vi.fn();
 
             render(
                 <YourWalletsSection wallets={walletsWithAccountsWithBalanceAndTxs} onAddWallet={mockedOnAddWallet} />

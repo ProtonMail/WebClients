@@ -7,7 +7,7 @@ import useInstance from '@proton/hooks/useInstance';
 import { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 
-import { FormContext } from '../../../components';
+import { FormContext } from '../../../components/form';
 import { generateUID } from '../../../helpers';
 import Icon from '../../icon/Icon';
 import { Tooltip } from '../../tooltip';

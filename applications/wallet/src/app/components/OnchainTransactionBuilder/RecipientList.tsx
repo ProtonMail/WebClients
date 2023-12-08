@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Input } from '@proton/atoms/Input';
-import { ButtonGroup } from '@proton/components/components';
+import { Button } from '@proton/atoms/Button/Button';
+import { Input } from '@proton/atoms/Input/Input';
+import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 
 import { WasmRecipient } from '../../../pkg';
 import { AccountWithBlockchainData, BitcoinUnit } from '../../types';

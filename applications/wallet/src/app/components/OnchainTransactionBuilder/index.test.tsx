@@ -1,5 +1,6 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { vi } from 'vitest';
 
 import { OnchainTransactionBuilder } from '.';
 import { walletsWithAccountsWithBalanceAndTxs } from '../../tests';
@@ -8,7 +9,7 @@ import * as useOnchainTransactionBuilderModule from './useOnchainTransactionBuil
 describe.skip('OnchainTransactionBuilder', () => {
     let helper: ReturnType<typeof useOnchainTransactionBuilderModule.useOnchainTransactionBuilder>;
 
-    const mockUseBitcoinReceiveInfoGenerator = jest.spyOn(
+    const mockUseBitcoinReceiveInfoGenerator = vi.spyOn(
         useOnchainTransactionBuilderModule,
         'useOnchainTransactionBuilder'
     );
@@ -20,26 +21,26 @@ describe.skip('OnchainTransactionBuilder', () => {
         helper = {
             selectedWallet: testWallet,
             selectedAccount: testAccount,
-            handleSelectWallet: jest.fn(),
-            handleSelectAccount: jest.fn(),
-            addRecipient: jest.fn(),
-            updateRecipient: jest.fn(),
-            removeRecipient: jest.fn(),
-            updateTxBuilder: jest.fn(),
-            createPsbt: jest.fn(),
-            backToTxBuilder: jest.fn(),
-            handleSignAndSend: jest.fn(),
+            handleSelectWallet: vi.fn(),
+            handleSelectAccount: vi.fn(),
+            addRecipient: vi.fn(),
+            updateRecipient: vi.fn(),
+            removeRecipient: vi.fn(),
+            updateTxBuilder: vi.fn(),
+            createPsbt: vi.fn(),
+            backToTxBuilder: vi.fn(),
+            handleSignAndSend: vi.fn(),
             unitByRecipient: {},
             loadindBroadcast: false,
             txid: undefined,
             finalPsbt: undefined,
             txBuilder: {
-                get_recipients: jest.fn().mockReturnValue([]),
-                get_fee_rate: jest.fn().mockReturnValue(undefined),
-                get_coin_selection: jest.fn(),
-                get_utxos_to_spend: jest.fn().mockReturnValue([]),
-                get_rbf_enabled: jest.fn().mockReturnValue(true),
-                get_change_policy: jest.fn(),
+                get_recipients: vi.fn().mockReturnValue([]),
+                get_fee_rate: vi.fn().mockReturnValue(undefined),
+                get_coin_selection: vi.fn(),
+                get_utxos_to_spend: vi.fn().mockReturnValue([]),
+                get_rbf_enabled: vi.fn().mockReturnValue(true),
+                get_change_policy: vi.fn(),
             } as any,
         };
 

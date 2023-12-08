@@ -9,8 +9,8 @@ describe('useBalanceEvolution', () => {
     let simpleTransactions: WasmSimpleTransaction[];
 
     beforeEach(() => {
-        jest.useFakeTimers();
-        jest.setSystemTime(new Date('11/23/2023'));
+        vi.useFakeTimers();
+        vi.setSystemTime(new Date('11/23/2023'));
 
         const baseDate = set(new Date(), { year: 2023, month: 10 });
         simpleTransactions = [
@@ -58,10 +58,10 @@ describe('useBalanceEvolution', () => {
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
-    describe('evolutionByTx', () => {
+    describe.todo('evolutionByTx', () => {
         // TODO when/if used
     });
 

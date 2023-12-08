@@ -16,7 +16,7 @@
         "strict": true,
         "target": "es2021",
         "skipLibCheck": true,
-        "types": ["webpack-env", "jest"],
+        "types": ["webpack-env", "jest", "vitest/globals"],
         "baseUrl": ".",
         "paths": {
             "proton-mail/*": ["./applications/mail/src/app/*"],
