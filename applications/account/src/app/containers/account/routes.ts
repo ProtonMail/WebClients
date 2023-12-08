@@ -14,6 +14,7 @@ import {
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
 import { getHasVpnB2BPlan, hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
 import { Organization, Renew, Subscription, UserModel, UserType } from '@proton/shared/lib/interfaces';
+import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 import { isOrganizationFamily, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 
 import { recoveryIds } from './recoveryIds';
@@ -60,7 +61,7 @@ export const getAccountAppRoutes = ({
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
 
     const cancellablePlan = hasCancellablePlan(subscription);
-    const isSSOUser = user.Flags.sso === true;
+    const isSSOUser = getIsSSOVPNOnlyAccount(user);
 
     return <const>{
         header: c('Settings section title').t`Account`,

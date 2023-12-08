@@ -10,6 +10,7 @@ import {
     hasVpnBusiness,
 } from '@proton/shared/lib/helpers/subscription';
 import { Organization, Renew, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 
 export const getRoutes = (user: UserModel, subscription?: Subscription, organization?: Organization) => {
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
@@ -24,7 +25,7 @@ export const getRoutes = (user: UserModel, subscription?: Subscription, organiza
     const hasOrganization = hasOrganizationSetup(organization);
 
     const multiUserTitle = c('Title').t`Multi-user support`;
-    const isSSOUser = user.Flags.sso === true;
+    const isSSOUser = getIsSSOVPNOnlyAccount(user);
 
     return {
         dashboard: <SectionConfig>{
