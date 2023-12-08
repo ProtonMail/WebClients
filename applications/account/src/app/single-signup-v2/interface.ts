@@ -116,6 +116,7 @@ export enum SignupMode {
     Default = 'default',
     Onboarding = 'onboarding',
     Invite = 'invite',
+    MailReferral = 'mailReferral',
 }
 
 export interface SignupTheme {
@@ -172,5 +173,8 @@ export interface PlanParameters {
 export interface SignupParameters2 extends Omit<ReturnType<typeof getSignupSearchParams>, 'invite'> {
     localID: number | undefined;
     mode: SignupMode;
-    invite: { type: 'pass'; data: { inviter: string; invited: string } } | undefined;
+    invite:
+        | { type: 'pass'; data: { inviter: string; invited: string } }
+        | { type: 'mail'; data: { invite: string } }
+        | undefined;
 }

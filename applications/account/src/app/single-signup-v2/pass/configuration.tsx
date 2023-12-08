@@ -199,6 +199,7 @@ export const getPassConfiguration = ({
             [SignupMode.Default]: title,
             [SignupMode.Onboarding]: onboardingTitle,
             [SignupMode.Invite]: inviteTitle,
+            [SignupMode.MailReferral]: title,
         }[mode],
         features,
         benefits,
