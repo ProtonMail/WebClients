@@ -1,6 +1,8 @@
 import type { ElementType } from 'react';
 import { type MouseEvent, type VFC, useMemo } from 'react';
 
+import { c } from 'ttag';
+
 import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
@@ -68,7 +70,7 @@ export const SpotlightContent: VFC<Props> = ({
         >
             {onClose && (
                 <Button icon shape="ghost" color="weak" size="small" className="absolute top right" onClick={onClose}>
-                    <Icon name="cross" color="var(--interaction-norm-contrast)" />
+                    <Icon name="cross" color="var(--interaction-norm-contrast)" alt={c('Action').t`Close`} />
                 </Button>
             )}
 
