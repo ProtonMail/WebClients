@@ -34,7 +34,7 @@ $breakpoints: im-to-em(
 ) !default;
 
 // specific breakpoints
-$breakpoint-for-drawer: 1400px; // Temporary breakpoint used to display the drawer app. When useActiveBreakpoints will be refactored, this breakpoint will disappear
+$breakpoint-for-drawer: 1400px;
 
 // Media expressions for include-media
 $media-expressions: (
