@@ -88,20 +88,44 @@ const PasswordResetAvailableBanner = () => {
             </SettingsLink>
         );
 
-    const message =
-        timeRemaining.inDays === 0
-            ? // translator: Full sentence "Password reset request approved (user@email.com). You have N hours to reset your password."
-              c('session_recovery:available:info').ngettext(
-                  msgid`Password reset request approved (${user.Email}). You have ${timeRemaining.inHours} hour to reset your password.`,
-                  `Password reset request approved (${user.Email}). You have ${timeRemaining.inHours} hours to reset your password.`,
-                  timeRemaining.inHours
-              )
-            : // translator: Full sentence "Password reset request approved (user@email.com). You have N days to reset your password."
-              c('session_recovery:available:info').ngettext(
-                  msgid`Password reset request approved (${user.Email}). You have ${timeRemaining.inDays} day to reset your password.`,
-                  `Password reset request approved (${user.Email}). You have ${timeRemaining.inDays} days to reset your password.`,
-                  timeRemaining.inDays
-              );
+    // translator: Full sentence "Password reset request approved (user@email.com)."
+    const approved = c('session_recovery:available:info').jt`Password reset request approved (${user.Email}).`;
+
+    const message = (() => {
+        if (timeRemaining.inMinutes === 0) {
+            // translator: Full sentence "You have N seconds to reset your password."
+            return c('session_recovery:available:info').ngettext(
+                msgid`You have ${timeRemaining.inSeconds} second to reset your password.`,
+                ` You have ${timeRemaining.inSeconds} seconds to reset your password.`,
+                timeRemaining.inSeconds
+            );
+        }
+
+        if (timeRemaining.inHours === 0) {
+            // translator: Full sentence "You have N minutes to reset your password."
+            return c('session_recovery:available:info').ngettext(
+                msgid`You have ${timeRemaining.inMinutes} minute to reset your password.`,
+                ` You have ${timeRemaining.inMinutes} minutes to reset your password.`,
+                timeRemaining.inMinutes
+            );
+        }
+
+        if (timeRemaining.inDays === 0) {
+            // translator: Full sentence "You have N hours to reset your password."
+            return c('session_recovery:available:info').ngettext(
+                msgid`You have ${timeRemaining.inHours} hour to reset your password.`,
+                ` You have ${timeRemaining.inHours} hours to reset your password.`,
+                timeRemaining.inHours
+            );
+        }
+
+        // translator: Full sentence "You have N days to reset your password."
+        return c('session_recovery:available:info').ngettext(
+            msgid`You have ${timeRemaining.inDays} day to reset your password.`,
+            `You have ${timeRemaining.inDays} days to reset your password.`,
+            timeRemaining.inDays
+        );
+    })();
 
     return (
         <>
@@ -109,7 +133,7 @@ const PasswordResetAvailableBanner = () => {
                 <PasswordResetAvailableAccountModal {...passwordResetAvailableAccountModal} />
             )}
             <TopBanner className="bg-success">
-                {message} {cta}
+                {approved} {message} {cta}
             </TopBanner>
         </>
     );
