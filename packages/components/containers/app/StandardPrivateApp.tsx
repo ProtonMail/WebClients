@@ -99,7 +99,7 @@ const InnerStandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>
     const appLink = useAppLink();
     const getFeature = useLoadFeature();
     const flagsReadyPromise = useFlagsReady();
-    const { isElectron, isElectronDisabled, isElectronOnMac, isElectronOnWindows } = useIsInboxElectronApp();
+    const { isElectronDisabled } = useIsInboxElectronApp();
     const client = useUnleashClient();
 
     useEffect(() => {
@@ -245,19 +245,6 @@ const InnerStandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>
 
     if (isElectronDisabled) {
         return <ElectronBlockedContainer />;
-    }
-
-    // probably nicer to have all electron classes in a helper
-    if (isElectron) {
-        document.body.classList.add('is-electron');
-    }
-
-    if (isElectronOnMac) {
-        document.body.classList.add('is-electron-mac');
-    }
-
-    if (isElectronOnWindows) {
-        document.body.classList.add('is-electron-windows');
     }
 
     return (
