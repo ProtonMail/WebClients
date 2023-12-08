@@ -93,6 +93,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
         let newFormattedDate = date;
         if (type === 'date') {
             newFormattedDate = set(date, {
+                year: newDate.getFullYear(),
                 month: newDate.getMonth(),
                 date: newDate.getDate(),
             });
