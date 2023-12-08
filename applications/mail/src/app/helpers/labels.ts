@@ -140,13 +140,10 @@ export const getStandardFolders = (): FolderMap => ({
     // },
 });
 
-const STANDARD_FOLDERS = getStandardFolders();
-export const getI18nLabelID = (labelID: string) =>
-    STANDARD_FOLDERS[labelID as MAILBOX_LABEL_IDS]?.name || getHumanLabelID(labelID);
-
 export const getLabelName = (labelID: string, labels: Label[] = [], folders: Folder[] = []): string => {
     if (labelID in LABEL_IDS_TO_HUMAN) {
-        return getI18nLabelID(labelID);
+        const folders = getStandardFolders();
+        return folders[labelID].name;
     }
 
     const labelsMap = toMap(labels, 'ID');
