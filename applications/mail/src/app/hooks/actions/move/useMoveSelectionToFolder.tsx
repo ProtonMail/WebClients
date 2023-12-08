@@ -6,14 +6,14 @@ import { c } from 'ttag';
 
 import { useModalTwo } from '@proton/components/components';
 import { FeatureCode } from '@proton/components/containers';
-import { useApi, useEventManager, useFeature, useFolders, useNotifications } from '@proton/components/hooks';
-import { useGetLabels } from '@proton/components/hooks/useCategories';
+import { useApi, useEventManager, useFeature, useNotifications } from '@proton/components/hooks';
 import { labelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { labelMessages } from '@proton/shared/lib/api/messages';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
+import { useGetFolders, useGetLabels } from '@proton/mail';
 
 import MoveSnoozedModal from 'proton-mail/components/list/snooze/components/MoveSnoozedModal';
 import MoveScheduledModal from 'proton-mail/components/message/modals/MoveScheduledModal';
@@ -62,7 +62,7 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
     const { call, stop, start } = useEventManager();
     const { createNotification } = useNotifications();
     const getLabels = useGetLabels();
-    const [folders = []] = useFolders();
+    const getFolders = useGetFolders();
     const optimisticApplyLabels = useOptimisticApplyLabels();
     const mailSettings = useMailModel('MailSettings');
     const dispatch = useAppDispatch();
@@ -100,6 +100,8 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
         }: MoveSelectionParams) => {
             let undoing = false;
             let spamAction: SPAM_ACTION | undefined = undefined;
+            const folders = await getFolders();
+            const labels = await getLabels();
 
             // Open a modal when moving a scheduled message/conversation to trash to inform the user that it will be cancelled
             await searchForScheduled(
@@ -147,7 +149,6 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
 
             const { doCreateFilters, undoCreateFilters } = getFilterActions();
 
-            const labels = (await getLabels()) || [];
 
             let rollback = () => {};
 
