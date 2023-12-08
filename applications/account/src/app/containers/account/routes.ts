@@ -11,6 +11,7 @@ import {
     PROTON_SENTINEL_NAME,
     REFERRAL_PROGRAM_MAX_AMOUNT,
 } from '@proton/shared/lib/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
 import { getHasVpnB2BPlan, hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
 import { Organization, Renew, Subscription, UserModel, UserType } from '@proton/shared/lib/interfaces';
@@ -228,6 +229,7 @@ export const getAccountAppRoutes = ({
                     {
                         text: c('Title').t`Theme`,
                         id: 'theme',
+                        available: !isElectronApp(),
                     },
                     {
                         text: c('Title').t`Accessibility`,

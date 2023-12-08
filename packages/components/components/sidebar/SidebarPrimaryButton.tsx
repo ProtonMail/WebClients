@@ -10,7 +10,7 @@ const SidebarPrimaryButton = ({ children, className = '', ...rest }: ButtonProps
     return (
         <Button
             color="norm"
-            size={!isElectronWindows ? 'medium' : 'large'}
+            size={isElectronWindows ? 'medium' : 'large'}
             className={clsx(['w-full', className])}
             ref={ref}
             {...rest}
