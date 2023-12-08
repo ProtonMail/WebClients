@@ -8,7 +8,13 @@ import type {
     WorkerResponse,
 } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
-import { safeCall } from '@proton/pass/utils/fp/safe-call';
+
+const VersionMismatchError = () => {
+    const error = new Error();
+    error.message = 'Extension version mismatch';
+    error.name = 'VersionMismatch';
+    return error;
+};
 
 /**
  * This function is essential for maintaining consistent communication between
@@ -18,7 +24,7 @@ import { safeCall } from '@proton/pass/utils/fp/safe-call';
  * due to the unique way service workers are updated in MV3.
  */
 export const assertMessageVersion = (message: WorkerMessageWithSender) => {
-    if (message.version !== VERSION) safeCall(() => browser.runtime.reload())();
+    if (message.version !== VERSION) throw VersionMismatchError();
 };
 
 /**
