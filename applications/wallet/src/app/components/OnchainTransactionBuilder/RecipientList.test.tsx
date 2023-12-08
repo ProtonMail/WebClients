@@ -1,4 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
+import { vi } from 'vitest';
 
 import { WasmRecipient } from '../../../pkg';
 import { walletsWithAccountsWithBalanceAndTxs } from '../../tests';
@@ -20,9 +21,9 @@ describe('RecipientList', () => {
             selectedAccount: testAccount,
             recipients,
             unitByRecipient: {},
-            onRecipientUpdate: jest.fn(),
-            onRecipientAddition: jest.fn(),
-            onRecipientRemove: jest.fn(),
+            onRecipientUpdate: vi.fn(),
+            onRecipientAddition: vi.fn(),
+            onRecipientRemove: vi.fn(),
         };
     });
 

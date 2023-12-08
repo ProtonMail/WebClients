@@ -6,11 +6,13 @@ import { walletsWithAccountsWithBalanceAndTxs } from '../../tests';
 import { useBalanceOverview } from './useBalanceOverview';
 
 describe('useBalanceOverview', () => {
+    const randomAccentColorMock = vi.spyOn(getRandomAccentColorModule, 'getRandomAccentColor');
     beforeEach(() => {
-        jest.useFakeTimers();
-        jest.setSystemTime(new Date('11/27/2023'));
+        vi.useFakeTimers();
+        vi.setSystemTime(new Date('11/27/2023'));
 
-        jest.spyOn(getRandomAccentColorModule, 'getRandomAccentColor')
+        randomAccentColorMock.mockReset();
+        randomAccentColorMock
             .mockReturnValueOnce('#33FF33')
             .mockReturnValueOnce('#FF3333')
             .mockReturnValueOnce('#5733FF')
@@ -20,7 +22,7 @@ describe('useBalanceOverview', () => {
     });
 
     afterEach(() => {
-        jest.useRealTimers();
+        vi.useRealTimers();
     });
 
     describe('balance overview for multiple wallets', () => {
@@ -42,7 +44,7 @@ describe('useBalanceOverview', () => {
             expect(result.current.balanceDistributionDoughnutChartData).toStrictEqual({
                 datasets: [
                     {
-                        backgroundColor: ['#5733FF', '#336EFF', '#33FFAA', '#B4A40E'],
+                        backgroundColor: ['#33FF33', '#FF3333', '#5733FF', '#336EFF'],
                         borderWidth: 0,
                         cutout: '70%',
                         data: [11884066, 8384799, 2612374, 8875342],
@@ -117,7 +119,7 @@ describe('useBalanceOverview', () => {
             expect(result.current.balanceDistributionDoughnutChartData).toStrictEqual({
                 datasets: [
                     {
-                        backgroundColor: ['#5733FF', '#336EFF'],
+                        backgroundColor: ['#33FF33', '#FF3333'],
                         borderWidth: 0,
                         cutout: '70%',
                         data: [100067, 11783999],

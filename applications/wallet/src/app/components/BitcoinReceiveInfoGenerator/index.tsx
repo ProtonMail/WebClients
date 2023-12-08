@@ -2,9 +2,14 @@ import { ChangeEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Card } from '@proton/atoms/Card';
-import { Alert, Copy, Icon, InputFieldTwo, QRCode, Tooltip } from '@proton/components/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Card from '@proton/atoms/Card/Card';
+import Alert from '@proton/components/components/alert/Alert';
+import Copy from '@proton/components/components/button/Copy';
+import Icon from '@proton/components/components/icon/Icon';
+import QRCode from '@proton/components/components/image/QRCode';
+import { Tooltip } from '@proton/components/components/tooltip';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { SECOND } from '@proton/shared/lib/constants';
 
 import { Selector } from '../../atoms/Selector';
@@ -169,4 +174,5 @@ export const BitcoinReceiveInfoGenerator = ({ defaultWalletId, wallets }: Props)
             )}
         </div>
     );
+    return null;
 };

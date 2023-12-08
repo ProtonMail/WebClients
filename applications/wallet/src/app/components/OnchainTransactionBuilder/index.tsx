@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Card } from '@proton/atoms/Card';
+import { Button } from '@proton/atoms/Button/Button';
+import Card from '@proton/atoms/Card/Card';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 
 import { Selector } from '../../atoms/Selector';
@@ -129,7 +129,6 @@ export const OnchainTransactionBuilder = ({ defaultWalletId, wallets }: Props) =
                     account={selectedAccount}
                 />
                 <hr className="my-2 bg-weak" />
-                {/* TODO: Connect this to proton-wallet-common lib */}
                 <Button
                     color="norm"
                     className="mt-4 ml-auto"

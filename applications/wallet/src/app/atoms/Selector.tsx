@@ -1,4 +1,6 @@
-import { Label, Option, SelectTwo } from '@proton/components/components';
+import Label from '@proton/components/components/label/Label';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 
 interface BaseOption<TSelectValue extends string | number> {

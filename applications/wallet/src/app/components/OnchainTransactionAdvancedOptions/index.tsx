@@ -1,18 +1,18 @@
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
+import { Button } from '@proton/atoms/Button/Button';
+import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 import {
-    ButtonGroup,
     Collapsible,
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
-    Icon,
-    InputFieldTwo,
-    Option,
-    SelectTwo,
-    Toggle,
-} from '@proton/components/components';
+} from '@proton/components/components/collapsible';
+import Icon from '@proton/components/components/icon/Icon';
+import Option from '@proton/components/components/option/Option';
+import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import Toggle from '@proton/components/components/toggle/Toggle';
+import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 
 import { WasmCoinSelection, WasmTxBuilder } from '../../../pkg';
 import { AccountWithBlockchainData } from '../../types';

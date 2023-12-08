@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { Price } from '@proton/components/components';
+import { Price } from '@proton/components/components/price';
 import clsx from '@proton/utils/clsx';
 
 import { BitcoinUnit } from '../types';

@@ -1,10 +1,11 @@
 import { render, screen } from '@testing-library/react';
+import { describe } from 'vitest';
 
 import { BalanceOverview } from '.';
 import type { WasmSimpleTransaction } from '../../../pkg';
 import { walletsWithAccountsWithBalanceAndTxs } from '../../tests';
 
-jest.mock('react-chartjs-2', () => ({ Doughnut: 'div', Line: 'div' }));
+vi.mock('react-chartjs-2', () => ({ Doughnut: 'div', Line: 'div' }));
 
 describe('BalanceOverview', () => {
     describe('total balance', () => {
@@ -17,9 +18,7 @@ describe('BalanceOverview', () => {
         });
     });
 
-    describe('balance distribution doughnut char', () => {
-        // TODO
-    });
+    describe.todo('balance distribution doughnut char');
 
     describe('last 7 days difference', () => {
         it("should display last 7 days bitcoin amount difference and equivalent in user's currency", () => {
@@ -61,7 +60,5 @@ describe('BalanceOverview', () => {
         });
     });
 
-    describe('balance evolution line char', () => {
-        // TODO
-    });
+    describe.todo('balance evolution line char');
 });
