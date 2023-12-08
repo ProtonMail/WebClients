@@ -1,9 +1,9 @@
 import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react';
 
+import { useUnleashClient } from '@protontech/proxy-client-react';
 import { c } from 'ttag';
 
 import metrics from '@proton/metrics';
-import { useUnleashClient } from '@protontech/proxy-client-react'; 
 import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { requiresNonDelinquent } from '@proton/shared/lib/authentication/apps';
 import { APPS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
@@ -16,7 +16,7 @@ import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { User, UserSettings } from '@proton/shared/lib/interfaces';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { Model } from '@proton/shared/lib/interfaces/Model';
-import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
+import { getIsSSOVPNOnlyAccount, getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import { UserModel, UserSettingsModel } from '@proton/shared/lib/models';
 import { loadModels } from '@proton/shared/lib/models/helper';
 import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
@@ -115,7 +115,7 @@ const InnerStandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>
         const featuresPromise = getFeature([FeatureCode.EarlyAccessScope, ...preloadFeatures]);
 
         let earlyAccessRefresher: undefined | (() => void);
-        let shouldSetupAddress = false;
+        let redirect: false | 'setup-address' | 'account/vpn' = false;
 
         const userModelPromise = loadModels([UserModel], loadModelsArgs).then((result: any) => {
             const [user] = result as [User];
@@ -124,7 +124,18 @@ const InnerStandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>
             const hasNonDelinquentScope = getHasNonDelinquentScope(user);
             hasDelinquentBlockRef.current = hasNonDelinquentRequirement && !hasNonDelinquentScope;
 
-            shouldSetupAddress = getRequiresAddressSetup(APP_NAME, user);
+            redirect = (() => {
+                if (getRequiresAddressSetup(APP_NAME, user)) {
+                    return 'setup-address' as const;
+                }
+                if (
+                    getIsSSOVPNOnlyAccount(user) &&
+                    ![APPS.PROTONACCOUNT, APPS.PROTONVPN_SETTINGS].includes(APP_NAME as any)
+                ) {
+                    return 'account/vpn' as const;
+                }
+                return false;
+            })();
         });
 
         const models = unique([UserSettingsModel, ...preloadModels]).filter((model) => model !== UserModel);
@@ -159,18 +170,16 @@ const InnerStandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>
         const initPromise = onInit?.();
 
         const run = async () => {
-            const promises = [
-                eventManagerPromise,
-                setupPromise,
-                initPromise,
-                appPromise,
-                flagsReadyPromise,
-            ];
-            
+            const promises = [eventManagerPromise, setupPromise, initPromise, appPromise, flagsReadyPromise];
+
             try {
                 await userModelPromise;
                 await Promise.all(promises);
-                await loadCryptoWorker(getCryptoWorkerOptions(APP_NAME, { checkEdDSAFaultySignatures: client.isEnabled('EdDSAFaultySignatureCheck') } ));
+                await loadCryptoWorker(
+                    getCryptoWorkerOptions(APP_NAME, {
+                        checkEdDSAFaultySignatures: client.isEnabled('EdDSAFaultySignatureCheck'),
+                    })
+                );
             } catch (error) {
                 if (getIs401Error(error)) {
                     // Trigger onLogout early, ignoring the unload wrapper
@@ -188,8 +197,12 @@ const InnerStandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>
                     earlyAccessRefresher();
                     await new Promise(noop);
                 }
-                if (shouldSetupAddress) {
+                if (redirect === 'setup-address') {
                     appLink(`${SETUP_ADDRESS_PATH}?to=${APP_NAME}`, APPS.PROTONACCOUNT);
+                    await new Promise(noop);
+                }
+                if (redirect === 'account/vpn') {
+                    appLink('/vpn', APPS.PROTONACCOUNT);
                     await new Promise(noop);
                 }
             }

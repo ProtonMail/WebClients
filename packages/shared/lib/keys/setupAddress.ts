@@ -295,6 +295,10 @@ export const getRequiresMailKeySetup = (user: tsUser | undefined) => {
     );
 };
 
+export const getIsSSOVPNOnlyAccount = (user: tsUser | undefined) => {
+    return user && user.Flags.sso && !user.Keys.length;
+};
+
 export const getIsVPNOnlyAccount = (user: tsUser | undefined) => {
     if (!user) {
         return false;
