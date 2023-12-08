@@ -105,6 +105,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
             onUnauthorized: (userID, localID, broadcast) => {
                 store.dispatch(cacheCancel());
                 store.dispatch(stopEventPolling());
+                store.dispatch(stateDestroy());
 
                 if (broadcast) sw.send({ type: 'unauthorized', localID, broadcast: true });
                 if (userID) void deletePassDB(userID); /* wipe the local DB cache */
@@ -113,7 +114,6 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 client.current.setStatus(AppStatus.UNAUTHORIZED);
                 history.replace('/');
 
-                store.dispatch(stateDestroy());
                 onboarding.reset();
                 telemetry.stop();
             },
@@ -148,9 +148,12 @@ export const AuthServiceProvider: FC = ({ children }) => {
             },
 
             onSessionLocked: (localID, broadcast) => {
-                store.dispatch(stopEventPolling());
                 client.current.setStatus(AppStatus.LOCKED);
                 if (broadcast) sw.send({ type: 'locked', localID, broadcast: true });
+
+                store.dispatch(cacheCancel());
+                store.dispatch(stopEventPolling());
+                store.dispatch(stateDestroy());
             },
 
             onSessionLockCheck: (lock) => store.dispatch(sessionLockSync(lock)),
