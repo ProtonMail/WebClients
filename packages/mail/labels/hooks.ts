@@ -45,6 +45,20 @@ const foldersSelector = createCategorySelector(filterFolders);
 const systemSelector = createCategorySelector(filterSystem);
 const contactGroupsSelector = createCategorySelector(filterContactGroups);
 
+export const useGetLabels = () => {
+    const get = useGetCategories();
+    return useCallback(() => {
+        return get().then(filterLabels);
+    }, [get]);
+};
+
+export const useGetFolders = () => {
+    const get = useGetCategories();
+    return useCallback(() => {
+        return get().then(filterFolders);
+    }, [get]);
+};
+
 export const useLabels = () => {
     const get = useGetCategories();
     useEffect(() => {
