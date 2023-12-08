@@ -155,7 +155,9 @@ const Sidebar = ({
                     </div>
                 )}
 
-                {primary && !isElectronMac ? <div className="px-3 pb-2 shrink-0 hidden md:block">{primary}</div> : null}
+                {primary && !isElectronMac && !isElectronWindows ? (
+                    <div className="px-3 pb-2 shrink-0 hidden md:block">{primary}</div>
+                ) : null}
                 <div className="mt-1 md:mt-0" aria-hidden="true" />
                 <div
                     className={clsx(
