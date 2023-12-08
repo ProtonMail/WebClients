@@ -258,10 +258,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                 <DropdownMenu className="pb-4">
                     <div className="px-4 py-3 flex flex-nowrap gap-4 justify-space-between text-sm">
                         {planName ? (
-                            <span
-                                className="text-semibold block shrink-0"
-                                data-testid="userdropdown:label:plan-name"
-                            >
+                            <span className="text-semibold block shrink-0" data-testid="userdropdown:label:plan-name">
                                 {planName}
                             </span>
                         ) : null}
@@ -381,35 +378,47 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                         </Button>
                     </div>
 
-                    {viewportWidth['<=small'] && hasAppLinks ? (
-                        <ul className="px-4 pb-4 unstyled text-sm">
-                            {apps(user).map((appToLinkTo) => {
-                                const appToLinkToName = getAppShortName(appToLinkTo);
-                                const current = app && appToLinkTo === app;
+                    {(() => {
+                        if (viewportWidth['<=small'] && hasAppLinks) {
+                            const availableApps = apps(user);
+                            if (availableApps.length <= 1) {
+                                return null;
+                            }
+                            return (
+                                <ul className="px-4 pb-4 unstyled text-sm">
+                                    {availableApps.map((appToLinkTo) => {
+                                        const appToLinkToName = getAppShortName(appToLinkTo);
+                                        const current = app && appToLinkTo === app;
 
-                                return (
-                                    <li key={appToLinkTo}>
-                                        <ProductLink
-                                            ownerApp={APP_NAME}
-                                            app={app}
-                                            appToLinkTo={appToLinkTo}
-                                            user={user}
-                                            className="flex flex-nowrap items-center color-weak text-no-decoration border-weak border-bottom interactive-pseudo relative py-1"
-                                        >
-                                            <Logo
-                                                appName={appToLinkTo}
-                                                variant="glyph-only"
-                                                className="shrink-0 mr-2"
-                                            />
-                                            <span className={clsx(current && 'color-norm text-semibold')} aria-hidden>
-                                                {appToLinkToName}
-                                            </span>
-                                        </ProductLink>
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    ) : null}
+                                        return (
+                                            <li key={appToLinkTo}>
+                                                <ProductLink
+                                                    ownerApp={APP_NAME}
+                                                    app={app}
+                                                    appToLinkTo={appToLinkTo}
+                                                    user={user}
+                                                    className="flex flex-nowrap items-center color-weak text-no-decoration border-weak border-bottom interactive-pseudo relative py-1"
+                                                >
+                                                    <Logo
+                                                        appName={appToLinkTo}
+                                                        variant="glyph-only"
+                                                        className="shrink-0 mr-2"
+                                                    />
+                                                    <span
+                                                        className={clsx(current && 'color-norm text-semibold')}
+                                                        aria-hidden
+                                                    >
+                                                        {appToLinkToName}
+                                                    </span>
+                                                </ProductLink>
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                            );
+                        }
+                        return null;
+                    })()}
 
                     <div className="text-sm text-center flex flex-column gap-2">
                         {APP_NAME !== APPS.PROTONVPN_SETTINGS &&
