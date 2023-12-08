@@ -14,8 +14,8 @@ import { getLightningFormatOptions } from './constants';
 import { useBitcoinReceiveInfoGenerator } from './useBitcoinReceiveInfoGenerator';
 
 const CopyPasteButton = ({ value }: { value: string }) => {
-    const defaultTitle = c('Wallet Receive').t`Copy address`;
-    const [title, setTitle] = useState(defaultTitle); // TODO change copy in relation with kind of generated payment info
+    const defaultTitle = c('Wallet Receive').t`Copy payment link`;
+    const [title, setTitle] = useState(defaultTitle);
 
     return (
         <div className="mt-8">

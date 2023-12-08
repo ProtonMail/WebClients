@@ -6,36 +6,6 @@
 export function library_version(): string;
 /**
 */
-export enum WasmLanguage {
-  English = 0,
-  SimplifiedChinese = 1,
-  TraditionalChinese = 2,
-  Czech = 3,
-  French = 4,
-  Italian = 5,
-  Japanese = 6,
-  Korean = 7,
-  Spanish = 8,
-}
-/**
-*/
-export enum WasmWordCount {
-  Words12 = 0,
-  Words15 = 1,
-  Words18 = 2,
-  Words21 = 3,
-  Words24 = 4,
-}
-/**
-*/
-export enum WasmCoinSelection {
-  BranchAndBound = 0,
-  LargestFirst = 1,
-  OldestFirst = 2,
-  Manual = 3,
-}
-/**
-*/
 export enum WasmNetwork {
 /**
 * Mainnet Bitcoin.
@@ -56,6 +26,19 @@ export enum WasmNetwork {
 }
 /**
 */
+export enum WasmLanguage {
+  English = 0,
+  SimplifiedChinese = 1,
+  TraditionalChinese = 2,
+  Czech = 3,
+  French = 4,
+  Italian = 5,
+  Japanese = 6,
+  Korean = 7,
+  Spanish = 8,
+}
+/**
+*/
 export enum WasmKeychainKind {
 /**
 * External keychain, used for deriving recipient addresses.
@@ -65,6 +48,38 @@ export enum WasmKeychainKind {
 * Internal keychain, used for deriving change addresses.
 */
   Internal = 1,
+}
+/**
+*/
+export enum WasmChangeSpendPolicy {
+  ChangeAllowed = 0,
+  OnlyChange = 1,
+  ChangeForbidden = 2,
+}
+/**
+*/
+export enum WasmSupportedBIPs {
+  Bip44 = 0,
+  Bip49 = 1,
+  Bip84 = 2,
+  Bip86 = 3,
+}
+/**
+*/
+export enum WasmWordCount {
+  Words12 = 0,
+  Words15 = 1,
+  Words18 = 2,
+  Words21 = 3,
+  Words24 = 4,
+}
+/**
+*/
+export enum WasmCoinSelection {
+  BranchAndBound = 0,
+  LargestFirst = 1,
+  OldestFirst = 2,
+  Manual = 3,
 }
 /**
 */
@@ -113,21 +128,6 @@ export enum WasmError {
 }
 /**
 */
-export enum WasmChangeSpendPolicy {
-  ChangeAllowed = 0,
-  OnlyChange = 1,
-  ChangeForbidden = 2,
-}
-/**
-*/
-export enum WasmSupportedBIPs {
-  Bip44 = 0,
-  Bip49 = 1,
-  Bip84 = 2,
-  Bip86 = 3,
-}
-/**
-*/
 export class DetailledWasmError {
   free(): void;
 /**
@@ -161,6 +161,14 @@ export class WasmAccount {
 * @returns {Promise<void>}
 */
   sync(): Promise<void>;
+/**
+* @param {number | undefined} [index]
+* @param {bigint | undefined} [amount]
+* @param {string | undefined} [label]
+* @param {string | undefined} [message]
+* @returns {string}
+*/
+  get_bitcoin_uri(index?: number, amount?: bigint, label?: string, message?: string): string;
 /**
 * @param {WasmAddress} address
 * @returns {boolean}

@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 
 import { AccountWithBlockchainData, LightningUriFormat, WalletWithAccountsWithBalanceAndTxs } from '../../types';
+import { WalletType } from '../../types/api';
 import { getDefaultAccount, getSelectedAccount, getSelectedWallet } from '../../utils';
 import { getLightningFormatOptions } from './constants';
 
@@ -63,15 +64,6 @@ export const useBitcoinReceiveInfoGenerator = (
     const [amount, setAmount] = useState(0);
     const [shouldShowAmountInput, setShouldShowAmountInput] = useState(false);
 
-    const serializedPaymentInformation = useMemo(() => {
-        if (!selectedAccount || !selectedWallet) {
-            return null;
-        }
-
-        // TODO: do proper serialized payment info generation for Bitcoin Address/Bitcoin URI/Lightning URI/Unified URI
-        return `${selectedWallet.WalletID}${selectedAccount.WalletAccountID}${selectedFormat.value}${amount}zbezbefrzltnzxgzxlhrwaourafhnrizbezbefrzltnzxgzxlhrwaourafhnrizbezbefrzltnzxgzxlhrwaourafhnrizbezbefrzltnzxgzxlhrwaourafhnri`;
-    }, [selectedAccount, selectedFormat, selectedWallet, amount]);
-
     const handleSelectWallet = ({ value }: SelectChangeEvent<number>) => {
         const wallet = getSelectedWallet(wallets, value);
         if (wallet) {
@@ -89,6 +81,18 @@ export const useBitcoinReceiveInfoGenerator = (
             setSelectedAccount(account);
         }
     };
+
+    const serializedPaymentInformation = useMemo(() => {
+        if (!selectedAccount || !selectedWallet) {
+            return null;
+        }
+
+        if (selectedWallet.Type === WalletType.OnChain) {
+            return selectedAccount.wasmAccount.get_bitcoin_uri(undefined, amount ? BigInt(amount) : undefined);
+        }
+
+        return '';
+    }, [selectedAccount, selectedWallet, amount]);
 
     return {
         serializedPaymentInformation,
