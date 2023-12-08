@@ -140,7 +140,12 @@ const Sidebar = ({
                     </div>
                 )}
 
-                {isElectronMac && <div className="ml-auto mr-3 mb-4">{appsDropdown}</div>}
+                {isElectronMac && (
+                    <div className="flex flex-column">
+                        <div className="ml-auto mr-3 mb-4">{appsDropdown}</div>
+                        {primary && <div className="px-3 pb-2 pt-1">{primary}</div>}
+                    </div>
+                )}
 
                 {isElectronWindows && (
                     <div className="flex gap-4 justify-between items-center flex-nowrap px-3 pb-2 pt-1">
