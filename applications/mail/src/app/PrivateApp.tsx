@@ -10,7 +10,7 @@ import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { Model } from '@proton/shared/lib/interfaces/Model';
-import { ConversationCountsModel, ImportersModel, MessageCountsModel } from '@proton/shared/lib/models';
+import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 import noop from '@proton/utils/noop';
 
 import { useMailDispatch } from './store/hooks';
@@ -87,7 +87,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
                 };
             }}
             locales={locales}
-            eventModels={[ConversationCountsModel as Model<any>, MessageCountsModel as Model<any>, ImportersModel]}
+            eventModels={[ConversationCountsModel as Model<any>, MessageCountsModel as Model<any>]}
             hasPrivateMemberKeyGeneration
             hasReadableMemberKeyActivation
             hasMemberKeyMigration

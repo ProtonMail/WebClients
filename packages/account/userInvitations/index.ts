@@ -3,13 +3,19 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import type { SharedStartListening } from '@proton/redux-shared-store/listenerInterface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { getInvitations } from '@proton/shared/lib/api/user';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { PendingInvitation } from '@proton/shared/lib/interfaces';
-import { fetchPendingUserInvitations } from '@proton/shared/lib/models/userInvitationModelApi';
+import { Api, PendingInvitation as PendingUserInvitation } from '@proton/shared/lib/interfaces';
 
 import { serverEvent } from '../eventLoop';
 import type { ModelState } from '../interface';
 import { OrganizationState, selectOrganization } from '../organization';
+
+const fetchPendingUserInvitations = (api: Api) =>
+    api<{ UserInvitations: PendingUserInvitation[] }>(getInvitations()).then(({ UserInvitations }) => {
+        return UserInvitations;
+    });
 
 const name = 'userInvitations';
 
