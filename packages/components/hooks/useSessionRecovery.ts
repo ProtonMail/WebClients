@@ -139,9 +139,12 @@ export const useSessionRecoveryInsecureTimeRemaining = () => {
         ? differenceInMilliseconds(user.AccountRecovery.EndTime * 1000, now)
         : 0;
 
-    useInterval(() => {
-        setNow(new Date());
-    }, interval);
+    useInterval(
+        () => {
+            setNow(new Date());
+        },
+        diff < 0 ? null : interval
+    );
 
     useEffect(() => {
         const inDays = Math.floor(diff / DAY);
