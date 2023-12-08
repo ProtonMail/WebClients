@@ -29,7 +29,7 @@ export const usePlaceholders = (
         }
 
         return inputElements ?? [];
-    }, [loading, inputElements]);
+    }, [loading, inputElements, expectedLength]);
 
     return elements;
 };

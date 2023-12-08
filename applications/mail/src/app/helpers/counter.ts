@@ -6,9 +6,9 @@ import { hasLabel, isUnread as testIsUnread } from './elements';
 import { LabelChanges, isAutoRead, isUnmodifiableByUser } from './labels';
 
 export const replaceCounter = (counters: LabelCount[], counter: LabelCount) =>
-    counters.map((existingCounter: any) => {
+    counters.map((existingCounter: LabelCount) => {
         if (existingCounter.LabelID === counter.LabelID) {
-            return counter;
+            return { ...existingCounter, counter };
         }
         return existingCounter;
     });
@@ -22,7 +22,7 @@ export const updateCounters = (element: Element, counters: LabelCount[], changes
             if (isUnmodifiableByUser(labelID)) {
                 return acc;
             }
-            acc[labelID] = acc[labelID] || { Total: 0, Unread: 0, LabelID: labelID };
+            acc[labelID] = { Total: 0, Unread: 0, LabelID: labelID, ...acc[labelID] };
 
             const isUnread = testIsUnread(element, labelID);
 

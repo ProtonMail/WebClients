@@ -32,7 +32,12 @@ const SelectAllMoveModal = ({
     const [conversationCounts] = useConversationCounts();
     const [messageCounts] = useMessageCounts();
     const isConversation = isConversationMode(labelID, mailSettings);
-    const elementsCount = getLocationElementsCount(labelID, conversationCounts, messageCounts, isConversation);
+    const elementsCount = getLocationElementsCount(
+        labelID,
+        conversationCounts || [],
+        messageCounts || [],
+        isConversation
+    );
 
     const getModalTitle = () => {
         return isMessage ? c('Title').t`Move all messages` : c('Title').t`Move all conversations`;

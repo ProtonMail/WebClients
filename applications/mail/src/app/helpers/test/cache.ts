@@ -21,10 +21,7 @@ export const getInstance = () => {
 
 export const base64Cache = createCache<string, string>() as Base64Cache;
 
-export const minimalCache = () => {
-    addToCache('MessageCounts', []);
-    addToCache('ConversationCounts', []);
-};
+export const minimalCache = () => {};
 
 export const getCompleteAddress = (inputAddress: Partial<Address>) => {
     return {

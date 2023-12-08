@@ -52,7 +52,6 @@ interface Props {
     }>;
     onLogout: () => void;
     loader: ReactNode;
-    eventModels?: any[];
     noModals?: boolean;
     hasPrivateMemberKeyGeneration?: boolean;
     hasReadableMemberKeyActivation?: boolean;
@@ -67,7 +66,6 @@ const InnerStandardPrivateApp = ({
     onPreload,
     onInit,
     loader,
-    eventModels = [],
     noModals = false,
     hasPrivateMemberKeyGeneration = false,
     hasReadableMemberKeyActivation = false,
@@ -234,7 +232,7 @@ const InnerStandardPrivateApp = ({
                 <ContactProvider>
                     <KeyTransparencyManager appName={APP_NAME}>
                         <SessionRecoveryLocalStorageManager>
-                            <EventModelListener models={eventModels} />
+                            <EventModelListener />
                             <EventNotices />
                             <ThemeInjector />
                             <DensityInjector />
