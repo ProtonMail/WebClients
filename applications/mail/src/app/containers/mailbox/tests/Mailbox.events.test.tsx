@@ -1,5 +1,6 @@
 import { act } from '@testing-library/react';
 
+import { getModelState } from '@proton/account/test';
 import { DEFAULT_MAIL_PAGE_SIZE, EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
@@ -188,12 +189,14 @@ describe('Mailbox elements list reacting to events', () => {
 
         baseApiMocks();
 
-        addToCache('ConversationCounts', []);
-        addToCache('MessageCounts', [{ LabelID: labelID, Total: total }]);
         addToCache('Calendars', []);
         const { resolve } = addApiResolver('mail/v4/messages');
 
-        const { getAllByTestId } = await render(<MailboxContainer {...getProps({ search })} />);
+        const { getAllByTestId } = await render(<MailboxContainer {...getProps({ search })} />, false, {
+            preloadedState: {
+                messageCounts: getModelState([{ LabelID: labelID, Total: total }]),
+            },
+        });
         const getItems = () => getAllByTestId('message-item', { exact: false });
 
         // First load pending
@@ -234,11 +237,14 @@ describe('Mailbox elements list reacting to events', () => {
 
         baseApiMocks();
 
-        addToCache('ConversationCounts', []);
-        addToCache('MessageCounts', [{ LabelID: labelID, Total: total }]);
         let { resolve } = addApiResolver('mail/v4/messages');
 
-        const { rerender, getAllByTestId } = await render(<MailboxContainer {...getProps({ search })} />);
+        const { rerender, getAllByTestId } = await render(<MailboxContainer {...getProps({ search })} />, false, {
+            preloadedState: {
+                conversationCounts: getModelState([]),
+                messageCounts: getModelState([{ LabelID: labelID, Total: total }]),
+            },
+        });
         const getItems = () => getAllByTestId('message-item', { exact: false });
 
         // First load pending

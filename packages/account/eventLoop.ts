@@ -8,6 +8,7 @@ import type {
     ApiEnvironmentConfig,
     Domain,
     IncomingAddressForwarding,
+    LabelCount,
     MailSettings,
     Member,
     Organization,
@@ -32,6 +33,8 @@ interface EventLoop {
     UserInvitations?: EventItemUpdate<PendingInvitation, 'UserInvitation'>[];
     Labels?: EventItemUpdate<any, 'Label'>[];
     Members?: EventItemUpdate<Member, 'Member'>[];
+    MessageCounts?: LabelCount[];
+    ConversationCounts?: LabelCount[];
     PaymentMethods?: EventItemUpdate<SavedPaymentMethod, 'PaymentMethod'>[];
     IncomingAddressForwardings?: EventItemUpdate<IncomingAddressForwarding, 'IncomingAddressForwarding'>[];
     OutgoingAddressForwardings?: EventItemUpdate<OutgoingAddressForwarding, 'OutgoingAddressForwarding'>[];

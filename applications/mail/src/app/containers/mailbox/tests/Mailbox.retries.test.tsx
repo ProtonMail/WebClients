@@ -96,20 +96,17 @@ describe('Mailbox retries and waitings', () => {
 
         const checkAll = screen.getByTestId('toolbar:select-all-checkbox');
 
-        await act(async () => {
-            fireEvent.click(checkAll);
-            await tick();
-            let trash = screen.getByTestId('toolbar:movetotrash');
-            fireEvent.click(trash);
-            await tick();
-            // TODO fix later, needed for useMoveToFolder using getLabels
-            await wait(0);
-            fireEvent.click(checkAll);
-            await tick();
-            trash = screen.getByTestId('toolbar:movetotrash');
-            fireEvent.click(trash);
-            await tick();
-        });
+        fireEvent.click(checkAll);
+        await tick();
+        let trash = screen.getByTestId('toolbar:movetotrash');
+        fireEvent.click(trash);
+        await tick();
+        // TODO fix later, needed for useMoveToFolder using getLabels
+            await wait(0);fireEvent.click(checkAll);
+        await tick();
+        trash = screen.getByTestId('toolbar:movetotrash');
+        fireEvent.click(trash);
+        await tick();
 
         // We are moving 100 elements to trash, and then we fake undoing all requests.
         // Because we batch requests to 25 elements, we need to resolve the request 4 times
