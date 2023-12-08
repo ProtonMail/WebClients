@@ -1,12 +1,16 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { useSelector, useStore } from 'react-redux';
 
-import { useCache, useConversationCounts, useFlag, useMessageCounts } from '@proton/components';
+import {
+    useConversationCounts,
+    useFlag,
+    useGetConversationCounts,
+    useGetMessageCounts,
+    useMessageCounts,
+} from '@proton/components';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
-import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -88,19 +92,13 @@ export const useElements: UseElements = ({
 
     const abortControllerRef = useRef<AbortController>();
 
-    const [conversationCounts = [], loadingConversationCounts] = useConversationCounts() as [
-        LabelCount[],
-        boolean,
-        Error,
-    ];
-    const [messageCounts = [], loadingMessageCounts] = useMessageCounts() as [LabelCount[], boolean, Error];
+    const [conversationCounts = [], loadingConversationCounts] = useConversationCounts();
+    const [messageCounts = [], loadingMessageCounts] = useMessageCounts();
     const countValues = conversationMode ? conversationCounts : messageCounts;
     const countsLoading = conversationMode ? loadingConversationCounts : loadingMessageCounts;
 
     const { esStatus } = useEncryptedSearchContext();
     const { esEnabled } = esStatus;
-
-    const globalCache = useCache();
 
     const params = {
         labelID,
@@ -136,13 +134,15 @@ export const useElements: UseElements = ({
     const stateInconsistency = useSelector((state: RootState) =>
         stateInconsistencySelector(state, { search, esStatus })
     );
+    const getConversationCounts = useGetConversationCounts();
+    const getMessageCounts = useGetMessageCounts();
 
     // Remove from cache expired elements
     useExpirationCheck(Object.values(elementsMap), (element) => {
         dispatch(removeExpired(element));
 
-        globalCache.delete(ConversationCountsModel.key);
-        globalCache.delete(MessageCountsModel.key);
+        getConversationCounts({ forceFetch: true });
+        getMessageCounts({ forceFetch: true });
     });
 
     useEffect(() => {

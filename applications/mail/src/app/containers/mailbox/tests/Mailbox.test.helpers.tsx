@@ -143,15 +143,19 @@ export const setup = async ({
         addApiMock('mail/v4/conversations', () => ({ Total: totalConversations, Conversations: conversations }));
     }
 
-    addToCache('MessageCounts', [{ LabelID: props.labelID, Total: totalMessages, Unread: totalMessages }]);
-    addToCache('ConversationCounts', [
-        { LabelID: props.labelID, Total: totalConversations, Unread: totalConversations },
-    ]);
     addToCache('Calendars', []);
     const result = await render(<Component {...props} />, false, {
         preloadedState: {
             mailSettings: getModelState(props.mailSettings),
             categories: getModelState([...labels, ...folders]),
+            messageCounts: getModelState([{ LabelID: props.labelID, Total: totalMessages, Unread: totalMessages }]),
+            conversationCounts: getModelState([
+                {
+                    LabelID: props.labelID,
+                    Total: totalConversations,
+                    Unread: totalConversations,
+                },
+            ]),
         },
     });
     const rerender = (propsArgs: PropsArgs) => result.rerender(<Component {...getProps(propsArgs)} />);

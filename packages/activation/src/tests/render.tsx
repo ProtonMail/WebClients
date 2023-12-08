@@ -85,7 +85,7 @@ export const EasySwitchTestProviders = ({ children }: { children: JSX.Element | 
                     <EventManagerProvider eventManager={eventManager}>
                         <CacheProvider cache={fakeCache.instance}>
                             <ModalsChildren />
-                            <EventModelListener models={[]} />
+                            <EventModelListener />
                             <Router history={history}>
                                 <EasySwitchStoreProvider>{children}</EasySwitchStoreProvider>
                             </Router>

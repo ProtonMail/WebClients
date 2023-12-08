@@ -70,7 +70,7 @@ export const queryMessageMetadata = ({
     },
 });
 
-export const queryMessageCount = (AddressID: string) => ({
+export const queryMessageCount = (AddressID?: string) => ({
     method: 'get',
     url: 'mail/v4/messages/count',
     params: { AddressID },
