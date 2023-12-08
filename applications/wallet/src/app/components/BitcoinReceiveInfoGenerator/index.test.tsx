@@ -9,7 +9,7 @@ import * as useBitcoinReceiveInfoGeneratorModule from './useBitcoinReceiveInfoGe
 describe('BitcoinReceiveInfoGenerator', () => {
     let helper: useBitcoinReceiveInfoGeneratorModule.UseBitcoinReceiveInfoGeneratorHelper;
 
-    const mockUseBitcoinReceiveInfoGenerator = jest.spyOn(
+    const mockUseBitcoinReceiveInfoGenerator = vi.spyOn(
         useBitcoinReceiveInfoGeneratorModule,
         'useBitcoinReceiveInfoGenerator'
     );
@@ -35,11 +35,11 @@ describe('BitcoinReceiveInfoGenerator', () => {
             selectedFormat: { name: 'Unified', value: LightningUriFormat.UNIFIED },
             shouldShowAmountInput: false,
             amount: 0,
-            handleSelectWallet: jest.fn(),
-            handleSelectAccount: jest.fn(),
-            handleSelectFormat: jest.fn(),
-            handleChangeAmount: jest.fn(),
-            showAmountInput: jest.fn(),
+            handleSelectWallet: vi.fn(),
+            handleSelectAccount: vi.fn(),
+            handleSelectFormat: vi.fn(),
+            handleChangeAmount: vi.fn(),
+            showAmountInput: vi.fn(),
         };
 
         mockUseBitcoinReceiveInfoGenerator.mockReturnValue({ ...helper });

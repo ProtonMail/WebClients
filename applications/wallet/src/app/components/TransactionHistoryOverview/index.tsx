@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Tooltip } from '@proton/components/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
 
 import { WasmSimpleTransaction } from '../../../pkg';
