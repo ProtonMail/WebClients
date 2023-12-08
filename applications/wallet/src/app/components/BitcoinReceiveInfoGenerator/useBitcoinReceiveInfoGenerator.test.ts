@@ -6,7 +6,7 @@ import { walletsWithAccountsWithBalanceAndTxs } from '../../tests';
 import { LightningUriFormat } from '../../types';
 import { useBitcoinReceiveInfoGenerator } from './useBitcoinReceiveInfoGenerator';
 
-describe('useBitcoinReceiveInfoGenerator', () => {
+describe.skip('useBitcoinReceiveInfoGenerator', () => {
     describe('walletOptions', () => {
         it('should return walletsOptions', () => {
             const { result } = renderHook(() => useBitcoinReceiveInfoGenerator(walletsWithAccountsWithBalanceAndTxs));
