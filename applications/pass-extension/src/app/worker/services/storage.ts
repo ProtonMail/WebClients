@@ -14,7 +14,7 @@ import type {
 import noop from '@proton/utils/noop';
 
 type StorageState = { storageFull: boolean };
-export interface ExtensionStorage<T, K extends StorageKeys<T>> extends Storage<T, K> {
+export interface ExtensionStorage<T, K extends StorageKeys<T>> extends Storage<T> {
     remove: (key: StorageKeys<T>) => Promise<void>;
     getItems: GetItems<T, K[]>;
     setItems: SetItems<T>;
@@ -30,7 +30,7 @@ export const createStorageService = () => {
     const local: ExtensionStorage<LocalStoreData, LocalStoreKeys> = {
         getItem: (key) => localStorage.getItem(key).catch(() => null),
         getItems: (keys) => localStorage.getItems(keys).catch(() => ({})),
-        setItem: (key, value: string) =>
+        setItem: (key, value) =>
             localStorage
                 .setItem(key, value)
                 .then((result) => {
