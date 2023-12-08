@@ -1,4 +1,9 @@
-import { APPS, DAY, HOUR } from '@proton/shared/lib/constants';
+import { useEffect, useState } from 'react';
+
+import { differenceInMilliseconds } from 'date-fns';
+
+import { useInterval } from '@proton/hooks';
+import { APPS, DAY, HOUR, MINUTE, SECOND } from '@proton/shared/lib/constants';
 import { MNEMONIC_STATUS, SessionRecoveryState } from '@proton/shared/lib/interfaces';
 import { getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
 
@@ -120,19 +125,55 @@ export const useSessionRecoveryGracePeriodHoursRemaining = () => {
 export const useSessionRecoveryInsecureTimeRemaining = () => {
     const [user] = useUser();
 
+    const [now, setNow] = useState(() => new Date());
+    const [interval, setInterval] = useState(HOUR);
+
+    const [timeRemaining, setTimeRemaining] = useState<{
+        inHours: number;
+        inDays: number;
+        inMinutes: number;
+        inSeconds: number;
+    }>();
+
+    const diff = user?.AccountRecovery?.EndTime
+        ? differenceInMilliseconds(user.AccountRecovery.EndTime * 1000, now)
+        : 0;
+
+    useInterval(() => {
+        setNow(new Date());
+    }, interval);
+
+    useEffect(() => {
+        const inDays = Math.floor(diff / DAY);
+        const inHours = Math.floor(diff / HOUR);
+        const inMinutes = Math.floor(diff / MINUTE);
+        const inSeconds = Math.floor(diff / SECOND);
+
+        if (inMinutes <= 1) {
+            setInterval(SECOND);
+        } else if (inHours <= 1) {
+            setInterval(MINUTE);
+        } else {
+            setInterval(HOUR);
+        }
+
+        setTimeRemaining({
+            inHours,
+            inDays,
+            inMinutes,
+            inSeconds,
+        });
+    }, [diff]);
+
     if (!user.AccountRecovery || user.AccountRecovery.State !== SessionRecoveryState.INSECURE) {
         return null;
     }
 
-    const msRemaining = user.AccountRecovery.EndTime * 1000 - Date.now();
+    if (diff <= 0 || !timeRemaining) {
+        return null;
+    }
 
-    const inHours = Math.floor(msRemaining / HOUR);
-    const inDays = Math.floor(msRemaining / DAY);
-
-    return {
-        inHours,
-        inDays,
-    };
+    return timeRemaining;
 };
 
 export const useShouldNotifySessionRecoveryCancelled = () => {
