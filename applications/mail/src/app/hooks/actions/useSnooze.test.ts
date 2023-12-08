@@ -1,6 +1,6 @@
 import { act } from '@testing-library/react-hooks';
 
-import { addToCache, minimalCache } from 'proton-mail/helpers/test/cache';
+import { minimalCache } from 'proton-mail/helpers/test/cache';
 import { renderHook } from 'proton-mail/helpers/test/render';
 import { elementsSliceActions } from 'proton-mail/logic/elements/elementsSlice';
 import { store } from 'proton-mail/logic/store';
@@ -12,7 +12,6 @@ jest.mock('@proton/components/containers/unleash');
 describe('useSnooze', () => {
     beforeEach(async () => {
         minimalCache();
-        addToCache('User', { hasPaidMail: false });
     });
 
     it('canSnooze should be true when in inbox and conversation mode', async () => {

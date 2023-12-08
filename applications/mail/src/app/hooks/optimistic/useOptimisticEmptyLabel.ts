@@ -1,8 +1,15 @@
 import { useStore } from 'react-redux';
 
-import { useCache, useHandler } from '@proton/components';
+import { useHandler } from '@proton/components';
+import {
+    conversationCountsActions,
+    messageCountsActions,
+    selectConversationCounts,
+    selectMessageCounts,
+} from '@proton/mail';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
-import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
+
+import { useMailStore } from 'proton-mail/store/hooks';
 
 import { replaceCounter } from '../../helpers/counter';
 import { hasLabel } from '../../helpers/elements';
@@ -22,13 +29,12 @@ import {
     optimisticRestore as optimisticRestoreMessage,
 } from '../../logic/messages/optimistic/messagesOptimisticActions';
 import { RootState, useAppDispatch } from '../../logic/store';
-import { CacheEntry } from '../../models/tools';
 import { useGetAllConversations } from '../conversation/useConversation';
 
 export const useOptimisticEmptyLabel = () => {
+    const mailStore = useMailStore();
     const store = useStore<RootState>();
     const dispatch = useAppDispatch();
-    const globalCache = useCache();
     const getAllConversations = useGetAllConversations();
 
     return useHandler((labelID: string) => {
@@ -61,36 +67,47 @@ export const useOptimisticEmptyLabel = () => {
         dispatch(optimisticEmptyLabelElements());
 
         // Message counters
-        const messageCounters = globalCache.get(MessageCountsModel.key) as CacheEntry<LabelCount[]>;
-        rollbackCounters[MessageCountsModel.key] = messageCounters.value.find(
-            (counter: any) => counter.LabelID === labelID
-        ) as LabelCount;
-        globalCache.set(MessageCountsModel.key, {
-            ...messageCounters,
-            value: replaceCounter(messageCounters.value, { LabelID: labelID, Total: 0, Unread: 0 }),
-        });
+        let { value: messageCounters = [] } = selectMessageCounts(mailStore.getState());
+        rollbackCounters.messages = messageCounters.find((counter: any) => counter.LabelID === labelID) as LabelCount;
+        mailStore.dispatch(
+            messageCountsActions.set(
+                replaceCounter(messageCounters, {
+                    LabelID: labelID,
+                    Total: 0,
+                    Unread: 0,
+                })
+            )
+        );
 
         // Conversation counters
-        const conversationCounters = globalCache.get(ConversationCountsModel.key) as CacheEntry<LabelCount[]>;
-        rollbackCounters[ConversationCountsModel.key] = conversationCounters.value.find(
+        let { value: conversationCounters = [] } = selectConversationCounts(mailStore.getState());
+        rollbackCounters.conversations = conversationCounters.find(
             (counter: any) => counter.LabelID === labelID
         ) as LabelCount;
-        globalCache.set(ConversationCountsModel.key, {
-            ...conversationCounters,
-            value: replaceCounter(conversationCounters.value, { LabelID: labelID, Total: 0, Unread: 0 }),
-        });
+        mailStore.dispatch(
+            conversationCountsActions.set(
+                replaceCounter(conversationCounters, {
+                    LabelID: labelID,
+                    Total: 0,
+                    Unread: 0,
+                })
+            )
+        );
 
         return () => {
             dispatch(optimisticRestoreMessage(rollbackMessages));
             dispatch(optimisticRestoreConversationsAction(rollbackConversations));
             dispatch(optimisticRestoreEmptyLabelElements({ elements: rollbackElements }));
-            Object.entries(rollbackCounters).forEach(([key, value]) => {
-                const entry = globalCache.get(key) as CacheEntry<LabelCount[]>;
-                globalCache.set(key, {
-                    ...entry,
-                    value: replaceCounter(entry.value, value),
-                });
-            });
+            if (rollbackCounters.conversations) {
+                let { value: conversationCounters = [] } = selectConversationCounts(mailStore.getState());
+                store.dispatch(
+                    conversationCountsActions.set(replaceCounter(conversationCounters, rollbackCounters.conversations))
+                );
+            }
+            if (rollbackCounters.messages) {
+                let { value: messageCounters = [] } = selectMessageCounts(mailStore.getState());
+                store.dispatch(messageCountsActions.set(replaceCounter(messageCounters, rollbackCounters.messages)));
+            }
         };
     });
 };

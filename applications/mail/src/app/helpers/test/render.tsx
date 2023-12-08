@@ -40,7 +40,6 @@ import {
     UserSettings,
 } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAILSETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
-import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 import { registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
 
 import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider';
@@ -54,13 +53,14 @@ import { MailboxContainerContextProvider } from '../../containers/mailbox/Mailbo
 import ChecklistsProvider from '../../containers/onboardingChecklist/provider/ChecklistsProvider';
 import { MailContentRefProvider } from '../../hooks/useClickMailContent';
 import { store, useSetReduxThunkExtraArgs } from '../../logic/store';
-import { MailState, extendStore, setupStore } from '../../store/store';
+import { MailState, MailStore, extendStore, setupStore } from '../../store/store';
 import { api, getFeatureFlags, mockDomApi } from './api';
 import { minimalCache, mockCache } from './cache';
 import NotificationsTestProvider from './notifications';
 
 interface RenderResult extends OriginalRenderResult {
     rerender: (ui: React.ReactElement) => Promise<void>;
+    store: MailStore;
 }
 
 export const authentication = {
@@ -110,9 +110,7 @@ const TestProvider = ({ children }: Props) => {
                                         <SpotlightProvider>
                                             <DrawerProvider>
                                                 <ModalsChildren />
-                                                <EventModelListener
-                                                    models={[ConversationCountsModel, MessageCountsModel]}
-                                                />
+                                                <EventModelListener />
                                                 <ReduxProviderWrapper>
                                                     <MailContentRefProvider mailContentRef={contentRef}>
                                                         <ChecklistsProvider>
@@ -186,6 +184,8 @@ export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloade
             filters: getModelState([]),
             importerConfig: getModelState({} as ApiEnvironmentConfig),
             features: getFeatureFlags([[FeatureCode.SLIntegration, true]]),
+            conversationCounts: getModelState([]),
+            messageCounts: getModelState([]),
             ...preloadedState,
         },
     });
@@ -210,7 +210,7 @@ export const render = async (
         minimalCache();
     }
 
-    const { Wrapper } = getStoreWrapper(preloadedState);
+    const { Wrapper, store } = getStoreWrapper(preloadedState);
 
     const result = originalRender(
         <Wrapper>
@@ -239,7 +239,7 @@ export const render = async (
         return true;
     };
 
-    return { ...result, rerender, unmount };
+    return { ...result, store, rerender, unmount };
 };
 
 export const renderHook = async <TProps, TResult>(
