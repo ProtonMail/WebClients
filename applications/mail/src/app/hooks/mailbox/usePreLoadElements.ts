@@ -5,6 +5,7 @@ import { unwrapResult } from '@reduxjs/toolkit';
 
 import { FeatureCode } from '@proton/components/containers';
 import { useFeature } from '@proton/components/hooks';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
 import { isConversation } from 'proton-mail/helpers/elements';
 import { allConversations } from 'proton-mail/logic/conversations/conversationsSelectors';
@@ -24,7 +25,9 @@ interface Props {
 const usePreLoadElements = ({ elements, labelID, loading }: Props) => {
     const dispatch = useAppDispatch();
     const { feature } = useFeature(FeatureCode.NumberOfPreloadedConversations);
-    const numberOfPreloadedConversations = feature?.Value || 0;
+    const { feature: electronMultiplierFlag } = useFeature(FeatureCode.ElectronConvPreloadMultiplier);
+    const electronMultiplier = isElectronApp() ? electronMultiplierFlag?.Value : 1;
+    const numberOfPreloadedConversations = feature?.Value * electronMultiplier || 0;
 
     const firstElements = elements.slice(0, numberOfPreloadedConversations);
     const conversations = useSelector(allConversations);
