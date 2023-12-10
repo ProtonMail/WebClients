@@ -2,7 +2,7 @@ import { app, BrowserWindow, session, shell } from "electron";
 import log from "electron-log/main";
 import { moveUninstaller } from "./macos/uninstall";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./utils/constants";
-import { isHostAllowed, isHostCalendar, isHostMail, isMac, saveWindowsPosition } from "./utils/helpers";
+import { isHostAllowed, isHostCalendar, isHostMail, isMac, isWindows, saveWindowsPosition } from "./utils/helpers";
 import { getSessionID } from "./utils/urlHelpers";
 import { saveHardcodedURLs } from "./utils/urlStore";
 import {
@@ -22,7 +22,7 @@ app.enableSandbox();
 saveHardcodedURLs();
 
 log.initialize({ preload: true });
-log.info("App start");
+log.info("App start on mac:", isMac, "is windows: ", isWindows);
 
 moveUninstaller();
 
@@ -38,6 +38,7 @@ app.whenReady().then(() => {
 
     app.on("activate", () => {
         if (BrowserWindow.getAllWindows().filter((windows) => windows.isVisible()).length === 0) {
+            log.info("Activate app, all windows hidden");
             const window = BrowserWindow.getAllWindows()[0];
             handleMailWindow(window.webContents);
         }
@@ -51,9 +52,11 @@ app.whenReady().then(() => {
         }
 
         if (ALLOWED_PERMISSIONS.includes(_permission)) {
+            log.info("Permission request accepted", _permission, host);
             return callback(true);
         }
 
+        log.info("Permission request rejected", _permission, host);
         callback(false);
     });
 });
@@ -78,6 +81,7 @@ app.on("web-contents-created", (_ev, contents) => {
 
         const sessionID = getSessionID(url);
         if (isHostMail(url) && sessionID && !isNaN(sessionID as unknown as any)) {
+            log.info("Refresh calendar session", sessionID);
             refreshCalendarPage(+sessionID);
         }
     });
@@ -96,18 +100,22 @@ app.on("web-contents-created", (_ev, contents) => {
         const { url } = details;
 
         if (isHostCalendar(url)) {
+            log.info("Open calendar window");
             handleCalendarWindow(contents);
             return { action: "deny" };
         }
 
         if (isHostMail(url)) {
+            log.info("Open mail window");
             handleMailWindow(contents);
             return { action: "deny" };
         }
 
         if (isHostAllowed(url, app.isPackaged)) {
+            log.info("Open internal link", url);
             return { action: "allow" };
         } else {
+            log.info("Open external link", url);
             shell.openExternal(url);
         }
 
