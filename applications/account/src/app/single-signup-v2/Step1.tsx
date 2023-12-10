@@ -10,6 +10,7 @@ import {
     useState,
 } from 'react';
 
+import { format as formatDate } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
@@ -34,6 +35,7 @@ import {
     getPricingFromPlanIDs,
     getTotalFromPricing,
 } from '@proton/shared/lib/helpers/subscription';
+import { dateLocale } from '@proton/shared/lib/i18n';
 import { Api, Currency, Cycle, Plan, PlanIDs, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
@@ -54,7 +56,7 @@ import Layout from './Layout';
 import { PlanCard, PlanCardSelector, UpsellCardSelector } from './PlanCardSelector';
 import RightPlanSummary from './RightPlanSummary';
 import RightSummary from './RightSummary';
-import { getFreeSubscriptionData, getFreeTitle } from './helper';
+import { getFreeSubscriptionData, getFreeTitle, visionaryEndDate } from './helper';
 import {
     Measure,
     OnOpenLogin,
@@ -374,6 +376,17 @@ const Step1 = ({
                                     .t`Get access by creating a ${BRAND_NAME} account and accepting the invitation.`}
                             </>
                         );
+                    }
+
+                    if (options.plan?.Name === PLANS.NEW_VISIONARY) {
+                        const planTitle = options.plan.Title;
+                        const date = (
+                            <span key="date">{formatDate(visionaryEndDate, 'LLLL d', { locale: dateLocale })}</span>
+                        );
+                        // translator: full sentence is: Limited time offer: Get Visionary until 4 January
+                        const textLaunchOffer = c('mail_signup_2023: Info')
+                            .jt`Limited time offer: Get ${planTitle} until ${date}!`;
+                        return wrap('hourglass', textLaunchOffer);
                     }
 
                     if (!hasPlanSelector || model.upsell.mode === UpsellTypes.UPSELL) {
