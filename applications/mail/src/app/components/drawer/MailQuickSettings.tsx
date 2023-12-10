@@ -23,6 +23,7 @@ import { updateDensity } from '@proton/shared/lib/api/settings';
 import { DENSITY, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { KEY_TRANSPARENCY_REMINDER_UPDATE, QuickSettingsReminders } from '@proton/shared/lib/drawer/interfaces';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { COMPOSER_MODE, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
@@ -313,7 +314,7 @@ const MailQuickSettings = () => {
                     </QuickSettingsButton>
                 )}
 
-                {(dbExists || esEnabled) && (
+                {(dbExists || esEnabled) && !isElectronApp() && (
                     <>
                         <Tooltip
                             title={c('Info')
