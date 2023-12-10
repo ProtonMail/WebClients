@@ -1,4 +1,6 @@
-import { APPS_CONFIGURATION, APP_NAMES } from '@proton/shared/lib/constants';
+import { c } from 'ttag';
+
+import { APPS_CONFIGURATION, APP_NAMES, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getBrowser, getDevice, getOS } from '@proton/shared/lib/helpers/browser';
 
 export const getClientName = (appName: APP_NAMES) => {
@@ -45,11 +47,16 @@ export const getReportInfo = () => {
     const device = getDevice();
     const os = getEnhancedOSInfo();
 
+    const Browser =
+        browser.name?.toLowerCase() === 'electron'
+            ? c('Browser').t`${MAIL_APP_NAME} Desktop application`
+            : browser.name;
+
     return {
         OS: os.name,
         OSVersion: os.version || '',
         OSArtificial: os.artificial,
-        Browser: browser.name,
+        Browser,
         BrowserVersion: browser.version,
         Resolution: `${window.innerHeight} x ${window.innerWidth}`,
         DeviceName: device.vendor,
