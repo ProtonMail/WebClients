@@ -57,6 +57,8 @@ export enum FeatureCode {
     ESUserInterface = 'ESUserInterface',
     EarlyAccessScope = 'EarlyAccess',
     EasySwitch = 'EasySwitch',
+    ElectronESInboxThreshold = 'ElectronESInboxThreshold',
+    ElectronConvPreloadMultiplier = 'ElectronConvPreloadMultiplier',
     EmailForwardingSpotlight = 'EmailForwardingSpotlight',
     HolidaysCalendars = 'HolidaysCalendars',
     HolidaysCalendarsSpotlight = 'HolidaysCalendarsSpotlight',
@@ -120,7 +122,6 @@ export enum FeatureCode {
     UsedContactsImport = 'UsedContactsImport',
     UsedMailMobileApp = 'UsedMailMobileApp',
     WelcomeImportModalShown = 'WelcomeImportModalShown',
-    ElectronESInboxThreshold = 'ElectronESInboxThreshold',
 }
 
 export interface FeaturesContextValue {
