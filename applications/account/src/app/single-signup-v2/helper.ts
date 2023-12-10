@@ -14,7 +14,7 @@ import {
     FREE_SUBSCRIPTION,
     PLANS,
 } from '@proton/shared/lib/constants';
-import { getPlanFromPlanIDs, switchPlan } from '@proton/shared/lib/helpers/planIDs';
+import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
     getNormalCycleFromCustomCycle,
     getPlan,
@@ -151,7 +151,6 @@ const getUpsell = ({
     toApp: APP_NAMES;
 }): Upsell => {
     const hasMonthlyCycle = subscription?.Cycle === CYCLE.MONTHLY;
-    const planFromPlanParameters = getPlanFromPlanIDs(plansMap, planParameters.planIDs);
 
     const defaultValue = {
         plan: undefined,
@@ -165,7 +164,7 @@ const getUpsell = ({
         if (options.coupon === COUPON_CODES.BLACK_FRIDAY_2023) {
             if (getHasAnyPlusPlan(currentPlan.Name)) {
                 const hasSelectedPassBundle =
-                    hasSelectedPlan(planFromPlanParameters, [PLANS.VPN_PASS_BUNDLE]) &&
+                    hasSelectedPlan(planParameters.plan, [PLANS.VPN_PASS_BUNDLE]) &&
                     [CYCLE.FIFTEEN, CYCLE.THIRTY].includes(options.cycle);
 
                 const isValidPassBundleFromPass =
@@ -187,15 +186,15 @@ const getUpsell = ({
                 // If the user is on a plus plan, and selects bundle, visionary, or family -> let it pass through
                 if (
                     (options.cycle === CYCLE.YEARLY &&
-                        (hasSelectedPlan(planFromPlanParameters, [PLANS.BUNDLE, PLANS.NEW_VISIONARY, PLANS.FAMILY]) ||
-                            (hasMonthlyCycle && hasSelectedPlan(planFromPlanParameters, [currentPlan.Name])))) ||
+                        (hasSelectedPlan(planParameters.plan, [PLANS.BUNDLE, PLANS.NEW_VISIONARY, PLANS.FAMILY]) ||
+                            (hasMonthlyCycle && hasSelectedPlan(planParameters.plan, [currentPlan.Name])))) ||
                     isValidPassBundleFromPass ||
                     isValidPassBundleFromVPN1 ||
                     isValidPassBundleFromVPN12
                 ) {
                     return {
                         ...defaultValue,
-                        plan: planFromPlanParameters,
+                        plan: planParameters.plan,
                         subscriptionOptions: {
                             planIDs: planParameters.planIDs,
                             cycle: options.cycle,
@@ -224,12 +223,12 @@ const getUpsell = ({
             if (currentPlan.Name === PLANS.BUNDLE) {
                 if (
                     options.cycle === CYCLE.YEARLY &&
-                    (hasSelectedPlan(planFromPlanParameters, [PLANS.NEW_VISIONARY, PLANS.FAMILY]) ||
-                        (hasMonthlyCycle && hasSelectedPlan(planFromPlanParameters, [currentPlan.Name])))
+                    (hasSelectedPlan(planParameters.plan, [PLANS.NEW_VISIONARY, PLANS.FAMILY]) ||
+                        (hasMonthlyCycle && hasSelectedPlan(planParameters.plan, [currentPlan.Name])))
                 ) {
                     return {
                         ...defaultValue,
-                        plan: planFromPlanParameters,
+                        plan: planParameters.plan,
                         subscriptionOptions: {
                             planIDs: planParameters.planIDs,
                             cycle: options.cycle,
@@ -255,10 +254,10 @@ const getUpsell = ({
             }
 
             if (currentPlan.Name === PLANS.FAMILY) {
-                if (options.cycle === CYCLE.YEARLY && hasSelectedPlan(planFromPlanParameters, [PLANS.NEW_VISIONARY])) {
+                if (options.cycle === CYCLE.YEARLY && hasSelectedPlan(planParameters.plan, [PLANS.NEW_VISIONARY])) {
                     return {
                         ...defaultValue,
-                        plan: planFromPlanParameters,
+                        plan: planParameters.plan,
                         subscriptionOptions: {
                             planIDs: planParameters.planIDs,
                             cycle: options.cycle,
@@ -482,6 +481,33 @@ export const getUserInfo = async ({
         state.access = true;
     }
 
+    if (state.access && state.payable && planParameters.defined && currentPlan) {
+        if (currentPlan.Name !== PLANS.NEW_VISIONARY && planParameters.plan.Name === PLANS.NEW_VISIONARY) {
+            state.access = false;
+        } else if (
+            getHasAnyPlusPlan(currentPlan.Name) &&
+            [PLANS.BUNDLE, PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.NEW_VISIONARY].includes(
+                planParameters.plan.Name as any
+            )
+        ) {
+            state.access = false;
+        } else if (
+            currentPlan.Name === PLANS.BUNDLE &&
+            [PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.NEW_VISIONARY].includes(planParameters.plan.Name as any)
+        ) {
+            state.access = false;
+        } else if (
+            currentPlan.Name === PLANS.FAMILY &&
+            [PLANS.BUNDLE_PRO, PLANS.NEW_VISIONARY].includes(planParameters.plan.Name as any)
+        ) {
+            state.access = false;
+        }
+
+        if (planParameters.plan.Name === currentPlan.Name) {
+            state.access = true;
+        }
+    }
+
     return {
         paymentMethods,
         defaultPaymentMethod: undefined,
@@ -550,3 +576,5 @@ export const runAfterScroll = (el: Element, done: () => void) => {
 
     requestAnimationFrame(cb);
 };
+
+export const visionaryEndDate = new Date(2024, 0, 4);
