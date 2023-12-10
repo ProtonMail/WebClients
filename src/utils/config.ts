@@ -1,3 +1,4 @@
+import log from "electron-log/main";
 import { getHardcodedURLs } from "./urlStore";
 
 export interface URLConfig {
@@ -31,5 +32,6 @@ const prodConfig: Config = {
 };
 
 export const getConfig = (isPackaged: boolean) => {
+    log.info("getConfig, isPackaged:", isPackaged);
     return isPackaged ? prodConfig : devConfig;
 };

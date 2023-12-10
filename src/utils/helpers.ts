@@ -26,7 +26,7 @@ export const isHostCalendar = (host: string) => {
 
         return urls.calendar === hostURl.origin;
     } catch (error) {
-        log.error(error);
+        log.error("isHostCalendar", error);
         return false;
     }
 };
@@ -38,7 +38,7 @@ export const isHostMail = (host: string) => {
 
         return urls.mail === hostURl.origin;
     } catch (error) {
-        log.error(error);
+        log.error("isHostMail", error);
         return false;
     }
 };
@@ -59,7 +59,7 @@ export const isHostAllowed = (host: string, isPackaged: boolean) => {
                 return url.host === hostURl.host;
             });
     } catch (error) {
-        log.error(error);
+        log.error("isHostAllowed", error);
         return false;
     }
 };
@@ -69,6 +69,7 @@ export const getWindow = () => {
 };
 
 export const restartApp = (timeout = 300) => {
+    log.info("Restarting app in", timeout, "ms");
     setTimeout(() => {
         app.relaunch();
         app.exit();
@@ -76,6 +77,7 @@ export const restartApp = (timeout = 300) => {
 };
 
 export const clearStorage = (restart: boolean, timeout?: number) => {
+    log.info("Clearing storage");
     const { webContents } = getWindow();
     webContents.session.flushStorageData();
     webContents.session.clearStorageData();
@@ -91,12 +93,15 @@ export const openLogFolder = () => {
     try {
         const home = app.getPath("home");
         if (isMac) {
+            log.info("openLogFolder macOS");
             shell.openPath(join(home, "/Library/Logs/Proton Mail"));
-        } else {
+        } else if (isWindows) {
+            log.info("openLogFolder Windows");
             shell.openPath(join(home, "/AppData/Roaming/Proton Mail/logs"));
         }
+        log.info("openLogFolder, not macOS or Windows");
     } catch (error) {
-        log.error(error);
+        log.error("openLogFolder", error);
     }
 };
 
@@ -105,9 +110,11 @@ export const areAllWindowsClosedOrHidden = () => {
 };
 
 export const saveWindowsPosition = (shouldDestroy: boolean) => {
+    log.info("Saving windows position");
     BrowserWindow.getAllWindows().forEach((window) => {
         if (window.isVisible()) {
             const url = window.webContents.getURL();
+            log.info("Saving window position, since visible", url, window.getBounds());
             if (isHostCalendar(url)) {
                 setWindowState(window.getBounds(), "CALENDAR");
             } else if (isHostMail(url)) {
@@ -116,6 +123,7 @@ export const saveWindowsPosition = (shouldDestroy: boolean) => {
         }
 
         if (shouldDestroy) {
+            log.info("Destroying window after window position save");
             window.destroy();
         }
     });
