@@ -51,7 +51,6 @@ const DummyCalendarContainerView = ({ drawerView }: Props) => {
             onSearch={noop}
             addresses={[]}
             calendars={[]}
-            user={{} as any}
             calendarUserSettings={calendarUserSettings}
         >
             <TimeGrid
