@@ -40,7 +40,7 @@ Add padding to the left or right of an element or use a `px` class to add the sa
 
 ## Responsive
 
-The new helper classes are **all** available to use without media query, as well as `sm`, `md`, `lg` and `xl` variants. This allows to tweak spacings precicely for every breakpoint if needed. The blue square in the demo area underneath has the classes `pl-4 sm:pl-8 md:pl-10 lg:pl-12 xl:pl-14` which translates to padding-left 4 (16px) on `tinymobile`, 8 (32px) on `mobile`, 10 (40px) on `tablet`, 12 (48px) on `desktop` and 14 (56px) on `extra large`. The new system works **mobile first**, that means the base `pl-4` will be overridden by `lg:pl-12` on larger screens.
+The new helper classes are **all** available to use without media query, as well as `sm`, `md`, `lg` and `xl` variants. This allows to tweak spacings precicely for every breakpoint if needed. The blue square in the demo area underneath has the classes `pl-4 sm:pl-8 md:pl-10 lg:pl-12 xl:pl-14` which translates to gap 4 (16px) by default, 8 (32px) starting `small` breakpoint, 10 (40px) starting `medium` breakpoint, 12 (48px) starting `large` breakpoint and 14 (56px) starting `extra large` breakpoint. The system works **mobile first**, that means the base `pl-4` will be overridden by `lg:pl-12` on larger screens.
 
 <Resizeme />
 <div className="border p-4 rounded bg-weak mb-4" style={{ width: '320px', resize: 'horizontal', overflow: 'auto' }}>
