@@ -23,3 +23,10 @@ export const isElectronOnWindows = () => {
 export const isElectronOnSupportedApps = (app: APP_NAMES) => {
     return isElectronApp() && SUPPORTED_ELECTRON_APP.includes(app);
 };
+
+export const getTypeformDesktopUrl = (appVersion: string, appName: APP_NAMES) => {
+    const browser = getBrowser();
+    const os = getOS();
+    const clientID = getClientID(appName);
+    return `https://form.typeform.com/to/XNqstRfx#electronVersion=${browser.version}=&os=${os.name}&appVersion=${clientID}@${appVersion}`;
+};
