@@ -96,7 +96,17 @@ export const getHasProtonAttendees = (
     sendPreferencesMap: SimpleMap<AugmentedSendPreferences>
 ) => {
     const attendeeEmails = (veventComponent.attendee || []).map((attendee) => getAttendeeEmail(attendee));
-    return attendeeEmails.some((email) => !!sendPreferencesMap[email]?.isInternal);
+    return attendeeEmails.some((email) => {
+        const sendPrefs = sendPreferencesMap[email];
+
+        if (!sendPrefs) {
+            return false;
+        }
+
+        // Proton users that enabled external forwarding are considered external from the sendPreferences point of view,
+        // but they are still internal users. We can detect them through the encryptionDisabled Boolean.
+        return sendPrefs.isInternal || sendPrefs.encryptionDisabled;
+    });
 };
 
 const extractProtonAttendeePublicKey = (email: string, sendPreferencesMap: SimpleMap<AugmentedSendPreferences>) => {
