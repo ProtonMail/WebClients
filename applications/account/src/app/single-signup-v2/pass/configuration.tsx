@@ -225,5 +225,6 @@ export const getPassConfiguration = ({
             </>
         ),
         CustomStep,
+        cycles: [CYCLE.MONTHLY, CYCLE.YEARLY],
     };
 };
