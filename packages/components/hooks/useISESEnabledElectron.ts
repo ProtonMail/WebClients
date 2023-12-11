@@ -6,7 +6,7 @@ import useFeature from './useFeature';
 import useIsInboxElectronApp from './useIsInboxElectronApp';
 
 /**
- * Helps determine if ES should be enabled depedning on feature flag and conversation counts
+ * Helps determine if ES should be enabled depending on feature flag and conversation counts
  */
 const useIsESEnabledElectron = () => {
     const { isElectron } = useIsInboxElectronApp();
@@ -16,19 +16,20 @@ const useIsESEnabledElectron = () => {
     const [isESEnabledInbox, setIsInboxEnabledInbox] = useState(false);
 
     useEffect(() => {
-        if (!conversationCounts) {
+        if (!conversationCounts || !isElectron) {
             setIsInboxEnabledInbox(false);
             return;
         }
 
         const { Total } = conversationCounts.find((count) => count.LabelID === '0') ?? { Total: undefined };
-        if (!Total) {
+
+        if (typeof Total === 'undefined') {
             setIsInboxEnabledInbox(false);
             return;
         }
 
-        setIsInboxEnabledInbox(isElectron && inboxThreshold?.Value >= Total);
-    }, [inboxThreshold]);
+        setIsInboxEnabledInbox(inboxThreshold?.Value >= Total);
+    }, [inboxThreshold, conversationCounts]);
 
     return { isESEnabledInbox };
 };
