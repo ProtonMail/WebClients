@@ -142,7 +142,7 @@ const Sidebar = ({
 
                 {isElectronMac && (
                     <div className="flex flex-column">
-                        <div className="ml-auto mr-3 mb-4">{appsDropdown}</div>
+                        <div className="ml-auto mr-3 mb-1">{appsDropdown}</div>
                         {primary && <div className="px-3 pb-2 pt-1">{primary}</div>}
                     </div>
                 )}
