@@ -503,7 +503,6 @@ const CalendarContainer = ({
             setContainerRef={setContainerRef}
             onSearch={handleSearch}
             addresses={addresses}
-            user={user}
         >
             {!!localTimezoneId && (
                 <AskUpdateTimezoneModal
