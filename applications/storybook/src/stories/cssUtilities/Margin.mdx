@@ -66,7 +66,7 @@ Use these classes to position elements [with flexbox](?path=/docs/css-utilities-
 
 ## Responsive
 
-The new helper classes are **all** available to use without media query, as well as `sm`, `md`, `lg` and `xl` variants. This allows to tweak spacings precicely for every breakpoint if needed. The blue square in the demo area underneath has the classes `ml-4 sm:ml-8 md:ml-10 lg:ml-12 xl:ml-14` which translates to margin-left 4 (16px) on `tinymobile`, 8 (32px) on `mobile`, 10 (40px) on `tablet`, 12 (48px) on `desktop` and 14 (56px) on `extra large`. The new system works **mobile first**, that means the base `ml-4` will be overridden by `lg:ml-12` on larger screens.
+The new helper classes are **all** available to use without media query, as well as `sm`, `md`, `lg` and `xl` variants. This allows to tweak spacings precicely for every breakpoint if needed. The blue square in the demo area underneath has the classes `ml-4 sm:ml-8 md:ml-10 lg:ml-12 xl:ml-14` which translates to gap 4 (16px) by default, 8 (32px) starting `small` breakpoint, 10 (40px) starting `medium` breakpoint, 12 (48px) starting `large` breakpoint and 14 (56px) starting `extra large` breakpoint. The system works **mobile first**, that means the base `ml-4` will be overridden by `lg:ml-12` on larger screens.
 
 <Resizeme />
 <div className="border p-4 rounded bg-weak mb-4" style={{ width: '320px', resize: 'horizontal', overflow: 'auto' }}>
