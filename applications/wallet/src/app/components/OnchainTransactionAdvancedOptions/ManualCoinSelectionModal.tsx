@@ -1,16 +1,14 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import {
-    ModalTwo,
-    Table,
-    TableBody,
-    TableCell,
-    TableHeader,
-    TableHeaderCell,
-    TableRow,
-} from '@proton/components/components';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
+import Table from '@proton/components/components/table/Table';
+import TableBody from '@proton/components/components/table/TableBody';
+import TableCell from '@proton/components/components/table/TableCell';
+import TableHeader from '@proton/components/components/table/TableHeader';
+import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
+import TableRow from '@proton/components/components/table/TableRow';
 import clsx from '@proton/utils/clsx';
 
 import { WasmOutPoint } from '../../../pkg';
