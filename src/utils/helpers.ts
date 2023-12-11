@@ -77,12 +77,14 @@ export const restartApp = (timeout = 300) => {
 };
 
 export const clearStorage = (restart: boolean, timeout?: number) => {
-    log.info("Clearing storage");
     const { webContents } = getWindow();
     webContents.session.flushStorageData();
     webContents.session.clearStorageData();
     webContents.session.clearAuthCache();
     webContents.session.clearCache();
+
+    // Clear logs
+    log.transports.file.getFile().clear();
 
     if (restart) {
         restartApp(timeout);
