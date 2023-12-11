@@ -1,3 +1,16 @@
+## Release 5.0.33 — Dec 27th, 2023
+
+### Improvements
+
+-   Improved the error message for cases where the entered text in auto-replies is too long
+
+### Fixes
+
+-   Fixed an issue where the expiration date for messages could not be set to 2024
+-   Fixed an issue where for long attachment names, the attachment tooltip would overlay the next message in a conversation making it hard to click on it
+-   Fixed an issue where on particular days of the week, a duplicated entry would be displayed for Scheduled Send time suggestions
+-   General performance improvements
+
 ## Release 5.0.32 — Nov 27th, 2023
 
 -   Minor improvements and bug fixes
