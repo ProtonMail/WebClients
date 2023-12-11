@@ -118,20 +118,28 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
         );
     }
 
-    const infoSubline =
-        timeRemaining.inDays === 0
-            ? // translator: Full sentence "This permission expires in N hours (1, 2, 3, etc.)"
-              c('session_recovery:available:info').ngettext(
-                  msgid`This permission expires in ${timeRemaining.inHours} hour`,
-                  `This permission expires in ${timeRemaining.inHours} hours`,
-                  timeRemaining.inHours
-              )
-            : // translator: Full sentence "This permission expires in N days (1, 2, 3, etc.)"
-              c('session_recovery:available:info').ngettext(
-                  msgid`This permission expires in ${timeRemaining.inDays} day`,
-                  `This permission expires in ${timeRemaining.inDays} days`,
-                  timeRemaining.inDays
-              );
+    const infoSubline = (() => {
+        if (timeRemaining.inHours === 0) {
+            // translator: "Soon" in this context means within 1 hour
+            return c('session_recovery:available:info').t`This permission expires soon`;
+        }
+
+        if (timeRemaining.inDays === 0) {
+            // translator: Full sentence "This permission expires in N hours (1, 2, 3, etc.)"
+            return c('session_recovery:available:info').ngettext(
+                msgid`This permission expires in ${timeRemaining.inHours} hour`,
+                `This permission expires in ${timeRemaining.inHours} hours`,
+                timeRemaining.inHours
+            );
+        }
+
+        // translator: Full sentence "This permission expires in N days (1, 2, 3, etc.)"
+        return c('session_recovery:available:info').ngettext(
+            msgid`This permission expires in ${timeRemaining.inDays} day`,
+            `This permission expires in ${timeRemaining.inDays} days`,
+            timeRemaining.inDays
+        );
+    })();
 
     const boldEmail = (
         <b key="bold-user-email" className="text-break">
@@ -157,6 +165,18 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
         </b>
     );
 
+    const youCanNowChangeYourPassword = (() => {
+        if (timeRemaining.inHours === 0) {
+            // translator: Full sentence "You can now change your password for the account <user@email.com>.
+            return c('session_recovery:available:info')
+                .jt`You can now change your password for the account ${boldEmail}.`;
+        }
+
+        // translator: Full sentence "You can now change your password for the account <user@email.com> freely for <N days/hours>.
+        return c('session_recovery:available:info')
+            .jt`You can now change your password for the account ${boldEmail} freely for ${boldDaysRemaining}.`;
+    })();
+
     if (!isSessionRecoveryInitiatedByCurrentSession) {
         return (
             <Modal onClose={onClose} {...rest}>
@@ -169,13 +189,7 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
                         <div className="flex justify-center">
                             <img src={passwordResetIllustration} alt="" />
                         </div>
-                        <div>
-                            {
-                                // translator: Full sentence "You can now change your password for the account <user@email.com> freely for <N days/hours>.
-                                c('session_recovery:available:info')
-                                    .jt`You can now change your password for the account ${boldEmail} freely for ${boldDaysRemaining}.`
-                            }
-                        </div>
+                        <div>{youCanNowChangeYourPassword}</div>
                         <div>
                             {c('session_recovery:available:info')
                                 .t`Please go to the signed-in device (in the session where the request was initiated) to change your password.`}
@@ -217,10 +231,7 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
                         <div className="flex justify-center">
                             <img src={passwordResetIllustration} alt="" />
                         </div>
-                        <div>
-                            {c('session_recovery:available:info')
-                                .jt`You can now change your password for the account ${boldEmail} freely for ${boldDaysRemaining}.`}
-                        </div>
+                        <div>{youCanNowChangeYourPassword}</div>
                     </>
                 ),
                 footer: (
