@@ -17,9 +17,13 @@ export const isKTActive = (feature: KT_FF) => {
     //  - safari 11 or ios 11 is used due to issues with the CryptoProxy
     //  - BigInt is not supported (it is needed for VRF verification);
     //  - BigInt is only partially implemented and does not support -- (it is needed for VRF verification)
+<<<<<<< HEAD
     //  - the hardcoded KT certificate data is older than 6 months.
     //  - the server time compared to the client time is off by more than 24 hours -- (UI warning is shown to prevent attacks)
     //  - Webcrypto is only partially supported (it is needed for certificate verification in pki.js)
+=======
+    //  - Web Crypto isn't fully supported (it is needed for certificate verification in pki.js)
+>>>>>>> 4fa6c29937 (Simplify check for web crypto)
     if (feature === undefined || feature === KtFeatureEnum.DISABLE) {
         return false;
     }
@@ -56,16 +60,10 @@ export const isKTActive = (feature: KT_FF) => {
     if (Math.abs(timeOffset) > 24 * HOUR) {
         return false;
     }
-    
-    // If in browser test for webcrypto support required by pki.js
-    if (typeof self !== 'undefined') {
-        const hasWebCryptoSupport =
-            'crypto' in self &&
-            'getRandomValues' in self.crypto &&
-            ('subtle' in self.crypto || 'webkitSubtle' in self.crypto);
-        if (!hasWebCryptoSupport) {
-            return false;
-        }
+
+    // Test for full Web Crypto support, required by pki.js
+    if (typeof crypto === 'undefined' || !('subtle' in crypto)) {
+        return false;
     }
 
     return true;
