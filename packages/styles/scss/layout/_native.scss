@@ -6,15 +6,34 @@
 	}
 
 	.sidebar {
-		.navigation-link,
-		.navigation-link-header-group-link {
-			@media (prefers-color-scheme: light) {
-				--navigation-current-item-background-color: var(--interaction-weak-major-3);
+		--text-norm: rgb(0 0 0 / 0.85);
+		--text-weak: rgb(0 0 0 / 0.65);
+		--text-hint: rgb(0 0 0 / 0.55);
+		--interaction-default: rgb(0 0 0 / 0);
+		--interaction-default-hover: rgb(0 0 0 / 0.1);
+		--interaction-default-active: rgb(0 0 0 / 0.15);
+		--interaction-weak: rgb(0 0 0 / 0.1);
+		--interaction-weak-hover: rgb(0 0 0 / 0.15);
+		--interaction-weak-active: rgb(0 0 0 / 0.2);
+		--border-norm: rgb(0 0 0 / 0.1);
+		--border-weak: rgb(0 0 0 / 0.05);
+		--promotion-background-start: rgb(109 74 255 / 0.25);
+		--promotion-background-end: rgb(109 74 255 / 0.1);
 
-				&:hover {
-					background: rgb(0 0 0 / 0.1);
-				}
-			}
+		@media (prefers-color-scheme: dark) {
+			--text-norm: rgb(255 255 255 / 0.9);
+			--text-weak: rgb(255 255 255 / 0.6);
+			--text-hint: rgb(255 255 255 / 0.5);
+			--interaction-default: rgb(255 255 255 / 0);
+			--interaction-default-hover: rgb(255 255 255 / 0.1);
+			--interaction-default-active: rgb(255 255 255 / 0.15);
+			--interaction-weak: rgb(255 255 255 / 0.1);
+			--interaction-weak-hover: rgb(255 255 255 / 0.15);
+			--interaction-weak-active: rgb(255 255 255 / 0.2);
+			--border-norm: rgb(255 255 255 / 0.1);
+			--border-weak: rgb(255 255 255 / 0.05);
+			--promotion-background-start: rgb(132 102 255 / 0.3);
+			--promotion-background-end: rgb(132 102 255 / 0.1);
 		}
 	}
 
