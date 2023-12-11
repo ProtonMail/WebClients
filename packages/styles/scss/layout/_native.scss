@@ -1,5 +1,10 @@
 .is-electron-mac {
-	&,
+	background: transparent;
+
+	@media (prefers-color-scheme: dark) {
+		background: rgb(5 0 13 / 0.35);
+	}
+
 	.content,
 	.sidebar {
 		background: transparent;
