@@ -36,7 +36,7 @@ export const usePhotosView = () => {
     const { addToQueue } = useLinksQueue({ loadThumbnails: true });
     const { download } = useDownloadProvider();
 
-    const abortSignal = useAbortSignal([volumeId, shareId]);
+    const abortSignal = useAbortSignal([shareId, linkId]);
     const cache = shareId && linkId ? getCachedChildren(abortSignal, shareId, linkId) : undefined;
     const cachedLinks = useMemoArrayNoMatterTheOrder(cache?.links || []);
 
@@ -109,8 +109,9 @@ export const usePhotosView = () => {
         if (!volumeId || !shareId) {
             return;
         }
+        const abortController = new AbortController();
 
-        loadPhotos(abortSignal, volumeId);
+        loadPhotos(abortController.signal, volumeId);
 
         const callbackId = events.eventHandlers.register((eventVolumeId, events) => {
             if (eventVolumeId === volumeId) {
@@ -120,6 +121,7 @@ export const usePhotosView = () => {
 
         return () => {
             events.eventHandlers.unregister(callbackId);
+            abortController.abort();
         };
     }, [volumeId, shareId]);
 
