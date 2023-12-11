@@ -3,7 +3,6 @@ import { getUnixTime } from 'date-fns';
 
 import { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
-
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 import {
     generateContentKeys,
@@ -133,6 +132,9 @@ async function start(
         const expectedBlockCount = Math.ceil(file.size / FILE_CHUNK_SIZE) + (thumbnails ? thumbnails?.length : 0);
         if (buffer.uploadedBlockCount !== expectedBlockCount) {
             throw new Error('Some file parts failed to upload');
+        }
+        if (buffer.processedFileSize !== file.size) {
+            throw new Error('Some file bytes failed to upload');
         }
 
         const [signature, exifInfo] = await Promise.all([
