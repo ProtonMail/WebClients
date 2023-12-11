@@ -45,8 +45,6 @@ export enum FeatureCode {
     CalendarEncryptedSearch = 'CalendarEncryptedSearch',
     CalendarEncryptedSearchSpotlight = 'CalendarEncryptedSearchSpotlight',
     CalendarEventColorSpotlight = 'CalendarEventColorSpotlight',
-    CalendarSharingEnabled = 'CalendarSharingEnabled',
-    CalendarSharingSpotlight = 'CalendarSharingSpotlight',
     CleanUTMTrackers = 'CleanUTMTrackers',
     DarkStylesInBody = 'DarkStylesInBody',
     DismissedRecoverDataCard = 'DismissedRecoverDataCard',
