@@ -8,33 +8,38 @@ import { type } from "os";
 import { mainConfig } from "./webpack.main.config";
 import { rendererConfig } from "./webpack.renderer.config";
 
+const iconIco = process.env.RELEASE === "beta" ? "icon-beta.ico" : "icon.ico" ?? "icon.ico";
+const icon = process.env.RELEASE === "beta" ? "icon-beta" : "icon" ?? "icon";
+const name = process.env.RELEASE === "beta" ? "Proton Mail Beta" : "Proton Mail" ?? "Proton Mail";
+
 const config: ForgeConfig = {
     packagerConfig: {
-        icon: __dirname + "/assets/icons/icon",
+        icon: `${__dirname}/assets/icons/${icon}`,
         asar: true,
+        name,
         extraResource: type() === "Darwin" ? ["./src/macos/Uninstall Proton Mail.app", "./src/macos/uninstall.sh"] : [],
-        osxSign: {},
-        osxNotarize: {
-            appleId: process.env.APPLE_ID!,
-            appleIdPassword: process.env.APPLE_PASSWORD!,
-            teamId: process.env.APPLE_TEAM_ID!,
-        },
+        // osxSign: {},
+        // osxNotarize: {
+        //     appleId: process.env.APPLE_ID!,
+        //     appleIdPassword: process.env.APPLE_PASSWORD!,
+        //     teamId: process.env.APPLE_TEAM_ID!,
+        // },
     },
     rebuildConfig: {},
     makers: [
         {
             name: "@electron-forge/maker-squirrel",
             config: {
-                iconUrl: __dirname + "/assets/icons/icon.ico",
-                setupIcon: __dirname + "/assets/icons/icon.ico",
-                loadingGif: __dirname + "/assets/icons/windows/installSpinner.gif",
+                iconUrl: `${__dirname}/assets/${iconIco}`,
+                setupIcon: `${__dirname}/assets/${iconIco}`,
+                loadingGif: `${__dirname}/assets/windows/install-spinner.gif`,
             },
         },
         {
             name: "@electron-forge/maker-dmg",
             config: {
-                background: __dirname + "/assets/icons/macos/background.png",
-                icon: __dirname + "/assets/icons/macos/volume.icns",
+                background: `${__dirname}/assets/macos/background.png`,
+                icon: `${__dirname}/assets/macos/volume.icns`,
                 additionalDMGOptions: {
                     window: {
                         size: {

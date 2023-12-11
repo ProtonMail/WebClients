@@ -14,9 +14,9 @@ interface Config {
 }
 
 const localUrls = {
-    account: "https://account.proton.black",
-    mail: "https://mail.proton.black",
-    calendar: "https://calendar.proton.black",
+    account: "https://account.bessemer.proton.pink",
+    mail: "https://mail.bessemer.proton.pink",
+    calendar: "https://calendar.bessemer.proton.pink",
 };
 
 const devConfig: Config = {
