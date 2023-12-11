@@ -6,34 +6,18 @@ import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRo
 import { APPS, BRAND_NAME, CALENDAR_APP_NAME, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { AppLink, ModalProps, Prompt } from '../../../components';
-import { useFeature } from '../../../hooks';
-import { FeatureCode } from '../../index';
 
-const getText = (isDowngrade: boolean, calendarSharingEnabled: boolean) => {
+const getText = (isDowngrade: boolean) => {
     if (isDowngrade) {
-        if (calendarSharingEnabled) {
-            return c('Info').ngettext(
-                msgid`You can keep up to ${MAX_CALENDARS_FREE} calendar. Please remove shared calendar links and any ${BRAND_NAME} user with whom you shared your calendars before you cancel your subscription.`,
-                `You can keep up to ${MAX_CALENDARS_FREE} calendars. Please remove shared calendar links and any ${BRAND_NAME} user with whom you shared your calendars before you cancel your subscription.`,
-                MAX_CALENDARS_FREE
-            );
-        }
         return c('Info').ngettext(
-            msgid`You can keep up to ${MAX_CALENDARS_FREE} calendar. Please remove shared calendar links before you cancel your subscription.`,
-            `You can keep up to ${MAX_CALENDARS_FREE} calendars. Please remove shared calendar links before you cancel your subscription.`,
-            MAX_CALENDARS_FREE
-        );
-    }
-    if (calendarSharingEnabled) {
-        return c('Info').ngettext(
-            msgid`You can keep up to ${MAX_CALENDARS_FREE} calendar. Please remove shared calendar links and any ${BRAND_NAME} user with whom you shared your calendars before you cancel your ${MAIL_SHORT_APP_NAME} subscription.`,
-            `You can keep up to ${MAX_CALENDARS_FREE} calendars. Please remove shared calendar links and any ${BRAND_NAME} user with whom you shared your calendars before you cancel your ${MAIL_SHORT_APP_NAME} subscription.`,
+            msgid`You can keep up to ${MAX_CALENDARS_FREE} calendar. Please remove shared calendar links and any ${BRAND_NAME} user with whom you shared your calendars before you cancel your subscription.`,
+            `You can keep up to ${MAX_CALENDARS_FREE} calendars. Please remove shared calendar links and any ${BRAND_NAME} user with whom you shared your calendars before you cancel your subscription.`,
             MAX_CALENDARS_FREE
         );
     }
     return c('Info').ngettext(
-        msgid`You can keep up to ${MAX_CALENDARS_FREE} calendar. Please remove shared calendar links before you cancel your ${MAIL_SHORT_APP_NAME} subscription.`,
-        `You can keep up to ${MAX_CALENDARS_FREE} calendars. Please remove shared calendar links before you cancel your ${MAIL_SHORT_APP_NAME} subscription.`,
+        msgid`You can keep up to ${MAX_CALENDARS_FREE} calendar. Please remove shared calendar links and any ${BRAND_NAME} user with whom you shared your calendars before you cancel your ${MAIL_SHORT_APP_NAME} subscription.`,
+        `You can keep up to ${MAX_CALENDARS_FREE} calendars. Please remove shared calendar links and any ${BRAND_NAME} user with whom you shared your calendars before you cancel your ${MAIL_SHORT_APP_NAME} subscription.`,
         MAX_CALENDARS_FREE
     );
 };
@@ -44,8 +28,6 @@ interface Props extends ModalProps {
 }
 
 const CalendarDowngradeModal = ({ isDowngrade, onConfirm, onClose, ...rest }: Props) => {
-    const calendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
-
     const linkButton = (
         <AppLink toApp={APPS.PROTONACCOUNT} to={getCalendarsSettingsPath({ fullPath: true })} onClick={onClose}>
             {c('Action').t`Open ${CALENDAR_APP_NAME} settings`}
@@ -55,7 +37,7 @@ const CalendarDowngradeModal = ({ isDowngrade, onConfirm, onClose, ...rest }: Pr
     const title = isDowngrade
         ? c('Title').t`Downgrade account`
         : c('Title').t`Cancel ${MAIL_SHORT_APP_NAME} subscription`;
-    const text = getText(!!isDowngrade, calendarSharingEnabled);
+    const text = getText(!!isDowngrade);
 
     return (
         <Prompt

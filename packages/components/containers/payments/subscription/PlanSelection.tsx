@@ -96,7 +96,6 @@ interface Props {
     onChangeSelectedProductPlans: (newPlans: SelectedProductPlans) => void;
     subscription?: Subscription;
     organization?: Organization;
-    calendarSharingEnabled: boolean;
     filter?: Audience[];
 }
 
@@ -168,7 +167,6 @@ const PlanSelection = ({
     onChangeAudience,
     selectedProductPlans,
     onChangeSelectedProductPlans,
-    calendarSharingEnabled,
     filter,
 }: Props) => {
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
@@ -216,7 +214,6 @@ const PlanSelection = ({
     const features = getAllFeatures({
         plansMap,
         serversCount: vpnServers,
-        calendarSharingEnabled,
     });
 
     const plansListB2C = getPlansList(enabledProductB2CPlans, plansMap);

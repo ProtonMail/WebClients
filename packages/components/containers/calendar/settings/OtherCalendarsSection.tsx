@@ -63,7 +63,6 @@ const OtherCalendarsSection = ({
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
-    const calendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
     const holidaysCalendarsEnabled = !!useFeature(FeatureCode.HolidaysCalendars)?.feature?.Value;
 
     const [{ onExit: onExitCalendarModal, ...calendarModalProps }, setIsCalendarModalOpen] = useModalState();
@@ -105,9 +104,7 @@ const OtherCalendarsSection = ({
 
     const isFreeUser = !user.hasPaidMail;
     const calendarsLimitReachedText = getCalendarsLimitReachedText(isFreeUser).combinedText;
-    const descriptionText = calendarSharingEnabled
-        ? c('Subscribed calendar section description').t`Add public, external, or shared calendars.`
-        : c('Subscribed calendar section description').t`Add public, external, or shared calendars using a URL.`;
+    const descriptionText = c('Subscribed calendar section description').t`Add public, external, or shared calendars.`;
     const addCalendarText = c('Action').t`Add calendar from URL`;
     const addHolidaysCalendarText = c('Action').t`Add public holidays`;
 
