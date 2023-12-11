@@ -1,9 +1,10 @@
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Input } from '@proton/atoms/Input';
-import { Slider } from '@proton/atoms/Slider';
-import { Label, ModalTwo } from '@proton/components/components';
+import { Button } from '@proton/atoms/Button/Button';
+import { Input } from '@proton/atoms/Input/Input';
+import Slider from '@proton/atoms/Slider/Slider';
+import Label from '@proton/components/components/label/Label';
+import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 
 import { useFeeSelectionModal } from './useFeeSelectionModal';
@@ -11,25 +12,16 @@ import { useFeeSelectionModal } from './useFeeSelectionModal';
 interface Props {
     isOpen: boolean;
     feeEstimations: [number, number][];
-    blockTarget: number;
     feeRate: number;
     onClose: () => void;
     onFeeRateSelected: (feeRate: number) => void;
 }
 
-export const FeeSelectionModal = ({
-    isOpen,
-    onClose,
-    feeEstimations,
-    onFeeRateSelected,
-    blockTarget,
-    feeRate,
-}: Props) => {
+export const FeeSelectionModal = ({ isOpen, onClose, feeEstimations, onFeeRateSelected, feeRate }: Props) => {
     const { handleBlockTargetChange, handleFeeRateChange, tmpBlockTarget, tmpFeeRate } = useFeeSelectionModal(
         feeEstimations,
-        isOpen,
-        blockTarget,
-        feeRate
+        feeRate,
+        isOpen
     );
 
     return (
@@ -65,14 +57,17 @@ export const FeeSelectionModal = ({
                         type="number"
                         step={0.01}
                         id="fee-rate"
+                        data-testid="fee-rate-input"
                         value={tmpFeeRate}
                         placeholder={c('Wallet Send').t`Fee rate`}
-                        onChange={handleFeeRateChange}
+                        onChange={(event) => {
+                            handleFeeRateChange(event.target.value);
+                        }}
                     />
                 </div>
 
                 <div className="my-3 flex w-full items-end">
-                    <Button className="ml-auto" onClick={onClose}>{c('Wallet Send').t`Cancel`}</Button>
+                    <Button className="ml-auto" onClick={() => onClose()}>{c('Wallet Send').t`Cancel`}</Button>
                     <Button
                         color="norm"
                         className="ml-3"

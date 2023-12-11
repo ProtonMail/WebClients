@@ -1,4 +1,5 @@
 import { renderHook } from '@testing-library/react-hooks';
+import { vi } from 'vitest';
 
 import * as getRandomAccentColorModule from '@proton/shared/lib/colors';
 

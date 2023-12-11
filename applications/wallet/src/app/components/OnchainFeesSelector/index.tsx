@@ -91,7 +91,7 @@ export const OnChainFeesSelector = ({ txBuilder, updateTxBuilder }: Props) => {
                                 className="text-sm"
                                 size="small"
                                 shape="underline"
-                                onClick={openModal}
+                                onClick={() => openModal()}
                                 disabled={loadingFeeEstimation}
                             >{c('Wallet Send').t`Modify`}</Button>
                         </div>
@@ -102,7 +102,6 @@ export const OnChainFeesSelector = ({ txBuilder, updateTxBuilder }: Props) => {
                 isOpen={isModalOpen}
                 feeEstimations={feeEstimations}
                 feeRate={feeRate}
-                blockTarget={blockTarget}
                 onClose={closeModal}
                 onFeeRateSelected={handleFeesSelected}
             />

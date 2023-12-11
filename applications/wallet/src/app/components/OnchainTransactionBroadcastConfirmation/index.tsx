@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { Card } from '@proton/atoms/Card';
-import { Href } from '@proton/atoms/Href';
-import { Icon } from '@proton/components/components';
+import Card from '@proton/atoms/Card/Card';
+import Href from '@proton/atoms/Href/Href';
+import Icon from '@proton/components/components/icon/Icon';
 
 interface Props {
     txid: string;

@@ -2,13 +2,12 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import useLoading from '@proton/hooks/useLoading';
 
-import { WasmClient, WasmTxBuilder } from '../../../pkg';
-import { findLowestBlockTargetByFeeRate, findNearestBlockTargetFeeRate } from './utils';
+import { WasmTxBuilder } from '../../../pkg';
+import { DEFAULT_TARGET_BLOCK, MAX_BLOCK_TARGET, MIN_FEE_RATE } from './constant';
+import { FeeRateByBlockTarget } from './type';
+import { findLowestBlockTargetByFeeRate, findNearestBlockTargetFeeRate, getFeesEstimation } from './utils';
 
 export type FeeRateNote = 'LOW' | 'MODERATE' | 'HIGH';
-
-const DEFAULT_TARGET_BLOCK = 5;
-const MIN_FEE_RATE = 1;
 
 const getFeeRate = (blockTarget: number): FeeRateNote => {
     if (blockTarget < 5) {
@@ -27,14 +26,14 @@ export const useOnChainFeesSelector = (
     const [isRecommended, setIsRecommended] = useState(true);
     const [loadingFeeEstimation, withLoading] = useLoading();
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [feeEstimations, setFeeEstimations] = useState<[number, number][]>([]);
+    const [feeEstimations, setFeeEstimations] = useState<FeeRateByBlockTarget[]>([]);
 
     useEffect(() => {
         // TODO: cache this request
         void withLoading(
-            new WasmClient().get_fees_estimation().then((estimationMap) => {
+            getFeesEstimation().then((estimationMap) => {
                 const newFeeEstimations = [...estimationMap.entries()]
-                    .map(([block, feeRate]): [number, number] => [Number(block), feeRate])
+                    .map(([block, feeRate]): FeeRateByBlockTarget => [Number(block), feeRate])
                     .filter(([block]) => Number.isFinite(block))
                     .sort(([a], [b]) => a - b);
 
@@ -70,11 +69,7 @@ export const useOnChainFeesSelector = (
 
     const blockTarget = useMemo(() => {
         const feeRate = txBuilder.get_fee_rate() ?? MIN_FEE_RATE;
-        const { blockTarget: lowestBlockTarget } = findLowestBlockTargetByFeeRate(feeRate, feeEstimations) ?? {
-            blockTarget: 99,
-        };
-
-        return lowestBlockTarget;
+        return findLowestBlockTargetByFeeRate(feeRate, feeEstimations) ?? MAX_BLOCK_TARGET;
     }, [feeEstimations, txBuilder]);
 
     return {

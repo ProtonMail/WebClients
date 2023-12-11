@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-import { mockUseNotifications } from '@proton/testing';
+import { viMockUseNotifications } from '@proton/testing/lib/mockUseNotifications';
 
 import { walletsWithAccountsWithBalanceAndTxs } from '../../tests';
 import { BitcoinUnit } from '../../types';
@@ -10,7 +10,7 @@ import { useOnchainTransactionBuilder } from './useOnchainTransactionBuilder';
 
 describe.skip('useOnchainTransactionBuilder', () => {
     beforeEach(() => {
-        mockUseNotifications();
+        viMockUseNotifications();
     });
 
     describe('handleSelectWallet', () => {

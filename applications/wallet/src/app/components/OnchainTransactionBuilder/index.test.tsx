@@ -3,10 +3,11 @@ import userEvent from '@testing-library/user-event';
 import { vi } from 'vitest';
 
 import { OnchainTransactionBuilder } from '.';
+import { WasmTxBuilder } from '../../../pkg';
 import { walletsWithAccountsWithBalanceAndTxs } from '../../tests';
 import * as useOnchainTransactionBuilderModule from './useOnchainTransactionBuilder';
 
-describe.skip('OnchainTransactionBuilder', () => {
+describe('OnchainTransactionBuilder', () => {
     let helper: ReturnType<typeof useOnchainTransactionBuilderModule.useOnchainTransactionBuilder>;
 
     const mockUseBitcoinReceiveInfoGenerator = vi.spyOn(
@@ -34,14 +35,7 @@ describe.skip('OnchainTransactionBuilder', () => {
             loadindBroadcast: false,
             txid: undefined,
             finalPsbt: undefined,
-            txBuilder: {
-                get_recipients: vi.fn().mockReturnValue([]),
-                get_fee_rate: vi.fn().mockReturnValue(undefined),
-                get_coin_selection: vi.fn(),
-                get_utxos_to_spend: vi.fn().mockReturnValue([]),
-                get_rbf_enabled: vi.fn().mockReturnValue(true),
-                get_change_policy: vi.fn(),
-            } as any,
+            txBuilder: new WasmTxBuilder(),
         };
 
         mockUseBitcoinReceiveInfoGenerator.mockReturnValue({ ...helper });
