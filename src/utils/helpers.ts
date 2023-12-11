@@ -7,6 +7,14 @@ import { getConfig } from "./config";
 export const isMac = process.platform === "darwin";
 export const isWindows = process.platform === "win32";
 
+export const getPlatform = () => {
+    if (isMac) {
+        return "macos";
+    } else if (isWindows) {
+        return "windows";
+    }
+};
+
 export const getBasePath = (): string => {
     const basePath = app.getPath("exe");
 

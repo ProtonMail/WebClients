@@ -1,5 +1,6 @@
 import log from "electron-log/main";
 import { type } from "os";
+import { getAppURL } from "../store/urlStore";
 
 export interface URLConfig {
     account: string;
