@@ -48,6 +48,8 @@ export const OnChainFeesSelector = ({ txBuilder, updateTxBuilder }: Props) => {
 
     const feeRate = txBuilder.get_fee_rate() ?? 1;
 
+    const strFeeRate = feeRate.toFixed(2);
+
     return (
         <>
             <div className="flex flex-column">
@@ -75,8 +77,8 @@ export const OnChainFeesSelector = ({ txBuilder, updateTxBuilder }: Props) => {
                                 <div>
                                     <span className="block color-hint">
                                         {c('Wallet send').ngettext(
-                                            msgid`${feeRate.toFixed(2)}sat/vb`,
-                                            `${feeRate.toFixed(2)}sats/vb`,
+                                            msgid`${strFeeRate}sat/vb`,
+                                            `${strFeeRate}sats/vb`,
                                             feeRate
                                         )}
                                     </span>
