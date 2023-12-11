@@ -280,6 +280,7 @@ const SingleSignupContainerV2 = ({
         defaults,
         generateMnemonic,
         CustomStep,
+        cycles,
     } = (() => {
         const planIDs = model.optimistic.planIDs || model.subscriptionData.planIDs;
         const plan = model.optimistic.plan || selectedPlan;
@@ -948,6 +949,7 @@ const SingleSignupContainerV2 = ({
                         appName={productAppName}
                         selectedPlan={selectedPlan}
                         currentPlan={model.upsell.currentPlan}
+                        cycles={cycles}
                         planCards={planCards}
                         onOpenLogin={(options) => {
                             setTmpLoginEmail(options.email);
