@@ -1,3 +1,5 @@
+import { describe } from 'vitest';
+
 describe('OnchainTransactionAdvancedOptions', () => {
     describe('coin selection', () => {
         describe('when one button of the group is clicked', () => {
@@ -55,7 +57,5 @@ describe('OnchainTransactionAdvancedOptions', () => {
         });
     });
 
-    describe('Data', () => {
-        // TODO When supported
-    });
+    describe.todo('Data');
 });

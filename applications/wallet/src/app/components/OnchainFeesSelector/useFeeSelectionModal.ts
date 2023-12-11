@@ -1,50 +1,38 @@
-import { ChangeEvent, useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
+import { MAX_BLOCK_TARGET } from './constant';
+import { FeeRateByBlockTarget } from './type';
 import { findLowestBlockTargetByFeeRate, findNearestBlockTargetFeeRate } from './utils';
 
-export const useFeeSelectionModal = (
-    feeEstimations: [number, number][],
-    isOpen: boolean,
-    blockEstimate: number,
-    feeRate: number
-) => {
-    const [tmpBlockTarget, setBlockTarget] = useState(1);
-    const [tmpFeeRate, setFeeRate] = useState(1);
+export const useFeeSelectionModal = (feeEstimations: FeeRateByBlockTarget[], feeRate: number, isOpen: boolean) => {
+    const [tmpFeeRate, setTmpFeeRate] = useState(1);
 
-    const handleBlockTargetChange = (value: number) => {
-        setBlockTarget(value);
-
-        const nearestBlockFeeRate = findNearestBlockTargetFeeRate(tmpBlockTarget, feeEstimations);
+    const handleBlockTargetChange = (blockTarget: number) => {
+        const nearestBlockFeeRate = findNearestBlockTargetFeeRate(blockTarget, feeEstimations);
 
         if (nearestBlockFeeRate) {
-            setFeeRate(nearestBlockFeeRate);
+            setTmpFeeRate(nearestBlockFeeRate);
         }
     };
 
-    const handleFeeRateChange = (event: ChangeEvent<HTMLInputElement>) => {
-        const value = Number(event.target.value);
-        setFeeRate(value);
-
-        const lowestBlockTarget = findLowestBlockTargetByFeeRate(value, feeEstimations);
-
-        if (lowestBlockTarget) {
-            const { blockTarget } = lowestBlockTarget;
-            setBlockTarget(blockTarget);
-        }
+    const handleFeeRateChange = (value: string) => {
+        setTmpFeeRate(Number(value));
     };
 
     useEffect(() => {
         if (!isOpen) {
-            setBlockTarget(1);
-            setFeeRate(1);
+            setTmpFeeRate(1);
         } else {
-            setFeeRate(feeRate);
-            setBlockTarget(blockEstimate);
+            setTmpFeeRate(feeRate);
         }
 
         // Only triggers this on visibility change
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isOpen]);
+
+    const tmpBlockTarget = useMemo(() => {
+        return findLowestBlockTargetByFeeRate(tmpFeeRate, feeEstimations) ?? MAX_BLOCK_TARGET;
+    }, [feeEstimations, tmpFeeRate]);
 
     return { tmpBlockTarget, tmpFeeRate, handleBlockTargetChange, handleFeeRateChange };
 };

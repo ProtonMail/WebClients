@@ -36,7 +36,7 @@ describe('useWalletSetupModal', () => {
     describe('onNextStep', () => {
         describe('Import', () => {
             it('should go to next step each time, then call `onSetupFinish` last time', () => {
-                const onSetupFinish = jest.fn();
+                const onSetupFinish = vi.fn();
                 const { result } = renderHook(() => useWalletSetupModal({ isOpen: true, onSetupFinish }));
 
                 act(() => result.current.onSelectSetupMode(WalletSetupMode.Import));
@@ -55,7 +55,7 @@ describe('useWalletSetupModal', () => {
 
         describe('Creation', () => {
             it('should go to next step each time, then call `onSetupFinish` last time', () => {
-                const onSetupFinish = jest.fn();
+                const onSetupFinish = vi.fn();
                 const { result } = renderHook(() => useWalletSetupModal({ isOpen: true, onSetupFinish }));
 
                 act(() => result.current.onSelectSetupMode(WalletSetupMode.Creation));
