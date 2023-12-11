@@ -1,10 +1,10 @@
 import { app, BrowserWindow, session, shell } from "electron";
 import log from "electron-log/main";
 import { moveUninstaller } from "./macos/uninstall";
+import { saveHardcodedURLs } from "./store/urlStore";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./utils/constants";
 import { isHostAllowed, isHostCalendar, isHostMail, isMac, isWindows, saveWindowsPosition } from "./utils/helpers";
 import { getSessionID } from "./utils/urlHelpers";
-import { saveHardcodedURLs } from "./utils/urlStore";
 import {
     handleCalendarWindow,
     handleMailWindow,

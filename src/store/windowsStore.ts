@@ -1,6 +1,6 @@
 import { Rectangle, screen } from "electron";
 import Store from "electron-store";
-import { APP, STORE_WINDOW_KEY, WINDOW_SIZES } from "./constants";
+import { APP, STORE_WINDOW_KEY, WINDOW_SIZES } from "../utils/constants";
 
 const store = new Store();
 

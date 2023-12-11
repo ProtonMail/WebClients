@@ -1,5 +1,5 @@
 import Store from "electron-store";
-import { URLConfig } from "./config";
+import { URLConfig } from "../utils/config";
 
 const store = new Store();
 

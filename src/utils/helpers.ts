@@ -1,8 +1,8 @@
 import { BrowserWindow, app, shell } from "electron";
 import log from "electron-log/main";
 import { join } from "path";
+import { setWindowState } from "../store/windowsStore";
 import { getConfig } from "./config";
-import { setWindowState } from "./windowsStore";
 
 export const isMac = process.platform === "darwin";
 export const isWindows = process.platform === "win32";

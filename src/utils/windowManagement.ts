@@ -1,12 +1,12 @@
 import { BrowserWindow, BrowserWindowConstructorOptions, Rectangle, Session, WebContents, app } from "electron";
 import contextMenu from "electron-context-menu";
 import log from "electron-log/main";
+import { getWindowState, setWindowState } from "../store/windowsStore";
 import { getConfig } from "./config";
 import { APP, WINDOW_SIZES } from "./constants";
 import { areAllWindowsClosedOrHidden, isMac, isWindows } from "./helpers";
 import { setApplicationMenu } from "./menu";
 import { getSessionID } from "./urlHelpers";
-import { getWindowState, setWindowState } from "./windowsStore";
 
 interface WindowCreationProps {
     session: Session;
