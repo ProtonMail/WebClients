@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { FeatureCode } from '../containers';
+import { FeatureCode } from '../containers/features/FeaturesContext';
 import { useConversationCounts } from './useConversationCounts';
 import useFeature from './useFeature';
 import useIsInboxElectronApp from './useIsInboxElectronApp';
@@ -11,7 +11,7 @@ import useIsInboxElectronApp from './useIsInboxElectronApp';
 const useIsESEnabledElectron = () => {
     const { isElectron } = useIsInboxElectronApp();
     const [conversationCounts] = useConversationCounts();
-    const { feature: inboxThreshold } = useFeature(FeatureCode.ElectronESInboxThreshold);
+    const { feature: inboxThreshold } = useFeature<number>(FeatureCode.ElectronESInboxThreshold);
 
     const [isESEnabledInbox, setIsInboxEnabledInbox] = useState(false);
 
@@ -21,14 +21,14 @@ const useIsESEnabledElectron = () => {
             return;
         }
 
-        const { Total } = conversationCounts.find((count) => count.LabelID === '0') ?? { Total: undefined };
-
+        const { Total } = conversationCounts.find((count) => count.LabelID === '0') ?? {};
         if (typeof Total === 'undefined') {
             setIsInboxEnabledInbox(false);
             return;
         }
 
-        setIsInboxEnabledInbox(inboxThreshold?.Value >= Total);
+        const threshold = inboxThreshold?.Value || 0;
+        setIsInboxEnabledInbox(threshold >= Total);
     }, [inboxThreshold, conversationCounts]);
 
     return { isESEnabledInbox };

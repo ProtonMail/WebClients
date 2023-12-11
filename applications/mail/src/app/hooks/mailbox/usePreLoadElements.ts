@@ -24,10 +24,15 @@ interface Props {
 
 const usePreLoadElements = ({ elements, labelID, loading }: Props) => {
     const dispatch = useAppDispatch();
-    const { feature } = useFeature(FeatureCode.NumberOfPreloadedConversations);
-    const { feature: electronMultiplierFlag } = useFeature(FeatureCode.ElectronConvPreloadMultiplier);
-    const electronMultiplier = isElectronApp() ? electronMultiplierFlag?.Value : 1;
-    const numberOfPreloadedConversations = feature?.Value * electronMultiplier || 0;
+    const { feature: preloadedConversations } = useFeature<number>(FeatureCode.NumberOfPreloadedConversations);
+    const { feature: electronMultiplierFlag } = useFeature<number>(FeatureCode.ElectronConvPreloadMultiplier);
+
+    // We ensure that there is a value and that it does't impacts API calls
+    const base = preloadedConversations?.Value || 0;
+    const multiplier = electronMultiplierFlag?.Value || 1;
+
+    // We increase the preloaded conversations for the electron app
+    const numberOfPreloadedConversations = isElectronApp() ? base * multiplier : base;
 
     const firstElements = elements.slice(0, numberOfPreloadedConversations);
     const conversations = useSelector(allConversations);
