@@ -14,16 +14,14 @@ import { getVPNFeatures } from './vpn';
 export const getAllFeatures = ({
     plansMap,
     serversCount,
-    calendarSharingEnabled,
 }: {
     plansMap: PlansMap;
     serversCount: VPNServersCountData;
-    calendarSharingEnabled: boolean;
 }) => {
     return {
         highlight: getHighlightFeatures(plansMap),
         mail: getMailFeatures(plansMap),
-        calendar: getCalendarFeatures(plansMap, calendarSharingEnabled),
+        calendar: getCalendarFeatures(plansMap),
         drive: getDriveFeatures(plansMap),
         pass: getPassFeatures(),
         vpn: getVPNFeatures(serversCount),

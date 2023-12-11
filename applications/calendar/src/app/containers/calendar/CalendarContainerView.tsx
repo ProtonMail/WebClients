@@ -59,9 +59,8 @@ import { DRAWER_NATIVE_APPS } from '@proton/shared/lib/drawer/interfaces';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { Address, UserModel } from '@proton/shared/lib/interfaces';
+import { Address } from '@proton/shared/lib/interfaces';
 import { AttendeeModel, CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 import uniqueBy from '@proton/utils/uniqueBy';
 
@@ -71,7 +70,6 @@ import CalendarQuickSettings from '../../components/drawer/CalendarQuickSettings
 import getDateRangeText from '../../components/getDateRangeText';
 import { getNoonDateForTimeZoneOffset } from '../../helpers/date';
 import { getIsCalendarAppInDrawer } from '../../helpers/views';
-import CalendarSharingPopupModal from './CalendarSharingPopupModal';
 import CalendarSidebar from './CalendarSidebar';
 import CalendarToolbar from './CalendarToolbar';
 import getDateDiff from './getDateDiff';
@@ -110,7 +108,6 @@ interface Props {
     setContainerRef: Ref<HTMLDivElement>;
     onSearch: () => void;
     addresses: Address[];
-    user: UserModel;
     calendarUserSettings: CalendarUserSettings;
 }
 
@@ -145,7 +142,6 @@ const CalendarContainerView = ({
     onSearch,
 
     addresses,
-    user,
 
     calendarUserSettings,
 }: Props) => {
@@ -154,12 +150,9 @@ const CalendarContainerView = ({
     const { createNotification } = useNotifications();
     const [groups = []] = useContactGroups();
     const hasRebrandingFeedback = useHasRebrandingFeedback();
-    const calendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
     const isCalendarEncryptedSearchEnabled = !!useFeature(FeatureCode.CalendarEncryptedSearch).feature?.Value;
     const searchSpotlightAnchorRef = useRef<HTMLButtonElement>(null);
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal] = useModalState();
-    const [calendarSharingPopupModal, setIsCalendarSharingPopupModalOpen, renderCalendarSharingPopupModal] =
-        useModalState();
 
     useOpenDrawerOnLoad();
     const { appInView, showDrawerSidebar } = useDrawer();
@@ -402,16 +395,6 @@ const CalendarContainerView = ({
     const logo = <MainLogo to="/" />;
 
     const [{ isWelcomeFlow }] = useWelcomeFlags();
-    const { show: showSharingSpotlight, onDisplayed: onSharingSpotlightDisplayed } = useSpotlightOnFeature(
-        FeatureCode.CalendarSharingSpotlight,
-        !isWelcomeFlow && !isDrawerApp && !isSmallViewport && calendarSharingEnabled && hasPaidMail(user),
-        {
-            alpha: 0,
-            beta: Date.UTC(2023, 3, 5, 12),
-            default: Date.UTC(2023, 3, 12, 12),
-        }
-    );
-    const shouldShowCalendarSharingPopup = useSpotlightShow(showSharingSpotlight);
     const {
         show: showSearchSpotlight,
         onDisplayed: onSearchSpotlightDisplayed,
@@ -423,11 +406,6 @@ const CalendarContainerView = ({
     });
     const shouldShowCalendarSearchSpotlight = useSpotlightShow(showSearchSpotlight);
 
-    useEffect(() => {
-        if (shouldShowCalendarSharingPopup) {
-            setIsCalendarSharingPopupModalOpen(true);
-        }
-    }, [shouldShowCalendarSharingPopup]);
     const createEventText = c('Action').t`Create event`;
 
     const contactCustomActions: CustomAction[] = [
@@ -572,9 +550,6 @@ const CalendarContainerView = ({
         />
     ) : (
         <>
-            {renderCalendarSharingPopupModal && (
-                <CalendarSharingPopupModal {...calendarSharingPopupModal} onDisplayed={onSharingSpotlightDisplayed} />
-            )}
             <PrivateHeader
                 userDropdown={<UserDropdown app={APPS.PROTONCALENDAR} />}
                 floatingButton={

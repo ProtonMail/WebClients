@@ -50,22 +50,13 @@ const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
     };
 };
 
-const getShareFeature = (
-    plansMap: PlansMap,
-    plan: PLANS,
-    calendarSharingEnabled: boolean,
-    audience?: Audience
-): PlanCardFeatureDefinition => {
+const getShareFeature = (plansMap: PlansMap, plan: PLANS, audience?: Audience): PlanCardFeatureDefinition => {
     const included = hasBit(plansMap[plan]?.Services, PLAN_SERVICES.MAIL);
 
-    const tooltipText = calendarSharingEnabled
-        ? c('new_plans: tooltip').t`Easily share your calendars with your family, friends, or colleagues`
-        : c('new_plans: tooltip').t`Easily share your calendars with your colleagues, family, and friends via a link`;
+    const tooltipText = c('new_plans: tooltip').t`Easily share your calendars with your family, friends, or colleagues`;
 
     return {
-        text: calendarSharingEnabled
-            ? c('new_plans: feature').t`Calendar sharing`
-            : c('new_plans: feature').t`Share calendar via link`,
+        text: c('new_plans: feature').t`Calendar sharing`,
         tooltip: audience === Audience.B2B ? tooltipText : tooltipText,
         included,
     };
@@ -90,7 +81,7 @@ export const getCalendarAppFeature = (options?: { family?: boolean }): PlanCardF
     };
 };
 
-export const getCalendarFeatures = (plansMap: PlansMap, calendarSharingEnabled: boolean): PlanCardFeature[] => {
+export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
     return [
         {
             name: 'calendars',
@@ -132,15 +123,15 @@ export const getCalendarFeatures = (plansMap: PlansMap, calendarSharingEnabled: 
         {
             name: 'share',
             plans: {
-                [PLANS.FREE]: getShareFeature(plansMap, PLANS.FREE, calendarSharingEnabled),
-                [PLANS.BUNDLE]: getShareFeature(plansMap, PLANS.BUNDLE, calendarSharingEnabled),
-                [PLANS.MAIL]: getShareFeature(plansMap, PLANS.MAIL, calendarSharingEnabled),
-                [PLANS.VPN]: getShareFeature(plansMap, PLANS.VPN, calendarSharingEnabled),
-                [PLANS.DRIVE]: getShareFeature(plansMap, PLANS.DRIVE, calendarSharingEnabled),
-                [PLANS.PASS_PLUS]: getShareFeature(plansMap, PLANS.PASS_PLUS, calendarSharingEnabled),
-                [PLANS.FAMILY]: getShareFeature(plansMap, PLANS.FAMILY, calendarSharingEnabled),
-                [PLANS.BUNDLE_PRO]: getShareFeature(plansMap, PLANS.BUNDLE_PRO, calendarSharingEnabled, Audience.B2B),
-                [PLANS.MAIL_PRO]: getShareFeature(plansMap, PLANS.MAIL_PRO, calendarSharingEnabled, Audience.B2B),
+                [PLANS.FREE]: getShareFeature(plansMap, PLANS.FREE),
+                [PLANS.BUNDLE]: getShareFeature(plansMap, PLANS.BUNDLE),
+                [PLANS.MAIL]: getShareFeature(plansMap, PLANS.MAIL),
+                [PLANS.VPN]: getShareFeature(plansMap, PLANS.VPN),
+                [PLANS.DRIVE]: getShareFeature(plansMap, PLANS.DRIVE),
+                [PLANS.PASS_PLUS]: getShareFeature(plansMap, PLANS.PASS_PLUS),
+                [PLANS.FAMILY]: getShareFeature(plansMap, PLANS.FAMILY),
+                [PLANS.BUNDLE_PRO]: getShareFeature(plansMap, PLANS.BUNDLE_PRO, Audience.B2B),
+                [PLANS.MAIL_PRO]: getShareFeature(plansMap, PLANS.MAIL_PRO, Audience.B2B),
                 [PLANS.VPN_PRO]: null,
                 [PLANS.VPN_BUSINESS]: null,
             },

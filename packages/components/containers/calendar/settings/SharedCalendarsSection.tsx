@@ -40,9 +40,9 @@ import {
     useModalState,
 } from '../../../components';
 import CalendarSelectIcon from '../../../components/calendarSelect/CalendarSelectIcon';
-import { FeatureCode, SettingsSectionWide } from '../../../containers';
+import { SettingsSectionWide } from '../../../containers';
 import CalendarBadge from '../../../containers/calendar/settings/CalendarBadge';
-import { useCalendarShareInvitationActions, useEventManager, useFeature, useNotifications } from '../../../hooks';
+import { useCalendarShareInvitationActions, useEventManager, useNotifications } from '../../../hooks';
 import ShareCalendarWithSignatureVerificationErrorModal from '../../calendar/shareProton/ShareCalendarWithSignatureVerificationErrorModal';
 
 const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalendar; displayEmail: boolean }) => {
@@ -211,7 +211,6 @@ const SharedCalendarsSection = ({ user, addresses, calendars = [], calendarInvit
     const { accept, reject } = useCalendarShareInvitationActions();
 
     const hasSingleAddress = addresses.length === 1;
-    const isCalendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
 
     const [invitations, setInvitations] = useState([...calendarInvitations]);
     const [calendarOwnerEmail, setCalendarOwnerEmail] = useState('');
@@ -254,7 +253,7 @@ const SharedCalendarsSection = ({ user, addresses, calendars = [], calendarInvit
         removeInvitation(invitation.CalendarInvitationID);
     };
 
-    if (!(calendars.length || (isCalendarSharingEnabled && invitations.length))) {
+    if (!calendars.length && !invitations.length) {
         return null;
     }
 
@@ -283,29 +282,28 @@ const SharedCalendarsSection = ({ user, addresses, calendars = [], calendarInvit
                         {calendars.map((calendar) => (
                             <SharedCalendarRow key={calendar.ID} calendar={calendar} displayEmail={!hasSingleAddress} />
                         ))}
-                        {isCalendarSharingEnabled &&
-                            invitations.map((invitation) => {
-                                const disabledCanonicalizedEmails = addresses
-                                    .filter((address) => getIsAddressDisabled(address))
-                                    .map((address) => canonicalizeInternalEmail(address.Email));
+                        {invitations.map((invitation) => {
+                            const disabledCanonicalizedEmails = addresses
+                                .filter((address) => getIsAddressDisabled(address))
+                                .map((address) => canonicalizeInternalEmail(address.Email));
 
-                                const isInvitedAddressDisabled = disabledCanonicalizedEmails.includes(
-                                    canonicalizeInternalEmail(invitation.Email)
-                                );
+                            const isInvitedAddressDisabled = disabledCanonicalizedEmails.includes(
+                                canonicalizeInternalEmail(invitation.Email)
+                            );
 
-                                return (
-                                    <InvitationRow
-                                        key={invitation.CalendarInvitationID}
-                                        user={user}
-                                        invitation={invitation}
-                                        onAccept={handleAccept}
-                                        onDecline={handleDecline}
-                                        isInvitedAddressDisabled={isInvitedAddressDisabled}
-                                        canAddCalendars={canAddCalendars}
-                                        displayEmail={!hasSingleAddress}
-                                    />
-                                );
-                            })}
+                            return (
+                                <InvitationRow
+                                    key={invitation.CalendarInvitationID}
+                                    user={user}
+                                    invitation={invitation}
+                                    onAccept={handleAccept}
+                                    onDecline={handleDecline}
+                                    isInvitedAddressDisabled={isInvitedAddressDisabled}
+                                    canAddCalendars={canAddCalendars}
+                                    displayEmail={!hasSingleAddress}
+                                />
+                            );
+                        })}
                     </TableBody>
                 </Table>
             </SettingsSectionWide>
