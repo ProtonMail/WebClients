@@ -1,7 +1,8 @@
 import { app, BrowserWindow, session, shell } from "electron";
 import log from "electron-log/main";
 import { moveUninstaller } from "./macos/uninstall";
-import { saveHardcodedURLs } from "./store/urlStore";
+import { saveAppID } from "./store/idStore";
+import { saveAppURL } from "./store/urlStore";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./utils/constants";
 import { isHostAllowed, isHostCalendar, isHostMail, isMac, isWindows, saveWindowsPosition } from "./utils/helpers";
 import { getSessionID } from "./utils/urlHelpers";
@@ -19,7 +20,8 @@ if (require("electron-squirrel-startup")) {
 // Security addition
 app.enableSandbox();
 
-saveHardcodedURLs();
+saveAppURL();
+saveAppID();
 
 log.initialize({ preload: true });
 log.info("App start on mac:", isMac, "is windows: ", isWindows);

@@ -53,6 +53,7 @@
         "typescript": "~5.3.2"
     },
     "dependencies": {
+        "crypto": "^1.0.1",
         "electron-context-menu": "^3.6.1",
         "electron-log": "^5.0.1",
         "electron-squirrel-startup": "^1.0.0",

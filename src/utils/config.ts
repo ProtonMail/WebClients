@@ -1,6 +1,5 @@
 import log from "electron-log/main";
 import { type } from "os";
-import { getHardcodedURLs } from "./urlStore";
 
 export interface URLConfig {
     account: string;
@@ -29,7 +28,7 @@ const devConfig: Config = {
 const prodConfig: Config = {
     appTitle: "Proton",
     devTools: true, // TODO set to false for the beta
-    url: getHardcodedURLs(),
+    url: getAppURL(),
 };
 
 export const getConfig = (isPackaged: boolean) => {
