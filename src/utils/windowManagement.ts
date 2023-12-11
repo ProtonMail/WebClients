@@ -49,7 +49,7 @@ const createWindow = (session: Session, url: string, visible: boolean, windowCon
 
     const window = new BrowserWindow({
         title: config.appTitle,
-        icon: "../../assets/icons/icon.png",
+        icon: "../../assets/icon.png",
         x,
         y,
         width,
