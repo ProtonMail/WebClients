@@ -58,7 +58,17 @@ module.exports = (config) => {
         customLaunchers: {
             ChromeHeadlessCI: {
                 base: 'ChromeHeadless',
-                flags: ['--no-sandbox'],
+                flags: [
+                    '--no-sandbox',
+                    '--remote-debugging-port=9222',
+                    '--enable-logging',
+                    '--user-data-dir=./karma-chrome',
+                    '--v=1',
+                    '--disable-background-timer-throttling',
+                    '--disable-renderer-backgrounding',
+                    '--proxy-bypass-list=*',
+                    "--proxy-server='direct://'",
+                ],
             },
         },
         browsers: ['ChromeHeadlessCI'],
