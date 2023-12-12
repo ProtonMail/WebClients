@@ -2221,6 +2221,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Для импорта через CSV- и VCF-файл убедитесь, что файл не превышает ${ MAX_IMPORT_FILE_SIZE_STRING } или ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, пожалуйста, разделите его на более мелкие файлы. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Похоже, что список контактов, который вы импортируете, содержит группы. Пожалуйста, уточните, как их нужно импортировать."
       ],
@@ -2236,6 +2239,9 @@
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Это может занять несколько минут. Тем временем вы можете продолжать использовать календарь как обычно."
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Чтобы импортировать контакты из Google или Outlook, ${ easySwitchLink }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Перетаскивайте контакты, чтобы задавать им приоритет при объединении. Снимите галочку с контактов, которые вы не хотите объединять."
       ],
@@ -2244,6 +2250,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Вы можете отметить для удаления те контакты, которые не хотите ни объединять, ни оставлять. Удаление будет происходить только после нажатия кнопки «Объединить»."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2487,6 +2498,9 @@
       "Event not found": [
         "Событие не найдено"
       ],
+      "Failed to get event": [
+        "Не удалось получить событие"
+      ],
       "Failed to get original occurrence in series": [
         "Не удалось загрузить начальное вхождение серии событий"
       ],
@@ -2510,6 +2524,9 @@
       ],
       "Incorrect username": [
         "Некорректное имя пользователя"
+      ],
+      "Intended recipient does not support calendar sharing": [
+        "Предполагаемый получатель не поддерживает совместное использование календаря"
       ],
       "Interval cannot be empty": [
         "Интервал не может быть пустым"
@@ -3268,6 +3285,12 @@
         "Мегабайтов",
         "Мегабайтов",
         "Мегабайтов"
+      ],
+      "Terabyte": [
+        "Терабайт",
+        "Терабайта",
+        "Терабайтов",
+        "Терабайтов"
       ]
     },
     "Filter notification": {
@@ -3865,6 +3888,9 @@
       ],
       "Contact unassigned to group ${ contactGroupName }": [
         "Контакт откреплен от группы ${ contactGroupName }"
+      ],
+      "Copy the link to clipboard": [
+        "Скопировать ссылку в буфер обмена"
       ],
       "Country code": [
         "Код страны"
@@ -4464,11 +4490,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Только просмотр"
-      ]
-    },
-    "Info; calendar sharing pop-up": {
-      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
-        "Пригласите других пользователей с аккаунтом ${ BRAND_NAME } для просмотра или редактирования событий в вашем календаре."
       ]
     },
     "Info; reset calendar keys modal; part 1": {
@@ -5900,18 +5921,6 @@
         "${ timeRemaining.inHours } часов",
         "${ timeRemaining.inHours } часа"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inDays } день, чтобы сбросить свой пароль.",
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль.",
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inDays } дней, чтобы сбросить свой пароль.",
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inHours } час, чтобы сбросить свой пароль.",
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль.",
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inHours } часов, чтобы сбросить свой пароль.",
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль."
-      ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "Это разрешение истекает в течение ${ timeRemaining.inDays } дня",
         "Это разрешение истекает в течение ${ timeRemaining.inDays } дней",
@@ -5928,6 +5937,11 @@
     "session_recovery:available:link": {
       "See how": [
         "Посмотреть, как"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Сбросить пароль"
       ]
     },
     "session_recovery:cancellation:action": {
@@ -6974,11 +6988,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Выберите количество"
-      ]
-    },
-    "Title; calendar sharing pop-up": {
-      "Planning just got easier!": [
-        "Планировать стало легче!"
       ]
     },
     "Title; create calendar modal": {

@@ -2295,6 +2295,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } έχει ενημερωθεί.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Αυτό το περιστατικό του ${ eventTitle } έχει ακυρωθεί."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Σας προσκαλούμε σε ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -4376,11 +4379,6 @@
         "Ανάγνωση μόνο"
       ]
     },
-    "Info; calendar sharing pop-up": {
-      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
-        "Προσκαλέστε άλλα άτομα με λογαριασμό ${ BRAND_NAME } για προβολή ή επεξεργασία εκδηλώσεων στο ημερολόγιό σας."
-      ]
-    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "Κάποια από τα ημερολόγιά σας δε θα εμφανίζουν λεπτομέρειες για εκδηλώσεις που δημιουργήθηκαν προηγουμένως."
@@ -5746,14 +5744,6 @@
         "${ timeRemaining.inHours } ώρα",
         "${ timeRemaining.inHours } ώρες"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inDays } ημέρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
-        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inDays } ημέρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inHours } ώρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
-        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inHours } ώρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Παρακαλούμε μεταβείτε στη συνδεδεμένη συσκευή (στη συνεδρία όπου ξεκίνησε το αίτημα) για να αλλάξετε τον κωδικό πρόσβασής σας."
       ],
@@ -6840,11 +6830,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Επιλέξτε έναν αριθμό"
-      ]
-    },
-    "Title; calendar sharing pop-up": {
-      "Planning just got easier!": [
-        "Ο προγραμματισμός μόλις έγινε ευκολότερος!"
       ]
     },
     "Title; create calendar modal": {

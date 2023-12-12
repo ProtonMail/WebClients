@@ -4253,11 +4253,6 @@
         "僅能檢視"
       ]
     },
-    "Info; calendar sharing pop-up": {
-      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
-        "邀請其他有 ${ BRAND_NAME } 帳號的人檢視或編輯您的行事曆中的事件。"
-      ]
-    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "您的部份行事曆將不會顯示先前建立事件的詳細資訊。"
@@ -5576,12 +5571,6 @@
       "${ timeRemaining.inHours } hours": [
         "${ timeRemaining.inHours }小時"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
-        "重設密碼請求已批准 (${ user.Email })。您可以在${ timeRemaining.inDays }天內重設您的密碼。"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
-        "重設密碼請求已批准 (${ user.Email })。您可以在${ timeRemaining.inHours }小時內重設您的密碼。"
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "請前往已登入的裝置（在發起請求的工作階段中）變更您的密碼。"
       ],
@@ -6630,11 +6619,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "請選擇一個數字"
-      ]
-    },
-    "Title; calendar sharing pop-up": {
-      "Planning just got easier!": [
-        "規劃再變簡單！"
       ]
     },
     "Title; create calendar modal": {
