@@ -71,11 +71,17 @@
       "Create a ${ BRAND_NAME } account": [
         "Створіть обліковий запис ${ BRAND_NAME }"
       ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Створіть обліковий запис ${ BRAND_NAME }"
+      ],
       "Create alias": [
         "Створити псевдонім"
       ],
       "Create an account": [
         "Зареєструватися"
+      ],
+      "Create card": [
+        "Створити картку"
       ],
       "Create login": [
         "Створити запис входу"
@@ -212,6 +218,9 @@
       "Move to trash": [
         "Перемістити до смітника"
       ],
+      "Not now": [
+        "Не зараз"
+      ],
       "OK": [
         "Застосувати"
       ],
@@ -229,6 +238,9 @@
       ],
       "Regenerate": [
         "Згенерувати"
+      ],
+      "Reject": [
+        "Відхилити"
       ],
       "Reject invitation": [
         "Відхилити запрошення"
@@ -308,6 +320,9 @@
       "Update": [
         "Оновити"
       ],
+      "Updating": [
+        "Оновлення"
+      ],
       "Upgrade": [
         "Покращити"
       ],
@@ -319,6 +334,11 @@
       ],
       "Write us on Twitter": [
         "Напишіть нам у Twitter"
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "Скористатися пропозицією"
       ]
     },
     "bf2023: Title": {
@@ -337,6 +357,11 @@
       ],
       "Expand": [
         "Розгорнути"
+      ]
+    },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Список доменів, для яких не повинні виконуватися певні автоматичні функції ${ PASS_SHORT_APP_NAME }, як-от автозаповнення, пропозиції чи автозбереження. ${ infoText }"
       ]
     },
     "Error": {
@@ -421,6 +446,9 @@
       "Invalid password manager": [
         "Недійсний менеджер паролів"
       ],
+      "Invalid URL": [
+        "Недійсна URL-адреса"
+      ],
       "Invitation could not be accepted": [
         "Не вдалося прийняти запрошення"
       ],
@@ -477,6 +505,9 @@
       ],
       "The file you are trying to import is empty": [
         "Ви намагаєтеся імпортувати порожній файл"
+      ],
+      "The URL is in the list": [
+        "URL-адреса вже є у списку"
       ],
       "Too many failed attempts. Please sign in again.": [
         "Забагато невдалих спроб. Будь ласка, увійдіть ще раз."
@@ -603,6 +634,15 @@
         "${ memberCount } учасників",
         "${ memberCount } учасників"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } показуватиме піктограму елемента через анонімний проксі-сервер зображень ${ BRAND_NAME }."
+      ],
+      "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
+        "${ PASS_APP_NAME } запропонує створити псевдонім електронної пошти у реєстраційних формах."
+      ],
+      "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
+        "${ PASS_APP_NAME } пропонуватиме створювати надійні паролі у реєстраційних формах."
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } раз",
         "${ revisionNumber } рази",
@@ -629,6 +669,9 @@
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Доступна нова версія ${ PASS_APP_NAME }. Оновіть його, щоб отримати найновіші функції та виправлення помилок."
+      ],
+      "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
+        "Щоб отримати доступ до ${ PASS_APP_NAME }, вимагатиметься PIN-код для розблокування сеансу"
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Отримуйте доступ до своїх паролів на ходу за допомогою наших програм для мобільних пристроїв."
@@ -695,6 +738,9 @@
       ],
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "Експорт зашифрований за допомогою PGP і вимагає надійної парольної фрази."
+      ],
+      "For security reasons, your access needs to be confirmed": [
+        "З міркувань безпеки ваш доступ потребує підтвердження."
       ],
       "Generated passwords will be stored for a period of one day.": [
         "Згенеровані паролі зберігатимуться протягом одного дня."
@@ -786,6 +832,9 @@
       "Multiple vaults": [
         "Кілька сховищ"
       ],
+      "Never": [
+        "Ніколи"
+      ],
       "None": [
         "Немає"
       ],
@@ -803,6 +852,9 @@
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Паролі давніші 1 дня автоматично видаляються з історії."
+      ],
+      "Pending access to the shared data": [
+        "Очікування доступу до спільних даних"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Закріпіть ${ PASS_APP_NAME } на панелі інструментів"
@@ -822,11 +874,17 @@
       "Please consider leaving a review.": [
         "Напишіть відгук."
       ],
+      "Please enter your current PIN code to continue": [
+        "Щоб продовжити, введіть поточний PIN-код"
+      ],
       "Press Enter to copy": [
         "Натисніть Enter, щоб скопіювати"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Захист вашої приватності — це наш пріоритет. Дізнайтеся, що відрізняє ${ PASS_APP_NAME } від інших."
+      ],
+      "Save login": [
+        "Зберегти дані для входу"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Сервери недоступні. Спробуйте знову за кілька хвилин"
@@ -875,6 +933,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Розблокуйте за допомогою PIN-коду, щоб отримати доступ до налаштувань"
+      ],
+      "Update login": [
+        "Оновити дані для входу"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Покращити ${ PASS_APP_NAME }"
@@ -1013,6 +1074,9 @@
       "Capitalise": [
         "Великі літери"
       ],
+      "Card": [
+        "Картка"
+      ],
       "Card number": [
         "Номер картки"
       ],
@@ -1103,6 +1167,9 @@
       "Include numbers (0-9)": [
         "Додати цифри (0-9)"
       ],
+      "Invitations": [
+        "Запрошення"
+      ],
       "Language": [
         "Мова"
       ],
@@ -1129,6 +1196,9 @@
       ],
       "Logins": [
         "Записи входу"
+      ],
+      "Members": [
+        "Учасники"
       ],
       "Modified": [
         "Змінено"
@@ -1421,6 +1491,9 @@
       "Confirm PIN code": [
         "Підтвердьте PIN-код"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Під'єднати обліковий запис ${ BRAND_NAME }"
+      ],
       "Create PIN code": [
         "Створіть PIN-код"
       ],
@@ -1445,6 +1518,9 @@
       "Grant permissions": [
         "Надати дозволи"
       ],
+      "Hide my email": [
+        "Hide-my-email"
+      ],
       "Import - ${ date }": [
         "Імпорт - ${ date }"
       ],
@@ -1457,8 +1533,14 @@
       "Low disk space": [
         "Бракує місця на диску"
       ],
+      "Our welcome gift to you": [
+        "Наш вітальний подарунок для вас"
+      ],
       "Password": [
         "Пароль"
+      ],
+      "Pending access to the shared data": [
+        "Очікування доступу до спільних даних"
       ],
       "Permanently remove all items ?": [
         "Остаточно видалити всі елементи ?"
@@ -1499,6 +1581,9 @@
       "Update available": [
         "Доступне оновлення"
       ],
+      "Use my email": [
+        "Використовувати мою електронну пошту"
+      ],
       "Vault shared with you": [
         "Вам надано спільний доступ до сховища"
       ],
@@ -1516,6 +1601,9 @@
       ]
     },
     "Validation": {
+      "OTP secret or URI is invalid": [
+        "Секретний ключ OTP або URI неправильний"
+      ],
       "Url already exists": [
         "Url вже існує"
       ],
