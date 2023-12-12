@@ -3137,6 +3137,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } ha sido actualizado.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Esta incidencia de ${ eventTitle } ha sido cancelada."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Estás invitado a ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -3644,6 +3647,9 @@
       ],
       "You must set a name": [
         "Debes establecer un nombre."
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Has alcanzado el número máximo de caracteres. Acorta tu mensaje."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Tus correos electrónicos no se pueden descifrar debido a un restablecimiento de contraseña reciente. Si recuerdas tu contraseña anterior, puedes ${ reActivateKeyLink } para acceder a tus mensajes. ${ learnMoreLink }"
@@ -8118,14 +8124,6 @@
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } hora",
         "${ timeRemaining.inHours } horas"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "El restablecimiento de contraseña ha sido aprobado (${ user.Email }). Tienes ${ timeRemaining.inDays } día para restablecer tu contraseña.",
-        "El restablecimiento de contraseña ha sido aprobado (${ user.Email }). Tienes ${ timeRemaining.inDays } días para restablecer tu contraseña."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "El restablecimiento de contraseña ha sido aprobado (${ user.Email }). Tienes ${ timeRemaining.inHours } hora para restablecer tu contraseña.",
-        "El restablecimiento de contraseña ha sido aprobado (${ user.Email }). Tienes ${ timeRemaining.inHours } horas para restablecer tu contraseña."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Ve al dispositivo en el que se ha iniciado sesión y donde se ha realizado la solicitud para cambiar tu contraseña."

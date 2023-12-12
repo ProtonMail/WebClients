@@ -1078,6 +1078,9 @@
       "Unordered list": [
         "無序列表"
       ],
+      "Unsnooze": [
+        "取消延後"
+      ],
       "Unstar": [
         "移除星號"
       ],
@@ -5679,6 +5682,9 @@
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "此電郵未能通過其網域的認證需求。可能是因為遭人假冒或不當轉寄！"
       ],
+      "This file is too large to preview": [
+        "此檔案太大無法預覽"
+      ],
       "This invitation is saved in a disabled calendar.": [
         "此邀請儲存於一個已停用的行事曆。"
       ],
@@ -6971,6 +6977,12 @@
       "Sign up for free": [
         "免費註冊"
       ],
+      "Snooze": [
+        "延後"
+      ],
+      "Snoozed": [
+        "已延後"
+      ],
       "Spam": [
         "垃圾郵件"
       ],
@@ -7863,12 +7875,6 @@
       ],
       "${ timeRemaining.inHours } hours": [
         "${ timeRemaining.inHours }小時"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
-        "重設密碼請求已批准 (${ user.Email })。您可以在${ timeRemaining.inDays }天內重設您的密碼。"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
-        "重設密碼請求已批准 (${ user.Email })。您可以在${ timeRemaining.inHours }小時內重設您的密碼。"
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "請前往已登入的裝置（在發起請求的工作階段中）變更您的密碼。"
@@ -9129,6 +9135,9 @@
       ],
       "Snooze": [
         "延後"
+      ],
+      "Snooze message": [
+        "訊息延後"
       ],
       "Sort conversations": [
         "交談排序"
