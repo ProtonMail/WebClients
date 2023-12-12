@@ -230,7 +230,7 @@ export const createActivationService = () => {
         withContext(async (ctx) => {
             const now = getEpoch();
             const lastReload = (await ctx.service.storage.local.getItem('lastReload')) ?? 0;
-            if (lastReload - RUNTIME_RELOAD_TIME > now) return;
+            if (lastReload + RUNTIME_RELOAD_TIME > now) return;
 
             await ctx.service.storage.local.setItem('lastReload', now);
             browser.runtime.reload();
