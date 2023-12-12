@@ -114,19 +114,20 @@ export const AuthServiceProvider: FC = ({ children }) => {
             },
 
             onUnauthorized: (userID, localID, broadcast) => {
+                if (broadcast) sw.send({ type: 'unauthorized', localID, broadcast: true });
+                if (userID) void deletePassDB(userID); /* wipe the local DB cache */
+
+                onboarding.reset();
+                telemetry.stop();
+
+                localStorage.removeItem(getSessionKey(localID));
+                client.current.setStatus(AppStatus.UNAUTHORIZED);
+
                 store.dispatch(cacheCancel());
                 store.dispatch(stopEventPolling());
                 store.dispatch(stateDestroy());
 
-                if (broadcast) sw.send({ type: 'unauthorized', localID, broadcast: true });
-                if (userID) void deletePassDB(userID); /* wipe the local DB cache */
-
-                localStorage.removeItem(getSessionKey(localID));
-                client.current.setStatus(AppStatus.UNAUTHORIZED);
                 history.replace('/');
-
-                onboarding.reset();
-                telemetry.stop();
             },
 
             onForkConsumed: (_, state) => {
