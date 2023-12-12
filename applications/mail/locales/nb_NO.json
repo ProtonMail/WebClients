@@ -1443,7 +1443,7 @@
         "Tilkoblingsproblem"
       ],
       "Contacts problem": [
-        "Kontakterproblem"
+        "Problem med kontakter"
       ],
       "Custom domain problem": [
         "Egendefinert domeneproblem"
@@ -1464,7 +1464,7 @@
         "E-postproblem"
       ],
       "Manual setup problem": [
-        "Manuelt oppsettsproblem"
+        "Problem med manuell installasjon"
       ],
       "Other": [
         "Annet"
@@ -1485,13 +1485,13 @@
         "Registreringsproblem"
       ],
       "Slow speed problem": [
-        "Problemer med lav hastighet"
+        "Problem med lav hastighet"
       ],
       "Speed problem": [
         "Hastighetsproblem"
       ],
       "Streaming problem": [
-        "Strømmeproblem"
+        "Problem med strømming"
       ],
       "Update problem": [
         "Problem med oppdatering"
@@ -1500,7 +1500,7 @@
         "VPN-problem"
       ],
       "Website access problem": [
-        "Tilgang til nettstedproblem"
+        "Problem med tilgang til nettsted"
       ]
     },
     "Button": {
@@ -1977,7 +1977,7 @@
         "Gå til innboks"
       ],
       "Go to Sent": [
-        "Gå til sendte"
+        "Gå til sendt"
       ],
       "Go to Spam": [
         "Gå til søppelpost"
@@ -3137,6 +3137,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } er blitt oppdatert.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Denne forekomsten av ${ eventTitle } er kansellert."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Du er invitert til ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -3645,6 +3648,9 @@
       "You must set a name": [
         "Du må angi et navn"
       ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Du har nådd det maksimale tegntallet. Vennligst forkort meldingen."
+      ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "E-postene dine kan ikke dekrypteres på grunn av en nylig tilbakestilling av passord. Hvis du husker ditt forrige passord, kan du ${ reActivateKeyLink } for å få tilgang til meldingene dine. ${ learnMoreLink }."
       ],
@@ -3968,7 +3974,7 @@
         "Forstått"
       ],
       "Switch plans": [
-        "Bytte planer"
+        "Bytt plan"
       ],
       "View the invitation": [
         "Se invitasjonen"
@@ -4014,7 +4020,7 @@
         "Eiere av en plan med medlemmer kan ikke bli med i en annen gruppeplan."
       ],
       "Sorry, you can't switch plans at this time.": [
-        "Beklager, du kan ikke bytter planer på nåværende tidspunkt."
+        "Beklager, du kan ikke endre abonnementet på nåværende tidspunkt."
       ],
       "Storage assigned to you: ${ assignedStorage }": [
         "Lagringsplass tilordnet deg: ${ assignedStorage }"
@@ -4278,7 +4284,7 @@
     },
     "forwardmessage": {
       "Date: On ${ date }": [
-        "Dato: på ${ date }"
+        "Dato: ${ date }"
       ],
       "From: ${ senderString }": [
         "Fra: ${ senderString }"
@@ -6350,7 +6356,7 @@
         "Gå til innboks"
       ],
       "Go to Sent": [
-        "Gå til sendte"
+        "Gå til sendt"
       ],
       "Go to Spam": [
         "Gå til søppelpost"
@@ -7678,7 +7684,7 @@
         "Underholdning"
       ],
       "Food and beverage": [
-        "Mat og Drikke"
+        "Mat og drikke"
       ],
       "Gaming": [
         "Spilling"
@@ -8119,14 +8125,6 @@
         "${ timeRemaining.inHours } time",
         "${ timeRemaining.inHours } timer"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Forespørsel om tilbakestilling av passord godkjent (${ user.Email }). Du har ${ timeRemaining.inDays } dag på å tilbakestille passordet ditt.",
-        "Forespørsel om tilbakestilling av passord godkjent (${ user.Email }). Du har ${ timeRemaining.inDays } dager på å tilbakestille passordet ditt."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Forespørsel om tilbakestilling av passord godkjent (${ user.Email }). Du har ${ timeRemaining.inHours } time på å tilbakestille passordet ditt.",
-        "Forespørsel om tilbakestilling av passord godkjent (${ user.Email }). Du har ${ timeRemaining.inHours } timer på å tilbakestille passordet ditt."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Vennligst gå til den påloggede enheten (i økten hvor forespørselen ble igangsatt) for å endre passordet ditt."
       ],
@@ -8326,7 +8324,7 @@
     },
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
-        "Gå ubegrenset"
+        "Få Unlimited"
       ]
     },
     "specialoffer: Countdown unit": {

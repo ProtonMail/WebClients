@@ -3648,6 +3648,9 @@
       "You must set a name": [
         "Du måste ange ett namn"
       ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Du har nått det maximala antalet tecken. Förkorta ditt meddelande."
+      ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Dina e-postmeddelanden kan inte dekrypteras på grund av en nylig lösenordsåterställning. Om du kommer ihåg ditt tidigare lösenord kan du ${ reActivateKeyLink } för att komma åt dina meddelanden. ${ learnMoreLink }"
       ],
@@ -8121,14 +8124,6 @@
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } timme",
         "${ timeRemaining.inHours } timmar"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Begäran om lösenordsåterställning godkänd (${ user.Email }). Du har ${ timeRemaining.inDays } dag för att återställa ditt lösenord.",
-        "Begäran om lösenordsåterställning godkänd (${ user.Email }). Du har ${ timeRemaining.inDays } dagar för att återställa ditt lösenord."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Begäran om lösenordsåterställning godkänd (${ user.Email }). Du har ${ timeRemaining.inHours } timme för att återställa ditt lösenord.",
-        "Begäran om lösenordsåterställning godkänd (${ user.Email }). Du har ${ timeRemaining.inHours } timmar för att återställa ditt lösenord."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Gå till den inloggade enheten (i den session där begäran initierades) för att ändra ditt lösenord."

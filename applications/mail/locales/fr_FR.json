@@ -3137,6 +3137,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } a été mis à jour.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Cette occurrence de ${ eventTitle } a été annulée."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Vous êtes invité à ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -3644,6 +3647,9 @@
       ],
       "You must set a name": [
         "Vous devez définir un nom."
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Vous avez atteint le nombre maximum de caractères. Vous devez raccourcir votre message."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Vos messages ne peuvent pas être déchiffrés suite à une récente réinitialisation du mot de passe. Si vous vous souvenez de votre ancien mot de passe, vous pouvez ${ reActivateKeyLink } pour accéder à vos messages. ${ learnMoreLink }"
@@ -8118,14 +8124,6 @@
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } heure",
         "${ timeRemaining.inHours } heures"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inDays } jour pour réinitialiser votre mot de passe.",
-        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inDays } jours pour réinitialiser votre mot de passe."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inHours } heure pour réinitialiser votre mot de passe.",
-        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inHours } heures pour réinitialiser votre mot de passe."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Rendez-vous sur l'appareil avec lequel vous vous êtes connecté (dans la session où la demande a été faite) pour changer votre mot de passe."
