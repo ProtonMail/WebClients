@@ -152,6 +152,7 @@ export interface SignupConfiguration {
     setupImg: ReactNode;
     preload: ReactNode;
     CustomStep: FunctionComponent<SignupCustomStepProps>;
+    cycles?: CYCLE[];
 }
 
 export interface PlanParameters {

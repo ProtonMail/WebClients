@@ -102,6 +102,7 @@ const Step1 = ({
     step1Ref,
     measure,
     mode,
+    cycles = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
 }: {
     signupParameters: SignupParameters2;
     signupTypes: SignupType[];
@@ -142,6 +143,7 @@ const Step1 = ({
     onOpenLogin: OnOpenLogin;
     className?: string;
     step1Ref: MutableRefObject<Step1Rref | undefined>;
+    cycles?: CYCLE[];
 }) => {
     const silentApi = getSilentApi(normalApi);
     const [loadingSignup, withLoadingSignup] = useLoading();
@@ -279,7 +281,7 @@ const Step1 = ({
         return onComplete({ subscriptionData, accountData, type: type || 'signup' });
     };
 
-    const cycles = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS].map((cycle) => ({
+    const cycleOptions = cycles.map((cycle) => ({
         text: getShortBillingText(cycle),
         value: cycle,
     }));
@@ -435,7 +437,7 @@ const Step1 = ({
                                         <CycleSelector
                                             mode="buttons"
                                             cycle={options.cycle}
-                                            options={cycles}
+                                            options={cycleOptions}
                                             onSelect={(newCycle) => {
                                                 return withLoadingPaymentDetails(handleChangeCycle(newCycle)).catch(
                                                     noop
