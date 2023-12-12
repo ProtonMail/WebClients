@@ -12,7 +12,13 @@ const iconIco = process.env.RELEASE === "beta" ? "icon-beta.ico" : "icon.ico" ??
 const icon = process.env.RELEASE === "beta" ? "icon-beta" : "icon" ?? "icon";
 const name = process.env.RELEASE === "beta" ? "Proton Mail Beta" : "Proton Mail" ?? "Proton Mail";
 
+let currentArch = "";
 const config: ForgeConfig = {
+    hooks: {
+        generateAssets: async (_config, _platform, arch) => {
+            currentArch = arch === "all" ? "universal" : arch;
+        },
+    },
     packagerConfig: {
         icon: `${__dirname}/assets/icons/${icon}`,
         asar: true,
@@ -40,6 +46,17 @@ const config: ForgeConfig = {
             config: {
                 background: `${__dirname}/assets/macos/background.png`,
                 icon: `${__dirname}/assets/macos/volume.icns`,
+                contents: () => {
+                    return [
+                        {
+                            x: 229,
+                            y: 250,
+                            type: "file",
+                            path: `${process.cwd()}/out/${name}-darwin-${currentArch}/${name}.app`,
+                        },
+                        { x: 429, y: 250, type: "link", path: "/Applications" },
+                    ];
+                },
                 additionalDMGOptions: {
                     window: {
                         size: {
