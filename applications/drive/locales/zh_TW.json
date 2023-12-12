@@ -3970,6 +3970,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "此瀏覽器不支援預覽 PDF 文件。請下載該檔案。"
       ],
+      "This file is too large to preview": [
+        "此檔案太大無法預覽"
+      ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "此檔案可能已被刪除、移動或不可用。請嘗試聯絡檔案擁有者。"
       ],
@@ -5446,12 +5449,6 @@
       ],
       "${ timeRemaining.inHours } hours": [
         "${ timeRemaining.inHours }小時"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
-        "重設密碼請求已批准 (${ user.Email })。您可以在${ timeRemaining.inDays }天內重設您的密碼。"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
-        "重設密碼請求已批准 (${ user.Email })。您可以在${ timeRemaining.inHours }小時內重設您的密碼。"
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "請前往已登入的裝置（在發起請求的工作階段中）變更您的密碼。"

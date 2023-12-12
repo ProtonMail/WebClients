@@ -338,7 +338,7 @@
         "Prilagodi prozoru"
       ],
       "Font": [
-        "Vrsta slova"
+        "Font"
       ],
       "Generate key": [
         "Stvori ključ"
@@ -351,6 +351,9 @@
       ],
       "Get ${ vpnPlus }": [
         "Nabavite ${ vpnPlus }"
+      ],
+      "Get more": [
+        "Nabavi više"
       ],
       "Get the deal": [
         "Ugrabite ponudu"
@@ -381,6 +384,12 @@
       ],
       "Import emails": [
         "Uvoz e-pošte"
+      ],
+      "Import from ICS": [
+        "Uvezite iz ICS"
+      ],
+      "Import from Outlook": [
+        "Uvoz iz Outlooka"
       ],
       "Import key": [
         "Uvezi ključ"
@@ -480,6 +489,9 @@
       ],
       "Pay": [
         "Plati"
+      ],
+      "Pay ${ price }": [
+        "Platite ${ price }"
       ],
       "Preview": [
         "Pregled"
@@ -612,6 +624,9 @@
       ],
       "Select files": [
         "Odabir datoteka"
+      ],
+      "Select time zone": [
+        "Odaberite vremensku zonu"
       ],
       "send auto-reply email": [
         "pošalji automatski odgovor"
@@ -943,6 +958,9 @@
       ]
     },
     "bf2023: Action": {
+      "Add ${ PASS_APP_NAME }": [
+        "Dodaj ${ PASS_APP_NAME }"
+      ],
       "Cancel": [
         "Poništi"
       ],
@@ -965,6 +983,12 @@
       ],
       "6 users": [
         "6 korisnika"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bf2023: Info": {
@@ -992,6 +1016,9 @@
       ]
     },
     "Billing cycle option": {
+      "1 month": [
+        "1 mjesec"
+      ],
       "12 months": [
         "12 mjeseci"
       ],
@@ -1155,6 +1182,9 @@
       ]
     },
     "Collapsible tooltip": {
+      "Collapse": [
+        "Minimiziraj"
+      ],
       "Expand": [
         "Proširi"
       ]
@@ -2082,6 +2112,9 @@
       "Trinidad and Tobago": [
         "Trinidad i Tobago"
       ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
       "Tunisia": [
         "Tunis"
       ],
@@ -2637,6 +2670,9 @@
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Neki nazivi vaših mapa nisu dostupni. Prilagodite uvoz da biste uredili te nazive."
       ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Neki od vaših naziva mapa premašuju ${ MAIL_APP_NAME }ovo maksimalno ograničenje broja znakova. Prilagodite uvoz da biste uredili te nazive."
+      ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Neki nazivi vaših oznaka nisu dostupni. Prilagodite uvoz da biste uredili te nazive."
       ],
@@ -2684,6 +2720,9 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "Naziv oznake nije dostupan. Odaberite drugi naziv."
+      ],
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Ova poruka može sadržavati URL poveznice koje trenutačni preglednik ne može ispravno otvoriti."
       ],
       "Trusted keys are not valid for sending": [
         "Pouzdani ključevi nisu valjani za slanje"
@@ -2734,6 +2773,9 @@
     "Error importing calendar": {
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Maksimalna veličina datoteke je ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Samo datoteke ICS formata su dopuštene."
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Došlo je do pogreške prilikom učitavanja vaše datoteke. Nije odabrana nijedna datoteka."
@@ -2890,6 +2932,11 @@
         "Nije odabrana nijedna slika"
       ]
     },
+    "Error when exporting event from calendar": {
+      "Event @ ${ timeString }": [
+        "Događaj u ${ timeString }"
+      ]
+    },
     "Event invitation error": {
       "Invalid invitation": [
         "Nevažeća pozivnica"
@@ -2939,6 +2986,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "Do 6 korisnika"
       ]
@@ -2973,6 +3029,11 @@
     "familyOffer_2023:Settings section title": {
       "Family": [
         "Obitelj"
+      ]
+    },
+    "familyOffer_2023:Success": {
+      "Member updated": [
+        "Ažuriran član"
       ]
     },
     "familyOffer_2023:Title": {
@@ -3175,6 +3236,9 @@
     "Font face option": {
       "System default": [
         "Zadani sustav"
+      ],
+      "Theme font": [
+        "Font teme"
       ]
     },
     "Font Size Default": {
@@ -3208,6 +3272,11 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 e-poruke mjesečno)"
+      ]
+    },
+    "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME } aplikacija"
       ]
     },
     "Gmail forwarding": {
@@ -3300,6 +3369,9 @@
       ],
       "Server": [
         "Poslužitelj"
+      ],
+      "Server load": [
+        "Opterećenje poslužitelja"
       ],
       "Servers": [
         "Poslužitelji"
@@ -3518,6 +3590,11 @@
         "ograničenje propusnosti"
       ]
     },
+    "Import instructions": {
+      "Go to ${ boldAccountSecurity }.": [
+        "Idi na ${ boldAccountSecurity }"
+      ]
+    },
     "Import instructions emphasis": {
       "Account info": [
         "Informacije o računu"
@@ -3541,6 +3618,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Uvoz iz ${ provider }a"
+      ],
       "Other": [
         "Ostalo"
       ]
@@ -3903,6 +3983,9 @@
       "free up space by deleting older messages or other data": [
         "oslobodite prostor za pohranu brisanjem starijih poruka ili drugih podataka"
       ],
+      "Gateways": [
+        "Pristupnici"
+      ],
       "Get ${ upsellPlanName }": [
         "Nabavite ${ upsellPlanName }"
       ],
@@ -4086,6 +4169,9 @@
       "of": [
         "od"
       ],
+      "old password": [
+        "stara lozinka"
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Promijenite ove postavke samo ako koristite PGP s primateljima koji ne koriste ${ BRAND_NAME }."
       ],
@@ -4184,6 +4270,9 @@
       ],
       "Set recovery phrase": [
         "Postavite frazu za oporavak"
+      ],
+      "Settings updated": [
+        "Ažurirane postavke"
       ],
       "Show original message": [
         "Prikaži originalnu poruku"
@@ -4336,6 +4425,9 @@
       ],
       "View, download, and manage your invoices.": [
         "Pregledajte, preuzmite i upravljajte fakturama."
+      ],
+      "Warning:": [
+        "Upozorenje:"
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Upozorenje: Brisanje je trajno. Ovo također uklanja pristup svim povezanim uslugama i briše sve vaše kontakte."
@@ -4547,6 +4639,9 @@
     "Key generation": {
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
         "Ključ s istim algoritmom za šifriranje već je aktivan za ovu adresu.\nStvaranje drugog ključa uzrokovat će sporije učitavanje računa, a brisanje tog ključa može uzrokovati probleme.\nAko stvarate novi ključ jer je stari ključ ugrožen, označite taj ključ kao ugrožen.\nJeste li sigurni da želite nastaviti?"
+      ],
+      "Generate key": [
+        "Stvori ključ"
       ],
       "Key with fingerprint ${ fp } successfully created.": [
         "Ključ s otiskom prsta ${ fp } je uspješno stvoren."
@@ -4830,6 +4925,9 @@
       "Actions": [
         "Radnje"
       ],
+      "Activity": [
+        "Aktivnost"
+      ],
       "Address": [
         "Adresa"
       ],
@@ -4905,6 +5003,12 @@
       "Browser version": [
         "Verzija preglednika"
       ],
+      "BTC address": [
+        "BTC adresa"
+      ],
+      "BTC amount": [
+        "Iznos u BTC-u"
+      ],
       "Calendar": [
         "Kalendar"
       ],
@@ -4940,6 +5044,9 @@
       ],
       "Composer": [
         "Prozor za novu poruku"
+      ],
+      "Composer default font/size": [
+        "Zadani font/veličina u prozoru za novu poruku"
       ],
       "Composer text direction": [
         "Smjer teksta u prozoru za novu poruku"
@@ -5073,6 +5180,12 @@
       "Folder location": [
         "Lokacija mape"
       ],
+      "Font family": [
+        "Obitelj fontova"
+      ],
+      "Font size": [
+        "Veličina fonta"
+      ],
       "From: ${ from }": [
         "Od: ${ from }"
       ],
@@ -5108,6 +5221,9 @@
       ],
       "Inherit color from parent folder": [
         "Naslijedi boju iz roditeljske mape"
+      ],
+      "Interval": [
+        "Interval"
       ],
       "Keep messages in Sent/Drafts": [
         "Zadrži poruke u Poslano/Skice"
@@ -5168,6 +5284,9 @@
       ],
       "Name": [
         "Naziv"
+      ],
+      "Name and address": [
+        "Ime i adresa"
       ],
       "Navigation": [
         "Navigacija"
@@ -5307,6 +5426,12 @@
       "Signature": [
         "Potpis"
       ],
+      "SMTP server": [
+        "SMTP poslužitelj"
+      ],
+      "SMTP token": [
+        "SMTP token"
+      ],
       "SMTP username": [
         "SMTP korisničko ime"
       ],
@@ -5321,6 +5446,9 @@
       ],
       "Start day of month": [
         "Prvi dan u mjesecu"
+      ],
+      "Start time": [
+        "Vrijeme početka"
       ],
       "Statement": [
         "Izjava"
@@ -5501,6 +5629,11 @@
         "Redak"
       ]
     },
+    "Label, credit card": {
+      "ZIP code": [
+        "Poštanski broj"
+      ]
+    },
     "Label/folder modal": {
       "Create folder": [
         "Stvori mapu"
@@ -5566,6 +5699,9 @@
       "Learn more": [
         "Saznajte više"
       ],
+      "Need help?": [
+        "Trebate pomoć?"
+      ],
       "Pay invoice": [
         "Plati račun"
       ],
@@ -5609,6 +5745,9 @@
       ]
     },
     "Log preference": {
+      "Enable ${ PROTON_SENTINEL_NAME }": [
+        "Omogući ${ PROTON_SENTINEL_NAME }"
+      ],
       "Enable advanced logs": [
         "Omogući napredne zapise"
       ],
@@ -5644,6 +5783,11 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "Nova verzija ${ appName } je dostupna. ${ reloadButton }."
+      ]
+    },
+    "Metadata title": {
+      "${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } račun"
       ]
     },
     "Modal title": {
@@ -5810,6 +5954,9 @@
       "Back": [
         "Natrag"
       ],
+      "Back to calendar": [
+        "Natrag na kalendar"
+      ],
       "Block": [
         "Blokiraj"
       ],
@@ -5832,6 +5979,11 @@
       ],
       "Label name": [
         "Naziv oznake"
+      ]
+    },
+    "new_plans": {
+      "Highest VPN speed": [
+        "Najviša VPN brzina"
       ]
     },
     "new_plans: Action": {
@@ -6024,9 +6176,20 @@
         "Korištenje računa"
       ]
     },
+    "new_plans: Upsell attribute": {
+      "Multi-platform support": [
+        "Podrška na više platformi"
+      ]
+    },
     "Notification": {
       "${ Filter.Name } created": [
         "${ Filter.Name } stvoren"
+      ],
+      "${ PROTON_SENTINEL_NAME } has been disabled": [
+        "${ PROTON_SENTINEL_NAME } je onemogućen."
+      ],
+      "${ PROTON_SENTINEL_NAME } has been enabled": [
+        "${ PROTON_SENTINEL_NAME } je omogućen."
       ],
       "Invalid code": [
         "Nevažeći kôd"
@@ -6189,6 +6352,9 @@
       "Ask each time": [
         "Pitati svaki put"
       ],
+      "Auto": [
+        "Automatski"
+      ],
       "Automatic (${ defaultDay })": [
         "Automatski (${ defaultDay })"
       ],
@@ -6339,8 +6505,14 @@
       "Creating your account": [
         "Izrada vašeg računa"
       ],
+      "Free forever": [
+        "Besplatno zauvijek"
+      ],
       "per month": [
         "mjesečno"
+      ],
+      "You currently have": [
+        "Sada imate"
       ]
     },
     "pass_signup_2023: Title": {
@@ -6418,6 +6590,9 @@
       ],
       "Please select a country": [
         "Molimo odaberite državu"
+      ],
+      "Printer": [
+        "Pisač"
       ],
       "Search": [
         "Pretraga"
@@ -6694,6 +6869,11 @@
         "Status"
       ]
     },
+    "Settings/labels": {
+      "Labels/Folders": [
+        "Oznake/Mape"
+      ]
+    },
     "Settings/labels - table": {
       "Actions": [
         "Radnje"
@@ -6735,6 +6915,9 @@
     "Signup step": {
       "Account setup": [
         "Postavljanje računa"
+      ],
+      "Payment": [
+        "Plaćanje"
       ],
       "Verification": [
         "Potvrda"
@@ -6786,8 +6969,22 @@
       "Highest VPN speed": [
         "Najviša VPN brzina"
       ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Secure streaming": [
         "Siguran streaming"
+      ]
+    },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Ovaj se pretplatnički odnos automatski obnavlja svake dvije godine po istoj cijeni dok se ne otkaže."
       ]
     },
     "specialoffer: Link": {
@@ -6815,6 +7012,18 @@
       ],
       "30 months": [
         "30 mjeseci"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Naplaćeno ${ amount } za 12 mjeseci"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Naplaćeno ${ amount } za 15 mjeseci"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Naplaćeno ${ amount } za 24 mjeseca"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Naplaćeno ${ amount } za 30 mjeseci"
       ],
       "Get the deal": [
         "Ugrabite ponudu"
@@ -6865,6 +7074,11 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "URL kalendara"
+      ]
+    },
+    "Subscription": {
+      "Billed monthly": [
+        "Mjesečni račun"
       ]
     },
     "Subscription attribute": {
@@ -6946,6 +7160,9 @@
       ],
       "Calendar created": [
         "Kalendar je stvoren"
+      ],
+      "Calendar removed": [
+        "Kalendar je uklonjen."
       ],
       "Calendar updated": [
         "Kalendar je ažuriran"
@@ -7058,6 +7275,11 @@
         "Korisnik je izbrisan"
       ]
     },
+    "Success message after sorting folders": {
+      "Folders sorted": [
+        "Mape su sortirane."
+      ]
+    },
     "Success notification": {
       "${ label.Name } removed": [
         "${ label.Name } uklonjeno"
@@ -7070,6 +7292,9 @@
       ],
       "Address enabled": [
         "Adresa je omogućena"
+      ],
+      "Status updated": [
+        "Ažuriran status"
       ]
     },
     "Suffix": {
@@ -7080,6 +7305,14 @@
     "Suffix for price": {
       "per month": [
         "mjesečno"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Tab in domain modal": {
@@ -7499,6 +7732,9 @@
       "Forward emails": [
         "Preusmjeravanje poruka"
       ],
+      "Gateways": [
+        "Pristupnici"
+      ],
       "General": [
         "Općenito"
       ],
@@ -7525,6 +7761,9 @@
       ],
       "Import contacts": [
         "Uvezi kontakte"
+      ],
+      "Import failed": [
+        "Neuspješan uvoz"
       ],
       "Import key": [
         "Uvezi ključ"
@@ -7595,8 +7834,14 @@
       "Password": [
         "Lozinka"
       ],
+      "Password and keys": [
+        "Lozinka i ključevi"
+      ],
       "Pay invoice": [
         "Plati račun"
+      ],
+      "Payment failed": [
+        "Neuspješno plaćanje"
       ],
       "Payment methods": [
         "Načini plaćanja"
@@ -7636,6 +7881,9 @@
       ],
       "Refer a friend": [
         "Uputi prijatelja"
+      ],
+      "Remove user?": [
+        "Ukloniti korisnika?"
       ],
       "Report a problem": [
         "Prijavi problem"
@@ -7777,6 +8025,9 @@
       ],
       "Verification": [
         "Potvrda"
+      ],
+      "Verification failed": [
+        "Neuspješna provjera"
       ],
       "Version history": [
         "Povijest verzija"
@@ -7985,6 +8236,11 @@
         "Automatski potpišite sve svoje odlazne poruke kako bi korisnici mogli provjeriti autentičnost vaših poruka. To se radi u kombinaciji sa zadanim PGP postavkama koje su postavljene ispod."
       ]
     },
+    "Update font modal": {
+      "Update default font and size": [
+        "Ažuriraj zadani font i veličinu."
+      ]
+    },
     "upsell panel": {
       "Recommended": [
         "Preporučeno"
@@ -8031,6 +8287,11 @@
         "${ n } VPN veza",
         "${ n } VPN veze",
         "${ n } VPN veza"
+      ]
+    },
+    "vpn_2step: billing": {
+      "Billed monthly": [
+        "Mjesečni račun"
       ]
     },
     "vpn_2step: discount": {

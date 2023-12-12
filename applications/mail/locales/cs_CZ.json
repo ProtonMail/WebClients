@@ -3169,6 +3169,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } byla aktualizována.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Tento výskyt ${ eventTitle } byl zrušen."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Pozvání k ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -3702,6 +3705,9 @@
       ],
       "You must set a name": [
         "Musíte nastavit jméno"
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Dosáhli jste maximálního počtu znaků. Zkraťte prosím svou zprávu."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Vaše e-maily nelze dešifrovat kvůli nedávnému resetu hesla. Pokud si pamatujete své předchozí heslo, můžete ${ reActivateKeyLink } získat přístup ke svým zprávám. ${ learnMoreLink }"
@@ -5943,6 +5949,9 @@
       "Snoozed until today, ${ formattedTime }": [
         "Odloženo do dneška, ${ formattedTime }"
       ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Odloženo do zítřka, ${ formattedTime }"
+      ],
       "Snoozing this conversation will be cancelled.": [
         "Odložení této konverzace bude zrušeno."
       ],
@@ -7850,8 +7859,11 @@
       ]
     },
     "Onboarding modal": {
+      "Automatically forward emails": [
+        "Automaticky přeposílejte e-maily"
+      ],
       "Block email communications from scammers permanently. ${ kbLinkSender }": [
-        "Natrvalo zablokujte emailovou komunikaci od podvodníků. ${ kbLinkSender }"
+        "Natrvalo zablokujte e-mailovou komunikaci od podvodníků. ${ kbLinkSender }"
       ],
       "Block unsavory senders": [
         "Blokování nevhodných odesílatelů"
@@ -7864,6 +7876,9 @@
       ],
       "For your eyes only": [
         "Pouze pro vaše oči"
+      ],
+      "Forward Gmail messages to your inbox.": [
+        "Přeposílejte Gmail zprávy do své schránky."
       ],
       "Next": [
         "Další"
@@ -7886,13 +7901,16 @@
         "Objevte všechny služby ${ BRAND_NAME }"
       ],
       "Pick a theme": [
-        "Vyberte si téma"
+        "Vyberte si motiv"
       ],
       "Set up your organization": [
         "Nastavení organizace"
       ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Pomocí výběru aplikací v levém horním rohu získáte přístup ke všem službám ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
+      ],
       "You will be able to change your theme any time in your settings.": [
-        "Téma můžete kdykoli změnit v nastaveních."
+        "Motiv můžete kdykoli změnit v nastavení."
       ]
     },
     "Online accounts": {
@@ -8379,18 +8397,6 @@
         "${ timeRemaining.inHours } hodin",
         "${ timeRemaining.inHours } hodin"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } den.",
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } dny.",
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } dní.",
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } dní."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodinu.",
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodiny.",
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodin.",
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodin."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Přejděte do přihlášeného zařízení (v relaci, ve které byl požadavek iniciován) a změňte heslo."
       ],
@@ -8819,7 +8825,10 @@
         "Vyhledávání se právě stalo chytřejším a rychlejším"
       ],
       "Set when an email should reappear in your inbox with the new snooze feature.": [
-        "Nastavte si, kdy se má e-mail znovu objevit v doručené poště, pomocí nové funkce odložení."
+        "Pomocí nové funkce odložení si nastavte, kdy se má e-mail znovu objevit v doručené poště."
+      ],
+      "Snooze it for later": [
+        "Odložení na později"
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "Zprávy ve složkách Spam a Koš jsou nyní automaticky vyloučeny z Všechna pošta. ${ settingsLink }"

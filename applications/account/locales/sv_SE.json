@@ -1716,9 +1716,6 @@
       "Share calendar": [
         "Dela kalender"
       ],
-      "Share outside ${ BRAND_NAME }": [
-        "Dela utanför ${ BRAND_NAME }"
-      ],
       "Share with ${ BRAND_NAME } users": [
         "Dela med ${ BRAND_NAME }-användare"
       ],
@@ -4141,6 +4138,9 @@
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "Du måste ha en anpassad domänadress för att generera en SMTP-inlämningstoken."
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Du har nått det maximala antalet tecken. Förkorta ditt meddelande."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ditt konto eller organisation har en förfallen faktura. Vänligen betala alla obetalda fakturor."
@@ -7747,14 +7747,6 @@
         "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalender. Ta bort delade kalenderlänkar och alla ${ BRAND_NAME }-användare som du delade dina kalendrar med innan du avslutar din prenumeration.",
         "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalendrar. Ta bort delade kalenderlänkar och alla ${ BRAND_NAME }-användare som du delade dina kalendrar med innan du avslutar din prenumeration."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalender. Ta bort delade kalenderlänkar innan du avslutar din ${ MAIL_SHORT_APP_NAME }-prenumeration.",
-        "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalendrar. Ta bort delade kalenderlänkar innan du avslutar din ${ MAIL_SHORT_APP_NAME }-prenumeration."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalender. Ta bort delade kalenderlänkar innan du avslutar din prenumeration.",
-        "Du kan behålla upp till ${ MAX_CALENDARS_FREE } kalendrar. Ta bort delade kalenderlänkar innan du avslutar din prenumeration."
-      ],
       "You can now access and manage the account as an administrator.": [
         "Du kan nu komma åt och hantera kontot som en administratör."
       ],
@@ -10271,9 +10263,6 @@
         "Servrar i ${ vpnServersCountData.paid.countries }+ land",
         "Servrar i ${ vpnServersCountData.paid.countries }+ länder"
       ],
-      "Share calendar via link": [
-        "Dela kalender via länk"
-      ],
       "Share files and folders via link": [
         "Dela filer och mappar via länk"
       ],
@@ -10410,11 +10399,17 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "Avancerad nätverkssäkerhet och åtkomsthantering med dedikerade säkra gateways"
       ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Alla ${ BRAND_NAME }-appar och deras premiumfunktioner"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Tillämpbara krediter, innestående medel och kuponger är tillämpade i nästa steg"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Omfattande integritet och säkerhet med alla ${ BRAND_NAME }-tjänster kombinerade."
+      ],
+      "Early access to new apps and features": [
+        "Förhandstillgång till nya appar och funktioner"
       ],
       "For next-level password management and identity protection.": [
         "För nästa nivå av lösenordshantering och identitetsskydd."
@@ -10610,9 +10605,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Försvarar sig mot hotet mot VPN-integritet genom att skicka din Internettrafik genom flera servrar."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Dela enkelt dina kalendrar med dina kollegor, familj och vänner via en länk"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Dela enkelt dina kalendrar med din familj, vänner eller kollegor"
@@ -11948,14 +11940,6 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Om du inte bett om att få återställa ditt lösenord, avbryt begäran nu."
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Begäran om lösenordsåterställning godkänd (${ user.Email }). Du har ${ timeRemaining.inDays } dag för att återställa ditt lösenord.",
-        "Begäran om lösenordsåterställning godkänd (${ user.Email }). Du har ${ timeRemaining.inDays } dagar för att återställa ditt lösenord."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Begäran om lösenordsåterställning godkänd (${ user.Email }). Du har ${ timeRemaining.inHours } timme för att återställa ditt lösenord.",
-        "Begäran om lösenordsåterställning godkänd (${ user.Email }). Du har ${ timeRemaining.inHours } timmar för att återställa ditt lösenord."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Gå till den inloggade enheten (i den session där begäran initierades) för att ändra ditt lösenord."
       ],
@@ -12596,9 +12580,6 @@
       ]
     },
     "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        "Lägg till offentliga, externa eller delade kalendrar med en URL."
-      ],
       "Add public, external, or shared calendars.": [
         "Lägg till offentliga, externa eller delade kalendrar."
       ]
@@ -13802,6 +13783,9 @@
       ],
       "Password and keys": [
         "Lösenord och nycklar"
+      ],
+      "Password reset settings": [
+        "Inställning för lösenordsåterställning"
       ],
       "Pay invoice": [
         "Betala faktura"

@@ -1716,9 +1716,6 @@
       "Share calendar": [
         "კალენდრის გაზიარება"
       ],
-      "Share outside ${ BRAND_NAME }": [
-        "${ BRAND_NAME }-ის გარეთ გაზიარება"
-      ],
       "Share with ${ BRAND_NAME } users": [
         "${ BRAND_NAME }-ის მომხმარებლებთან გაზიარება"
       ],
@@ -7735,14 +7732,6 @@
         "შეგიძლიათ, გქონდეთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. წაშალეთ გაზიარებული კალენდრის ბმულები და ყველა ${ BRAND_NAME }-ის მომხმარებელი, ვისაც კალენდარი გაუზიარეთ, სანამ გამოწერას გააუქმებდით.",
         "შეგიძლიათ, გქონდეთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. წაშალეთ გაზიარებული კალენდრის ბმულები და ყველა ${ BRAND_NAME }-ის მომხმარებელი, ვისაც კალენდარი გაუზიარეთ, სანამ გამოწერას გააუქმებდით."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "შეგიძლიათ, შეინახოთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. გთხოვთ, წაშალოთ გაზიარებული კალენდრის ბმულები, ${ MAIL_SHORT_APP_NAME }-ის თქვენს გამოწერას გააუქმებთ.",
-        "შეგიძლიათ, შეინახოთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. გთხოვთ, წაშალოთ გაზიარებული კალენდრის ბმულები, ${ MAIL_SHORT_APP_NAME }-ის თქვენს გამოწერას გააუქმებთ."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "შეგიძლიათ, შეინახოთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. გთხოვთ, წაშალოთ გაზიარებული კალენდრის ბმულები, სანამ გააუქმებთ გამოწერას.",
-        "შეგიძლიათ, შეინახოთ ${ MAX_CALENDARS_FREE }-მდე კალენდარები. გთხოვთ, წაშალოთ გაზიარებული კალენდრის ბმულები, სანამ გააუქმებთ გამოწერას."
-      ],
       "You can now access and manage the account as an administrator.": [
         "ახლა შეგიძლიათ, შეხვიდეთ და მართოთ ანგარიში, როგორც ადმინისტრატორმა."
       ],
@@ -10256,9 +10245,6 @@
         "სერვერები ${ vpnServersCountData.paid.countries }+ ქვეყანაში",
         "სერვერები ${ vpnServersCountData.paid.countries }+ ქვეყანაში"
       ],
-      "Share calendar via link": [
-        "კალენდრის გაზიარება ბმულით"
-      ],
       "Share files and folders via link": [
         "გააგზავნეთ ფაილები და საქაღალდეები ბმულის საშუალებით"
       ],
@@ -10394,6 +10380,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "დამატებითი ქსელის უსაფრთხოება და წვდომის მართვა გამოყოფილ დაცულ კარიბჭეებთან ერთად"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "${ BRAND_NAME }-ის ყველა აპი და მათი ფასიანი ფუნქციები"
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "გამოყენებადი კრედიტების, პროპორციული გადანაწილების და კუპონების გამოყენება შემდეგ ნაბიჯზე შეგეძლებათ"
@@ -10595,9 +10584,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "დაიცავით თავი VPN-ის გამოვლენისგან თქვენი ტრაფიკის ბევრ სერვერზე გატარებით."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "კალენდრის ბმულით გაზიარება კოლეგებისთვის, ოჯახის წევრებისთვის და მეგობრებისთვის"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "გაუზიარეთ კალენდარი თქვენს ოჯახს, მეგობრებს და კოლეგებს"
@@ -11912,14 +11898,6 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "თუ პაროლის შეცვლა თქვენ არ მოგითხოვიათ, გააუქმეთ მოთხოვნა."
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inDays } დღე, პაროლი შეცვალოთ.",
-        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inDays } დღე, პაროლი შეცვალოთ."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inHours } საათი, პაროლი შეცვალოთ.",
-        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inHours } საათი, პაროლი შეცვალოთ."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "პაროლის შესაცვლელად გადადით მოწყობილობაზე (სესიაში, საიდანაც მოთხოვნა გამოიგაზვნა), რომელზეც შესული ბრძანდებით."
       ],
@@ -12110,6 +12088,11 @@
       ],
       "Request password reset": [
         "პაროლის შეცვლის მოთხოვნა"
+      ]
+    },
+    "session_recovery:settings:info": {
+      "To disallow password reset, you must have a recovery method set up.": [
+        "პაროლის შეცვლის ასაკრძალად აღდგენის მეთოდი დაყენებული უნდა გქონდეთ."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -12552,9 +12535,6 @@
       ]
     },
     "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        "შექმენით საჯარო, გარე და გაზიარებული კალენდრები URL-ის გამოყენებით."
-      ],
       "Add public, external, or shared calendars.": [
         "საჯარო, გარე და გაზიარებული კალენდრების დამატება."
       ]

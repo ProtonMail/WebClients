@@ -734,6 +734,9 @@
       ]
     },
     "bf2023: renew": {
+      "the first ${ n } months": [
+        "${ n } か月"
+      ],
       "the first month": [
         "最初の月"
       ],
@@ -3691,12 +3694,6 @@
       "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "最大 ${ MAX_CALENDARS_FREE } 個までカレンダーを保持できます。サブスクリプションをキャンセルする前に、共有カレンダーリンクとあなたのカレンダーを共有した ${ BRAND_NAME } のユーザーを削除してください。"
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "カレンダーを最大 ${ MAX_CALENDARS_FREE } 個まで保持できます。あなたの ${ MAIL_SHORT_APP_NAME } サブスクリプションをキャンセルする前に、共有カレンダーリンクを削除してください。"
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links before you cancel your subscription.": [
-        "カレンダーを最大 ${ MAX_CALENDARS_FREE } 個まで保持できます。サブスクリプションをキャンセルする前に、共有カレンダーリンクを削除してください。"
-      ],
       "You can now access and manage the account as an administrator.": [
         "管理者としてのアカウントでアクセスし管理することが可能です。"
       ],
@@ -4822,9 +4819,6 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ countries": [
         "${ vpnServersCountData.paid.countries }+ か国のサーバー"
       ],
-      "Share calendar via link": [
-        "リンクでカレンダーを共有"
-      ],
       "Share files and folders via link": [
         "リンクでファイルやフォルダーを共有"
       ],
@@ -4941,6 +4935,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "専用セキュアゲートウェイによる高度なネットワークセキュリティとアクセス管理"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "すべての ${ BRAND_NAME } アプリとそのプレミアム機能"
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "適用されるクレジット、比例配分、クーポンは次のステップで適用される。"
@@ -5107,9 +5104,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "複数のサーバーを経由してインターネットトラフィックを送受信することで、VPNプライバシー上の脅威からあなたを保護します。"
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "同僚、家族、友人とカレンダーをリンクで簡単に共有できます。"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "家族、友人、同僚とカレンダーを簡単に共有できます。"
@@ -5554,8 +5548,14 @@
       ]
     },
     "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "${ contactHref } 営業チームまでお問い合わせください。"
+      ],
       "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
         "プランに含める IP の数を選択します。 追加の IP ごとに ${ price } の費用がかかります。"
+      ],
+      "Should you need more than ${ maxIPs } IPs, ": [
+        "${ maxIPs } を超える IP が必要な場合は、 "
       ]
     },
     "plan customizer, users": {
@@ -5725,12 +5725,6 @@
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "パスワードのリセットを要求していない場合、要求をキャンセルしてください。"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
-        "パスワードリセットリクエストが承認されました(${ user.Email })。パスワードをリセットできるのはあと${ timeRemaining.inDays }日です。"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
-        "パスワードリセットのリクエストが承認されました(${ user.Email })。パスワードをリセットできる時間は残り${ timeRemaining.inHours }時間あります。"
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "サインインしているデバイス (パスワード変更の要求がされたデバイス)に移動して、パスワードを変更してください。"
