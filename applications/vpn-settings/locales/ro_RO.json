@@ -3860,16 +3860,6 @@
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile calendarului partajate înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
-        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
-        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile calendarului partajate înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile calendarului partajate înainte de a vă anula abonarea.",
-        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate înainte de a vă anula abonarea.",
-        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile calendarelor partajate înainte de a vă anula abonarea."
-      ],
       "You can now access and manage the account as an administrator.": [
         "Acum puteți accesa și gestiona contul ca administrator."
       ],
@@ -4957,7 +4947,7 @@
         "Servere VPN criptate"
       ],
       "End-to-end encryption": [
-        "Criptare în ambele părți"
+        "Criptare bilaterală"
       ],
       "Fast P2P/BitTorrent downloads": [
         "Descărcări rapide P2P/BitTorrent"
@@ -5048,9 +5038,6 @@
         "Servere în peste ${ vpnServersCountData.paid.countries } țară",
         "Servere în peste ${ vpnServersCountData.paid.countries } țări",
         "Servere în peste ${ vpnServersCountData.paid.countries } de țări"
-      ],
-      "Share calendar via link": [
-        "Partajare calendar prin legături"
       ],
       "Share files and folders via link": [
         "Partajați fișiere și foldere prin legături"
@@ -5174,11 +5161,17 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "Securitate avansată a rețelei și management al accesului cu porțile de acces securizate dedicate"
       ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Toate aplicațiile ${ BRAND_NAME } și funcțiile lor premium"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Creditele aplicabile, taxele zilnice și cupoanele sunt aplicate în pasul următor."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Confidențialitate și securitate cuprinzătoare cu toate serviciile ${ BRAND_NAME } combinate."
+      ],
+      "Early access to new apps and features": [
+        "Acces timpuriu la aplicațiile și funcțiile noi"
       ],
       "For next-level password management and identity protection.": [
         "Pentru gestionarea parolelor și protejării identității la un nivel superior."
@@ -5295,13 +5288,13 @@
     },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: Asigurați-vă programul cu criptare în ambele părți. Include suport pentru calendare personalizate, calendare partajate și multe altele."
+        "${ CALENDAR_APP_NAME }: Asigurați-vă programul cu criptare bilaterală. Include suport pentru calendare personalizate, calendare partajate și multe altele."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Securizați-vă fișierele cu stocare criptată în cloud. Include istoricul versiunilor, partajarea fișierelor criptate și multe altele."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
-        "${ MAIL_APP_NAME }: Securizați-vă mesajele cu criptare în ambele părți. Include suport pentru domenii de e-mail personale, 15 adrese de e-mail, aliasuri „hide-my-email” nelimitate și multe altele."
+        "${ MAIL_APP_NAME }: Securizați-vă mesajele cu criptare bilaterală. Include suport pentru domenii de e-mail personale, 15 adrese de e-mail, aliasuri „hide-my-email” nelimitate și multe altele."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Accesați conținutul blocat și navigați în mod privat. Include ${ serversAndCountries }, cele mai mari viteze VPN, acces la servicii de transmisie în flux la nivel mondial, antimalware și blocare reclame, descărcări rapide de tip BitTorrent și multe altele."
@@ -5343,9 +5336,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Vă apără împotriva pierderii confidențialității din VPN prin transmiterea traficului pe Internet prin mai multe servere."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Partajați cu ușurință calendarele cu colegii, familia și prietenii printr-o legătură."
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Partajați calendarele ușor cu familia, prietenii sau colegii."
@@ -6004,16 +5994,6 @@
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Dacă nu ați solicitat resetarea parolei, anulați solicitarea acum."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inDays } zi pentru a reseta parola.",
-        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inDays } zile pentru a reseta parola.",
-        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inDays } de zile pentru a reseta parola."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inHours } oră pentru a reseta parola.",
-        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inHours } ore pentru a reseta parola.",
-        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inHours } de ore pentru a reseta parola."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Accesați dispozitivul conectat (în sesiunea de unde a fost inițiată solicitarea) pentru a vă schimba parola."
@@ -7707,7 +7687,7 @@
         "Rețineți că alegând această metodă de plată, contul nu va fi modificat imediat. Contul va fi modificat după confirmarea plății."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
+        "Rapoartele nu sunt criptate bilateral. Nu trimiteți informații confidențiale."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Setările de dată și oră de pe dispozitiv nu sunt sincronizate. ${ learnMore }"

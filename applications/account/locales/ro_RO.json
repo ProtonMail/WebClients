@@ -1722,9 +1722,6 @@
       "Share calendar": [
         "Partajare calendar"
       ],
-      "Share outside ${ BRAND_NAME }": [
-        "Partajare în afara ${ BRAND_NAME }"
-      ],
       "Share with ${ BRAND_NAME } users": [
         "Partajare cu utilizatorii ${ BRAND_NAME }"
       ],
@@ -3298,6 +3295,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } a fost actualizat.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Desfășurarea evenimentului ${ eventTitle } a fost anulată."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Invitație la ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -3596,7 +3596,7 @@
     },
     "email_forwarding_2023: Prompt": {
       "End-to-end encryption will be re-enabled for the sender address.": [
-        "Activarea în ambele părți va fi reactivată pentru adresa de expediere."
+        "Criptarea bilaterală va fi reactivată pentru adresa de expediere."
       ],
       "Forwarding to the destination address will end.": [
         "Redirecționarea către adresa de destinație se va încheia."
@@ -4156,6 +4156,9 @@
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "Trebuie să aveți o adresă personală de domeniu pentru a genera un cod de acces pentru comunicațiile prin SMTP."
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Ați atins numărul maxim de caractere. Scurtați mesajul."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Contul sau organizația are o factură restantă. Vă rugăm să plătiți toate facturile neplătite."
@@ -6554,7 +6557,7 @@
         "Dați un nume descriptiv codului de acces, cum ar fi serviciul pe care urmați să-l folosiți și selectați una din adresele de domeniu personale active. Numai această adresă va putea trimite mesaje cu acest cod de acces."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
-        "Partajați cheia publică prietenilor sau publicați-o online, astfel încât oricine să vă poată trimite mesaje criptate în ambele părți!"
+        "Partajați cheia publică prietenilor sau publicați-o online, astfel încât oricine să vă poată trimite mesaje cu criptare bilaterală!"
       ],
       "here": [
         "aici"
@@ -7824,16 +7827,6 @@
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
         "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile calendarului partajate înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
-        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
-        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile calendarului partajate înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile calendarului partajate înainte de a vă anula abonarea.",
-        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate înainte de a vă anula abonarea.",
-        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile calendarelor partajate înainte de a vă anula abonarea."
-      ],
       "You can now access and manage the account as an administrator.": [
         "Acum puteți accesa și gestiona contul ca administrator."
       ],
@@ -8006,7 +7999,7 @@
         "Parola organizației poate fi partajată și altor utilizatori cărora doriți să le dați drepturi de administrator. Este de altfel și un cod de recuperare de urgență pentru a avea acces la organizație în cazul în care vă pierdeți accesul la cont. Salvați această parolă și păstrați-o în siguranță."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
-        "Mesajele organizației sunt protejate în ambele părți folosind cheia organizației. Această amprentă poate fi folosită pentru a verifica dacă toți administratorii din cont au aceeași cheie."
+        "Mesajele organizației sunt protejate bilateral folosind cheia organizației. Această amprentă poate fi folosită pentru a verifica dacă toți administratorii din cont au aceeași cheie."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Detaliile de plată vă sunt protejate de criptarea TLS și de legile de confidențialitate elvețiene."
@@ -9697,6 +9690,12 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
+        "Luați planul Visionary și faceți parte din povestea ${ BRAND_NAME }"
+      ],
+      "Limited time offer: Get ${ planTitle } until ${ date }!": [
+        "Ofertă limitată: Obțineți ${ planTitle } până la ${ date }!"
+      ],
       "Secure email that protects your privacy": [
         "E-mail securizat care vă protejează confidențialitatea"
       ]
@@ -10295,7 +10294,7 @@
         "Servere VPN criptate"
       ],
       "End-to-end encryption": [
-        "Criptare în ambele părți"
+        "Criptare bilaterală"
       ],
       "Fast P2P/BitTorrent downloads": [
         "Descărcări rapide P2P/BitTorrent"
@@ -10386,9 +10385,6 @@
         "Servere în peste ${ vpnServersCountData.paid.countries } țară",
         "Servere în peste ${ vpnServersCountData.paid.countries } țări",
         "Servere în peste ${ vpnServersCountData.paid.countries } de țări"
-      ],
-      "Share calendar via link": [
-        "Partajare calendar prin legături"
       ],
       "Share files and folders via link": [
         "Partajați fișiere și foldere prin legături"
@@ -10527,11 +10523,17 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "Securitate avansată a rețelei și management al accesului cu porțile de acces securizate dedicate"
       ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Toate aplicațiile ${ BRAND_NAME } și funcțiile lor premium"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Creditele aplicabile, taxele zilnice și cupoanele sunt aplicate în pasul următor."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Confidențialitate și securitate cuprinzătoare cu toate serviciile ${ BRAND_NAME } combinate."
+      ],
+      "Early access to new apps and features": [
+        "Acces timpuriu la aplicațiile și funcțiile noi"
       ],
       "For next-level password management and identity protection.": [
         "Pentru gestionarea parolelor și protejării identității la un nivel superior."
@@ -10681,13 +10683,13 @@
     },
     "new_plans: tooltip": {
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
-        "${ CALENDAR_APP_NAME }: Asigurați-vă programul cu criptare în ambele părți. Include suport pentru calendare personalizate, calendare partajate și multe altele."
+        "${ CALENDAR_APP_NAME }: Asigurați-vă programul cu criptare bilaterală. Include suport pentru calendare personalizate, calendare partajate și multe altele."
       ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Securizați-vă fișierele cu stocare criptată în cloud. Include istoricul versiunilor, partajarea fișierelor criptate și multe altele."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
-        "${ MAIL_APP_NAME }: Securizați-vă mesajele cu criptare în ambele părți. Include suport pentru domenii de e-mail personale, 15 adrese de e-mail, aliasuri „hide-my-email” nelimitate și multe altele."
+        "${ MAIL_APP_NAME }: Securizați-vă mesajele cu criptare bilaterală. Include suport pentru domenii de e-mail personale, 15 adrese de e-mail, aliasuri „hide-my-email” nelimitate și multe altele."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Accesați conținutul blocat și navigați în mod privat. Include ${ serversAndCountries }, cele mai mari viteze VPN, acces la servicii de transmisie în flux la nivel mondial, antimalware și blocare reclame, descărcări rapide de tip BitTorrent și multe altele."
@@ -10729,9 +10731,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Vă apără împotriva pierderii confidențialității din VPN prin transmiterea traficului pe Internet prin mai multe servere."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Partajați cu ușurință calendarele cu colegii, familia și prietenii printr-o legătură."
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Partajați calendarele ușor cu familia, prietenii sau colegii."
@@ -11448,7 +11447,7 @@
     },
     "pass_signup_2023: Feature": {
       "End-to-end encrypted": [
-        "Criptat în ambele părți"
+        "Criptat bilateral"
       ],
       "Open source": [
         "Cod sursă public"
@@ -11542,7 +11541,7 @@
         "Note criptate în ambele sensuri"
       ],
       "End-to-end encryption": [
-        "Criptare în ambele părți"
+        "Criptare bilaterală"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
         "Pentru doar **${ relativePrice } pe lună** în plus, aveți acces la managerul de parole premium al lui ${ BRAND_NAME }!"
@@ -12079,16 +12078,6 @@
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Dacă nu ați solicitat resetarea parolei, anulați solicitarea acum."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inDays } zi pentru a reseta parola.",
-        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inDays } zile pentru a reseta parola.",
-        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inDays } de zile pentru a reseta parola."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inHours } oră pentru a reseta parola.",
-        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inHours } ore pentru a reseta parola.",
-        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inHours } de ore pentru a reseta parola."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Accesați dispozitivul conectat (în sesiunea de unde a fost inițiată solicitarea) pentru a vă schimba parola."
@@ -12744,9 +12733,6 @@
       ]
     },
     "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        "Adăugare calendare publice, externe sau partajate folosind o adresă URL."
-      ],
       "Add public, external, or shared calendars.": [
         "Adăugare calendare publice, externe sau partajate."
       ]
@@ -14606,10 +14592,10 @@
     },
     "Tooltip; share calendar modal ": {
       "Shared end-to-end encrypted": [
-        "Criptat în ambele părți"
+        "Criptat bilateral"
       ],
       "Shared end-to-end encrypted with verified contact": [
-        "Criptat în ambele părți cu contacte verificate"
+        "Criptat bilateral cu contacte verificate"
       ]
     },
     "Tor out of date": {
@@ -14863,7 +14849,7 @@
         "Rețineți că alegând această metodă de plată, contul nu va fi modificat imediat. Contul va fi modificat după confirmarea plății."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
+        "Rapoartele nu sunt criptate bilateral. Nu trimiteți informații confidențiale."
       ],
       "Skip verification?": [
         "Ignorați verificarea?"

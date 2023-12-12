@@ -3138,7 +3138,7 @@
         "${ eventTitle } ha sido actualizado.\n${ eventDetailsText }"
       ],
       "This occurrence of ${ eventTitle } has been canceled.": [
-        "Esta incidencia de ${ eventTitle } ha sido cancelada."
+        "Esta ocurrencia de ${ eventTitle } ha sido cancelada."
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Está invitado a ${ eventTitle }\n${ eventDetailsText }"
@@ -3647,6 +3647,9 @@
       ],
       "You must set a name": [
         "Debe establecer un nombre"
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Ha alcanzado el número máximo de caracteres, acorte su mensaje."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Sus correos electrónicos no se pueden descifrar debido a un restablecimiento de contraseña reciente. Si recuerda su contraseña anterior, puede ${ reActivateKeyLink } para acceder a sus mensajes. ${ learnMoreLink }"
@@ -8122,13 +8125,8 @@
         "${ timeRemaining.inHours } hora",
         "${ timeRemaining.inHours } horas"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inDays } día para restablecer su contraseña.",
-        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inDays } días para restablecer su contraseña."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inHours } hora para restablecer su contraseña.",
-        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inHours } horas para restablecer su contraseña."
+      "Password reset request approved (${ user.Email }).": [
+        "Solicitud de cambio de contraseña aprobada (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Vaya al dispositivo en el que inició sesión y donde se realizó la solicitud para cambiar su contraseña."
@@ -8141,8 +8139,30 @@
         "Este permiso expira en ${ timeRemaining.inHours } hora",
         "Este permiso expira en ${ timeRemaining.inHours } horas"
       ],
+      "This permission expires soon": [
+        "Este permiso expira pronto"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Ahora puede cambiar la contraseña para la cuenta ${ boldEmail } durante ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Ya puede cambiar la contraseña de la cuenta ${ boldEmail }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Tiene ${ timeRemaining.inDays } día para restablecer su contraseña.",
+        "Tiene ${ timeRemaining.inDays } días para restablecer su contraseña."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tiene ${ timeRemaining.inHours } hora para restablecer su contraseña.",
+        " Tiene ${ timeRemaining.inHours } horas para restablecer su contraseña."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tiene ${ timeRemaining.inMinutes } minuto para restablecer su contraseña.",
+        " Tiene ${ timeRemaining.inMinutes } minutos para restablecer su contraseña."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Tiene ${ timeRemaining.inSeconds } segundo para restablecer su contraseña.",
+        " Tiene ${ timeRemaining.inSeconds } segundos para restablecer su contraseña."
       ]
     },
     "session_recovery:available:link": {

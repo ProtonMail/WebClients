@@ -2023,6 +2023,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } a fost actualizat.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Desfășurarea evenimentului ${ eventTitle } a fost anulată."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Invitație la ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -3649,7 +3652,7 @@
         "Căutarea criptată este aici"
       ],
       "End-to-end encrypted": [
-        "Criptat în ambele părți"
+        "Criptat bilateral"
       ],
       "Enter password": [
         "Introduceți parola"
@@ -4107,7 +4110,7 @@
         "Sesiunea a expirat"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Setând criptarea PGP veți putea cripta mesajele în ambele părți cu un utilizator fără cont la ${ BRAND_NAME } care folosește un serviciu PGP compatibil."
+        "Setând criptarea PGP veți putea cripta mesajele bilateral cu un utilizator fără cont la ${ BRAND_NAME } care folosește un serviciu PGP compatibil."
       ],
       "Share files with links": [
         "Partajare fișiere prin legături"
@@ -4167,7 +4170,7 @@
         "Este posibil ca următoarele elemente să fi fost falsificate: ${ items }. Deschideți-l numai dacă aveți încredere în el."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
-        "Proprietarul acestei adrese a dezactivat criptarea în ambele părți. Pentru a putea trimite mesaje criptate la această adresă, proprietarul trebuie să reactiveze criptarea în ambele părți."
+        "Proprietarul acestei adrese a dezactivat criptarea bilaterală. Pentru a putea trimite mesaje criptate la această adresă, proprietarul trebuie să reactiveze criptarea bilaterală."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Încă mai sunt fișiere ce trebuie transferate. Închizând managerul de transfer va încheia toate operațiile."
@@ -5740,16 +5743,6 @@
         "${ timeRemaining.inHours } ore",
         "${ timeRemaining.inHours } de ore"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inDays } zi pentru a reseta parola.",
-        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inDays } zile pentru a reseta parola.",
-        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inDays } de zile pentru a reseta parola."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inHours } oră pentru a reseta parola.",
-        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inHours } ore pentru a reseta parola.",
-        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inHours } de ore pentru a reseta parola."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Accesați dispozitivul conectat (în sesiunea de unde a fost inițiată solicitarea) pentru a vă schimba parola."
       ],
@@ -6874,7 +6867,7 @@
         "Importarea va începe cu cele mai recente mesaje."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate în ambele părți la această adresă."
+        "Încărcați o cheie publică pentru a activa trimiterea mesajelor criptate bilateral la această adresă."
       ],
       "You do not have any contacts to export": [
         "Nu aveți persoane de contact pentru exportare"
@@ -6938,7 +6931,7 @@
         "Dacă nu vă amintiți parola, este imposibil să vă reactivați cheia. Vă putem ajuta să anulați mesajul de alertă, dar în acest proces veți pierde definitiv accesul la toate datele criptate cu acea cheie."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
-        "Rapoartele nu sunt criptate în ambele părți. Nu trimiteți informații confidențiale."
+        "Rapoartele nu sunt criptate bilateral. Nu trimiteți informații confidențiale."
       ],
       "Skip verification?": [
         "Ignorați verificarea?"

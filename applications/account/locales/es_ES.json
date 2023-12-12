@@ -1716,9 +1716,6 @@
       "Share calendar": [
         "Compartir el calendario"
       ],
-      "Share outside ${ BRAND_NAME }": [
-        "Compartir fuera de ${ BRAND_NAME }"
-      ],
       "Share with ${ BRAND_NAME } users": [
         "Compartir con usuarios de ${ BRAND_NAME }"
       ],
@@ -3285,6 +3282,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } ha sido actualizado.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Esta incidencia de ${ eventTitle } ha sido cancelada."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Estás invitado a ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -4138,6 +4138,9 @@
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "Necesitas una dirección de dominio personalizado para generar un token de envío SMTP."
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Has alcanzado el número máximo de caracteres. Acorta tu mensaje."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Tu cuenta u organización tiene una factura vencida. Tienes que pagar todas las facturas impagadas."
@@ -7741,14 +7744,6 @@
         "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción.",
         "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Borra los enlaces de calendarios compartidos antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }.",
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borra los enlaces de calendarios compartidos antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Borra los enlaces de calendarios compartidos antes de cancelar tu suscripción.",
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borra los enlaces de calendarios compartidos antes de cancelar tu suscripción."
-      ],
       "You can now access and manage the account as an administrator.": [
         "Ahora puedes acceder y gestionar la cuenta como administrador."
       ],
@@ -9596,6 +9591,12 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
+        "Conviértate en Visionary y haz parte de la historia de ${ BRAND_NAME }"
+      ],
+      "Limited time offer: Get ${ planTitle } until ${ date }!": [
+        "Oferta de tiempo limitado: ¡Obtén ${ planTitle } hasta el ${ date }!"
+      ],
       "Secure email that protects your privacy": [
         "Correo electrónico seguro que protege tu privacidad"
       ]
@@ -10262,9 +10263,6 @@
         "Servidores en más de ${ vpnServersCountData.paid.countries } país",
         "Servidores en más de ${ vpnServersCountData.paid.countries } países"
       ],
-      "Share calendar via link": [
-        "Compartir calendario con un enlace"
-      ],
       "Share files and folders via link": [
         "Compartir archivos y carpetas con un enlace"
       ],
@@ -10401,11 +10399,17 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "Gestión de acceso y seguridad de red avanzada con puertas de enlace seguras dedicadas"
       ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Todas las aplicaciones de ${ BRAND_NAME } y sus funciones premium"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "El crédito, el prorrateo y los cupones que puedan utilizarse se aplicarán en el siguiente paso."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidad y seguridad totales con todos los servicios de ${ BRAND_NAME } combinados."
+      ],
+      "Early access to new apps and features": [
+        "Acceso anticipado a funciones y aplicaciones nuevas"
       ],
       "For next-level password management and identity protection.": [
         "Para una gestión de contraseñas e identidad del más alto nivel."
@@ -10601,9 +10605,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Defiende de ataques que amenazan la privacidad de la VPN dirigiendo el tráfico de Internet por varios servidores."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Comparte calendarios con compañeros, familiares y amigos fácilmente con un enlace"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Comparte calendarios con familiares, amigos y compañeros fácilmente"
@@ -11918,14 +11919,6 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Si no has solicitado restablecer la contraseña, cancela la solicitud ahora."
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "El restablecimiento de contraseña ha sido aprobado (${ user.Email }). Tienes ${ timeRemaining.inDays } día para restablecer tu contraseña.",
-        "El restablecimiento de contraseña ha sido aprobado (${ user.Email }). Tienes ${ timeRemaining.inDays } días para restablecer tu contraseña."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "El restablecimiento de contraseña ha sido aprobado (${ user.Email }). Tienes ${ timeRemaining.inHours } hora para restablecer tu contraseña.",
-        "El restablecimiento de contraseña ha sido aprobado (${ user.Email }). Tienes ${ timeRemaining.inHours } horas para restablecer tu contraseña."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Ve al dispositivo en el que se ha iniciado sesión y donde se ha realizado la solicitud para cambiar tu contraseña."
       ],
@@ -12121,6 +12114,9 @@
     "session_recovery:settings:info": {
       "To disallow password reset, you must have a recovery method set up.": [
         "Para desactivar el restablecimiento de contraseña, debes configurar un método de recuperación."
+      ],
+      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
+        "Para mejorar la seguridad de tu cuenta y proteger tus datos, puedes solicitar un restablecimiento de contraseña desde los ajustes de tu cuenta en la aplicación web."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -12563,9 +12559,6 @@
       ]
     },
     "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        "Añade un calendario compartido, público o externo con una URL."
-      ],
       "Add public, external, or shared calendars.": [
         "Añade calendarios públicos, externos o compartidos."
       ]
@@ -13769,6 +13762,9 @@
       ],
       "Password and keys": [
         "Contraseña y claves"
+      ],
+      "Password reset settings": [
+        "Ajustes de restablecimiento de contraseña"
       ],
       "Pay invoice": [
         "Pagar factura"

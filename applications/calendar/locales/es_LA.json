@@ -2296,7 +2296,7 @@
         "${ eventTitle } ha sido actualizado.\n${ eventDetailsText }"
       ],
       "This occurrence of ${ eventTitle } has been canceled.": [
-        "Esta incidencia de ${ eventTitle } ha sido cancelada."
+        "Esta ocurrencia de ${ eventTitle } ha sido cancelada."
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Está invitado a ${ eventTitle }\n${ eventDetailsText }"
@@ -4382,11 +4382,6 @@
         "Solo lectura"
       ]
     },
-    "Info; calendar sharing pop-up": {
-      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
-        "Invite a otros con una cuenta de ${ BRAND_NAME } para ver o editar eventos en su calendario."
-      ]
-    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "Algunos de sus calendarios no mostrarán detalles de eventos creados anteriormente."
@@ -5752,13 +5747,8 @@
         "${ timeRemaining.inHours } hora",
         "${ timeRemaining.inHours } horas"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inDays } día para restablecer su contraseña.",
-        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inDays } días para restablecer su contraseña."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inHours } hora para restablecer su contraseña.",
-        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inHours } horas para restablecer su contraseña."
+      "Password reset request approved (${ user.Email }).": [
+        "Solicitud de cambio de contraseña aprobada (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Vaya al dispositivo en el que inició sesión y donde se realizó la solicitud para cambiar su contraseña."
@@ -5771,8 +5761,30 @@
         "Este permiso expira en ${ timeRemaining.inHours } hora",
         "Este permiso expira en ${ timeRemaining.inHours } horas"
       ],
+      "This permission expires soon": [
+        "Este permiso expira pronto"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Ahora puede cambiar la contraseña para la cuenta ${ boldEmail } durante ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Ya puede cambiar la contraseña de la cuenta ${ boldEmail }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Tiene ${ timeRemaining.inDays } día para restablecer su contraseña.",
+        "Tiene ${ timeRemaining.inDays } días para restablecer su contraseña."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tiene ${ timeRemaining.inHours } hora para restablecer su contraseña.",
+        " Tiene ${ timeRemaining.inHours } horas para restablecer su contraseña."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tiene ${ timeRemaining.inMinutes } minuto para restablecer su contraseña.",
+        " Tiene ${ timeRemaining.inMinutes } minutos para restablecer su contraseña."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Tiene ${ timeRemaining.inSeconds } segundo para restablecer su contraseña.",
+        " Tiene ${ timeRemaining.inSeconds } segundos para restablecer su contraseña."
       ]
     },
     "session_recovery:available:link": {
@@ -6846,11 +6858,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Elija un número"
-      ]
-    },
-    "Title; calendar sharing pop-up": {
-      "Planning just got easier!": [
-        "¡La planificación ahora es más fácil!"
       ]
     },
     "Title; create calendar modal": {

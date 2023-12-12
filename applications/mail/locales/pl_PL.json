@@ -3169,6 +3169,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "Wydarzenie ${ eventTitle } zostało zaktualizowane.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Powtórzenie wydarzenia ${ eventTitle } zostało anulowane."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Zaproszenie na wydarzenie ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -3702,6 +3705,9 @@
       ],
       "You must set a name": [
         "Musisz wpisać nazwę"
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Osiągnięto maksymalną liczbę znaków. Skróć wiadomość."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Wiadomości nie mogą zostać odszyfrowane z powodu zresetowania hasła. Jeśli pamiętasz poprzednie hasło, możesz ${ reActivateKeyLink }, aby uzyskać dostęp do wiadomości. ${ learnMoreLink }"
@@ -8391,17 +8397,8 @@
         "${ timeRemaining.inHours } godzin",
         "${ timeRemaining.inHours } godziny"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inDays } dzień na zresetowanie hasła.",
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inDays } dnia na zresetowanie hasła."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inHours } godzinę na zresetowanie hasła.",
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła.",
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inHours } godzin na zresetowanie hasła.",
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła."
+      "Password reset request approved (${ user.Email }).": [
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Przejdź do zalogowanego urządzenia, na którym zainicjowano żądanie zmiany hasła."
@@ -8418,8 +8415,38 @@
         "Uprawnienie wygaśnie za ${ timeRemaining.inHours } godzin",
         "Uprawnienie wygaśnie za ${ timeRemaining.inHours } godziny"
       ],
+      "This permission expires soon": [
+        "Uprawnienie wkrótce wygaśnie"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Możesz zmienić hasło do konta ${ boldEmail } przez ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Możesz zmienić hasło konta ${ boldEmail }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Masz ${ timeRemaining.inDays } dzień na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inDays } dnia na zresetowanie hasła."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Masz ${ timeRemaining.inHours } godzinę na zresetowanie hasła.",
+        " Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła.",
+        " Masz ${ timeRemaining.inHours } godzin na zresetowanie hasła.",
+        " Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Masz ${ timeRemaining.inMinutes } minutę na zresetowanie hasła.",
+        " Masz ${ timeRemaining.inMinutes } minuty na zresetowanie hasła.",
+        " Masz ${ timeRemaining.inMinutes } minut na zresetowanie hasła.",
+        " Masz ${ timeRemaining.inMinutes } minuty na zresetowanie hasła."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Masz ${ timeRemaining.inSeconds } sekundę na zresetowanie hasła.",
+        " Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła.",
+        " Masz ${ timeRemaining.inSeconds } sekund na zresetowanie hasła.",
+        " Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła."
       ]
     },
     "session_recovery:available:link": {
@@ -8681,7 +8708,7 @@
         "${ VPN_SHORT_APP_NAME } w wersji premium"
       ],
       "Premium early access": [
-        "Wczesny dostęp premium"
+        "Wcześniejszy dostęp premium"
       ],
       "Secure cloud storage": [
         "Bezpieczna przestrzeń dyskowa w chmurze"
@@ -8805,7 +8832,7 @@
         "Idealne rozwiązanie dla rodzin lub małych zespołów, każda osoba może mieć własną skrzynkę odbiorczą i aliasy. Wymaga niestandardowej domeny."
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Otrzymaj bez dodatkowych kosztów płatne wersje wszystkich nowych usług prywatności, jakie wydamy w przyszłości, a także wczesny dostęp do wszystkich przyszłych funkcji i produktów."
+        "Otrzymaj płatne wersje wszystkich nowych usług prywatności bez dodatkowych kosztów, a także wcześniejszy dostęp do wszystkich przyszłych funkcji i usług."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."

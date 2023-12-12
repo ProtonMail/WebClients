@@ -194,6 +194,9 @@
       "Get ${ vpnPlus }": [
         "Nabavite ${ vpnPlus }"
       ],
+      "Get more": [
+        "Nabavi više"
+      ],
       "Get the deal": [
         "Ugrabite ponudu"
       ],
@@ -256,6 +259,9 @@
       ],
       "Pay": [
         "Plati"
+      ],
+      "Pay ${ price }": [
+        "Platite ${ price }"
       ],
       "Previous": [
         "Prethodno"
@@ -504,6 +510,9 @@
       ]
     },
     "bf2023: Action": {
+      "Add ${ PASS_APP_NAME }": [
+        "Dodaj ${ PASS_APP_NAME }"
+      ],
       "Cancel": [
         "Poništi"
       ],
@@ -526,6 +535,12 @@
       ],
       "6 users": [
         "6 korisnika"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bf2023: Offers": {
@@ -548,6 +563,9 @@
       ]
     },
     "Billing cycle option": {
+      "1 month": [
+        "1 mjesec"
+      ],
       "12 months": [
         "12 mjeseci"
       ],
@@ -657,6 +675,9 @@
       ]
     },
     "Collapsible tooltip": {
+      "Collapse": [
+        "Minimiziraj"
+      ],
       "Expand": [
         "Proširi"
       ]
@@ -1409,6 +1430,9 @@
       "Trinidad and Tobago": [
         "Trinidad i Tobago"
       ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
       "Tunisia": [
         "Tunis"
       ],
@@ -1678,6 +1702,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "Do 6 korisnika"
       ]
@@ -1707,6 +1740,11 @@
     "familyOffer_2023:Label": {
       "Family name": [
         "Prezime"
+      ]
+    },
+    "familyOffer_2023:Success": {
+      "Member updated": [
+        "Ažuriran član"
       ]
     },
     "familyOffer_2023:Title": {
@@ -1814,6 +1852,9 @@
     "Font face option": {
       "System default": [
         "Zadani sustav"
+      ],
+      "Theme font": [
+        "Font teme"
       ]
     },
     "Font size option": {
@@ -1884,6 +1925,9 @@
       ],
       "Server": [
         "Poslužitelj"
+      ],
+      "Server load": [
+        "Opterećenje poslužitelja"
       ],
       "Servers": [
         "Poslužitelji"
@@ -2050,6 +2094,9 @@
       "Free up some space or contact your administrator.": [
         "Oslobodite malo prostora ili se obratite administratoru."
       ],
+      "Gateways": [
+        "Pristupnici"
+      ],
       "Get ${ upsellPlanName }": [
         "Nabavite ${ upsellPlanName }"
       ],
@@ -2142,6 +2189,9 @@
       ],
       "of": [
         "od"
+      ],
+      "old password": [
+        "stara lozinka"
       ],
       "Open source": [
         "Otvoreni kôd"
@@ -2312,6 +2362,9 @@
       ],
       "View, download, and manage your invoices.": [
         "Pregledajte, preuzmite i upravljajte fakturama."
+      ],
+      "Warning:": [
+        "Upozorenje:"
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Upozorenje: Brisanje je trajno. Ovo također uklanja pristup svim povezanim uslugama i briše sve vaše kontakte."
@@ -2503,6 +2556,12 @@
       "Browser version": [
         "Verzija preglednika"
       ],
+      "BTC address": [
+        "BTC adresa"
+      ],
+      "BTC amount": [
+        "Iznos u BTC-u"
+      ],
       "Card details": [
         "Pojedinosti o kartici"
       ],
@@ -2581,6 +2640,9 @@
       "Hide password": [
         "Sakrij lozinku"
       ],
+      "Interval": [
+        "Interval"
+      ],
       "Key": [
         "Ključ"
       ],
@@ -2595,6 +2657,9 @@
       ],
       "Name": [
         "Naziv"
+      ],
+      "Name and address": [
+        "Ime i adresa"
       ],
       "Navigation": [
         "Navigacija"
@@ -2729,6 +2794,11 @@
         "Isteklo"
       ]
     },
+    "Label, credit card": {
+      "ZIP code": [
+        "Poštanski broj"
+      ]
+    },
     "Link": {
       "Add a gift code": [
         "Dodaj darovni kôd"
@@ -2759,6 +2829,9 @@
       ],
       "Learn more": [
         "Saznajte više"
+      ],
+      "Need help?": [
+        "Trebate pomoć?"
       ],
       "Pay invoice": [
         "Plati račun"
@@ -2825,6 +2898,11 @@
       ],
       "Swiss franc": [
         "Švicarski franak"
+      ]
+    },
+    "new_plans": {
+      "Highest VPN speed": [
+        "Najviša VPN brzina"
       ]
     },
     "new_plans: Action": {
@@ -2985,6 +3063,11 @@
         "Korištenje računa"
       ]
     },
+    "new_plans: Upsell attribute": {
+      "Multi-platform support": [
+        "Podrška na više platformi"
+      ]
+    },
     "Notification": {
       "Invalid code": [
         "Nevažeći kôd"
@@ -3047,8 +3130,14 @@
       "Creating your account": [
         "Izrada vašeg računa"
       ],
+      "Free forever": [
+        "Besplatno zauvijek"
+      ],
       "per month": [
         "mjesečno"
+      ],
+      "You currently have": [
+        "Sada imate"
       ]
     },
     "Payment method option": {
@@ -3329,8 +3418,22 @@
       "Highest VPN speed": [
         "Najviša VPN brzina"
       ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Secure streaming": [
         "Siguran streaming"
+      ]
+    },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Ovaj se pretplatnički odnos automatski obnavlja svake dvije godine po istoj cijeni dok se ne otkaže."
       ]
     },
     "specialoffer: Link": {
@@ -3358,6 +3461,18 @@
       ],
       "30 months": [
         "30 mjeseci"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Naplaćeno ${ amount } za 12 mjeseci"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Naplaćeno ${ amount } za 15 mjeseci"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Naplaćeno ${ amount } za 24 mjeseca"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Naplaćeno ${ amount } za 30 mjeseci"
       ],
       "Get the deal": [
         "Ugrabite ponudu"
@@ -3389,6 +3504,11 @@
       ],
       "Your current storage:": [
         "Vaš trenutni prostor za pohranu:"
+      ]
+    },
+    "Subscription": {
+      "Billed monthly": [
+        "Mjesečni račun"
       ]
     },
     "Subscription attribute": {
@@ -3556,6 +3676,14 @@
     "Suffix for price": {
       "per month": [
         "mjesečno"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Tab subscription modal": {
@@ -3781,6 +3909,9 @@
       "Find email or username": [
         "Adresa e-pošte ili korisničko ime"
       ],
+      "Gateways": [
+        "Pristupnici"
+      ],
       "General": [
         "Općenito"
       ],
@@ -3838,6 +3969,9 @@
       "Pay invoice": [
         "Plati račun"
       ],
+      "Payment failed": [
+        "Neuspješno plaćanje"
+      ],
       "Payment methods": [
         "Načini plaćanja"
       ],
@@ -3867,6 +4001,9 @@
       ],
       "Recovery": [
         "Oporavak"
+      ],
+      "Remove user?": [
+        "Ukloniti korisnika?"
       ],
       "Report a problem": [
         "Prijavi problem"
@@ -3945,6 +4082,9 @@
       ],
       "Users": [
         "Korisnici"
+      ],
+      "Verification failed": [
+        "Neuspješna provjera"
       ],
       "What's new": [
         "Što je novo"
@@ -4046,6 +4186,11 @@
         "${ n } VPN veza",
         "${ n } VPN veze",
         "${ n } VPN veza"
+      ]
+    },
+    "vpn_2step: billing": {
+      "Billed monthly": [
+        "Mjesečni račun"
       ]
     },
     "vpn_2step: discount": {
