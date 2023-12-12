@@ -4376,11 +4376,6 @@
         "Yalnızca görüntüleme"
       ]
     },
-    "Info; calendar sharing pop-up": {
-      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
-        "Takviminizdeki etkinlikleri görüntülemeleri veya düzenlemeleri için ${ BRAND_NAME } hesabı olan başkalarını davet edin."
-      ]
-    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "Bazı takvimlerinizde daha önce oluşturulmuş etkinliklerin ayrıntıları görüntülenmeyecek."
@@ -5746,14 +5741,6 @@
         "${ timeRemaining.inHours } saat",
         "${ timeRemaining.inHours } saat"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Parola sıfırlama isteği onaylandı (${ user.Email }). Parolanızı sıfırlamak için ${ timeRemaining.inDays } gününüz var.",
-        "Parola sıfırlama isteği onaylandı (${ user.Email }). Parolanızı sıfırlamak için ${ timeRemaining.inDays } gününüz var."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Parola sıfırlama isteği onaylandı (${ user.Email }). Parolanızı sıfırlamak için ${ timeRemaining.inHours } saatiniz var.",
-        "Parola sıfırlama isteği onaylandı (${ user.Email }). Parolanızı sıfırlamak için ${ timeRemaining.inHours } saatiniz var."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Parolanızı değiştirmek için oturumunuzun açık olduğu (isteğin yapıldığı oturum) aygıta geçin."
       ],
@@ -6840,11 +6827,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Bir sayı seçin"
-      ]
-    },
-    "Title; calendar sharing pop-up": {
-      "Planning just got easier!": [
-        "Planlama artık daha kolay!"
       ]
     },
     "Title; create calendar modal": {

@@ -889,7 +889,7 @@
         "Tilkoblingsproblem"
       ],
       "Contacts problem": [
-        "Kontakterproblem"
+        "Problem med kontakter"
       ],
       "Custom domain problem": [
         "Egendefinert domeneproblem"
@@ -910,7 +910,7 @@
         "E-postproblem"
       ],
       "Manual setup problem": [
-        "Manuelt oppsettsproblem"
+        "Problem med manuell installasjon"
       ],
       "Other": [
         "Annet"
@@ -931,13 +931,13 @@
         "Registreringsproblem"
       ],
       "Slow speed problem": [
-        "Problemer med lav hastighet"
+        "Problem med lav hastighet"
       ],
       "Speed problem": [
         "Hastighetsproblem"
       ],
       "Streaming problem": [
-        "Strømmeproblem"
+        "Problem med strømming"
       ],
       "Update problem": [
         "Problem med oppdatering"
@@ -946,7 +946,7 @@
         "VPN-problem"
       ],
       "Website access problem": [
-        "Tilgang til nettstedproblem"
+        "Problem med tilgang til nettsted"
       ]
     },
     "Button": {
@@ -2206,7 +2206,7 @@
         "Spar tid ved å sende e-postmeldinger eller invitasjoner til alle samtidig, en premiumfunksjon blant mange andre. Oppgrader i dag."
       ],
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
-        "Dette kan ta noen få minutter. I mellomtiden kan du fortsette å bruke Kalender som vanlig."
+        "Dette kan ta noen få minutter. I mellomtiden kan du fortsette å bruke kalenderen som vanlig."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "For å importere kontaktene dine fra Google eller Outlook, ${ easySwitchLink }."
@@ -2295,6 +2295,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } er blitt oppdatert.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Denne forekomsten av ${ eventTitle } er kansellert."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Du er invitert til ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -2356,7 +2359,7 @@
       ],
       "${ list } doesn't have an email address": [
         "${ list } har ikke en e-postadresse",
-        "Noen av kontaktene mangler epostadresser: ${ list }"
+        "Noen av kontaktene mangler e-postadresser: ${ list }"
       ],
       "${ list } has invalid emails": [
         "${ list } har ugyldig e-postadresse",
@@ -3022,7 +3025,7 @@
     },
     "Event popover close button": {
       "Close popover": [
-        "Lukk vindu"
+        "Lukk popover-vinduet"
       ]
     },
     "Event reply": {
@@ -3033,7 +3036,7 @@
         "nei"
       ],
       "pending": [
-        "avventer"
+        "ventende"
       ],
       "yes": [
         "ja"
@@ -3062,7 +3065,7 @@
         "Forstått"
       ],
       "Switch plans": [
-        "Bytte planer"
+        "Bytt plan"
       ],
       "View the invitation": [
         "Se invitasjonen"
@@ -3108,7 +3111,7 @@
         "Eiere av en plan med medlemmer kan ikke bli med i en annen gruppeplan."
       ],
       "Sorry, you can't switch plans at this time.": [
-        "Beklager, du kan ikke bytter planer på nåværende tidspunkt."
+        "Beklager, du kan ikke endre abonnementet på nåværende tidspunkt."
       ],
       "Storage assigned to you: ${ assignedStorage }": [
         "Lagringsplass tilordnet deg: ${ assignedStorage }"
@@ -4376,11 +4379,6 @@
         "Vis bare"
       ]
     },
-    "Info; calendar sharing pop-up": {
-      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
-        "Inviter andre med en ${ BRAND_NAME }-konto for å se eller redigere hendelser i kalenderen din."
-      ]
-    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "Noen av kalenderne dine vil ikke vise detaljer om tidligere opprettede hendelser."
@@ -5301,7 +5299,7 @@
     },
     "Notification when": {
       "at time of event": [
-        "på tidspunktet for hendelse"
+        "på tidspunktet for hendelsen"
       ],
       "day before": [
         "dag før",
@@ -5389,10 +5387,10 @@
         "${ value } uker før, kl. ${ time }"
       ],
       "At time of event": [
-        "På tidspunktet for hendelse"
+        "På tidspunktet for hendelsen"
       ],
       "On the same day at ${ time }": [
-        "På samme dag klokken ${ time }"
+        "På samme dag kl. ${ time }"
       ],
       "Unknown": [
         "Ukjent"
@@ -5746,14 +5744,6 @@
         "${ timeRemaining.inHours } time",
         "${ timeRemaining.inHours } timer"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Forespørsel om tilbakestilling av passord godkjent (${ user.Email }). Du har ${ timeRemaining.inDays } dag på å tilbakestille passordet ditt.",
-        "Forespørsel om tilbakestilling av passord godkjent (${ user.Email }). Du har ${ timeRemaining.inDays } dager på å tilbakestille passordet ditt."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Forespørsel om tilbakestilling av passord godkjent (${ user.Email }). Du har ${ timeRemaining.inHours } time på å tilbakestille passordet ditt.",
-        "Forespørsel om tilbakestilling av passord godkjent (${ user.Email }). Du har ${ timeRemaining.inHours } timer på å tilbakestille passordet ditt."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Vennligst gå til den påloggede enheten (i økten hvor forespørselen ble igangsatt) for å endre passordet ditt."
       ],
@@ -5960,7 +5950,7 @@
     },
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
-        "Gå ubegrenset"
+        "Få Unlimited"
       ]
     },
     "specialoffer: Countdown unit": {
@@ -6840,11 +6830,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Velg et nummer"
-      ]
-    },
-    "Title; calendar sharing pop-up": {
-      "Planning just got easier!": [
-        "Planlegging ble akkurat enklere"
       ]
     },
     "Title; create calendar modal": {
