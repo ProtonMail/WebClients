@@ -3802,14 +3802,6 @@
         "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw abonnement annuleert.",
         "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw abonnement annuleert."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert.",
-        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's voordat u uw abonnement annuleert.",
-        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's voordat u uw abonnement annuleert."
-      ],
       "You can now access and manage the account as an administrator.": [
         "U heeft nu toegang tot het account als administrator en kan deze beheren."
       ],
@@ -4959,9 +4951,6 @@
         "Servers in ${ vpnServersCountData.paid.countries }+ land",
         "Servers in ${ vpnServersCountData.paid.countries }+ landen"
       ],
-      "Share calendar via link": [
-        "Agenda delen via koppeling"
-      ],
       "Share files and folders via link": [
         "Bestanden en mappen delen via koppeling"
       ],
@@ -5079,6 +5068,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Geavanceerde netwerkbeveiliging en toegangsbeheer met toegewijde beveiligde gateways"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Alle ${ BRAND_NAME }-apps en hun premium functies"
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Toepasselijke tegoeden, aftrek en kortingscodes worden toegepast in de volgende stap"
@@ -5247,9 +5239,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Beschermt tegen bedreigingen van de VPN-privacy door uw internetverkeer door meerdere servers te leiden."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Deel uw agenda's eenvoudig met collega's, familieleden en vrienden via een koppeling"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Deel uw agenda's eenvoudig met uw familie, vrienden of collega's."
@@ -5870,14 +5859,6 @@
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Indien u geen wachtwoord reset hebt aangevraagd, annuleer de aanvraag dan nu."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Wachtwoord reset aanvraag goedgekeurd (${ user.Email }). U heeft ${ timeRemaining.inDays } dag om uw wachtwoord te resetten.",
-        "Wachtwoord reset aanvraag goedgekeurd (${ user.Email }). U heeft ${ timeRemaining.inDays } dagen om uw wachtwoord te resetten."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Wachtwoord reset aanvraag goedgekeurd (${ user.Email }). U heeft ${ timeRemaining.inHours } uur om uw wachtwoord te resetten.",
-        "Wachtwoord reset aanvraag goedgekeurd (${ user.Email }). U heeft ${ timeRemaining.inHours } ure om uw wachtwoord te resetten."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "\"Ga naar het ingelogde apparaat (in de sessie waarin de aanvraag is gestart) om uw wachtwoord te wijzigen.\""
