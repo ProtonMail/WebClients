@@ -36,8 +36,8 @@ const config: ForgeConfig = {
         {
             name: "@electron-forge/maker-squirrel",
             config: {
-                iconUrl: `${__dirname}/assets/${getIco()}`,
-                setupIcon: `${__dirname}/assets/${getIco()}`,
+                iconUrl: `${__dirname}/assets/icons/${getIco()}`,
+                setupIcon: `${__dirname}/assets/icons/${getIco()}`,
                 loadingGif: `${__dirname}/assets/windows/install-spinner.gif`,
             },
         },
