@@ -40,14 +40,16 @@ export const Main: FC = () => {
                                     <div className="flex flex-nowrap flex-column h-full">
                                         <Header hamburger={<Hamburger expanded={expanded} onToggle={toggle} />} />
                                         <div className="flex items-center justify-center flex-nowrap w-full h-full">
-                                            <Switch>
-                                                <Route
-                                                    exact
-                                                    path={`${route.match!.path}/settings`}
-                                                    component={Settings}
-                                                />
-                                                <Route component={ItemSwitch} />
-                                            </Switch>
+                                            {route.match && (
+                                                <Switch>
+                                                    <Route
+                                                        exact
+                                                        path={`${route.match.path}/settings`}
+                                                        component={Settings}
+                                                    />
+                                                    <Route component={ItemSwitch} />
+                                                </Switch>
+                                            )}
                                         </div>
                                     </div>
                                 </main>
