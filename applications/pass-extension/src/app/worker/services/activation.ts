@@ -14,6 +14,7 @@ import {
 import type { MaybeNull, WorkerMessageWithSender, WorkerWakeUpMessage } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
+import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
@@ -31,6 +32,8 @@ type ActivationServiceState = {
     checkedUpdateAt: number;
     permissionsGranted: boolean;
 };
+
+const RUNTIME_RELOAD_TIME = 10; /* seconds */
 const UPDATE_ALARM_NAME = 'PassUpdateAlarm';
 
 export const createActivationService = () => {
@@ -124,30 +127,6 @@ export const createActivationService = () => {
             if (BUILD_TARGET === 'chrome') void ctx.service.injection.updateInjections();
         }
     });
-
-    const handleOnUpdateAvailable = (details: Runtime.OnUpdateAvailableDetailsType) => {
-        if (details.version) {
-            logger.info(`[Worker::Activation] update available ${details.version}`);
-            state.updateAvailable = details.version;
-
-            const popupPorts = WorkerMessageBroker.ports.query(isPopupPort());
-            /* on available update : only reload the runtime to force the
-             * the extension update if the popup is not opened to avoid
-             * discarding any ongoing user operations*/
-            if (popupPorts.length === 0) return browser.runtime.reload();
-
-            /* if we have ports opened to a popup : notify them in order
-             * to manually prompt the user for a runtime reload */
-            logger.info(`[Worker::Activation] update deferred because popup is active`);
-            popupPorts.forEach((port) =>
-                port.postMessage(
-                    backgroundMessage({
-                        type: WorkerMessageType.UPDATE_AVAILABLE,
-                    })
-                )
-            );
-        }
-    };
 
     const checkPermissionsUpdate = async () => {
         state.permissionsGranted = await checkExtensionPermissions();
@@ -244,6 +223,44 @@ export const createActivationService = () => {
         };
     });
 
+    /** Chromium browsers apply some heuristics to detect suspicious runtime reloading.
+     * Ensure Pass never reloads the runtime suspiciously to avoid being disabled.
+     * see: https://source.chromium.org/chromium/chromium/src/+/main:chrome/browser/extensions/api/runtime/chrome_runtime_api_delegate.cc;l=54 */
+    const reload = asyncLock(
+        withContext(async (ctx) => {
+            const now = getEpoch();
+            const lastReload = (await ctx.service.storage.local.getItem('lastReload')) ?? 0;
+            if (lastReload - RUNTIME_RELOAD_TIME > now) return;
+
+            await ctx.service.storage.local.setItem('lastReload', now);
+            browser.runtime.reload();
+        })
+    );
+
+    const handleOnUpdateAvailable = (details: Runtime.OnUpdateAvailableDetailsType) => {
+        if (details.version) {
+            logger.info(`[Worker::Activation] update available ${details.version}`);
+            state.updateAvailable = details.version;
+
+            const popupPorts = WorkerMessageBroker.ports.query(isPopupPort());
+            /* on available update : only reload the runtime to force the
+             * the extension update if the popup is not opened to avoid
+             * discarding any ongoing user operations*/
+            if (popupPorts.length === 0) return reload();
+
+            /* if we have ports opened to a popup : notify them in order
+             * to manually prompt the user for a runtime reload */
+            logger.info(`[Worker::Activation] update deferred because popup is active`);
+            popupPorts.forEach((port) =>
+                port.postMessage(
+                    backgroundMessage({
+                        type: WorkerMessageType.UPDATE_AVAILABLE,
+                    })
+                )
+            );
+        }
+    };
+
     browser.permissions.onAdded.addListener(checkPermissionsUpdate);
     browser.permissions.onRemoved.addListener(checkPermissionsUpdate);
     browser.alarms.onAlarm.addListener(({ name }) => name === UPDATE_ALARM_NAME && checkAvailableUpdate());
@@ -265,6 +282,7 @@ export const createActivationService = () => {
         onUpdateAvailable: handleOnUpdateAvailable,
         getAvailableUpdate: () => state.updateAvailable,
         getPermissionsGranted: () => state.permissionsGranted,
+        reload,
     };
 };
 
