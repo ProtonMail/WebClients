@@ -77,7 +77,7 @@ export const OnchainTransactionDetails = ({ from, account, psbt, onBack, onSignA
 
                     {/* Fees */}
                     <li className="flex flex-row w-full mt-4 py-2 border-bottom border-top">
-                        <span className="w-1/2">{c('Wallet Send - review').t`Fees`}</span>
+                        <span className="w-2/5">{c('Wallet Send - review').t`Fees`}</span>
                         <span className="block w-1/5" />
                         <Price className="block w-1/5 color-hint" currency={'USD'}>
                             {toFiat(Number(psbt.total_fees)).toFixed(2)}
@@ -89,7 +89,7 @@ export const OnchainTransactionDetails = ({ from, account, psbt, onBack, onSignA
 
                     {/* Total */}
                     <li className="flex flex-row w-full mt-4 pt-2 border-bottom">
-                        <span className="w-1/2">{c('Wallet Send - review').t`Total`}</span>
+                        <span className="w-2/5">{c('Wallet Send - review').t`Total`}</span>
                         <span className="block w-1/5" />
                         <Price className="block w-1/5 color-hint" currency={'USD'}>
                             {toFiat(Number(totalAmount)).toFixed(2)}
