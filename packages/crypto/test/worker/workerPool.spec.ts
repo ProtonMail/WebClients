@@ -13,85 +13,88 @@ import { CryptoWorkerPool } from '../../lib/worker/workerPool';
 
 chaiUse(chaiAsPromised);
 
-describe('Worker Pool', () => {
-    const poolSize = 2;
-    before(async () => {
-        await CryptoWorkerPool.init({ poolSize });
-    });
-
-    afterEach(async () => {
-        await CryptoWorkerPool.clearKeyStore();
-    });
-
-    after(async () => {
-        await CryptoWorkerPool.destroy();
-    });
-
-    it('should encrypt/sign and decrypt/verify text and binary data', async () => {
-        const aliceKeyRef = await CryptoWorkerPool.generateKey({ userIDs: { name: 'alice', email: 'alice@test.com' } });
-        const bobKeyRef = await CryptoWorkerPool.generateKey({ userIDs: { name: 'bob', email: 'bob@test.com' } });
-
-        const { message: encryptedArmoredMessage } = await CryptoWorkerPool.encryptMessage({
-            textData: 'hello world',
-            encryptionKeys: bobKeyRef,
-            signingKeys: aliceKeyRef,
+const runTests = (v6Canary: boolean) =>
+    describe(`OpenPGP.js ${v6Canary ? 'v6 (canary)' : 'v5'}`, () => {
+        const poolSize = 2;
+        before(async () => {
+            await CryptoWorkerPool.init({ poolSize, openpgpConfigOptions: { v6Canary } });
         });
 
-        const textDecryptionResult = await CryptoWorkerPool.decryptMessage({
-            armoredMessage: encryptedArmoredMessage,
-            decryptionKeys: bobKeyRef,
-            verificationKeys: aliceKeyRef,
-        });
-        expect(textDecryptionResult.data).to.equal('hello world');
-        expect(textDecryptionResult.signatures).to.have.length(1);
-        expect(textDecryptionResult.verificationErrors).to.not.exist;
-        expect(textDecryptionResult.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
-
-        const { message: encryptedBinaryMessage } = await CryptoWorkerPool.encryptMessage({
-            binaryData: new Uint8Array([1, 2, 3]),
-            encryptionKeys: bobKeyRef,
-            signingKeys: aliceKeyRef,
-            format: 'binary',
+        afterEach(async () => {
+            await CryptoWorkerPool.clearKeyStore();
         });
 
-        const binaryDecryptionResult = await CryptoWorkerPool.decryptMessage({
-            binaryMessage: encryptedBinaryMessage,
-            decryptionKeys: bobKeyRef,
-            verificationKeys: aliceKeyRef,
-            format: 'binary',
-        });
-        expect(binaryDecryptionResult.data).to.deep.equal(new Uint8Array([1, 2, 3]));
-        expect(binaryDecryptionResult.signatures).to.have.length(1);
-        expect(binaryDecryptionResult.verificationErrors).to.not.exist;
-        expect(binaryDecryptionResult.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
-    });
-
-    it('computeHashStream - the hash instance should not be disrupted with multiple workers', async () => {
-        const data = new Uint8Array(100).fill(1);
-        const dataStream = new ReadableStream<Uint8Array>({
-            pull: (controller) => {
-                for (let i = 0; i < 10; i++) {
-                    controller.enqueue(data.subarray(i, i + 10));
-                }
-                controller.close();
-            },
+        after(async () => {
+            await CryptoWorkerPool.destroy();
         });
 
-        const testHashSHA1Streamed = await CryptoWorkerPool.computeHashStream({
-            algorithm: 'unsafeSHA1',
-            dataStream,
-        }).then(arrayToHexString);
+        it('should encrypt/sign and decrypt/verify text and binary data', async () => {
+            const aliceKeyRef = await CryptoWorkerPool.generateKey({
+                userIDs: { name: 'alice', email: 'alice@test.com' },
+            });
+            const bobKeyRef = await CryptoWorkerPool.generateKey({ userIDs: { name: 'bob', email: 'bob@test.com' } });
 
-        const testHashSHA1 = await CryptoWorkerPool.computeHash({ algorithm: 'unsafeSHA1', data }).then(
-            arrayToHexString
-        );
+            const { message: encryptedArmoredMessage } = await CryptoWorkerPool.encryptMessage({
+                textData: 'hello world',
+                encryptionKeys: bobKeyRef,
+                signingKeys: aliceKeyRef,
+            });
 
-        expect(testHashSHA1Streamed).to.equal(testHashSHA1);
-    });
+            const textDecryptionResult = await CryptoWorkerPool.decryptMessage({
+                armoredMessage: encryptedArmoredMessage,
+                decryptionKeys: bobKeyRef,
+                verificationKeys: aliceKeyRef,
+            });
+            expect(textDecryptionResult.data).to.equal('hello world');
+            expect(textDecryptionResult.signatures).to.have.length(1);
+            expect(textDecryptionResult.verificationErrors).to.not.exist;
+            expect(textDecryptionResult.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
 
-    it('replaceUserIDs - the target key should be updated in all workers', async () => {
-        const sourceKey = await openpgp_readKey({
-            armoredKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----
+            const { message: encryptedBinaryMessage } = await CryptoWorkerPool.encryptMessage({
+                binaryData: new Uint8Array([1, 2, 3]),
+                encryptionKeys: bobKeyRef,
+                signingKeys: aliceKeyRef,
+                format: 'binary',
+            });
+
+            const binaryDecryptionResult = await CryptoWorkerPool.decryptMessage({
+                binaryMessage: encryptedBinaryMessage,
+                decryptionKeys: bobKeyRef,
+                verificationKeys: aliceKeyRef,
+                format: 'binary',
+            });
+            expect(binaryDecryptionResult.data).to.deep.equal(new Uint8Array([1, 2, 3]));
+            expect(binaryDecryptionResult.signatures).to.have.length(1);
+            expect(binaryDecryptionResult.verificationErrors).to.not.exist;
+            expect(binaryDecryptionResult.verified).to.equal(VERIFICATION_STATUS.SIGNED_AND_VALID);
+        });
+
+        it('computeHashStream - the hash instance should not be disrupted with multiple workers', async () => {
+            const data = new Uint8Array(100).fill(1);
+            const dataStream = new ReadableStream<Uint8Array>({
+                pull: (controller) => {
+                    for (let i = 0; i < 10; i++) {
+                        controller.enqueue(data.subarray(i, i + 10));
+                    }
+                    controller.close();
+                },
+            });
+
+            const testHashSHA1Streamed = await CryptoWorkerPool.computeHashStream({
+                algorithm: 'unsafeSHA1',
+                dataStream,
+            }).then(arrayToHexString);
+
+            const testHashSHA1 = await CryptoWorkerPool.computeHash({ algorithm: 'unsafeSHA1', data }).then(
+                arrayToHexString
+            );
+
+            expect(testHashSHA1Streamed).to.equal(testHashSHA1);
+        });
+
+        it('replaceUserIDs - the target key should be updated in all workers', async () => {
+            const sourceKey = await openpgp_readKey({
+                armoredKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----
 
 xVgEYkMx+RYJKwYBBAHaRw8BAQdA2wiwC/FbumCQYlJAEHeRCm2GZD0S1aPt
 BG6ZcpuehWUAAQDpWPNfvUtTnn6AiJ/xEQ09so7ZWF+2GHlaOglSQUADwQ5J
@@ -109,9 +112,9 @@ Dw/CeAQYFggACQUCYkMx+QIbDAAhCRAjtG/Ki0DMNBYhBGIhypgKP3BS4JWa
 AQDFe4bzH3MY16IqrIq70QSCxqLJ0Ao+NYb1whc/mXYOAA==
 =p5Q+
 -----END PGP PRIVATE KEY BLOCK-----`,
-        });
-        const targetKey = await openpgp_readPrivateKey({
-            armoredKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----
+            });
+            const targetKey = await openpgp_readPrivateKey({
+                armoredKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----
 
 xVgEYkMx+RYJKwYBBAHaRw8BAQdA2wiwC/FbumCQYlJAEHeRCm2GZD0S1aPt
 BG6ZcpuehWUAAQDpWPNfvUtTnn6AiJ/xEQ09so7ZWF+2GHlaOglSQUADwQ5J
@@ -126,30 +129,30 @@ jdam/kRWvRjS8LMZDsVICPpOrwhQXkRlAQDFe4bzH3MY16IqrIq70QSCxqLJ
 0Ao+NYb1whc/mXYOAA==
 =AjeC
 -----END PGP PRIVATE KEY BLOCK-----`,
-        });
-        const sourceKeyRef = await CryptoWorkerPool.importPublicKey({ armoredKey: sourceKey.armor() });
-        const targetKeyRef = await CryptoWorkerPool.importPrivateKey({
-            armoredKey: targetKey.armor(),
-            passphrase: null,
+            });
+            const sourceKeyRef = await CryptoWorkerPool.importPublicKey({ armoredKey: sourceKey.armor() });
+            const targetKeyRef = await CryptoWorkerPool.importPrivateKey({
+                armoredKey: targetKey.armor(),
+                passphrase: null,
+            });
+
+            await CryptoWorkerPool.replaceUserIDs({ sourceKey: sourceKeyRef, targetKey: targetKeyRef });
+
+            const exportedTargetKeys = await Promise.all(
+                new Array(poolSize).fill(null).map(async () =>
+                    openpgp_readKey({
+                        armoredKey: await CryptoWorkerPool.exportPublicKey({ key: targetKeyRef }),
+                    })
+                )
+            );
+            exportedTargetKeys.forEach((exportedTargetKey) => {
+                expect(sourceKey.getUserIDs()).to.deep.equal(exportedTargetKey.getUserIDs());
+            });
         });
 
-        await CryptoWorkerPool.replaceUserIDs({ sourceKey: sourceKeyRef, targetKey: targetKeyRef });
-
-        const exportedTargetKeys = await Promise.all(
-            new Array(poolSize).fill(null).map(async () =>
-                openpgp_readKey({
-                    armoredKey: await CryptoWorkerPool.exportPublicKey({ key: targetKeyRef }),
-                })
-            )
-        );
-        exportedTargetKeys.forEach((exportedTargetKey) => {
-            expect(sourceKey.getUserIDs()).to.deep.equal(exportedTargetKey.getUserIDs());
-        });
-    });
-
-    it('cloneKeyAndChangeUserIDs - the target key should be updated in all workers', async () => {
-        const sourceKey = await openpgp_readKey({
-            armoredKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----
+        it('cloneKeyAndChangeUserIDs - the target key should be updated in all workers', async () => {
+            const sourceKey = await openpgp_readKey({
+                armoredKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----
 
 xVgEYkMx+RYJKwYBBAHaRw8BAQdA2wiwC/FbumCQYlJAEHeRCm2GZD0S1aPt
 BG6ZcpuehWUAAQDpWPNfvUtTnn6AiJ/xEQ09so7ZWF+2GHlaOglSQUADwQ5J
@@ -167,99 +170,99 @@ Dw/CeAQYFggACQUCYkMx+QIbDAAhCRAjtG/Ki0DMNBYhBGIhypgKP3BS4JWa
 AQDFe4bzH3MY16IqrIq70QSCxqLJ0Ao+NYb1whc/mXYOAA==
 =p5Q+
 -----END PGP PRIVATE KEY BLOCK-----`,
-        });
-
-        const sourceKeyRef = await CryptoWorkerPool.importPrivateKey({
-            armoredKey: sourceKey.armor(),
-            passphrase: null,
-        });
-
-        const updateKeyRef = await CryptoWorkerPool.cloneKeyAndChangeUserIDs({
-            privateKey: sourceKeyRef,
-            userIDs: { email: 'updated@worker.com' },
-        });
-
-        const exportedTargetKeys = await Promise.all(
-            new Array(poolSize).fill(null).map(async () =>
-                openpgp_readKey({
-                    armoredKey: await CryptoWorkerPool.exportPublicKey({ key: updateKeyRef }),
-                })
-            )
-        );
-        exportedTargetKeys.forEach((exportedTargetKey) => {
-            expect(exportedTargetKey.getUserIDs()).to.deep.equal(['<updated@worker.com>']);
-        });
-    });
-
-    describe('Key management API', () => {
-        it('can export a generated key', async () => {
-            const privateKeyRef = await CryptoWorkerPool.generateKey({
-                userIDs: { name: 'name', email: 'email@test.com' },
             });
 
-            const passphrase = 'passphrase';
-            const armoredKey = await CryptoWorkerPool.exportPrivateKey({ privateKey: privateKeyRef, passphrase });
-            const binaryKey = await CryptoWorkerPool.exportPrivateKey({
-                privateKey: privateKeyRef,
-                passphrase,
-                format: 'binary',
+            const sourceKeyRef = await CryptoWorkerPool.importPrivateKey({
+                armoredKey: sourceKey.armor(),
+                passphrase: null,
             });
 
-            const decryptedKeyFromArmored = await openpgp_decryptKey({
-                privateKey: await openpgp_readPrivateKey({ armoredKey }),
-                passphrase,
-            });
-            expect(decryptedKeyFromArmored.isDecrypted()).to.be.true;
-
-            const decryptedKeyFromBinary = await openpgp_decryptKey({
-                privateKey: await openpgp_readPrivateKey({ binaryKey }),
-                passphrase,
-            });
-            expect(decryptedKeyFromBinary.isDecrypted()).to.be.true;
-        });
-
-        it('can export an imported key', async () => {
-            const passphrase = 'passphrase';
-            const { privateKey: keyToImport } = await generateKey({
-                userIDs: { name: 'name', email: 'email@test.com' },
-                format: 'object',
-                passphrase,
+            const updateKeyRef = await CryptoWorkerPool.cloneKeyAndChangeUserIDs({
+                privateKey: sourceKeyRef,
+                userIDs: { email: 'updated@worker.com' },
             });
 
-            const importedKeyRef = await CryptoWorkerPool.importPrivateKey({
-                armoredKey: keyToImport.armor(),
-                passphrase,
-            });
-            expect(importedKeyRef.getCreationTime()).to.deep.equal(keyToImport.getCreationTime());
-            expect(importedKeyRef.subkeys.map((subkey) => subkey.getAlgorithmInfo())).to.deep.equal(
-                keyToImport.subkeys.map((subkey) => subkey.getAlgorithmInfo())
+            const exportedTargetKeys = await Promise.all(
+                new Array(poolSize).fill(null).map(async () =>
+                    openpgp_readKey({
+                        armoredKey: await CryptoWorkerPool.exportPublicKey({ key: updateKeyRef }),
+                    })
+                )
             );
-            expect(importedKeyRef.getUserIDs()).to.deep.equal(['name <email@test.com>']);
-            const armoredPublicKey = await CryptoWorkerPool.exportPublicKey({ key: importedKeyRef });
-            const exportedPublicKey = await openpgp_readKey({ armoredKey: armoredPublicKey });
-            expect(exportedPublicKey.isPrivate()).to.be.false;
-            expect(exportedPublicKey.getKeyID().toHex()).equals(importedKeyRef.getKeyID());
-            expect(exportedPublicKey.getKeyID().equals(keyToImport.getKeyID()));
-
-            const exportPassphrase = 'another passphrase';
-            const armoredPrivateKey = await CryptoWorkerPool.exportPrivateKey({
-                privateKey: importedKeyRef,
-                passphrase: exportPassphrase,
+            exportedTargetKeys.forEach((exportedTargetKey) => {
+                expect(exportedTargetKey.getUserIDs()).to.deep.equal(['<updated@worker.com>']);
             });
-            const exportedPrivateKey = await openpgp_readPrivateKey({ armoredKey: armoredPrivateKey });
-            expect(exportedPrivateKey.getKeyID().equals(keyToImport.getKeyID()));
-            // make sure the exported key is encrypted with the new passphrase
-            const decryptedExportedKey = await openpgp_decryptKey({
-                privateKey: exportedPrivateKey,
-                passphrase: exportPassphrase,
-            });
-            expect(decryptedExportedKey.isDecrypted()).to.be.true;
         });
 
-        it('reformatted key has a separate key reference', async () => {
-            const passphrase = 'passphrase';
-            const originalKeyRef = await CryptoWorkerPool.importPrivateKey({
-                armoredKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----
+        describe('Key management API', () => {
+            it('can export a generated key', async () => {
+                const privateKeyRef = await CryptoWorkerPool.generateKey({
+                    userIDs: { name: 'name', email: 'email@test.com' },
+                });
+
+                const passphrase = 'passphrase';
+                const armoredKey = await CryptoWorkerPool.exportPrivateKey({ privateKey: privateKeyRef, passphrase });
+                const binaryKey = await CryptoWorkerPool.exportPrivateKey({
+                    privateKey: privateKeyRef,
+                    passphrase,
+                    format: 'binary',
+                });
+
+                const decryptedKeyFromArmored = await openpgp_decryptKey({
+                    privateKey: await openpgp_readPrivateKey({ armoredKey }),
+                    passphrase,
+                });
+                expect(decryptedKeyFromArmored.isDecrypted()).to.be.true;
+
+                const decryptedKeyFromBinary = await openpgp_decryptKey({
+                    privateKey: await openpgp_readPrivateKey({ binaryKey }),
+                    passphrase,
+                });
+                expect(decryptedKeyFromBinary.isDecrypted()).to.be.true;
+            });
+
+            it('can export an imported key', async () => {
+                const passphrase = 'passphrase';
+                const { privateKey: keyToImport } = await generateKey({
+                    userIDs: { name: 'name', email: 'email@test.com' },
+                    format: 'object',
+                    passphrase,
+                });
+
+                const importedKeyRef = await CryptoWorkerPool.importPrivateKey({
+                    armoredKey: keyToImport.armor(),
+                    passphrase,
+                });
+                expect(importedKeyRef.getCreationTime()).to.deep.equal(keyToImport.getCreationTime());
+                expect(importedKeyRef.subkeys.map((subkey) => subkey.getAlgorithmInfo())).to.deep.equal(
+                    keyToImport.subkeys.map((subkey) => subkey.getAlgorithmInfo())
+                );
+                expect(importedKeyRef.getUserIDs()).to.deep.equal(['name <email@test.com>']);
+                const armoredPublicKey = await CryptoWorkerPool.exportPublicKey({ key: importedKeyRef });
+                const exportedPublicKey = await openpgp_readKey({ armoredKey: armoredPublicKey });
+                expect(exportedPublicKey.isPrivate()).to.be.false;
+                expect(exportedPublicKey.getKeyID().toHex()).equals(importedKeyRef.getKeyID());
+                expect(exportedPublicKey.getKeyID().equals(keyToImport.getKeyID()));
+
+                const exportPassphrase = 'another passphrase';
+                const armoredPrivateKey = await CryptoWorkerPool.exportPrivateKey({
+                    privateKey: importedKeyRef,
+                    passphrase: exportPassphrase,
+                });
+                const exportedPrivateKey = await openpgp_readPrivateKey({ armoredKey: armoredPrivateKey });
+                expect(exportedPrivateKey.getKeyID().equals(keyToImport.getKeyID()));
+                // make sure the exported key is encrypted with the new passphrase
+                const decryptedExportedKey = await openpgp_decryptKey({
+                    privateKey: exportedPrivateKey,
+                    passphrase: exportPassphrase,
+                });
+                expect(decryptedExportedKey.isDecrypted()).to.be.true;
+            });
+
+            it('reformatted key has a separate key reference', async () => {
+                const passphrase = 'passphrase';
+                const originalKeyRef = await CryptoWorkerPool.importPrivateKey({
+                    armoredKey: `-----BEGIN PGP PRIVATE KEY BLOCK-----
 
 xYYEYjh/NRYJKwYBBAHaRw8BAQdAAJW2i9biFMIXiH15J6vGU1GCAqcp5utw
 C+y+CeZ+h4L+CQMI/K3Ebi8BpsUAzexw43SwgpD0mDGd/d4ORX77AiUoq/rp
@@ -276,53 +279,67 @@ fzUCGwwAIQkQXHnmw8RpeUoWIQT490w0irDiMLKqqe5ceebDxGl5Sl9wAQC+
 8IDTErKCgaYSPES5+mwT27LYvw0=
 =D7EW
 -----END PGP PRIVATE KEY BLOCK-----`,
-                passphrase,
+                    passphrase,
+                });
+
+                const reformattedKeyRef = await CryptoWorkerPool.reformatKey({
+                    privateKey: originalKeyRef,
+                    userIDs: { email: 'reformatted@worker.com' },
+                });
+                expect(reformattedKeyRef.getUserIDs()).to.have.length(1);
+                expect(reformattedKeyRef.getUserIDs().includes('<reformatted@worker.com>'));
+                expect(originalKeyRef.getUserIDs()).to.have.length(1);
+                expect(originalKeyRef.getUserIDs()).includes('<test@worker.com>');
+
+                await CryptoWorkerPool.clearKey({ key: originalKeyRef }); // this clears the private params as well
+
+                const armoredKey = await CryptoWorkerPool.exportPrivateKey({
+                    privateKey: reformattedKeyRef,
+                    passphrase,
+                });
+                const decryptedKeyFromArmored = await openpgp_decryptKey({
+                    privateKey: await openpgp_readPrivateKey({ armoredKey }),
+                    passphrase,
+                });
+                expect(decryptedKeyFromArmored.isDecrypted()).to.be.true;
             });
 
-            const reformattedKeyRef = await CryptoWorkerPool.reformatKey({
-                privateKey: originalKeyRef,
-                userIDs: { email: 'reformatted@worker.com' },
+            it('clearKey - cannot reference a cleared key', async () => {
+                const privateKeyRef = await CryptoWorkerPool.generateKey({
+                    userIDs: { name: 'name', email: 'email@test.com' },
+                });
+                // confirm key is in the store
+                expect(await CryptoWorkerPool.exportPublicKey({ key: privateKeyRef })).length.above(0);
+                await CryptoWorkerPool.clearKey({ key: privateKeyRef });
+
+                await expect(CryptoWorkerPool.exportPublicKey({ key: privateKeyRef })).to.be.rejectedWith(
+                    /Key not found/
+                );
             });
-            expect(reformattedKeyRef.getUserIDs()).to.have.length(1);
-            expect(reformattedKeyRef.getUserIDs().includes('<reformatted@worker.com>'));
-            expect(originalKeyRef.getUserIDs()).to.have.length(1);
-            expect(originalKeyRef.getUserIDs()).includes('<test@worker.com>');
 
-            await CryptoWorkerPool.clearKey({ key: originalKeyRef }); // this clears the private params as well
+            it('clearKeyStore - cannot reference any key after clearing the store', async () => {
+                const privateKeyRef1 = await CryptoWorkerPool.generateKey({
+                    userIDs: { name: 'name', email: 'email@test.com' },
+                });
+                const privateKeyRef2 = await CryptoWorkerPool.generateKey({
+                    userIDs: { name: 'name', email: 'email@test.com' },
+                });
+                // (lazily) confirm that keys are in the store
+                expect(await CryptoWorkerPool.exportPublicKey({ key: privateKeyRef1 })).length.above(0);
+                expect(await CryptoWorkerPool.exportPublicKey({ key: privateKeyRef2 })).length.above(0);
+                await CryptoWorkerPool.clearKeyStore();
 
-            const armoredKey = await CryptoWorkerPool.exportPrivateKey({ privateKey: reformattedKeyRef, passphrase });
-            const decryptedKeyFromArmored = await openpgp_decryptKey({
-                privateKey: await openpgp_readPrivateKey({ armoredKey }),
-                passphrase,
+                await expect(CryptoWorkerPool.exportPublicKey({ key: privateKeyRef1 })).to.be.rejectedWith(
+                    /Key not found/
+                );
+                await expect(CryptoWorkerPool.exportPublicKey({ key: privateKeyRef2 })).to.be.rejectedWith(
+                    /Key not found/
+                );
             });
-            expect(decryptedKeyFromArmored.isDecrypted()).to.be.true;
-        });
-
-        it('clearKey - cannot reference a cleared key', async () => {
-            const privateKeyRef = await CryptoWorkerPool.generateKey({
-                userIDs: { name: 'name', email: 'email@test.com' },
-            });
-            // confirm key is in the store
-            expect(await CryptoWorkerPool.exportPublicKey({ key: privateKeyRef })).length.above(0);
-            await CryptoWorkerPool.clearKey({ key: privateKeyRef });
-
-            await expect(CryptoWorkerPool.exportPublicKey({ key: privateKeyRef })).to.be.rejectedWith(/Key not found/);
-        });
-
-        it('clearKeyStore - cannot reference any key after clearing the store', async () => {
-            const privateKeyRef1 = await CryptoWorkerPool.generateKey({
-                userIDs: { name: 'name', email: 'email@test.com' },
-            });
-            const privateKeyRef2 = await CryptoWorkerPool.generateKey({
-                userIDs: { name: 'name', email: 'email@test.com' },
-            });
-            // (lazily) confirm that keys are in the store
-            expect(await CryptoWorkerPool.exportPublicKey({ key: privateKeyRef1 })).length.above(0);
-            expect(await CryptoWorkerPool.exportPublicKey({ key: privateKeyRef2 })).length.above(0);
-            await CryptoWorkerPool.clearKeyStore();
-
-            await expect(CryptoWorkerPool.exportPublicKey({ key: privateKeyRef1 })).to.be.rejectedWith(/Key not found/);
-            await expect(CryptoWorkerPool.exportPublicKey({ key: privateKeyRef2 })).to.be.rejectedWith(/Key not found/);
         });
     });
+
+describe('Worker Pool', () => {
+    runTests(false);
+    runTests(true);
 });

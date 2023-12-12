@@ -20,6 +20,7 @@
     },
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
+        "@openpgp/asmcrypto.js": "^2.3.3-0",
         "@openpgp/web-stream-tools": "^0.0.13",
         "@proton/components": "workspace:packages/components",
         "@proton/cross-storage": "workspace:packages/cross-storage",

@@ -7,9 +7,13 @@ import type { Api as CryptoApi, ApiInterface as CryptoApiInterface } from './api
 import { InitOptions } from './api.models';
 import { mainThreadTransferHandlers } from './transferHandlers';
 
+export interface WorkerInitOptions extends InitOptions {
+    v6Canary?: boolean;
+}
+
 export interface WorkerPoolInitOptions {
     poolSize?: number;
-    openpgpConfigOptions?: InitOptions;
+    openpgpConfigOptions?: WorkerInitOptions;
 }
 
 export interface WorkerPoolInterface extends CryptoApiInterface {
@@ -49,18 +53,26 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
     let workerPool: Remote<CryptoApi>[] | null = null;
     let i = -1;
 
-    const initWorker = async (openpgpConfigOptions: InitOptions) => {
+    const initWorker = async (openpgpConfigOptions: WorkerInitOptions) => {
         // Webpack static analyser is not especially powerful at detecting web workers that require bundling,
         // see: https://github.com/webpack/webpack.js.org/issues/4898#issuecomment-823073304.
         // Harcoding the path here is the easiet way to get the worker to be bundled properly.
         const RemoteApi = wrap<typeof CryptoApi>(
-            new Worker(
-                new URL(
-                    /* webpackChunkName: "crypto-worker" */
-                    './worker.ts',
-                    import.meta.url
-                )
-            )
+            openpgpConfigOptions.v6Canary
+                ? new Worker(
+                      new URL(
+                          /* webpackChunkName: "crypto-worker-v6-canary" */
+                          './worker_v6_canary.ts',
+                          import.meta.url
+                      )
+                  )
+                : new Worker(
+                      new URL(
+                          /* webpackChunkName: "crypto-worker" */
+                          './worker.ts',
+                          import.meta.url
+                      )
+                  )
         );
         await RemoteApi.init(openpgpConfigOptions);
         const worker = await new RemoteApi();
