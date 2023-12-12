@@ -51,19 +51,23 @@ export const createOnboardingService = (options: OnboardingServiceOptions) => {
         void options.storage.setItem('onboarding', JSON.stringify(state));
     };
 
+    const checkRule = (rule: OnboardingRule): boolean => {
+        if (!rule.when) return true;
+
+        const ack = state.acknowledged.find((ack) => rule.message === ack.message);
+        return rule.when(ack, state);
+    };
+
+    const checkMessage = (message: OnboardingMessage): boolean => {
+        const rule = options.rules.find((rule) => rule.message === message);
+        if (!rule) return false;
+        return checkRule(rule);
+    };
+
     /* Define extra rules in the `ONBOARDING_RULES` constant :
      * we will resolve the first message that matches the rule's
      * `when` condition */
-    const getMessage = () => ({
-        message:
-            options.rules.find(
-                ({ message, when }) =>
-                    when?.(
-                        state.acknowledged.find((ack) => message === ack.message),
-                        state
-                    )
-            )?.message ?? null,
-    });
+    const getMessage = () => ({ message: options.rules.find(checkRule)?.message ?? null });
 
     /** Resets the state's acknowledged message list. This may be
      * useful when logging out a user - preserves timestamps */
@@ -96,7 +100,7 @@ export const createOnboardingService = (options: OnboardingServiceOptions) => {
         }
     };
 
-    return { acknowledge, init, reset, setState, getMessage, state };
+    return { acknowledge, checkMessage, init, reset, setState, getMessage, state };
 };
 
 export type OnboardingService = ReturnType<typeof createOnboardingService>;
