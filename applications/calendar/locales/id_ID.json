@@ -3634,6 +3634,9 @@
       "All (${ totalFoldersCount } labels)": [
         "Semua (${ totalFoldersCount } label)"
       ],
+      "All participants will get a cancellation email. Which event would you like to delete?": [
+        "Seluruh peserta akan menerima email pembatalan. Acara mana yang ingin Anda hapus?"
+      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Seluruh kontak Anda akan diimpor hingga batas jumlah ${ MAX_CONTACTS_PER_USER } kontak"
       ],
@@ -4303,11 +4306,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Hanya melihat"
-      ]
-    },
-    "Info; calendar sharing pop-up": {
-      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
-        "Undang teman-teman Anda yang memiliki akun ${ BRAND_NAME } untuk melihat atau menyunting acara pada kalender Anda."
       ]
     },
     "Info; reset calendar keys modal; part 1": {
@@ -5634,12 +5632,6 @@
       "${ timeRemaining.inHours } hours": [
         "${ timeRemaining.inHours } jam"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
-        "Permintaan pengaturan ulang kata sandi telah disetujui (${ user.Email }). Anda memiliki ${ timeRemaining.inDays } hari untuk mengatur ulang kata sandi Anda."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
-        "Permintaan pengaturan ulang kata sandi telah disetujui (${ user.Email }). Anda memiliki ${ timeRemaining.inHours } jam untuk mengatur ulang kata sandi Anda."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Silakan tuju perangkat yang telah terhubung masuk (dalam sesi di mana permintaan ini diajukan) untuk mengubah kata sandi Anda."
       ],
@@ -6697,11 +6689,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Pilih angka"
-      ]
-    },
-    "Title; calendar sharing pop-up": {
-      "Planning just got easier!": [
-        "Merencanakan kegiatan kini lebih mudah!"
       ]
     },
     "Title; create calendar modal": {

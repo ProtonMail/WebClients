@@ -4307,11 +4307,6 @@
         "Csak megtekintés"
       ]
     },
-    "Info; calendar sharing pop-up": {
-      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
-        "Hívjon meg további ${ BRAND_NAME } felhasználókat a naptárában lévő események megtekintése vagy szerkesztésére."
-      ]
-    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "Néhány naptára nem fogja megjeleníteni a korábban létrehozott események részleteit."
@@ -5662,14 +5657,6 @@
         "${ timeRemaining.inHours } óra",
         "${ timeRemaining.inHours } óra"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Jelszó visszaállítás igénylés elfogadva (${ user.Email }). ${ timeRemaining.inDays } órája maradt jelszava megváltoztatására.",
-        "Jelszó visszaállítás igénylés elfogadva (${ user.Email }). ${ timeRemaining.inDays } órája maradt jelszava megváltoztatására."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Jelszó visszaállítás igénylés elfogadva (${ user.Email }). ${ timeRemaining.inHours } órája maradt jelszava megváltoztatására.",
-        "Jelszó visszaállítás igénylés elfogadva (${ user.Email }). ${ timeRemaining.inHours } órája maradt jelszava megváltoztatására."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "A jelszó megváltoztatásához használja a bejelentkezett eszközt (abban a munkamenetben, ahol a kérés indult)."
       ],
@@ -6747,11 +6734,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Válasszon egy számot"
-      ]
-    },
-    "Title; calendar sharing pop-up": {
-      "Planning just got easier!": [
-        "A tervezés egyszerűbbé vált!"
       ]
     },
     "Title; create calendar modal": {
