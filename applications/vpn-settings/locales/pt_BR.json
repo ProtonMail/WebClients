@@ -3820,14 +3820,6 @@
         "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova links de calendários compartilhados e qualquer usuário da ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura.",
         "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova links de calendários compartilhados e qualquer usuário da ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova os links do calendário compartilhado antes de cancelar sua assinatura do ${ MAIL_SHORT_APP_NAME }.",
-        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova os links do calendário compartilhado antes de cancelar sua assinatura do${ MAIL_SHORT_APP_NAME }."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova os links do calendário compartilhado antes de cancelar sua assinatura.",
-        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova os links do calendário compartilhado antes de cancelar sua assinatura."
-      ],
       "You can now access and manage the account as an administrator.": [
         "Você agora pode acessar e gerenciar a conta como um administrador."
       ],
@@ -4438,7 +4430,7 @@
         "Boletim da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } offers and promotions": [
-        "Ofertas e promoções do ${ BRAND_NAME }"
+        "Ofertas e promoções da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } product announcements": [
         "Comunicados de produto da ${ BRAND_NAME }"
@@ -4980,9 +4972,6 @@
         "Servidores em ${ vpnServersCountData.paid.countries }+ país",
         "Servidores em ${ vpnServersCountData.paid.countries }+ países"
       ],
-      "Share calendar via link": [
-        "Compartilhe o calendário por link"
-      ],
       "Share files and folders via link": [
         "Compartilhe arquivos e pastas por link"
       ],
@@ -5103,6 +5092,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Segurança de rede avançada e gerenciamento de acesso com Gateways seguros dedicados"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Todos os aplicativos da ${ BRAND_NAME } e as suas funcionalidades premium"
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Créditos aplicáveis, cálculo proporcional e cupons são aplicados na próxima etapa"
@@ -5271,9 +5263,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Proteja-se de ameaças à privacidade da VPN ao transmitir seu tráfego de internet por meio de múltiplos servidores."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Compartilhe facilmente seus calendários com colegas, familiares e amigos por meio de um link"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Compartilhe facilmente seus calendários com familiares, amigos ou colegas."
@@ -5912,14 +5901,6 @@
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Se você não pediu para redefinir sua senha, cancele a solicitação agora."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Solicitação de redefinição de senha aprovada (${ user.Email }). Você tem ${ timeRemaining.inDays } dia para alterar a senha.",
-        "Solicitação de redefinição de senha aprovada (${ user.Email }). Você tem ${ timeRemaining.inDays } dias para alterar a senha."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Solicitação de redefinição de senha aprovada (${ user.Email }). Você tem ${ timeRemaining.inHours } hora para alterar a senha.",
-        "Solicitação de redefinição de senha aprovada (${ user.Email }). Você tem ${ timeRemaining.inHours } horas para alterar a senha."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Vá ao dispositivo onde a solicitação (na sessão iniciada) para mudar a sua senha."

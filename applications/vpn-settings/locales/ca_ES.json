@@ -717,12 +717,18 @@
         "Els descomptes es basen en els preus mensuals estàndard."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "La vostra subscripció es renovarà automàticament a la tarifa estàndard amb descompte i durada al final del cicle de facturació."
+        "La vostra subscripció es renovarà automàticament a la tarifa amb descompte i durada predeterminades al final del cicle de facturació."
       ]
     },
     "bf2023: header": {
       "Select your Black Friday offer": [
         "Seleccioneu la vostra oferta de Black Friday"
+      ],
+      "Select your Cyber Week offer": [
+        "Seleccioneu la vostra oferta de la Cyber Week"
+      ],
+      "Select your End of Year offer": [
+        "Seleccioneu la vostra oferta de final d'any."
       ]
     },
     "bf2023: info": {
@@ -752,6 +758,9 @@
     "bf2023: Tooltip": {
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accediu al contingut dels serveis de streaming com ara Netflix, Disney+, Prime Video i altres des de qualsevol lloc."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Eviteu els bloquejos i la censura a Internet local amb la nostra xarxa global de servidors."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclou suport per a 1 domini de correu electrònic personalitzat, 10 adreces de correu electrònic, 10 àlies hide-my-email, compartició de calendari i més."
@@ -2084,6 +2093,9 @@
       "Something went wrong": [
         "Alguna cosa ha anat malament."
       ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Per utilitzar ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, canvieu a la versió web."
+      ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la vostra connexió a Internet."
       ]
@@ -3206,6 +3218,9 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Torneu-ho a provar, utilitzeu un mètode de pagament diferent o bé contacteu per assistència de PayPal."
       ],
+      "Please use another browser or download the file.": [
+        "Utilitzeu un altre navegador o baixeu el fitxer."
+      ],
       "Please verify payment at the new tab which was opened.": [
         "Verifiqueu el pagament a la pestanya nova que s'ha obert."
       ],
@@ -3377,6 +3392,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Això pot trigar força temps. No tanqueu aquesta pàgina ni us desconnecteu d'internet."
+      ],
+      "This file is too large to preview": [
+        "Aquest fitxer és massa gran per a previsualitzar-lo."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Actualment, aquest usuari és responsable dels pagaments de la vostra organització. Degradant aquest membre, sereu responsable dels pagaments de la vostra organització."
@@ -3610,14 +3628,6 @@
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit calendaris abans de cancel·lar la subscripció.",
         "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit calendaris abans de cancel·lar la subscripció."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Esborreu els enllaços de calendari compartits abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }.",
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Esborreu els enllaços de calendari compartits abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Esborreu els enllaços de calendari compartits abans de cancel·lar la subscripció.",
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Esborreu els enllaços de calendari compartits abans de cancel·lar la subscripció."
       ],
       "You can now access and manage the account as an administrator.": [
         "Ara podeu accedir i gestionar el compte com a administrador."
@@ -4750,9 +4760,6 @@
         "Servidors en més d'${ vpnServersCountData.paid.countries } país",
         "Servidors en més de ${ vpnServersCountData.paid.countries } països"
       ],
-      "Share calendar via link": [
-        "Compartició d'un calendari mitjançant un enllaç"
-      ],
       "Share files and folders via link": [
         "Compartició de fitxers i carpetes mitjançant un enllaç"
       ],
@@ -4864,6 +4871,9 @@
       ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } us permet crear adreces de correu electrònic i gestionar comptes per als subusuaris. Ideal per a les vostres famílies i organitzacions."
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Totes les aplicacions de ${ BRAND_NAME } i les seves característiques prèmium"
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Crèdits aplicables, proració i cupons s'apliquen en el següent pas."
@@ -4978,8 +4988,17 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Protegiu el vostre calendari amb xifratge de punta a punta. Inclou suport per a calendaris personalitzats, compartir calendaris i molt més."
+      ],
       "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "${ DRIVE_APP_NAME }: Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou, entre d'altres, historial de versions i compartició de fitxers xifrats."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: Protegiu els vostres correus electrònics amb xifratge de punta a punta. Inclou suport per a dominis de correu electrònic personalitzats, 15 adreces de correu electrònic, nombre il·limitat d'àlies hide-my-email i molt més."
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: Accediu a contingut bloquejat i navegueu de manera privada. Inclou ${ serversAndCountries }, les velocitats més altes de VPN, accés a serveis de streaming de tot el món, bloqueig de programari maliciós i publicitat, descàrregues ràpides de BitTorrent i molt més."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Accediu al contingut dels serveis de transmissió, com ara Netflix, Disney+ i Prime Video, des de qualsevol lloc."
@@ -5014,9 +5033,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Defensa contra les amenaces a la privacitat de la VPN passant el vostre trànsit d'internet a través de múltiples servidors."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Compartiu fàcilment els vostres calendaris amb els col·legues de treball, la família i els amics mitjançant un enllaç."
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Compartiu fàcilment els vostres calendaris amb la família, els amics o els col·legues."
@@ -5219,6 +5235,9 @@
       ],
       "IP Address copied to clipboard": [
         "S'ha copiat l'adreça IP al porta-retalls."
+      ],
+      "Key copied to the clipboard": [
+        "S'ha copiat la clau al porta-retalls."
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credencials OpenVPN / IKEv2 regenerades"
@@ -5610,14 +5629,6 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Si no heu demanat restablir la teva contrasenya, cancel·leu la sol·licitud ara mateix."
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inDays } dia per a restablir la vostra contrasenya.",
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inDays } dies per a restablir la vostra contrasenya."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inHours } hora per a restablir la vostra contrasenya.",
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inHours } hores per a restablir la vostra contrasenya."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Aneu al dispositiu en què heu iniciat la sessió (en la qual es va iniciar la sol·licitud) per canviar la vostra contrasenya."
       ],
@@ -5634,6 +5645,9 @@
       ],
       "You can now reset your password": [
         "Ja podeu restablir la vostra contrasenya."
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "Podeu restablir la vostra contrasenya fins el ${ boldDate }."
       ]
     },
     "session_recovery:available:link": {
@@ -5714,7 +5728,7 @@
         "S'ha sol·licitat el restabliment de la contrasenya (${ user.Email }). Podeu canviar la vostra contrasenya en ${ hoursRemaining } hores."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
-        "Per a assegurar-nos que sou vós qui intenteu restablir la vostra contrasenya, esperem 72 hores abans d'aprovar les sol·licituds. Podeu canviar la contrasenya en ${ boldTimeLeft }. ${ viewRequest }."
+        "Per a assegurar-nos que sou vós qui intenteu restablir la contrasenya, esperem 72 hores abans d'aprovar les sol·licituds. Podeu canviar la contrasenya en ${ boldTimeLeft }. ${ viewRequest }."
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Hem rebut una sol·licitud de restabliment de contrasenya per a ${ boldEmail }."

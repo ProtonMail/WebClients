@@ -3820,14 +3820,6 @@
         "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendario. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento.",
         "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendari. Rimuovi i link ai calendari condivisi e qualsiasi utente di ${ BRAND_NAME } con cui hai condiviso i tuoi calendari prima di annullare l'abbonamento."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendario. Rimuovi i link del calendario condiviso prima di annullare l'abbonamento a ${ MAIL_SHORT_APP_NAME }.",
-        "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendari. Rimuovi i link del calendario condiviso prima di annullare l'abbonamento a ${ MAIL_SHORT_APP_NAME }."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendario. Rimuovi i link del calendario condiviso prima di annullare l'abbonamento.",
-        "Puoi avere fino a ${ MAX_CALENDARS_FREE } calendari. Rimuovi i link del calendario condiviso prima di annullare l'abbonamento."
-      ],
       "You can now access and manage the account as an administrator.": [
         "Ora puoi accedere e gestire l'account come amministratore."
       ],
@@ -4983,9 +4975,6 @@
         "Server in ${ vpnServersCountData.paid.countries }+ paese",
         "Server in ${ vpnServersCountData.paid.countries }+ paesi"
       ],
-      "Share calendar via link": [
-        "Condividi calendario tramite link"
-      ],
       "Share files and folders via link": [
         "Condividi file e cartelle tramite link"
       ],
@@ -5107,11 +5096,17 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "Sicurezza avanzata della rete e gestione degli accessi con gateway sicuri dedicati"
       ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Tutte le app di ${ BRAND_NAME } e le loro funzionalità premium"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Eventuali crediti, calcolo proporzionale e coupon vengono applicati nel prossimo passaggio"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacy e sicurezza complete con tutti i servizi ${ BRAND_NAME }."
+      ],
+      "Early access to new apps and features": [
+        "Accesso anticipato a nuove app e funzionalità"
       ],
       "For next-level password management and identity protection.": [
         "Per una gestione delle password e protezione dell'identità di livello superiore."
@@ -5277,9 +5272,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Difenditi dalle minacce alla privacy VPN inviando il traffico Internet attraverso più server."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Condividi facilmente i tuoi calendari con colleghi, famigliari e amici tramite un link"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Condividi facilmente i tuoi calendari con famigliari, amici o colleghi"
@@ -5931,13 +5923,8 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Se non hai richiesto tu la reimpostazione della password, annulla subito la richiesta."
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Richiesta di reimpostazione della password approvata (${ user.Email }). Hai ${ timeRemaining.inDays } giorno per reimpostare la password.",
-        "Richiesta di reimpostazione della password approvata (${ user.Email }). Hai ${ timeRemaining.inDays } giorni per reimpostare la password."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Richiesta di reimpostazione della password approvata (${ user.Email }). Hai ${ timeRemaining.inHours } ora per reimpostare la password.",
-        "Richiesta di reimpostazione della password approvata (${ user.Email }). Hai ${ timeRemaining.inHours } ore per reimpostare la password."
+      "Password reset request approved (${ user.Email }).": [
+        "Richiesta di reimpostazione della password approvata (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Per modificare la password, utilizza il dispositivo in cui hai effettuato precedentemente l'accesso (nella sessione in cui è stata inviata la richiesta)."
@@ -5950,14 +5937,36 @@
         "Questa autorizzazione scade tra ${ timeRemaining.inHours } ora",
         "Questa autorizzazione scade tra ${ timeRemaining.inHours } ore"
       ],
+      "This permission expires soon": [
+        "Questa autorizzazione scadrà a breve"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Ora puoi cambiare liberamente la password per il tuo account ${ boldEmail } per ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Ora puoi cambiare la password per il tuo account ${ boldEmail }."
       ],
       "You can now reset your password": [
         "Ora puoi reimpostare la tua password"
       ],
       "You can reset your password until ${ boldDate }.": [
         "Puoi reimpostare la password fino al ${ boldDate }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Hai ${ timeRemaining.inDays } giorno rimanente per reimpostare la password.",
+        "Hai ${ timeRemaining.inDays } giorni rimanenti per reimpostare la password."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Hai ${ timeRemaining.inHours } ora rimanente per reimpostare la password.",
+        " Hai ${ timeRemaining.inHours } ore rimanenti per reimpostare la password."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Hai ${ timeRemaining.inMinutes } minuto rimanente per reimpostare la password.",
+        " Hai ${ timeRemaining.inMinutes } minuti rimanenti per reimpostare la password."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Hai ${ timeRemaining.inSeconds } secondo rimanente per reimpostare la password.",
+        " Hai ${ timeRemaining.inSeconds } secondi rimanenti per reimpostare la password."
       ]
     },
     "session_recovery:available:link": {

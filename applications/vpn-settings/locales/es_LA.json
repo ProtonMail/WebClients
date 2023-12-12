@@ -3817,14 +3817,6 @@
         "Puede tener hasta ${ MAX_CALENDARS_FREE } calendario. Borre enlaces de calendarios compartidos y cualquier usuario de ${ BRAND_NAME } con quien haya compartido sus calendarios antes de cancelar su suscripción.",
         "Puede tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borre enlaces de calendarios compartidos y cualquier usuario de ${ BRAND_NAME } con quien haya compartido sus calendarios antes de cancelar su suscripción."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendario. Borre enlaces de calendario compartido antes de cancelar su suscripción de ${ MAIL_SHORT_APP_NAME }.",
-        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borre enlaces de calendario compartido antes de cancelar su suscripción de ${ MAIL_SHORT_APP_NAME }."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendario. Borre enlaces del calendario compartido antes de cancelar su suscripción.",
-        "Puede tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borre enlaces del calendario compartido antes de cancelar su suscripción."
-      ],
       "You can now access and manage the account as an administrator.": [
         "Ahora puede acceder y gestionar la cuenta como administrador."
       ],
@@ -4977,9 +4969,6 @@
         "Servidores en más de ${ vpnServersCountData.paid.countries } país",
         "Servidores en más de ${ vpnServersCountData.paid.countries } países"
       ],
-      "Share calendar via link": [
-        "Compartir calendario con un enlace"
-      ],
       "Share files and folders via link": [
         "Compartir archivos y carpetas con un enlace"
       ],
@@ -5101,11 +5090,17 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "Gestión de acceso y seguridad de red avanzada con puertas de enlace seguras dedicadas"
       ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Todas las apps de ${ BRAND_NAME } y sus funciones premium"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Los créditos, prorrateo y cupones correspondientes se aplican en el siguiente paso"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privacidad y seguridad integral con todos los servicios combinados de ${ BRAND_NAME }."
+      ],
+      "Early access to new apps and features": [
+        "Acceso anticipado a funciones y apps nuevas"
       ],
       "For next-level password management and identity protection.": [
         "Para la gestión de contraseñas y protección de la identidad a otro nivel."
@@ -5268,9 +5263,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Defiende de ataques que amenazan la privacidad de la VPN dirigiendo el tráfico de Internet por varios servidores."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Comparta calendarios con compañeros, familiares y amigos fácilmente con un enlace"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Comparta calendarios con familiares, amistades y colegas fácilmente"
@@ -5901,13 +5893,8 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Si no solicitó restablecer la contraseña, cancele la solicitud ahora."
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inDays } día para restablecer su contraseña.",
-        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inDays } días para restablecer su contraseña."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inHours } hora para restablecer su contraseña.",
-        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inHours } horas para restablecer su contraseña."
+      "Password reset request approved (${ user.Email }).": [
+        "Solicitud de cambio de contraseña aprobada (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Vaya al dispositivo en el que inició sesión y donde se realizó la solicitud para cambiar su contraseña."
@@ -5920,14 +5907,36 @@
         "Este permiso expira en ${ timeRemaining.inHours } hora",
         "Este permiso expira en ${ timeRemaining.inHours } horas"
       ],
+      "This permission expires soon": [
+        "Este permiso expira pronto"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Ahora puede cambiar la contraseña para la cuenta ${ boldEmail } durante ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Ya puede cambiar la contraseña de la cuenta ${ boldEmail }."
       ],
       "You can now reset your password": [
         "Ahora puede restablecer su contraseña."
       ],
       "You can reset your password until ${ boldDate }.": [
         "Puede restablecer su contraseña hasta el ${ boldDate }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Tiene ${ timeRemaining.inDays } día para restablecer su contraseña.",
+        "Tiene ${ timeRemaining.inDays } días para restablecer su contraseña."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tiene ${ timeRemaining.inHours } hora para restablecer su contraseña.",
+        " Tiene ${ timeRemaining.inHours } horas para restablecer su contraseña."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tiene ${ timeRemaining.inMinutes } minuto para restablecer su contraseña.",
+        " Tiene ${ timeRemaining.inMinutes } minutos para restablecer su contraseña."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Tiene ${ timeRemaining.inSeconds } segundo para restablecer su contraseña.",
+        " Tiene ${ timeRemaining.inSeconds } segundos para restablecer su contraseña."
       ]
     },
     "session_recovery:available:link": {

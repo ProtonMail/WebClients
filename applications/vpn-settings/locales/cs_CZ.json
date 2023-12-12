@@ -3888,18 +3888,6 @@
         "Můžete mít až ${ MAX_CALENDARS_FREE } kalendářů. Předtím než zrušíte své předplatné, odstraňte prosím sdílené odkazy na vaše kalendáře a každého ${ BRAND_NAME } uživatele, se kterým jste vaše kalendáře sdíleli.",
         "Můžete mít až ${ MAX_CALENDARS_FREE } kalendářů. Předtím než zrušíte své předplatné, odstraňte prosím sdílené odkazy na vaše kalendáře a každého ${ BRAND_NAME } uživatele, se kterým jste vaše kalendáře sdíleli."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendář. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář.",
-        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendáře. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář.",
-        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendářů. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář.",
-        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendářů. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendář. Než zrušíte předplatné, odeberte prosím sdílené odkazy na kalendář.",
-        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendáře. Než zrušíte předplatné, odeberte prosím sdílené odkazy na kalendář.",
-        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendářů. Než zrušíte předplatné, odeberte prosím sdílené odkazy na kalendář.",
-        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendářů. Než zrušíte předplatné, odeberte prosím sdílené odkazy na kalendář."
-      ],
       "You can now access and manage the account as an administrator.": [
         "Nyní můžete k účtu přistupovat a spravovat jej jako správce."
       ],
@@ -5103,9 +5091,6 @@
         "Servery v ${ vpnServersCountData.paid.countries }+ zemích",
         "Servery v ${ vpnServersCountData.paid.countries }+ zemích"
       ],
-      "Share calendar via link": [
-        "Sdílení kalendáře pomocí odkazu"
-      ],
       "Share files and folders via link": [
         "Sdílení souborů a složek pomocí odkazu"
       ],
@@ -5229,11 +5214,17 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "Pokročilé zabezpečení sítě a správa přístupu s vyhrazenými zabezpečenými bránami"
       ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Všechny ${ BRAND_NAME } aplikace a jejich prémiové funkce"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "V dalším kroku se uplatní příslušné kredity, poměrná část a kupony"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Komplexní ochrana soukromí a zabezpečení se všemi službami ${ BRAND_NAME } dohromady."
+      ],
+      "Early access to new apps and features": [
+        "Předběžný přístup k novým aplikacím a funkcím"
       ],
       "For next-level password management and identity protection.": [
         "Pro pokročilou správu hesel a ochranu identity."
@@ -5400,9 +5391,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Chrání před ohrožením soukromí VPN tím, že váš internetový provoz prochází přes více serverů."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Snadno sdílejte své kalendáře s kolegy, rodinou, přáteli pomocí odkazu"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Snadno sdílejte své kalendáře s rodinou, přáteli nebo kolegy"
@@ -5624,7 +5612,7 @@
         "IP adresa zkopírována do schránky"
       ],
       "Key copied to the clipboard": [
-        "Klíč byl zkopírován do schránky"
+        "Klíč zkopírován do schránky"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 údaje byly obnoveny"
@@ -6063,18 +6051,6 @@
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Pokud jste o resetování hesla nepožádali, žádost nyní zrušte."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } den.",
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } dny.",
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } dní.",
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } dní."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodinu.",
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodiny.",
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodin.",
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodin."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Přejděte do přihlášeného zařízení (v relaci, ve které byl požadavek iniciován) a změňte heslo."
@@ -6842,7 +6818,7 @@
         "Uživatel aktualizován"
       ],
       "Username copied to clipboard": [
-        "Uživatelské jméno bylo zkopírováno do schránky"
+        "Uživatelské jméno zkopírováno do schránky"
       ],
       "Verification successful": [
         "Ověření proběhlo úspěšně"
