@@ -11,6 +11,7 @@
         "make": "electron-forge make",
         "make:beta": "cross-env RELEASE=beta electron-forge make",
         "publish": "electron-forge publish",
+        "publish:beta": "cross-env RELEASE=beta electron-forge publish",
         "lint": "eslint --ext .ts,.tsx .",
         "pretty": "prettier . --write",
         "make-win": "npx electron-forge make",

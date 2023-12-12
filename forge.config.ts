@@ -8,7 +8,17 @@ import { getExtraResource, getIco, getIcon, getName } from "./src/utils/config";
 import { mainConfig } from "./webpack.main.config";
 import { rendererConfig } from "./webpack.renderer.config";
 
+let currentArch = "";
 const config: ForgeConfig = {
+    hooks: {
+        generateAssets: async (_x, _y, arch) => {
+            if (arch === "all") {
+                currentArch = "universal";
+                return;
+            }
+            currentArch = arch;
+        },
+    },
     packagerConfig: {
         icon: `${__dirname}/assets/icons/${getIcon()}`,
         asar: true,
@@ -42,7 +52,7 @@ const config: ForgeConfig = {
                             x: 229,
                             y: 250,
                             type: "file",
-                            path: `${process.cwd()}/out/${getName()}-darwin-universal/${getName()}.app`,
+                            path: `${process.cwd()}/out/${name}-darwin-${currentArch}/${name}.app`,
                         },
                         { x: 429, y: 250, type: "link", path: "/Applications" },
                     ];
@@ -61,6 +71,18 @@ const config: ForgeConfig = {
             name: "@electron-forge/maker-zip",
             config: {},
             platforms: ["win32", "win64", "darwin"],
+        },
+    ],
+    publishers: [
+        {
+            name: "@electron-forge/publisher-github",
+            config: {
+                prerelase: isBetaRelease,
+                repository: {
+                    owner: "flavienbonvin",
+                    name: "test-desktop",
+                },
+            },
         },
     ],
     plugins: [
