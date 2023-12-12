@@ -3137,6 +3137,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } έχει ενημερωθεί.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Αυτό το περιστατικό του ${ eventTitle } έχει ακυρωθεί."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Σας προσκαλούμε σε ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -3644,6 +3647,9 @@
       ],
       "You must set a name": [
         "Πρέπει να ορίσετε ένα όνομα"
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Έχετε συμπληρώσει τον μέγιστο αριθμό χαρακτήρων. Παρακαλούμε συντομεύστε το μήνυμά σας."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Τα μηνύματα ηλεκτρονικού ταχυδρομείου σας δεν μπορούν να αποκρυπτογραφηθούν λόγω πρόσφατης επαναφοράς κωδικού πρόσβασης. Εάν θυμάστε τον προηγούμενο κωδικό πρόσβασής σας, μπορείτε να ${ reActivateKeyLink } για να αποκτήσετε πρόσβαση στα μηνύματά σας. ${ learnMoreLink }"
@@ -8118,14 +8124,6 @@
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } ώρα",
         "${ timeRemaining.inHours } ώρες"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inDays } ημέρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
-        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inDays } ημέρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inHours } ώρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
-        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inHours } ώρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Παρακαλούμε μεταβείτε στη συνδεδεμένη συσκευή (στη συνεδρία όπου ξεκίνησε το αίτημα) για να αλλάξετε τον κωδικό πρόσβασής σας."

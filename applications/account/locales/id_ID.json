@@ -1710,9 +1710,6 @@
       "Share calendar": [
         "Bagikan kalender"
       ],
-      "Share outside ${ BRAND_NAME }": [
-        "Bagikan di luar ${ BRAND_NAME }"
-      ],
       "Share with ${ BRAND_NAME } users": [
         "Bagikan dengan pengguna ${ BRAND_NAME }"
       ],
@@ -4120,6 +4117,9 @@
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "Anda harus memiliki alamat domain khusus untuk dapat menghasilkan token submisi SMTP."
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Anda telah mencapai batas jumlah karakter yang diperkenankan. Silakan persingkat isi pesan Anda."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Anda memiliki tagihan yang telah jatuh tempo pada akun atau organisasi Anda. Mohon lunasi seluruh tagihan yang belum dibayar."
@@ -7661,12 +7661,6 @@
       "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Mohon hapus tautan kalender bersama yang ada dan seluruh pengguna ${ BRAND_NAME } yang berbagi kalender dengan Anda sebelum membatalkan langganan."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Mohon hapus seluruh tautan kalender bersama yang ada sebelum Anda membatalkan langganan ${ MAIL_SHORT_APP_NAME } Anda."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links before you cancel your subscription.": [
-        "Anda dapat menyimpan hingga ${ MAX_CALENDARS_FREE } kalender. Mohon hapus seluruh tautan kalender bersama yang ada sebelum Anda membatalkan langganan."
-      ],
       "You can now access and manage the account as an administrator.": [
         "Anda kini dapat mengakses dan mengelola akun selaku administrator."
       ],
@@ -10143,9 +10137,6 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ countries": [
         "Server dalam ${ vpnServersCountData.paid.countries }+ negara"
       ],
-      "Share calendar via link": [
-        "Bagikan kalender via tautan"
-      ],
       "Share files and folders via link": [
         "Bagikan berkas dan folder via tautan"
       ],
@@ -10280,6 +10271,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Keamanan jaringan tingkat lanjut dan pengelolaan akses dengan Gateway terdedikasi yang aman"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Seluruh aplikasi ${ BRAND_NAME } dan berbagai fitur premium di dalamnya"
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Segala saldo, prorasi, dan kupon diskon akan diterapkan pada langkah selanjutnya"
@@ -10479,9 +10473,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Melindungi dari ancaman privasi VPN dengan mengalihkan lalu lintas internet Anda melalui beberapa server."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Bagi dan tautkan kalender Anda kepada rekan kerja, keluarga, dan teman Anda dengan mudah"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Bagikan kalender Anda dengan keluarga, teman, atau rekan kerja Anda secara mudah"
@@ -11783,12 +11774,6 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Apabila Anda tidak meminta untuk mengatur ulang kata sandi, batalkan permintaan ini sekarang juga."
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
-        "Permintaan pengaturan ulang kata sandi telah disetujui (${ user.Email }). Anda memiliki ${ timeRemaining.inDays } hari untuk mengatur ulang kata sandi Anda."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
-        "Permintaan pengaturan ulang kata sandi telah disetujui (${ user.Email }). Anda memiliki ${ timeRemaining.inHours } jam untuk mengatur ulang kata sandi Anda."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Silakan tuju perangkat yang telah terhubung masuk (dalam sesi di mana permintaan ini diajukan) untuk mengubah kata sandi Anda."
       ],
@@ -11973,6 +11958,11 @@
       ],
       "Request password reset": [
         "Minta pengaturan ulang kata sandi"
+      ]
+    },
+    "session_recovery:settings:info": {
+      "To disallow password reset, you must have a recovery method set up.": [
+        "Untuk menghapus izin atur ulang sandi, Anda harus mengatur metode pemulihan."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -12407,9 +12397,6 @@
       ]
     },
     "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        "Tambahkan kalender publik, eksternal, atau terbagi menggunakan URL."
-      ],
       "Add public, external, or shared calendars.": [
         "Tambahkan kalender publik, eksternal, atau terbagi."
       ]
