@@ -14,6 +14,7 @@ import { aliasOptionsRequest } from '@proton/pass/store/actions/requests';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision, ItemRevisionContentsResponse } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 type ItemCreationAction = ReturnType<typeof itemCreationIntent>;
 type ItemWithAliasCreationAction = ItemCreationAction & { payload: { type: 'login'; extraData: { withAlias: true } } };
@@ -45,7 +46,8 @@ function* singleItemCreationWorker({ onItemsUpdated, getTelemetry }: RootSagaOpt
         yield isAlias && put(requestInvalidate(aliasOptionsRequest(shareId))); /* reset alias options */
 
         void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: item.data.type }));
-        if (item.data.type === 'login' && item.data.content.totpUri) {
+
+        if (item.data.type === 'login' && deobfuscate(item.data.content.totpUri)) {
             void telemetry?.push(createTelemetryEvent(TelemetryEventName.TwoFACreation, {}, {}));
         }
 
@@ -77,13 +79,13 @@ function* withAliasCreationWorker(
 
         void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: loginItem.data.type }));
         void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: aliasItem.data.type }));
-        if (loginItem.data.type === 'login' && loginItem.data.content.totpUri) {
+        if (loginItem.data.type === 'login' && deobfuscate(loginItem.data.content.totpUri)) {
             void telemetry?.push(createTelemetryEvent(TelemetryEventName.TwoFACreation, {}, {}));
         }
 
         onItemsUpdated?.();
-    } catch (e) {
-        const itemCreationfailureAction = itemCreationFailure({ optimisticId, shareId }, e);
+    } catch (err: unknown) {
+        const itemCreationfailureAction = itemCreationFailure({ optimisticId, shareId }, err);
         yield put(itemCreationfailureAction);
     }
 }
