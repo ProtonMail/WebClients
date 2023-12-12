@@ -255,7 +255,7 @@
         "Erstellen"
       ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
-        "Erstelle einen Link, um ihn mit jemandem zu teilen ${ BRAND_NAME }"
+        "Erstelle einen Link zum Teilen mit Personen außerhalb von ${ BRAND_NAME }"
       ],
       "Create account": [
         "Konto erstellen"
@@ -927,7 +927,7 @@
         "Überprüfung überspringen"
       ],
       "Sort": [
-        "Ordnen"
+        "Sortieren"
       ],
       "Spam": [
         "Spam"
@@ -1715,9 +1715,6 @@
     "Calendar settings section title": {
       "Share calendar": [
         "Kalender teilen"
-      ],
-      "Share outside ${ BRAND_NAME }": [
-        "Außerhalb von ${ BRAND_NAME } teilen"
       ],
       "Share with ${ BRAND_NAME } users": [
         "Mit ${ BRAND_NAME }-Benutzern teilen"
@@ -3285,6 +3282,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } wurde aktualisiert.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Ein Eintrag aus der Terminserie von ${ eventTitle } wurde abgesagt."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Du wurdest zu ${ eventTitle } eingeladen\n${ eventDetailsText }"
       ]
@@ -3700,7 +3700,7 @@
         "Authentifizierungsfehler."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Automatische Antworten sind eine kostenpflichtige Funktion. Bitte führe ein Umstieg auf ein kostenpflichtiges Konto durch, um diese Funktion nutzen zu können."
+        "Automatische Antworten sind eine kostenpflichtige Funktion. Bitte führe ein Upgrade auf ein kostenpflichtiges Konto durch, um diese Funktion nutzen zu können."
       ],
       "Calendar cannot be found": [
         "Kalender kann nicht gefunden werden"
@@ -4138,6 +4138,9 @@
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "Du benötigst eine benutzerdefinierte Domain, um einen SMTP-Übermittlungstoken zu generieren."
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Du hast die maximale Anzahl an Zeichen erreicht. Bitte kürze deine Nachricht."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Dein Konto oder deine Organisation enthält derzeit eine überfällige Rechnung. Bitte begleiche alle unbezahlten Rechnungen."
@@ -7236,6 +7239,9 @@
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Die Meldung ${ boldDataLocked } wird nicht mehr angezeigt, aber du kannst deine Daten weiterhin unter ${ encryptionAndKeysLink } entsperren."
       ],
+      "The ${ MAIL_APP_NAME } Export Tool lets you export decrypted emails from your ${ MAIL_APP_NAME } account to your device. You can then view the messages or import them into another email account or email client.": [
+        "Mit dem ${ MAIL_APP_NAME } Export Tool kannst du entschlüsselte E-Mails von deinem ${ MAIL_APP_NAME }-Konto auf dein Gerät exportieren. Dann kannst du die Nachrichten ansehen oder sie in ein anderes E-Mail-Konto oder einen anderen E-Mail-Client importieren."
+      ],
       "The calendar will be removed from your account.": [
         "Der Kalender wird aus deinem Konto entfernt."
       ],
@@ -7737,14 +7743,6 @@
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne Links geteilter Kalender und jegliche ${ BRAND_NAME }-Benutzer, mit denen du deine Kalender geteilt hast, bevor du dein Abonnement beendest.",
         "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne Links geteilter Kalender und jegliche ${ BRAND_NAME }-Benutzer, mit denen du deine Kalender geteilt hast, bevor du dein Abonnement beendest."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne geteilte Kalenderverknüpfungen bevor du dein ${ MAIL_SHORT_APP_NAME } Abonnement kündigst.",
-        "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne geteilte Kalenderverknüpfungen bevor du dein ${ MAIL_SHORT_APP_NAME } Abonnement kündigst."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne geteilte Kalenderverknüpfungen bevor du dein Abonnement kündigst.",
-        "Du kannst bis zu ${ MAX_CALENDARS_FREE } Kalender behalten. Bitte entferne geteilte Kalenderverknüpfungen bevor du dein Abonnement kündigst."
       ],
       "You can now access and manage the account as an administrator.": [
         "Du kannst nun als Administrator auf das Konto zugreifen und es verwalten."
@@ -9593,6 +9591,12 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
+        "Werde ein Visionär und sei Teil der Geschichte von ${ BRAND_NAME }."
+      ],
+      "Limited time offer: Get ${ planTitle } until ${ date }!": [
+        "Zeitlich begrenztes Angebot: Hol dir ${ planTitle } bis zum ${ date }!"
+      ],
       "Secure email that protects your privacy": [
         "Sichere E-Mails, die deine Privatsphäre schützen"
       ]
@@ -9607,7 +9611,7 @@
     },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Du kannst bis zu ${ MAX_LINKS_PER_CALENDAR } Links pro Kalender erstellen. Um einen neuen Link für diesen Kalender zu erstellen, musst du einen Link aus der untenstehenden Liste löschen.",
+        "Du kannst bis zu ${ MAX_LINKS_PER_CALENDAR } Link pro Kalender erstellen. Um einen neuen Link für diesen Kalender zu erstellen, musst du einen Link aus der untenstehenden Liste löschen.",
         "Du kannst bis zu ${ MAX_LINKS_PER_CALENDAR } Links pro Kalender erstellen. Um einen neuen Link für diesen Kalender zu erstellen, musst du einen Link aus der untenstehenden Liste löschen."
       ]
     },
@@ -10259,9 +10263,6 @@
         "Server in mehr als ${ vpnServersCountData.paid.countries } Land",
         "Server in mehr als ${ vpnServersCountData.paid.countries } Ländern"
       ],
-      "Share calendar via link": [
-        "Kalender als Link teilen"
-      ],
       "Share files and folders via link": [
         "Dateien und Ordner als Link teilen"
       ],
@@ -10398,11 +10399,17 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "Erweiterte Netzwerksicherheit und Zugangsverwaltung mit dedizierten sicheren Gateways"
       ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Alle ${ BRAND_NAME } Anwendungen und ihre Premiumfunktionen"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Anwendbares Guthaben, anteilige Anrechnungen und Gutscheine können im nächsten Schritt berücksichtigt werden."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Umfassender Schutz der Privatsphäre und Sicherheit bei allen ${ BRAND_NAME }-Diensten."
+      ],
+      "Early access to new apps and features": [
+        "Früher Zugang zu neuen Anwendungen und Funktionen"
       ],
       "For next-level password management and identity protection.": [
         "Für die nächste Stufe der Passwortverwaltung und des Identitätsschutzes."
@@ -10598,9 +10605,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Diese Funktion schützt vor der Bedrohung der VPN-Privatsphäre, indem dein Internetverkehr über mehrere Server geleitet wird."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Teile deine Kalender ganz einfach über einen Link mit Kollegen oder Freunden und Familie."
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Teile deine Kalender ganz einfach mit Verwandten, Freunden oder Kollegen"
@@ -11915,13 +11919,8 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Wenn du nicht darum gebeten hast, dein Passwort zurückzusetzen, breche die Anfrage jetzt ab."
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Anfrage zur Passwortzurücksetzung genehmigt (${ user.Email }). Du hast ${ timeRemaining.inDays } Tag, um dein Passwort zurückzusetzen.",
-        "Anfrage zur Passwortzurücksetzung genehmigt (${ user.Email }). Du hast ${ timeRemaining.inDays } Tage, um dein Passwort zurückzusetzen."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Anfrage zur Passwortzurücksetzung genehmigt (${ user.Email }). Du hast ${ timeRemaining.inHours } Stunde, um dein Passwort zurückzusetzen.",
-        "Anfrage zur Passwortzurücksetzung genehmigt (${ user.Email }). Du hast ${ timeRemaining.inHours } Stunden, um dein Passwort zurückzusetzen."
+      "Password reset request approved (${ user.Email }).": [
+        "Antrag auf Passwortzurücksetzung genehmigt (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Bitte gehe, um dein Passwort zu ändern zu dem angemeldeten Gerät, von dem aus die Anfrage zur Passwortänderung gestartet wurde."
@@ -11934,14 +11933,24 @@
         "Diese Berechtigung läuft in ${ timeRemaining.inHours } Stunde ab.",
         "Diese Berechtigung läuft in ${ timeRemaining.inHours } Stunden ab."
       ],
+      "This permission expires soon": [
+        "Diese Berechtigung läuft bald aus"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Du kannst jetzt dein Passwort für das Konto ${ boldEmail } für ${ boldDaysRemaining } frei ändern."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Du kannst jetzt dein Passwort für das Konto ${ boldEmail } ändern."
       ],
       "You can now reset your password": [
         "Du kannst dein Passwort jetzt zurücksetzen."
       ],
       "You can reset your password until ${ boldDate }.": [
         "Du kannst dein Passwort bis zum ${ boldDate } zurücksetzen."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Du hast ${ timeRemaining.inDays } Tag um dein Passwort zurücksetzen.",
+        "Du hast ${ timeRemaining.inDays } Tage um dein Passwort zurücksetzen."
       ]
     },
     "session_recovery:available:link": {
@@ -12113,6 +12122,14 @@
       ],
       "Request password reset": [
         "Passwortzurücksetzung anfordern"
+      ]
+    },
+    "session_recovery:settings:info": {
+      "To disallow password reset, you must have a recovery method set up.": [
+        "Um das Zurücksetzen des Passworts zu verbieten, musst du eine Wiederherstellungsmethode einrichten."
+      ],
+      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
+        "Um die Sicherheit deines Kontos zu erhöhen und deine Daten zu schützen, kannst du über deine Kontoeinstellungen in der Webanwendung das Zurücksetzen deines Passworts anfordern."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -12555,9 +12572,6 @@
       ]
     },
     "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        "Füge öffentliche, externe oder geteilte Kalender über eine URL hinzu."
-      ],
       "Add public, external, or shared calendars.": [
         "Füge öffentliche, externe oder geteilte Kalender hinzu."
       ]
@@ -13761,6 +13775,9 @@
       ],
       "Password and keys": [
         "Passwort und Schlüssel"
+      ],
+      "Password reset settings": [
+        "Einstellungen zum Zurücksetzen des Passworts"
       ],
       "Pay invoice": [
         "Rechnung bezahlen"

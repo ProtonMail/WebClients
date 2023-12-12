@@ -1728,9 +1728,6 @@
       "Share calendar": [
         "Zdieľať kalendár"
       ],
-      "Share outside ${ BRAND_NAME }": [
-        "Zdieľať mimo ${ BRAND_NAME }"
-      ],
       "Share with ${ BRAND_NAME } users": [
         "Zdieľať s používateľmi ${ BRAND_NAME }"
       ],
@@ -6813,7 +6810,7 @@
         "Import veľkého množstva údajov môže trvať niekoľko dní."
       ],
       "Lean more about gateways": [
-        "Viac informácií o sieťových bránach"
+        "Zistiť viac o sieťových bránach"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Zistite, ako sa prihlásiť do ${ VPN_APP_NAME } pomocou aplikácií VPN tretích strán."
@@ -7383,7 +7380,7 @@
         "Správa ${ boldDataLocked } sa už nebude zobrazovať, no svoje údaje môžete stále odomknúť pomocou ${ encryptionAndKeysLink }."
       ],
       "The ${ MAIL_APP_NAME } Export Tool lets you export decrypted emails from your ${ MAIL_APP_NAME } account to your device. You can then view the messages or import them into another email account or email client.": [
-        "Exportný nástroj ${ MAIL_APP_NAME } umožňuje exportovať dešifrované emaily z vášho konta ${ MAIL_APP_NAME } do vášho zariadenia. Správy si potom môžete prezerať alebo importovať do iného emailového konta alebo emailového klienta."
+        "Exportný nástroj ${ MAIL_APP_NAME } umožňuje exportovať dešifrované emaily z vášho konta ${ MAIL_APP_NAME } do vášho zariadenia. Správy si môžete prezerať alebo ich importovať do iného emailového účtu, alebo emailového klienta."
       ],
       "The calendar will be removed from your account.": [
         "Kalendár bude odstránený z vášho účtu."
@@ -7901,18 +7898,6 @@
         "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu odstráňte odkazy na zdieľané kalendáre a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
         "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu odstráňte odkazy na zdieľané kalendáre a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendár. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy na zdieľaný kalendár.",
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendáre. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy na zdieľaný kalendár.",
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy na zdieľaný kalendár.",
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy na zdieľaný kalendár."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendár. Pred zrušením odberu odstráňte odkazy na zdieľaný kalendár.",
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendáre. Pred zrušením odberu odstráňte odkazy na zdieľaný kalendár.",
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu odstráňte odkazy na zdieľaný kalendár.",
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu odstráňte odkazy na zdieľaný kalendár."
-      ],
       "You can now access and manage the account as an administrator.": [
         "Teraz môžete pristupovať k účtu a spravovať ho ako správca."
       ],
@@ -8010,7 +7995,7 @@
         "Uzamknuté údaje nebudete môcť obnoviť pomocou stiahnutých súborov na obnovenie."
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
-        "Uzamknuté údaje nebudete môcť obnoviť pomocou súborov obnovy. Tým sa zakáže aj obnovenie z dôveryhodného zariadenia."
+        "Pomocou stiahnutých súborov na obnovu nebudete môcť obnoviť uzamknuté údaje. Tým sa zakáže aj obnovenie z dôveryhodného zariadenia."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Vaše prihlásenie zostane zachované aj po zatvorení prehliadača."
@@ -10500,9 +10485,6 @@
         "Servery v ${ vpnServersCountData.paid.countries }+ krajinách",
         "Servery v ${ vpnServersCountData.paid.countries }+ krajinách"
       ],
-      "Share calendar via link": [
-        "Zdieľanie kalendára cez odkaz"
-      ],
       "Share files and folders via link": [
         "Zdieľanie súborov a priečinkov cez odkaz"
       ],
@@ -10599,7 +10581,7 @@
         "Získajte neobmedzené množstvo aliasov so službou SimpleLogin od ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
-        "Odložte správy a pripomeňte si ich, keď chcete"
+        "Odložte správy a pripomeňte si ich, kedy chcete"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
@@ -10640,6 +10622,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Pokročilá sieťová bezpečnosť a správa prístupu s vyhradenými bezpečnými bránami"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Všetky ${ BRAND_NAME } aplikácie a ich prémiové funkcie"
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Použiteľné kredity, pomerná časť a kupóny sa použijú v ďalšom kroku"
@@ -10845,9 +10830,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Chráni pred hrozbou VPN súkromia tým, že internetovú prevádzku prenáša cez viacero serverov."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Svoje kalendáre zdieľajte jednoducho so svojimi kolegami, rodinou a priateľmi prostredníctvom odkazu"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Svoje kalendáre zdieľajte jednoducho s rodinou, priateľmi alebo kolegami"
@@ -12188,18 +12170,6 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Ak ste nepožiadali o obnovenie hesla, zrušte túto žiadosť teraz."
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } deň.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } dni.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } dní.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } dní."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodinu.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodiny.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodín.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodín."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Prejdite na prihlásené zariadenie (v relácii, kde bola žiadosť iniciovaná) a zmeňte heslo."
       ],
@@ -12402,6 +12372,11 @@
       ],
       "Request password reset": [
         "Žiadosť o obnovenie hesla"
+      ]
+    },
+    "session_recovery:settings:info": {
+      "To disallow password reset, you must have a recovery method set up.": [
+        "Ak chcete zakázať obnovenie hesla, musíte mať nastavený spôsob obnovenia."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -12851,7 +12826,7 @@
         "URL kalendára"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
-        "Na odber externého alebo verejného kalendára a jeho aktualizácií zadajte jeho URL adresu. Jeho verzia na čítanie bude pridaná do vašich Ostatných kalendárov.\n${ kbLink }"
+        "Ak sa chcete prihlásiť na odber externého alebo verejného kalendára a jeho aktualizácií, zadajte URL adresu. Verzia kalendára len na čítanie sa pridá do vašich Ostatných kalendárov.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -12860,9 +12835,6 @@
       ]
     },
     "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        "Pridať verejné, externé alebo zdieľané kalendáre pomocou URL adresy."
-      ],
       "Add public, external, or shared calendars.": [
         "Pridať verejné, externé alebo zdieľané kalendáre."
       ]

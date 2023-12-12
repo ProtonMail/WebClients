@@ -1557,9 +1557,6 @@
       "Share calendar": [
         "共享日历"
       ],
-      "Share outside ${ BRAND_NAME }": [
-        "与非 ${ BRAND_NAME } 用户共享"
-      ],
       "Share with ${ BRAND_NAME } users": [
         "与 ${ BRAND_NAME } 用户分享"
       ],
@@ -6891,12 +6888,6 @@
       "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "您最多可以保留 ${ MAX_CALENDARS_FREE } 个日历。在取消订阅之前，请删除共享日历链接以及您与之共享日历的所有 ${ BRAND_NAME } 用户。"
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "您最多可以保留 ${ MAX_CALENDARS_FREE } 个日历。请先删除共享日历链接，然后再取消 ${ MAIL_SHORT_APP_NAME } 订阅。"
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links before you cancel your subscription.": [
-        "您最多可以保留 ${ MAX_CALENDARS_FREE } 个日历。请在取消订阅之前删除共享日历链接。"
-      ],
       "You can now access and manage the account as an administrator.": [
         "作为机构管理员，您可以对账户执行管理操作。"
       ],
@@ -9163,9 +9154,6 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ countries": [
         "${ vpnServersCountData.paid.countries } 个国家/地区的服务器"
       ],
-      "Share calendar via link": [
-        "通过链接分享日历"
-      ],
       "Share files and folders via link": [
         "通过链接分享文件或文件夹"
       ],
@@ -9291,6 +9279,9 @@
       ],
       "* With 30-month subscription. Other subscription options available at checkout.": [
         "* 此为 30 个月付费价，结算时可选择其他计费方式。"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "所有 ${ BRAND_NAME } 应用及其高级功能"
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "可用余额、当前等级结余与优惠券将在下一步显示"
@@ -9463,9 +9454,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "通过多台服务器中转流量，增强 VPN 安全性."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "通过链接轻松与同事、亲友分享日程安排"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "为自有域名中所有尚未分配的地址揽收邮件，避免因发件方打错地址错过重要消息"
@@ -10471,12 +10459,6 @@
       "${ timeRemaining.inHours } hours": [
         "${ timeRemaining.inHours } 小时"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
-        "密码重置请求已获批准(${ user.Email })。您有${ timeRemaining.inDays } 天的时间来重置您的密码"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
-        "密码重置请求已获批准(${ user.Email })。您有${ timeRemaining.inHours } 小时的时间来重置您的密码"
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "请转到已登录的设备（在发起请求的会话中）更改您的密码。"
       ],
@@ -10619,6 +10601,11 @@
       ],
       "Request password reset": [
         "请求重置密码"
+      ]
+    },
+    "session_recovery:settings:info": {
+      "To disallow password reset, you must have a recovery method set up.": [
+        "要禁用密码重置，您必须设置恢复方法。"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -11012,9 +10999,6 @@
       ]
     },
     "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        "新增使用 URL公开、外部或共享的日历。"
-      ],
       "Add public, external, or shared calendars.": [
         "添加公共、外部或共享日历。"
       ]
