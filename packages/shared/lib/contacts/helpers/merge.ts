@@ -152,7 +152,7 @@ export const extractMergeable = (contacts: FormattedContact[] = []) => {
  * In the latter case, return the new value in the object
  * @dev  Normalize strings in all fields but EMAIL
  */
-export const extractNewValue = (
+const extractNewValue = (
     value: any,
     field: string,
     mergedValues: any[] = []
@@ -291,7 +291,12 @@ export const merge = (contacts: VCardContact[] = []): VCardContact => {
 
                     if (!mergedProperties[field]) {
                         // an unseen property is directly merged
-                        mergedContact.push({ ...property, params, group: newGroup });
+                        mergedContact.push({
+                            ...property,
+                            ...(params && { params }),
+                            ...(newGroup && { group: newGroup }),
+                        });
+
                         mergedProperties[field] = [value];
                         if (hasPref(field)) {
                             mergedPropertiesPrefs[field] = [getPref(params)];
