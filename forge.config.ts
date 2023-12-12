@@ -3,7 +3,7 @@ require("dotenv").config();
 import { AutoUnpackNativesPlugin } from "@electron-forge/plugin-auto-unpack-natives";
 import { WebpackPlugin } from "@electron-forge/plugin-webpack";
 import type { ForgeConfig } from "@electron-forge/shared-types";
-import { getExtraResource, getIco, getIcon, getName } from "./src/utils/config";
+import { getExtraResource, getIco, getIcon, getName, isBetaRelease } from "./src/utils/config";
 
 import { mainConfig } from "./webpack.main.config";
 import { rendererConfig } from "./webpack.renderer.config";
@@ -52,7 +52,7 @@ const config: ForgeConfig = {
                             x: 229,
                             y: 250,
                             type: "file",
-                            path: `${process.cwd()}/out/${name}-darwin-${currentArch}/${name}.app`,
+                            path: `${process.cwd()}/out/${getName()}-darwin-${currentArch}/${getName()}.app`,
                         },
                         { x: 429, y: 250, type: "link", path: "/Applications" },
                     ];

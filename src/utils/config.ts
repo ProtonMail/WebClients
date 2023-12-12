@@ -14,6 +14,8 @@ interface Config {
     url: URLConfig;
 }
 
+export const isBetaRelease = process.env.RELEASE === "beta";
+
 const localUrls = {
     account: "https://account.bessemer.proton.pink",
     mail: "https://mail.bessemer.proton.pink",
@@ -38,25 +40,22 @@ export const getConfig = (isPackaged: boolean) => {
 };
 
 export const getIco = () => {
-    if (process.env.RELEASE === "beta") {
+    if (isBetaRelease) {
         return "icon-beta.ico";
     }
     return "icon.ico";
 };
 
 export const getIcon = () => {
-    if (process.env.RELEASE === "beta") {
+    if (isBetaRelease) {
         return "icon-beta";
     }
     return "icon";
 };
 
 export const getName = () => {
-    if (process.env.RELEASE === "beta") {
+    if (isBetaRelease) {
         return "Proton Mail Beta";
-    }
-    if (process.env.RELEASE === "dev") {
-        return "Proton Mail Dev";
     }
     return "Proton Mail";
 };
