@@ -40,12 +40,15 @@ const pathnameToIndex = (tabs: SettingTab[], pathname: string) => {
 export const SettingsTabs: FC<RouteChildrenProps> = (props) => {
     const { navigate } = useNavigation();
     const pathname = props.location.hash?.substring(1, props.location.hash.length);
-    const base = props.match?.path!;
 
     const tabs = useMemo(getSettingsTabs, []);
     const [activeTab, setActiveTab] = useState<number>(pathnameToIndex(tabs, pathname));
 
-    const handleOnChange = (nextTab: number) => navigate(base, { hash: tabs[nextTab].pathname, mode: 'replace' });
+    const handleOnChange = (nextTab: number) => {
+        const settingsPath = props.match?.path;
+        if (settingsPath) navigate(settingsPath, { hash: tabs[nextTab].pathname, mode: 'replace' });
+    };
+
     useEffect(() => setActiveTab(pathnameToIndex(tabs, pathname)), [pathname]);
 
     return (
