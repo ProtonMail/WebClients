@@ -374,6 +374,9 @@
       "Download recovery file": [
         "回復用ファイルをダウンロード"
       ],
+      "Download the ${ MAIL_APP_NAME } Export Tool": [
+        "${ MAIL_APP_NAME } エクスポート ツールをダウンロード"
+      ],
       "Edit": [
         "編集"
       ],
@@ -1402,6 +1405,9 @@
       ]
     },
     "bf2023: renew": {
+      "the first ${ n } months": [
+        "${ n } か月"
+      ],
       "the first month": [
         "最初の月"
       ],
@@ -1629,9 +1635,6 @@
     "Calendar settings section title": {
       "Share calendar": [
         "カレンダーを共有する"
-      ],
-      "Share outside ${ BRAND_NAME }": [
-        "${ BRAND_NAME } 外に共有"
       ],
       "Share with ${ BRAND_NAME } users": [
         "${ BRAND_NAME } ユーザーに共有"
@@ -3303,6 +3306,9 @@
       "Add forwarding rule": [
         "転送ルールを追加"
       ],
+      "Back": [
+        "戻る"
+      ],
       "Cancel": [
         "キャンセル"
       ],
@@ -3318,6 +3324,9 @@
       "Edit conditions": [
         "編集条件"
       ],
+      "Next": [
+        "次へ"
+      ],
       "Re-send confirmation email": [
         "確認メールを再送する"
       ],
@@ -3326,6 +3335,9 @@
       ],
       "Request confirmation": [
         "確認のリクエスト"
+      ],
+      "Save": [
+        "保存"
       ],
       "Send confirmation email": [
         "確認メールを送信する"
@@ -5060,6 +5072,9 @@
       "Access": [
         "アクセス"
       ],
+      "Action": [
+        "操作"
+      ],
       "Actions": [
         "操作"
       ],
@@ -5176,6 +5191,12 @@
     "Header for table": {
       "Actions": [
         "操作"
+      ],
+      "Email address": [
+        "メールアドレス"
+      ],
+      "Token name": [
+        "トークン名"
       ]
     },
     "Header; Table with list of calendars arranged by type": {
@@ -7008,6 +7029,9 @@
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked }メッセージは表示されませんが、${ encryptionAndKeysLink }を利用してロックを解除できます。"
       ],
+      "The ${ MAIL_APP_NAME } Export Tool lets you export decrypted emails from your ${ MAIL_APP_NAME } account to your device. You can then view the messages or import them into another email account or email client.": [
+        "${ MAIL_APP_NAME } エクスポート ツールを使用すると、復号化されたメールを ${ MAIL_APP_NAME } アカウントからデバイスにエクスポートできます。 その後、メッセージを表示したり、別の電子メール アカウントまたは電子メール クライアントにインポートしたりできます。"
+      ],
       "The calendar will be removed from your account.": [
         "カレンダーはアカウントから削除されます。"
       ],
@@ -7500,12 +7524,6 @@
       "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "最大 ${ MAX_CALENDARS_FREE } 個までカレンダーを保持できます。サブスクリプションをキャンセルする前に、共有カレンダーリンクとあなたのカレンダーを共有した ${ BRAND_NAME } のユーザーを削除してください。"
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "カレンダーを最大 ${ MAX_CALENDARS_FREE } 個まで保持できます。あなたの ${ MAIL_SHORT_APP_NAME } サブスクリプションをキャンセルする前に、共有カレンダーリンクを削除してください。"
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links before you cancel your subscription.": [
-        "カレンダーを最大 ${ MAX_CALENDARS_FREE } 個まで保持できます。サブスクリプションをキャンセルする前に、共有カレンダーリンクを削除してください。"
-      ],
       "You can now access and manage the account as an administrator.": [
         "管理者としてのアカウントでアクセスし管理することが可能です。"
       ],
@@ -7821,6 +7839,9 @@
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
         "同じ暗号化アルゴリズムを持つ鍵が、このアドレスに対してすでにアクティブです。別の鍵を生成すると、アカウントの読み込みが遅くなり、この鍵を削除すると問題が発生する可能性があります。古い鍵が侵害されために新しい鍵を生成している場合は、侵害された鍵をマークしてください。続行しますか?"
       ],
+      "Generate key": [
+        "キーの生成"
+      ],
       "Key with fingerprint ${ fp } successfully created.": [
         "フィンガープリント ${ fp } の鍵が正常に作成されました。"
       ],
@@ -7835,8 +7856,23 @@
       ]
     },
     "Key state badge": {
+      "Active": [
+        "アクティブ"
+      ],
+      "Disabled": [
+        "無効"
+      ],
       "Forwarding": [
         "転送"
+      ],
+      "Inactive": [
+        "非アクティブ"
+      ],
+      "Obsolete": [
+        "廃止"
+      ],
+      "Primary": [
+        "プライマリー"
       ]
     },
     "Key type option": {
@@ -8058,6 +8094,9 @@
       ],
       "Mark not obsolete": [
         "廃止された印をはずす"
+      ],
+      "Mark obsolete": [
+        "廃止のマークを付ける"
       ]
     },
     "Knowledge base link label": {
@@ -9068,6 +9107,16 @@
         "最大化"
       ]
     },
+    "Label to change density": {
+      "Compact": [
+        "コンパクト"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "カラム"
+      ]
+    },
     "Label, credit card": {
       "ZIP code": [
         "郵便番号"
@@ -9919,9 +9968,6 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ countries": [
         "${ vpnServersCountData.paid.countries }+ か国のサーバー"
       ],
-      "Share calendar via link": [
-        "リンクでカレンダーを共有"
-      ],
       "Share files and folders via link": [
         "リンクでファイルやフォルダーを共有"
       ],
@@ -10053,6 +10099,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "専用セキュアゲートウェイによる高度なネットワークセキュリティとアクセス管理"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "すべての ${ BRAND_NAME } アプリとそのプレミアム機能"
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "適用されるクレジット、比例配分、クーポンは次のステップで適用される。"
@@ -10252,9 +10301,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "複数のサーバーを経由してインターネットトラフィックを送受信することで、VPNプライバシー上の脅威からあなたを保護します。"
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "同僚、家族、友人とカレンダーをリンクで簡単に共有できます。"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "家族、友人、同僚とカレンダーを簡単に共有できます。"
@@ -10748,8 +10794,14 @@
       "No parent folder": [
         "親フォルダーなし"
       ],
+      "Normal": [
+        "標準"
+      ],
       "On": [
         "オン"
+      ],
+      "Permanent": [
+        "永続"
       ],
       "Plain text": [
         "プレーンテキスト"
@@ -11265,8 +11317,14 @@
       ]
     },
     "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "${ contactHref } 営業チームまでお問い合わせください。"
+      ],
       "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
         "プランに含める IP の数を選択します。 追加の IP ごとに ${ price } の費用がかかります。"
+      ],
+      "Should you need more than ${ maxIPs } IPs, ": [
+        "${ maxIPs } を超える IP が必要な場合は、 "
       ]
     },
     "plan customizer, users": {
@@ -11538,12 +11596,6 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "パスワードのリセットを要求していない場合、要求をキャンセルしてください。"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
-        "パスワードリセットリクエストが承認されました(${ user.Email })。パスワードをリセットできるのはあと${ timeRemaining.inDays }日です。"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
-        "パスワードリセットのリクエストが承認されました(${ user.Email })。パスワードをリセットできる時間は残り${ timeRemaining.inHours }時間あります。"
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "サインインしているデバイス (パスワード変更の要求がされたデバイス)に移動して、パスワードを変更してください。"
       ],
@@ -11730,6 +11782,11 @@
         "パスワードリセットを要求する"
       ]
     },
+    "session_recovery:settings:info": {
+      "To disallow password reset, you must have a recovery method set up.": [
+        "パスワードリセットを禁止するには、復旧方法を設定する必要があります"
+      ]
+    },
     "session_recovery:sign_out:action": {
       "Sign out": [
         "サインアウト"
@@ -11813,6 +11870,11 @@
       ],
       "Name": [
         "名前"
+      ]
+    },
+    "Settings/labels": {
+      "Labels/Folders": [
+        "ラベル/フォルダー"
       ]
     },
     "Settings/labels - table": {
@@ -12151,9 +12213,6 @@
       ]
     },
     "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        "URL を使用して公開、外部、共有カレンダーを追加できます。"
-      ],
       "Add public, external, or shared calendars.": [
         "公開、外部、共有カレンダーを追加できます。"
       ]
@@ -12700,6 +12759,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ MAIL_APP_NAME } Export Tool": [
+        "${ MAIL_APP_NAME } エクスポート ツール"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } のキーボードショートカット"

@@ -5300,7 +5300,7 @@
         "Získajte neobmedzené množstvo aliasov so službou SimpleLogin od ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
-        "Odložte správy a pripomeňte si ich, keď chcete"
+        "Odložte správy a pripomeňte si ich, kedy chcete"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
@@ -5843,18 +5843,6 @@
         "${ timeRemaining.inHours } hodiny",
         "${ timeRemaining.inHours } hodín",
         "${ timeRemaining.inHours } hodín"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } deň.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } dni.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } dní.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } dní."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodinu.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodiny.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodín.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodín."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Prejdite na prihlásené zariadenie (v relácii, kde bola žiadosť iniciovaná) a zmeňte heslo."

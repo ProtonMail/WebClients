@@ -849,6 +849,9 @@
       "Skip verification": [
         "Пропустити перевірку"
       ],
+      "Sort": [
+        "Сортувати"
+      ],
       "Spam": [
         "Спам"
       ],
@@ -1222,6 +1225,9 @@
       ]
     },
     "bf2023: Action": {
+      "Close": [
+        "Закрити"
+      ],
       "Remove ${ PASS_APP_NAME }": [
         "Вилучити ${ PASS_APP_NAME }"
       ]
@@ -1230,11 +1236,19 @@
       "${ storageSize } storage": [
         "${ storageSize } сховища"
       ],
+      "3 TB": [
+        "3 ТБ"
+      ],
       "6 users": [
         "6 користувачів"
       ],
       "Premium Password Manager": [
         "Premium Менеджер паролів"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Знижки відносно стандартної місячної ціни."
       ]
     },
     "bf2023: Offers": {
@@ -1423,9 +1437,6 @@
       ]
     },
     "Calendar settings section title": {
-      "Share outside ${ BRAND_NAME }": [
-        "Поділитися за межами ${ BRAND_NAME }"
-      ],
       "Share with ${ BRAND_NAME } users": [
         "Поділитися з користувачами ${ BRAND_NAME }"
       ],
@@ -3079,6 +3090,32 @@
         "Лист із підтвердженням надіслано на ${ address }"
       ]
     },
+    "email_forwarding_2023: Action": {
+      "Accept": [
+        "Схвалити"
+      ],
+      "Back": [
+        "Назад"
+      ],
+      "Cancel": [
+        "Скасувати"
+      ],
+      "Delete": [
+        "Видалити"
+      ],
+      "Next": [
+        "Далі"
+      ],
+      "Pause": [
+        "Призупинити"
+      ],
+      "Resume": [
+        "Продовжити"
+      ],
+      "Save": [
+        "Зберегти"
+      ]
+    },
     "email_forwarding_2023: Info": {
       "You can safely close this tab.": [
         "Тепер ви можете закрити цю вкладку."
@@ -3104,6 +3141,14 @@
       ],
       "Type text or keyword": [
         "Введіть текст чи ключове слово"
+      ]
+    },
+    "email_forwarding_2023: Status": {
+      "Active": [
+        "Активно"
+      ],
+      "Paused": [
+        "Зупинено"
       ]
     },
     "email_forwarding_2023: Title": {
@@ -4694,6 +4739,9 @@
       "Key type": [
         "Тип ключа"
       ],
+      "Label": [
+        "Мітка"
+      ],
       "Location": [
         "Розташування"
       ],
@@ -4726,6 +4774,9 @@
       ],
       "Time": [
         "Час"
+      ],
+      "User": [
+        "Користувач"
       ]
     },
     "Header for addresses table": {
@@ -4760,6 +4811,11 @@
       ],
       "Value / Data / Points to": [
         "Значення / Дані / Вказувати на"
+      ]
+    },
+    "Header; Table with list of calendars arranged by type": {
+      "Other": [
+        "Інше"
       ]
     },
     "Heading in trial plan": {
@@ -7151,18 +7207,6 @@
         "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
         "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календар. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі.",
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарі. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі.",
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі.",
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календар. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі.",
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарі. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі.",
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі.",
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі."
-      ],
       "You can now access and manage the account as an administrator.": [
         "Тепер ви можете отримати доступ і керувати обліковим записом як адміністратор."
       ],
@@ -8151,6 +8195,9 @@
       "Import to:": [
         "Імпортувати до:"
       ],
+      "Inbox": [
+        "Вхідні"
+      ],
       "Inherit color from parent folder": [
         "Успадкувати колір теки вищого рівня"
       ],
@@ -8619,6 +8666,16 @@
       ],
       "Expired": [
         "Протерміновано"
+      ]
+    },
+    "Label to  inform a feature is only available on Beta": {
+      "Beta": [
+        "Бета"
+      ]
+    },
+    "Label to change view layout": {
+      "Row": [
+        "Рядок"
       ]
     },
     "Label, credit card": {
@@ -9548,9 +9605,6 @@
         "Сервери в ${ vpnServersCountData.paid.countries }+ країнах",
         "Сервери в ${ vpnServersCountData.paid.countries }+ країнах"
       ],
-      "Share calendar via link": [
-        "Діліться календарем за посиланням"
-      ],
       "Share files and folders via link": [
         "Діліться файлами й теками через посилання"
       ],
@@ -9676,6 +9730,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Розширена мережева безпека та управління доступом за допомогою спеціальних захищених мережевих шлюзів"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Всі програми від ${ BRAND_NAME } з преміумфункціями"
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Чинні кредити, розподілення та купони можна застосувати в наступному кроці"
@@ -9869,9 +9926,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Захищає від загроз приватності VPN, спрямовуючи ваш інтернет-трафік через різні сервери."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Легко діліться календарями за посиланням зі своїми колегами, сім'єю та друзями"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Легко діліться календарями з родиною, друзями чи колегами"
@@ -11129,6 +11183,11 @@
         "Подано запит на скидання пароля"
       ]
     },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Зрозуміло"
+      ]
+    },
     "session_recovery:sign_out:action": {
       "Sign out": [
         "Вийти"
@@ -11167,6 +11226,14 @@
     "Settings update growler warning": {
       "Failed to update settings": [
         "Не вдалося оновити налаштування"
+      ]
+    },
+    "Settings/filters - table": {
+      "Name": [
+        "Назва"
+      ],
+      "Order": [
+        "Порядок"
       ]
     },
     "Share calendar assistive text": {
@@ -11495,9 +11562,6 @@
       ]
     },
     "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        "Додайте загальнодоступні, зовнішні чи спільні календарі за URL-адресою."
-      ],
       "Add public, external, or shared calendars.": [
         "Додайте загальнодоступні, зовнішні чи спільні календарі."
       ]

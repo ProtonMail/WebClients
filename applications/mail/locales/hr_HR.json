@@ -355,7 +355,7 @@
         "Prilagodi prozoru"
       ],
       "Font": [
-        "Vrsta slova"
+        "Font"
       ],
       "Forward as attachment": [
         "Proslijedi kao privitak"
@@ -422,6 +422,9 @@
       ],
       "Import from .csv or vCard": [
         "Uvezite iz .csv ili vCard"
+      ],
+      "Import from Outlook": [
+        "Uvoz iz Outlooka"
       ],
       "Inline": [
         "U ravnini s tekstom"
@@ -652,6 +655,9 @@
       ],
       "Re-sign": [
         "Ponovna prijava"
+      ],
+      "Read message": [
+        "Pročitaj poruku"
       ],
       "Read receipt sent": [
         "Poslana potvrda o čitanju"
@@ -952,6 +958,9 @@
       "View rendered HTML": [
         "Prikaz učitanog HTML-a"
       ],
+      "Why not?": [
+        "Zašto ne?"
+      ],
       "Yes": [
         "Da"
       ],
@@ -1096,6 +1105,12 @@
       ],
       "6 users": [
         "6 korisnika"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bf2023: Offers": {
@@ -1183,6 +1198,9 @@
       ]
     },
     "Calendar invite info": {
+      "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } je prihvatio poziv i predložio novo vrijeme za jedno ponavljanje ovog događaja."
+      ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } je prihvatio vašu pozivnicu i predložio novo vrijeme za jedno ponavljanje ovog događaja."
       ],
@@ -1204,6 +1222,9 @@
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } je zatražio najnovija ažuriranja događaja koji više ne postoji u vašem kalendaru."
       ],
+      "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
+        "${ participantName } je odbio pozivi predložio novo vrijeme za jedno ponavljanje ovog događaja."
+      ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } je odbio vašu pozivnicu i predložio novo vrijeme za jedno ponavljanje ovog događaja."
       ],
@@ -1216,11 +1237,20 @@
       "${ participantName } declined your invitation.": [
         "${ participantName } je odbio vašu pozivnicu."
       ],
+      "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } je prihvatio poziv i predložio novo vrijeme za ovaj događaj. Odgovor i prijedlog su zastarjeli."
+      ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } je prihvatio vašu pozivnicu i predložio novo vrijeme za jedno ponavljanje ovog događaja. Odgovor i prijedlog su zastarjeli."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for this event. Answer and proposal are out of date.": [
         "${ participantName } je prihvatio vašu pozivnicu i predložio novo vrijeme za ovaj događaj. Odgovor i prijedlog su zastarjeli."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } je odbio poziv i predložio novo vrijeme za jedno ponavljanje ovog događaja. Odgovor i prijedlog su zastarjeli."
+      ],
+      "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } je odbio pozivnicu i predložio novo vrijeme za ovaj događaj. Odgovor i prijedlog su zastarjeli."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } je odbio vašu pozivnicu i predložio novo vrijeme za jedno ponavljanje ovog događaja. Odgovor i prijedlog su zastarjeli."
@@ -1264,6 +1294,15 @@
       "${ participantName } had proposed a new time for this event. This proposal is out of date. You have no calendars.": [
         "${ participantName } je predložio novo vrijeme za ovaj događaj. Ovaj je prijedlog zastario. Nemate kalendara."
       ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
+        "${ participantName } jje privremeno prihvatio poziv i predložio novo vrijeme za jedno ponavljanje ovog događaja. Odgovor i prijedlog su zastarjeli."
+      ],
+      "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
+        "${ participantName } je oprezno prihvatio poziv i predložio novo vrijeme za ovaj događaj. Odgovor i prijedlog su zastarjeli."
+      ],
+      "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
+        "${ participantName } je oprezno prihvatio poziv za jedno ponavljanje ovog događaja."
+      ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } je uvjetno prihvatio vašu pozivnicu i predložio novo vrijeme za jedno ponavljanje ovog događaja. Odgovor i prijedlog su zastarjeli."
       ],
@@ -1275,6 +1314,9 @@
       ],
       "${ participantName } proposed a new time for this event.": [
         "${ participantName } je predložio novo vrijeme za ovaj događaj."
+      ],
+      "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
+        "${ participantName } je uvjetno prihvatio poziv i predložio novo vrijeme za ovaj događaj."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } je uvjetno prihvatio vašu pozivnicu i predložio novo vrijeme za jedno ponavljanje ovog događaja."
@@ -1296,6 +1338,9 @@
       ],
       "This invitation is out of date. The event has been updated.": [
         "Ova pozivnica je zastarjela. Događaj je ažuriran."
+      ],
+      "This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Novi vremenski prijedlog se ne podudara s detaljima vaše pozivnice. Provjerite detalje pozivnice u kalendaru."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "Ovaj se odgovor ne podudara s detaljima vaše pozivnice. Provjerite detalje pozivnice u kalendaru."
@@ -1320,6 +1365,9 @@
       ]
     },
     "Collapsible tooltip": {
+      "Collapse": [
+        "Minimiziraj"
+      ],
       "Expand": [
         "Proširi"
       ]
@@ -2301,6 +2349,9 @@
       "Trinidad and Tobago": [
         "Trinidad i Tobago"
       ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
       "Tunisia": [
         "Tunis"
       ],
@@ -2744,6 +2795,9 @@
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Neki nazivi vaših mapa nisu dostupni. Prilagodite uvoz da biste uredili te nazive."
       ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Neki od vaših naziva mapa premašuju ${ MAIL_APP_NAME }ovo maksimalno ograničenje broja znakova. Prilagodite uvoz da biste uredili te nazive."
+      ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Neki nazivi vaših oznaka nisu dostupni. Prilagodite uvoz da biste uredili te nazive."
       ],
@@ -2797,6 +2851,9 @@
       "This message has already been sent": [
         "Ova poruka je već poslana."
       ],
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Ova poruka može sadržavati URL poveznice koje trenutačni preglednik ne može ispravno otvoriti."
+      ],
       "Trusted keys are not valid for sending": [
         "Pouzdani ključevi nisu valjani za slanje"
       ],
@@ -2836,6 +2893,9 @@
     "Error importing calendar": {
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Maksimalna veličina datoteke je ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Samo datoteke ICS formata su dopuštene."
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Došlo je do pogreške prilikom učitavanja vaše datoteke. Nije odabrana nijedna datoteka."
@@ -3036,6 +3096,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "Do 6 korisnika"
       ]
@@ -3220,6 +3289,9 @@
     "Font face option": {
       "System default": [
         "Zadani sustav"
+      ],
+      "Theme font": [
+        "Font teme"
       ]
     },
     "Font Size Default": {
@@ -3256,6 +3328,15 @@
       ]
     },
     "Get started checklist instructions": {
+      "${ MAIL_APP_NAME } app": [
+        "${ MAIL_APP_NAME } aplikacija"
+      ],
+      "${ MAIL_APP_NAME } on App Store": [
+        "${ MAIL_APP_NAME } na App Storeu"
+      ],
+      "${ MAIL_APP_NAME } on Play Store": [
+        "${ MAIL_APP_NAME } na Play Storeu"
+      ],
       "Close": [
         "Zatvori"
       ],
@@ -3472,6 +3553,11 @@
         "Stvaranje kalendarskog događaja nije uspjelo"
       ]
     },
+    "Import instructions": {
+      "Go to ${ boldAccountSecurity }.": [
+        "Idi na ${ boldAccountSecurity }"
+      ]
+    },
     "Import instructions emphasis": {
       "Account info": [
         "Informacije o računu"
@@ -3495,6 +3581,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Uvoz iz ${ provider }a"
+      ],
       "Other": [
         "Ostalo"
       ]
@@ -4203,6 +4292,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Da biste koristili Potvrdu adresa, morate se pouzdati u jedan ili više dostupnih javnih ključeva, uključujući ključ koji koristite za slanje. Time se sprječava lažiranje ključeva za šifriranje."
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "Sutra, ${ formattedTime }"
+      ],
       "Unsaved changes": [
         "Nespremljene promjene"
       ],
@@ -4831,6 +4923,9 @@
       ],
       "Password hint": [
         "Podsjetnik za lozinku"
+      ],
+      "PGP scheme": [
+        "PGP sustav"
       ],
       "Phone number": [
         "Broj telefona"
@@ -5917,8 +6012,22 @@
       "Highest VPN speed": [
         "Najviša VPN brzina"
       ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Secure streaming": [
         "Siguran streaming"
+      ]
+    },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Ovaj se pretplatnički odnos automatski obnavlja svake dvije godine po istoj cijeni dok se ne otkaže."
       ]
     },
     "specialoffer: Link": {
@@ -5946,6 +6055,18 @@
       ],
       "30 months": [
         "30 mjeseci"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Naplaćeno ${ amount } za 12 mjeseci"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Naplaćeno ${ amount } za 15 mjeseci"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Naplaćeno ${ amount } za 24 mjeseca"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Naplaćeno ${ amount } za 30 mjeseci"
       ],
       "Get the deal": [
         "Ugrabite ponudu"
@@ -6124,6 +6245,9 @@
       "Message added to ${ labelName }.": [
         "Poruka dodana u ${ labelName }."
       ],
+      "Message content search enabled": [
+        "Aktivirano je pretraživanje sadržaja poruka"
+      ],
       "Message deleted": [
         "Poruka izbrisana"
       ],
@@ -6185,6 +6309,14 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Povratna informacija je poslana"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Table header": {
@@ -6327,6 +6459,9 @@
       "Blind Carbon Copy": [
         "Slijepa indigo kopija"
       ],
+      "Block sender": [
+        "Blokiraj pošiljatelja"
+      ],
       "Carbon Copy": [
         "Indigo kopija"
       ],
@@ -6468,6 +6603,9 @@
       ],
       "Import contacts": [
         "Uvezi kontakte"
+      ],
+      "Import failed": [
+        "Neuspješan uvoz"
       ],
       "Insert contacts": [
         "Unesi kontakte"
@@ -6741,6 +6879,11 @@
       ],
       "You do not have any contacts to export": [
         "Nemate kontakata za izvoz"
+      ]
+    },
+    "Update font modal": {
+      "Update default font and size": [
+        "Ažuriraj zadani font i veličinu."
       ]
     },
     "Validation": {

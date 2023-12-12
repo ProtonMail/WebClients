@@ -4279,11 +4279,6 @@
         "Ver apenas"
       ]
     },
-    "Info; calendar sharing pop-up": {
-      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
-        "Convide outras pessoas com uma conta ${ BRAND_NAME } para visualizar ou editar os eventos no seu calendário."
-      ]
-    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "Alguns dos seus calendários não mostrarão os detalhes dos eventos criados anteriormente."
@@ -5634,14 +5629,6 @@
         "${ timeRemaining.inHours } hora",
         "${ timeRemaining.inHours } horas"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Pedido de reposição de palavra-passe aprovado (${ user.Email }). Tem ${ timeRemaining.inDays } dia para repor a sua palavra-passe.",
-        "Pedido de reposição de palavra-passe aprovado (${ user.Email }). Tem ${ timeRemaining.inDays } dias para repor a sua palavra-passe."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Pedido de reposição de palavra-passe aprovado (${ user.Email }). Tem ${ timeRemaining.inHours } hora para repor a sua palavra-passe.",
-        "Pedido de reposição de palavra-passe aprovado (${ user.Email }). Tem ${ timeRemaining.inHours } horas para repor a sua palavra-passe."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Por favor, vá ao dispositivo com sessão iniciada (na sessão onde o pedido foi iniciado) para mudar a sua palavra-passe."
       ],
@@ -6719,11 +6706,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Escolha um número"
-      ]
-    },
-    "Title; calendar sharing pop-up": {
-      "Planning just got easier!": [
-        "O planeamento tornou-se mais fácil!"
       ]
     },
     "Title; create calendar modal": {

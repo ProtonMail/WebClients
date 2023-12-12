@@ -3897,18 +3897,6 @@
         "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
         "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
-        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
-        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
-        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску.",
-        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску.",
-        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску.",
-        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску."
-      ],
       "You can now access and manage the account as an administrator.": [
         "Цяпер вы можаце атрымаць доступ да ўліковага запісу ў якасці адміністратара."
       ],
@@ -5109,9 +5097,6 @@
         "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краінах",
         "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краінах"
       ],
-      "Share calendar via link": [
-        "Абагуліць каляндар праз спасылку"
-      ],
       "Share files and folders via link": [
         "Абагуленне файлаў і папак праз спасылкі"
       ],
@@ -5235,11 +5220,17 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "Пашыраная бяспека сеткі і кіраванне доступам з дапамогай вылучаных шлюзоў"
       ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Усе праграмы ${ BRAND_NAME } і іх прэміяльныя функцыі"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Падыходзячыя крэдыты, рэшта на рахунку і купоны будуць ужыты на наступным кроку"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Комплексная прыватнасць і бяспека ў спалучэнні з усімі сэрвісамі ${ BRAND_NAME }."
+      ],
+      "Early access to new apps and features": [
+        "Ранні доступ да новых праграм і функцый"
       ],
       "For next-level password management and identity protection.": [
         "Для больш высокага ўзроўню кіравання паролямі і абароны асабістых даных."
@@ -5406,9 +5397,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Абараняе прыватнасць VPN ад пагроз, перадаючы ваш трафік праз некалькі сервераў."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Без намаганняў абагульвайце свае календары праз спасылку з сям'ёй, сябрамі або калегамі"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Лёгка дзяліцеся вашымі календарамі з сям'ёй, сябрамі або калегамі"
@@ -6054,18 +6042,6 @@
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Скасуйце запыт, калі вы не запытвалі скіданне пароля."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inDays } дзень, каб скінуць свой пароль.",
-        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inDays } дні, каб скінуць свой пароль.",
-        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inDays } дзён, каб скінуць свой пароль.",
-        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inDays } дзён, каб скінуць свой пароль."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inHours } гадзіна, каб скінуць свой пароль.",
-        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inHours } гадзіны, каб скінуць свой пароль.",
-        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль.",
-        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Перайдзіце на прыладу, якая знаходзіцца ў сістэме (з якой быў ініцыяваны запыт), каб змяніць пароль."
