@@ -49,6 +49,7 @@ export const OnChainFeesSelector = ({ txBuilder, updateTxBuilder }: Props) => {
     const feeRate = txBuilder.get_fee_rate() ?? 1;
 
     const strFeeRate = feeRate.toFixed(2);
+    const estimatedConfirmationTime = blockTarget * 10;
 
     return (
         <>
@@ -82,9 +83,8 @@ export const OnChainFeesSelector = ({ txBuilder, updateTxBuilder }: Props) => {
                                             feeRate
                                         )}
                                     </span>
-                                    <span className="block color-hint">{c('Wallet Send').t`Confirmation in ~${
-                                        blockTarget * 10
-                                    } minutes expected`}</span>
+                                    <span className="block color-hint">{c('Wallet Send')
+                                        .t`Confirmation in ~${estimatedConfirmationTime} minutes expected`}</span>
                                 </div>
                             ) : (
                                 <CircleLoader size="small" />
