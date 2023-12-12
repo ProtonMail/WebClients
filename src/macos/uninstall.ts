@@ -20,6 +20,6 @@ export const moveUninstaller = () => {
     const file = join(process.resourcesPath, "Uninstall Proton Mail.app");
     if (file) {
         log.info("Uninstaller present, copy to Applications folder");
-        exec(`mv -f "${file}" /Applications`);
+        exec(`cp -r "${file}" /Applications`);
     }
 };
