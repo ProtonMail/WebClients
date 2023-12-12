@@ -646,6 +646,9 @@
       ]
     },
     "bf2023: Action": {
+      "Close": [
+        "Закрити"
+      ],
       "Remove ${ PASS_APP_NAME }": [
         "Вилучити ${ PASS_APP_NAME }"
       ]
@@ -654,11 +657,19 @@
       "${ storageSize } storage": [
         "${ storageSize } сховища"
       ],
+      "3 TB": [
+        "3 ТБ"
+      ],
       "6 users": [
         "6 користувачів"
       ],
       "Premium Password Manager": [
         "Premium Менеджер паролів"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Знижки відносно стандартної місячної ціни."
       ]
     },
     "bf2023: Offers": {
@@ -3653,18 +3664,6 @@
         "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями.",
         "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі та будь-яких користувачів ${ BRAND_NAME }, з якими ви поділилися своїми календарями."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календар. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі.",
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарі. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі.",
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі.",
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати свою передплату ${ MAIL_SHORT_APP_NAME }, вилучіть посилання на спільні календарі."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календар. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі.",
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарі. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі.",
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі.",
-        "Ви можете мати максимум ${ MAX_CALENDARS_FREE } календарів. Перш ніж скасувати передплату, вилучіть посилання на спільні календарі."
-      ],
       "You can now access and manage the account as an administrator.": [
         "Тепер ви можете отримати доступ і керувати обліковим записом як адміністратор."
       ],
@@ -4815,9 +4814,6 @@
         "Сервери в ${ vpnServersCountData.paid.countries }+ країнах",
         "Сервери в ${ vpnServersCountData.paid.countries }+ країнах"
       ],
-      "Share calendar via link": [
-        "Діліться календарем за посиланням"
-      ],
       "Share files and folders via link": [
         "Діліться файлами й теками через посилання"
       ],
@@ -4928,6 +4924,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Розширена мережева безпека та управління доступом за допомогою спеціальних захищених мережевих шлюзів"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Всі програми від ${ BRAND_NAME } з преміумфункціями"
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Чинні кредити, розподілення та купони можна застосувати в наступному кроці"
@@ -5088,9 +5087,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Захищає від загроз приватності VPN, спрямовуючи ваш інтернет-трафік через різні сервери."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Легко діліться календарями за посиланням зі своїми колегами, сім'єю та друзями"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Легко діліться календарями з родиною, друзями чи колегами"
@@ -5735,6 +5731,11 @@
     "session_recovery:in_progress:title": {
       "Password reset requested": [
         "Подано запит на скидання пароля"
+      ]
+    },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Зрозуміло"
       ]
     },
     "session_recovery:sign_out:action": {

@@ -3897,18 +3897,6 @@
         "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarzy. Zanim anulujesz subskrypcję, usuń linki kalendarza oraz wszystkich użytkowników ${ BRAND_NAME }, którym udostępniasz kalendarze.",
         "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarzy. Zanim anulujesz subskrypcję, usuń linki kalendarza oraz wszystkich użytkowników ${ BRAND_NAME }, którym udostępniasz kalendarze."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarza. Usuń linki kalendarza, zanim anulujesz subskrypcję ${ MAIL_SHORT_APP_NAME }.",
-        "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarzy. Usuń linki kalendarza, zanim anulujesz subskrypcję ${ MAIL_SHORT_APP_NAME }.",
-        "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarzy. Usuń linki kalendarza, zanim anulujesz subskrypcję ${ MAIL_SHORT_APP_NAME }.",
-        "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarzy. Usuń linki kalendarza, zanim anulujesz subskrypcję ${ MAIL_SHORT_APP_NAME }."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarza. Usuń linki kalendarza, zanim anulujesz subskrypcję.",
-        "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarzy. Usuń linki kalendarza, zanim anulujesz subskrypcję.",
-        "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarzy. Usuń linki kalendarza, zanim anulujesz subskrypcję.",
-        "Możesz posiadać do ${ MAX_CALENDARS_FREE } kalendarzy. Usuń linki kalendarza, zanim anulujesz subskrypcję."
-      ],
       "You can now access and manage the account as an administrator.": [
         "Możesz zarządzać kontem jako administrator."
       ],
@@ -5109,9 +5097,6 @@
         "Serwery w ponad ${ vpnServersCountData.paid.countries } krajach",
         "Serwery w ponad ${ vpnServersCountData.paid.countries } krajach"
       ],
-      "Share calendar via link": [
-        "Udostępnij kalendarz przez link"
-      ],
       "Share files and folders via link": [
         "Udostępniaj pliki i foldery za pomocą linku"
       ],
@@ -5235,11 +5220,17 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "Zaawansowane bezpieczeństwo sieci i zarządzanie dostępem za pomocą dedykowanych bram"
       ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Wszystkie aplikacje ${ BRAND_NAME } i ich funkcje premium"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Środki, dzielenie proporcjonalne i kupony zostaną zastosowane w następnym kroku"
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Wszechstronna ochrona prywatności i bezpieczeństwo dzięki połączeniu wszystkich usług ${ BRAND_NAME }."
+      ],
+      "Early access to new apps and features": [
+        "Wcześniejszy dostęp do nowych aplikacji i funkcji"
       ],
       "For next-level password management and identity protection.": [
         "Zarządzanie hasłami i ochrona tożsamości na najwyższym poziomie."
@@ -5406,9 +5397,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Chroni przed zagrożeniem prywatności VPN, przekierowując ruch internetowy przez wiele serwerów."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Udostępnij swoje kalendarze za pomocą linku współpracownikom, rodzinie i znajomym"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Udostępnij swoje kalendarze rodzinie, znajomym i współpracownikom"
@@ -6055,17 +6043,8 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Jeśli żądanie zmiany hasła nie zostało wysłane przez Ciebie, anuluj je."
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inDays } dzień na zresetowanie hasła.",
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inDays } dnia na zresetowanie hasła."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inHours } godzinę na zresetowanie hasła.",
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła.",
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inHours } godzin na zresetowanie hasła.",
-        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone. Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła."
+      "Password reset request approved (${ user.Email }).": [
+        "Żądanie zresetowania hasła konta ${ user.Email } zostało zatwierdzone."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Przejdź do zalogowanego urządzenia, na którym zainicjowano żądanie zmiany hasła."
@@ -6082,14 +6061,44 @@
         "Uprawnienie wygaśnie za ${ timeRemaining.inHours } godzin",
         "Uprawnienie wygaśnie za ${ timeRemaining.inHours } godziny"
       ],
+      "This permission expires soon": [
+        "Uprawnienie wkrótce wygaśnie"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Możesz zmienić hasło do konta ${ boldEmail } przez ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Możesz zmienić hasło konta ${ boldEmail }."
       ],
       "You can now reset your password": [
         "Możesz zresetować hasło"
       ],
       "You can reset your password until ${ boldDate }.": [
         "Możesz zresetować hasło do ${ boldDate }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Masz ${ timeRemaining.inDays } dzień na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inDays } dni na zresetowanie hasła.",
+        "Masz ${ timeRemaining.inDays } dnia na zresetowanie hasła."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Masz ${ timeRemaining.inHours } godzinę na zresetowanie hasła.",
+        " Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła.",
+        " Masz ${ timeRemaining.inHours } godzin na zresetowanie hasła.",
+        " Masz ${ timeRemaining.inHours } godziny na zresetowanie hasła."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Masz ${ timeRemaining.inMinutes } minutę na zresetowanie hasła.",
+        " Masz ${ timeRemaining.inMinutes } minuty na zresetowanie hasła.",
+        " Masz ${ timeRemaining.inMinutes } minut na zresetowanie hasła.",
+        " Masz ${ timeRemaining.inMinutes } minuty na zresetowanie hasła."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Masz ${ timeRemaining.inSeconds } sekundę na zresetowanie hasła.",
+        " Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła.",
+        " Masz ${ timeRemaining.inSeconds } sekund na zresetowanie hasła.",
+        " Masz ${ timeRemaining.inSeconds } sekundy na zresetowanie hasła."
       ]
     },
     "session_recovery:available:link": {
@@ -6397,7 +6406,7 @@
         "${ VPN_SHORT_APP_NAME } w wersji premium"
       ],
       "Premium early access": [
-        "Wczesny dostęp premium"
+        "Wcześniejszy dostęp premium"
       ],
       "Secure cloud storage": [
         "Bezpieczna przestrzeń dyskowa w chmurze"
@@ -6526,7 +6535,7 @@
         "Idealne rozwiązanie dla rodzin lub małych zespołów, każda osoba może mieć własną skrzynkę odbiorczą i aliasy. Wymaga niestandardowej domeny."
       ],
       "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
-        "Otrzymaj bez dodatkowych kosztów płatne wersje wszystkich nowych usług prywatności, jakie wydamy w przyszłości, a także wczesny dostęp do wszystkich przyszłych funkcji i produktów."
+        "Otrzymaj płatne wersje wszystkich nowych usług prywatności bez dodatkowych kosztów, a także wcześniejszy dostęp do wszystkich przyszłych funkcji i usług."
       ],
       "Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.": [
         "Zabezpiecz pliki dzięki szyfrowanej przestrzeni dyskowej w chmurze. Zawiera automatyczną synchronizację, szyfrowane udostępnianie plików i wiele więcej."
