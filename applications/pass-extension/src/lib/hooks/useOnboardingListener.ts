@@ -42,5 +42,17 @@ export const useOnboardingListener = () => {
 
         extensionContext?.port.onMessage.addListener(handleMessage);
         return () => extensionContext?.port.onMessage.removeListener(handleMessage);
-    }, [extensionContext, createdItemsCount]);
+    }, [extensionContext]);
+
+    useEffect(() => {
+        void sendMessage.onSuccess(
+            popupMessage({
+                type: WorkerMessageType.ONBOARDING_CHECK,
+                payload: { message: OnboardingMessage.USER_RATING },
+            }),
+            async (res) => {
+                if (res) setOnboardingMessage(definitions[OnboardingMessage.USER_RATING]);
+            }
+        );
+    }, [createdItemsCount]);
 };
