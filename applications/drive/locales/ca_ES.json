@@ -863,7 +863,7 @@
         "Els descomptes es basen en els preus mensuals estàndard."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "La vostra subscripció es renovarà automàticament a la tarifa estàndard amb descompte i durada al final del cicle de facturació."
+        "La vostra subscripció es renovarà automàticament a la tarifa amb descompte i durada predeterminades al final del cicle de facturació."
       ]
     },
     "bf2023: Offers": {
@@ -874,6 +874,9 @@
     "bf2023: Tooltip": {
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accediu al contingut dels serveis de streaming com ara Netflix, Disney+, Prime Video i altres des de qualsevol lloc."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Eviteu els bloquejos i la censura a Internet local amb la nostra xarxa global de servidors."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclou suport per a 1 domini de correu electrònic personalitzat, 10 adreces de correu electrònic, 10 àlies hide-my-email, compartició de calendari i més."
@@ -1993,6 +1996,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } s'ha actualitzat.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Aquesta ocurrència de ${ eventTitle } ha estat cancel·lada."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Heu estat convidat/da a ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -2047,6 +2053,9 @@
     "Error": {
       "\"${ name }\" already exists": [
         "\"${ name }\" ja existeix."
+      ],
+      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
+        "${ DRIVE_APP_NAME } s'ha actualitzat. Actualitzeu la pàgina."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. També podeu comprovar la nostra ${ statusPageLink }"
@@ -2205,6 +2214,9 @@
       ],
       "Passwords do not match": [
         "Les contrasenyes no coincideixen."
+      ],
+      "Photos upload is temporarily disabled. Please try again later": [
+        "La càrrega de fotos està temporalment desactivada. Torneu a provar més tard."
       ],
       "Please activate your search again": [
         "Activeu de nou la vostra cerca."
@@ -2554,6 +2566,9 @@
       ],
       "Something went wrong": [
         "Alguna cosa ha anat malament."
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Per utilitzar ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, canvieu a la versió web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la vostra connexió a Internet."
@@ -3425,6 +3440,9 @@
       "Close this screen to exit.": [
         "Tanqueu la finestra per sortir."
       ],
+      "Coming soon": [
+        "Disponible pròximament"
+      ],
       "Conflict": [
         "Conflicte"
       ],
@@ -3641,6 +3659,12 @@
       "from the version history?": [
         "de l'historial de versions?"
       ],
+      "Get the app to backup photos from your phone.": [
+        "Obtingui l'aplicació per fer còpies de seguretat de les fotos del vostre telèfon."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Obtingui l'aplicació de l'escriptori per sincronitzar fitxers del vostre ordinador."
+      ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Coneixeu ${ DRIVE_APP_NAME } i guanyeu la vostra bonificació d'emmagatzematge de 500 MB!"
       ],
@@ -3710,6 +3734,9 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Els elements a la paperera hi restaran fins que els elimineu de manera permanent"
+      ],
+      "Items moved to the trash will stay here until deleted": [
+        "Els elements moguts a la paperera es quedaran aquí fins que siguin eliminats."
       ],
       "It’s easy and secure": [
         "És fàcil i segur"
@@ -3880,6 +3907,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupName }."
+      ],
+      "Please use another browser or download the file.": [
+        "Utilitzeu un altre navegador o baixeu el fitxer."
       ],
       "Please wait till your changes are synced with the server.": [
         "Espereu fins que els canvis s'hagin sincronitzat amb el servidor."
@@ -4060,6 +4090,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Aquest navegador no suporta la previsualització de documents PDF. Descarregueu-vos l'arxiu."
+      ],
+      "This file is too large to preview": [
+        "Aquest fitxer és massa gran per a previsualitzar-lo."
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "És possible que aquest fitxer s'hagi eliminat, mogut o que ja no estigui disponible. Contacteu amb el propietari del fitxer."
@@ -5576,14 +5609,6 @@
         "${ timeRemaining.inHours } hora",
         "${ timeRemaining.inHours } hores"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inDays } dia per a restablir la vostra contrasenya.",
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inDays } dies per a restablir la vostra contrasenya."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inHours } hora per a restablir la vostra contrasenya.",
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inHours } hores per a restablir la vostra contrasenya."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Aneu al dispositiu en què heu iniciat la sessió (en la qual es va iniciar la sol·licitud) per canviar la vostra contrasenya."
       ],
@@ -5668,7 +5693,7 @@
         "S'ha sol·licitat el restabliment de la contrasenya (${ user.Email }). Podeu canviar la vostra contrasenya en ${ hoursRemaining } hores."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
-        "Per a assegurar-nos que sou vós qui intenteu restablir la vostra contrasenya, esperem 72 hores abans d'aprovar les sol·licituds. Podeu canviar la contrasenya en ${ boldTimeLeft }. ${ viewRequest }."
+        "Per a assegurar-nos que sou vós qui intenteu restablir la contrasenya, esperem 72 hores abans d'aprovar les sol·licituds. Podeu canviar la contrasenya en ${ boldTimeLeft }. ${ viewRequest }."
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Hem rebut una sol·licitud de restabliment de contrasenya per a ${ boldEmail }."

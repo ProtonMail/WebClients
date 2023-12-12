@@ -385,6 +385,9 @@
       "Load image": [
         "Načíst obrázek"
       ],
+      "Loading link": [
+        "Načítání odkazu"
+      ],
       "Manage folders": [
         "Spravovat složky"
       ],
@@ -2028,6 +2031,9 @@
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } byla aktualizována.\n${ eventDetailsText }"
+      ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Tento výskyt ${ eventTitle } byl zrušen."
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Pozvání k ${ eventTitle }\n${ eventDetailsText }"
@@ -4343,6 +4349,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Zdá se, že soubor nebo některá jeho data nelze dešifrovat."
       ],
+      "Unknown date": [
+        "Neznámé datum"
+      ],
       "Unknown error": [
         "Neznámá chyba"
       ],
@@ -5582,13 +5591,16 @@
         "Objevte všechny služby ${ BRAND_NAME }"
       ],
       "Pick a theme": [
-        "Vyberte si téma"
+        "Vyberte si motiv"
       ],
       "Set up your organization": [
         "Nastavení organizace"
       ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Pomocí výběru aplikací v levém horním rohu získáte přístup ke všem službám ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
+      ],
       "You will be able to change your theme any time in your settings.": [
-        "Téma můžete kdykoli změnit v nastaveních."
+        "Motiv můžete kdykoli změnit v nastavení."
       ]
     },
     "Onboarding Title": {
@@ -5816,18 +5828,6 @@
         "${ timeRemaining.inHours } hodiny",
         "${ timeRemaining.inHours } hodin",
         "${ timeRemaining.inHours } hodin"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } den.",
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } dny.",
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } dní.",
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } dní."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodinu.",
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodiny.",
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodin.",
-        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodin."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Přejděte do přihlášeného zařízení (v relaci, ve které byl požadavek iniciován) a změňte heslo."

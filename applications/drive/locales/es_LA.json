@@ -707,7 +707,7 @@
         "Cargar carpeta"
       ],
       "Upload photos": [
-        "Cargar imágenes"
+        "Cargar fotos"
       ],
       "Upload picture": [
         "Cargar imagen"
@@ -2015,7 +2015,7 @@
         "${ eventTitle } ha sido actualizado.\n${ eventDetailsText }"
       ],
       "This occurrence of ${ eventTitle } has been canceled.": [
-        "Esta incidencia de ${ eventTitle } ha sido cancelada."
+        "Esta ocurrencia de ${ eventTitle } ha sido cancelada."
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Está invitado a ${ eventTitle }\n${ eventDetailsText }"
@@ -2234,7 +2234,7 @@
         "Las contraseñas no coinciden"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
-        "La carga de imágenes está temporalmente desactivada. Intente de nuevo más tarde."
+        "La carga de fotos está temporalmente desactivada. Intente de nuevo más tarde."
       ],
       "Please activate your search again": [
         "Active de nuevo su búsqueda"
@@ -2274,7 +2274,7 @@
         "Algunos contactos no se pudieron eliminar"
       ],
       "Some files were ignored because they are not supported in Photos": [
-        "Se ignoraron algunos archivos porque no se admiten en Imágenes"
+        "Se ignoraron algunos archivos porque no se admiten en Fotos"
       ],
       "Some groups could not be deleted": [
         "Algunos grupos no se pudieron eliminar"
@@ -3678,7 +3678,7 @@
         "del historial de versiones?"
       ],
       "Get the app to backup photos from your phone.": [
-        "Obtenga la app para respaldar imágenes desde su teléfono."
+        "Obtenga la app para respaldar fotos desde su teléfono."
       ],
       "Get the desktop app to sync files from your computer.": [
         "Obtenga la app de escritorio para sincronizar archivos desde su computadora."
@@ -3899,7 +3899,7 @@
         "PGP/MIME automáticamente envía el mensaje usando el modo de editor actual."
       ],
       "Photos have been successfully recovered.": [
-        "Se han recuperado las imágenes con éxito."
+        "Se han recuperado las fotos con éxito."
       ],
       "Please enter the password to decrypt and view content.": [
         "Ingrese la contraseña para descifrar y visualizar el contenido."
@@ -3972,7 +3972,7 @@
         "En espera"
       ],
       "Ready to add some photos?": [
-        "¿Listo para añadir algunas imágenes?"
+        "¿Listo para añadir algunas fotos?"
       ],
       "recommended browser": [
         "navegador recomendado"
@@ -3996,13 +3996,13 @@
         "Restauración en proceso. Esto puede tardar algunos segundos."
       ],
       "Restore Photos": [
-        "Restaurar imágenes"
+        "Restaurar fotos"
       ],
       "Restored files ${ formattedDate }": [
         "Archivos restaurados ${ formattedDate }"
       ],
       "Restoring Photos... Please keep the tab open": [
-        "Restaurando imágenes... mantenga la pestaña abierta"
+        "Restaurando las fotos... mantenga la pestaña abierta"
       ],
       "Search cannot be enabled in this browser": [
         "No se puede activar la búsqueda en este navegador"
@@ -4273,7 +4273,7 @@
         "¡Felicidades, ha duplicado su almacenamiento gratuito!"
       ],
       "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
-        "Estamos experimentando problemas técnicos. La carga de imágenes nuevas no está disponible temporalmente."
+        "Estamos experimentando problemas técnicos. La carga de fotos nuevas no está disponible temporalmente."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "No pudimos verificar que ${ emailAddress } cargó ${ fileName }."
@@ -4982,7 +4982,7 @@
         "Pagar factura"
       ],
       "Photos": [
-        "Imágenes"
+        "Fotos"
       ],
       "Reactivate now": [
         "Reactivar ahora"
@@ -5639,13 +5639,8 @@
         "${ timeRemaining.inHours } hora",
         "${ timeRemaining.inHours } horas"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inDays } día para restablecer su contraseña.",
-        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inDays } días para restablecer su contraseña."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inHours } hora para restablecer su contraseña.",
-        "Restablecimiento de contraseña aprobado (${ user.Email }). Tiene ${ timeRemaining.inHours } horas para restablecer su contraseña."
+      "Password reset request approved (${ user.Email }).": [
+        "Solicitud de cambio de contraseña aprobada (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Vaya al dispositivo en el que inició sesión y donde se realizó la solicitud para cambiar su contraseña."
@@ -5658,8 +5653,30 @@
         "Este permiso expira en ${ timeRemaining.inHours } hora",
         "Este permiso expira en ${ timeRemaining.inHours } horas"
       ],
+      "This permission expires soon": [
+        "Este permiso expira pronto"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Ahora puede cambiar la contraseña para la cuenta ${ boldEmail } durante ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Ya puede cambiar la contraseña de la cuenta ${ boldEmail }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Tiene ${ timeRemaining.inDays } día para restablecer su contraseña.",
+        "Tiene ${ timeRemaining.inDays } días para restablecer su contraseña."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Tiene ${ timeRemaining.inHours } hora para restablecer su contraseña.",
+        " Tiene ${ timeRemaining.inHours } horas para restablecer su contraseña."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Tiene ${ timeRemaining.inMinutes } minuto para restablecer su contraseña.",
+        " Tiene ${ timeRemaining.inMinutes } minutos para restablecer su contraseña."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Tiene ${ timeRemaining.inSeconds } segundo para restablecer su contraseña.",
+        " Tiene ${ timeRemaining.inSeconds } segundos para restablecer su contraseña."
       ]
     },
     "session_recovery:available:link": {
@@ -6494,7 +6511,7 @@
         "Números de teléfono"
       ],
       "Photos": [
-        "Imágenes"
+        "Fotos"
       ],
       "Preview": [
         "Vista previa"

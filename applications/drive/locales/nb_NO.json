@@ -924,7 +924,7 @@
         "Tilkoblingsproblem"
       ],
       "Contacts problem": [
-        "Kontakterproblem"
+        "Problem med kontakter"
       ],
       "Custom domain problem": [
         "Egendefinert domeneproblem"
@@ -945,7 +945,7 @@
         "E-postproblem"
       ],
       "Manual setup problem": [
-        "Manuelt oppsettsproblem"
+        "Problem med manuell installasjon"
       ],
       "Other": [
         "Annet"
@@ -966,13 +966,13 @@
         "Registreringsproblem"
       ],
       "Slow speed problem": [
-        "Problemer med lav hastighet"
+        "Problem med lav hastighet"
       ],
       "Speed problem": [
         "Hastighetsproblem"
       ],
       "Streaming problem": [
-        "Strømmeproblem"
+        "Problem med strømming"
       ],
       "Update problem": [
         "Problem med oppdatering"
@@ -981,7 +981,7 @@
         "VPN-problem"
       ],
       "Website access problem": [
-        "Tilgang til nettstedproblem"
+        "Problem med tilgang til nettsted"
       ]
     },
     "Button": {
@@ -2014,6 +2014,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } er blitt oppdatert.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Denne forekomsten av ${ eventTitle } er kansellert."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Du er invitert til ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -2674,7 +2677,7 @@
         "Forstått"
       ],
       "Switch plans": [
-        "Bytte planer"
+        "Bytt plan"
       ],
       "View the invitation": [
         "Se invitasjonen"
@@ -2720,7 +2723,7 @@
         "Eiere av en plan med medlemmer kan ikke bli med i en annen gruppeplan."
       ],
       "Sorry, you can't switch plans at this time.": [
-        "Beklager, du kan ikke bytter planer på nåværende tidspunkt."
+        "Beklager, du kan ikke endre abonnementet på nåværende tidspunkt."
       ],
       "Storage assigned to you: ${ assignedStorage }": [
         "Lagringsplass tilordnet deg: ${ assignedStorage }"
@@ -3521,7 +3524,7 @@
         "doble lagringsplassen din"
       ],
       "Download ${ name } app": [
-        "Last ned ${ name }-app"
+        "Last ned ${ name }-appen"
       ],
       "Download canceled": [
         "Nedlasting avbrutt"
@@ -3672,7 +3675,7 @@
         "Få skrivebordsappen til å synkronisere filer fra datamaskinen."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
-        "Lær ${ DRIVE_APP_NAME } å kjenne og tjen dine 500 MB lagringsplassbonus. Ta grep i dag."
+        "Bli kjent med ${ DRIVE_APP_NAME } og få 500 MB lagringsbonus! Ta grep i dag."
       ],
       "Go to \"My files\" and upload some files first.": [
         "Gå til \"mine filer\" og last opp noen filer først."
@@ -4083,7 +4086,7 @@
         "Nedlastingsantallet inkluderer både faktiske nedlastinger og forekomster der filer forhåndsvises."
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
-        "De krypterte dataene er litt større på grunn av overhead av kryptering og signaturer, som sikrer sikkerheten til dataene dine."
+        "De krypterte dataene er litt større på grunn av overbelastingen av kryptering og signaturer, som sikrer sikkerheten til dataene dine."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Følgende kan ha blitt tuklet med: ${ items }. Bare åpne hvis du klarérer de."
@@ -4119,7 +4122,7 @@
         "Denne koblingen kan være et homografangrep. Kontroller at dette er koblingen du ønsker å besøke, eller la være å åpne den."
       ],
       "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
-        "Denne koblingen ble opprettet med gammel Drive-versjon og kan ikke endres. Slett denne koblingen og opprett en ny for å endre innstillingene."
+        "Denne koblingen ble opprettet med en gammel versjon av Drive og kan ikke endres. Slett denne koblingen og opprett en ny for å endre innstillingene."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Denne koblingen blir permanent deaktivert. Ingen med denne koblingen vil kunne få tilgang til filen din. Hvis du vil dele filen på nytt, trenger du en ny kobling."
@@ -5627,14 +5630,6 @@
         "${ timeRemaining.inHours } time",
         "${ timeRemaining.inHours } timer"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Forespørsel om tilbakestilling av passord godkjent (${ user.Email }). Du har ${ timeRemaining.inDays } dag på å tilbakestille passordet ditt.",
-        "Forespørsel om tilbakestilling av passord godkjent (${ user.Email }). Du har ${ timeRemaining.inDays } dager på å tilbakestille passordet ditt."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Forespørsel om tilbakestilling av passord godkjent (${ user.Email }). Du har ${ timeRemaining.inHours } time på å tilbakestille passordet ditt.",
-        "Forespørsel om tilbakestilling av passord godkjent (${ user.Email }). Du har ${ timeRemaining.inHours } timer på å tilbakestille passordet ditt."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Vennligst gå til den påloggede enheten (i økten hvor forespørselen ble igangsatt) for å endre passordet ditt."
       ],
@@ -5792,7 +5787,7 @@
     },
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
-        "Gå ubegrenset"
+        "Få Unlimited"
       ]
     },
     "specialoffer: Countdown unit": {
@@ -6330,10 +6325,10 @@
         "Nedlasting ${ date }.zip"
       ],
       "Download unverified file?": [
-        "Last ned ubekreftet fil?"
+        "Laste ned ubekreftet fil?"
       ],
       "Download unverified folder?": [
-        "Last ned ubekreftet mappe?"
+        "Laste ned ubekreftet mappe?"
       ],
       "Drop to upload": [
         "Slipp for å laste opp"
