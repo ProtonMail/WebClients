@@ -4,9 +4,20 @@
     "language": "da_DK"
   },
   "contexts": {
+    "A label for unlabeled shared calendar links": {
+      "Unlabeled": [
+        "Uden etiket"
+      ]
+    },
     "Access level": {
+      "Full view": [
+        "Fuld visning"
+      ],
       "Full view (see all event details)": [
         "Fuld visning (se alle detaljer om begivenheden)"
+      ],
+      "Limited view": [
+        "Begrænset visning"
       ],
       "Limited view (see only free/busy)": [
         "Begrænset visning (se kun fri/optaget)"
@@ -77,6 +88,9 @@
       ],
       "Add folder": [
         "Tilføj mappe"
+      ],
+      "Add label": [
+        "Tilføj etikette"
       ],
       "Add multiple users": [
         "Tilføj flere brugere"
@@ -234,6 +248,9 @@
       "Create": [
         "Opret"
       ],
+      "Create a link to share with anyone outside ${ BRAND_NAME }": [
+        "Opret et link, som du kan dele med alle udenfor ${ BRAND_NAME }"
+      ],
       "Create account": [
         "Opret konto"
       ],
@@ -348,11 +365,17 @@
       "Download CSV sample": [
         "Hent CSV-eksempel"
       ],
+      "Download ICS": [
+        "Download ICS"
+      ],
       "Download our CSV template": [
         "Download vores CSV-skabelon"
       ],
       "Download recovery file": [
         "Download gendannelsesfil"
+      ],
+      "Download the ${ MAIL_APP_NAME } Export Tool": [
+        "Download ${ MAIL_APP_NAME } Export Tool"
       ],
       "Edit": [
         "Redigér"
@@ -434,6 +457,9 @@
       ],
       "Font": [
         "Skrifttype"
+      ],
+      "Generate": [
+        "Generér"
       ],
       "Generate key": [
         "Generer nøgle"
@@ -583,7 +609,7 @@
         "Måske senere"
       ],
       "More": [
-        "Flere"
+        "Mere"
       ],
       "More info: ${ safeTitle }": [
         "Yderligere information: ${ safeTitle }"
@@ -770,6 +796,9 @@
       ],
       "Save changes": [
         "Gem ændringer"
+      ],
+      "Save ICS file": [
+        "Gem ICS-fil"
       ],
       "Search": [
         "Søg"
@@ -1496,6 +1525,11 @@
         "To-År"
       ]
     },
+    "breadcrumb": {
+      "Calendars": [
+        "Kalendere"
+      ]
+    },
     "Bridge version load failed": {
       "Failed to find latest version": [
         "Kunne ikke finde seneste version"
@@ -1600,6 +1634,11 @@
         "Tilføj personer eller grupper"
       ]
     },
+    "Calendar edit button tooltip": {
+      "Edit calendar": [
+        "Redigér kalender"
+      ]
+    },
     "Calendar export section description": {
       "Download an ICS file with all the events from the selected calendar.": [
         "Download en ICS-fil med alle begivenhederne fra den valgte kalender."
@@ -1611,6 +1650,9 @@
       ]
     },
     "Calendar invite status label": {
+      "Declined": [
+        "Afvist"
+      ],
       "Invite sent": [
         "Invitation sendt"
       ]
@@ -1618,6 +1660,12 @@
     "Calendar link purpose update success message": {
       "Label added": [
         "Etiket tilføjet"
+      ],
+      "Label deleted": [
+        "Etiket slettet"
+      ],
+      "Label edited": [
+        "Etiket redigeret"
       ]
     },
     "Calendar link sharing label input assistive text": {
@@ -1653,9 +1701,6 @@
     "Calendar settings section title": {
       "Share calendar": [
         "Del kalender"
-      ],
-      "Share outside ${ BRAND_NAME }": [
-        "Del uden for ${ BRAND_NAME }"
       ],
       "Share with ${ BRAND_NAME } users": [
         "Del med ${ BRAND_NAME }-brugere"
@@ -1745,6 +1790,11 @@
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "Der er gået mere end 12 timer siden sidste opdatering - ${ CALENDAR_APP_NAME } vil forsøge at opdatere kalenderen om et par timer."
+      ]
+    },
+    "Calendar table settings button tooltip": {
+      "Open settings": [
+        "Åbn indstillinger"
       ]
     },
     "Calendar view": {
@@ -4462,6 +4512,9 @@
       "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
         "Tilføj en bruger til din ${ PLAN_NAMES.visionary2022 } konto"
       ],
+      "Change family name": [
+        "Ændr familienavn"
+      ],
       "Delete family group?": [
         "Slet familiegruppe?"
       ],
@@ -4479,6 +4532,9 @@
       ],
       "Manage family group": [
         "Administrer familiegruppe"
+      ],
+      "Set family name": [
+        "Angiv familienavn"
       ]
     },
     "familyOffer_2023:Tooltip": {
@@ -7389,14 +7445,6 @@
         "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalender. Fjern venligst delte kalenderlinks og enhver ${ BRAND_NAME } bruger, som du har delt dine kalendere med, før du annullerer dit abonnement.",
         "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalendere. Fjern venligst delte kalenderlinks og enhver ${ BRAND_NAME } bruger, som du har delt dine kalendere med, før du annullerer dit abonnement."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalender. Fjern venligst delte kalenderlinks før du annullerer dit ${ MAIL_SHORT_APP_NAME }-abonnement.",
-        "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalendere. Fjern venligst delte kalenderlinks før du annullerer dit ${ MAIL_SHORT_APP_NAME }-abonnement."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalender. Fjern venligst delte kalenderlinks før du annullerer dit abonnement.",
-        "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalendere. Fjern venligst delte kalenderlinks før du annullerer dit abonnement."
-      ],
       "You can now access and manage the account as an administrator.": [
         "Du kan nu få adgang til og administrere kontoen som administrator."
       ],
@@ -8175,6 +8223,9 @@
       "Composer default font/size": [
         "Skrivevinduets standardfont/størrelse"
       ],
+      "Composer mode": [
+        "Skrivetilstand"
+      ],
       "Composer text direction": [
         "Skrivesession, tekstretning"
       ],
@@ -8475,6 +8526,9 @@
       "Level for NetShield blocker filtering": [
         "Niveau for NetShield-blokkerfiltrering"
       ],
+      "Link label": [
+        "Link-etiket"
+      ],
       "Mail Server (IMAP)": [
         "Mailserver (IMAP)"
       ],
@@ -8709,6 +8763,9 @@
       "Signature": [
         "Signatur"
       ],
+      "SMTP port": [
+        "SMTP-port"
+      ],
       "SMTP server": [
         "SMTP-server"
       ],
@@ -8777,6 +8834,9 @@
       ],
       "To: ${ toEmail }": [
         "Til: ${ toEmail }"
+      ],
+      "Token name": [
+        "Tokennavn"
       ],
       "Two-password mode": [
         "To-adgangskodetilstand"
@@ -8947,6 +9007,9 @@
       ]
     },
     "Label to change composer mode": {
+      "Maximized": [
+        "Maksimeret"
+      ],
       "Normal": [
         "Normal"
       ]
@@ -9831,9 +9894,6 @@
         "Servere i ${ vpnServersCountData.paid.countries }+ land",
         "Servere i ${ vpnServersCountData.paid.countries }+ lande"
       ],
-      "Share calendar via link": [
-        "Del kalender via link"
-      ],
       "Share files and folders via link": [
         "Del filer og mapper via link"
       ],
@@ -9966,6 +10026,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Avanceret netværkssikkerhed og adgangshåndtering med dedikerede sikre Gateways"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Alle ${ BRAND_NAME }-apps og deres premium-funktioner"
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Gældende kreditter, proratering og kuponer anvendes i næste trin"
@@ -10143,9 +10206,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Afværger trussel mod VPN-privatliv ved at sende din internettrafik gennem flere servere."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Du kan nemt dele dine kalendere med dine kolleger, familie eller venner via et link"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Del nemt dine kalendere med din familie, venner eller kolleger"
@@ -10564,6 +10624,9 @@
       "It's too expensive": [
         "Det er for dyrt"
       ],
+      "Left to Right": [
+        "Venstre mod højre"
+      ],
       "My reason isn't listed": [
         "Min grund er ikke angivet"
       ],
@@ -10579,11 +10642,23 @@
       "On": [
         "Til"
       ],
+      "Permanent": [
+        "Permanent"
+      ],
       "Plain text": [
         "Simpel tekst"
       ],
+      "Repeat daily": [
+        "Gentag dagligt"
+      ],
       "Repeat monthly": [
         "Gentag månedligt"
+      ],
+      "Repeat weekly": [
+        "Gentag ugentligt"
+      ],
+      "Right to Left": [
+        "Højre mod venstre"
       ],
       "Router": [
         "Router"
@@ -11316,14 +11391,6 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Hvis du ikke har bedt om at nulstille din adgangskode, skal du annullere denne anmodning nu."
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Anmodning om nulstilling af adgangskode godkendt (${ user.Email }). Du har ${ timeRemaining.inDays } dag til at nulstille din adgangskode.",
-        "Anmodning om nulstilling af adgangskode godkendt (${ user.Email }). Du har ${ timeRemaining.inDays } dage til at nulstille din adgangskode."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Anmodning om nulstilling af adgangskode godkendt (${ user.Email }). Du har ${ timeRemaining.inHours } time til at nulstille din adgangskode.",
-        "Anmodning om nulstilling af adgangskode godkendt (${ user.Email }). Du har ${ timeRemaining.inHours } timer til at nulstille din adgangskode."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Gå til den enhed, hvor du er logget ind (i den session, hvor anmodningen blev indledt) for at ændre din adgangskode."
       ],
@@ -11489,6 +11556,11 @@
         "Anmod om nulstilling af adgangskode"
       ]
     },
+    "session_recovery:settings:info": {
+      "To disallow password reset, you must have a recovery method set up.": [
+        "Hvis du ikke vil tillade nulstilling af adgangskoden, skal du have opsat en gendannelsesmetode."
+      ]
+    },
     "session_recovery:sign_out:action": {
       "Sign out": [
         "Log ud"
@@ -11610,6 +11682,11 @@
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
         "Del med ${ BRAND_NAME }-brugere"
+      ]
+    },
+    "Shared calendar label input placeholder": {
+      "Add label": [
+        "Tilføj etikette"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -11916,9 +11993,6 @@
       ]
     },
     "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        "Tilføj offentlige, eksterne eller delte kalendere ved hjælp af en URL."
-      ],
       "Add public, external, or shared calendars.": [
         "Tilføj offentlige, eksterne eller delte kalendere."
       ]
@@ -12042,8 +12116,17 @@
       "Are you sure?": [
         "Er du sikker?"
       ],
+      "Auto-pay is disabled": [
+        "Automatisk betaling er deaktiveret"
+      ],
+      "Auto-pay is enabled": [
+        "Automatisk betaling er aktiveret"
+      ],
       "Disable": [
         "Deaktivér"
+      ],
+      "Enable auto-pay support": [
+        "Aktivér understøttelse af automatisk betaling"
       ],
       "Keep auto-pay": [
         "Behold automatisk betaling"
@@ -13222,6 +13305,9 @@
       ],
       "Session management": [
         "Sessionshåndtering"
+      ],
+      "Set a display name": [
+        "Angiv visningsnavn"
       ],
       "Set new password": [
         "Angiv ny adgangskode"
