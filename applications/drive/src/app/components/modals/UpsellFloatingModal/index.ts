@@ -1,2 +1,1 @@
-export { default } from './UpsellFloatingModal';
-export { default as useUpsellFloatingModal } from './useUpsellFloatingModal';
+export { default, useUpsellFloatingModal } from './UpsellFloatingModal';

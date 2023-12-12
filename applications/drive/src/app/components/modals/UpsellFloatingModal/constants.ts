@@ -1,1 +1,0 @@
-export const UPSELL_MODAL_TIMEOUT = 10000;
