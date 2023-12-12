@@ -16,7 +16,7 @@ let currentArch = "";
 const config: ForgeConfig = {
     hooks: {
         generateAssets: async (_config, _platform, arch) => {
-            currentArch = arch === "all" ? "universal" : arch;
+            currentArch = arch;
         },
     },
     packagerConfig: {
