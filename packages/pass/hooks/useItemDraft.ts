@@ -50,7 +50,7 @@ export const useItemDraft = <V extends {}>(form: FormikContextType<V>, options: 
         })()
     );
 
-    const { onHydrated, sanitizeHydration, sanitizeSave, ...baseDraft } = options;
+    const { onHydrated, sanitizeHydration, sanitizeSave, ...draftOptions } = options;
     const { values, dirty } = form;
     const [ready, setReady] = useState<boolean>(false);
 
@@ -58,7 +58,7 @@ export const useItemDraft = <V extends {}>(form: FormikContextType<V>, options: 
 
     const saveDraft = useCallback(
         debounce(
-            (formData: V) => dispatch(draftSave({ ...baseDraft, formData: sanitizeSave?.(formData) ?? formData })),
+            (formData: V) => dispatch(draftSave({ ...draftOptions, formData: sanitizeSave?.(formData) ?? formData })),
             SAVE_DRAFT_TIMEOUT
         ),
         []
@@ -70,7 +70,7 @@ export const useItemDraft = <V extends {}>(form: FormikContextType<V>, options: 
             else {
                 saveDraft.cancel();
                 if (shouldInvalidate.current) {
-                    dispatch(draftDiscard(baseDraft));
+                    dispatch(draftDiscard(draftOptions));
                     shouldInvalidate.current = false;
                 }
             }
@@ -104,7 +104,7 @@ export const useItemDraft = <V extends {}>(form: FormikContextType<V>, options: 
             /* discard the draft if the component is unmounted :
              * this either means the item was successfully saved or
              * that the edit/creation discarded */
-            if (draft) dispatch(draftDiscard(baseDraft));
+            dispatch(draftDiscard(draftOptions));
         };
     }, []);
 
