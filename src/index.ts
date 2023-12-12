@@ -1,10 +1,12 @@
 import { app, BrowserWindow, session, shell } from "electron";
 import log from "electron-log/main";
 import { moveUninstaller } from "./macos/uninstall";
+import { saveAppID } from "./store/idStore";
+import { saveAppURL } from "./store/urlStore";
+import { checkForUpdates } from "./update";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./utils/constants";
 import { isHostAllowed, isHostCalendar, isHostMail, isMac, isWindows, saveWindowsPosition } from "./utils/helpers";
 import { getSessionID } from "./utils/urlHelpers";
-import { saveHardcodedURLs } from "./utils/urlStore";
 import {
     handleCalendarWindow,
     handleMailWindow,
@@ -19,11 +21,15 @@ if (require("electron-squirrel-startup")) {
 // Security addition
 app.enableSandbox();
 
-saveHardcodedURLs();
+// Config initialization
+saveAppURL();
+saveAppID();
 
+// Log initialization
 log.initialize({ preload: true });
 log.info("App start on mac:", isMac, "is windows: ", isWindows);
 
+// Move uninstaller on macOS
 moveUninstaller();
 
 // Used to make the app run on Parallels Desktop
@@ -35,6 +41,9 @@ app.whenReady().then(() => {
     });
 
     initialWindowCreation({ session: secureSession, mailVisible: true, calendarVisible: false });
+
+    // Check updates
+    checkForUpdates();
 
     app.on("activate", () => {
         if (BrowserWindow.getAllWindows().filter((windows) => windows.isVisible()).length === 0) {
