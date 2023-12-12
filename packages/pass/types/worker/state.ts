@@ -32,6 +32,7 @@ export type LocalStoreData = {
     onboarding: string;
     telemetry: string;
     settings: string;
+    lastReload: number;
 };
 
 export type LocalStoreKeys = keyof LocalStoreData;

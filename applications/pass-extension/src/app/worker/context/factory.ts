@@ -132,11 +132,13 @@ export const createWorkerContext = (config: ProtonConfig) => {
                 onSessionEmpty: () => context.setStatus(AppStatus.UNAUTHORIZED),
 
                 onSessionLocked: () => {
-                    store.dispatch(stopEventPolling());
-
                     context.setStatus(AppStatus.LOCKED);
                     context.service.autofill.clearTabsBadgeCount();
                     PassCrypto.clear();
+
+                    store.dispatch(cacheCancel());
+                    store.dispatch(stopEventPolling());
+                    store.dispatch(stateDestroy());
 
                     context.service.auth.init().catch(noop);
                 },
