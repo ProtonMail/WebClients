@@ -3642,14 +3642,6 @@
         "Pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova as hiperligações dos calendários partilhados e qualquer ${ BRAND_NAME } utilizador com quem partilhou os seus calendários antes de cancelar a sua subscrição.",
         "Pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova as hiperligações dos calendários partilhados e qualquer ${ BRAND_NAME } utilizador com quem partilhou os seus calendários antes de cancelar a sua subscrição."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova ligações do calendário partilhado antes de cancelar a sua assinatura do ${ MAIL_SHORT_APP_NAME }.",
-        "Pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova ligações do calendário partilhado antes de cancelar a sua assinatura do ${ MAIL_SHORT_APP_NAME }."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova as hiperligações dos calendários partilhados antes de cancelar a sua subscrição.",
-        "Pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova as hiperligações dos calendários partilhados antes de cancelar a sua subscrição."
-      ],
       "You can now access and manage the account as an administrator.": [
         "Pode agora aceder e gerir a conta como administrador."
       ],
@@ -4758,9 +4750,6 @@
         "Servidores em ${ vpnServersCountData.paid.countries } país",
         "Servidores em mais de ${ vpnServersCountData.paid.countries } países"
       ],
-      "Share calendar via link": [
-        "Partilha o calendário por ligação"
-      ],
       "Share files and folders via link": [
         "Compartilhe ficheiros e pastas com uma ligação"
       ],
@@ -4871,6 +4860,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Segurança de rede avançada e gestão de acesso com Gateways seguros dedicados"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Todas as aplicações ${ BRAND_NAME } e os seus recursos premium"
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Os créditos, repartições e cupões aplicáveis são aplicados na etapa seguinte."
@@ -5030,9 +5022,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Defende-se contra a ameaça à privacidade da VPN ao enviar o tráfego na internet por vários servidores."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Partilhe facilmente os seus calendários com os seus colegas, família e amigos com uma ligação."
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Partilhe facilmente os seus calendários com a sua família, amigos ou colegas."
@@ -5640,14 +5629,6 @@
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Se não pediu para repor a sua palavra-passe, cancele o pedido agora."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Pedido de reposição de palavra-passe aprovado (${ user.Email }). Tem ${ timeRemaining.inDays } dia para repor a sua palavra-passe.",
-        "Pedido de reposição de palavra-passe aprovado (${ user.Email }). Tem ${ timeRemaining.inDays } dias para repor a sua palavra-passe."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Pedido de reposição de palavra-passe aprovado (${ user.Email }). Tem ${ timeRemaining.inHours } hora para repor a sua palavra-passe.",
-        "Pedido de reposição de palavra-passe aprovado (${ user.Email }). Tem ${ timeRemaining.inHours } horas para repor a sua palavra-passe."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Por favor, vá ao dispositivo com sessão iniciada (na sessão onde o pedido foi iniciado) para mudar a sua palavra-passe."

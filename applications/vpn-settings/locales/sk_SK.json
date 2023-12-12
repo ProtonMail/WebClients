@@ -3241,7 +3241,7 @@
         "Pripojenie k internetu obnovené."
       ],
       "Lean more about gateways": [
-        "Viac informácií o sieťových bránach"
+        "Zistiť viac o sieťových bránach"
       ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Zistite, ako sa prihlásiť do ${ VPN_APP_NAME } pomocou aplikácií VPN tretích strán."
@@ -3896,18 +3896,6 @@
         "Môžete mať až ${ MAX_CALENDARS_FREE } kalendáre. Pred zrušením odberu odstráňte odkazy na zdieľané kalendáre a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
         "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu odstráňte odkazy na zdieľané kalendáre a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
         "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu odstráňte odkazy na zdieľané kalendáre a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendár. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy na zdieľaný kalendár.",
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendáre. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy na zdieľaný kalendár.",
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy na zdieľaný kalendár.",
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy na zdieľaný kalendár."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendár. Pred zrušením odberu odstráňte odkazy na zdieľaný kalendár.",
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendáre. Pred zrušením odberu odstráňte odkazy na zdieľaný kalendár.",
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu odstráňte odkazy na zdieľaný kalendár.",
-        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu odstráňte odkazy na zdieľaný kalendár."
       ],
       "You can now access and manage the account as an administrator.": [
         "Teraz môžete pristupovať k účtu a spravovať ho ako správca."
@@ -5109,9 +5097,6 @@
         "Servery v ${ vpnServersCountData.paid.countries }+ krajinách",
         "Servery v ${ vpnServersCountData.paid.countries }+ krajinách"
       ],
-      "Share calendar via link": [
-        "Zdieľanie kalendára cez odkaz"
-      ],
       "Share files and folders via link": [
         "Zdieľanie súborov a priečinkov cez odkaz"
       ],
@@ -5208,7 +5193,7 @@
         "Získajte neobmedzené množstvo aliasov so službou SimpleLogin od ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
-        "Odložte správy a pripomeňte si ich, keď chcete"
+        "Odložte správy a pripomeňte si ich, kedy chcete"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
@@ -5234,6 +5219,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Pokročilá sieťová bezpečnosť a správa prístupu s vyhradenými bezpečnými bránami"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Všetky ${ BRAND_NAME } aplikácie a ich prémiové funkcie"
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Použiteľné kredity, pomerná časť a kupóny sa použijú v ďalšom kroku"
@@ -5406,9 +5394,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Chráni pred hrozbou VPN súkromia tým, že internetovú prevádzku prenáša cez viacero serverov."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Svoje kalendáre zdieľajte jednoducho so svojimi kolegami, rodinou a priateľmi prostredníctvom odkazu"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Svoje kalendáre zdieľajte jednoducho s rodinou, priateľmi alebo kolegami"
@@ -6054,18 +6039,6 @@
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Ak ste nepožiadali o obnovenie hesla, zrušte túto žiadosť teraz."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } deň.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } dni.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } dní.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } dní."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodinu.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodiny.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodín.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodín."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Prejdite na prihlásené zariadenie (v relácii, kde bola žiadosť iniciovaná) a zmeňte heslo."
