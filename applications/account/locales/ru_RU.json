@@ -5,6 +5,9 @@
   },
   "contexts": {
     "Access level": {
+      "Full view": [
+        "Полный вид"
+      ],
       "Full view (see all event details)": [
         "Полный просмотр (см. всю информацию мероприятия)"
       ],
@@ -80,6 +83,15 @@
       ],
       "Add domain": [
         "Добавить домен"
+      ],
+      "Add filter": [
+        "Добавить фильтр"
+      ],
+      "Add folder": [
+        "Добавить папку"
+      ],
+      "Add label": [
+        "Добавить ярлык"
       ],
       "Add notification": [
         "Добавить уведомление"
@@ -360,6 +372,9 @@
       "Edit phone number": [
         "Изменить номер телефона"
       ],
+      "Edit sieve": [
+        "Изменить Sieve-фильтр"
+      ],
       "Edit sign-in details": [
         "Изменить информацию о входе в систему"
       ],
@@ -384,6 +399,9 @@
       "Export": [
         "Экспорт"
       ],
+      "Export key": [
+        "Экспортировать ключ"
+      ],
       "Export key before deleting": [
         "Экспортировать ключ перед удалением"
       ],
@@ -398,6 +416,9 @@
       ],
       "Font": [
         "Шрифт"
+      ],
+      "Generate": [
+        "Сгенерировать"
       ],
       "Generate key": [
         "Сгенерировать ключ"
@@ -468,6 +489,9 @@
       "Import from Outlook": [
         "Импортировать из Outlook"
       ],
+      "Import key": [
+        "Импортировать ключ"
+      ],
       "Increase": [
         "Увеличить"
       ],
@@ -492,11 +516,17 @@
       "Keep": [
         "Оставить"
       ],
+      "Keep my Plus subscription": [
+        "Сохраните мою подписку Plus"
+      ],
       "label emails as": [
         "отметить ярлыком электронные письма как"
       ],
       "Leave": [
         "Оставить"
+      ],
+      "Let's talk": [
+        "Свяжитесь с нами"
       ],
       "Load more": [
         "Загрузить ещё"
@@ -1422,6 +1452,11 @@
         "Каждые 2 года"
       ]
     },
+    "breadcrumb": {
+      "Calendars": [
+        "Календари"
+      ]
+    },
     "Bridge version load failed": {
       "Failed to find latest version": [
         "Не удалось найти последнюю версию"
@@ -1580,9 +1615,6 @@
       ]
     },
     "Calendar settings section title": {
-      "Share outside ${ BRAND_NAME }": [
-        "Поделиться вне ${ BRAND_NAME }"
-      ],
       "Share with ${ BRAND_NAME } users": [
         "Поделиться с пользователями ${ BRAND_NAME }"
       ],
@@ -1627,6 +1659,9 @@
     "Calendar status": {
       "Active": [
         "Активно"
+      ],
+      "Disabled": [
+        "Отключено"
       ],
       "Not synced": [
         "Не синхронизировано"
@@ -1698,6 +1733,11 @@
         "Итого за ${ n } месяца",
         "Итого за ${ n } месяцев",
         "Итого за ${ n } месяцев"
+      ]
+    },
+    "Checkout summary": {
+      "Servers": [
+        "Серверы"
       ]
     },
     "Collapsible tooltip": {
@@ -2927,6 +2967,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Для импорта через CSV- и VCF-файл убедитесь, что файл не превышает ${ MAX_IMPORT_FILE_SIZE_STRING } или ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, пожалуйста, разделите его на более мелкие файлы. ${ learnMoreLink }."
+      ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Получите до ${ credits } кредитов, приглашая друзей в ${ BRAND_NAME }."
       ],
@@ -2938,6 +2981,9 @@
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Выделите различные аспекты своей жизни с помощью нескольких адресов электронной почты и получите доступ к дополнительным функциям при обновлении тарифа."
+      ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Чтобы импортировать контакты из Google или Outlook, ${ easySwitchLink }."
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "Для удаления нижнего колонтитула ${ MAIL_APP_NAME } обновите тариф и разблокируйте ещё больше премиум-функций."
@@ -2962,6 +3008,11 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можете импортировать события в формате iCal (ICS файл). Размер файла не должен быть более ${ MAX_IMPORT_FILE_SIZE_STRING } и иметь не более ${ MAX_IMPORT_EVENTS_STRING } событий. Если ваш файл больше, разделите его на меньшие файлы."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3002,6 +3053,9 @@
       ],
       "${ name } deletion failed": [
         "Удаление ${ name } не удалось"
+      ],
+      "${ name } failed to move to block list": [
+        "Не удалось переместить ${ name } в список блокируемых"
       ],
       "${ name } failed to move to spam list": [
         "Не удалось переместить ${ name } в список спама"
@@ -3047,6 +3101,12 @@
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Дополнительная безопасность совместного доступа"
+      ],
+      "Encrypted cloud storage for all your files": [
+        "Зашифрованное облачное хранилище для всех ваших файлов"
+      ],
+      "Secure cloud storage and file sharing that protects your data": [
+        "Защищенное облачное хранилище и общий доступ к файлам, защищающие ваши данные"
       ]
     },
     "Duration": {
@@ -3124,6 +3184,9 @@
       "${ name } deletion failed": [
         "Удаление ${ name } не удалось"
       ],
+      "${ name } failed to move to block list": [
+        "Не удалось переместить ${ name } в список блокируемых"
+      ],
       "${ name } failed to move to spam list": [
         "Не удалось переместить ${ name } в список спама"
       ],
@@ -3196,6 +3259,9 @@
       ]
     },
     "email_forwarding_2023: Header": {
+      "Actions": [
+        "Действия"
+      ],
       "From": [
         "От"
       ],
@@ -3234,6 +3300,9 @@
       ]
     },
     "email_forwarding_2023: Placeholder": {
+      "Condition:": [
+        "Условие:"
+      ],
       "Enter email address": [
         "Введите адрес электронной почты"
       ],
@@ -3241,9 +3310,19 @@
         "Введите текст или ключевое слово"
       ]
     },
+    "email_forwarding_2023: Status": {
+      "Declined": [
+        "Отклонено"
+      ]
+    },
     "email_forwarding_2023: Title": {
       "Set up forwarding": [
         "Настроить пересылку"
+      ]
+    },
+    "email_forwarding_2023: Warning": {
+      "Warning": [
+        "Предупреждение"
       ]
     },
     "Enabled 2FA": {
@@ -3377,6 +3456,9 @@
       ],
       "Incorrect username": [
         "Некорректное имя пользователя"
+      ],
+      "Intended recipient does not support calendar sharing": [
+        "Предполагаемый получатель не поддерживает совместное использование календаря"
       ],
       "Invalid ${ name } code": [
         "Недействительный код ${ name }"
@@ -4437,6 +4519,9 @@
       "Add a name to identify your security key with.": [
         "Добавьте имя для идентификации ключа безопасности."
       ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Позволяет регистрировать встроенные ключи безопасности (например, Windows Hello, Face ID, Touch ID или внутренние TPM)."
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Вы уверены, что хотите удалить ключ безопасности ${ name }?"
       ],
@@ -4540,6 +4625,12 @@
         "Мегабайтов",
         "Мегабайтов",
         "Мегабайтов"
+      ],
+      "Terabyte": [
+        "Терабайт",
+        "Терабайта",
+        "Терабайтов",
+        "Терабайтов"
       ]
     },
     "Filter Actions": {
@@ -4863,6 +4954,9 @@
       ]
     },
     "Header for table": {
+      "Last used": [
+        "В последний раз использовано"
+      ],
       "Token name": [
         "Имя токена"
       ]
@@ -5297,6 +5391,9 @@
       "${ firstRemainingCalendarName } will be set as default calendar.": [
         "${ firstRemainingCalendarName } будет установлен в как календарь по умолчанию."
       ],
+      "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
+        "${ inviterEmailJSX } хочет поделиться с вами данными в ${ PASS_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } можно также использовать с одним паролем, который заменяет и логин, и пароль почтового ящика. Чтобы перейти в режим единого пароля, введите единый пароль, который вы хотите использовать, и нажмите кнопку Сохранить."
       ],
@@ -5330,6 +5427,9 @@
         "${ numberOfNonPrivateKeys } загруженных файлов не являются действительными закрытыми ключами. Пожалуйста, проверьте и повторите попытку.",
         "${ numberOfNonPrivateKeys } загруженных файлов не являются действительными закрытыми ключами. Пожалуйста, проверьте и повторите попытку."
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } удален. Пакетное предложение недоступно для 1-месячного тарифа."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } требует минимум 1 выделенный сервер ${ serverPricePerMonth }"
       ],
@@ -5353,6 +5453,12 @@
         "Ещё ${ remainingAddresses.length }",
         "Ещё ${ remainingAddresses.length }",
         "Ещё ${ remainingAddresses.length }"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } дополнительный адрес",
+        "${ remainingAddresses.length } дополнительных адреса",
+        "${ remainingAddresses.length } дополнительных адресов",
+        "${ remainingAddresses.length } дополнительных адресов"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календаря",
@@ -5500,6 +5606,9 @@
       ],
       "Add image URL": [
         "Добавить ссылку на изображение"
+      ],
+      "Add label": [
+        "Добавить ярлык"
       ],
       "Add multiple users to your organization at once.": [
         "Добавить в вашу организацию нескольких пользователей разом."
@@ -5684,6 +5793,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перед тем, как начать отправлять и принимать электронную почту, для ваших новых адресов необходимо создать ключи шифрования."
       ],
+      "Billed at ${ price }": [
+        "Счет выставлен на ${ price }"
+      ],
       "Billing cycle: ${ text }": [
         "Платежный цикл: ${ text }"
       ],
@@ -5719,6 +5831,9 @@
       ],
       "Continuing will connect your ${ BRAND_NAME } Account to ${ name }.": [
         "Продолжение подключит ваш аккаунт ${ BRAND_NAME } к ${ name }."
+      ],
+      "Copy the link to clipboard": [
+        "Скопировать ссылку в буфер обмена"
       ],
       "Copy the suggested password to clipboard": [
         "Скопировать предложенный пароль в буфер обмена"
@@ -5858,6 +5973,9 @@
       "Edit email address": [
         "Изменить адрес эл. почты"
       ],
+      "Edit label": [
+        "Изменить ярлык"
+      ],
       "Edit link": [
         "Изменить ссылку"
       ],
@@ -5977,6 +6095,9 @@
       ],
       "Get ${ upsellPlanName }": [
         "Получить ${ upsellPlanName }"
+      ],
+      "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
+        "Получите доступ, создав учетную запись ${ BRAND_NAME } и приняв приглашение."
       ],
       "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
         "Дайте токену описательное имя, например, название службы, с которой вы планируете его использовать, и выберите один из своих активных пользовательских доменных адресов. Только этот адрес сможет отправлять электронные письма с этим токеном."
@@ -6194,6 +6315,9 @@
       "Link deleted": [
         "Ссылка удалена"
       ],
+      "Link expired": [
+        "Ссылка устарела"
+      ],
       "Link type": [
         "Тип ссылки"
       ],
@@ -6313,6 +6437,9 @@
       ],
       "Open source": [
         "Открытый исходный код"
+      ],
+      "Optional": [
+        "Необязательно"
       ],
       "Or select a particular server:": [
         "Или выберите определенный сервер:"
@@ -6434,6 +6561,9 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Пожалуйста, попробуйте еще раз, используйте другой способ оплаты или обратитесь в PayPal для получения помощи."
       ],
+      "Please use another browser or download the file.": [
+        "Пожалуйста, воспользуйтесь другим браузером или загрузите файл."
+      ],
       "Please verify payment at the new tab which was opened.": [
         "Пожалуйста, подтвердите оплату в новой открывшейся вкладке."
       ],
@@ -6446,6 +6576,9 @@
       "Preview failed to be loaded": [
         "Не удалось загрузить предварительный просмотр"
       ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "Предварительный просмотр для этого типа файлов в настоящее время не поддерживается в этом браузере."
+      ],
       "Preview for this file type is not supported": [
         "Предварительный просмотр файлов этого типа не поддерживается"
       ],
@@ -6454,6 +6587,9 @@
       ],
       "Priority support": [
         "Приоритетная поддержка"
+      ],
+      "Promotion expired": [
+        "Срок действия акции истек"
       ],
       "Protected by Swiss privacy laws": [
         "Защищен швейцарскими законами о конфиденциальности"
@@ -6605,6 +6741,9 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF используется для указания того, кому разрешено отправлять электронную почту для домена, поэтому мы настоятельно рекомендуем включить ${ MAIL_APP_NAME } в вашу запись SPF. Пожалуйста, добавьте следующую запись TXT в ваш DNS. Обычно это можно сделать в панели управления вашего регистратора доменов."
       ],
+      "Stay tuned for future promotions.": [
+        "Следите за будущими акциями."
+      ],
       "Step ${ step }": [
         "Шаг ${ step }",
         "Шага ${ step }",
@@ -6662,6 +6801,9 @@
       "Thank you": [
         "Спасибо"
       ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Спасибо за поддержку нашей миссии по созданию лучшего Интернета, в котором частная жизнь и свобода стоят на первом месте."
+      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Сообщение ${ boldDataLocked } больше не будет отображаться, но вы по-прежнему можете разблокировать свои данные по ссылке: ${ encryptionAndKeysLink }."
       ],
@@ -6713,6 +6855,9 @@
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Эти конфигурации предоставляются для работы с маршрутизаторами WireGuard и официальными клиентами."
       ],
+      "They will be removed from your organization": [
+        "Они будут удалены из вашей организации"
+      ],
       "They'll receive a free month of ${ planName }.": [
         "Они получат бесплатный месяц ${ planName }."
       ],
@@ -6745,6 +6890,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого. Пожалуйста, проверьте, что это именно та ссылка, которую вы хотите посетить, или не переходите по ней."
+      ],
+      "This promotion link has expired.": [
+        "Срок действия этой рекламной ссылки истек."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Этот токен не будет доступен после закрытия этого окна, и вы не должны делиться им ни с кем."
@@ -6992,6 +7140,9 @@
       "We generated a strong password for you": [
         "Мы сгенерировали для вас надежный пароль"
       ],
+      "We just sent you a new link.": [
+        "We just sent you a new link."
+      ],
       "We need to authenticate your payment method with your bank.": [
         "Нам нужно подтвердить ваш способ оплаты в вашем банке."
       ],
@@ -7100,6 +7251,9 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Вы можете включить журналы аутентификации, чтобы видеть когда и с какого IP-адреса производился доступ к аккаунту. Мы будем записывать IP-адреса, которые имели доступ к учетной записи, а также время доступа и неудачные попытки войти."
       ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Вы можете сразу разблокировать описанную выше настройку, добавив ${ specificCountryCount } к количеству IP-адресов в ваше тарифе, или обратиться к нам за индивидуальными решениями."
+      ],
       "You can import one data type at a time.": [
         "Вы можете импортировать один тип данных за один раз."
       ],
@@ -7114,18 +7268,6 @@
         "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить подписку.",
         "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить подписку.",
         "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Удалите ссылки на общие календари и всех пользователей ${ BRAND_NAME }, с которыми вы делились своими календарями, прежде чем отменить подписку."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Вы можете вести до ${ MAX_CALENDARS_FREE } календаря. Пожалуйста, удалите ссылки на календари, которыми вы делитесь, прежде чем отменить ${ MAIL_SHORT_APP_NAME } подписку.",
-        "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Пожалуйста, удалите ссылки на календари, которыми вы делитесь, прежде чем отменить ${ MAIL_SHORT_APP_NAME } подписку.",
-        "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Пожалуйста, удалите ссылки на календари, которыми вы делитесь, прежде чем отменить ${ MAIL_SHORT_APP_NAME } подписку.",
-        "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Пожалуйста, удалите ссылки на календари, которыми вы делитесь, прежде чем отменить ${ MAIL_SHORT_APP_NAME } подписку."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Вы можете вести до ${ MAX_CALENDARS_FREE } календаря. Пожалуйста, удалите ссылки на календари, которыми вы делитесь, прежде чем отмените подписку.",
-        "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Пожалуйста, удалите ссылки на календари, которыми вы делитесь, прежде чем отмените подписку.",
-        "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Пожалуйста, удалите ссылки на календари, которыми вы делитесь, прежде чем отмените подписку.",
-        "Вы можете вести до ${ MAX_CALENDARS_FREE } календарей. Пожалуйста, удалите ссылки на календари, которыми вы делитесь, прежде чем отмените подписку."
       ],
       "You can now access and manage the account as an administrator.": [
         "Теперь вы можете получить доступ к аккаунту и управлять им как администратор."
@@ -7196,6 +7338,12 @@
       "You still need to reply to invitations for the host to see your response.": [
         "Вам все еще нужно ответить на приглашения, чтобы приглашающая сторона увидела ваш ответ."
       ],
+      "You will lose access to Plus features on this date.": [
+        "С этой даты вы потеряете доступ к функциям Plus."
+      ],
+      "You will lose access to Plus servers and features on this date.": [
+        "В этот день вы потеряете доступ к серверам и функциям Plus."
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Вам понадобится адрес ${ BRAND_NAME } для использования ${ MAIL_APP_NAME } и ${ CALENDAR_APP_NAME }"
       ],
@@ -7235,8 +7383,14 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "У Вас есть по крайней мере один просроченный счёт. Ваш аккаунт ограничен. Отсутствие оплаты заблокирует ваши электронные письма и ссылки для обмена. ${ payInvoiceLink }"
       ],
+      "Your account has been successfully updated": [
+        "Ваш аккаунт был успешно обновлен."
+      ],
       "Your account recovery method is set": [
         "Установлен метод восстановления вашего аккаунта"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Ваш аккаунт был успешно обновлен с помощью этой акции"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Ваш аккаунт будет обновлен, когда платеж будет проверен."
@@ -7808,6 +7962,9 @@
       "Auto-detect primary time zone": [
         "Автоопределение основного часового пояса"
       ],
+      "Auto-reply": [
+        "Автоответчик"
+      ],
       "Auto-unsubscribe": [
         "Автоматическая отписка"
       ],
@@ -8021,6 +8178,9 @@
       "Don't keep versions": [
         "Не хранить версии"
       ],
+      "Duration": [
+        "Длительность"
+      ],
       "Email": [
         "Электронная почта"
       ],
@@ -8171,6 +8331,9 @@
       "Level for NetShield blocker filtering": [
         "Уровень для фильтрации блокировщика NetShield"
       ],
+      "Link label": [
+        "Ярлык ссылки"
+      ],
       "Mail Server (IMAP)": [
         "Почтовый сервер (IMAP)"
       ],
@@ -8213,6 +8376,9 @@
       "New display name": [
         "Новое отображаемое имя"
       ],
+      "New email": [
+        "Новое письмо"
+      ],
       "New login password": [
         "Новый пароль для входа"
       ],
@@ -8224,6 +8390,9 @@
       ],
       "New password": [
         "Новый пароль"
+      ],
+      "New plan": [
+        "Новый план"
       ],
       "No filter": [
         "Без фильтра"
@@ -8381,11 +8550,20 @@
       "Sign external messages": [
         "Подписывать внешние сообщения"
       ],
+      "Signature": [
+        "Подпись"
+      ],
+      "SMTP port": [
+        "SMTP-порт"
+      ],
       "SMTP server": [
         "SMTP-сервер"
       ],
       "SMTP token": [
         "SMTP токен"
+      ],
+      "SMTP username": [
+        "Имя пользователя SMTP"
       ],
       "Spam": [
         "Спам"
@@ -8398,6 +8576,12 @@
       ],
       "Start day of month": [
         "День начала месяца"
+      ],
+      "Start time": [
+        "Время начала"
+      ],
+      "Start weekday": [
+        "Первый день недели"
       ],
       "Statement": [
         "Отчет"
@@ -8446,6 +8630,9 @@
       ],
       "Two-password mode": [
         "Режим с двумя паролями"
+      ],
+      "Undo send": [
+        "Отменить отправку"
       ],
       "Upload 1 or more encryption keys": [
         "Загрузите 1 или несколько ключей шифрования"
@@ -8570,8 +8757,23 @@
       "${ BRAND_NAME } product announcements": [
         "Объявления о продукции ${ BRAND_NAME }"
       ],
+      "${ BRAND_NAME } user survey": [
+        "${ BRAND_NAME } user survey"
+      ],
       "${ BRAND_NAME } welcome emails": [
         "Приветственные письма ${ BRAND_NAME }"
+      ],
+      "${ DRIVE_APP_NAME } product updates": [
+        "Обновления продукта от ${ DRIVE_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
+        "Новые функции ${ MAIL_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ PASS_APP_NAME } product updates": [
+        "Обновления продукта от ${ PASS_APP_NAME }"
+      ],
+      "${ VPN_APP_NAME } product updates": [
+        "Обновления продукта от ${ VPN_APP_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -8596,6 +8798,11 @@
     "Label to  inform a feature is only available on Beta": {
       "Beta": [
         "Бета"
+      ]
+    },
+    "Label to change composer mode": {
+      "Maximized": [
+        "Развёрнутый"
       ]
     },
     "Label to change density": {
@@ -8834,6 +9041,11 @@
         "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как"
       ]
     },
+    "mail_signup_2023: Info": {
+      "Secure email that protects your privacy": [
+        "Защищенная электронная почта, обеспечивающая неприкосновенность частной жизни"
+      ]
+    },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
         "Пожалуйста, загляните через несколько минут."
@@ -8903,6 +9115,9 @@
       ],
       "Create a new ${ appName } account": [
         "Создать новый аккаунт ${ appName }"
+      ],
+      "Find your ${ BRAND_NAME } Account username": [
+        "Find your ${ BRAND_NAME } Account username"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Забыли пароль от аккаунта ${ BRAND_NAME }? Восстановите его здесь с помощью кода восстановления, электронной почты или СМС и верните доступ к ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и другим сервисам."
@@ -9319,6 +9534,9 @@
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } с неограниченным количеством псевдонимов hide-my-email"
       ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Программа ${ PROTON_SENTINEL_NAME }"
+      ],
       "${ size } attachment size": [
         "Размер вложения: ${ size }"
       ],
@@ -9496,9 +9714,6 @@
       "Send & receive invitations": [
         "Отправляйте и получайте приглашения"
       ],
-      "Share calendar via link": [
-        "Отправка записей в календаре с помощью ссылки"
-      ],
       "Share files and folders via link": [
         "Обменивайтесь файлами и папками по ссылке"
       ],
@@ -9507,6 +9722,9 @@
       ],
       "SMTP submission": [
         "Отправки через SMTP"
+      ],
+      "SMTP submission for select organizations": [
+        "Отправка по SMTP для отдельных организаций"
       ],
       "Split tunneling (Android and Windows)": [
         "Раздельное туннелирование (Android и Windows)"
@@ -9616,6 +9834,12 @@
       "* With 30-month subscription. Other subscription options available at checkout.": [
         "* С подпиской на 30 месяцев. Другие варианты подписки доступны на странице оформления заказа."
       ],
+      "Advanced network security and access management with dedicated secure Gateways": [
+        "Используйте продвинутую систему сетевой безопасности и управляйте доступом с помощью выделенных защищённых шлюзов"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Все приложения ${ BRAND_NAME } и их платные функции"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Применяемые кредиты, пропорциональное распределение и купоны будут применены на следующем шаге"
       ],
@@ -9649,6 +9873,9 @@
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Защитите конфиденциальность вашей семьи с помощью комплекса услуг ${ BRAND_NAME }."
       ],
+      "Safely access internet from anywhere with essential network monitoring": [
+        "Получите безопасный доступ в Интернет из любой точки мира, проводя необходимый мониторинг сети"
+      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Защищенное облачное хранилище, позволяющее легко и безопасно хранить, синхронизировать и обмениваться файлами."
       ],
@@ -9657,6 +9884,9 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Защищенная электронная почта с дополнительными возможностями для повседневного общения."
+      ],
+      "Tailor-made solutions for larger organizations with specific security needs": [
+        "Используйте индивидуальные решения для более крупных организаций с особыми требованиями к безопасности"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "Специальное решение VPN, которое обеспечивает защищенный высокоскоростной доступ в Интернет без ограничений."
@@ -9758,6 +9988,9 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Мы предлагаем свыше ${ serversAndCountries }, высокую скорость VPN-подключения, доступ к стриминговым платформам со всего мира, защиту от вирусов, блокировщик рекламы, быстрое скачивание через BitTorrent и многое другое."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Доступ к содержимому стриминговых сервисов, включая Netflix, Disney+ и Prime Video, из любой точки мира"
       ],
@@ -9793,9 +10026,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Защищает от угроз конфиденциальности VPN, пропуская трафик через несколько серверов."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Легко делитесь своими календарями с коллегами, семьей и друзьями с помощью ссылки"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Легко делитесь своими календарями с семьей, друзьями или коллегами"
@@ -9857,6 +10087,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Защитите свою семью от вредоносных веб-сайтов и получите доступ к высокоскоростным серверам VPN для просмотра любимого контента"
       ],
+      "Provides the highest level of account security protection and specialist support": [
+        "Обеспечивает высочайший уровень защиты безопасности аккаунтов и специализированную поддержку"
+      ],
       "Quickly set up out-of-office messages": [
         "Быстро настраивайте сообщения о своем отсутствии"
       ],
@@ -9886,6 +10119,9 @@
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Делитесь файлами или папками с кем угодно с помощью защищенных ссылок, доступных для совместного использования"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP позволяет сторонним службам или устройствам отправлять электронную почту через ${ MAIL_APP_NAME }."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "Специально разработанная функция NetShield защищает ваше устройство и ускоряет просмотр страниц, блокируя рекламу, трекеры и вредоносные программы"
@@ -9933,6 +10169,9 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "В любое время"
+      ],
       "Access advanced VPN features": [
         "Получите доступ к расширенным функциям VPN"
       ],
@@ -9947,6 +10186,9 @@
       ],
       "Browser extension": [
         "Расширение для браузера"
+      ],
+      "Censorship circumvention": [
+        "Обход цензуры"
       ],
       "Central control panel": [
         "Центральная панель управления"
@@ -10250,6 +10492,9 @@
       "No parent folder": [
         "Без родительской папки"
       ],
+      "Permanent": [
+        "Постоянно"
+      ],
       "Plain text": [
         "Простой текст"
       ],
@@ -10267,11 +10512,17 @@
       ]
     },
     "Option delay send seconds": {
+      "0 seconds": [
+        "0 секунд"
+      ],
       "10 seconds": [
         "10 секунд"
       ],
       "20 seconds": [
         "20 секунд"
+      ],
+      "5 seconds": [
+        "5 секунд"
       ]
     },
     "Option group": {
@@ -10362,6 +10613,9 @@
       "Continue": [
         "Продолжить"
       ],
+      "Continue to ${ appName } without upgrading": [
+        "Продолжить работу с ${ appName } без улучшения"
+      ],
       "Continue to ${ free }": [
         "Продолжить с ${ free }"
       ],
@@ -10380,6 +10634,9 @@
       "Download to continue ${ size }": [
         "Скачать для продолжения ${ size }"
       ],
+      "Keep this plan": [
+        "Сохранить этот тариф"
+      ],
       "Or ${ createANewAccount }": [
         "Или ${ createANewAccount }"
       ],
@@ -10388,6 +10645,9 @@
       ],
       "Start using ${ appName } now": [
         "Начать использовать ${ appName } сейчас"
+      ],
+      "Upgrade": [
+        "Улучшить"
       ],
       "Upgrade my plan": [
         "Улучшить мой план"
@@ -10452,8 +10712,17 @@
       "All premium ${ BRAND_NAME } services.": [
         "Все премиальные сервисы ${ BRAND_NAME }."
       ],
+      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Но вы можете получить скидку ${ discount }, перейдя на **${ upsellPlanTitle }** - это всего лишь ${ relativePrice } дополнительно в месяц."
+      ],
+      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
+        "Но вы можете получить скидку ${ discount }, перейдя на **${ upsellPlanTitle }**."
+      ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Но вы можете разблокировать **${ unlockPlanTitle }** и все премиальные услуги ${ BRAND_NAME }, улучшив тариф до **${ upsellPlanTitle }** — это добавит лишь ${ relativePrice } в месяц."
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Но вы можете разблокировать **${ unlockPlanTitle }** и все платные сервисы ${ BRAND_NAME } если улучшите до **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditions }": [
         "Продолжая, вы соглашаетесь с нашими ${ termsAndConditions }"
@@ -10500,6 +10769,9 @@
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "Если вы потеряете доступ в свою учетную запись ${ BRAND_NAME }, ваш **набор для восстановления** позволит вам войти и восстановить свои данные."
       ],
+      "Includes:": [
+        "Включает:"
+      ],
       "Install ${ PASS_APP_NAME }": [
         "Установить ${ PASS_APP_NAME }"
       ],
@@ -10523,6 +10795,9 @@
       ],
       "Open-source and audited": [
         "Открытый исходный код, проверенный на безопасность"
+      ],
+      "per month": [
+        "в месяц"
       ],
       "per month, billed annually": [
         "в месяц, оплата за год"
@@ -10563,6 +10838,9 @@
       "Verifying your payment": [
         "Подтверждение вашего платежа"
       ],
+      "Welcome to ${ shortName } Plus": [
+        "Welcome to ${ shortName } Plus"
+      ],
       "Works on all devices": [
         "Работает на всех устройствах"
       ],
@@ -10571,6 +10849,9 @@
       ],
       "You currently have": [
         "У Вас сейчас"
+      ],
+      "You have been invited to join ${ PASS_APP_NAME }": [
+        "Вы получили приглашение присоединиться к команде ${ PASS_APP_NAME }"
       ],
       "Your organization has access to ${ free }. If you want to access premium ${ appName } features, please ask your organization's administrator to upgrade.": [
         "У вашей организации есть доступ к ${ free }. Если вы хотите получить доступ к премиальным функциям ${ appName }, пожалуйста, попросите администратора вашей организации улучшить тариф."
@@ -10969,17 +11250,8 @@
         "${ timeRemaining.inHours } часов",
         "${ timeRemaining.inHours } часа"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inDays } день, чтобы сбросить свой пароль.",
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль.",
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inDays } дней, чтобы сбросить свой пароль.",
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inHours } час, чтобы сбросить свой пароль.",
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль.",
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inHours } часов, чтобы сбросить свой пароль.",
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль."
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Если вы не просили сбросить пароль, отмените этот запрос сейчас."
       ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "Это разрешение истекает в течение ${ timeRemaining.inDays } дня",
@@ -11000,6 +11272,11 @@
     "session_recovery:available:link": {
       "See how": [
         "Посмотреть, как"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Сбросить пароль"
       ]
     },
     "session_recovery:cancellation:action": {
@@ -11037,6 +11314,9 @@
         "ещё ${ gracePeriodHoursRemaining } часа",
         "ещё ${ gracePeriodHoursRemaining } часов",
         "ещё ${ gracePeriodHoursRemaining } часа"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Если вы не просили сбросить пароль, отмените этот запрос сейчас."
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Если вы не просили сбросить пароль, отмените этот запрос сейчас."
@@ -11082,6 +11362,14 @@
         "${ gracePeriodHoursRemaining } часа",
         "${ gracePeriodHoursRemaining } часов",
         "${ gracePeriodHoursRemaining } часа"
+      ]
+    },
+    "session_recovery:status:info": {
+      "Available": [
+        "Доступно"
+      ],
+      "Pending": [
+        "В ожидании"
       ]
     },
     "Settings description": {
@@ -11147,6 +11435,11 @@
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
         "Поделиться с пользователями ${ BRAND_NAME }"
+      ]
+    },
+    "Shared calendar label input placeholder": {
+      "Add label": [
+        "Добавить ярлык"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -11462,9 +11755,6 @@
       ]
     },
     "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        "Добавляйте публичные, внешние или общие календари, используя URL."
-      ],
       "Add public, external, or shared calendars.": [
         "Добавьте публичные, внешние или общие календари."
       ]
@@ -12444,6 +12734,9 @@
       "Folders and labels": [
         "Папки и ярлыки"
       ],
+      "Forward emails": [
+        "Пересылать электронные письма"
+      ],
       "Gateways": [
         "Шлюзы"
       ],
@@ -12966,6 +13259,12 @@
       ]
     },
     "Title header for keys table": {
+      "Fingerprint": [
+        "Отпечаток"
+      ],
+      "Key type": [
+        "Тип ключа"
+      ],
       "Status": [
         "Статус"
       ]
@@ -13158,6 +13457,14 @@
         "Таким способом можно автоматически добавлять ваш открытый ключ к каждому отправляемому вами сообщению. Получатели могут использовать это, чтобы проверять подлинность ваших сообщений и отправлять зашифрованные сообщения вам."
       ]
     },
+    "Tooltip for news": {
+      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
+        "Узнайте последние новости о приватности и о том, что происходит во Вселенной ${ BRAND_NAME }."
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Participate in surveys to improve ${ BRAND_NAME } services"
+      ]
+    },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
         "При получении электронного письма от другого пользователя ${ MAIL_APP_NAME }, у которого в контактах нет доверенных ключей, появится баннер с вопросом, хотите ли вы включить доверенные ключи."
@@ -13196,6 +13503,9 @@
       ]
     },
     "Upgrade": {
+      "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
+        "Улучшите подписку до ${ passPlusPlanName }, чтобы получить неограниченное число псевдонимов hide-my-email."
+      ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Улучшите до ${ planName } для одновременного подключения к VPN до ${ n } устройства",
         "Улучшите до ${ planName } для одновременного подключения к VPN до ${ n } устройств",
@@ -13346,6 +13656,11 @@
       ],
       "Your ${ selected } plan": [
         "Ваш тариф ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Доступ к защищенным основным серверам, быстрая загрузка P2P/BitTorrent, Tor через VPN и многое другое."
       ]
     },
     "Warning": {

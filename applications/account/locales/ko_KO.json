@@ -1710,9 +1710,6 @@
       "Share calendar": [
         "캘린더 공유"
       ],
-      "Share outside ${ BRAND_NAME }": [
-        "${ BRAND_NAME } 외부와 공유"
-      ],
       "Share with ${ BRAND_NAME } users": [
         "${ BRAND_NAME } 사용자와 공유"
       ],
@@ -6357,7 +6354,7 @@
         "${ BRAND_NAME } 계정 상세 정보를 입력하세요."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
-        "${ BRAND_NAME } 계정 이메일 주소 및 사용자 이름을 입력하십시오."
+        "${ BRAND_NAME } 계정 이메일 주소 및 사용자 이름을 입력하세요."
       ],
       "Enter your own password (as organization admin).": [
         "자신의 비밀번호 입력 (조직 관리자와 같음)"
@@ -6861,7 +6858,7 @@
         "파일을 확인하거나 ${ csvTemplateButton } 를 사용해 보세요."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
-        "귀하의 계정과 연계된 12자리 복구 방법을 입력하십시오."
+        "회원님의 계정과 연계된 12자리 복구 구문을 입력해 주세요."
       ],
       "Please fill out this field.": [
         "이 항목은 필수로 입력해야합니다."
@@ -7661,12 +7658,6 @@
       "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
         "최대 ${ MAX_CALENDARS_FREE }개 캘린더를 보관할 수 있습니다. 구독을 취소하기 전에 공유 캘린더 링크와 캘린더를 공유한 ${ BRAND_NAME } 사용자를 제거하십시오."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "최대 ${ MAX_CALENDARS_FREE }개 캘린더를 보관할 수 있습니다. ${ MAIL_SHORT_APP_NAME } 구독을 취소하기 전에 공유 캘린더 링크를 제거하십시오."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links before you cancel your subscription.": [
-        "최대 ${ MAX_CALENDARS_FREE }개 캘린더를 보관할 수 있습니다. 구독을 취소하기 전에 공유 캘린더 링크를 제거하십시오."
-      ],
       "You can now access and manage the account as an administrator.": [
         "이제 관리자로써 계정에 접근하고 관리할 수 있습니다."
       ],
@@ -7806,7 +7797,7 @@
         "데이터 복구 방법이 설정되었습니다."
       ],
       "Your email will only be used for this one-time verification.": [
-        "귀하의 이메일 주소는 이번 인증에만 사용돼요."
+        "회원님의 이메일 주소는 이번 인증에만 사용됩니다."
       ],
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your ${ oldPassword }.": [
         "사용자의 존재하는 메시지, 캘린더 및 연락처가 잠깁니다. 이 데이터를 복구하려면, ${ oldPassword }가 필요합니다."
@@ -9504,6 +9495,9 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
+        "${ BRAND_NAME }의 스토리 중 일부가 되고 싶으시면 Visionary가 되어 주세요."
+      ],
       "Secure email that protects your privacy": [
         "프라이버시를 지켜주는 이메일로 보호하세요."
       ]
@@ -10146,9 +10140,6 @@
       "Servers in ${ vpnServersCountData.paid.countries }+ countries": [
         "${ vpnServersCountData.paid.countries }개 이상 국가 내 서버"
       ],
-      "Share calendar via link": [
-        "링크로 캘린더 공유"
-      ],
       "Share files and folders via link": [
         "링크를 통해 파일 및 폴더를 공유"
       ],
@@ -10284,11 +10275,17 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "전용 보안 게이트웨이를 사용한 고급 네트워크 보안 및 접속 관리"
       ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "모든 ${ BRAND_NAME } 앱들과 해당 앱들의 프리미엄 기능들"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "적용 가능한 크레딧, 비례 배분 및 쿠폰은 다음 단계에서 적용됩니다."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "모든 ${ BRAND_NAME } 서비스를 결합한 포괄적인 개인 정보 보호 및 보안."
+      ],
+      "Early access to new apps and features": [
+        "새 앱 및 기능을 위해 얼리 엑세스 시작"
       ],
       "For next-level password management and identity protection.": [
         "한 차원 높은 비밀번호 관리 및 신원 보호를 위한."
@@ -10482,9 +10479,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "여러 서버를 통해 인터넷 트래픽을 전달하여 VPN 개인 정보에 대한 위협으로부터 방어합니다."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "당신의 친구, 가족, 동창에게 이 링크로 캘린더를 쉽게 공유하세요"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "캘린더를 가족, 친구 및 동료들에게 쉽게 공유하세요"
@@ -11807,12 +11801,6 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "만약 재설정 요청을 자신이 하지 않았다면, 요청을 즉시 취소하세요."
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
-        "비밀번호 재설정 요청이 수락되었습니다 (${ user.Email }). 비밀번호를 변경할 수 있는 시간이 ${ timeRemaining.inDays }일 남았습니다."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
-        "비밀번호 재설정 요청이 수락되었습니다 (${ user.Email }). 비밀번호를 변경할 수 있는 시간이 ${ timeRemaining.inHours }시간 남았습니다."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "비밀번호 재설정의 요청이 시작된 로그인 장치로 이동하십시오."
       ],
@@ -11854,7 +11842,7 @@
     },
     "session_recovery:cancellation:info": {
       "Enter your current password to cancel the password reset process. No other changes will take effect.": [
-        "비밀번호 재설정 절차를 취소하기 위해 현재 비밀번호를 입력하세요. 어떠한 영향도 미치지 않을 것입니다."
+        "비밀번호 재설정 절차를 취소하기 위해 현재 비밀번호를 입력하세요. 이 작업으로 인해 어떠한 영향도 발생되지 않습니다."
       ]
     },
     "session_recovery:cancellation:notification": {
@@ -11884,7 +11872,7 @@
     },
     "session_recovery:disable:info": {
       "Make sure you have access to a recovery method.": [
-        "계정 복구 방법으로 접근할 수 있도록 조지하십시오."
+        "계정 복구 방법으로 접근할 수 있도록 조치해야 합니다."
       ],
       "You will no longer be able to request a password reset from your account settings.": [
         "사용자의 계정 설정에서 비밀번호 재설정 요청을 더 이상 할 수 없게 될 수 있습니다."
@@ -11961,7 +11949,7 @@
     },
     "session_recovery:initiation:info": {
       "For security reasons, you’ll have to wait **72 hours** before you can change your password.": [
-        "안전상의 이우로, 비밀번호를 변경하기 전까지 **72시간**을 대기해야 합니다."
+        "보안상의 이유로, 비밀번호를 변경하기 전까지 **72시간**을 대기해야 합니다."
       ],
       "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
         "**복구 방법**이 설정되어 있다면, 복구 방법으로 대신 시도하세요. 이 방법으로 빠른 비밀번호 변경이 가능합니다."
@@ -11997,6 +11985,14 @@
       ],
       "Request password reset": [
         "비밀번호 재설정 요청"
+      ]
+    },
+    "session_recovery:settings:info": {
+      "To disallow password reset, you must have a recovery method set up.": [
+        "비밀번호 재설정을 허용하지 않으려면, 복구 방법 설정이 필요합니다."
+      ],
+      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
+        "계정 보안의 향상과 데이터 손실 방지를 위해, 웹 애플리케이션 내에 있는 계정 설정에서 비밀번호 재설정을 요청할 수 있습니다."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -12431,9 +12427,6 @@
       ]
     },
     "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        "URL을 사용하는 공개, 외부 혹은 공유된 캘린더 추가"
-      ],
       "Add public, external, or shared calendars.": [
         "공개, 외부 혹은 공유된 캘린더 추가"
       ]
@@ -13610,6 +13603,9 @@
       ],
       "Password and keys": [
         "비밀번호 및 키"
+      ],
+      "Password reset settings": [
+        "비밀번호 재설정 설정"
       ],
       "Pay invoice": [
         "청구서 지불"
