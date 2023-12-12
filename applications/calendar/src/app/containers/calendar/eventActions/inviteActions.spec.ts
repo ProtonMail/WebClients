@@ -134,6 +134,19 @@ describe('getSendIcsAction', () => {
         };
     });
 
+    describe('when action type equals NONE', () => {
+        it('should not send any email', async () => {
+            const inviteParams = generateInviteParams({ inviteActions: { type: INVITE_ACTION_TYPES.NONE } });
+
+            await getSendIcsAction({
+                ...inviteParams,
+                inviteActions: omit(inviteParams.inviteActions, ['selfAddress']),
+            })();
+
+            expect(sendIcsSpy).toHaveBeenCalledTimes(0);
+        });
+    });
+
     describe('when no self address', () => {
         it('should call `onRequestError`', async () => {
             const inviteParams = generateInviteParams();
