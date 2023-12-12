@@ -40,12 +40,13 @@ import {
     unsafeSHA1,
     verifyCleartextMessage,
     verifyMessage,
-} from 'pmcrypto';
-import type { Data, Key, PrivateKey, PublicKey } from 'pmcrypto';
-import { UserID, config, enums } from 'pmcrypto/lib/openpgp';
+} from 'pmcrypto-v6-canary';
+import type { AlgorithmInfo as AlgorithmInfoV6, Data, Key, PrivateKey, PublicKey } from 'pmcrypto-v6-canary';
+import { SubkeyOptions, UserID, config, enums } from 'pmcrypto-v6-canary/lib/openpgp';
 
 import { arrayToHexString } from '../utils';
 import {
+    AlgorithmInfo,
     ComputeHashStreamOptions,
     InitOptions,
     KeyInfo,
@@ -54,7 +55,6 @@ import {
     MessageInfo,
     PrivateKeyReference,
     PublicKeyReference,
-    SessionKeyWithoutPlaintextAlgo,
     SignatureInfo,
     WorkerDecryptLegacyOptions,
     WorkerDecryptionOptions,
@@ -112,11 +112,36 @@ const toArray = <T>(maybeArray: MaybeArray<T>) => (Array.isArray(maybeArray) ? m
 
 const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promise<PublicKeyReference> => {
     const publicKey = key.isPrivate() ? key.toPublic() : key; // We don't throw on private key since we allow importing an (encrypted) private key using 'importPublicKey'
+    const v6Tov5AlgorithmInfo = (algorithmInfo: AlgorithmInfoV6): AlgorithmInfo => {
+        switch (algorithmInfo.algorithm) {
+            case 'eddsaLegacy':
+                return {
+                    algorithm: 'eddsa',
+                    curve: algorithmInfo.curve === 'ed25519Legacy' ? 'ed25519' : 'curve25519',
+                };
+            case 'ecdh':
+                return {
+                    algorithm: 'ecdh',
+                    curve:
+                        algorithmInfo.curve === 'curve25519Legacy'
+                            ? 'curve25519'
+                            : (algorithmInfo.curve as AlgorithmInfo['curve']),
+                };
+            case 'ed448':
+            case 'x448':
+                throw new Error('Unsupported algorithm');
+            default:
+                const result: AlgorithmInfo = { algorithm: algorithmInfo.algorithm };
+                if (algorithmInfo.curve !== undefined) { result.curve = algorithmInfo.curve as AlgorithmInfo['curve'] };
+                if (algorithmInfo.bits !== undefined) { result.bits = algorithmInfo.bits };
+                return result;
+        }
+    };
 
     const fingerprint = publicKey.getFingerprint();
     const hexKeyID = publicKey.getKeyID().toHex();
     const hexKeyIDs = publicKey.getKeyIDs().map((id) => id.toHex());
-    const algorithmInfo = publicKey.getAlgorithmInfo();
+    const algorithmInfo = v6Tov5AlgorithmInfo(publicKey.getAlgorithmInfo());
     const creationTime = publicKey.getCreationTime();
     const expirationTime = await publicKey.getExpirationTime();
     const userIDs = publicKey.getUserIDs();
@@ -159,7 +184,7 @@ const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promis
                 ? otherKey._keyContentHash[1] === keyContentHashNoCerts
                 : otherKey._keyContentHash[0] === keyContentHash,
         subkeys: publicKey.getSubkeys().map((subkey) => {
-            const subkeyAlgoInfo = subkey.getAlgorithmInfo();
+            const subkeyAlgoInfo = v6Tov5AlgorithmInfo(subkey.getAlgorithmInfo());
             const subkeyKeyID = subkey.getKeyID().toHex();
             return {
                 getAlgorithmInfo: () => subkeyAlgoInfo,
@@ -274,7 +299,18 @@ class KeyManagementApi {
      * @returns reference to the generated private key
      */
     async generateKey(options: WorkerGenerateKeyOptions) {
-        const { privateKey } = await generateKey({ ...options, format: 'object' });
+        const v5Tov6CurveOption = (curve: WorkerGenerateKeyOptions['curve']) =>
+            curve === 'ed25519' || curve === 'curve25519' ? 'ed25519Legacy' : curve;
+
+        const { privateKey } = await generateKey({
+            ...options,
+            curve: v5Tov6CurveOption(options.curve),
+            subkeys: options.subkeys?.map<SubkeyOptions>((subkeyOptions) => ({
+                ...subkeyOptions,
+                curve: v5Tov6CurveOption(subkeyOptions.curve),
+            })),
+            format: 'object',
+        });
         // Typescript guards against a passphrase input, but it's best to ensure the option wasn't given since for API simplicity we assume any PrivateKeyReference points to a decrypted key.
         if (!privateKey.isDecrypted()) {
             throw new Error(
@@ -471,6 +507,8 @@ export class Api extends KeyManagementApi {
 
         const encryptionResult = await encryptMessage<DataType, FormatType, DetachedType>({
             ...options,
+            // @ts-ignore probably issue with mismatching underlying stream definitions
+            textData: options.textData,
             encryptionKeys,
             signingKeys,
             signature: inputSignature,
@@ -505,6 +543,8 @@ export class Api extends KeyManagementApi {
         );
         const signResult = await signMessage<DataType, FormatType, boolean>({
             ...options,
+            // @ts-ignore probably issue with mismatching underlying stream definitions
+            textData: options.textData,
             signingKeys,
         });
 
@@ -620,6 +660,8 @@ export class Api extends KeyManagementApi {
             FormatType
         >({
             ...options,
+            // @ts-ignore `constantTimePKCS1DecryptionSupportedSymmetricAlgorithms` mismatching enums due to 'plaintext' value
+            config: options.config,
             message,
             signature,
             encryptedSignature,
@@ -666,6 +708,8 @@ export class Api extends KeyManagementApi {
         const { signatures: signatureObjects, ...decryptionResultWithoutSignatures } =
             await decryptMessageLegacy<FormatType>({
                 ...options,
+                // @ts-ignore `constantTimePKCS1DecryptionSupportedSymmetricAlgorithms` mismatching enums due to 'plaintext' value
+                config: options.config,
                 armoredMessage,
                 signature,
                 decryptionKeys,
@@ -757,7 +801,7 @@ export class Api extends KeyManagementApi {
     async generateSessionKey({ recipientKeys: recipientKeyRefs = [], ...options }: WorkerGenerateSessionKeyOptions) {
         const recipientKeys = toArray(recipientKeyRefs).map((keyReference) => this.keyStore.get(keyReference._idx));
         const sessionKey = await generateSessionKey({ recipientKeys, ...options });
-        return sessionKey as SessionKeyWithoutPlaintextAlgo;
+        return sessionKey;
     }
 
     /**
@@ -807,11 +851,13 @@ export class Api extends KeyManagementApi {
 
         const sessionKey = await decryptSessionKey({
             ...options,
+            // @ts-ignore `constantTimePKCS1DecryptionSupportedSymmetricAlgorithms` mismatching enums due to 'plaintext' value
+            config: options.config,
             message,
             decryptionKeys,
         });
 
-        return sessionKey as SessionKeyWithoutPlaintextAlgo;
+        return sessionKey;
     }
 
     async processMIME({ verificationKeys: verificationKeyRefs = [], ...options }: WorkerProcessMIMEOptions) {

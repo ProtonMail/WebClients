@@ -178,6 +178,7 @@ const InnerStandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>
                 await loadCryptoWorker(
                     getCryptoWorkerOptions(APP_NAME, {
                         checkEdDSAFaultySignatures: client.isEnabled('EdDSAFaultySignatureCheck'),
+                        v6Canary: client.isEnabled('CryptoCanaryOpenPGPjsV6'),
                     })
                 );
             } catch (error) {
