@@ -1,4 +1,4 @@
-import {getRecurrenceIdDate} from '@proton/shared/lib/calendar/veventHelper';
+import { getRecurrenceIdDate } from '@proton/shared/lib/calendar/veventHelper';
 import { Address } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, CalendarMember } from '@proton/shared/lib/interfaces/calendar';
 
@@ -23,6 +23,10 @@ const getEditEventData = ({ eventData, eventResult, memberResult: [member, addre
     }
 
     const { veventComponent } = eventResult?.[0] || {};
+    const { Color } = eventResult?.[1] || {};
+    if (Color && veventComponent) {
+        veventComponent.color = { value: Color };
+    }
     const recurrenceID = getRecurrenceIdDate(mainVeventComponent);
 
     return {
