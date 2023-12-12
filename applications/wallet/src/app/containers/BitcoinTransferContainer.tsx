@@ -26,7 +26,7 @@ export const BitcoinTransferContainer = ({ wallets }: Props) => {
                 style={{ '--max-w-custom': '40rem' }}
             >
                 <Tabs
-                    className="w-full flex flex-column flex-0"
+                    className="w-full flex flex-column flex-0 pb-4"
                     fullWidth
                     value={tabIndex}
                     onChange={setTabIndex}
