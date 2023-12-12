@@ -20,8 +20,9 @@ export const PASS_BLOG_TRIAL_URL = 'https://proton.me/support/pass-trial';
 export const PASS_CHROME_URL = 'https://chrome.google.com/webstore/detail/proton-pass/ghmbeldphafepmbegfdlkpapadhbakde';
 export const PASS_FIREFOX_URL = 'https://addons.mozilla.org/en-US/firefox/addon/proton-pass/';
 
-export const PASS_BF_MONTHLY_PRICE = 199;
+export const ITEM_COUNT_RATING_PROMPT = ENV === 'production' ? 10 : 1;
 
+export const PASS_BF_MONTHLY_PRICE = 199;
 export const PASS_BF_2023_DATES = [
     ENV === 'development' ? Date.now() - 1 : +new Date('2023-11-02T06:00:00'),
     +new Date('2023-12-04T00:00:00'),
