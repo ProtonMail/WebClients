@@ -70,7 +70,7 @@ const formatCCExpirationDate = (item: BitwardenCCItem) => {
 
 export const readBitwardenData = (data: string): ImportPayload => {
     try {
-        const { items, encrypted, folders } = JSON.parse(data) as BitwardenData;
+        const { items, encrypted, folders = [] } = JSON.parse(data) as BitwardenData;
         if (encrypted) throw new ImportReaderError(c('Error').t`Encrypted JSON not supported`);
         if (!Array.isArray(items) || !Array.isArray(folders)) {
             throw new ImportReaderError(c('Error').t`Importing items failed`);
