@@ -7788,12 +7788,6 @@
       "${ timeRemaining.inHours } hours": [
         "${ timeRemaining.inHours } 小时"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
-        "密码重置请求已获批准(${ user.Email })。您有${ timeRemaining.inDays } 天的时间来重置您的密码"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
-        "密码重置请求已获批准(${ user.Email })。您有${ timeRemaining.inHours } 小时的时间来重置您的密码"
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "请转到已登录的设备（在发起请求的会话中）更改您的密码。"
       ],

@@ -199,6 +199,9 @@
       "Close navigation": [
         "Закрыть панель навигации"
       ],
+      "Close the checklist": [
+        "Закрыть контрольный список"
+      ],
       "Close this banner": [
         "Закрыть этот баннер"
       ],
@@ -1754,6 +1757,12 @@
       ],
       "You already tentatively accepted this invitation.": [
         "Вы уже предварительно приняли это приглашение."
+      ],
+      "You cannot respond to ${ BRAND_NAME } invites if you're not on the participants list at the moment.": [
+        "You cannot respond to ${ BRAND_NAME } invites if you're not on the participants list at the moment."
+      ],
+      "Your email address is not in the original participants list.": [
+        "Your email address is not in the original participants list."
       ]
     },
     "Calendar widget banner": {
@@ -3038,6 +3047,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идет шифрование и импортирование контактов. Это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Для импорта через CSV- и VCF-файл убедитесь, что файл не превышает ${ MAX_IMPORT_FILE_SIZE_STRING } или ${ MAX_IMPORT_CONTACTS_STRING } контактов. Если ваш файл больше, пожалуйста, разделите его на более мелкие файлы. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Похоже, что список контактов, который вы импортируете, содержит группы. Пожалуйста, уточните, как их нужно импортировать."
       ],
@@ -3065,6 +3077,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Экономьте время, отправляя электронные письма или приглашения всем сразу, это одна из многих функций премиум-подписки. Купите её уже сегодня."
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Чтобы импортировать контакты из Google или Outlook, ${ easySwitchLink }."
+      ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Включите защиту от отслеживания электронной почты, чтобы предотвратить слежку рекламодателей и других лиц за вашим местоположением и активностью в сети."
       ],
@@ -3091,6 +3106,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Вы можете отметить для удаления те контакты, которые не хотите ни объединять, ни оставлять. Удаление будет происходить только после нажатия кнопки «Объединить»."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "используйте помощник импорта Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -4146,6 +4166,12 @@
         "Мегабайтов",
         "Мегабайтов",
         "Мегабайтов"
+      ],
+      "Terabyte": [
+        "Терабайт",
+        "Терабайта",
+        "Терабайтов",
+        "Терабайтов"
       ]
     },
     "Filter": {
@@ -4333,6 +4359,9 @@
       ],
       "Close": [
         "Закрыть"
+      ],
+      "Closing this means giving up the free storage bonus.": [
+        "Закрытие этого означает отказ от бонуса бесплатного хранилища."
       ],
       "Congratulation, you completed all the steps!": [
         "Поздравления, вы завершили все шаги!"
@@ -5174,6 +5203,9 @@
       "Calendar side panel": [
         "Боковая панель календаря"
       ],
+      "Can't find what you're looking for? ${ displayAllMailButton }": [
+        "Can't find what you're looking for? ${ displayAllMailButton }"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не помните ваш пароль? Мы можем помочь вам удалить данные зашифрованные этим ключом для всех контактов и таким образом убрать это оповещение."
       ],
@@ -5212,6 +5244,9 @@
       ],
       "Copied to clipboard": [
         "Скопировано в буфер обмена"
+      ],
+      "Copy the link to clipboard": [
+        "Скопировать ссылку в буфер обмена"
       ],
       "Country code": [
         "Код страны"
@@ -5699,6 +5734,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupName }."
       ],
+      "Please use another browser or download the file.": [
+        "Пожалуйста, воспользуйтесь другим браузером или загрузите файл."
+      ],
       "Please wait till your changes are synced with the server.": [
         "Ожидайте пока изменения синхронизируются с сервером."
       ],
@@ -5710,6 +5748,9 @@
       ],
       "Preview failed to be loaded": [
         "Не удалось загрузить предварительный просмотр"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "Предварительный просмотр для этого типа файлов в настоящее время не поддерживается в этом браузере."
       ],
       "Preview for this file type is not supported": [
         "Предварительный просмотр файлов этого типа не поддерживается"
@@ -8214,18 +8255,6 @@
         "${ timeRemaining.inHours } часов",
         "${ timeRemaining.inHours } часа"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inDays } день, чтобы сбросить свой пароль.",
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль.",
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inDays } дней, чтобы сбросить свой пароль.",
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inHours } час, чтобы сбросить свой пароль.",
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль.",
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inHours } часов, чтобы сбросить свой пароль.",
-        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль."
-      ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "Это разрешение истекает в течение ${ timeRemaining.inDays } дня",
         "Это разрешение истекает в течение ${ timeRemaining.inDays } дней",
@@ -8242,6 +8271,11 @@
     "session_recovery:available:link": {
       "See how": [
         "Посмотреть, как"
+      ]
+    },
+    "session_recovery:available:title": {
+      "Reset your password": [
+        "Сбросить пароль"
       ]
     },
     "session_recovery:cancellation:action": {

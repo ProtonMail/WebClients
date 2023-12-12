@@ -7817,12 +7817,6 @@
       "${ timeRemaining.inHours } hours": [
         "${ timeRemaining.inHours }時間"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
-        "パスワードリセットリクエストが承認されました(${ user.Email })。パスワードをリセットできるのはあと${ timeRemaining.inDays }日です。"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
-        "パスワードリセットのリクエストが承認されました(${ user.Email })。パスワードをリセットできる時間は残り${ timeRemaining.inHours }時間あります。"
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "サインインしているデバイス (パスワード変更の要求がされたデバイス)に移動して、パスワードを変更してください。"
       ],

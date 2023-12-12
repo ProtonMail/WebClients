@@ -615,7 +615,7 @@
         "Mandag"
       ],
       "More": [
-        "Flere"
+        "Mere"
       ],
       "More details about ${ ariaLabelTitle }": [
         "Flere detaljer om ${ ariaLabelTitle }"
@@ -8115,14 +8115,6 @@
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } time",
         "${ timeRemaining.inHours } timer"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Anmodning om nulstilling af adgangskode godkendt (${ user.Email }). Du har ${ timeRemaining.inDays } dag til at nulstille din adgangskode.",
-        "Anmodning om nulstilling af adgangskode godkendt (${ user.Email }). Du har ${ timeRemaining.inDays } dage til at nulstille din adgangskode."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Anmodning om nulstilling af adgangskode godkendt (${ user.Email }). Du har ${ timeRemaining.inHours } time til at nulstille din adgangskode.",
-        "Anmodning om nulstilling af adgangskode godkendt (${ user.Email }). Du har ${ timeRemaining.inHours } timer til at nulstille din adgangskode."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Gå til den enhed, hvor du er logget ind (i den session, hvor anmodningen blev indledt) for at ændre din adgangskode."
