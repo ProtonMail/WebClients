@@ -415,6 +415,9 @@
     "Description": {
       "A checked box means the feature is disabled.": [
         "Rasti ruudussa tarkoittaa, että toiminto on poistettu käytöstä."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Lista verkkotunnuksista, joilla joitakin automaattisia ${ PASS_SHORT_APP_NAME } -toimintoja (automaattitäyttö, automaattiehdotus, automaattitallennus) ei suoriteta.${ infoText }"
       ]
     },
     "Error": {
@@ -1048,6 +1051,9 @@
       "Thank you, the problem has been reported": [
         "Kiitos, ongelmasta on ilmoitettu"
       ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "Automaattitäytön pudotusvalikko avautuu automaattisesti, kun klikkaat tai keskityt kenttään."
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Teksti, jota yrität liittää, ylittää ${ maxLength }-merkin enimmäispituuden."
       ],
@@ -1175,6 +1181,9 @@
       ],
       "15 minutes": [
         "15 minuutin kuluttua"
+      ],
+      "2FA secret key (TOTP)": [
+        "2FA-salaisuuden avain (TOTP)"
       ],
       "2FA token (TOTP)": [
         "2FA-tunniste (TOTP)"
@@ -1585,6 +1594,9 @@
       ]
     },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "Lisää 2FA-salaisuuden avain"
+      ],
       "Add hidden text": [
         "Lisää piilotettu teksti"
       ],
