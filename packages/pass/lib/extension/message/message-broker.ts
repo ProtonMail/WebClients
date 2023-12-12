@@ -35,7 +35,8 @@ export type ExtensionMessageBroker = ReturnType<typeof createMessageBroker>;
 export const createMessageBroker = (options: {
     allowExternal: WorkerMessageType[];
     strictOriginCheck: WorkerMessageType[];
-    onDisconnect?: (portName: string) => void;
+    onError: (error: any) => void;
+    onDisconnect: (portName: string) => void;
 }) => {
     const handlers: Map<WorkerMessageType, MessageHandlerCallback> = new Map();
     const ports: Map<string, Runtime.Port> = new Map();
@@ -114,6 +115,7 @@ export const createMessageBroker = (options: {
                 return successMessage(res);
             } catch (error: any) {
                 logger.debug(`[MessageBroker::Message] error`, error);
+                options.onError(error);
                 return error instanceof Error ? errorMessage(error?.message) : { ...error, type: 'error' };
             }
         }
@@ -127,19 +129,24 @@ export const createMessageBroker = (options: {
          * on the source port. This can be used in injected frames to
          * detect they're not controlled by a content-script */
         port.onMessage.addListener(async (message: Maybe<WorkerMessageWithSender>, source) => {
-            if (message) assertMessageVersion(message);
-            if (message && message.type === WorkerMessageType.PORT_FORWARDING_MESSAGE) {
-                if (ports.has(message.forwardTo)) {
-                    ports.get(message.forwardTo)!.postMessage({ ...message.payload, forwarded: true });
-                } else {
-                    source.postMessage(backgroundMessage({ type: WorkerMessageType.PORT_UNAUTHORIZED }));
+            try {
+                if (message) assertMessageVersion(message);
+                if (message && message.type === WorkerMessageType.PORT_FORWARDING_MESSAGE) {
+                    if (ports.has(message.forwardTo)) {
+                        ports.get(message.forwardTo)!.postMessage({ ...message.payload, forwarded: true });
+                    } else {
+                        source.postMessage(backgroundMessage({ type: WorkerMessageType.PORT_UNAUTHORIZED }));
+                    }
                 }
+            } catch (err: unknown) {
+                options.onError(err);
+                throw err;
             }
         });
 
         port.onDisconnect.addListener(({ name }) => {
             ports.delete(name);
-            options.onDisconnect?.(name);
+            options.onDisconnect(name);
         });
     };
 

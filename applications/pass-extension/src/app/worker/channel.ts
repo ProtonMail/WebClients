@@ -33,6 +33,11 @@ const WorkerMessageBroker = createMessageBroker({
         WorkerMessageType.POPUP_INIT,
         WorkerMessageType.UNLOCK_REQUEST,
     ],
+    onError: withContext((ctx, err) => {
+        if (err instanceof Error && err.name === 'VersionMismatch') {
+            ctx.service.activation.reload();
+        }
+    }),
     onDisconnect: withContext((ctx, portName) => {
         const isPopup = portName.startsWith('popup');
         const hasRegisteredLock = ctx.authStore.getLockStatus() === SessionLockStatus.REGISTERED;

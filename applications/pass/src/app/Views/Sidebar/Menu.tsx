@@ -57,7 +57,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
 
     const onLock = useCallback(async () => {
         createNotification(enhance({ text: c('Info').t`Locking your session...`, type: 'info', loading: true }));
-        await authService.lock({ soft: false });
+        await authService.lock({ soft: false, broadcast: true });
         clearNotifications();
     }, []);
 
@@ -154,10 +154,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
 
                 <div className="flex items-center justify-space-between shrink-0 flex-nowrap gap-2 mt-2 pl-4 pr-2 mx-3">
                     <span
-                        className={clsx(
-                            'flex items-center flex-nowrap',
-                            passPlan === UserPassPlan.PLUS && 'ui-orange'
-                        )}
+                        className={clsx('flex items-center flex-nowrap', passPlan === UserPassPlan.PLUS && 'ui-orange')}
                     >
                         <Icon name="star" className="mr-3 shrink-0" color="var(--interaction-norm)" />
                         <span className="text-left">

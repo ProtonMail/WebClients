@@ -15,7 +15,12 @@ export const getPrimaryPublicKeyForEmail = async (email: string): Promise<Maybe<
         return publicKeys?.[0];
     } catch (err) {
         const { code } = getApiError(err);
-        if (code === API_CUSTOM_ERROR_CODES.KEY_GET_ADDRESS_MISSING) return undefined;
+        if (
+            code === API_CUSTOM_ERROR_CODES.KEY_GET_ADDRESS_MISSING ||
+            code === API_CUSTOM_ERROR_CODES.KEY_GET_DOMAIN_EXTERNAL
+        ) {
+            return undefined;
+        }
         throw err;
     }
 };
