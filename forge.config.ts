@@ -3,21 +3,17 @@ require("dotenv").config();
 import { AutoUnpackNativesPlugin } from "@electron-forge/plugin-auto-unpack-natives";
 import { WebpackPlugin } from "@electron-forge/plugin-webpack";
 import type { ForgeConfig } from "@electron-forge/shared-types";
-import { type } from "os";
+import { getExtraResource, getIco, getIcon, getName } from "./src/utils/config";
 
 import { mainConfig } from "./webpack.main.config";
 import { rendererConfig } from "./webpack.renderer.config";
 
-const iconIco = process.env.RELEASE === "beta" ? "icon-beta.ico" : "icon.ico" ?? "icon.ico";
-const icon = process.env.RELEASE === "beta" ? "icon-beta" : "icon" ?? "icon";
-const name = process.env.RELEASE === "beta" ? "Proton Mail Beta" : "Proton Mail" ?? "Proton Mail";
-
 const config: ForgeConfig = {
     packagerConfig: {
-        icon: `${__dirname}/assets/icons/${icon}`,
+        icon: `${__dirname}/assets/icons/${getIcon()}`,
         asar: true,
-        name,
-        extraResource: type() === "Darwin" ? ["./src/macos/Uninstall Proton Mail.app", "./src/macos/uninstall.sh"] : [],
+        name: getName(),
+        extraResource: getExtraResource(),
         osxSign: {},
         osxNotarize: {
             appleId: process.env.APPLE_ID!,
@@ -30,8 +26,8 @@ const config: ForgeConfig = {
         {
             name: "@electron-forge/maker-squirrel",
             config: {
-                iconUrl: `${__dirname}/assets/${iconIco}`,
-                setupIcon: `${__dirname}/assets/${iconIco}`,
+                iconUrl: `${__dirname}/assets/${getIco()}`,
+                setupIcon: `${__dirname}/assets/${getIco()}`,
                 loadingGif: `${__dirname}/assets/windows/install-spinner.gif`,
             },
         },
@@ -46,7 +42,7 @@ const config: ForgeConfig = {
                             x: 229,
                             y: 250,
                             type: "file",
-                            path: `${process.cwd()}/out/${name}-darwin-universal/${name}.app`,
+                            path: `${process.cwd()}/out/${getName()}-darwin-universal/${getName()}.app`,
                         },
                         { x: 429, y: 250, type: "link", path: "/Applications" },
                     ];

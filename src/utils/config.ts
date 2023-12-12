@@ -1,4 +1,5 @@
 import log from "electron-log/main";
+import { type } from "os";
 import { getHardcodedURLs } from "./urlStore";
 
 export interface URLConfig {
@@ -34,4 +35,35 @@ const prodConfig: Config = {
 export const getConfig = (isPackaged: boolean) => {
     log.info("getConfig, isPackaged:", isPackaged);
     return isPackaged ? prodConfig : devConfig;
+};
+
+export const getIco = () => {
+    if (process.env.RELEASE === "beta") {
+        return "icon-beta.ico";
+    }
+    return "icon.ico";
+};
+
+export const getIcon = () => {
+    if (process.env.RELEASE === "beta") {
+        return "icon-beta";
+    }
+    return "icon";
+};
+
+export const getName = () => {
+    if (process.env.RELEASE === "beta") {
+        return "Proton Mail Beta";
+    }
+    if (process.env.RELEASE === "dev") {
+        return "Proton Mail Dev";
+    }
+    return "Proton Mail";
+};
+
+export const getExtraResource = () => {
+    if (type() === "Darwin") {
+        return ["./src/macos/Uninstall Proton Mail.app", "./src/macos/uninstall.sh"];
+    }
+    return [];
 };
