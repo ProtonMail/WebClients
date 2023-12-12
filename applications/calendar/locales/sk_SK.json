@@ -3832,6 +3832,9 @@
         "Všetky (${ totalFoldersCount } štítkov)",
         "Všetky (${ totalFoldersCount } štítkov)"
       ],
+      "All participants will get a cancellation email. Which event would you like to delete?": [
+        "Všetci účastníci dostanú email o zrušení udalosti. Ktorú udalosť chcete vymazať?"
+      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
         "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
@@ -4518,11 +4521,6 @@
         "Iba zobrazenie"
       ]
     },
-    "Info; calendar sharing pop-up": {
-      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
-        "Pozvite ostatných s účtom ${ BRAND_NAME } na zobrazenie alebo úpravu udalostí vo vašom kalendári."
-      ]
-    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "Niektoré z vašich kalendárov nebudú zobrazovať detaily už vytvorených udalosti."
@@ -5135,7 +5133,7 @@
     },
     "Modal for received invitation to share calendar; text": {
       "${ calendarOwnerDisplayName } shared their calendar ${ boldCalendarName } with you.": [
-        "${ calendarOwnerDisplayName } s vami zdieľal/a svoj kalendár ${ boldCalendarName }."
+        "${ calendarOwnerDisplayName } s vami zdieľa svoj kalendár ${ boldCalendarName }."
       ]
     },
     "Modal for received invitation to share calendar; Title": {
@@ -5390,7 +5388,7 @@
         "Získajte neobmedzené množstvo aliasov so službou SimpleLogin od ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
-        "Odložte správy a pripomeňte si ich, keď chcete"
+        "Odložte správy a pripomeňte si ich, kedy chcete"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
@@ -5970,18 +5968,6 @@
         "${ timeRemaining.inHours } hodín",
         "${ timeRemaining.inHours } hodín"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } deň.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } dni.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } dní.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } dní."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodinu.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodiny.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodín.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodín."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Prejdite na prihlásené zariadenie (v relácii, kde bola žiadosť iniciovaná) a zmeňte heslo."
       ],
@@ -6441,7 +6427,7 @@
         "URL kalendára"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
-        "Na odber externého alebo verejného kalendára a jeho aktualizácií zadajte jeho URL adresu. Jeho verzia na čítanie bude pridaná do vašich Ostatných kalendárov.\n${ kbLink }"
+        "Ak sa chcete prihlásiť na odber externého alebo verejného kalendára a jeho aktualizácií, zadajte URL adresu. Verzia kalendára len na čítanie sa pridá do vašich Ostatných kalendárov.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -7120,11 +7106,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Vyberte číslo"
-      ]
-    },
-    "Title; calendar sharing pop-up": {
-      "Planning just got easier!": [
-        "Plánovanie je teraz jednoduchšie!"
       ]
     },
     "Title; create calendar modal": {

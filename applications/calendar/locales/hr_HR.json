@@ -252,6 +252,12 @@
       "Import from .csv or vCard": [
         "Uvezite iz .csv ili vCard"
       ],
+      "Import from Outlook": [
+        "Uvoz iz Outlooka"
+      ],
+      "Join calendar": [
+        "Pridružite se kalendaru"
+      ],
       "Load": [
         "Učitaj"
       ],
@@ -407,6 +413,9 @@
       ],
       "Select calendar view": [
         "Odaberite prikaz kalendara"
+      ],
+      "Select time zone": [
+        "Odaberite vremensku zonu"
       ],
       "Send": [
         "Pošalji"
@@ -585,6 +594,9 @@
       "${ title } starts now": [
         "${ title } započinje danas"
       ],
+      "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
+        "${ title } počinje u ${ formattedDate } u ${ formattedHour }"
+      ],
       "${ title } starts today": [
         "${ title } započinje danas"
       ]
@@ -625,6 +637,12 @@
       ],
       "6 users": [
         "6 korisnika"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bf2023: Offers": {
@@ -779,6 +797,9 @@
       ]
     },
     "Collapsible tooltip": {
+      "Collapse": [
+        "Minimiziraj"
+      ],
       "Expand": [
         "Proširi"
       ]
@@ -1622,6 +1643,9 @@
       "Trinidad and Tobago": [
         "Trinidad i Tobago"
       ],
+      "Tristan da Cunha": [
+        "Tristan da Cunha"
+      ],
       "Tunisia": [
         "Tunis"
       ],
@@ -1988,6 +2012,9 @@
       "Event not found": [
         "Događaj nije pronađen"
       ],
+      "Failed to get event": [
+        "Neuspješno dohvaćanje događaja"
+      ],
       "Failed to get original occurrence in series": [
         "Neuspješno dohvaćanje originalnog pojavljivanja u seriji"
       ],
@@ -2079,6 +2106,9 @@
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "Neki nazivi vaših mapa nisu dostupni. Prilagodite uvoz da biste uredili te nazive."
       ],
+      "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
+        "Neki od vaših naziva mapa premašuju ${ MAIL_APP_NAME }ovo maksimalno ograničenje broja znakova. Prilagodite uvoz da biste uredili te nazive."
+      ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Neki nazivi vaših oznaka nisu dostupni. Prilagodite uvoz da biste uredili te nazive."
       ],
@@ -2118,6 +2148,9 @@
       "This label name is not available. Please choose a different name.": [
         "Naziv oznake nije dostupan. Odaberite drugi naziv."
       ],
+      "This message may contain some links URL that cannot be properly opened by your current browser.": [
+        "Ova poruka može sadržavati URL poveznice koje trenutačni preglednik ne može ispravno otvoriti."
+      ],
       "Trusted keys are not valid for sending": [
         "Pouzdani ključevi nisu valjani za slanje"
       ],
@@ -2143,6 +2176,9 @@
     "Error importing calendar": {
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Maksimalna veličina datoteke je ${ MAX_IMPORT_FILE_SIZE_STRING }."
+      ],
+      "An error occurred uploading your file ${ formattedFilename }. Only ICS file formats are allowed.": [
+        "Došlo je do pogreške prilikom učitavanja vaše datoteke ${ formattedFilename }. Samo datoteke ICS formata su dopuštene."
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Došlo je do pogreške prilikom učitavanja vaše datoteke. Nije odabrana nijedna datoteka."
@@ -2294,11 +2330,21 @@
         "Ocjena je zabilježena"
       ]
     },
+    "esCalendar": {
+      "Results": [
+        "Rezultati"
+      ]
+    },
     "Event form": {
       "${ numberOfAttendees } participant": [
         "${ numberOfAttendees } sudionik",
         "${ numberOfAttendees } sudionika",
         "${ numberOfAttendees } sudionika"
+      ]
+    },
+    "Event info in search view; event duration": {
+      "All day": [
+        "Cijeli dan"
       ]
     },
     "Event info. Organizer name": {
@@ -2363,6 +2409,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "Do 6 korisnika"
       ]
@@ -2447,6 +2502,9 @@
     "Font face option": {
       "System default": [
         "Zadani sustav"
+      ],
+      "Theme font": [
+        "Font teme"
       ]
     },
     "Font size option": {
@@ -2637,6 +2695,11 @@
         "ne"
       ]
     },
+    "Import instructions": {
+      "Go to ${ boldAccountSecurity }.": [
+        "Idi na ${ boldAccountSecurity }"
+      ]
+    },
     "Import instructions emphasis": {
       "Account info": [
         "Informacije o računu"
@@ -2660,6 +2723,9 @@
       ]
     },
     "Import provider": {
+      "Import from ${ provider }": [
+        "Uvoz iz ${ provider }a"
+      ],
       "Other": [
         "Ostalo"
       ]
@@ -3283,6 +3349,9 @@
       "Country": [
         "Država"
       ],
+      "Date and time": [
+        "Datum i vrijeme"
+      ],
       "Default view": [
         "Zadani prikaz"
       ],
@@ -3431,6 +3500,9 @@
       ],
       "Password": [
         "Lozinka"
+      ],
+      "PGP scheme": [
+        "PGP sustav"
       ],
       "Phone number": [
         "Broj telefona"
@@ -3987,6 +4059,9 @@
       "All events": [
         "Svi događaji"
       ],
+      "Auto": [
+        "Automatski"
+      ],
       "Automatic (${ defaultDay })": [
         "Automatski (${ defaultDay })"
       ],
@@ -4118,6 +4193,9 @@
       ],
       "Please select a country": [
         "Molimo odaberite državu"
+      ],
+      "Search events": [
+        "Traži događaje"
       ],
       "Search for group name": [
         "Pretraga po nazivu grupe"
@@ -4331,8 +4409,22 @@
       "Highest VPN speed": [
         "Najviša VPN brzina"
       ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
       "Secure streaming": [
         "Siguran streaming"
+      ]
+    },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "Ovaj se pretplatnički odnos automatski obnavlja svake dvije godine po istoj cijeni dok se ne otkaže."
       ]
     },
     "specialoffer: Link": {
@@ -4360,6 +4452,18 @@
       ],
       "30 months": [
         "30 mjeseci"
+      ],
+      "Billed at ${ amount } for 12 months": [
+        "Naplaćeno ${ amount } za 12 mjeseci"
+      ],
+      "Billed at ${ amount } for 15 months": [
+        "Naplaćeno ${ amount } za 15 mjeseci"
+      ],
+      "Billed at ${ amount } for 24 months": [
+        "Naplaćeno ${ amount } za 24 mjeseca"
+      ],
+      "Billed at ${ amount } for 30 months": [
+        "Naplaćeno ${ amount } za 30 mjeseci"
       ],
       "Get the deal": [
         "Ugrabite ponudu"
@@ -4528,6 +4632,14 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Povratna informacija je poslana"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Table header": {
@@ -4761,6 +4873,9 @@
       ],
       "Import contacts": [
         "Uvezi kontakte"
+      ],
+      "Import failed": [
+        "Neuspješan uvoz"
       ],
       "Invalid verification code": [
         "Nevažeći kôd za provjeru"

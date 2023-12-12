@@ -4262,7 +4262,7 @@
         "${ importedEmailAddressStrong } 에서 ${ BRAND_NAME } 계정으로 데이터를 불러올 준비가 되었습니다."
       ],
       "Your email will only be used for this one-time verification.": [
-        "귀하의 이메일 주소는 이번 인증에만 사용돼요."
+        "회원님의 이메일 주소는 이번 인증에만 사용됩니다."
       ],
       "Your events will be encrypted and then saved.": [
         "이벤트가 암호화된 후 저장됩니다."
@@ -4303,11 +4303,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "보기 전용"
-      ]
-    },
-    "Info; calendar sharing pop-up": {
-      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
-        "${ BRAND_NAME } 계정이 있는 다른 사람을 초대하여 캘린더에서 이벤트를 보거나 편집하세요."
       ]
     },
     "Info; reset calendar keys modal; part 1": {
@@ -5634,12 +5629,6 @@
       "${ timeRemaining.inHours } hours": [
         "${ timeRemaining.inHours }시간"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
-        "비밀번호 재설정 요청이 수락되었습니다 (${ user.Email }). 비밀번호를 변경할 수 있는 시간이 ${ timeRemaining.inDays }일 남았습니다."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
-        "비밀번호 재설정 요청이 수락되었습니다 (${ user.Email }). 비밀번호를 변경할 수 있는 시간이 ${ timeRemaining.inHours }시간 남았습니다."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "비밀번호 재설정의 요청이 시작된 로그인 장치로 이동하십시오."
       ],
@@ -5675,7 +5664,7 @@
     },
     "session_recovery:cancellation:info": {
       "Enter your current password to cancel the password reset process. No other changes will take effect.": [
-        "비밀번호 재설정 절차를 취소하기 위해 현재 비밀번호를 입력하세요. 어떠한 영향도 미치지 않을 것입니다."
+        "비밀번호 재설정 절차를 취소하기 위해 현재 비밀번호를 입력하세요. 이 작업으로 인해 어떠한 영향도 발생되지 않습니다."
       ]
     },
     "session_recovery:cancellation:notification": {
@@ -6697,11 +6686,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "수를 선택하세요"
-      ]
-    },
-    "Title; calendar sharing pop-up": {
-      "Planning just got easier!": [
-        "계획하는게 더 쉬워졌어요!"
       ]
     },
     "Title; create calendar modal": {
