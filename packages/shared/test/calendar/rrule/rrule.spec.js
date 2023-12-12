@@ -368,6 +368,7 @@ describe('getIsRruleSupported', () => {
         const vevents = [
             `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;UNTIL=20200330T150000Z;INTERVAL=1;BYMONTHDAY=30;BYMONTH=3\r\nEND:VEVENT`,
             `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;INTERVAL=2;BYMONTH=5\r\nEND:VEVENT`,
+            `BEGIN:VEVENT\r\nRRULE:FREQ=YEARLY;WKST=MO;UNTIL=20160103\r\nEND:VEVENT`,
         ];
         const rrules = vevents.map((vevent) => {
             const { rrule } = parse(vevent);
