@@ -2295,6 +2295,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } a été mis à jour.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Cette occurrence de ${ eventTitle } a été annulée."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Vous êtes invité à ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -3700,6 +3703,9 @@
         "Tous (${ totalFoldersCount } label)",
         "Tous (${ totalFoldersCount } labels)"
       ],
+      "All participants will get a cancellation email. Which event would you like to delete?": [
+        "Tous les participants recevront un message d'annulation. Quel événement voulez-vous supprimer ?"
+      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Tous vos contacts seront importés, dans la limite de ${ MAX_CONTACTS_PER_USER }.",
         "Tous vos contacts seront importés, dans la limite de ${ MAX_CONTACTS_PER_USER }."
@@ -4374,11 +4380,6 @@
     "Info; access rights for shared calendar": {
       "View only": [
         "Lecture seule"
-      ]
-    },
-    "Info; calendar sharing pop-up": {
-      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
-        "Invitez d'autres personnes qui ont un compte ${ BRAND_NAME } à consulter ou à modifier des événements dans votre calendrier."
       ]
     },
     "Info; reset calendar keys modal; part 1": {
@@ -5746,14 +5747,6 @@
         "${ timeRemaining.inHours } heure",
         "${ timeRemaining.inHours } heures"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inDays } jour pour réinitialiser votre mot de passe.",
-        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inDays } jours pour réinitialiser votre mot de passe."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inHours } heure pour réinitialiser votre mot de passe.",
-        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inHours } heures pour réinitialiser votre mot de passe."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Rendez-vous sur l'appareil avec lequel vous vous êtes connecté (dans la session où la demande a été faite) pour changer votre mot de passe."
       ],
@@ -6840,11 +6833,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Sélectionner un numéro"
-      ]
-    },
-    "Title; calendar sharing pop-up": {
-      "Planning just got easier!": [
-        "Gérer votre emploi du temps n'a jamais été aussi facile !"
       ]
     },
     "Title; create calendar modal": {
