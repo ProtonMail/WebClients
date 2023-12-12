@@ -4,6 +4,7 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 import { useNotifications } from '@proton/components/hooks';
 import { preserveSearch } from '@proton/pass/components/Core/routing';
 import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
+import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
 import { isValidPersistedSession } from '@proton/pass/lib/auth/session';
@@ -18,7 +19,7 @@ import {
     stripLocalBasenameFromPathname,
 } from '@proton/shared/lib/authentication/pathnameHelper';
 import { getConsumeForkParameters, removeHashParameters } from '@proton/shared/lib/authentication/sessionForking';
-import { SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { api, authStore } from '../../lib/core';
@@ -55,6 +56,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
     const sw = useServiceWorker();
     const client = useClientRef();
     const history = useHistory();
+    const { SSO_URL } = usePassConfig();
     const matchConsumeFork = useRouteMatch(SSO_PATHS.FORK);
 
     const redirectPath = useRef(stripLocalBasenameFromPathname(preserveSearch(location.pathname)));
@@ -84,9 +86,18 @@ export const AuthServiceProvider: FC = ({ children }) => {
                  * session lock revalidation on init */
                 authStore.setLockStatus(undefined);
 
-                return authStore.hasSession(pathLocalID)
+                const loggedIn = await (authStore.hasSession(pathLocalID)
                     ? auth.login(session)
-                    : auth.resumeSession(initialLocalID, { forceLock: true });
+                    : auth.resumeSession(initialLocalID, { forceLock: true }));
+
+                /* If the session could not be resumed from the LocalID from path,
+                 * we are likely dealing with an app-switch request from another client.
+                 * In this case, redirect to account through a fork request */
+                if (!loggedIn && pathLocalID !== undefined) {
+                    authService.requestFork({ app: APPS.PROTONPASS, host: SSO_URL });
+                }
+
+                return loggedIn;
             },
 
             onAuthorize: () => {
