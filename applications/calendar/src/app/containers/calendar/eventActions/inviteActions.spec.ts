@@ -14,13 +14,14 @@ import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
 import { AugmentedSendPreferences } from '../interface';
 import { getHasProtonAttendees, getSendIcsAction } from './inviteActions';
 
-const generateContact = (mail: string, isInternal = false) =>
+const generateContact = (mail: string, isInternal = false, internalWithEncryptionDisabled = false) =>
     [
         {
             [mail]: {
                 pgpScheme: isInternal ? PACKAGE_TYPE.SEND_PM : PACKAGE_TYPE.SEND_CLEAR,
                 mimeType: 'text/plain',
                 isInternal,
+                encryptionDisabled: internalWithEncryptionDisabled,
             },
         },
         { [mail]: { Email: mail } },
@@ -34,6 +35,7 @@ const contactA = generateContact('plus@proton.test', true);
 const contactB = generateContact('pmtest2@proton.test', true);
 const contactC = generateContact('chtest7@proton.test', false);
 const contactD = generateContact('test@alien.mars', false);
+const contactE = generateContact('plus@proton.test', false, true);
 
 const baseVevent: VcalVeventComponent = {
     component: 'vevent',
@@ -683,6 +685,18 @@ describe('getHasProtonAttendees()', () => {
                 {
                     ...baseVevent,
                     attendee: [contactB[2], contactC[2], contactD[2]],
+                },
+                sendPreferencesMap
+            )
+        ).toEqual(true);
+    });
+
+    it('returns true when there is one Proton attendee with external forwarding enabled', () => {
+        expect(
+            getHasProtonAttendees(
+                {
+                    ...baseVevent,
+                    attendee: [contactC[2], contactD[2], contactE[2]],
                 },
                 sendPreferencesMap
             )
