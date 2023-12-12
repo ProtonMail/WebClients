@@ -6,25 +6,15 @@
 	inset-inline: auto 0;
 }
 
-.upsell-floating-modal-content {
-	background-color: #1b1340;
+.upsell-floating-modal-container {
+	background-color: #f4f1ff;
 }
 
 .upsell-floating-modal-dialog {
-	--size: #{rem(360)};
 	--margin: #{rem(24)};
-}
-
-.upsell-floating-modal-badge {
-	background-color: #eef8f5;
-	color: #2c9f78;
 }
 
 .upsell-floating-modal-tooltip {
 	// Override default theme
-	--text-norm: white;
-
-	position: absolute;
-	inset-inline-end: rem(12);
-	inset-block-start: rem(12);
+	--text-norm: black;
 }
