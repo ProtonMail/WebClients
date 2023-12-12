@@ -20,13 +20,12 @@ import {
     useModalState,
     useUser,
 } from '@proton/components';
-import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
+import EditLabelModal, { LabelModel } from '@proton/components/containers/labels/modals/EditLabelModal';
 import { useLoading } from '@proton/hooks';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS, MAIL_UPSELL_PATHS } from '@proton/shared/lib/constants';
 import { buildTreeview, hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 import { normalize } from '@proton/shared/lib/helpers/string';
-import { Label } from '@proton/shared/lib/interfaces';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import clsx from '@proton/utils/clsx';
@@ -174,17 +173,15 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
     const autoFocusSearch = !breakpoints.viewportWidth['<=small'];
     const applyDisabled = selectedFolder?.ID === undefined;
 
-    const newFolder: Pick<Label, 'Name' | 'Color' | 'Type'> = {
+    const newFolder: LabelModel = {
         Name: search,
         Color: ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)],
         Type: LABEL_TYPE.MESSAGE_FOLDER,
+        Notify: 1,
     };
 
     return (
-        <form
-            className="flex flex-column flex-nowrap justify-start items-stretch flex-auto"
-            onSubmit={handleSubmit}
-        >
+        <form className="flex flex-column flex-nowrap justify-start items-stretch flex-auto" onSubmit={handleSubmit}>
             <div className="flex shrink-0 justify-space-between items-center m-4 mb-0">
                 <span className="text-bold" tabIndex={-2}>
                     {c('Label').t`Move to`}
@@ -214,10 +211,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                     data-prevent-arrow-navigation
                 />
             </div>
-            <div
-                className="move-dropdown-list overflow-auto mt-4 flex-auto"
-                data-testid="move-dropdown-list"
-            >
+            <div className="move-dropdown-list overflow-auto mt-4 flex-auto" data-testid="move-dropdown-list">
                 <ul className="unstyled my-0">
                     {list.map((folder: FolderItem) => {
                         return (
@@ -240,11 +234,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                                     data-testid={`folder-dropdown:folder-${folder.Name}`}
                                     onClick={() => handleApplyDirectly(folder.ID, folder.Name)}
                                 >
-                                    <FolderIcon
-                                        folder={folder}
-                                        name={folder.icon}
-                                        className="shrink-0 mr-2"
-                                    />
+                                    <FolderIcon folder={folder} name={folder.icon} className="shrink-0 mr-2" />
                                     <span className="text-ellipsis" title={folder.Name}>
                                         <Mark value={search}>{folder.Name}</Mark>
                                     </span>
