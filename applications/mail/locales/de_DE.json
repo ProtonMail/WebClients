@@ -3137,6 +3137,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } wurde aktualisiert.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Ein Eintrag aus der Terminserie von ${ eventTitle } wurde abgesagt."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Du wurdest zu ${ eventTitle } eingeladen\n${ eventDetailsText }"
       ]
@@ -3644,6 +3647,9 @@
       ],
       "You must set a name": [
         "Du musst einen Namen eingeben"
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Du hast die maximale Anzahl an Zeichen erreicht. Bitte kürze deine Nachricht."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Deine E-Mails konnten nicht entschlüsselt werden, da dein Passwort kürzlich zurückgesetzt wurde. Falls du dich an dein früheres Passwort erinnerst, kannst du den ${ reActivateKeyLink }, um auf deine Nachrichten zuzugreifen. ${ learnMoreLink }"
@@ -8119,13 +8125,8 @@
         "${ timeRemaining.inHours } Stunde",
         "${ timeRemaining.inHours } Stunden"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Anfrage zur Passwortzurücksetzung genehmigt (${ user.Email }). Du hast ${ timeRemaining.inDays } Tag, um dein Passwort zurückzusetzen.",
-        "Anfrage zur Passwortzurücksetzung genehmigt (${ user.Email }). Du hast ${ timeRemaining.inDays } Tage, um dein Passwort zurückzusetzen."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Anfrage zur Passwortzurücksetzung genehmigt (${ user.Email }). Du hast ${ timeRemaining.inHours } Stunde, um dein Passwort zurückzusetzen.",
-        "Anfrage zur Passwortzurücksetzung genehmigt (${ user.Email }). Du hast ${ timeRemaining.inHours } Stunden, um dein Passwort zurückzusetzen."
+      "Password reset request approved (${ user.Email }).": [
+        "Antrag auf Passwortzurücksetzung genehmigt (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Bitte gehe, um dein Passwort zu ändern zu dem angemeldeten Gerät, von dem aus die Anfrage zur Passwortänderung gestartet wurde."
@@ -8138,8 +8139,18 @@
         "Diese Berechtigung läuft in ${ timeRemaining.inHours } Stunde ab.",
         "Diese Berechtigung läuft in ${ timeRemaining.inHours } Stunden ab."
       ],
+      "This permission expires soon": [
+        "Diese Berechtigung läuft bald aus"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Du kannst jetzt dein Passwort für das Konto ${ boldEmail } für ${ boldDaysRemaining } frei ändern."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Du kannst jetzt dein Passwort für das Konto ${ boldEmail } ändern."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Du hast ${ timeRemaining.inDays } Tag um dein Passwort zurücksetzen.",
+        "Du hast ${ timeRemaining.inDays } Tage um dein Passwort zurücksetzen."
       ]
     },
     "session_recovery:available:link": {

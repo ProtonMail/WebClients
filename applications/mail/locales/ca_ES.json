@@ -1382,7 +1382,7 @@
         "Els descomptes es basen en els preus mensuals estàndard."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "La vostra subscripció es renovarà automàticament a la tarifa estàndard amb descompte i durada al final del cicle de facturació."
+        "La vostra subscripció es renovarà automàticament a la tarifa amb descompte i durada predeterminades al final del cicle de facturació."
       ]
     },
     "bf2023: Offers": {
@@ -1393,6 +1393,9 @@
     "bf2023: Tooltip": {
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Accediu al contingut dels serveis de streaming com ara Netflix, Disney+, Prime Video i altres des de qualsevol lloc."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Eviteu els bloquejos i la censura a Internet local amb la nostra xarxa global de servidors."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclou suport per a 1 domini de correu electrònic personalitzat, 10 adreces de correu electrònic, 10 àlies hide-my-email, compartició de calendari i més."
@@ -3113,6 +3116,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } s'ha actualitzat.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Aquesta ocurrència de ${ eventTitle } ha estat cancel·lada."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Heu estat convidat/da a ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -3198,6 +3204,11 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Actualització d'un esdeveniment que comença el ${ formattedStart }"
+      ]
+    },
+    "email_forwarding_2023: Composer email icon": {
+      "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
+        "Xifratge d'accés zero. El destinatari ha desactivat el xifratge d’extrem a extrem al seu compte."
       ]
     },
     "empty messages: success": {
@@ -3616,6 +3627,9 @@
       "You must set a name": [
         "Heu d'establir un nom"
       ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Heu arribat al nombre màxim de caràcters. Reduïu el vostre missatge."
+      ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Els vostres correus electrònics no es poden desxifrar a causa d'un restabliment de contrasenya recent. Si recordeu la contrasenya anterior, podeu ${ reActivateKeyLink } per accedir als vostres missatges. ${ learnMoreLink }"
       ],
@@ -3841,6 +3855,9 @@
       ],
       "Something went wrong": [
         "Alguna cosa ha anat malament."
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Per utilitzar ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, canvieu a la versió web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hem pogut carregar aquesta pàgina. Refresqueu la pàgina o comproveu la vostra connexió a Internet."
@@ -5561,6 +5578,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupName }."
       ],
+      "Please use another browser or download the file.": [
+        "Utilitzeu un altre navegador o baixeu el fitxer."
+      ],
       "Please wait till your changes are synced with the server.": [
         "Espereu fins que els canvis s'hagin sincronitzat amb el servidor."
       ],
@@ -5702,6 +5722,9 @@
       "Snoozed until today, ${ formattedTime }": [
         "Posposició fins avui a les ${ formattedTime }"
       ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Posposició fins demà a les ${ formattedTime }"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Ho sentim, aquest missatge no existeix o ja ha expirat."
       ],
@@ -5799,6 +5822,9 @@
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Aquest correu no ha superat els requisits d'autentificació del domini. Pot ser que estigui falsejat o reenviat indegudament."
+      ],
+      "This file is too large to preview": [
+        "Aquest fitxer és massa gran per a previsualitzar-lo."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Aquesta invitació es desa en un calendari desactivat."
@@ -5941,6 +5967,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
+      ],
+      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
+        "Milloreu a ${ MAIL_APP_NAME } Plus per desbloquejar aquesta característica."
       ],
       "Upgrade to add more addresses to your account.": [
         "Milloreu el vostre pla per afegir més adreces al vostre compte."
@@ -7546,6 +7575,9 @@
       ]
     },
     "Onboarding modal": {
+      "Automatically forward emails": [
+        "Reenvieu correus electrònics automàticament."
+      ],
       "Block unsavory senders": [
         "Bloqueja els remitents no desitjats"
       ],
@@ -7557,6 +7589,9 @@
       ],
       "For your eyes only": [
         "Només per als vostres ulls"
+      ],
+      "Forward Gmail messages to your inbox.": [
+        "Reenvieu els missatges de Gmail a la vostra safata d'entrada."
       ],
       "Next": [
         "Següent"
@@ -7940,7 +7975,7 @@
     },
     "Send email with encryption disabled": {
       "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
-        "Els contactes de les següents adreces han desactivat el xifratge d’extrem a extrem pel seu compte i les preferències de xifratge corresponents s'han actualitzat:"
+        "Els contactes per a les adreces següents han desactivat l'encriptació d'extrem a extrem en el seu compte, de manera que les preferències d'encriptació corresponents s'han actualitzat en conseqüència:"
       ]
     },
     "Send email with errors": {
@@ -8048,14 +8083,6 @@
         "${ timeRemaining.inHours } hora",
         "${ timeRemaining.inHours } hores"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inDays } dia per a restablir la vostra contrasenya.",
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inDays } dies per a restablir la vostra contrasenya."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inHours } hora per a restablir la vostra contrasenya.",
-        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inHours } hores per a restablir la vostra contrasenya."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Aneu al dispositiu en què heu iniciat la sessió (en la qual es va iniciar la sol·licitud) per canviar la vostra contrasenya."
       ],
@@ -8140,7 +8167,7 @@
         "S'ha sol·licitat el restabliment de la contrasenya (${ user.Email }). Podeu canviar la vostra contrasenya en ${ hoursRemaining } hores."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
-        "Per a assegurar-nos que sou vós qui intenteu restablir la vostra contrasenya, esperem 72 hores abans d'aprovar les sol·licituds. Podeu canviar la contrasenya en ${ boldTimeLeft }. ${ viewRequest }."
+        "Per a assegurar-nos que sou vós qui intenteu restablir la contrasenya, esperem 72 hores abans d'aprovar les sol·licituds. Podeu canviar la contrasenya en ${ boldTimeLeft }. ${ viewRequest }."
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Hem rebut una sol·licitud de restabliment de contrasenya per a ${ boldEmail }."
@@ -8222,7 +8249,7 @@
     },
     "Snooze message": {
       "Snooze Message": [
-        "Missatge de posposició"
+        "Posposa el missatge"
       ]
     },
     "Sort option": {
@@ -8459,7 +8486,7 @@
         "La cerca s'ha fet més intel·ligent i ràpida"
       ],
       "Snooze it for later": [
-        "Posposa per més tard"
+        "Posposa per a més tard"
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "Els correus brossa i a la paperera ara s'exclouen automàticament de Tot el correu. ${ settingsLink }"
@@ -8469,6 +8496,9 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "Per defecte, ara es carreguen les imatges i es bloca el seguiment per part de l'emissor. Això es pot canviar a ${ settingsLink }."
+      ],
+      "You can now automatically forward your emails to anyone!": [
+        "Ara podeu reenviar automàticament els vostres correus electrònics a qui vulgueu."
       ],
       "You can now schedule your messages to be sent later": [
         "Ara podeu programar els vostres missatges per tal que s'enviïn més tard"

@@ -3105,7 +3105,7 @@
         "Odomknite vlastné plánovanie správ a ďalšie výhody navýšením svojho plánu."
       ],
       "Unlock custom snooze times when you upgrade your plan.": [
-        "Odomknite vlastné časy odloženia po upgrade plánu."
+        "Odomknite vlastné časy odloženia po navýšení plánu."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Odomknite upgradovaním neobmedzené množstvo filtrov na triedenie vašej doručenej pošty a ďalšie prémiové funkcie."
@@ -7792,7 +7792,7 @@
         "Získajte neobmedzené množstvo aliasov so službou SimpleLogin od ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
-        "Odložte správy a pripomeňte si ich, keď chcete"
+        "Odložte správy a pripomeňte si ich, kedy chcete"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
@@ -7853,6 +7853,9 @@
       ]
     },
     "Onboarding modal": {
+      "Automatically forward emails": [
+        "Automatické preposielanie emailov"
+      ],
       "Block email communications from scammers permanently. ${ kbLinkSender }": [
         "Natrvalo zablokujte emailovú komunikáciu od podvodníkov. ${ kbLinkSender }"
       ],
@@ -7866,7 +7869,10 @@
         "Šifrovanie je také silné, že emaily môžete zobraziť iba vy a určení príjemcovia. ${ kbLinkEncryption }"
       ],
       "For your eyes only": [
-        "Iba pre vaše oči"
+        "Len pre vaše oči"
+      ],
+      "Forward Gmail messages to your inbox.": [
+        "Preposielať Gmail správy do vašej doručenej pošty."
       ],
       "Next": [
         "Ďalej"
@@ -8384,18 +8390,6 @@
         "${ timeRemaining.inHours } hodiny",
         "${ timeRemaining.inHours } hodín",
         "${ timeRemaining.inHours } hodín"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } deň.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } dni.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } dní.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } dní."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodinu.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodiny.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodín.",
-        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodín."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Prejdite na prihlásené zariadenie (v relácii, kde bola žiadosť iniciovaná) a zmeňte heslo."
