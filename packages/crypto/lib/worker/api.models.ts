@@ -13,17 +13,22 @@ import type {
     ProcessMIMEOptions,
     ProcessMIMEResult,
     ReformatKeyOptions,
-    SessionKey,
+    SessionKey as SessionKeyWithPlaintextAlgo,
     SignOptionsPmcrypto,
     VerifyCleartextOptionsPmcrypto,
     VerifyMessageResult,
     VerifyOptionsPmcrypto,
 } from 'pmcrypto';
-
-export type { enums } from 'pmcrypto/lib/openpgp';
+import type { PartialConfig, SubkeyOptions, enums } from 'pmcrypto/lib/openpgp';
 
 export type MaybeArray<T> = T[] | T;
-export type { SessionKey, AlgorithmInfo, MIMEAttachment };
+export interface SessionKeyWithoutPlaintextAlgo extends SessionKeyWithPlaintextAlgo {
+    // OpenPGP.js v5 has a 'plaintext' algo value for historical reasons.
+    // This value is unused and is dropped in v6, so we exclude it here as it causes TS issues.
+    algorithm: Exclude<enums.symmetricNames, 'plaintext'>;
+}
+export type SessionKey = SessionKeyWithoutPlaintextAlgo;
+export type { enums, AlgorithmInfo, MIMEAttachment };
 
 export interface InitOptions {
     checkEdDSAFaultySignatures?: boolean;
@@ -43,6 +48,8 @@ export interface WorkerDecryptionOptions
     binaryEncryptedSignature?: Uint8Array;
     verificationKeys?: MaybeArray<PublicKeyReference>;
     decryptionKeys?: MaybeArray<PrivateKeyReference>;
+    sessionKeys?: MaybeArray<SessionKeyWithoutPlaintextAlgo>;
+    config?: PartialConfigForV5AndV6ForDecryption;
 }
 export interface WorkerDecryptionResult<T extends Data> extends Omit<DecryptResultPmcrypto<T>, 'signatures'> {
     signatures: Uint8Array[];
@@ -66,11 +73,13 @@ export interface WorkerVerifyOptions<T extends Data>
     armoredSignature?: string;
     binarySignature?: Uint8Array;
     verificationKeys: MaybeArray<PublicKeyReference>;
+    config?: PartialConfigForV5AndV6;
 }
 export interface WorkerVerifyCleartextOptions
     extends Omit<VerifyCleartextOptionsPmcrypto, 'cleartextMessage' | 'verificationKeys'> {
     armoredCleartextMessage: string;
     verificationKeys: MaybeArray<PublicKeyReference>;
+    config?: PartialConfigForV5AndV6;
 }
 export interface WorkerVerificationResult<T extends Data = Data> extends Omit<VerifyMessageResult<T>, 'signatures'> {
     signatures: Uint8Array[];
@@ -88,6 +97,7 @@ export interface WorkerEncryptOptions<T extends Data>
     encryptionKeys?: MaybeArray<PublicKeyReference>;
     signingKeys?: MaybeArray<PrivateKeyReference>;
     compress?: boolean;
+    config?: PartialConfigForV5AndV6;
 }
 
 export interface WorkerProcessMIMEOptions extends Omit<ProcessMIMEOptions, 'verificationKeys'> {
@@ -137,19 +147,42 @@ export type WorkerImportPublicKeyOptions<T extends Data> = {
     checkCompatibility?: boolean;
 };
 
-export interface WorkerGenerateKeyOptions extends Omit<GenerateKeyOptions, 'format' | 'passphrase'> {}
+// OpenPGP.js v6 introduces some new algos, and renames existing ones. Since the corresponding config settings are unused in the apps,
+// we just filter them out at the TS level.
+interface PartialConfigForV5AndV6
+    extends Omit<
+        PartialConfig,
+        | 'rejectPublicKeyAlgorithms'
+        | 'preferredSymmetricAlgorithm'
+        | 'rejectHashAlgorithms'
+        | 'constantTimePKCS1DecryptionSupportedSymmetricAlgorithms'
+    > {}
+interface PartialConfigForV5AndV6ForDecryption extends PartialConfigForV5AndV6 {
+    constantTimePKCS1DecryptionSupportedSymmetricAlgorithms?: Set<Exclude<enums.symmetric, enums.symmetric.plaintext>>;
+}
+interface WorkerGenerateSubkeyOptions extends SubkeyOptions {
+    config?: PartialConfigForV5AndV6;
+}
+export interface WorkerGenerateKeyOptions extends Omit<GenerateKeyOptions, 'format' | 'passphrase'> {
+    config?: PartialConfigForV5AndV6;
+    subkeys?: WorkerGenerateSubkeyOptions[];
+}
 
 export interface WorkerReformatKeyOptions extends Omit<ReformatKeyOptions, 'privateKey' | 'format' | 'passphrase'> {
     privateKey: PrivateKeyReference;
+    config?: PartialConfigForV5AndV6;
 }
 
 export interface WorkerEncryptSessionKeyOptions extends Omit<EncryptSessionKeyOptionsPmcrypto, 'encryptionKeys'> {
+    algorithm: SessionKeyWithoutPlaintextAlgo['algorithm'];
     format?: 'armored' | 'binary';
     encryptionKeys?: MaybeArray<PublicKeyReference>;
+    config?: PartialConfigForV5AndV6;
 }
 
 export interface WorkerGenerateSessionKeyOptions extends Omit<GenerateSessionKeyOptionsPmcrypto, 'recipientKeys'> {
     recipientKeys?: MaybeArray<PublicKeyReference>;
+    config?: PartialConfigForV5AndV6;
 }
 
 export interface WorkerDecryptSessionKeyOptions

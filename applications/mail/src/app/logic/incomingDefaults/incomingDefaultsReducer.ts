@@ -1,5 +1,5 @@
 import { PayloadAction } from '@reduxjs/toolkit';
-import { Draft } from 'immer/dist/internal';
+import { Draft } from 'immer';
 
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { IncomingDefault } from '@proton/shared/lib/interfaces';
