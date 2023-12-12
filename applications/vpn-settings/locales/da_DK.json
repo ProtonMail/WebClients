@@ -2343,6 +2343,9 @@
       "Add a user to your ${ PLAN_NAMES.visionary2022 } account": [
         "Tilføj en bruger til din ${ PLAN_NAMES.visionary2022 } konto"
       ],
+      "Change family name": [
+        "Ændr familienavn"
+      ],
       "Delete family group?": [
         "Slet familiegruppe?"
       ],
@@ -2354,6 +2357,9 @@
       ],
       "Invite a user": [
         "Inviter en bruger"
+      ],
+      "Set family name": [
+        "Angiv familienavn"
       ]
     },
     "familyOffer_2023:Tooltip": {
@@ -3742,14 +3748,6 @@
         "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalender. Fjern venligst delte kalenderlinks og enhver ${ BRAND_NAME } bruger, som du har delt dine kalendere med, før du annullerer dit abonnement.",
         "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalendere. Fjern venligst delte kalenderlinks og enhver ${ BRAND_NAME } bruger, som du har delt dine kalendere med, før du annullerer dit abonnement."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalender. Fjern venligst delte kalenderlinks før du annullerer dit ${ MAIL_SHORT_APP_NAME }-abonnement.",
-        "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalendere. Fjern venligst delte kalenderlinks før du annullerer dit ${ MAIL_SHORT_APP_NAME }-abonnement."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalender. Fjern venligst delte kalenderlinks før du annullerer dit abonnement.",
-        "Du kan beholde op til ${ MAX_CALENDARS_FREE } kalendere. Fjern venligst delte kalenderlinks før du annullerer dit abonnement."
-      ],
       "You can now access and manage the account as an administrator.": [
         "Du kan nu få adgang til og administrere kontoen som administrator."
       ],
@@ -4873,9 +4871,6 @@
         "Servere i ${ vpnServersCountData.paid.countries }+ land",
         "Servere i ${ vpnServersCountData.paid.countries }+ lande"
       ],
-      "Share calendar via link": [
-        "Del kalender via link"
-      ],
       "Share files and folders via link": [
         "Del filer og mapper via link"
       ],
@@ -4993,6 +4988,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Avanceret netværkssikkerhed og adgangshåndtering med dedikerede sikre Gateways"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Alle ${ BRAND_NAME }-apps og deres premium-funktioner"
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Gældende kreditter, proratering og kuponer anvendes i næste trin"
@@ -5146,9 +5144,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Afværger trussel mod VPN-privatliv ved at sende din internettrafik gennem flere servere."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Du kan nemt dele dine kalendere med dine kolleger, familie eller venner via et link"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Del nemt dine kalendere med din familie, venner eller kolleger"
@@ -5671,14 +5666,6 @@
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Hvis du ikke har bedt om at nulstille din adgangskode, skal du annullere denne anmodning nu."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Anmodning om nulstilling af adgangskode godkendt (${ user.Email }). Du har ${ timeRemaining.inDays } dag til at nulstille din adgangskode.",
-        "Anmodning om nulstilling af adgangskode godkendt (${ user.Email }). Du har ${ timeRemaining.inDays } dage til at nulstille din adgangskode."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Anmodning om nulstilling af adgangskode godkendt (${ user.Email }). Du har ${ timeRemaining.inHours } time til at nulstille din adgangskode.",
-        "Anmodning om nulstilling af adgangskode godkendt (${ user.Email }). Du har ${ timeRemaining.inHours } timer til at nulstille din adgangskode."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Gå til den enhed, hvor du er logget ind (i den session, hvor anmodningen blev indledt) for at ændre din adgangskode."
@@ -6233,8 +6220,17 @@
       "Are you sure?": [
         "Er du sikker?"
       ],
+      "Auto-pay is disabled": [
+        "Automatisk betaling er deaktiveret"
+      ],
+      "Auto-pay is enabled": [
+        "Automatisk betaling er aktiveret"
+      ],
       "Disable": [
         "Deaktivér"
+      ],
+      "Enable auto-pay support": [
+        "Aktivér understøttelse af automatisk betaling"
       ],
       "Keep auto-pay": [
         "Behold automatisk betaling"
