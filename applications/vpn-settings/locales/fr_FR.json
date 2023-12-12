@@ -3817,14 +3817,6 @@
         "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à retirer les liens du calendrier partagé et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé votre calendrier avant de résilier votre abonnement.",
         "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à retirer les liens des calendriers partagés et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé vos calendriers avant de résilier votre abonnement."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à retirer les liens vers les calendriers partagés avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }.",
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à retirer les liens vers les calendriers partagés avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à retirer les liens vers les calendriers partagés avant de résilier votre abonnement.",
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à retirer les liens vers les calendriers partagés avant de résilier votre abonnement."
-      ],
       "You can now access and manage the account as an administrator.": [
         "Vous pouvez maintenant accéder au compte et le gérer en tant qu'administrateur."
       ],
@@ -4977,9 +4969,6 @@
         "Serveurs dans plus de ${ vpnServersCountData.paid.countries } pays",
         "Serveurs dans plus de ${ vpnServersCountData.paid.countries } pays"
       ],
-      "Share calendar via link": [
-        "Partage de calendrier via un lien"
-      ],
       "Share files and folders via link": [
         "Partage de fichiers et de dossiers via un lien"
       ],
@@ -5101,11 +5090,17 @@
       "Advanced network security and access management with dedicated secure Gateways": [
         "Bénéficiez d'une sécurité de réseau et d'une gestion d'accès avancées grâce à des passerelles sécurisées dédiées."
       ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Toutes les applications ${ BRAND_NAME } et leurs fonctionnalités premium"
+      ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Les crédits, le prorata et les codes promotionnels applicables sont appliqués à l'étape suivante."
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Une protection de la vie privée et une sécurité totales grâce à l'ensemble des services ${ BRAND_NAME }."
+      ],
+      "Early access to new apps and features": [
+        "Accès anticipé aux fonctionnalités et nouvelles applications"
       ],
       "For next-level password management and identity protection.": [
         "Passez au niveau supérieur pour gérer vos mots de passe et protéger votre identité."
@@ -5268,9 +5263,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Cette fonctionnalité vous protège des menaces sur la confidentialité du VPN en acheminant votre trafic internet à travers plusieurs serveurs."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Partagez facilement vos calendriers avec vos collègues, votre famille et vos amis via un lien."
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Partagez facilement vos calendriers avec votre famille, vos amis ou vos collègues."
@@ -5900,14 +5892,6 @@
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Si vous n'êtes pas à l'origine de la demande de réinitialisation de votre mot de passe, annulez la demande maintenant."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inDays } jour pour réinitialiser votre mot de passe.",
-        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inDays } jours pour réinitialiser votre mot de passe."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inHours } heure pour réinitialiser votre mot de passe.",
-        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inHours } heures pour réinitialiser votre mot de passe."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Rendez-vous sur l'appareil avec lequel vous vous êtes connecté (dans la session où la demande a été faite) pour changer votre mot de passe."
@@ -6585,7 +6569,7 @@
         "Les clés ont été mises à jour."
       ],
       "Link copied to clipboard": [
-        "Le lien est copié dans le presse-papiers."
+        "Le lien a été copié dans le presse-papiers."
       ],
       "Locale updated": [
         "La langue a été mise à jour."

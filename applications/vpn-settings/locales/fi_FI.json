@@ -739,6 +739,9 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Säästä mustan perjantain tarjouksilla nopeasta sveitsiläisestä VPN:stä"
       ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "Säästä Cyber Week -tarjouksilla nopeasta sveitsiläisestä VPN:stä"
+      ],
       "Save with End of Year deals on a high-speed Swiss VPN": [
         "Säästä vuoden lopun tarjouksilla nopeasta sveitsiläisestä VPN:stä"
       ],
@@ -3814,14 +3817,6 @@
         "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista ennen tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjä, jolle olet jakanut kalentereitasi.",
         "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenteria. Poista ennen tilauksesi perumista kaikki kalenterien jakolinkit ja ${ BRAND_NAME }-käyttäjät, joille olet jakanut kalentereitasi."
       ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista kaikki kalenterien jakolinkit ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista.",
-        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenteria. Poista kaikki kalenterien jakolinkit ennen ${ MAIL_SHORT_APP_NAME }-tilauksesi perumista."
-      ],
-      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenterin. Poista kaikki kalenterien jakolinkit ennen tilauksesi perumista.",
-        "Voit säilyttää enintään ${ MAX_CALENDARS_FREE } kalenteria. Poista kaikki kalenterien jakolinkit ennen tilauksesi perumista."
-      ],
       "You can now access and manage the account as an administrator.": [
         "Voit nyt käyttää ja hallita tiliä ylläptäjänä."
       ],
@@ -4974,9 +4969,6 @@
         "Palvelimet ${ vpnServersCountData.paid.countries }+ maassa",
         "Palvelimet ${ vpnServersCountData.paid.countries }+ maassa"
       ],
-      "Share calendar via link": [
-        "Jaa kalenteri linkin välityksellä"
-      ],
       "Share files and folders via link": [
         "Jaa tiedostoja ja kansioita linkin välityksellä"
       ],
@@ -5097,6 +5089,9 @@
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
         "Kehittynyt verkkoturvallisuus ja pääsynhallinta dedikoitujen turvallisten yhdyskäytävien avulla"
+      ],
+      "All ${ BRAND_NAME } apps and their premium features": [
+        "Kaikki ${ BRAND_NAME }-sovellukset ja niiden premium-ominaisuudet"
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
         "Soveltuvat krediitit, suhteutukset ja etukoodit huomioidaan seuraavassa vaiheessa"
@@ -5265,9 +5260,6 @@
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers.": [
         "Suojaa VPN-yksityisyyden uhkilta ohjaamalla Internet-tietoliikenteesi useiden palvelinten kautta."
-      ],
-      "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Jaa kalentereita kollegoille, perheenjäsenille ja kavereille helposti linkin välityksellä"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
         "Jaa kalentereita helposti perheenjäsenille, kavereille tai kollegoille"
@@ -5710,6 +5702,9 @@
       ]
     },
     "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "${ contactHref } myyntitiimiimme."
+      ],
       "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
         "Valitse tilauksesi sisältyvien IP-osoitteiden määrä. Jokainen lisäosoite maksaa ${ price }."
       ],
@@ -5885,14 +5880,6 @@
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Jos et pyytänyt salasanasi nollausta, peruuta tämä pyyntö nyt."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Salasanan nollauspyyntö hyväksytty (${ user.Email }). Sinulla on ${ timeRemaining.inDays } päivä aikaa nollata salasanasi.",
-        "Salasanan nollauspyyntö hyväksytty (${ user.Email }). Sinulla on ${ timeRemaining.inDays } päivää aikaa nollata salasanasi."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Salasanan nollauspyyntö hyväksytty (${ user.Email }). Sinulla on ${ timeRemaining.inHours } tunti aikaa nollata salasanasi.",
-        "Salasanan nollauspyyntö hyväksytty (${ user.Email }). Sinulla on ${ timeRemaining.inHours } tuntia aikaa nollata salasanasi."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Käytä kirjautunutta laitetta (siinä istunnossa, jossa pyyntö käynnistettiin) salasanan vaihtamiseksi."

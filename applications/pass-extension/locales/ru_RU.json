@@ -8,6 +8,9 @@
       "Add": [
         "Добавить"
       ],
+      "Add current URL": [
+        "Добавить текущий URL"
+      ],
       "Add domain to pause list": [
         "Добавить домен в список приостановки"
       ],
@@ -53,6 +56,9 @@
       "Confirm": [
         "Подтвердить"
       ],
+      "Confirm access": [
+        "Подтвердить доступ"
+      ],
       "Continue": [
         "Продолжить"
       ],
@@ -71,11 +77,17 @@
       "Create a ${ BRAND_NAME } account": [
         "Создать аккаунт ${ BRAND_NAME }"
       ],
+      "Create a new vault to share": [
+        "Создать новое хранилище для совместного использования"
+      ],
       "Create alias": [
         "Создать псевдоним"
       ],
       "Create an account": [
         "Создать аккаунт"
+      ],
+      "Create card": [
+        "Создать карту"
       ],
       "Create login": [
         "Создать логин"
@@ -143,6 +155,9 @@
       "Generate password": [
         "Создать пароль"
       ],
+      "Generated passwords": [
+        "Generated passwords"
+      ],
       "Get mobile apps": [
         "Получить мобильные приложения"
       ],
@@ -164,6 +179,9 @@
       "Importing": [
         "Идёт импорт"
       ],
+      "Invite others": [
+        "Пригласить других"
+      ],
       "Join shared vault": [
         "Присоединиться к общему хранилищу"
       ],
@@ -176,6 +194,15 @@
       "Lock extension": [
         "Заблокировать расширение"
       ],
+      "Make admin": [
+        "Сделать администратором"
+      ],
+      "Make editor": [
+        "Сделать редактором"
+      ],
+      "Make viewer": [
+        "Сделать зрителем"
+      ],
       "Manually sync your data": [
         "Синхронизировать ваши данные вручную"
       ],
@@ -184,6 +211,9 @@
       ],
       "More options": [
         "Дополнительные параметры"
+      ],
+      "Move to a shared vault": [
+        "Переместите в общее хранилище"
       ],
       "Move to another vault": [
         "Переместить в другое хранилище"
@@ -196,6 +226,9 @@
       ],
       "OK": [
         "OK"
+      ],
+      "Open in a window": [
+        "Открыть в новом окне"
       ],
       "Open navigation": [
         "Открыть панель навигации"
@@ -211,6 +244,9 @@
       ],
       "Regenerate": [
         "Перегенерировать"
+      ],
+      "Reject": [
+        "Отказать"
       ],
       "Reject invitation": [
         "Отклонить приглашение"
@@ -242,6 +278,12 @@
       "Share": [
         "Поделиться"
       ],
+      "Share this vault": [
+        "Поделитесь этим хранилищем"
+      ],
+      "Share vault": [
+        "Поделиться хранилищем"
+      ],
       "Show": [
         "Показать"
       ],
@@ -272,17 +314,26 @@
       "Update": [
         "Обновить"
       ],
+      "Update vault": [
+        "Обновить хранилище"
+      ],
       "Upgrade": [
         "Улучшить"
       ],
       "Upgrade now": [
         "Улучшить сейчас"
       ],
+      "Upgrade now to share with more people": [
+        "Улучшите тарифы сейчас, чтобы поделиться с большим количеством людей"
+      ],
       "Write us on Reddit": [
         "Написать нам в Reddit"
       ],
       "Write us on Twitter": [
         "Написать нам в Twitter"
+      ],
+      "Your password manager not here? Request it.": [
+        "Вашего менеджера паролей здесь нет? Запросите его."
       ]
     },
     "bf2023: Info": {
@@ -577,6 +628,12 @@
         "Мегабайтов",
         "Мегабайтов",
         "Мегабайтов"
+      ],
+      "Terabyte": [
+        "Терабайт",
+        "Терабайта",
+        "Терабайтов",
+        "Терабайтов"
       ]
     },
     "Info": {
@@ -607,6 +664,18 @@
         "${ memberCount } членов",
         "${ memberCount } член"
       ],
+      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
+        "${ PASS_APP_NAME } будет импортировать только логины, заметки и кредитные карты."
+      ],
+      "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
+        "${ PASS_APP_NAME } предложит вам сохранить или обновить учетные данные."
+      ],
+      "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
+        "${ PASS_APP_NAME } предложит создать псевдоним электронной почты в формах регистрации."
+      ],
+      "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
+        "${ PASS_APP_NAME } будет предлагать создавать надежные пароли в формах регистрации."
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } раз",
         "${ revisionNumber } раза",
@@ -636,6 +705,9 @@
       ],
       "Access successfully confirmed": [
         "Доступ успешно подтверждён"
+      ],
+      "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
+        "Для доступа к ${ PASS_APP_NAME } потребуется PIN, чтобы разблокировать ваш сеанс"
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Получайте доступ к своим паролям на ходу с нашими мобильными приложениями."
@@ -672,6 +744,9 @@
       ],
       "Can view items in this vault.": [
         "Может просматривать элементы в этом хранилище."
+      ],
+      "Congratulations, your access has been confirmed": [
+        "Congratulations, your access has been confirmed"
       ],
       "Copied to clipboard": [
         "Скопировано в буфер обмена"
@@ -765,6 +840,9 @@
       ],
       "Invite successfully sent": [
         "Приглашение успешно отправлено"
+      ],
+      "invites you to access items in": [
+        "приглашает вас получить доступ к элементам в"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Похоже, вы уже вошли в ${ PASS_APP_NAME }. Если ты пытаешься войти с другой учётной записью, пожалуйста, сначала выйдите из расширения."
@@ -943,6 +1021,9 @@
       "Upgrade ${ PASS_APP_NAME }": [
         "Улучшить ${ PASS_APP_NAME }"
       ],
+      "Use vaults to share this item with others.": [
+        "Используйте хранилища, чтобы поделиться этим элементом с другими."
+      ],
       "User's access removed": [
         "Доступ пользователя удален"
       ],
@@ -973,6 +1054,9 @@
       "You are about to create:": [
         "Вы собираетесь создать:"
       ],
+      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
+        "Вы можете быстро автозаполнить свои учетные данные, нажав на значок ${ PASS_APP_NAME }."
+      ],
       "You cannot change the mailboxes for this alias.": [
         "Вы не можете изменить почтовые ящики для этого псевдонима."
       ],
@@ -981,6 +1065,12 @@
         "У вас осталось ${ daysRemaining } дня, чтобы опробовать эти и другие премиум-функции.",
         "У вас осталось ${ daysRemaining } дней, чтобы опробовать эти и другие премиум-функции.",
         "У вас осталось ${ daysRemaining } дня, чтобы опробовать эти и другие премиум-функции."
+      ],
+      "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
+        "Вы превысили количество хранилищ, включенных в вашу подписку. Элементы можно перемещать только в первые два хранилища. Чтобы переместить экспонаты между всеми хранилищами, обновите подписку."
+      ],
+      "You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.": [
+        "Вы превысили количество хранилищ, включенных в вашу подписку. Новые элементы могут быть созданы только в первых двух хранилищах. Чтобы создать новые элементы во всех хранилищах, обновите подписку."
       ],
       "You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.": [
         "Вы достигли лимита на количество псевдонимов, которые можно создать. Создавайте неограниченное количество псевдонимов, улучшив свою подписку."
@@ -996,6 +1086,9 @@
       ],
       "You're about to create": [
         "Вы собираетесь создать"
+      ],
+      "You're invited to a vault.": [
+        "You're invited to a vault."
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "Ваш сеанс ${ PASS_APP_NAME } заблокирован"
@@ -1080,6 +1173,9 @@
       "Autosave": [
         "Автосохранение"
       ],
+      "Autosave vault": [
+        "Autosave vault"
+      ],
       "Autosuggest": [
         "Автоподсказка"
       ],
@@ -1088,6 +1184,9 @@
       ],
       "Capitalise": [
         "Заглавными"
+      ],
+      "Card": [
+        "Карта"
       ],
       "Card number": [
         "Номер карты"
@@ -1146,6 +1245,9 @@
       "Export": [
         "Экспорт"
       ],
+      "Field name": [
+        "Название поля"
+      ],
       "Forwards to": [
         "Переслать"
       ],
@@ -1179,6 +1281,9 @@
       "Include numbers (0-9)": [
         "Включить числа (0-9)"
       ],
+      "Invitations": [
+        "Приглашения"
+      ],
       "Language": [
         "Язык"
       ],
@@ -1205,6 +1310,9 @@
       ],
       "Logins": [
         "Имена пользователей"
+      ],
+      "Members": [
+        "Участники"
       ],
       "Modified": [
         "Изменено"
@@ -1374,6 +1482,9 @@
       "Vault": [
         "Хранилище"
       ],
+      "View details": [
+        "Просмотреть детали"
+      ],
       "View logs": [
         "Просмотр журналов"
       ],
@@ -1465,6 +1576,9 @@
       "Select a suffix": [
         "Выберите суффикс"
       ],
+      "Shared vault": [
+        "Общее хранилище"
+      ],
       "Unknown origin": [
         "Неизвестное происхождение"
       ],
@@ -1511,6 +1625,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Наслаждаетесь ${ PASS_APP_NAME }?"
       ],
+      "Enter your PIN": [
+        "Введите свой PIN"
+      ],
       "Fill & copy password": [
         "Заполнить и скопировать пароль"
       ],
@@ -1529,8 +1646,17 @@
       "Low disk space": [
         "Мало места на диске"
       ],
+      "Member limit": [
+        "Ограничение количества участников"
+      ],
+      "Our welcome gift to you": [
+        "Our welcome gift to you"
+      ],
       "Password": [
         "Пароль"
+      ],
+      "Pending access to the shared data": [
+        "Pending access to the shared data"
       ],
       "Permanently remove all items ?": [
         "Безвозвратно удалить все элементы?"
@@ -1540,6 +1666,9 @@
       ],
       "Secure your data": [
         "Защитите свои данные"
+      ],
+      "Set access level": [
+        "Задать уровень доступа"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Переключаетесь на ${ PASS_APP_NAME }?"
@@ -1562,6 +1691,9 @@
       "Update available": [
         "Доступно обновление"
       ],
+      "Vault shared with you": [
+        "Хранилище, предоставленное вам"
+      ],
       "Welcome to ${ brandNameJSX }": [
         "Добро пожаловать в ${ brandNameJSX }"
       ],
@@ -1576,11 +1708,26 @@
       ]
     },
     "Validation": {
+      "Duplicated URL": [
+        "Дублированный URL"
+      ],
+      "OTP secret or URI is invalid": [
+        "Секрет OTP или URI недействительны"
+      ],
+      "OTP secret or URI required": [
+        "Требуется секрет OTP или URI"
+      ],
       "Url already exists": [
         "Url уже существует"
       ],
+      "URL cannot be empty": [
+        "URL не может быть пустым"
+      ],
       "Url is invalid": [
         "Url недействителен"
+      ],
+      "URL is invalid": [
+        "URL недействителен"
       ]
     },
     "Warning": {
@@ -1644,6 +1791,12 @@
       "Please enter a valid email address": [
         "Пожалуйста, введите действительный адрес эл. почты"
       ],
+      "Please verify your email address in order to use email aliases": [
+        "Пожалуйста, подтвердите свой адрес электронной почты, чтобы использовать псевдонимы электронной почты"
+      ],
+      "Please verify your email address in order to use vault sharing": [
+        "Пожалуйста, подтвердите свой адрес электронной почты, чтобы воспользоваться функцией обмена хранилищами."
+      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
       ],
@@ -1655,6 +1808,9 @@
       ],
       "Title is required": [
         "Название обязательно"
+      ],
+      "Transfer ownership of this vault to ${ email }?": [
+        "Transfer ownership of this vault to ${ email }?"
       ],
       "Trash alias ?": [
         "Переместить псевдоним в корзину?"
@@ -1668,6 +1824,9 @@
       "You cannot create more vaults than your subscription allows.": [
         "Вы не можете создавать больше хранилищ, чем разрешает ваша подписка."
       ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Вы достигли предела количества пользователей в этом хранилище. ${ upgradeLink }"
+      ],
       "You must select at least one mailbox": [
         "Вы должны выбрать хотя бы один почтовый ящик"
       ],
@@ -1676,6 +1835,9 @@
       ],
       "Your plan does not allow you to create more aliases": [
         "Ваш тариф не позволяет вам создать больше псевдонимов"
+      ],
+      "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
+        "Ваша подписка не позволяет создавать несколько хранилищ. Все элементы будут импортированы в ваше первое хранилище. Для импорта в несколько хранилищ обновите подписку."
       ]
     }
   }

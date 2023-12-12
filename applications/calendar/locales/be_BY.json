@@ -4524,11 +4524,6 @@
         "Толькі прагляд"
       ]
     },
-    "Info; calendar sharing pop-up": {
-      "Invite others with a ${ BRAND_NAME } account to view or edit events in your calendar.": [
-        "Запрасіце іншых карыстальнікаў з уліковым запісам ${ BRAND_NAME } для прагляду або рэдагавання падзей у вашым календары."
-      ]
-    },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
         "У некаторых вашых календарах не будуць паказвацца падрабязнасці пра падзеі, якія створаны раней."
@@ -5976,18 +5971,6 @@
         "${ timeRemaining.inHours } гадзін",
         "${ timeRemaining.inHours } гадзін"
       ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inDays } дзень, каб скінуць свой пароль.",
-        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inDays } дні, каб скінуць свой пароль.",
-        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inDays } дзён, каб скінуць свой пароль.",
-        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inDays } дзён, каб скінуць свой пароль."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inHours } гадзіна, каб скінуць свой пароль.",
-        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inHours } гадзіны, каб скінуць свой пароль.",
-        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль.",
-        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Перайдзіце на прыладу, якая знаходзіцца ў сістэме (з якой быў ініцыяваны запыт), каб змяніць пароль."
       ],
@@ -7126,11 +7109,6 @@
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
         "Выберыце лічбу"
-      ]
-    },
-    "Title; calendar sharing pop-up": {
-      "Planning just got easier!": [
-        "Планаваць стала прасцей!"
       ]
     },
     "Title; create calendar modal": {
