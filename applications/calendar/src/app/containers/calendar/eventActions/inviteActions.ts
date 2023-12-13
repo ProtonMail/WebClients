@@ -383,6 +383,10 @@ export const getSendIcsAction =
             removedAttendees,
         } = inviteActions;
 
+        if (type === NONE) {
+            return;
+        }
+
         if (!selfAddress) {
             throw new Error('Cannot reply without a self address');
         }
