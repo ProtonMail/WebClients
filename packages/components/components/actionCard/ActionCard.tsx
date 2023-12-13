@@ -1,5 +1,7 @@
 import { ComponentPropsWithoutRef } from 'react';
 
+import { ButtonLike } from '@proton/atoms/Button';
+
 import { Icon, IconName } from '../icon';
 import { Loader } from '../loader';
 
@@ -15,13 +17,13 @@ const ActionCard = ({ iconName, title, subtitle, loading, disabled, ...rest }: A
     return (
         <button
             type="button"
-            className="action-card text-left w-full flex items-center flex-wrap-nowrap p-4 rounded"
+            className="action-card text-left w-full flex items-center flex-nowrap p-4 rounded"
             disabled={disabled || loading}
             {...rest}
         >
-            <div className="bg-strong rounded button-for-icon">
+            <ButtonLike as="div" shape="solid" icon className="shrink-0 bg-strong no-pointer-events">
                 <Icon name={iconName} />
-            </div>
+            </ButtonLike>
             <div className="mr-auto flex-1">
                 <div className="h6 lh100 m-0 text-bold">{title}</div>
                 {subtitle && <p className="color-weak m-0">{subtitle}</p>}
