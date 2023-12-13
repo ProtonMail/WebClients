@@ -79,8 +79,8 @@ const config: ForgeConfig = {
             config: {
                 prerelase: isBetaRelease,
                 repository: {
-                    owner: "flavienbonvin",
-                    name: "test-desktop",
+                    owner: "ProtonMail",
+                    name: "inbox-desktop",
                 },
             },
         },
