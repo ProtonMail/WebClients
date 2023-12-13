@@ -289,6 +289,15 @@ export interface ThemeSetting {
     Features: ThemeFeatureSetting;
 }
 
+export const electronAppTheme = {
+    Mode: ThemeModeSetting.Auto,
+    LightTheme: ThemeTypes.Snow,
+    DarkTheme: ThemeTypes.Carbon,
+    FontSize: ThemeFontSizeSetting.DEFAULT,
+    FontFace: ThemeFontFaceSetting.DEFAULT,
+    Features: ThemeFeatureSetting.DEFAULT,
+};
+
 export const getDefaultThemeSetting = (themeType?: ThemeTypes): ThemeSetting => {
     const theme = {
         Mode: ThemeModeSetting.Light,
@@ -301,18 +310,11 @@ export const getDefaultThemeSetting = (themeType?: ThemeTypes): ThemeSetting => 
 
     // Electron follow system settings and only Snow and Carbon theme
     if (isElectronApp()) {
-        // We only force the theme once the user is looged in
         const uid = authentication.getUID();
         if (uid) {
-            return {
-                ...theme,
-                Mode: ThemeModeSetting.Auto,
-                LightTheme: ThemeTypes.Snow,
-                DarkTheme: ThemeTypes.Carbon,
-            };
+            return electronAppTheme;
         }
     }
-
     return theme;
 };
 
