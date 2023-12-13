@@ -2,10 +2,11 @@ import { useEffect, useLayoutEffect, useMemo } from 'react';
 
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { updateTheme } from '@proton/shared/lib/api/settings';
-import { postMessageToIframe, getIsDrawerApp } from '@proton/shared/lib/drawer/helpers';
+import { getIsDrawerApp, postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
-import { ThemeSetting, getDefaultThemeSetting } from '@proton/shared/lib/themes/themes';
+import { ThemeSetting, electronAppTheme, getDefaultThemeSetting } from '@proton/shared/lib/themes/themes';
 import debounce from '@proton/utils/debounce';
 import noop from '@proton/utils/noop';
 
@@ -25,6 +26,11 @@ const ThemeInjector = () => {
     const themeSetting = userSettings.Theme && 'Mode' in userSettings.Theme ? userSettings.Theme : legacyThemeSettings;
 
     useLayoutEffect(() => {
+        if (isElectronApp()) {
+            setThemeSetting(electronAppTheme);
+            return;
+        }
+
         setThemeSetting(themeSetting);
     }, [themeSetting]);
 
