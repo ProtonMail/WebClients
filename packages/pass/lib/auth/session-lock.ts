@@ -1,12 +1,12 @@
 import { api } from '@proton/pass/lib/api/api';
 import { SessionLockStatus } from '@proton/pass/types';
 
-export type SessionLockCheckResult = {
+export type SessionLock = {
     status: SessionLockStatus;
     ttl?: number;
 };
 
-export const checkSessionLock = async (): Promise<SessionLockCheckResult> => {
+export const checkSessionLock = async (): Promise<SessionLock> => {
     try {
         const { LockInfo } = await api({ url: 'pass/v1/user/session/lock/check', method: 'get' });
         return {
