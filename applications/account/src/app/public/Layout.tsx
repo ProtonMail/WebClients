@@ -53,7 +53,7 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
                         <Href
                             className={clsx(
                                 'shrink-0 relative interactive-pseudo-protrude rounded interactive--no-background',
-                                isElectronOnMac() && 'pl-6'
+                                isElectronOnMac() && 'pl-12 lg:pl-6'
                             )}
                             href={APP_NAME === APPS.PROTONVPN_SETTINGS ? 'https://protonvpn.com ' : getStaticURL('')}
                         >
