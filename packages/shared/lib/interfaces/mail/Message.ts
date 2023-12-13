@@ -30,6 +30,7 @@ export interface AttachmentFullMetadata {
     AddressID: string;
     MessageID: string;
     ConversationID: string;
+    IsAutoForwardee: boolean;
 }
 
 export interface Attachment {
