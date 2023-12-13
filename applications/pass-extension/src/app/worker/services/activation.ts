@@ -1,6 +1,6 @@
 import { type Runtime } from 'webextension-polyfill';
 
-import { clientCanBoot, clientStale } from '@proton/pass/lib/client';
+import { clientCanBoot, clientErrored, clientStale } from '@proton/pass/lib/client';
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
@@ -159,7 +159,13 @@ export const createActivationService = () => {
             const { tabId } = payload;
             const { status } = ctx.getState();
 
-            if (clientStale(status)) void ctx.service.auth.init();
+            /* If the worker is stale or errored during a 'popup-initiated' wakeup,
+             * re-init the authentication service : this allows resuming a session
+             * without requiring user action (ie: worker could not resume because of
+             * connectivity issues -> when network becomes available, automatically
+             * resume session without requiring a `Sign back in` click from the lobby) */
+            const shouldResume = clientStale(status) || (clientErrored(status) && endpoint === 'popup');
+            if (shouldResume) void ctx.service.auth.init();
 
             /* dispatch a wakeup action for this specific receiver.
              * tracking the wakeup's request metadata can be consumed

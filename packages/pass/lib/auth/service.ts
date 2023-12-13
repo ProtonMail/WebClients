@@ -24,7 +24,7 @@ import {
     isValidSession,
     resumeSession,
 } from './session';
-import type { SessionLockCheckResult } from './session-lock';
+import type { SessionLock } from './session-lock';
 import {
     checkSessionLock,
     createSessionLock,
@@ -78,9 +78,8 @@ export interface AuthServiceConfig {
      * locked session is detected. The `broadcast` flag indicates wether we should
      * broadcast the locked session to other clients. */
     onSessionLocked?: (localID: Maybe<number>, broadcast: boolean) => void;
-    /* Callback on session lock check. By default, this will be triggered
-     * on every login sequence. */
-    onSessionLockCheck?: (data: SessionLockCheckResult) => void;
+    /** Callback when session lock is created, updated or deleted */
+    onSessionLockUpdate?: (data: SessionLock) => void;
     /** Called with the `sessionLockToken` when session is successfully unlocked */
     onSessionUnlocked?: (sessionLockToken: string) => void;
     /** Implement encrypted local session persistence using this hook. Called on every
@@ -218,7 +217,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
                 return loggedIn;
             } catch (error: unknown) {
-                config.onNotification?.(c('Warning').t`Your session could not be authorized.`);
+                const reason = error instanceof Error ? ` (${getApiErrorMessage(error) ?? error?.message})` : '';
+                config.onNotification?.(c('Warning').t`Your session could not be authorized.` + reason);
                 config.onForkInvalid?.();
                 await authService.logout({ soft: true, broadcast: false });
 
@@ -235,12 +235,13 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
         /** Creates a session lock. Automatically updates the authentication
          * store and immediately persists the session on success. */
-        createLock: async (lockCode: string, sessionLockTTL: number) => {
-            const sessionLockToken = await createSessionLock(lockCode, sessionLockTTL);
+        createLock: async (lockCode: string, ttl: number) => {
+            const sessionLockToken = await createSessionLock(lockCode, ttl);
 
             authStore.setLockToken(sessionLockToken);
-            authStore.setLockTTL(sessionLockTTL);
+            authStore.setLockTTL(ttl);
             authStore.setLockStatus(SessionLockStatus.REGISTERED);
+            config.onSessionLockUpdate?.({ status: SessionLockStatus.REGISTERED, ttl });
 
             void authService.persistSession();
         },
@@ -253,6 +254,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             authStore.setLockToken(undefined);
             authStore.setLockTTL(undefined);
             authStore.setLockStatus(SessionLockStatus.NONE);
+            config.onSessionLockUpdate?.({ status: SessionLockStatus.NONE });
 
             void authService.persistSession();
         },
@@ -306,7 +308,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             authStore.setLockTTL(lock.ttl);
             authStore.setLockLastExtendTime(getEpoch());
 
-            config.onSessionLockCheck?.(lock);
+            config.onSessionLockUpdate?.(lock);
             return lock;
         },
 
@@ -369,9 +371,9 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
                 return await authService.login(session);
             } catch (error: unknown) {
-                const reason = error instanceof Error ? getApiErrorMessage(error) ?? error?.message : '';
-                logger.warn(`[AuthService] Resuming session failed (${reason})`);
-                config.onNotification?.(c('Warning').t`Your session could not be resumed.`);
+                const reason = error instanceof Error ? ` (${getApiErrorMessage(error) ?? error?.message})` : '';
+                logger.warn(`[AuthService] Resuming session failed ${reason}`);
+                config.onNotification?.(c('Warning').t`Your session could not be resumed.` + reason);
 
                 /* if session is inactive : trigger unauthorized sequence */
                 if (api.getState().sessionInactive) await authService.logout({ soft: true, broadcast: true });
