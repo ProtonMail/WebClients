@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import SubUserCreateHint from '@proton/components/containers/members/SubUserCreateHint';
 import CreateUserAccountsModal from '@proton/components/containers/members/multipleUserCreation/CreateUserAccountsModal/CreateUserAccountsModal';
 import UploadCSVFileButton from '@proton/components/containers/members/multipleUserCreation/UploadCSVFileButton';
@@ -12,7 +13,6 @@ import { APP_NAMES } from '@proton/shared/lib/constants';
 import { Domain } from '@proton/shared/lib/interfaces';
 
 import {
-    InlineLinkButton,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
