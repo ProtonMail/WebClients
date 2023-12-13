@@ -1,7 +1,11 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { createActivationService } from 'proton-pass-extension/app/worker/services/activation';
 import { createAliasService } from 'proton-pass-extension/app/worker/services/alias';
-import { SESSION_LOCK_ALARM, createAuthService } from 'proton-pass-extension/app/worker/services/auth';
+import {
+    clearSessionLockAlarm,
+    createAuthService,
+    syncSessionLockAlarm,
+} from 'proton-pass-extension/app/worker/services/auth';
 import { createAutoFillService } from 'proton-pass-extension/app/worker/services/autofill';
 import { createAutoSaveService } from 'proton-pass-extension/app/worker/services/autosave';
 import { createCacheProxyService } from 'proton-pass-extension/app/worker/services/cache-proxy';
@@ -34,13 +38,11 @@ import {
 } from '@proton/pass/lib/client';
 import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
-import browser from '@proton/pass/lib/globals/browser';
 import { cacheCancel, notification, sessionLockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
-import { AppStatus, SessionLockStatus, WorkerMessageType } from '@proton/pass/types';
+import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import createStore from '@proton/shared/lib/helpers/store';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
@@ -118,10 +120,10 @@ export const createWorkerContext = (config: ProtonConfig) => {
                     context.service.telemetry?.stop();
                     context.service.autofill.clearTabsBadgeCount();
                     context.service.cacheProxy.clear?.().catch(noop);
+
                     void context.service.storage.session.clear();
                     void context.service.storage.local.clear();
-
-                    browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
+                    void clearSessionLockAlarm();
                 },
                 onSessionInvalid: () => {
                     authStore.clear();
@@ -130,6 +132,11 @@ export const createWorkerContext = (config: ProtonConfig) => {
                 },
 
                 onSessionEmpty: () => context.setStatus(AppStatus.UNAUTHORIZED),
+
+                onSessionLockUpdate: (lock) => {
+                    syncSessionLockAlarm(lock).catch(noop);
+                    store.dispatch(sessionLockSync(lock));
+                },
 
                 onSessionLocked: () => {
                     context.setStatus(AppStatus.LOCKED);
@@ -140,24 +147,17 @@ export const createWorkerContext = (config: ProtonConfig) => {
                     store.dispatch(stopEventPolling());
                     store.dispatch(stateDestroy());
 
-                    context.service.auth.init().catch(noop);
-                },
-
-                onSessionLockCheck: (lock) => {
-                    browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
-
-                    if (lock.status === SessionLockStatus.REGISTERED && lock.ttl) {
-                        browser.alarms.create(SESSION_LOCK_ALARM, { when: (getEpoch() + lock.ttl) * 1_000 });
-                    }
-
-                    store.dispatch(sessionLockSync(lock));
+                    void clearSessionLockAlarm();
+                    void context.service.auth.init();
                 },
 
                 onSessionPersist: (encryptedSession) => {
                     void context.service.storage.local.setItem('ps', encryptedSession);
                     void context.service.storage.session.setItems(authStore.getSession());
                 },
+
                 onSessionResumeFailure: () => context.setStatus(AppStatus.ERROR),
+
                 onNotification: (text) =>
                     store.dispatch(
                         notification({
