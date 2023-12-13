@@ -150,6 +150,11 @@ select:-webkit-autofill {
 	-webkit-text-fill-color: var(--field-text-color) !important;
 }
 
+// Fix datalist display, remove browser default caret
+[list]::-webkit-calendar-picker-indicator {
+	display: none !important; // had to use important otherwise not working -_-v
+}
+
 select.field {
 	background: var(--select-background-color);
 	background-size: rem(15);
