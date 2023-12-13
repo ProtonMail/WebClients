@@ -46,7 +46,7 @@ const useItemsDraggable = <Item extends AbstractItem>(
             document.body.removeChild(dragElement);
             setDragElement(undefined);
         }
-    }, [setDragElement]);
+    }, [draggedIDs.length]);
 
     const handleDragCanceled = useHandler(() => {
         setDraggedIDs([]);
