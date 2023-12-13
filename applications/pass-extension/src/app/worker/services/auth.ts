@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/no-throw-literal */
 import { SSO_URL } from 'proton-pass-extension/app/config';
+import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
+import store from 'proton-pass-extension/app/worker/store';
 import { c } from 'ttag';
 
 import { AccountForkResponse, getAccountForkResponsePayload } from '@proton/pass/lib/auth/fork';
@@ -8,6 +10,7 @@ import {
     type AuthServiceConfig,
     createAuthService as createCoreAuthService,
 } from '@proton/pass/lib/auth/service';
+import type { SessionLock } from '@proton/pass/lib/auth/session-lock';
 import { clientLocked, clientReady } from '@proton/pass/lib/client';
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
@@ -20,9 +23,7 @@ import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
-import store from '../store';
 
 export const SESSION_LOCK_ALARM = 'alarm::session-lock';
 
@@ -85,4 +86,22 @@ export const createAuthService = (options: AuthServiceConfig): AuthService => {
     browser.alarms.onAlarm.addListener(({ name }) => name === SESSION_LOCK_ALARM && authService.lock({ soft: false }));
 
     return authService;
+};
+/** Removes any session lock extension alarm */
+export const clearSessionLockAlarm = () => browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
+
+/** Syncs the the session lock externsion alarm based on the lock type */
+export const syncSessionLockAlarm = async (lock: SessionLock) => {
+    try {
+        const { ttl, status } = lock;
+        await clearSessionLockAlarm();
+
+        if (status === SessionLockStatus.REGISTERED && ttl) {
+            const when = (getEpoch() + ttl) * 1_000;
+            browser.alarms
+                .clear(SESSION_LOCK_ALARM)
+                .then(() => browser.alarms.create(SESSION_LOCK_ALARM, { when }))
+                .catch(noop);
+        }
+    } catch {}
 };
