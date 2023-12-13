@@ -1,4 +1,4 @@
-import { ComponentType, useRef, useState } from 'react';
+import { ComponentType, useCallback, useRef, useState } from 'react';
 
 import noop from '@proton/utils/noop';
 
@@ -21,7 +21,10 @@ export const useModalTwo = function <OwnProps, Value>(
         reject: (reason?: any) => void;
     }>();
 
-    const createPromise = () => {
+    const handleShowModal = useCallback((ownProps: OwnProps) => {
+        setOwnProps(ownProps);
+        setOpen(true);
+
         let resolve: (value: Value) => void = noop;
         let reject: (reason?: any) => void = noop;
         const promise = new Promise<Value>((res, rej) => {
@@ -30,13 +33,7 @@ export const useModalTwo = function <OwnProps, Value>(
         });
         promiseRef.current = { promise, resolve, reject };
         return promise;
-    };
-
-    const handleShowModal = (ownProps: OwnProps) => {
-        setOwnProps(ownProps);
-        setOpen(true);
-        return createPromise();
-    };
+    }, []);
 
     const handleResolve = (value: Value) => {
         promiseRef.current?.resolve(value);
