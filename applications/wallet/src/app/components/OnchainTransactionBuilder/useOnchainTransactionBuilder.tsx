@@ -7,10 +7,8 @@ import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 
 import { WasmClient, WasmNetwork, WasmPartiallySignedTransaction, WasmTxBuilder } from '../../../pkg';
-import { BitcoinUnit, Recipient, WalletWithAccountsWithBalanceAndTxs } from '../../types';
+import { BitcoinUnit, WalletWithAccountsWithBalanceAndTxs } from '../../types';
 import { getDefaultAccount, getSelectedAccount, getSelectedWallet, tryHandleWasmError } from '../../utils';
-
-export type TempRecipient = Recipient & { uuid: number; unit: BitcoinUnit };
 
 export const useOnchainTransactionBuilder = (
     wallets: WalletWithAccountsWithBalanceAndTxs[],
@@ -25,6 +23,7 @@ export const useOnchainTransactionBuilder = (
 
     const [selectedAccount, setSelectedAccount] = useState(getDefaultAccount(selectedWallet));
     const [txBuilder, setTxBuilder] = useState<WasmTxBuilder>(new WasmTxBuilder());
+    const [unitByRecipient, setUnitByRecipient] = useState<Partial<Record<string, BitcoinUnit>>>({});
 
     const updateTxBuilder = (updater: (txBuilder: WasmTxBuilder) => WasmTxBuilder) => {
         setTxBuilder(updater);
@@ -63,14 +62,21 @@ export const useOnchainTransactionBuilder = (
     }, []);
 
     const updateRecipient = useCallback(
-        (index: number, update: Partial<TempRecipient>) => {
-            if (!txBuilder.get_recipients()[index]) {
+        (index: number, update: Partial<{ amount: number; address: string; unit: BitcoinUnit }>) => {
+            const recipient = txBuilder.get_recipients()[index];
+            if (!recipient) {
                 return;
             }
 
-            updateTxBuilder((txBuilder) =>
-                txBuilder.update_recipient(index, update.address, update.amount ? BigInt(update.amount) : undefined)
-            );
+            if (update.unit) {
+                setUnitByRecipient((prev) => ({ ...prev, [recipient[0]]: update.unit }));
+            }
+
+            if (update.address || update.amount) {
+                updateTxBuilder((txBuilder) =>
+                    txBuilder.update_recipient(index, update.address, update.amount ? BigInt(update.amount) : undefined)
+                );
+            }
         },
         [txBuilder]
     );
@@ -118,6 +124,8 @@ export const useOnchainTransactionBuilder = (
 
         updateTxBuilder,
         txBuilder,
+
+        unitByRecipient,
 
         createPsbt,
         finalPsbt,

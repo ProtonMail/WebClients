@@ -38,6 +38,7 @@ export const OnchainTransactionBuilder = ({ defaultWalletId, wallets }: Props) =
         txid,
         handleSignAndSend,
         loadindBroadcast,
+        unitByRecipient,
     } = useOnchainTransactionBuilder(wallets, defaultWalletId);
 
     const [walletSelectorLabel, accountSelectorLabel] = [
@@ -106,6 +107,7 @@ export const OnchainTransactionBuilder = ({ defaultWalletId, wallets }: Props) =
 
                 <RecipientList
                     selectedAccount={selectedAccount}
+                    unitByRecipient={unitByRecipient}
                     recipients={txBuilder.get_recipients()}
                     onRecipientAddition={addRecipient}
                     onRecipientRemove={removeRecipient}
