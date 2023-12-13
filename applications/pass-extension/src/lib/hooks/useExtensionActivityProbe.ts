@@ -3,6 +3,11 @@ import { type MessageWithSenderFactory, sendMessage } from '@proton/pass/lib/ext
 import { WorkerMessageType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
-export const useExtensionActivityProbe = (messageFactory: MessageWithSenderFactory) => {
-    return useActivityProbe(() => sendMessage(messageFactory({ type: WorkerMessageType.ACTIVITY_PROBE })).catch(noop));
-};
+export const useExtensionActivityProbe = (messageFactory: MessageWithSenderFactory) =>
+    useActivityProbe(() =>
+        sendMessage(
+            messageFactory({
+                type: WorkerMessageType.ACTIVITY_PROBE,
+            })
+        ).catch(noop)
+    );
