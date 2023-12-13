@@ -1,7 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { type SessionLockCheckResult } from '@proton/pass/lib/auth/session-lock';
+import { type SessionLock } from '@proton/pass/lib/auth/session-lock';
 import { withCache } from '@proton/pass/store/actions/with-cache';
 import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
 import withCallback from '@proton/pass/store/actions/with-callback';
@@ -18,7 +18,7 @@ export const signoutIntent = createAction('auth::signout::intent', (payload: { s
 export const signoutSuccess = createAction('auth::signout::success', (payload: { soft: boolean }) => ({ payload }));
 
 export const sessionLockIntent = createAction('session::lock::intent', () => ({ payload: {} }));
-export const sessionLockSync = createAction('session::lock::sync', (payload: SessionLockCheckResult) => ({ payload }));
+export const sessionLockSync = createAction('session::lock::sync', (payload: SessionLock) => ({ payload }));
 
 export const sessionLockEnableIntent = createAction(
     'session::lock::enable::intent',
