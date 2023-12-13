@@ -14,8 +14,9 @@ import { format as formatDate } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { Vr } from '@proton/atoms/Vr';
-import { Icon, IconName, InlineLinkButton } from '@proton/components/components';
+import { Icon, IconName } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { CurrencySelector, CycleSelector } from '@proton/components/containers';
 import {

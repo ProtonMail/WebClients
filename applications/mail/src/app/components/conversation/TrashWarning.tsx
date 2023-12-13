@@ -3,7 +3,8 @@ import * as React from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, InlineLinkButton, useHotkeys } from '@proton/components';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { Icon, useHotkeys } from '@proton/components';
 
 interface Props {
     inTrash: boolean;
@@ -58,8 +59,8 @@ const TrashWarning = ({ inTrash, filter, onToggle }: Props, ref: React.Ref<HTMLD
                         ? c('Action').t`Show messages`
                         : c('Action').t`Hide messages`
                     : filter
-                    ? c('Action').t`Show messages`
-                    : c('Action').t`Hide messages`}
+                      ? c('Action').t`Show messages`
+                      : c('Action').t`Hide messages`}
             </InlineLinkButton>
         </div>
     );

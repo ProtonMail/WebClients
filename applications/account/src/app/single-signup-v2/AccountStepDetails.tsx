@@ -13,14 +13,8 @@ import { flushSync } from 'react-dom';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import {
-    DropdownSizeUnit,
-    Icon,
-    Info,
-    InlineLinkButton,
-    InputFieldTwo,
-    PasswordInputTwo,
-} from '@proton/components/components';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { DropdownSizeUnit, Icon, Info, InputFieldTwo, PasswordInputTwo } from '@proton/components/components';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';

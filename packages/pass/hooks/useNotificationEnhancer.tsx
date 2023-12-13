@@ -3,7 +3,8 @@ import { type FC, useCallback } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Icon, InlineLinkButton } from '@proton/components/components';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { Icon } from '@proton/components/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { Notification } from '@proton/pass/store/actions/with-notification';
 import { NotificationKey } from '@proton/pass/types/worker/notification';

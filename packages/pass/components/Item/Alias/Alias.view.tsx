@@ -4,7 +4,8 @@ import { useHistory } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
-import { InlineLinkButton, useNotifications } from '@proton/components';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { useNotifications } from '@proton/components';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { getNewItemRoute } from '@proton/pass/components/Core/routing';
