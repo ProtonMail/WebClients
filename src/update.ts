@@ -17,7 +17,7 @@ export const checkForUpdates = () => {
     log.info("checkForUpdates");
 
     updateElectronApp({
-        repo: "flavienbonvin/test-desktop",
+        repo: "ProtonMail/inbox-desktop",
         updateInterval: "5 minutes",
         logger: log,
     });
