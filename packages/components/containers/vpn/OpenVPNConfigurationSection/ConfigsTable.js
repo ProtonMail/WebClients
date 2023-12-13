@@ -68,14 +68,66 @@ export const TorIcon = () => (
     </span>
 );
 
+const normalizeName = /** @param {Logical} server */ (server) => {
+    let name = server.Name.toLowerCase()
+        .replace(/[^a-zA-Z0-9.#-]/g, '')
+        .replace(/[#.-]+/g, '-')
+        .replace(/^[\s-]+/g, '')
+        .replace(/[\s-]+$/g, '');
+
+    if (name) {
+        let needsFreeSuffix = server.Tier === 0 && name.indexOf('-free') === -1;
+
+        name = name.replace(/^([a-zA-Z]{2}-)((?:[a-zA-Z]{2}-)?)(\d+)$/, (start, middle, end) => {
+            if (needsFreeSuffix) {
+                middle += 'free-';
+            }
+
+            needsFreeSuffix = false;
+
+            return start + middle + (end.length < 2 ? '0' : '') + end;
+        });
+
+        if (needsFreeSuffix) {
+            name += '-free';
+        }
+    }
+
+    return name;
+};
+
+const getServerDomainFromName = /** @param {Logical} server */ (server) => {
+    return normalizeName(server) + '.protonvpn.net';
+};
+
 // TODO: Add icons instead of text for p2p and tor when they are ready
 const ConfigsTable = ({ loading, servers = [], platform, protocol, category, onSelect, selecting }) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const [{ hasPaidVpn }] = useUser();
 
+    const getCopyButton = /** @param {Logical} server */ (server) => {
+        const domain =
+            (server.Servers.length === 1 ? server.Servers[0].Domain : null) || getServerDomainFromName(server);
+
+        return {
+            text: (
+                <div className="flex flex-nowrap items-center justify-space-between">
+                    <span className="mr-2">{domain}</span>
+                    <Icon name="squares" title={c('Action').t`Copy`} />
+                </div>
+            ),
+            onClick(event) {
+                textToClipboard(domain, event.currentTarget);
+                createNotification({
+                    text: c('Success').t`${domain} copied to your clipboard`,
+                });
+            },
+        };
+    };
+
     const handleClickDownload =
-        ({ ID, ExitCountry, Domain }) =>
+        ({ ID, ExitCountry, Tier, Name }) =>
         async () => {
             const buffer = await api(
                 getVPNServerConfig({
@@ -86,9 +138,8 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, onS
                 })
             );
             const blob = new Blob([buffer], { type: 'application/x-openvpn-profile' });
-            const [country, ...rest] = Domain.split('.');
-            const domain = category === CATEGORY.COUNTRY ? [country.substring(0, 2), ...rest].join('.') : Domain;
-            downloadFile(blob, `${domain}.${protocol}.ovpn`);
+            const name = category === CATEGORY.COUNTRY ? ExitCountry.toLowerCase() : normalizeName({ Tier, Name });
+            downloadFile(blob, `${name}.${protocol}.ovpn`);
         };
 
     return (
@@ -117,75 +168,65 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, onS
                 </tr>
             </thead>
             <TableBody loading={loading} colSpan={4}>
-                {servers.map((server) => (
-                    <TableRow
-                        key={server.ID}
-                        cells={[
-                            [CATEGORY.SERVER, CATEGORY.FREE].includes(category) ? (
-                                server.Name
-                            ) : (
-                                <Country key="country" server={server} />
-                            ),
-                            category === CATEGORY.SERVER ? (
-                                <div className="inline-flex children-self-center" key="city">
-                                    {server.City}
-                                </div>
-                            ) : null,
-                            <div className="inline-flex children-self-center" key="status">
-                                <LoadIndicator server={server} />
-                                {server.Tier === 2 && <PlusBadge />}
-                                {server.Servers.every(({ Status }) => !Status) && <ServerDown />}
-                                {isP2PEnabled(server.Features) && <P2PIcon />}
-                                {isTorEnabled(server.Features) && <TorIcon />}
-                            </div>,
-                            server.isUpgradeRequired ? (
-                                <Tooltip
-                                    key="download"
-                                    title={
-                                        server.Tier === 2
-                                            ? c('Info').t`Plus or Visionary subscription required`
-                                            : c('Info').t`Basic, Plus or Visionary subscription required`
-                                    }
-                                >
-                                    <ButtonLike
-                                        as={SettingsLink}
-                                        color="norm"
+                {servers.map(
+                    /** @param {Logical} server */ (server) => (
+                        <TableRow
+                            key={server.ID}
+                            cells={[
+                                [CATEGORY.SERVER, CATEGORY.FREE].includes(category) ? (
+                                    server.Name
+                                ) : (
+                                    <Country key="country" server={server} />
+                                ),
+                                category === CATEGORY.SERVER ? (
+                                    <div className="inline-flex children-self-center" key="city">
+                                        {server.City}
+                                    </div>
+                                ) : null,
+                                <div className="inline-flex children-self-center" key="status">
+                                    <LoadIndicator server={server} />
+                                    {server.Tier === 2 && <PlusBadge />}
+                                    {server.Servers.every(({ Status }) => !Status) && <ServerDown />}
+                                    {isP2PEnabled(server.Features) && <P2PIcon />}
+                                    {isTorEnabled(server.Features) && <TorIcon />}
+                                </div>,
+                                server.isUpgradeRequired ? (
+                                    <Tooltip
+                                        key="download"
+                                        title={
+                                            server.Tier === 2
+                                                ? c('Info').t`Plus or Visionary subscription required`
+                                                : c('Info').t`Basic, Plus or Visionary subscription required`
+                                        }
+                                    >
+                                        <ButtonLike
+                                            as={SettingsLink}
+                                            color="norm"
+                                            size="small"
+                                            path={hasPaidVpn ? `/dashboard?plan=${PLANS.VPN}` : '/upgrade'}
+                                        >{c('Action').t`Upgrade`}</ButtonLike>
+                                    </Tooltip>
+                                ) : onSelect ? (
+                                    <Button size="small" onClick={() => onSelect(server)} loading={selecting}>{c(
+                                        'Action'
+                                    ).t`Create`}</Button>
+                                ) : (
+                                    <DropdownActions
+                                        key="dropdown"
                                         size="small"
-                                        path={hasPaidVpn ? `/dashboard?plan=${PLANS.VPN}` : '/upgrade'}
-                                    >{c('Action').t`Upgrade`}</ButtonLike>
-                                </Tooltip>
-                            ) : onSelect ? (
-                                <Button size="small" onClick={() => onSelect(server)} loading={selecting}>{c('Action')
-                                    .t`Create`}</Button>
-                            ) : (
-                                <DropdownActions
-                                    key="dropdown"
-                                    size="small"
-                                    list={[
-                                        {
-                                            text: c('Action').t`Download`,
-                                            onClick: handleClickDownload(server),
-                                        },
-                                        category !== CATEGORY.SECURE_CORE && {
-                                            text: (
-                                                <div className="flex flex-nowrap items-center justify-space-between">
-                                                    <span className="mr-2">{server.Domain}</span>
-                                                    <Icon name="squares" title={c('Action').t`Copy`} />
-                                                </div>
-                                            ),
-                                            onClick(event) {
-                                                textToClipboard(server.Domain, event.currentTarget);
-                                                createNotification({
-                                                    text: c('Success').t`${server.Domain} copied to your clipboard`,
-                                                });
+                                        list={[
+                                            {
+                                                text: c('Action').t`Download`,
+                                                onClick: handleClickDownload(server),
                                             },
-                                        },
-                                    ].filter(isTruthy)}
-                                />
-                            ),
-                        ].filter(isTruthy)}
-                    />
-                ))}
+                                            category !== CATEGORY.SECURE_CORE && getCopyButton(server),
+                                        ].filter(isTruthy)}
+                                    />
+                                ),
+                            ].filter(isTruthy)}
+                        />
+                    )
+                )}
             </TableBody>
         </Table>
     );
