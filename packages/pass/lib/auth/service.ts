@@ -217,7 +217,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
                 return loggedIn;
             } catch (error: unknown) {
-                config.onNotification?.(c('Warning').t`Your session could not be authorized.`);
+                const reason = error instanceof Error ? ` (${getApiErrorMessage(error) ?? error?.message})` : '';
+                config.onNotification?.(c('Warning').t`Your session could not be authorized.` + reason);
                 config.onForkInvalid?.();
                 await authService.logout({ soft: true, broadcast: false });
 
@@ -370,9 +371,9 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
                 return await authService.login(session);
             } catch (error: unknown) {
-                const reason = error instanceof Error ? getApiErrorMessage(error) ?? error?.message : '';
-                logger.warn(`[AuthService] Resuming session failed (${reason})`);
-                config.onNotification?.(c('Warning').t`Your session could not be resumed.`);
+                const reason = error instanceof Error ? ` (${getApiErrorMessage(error) ?? error?.message})` : '';
+                logger.warn(`[AuthService] Resuming session failed ${reason}`);
+                config.onNotification?.(c('Warning').t`Your session could not be resumed.` + reason);
 
                 /* if session is inactive : trigger unauthorized sequence */
                 if (api.getState().sessionInactive) await authService.logout({ soft: true, broadcast: true });
