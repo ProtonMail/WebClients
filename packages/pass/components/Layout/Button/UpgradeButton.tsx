@@ -2,8 +2,8 @@ import { type VFC } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
-import { Icon, InlineLinkButton } from '@proton/components/components';
+import { Button, InlineLinkButton } from '@proton/atoms';
+import { Icon } from '@proton/components/components';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import clsx from '@proton/utils/clsx';
 
@@ -20,11 +20,7 @@ export const UpgradeButton: VFC<UpgradeButtonProps> = ({ className, inline = fal
 
     return (
         <ButtonComponent
-            className={clsx(
-                'items-center flex-nowrap shrink-0',
-                inline ? 'inline-flex' : 'flex text-sm',
-                className
-            )}
+            className={clsx('items-center flex-nowrap shrink-0', inline ? 'inline-flex' : 'flex text-sm', className)}
             color="norm"
             onClick={navigateToUpgrade}
             {...(!inline && buttonProps)}

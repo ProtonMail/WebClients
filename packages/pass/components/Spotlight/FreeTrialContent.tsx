@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { InlineLinkButton } from '@proton/components';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { UpsellingModalType } from '@proton/pass/components/Spotlight/UpsellingModal';
