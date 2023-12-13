@@ -1,11 +1,9 @@
-import { InlineLinkButton } from '@proton/components';
-
-import { getTitle } from '../../helpers/title';
+import { InlineLinkButton } from '.';
 import mdx from './InlineLinkButton.mdx';
 
 export default {
     component: InlineLinkButton,
-    title: getTitle(__filename, false),
+    title: 'components/InlineLinkButton',
     parameters: {
         docs: {
             page: mdx,
