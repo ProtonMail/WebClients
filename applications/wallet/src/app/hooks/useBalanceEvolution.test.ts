@@ -1,5 +1,6 @@
 import { renderHook } from '@testing-library/react-hooks';
 import { format, set } from 'date-fns';
+import { describe } from 'vitest';
 
 import { WasmSimpleTransaction } from '../../pkg';
 import { BITCOIN } from '../constants';
