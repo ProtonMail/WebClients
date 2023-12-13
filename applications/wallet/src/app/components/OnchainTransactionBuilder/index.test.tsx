@@ -29,6 +29,7 @@ describe.skip('OnchainTransactionBuilder', () => {
             createPsbt: jest.fn(),
             backToTxBuilder: jest.fn(),
             handleSignAndSend: jest.fn(),
+            unitByRecipient: {},
             loadindBroadcast: false,
             txid: undefined,
             finalPsbt: undefined,
