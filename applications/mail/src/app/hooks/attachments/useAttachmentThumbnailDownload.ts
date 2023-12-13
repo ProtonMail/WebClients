@@ -67,7 +67,7 @@ export const useAttachmentThumbnailDownload = () => {
                     api<{ Attachment: AttachmentFullMetadata }>(getAttachmentsMetadata(ID)),
                 ]);
 
-                const { AddressID, KeyPackets, Signature, /*EncSignature,*/ Sender } =
+                const { AddressID, KeyPackets, Signature, /*EncSignature,*/ Sender, IsAutoForwardee } =
                     apiAttachmentFullMetadata.Attachment;
 
                 if (!Sender) {
@@ -75,12 +75,13 @@ export const useAttachmentThumbnailDownload = () => {
                 }
 
                 const messageKeys = await getMessageKeys({ AddressID });
-                // TODO: this is a temporary hack.
-                // The BE needs to add the message flags to the AttachmentMetadata route, so that we
-                // know which attachments were autoforwarded.
-                // In the meantime, we temporarily allow using forwading keys on all attachments.
-                const messageFlags = JSBI.toNumber(MESSAGE_FLAGS.FLAG_AUTO_FORWARDEE);
-                const sessionKey = await getSessionKey({ KeyPackets }, messageKeys.privateKeys, messageFlags);
+
+                const messageFlagsForAutoForwarding = JSBI.toNumber(MESSAGE_FLAGS.FLAG_AUTO_FORWARDEE);
+                const sessionKey = await getSessionKey(
+                    { KeyPackets },
+                    messageKeys.privateKeys,
+                    IsAutoForwardee ? messageFlagsForAutoForwarding : undefined
+                );
 
                 // Verify API keys and get pinned keys if there are some
                 const verificationPreferences = await getVerificationPreferences({
