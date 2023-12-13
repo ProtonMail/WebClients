@@ -4,6 +4,7 @@ export * from './Card';
 export * from './CircleLoader';
 export * from './Donut';
 export * from './Href';
+export * from './InlineLinkButton';
 export * from './Input';
 export * from './Kbd';
 export * from './NotificationDot';
