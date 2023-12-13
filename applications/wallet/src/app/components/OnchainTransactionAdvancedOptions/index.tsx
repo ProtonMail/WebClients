@@ -41,6 +41,8 @@ export const OnchainTransactionAdvancedOptions = ({ account, txBuilder, updateTx
         handleChangePolicySelect,
     } = useOnchainTransactionAdvancedOptions(updateTxBuilder);
 
+    const nbUtxosToSpend = txBuilder.get_utxos_to_spend().length;
+
     return (
         <>
             <div className="flex flex-column flex-1 overflow-y-auto">
@@ -82,11 +84,11 @@ export const OnchainTransactionAdvancedOptions = ({ account, txBuilder, updateTx
                                     onClick={openManualCoinSelectionModal}
                                     className="text-sm color-hint mt-2"
                                 >
-                                    {txBuilder.get_utxos_to_spend().length
+                                    {nbUtxosToSpend
                                         ? c('Wallet send').ngettext(
-                                              msgid`${txBuilder.get_utxos_to_spend().length} UTXO selected`,
-                                              `${txBuilder.get_utxos_to_spend().length} UTXOs selected`,
-                                              txBuilder.get_utxos_to_spend().length
+                                              msgid`${nbUtxosToSpend} UTXO selected`,
+                                              `${nbUtxosToSpend} UTXOs selected`,
+                                              nbUtxosToSpend
                                           )
                                         : c('Wallet Send').t`No UTXO selected`}
                                 </Button>
