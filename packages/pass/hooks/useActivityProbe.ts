@@ -20,6 +20,6 @@ const createActivityProbe = (onProbe: () => void) => {
 
 export const useActivityProbe = (onProbe: () => void): ActivityProbe => {
     const probe = useRef(createActivityProbe(onProbe)).current;
-    useEffect(() => () => probe.cancel());
+    useEffect(() => () => probe.cancel(), []);
     return probe;
 };
