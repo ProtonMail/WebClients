@@ -2,7 +2,8 @@ import { Dispatch, SetStateAction, useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { CalendarInviteButtons, InlineLinkButton, Loader, useDrawer, useNotifications } from '@proton/components';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { CalendarInviteButtons, Loader, useDrawer, useNotifications } from '@proton/components';
 import Banner, { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
 import { useLoading } from '@proton/hooks';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
