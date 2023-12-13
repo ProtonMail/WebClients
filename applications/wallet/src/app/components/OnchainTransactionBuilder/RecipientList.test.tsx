@@ -19,6 +19,7 @@ describe('RecipientList', () => {
         baseProps = {
             selectedAccount: testAccount,
             recipients,
+            unitByRecipient: {},
             onRecipientUpdate: jest.fn(),
             onRecipientAddition: jest.fn(),
             onRecipientRemove: jest.fn(),
