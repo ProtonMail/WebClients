@@ -3,24 +3,14 @@ import { useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { c, msgid } from 'ttag';
 
-import { Button, ButtonLike, Href } from '@proton/atoms';
+import { ButtonLike, Href } from '@proton/atoms';
 import { SettingsSectionWide } from '@proton/components/containers';
-import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
 import { PLANS, SORT_DIRECTION, VPN_APP_NAME, VPN_CONNECTIONS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
-import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import groupWith from '@proton/utils/groupWith';
 
-import { Block, Icon, Info, Radio, RadioGroup, SettingsLink, Tooltip } from '../../../components';
+import { Block, Icon, Info, Radio, RadioGroup, SettingsLink } from '../../../components';
 import { correctAbbr, getLocalizedCountryByAbbr } from '../../../helpers/countries';
-import {
-    useApiWithoutResult,
-    usePlans,
-    useSortedList,
-    useUser,
-    useUserSettings,
-    useUserVPN,
-    useVPNLogicals,
-} from '../../../hooks';
+import { usePlans, useSortedList, useUser, useUserSettings, useUserVPN, useVPNLogicals } from '../../../hooks';
 import { SettingsParagraph } from '../../account';
 import ConfigsTable, { CATEGORY } from './ConfigsTable';
 import ServerConfigs from './ServerConfigs';
@@ -43,7 +33,6 @@ const PROTOCOL = {
 const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, excludedCategories = [] }) => {
     const [platform, setPlatform] = useState(PLATFORM.ANDROID);
     const [protocol, setProtocol] = useState(PROTOCOL.UDP);
-    const { request } = useApiWithoutResult(getVPNServerConfig);
     const [plans, loadingPlans] = usePlans();
     const { loading, result = {}, fetch: fetchLogicals } = useVPNLogicals();
     const { result: vpnResult, loading: vpnLoading, fetch: fetchUserVPN } = useUserVPN();
@@ -65,18 +54,6 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
 
     const selectedCategory = maxTier && category === CATEGORY.FREE ? CATEGORY.SERVER : category;
 
-    const downloadAllConfigs = async () => {
-        const freeSelected = selectedCategory === CATEGORY.FREE;
-        const buffer = await request({
-            Category: freeSelected ? CATEGORY.SERVER : selectedCategory,
-            Platform: platform,
-            Protocol: protocol,
-            Tier: freeSelected ? 0 : maxTier,
-        });
-        const blob = new Blob([buffer], { type: 'application/zip' });
-        downloadFile(blob, 'ProtonVPN_server_configs.zip');
-    };
-
     const servers = useMemo(
         () =>
             (result.LogicalServers || []).map((server) => ({
@@ -93,10 +70,6 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
 
     const isUpgradeRequiredForSecureCore = !Object.keys(userVPN).length || !hasPaidVpn || isBasicVPN;
     const isUpgradeRequiredForCountries = !Object.keys(userVPN).length || !hasPaidVpn;
-    const isUpgradeRequiredForDownloadAll =
-        !Object.keys(userVPN).length ||
-        (!hasPaidVpn && ![CATEGORY.SERVER, CATEGORY.FREE].includes(selectedCategory)) ||
-        (isBasicVPN && selectedCategory === CATEGORY.SECURE_CORE);
 
     const secureCoreServers = useMemo(() => {
         return allServers
@@ -141,11 +114,11 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
     }, [vpnLoading]);
 
     useEffect(() => {
-        fetchUserVPN(30_000);
+        void fetchUserVPN(30_000);
     }, [hasPaidVpn]);
 
     useEffect(() => {
-        fetchLogicals(30_000);
+        void fetchLogicals(30_000);
     }, []);
 
     const vpnPlan = plans?.find(({ Name }) => Name === PLANS.VPN);
@@ -201,6 +174,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                                     return (
                                         <div key={value} className="mr-8 mb-4">
                                             <Radio
+                                                id={'platform-' + value}
                                                 onChange={() => setPlatform(value)}
                                                 checked={platform === value}
                                                 name="platform"
@@ -344,17 +318,6 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                 )}
                 {!listOnly && (
                     <>
-                        <div className="mb-8">
-                            {isUpgradeRequiredForDownloadAll ? (
-                                <Tooltip title={c('Info').t`Plan upgrade required`}>
-                                    <Button loading={vpnLoading} disabled>{c('Action')
-                                        .t`Download all configurations`}</Button>
-                                </Tooltip>
-                            ) : (
-                                <Button loading={vpnLoading} onClick={() => downloadAllConfigs()}>{c('Action')
-                                    .t`Download all configurations`}</Button>
-                            )}
-                        </div>
                         {!loadingPlans && (userVPN.PlanName === 'trial' || !hasPaidVpn) && vpnPlus && (
                             <div className="border p-7 text-center">
                                 <h3 className="color-primary mt-0 mb-4">{
