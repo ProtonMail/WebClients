@@ -2295,6 +2295,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } güncellendi.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Bu zamandaki ${ eventTitle } etkinliği iptal edildi."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "${ eventTitle } etkinliğine davet edildiniz\n${ eventDetailsText }"
       ]
@@ -3699,6 +3702,9 @@
       "All (${ totalFoldersCount } label)": [
         "Tümü (${ totalFoldersCount } etiket)",
         "Tümü (${ totalFoldersCount } etiket)"
+      ],
+      "All participants will get a cancellation email. Which event would you like to delete?": [
+        "Tüm katılımcılara bir iptal e-postası gönderilecek. Hangi etkinliği silmek istiyorsunuz?"
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "${ MAX_CONTACTS_PER_USER } sınırına kadar tüm kişileriniz içe aktarılacak",

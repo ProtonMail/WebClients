@@ -5859,6 +5859,9 @@
         "${ timeRemaining.inHours } ore",
         "${ timeRemaining.inHours } de ore"
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Resetarea parolei contului a fost aprobată (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Accesați dispozitivul conectat (în sesiunea de unde a fost inițiată solicitarea) pentru a vă schimba parola."
       ],
@@ -5872,8 +5875,34 @@
         "Această permisiune expiră peste ${ timeRemaining.inHours } ore.",
         "Această permisiune expiră peste ${ timeRemaining.inHours } de ore."
       ],
+      "This permission expires soon": [
+        "Această permisiune expiră în curând."
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Acum vă puteți schimba parola pentru contul ${ boldEmail } timp de ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Acum vă puteți schimba parola pentru contul ${ boldEmail }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Aveți ${ timeRemaining.inDays } zi pentru a vă reseta parola.",
+        "Aveți ${ timeRemaining.inDays } zile pentru a vă reseta parola.",
+        "Aveți ${ timeRemaining.inDays } de zile pentru a vă reseta parola."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Aveți ${ timeRemaining.inHours } oră pentru a vă reseta parola.",
+        "Aveți ${ timeRemaining.inHours } ore pentru a vă reseta parola.",
+        "Aveți ${ timeRemaining.inHours } de ore pentru a vă reseta parola."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Aveți ${ timeRemaining.inMinutes } minut pentru a vă reseta parola.",
+        "Aveți ${ timeRemaining.inMinutes } minute pentru a vă reseta parola.",
+        "Aveți ${ timeRemaining.inMinutes } de minute pentru a vă reseta parola."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Aveți ${ timeRemaining.inSeconds } secundă pentru a vă reseta parola.",
+        "Aveți ${ timeRemaining.inSeconds } secunde pentru a vă reseta parola.",
+        "Aveți ${ timeRemaining.inSeconds } de secunde pentru a vă reseta parola."
       ]
     },
     "session_recovery:available:link": {
