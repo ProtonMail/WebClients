@@ -4,12 +4,15 @@ import { getCalendarView, getMailView } from "./view/viewManagement";
 
 export const isMac = process.platform === "darwin";
 export const isWindows = process.platform === "win32";
+export const isLinux = process.platform === "linux";
 
 export const getPlatform = () => {
     if (isMac) {
         return "macos";
     } else if (isWindows) {
         return "windows";
+    } else if (isLinux) {
+        return "linux";
     }
 };
 

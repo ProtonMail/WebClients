@@ -25,6 +25,7 @@ const config: ForgeConfig = {
         icon: `${__dirname}/assets/icons/${getIcon()}`,
         asar: true,
         name: getName(),
+        executableName: getName(),
         extraResource: getExtraResource(),
         // Required for macOS mailto protocol
         protocols: [
@@ -83,7 +84,32 @@ const config: ForgeConfig = {
         {
             name: "@electron-forge/maker-zip",
             config: {},
-            platforms: ["win32", "win64", "darwin"],
+            platforms: ["win32", "darwin", "linux"],
+        },
+        {
+            name: "@electron-forge/maker-rpm",
+            config: {
+                options: {
+                    bin: getName(),
+                    icon: `${__dirname}/assets/icons/${getIcon()}.png`,
+                    homepage: "https://proton.me/",
+                    categories: ["Utility"],
+                    mimeType: ["x-scheme-handler/mailto"],
+                },
+            },
+        },
+        {
+            name: "@electron-forge/maker-deb",
+            config: {
+                options: {
+                    bin: getName(),
+                    icon: `${__dirname}/assets/icons/${getIcon()}.png`,
+                    maintainer: "Proton AG",
+                    homepage: "https://proton.me/",
+                    categories: ["Utility"],
+                    mimeType: ["x-scheme-handler/mailto"],
+                },
+            },
         },
     ],
     publishers: [

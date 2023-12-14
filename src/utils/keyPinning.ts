@@ -9,11 +9,7 @@ const config = getConfig();
 export const checkKeys = (request: Request) => {
     if (isHostAllowed(request.hostname)) {
         // We dont do any verification for dev and testing environments
-        if (
-            !app.isPackaged ||
-            config.url.account.includes("proton.black") ||
-            config.url.account.includes("proton.pink")
-        ) {
+        if (!app.isPackaged || !config.url.account.endsWith("proton.me")) {
             return 0;
         }
 

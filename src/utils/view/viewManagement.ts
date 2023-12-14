@@ -3,7 +3,7 @@ import Logger from "electron-log";
 import { resetBadge } from "../../ipc/badge";
 import { VIEW_TARGET } from "../../ipc/ipcConstants";
 import { getConfig } from "../config";
-import { clearStorage, isWindows } from "../helpers";
+import { clearStorage, isLinux, isWindows } from "../helpers";
 import { checkKeys } from "../keyPinning";
 import { setApplicationMenu } from "../menus/menuApplication";
 import { createContextMenu } from "../menus/menuContext";
@@ -84,7 +84,7 @@ const configureViews = () => {
 
 const adjustBoundsForWindows = (bounds: Rectangle) => {
     const padding = { top: 16, right: 8, bottom: 16, left: 8 };
-    if (isWindows) {
+    if (isWindows || isLinux) {
         return {
             x: bounds.x + padding.left,
             y: bounds.y + padding.top,

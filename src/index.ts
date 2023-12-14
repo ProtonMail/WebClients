@@ -1,4 +1,4 @@
-import { BrowserWindow, Notification, app, session, shell } from "electron";
+import { Notification, app, session, shell } from "electron";
 import Logger from "electron-log";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./constants";
 import { handleIPCCalls } from "./ipc/main";
@@ -92,17 +92,6 @@ if (!gotTheLock) {
 
         // Handle IPC calls coming from the destkop application
         handleIPCCalls();
-
-        app.on("activate", () => {
-            if (isMac) {
-                getMainWindow()?.show();
-                return;
-            }
-
-            if (BrowserWindow.getAllWindows().length === 0) {
-                return viewCreationAppStartup(secureSession);
-            }
-        });
 
         // Normally this only works on macOS and is not required for Windows
         app.on("open-url", (_e, url) => {

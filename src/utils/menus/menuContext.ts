@@ -1,4 +1,5 @@
 import { BrowserView, ContextMenuParams, Menu, MenuItemConstructorOptions, app } from "electron";
+import { c } from "ttag";
 import { isMac } from "../helpers";
 import { getMainWindow } from "../view/viewManagement";
 
@@ -17,7 +18,7 @@ const getContextMenuSpellCheck = (props: ContextMenuParams, view: BrowserView) =
 
     template.push({ type: "separator" });
     template.push({
-        label: "Add to dictionary",
+        label: c("Context menu").t`Add to dictionary`,
         click: () => view.webContents.session.addWordToSpellCheckerDictionary(props.misspelledWord),
     });
     template.push({ type: "separator" });
@@ -29,7 +30,7 @@ const getContextEditFlags = (props: ContextMenuParams) => {
     const template: MenuItemConstructorOptions[] = [];
     if (props.isEditable) {
         if (app.isEmojiPanelSupported()) {
-            template.push({ label: `Emoji and Symbols`, click: () => app.showEmojiPanel() });
+            template.push({ label: c("Context menu").t`Emoji and Symbols`, click: () => app.showEmojiPanel() });
         }
 
         template.push(
@@ -67,17 +68,20 @@ const getContextMenu = (props: ContextMenuParams, entriesBefore: boolean) => {
     }
 
     if (isMac && props.selectionText.length > 0) {
-        template.push({ label: "Speech", submenu: [{ role: "startSpeaking" }, { role: "stopSpeaking" }] });
+        template.push({
+            label: c("Conext menu").t`Speech`,
+            submenu: [{ role: "startSpeaking" }, { role: "stopSpeaking" }],
+        });
     }
 
     if (props.mediaType === "image") {
         template.push({ type: "separator" });
         template.push({
-            label: "Save image as…",
+            label: c("Conext menu").t`Save image as…`,
             click: () => getMainWindow()?.webContents.downloadURL(props.srcURL),
         });
         template.push({
-            label: "Copy image",
+            label: c("Context menu").t`Copy image`,
             click: () => getMainWindow()?.webContents.copyImageAt(props.x, props.y),
         });
         template.push({ type: "separator" });

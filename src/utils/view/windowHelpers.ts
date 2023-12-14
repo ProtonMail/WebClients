@@ -1,6 +1,6 @@
 import { BrowserWindowConstructorOptions, Session } from "electron";
 import { getWindowBounds } from "../../store/boundsStore";
-import { getConfig } from "../config";
+import { getConfig, getIcon } from "../config";
 import { isMac, isWindows } from "../helpers";
 
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
@@ -25,7 +25,7 @@ export const getWindowConfig = (session: Session): BrowserWindowConstructorOptio
 
     return {
         title: config.appTitle,
-        icon: "../../../assets/icon.png",
+        icon: `../../../assets/${getIcon()}.png`,
         x,
         y,
         width,
