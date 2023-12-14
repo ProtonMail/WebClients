@@ -2,14 +2,15 @@ import { c } from 'ttag';
 
 import { SectionConfig } from '@proton/components';
 import { CALENDAR_SETTINGS_ROUTE, CALENDAR_SETTINGS_SECTION_ID } from '@proton/shared/lib/calendar/constants';
-import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 
 /**
  * Calendar config is coupled to CalendarSidebar.
  * Any additional section must also be added to CalendarSidebar.
  */
-export const getCalendarAppRoutes = () => {
+export const getCalendarAppRoutes = ({ app }: { app: APP_NAMES }) => {
     return <const>{
+        available: app === APPS.PROTONCALENDAR,
         header: CALENDAR_APP_NAME,
         routes: {
             general: <SectionConfig>{

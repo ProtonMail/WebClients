@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import Href from '@proton/atoms/Href/Href';
 import { SidebarConfig } from '@proton/components';
-import { ADDRESS_TYPE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { ADDRESS_TYPE, APPS, APP_NAMES, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, Organization, UserModel, UserType } from '@proton/shared/lib/interfaces';
 
@@ -19,12 +19,14 @@ export const getShowPmMeSection = (user: UserModel, addresses: Address[] = []) =
 };
 
 export const getMailAppRoutes = ({
+    app,
     user,
     addresses,
     organization,
     isSmtpTokenEnabled,
     isEmailForwardingEnabled,
 }: {
+    app: APP_NAMES;
     user: UserModel;
     addresses: Address[];
     organization: Organization;
@@ -36,6 +38,7 @@ export const getMailAppRoutes = ({
         <Href key="learn" href={getKnowledgeBaseUrl('/using-folders-labels')}>{c('Link').t`Learn more`}</Href>
     );
     return {
+        available: app === APPS.PROTONMAIL,
         header: MAIL_APP_NAME,
         routes: {
             general: {
