@@ -5814,6 +5814,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Предоставляя полную информацию о подробностях события из этого календаря, вы соглашаетесь предоставить ${ BRAND_NAME } доступ к зашифрованной информации этого календаря."
       ],
+      "Cancel anytime": [
+        "Отменить в любое время"
+      ],
       "Center": [
         "Центрировать"
       ],
@@ -6771,6 +6774,15 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Отправьте депозит, используя указанный адрес, или отсканируйте QR-код. Ваш депозит будет отражен в вашем аккаунте после подтверждения."
       ],
+      "Subscription auto-renews every 12 months.": [
+        "Подписка автоматически продлевается каждые 12 месяцев."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "Subscription auto-renews every 24 months."
+      ],
+      "Subscription auto-renews every month.": [
+        "Подписка автоматически продлевается каждый месяц."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Окончание подписки: для сохранения преимуществ плана ${ planName } необходимо её восстановить до ${ byDate }. ${ reactivateLink }"
       ],
@@ -7424,6 +7436,9 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Ваши данные для входа не будут сохранены после завершения импорта."
+      ],
+      "Your next billing date is ${ renewalTime }.": [
+        "Your next billing date is ${ renewalTime }."
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Пароль вашей организации может быть предоставлен другим пользователям, которым вы захотите предоставить права администратора. Он также является кодом аварийного восстановления доступа к вашей организации в случае, если вы вдруг потеряете доступ к своей учётной записи. Пожалуйста, сохраните данный пароль и храните его в безопасности."
@@ -9788,6 +9803,12 @@
       ],
       "User session management": [
         "Управление сеансом пользователя"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Совместное использование хранилища (до ${ n } человека)",
+        "Совместное использование хранилища (до ${ n } человек)",
+        "Совместное использование хранилища (до ${ n } человек)",
+        "Совместное использование хранилища (до ${ n } человек)"
       ]
     },
     "new_plans: feature info": {
@@ -9810,6 +9831,17 @@
       ],
       "Team management": [
         "Управление командами"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш пробный период заканчивается ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -9901,17 +9933,6 @@
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш пробный период заканчивается ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } из ${ humanMaxSpace }"
@@ -9988,6 +10009,9 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME } Защитите свое расписание с помощью сквозного шифрования. Включает поддержку пользовательских календарей, совместное использование календарей и многое другое."
+      ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Мы предлагаем свыше ${ serversAndCountries }, высокую скорость VPN-подключения, доступ к стриминговым платформам со всего мира, защиту от вирусов, блокировщик рекламы, быстрое скачивание через BitTorrent и многое другое."
       ],
@@ -11561,6 +11585,9 @@
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Платные версии ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
       ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Premium ${ VPN_SHORT_APP_NAME }": [
         "Платная версия ${ VPN_SHORT_APP_NAME }"
       ],
@@ -11762,6 +11789,12 @@
     "Subscription": {
       "Billed every 2 years": [
         "Оплата каждые 2 года"
+      ],
+      "Billed for 15 months": [
+        "Оплата за 15 месяцев."
+      ],
+      "Billed for 30 months": [
+        "Счет выставлен за 30 месяцев"
       ],
       "Billed monthly": [
         "Ежемесячная оплата"
