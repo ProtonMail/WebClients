@@ -15,7 +15,9 @@
         "lint": "eslint src --ext .js,.ts,.tsx --cache",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone --no-error-logs",
-        "test": "jest --runInBand --ci --coverage=false --passWithNoTests"
+        "test": "jest",
+        "test:ci": "jest --runInBand --ci --coverage=false --passWithNoTests",
+        "test:watch": "jest --watch"
     },
     "dependencies": {
         "@proton/atoms": "workspace:packages/atoms",
