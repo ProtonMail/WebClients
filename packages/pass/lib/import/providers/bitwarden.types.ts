@@ -60,5 +60,5 @@ type BitwardenItem = BitwardenLoginItem | BitwardenNoteItem | BitwardenCCItem | 
 export type BitwardenData = {
     encrypted: boolean;
     items: BitwardenItem[];
-    folders: BitwardenFolder[];
+    folders?: BitwardenFolder[];
 };
