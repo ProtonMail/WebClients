@@ -11,9 +11,8 @@
         "i18n:validate:context": "proton-i18n extract reactComponents && proton-i18n validate",
         "lint": "eslint index.ts containers components hooks typings --ext .js,.ts,.tsx --quiet --cache",
         "pretty": "prettier --write $(find . -path ./node_modules -prune -o -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
-        "test": "jest",
-        "test:ci": "jest --coverage --runInBand --ci --logHeapUsage",
-        "test:watch": "jest --watch"
+        "test": "jest  --coverage --runInBand --ci --logHeapUsage",
+        "test:dev": "jest --watch"
     },
     "dependencies": {
         "@emoji-mart/data": "^1.0.3",
