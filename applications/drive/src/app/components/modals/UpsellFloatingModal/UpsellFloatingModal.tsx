@@ -15,6 +15,8 @@ import { DRIVE_PRICING_PAGE } from '@proton/shared/lib/drive/urls';
 import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import clsx from '@proton/utils/clsx';
 
+import { useDownload } from '../../../store';
+
 import './UpsellFloatingModal.scss';
 
 interface ChildProps {
@@ -69,6 +71,15 @@ const UpsellFloatingModal = ({ open, onClose }: ChildProps & ModalProps) => {
     const [exit, setExit] = useState(() => (open ? ExitState.idle : ExitState.exited));
     const active = exit !== ExitState.exited;
     const previousOpen = usePrevious(open);
+    const { hasDownloads } = useDownload();
+
+    // Hide Upsell if download is in progress
+    useEffect(() => {
+        if (hasDownloads) {
+            onClose();
+            setExit(ExitState.exited);
+        }
+    }, [onClose, hasDownloads]);
 
     useLayoutEffect(() => {
         if (!previousOpen && open) {
