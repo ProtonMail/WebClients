@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
 import { SectionConfig } from '@proton/components';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-export const getPassAppRoutes = () => {
+export const getPassAppRoutes = ({ app }: { app: APP_NAMES }) => {
     return <const>{
+        available: app === APPS.PROTONPASS,
         header: PASS_APP_NAME,
         routes: {
             downloads: <SectionConfig>{
