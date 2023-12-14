@@ -2014,6 +2014,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } is bijgewerkt.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Het voorvallen van ${ eventTitle } is geannuleerd."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "U bent uitgenodigd voor ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -2549,6 +2552,9 @@
       "Access denied": [
         "Toegang geweigerd"
       ],
+      "App currently unavailable": [
+        "App momenteel niet beschikbaar"
+      ],
       "Brace yourself till we get the error fixed.": [
         "Wacht rustig af terwijl wij de fout herstellen."
       ],
@@ -2564,11 +2570,17 @@
       "Oops, something went wrong": [
         "Oeps, er is iets misgegaan"
       ],
+      "Open in browser": [
+        "Openen in de browser"
+      ],
       "Please refresh the page or try again later.": [
         "Ververs de pagina of probeer het later opnieuw."
       ],
       "Something went wrong": [
         "Er is iets fout gegaan"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Om ${ MAIL_APP_NAME } of ${ CALENDAR_APP_NAME } te gebruiken, wissel naar de webversie."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "We konden deze pagina niet laden. Ververs de pagina of controleer uw internetverbinding."
@@ -4058,6 +4070,9 @@
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Het volgende werd mogelijk onrechtmatig bewerkt: ${ items }. Open alleen als u het vertrouwt."
       ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "De eigenaar van dit adres heeft end-to-end versleuteling uitgeschakeld. Om versleutelde berichten naar dit adres te sturen moet de eigenaar end-to-end versleuteling weer inschakelen."
+      ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Er zijn bestanden die nog overgedragen moeten worden. Het overdrachtsbeheer sluiten zal alle handelingen stopzetten."
       ],
@@ -4069,6 +4084,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Deze browser ondersteunt geen voorbeeld PDF-documenten. Download het bestand."
+      ],
+      "This file is too large to preview": [
+        "Dit bestand is te groot om het te kunnen tonen"
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Dit bestand is mogelijk verwijderd, verplaatst of onbeschikbaar gemaakt. Probeer in contact te komen met de eigenaar van het bestand."
@@ -5062,6 +5080,9 @@
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
       ],
+      "Custom snooze time": [
+        "Aangepaste demptijd"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliassen"
       ],
@@ -5087,6 +5108,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Berichten dempen en ontvangen wanneer u wilt"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"

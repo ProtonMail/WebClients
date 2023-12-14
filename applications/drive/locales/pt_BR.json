@@ -2014,6 +2014,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } foi atualizado.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Esta ocorrência de ${ eventTitle } foi cancelada."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Você foi convidado para ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -5643,6 +5646,9 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Agora você pode alterar a senha da conta ${ boldEmail } gratuitamente por ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Agora você pode alterar a senha da conta ${ boldEmail }."
       ]
     },
     "session_recovery:available:link": {
