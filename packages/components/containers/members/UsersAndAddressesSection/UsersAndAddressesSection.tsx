@@ -468,7 +468,6 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                         addresses={memberAddresses}
                                         organization={organization}
                                         organizationKey={organizationKey}
-                                        mode={mode}
                                     />
                                 </TableCell>
                             </TableRow>
