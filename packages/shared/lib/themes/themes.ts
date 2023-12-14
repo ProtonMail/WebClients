@@ -20,7 +20,6 @@ import passTheme from '@proton/colors/themes/dist/pass.theme.css';
 import snowTheme from '@proton/colors/themes/dist/snow.theme.css';
 import { decodeBase64URL, encodeBase64URL } from '@proton/shared/lib/helpers/encoding';
 
-import authentication from '../authentication/authentication';
 import { isElectronApp } from '../helpers/desktop';
 
 export enum ThemeTypes {
@@ -310,10 +309,7 @@ export const getDefaultThemeSetting = (themeType?: ThemeTypes): ThemeSetting => 
 
     // Electron follow system settings and only Snow and Carbon theme
     if (isElectronApp()) {
-        const uid = authentication.getUID();
-        if (uid) {
-            return electronAppTheme;
-        }
+        return electronAppTheme;
     }
     return theme;
 };
