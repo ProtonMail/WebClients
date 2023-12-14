@@ -65,15 +65,16 @@ export const getRoutes = ({
             isProtonSentinelUpsellEnabled,
         }),
         mail: getMailAppRoutes({
+            app,
             user,
             addresses,
             organization,
             isSmtpTokenEnabled,
             isEmailForwardingEnabled,
         }),
-        calendar: getCalendarAppRoutes(),
-        drive: getDriveAppRoutes(),
-        pass: getPassAppRoutes(),
+        calendar: getCalendarAppRoutes({ app }),
+        drive: getDriveAppRoutes({ app }),
+        pass: getPassAppRoutes({ app }),
         organization: getOrganizationAppRoutes({
             app,
             user,
@@ -82,7 +83,7 @@ export const getRoutes = ({
             isOrgSpamBlockListEnabled,
             isOrgTwoFactorEnabled,
         }),
-        vpn: getVpnAppRoutes(),
+        vpn: getVpnAppRoutes({ app }),
     };
 };
 
