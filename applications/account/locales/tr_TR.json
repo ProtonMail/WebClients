@@ -3282,6 +3282,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } güncellendi.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Bu zamandaki ${ eventTitle } etkinliği iptal edildi."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "${ eventTitle } etkinliğine davet edildiniz\n${ eventDetailsText }"
       ]
@@ -4135,6 +4138,9 @@
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "SMTP gönderim kodu oluşturmak için bir özel etki alanı adresiniz olması gerekir."
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Yazılabilecek en fazla karakter sayısına ulaştınız. Lütfen iletinizi kısaltın."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Hesabınızın ya da kuruluşunuzun ödenmemiş bir faturası var. Lütfen süresi geçmiş tüm faturaları ödeyin."
@@ -9582,6 +9588,12 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
+        "Visionary tarifesine geçin ve ${ BRAND_NAME } öyküsünün bir parçası olun"
+      ],
+      "Limited time offer: Get ${ planTitle } until ${ date }!": [
+        "Sınırlı süreli teklif: ${ planTitle } tarifesini ${ date } tarihine kadar alın!"
+      ],
       "Secure email that protects your privacy": [
         "Gizliliğinizi koruyan güvenli e-posta"
       ]
@@ -10359,6 +10371,17 @@
         "Ekip yönetimi"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanım dışı bırakılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
@@ -10392,6 +10415,9 @@
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Tüm ${ BRAND_NAME } hizmetlerinin bir arada olduğu kapsamlı gizlilik ve güvenlik."
+      ],
+      "Early access to new apps and features": [
+        "Yeni uygulama ve özelliklere erken erişim"
       ],
       "For next-level password management and identity protection.": [
         "Gelecek nesil parola yönetimi ve kimlik koruması için."
@@ -10449,17 +10475,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanım dışı bırakılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
@@ -12096,6 +12111,9 @@
     "session_recovery:settings:info": {
       "To disallow password reset, you must have a recovery method set up.": [
         "Parola sıfırlama özelliğini kapatmak için bir kurtarma yöntemi ayarlamanız gerekir."
+      ],
+      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
+        "Hesabınızın güvenliğini artırmak ve verilerinizi korumak için İnternet uygulamasındaki hesap ayarlarınızdan parola sıfırlama isteğinde bulunabilirsiniz."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -13741,6 +13759,9 @@
       ],
       "Password and keys": [
         "Parola ve anahtarlar"
+      ],
+      "Password reset settings": [
+        "Parola sıfırlama ayarları"
       ],
       "Pay invoice": [
         "Faturayı öde"
