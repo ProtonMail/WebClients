@@ -2138,17 +2138,26 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "App momenteel niet beschikbaar"
+      ],
       "Error: ${ errorMessage }": [
         "Fout: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "Oeps, er is iets misgegaan"
       ],
+      "Open in browser": [
+        "Openen in de browser"
+      ],
       "Please refresh the page or try again later.": [
         "Ververs de pagina of probeer het later opnieuw."
       ],
       "Something went wrong": [
         "Er is iets fout gegaan"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Om ${ MAIL_APP_NAME } of ${ CALENDAR_APP_NAME } te gebruiken, wissel naar de webversie."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "We konden deze pagina niet laden. Ververs de pagina of controleer uw internetverbinding."
@@ -3534,6 +3543,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Dit kan wat tijd in beslag nemen. Sluit deze pagina niet af en verbreek de verbinding met het internet niet."
       ],
+      "This file is too large to preview": [
+        "Dit bestand is te groot om het te kunnen tonen"
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Deze gebruiker is momenteel verantwoordelijk voor de betalingen voor uw organisatie. Door degradatie van dit lid, word u verantwoordelijk voor de betalingen voor uw organisatie."
       ],
@@ -4828,6 +4840,9 @@
       "Custom fields": [
         "Aangepaste velden"
       ],
+      "Custom snooze time": [
+        "Aangepaste demptijd"
+      ],
       "Data breach monitoring": [
         "Monitoring van datalekken"
       ],
@@ -5043,6 +5058,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Berichten dempen en ontvangen wanneer u wilt"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
