@@ -95,6 +95,30 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
         return <Loader />;
     }
 
+    const createGateway = async (apiRequest: any): Promise<Gateway> => {
+        const createdGateway = (await api<{ Gateway: Gateway }>(apiRequest))?.Gateway;
+
+        const newDeletedLogicals = { ...deletedLogicals };
+        const newUpdatedLogicals = { ...updatedLogicals };
+        let touched = false;
+
+        createdGateway.Logicals?.forEach((logical) => {
+            if ((newUpdatedLogicals[logical.ID] || newDeletedLogicals[logical.ID]) && logical.Visible) {
+                touched = true;
+
+                newUpdatedLogicals[logical.ID] = logical;
+                delete newDeletedLogicals[logical.ID];
+            }
+        });
+
+        if (touched) {
+            setDeletedLogicals(newDeletedLogicals);
+            setUpdatedLogicals(newUpdatedLogicals);
+        }
+
+        return createdGateway;
+    };
+
     const getCustomizeSubscriptionOpener = (source: 'dashboard' | 'upsells') => () =>
         openSubscriptionModal({
             metrics: {
@@ -227,29 +251,25 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                 if (!gatewayHost) {
                     const [features, usersIds] = getFeaturesAndUserIds(data);
 
-                    gatewayHost = (
-                        await api<{ Gateway: Gateway }>(
-                            createVPNGateway({
-                                Name: data.Name,
-                                Country: country,
-                                Features: features,
-                                UserIds: usersIds,
-                            })
-                        )
-                    )?.Gateway;
+                    gatewayHost = await createGateway(
+                        createVPNGateway({
+                            Name: data.Name,
+                            Country: country,
+                            Features: features,
+                            UserIds: usersIds,
+                        })
+                    );
 
                     continue;
                 }
 
                 try {
-                    gatewayHost = (
-                        await api<{ Gateway: Gateway }>(
-                            addIpInVPNGateway({
-                                Name: gatewayHost.Name,
-                                Country: country,
-                            })
-                        )
-                    )?.Gateway;
+                    gatewayHost = await createGateway(
+                        addIpInVPNGateway({
+                            Name: gatewayHost.Name,
+                            Country: country,
+                        })
+                    );
                 } catch (error) {
                     createNotification({
                         key,
@@ -275,16 +295,14 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
 
         const [features, usersIds] = getFeaturesAndUserIds(data);
 
-        return (
-            await api<{ Gateway: Gateway }>(
-                createVPNGateway({
-                    Name: data.Name,
-                    Country: data.Country,
-                    Features: features,
-                    UserIds: usersIds,
-                })
-            )
-        )?.Gateway;
+        return createGateway(
+            createVPNGateway({
+                Name: data.Name,
+                Country: data.Country,
+                Features: features,
+                UserIds: usersIds,
+            })
+        );
     };
 
     const addGateway = () =>
