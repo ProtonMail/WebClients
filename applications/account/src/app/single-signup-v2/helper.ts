@@ -292,7 +292,12 @@ const getUpsell = ({
                 };
             }
         } else {
-            if (getHasAnyPlusPlan(currentPlan.Name)) {
+            if (
+                getHasAnyPlusPlan(currentPlan.Name) &&
+                ![PLANS.BUNDLE, PLANS.FAMILY, PLANS.BUNDLE_PRO, PLANS.NEW_VISIONARY].includes(
+                    planParameters.plan.Name as any
+                )
+            ) {
                 return {
                     ...defaultValue,
                     plan: plansMap[PLANS.BUNDLE],
@@ -300,7 +305,10 @@ const getUpsell = ({
                 };
             }
 
-            if (getHasBusinessUpsell(currentPlan.Name)) {
+            if (
+                getHasBusinessUpsell(currentPlan.Name) &&
+                ![PLANS.BUNDLE_PRO, PLANS.NEW_VISIONARY].includes(planParameters.plan.Name as any)
+            ) {
                 return {
                     ...defaultValue,
                     plan: plansMap[PLANS.BUNDLE_PRO],
