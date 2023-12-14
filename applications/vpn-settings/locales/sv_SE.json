@@ -5920,6 +5920,9 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Om du inte bett om att få återställa ditt lösenord, avbryt begäran nu."
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Begäran om lösenordsåterställning godkänd (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Gå till den inloggade enheten (i den session där begäran initierades) för att ändra ditt lösenord."
       ],
@@ -5933,6 +5936,9 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Du kan nu ändra ditt lösenord för kontot ${ boldEmail } fritt i ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Du kan nu ändra ditt lösenord för kontot ${ boldEmail }."
       ],
       "You can now reset your password": [
         "Du kan nu återställa ditt lösenord"

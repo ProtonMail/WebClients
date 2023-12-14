@@ -49,7 +49,7 @@
         "加入聯絡人"
       ],
       "Add new group": [
-        "建立新的群組"
+        "創建新的群組"
       ],
       "Add note": [
         "新增備註"
@@ -88,7 +88,7 @@
         "取消"
       ],
       "Chat with us": [
-        "與我們交談"
+        "與我們往來對話"
       ],
       "Check import progress": [
         "查看匯入進度"
@@ -157,7 +157,7 @@
         "複製郵件位址"
       ],
       "Copy email address": [
-        "複製電子郵件地址"
+        "複製電子郵件位址"
       ],
       "Copy email to clipboard": [
         "複製電郵位址至剪貼簿"
@@ -166,7 +166,7 @@
         "複製連結"
       ],
       "Create": [
-        "建立"
+        "創建"
       ],
       "Create a new contact group": [
         "創建新連絡人群組"
@@ -178,7 +178,7 @@
         "創建事件"
       ],
       "Create new contact": [
-        "建立新聯絡人"
+        "創建新聯絡人"
       ],
       "Customize": [
         "自訂"
@@ -187,7 +187,7 @@
         "自訂匯入"
       ],
       "Decline invite": [
-        "拒絕邀請"
+        "婉拒邀請"
       ],
       "Delete": [
         "刪除"
@@ -601,7 +601,7 @@
         "上載圖像"
       ],
       "Use ${ label } theme": [
-        "使用 ${ label } 佈景主題"
+        "使用 ${ label } 布景主題"
       ],
       "Use authentication code": [
         "使用驗證代碼"
@@ -821,7 +821,7 @@
     },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
-        "30 天退款保障"
+        "30 天體驗不滿意退款服務"
       ]
     },
     "bf2023: Tooltip": {
@@ -984,7 +984,7 @@
         "管理成員"
       ],
       "Unable to create more calendar links": [
-        "無法建立更多行事曆連結"
+        "無法創建更多行事曆連結"
       ],
       "Unable to share this calendar with more ${ BRAND_NAME } users": [
         "無法將此行事曆與更多 ${ BRAND_NAME } 使用者分享"
@@ -993,12 +993,12 @@
         "您已達到此行事曆的 ${ MAX_CALENDAR_MEMBERS } 個成員的上限。\n要與更多 ${ BRAND_NAME } 帳號分享此行事曆，請移除一些成員。"
       ],
       "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } links for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
-        "您已建立達到此行事曆最多的 ${ MAX_LINKS_PER_CALENDAR } 個連結。\n要為此行事曆建立新連結，請刪除既有的。"
+        "您已創建達到此行事曆最多的 ${ MAX_LINKS_PER_CALENDAR } 個連結。\n要為此行事曆創建新連結，請刪除既有的。"
       ]
     },
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
-        "編輯 (檢視、建立與編輯行程詳細資料)"
+        "編輯 (檢視、創建與編輯行程詳細資料)"
       ],
       "View (see all event details)": [
         "檢視（檢視所有事件的詳細資訊）"
@@ -2136,16 +2136,16 @@
         "解密聯絡人資料中… 此步驟將耗時數分鐘。當作業完成時，您就可以下載所有已匯出的聯絡人檔案。"
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "正在刪除聯絡人…該過程或需時數分鐘。完成後您即可以關閉此交談方塊。"
+        "正在刪除聯絡人…該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此交談方塊。"
+        "正在加密並匯入聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在匯入的聯絡人清單似乎包含一些群組，請查看並選擇應如何匯入這些群組。"
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        "正在合併聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此交談方塊。"
+        "正在合併聯絡人... 該過程或需時數分鐘。完成後您即可以關閉此往來對話方塊。"
       ],
       "ProtonMail logo and a plus sign": [
         "Proton Mail 標誌與加號"
@@ -2513,7 +2513,7 @@
         "已移除重複的收件者：${ joinedRecipients }"
       ],
       "Request timed out": [
-        "請求逾時"
+        "需求逾時"
       ],
       "Self invitation not allowed": [
         "不允許自我邀請"
@@ -2656,7 +2656,7 @@
     },
     "Error accepting calendar invitation": {
       "Invited address does not exist": [
-        "已邀請的地址不存在"
+        "已邀請的位址不存在"
       ]
     },
     "Error importing calendar": {
@@ -2975,7 +2975,7 @@
     },
     "familyOffer_2023:Action": {
       "Decline invitation": [
-        "拒絕邀請"
+        "婉拒邀請"
       ],
       "Got it": [
         "我知道了"
@@ -3033,10 +3033,10 @@
         "指派給您的儲存空間：${ assignedStorage }"
       ],
       "The subscription is billed to the Visionary or family plan's primary admin.": [
-        "訂閱費用由 Visionary 或家庭方案的主要管理員支付。"
+        "訂購授權費用由 Visionary 或家庭方案的主要管理員支付。"
       ],
       "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
-        "Visionary 與家庭方案目前不支援外部帳號。請在加入前建立 ${ BRAND_NAME } 地址。${ addressSettingsLink }"
+        "Visionary 與家庭方案目前不支援外部帳號。請在加入前創建 ${ BRAND_NAME } 位址。${ addressSettingsLink }"
       ],
       "Visionary and family plans do not currently support lifetime accounts.": [
         "Visionary 與家庭方案目前不支援 lifetime 帳號。"
@@ -3345,7 +3345,7 @@
         "您的 Yahoo 帳號已啟用 IMAP 存取。"
       ],
       "Too many recent requests. Please try again in a few moments.": [
-        "最近的請求太多。請容後再試。"
+        "最近的需求太多。請容後再試。"
       ],
       "Use your app password if:": [
         "使用您的應用程式密碼，如果："
@@ -3502,7 +3502,7 @@
         "${ calendarsToBeMergedCount } 個合併行事曆"
       ],
       "${ contactCount } contacts contain multiple email addresses.": [
-        "${ contactCount } 個聯絡人包含多個電子郵件地址。"
+        "${ contactCount } 個聯絡人包含多個電子郵件位址。"
       ],
       "${ contactEmailsLength } Members": [
         "${ contactEmailsLength } 位成員"
@@ -3661,19 +3661,19 @@
         "國家代碼"
       ],
       "Create ${ calendarsToBeCreatedCount } new calendars": [
-        "建立 ${ calendarsToBeCreatedCount } 個新行事曆"
+        "創建 ${ calendarsToBeCreatedCount } 個新行事曆"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        "為匯入的郵件建立標籤、設定這次匯入的時間範圍以及要匯入的資料夾。"
+        "為匯入的郵件創建標籤、設定這次匯入的時間範圍以及要匯入的資料夾。"
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "為匯入的郵件建立標籤、設定這次匯入的時間範圍以及要匯入的標籤。"
+        "為匯入的郵件創建標籤、設定這次匯入的時間範圍以及要匯入的標籤。"
       ],
       "Create a new contact group": [
-        "建立新聯絡人群組"
+        "創建新聯絡人群組"
       ],
       "Create in": [
-        "建立在"
+        "創建在"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "來自 Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora 或其它軟體的 CSV 檔案只要符合 vCard 3.1 或 4.0 ( UTF-8 編碼) 都可以支援。"
@@ -3712,7 +3712,7 @@
         "每組驗證代碼只能使用一次"
       ],
       "Edit email address": [
-        "編輯電子郵件地址"
+        "編輯電子郵件位址"
       ],
       "Emails are automatically signed": [
         "電子郵件已自動簽章"
@@ -3763,7 +3763,7 @@
         "這裡"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "若您在建立帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
+        "若您在創建帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "若您認為箇中有誤，請聯絡我們：${ contactLink }。"
@@ -3853,7 +3853,7 @@
         "每月 ${ onDayString } 日"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "請命名您的新資料夾，並選取放置的上層資料夾。若您不選取上層資料夾，將以頂層資料夾建立。"
+        "請命名您的新資料夾，並選取放置的上層資料夾。若您不選取上層資料夾，將以頂層資料夾創建。"
       ],
       "New": [
         "加入"
@@ -3895,7 +3895,7 @@
         "PGP/MIME 使用目前的編輯器模式自動傳送訊息。"
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
-        "請注意：指派到此群組中的電子郵件地址不會被刪除。"
+        "請注意：指派到此群組中的電子郵件位址不會被刪除。"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "請注意：指派到此群組中的電郵位址將不會被刪除。"
@@ -3904,7 +3904,7 @@
         "請注意：此過程或需時，並會視乎您的通訊錄大小而定。"
       ],
       "Please provide a name and an email address for creating a group.": [
-        "請提供一個名子和電子郵件地址以創建群組。"
+        "請提供一個名子和電子郵件位址以創建群組。"
       ],
       "Please remove the duplicates and try again.": [
         "請移除重複項目後再試一次。"
@@ -3952,7 +3952,7 @@
         "選擇您要匯入的檔案。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar according to the number of calendars available in your plan.": [
-        "請選取要匯入的行事曆。將根據您的方案中可用的行事曆數量為每個匯入的行事曆建立一個新的行事曆。"
+        "請選取要匯入的行事曆。將根據您的方案中可用的行事曆數量為每個匯入的行事曆創建一個新的行事曆。"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
@@ -3967,7 +3967,7 @@
         "您對召集人先前更新的事件所作的某些回答將會遺失。"
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
-        "訂閱即將結束:於${ byDate }重新啟用以維持${ planName }的福利。${ reactivateLink }"
+        "訂購授權即將結束:於${ byDate }重新啟用以維持${ planName }的福利。${ reactivateLink }"
       ],
       "support team": [
         "支援團隊"
@@ -4042,7 +4042,7 @@
         "若要重新簽署您的聯絡人，我們需要依照您的帳號中可用的加密金鑰清單逐一檢查每一位聯絡人。若找不到匹配時，您的聯絡人將使用主要加密金鑰重新簽署。"
       ],
       "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "若要還原您的資料，您必須重新啟用在資料建立時所使用的帳號金鑰。這需要您提供金鑰產生時所使用的密碼。"
+        "若要還原您的資料，您必須重新啟用在資料創建時所使用的帳號金鑰。這需要您提供金鑰產生時所使用的密碼。"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "若要使用電郵驗證，您必須啟用信任金鑰並信任一個或多個可用的公開金鑰，包括此電郵的主要金鑰。這樣可以防止加密金鑰遭到偽造。"
@@ -4183,7 +4183,7 @@
         "您已達到聯絡人群組郵件地址最高上限："
       ],
       "You've reached the maximum number of addresses in the contact group.": [
-        "您以達到通訊群組郵件地址最高上限"
+        "您以達到通訊群組郵件位址最高上限"
       ],
       "Your ${ BRAND_NAME } account is currently suspended. After 28 days, emails will no longer be delivered to your inbox, your Drive sharing links will be blocked, and you will not be able to upload new files. To resume normal service, please pay any overdue invoices.": [
         "已凍結您的 ${ BRAND_NAME } 帳號 。 28 日後，收件匣停收電郵，磁碟機共享連結失效，您無法再上載新檔案。 如欲恢復正常服務，請支付所有逾期繳款單。"
@@ -4255,10 +4255,10 @@
     },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
-        "您的部份行事曆將不會顯示先前建立事件的詳細資訊。"
+        "您的部份行事曆將不會顯示先前創建事件的詳細資訊。"
       ],
       "Your calendars will not show details of previously created events.": [
-        "您的行事曆將不會顯示先前建立事件的詳細資訊。"
+        "您的行事曆將不會顯示先前創建事件的詳細資訊。"
       ]
     },
     "Info; reset calendar keys modal; part 2": {
@@ -4286,7 +4286,7 @@
         "您最多可以一次邀請 ${ maxAttendees } 位參與者"
       ],
       "Creating invites in a shared calendar is not allowed": [
-        "不允許在分享的行事曆中建立邀請"
+        "不允許在分享的行事曆中創建邀請"
       ]
     },
     "Input label": {
@@ -4695,10 +4695,10 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        "建立資料夾"
+        "創建資料夾"
       ],
       "Create label": [
-        "建立標籤"
+        "創建標籤"
       ],
       "Edit folder": [
         "編輯資料夾"
@@ -4709,7 +4709,7 @@
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        "${ Label.Name } 已建立"
+        "${ Label.Name } 已創建"
       ]
     },
     "Landmarks": {
@@ -4751,7 +4751,7 @@
         "現在重新啟用"
       ],
       "Request an invite": [
-        "請求邀請"
+        "需求邀請"
       ],
       "Upgrade account": [
         "升級帳號"
@@ -4775,13 +4775,13 @@
         "快完成了"
       ],
       "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
-        "已建立的行事曆數量：${ createdCalendarCount }/${ calendarsToBeCreated }"
+        "已創建的行事曆數量：${ createdCalendarCount }/${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "連結到您的電郵提供者"
       ],
       "Creating new calendars": [
-        "建立新行事曆"
+        "創建新行事曆"
       ],
       "Gathering your data": [
         "蒐集您的資料"
@@ -4815,7 +4815,7 @@
         "回复："
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        "您的免費試用期已結束。您即將無法存取您的帳戶。${ action }"
+        "您的免費滿意體驗期已結束。您即將無法存取您的帳戶。${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -5090,7 +5090,7 @@
         "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }"
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
-        "使用您擁有的自訂電子郵件網域地址，例如 you@yourname.com"
+        "使用您擁有的自訂電子郵件網域位址，例如 you@yourname.com"
       ]
     },
     "new_plans: label": {
@@ -5105,7 +5105,7 @@
     },
     "Notification": {
       "Contact group created": [
-        "聯絡人群組已建立"
+        "聯絡人群組已創建"
       ],
       "Contact group updated": [
         "聯絡人群組已更新"
@@ -5132,7 +5132,7 @@
     },
     "Notification in shared calendar modal": {
       "Calendar invitation declined": [
-        "行事曆邀請被拒絕"
+        "行事曆邀請被婉拒"
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
         "已加入 ${ calendarName }（${ senderEmail }）"
@@ -5268,7 +5268,7 @@
     },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "設置您的組織、連結您的網域名稱，並建立各個帳號以確保您的組織中所有成員均得到保護。"
+        "設置您的組織、連結您的網域名稱，並創建各個帳號以確保您的組織中所有成員均得到保護。"
       ],
       "Discover all ${ BRAND_NAME } services": [
         "探索所有 ${ BRAND_NAME } 服務"
@@ -5297,7 +5297,7 @@
         "自動 (${ defaultDay })"
       ],
       "Create new group": [
-        "建立新群組"
+        "創建新群組"
       ],
       "Custom": [
         "自訂"
@@ -5344,7 +5344,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        "建立行事曆"
+        "創建行事曆"
       ],
       "Merge with calendar": [
         "與行事曆合併"
@@ -5558,7 +5558,7 @@
     },
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
-        "帳號備援不適用於舊的地址金鑰"
+        "帳號備援不適用於舊的位址金鑰"
       ],
       "Please generate keys before you try to change your password": [
         "請在您試著改變您的密碼前生成金鑰"
@@ -5572,7 +5572,7 @@
         "${ timeRemaining.inHours }小時"
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
-        "請前往已登入的裝置（在發起請求的工作階段中）變更您的密碼。"
+        "請前往已登入的裝置（在發起需求的工作階段中）變更您的密碼。"
       ],
       "This permission expires in ${ timeRemaining.inDays } days": [
         "此權限將在${ timeRemaining.inDays }天後過期"
@@ -5621,7 +5621,7 @@
     },
     "session_recovery:cancelled:info": {
       "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "密碼重設請求已取消 (${ user.Email })。若您並未做出此請求，${ changePasswordLink }。"
+        "密碼重設需求已取消 (${ user.Email })。若您並未做出此需求，${ changePasswordLink }。"
       ]
     },
     "session_recovery:cancelled:link": {
@@ -5631,7 +5631,7 @@
     },
     "session_recovery:in_progress:action": {
       "Cancel request": [
-        "取消請求"
+        "取消需求"
       ],
       "Got it": [
         "瞭解"
@@ -5645,26 +5645,26 @@
         "還剩下${ gracePeriodHoursRemaining }小時"
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
-        "若您沒有請求重設密碼，請立刻取消請求。"
+        "若您沒有需求重設密碼，請立刻取消需求。"
       ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours.": [
-        "已請求重設密碼 (${ user.Email })。您可以在${ hoursRemaining }小時後變更您的密碼。"
+        "已需求重設密碼 (${ user.Email })。您可以在${ hoursRemaining }小時後變更您的密碼。"
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
-        "為了確保確實是您在嘗試重設密碼，我們會等待 72 小時才核准請求。您可以在 ${ boldTimeLeft } 後變更密碼。${ viewRequest }"
+        "為了確保確實是您在嘗試重設密碼，我們會等待 72 小時才核准需求。您可以在 ${ boldTimeLeft } 後變更密碼。${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
-        "我們收到了 ${ boldEmail } 的密碼重設請求。"
+        "我們收到了 ${ boldEmail } 的密碼重設需求。"
       ]
     },
     "session_recovery:in_progress:link": {
       "View request": [
-        "檢視請求"
+        "檢視需求"
       ]
     },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
-        "請求重設密碼"
+        "需求重設密碼"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -5747,7 +5747,7 @@
         "簽章驗證錯誤"
       ],
       "You have enabled address verification for ${ boldSenderEmail }. We couldn't verify the authenticity of this calendar invite. This may be due to changes in the encryption keys of this contact. Please review its advanced PGP settings, or your can ask ${ boldSenderEmail } for a new invite.": [
-        "您已為 ${ boldSenderEmail } 啟用地址驗證。我們無法驗證此日曆邀請的真實性。這可能是由於此聯絡人的加密金鑰發生了變化。請檢視其進階 PGP 設定，或者您可以向 ${ boldSenderEmail } 請求新邀請。"
+        "您已為 ${ boldSenderEmail } 啟用位址驗證。我們無法驗證此日曆邀請的真實性。這可能是由於此聯絡人的加密金鑰發生了變化。請檢視其進階 PGP 設定，或者您可以向 ${ boldSenderEmail } 需求新邀請。"
       ]
     },
     "Signing preference for emails": {
@@ -5839,12 +5839,12 @@
     },
     "specialoffer: Footer": {
       "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
-        "此訂閱將每 2 年自動以相同的費用續訂，直到被取消為止。"
+        "此訂購授權將每 2 年自動以相同的費用續訂，直到被取消為止。"
       ]
     },
     "specialoffer: Link": {
       "Go to subscription plans": [
-        "查看訂閱方案"
+        "查看訂購授權"
       ],
       "Upgrade": [
         "升級"
@@ -6174,7 +6174,7 @@
         "電郵位址"
       ],
       "Created": [
-        "建立日期"
+        "創建日期"
       ],
       "Expires": [
         "有效期限"
@@ -6325,13 +6325,13 @@
         "要繼續部分匯入嗎？"
       ],
       "Create contact": [
-        "建立聯絡人"
+        "創建聯絡人"
       ],
       "Create new group": [
-        "建立新群組"
+        "創建新群組"
       ],
       "Create public link": [
-        "建立公用連結"
+        "創建公用連結"
       ],
       "Currency": [
         "貨幣"
@@ -6346,7 +6346,7 @@
         "自訂您的郵件匯入"
       ],
       "Day theme": [
-        "日間佈景主題"
+        "日間布景主題"
       ],
       "Delete ${ count } contact groups": [
         "刪除 ${ count } 個聯絡人群組"
@@ -6445,7 +6445,7 @@
         "小型行事曆"
       ],
       "Night theme": [
-        "夜間佈景主題"
+        "夜間布景主題"
       ],
       "Notes": [
         "備註"
@@ -6623,7 +6623,7 @@
     },
     "Title; create calendar modal": {
       "Create calendar": [
-        "建立行事曆"
+        "創建行事曆"
       ]
     },
     "Title; edit calendar modal": {
@@ -6641,7 +6641,7 @@
         "「自動」表示傳送給此使用者時將使用撰寫工具中的格式。「純文字」表示將一律轉換成純文字才傳送郵件。"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
-        "與系統的日夜模式同步，在白天和晚上的偏好佈景主題之間自動切換"
+        "與系統的日夜模式同步，在白天和晚上的偏好布景主題之間自動切換"
       ],
       "Customize import to reduce the number of folders": [
         "自訂匯入以減少資料夾數量"
@@ -6798,12 +6798,12 @@
         "您到目前為止所自訂的所有設定將會遺失。"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        "您的免費試用將於 ${ textDate } 結束。${ action }"
+        "您的免費滿意體驗將於 ${ textDate } 結束。${ action }"
       ]
     },
     "Warning in modal to accept calendar invitation; Description": {
       "To access this shared calendar, enable this address, or ask ${ boldCalendarOwnerEmail } to send an invite to an active address.": [
-        "要存取此共享行事曆，啟用此地址，或是要求 ${ boldCalendarOwnerEmail } 傳送邀請到作用中的地址。"
+        "要存取此共享行事曆，啟用此位址，或是要求 ${ boldCalendarOwnerEmail } 傳送邀請到作用中的位址。"
       ],
       "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
         "由於您邀請的電子郵件位址 (${ boldInvitedAddress }) 已停用，因此無法加入此行事曆。"

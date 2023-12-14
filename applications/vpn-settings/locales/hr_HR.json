@@ -263,6 +263,9 @@
       "Pay ${ price }": [
         "Platite ${ price }"
       ],
+      "Pay ${ price } now": [
+        "Platite ${ price } sada"
+      ],
       "Previous": [
         "Prethodno"
       ],
@@ -1883,6 +1886,12 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 e-poruke mjesečno)"
+      ],
+      "(2-4 emails per year)": [
+        "(2 do 4 e-pošte godišnje)"
+      ],
+      "(4-6 emails per year)": [
+        "(4 do 6 e-pošta godišnje)"
       ]
     },
     "Go to sign in": {
@@ -2087,6 +2096,9 @@
       ],
       "Expired": [
         "Isteklo"
+      ],
+      "Free forever": [
+        "Besplatno zauvijek"
       ],
       "Free up some space or add more storage space.": [
         "Oslobodite malo prostora ili dodajte više prostora za pohranu."
@@ -3507,6 +3519,15 @@
       ]
     },
     "Subscription": {
+      "Billed every 2 years": [
+        "Naplaćuje se svake 2 godine"
+      ],
+      "Billed for 15 months": [
+        "Naplaćuje se svakih 15 mjeseci"
+      ],
+      "Billed for 30 months": [
+        "Naplaćuje se svakih 30 mjeseci"
+      ],
       "Billed monthly": [
         "Mjesečni račun"
       ]
@@ -3860,6 +3881,9 @@
       ],
       "Device connected!": [
         "Uređaj je povezan!"
+      ],
+      "Disable ${ email }": [
+        "Onemogući ${ email }"
       ],
       "Disable two-factor authentication": [
         "Onemogući dvofaktorsku autentikaciju"

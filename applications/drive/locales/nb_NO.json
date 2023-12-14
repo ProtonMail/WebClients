@@ -117,7 +117,7 @@
         "Tøm spørring"
       ],
       "Clear selection": [
-        "Fjern valget"
+        "Nullstill valg"
       ],
       "Click here.": [
         "Klikk her"
@@ -1099,7 +1099,7 @@
         "Kjønn"
       ],
       "Geo": [
-        "Geo"
+        "Geolokalisering"
       ],
       "Language": [
         "Språk"
@@ -1152,7 +1152,7 @@
         "Mobil"
       ],
       "Other": [
-        "Annen"
+        "Annet"
       ],
       "Pager": [
         "Personsøker"
@@ -2072,6 +2072,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" eksisterer allerede"
       ],
+      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
+        "${ DRIVE_APP_NAME } er oppdatert. Vennligst oppfrisk siden."
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også sjekke vår ${ statusPageLink }"
       ],
@@ -2229,6 +2232,9 @@
       ],
       "Passwords do not match": [
         "Passordene samsvarer ikke"
+      ],
+      "Photos upload is temporarily disabled. Please try again later": [
+        "Opplasting av bilder er midlertidig deaktivert, vennligst prøv igjen senere."
       ],
       "Please activate your search again": [
         "Vennligst aktiver søket ditt på nytt"
@@ -3452,6 +3458,9 @@
       "Close this screen to exit.": [
         "Lukk dette skjermbildet for å avslutte."
       ],
+      "Coming soon": [
+        "Kommer snart"
+      ],
       "Conflict": [
         "Konflikt"
       ],
@@ -3696,7 +3705,7 @@
         "Hvis du ikke finner e-posten i innboksen din, vennligst sjekk søppelposten."
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
-        "Hvis du har en av disse, fortsett til ${ BRAND_NAME }-kontoinnstilling for å starte oppheving av blokkeringsprosessen."
+        "Hvis du har en av disse, fortsett til ${ BRAND_NAME }-kontoinnstilling for å starte prosessen med å fjerne blokkeringen."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ calendarCount } av ${ totalCalendarsCount } kalender",
@@ -5580,7 +5589,7 @@
         "Mobil"
       ],
       "Other": [
-        "Annen"
+        "Annet"
       ],
       "Pager": [
         "Personsøker"
@@ -5630,6 +5639,9 @@
         "${ timeRemaining.inHours } time",
         "${ timeRemaining.inHours } timer"
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Forespørsel om tilbakestilling av passord godkjent (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Vennligst gå til den påloggede enheten (i økten hvor forespørselen ble igangsatt) for å endre passordet ditt."
       ],
@@ -5641,8 +5653,30 @@
         "Denne tillatelsen utløper om ${ timeRemaining.inHours } time",
         "Denne tillatelsen utløper om ${ timeRemaining.inHours } timer"
       ],
+      "This permission expires soon": [
+        "Denne tillatelsen utløper snart"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Du kan nå endre passordet ditt for kontoen ${ boldEmail } fritt for ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Du kan nå endre passordet ditt for kontoen ${ boldEmail }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Du har ${ timeRemaining.inDays } dag på deg til å tilbakestille passordet ditt.",
+        "Du har ${ timeRemaining.inDays } dager på deg til å tilbakestille passordet ditt."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Du har ${ timeRemaining.inHours } time på deg til å tilbakestille passordet ditt.",
+        " Du har ${ timeRemaining.inHours } timer på deg til å tilbakestille passordet ditt."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Du har ${ timeRemaining.inMinutes } minutt på deg til å tilbakestille passordet ditt.",
+        " Du har ${ timeRemaining.inMinutes } minutter på deg til å tilbakestille passordet ditt."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Du har ${ timeRemaining.inSeconds } sekund på deg til å tilbakestille passordet ditt.",
+        " Du har ${ timeRemaining.inSeconds } sekunder på deg til å tilbakestille passordet ditt."
       ]
     },
     "session_recovery:available:link": {

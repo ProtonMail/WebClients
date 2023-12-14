@@ -493,6 +493,9 @@
       "Pay ${ price }": [
         "Platite ${ price }"
       ],
+      "Pay ${ price } now": [
+        "Platite ${ price } sada"
+      ],
       "Preview": [
         "Pregled"
       ],
@@ -3272,6 +3275,12 @@
       ],
       "(1-2 emails per month)": [
         "(1-2 e-poruke mjesečno)"
+      ],
+      "(2-4 emails per year)": [
+        "(2 do 4 e-pošte godišnje)"
+      ],
+      "(4-6 emails per year)": [
+        "(4 do 6 e-pošta godišnje)"
       ]
     },
     "Get started checklist instructions": {
@@ -3973,6 +3982,9 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtri rade na svim porukama e-pošte, uključujući dolazne i poslane. Svaki filtar mora sadržavati barem naziv, uvjet i radnju."
+      ],
+      "Free forever": [
+        "Besplatno zauvijek"
       ],
       "Free up some space or add more storage space.": [
         "Oslobodite malo prostora ili dodajte više prostora za pohranu."
@@ -6564,6 +6576,9 @@
       "Email address": [
         "Adresa e-pošte"
       ],
+      "example@domain.com": [
+        "primjer@domena.hr"
+      ],
       "Feedback": [
         "Povratne informacije"
       ],
@@ -7077,6 +7092,15 @@
       ]
     },
     "Subscription": {
+      "Billed every 2 years": [
+        "Naplaćuje se svake 2 godine"
+      ],
+      "Billed for 15 months": [
+        "Naplaćuje se svakih 15 mjeseci"
+      ],
+      "Billed for 30 months": [
+        "Naplaćuje se svakih 30 mjeseci"
+      ],
       "Billed monthly": [
         "Mjesečni račun"
       ]
@@ -7629,6 +7653,9 @@
       ],
       "Delete user?": [
         "Izbriši korisnika?"
+      ],
+      "Disable ${ email }": [
+        "Onemogući ${ email }"
       ],
       "Disable two-factor authentication": [
         "Onemogući dvofaktorsku autentikaciju"

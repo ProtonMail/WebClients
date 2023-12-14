@@ -710,10 +710,10 @@
       "Not saved": [
         "არაა შენახული"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -3137,6 +3137,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } განახლებულია.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "${ eventTitle }-ის მოხდებნა გაუქმდა."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "მოსაწვევი ${ eventTitle }-ზე\n${ eventDetailsText }"
       ]
@@ -3644,6 +3647,9 @@
       ],
       "You must set a name": [
         "სახელის დაყენება აუცილებელია"
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "მიაღწიეთ სიმბოლოების მაქსიმალურ რაოდენობას. შეამოკლეთ შეტყობინება."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "თქვენი ელფოსტების გაშიფვრა შეუძლებელია პაროლის შეცვლის გამო. თუ გაიხსენებთ წინა პაროლს, თქვენ შეგიძლიათ ${ reActivateKeyLink } თქვენი შეტყობინებების სანახავად. ${ learnMoreLink }"

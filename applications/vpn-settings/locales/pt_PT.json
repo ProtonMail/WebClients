@@ -44,6 +44,9 @@
       "Authenticate": [
         "Autenticar"
       ],
+      "Authenticating": [
+        "Em autenticação"
+      ],
       "Back": [
         "Recuar"
       ],
@@ -97,6 +100,9 @@
       ],
       "Copy address": [
         "Copiar endereço"
+      ],
+      "Copy key to the clipboard": [
+        "Copiar chave para a área de transferência"
       ],
       "Create": [
         "Criar"
@@ -666,6 +672,9 @@
       ]
     },
     "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } de armazenamento"
       ],
@@ -675,8 +684,23 @@
       "3 TB": [
         "3 TB"
       ],
+      "3,000+ servers across 65+ countries": [
+        "+3,000 servidores em +65 países"
+      ],
       "6 users": [
         "6 utilizadores"
+      ],
+      "Access content worldwide": [
+        "Aceda a conteúdo em todo o mundo"
+      ],
+      "Ad-blocker and malware protection": [
+        "Bloqueador de anúncios e proteção de malware"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Todas as funcionalidades ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_APP_NAME } pagas"
+      ],
+      "Extended version history": [
+        "Histórico de versão estendido"
       ],
       "High speed streaming": [
         "Streaming de alta velocidade"
@@ -708,6 +732,10 @@
     "bf2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
+      ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui o suporte para 3 domínios de e-mail personalizados, ${ addresses } endereço de e-mail, 'aliases' ilimitados do Hide-my-email, partilha de calendário e muito mais.",
+        "Inclui suporte para 3 domínios de e-mail personalizados, ${ addresses } endereços de e-mail, 'aliases' ilimitados do Hide-my-email, partilha de calendário e muito mais."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui histórico de versões, partilha de ficheiros encriptados e muito mais."
@@ -1993,6 +2021,9 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Usou todos os utilizadores do seu plano. Subscreva um plano superior para adicionar um utilizador."
       ],
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Deve ativar as chaves da sua organização. Sem ativação não poderá criar ou aceder a utilizadores não-privados."
+      ],
       "You must privatize all users before generating new organization keys": [
         "É necessário privatizar todos os utilizadores antes de gerar novas chaves de organização"
       ],
@@ -2018,17 +2049,26 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Aplicação indisponível no momento"
+      ],
       "Error: ${ errorMessage }": [
         "Erro: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "Ups. Algo correu mal"
       ],
+      "Open in browser": [
+        "Abrir no browser"
+      ],
       "Please refresh the page or try again later.": [
         "Por favor, actualize a página ou tente novamente mais tarde."
       ],
       "Something went wrong": [
         "Ocorreu um erro"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Para usar o ${ MAIL_APP_NAME } ou o ${ CALENDAR_APP_NAME }, mude para a versão web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Não é possível carregar esta página. Por favor, actualize a página ou verifique a sua ligação à Internet."
@@ -2356,6 +2396,12 @@
       "Add a name to identify your security key with.": [
         "Adicione um nome para identificar a sua chave de segurança."
       ],
+      "Allow platform keys": [
+        "Permitir chaves de plataforma"
+      ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Permite-lhe registar chaves de segurança incorporadas (como o Windows Hello, Face ID, Touch ID ou TPMs internas)"
+      ],
       "Are you sure you want to delete security key ${ name }?": [
         "Tem certeza que deseja eliminar a chave de segurança ${ name }?"
       ],
@@ -2624,6 +2670,9 @@
         "${ number } servidor",
         "${ number } servidores"
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } removido. Oferta de pacote não disponível num plano de 1 mês."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer no mínimo 1 servidor dedicado ${ serverPricePerMonth }"
       ],
@@ -2780,6 +2829,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de começar a enviar e receber e-mails dos seus novos endereços, é necessário criar as respectivas chaves de encriptação."
+      ],
+      "Billed at ${ price }": [
+        "Cobrado a ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Ciclo de faturação: ${ text }"
@@ -3202,6 +3254,9 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Tente novamente com um método de pagamento diferente, ou contacte o PayPal para assistência."
       ],
+      "Please use another browser or download the file.": [
+        "Por favor, utilize outro navegador ou transfira o ficheiro."
+      ],
       "Please verify payment at the new tab which was opened.": [
         "Verifique o pagamento no separador que abriu."
       ],
@@ -3213,6 +3268,9 @@
       ],
       "Preview failed to be loaded": [
         "Erro no carregamento da pré-visualização"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "A pré-visualização deste tipo de ficheiro, de momento, não é suportada neste navegador."
       ],
       "Preview for this file type is not supported": [
         "A pré-visualização deste tipo de ficheiro não é suportada"
@@ -3317,6 +3375,15 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Envie um depósito utilizando o seguinte endereço ou digitalize o código QR. O seu depósito será apresentado na sua conta após confirmação."
       ],
+      "Subscription auto-renews every 12 months.": [
+        "Renovações automáticas de subscrição a cada 12 meses."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "Renovações automáticas de subscrição a cada 24 meses."
+      ],
+      "Subscription auto-renews every month.": [
+        "Renovações automáticas de subscrição todos os meses."
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "A subscrição termina: Reative até ${ byDate } para manter os seus benefícios ${ planName }. ${ reactivateLink }"
       ],
@@ -3331,6 +3398,9 @@
       ],
       "Thank you": [
         "Obrigado"
+      ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Obrigado por apoiar a nossa missão em construir uma ‘internet’ melhor onde a privacidade e a liberdade vêm em primeiro lugar."
       ],
       "The following address is invalid.": [
         "O seguinte endereço não é válido.",
@@ -3365,6 +3435,9 @@
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Estas definições são fornecidas para operar com routers e clientes oficiais WireGuard."
       ],
+      "They will be removed from your organization": [
+        "Eles serão removidos da sua organização"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta conta foi suspensa devido a uma potencial violação da política."
       ],
@@ -3376,6 +3449,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Isto pode demorar algum tempo. Não feche esta página nem se desligue da internet."
+      ],
+      "This file is too large to preview": [
+        "Este ficheiro é demasiado grande para pré-visualizar"
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Este utilizador é responsável pelos pagamentos da sua organização. Ao despromovê-lo, a responsabilidade desses pagamentos passará a ser sua."
@@ -3520,6 +3596,9 @@
       ],
       "Version ${ version }": [
         "Versão ${ version }"
+      ],
+      "View, download, and manage your invoices.": [
+        "Ver, transferir, e gerir as suas faturas."
       ],
       "Visa Secure logo": [
         "Logo Visa Secure"
@@ -3682,6 +3761,9 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Irá ser redirecionado para ${ destination } após iniciar sessão."
       ],
+      "You will lose access to Plus features on this date.": [
+        "Perderá o acesso a funcionalidades Plus nesta data."
+      ],
       "You will lose access to Plus servers and features on this date.": [
         "Nesta data, perderá o acesso a servidores e funcionalidades Plus."
       ],
@@ -3715,6 +3797,9 @@
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "A sua conta tem pelo menos uma fatura vencida. A sua conta é restrita. O não pagamento regular bloqueará os seus e-mails e hiperligações de partilha. ${ payInvoiceLink }"
       ],
+      "Your account was successfully updated with this promotion": [
+        "A sua conta foi atualizada com sucesso com esta promoção"
+      ],
       "Your account will be updated once the payment is cleared.": [
         "A conta será atualizada assim que o pagamento for aprovado."
       ],
@@ -3729,6 +3814,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "As suas informações estão seguras connosco. Só entraremos em contacto quando tal for necessário para fornecer os nossos serviços."
+      ],
+      "Your next billing date is ${ renewalTime }.": [
+        "A data do próximo pagamento é ${ renewalTime }."
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "A palavra-passe da organização pode ser partilhada com outros utilizadores a quem quer atribuir privilégios de administração. É também um código de recuperação de emergência para obter acesso à sua organização caso perca o acesso à sua conta. Guarde esta palavra-passe num local seguro."
@@ -3751,6 +3839,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Pode adicionar um método de pagamento para renovar a assinatura automaticamente. Também estão disponíveis outros métodos de pagamento."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Introduza um nome e endereço para si ou para a sua organização. Estes detalhes serão adicionados às faturas pessoais e organizacionais."
       ]
     },
     "Info subscription": {
@@ -4240,8 +4333,23 @@
       "${ BRAND_NAME } product announcements": [
         "Anúncios de produtos da ${ BRAND_NAME }"
       ],
+      "${ BRAND_NAME } user survey": [
+        "Pesquisa de utilizador da ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } welcome emails": [
         "E-mails de boas-vindas de ${ BRAND_NAME }"
+      ],
+      "${ DRIVE_APP_NAME } product updates": [
+        "atualizações de produto do ${ DRIVE_APP_NAME }"
+      ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
+        "Novas funcionalidades de ${ MAIL_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ PASS_APP_NAME } product updates": [
+        "atualizações de produto do ${ PASS_APP_NAME }"
+      ],
+      "${ VPN_APP_NAME } product updates": [
+        "atualizações de produto da ${ VPN_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -4627,6 +4735,9 @@
       "Custom fields": [
         "Campos personalizados"
       ],
+      "Custom snooze time": [
+        "Tempo de adiamento personalizado"
+      ],
       "Data breach monitoring": [
         "Monitorização das violações de dados"
       ],
@@ -4835,6 +4946,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obtenha aliases ilimitados com SimpleLogin por ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Adie mensagens e seja relembrado quando quiser"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "O espaço de armazenamento é partilhado entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }"
@@ -5461,6 +5575,9 @@
       ]
     },
     "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "por favor, ${ contactHref } a nossa equipa de vendas."
+      ],
       "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
         "Selecione o número de IP a incluir no seu plano. Cada IP adicional custa ${ price }."
       ]
@@ -5746,9 +5863,39 @@
     "session_recovery:initiation:action": {
       "Got it": [
         "Entendido"
+      ],
+      "Request password reset": [
+        "Pedir redefinição de palavra-passe"
+      ],
+      "Use recovery method": [
+        "Utilize o método de recuperação"
+      ]
+    },
+    "session_recovery:initiation:info": {
+      "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
+        "Se tiver um **método de recuperação** definido, tente antes a recuperação de conta. Isto irá permitir-lhe mudar a sua palavra-passe de imediato."
+      ],
+      "We will contact you again when the password reset is available.": [
+        "Iremos contactá-lo novamente quando a redefinição de palavra-passe estiver disponível."
+      ],
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "Pode verificar o estado do seu pedido a qualquer momento nas ${ accountAndPasswordSectionLink } das definições."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "secção de conta e palavra-passe"
+      ]
+    },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "Reposição de palavra-passe confirmada"
       ]
     },
     "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "Pedir redefinição de palavra-passe?"
+      ],
       "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
         "Pode redefinir a sua palavra-passe em ${ gracePeriodHoursRemaining } hora.",
         "Pode redefinir a sua palavra-passe em ${ gracePeriodHoursRemaining } horas."
@@ -7035,6 +7182,14 @@
       ],
       "Verified email address": [
         "Endereço de e-mail verificado"
+      ]
+    },
+    "Tooltip for news": {
+      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
+        "Obtenha as últimas notícias sobre privacidade e o sobre o que se passa no universo ${ BRAND_NAME }"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Participe em questionários para melhorar os serviços ${ BRAND_NAME }"
       ]
     },
     "Tor out of date": {
