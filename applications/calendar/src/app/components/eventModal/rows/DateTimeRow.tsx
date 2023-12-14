@@ -8,6 +8,7 @@ import {
     TimeInput,
     TimeZoneSelector,
     UnderlineButton,
+    useActiveBreakpoint,
 } from '@proton/components';
 import { DATE_INPUT_ID, MAXIMUM_DATE, MINIMUM_DATE } from '@proton/shared/lib/calendar/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
@@ -68,6 +69,8 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
     const startDateTime = useMemo(() => getDateTime(start), [start]);
     const endDateTime = useMemo(() => getDateTime(end), [end]);
 
+    const { viewportWidth } = useActiveBreakpoint();
+
     return (
         <IconRow id={DATE_INPUT_ID} icon="clock" title={c('Label').t`Date and time`}>
             <div className={clsx([isAllDay && 'w-full md:w-1/2'])}>
@@ -79,7 +82,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                         >
                             <DateInput
                                 id={DATE_INPUT_ID}
-                                className="flex-1 h-full"
+                                className={clsx(['flex-1', viewportWidth['<=small'] && 'h-full'])}
                                 required
                                 value={start.date}
                                 onChange={handleChangeStartDate}
@@ -125,7 +128,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                         >
                             <DateInput
                                 id="event-endDate"
-                                className="flex-1 h-full"
+                                className={clsx(['flex-1', viewportWidth['<=small'] && 'h-full'])}
                                 required
                                 value={end.date}
                                 onChange={handleChangeEndDate}
