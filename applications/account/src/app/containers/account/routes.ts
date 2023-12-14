@@ -11,19 +11,31 @@ import {
     PROTON_SENTINEL_NAME,
     REFERRAL_PROGRAM_MAX_AMOUNT,
 } from '@proton/shared/lib/constants';
+import { getHasOnlyExternalAddresses } from '@proton/shared/lib/helpers/address';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
 import { getHasVpnB2BPlan, hasCancellablePlan } from '@proton/shared/lib/helpers/subscription';
-import { Organization, Renew, Subscription, UserModel, UserType } from '@proton/shared/lib/interfaces';
+import { Address, Organization, Renew, Subscription, UserModel, UserType } from '@proton/shared/lib/interfaces';
 import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 import { isOrganizationFamily, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 
 import { recoveryIds } from './recoveryIds';
 
+const getShowEasySwitchSection = (app: APP_NAMES, addresses: Address[] | undefined, isSSOUser: boolean | undefined) => {
+    if (addresses === undefined) {
+        return false;
+    }
+
+    const isExternal = getHasOnlyExternalAddresses(addresses);
+
+    return !isExternal && app !== APPS.PROTONPASS && !isSSOUser;
+};
+
 export const getAccountAppRoutes = ({
     app,
     user,
     subscription,
+    addresses,
     isDataRecoveryAvailable,
     isSessionRecoveryAvailable,
     isReferralProgramEnabled,
@@ -36,6 +48,7 @@ export const getAccountAppRoutes = ({
 }: {
     app: APP_NAMES;
     user: UserModel;
+    addresses?: Address[];
     subscription?: Subscription;
     isDataRecoveryAvailable: boolean;
     isSessionRecoveryAvailable: boolean;
@@ -49,7 +62,6 @@ export const getAccountAppRoutes = ({
 }) => {
     const { isFree, canPay, isPaid, isPrivate, isMember, isAdmin, Currency, Type } = user;
     const credits = humanPriceWithCurrency(REFERRAL_PROGRAM_MAX_AMOUNT, Currency || DEFAULT_CURRENCY);
-    const isExternal = Type === UserType.EXTERNAL;
 
     //Used to determine if a user is on a family plan
     const isFamilyPlan = !!organization && isOrganizationFamily(organization);
@@ -287,7 +299,7 @@ export const getAccountAppRoutes = ({
                 text: c('Title').t`Import via ${PRODUCT_NAMES.EASY_SWITCH}`,
                 to: '/easy-switch',
                 icon: 'arrow-down-to-square',
-                available: !isExternal && app !== APPS.PROTONPASS && !isSSOUser,
+                available: getShowEasySwitchSection(app, addresses, isSSOUser),
                 description: isGmailSyncEnabled
                     ? c('Settings description')
                           .t`Complete the transition to privacy with our secure importing and forwarding tools.`
