@@ -85,7 +85,7 @@ const normalizeName = /** @param {Logical} server */ (server) => {
 
             needsFreeSuffix = false;
 
-            return start + middle + (end.length < 2 ? '0' : '') + end;
+            return start + middle + end.padStart(2, '0');
         });
 
         if (needsFreeSuffix) {
