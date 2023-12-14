@@ -35,14 +35,17 @@ const CalendarsSection = ({
         <SettingsSectionWide {...rest}>
             {children}
             {!!calendars.length && (
-                <CalendarsTable
-                    nameHeader={nameHeader}
-                    calendars={calendars}
-                    defaultCalendarID={defaultCalendarID}
-                    addresses={addresses}
-                    user={user}
-                    onSetDefault={onSetDefault}
-                />
+                <>
+                    {nameHeader && <h4 className="lg:hidden text-bold text-rg mb-2">{nameHeader}</h4>}
+                    <CalendarsTable
+                        nameHeader={nameHeader}
+                        calendars={calendars}
+                        defaultCalendarID={defaultCalendarID}
+                        addresses={addresses}
+                        user={user}
+                        onSetDefault={onSetDefault}
+                    />
+                </>
             )}
         </SettingsSectionWide>
     );
