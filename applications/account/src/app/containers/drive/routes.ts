@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
 import { SectionConfig } from '@proton/components';
-import { BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
-export const getDriveAppRoutes = () => {
+export const getDriveAppRoutes = ({ app }: { app: APP_NAMES }) => {
     return <const>{
+        available: app === APPS.PROTONDRIVE,
         header: DRIVE_APP_NAME,
         routes: {
             revisions: <SectionConfig>{

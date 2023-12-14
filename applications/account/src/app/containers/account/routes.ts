@@ -65,6 +65,7 @@ export const getAccountAppRoutes = ({
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
 
     return <const>{
+        available: true,
         header: c('Settings section title').t`Account`,
         routes: {
             dashboard: <SectionConfig>{
