@@ -9771,6 +9771,12 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
+        "Staňte sa Vizionárom a buďte súčasťou príbehu ${ BRAND_NAME }"
+      ],
+      "Limited time offer: Get ${ planTitle } until ${ date }!": [
+        "Časovo limitovaná ponuka: Získajte ${ planTitle } do ${ date }!"
+      ],
       "Secure email that protects your privacy": [
         "Zabezpečený email, ktorý chráni vaše súkromie"
       ]
@@ -10598,6 +10604,17 @@
         "Tímový manažment"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačnom prípade bude prístup k vášmu účtu obmedzený a váš účet bude nakoniec deaktivovaný."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ak chcete naďalej používať ${ MAIL_APP_NAME } s prémiovými funkciami, vyberte si predplatné a možnosti platby."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Skúšobná verzia končí ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končiaca na ${ last4 }"
@@ -10631,6 +10648,9 @@
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Komplexné súkromie a bezpečnosť so všetkými službami ${ BRAND_NAME } dohromady."
+      ],
+      "Early access to new apps and features": [
+        "Skorší prístup k novým aplikáciám a funkciám"
       ],
       "For next-level password management and identity protection.": [
         "Pre správu hesiel a ochranu identity ďalšej úrovne."
@@ -10688,17 +10708,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačnom prípade bude prístup k vášmu účtu obmedzený a váš účet bude nakoniec deaktivovaný."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ak chcete naďalej používať ${ MAIL_APP_NAME } s prémiovými funkciami, vyberte si predplatné a možnosti platby."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Skúšobná verzia končí ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12377,6 +12386,9 @@
     "session_recovery:settings:info": {
       "To disallow password reset, you must have a recovery method set up.": [
         "Ak chcete zakázať obnovenie hesla, musíte mať nastavený spôsob obnovenia."
+      ],
+      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
+        "Na zvýšenie bezpečnosti vášho konta a ochrany vašich údajov môžete požiadať o obnovenie hesla v nastaveniach vášho účtu vo webovej aplikácii."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -14086,6 +14098,9 @@
       ],
       "Password and keys": [
         "Heslo a kľúče"
+      ],
+      "Password reset settings": [
+        "Nastavenia obnovenia hesla"
       ],
       "Pay invoice": [
         "Zaplatiť faktúru"
