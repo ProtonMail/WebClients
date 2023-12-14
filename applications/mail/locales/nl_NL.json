@@ -542,6 +542,9 @@
       "label emails as": [
         "e-mail labellen als"
       ],
+      "Later this week": [
+        "Later deze week"
+      ],
       "Learn more": [
         "Meer informatie"
       ],
@@ -565,6 +568,9 @@
       ],
       "Manage labels": [
         "Labels beheeren"
+      ],
+      "Manage Snooze": [
+        "Dempen beheren"
       ],
       "Mark as read": [
         "Markeer als gelezen"
@@ -704,11 +710,11 @@
       "Not saved": [
         "Niet opgeslagen"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Open ${ CALENDAR_APP_NAME }"
@@ -886,6 +892,9 @@
       ],
       "Select all messages": [
         "Alle berichten selecteren"
+      ],
+      "Select date and time": [
+        "Selecteer datum en tijd"
       ],
       "Self-destruct in 7 days": [
         "Zelfvernietiging over 7 dagen"
@@ -3063,6 +3072,9 @@
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Ontgrendel aangepaste berichten inplannen en andere voordelen als u uw abonnement upgrade."
       ],
+      "Unlock custom snooze times when you upgrade your plan.": [
+        "Toegang krijgen tot aangepaste demptijden als u uw abonnement upgrade"
+      ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Krijg onbeperkt filters die uw postvak voor u sorteren en andere premiumfuncties als u upgrade."
       ],
@@ -3124,6 +3136,9 @@
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } is bijgewerkt.\n${ eventDetailsText }"
+      ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Het voorvallen van ${ eventTitle } is geannuleerd."
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "U bent uitgenodigd voor ${ eventTitle }\n${ eventDetailsText }"
@@ -3633,6 +3648,9 @@
       "You must set a name": [
         "U moet een naam instellen"
       ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "U heeft het maximaal aantal tekens bereikt. Maak uw bericht korter."
+      ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Uw e-mails kunnen niet worden ontsleuteld omdat u onlangs uw wachtwoord opnieuw hebt ingesteld. Als u uw vorige wachtwoord nog weet, kunt u ${ reActivateKeyLink } om toegang te krijgen tot uw berichten. ${ learnMoreLink }"
       ],
@@ -3835,6 +3853,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "App momenteel niet beschikbaar"
+      ],
       "Error: ${ errorMessage }": [
         "Fout: ${ errorMessage }"
       ],
@@ -3847,11 +3868,17 @@
       "Oops, something went wrong": [
         "Oeps, er is iets misgegaan"
       ],
+      "Open in browser": [
+        "Openen in de browser"
+      ],
       "Please refresh the page or try again later.": [
         "Ververs de pagina of probeer het later opnieuw."
       ],
       "Something went wrong": [
         "Er is iets fout gegaan"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Om ${ MAIL_APP_NAME } of ${ CALENDAR_APP_NAME } te gebruiken, wissel naar de webversie."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "We konden deze pagina niet laden. Ververs de pagina of controleer uw internetverbinding."
@@ -5346,6 +5373,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ importedEmailAddress } naar ${ toEmail }."
       ],
+      "Include Spam/Trash.": [
+        "Includeer Spam/Prullenbak"
+      ],
       "Inherited from parent folder": [
         "Overgenomen van bovenliggende map"
       ],
@@ -5713,6 +5743,18 @@
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin biedt een eenvoudige manier om in te loggen op niet-vertrouwde sites van derden waar u uw eigenlijke e-mailadres niet wilt prijsgeven."
       ],
+      "Snoozed until  ${ dateString } at ${ formattedTime }": [
+        "Gedempt tot ${ dateString } om ${ formattedTime }"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Gedempt tot vandaag, ${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Gedempt tot morgen, ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be cancelled.": [
+        "Dit gesprek dempen wordt geannuleerd"
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Sorry, dit bericht bestaat niet of is al verlopen."
       ],
@@ -5764,6 +5806,9 @@
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         "De originele afzender van dit bericht is niet langer geldig. Uw bericht zal verstuurd worden vanaf uw standaardmailadres ${ defaultEmail }."
       ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "De eigenaar van dit adres heeft end-to-end versleuteling uitgeschakeld. Om versleutelde berichten naar dit adres te sturen moet de eigenaar end-to-end versleuteling weer inschakelen."
+      ],
       "The sender has requested a read receipt.": [
         "De zender heeft om een leesbevestiging gevraagd."
       ],
@@ -5810,6 +5855,9 @@
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Dit e-mailadres gebruikt foutieve domeininstellingen. Het kan een nepbericht zijn, of het is op de verkeerde manier doorgestuurd."
+      ],
+      "This file is too large to preview": [
+        "Dit bestand is te groot om het te kunnen tonen"
       ],
       "This invitation is saved in a disabled calendar.": [
         "Deze uitnodiging is opgeslagen in een uitgeschakelde agenda."
@@ -5952,6 +6000,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
+      ],
+      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
+        "Upgrade naar ${ MAIL_APP_NAME } Plus om te ontgrendelen"
       ],
       "Upgrade to add more addresses to your account.": [
         "Upgrade om meer adressen aan uw account toe te voegen."
@@ -7469,6 +7520,9 @@
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
       ],
+      "Custom snooze time": [
+        "Aangepaste demptijd"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliassen"
       ],
@@ -7494,6 +7548,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Berichten dempen en ontvangen wanneer u wilt"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
@@ -8445,6 +8502,12 @@
       "Search just got smarter and faster": [
         "Zoeken werd zonet slimmer en sneller"
       ],
+      "Set when an email should reappear in your inbox with the new snooze feature.": [
+        "Stel in wanneer een email weer moet verschijnen in uw inbox met de nieuwe dempfunctie."
+      ],
+      "Snooze it for later": [
+        "Dempen voor later"
+      ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "Spam en Ongewenste e-mail worden nu automatisch uitgesloten van All Mail. ${ settingsLink }"
       ],
@@ -8542,6 +8605,10 @@
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } gesprek verwijderd van ${ labelName }.",
         "${ elementsCount } gesprekken verwijderd van ${ labelName }."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } gesprek gedempt",
+        "${ elementsCount } gesprekken gedempt"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } bericht toegevoegd aan ${ labelName }.",
@@ -9214,6 +9281,9 @@
       "Moving a scheduled message": [
         "Een gepland bericht verplaatsen"
       ],
+      "Moving a snoozed message": [
+        "Een gedempt bericht verplaatsen"
+      ],
       "New message": [
         "Nieuw bericht"
       ],
@@ -9319,6 +9389,9 @@
       "Send with changed preferences?": [
         "Versturen met gewijzigde voorkeuren?"
       ],
+      "Send with encryption disabled?": [
+        "Met versleuteling versturen uitgeschakeld?"
+      ],
       "Send without expiration?": [
         "Versturen zonder verlooptijd?"
       ],
@@ -9354,6 +9427,9 @@
       ],
       "Snooze": [
         "Uitstellen"
+      ],
+      "Snooze message": [
+        "Bericht dempen"
       ],
       "Sort conversations": [
         "Gesprekken sorteren"
@@ -9400,6 +9476,9 @@
       ],
       "Verification error": [
         "Verificatiefout"
+      ],
+      "Want to snooze any time?": [
+        "Voor enige tijd dempen?"
       ],
       "Warning": [
         "Waarschuwing"
