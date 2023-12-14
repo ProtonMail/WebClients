@@ -2295,6 +2295,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } განახლებულია.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "${ eventTitle }-ის მოხდებნა გაუქმდა."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "მოსაწვევი ${ eventTitle }-ზე\n${ eventDetailsText }"
       ]
@@ -3699,6 +3702,9 @@
       "All (${ totalFoldersCount } label)": [
         "ყველა (${ totalFoldersCount } ჭდე)",
         "ყველა (${ totalFoldersCount } ჭდე)"
+      ],
+      "All participants will get a cancellation email. Which event would you like to delete?": [
+        "ყველა მონაწილე მიიღებს გაუქმების ელფოსტას. რომელი მოვლენის წაშლა გნებავთ?"
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }",

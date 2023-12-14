@@ -710,11 +710,11 @@
       "Not saved": [
         "Não salvo"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
@@ -3137,6 +3137,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } foi atualizado.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Esta ocorrência de ${ eventTitle } foi cancelada."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Você foi convidado para ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -3644,6 +3647,9 @@
       ],
       "You must set a name": [
         "Você deve especificar um nome"
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Você atingiu o número máximo de caracteres. Por favor, encurte sua mensagem."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Suas mensagens não podem ser descriptografadas devido a uma recente redefinição de senha. Caso lembre-se de sua senha anterior, você pode ${ reActivateKeyLink } para acessar suas mensagens. ${ learnMoreLink }"
@@ -8132,6 +8138,9 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Agora você pode alterar a senha da conta ${ boldEmail } gratuitamente por ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Agora você pode alterar a senha da conta ${ boldEmail }."
       ]
     },
     "session_recovery:available:link": {

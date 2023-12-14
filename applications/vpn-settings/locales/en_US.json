@@ -72,6 +72,20 @@
         "Creating or accessing non-private user accounts"
       ]
     },
+    "session_recovery:available:info": {
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "You have ${ timeRemaining.inHours } hour to reset your password.",
+        "You have ${ timeRemaining.inHours } hours to reset your password."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "You have ${ timeRemaining.inMinutes } minute to reset your password.",
+        "You have ${ timeRemaining.inMinutes } minutes to reset your password."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "You have ${ timeRemaining.inSeconds } second to reset your password.",
+        "You have ${ timeRemaining.inSeconds } seconds to reset your password."
+      ]
+    },
     "session_recovery:initiation:info": {
       "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
         "You can check the status of your request at any time ${ accountAndPasswordSectionLink } of the settings."

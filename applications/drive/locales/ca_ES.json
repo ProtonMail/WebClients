@@ -623,7 +623,7 @@
         "Omet la verificació"
       ],
       "Start": [
-        "Inici"
+        "Inicia"
       ],
       "Start import": [
         "Comença la importació"
@@ -876,7 +876,7 @@
         "Accediu al contingut dels serveis de streaming com ara Netflix, Disney+, Prime Video i altres des de qualsevol lloc."
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
-        "Eviteu els bloquejos i la censura a Internet local amb la nostra xarxa global de servidors."
+        "Eviteu els bloquejos i la censura locals a Internet amb la nostra xarxa global de servidors."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclou suport per a 1 domini de correu electrònic personalitzat, 10 adreces de correu electrònic, 10 àlies hide-my-email, compartició de calendari i més."
@@ -2102,7 +2102,7 @@
         "Desmarqueu almenys ${ calendarsToFixCount } calendaris o"
       ],
       "Device name does not match": [
-        "El nom del dispositiu no coincideix"
+        "El nom del dispositiu no coincideix."
       ],
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
@@ -2117,7 +2117,7 @@
         "Introduïu 6 dígits"
       ],
       "Error decrypting a computer": [
-        "Error desxifrant un ordinador"
+        "S'ha produït un error en desxifrar un ordinador"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "El fitxer «${ item.name }» no s'ha pogut pujar a causa de l'error «${ error }»"
@@ -2643,8 +2643,8 @@
     },
     "Failed": {
       "${ countOfFailedLinks } failed": [
-        "${ countOfFailedLinks } error",
-        "${ countOfFailedLinks } errors"
+        "N'ha fallat ${ countOfFailedLinks }",
+        "N'han fallat ${ countOfFailedLinks }"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -2845,7 +2845,7 @@
         "Valor per defecte del sistema"
       ],
       "Theme font": [
-        "Tipus de lletra del tema"
+        "Família tipogràfica del tema"
       ]
     },
     "Font size option": {
@@ -3515,7 +3515,7 @@
         "doblar el vostre emmagatzematge"
       ],
       "Download ${ name } app": [
-        "Descarrega l'aplicació ${ name }"
+        "Descarregueu l'aplicació ${ name }"
       ],
       "Download canceled": [
         "S'ha cancel·lat la baixada"
@@ -3660,10 +3660,10 @@
         "de l'historial de versions?"
       ],
       "Get the app to backup photos from your phone.": [
-        "Obtingui l'aplicació per fer còpies de seguretat de les fotos del vostre telèfon."
+        "Obteniu l'aplicació per a fer còpies de seguretat de les fotos del vostre telèfon."
       ],
       "Get the desktop app to sync files from your computer.": [
-        "Obtingui l'aplicació de l'escriptori per sincronitzar fitxers del vostre ordinador."
+        "Obteniu l'aplicació d'escriptori per sincronitzar fitxers des del vostre ordinador."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Coneixeu ${ DRIVE_APP_NAME } i guanyeu la vostra bonificació d'emmagatzematge de 500 MB!"
@@ -3766,7 +3766,7 @@
         "S'ha copiat l'enllaç al porta-retalls."
       ],
       "Link owner has the password": [
-        "El propietari de l'enllaç té la contrasenya"
+        "El propietari de l'enllaç té la contrasenya."
       ],
       "Loading": [
         "Carregant"
@@ -3844,7 +3844,7 @@
         "Nota: les dades encara poden estar disponibles localment en dispositius on hàgiu instal·lat ${ DRIVE_APP_NAME }."
       ],
       "Nothing here yet": [
-        "No hi ha res aquí encara"
+        "No hi ha res aquí de moment."
       ],
       "of": [
         "de"
@@ -3881,7 +3881,7 @@
         "PGP/MIME envia automàticament el missatge utilitzant el mode d'editor actual."
       ],
       "Photos have been successfully recovered.": [
-        "Les fotos s'han recuperat."
+        "S'han recuperat les fotos."
       ],
       "Please enter the password to decrypt and view content.": [
         "Introduïu la contrasenya per a desxifrar i veure el contingut."
@@ -3909,7 +3909,7 @@
         "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupName }."
       ],
       "Please use another browser or download the file.": [
-        "Utilitzeu un altre navegador o baixeu el fitxer."
+        "Utilitzeu un altre navegador o descarregueu el fitxer."
       ],
       "Please wait till your changes are synced with the server.": [
         "Espereu fins que els canvis s'hagin sincronitzat amb el servidor."
@@ -3951,7 +3951,7 @@
         "En cua"
       ],
       "Ready to add some photos?": [
-        "Preparat per afegir algunes fotos?"
+        "Preparat per a afegir algunes fotos?"
       ],
       "recommended browser": [
         "navegador recomanat"
@@ -3996,7 +3996,7 @@
         "Seleccioneu un proveïdor de serveis per començar"
       ],
       "Select all items for": [
-        "Selecciona tots els elements per"
+        "Selecciona tots els elements per a"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Seleccioneu un fitxer o una carpeta carregats i creeu-hi un enllaç."
@@ -4029,7 +4029,7 @@
         "Enllaç per a compartir ${ boldNameText }"
       ],
       "Shared link not found": [
-        "No s'ha trobat l'enllaç compartit"
+        "No s'ha trobat l'enllaç compartit."
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "No es pot validar la signatura a causa d'un error de xarxa. Torneu-ho a provar més tard."
@@ -4119,8 +4119,8 @@
         "Aquest mes"
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Això esborrarà l'enllaç i esborrarà l'accés al vostre fitxer o carpeta per a qualsevol persona que el tingui.",
-        "Això esborrarà els enllaços i esborrarà l'accés als vostres fitxers o carpetes per a qualsevol persona que els tingui."
+        "Això eliminarà l'enllaç i esborrarà l'accés al vostre fitxer o carpeta per a qualsevol que el tingui.",
+        "Això eliminarà els enllaços i esborrarà l'accés als vostres fitxers o carpetes per a qualsevol que els tingui."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
         "Això esborrarà el dispositiu sincronitzat ${ deviceName } de ${ DRIVE_APP_NAME } i deixarà de sincronitzar les carpetes que heu afegit a Ordinadors."
@@ -4198,7 +4198,7 @@
         "Intenteu cercar pel nom, data o tipus del fitxer."
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
-        "Malauradament, sembla que el fitxer o algunes de les vostres dades no es poden desxifrar."
+        "Malauradament, sembla que el fitxer o algunes de les seves dades no es poden desxifrar."
       ],
       "Unknown date": [
         "Data desconeguda"
@@ -4234,7 +4234,7 @@
         "La càrrega de centenars de fitxers alhora pot tenir un impacte en el rendiment."
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
-        "Utilitzeu aquest formulari per a notificar-nos sobre fitxers compartits inapropiats, il·legals o maliciosos. Esteu a punt d'informar:"
+        "Utilitzeu aquest formulari per a notificar-nos de fitxers compartits inapropiats, il·legals o maliciosos. Esteu a punt d'informar:"
       ],
       "Version is deleted": [
         "La versió s'ha eliminat"
@@ -4318,8 +4318,8 @@
         "No pots desfer aquesta acció."
       ],
       "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
-        "Us queden ${ expiresInDays } dia per reclamar la vostra bonificació de 500 MB de benvinguda i ",
-        "Us queden ${ expiresInDays } dies per reclamar la vostra bonificació de 500 MB de benvinguda i "
+        "Us queda ${ expiresInDays } dia per a reclamar la vostra bonificació de benvinguda de 500 MB i ",
+        "Us queden ${ expiresInDays } dies per a reclamar la vostra bonificació de benvinguda de 500 MB i "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Heu assolit el ${ spaceDisplayed }% del vostre espai d'emmagatzematge. ${ freeUpMessage } ${ upgradeLink }"
@@ -5988,7 +5988,7 @@
       ],
       "${ countOfUnrecoveredLinksLeft } left": [
         "Queda ${ countOfUnrecoveredLinksLeft }",
-        "Quedan ${ countOfUnrecoveredLinksLeft }"
+        "Queden ${ countOfUnrecoveredLinksLeft }"
       ],
       "Address copied to clipboard": [
         "Adreça copiada al porta-retalls"
@@ -6371,7 +6371,7 @@
         "Grups"
       ],
       "Hm, we couldn't find that one": [
-        "No ho hem pogut trobar"
+        "No hem pogut trobar aquest element."
       ],
       "Human verification": [
         "Verificació humana"
