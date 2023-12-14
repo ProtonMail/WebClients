@@ -3273,6 +3273,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } is bijgewerkt.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Het voorvallen van ${ eventTitle } is geannuleerd."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "U bent uitgenodigd voor ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -4127,6 +4130,9 @@
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "U hebt een eigen e-mailadres nodig om een SMTP-zendtoken te kunnen genereren."
       ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "U heeft het maximaal aantal tekens bereikt. Maak uw bericht korter."
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Uw account of organisatie heeft een openstaande factuur. Betaal alle openstaande facturen."
       ],
@@ -4323,6 +4329,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "App momenteel niet beschikbaar"
+      ],
       "Error: ${ errorMessage }": [
         "Fout: ${ errorMessage }"
       ],
@@ -4332,11 +4341,17 @@
       "Oops, something went wrong": [
         "Oeps, er is iets misgegaan"
       ],
+      "Open in browser": [
+        "Openen in de browser"
+      ],
       "Please refresh the page or try again later.": [
         "Ververs de pagina of probeer het later opnieuw."
       ],
       "Something went wrong": [
         "Er is iets fout gegaan"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Om ${ MAIL_APP_NAME } of ${ CALENDAR_APP_NAME } te gebruiken, wissel naar de webversie."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Te veel onderliggende sessies, wis uw cookies en log opnieuw in."
@@ -7278,6 +7293,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Dit kan wat tijd in beslag nemen. Sluit deze pagina niet af en verbreek de verbinding met het internet niet."
       ],
+      "This file is too large to preview": [
+        "Dit bestand is te groot om het te kunnen tonen"
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Dit is een zin van 12 woorden die u moest instellen."
       ],
@@ -10092,6 +10110,9 @@
       "Custom fields": [
         "Aangepaste velden"
       ],
+      "Custom snooze time": [
+        "Aangepaste demptijd"
+      ],
       "Data breach monitoring": [
         "Monitoring van datalekken"
       ],
@@ -10308,6 +10329,9 @@
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
       ],
+      "Snooze messages and get reminded when you want": [
+        "Berichten dempen en ontvangen wanneer u wilt"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
       ],
@@ -10321,6 +10345,17 @@
       ],
       "Team management": [
         "Teambeheer"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10413,17 +10448,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
