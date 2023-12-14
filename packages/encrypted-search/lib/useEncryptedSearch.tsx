@@ -11,6 +11,7 @@ import { useGetUserKeys } from '@proton/components/hooks/useUserKeys';
 import { SECOND } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
@@ -457,6 +458,11 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         await metadataIndexingProgress.addTimestamp(userID, TIMESTAMP_TYPE.STOP);
     };
 
+    const esErrorMessage = isElectronApp()
+        ? c('Error').t`Content search cannot be enabled. Please restart the application or clear data.`
+        : c('Error')
+              .t`Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.`;
+
     /**
      * Set up the ES IndexedDB and populate it with items metadata. It optionally accepts
      * an object with one property.
@@ -483,10 +489,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
         const handleError = async (esSupported = true) => {
             if (showErrorNotification) {
                 createNotification({
-                    text: esSupported
-                        ? c('Error').t`A problem occurred, please try again.`
-                        : c('Error')
-                              .t`Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.`,
+                    text: esSupported ? c('Error').t`A problem occurred, please try again.` : esErrorMessage,
                     type: 'error',
                 });
             }
@@ -716,8 +719,7 @@ const useEncryptedSearch = <ESItemMetadata extends Object, ESSearchParameters, E
 
         if (!esSupported) {
             createNotification({
-                text: c('Error')
-                    .t`Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.`,
+                text: esErrorMessage,
                 type: 'error',
             });
             return;
