@@ -49,7 +49,7 @@ import {
     isSSOMode,
 } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { getTypeformDesktopUrl, isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getIsEventModified } from '@proton/shared/lib/helpers/dom';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import {
@@ -89,7 +89,7 @@ interface Props extends Omit<UserDropdownButtonProps, 'user' | 'isOpen' | 'onCli
 }
 
 const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) => {
-    const { APP_NAME } = useConfig();
+    const { APP_NAME, APP_VERSION } = useConfig();
     const [organization] = useOrganization();
     const { Name: organizationName } = organization || {};
     const [user] = useUser();
@@ -449,14 +449,26 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                         </div>
 
                         <div className="block">
-                            <a
-                                className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration on-hover-color-norm"
-                                href={userVoiceLinks[APP_NAME] || userVoiceLinks[APPS.PROTONMAIL]}
-                                target="_blank"
-                                data-testid="userdropdown:help:link:request-feature"
-                            >
-                                {c('Action').t`Request a feature`}
-                            </a>
+                            {/* This is here while the desktop beta lasts and can be removed once it's done */}
+                            {isElectronApp() ? (
+                                <a
+                                    className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration on-hover-color-norm"
+                                    href={getTypeformDesktopUrl(APP_VERSION, APP_NAME)}
+                                    target="_blank"
+                                    data-testid="userdropdown:help:link:request-feature"
+                                >
+                                    {c('Action').t`Give feedback`}
+                                </a>
+                            ) : (
+                                <a
+                                    className="mx-auto w-full px-2 link link-focus color-weak text-no-decoration on-hover-color-norm"
+                                    href={userVoiceLinks[APP_NAME] || userVoiceLinks[APPS.PROTONMAIL]}
+                                    target="_blank"
+                                    data-testid="userdropdown:help:link:request-feature"
+                                >
+                                    {c('Action').t`Request a feature`}
+                                </a>
+                            )}
                         </div>
 
                         {onOpenChat && (
