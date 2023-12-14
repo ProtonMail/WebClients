@@ -579,7 +579,7 @@
         "Marker som ulest"
       ],
       "mark emails as": [
-        "marker e-poster som"
+        "markere e-poster som"
       ],
       "Mark for deletion": [
         "Merk for sletting"
@@ -710,10 +710,10 @@
       "Not saved": [
         "Ikke lagret"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1002,7 +1002,7 @@
         "Noen bilder kunne ikke lastes med sporingsbeskyttelse."
       ],
       "Star": [
-        "Stjernemerket"
+        "Stjernemerk"
       ],
       "Start import": [
         "Start importen"
@@ -1255,10 +1255,10 @@
         "Svarte alle"
       ],
       "Star conversation": [
-        "Gi samtale stjernemerke"
+        "Stjernemerk samtalen"
       ],
       "Star message": [
-        "Gi melding stjernemerke"
+        "Stjernemerk meldingen"
       ],
       "Unread email": [
         "Ulest e-post"
@@ -2101,7 +2101,7 @@
         "Kjønn"
       ],
       "Geo": [
-        "Geo"
+        "Geolokalisering"
       ],
       "Language": [
         "Språk"
@@ -2154,7 +2154,7 @@
         "Mobil"
       ],
       "Other": [
-        "Annen"
+        "Annet"
       ],
       "Pager": [
         "Personsøker"
@@ -6467,7 +6467,7 @@
         "Vis uleste e-poster"
       ],
       "Star": [
-        "Stjernemerket"
+        "Stjernemerk"
       ]
     },
     "Keyboard shortcut section name": {
@@ -7904,7 +7904,7 @@
         "Mobil"
       ],
       "Other": [
-        "Annen"
+        "Annet"
       ],
       "Pager": [
         "Personsøker"
@@ -8125,6 +8125,9 @@
         "${ timeRemaining.inHours } time",
         "${ timeRemaining.inHours } timer"
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Forespørsel om tilbakestilling av passord godkjent (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Vennligst gå til den påloggede enheten (i økten hvor forespørselen ble igangsatt) for å endre passordet ditt."
       ],
@@ -8136,8 +8139,30 @@
         "Denne tillatelsen utløper om ${ timeRemaining.inHours } time",
         "Denne tillatelsen utløper om ${ timeRemaining.inHours } timer"
       ],
+      "This permission expires soon": [
+        "Denne tillatelsen utløper snart"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Du kan nå endre passordet ditt for kontoen ${ boldEmail } fritt for ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Du kan nå endre passordet ditt for kontoen ${ boldEmail }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Du har ${ timeRemaining.inDays } dag på deg til å tilbakestille passordet ditt.",
+        "Du har ${ timeRemaining.inDays } dager på deg til å tilbakestille passordet ditt."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Du har ${ timeRemaining.inHours } time på deg til å tilbakestille passordet ditt.",
+        " Du har ${ timeRemaining.inHours } timer på deg til å tilbakestille passordet ditt."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Du har ${ timeRemaining.inMinutes } minutt på deg til å tilbakestille passordet ditt.",
+        " Du har ${ timeRemaining.inMinutes } minutter på deg til å tilbakestille passordet ditt."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Du har ${ timeRemaining.inSeconds } sekund på deg til å tilbakestille passordet ditt.",
+        " Du har ${ timeRemaining.inSeconds } sekunder på deg til å tilbakestille passordet ditt."
       ]
     },
     "session_recovery:available:link": {

@@ -406,7 +406,7 @@
         "Obre les preferències"
       ],
       "Pause indexing": [
-        "Pausa l'Indexació"
+        "Posa la indexació en pausa"
       ],
       "Preview contact": [
         "Previsualitzar contacte"
@@ -472,7 +472,7 @@
         "Restableix els valors per defecte"
       ],
       "Resume indexing": [
-        "Continua l'Indexació"
+        "Continua la indexació"
       ],
       "Save": [
         "Desa"
@@ -643,10 +643,10 @@
     },
     "Action subline": {
       "Anyone with the link can view your calendar": [
-        "Qualsevol que tingui l'enllaç pot veure el vostre calendari"
+        "Qualsevol que tingui l'enllaç pot veure el vostre calendari."
       ],
       "They can view or edit your calendar": [
-        "Poden veure o editar el vostre calendari"
+        "Poden veure o editar el vostre calendari."
       ]
     },
     "Action title": {
@@ -841,7 +841,7 @@
         "Accediu al contingut dels serveis de streaming com ara Netflix, Disney+, Prime Video i altres des de qualsevol lloc."
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
-        "Eviteu els bloquejos i la censura a Internet local amb la nostra xarxa global de servidors."
+        "Eviteu els bloquejos i la censura locals a Internet amb la nostra xarxa global de servidors."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclou suport per a 1 domini de correu electrònic personalitzat, 10 adreces de correu electrònic, 10 àlies hide-my-email, compartició de calendari i més."
@@ -954,28 +954,28 @@
         "${ name } ha acceptat la invitació"
       ],
       "${ name } declined the invitation": [
-        "${ name } ha rebutjat la invitació"
+        "${ name } ha rebutjat la invitació."
       ],
       "${ name } hasn't answered the invitation yet": [
-        "${ name } encara no ha respost a la invitació"
+        "${ name } encara no ha respost la invitació."
       ],
       "${ name } tentatively accepted the invitation": [
-        "${ name } ha acceptat provisionalment la invitació"
+        "${ name } ha acceptat provisionalment la invitació."
       ],
       "This event has been canceled": [
-        "Aquest esdeveniment s'ha cancel·lat"
+        "Aquest esdeveniment s'ha cancel·lat."
       ],
       "You accepted the invitation": [
-        "Heu acceptat la invitació"
+        "Heu acceptat la invitació."
       ],
       "You declined the invitation": [
-        "Heu declinat la invitació"
+        "Heu declinat la invitació."
       ],
       "You haven't answered the invitation yet": [
-        "Encara no heu respost a la invitació"
+        "Encara no heu respost a la invitació."
       ],
       "You tentatively accepted the invitation": [
-        "Heu acceptat provisionalment la invitació"
+        "Heu acceptat provisionalment la invitació."
       ]
     },
     "Calendar link sharing label input assistive text": {
@@ -1066,13 +1066,13 @@
         "L'enllaç del calendari no és accessible"
       ],
       "Calendar link is temporarily inaccessible": [
-        "L'enllaç del calendari no és accessible temporalment"
+        "L'enllaç del calendari no és accessible temporalment."
       ],
       "Failed to sync calendar": [
         "Error sincronitzant el calendari"
       ],
       "More than 12 hours passed since last update": [
-        "Han passat més de 12 hores des de la darrera actualització"
+        "Han passat més de 12 hores des de la darrera actualització."
       ],
       "Unsupported calendar format": [
         "Format de calendari no suportat"
@@ -1108,7 +1108,7 @@
         "Canvieu l'interval de temps"
       ],
       "Change time range to": [
-        "Canvieu a la vista de"
+        "Canvieu l'interval de temps a"
       ]
     },
     "Calendar view; more events collapsed": {
@@ -2713,7 +2713,7 @@
     },
     "Error accepting calendar invitation": {
       "Invited address does not exist": [
-        "L'adreça convidada no existeix"
+        "L'adreça convidada no existeix."
       ]
     },
     "Error importing calendar": {
@@ -2952,8 +2952,8 @@
         "Tot el dia"
       ],
       "All day, lasts ${ plusDaysToEnd } day": [
-        "Tot el dia, el darrer ${ plusDaysToEnd } dia",
-        "Tot el dia, els darrers ${ plusDaysToEnd } dies"
+        "Tot el dia, dura ${ plusDaysToEnd } dia",
+        "Tot el dia, dura ${ plusDaysToEnd } dies"
       ]
     },
     "Event info. Organizer name": {
@@ -3227,7 +3227,7 @@
         "Valor per defecte del sistema"
       ],
       "Theme font": [
-        "Tipus de lletra del tema"
+        "Família tipogràfica del tema"
       ]
     },
     "Font size option": {
@@ -3654,7 +3654,7 @@
         "(${ memberCount } membres)"
       ],
       "A cancellation email will be sent to removed participants.": [
-        "Tots els participants esborrats rebran un correu electrònic de cancel·lació."
+        "Els participants esborrats rebran un correu electrònic de cancel·lació."
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
         "Un correu electrònic serà enviat als participants de l'esdeveniment. Voleu esborrar tots els esdeveniments de la sèrie?"
@@ -3669,7 +3669,7 @@
         "L'accés al compte està restringit a causa de factures impagades. Contacteu amb el vostre administrador."
       ],
       "Added and removed participants will be notified about all the events in this series.": [
-        "Els participants afegits o esborrats seran notificats de tots els esdeveniments d'aquesta sèrie."
+        "Els participants afegits i els esborrats seran notificats de tots els esdeveniments d'aquesta sèrie."
       ],
       "Added and removed participants will be notified.": [
         "Els participants afegits i els esborrats seran notificats."
@@ -3726,7 +3726,7 @@
         "Panell lateral del calendari"
       ],
       "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
-        "No es poden trobar els esdeveniments que esteu buscant? Alguns esdeveniments en els calendaris ocults coincideixen amb la vostra consulta. Per veure aquests resultats, activeu la visibilitat per a ${ hiddenWithItemsCalendarList }."
+        "No trobeu els esdeveniments que esteu buscant? Alguns esdeveniments en els calendaris ocults coincideixen amb la vostra consulta. Per veure aquests resultats, activeu la visibilitat per a ${ hiddenWithItemsCalendarList }."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i en el procés desactivar l'alerta."
@@ -3851,7 +3851,7 @@
         "Els participants existents i els afegits seran notificats."
       ],
       "Existent and removed participants will be notified.": [
-        "Els participants existents i esborrats seran notificats."
+        "Els participants existents i els esborrats seran notificats."
       ],
       "Existent, added and removed participants will be notified.": [
         "Els participants existents, els afegits i els esborrats seran notificats."
@@ -4270,7 +4270,7 @@
         "Perdreu tots els canvis sense desar."
       ],
       "You will update all the events in this series. Added and removed participants will be notified.": [
-        "Actualitzareu tots els esdeveniments d'aquesta sèrie. Els participants afegits i esborrats seran notificats."
+        "Actualitzareu tots els esdeveniments d'aquesta sèrie. Els participants afegits i els esborrats seran notificats."
       ],
       "You will update all the events in this series. An invitation will be sent to the event participants.": [
         "Actualitzareu tots els esdeveniments d'aquesta sèrie. S'enviarà una invitació als participants de l'esdeveniment."
@@ -4279,10 +4279,10 @@
         "Actualitzareu tots els esdeveniments d'aquesta sèrie. Els participants actuals i afegits seran notificats."
       ],
       "You will update all the events in this series. Existent and removed participants will be notified.": [
-        "Actualitzareu tots els esdeveniments d'aquesta sèrie. Els participants actuals i esborrats seran notificats."
+        "Actualitzareu tots els esdeveniments d'aquesta sèrie. Els participants existents i els esborrats seran notificats."
       ],
       "You will update all the events in this series. Existent, added and removed participants will be notified.": [
-        "Actualitzareu tots els esdeveniments d'aquesta sèrie. Els participants actuals, afegits i esborrats seran notificats."
+        "Actualitzareu tots els esdeveniments d'aquesta sèrie. Els participants existents, els afegits i els esborrats seran notificats."
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
         "Actualitzareu tots els esdeveniments d'aquesta sèrie. Els participants esborrats seran notificats."
@@ -4395,7 +4395,7 @@
         "Es permet un màxim de ${ maxAttendees } participants per invitació."
       ],
       "Creating invites in a shared calendar is not allowed": [
-        "No es permet crear invitacions en un calendari compartit"
+        "No es permet crear invitacions en un calendari compartit."
       ]
     },
     "Input label": {
@@ -6118,7 +6118,7 @@
         "Afegiu els dies festius del vostre país al calendari."
       ],
       "Color-coding is here!": [
-        "Podeu utilitzar les colors per als vostres esdeveniments!"
+        "Ja ha arribat la classificació per colors!"
       ],
       "Easily find the event you're looking for with our new search feature.": [
         "Trobeu fàcilment l'esdeveniment que busqueu amb la nostra nova funció de cerca."
@@ -6779,7 +6779,7 @@
         "Avís: presumpte lloc web fals"
       ],
       "We're setting up Calendar search": [
-        "Estem configurant la cerca als calendaris."
+        "Estem configurant la cerca al calendari."
       ],
       "We've locked some calendars to protect your data": [
         "Hem bloquejat alguns calendaris per a protegir les vostres dades"
@@ -6916,7 +6916,7 @@
     },
     "View event button tooltip": {
       "Navigate to event": [
-        "Navega fins a l'esdeveniment."
+        "Navega a l'esdeveniment."
       ],
       "Open in a new tab": [
         "Obre en una pestanya nova"

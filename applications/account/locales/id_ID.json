@@ -9495,6 +9495,12 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
+        "Jadilah seorang Visionary dan jadilah bagian dari perjalanan ${ BRAND_NAME }"
+      ],
+      "Limited time offer: Get ${ planTitle } until ${ date }!": [
+        "Penawaran waktu terbatas: Dapatkan ${ planTitle } hingga ${ date }!"
+      ],
       "Secure email that protects your privacy": [
         "Email aman yang melindungi privasi Anda"
       ]
@@ -10247,6 +10253,17 @@
         "Manajemen tim"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -10280,6 +10297,9 @@
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privasi dan keamanan yang komprehensif dengan dukungan gabungan dari seluruh layanan ${ BRAND_NAME }."
+      ],
+      "Early access to new apps and features": [
+        "Akses dini ke berbagai aplikasi dan fitur baru"
       ],
       "For next-level password management and identity protection.": [
         "Manajemen kata sandi dan perlindungan identitas tingkat lanjut."
@@ -10337,17 +10357,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Masa uji coba Anda akan berakhir pada ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11963,6 +11972,9 @@
     "session_recovery:settings:info": {
       "To disallow password reset, you must have a recovery method set up.": [
         "Untuk menghapus izin atur ulang sandi, Anda harus mengatur metode pemulihan."
+      ],
+      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
+        "Untuk meningkatkan keamanan akun dan melindungi data Anda, Anda dapat meminta pengaturan ulang kata sandi dari menu pengaturan akun pada aplikasi web."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -13576,6 +13588,9 @@
       ],
       "Password and keys": [
         "Kata sandi dan kunci"
+      ],
+      "Password reset settings": [
+        "Opsi pengaturan ulang kata sandi"
       ],
       "Pay invoice": [
         "Bayar tagihan"
