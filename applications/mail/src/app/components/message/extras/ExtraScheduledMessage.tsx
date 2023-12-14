@@ -72,10 +72,10 @@ const ExtraScheduledMessage = ({ message }: Props) => {
         onCompose({ type: ComposeTypes.existingDraft, existingDraft: message, fromUndo: false });
 
         if (location.pathname.includes(LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SCHEDULED])) {
-            const redirectToLoation = hasBit(mailSettings.ShowMoved, SHOW_MOVED.DRAFTS)
+            const redirectToLocation = hasBit(mailSettings.ShowMoved, SHOW_MOVED.DRAFTS)
                 ? MAILBOX_LABEL_IDS.ALL_DRAFTS
                 : MAILBOX_LABEL_IDS.DRAFTS;
-            history.push(LABEL_IDS_TO_HUMAN[redirectToLoation]);
+            history.push(`/${LABEL_IDS_TO_HUMAN[redirectToLocation]}`);
         }
     };
 
