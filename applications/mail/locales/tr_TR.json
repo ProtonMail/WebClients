@@ -710,10 +710,10 @@
       "Not saved": [
         "Kaydedilmemiş"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -3137,6 +3137,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } güncellendi.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Bu zamandaki ${ eventTitle } etkinliği iptal edildi."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "${ eventTitle } etkinliğine davet edildiniz\n${ eventDetailsText }"
       ]
@@ -3644,6 +3647,9 @@
       ],
       "You must set a name": [
         "Bir ad belirtmelisiniz"
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Yazılabilecek en fazla karakter sayısına ulaştınız. Lütfen iletinizi kısaltın."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Yakın zamanda yapılan bir parola sıfırlaması nedeniyle e-postalarınızın şifresi çözülemedi. Önceki parolanızı hatırlıyorsanız iletilerinize ulaşmak için ${ reActivateKeyLink }me işlemi yapabilirsiniz. ${ learnMoreLink }"
