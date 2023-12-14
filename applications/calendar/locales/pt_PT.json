@@ -151,6 +151,9 @@
       "Continue with Google": [
         "Continuar com o Google"
       ],
+      "Continue with Outlook": [
+        "Continuar com o Outlook"
+      ],
       "Copy address": [
         "Copiar endereço"
       ],
@@ -308,6 +311,9 @@
       ],
       "Import from Google": [
         "Importar do Google"
+      ],
+      "Import from Outlook": [
+        "Importar do Outlook"
       ],
       "Join calendar": [
         "Junte-se ao calendário"
@@ -774,6 +780,9 @@
       ]
     },
     "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus e ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } de armazenamento"
       ],
@@ -783,8 +792,23 @@
       "3 TB": [
         "3 TB"
       ],
+      "3,000+ servers across 65+ countries": [
+        "+3,000 servidores em +65 países"
+      ],
       "6 users": [
         "6 utilizadores"
+      ],
+      "Access content worldwide": [
+        "Aceda a conteúdo em todo o mundo"
+      ],
+      "Ad-blocker and malware protection": [
+        "Bloqueador de anúncios e proteção de malware"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Todas as funcionalidades ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_APP_NAME } pagas"
+      ],
+      "Extended version history": [
+        "Histórico de versão estendido"
       ],
       "High speed streaming": [
         "Streaming de alta velocidade"
@@ -810,6 +834,10 @@
     "bf2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclui o suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases Hide-my-email, partilha de calendário e muito mais."
+      ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui o suporte para 3 domínios de e-mail personalizados, ${ addresses } endereço de e-mail, 'aliases' ilimitados do Hide-my-email, partilha de calendário e muito mais.",
+        "Inclui suporte para 3 domínios de e-mail personalizados, ${ addresses } endereços de e-mail, 'aliases' ilimitados do Hide-my-email, partilha de calendário e muito mais."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui histórico de versões, partilha de ficheiros encriptados e muito mais."
@@ -2127,6 +2155,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "A encriptar e importar contactos... Pode levar alguns minutos. Quando o processo terminar, poderá fechar este diálogo."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Para importar via ficheiro CSV e VCF, certifique-se de que o ficheiro não excede ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contactos. Se o seu ficheiro for maior, divida-o em ficheiros mais pequenos. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contactos que está a importar já contém grupos. Reveja como esses grupos devem ser importados."
       ],
@@ -2142,6 +2173,9 @@
       "This can take a few minutes. Meanwhile, you can continue using Calendar as usual.": [
         "Isso pode levar alguns minutos. Entretanto, pode continuar a usar o calendário normalmente."
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Para importar os seus contactos do Google e Outlook, ${ easySwitchLink }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Arraste e largue para alterar a prioridade de união entre contactos. Desmarque os contactos que não deseja unir."
       ],
@@ -2150,6 +2184,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Pode marcar para eliminação os contactos que não deseja unir nem manter. A eliminação só ocorrerá depois de clicar no botão de união"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilize o assistente de importação Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2220,6 +2259,9 @@
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } foi actualizado.\n${ eventDetailsText }"
+      ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Esta ocorrência de ${ eventTitle } foi cancelada."
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Tem um convite para ${ eventTitle }\n${ eventDetailsText }"
@@ -2817,6 +2859,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Aplicação indisponível no momento"
+      ],
       "Error: ${ errorMessage }": [
         "Erro: ${ errorMessage }"
       ],
@@ -2826,11 +2871,17 @@
       "Oops, something went wrong": [
         "Ups. Algo correu mal"
       ],
+      "Open in browser": [
+        "Abrir no browser"
+      ],
       "Please refresh the page or try again later.": [
         "Por favor, actualize a página ou tente novamente mais tarde."
       ],
       "Something went wrong": [
         "Ocorreu um erro"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Para usar o ${ MAIL_APP_NAME } ou o ${ CALENDAR_APP_NAME }, mude para a versão web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Não é possível carregar esta página. Por favor, actualize a página ou verifique a sua ligação à Internet."
@@ -4036,6 +4087,9 @@
       "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
         "O organizador desta série de eventos não será notificado de que recusou o convite por não ser possível enviar e-mails do endereço convidado. Ainda assim, deseja eliminar todos os eventos desta série?"
       ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "O proprietário deste endereço desativou a encriptação ponta-a-ponta. Para poder enviar e-mails encriptados para este endereço, o proprietário deve reativar a encriptação ponta-a-ponta."
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta conta foi suspensa devido a uma potencial violação da política."
       ],
@@ -4257,6 +4311,11 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Parece que o fuso horário do seu sistema mudou para ${ timezone }. Deseja atualizar a sua preferência de fuso horário?"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Cor selecionada:"
       ]
     },
     "Info calendar search": {
@@ -5094,6 +5153,9 @@
       "Custom email domains": [
         "Domínios de e-mail personalizados"
       ],
+      "Custom snooze time": [
+        "Tempo de adiamento personalizado"
+      ],
       "Hide-my-email aliases": [
         "Aliases do Hide-my-email"
       ],
@@ -5119,6 +5181,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obtenha aliases ilimitados com SimpleLogin por ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Adie mensagens e seja relembrado quando quiser"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "O espaço de armazenamento é partilhado entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }"
@@ -5328,8 +5393,14 @@
       "Discover all ${ BRAND_NAME } services": [
         "Descubra todos os serviços de ${ BRAND_NAME }"
       ],
+      "Pick a theme": [
+        "Escolher um tema"
+      ],
       "Set up your organization": [
         "Defina a sua organização"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Utilize o selecionador de aplicação no canto superior esquerdo para aceder a todos os serviços ${ BRAND_NAME }:${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ PASS_SHORT_APP_NAME }"
       ]
     },
     "Option": {

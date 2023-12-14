@@ -5773,6 +5773,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Du hast ${ timeRemaining.inDays } Tag um dein Passwort zurücksetzen.",
         "Du hast ${ timeRemaining.inDays } Tage um dein Passwort zurücksetzen."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Du hast ${ timeRemaining.inHours } Stunde um dein Passwort zurücksetzen.",
+        "Du hast ${ timeRemaining.inHours } Stunden um dein Passwort zurücksetzen."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Du hast ${ timeRemaining.inMinutes } Minute um dein Passwort zurücksetzen.",
+        "Du hast ${ timeRemaining.inMinutes } Minuten um dein Passwort zurücksetzen."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Du hast ${ timeRemaining.inSeconds } Sekunde um dein Passwort zurücksetzen.",
+        "Du hast ${ timeRemaining.inSeconds } Sekunden um dein Passwort zurücksetzen."
       ]
     },
     "session_recovery:available:link": {

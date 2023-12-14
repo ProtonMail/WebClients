@@ -5747,6 +5747,9 @@
         "${ timeRemaining.inHours } heure",
         "${ timeRemaining.inHours } heures"
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "La demande de réinitialisation du mot de passe a été approuvée (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Rendez-vous sur l'appareil avec lequel vous vous êtes connecté (dans la session où la demande a été faite) pour changer votre mot de passe."
       ],
@@ -5758,8 +5761,30 @@
         "Cette autorisation expire dans ${ timeRemaining.inHours } heure.",
         "Cette autorisation expire dans ${ timeRemaining.inHours } heures."
       ],
+      "This permission expires soon": [
+        "Cette autorisation expire bientôt."
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Vous disposez de ${ boldDaysRemaining } pour modifier librement votre mot de passe pour le compte ${ boldEmail }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Vous pouvez maintenant modifier votre mot de passe pour le compte ${ boldEmail }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Vous disposez de ${ timeRemaining.inDays } jour pour réinitialiser votre mot de passe.",
+        "Vous disposez de ${ timeRemaining.inDays } jours pour réinitialiser votre mot de passe."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Vous disposez de ${ timeRemaining.inHours } heure pour réinitialiser votre mot de passe.",
+        "Vous disposez de ${ timeRemaining.inHours } heures pour réinitialiser votre mot de passe."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Vous disposez de ${ timeRemaining.inMinutes } minute pour réinitialiser votre mot de passe.",
+        "Vous disposez de ${ timeRemaining.inMinutes } minutes pour réinitialiser votre mot de passe."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Vous disposez de ${ timeRemaining.inSeconds } seconde pour réinitialiser votre mot de passe.",
+        "Vous disposez de ${ timeRemaining.inSeconds } secondes pour réinitialiser votre mot de passe."
       ]
     },
     "session_recovery:available:link": {
