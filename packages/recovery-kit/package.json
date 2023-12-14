@@ -4,9 +4,8 @@
     "scripts": {
         "check-types": "tsc",
         "lint": "eslint . --ext ts --quiet --cache",
-        "test": "jest",
-        "test:ci": "jest --coverage --runInBand --ci",
-        "test:watch": "jest --watch"
+        "test": "jest --coverage --runInBand --ci",
+        "test:dev": "jest --watch"
     },
     "dependencies": {
         "@pdfme/common": "^3.1.3",
