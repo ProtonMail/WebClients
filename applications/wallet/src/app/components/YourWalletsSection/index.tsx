@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
-import { Badge } from '@proton/components/components';
+import { Pill } from '@proton/atoms/Pill';
 
 import { BitcoinAmount } from '../../atoms';
 import { useBalanceDistribution } from '../../hooks/useBalanceDistribution';
@@ -37,11 +37,9 @@ export const YourWalletsSection = ({ wallets, onAddWallet }: Props) => {
                     className="light-gradient-card flex flex-column align-items-end w-custom h-custom mr-6 mt-4"
                     style={{ '--w-custom': '16rem', '--h-custom': '8.5rem' }}
                 >
-                    <div className="flex flex-row justify-space-between w-full mt-1">
+                    <div className="flex flex-row justify-space-between w-full">
                         <h3 className="text-lg">{c('Wallet Dashboard').t`Your checking`}</h3>
-                        <Badge className="mr-0 mt-0.5" type="warning">
-                            Lightning
-                        </Badge>
+                        <Pill color="#AD7406">Lightning</Pill>
                     </div>
 
                     <BitcoinAmount
@@ -60,11 +58,9 @@ export const YourWalletsSection = ({ wallets, onAddWallet }: Props) => {
                     className="light-gradient-card flex flex-column align-items-end w-custom h-custom mr-6 mt-4"
                     style={{ '--w-custom': '16rem', '--h-custom': '8.5rem' }}
                 >
-                    <div className="flex flex-row justify-space-between w-full mt-1">
+                    <div className="flex flex-row justify-space-between w-full">
                         <h3 className="text-lg">{c('Wallet Dashboard').t`Your saving`}</h3>
-                        <Badge className="mr-0 mt-0.5" type="info">
-                            OnChain
-                        </Badge>
+                        <Pill color="#12869F">OnChain</Pill>
                     </div>
 
                     <BitcoinAmount

@@ -2,24 +2,23 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { Pill } from '@proton/atoms/Pill';
 import {
-    Badge,
     Collapsible,
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
     Icon,
 } from '@proton/components/components';
-import { BadgeType } from '@proton/components/components/badge/Badge';
 
 import { WasmTxBuilder } from '../../../pkg';
 import { FeeSelectionModal } from './FeeSelectionModal';
 import { FeeRateNote, useOnChainFeesSelector } from './useOnChainFeesSelector';
 
-const labelColorByFeeRateNote: Record<FeeRateNote, BadgeType> = {
-    LOW: 'error',
-    HIGH: 'warning',
-    MODERATE: 'success',
+const labelColorByFeeRateNote: Record<FeeRateNote, string> = {
+    LOW: '#ffa79d',
+    HIGH: '#ffd50d',
+    MODERATE: '#d0ffb7',
 };
 
 const labelTextByFeeRateNote: Record<FeeRateNote, () => string> = {
@@ -64,12 +63,10 @@ export const OnChainFeesSelector = ({ txBuilder, updateTxBuilder }: Props) => {
                     >
                         <div className="flex flex-row">
                             <h3 className="text-rg text-semibold flex-1">{c('Wallet Send').t`Fees`}</h3>
-                            <Badge type={labelColorByFeeRateNote[feeRateNote]}>
+                            <Pill className="block mr-2" backgroundColor={labelColorByFeeRateNote[feeRateNote]}>
                                 {labelTextByFeeRateNote[feeRateNote]()}
-                            </Badge>
-                            {isRecommended && (
-                                <Badge className="mr-0" type="primary">{c('Wallet Send').t`Recommended`}</Badge>
-                            )}
+                            </Pill>
+                            {isRecommended && <Pill color="#1B1340">{c('Wallet Send').t`Recommended`}</Pill>}
                         </div>
                     </CollapsibleHeader>
                     <CollapsibleContent>
