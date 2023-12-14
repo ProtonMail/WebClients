@@ -1,4 +1,4 @@
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import {
     CompatibilityCheck,
@@ -27,9 +27,10 @@ import { AuthServiceProvider } from './Context/AuthServiceProvider';
 import { ClientContext, ClientProvider } from './Context/ClientProvider';
 import { ServiceWorkerProvider } from './ServiceWorker/ServiceWorkerProvider';
 import { StoreProvider } from './Store/StoreProvider';
+
 import { Lobby } from './Views/Lobby';
 import { Main } from './Views/Main';
-
+import { PaidLobby } from './Views/PaidLobby';
 import './app.scss';
 
 const generateOTP = ({ totpUri }: OtpRequest) => generateTOTPCode(totpUri);
@@ -74,10 +75,16 @@ export const App = () => {
                                                 <NavigationProvider>
                                                     <AuthServiceProvider>
                                                         <StoreProvider>
+                                                        <Switch>
+                                                            <Route
+                                                                path="/upgrade"
+                                                                render={() => ( <PaidLobby />)}
+                                                            />
                                                             <Route
                                                                 path="*"
                                                                 render={() => (loggedIn ? <Main /> : <Lobby />)}
                                                             />
+                                                            </Switch>
                                                             <Portal>
                                                                 <ModalsChildren />
                                                                 <NotificationsChildren />
