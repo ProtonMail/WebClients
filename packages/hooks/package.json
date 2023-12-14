@@ -4,8 +4,9 @@
     "scripts": {
         "check-types": "tsc",
         "lint": "eslint . --ext ts --quiet --cache",
-        "test": "jest --coverage --runInBand --ci",
-        "test:dev": "jest --watch"
+        "test": "jest",
+        "test:ci": "jest --coverage --runInBand --ci",
+        "test:watch": "jest --watch"
     },
     "dependencies": {
         "@testing-library/react": "^12.1.5",
