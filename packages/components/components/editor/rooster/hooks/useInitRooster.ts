@@ -61,6 +61,7 @@ const useInitRooster = ({
         iframeDocument.open();
         iframeDocument.write(`
         <head>
+            <meta name="darkreader-lock">
             <style>
                 ${iframeCss}
                 ${themeCSSVariables}
