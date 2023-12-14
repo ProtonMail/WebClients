@@ -17,6 +17,7 @@ import HeaderSize from '../Layout/HeaderSize';
 import SharedPageFooter from '../Layout/SharedPageFooter';
 import SharedPageHeader from '../Layout/SharedPageHeader';
 import SharedPageLayout from '../Layout/SharedPageLayout';
+import SharedPageTransferManager from '../TransferModal/SharedPageTransferManager';
 import { PublicLink } from '../interface';
 import SharedFileBrowser from './FileBrowser';
 
@@ -222,6 +223,7 @@ export default function SharedFolder({ token, rootLink }: Props) {
                     />
                 )}
                 <SharedFileBrowser {...folderView} onItemOpen={onItemOpen} items={fileBrowserItems} />
+                <SharedPageTransferManager rootItem={rootLink} />
             </SharedPageLayout>
             {renderUpsellFloatingModal}
         </FileBrowserStateProvider>
