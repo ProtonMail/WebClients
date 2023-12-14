@@ -9,8 +9,7 @@
         "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
         "lint": "eslint . src --ext .js,.ts,.tsx --quiet --cache",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
-        "test": "jest ",
-        "test:ci": "jest --runInBand --ci --logHeapUsage",
+        "test": "jest --runInBand --ci --logHeapUsage",
         "test:dev": "jest --watch --coverage=false --watchAll"
     },
     "dependencies": {

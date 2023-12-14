@@ -10,8 +10,7 @@
         "postinstall": "proton-pack config",
         "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone",
-        "test": "jest",
-        "test:ci": "jest --coverage --runInBand --ci",
+        "test": "jest --coverage --runInBand --ci",
         "test:dev": "jest --watch"
     },
     "dependencies": {
