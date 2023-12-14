@@ -1,12 +1,13 @@
 import { ReactNode } from 'react';
 
-import { APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
 import { Hamburger } from '../../components';
 import Header, { Props as HeaderProps } from '../../components/header/Header';
 import { TopNavbar, TopNavbarList, TopNavbarListItem, TopNavbarUpsell } from '../../components/topnavbar';
-import { useIsPaidUserCookie, useIsProtonUserCookie } from '../../hooks';
+import { useConfig, useIsPaidUserCookie, useIsProtonUserCookie } from '../../hooks';
 import { useTheme } from '../themes';
 
 interface Props extends HeaderProps {
@@ -43,11 +44,14 @@ const PrivateHeader = ({
     useIsPaidUserCookie();
     useIsProtonUserCookie();
 
+    const { APP_NAME } = useConfig();
     const theme = useTheme();
     const isProminent = theme.information.prominentHeader;
 
+    const isCalendarOnElectron = APP_NAME === APPS.PROTONCALENDAR && isElectronApp();
+
     return (
-        <Header className={clsx(isProminent && 'ui-prominent')}>
+        <Header className={clsx(isProminent && 'ui-prominent', isCalendarOnElectron && 'pl-16 md:pl-2')}>
             {!hideMenuButton && <Hamburger expanded={expanded} onToggle={onToggleExpand} />}
             {/* Handle actionArea in components itself rather than here */}
             <div className="flex-1">{actionArea}</div>

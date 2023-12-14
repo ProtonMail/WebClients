@@ -6,6 +6,7 @@ import { Href } from '@proton/atoms';
 import { ProtonLogo, PublicTopBanners, getAppVersion, useConfig } from '@proton/components';
 import ElectronDraggeableHeaderWrapper from '@proton/components/components/electron/ElectronDraggeableHeaderWrapper';
 import { APPS } from '@proton/shared/lib/constants';
+import { isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import clsx from '@proton/utils/clsx';
@@ -50,7 +51,10 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
                     <div className="md:hidden shrink-0">{onBack && <BackButton onClick={onBack} />}</div>
                     {hasDecoration ? (
                         <Href
-                            className="shrink-0 relative interactive-pseudo-protrude rounded interactive--no-background"
+                            className={clsx(
+                                'shrink-0 relative interactive-pseudo-protrude rounded interactive--no-background',
+                                isElectronOnMac() && 'pl-12 lg:pl-6'
+                            )}
                             href={APP_NAME === APPS.PROTONVPN_SETTINGS ? 'https://protonvpn.com ' : getStaticURL('')}
                         >
                             {protonLogoBrand}
