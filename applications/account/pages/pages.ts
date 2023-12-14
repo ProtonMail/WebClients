@@ -5,7 +5,7 @@ import { HrefLang, LocalizedPage } from './interface';
 
 export const getPages = async (): Promise<{ hreflangs: HrefLang[]; pages: LocalizedPage[] }> => {
     const program = path.resolve(
-        require.resolve('proton-account/package.json').replace('/package.json', ''),
+        require.resolve('proton-account/package.json').replace(`${path.sep}package.json`, ''),
         'pages/pages.child.ts'
     );
     const parameters: any[] = [];
