@@ -145,13 +145,19 @@ export const PauseList: VFC = () => {
                                 ))}
 
                                 <TableCell className="pass-pause-list--remove">
-                                    <button
-                                        className="button button-pill button-for-icon button-solid-weak"
-                                        onClick={() => deleteDisallowedUrl(url)}
-                                        aria-label={c('Action').t`Remove`}
-                                    >
-                                        <Icon name="cross" size={12} />
-                                    </button>
+                                    <div className="flex justify-end">
+                                        <Button
+                                            onClick={() => deleteDisallowedUrl(url)}
+                                            aria-label={c('Action').t`Remove`}
+                                            color="weak"
+                                            size="medium"
+                                            shape="solid"
+                                            icon
+                                            pill
+                                        >
+                                            <Icon name="cross" size={12} />
+                                        </Button>
+                                    </div>
                                 </TableCell>
                             </TableRow>
                         ))}
