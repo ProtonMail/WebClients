@@ -1,9 +1,7 @@
 import { serverTime } from '@proton/crypto';
-import { KT_DOMAINS, ctLogs, getBaseDomain } from '@proton/key-transparency';
+import { KT_DATA_VALIDITY_NUM_MONTHS, KT_DOMAINS, ctLogs, getBaseDomain } from '@proton/key-transparency';
 import { MONTH } from '@proton/shared/lib/constants';
 import { isIos11, isSafari11 } from '@proton/shared/lib/helpers/browser';
-
-const KT_DATA_VALIDITY_NUM_MONTHS = 6;
 
 export enum KtFeatureEnum {
     DISABLE,
