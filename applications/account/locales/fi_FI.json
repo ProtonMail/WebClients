@@ -4125,7 +4125,7 @@
         "Olet kuluttanut tilaukseesi sisältyvän käyttäkiintiön. Lisää uusia käyttäjiä päivittämällä tilauksesi."
       ],
       "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Sinun on aktivoitava organisaation avaimet. Ilman aktivointia et voi luoda tai käyttää muita kuin yksityisiä käyttäjiä."
+        "Sinun on aktivoitava organisaation avaimet. Ilman aktivointia et voi luoda tai käyttää ei-yksityisiä käyttäjiä."
       ],
       "You must privatize all users before generating new organization keys": [
         "Sinun on yksityistettävä kaikki käyttäjät ennen uusien organisaation avaimien luontia"
@@ -4135,6 +4135,9 @@
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "Sinulla on oltava oma verkkotunnus, jotta voit luoda SMTP-lähetystunnisteen."
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Olet saavuttanut merkkien enimmäismäärän. Lyhennä viestiäsi."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Tililläsi tai organisaatiollasi on erääntynyt lasku. Maksa kaikki maksamattomat laskut."
@@ -10359,6 +10362,17 @@
         "Tiimin hallinta"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Jatkaaksesi ${ MAIL_APP_NAME }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, päättyy ${ last4 }"
@@ -10392,6 +10406,9 @@
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Kattavaa yksityisyyttä ja turvaa kaikkien ${ BRAND_NAME }-palveluiden yhdistelmällä."
+      ],
+      "Early access to new apps and features": [
+        "Varhainen pääsy uusiin sovelluksiin ja ominaisuuksiin"
       ],
       "For next-level password management and identity protection.": [
         "Edistyneempään salasanojen hallintaan ja henkilöllisyyden suojaukseen."
@@ -10449,17 +10466,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Nykyisellä tilauksellasi nautit alennetusta etuhinnasta. Jos alennat tilisi, menetät etuhinnan, eikä se ole enää käytettävissä, jos joskus palaat tilaajaksi."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Muutoin pääsyä tililesi rajoitetaan ja aikanaan tilisi poistetaan käytöstä."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Jatkaaksesi ${ MAIL_APP_NAME }n käyttämistä premium-ominaisuuksilla, valitse tilaus ja maksutapa."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Kokeilujaksosi päättyy ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11805,6 +11811,9 @@
       "Changing organization password": [
         "Organisaation salasanan vaihtaminen"
       ],
+      "Creating or accessing non-private users": [
+        "Ei-yksityisten käyttäjien luominen ja käyttäminen"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Ylläpito-oikeuksiasi organisaatiossa on rajoitettu salasanan vaihdon seurauksena. Seuraavia toimintoja ei enää sallita:"
       ]
@@ -12087,6 +12096,9 @@
     "session_recovery:settings:info": {
       "To disallow password reset, you must have a recovery method set up.": [
         "Salasanan nollauksen estäminen edellyttää palautustavan määritystä."
+      ],
+      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
+        "Voit parantaa tilisi turvallisuutta ja suojata tietojasi pyytämällä salasanan nollausta verkkosovelluksen tiliasetuksissa."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -13732,6 +13744,9 @@
       ],
       "Password and keys": [
         "Salasana ja avaimet"
+      ],
+      "Password reset settings": [
+        "Salasanan nollauksen asetukset"
       ],
       "Pay invoice": [
         "Maksa lasku"
