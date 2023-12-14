@@ -26,6 +26,7 @@ type ServiceWorkerContextValue = {
 
 export const ServiceWorkerContext = createContext<ServiceWorkerContextValue>({ send: noop, on: noop, off: noop });
 export const ServiceWorkerClientID = uniqueId(16);
+export const ServiceWorkerEnabled = 'serviceWorker' in navigator;
 
 export const ServiceWorkerProvider: FC = ({ children }) => {
     const handlers = useRef<Map<ServiceWorkerMessageType, ServiceWorkerMessageHandler[]>>(new Map());
@@ -34,7 +35,7 @@ export const ServiceWorkerProvider: FC = ({ children }) => {
         () => ({
             send: (data) => {
                 const message: WithOrigin<ServiceWorkerMessage> = { ...data, origin: ServiceWorkerClientID };
-                navigator.serviceWorker.controller?.postMessage(message);
+                if (ServiceWorkerEnabled) navigator.serviceWorker.controller?.postMessage(message);
             },
             on: (type, handler) => {
                 const handlersForType = handlers.current.get(type) ?? [];
@@ -51,25 +52,27 @@ export const ServiceWorkerProvider: FC = ({ children }) => {
     );
 
     useEffect(() => {
-        navigator.serviceWorker
-            .register(
-                /* webpackChunkName: "pass.service-worker" */
-                new URL('./service-worker', import.meta.url),
-                { scope: `/${stripLeadingAndTrailingSlash(PUBLIC_PATH)}` }
-            )
-            .then(() => context.send({ type: 'ping' }))
-            .catch(() => logger.warn('[ServiceWorkerProvider] Could not register service worker'));
+        if (ServiceWorkerEnabled) {
+            navigator.serviceWorker
+                .register(
+                    /* webpackChunkName: "pass.service-worker" */
+                    new URL('./service-worker', import.meta.url),
+                    { scope: `/${stripLeadingAndTrailingSlash(PUBLIC_PATH)}` }
+                )
+                .then(() => context.send({ type: 'ping' }))
+                .catch(() => logger.warn('[ServiceWorkerProvider] Could not register service worker'));
 
-        const handleChannelMessage = (event: MessageEvent<WithOrigin<ServiceWorkerMessage>>) => {
-            try {
-                if (event.data.origin === ServiceWorkerClientID) return;
-                const handlersForType = handlers.current.get(event.data.type);
-                handlersForType?.forEach((handler) => handler(event.data));
-            } catch {}
-        };
+            const handleChannelMessage = (event: MessageEvent<WithOrigin<ServiceWorkerMessage>>) => {
+                try {
+                    if (event.data.origin === ServiceWorkerClientID) return;
+                    const handlersForType = handlers.current.get(event.data.type);
+                    handlersForType?.forEach((handler) => handler(event.data));
+                } catch {}
+            };
 
-        CLIENT_CHANNEL.addEventListener('message', handleChannelMessage);
-        return () => CLIENT_CHANNEL.removeEventListener('message', handleChannelMessage);
+            CLIENT_CHANNEL.addEventListener('message', handleChannelMessage);
+            return () => CLIENT_CHANNEL.removeEventListener('message', handleChannelMessage);
+        }
     }, []);
 
     return <ServiceWorkerContext.Provider value={context}>{children}</ServiceWorkerContext.Provider>;
