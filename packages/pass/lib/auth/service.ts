@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
-import { type Api, SessionLockStatus } from '@proton/pass/types';
+import { SessionLockStatus, type Api } from '@proton/pass/types';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
@@ -11,18 +11,18 @@ import noop from '@proton/utils/noop';
 
 import { type RefreshSessionData } from '../api/refresh';
 import {
+    consumeFork,
+    requestFork,
     type ConsumeForkPayload,
     type RequestForkOptions,
     type RequestForkResult,
-    consumeFork,
-    requestFork,
 } from './fork';
 import {
-    type AuthSession,
-    type PersistedAuthSession,
     encryptPersistedSession,
     isValidSession,
     resumeSession,
+    type AuthSession,
+    type PersistedAuthSession,
 } from './session';
 import type { SessionLock } from './session-lock';
 import {
@@ -61,7 +61,7 @@ export interface AuthServiceConfig {
     onUnauthorized?: (userID: Maybe<string>, localID: Maybe<number>, broadcast: boolean) => void;
     /** Called immediately after a fork has been successfully consumed. At this
      * point the user is not fully logged in yet. */
-    onForkConsumed?: (session: AuthSession, state: string) => void;
+    onForkConsumed?: (session: AuthSession, state: string) => MaybePromise<void>;
     /** Called when a fork could not be successfully consumed. This can happen
      * if the fork data is invalid */
     onForkInvalid?: () => void;
@@ -210,7 +210,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             try {
                 config.onAuthorize?.();
                 const session = await consumeFork({ api, payload, apiUrl });
-                config.onForkConsumed?.(session, payload.state);
+                await config.onForkConsumed?.(session, payload.state);
 
                 const loggedIn = await authService.login(session);
                 if (loggedIn) await authService.persistSession();
