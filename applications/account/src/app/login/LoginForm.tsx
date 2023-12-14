@@ -179,7 +179,7 @@ const LoginForm = ({
             if (code === API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SRP) {
                 onChangeAuthType(AuthType.SRP);
                 setPassword('');
-                throw e;
+                return;
             }
             handleError(e);
             throw e;
@@ -226,7 +226,7 @@ const LoginForm = ({
             const { code } = getApiError(e);
             if (code === API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SSO) {
                 onChangeAuthType(AuthType.ExternalSSO);
-                return handleSubmitExternalSSO();
+                return;
             }
             handleError(e);
             throw e;
