@@ -710,10 +710,10 @@
       "Not saved": [
         "No s'ha desat"
       ],
-      "OK": [
+      "Ok": [
         "D'acord"
       ],
-      "Ok": [
+      "OK": [
         "D'acord"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1395,7 +1395,7 @@
         "Accediu al contingut dels serveis de streaming com ara Netflix, Disney+, Prime Video i altres des de qualsevol lloc."
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
-        "Eviteu els bloquejos i la censura a Internet local amb la nostra xarxa global de servidors."
+        "Eviteu els bloquejos i la censura locals a Internet amb la nostra xarxa global de servidors."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclou suport per a 1 domini de correu electrònic personalitzat, 10 adreces de correu electrònic, 10 àlies hide-my-email, compartició de calendari i més."
@@ -4236,7 +4236,7 @@
         "Valor per defecte del sistema"
       ],
       "Theme font": [
-        "Tipus de lletra del tema"
+        "Família tipogràfica del tema"
       ]
     },
     "Font Size Default": {
@@ -4307,7 +4307,7 @@
         "Canvieu els ${ strongText } a la vostra adreça de ${ BRAND_NAME }"
       ],
       "Changed accounts": [
-        "S'han canviat els comptes."
+        "Comptes canviats"
       ],
       "Checklist complete": [
         "S'ha completat la llista de verificació"
@@ -5579,7 +5579,7 @@
         "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupName }."
       ],
       "Please use another browser or download the file.": [
-        "Utilitzeu un altre navegador o baixeu el fitxer."
+        "Utilitzeu un altre navegador o descarregueu el fitxer."
       ],
       "Please wait till your changes are synced with the server.": [
         "Espereu fins que els canvis s'hagin sincronitzat amb el servidor."
@@ -5717,13 +5717,13 @@
         "SimpleLogin proporciona una forma fàcil de crear inicis de sessió a llocs de tercers no confiables on no voleu revelar la vostra adreça de correu electrònic real."
       ],
       "Snoozed until  ${ dateString } at ${ formattedTime }": [
-        "Posposició fins ${ dateString } a les ${ formattedTime }"
+        "En posposició fins ${ dateString } a les ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
-        "Posposició fins avui a les ${ formattedTime }"
+        "En posposició fins avui a les ${ formattedTime }"
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
-        "Posposició fins demà a les ${ formattedTime }"
+        "En posposició fins demà a les ${ formattedTime }"
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Ho sentim, aquest missatge no existeix o ja ha expirat."
@@ -7141,7 +7141,7 @@
         "Posposa"
       ],
       "Snoozed": [
-        "Posposada"
+        "En posposició"
       ],
       "Spam": [
         "Correu brossa"
@@ -7538,7 +7538,7 @@
         "S'ha creat ${ Filter.Name }"
       ],
       "Block removed": [
-        "S'ha esborrat els bloqueig."
+        "S'ha esborrat el bloqueig."
       ],
       "Contact group created": [
         "Grup de contactes creat"
@@ -7975,7 +7975,7 @@
     },
     "Send email with encryption disabled": {
       "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
-        "Els contactes per a les adreces següents han desactivat l'encriptació d'extrem a extrem en el seu compte, de manera que les preferències d'encriptació corresponents s'han actualitzat en conseqüència:"
+        "Els contactes per a les adreces següents han desactivat el xifratge d'extrem a extrem en el seu compte, de manera que les preferències de xifratge corresponents s'han actualitzat en conseqüència:"
       ]
     },
     "Send email with errors": {

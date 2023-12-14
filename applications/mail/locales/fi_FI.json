@@ -710,10 +710,10 @@
       "Not saved": [
         "Tallentamaton"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -3644,6 +3644,9 @@
       ],
       "You must set a name": [
         "Nimi on asetettava"
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Olet saavuttanut merkkien enimmäismäärän. Lyhennä viestiäsi."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Viestiesi salausta ei voida purkaa taannoisen salasanan nollauksen vuoksi. Jos muistat edellisen salasanasi, voit ${ reActivateKeyLink } avataksesi viestisi. ${ learnMoreLink }"
