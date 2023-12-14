@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import clsx from '@proton/utils/clsx';
 
 import { Icon } from '../../components';
 import { useDocumentTitle } from '../../hooks';
@@ -14,6 +16,7 @@ interface Props {
 
 const StandardLoadErrorPage = ({ errorMessage }: Props) => {
     useDocumentTitle(c('Error message').t`Something went wrong`);
+    const isElectron = isElectronApp();
 
     useEffect(() => {
         const wasOffline = !navigator.onLine;
@@ -33,7 +36,7 @@ const StandardLoadErrorPage = ({ errorMessage }: Props) => {
     }, []);
 
     return (
-        <div className="h-full flex items-center pb-4 overflow-auto">
+        <div className={clsx('h-full flex items-center pb-4 overflow-auto', isElectron && 'bg-norm')}>
             <GenericError isNetworkError>
                 <div
                     className="text-weak text-sm text-center max-w-custom"
