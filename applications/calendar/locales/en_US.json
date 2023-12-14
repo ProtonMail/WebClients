@@ -54,6 +54,20 @@
         "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Calendar."
       ]
     },
+    "session_recovery:available:info": {
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "You have ${ timeRemaining.inHours } hour to reset your password.",
+        "You have ${ timeRemaining.inHours } hours to reset your password."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "You have ${ timeRemaining.inMinutes } minute to reset your password.",
+        "You have ${ timeRemaining.inMinutes } minutes to reset your password."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "You have ${ timeRemaining.inSeconds } second to reset your password.",
+        "You have ${ timeRemaining.inSeconds } seconds to reset your password."
+      ]
+    },
     "Title": {
       "We're setting up Calendar search": [
         "We're setting up calendar search"
