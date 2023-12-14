@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
-import { Badge, Label, Price, TextAreaTwo, Tooltip } from '@proton/components/components';
+import { Label, Price, TextAreaTwo, Tooltip } from '@proton/components/components';
 
 import { WasmAccount, WasmAddress, WasmPartiallySignedTransaction } from '../../../pkg';
 import { BitcoinAmount } from '../../atoms';
@@ -51,29 +51,29 @@ export const OnchainTransactionDetails = ({ from, account, psbt, onBack, onSignA
 
                 <ul className="list-unstyled my-2 p-0">
                     {/* Recipients */}
-                    {psbt.recipients.map((recipient, index) => {
-                        const address = recipient[0];
-                        return (
-                            <li className="flex flex-row w-full" key={`${recipient[0]}_${recipient[1]}_${index}`}>
-                                <Tooltip title={address}>
-                                    <span className="w-2/5 text-monospace">
-                                        {address.slice(0, 10)}...{address.slice(-5)}
-                                    </span>
-                                </Tooltip>
-                                <span className="block w-1/5">
-                                    {account.owns(new WasmAddress(address)) && (
-                                        <Badge type="info">{c('Wallet Send - review').t`Owned`}</Badge>
-                                    )}
-                                </span>
-                                <Price className="block w-1/5 color-hint" currency={'USD'}>
-                                    {toFiat(Number(recipient[1])).toFixed(2)}
-                                </Price>
-                                <BitcoinAmount className="block w-1/5" unit={BitcoinUnit.SATS}>
-                                    {Number(recipient[1])}
-                                </BitcoinAmount>
-                            </li>
-                        );
-                    })}
+                    {psbt.recipients
+                        .filter((recipient) => {
+                            const address = recipient[0];
+                            return !account.owns(new WasmAddress(address));
+                        })
+                        .map((recipient, index) => {
+                            const address = recipient[0];
+                            return (
+                                <li className="flex flex-row w-full" key={`${recipient[0]}_${recipient[1]}_${index}`}>
+                                    <Tooltip title={address}>
+                                        <span className="w-2/5 text-monospace">
+                                            {address.slice(0, 10)}...{address.slice(-5)}
+                                        </span>
+                                    </Tooltip>
+                                    <Price className="block w-1/5 color-hint" currency={'USD'}>
+                                        {toFiat(Number(recipient[1])).toFixed(2)}
+                                    </Price>
+                                    <BitcoinAmount className="block w-1/5" unit={BitcoinUnit.SATS}>
+                                        {Number(recipient[1])}
+                                    </BitcoinAmount>
+                                </li>
+                            );
+                        })}
 
                     {/* Fees */}
                     <li className="flex flex-row w-full mt-4 py-2 border-bottom border-top">
