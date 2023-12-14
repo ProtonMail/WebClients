@@ -2292,6 +2292,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } is bijgewerkt.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Het voorvallen van ${ eventTitle } is geannuleerd."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "U bent uitgenodigd voor ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -2894,6 +2897,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "App momenteel niet beschikbaar"
+      ],
       "Error: ${ errorMessage }": [
         "Fout: ${ errorMessage }"
       ],
@@ -2903,11 +2909,17 @@
       "Oops, something went wrong": [
         "Oeps, er is iets misgegaan"
       ],
+      "Open in browser": [
+        "Openen in de browser"
+      ],
       "Please refresh the page or try again later.": [
         "Ververs de pagina of probeer het later opnieuw."
       ],
       "Something went wrong": [
         "Er is iets fout gegaan"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Om ${ MAIL_APP_NAME } of ${ CALENDAR_APP_NAME } te gebruiken, wissel naar de webversie."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "We konden deze pagina niet laden. Ververs de pagina of controleer uw internetverbinding."
@@ -4113,6 +4125,9 @@
       "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
         "De organisator van deze serie afspraken zal niet worden geïnformeerd dat u de uitnodiging weigert omdat u geen e-mails kunt verzenden vanaf het uitgenodigde adres. Wilt u alle afspraken in deze serie toch verwijderen?"
       ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "De eigenaar van dit adres heeft end-to-end versleuteling uitgeschakeld. Om versleutelde berichten naar dit adres te sturen moet de eigenaar end-to-end versleuteling weer inschakelen."
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Dit account is opgeschort vanwege een potentiële schending van het beleid."
       ],
@@ -5176,6 +5191,9 @@
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
       ],
+      "Custom snooze time": [
+        "Aangepaste demptijd"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliassen"
       ],
@@ -5201,6 +5219,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Berichten dempen en ontvangen wanneer u wilt"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"

@@ -1021,7 +1021,7 @@
         "Administrer medlemmer"
       ],
       "Unable to create more calendar links": [
-        "Kunne ikke lage flere kalenderkoblinger"
+        "Kunne ikke opprette flere kalenderkoblinger"
       ],
       "Unable to share this calendar with more ${ BRAND_NAME } users": [
         "Kunne ikke dele denne kalenderen med flere ${ BRAND_NAME }-brukere"
@@ -1247,7 +1247,7 @@
         "Kjønn"
       ],
       "Geo": [
-        "Geo"
+        "Geolokalisering"
       ],
       "Language": [
         "Språk"
@@ -1300,7 +1300,7 @@
         "Mobil"
       ],
       "Other": [
-        "Annen"
+        "Annet"
       ],
       "Pager": [
         "Personsøker"
@@ -3703,6 +3703,9 @@
         "(${ totalFoldersCount } etikett)",
         "Alle (${ totalFoldersCount } etiketter)"
       ],
+      "All participants will get a cancellation email. Which event would you like to delete?": [
+        "Alle deltakere vil få en kansellerings-e-post. Hvilken hendelse vil du slette?"
+      ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Alle kontaktene dine blir importert, opptil en grense på ${ MAX_CONTACTS_PER_USER }.",
         "Alle kontaktene dine blir importert, opptil en grense på ${ MAX_CONTACTS_PER_USER }."
@@ -5286,7 +5289,7 @@
     },
     "Notification time input": {
       "at": [
-        "ved"
+        "kl."
       ]
     },
     "Notification type": {
@@ -5681,7 +5684,7 @@
         "Mobil"
       ],
       "Other": [
-        "Annen"
+        "Annet"
       ],
       "Pager": [
         "Personsøker"
@@ -5744,6 +5747,9 @@
         "${ timeRemaining.inHours } time",
         "${ timeRemaining.inHours } timer"
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Forespørsel om tilbakestilling av passord godkjent (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Vennligst gå til den påloggede enheten (i økten hvor forespørselen ble igangsatt) for å endre passordet ditt."
       ],
@@ -5755,8 +5761,30 @@
         "Denne tillatelsen utløper om ${ timeRemaining.inHours } time",
         "Denne tillatelsen utløper om ${ timeRemaining.inHours } timer"
       ],
+      "This permission expires soon": [
+        "Denne tillatelsen utløper snart"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Du kan nå endre passordet ditt for kontoen ${ boldEmail } fritt for ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Du kan nå endre passordet ditt for kontoen ${ boldEmail }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Du har ${ timeRemaining.inDays } dag på deg til å tilbakestille passordet ditt.",
+        "Du har ${ timeRemaining.inDays } dager på deg til å tilbakestille passordet ditt."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Du har ${ timeRemaining.inHours } time på deg til å tilbakestille passordet ditt.",
+        " Du har ${ timeRemaining.inHours } timer på deg til å tilbakestille passordet ditt."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Du har ${ timeRemaining.inMinutes } minutt på deg til å tilbakestille passordet ditt.",
+        " Du har ${ timeRemaining.inMinutes } minutter på deg til å tilbakestille passordet ditt."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Du har ${ timeRemaining.inSeconds } sekund på deg til å tilbakestille passordet ditt.",
+        " Du har ${ timeRemaining.inSeconds } sekunder på deg til å tilbakestille passordet ditt."
       ]
     },
     "session_recovery:available:link": {
