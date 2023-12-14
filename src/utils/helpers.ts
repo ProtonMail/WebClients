@@ -53,6 +53,7 @@ export const isHostMail = (host: string) => {
 
 export const isHostAllowed = (host: string, isPackaged: boolean) => {
     try {
+        log.info("isHostAllowed", host, isPackaged);
         const urls = getConfig(isPackaged).url;
         let finalURL = host;
         if (!finalURL.startsWith("https://")) {

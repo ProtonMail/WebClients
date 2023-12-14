@@ -17,9 +17,9 @@ interface Config {
 export const isBetaRelease = process.env.RELEASE === "beta";
 
 const localUrls = {
-    account: "https://account.bessemer.proton.pink",
-    mail: "https://mail.bessemer.proton.pink",
-    calendar: "https://calendar.bessemer.proton.pink",
+    account: "https://account.proton.local",
+    mail: "https://mail.proton.local",
+    calendar: "https://calendar.proton.local",
 };
 
 const devConfig: Config = {
