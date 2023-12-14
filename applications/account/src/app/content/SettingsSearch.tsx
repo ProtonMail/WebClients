@@ -58,8 +58,7 @@ const getSearchableItems = (routes: Routes, path: string, app: APP_NAMES): Searc
         const parentApp =
             parentKey === 'account' || parentKey === 'organization' ? app : getAppNameFromParentKey(parentKey);
 
-        // Only interested in account, organization, or app-level settings
-        if (parentApp !== app) {
+        if (parentRoute.available === false) {
             return [];
         }
 
@@ -144,9 +143,10 @@ const SettingsSearch = ({ routes, path, app }: Props) => {
             </div>
             <AutocompleteList anchorRef={containerRef.current ? containerRef : inputRef} {...suggestionProps}>
                 {filteredOptions.map(({ chunks, text, option }, index) => {
+                    const parent = option.in.join(' > ');
                     return (
                         <Option
-                            key={text}
+                            key={`${parent}-${text}-${option.to}`}
                             id={getOptionID(index)}
                             title={text}
                             value={option}
@@ -164,7 +164,7 @@ const SettingsSearch = ({ routes, path, app }: Props) => {
                                     <div>
                                         <Marks chunks={chunks}>{text}</Marks>
                                     </div>
-                                    <div className="color-weak text-sm">{option.in.join(' > ')}</div>
+                                    <div className="color-weak text-sm">{parent}</div>
                                 </div>
                             </div>
                         </Option>
