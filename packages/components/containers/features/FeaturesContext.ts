@@ -67,6 +67,7 @@ export enum FeatureCode {
     MailDisableE2EE = 'MailDisableE2EE',
     MailFeedbackEnabled = 'MailFeedbackEnabled',
     MailServiceWorker = 'MailServiceWorker',
+    NotificationInboxDesktopApp = 'NotificationInboxDesktopApp',
     NumAttachmentsWithoutEmbedded = 'NumAttachmentsWithoutEmbedded',
     NumberOfPreloadedConversations = 'NumberOfPreloadedConversations',
     OfferBlackFridayMail2022 = 'OfferBlackFridayMail2022',
