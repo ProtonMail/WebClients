@@ -141,7 +141,7 @@ export const useMessageHotkeys = (
             keyboardEvent.stopPropagation();
             keyboardEvent.preventDefault();
 
-            messageRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            messageRef.current?.scrollIntoView({ behavior: 'instant', block: 'start' });
 
             // FF has an issue when we propagate custom events
             // adding a timeout there ensure event is done when
