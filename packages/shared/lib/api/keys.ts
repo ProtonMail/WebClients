@@ -78,9 +78,14 @@ export const createAddressKeyRouteV2 = (data: CreateAddressKeyPayloadV2) => ({
     data,
 });
 
-interface ActiveAddressKeyPayload {
+export enum AddressActiveStatus {
+    INACTIVE = 0,
+    ACTIVE = 1,
+}
+
+export interface ActiveAddressKeyPayload {
     AddressKeyID: string;
-    Active: number;
+    Active: AddressActiveStatus;
 }
 
 interface UpdateAddressActiveKeysRoutePayload {
