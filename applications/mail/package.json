@@ -16,9 +16,10 @@
         "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --appMode=standalone",
-        "test": "jest --runInBand --logHeapUsage --forceExit",
+        "test": "jest --logHeapUsage --forceExit",
+        "test:ci": "jest --coverage --runInBand --ci --forceExit",
         "test:coverage": "jest --collectCoverage",
-        "test:dev": "jest --watch --coverage=false"
+        "test:watch": "jest --watch --coverage=false"
     },
     "dependencies": {
         "@babel/plugin-transform-runtime": "^7.23.4",

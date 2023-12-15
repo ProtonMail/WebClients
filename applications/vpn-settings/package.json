@@ -15,7 +15,8 @@
         "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "cross-env TS_NODE_PROJECT=\"../../tsconfig.webpack.json\" proton-pack dev-server --logical",
-        "test": "echo 123"
+        "test": "echo No test yet",
+        "test:ci": "echo No test yet"
     },
     "dependencies": {
         "@proton/components": "workspace:packages/components",
