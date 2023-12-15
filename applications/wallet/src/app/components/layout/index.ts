@@ -1,0 +1,1 @@
+export { PrivateWalletLayout } from './PrivateWalletLayout';

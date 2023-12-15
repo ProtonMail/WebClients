@@ -362,6 +362,11 @@ const MainContainer = () => {
                         <PassSettingsRouter passAppRoutes={routes.pass} redirect={redirect} />
                     </Suspense>
                 </Route>
+                <Route path={`/${walletSlug}`}>
+                    <Suspense fallback={<PrivateMainAreaLoading />}>
+                        <WalletSettingsRouter walletAppRoutes={routes.wallet} redirect={redirect} />
+                    </Suspense>
+                </Route>
                 {redirect}
             </Switch>
         </PrivateAppContainer>
