@@ -78,7 +78,7 @@ const normalizeName = /** @param {Logical} server */ (server) => {
     if (name) {
         let needsFreeSuffix = server.Tier === 0 && name.indexOf('-free') === -1;
 
-        name = name.replace(/^([a-zA-Z]{2}-)((?:[a-zA-Z]{2}-)?)(\d+)$/, (start, middle, end) => {
+        name = name.replace(/^([a-zA-Z]{2}-)((?:[a-zA-Z]{2}-)?)(\d+)$/, (_, start, middle, end) => {
             if (needsFreeSuffix) {
                 middle += 'free-';
             }
@@ -139,7 +139,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, onS
             );
             const blob = new Blob([buffer], { type: 'application/x-openvpn-profile' });
             const name = category === CATEGORY.COUNTRY ? ExitCountry.toLowerCase() : normalizeName({ Tier, Name });
-            downloadFile(blob, `${name}.${protocol}.ovpn`);
+            downloadFile(blob, `${name}.protonvpn.${protocol}.ovpn`);
         };
 
     return (
