@@ -28,7 +28,6 @@ export interface KTLocalStorageAPI {
 
 export interface SelfAuditState {
     userKeys: KeyPair[];
-    epoch: Epoch;
     lastSelfAudit: SelfAuditResult | undefined;
     addresses: {
         address: Address;
