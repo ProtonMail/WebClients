@@ -5,8 +5,9 @@
         "check-types": "tsc",
         "generate-schema-types": "json2ts -i 'json-schema-registry/observability/client/web*.schema.json' -o types/ --no-additionalProperties",
         "lint": "eslint . --ext ts --quiet --cache",
-        "test": "jest --coverage --runInBand --ci",
-        "test:dev": "jest --watch",
+        "test": "jest",
+        "test:ci": "jest --coverage --runInBand --ci",
+        "test:watch": "jest --watch",
         "update-schema-types": "rimraf json-schema-registry types && git clone $SCHEMA_REPOSITORY && yarn generate-schema-types"
     },
     "dependencies": {

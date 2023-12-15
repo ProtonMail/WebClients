@@ -9,7 +9,8 @@
         "check-types": "tsc",
         "lint": "eslint src --ext .ts --cache",
         "pretty": "prettier --write  $(find src -type f -name '*.ts')",
-        "test": "echo No tests yet"
+        "test": "echo No tests yet",
+        "test:ci": "echo No tests yet"
     },
     "dependencies": {
         "docx-preview": "^0.1.20"
