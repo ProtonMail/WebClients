@@ -1,15 +1,13 @@
 import { c, msgid } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { Pill } from '@proton/atoms/Pill';
-import {
-    Collapsible,
-    CollapsibleContent,
-    CollapsibleHeader,
-    CollapsibleHeaderIconButton,
-    Icon,
-} from '@proton/components/components';
+import { Button } from '@proton/atoms/Button/Button';
+import CircleLoader from '@proton/atoms/CircleLoader/CircleLoader';
+import Pill from '@proton/atoms/Pill/Pill';
+import Collapsible from '@proton/components/components/collapsible/Collapsible';
+import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
+import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
+import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
+import Icon from '@proton/components/components/icon/Icon';
 
 import { WasmTxBuilder } from '../../../pkg';
 import { FeeSelectionModal } from './FeeSelectionModal';
@@ -93,7 +91,9 @@ export const OnChainFeesSelector = ({ txBuilder, updateTxBuilder }: Props) => {
                                 shape="underline"
                                 onClick={() => openModal()}
                                 disabled={loadingFeeEstimation}
-                            >{c('Wallet Send').t`Modify`}</Button>
+                            >
+                                {c('Wallet Send').t`Modify`}
+                            </Button>
                         </div>
                     </CollapsibleContent>
                 </Collapsible>

@@ -9,17 +9,10 @@ export default defineConfig({
         globals: true,
         environment: 'jsdom',
         poolOptions: {
-            threads: { singleThread: true }, // canvas does not work with multithreading
+            threads: { singleThread: true },
         },
         reporters: ['basic'],
         setupFiles: './vitest.setup.ts',
-        // coverage: {
-        //   reporter: ['text', 'html'],
-        //   exclude: [
-        //     'node_modules/',
-        //     'src/setupTests.ts',
-        //   ],
-        // },
     },
     resolve: {
         alias: {
