@@ -166,7 +166,6 @@ export const compareVCardPropertyByPref = (a: VCardProperty, b: VCardProperty) =
     if (!isNaN(aPref) && !isNaN(bPref) && aPref !== bPref) {
         return aPref > bPref ? 1 : -1;
     }
-
     return compareVCardPropertyByUid(a, b);
 };
 
