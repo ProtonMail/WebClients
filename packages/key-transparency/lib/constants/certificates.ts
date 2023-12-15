@@ -1,13 +1,14 @@
 import { KT_CERTIFICATE_ISSUER } from './constants';
+import { MONTH } from '@proton/shared/lib/constants';
 
 /**
- * This file contains hardcoded data that becomes obsolete after KT_DATA_VALIDITY_NUM_MONTHS
- * have elapsed since the timestamp recorded in the ctLogs list. If the data expires
+ * This file contains hardcoded data that becomes obsolete after KT_DATA_VALIDITY_PERIOD
+ * has elapsed since the timestamp recorded in the ctLogs list. If the data expires
  * key transparency is disabled.
  * Thus, it is imperative to regularly update this data within specified intervals to ensure
  * the continuous operation of key transparency.
  */
-export const KT_DATA_VALIDITY_NUM_MONTHS = 6;
+export const KT_DATA_VALIDITY_PERIOD = 6 * MONTH;
 
 const letsEncryptCerts: string[] = [
     // ISRGRootX1:
@@ -35,7 +36,7 @@ export const rootCertificates: Map<KT_CERTIFICATE_ISSUER, string[]> = new Map([
 /**
  * The ct log list timestamp 'log_list_timestamp' is used to determine
  * the most recent update to the hardcoded key transparency certificate data in this file.
- * If this timestamp is older than KT_DATA_VALIDITY_NUM_MONTHS months, the key transparency feature is disabled.
+ * If this timestamp is older than KT_DATA_VALIDITY_PERIOD, the key transparency feature is disabled.
  * See comment at the top of this file.
  */
 export const ctLogs = {
