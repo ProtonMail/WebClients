@@ -9,7 +9,8 @@
         "check-types": "tsc",
         "lint": "eslint lib --ext .ts --quiet --cache",
         "pretty": "prettier --write $(find lib -type f -name '*.ts')",
-        "test": "mocha '**/*.spec.ts'"
+        "test": "mocha '**/*.spec.ts'",
+        "test:ci": "yarn test"
     },
     "dependencies": {
         "@proton/crypto": "workspace:packages/crypto",
