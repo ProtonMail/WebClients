@@ -10,7 +10,8 @@
         "lint": "eslint src fixtures --ext .ts --quiet --cache",
         "pretty": "prettier --write $(find src fixtures -type f -name '*.ts')",
         "test": "jest",
-        "test:dev": "jest --watch --coverage=false --watchAll"
+        "test:ci": "yarn test",
+        "test:watch": "jest --watch --coverage=false --watchAll"
     },
     "devDependencies": {
         "eslint": "^8.55.0",

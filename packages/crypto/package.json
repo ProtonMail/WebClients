@@ -9,7 +9,8 @@
         "check-types": "tsc",
         "lint": "eslint lib test --ext .js,.ts,tsx --quiet --cache",
         "pretty": "prettier --write $(find lib -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
-        "test": "karma start test/karma.conf.js"
+        "test": "karma start test/karma.conf.js",
+        "test:ci": "yarn test"
     },
     "dependencies": {
         "comlink": "^4.4.1",
