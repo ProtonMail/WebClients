@@ -4,7 +4,7 @@ module.exports = {
     env: {
         mocha: true,
     },
-    plugins: ['chai-friendly'],
+    plugins: ['chai-friendly', 'jasmine'],
     parserOptions: {
         tsconfigRootDir: __dirname,
         project: './tsconfig.json',
@@ -15,5 +15,6 @@ module.exports = {
         '@typescript-eslint/no-unused-expressions': 'off',
         'chai-friendly/no-unused-expressions': ['error', { allowShortCircuit: true }],
         'no-restricted-imports': 'off', // currently only used to guard against `pmcrypto` imports
+        'jasmine/no-focused-tests': 'error',
     },
 };
