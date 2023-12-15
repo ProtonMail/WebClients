@@ -2,9 +2,12 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Card } from '@proton/atoms/Card';
-import { Label, Price, TextAreaTwo, Tooltip } from '@proton/components/components';
+import { Button } from '@proton/atoms/Button/Button';
+import Card from '@proton/atoms/Card/Card';
+import Label from '@proton/components/components/label/Label';
+import Price from '@proton/components/components/price/Price';
+import Tooltip from '@proton/components/components/tooltip/Tooltip';
+import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 
 import { WasmAccount, WasmAddress, WasmPartiallySignedTransaction } from '../../../pkg';
 import { BitcoinAmount } from '../../atoms';
