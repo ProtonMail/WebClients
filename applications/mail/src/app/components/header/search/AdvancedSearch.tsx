@@ -257,8 +257,9 @@ const AdvancedSearch = ({
                             )}
                         >
                             <div className="md:flex-1">
-                                <Label className="advanced-search-label text-semibold" htmlFor="begin-date">{c('Label')
-                                    .t`From`}</Label>
+                                <Label className="advanced-search-label text-semibold" htmlFor="begin-date">{c(
+                                    'Label (begin date/advanced search)'
+                                ).t`From`}</Label>
                                 <DateInput
                                     placeholder={c('Placeholder').t`Start date`}
                                     id="begin-date"
@@ -268,8 +269,9 @@ const AdvancedSearch = ({
                                 />
                             </div>
                             <div className="md:flex-1">
-                                <Label className="advanced-search-label text-semibold" htmlFor="end-date">{c('Label')
-                                    .t`To`}</Label>
+                                <Label className="advanced-search-label text-semibold" htmlFor="end-date">{c(
+                                    'Label (end date/advanced search)'
+                                ).t`To`}</Label>
                                 <DateInput
                                     placeholder={c('Placeholder').t`End date`}
                                     id="end-date"
