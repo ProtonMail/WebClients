@@ -12,7 +12,7 @@ import { ImportFatalError } from '@proton/shared/lib/calendar/import/ImportFatal
 import { ImportFileError } from '@proton/shared/lib/calendar/import/ImportFileError';
 import {
     extractTotals,
-    getSupportedEvents,
+    getSupportedEventsOrErrors,
     parseIcs,
     sendImportErrorTelemetryReport,
     splitErrors,
@@ -135,27 +135,33 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
                     const canImportEventColor = isColorPerEventEnabled && hasPaidMail;
 
                     setModel({ ...model, loading: true });
-                    const [{ PrimaryTimezone: primaryTimezone }, { components, calscale, xWrTimezone, method }] =
-                        await Promise.all([getCalendarUserSettings(), parseIcs(fileAttached)]);
+                    const [
+                        { PrimaryTimezone: primaryTimezone },
+                        { components, prodId, calscale, xWrTimezone, method, hashedIcs },
+                    ] = await Promise.all([getCalendarUserSettings(), parseIcs(fileAttached)]);
                     const { errors, rest: parsed } = splitErrors(
-                        await getSupportedEvents({
+                        await getSupportedEventsOrErrors({
                             components,
                             method,
+                            prodId,
                             calscale,
                             xWrTimezone,
                             primaryTimezone,
                             canImportEventColor,
                         })
                     );
-
-                    void sendImportErrorTelemetryReport(api, errors);
-
-                    const filteredErrors = errors.filter(
+                    // ignore time zone errors
+                    const nonIgnoredErrors = errors.filter(
                         (error) =>
                             error instanceof ImportEventError && error.type !== IMPORT_EVENT_ERROR_TYPE.TIMEZONE_IGNORE
                     );
+                    sendImportErrorTelemetryReport({
+                        errors: nonIgnoredErrors,
+                        api,
+                        hash: hashedIcs,
+                    });
 
-                    const { hidden: hiddenErrors, visible: visibleErrors } = splitHiddenErrors(filteredErrors);
+                    const { hidden: hiddenErrors, visible: visibleErrors } = splitHiddenErrors(nonIgnoredErrors);
 
                     const totalToImport = parsed.length + hiddenErrors.length;
                     const totalErrors = visibleErrors.length;
