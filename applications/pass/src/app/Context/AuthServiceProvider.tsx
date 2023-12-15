@@ -159,9 +159,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 }
             },
 
-            onForkInvalid: () => {
-                history.replace('/');
-            },
+            onForkInvalid: () => history.replace('/'),
 
             onForkRequest: ({ url, state }) => {
                 sessionStorage.setItem(getStateKey(state), JSON.stringify({ url: redirectPath.current }));
@@ -171,10 +169,6 @@ export const AuthServiceProvider: FC = ({ children }) => {
             onSessionEmpty: async () => {
                 history.replace('/');
                 client.current.setStatus(AppStatus.UNAUTHORIZED);
-                if (getDefaultLocalID() !== undefined) {
-                    await auth.init.getState().pending;
-                    auth.init().catch(noop);
-                }
             },
 
             onSessionLocked: (localID, broadcast) => {
