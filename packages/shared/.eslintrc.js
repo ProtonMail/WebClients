@@ -1,6 +1,7 @@
 module.exports = {
     extends: ['@proton/eslint-config-proton'],
     parser: '@typescript-eslint/parser',
+    plugins: ['jasmine'],
     env: {
         jasmine: true,
     },
@@ -15,6 +16,7 @@ module.exports = {
                 ignore: ['design-system'],
             },
         ],
+        'jasmine/no-focused-tests': 'error',
     },
     ignorePatterns: ['.eslintrc.js'],
 };
