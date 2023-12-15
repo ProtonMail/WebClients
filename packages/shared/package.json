@@ -11,7 +11,8 @@
         "lint": "eslint lib test --ext .js,.ts,tsx --quiet --cache",
         "pretty": "prettier --write $(find lib -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "test": "NODE_ENV=test karma start test/karma.conf.js",
-        "testwatch": "npm test -- --auto-watch --no-single-run"
+        "test:ci": "yarn test",
+        "test:watch": "npm test -- --auto-watch --no-single-run"
     },
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",

@@ -10,7 +10,8 @@
         "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
         "lint": "eslint lib test --ext .js,.ts,tsx --quiet --cache",
         "pretty": "prettier --write $(find lib test -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
-        "test": "NODE_ENV=test karma start test/karma.conf.js"
+        "test": "NODE_ENV=test karma start test/karma.conf.js",
+        "test:ci": "yarn test"
     },
     "dependencies": {
         "@proton/components": "workspace:packages/components",
