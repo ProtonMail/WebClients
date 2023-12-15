@@ -1,7 +1,7 @@
 import { enUS } from 'date-fns/locale';
 
-import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 import { ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
+import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 import truncate from '@proton/utils/truncate';
 
 import { ICAL_CALSCALE, ICAL_METHOD, MAX_CHARS_API } from '../../lib/calendar/constants';
@@ -9,7 +9,7 @@ import { getSupportedEvent } from '../../lib/calendar/icsSurgery/vevent';
 import {
     extractSupportedEvent,
     getComponentIdentifier,
-    getSupportedEvents,
+    getSupportedEventsOrErrors,
     parseIcs,
 } from '../../lib/calendar/import/import';
 import { parse, parseWithRecoveryAndMaybeErrors } from '../../lib/calendar/vcal';
@@ -1029,6 +1029,7 @@ END:VEVENT`;
             calendarTzid: tzid,
             hasXWrTimezone: true,
             guessTzid: 'Europe/Zurich',
+            prodId: '',
         });
         expect(supportedEvent).toEqual({
             component: 'vevent',
@@ -1067,6 +1068,7 @@ END:VEVENT`;
             calendarTzid: tzid,
             hasXWrTimezone: true,
             guessTzid: 'Europe/Zurich',
+            prodId: '',
         });
         expect(supportedEvent).toEqual({
             component: 'vevent',
@@ -1104,6 +1106,7 @@ END:VEVENT`;
             calendarTzid: tzid,
             hasXWrTimezone: true,
             guessTzid: 'Europe/Zurich',
+            prodId: '',
         });
         expect(supportedEvent).toEqual({
             component: 'vevent',
@@ -1138,6 +1141,7 @@ END:VEVENT`;
             vcalComponent: event,
             hasXWrTimezone: false,
             guessTzid: 'Europe/Zurich',
+            prodId: '',
         });
         expect(supportedEvent).toEqual({
             component: 'vevent',
@@ -1170,6 +1174,7 @@ END:VEVENT`;
             vcalComponent: event,
             hasXWrTimezone: false,
             guessTzid: 'Europe/Zurich',
+            prodId: '',
         });
         expect(Object.keys(supportedEvent)).toContain('dtstamp');
     });
@@ -1198,6 +1203,7 @@ END:VEVENT`;
             calendarTzid: tzid,
             hasXWrTimezone: true,
             guessTzid: 'Europe/Zurich',
+            prodId: '',
         });
         expect(supportedEvent).toEqual({
             component: 'vevent',
@@ -1247,6 +1253,7 @@ END:VEVENT`;
             vcalComponent: event,
             hasXWrTimezone: false,
             guessTzid: 'America/New_York',
+            prodId: '',
         });
 
         expect(supportedEvent).toEqual({
@@ -1271,7 +1278,7 @@ END:VEVENT`;
     });
 });
 
-describe('getSupportedEvents', () => {
+describe('getSupportedEventsOrErrors', () => {
     describe('should guess a time zone to localize floating dates', () => {
         const generateVcalSetup = (
             primaryTimezone = 'Asia/Seoul',
@@ -1334,29 +1341,31 @@ END:VCALENDAR`;
         });
 
         it('when there is both x-wr-timezone and single vtimezone (use x-wr-timezone)', async () => {
-            const [, supportedEvent] = await getSupportedEvents(
+            const [timeZoneIgnoredError, supportedEvent] = await getSupportedEventsOrErrors(
                 generateVcalSetup('Asia/Seoul', 'Europe/Brussels', ['America/New_York'])
             );
+            expect(timeZoneIgnoredError).toEqual(new Error('Time zone component ignored') as ImportEventError);
             expect(supportedEvent).toEqual(localizedVevent('Europe/Brussels'));
         });
 
         it('when there is a single vtimezone and no x-wr-timezone', async () => {
-            const [, supportedEvent] = await getSupportedEvents(
+            const [timeZoneIgnoredError, supportedEvent] = await getSupportedEventsOrErrors(
                 generateVcalSetup('Asia/Seoul', '', ['Europe/Vilnius'])
             );
+            expect(timeZoneIgnoredError).toEqual(new Error('Time zone component ignored') as ImportEventError);
             expect(supportedEvent).toEqual(localizedVevent('Europe/Vilnius'));
         });
 
         it('when there is a single vtimezone and x-wr-timezone is not supported', async () => {
-            const [, supportedEvent] = await getSupportedEvents(
+            const [timeZoneIgnoredError, supportedEvent] = await getSupportedEventsOrErrors(
                 generateVcalSetup('Asia/Seoul', 'Moon/Tranquility', ['Europe/Vilnius'])
             );
-
+            expect(timeZoneIgnoredError).toEqual(new Error('Time zone component ignored') as ImportEventError);
             expect(supportedEvent).toEqual(new Error('Calendar time zone not supported') as ImportEventError);
         });
 
         it('when there is no vtimezone nor x-wr-timezone (fall back to primary time zone)', async () => {
-            const [supportedEvent] = await getSupportedEvents(generateVcalSetup('Asia/Seoul'));
+            const [supportedEvent] = await getSupportedEventsOrErrors(generateVcalSetup('Asia/Seoul'));
             expect(supportedEvent).toEqual({
                 component: 'vevent',
                 uid: { value: 'test-uid' },
@@ -1401,9 +1410,11 @@ END:VCALENDAR`;
         });
 
         it('when there is no x-wr-timezone and more than one vtimezone (fall back to primary time zone)', async () => {
-            const [, , supportedEvent] = await getSupportedEvents(
+            const [timeZoneIgnoredError1, timeZoneIgnoredError2, supportedEvent] = await getSupportedEventsOrErrors(
                 generateVcalSetup('Asia/Seoul', '', ['Europe/Vilnius', 'America/New_York'])
             );
+            expect(timeZoneIgnoredError1).toEqual(new Error('Time zone component ignored') as ImportEventError);
+            expect(timeZoneIgnoredError2).toEqual(new Error('Time zone component ignored') as ImportEventError);
             expect(supportedEvent).toEqual({
                 component: 'vevent',
                 uid: { value: 'test-uid' },
@@ -1546,6 +1557,8 @@ END:VCALENDAR`;
             calscale: ICAL_CALSCALE.GREGORIAN,
             xWrTimezone: undefined,
             components: [expectedVtimezone, expectedVevent],
+            prodId: '-//github.com/rianjs/ical.net//NONSGML ical.net 4.0//EN',
+            hashedIcs: '0bfab119cf9b05996ee91ecd21bc47d90214a98a',
         });
     });
 

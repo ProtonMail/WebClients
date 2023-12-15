@@ -24,6 +24,11 @@ export enum TelemetryCalendarEvents {
     enable_encrypted_search = 'enable_encrypted_search',
 }
 
+export enum TelemetryIcsSurgeryEvents {
+    import = 'import',
+    invitation = 'invitation',
+}
+
 export enum TelemetryAccountSignupBasicEvents {
     flow_started = 'flow_started',
     account_created = 'account_created',
@@ -74,20 +79,15 @@ export enum TelemetryMailSelectAllEvents {
     banner_mark_as_unread = 'banner_mark_as_unread',
 }
 
-export enum TelemetryIcsSurgery {
-    import = 'import',
-    invitation = 'invitation',
-}
-
 export type TelemetryEvents =
     | TelemetrySimpleLoginEvents
     | TelemetryCalendarEvents
+    | TelemetryIcsSurgeryEvents
     | TelemetryAccountSignupBasicEvents
     | TelemetryAccountSignupEvents
     | TelemetryKeyTransparencyErrorEvents
     | TelemetryMailEvents
-    | TelemetryMailSelectAllEvents
-    | TelemetryIcsSurgery;
+    | TelemetryMailSelectAllEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;

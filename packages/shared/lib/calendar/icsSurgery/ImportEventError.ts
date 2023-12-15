@@ -53,7 +53,7 @@ const getErrorMessage = (errorType: IMPORT_EVENT_ERROR_TYPE, externalError?: Err
         return c('Error importing event').t`Custom time zone`;
     }
     if (errorType === IMPORT_EVENT_ERROR_TYPE.TIMEZONE_IGNORE) {
-        return 'Timezone component ignored';
+        return 'Time zone component ignored';
     }
     if (errorType === IMPORT_EVENT_ERROR_TYPE.VEVENT_INVALID) {
         return c('Error importing event').t`Invalid event`;
@@ -115,41 +115,33 @@ const getErrorMessage = (errorType: IMPORT_EVENT_ERROR_TYPE, externalError?: Err
     return '';
 };
 
-export class ImportEventError extends Error {
+export interface EventComponentIdentifiers {
     component: string;
-
     componentId: string;
+    prodId: string;
+    domain: string;
+}
+
+export class ImportEventError extends Error {
+    componentIdentifiers: EventComponentIdentifiers;
 
     type: IMPORT_EVENT_ERROR_TYPE;
 
     externalError?: Error;
 
-    prodId?: string;
-
-    domain?: string;
-
     constructor({
         errorType,
-        component,
-        componentId,
+        componentIdentifiers,
         externalError,
-        prodId,
-        domain,
     }: {
         errorType: IMPORT_EVENT_ERROR_TYPE;
-        component: string;
-        componentId: string;
+        componentIdentifiers: EventComponentIdentifiers;
         externalError?: Error;
-        prodId?: string;
-        domain?: string;
     }) {
         super(getErrorMessage(errorType, externalError));
         this.type = errorType;
-        this.component = component;
-        this.componentId = componentId;
+        this.componentIdentifiers = componentIdentifiers;
         this.externalError = externalError;
-        this.prodId = prodId;
-        this.domain = domain;
         Object.setPrototypeOf(this, ImportEventError.prototype);
     }
 }
