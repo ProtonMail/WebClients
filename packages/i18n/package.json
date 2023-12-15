@@ -11,7 +11,8 @@
     "scripts": {
         "lint": "eslint lib index.js config.js --ext .js --quiet --cache",
         "pretty": "prettier --write  $(find lib/ index.js -type f -name '*.js')",
-        "test": "./test/test-linter.sh* && ./test/test-validator.sh"
+        "test": "./test/test-linter.sh* && ./test/test-validator.sh",
+        "test:ci": "yarn test"
     },
     "dependencies": {
         "chalk": "^4.1.2",
