@@ -1,6 +1,5 @@
 import { serverTime } from '@proton/crypto';
-import { KT_DATA_VALIDITY_NUM_MONTHS, KT_DOMAINS, ctLogs, getBaseDomain } from '@proton/key-transparency';
-import { MONTH } from '@proton/shared/lib/constants';
+import { KT_DATA_VALIDITY_PERIOD, KT_DOMAINS, ctLogs, getBaseDomain } from '@proton/key-transparency';
 import { isIos11, isSafari11 } from '@proton/shared/lib/helpers/browser';
 
 export enum KtFeatureEnum {
@@ -46,7 +45,7 @@ export const isKTActive = (feature: KT_FF) => {
 
     const ctLogTimestamp = new Date(ctLogs.log_list_timestamp);
     const keyTransparencyDataAge = serverTime().getTime() - ctLogTimestamp.getTime();
-    if (keyTransparencyDataAge > KT_DATA_VALIDITY_NUM_MONTHS * MONTH) {
+    if (keyTransparencyDataAge > KT_DATA_VALIDITY_PERIOD) {
         return false;
     }
 
