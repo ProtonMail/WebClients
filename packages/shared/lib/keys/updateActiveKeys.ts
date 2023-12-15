@@ -1,4 +1,4 @@
-import { updateAddressActiveKeysRoute } from '../api/keys';
+import { ActiveAddressKeyPayload, AddressActiveStatus, updateAddressActiveKeysRoute } from '../api/keys';
 import { Address, Api, DecryptedKey, KeyTransparencyVerify } from '../interfaces';
 import { getActiveKeys, getNormalizedActiveKeys } from './getActiveKeys';
 import { getInactiveKeys } from './getInactiveKeys';
@@ -13,8 +13,8 @@ export const hasActiveKeysMismatch = (address: Address, decryptedKeys: Decrypted
         // If there are no decrypted keys or no skl, do not update.
         return false;
     }
-    const activeKeysIDs = new Set(decryptedKeys.map((key) => key.ID));
-    return address.Keys.some((key) => key.Active && !activeKeysIDs.has(key.ID));
+    const activeKeysIDs = new Set(decryptedKeys.map(({ ID }) => ID));
+    return address.Keys.some(({ Active, ID }) => Active && !activeKeysIDs.has(ID));
 };
 
 /**
@@ -37,16 +37,16 @@ export const updateActiveKeys = async (
         address,
         keyTransparencyVerify
     );
-    const activeKeysPayload = normalizedActiveKeys.map((activeKey) => {
+    const activeKeysPayload = normalizedActiveKeys.map<ActiveAddressKeyPayload>(({ ID }) => {
         return {
-            AddressKeyID: activeKey.ID,
-            Active: 1,
+            AddressKeyID: ID,
+            Active: AddressActiveStatus.ACTIVE,
         };
     });
-    const inactiveKeysPayload = inactiveKeys.map(({ Key }) => {
+    const inactiveKeysPayload = inactiveKeys.map<ActiveAddressKeyPayload>(({ Key }) => {
         return {
             AddressKeyID: Key.ID,
-            Active: 0,
+            Active: AddressActiveStatus.INACTIVE,
         };
     });
     await api(
