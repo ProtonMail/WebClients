@@ -228,7 +228,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         bareName: 'Wallet',
         clientID: 'web-wallet',
         icon: 'brand-proton',
-        settingsSlug: '',
+        settingsSlug: 'wallet',
     },
     [APPS.PROTONDOCS]: {
         publicPath: '',
