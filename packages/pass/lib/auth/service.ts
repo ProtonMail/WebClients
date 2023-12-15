@@ -99,7 +99,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
     const { api, authStore } = config;
 
     const authService = {
-        init: asyncLock((options?: { forceLock: boolean }) => {
+        init: asyncLock(async (options?: { forceLock: boolean }) => {
             logger.info(`[AuthService] Initialization start`);
             return config.onInit(options).catch((err) => {
                 logger.warn(`[AuthService] Initialization failure`, err);
