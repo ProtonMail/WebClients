@@ -33,10 +33,10 @@ const getComponentText = (component: string) => {
 
 const getErrorIdentifierText = (error: ImportEventError) => {
     const shortUID = truncateMore({
-        string: error.componentId,
+        string: error.componentIdentifiers.componentId,
         charsToDisplay: MAX_UID_CHARS_DISPLAY,
     });
-    return `${getComponentText(error.component)} ${shortUID}`;
+    return `${getComponentText(error.componentIdentifiers.component)} ${shortUID}`;
 };
 
 const ErrorDetail = ({ error, ...rest }: { error: ImportEventError }) => {
@@ -62,7 +62,7 @@ const ErrorDetails = ({ errors, summary = c('Info on errors').t`Click for detail
             <Summary>{summary}</Summary>
             <Bordered className="rounded">
                 {errors.map((error, i) => (
-                    <ErrorDetail error={error} key={error.componentId + i.toString()} />
+                    <ErrorDetail error={error} key={error.componentIdentifiers.componentId + i.toString()} />
                 ))}
             </Bordered>
         </Details>

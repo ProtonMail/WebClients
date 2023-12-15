@@ -1,8 +1,8 @@
 import { MAX_CHARS_API } from '../../lib/calendar/constants';
 import {
     generateVeventHashUID,
-    getDomainFromUID,
     getHasLegacyHashUID,
+    getNaiveDomainFromUID,
     getOriginalUID,
     getSupportedUID,
 } from '../../lib/calendar/helper';
@@ -120,16 +120,32 @@ describe('getHasLegacyHashUID', () => {
     });
 });
 
-describe('getDomainFromUID', () => {
-    it('should return the domain', () => {
-        const domain = 'proton.me';
-        const uid = `something@${domain}`;
-        expect(getDomainFromUID(uid)).toEqual(domain);
+describe('getNaiveDomainFromUID', () => {
+    it('should return the domain when the uid has the expected format', () => {
+        const uids = [
+            'wETnJu3LPvN66KXRDJMYFxmq77Ys@proton.me',
+            'qkbndaqtgkuj4nfr21adr86etk@google.com',
+            '2022-01-04GB-SCT1027lieuregion@www.officeholidays.com',
+        ];
+        const expected = ['proton.me', 'google.com', 'www.officeholidays.com'];
+
+        expect(uids.map((uid) => getNaiveDomainFromUID(uid))).toEqual(expected);
+    });
+
+    it("should return the domain when the uid has multiple @'s", () => {
+        const uids = ['9O@8@8yk@google.com'];
+        const expected = ['google.com'];
+
+        expect(uids.map((uid) => getNaiveDomainFromUID(uid))).toEqual(expected);
+    });
+
+    it('should return an empty string when the uid has a Proton legacy format', () => {
+        expect(getNaiveDomainFromUID('proton-calendar-350095ea-4368-26f0-4fc9-60a56015b02e')).toEqual('');
     });
 
     it('should return an empty string for the domain', () => {
-        expect(getDomainFromUID('')).toEqual('');
-        expect(getDomainFromUID('something')).toEqual('');
-        expect(getDomainFromUID('something@')).toEqual('');
+        expect(getNaiveDomainFromUID('')).toEqual('');
+        expect(getNaiveDomainFromUID('something')).toEqual('');
+        expect(getNaiveDomainFromUID('something@')).toEqual('');
     });
 });

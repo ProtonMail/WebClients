@@ -243,7 +243,8 @@ export const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, legacyUid,
         if (!getIsProtonUID(uid)) {
             try {
                 const supportedRecurrenceId = getLinkedDateTimeProperty({
-                    component: 'vevent',
+                    // dummy identifiers since we're doing nothing with a potential error
+                    componentIdentifiers: { component: '', componentId: '', domain: '', prodId: '' },
                     property: recurrenceId,
                     linkedIsAllDay: !!parentEvent.FullDay,
                     linkedTzid: parentEvent.StartTimezone,
