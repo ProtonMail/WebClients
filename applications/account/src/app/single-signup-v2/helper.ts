@@ -446,8 +446,8 @@ export const getUserInfo = async ({
     const subscriptionData = await (() => {
         const optionsWithSubscriptionDefaults = {
             ...options,
-            cycle: subscription.Cycle || options.cycle,
             // TODO: make this more generic
+            cycle: signupParameters.cycle || subscription.Cycle || options.cycle,
             currency: signupParameters.currency || subscription.Currency || options.currency,
             coupon: subscription.CouponCode || options.coupon,
         };
