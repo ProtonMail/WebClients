@@ -1,6 +1,13 @@
 import { serverTime } from '@proton/crypto';
 import { getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
-import { Api, KTLocalStorageAPI, SaveSKLToLS, SelfAuditState, UploadMissingSKL } from '@proton/shared/lib/interfaces';
+import {
+    Api,
+    GetLatestEpoch,
+    KTLocalStorageAPI,
+    SaveSKLToLS,
+    SelfAuditState,
+    UploadMissingSKL,
+} from '@proton/shared/lib/interfaces';
 
 import { getSelfAuditInterval } from '../../helpers';
 import { SelfAuditResult } from '../../interfaces';
@@ -17,13 +24,16 @@ export const selfAudit = async (
     api: Api,
     ktLSAPI: KTLocalStorageAPI,
     saveSKLToLS: SaveSKLToLS,
-    uploadMissingSKL: UploadMissingSKL
+    uploadMissingSKL: UploadMissingSKL,
+    getLatestEpoch: GetLatestEpoch
 ): Promise<SelfAuditResult> => {
+    const epoch = await getLatestEpoch(true);
+
     const userPrivateKeys = state.userKeys.map(({ privateKey }) => privateKey);
 
     const ownEmails = state.addresses.map(({ address }) => address.Email);
 
-    const localStorageAuditResults = await checkLSBlobs(userID, userPrivateKeys, ktLSAPI, state.epoch, api);
+    const localStorageAuditResults = await checkLSBlobs(userID, userPrivateKeys, ktLSAPI, epoch, api);
 
     const localStorageAuditResultsOwnAddress = localStorageAuditResults.filter(({ email }) =>
         ownEmails.includes(email)
@@ -40,7 +50,7 @@ export const selfAudit = async (
                     address.address,
                     state.userKeys,
                     address.addressKeys,
-                    state.epoch,
+                    epoch,
                     saveSKLToLS,
                     api,
                     uploadMissingSKL
