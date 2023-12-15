@@ -18,7 +18,7 @@ export const isKTActive = (feature: KT_FF) => {
     //  - BigInt is not supported (it is needed for VRF verification);
     //  - BigInt is only partially implemented and does not support -- (it is needed for VRF verification)
     //  - the hardcoded KT certificate data is older than 6 months.
-    //  - the server time compared to the client time is off for more than 24 hours -- (UI warning is shown to prevent attacks)
+    //  - the server time compared to the client time is off by more than 24 hours -- (UI warning is shown to prevent attacks)
     if (feature === undefined || feature === KtFeatureEnum.DISABLE) {
         return false;
     }
