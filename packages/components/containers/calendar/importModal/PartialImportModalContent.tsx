@@ -17,7 +17,9 @@ interface Props {
 const PartialImportModalContent = ({ model }: Props) => {
     const { fileAttached, visibleErrors, failure } = model;
     const { totalToImport } = extractTotals(model);
-    const totalEventsDiscarded = visibleErrors.filter((e) => e.component === 'vevent').length;
+    const totalEventsDiscarded = visibleErrors.filter(
+        ({ componentIdentifiers: { component } }) => component === 'vevent'
+    ).length;
     const totalEvents = totalToImport + totalEventsDiscarded;
 
     const learnMore = failure ? undefined : getKnowledgeBaseUrl(IMPORT_CALENDAR_UNSUPPORTED_FAQ_URL);
