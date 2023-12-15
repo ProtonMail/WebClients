@@ -126,6 +126,7 @@ const MainContainer = () => {
         FeatureCode.ProtonSentinel,
         FeatureCode.ProtonSentinelUpsell,
         FeatureCode.OrgTwoFactor,
+        FeatureCode.NotificationInboxDesktopApp,
     ]);
 
     const referralProgramFeature = getFeature(FeatureCode.ReferralProgram);
@@ -136,7 +137,11 @@ const MainContainer = () => {
     const isProtonSentinelFeatureEnabled = getFeature(FeatureCode.ProtonSentinel).feature?.Value === true;
     const isProtonSentinelUpsellEnabled = getFeature(FeatureCode.ProtonSentinelUpsell).feature?.Value === true;
     const isOrgTwoFactorEnabled = getFeature(FeatureCode.OrgTwoFactor).feature?.Value === true;
+    const isNotifInboxDesktopAppOn = getFeature(FeatureCode.NotificationInboxDesktopApp).feature?.Value === true;
+
     const isEmailForwardingEnabled = useFlag('EmailForwarding') || incomingAddressForwardings.length > 0;
+
+    const isElectronDisabled = useFlag('DisableElectronMail');
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -165,6 +170,8 @@ const MainContainer = () => {
         isProtonSentinelUpsellEnabled,
         isOrgTwoFactorEnabled,
         isEmailForwardingEnabled,
+        isElectronDisabled,
+        isNotifInboxDesktopAppOn,
     });
 
     useEffect(() => {
