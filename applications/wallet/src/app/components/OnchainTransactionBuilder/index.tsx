@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Card from '@proton/atoms/Card/Card';
-import { CircleLoader } from '@proton/atoms/CircleLoader';
+import CircleLoader from '@proton/atoms/CircleLoader/CircleLoader';
 
 import { Selector } from '../../atoms/Selector';
 import { WalletWithAccountsWithBalanceAndTxs } from '../../types';
