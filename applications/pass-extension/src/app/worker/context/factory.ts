@@ -1,6 +1,7 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { createActivationService } from 'proton-pass-extension/app/worker/services/activation';
 import { createAliasService } from 'proton-pass-extension/app/worker/services/alias';
+import { createApiProxyService } from 'proton-pass-extension/app/worker/services/api-proxy';
 import {
     clearSessionLockAlarm,
     createAuthService,
@@ -8,7 +9,6 @@ import {
 } from 'proton-pass-extension/app/worker/services/auth';
 import { createAutoFillService } from 'proton-pass-extension/app/worker/services/autofill';
 import { createAutoSaveService } from 'proton-pass-extension/app/worker/services/autosave';
-import { createCacheProxyService } from 'proton-pass-extension/app/worker/services/cache-proxy';
 import { createExportService } from 'proton-pass-extension/app/worker/services/export';
 import { createFormTrackerService } from 'proton-pass-extension/app/worker/services/form.tracker';
 import { createI18nService } from 'proton-pass-extension/app/worker/services/i18n';
@@ -119,7 +119,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
                     context.service.onboarding.reset();
                     context.service.telemetry?.stop();
                     context.service.autofill.clearTabsBadgeCount();
-                    context.service.cacheProxy.clear?.().catch(noop);
+                    context.service.apiProxy.clear?.().catch(noop);
 
                     void context.service.storage.session.clear();
                     void context.service.storage.local.clear();
@@ -185,9 +185,9 @@ export const createWorkerContext = (config: ProtonConfig) => {
             }),
             activation: createActivationService(),
             alias: createAliasService(),
+            apiProxy: createApiProxyService(),
             autofill: createAutoFillService(),
             autosave: createAutoSaveService(),
-            cacheProxy: createCacheProxyService(),
             export: createExportService(),
             formTracker: createFormTrackerService(),
             i18n: createI18nService(),
@@ -234,7 +234,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
 
     context.service.i18n.init().catch(noop);
     context.service.onboarding.init().catch(noop);
-    context.service.cacheProxy.clean?.().catch(noop);
+    context.service.apiProxy.clean?.().catch(noop);
 
     if (ENV === 'development') {
         WorkerMessageBroker.registerMessage(WorkerMessageType.DEBUG, ({ payload }) => {
@@ -243,7 +243,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
                     context.service.storage.getState().storageFull = true;
                     return true;
                 case 'update_trigger':
-                    context.service.activation.onUpdateAvailable({ version: getExtensionVersion() });
+                    void context.service.activation.onUpdateAvailable({ version: getExtensionVersion() });
                     return true;
             }
 
