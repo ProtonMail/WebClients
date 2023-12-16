@@ -5,7 +5,7 @@ import Card from '@proton/atoms/Card/Card';
 import CircleLoader from '@proton/atoms/CircleLoader/CircleLoader';
 
 import { Selector } from '../../atoms/Selector';
-import { WalletWithAccountsWithBalanceAndTxs } from '../../types';
+import { useBlockchainContext } from '../../contexts';
 import { WalletType } from '../../types/api';
 import { OnChainFeesSelector } from '../OnchainFeesSelector';
 import { OnchainTransactionAdvancedOptions } from '../OnchainTransactionAdvancedOptions';
@@ -18,10 +18,11 @@ import './index.scss';
 
 interface Props {
     defaultWalletId?: number;
-    wallets: WalletWithAccountsWithBalanceAndTxs[];
 }
 
-export const OnchainTransactionBuilder = ({ defaultWalletId, wallets }: Props) => {
+export const OnchainTransactionBuilder = ({ defaultWalletId }: Props) => {
+    const { wallets } = useBlockchainContext();
+
     const {
         selectedWallet,
         selectedAccount,
@@ -39,7 +40,7 @@ export const OnchainTransactionBuilder = ({ defaultWalletId, wallets }: Props) =
         handleSignAndSend,
         loadindBroadcast,
         unitByRecipient,
-    } = useOnchainTransactionBuilder(wallets, defaultWalletId);
+    } = useOnchainTransactionBuilder(defaultWalletId);
 
     const [walletSelectorLabel, accountSelectorLabel] = [
         c('Wallet Send').t`Send from wallet`,
@@ -84,7 +85,7 @@ export const OnchainTransactionBuilder = ({ defaultWalletId, wallets }: Props) =
                     label={walletSelectorLabel}
                     selected={selectedWallet?.WalletID}
                     onSelect={handleSelectWallet}
-                    options={wallets.map((wallet) => ({ value: wallet.WalletID, label: wallet.Name }))}
+                    options={wallets?.map((wallet) => ({ value: wallet.WalletID, label: wallet.Name })) ?? []}
                 />
 
                 {selectedWallet?.Type === WalletType.OnChain && (

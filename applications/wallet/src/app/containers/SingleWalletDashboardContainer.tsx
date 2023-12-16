@@ -2,16 +2,13 @@ import React from 'react';
 import { Redirect, useParams } from 'react-router-dom';
 
 import { BalanceOverview, DashboardSideContent, ExploreProtonWalletSection } from '../components';
-import { WalletWithAccountsWithBalanceAndTxs } from '../types';
+import { useBlockchainContext } from '../contexts';
 
-interface Props {
-    wallets: WalletWithAccountsWithBalanceAndTxs[];
-}
-
-export const SingleWalletDashboardContainer = ({ wallets }: Props) => {
+export const SingleWalletDashboardContainer = () => {
     const { walletId } = useParams<{ walletId: string }>();
 
-    const wallet = wallets.find(({ WalletID }) => WalletID === Number(walletId));
+    const { wallets } = useBlockchainContext();
+    const wallet = wallets?.find(({ WalletID }) => WalletID === Number(walletId));
 
     if (!wallet) {
         return <Redirect to={'/wallets'} />;

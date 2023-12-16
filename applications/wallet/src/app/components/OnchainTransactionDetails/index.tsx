@@ -11,7 +11,7 @@ import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 
 import { WasmAccount, WasmAddress, WasmPartiallySignedTransaction } from '../../../pkg';
 import { BitcoinAmount } from '../../atoms';
-import { BitcoinUnit } from '../../types';
+import { BitcoinUnitEnum } from '../../types';
 import { toFiat } from '../../utils';
 
 interface Props {
@@ -71,7 +71,7 @@ export const OnchainTransactionDetails = ({ from, account, psbt, onBack, onSignA
                                     <Price className="block w-1/5 color-hint" currency={'USD'}>
                                         {toFiat(Number(recipient[1])).toFixed(2)}
                                     </Price>
-                                    <BitcoinAmount className="block w-1/5" unit={BitcoinUnit.SATS}>
+                                    <BitcoinAmount className="block w-1/5" unit={BitcoinUnitEnum.SAT}>
                                         {Number(recipient[1])}
                                     </BitcoinAmount>
                                 </li>
@@ -85,7 +85,7 @@ export const OnchainTransactionDetails = ({ from, account, psbt, onBack, onSignA
                         <Price className="block w-1/5 color-hint" currency={'USD'}>
                             {toFiat(Number(psbt.total_fees)).toFixed(2)}
                         </Price>
-                        <BitcoinAmount className="block w-1/5" unit={BitcoinUnit.SATS}>
+                        <BitcoinAmount className="block w-1/5" unit={BitcoinUnitEnum.SAT}>
                             {Number(psbt.total_fees)}
                         </BitcoinAmount>
                     </li>
@@ -97,7 +97,7 @@ export const OnchainTransactionDetails = ({ from, account, psbt, onBack, onSignA
                         <Price className="block w-1/5 color-hint" currency={'USD'}>
                             {toFiat(Number(totalAmount)).toFixed(2)}
                         </Price>
-                        <BitcoinAmount className="block w-1/5" unit={BitcoinUnit.SATS}>
+                        <BitcoinAmount className="block w-1/5" unit={BitcoinUnitEnum.SAT}>
                             {Number(totalAmount)}
                         </BitcoinAmount>
                     </li>

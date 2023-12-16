@@ -1,5 +1,5 @@
 import { WasmAccount, WasmBalance, WasmSimpleTransaction, WasmUtxo } from '../../pkg';
-import { Wallet as ApiWallet, WalletAccount } from './api';
+import { Wallet, WalletAccount } from './api';
 
 export type AccountWithBlockchainData = WalletAccount & {
     balance: WasmBalance;
@@ -8,7 +8,7 @@ export type AccountWithBlockchainData = WalletAccount & {
     wasmAccount: WasmAccount;
 };
 
-export type WalletWithAccountsWithBalanceAndTxs = ApiWallet & {
+export type WalletWithAccountsWithBalanceAndTxs = Wallet & {
     accounts: AccountWithBlockchainData[];
 };
 
@@ -17,12 +17,8 @@ export type BlockchainAccountRecord = Partial<Record<string, AccountWithBlockcha
 export type BlockchainWalletRecord = Partial<
     Record<
         string,
-        ApiWallet & {
+        Wallet & {
             accounts: BlockchainAccountRecord;
         }
     >
 >;
-
-export type WalletWithAccounts = ApiWallet & {
-    accounts: WalletAccount[];
-};

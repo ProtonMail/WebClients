@@ -7,20 +7,21 @@ import { Card } from '@proton/atoms/Card';
 import { Pill } from '@proton/atoms/Pill';
 
 import { BitcoinAmount } from '../../atoms';
+import { useBlockchainContext } from '../../contexts';
 import { useBalanceDistribution } from '../../hooks/useBalanceDistribution';
-import { BitcoinUnit, WalletWithAccountsWithBalanceAndTxs } from '../../types';
+import { BitcoinUnitEnum } from '../../types';
 import { WalletType } from '../../types/api';
 
 interface Props {
-    wallets: WalletWithAccountsWithBalanceAndTxs[];
     onAddWallet: () => void;
 }
 
 // TODO: change this when wallet settings API is ready
 const fiatCurrency = 'USD';
-const bitcoinUnit = BitcoinUnit.BTC;
+const bitcoinUnit = BitcoinUnitEnum.BTC;
 
-export const YourWalletsSection = ({ wallets, onAddWallet }: Props) => {
+export const YourWalletsSection = ({ onAddWallet }: Props) => {
+    const { wallets } = useBlockchainContext();
     const distribution = useBalanceDistribution(wallets);
 
     const lightningBalance = distribution[WalletType.Lightning];
@@ -34,8 +35,8 @@ export const YourWalletsSection = ({ wallets, onAddWallet }: Props) => {
                 <Card
                     data-testid="lightning-balance-card"
                     rounded
-                    className="light-gradient-card flex flex-column align-items-end w-custom h-custom mr-6 mt-4"
-                    style={{ '--w-custom': '16rem', '--h-custom': '8.5rem' }}
+                    className="light-gradient-card flex flex-column align-items-end w-custom mr-6 mt-4 py-3"
+                    style={{ '--w-custom': '16rem' }}
                 >
                     <div className="flex flex-row justify-space-between w-full">
                         <h3 className="text-lg">{c('Wallet Dashboard').t`Your checking`}</h3>
@@ -45,7 +46,7 @@ export const YourWalletsSection = ({ wallets, onAddWallet }: Props) => {
                     <BitcoinAmount
                         unit={bitcoinUnit}
                         fiat={fiatCurrency}
-                        className="mt-4 text-2xl"
+                        className="mt-auto text-2xl"
                         fiatClassName="mb-1"
                     >
                         {lightningBalance ?? 0}
@@ -55,8 +56,8 @@ export const YourWalletsSection = ({ wallets, onAddWallet }: Props) => {
                 <Card
                     data-testid="onchain-balance-card"
                     rounded
-                    className="light-gradient-card flex flex-column align-items-end w-custom h-custom mr-6 mt-4"
-                    style={{ '--w-custom': '16rem', '--h-custom': '8.5rem' }}
+                    className="light-gradient-card flex flex-column align-items-end w-custom mr-6 mt-4 py-3"
+                    style={{ '--w-custom': '16rem' }}
                 >
                     <div className="flex flex-row justify-space-between w-full">
                         <h3 className="text-lg">{c('Wallet Dashboard').t`Your saving`}</h3>
@@ -66,7 +67,7 @@ export const YourWalletsSection = ({ wallets, onAddWallet }: Props) => {
                     <BitcoinAmount
                         unit={bitcoinUnit}
                         fiat={fiatCurrency}
-                        className="mt-4 text-2xl"
+                        className="mt-auto text-2xl"
                         fiatClassName="mb-1"
                     >
                         {onchainBalance ?? 0}

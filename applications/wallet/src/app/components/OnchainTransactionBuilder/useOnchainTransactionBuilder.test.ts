@@ -3,19 +3,20 @@ import { act, renderHook } from '@testing-library/react-hooks';
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import { mockUseNotifications } from '@proton/testing/lib/vitest';
 
-import { walletsWithAccountsWithBalanceAndTxs } from '../../tests';
-import { BitcoinUnit } from '../../types';
+import { mockUseBlockchainContext, walletsWithAccountsWithBalanceAndTxs } from '../../tests';
+import { BitcoinUnitEnum } from '../../types';
 // import { getAccountBalance } from '../../utils';
 import { useOnchainTransactionBuilder } from './useOnchainTransactionBuilder';
 
 describe.skip('useOnchainTransactionBuilder', () => {
     beforeEach(() => {
         mockUseNotifications();
+        mockUseBlockchainContext();
     });
 
     describe('handleSelectWallet', () => {
         it('should set `selectedWallet`', () => {
-            const { result } = renderHook(() => useOnchainTransactionBuilder(walletsWithAccountsWithBalanceAndTxs));
+            const { result } = renderHook(() => useOnchainTransactionBuilder());
 
             act(() => result.current.handleSelectWallet({ value: 1 } as SelectChangeEvent<number>));
             expect(result.current.selectedWallet).toStrictEqual(walletsWithAccountsWithBalanceAndTxs[1]);
@@ -23,7 +24,7 @@ describe.skip('useOnchainTransactionBuilder', () => {
 
         describe("when some recipients had balance allocated and newly selected wallet's balance is below cumulated", () => {
             it('should allocate new balance and then set remaining amounts to 0', () => {
-                const { result } = renderHook(() => useOnchainTransactionBuilder(walletsWithAccountsWithBalanceAndTxs));
+                const { result } = renderHook(() => useOnchainTransactionBuilder());
 
                 // wallet #1 / account #2 balance is 11,783,999
                 act(() => result.current.handleSelectAccount({ value: 9 } as SelectChangeEvent<number>));
@@ -73,7 +74,7 @@ describe.skip('useOnchainTransactionBuilder', () => {
 
     describe('handleSelectAccount', () => {
         it('should set `selectedAccount`', () => {
-            const { result } = renderHook(() => useOnchainTransactionBuilder(walletsWithAccountsWithBalanceAndTxs));
+            const { result } = renderHook(() => useOnchainTransactionBuilder());
 
             act(() => result.current.handleSelectAccount({ value: 9 } as SelectChangeEvent<number>));
             expect(result.current.selectedAccount).toStrictEqual(walletsWithAccountsWithBalanceAndTxs[0].accounts[1]);
@@ -82,7 +83,7 @@ describe.skip('useOnchainTransactionBuilder', () => {
 
     describe('addRecipient', () => {
         it('should push a new empty recipient to `recipients`', () => {
-            const { result } = renderHook(() => useOnchainTransactionBuilder(walletsWithAccountsWithBalanceAndTxs));
+            const { result } = renderHook(() => useOnchainTransactionBuilder());
             act(() => result.current.addRecipient());
 
             // Don't check uuid to avoid flakiness
@@ -104,7 +105,7 @@ describe.skip('useOnchainTransactionBuilder', () => {
 
     describe('removeRecipient', () => {
         it('should remove recipient at given index', () => {
-            const { result } = renderHook(() => useOnchainTransactionBuilder(walletsWithAccountsWithBalanceAndTxs));
+            const { result } = renderHook(() => useOnchainTransactionBuilder());
             act(() => result.current.addRecipient());
             act(() => result.current.addRecipient());
             act(() => result.current.addRecipient());
@@ -118,7 +119,7 @@ describe.skip('useOnchainTransactionBuilder', () => {
 
         describe("when recipient doesn't exist at index", () => {
             it('should do nothing', () => {
-                const { result } = renderHook(() => useOnchainTransactionBuilder(walletsWithAccountsWithBalanceAndTxs));
+                const { result } = renderHook(() => useOnchainTransactionBuilder());
 
                 // const before = { ...result.current };
                 act(() => result.current.removeRecipient(4));
@@ -131,14 +132,14 @@ describe.skip('useOnchainTransactionBuilder', () => {
 
     describe('updateRecipient', () => {
         it('should update recipient at given index', () => {
-            const { result } = renderHook(() => useOnchainTransactionBuilder(walletsWithAccountsWithBalanceAndTxs));
+            const { result } = renderHook(() => useOnchainTransactionBuilder());
             act(() => result.current.addRecipient());
             act(() => result.current.addRecipient());
             act(() => result.current.addRecipient());
 
             // FIXME: to replace by spied function on txBuilder when wasm test are fixed
             // expect(result.current.recipients).toHaveLength(4);
-            // act(() => result.current.updateRecipient(2, { address: 'bc1....helloworld', unit: BitcoinUnit.BTC }));
+            // act(() => result.current.updateRecipient(2, { address: 'bc1....helloworld', unit: BitcoinUnitEnum.BTC }));
 
             // expect(result.current.recipients).toMatchObject([
             //     {
@@ -166,10 +167,12 @@ describe.skip('useOnchainTransactionBuilder', () => {
 
         describe("when recipient doesn't exist at index", () => {
             it('should do nothing', () => {
-                const { result } = renderHook(() => useOnchainTransactionBuilder(walletsWithAccountsWithBalanceAndTxs));
+                const { result } = renderHook(() => useOnchainTransactionBuilder());
 
                 // const before = { ...result.current };
-                act(() => result.current.updateRecipient(4, { address: 'bc1....helloworld', unit: BitcoinUnit.SATS }));
+                act(() =>
+                    result.current.updateRecipient(4, { address: 'bc1....helloworld', unit: BitcoinUnitEnum.SAT })
+                );
 
                 // FIXME: to replace by spied function on txBuilder when wasm test are fixed
                 // expect(result.current.recipients).toStrictEqual(before.recipients);
@@ -180,10 +183,7 @@ describe.skip('useOnchainTransactionBuilder', () => {
     describe('when `defaultWalletId` is provided', () => {
         it('should select the associated wallet by default', () => {
             const { result } = renderHook(() =>
-                useOnchainTransactionBuilder(
-                    walletsWithAccountsWithBalanceAndTxs,
-                    walletsWithAccountsWithBalanceAndTxs[1].WalletID
-                )
+                useOnchainTransactionBuilder(walletsWithAccountsWithBalanceAndTxs[1].WalletID)
             );
 
             expect(result.current.selectedWallet).toStrictEqual(walletsWithAccountsWithBalanceAndTxs[1]);

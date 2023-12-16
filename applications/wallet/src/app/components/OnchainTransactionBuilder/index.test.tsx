@@ -4,7 +4,7 @@ import { vi } from 'vitest';
 
 import { OnchainTransactionBuilder } from '.';
 import { WasmTxBuilder } from '../../../pkg';
-import { walletsWithAccountsWithBalanceAndTxs } from '../../tests';
+import { mockUseBlockchainContext, walletsWithAccountsWithBalanceAndTxs } from '../../tests';
 import * as useOnchainTransactionBuilderModule from './useOnchainTransactionBuilder';
 
 describe('OnchainTransactionBuilder', () => {
@@ -19,6 +19,8 @@ describe('OnchainTransactionBuilder', () => {
     const [testAccount] = testWallet.accounts;
 
     beforeEach(() => {
+        mockUseBlockchainContext();
+
         helper = {
             selectedWallet: testWallet,
             selectedAccount: testAccount,
@@ -43,7 +45,7 @@ describe('OnchainTransactionBuilder', () => {
 
     describe('when a wallet is selected', () => {
         it('should correctly call handler', async () => {
-            render(<OnchainTransactionBuilder wallets={walletsWithAccountsWithBalanceAndTxs} />);
+            render(<OnchainTransactionBuilder />);
 
             const walletSelector = screen.getByTestId('wallet-selector');
             await act(() => userEvent.click(walletSelector));
@@ -68,7 +70,7 @@ describe('OnchainTransactionBuilder', () => {
                 selectedAccount: testAccount,
             });
 
-            render(<OnchainTransactionBuilder wallets={walletsWithAccountsWithBalanceAndTxs} />);
+            render(<OnchainTransactionBuilder />);
         });
 
         it('should display account selector', () => {

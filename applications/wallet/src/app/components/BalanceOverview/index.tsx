@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import clsx from '@proton/utils/clsx';
 
 import { BitcoinAmount } from '../../atoms';
-import { BitcoinUnit, WalletWithAccountsWithBalanceAndTxs } from '../../types';
+import { BitcoinUnitEnum, WalletWithAccountsWithBalanceAndTxs } from '../../types';
 import { DoughnutChart } from '../charts/DoughnutChart';
 import { LineChart } from '../charts/LineChart';
 import { WelcomeCard } from './WelcomeCard';
@@ -13,20 +13,20 @@ import { useBalanceOverview } from './useBalanceOverview';
 
 // TODO: change this when wallet settings API is ready
 const fiatCurrency = 'USD';
-const bitcoinUnit = BitcoinUnit.BTC;
+const bitcoinUnit = BitcoinUnitEnum.BTC;
 
 interface SingleWalletBalanceOverviewProps {
-    wallet: WalletWithAccountsWithBalanceAndTxs;
+    wallet?: WalletWithAccountsWithBalanceAndTxs;
 }
 
 interface ManyWalletsBalanceOverviewProps {
-    wallets: WalletWithAccountsWithBalanceAndTxs[];
+    wallets?: WalletWithAccountsWithBalanceAndTxs[];
 }
 
 type Props = SingleWalletBalanceOverviewProps | ManyWalletsBalanceOverviewProps;
 
 export const BalanceOverview = (props: Props) => {
-    const data = 'wallet' in props ? props.wallet : props.wallets;
+    const data = 'wallet' in props ? props.wallet : 'wallets' in props ? props.wallets : undefined;
 
     const {
         totalBalance,

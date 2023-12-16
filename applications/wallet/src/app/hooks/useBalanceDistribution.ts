@@ -3,7 +3,7 @@ import { groupBy } from 'lodash';
 import { WalletWithAccountsWithBalanceAndTxs } from '../types';
 import { WalletType } from '../types/api';
 
-export const useBalanceDistribution = (wallets: WalletWithAccountsWithBalanceAndTxs[]) => {
+export const useBalanceDistribution = (wallets?: WalletWithAccountsWithBalanceAndTxs[]) => {
     const walletsGroupedByKind = groupBy(wallets, ({ Type }) => Type);
     return Object.entries(walletsGroupedByKind).reduce((acc: Partial<Record<WalletType, number>>, [kind, wallets]) => {
         return {

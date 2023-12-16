@@ -13,7 +13,6 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { SECOND } from '@proton/shared/lib/constants';
 
 import { Selector } from '../../atoms/Selector';
-import { WalletWithAccountsWithBalanceAndTxs } from '../../types';
 import { WalletType } from '../../types/api';
 import { getLightningFormatOptions } from './constants';
 import { useBitcoinReceiveInfoGenerator } from './useBitcoinReceiveInfoGenerator';
@@ -44,10 +43,9 @@ const CopyPasteButton = ({ value }: { value: string }) => {
 
 interface Props {
     defaultWalletId?: number;
-    wallets: WalletWithAccountsWithBalanceAndTxs[];
 }
 
-export const BitcoinReceiveInfoGenerator = ({ defaultWalletId, wallets }: Props) => {
+export const BitcoinReceiveInfoGenerator = ({ defaultWalletId }: Props) => {
     const {
         serializedPaymentInformation,
         selectedWallet,
@@ -62,7 +60,7 @@ export const BitcoinReceiveInfoGenerator = ({ defaultWalletId, wallets }: Props)
         handleSelectFormat,
         handleChangeAmount,
         showAmountInput,
-    } = useBitcoinReceiveInfoGenerator(wallets, defaultWalletId);
+    } = useBitcoinReceiveInfoGenerator(defaultWalletId);
 
     const [walletSelectorLabel, accountSelectorLabel, formatSelectorLabel, amountInputLabel] = [
         c('Wallet Receive').t`Receive to wallet`,
@@ -120,7 +118,7 @@ export const BitcoinReceiveInfoGenerator = ({ defaultWalletId, wallets }: Props)
                             onChange={(event: ChangeEvent<HTMLInputElement>) => {
                                 handleChangeAmount(Number(event.target.value));
                             }}
-                            suffix="SATS"
+                            suffix="SAT"
                         />
                     </div>
                 ) : (

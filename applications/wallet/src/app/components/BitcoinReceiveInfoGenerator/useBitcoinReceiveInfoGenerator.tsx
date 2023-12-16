@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 
+import { useBlockchainContext } from '../../contexts';
 import { AccountWithBlockchainData, LightningUriFormat, WalletWithAccountsWithBalanceAndTxs } from '../../types';
 import { WalletType } from '../../types/api';
 import { getDefaultAccount, getSelectedAccount, getSelectedWallet } from '../../utils';
@@ -29,17 +30,16 @@ export interface UseBitcoinReceiveInfoGeneratorHelper {
     showAmountInput: () => void;
 }
 
-export const useBitcoinReceiveInfoGenerator = (
-    wallets: WalletWithAccountsWithBalanceAndTxs[],
-    defaultWalletId?: number
-): UseBitcoinReceiveInfoGeneratorHelper => {
+export const useBitcoinReceiveInfoGenerator = (defaultWalletId?: number): UseBitcoinReceiveInfoGeneratorHelper => {
+    const { wallets } = useBlockchainContext();
+
     const walletsOptions = useMemo(
         () =>
-            wallets.map((wallet) => ({
+            wallets?.map((wallet) => ({
                 value: wallet.WalletID,
                 label: wallet.Name,
                 disabled: !wallet?.accounts?.length,
-            })),
+            })) ?? [],
         [wallets]
     );
 

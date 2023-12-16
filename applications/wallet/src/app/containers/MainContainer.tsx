@@ -1,46 +1,38 @@
 import { Redirect, Route, Switch } from 'react-router-dom';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { ErrorBoundary, StandardErrorPage } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 
 import { PrivateWalletLayout } from '../components';
-import { useBlockchainData } from '../hooks/useBlockchainData';
-import { wallets } from '../tests/fixtures/api';
+import { BlockchainContextProvider } from '../contexts';
 import { BitcoinOnRampContainer } from './BitcoinOnRampContainer';
 import { BitcoinTransferContainer } from './BitcoinTransferContainer';
 import { MultiWalletDashboardContainer } from './MultiWalletDashboardContainer';
 import { SingleWalletDashboardContainer } from './SingleWalletDashboardContainer';
 
 const MainContainer = () => {
-    const { walletsWithBalanceAndTxs } = useBlockchainData(wallets);
-
     return (
         <ErrorBoundary component={<StandardErrorPage big />}>
             <QuickSettingsRemindersProvider>
-                <PrivateWalletLayout wallets={walletsWithBalanceAndTxs}>
-                    {!walletsWithBalanceAndTxs ? (
-                        <div className="m-auto">
-                            <CircleLoader size="large" className="color-primary" />
-                        </div>
-                    ) : (
+                <BlockchainContextProvider>
+                    <PrivateWalletLayout>
                         <Switch>
                             <Route path={'/transfer'}>
-                                <BitcoinTransferContainer wallets={walletsWithBalanceAndTxs} />
+                                <BitcoinTransferContainer />
                             </Route>
                             <Route path={'/buy'}>
                                 <BitcoinOnRampContainer />
                             </Route>
                             <Route path={'/wallets'} exact>
-                                <MultiWalletDashboardContainer wallets={walletsWithBalanceAndTxs} />
+                                <MultiWalletDashboardContainer />
                             </Route>
                             <Route path={'/wallets/:walletId'}>
-                                <SingleWalletDashboardContainer wallets={walletsWithBalanceAndTxs} />
+                                <SingleWalletDashboardContainer />
                             </Route>
                             <Redirect to="/wallets" />
                         </Switch>
-                    )}
-                </PrivateWalletLayout>
+                    </PrivateWalletLayout>
+                </BlockchainContextProvider>
             </QuickSettingsRemindersProvider>
         </ErrorBoundary>
     );

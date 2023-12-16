@@ -23,6 +23,12 @@ const humanReadableByError: Record<WasmError, () => string> = {
     [WasmError.NoUtxosSelected]: () => c('Wasm Error').t`No utxos were selected`,
     [WasmError.OutputBelowDustLimit]: () => c('Wasm Error').t`One output is below dust limit`,
     [WasmError.InsufficientFunds]: () => c('Wasm Error').t`You don't have enough funds to send this transaction`,
+    [WasmError.NoWindowContext]: () => c('Wasm Error').t`Web wallet needs to be run in a Web Browser`,
+    [WasmError.CannotGetLocalStorage]: () => c('Wasm Error').t`Could not get access to local storage`,
+    [WasmError.CannotSerializePersistedData]: () => c('Wasm Error').t`Could not write persisted data`,
+    [WasmError.CannotPersistData]: () => c('Wasm Error').t`Could not write persist data`,
+    [WasmError.CannotFindPersistedData]: () => c('Wasm Error').t`Could not find persist data`,
+    [WasmError.CannotParsePersistedData]: () => c('Wasm Error').t`Could not read persist data`,
     [WasmError.BnBTotalTriesExceeded]: () =>
         c('Wasm Error').t`Maximum 'branch and bound' coin selection possible attempts reached`,
     [WasmError.BnBNoExactMatch]: () =>

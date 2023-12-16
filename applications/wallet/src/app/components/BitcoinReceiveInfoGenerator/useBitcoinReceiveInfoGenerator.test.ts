@@ -2,14 +2,18 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 
-import { walletsWithAccountsWithBalanceAndTxs } from '../../tests';
+import { mockUseBlockchainContext, walletsWithAccountsWithBalanceAndTxs } from '../../tests';
 import { LightningUriFormat } from '../../types';
 import { useBitcoinReceiveInfoGenerator } from './useBitcoinReceiveInfoGenerator';
 
 describe.skip('useBitcoinReceiveInfoGenerator', () => {
+    beforeEach(() => {
+        mockUseBlockchainContext();
+    });
+
     describe('walletOptions', () => {
         it('should return walletsOptions', () => {
-            const { result } = renderHook(() => useBitcoinReceiveInfoGenerator(walletsWithAccountsWithBalanceAndTxs));
+            const { result } = renderHook(() => useBitcoinReceiveInfoGenerator());
             expect(result.current.walletsOptions).toStrictEqual([
                 { disabled: false, label: 'Bitcoin 01', value: 0 },
                 { disabled: false, label: 'Savings on Jade', value: 1 },
@@ -23,7 +27,9 @@ describe.skip('useBitcoinReceiveInfoGenerator', () => {
                 const [walletA, walletB, walletC, walletD] = walletsWithAccountsWithBalanceAndTxs;
                 const wallets = [walletA, walletB, { ...walletC, accounts: [] }, walletD];
 
-                const { result } = renderHook(() => useBitcoinReceiveInfoGenerator(wallets));
+                mockUseBlockchainContext({ wallets });
+
+                const { result } = renderHook(() => useBitcoinReceiveInfoGenerator());
                 expect(result.current.walletsOptions).toStrictEqual([
                     { disabled: false, label: 'Bitcoin 01', value: 0 },
                     { disabled: false, label: 'Savings on Jade', value: 1 },
@@ -36,7 +42,7 @@ describe.skip('useBitcoinReceiveInfoGenerator', () => {
 
     describe('accountsOption', () => {
         it('should return account options', () => {
-            const { result } = renderHook(() => useBitcoinReceiveInfoGenerator(walletsWithAccountsWithBalanceAndTxs));
+            const { result } = renderHook(() => useBitcoinReceiveInfoGenerator());
             expect(result.current.accountsOptions).toStrictEqual([
                 { label: 'Account 1', value: 8 },
                 { label: 'Account 2', value: 9 },
@@ -46,7 +52,9 @@ describe.skip('useBitcoinReceiveInfoGenerator', () => {
 
     describe('when wallets is empty', () => {
         it('should return undefined wallet and account', () => {
-            const { result } = renderHook(() => useBitcoinReceiveInfoGenerator([]));
+            mockUseBlockchainContext({ wallets: [] });
+
+            const { result } = renderHook(() => useBitcoinReceiveInfoGenerator());
 
             expect(result.current.accountsOptions).toBeUndefined();
             expect(result.current.walletsOptions).toHaveLength(0);
@@ -58,7 +66,7 @@ describe.skip('useBitcoinReceiveInfoGenerator', () => {
 
     describe('handleSelectWallet', () => {
         it('should set `selectedWallet`', () => {
-            const { result } = renderHook(() => useBitcoinReceiveInfoGenerator(walletsWithAccountsWithBalanceAndTxs));
+            const { result } = renderHook(() => useBitcoinReceiveInfoGenerator());
 
             act(() => result.current.handleSelectWallet({ value: 1 } as SelectChangeEvent<number>));
             expect(result.current.selectedWallet).toStrictEqual(walletsWithAccountsWithBalanceAndTxs[1]);
@@ -67,7 +75,7 @@ describe.skip('useBitcoinReceiveInfoGenerator', () => {
 
     describe('handleSelectAccount', () => {
         it('should set `selectedAccount`', () => {
-            const { result } = renderHook(() => useBitcoinReceiveInfoGenerator(walletsWithAccountsWithBalanceAndTxs));
+            const { result } = renderHook(() => useBitcoinReceiveInfoGenerator());
 
             act(() => result.current.handleSelectAccount({ value: 9 } as SelectChangeEvent<number>));
             expect(result.current.selectedAccount).toStrictEqual(walletsWithAccountsWithBalanceAndTxs[0].accounts[1]);
@@ -76,7 +84,7 @@ describe.skip('useBitcoinReceiveInfoGenerator', () => {
 
     describe('handleSelectFormat', () => {
         it('should set `selectedFormat`', () => {
-            const { result } = renderHook(() => useBitcoinReceiveInfoGenerator(walletsWithAccountsWithBalanceAndTxs));
+            const { result } = renderHook(() => useBitcoinReceiveInfoGenerator());
 
             act(() =>
                 result.current.handleSelectFormat({
@@ -90,9 +98,7 @@ describe.skip('useBitcoinReceiveInfoGenerator', () => {
     describe('handleChangeAmount', () => {
         describe("when amount is below selected wallet's balance", () => {
             it('should constrain it to 0', () => {
-                const { result } = renderHook(() =>
-                    useBitcoinReceiveInfoGenerator(walletsWithAccountsWithBalanceAndTxs)
-                );
+                const { result } = renderHook(() => useBitcoinReceiveInfoGenerator());
 
                 act(() => result.current.handleChangeAmount(-12));
                 expect(result.current.amount).toBe(0);
@@ -100,7 +106,7 @@ describe.skip('useBitcoinReceiveInfoGenerator', () => {
         });
 
         it('should set new amount', () => {
-            const { result } = renderHook(() => useBitcoinReceiveInfoGenerator(walletsWithAccountsWithBalanceAndTxs));
+            const { result } = renderHook(() => useBitcoinReceiveInfoGenerator());
 
             act(() => result.current.handleChangeAmount(124));
             expect(result.current.amount).toBe(124);
@@ -109,7 +115,7 @@ describe.skip('useBitcoinReceiveInfoGenerator', () => {
 
     describe('showAmountInput', () => {
         it('should turn `shouldShowAmountInput` to true', () => {
-            const { result } = renderHook(() => useBitcoinReceiveInfoGenerator(walletsWithAccountsWithBalanceAndTxs));
+            const { result } = renderHook(() => useBitcoinReceiveInfoGenerator());
 
             act(() => result.current.showAmountInput());
             expect(result.current.shouldShowAmountInput).toBeTruthy();
@@ -119,10 +125,7 @@ describe.skip('useBitcoinReceiveInfoGenerator', () => {
     describe('when `defaultWalletId` is provided', () => {
         it('should select the associated wallet by default', () => {
             const { result } = renderHook(() =>
-                useBitcoinReceiveInfoGenerator(
-                    walletsWithAccountsWithBalanceAndTxs,
-                    walletsWithAccountsWithBalanceAndTxs[1].WalletID
-                )
+                useBitcoinReceiveInfoGenerator(walletsWithAccountsWithBalanceAndTxs[1].WalletID)
             );
 
             expect(result.current.selectedWallet).toStrictEqual(walletsWithAccountsWithBalanceAndTxs[1]);
