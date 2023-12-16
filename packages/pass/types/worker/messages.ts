@@ -55,6 +55,7 @@ export enum WorkerMessageType {
     EXPORT_DECRYPT = 'EXPORT_DECRYPT',
     EXPORT_REQUEST = 'EXPORT_REQUEST',
     FEATURE_FLAGS_UPDATE = 'FEATURE_FLAGS_UPDATE',
+    FETCH_ABORT = 'FETCH_ABORT',
     FORM_ENTRY_COMMIT = 'FORM_ENTRY_COMMIT',
     FORM_ENTRY_REQUEST = 'FORM_ENTRY_REQUEST',
     FORM_ENTRY_STAGE = 'FORM_ENTRY_STAGE',
@@ -108,6 +109,7 @@ export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQU
 export type DebugMessage = WithPayload<WorkerMessageType.DEBUG, { debug: string }>;
 export type ExportRequestMessage = WithPayload<WorkerMessageType.EXPORT_REQUEST, ExportRequestPayload>;
 export type FeatureFlagsUpdateMessage = WithPayload<WorkerMessageType.FEATURE_FLAGS_UPDATE, FeatureFlagState>;
+export type FetchAbortMessage = WithPayload<WorkerMessageType.FETCH_ABORT, { requestUrl: string }>;
 export type FormEntryCommitMessage = WithPayload<WorkerMessageType.FORM_ENTRY_COMMIT, { reason: string }>;
 export type FormEntryRequestMessage = { type: WorkerMessageType.FORM_ENTRY_REQUEST };
 export type FormEntryStageMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STAGE, NewFormEntry & { reason: string }>;
@@ -159,6 +161,7 @@ export type WorkerMessage =
     | DebugMessage
     | ExportRequestMessage
     | FeatureFlagsUpdateMessage
+    | FetchAbortMessage
     | FormEntryCommitMessage
     | FormEntryRequestMessage
     | FormEntryStageMessage
