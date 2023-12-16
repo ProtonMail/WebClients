@@ -3,9 +3,8 @@ import { vi } from 'vitest';
 
 import { WasmRecipient } from '../../../pkg';
 import { walletsWithAccountsWithBalanceAndTxs } from '../../tests';
-import { BitcoinUnit } from '../../types';
+import { BitcoinUnitEnum } from '../../types';
 import { RecipientList } from './RecipientList';
-import { vi } from 'vitest';
 
 const buildWasmRecipient = (uuid: string) => {
     return [uuid, '', BigInt(0)] as unknown as WasmRecipient;
@@ -110,7 +109,7 @@ describe('RecipientList', () => {
 
             fireEvent.click(firstBtcButton);
             expect(baseProps.onRecipientUpdate).toHaveBeenCalledTimes(1);
-            expect(baseProps.onRecipientUpdate).toHaveBeenCalledWith(0, { unit: BitcoinUnit.BTC });
+            expect(baseProps.onRecipientUpdate).toHaveBeenCalledWith(0, { unit: BitcoinUnitEnum.BTC });
         });
     });
 

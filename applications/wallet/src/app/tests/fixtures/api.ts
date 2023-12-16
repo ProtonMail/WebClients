@@ -1,9 +1,11 @@
 import {
-    Wallet as ApiWallet,
+    ApiWallet,
     BitcoinUnit,
+    BitcoinUnitEnum,
     FiatCurrency,
     ScriptType,
     UserWalletSettings,
+    Wallet,
     WalletAccount,
     WalletKey,
     WalletPassphrase,
@@ -17,7 +19,7 @@ import {
  * Fixtures used to mock api while it is being implemented
  */
 
-const walletOne: ApiWallet = {
+const walletOne: Wallet = {
     WalletID: 0,
     UserID: 999,
     Name: 'Bitcoin 01',
@@ -33,7 +35,7 @@ const walletOne: ApiWallet = {
     ModifyTime: 1701169836899,
 };
 
-const walletTwo: ApiWallet = {
+const walletTwo: Wallet = {
     WalletID: 1,
     UserID: 999,
     Name: 'Savings on Jade',
@@ -49,7 +51,7 @@ const walletTwo: ApiWallet = {
 };
 
 // TODO: either support or reject Electrum seeds (BIP39 alternative)
-const walletThree: ApiWallet = {
+const walletThree: Wallet = {
     WalletID: 2,
     UserID: 999,
     Name: 'Savings on Electrum',
@@ -182,28 +184,28 @@ const walletAccountThree: WalletAccount = {
     ModifyTime: 1701139393899,
 };
 
-export const wallets = [
+export const wallets: ApiWallet[] = [
     { ...walletOne, accounts: [walletAccountOneA, walletAccountOneB], settings: walletSettingsOne, key: walletKeyOne },
     { ...walletTwo, accounts: [walletAccountTwoA, walletAccountTwoB], settings: walletSettingsTwo, key: walletKeyTwo },
-    // { ...walletThree, accounts: [walletAccountThree], settings: walletSettingsThree, key: walletKeyThree },
+    { ...walletThree, accounts: [walletAccountThree], settings: walletSettingsThree, key: walletKeyThree },
 ];
 
 const bitcoinUnitA: BitcoinUnit = {
     BitcoinUnitID: 13,
     Name: 'bitcoin',
-    Symbol: 'BTC',
+    Symbol: BitcoinUnitEnum.BTC,
 };
 
 const bitcoinUnitB: BitcoinUnit = {
     BitcoinUnitID: 14,
     Name: 'satoshi',
-    Symbol: 'SATS',
+    Symbol: BitcoinUnitEnum.SAT,
 };
 
 const bitcoinUnitC: BitcoinUnit = {
     BitcoinUnitID: 15,
     Name: 'millibitcoin',
-    Symbol: 'mBTC',
+    Symbol: BitcoinUnitEnum.mBTC,
 };
 
 export const bitcoinUnits = [bitcoinUnitA, bitcoinUnitB, bitcoinUnitC];

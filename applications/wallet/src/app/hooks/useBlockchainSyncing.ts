@@ -16,9 +16,9 @@ import {
     WasmWalletConfig,
 } from '../../pkg';
 import {
+    ApiWallet,
     BlockchainAccountRecord,
     BlockchainWalletRecord,
-    WalletWithAccounts,
     WalletWithAccountsWithBalanceAndTxs,
 } from '../types';
 import { ScriptType, WalletAccount } from '../types/api';
@@ -40,10 +40,15 @@ const syncAccount = (wasmAccount: WasmAccount) => {
     return wasmChain.full_sync(wasmAccount);
 };
 
-export const useBlockchainSyncing = (wallets: WalletWithAccounts[]) => {
-    // Here null means there is no wallet loaded yet, it is different from {} which means that there is no wallet TO BE loaded
-    const [blockchainWalletRecord, setBlockchainWalletRecord] = useState<BlockchainWalletRecord | null>(null);
-    const [syncingAccounts, setSyncingAccounts] = useState<Partial<Record<string, boolean>>>({});
+export type SyncingMetadata = { syncing: boolean; count: number; lastSyncing: number };
+
+export const useBlockchainSyncing = (wallets: ApiWallet[]) => {
+    // Here undefined means there is no wallet loaded yet, it is different from {} which means that there is no wallet TO BE loaded
+    const [blockchainWalletRecord, setBlockchainWalletRecord] = useState<BlockchainWalletRecord | undefined>();
+    const [syncingMetatadaByAccountId, setSyncingMetatadaByAccountId] = useState<
+        Partial<Record<string, SyncingMetadata>>
+    >({});
+
     const currentTimeoutId = useRef<NodeJS.Timeout>();
 
     const { createNotification } = useNotifications();
@@ -82,7 +87,7 @@ export const useBlockchainSyncing = (wallets: WalletWithAccounts[]) => {
         [handleError]
     );
 
-    const getUpdatedAccountData = (account: WalletAccount, wasmAccount: WasmAccount) => {
+    const getAccountData = (account: WalletAccount, wasmAccount: WasmAccount) => {
         const balance = wasmAccount.get_balance();
         const pagination = new WasmPagination(0, 10);
         const transactions = wasmAccount.get_transactions(pagination);
@@ -97,22 +102,44 @@ export const useBlockchainSyncing = (wallets: WalletWithAccounts[]) => {
         };
     };
 
+    const addNewSyncing = useCallback((walletAccountID: number) => {
+        setSyncingMetatadaByAccountId((prev) => ({
+            ...prev,
+            [walletAccountID]: {
+                ...prev[walletAccountID],
+                syncing: true,
+                lastSyncing: Date.now(),
+                count: (prev[walletAccountID]?.count ?? 0) + 1,
+            },
+        }));
+    }, []);
+
+    const removeSyncing = useCallback((walletAccountID: number) => {
+        setSyncingMetatadaByAccountId((prev) => ({
+            ...prev,
+            [walletAccountID]: {
+                ...prev[walletAccountID],
+                syncing: false,
+            },
+        }));
+    }, []);
+
     const getUpdatedAccountDataWithMaybeSync = useCallback(
         async (account: WalletAccount, wasmAccount: WasmAccount, shouldSync = false) => {
-            if (shouldSync && !syncingAccounts[account.WalletAccountID]) {
-                setSyncingAccounts((prev) => ({ ...prev, [account.WalletAccountID]: true }));
+            if (shouldSync && !syncingMetatadaByAccountId[account.WalletAccountID]?.syncing) {
+                addNewSyncing(account.WalletAccountID);
                 await syncAccount(wasmAccount);
-                setSyncingAccounts((prev) => ({ ...prev, [account.WalletAccountID]: false }));
+                removeSyncing(account.WalletAccountID);
             }
 
-            return getUpdatedAccountData(account, wasmAccount);
+            return getAccountData(account, wasmAccount);
         },
-        [syncingAccounts]
+        [syncingMetatadaByAccountId]
     );
 
     const initAccountsBlockchainData = useCallback(async () => {
         const tmpWallets: BlockchainWalletRecord = {};
-        await iterateOverWallets(wallets, async (wallet) => {
+        await iterateOverWallets(wallets, async (wallet): Promise<void> => {
             const tmpAccounts: BlockchainAccountRecord = {};
 
             const config = new WasmWalletConfig(WasmNetwork.Testnet);
@@ -127,11 +154,13 @@ export const useBlockchainSyncing = (wallets: WalletWithAccounts[]) => {
                     return;
                 }
 
-                tmpAccounts[account.WalletAccountID] = getUpdatedAccountData(account, wasmAccount);
+                tmpAccounts[account.WalletAccountID] = getAccountData(account, wasmAccount);
             });
 
             tmpWallets[wallet.WalletID] = { ...wallet, accounts: { ...tmpAccounts } };
         });
+
+        setBlockchainWalletRecord(tmpWallets);
     }, [iterateOverAccounts, iterateOverWallets, wallets]);
 
     const syncSingleWalletAccountBlockchainData = useCallback(
@@ -214,7 +243,7 @@ export const useBlockchainSyncing = (wallets: WalletWithAccounts[]) => {
         currentTimeoutId.current = setTimeout(async () => {
             await syncAllWalletsBlockchainData(true);
             void pollAccountsBlockchainData();
-        }, 5 * MINUTE);
+        }, 1 * MINUTE);
     }, [syncAllWalletsBlockchainData]);
 
     useEffect(() => {
@@ -231,9 +260,9 @@ export const useBlockchainSyncing = (wallets: WalletWithAccounts[]) => {
         };
     }, [pollAccountsBlockchainData]);
 
-    const walletsWithBalanceAndTxs: WalletWithAccountsWithBalanceAndTxs[] | null = useMemo(() => {
+    const walletsWithBalanceAndTxs: WalletWithAccountsWithBalanceAndTxs[] | undefined = useMemo(() => {
         if (!blockchainWalletRecord) {
-            return null;
+            return undefined;
         }
 
         return Object.values(blockchainWalletRecord)
@@ -244,7 +273,7 @@ export const useBlockchainSyncing = (wallets: WalletWithAccounts[]) => {
     }, [blockchainWalletRecord]);
 
     return {
-        syncingAccounts,
+        syncingAccounts: syncingMetatadaByAccountId,
         walletsWithBalanceAndTxs,
         syncSingleWalletAccountBlockchainData,
         syncAllWalletAccountsBlockchainData,

@@ -14,7 +14,7 @@ import { SidebarItemContent } from './SidebarItemContent';
 import { WalletExpandButton } from './WalletExpandButton';
 
 interface Props {
-    wallets: WalletWithAccountsWithBalanceAndTxs[] | null;
+    wallets?: WalletWithAccountsWithBalanceAndTxs[];
 }
 
 export const WalletsSidebarList = ({ wallets }: Props) => {

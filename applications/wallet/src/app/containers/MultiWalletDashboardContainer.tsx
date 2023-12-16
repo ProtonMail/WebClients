@@ -7,20 +7,18 @@ import {
     WalletSetupModal,
     YourWalletsSection,
 } from '../components';
-import { WalletWithAccountsWithBalanceAndTxs } from '../types';
+import { useBlockchainContext } from '../contexts';
 
-interface Props {
-    wallets: WalletWithAccountsWithBalanceAndTxs[];
-}
+export const MultiWalletDashboardContainer = () => {
+    const { wallets } = useBlockchainContext();
 
-export const MultiWalletDashboardContainer = ({ wallets }: Props) => {
     const [isSetupModalOpenned, setIsSetupModalOpenned] = useState(false);
-    const accounts = wallets.flatMap(({ accounts }) => accounts);
+    const accounts = wallets?.flatMap(({ accounts }) => accounts) ?? [];
     const transactions = accounts.flatMap(({ transactions }) => transactions);
 
     useEffect(() => {
-        setIsSetupModalOpenned(!wallets.length);
-    }, [setIsSetupModalOpenned, wallets.length]);
+        setIsSetupModalOpenned(!wallets?.length);
+    }, [setIsSetupModalOpenned, wallets?.length]);
 
     return (
         <>
@@ -28,7 +26,6 @@ export const MultiWalletDashboardContainer = ({ wallets }: Props) => {
                 <div className="flex-1 p-8">
                     <BalanceOverview wallets={wallets} />
                     <YourWalletsSection
-                        wallets={wallets}
                         onAddWallet={() => {
                             setIsSetupModalOpenned(true);
                         }}

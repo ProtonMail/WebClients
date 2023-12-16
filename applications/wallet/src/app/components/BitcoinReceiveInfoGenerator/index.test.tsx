@@ -2,7 +2,7 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { BitcoinReceiveInfoGenerator } from '.';
-import { walletsWithAccountsWithBalanceAndTxs } from '../../tests';
+import { mockUseBlockchainContext, walletsWithAccountsWithBalanceAndTxs } from '../../tests';
 import { LightningUriFormat } from '../../types';
 import * as useBitcoinReceiveInfoGeneratorModule from './useBitcoinReceiveInfoGenerator';
 
@@ -18,6 +18,8 @@ describe('BitcoinReceiveInfoGenerator', () => {
     const [testAccount] = testWallet.accounts;
 
     beforeEach(() => {
+        mockUseBlockchainContext();
+
         helper = {
             serializedPaymentInformation: '',
             selectedWallet: testWallet,
@@ -47,7 +49,7 @@ describe('BitcoinReceiveInfoGenerator', () => {
 
     describe('when a wallet is selected', () => {
         it('should correctly call handler', async () => {
-            render(<BitcoinReceiveInfoGenerator wallets={walletsWithAccountsWithBalanceAndTxs} />);
+            render(<BitcoinReceiveInfoGenerator />);
 
             const walletSelector = screen.getByTestId('wallet-selector');
             await act(() => userEvent.click(walletSelector));
@@ -72,7 +74,7 @@ describe('BitcoinReceiveInfoGenerator', () => {
                 selectedAccount: testAccount,
             });
 
-            render(<BitcoinReceiveInfoGenerator wallets={walletsWithAccountsWithBalanceAndTxs} />);
+            render(<BitcoinReceiveInfoGenerator />);
         });
 
         it('should display format selector', () => {
@@ -99,7 +101,7 @@ describe('BitcoinReceiveInfoGenerator', () => {
 
     describe('when selected wallet is of type `onchain`', () => {
         beforeEach(() => {
-            render(<BitcoinReceiveInfoGenerator wallets={walletsWithAccountsWithBalanceAndTxs} />);
+            render(<BitcoinReceiveInfoGenerator />);
         });
 
         it('should display account selector', () => {
@@ -123,7 +125,7 @@ describe('BitcoinReceiveInfoGenerator', () => {
 
     describe('when user clicks on `Add amount`', () => {
         it('should call `showAmountInput`', async () => {
-            render(<BitcoinReceiveInfoGenerator wallets={walletsWithAccountsWithBalanceAndTxs} />);
+            render(<BitcoinReceiveInfoGenerator />);
 
             const button = screen.getByTestId('show-amount-input-button');
             await fireEvent.click(button);
@@ -140,7 +142,7 @@ describe('BitcoinReceiveInfoGenerator', () => {
                 shouldShowAmountInput: true,
             });
 
-            render(<BitcoinReceiveInfoGenerator wallets={walletsWithAccountsWithBalanceAndTxs} />);
+            render(<BitcoinReceiveInfoGenerator />);
         });
 
         it('should call `showAmountInput`', async () => {
@@ -168,7 +170,7 @@ describe('BitcoinReceiveInfoGenerator', () => {
                 serializedPaymentInformation: bitcoinURI,
             });
 
-            render(<BitcoinReceiveInfoGenerator wallets={walletsWithAccountsWithBalanceAndTxs} />);
+            render(<BitcoinReceiveInfoGenerator />);
         });
         it('should display QRCode containing serialized payment info', () => {
             const qrcode = screen.getByTestId('serialized-payment-info-qrcode');

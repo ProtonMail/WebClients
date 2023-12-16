@@ -5,14 +5,14 @@ import { Input } from '@proton/atoms/Input/Input';
 import ButtonGroup from '@proton/components/components/button/ButtonGroup';
 
 import { WasmRecipient } from '../../../pkg';
-import { AccountWithBlockchainData, BitcoinUnit } from '../../types';
+import { AccountWithBlockchainData, BitcoinUnitEnum } from '../../types';
 import { getAccountBalance } from '../../utils';
 import { useOnchainTransactionBuilder } from './useOnchainTransactionBuilder';
 
 interface Props {
     selectedAccount?: AccountWithBlockchainData;
     recipients: WasmRecipient[];
-    unitByRecipient: Partial<Record<string, BitcoinUnit>>;
+    unitByRecipient: Partial<Record<string, BitcoinUnitEnum>>;
     onRecipientAddition: ReturnType<typeof useOnchainTransactionBuilder>['addRecipient'];
     onRecipientUpdate: ReturnType<typeof useOnchainTransactionBuilder>['updateRecipient'];
     onRecipientRemove: ReturnType<typeof useOnchainTransactionBuilder>['removeRecipient'];
@@ -30,7 +30,7 @@ export const RecipientList = ({
         <ul className="unstyled m-0 my-4 p-0 h-custom overflow-y-auto" style={{ '--h-custom': '14rem' }}>
             {recipients.map((recipient, index) => {
                 const isLastRecipientItem = index === recipients.length - 1;
-                const recipientUnit = unitByRecipient[recipient[0]] ?? BitcoinUnit.SATS;
+                const recipientUnit = unitByRecipient[recipient[0]] ?? BitcoinUnitEnum.SAT;
 
                 return (
                     <li className="overflow-hidden py-3 border-bottom border-weak" key={recipient[0]}>
@@ -73,18 +73,18 @@ export const RecipientList = ({
                             <ButtonGroup className="ml-3">
                                 <Button
                                     data-testid="recipient-sats-display-button"
-                                    selected={recipientUnit === BitcoinUnit.SATS}
+                                    selected={recipientUnit === BitcoinUnitEnum.SAT}
                                     onClick={() => {
-                                        onRecipientUpdate(index, { unit: BitcoinUnit.SATS });
+                                        onRecipientUpdate(index, { unit: BitcoinUnitEnum.SAT });
                                     }}
                                 >
-                                    SATS
+                                    SAT
                                 </Button>
                                 <Button
                                     data-testid="recipient-btc-display-button"
-                                    selected={recipientUnit === BitcoinUnit.BTC}
+                                    selected={recipientUnit === BitcoinUnitEnum.BTC}
                                     onClick={() => {
-                                        onRecipientUpdate(index, { unit: BitcoinUnit.BTC });
+                                        onRecipientUpdate(index, { unit: BitcoinUnitEnum.BTC });
                                     }}
                                 >
                                     BTC
