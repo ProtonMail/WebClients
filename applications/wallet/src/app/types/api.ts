@@ -137,6 +137,12 @@ export interface Transaction {
     ModifyTime: number;
 }
 
+export enum BitcoinUnitEnum {
+    BTC = 'BTC',
+    mBTC = 'mBTC',
+    SAT = 'SAT',
+}
+
 export interface BitcoinUnit {
     // Autoincrement ID
     BitcoinUnitID: number;
@@ -154,3 +160,5 @@ export interface FiatCurrency {
     // Symbol of the currency (e.g. EUR)
     Symbol: string;
 }
+
+export type ApiWallet = Wallet & { accounts: WalletAccount[]; settings: WalletSettings; key: WalletKey };

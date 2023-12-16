@@ -7,13 +7,13 @@ import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 
 import { WasmChain, WasmNetwork, WasmPartiallySignedTransaction, WasmTxBuilder } from '../../../pkg';
-import { BitcoinUnit, WalletWithAccountsWithBalanceAndTxs } from '../../types';
+import { useBlockchainContext } from '../../contexts';
+import { BitcoinUnitEnum } from '../../types';
 import { getDefaultAccount, getSelectedAccount, getSelectedWallet, tryHandleWasmError } from '../../utils';
 
-export const useOnchainTransactionBuilder = (
-    wallets: WalletWithAccountsWithBalanceAndTxs[],
-    defaultWalletId?: number
-) => {
+export const useOnchainTransactionBuilder = (defaultWalletId?: number) => {
+    const { wallets } = useBlockchainContext();
+
     const { createNotification } = useNotifications();
     const defaultWallet = getSelectedWallet(wallets, defaultWalletId);
     const [selectedWallet, setSelectedWallet] = useState(defaultWallet);
@@ -23,14 +23,14 @@ export const useOnchainTransactionBuilder = (
 
     const [selectedAccount, setSelectedAccount] = useState(getDefaultAccount(selectedWallet));
     const [txBuilder, setTxBuilder] = useState<WasmTxBuilder>(new WasmTxBuilder());
-    const [unitByRecipient, setUnitByRecipient] = useState<Partial<Record<string, BitcoinUnit>>>({});
+    const [unitByRecipient, setUnitByRecipient] = useState<Partial<Record<string, BitcoinUnitEnum>>>({});
 
     const updateTxBuilder = (updater: (txBuilder: WasmTxBuilder) => WasmTxBuilder) => {
         setTxBuilder(updater);
     };
 
     const handleSelectWallet = ({ value }: SelectChangeEvent<number>) => {
-        const wallet = wallets.find(({ WalletID }) => WalletID === value);
+        const wallet = wallets?.find(({ WalletID }) => WalletID === value);
         if (wallet) {
             setSelectedWallet(wallet);
         }
@@ -62,7 +62,7 @@ export const useOnchainTransactionBuilder = (
     }, []);
 
     const updateRecipient = useCallback(
-        (index: number, update: Partial<{ amount: number; address: string; unit: BitcoinUnit }>) => {
+        (index: number, update: Partial<{ amount: number; address: string; unit: BitcoinUnitEnum }>) => {
             const recipient = txBuilder.get_recipients()[index];
             if (!recipient) {
                 return;

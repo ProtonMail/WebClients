@@ -12,7 +12,7 @@ import { WalletsSidebarList } from './WalletsSidebarList';
 
 interface Props {
     expanded?: boolean;
-    wallets: WalletWithAccountsWithBalanceAndTxs[] | null;
+    wallets?: WalletWithAccountsWithBalanceAndTxs[];
 }
 
 const WalletSidebar = ({ expanded = false, wallets }: Props) => {

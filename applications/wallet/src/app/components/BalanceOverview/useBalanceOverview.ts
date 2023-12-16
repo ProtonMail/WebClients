@@ -22,12 +22,14 @@ type WalletBalanceEvolutionChartDataset = ChartDataset<
  * When multiple wallets are provided, it returns doughnut data to display distribution accross user's wallets
  */
 const formatWalletToDoughnutChart = (
-    data: WalletWithAccountsWithBalanceAndTxs | WalletWithAccountsWithBalanceAndTxs[]
+    data?: WalletWithAccountsWithBalanceAndTxs | WalletWithAccountsWithBalanceAndTxs[]
 ) => {
-    const raw = 'accounts' in data ? data.accounts : data;
+    const raw = data && 'accounts' in data ? data.accounts : data;
 
-    const [labels, datasets] = raw.reduce(
-        ([accLabels, [accDataset]]: WalletBalanceAcc, walletOrAccount) => {
+    const init: WalletBalanceAcc = [[], [{ label: 'Balance', data: [], backgroundColor: [], borderWidth: 0 }]];
+
+    const [labels, datasets] =
+        raw?.reduce(([accLabels, [accDataset]]: WalletBalanceAcc, walletOrAccount) => {
             const [label, balance] =
                 'accounts' in walletOrAccount
                     ? [walletOrAccount.Name, getWalletBalance(walletOrAccount)]
@@ -46,9 +48,7 @@ const formatWalletToDoughnutChart = (
                     },
                 ],
             ];
-        },
-        [[], [{ label: 'Balance', data: [], backgroundColor: [], borderWidth: 0 }]]
-    );
+        }, init) ?? init;
 
     return { labels, datasets };
 };
@@ -57,7 +57,7 @@ const formatWalletToDoughnutChart = (
  * Returns balance overview either for Single wallet dashboard or Many wallets ones
  */
 export const useBalanceOverview = (
-    data: WalletWithAccountsWithBalanceAndTxs | WalletWithAccountsWithBalanceAndTxs[]
+    data?: WalletWithAccountsWithBalanceAndTxs | WalletWithAccountsWithBalanceAndTxs[]
 ) => {
     const [transactions, totalBalance] = Array.isArray(data)
         ? [

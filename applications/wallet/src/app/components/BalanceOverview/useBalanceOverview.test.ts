@@ -8,6 +8,7 @@ import { useBalanceOverview } from './useBalanceOverview';
 
 describe('useBalanceOverview', () => {
     const randomAccentColorMock = vi.spyOn(getRandomAccentColorModule, 'getRandomAccentColor');
+
     beforeEach(() => {
         vi.useFakeTimers();
         vi.setSystemTime(new Date('11/27/2023'));

@@ -2,12 +2,12 @@ import { useMemo } from 'react';
 
 import { isEmpty } from 'lodash';
 
-import { WalletWithAccounts } from '../types';
+import { ApiWallet } from '../types';
 import { useBlockchainFeesEstimation } from './useBlockchainFeesEstimation';
 import { useBlockchainSyncing } from './useBlockchainSyncing';
 
 // TODO: replace by redux when ready to bootstrap it
-export const useBlockchainData = (wallets: WalletWithAccounts[]) => {
+export const useBlockchainData = (wallets: ApiWallet[]) => {
     const {
         syncingAccounts,
         walletsWithBalanceAndTxs,
