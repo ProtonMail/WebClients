@@ -12,7 +12,8 @@ export type ServiceWorkerMessageHandler<T extends ServiceWorkerMessageType = any
     message: Extract<ServiceWorkerMessage, { type: T }>
 ) => void;
 
-type ServiceWorkerContextValue = {
+export type ServiceWorkerContextValue = {
+    enabled: boolean;
     send: (message: ServiceWorkerMessage) => void;
     on: <T extends ServiceWorkerMessageType = ServiceWorkerMessageType>(
         type: T,
@@ -24,15 +25,22 @@ type ServiceWorkerContextValue = {
     ) => void;
 };
 
-export const ServiceWorkerContext = createContext<ServiceWorkerContextValue>({ send: noop, on: noop, off: noop });
 export const ServiceWorkerClientID = uniqueId(16);
 export const ServiceWorkerEnabled = 'serviceWorker' in navigator;
+
+export const ServiceWorkerContext = createContext<ServiceWorkerContextValue>({
+    enabled: false,
+    send: noop,
+    on: noop,
+    off: noop,
+});
 
 export const ServiceWorkerProvider: FC = ({ children }) => {
     const handlers = useRef<Map<ServiceWorkerMessageType, ServiceWorkerMessageHandler[]>>(new Map());
 
     const context = useMemo<ServiceWorkerContextValue>(
         () => ({
+            enabled: ServiceWorkerEnabled,
             send: (data) => {
                 const message: WithOrigin<ServiceWorkerMessage> = { ...data, origin: ServiceWorkerClientID };
                 if (ServiceWorkerEnabled) navigator.serviceWorker.controller?.postMessage(message);
