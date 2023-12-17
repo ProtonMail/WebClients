@@ -1,18 +1,13 @@
-import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import { Mock } from 'vitest';
 
 import { WasmTxBuilder } from '../../../pkg';
-import { feesEstimations, getFeesEstimationMap } from '../../tests';
+import { getFeesEstimationMap, mockUseBlockchainContext } from '../../tests';
 import { useOnChainFeesSelector } from './useOnChainFeesSelector';
-import * as getFeesEstimationModule from './utils';
 
 describe('useOnChainFeesSelector', () => {
     let updateTxBuilder: Mock;
     let txBuilder: WasmTxBuilder;
-    const getFeesEstimation = vi
-        .spyOn(getFeesEstimationModule, 'getFeesEstimation')
-        .mockResolvedValue(getFeesEstimationMap());
 
     beforeEach(() => {
         updateTxBuilder = vi.fn().mockImplementation((updater) => {
@@ -22,7 +17,7 @@ describe('useOnChainFeesSelector', () => {
 
         txBuilder = new WasmTxBuilder();
 
-        getFeesEstimation.mockClear();
+        mockUseBlockchainContext({ fees: getFeesEstimationMap() });
     });
 
     it('should open modal', () => {
@@ -39,34 +34,14 @@ describe('useOnChainFeesSelector', () => {
     });
 
     describe('on mount', () => {
-        it('should fetch and set fee estimations', async () => {
-            const { result } = renderHook(() => useOnChainFeesSelector(txBuilder, updateTxBuilder));
-
-            await waitFor(() => {
-                expect(getFeesEstimation).toHaveBeenCalledTimes(1);
-            });
-
-            expect(getFeesEstimation).toHaveBeenCalledWith();
-
-            expect(result.current.feeEstimations).toStrictEqual(feesEstimations);
-        });
-
         it('should set default fee to target next 5th block', async () => {
             renderHook(() => useOnChainFeesSelector(txBuilder, updateTxBuilder));
-
-            await waitFor(() => {
-                expect(getFeesEstimation).toHaveBeenCalledTimes(1);
-            });
 
             expect(txBuilder.get_fee_rate()).toBe(29);
         });
 
         it('should keep isRecommended to true', async () => {
             const { result } = renderHook(() => useOnChainFeesSelector(txBuilder, updateTxBuilder));
-
-            await waitFor(() => {
-                expect(getFeesEstimation).toHaveBeenCalledTimes(1);
-            });
 
             expect(result.current.isRecommended).toBeTruthy();
         });
