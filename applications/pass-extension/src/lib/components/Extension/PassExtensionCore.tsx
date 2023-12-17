@@ -1,24 +1,37 @@
 import { type FC, useCallback } from 'react';
 
 import * as config from 'proton-pass-extension/app/config';
+import { API_PROXY_URL } from 'proton-pass-extension/app/worker/services/api-proxy';
 import { promptForPermissions } from 'proton-pass-extension/lib/utils/permissions';
 
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
-import { API_PROXY_KEY } from '@proton/pass/lib/api/proxy';
+import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
 import { getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';
 import browser from '@proton/pass/lib/globals/browser';
 import type { OnboardingMessage } from '@proton/pass/types';
 import { type ClientEndpoint, type Maybe, type OtpRequest, WorkerMessageType } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
-import type { ParsedUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';
 
-const getDomainImageURL = (url: Maybe<ParsedUrl>): Maybe<string> => {
-    if (!url || url.isUnknownOrReserved) return;
-    const basePath = BUILD_TARGET === 'firefox' ? config.API_URL : API_PROXY_KEY;
-    return `${basePath}/core/v4/images/logo?Domain=${url.hostname}&Size=32&Mode=light&MaxScaleUpFactor=4`;
-};
+const getDomainImageFactory =
+    (endpoint: ClientEndpoint) =>
+    async (domain: string, signal: AbortSignal): Promise<Maybe<string>> => {
+        const basePath = BUILD_TARGET === 'firefox' ? config.API_URL : API_PROXY_URL;
+        const url = `core/v4/images/logo?Domain=${domain}&Size=32&Mode=light&MaxScaleUpFactor=4`;
+        const requestUrl = `${basePath}/${url}`;
+
+        signal.onabort = () =>
+            sendMessage(
+                resolveMessageFactory(endpoint)({
+                    type: WorkerMessageType.FETCH_ABORT,
+                    payload: { requestUrl },
+                })
+            );
+
+        /* Forward the abort signal to the extension service worker. */
+        return fetch(requestUrl, { signal }).then(imageResponsetoDataURL);
+    };
 
 const createOTPGenerator = (endpoint: ClientEndpoint) => (payload: OtpRequest) =>
     sendMessage.on(
@@ -68,7 +81,7 @@ export const PassExtensionCore: FC<{ endpoint: ClientEndpoint }> = ({ children, 
         endpoint={endpoint}
         config={config}
         generateOTP={useCallback(createOTPGenerator(endpoint), [])}
-        getDomainImageURL={getDomainImageURL}
+        getDomainImage={getDomainImageFactory(endpoint)}
         getRatingURL={getWebStoreUrl}
         onForceUpdate={onForceUpdate}
         onLink={onLink}
