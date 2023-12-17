@@ -1,11 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
-import useLoading from '@proton/hooks/useLoading';
-
 import { WasmTxBuilder } from '../../../pkg';
+import { useBlockchainContext } from '../../contexts';
 import { DEFAULT_TARGET_BLOCK, MAX_BLOCK_TARGET, MIN_FEE_RATE } from './constant';
 import { FeeRateByBlockTarget } from './type';
-import { findLowestBlockTargetByFeeRate, findNearestBlockTargetFeeRate, getFeesEstimation } from './utils';
+import { findLowestBlockTargetByFeeRate, findNearestBlockTargetFeeRate } from './utils';
 
 export type FeeRateNote = 'LOW' | 'MODERATE' | 'HIGH';
 
@@ -23,27 +22,16 @@ export const useOnChainFeesSelector = (
     txBuilder: WasmTxBuilder,
     updateTxBuilder: (updater: (txBuilder: WasmTxBuilder) => WasmTxBuilder) => void
 ) => {
+    const { fees } = useBlockchainContext();
     const [isRecommended, setIsRecommended] = useState(true);
-    const [loadingFeeEstimation, withLoading] = useLoading();
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [feeEstimations, setFeeEstimations] = useState<FeeRateByBlockTarget[]>([]);
 
-    useEffect(() => {
-        // TODO: cache this request
-        void withLoading(
-            getFeesEstimation().then((estimationMap) => {
-                const newFeeEstimations = [...estimationMap.entries()]
-                    .map(([block, feeRate]): FeeRateByBlockTarget => [Number(block), feeRate])
-                    .filter(([block]) => Number.isFinite(block))
-                    .sort(([a], [b]) => a - b);
-
-                setFeeEstimations(newFeeEstimations);
-            })
-        );
-
-        // withLoading deps makes hook rerun too often
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    const feeEstimations = useMemo(() => {
+        return [...fees.entries()]
+            .map(([block, feeRate]): FeeRateByBlockTarget => [Number(block), feeRate])
+            .filter(([block]) => Number.isFinite(block))
+            .sort(([a], [b]) => a - b);
+    }, [fees]);
 
     const openModal = () => setIsModalOpen(true);
     const closeModal = () => setIsModalOpen(false);
@@ -77,7 +65,6 @@ export const useOnChainFeesSelector = (
         feeRateNote: getFeeRate(blockTarget),
         blockTarget,
         isModalOpen,
-        loadingFeeEstimation,
         isRecommended,
         openModal,
         closeModal,
