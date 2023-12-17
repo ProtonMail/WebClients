@@ -6,39 +6,55 @@
 export function library_version(): string;
 /**
 */
-export enum WasmChangeSpendPolicy {
-  ChangeAllowed = 0,
-  OnlyChange = 1,
-  ChangeForbidden = 2,
-}
-/**
-*/
-export enum WasmNetwork {
-/**
-* Mainnet Bitcoin.
-*/
-  Bitcoin = 0,
-/**
-* Bitcoin's testnet network.
-*/
-  Testnet = 1,
-/**
-* Bitcoin's signet network.
-*/
-  Signet = 2,
-/**
-* Bitcoin's regtest network.
-*/
-  Regtest = 3,
-}
-/**
-*/
-export enum WasmWordCount {
-  Words12 = 0,
-  Words15 = 1,
-  Words18 = 2,
-  Words21 = 3,
-  Words24 = 4,
+export enum WasmError {
+  InvalidSecretKey = 0,
+  InvalidNetwork = 1,
+  InvalidDescriptor = 2,
+  InvalidDerivationPath = 3,
+  InvalidAccountIndex = 4,
+  DerivationError = 5,
+  SyncError = 6,
+  OutpointParsingError = 7,
+  InvalidData = 8,
+  InvalidAddress = 9,
+  InvalidTxId = 10,
+  CannotComputeTxFees = 11,
+  InvalidMnemonic = 12,
+  InvalidSeed = 13,
+  CannotGetFeeEstimation = 14,
+  CannotSignPsbt = 15,
+  NoWindowContext = 16,
+  CannotGetLocalStorage = 17,
+  CannotSerializePersistedData = 18,
+  CannotPersistData = 19,
+  CannotFindPersistedData = 20,
+  CannotParsePersistedData = 21,
+  Generic = 22,
+  NoRecipients = 23,
+  NoUtxosSelected = 24,
+  OutputBelowDustLimit = 25,
+  InsufficientFunds = 26,
+  BnBTotalTriesExceeded = 27,
+  BnBNoExactMatch = 28,
+  UnknownUtxo = 29,
+  TransactionNotFound = 30,
+  TransactionConfirmed = 31,
+  IrreplaceableTransaction = 32,
+  FeeRateTooLow = 33,
+  FeeTooLow = 34,
+  FeeRateUnavailable = 35,
+  MissingKeyOrigin = 36,
+  Key = 37,
+  ChecksumMismatch = 38,
+  SpendingPolicyRequired = 39,
+  InvalidPolicyPathError = 40,
+  Signer = 41,
+  InvalidOutpoint = 42,
+  Descriptor = 43,
+  Miniscript = 44,
+  MiniscriptPsbt = 45,
+  Bip32 = 46,
+  Psbt = 47,
 }
 /**
 */
@@ -67,14 +83,6 @@ export enum WasmKeychainKind {
 }
 /**
 */
-export enum WasmCoinSelection {
-  BranchAndBound = 0,
-  LargestFirst = 1,
-  OldestFirst = 2,
-  Manual = 3,
-}
-/**
-*/
 export enum WasmSupportedBIPs {
   Bip44 = 0,
   Bip49 = 1,
@@ -83,54 +91,47 @@ export enum WasmSupportedBIPs {
 }
 /**
 */
-export enum WasmError {
-  InvalidSecretKey = 0,
-  InvalidDescriptor = 1,
-  InvalidDerivationPath = 2,
-  InvalidAccountIndex = 3,
-  DerivationError = 4,
-  SyncError = 5,
-  OutpointParsingError = 6,
-  InvalidData = 7,
-  InvalidAddress = 8,
-  InvalidTxId = 9,
-  CannotComputeTxFees = 10,
-  InvalidMnemonic = 11,
-  InvalidSeed = 12,
-  CannotGetFeeEstimation = 13,
-  CannotSignPsbt = 14,
-  NoWindowContext = 15,
-  CannotGetLocalStorage = 16,
-  CannotSerializePersistedData = 17,
-  CannotPersistData = 18,
-  CannotFindPersistedData = 19,
-  CannotParsePersistedData = 20,
-  Generic = 21,
-  NoRecipients = 22,
-  NoUtxosSelected = 23,
-  OutputBelowDustLimit = 24,
-  InsufficientFunds = 25,
-  BnBTotalTriesExceeded = 26,
-  BnBNoExactMatch = 27,
-  UnknownUtxo = 28,
-  TransactionNotFound = 29,
-  TransactionConfirmed = 30,
-  IrreplaceableTransaction = 31,
-  FeeRateTooLow = 32,
-  FeeTooLow = 33,
-  FeeRateUnavailable = 34,
-  MissingKeyOrigin = 35,
-  Key = 36,
-  ChecksumMismatch = 37,
-  SpendingPolicyRequired = 38,
-  InvalidPolicyPathError = 39,
-  Signer = 40,
-  InvalidOutpoint = 41,
-  Descriptor = 42,
-  Miniscript = 43,
-  MiniscriptPsbt = 44,
-  Bip32 = 45,
-  Psbt = 46,
+export enum WasmChangeSpendPolicy {
+  ChangeAllowed = 0,
+  OnlyChange = 1,
+  ChangeForbidden = 2,
+}
+/**
+*/
+export enum WasmWordCount {
+  Words12 = 0,
+  Words15 = 1,
+  Words18 = 2,
+  Words21 = 3,
+  Words24 = 4,
+}
+/**
+*/
+export enum WasmNetwork {
+/**
+* Mainnet Bitcoin.
+*/
+  Bitcoin = 0,
+/**
+* Bitcoin's testnet network.
+*/
+  Testnet = 1,
+/**
+* Bitcoin's signet network.
+*/
+  Signet = 2,
+/**
+* Bitcoin's regtest network.
+*/
+  Regtest = 3,
+}
+/**
+*/
+export enum WasmCoinSelection {
+  BranchAndBound = 0,
+  LargestFirst = 1,
+  OldestFirst = 2,
+  Manual = 3,
 }
 /**
 */
@@ -142,16 +143,6 @@ export class DetailledWasmError {
 /**
 */
   kind: WasmError;
-}
-/**
-*/
-export class ExportedStringVec {
-  free(): void;
-/**
-* @param {number} index
-* @returns {string}
-*/
-  get_name(index: number): string;
 }
 /**
 */
@@ -187,10 +178,10 @@ export class WasmAccount {
 */
   get_utxos(): (WasmUtxo)[];
 /**
-* @param {WasmPagination} pagination
+* @param {WasmPagination | undefined} [pagination]
 * @returns {(WasmSimpleTransaction)[]}
 */
-  get_transactions(pagination: WasmPagination): (WasmSimpleTransaction)[];
+  get_transactions(pagination?: WasmPagination): (WasmSimpleTransaction)[];
 }
 /**
 */
@@ -218,8 +209,9 @@ export class WasmAddress {
   free(): void;
 /**
 * @param {string} str
+* @param {WasmNetwork} network
 */
-  constructor(str: string);
+  constructor(str: string, network: WasmNetwork);
 /**
 * @param {WasmScript} value
 * @param {WasmNetwork} network
@@ -379,12 +371,6 @@ export class WasmMnemonic {
 * @returns {WasmMnemonic}
 */
   static fromString(mnemonic: string): WasmMnemonic;
-/**
-* Create a new Mnemonic from the given entropy.
-* @param {Uint8Array} entropy
-* @returns {WasmMnemonic}
-*/
-  static fromEntropy(entropy: Uint8Array): WasmMnemonic;
 /**
 * Returns the Mnemonic as a string.
 * @returns {string}
