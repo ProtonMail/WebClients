@@ -10,7 +10,6 @@ export interface BlockchainContextValue {
     wallets: WalletWithAccountsWithBalanceAndTxs[] | undefined;
     syncingMetatadaByAccountId: Partial<Record<string, SyncingMetadata>>;
     fees: Map<string, number>;
-    loading: boolean;
     syncSingleWalletAccountBlockchainData: (walletId: number, accountId: number, shouldSync?: any) => Promise<void>;
 }
 
@@ -18,7 +17,6 @@ const BlockchainContext = createContext<BlockchainContextValue>({
     wallets: undefined,
     syncingMetatadaByAccountId: {},
     fees: new Map(),
-    loading: false,
     syncSingleWalletAccountBlockchainData: async () => {},
 });
 
@@ -38,7 +36,6 @@ export const BlockchainContextProvider = ({ children }: Props) => {
         walletsWithBalanceAndTxs,
         feesEstimation,
         syncingMetatadaByAccountId,
-        globalLoadingBlockchainData,
         syncSingleWalletAccountBlockchainData,
     } = useBlockchainData(wallets);
 
@@ -47,7 +44,6 @@ export const BlockchainContextProvider = ({ children }: Props) => {
             value={{
                 wallets: walletsWithBalanceAndTxs,
                 fees: feesEstimation,
-                loading: globalLoadingBlockchainData,
                 syncingMetatadaByAccountId,
                 syncSingleWalletAccountBlockchainData,
             }}
