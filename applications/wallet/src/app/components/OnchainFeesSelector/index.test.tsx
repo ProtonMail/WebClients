@@ -8,7 +8,6 @@ import * as useOnChainFeesSelectorModule from './useOnChainFeesSelector';
 const baseMock: ReturnType<typeof useOnChainFeesSelectorModule.useOnChainFeesSelector> = {
     feeEstimations: [],
     blockTarget: 1,
-    loadingFeeEstimation: false,
     isModalOpen: false,
     isRecommended: true,
     feeRateNote: 'HIGH',

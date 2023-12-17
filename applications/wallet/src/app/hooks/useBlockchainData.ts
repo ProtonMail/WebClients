@@ -1,7 +1,3 @@
-import { useMemo } from 'react';
-
-import { isEmpty } from 'lodash';
-
 import { ApiWallet } from '../types';
 import { useBlockchainFeesEstimation } from './useBlockchainFeesEstimation';
 import { useBlockchainSyncing } from './useBlockchainSyncing';
@@ -18,17 +14,16 @@ export const useBlockchainData = (wallets: ApiWallet[]) => {
 
     const { feesEstimation, loading: loadingFeesEstimation } = useBlockchainFeesEstimation();
 
-    const globalLoadingBlockchainData = useMemo(() => {
-        return loadingFeesEstimation || !isEmpty(syncingMetatadaByAccountId);
-    }, [loadingFeesEstimation, syncingMetatadaByAccountId]);
-
     return {
-        globalLoadingBlockchainData,
         syncingMetatadaByAccountId,
         walletsWithBalanceAndTxs,
-        feesEstimation,
+
         syncSingleWalletAccountBlockchainData,
         syncAllWalletAccountsBlockchainData,
         syncAllWalletsBlockchainData,
+
+        // Fees estimation
+        feesEstimation,
+        loadingFeesEstimation,
     };
 };
