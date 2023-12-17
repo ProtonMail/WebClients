@@ -9,7 +9,6 @@ export const mockUseBlockchainContext = (
     spy.mockReturnValue({
         wallets: walletsWithAccountsWithBalanceAndTxs,
         fees: getFeesEstimationMap(),
-        loading: false,
         syncingMetatadaByAccountId: {},
         syncSingleWalletAccountBlockchainData: vi.fn(),
         ...mockedValue,
