@@ -49,6 +49,17 @@ export const useBlockchainSyncing = (wallets: ApiWallet[]) => {
         Partial<Record<string, SyncingMetadata>>
     >({});
 
+    // We use refs coupled to the state to deps from the syncing loop
+    const syncingMetatadaByAccountIdRef = useRef<Partial<Record<string, SyncingMetadata>>>({});
+    useEffect(() => {
+        syncingMetatadaByAccountIdRef.current = syncingMetatadaByAccountId;
+    }, [syncingMetatadaByAccountId]);
+
+    const blockchainWalletRecordRef = useRef<Partial<BlockchainWalletRecord | undefined>>(undefined);
+    useEffect(() => {
+        blockchainWalletRecordRef.current = blockchainWalletRecord;
+    }, [blockchainWalletRecord]);
+
     const currentTimeoutId = useRef<NodeJS.Timeout>();
 
     const { createNotification } = useNotifications();
@@ -59,32 +70,6 @@ export const useBlockchainSyncing = (wallets: ApiWallet[]) => {
             createNotification({ text: tryHandleWasmError(error) ?? defaultMsg });
         },
         [createNotification]
-    );
-
-    const iterateOverAccounts = useCallback(
-        async <TAccount>(accounts: TAccount[], accountCallback: (account: TAccount) => Promise<void> | void) => {
-            for (const account of accounts) {
-                try {
-                    await accountCallback(account);
-                } catch (error) {
-                    handleError(error);
-                }
-            }
-        },
-        [handleError]
-    );
-
-    const iterateOverWallets = useCallback(
-        async <TWallet>(wallets: TWallet[], walletCallback: (wallet: TWallet) => Promise<void> | void) => {
-            for (const wallet of wallets) {
-                try {
-                    await walletCallback(wallet);
-                } catch (error) {
-                    handleError(error);
-                }
-            }
-        },
-        [handleError]
     );
 
     const getAccountData = (account: WalletAccount, wasmAccount: WasmAccount) => {
@@ -126,47 +111,60 @@ export const useBlockchainSyncing = (wallets: ApiWallet[]) => {
 
     const getUpdatedAccountDataWithMaybeSync = useCallback(
         async (account: WalletAccount, wasmAccount: WasmAccount, shouldSync = false) => {
-            if (shouldSync && !syncingMetatadaByAccountId[account.WalletAccountID]?.syncing) {
+            const isAlreadySyncing = syncingMetatadaByAccountIdRef.current[account.WalletAccountID]?.syncing;
+            if (shouldSync && !isAlreadySyncing) {
                 addNewSyncing(account.WalletAccountID);
-                await syncAccount(wasmAccount);
+                try {
+                    await syncAccount(wasmAccount);
+                } catch (error) {
+                    handleError(error);
+                }
                 removeSyncing(account.WalletAccountID);
             }
 
             return getAccountData(account, wasmAccount);
         },
-        [syncingMetatadaByAccountId]
+        // The 3 dependencies are assumed stable at render, so `getUpdatedAccountDataWithMaybeSync` should also be
+        [addNewSyncing, handleError, removeSyncing]
     );
 
-    const initAccountsBlockchainData = useCallback(async () => {
+    const initAccountsBlockchainData = useCallback(() => {
         const tmpWallets: BlockchainWalletRecord = {};
-        await iterateOverWallets(wallets, async (wallet): Promise<void> => {
-            const tmpAccounts: BlockchainAccountRecord = {};
+        for (const wallet of wallets) {
+            try {
+                const tmpAccounts: BlockchainAccountRecord = {};
 
-            const config = new WasmWalletConfig(WasmNetwork.Testnet);
-            // TODO: handle passphrase wallets
-            const wasmWallet = new WasmWallet(wallet.Mnemonic, '', config);
+                const config = new WasmWalletConfig(WasmNetwork.Testnet);
+                // TODO: handle passphrase wallets
+                const wasmWallet = new WasmWallet(wallet.Mnemonic, '', config);
 
-            await iterateOverAccounts(wallet.accounts, (account) => {
-                void wasmWallet.add_account(scriptTypeToBip[account.ScriptType], account.Index);
-                const wasmAccount = wasmWallet.get_account(scriptTypeToBip[account.ScriptType], account.Index);
+                for (const account of wallet.accounts) {
+                    try {
+                        void wasmWallet.add_account(scriptTypeToBip[account.ScriptType], account.Index);
+                        const wasmAccount = wasmWallet.get_account(scriptTypeToBip[account.ScriptType], account.Index);
 
-                if (!wasmAccount) {
-                    return;
+                        if (!wasmAccount) {
+                            return;
+                        }
+
+                        tmpAccounts[account.WalletAccountID] = getAccountData(account, wasmAccount);
+                    } catch (error) {
+                        handleError(error);
+                    }
                 }
 
-                tmpAccounts[account.WalletAccountID] = getAccountData(account, wasmAccount);
-            });
-
-            tmpWallets[wallet.WalletID] = { ...wallet, accounts: { ...tmpAccounts } };
-        });
+                tmpWallets[wallet.WalletID] = { ...wallet, accounts: { ...tmpAccounts } };
+            } catch (error) {
+                handleError(error);
+            }
+        }
 
         setBlockchainWalletRecord(tmpWallets);
-    }, [iterateOverAccounts, iterateOverWallets, wallets]);
+    }, [handleError, wallets]);
 
     const syncSingleWalletAccountBlockchainData = useCallback(
-        async (walletId: string, accountId: string, shouldSync = false) => {
-            const wallet = blockchainWalletRecord?.[walletId];
-            const account = wallet?.accounts[accountId];
+        async (walletId: number, accountId: number, shouldSync = false) => {
+            const account = blockchainWalletRecordRef.current?.[walletId]?.accounts[accountId];
 
             if (!account) {
                 return;
@@ -176,67 +174,40 @@ export const useBlockchainSyncing = (wallets: ApiWallet[]) => {
 
             setBlockchainWalletRecord((prev) => ({
                 ...prev,
-                [wallet.WalletID]: {
-                    ...wallet,
+                [walletId]: {
+                    ...prev?.[walletId],
                     accounts: {
-                        ...wallet,
+                        ...prev?.[walletId]?.accounts,
                         [account.WalletAccountID]: updated,
                     },
                 },
             }));
         },
-        [blockchainWalletRecord, getUpdatedAccountDataWithMaybeSync]
+        [getUpdatedAccountDataWithMaybeSync]
     );
 
     const syncAllWalletAccountsBlockchainData = useCallback(
-        async (walletId: string, shouldSync = false) => {
-            const wallet = blockchainWalletRecord?.[walletId];
+        async (walletId: number, shouldSync = false) => {
+            const wallet = blockchainWalletRecordRef.current?.[walletId];
 
             if (!wallet) {
                 return;
             }
 
-            const tmpAccounts: BlockchainAccountRecord = {};
-
-            const bcAccounts = Object.values(wallet.accounts).filter(isTruthy);
-            await iterateOverAccounts(bcAccounts, async (account) => {
-                tmpAccounts[account.WalletAccountID] = await getUpdatedAccountDataWithMaybeSync(
-                    account,
-                    account.wasmAccount,
-                    shouldSync
-                );
-            });
-
-            setBlockchainWalletRecord((prev) => ({
-                ...prev,
-                [wallet.WalletID]: { ...wallet, accounts: { ...tmpAccounts } },
-            }));
+            for (const account of Object.values(wallet.accounts).filter(isTruthy)) {
+                await syncSingleWalletAccountBlockchainData(walletId, account.WalletAccountID, shouldSync);
+            }
         },
-        [blockchainWalletRecord, getUpdatedAccountDataWithMaybeSync, iterateOverAccounts]
+        [syncSingleWalletAccountBlockchainData]
     );
 
     const syncAllWalletsBlockchainData = useCallback(
         async (shouldSync = false) => {
-            const tmpWallets: BlockchainWalletRecord = {};
-            const bcWallets = Object.values(blockchainWalletRecord ?? {}).filter(isTruthy);
-            await iterateOverWallets(bcWallets, async (wallet) => {
-                const tmpAccounts: BlockchainAccountRecord = {};
-
-                const bcAccounts = Object.values(wallet.accounts).filter(isTruthy);
-                await iterateOverAccounts(bcAccounts, async (account) => {
-                    tmpAccounts[account.WalletAccountID] = await getUpdatedAccountDataWithMaybeSync(
-                        account,
-                        account.wasmAccount,
-                        shouldSync
-                    );
-                });
-
-                tmpWallets[wallet.WalletID] = { ...wallet, accounts: { ...tmpAccounts } };
-            });
-
-            setBlockchainWalletRecord(tmpWallets);
+            for (const wallet of Object.values(blockchainWalletRecordRef.current ?? {}).filter(isTruthy)) {
+                await syncAllWalletAccountsBlockchainData(wallet.WalletID, shouldSync);
+            }
         },
-        [blockchainWalletRecord, getUpdatedAccountDataWithMaybeSync, iterateOverAccounts, iterateOverWallets]
+        [syncAllWalletAccountsBlockchainData]
     );
 
     const pollAccountsBlockchainData = useCallback(async () => {
@@ -247,8 +218,14 @@ export const useBlockchainSyncing = (wallets: ApiWallet[]) => {
     }, [syncAllWalletsBlockchainData]);
 
     useEffect(() => {
-        void initAccountsBlockchainData();
-    }, [initAccountsBlockchainData]);
+        initAccountsBlockchainData();
+        const ts = setTimeout(() => {
+            void syncAllWalletsBlockchainData(true);
+        }, 1000);
+        return () => {
+            clearTimeout(ts);
+        };
+    }, [initAccountsBlockchainData, syncAllWalletsBlockchainData]);
 
     useEffect(() => {
         void pollAccountsBlockchainData();
@@ -273,7 +250,7 @@ export const useBlockchainSyncing = (wallets: ApiWallet[]) => {
     }, [blockchainWalletRecord]);
 
     return {
-        syncingAccounts: syncingMetatadaByAccountId,
+        syncingMetatadaByAccountId,
         walletsWithBalanceAndTxs,
         syncSingleWalletAccountBlockchainData,
         syncAllWalletAccountsBlockchainData,
