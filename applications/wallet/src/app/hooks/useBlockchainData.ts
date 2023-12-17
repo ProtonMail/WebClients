@@ -9,7 +9,7 @@ import { useBlockchainSyncing } from './useBlockchainSyncing';
 // TODO: replace by redux when ready to bootstrap it
 export const useBlockchainData = (wallets: ApiWallet[]) => {
     const {
-        syncingAccounts,
+        syncingMetatadaByAccountId,
         walletsWithBalanceAndTxs,
         syncSingleWalletAccountBlockchainData,
         syncAllWalletAccountsBlockchainData,
@@ -19,12 +19,12 @@ export const useBlockchainData = (wallets: ApiWallet[]) => {
     const { feesEstimation, loading: loadingFeesEstimation } = useBlockchainFeesEstimation();
 
     const globalLoadingBlockchainData = useMemo(() => {
-        return loadingFeesEstimation || !isEmpty(syncingAccounts);
-    }, [loadingFeesEstimation, syncingAccounts]);
+        return loadingFeesEstimation || !isEmpty(syncingMetatadaByAccountId);
+    }, [loadingFeesEstimation, syncingMetatadaByAccountId]);
 
     return {
         globalLoadingBlockchainData,
-        syncingAccounts,
+        syncingMetatadaByAccountId,
         walletsWithBalanceAndTxs,
         feesEstimation,
         syncSingleWalletAccountBlockchainData,
