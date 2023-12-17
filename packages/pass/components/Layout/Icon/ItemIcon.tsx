@@ -9,8 +9,8 @@ import { selectCanLoadDomainImages } from '@proton/pass/store/selectors';
 import type { Item, ItemMap, ItemRevisionWithOptimistic, MaybeNull } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
+import { DomainIcon, ImageStatus } from './DomainIcon';
 import { IconBox } from './IconBox';
-import { ImageStatus, ProxiedDomainImage } from './ProxiedDomainImage';
 
 export const itemTypeToIconName: ItemMap<IconName> = {
     login: 'user',
@@ -53,7 +53,7 @@ export const BaseItemIcon: VFC<BaseItemIconProps> = ({
             <span className="sr-only">{alt}</span>
 
             {loadImage && (
-                <ProxiedDomainImage
+                <DomainIcon
                     className={clsx('w-custom h-custom absolute-center', iconClassName)}
                     style={{ '--w-custom': `${size}px`, '--h-custom': `${size}px` }}
                     onStatusChange={handleStatusChange}
