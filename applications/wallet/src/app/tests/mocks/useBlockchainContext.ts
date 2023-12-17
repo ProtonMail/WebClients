@@ -10,7 +10,7 @@ export const mockUseBlockchainContext = (
         wallets: walletsWithAccountsWithBalanceAndTxs,
         fees: getFeesEstimationMap(),
         loading: false,
-        syncingAccounts: {},
+        syncingMetatadaByAccountId: {},
         syncSingleWalletAccountBlockchainData: jest.fn(),
         ...mockedValue,
     });

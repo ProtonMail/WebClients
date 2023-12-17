@@ -8,15 +8,15 @@ import { ApiWallet } from '../types/api';
 
 export interface BlockchainContextValue {
     wallets: WalletWithAccountsWithBalanceAndTxs[] | undefined;
-    syncingAccounts: Partial<Record<string, SyncingMetadata>>;
+    syncingMetatadaByAccountId: Partial<Record<string, SyncingMetadata>>;
     fees: Map<string, number>;
     loading: boolean;
-    syncSingleWalletAccountBlockchainData: (walletId: string, accountId: string, shouldSync?: any) => Promise<void>;
+    syncSingleWalletAccountBlockchainData: (walletId: number, accountId: number, shouldSync?: any) => Promise<void>;
 }
 
 const BlockchainContext = createContext<BlockchainContextValue>({
     wallets: undefined,
-    syncingAccounts: {},
+    syncingMetatadaByAccountId: {},
     fees: new Map(),
     loading: false,
     syncSingleWalletAccountBlockchainData: async () => {},
@@ -37,7 +37,7 @@ export const BlockchainContextProvider = ({ children }: Props) => {
     const {
         walletsWithBalanceAndTxs,
         feesEstimation,
-        syncingAccounts,
+        syncingMetatadaByAccountId,
         globalLoadingBlockchainData,
         syncSingleWalletAccountBlockchainData,
     } = useBlockchainData(wallets);
@@ -48,7 +48,7 @@ export const BlockchainContextProvider = ({ children }: Props) => {
                 wallets: walletsWithBalanceAndTxs,
                 fees: feesEstimation,
                 loading: globalLoadingBlockchainData,
-                syncingAccounts,
+                syncingMetatadaByAccountId,
                 syncSingleWalletAccountBlockchainData,
             }}
         >
