@@ -8,18 +8,9 @@ const heap = new Array(128).fill(undefined);
 
 heap.push(undefined, null, true, false);
 
-let heap_next = heap.length;
-
-function addHeapObject(obj) {
-    if (heap_next === heap.length) heap.push(heap.length + 1);
-    const idx = heap_next;
-    heap_next = heap[idx];
-
-    heap[idx] = obj;
-    return idx;
-}
-
 function getObject(idx) { return heap[idx]; }
+
+let heap_next = heap.length;
 
 function dropObject(idx) {
     if (idx < 132) return;
@@ -31,6 +22,15 @@ function takeObject(idx) {
     const ret = getObject(idx);
     dropObject(idx);
     return ret;
+}
+
+function addHeapObject(obj) {
+    if (heap_next === heap.length) heap.push(heap.length + 1);
+    const idx = heap_next;
+    heap_next = heap[idx];
+
+    heap[idx] = obj;
+    return idx;
 }
 
 const lTextDecoder = typeof TextDecoder === 'undefined' ? (0, module.require)('util').TextDecoder : TextDecoder;
@@ -309,13 +309,36 @@ function handleError(f, args) {
         wasm.__wbindgen_exn_store(addHeapObject(e));
     }
 }
-function __wbg_adapter_299(arg0, arg1, arg2, arg3) {
+function __wbg_adapter_295(arg0, arg1, arg2, arg3) {
     wasm.wasm_bindgen__convert__closures__invoke2_mut__h299fbb8d3b3f1d36(arg0, arg1, addHeapObject(arg2), addHeapObject(arg3));
 }
 
 /**
 */
+export const WasmError = Object.freeze({ InvalidSecretKey:0,"0":"InvalidSecretKey",InvalidNetwork:1,"1":"InvalidNetwork",InvalidDescriptor:2,"2":"InvalidDescriptor",InvalidDerivationPath:3,"3":"InvalidDerivationPath",InvalidAccountIndex:4,"4":"InvalidAccountIndex",DerivationError:5,"5":"DerivationError",SyncError:6,"6":"SyncError",OutpointParsingError:7,"7":"OutpointParsingError",InvalidData:8,"8":"InvalidData",InvalidAddress:9,"9":"InvalidAddress",InvalidTxId:10,"10":"InvalidTxId",CannotComputeTxFees:11,"11":"CannotComputeTxFees",InvalidMnemonic:12,"12":"InvalidMnemonic",InvalidSeed:13,"13":"InvalidSeed",CannotGetFeeEstimation:14,"14":"CannotGetFeeEstimation",CannotSignPsbt:15,"15":"CannotSignPsbt",NoWindowContext:16,"16":"NoWindowContext",CannotGetLocalStorage:17,"17":"CannotGetLocalStorage",CannotSerializePersistedData:18,"18":"CannotSerializePersistedData",CannotPersistData:19,"19":"CannotPersistData",CannotFindPersistedData:20,"20":"CannotFindPersistedData",CannotParsePersistedData:21,"21":"CannotParsePersistedData",Generic:22,"22":"Generic",NoRecipients:23,"23":"NoRecipients",NoUtxosSelected:24,"24":"NoUtxosSelected",OutputBelowDustLimit:25,"25":"OutputBelowDustLimit",InsufficientFunds:26,"26":"InsufficientFunds",BnBTotalTriesExceeded:27,"27":"BnBTotalTriesExceeded",BnBNoExactMatch:28,"28":"BnBNoExactMatch",UnknownUtxo:29,"29":"UnknownUtxo",TransactionNotFound:30,"30":"TransactionNotFound",TransactionConfirmed:31,"31":"TransactionConfirmed",IrreplaceableTransaction:32,"32":"IrreplaceableTransaction",FeeRateTooLow:33,"33":"FeeRateTooLow",FeeTooLow:34,"34":"FeeTooLow",FeeRateUnavailable:35,"35":"FeeRateUnavailable",MissingKeyOrigin:36,"36":"MissingKeyOrigin",Key:37,"37":"Key",ChecksumMismatch:38,"38":"ChecksumMismatch",SpendingPolicyRequired:39,"39":"SpendingPolicyRequired",InvalidPolicyPathError:40,"40":"InvalidPolicyPathError",Signer:41,"41":"Signer",InvalidOutpoint:42,"42":"InvalidOutpoint",Descriptor:43,"43":"Descriptor",Miniscript:44,"44":"Miniscript",MiniscriptPsbt:45,"45":"MiniscriptPsbt",Bip32:46,"46":"Bip32",Psbt:47,"47":"Psbt", });
+/**
+*/
+export const WasmLanguage = Object.freeze({ English:0,"0":"English",SimplifiedChinese:1,"1":"SimplifiedChinese",TraditionalChinese:2,"2":"TraditionalChinese",Czech:3,"3":"Czech",French:4,"4":"French",Italian:5,"5":"Italian",Japanese:6,"6":"Japanese",Korean:7,"7":"Korean",Spanish:8,"8":"Spanish", });
+/**
+*/
+export const WasmKeychainKind = Object.freeze({
+/**
+* External keychain, used for deriving recipient addresses.
+*/
+External:0,"0":"External",
+/**
+* Internal keychain, used for deriving change addresses.
+*/
+Internal:1,"1":"Internal", });
+/**
+*/
+export const WasmSupportedBIPs = Object.freeze({ Bip44:0,"0":"Bip44",Bip49:1,"1":"Bip49",Bip84:2,"2":"Bip84",Bip86:3,"3":"Bip86", });
+/**
+*/
 export const WasmChangeSpendPolicy = Object.freeze({ ChangeAllowed:0,"0":"ChangeAllowed",OnlyChange:1,"1":"OnlyChange",ChangeForbidden:2,"2":"ChangeForbidden", });
+/**
+*/
+export const WasmWordCount = Object.freeze({ Words12:0,"0":"Words12",Words15:1,"1":"Words15",Words18:2,"2":"Words18",Words21:3,"3":"Words21",Words24:4,"4":"Words24", });
 /**
 */
 export const WasmNetwork = Object.freeze({
@@ -337,30 +360,7 @@ Signet:2,"2":"Signet",
 Regtest:3,"3":"Regtest", });
 /**
 */
-export const WasmWordCount = Object.freeze({ Words12:0,"0":"Words12",Words15:1,"1":"Words15",Words18:2,"2":"Words18",Words21:3,"3":"Words21",Words24:4,"4":"Words24", });
-/**
-*/
-export const WasmLanguage = Object.freeze({ English:0,"0":"English",SimplifiedChinese:1,"1":"SimplifiedChinese",TraditionalChinese:2,"2":"TraditionalChinese",Czech:3,"3":"Czech",French:4,"4":"French",Italian:5,"5":"Italian",Japanese:6,"6":"Japanese",Korean:7,"7":"Korean",Spanish:8,"8":"Spanish", });
-/**
-*/
-export const WasmKeychainKind = Object.freeze({
-/**
-* External keychain, used for deriving recipient addresses.
-*/
-External:0,"0":"External",
-/**
-* Internal keychain, used for deriving change addresses.
-*/
-Internal:1,"1":"Internal", });
-/**
-*/
 export const WasmCoinSelection = Object.freeze({ BranchAndBound:0,"0":"BranchAndBound",LargestFirst:1,"1":"LargestFirst",OldestFirst:2,"2":"OldestFirst",Manual:3,"3":"Manual", });
-/**
-*/
-export const WasmSupportedBIPs = Object.freeze({ Bip44:0,"0":"Bip44",Bip49:1,"1":"Bip49",Bip84:2,"2":"Bip84",Bip86:3,"3":"Bip86", });
-/**
-*/
-export const WasmError = Object.freeze({ InvalidSecretKey:0,"0":"InvalidSecretKey",InvalidDescriptor:1,"1":"InvalidDescriptor",InvalidDerivationPath:2,"2":"InvalidDerivationPath",InvalidAccountIndex:3,"3":"InvalidAccountIndex",DerivationError:4,"4":"DerivationError",SyncError:5,"5":"SyncError",OutpointParsingError:6,"6":"OutpointParsingError",InvalidData:7,"7":"InvalidData",InvalidAddress:8,"8":"InvalidAddress",InvalidTxId:9,"9":"InvalidTxId",CannotComputeTxFees:10,"10":"CannotComputeTxFees",InvalidMnemonic:11,"11":"InvalidMnemonic",InvalidSeed:12,"12":"InvalidSeed",CannotGetFeeEstimation:13,"13":"CannotGetFeeEstimation",CannotSignPsbt:14,"14":"CannotSignPsbt",NoWindowContext:15,"15":"NoWindowContext",CannotGetLocalStorage:16,"16":"CannotGetLocalStorage",CannotSerializePersistedData:17,"17":"CannotSerializePersistedData",CannotPersistData:18,"18":"CannotPersistData",CannotFindPersistedData:19,"19":"CannotFindPersistedData",CannotParsePersistedData:20,"20":"CannotParsePersistedData",Generic:21,"21":"Generic",NoRecipients:22,"22":"NoRecipients",NoUtxosSelected:23,"23":"NoUtxosSelected",OutputBelowDustLimit:24,"24":"OutputBelowDustLimit",InsufficientFunds:25,"25":"InsufficientFunds",BnBTotalTriesExceeded:26,"26":"BnBTotalTriesExceeded",BnBNoExactMatch:27,"27":"BnBNoExactMatch",UnknownUtxo:28,"28":"UnknownUtxo",TransactionNotFound:29,"29":"TransactionNotFound",TransactionConfirmed:30,"30":"TransactionConfirmed",IrreplaceableTransaction:31,"31":"IrreplaceableTransaction",FeeRateTooLow:32,"32":"FeeRateTooLow",FeeTooLow:33,"33":"FeeTooLow",FeeRateUnavailable:34,"34":"FeeRateUnavailable",MissingKeyOrigin:35,"35":"MissingKeyOrigin",Key:36,"36":"Key",ChecksumMismatch:37,"37":"ChecksumMismatch",SpendingPolicyRequired:38,"38":"SpendingPolicyRequired",InvalidPolicyPathError:39,"39":"InvalidPolicyPathError",Signer:40,"40":"Signer",InvalidOutpoint:41,"41":"InvalidOutpoint",Descriptor:42,"42":"Descriptor",Miniscript:43,"43":"Miniscript",MiniscriptPsbt:44,"44":"MiniscriptPsbt",Bip32:45,"45":"Bip32",Psbt:46,"46":"Psbt", });
 /**
 */
 export class DetailledWasmError {
@@ -409,42 +409,6 @@ export class DetailledWasmError {
     */
     set details(arg0) {
         wasm.__wbg_set_detailledwasmerror_details(this.__wbg_ptr, addHeapObject(arg0));
-    }
-}
-/**
-*/
-export class ExportedStringVec {
-
-    __destroy_into_raw() {
-        const ptr = this.__wbg_ptr;
-        this.__wbg_ptr = 0;
-
-        return ptr;
-    }
-
-    free() {
-        const ptr = this.__destroy_into_raw();
-        wasm.__wbg_exportedstringvec_free(ptr);
-    }
-    /**
-    * @param {number} index
-    * @returns {string}
-    */
-    get_name(index) {
-        let deferred1_0;
-        let deferred1_1;
-        try {
-            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-            wasm.exportedstringvec_get_name(retptr, this.__wbg_ptr, index);
-            var r0 = getInt32Memory0()[retptr / 4 + 0];
-            var r1 = getInt32Memory0()[retptr / 4 + 1];
-            deferred1_0 = r0;
-            deferred1_1 = r1;
-            return getStringFromWasm0(r0, r1);
-        } finally {
-            wasm.__wbindgen_add_to_stack_pointer(16);
-            wasm.__wbindgen_free(deferred1_0, deferred1_1, 1);
-        }
     }
 }
 /**
@@ -556,14 +520,17 @@ export class WasmAccount {
         }
     }
     /**
-    * @param {WasmPagination} pagination
+    * @param {WasmPagination | undefined} [pagination]
     * @returns {(WasmSimpleTransaction)[]}
     */
     get_transactions(pagination) {
         try {
             const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-            _assertClass(pagination, WasmPagination);
-            var ptr0 = pagination.__destroy_into_raw();
+            let ptr0 = 0;
+            if (!isLikeNone(pagination)) {
+                _assertClass(pagination, WasmPagination);
+                ptr0 = pagination.__destroy_into_raw();
+            }
             wasm.wasmaccount_get_transactions(retptr, this.__wbg_ptr, ptr0);
             var r0 = getInt32Memory0()[retptr / 4 + 0];
             var r1 = getInt32Memory0()[retptr / 4 + 1];
@@ -665,13 +632,25 @@ export class WasmAddress {
     }
     /**
     * @param {string} str
+    * @param {WasmNetwork} network
     */
-    constructor(str) {
-        const ptr0 = passStringToWasm0(str, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
-        const len0 = WASM_VECTOR_LEN;
-        const ret = wasm.wasmaddress_new(ptr0, len0);
-        this.__wbg_ptr = ret >>> 0;
-        return this;
+    constructor(str, network) {
+        try {
+            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+            const ptr0 = passStringToWasm0(str, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+            const len0 = WASM_VECTOR_LEN;
+            wasm.wasmaddress_new(retptr, ptr0, len0, network);
+            var r0 = getInt32Memory0()[retptr / 4 + 0];
+            var r1 = getInt32Memory0()[retptr / 4 + 1];
+            var r2 = getInt32Memory0()[retptr / 4 + 2];
+            if (r2) {
+                throw takeObject(r1);
+            }
+            this.__wbg_ptr = r0 >>> 0;
+            return this;
+        } finally {
+            wasm.__wbindgen_add_to_stack_pointer(16);
+        }
     }
     /**
     * @param {WasmScript} value
@@ -1134,7 +1113,7 @@ export class WasmLockTime {
     * @returns {number}
     */
     to_consensus_u32() {
-        const ret = wasm.__wbg_get_wasmpagination_take(this.__wbg_ptr);
+        const ret = wasm.wasmlocktime_to_consensus_u32(this.__wbg_ptr);
         return ret >>> 0;
     }
 }
@@ -1192,28 +1171,6 @@ export class WasmMnemonic {
             const ptr0 = passStringToWasm0(mnemonic, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
             const len0 = WASM_VECTOR_LEN;
             wasm.wasmmnemonic_fromString(retptr, ptr0, len0);
-            var r0 = getInt32Memory0()[retptr / 4 + 0];
-            var r1 = getInt32Memory0()[retptr / 4 + 1];
-            var r2 = getInt32Memory0()[retptr / 4 + 2];
-            if (r2) {
-                throw takeObject(r1);
-            }
-            return WasmMnemonic.__wrap(r0);
-        } finally {
-            wasm.__wbindgen_add_to_stack_pointer(16);
-        }
-    }
-    /**
-    * Create a new Mnemonic from the given entropy.
-    * @param {Uint8Array} entropy
-    * @returns {WasmMnemonic}
-    */
-    static fromEntropy(entropy) {
-        try {
-            const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-            const ptr0 = passArray8ToWasm0(entropy, wasm.__wbindgen_malloc);
-            const len0 = WASM_VECTOR_LEN;
-            wasm.wasmmnemonic_fromEntropy(retptr, ptr0, len0);
             var r0 = getInt32Memory0()[retptr / 4 + 0];
             var r1 = getInt32Memory0()[retptr / 4 + 1];
             var r2 = getInt32Memory0()[retptr / 4 + 2];
@@ -1333,14 +1290,14 @@ export class WasmPagination {
     * @returns {number}
     */
     get skip() {
-        const ret = wasm.__wbg_get_wasmaccountconfig_account_index(this.__wbg_ptr);
+        const ret = wasm.__wbg_get_wasmpagination_skip(this.__wbg_ptr);
         return ret >>> 0;
     }
     /**
     * @param {number} arg0
     */
     set skip(arg0) {
-        wasm.__wbg_set_wasmaccountconfig_account_index(this.__wbg_ptr, arg0);
+        wasm.__wbg_set_wasmpagination_skip(this.__wbg_ptr, arg0);
     }
     /**
     * @returns {number}
@@ -2343,14 +2300,14 @@ export class WasmUtxo {
     * @returns {bigint}
     */
     get value() {
-        const ret = wasm.__wbg_get_wasmutxo_value(this.__wbg_ptr);
+        const ret = wasm.__wbg_get_wasmtxout_value(this.__wbg_ptr);
         return BigInt.asUintN(64, ret);
     }
     /**
     * @param {bigint} arg0
     */
     set value(arg0) {
-        wasm.__wbg_set_wasmutxo_value(this.__wbg_ptr, arg0);
+        wasm.__wbg_set_wasmtxout_value(this.__wbg_ptr, arg0);
     }
     /**
     * @returns {WasmOutPoint}
@@ -2584,13 +2541,32 @@ export class WasmWalletConfig {
     }
 }
 
-export function __wbg_wasmsimpletransaction_new(arg0) {
-    const ret = WasmSimpleTransaction.__wrap(arg0);
+export function __wbindgen_object_drop_ref(arg0) {
+    takeObject(arg0);
+};
+
+export function __wbindgen_object_clone_ref(arg0) {
+    const ret = getObject(arg0);
     return addHeapObject(ret);
+};
+
+export function __wbg_wasmtxin_unwrap(arg0) {
+    const ret = WasmTxIn.__unwrap(takeObject(arg0));
+    return ret;
+};
+
+export function __wbg_wasmtxout_unwrap(arg0) {
+    const ret = WasmTxOut.__unwrap(takeObject(arg0));
+    return ret;
 };
 
 export function __wbindgen_number_new(arg0) {
     const ret = arg0;
+    return addHeapObject(ret);
+};
+
+export function __wbg_wasmsimpletransaction_new(arg0) {
+    const ret = WasmSimpleTransaction.__wrap(arg0);
     return addHeapObject(ret);
 };
 
@@ -2627,25 +2603,6 @@ export function __wbg_wasmrecipient_new(arg0) {
 export function __wbg_wasmpsbtrecipient_new(arg0) {
     const ret = WasmPsbtRecipient.__wrap(arg0);
     return addHeapObject(ret);
-};
-
-export function __wbindgen_object_drop_ref(arg0) {
-    takeObject(arg0);
-};
-
-export function __wbindgen_object_clone_ref(arg0) {
-    const ret = getObject(arg0);
-    return addHeapObject(ret);
-};
-
-export function __wbg_wasmtxin_unwrap(arg0) {
-    const ret = WasmTxIn.__unwrap(takeObject(arg0));
-    return ret;
-};
-
-export function __wbg_wasmtxout_unwrap(arg0) {
-    const ret = WasmTxOut.__unwrap(takeObject(arg0));
-    return ret;
 };
 
 export function __wbindgen_string_new(arg0, arg1) {
@@ -2725,10 +2682,6 @@ export function __wbg_localStorage_e11f72e996a4f5d9() { return handleError(funct
     const ret = getObject(arg0).localStorage;
     return isLikeNone(ret) ? 0 : addHeapObject(ret);
 }, arguments) };
-
-export function __wbg_log_7811587c4c6d2844(arg0) {
-    console.log(getObject(arg0));
-};
 
 export function __wbg_log_84fba9113aba36b8(arg0, arg1) {
     console.log(getObject(arg0), getObject(arg1));
@@ -2968,7 +2921,7 @@ export function __wbg_new_feb65b865d980ae2(arg0, arg1) {
             const a = state0.a;
             state0.a = 0;
             try {
-                return __wbg_adapter_299(a, state0.b, arg0, arg1);
+                return __wbg_adapter_295(a, state0.b, arg0, arg1);
             } finally {
                 state0.a = a;
             }
@@ -3061,8 +3014,8 @@ export function __wbindgen_memory() {
     return addHeapObject(ret);
 };
 
-export function __wbindgen_closure_wrapper2657(arg0, arg1, arg2) {
-    const ret = makeMutClosure(arg0, arg1, 336, __wbg_adapter_32);
+export function __wbindgen_closure_wrapper2632(arg0, arg1, arg2) {
+    const ret = makeMutClosure(arg0, arg1, 322, __wbg_adapter_32);
     return addHeapObject(ret);
 };
 

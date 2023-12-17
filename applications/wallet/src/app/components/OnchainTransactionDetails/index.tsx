@@ -9,7 +9,7 @@ import Price from '@proton/components/components/price/Price';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 
-import { WasmAccount, WasmAddress, WasmPartiallySignedTransaction } from '../../../pkg';
+import { WasmAccount, WasmAddress, WasmNetwork, WasmPartiallySignedTransaction } from '../../../pkg';
 import { BitcoinAmount } from '../../atoms';
 import { BitcoinUnitEnum } from '../../types';
 import { toFiat } from '../../utils';
@@ -57,7 +57,7 @@ export const OnchainTransactionDetails = ({ from, account, psbt, onBack, onSignA
                     {psbt.recipients
                         .filter((recipient) => {
                             const address = recipient[0];
-                            return !account.owns(new WasmAddress(address));
+                            return !account.owns(new WasmAddress(address, WasmNetwork.Testnet));
                         })
                         .map((recipient, index) => {
                             const address = recipient[0];
