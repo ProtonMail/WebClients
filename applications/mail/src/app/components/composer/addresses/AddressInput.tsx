@@ -31,24 +31,34 @@ const AddressInput = ({ id, anchorRef, onChange, value, dataTestId, placeholder,
     const inputRef = useRef<HTMLInputElement>(null);
     const [search, setSearch] = useState(value || '');
     const [contactEmails] = useContactEmails();
+    const [selectedOptionEmail, setSelectedOptionEmail] = useState<string>('');
 
     const contactsAutocompleteItems = useMemo(
         () => getContactsAutocompleteItems(contactEmails, () => true),
         [contactEmails]
     );
+    const filteredContactsAutocompleteItems = useMemo(() => {
+        return contactsAutocompleteItems.filter((item) => item.value.Email !== selectedOptionEmail);
+    }, [selectedOptionEmail, contactsAutocompleteItems]);
 
-    const handleSelect = (item: AddressesAutocompleteItem) => {
+    const handleSelectOption = (item: AddressesAutocompleteItem) => {
         // Can't be a group so we can safely take the first item
         const recipient = getRecipientFromAutocompleteItem(contactEmails, item)[0];
         onChange(recipient.Address);
         setSearch(recipient.Address);
+        setSelectedOptionEmail(recipient.Address);
     };
-
-    const options = useAutocompleteFilter(search, contactsAutocompleteItems, (value) => value.label, undefined, 1);
+    const options = useAutocompleteFilter(
+        search,
+        filteredContactsAutocompleteItems,
+        (value) => value.label,
+        undefined,
+        1
+    );
     const { getOptionID, inputProps, suggestionProps } = useAutocomplete<AddressesAutocompleteItem>({
         id,
         options,
-        onSelect: handleSelect,
+        onSelect: handleSelectOption,
         input: search,
         inputRef,
     });
@@ -69,6 +79,9 @@ const AddressInput = ({ id, anchorRef, onChange, value, dataTestId, placeholder,
                 onValue={(value: string) => {
                     const valueTrimmed = value.trimStart();
                     setSearch(valueTrimmed);
+                    if (value !== selectedOptionEmail) {
+                        setSelectedOptionEmail('');
+                    }
                 }}
                 placeholder={placeholder}
                 ref={inputRef}
@@ -96,7 +109,7 @@ const AddressInput = ({ id, anchorRef, onChange, value, dataTestId, placeholder,
                         disableFocusOnActive
                         id={getOptionID(index)}
                         key={option.key}
-                        onChange={handleSelect}
+                        onChange={handleSelectOption}
                         title={text}
                         value={option}
                     >
