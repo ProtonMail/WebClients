@@ -147,12 +147,7 @@ const ItemRowLayout = ({
                                         <ItemLocation element={element} labelID={labelID} />
                                     </span>
                                 )}
-                                {conversationMode && (
-                                    <NumMessages
-                                        className={clsx(['shrink-0 text-normal mr-1'])}
-                                        conversation={element}
-                                    />
-                                )}
+                                {conversationMode && <NumMessages className="shrink-0 mr-1" conversation={element} />}
                                 <span>{subjectContent}</span>
                             </span>
 
