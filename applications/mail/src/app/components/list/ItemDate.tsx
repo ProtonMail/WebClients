@@ -62,7 +62,7 @@ const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = f
 
     // Displays the orange date when the element has a snooze label
     // Displays the orange "Reminded" text when the element has DisplaySnoozedReminder
-    const snoozeTime = getSnoozeTimeFromElement(element);
+    const snoozeTime = getSnoozeTimeFromElement(element, labelID);
     const isReminded = isElementReminded(element);
     const isSnoozed = isElementSnoozed(element, conversationMode);
 
