@@ -32,7 +32,6 @@ import { produceExtensionFork, produceFork, produceOAuthFork } from '@proton/sha
 import {
     APPS,
     CLIENT_TYPES,
-    COUPON_CODES,
     PLANS,
     SETUP_ADDRESS_PATH,
     SSO_PATHS,
@@ -43,6 +42,7 @@ import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
+import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { getPathFromLocation, joinPaths } from '@proton/shared/lib/helpers/url';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys';
@@ -421,7 +421,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     })();
     const setupVPN = true; /* True until apps have been deployed to support key-less accounts*/
 
-    const hasBFCoupon = searchParams.get('coupon')?.toUpperCase() === COUPON_CODES.BLACK_FRIDAY_2023;
+    const hasBFCoupon = getHas2023OfferCoupon(searchParams.get('coupon')?.toUpperCase());
     const loader =
         hasBFCoupon && location.pathname.includes('signup') ? (
             <UnAuthenticated theme={ThemeTypes.Carbon}>

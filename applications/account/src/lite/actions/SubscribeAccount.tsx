@@ -27,7 +27,6 @@ import {
     APPS,
     BRAND_NAME,
     CALENDAR_APP_NAME,
-    COUPON_CODES,
     CURRENCIES,
     DRIVE_APP_NAME,
     HTTP_STATUS_CODE,
@@ -38,7 +37,13 @@ import {
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
-import { getPlan, getUpgradedPlan, getValidCycle, isManagedExternally } from '@proton/shared/lib/helpers/subscription';
+import {
+    getHas2023OfferCoupon,
+    getPlan,
+    getUpgradedPlan,
+    getValidCycle,
+    isManagedExternally,
+} from '@proton/shared/lib/helpers/subscription';
 import { Currency } from '@proton/shared/lib/interfaces';
 import { canPay } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
@@ -182,7 +187,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
         handleNotify(SubscribeType.Subscribed);
     };
 
-    const bf2023IsExpired = coupon?.toLocaleUpperCase() === COUPON_CODES.BLACK_FRIDAY_2023;
+    const bf2023IsExpired = getHas2023OfferCoupon(coupon?.toLocaleUpperCase());
     if (bf2023IsExpired) {
         return <PromotionExpired />;
     }
@@ -287,8 +292,8 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
                                             // Ignore visionary since it doesn't require a BF coupon
                                             !data.model.planIDs[PLANS.NEW_VISIONARY] &&
                                             // Tried to apply the BF coupon, but the API responded without it.
-                                            coupon?.toUpperCase() === COUPON_CODES.BLACK_FRIDAY_2023 &&
-                                            data.result.Coupon?.Code !== COUPON_CODES.BLACK_FRIDAY_2023
+                                            getHas2023OfferCoupon(coupon?.toUpperCase()) &&
+                                            !getHas2023OfferCoupon(data.result.Coupon?.Code)
                                         ) {
                                             setError(offerUnavailableError);
                                         }
