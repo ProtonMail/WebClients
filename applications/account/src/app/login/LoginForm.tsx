@@ -458,7 +458,13 @@ const LoginForm = ({
                                             onChangeAuthType(AuthType.ExternalSSO);
                                         }}
                                     >
-                                        {c('Action').t`Sign in with SSO`}
+                                        <div className="inline-flex items-center gap-2">
+                                            {c('Action').t`Sign in with SSO`}
+                                            <Info
+                                                title={c('Info')
+                                                    .t`For members of organizations using single sign-on (SAML SSO)`}
+                                            />
+                                        </div>
                                     </Button>
                                 </>
                             )}
