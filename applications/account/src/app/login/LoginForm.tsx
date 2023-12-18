@@ -19,6 +19,7 @@ import {
     useErrorHandler,
     useFormErrors,
     useLocalState,
+    useNotifications,
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import { AuthType } from '@proton/components/containers/login/interface';
@@ -86,6 +87,7 @@ const LoginForm = ({
     const isElectron = isElectronApp();
     const [maybePersistent, setPersistent] = useLocalState(false, defaultPersistentKey);
     const persistent = isElectron ? true : maybePersistent;
+    const { createNotification } = useNotifications();
 
     const usernameRef = useRef<HTMLInputElement>(null);
     const challengeRefLogin = useRef<ChallengeRef>();
@@ -227,7 +229,11 @@ const LoginForm = ({
             const { code } = getApiError(e);
             if (code === API_CUSTOM_ERROR_CODES.AUTH_SWITCH_TO_SSO) {
                 onChangeAuthType(AuthType.ExternalSSO);
-                handleError(e);
+                createNotification({
+                    type: 'info',
+                    text: c('Info')
+                        .t`Email domain associated to an existing organization. Please sign in with SSO to continue.`,
+                });
                 return;
             }
             handleError(e);
