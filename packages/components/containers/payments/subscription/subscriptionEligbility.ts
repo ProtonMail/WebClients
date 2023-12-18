@@ -1,5 +1,5 @@
-import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS, isFreeSubscription } from '@proton/shared/lib/constants';
-import { getPlan } from '@proton/shared/lib/helpers/subscription';
+import { ADDON_NAMES, CYCLE, PLANS, isFreeSubscription } from '@proton/shared/lib/constants';
+import { getHas2023OfferCoupon, getPlan } from '@proton/shared/lib/helpers/subscription';
 import type { Plan, PlansMap, SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
 
 import type { OfferConfig } from '../../offers/interface';
@@ -137,7 +137,7 @@ export const getEligibility = ({
 
     const okResult = (): Eligibility => ({ type: 'pass-through' });
 
-    if (offer.coupon === COUPON_CODES.BLACK_FRIDAY_2023) {
+    if (getHas2023OfferCoupon(offer.coupon)) {
         if (
             eligibleBlackFridayConfigs.some((config) => {
                 return config.deals.some((deal) => {
