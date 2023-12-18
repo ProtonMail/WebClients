@@ -6,7 +6,13 @@ import { Plan, PlansMap, VPNServersCountData } from '@proton/shared/lib/interfac
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 
 import { getCalendarAppFeature, getNCalendarsFeature } from './calendar';
-import { getDriveAppFeature, getStorageFeature, getStorageFeatureB2B } from './drive';
+import {
+    getDriveAppFeature,
+    getFreeDriveStorageFeature,
+    getFreeMailStorageFeature,
+    getStorageFeature,
+    getStorageFeatureB2B,
+} from './drive';
 import { getSentinel, getSupport, getUsersFeature } from './highlights';
 import { PlanCardFeatureDefinition, ShortPlan, ShortPlanLike } from './interface';
 import {
@@ -87,10 +93,12 @@ export const getFreePlan = (): ShortPlan => {
             .t`The no-cost starter account designed to empower everyone with privacy by default.`,
         cta: c('new_plans: action').t`Get ${BRAND_NAME} for free`,
         features: [
-            getStorageFeature(-1),
+            getFreeMailStorageFeature(),
+            getFreeDriveStorageFeature(),
             getNAddressesFeature({ n: 1 }),
             getFoldersAndLabelsFeature(3),
             getNMessagesFeature(150),
+            getSupport('limited'),
         ],
     };
 };
@@ -209,7 +217,7 @@ export const getFreeDrivePlan = (): ShortPlan => {
         description: c('new_plans: info')
             .t`The no-cost starter account designed to empower everyone with privacy by default.`,
         cta: c('new_plans: action').t`Get ${BRAND_NAME} for free`,
-        features: [getStorageFeature(-1), getNAddressesFeature({ n: 1 })],
+        features: [getFreeDriveStorageFeature(), getNAddressesFeature({ n: 1 })],
     };
 };
 
@@ -267,7 +275,7 @@ export const getMailProPlan = (plan: Plan): ShortPlan => {
         description: c('new_plans: info').t`Secure email and calendar for professionals and businesses.`,
         cta: getCTA(plan.Title),
         features: [
-            getStorageFeatureB2B(plan.MaxSpace),
+            getStorageFeatureB2B(plan.MaxSpace, { subtext: false }),
             getNAddressesFeatureB2B({ n: plan.MaxAddresses }),
             getNDomainsFeature({ n: plan.MaxDomains }),
             getFoldersAndLabelsFeature('unlimited'),
@@ -287,7 +295,7 @@ export const getBundleProPlan = (plan: Plan): ShortPlan => {
             .t`Privacy and security suite for businesses, including all premium ${BRAND_NAME} services.`,
         cta: getCTA(plan.Title),
         features: [
-            getStorageFeatureB2B(plan.MaxSpace),
+            getStorageFeatureB2B(plan.MaxSpace, { subtext: false }),
             getNAddressesFeatureB2B({ n: plan.MaxAddresses }),
             getNDomainsFeature({ n: plan.MaxDomains }),
             getSentinel(),

@@ -51,6 +51,14 @@ export interface Plan {
     Offers: Offer[];
 }
 
+export interface FreePlanDefault extends Plan {
+    Name: PLANS.FREE;
+    Type: PLAN_TYPES.PLAN;
+    MaxBaseSpace: number;
+    MaxDriveSpace: number;
+    MaxRewardSpace: number;
+}
+
 export const getPlanMaxIPs = (plan: Plan) => {
     if (plan.Name === PLANS.VPN_BUSINESS || plan.Name === ADDON_NAMES.IP_VPN_BUSINESS) {
         return 1;

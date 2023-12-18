@@ -1,7 +1,7 @@
 import { PRODUCT_BIT, UNPAID_STATE, USER_ROLES } from '../constants';
 import { hasBit } from '../helpers/bitset';
 import { decodeBase64URL } from '../helpers/encoding';
-import { User } from '../interfaces';
+import type { User } from '../interfaces';
 
 const { ADMIN_ROLE, MEMBER_ROLE, FREE_ROLE } = USER_ROLES;
 

@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { MailLogo } from '@proton/components/components';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
-import { getStorageFeature } from '@proton/components/containers/payments/features/drive';
+import { getFreeMailStorageFeature, getStorageFeature } from '@proton/components/containers/payments/features/drive';
 import { getSupport } from '@proton/components/containers/payments/features/highlights';
 import {
     getFoldersAndLabelsFeature,
@@ -54,7 +54,7 @@ export const getMailBenefits = (): BenefitItem[] => {
 
 export const getFreeMailFeatures = () => {
     return [
-        getStorageFeature(-1),
+        getFreeMailStorageFeature(),
         getNAddressesFeature({ n: 1 }),
         getFoldersAndLabelsFeature(3),
         getNMessagesFeature(150),
