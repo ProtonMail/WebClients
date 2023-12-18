@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { MutableRefObject, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -42,6 +42,10 @@ import SupportDropdown from '../public/SupportDropdown';
 import { defaultPersistentKey } from '../public/helper';
 import Loader from '../signup/Loader';
 
+export interface LoginFormRef {
+    getIsLoading: () => void;
+}
+
 interface Props {
     modal?: boolean;
     api: Api;
@@ -64,6 +68,7 @@ interface Props {
     paths: Paths;
     authType: AuthType;
     onChangeAuthType: (authType: AuthType) => void;
+    loginFormRef: MutableRefObject<LoginFormRef | undefined>;
 }
 
 const LoginForm = ({
@@ -79,6 +84,7 @@ const LoginForm = ({
     externalSSO,
     externalSSOToken,
     paths,
+    loginFormRef,
 }: Props) => {
     const handleError = useErrorHandler();
     const [submitting, withSubmitting] = useLoading();
@@ -104,6 +110,12 @@ const LoginForm = ({
     const onceRef = useRef(false);
 
     const loading = Boolean(challengeLoading);
+
+    useImperativeHandle(loginFormRef, () => ({
+        getIsLoading: () => {
+            return loading || submitting || externalSSOState;
+        },
+    }));
 
     useEffect(() => {
         if (loading) {
