@@ -36,7 +36,7 @@ import Main from '../public/Main';
 import Text from '../public/Text';
 import { useFlowRef } from '../useFlowRef';
 import { MetaTags, useMetaTags } from '../useMetaTags';
-import LoginForm from './LoginForm';
+import LoginForm, { LoginFormRef } from './LoginForm';
 import LoginSupportDropdown from './LoginSupportDropdown';
 import SetPasswordForm from './SetPasswordForm';
 import Testflight from './Testflight';
@@ -94,6 +94,7 @@ const LoginContainer = ({
     const { APP_NAME } = useConfig();
     const [authType, setAuthType] = useState<AuthType>(state?.authType || AuthType.SRP);
     const { isElectronDisabled } = useIsInboxElectronApp();
+    const loginFormRef = useRef<LoginFormRef>();
 
     useMetaTags(metaTags);
 
@@ -147,7 +148,14 @@ const LoginContainer = ({
 
     const handleBackStep = (() => {
         if (step === AuthStep.LOGIN) {
-            return onBack;
+            return onBack
+                ? () => {
+                      if (loginFormRef.current?.getIsLoading()) {
+                          return;
+                      }
+                      onBack?.();
+                  }
+                : undefined;
         }
         return () => {
             handleCancel();
@@ -204,6 +212,7 @@ const LoginContainer = ({
                                     </>
                                 ) : null}
                                 <LoginForm
+                                    loginFormRef={loginFormRef}
                                     api={silentApi}
                                     modal={modal}
                                     externalSSO={APP_NAME === APPS.PROTONACCOUNT && getIsVPNApp(toApp)}
