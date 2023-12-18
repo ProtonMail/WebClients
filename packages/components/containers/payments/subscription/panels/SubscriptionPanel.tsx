@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -9,7 +9,9 @@ import {
     APP_NAMES,
     BRAND_NAME,
     CYCLE,
+    DRIVE_SHORT_APP_NAME,
     FREE_VPN_CONNECTIONS,
+    MAIL_SHORT_APP_NAME,
     PLANS,
     PLAN_NAMES,
     VPN_CONNECTIONS,
@@ -35,6 +37,7 @@ import {
     VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import { getSpace } from '@proton/shared/lib/user/storage';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -104,7 +107,7 @@ const SubscriptionItems = ({ items }: SubscriptionListProps) => {
                             left={<Icon className={clsx(included && 'color-success')} size={5} name={icon} />}
                         >
                             <div className="flex justify-space-between items-baseline" data-testid={dataTestId}>
-                                {text}
+                                <span>{text}</span>
                                 {actionElement}
                             </div>
                         </StripedItem>
@@ -218,20 +221,19 @@ const SubscriptionPanel = ({
     const amount = (subscription?.Amount ?? 0) / cycle;
 
     const hasAddresses = Array.isArray(addresses) && addresses.length > 0;
+    const space = getSpace(user);
 
     const {
         UsedDomains = 0,
         MaxDomains = 0,
-        UsedSpace = user.UsedSpace,
-        MaxSpace = user.MaxSpace,
+        UsedSpace = space.usedSpace,
+        MaxSpace = space.maxSpace,
         UsedAddresses: OrganizationUsedAddresses,
         MaxAddresses: OrganizationMaxAddresses,
         UsedMembers = 1,
         MaxMembers = 1,
     } = organization || {};
 
-    const humanUsedSpace = humanSize(UsedSpace);
-    const humanMaxSpace = humanSize(MaxSpace);
     const UsedAddresses = hasAddresses ? OrganizationUsedAddresses || 1 : 0;
     const MaxAddresses = OrganizationMaxAddresses || 1;
 
@@ -244,12 +246,32 @@ const SubscriptionPanel = ({
         return null;
     }
 
-    const storageItem = (
-        <StripedItem left={<Icon className="color-success" name="storage" size={5} />}>
-            <span className="block">{c('Label').t`${humanUsedSpace} of ${humanMaxSpace}`}</span>
-            <Meter className="my-4" aria-hidden="true" value={Math.ceil(percentage(MaxSpace, UsedSpace))} />
-        </StripedItem>
-    );
+    const storageItem = (() => {
+        if (!space.splitStorage) {
+            const humanUsedSpace = humanSize(UsedSpace);
+            const humanMaxSpace = humanSize(MaxSpace);
+            return (
+                <StripedItem left={<Icon className="color-success" name="storage" size={5} />}>
+                    <span className="block">{c('Label').t`${humanUsedSpace} of ${humanMaxSpace}`}</span>
+                    <Meter className="my-4" aria-hidden="true" value={Math.ceil(percentage(MaxSpace, UsedSpace))} />
+                </StripedItem>
+            );
+        }
+
+        const maxBaseSpace = humanSize(space.maxBaseSpace, undefined, undefined, 0);
+        const maxDriveSpace = humanSize(space.maxDriveSpace, undefined, undefined, 0);
+        const humanMaxSpace = humanSize(space.maxBaseSpace + space.maxDriveSpace, undefined, undefined, 0);
+
+        return (
+            <StripedItem left={<Icon className="color-success" name="storage" size={5} />}>
+                <span>{humanMaxSpace}</span>
+                <div className="text-sm">
+                    {maxBaseSpace} {MAIL_SHORT_APP_NAME} + {maxDriveSpace} {DRIVE_SHORT_APP_NAME}
+                </div>
+            </StripedItem>
+        );
+    })();
+    const alternate = user.isPaid ? undefined : 'odd';
 
     const getVpnAppFree = () => {
         const items: Item[] = [
@@ -348,7 +370,7 @@ const SubscriptionPanel = ({
         ];
 
         return (
-            <StripedList>
+            <StripedList alternate={alternate}>
                 {storageItem}
                 <SubscriptionItems items={items} />
             </StripedList>
@@ -490,7 +512,7 @@ const SubscriptionPanel = ({
         ];
 
         return (
-            <StripedList>
+            <StripedList alternate={alternate}>
                 {storageItem}
                 <SubscriptionItems items={items.filter(isTruthy)} />
             </StripedList>
