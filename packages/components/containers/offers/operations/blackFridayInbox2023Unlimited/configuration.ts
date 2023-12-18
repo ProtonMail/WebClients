@@ -1,7 +1,7 @@
 import { FeatureCode } from '@proton/components/containers/features';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
-import { getFamilyInboxFeatures } from '../../helpers/offerCopies';
+import { getVisionaryInboxFeatures } from '../../helpers/offerCopies';
 import { OfferConfig } from '../../interface';
 import sideImage from './BF-Mail-App-Modal-400x1200.png';
 import sideImage2x from './BF-Mail-App-Modal-800x2400.png';
@@ -18,14 +18,14 @@ const config: OfferConfig = {
     canBeDisabled: true,
     deals: [
         {
-            ref: 'bf_23_mail_unlimited-modal-f12',
-            dealName: PLAN_NAMES[PLANS.FAMILY],
+            ref: 'eoy_23_mail_unlimited-modal-v12',
+            dealName: PLAN_NAMES[PLANS.NEW_VISIONARY],
             planIDs: {
-                [PLANS.FAMILY]: 1,
+                [PLANS.NEW_VISIONARY]: 1,
             },
             cycle: CYCLE.YEARLY,
-            couponCode: COUPON_CODES.BLACK_FRIDAY_2023,
-            features: getFamilyInboxFeatures,
+            couponCode: COUPON_CODES.END_OF_YEAR_2023,
+            features: getVisionaryInboxFeatures,
         },
     ],
     layout: Layout,

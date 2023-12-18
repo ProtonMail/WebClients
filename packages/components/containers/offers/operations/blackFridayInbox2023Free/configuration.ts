@@ -1,7 +1,11 @@
 import { FeatureCode } from '@proton/components/containers/features';
 import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
-import { getFamilyInboxFeatures, getMailPlusInboxFeatures, getUnlimitedInboxFeatures } from '../../helpers/offerCopies';
+import {
+    getMailPlusInboxFeatures,
+    getUnlimitedInboxFeatures,
+    getVisionaryInboxFeatures,
+} from '../../helpers/offerCopies';
 import { OfferConfig } from '../../interface';
 import bannerImage from './BF-Mail-App-Modal-996x176.png';
 import bannerImage2x from './BF-Mail-App-Modal-1992x352.png';
@@ -18,35 +22,35 @@ const config: OfferConfig = {
     darkBackground: true,
     deals: [
         {
-            ref: 'bf_23_mail_free-modal-m12',
+            ref: 'eoy_23_mail_free-modal-m12',
             dealName: PLAN_NAMES[PLANS.MAIL],
             planIDs: {
                 [PLANS.MAIL]: 1,
             },
             cycle: CYCLE.YEARLY,
-            couponCode: COUPON_CODES.BLACK_FRIDAY_2023,
+            couponCode: COUPON_CODES.END_OF_YEAR_2023,
             features: getMailPlusInboxFeatures,
         },
         {
-            ref: 'bf_23_mail_free-modal-u12',
+            ref: 'eoy_23_mail_free-modal-u12',
             dealName: PLAN_NAMES[PLANS.BUNDLE],
             planIDs: {
                 [PLANS.BUNDLE]: 1,
             },
             cycle: CYCLE.YEARLY,
-            couponCode: COUPON_CODES.BLACK_FRIDAY_2023,
+            couponCode: COUPON_CODES.END_OF_YEAR_2023,
             features: getUnlimitedInboxFeatures,
             popular: 1,
         },
         {
-            ref: 'bf_23_mail_free-modal-f12',
-            dealName: PLAN_NAMES[PLANS.FAMILY],
+            ref: 'eoy_23_mail_free-modal-v12',
+            dealName: PLAN_NAMES[PLANS.NEW_VISIONARY],
             planIDs: {
-                [PLANS.FAMILY]: 1,
+                [PLANS.NEW_VISIONARY]: 1,
             },
             cycle: CYCLE.YEARLY,
-            couponCode: COUPON_CODES.BLACK_FRIDAY_2023,
-            features: getFamilyInboxFeatures,
+            couponCode: COUPON_CODES.END_OF_YEAR_2023,
+            features: getVisionaryInboxFeatures,
         },
     ],
     layout: Layout,

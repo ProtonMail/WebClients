@@ -39,7 +39,6 @@ import {
     APP_NAMES,
     BRAND_NAME,
     CLIENT_TYPES,
-    COUPON_CODES,
     CYCLE,
     DEFAULT_CURRENCY,
     PLANS,
@@ -50,6 +49,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
+import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { Audience, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import { FREE_PLAN, getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
@@ -120,8 +120,7 @@ const subscriptionDataCycleMapping = [
 
 const getSignupTheme = (toApp: APP_NAMES, signupParameters: SignupParameters2): SignupTheme => {
     const blackFriday =
-        signupParameters.coupon === COUPON_CODES.BLACK_FRIDAY_2023 ||
-        signupParameters.preSelectedPlan === PLANS.NEW_VISIONARY;
+        getHas2023OfferCoupon(signupParameters.coupon) || signupParameters.preSelectedPlan === PLANS.NEW_VISIONARY;
     return {
         type: blackFriday ? ThemeTypes.Carbon : undefined,
         background: blackFriday ? 'bf' : undefined,
