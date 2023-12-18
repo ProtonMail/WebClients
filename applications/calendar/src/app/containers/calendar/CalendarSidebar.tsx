@@ -320,6 +320,7 @@ const CalendarSidebar = ({
 
     return (
         <Sidebar
+            app={APPS.PROTONCALENDAR}
             appsDropdown={<AppsDropdown app={APPS.PROTONCALENDAR} />}
             logo={logo}
             expanded={expanded}
