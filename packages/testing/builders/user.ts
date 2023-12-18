@@ -24,6 +24,13 @@ export const buildUser = (value?: Partial<UserModel>): UserModel => {
         Private: 1,
         Delinquent: 0,
         DriveEarlyAccess: 0,
+        ProductUsedSpace: {
+            Drive: 0,
+            Mail: 99993,
+            Calendar: 0,
+            Contact: 0,
+            Pass: 0,
+        },
         Idle: 0,
         Keys: [
             {
