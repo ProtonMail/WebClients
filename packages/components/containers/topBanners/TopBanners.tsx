@@ -15,7 +15,7 @@ import SubscriptionEndsBanner from './SubscriptionEndsBanner';
 import TimeOutOfSyncTopBanner from './TimeOutOfSyncTopBanner';
 
 interface Props {
-    app?: APP_NAMES;
+    app: APP_NAMES;
     children?: ReactNode;
 }
 
