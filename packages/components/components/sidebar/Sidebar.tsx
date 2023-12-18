@@ -6,8 +6,9 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { isElectronApp, isElectronOnMac, isElectronOnWindows } from '@proton/shared/lib/helpers/desktop';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { hasMailProfessional, hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
-import { addUpsellPath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
+import { Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import { getAppSpace, getCanAddStorage, getSpace } from '@proton/shared/lib/user/storage';
 import clsx from '@proton/utils/clsx';
 import percentage from '@proton/utils/percentage';
 
@@ -21,7 +22,7 @@ import Hamburger from './Hamburger';
 import SidebarStorageMeter from './SidebarStorageMeter';
 
 interface Props extends ComponentPropsWithoutRef<'div'> {
-    app?: APP_NAMES;
+    app: APP_NAMES;
     logo?: ReactNode;
     expanded?: boolean;
     onToggleExpand?: () => void;
@@ -70,47 +71,8 @@ const Sidebar = ({
     const { APP_NAME } = useConfig();
     const [user] = useUser();
     const [subscription] = useSubscription();
-    const { UsedSpace, MaxSpace, isMember, isSubUser } = user;
-    const spacePercentage = percentage(MaxSpace, UsedSpace);
-    const spacePercentagePrecision = Math.ceil(spacePercentage * 10000) / 10000;
+    const appSpace = getAppSpace(user, getSpace(user), app);
     const { viewportWidth } = useActiveBreakpoint();
-
-    const upsellRef = getUpsellRefFromApp({
-        app: APP_NAME,
-        feature: SHARED_UPSELL_PATHS.STORAGE,
-        component: UPSELL_COMPONENT.BUTTON,
-        fromApp: app,
-    });
-
-    const canAddStorage = useMemo(() => {
-        if (!subscription) {
-            return false;
-        }
-        if (isSubUser) {
-            return false;
-        }
-        if (isMember) {
-            return false;
-        }
-        if (hasNewVisionary(subscription) || hasVisionary(subscription) || hasMailProfessional(subscription)) {
-            return false;
-        }
-        return true;
-    }, [subscription, user]);
-
-    const storageText = (
-        <>
-            <span
-                className={clsx(['used-space text-bold', `color-${getMeterColor(spacePercentagePrecision)}`])}
-                style={{ '--signal-success': 'initial' }}
-                // Used by Drive E2E tests
-                data-testid="app-used-space"
-            >
-                {humanSize(UsedSpace)}
-            </span>
-            &nbsp;/&nbsp;<span className="max-space">{humanSize(MaxSpace)}</span>
-        </>
-    );
 
     return (
         <>
@@ -170,12 +132,12 @@ const Sidebar = ({
                     {contactsButton}
                     {children}
                 </div>
-                {APP_NAME !== APPS.PROTONVPN_SETTINGS && MaxSpace > 0 ? (
+                {APP_NAME !== APPS.PROTONVPN_SETTINGS && appSpace.maxSpace > 0 ? (
                     <div className="shrink-0 app-infos px-3 mt-2">
                         <SidebarStorageMeter
-                            label={`${c('Storage').t`Your current storage:`} ${humanSize(UsedSpace)} / ${humanSize(
-                                MaxSpace
-                            )}`}
+                            label={`${c('Storage').t`Your current storage:`} ${humanSize(
+                                appSpace.usedSpace
+                            )} / ${humanSize(appSpace.maxSpace)}`}
                             value={spacePercentagePrecision}
                         />
                         <div className="flex flex-nowrap justify-space-between py-2">

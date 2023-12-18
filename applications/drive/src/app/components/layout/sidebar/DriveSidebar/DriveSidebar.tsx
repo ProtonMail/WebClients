@@ -71,6 +71,7 @@ const DriveSidebar = ({ logo, primary, isHeaderExpanded, toggleHeaderExpanded }:
     const shares = defaultShare ? [defaultShare] : [];
     return (
         <Sidebar
+            app={APPS.PROTONDRIVE}
             appsDropdown={<AppsDropdown app={APPS.PROTONDRIVE} />}
             logo={logo}
             expanded={isHeaderExpanded}
