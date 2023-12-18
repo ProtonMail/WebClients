@@ -1,6 +1,9 @@
+import { c } from 'ttag';
+
+import Icon from '@proton/components/components/icon/Icon';
+import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import clsx from '@proton/utils/clsx';
 
-import { Icon, Info } from '../../../components';
 import { PlanCardFeatureDefinition } from '../features/interface';
 
 import './SubscriptionCancelPlan.scss';
@@ -13,44 +16,21 @@ interface Props {
     className?: string;
 }
 
-const SubscriptionCancelPlan = ({ name, info, features, downgrade = false, className }: Props) => {
+const SubscriptionCancelPlan = ({ name, features, downgrade = false, className }: Props) => {
     return (
-        <div className={clsx('pr-0 py-4 md:pr-4', className)}>
-            <h3 className="text-bold text-capitalize mb-2" id={`desc_${name}`}>
-                {name}
-            </h3>
-            <p className="text-lg subscription-cancel-plan-info">{info}</p>
-            {features.length ? (
-                <ul className="unstyled mt-4">
-                    {features.map((feature) => {
-                        const key =
-                            typeof feature.text === 'string'
-                                ? feature.text
-                                : `${feature.tooltip}-${feature.icon}-${feature.included}-${feature.status}`;
-                        return (
-                            <li key={key} className="flex flex-nowrap mb-2">
-                                <span className={clsx('shrink-0 mr-4', downgrade && 'color-weak')}>
-                                    {downgrade ? '-' : <Icon name="checkmark" className="color-primary" />}
-                                </span>
-                                <span className="flex-1">
-                                    <span
-                                        className={clsx(
-                                            'align-middle',
-                                            downgrade && 'text-strike color-weak',
-                                            !downgrade && feature.status === 'coming-soon' && 'color-weak'
-                                        )}
-                                    >
-                                        {feature.text}
-                                    </span>
-                                    {feature.tooltip ? (
-                                        <Info buttonClass="align-middle ml-2" title={feature.tooltip} />
-                                    ) : null}
-                                </span>
-                            </li>
-                        );
-                    })}
-                </ul>
-            ) : null}
+        <div className={clsx('rounded border p-6', className)}>
+            <div className="mb-2">
+                <h3 className="text-bold text-capitalize" id={`desc_${name}`}>
+                    {name}
+                </h3>
+                <span className="color-weak text-sm">
+                    {downgrade ? c('Info').t`Current plan` : c('Info').t`Downgrade`}
+                </span>
+            </div>
+            <PlanCardFeatureList
+                icon={downgrade ? <Icon name="arrow-up" className="color-success" /> : <Icon name="arrow-down" />}
+                features={features}
+            />
         </div>
     );
 };

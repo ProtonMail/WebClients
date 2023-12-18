@@ -228,7 +228,7 @@ const MainContainer: FunctionComponent = () => {
                                             <GiftCodeSection />
                                             <InvoicesSection />
                                             <CancelSubscriptionSection />
-                                            <DowngradeSubscriptionSection />
+                                            <DowngradeSubscriptionSection app={app} />
                                             <CancelB2bSubscriptionSection />
                                         </PrivateMainSettingsArea>
                                     </SubscriptionModalProvider>
