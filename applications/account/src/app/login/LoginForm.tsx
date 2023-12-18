@@ -423,20 +423,22 @@ const LoginForm = ({
                                         {c('Action').t`Cancel`}
                                     </Button>
                                 )}
-                                <div className="text-center mt-4">
-                                    <InlineLinkButton
-                                        type="button"
-                                        color="norm"
-                                        disabled={submitting}
-                                        onClick={() => {
-                                            abortExternalSSO();
-                                            onChangeAuthType(AuthType.SRP);
-                                            setPassword('');
-                                        }}
-                                    >
-                                        {c('Action').t`Sign in with password`}
-                                    </InlineLinkButton>
-                                </div>
+                                {!externalSSOState && (
+                                    <div className="text-center mt-4">
+                                        <InlineLinkButton
+                                            type="button"
+                                            color="norm"
+                                            disabled={submitting}
+                                            onClick={() => {
+                                                abortExternalSSO();
+                                                onChangeAuthType(AuthType.SRP);
+                                                setPassword('');
+                                            }}
+                                        >
+                                            {c('Action').t`Sign in with password`}
+                                        </InlineLinkButton>
+                                    </div>
+                                )}
                             </>
                         );
                     }
