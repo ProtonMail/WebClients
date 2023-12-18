@@ -11,8 +11,11 @@ import {
     sendSelectAllTelemetryReport,
 } from 'proton-mail/helpers/moveToFolder';
 import { getSelectAllNotificationText } from 'proton-mail/helpers/selectAll';
-import { moveAll } from 'proton-mail/logic/elements/elementsActions';
-import { useAppDispatch } from 'proton-mail/logic/store';
+import { useOptimisticApplyLabels } from 'proton-mail/hooks/optimistic/useOptimisticApplyLabels';
+import { backendActionStarted, moveAll } from 'proton-mail/logic/elements/elementsActions';
+import { elementsMap as elementsMapSelector } from 'proton-mail/logic/elements/elementsSelectors';
+import { layoutActions } from 'proton-mail/logic/layout/layoutSlice';
+import { store, useAppDispatch } from 'proton-mail/logic/store';
 import { Element } from 'proton-mail/models/element';
 
 interface MoveAllParams {
@@ -32,6 +35,7 @@ export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boo
     const [labels = []] = useLabels();
     const { createNotification } = useNotifications();
     const dispatch = useAppDispatch();
+    const optimisticApplyLabels = useOptimisticApplyLabels();
 
     const [selectAllMoveModal, handleShowSelectAllMoveModal] = useModalTwo(SelectAllMoveModal);
 
@@ -61,11 +65,25 @@ export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boo
                 event: TelemetryMailSelectAllEvents.banner_move_to,
             });
 
-            void dispatch(moveAll({ SourceLabelID: fromLabelID, DestinationLabelID: folderID, selectAll: true }));
+            const state = store.getState();
+            const elements = Object.values(elementsMapSelector(state));
+
+            // We are applying the select all updates optimistically. However, new load request would cancel the optimistic updates.
+            // Here we are adding a new pending action to the store to prevent loading elements from useElement hook.
+            // Once the request is done, we do know what are the Task running in the labelID
+            // We then can remove the pending action, and block new load requests for the time we have Task running inside a label
+            dispatch(backendActionStarted());
+            const rollback = optimisticApplyLabels(elements, { [folderID]: true }, true, [], destinationLabelID);
+
+            void dispatch(
+                moveAll({ SourceLabelID: fromLabelID, DestinationLabelID: folderID, selectAll: true, rollback })
+            );
 
             createNotification({
                 text: getSelectAllNotificationText(isMessage),
             });
+
+            dispatch(layoutActions.setSelectAll(false));
         },
         [labels]
     );

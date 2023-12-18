@@ -37,6 +37,7 @@ import {
     shouldResetElementsState as shouldResetElementsStateSelector,
     shouldUpdatePage as shouldUpdatePageSelector,
     stateInconsistency as stateInconsistencySelector,
+    taskRunning,
     totalReturned as totalReturnedSelector,
 } from '../../logic/elements/elementsSelectors';
 import { messageByID } from '../../logic/messages/messagesSelectors';
@@ -114,6 +115,7 @@ export const useElements: UseElements = ({
     const stateParams = useSelector(paramsSelector);
     const elementsMap = useSelector(elementsMapSelector);
     const pendingActions = useSelector(pendingActionsSelector);
+    const tasksRunning = useSelector(taskRunning);
     const elements = useSelector(elementsSelector);
     const elementIDs = useSelector(elementIDsSelector);
     const messagesToLoadMoreES = useSelector((state: RootState) =>
@@ -168,11 +170,14 @@ export const useElements: UseElements = ({
 
     // Main effect watching all inputs and responsible to trigger actions on the state
     useEffect(() => {
+        // If we have actions pending OR select all actions pending, we don't want to load elements because it would cancel our optimistic updates
+        const hasPendingActions = pendingActions > 0 || tasksRunning.labelIDs.includes(labelID);
+
         /**
          * To more load new elements, the user should either have `shouldLoadElements` true, no pending action AND not be in search,
          * OR change the page size for a bigger one (100 > 200)
          */
-        if (shouldLoadElements && pendingActions === 0 && !isSearch(search)) {
+        if (shouldLoadElements && !hasPendingActions && !isSearch(search)) {
             void dispatch(
                 loadAction({
                     abortController: abortControllerRef.current,
@@ -186,7 +191,16 @@ export const useElements: UseElements = ({
         if (shouldUpdatePage && messagesToLoadMoreES === 0) {
             dispatch(updatePage(page));
         }
-    }, [shouldLoadElements, shouldUpdatePage, messagesToLoadMoreES, pendingActions, search, pageSize]);
+    }, [
+        shouldLoadElements,
+        shouldUpdatePage,
+        messagesToLoadMoreES,
+        pendingActions,
+        search,
+        pageSize,
+        labelID,
+        tasksRunning,
+    ]);
 
     // Move to the last page if the current one becomes empty
     useEffect(() => {
