@@ -6,6 +6,8 @@ import { getCleanedFolderID, sendSelectAllTelemetryReport } from 'proton-mail/he
 import { getSelectAllNotificationText } from 'proton-mail/helpers/selectAll';
 import { useEmptyLabel } from 'proton-mail/hooks/actions/useEmptyLabel';
 import { useGetElementsFromIDs } from 'proton-mail/hooks/mailbox/useElements';
+import { layoutActions } from 'proton-mail/logic/layout/layoutSlice';
+import { useAppDispatch } from 'proton-mail/logic/store';
 
 /**
  * If you need to use permanent delete on a full location, prefer to use the hook "usePermanentDelete" with selectAll to true instead.
@@ -16,6 +18,7 @@ export const usePermanentDeleteAll = (labelID: string) => {
     const getElementsFromIDs = useGetElementsFromIDs();
     const [folders = []] = useFolders();
     const { emptyLabel, modal: deleteAllModal } = useEmptyLabel();
+    const dispatch = useAppDispatch();
 
     const handleDeleteAll = async (selectedIDs: string[]) => {
         const elements = getElementsFromIDs(selectedIDs);
@@ -33,6 +36,7 @@ export const usePermanentDeleteAll = (labelID: string) => {
         createNotification({
             text: getSelectAllNotificationText(isMessage),
         });
+        dispatch(layoutActions.setSelectAll(false));
     };
 
     return { handleDeleteAll, deleteAllModal };

@@ -27,7 +27,7 @@ import { CacheEntry } from '../../models/tools';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetElementByID } from '../mailbox/useElements';
 
-export type MarkAsChanges = { status: MARK_AS_STATUS; displaySnoozedReminder: boolean };
+export type MarkAsChanges = { status: MARK_AS_STATUS; displaySnoozedReminder?: boolean };
 
 const computeRollbackMarkAsChanges = (element: Element, labelID: string, changes: MarkAsChanges) => {
     const isElementUnread = isUnread(element, labelID);
