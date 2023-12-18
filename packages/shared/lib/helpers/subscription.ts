@@ -16,7 +16,7 @@ import {
     PLAN_TYPES,
     isFreeSubscription,
 } from '../constants';
-import { External, Plan, PlanIDs, PlansMap, Pricing, Subscription, SubscriptionModel } from '../interfaces';
+import { External, Plan, PlanIDs, PlansMap, Pricing, Subscription } from '../interfaces';
 import { hasBit } from './bitset';
 
 const { PLAN, ADDON } = PLAN_TYPES;
@@ -223,6 +223,10 @@ export const hasBlackFridayDiscount = (subscription: Subscription | undefined) =
         COUPON_CODES.MAIL_BLACK_FRIDAY_2022,
         COUPON_CODES.VPN_BLACK_FRIDAY_2022,
     ].includes(subscription?.CouponCode as COUPON_CODES);
+};
+
+export const getHas2023OfferCoupon = (coupon: string | undefined | null): boolean => {
+    return [COUPON_CODES.END_OF_YEAR_2023, COUPON_CODES.BLACK_FRIDAY_2023].includes(coupon as any);
 };
 
 export const hasVPNBlackFridayDiscount = (subscription: Subscription | undefined) => {
@@ -543,7 +547,7 @@ export const getVPNDedicatedIPs = (subscription: Subscription | undefined) => {
     );
 };
 
-export const getHasCoupon = (subscription: SubscriptionModel | undefined, coupon: string) => {
+export const getHasCoupon = (subscription: Subscription | undefined, coupon: string) => {
     return [subscription?.CouponCode, subscription?.UpcomingSubscription?.CouponCode].includes(coupon);
 };
 

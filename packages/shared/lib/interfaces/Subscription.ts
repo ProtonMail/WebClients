@@ -84,11 +84,11 @@ export interface Subscription {
     Discount: number;
     Plans: Plan[];
     External: External;
+    UpcomingSubscription?: Subscription | null;
 }
 
 export interface SubscriptionModel extends Subscription {
     isManagedByMozilla: boolean;
-    UpcomingSubscription?: Subscription | null;
 }
 
 export type PlanIDs = Partial<{
