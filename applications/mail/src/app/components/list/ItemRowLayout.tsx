@@ -100,7 +100,7 @@ const ItemRowLayout = ({
 
     if (isDelightMailListEnabled) {
         return (
-            <div className="flex flex-nowrap flex-column w-full mt-1">
+            <div className="flex flex-nowrap flex-column w-full my-auto">
                 <div className="flex items-center justify-start flex-nowrap flex-row item-titlesender w-full gap-3">
                     <div className="my-auto flex shrink-0" data-testid={unread}>
                         <ItemStar element={element} />
