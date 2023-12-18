@@ -44,7 +44,11 @@ const SelectAllMoveModal = ({
         let sentenceBeginning;
         const destinationName = getLabelName(destinationID, labels, folders);
         const destinationElement = (
-            <span className="inline-block max-w-full text-ellipsis align-bottom" title={destinationName}>
+            <span
+                className="inline-block max-w-full text-ellipsis align-bottom"
+                key={destinationName}
+                title={destinationName}
+            >
                 {destinationName}
             </span>
         );

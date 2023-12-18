@@ -6,6 +6,7 @@ import { UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { isAllowedAutoDeleteLabelID } from 'proton-mail/helpers/autoDelete';
+import { RootState } from 'proton-mail/logic/store';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import useShowUpsellBanner from '../../hooks/useShowUpsellBanner';
@@ -52,7 +53,9 @@ const ListBanners = ({
 
     const bannerType = useAutoDeleteBanner(labelID);
 
-    const canDisplayTaskRunningBanner = useSelector(showLabelTaskRunningBanner);
+    const canDisplayTaskRunningBanner = useSelector((state: RootState) =>
+        showLabelTaskRunningBanner(state, { labelID })
+    );
     const { canDisplayUpsellBanner, needToShowUpsellBanner, handleDismissBanner } = useShowUpsellBanner(labelID);
 
     /**

@@ -326,6 +326,6 @@ export const stateInconsistency = createSelector(
         !beforeFirstLoad && !pendingRequest && retry.error === undefined && retry.count === 3 && !useES
 );
 
-export const showLabelTaskRunningBanner = createSelector([taskRunning], (taskRunning) => {
-    return taskRunning.labelIDs.length > 0;
+export const showLabelTaskRunningBanner = createSelector([taskRunning, currentlabelID], (taskRunning, labelID) => {
+    return taskRunning.labelIDs.includes(labelID);
 });

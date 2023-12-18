@@ -188,7 +188,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, sel
             },
             {} as { [labelID: string]: boolean }
         );
-    }, [selectedIDs, initialState, selectedLabelIDs, selectAll]);
+    }, [selectedIDs, initialState, selectedLabelIDs, selectAll, labels]);
 
     // Always checkbox should be disabled when we don't find senders OR there are no labels checked (so no filter based on labels to create)
     const alwaysCheckboxDisabled = useMemo(() => {
