@@ -139,7 +139,10 @@ const Spotlight = ({
                     ])}
                     onAnimationEnd={handleAnimationEnd}
                 >
-                    <div className={clsx(['spotlight-inner', type && 'flex flex-nowrap items-start'])}>
+                    <div
+                        className={clsx(['spotlight-inner', type && 'flex flex-nowrap items-start'])}
+                        data-testid="spotlight-inner"
+                    >
                         {illustrationURL && <img className="shrink-0 mr-6" src={illustrationURL} alt="" />}
                         <div>{content}</div>
                     </div>
@@ -150,6 +153,7 @@ const Spotlight = ({
                             shape="ghost"
                             size="small"
                             className="spotlight-close"
+                            data-testid="spotlight-inner-close-button"
                             title={closeText}
                             onClick={handleClose}
                         >
