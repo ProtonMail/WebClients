@@ -142,7 +142,7 @@ const MainContainer: FunctionComponent = () => {
 
     const logo = <MainLogo to="/" />;
 
-    const top = <TopBanners />;
+    const top = <TopBanners app={APPS.PROTONVPN_SETTINGS} />;
 
     const header = (
         <PrivateHeader
