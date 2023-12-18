@@ -27,6 +27,7 @@ import {
 } from '@proton/activation/src/interface';
 import { getApiError, getIsTimeoutError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import truncate from '@proton/utils/truncate';
@@ -182,7 +183,16 @@ export const createImporterThunk = createAsyncThunk<ImporterData, Props, EasySwi
                                     importType: product,
                                     error: c('Error').t`No contacts found to import`,
                                 };
+                            } else if (code === IMPORT_ERROR.AUTHENTICATION_ERROR) {
+                                return {
+                                    importType: product,
+                                    error: c('Error').t`${BRAND_NAME} can't connect to your external account`,
+                                };
                             }
+                            return {
+                                importType: product,
+                                error: c('Error').t`Unexpected error, we can't import the contacts`,
+                            };
                         } else {
                             throw e;
                         }
