@@ -72,7 +72,6 @@ import {
     ADDON_NAMES,
     APPS,
     BRAND_NAME,
-    COUPON_CODES,
     CYCLE,
     DEFAULT_CYCLE,
     PASS_APP_NAME,
@@ -86,7 +85,11 @@ import { SubscriptionCheckoutData, getCheckout, getOptimisticCheckResult } from 
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getPricingFromPlanIDs, getTotalFromPricing } from '@proton/shared/lib/helpers/subscription';
+import {
+    getHas2023OfferCoupon,
+    getPricingFromPlanIDs,
+    getTotalFromPricing,
+} from '@proton/shared/lib/helpers/subscription';
 import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { Currency, Cycle, CycleMapping, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
@@ -847,7 +850,7 @@ const Step1 = ({
     const planInformation = getPlanInformation(options.plan, vpnServersCountData, mode);
 
     const upsellToCycle = (() => {
-        if (options.plan.Name === PLANS.BUNDLE && options.checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023) {
+        if (options.plan.Name === PLANS.BUNDLE && getHas2023OfferCoupon(options.checkResult.Coupon?.Code)) {
             return;
         }
         if (options.cycle === CYCLE.MONTHLY) {
@@ -935,8 +938,9 @@ const Step1 = ({
     };
 
     const isBlackFriday =
-        getSubscriptionMapping({ [PLANS.VPN]: 1 })?.mapping[CYCLE.FIFTEEN]?.checkResult.Coupon?.Code ===
-            COUPON_CODES.BLACK_FRIDAY_2023 || options.checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023;
+        getHas2023OfferCoupon(
+            getSubscriptionMapping({ [PLANS.VPN]: 1 })?.mapping[CYCLE.FIFTEEN]?.checkResult.Coupon?.Code
+        ) || getHas2023OfferCoupon(options.checkResult.Coupon?.Code);
 
     const isCyberWeekPeriod = getIsCyberWeekPeriod();
     const isBlackFridayPeriod = getIsBlackFridayPeriod();
@@ -945,7 +949,7 @@ const Step1 = ({
         <div className="w-full text-sm color-norm opacity-70 text-center">
             <div className="mx-auto w-full md:w-7/10">
                 *
-                {options.checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023
+                {getHas2023OfferCoupon(options.checkResult.Coupon?.Code)
                     ? getBlackFridayRenewalNoticeText({
                           price: options.checkResult.Amount + (options.checkResult.CouponDiscount || 0),
                           cycle: options.cycle,
@@ -1612,8 +1616,7 @@ const Step1 = ({
                                                     }
 
                                                     if (
-                                                        options.checkResult.Coupon?.Code ===
-                                                            COUPON_CODES.BLACK_FRIDAY_2023 &&
+                                                        getHas2023OfferCoupon(options.checkResult.Coupon?.Code) &&
                                                         options.cycle === CYCLE.MONTHLY
                                                     ) {
                                                         return null;

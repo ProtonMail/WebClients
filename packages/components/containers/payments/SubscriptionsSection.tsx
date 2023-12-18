@@ -3,14 +3,18 @@ import { c, msgid } from 'ttag';
 import { DropdownActionProps } from '@proton/components/components/dropdown/DropdownActions';
 import { useLoading } from '@proton/hooks';
 import { changeRenewState } from '@proton/shared/lib/api/payments';
-import { COUPON_CODES, PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/shared/lib/constants';
 import {
     getCheckResultFromSubscription,
     getCheckout,
     getOptimisticCheckResult,
 } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { getNormalCycleFromCustomCycle, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import {
+    getHas2023OfferCoupon,
+    getNormalCycleFromCustomCycle,
+    getPlanIDs,
+} from '@proton/shared/lib/helpers/subscription';
 import { Renew } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -85,7 +89,7 @@ const SubscriptionsSection = () => {
     const { renewPrice, renewalLength } = (() => {
         const latestPlanIDs = getPlanIDs(latestSubscription);
         if (
-            latestSubscription.CouponCode === COUPON_CODES.BLACK_FRIDAY_2023 &&
+            getHas2023OfferCoupon(latestSubscription.CouponCode) &&
             (latestPlanIDs[PLANS.VPN] || latestPlanIDs[PLANS.VPN_PASS_BUNDLE])
         ) {
             const nextCycle = getNormalCycleFromCustomCycle(latestSubscription.Cycle);

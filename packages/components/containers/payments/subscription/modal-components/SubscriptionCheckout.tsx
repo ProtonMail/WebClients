@@ -2,7 +2,7 @@ import { ReactNode, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { APPS, COUPON_CODES, CYCLE, MEMBER_ADDON_PREFIX, PLANS } from '@proton/shared/lib/constants';
+import { APPS, CYCLE, MEMBER_ADDON_PREFIX, PLANS } from '@proton/shared/lib/constants';
 import {
     AddonDescription,
     Included,
@@ -12,6 +12,7 @@ import {
     getWhatsIncluded,
 } from '@proton/shared/lib/helpers/checkout';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Currency, Cycle, PlanIDs, PlansMap, Subscription, VPNServersCountData } from '@proton/shared/lib/interfaces';
 
@@ -54,9 +55,7 @@ const PlanDescription = ({ list }: { list: Included[] }) => {
                             return (
                                 <div key={`${item.text}${item.type}`} className="flex flex-nowrap mb-2">
                                     <div className="flex-auto text-ellipsis mr-4">{item.text}</div>
-                                    <div className="flex-auto shrink-0 text-right">
-                                        {item.value}
-                                    </div>
+                                    <div className="flex-auto shrink-0 text-right">{item.value}</div>
                                 </div>
                             );
                         }
@@ -207,7 +206,7 @@ const SubscriptionCheckout = ({
         return withDiscountPerMonth;
     })();
 
-    const hasBFDiscount = checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023;
+    const hasBFDiscount = getHas2023OfferCoupon(checkResult.Coupon?.Code);
 
     return (
         <Checkout

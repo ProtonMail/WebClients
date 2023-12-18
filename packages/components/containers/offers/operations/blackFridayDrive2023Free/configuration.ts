@@ -18,34 +18,34 @@ const config: OfferConfig = {
     darkBackground: true,
     deals: [
         {
-            ref: 'bf_23_drive_free-modal-d12',
+            ref: 'eoy_23_drive_free-modal-d12',
             dealName: `${PLAN_NAMES[PLANS.DRIVE]} - 200 GB`,
             planIDs: {
                 [PLANS.DRIVE]: 1,
             },
             cycle: CYCLE.YEARLY,
-            couponCode: COUPON_CODES.BLACK_FRIDAY_2023,
+            couponCode: COUPON_CODES.END_OF_YEAR_2023,
             features: getDriveFeatures,
         },
         {
-            ref: 'bf_23_drive_free-modal-u12',
+            ref: 'eoy_23_drive_free-modal-u12',
             dealName: `${PLAN_NAMES[PLANS.BUNDLE]} - 500 GB`,
             planIDs: {
                 [PLANS.BUNDLE]: 1,
             },
             cycle: CYCLE.YEARLY,
-            couponCode: COUPON_CODES.BLACK_FRIDAY_2023,
+            couponCode: COUPON_CODES.END_OF_YEAR_2023,
             features: getUnlimitedDriveFeatures,
             popular: 1,
         },
         {
-            ref: 'bf_23_drive_free-modal-f12',
+            ref: 'eoy_23_drive_free-modal-f12',
             dealName: `${PLAN_NAMES[PLANS.FAMILY]} - 3 TB`,
             planIDs: {
                 [PLANS.FAMILY]: 1,
             },
             cycle: CYCLE.YEARLY,
-            couponCode: COUPON_CODES.BLACK_FRIDAY_2023,
+            couponCode: COUPON_CODES.END_OF_YEAR_2023,
             features: getFamilyDriveFeatures,
         },
     ],
