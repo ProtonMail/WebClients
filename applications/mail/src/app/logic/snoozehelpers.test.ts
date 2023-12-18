@@ -99,6 +99,33 @@ describe('snooze helpers - getSnoozeTimeFromElement', () => {
         ).toEqual(undefined);
     });
 
+    it('Should return snooze time when element is a conversation, and in custom folder with date', () => {
+        const snoozeTime = new Date().getTime();
+        const labelID = 'customFolderLabelID';
+
+        expect(
+            getSnoozeTimeFromElement(
+                {
+                    Labels: [{ ID: labelID, ContextSnoozeTime: snoozeTime }],
+                } as Element,
+                labelID
+            )
+        ).toEqual(snoozeTime);
+    });
+
+    it('Should return undefined when element is a conversation, and in custom folder without date', () => {
+        const labelID = 'customFolderLabelID';
+
+        expect(
+            getSnoozeTimeFromElement(
+                {
+                    Labels: [{ ID: labelID }],
+                } as Element,
+                labelID
+            )
+        ).toEqual(undefined);
+    });
+
     it('Should return snooze time when element is a message', () => {
         const snoozeTime = new Date().getTime();
 
