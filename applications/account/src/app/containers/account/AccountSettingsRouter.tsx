@@ -41,6 +41,7 @@ import {
     YourPlanSection,
 } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
+import YourStorageSection from '@proton/components/containers/payments/subscription/YourStorageSection';
 import { InviteSection, ReferralInvitesContextProvider, RewardSection } from '@proton/components/containers/referral';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 
@@ -69,6 +70,7 @@ const AccountSettingsRouter = ({
                     <SubscriptionModalProvider app={app}>
                         <AutomaticSubscriptionModal />
                         <PrivateMainSettingsArea config={dashboard}>
+                            <YourStorageSection app={app} />
                             <YourPlanSection app={app} />
                             <SubscriptionsSection />
                             <PaymentMethodsSection />
