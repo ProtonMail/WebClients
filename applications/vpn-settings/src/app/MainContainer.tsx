@@ -170,6 +170,7 @@ const MainContainer: FunctionComponent = () => {
 
     const sidebar = (
         <Sidebar
+            app={APPS.PROTONVPN_SETTINGS}
             appsDropdown={null}
             logo={logo}
             expanded={expanded}
