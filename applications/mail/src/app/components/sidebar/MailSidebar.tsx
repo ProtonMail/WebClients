@@ -40,6 +40,7 @@ const MailSidebar = ({ labelID }: Props) => {
     return (
         <>
             <Sidebar
+                app={APPS.PROTONMAIL}
                 appsDropdown={<AppsDropdown app={APPS.PROTONMAIL} />}
                 expanded={expanded}
                 onToggleExpand={() => {
