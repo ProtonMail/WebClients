@@ -26,11 +26,6 @@ $item-container-height: rem(64);
 
 		.is-compact .is-column & {
 			--item-container-padding-block: #{rem(8)};
-
-			.item-icon-compact {
-				margin-inline-start: var(--space-1);
-				block-size: rem(28);
-			}
 		}
 
 		.is-comfortable .is-row & {
@@ -39,19 +34,13 @@ $item-container-height: rem(64);
 
 		.is-compact .is-row & {
 			--item-container-padding-block: #{rem(6)};
-
-			.item-icon-compact {
-				margin-block-start: 0;
-				margin-inline-start: var(--space-1);
-				block-size: rem(28);
-			}
 		}
 
 		&:hover {
 			z-index: 2;
 			box-shadow: var(--shadow-lifted);
 			transition:
-				box-shadow 150ms easing(ease-in-cubic),
+				box-shadow 100ms easing(ease-in),
 				color 100ms easing(ease-in),
 				background-color 100ms easing(ease-in);
 		}
