@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { MutableRefObject, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -42,6 +42,10 @@ import SupportDropdown from '../public/SupportDropdown';
 import { defaultPersistentKey } from '../public/helper';
 import Loader from '../signup/Loader';
 
+export interface LoginFormRef {
+    getIsLoading: () => void;
+}
+
 interface Props {
     modal?: boolean;
     api: Api;
@@ -64,6 +68,7 @@ interface Props {
     paths: Paths;
     authType: AuthType;
     onChangeAuthType: (authType: AuthType) => void;
+    loginFormRef: MutableRefObject<LoginFormRef | undefined>;
 }
 
 const LoginForm = ({
@@ -79,6 +84,7 @@ const LoginForm = ({
     externalSSO,
     externalSSOToken,
     paths,
+    loginFormRef,
 }: Props) => {
     const handleError = useErrorHandler();
     const [submitting, withSubmitting] = useLoading();
@@ -104,6 +110,12 @@ const LoginForm = ({
     const onceRef = useRef(false);
 
     const loading = Boolean(challengeLoading);
+
+    useImperativeHandle(loginFormRef, () => ({
+        getIsLoading: () => {
+            return loading || submitting || externalSSOState;
+        },
+    }));
 
     useEffect(() => {
         if (loading) {
@@ -232,7 +244,7 @@ const LoginForm = ({
                 createNotification({
                     type: 'info',
                     text: c('Info')
-                        .t`Email domain associated to an existing organization. Please sign in with SSO to continue.`,
+                        .t`Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.`,
                 });
                 return;
             }
@@ -423,20 +435,22 @@ const LoginForm = ({
                                         {c('Action').t`Cancel`}
                                     </Button>
                                 )}
-                                <div className="text-center mt-4">
-                                    <InlineLinkButton
-                                        type="button"
-                                        color="norm"
-                                        disabled={submitting}
-                                        onClick={() => {
-                                            abortExternalSSO();
-                                            onChangeAuthType(AuthType.SRP);
-                                            setPassword('');
-                                        }}
-                                    >
-                                        {c('Action').t`Sign in with password`}
-                                    </InlineLinkButton>
-                                </div>
+                                {!externalSSOState && (
+                                    <div className="text-center mt-4">
+                                        <InlineLinkButton
+                                            type="button"
+                                            color="norm"
+                                            disabled={submitting}
+                                            onClick={() => {
+                                                abortExternalSSO();
+                                                onChangeAuthType(AuthType.SRP);
+                                                setPassword('');
+                                            }}
+                                        >
+                                            {c('Action').t`Sign in with password`}
+                                        </InlineLinkButton>
+                                    </div>
+                                )}
                             </>
                         );
                     }
@@ -458,7 +472,13 @@ const LoginForm = ({
                                             onChangeAuthType(AuthType.ExternalSSO);
                                         }}
                                     >
-                                        {c('Action').t`Sign in with SSO`}
+                                        <div className="inline-flex items-center gap-2">
+                                            {c('Action').t`Sign in with SSO`}
+                                            <Info
+                                                title={c('Info')
+                                                    .t`For members of organizations using single sign-on (SAML SSO)`}
+                                            />
+                                        </div>
                                     </Button>
                                 </>
                             )}
