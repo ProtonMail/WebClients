@@ -1,5 +1,6 @@
 import { ForwardedRef, Fragment, forwardRef } from 'react';
 
+import { useFlag } from '@protontech/proxy-client-react';
 import { c } from 'ttag';
 
 import ProtonBadge from '@proton/components/components/protonBadge/ProtonBadge';
@@ -23,6 +24,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
     ({ onDropdownClick, app, user, ...rest }: AppsDropdownProps, ref: ForwardedRef<HTMLButtonElement>) => {
         const { APP_NAME } = useConfig();
         const isElectron = isElectronApp();
+        const isPassWebAppLinkEnabled = useFlag('PassWebAppLink');
 
         const availableApps = apps(user);
 
@@ -81,7 +83,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
                                         >
                                             {appToLinkToName}
                                         </span>
-                                        {appToLinkTo === APPS.PROTONPASS && (
+                                        {appToLinkTo === APPS.PROTONPASS && !isPassWebAppLinkEnabled && (
                                             <ProtonBadge text={c('Info').t`New`} tooltipText="" selected={false} />
                                         )}
                                     </ProductLink>
