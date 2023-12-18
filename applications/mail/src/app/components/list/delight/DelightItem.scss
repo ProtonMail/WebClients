@@ -40,7 +40,7 @@ $item-container-height: rem(64);
 			z-index: 2;
 			box-shadow: var(--shadow-lifted);
 			transition:
-				box-shadow 150ms easing(ease-in-cubic),
+				box-shadow 100ms easing(ease-in),
 				color 100ms easing(ease-in),
 				background-color 100ms easing(ease-in);
 		}
