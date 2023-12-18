@@ -3,10 +3,11 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonProps } from '@proton/atoms';
+import useFreePlan from '@proton/components/hooks/useFreePlan';
 import { useLoading } from '@proton/hooks';
 import { deleteSubscription } from '@proton/shared/lib/api/payments';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
-import { PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
+import { APP_NAMES, PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
@@ -48,15 +49,17 @@ const { MAIL, VPN } = PLAN_SERVICES;
 
 interface Props extends Omit<ButtonProps, 'loading' | 'onClick'> {
     children: ReactNode;
+    app: APP_NAMES;
 }
 
-const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
+const UnsubscribeButton = ({ className, children, app, ...rest }: Props) => {
     const api = useApi();
     const [vpnServers] = useVPNServersCount();
     const [user] = useUser();
     const getSubscription = useGetSubscription();
     const getOrganization = useGetOrganization();
     const [plans, loadingPlans] = usePlans();
+    const [freePlan, loadingFreePlan] = useFreePlan();
     const { createNotification, hideNotification } = useNotifications();
     const { createModal } = useModals();
     const { call } = useEventManager();
@@ -119,10 +122,14 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
         const { PeriodEnd = 0 } = subscription || {};
 
         // We only show the plan downgrade modal for plans that are defined with features
-        if (shortPlan) {
+        if (shortPlan && freePlan) {
             await new Promise<void>((resolve, reject) => {
                 createModal(
                     <HighlightPlanDowngradeModal
+                        freePlan={freePlan}
+                        app={app}
+                        user={user}
+                        plansMap={plansMap}
                         shortPlan={shortPlan}
                         periodEnd={PeriodEnd}
                         onConfirm={resolve}

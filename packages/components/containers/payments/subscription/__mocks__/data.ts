@@ -204,7 +204,7 @@ export const mailPlusUpsell = {
     features: [
         {
             text: ['', '15 GB', ' storage'],
-            tooltip: 'Storage space is shared across Proton Mail, Proton Calendar, and Proton Drive',
+            tooltip: 'Storage space is shared across Proton Mail, Proton Calendar, Proton Drive, and Proton Pass',
             included: true,
             highlight: false,
             icon: 'storage',
@@ -277,7 +277,7 @@ export const unlimitedUpsell = {
     features: [
         {
             text: ['', '500 GB', ' storage'],
-            tooltip: 'Storage space is shared across Proton Mail, Proton Calendar, and Proton Drive',
+            tooltip: 'Storage space is shared across Proton Mail, Proton Calendar, Proton Drive, and Proton Pass',
             included: true,
             highlight: false,
             icon: 'storage',
@@ -340,7 +340,8 @@ export const familyUpsell = {
     features: [
         {
             text: ['', '3 TB', ' storage'],
-            tooltip: 'Storage space is shared between users across Proton Mail, Proton Calendar, and Proton Drive',
+            tooltip:
+                'Storage space is shared between users across Proton Mail, Proton Calendar, Proton Drive, and Proton Pass',
             included: true,
             highlight: false,
             icon: 'storage',
@@ -422,7 +423,7 @@ export const drivePlusUpsell = {
     features: [
         {
             text: ['', '200 GB', ' storage'],
-            tooltip: 'Storage space is shared across Proton Mail, Proton Calendar, and Proton Drive',
+            tooltip: 'Storage space is shared across Proton Mail, Proton Calendar, Proton Drive, and Proton Pass',
             included: true,
             highlight: false,
             icon: 'storage',
