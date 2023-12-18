@@ -18,6 +18,7 @@ import { getHasVpnB2BPlan, hasCancellablePlan } from '@proton/shared/lib/helpers
 import { Address, Organization, Renew, Subscription, UserModel, UserType } from '@proton/shared/lib/interfaces';
 import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 import { isOrganizationFamily, isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
+import { getHasStorageSplit } from '@proton/shared/lib/user/storage';
 
 import { recoveryIds } from './recoveryIds';
 
@@ -75,6 +76,7 @@ export const getAccountAppRoutes = ({
 
     const cancellablePlan = hasCancellablePlan(subscription);
     const isSSOUser = getIsSSOVPNOnlyAccount(user);
+    const hasSplitStorage = getHasStorageSplit(user);
 
     return <const>{
         available: true,
@@ -87,6 +89,12 @@ export const getAccountAppRoutes = ({
                 available: isFree || canPay || !isMember || (isPaid && canPay),
                 subsections: [
                     {
+                        text: hasSplitStorage ? c('Title').t`Your storage` : undefined,
+                        id: 'your-storage',
+                        available: hasSplitStorage && app !== APPS.PROTONVPN_SETTINGS,
+                    },
+                    {
+                        text: hasSplitStorage ? c('Title').t`Your plan` : undefined,
                         id: 'your-plan',
                         available: canPay,
                     },
