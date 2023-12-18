@@ -289,13 +289,13 @@ const AdvancedSearch = ({
                                 htmlFor="from"
                             >{c('Label').t`Sender`}</Label>
                             <AddressInput
-                                id="from"
-                                dataTestId="advanced-search:sender"
-                                value={model.from}
-                                onChange={(from) => updateModel({ ...model, from })}
-                                placeholder={c('Placeholder').t`Name or email address`}
                                 anchorRef={senderListAnchorRef}
                                 classname="flex-1"
+                                dataTestId="advanced-search:sender"
+                                id="from"
+                                onChange={(from) => updateModel({ ...model, from })}
+                                placeholder={c('Placeholder').t`Name or email address`}
+                                value={model.from}
                             />
                         </div>
                         <div className="mb-2" ref={toListAnchorRef}>
