@@ -55,6 +55,13 @@ export interface User {
     DriveEarlyAccess: number;
     ToMigrate: 0 | 1;
     MnemonicStatus: MNEMONIC_STATUS;
+    ProductUsedSpace: {
+        Calendar: number;
+        Contact: number;
+        Drive: number;
+        Mail: number;
+        Pass: number;
+    };
     Idle: 0 | 1;
     CreateTime: number;
     Flags: {

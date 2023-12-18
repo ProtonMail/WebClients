@@ -95,6 +95,12 @@ export const queryPlans = (params?: QueryPlansParams) => ({
     params,
 });
 
+export const queryFreePlan = (params?: QueryPlansParams) => ({
+    url: 'payments/v4/plans/default',
+    method: 'get',
+    params,
+});
+
 export const getInvoice = (invoiceID: string) => ({
     url: `payments/v4/invoices/${invoiceID}`,
     method: 'get',

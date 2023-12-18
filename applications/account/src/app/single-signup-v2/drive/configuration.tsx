@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { DriveLogo } from '@proton/components/components';
 import { getNCalendarsFeature } from '@proton/components/containers/payments/features/calendar';
-import { getStorageFeature } from '@proton/components/containers/payments/features/drive';
+import { getFreeDriveStorageFeature, getStorageFeature } from '@proton/components/containers/payments/features/drive';
 import { getSupport } from '@proton/components/containers/payments/features/highlights';
 import { getNAddressesFeature } from '@proton/components/containers/payments/features/mail';
 import { getVPNConnections } from '@proton/components/containers/payments/features/vpn';
@@ -42,7 +42,7 @@ export const getDriveBenefits = (): BenefitItem[] => {
 };
 
 export const getFreeDriveFeatures = () => {
-    return [getStorageFeature(-1)];
+    return [getFreeDriveStorageFeature()];
 };
 
 export const getCustomDriveFeatures = (plan: Plan | undefined) => {

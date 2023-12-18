@@ -80,7 +80,7 @@ const AccountSettingsRouter = ({
                             <EmailSubscriptionSection />
                             <CancelSubscriptionSection />
                             <CancelB2bSubscriptionSection />
-                            <DowngradeSubscriptionSection />
+                            <DowngradeSubscriptionSection app={app} />
                         </PrivateMainSettingsArea>
                     </SubscriptionModalProvider>
                 </Route>
