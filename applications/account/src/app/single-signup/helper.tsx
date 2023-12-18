@@ -3,8 +3,8 @@ import { c } from 'ttag';
 import { VpnLogo } from '@proton/components/components';
 import { getVPNPlan } from '@proton/components/containers/payments/features/plan';
 import { getAllPlatforms, getFreeFeatures, getRefundable } from '@proton/components/containers/payments/features/vpn';
-import { COUPON_CODES, CYCLE, DEFAULT_CURRENCY, PLANS } from '@proton/shared/lib/constants';
-import { getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
+import { CYCLE, DEFAULT_CURRENCY, PLANS } from '@proton/shared/lib/constants';
+import { getHas2023OfferCoupon, getNormalCycleFromCustomCycle } from '@proton/shared/lib/helpers/subscription';
 import { Api, Currency, Cycle, CycleMapping, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import isTruthy from '@proton/utils/isTruthy';
@@ -139,7 +139,7 @@ export const getInitialSubscriptionDataForAllCycles = async ({
         const planIDs = planParameters.planIDs;
 
         const hasCustomCycles =
-            ((planIDs[PLANS.VPN] || planIDs[PLANS.VPN_PASS_BUNDLE]) && couponCode === COUPON_CODES.BLACK_FRIDAY_2023) ||
+            ((planIDs[PLANS.VPN] || planIDs[PLANS.VPN_PASS_BUNDLE]) && getHas2023OfferCoupon(couponCode)) ||
             [CYCLE.FIFTEEN, CYCLE.THIRTY].includes(cycle);
 
         const mapping = await getMapping(planIDs, {
@@ -150,7 +150,7 @@ export const getInitialSubscriptionDataForAllCycles = async ({
             [CYCLE.THIRTY]: hasCustomCycles,
         });
 
-        const isBFOfferActive = mapping[CYCLE.FIFTEEN]?.checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023;
+        const isBFOfferActive = getHas2023OfferCoupon(mapping[CYCLE.FIFTEEN]?.checkResult.Coupon?.Code);
 
         if (hasCustomCycles && !isBFOfferActive) {
             delete mapping[CYCLE.FIFTEEN];
@@ -170,7 +170,7 @@ export const getInitialSubscriptionDataForAllCycles = async ({
     };
 
     const getBFMapping = async (): Promise<SubscriptionDataCycleMapping | undefined> => {
-        if (couponCode !== COUPON_CODES.BLACK_FRIDAY_2023) {
+        if (!getHas2023OfferCoupon(couponCode)) {
             return;
         }
         const planIDs = {
@@ -187,7 +187,7 @@ export const getInitialSubscriptionDataForAllCycles = async ({
     };
 
     const getBundleMapping = async () => {
-        if (couponCode !== COUPON_CODES.BLACK_FRIDAY_2023 || planParameters.defined) {
+        if (!getHas2023OfferCoupon(couponCode) || planParameters.defined) {
             return;
         }
         const planIDs = {

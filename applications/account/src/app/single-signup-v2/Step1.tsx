@@ -26,10 +26,11 @@ import { getShortBillingText } from '@proton/components/containers/payments/help
 import { useLoading } from '@proton/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
-import { APP_NAMES, BRAND_NAME, COUPON_CODES, CYCLE, PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import { APP_NAMES, BRAND_NAME, CYCLE, PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
+    getHas2023OfferCoupon,
     getPlanIDs,
     getPlanOffer,
     getPricingFromPlanIDs,
@@ -304,7 +305,7 @@ const Step1 = ({
     const renewalNotice = !hasSelectedFree && (
         <div className="w-full text-sm color-norm opacity-70">
             *
-            {options.checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023
+            {getHas2023OfferCoupon(options.checkResult.Coupon?.Code)
                 ? getBlackFridayRenewalNoticeText({
                       price: options.checkResult.Amount + (options.checkResult.CouponDiscount || 0),
                       cycle: options.cycle,
