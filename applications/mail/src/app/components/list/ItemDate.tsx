@@ -66,7 +66,7 @@ const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = f
     const isReminded = isElementReminded(element);
     const isSnoozed = isElementSnoozed(element, conversationMode);
 
-    if (isInListView && (isReminded || (isSnoozed && snoozeTime))) {
+    if (isInListView && snoozeTime && snoozeTime > 0 && (isReminded || isSnoozed)) {
         return (
             <ItemDateSnoozedMessage
                 element={element}
