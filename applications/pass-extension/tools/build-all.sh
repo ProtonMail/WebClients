@@ -81,34 +81,18 @@ printf "\t✅ %s\n" "$OUTDIR/$BUILD_ID-FF-sources.zip"
 
 # Firefox build
 echo "Building Firefox (Prod)..."
-yarn run build:ff > /dev/null
-cd dist
-zip -rqX "$OUTDIR/$BUILD_ID-FF.zip" "."
-cd ..
-printf "\t✅ %s\n" "$OUTDIR/$BUILD_ID-FF.zip"
-
-
-# Verify FF reproducibility
-echo "Verifying Firefox reproducibility..."
-# Extract build
-mkdir -p "$OUTDIR/$BUILD_ID-FF"
-cd "$OUTDIR/$BUILD_ID-FF"
-unzip -q "$OUTDIR/$BUILD_ID-FF.zip"
-
-# Extract sources
 mkdir -p "$OUTDIR/$BUILD_ID-FF-sources"
 cd "$OUTDIR/$BUILD_ID-FF-sources"
 unzip -q "$OUTDIR/$BUILD_ID-FF-sources.zip"
-
-# Build and diff
 yarn install --no-immutable > /dev/null
 cd applications/pass-extension
 yarn run build:ff > /dev/null
-diff -qr dist "$OUTDIR/$BUILD_ID-FF"
-cd "$PASSDIR"
+cd dist
+zip -rqX "$OUTDIR/$BUILD_ID-FF.zip" "."
 rm -rf "$OUTDIR/$BUILD_ID-FF-sources"
 rm -rf "$OUTDIR/$BUILD_ID-FF"
-printf "\t✅ %s\n" "OK"
+cd "$PASSDIR"
+printf "\t✅ %s\n" "$OUTDIR/$BUILD_ID-FF.zip"
 
 
 # Firefox development (Black) release
