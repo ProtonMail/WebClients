@@ -34,9 +34,13 @@ export interface User {
     ID: string;
     Name: string;
     UsedSpace: number;
+    UsedBaseSpace: number;
+    UsedDriveSpace: number;
     Currency: Currency;
     Credit: number;
     MaxSpace: number;
+    MaxBaseSpace: number;
+    MaxDriveSpace: number;
     MaxUpload: number;
     Role: USER_ROLES;
     Private: number;
