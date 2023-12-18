@@ -75,3 +75,67 @@
 		}
 	}
 }
+
+.item-icon,
+.item-icon-compact:hover {
+	.unread & {
+		background-color: var(--email-item-unread-icon-background-color);
+		color: var(--email-item-unread-icon-text-color);
+	}
+
+	.read & {
+		background-color: var(--email-item-read-icon-background-color);
+		color: var(--email-item-read-icon-text-color);
+	}
+
+	.item-is-selected & {
+		background-color: var(--email-item-selected-icon-background-color);
+		color: var(--email-item-selected-icon-text-color);
+	}
+}
+
+.item-icon-compact {
+	inline-size: rem($conversation-icon-size);
+	block-size: rem($conversation-icon-size);
+	border-radius: 50%;
+	font-size: rem(12);
+	transition: background-color 0.25s ease-out;
+
+	.item-container-column & {
+		margin-block-start: em(-5); // to align with first line
+	}
+
+	.item-container-row & {
+		margin-block: auto;
+	}
+
+	.delight-item-container--row & {
+		margin-inline-start: rem(-1);
+		margin-block: rem(-3);
+	}
+
+	.delight-item-container--column & {
+		margin-inline-start: rem(-2);
+		margin-block: rem(-3);
+	}
+
+	// for allowing hovering larger than fake circle
+	&::after {
+		content: '';
+		position: absolute;
+		inset-block: rem(-2);
+		inset-inline: rem(-6);
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset-block: em(-6);
+		inset-inline: em(-6) em(-12);
+		z-index: 1;
+	}
+
+	.checkbox-fakecheck {
+		margin: auto;
+	}
+}
