@@ -232,7 +232,7 @@ const LoginForm = ({
                 createNotification({
                     type: 'info',
                     text: c('Info')
-                        .t`Email domain associated to an existing organization. Please sign in with SSO to continue.`,
+                        .t`Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.`,
                 });
                 return;
             }
