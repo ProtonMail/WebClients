@@ -3,8 +3,8 @@ import { COUPON_CODES, CYCLE, PLANS, PLAN_NAMES } from '@proton/shared/lib/const
 
 import { getUnlimitedVPNFeatures } from '../../helpers/offerCopies';
 import { OfferConfig } from '../../interface';
-import sideImage from './BF-VPN-App-Modal-400x1200-33.png';
-import sideImage2x from './BF-VPN-App-Modal-800x2400-33.png';
+import sideImage from './EOY-VPN-App-Modal-400x1200-60.png';
+import sideImage2x from './EOY-VPN-App-Modal-800x2400-60.png';
 import Layout from './Layout';
 
 const config: OfferConfig = {
@@ -18,14 +18,15 @@ const config: OfferConfig = {
     canBeDisabled: true,
     deals: [
         {
-            ref: 'bf_23_vpn-2y-modal-u12',
+            ref: 'eoy_23_vpn-2y-modal-u12',
             dealName: PLAN_NAMES[PLANS.BUNDLE],
             planIDs: {
                 [PLANS.BUNDLE]: 1,
             },
             cycle: CYCLE.YEARLY,
-            couponCode: COUPON_CODES.BLACK_FRIDAY_2023,
+            couponCode: COUPON_CODES.END_OF_YEAR_2023,
             features: getUnlimitedVPNFeatures,
+            popular: 1,
             isGuaranteed: true,
         },
     ],
