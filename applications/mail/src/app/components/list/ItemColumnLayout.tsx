@@ -175,9 +175,7 @@ const ItemColumnLayout = ({
                                         <ItemLocation element={element} labelID={labelID} />
                                     </span>
                                 )}
-                                {conversationMode && (
-                                    <NumMessages className="mr-1 shrink-0 text-normal" conversation={element} />
-                                )}
+                                {conversationMode && <NumMessages className="mr-1 shrink-0" conversation={element} />}
                                 <span
                                     role="heading"
                                     aria-level={2}

@@ -81,12 +81,6 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 	&.read {
 		background-color: var(--email-item-read-background-color);
 		color: var(--email-item-read-text-color);
-
-		.item-icon,
-		.item-icon-compact:hover {
-			background-color: var(--email-item-read-icon-background-color);
-			color: var(--email-item-read-icon-text-color);
-		}
 	}
 
 	&.unread {
@@ -99,12 +93,6 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		.item-weight,
 		.item-subject {
 			font-weight: var(--font-weight-bold);
-		}
-
-		.item-icon,
-		.item-icon-compact:hover {
-			background-color: var(--email-item-unread-icon-background-color);
-			color: var(--email-item-unread-icon-text-color);
 		}
 	}
 
@@ -150,12 +138,6 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		.button[aria-expanded='true'] {
 			color: var(--email-item-selected-text-color);
 		}
-
-		.item-icon,
-		.item-icon-compact:hover {
-			background-color: var(--email-item-selected-icon-background-color);
-			color: var(--email-item-selected-icon-text-color);
-		}
 	}
 
 	// Encrypted search shows a preview of the body in the item,
@@ -175,36 +157,6 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 
 	@include media('<=small') {
 		margin-inline: em(2);
-	}
-
-	/* Compact view */
-	.item-icon-compact {
-		inline-size: rem($conversation-icon-size);
-		block-size: rem($conversation-icon-size);
-		border-radius: 50%;
-		font-size: rem(12);
-		transition: background-color 0.25s ease-out;
-		margin-block-start: em(-5); // to align with first line
-
-		// for allowing hovering larger than fake circle
-		&::after {
-			content: '';
-			position: absolute;
-			inset-block: rem(-2);
-			inset-inline: rem(-6);
-		}
-
-		&::before {
-			content: '';
-			position: absolute;
-			inset-block: em(-6);
-			inset-inline: em(-6) em(-12);
-			z-index: 1;
-		}
-
-		.checkbox-fakecheck {
-			margin: auto;
-		}
 	}
 }
 
@@ -402,18 +354,6 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		block-size: $item-container-row-height-compact-mode;
 		scroll-margin-block-start: $item-container-row-height-compact-mode;
 		padding-block: 0;
-
-		.item-icon-compact {
-			// margin-block-start: 0;
-			margin-block: auto;
-
-			/* attempt of increase click surface on label, but does not work in Firefox when shift clicking
-			&::before {
-				inset-block: em(-2);
-				inset-inline: em(-6) em(-12);
-			}
-			*/
-		}
 
 		.item-checkbox::after {
 			inset-block: em(-2) !important;
