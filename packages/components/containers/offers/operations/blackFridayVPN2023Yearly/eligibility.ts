@@ -1,6 +1,12 @@
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
-import { APPS, PLANS } from '@proton/shared/lib/constants';
-import { getPlan, hasFifteen, hasYearly, isManagedExternally } from '@proton/shared/lib/helpers/subscription';
+import { APPS, COUPON_CODES, PLANS } from '@proton/shared/lib/constants';
+import {
+    getHasCoupon,
+    getPlan,
+    hasFifteen,
+    hasYearly,
+    isManagedExternally,
+} from '@proton/shared/lib/helpers/subscription';
 import { ProtonConfig, SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
@@ -21,8 +27,11 @@ const isEligible = ({ subscription, protonConfig, user }: Props) => {
     const { canPay, isDelinquent } = user;
     const notDelinquent = !isDelinquent;
     const isNotExternal = !isManagedExternally(subscription);
+    const hasBF2023Coupon = getHasCoupon(subscription, COUPON_CODES.BLACK_FRIDAY_2023);
 
-    return hasValidApp && isNotExternal && canPay && notDelinquent && hasVPN && (isYearly || isFifteen);
+    return (
+        hasValidApp && isNotExternal && canPay && notDelinquent && hasVPN && !hasBF2023Coupon && (isYearly || isFifteen)
+    );
 };
 
 export default isEligible;

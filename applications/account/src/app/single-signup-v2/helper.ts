@@ -16,6 +16,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import {
+    getHas2023OfferCoupon,
     getNormalCycleFromCustomCycle,
     getPlan,
     getPlanIDs,
@@ -161,7 +162,7 @@ const getUpsell = ({
     };
 
     if (currentPlan) {
-        if (options.coupon === COUPON_CODES.BLACK_FRIDAY_2023) {
+        if (getHas2023OfferCoupon(options.coupon)) {
             if (getHasAnyPlusPlan(currentPlan.Name)) {
                 const hasSelectedPassBundle =
                     hasSelectedPlan(planParameters.plan, [PLANS.VPN_PASS_BUNDLE]) &&
@@ -198,7 +199,7 @@ const getUpsell = ({
                         subscriptionOptions: {
                             planIDs: planParameters.planIDs,
                             cycle: options.cycle,
-                            coupon: COUPON_CODES.BLACK_FRIDAY_2023,
+                            coupon: COUPON_CODES.END_OF_YEAR_2023,
                         },
                         mode: UpsellTypes.UPSELL,
                     };
@@ -214,7 +215,7 @@ const getUpsell = ({
                             [plan.Name]: 1,
                         },
                         cycle: CYCLE.YEARLY,
-                        coupon: COUPON_CODES.BLACK_FRIDAY_2023,
+                        coupon: COUPON_CODES.END_OF_YEAR_2023,
                     },
                     mode: UpsellTypes.UPSELL,
                 };
@@ -232,7 +233,7 @@ const getUpsell = ({
                         subscriptionOptions: {
                             planIDs: planParameters.planIDs,
                             cycle: options.cycle,
-                            coupon: COUPON_CODES.BLACK_FRIDAY_2023,
+                            coupon: COUPON_CODES.END_OF_YEAR_2023,
                         },
                         mode: UpsellTypes.UPSELL,
                     };
@@ -247,7 +248,7 @@ const getUpsell = ({
                             [plan.Name]: 1,
                         },
                         cycle: CYCLE.YEARLY,
-                        coupon: COUPON_CODES.BLACK_FRIDAY_2023,
+                        coupon: COUPON_CODES.END_OF_YEAR_2023,
                     },
                     mode: UpsellTypes.UPSELL,
                 };
@@ -261,7 +262,7 @@ const getUpsell = ({
                         subscriptionOptions: {
                             planIDs: planParameters.planIDs,
                             cycle: options.cycle,
-                            coupon: COUPON_CODES.BLACK_FRIDAY_2023,
+                            coupon: COUPON_CODES.END_OF_YEAR_2023,
                         },
                         mode: UpsellTypes.UPSELL,
                     };
@@ -278,7 +279,7 @@ const getUpsell = ({
                             [plan.Name]: 1,
                         },
                         cycle: CYCLE.YEARLY,
-                        coupon: COUPON_CODES.BLACK_FRIDAY_2023,
+                        coupon: COUPON_CODES.END_OF_YEAR_2023,
                     },
                     mode: UpsellTypes.UPSELL,
                 };
@@ -477,7 +478,7 @@ export const getUserInfo = async ({
     }
 
     if (
-        (user && hasAccess(toApp, user) && (options.coupon !== COUPON_CODES.BLACK_FRIDAY_2023 || !state.payable)) ||
+        (user && hasAccess(toApp, user) && (!getHas2023OfferCoupon(options.coupon) || !state.payable)) ||
         [
             PLANS.NEW_VISIONARY,
             PLANS.BUNDLE_PRO,

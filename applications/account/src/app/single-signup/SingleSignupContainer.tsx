@@ -21,12 +21,12 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { queryPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { ProductParam } from '@proton/shared/lib/apps/product';
-import { APP_NAMES, CLIENT_TYPES, COUPON_CODES, CYCLE, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { APP_NAMES, CLIENT_TYPES, CYCLE, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getPlanFromPlanIDs, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { getIsVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
+import { getHas2023OfferCoupon, getIsVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { Plan, PlansMap } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
@@ -132,11 +132,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
     const upsellShortPlan = getUpsellShortPlan(model.plansMap[PLANS.VPN], vpnServersCountData);
 
     const isB2bPlan = getIsVpnB2BPlan(selectedPlan?.Name as PLANS);
-    const background = isB2bPlan
-        ? 'dark'
-        : signupParameters.coupon === COUPON_CODES.BLACK_FRIDAY_2023
-        ? 'bf2023'
-        : undefined;
+    const background = isB2bPlan ? 'dark' : getHas2023OfferCoupon(signupParameters.coupon) ? 'bf2023' : undefined;
 
     useEffect(() => {
         const fetchDependencies = async () => {

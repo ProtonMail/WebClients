@@ -11,6 +11,7 @@ import {
     DRIVE_SHORT_APP_NAME,
     MAIL_APP_NAME,
     MAIL_SHORT_APP_NAME,
+    PASS_SHORT_APP_NAME,
     PLANS,
     PLAN_NAMES,
     VPN_SHORT_APP_NAME,
@@ -116,12 +117,12 @@ const getPremiumDriveFeature = () => ({
 });
 
 const getPremiumInboxFeature = (domains?: number, addresses?: number) => {
-    const name = c('bf2023: Deal details').t`${MAIL_SHORT_APP_NAME} Plus and ${CALENDAR_SHORT_APP_NAME}`;
+    const name = c('eoy2023: Deal details').t`Paid ${MAIL_SHORT_APP_NAME} and ${CALENDAR_APP_NAME} features`;
 
     if (domains && addresses) {
         if (domains === 1) {
             return {
-                name: c('bf2023: Deal details').t`All paid ${MAIL_SHORT_APP_NAME} and ${CALENDAR_APP_NAME} features`,
+                name,
                 tooltip: c('bf2023: Tooltip')
                     .t`Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.`,
             };
@@ -130,8 +131,8 @@ const getPremiumInboxFeature = (domains?: number, addresses?: number) => {
         return {
             name,
             tooltip: c('bf2023: Tooltip').ngettext(
-                msgid`Includes support for 3 custom email domains, ${addresses} email address, unlimited hide-my-email aliases, calendar sharing, and more.`,
-                `Includes support for 3 custom email domains, ${addresses} email addresses, unlimited hide-my-email aliases, calendar sharing, and more.`,
+                msgid`Includes support for ${domains} custom email domains, ${addresses} email address, unlimited hide-my-email aliases, calendar sharing, and more.`,
+                `Includes support for ${domains} custom email domains, ${addresses} email addresses, unlimited hide-my-email aliases, calendar sharing, and more.`,
                 addresses
             ),
         };
@@ -143,6 +144,23 @@ const getPremiumInboxFeature = (domains?: number, addresses?: number) => {
             .t`Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.`,
     };
 };
+
+const getPremiumNonInboxFeature = () => {
+    return {
+        name: c('eof2023: Deal details')
+            .t`Paid ${DRIVE_SHORT_APP_NAME}, ${VPN_SHORT_APP_NAME} and ${PASS_SHORT_APP_NAME} features`,
+        tooltip: c('eof2023: Tooltip')
+            .t`Includes version history in ${DRIVE_SHORT_APP_NAME}, access to thousands of high-speed ${VPN_SHORT_APP_NAME} servers, sharing in ${PASS_SHORT_APP_NAME} and more.`,
+    };
+};
+
+const getEarlyAccessDesktopFeature = () => ({
+    name: c('eoy2023: Deal details').t`Early access to the ${MAIL_APP_NAME} desktop app`,
+});
+
+const getEarlyAccessFeature = () => ({
+    name: c('eoy2023: Deal details').t`Early access to new apps and features`,
+});
 
 export const getMailPlusInboxFeatures = () => {
     return [
@@ -165,9 +183,7 @@ export const getUnlimitedInboxFeatures = () => [
     getStorageSizeFeature(humanSize(500 * 1024 ** 3, undefined, undefined, 0)),
     { name: c('bf2023: Deal details').t`1 user` },
     getPremiumInboxFeature(3, 15),
-    getPremiumDriveFeature(),
-    getPremiumVPNFeature(),
-    getPremiumPasswordManagerFeature(),
+    getPremiumNonInboxFeature(),
 ];
 
 export const getFamilyInboxFeatures = () => [
@@ -178,6 +194,16 @@ export const getFamilyInboxFeatures = () => [
     getPremiumDriveFeature(),
     getPremiumVPNFeature(),
     getPremiumPasswordManagerFeature(),
+];
+
+export const getVisionaryInboxFeatures = () => [
+    // humanSize doesn't support TB and we don't want to add it yet because of "nice numbers" rounding issues.
+    getStorageSizeFeature(c('eoy2023: Deal details').t`6 TB`),
+    { name: c('eoy2023: Deal details').t`6 users` },
+    getPremiumInboxFeature(10, 100),
+    getPremiumNonInboxFeature(),
+    getEarlyAccessDesktopFeature(),
+    getEarlyAccessFeature(),
 ];
 
 export const getDriveFeatures = () => [
