@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
+set -x
 
 
 REPODIR="$(git rev-parse --show-toplevel)"
@@ -15,7 +16,7 @@ echo "Building for all platforms... This may take a while."
 printf "\tNode\t%s (%s)\n" "$(node --version)" "$(which node)"
 printf "\tnpm\tv%s (%s)\n" "$(npm --version)" "$(which npm)"
 printf "\tYarn\tv%s (%s)\n" "$(yarn --version)" "$(which yarn)"
-for var in "REPODIR" "PASSDIR" "VERSION" "OUTDIR" "COMMIT" "BUILD_ID"; do
+for var in "REPODIR" "PASSDIR" "VERSION" "ARTEFACTSDIR" "OUTDIR" "COMMIT" "BUILD_ID"; do
     printf "\t%s = %s\n" "${var}" "${!var}"
 done
 
@@ -31,28 +32,30 @@ else
 fi
 
 
-cd "$PASSDIR"
+# Set up clean artefacts location
+rm -rf "${ARTEFACTSDIR:-}" && mkdir -p "$ARTEFACTSDIR"
 
 
 # Chrome production release
 echo "Building Chrome (Prod)..."
+cd "$PASSDIR" && rm -rf dist
 BUILD_TARGET=chrome yarn run build > /dev/null
 cd dist
-zip -rqX "$OUTDIR/$BUILD_ID-chrome.zip" "."
-cd ..
-printf "\t✅ %s\n" "$OUTDIR/$BUILD_ID-chrome.zip"
+zip -rqX "$ARTEFACTSDIR/$BUILD_ID-chrome.zip" "."
+printf "\t✅ %s\n" "$ARTEFACTSDIR/$BUILD_ID-chrome.zip"
 
 
 # Chrome development (Black) release
 echo "Building Chrome (Black)..."
+cd "$PASSDIR" && rm -rf dist
 BUILD_TARGET=chrome yarn run build:dev > /dev/null
-mv "./dist" "$OUTDIR/black-$BUILD_ID-chrome"
-printf "\t✅ %s\n" "$OUTDIR/black-$BUILD_ID-chrome"
+mv "./dist" "$ARTEFACTSDIR/black-$BUILD_ID-chrome"
+printf "\t✅ %s\n" "$ARTEFACTSDIR/black-$BUILD_ID-chrome"
 
 
-# Firefox production release
-echo "Building Firefox (Sources)..."
 # Firefox sources
+echo "Building Firefox (Sources)..."
+cd "$PASSDIR" && rm -rf dist
 BUILD_TARGET=firefox NODE_ENV=production yarn run config
 # Preserve config.ts because the `yarn` postinstall script will overwrite it
 cp src/app/config.ts src/app/config.ff-release.ts
@@ -76,34 +79,26 @@ zip -rqX "$OUTDIR/$BUILD_ID-FF-sources.zip"         \
     -x ".yarn/cache"
 cd "$PASSDIR"
 zip -uqX "$OUTDIR/$BUILD_ID-FF-sources.zip" "FIREFOX_REVIEWERS.md"
-printf "\t✅ %s\n" "$OUTDIR/$BUILD_ID-FF-sources.zip"
+mv "$OUTDIR/$BUILD_ID-FF-sources.zip" "$ARTEFACTSDIR"
+printf "\t✅ %s\n" "$ARTEFACTSDIR/$BUILD_ID-FF-sources.zip"
 
 
-# Firefox build
+# Firefox production release
 echo "Building Firefox (Prod)..."
 mkdir -p "$OUTDIR/$BUILD_ID-FF-sources"
 cd "$OUTDIR/$BUILD_ID-FF-sources"
-unzip -q "$OUTDIR/$BUILD_ID-FF-sources.zip"
+unzip -q "$ARTEFACTSDIR/$BUILD_ID-FF-sources.zip"
 yarn install --no-immutable > /dev/null
 cd applications/pass-extension
 yarn run build:ff > /dev/null
 cd dist
-zip -rqX "$OUTDIR/$BUILD_ID-FF.zip" "."
-rm -rf "$OUTDIR/$BUILD_ID-FF-sources"
-rm -rf "$OUTDIR/$BUILD_ID-FF"
-cd "$PASSDIR"
-printf "\t✅ %s\n" "$OUTDIR/$BUILD_ID-FF.zip"
+zip -rqX "$ARTEFACTSDIR/$BUILD_ID-FF.zip" "."
+printf "\t✅ %s\n" "$ARTEFACTSDIR/$BUILD_ID-FF.zip"
 
 
 # Firefox development (Black) release
 echo "Building Firefox (Black)..."
+cd "$PASSDIR" && rm -rf dist
 BUILD_TARGET=firefox yarn run build:dev > /dev/null
-cp -r "./dist" "$OUTDIR/black-$BUILD_ID-FF"
-printf "\t✅ %s\n" "$OUTDIR/black-$BUILD_ID-FF"
-
-
-# Move tmp files into place
-echo "Moving files into place..."
-rm -rf "${ARTEFACTSDIR:-}"
-mv "$OUTDIR" "$ARTEFACTSDIR"
-printf "\t✅ %s\n" "$ARTEFACTSDIR"
+cp -r "./dist" "$ARTEFACTSDIR/black-$BUILD_ID-FF"
+printf "\t✅ %s\n" "$ARTEFACTSDIR/black-$BUILD_ID-FF"
