@@ -8,6 +8,7 @@ import {
     PrivateAppContainer,
     TopBanners,
 } from '@proton/components';
+import { APPS } from '@proton/shared/lib/constants';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { Recipient } from '@proton/shared/lib/interfaces';
 
@@ -48,7 +49,7 @@ const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) =
     const top = (
         <>
             {isElectronApp && <InboxDesktopOutdatedAppTopBanner />}
-            <TopBanners />
+            <TopBanners app={APPS.PROTONMAIL} />
         </>
     );
 
