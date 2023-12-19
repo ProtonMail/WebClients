@@ -12,7 +12,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { useExtensionConnectContext } from './useExtensionConnectContext';
 
 export const useOnboardingListener = () => {
-    const { setOnboardingMessage, setPendingShareAccess } = useSpotlight();
+    const { setOnboardingMessage, setPendingShareAccess, setUpselling } = useSpotlight();
     const { context: extensionContext } = useExtensionConnectContext();
     const createdItemsCount = useSelector(selectCreatedItemsCount);
     const definitions = useOnboardingMessages();
@@ -36,6 +36,7 @@ export const useOnboardingListener = () => {
             async ({ message }) => {
                 await wait(200);
                 if (message === OnboardingMessage.PENDING_SHARE_ACCESS) setPendingShareAccess(true);
+                if (message === OnboardingMessage.EARLY_ACCESS) setUpselling('early-access');
                 else setOnboardingMessage(message ? definitions[message] ?? null : null);
             }
         );
