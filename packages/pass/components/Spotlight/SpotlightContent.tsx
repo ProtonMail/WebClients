@@ -18,6 +18,7 @@ export type SpotlightMessageDefinition = {
     message: string;
     title: string;
     weak?: boolean;
+    hidden?: boolean;
     onClose?: () => void;
 };
 
