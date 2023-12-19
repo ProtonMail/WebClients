@@ -19,6 +19,7 @@ export const PASS_REQUEST_URL = 'https://protonmail.uservoice.com/forums/953584-
 export const PASS_BLOG_TRIAL_URL = 'https://proton.me/support/pass-trial';
 export const PASS_CHROME_URL = 'https://chrome.google.com/webstore/detail/proton-pass/ghmbeldphafepmbegfdlkpapadhbakde';
 export const PASS_FIREFOX_URL = 'https://addons.mozilla.org/en-US/firefox/addon/proton-pass/';
+export const PASS_SENTINEL_LINK = 'https://proton.me/blog/sentinel-included-pass-plus';
 
 export const ITEM_COUNT_RATING_PROMPT = ENV === 'production' ? 10 : 1;
 
@@ -27,3 +28,5 @@ export const PASS_BF_2023_DATES = [
     ENV === 'development' ? Date.now() - 1 : +new Date('2023-11-02T06:00:00'),
     +new Date('2023-12-04T00:00:00'),
 ] as const;
+
+export const PASS_EOY_DATE_END = +new Date('2024-01-03T09:00:00');
