@@ -20,6 +20,7 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import { useCheckAllRef } from 'proton-mail/containers/CheckAllRefProvider';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
@@ -82,6 +83,7 @@ const SidebarItem = ({
     const { Shortcuts } = useMailModel('MailSettings');
     const getElementsFromIDs = useGetElementsFromIDs();
     const { selectAll } = useSelectAll({ labelID });
+    const { checkAllRef } = useCheckAllRef();
 
     const [refreshing, withRefreshing] = useLoading(false);
 
@@ -132,13 +134,15 @@ const SidebarItem = ({
                     folderName: text,
                     fromLabelID: currentLabelID,
                     selectAll,
+                    onCheckAll: checkAllRef?.current ? checkAllRef.current : undefined,
                 });
             } else {
                 void applyLabels({
                     elements,
                     changes: { [labelID]: true },
-                    labelID,
+                    labelID: currentLabelID,
                     selectAll,
+                    onCheckAll: checkAllRef?.current ? checkAllRef.current : undefined,
                 });
             }
         }

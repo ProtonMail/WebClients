@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useCallback } from 'react';
 
 import { useModalTwo } from '@proton/components/components';
-import { useApi, useFolders, useLabels, useNotifications } from '@proton/components/hooks';
+import { useApi, useFolders, useNotifications } from '@proton/components/hooks';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 
 import SelectAllMoveModal from 'proton-mail/components/list/select-all/modals/SelectAllMoveModal';
@@ -24,6 +24,7 @@ interface MoveAllParams {
     destinationLabelID: string;
     authorizedToMove: Element[];
     isMessage: boolean;
+    onCheckAll?: (check: boolean) => void;
 }
 
 /**
@@ -32,7 +33,6 @@ interface MoveAllParams {
 export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boolean>>) => {
     const api = useApi();
     const [folders = []] = useFolders();
-    const [labels = []] = useLabels();
     const { createNotification } = useNotifications();
     const dispatch = useAppDispatch();
     const optimisticApplyLabels = useOptimisticApplyLabels();
@@ -40,7 +40,14 @@ export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boo
     const [selectAllMoveModal, handleShowSelectAllMoveModal] = useModalTwo(SelectAllMoveModal);
 
     const moveAllToFolder = useCallback(
-        async ({ fromLabelID, folderID, destinationLabelID, authorizedToMove, isMessage }: MoveAllParams) => {
+        async ({
+            fromLabelID,
+            folderID,
+            destinationLabelID,
+            authorizedToMove,
+            isMessage,
+            onCheckAll,
+        }: MoveAllParams) => {
             if (!authorizedToMove.length) {
                 createNotification({
                     text: getNotificationTextUnauthorized(folderID, destinationLabelID),
@@ -79,13 +86,16 @@ export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boo
                 moveAll({ SourceLabelID: fromLabelID, DestinationLabelID: folderID, selectAll: true, rollback })
             );
 
+            // Clear elements selection
+            onCheckAll?.(false);
+
             createNotification({
                 text: getSelectAllNotificationText(isMessage),
             });
 
             dispatch(layoutActions.setSelectAll(false));
         },
-        [labels]
+        []
     );
 
     return { moveAllToFolder, selectAllMoveModal };

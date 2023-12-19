@@ -97,16 +97,7 @@ const ListBanners = ({
         },
         {
             id: 'task-running',
-            banner: () => (
-                <TaskRunningBanner
-                    key="task-running"
-                    className={clsx([
-                        !canDisplayESSlowToolbar && 'mt-3',
-                        columnLayout ? 'mb-0' : 'my-3',
-                        isCompactView && 'mb-3',
-                    ])}
-                />
-            ),
+            banner: () => <TaskRunningBanner key="task-running" />,
             condition: () => canDisplayTaskRunningBanner,
             canWith: ['es-slow', 'almost-all-mail', 'mail-upsell', 'auto-delete'],
         },
