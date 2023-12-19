@@ -322,6 +322,9 @@
       "Get verification code": [
         "Odoslať overovací kód"
       ],
+      "Give feedback": [
+        "Dajte nám spätnú väzbu"
+      ],
       "Go to Drive": [
         "Prejsť na Drive"
       ],
@@ -829,9 +832,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } úložisko"
       ],
@@ -852,9 +852,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Ad-blocker a ochrana pred malvérom"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Všetky funkcie plateného ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Rozšírená história verzií"
@@ -901,12 +898,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Zahŕňa podporu pre 1 vlastnú emailovú doménu, 10 emailových adries, 10 hide-my-email aliasov, zdieľanie kalendára a ďalšie."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Súčasťou je podpora 3 vlastných emailových domén, ${ addresses } emailová adresa, neobmedzený počet ide-my-email aliasov, zdieľanie kalendára a ďalšie funkcie.",
-        "Súčasťou je podpora 3 vlastných emailových domén, ${ addresses } emailové adresy, neobmedzený počet ide-my-email aliasov, zdieľanie kalendára a ďalšie funkcie.",
-        "Súčasťou je podpora 3 vlastných emailových domén, ${ addresses } emailových adries, neobmedzený počet ide-my-email aliasov, zdieľanie kalendára a ďalšie funkcie.",
-        "Súčasťou je podpora 3 vlastných emailových domén, ${ addresses } emailových adries, neobmedzený počet ide-my-email aliasov, zdieľanie kalendára a ďalšie funkcie."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ],
@@ -924,6 +915,11 @@
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Uložte až 200 verzií každého súboru až na 10 rokov."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } desktopová aplikácia"
       ]
     },
     "Bug category": {
@@ -2032,6 +2028,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } bolo aktualizované.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Tento výskyt ${ eventTitle } bol zrušený."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Ste pozvaní na ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -2125,6 +2124,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "V tomto prehliadači nie je možné povoliť vyhľadávanie obsahu. Ukončite prosím režim súkromného režim prehliadača, alebo vyskúšajte iný prehliadač."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "Vyhľadávanie obsahu nie je možné povoliť. Reštartujte aplikáciu alebo vymažte údaje."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Zrušte výber aspoň ${ calendarsToFixCount } kalendára",
@@ -3690,7 +3692,7 @@
         "Sem presuňte súbor na nahranie"
       ],
       "Drop files here": [
-        "Presuňte súbory sem"
+        "Presuňte sem súbory"
       ],
       "Drop to import": [
         "Presuňte na import"
@@ -3762,7 +3764,7 @@
         "Nepodarilo sa otvoriť bezpečný odkaz. Dôvod: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
-        "Súbor „${ name }“ bol zmazaný počas sťahovania"
+        "Súbor „${ name }“ bol vymazaný počas sťahovania"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Súboru chýba podpis. Nemohli sme overiť, či ${ emailAddress } nahral ${ fileName }."
@@ -4137,10 +4139,10 @@
         "Súbory obnovené ${ formattedDate }"
       ],
       "Restoring Photos... Please keep the tab open": [
-        "Obnovovanie fotografií... Ponechajte prosím záložku otvorenú"
+        "Obnovovanie fotografií... Ponechajte prosím kartu otvorenú"
       ],
       "Search cannot be enabled in this browser": [
-        "Vyhľadávanie nemôže byť spustené v tomto prehliadači"
+        "V tomto prehliadači nie je možné povoliť vyhľadávanie"
       ],
       "Search Enabled": [
         "Vyhľadávanie povolené"
@@ -4227,7 +4229,7 @@
         "Pred exportom kontaktov musí aplikácia kontakty lokálne dešifrovať. Na konci procesu bude vygenerovaný súbor VCF, ktorý si budete môcť stiahnuť."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
-        "Počet sťahovaní zahŕňa stiahnutia aj zobrazenia v náhľade."
+        "Počet stiahnutí zahŕňa skutočné stiahnutia aj prípady, keď sú súbory zobrazené v náhľade."
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Šifrované údaje sú o trochu väčšie kvôli réžii šifrovania a podpisov, čo zaručuje bezpečnosť vašich údajov."
@@ -4335,16 +4337,16 @@
         "Celkom VPN pripojení"
       ],
       "Transfer canceled for file \"${ name }\"": [
-        "Prenos zrušený pre súbor „${ name }“"
+        "Prenos súboru „${ name }“ zrušený"
       ],
       "Transfer canceled for folder \"${ name }\"": [
-        "Prenos priečinka „${ name }“ zrušený"
+        "Prenos priečinku „${ name }“ zrušený"
       ],
       "Transfer skipped for file \"${ file.name }\"": [
-        "Prenos vynechaný pre súbor „${ file.name }“"
+        "Prenos súboru „${ file.name }“ vynechaný"
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
-        "Prenos vynechaný pre priečinok „${ folderName }“"
+        "Prenos priečinku „${ folderName }“ vynechaný"
       ],
       "Trash": [
         "Kôš"
@@ -4524,7 +4526,7 @@
         "Váš email bude použitý iba pre toto jednorazové overenie."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "Vaše súbory už nie sú prístupné z dôvodu resetovania hesla. Pre obnovenie prístupu znovu nahrajte starý šifrovací kľúč. ${ KeyReactivationButton }"
+        "Vaše súbory už nie sú prístupné z dôvodu resetovania hesla. Pre opätovné obnovenie prístupu znovu nahrajte starý šifrovací kľúč. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved": [
         "Vaše súbory budú zašifrované a potom uložené"
@@ -5859,8 +5861,35 @@
         "Toto povolenie vyprší za ${ timeRemaining.inHours } hodín",
         "Toto povolenie vyprší za ${ timeRemaining.inHours } hodín"
       ],
+      "This permission expires soon": [
+        "Platnosť tohto povolenia čoskoro uplynie"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Heslo pre účet ${ boldEmail } si teraz môžete ľubovoľne zmeniť po dobu ${ boldDaysRemaining }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Na obnovu vášho hesla máte ${ timeRemaining.inDays } deň.",
+        "Na obnovu vášho hesla máte ${ timeRemaining.inDays } dni.",
+        "Na obnovu vášho hesla máte ${ timeRemaining.inDays } dní.",
+        "Na obnovu vášho hesla máte ${ timeRemaining.inDays } dní."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Na obnovu vášho hesla máte ${ timeRemaining.inHours } hodinu.",
+        " Na obnovu vášho hesla máte ${ timeRemaining.inHours } hodiny.",
+        " Na obnovu vášho hesla máte ${ timeRemaining.inHours } hodín.",
+        " Na obnovu vášho hesla máte ${ timeRemaining.inHours } hodín."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Na obnovu vášho hesla máte ${ timeRemaining.inMinutes } minútu.",
+        " Na obnovu vášho hesla máte ${ timeRemaining.inMinutes } minúty.",
+        " Na obnovu vášho hesla máte ${ timeRemaining.inMinutes } minút.",
+        " Na obnovu vášho hesla máte ${ timeRemaining.inMinutes } minút."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekundu.",
+        " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekundy.",
+        " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd.",
+        " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd."
       ]
     },
     "session_recovery:available:link": {
