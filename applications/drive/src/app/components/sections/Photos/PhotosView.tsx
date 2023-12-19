@@ -23,17 +23,8 @@ export const PhotosView: FC<void> = () => {
     useAppTitle(c('Title').t`Photos`);
 
     const isUploadDisabled = useFlag('DrivePhotosUploadDisabled');
-    const {
-        shareId,
-        linkId,
-        photos,
-        isLoading,
-        isLoadingMore,
-        loadPhotoLink,
-        photoLinkIdToIndexMap,
-        photoLinkIds,
-        requestDownload,
-    } = usePhotosView();
+    const { shareId, linkId, photos, isLoading, loadPhotoLink, photoLinkIdToIndexMap, photoLinkIds, requestDownload } =
+        usePhotosView();
     const { selectedItems, clearSelection, isGroupSelected, isItemSelected, handleSelection } = usePhotosSelection(
         photos,
         photoLinkIdToIndexMap
@@ -79,7 +70,9 @@ export const PhotosView: FC<void> = () => {
         [setPreviewLinkId, photoLinkIds]
     );
 
-    if (isLoading && !isLoadingMore) {
+    const isEmpty = photos.length === 0;
+
+    if (isLoading && isEmpty) {
         return <Loader />;
     }
 
@@ -87,7 +80,6 @@ export const PhotosView: FC<void> = () => {
         return <EmptyPhotos />;
     }
 
-    const isEmpty = photos.length === 0;
     const hasPreview = !!previewItem;
 
     return (
@@ -144,7 +136,7 @@ export const PhotosView: FC<void> = () => {
             >
                 <ToolbarRow
                     titleArea={
-                        <span className="text-strong pl-1">
+                        <span className="flex items-center text-strong pl-1">
                             {selectedCount > 0 ? (
                                 <div className="flex gap-2" data-testid="photos-selected-count">
                                     <PhotosClearSelectionButton onClick={clearSelection} />
@@ -160,6 +152,7 @@ export const PhotosView: FC<void> = () => {
                             ) : (
                                 c('Title').t`Photos`
                             )}
+                            {isLoading && <Loader className="ml-2 flex items-center" />}
                         </span>
                     }
                     toolbar={
@@ -181,7 +174,7 @@ export const PhotosView: FC<void> = () => {
                         data={photos}
                         onItemRender={handleItemRender}
                         onItemRenderLoadedLink={handleItemRenderLoadedLink}
-                        isLoadingMore={isLoadingMore}
+                        isLoading={isLoading}
                         onItemClick={setPreviewLinkId}
                         hasSelection={selectedCount > 0}
                         onSelectChange={(i, isSelected) =>
