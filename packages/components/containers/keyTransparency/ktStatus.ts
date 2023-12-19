@@ -19,6 +19,7 @@ export const isKTActive = (feature: KT_FF) => {
     //  - BigInt is only partially implemented and does not support -- (it is needed for VRF verification)
     //  - the hardcoded KT certificate data is older than 6 months.
     //  - the server time compared to the client time is off by more than 24 hours -- (UI warning is shown to prevent attacks)
+    //  - Web Crypto isn't fully supported (it is needed for certificate verification in pki.js)
     if (feature === undefined || feature === KtFeatureEnum.DISABLE) {
         return false;
     }
@@ -50,9 +51,14 @@ export const isKTActive = (feature: KT_FF) => {
     if (keyTransparencyDataAge > KT_DATA_VALIDITY_PERIOD) {
         return false;
     }
-    
+
     const timeOffset = serverTime().getTime() - Date.now();
     if (Math.abs(timeOffset) > 24 * HOUR) {
+        return false;
+    }
+
+    // Test for full Web Crypto support, required by pki.js
+    if (typeof crypto === 'undefined' || !('subtle' in crypto)) {
         return false;
     }
 
