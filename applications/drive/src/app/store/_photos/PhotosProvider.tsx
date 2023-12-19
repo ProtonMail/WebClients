@@ -1,6 +1,5 @@
 import { FC, createContext, useContext, useEffect, useState } from 'react';
 
-import { useLoading } from '@proton/hooks/index';
 import { queryDeletePhotosShare, queryPhotos } from '@proton/shared/lib/api/drive/photos';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 
@@ -26,7 +25,7 @@ export const PhotosProvider: FC = ({ children }) => {
     const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
 
     const request = useDebouncedRequest();
-    const [photosLoading, withPhotosLoading] = useLoading();
+    const [photosLoading, setIsPhotosLoading] = useState<boolean>(true);
 
     const [photos, setPhotos] = useState<Photo[]>([]);
 
@@ -47,10 +46,13 @@ export const PhotosProvider: FC = ({ children }) => {
                 const photosData = Photos.map(photoPayloadToPhotos);
                 setPhotos((prevPhotos) => [...prevPhotos, ...photosData]);
                 void photoCall(photosData[photosData.length - 1].linkId);
+            } else {
+                setIsPhotosLoading(false);
             }
         };
 
-        void withPhotosLoading(photoCall());
+        setIsPhotosLoading(true);
+        void photoCall();
     };
 
     const removePhotosFromCache = (linkIds: string[]) => {

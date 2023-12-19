@@ -3,7 +3,7 @@ import { CSSProperties, FC } from 'react';
 
 import { c } from 'ttag';
 
-import { Checkbox } from '@proton/components/components';
+import { Checkbox, Loader } from '@proton/components/components';
 
 type Props = {
     style: CSSProperties;
@@ -11,9 +11,10 @@ type Props = {
     showSeparatorLine: boolean;
     onSelect: (isSelected: boolean) => void;
     selected: boolean | 'some';
+    isLoading: boolean;
 };
 
-export const PhotosGroup: FC<Props> = ({ style, text, showSeparatorLine, onSelect, selected }) => {
+export const PhotosGroup: FC<Props> = ({ style, text, showSeparatorLine, onSelect, selected, isLoading }) => {
     return (
         <div
             style={style}
@@ -40,6 +41,7 @@ export const PhotosGroup: FC<Props> = ({ style, text, showSeparatorLine, onSelec
             >
                 {text}
             </Checkbox>
+            {isLoading && <Loader className="ml-2 flex items-center" />}
             {showSeparatorLine && <hr className="w-full m-0 ml-3 h-0 border-bottom border-weak" />}
         </div>
     );
