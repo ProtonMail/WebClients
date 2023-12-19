@@ -551,6 +551,7 @@ const CalendarContainerView = ({
     ) : (
         <>
             <PrivateHeader
+                app={APPS.PROTONCALENDAR}
                 userDropdown={<UserDropdown app={APPS.PROTONCALENDAR} />}
                 floatingButton={
                     !isSearchView && (
