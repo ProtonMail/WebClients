@@ -427,6 +427,9 @@
       "Get verification code": [
         "Dapatkan kode verifikasi"
       ],
+      "Give feedback": [
+        "Beri tanggapan"
+      ],
       "Go to label": [
         "Tuju label"
       ],
@@ -1325,9 +1328,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus dan ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "Penyimpanan ${ storageSize }"
       ],
@@ -1348,9 +1348,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Pemblokir iklan dan perlindungan perangkat lunak jahat"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Semua fitur ${ MAIL_SHORT_APP_NAME } dan ${ CALENDAR_APP_NAME } yang berbayar"
       ],
       "Extended version history": [
         "Riwayat versi lebih mendalam"
@@ -1397,9 +1394,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Termasuk dukungan untuk 1 domain surel kustom, 10 alamat surel, 10 alias hide-my-email, pembagian kalender, dan lainnya."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Termasuk dukungan untuk 3 alamat surel kustom, ${ addresses } alamat surel, alias hide-my-email tak terbatas, pembagian kalender, dan lainnya."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Masuk secara aman di semua perangkat Anda. Termasuk alias terbatas, pembagian, 2FA terintegrasi, dan lainnya."
       ],
@@ -1417,6 +1411,11 @@
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Simpan hingga 200 versi berkas sampai 10 tahun."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplikasi Desktop ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -3121,6 +3120,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } telah diperbarui.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Acara ${ eventTitle } ini telah dibatalkan."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Anda diundang ke ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -3285,6 +3287,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Pencarian konten tidak dapat dilangsungkan pada browser ini. Mohon keluar dari mode private browsing atau gunakan browser lain."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "Pencarian konten tidak dapat diaktifkan. Silakan mulai ulang aplikasi atau hapus data."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Kesalahan dekripsi: konten terenkripsi yang terdapat pada pesan ini gagal didekripsi."
@@ -5698,7 +5703,7 @@
         "Pesan ini telah kedaluwarsa"
       ],
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
-        "Pesan asli yang Anda coba teruskan / balas dalam proses dikirim. Jika lanjut, Anda tidak akan dapat mengurungkan pengiriman pesan asli lebih lama lagi."
+        "Pesan asli yang Anda coba teruskan / balas sedang berada dalam proses pengiriman. Apabila Anda melanjutkan, Anda tidak akan lagi dapat mengurungkan pengiriman pesan asli ini ke depannya."
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         "Alamat pengirim pesan sudah tidak lagi valid. Pesan ini akan dikirim melalui ${ defaultEmail } yang merupakan alamat default Anda."
@@ -6577,8 +6582,8 @@
       "Frequency": [
         "Frekuensi"
       ],
-      "From": [
-        "Dari"
+      "From (senders in message print header)": [
+        "Dari (pengirim pada header pesan)"
       ],
       "From:": [
         "Dari:"
@@ -6817,9 +6822,6 @@
       "Time": [
         "Waktu"
       ],
-      "To": [
-        "Kepada"
-      ],
       "To:": [
         "Kepada:"
       ],
@@ -6867,6 +6869,16 @@
       ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Dari"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Kepada"
       ]
     },
     "Label attach to date input to select a date": {
@@ -7980,11 +7992,23 @@
       ]
     },
     "session_recovery:available:info": {
+      " You have ${ timeRemaining.inHours } hours to reset your password.": [
+        "Anda memiliki ${ timeRemaining.inHours } jam tersisa untuk mengatur ulang kata sandi Anda."
+      ],
+      " You have ${ timeRemaining.inMinutes } minutes to reset your password.": [
+        "Anda memiliki ${ timeRemaining.inMinutes } menit tersisa untuk mengatur ulang kata sandi Anda."
+      ],
+      " You have ${ timeRemaining.inSeconds } seconds to reset your password.": [
+        "Anda memiliki ${ timeRemaining.inSeconds } tersisa untuk mengatur ulang kata sandi Anda."
+      ],
       "${ timeRemaining.inDays } days": [
         "${ timeRemaining.inDays } hari"
       ],
       "${ timeRemaining.inHours } hours": [
         "${ timeRemaining.inHours } jam"
+      ],
+      "Password reset request approved (${ user.Email }).": [
+        "Permintaan pengaturan ulang kata sandi disetujui (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Silakan tuju perangkat yang telah terhubung masuk (dalam sesi di mana permintaan ini diajukan) untuk mengubah kata sandi Anda."
@@ -7995,8 +8019,17 @@
       "This permission expires in ${ timeRemaining.inHours } hours": [
         "Perizinan akan kedaluwarsa dalam ${ timeRemaining.inHours } jam"
       ],
+      "This permission expires soon": [
+        "Izin ini akan segera kedaluwarsa"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Anda kini dapat mengubah kata sandi untuk akun ${ boldEmail } secara bebas selama ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Anda kini dapat mengubah kata sandi Anda untuk akun ${ boldEmail }"
+      ],
+      "You have ${ timeRemaining.inDays } days to reset your password.": [
+        "Anda memiliki ${ timeRemaining.inDays } hari tersisa untuk mengatur ulang kata sandi Anda."
       ]
     },
     "session_recovery:available:link": {
