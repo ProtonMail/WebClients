@@ -515,6 +515,9 @@
       "Get verification code": [
         "Ottieni il codice di verifica"
       ],
+      "Give feedback": [
+        "Dai una valutazione"
+      ],
       "Go to label": [
         "Vai all'etichetta"
       ],
@@ -1338,9 +1341,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus e ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } di archiviazione"
       ],
@@ -1361,9 +1361,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Ad-blocker e anti-malware"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Tutte le funzioni a pagamento di ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Cronologia estesa della versione"
@@ -1484,12 +1481,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Aggira i blocchi e la censura a internet imposti dai singoli Paesi grazie alla nostra rete globale di server."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Include il supporto per ${ domains } domini email personalizzati, ${ addresses } indirizzo email, alias hide-my-email illimitati, condivisione del calendario e molto altro.",
+        "Include il supporto per ${ domains } domini email personalizzati, ${ addresses } indirizzi email, alias hide-my-email illimitati, condivisione del calendario e molto altro."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias hide-my-email, condivisione del calendario e altro ancora."
-      ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Include il supporto per 3 domini email personalizzati, ${ addresses } indirizzo email, alias hide-my-email illimitati, condivisione del calendario e altro ancora.",
-        "Include il supporto per 3 domini email personalizzati, ${ addresses } indirizzi email, alias hide-my-email illimitati, condivisione del calendario e altro ancora."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Login sicuri su tutti i tuoi dispositivi. Include alias illimitati, condivisione, 2FA integrato e molto altro."
@@ -1547,6 +1544,11 @@
     "Bridge version load failed": {
       "Failed to find latest version": [
         "Impossibile trovare l'ultima versione"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Applicazione desktop ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -3665,7 +3667,37 @@
         "2FA"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Funzionalità a pagamento di ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Include la cronologia delle versioni in ${ DRIVE_SHORT_APP_NAME }, l'accesso a migliaia di server ${ VPN_SHORT_APP_NAME } ad alta velocità, la condivisione in ${ PASS_SHORT_APP_NAME } e altro ancora."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 utenti"
+      ],
+      "Early access to new apps and features": [
+        "Accesso anticipato a nuove app e funzionalità"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Accesso anticipato all'applicazione desktop di ${ MAIL_APP_NAME }"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Funzionalità a pagamento di ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_APP_NAME }"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } non può connettersi al tuo account esterno"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Puoi anche controllare il nostro ${ statusPageLink }"
       ],
@@ -4072,6 +4104,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Prova ad usare solo lettere, numeri e _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Errore imprevisto. Non possiamo importare i contatti."
       ],
       "Unknown error": [
         "Errore sconosciuto"
@@ -6459,6 +6494,9 @@
       "for choosing ${ product }": [
         "per aver scelto ${ product }"
       ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Per i membri di organizzazioni che utilizzano il single sign-on (SAML SSO)"
+      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Inoltra la posta in arrivo da un altro account alla tua casella di posta sicura di ${ MAIL_APP_NAME }."
       ],
@@ -6820,6 +6858,9 @@
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Non è il tuo dispositivo? Usa una finestra di navigazione in incognito per accedere e chiudila quando hai finito. ${ learnMore }"
+      ],
+      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
+        "L'app desktop, ora disponibile in beta, ti consente di avviare ${ MAIL_APP_NAME } direttamente dal tuo desktop. Così puoi rimanere concentrato senza le distrazioni dal browser."
       ],
       "Number of dedicated servers in the organization": [
         "Numero di server dedicati nell'organizzazione"
@@ -7915,6 +7956,9 @@
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "La password dell'organizzazione può essere condivisa con altri utenti a cui desideri concedere i privilegi di amministrazione. È anche un codice di recupero di emergenza per ottenere l'accesso alla tua organizzazione nel caso in cui perdi l'accesso al tuo account. Salva questa password e tienila al sicuro."
       ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "La tua organizzazione usa single sign-on (SSO). Premi \"Accedi\" per continuare con il tuo provider SSO."
+      ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Le email della tua organizzazione sono protette con crittografia end-to-end utilizzando la chiave dell'organizzazione. Questa impronta digitale può essere utilizzata per verificare che tutti gli amministratori del tuo account abbiano la stessa chiave."
       ],
@@ -8475,6 +8519,9 @@
       ],
       "Awarded": [
         "Premiato"
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billing address": [
         "Indirizzo di fatturazione"
@@ -13178,6 +13225,9 @@
       ]
     },
     "Title": {
+      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
+        " Ottieni ${ MAIL_APP_NAME } per Mac o Windows"
+      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -13531,6 +13581,9 @@
       "Delete version history?": [
         "Eliminare la cronologia delle versioni?"
       ],
+      "Desktop app": [
+        "App desktop"
+      ],
       "Disable ${ email }": [
         "Disattiva ${ email }"
       ],
@@ -13651,6 +13704,9 @@
       ],
       "Folders and labels": [
         "Cartelle ed etichette"
+      ],
+      "For ${ platform }": [
+        "Per ${ platform }"
       ],
       "Forward and auto-reply": [
         "Inoltro e risposta automatica"

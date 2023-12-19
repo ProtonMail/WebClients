@@ -515,6 +515,9 @@
       "Get verification code": [
         "Атрымаць праверачны код"
       ],
+      "Give feedback": [
+        "Пакінуць водгук"
+      ],
       "Go to label": [
         "Перайсці да меткі"
       ],
@@ -1344,9 +1347,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus і ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } прасторы ў сховішчы"
       ],
@@ -1367,9 +1367,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Блакіроўшчык рэкламы і абарона ад шкодных праграм"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Усе платныя функцыі ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Пашыраная гісторыя версій"
@@ -1495,12 +1492,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Уключае падтрымку 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў hide-my-email, абагуленне календара і іншыя функцыі."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, адраса электроннай пошты ${ addresses } , неабмежаваную колькасць псеўданімаў Hide-my-email, абагуленне календара і іншыя функцыі.",
-        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, адрасоў электроннай пошты ${ addresses } , неабмежаваную колькасць псеўданімаў Hide-my-email, абагуленне календара і іншыя функцыі.",
-        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, адрасоў электроннай пошты ${ addresses } , неабмежаваную колькасць псеўданімаў Hide-my-email, абагуленне календара і іншыя функцыі.",
-        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, адрасоў электроннай пошты ${ addresses } , неабмежаваную колькасць псеўданімаў Hide-my-email, абагуленне календара і іншыя функцыі."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ],
@@ -1559,6 +1550,11 @@
     "Bridge version load failed": {
       "Failed to find latest version": [
         "Не ўдалося знайсці апошнюю версію"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Настольная праграма ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -6959,6 +6955,9 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Гэта не ваша прылада? Скарыстайцеся акном прыватнага браўзера для ўваходу і закрыйце яго пасля завяршэння працы. ${ learnMore }"
       ],
+      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
+        "Цяпер даступна ў бэта-версіі. Настольная праграма дазваляе зручна запускаць ${ MAIL_APP_NAME } наўпрост з вашага працоўнага стала і не рабіць лішніх дзеянняў праз браўзер."
+      ],
       "Number of dedicated servers in the organization": [
         "Колькасць вылучаных сервераў у арганізацыі"
       ],
@@ -8646,6 +8645,9 @@
       ],
       "Awarded": [
         "Узнагароджаны"
+      ],
+      "Beta": [
+        "Бэта"
       ],
       "Billing address": [
         "Адрас для аплаты"
@@ -13490,6 +13492,9 @@
       ]
     },
     "Title": {
+      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
+        " Атрымаць ${ MAIL_APP_NAME } для Mac або Windows"
+      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -13847,6 +13852,9 @@
       "Delete version history?": [
         "Выдаліць гісторыю версій?"
       ],
+      "Desktop app": [
+        "Настольная праграма"
+      ],
       "Disable ${ email }": [
         "Адключыць ${ email }"
       ],
@@ -13969,6 +13977,9 @@
       ],
       "Folders and labels": [
         "Папкі і меткі"
+      ],
+      "For ${ platform }": [
+        "Для ${ platform }"
       ],
       "Forward and auto-reply": [
         "Перасылка і аўтаматычны адказ"
