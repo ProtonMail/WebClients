@@ -126,9 +126,10 @@ interface Props {
     onLock: (lock: boolean) => void;
     breakpoints: Breakpoints;
     selectAll?: boolean;
+    onCheckAll?: (check: boolean) => void;
 }
 
-const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, selectAll }: Props) => {
+const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, selectAll, onCheckAll }: Props) => {
     const [uid] = useState(generateUID('label-dropdown'));
     const [labels = []] = useLabels();
     const [user] = useUser();
@@ -244,6 +245,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, sel
                 selectedLabelIDs: checkedIDs,
                 labelID,
                 selectAll,
+                onCheckAll,
             })
         );
 

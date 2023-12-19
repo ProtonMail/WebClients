@@ -69,9 +69,10 @@ interface Props {
     breakpoints: Breakpoints;
     isMessage?: boolean;
     selectAll?: boolean;
+    onCheckAll?: (check: boolean) => void;
 }
 
-const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, isMessage: inputIsMessage, selectAll }: Props) => {
+const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, isMessage: inputIsMessage, selectAll, onCheckAll }: Props) => {
     const [uid] = useState(generateUID('move-dropdown'));
     const [folders = []] = useFolders();
     const [user] = useUser();
@@ -156,6 +157,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, isMe
             fromLabelID: labelID,
             createFilters: canApplyAlways ? always : false,
             selectAll,
+            onCheckAll,
         });
         onClose();
     };

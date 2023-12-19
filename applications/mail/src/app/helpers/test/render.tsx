@@ -26,6 +26,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 
+import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider';
 import QuickSettingsTestProvider from 'proton-mail/helpers/test/quick-settings';
 
 import { LabelActionsContextProvider } from '../../components/sidebar/EditLabelContext';
@@ -104,15 +105,17 @@ const TestProvider = ({ children }: Props) => {
                                                                     elementID={undefined}
                                                                 >
                                                                     <ComposeProvider onCompose={onCompose}>
-                                                                        <Router history={history}>
-                                                                            <Route path={MAIN_ROUTE_PATH}>
-                                                                                <EncryptedSearchProvider>
-                                                                                    <LabelActionsContextProvider>
-                                                                                        {children}
-                                                                                    </LabelActionsContextProvider>
-                                                                                </EncryptedSearchProvider>
-                                                                            </Route>
-                                                                        </Router>
+                                                                        <CheckAllRefProvider>
+                                                                            <Router history={history}>
+                                                                                <Route path={MAIN_ROUTE_PATH}>
+                                                                                    <EncryptedSearchProvider>
+                                                                                        <LabelActionsContextProvider>
+                                                                                            {children}
+                                                                                        </LabelActionsContextProvider>
+                                                                                    </EncryptedSearchProvider>
+                                                                                </Route>
+                                                                            </Router>
+                                                                        </CheckAllRefProvider>
                                                                     </ComposeProvider>
                                                                 </MailboxContainerContextProvider>
                                                             </ChecklistsProvider>

@@ -6,7 +6,8 @@ import { c } from 'ttag';
 
 import { useModalTwo } from '@proton/components/components';
 import { FeatureCode } from '@proton/components/containers';
-import { useApi, useEventManager, useFeature, useFolders, useLabels, useNotifications } from '@proton/components/hooks';
+import { useApi, useEventManager, useFeature, useFolders, useNotifications } from '@proton/components/hooks';
+import { useGetLabels } from '@proton/components/hooks/useCategories';
 import { labelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { labelMessages } from '@proton/shared/lib/api/messages';
@@ -60,7 +61,7 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
     const location = useLocation();
     const { call, stop, start } = useEventManager();
     const { createNotification } = useNotifications();
-    const [labels = []] = useLabels();
+    const getLabels = useGetLabels();
     const [folders = []] = useFolders();
     const optimisticApplyLabels = useOptimisticApplyLabels();
     const mailSettings = useMailModel('MailSettings');
@@ -145,6 +146,8 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
             }
 
             const { doCreateFilters, undoCreateFilters } = getFilterActions();
+
+            const labels = (await getLabels()) || [];
 
             let rollback = () => {};
 
@@ -259,7 +262,7 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
                 });
             }
         },
-        [labels]
+        [isSearch, pageSize]
     );
 
     return { moveSelectionToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal };

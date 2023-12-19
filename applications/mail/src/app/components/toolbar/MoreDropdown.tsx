@@ -70,6 +70,7 @@ interface Props {
     onMove: (labelID: string) => void;
     onDelete: () => void;
     breakpoints: Breakpoints;
+    onCheckAll?: (check: boolean) => void;
 }
 
 const MoreDropdown = ({
@@ -82,6 +83,7 @@ const MoreDropdown = ({
     onMove,
     onDelete,
     breakpoints,
+    onCheckAll,
 }: Props) => {
     const mailSettings = useMailModel('MailSettings');
     const { selectAll } = useSelectAll({ labelID });
@@ -204,6 +206,7 @@ const MoreDropdown = ({
                           breakpoints={breakpoints}
                           isMessage={!isConversationMode(labelID, mailSettings)}
                           selectAll={selectAll}
+                          onCheckAll={onCheckAll}
                       />
                   ),
               },
@@ -217,6 +220,7 @@ const MoreDropdown = ({
                           onLock={onLock}
                           breakpoints={breakpoints}
                           selectAll={selectAll}
+                          onCheckAll={onCheckAll}
                       />
                   ),
               },

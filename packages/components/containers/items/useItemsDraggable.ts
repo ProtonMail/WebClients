@@ -18,13 +18,15 @@ type AbstractItem = { ID?: string };
  * @param checkedIDs List of the currently checked IDs
  * @param onCheck Check handler to update selection
  * @param getDragHtml Callback to return HTML content of the drag element
+ * @param selectAll Use select all feature so that we know how many items to drag
  * @returns Currently dragged ids and drag handler to pass to items
  */
 const useItemsDraggable = <Item extends AbstractItem>(
     items: Item[],
     checkedIDs: string[],
     onCheck: (IDs: string[], checked: boolean, replace: boolean) => void,
-    getDragHtml: (draggedIDs: string[]) => string
+    getDragHtml: (draggedIDs: string[]) => string,
+    selectAll?: boolean
 ) => {
     // HTML reference to the drag element
     const [dragElement, setDragElement] = useState<HTMLDivElement>();
@@ -117,7 +119,7 @@ const useItemsDraggable = <Item extends AbstractItem>(
             event.dataTransfer.setData(DRAG_ITEM_ID_KEY, dragElement.id);
             setDragElement(dragElement);
         },
-        [checkedIDs, onCheck]
+        [checkedIDs, onCheck, selectAll]
     );
 
     return { draggedIDs, handleDragStart, handleDragEnd };
