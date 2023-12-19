@@ -17,6 +17,7 @@ export type ServiceWorkerMessage = ServiceWorkerMessageBase &
         | { type: 'locked' }
         | { type: 'refresh'; data: RefreshSessionData }
         | { type: 'action'; action: AnyAction }
+        | { type: 'abort'; requestUrl: string }
     );
 
 export type WithOrigin<T> = T & {
