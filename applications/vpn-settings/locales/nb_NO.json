@@ -168,7 +168,7 @@
         "Last ned alle konfigurasjoner"
       ],
       "Download our CSV template": [
-        "Las ned vår CSV-mal"
+        "Last ned vår CSV-mal"
       ],
       "Edit": [
         "Rediger"
@@ -250,6 +250,9 @@
       ],
       "Get verification code": [
         "Få verifiseringskode"
+      ],
+      "Give feedback": [
+        "Gi tilbakemelding"
       ],
       "Got it": [
         "Forstått"
@@ -681,9 +684,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus og ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } lagringsplass"
       ],
@@ -704,9 +704,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Annonseblokkering og skadevarebeskyttelse"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Alle betalte ${ MAIL_SHORT_APP_NAME }- og ${ CALENDAR_APP_NAME }-funksjoner"
       ],
       "Extended version history": [
         "Utvidet versjonshistorikk"
@@ -807,10 +804,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer støtte for 1 egendefinert e-postdomene, 10 e-postadresser, 10 hide-my-email-aliaser, kalenderdeling og mer."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Inkluderer støtte for 3 egendefinerte e-postdomener, ${ addresses } e-postadresse, ubegrensede hide-my-email-aliaser, kalenderdeling og mer.",
-        "Inkluderer støtte for 3 egendefinerte e-postdomener, ${ addresses } e-postadresser, ubegrensede hide-my-email-aliaser, kalenderdeling og mer."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
       ],
@@ -857,6 +850,11 @@
       ],
       "Two-year": [
         "Toårig"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME }-skrivebordsapplikasjon"
       ]
     },
     "Bug category": {
@@ -2128,7 +2126,7 @@
         "Det oppstod en feil under lesing av filen \"${ formattedFilename }\". Filen har ikke riktig format."
       ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Det oppsto en feil under opplasting av filen \"${ formattedFilename }\". Maksimum filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Det oppstod en feil under opplasting av filen \"${ formattedFilename }\". Maksimum filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Det oppstod en feil under opplasting av filen. Ingen fil er valgt."
@@ -4223,7 +4221,7 @@
         "Nøkkelstyrke"
       ],
       "Level for NetShield blocker filtering": [
-        "Nivå på filtrering til Netshield-blokkering"
+        "Nivå på blokkeringsfiltrering for NetShield"
       ],
       "Mailbox password": [
         "Postbokspassord"
@@ -5710,7 +5708,7 @@
         "Gavekode"
       ],
       "Other": [
-        "Annen"
+        "Annet"
       ],
       "Password": [
         "Passord"
