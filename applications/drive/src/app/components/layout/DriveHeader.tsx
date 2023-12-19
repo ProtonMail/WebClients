@@ -37,6 +37,7 @@ export const DriveHeader = ({
     return (
         <>
             <PrivateHeader
+                app={APPS.PROTONDRIVE}
                 feedbackButton={
                     hasRebrandingFeedback ? (
                         <TopNavbarListItemFeedbackButton onClick={() => setRebrandingFeedbackModal(true)} />
