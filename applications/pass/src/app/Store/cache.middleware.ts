@@ -4,7 +4,7 @@ import { isCachingAction } from '@proton/pass/store/actions/with-cache';
 import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/with-callback';
 
 import { authStore } from '../../lib/core';
-import { ServiceWorkerClientID } from '../ServiceWorker/ServiceWorkerProvider';
+import { ServiceWorkerClientID, ServiceWorkerEnabled } from '../ServiceWorker/ServiceWorkerProvider';
 import type { ServiceWorkerMessage, WithOrigin } from '../ServiceWorker/channel';
 
 /** Broadcast any cache-triggering actions to other tabs via service
@@ -23,7 +23,7 @@ export const cacheMiddleware: Middleware = () => (next) => (action: AnyAction) =
             type: 'action',
         };
 
-        navigator.serviceWorker.controller?.postMessage(message);
+        if (ServiceWorkerEnabled) navigator.serviceWorker.controller?.postMessage(message);
     }
 
     next(action);

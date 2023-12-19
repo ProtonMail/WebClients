@@ -6,7 +6,6 @@ import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { UsePeriodOtpCodeOptions } from '@proton/pass/hooks/usePeriodicOtpCode';
 import type { ClientEndpoint, Maybe, MaybeNull, OnboardingMessage } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
-import type { ParsedUrl } from '@proton/pass/utils/url/parser';
 
 type PassCoreContextValue = {
     endpoint: ClientEndpoint;
@@ -15,8 +14,10 @@ type PassCoreContextValue = {
     /** In the extension: leverage worker communication to generate
      * a token. In the web-app: use the OTP utils in-place */
     generateOTP: UsePeriodOtpCodeOptions['generate'];
-    /**  Defines how the item domain image URLs should be built */
-    getDomainImageURL: (domain: Maybe<ParsedUrl>) => Maybe<string>;
+    /** Resolves a domain image as a data URL. Uses an abort signal to
+     * cancel the image request if the image component is unmounted,
+     * applying back-pressure when users scroll rapidly through items */
+    getDomainImage: (domain: string, signal: AbortSignal) => Promise<Maybe<string>>;
     /** Returns the URL that should be opened when prompting for rating */
     getRatingURL?: () => string;
     /** defines how a client handles external links.
