@@ -101,6 +101,9 @@
       "Copy address": [
         "複製郵件位址"
       ],
+      "Copy key to the clipboard": [
+        "複製金鑰到剪貼簿"
+      ],
       "Create": [
         "創建"
       ],
@@ -666,9 +669,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "進階版 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } 儲存空間"
       ],
@@ -690,9 +690,6 @@
       "Ad-blocker and malware protection": [
         "廣告攔截與惡意程式保護"
       ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "全部${ MAIL_SHORT_APP_NAME }付費及${ CALENDAR_APP_NAME }功能"
-      ],
       "Extended version history": [
         "展開版本紀錄"
       ],
@@ -713,6 +710,12 @@
       ]
     },
     "bf2023: header": {
+      "Select your Black Friday offer": [
+        "選取您的黑色星期五方案"
+      ],
+      "Select your Cyber Week offer": [
+        "選取您的數位週方案"
+      ],
       "Select your End of Year offer": [
         "選擇你的年終優惠"
       ]
@@ -743,9 +746,6 @@
     "bf2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
-      ],
-      "Includes support for 3 custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "包含對 3 組自訂電子郵件網域、${ addresses } 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
@@ -5283,6 +5283,9 @@
       "IP Address copied to clipboard": [
         "IP位址已復製到剪貼簿。"
       ],
+      "Key copied to the clipboard": [
+        "已複製金鑰至剪貼簿"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 認證已重新生成"
       ],
@@ -5397,11 +5400,17 @@
       "Creating your account": [
         "創建您的帳號"
       ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "**每月${ relativePrice }及更多**，讓您存取付費版VPN${ BRAND_NAME }功能!"
+      ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "**每月${ relativePrice }及更多**，讓您存取付費版${ BRAND_NAME }功能!"
       ],
       "Free forever": [
         "永久免費"
+      ],
+      "Includes:": [
+        "包含:"
       ],
       "per month": [
         "每月"
@@ -7117,6 +7126,11 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "單一登入"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "您身份提供者提供的單一登入使用者"
       ]
     },
     "Validation": {

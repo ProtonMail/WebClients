@@ -26,6 +26,9 @@
       "Add domain": [
         "Добавить домен"
       ],
+      "Add multiple users": [
+        "Добавление нескольких пользователей"
+      ],
       "Add PayPal": [
         "Добавить PayPal"
       ],
@@ -40,6 +43,9 @@
       ],
       "Authenticate": [
         "Аутентифицировать"
+      ],
+      "Authenticating": [
+        "Аутентификация"
       ],
       "Back": [
         "Назад"
@@ -98,6 +104,9 @@
       "Create": [
         "Создать"
       ],
+      "Create user": [
+        "Создать пользователя"
+      ],
       "Create users": [
         "Создать пользователей"
       ],
@@ -149,6 +158,9 @@
       "Download all configurations": [
         "Скачать все конфигурации"
       ],
+      "Download our CSV template": [
+        "Скачайте наш шаблон CSV"
+      ],
       "Edit": [
         "Изменить"
       ],
@@ -160,6 +172,9 @@
       ],
       "Edit email address": [
         "Изменить адрес эл. почты"
+      ],
+      "Edit invoice details": [
+        "Изменение информации счета-фактуры"
       ],
       "Edit password": [
         "Изменить пароль"
@@ -196,6 +211,9 @@
       ],
       "Get more addresses": [
         "Получить больше адресов"
+      ],
+      "Get more licenses": [
+        "Получите больше лицензий"
       ],
       "Get the deal": [
         "Воспользоваться"
@@ -627,9 +645,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus и ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } хранилища"
       ],
@@ -650,9 +665,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Блокировщик рекламы и защита от вредоносных программ"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Все платные функции ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Подробная история версий"
@@ -755,12 +767,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Включает поддержку трех пользовательских доменов, ${ addresses } адрес электронной почты, неограниченного числа алиасов hide-my-email, совместный доступ к календарю и другие преимущества.",
-        "Включает поддержку трех пользовательских доменов, ${ addresses } адреса электронной почты, неограниченного числа алиасов hide-my-email, совместный доступ к календарю и другие преимущества.",
-        "Включает поддержку трех пользовательских доменов, ${ addresses } адресов электронной почты, неограниченного числа алиасов hide-my-email, совместный доступ к календарю и другие преимущества.",
-        "Включает поддержку трех пользовательских доменов, ${ addresses } адресов электронной почты, неограниченного числа алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Защитите свои материалы при помощи зашифрованного облачного хранилища. Вам будут доступны история версий, зашифрованный обмен файлами и многое другое."
       ],
@@ -786,6 +792,9 @@
         "${ n } месяцев",
         "${ n } месяца",
         "${ n } месяца"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "Обновляется автоматически за ${ renewPrice } на ${ renewalLength }"
       ]
     },
     "Billing cycle option": {
@@ -902,8 +911,14 @@
       ]
     },
     "Checkout summary": {
+      "month": [
+        "месяц"
+      ],
       "Servers": [
         "Серверы"
+      ],
+      "Users": [
+        "Пользователи"
       ]
     },
     "Collapsible tooltip": {
@@ -2051,6 +2066,9 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Вы достигли максимального числа пользователей, предусмотренного вашим тарифом. Пожалуйста, улучшите ваш тариф прежде, чем добавлять нового пользователя."
       ],
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Вы должны активировать ключи вашей организации. Без активации вы не сможете создавать неприватных пользователей или получать к ним доступ."
+      ],
       "You must privatize all users before generating new organization keys": [
         "Вы должны приватизировать всех пользователей перед генерированием новых ключей организации"
       ],
@@ -3060,6 +3078,9 @@
       "inactive": [
         "неактивно"
       ],
+      "Increase your account security by verifying your email address.": [
+        "Повысьте защищенность своего аккаунта, подтвердив адрес вашей электронной почты."
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Установите конфигурационный файл страны для подключения к случайно выбранному серверу в выбранной стране."
       ],
@@ -3267,6 +3288,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
       ],
+      "Remember to share the user's sign in details with them.": [
+        "Не забудьте сообщить им пользовательские данные для входа в систему."
+      ],
       "Resend verification email": [
         "Отправить письмо с подтверждением еще раз"
       ],
@@ -3290,6 +3314,9 @@
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Чтобы настроить свою учётную запись, просканируйте этот код своим устройством двухфакторной аутентификации. ${ switchButton }."
+      ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Защитите свой аккаунт ${ BRAND_NAME }"
       ],
       "Securing your account": [
         "Защита вашей учетной записи"
@@ -3522,6 +3549,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Улучшить сейчас, чтобы получить платные функции, программное обеспечение и хранилище по специальной цене"
       ],
+      "Upload your completed CSV file to create accounts": [
+        "Загрузите завершенный файл CSV для создания учетных записей"
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Использовать лучший сервер в соответствии с текущей нагрузкой и местоположением: ${ formattedBestServerName }"
       ],
@@ -3551,6 +3581,9 @@
       ],
       "Version ${ version }": [
         "Версия ${ version }"
+      ],
+      "View, download, and manage your invoices.": [
+        "Просматривайте, загружайте и управляйте своими счетами."
       ],
       "Visa Secure logo": [
         "Логотип Visa Secure"
@@ -3636,6 +3669,9 @@
       "You are signed in to the account ${ memberAddress }.": [
         "Вы вошли в аккаунт ${ memberAddress }."
       ],
+      "You can edit this once to ensure the correct email address for verification.": [
+        "Вы можете изменить это один раз, чтобы обеспечить правильную проверку адреса электронной почты."
+      ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Вы можете сразу разблокировать описанную выше настройку, добавив ${ specificCountryCount } к количеству IP-адресов в ваше тарифе, или обратиться к нам за индивидуальными решениями."
       ],
@@ -3683,6 +3719,9 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Вы использовали 100% доступного места. Вы не можете отправлять или получать новые сообщения. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "После входа в систему вы будете перенаправлены на ${ destination }"
       ],
       "You will lose access to Plus features on this date.": [
         "С этой даты вы потеряете доступ к функциям Plus."
@@ -3942,6 +3981,9 @@
       "Config to connect to ${ serverName }": [
         "Конфигурация для подключения к ${ serverName }"
       ],
+      "Confirm email": [
+        "Подтвердите адрес электронной почты"
+      ],
       "Confirm login password": [
         "Подтвердите пароль входа"
       ],
@@ -3980,6 +4022,9 @@
       ],
       "Current display name": [
         "Текущее отображаемое имя"
+      ],
+      "Current email": [
+        "Текущая электронная почта"
       ],
       "Default language": [
         "Язык по умолчанию"
@@ -4052,6 +4097,9 @@
       ],
       "Name": [
         "Имя"
+      ],
+      "Name and address": [
+        "Имя и адрес"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Переадресация портов)"
@@ -4131,6 +4179,9 @@
       "Phrase consists of 12 unique words in a specific order": [
         "Фраза состоит из 12 уникальных слов, расположенных в определенном порядке"
       ],
+      "Please share any feedback to help us improve.": [
+        "Оставляйте любые отзывы, чтобы помочь нам совершенствоваться."
+      ],
       "Postal code": [
         "Почтовый индекс"
       ],
@@ -4199,6 +4250,9 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Какова основная причина, по которой вы удаляете свой аккаунт?"
+      ],
+      "Why would you like to cancel?": [
+        "Почему вы хотите отменить?"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Да, я хочу навсегда удалить этот аккаунт и все его данные."
@@ -4621,6 +4675,9 @@
       "1 user": [
         "1 пользователь"
       ],
+      "24/7 support": [
+        "Круглосуточная поддержка"
+      ],
       "99.95% SLA": [
         "99,95% SLA"
       ],
@@ -4630,6 +4687,9 @@
       "Admin console": [
         "Панель администратора"
       ],
+      "Advanced network security": [
+        "Передовая сетевая безопасность"
+      ],
       "Advanced sharing security": [
         "Дополнительная безопасность совместного доступа"
       ],
@@ -4638,6 +4698,9 @@
       ],
       "Auto-reply": [
         "Автоответчик"
+      ],
+      "Autofill credit cards (coming soon)": [
+        "Автозаполнение кредитных карт (скоро)"
       ],
       "Available on all platforms": [
         "Доступно на всех платформах"
@@ -4650,6 +4713,9 @@
       ],
       "Centralized billing": [
         "Централизованная оплата"
+      ],
+      "Centralized settings and billings": [
+        "Централизованные настройки и выставление счетов"
       ],
       "Contact groups": [
         "Группы контактов"
@@ -4671,6 +4737,9 @@
       ],
       "Data breach monitoring (coming soon)": [
         "Отслеживание утечек данных (скоро появится)"
+      ],
+      "Dedicated servers and IP": [
+        "Выделенные серверы и адреса IP"
       ],
       "DNS leak prevention": [
         "Предотвращение утечки DNS"
@@ -4747,6 +4816,9 @@
       "No-logs policy": [
         "Политика отсутствия журналов активности"
       ],
+      "Organize items with multiple vaults": [
+        "Организуйте элементы с помощью нескольких хранилищ"
+      ],
       "Password-protected Emails": [
         "Электронные письма, защищенные паролем"
       ],
@@ -4797,6 +4869,12 @@
       ],
       "Split tunneling (Android and Windows)": [
         "Раздельное туннелирование (Android и Windows)"
+      ],
+      "Start protecting your organization": [
+        "Начните защищать свою организацию"
+      ],
+      "Start protecting yourself online in 2 easy steps": [
+        "Начните защищать себя в Интернете в 2 простых шага"
       ],
       "Strict no-logs policy": [
         "Строгая политика отсутствия журналов активности"
@@ -5021,6 +5099,12 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME } Защитите свое расписание с помощью сквозного шифрования. Включает поддержку пользовательских календарей, совместное использование календарей и многое другое."
       ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME } Защитите свои файлы с помощью зашифрованного облачного хранилища. Включает историю версий, общий доступ к зашифрованным файлам и многое другое."
+      ],
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME } Защитите свою электронную почту с помощью сквозного шифрования. Включает поддержку пользовательских почтовых доменов, 15 адресов электронной почты, неограниченное количество ide-my-email псевдонимов и многое другое."
+      ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Сохраняйте конфиденциальность в Интернете и получайте доступ к заблокированному контенту. Мы предлагаем свыше ${ serversAndCountries }, высокую скорость VPN-подключения, доступ к стриминговым платформам со всего мира, защиту от вирусов, блокировщик рекламы, быстрое скачивание через BitTorrent и многое другое."
       ],
@@ -5206,6 +5290,9 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Добавьте больше индивидуальности с помощью 15 адресов электронной почты и поддержки 3 пользовательских доменов электронной почты"
       ],
+      "Auto-connect": [
+        "Автоматическое подключение"
+      ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "Увеличьте хранилище до ${ bundleStorage } на пользователя"
       ],
@@ -5246,6 +5333,9 @@
       ],
       "Invalid code": [
         "Недействительный код"
+      ],
+      "Key copied to the clipboard": [
+        "Ключ скопирован в буфер обмена"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Учетные данные OpenVPN / IKEv2 обновлены"
@@ -5447,6 +5537,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Пожалуйста, опишите проблему и добавьте все возникавшие сообщения об ошибках"
+      ],
+      "Please select the main reason": [
+        "Выберите основную причину"
       ],
       "Search": [
         "Поиск"
@@ -6029,6 +6122,12 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } выделенный сервер",
+        "${ ipAddresses } выделенных сервера",
+        "${ ipAddresses } выделенных серверов",
+        "${ ipAddresses } выделенных серверов"
+      ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } высокоскоростное подключение к VPN",
         "${ maxVpn } высокоскоростных подключения к VPN",
@@ -6215,6 +6314,9 @@
       "Email address copied to clipboard": [
         "Адрес скопирован в буфер обмена"
       ],
+      "Email address updated": [
+        "Адрес электронной почты обновлен"
+      ],
       "Email updated": [
         "Адрес электронной почты обновлен"
       ],
@@ -6389,6 +6491,9 @@
       ],
       "Name": [
         "Имя"
+      ],
+      "Password": [
+        "Пароль"
       ],
       "Status": [
         "Статус"
@@ -6603,6 +6708,9 @@
       ],
       "Edit email address": [
         "Изменить адрес эл. почты"
+      ],
+      "Edit invoice details": [
+        "Изменение информации счета-фактуры"
       ],
       "Edit user": [
         "Изменение пользователя"
@@ -6960,6 +7068,11 @@
         "Подтверждённый адрес эл. почты"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME } Защищенные логины на всех ваших устройствах. Включает неограниченное количество псевдонимов, общий доступ, интегрированную двухфакторную аутентификацию и многое другое."
+      ]
+    },
     "Tooltip for news": {
       "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
         "Узнайте последние новости о приватности и о том, что происходит во Вселенной ${ BRAND_NAME }."
@@ -7060,8 +7173,14 @@
       "1-year": [
         "год"
       ],
+      "15-month": [
+        "15-month"
+      ],
       "2-year": [
         "2 года"
+      ],
+      "30-month": [
+        "30-месячный"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
         "Скидка ${ discount } при подписке на ${ billingCycle }"

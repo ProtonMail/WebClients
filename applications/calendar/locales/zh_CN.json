@@ -764,9 +764,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus 与 ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } 存储空间"
       ],
@@ -787,9 +784,6 @@
       ],
       "Ad-blocker and malware protection": [
         "广告拦截与恶意软件防护"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "${ MAIL_SHORT_APP_NAME } 与 ${ CALENDAR_APP_NAME } 的所有付费功能"
       ],
       "High speed streaming": [
         "高速看视频"
@@ -3840,7 +3834,7 @@
         "设置新文件夹的名称和位置，若不选取上层文件夹，则将创建顶层文件夹。"
       ],
       "New": [
-        "新建"
+        "新"
       ],
       "No contacts added yet": [
         "尚未添加联系人"
@@ -5039,7 +5033,7 @@
         "自有域名"
       ],
       "Custom snooze time": [
-        "设置待办事件"
+        "自由调整免打扰时间"
       ],
       "Hide-my-email aliases": [
         "Hide My Email 邮箱别名"
@@ -5066,6 +5060,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "通过 ${ BRAND_NAME } 提供的 SimpleLogin 服务使用无限量的邮箱别名"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "设置免打扰，自由决定何时接收通知"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间"
