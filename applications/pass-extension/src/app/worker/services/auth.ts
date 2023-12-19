@@ -42,7 +42,9 @@ export const createAuthService = (options: AuthServiceConfig): AuthService => {
                 authService.logout({ soft: true }).catch(noop);
                 const additionalMessage = error instanceof Error ? error.message : '';
 
-                options.onNotification?.(c('Warning').t`Unable to sign in to ${PASS_APP_NAME}. ${additionalMessage}`);
+                options.onNotification?.({
+                    text: c('Warning').t`Unable to sign in to ${PASS_APP_NAME}. ${additionalMessage}`,
+                });
 
                 throw getAccountForkResponsePayload(AccountForkResponse.ERROR, error);
             }

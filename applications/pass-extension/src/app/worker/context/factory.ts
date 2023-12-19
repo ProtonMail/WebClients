@@ -158,15 +158,16 @@ export const createWorkerContext = (config: ProtonConfig) => {
 
                 onSessionResumeFailure: () => context.setStatus(AppStatus.ERROR),
 
-                onNotification: (text) =>
+                onNotification: (data) =>
                     store.dispatch(
                         notification({
-                            text,
+                            ...data,
                             type: 'error',
                             key: 'authservice',
                             deduplicate: true,
                         })
                     ),
+
                 onSessionRefresh: async (localID, { AccessToken, RefreshToken, RefreshTime }) => {
                     const persistedSession = await context.service.auth.config.getPersistedSession(localID);
 
