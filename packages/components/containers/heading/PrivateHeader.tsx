@@ -24,7 +24,7 @@ interface Props extends HeaderProps {
     expanded: boolean;
     onToggleExpand?: () => void;
     isSmallViewport?: boolean;
-    app?: APP_NAMES;
+    app: APP_NAMES;
 }
 
 const PrivateHeader = ({
