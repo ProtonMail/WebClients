@@ -2,18 +2,11 @@ import { useCallback, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import {
-    NotificationButton,
-    useAddresses,
-    useApi,
-    useFilters,
-    useFolders,
-    useLabels,
-    useNotifications,
-} from '@proton/components';
+import { NotificationButton, useAddresses, useApi, useFilters, useNotifications } from '@proton/components';
 import { useAppLink } from '@proton/components/components';
 import { Filter } from '@proton/components/containers/filters/interfaces';
 import { createDefaultLabelsFilter } from '@proton/components/containers/filters/utils';
+import { useGetFolders, useGetLabels } from '@proton/components/hooks/useCategories';
 import { addTreeFilter, deleteFilter } from '@proton/shared/lib/api/filters';
 import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
@@ -79,8 +72,8 @@ export const useCreateFilters = () => {
     const [filters = []] = useFilters();
     const api = useApi();
     const appLink = useAppLink();
-    const [labels = []] = useLabels();
-    const [folders = []] = useFolders();
+    const getLabels = useGetLabels();
+    const getFolders = useGetFolders();
     const [addresses = []] = useAddresses();
 
     const ownAddresses = useMemo(() => {
@@ -108,17 +101,32 @@ export const useCreateFilters = () => {
 
         const doCreateFilters = async (elements: Element[], labelIDs: string[], isFolder: boolean) => {
             const senders = getSendersToFilter(elements);
-            const usedLabels: (Label | Folder)[] = isFolder ? [...folders, ...DEFAULT_FOLDERS] : labels;
+
+            let usedLabels: (Label | Folder)[] = [];
+            if (isFolder) {
+                usedLabels = (await getFolders()) || [];
+                usedLabels = [...usedLabels, ...DEFAULT_FOLDERS];
+            } else {
+                usedLabels = (await getLabels()) || [];
+            }
+
             const appliedLabels = labelIDs
                 .map((labelID) => usedLabels.find((label) => label.ID === labelID))
                 .filter(isTruthy);
+
             const newFilters = createDefaultLabelsFilter(senders, appliedLabels, filters);
 
-            const results = await Promise.all(
-                newFilters.map((filter) =>
-                    api<{ Filter: Filter }>(addTreeFilter(filter, isFolder ? 'AutoFolder' : 'AutoLabel'))
-                )
-            );
+            let results;
+            try {
+                results = await Promise.all(
+                    newFilters.map((filter) =>
+                        api<{ Filter: Filter }>(addTreeFilter(filter, isFolder ? 'AutoFolder' : 'AutoLabel'))
+                    )
+                );
+            } catch (e) {
+                console.error('Error creating filter', e);
+                return;
+            }
             createdFilters = results.map((result) => result.Filter);
 
             const isMessage = testIsMessage(elements[0]);
@@ -154,7 +162,7 @@ export const useCreateFilters = () => {
         };
 
         return { getSendersToFilter, doCreateFilters, undoCreateFilters };
-    }, [filters, labels, folders, getSendersToFilter]);
+    }, [filters, getSendersToFilter]);
 
     return { getSendersToFilter, getFilterActions };
 };
