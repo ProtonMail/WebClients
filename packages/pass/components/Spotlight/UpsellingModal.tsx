@@ -8,7 +8,7 @@ import { Icon } from '@proton/components';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import onboardingSVG from '@proton/pass/assets/onboarding.svg';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
-import { OnboardingModal } from '@proton/pass/components/Layout/Modal/OnboardingModal';
+import { AdaptiveModal } from '@proton/pass/components/Layout/Modal/AdaptiveModal';
 import { FreeTrialContent } from '@proton/pass/components/Spotlight/FreeTrialContent';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
@@ -60,11 +60,7 @@ export const UpsellingModal: FC<Props> = ({ type, ...props }) => {
     const features = getFeatures();
 
     return (
-        <OnboardingModal
-            {...props}
-            size="medium"
-            actions={[<UpgradeButton key="upgrade-button" label={upgradeLabel} />]}
-        >
+        <AdaptiveModal {...props} size="medium" actions={[<UpgradeButton key="upgrade-button" label={upgradeLabel} />]}>
             <div className="flex flex-column items-center w-full gap-5 m-auto">
                 <img src={onboardingSVG} className="w-3/5 " alt="user onboarding graphic" />
                 <h3 className="text-bold ">{title}</h3>
@@ -92,6 +88,6 @@ export const UpsellingModal: FC<Props> = ({ type, ...props }) => {
                 </Card>
                 {type === 'free-trial' && <FreeTrialContent />}
             </div>
-        </OnboardingModal>
+        </AdaptiveModal>
     );
 };
