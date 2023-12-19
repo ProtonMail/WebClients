@@ -32,8 +32,8 @@ import { getCreationKeys } from '@proton/shared/lib/calendar/crypto/keys/helpers
 import setupCalendarHelper from '@proton/shared/lib/calendar/crypto/keys/setupCalendarHelper';
 import { getIsProtonUID, naiveGetIsDecryptionError } from '@proton/shared/lib/calendar/helper';
 import {
-    EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
+    INVITATION_ERROR_TYPE,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { getLinkedDateTimeProperty } from '@proton/shared/lib/calendar/icsSurgery/vevent';
 import {
@@ -573,7 +573,7 @@ export const updateEventInvitation = async ({
                 return { action: NONE };
             }
             if (!partstatIcs || !partstatApi || !attendeesApi) {
-                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR);
+                throw new EventInvitationError(INVITATION_ERROR_TYPE.UPDATING_ERROR);
             }
             try {
                 // update attendee partstat if needed
@@ -613,7 +613,7 @@ export const updateEventInvitation = async ({
                     invitation: { ...updatedInvitation, calendarEvent: updatedCalendarEvent },
                 };
             } catch (error: any) {
-                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR);
+                throw new EventInvitationError(INVITATION_ERROR_TYPE.UPDATING_ERROR);
             }
         }
 
@@ -691,7 +691,7 @@ export const updateEventInvitation = async ({
                 }
                 return { action, invitation: { ...updatedInvitation, calendarEvent: updatedCalendarEvent } };
             } catch (error: any) {
-                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR);
+                throw new EventInvitationError(INVITATION_ERROR_TYPE.UPDATING_ERROR);
             }
         }
         return { action };
@@ -759,7 +759,7 @@ export const updateEventInvitation = async ({
                 }
                 return { action: CANCEL, invitation: { ...updatedInvitation, calendarEvent } };
             } catch (error: any) {
-                throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.CANCELLATION_ERROR);
+                throw new EventInvitationError(INVITATION_ERROR_TYPE.CANCELLATION_ERROR);
             }
         }
         return { action: RESET_PARTSTAT };
