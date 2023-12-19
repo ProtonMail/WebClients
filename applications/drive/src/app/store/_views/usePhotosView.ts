@@ -182,7 +182,6 @@ export const usePhotosView = () => {
         loadPhotoLink,
         requestDownload,
         isLoading,
-        isLoadingMore: isLoading && !!photos.length,
     };
 };
 
