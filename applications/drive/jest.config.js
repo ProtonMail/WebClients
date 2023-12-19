@@ -4,8 +4,9 @@ module.exports = {
     collectCoverage: true,
     collectCoverageFrom: ['src/**/*.{js,jsx,ts,tsx}', '!src/app/locales.ts'],
     testEnvironment: './jest.env.js',
+    resolver: './jest.resolver.js',
     transformIgnorePatterns: [
-        'node_modules/(?!(@proton/shared|@proton/components|@protontech/mutex-browser|pmcrypto|openpgp|@openpgp/web-stream-tools|@openpgp/asmcrypto.js|jsmimeparser|@protontech/bip39|emoji-mart)/|client-zip)',
+        'node_modules/(?!(@proton/shared|@proton/components|@protontech/mutex-browser|pmcrypto|openpgp|@openpgp/web-stream-tools|@openpgp/asmcrypto.js|@openpgp/noble-hashes|jsmimeparser|@protontech/bip39|emoji-mart)/|client-zip)',
     ],
     transform: {
         '^.+\\.(m?js|tsx?)$': '<rootDir>/jest.transform.js',
