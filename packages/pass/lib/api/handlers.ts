@@ -10,7 +10,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { LockedSessionError } from './errors';
 import type { RefreshHandler } from './refresh';
-import { isPassSessionRoute } from './utils';
+import { SESSION_LOCK_CODE, isPassSessionRoute } from './utils';
 
 type ApiHandlersOptions = {
     call: ApiCallFn;
@@ -49,7 +49,9 @@ export const withApiHandlers = ({ call, getAuth, refreshHandler, state }: ApiHan
                 /* Inactive extension session : only throw a `LockedSessionError`
                  * when we have not reached the max amount of unlock tries. After
                  * 3 unsuccessful attempts - we will get a 401 */
-                if (code === 300008 && status === HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY) throw LockedSessionError();
+                if (code === SESSION_LOCK_CODE && status === HTTP_ERROR_CODES.UNPROCESSABLE_ENTITY) {
+                    throw LockedSessionError();
+                }
 
                 if (code === API_CUSTOM_ERROR_CODES.APP_VERSION_BAD) throw AppVersionBadError();
 
