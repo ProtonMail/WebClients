@@ -251,6 +251,9 @@
       "Get verification code": [
         "Obtenir un code de vérification"
       ],
+      "Give feedback": [
+        "Donnez-nous votre avis"
+      ],
       "Got it": [
         "J'ai compris"
       ],
@@ -681,9 +684,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus et ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } d'espace de stockage"
       ],
@@ -704,9 +704,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Bloqueur de publicité et protection contre les logiciels malveillants"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Toutes les fonctionnalités payantes de ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Historique des versions plus détaillé"
@@ -807,10 +804,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de ${ addresses } adresse e-mail, d'un nombre illimité d'alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités.",
-        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de ${ addresses } adresses e-mail, d'un nombre illimité d'alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Sécurisez vos connexions sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
       ],
@@ -857,6 +850,11 @@
       ],
       "Two-year": [
         "Tous les deux ans"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Application de bureau ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -5100,7 +5098,7 @@
         "Une protection de la vie privée et une sécurité totales grâce à l'ensemble des services ${ BRAND_NAME }."
       ],
       "Early access to new apps and features": [
-        "Accès anticipé aux fonctionnalités et nouvelles applications"
+        "Accès en avant-première aux nouvelles fonctionnalités et applications"
       ],
       "For next-level password management and identity protection.": [
         "Passez au niveau supérieur pour gérer vos mots de passe et protéger votre identité."

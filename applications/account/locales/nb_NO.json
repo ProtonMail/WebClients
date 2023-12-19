@@ -375,7 +375,7 @@
         "Last ned ICS"
       ],
       "Download our CSV template": [
-        "Las ned vår CSV-mal"
+        "Last ned vår CSV-mal"
       ],
       "Download recovery file": [
         "Last ned gjenopprettningsfil"
@@ -514,6 +514,9 @@
       ],
       "Get verification code": [
         "Få verifiseringskode"
+      ],
+      "Give feedback": [
+        "Gi tilbakemelding"
       ],
       "Go to label": [
         "Gå til etikett"
@@ -1338,9 +1341,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus og ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } lagringsplass"
       ],
@@ -1361,9 +1361,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Annonseblokkering og skadevarebeskyttelse"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Alle betalte ${ MAIL_SHORT_APP_NAME }- og ${ CALENDAR_APP_NAME }-funksjoner"
       ],
       "Extended version history": [
         "Utvidet versjonshistorikk"
@@ -1487,10 +1484,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer støtte for 1 egendefinert e-postdomene, 10 e-postadresser, 10 hide-my-email-aliaser, kalenderdeling og mer."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Inkluderer støtte for 3 egendefinerte e-postdomener, ${ addresses } e-postadresse, ubegrensede hide-my-email-aliaser, kalenderdeling og mer.",
-        "Inkluderer støtte for 3 egendefinerte e-postdomener, ${ addresses } e-postadresser, ubegrensede hide-my-email-aliaser, kalenderdeling og mer."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
       ],
@@ -1547,6 +1540,11 @@
     "Bridge version load failed": {
       "Failed to find latest version": [
         "Fant ikke siste versjon"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME }-skrivebordsapplikasjon"
       ]
     },
     "Bug category": {
@@ -4325,7 +4323,7 @@
         "Det oppstod en feil under lesing av filen \"${ formattedFilename }\". Filen har ikke riktig format."
       ],
       "An error occurred uploading your file \"${ formattedFilename }\". Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        "Det oppsto en feil under opplasting av filen \"${ formattedFilename }\". Maksimum filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
+        "Det oppstod en feil under opplasting av filen \"${ formattedFilename }\". Maksimum filstørrelse er ${ MAX_IMPORT_FILE_SIZE_STRING }."
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "Det oppstod en feil under opplasting av filen. Ingen fil er valgt."
@@ -4371,7 +4369,7 @@
     },
     "Error message, Disable account": {
       "There was a problem disabling your account.": [
-        "Det oppsto et problem med å deaktivere kontoen din."
+        "Det oppstod et problem med å deaktivere kontoen din."
       ]
     },
     "Error message, recovery": {
@@ -5361,7 +5359,7 @@
         "Ferie"
       ],
       "Other": [
-        "Annen"
+        "Andre"
       ],
       "Subscribed": [
         "Abonnerer"
@@ -6820,6 +6818,9 @@
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Ikke din enhet? Bruk et privat nettleservidu for å logge på og lukke det etter endt økt. ${ learnMore }"
+      ],
+      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
+        "Nå tilgjengelig i testversjonen, lar skrivebordsappen deg enkelt starte ${ MAIL_APP_NAME } rett fra skrivebordet ditt og holde fokus uten nettleserforstyrrelser."
       ],
       "Number of dedicated servers in the organization": [
         "Antall dedikerte tjenere i organisasjonen"
@@ -8301,7 +8302,7 @@
         "Slett"
       ],
       "Disables encryption with this key": [
-        "Deaktiver kryptering med denne nøkkelen"
+        "Deaktiverer kryptering med denne nøkkelen"
       ],
       "Disables signature verification and encryption with this key": [
         "Deaktiverer verifisering av signatur og kryptering med denne nøkkelen"
@@ -8475,6 +8476,9 @@
       ],
       "Awarded": [
         "Belønnet"
+      ],
+      "Beta": [
+        "Testversjon"
       ],
       "Billing address": [
         "Fakturaadresse"
@@ -8852,7 +8856,7 @@
         "Kun siste måned"
       ],
       "Level for NetShield blocker filtering": [
-        "Nivå på filtrering til Netshield-blokkering"
+        "Nivå på blokkeringsfiltrering for NetShield"
       ],
       "Link label": [
         "Etikett på kobling"
@@ -9197,7 +9201,7 @@
         "Verifiseringskode"
       ],
       "Verify keys with Key Transparency": [
-        "Verifiser nøkler med NøkkelGjennomsiktighet"
+        "Verifiser nøkler med Key Transparency"
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
@@ -11614,7 +11618,7 @@
         "Navn"
       ],
       "Other": [
-        "Annen"
+        "Annet"
       ],
       "Password": [
         "Passord"
@@ -13175,6 +13179,9 @@
       ]
     },
     "Title": {
+      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
+        " Få ${ MAIL_APP_NAME } for Mac eller Windows"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
@@ -13525,6 +13532,9 @@
       "Delete version history?": [
         "Slette versjonshistorikk?"
       ],
+      "Desktop app": [
+        "Skrivebordsapp"
+      ],
       "Disable ${ email }": [
         "Deaktiver ${ email }"
       ],
@@ -13646,6 +13656,9 @@
       "Folders and labels": [
         "Mapper og etiketter"
       ],
+      "For ${ platform }": [
+        "For ${ platform }"
+      ],
       "Forward and auto-reply": [
         "Videresend og autosvar"
       ],
@@ -13695,7 +13708,7 @@
         "Importer"
       ],
       "Import and export": [
-        "Importer og eksporter"
+        "Import og eksport"
       ],
       "Import as simple event?": [
         "Importer som enkel hendelse?",

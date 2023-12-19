@@ -436,6 +436,9 @@
       "Get verification code": [
         "Odeslat ověřovací kód"
       ],
+      "Give feedback": [
+        "Zaslat zpětnou vazbu"
+      ],
       "Go to label": [
         "Přejít na štítek"
       ],
@@ -1352,9 +1355,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } úložiště"
       ],
@@ -1375,9 +1375,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Blokování reklam a ochrana před malware"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Všechny placené funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Rozšířená historie verzí"
@@ -1424,12 +1421,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Obsahuje podporu 1 vlastní e-mailové domény, 10 e-mailových adres, 10 aliasů hide-my-email, sdílení kalendáře a další funkce."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Zahrnuje podporu 3 vlastních e-mailových domén, ${ addresses } e-mailovou adresu, neomezený počet aliasů hide-my-email, sdílení kalendáře a další.",
-        "Zahrnuje podporu 3 vlastních e-mailových domén, ${ addresses } e-mailové adresy, neomezený počet aliasů hide-my-email, sdílení kalendáře a další.",
-        "Zahrnuje podporu 3 vlastních e-mailových domén, ${ addresses } e-mailových adres, neomezený počet aliasů hide-my-email, sdílení kalendáře a další.",
-        "Zahrnuje podporu 3 vlastních e-mailových domén, ${ addresses } e-mailových adres, neomezený počet aliasů hide-my-email, sdílení kalendáře a další."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
       ],
@@ -1447,6 +1438,11 @@
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Uchovávejte až 200 verzí každého souboru po dobu až 10 let."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } Desktopová aplikace"
       ]
     },
     "Bug category": {
@@ -3345,6 +3341,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "V tomto prohlížeči nelze povolit vyhledávání obsahu. Ukončete prosím režim soukromého režim prohlížeče, nebo vyzkoušejte jiný prohlížeč."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "Vyhledávání obsahu nelze povolit. Restartujte aplikaci nebo smažte data."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Chyba dešifrování: Dešifrování obsahu této zprávy se nezdařilo."
@@ -6925,8 +6924,8 @@
       "Frequency": [
         "Frekvence"
       ],
-      "From": [
-        "Od"
+      "From (senders in message print header)": [
+        "Od (odesílatelé v záhlaví zprávy)"
       ],
       "From:": [
         "Od:"
@@ -7165,9 +7164,6 @@
       "Time": [
         "Čas"
       ],
-      "To": [
-        "Do"
-      ],
       "To:": [
         "Komu:"
       ],
@@ -7215,6 +7211,16 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (admin)"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Od"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Do"
       ]
     },
     "Label attach to date input to select a date": {
@@ -7860,7 +7866,7 @@
     },
     "Onboarding modal": {
       "Automatically forward emails": [
-        "Automaticky přeposílejte e-maily"
+        "Automaticky přeposílat e-maily"
       ],
       "Block email communications from scammers permanently. ${ kbLinkSender }": [
         "Natrvalo zablokujte e-mailovou komunikaci od podvodníků. ${ kbLinkSender }"
@@ -7878,7 +7884,7 @@
         "Pouze pro vaše oči"
       ],
       "Forward Gmail messages to your inbox.": [
-        "Přeposílejte Gmail zprávy do své schránky."
+        "Přeposílat Gmail zprávy do složky Doručená pošta."
       ],
       "Next": [
         "Další"
@@ -8397,6 +8403,9 @@
         "${ timeRemaining.inHours } hodin",
         "${ timeRemaining.inHours } hodin"
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Žádost o resetování hesla schválena (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Přejděte do přihlášeného zařízení (v relaci, ve které byl požadavek iniciován) a změňte heslo."
       ],
@@ -8412,8 +8421,38 @@
         "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodin",
         "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodin"
       ],
+      "This permission expires soon": [
+        "Toto oprávnění brzy vyprší"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Nyní si můžete libovolně změnit heslo k účtu ${ boldEmail } po dobu ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Nyní si můžete změnit heslo k účtu ${ boldEmail }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Na resetování hesla máte ${ timeRemaining.inDays } den.",
+        "Na resetování hesla máte ${ timeRemaining.inDays } dny.",
+        "Na resetování hesla máte ${ timeRemaining.inDays } dnů.",
+        "Na resetování hesla máte ${ timeRemaining.inDays } dnů."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Na resetování hesla máte ${ timeRemaining.inHours } hodinu.",
+        " Na resetování hesla máte ${ timeRemaining.inHours } hodiny.",
+        " Na resetování hesla máte ${ timeRemaining.inHours } hodin.",
+        " Na resetování hesla máte ${ timeRemaining.inHours } hodin."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Na resetování hesla máte ${ timeRemaining.inMinutes } minutu.",
+        " Na resetování hesla máte ${ timeRemaining.inMinutes } minuty.",
+        " Na resetování hesla máte ${ timeRemaining.inMinutes } minut.",
+        " Na resetování hesla máte ${ timeRemaining.inMinutes } minut."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Na resetování hesla máte ${ timeRemaining.inSeconds } sekundu.",
+        " Na resetování hesla máte ${ timeRemaining.inSeconds } sekundy.",
+        " Na resetování hesla máte ${ timeRemaining.inSeconds } sekund.",
+        " Na resetování hesla máte ${ timeRemaining.inSeconds } sekund."
       ]
     },
     "session_recovery:available:link": {
@@ -8828,7 +8867,7 @@
         "Pomocí nové funkce odložení si nastavte, kdy se má e-mail znovu objevit v doručené poště."
       ],
       "Snooze it for later": [
-        "Odložení na později"
+        "Odložit na později"
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "Zprávy ve složkách Spam a Koš jsou nyní automaticky vyloučeny z Všechna pošta. ${ settingsLink }"

@@ -261,6 +261,9 @@
       "Get verification code": [
         "Ottieni il codice di verifica"
       ],
+      "Give feedback": [
+        "Dai una valutazione"
+      ],
       "Go to label": [
         "Vai all'etichetta"
       ],
@@ -780,9 +783,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus e ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } di archiviazione"
       ],
@@ -803,9 +803,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Ad-blocker e anti-malware"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Tutte le funzioni a pagamento di ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Cronologia estesa della versione"
@@ -849,12 +846,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Aggira i blocchi e la censura a internet imposti dai singoli Paesi grazie alla nostra rete globale di server."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Include il supporto per ${ domains } domini email personalizzati, ${ addresses } indirizzo email, alias hide-my-email illimitati, condivisione del calendario e molto altro.",
+        "Include il supporto per ${ domains } domini email personalizzati, ${ addresses } indirizzi email, alias hide-my-email illimitati, condivisione del calendario e molto altro."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias hide-my-email, condivisione del calendario e altro ancora."
-      ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Include il supporto per 3 domini email personalizzati, ${ addresses } indirizzo email, alias hide-my-email illimitati, condivisione del calendario e altro ancora.",
-        "Include il supporto per 3 domini email personalizzati, ${ addresses } indirizzi email, alias hide-my-email illimitati, condivisione del calendario e altro ancora."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Login sicuri su tutti i tuoi dispositivi. Include alias illimitati, condivisione, 2FA integrato e molto altro."
@@ -873,6 +870,11 @@
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Archivia oltre 200 versioni di ciascun file per un massimo di 10 anni."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Applicazione desktop ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -2349,7 +2351,37 @@
         "Aggiornamento per un evento che inizia il ${ formattedStart }"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Funzionalità a pagamento di ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Include la cronologia delle versioni in ${ DRIVE_SHORT_APP_NAME }, l'accesso a migliaia di server ${ VPN_SHORT_APP_NAME } ad alta velocità, la condivisione in ${ PASS_SHORT_APP_NAME } e altro ancora."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 utenti"
+      ],
+      "Early access to new apps and features": [
+        "Accesso anticipato a nuove app e funzionalità"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Accesso anticipato all'applicazione desktop di ${ MAIL_APP_NAME }"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Funzionalità a pagamento di ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_APP_NAME }"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } non può connettersi al tuo account esterno"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Puoi anche controllare il nostro ${ statusPageLink }"
       ],
@@ -2416,6 +2448,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Impossibile abilitare la ricerca nel contenuto in questo browser. Esci dalla modalità in incognito o usa un altro browser."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "Impossibile abilitare la ricerca nel contenuto. Riavvia l'applicazione o cancella la cache."
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Errore di decriptazione: decriptazione del contenuto di questo evento non riuscita."
@@ -2696,6 +2731,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Prova ad usare solo lettere, numeri e _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Errore imprevisto. Non possiamo importare i contatti."
       ],
       "Unknown error": [
         "Errore sconosciuto"

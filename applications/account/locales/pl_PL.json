@@ -515,6 +515,9 @@
       "Get verification code": [
         "Otrzymaj kod weryfikacyjny"
       ],
+      "Give feedback": [
+        "Wyślij opinię"
+      ],
       "Go to label": [
         "Przejdź do etykiety"
       ],
@@ -1344,9 +1347,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus i ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } przestrzeni dyskowej"
       ],
@@ -1367,9 +1367,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Blokada reklam i ochrona przed złośliwym oprogramowaniem"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Wszystkie płatne funkcje ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Rozszerzona historia wersji"
@@ -1495,12 +1492,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Zawiera obsługę 3 niestandardowych domen, ${ addresses } adres e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej.",
-        "Zawiera obsługę 3 niestandardowych domen, ${ addresses } adresy e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej.",
-        "Zawiera obsługę 3 niestandardowych domen, ${ addresses } adresów e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej.",
-        "Zawiera obsługę 3 niestandardowych domen, ${ addresses } adresów e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Loguj się bezpiecznie na wszystkich urządzeniach. Obejmuje nieograniczoną liczbę aliasów, udostępnianie, zintegrowane uwierzytelnianie dwustopniowe i nie tylko."
       ],
@@ -1559,6 +1550,11 @@
     "Bridge version load failed": {
       "Failed to find latest version": [
         "Nie udało się znaleźć najnowszej wersji"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplikacja desktopowa ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -3453,13 +3449,13 @@
         "Włącz ponownie"
       ],
       "Re-send confirmation email": [
-        "Wyślij ponownie potwierdzenie"
+        "Poproś ponownie o zatwierdzenie"
       ],
       "Remove “${ value }”": [
         "Usuń “${ value }”"
       ],
       "Request confirmation": [
-        "Poproś o potwierdzenie"
+        "Poproś o zatwierdzenie"
       ],
       "Resume": [
         "Wznów"
@@ -3468,7 +3464,7 @@
         "Zapisz"
       ],
       "Send confirmation email": [
-        "Wyślij potwierdzenie"
+        "Poproś o zatwierdzenie"
       ],
       "Set up email forwarding": [
         "Ustaw przekierowanie"
@@ -3518,7 +3514,7 @@
     },
     "email_forwarding_2023: Info": {
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
-        "Potwierdzenie odczytu zostanie wysłane na adres ${ boldForwardeeEmail }"
+        "Prośba o zatwierdzenie zostanie wysłana na adres ${ boldForwardeeEmail }"
       ],
       "A new encryption key will be generated for ${ boldForwarderEmail }.": [
         "Nowy klucz szyfrowania zostanie wygenerowany dla adresu ${ boldForwarderEmail }."
@@ -3527,7 +3523,7 @@
         "Automatyczne przekierowanie wiadomości na inny adres e-mail."
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
-        "Odbiorca został zaproszony i musi zaakceptować lub odrzucić zaproszenie"
+        "Odbiorca został zaproszony i musi zaakceptować lub odrzucić przekierowanie"
       ],
       "Forwarding is active": [
         "Przekierowywanie jest włączone"
@@ -3536,7 +3532,7 @@
         "Przekierowanie na adres bez szyfrowania wyłączy szyfrowanie end-to-end dla adresu ${ boldForwarderEmail }, ale szyfrowanie po stronie klienta pozostanie włączone. ${ learnMoreLink }"
       ],
       "Forwarding to this address will become active once the recipient accepts the forwarding.": [
-        "Przekierowanie na ten adres stanie się aktywne, gdy odbiorca zaakceptuje je."
+        "Przekierowanie na ten adres stanie się aktywne, gdy odbiorca zatwierdzi je."
       ],
       "No incoming forwarding rules": [
         "Brak przychodzących reguł przekierowywania"
@@ -3565,10 +3561,10 @@
         "oraz"
       ],
       "Forward from": [
-        "Przekaż od"
+        "Przekieruj z"
       ],
       "Forward to": [
-        "Przekaż do"
+        "Przekieruj do"
       ],
       "or": [
         "lub"
@@ -3675,7 +3671,7 @@
         "Przekierowanie zostało włączone"
       ],
       "Request confirmation": [
-        "Poproś o potwierdzenie"
+        "Poproś o zatwierdzenie"
       ],
       "Set up forwarding": [
         "Ustaw przekierowanie"
@@ -8647,6 +8643,9 @@
       "Awarded": [
         "Przyznano"
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billing address": [
         "Adres rozliczeniowy"
       ],
@@ -13490,6 +13489,9 @@
       ]
     },
     "Title": {
+      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
+        "Pobierz aplikację ${ MAIL_APP_NAME } na Maca lub Windowsa"
+      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -13847,6 +13849,9 @@
       "Delete version history?": [
         "Usunąć historię wersji?"
       ],
+      "Desktop app": [
+        "Aplikacja desktopowa"
+      ],
       "Disable ${ email }": [
         "Wyłącz adres ${ email }"
       ],
@@ -13969,6 +13974,9 @@
       ],
       "Folders and labels": [
         "Foldery i etykiety"
+      ],
+      "For ${ platform }": [
+        "Na ${ platform }"
       ],
       "Forward and auto-reply": [
         "Przekierowanie i autoresponder"

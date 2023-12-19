@@ -322,6 +322,9 @@
       "Get verification code": [
         "Otrzymaj kod weryfikacyjny"
       ],
+      "Give feedback": [
+        "Wyślij opinię"
+      ],
       "Go to Drive": [
         "Przejdź do dysku"
       ],
@@ -829,9 +832,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus i ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } przestrzeni dyskowej"
       ],
@@ -852,9 +852,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Blokada reklam i ochrona przed złośliwym oprogramowaniem"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Wszystkie płatne funkcje ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Rozszerzona historia wersji"
@@ -901,12 +898,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Zawiera obsługę 1 niestandardowej domeny, 10 adresów e-mail, 10 aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Zawiera obsługę 3 niestandardowych domen, ${ addresses } adres e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej.",
-        "Zawiera obsługę 3 niestandardowych domen, ${ addresses } adresy e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej.",
-        "Zawiera obsługę 3 niestandardowych domen, ${ addresses } adresów e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej.",
-        "Zawiera obsługę 3 niestandardowych domen, ${ addresses } adresów e-mail, nieograniczoną liczbę aliasów hide-my-email, udostępnianie kalendarza i wiele więcej."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Loguj się bezpiecznie na wszystkich urządzeniach. Obejmuje nieograniczoną liczbę aliasów, udostępnianie, zintegrowane uwierzytelnianie dwustopniowe i nie tylko."
       ],
@@ -924,6 +915,11 @@
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Przechowuj do 200 wersji każdego pliku przez okres aż do 10 lat."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplikacja desktopowa ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -2128,6 +2124,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Nie można włączyć wyszukiwania zawartości w tej przeglądarce. Wyjdź z trybu prywatnego przeglądarki lub spróbuj użyć innej."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "Wyszukiwanie zawartości nie może zostać włączone. Uruchom ponownie aplikację lub wyczyść jej dane."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Odznacz co najmniej ${ calendarsToFixCount } kalendarz",

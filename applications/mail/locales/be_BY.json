@@ -436,6 +436,9 @@
       "Get verification code": [
         "Атрымаць праверачны код"
       ],
+      "Give feedback": [
+        "Пакінуць водгук"
+      ],
       "Go to label": [
         "Перайсці да меткі"
       ],
@@ -1352,9 +1355,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus і ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } прасторы ў сховішчы"
       ],
@@ -1375,9 +1375,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Блакіроўшчык рэкламы і абарона ад шкодных праграм"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Усе платныя функцыі ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Пашыраная гісторыя версій"
@@ -1424,12 +1421,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Уключае падтрымку 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў hide-my-email, абагуленне календара і іншыя функцыі."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, адраса электроннай пошты ${ addresses } , неабмежаваную колькасць псеўданімаў Hide-my-email, абагуленне календара і іншыя функцыі.",
-        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, адрасоў электроннай пошты ${ addresses } , неабмежаваную колькасць псеўданімаў Hide-my-email, абагуленне календара і іншыя функцыі.",
-        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, адрасоў электроннай пошты ${ addresses } , неабмежаваную колькасць псеўданімаў Hide-my-email, абагуленне календара і іншыя функцыі.",
-        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, адрасоў электроннай пошты ${ addresses } , неабмежаваную колькасць псеўданімаў Hide-my-email, абагуленне календара і іншыя функцыі."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ],
@@ -1447,6 +1438,11 @@
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Захоўвайце да 200 версій кожнага файла да 10 гадоў."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Настольная праграма ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -3345,6 +3341,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Немагчыма ўключыць пошук змесціва ў гэтым браўзеры. Выйдзіце з рэжыму прыватнага прагляду або скарыстайцеся іншым браўзерам."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "Немагчыма ўключыць пошук па кантэксце. Перазапусціце праграму або ачысціце яе даныя."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Памылка расшыфроўкі: не ўдалося расшыфраваць змесціва гэтага паведамлення."
@@ -6925,8 +6924,8 @@
       "Frequency": [
         "Перыядычнасць"
       ],
-      "From": [
-        "Ад"
+      "From (senders in message print header)": [
+        "Ад (адпраўнікі ў загалоўку паведамлення)"
       ],
       "From:": [
         "Ад:"
@@ -7165,9 +7164,6 @@
       "Time": [
         "Час"
       ],
-      "To": [
-        "Каму"
-      ],
       "To:": [
         "Каму:"
       ],
@@ -7215,6 +7211,16 @@
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Ад"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Каму"
       ]
     },
     "Label attach to date input to select a date": {

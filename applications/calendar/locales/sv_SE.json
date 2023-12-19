@@ -261,6 +261,9 @@
       "Get verification code": [
         "Skaffa verifieringskod"
       ],
+      "Give feedback": [
+        "Ge feedback"
+      ],
       "Go to label": [
         "Gå till etikett"
       ],
@@ -780,9 +783,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus och ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } lagringsutrymme"
       ],
@@ -803,9 +803,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Annonsblockerare och skydd mot skadlig kod"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Alla betalda funktionerna för ${ MAIL_SHORT_APP_NAME } och ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Utökad versionshistorik"
@@ -852,10 +849,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderar stöd för 1 anpassad e-postdomän, 10 e-postadresser, 10 hide-my-email-alias, kalenderdelning och mer."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Inkluderar stöd för 3 anpassade e-postdomäner, ${ addresses } e-postadress, obegränsat antal hide-my-email-alias, kalenderdelning och mer.",
-        "Inkluderar stöd för 3 anpassade e-postdomäner, ${ addresses } e-postadresser, obegränsat antal hide-my-email-alias, kalenderdelning och mer."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
       ],
@@ -873,6 +866,11 @@
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Lagra upp till 200 versioner av varje fil i upp till 10 år."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Applikation för stationär dator ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -2350,6 +2348,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } kan inte ansluta till ditt externa konto"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan också kontrollera vår ${ statusPageLink }"
       ],
@@ -2416,6 +2417,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Innehållssökning kan inte aktiveras i denna webbläsare. Avsluta läget för privat surfning eller använd en annan webbläsare."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "Innehållssökning kan inte aktiveras. Starta om applikationen eller rensa data."
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Dekrypteringsfel: Dekryptering av innehållet i den här händelsen misslyckades."
@@ -2696,6 +2700,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Prova använda endast bokstäver, siffror och _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Oväntat fel, vi kan inte importera kontakterna"
       ],
       "Unknown error": [
         "Okänt fel"
@@ -5758,11 +5765,30 @@
         "Denna tillåtelse löper ut om ${ timeRemaining.inHours } timme",
         "Denna tillåtelse löper ut om ${ timeRemaining.inHours } timmar"
       ],
+      "This permission expires soon": [
+        "Denna tillåtelse löper snart ut"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Du kan nu ändra ditt lösenord för kontot ${ boldEmail } fritt i ${ boldDaysRemaining }."
       ],
       "You can now change your password for the account ${ boldEmail }.": [
         "Du kan nu ändra ditt lösenord för kontot ${ boldEmail }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Du har ${ timeRemaining.inDays } dag på dig att återställa ditt lösenord.",
+        "Du har ${ timeRemaining.inDays } dagar på dig att återställa ditt lösenord."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Du har ${ timeRemaining.inHours } timme på dig att återställa ditt lösenord.",
+        " Du har ${ timeRemaining.inHours } timmar på dig att återställa ditt lösenord."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Du har ${ timeRemaining.inMinutes } minut på dig att återställa ditt lösenord.",
+        " Du har ${ timeRemaining.inMinutes } minuter på dig att återställa ditt lösenord."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Du har ${ timeRemaining.inSeconds } sekund på dig att återställa ditt lösenord.",
+        " Du har ${ timeRemaining.inSeconds } sekunder på dig att återställa ditt lösenord."
       ]
     },
     "session_recovery:available:link": {

@@ -436,6 +436,9 @@
       "Get verification code": [
         "Odoslať overovací kód"
       ],
+      "Give feedback": [
+        "Dajte nám spätnú väzbu"
+      ],
       "Go to label": [
         "Prejsť na štítok"
       ],
@@ -1352,9 +1355,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } úložisko"
       ],
@@ -1375,9 +1375,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Ad-blocker a ochrana pred malvérom"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Všetky funkcie plateného ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Rozšírená história verzií"
@@ -1424,12 +1421,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Zahŕňa podporu pre 1 vlastnú emailovú doménu, 10 emailových adries, 10 hide-my-email aliasov, zdieľanie kalendára a ďalšie."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Súčasťou je podpora 3 vlastných emailových domén, ${ addresses } emailová adresa, neobmedzený počet ide-my-email aliasov, zdieľanie kalendára a ďalšie funkcie.",
-        "Súčasťou je podpora 3 vlastných emailových domén, ${ addresses } emailové adresy, neobmedzený počet ide-my-email aliasov, zdieľanie kalendára a ďalšie funkcie.",
-        "Súčasťou je podpora 3 vlastných emailových domén, ${ addresses } emailových adries, neobmedzený počet ide-my-email aliasov, zdieľanie kalendára a ďalšie funkcie.",
-        "Súčasťou je podpora 3 vlastných emailových domén, ${ addresses } emailových adries, neobmedzený počet ide-my-email aliasov, zdieľanie kalendára a ďalšie funkcie."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ],
@@ -1447,6 +1438,11 @@
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Uložte až 200 verzií každého súboru až na 10 rokov."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } desktopová aplikácia"
       ]
     },
     "Bug category": {
@@ -3169,6 +3165,9 @@
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } bolo aktualizované.\n${ eventDetailsText }"
       ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Tento výskyt ${ eventTitle } bol zrušený."
+      ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Ste pozvaní na ${ eventTitle }\n${ eventDetailsText }"
       ]
@@ -3342,6 +3341,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "V tomto prehliadači nie je možné povoliť vyhľadávanie obsahu. Ukončite prosím režim súkromného režim prehliadača, alebo vyskúšajte iný prehliadač."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "Vyhľadávanie obsahu nie je možné povoliť. Reštartujte aplikáciu alebo vymažte údaje."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Chyba dešifrovania: Dešifrovanie obsahu tejto správy zlyhalo."
@@ -3702,6 +3704,9 @@
       ],
       "You must set a name": [
         "Musíte nastaviť meno"
+      ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "Dosiahli ste maximálny počet znakov. Skráťte svoju správu."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Vaše emaily nemožno dešifrovať kvôli nedávnemu obnoveniu hesla. Ak si pamätáte svoje predchádzajúce heslo, môžete ${ reActivateKeyLink } získať prístup k svojim správam. ${ learnMoreLink }"
@@ -6919,8 +6924,8 @@
       "Frequency": [
         "Frekvencia"
       ],
-      "From": [
-        "Od"
+      "From (senders in message print header)": [
+        "Od (odosielatelia v hlavičke správy)"
       ],
       "From:": [
         "Od:"
@@ -7159,9 +7164,6 @@
       "Time": [
         "Čas"
       ],
-      "To": [
-        "Pre"
-      ],
       "To:": [
         "Komu:"
       ],
@@ -7209,6 +7211,16 @@
       ],
       "Your password (admin)": [
         "Vaše heslo (admin)"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "Od"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Pre"
       ]
     },
     "Label attach to date input to select a date": {
@@ -8406,8 +8418,35 @@
         "Toto povolenie vyprší za ${ timeRemaining.inHours } hodín",
         "Toto povolenie vyprší za ${ timeRemaining.inHours } hodín"
       ],
+      "This permission expires soon": [
+        "Platnosť tohto povolenia čoskoro uplynie"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Heslo pre účet ${ boldEmail } si teraz môžete ľubovoľne zmeniť po dobu ${ boldDaysRemaining }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Na obnovu vášho hesla máte ${ timeRemaining.inDays } deň.",
+        "Na obnovu vášho hesla máte ${ timeRemaining.inDays } dni.",
+        "Na obnovu vášho hesla máte ${ timeRemaining.inDays } dní.",
+        "Na obnovu vášho hesla máte ${ timeRemaining.inDays } dní."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Na obnovu vášho hesla máte ${ timeRemaining.inHours } hodinu.",
+        " Na obnovu vášho hesla máte ${ timeRemaining.inHours } hodiny.",
+        " Na obnovu vášho hesla máte ${ timeRemaining.inHours } hodín.",
+        " Na obnovu vášho hesla máte ${ timeRemaining.inHours } hodín."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Na obnovu vášho hesla máte ${ timeRemaining.inMinutes } minútu.",
+        " Na obnovu vášho hesla máte ${ timeRemaining.inMinutes } minúty.",
+        " Na obnovu vášho hesla máte ${ timeRemaining.inMinutes } minút.",
+        " Na obnovu vášho hesla máte ${ timeRemaining.inMinutes } minút."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekundu.",
+        " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekundy.",
+        " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd.",
+        " Na obnovu vášho hesla máte ${ timeRemaining.inSeconds } sekúnd."
       ]
     },
     "session_recovery:available:link": {

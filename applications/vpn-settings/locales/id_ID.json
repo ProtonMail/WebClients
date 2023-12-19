@@ -251,6 +251,9 @@
       "Get verification code": [
         "Dapatkan kode verifikasi"
       ],
+      "Give feedback": [
+        "Beri tanggapan"
+      ],
       "Got it": [
         "Dimengerti"
       ],
@@ -678,9 +681,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus dan ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "Penyimpanan ${ storageSize }"
       ],
@@ -701,9 +701,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Pemblokir iklan dan perlindungan perangkat lunak jahat"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Semua fitur ${ MAIL_SHORT_APP_NAME } dan ${ CALENDAR_APP_NAME } yang berbayar"
       ],
       "Extended version history": [
         "Riwayat versi lebih mendalam"
@@ -803,9 +800,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Termasuk dukungan untuk 1 domain surel kustom, 10 alamat surel, 10 alias hide-my-email, pembagian kalender, dan lainnya."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Termasuk dukungan untuk 3 alamat surel kustom, ${ addresses } alamat surel, alias hide-my-email tak terbatas, pembagian kalender, dan lainnya."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Masuk secara aman di semua perangkat Anda. Termasuk alias terbatas, pembagian, 2FA terintegrasi, dan lainnya."
       ],
@@ -851,6 +845,11 @@
       ],
       "Two-year": [
         "Dua tahun"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplikasi Desktop ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -5806,6 +5805,15 @@
       ]
     },
     "session_recovery:available:info": {
+      " You have ${ timeRemaining.inHours } hours to reset your password.": [
+        "Anda memiliki ${ timeRemaining.inHours } jam tersisa untuk mengatur ulang kata sandi Anda."
+      ],
+      " You have ${ timeRemaining.inMinutes } minutes to reset your password.": [
+        "Anda memiliki ${ timeRemaining.inMinutes } menit tersisa untuk mengatur ulang kata sandi Anda."
+      ],
+      " You have ${ timeRemaining.inSeconds } seconds to reset your password.": [
+        "Anda memiliki ${ timeRemaining.inSeconds } tersisa untuk mengatur ulang kata sandi Anda."
+      ],
       "${ timeRemaining.inDays } days": [
         "${ timeRemaining.inDays } hari"
       ],
@@ -5818,6 +5826,9 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Apabila Anda tidak meminta untuk mengatur ulang kata sandi, batalkan permintaan ini sekarang juga."
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Permintaan pengaturan ulang kata sandi disetujui (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Silakan tuju perangkat yang telah terhubung masuk (dalam sesi di mana permintaan ini diajukan) untuk mengubah kata sandi Anda."
       ],
@@ -5827,14 +5838,23 @@
       "This permission expires in ${ timeRemaining.inHours } hours": [
         "Perizinan akan kedaluwarsa dalam ${ timeRemaining.inHours } jam"
       ],
+      "This permission expires soon": [
+        "Izin ini akan segera kedaluwarsa"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Anda kini dapat mengubah kata sandi untuk akun ${ boldEmail } secara bebas selama ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Anda kini dapat mengubah kata sandi Anda untuk akun ${ boldEmail }"
       ],
       "You can now reset your password": [
         "Anda kini dapat mengatur ulang kata sandi Anda"
       ],
       "You can reset your password until ${ boldDate }.": [
         "Anda dapat mengatur ulang kata sandi Anda hingga ${ boldDate }."
+      ],
+      "You have ${ timeRemaining.inDays } days to reset your password.": [
+        "Anda memiliki ${ timeRemaining.inDays } hari tersisa untuk mengatur ulang kata sandi Anda."
       ]
     },
     "session_recovery:available:link": {

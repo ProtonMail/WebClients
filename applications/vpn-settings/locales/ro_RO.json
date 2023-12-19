@@ -251,6 +251,9 @@
       "Get verification code": [
         "Obținere cod de verificare"
       ],
+      "Give feedback": [
+        "Oferiți feedback"
+      ],
       "Got it": [
         "Am înțeles"
       ],
@@ -684,9 +687,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus și ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } spațiu"
       ],
@@ -707,9 +707,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Protecție malware și blocare reclame"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Toate funcțiile cu plată ale ${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Istoric extins versiuni"
@@ -811,11 +808,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Include suport pentru un domeniu de e-mail personal, 10 adrese de e-mail, 10 aliasuri hide-my-email, partajare calendar și altele."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Include suport pentru 3 domenii de e-mail personale, ${ addresses } adresă de e-mail, aliasuri nelimitate hide-my-email, partajare calendar și altele.",
-        "Include suport pentru 3 domenii de e-mail personale, ${ addresses } adrese de e-mail, aliasuri nelimitate hide-my-email, partajare calendar și altele.",
-        "Include suport pentru 3 domenii de e-mail personale, ${ addresses } de adrese de e-mail, aliasuri nelimitate hide-my-email, partajare calendar și altele."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
       ],
@@ -863,6 +855,11 @@
       ],
       "Two-year": [
         "Bianual"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplicați ${ MAIL_APP_NAME } Desktop"
       ]
     },
     "Bug category": {
