@@ -430,6 +430,9 @@
       "Get verification code": [
         "Obtener código de verificación"
       ],
+      "Give feedback": [
+        "Danos tu opinión"
+      ],
       "Go to label": [
         "Ir a la etiqueta"
       ],
@@ -1334,9 +1337,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus y ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } de almacenamiento"
       ],
@@ -1357,9 +1357,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anuncios y protección contra malware"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Todas las funciones de pago de ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Historial de versiones extendido"
@@ -1406,10 +1403,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de hide-my-email, posibilidad de compartir calendario, etc."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, ${ addresses } dirección de correo electrónico, alias ilimitados de hide-my-email, posibilidad de compartir calendario, etc.",
-        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, ${ addresses } direcciones de correo electrónico, alias ilimitados de hide-my-email, posibilidad de compartir calendario, etc."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
       ],
@@ -1427,6 +1420,11 @@
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Almacena hasta 200 versiones de cada archivo durante 10 años como máximo."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplicación de escritorio de ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -3307,6 +3305,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "No puedes activar la búsqueda de contenido en este navegador. Sal del modo de navegación privada o utiliza otro navegador."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "No se puede activar la búsqueda de contenido. Reinicia la aplicación o borra los datos."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Error al descifrar: no se ha podido descifrar el contenido de este mensaje."
@@ -6695,8 +6696,8 @@
       "Frequency": [
         "Frecuencia"
       ],
-      "From": [
-        "De"
+      "From (senders in message print header)": [
+        "De (remitentes en el encabezado de impresión del mensaje)"
       ],
       "From:": [
         "De:"
@@ -6765,7 +6766,7 @@
         "Solo el último mes"
       ],
       "Layout": [
-        "Diseño"
+        "Disposición"
       ],
       "Location": [
         "Ubicación"
@@ -6935,9 +6936,6 @@
       "Time": [
         "Hora"
       ],
-      "To": [
-        "Para"
-      ],
       "To:": [
         "Para:"
       ],
@@ -6985,6 +6983,16 @@
       ],
       "Your password (admin)": [
         "Tu contraseña (admin)"
+      ]
+    },
+    "Label (begin date/advanced search)": {
+      "From": [
+        "De"
+      ]
+    },
+    "Label (end date/advanced search)": {
+      "To": [
+        "Para"
       ]
     },
     "Label attach to date input to select a date": {
