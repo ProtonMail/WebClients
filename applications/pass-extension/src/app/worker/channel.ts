@@ -34,9 +34,7 @@ const WorkerMessageBroker = createMessageBroker({
         WorkerMessageType.UNLOCK_REQUEST,
     ],
     onError: withContext((ctx, err) => {
-        if (err instanceof Error && err.name === 'VersionMismatch') {
-            ctx.service.activation.reload();
-        }
+        if (err instanceof Error && err.name === 'VersionMismatch') void ctx.service.activation.reload();
     }),
     onDisconnect: withContext((ctx, portName) => {
         const isPopup = portName.startsWith('popup');

@@ -4,9 +4,9 @@ import type { AppState, AppStatus, MaybeNull } from '@proton/pass/types';
 
 import type { ActivationService } from '../services/activation';
 import type { AliasService } from '../services/alias';
+import type { APIProxyService } from '../services/api-proxy';
 import type { AutoFillService } from '../services/autofill';
 import type { AutoSaveService } from '../services/autosave';
-import type { CacheProxyService } from '../services/cache-proxy';
 import type { ExportService } from '../services/export';
 import type { FormTrackerService } from '../services/form.tracker';
 import type { I18NService } from '../services/i18n';
@@ -33,7 +33,7 @@ export interface WorkerContextInterface {
         alias: AliasService;
         autofill: AutoFillService;
         autosave: AutoSaveService;
-        cacheProxy: CacheProxyService;
+        apiProxy: APIProxyService;
         export: ExportService;
         formTracker: FormTrackerService;
         i18n: I18NService;
