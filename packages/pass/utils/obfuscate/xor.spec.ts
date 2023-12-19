@@ -34,4 +34,10 @@ describe('XOR obfuscation / deobfuscation', () => {
             expect(deobfuscate(obfuscated)).toEqual(str);
         });
     });
+
+    test('should work on strings >65kB', () => {
+        const str = Array.from({ length: 65_536 * 2 }, () => '.').join('');
+        const obfuscated = obfuscate(str);
+        expect(deobfuscate(obfuscated)).toEqual(str);
+    });
 });
