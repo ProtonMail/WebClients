@@ -129,9 +129,9 @@ const FilterConditionsFormRow = ({
             {i > 0 && <span className="mx-2 text-sm">{c('Label').t`or`}</span>}
             <span
                 key={`condition-${conditionIndex}-token-${i}`}
-                className="inline-flex flex-row items-center mb-2 condition-token"
+                className="inline-flex max-w-full flex-row items-center mb-2 condition-token"
             >
-                <span className="text-ellipsis text-no-decoration" title={token}>
+                <span className="text-ellipsis flex-1 text-no-decoration" title={token}>
                     {token}
                 </span>
                 <button type="button" className="flex shrink-0 ml-2" onClick={() => onRemoveToken(i)}>
@@ -235,7 +235,7 @@ const FilterConditionsFormRow = ({
                 </button>
                 <div className={clsx(['flex flex-column w-full'])}>
                     {isOpen ? (
-                        <div className="flex">
+                        <div className="flex max-w-full">
                             <span className="w-1/2 pr-4">
                                 <SelectTwo
                                     value={type}
@@ -276,7 +276,7 @@ const FilterConditionsFormRow = ({
                         renderClosed()
                     )}
                     {isOpen && type && type !== ConditionType.SELECT && (
-                        <div className="flex">
+                        <div className="flex max-w-full">
                             {type === ConditionType.ATTACHMENTS
                                 ? renderAttachmentsCondition()
                                 : renderGenericCondition()}
