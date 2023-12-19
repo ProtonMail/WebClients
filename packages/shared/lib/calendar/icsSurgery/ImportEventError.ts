@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { EventComponentIdentifiers } from '@proton/shared/lib/calendar/icsSurgery/interface';
+
 export enum IMPORT_EVENT_ERROR_TYPE {
     WRONG_FORMAT,
     NON_GREGORIAN,
@@ -114,13 +116,6 @@ const getErrorMessage = (errorType: IMPORT_EVENT_ERROR_TYPE, externalError?: Err
     }
     return '';
 };
-
-export interface EventComponentIdentifiers {
-    component: string;
-    componentId: string;
-    prodId: string;
-    domain: string;
-}
 
 export class ImportEventError extends Error {
     componentIdentifiers: EventComponentIdentifiers;

@@ -345,7 +345,7 @@ export const parse = (vcal = ''): VcalCalendarComponent => {
  * Same as the parseWithRecovery function, but catching errors in individual components.
  * This is useful in case we can parse some events but not all in a given ics
  */
-export const parseWithRecoveryAndMaybeErrors = (
+export const parseVcalendarWithRecoveryAndMaybeErrors = (
     vcal: string,
     retry?: {
         retryLineBreaks?: boolean;
@@ -355,7 +355,15 @@ export const parseWithRecoveryAndMaybeErrors = (
     }
 ): VcalVcalendarWithMaybeErrors | VcalCalendarComponentWithMaybeErrors => {
     try {
-        return parseWithRecovery(vcal, retry) as VcalVcalendar;
+        const result = parseWithRecovery(vcal, retry) as VcalVcalendar;
+        // add mandatory but maybe missing properties
+        if (!result.prodid) {
+            result.prodid = { value: '' };
+        }
+        if (!result.version) {
+            result.version = { value: '2.0' };
+        }
+        return result;
     } catch (e) {
         return fromIcalComponentWithMaybeErrors(new ICAL.Component(ICAL.parse(vcal))) as
             | VcalVcalendarWithMaybeErrors

@@ -35,7 +35,7 @@ import { generateVeventHashUID, getNaiveDomainFromUID, getOriginalUID } from '..
 import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../icsSurgery/ImportEventError';
 import { getSupportedCalscale } from '../icsSurgery/vcal';
 import { getLinkedDateTimeProperty, getSupportedEvent, withSupportedDtstamp } from '../icsSurgery/vevent';
-import { getVeventWithoutErrors, parseWithRecoveryAndMaybeErrors, serialize } from '../vcal';
+import { getVeventWithoutErrors, parseVcalendarWithRecoveryAndMaybeErrors, serialize } from '../vcal';
 import {
     getHasDtStart,
     getHasRecurrenceId,
@@ -51,7 +51,7 @@ import {
 } from '../vcalHelper';
 import { ImportFileError } from './ImportFileError';
 
-let icsHashesForTelemetry = new Set<string>();
+const icsHashesForImportTelemetry = new Set<string>();
 
 /**
  * Send telemetry event if we got some fails during import process, so that we know how common errors are, and which error users are facing
@@ -65,7 +65,7 @@ export const sendImportErrorTelemetryReport = async ({
     api: Api;
     hash: string;
 }) => {
-    if (errors.length === 0 || icsHashesForTelemetry.has(hash)) {
+    if (errors.length === 0 || icsHashesForImportTelemetry.has(hash)) {
         return;
     }
 
@@ -73,7 +73,7 @@ export const sendImportErrorTelemetryReport = async ({
         const dimensions: SimpleMap<string> = {
             reason: IMPORT_EVENT_ERROR_TYPE[type],
             component,
-            prodId,
+            prodid: prodId,
             domain,
         };
 
@@ -91,7 +91,7 @@ export const sendImportErrorTelemetryReport = async ({
         reports,
     });
 
-    icsHashesForTelemetry.add(hash);
+    icsHashesForImportTelemetry.add(hash);
 };
 
 export const parseIcs = async (ics: File) => {
@@ -110,7 +110,7 @@ export const parseIcs = async (ics: File) => {
         if (!icsAsString) {
             throw new ImportFileError(IMPORT_ERROR_TYPE.FILE_EMPTY, filename);
         }
-        const parsedVcalendar = parseWithRecoveryAndMaybeErrors(icsAsString) as VcalVcalendarWithMaybeErrors;
+        const parsedVcalendar = parseVcalendarWithRecoveryAndMaybeErrors(icsAsString) as VcalVcalendarWithMaybeErrors;
         if (parsedVcalendar.component?.toLowerCase() !== 'vcalendar') {
             throw new ImportFileError(IMPORT_ERROR_TYPE.INVALID_CALENDAR, filename);
         }
@@ -253,7 +253,7 @@ export const extractSupportedEvent = async ({
     if (!getIsEventComponent(vcalComponentWithMaybeErrors)) {
         throw new ImportEventError({
             errorType: IMPORT_EVENT_ERROR_TYPE.WRONG_FORMAT,
-            componentIdentifiers: { component: 'vunknown', componentId, prodId, domain: '' },
+            componentIdentifiers: { component: 'unknown', componentId, prodId, domain: '' },
         });
     }
     const vcalComponent = getVeventWithoutErrors(vcalComponentWithMaybeErrors);
@@ -272,6 +272,13 @@ export const extractSupportedEvent = async ({
         };
     }
 
+    const componentIdentifiers = {
+        component: 'vevent',
+        componentId,
+        prodId,
+        domain: getNaiveDomainFromUID(validVevent.uid.value),
+    };
+
     return getSupportedEvent({
         vcalVeventComponent: validVevent,
         hasXWrTimezone,
@@ -280,7 +287,7 @@ export const extractSupportedEvent = async ({
         method,
         isEventInvitation: false,
         generatedHashUid: generateHashUid,
-        componentId,
+        componentIdentifiers,
         canImportEventColor,
     });
 };
