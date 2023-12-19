@@ -70,7 +70,6 @@ import LiveChatZendesk, {
     getIsSelfChat,
     useCanEnableChat,
 } from '@proton/components/containers/zendesk/LiveChatZendesk';
-import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { locales } from '@proton/shared/lib/i18n/locales';
@@ -103,7 +102,7 @@ const MainContainer = () => {
             ignoreOnboarding: location.pathname !== '/downloads',
         };
     });
-    const app = getAppFromPathnameSafe(location.pathname) || APPS.PROTONVPN_SETTINGS;
+    const app = APPS.PROTONVPN_SETTINGS;
 
     const openAuthenticatedBugReportModal = (mode: BugModalMode) => {
         setAuthenticatedBugReportMode(mode);
@@ -146,9 +145,10 @@ const MainContainer = () => {
 
     const header = (
         <PrivateHeader
+            app={app}
             userDropdown={
                 <UserDropdown
-                    app={APPS.PROTONVPN_SETTINGS}
+                    app={app}
                     onOpenChat={
                         canEnableChat
                             ? () => {
@@ -159,12 +159,11 @@ const MainContainer = () => {
                     }
                 />
             }
-            upsellButton={<TopNavbarUpsell offerProps={{ ignoreOnboarding }} />}
+            upsellButton={<TopNavbarUpsell offerProps={{ ignoreOnboarding }} app={app} />}
             title={c('Title').t`Settings`}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
             isSmallViewport={viewportWidth['<=small']}
-            app={app}
         />
     );
 
@@ -215,12 +214,12 @@ const MainContainer = () => {
                         <Switch>
                             {getIsSectionAvailable(routes.dashboard) && (
                                 <Route path={routes.dashboard.to}>
-                                    <SubscriptionModalProvider app={APPS.PROTONVPN_SETTINGS}>
+                                    <SubscriptionModalProvider app={app}>
                                         <AutomaticSubscriptionModal />
                                         <PrivateMainSettingsArea config={routes.dashboard}>
-                                            <PlansSection app={APPS.PROTONVPN_SETTINGS} />
-                                            <YourPlanSection app={APPS.PROTONVPN_SETTINGS} />
-                                            <UpgradeVpnSection app={APPS.PROTONVPN_SETTINGS} />
+                                            <PlansSection app={app} />
+                                            <YourPlanSection app={app} />
+                                            <UpgradeVpnSection app={app} />
                                             <SubscriptionsSection />
                                             <PaymentMethodsSection />
                                             <CreditsSection />
@@ -242,7 +241,7 @@ const MainContainer = () => {
                             <Route path={routes.account.to}>
                                 <PrivateMainSettingsArea config={routes.account}>
                                     <>
-                                        <UsernameSection app={APPS.PROTONVPN_SETTINGS} />
+                                        <UsernameSection app={app} />
                                         <PasswordsSection />
                                     </>
                                     <LanguageSection locales={locales} />
@@ -276,7 +275,7 @@ const MainContainer = () => {
                             )}
                             {getIsSectionAvailable(routes.users) && (
                                 <Route path={routes.users.to}>
-                                    <SubscriptionModalProvider app={APPS.PROTONVPN_SETTINGS}>
+                                    <SubscriptionModalProvider app={app}>
                                         <PrivateMainSettingsArea config={routes.users}>
                                             <UsersAndAddressesSection app={app} />
                                         </PrivateMainSettingsArea>
