@@ -84,7 +84,7 @@ const FilterPreviewActions = ({ isOpen, toggleOpen, labels, folders, model }: Pr
                 : folders.find((f) => f.Path === actions.moveTo.folder)?.Name;
 
             const folderElement = isOpen ? (
-                <span className="inline-flex flex-row items-center condition-token mb-2" role="listitem">
+                <span className="inline-flex flex-row items-center condition-token mb-2 max-w-full" role="listitem">
                     <span className="text-ellipsis text-no-decoration" title={selectedFolder}>
                         {selectedFolder}
                     </span>
@@ -107,14 +107,14 @@ const FilterPreviewActions = ({ isOpen, toggleOpen, labels, folders, model }: Pr
 
         if (actions.markAs.read || actions.markAs.starred) {
             const readElement = isOpen ? (
-                <span className="inline-flex flex-row items-center condition-token mb-2" role="listitem">
+                <span className="inline-flex flex-row items-center condition-token mb-2 max-w-full" role="listitem">
                     <span className="text-ellipsis text-no-decoration">{c('Filter preview').t`read`}</span>
                 </span>
             ) : (
                 <strong>{c('Filter preview').t`read`}</strong>
             );
             const starredElement = isOpen ? (
-                <span className="inline-flex flex-row items-center condition-token mb-2" role="listitem">
+                <span className="inline-flex flex-row items-center condition-token mb-2 max-w-full" role="listitem">
                     <span className="text-ellipsis text-no-decoration">{c('Filter preview').t`starred`}</span>
                 </span>
             ) : (
@@ -147,7 +147,7 @@ const FilterPreviewActions = ({ isOpen, toggleOpen, labels, folders, model }: Pr
 
         if (actions.autoReply) {
             const label = isOpen ? (
-                <span className="inline-flex flex-row items-center condition-token mb-2" role="listitem">
+                <span className="inline-flex flex-row items-center condition-token mb-2 max-w-full" role="listitem">
                     <span className="text-no-decoration max-w-custom" style={{ '--max-w-custom': 'inherit' }}>
                         {LABELS_ACTION.autoReply}
                     </span>
@@ -168,7 +168,7 @@ const FilterPreviewActions = ({ isOpen, toggleOpen, labels, folders, model }: Pr
         }, '');
 
         return isOpen ? (
-            <div className="pt-2">
+            <div className="pt-2 max-w-full">
                 {actionsRows.map((action, i) => (
                     <div key={`preview-action-${i}`}>
                         {i === 0 ? c('Label').t`Then` : c('Label').t`And`}
