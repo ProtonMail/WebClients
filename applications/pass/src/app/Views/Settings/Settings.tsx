@@ -4,7 +4,7 @@ import { type RouteChildrenProps } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Tabs } from '@proton/components/components';
-import { useNavigation } from '@proton/pass/components/Core/NavigationProvider';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { LockConfirmContextProvider } from '@proton/pass/components/Lock/LockConfirmContextProvider';
 import { type Unpack } from '@proton/pass/types';
 
@@ -13,17 +13,17 @@ import { Support } from './Tabs/Support';
 
 import './Settings.scss';
 
-type SettingTab = Unpack<Exclude<ComponentProps<typeof Tabs>['tabs'], undefined>> & { pathname: string };
+type SettingTab = Unpack<Exclude<ComponentProps<typeof Tabs>['tabs'], undefined>> & { hash: string };
 
 const getSettingsTabs: () => SettingTab[] = () => {
     const tabs = [
         {
-            pathname: 'security',
+            hash: 'security',
             title: c('Label').t`Security`,
             content: <Security />,
         },
         {
-            pathname: 'support',
+            hash: 'support',
             title: c('Label').t`Support`,
             content: <Support />,
         },
@@ -32,22 +32,19 @@ const getSettingsTabs: () => SettingTab[] = () => {
     return tabs;
 };
 
-const pathnameToIndex = (tabs: SettingTab[], pathname: string) => {
-    const idx = tabs.findIndex((tab) => tab.pathname === pathname);
+const pathnameToIndex = (tabs: SettingTab[], hash: string) => {
+    const idx = tabs.findIndex((tab) => tab.hash === hash);
     return idx !== -1 ? idx : 0;
 };
 
 export const SettingsTabs: FC<RouteChildrenProps> = (props) => {
-    const { navigate } = useNavigation();
+    const { openSettings } = usePassCore();
     const pathname = props.location.hash?.substring(1, props.location.hash.length);
 
     const tabs = useMemo(getSettingsTabs, []);
     const [activeTab, setActiveTab] = useState<number>(pathnameToIndex(tabs, pathname));
 
-    const handleOnChange = (nextTab: number) => {
-        const settingsPath = props.match?.path;
-        if (settingsPath) navigate(settingsPath, { hash: tabs[nextTab].pathname, mode: 'replace' });
-    };
+    const handleOnChange = (nextTab: number) => openSettings?.(tabs[nextTab].hash);
 
     useEffect(() => setActiveTab(pathnameToIndex(tabs, pathname)), [pathname]);
 
