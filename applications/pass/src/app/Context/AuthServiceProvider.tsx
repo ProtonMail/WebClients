@@ -14,8 +14,7 @@ import { isValidPersistedSession } from '@proton/pass/lib/auth/session';
 import { clientReady } from '@proton/pass/lib/client';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import { bootIntent, cacheCancel, sessionLockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
-import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
+import { AppStatus, type Maybe, PlanType, SessionLockStatus } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import {
@@ -145,7 +144,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
 
                 if (isTaggedBuild()) {
                     const { plan } = await getUserAccess(withAuthHeaders(UID, AccessToken, {}));
-                    if (plan.InternalName !== UserPassPlan.PLUS) {
+                    if (plan.Type !== PlanType.plus) {
                         setNeedsUpgrade(true);
                         throw new Error(c('Error').t`Please upgrade to have early access to ${PASS_APP_NAME} web app`);
                     }
