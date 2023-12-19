@@ -30,7 +30,7 @@ const humanReadableByError: Record<WasmError, () => string> = {
     [WasmError.InvalidDerivationPath]: () => c('Wasm Error').t`Provided derivation path is invalid`,
     [WasmError.InvalidDescriptor]: () => c('Wasm Error').t`Provided descriptor is invalid`,
     [WasmError.InvalidMnemonic]: () => c('Wasm Error').t`Provided mnemonic is invalid`,
-    [WasmError.InvalidNetwork]: () => c('Wasm Error').t`Invalid network`,
+    [WasmError.InvalidNetwork]: () => c('Wasm Error').t`You are using an address for another network`,
     [WasmError.InvalidOutpoint]: () => c('Wasm Error').t`Provided outpoint is invalid`,
     [WasmError.InvalidPolicyPathError]: () => c('Wasm Error').t`Policy path is invalid`,
     [WasmError.InvalidSecretKey]: () => c('Wasm Error').t`Provided secret key is invalid`,
@@ -55,13 +55,13 @@ const humanReadableByError: Record<WasmError, () => string> = {
     [WasmError.UnknownUtxo]: () => c('Wasm Error').t`Provided utxo is unknow`,
 };
 
-const getHumanReadbleErrorFromWasmError = (error: WasmError) => {
+export const getHumanReadableErrorFromWasmError = (error: WasmError) => {
     return humanReadableByError[error]();
 };
 
 export const tryHandleWasmError = (error: unknown) => {
     if (error instanceof DetailledWasmError) {
-        return getHumanReadbleErrorFromWasmError(error.kind);
+        return getHumanReadableErrorFromWasmError(error.kind);
     }
 
     return null;

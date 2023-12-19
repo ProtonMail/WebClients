@@ -14,7 +14,7 @@ interface Props {
 
 export const PrivateWalletLayout = ({ children }: Props) => {
     const { state: expanded, toggle: toggleExpanded } = useToggle();
-    const { wallets } = useBlockchainContext();
+    const { wallets, isInitialised } = useBlockchainContext();
 
     return (
         <PrivateAppContainer
@@ -24,7 +24,7 @@ export const PrivateWalletLayout = ({ children }: Props) => {
             drawerApp={<DrawerApp customAppSettings={<WalletQuickSettings />} />}
         >
             <PrivateMainArea hasToolbar className="full-height-content" data-testid="wallet-view:events-area">
-                {wallets ? (
+                {isInitialised ? (
                     children
                 ) : (
                     <div className="m-auto">

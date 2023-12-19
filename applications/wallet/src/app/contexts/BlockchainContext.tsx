@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useContext, useEffect, useState } from 'react';
+import { ReactNode, createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 import { useBlockchainData } from '../hooks/useBlockchainData';
 import { SyncingMetadata } from '../hooks/useBlockchainSyncing';
@@ -7,6 +7,7 @@ import { WalletWithAccountsWithBalanceAndTxs } from '../types';
 import { ApiWallet } from '../types/api';
 
 export interface BlockchainContextValue {
+    isInitialised: boolean;
     wallets: WalletWithAccountsWithBalanceAndTxs[] | undefined;
     syncingMetatadaByAccountId: Partial<Record<string, SyncingMetadata>>;
     fees: Map<string, number>;
@@ -14,6 +15,7 @@ export interface BlockchainContextValue {
 }
 
 const BlockchainContext = createContext<BlockchainContextValue>({
+    isInitialised: false,
     wallets: undefined,
     syncingMetatadaByAccountId: {},
     fees: new Map(),
@@ -25,7 +27,7 @@ interface Props {
 }
 
 export const BlockchainContextProvider = ({ children }: Props) => {
-    const [wallets, setWallets] = useState<ApiWallet[]>([]);
+    const [wallets, setWallets] = useState<ApiWallet[]>();
 
     useEffect(() => {
         // TODO: replace with API Call to fetch wallets
@@ -39,9 +41,14 @@ export const BlockchainContextProvider = ({ children }: Props) => {
         syncSingleWalletAccountBlockchainData,
     } = useBlockchainData(wallets);
 
+    const isInitialised = useMemo(() => {
+        return !!walletsWithBalanceAndTxs;
+    }, [walletsWithBalanceAndTxs]);
+
     return (
         <BlockchainContext.Provider
             value={{
+                isInitialised,
                 wallets: walletsWithBalanceAndTxs,
                 fees: feesEstimation,
                 syncingMetatadaByAccountId,
