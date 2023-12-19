@@ -1,6 +1,7 @@
 import { sub } from 'date-fns';
 
 import { serverTime } from '@proton/crypto';
+import metrics from '@proton/metrics';
 import { TelemetryKeyTransparencyErrorEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
@@ -60,10 +61,16 @@ export const isTimestampOlderThanThreshold = (time: number) => time < +sub(serve
 /**
  * Helper to send outbound public key verification failures to the telemetry endpoint
  */
-export const ktKeyVerificationFailureTelemetry = (api: Api, visible: boolean): Promise<void> => {
+export const ktKeyVerificationFailureTelemetryAndMetrics = (api: Api, visible: boolean): Promise<void> => {
+    const visibleTag = visible ? 'visible' : 'hidden';
     const dimensions: SimpleMap<string> = {
-        visibility: visible ? 'visible' : 'hidden',
+        visibility: visibleTag,
     };
+    void metrics.crypto_keytransparency_errors_total.increment({
+        level: 'error',
+        type: 'public-key',
+        visibility: visibleTag,
+    });
     return sendTelemetryReport({
         api,
         measurementGroup: TelemetryMeasurementGroups.keyTransparency,
