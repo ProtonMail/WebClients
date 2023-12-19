@@ -354,6 +354,9 @@
       "Edit email address": [
         "更改邮箱地址"
       ],
+      "Edit invoice details": [
+        "修改账单信息"
+      ],
       "Edit label": [
         "编辑标签"
       ],
@@ -410,6 +413,9 @@
       ],
       "Font": [
         "字体"
+      ],
+      "Generate key": [
+        "生成密钥"
       ],
       "Generate new recovery phrase": [
         "生成新的恢复密语"
@@ -855,6 +861,9 @@
       "Skip verification": [
         "跳过验证"
       ],
+      "Sort": [
+        "自动排序"
+      ],
       "Spam": [
         "垃圾邮件"
       ],
@@ -1209,9 +1218,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus 与 ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } 存储空间"
       ],
@@ -1232,9 +1238,6 @@
       ],
       "Ad-blocker and malware protection": [
         "广告拦截与恶意软件防护"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "${ MAIL_SHORT_APP_NAME } 与 ${ CALENDAR_APP_NAME } 的所有付费功能"
       ],
       "High speed streaming": [
         "高速看视频"
@@ -3177,6 +3180,11 @@
         "设置邮件自动转发"
       ]
     },
+    "email_forwarding_2023: Description": {
+      "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
+        "升级账户即可解锁自动转发功能，便捷管理信息接收方式，还有更多高级功能等您体验。"
+      ]
+    },
     "email_forwarding_2023: Header": {
       "Actions": [
         "操作"
@@ -3188,6 +3196,9 @@
       ]
     },
     "email_forwarding_2023: Info": {
+      "Automatically forward emails to another email address.": [
+        "自动将收到的邮件转发至另一邮箱地址。"
+      ],
       "You can safely close this tab.": [
         "您可以安全地关闭此页面了。"
       ]
@@ -3233,6 +3244,9 @@
       ]
     },
     "email_forwarding_2023: Title": {
+      "Automatically forward emails to other accounts": [
+        "自动将收到的邮件转发至其他账户"
+      ],
       "Set up forwarding": [
         "设置邮件自动转发"
       ]
@@ -3244,7 +3258,7 @@
     },
     "Enabled 2FA": {
       "2FA": [
-        "两步验证"
+        "双重验证"
       ]
     },
     "Error": {
@@ -4549,6 +4563,9 @@
       ]
     },
     "Header": {
+      "Actions": [
+        "操作"
+      ],
       "App version": [
         "程序版本"
       ],
@@ -4566,6 +4583,9 @@
       ],
       "Event": [
         "事件"
+      ],
+      "Folders": [
+        "文件夹"
       ],
       "Key type": [
         "密钥类型"
@@ -5395,7 +5415,7 @@
         "根据您的时区"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        "基本的导航和操作快捷键始终可以使用，不受该选项控制。"
+        "基本的导航和操作快捷键始终可以使用，不受开关控制。"
       ],
       "Basic, Plus or Visionary subscription required": [
         "需要 Basic、Plus 或 Visionary 订阅方案"
@@ -5983,7 +6003,7 @@
         "设置新文件夹的名称和位置，若不选取上层文件夹，则将创建顶层文件夹。"
       ],
       "New": [
-        "新建"
+        "新"
       ],
       "No account keys exist": [
         "不存在账户密钥"
@@ -6679,7 +6699,7 @@
         "现在升级账户可获得更大存储空间、更多功能，还能享受优惠"
       ],
       "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "开通 ${ PLAN_NAMES[PLANS.PASS_PLUS] }、 ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }、或 ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } 账户即可启用 ${ PROTON_SENTINEL_NAME }。"
+        "开通 ${ PLAN_NAMES[PLANS.PASS_PLUS] }、${ PLAN_NAMES[PLANS.BUNDLE] }、${ PLAN_NAMES[PLANS.FAMILY] } 或 ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } 账户即可启用 ${ PROTON_SENTINEL_NAME }。"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "升级账户即可增设一个简短的 @pm.me 邮箱地址，这个域名可以代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
@@ -6737,6 +6757,9 @@
       ],
       "Version history": [
         "版本历史"
+      ],
+      "View, download, and manage your invoices.": [
+        "查看、下载、管理您的账单。"
       ],
       "Visa Secure logo": [
         "Visa Secure 图标"
@@ -7100,6 +7123,11 @@
         "您可以添加支付方式以自动续订，也可以使用其他支付方式。"
       ]
     },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "输入您或您所属单位的名称与地址。这些信息将填入您与您的机构账单中。"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "点击查看详情"
@@ -7184,6 +7212,9 @@
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
         "此地址已有采用相同加密算法的密钥，创建新密钥会减慢账户加载速度，以后再删除此密钥也可能出现问题。如果您是因为旧密钥泄露需要更新密钥，请先将旧密钥标为「已泄露」。确定要继续创建密钥吗？"
       ],
+      "Generate key": [
+        "生成密钥"
+      ],
       "Key with fingerprint ${ fp } successfully created.": [
         "密钥 ${ fp } 已成功创建。"
       ],
@@ -7198,8 +7229,14 @@
       ]
     },
     "Key state badge": {
+      "Active": [
+        "已激活"
+      ],
       "Compromised": [
         "已泄露"
+      ],
+      "Inactive": [
+        "未激活"
       ],
       "Primary": [
         "首选"
@@ -7638,6 +7675,9 @@
       ],
       "Composer default font/size": [
         "编辑窗默认字体与字号"
+      ],
+      "Composer mode": [
+        "邮件格式"
       ],
       "Composer text direction": [
         "编辑窗文字方向"
@@ -8185,6 +8225,9 @@
       "Statement": [
         "要求"
       ],
+      "Sticky labels": [
+        "自动加标签"
+      ],
       "Subscription options": [
         "计费方式"
       ],
@@ -8226,6 +8269,9 @@
       ],
       "Two-password mode": [
         "双密码模式"
+      ],
+      "Undo send": [
+        "撤消发送时限"
       ],
       "Upload 1 or more encryption keys": [
         "上传一个或多个加密密钥"
@@ -8359,8 +8405,23 @@
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME } 产品公告"
       ],
+      "${ BRAND_NAME } user survey": [
+        "${ BRAND_NAME } 用户调查"
+      ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } 欢迎信"
+      ],
+      "${ DRIVE_APP_NAME } product updates": [
+        "${ DRIVE_APP_NAME } 产品资讯"
+      ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
+        "${ MAIL_APP_NAME } 与 ${ CALENDAR_SHORT_APP_NAME } 的新功能"
+      ],
+      "${ PASS_APP_NAME } product updates": [
+        "${ PASS_APP_NAME } 产品资讯"
+      ],
+      "${ VPN_APP_NAME } product updates": [
+        "${ VPN_APP_NAME } 产品资讯"
       ]
     },
     "Label in domain modal": {
@@ -8390,11 +8451,25 @@
     "Label to change composer mode": {
       "Maximized": [
         "满屏"
+      ],
+      "Normal": [
+        "常规"
       ]
     },
     "Label to change density": {
       "Comfortable": [
         "适中"
+      ],
+      "Compact": [
+        "紧凑"
+      ]
+    },
+    "Label to change view layout": {
+      "Column": [
+        "分列"
+      ],
+      "Row": [
+        "分行"
       ]
     },
     "Label, credit card": {
@@ -9053,7 +9128,7 @@
         "自定义字段"
       ],
       "Custom snooze time": [
-        "设置待办事件"
+        "自由调整免打扰时间"
       ],
       "Dedicated servers and IP": [
         "专用服务器和IP"
@@ -9243,6 +9318,9 @@
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "通过 ${ BRAND_NAME } 提供的 SimpleLogin 服务使用无限量的邮箱别名"
       ],
+      "Snooze messages and get reminded when you want": [
+        "设置免打扰，自由决定何时接收通知"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间"
       ],
@@ -9320,6 +9398,9 @@
       ],
       "Privacy and security suite for businesses, including all premium ${ BRAND_NAME } services.": [
         "为企业量身定制的隐私与安全防护体系，囊括了所有 ${ BRAND_NAME } 高级服务。"
+      ],
+      "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
+        "${ BRAND_NAME } 全系服务协同保障您的家庭隐私。"
       ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "安全的云存储，让您轻松安全地存储、同步和共享文件。"
@@ -9532,6 +9613,9 @@
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "通过安全的网址与他人分享文件或文件夹"
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "第三方设备或服务可以通过 SMTP 发送 ${ MAIL_APP_NAME } 邮件。"
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "完善的 NetShield 机制能够屏蔽广告、追踪脚本和恶意软件，增强设备安全性，提升网络性能"
@@ -9872,6 +9956,9 @@
       "No parent folder": [
         "无上层文件夹"
       ],
+      "Normal": [
+        "常规"
+      ],
       "Plain text": [
         "纯文本"
       ],
@@ -9895,6 +9982,9 @@
       ]
     },
     "Option delay send seconds": {
+      "0 seconds": [
+        "0 秒"
+      ],
       "10 seconds": [
         "10 秒"
       ],
@@ -11072,7 +11162,7 @@
     },
     "Subscription change warning": {
       "Got it": [
-        "好"
+        "了解"
       ],
       "Subscriptions": [
         "订阅"
@@ -11852,6 +11942,9 @@
       "Edit filter": [
         "更改规则"
       ],
+      "Edit invoice details": [
+        "修改账单信息"
+      ],
       "Edit servers": [
         "编辑服务器"
       ],
@@ -11917,6 +12010,9 @@
       ],
       "Folders and labels": [
         "标签与文件夹"
+      ],
+      "Forward and auto-reply": [
+        "转发与自动回复"
       ],
       "Forward emails": [
         "转发电子邮件"
@@ -12576,6 +12672,9 @@
       "This feature is only available for paid users": [
         "此功能仅供付费用户使用"
       ],
+      "This feature is only available on Beta": [
+        "此功能仅限测试版使用"
+      ],
       "This key cannot be used for encryption": [
         "此密钥不能用于加密"
       ],
@@ -12630,6 +12729,14 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "选择面向非 ${ BRAND_NAME } 用户加密与数字签名的 PGP 格式。注意：PGP/Inline 只能用于发送纯文本邮件。"
+      ]
+    },
+    "Tooltip for news": {
+      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
+        "获取最新的隐私保护要闻与 ${ BRAND_NAME } 动态"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "参与用户调查，协助改进 ${ BRAND_NAME } 服务"
       ]
     },
     "Tooltip prompt to trust keys": {
@@ -12707,7 +12814,7 @@
     },
     "Users table: single sign-on enabled": {
       "SSO": [
-        "SSO"
+        "单点登录"
       ]
     },
     "Validation": {

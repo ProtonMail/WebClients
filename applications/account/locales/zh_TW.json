@@ -245,6 +245,9 @@
       "Copy address": [
         "複製郵件位址"
       ],
+      "Copy key to the clipboard": [
+        "複製金鑰到剪貼簿"
+      ],
       "Copy link": [
         "複製連結"
       ],
@@ -373,6 +376,9 @@
       ],
       "Download recovery file": [
         "下載帳號救援檔案"
+      ],
+      "Download the ${ MAIL_APP_NAME } Export Tool": [
+        "下載${ MAIL_APP_NAME }匯出工具"
       ],
       "Edit": [
         "編輯"
@@ -917,6 +923,9 @@
       "Skip verification": [
         "略過驗證"
       ],
+      "Sort": [
+        "排序"
+      ],
       "Spam": [
         "垃圾郵件"
       ],
@@ -1314,9 +1323,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "進階版 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } 儲存空間"
       ],
@@ -1338,9 +1344,6 @@
       "Ad-blocker and malware protection": [
         "廣告攔截與惡意程式保護"
       ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "全部${ MAIL_SHORT_APP_NAME }付費及${ CALENDAR_APP_NAME }功能"
-      ],
       "Extended version history": [
         "展開版本紀錄"
       ],
@@ -1361,6 +1364,12 @@
       ]
     },
     "bf2023: header": {
+      "Select your Black Friday offer": [
+        "選取您的黑色星期五方案"
+      ],
+      "Select your Cyber Week offer": [
+        "選取您的數位週方案"
+      ],
       "Select your End of Year offer": [
         "選擇你的年終優惠"
       ]
@@ -1396,9 +1405,6 @@
     "bf2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
-      ],
-      "Includes support for 3 custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "包含對 3 組自訂電子郵件網域、${ addresses } 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
@@ -1560,6 +1566,9 @@
       ]
     },
     "Calendar invite status label": {
+      "Declined": [
+        "已拒絕"
+      ],
       "Invite sent": [
         "邀請傳送"
       ]
@@ -3271,6 +3280,9 @@
       "Add condition": [
         "加入條件"
       ],
+      "Add forwarding rule": [
+        "新增轉寄規則"
+      ],
       "Back": [
         "返回"
       ],
@@ -3298,8 +3310,14 @@
       "Re-enable": [
         "重新啟用"
       ],
+      "Re-send confirmation email": [
+        "再次傳送確認電子郵件"
+      ],
       "Remove “${ value }”": [
         "移除”${ value }”"
+      ],
+      "Request confirmation": [
+        "需要確認"
       ],
       "Resume": [
         "繼續"
@@ -3312,6 +3330,19 @@
       ],
       "Set up email forwarding": [
         "設定電子郵件轉發"
+      ]
+    },
+    "email_forwarding_2023: Error": {
+      "Condition incomplete, please add a token": [
+        "條件未完成，請添加憑證"
+      ],
+      "Token already exists": [
+        "憑證已存在"
+      ]
+    },
+    "email_forwarding_2023: Error message, recovery": {
+      "Please try opening the link again.": [
+        "請重新開啟連結。"
       ]
     },
     "email_forwarding_2023: Header": {
@@ -3350,6 +3381,9 @@
     "email_forwarding_2023: Label": {
       "And": [
         "且"
+      ],
+      "Forward from": [
+        "轉寄來自"
       ],
       "Forward to": [
         "轉寄至"
@@ -3439,6 +3473,15 @@
     "email_forwarding_2023: Title": {
       "Delete forwarding?": [
         "刪除轉寄?"
+      ],
+      "Email forwarding deactivated": [
+        "郵件轉寄已取消"
+      ],
+      "Forwarding activated": [
+        "轉寄已啟用"
+      ],
+      "Request confirmation": [
+        "需要確認"
       ],
       "Set up forwarding": [
         "設定郵件轉寄"
@@ -4984,6 +5027,9 @@
       "Action": [
         "動作"
       ],
+      "Actions": [
+        "動作"
+      ],
       "App version": [
         "應用程式版本"
       ],
@@ -5095,6 +5141,9 @@
       ]
     },
     "Header for table": {
+      "Actions": [
+        "動作"
+      ],
       "Created": [
         "已創建"
       ],
@@ -8720,6 +8769,9 @@
       "Sign external messages": [
         "簽署外部郵件"
       ],
+      "Signature": [
+        "簽名"
+      ],
       "SMTP port": [
         "SMTP 通訊埠"
       ],
@@ -9202,6 +9254,12 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
+        "成為Visionary並成為${ BRAND_NAME }的故事"
+      ],
+      "Limited time offer: Get ${ planTitle } until ${ date }!": [
+        "現實方案:取得${ planTitle }直到${ date }!"
+      ],
       "Secure email that protects your privacy": [
         "安全防護的電子郵件保護隱私"
       ]
@@ -10409,6 +10467,9 @@
       "IP Address copied to clipboard": [
         "IP位址已復製到剪貼簿。"
       ],
+      "Key copied to the clipboard": [
+        "已複製金鑰至剪貼簿"
+      ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "指紋為 ${ fp } 的金鑰已刪除。"
       ],
@@ -10640,6 +10701,9 @@
       "Create new group": [
         "創建新群組"
       ],
+      "Fixed duration": [
+        "固定期間"
+      ],
       "Free server configs": [
         "免費伺服器組態設定"
       ],
@@ -10676,11 +10740,17 @@
       "On": [
         "開啟"
       ],
+      "Permanent": [
+        "永久"
+      ],
       "Plain text": [
         "純文字"
       ],
       "Repeat daily": [
         "每日重複"
+      ],
+      "Repeat monthly": [
+        "每月重複"
       ],
       "Repeat weekly": [
         "每週重複"
@@ -10926,6 +10996,9 @@
       "End-to-end encryption": [
         "端對端加密"
       ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "**每月${ relativePrice }及更多**，讓您存取付費版VPN${ BRAND_NAME }功能!"
+      ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "**每月${ relativePrice }及更多**，讓您存取付費版${ BRAND_NAME }功能!"
       ],
@@ -10943,6 +11016,9 @@
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
         "若您無法解鎖${ BRAND_NAME }帳號，您的**復原包**將允許您登入及復原您的資料。"
+      ],
+      "Includes:": [
+        "包含:"
       ],
       "Install ${ PASS_APP_NAME }": [
         "安裝${ PASS_APP_NAME }"
@@ -11009,6 +11085,9 @@
       ],
       "Verifying your payment": [
         "驗證您的付帳款"
+      ],
+      "Welcome to ${ shortName } Plus": [
+        "歡迎至${ shortName } 進階版"
       ],
       "Works on all devices": [
         "於所有裝置皆可使用"
@@ -11705,6 +11784,14 @@
       ],
       "Order": [
         "順序"
+      ],
+      "Status": [
+        "狀態"
+      ]
+    },
+    "Settings/labels": {
+      "Labels/Folders": [
+        "標籤／資料夾"
       ]
     },
     "Settings/labels - table": {
@@ -12383,6 +12470,11 @@
         "使用者已刪除"
       ]
     },
+    "Success message after sorting folders": {
+      "Folders sorted": [
+        "資料夾已排序"
+      ]
+    },
     "Success message after sorting labels": {
       "Labels sorted": [
         "標籤已排序"
@@ -12418,6 +12510,9 @@
       ],
       "Preference updated": [
         "偏好設定已更新"
+      ],
+      "Status updated": [
+        "狀態已更新"
       ]
     },
     "Suffix": {
@@ -12578,6 +12673,9 @@
     "Title": {
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ MAIL_APP_NAME } Export Tool": [
+        "${ MAIL_APP_NAME } 匯出工具"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME }鍵盤快捷鍵"
@@ -13044,6 +13142,9 @@
       "Folders and labels": [
         "資料夾和標籤"
       ],
+      "Forward and auto-reply": [
+        "轉寄及自動回覆"
+      ],
       "Forward emails": [
         "轉寄電子郵件"
       ],
@@ -13205,6 +13306,9 @@
       ],
       "Password and keys": [
         "密碼和金鑰"
+      ],
+      "Password reset settings": [
+        "密碼重設設定"
       ],
       "Pay invoice": [
         "支付帳單"
@@ -13572,11 +13676,17 @@
       ]
     },
     "Title header for keys table": {
+      "Actions": [
+        "動作"
+      ],
       "Fingerprint": [
         "指紋"
       ],
       "Key type": [
         "金鑰類型"
+      ],
+      "Status": [
+        "狀態"
       ]
     },
     "Title header for members table": {
@@ -13839,6 +13949,9 @@
       ]
     },
     "Upgrade": {
+      "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
+        "升級至 ${ passPlusPlanName }，即可取得無上限的hide-my-email別名"
+      ],
       "Upgrade to ${ planName } to connect up to ${ n } devices to the VPN at once": [
         "升級為 ${ planName } 方案，即可讓 ${ n } 台裝置同時連線 VPN"
       ]
@@ -13877,6 +13990,11 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "單一登入"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "您身份提供者提供的單一登入使用者"
       ]
     },
     "Validation": {
