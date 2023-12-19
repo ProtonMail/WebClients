@@ -41,6 +41,7 @@ export interface Props extends ListSettingsProps {
     moveDropdownToggleRef: Ref<() => void>;
     bordered?: boolean;
     toolbarInHeader?: boolean;
+    onCheckAll?: (check: boolean) => void;
 }
 
 type Variant =

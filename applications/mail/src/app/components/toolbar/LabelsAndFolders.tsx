@@ -19,6 +19,7 @@ interface Props {
     breakpoints: Breakpoints;
     labelDropdownToggleRef: Ref<() => void>;
     moveDropdownToggleRef: Ref<() => void>;
+    onCheckAll?: (check: boolean) => void;
 }
 
 const LabelsAndFolders = ({
@@ -27,6 +28,7 @@ const LabelsAndFolders = ({
     breakpoints,
     labelDropdownToggleRef,
     moveDropdownToggleRef,
+    onCheckAll,
 }: Props) => {
     const mailSettings = useMailModel('MailSettings');
     const { selectAll } = useSelectAll({ labelID });
@@ -81,6 +83,7 @@ const LabelsAndFolders = ({
                             breakpoints={breakpoints}
                             isMessage={!isConversationMode(labelID, mailSettings)}
                             selectAll={selectAll}
+                            onCheckAll={onCheckAll}
                         />
                     ),
                 }}
@@ -107,6 +110,7 @@ const LabelsAndFolders = ({
                             onLock={onLock}
                             breakpoints={breakpoints}
                             selectAll={selectAll}
+                            onCheckAll={onCheckAll}
                         />
                     ),
                 }}

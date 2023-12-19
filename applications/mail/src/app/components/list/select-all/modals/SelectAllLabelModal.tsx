@@ -100,12 +100,8 @@ const SelectAllLabelModal = ({
                         <ul className="m-0">
                             {destinationNames.map((labelName) => {
                                 return (
-                                    <li>
-                                        <span
-                                            key={labelName}
-                                            title={labelName}
-                                            className="block max-w-full text-ellipsis"
-                                        >
+                                    <li key={labelName}>
+                                        <span title={labelName} className="block max-w-full text-ellipsis">
                                             {labelName}
                                         </span>
                                     </li>
@@ -120,12 +116,8 @@ const SelectAllLabelModal = ({
                         <ul className="m-0">
                             {removedNames.map((labelName) => {
                                 return (
-                                    <li>
-                                        <span
-                                            key={labelName}
-                                            title={labelName}
-                                            className="block max-w-full text-ellipsis"
-                                        >
+                                    <li key={labelName}>
+                                        <span title={labelName} className="block max-w-full text-ellipsis">
                                             {labelName}
                                         </span>
                                     </li>
@@ -138,12 +130,22 @@ const SelectAllLabelModal = ({
         );
     };
 
+    const handleClose = () => {
+        onCloseCustomAction?.();
+        onReject();
+    };
+
+    const handleSubmit = () => {
+        onResolve();
+        rest.onClose?.();
+    };
+
     return (
         <Prompt
             title={getModalTitle()}
             buttons={[
-                <Button color="norm" onClick={onResolve}>{c('Action').t`OK`}</Button>,
-                <Button onClick={onReject}>{c('Action').t`Cancel`}</Button>,
+                <Button color="norm" onClick={handleSubmit}>{c('Action').t`OK`}</Button>,
+                <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}
         >

@@ -32,6 +32,7 @@ import { isDraft } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
 import SpotlightEmailForwarding from 'proton-mail/components/header/SpotlightEmailForwarding';
+import { useCheckAllRef } from 'proton-mail/containers/CheckAllRefProvider';
 import useMailDrawer from 'proton-mail/hooks/drawer/useMailDrawer';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
@@ -117,6 +118,7 @@ const MailboxContainer = ({
     const onMailTo = useOnMailTo();
     const { drawerSidebarButtons, showDrawerSidebar } = useMailDrawer();
     const { selectAll, setSelectAll } = useSelectAll({ labelID: inputLabelID });
+    const { setCheckAllRef } = useCheckAllRef();
 
     const { enableResize, resetWidth, scrollBarWidth, isResizing } = useResizeMessageView(
         mainAreaRef,
@@ -152,13 +154,6 @@ const MailboxContainer = ({
             });
         }
     }, [location.hash, isSearch]);
-
-    // Reset select all state when location is changing (e.g. if we change folder, we need to reset the select all state)
-    useEffect(() => {
-        if (selectAll) {
-            setSelectAll(false);
-        }
-    }, [location.pathname, location.hash]);
 
     const handlePage = useCallback(
         (pageNumber: number) => {
@@ -214,7 +209,13 @@ const MailboxContainer = ({
         handleCheckOne,
         handleCheckOnlyOne,
         handleCheckRange,
-    } = useItemsSelection(elementID, elementIDs, [elementID, labelID]);
+    } = useItemsSelection(
+        elementID,
+        elementIDs,
+        // Using inputLabelID and page as dependency to update checkedIDs on page and location change
+        // It wasn't working correctly before
+        [elementID, inputLabelID, page]
+    );
 
     useNewEmailNotification(() => handleCheckAll(false));
 
@@ -276,6 +277,18 @@ const MailboxContainer = ({
         [onCompose, isConversationContentView, labelID, history]
     );
 
+    // Reset select all state when location is changing (e.g. if we change folder, we need to reset the select all state)
+    useEffect(() => {
+        if (selectAll) {
+            setSelectAll(false);
+        }
+    }, [location.pathname, location.hash]);
+
+    // Set the ref so that we can uncheck all elements from the list when performing select all action with drag and drop
+    useEffect(() => {
+        setCheckAllRef(handleCheckAll);
+    }, [handleCheckAll]);
+
     const handleMarkAs = useCallback(
         async (status: MARK_AS_STATUS) => {
             const isUnread = status === MARK_AS_STATUS.UNREAD;
@@ -288,6 +301,7 @@ const MailboxContainer = ({
                 labelID,
                 status,
                 selectAll,
+                onCheckAll: handleCheckAll,
             });
         },
         [selectedIDs, labelID, handleBack, selectAll]
@@ -392,6 +406,7 @@ const MailboxContainer = ({
                 mailSettings={mailSettings}
                 toolbarInHeader={toolbarInHeader}
                 loading={loading}
+                onCheckAll={handleCheckAll}
             />
         );
     };

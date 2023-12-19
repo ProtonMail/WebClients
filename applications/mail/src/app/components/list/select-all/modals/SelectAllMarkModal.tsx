@@ -81,11 +81,16 @@ const SelectAllMarkModal = ({ onResolve, onReject, isMessage, markAction, labelI
         }
     };
 
+    const handleSubmit = () => {
+        onResolve();
+        rest.onClose?.();
+    };
+
     return (
         <Prompt
             title={getModalTitle()}
             buttons={[
-                <Button color="norm" onClick={onResolve}>
+                <Button color="norm" onClick={handleSubmit}>
                     {markAsRead ? c('Action').t`Mark as read` : c('Action').t`Mark as unread`}
                 </Button>,
                 <Button onClick={onReject}>{c('Action').t`Cancel`}</Button>,

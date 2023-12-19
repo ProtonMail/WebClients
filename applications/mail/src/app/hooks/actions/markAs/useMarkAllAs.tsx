@@ -18,6 +18,7 @@ interface MarkAllParams {
     isMessage: boolean;
     labelID?: string;
     status: MARK_AS_STATUS;
+    onCheckAll?: (check: boolean) => void;
 }
 
 /**
@@ -32,7 +33,7 @@ export const useMarkAllAs = () => {
 
     const [selectAllMarkModal, handleShowSelectAllMarkModal] = useModalTwo(SelectAllMarkModal);
 
-    const markAllAs = useCallback(async ({ isMessage, labelID = '', status }: MarkAllParams) => {
+    const markAllAs = useCallback(async ({ isMessage, labelID = '', status, onCheckAll }: MarkAllParams) => {
         await handleShowSelectAllMarkModal({
             labelID,
             isMessage: isMessage,
@@ -61,6 +62,9 @@ export const useMarkAllAs = () => {
         const rollback = optimisticMarkAs(elements, labelID, { status });
 
         void dispatch(markAll({ SourceLabelID: labelID, status, rollback }));
+
+        // Clear elements selection
+        onCheckAll?.(false);
 
         createNotification({
             text: getSelectAllNotificationText(isMessage),

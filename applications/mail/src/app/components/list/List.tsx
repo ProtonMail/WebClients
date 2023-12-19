@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 
 import { Breakpoints, useConversationCounts, useFlag, useItemsDraggable, useMessageCounts } from '@proton/components';
-import { Cancellable } from '@proton/components/hooks/useHandler';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { CHECKLIST_DISPLAY_TYPE, UserSettings } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -72,7 +71,7 @@ interface Props {
     onBack: () => void;
     userSettings: UserSettings;
     toolbar?: ReactNode | undefined;
-    onCheckAll: ((check: boolean) => void) & Cancellable;
+    onCheckAll: (check: boolean) => void;
 }
 
 const List = (
@@ -122,9 +121,11 @@ const List = (
 
     const hasFilter = Object.keys(filter).length > 0;
 
+    const pageSize = useSelector(pageSizeSelector);
+
     const canShowSelectAllBanner = getCanDisplaySelectAllBanner({
         selectAllFeatureAvailable: selectAllAvailable,
-        mailPageSize: mailSettings.PageSize,
+        mailPageSize: pageSize,
         checkedIDs,
         labelID,
         isSearch,
@@ -135,7 +136,6 @@ const List = (
 
     const elements = usePlaceholders(inputElements, loading, placeholderCount);
 
-    const pageSize = useSelector(pageSizeSelector);
     const pagingHandlers = usePaging(inputPage, pageSize, inputTotal, onPage);
     const { total, page } = pagingHandlers;
 
@@ -176,7 +176,8 @@ const List = (
                       `Move ${selectionCount} conversations`,
                       selectionCount
                   );
-        }
+        },
+        selectAll // Pass the select all so that the callback knows when to display location count
     );
 
     const { contextMenu, onContextMenu, blockSenderModal } = useItemContextMenu({
