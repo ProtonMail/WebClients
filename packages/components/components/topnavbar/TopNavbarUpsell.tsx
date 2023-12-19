@@ -8,7 +8,7 @@ import TopNavbarUpgradeButton from './TopNavbarUpgradeButton';
 
 interface Props {
     offerProps?: Omit<ComponentPropsWithoutRef<typeof TopNavbarOffer>, 'offerConfig'>;
-    app?: APP_NAMES;
+    app: APP_NAMES;
 }
 
 const TopNavbarUpsell = ({ offerProps, app }: Props) => {
