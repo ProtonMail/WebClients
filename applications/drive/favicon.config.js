@@ -7,8 +7,7 @@ module.exports = {
     logoMaskable: path.resolve('./src/icon-maskable.svg'),
     favicons: {
         appName: 'Proton Drive',
-        appDescription:
-            'Proton Drive allows you to securely store and share your sensitive documents and access them anywhere.',
+        appDescription: 'Securely store, share, and access your important files and photos. Anytime, anywhere.',
     },
     url,
     ogImage: `${url}assets/proton-og-image.png`,
