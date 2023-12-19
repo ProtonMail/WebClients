@@ -1,11 +1,18 @@
+import { createBrowserHistory } from 'history';
+
 import { authentication } from '@proton/pass/lib/auth/store';
 import { type ItemType } from '@proton/pass/types';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
 
 export type ItemNewRouteParams = { type: ItemType };
 
+export const history = createBrowserHistory();
+
 /** Joins the current location search parameters to the provided path */
 export const preserveSearch = (path: string) => path + location.search;
+export const preserveHash = (path: string) => path + location.hash;
+export const getCurrentLocation = () => pipe(preserveSearch, preserveHash)(location.pathname);
 
 /** Appends the localID path to the provided path */
 export const getLocalPath = (path: string = '') => `/${getLocalIDPath(authentication.getLocalID())}/${path}`;
