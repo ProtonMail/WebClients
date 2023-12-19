@@ -267,6 +267,9 @@
       "Get verification code": [
         "Odeslat ověřovací kód"
       ],
+      "Give feedback": [
+        "Zaslat zpětnou vazbu"
+      ],
       "Go to label": [
         "Přejít na štítek"
       ],
@@ -794,9 +797,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } úložiště"
       ],
@@ -817,9 +817,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Blokování reklam a ochrana před malware"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Všechny placené funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Rozšířená historie verzí"
@@ -866,12 +863,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Obsahuje podporu 1 vlastní e-mailové domény, 10 e-mailových adres, 10 aliasů hide-my-email, sdílení kalendáře a další funkce."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Zahrnuje podporu 3 vlastních e-mailových domén, ${ addresses } e-mailovou adresu, neomezený počet aliasů hide-my-email, sdílení kalendáře a další.",
-        "Zahrnuje podporu 3 vlastních e-mailových domén, ${ addresses } e-mailové adresy, neomezený počet aliasů hide-my-email, sdílení kalendáře a další.",
-        "Zahrnuje podporu 3 vlastních e-mailových domén, ${ addresses } e-mailových adres, neomezený počet aliasů hide-my-email, sdílení kalendáře a další.",
-        "Zahrnuje podporu 3 vlastních e-mailových domén, ${ addresses } e-mailových adres, neomezený počet aliasů hide-my-email, sdílení kalendáře a další."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
       ],
@@ -889,6 +880,11 @@
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Uchovávejte až 200 verzí každého souboru po dobu až 10 let."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } Desktopová aplikace"
       ]
     },
     "Bug category": {
@@ -2212,6 +2208,9 @@
       ]
     },
     "Description": {
+      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
+        "Zvyšte efektivitu a rozvrhněte svůj čas pomocí barevného označení událostí podle kategorií nebo podle úrovně energie. Toto a mnohem více získáte s placeným tarifem."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dešifrování kontaktů… Tato akce může trvat několik minut. Jakmile bude proces ukončen, budete si moci stáhnout soubor s vašimi exportovanými kontakty."
       ],
@@ -2455,6 +2454,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "V tomto prohlížeči nelze povolit vyhledávání obsahu. Ukončete prosím režim soukromého režim prohlížeče, nebo vyzkoušejte jiný prohlížeč."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "Vyhledávání obsahu nelze povolit. Restartujte aplikaci nebo smažte data."
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Chyba dešifrování: Dešifrování obsahu této události selhalo."
@@ -3831,6 +3833,9 @@
         "Všechny (${ totalFoldersCount } štítky)",
         "Všech (${ totalFoldersCount } štítků)",
         "Všech (${ totalFoldersCount } štítků)"
+      ],
+      "All participants will get a cancellation email. Which event would you like to delete?": [
+        "Všichni účastníci obdrží e-mail o zrušení. Kterou událost chcete smazat?"
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
@@ -5965,6 +5970,9 @@
         "${ timeRemaining.inHours } hodin",
         "${ timeRemaining.inHours } hodin"
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Žádost o resetování hesla schválena (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Přejděte do přihlášeného zařízení (v relaci, ve které byl požadavek iniciován) a změňte heslo."
       ],
@@ -5980,8 +5988,38 @@
         "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodin",
         "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodin"
       ],
+      "This permission expires soon": [
+        "Toto oprávnění brzy vyprší"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Nyní si můžete libovolně změnit heslo k účtu ${ boldEmail } po dobu ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Nyní si můžete změnit heslo k účtu ${ boldEmail }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Na resetování hesla máte ${ timeRemaining.inDays } den.",
+        "Na resetování hesla máte ${ timeRemaining.inDays } dny.",
+        "Na resetování hesla máte ${ timeRemaining.inDays } dnů.",
+        "Na resetování hesla máte ${ timeRemaining.inDays } dnů."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Na resetování hesla máte ${ timeRemaining.inHours } hodinu.",
+        " Na resetování hesla máte ${ timeRemaining.inHours } hodiny.",
+        " Na resetování hesla máte ${ timeRemaining.inHours } hodin.",
+        " Na resetování hesla máte ${ timeRemaining.inHours } hodin."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Na resetování hesla máte ${ timeRemaining.inMinutes } minutu.",
+        " Na resetování hesla máte ${ timeRemaining.inMinutes } minuty.",
+        " Na resetování hesla máte ${ timeRemaining.inMinutes } minut.",
+        " Na resetování hesla máte ${ timeRemaining.inMinutes } minut."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Na resetování hesla máte ${ timeRemaining.inSeconds } sekundu.",
+        " Na resetování hesla máte ${ timeRemaining.inSeconds } sekundy.",
+        " Na resetování hesla máte ${ timeRemaining.inSeconds } sekund.",
+        " Na resetování hesla máte ${ timeRemaining.inSeconds } sekund."
       ]
     },
     "session_recovery:available:link": {
@@ -6386,6 +6424,9 @@
       "Add your country's public holidays to your calendar.": [
         "Přidejte si do kalendáře státní svátky ve své zemi."
       ],
+      "Color-coding is here!": [
+        "Barevné označení je zde!"
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Pomocí naší nové funkce vyhledávání snadno najdete událost, kterou hledáte."
       ],
@@ -6400,6 +6441,9 @@
       ],
       "Search for events": [
         "Vyhledat události"
+      ],
+      "With customizable event colors, you can color-code the chaos and conquer your day.": [
+        "Díky přizpůsobitelným barvám událostí, můžete chaos barevně odlišit a ovládnout svůj den."
       ]
     },
     "Storage": {
@@ -6735,6 +6779,9 @@
       ],
       "Add participants": [
         "Přidat účastníky"
+      ],
+      "Add some color to your day": [
+        "Zpestřete si den"
       ],
       "Add to ${ groupCount } group": [
         "Přidat do ${ groupCount } skupiny",
