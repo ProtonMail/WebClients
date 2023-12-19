@@ -14,7 +14,6 @@ import { layoutActions } from '../../logic/layout/layoutSlice';
 import { selectLayoutIsExpanded } from '../../logic/layout/layoutSliceSelectors';
 import { useAppDispatch, useAppSelector } from '../../logic/store';
 import UsersOnboardingChecklist from '../checklist/UsersOnboardingChecklist';
-import MailSidebarDriveSpotlight from './MailSidebarDriveSpotlight';
 import MailSidebarList from './MailSidebarList';
 import MailSidebarPrimaryButton from './MailSidebarPrimaryButton';
 import SidebarVersion from './SidebarVersion';
@@ -30,7 +29,7 @@ const MailSidebar = ({ labelID }: Props) => {
     const { toggleDrawerApp } = useDrawer();
     const { displayState } = useGetStartedChecklist();
     const handleCompose = useCallback(() => {
-        onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW });
+        void onCompose({ type: ComposeTypes.newMessage, action: MESSAGE_ACTIONS.NEW });
     }, [onCompose]);
 
     const logo = <MainLogo to="/inbox" data-testid="main-logo" />;
@@ -40,13 +39,7 @@ const MailSidebar = ({ labelID }: Props) => {
     return (
         <>
             <Sidebar
-                appsDropdown={
-                    <MailSidebarDriveSpotlight
-                        renderDropdown={(hideSpotlight) => (
-                            <AppsDropdown app={APPS.PROTONMAIL} onDropdownClick={hideSpotlight} />
-                        )}
-                    />
-                }
+                appsDropdown={<AppsDropdown app={APPS.PROTONMAIL} />}
                 expanded={expanded}
                 onToggleExpand={() => {
                     dispatch(layoutActions.toggleSidebarExpand());
