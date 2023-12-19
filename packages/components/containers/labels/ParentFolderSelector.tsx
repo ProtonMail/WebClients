@@ -62,7 +62,7 @@ const ParentFolderSelector = ({ id, value, label, onChange, className, disableOp
             id={id}
             label={label}
             onChange={({ value }: any) => onChange?.(value)}
-            placeholder={c('Placeholder').t`Search parent folder`}
+            searchPlaceholder={c('Placeholder').t`Search parent folder`}
             value={value}
         >
             {options.map((option) => (
