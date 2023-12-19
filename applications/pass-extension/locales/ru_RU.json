@@ -260,6 +260,9 @@
       "Request a feature": [
         "Запросить функцию"
       ],
+      "Resend invitation": [
+        "Отправить повторное приглашение"
+      ],
       "Restore item": [
         "Восстановить элемент"
       ],
@@ -700,6 +703,9 @@
         "Осталось ${ trialDaysLeft } дней",
         "Осталось ${ trialDaysLeft } дня"
       ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "7 дней, чтобы попробовать платные функции бесплатно. Только в течение первой недели использования ${ BRAND_NAME }."
+      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Доступна новая версия ${ PASS_APP_NAME }. Обновите ее, чтобы насладиться последними функциями и исправлениями ошибок."
       ],
@@ -919,6 +925,9 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "Пароли старше 1 дня автоматически удаляются из истории."
       ],
+      "Pending access to the shared data": [
+        "Pending access to the shared data"
+      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Закрепить ${ PASS_APP_NAME } на панели инструментов."
       ],
@@ -951,6 +960,9 @@
       ],
       "Select destination vault": [
         "Выберите целевое хранилище:"
+      ],
+      "Select where you want your imported vault(s) to be saved.": [
+        "Выберите куда вы хотите сохранить импортированное(ые) хранилище(я)."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Серверы недоступны. Попробуйте снова через несколько минут"
@@ -985,6 +997,9 @@
       "Successfully synced all vaults": [
         "Все хранилища успешно синхронизированы"
       ],
+      "Switch to another vault or create an item in this vault": [
+        "Переход в другое хранилище или создание элемента в этом хранилище"
+      ],
       "Syncing your vaults…": [
         "Синхронизация ваших хранилищ..."
       ],
@@ -1008,6 +1023,12 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Это хранилище в данный момент не является общим с кем-либо. Пригласите людей, чтобы поделиться им с другими."
+      ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "Чтобы перенести данные из другого менеджера паролей, перейдите в менеджер паролей, экспортируйте свои данные, а затем загрузите их в ${ PASS_APP_NAME }. После того как данные будут импортированы, удалите экспортированный файл."
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "To review your imported data, click on the Pass icon in your browser toolbar."
       ],
       "Unable to copy to clipboard": [
         "Не могу скопировать в буфер обмена"
@@ -1061,10 +1082,10 @@
         "Вы не можете изменить почтовые ящики для этого псевдонима."
       ],
       "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "У вас остался ${ daysRemaining } день, чтобы опробовать эти и другие премиум-функции.",
-        "У вас осталось ${ daysRemaining } дня, чтобы опробовать эти и другие премиум-функции.",
-        "У вас осталось ${ daysRemaining } дней, чтобы опробовать эти и другие премиум-функции.",
-        "У вас осталось ${ daysRemaining } дня, чтобы опробовать эти и другие премиум-функции."
+        "У вас остался ${ daysRemaining } день, чтобы опробовать эти и другие платные функции.",
+        "У вас осталось ${ daysRemaining } дня, чтобы опробовать эти и другие платные функции.",
+        "У вас осталось ${ daysRemaining } дней, чтобы опробовать эти и другие платные функции.",
+        "У вас осталось ${ daysRemaining } дней, чтобы опробовать эти и другие платные функции."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Вы превысили количество хранилищ, включенных в вашу подписку. Элементы можно перемещать только в первые два хранилища. Чтобы переместить экспонаты между всеми хранилищами, обновите подписку."
@@ -1711,6 +1732,9 @@
       "Duplicated URL": [
         "Дублированный URL"
       ],
+      "Field name is required": [
+        "Имя поля является обязательным"
+      ],
       "OTP secret or URI is invalid": [
         "Секрет OTP или URI недействительны"
       ],
@@ -1736,6 +1760,9 @@
       ],
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
         "Псевдоним \"${ name }\" в настоящее время используется в элементе входа \"${ relatedLoginName }\". Вы также перестанете получать электронные письма, отправленные на \"${ aliasEmail }\"."
+      ],
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
+        "Все ваши объекты, попавшие в корзину, будут удалены безвозвратно. Отменить это действие невозможно."
       ],
       "An error occured while exporting your data": [
         "При экспорте ваших данных произошла ошибка"
@@ -1818,14 +1845,26 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Не могу войти в ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "Vault ${ vaultName } и все его элементы будут удалены навсегда. Отменить это действие невозможно."
+      ],
       "Vault name is required": [
         "Требуется название хранилища"
       ],
       "You cannot create more vaults than your subscription allows.": [
         "Вы не можете создавать больше хранилищ, чем разрешает ваша подписка."
       ],
+      "You have reached the limit of members who can access this vault.": [
+        "Вы достигли предела количества пользователей, которые могут получить доступ к этому хранилищу."
+      ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
         "Вы достигли предела количества пользователей в этом хранилище. ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "Вы достигли предела количества хранилищ, которые могут быть в вашем плане."
+      ],
+      "You have unsaved changes.": [
+        "У вас есть несохраненные изменения."
       ],
       "You must select at least one mailbox": [
         "Вы должны выбрать хотя бы один почтовый ящик"
