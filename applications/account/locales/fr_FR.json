@@ -381,7 +381,7 @@
         "Télécharger le fichier de récupération"
       ],
       "Download the ${ MAIL_APP_NAME } Export Tool": [
-        "Télécharger l'outil d'exportation de ${ MAIL_APP_NAME }"
+        "Télécharger l'outil Export Tool de ${ MAIL_APP_NAME }"
       ],
       "Edit": [
         "Modifier"
@@ -514,6 +514,9 @@
       ],
       "Get verification code": [
         "Obtenir un code de vérification"
+      ],
+      "Give feedback": [
+        "Donnez-nous votre avis"
       ],
       "Go to label": [
         "Afficher le label"
@@ -1338,9 +1341,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus et ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } d'espace de stockage"
       ],
@@ -1361,9 +1361,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Bloqueur de publicité et protection contre les logiciels malveillants"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Toutes les fonctionnalités payantes de ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Historique des versions plus détaillé"
@@ -1487,10 +1484,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de ${ addresses } adresse e-mail, d'un nombre illimité d'alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités.",
-        "Comprend la prise en charge de 3 domaines de messagerie personnalisés, de ${ addresses } adresses e-mail, d'un nombre illimité d'alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Sécurisez vos connexions sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
       ],
@@ -1547,6 +1540,11 @@
     "Bridge version load failed": {
       "Failed to find latest version": [
         "La dernière version n'a pas pu être trouvée."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Application de bureau ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -6821,6 +6819,9 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Ce n'est pas votre appareil ? Utilisez une fenêtre de navigation privée pour vous connecter et fermez-la lorsque vous avez terminé. ${ learnMore }"
       ],
+      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
+        "Vous avez maintenant accès à la version bêta de l'application de bureau de ${ MAIL_APP_NAME }. Démarrez-la depuis votre bureau sans passer par le navigateur et concentrez-vous sur votre travail."
+      ],
       "Number of dedicated servers in the organization": [
         "Nombre de serveurs dédiés dans l'organisation"
       ],
@@ -7240,7 +7241,7 @@
         "Le message ${ boldDataLocked } n'apparaîtra plus, mais vous pouvez toujours déverrouiller vos données sous ${ encryptionAndKeysLink }."
       ],
       "The ${ MAIL_APP_NAME } Export Tool lets you export decrypted emails from your ${ MAIL_APP_NAME } account to your device. You can then view the messages or import them into another email account or email client.": [
-        "L'outil d'exportation de ${ MAIL_APP_NAME } permet de déchiffrer des messages depuis votre compte ${ MAIL_APP_NAME } vers votre appareil. Vous pouvez voir les messages ou les importer dans un autre compte ou client de messagerie."
+        "L'outil Export Tool de ${ MAIL_APP_NAME } permet de déchiffrer des messages depuis votre compte ${ MAIL_APP_NAME } vers votre appareil. Vous pouvez voir les messages ou les importer dans un autre compte ou client de messagerie."
       ],
       "The calendar will be removed from your account.": [
         "Le calendrier sera retiré de votre compte."
@@ -8472,6 +8473,9 @@
       ],
       "Awarded": [
         "Attribué"
+      ],
+      "Beta": [
+        "Version bêta"
       ],
       "Billing address": [
         "Adresse de facturation"
@@ -10420,7 +10424,7 @@
         "Une protection de la vie privée et une sécurité totales grâce à l'ensemble des services ${ BRAND_NAME }."
       ],
       "Early access to new apps and features": [
-        "Accès anticipé aux fonctionnalités et nouvelles applications"
+        "Accès en avant-première aux nouvelles fonctionnalités et applications"
       ],
       "For next-level password management and identity protection.": [
         "Passez au niveau supérieur pour gérer vos mots de passe et protéger votre identité."
@@ -13148,11 +13152,14 @@
       ]
     },
     "Title": {
+      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
+        "Télécharger ${ MAIL_APP_NAME } pour Mac ou Windows"
+      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
       "${ MAIL_APP_NAME } Export Tool": [
-        "${ MAIL_APP_NAME } Export Tool"
+        "Export Tool de ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Raccourcis clavier ${ MAIL_APP_NAME }"
@@ -13501,6 +13508,9 @@
       "Delete version history?": [
         "Supprimer l'historique des versions ?"
       ],
+      "Desktop app": [
+        "Application de bureau"
+      ],
       "Disable ${ email }": [
         "Désactiver ${ email }"
       ],
@@ -13621,6 +13631,9 @@
       ],
       "Folders and labels": [
         "Dossiers et labels"
+      ],
+      "For ${ platform }": [
+        "Pour ${ platform }"
       ],
       "Forward and auto-reply": [
         "Transfert et réponse automatique"

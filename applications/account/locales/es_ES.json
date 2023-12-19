@@ -515,6 +515,9 @@
       "Get verification code": [
         "Obtener código de verificación"
       ],
+      "Give feedback": [
+        "Danos tu opinión"
+      ],
       "Go to label": [
         "Ir a la etiqueta"
       ],
@@ -1338,9 +1341,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus y ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } de almacenamiento"
       ],
@@ -1361,9 +1361,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anuncios y protección contra malware"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Todas las funciones de pago de ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Historial de versiones extendido"
@@ -1487,10 +1484,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de hide-my-email, posibilidad de compartir calendario, etc."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, ${ addresses } dirección de correo electrónico, alias ilimitados de hide-my-email, posibilidad de compartir calendario, etc.",
-        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, ${ addresses } direcciones de correo electrónico, alias ilimitados de hide-my-email, posibilidad de compartir calendario, etc."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Inicio de sesión seguro en todos tus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
       ],
@@ -1547,6 +1540,11 @@
     "Bridge version load failed": {
       "Failed to find latest version": [
         "Error al encontrar la última versión"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplicación de escritorio de ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -6821,6 +6819,9 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "¿No es tu dispositivo? Utiliza una ventana de navegación privada para iniciar sesión y ciérrala cuando hayas terminado. ${ learnMore }"
       ],
+      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
+        "Ahora disponible en versión beta, la aplicación de escritorio te permite iniciar ${ MAIL_APP_NAME } cómodamente desde tu escritorio y concentrarte sin distracciones del navegador."
+      ],
       "Number of dedicated servers in the organization": [
         "Número de servidores dedicados en la organización"
       ],
@@ -8472,6 +8473,9 @@
       ],
       "Awarded": [
         "Galardonado"
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billing address": [
         "Dirección de facturación"
@@ -13148,6 +13152,9 @@
       ]
     },
     "Title": {
+      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
+        " Obtén ${ MAIL_APP_NAME } para Mac o Windows"
+      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -13501,6 +13508,9 @@
       "Delete version history?": [
         "¿Eliminar el historial de versiones?"
       ],
+      "Desktop app": [
+        "Aplicación de escritorio"
+      ],
       "Disable ${ email }": [
         "Desactivar ${ email }"
       ],
@@ -13622,6 +13632,9 @@
       "Folders and labels": [
         "Carpetas y etiquetas"
       ],
+      "For ${ platform }": [
+        "Para ${ platform }"
+      ],
       "Forward and auto-reply": [
         "Reenviar y responder automáticamente"
       ],
@@ -13720,7 +13733,7 @@
         "Idioma y hora"
       ],
       "Layout": [
-        "Diseño"
+        "Disposición"
       ],
       "Leave ${ organisationName }?": [
         "¿Abandonar ${ organisationName }?"
@@ -14289,7 +14302,7 @@
         "Establece el tamaño por defecto de la ventana emergente de compositor como pequeña o pantalla completa."
       ],
       "Set the default layout for your Inbox.": [
-        "Establece el diseño por defecto para tu bandeja de entrada."
+        "Establece la disposición por defecto para tu bandeja de entrada."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "Establece el siguiente pie de página en los correos electrónicos que envíes: ${ signature }. El enlace apunta a tu enlace de referido. El pie de página aparecerá debajo de tu firma. Puedes personalizar tu firma en cualquier momento en la configuración."
