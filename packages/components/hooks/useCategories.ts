@@ -22,10 +22,36 @@ const filterCategories = (categories: Category[] | undefined, type: number): Cat
     return categories.filter(({ Type }: { Type: number }) => Type === type);
 };
 
+export const useGetLabels = (): (() => Promise<Label[] | undefined>) => {
+    const api = useApi();
+    const cache = useCache();
+    const miss = useCallback(() => LabelsModel.get(api), [api]);
+    return useCallback(
+        () =>
+            getPromiseValue(cache, LabelsModel.key, miss).then((labels: any) =>
+                filterCategories(labels, LABEL_TYPE.MESSAGE_LABEL)
+            ),
+        [cache, miss]
+    );
+};
+
 export const useLabels = (): [Label[] | undefined, boolean] => {
     const [categories, loading] = useCategories();
     const labels = useMemo(() => filterCategories(categories, LABEL_TYPE.MESSAGE_LABEL), [categories]);
     return [labels, loading];
+};
+
+export const useGetFolders = (): (() => Promise<Label[] | undefined>) => {
+    const api = useApi();
+    const cache = useCache();
+    const miss = useCallback(() => LabelsModel.get(api), [api]);
+    return useCallback(
+        () =>
+            getPromiseValue(cache, LabelsModel.key, miss).then((labels: any) =>
+                filterCategories(labels, LABEL_TYPE.MESSAGE_FOLDER)
+            ),
+        [cache, miss]
+    );
 };
 
 export const useFolders = (): [Folder[] | undefined, boolean] => {
