@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { FeatureCode, TopNavbarUpsell } from '@proton/components';
+import { APPS } from '@proton/shared/lib/constants';
 import { UserModel } from '@proton/shared/lib/models';
 
 import { OffersTestProvider, offersCache } from './Offers.test.helpers';
@@ -64,7 +65,7 @@ afterEach(() => {
 
 const TopNavbarComponent = () => (
     <OffersTestProvider>
-        <TopNavbarUpsell />
+        <TopNavbarUpsell app={APPS.PROTONMAIL} />
     </OffersTestProvider>
 );
 
