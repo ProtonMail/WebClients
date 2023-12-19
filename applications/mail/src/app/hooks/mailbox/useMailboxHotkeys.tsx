@@ -130,6 +130,7 @@ export const useMailboxHotkeys = (
             folderName,
             fromLabelID: labelID,
             selectAll,
+            onCheckAll: handleCheckAll,
         });
         if (elementIDForList) {
             handleBack();
@@ -316,6 +317,7 @@ export const useMailboxHotkeys = (
                         labelID,
                         status: MARK_AS_STATUS.UNREAD,
                         selectAll,
+                        onCheckAll: handleCheckAll,
                     });
                 }
             },
@@ -334,6 +336,7 @@ export const useMailboxHotkeys = (
                         labelID,
                         status: MARK_AS_STATUS.READ,
                         selectAll,
+                        onCheckAll: handleCheckAll,
                     });
                 }
             },

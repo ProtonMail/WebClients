@@ -55,6 +55,7 @@ const ToolbarColumnWide = ({
     page,
     onPage,
     total,
+    onCheckAll,
 }: Props) => {
     const toolbarRef = useRef<HTMLDivElement>(null);
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
@@ -99,6 +100,7 @@ const ToolbarColumnWide = ({
                             breakpoints={breakpoints}
                             labelDropdownToggleRef={labelDropdownToggleRef}
                             moveDropdownToggleRef={moveDropdownToggleRef}
+                            onCheckAll={onCheckAll}
                         />
                     ) : null}
 
@@ -115,6 +117,7 @@ const ToolbarColumnWide = ({
                         onMove={onMove}
                         onDelete={onDelete}
                         breakpoints={breakpoints}
+                        onCheckAll={onCheckAll}
                     />
 
                     <MoreActions selectedIDs={selectedIDs} />

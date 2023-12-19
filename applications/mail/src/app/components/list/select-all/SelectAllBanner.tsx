@@ -1,4 +1,4 @@
-import { InlineLinkButton } from '@proton/components/components';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { Cancellable } from '@proton/components/hooks/useHandler';
 
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';

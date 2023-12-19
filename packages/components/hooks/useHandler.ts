@@ -75,7 +75,15 @@ export const useSubscribeEventManager = (handler: Handler) => {
 
     const actualHandler = useHandler(handler);
 
-    useEffect(() => subscribe(actualHandler), []);
+    useEffect(() => {
+        const unsubscribe = subscribe(actualHandler);
+
+        return () => {
+            if (unsubscribe) {
+                unsubscribe();
+            }
+        };
+    }, []);
 };
 
 /**
