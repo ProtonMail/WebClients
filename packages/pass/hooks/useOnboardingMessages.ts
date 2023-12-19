@@ -26,6 +26,7 @@ export const useOnboardingMessages = () => {
         () => ({
             [OnboardingMessage.PENDING_SHARE_ACCESS]: {
                 id: 'welcome',
+                hidden: true,
                 title: c('Title').t`Pending access to the shared data`,
                 message: c('Info').t`For security reasons, your access needs to be confirmed`,
                 weak: true,
@@ -141,6 +142,14 @@ export const useOnboardingMessages = () => {
                             onLink(`${SSO_URL}/pass/dashboard?plan=pass2023&coupon=BF2023&cycle=12`)
                         ),
                 },
+            },
+            [OnboardingMessage.EARLY_ACCESS]: {
+                id: 'early-access',
+                hidden: true,
+                title: c('Title').t`Upgrade to Unlock Premium Features`,
+                message: c('Info').t`Please upgrade to have early access ${PASS_APP_NAME} web app`,
+                weak: true,
+                onClose: () => acknowledge(OnboardingMessage.EARLY_ACCESS, () => setUpselling(null)),
             },
         }),
         [user]
