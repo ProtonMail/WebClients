@@ -13,7 +13,7 @@ import {
 import { Portal } from '@proton/components/components/portal';
 import { NavigationProvider } from '@proton/pass/components/Core/NavigationProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
-import { history } from '@proton/pass/components/Core/routing';
+import { getLocalPath, history } from '@proton/pass/components/Core/routing';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { generateTOTPCode } from '@proton/pass/lib/otp/generate';
@@ -60,6 +60,13 @@ const getDomainImageFactory = (sw: ServiceWorkerContextValue) => {
     };
 };
 
+const openSettings = (page?: string) =>
+    history.push({
+        pathname: getLocalPath('settings'),
+        search: location.search,
+        hash: page,
+    });
+
 export const App = () => {
     return (
         <ServiceWorkerProvider>
@@ -73,6 +80,7 @@ export const App = () => {
                         onLink={onLink}
                         onTelemetry={telemetry.push}
                         onOnboardingAck={onboarding.acknowledge}
+                        openSettings={openSettings}
                     >
                         <CompatibilityCheck>
                             <Icons />
