@@ -37,7 +37,7 @@ export const useOnboardingListener = () => {
                 await wait(200);
                 if (message === OnboardingMessage.PENDING_SHARE_ACCESS) setPendingShareAccess(true);
                 if (message === OnboardingMessage.EARLY_ACCESS) setUpselling('early-access');
-                else setOnboardingMessage(message ? definitions[message] ?? null : null);
+                setOnboardingMessage(message ? definitions[message] ?? null : null);
             }
         );
 
