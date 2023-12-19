@@ -1,16 +1,21 @@
-import { createContext, useContext, useEffect, useMemo, useRef, type FC } from 'react';
+import { type FC, createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
+
+import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/hooks';
 import { preserveSearch } from '@proton/pass/components/Core/routing';
+import { UpsellingModal } from '@proton/pass/components/Spotlight/UpsellingModal';
 import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
-import { createAuthService, type AuthService } from '@proton/pass/lib/auth/service';
+import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
 import { isValidPersistedSession } from '@proton/pass/lib/auth/session';
 import { clientReady } from '@proton/pass/lib/client';
+import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import { bootIntent, cacheCancel, sessionLockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
-import { AppStatus, SessionLockStatus, type Maybe } from '@proton/pass/types';
+import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
+import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import {
@@ -19,12 +24,11 @@ import {
     stripLocalBasenameFromPathname,
 } from '@proton/shared/lib/authentication/pathnameHelper';
 import { getConsumeForkParameters, removeHashParameters } from '@proton/shared/lib/authentication/sessionForking';
-import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import noop from '@proton/utils/noop';
 
-import { UserPassPlan } from '@proton/pass/types/api/plan';
-import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
-import { api, authStore } from '../../lib/core';
+import { api, authStore, isTaggedBuild } from '../../lib/core';
 import { deletePassDB } from '../../lib/database';
 import { onboarding } from '../../lib/onboarding';
 import { telemetry } from '../../lib/telemetry';
@@ -59,13 +63,14 @@ export const AuthServiceProvider: FC = ({ children }) => {
     const client = useClientRef();
     const history = useHistory();
     const { SSO_URL } = usePassConfig();
+
     const matchConsumeFork = useRouteMatch(SSO_PATHS.FORK);
 
     const redirectPath = useRef(stripLocalBasenameFromPathname(preserveSearch(location.pathname)));
     const setRedirectPath = (redirect: string) => (redirectPath.current = redirect);
 
     // TODO remove this after launch of web app for all users
-    const needsUpgrade = useRef<boolean | undefined>(false);
+    const [needsUpgrade, setNeedsUpgrade] = useState(false);
 
     const { createNotification } = useNotifications();
 
@@ -132,26 +137,19 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 store.dispatch(stopEventPolling());
                 store.dispatch(stateDestroy());
 
-                // TODO remove this after launch of web app for all users
-                if(needsUpgrade.current) {
-                    history.replace('/upgrade');
-                } else {
-                  history.replace('/');  
-                }
-
-                
+                history.replace('/');
             },
 
             onForkConsumed: async ({ UID, AccessToken }, state) => {
                 removeHashParameters();
-                const data = await api({ url: 'pass/v1/user/access', method: 'get' , ...withAuthHeaders(UID, AccessToken, { }) })
-                needsUpgrade.current = data.Access?.Plan?.InternalName !== UserPassPlan.PLUS || false;
 
-                // TODO remove this after launch
-                if(needsUpgrade.current) {
-                    setRedirectPath('/upgrade');
-                    throw new Error('Please upgrade to have early access to Proton Pass web app');
-                } 
+                if (isTaggedBuild()) {
+                    const { plan } = await getUserAccess(withAuthHeaders(UID, AccessToken, {}));
+                    if (plan.InternalName !== UserPassPlan.PLUS) {
+                        setNeedsUpgrade(true);
+                        throw new Error(c('Error').t`Please upgrade to have early access to ${PASS_APP_NAME} web app`);
+                    }
+                }
 
                 try {
                     const data = JSON.parse(sessionStorage.getItem(getStateKey(state))!);
@@ -273,5 +271,11 @@ export const AuthServiceProvider: FC = ({ children }) => {
 
     useVisibleEffect((visible) => probe[visible ? 'start' : 'cancel']());
 
-    return <AuthServiceContext.Provider value={authService}>{children}</AuthServiceContext.Provider>;
+    return (
+        <AuthServiceContext.Provider value={authService}>
+            {children}
+            {/* TODO remove this after removing restricted access to web app */}
+            <UpsellingModal type="early-access" open={needsUpgrade} onClose={() => setNeedsUpgrade(false)} />
+        </AuthServiceContext.Provider>
+    );
 };
