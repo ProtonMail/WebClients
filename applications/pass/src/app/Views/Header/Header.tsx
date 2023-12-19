@@ -75,7 +75,9 @@ export const Header: FC<Props> = ({ hamburger }) => {
                             !spotlight.state.open && 'pass-spotlight-panel--hidden'
                         )}
                     >
-                        {spotlight.state.message && <SpotlightContent {...spotlight.state.message} />}
+                        {spotlight.state.message && !spotlight.state.message.hidden && (
+                            <SpotlightContent {...spotlight.state.message} />
+                        )}
                     </div>
                 </div>
             </div>
