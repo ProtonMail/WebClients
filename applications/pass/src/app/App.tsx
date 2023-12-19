@@ -1,4 +1,4 @@
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route, Router } from 'react-router-dom';
 
 import {
     CompatibilityCheck,
@@ -13,11 +13,11 @@ import {
 import { Portal } from '@proton/components/components/portal';
 import { NavigationProvider } from '@proton/pass/components/Core/NavigationProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
+import { history } from '@proton/pass/components/Core/routing';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { generateTOTPCode } from '@proton/pass/lib/otp/generate';
 import type { Maybe, OtpRequest } from '@proton/pass/types';
-import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';
 
 import { PASS_CONFIG, api } from '../lib/core';
 import { onboarding } from '../lib/onboarding';
@@ -82,8 +82,8 @@ export const App = () => {
                                     <ModalsProvider>
                                         <ClientProvider>
                                             <ClientContext.Consumer>
-                                                {({ state: { loggedIn, localID } }) => (
-                                                    <BrowserRouter basename={getBasename(localID)}>
+                                                {({ state: { loggedIn } }) => (
+                                                    <Router history={history}>
                                                         <NavigationProvider>
                                                             <AuthServiceProvider>
                                                                 <StoreProvider>
@@ -98,7 +98,7 @@ export const App = () => {
                                                                 </StoreProvider>
                                                             </AuthServiceProvider>
                                                         </NavigationProvider>
-                                                    </BrowserRouter>
+                                                    </Router>
                                                 )}
                                             </ClientContext.Consumer>
                                         </ClientProvider>
