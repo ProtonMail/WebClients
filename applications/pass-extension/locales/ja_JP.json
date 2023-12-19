@@ -134,6 +134,12 @@
       "Dismiss": [
         "却下"
       ],
+      "Do not show on this website": [
+        "このウェブサイトには表示しない"
+      ],
+      "Do not suggest on this website": [
+        "このウェブサイトでは提案しないでください"
+      ],
       "Done": [
         "完了"
       ],
@@ -223,6 +229,9 @@
       ],
       "More options": [
         "詳細設定を表示"
+      ],
+      "Move all items": [
+        "すべてのアイテムを移動する"
       ],
       "Move to a shared vault": [
         "共有保管庫に移動する"
@@ -463,6 +472,9 @@
       "Failed to edit user's access.": [
         "ユーザーのアクセスを削除できませんでした。"
       ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "「${ payload.content.name }」からすべてのアイテムを移動できませんでした"
+      ],
       "Failed to remove user's access.": [
         "ユーザーのアクセスを削除できませんでした。"
       ],
@@ -651,6 +663,21 @@
       "${ memberCount } members": [
         "${ memberCount }人のメンバー"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } は、${ BRAND_NAME } の匿名化された画像プロキシを介してアイテムのファビコンを表示します。"
+      ],
+      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
+        "${ PASS_APP_NAME } は、ログイン情報、メモ、クレジット カードのみをインポートします。"
+      ],
+      "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
+        "${ PASS_APP_NAME } では、資格情報を保存または更新するように求められます。"
+      ],
+      "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
+        "${ PASS_APP_NAME } は、サインアップ フォームでメール エイリアスを作成することを提案します。"
+      ],
+      "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
+        "${ PASS_APP_NAME } は、サインアップ フォームに強力なパスワードを作成することを提案します。"
+      ],
       "${ revisionNumber } times": [
         "${ revisionNumber } 回"
       ],
@@ -663,8 +690,14 @@
       "${ trialDaysLeft } days left": [
         "残り ${ trialDaysLeft } 日"
       ],
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "プレミアム機能を 7 日間無料でお試しいただけます。 ${ BRAND_NAME } の最初の 1 週間のみ。"
+      ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "${ PASS_APP_NAME } の新しいバージョンが利用可能です。 最新の機能やバグ修正をお楽しみいただくには、更新してください。"
+      ],
+      "Access successfully confirmed": [
+        "アクセスが正常に確認されました"
       ],
       "Access your passwords on the go with our mobile apps.": [
         "モバイルアプリで外出先からパスワードにアクセス。"
@@ -675,8 +708,20 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "エイリアス「${ item.aliasEmail }」はゴミ箱に移動されました - メールボックスへのメールの転送は停止されます"
       ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "「${ payload.content.name }」のすべてのアイテムが正常に移動されました"
+      ],
+      "All trashed items permanently deleted": [
+        "ゴミ箱に入れられたすべてのアイテムが完全に削除されました"
+      ],
       "All trashed items successfully restored": [
         "ごみ箱の項目がすべて正常に復元されました"
+      ],
+      "An item previously shared with you was removed": [
+        "以前にあなたと共有したアイテムが削除されました"
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "すべてのアイテムを「${ fromVaultName }」から「${ toVaultName }」に移動してもよろしいですか?"
       ],
       "Auto-lock successfully disabled": [
         "オートロックは正常に無効化された"
@@ -696,6 +741,9 @@
       "Can view items in this vault.": [
         "このフォルダー内のアイテムを閲覧できます。"
       ],
+      "Click the icon to open it anytime.": [
+        "アイコンをクリックするといつでも開くことができます。"
+      ],
       "Congratulations, your access has been confirmed": [
         "おめでとうございます。アクセスが確認されました"
       ],
@@ -713,6 +761,9 @@
       ],
       "Deleted items will be moved here first": [
         "削除された項目は、まずここに移動されます"
+      ],
+      "Deleting \"${ payload.content.name }\"": [
+        "「${ payload.content.name }」を削除しています"
       ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "${ PASS_APP_NAME } の YouTube 動画をご覧ください"
@@ -744,6 +795,12 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "エクスポートはPGPを使用して暗号化され、強力なパスフレーズが必要です。"
       ],
+      "For easy access to your passwords and more.": [
+        "パスワードなどに簡単にアクセスできます。"
+      ],
+      "For security reason, your access needs to be confirmed": [
+        "セキュリティ上の理由から、アクセスを確認する必要があります"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "セキュリティ上の理由から、アクセスを確認する必要があります"
       ],
@@ -752,6 +809,9 @@
       ],
       "Generating alias...": [
         "エイリアスを生成中..."
+      ],
+      "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
+        "Pass Plus に登録して、無制限のエイリアスを取得し、限定機能を利用し、サポートしてください。"
       ],
       "Here you will find all the necessary information to get you started.": [
         "ここでは、必要なすべての情報をご覧いただけます。"
@@ -828,8 +888,14 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } は単なるパスワード マネージャーではなく、メール エイリアスを介してパスワードと個人メール アドレスを保護します。 ${ MAIL_APP_NAME } の背後にある同じテクノロジーを利用して、あなたのデータはエンドツーエンドで暗号化され、あなただけがアクセスできます。"
       ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "「${ payload.content.name }」からすべての項目を移動します"
+      ],
       "Multiple vaults": [
         "複数の保管庫"
+      ],
+      "No login found": [
+        "ログインが見つかりません"
       ],
       "None": [
         "なし"
@@ -842,6 +908,9 @@
       ],
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "所有権は正常に移行されました。あなたはもうこのフォルダーの所有者ではありません。"
+      ],
+      "Pass Plus trial": [
+        "Pass Plusトライアル"
       ],
       "Password copied": [
         "パスワードをコピーしました"
@@ -924,6 +993,9 @@
       "Thank you, the problem has been reported": [
         "ありがとう、問題は報告されました"
       ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "フィールドをクリックするかフィールドにフォーカスすると、自動入力ドロップダウンが自動的に開きます。"
+      ],
       "The following ${ result.ignored.length } items could not be imported:": [
         "次の ${ result.ignored.length } つのアイテムをインポート出来ませんでした:"
       ],
@@ -938,6 +1010,12 @@
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "このフォルダーは現在誰とも共有されていません。他の人と共有するために人々を招待してください。"
+      ],
+      "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
+        "別のパスワード マネージャーからデータを移行するには、パスワード マネージャーに移動し、データをエクスポートして、${ PASS_APP_NAME } にアップロードします。 データがインポートされたら、エクスポートされたファイルを削除します。"
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "インポートしたデータを確認するには、ブラウザのツールバーにある Pass アイコンをクリックします。"
       ],
       "Unable to copy to clipboard": [
         "クリップボードにコピーできない"
@@ -980,6 +1058,9 @@
       ],
       "You are about to create:": [
         "あなたはこれから作成しようとしています:"
+      ],
+      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
+        "${ PASS_APP_NAME } アイコンをクリックすると、資格情報をすばやく自動入力できます。"
       ],
       "You cannot change the mailboxes for this alias.": [
         "このエイリアスのメールボックスを変更することはできません。"
@@ -1037,6 +1118,9 @@
       "15 minutes": [
         "15 分"
       ],
+      "2FA secret key (TOTP)": [
+        "2FA 秘密鍵 (TOTP)"
+      ],
       "2FA token (TOTP)": [
         "2FA トークン (TOTP)"
       ],
@@ -1084,6 +1168,9 @@
       ],
       "Autofill 2FA": [
         "2要素認証自動入力"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "ログインフィールドがフォーカスされているときに自動入力を自動的に開く"
       ],
       "Autosave": [
         "自動保存"
@@ -1231,6 +1318,9 @@
       ],
       "Modified": [
         "更新日時"
+      ],
+      "More than a month": [
+        "1ヶ月以上"
       ],
       "Most recent": [
         "直近"
@@ -1417,6 +1507,9 @@
       "Hyphens": [
         "ハイフン"
       ],
+      "Memorizable Password": [
+        "記憶可能なパスワード"
+      ],
       "Numbers": [
         "数字"
       ],
@@ -1437,6 +1530,9 @@
       ]
     },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "2FA 秘密キーを追加する"
+      ],
       "Add hidden text": [
         "非表示テキストを追加"
       ],
@@ -1553,6 +1649,9 @@
       "Grant permissions": [
         "権限を付与する"
       ],
+      "Hide my email": [
+        "メールを非表示にする"
+      ],
       "Import - ${ date }": [
         "インポート - ${ date }"
       ],
@@ -1567,6 +1666,9 @@
       ],
       "Member limit": [
         "メンバー上限"
+      ],
+      "Move all items ?": [
+        "すべてのアイテムを移動しますか?"
       ],
       "Our welcome gift to you": [
         "あなたへのウェルカムギフト"
@@ -1615,6 +1717,9 @@
       ],
       "Update available": [
         "更新あり"
+      ],
+      "Use my email": [
+        "私のメールアドレスを使用してください"
       ],
       "Vault shared with you": [
         "あなたと共有しているフォルダー"
@@ -1746,6 +1851,9 @@
       "Trash alias ?": [
         "ゴミ箱の別名?"
       ],
+      "Unable to save": [
+        "保存できません"
+      ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "${ PASS_APP_NAME } にサインインできません。 ${ additionalMessage }"
       ],
@@ -1781,6 +1889,18 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "あなたのプランでは、最初の2つのフォルダーからのみ自動入力が許可されています。"
+      ],
+      "Your session could not be authorized.": [
+        "セッションを認証できませんでした。"
+      ],
+      "Your session could not be resumed.": [
+        "セッションを再開できませんでした。"
+      ],
+      "Your session is inactive. Please log back in.": [
+        "セッションは非アクティブです。 再度ログインしてください。"
+      ],
+      "Your session was locked.": [
+        "セッションがロックされました。"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "あなたのサブスクリプションでは、複数のフォルダーを作成することはできません。すべてのアイテムは最初のフォルダーにインポートされます。複数のフォルダーにインポートするには、サブスクリプションをアップグレードしてください。"
