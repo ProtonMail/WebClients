@@ -27,6 +27,7 @@ import {
     APPS,
     BRAND_NAME,
     CALENDAR_APP_NAME,
+    COUPON_CODES,
     CURRENCIES,
     DRIVE_APP_NAME,
     HTTP_STATUS_CODE,
@@ -187,7 +188,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
         handleNotify(SubscribeType.Subscribed);
     };
 
-    const bf2023IsExpired = getHas2023OfferCoupon(coupon?.toLocaleUpperCase());
+    const bf2023IsExpired = coupon?.toLocaleUpperCase() === COUPON_CODES.BLACK_FRIDAY_2023;
     if (bf2023IsExpired) {
         return <PromotionExpired />;
     }
