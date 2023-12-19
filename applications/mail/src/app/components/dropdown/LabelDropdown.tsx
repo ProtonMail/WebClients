@@ -285,10 +285,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
     };
 
     return (
-        <form
-            className="flex flex-column flex-nowrap justify-start items-stretch flex-auto"
-            onSubmit={handleSubmit}
-        >
+        <form className="flex flex-column flex-nowrap justify-start items-stretch flex-auto" onSubmit={handleSubmit}>
             <div className="flex shrink-0 justify-space-between items-center m-4 mb-0">
                 <span className="text-bold" tabIndex={-2}>
                     {c('Label').t`Label as`}
@@ -319,10 +316,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     data-testid="label-dropdown:search-input"
                 />
             </div>
-            <div
-                className="label-dropdown-list overflow-auto mt-4 flex-auto"
-                data-testid="label-dropdown-list"
-            >
+            <div className="label-dropdown-list overflow-auto mt-4 flex-auto" data-testid="label-dropdown-list">
                 <ul className="unstyled my-0">
                     {list.map(({ ID = '', Name = '', Color = '' }) => (
                         <li
@@ -344,12 +338,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                                 data-testid={`label-dropdown:label-${Name}`}
                                 onClick={() => handleApplyDirectly(ID)}
                             >
-                                <Icon
-                                    name="circle-filled"
-                                    size={16}
-                                    color={Color}
-                                    className="shrink-0 relative mx-2"
-                                />
+                                <Icon name="circle-filled" size={16} color={Color} className="shrink-0 relative mx-2" />
                                 <span className="text-ellipsis">
                                     <Mark value={search}>{Name}</Mark>
                                 </span>
