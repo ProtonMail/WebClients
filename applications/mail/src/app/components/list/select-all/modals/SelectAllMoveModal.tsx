@@ -100,11 +100,16 @@ const SelectAllMoveModal = ({
         onReject();
     };
 
+    const handleSubmit = () => {
+        onResolve();
+        rest.onClose?.();
+    };
+
     return (
         <Prompt
             title={getModalTitle()}
             buttons={[
-                <Button color="norm" onClick={onResolve}>{c('Action').t`Move`}</Button>,
+                <Button color="norm" onClick={handleSubmit}>{c('Action').t`Move`}</Button>,
                 <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}

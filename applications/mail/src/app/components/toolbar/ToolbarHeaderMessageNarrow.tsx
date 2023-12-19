@@ -47,6 +47,7 @@ const ToolbarHeaderMessageNarrow = ({
     labelDropdownToggleRef,
     moveDropdownToggleRef,
     isSearch,
+    onCheckAll,
 }: Props) => {
     const toolbarRef = useRef<HTMLDivElement>(null);
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
@@ -90,6 +91,7 @@ const ToolbarHeaderMessageNarrow = ({
                             breakpoints={breakpoints}
                             labelDropdownToggleRef={labelDropdownToggleRef}
                             moveDropdownToggleRef={moveDropdownToggleRef}
+                            onCheckAll={onCheckAll}
                         />
                     ) : null}
 
@@ -106,6 +108,7 @@ const ToolbarHeaderMessageNarrow = ({
                         onMove={onMove}
                         onDelete={onDelete}
                         breakpoints={breakpoints}
+                        onCheckAll={onCheckAll}
                     />
 
                     <MoreActions selectedIDs={selectedIDs} />

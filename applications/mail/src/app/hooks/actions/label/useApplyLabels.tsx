@@ -1,6 +1,4 @@
-import { Dispatch, SetStateAction, useCallback } from 'react';
-
-import { useLabels } from '@proton/components/index';
+import { Dispatch, SetStateAction } from 'react';
 
 import { isMessage as testIsMessage } from '../../../helpers/elements';
 import { Element } from '../../../models/element';
@@ -15,49 +13,48 @@ export interface ApplyLabelsParams {
     selectedLabelIDs?: string[];
     labelID: string;
     selectAll?: boolean;
+    onCheckAll?: (check: boolean) => void;
 }
 
 export const useApplyLabels = (setContainFocus?: Dispatch<SetStateAction<boolean>>) => {
-    const [labels = []] = useLabels();
     const applyLabelsToSelection = useApplyLabelsToSelection();
     const { applyLabelsToAll, applyLabelsToAllModal } = useApplyLabelsToAll(setContainFocus);
 
-    const applyLabels = useCallback(
-        async ({
-            elements,
-            changes,
-            createFilters = false,
-            silent = false,
-            selectedLabelIDs = [],
-            labelID,
-            selectAll,
-        }: ApplyLabelsParams) => {
-            if (!elements.length) {
-                return;
-            }
+    const applyLabels = async ({
+        elements,
+        changes,
+        createFilters = false,
+        silent = false,
+        selectedLabelIDs = [],
+        labelID,
+        selectAll,
+        onCheckAll,
+    }: ApplyLabelsParams) => {
+        if (!elements.length) {
+            return;
+        }
 
-            const isMessage = testIsMessage(elements[0]);
+        const isMessage = testIsMessage(elements[0]);
 
-            if (selectAll) {
-                await applyLabelsToAll({
-                    changes,
-                    isMessage,
-                    fromLabelID: labelID,
-                });
-            } else {
-                await applyLabelsToSelection({
-                    elements,
-                    changes,
-                    createFilters,
-                    silent,
-                    selectedLabelIDs,
-                    isMessage,
-                    labelID,
-                });
-            }
-        },
-        [labels]
-    );
+        if (selectAll) {
+            await applyLabelsToAll({
+                changes,
+                isMessage,
+                fromLabelID: labelID,
+                onCheckAll,
+            });
+        } else {
+            await applyLabelsToSelection({
+                elements,
+                changes,
+                createFilters,
+                silent,
+                selectedLabelIDs,
+                isMessage,
+                labelID,
+            });
+        }
+    };
 
     return { applyLabels, applyLabelsToAllModal };
 };

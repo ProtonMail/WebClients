@@ -1,5 +1,3 @@
-import { useCallback } from 'react';
-
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { useMarkAllAs } from 'proton-mail/hooks/actions/markAs/useMarkAllAs';
@@ -14,12 +12,13 @@ export interface MarkAsParams {
     status: MARK_AS_STATUS;
     silent?: boolean;
     selectAll?: boolean;
+    onCheckAll?: (check: boolean) => void;
 }
 export const useMarkAs = () => {
     const markSelectionAs = useMarkSelectionAs();
     const { markAllAs, selectAllMarkModal } = useMarkAllAs();
 
-    const markAs = useCallback(async ({ elements, labelID = '', status, silent = true, selectAll }: MarkAsParams) => {
+    const markAs = async ({ elements, labelID = '', status, silent = true, selectAll, onCheckAll }: MarkAsParams) => {
         if (!elements.length) {
             return;
         }
@@ -27,7 +26,7 @@ export const useMarkAs = () => {
         const isMessage = testIsMessage(elements[0]);
 
         if (selectAll) {
-            await markAllAs({ isMessage, labelID, status });
+            await markAllAs({ isMessage, labelID, status, onCheckAll });
         } else {
             void markSelectionAs({
                 elements,
@@ -37,7 +36,7 @@ export const useMarkAs = () => {
                 isMessage,
             });
         }
-    }, []);
+    };
 
     return { markAs, selectAllMarkModal };
 };

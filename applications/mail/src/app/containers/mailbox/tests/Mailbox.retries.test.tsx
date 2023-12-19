@@ -102,6 +102,8 @@ describe('Mailbox retries and waitings', () => {
             let trash = screen.getByTestId('toolbar:movetotrash');
             fireEvent.click(trash);
             await tick();
+            // TODO fix later, needed for useMoveToFolder using getLabels
+            await wait(0);
             fireEvent.click(checkAll);
             await tick();
             trash = screen.getByTestId('toolbar:movetotrash');
