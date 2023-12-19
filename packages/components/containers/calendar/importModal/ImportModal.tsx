@@ -125,7 +125,6 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
             const handleSelectCalendar = (calendar: VisualCalendar) => {
                 setModel({ ...model, calendar });
             };
-
             const handleSubmit = async () => {
                 const { fileAttached } = model;
                 if (!fileAttached) {
