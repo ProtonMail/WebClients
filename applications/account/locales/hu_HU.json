@@ -422,6 +422,9 @@
       "Font": [
         "Betűtípus"
       ],
+      "Generate": [
+        "Generálás"
+      ],
       "Generate key": [
         "Kulcs generálása"
       ],
@@ -1213,9 +1216,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus és ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } tárhely"
       ],
@@ -1503,6 +1503,9 @@
       ],
       "Default": [
         "Alapértelmezett"
+      ],
+      "Disabled": [
+        "Letiltva"
       ],
       "Not synced": [
         "Nincs szinkronizálva"
@@ -4536,6 +4539,9 @@
       "App version": [
         "Alkalmazás verzió"
       ],
+      "Best deal": [
+        "Legjobb üzlet"
+      ],
       "Country": [
         "Ország"
       ],
@@ -4643,6 +4649,11 @@
       ],
       "Token name": [
         "Token neve"
+      ]
+    },
+    "Header; Table with list of calendars arranged by type": {
+      "Other": [
+        "Egyéb"
       ]
     },
     "Hint": {
@@ -7115,6 +7126,9 @@
       "Compromised": [
         "Kompromittált"
       ],
+      "Disabled": [
+        "Letiltva"
+      ],
       "Inactive": [
         "Kikapcsolva"
       ],
@@ -8129,6 +8143,9 @@
       ],
       "Statement": [
         "Feltétel"
+      ],
+      "Sticky labels": [
+        "Ragadós címkék"
       ],
       "Subscription options": [
         "Előfizetés lehetőségei"
@@ -10965,6 +10982,11 @@
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
         "Olvassa el hogyan kaphat személyes naptár hivatkozást."
+      ]
+    },
+    "Subscribed calendar section description": {
+      "Add public, external, or shared calendars.": [
+        "Vegyen fel nyilvános, külső vagy megosztott naptárat."
       ]
     },
     "Subscription": {
