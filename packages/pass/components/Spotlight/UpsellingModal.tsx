@@ -10,7 +10,8 @@ import onboardingSVG from '@proton/pass/assets/onboarding.svg';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { AdaptiveModal } from '@proton/pass/components/Layout/Modal/AdaptiveModal';
 import { FreeTrialContent } from '@proton/pass/components/Spotlight/FreeTrialContent';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { PASS_EOY_DATE_END, PASS_SENTINEL_LINK } from '@proton/pass/constants';
+import { PASS_APP_NAME, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 export type Props = Omit<ModalProps, 'onSubmit'> & { type: UpsellingModalType };
@@ -19,7 +20,8 @@ export type UpsellingModalType = 'free-trial' | 'pass-plus' | 'early-access';
 interface OfferFeatures {
     className: string;
     icon: IconName;
-    label: string;
+    label: string | string[];
+    key: string;
 }
 
 interface UpsellModalContent {
@@ -28,12 +30,48 @@ interface UpsellModalContent {
     upgradeLabel: string;
 }
 
+const PROTON_SENTINEL_LINK = (
+    <a href={PASS_SENTINEL_LINK} target="_blank" key="sentinel-link">
+        {PROTON_SENTINEL_NAME}
+    </a>
+);
+
 const getFeatures = (): OfferFeatures[] => [
-    { className: 'ui-orange', icon: 'pass-circles', label: c('Info').t`Multiple vaults` },
-    { className: 'ui-teal', icon: 'alias', label: c('Info').t`Unlimited Aliases` },
-    { className: 'ui-red', icon: 'users-plus', label: c('Info').t`Share with 10 others` },
-    { className: 'ui-lime', icon: 'list-bullets', label: c('Info').t`Credit cards, Custom fields` },
+    {
+        key: 'web',
+        className: 'ui-purple',
+        icon: 'tv',
+        label: c('Info').t`Early access to ${PASS_APP_NAME} web app`,
+    },
+    {
+        key: 'aliases',
+        className: 'ui-teal',
+        icon: 'alias',
+        label: c('Info').t`Unlimited hide-my-email aliases`,
+    },
+    {
+        key: '2FA',
+        className: 'ui-orange',
+        icon: 'pass-circles',
+        label: c('Info').t`Built in 2FA authenticator`,
+    },
+    {
+        key: 'logins',
+        className: 'ui-red',
+        icon: 'users-plus',
+        label: c('Info').t`Share your logins, secure notes, with up to 10 people`,
+    },
+    {
+        key: 'protected',
+        className: 'ui-lime',
+        icon: 'list-bullets',
+        label:
+            // translator: full sentence is Protected by Proton Sentinel, our advanced account protection program
+            c('Info').jt`Protected by ${PROTON_SENTINEL_LINK}, our advanced account protection program`,
+    },
 ];
+
+export const isEOY = () => +new Date() < PASS_EOY_DATE_END;
 
 const getContent = (type: UpsellingModalType): UpsellModalContent =>
     ({
@@ -49,7 +87,9 @@ const getContent = (type: UpsellingModalType): UpsellModalContent =>
             upgradeLabel: c('Action').t`Upgrade`,
         },
         'early-access': {
-            title: c('Info').t`Please upgrade to have early access to ${PASS_APP_NAME} web app`,
+            title: isEOY()
+                ? c('Info').t`Save up to 60% on ${PASS_APP_NAME} Plus`
+                : c('Info').t`Upgrade Now to Unlock Premium Features`,
             description: undefined,
             upgradeLabel: c('Action').t`Upgrade now`,
         },
@@ -72,17 +112,17 @@ export const UpsellingModal: FC<Props> = ({ type, ...props }) => {
                     className="w-full m-auto rounded-lg"
                     style={{ backgroundColor: 'var(--field-norm)', padding: '0 1rem' }}
                 >
-                    {features.map(({ className, icon, label }, idx) => (
+                    {features.map(({ className, icon, label, key }, idx) => (
                         <div
                             className={clsx(
-                                'flex items-center py-3',
+                                'flex justify-start items-center py-3 gap-3',
                                 idx < features.length - 1 && 'border-bottom',
                                 className
                             )}
-                            key={label}
+                            key={key}
                         >
-                            <Icon className="mr-3" color="var(--interaction-norm)" name={icon} size={18} />
-                            <span>{label}</span>
+                            <Icon color="var(--interaction-norm)" name={icon} size={18} />
+                            <div className="text-left flex-1">{label}</div>
                         </div>
                     ))}
                 </Card>

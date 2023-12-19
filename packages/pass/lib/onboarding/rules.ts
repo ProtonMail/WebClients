@@ -1,5 +1,6 @@
 import type { Store } from 'redux';
 
+import { isEOY } from '@proton/pass/components/Spotlight/UpsellingModal';
 import { ITEM_COUNT_RATING_PROMPT, PASS_BF_2023_DATES } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import {
@@ -101,5 +102,14 @@ export const createUserRatingRule = (store: Store<State>) =>
         when: (previous) => {
             const createdItemsCount = selectCreatedItemsCount(store.getState());
             return !previous && createdItemsCount >= ITEM_COUNT_RATING_PROMPT;
+        },
+    });
+
+export const createEarlyAccessRule = (store: Store<State>) =>
+    createOnboardingRule({
+        message: OnboardingMessage.EARLY_ACCESS,
+        when: (previous) => {
+            const passPlan = selectPassPlan(store.getState());
+            return !previous && passPlan !== UserPassPlan.PLUS && isEOY();
         },
     });

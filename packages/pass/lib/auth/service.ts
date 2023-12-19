@@ -1,28 +1,31 @@
 import { c } from 'ttag';
 
+import type { CreateNotificationOptions } from '@proton/components/containers';
+import { SESSION_LOCK_CODE } from '@proton/pass/lib/api/utils';
 import type { Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
-import { SessionLockStatus, type Api } from '@proton/pass/types';
+import { type Api, SessionLockStatus } from '@proton/pass/types';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { getApiError, getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { type RefreshSessionData } from '../api/refresh';
 import {
-    consumeFork,
-    requestFork,
     type ConsumeForkPayload,
     type RequestForkOptions,
     type RequestForkResult,
+    consumeFork,
+    requestFork,
 } from './fork';
 import {
+    type AuthSession,
+    type PersistedAuthSession,
     encryptPersistedSession,
     isValidSession,
     resumeSession,
-    type AuthSession,
-    type PersistedAuthSession,
 } from './session';
 import type { SessionLock } from './session-lock';
 import {
@@ -92,7 +95,7 @@ export interface AuthServiceConfig {
      * wether we should broadcast the refresh session data to other clients. */
     onSessionRefresh?: (localId: Maybe<number>, data: RefreshSessionData, broadcast: boolean) => MaybePromise<void>;
     /** Implement how you want to handle notifications emitted from the service */
-    onNotification?: (reason: string) => void;
+    onNotification?: (notification: CreateNotificationOptions) => void;
 }
 
 export const createAuthService = (config: AuthServiceConfig) => {
@@ -122,12 +125,14 @@ export const createAuthService = (config: AuthServiceConfig) => {
                         api.unsubscribe();
 
                         if (event.status === 'inactive') {
-                            config.onNotification?.(c('Warning').t`Your session is inactive. Please log back in.`);
+                            config.onNotification?.({
+                                text: c('Warning').t`Your session is inactive. Please log back in.`,
+                            });
                             return authService.logout({ soft: true, broadcast: true });
                         }
 
                         if (event.status === 'locked') {
-                            config.onNotification?.(c('Warning').t`Your session was locked.`);
+                            config.onNotification?.({ text: c('Warning').t`Your session was locked.` });
                             return authService.lock({ soft: true, broadcast: true });
                         }
 
@@ -218,7 +223,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                 return loggedIn;
             } catch (error: unknown) {
                 const reason = error instanceof Error ? ` (${getApiErrorMessage(error) ?? error?.message})` : '';
-                config.onNotification?.(c('Warning').t`Your session could not be authorized.` + reason);
+                config.onNotification?.({ text: c('Warning').t`Your session could not be authorized.` + reason });
                 config.onForkInvalid?.();
                 await authService.logout({ soft: true, broadcast: false });
 
@@ -276,17 +281,33 @@ export const createAuthService = (config: AuthServiceConfig) => {
         unlock: async (pin: string): Promise<void> => {
             try {
                 logger.info(`[AuthService] Unlocking session`);
+
                 await api.reset();
                 authService.listen();
 
-                const sessionLockToken = await unlockSession(pin);
+                const sessionLockToken = await unlockSession(pin).catch(async (error) => {
+                    /** When unlocking the session, if the lock was unregistered by
+                     * another client we will hit a 400 response with the 300008 response
+                     * code. At this point we can login the user without requiring to unlock.
+                     * FIXME: BE should reply a custom error code. */
+                    const { code, status } = getApiError(error);
+                    if (code === SESSION_LOCK_CODE && status === 400) {
+                        config.onNotification?.({
+                            text: c('Error').t`Your PIN code was removed by another ${PASS_APP_NAME} client`,
+                            expiration: -1,
+                        });
+                        return undefined;
+                    }
+                    throw error;
+                });
+
                 authStore.setLockToken(sessionLockToken);
 
                 await authService.checkLock();
                 await authService.persistSession();
                 await authService.login(authStore.getSession());
 
-                config.onSessionUnlocked?.(sessionLockToken);
+                if (sessionLockToken) config.onSessionUnlocked?.(sessionLockToken);
             } catch (error: unknown) {
                 /* if the session is inactive at this point, it likely means the user
                  * reached the maximum amount of unlock attempts. Error is thrown so
@@ -373,7 +394,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             } catch (error: unknown) {
                 const reason = error instanceof Error ? ` (${getApiErrorMessage(error) ?? error?.message})` : '';
                 logger.warn(`[AuthService] Resuming session failed ${reason}`);
-                config.onNotification?.(c('Warning').t`Your session could not be resumed.` + reason);
+                config.onNotification?.({ text: c('Warning').t`Your session could not be resumed.` + reason });
 
                 /* if session is inactive : trigger unauthorized sequence */
                 if (api.getState().sessionInactive) await authService.logout({ soft: true, broadcast: true });
