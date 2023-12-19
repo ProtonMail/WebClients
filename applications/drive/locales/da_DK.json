@@ -815,9 +815,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus og ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } lagerplads"
       ],
@@ -838,9 +835,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Annonceblokering og beskyttelse mod malware"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Alle betalte ${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_APP_NAME }-funktioner"
       ],
       "Extended version history": [
         "Udvidet versionshistorik"
@@ -886,10 +880,6 @@
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer support for 1 tilpasset e-maildomæne, 10 e-mailadresser, 10 Hide-my-email-aliasser, kalenderdeling med mere."
-      ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Inkluderer support til 3 bruger-e-maildomæner, ${ addresses } e-mailadresse, ubegrænsede Hide-my-email-aliasser, kalenderdeling med mere.",
-        "Inkluderer support til 3 bruger-e-maildomæner, ${ addresses } e-mailadresser, ubegrænsede Hide-my-email-aliasser, kalenderdeling med mere."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Beskyt logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og mere."
@@ -2013,6 +2003,9 @@
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } er blevet opdateret.\n${ eventDetailsText }"
+      ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Denne forekomst af ${ eventTitle } er blevet annulleret."
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Du er inviteret til ${ eventTitle }\n${ eventDetailsText }"
@@ -5640,6 +5633,22 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Du kan nu frit ændre din adgangskode til kontoen ${ boldEmail } i ${ boldDaysRemaining }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Du har ${ timeRemaining.inDays } dag til at nulstille dit kodeord.",
+        "Du har ${ timeRemaining.inDays } dage til at nulstille dit kodeord."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Du har ${ timeRemaining.inHours } time til at nulstille dit kodeord.",
+        " Du har ${ timeRemaining.inHours } timer til at nulstille dit kodeord."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Du har ${ timeRemaining.inMinutes } minut til at nulstille dit kodeord.",
+        " Du har ${ timeRemaining.inMinutes } minutter til at nulstille dit kodeord."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Du har ${ timeRemaining.inSeconds } sekund til at nulstille dit kodeord.",
+        " Du har ${ timeRemaining.inSeconds } sekunder til at nulstille dit kodeord."
       ]
     },
     "session_recovery:available:link": {

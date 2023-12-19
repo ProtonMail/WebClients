@@ -780,9 +780,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus ja ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } tallennustilaa"
       ],
@@ -803,9 +800,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Mainos- ja haittaohjelmaesto"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Kaikki maksulliset ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_APP_NAME } -ominaisuudet"
       ],
       "Extended version history": [
         "Laajennettu versiohistoria"
@@ -851,10 +845,6 @@
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Sisältää tuen yhdelle omalle sähköpostiverkkotunnukselle, 10 sähköpostiosoitetta, 10 hide-my-email-aliasta kalenterijaon ja paljon muuta."
-      ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Sisältää tuen 3 omalle sähköpostiverkkotunnukselle, ${ addresses } sähköpostiosoitteen, rajattomasti hide-my-email-aliaksia, kalenterijaon ja paljon muuta.",
-        "Sisältää tuen 3 omalle sähköpostiverkkotunnukselle, ${ addresses } sähköpostiosoitetta, rajattomasti hide-my-email-aliaksia, kalenterijaon ja paljon muuta."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajoittamattoman määrän aliaksia, jakamisen, integroidun 2FA:n ja paljon muuta."
@@ -3699,6 +3689,9 @@
       "All (${ totalFoldersCount } label)": [
         "Kaikki (${ totalFoldersCount } tunniste)",
         "Kaikki (${ totalFoldersCount } tunnistetta)"
+      ],
+      "All participants will get a cancellation email. Which event would you like to delete?": [
+        "Kaikki osallistujat saavat peruutussähköpostin. Minkä tapahtuman haluat poistaa?"
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka",

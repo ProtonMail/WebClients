@@ -251,6 +251,9 @@
       "Get verification code": [
         "Атрымаць праверачны код"
       ],
+      "Give feedback": [
+        "Пакінуць водгук"
+      ],
       "Got it": [
         "Зразумела"
       ],
@@ -687,9 +690,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus і ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } прасторы ў сховішчы"
       ],
@@ -710,9 +710,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Блакіроўшчык рэкламы і абарона ад шкодных праграм"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Усе платныя функцыі ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Пашыраная гісторыя версій"
@@ -815,12 +812,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Уключае падтрымку 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў hide-my-email, абагуленне календара і іншыя функцыі."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, адраса электроннай пошты ${ addresses } , неабмежаваную колькасць псеўданімаў Hide-my-email, абагуленне календара і іншыя функцыі.",
-        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, адрасоў электроннай пошты ${ addresses } , неабмежаваную колькасць псеўданімаў Hide-my-email, абагуленне календара і іншыя функцыі.",
-        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, адрасоў электроннай пошты ${ addresses } , неабмежаваную колькасць псеўданімаў Hide-my-email, абагуленне календара і іншыя функцыі.",
-        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, адрасоў электроннай пошты ${ addresses } , неабмежаваную колькасць псеўданімаў Hide-my-email, абагуленне календара і іншыя функцыі."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ],
@@ -869,6 +860,11 @@
       ],
       "Two-year": [
         "Кожныя два гады"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Настольная праграма ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {

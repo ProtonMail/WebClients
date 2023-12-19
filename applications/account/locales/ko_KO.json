@@ -1335,9 +1335,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus 및 ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } 저장공간"
       ],
@@ -1358,9 +1355,6 @@
       ],
       "Ad-blocker and malware protection": [
         "광고 차단기 및 멀웨어 보호"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "모든 ${ MAIL_SHORT_APP_NAME } 및 ${ CALENDAR_APP_NAME } 유료 기능"
       ],
       "Extended version history": [
         "연장된 버전 기록"
@@ -1482,9 +1476,6 @@
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 Hide-my-email 별명, 캘린더 공유 등 지원 포함."
-      ],
-      "Includes support for 3 custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "3개 커스텀 이메일 도메인, ${ addresses }개 이메일 주소, 무제한 hide-my-email 별명, 캘린더 공유 등 지원 포함."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "무제한 별명, 공유, 통합된 2FA 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
@@ -8267,7 +8258,7 @@
         "${ BRAND_NAME } 사용자 이름"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
-        "${ humanUsedSpace } 의 ${ humanMaxSpace }"
+        "${ humanMaxSpace } 중 ${ humanUsedSpace }"
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } 주소"
@@ -9316,7 +9307,7 @@
         "${ label.Name } 업데이트됨"
       ],
       "Preference saved": [
-        "설정 저장됨"
+        "설정이 저장되었습니다."
       ]
     },
     "Limit of calendars reached": {
@@ -10275,7 +10266,7 @@
         "${ last4 }(으)로 끝나는 ${ brand }"
       ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
-        "${ BRAND_NAME }을(를) 사용하면 이메일 주소를 만들고 하위 사용자의 계정을 관리할 수 있습니다. 이는 가족과 조직에 이상적입니다."
+        "${ BRAND_NAME }을 사용하면 이메일 주소를 만들고 하위 사용자의 계정을 관리할 수 있습니다. 이는 가족과 조직에 이상적입니다."
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
         "* 1개월 구독시. 다른 구독 옵션 또한 체크아웃시 가능합니다,"
@@ -12714,7 +12705,7 @@
         "포트가 클립보드에 복사되었습니다"
       ],
       "Preference saved": [
-        "설정 저장됨"
+        "설정이 저장되었습니다."
       ],
       "Premium address created": [
         "프리미엄 계정 생성됨"

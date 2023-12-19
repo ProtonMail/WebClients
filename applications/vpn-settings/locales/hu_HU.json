@@ -604,9 +604,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus és ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } tárhely"
       ],
@@ -2329,6 +2326,9 @@
       ]
     },
     "Header": {
+      "Best deal": [
+        "Legjobb üzlet"
+      ],
       "Country": [
         "Ország"
       ],
@@ -6160,6 +6160,9 @@
       ],
       "Switch to two-password mode": [
         "Kétjelszavas módra váltás"
+      ],
+      "TV sign in": [
+        "TV bejelentkezés"
       ],
       "Two-factor authentication": [
         "Kétlépcsős hitelesítés"

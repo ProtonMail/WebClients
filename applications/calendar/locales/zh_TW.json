@@ -773,9 +773,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "進階版 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } 儲存空間"
       ],
@@ -796,9 +793,6 @@
       ],
       "Ad-blocker and malware protection": [
         "廣告攔截與惡意程式保護"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "全部${ MAIL_SHORT_APP_NAME }付費及${ CALENDAR_APP_NAME }功能"
       ],
       "Extended version history": [
         "展開版本紀錄"
@@ -827,9 +821,6 @@
     "bf2023: Tooltip": {
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
-      ],
-      "Includes support for 3 custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "包含對 3 組自訂電子郵件網域、${ addresses } 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
@@ -5956,6 +5947,9 @@
       "Add your country's public holidays to your calendar.": [
         "新增您所在國家的公眾假期至您的行事曆中。"
       ],
+      "Color-coding is here!": [
+        "色碼在此!"
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "使用我們新的搜尋功能輕鬆找到您正在尋找的行程。"
       ],
@@ -6272,6 +6266,9 @@
       ],
       "Add participants": [
         "加入參與者"
+      ],
+      "Add some color to your day": [
+        "為您的日子增添顏色"
       ],
       "Add to ${ groupCount } groups": [
         "加入至 ${ groupCount } 個群組"

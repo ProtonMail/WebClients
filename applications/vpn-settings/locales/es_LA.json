@@ -251,6 +251,9 @@
       "Get verification code": [
         "Obtener código de verificación"
       ],
+      "Give feedback": [
+        "Denos su opinión"
+      ],
       "Got it": [
         "Entendido"
       ],
@@ -681,9 +684,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus y ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } de almacenamiento"
       ],
@@ -704,9 +704,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Bloqueador de anuncios y protección contra malware"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Todas las funciones de pago de ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Historial de versiones extendido"
@@ -804,12 +801,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Evite la censura y los bloqueos locales de Internet con nuestra red global de servidores."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Incluye soporte para ${ domains } dominio de correo electrónico personalizado, ${ addresses } dirección de correo, alias ilimitados de hide-my-email, compartir calendario y más.",
+        "Incluye soporte para ${ domains } dominios de correo electrónico personalizado, ${ addresses } direcciones de correo, alias ilimitados de hide-my-email, compartir calendario y más."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 seudónimos de hide-my-email, posibilidad de compartir calendario, etc."
-      ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, ${ addresses } dirección de correo electrónico, seudónimos ilimitados de hide-my-email, posibilidad de compartir calendario, etc.",
-        "Incluye compatibilidad con 3 dominios de correo electrónico personalizado, ${ addresses } direcciones de correo electrónico, seudónimos ilimitados de hide-my-email, posibilidad de compartir calendario, etc."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Inicios de sesión seguros en todos sus dispositivos. Incluye alias ilimitados, uso compartido, 2FA integrado y más."
@@ -857,6 +854,11 @@
       ],
       "Two-year": [
         "Dos años"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplicación de escritorio de ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -961,7 +963,7 @@
     },
     "Collapsible tooltip": {
       "Collapse": [
-        "Contraer"
+        "Minimizar"
       ],
       "Expand": [
         "Expandir"
@@ -1897,6 +1899,33 @@
     "Enabled 2FA": {
       "2FA": [
         "2FA"
+      ]
+    },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Funciones de pago de ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Incluye historial de versiones en ${ DRIVE_SHORT_APP_NAME }, acceso a miles de servidores ${ VPN_SHORT_APP_NAME } de gran velocidad, compartir en ${ PASS_SHORT_APP_NAME } y más."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 usuarios"
+      ],
+      "Early access to new apps and features": [
+        "Acceso anticipado a funciones y apps nuevas"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Acceso anticipado a la app de escritorio de ${ MAIL_APP_NAME }"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Funciones de pago de ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_APP_NAME }"
       ]
     },
     "Error": {
@@ -3090,6 +3119,9 @@
       "for choosing ${ product }": [
         "por elegir ${ product }"
       ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Para miembros de organizaciones que usan inicio de sesión único (SAML SSO)"
+      ],
       "Free forever": [
         "Gratis para siempre"
       ],
@@ -3916,6 +3948,9 @@
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "La contraseña de la organización se puede compartir con otros usuarios a los que desee otorgar privilegios administrativos. También es un código de recuperación de emergencia para tener acceso a su organización en caso de que pierda el acceso a su cuenta. Guarde esta contraseña y manténgala a salvo."
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Su organización usa el inicio de sesión único (SSO). Presione iniciar sesión para continuar con su proveedor de SSO."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Sus detalles de pago están protegidos con el cifrado TLS y las leyes de privacidad suizas."
