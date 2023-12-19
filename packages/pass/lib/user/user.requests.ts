@@ -5,6 +5,7 @@ import type {
     SafeUserState,
     UserSettingsState,
 } from '@proton/pass/store/reducers';
+import type { ApiOptions } from '@proton/pass/types';
 import type { FeatureFlagsResponse } from '@proton/pass/types/api/features';
 import { PassFeaturesValues } from '@proton/pass/types/api/features';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -17,7 +18,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import type { User, UserSettings } from '@proton/shared/lib/interfaces';
 
 export const getFeatureFlags = async (): Promise<FeatureFlagState> => {
-    logger.info(`[Saga::UserFeatures] syncing user feature flags`);
+    logger.info(`[UserFeatures] syncing user feature flags`);
     const { toggles } = await api<FeatureFlagsResponse>({ url: `feature/v2/frontend`, method: 'get' });
 
     return PassFeaturesValues.reduce<FeatureFlagState>((features, feat) => {
@@ -26,15 +27,15 @@ export const getFeatureFlags = async (): Promise<FeatureFlagState> => {
     }, {});
 };
 
-export const getUserAccess = async (): Promise<SafeUserAccessState> => {
-    logger.info(`[Saga::UserPlan] syncing user access`);
-    const { Access } = await api({ url: 'pass/v1/user/access', method: 'get' });
+export const getUserAccess = async (apiOptions: ApiOptions = {}): Promise<SafeUserAccessState> => {
+    logger.info(`[UserPlan] syncing user access`);
+    const { Access } = await api({ url: 'pass/v1/user/access', method: 'get', ...apiOptions });
     return { plan: Access!.Plan, waitingNewUserInvites: Access!.WaitingNewUserInvites };
 };
 
 export const getUserSettings = async (): Promise<UserSettingsState> => {
     try {
-        logger.info(`[Saga::UserSettings] syncing user settings`);
+        logger.info(`[UserSettings] syncing user settings`);
         const { Email, Telemetry } = (await api<{ UserSettings: UserSettings }>(getSettings())).UserSettings;
         return {
             Email: { Status: Email.Status },
