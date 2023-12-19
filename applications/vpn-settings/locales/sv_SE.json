@@ -251,6 +251,9 @@
       "Get verification code": [
         "Skaffa verifieringskod"
       ],
+      "Give feedback": [
+        "Ge feedback"
+      ],
       "Got it": [
         "Förstått"
       ],
@@ -681,9 +684,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus och ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } lagringsutrymme"
       ],
@@ -704,9 +704,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Annonsblockerare och skydd mot skadlig kod"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Alla betalda funktionerna för ${ MAIL_SHORT_APP_NAME } och ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Utökad versionshistorik"
@@ -807,10 +804,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderar stöd för 1 anpassad e-postdomän, 10 e-postadresser, 10 hide-my-email-alias, kalenderdelning och mer."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Inkluderar stöd för 3 anpassade e-postdomäner, ${ addresses } e-postadress, obegränsat antal hide-my-email-alias, kalenderdelning och mer.",
-        "Inkluderar stöd för 3 anpassade e-postdomäner, ${ addresses } e-postadresser, obegränsat antal hide-my-email-alias, kalenderdelning och mer."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
       ],
@@ -857,6 +850,11 @@
       ],
       "Two-year": [
         "Tvåårig"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Applikation för stationär dator ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -5934,6 +5932,9 @@
         "Denna tillåtelse löper ut om ${ timeRemaining.inHours } timme",
         "Denna tillåtelse löper ut om ${ timeRemaining.inHours } timmar"
       ],
+      "This permission expires soon": [
+        "Denna tillåtelse löper snart ut"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Du kan nu ändra ditt lösenord för kontot ${ boldEmail } fritt i ${ boldDaysRemaining }."
       ],
@@ -5945,6 +5946,22 @@
       ],
       "You can reset your password until ${ boldDate }.": [
         "Du kan återställa ditt lösenord fram till ${ boldDate }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Du har ${ timeRemaining.inDays } dag på dig att återställa ditt lösenord.",
+        "Du har ${ timeRemaining.inDays } dagar på dig att återställa ditt lösenord."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Du har ${ timeRemaining.inHours } timme på dig att återställa ditt lösenord.",
+        " Du har ${ timeRemaining.inHours } timmar på dig att återställa ditt lösenord."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Du har ${ timeRemaining.inMinutes } minut på dig att återställa ditt lösenord.",
+        " Du har ${ timeRemaining.inMinutes } minuter på dig att återställa ditt lösenord."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Du har ${ timeRemaining.inSeconds } sekund på dig att återställa ditt lösenord.",
+        " Du har ${ timeRemaining.inSeconds } sekunder på dig att återställa ditt lösenord."
       ]
     },
     "session_recovery:available:link": {
