@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Tabs } from '@proton/components/components';
 import useSearchParams from '@proton/hooks/useSearchParams';
 
-import { BitcoinReceiveInfoGenerator, OnchainTransactionBuilder } from '../components';
+import { BitcoinReceive, BitcoinSend } from '../components';
 
 export const BitcoinTransferContainer = () => {
     const [params] = useSearchParams();
@@ -30,16 +30,11 @@ export const BitcoinTransferContainer = () => {
                     tabs={[
                         {
                             title: c('Wallet Transfer').t`Receive bitcoins`,
-                            content: <BitcoinReceiveInfoGenerator defaultWalletId={Number(params.walletId)} />,
+                            content: <BitcoinReceive defaultWalletId={Number(params.walletId)} />,
                         },
                         {
                             title: c('Wallet Transfer').t`Send bitcoins`,
-                            content: (
-                                <>
-                                    {/* TODO: Put send method selection before. Will be done once design finished */}
-                                    <OnchainTransactionBuilder defaultWalletId={Number(params.walletId)} />
-                                </>
-                            ),
+                            content: <BitcoinSend defaultWalletId={Number(params.walletId)} />,
                         },
                     ]}
                 />

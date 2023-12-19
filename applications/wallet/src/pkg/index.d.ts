@@ -6,6 +6,70 @@
 export function library_version(): string;
 /**
 */
+export enum WasmPaymentLinkKind {
+  BitcoinAddress = 0,
+  BitcoinURI = 1,
+  LightningURI = 2,
+  UnifiedURI = 3,
+}
+/**
+*/
+export enum WasmWordCount {
+  Words12 = 0,
+  Words15 = 1,
+  Words18 = 2,
+  Words21 = 3,
+  Words24 = 4,
+}
+/**
+*/
+export enum WasmChangeSpendPolicy {
+  ChangeAllowed = 0,
+  OnlyChange = 1,
+  ChangeForbidden = 2,
+}
+/**
+*/
+export enum WasmNetwork {
+/**
+* Mainnet Bitcoin.
+*/
+  Bitcoin = 0,
+/**
+* Bitcoin's testnet network.
+*/
+  Testnet = 1,
+/**
+* Bitcoin's signet network.
+*/
+  Signet = 2,
+/**
+* Bitcoin's regtest network.
+*/
+  Regtest = 3,
+}
+/**
+*/
+export enum WasmKeychainKind {
+/**
+* External keychain, used for deriving recipient addresses.
+*/
+  External = 0,
+/**
+* Internal keychain, used for deriving change addresses.
+*/
+  Internal = 1,
+}
+/**
+*/
+export enum WasmCoinSelection {
+  BranchAndBound = 0,
+  LargestFirst = 1,
+  OldestFirst = 2,
+  Manual = 3,
+}
+/**
+*/
 export enum WasmError {
   InvalidSecretKey = 0,
   InvalidNetwork = 1,
@@ -71,67 +135,11 @@ export enum WasmLanguage {
 }
 /**
 */
-export enum WasmKeychainKind {
-/**
-* External keychain, used for deriving recipient addresses.
-*/
-  External = 0,
-/**
-* Internal keychain, used for deriving change addresses.
-*/
-  Internal = 1,
-}
-/**
-*/
 export enum WasmSupportedBIPs {
   Bip44 = 0,
   Bip49 = 1,
   Bip84 = 2,
   Bip86 = 3,
-}
-/**
-*/
-export enum WasmChangeSpendPolicy {
-  ChangeAllowed = 0,
-  OnlyChange = 1,
-  ChangeForbidden = 2,
-}
-/**
-*/
-export enum WasmWordCount {
-  Words12 = 0,
-  Words15 = 1,
-  Words18 = 2,
-  Words21 = 3,
-  Words24 = 4,
-}
-/**
-*/
-export enum WasmNetwork {
-/**
-* Mainnet Bitcoin.
-*/
-  Bitcoin = 0,
-/**
-* Bitcoin's testnet network.
-*/
-  Testnet = 1,
-/**
-* Bitcoin's signet network.
-*/
-  Signet = 2,
-/**
-* Bitcoin's regtest network.
-*/
-  Regtest = 3,
-}
-/**
-*/
-export enum WasmCoinSelection {
-  BranchAndBound = 0,
-  LargestFirst = 1,
-  OldestFirst = 2,
-  Manual = 3,
 }
 /**
 */
@@ -157,9 +165,9 @@ export class WasmAccount {
 * @param {bigint | undefined} [amount]
 * @param {string | undefined} [label]
 * @param {string | undefined} [message]
-* @returns {string}
+* @returns {WasmPaymentLink}
 */
-  get_bitcoin_uri(index?: number, amount?: bigint, label?: string, message?: string): string;
+  get_bitcoin_uri(index?: number, amount?: bigint, label?: string, message?: string): WasmPaymentLink;
 /**
 * @param {WasmAddress} address
 * @returns {boolean}
@@ -422,6 +430,29 @@ export class WasmPartiallySignedTransaction {
 /**
 */
   total_fees: bigint;
+}
+/**
+*/
+export class WasmPaymentLink {
+  free(): void;
+/**
+* @returns {string}
+*/
+  to_string(): string;
+/**
+* @returns {string}
+*/
+  to_uri(): string;
+/**
+* @param {string} str
+* @param {WasmNetwork} network
+* @returns {WasmPaymentLink}
+*/
+  static try_parse(str: string, network: WasmNetwork): WasmPaymentLink;
+/**
+* @returns {WasmPaymentLinkKind}
+*/
+  get_kind(): WasmPaymentLinkKind;
 }
 /**
 */
