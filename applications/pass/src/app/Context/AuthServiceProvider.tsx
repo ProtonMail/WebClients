@@ -4,7 +4,7 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components/hooks';
-import { preserveSearch } from '@proton/pass/components/Core/routing';
+import { getCurrentLocation } from '@proton/pass/components/Core/routing';
 import { UpsellingModal } from '@proton/pass/components/Spotlight/UpsellingModal';
 import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
@@ -66,7 +66,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
 
     const matchConsumeFork = useRouteMatch(SSO_PATHS.FORK);
 
-    const redirectPath = useRef(stripLocalBasenameFromPathname(preserveSearch(location.pathname)));
+    const redirectPath = useRef(stripLocalBasenameFromPathname(getCurrentLocation()));
     const setRedirectPath = (redirect: string) => (redirectPath.current = redirect);
 
     // TODO remove this after launch of web app for all users
