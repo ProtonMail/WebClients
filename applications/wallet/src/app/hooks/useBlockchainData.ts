@@ -3,7 +3,7 @@ import { useBlockchainFeesEstimation } from './useBlockchainFeesEstimation';
 import { useBlockchainSyncing } from './useBlockchainSyncing';
 
 // TODO: replace by redux when ready to bootstrap it
-export const useBlockchainData = (wallets: ApiWallet[]) => {
+export const useBlockchainData = (wallets?: ApiWallet[]) => {
     const {
         syncingMetatadaByAccountId,
         walletsWithBalanceAndTxs,
