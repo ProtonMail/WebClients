@@ -13,6 +13,8 @@ export const PASS_CONFIG = {
     SSO_URL: getAppHref('/', APPS.PROTONACCOUNT),
 } as PassConfig;
 
+export const isTaggedBuild = () => ENV === 'production' && config.BRANCH.startsWith('proton-pass@');
+
 export const authStore = exposeAuthStore(createAuthStore(createSecureSessionStorage()));
 
 export const api = exposeApi(

@@ -4,13 +4,13 @@ import { c } from 'ttag';
 
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import accountImg from '@proton/pass/assets/protonpass-account.svg';
-import { OnboardingModal } from '@proton/pass/components/Layout/Modal/OnboardingModal';
+import { AdaptiveModal } from '@proton/pass/components/Layout/Modal/AdaptiveModal';
 
 export type Props = Omit<ModalProps, 'onSubmit'>;
 
 export const PendingShareAccessModal: VFC<Props> = ({ ...props }) => {
     return (
-        <OnboardingModal {...props} size="large">
+        <AdaptiveModal {...props} size="large">
             <div className="flex flex-column items-center justify-center gap-5">
                 <img
                     src={accountImg}
@@ -23,6 +23,6 @@ export const PendingShareAccessModal: VFC<Props> = ({ ...props }) => {
                     {c('Info').t`For security reasons, your access needs to be confirmed`}
                 </div>
             </div>
-        </OnboardingModal>
+        </AdaptiveModal>
     );
 };
