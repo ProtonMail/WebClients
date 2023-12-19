@@ -1,21 +1,20 @@
-import { type VFC } from 'react';
-import { useSelector } from 'react-redux';
+import { type FC } from 'react';
 
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { Card } from '@proton/atoms';
 import type { IconName } from '@proton/components';
-import { Icon, InlineLinkButton } from '@proton/components';
+import { Icon } from '@proton/components';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import onboardingSVG from '@proton/pass/assets/onboarding.svg';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { OnboardingModal } from '@proton/pass/components/Layout/Modal/OnboardingModal';
-import { PASS_BLOG_TRIAL_URL } from '@proton/pass/constants';
-import { selectTrialDaysRemaining } from '@proton/pass/store/selectors';
+import { FreeTrialContent } from '@proton/pass/components/Spotlight/FreeTrialContent';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 export type Props = Omit<ModalProps, 'onSubmit'> & { type: UpsellingModalType };
-export type UpsellingModalType = 'free-trial' | 'pass-plus';
+export type UpsellingModalType = 'free-trial' | 'pass-plus' | 'early-access';
 
 interface OfferFeatures {
     className: string;
@@ -49,11 +48,15 @@ const getContent = (type: UpsellingModalType): UpsellModalContent =>
                 .t`Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.`,
             upgradeLabel: c('Action').t`Upgrade`,
         },
+        'early-access': {
+            title: c('Info').t`Please upgrade to have early access to ${PASS_APP_NAME} web app`,
+            description: undefined,
+            upgradeLabel: c('Action').t`Upgrade now`,
+        },
     })[type];
 
-export const UpsellingModal: VFC<Props> = ({ type, ...props }) => {
+export const UpsellingModal: FC<Props> = ({ type, ...props }) => {
     const { title, description, upgradeLabel } = getContent(type);
-    const daysRemaining = useSelector(selectTrialDaysRemaining);
     const features = getFeatures();
 
     return (
@@ -87,23 +90,7 @@ export const UpsellingModal: VFC<Props> = ({ type, ...props }) => {
                         </div>
                     ))}
                 </Card>
-                {daysRemaining !== null && (
-                    <div className="text-sm">
-                        {
-                            // translator: the word "these" refers to premium features listed above
-                            c('Info').ngettext(
-                                msgid`You have ${daysRemaining} day left to try these and other premium features.`,
-                                `You have ${daysRemaining} days left to try these and other premium features.`,
-                                daysRemaining
-                            )
-                        }
-                    </div>
-                )}
-                {type === 'free-trial' && (
-                    <InlineLinkButton className="text-sm" onClick={() => window.open(PASS_BLOG_TRIAL_URL, '_blank')}>
-                        {c('Action').t`Learn more`}
-                    </InlineLinkButton>
-                )}
+                {type === 'free-trial' && <FreeTrialContent />}
             </div>
         </OnboardingModal>
     );
