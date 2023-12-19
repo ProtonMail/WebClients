@@ -12,8 +12,8 @@ export const onboarding = createOnboardingService({
     storage: localStorage,
     rules: [
         createPendingShareAccessRule(store),
-        createBlackFridayRule(store),
         createTrialRule(store),
+        createBlackFridayRule(store),
         createSecurityRule(store),
     ],
 });

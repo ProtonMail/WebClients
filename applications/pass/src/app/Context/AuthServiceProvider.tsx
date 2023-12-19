@@ -103,7 +103,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 /* If the session could not be resumed from the LocalID from path,
                  * we are likely dealing with an app-switch request from another client.
                  * In this case, redirect to account through a fork request */
-                if (!loggedIn && pathLocalID !== undefined) {
+                if (!loggedIn && client.current.state.status !== AppStatus.LOCKED && pathLocalID !== undefined) {
                     authService.requestFork({ app: APPS.PROTONPASS, host: SSO_URL });
                 }
 
@@ -178,6 +178,8 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 store.dispatch(cacheCancel());
                 store.dispatch(stopEventPolling());
                 store.dispatch(stateDestroy());
+
+                history.replace('/');
             },
 
             onSessionLockUpdate: (lock) => store.dispatch(sessionLockSync(lock)),
@@ -200,8 +202,13 @@ export const AuthServiceProvider: FC = ({ children }) => {
             },
             onSessionPersist: (encrypted) => localStorage.setItem(getSessionKey(authStore.getLocalID()), encrypted),
             onSessionResumeFailure: () => client.current.setStatus(AppStatus.ERROR),
-            onNotification: (text) =>
-                createNotification({ type: 'error', text, key: 'authservice', deduplicate: true }),
+            onNotification: (notification) =>
+                createNotification({
+                    ...notification,
+                    key: 'authservice',
+                    type: 'error',
+                    deduplicate: true,
+                }),
         });
 
         return auth;
