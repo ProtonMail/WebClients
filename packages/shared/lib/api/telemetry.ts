@@ -26,6 +26,7 @@ export enum TelemetryCalendarEvents {
 
 export enum TelemetryIcsSurgeryEvents {
     import = 'import',
+    import_publish = 'import_publish',
     invitation = 'invitation',
 }
 

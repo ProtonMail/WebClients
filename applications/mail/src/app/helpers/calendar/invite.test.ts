@@ -216,20 +216,23 @@ END:VEVENT
 END:VCALENDAR`;
             const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
             const message = { Time: Math.round(Date.now() / 1000) } as Message;
-            await expect(
-                getSupportedEventInvitation({
-                    vcalComponent: parsedInvitation,
-                    message,
-                    icsBinaryString: invitation,
-                    icsFileName: 'test.ics',
-                    primaryTimezone: 'America/Sao_Paulo',
-                    canImportEventColor: false,
-                })
-            ).rejects.toMatchObject(
-                new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, {
-                    method: ICAL_METHOD.REQUEST,
-                })
-            );
+            expect.assertions(7);
+            return getSupportedEventInvitation({
+                vcalComponent: parsedInvitation,
+                message,
+                icsBinaryString: invitation,
+                icsFileName: 'test.ics',
+                primaryTimezone: 'America/Sao_Paulo',
+                canImportEventColor: false,
+            }).catch((e: EventInvitationError) => {
+                expect(e.message).toEqual('Invalid invitation');
+                expect(e.extendedType).toEqual(EVENT_INVITATION_ERROR_TYPE.RRULE_MALFORMED);
+                expect(e.method).toEqual(ICAL_METHOD.REQUEST);
+                expect(e.componentIdentifiers?.prodId).toEqual('-//Apple Inc.//Mac OS X 10.13.6//EN');
+                expect(e.componentIdentifiers?.domain).toEqual('');
+                expect(e.componentIdentifiers?.component).toEqual('vevent');
+                expect(e.originalUniqueIdentifier).toEqual('BA3017ED-889A-4BCB-B9CB-11CE30586021');
+            });
         });
 
         test('should refuse invitations with non-yearly recurrence rules that contain a byyearday', async () => {
@@ -256,20 +259,23 @@ END:VEVENT
 END:VCALENDAR`;
             const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
             const message = { Time: Math.round(Date.now() / 1000) } as Message;
-            await expect(
-                getSupportedEventInvitation({
-                    vcalComponent: parsedInvitation,
-                    message,
-                    icsBinaryString: invitation,
-                    icsFileName: 'test.ics',
-                    primaryTimezone: 'America/Sao_Paulo',
-                    canImportEventColor: false,
-                })
-            ).rejects.toMatchObject(
-                new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, {
-                    method: ICAL_METHOD.REQUEST,
-                })
-            );
+            expect.assertions(7);
+            return getSupportedEventInvitation({
+                vcalComponent: parsedInvitation,
+                message,
+                icsBinaryString: invitation,
+                icsFileName: 'test.ics',
+                primaryTimezone: 'America/Sao_Paulo',
+                canImportEventColor: false,
+            }).catch((e: EventInvitationError) => {
+                expect(e.message).toEqual('Invalid invitation');
+                expect(e.extendedType).toEqual(EVENT_INVITATION_ERROR_TYPE.RRULE_MALFORMED);
+                expect(e.method).toEqual(ICAL_METHOD.REQUEST);
+                expect(e.componentIdentifiers?.prodId).toEqual('');
+                expect(e.componentIdentifiers?.domain).toEqual('');
+                expect(e.componentIdentifiers?.component).toEqual('vevent');
+                expect(e.originalUniqueIdentifier).toEqual('BA3017ED-889A-4BCB-B9CB-11CE30586021');
+            });
         });
 
         test('should generate a hash UID for invitations with no method and drop alarms and recurrence id', async () => {
@@ -374,6 +380,7 @@ END:VCALENDAR`;
                 })
             ).toEqual({
                 method: 'PUBLISH',
+                prodId: '-//Apple Inc.//Mac OS X 10.13.6//EN',
                 vevent: expect.objectContaining({
                     component: 'vevent',
                     uid: { value: 'original-uid-test-event-sha1-uid-1d92b0aa7fed011b07b53161798dfeb45cf4e186' },
@@ -449,20 +456,24 @@ END:VEVENT
 END:VCALENDAR`;
             const parsedInvitation = parseVcalendar(invitation) as VcalVcalendar;
             const message = { Time: Math.round(Date.now() / 1000) } as Message;
-            await expect(
-                getSupportedEventInvitation({
-                    vcalComponent: parsedInvitation,
-                    message,
-                    icsBinaryString: invitation,
-                    icsFileName: 'test.ics',
-                    primaryTimezone: 'America/Sao_Paulo',
-                    canImportEventColor: false,
-                })
-            ).rejects.toMatchObject(
-                new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, {
-                    method: ICAL_METHOD.REQUEST,
-                })
-            );
+            expect.assertions(7);
+            return getSupportedEventInvitation({
+                vcalComponent: parsedInvitation,
+                message,
+                icsBinaryString: invitation,
+                icsFileName: 'test.ics',
+                primaryTimezone: 'America/Sao_Paulo',
+                canImportEventColor: false,
+            }).catch((e: EventInvitationError) => {
+                expect(e.message).toEqual('Unsupported invitation');
+                expect(e.extendedType).toEqual(EVENT_INVITATION_ERROR_TYPE.NON_GREGORIAN);
+                expect(e.method).toEqual(ICAL_METHOD.REQUEST);
+                expect(e.componentIdentifiers?.prodId).toEqual('');
+                expect(e.componentIdentifiers?.domain).toEqual('');
+                expect(e.componentIdentifiers?.component).toEqual('vevent');
+                // for errors thrown before parsing the UID, the original unique identifier is a hash
+                expect(e.originalUniqueIdentifier).toEqual('sha1-uid-c03b3302b8c22a7cda1364bdfc6c9bf3b7a72ad9');
+            });
         });
 
         test('should not throw when receiving a VTIMEZONE without TZID', async () => {
@@ -720,11 +731,13 @@ END:VCALENDAR`;
     describe('getSupportedEventInvitation should guess a timezone to localize floating dates for invites', () => {
         const generateVcalSetup = ({
             method = ICAL_METHOD.REQUEST,
+            prodId = 'DUMMY PRODID',
             primaryTimezone = 'Asia/Seoul',
             xWrTimezone = '',
             vtimezonesTzids = [],
         }: {
             method?: ICAL_METHOD;
+            prodId?: string;
             xWrTimezone?: string;
             vtimezonesTzids?: string[];
             primaryTimezone?: string;
@@ -741,6 +754,7 @@ END:VTIMEZONE`
 CALSCALE:GREGORIAN
 VERSION:2.0
 METHOD:${method}
+PRODID:${prodId}
 ${xWrTimezoneString}
 ${vtimezonesString}
 BEGIN:VEVENT
@@ -829,48 +843,71 @@ END:VCALENDAR`;
         });
 
         test('when there is a single vtimezone and x-wr-timezone is not supported', async () => {
-            await expect(
-                getSupportedEventInvitation(
-                    generateVcalSetup({
-                        method: ICAL_METHOD.REPLY,
-                        xWrTimezone: 'Moon/Tranquility',
-                        vtimezonesTzids: ['Europe/Vilnius'],
-                    })
-                )
-            ).rejects.toThrowError('Unsupported response');
+            expect.assertions(7);
+            return getSupportedEventInvitation(
+                generateVcalSetup({
+                    method: ICAL_METHOD.REPLY,
+                    xWrTimezone: 'Moon/Tranquility',
+                    vtimezonesTzids: ['Europe/Vilnius'],
+                })
+            ).catch((e: EventInvitationError) => {
+                expect(e.message).toEqual('Unsupported response');
+                expect(e.extendedType).toEqual(EVENT_INVITATION_ERROR_TYPE.X_WR_TIMEZONE_UNSUPPORTED);
+                expect(e.method).toEqual(ICAL_METHOD.REPLY);
+                expect(e.componentIdentifiers?.prodId).toEqual('DUMMY PRODID');
+                expect(e.componentIdentifiers?.domain).toEqual('');
+                expect(e.componentIdentifiers?.component).toEqual('vevent');
+                expect(e.originalUniqueIdentifier).toEqual('BA3017ED-889A-4BCB-B9CB-11CE30586021');
+            });
         });
 
         test('when there is no vtimezone nor x-wr-timezone (reject unsupported event)', async () => {
-            await expect(
-                getSupportedEventInvitation(
-                    generateVcalSetup({
-                        method: ICAL_METHOD.CANCEL,
-                    })
-                )
-            ).rejects.toThrowError('Unsupported invitation');
+            expect.assertions(7);
+            return getSupportedEventInvitation(
+                generateVcalSetup({
+                    method: ICAL_METHOD.CANCEL,
+                })
+            ).catch((e: EventInvitationError) => {
+                expect(e.message).toEqual('Unsupported invitation');
+                expect(e.extendedType).toEqual(EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_FLOATING_TIME);
+                expect(e.method).toEqual(ICAL_METHOD.CANCEL);
+                expect(e.componentIdentifiers?.prodId).toEqual('DUMMY PRODID');
+                expect(e.componentIdentifiers?.domain).toEqual('');
+                expect(e.componentIdentifiers?.component).toEqual('vevent');
+                expect(e.originalUniqueIdentifier).toEqual('BA3017ED-889A-4BCB-B9CB-11CE30586021');
+            });
         });
 
         test('when there is no x-wr-timezone and more than one vtimezone (reject unsupported event)', async () => {
-            await expect(
-                getSupportedEventInvitation(
-                    generateVcalSetup({
-                        method: ICAL_METHOD.COUNTER,
-                        vtimezonesTzids: ['Europe/Vilnius', 'America/New_York'],
-                    })
-                )
-            ).rejects.toThrowError('Unsupported response');
+            expect.assertions(7);
+            return getSupportedEventInvitation(
+                generateVcalSetup({
+                    method: ICAL_METHOD.COUNTER,
+                    vtimezonesTzids: ['Europe/Vilnius', 'America/New_York'],
+                })
+            ).catch((e: EventInvitationError) => {
+                expect(e.message).toEqual('Unsupported response');
+                expect(e.extendedType).toEqual(EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_FLOATING_TIME);
+                expect(e.method).toEqual(ICAL_METHOD.COUNTER);
+                expect(e.componentIdentifiers?.prodId).toEqual('DUMMY PRODID');
+                expect(e.componentIdentifiers?.domain).toEqual('');
+                expect(e.componentIdentifiers?.component).toEqual('vevent');
+                expect(e.originalUniqueIdentifier).toEqual('BA3017ED-889A-4BCB-B9CB-11CE30586021');
+            });
         });
     });
 
     describe('getSupportedEventInvitation should guess a timezone to localize floating dates for invites for import PUBLISH', () => {
         const generateVcalSetup = async ({
             method = ICAL_METHOD.PUBLISH,
+            prodId = 'DUMMY PRODID',
             xWrTimezone = '',
             vtimezonesTzids = [],
             primaryTimezone,
             uid = 'BA3017ED-889A-4BCB-B9CB-11CE30586021',
         }: {
             method?: ICAL_METHOD;
+            prodId?: string;
             xWrTimezone?: string;
             vtimezonesTzids?: string[];
             primaryTimezone: string;
@@ -887,6 +924,7 @@ END:VTIMEZONE`
             const vcal = `BEGIN:VCALENDAR
 CALSCALE:GREGORIAN
 VERSION:2.0
+PRODID:${prodId}
 METHOD:${method}
 ${xWrTimezoneString}
 ${vtimezonesString}
@@ -956,15 +994,22 @@ END:VCALENDAR`;
         });
 
         test('when there is a single vtimezone and x-wr-timezone is not supported', async () => {
-            await expect(
-                getSupportedEventInvitation(
-                    await generateVcalSetup({
-                        primaryTimezone: 'Asia/Seoul',
-                        xWrTimezone: 'Moon/Tranquility',
-                        vtimezonesTzids: ['Europe/Vilnius'],
-                    })
-                )
-            ).rejects.toThrowError('Unsupported event');
+            expect.assertions(7);
+            return getSupportedEventInvitation(
+                await generateVcalSetup({
+                    primaryTimezone: 'Asia/Seoul',
+                    xWrTimezone: 'Moon/Tranquility',
+                    vtimezonesTzids: ['Europe/Vilnius'],
+                })
+            ).catch((e: EventInvitationError) => {
+                expect(e.message).toEqual('Unsupported event');
+                expect(e.extendedType).toEqual(EVENT_INVITATION_ERROR_TYPE.X_WR_TIMEZONE_UNSUPPORTED);
+                expect(e.method).toEqual(ICAL_METHOD.PUBLISH);
+                expect(e.componentIdentifiers?.prodId).toEqual('DUMMY PRODID');
+                expect(e.componentIdentifiers?.domain).toEqual('');
+                expect(e.componentIdentifiers?.component).toEqual('vevent');
+                expect(e.originalUniqueIdentifier).toEqual('BA3017ED-889A-4BCB-B9CB-11CE30586021');
+            });
         });
 
         test('when there is no vtimezone nor x-wr-timezone (use primary time zone)', async () => {
@@ -988,19 +1033,24 @@ END:VCALENDAR`;
     describe('getSupportedEventInvitation should throw', () => {
         const generateVcalSetup = async ({
             method = ICAL_METHOD.REQUEST,
+            prodId = 'DUMMY PRODID',
+            calscale = 'GREGORIAN',
             primaryTimezone,
             uid,
         }: {
-            method?: ICAL_METHOD;
+            method?: string;
+            prodId?: string;
+            calscale?: string;
             xWrTimezone?: string;
             vtimezonesTzids?: string[];
             primaryTimezone: string;
             uid?: string;
         }) => {
             const vcal = `BEGIN:VCALENDAR
-CALSCALE:GREGORIAN
 VERSION:2.0
+PRODID:${prodId}
 METHOD:${method}
+CALSCALE:${calscale}
 BEGIN:VEVENT
 ATTENDEE;CUTYPE=INDIVIDUAL;EMAIL="testme@pm.me";PARTSTAT=NEED
  S-ACTION;RSVP=TRUE:mailto:testme@pm.me
@@ -1030,14 +1080,63 @@ END:VCALENDAR`;
         };
 
         test('when invitations do not have UID', async () => {
-            await expect(
-                getSupportedEventInvitation(
-                    await generateVcalSetup({
-                        method: ICAL_METHOD.REQUEST,
-                        primaryTimezone: 'Asia/Seoul',
-                    })
-                )
-            ).rejects.toThrowError('Invalid invitation');
+            expect.assertions(7);
+            return getSupportedEventInvitation(
+                await generateVcalSetup({
+                    method: ICAL_METHOD.REQUEST,
+                    primaryTimezone: 'Asia/Seoul',
+                })
+            ).catch((e: EventInvitationError) => {
+                expect(e.message).toEqual('Invalid invitation');
+                expect(e.extendedType).toEqual(EVENT_INVITATION_ERROR_TYPE.MISSING_ORIGINAL_UID);
+                expect(e.method).toEqual(ICAL_METHOD.REQUEST);
+                expect(e.componentIdentifiers?.prodId).toEqual('DUMMY PRODID');
+                expect(e.componentIdentifiers?.domain).toEqual('');
+                expect(e.componentIdentifiers?.component).toEqual('vevent');
+                expect(e.originalUniqueIdentifier).toEqual('sha1-uid-9141489620e602bf6aa478d0d1607a14a1c8acd5');
+            });
+        });
+
+        test('when invitations have a non-Gregorian CALSCALE', async () => {
+            expect.assertions(7);
+            return getSupportedEventInvitation(
+                await generateVcalSetup({
+                    method: ICAL_METHOD.REQUEST,
+                    primaryTimezone: 'Asia/Seoul',
+                    calscale: 'NON-GREGORIAN',
+                    uid: '12abc@proton.me',
+                })
+            ).catch((e: any) => {
+                expect(e.message).toEqual('Unsupported invitation');
+                expect(e.extendedType).toEqual(EVENT_INVITATION_ERROR_TYPE.NON_GREGORIAN);
+                expect(e.method).toEqual(ICAL_METHOD.REQUEST);
+                expect(e.componentIdentifiers.prodId).toEqual('DUMMY PRODID');
+                expect(e.componentIdentifiers.domain).toEqual('proton.me');
+                expect(e.componentIdentifiers.component).toEqual('vevent');
+                // for errors thrown before parsing the UID, the original unique identifier is a hash
+                expect(e.originalUniqueIdentifier).toEqual('sha1-uid-67b8333bda5379ccccf7ac90ba6a5589c99e0f31');
+            });
+        });
+
+        test('when invitations have an invalid method', async () => {
+            expect.assertions(7);
+            return getSupportedEventInvitation(
+                await generateVcalSetup({
+                    method: 'MY_CUSTOM_METHOD',
+                    primaryTimezone: 'Asia/Seoul',
+                    calscale: 'NON-GREGORIAN',
+                    uid: '12abc@proton.me',
+                })
+            ).catch((e: any) => {
+                expect(e.message).toEqual('Invalid method');
+                expect(e.extendedType).toEqual(EVENT_INVITATION_ERROR_TYPE.INVALID_METHOD);
+                expect(e.method).toBeUndefined();
+                expect(e.componentIdentifiers.prodId).toEqual('DUMMY PRODID');
+                expect(e.componentIdentifiers.domain).toEqual('proton.me');
+                expect(e.componentIdentifiers.component).toEqual('vevent');
+                // for errors thrown before parsing the UID, the original unique identifier is a hash
+                expect(e.originalUniqueIdentifier).toEqual('sha1-uid-9a7f8df5b13978931ebed7d288c3be84aa4bed78');
+            });
         });
     });
 
