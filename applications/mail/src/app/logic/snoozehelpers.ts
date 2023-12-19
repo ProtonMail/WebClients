@@ -49,7 +49,7 @@ export const getSnoozeNotificationText = (isSnoozing: boolean, elementsCount: nu
     );
 };
 
-export const getSnoozeTimeFromElement = (element?: Element) => {
+export const getSnoozeTimeFromElement = (element?: Element, labelID?: string) => {
     if (!element) {
         return undefined;
     }
@@ -58,10 +58,9 @@ export const getSnoozeTimeFromElement = (element?: Element) => {
         return (element as Message).SnoozeTime;
     }
 
-    const contextSnoozeTime = (element as Conversation).Labels?.find(({ ID }) => {
-        return ID === MAILBOX_LABEL_IDS.INBOX || ID === MAILBOX_LABEL_IDS.SNOOZED;
+    return (element as Conversation).Labels?.find(({ ID }) => {
+        return ID === labelID || ID === MAILBOX_LABEL_IDS.INBOX || ID === MAILBOX_LABEL_IDS.SNOOZED;
     })?.ContextSnoozeTime;
-    return contextSnoozeTime;
 };
 
 export const getSnoozeDate = (element: Element | undefined, labelID: string) => {
