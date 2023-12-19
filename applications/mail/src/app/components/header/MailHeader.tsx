@@ -65,6 +65,7 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], breakpoints, toolbar
     return (
         <>
             <PrivateHeader
+                app={APPS.PROTONMAIL}
                 userDropdown={<UserDropdown app={APPS.PROTONMAIL} />}
                 hideMenuButton={hideMenuButton}
                 hideUpsellButton={hideUpsellButton}
@@ -75,7 +76,9 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], breakpoints, toolbar
                     ) : null
                 }
                 actionArea={
-                    breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium || (breakpoints.viewportWidth.large && elementID) ? (
+                    breakpoints.viewportWidth['<=small'] ||
+                    breakpoints.viewportWidth.medium ||
+                    (breakpoints.viewportWidth.large && elementID) ? (
                         <div className="flex flex-nowrap justify-space-between">
                             {toolbar}
                             {!elementID && (
