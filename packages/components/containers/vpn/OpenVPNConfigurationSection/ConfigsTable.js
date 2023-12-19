@@ -7,22 +7,12 @@ import { ButtonLike } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
 import { PLANS } from '@proton/shared/lib/constants';
-import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import {
-    DropdownActions,
-    Icon,
-    SettingsLink,
-    Table,
-    TableBody,
-    TableCell,
-    TableRow,
-    Tooltip,
-} from '../../../components';
-import { useApi, useNotifications, useUser } from '../../../hooks';
+import { Icon, SettingsLink, Table, TableBody, TableCell, TableRow, Tooltip } from '../../../components';
+import { useApi, useUser } from '../../../hooks';
 import Country from './Country';
 import LoadIndicator from './LoadIndicator';
 import { isP2PEnabled, isTorEnabled } from './utils';
@@ -96,35 +86,10 @@ const normalizeName = /** @param {Logical} server */ (server) => {
     return name;
 };
 
-const getServerDomainFromName = /** @param {Logical} server */ (server) => {
-    return normalizeName(server) + '.protonvpn.net';
-};
-
 // TODO: Add icons instead of text for p2p and tor when they are ready
 const ConfigsTable = ({ loading, servers = [], platform, protocol, category, onSelect, selecting }) => {
     const api = useApi();
-    const { createNotification } = useNotifications();
     const [{ hasPaidVpn }] = useUser();
-
-    const getCopyButton = /** @param {Logical} server */ (server) => {
-        const domain =
-            (server.Servers.length === 1 ? server.Servers[0].Domain : null) || getServerDomainFromName(server);
-
-        return {
-            text: (
-                <div className="flex flex-nowrap items-center justify-space-between">
-                    <span className="mr-2">{domain}</span>
-                    <Icon name="squares" title={c('Action').t`Copy`} />
-                </div>
-            ),
-            onClick(event) {
-                textToClipboard(domain, event.currentTarget);
-                createNotification({
-                    text: c('Success').t`${domain} copied to your clipboard`,
-                });
-            },
-        };
-    };
 
     const handleClickDownload =
         ({ ID, ExitCountry, Tier, Name }) =>
@@ -211,17 +176,8 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, onS
                                         'Action'
                                     ).t`Create`}</Button>
                                 ) : (
-                                    <DropdownActions
-                                        key="dropdown"
-                                        size="small"
-                                        list={[
-                                            {
-                                                text: c('Action').t`Download`,
-                                                onClick: handleClickDownload(server),
-                                            },
-                                            category !== CATEGORY.SECURE_CORE && getCopyButton(server),
-                                        ].filter(isTruthy)}
-                                    />
+                                    <Button size="small" onClick={handleClickDownload(server)}>{c('Action')
+                                        .t`Download`}</Button>
                                 ),
                             ].filter(isTruthy)}
                         />
