@@ -139,11 +139,13 @@
 		max-inline-size: calc(min(var(--available-width, var(--max-width)), var(--max-width)) - #{$border-size * 2}px);
 		max-block-size: calc(min(var(--available-height, var(--max-height)), var(--max-height)) - #{$border-size * 2}px);
 		overflow: auto;
-		border-radius: var(--border-radius-md);
+		border-radius: inherit;
 		background-color: var(--background-norm);
 		background-image: radial-gradient(farthest-side at 50% 0, var(--backdrop-norm), transparent),
 			radial-gradient(farthest-side at 50% 100%, var(--backdrop-norm), transparent);
-		background-position: 50% 0, 0 100%;
+		background-position:
+			50% 0,
+			0 100%;
 		background-size: calc(100% - #{rem(20)}) rem(3);
 		background-repeat: no-repeat;
 
