@@ -261,6 +261,9 @@
       "Get verification code": [
         "Få verifiseringskode"
       ],
+      "Give feedback": [
+        "Gi tilbakemelding"
+      ],
       "Go to label": [
         "Gå til etikett"
       ],
@@ -780,9 +783,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus og ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } lagringsplass"
       ],
@@ -803,9 +803,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Annonseblokkering og skadevarebeskyttelse"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Alle betalte ${ MAIL_SHORT_APP_NAME }- og ${ CALENDAR_APP_NAME }-funksjoner"
       ],
       "Extended version history": [
         "Utvidet versjonshistorikk"
@@ -852,10 +849,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer støtte for 1 egendefinert e-postdomene, 10 e-postadresser, 10 hide-my-email-aliaser, kalenderdeling og mer."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Inkluderer støtte for 3 egendefinerte e-postdomener, ${ addresses } e-postadresse, ubegrensede hide-my-email-aliaser, kalenderdeling og mer.",
-        "Inkluderer støtte for 3 egendefinerte e-postdomener, ${ addresses } e-postadresser, ubegrensede hide-my-email-aliaser, kalenderdeling og mer."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall aliaser, deling, integrert 2FA og mer."
       ],
@@ -873,6 +866,11 @@
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Lagre opptil 200 versjoner av hver fil i opptil 10 år."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME }-skrivebordsapplikasjon"
       ]
     },
     "Bug category": {
@@ -2416,6 +2414,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Innholdssøk kan ikke aktiveres i denne nettleseren. Vennligst avslutt privat nettlesingsmodus eller bruk en annen nettleser."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "Innholdssøk kan ikke aktiveres. Start programmet på nytt eller tøm data."
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Dekrypteringsfeil: dekryptering av innholdet i denne hendelsen mislyktes."
