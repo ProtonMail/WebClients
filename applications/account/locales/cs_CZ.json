@@ -380,6 +380,9 @@
       "Download recovery file": [
         "Stáhnout soubor pro obnovení"
       ],
+      "Download the ${ MAIL_APP_NAME } Export Tool": [
+        "Stáhněte si ${ MAIL_APP_NAME } Export Tool"
+      ],
       "Edit": [
         "Upravit"
       ],
@@ -511,6 +514,9 @@
       ],
       "Get verification code": [
         "Odeslat ověřovací kód"
+      ],
+      "Give feedback": [
+        "Zaslat zpětnou vazbu"
       ],
       "Go to label": [
         "Přejít na štítek"
@@ -1341,9 +1347,6 @@
       ]
     },
     "bf2023: Deal details": {
-      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } Plus a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "${ storageSize } storage": [
         "${ storageSize } úložiště"
       ],
@@ -1364,9 +1367,6 @@
       ],
       "Ad-blocker and malware protection": [
         "Blokování reklam a ochrana před malware"
-      ],
-      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
-        "Všechny placené funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Rozšířená historie verzí"
@@ -1399,8 +1399,20 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Ušetřete na vysokorychlostní švýcarské VPN s nabídkami Black Friday"
       ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "Ušetřete díky nabídkám Cyber Week na vysokorychlostní švýcarské VPN"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Ušetřete díky nabídkám End of Year na vysokorychlostní švýcarské VPN"
+      ],
       "Select your Black Friday offer": [
         "Vyberte si nabídku Black Friday"
+      ],
+      "Select your Cyber Week offer": [
+        "Vyberte si nabídku Cyber Week"
+      ],
+      "Select your End of Year offer": [
+        "Vyberte si nabídku na End of Year"
       ]
     },
     "bf2023: info": {
@@ -1480,12 +1492,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Obsahuje podporu 1 vlastní e-mailové domény, 10 e-mailových adres, 10 aliasů hide-my-email, sdílení kalendáře a další funkce."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Zahrnuje podporu 3 vlastních e-mailových domén, ${ addresses } e-mailovou adresu, neomezený počet aliasů hide-my-email, sdílení kalendáře a další.",
-        "Zahrnuje podporu 3 vlastních e-mailových domén, ${ addresses } e-mailové adresy, neomezený počet aliasů hide-my-email, sdílení kalendáře a další.",
-        "Zahrnuje podporu 3 vlastních e-mailových domén, ${ addresses } e-mailových adres, neomezený počet aliasů hide-my-email, sdílení kalendáře a další.",
-        "Zahrnuje podporu 3 vlastních e-mailových domén, ${ addresses } e-mailových adres, neomezený počet aliasů hide-my-email, sdílení kalendáře a další."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
       ],
@@ -1544,6 +1550,11 @@
     "Bridge version load failed": {
       "Failed to find latest version": [
         "Nepodařilo se najít nejnovější verzi"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } Desktopová aplikace"
       ]
     },
     "Bug category": {
@@ -6944,6 +6955,9 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Nejste na svém zařízení? K přihlášení použijte okno soukromého procházení a po dokončení jej zavřete. ${ learnMore }"
       ],
+      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
+        "Nyní k dispozici v beta verzi, desktopová aplikace vám výhodně dovolí spustit ${ MAIL_APP_NAME } přímo z vaší plochy a zůstat soustředěný bez rozptylování se prohlížečem."
+      ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverů v organizaci"
       ],
@@ -7372,6 +7386,9 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Zpráva ${ boldDataLocked } se již nebude zobrazovat, ale stále můžete svá data odemknout pomocí ${ encryptionAndKeysLink }."
+      ],
+      "The ${ MAIL_APP_NAME } Export Tool lets you export decrypted emails from your ${ MAIL_APP_NAME } account to your device. You can then view the messages or import them into another email account or email client.": [
+        "${ MAIL_APP_NAME } Nástroj pro export umožňuje exportovat dešifrované e-maily z účtu ${ MAIL_APP_NAME } do vašeho zařízení. Zprávy pak můžete zobrazit nebo importovat do jiného e-mailového účtu nebo e-mailového klienta."
       ],
       "The calendar will be removed from your account.": [
         "Kalendář bude odebrán z vašeho účtu."
@@ -7984,6 +8001,9 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Pomocí stažených souborů pro obnovení nebude možné obnovit uzamčená data."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
+        "Pomocí stažených souborů pro obnovení nebude možné obnovit uzamčená data. Toto také zamezí obnově důvěryhodného zařízení."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Zůstanete přihlášeni i po uzavření prohlížeče."
@@ -8628,6 +8648,9 @@
       ],
       "Awarded": [
         "Uděleno"
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billing address": [
         "Fakturační adresa"
@@ -9762,6 +9785,12 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
+        "Pořiďte si tarif Visionary a buďte součástí příběhu ${ BRAND_NAME }"
+      ],
+      "Limited time offer: Get ${ planTitle } until ${ date }!": [
+        "Časově omezená nabídka: Získejte ${ planTitle } do ${ date }!"
+      ],
       "Secure email that protects your privacy": [
         "Zabezpečený e-mail, který chrání vaše soukromí"
       ]
@@ -11645,6 +11674,12 @@
       "End-to-end encryption": [
         "Koncové šifrování"
       ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Za pouhých **${ relativePrice } měsíčně** navíc získáte přístup k prémiovému správci hesel od ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Za pouhých **${ relativePrice } měsíčně** navíc získáte přístup ke službě VPN Premium od ${ BRAND_NAME }!"
+      ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Za pouhých **${ relativePrice } měsíčně** navíc získáte přístup ke všem prémiovým službám ${ BRAND_NAME }!"
       ],
@@ -12179,6 +12214,9 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Pokud jste o resetování hesla nepožádali, žádost nyní zrušte."
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Žádost o resetování hesla schválena (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Přejděte do přihlášeného zařízení (v relaci, ve které byl požadavek iniciován) a změňte heslo."
       ],
@@ -12194,14 +12232,44 @@
         "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodin",
         "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodin"
       ],
+      "This permission expires soon": [
+        "Toto oprávnění brzy vyprší"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Nyní si můžete libovolně změnit heslo k účtu ${ boldEmail } po dobu ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Nyní si můžete změnit heslo k účtu ${ boldEmail }."
       ],
       "You can now reset your password": [
         "Nyní můžete resetovat své heslo"
       ],
       "You can reset your password until ${ boldDate }.": [
         "Své heslo můžete resetovat až do ${ boldDate }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Na resetování hesla máte ${ timeRemaining.inDays } den.",
+        "Na resetování hesla máte ${ timeRemaining.inDays } dny.",
+        "Na resetování hesla máte ${ timeRemaining.inDays } dnů.",
+        "Na resetování hesla máte ${ timeRemaining.inDays } dnů."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Na resetování hesla máte ${ timeRemaining.inHours } hodinu.",
+        " Na resetování hesla máte ${ timeRemaining.inHours } hodiny.",
+        " Na resetování hesla máte ${ timeRemaining.inHours } hodin.",
+        " Na resetování hesla máte ${ timeRemaining.inHours } hodin."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Na resetování hesla máte ${ timeRemaining.inMinutes } minutu.",
+        " Na resetování hesla máte ${ timeRemaining.inMinutes } minuty.",
+        " Na resetování hesla máte ${ timeRemaining.inMinutes } minut.",
+        " Na resetování hesla máte ${ timeRemaining.inMinutes } minut."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Na resetování hesla máte ${ timeRemaining.inSeconds } sekundu.",
+        " Na resetování hesla máte ${ timeRemaining.inSeconds } sekundy.",
+        " Na resetování hesla máte ${ timeRemaining.inSeconds } sekund.",
+        " Na resetování hesla máte ${ timeRemaining.inSeconds } sekund."
       ]
     },
     "session_recovery:available:link": {
@@ -12386,6 +12454,9 @@
     "session_recovery:settings:info": {
       "To disallow password reset, you must have a recovery method set up.": [
         "Chcete-li zakázat resetování hesla, musíte mít nastavenou metodu obnovení."
+      ],
+      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
+        "Chcete-li zvýšit zabezpečení svého účtu a chránit svá data, můžete v nastavení účtu ve webové aplikaci požádat o resetování hesla."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -13448,8 +13519,14 @@
       ]
     },
     "Title": {
+      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
+        " Získejte ${ MAIL_APP_NAME } pro Mac nebo Windows"
+      ],
       "${ appName } Free": [
         "${ appName } Free"
+      ],
+      "${ MAIL_APP_NAME } Export Tool": [
+        "${ MAIL_APP_NAME } Export Tool"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } klávesové zkratky"
@@ -13802,6 +13879,9 @@
       "Delete version history?": [
         "Smazat historii verzí?"
       ],
+      "Desktop app": [
+        "Aplikace pro počítače"
+      ],
       "Disable ${ email }": [
         "Zakázat ${ email }"
       ],
@@ -13925,8 +14005,11 @@
       "Folders and labels": [
         "Složky a štítky"
       ],
+      "For ${ platform }": [
+        "Pro ${ platform }"
+      ],
       "Forward and auto-reply": [
-        "Přeposlat a automaticky odpovědět"
+        "Přeposlat a odpovědět"
       ],
       "Forward emails": [
         "Přeposlat e-maily"
@@ -14093,6 +14176,9 @@
       "Password and keys": [
         "Heslo a klíče"
       ],
+      "Password reset settings": [
+        "Nastavení resetování hesla"
+      ],
       "Pay invoice": [
         "Zaplatit fakturu"
       ],
@@ -14212,6 +14298,9 @@
       ],
       "Session management": [
         "Správce relací"
+      ],
+      "Set a display name": [
+        "Nastavení zobrazovaného jména"
       ],
       "Set new password": [
         "Nastavit nové heslo"

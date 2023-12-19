@@ -10,8 +10,14 @@
       ]
     },
     "Access level": {
+      "Full view": [
+        "フルビュー"
+      ],
       "Full view (see all event details)": [
         "すべて表示 (すべてのイベント詳細)"
+      ],
+      "Limited view": [
+        "限定ビュー"
       ],
       "Limited view (see only free/busy)": [
         "一部だけ表示 (空きまたは忙しい)"
@@ -643,6 +649,9 @@
       ],
       "Open navigation": [
         "ナビゲーションを開く"
+      ],
+      "Or": [
+        "または"
       ],
       "Ordered list": [
         "順序付きリスト"
@@ -1308,6 +1317,9 @@
       ],
       "Close": [
         "閉じる"
+      ],
+      "Get the deal": [
+        "割引をゲット"
       ],
       "Remove": [
         "削除"
@@ -3431,6 +3443,9 @@
       "And": [
         "かつ"
       ],
+      "Forward from": [
+        "転送元"
+      ],
       "or": [
         "または"
       ],
@@ -4359,6 +4374,9 @@
       "Learn how to restore encrypted events with old password": [
         "古いパスワードで暗号化された予定の復元方法についての詳細"
       ],
+      "Loading events": [
+        "イベントを読み込み中"
+      ],
       "None of the events could be exported.": [
         "どのイベントもエクスポートできませんでした。"
       ],
@@ -5192,8 +5210,14 @@
       "Actions": [
         "操作"
       ],
+      "Created": [
+        "作成日時"
+      ],
       "Email address": [
         "メールアドレス"
+      ],
+      "Last used": [
+        "最終使用日時"
       ],
       "Token name": [
         "トークン名"
@@ -7859,6 +7883,9 @@
       "Active": [
         "アクティブ"
       ],
+      "Compromised": [
+        "侵害された"
+      ],
       "Disabled": [
         "無効"
       ],
@@ -8086,6 +8113,9 @@
       "Export public key": [
         "公開鍵をエクスポート"
       ],
+      "Make primary": [
+        "メインにする"
+      ],
       "Mark compromised": [
         "侵害された印をつける"
       ],
@@ -8311,6 +8341,9 @@
       ],
       "Composer default font/size": [
         "作成画面の標準フォント/サイズ"
+      ],
+      "Composer mode": [
+        "作成者モード"
       ],
       "Composer text direction": [
         "新規作成時のテキスト方向"
@@ -9105,9 +9138,15 @@
     "Label to change composer mode": {
       "Maximized": [
         "最大化"
+      ],
+      "Normal": [
+        "標準"
       ]
     },
     "Label to change density": {
+      "Comfortable": [
+        "快適性"
+      ],
       "Compact": [
         "コンパクト"
       ]
@@ -9115,6 +9154,9 @@
     "Label to change view layout": {
       "Column": [
         "カラム"
+      ],
+      "Row": [
+        "行"
       ]
     },
     "Label, credit card": {
@@ -10120,6 +10162,9 @@
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "包括的なプライバシーとセキュリティを提供する、すべての ${ BRAND_NAME } サービスが利用できるプランです。"
       ],
+      "Early access to new apps and features": [
+        "新しいアプリや機能への早期アクセス"
+      ],
       "For next-level password management and identity protection.": [
         "次のレベルのパスワード管理とアイデンティティ保護のために。"
       ],
@@ -10796,6 +10841,9 @@
       ],
       "Normal": [
         "標準"
+      ],
+      "Off": [
+        "オフ"
       ],
       "On": [
         "オン"
@@ -11785,6 +11833,9 @@
     "session_recovery:settings:info": {
       "To disallow password reset, you must have a recovery method set up.": [
         "パスワードリセットを禁止するには、復旧方法を設定する必要があります"
+      ],
+      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
+        "アカウントのセキュリティを強化し、データを保護するために、Webアプリのアカウント設定からパスワードのリセットをリクエストできます。"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -11870,6 +11921,12 @@
       ],
       "Name": [
         "名前"
+      ],
+      "Order": [
+        "注文"
+      ],
+      "Status": [
+        "ステータス"
       ]
     },
     "Settings/labels": {
@@ -13393,6 +13450,9 @@
       "Password and keys": [
         "パスワードと鍵"
       ],
+      "Password reset settings": [
+        "パスワードリセットの設定"
+      ],
       "Pay invoice": [
         "請求の支払い"
       ],
@@ -13767,6 +13827,9 @@
       ],
       "Key type": [
         "鍵の種類"
+      ],
+      "Status": [
+        "ステータス"
       ]
     },
     "Title header for members table": {
