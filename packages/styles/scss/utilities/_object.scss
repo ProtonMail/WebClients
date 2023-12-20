@@ -1,0 +1,5 @@
+@each $value in (contain, cover, fill, none, scale-down) {
+	.object-#{$value} {
+		object-fit: $value;
+	}
+}
