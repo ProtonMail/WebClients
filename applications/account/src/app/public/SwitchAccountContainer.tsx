@@ -2,12 +2,11 @@ import { Fragment, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, CircleLoader, Scroll } from '@proton/atoms';
+import { Button, CircleLoader, InlineLinkButton, Scroll } from '@proton/atoms';
 import {
     Alert,
     ConfirmSignOutModal,
     Icon,
-    InlineLinkButton,
     Loader,
     OnLoginCallbackArguments,
     useApi,

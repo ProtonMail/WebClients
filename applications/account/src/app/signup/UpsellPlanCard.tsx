@@ -2,7 +2,8 @@ import { ReactNode, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, InlineLinkButton, useActiveBreakpoint } from '@proton/components/';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { Icon, useActiveBreakpoint } from '@proton/components/';
 import { ShortPlan } from '@proton/components/containers/payments/features/interface';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 

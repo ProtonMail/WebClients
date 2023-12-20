@@ -2,7 +2,7 @@ import { MouseEvent, ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/components';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import noResultsImg from '@proton/styles/assets/img/illustrations/empty-search.svg';
 import noContactsImg from '@proton/styles/assets/img/illustrations/no-contacts.svg';
 

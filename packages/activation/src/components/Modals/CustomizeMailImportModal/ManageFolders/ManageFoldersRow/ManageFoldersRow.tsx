@@ -3,7 +3,8 @@ import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { MailImportPayloadError } from '@proton/activation/src/interface';
-import { Checkbox, Icon, InlineLinkButton, LabelStack } from '@proton/components';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { Checkbox, Icon, LabelStack } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 import debounce from '@proton/utils/debounce';
 

@@ -4,7 +4,8 @@ import { Field } from 'formik';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
-import { AttachedFile, Bordered, Dropzone, FileInput, Icon, InlineLinkButton } from '@proton/components/components';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { AttachedFile, Bordered, Dropzone, FileInput, Icon } from '@proton/components/components';
 import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
 import type { ImportFormContext } from '@proton/pass/hooks/useImportForm';
 import { SUPPORTED_IMPORT_FILE_TYPES } from '@proton/pass/hooks/useImportForm';
