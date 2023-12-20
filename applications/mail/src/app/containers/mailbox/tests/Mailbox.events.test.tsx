@@ -140,7 +140,7 @@ describe('Mailbox elements list reacting to events', () => {
         /**
          * `/get conversations` should be called twice at render and twice on reload
          */
-        expect(api).toHaveBeenCalledTimes(9);
+        expect(api).toHaveBeenCalledTimes(7);
     });
 
     it('should reload the list on an delete event if a search is active', async () => {
