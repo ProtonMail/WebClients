@@ -227,7 +227,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         loadingOrganization ||
         loadingDomains ||
         loadingOrganizationKey ||
-        organization.UsedMembers === organization.MaxMembers;
+        organization.UsedMembers >= organization.MaxMembers;
     const loadingAddAddresses = loadingOrganization || loadingDomains || loadingOrganizationKey || loadingMembers;
 
     const settingsTitle = (() => {
