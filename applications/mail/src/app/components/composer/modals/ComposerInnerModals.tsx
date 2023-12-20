@@ -7,7 +7,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 
 import { ComposerInnerModalStates } from '../../../hooks/composer/useComposerInnerModals';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageState } from '../../../store/messages/messagesTypes';
 import { MessageChange } from '../Composer';
 import ComposerExpirationModal from './ComposerExpirationModal';
 import ComposerInnerModal from './ComposerInnerModal';

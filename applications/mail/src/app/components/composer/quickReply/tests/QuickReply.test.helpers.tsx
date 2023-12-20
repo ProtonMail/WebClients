@@ -8,17 +8,17 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 
+import { MailStore } from 'proton-mail/store/store';
+
 import { MESSAGE_ACTIONS } from '../../../../constants';
 import { addApiMock, getFeatureFlags } from '../../../../helpers/test/api';
 import { getCompleteAddress, minimalCache } from '../../../../helpers/test/cache';
 import { addApiKeys, getAddressKeyCache } from '../../../../helpers/test/crypto';
 import { getDropdown, waitForSpyCall } from '../../../../helpers/test/helper';
-import { initialize } from '../../../../logic/messages/read/messagesReadActions';
-import { store } from '../../../../logic/store';
 import { addressID, setup } from '../../../message/tests/Message.test.helpers';
 import { data, fromFields, getExpectedDefaultPlainTextContent, getMessage } from './QuickReply.test.data';
 
-export const getStateMessageFromParentID = (parentMessageID: string) => {
+export const getStateMessageFromParentID = (store: MailStore, parentMessageID: string) => {
     const messagesFromCache = store.getState().messages;
 
     // search for message ID of message from parentID (The QR generated)
@@ -50,29 +50,31 @@ export const setupQuickReplyTests = async ({
     // Reference message
     const message = getMessage(!!isSender, !!isPlainText, referenceMessageBody);
 
-    store.dispatch(initialize(message));
-
     const expectedDefaultPlainTextContent = getExpectedDefaultPlainTextContent(referenceMessageBody);
 
-    const container = await setup({ conversationMode: true, message: message.data }, false, {
-        preloadedState: {
-            addresses: getModelState([
-                getCompleteAddress({
-                    ID: addressID,
-                    Email: fromFields.meAddress,
-                    Receive: 1,
-                    Status: 1,
-                    Send: 1,
-                }),
-            ]),
-            addressKeys: getAddressKeyCache(addressID, meKeys),
-            mailSettings: getModelState({
-                PMSignature: PM_SIGNATURE.ENABLED,
-                DraftMIMEType: MIME_TYPES.DEFAULT,
-            } as MailSettings),
-            features: getFeatureFlags([[FeatureCode.QuickReply, true]]),
-        },
-    });
+    const container = await setup(
+        message,
+        { conversationMode: true, message: message.data },
+        {
+            preloadedState: {
+                addresses: getModelState([
+                    getCompleteAddress({
+                        ID: addressID,
+                        Email: fromFields.meAddress,
+                        Receive: 1,
+                        Status: 1,
+                        Send: 1,
+                    }),
+                ]),
+                addressKeys: getAddressKeyCache(addressID, meKeys),
+                mailSettings: getModelState({
+                    PMSignature: PM_SIGNATURE.ENABLED,
+                    DraftMIMEType: MIME_TYPES.DEFAULT,
+                } as MailSettings),
+                features: getFeatureFlags([[FeatureCode.QuickReply, true]]),
+            },
+        }
+    );
 
     const createCall = jest.fn((message) => {
         return Promise.resolve({
@@ -191,6 +193,7 @@ export const setupQuickReplyTests = async ({
 
     return {
         container,
+        store: container.store,
         getPlainTextEditor,
         getRoosterEditor,
         createCall,

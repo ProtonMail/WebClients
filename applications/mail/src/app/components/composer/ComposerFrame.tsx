@@ -10,7 +10,7 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, DRAG_ADDRESS_KEY } from '../../constants';
 import { computeComposerStyle, getComposerDimension, shouldBeMaximized } from '../../helpers/composerPositioning';
 import useComposerDrag from '../../hooks/composer/useComposerDrag';
-import { ComposerID } from '../../logic/composers/composerTypes';
+import { ComposerID } from '../../store/composers/composerTypes';
 import Composer, { ComposerAction } from './Composer';
 import ComposerTitleBar from './ComposerTitleBar';
 

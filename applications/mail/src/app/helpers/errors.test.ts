@@ -1,5 +1,5 @@
-import { ConversationErrors } from '../logic/conversations/conversationsTypes';
-import { MessageErrors, MessageState } from '../logic/messages/messagesTypes';
+import { ConversationErrors } from '../store/conversations/conversationsTypes';
+import { MessageErrors, MessageState } from '../store/messages/messagesTypes';
 import { hasError, hasErrorType, isDecryptionError, isNetworkError, pickMessageInfosForSentry } from './errors';
 import { createDocument } from './test/message';
 

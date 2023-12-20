@@ -18,9 +18,8 @@ import {
 } from '../../../helpers/test/crypto';
 import { encryptMessage } from '../../../helpers/test/message';
 import { render } from '../../../helpers/test/render';
-import { MessageState } from '../../../logic/messages/messagesTypes';
-import { initialize } from '../../../logic/messages/read/messagesReadActions';
-import { store } from '../../../logic/store';
+import { MessageState } from '../../../store/messages/messagesTypes';
+import { initialize } from '../../../store/messages/read/messagesReadActions';
 import MessageView from '../MessageView';
 import { addressID, labelID, messageID } from './Message.test.helpers';
 
@@ -79,8 +78,6 @@ describe('message trackers', () => {
             Message: message,
         }));
 
-        store.dispatch(initialize({ data: { ID: messageID, AddressID: addressID } as Message } as MessageState));
-
         const mailSettings = {
             HideRemoteImages: SHOW_IMAGES.HIDE,
             ImageProxy: IMAGE_PROXY_FLAGS.PROXY,
@@ -99,10 +96,15 @@ describe('message trackers', () => {
             isComposerOpened: false,
         };
 
-        await render(<MessageView {...props} />, false, {
+        await render(<MessageView {...props} />, {
             preloadedState: {
                 mailSettings: getModelState(mailSettings),
                 addressKeys: getAddressKeyCache(addressID, toKeys),
+            },
+            onStore: (store) => {
+                store.dispatch(
+                    initialize({ data: { ID: messageID, AddressID: addressID } as Message } as MessageState)
+                );
             },
         });
 

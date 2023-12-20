@@ -7,11 +7,12 @@ import { Prompt, useGetAddresses, useModalState } from '@proton/components';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { Address } from '@proton/shared/lib/interfaces';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import { MessageChange } from '../../components/composer/Composer';
 import { getAddressFromEmail, getFromAddress } from '../../helpers/addresses';
-import { composerActions } from '../../logic/composers/composersSlice';
-import { MessageState } from '../../logic/messages/messagesTypes';
-import { useAppDispatch } from '../../logic/store';
+import { composerActions } from '../../store/composers/composersSlice';
+import { MessageState } from '../../store/messages/messagesTypes';
 
 interface Props {
     onChange: MessageChange;
@@ -21,7 +22,7 @@ interface Props {
 export const useDraftSenderVerification = ({ composerID }: Props) => {
     const getAddresses = useGetAddresses();
     const [defaultEmail, setDefaultEmail] = useState<string>('');
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
 
     const [senderChangedModalProps, setSenderChangedModalOpen, render] = useModalState();
 

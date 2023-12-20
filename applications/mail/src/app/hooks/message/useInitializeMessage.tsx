@@ -12,6 +12,7 @@ import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 import { getPureAttachments } from '../../helpers/attachment/attachment';
@@ -25,8 +26,8 @@ import {
 } from '../../helpers/message/messageImages';
 import { loadMessage } from '../../helpers/message/messageRead';
 import { Preparation, prepareHtml, preparePlainText } from '../../helpers/transforms/transforms';
-import { updateAttachment } from '../../logic/attachments/attachmentsActions';
-import { loadEmbedded } from '../../logic/messages/images/messagesImagesActions';
+import { updateAttachment } from '../../store/attachments/attachmentsActions';
+import { loadEmbedded } from '../../store/messages/images/messagesImagesActions';
 import {
     LoadEmbeddedParams,
     LoadEmbeddedResults,
@@ -36,14 +37,13 @@ import {
     MessageRemoteImage,
     MessageState,
     MessageStateWithDataFull,
-} from '../../logic/messages/messagesTypes';
+} from '../../store/messages/messagesTypes';
 import {
     cleanUTMTrackers,
     documentInitializeFulfilled,
     documentInitializePending,
     load,
-} from '../../logic/messages/read/messagesReadActions';
-import { useAppDispatch } from '../../logic/store';
+} from '../../store/messages/read/messagesReadActions';
 import { useMarkAs } from '../actions/markAs/useMarkAs';
 import { useGetAttachment } from '../attachments/useAttachment';
 import { useBase64Cache } from '../useBase64Cache';
@@ -54,7 +54,7 @@ import { useGetMessage } from './useMessage';
 export const useInitializeMessage = () => {
     const api = useApi();
     const { markAs } = useMarkAs();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const getMessage = useGetMessage();
     const getMessageKeys = useGetMessageKeys();
     const getAttachment = useGetAttachment();

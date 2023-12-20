@@ -1,7 +1,7 @@
 import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
-import { useFlag } from '@proton/components/index';
+import { useFlag } from '@proton/components';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
@@ -30,9 +30,8 @@ import {
     setupCryptoProxyForTesting,
 } from 'proton-mail/helpers/test/helper';
 import { render } from 'proton-mail/helpers/test/render';
-import { addAttachment } from 'proton-mail/logic/attachments/attachmentsActions';
-import { store } from 'proton-mail/logic/store';
 import { Conversation } from 'proton-mail/models/conversation';
+import { addAttachment } from 'proton-mail/store/attachments/attachmentsActions';
 
 jest.mock('@proton/shared/lib/helpers/downloadFile'); // mocking left to individual tests
 const mockDownloadFile = downloadFile as jest.MockedFunction<typeof downloadFile>;
@@ -74,7 +73,7 @@ const setup = async (
         AttachmentsMetadata: attachmentsMetadata,
     } as Conversation;
 
-    await render(
+    return render(
         <ItemColumnLayout
             labelID={MAILBOX_LABEL_IDS.INBOX}
             element={element}
@@ -88,7 +87,6 @@ const setup = async (
             showAttachmentThumbnails={showAttachmentThumbnails}
             attachmentsMetadata={filterAttachmentToPreview(attachmentsMetadata)}
         />,
-        true,
         {
             preloadedState: {
                 addresses: getModelState([getCompleteAddress({ ID: AddressID, Email: fromAddress })]),
@@ -105,25 +103,21 @@ describe('ItemAttachmentThumbnails', () => {
     let fromKeys: GeneratedKey;
 
     beforeAll(async () => {
-        // Mock feature flag
-        // TODO update when we'll have a better solution
-        mockUseFlag.mockReturnValue(true);
-
+        await setupCryptoProxyForTesting();
         addApiKeys(false, fromAddress, []);
     });
 
     beforeEach(async () => {
-        await setupCryptoProxyForTesting();
         clearAll();
+        mockUseFlag.mockReturnValue(true);
         fromKeys = await generateKeys('me', fromAddress);
     });
 
-    afterEach(async () => {
-        clearAll();
+    afterEach(() => clearAll());
+
+    afterAll(async () => {
         await releaseCryptoProxy();
     });
-
-    afterEach(() => clearAll());
 
     it('should not display attachment thumbnails', async () => {
         const elementTotalAttachments = 0;
@@ -341,6 +335,11 @@ describe('ItemAttachmentThumbnails - Preview', () => {
             fromKeys.publicKeys
         );
 
+        // Mock to check that if attachment is in the state, no api call is done
+        const mocks = await mockAttachmentThumbnailsAPICalls(attachmentsMetadata, fromKeys);
+
+        const { store } = await setup(attachmentsMetadata, numAttachments, { AddressID, fromKeys, fromAddress });
+
         store.dispatch(
             addAttachment({
                 ID: attachment.ID as string,
@@ -349,11 +348,6 @@ describe('ItemAttachmentThumbnails - Preview', () => {
                 } as WorkerDecryptionResult<Uint8Array>,
             })
         );
-
-        // Mock to check that if attachment is in the state, no api call is done
-        const mocks = await mockAttachmentThumbnailsAPICalls(attachmentsMetadata, fromKeys);
-
-        await setup(attachmentsMetadata, numAttachments, { AddressID, fromKeys, fromAddress });
 
         const item = screen.getByTestId('attachment-thumbnail');
         fireEvent.click(item);
@@ -410,6 +404,8 @@ describe('ItemAttachmentThumbnails - Preview', () => {
             fromKeys.publicKeys
         );
 
+        const { store } = await setup(attachmentsMetadata, numAttachments, { AddressID, fromKeys, fromAddress });
+
         store.dispatch(
             addAttachment({
                 ID: attachment1.ID as string,
@@ -427,8 +423,6 @@ describe('ItemAttachmentThumbnails - Preview', () => {
                 } as WorkerDecryptionResult<Uint8Array>,
             })
         );
-
-        await setup(attachmentsMetadata, numAttachments, { AddressID, fromKeys, fromAddress });
 
         const item = screen.getAllByTestId('attachment-thumbnail');
 
@@ -519,6 +513,8 @@ describe('ItemAttachmentThumbnails - Preview', () => {
             fromKeys.publicKeys
         );
 
+        const { store } = await setup(attachmentsMetadata, numAttachments, { AddressID, fromKeys, fromAddress });
+
         store.dispatch(
             addAttachment({
                 ID: attachment.ID as string,
@@ -527,8 +523,6 @@ describe('ItemAttachmentThumbnails - Preview', () => {
                 } as WorkerDecryptionResult<Uint8Array>,
             })
         );
-
-        await setup(attachmentsMetadata, numAttachments, { AddressID, fromKeys, fromAddress });
 
         const item = screen.getByTestId('attachment-thumbnail');
         fireEvent.click(item);

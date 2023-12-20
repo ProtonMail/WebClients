@@ -23,8 +23,8 @@ import {
     encryptMessage,
     generateKeys,
 } from '../../../helpers/test/helper';
-import { MessageKeys } from '../../../logic/messages/messagesTypes';
 import { X_PM_HEADERS } from '../../../models/crypto';
+import { MessageKeys } from '../../../store/messages/messagesTypes';
 import { addressID, body, getIframeRootDiv, localID, messageID, setup, subject } from './Message.test.helpers';
 
 jest.setTimeout(20000);
@@ -78,11 +78,15 @@ describe('MessageView encryption', () => {
                 } as Message,
             }));
 
-            const { open, container } = await setup({ conversationMode: true }, true, {
-                preloadedState: {
-                    addressKeys: getAddressKeyCache(addressID, toKeys),
-                },
-            });
+            const { open, container } = await setup(
+                undefined,
+                { conversationMode: true },
+                {
+                    preloadedState: {
+                        addressKeys: getAddressKeyCache(addressID, toKeys),
+                    },
+                }
+            );
             await open();
 
             const iframeContent = await getIframeRootDiv(container);
@@ -107,11 +111,15 @@ describe('MessageView encryption', () => {
                 } as Message,
             }));
 
-            const { open, container } = await setup({}, true, {
-                preloadedState: {
-                    addressKeys: getAddressKeyCache(addressID, toKeys),
-                },
-            });
+            const { open, container } = await setup(
+                undefined,
+                {},
+                {
+                    preloadedState: {
+                        addressKeys: getAddressKeyCache(addressID, toKeys),
+                    },
+                }
+            );
             await open();
 
             const iframeContent = await getIframeRootDiv(container);
@@ -146,11 +154,15 @@ describe('MessageView encryption', () => {
                 Message: { ...message, Body: encryptedBody },
             }));
 
-            const { open, container } = await setup({}, true, {
-                preloadedState: {
-                    addressKeys: getAddressKeyCache(addressID, toKeys),
-                },
-            });
+            const { open, container } = await setup(
+                undefined,
+                {},
+                {
+                    preloadedState: {
+                        addressKeys: getAddressKeyCache(addressID, toKeys),
+                    },
+                }
+            );
             await open();
 
             const iframeContent = await getIframeRootDiv(container);
@@ -184,11 +196,15 @@ describe('MessageView encryption', () => {
                 Message: { ...message, Body: encryptedBody },
             }));
 
-            const { open, container } = await setup({}, true, {
-                preloadedState: {
-                    addressKeys: getAddressKeyCache(addressID, toKeys),
-                },
-            });
+            const { open, container } = await setup(
+                undefined,
+                {},
+                {
+                    preloadedState: {
+                        addressKeys: getAddressKeyCache(addressID, toKeys),
+                    },
+                }
+            );
             await open();
 
             const iframeContent = await getIframeRootDiv(container);
@@ -223,12 +239,16 @@ describe('MessageView encryption', () => {
                 } as Message,
             }));
 
-            const { open, findByTestId } = await setup({}, true, {
-                preloadedState: {
-                    userKeys: getModelState(getStoredKey(toKeys)),
-                    addressKeys: getAddressKeyCache(addressID, toKeys),
-                },
-            });
+            const { open, findByTestId } = await setup(
+                undefined,
+                {},
+                {
+                    preloadedState: {
+                        userKeys: getModelState(getStoredKey(toKeys)),
+                        addressKeys: getAddressKeyCache(addressID, toKeys),
+                    },
+                }
+            );
 
             await open();
 
@@ -272,12 +292,16 @@ describe('MessageView encryption', () => {
                 Message: { ...message, Body: encryptedBody },
             }));
 
-            const { open, findByTestId } = await setup({}, true, {
-                preloadedState: {
-                    userKeys: getModelState(getStoredKey(toKeys)),
-                    addressKeys: getAddressKeyCache(addressID, toKeys),
-                },
-            });
+            const { open, findByTestId } = await setup(
+                undefined,
+                {},
+                {
+                    preloadedState: {
+                        userKeys: getModelState(getStoredKey(toKeys)),
+                        addressKeys: getAddressKeyCache(addressID, toKeys),
+                    },
+                }
+            );
 
             await open();
 
@@ -312,12 +336,16 @@ describe('MessageView encryption', () => {
                 } as Message,
             }));
 
-            const { open, findByTestId } = await setup({}, true, {
-                preloadedState: {
-                    userKeys: getModelState(getStoredKey(toKeys)),
-                    addressKeys: getAddressKeyCache(addressID, toKeys),
-                },
-            });
+            const { open, findByTestId } = await setup(
+                undefined,
+                {},
+                {
+                    preloadedState: {
+                        userKeys: getModelState(getStoredKey(toKeys)),
+                        addressKeys: getAddressKeyCache(addressID, toKeys),
+                    },
+                }
+            );
 
             await open();
 

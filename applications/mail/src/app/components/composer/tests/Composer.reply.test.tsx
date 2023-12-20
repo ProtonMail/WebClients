@@ -22,8 +22,7 @@ import {
     decryptSessionKey,
     minimalCache,
 } from '../../../helpers/test/helper';
-import { store } from '../../../logic/store';
-import { ID, clickSend, prepareMessage, renderComposer, send } from './Composer.test.helpers';
+import { ID, clickSend, renderComposer, send } from './Composer.test.helpers';
 
 loudRejection();
 
@@ -63,24 +62,24 @@ describe('Composer reply and forward', () => {
     });
 
     it('send content with blockquote collapsed', async () => {
-        const { composerID } = prepareMessage({
-            messageDocument: { document: createDocument(content) },
-            data: { MIMEType: MIME_TYPES.DEFAULT },
-        });
-
         minimalCache();
         addApiKeys(true, toAddress, [toKeys]);
 
         // Will use update only on the wrong path, but it allows to have a "nice failure"
         const updateSpy = jest.fn(() => Promise.reject(new Error('Should not update here')));
         addApiMock(`mail/v4/messages/${ID}`, updateSpy, 'put');
-
-        const sendRequest = await send(composerID, false, {
+        const renderResult = await renderComposer({
             preloadedState: {
                 addressKeys: getAddressKeyCache(AddressID, fromKeys),
                 mailSettings: getModelState({ DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings),
             },
+            message: {
+                messageDocument: { document: createDocument(content) },
+                data: { MIMEType: MIME_TYPES.DEFAULT },
+            },
         });
+
+        const sendRequest = await send(renderResult);
 
         const packages = sendRequest.data.Packages;
         const pack = packages['text/html'];
@@ -93,20 +92,17 @@ describe('Composer reply and forward', () => {
     });
 
     it('send content with blockquote expanded', async () => {
-        prepareMessage({
-            messageDocument: { document: createDocument(content) },
-            data: { MIMEType: MIME_TYPES.DEFAULT },
-        });
-
         minimalCache();
         addApiKeys(true, toAddress, [toKeys]);
 
-        const composerID = Object.keys(store.getState().composers.composers)[0];
-
-        const renderResult = await renderComposer(composerID, false, {
+        const renderResult = await renderComposer({
             preloadedState: {
                 addressKeys: getAddressKeyCache(AddressID, fromKeys),
                 mailSettings: getModelState({ DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings),
+            },
+            message: {
+                messageDocument: { document: createDocument(content) },
+                data: { MIMEType: MIME_TYPES.DEFAULT },
             },
         });
 

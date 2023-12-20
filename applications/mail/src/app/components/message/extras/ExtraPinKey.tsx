@@ -19,7 +19,7 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getContactEmail } from '../../../helpers/message/messageRecipients';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
-import { MessageVerification, MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
+import { MessageVerification, MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 
 const { NOT_VERIFIED, SIGNED_AND_INVALID } = VERIFICATION_STATUS;

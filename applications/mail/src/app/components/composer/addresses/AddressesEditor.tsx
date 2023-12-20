@@ -7,11 +7,12 @@ import { Icon, Label, Tooltip, generateUID } from '@proton/components';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import clsx from '@proton/utils/clsx';
 
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
-import { selectComposer } from '../../../logic/composers/composerSelectors';
-import { composerActions } from '../../../logic/composers/composersSlice';
-import { useAppDispatch, useAppSelector } from '../../../logic/store';
 import { RecipientType } from '../../../models/address';
+import { selectComposer } from '../../../store/composers/composerSelectors';
+import { composerActions } from '../../../store/composers/composersSlice';
 import AddressesCCButton from './AddressesCCButton';
 import AddressesInput from './AddressesInput';
 
@@ -39,9 +40,9 @@ const AddressesEditor = ({
     toggleExpanded,
 }: Props) => {
     const [uid] = useState(generateUID('composer'));
-    const composer = useAppSelector((store) => selectComposer(store, composerID));
+    const composer = useMailSelector((store) => selectComposer(store, composerID));
     const expanded = ccExpanded || bccExpanded;
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
 
     const toListAnchorRef = useRef<HTMLDivElement>(null);
     const ccListAnchorRef = useRef<HTMLDivElement>(null);

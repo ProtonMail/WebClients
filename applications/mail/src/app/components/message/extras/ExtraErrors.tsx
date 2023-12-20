@@ -7,7 +7,7 @@ import { Icon, SettingsLink } from '@proton/components';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { useReloadMessage } from '../../../hooks/message/useLoadMessage';
-import { MessageErrors, MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageErrors, MessageState } from '../../../store/messages/messagesTypes';
 
 const getTranslations = (key: keyof MessageErrors, alreadyTried: boolean) => {
     switch (key) {
@@ -63,10 +63,7 @@ const ExtraErrors = ({ message }: Props) => {
                         data-testid="errors-banner"
                     >
                         <div className="md:flex-1 flex flex-nowrap mb-2 md:mb-0">
-                            <Icon
-                                name="exclamation-circle-filled"
-                                className="shrink-0 mt-1 ml-0.5 color-danger"
-                            />
+                            <Icon name="exclamation-circle-filled" className="shrink-0 mt-1 ml-0.5 color-danger" />
                             <span className="px-2 mt-1 flex-1" data-testid="errors-banner:content">
                                 {getTranslations(errorType, alreadyTried)}
                             </span>

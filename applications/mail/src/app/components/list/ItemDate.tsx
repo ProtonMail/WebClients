@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useState } from 'react';
-import { useSelector } from 'react-redux';
+
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { formatDistanceToNow, formatFullDate, formatSimpleDate } from '../../helpers/date';
 import { getDate } from '../../helpers/elements';
 import { getSnoozeTimeFromElement, isElementReminded, isElementSnoozed } from '../../helpers/snooze';
-import { params } from '../../logic/elements/elementsSelectors';
 import { Element } from '../../models/element';
+import { params } from '../../store/elements/elementsSelectors';
 import ItemDateRender from './ItemDateRender';
 import ItemDateSnoozedMessage from './ItemDateSnoozedMessage';
 
@@ -31,7 +32,7 @@ interface Props {
 const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = false, isInListView }: Props) => {
     const formatter = FORMATTERS[mode];
 
-    const { conversationMode } = useSelector(params);
+    const { conversationMode } = useMailSelector(params);
 
     const [formattedDate, setFormattedDate] = useState(() => {
         const date = getDate(element, labelID);

@@ -7,7 +7,7 @@ import { getAttachments } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
 import { PendingUpload } from '../../hooks/composer/useAttachments';
-import { MessageState, MessageStateWithData, OutsideKey } from '../../logic/messages/messagesTypes';
+import { MessageState, MessageStateWithData, OutsideKey } from '../../store/messages/messagesTypes';
 import AttachmentList, { AttachmentAction } from '../attachment/AttachmentList';
 import { MessageChange } from './Composer';
 import EditorWrapper, { ExternalEditorActions } from './editor/EditorWrapper';

@@ -7,6 +7,8 @@ import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION, ATTACHMENT_MAX_COUNT } from '@proton/shared/lib/mail/constants';
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import { MessageChange } from '../../components/composer/Composer';
 import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
 import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
@@ -19,9 +21,8 @@ import {
 } from '../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, updateImages } from '../../helpers/message/messageImages';
 import { Upload } from '../../helpers/upload';
-import { addAttachment } from '../../logic/attachments/attachmentsActions';
-import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
-import { useAppDispatch } from '../../logic/store';
+import { addAttachment } from '../../store/attachments/attachmentsActions';
+import { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';
 import { useLongLivingState } from '../useLongLivingState';
@@ -52,7 +53,7 @@ export const useAttachments = ({
     const auth = useAuthentication();
     const getMessage = useGetMessage();
     const getMessageKeys = useGetMessageKeys();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
 
     // Pending files to upload
     const [pendingFiles, setPendingFiles] = useState<File[]>();

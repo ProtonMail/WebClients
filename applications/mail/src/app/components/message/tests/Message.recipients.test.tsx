@@ -1,9 +1,8 @@
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 
 import { clearAll } from '../../../helpers/test/helper';
-import { refresh } from '../../../logic/contacts/contactsActions';
-import { store } from '../../../logic/store';
-import { initMessage, setup } from './Message.test.helpers';
+import { refresh } from '../../../store/contacts/contactsActions';
+import { setup } from './Message.test.helpers';
 
 describe('Message recipients rendering', () => {
     afterEach(clearAll);
@@ -12,9 +11,7 @@ describe('Message recipients rendering', () => {
         const Name = 'test-name';
         const Address = 'address@test.com';
 
-        initMessage({ data: { ToList: [{ Name, Address }] } });
-
-        const { getByText, details } = await setup();
+        const { getByText, details } = await setup({ data: { ToList: [{ Name, Address }] } });
 
         getByText(Name);
 
@@ -32,11 +29,8 @@ describe('Message recipients rendering', () => {
             Name: 'test-contact',
         } as ContactEmail;
 
+        const { store, getByText, details } = await setup({ data: { ToList: [{ Name, Address }] } });
         store.dispatch(refresh({ contacts: [ContactEmail], contactGroups: [] }));
-
-        initMessage({ data: { ToList: [{ Name, Address }] } });
-
-        const { getByText, details } = await setup();
 
         getByText(ContactEmail.Name);
 
@@ -65,11 +59,8 @@ describe('Message recipients rendering', () => {
             { Name, Address, Group },
         ];
 
+        const { store, getByText } = await setup({ data: { ToList } });
         store.dispatch(refresh({ contacts, contactGroups: [ContactGroup] }));
-
-        initMessage({ data: { ToList } });
-
-        const { getByText } = await setup();
 
         const expectation = `${ContactGroup.Name} (${ToList.length}/${contacts.length})`;
 
@@ -96,11 +87,8 @@ describe('Message recipients rendering', () => {
             { Name, Address, Group },
         ];
 
+        const { store, getByText } = await setup({ data: { ToList } });
         store.dispatch(refresh({ contacts, contactGroups: [ContactGroup] }));
-
-        initMessage({ data: { ToList } });
-
-        const { getByText } = await setup();
 
         const expectation = `${ContactGroup.Name} (${contacts.length})`;
 

@@ -5,9 +5,8 @@ import { PublicKeyReference } from '@proton/crypto';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import { addApiMock, clearAll, generateKeys, render, tick } from '../../../helpers/test/helper';
 import { contactEmails, message, setupContactsForPinKeys } from '../../../helpers/test/pinKeys';
-import { refresh } from '../../../logic/contacts/contactsActions';
-import { MessageVerification } from '../../../logic/messages/messagesTypes';
-import { store } from '../../../logic/store';
+import { refresh } from '../../../store/contacts/contactsActions';
+import { MessageVerification } from '../../../store/messages/messagesTypes';
 import ExtraAskResign from './ExtraAskResign';
 
 const getMessageVerification = (pinnedKeysVerified: boolean, pinnedKeys?: PublicKeyReference[]) => {
@@ -76,11 +75,11 @@ describe('Extra ask resign banner', () => {
         const { senderKeys } = await setupContactsForPinKeys();
         addApiMock('core/v4/keys/all', () => ({ Address: { Keys: [{ PublicKey: senderKeys.publicKeyArmored }] } }));
 
+        const messageVerification = getMessageVerification(false, [senderKeys.publicKeys[0]]);
+        const { store, getByTestId, getByText } = await setup(messageVerification);
+
         // Initialize contactsMap
         store.dispatch(refresh({ contacts: [...contactEmails], contactGroups: [] }));
-
-        const messageVerification = getMessageVerification(false, [senderKeys.publicKeys[0]]);
-        const { getByTestId, getByText } = await setup(messageVerification);
 
         // Banner is displayed
         getByTestId('extra-ask-resign:banner');

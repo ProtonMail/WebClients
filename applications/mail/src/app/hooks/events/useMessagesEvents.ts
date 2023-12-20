@@ -1,12 +1,13 @@
 import { useSubscribeEventManager } from '@proton/components';
 
-import { event } from '../../logic/messages/read/messagesReadActions';
-import { useAppDispatch } from '../../logic/store';
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import { Event } from '../../models/event';
+import { event } from '../../store/messages/read/messagesReadActions';
 import { useGetMessage } from '../message/useMessage';
 
 export const useMessagesEvents = () => {
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const getMessage = useGetMessage();
 
     useSubscribeEventManager(async ({ Messages }: Event) => {

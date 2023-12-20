@@ -18,11 +18,11 @@ import { deleteMessages } from '@proton/shared/lib/api/messages';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { runParallelChunkedActions } from 'proton-mail/helpers/chunk';
+import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { isConversation } from '../../../helpers/elements';
-import { backendActionFinished, backendActionStarted } from '../../../logic/elements/elementsActions';
-import { useAppDispatch } from '../../../logic/store';
 import { Element } from '../../../models/element';
+import { backendActionFinished, backendActionStarted } from '../../../store/elements/elementsActions';
 import { useGetElementsFromIDs } from '../../mailbox/useElements';
 import useOptimisticDelete from '../../optimistic/useOptimisticDelete';
 
@@ -152,7 +152,7 @@ export const usePermanentDeleteSelection = (labelID: string) => {
     const api = useApi();
     const getElementsFromIDs = useGetElementsFromIDs();
     const optimisticDelete = useOptimisticDelete();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
 
     const [selectedIDs, setSelectedIDs] = useState<string[]>([]);

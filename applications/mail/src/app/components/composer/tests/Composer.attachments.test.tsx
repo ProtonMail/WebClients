@@ -27,9 +27,8 @@ import {
     waitForNotification,
     waitForSpyCall,
 } from '../../../helpers/test/helper';
-import { store } from '../../../logic/store';
 import Composer from '../Composer';
-import { ID, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
+import { ID, getMessage, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
 
 loudRejection();
 
@@ -49,6 +48,8 @@ describe('Composer attachments', () => {
 
     let updateSpy: jest.Mock;
     let sendSpy: jest.Mock;
+
+    const composerID = 'composer-test-id';
 
     const setup = async (MIMEType = MIME_TYPES.PLAINTEXT) => {
         const { attachment, sessionKey: generatedSessionKey } = await createAttachment(
@@ -73,17 +74,16 @@ describe('Composer attachments', () => {
 
         minimalCache();
 
-        const message = prepareMessage({
+        const message = getMessage({
             localID: ID,
             data: { AddressID: address1.ID, MIMEType, Sender: { Address: address1.Email, Name: address1.ID } },
             messageDocument: { plainText: 'test', document: createDocument('hello') },
         });
 
-        addApiKeys(false, toAddress, []);
-
-        const composerID = Object.keys(store.getState().composers.composers)[0];
-
-        const result = await render(<Composer {...props} composerID={composerID} />, false, {
+        const result = await render(<Composer {...props} composerID={composerID} />, {
+            onStore: (store) => {
+                prepareMessage(store, message, composerID);
+            },
             preloadedState: {
                 addresses: getModelState([getCompleteAddress(address1), getCompleteAddress(address2)]),
                 addressKeys: {
@@ -92,6 +92,8 @@ describe('Composer attachments', () => {
                 },
             },
         });
+
+        addApiKeys(false, toAddress, []);
 
         props.onClose.mockImplementation(result.unmount);
 

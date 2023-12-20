@@ -10,10 +10,10 @@ import { getSortedChanges } from 'proton-mail/helpers/labels';
 import { getCleanedFolderID, sendSelectAllTelemetryReport } from 'proton-mail/helpers/moveToFolder';
 import { getSelectAllNotificationText } from 'proton-mail/helpers/selectAll';
 import { useOptimisticApplyLabels } from 'proton-mail/hooks/optimistic/useOptimisticApplyLabels';
-import { backendActionStarted, labelAll } from 'proton-mail/logic/elements/elementsActions';
-import { elementsMap as elementsMapSelector } from 'proton-mail/logic/elements/elementsSelectors';
-import { layoutActions } from 'proton-mail/logic/layout/layoutSlice';
-import { store, useAppDispatch } from 'proton-mail/logic/store';
+import { backendActionStarted, labelAll } from 'proton-mail/store/elements/elementsActions';
+import { elementsMap as elementsMapSelector } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
+import { layoutActions } from 'proton-mail/store/layout/layoutSlice';
 
 interface ApplyLabelsToAllParams {
     changes: { [labelID: string]: boolean };
@@ -29,9 +29,10 @@ export const useApplyLabelsToAll = (setContainFocus?: Dispatch<SetStateAction<bo
     const api = useApi();
     const { createNotification } = useNotifications();
     const [folders = []] = useFolders();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const optimisticApplyLabels = useOptimisticApplyLabels();
     const canUseOptimistic = useFlag('SelectAllOptimistic');
+    const store = useMailStore();
 
     const [applyLabelsToAllModal, handleShowApplyLabelsToAllModal] = useModalTwo(SelectAllLabelModal);
 

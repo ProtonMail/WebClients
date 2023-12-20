@@ -15,7 +15,7 @@ import clsx from '@proton/utils/clsx';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { exportPlainText, plainTextToHTML, setDocumentContent } from '../../../helpers/message/messageContent';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageState } from '../../../store/messages/messagesTypes';
 import { MessageChange, MessageChangeFlag } from '../Composer';
 import { ExternalEditorActions } from '../editor/EditorWrapper';
 

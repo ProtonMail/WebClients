@@ -17,8 +17,7 @@ import {
     minimalCache,
     waitForNotification,
 } from '../../../helpers/test/helper';
-import { store } from '../../../logic/store';
-import { AddressID, ID, fromAddress, prepareMessage, renderComposer, toAddress } from './Composer.test.helpers';
+import { AddressID, ID, fromAddress, renderComposer, toAddress } from './Composer.test.helpers';
 
 const orignalGetSelection = global.getSelection;
 
@@ -52,28 +51,26 @@ describe('Composer hotkeys', () => {
     const setup = async (hasShortcutsEnabled = true) => {
         minimalCache();
 
-        prepareMessage({
-            messageDocument: { document: createDocument('test') },
-            data: { MIMEType: MIME_TYPES.DEFAULT },
-        });
-
         addApiKeys(false, toAddress, []);
 
-        const composerID = Object.keys(store.getState().composers.composers)[0];
-
-        const result = await renderComposer(composerID, false, {
+        const { container, ...rest } = await renderComposer({
             preloadedState: {
                 mailSettings: getModelState({
                     Shortcuts: hasShortcutsEnabled ? SHORTCUTS.ENABLED : SHORTCUTS.DISABLED,
                 } as MailSettings),
                 addressKeys: getAddressKeyCache(AddressID, fromKeys),
             },
+            message: {
+                messageDocument: { document: createDocument('test') },
+                data: { MIMEType: MIME_TYPES.DEFAULT },
+            },
         });
 
-        const iframe = result.container.querySelector('iframe') as HTMLIFrameElement;
+        const iframe = container.querySelector('iframe') as HTMLIFrameElement;
 
         return {
-            ...result,
+            ...rest,
+            container,
             iframe,
             esc: () => fireEvent.keyDown(iframe, { key: 'Escape' }),
             ctrlEnter: () => fireEvent.keyDown(iframe, { key: 'Enter', ctrlKey: true }),

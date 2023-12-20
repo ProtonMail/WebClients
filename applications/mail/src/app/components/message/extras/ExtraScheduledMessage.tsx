@@ -14,14 +14,14 @@ import { isScheduled } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { LABEL_IDS_TO_HUMAN, PREVENT_CANCEL_SEND_INTERVAL } from '../../../constants';
 import { useOnCompose } from '../../../containers/ComposeProvider';
 import { formatDateToHuman } from '../../../helpers/date';
 import { ComposeTypes } from '../../../hooks/composer/useCompose';
-import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
-import { cancelScheduled } from '../../../logic/messages/scheduled/scheduledActions';
-import { useAppDispatch } from '../../../logic/store';
+import { MessageStateWithData } from '../../../store/messages/messagesTypes';
+import { cancelScheduled } from '../../../store/messages/scheduled/scheduledActions';
 import { isScheduledSendTodayMorning } from '../../composer/actions/scheduleSend/helpers';
 
 interface Props {
@@ -30,7 +30,7 @@ interface Props {
 const ExtraScheduledMessage = ({ message }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const { createNotification } = useNotifications();
     const location = useLocation();
     const history = useHistory();

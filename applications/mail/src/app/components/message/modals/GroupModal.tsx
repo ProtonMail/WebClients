@@ -6,9 +6,9 @@ import { Checkbox, FormModal, Label, generateUID } from '@proton/components';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { contactToInput } from '@proton/shared/lib/mail/recipient';
 
-import { GroupWithContacts } from '../../../logic/contacts/contactsTypes';
 import { RecipientGroup } from '../../../models/address';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
+import { GroupWithContacts } from '../../../store/contacts/contactsTypes';
 import EncryptionStatusIcon from '../EncryptionStatusIcon';
 
 interface Props {
@@ -46,7 +46,10 @@ const GroupModal = ({ recipientGroup, group, globalIcon, mapStatusIcons, onClose
                     return (
                         <li key={contact.ID} className="mb-2">
                             <Checkbox id={id} checked={isChecked(contact)} disabled />
-                            <span className="min-w-custom inline-flex align-middle" style={{'--min-w-custom': '1.4em'}}>
+                            <span
+                                className="min-w-custom inline-flex align-middle"
+                                style={{ '--min-w-custom': '1.4em' }}
+                            >
                                 {icon && <EncryptionStatusIcon {...icon} />}
                             </span>
                             <Label htmlFor={id} className="pt-0 pl-1">

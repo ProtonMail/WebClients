@@ -7,16 +7,17 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import range from '@proton/utils/range';
 
+import { MessageState } from 'proton-mail/store/messages/messagesTypes';
+
 import { addApiKeys, addApiMock, assertFocus, clearAll, mockConsole, render, tick, waitForSpyCall } from '../../helpers/test/helper';
+import { Conversation } from '../../models/conversation';
 import {
     initialize as initializeConversation,
     updateConversation,
-} from '../../logic/conversations/conversationsActions';
-import { ConversationState } from '../../logic/conversations/conversationsTypes';
-import * as messageDraftActions from '../../logic/messages/draft/messagesDraftActions';
-import { initialize as initializeMessage } from '../../logic/messages/read/messagesReadActions';
-import { store } from '../../logic/store';
-import { Conversation } from '../../models/conversation';
+} from '../../store/conversations/conversationsActions';
+import { ConversationState } from '../../store/conversations/conversationsTypes';
+import * as messageDraftActions from '../../store/messages/draft/messagesDraftActions';
+import { initialize as initializeMessage } from '../../store/messages/read/messagesReadActions';
 import ConversationView from './ConversationView';
 
 jest.setTimeout(20000);
@@ -55,10 +56,31 @@ describe('ConversationView', () => {
         errors: {},
     } as ConversationState;
 
-    const setup = async () => {
-        const result = await render(<ConversationView {...props} />);
+    const setup = async ({
+        conversationStates,
+        messageState,
+    }: {
+        conversationStates?: ConversationState[];
+        messageState?: MessageState;
+    }) => {
+        const result = await render(<></>);
         const rerender = (newProps: Partial<typeof props> = {}) =>
             result.rerender(<ConversationView {...props} {...newProps} />);
+
+        if (conversationStates) {
+            conversationStates.forEach((conversationState) => {
+                result.store.dispatch(initializeConversation(conversationState));
+
+                conversationState.Messages?.forEach((message) => {
+                    result.store.dispatch(initializeMessage({ localID: message.ID, data: message }));
+                });
+            });
+        }
+        if (messageState) {
+            result.store.dispatch(initializeMessage(messageState));
+        }
+
+        await rerender();
 
         const messageElements = result.container.querySelectorAll<HTMLElement>(
             '[data-shortcut-target="message-container"]'
@@ -86,16 +108,18 @@ describe('ConversationView', () => {
 
     describe('Store / State management', () => {
         it('should return store value', async () => {
-            store.dispatch(initializeConversation(conversationState));
-            store.dispatch(initializeMessage({ localID: message.ID, data: message }));
-            const { getByText } = await setup();
+            const { getByText } = await setup({
+                conversationStates: [conversationState],
+                messageState: { localID: message.ID, data: message },
+            });
             getByText(conversation.Subject as string);
         });
 
         it('should update value if store is updated', async () => {
-            store.dispatch(initializeConversation(conversationState));
-            store.dispatch(initializeMessage({ localID: message.ID, data: message }));
-            const { getByText, rerender } = await setup();
+            const { getByText, rerender, store } = await setup({
+                conversationStates: [conversationState],
+                messageState: { localID: message.ID, data: message },
+            });
             getByText(conversation.Subject as string);
 
             const newSubject = 'other subject';
@@ -114,7 +138,7 @@ describe('ConversationView', () => {
         it('should launch api request when needed', async () => {
             const response = { Conversation: conversation, Messages: [message] };
             addApiMock(`mail/v4/conversations/${conversation.ID}`, () => response);
-            const { getByText } = await setup();
+            const { getByText } = await setup({});
             getByText(conversation.Subject as string);
         });
 
@@ -127,10 +151,9 @@ describe('ConversationView', () => {
                 errors: {},
             } as ConversationState;
 
-            store.dispatch(initializeConversation(conversationState));
-            store.dispatch(initializeConversation(conversationState2));
-
-            const { getByText, rerender } = await setup();
+            const { getByText, rerender } = await setup({
+                conversationStates: [conversationState, conversationState2],
+            });
             getByText(conversation.Subject as string);
 
             await rerender({ conversationID: conversation2.ID });
@@ -160,11 +183,7 @@ describe('ConversationView', () => {
                 errors: {},
             };
 
-            store.dispatch(initializeConversation(conversationState as ConversationState));
-            conversationState.Messages.forEach((message) => {
-                store.dispatch(initializeMessage({ localID: message.ID, data: message }));
-            });
-            const { getAllByText } = await setup();
+            const { getAllByText, store } = await setup({ conversationStates: [conversationState] });
 
             const elements = getAllByText('test-message', { exact: false });
             expect(elements[0].textContent).toContain('test-message 1');
@@ -200,7 +219,7 @@ describe('ConversationView', () => {
             });
             addApiMock(`mail/v4/conversations/${conversation.ID}`, getSpy);
 
-            const { getByTestId, getByText, rerender } = await setup();
+            const { getByTestId, getByText, rerender } = await setup({});
 
             const header = getByTestId('conversation-header') as HTMLHeadingElement;
             expect(header.getAttribute('class')).toContain('is-loading');
@@ -227,7 +246,7 @@ describe('ConversationView', () => {
             });
             addApiMock(`mail/v4/conversations/${conversation.ID}`, getSpy);
 
-            const { getByText } = await setup();
+            const { getByText } = await setup({});
 
             await act(async () => {
                 jest.advanceTimersByTime(5000);
@@ -253,12 +272,10 @@ describe('ConversationView', () => {
                 errors: { network: [new Error()] },
             } as ConversationState;
 
-            store.dispatch(initializeConversation(conversationState));
-
             const response = { Conversation: conversation, Messages: [message] };
             addApiMock(`mail/v4/conversations/${conversation.ID}`, () => response);
 
-            const { getByText, rerender } = await setup();
+            const { getByText, rerender } = await setup({ conversationStates: [conversationState] });
 
             const tryAgain = getByText('Try again');
             fireEvent.click(tryAgain);
@@ -271,8 +288,6 @@ describe('ConversationView', () => {
 
     describe('Hotkeys', () => {
         it('should focus item container on left', async () => {
-            store.dispatch(initializeConversation(conversationState));
-
             const TestComponent = (props: any) => {
                 return (
                     <>
@@ -284,7 +299,9 @@ describe('ConversationView', () => {
                 );
             };
 
-            const { container } = await render(<TestComponent {...props} />);
+            const { store, rerender, container } = await render(<></>);
+            store.dispatch(initializeConversation(conversationState));
+            await rerender(<TestComponent {...props} />);
 
             const itemContainer = container.querySelector('[data-shortcut-target="item-container"]');
             const firstMessage = container.querySelector('[data-shortcut-target="message-container"]') as HTMLElement;
@@ -309,9 +326,9 @@ describe('ConversationView', () => {
                 errors: {},
             } as ConversationState;
 
-            store.dispatch(initializeConversation(conversationState));
-
-            const { messageElements, down, ctrlDown, up, ctrlUp } = await setup();
+            const { messageElements, down, ctrlDown, up, ctrlUp } = await setup({
+                conversationStates: [conversationState],
+            });
 
             const isFocused = (element: HTMLElement) => element.dataset.hasfocus === 'true';
 
@@ -335,14 +352,12 @@ describe('ConversationView', () => {
             const senderEmail = 'sender@email.com';
             addApiKeys(false, senderEmail, []);
 
-            store.dispatch(initializeConversation(conversationState));
-
             const messageMock = jest.fn(() => ({
                 Message: { ID: message.ID, Attachments: [], Sender: { Name: '', Address: senderEmail } },
             }));
             addApiMock(`mail/v4/messages/${message.ID}`, messageMock);
 
-            const { down, enter } = await setup();
+            const { down, enter } = await setup({ conversationStates: [conversationState] });
 
             down();
             enter();

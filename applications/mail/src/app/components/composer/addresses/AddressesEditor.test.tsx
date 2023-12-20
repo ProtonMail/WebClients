@@ -7,11 +7,12 @@ import { pick } from '@proton/shared/lib/helpers/object';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
+import { MailStore } from 'proton-mail/store/store';
+
 import { addApiMock, clearAll, getDropdown, render, tick } from '../../../helpers/test/helper';
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
-import { composerActions } from '../../../logic/composers/composersSlice';
-import { MessageState } from '../../../logic/messages/messagesTypes';
-import { store } from '../../../logic/store';
+import { composerActions } from '../../../store/composers/composersSlice';
+import { MessageState } from '../../../store/messages/messagesTypes';
 import AddressesEditor from './AddressesEditor';
 
 const email1 = 'test@test.com';
@@ -76,18 +77,16 @@ const props = {
     },
 };
 
-const setupComposer = async () => {
+const setupComposer = (store: MailStore, composerID: string) => {
     store.dispatch(
         composerActions.addComposer({
+            ID: composerID,
             messageID: message.localID || '',
             // @ts-expect-error
             recipients: pick(message?.data, ['ToList', 'CCList', 'BCCList']),
             senderEmailAddress: message.data?.Sender?.Address || '',
         })
     );
-    const composerID = Object.keys(store.getState().composers.composers)[0];
-
-    return composerID;
 };
 
 describe('AddressesEditor', () => {
@@ -98,17 +97,25 @@ describe('AddressesEditor', () => {
     beforeEach(clearAll);
     afterAll(clearAll);
 
+    const composerID = 'composer-test-id';
+
     it('should render Addresses', async () => {
-        const composerID = await setupComposer();
-        const { getByText } = await render(<AddressesEditor {...props} composerID={composerID} />);
+        const { getByText } = await render(<AddressesEditor {...props} composerID={composerID} />, {
+            onStore: (store) => {
+                setupComposer(store, composerID);
+            },
+        });
 
         getByText(`${email1Name} <${email1}>`);
         getByText(`${email2Name} <${email2}>`);
     });
 
     it('should delete an address', async () => {
-        const composerID = await setupComposer();
-        const { getByTestId, getAllByTestId } = await render(<AddressesEditor {...props} composerID={composerID} />);
+        const { getByTestId, getAllByTestId } = await render(<AddressesEditor {...props} composerID={composerID} />, {
+            onStore: (store) => {
+                setupComposer(store, composerID);
+            },
+        });
 
         const displayedAddresses = getAllByTestId('composer-addresses-item');
 
@@ -134,10 +141,14 @@ describe('AddressesEditor', () => {
         'should add correct addresses with the input "$input"',
         async ({ input, expectedArray }: { input: string; expectedArray: Recipient[] }) => {
             addApiMock('core/v4/keys/all', () => ({ Address: { Keys: [] } }));
-            const composerID = await setupComposer();
 
             const { getAllByTestId, getByTestId } = await render(
-                <AddressesEditor {...props} composerID={composerID} />
+                <AddressesEditor {...props} composerID={composerID} />,
+                {
+                    onStore: (store) => {
+                        setupComposer(store, composerID);
+                    },
+                }
             );
 
             const displayedAddresses = getAllByTestId('composer-addresses-item');
@@ -155,8 +166,11 @@ describe('AddressesEditor', () => {
     );
 
     it('should edit an address on double click', async () => {
-        const composerID = await setupComposer();
-        const { getAllByTestId, getByText } = await render(<AddressesEditor {...props} composerID={composerID} />);
+        const { getAllByTestId, getByText } = await render(<AddressesEditor {...props} composerID={composerID} />, {
+            onStore: (store) => {
+                setupComposer(store, composerID);
+            },
+        });
 
         const displayedAddresses = getAllByTestId('composer-addresses-item-label');
 
@@ -177,8 +191,11 @@ describe('AddressesEditor', () => {
     });
 
     it('should open option dropdown', async () => {
-        const composerID = await setupComposer();
-        const { getAllByTestId } = await render(<AddressesEditor {...props} composerID={composerID} />);
+        const { getAllByTestId } = await render(<AddressesEditor {...props} composerID={composerID} />, {
+            onStore: (store) => {
+                setupComposer(store, composerID);
+            },
+        });
 
         const displayedAddresses = getAllByTestId('composer-addresses-item-label');
 
@@ -195,8 +212,11 @@ describe('AddressesEditor', () => {
     it('should copy an address', async () => {
         document.execCommand = jest.fn();
 
-        const composerID = await setupComposer();
-        const { getAllByTestId } = await render(<AddressesEditor {...props} composerID={composerID} />);
+        const { getAllByTestId } = await render(<AddressesEditor {...props} composerID={composerID} />, {
+            onStore: (store) => {
+                setupComposer(store, composerID);
+            },
+        });
 
         const displayedAddresses = getAllByTestId('composer-addresses-item-label');
 
@@ -212,8 +232,11 @@ describe('AddressesEditor', () => {
     });
 
     it('should edit an address in option dropdown', async () => {
-        const composerID = await setupComposer();
-        const { getAllByTestId } = await render(<AddressesEditor {...props} composerID={composerID} />);
+        const { getAllByTestId } = await render(<AddressesEditor {...props} composerID={composerID} />, {
+            onStore: (store) => {
+                setupComposer(store, composerID);
+            },
+        });
 
         const displayedAddresses = getAllByTestId('composer-addresses-item-label');
 
@@ -240,8 +263,11 @@ describe('AddressesEditor', () => {
     it('should open create modal when clicking on create contact', async () => {
         addApiMock('contacts/v4/contacts', () => ({ Contacts: [] }));
 
-        const composerID = await setupComposer();
-        const { getAllByTestId } = await render(<AddressesEditor {...props} composerID={composerID} />);
+        const { getAllByTestId } = await render(<AddressesEditor {...props} composerID={composerID} />, {
+            onStore: (store) => {
+                setupComposer(store, composerID);
+            },
+        });
 
         const displayedAddresses = getAllByTestId('composer-addresses-item-label');
 
@@ -259,8 +285,11 @@ describe('AddressesEditor', () => {
     });
 
     it('should delete an address in option modal', async () => {
-        const composerID = await setupComposer();
-        const { getAllByTestId } = await render(<AddressesEditor {...props} composerID={composerID} />);
+        const { getAllByTestId } = await render(<AddressesEditor {...props} composerID={composerID} />, {
+            onStore: (store) => {
+                setupComposer(store, composerID);
+            },
+        });
 
         const displayedAddresses = getAllByTestId('composer-addresses-item-label');
 
@@ -280,8 +309,11 @@ describe('AddressesEditor', () => {
     });
 
     it('should not focus CC BCC or Insert contacts buttons', async () => {
-        const composerID = await setupComposer();
-        const { getByTestId } = await render(<AddressesEditor {...props} composerID={composerID} />);
+        const { getByTestId } = await render(<AddressesEditor {...props} composerID={composerID} />, {
+            onStore: (store) => {
+                setupComposer(store, composerID);
+            },
+        });
 
         const ccButton = getByTestId('composer:recipients:cc-button');
         const bccButton = getByTestId('composer:recipients:bcc-button');

@@ -16,6 +16,7 @@ import {
     StandardPublicApp,
     ThemeProvider,
 } from '@proton/components';
+import useInstance from '@proton/hooks/useInstance';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
 import createCache from '@proton/shared/lib/helpers/cache';
@@ -24,7 +25,7 @@ import * as config from './config';
 import EOContainer from './containers/eo/EOContainer';
 import { registerMailToProtocolHandler } from './helpers/url';
 import locales from './locales';
-import { setupStore } from './store/store';
+import { setupStore } from './store/eo/eoStore';
 
 const boostrapApp = () => {
     const api = createApi({ config });
@@ -34,20 +35,18 @@ const boostrapApp = () => {
     if ('chrome' in window) {
         registerMailToProtocolHandler();
     }
-    const store = setupStore();
     const cache = createCache();
 
     return {
         authentication,
-        store,
+        store: setupStore(),
         cache,
         api,
     };
 };
 
-const { store, api, cache } = boostrapApp();
-
 const App = () => {
+    const { store, api, cache } = useInstance(boostrapApp);
     return (
         <ProtonStoreProvider store={store}>
             <ConfigProvider config={config}>
