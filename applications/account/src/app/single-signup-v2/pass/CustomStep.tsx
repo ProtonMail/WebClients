@@ -162,7 +162,13 @@ const CustomStep = ({
                             }
                         })();
 
+                        await measure({
+                            event: TelemetryAccountSignupEvents.onboardFinish,
+                            dimensions: {},
+                        });
+
                         await wait(1_500);
+
                         document.location.assign(getAppHref('/', APPS.PROTONPASS, localID));
                     }}
                 />
