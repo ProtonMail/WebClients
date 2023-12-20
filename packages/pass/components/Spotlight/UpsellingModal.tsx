@@ -7,6 +7,7 @@ import type { IconName } from '@proton/components';
 import { Icon } from '@proton/components';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import onboardingSVG from '@proton/pass/assets/onboarding.svg';
+import { PromotionUpgradeButton } from '@proton/pass/components/Layout/Button/PromotionUpgradeButton';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { AdaptiveModal } from '@proton/pass/components/Layout/Modal/AdaptiveModal';
 import { FreeTrialContent } from '@proton/pass/components/Spotlight/FreeTrialContent';
@@ -100,7 +101,17 @@ export const UpsellingModal: FC<Props> = ({ type, ...props }) => {
     const features = getFeatures();
 
     return (
-        <AdaptiveModal {...props} size="medium" actions={[<UpgradeButton key="upgrade-button" label={upgradeLabel} />]}>
+        <AdaptiveModal
+            {...props}
+            size="medium"
+            actions={[
+                type === 'early-access' && isEOY() ? (
+                    <PromotionUpgradeButton key="promo-upgrade-button" />
+                ) : (
+                    <UpgradeButton key="upgrade-button" label={upgradeLabel} />
+                ),
+            ]}
+        >
             <div className="flex flex-column items-center w-full gap-5 m-auto">
                 <img src={onboardingSVG} className="w-3/5 " alt="user onboarding graphic" />
                 <h3 className="text-bold ">{title}</h3>
