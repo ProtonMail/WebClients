@@ -2,7 +2,7 @@ import { FormEvent, ReactNode, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Button, Href, InlineLinkButton } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { TOTP_WRONG_ERROR, setupTotp } from '@proton/shared/lib/api/settings';
@@ -17,7 +17,6 @@ import noop from '@proton/utils/noop';
 import {
     Copy,
     Form,
-    InlineLinkButton,
     InputFieldTwo,
     Loader,
     ModalTwo as Modal,

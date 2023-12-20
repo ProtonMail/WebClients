@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 
-import { InlineLinkButton } from '../../components';
 import { useConfig } from '../../hooks';
 import useApiStatus from '../../hooks/useApiStatus';
 import TopBanner from './TopBanner';

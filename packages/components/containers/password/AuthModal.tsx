@@ -3,7 +3,7 @@ import { flushSync } from 'react-dom';
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, InlineLinkButton } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { PASSWORD_WRONG_ERROR, getInfo } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -18,7 +18,6 @@ import noop from '@proton/utils/noop';
 
 import {
     Form,
-    InlineLinkButton,
     InputFieldTwo,
     ModalTwo as Modal,
     ModalTwoContent as ModalContent,

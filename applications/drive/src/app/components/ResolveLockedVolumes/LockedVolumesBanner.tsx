@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton, TopBanner } from '@proton/components';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { TopBanner } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 
 import { useLockedVolume } from '../../store';

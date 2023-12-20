@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { FeatureCode, InlineLinkButton, useFeature } from '@proton/components';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { FeatureCode, useFeature } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import InviteHowItWorks from './InviteHowItWorks';
@@ -30,12 +31,7 @@ const InviteActions = () => {
 
     return (
         <>
-            <div
-                className={clsx([
-                    'flex justify-space-between items-center',
-                    showHowItWorksSection && 'mb-8',
-                ])}
-            >
+            <div className={clsx(['flex justify-space-between items-center', showHowItWorksSection && 'mb-8'])}>
                 <ReferralSignatureToggle />
                 {!showHowItWorksSection && (
                     <div className="ml-auto pl-4">
