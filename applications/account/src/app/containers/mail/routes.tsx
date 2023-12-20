@@ -7,7 +7,6 @@ import { ADDRESS_TYPE, APPS, APP_NAMES, MAIL_APP_NAME } from '@proton/shared/lib
 import { getHasOnlyExternalAddresses } from '@proton/shared/lib/helpers/address';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
-import { isOrganizationVisionary } from '@proton/shared/lib/organization/helper';
 
 export const getHasPmMeAddress = (addresses: Address[]) => {
     return addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
@@ -32,7 +31,7 @@ export const getMailAppRoutes = ({
     organization,
     isSmtpTokenEnabled,
     isEmailForwardingEnabled,
-    isElectronDisabled,
+    hasUserAccessToInboxDesktop,
     isNotifInboxDesktopAppOn,
 }: {
     app: APP_NAMES;
@@ -41,11 +40,9 @@ export const getMailAppRoutes = ({
     organization: Organization;
     isSmtpTokenEnabled: boolean;
     isEmailForwardingEnabled: boolean;
-    isElectronDisabled: boolean;
+    hasUserAccessToInboxDesktop: boolean;
     isNotifInboxDesktopAppOn: boolean;
 }): SidebarConfig => {
-    const showDesktopAppSection = !isElectronDisabled && organization && isOrganizationVisionary(organization);
-
     const hasOrganization = !!organization?.HasKeys;
     const learnMoreLink = (
         <Href key="learn" href={getKnowledgeBaseUrl('/using-folders-labels')}>{c('Link').t`Learn more`}</Href>
@@ -191,7 +188,7 @@ export const getMailAppRoutes = ({
                 text: c('Title').t`Desktop app`,
                 to: '/protonmail-for-desktop',
                 icon: 'pass-laptop',
-                available: showDesktopAppSection,
+                available: hasUserAccessToInboxDesktop,
                 notification: isNotifInboxDesktopAppOn ? ThemeColor.Warning : undefined,
                 subsections: [
                     { id: 'protonmail-for-desktop', text: c('Title').t` Get ${MAIL_APP_NAME} for Mac or Windows` },
