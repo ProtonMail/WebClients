@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components/hooks';
 import { getCurrentLocation } from '@proton/pass/components/Core/routing';
 import { UpsellingModal } from '@proton/pass/components/Spotlight/UpsellingModal';
+import { PASS_EOY_PATH } from '@proton/pass/constants';
 import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
@@ -17,6 +18,7 @@ import { bootIntent, cacheCancel, sessionLockSync, stateDestroy, stopEventPollin
 import { AppStatus, type Maybe, PlanType, SessionLockStatus } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { getClientID } from '@proton/shared/lib/apps/helper';
 import {
     getBasename,
     getLocalIDFromPathname,
@@ -34,6 +36,7 @@ import { telemetry } from '../../lib/telemetry';
 import type { ServiceWorkerMessageHandler } from '../ServiceWorker/ServiceWorkerProvider';
 import { useServiceWorker } from '../ServiceWorker/ServiceWorkerProvider';
 import { store } from '../Store/store';
+import { APP_NAME } from '../config';
 import { useClientRef } from './ClientProvider';
 
 const STORAGE_PREFIX = 'ps-';
@@ -67,9 +70,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
 
     const redirectPath = useRef(stripLocalBasenameFromPathname(getCurrentLocation()));
     const setRedirectPath = (redirect: string) => (redirectPath.current = redirect);
-
-    // TODO remove this after launch of web app for all users
-    const [needsUpgrade, setNeedsUpgrade] = useState(false);
+    const [upgradeState, setUpgradeState] = useState<{ upgrade: boolean; LocalID?: number }>({ upgrade: false });
 
     const { createNotification } = useNotifications();
 
@@ -139,13 +140,13 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 history.replace('/');
             },
 
-            onForkConsumed: async ({ UID, AccessToken }, state) => {
+            onForkConsumed: async ({ UID, AccessToken, LocalID }, state) => {
                 removeHashParameters();
 
                 if (isTaggedBuild()) {
                     const { plan } = await getUserAccess(withAuthHeaders(UID, AccessToken, {}));
                     if (plan.Type !== PlanType.plus || Boolean(plan.TrialEnd)) {
-                        setNeedsUpgrade(true);
+                        setUpgradeState({ upgrade: true, LocalID });
                         throw new Error(c('Error').t`Please upgrade to have early access to ${PASS_APP_NAME} web app`);
                     }
                 }
@@ -274,8 +275,14 @@ export const AuthServiceProvider: FC = ({ children }) => {
     return (
         <AuthServiceContext.Provider value={authService}>
             {children}
-            {/* TODO remove this after removing restricted access to web app */}
-            <UpsellingModal type="early-access" open={needsUpgrade} onClose={() => setNeedsUpgrade(false)} />
+            {upgradeState.upgrade && (
+                <UpsellingModal
+                    type="early-access"
+                    open={upgradeState.upgrade}
+                    onClose={() => setUpgradeState({ upgrade: false })}
+                    upgradePath={`${PASS_EOY_PATH}&u=${upgradeState.LocalID}&source=${getClientID(APP_NAME)}`}
+                />
+            )}
         </AuthServiceContext.Provider>
     );
 };
