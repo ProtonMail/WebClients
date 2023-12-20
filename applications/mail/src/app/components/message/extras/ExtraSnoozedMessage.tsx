@@ -10,10 +10,10 @@ import clsx from '@proton/utils/clsx';
 
 import { PREVENT_CANCEL_SEND_INTERVAL } from '../../../constants';
 import { formatDateToHuman } from '../../../helpers/date';
+import { getSnoozeTimeFromElement } from '../../../helpers/snooze';
 import useSnooze from '../../../hooks/actions/useSnooze';
 import { useGetElementsFromIDs } from '../../../hooks/mailbox/useElements';
 import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
-import { getSnoozeTimeFromElement } from '../../../logic/snoozehelpers';
 
 interface Props {
     message: MessageStateWithData;

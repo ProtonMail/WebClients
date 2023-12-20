@@ -12,6 +12,7 @@ import { updateCountersForMarkAs } from '../../helpers/counter';
 import { isUnread, isMessage as testIsMessage } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { applyMarkAsChangesOnMessage } from '../../helpers/message/messages';
+import { isElementReminded } from '../../helpers/snooze';
 import useMailModel from '../../hooks/useMailModel';
 import {
     optimisticMarkAsConversation,
@@ -19,7 +20,6 @@ import {
 } from '../../logic/conversations/conversationsActions';
 import { optimisticMarkAs as optimisticMarkAsElementAction } from '../../logic/elements/elementsActions';
 import { optimisticMarkAs as optimisticMarkAsMessageAction } from '../../logic/messages/optimistic/messagesOptimisticActions';
-import { isElementReminded } from '../../logic/snoozehelpers';
 import { useAppDispatch } from '../../logic/store';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
