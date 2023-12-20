@@ -4,7 +4,7 @@ import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message'
 
 import { formatFullDate } from '../../../../helpers/date';
 import { createDocument } from '../../../../helpers/test/message';
-import { MessageDecryption } from '../../../../logic/messages/messagesTypes';
+import { MessageDecryption } from '../../../../store/messages/messagesTypes';
 import { addressID, messageID, subject } from '../../../message/tests/Message.test.helpers';
 
 export const fromFields = {

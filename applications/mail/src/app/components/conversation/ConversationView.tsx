@@ -1,5 +1,4 @@
 import { RefObject, memo, useEffect, useRef } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { Scroll } from '@proton/atoms';
 import { Breakpoints, useLabels, useToggle } from '@proton/components';
@@ -11,9 +10,10 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
-import { selectComposersCount } from 'proton-mail/logic/composers/composerSelectors';
-import { useAppSelector } from 'proton-mail/logic/store';
+import { selectComposersCount } from 'proton-mail/store/composers/composerSelectors';
 import useUnreadNotifications from 'proton-mail/hooks/useUnreadNotifications';
+
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { hasLabel } from '../../helpers/elements';
@@ -26,7 +26,7 @@ import { useConversationHotkeys } from '../../hooks/conversation/useConversation
 import { useGetMessage } from '../../hooks/message/useMessage';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
 import useShouldMoveOut from '../../hooks/useShouldMoveOut';
-import { removeAllQuickReplyFlags } from '../../logic/messages/draft/messagesDraftActions';
+import { removeAllQuickReplyFlags } from '../../store/messages/draft/messagesDraftActions';
 import MessageView, { MessageViewRef } from '../message/MessageView';
 import ConversationErrorBanner from './ConversationErrorBanner';
 import ConversationHeader from './ConversationHeader';
@@ -70,7 +70,7 @@ const ConversationView = ({
     elementIDs,
     conversationMode,
 }: Props) => {
-    const dispatch = useDispatch();
+    const dispatch = useMailDispatch();
     const getMessage = useGetMessage();
     const { isSearchResult } = useEncryptedSearchContext();
     const [labels = []] = useLabels();
@@ -89,7 +89,7 @@ const ConversationView = ({
         onBack,
     });
     const messageViewsRefs = useRef({} as { [messageID: string]: MessageViewRef | undefined });
-    const composersCount = useAppSelector(selectComposersCount);
+    const composersCount = useMailSelector(selectComposersCount);
 
     const wrapperRef = useRef<HTMLDivElement>(null);
 

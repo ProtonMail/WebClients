@@ -2,7 +2,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients, getSender } from '@proton/shared/lib/mail/messages';
 
-import { MessageImage, MessageImages } from '../../logic/messages/messagesTypes';
+import { MessageImage, MessageImages } from '../../store/messages/messagesTypes';
 import { getAttachmentCounts, getMessagesAuthorizedToMove } from './messages';
 
 const { INBOX, SENT, DRAFTS, TRASH, SPAM } = MAILBOX_LABEL_IDS;

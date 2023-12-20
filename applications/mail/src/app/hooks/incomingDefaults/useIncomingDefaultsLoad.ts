@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 
-import { load as loadIncomingDefaults } from '../../logic/incomingDefaults/incomingDefaultsActions';
-import { useAppDispatch } from '../../logic/store';
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
+import { load as loadIncomingDefaults } from '../../store/incomingDefaults/incomingDefaultsActions';
 import { useIncomingDefaultsStatus } from './useIncomingDefaults';
 
 export default () => {
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const incomingDefaultsStatus = useIncomingDefaultsStatus();
 
     useEffect(() => {

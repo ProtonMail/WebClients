@@ -40,7 +40,7 @@ describe('MoveButtons', () => {
         const props = getProps(labelID);
         minimalCache();
 
-        await render(<MoveButtons {...props} />, false, {
+        await render(<MoveButtons {...props} />, {
             preloadedState: {
                 categories: getModelState(labels),
             },

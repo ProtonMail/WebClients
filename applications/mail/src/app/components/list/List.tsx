@@ -1,5 +1,4 @@
 import { ChangeEvent, Fragment, ReactNode, Ref, RefObject, forwardRef, memo, useEffect, useMemo } from 'react';
-import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
@@ -14,7 +13,7 @@ import SelectAllBanner from 'proton-mail/components/list/select-all/SelectAllBan
 import { getCanDisplaySelectAllBanner } from 'proton-mail/helpers/selectAll';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
-import { RootState } from 'proton-mail/logic/store';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
@@ -22,9 +21,9 @@ import { isMessage as testIsMessage } from '../../helpers/elements';
 import { isColumnMode } from '../../helpers/mailSettings';
 import { usePaging } from '../../hooks/usePaging';
 import { PLACEHOLDER_ID_PREFIX, usePlaceholders } from '../../hooks/usePlaceholders';
-import { pageSize as pageSizeSelector, showLabelTaskRunningBanner } from '../../logic/elements/elementsSelectors';
 import { Element } from '../../models/element';
 import { Filter } from '../../models/tools';
+import { pageSize as pageSizeSelector, showLabelTaskRunningBanner } from '../../store/elements/elementsSelectors';
 import UsersOnboardingChecklist from '../checklist/UsersOnboardingChecklist';
 import EmptyListPlaceholder from '../view/EmptyListPlaceholder';
 import Item from './Item';
@@ -136,10 +135,8 @@ const List = (
 
     const hasFilter = Object.keys(filter).length > 0;
 
-    const pageSize = useSelector(pageSizeSelector);
-    const canDisplayTaskRunningBanner = useSelector((state: RootState) =>
-        showLabelTaskRunningBanner(state, { labelID })
-    );
+    const pageSize = useMailSelector(pageSizeSelector);
+    const canDisplayTaskRunningBanner = useMailSelector((state) => showLabelTaskRunningBanner(state, { labelID }));
 
     const canShowSelectAllBanner = getCanDisplaySelectAllBanner({
         selectAllFeatureAvailable: selectAllAvailable,

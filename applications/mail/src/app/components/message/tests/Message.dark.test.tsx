@@ -4,7 +4,7 @@ import { FeatureCode } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { addApiMock, clearAll, createDocument, getFeatureFlags, minimalCache } from '../../../helpers/test/helper';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageState } from '../../../store/messages/messagesTypes';
 import { getIframeRootDiv, initMessage, setup as messageSetup } from './Message.test.helpers';
 
 jest.mock('@proton/components/containers/themes/ThemeProvider', () => {
@@ -31,13 +31,17 @@ describe('Message dark styles', () => {
 
         minimalCache();
 
-        initMessage(message);
-
-        const { container } = await messageSetup({}, false, {
-            preloadedState: {
-                features: getFeatureFlags([[FeatureCode.DarkStylesInBody, true]]),
-            },
-        });
+        const { store, container, rerender } = await messageSetup(
+            message,
+            {},
+            {
+                preloadedState: {
+                    features: getFeatureFlags([[FeatureCode.DarkStylesInBody, true]]),
+                },
+            }
+        );
+        initMessage(store, message);
+        await rerender();
         const iframe = await getIframeRootDiv(container);
 
         await waitFor(() => {

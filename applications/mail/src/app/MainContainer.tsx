@@ -1,5 +1,4 @@
 import { FunctionComponent, useEffect, useRef } from 'react';
-import { Provider as ReduxProvider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
 import { FeatureCode, ModalsChildren, useActiveBreakpoint, useFeatures } from '@proton/components';
@@ -15,10 +14,8 @@ import PageContainer from './containers/PageContainer';
 import ChecklistsProvider from './containers/onboardingChecklist/provider/ChecklistsProvider';
 import { SimpleLoginExtensionProvider } from './hooks/simpleLogin/useSimpleLoginExtension';
 import { MailContentRefProvider } from './hooks/useClickMailContent';
-import { store, useSetReduxThunkExtraArgs } from './logic/store';
 
 const MainContainer: FunctionComponent = () => {
-    useSetReduxThunkExtraArgs();
     const breakpoints = useActiveBreakpoint();
     const mailContentRef = useRef<HTMLDivElement>(null);
     const { getFeature } = useFeatures([
@@ -64,29 +61,27 @@ const MainContainer: FunctionComponent = () => {
     return (
         <QuickSettingsRemindersProvider>
             <DrawerThemeInjector />
-            <ReduxProvider store={store}>
-                <EncryptedSearchProvider>
-                    <SimpleLoginExtensionProvider>
-                        <MailContentRefProvider mailContentRef={mailContentRef}>
-                            <ChecklistsProvider>
-                                <ComposerContainer breakpoints={breakpoints}>
-                                    <CheckAllRefProvider>
-                                        <ModalsChildren />
-                                        <Switch>
-                                            <Route
-                                                path={MAIN_ROUTE_PATH}
-                                                render={() => (
-                                                    <PageContainer ref={mailContentRef} breakpoints={breakpoints} />
-                                                )}
-                                            />
-                                        </Switch>
-                                    </CheckAllRefProvider>
-                                </ComposerContainer>
-                            </ChecklistsProvider>
-                        </MailContentRefProvider>
-                    </SimpleLoginExtensionProvider>
-                </EncryptedSearchProvider>
-            </ReduxProvider>
+            <EncryptedSearchProvider>
+                <SimpleLoginExtensionProvider>
+                    <MailContentRefProvider mailContentRef={mailContentRef}>
+                        <ChecklistsProvider>
+                            <ComposerContainer breakpoints={breakpoints}>
+                                <CheckAllRefProvider>
+                                    <ModalsChildren />
+                                    <Switch>
+                                        <Route
+                                            path={MAIN_ROUTE_PATH}
+                                            render={() => (
+                                                <PageContainer ref={mailContentRef} breakpoints={breakpoints} />
+                                            )}
+                                        />
+                                    </Switch>
+                                </CheckAllRefProvider>
+                            </ComposerContainer>
+                        </ChecklistsProvider>
+                    </MailContentRefProvider>
+                </SimpleLoginExtensionProvider>
+            </EncryptedSearchProvider>
         </QuickSettingsRemindersProvider>
     );
 };

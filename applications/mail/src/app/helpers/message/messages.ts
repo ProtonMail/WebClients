@@ -12,7 +12,7 @@ import {
     MessageStateWithData,
     MessageWithOptionalBody,
     PartialMessageState,
-} from '../../logic/messages/messagesTypes';
+} from '../../store/messages/messagesTypes';
 import { getContent, setContent } from './messageContent';
 import { getEmbeddedImages } from './messageImages';
 

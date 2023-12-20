@@ -2,7 +2,7 @@ import { getMessage } from '@proton/shared/lib/api/messages';
 import { Api } from '@proton/shared/lib/interfaces';
 import { GetMessageResponse } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { MessageState, MessageStateWithDataFull } from '../../logic/messages/messagesTypes';
+import { MessageState, MessageStateWithDataFull } from '../../store/messages/messagesTypes';
 
 export const loadMessage = async (message: MessageState, api: Api): Promise<MessageStateWithDataFull> => {
     const messageID = message.data?.ID;

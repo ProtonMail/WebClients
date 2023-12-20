@@ -3,12 +3,13 @@ import { Redirect } from 'react-router-dom';
 
 import { Loader, useApi } from '@proton/components';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import { EO_REDIRECT_PATH, LOAD_RETRY_COUNT } from '../../constants';
 import { useInitializeEOMessage } from '../../hooks/eo/useInitializeEOMessage';
 import { useGetEODecryptedToken, useGetEOPassword } from '../../hooks/eo/useLoadEOMessage';
-import { loadEOMessage } from '../../logic/eo/eoActions';
-import { MessageState } from '../../logic/messages/messagesTypes';
-import { useAppDispatch } from '../../logic/store';
+import { loadEOMessage } from '../../store/eo/eoActions';
+import { MessageState } from '../../store/messages/messagesTypes';
 
 interface Props {
     id?: string;
@@ -19,7 +20,7 @@ interface Props {
 }
 
 const EORedirect = ({ id, isStoreInitialized, messageState, children, setSessionStorage }: Props) => {
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const api = useApi();
 
     const getPassword = useGetEOPassword();

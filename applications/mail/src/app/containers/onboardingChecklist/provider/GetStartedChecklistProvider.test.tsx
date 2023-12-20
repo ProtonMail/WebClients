@@ -99,7 +99,7 @@ describe('GetStartedChecklistProvider', () => {
             }
         });
 
-        const { result } = await renderHook(() => useGetStartedChecklist());
+        const { result } = await renderHook({ useCallback: () => useGetStartedChecklist() });
         const { isUserPaid, loading, isChecklistFinished, userWasRewarded, items, displayState } = result.current;
         expect({ isUserPaid, loading, isChecklistFinished, userWasRewarded, items, displayState }).toStrictEqual({
             isUserPaid: false,
@@ -136,7 +136,7 @@ describe('GetStartedChecklistProvider', () => {
             }
         });
 
-        const { result } = await renderHook(() => useGetStartedChecklist());
+        const { result } = await renderHook({ useCallback: () => useGetStartedChecklist() });
         const { isUserPaid, loading, isChecklistFinished, userWasRewarded, items, displayState } = result.current;
         expect({ isUserPaid, loading, isChecklistFinished, userWasRewarded, items, displayState }).toStrictEqual({
             isUserPaid: true,
@@ -171,7 +171,7 @@ describe('GetStartedChecklistProvider', () => {
             }
         });
 
-        const { result } = await renderHook(() => useGetStartedChecklist());
+        const { result } = await renderHook({ useCallback: () => useGetStartedChecklist() });
         const { isUserPaid, loading, isChecklistFinished, userWasRewarded, items, displayState } = result.current;
         expect({
             isUserPaid,

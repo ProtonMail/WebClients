@@ -1,18 +1,13 @@
 import { c } from 'ttag';
 
-
-
 import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 
-
-
-import { MessageState } from '../../../logic/messages/messagesTypes';
 import { MapStatusIcons } from '../../../models/crypto';
+import { MessageState } from '../../../store/messages/messagesTypes';
 import EORecipientsList from '../../eo/message/recipients/EORecipientsList';
 import MailRecipientList from './MailRecipientList';
 import RecipientItem from './RecipientItem';
 import RecipientType from './RecipientType';
-
 
 interface Props {
     message: MessageState;

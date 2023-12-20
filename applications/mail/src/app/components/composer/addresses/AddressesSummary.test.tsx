@@ -6,9 +6,8 @@ import noop from '@proton/utils/noop';
 
 import { getRecipientLabel } from '../../../helpers/message/messageRecipients';
 import { clearAll, render } from '../../../helpers/test/helper';
-import { refresh } from '../../../logic/contacts/contactsActions';
-import { store } from '../../../logic/store';
 import { RecipientType } from '../../../models/address';
+import { refresh } from '../../../store/contacts/contactsActions';
 import { prepareMessage } from '../tests/Composer.test.helpers';
 import AddressesSummary from './AddressesSummary';
 
@@ -30,41 +29,62 @@ const group = { Name: 'GroupName', Path: 'GroupPath' } as ContactGroup;
 
 describe('AddressesSummary', () => {
     beforeEach(clearAll);
-    beforeEach(() => {
-        store.dispatch(refresh({ contacts: [], contactGroups: [group] }));
-    });
     beforeAll(clearAll);
+    const composerID = 'composer-test-id';
 
     it('should render a recipient', async () => {
-        const { composerID } = prepareMessage({
-            data: {
-                ToList: [recipient],
+        await render(<AddressesSummary {...props} composerID={composerID} />, {
+            onStore: (store) => {
+                prepareMessage(
+                    store,
+                    {
+                        data: {
+                            ToList: [recipient],
+                        },
+                    },
+                    composerID
+                );
+                store.dispatch(refresh({ contacts: [], contactGroups: [group] }));
             },
         });
-
-        await render(<AddressesSummary {...props} composerID={composerID} />);
         screen.getByText(recipientLabel);
     });
 
     it('should render a group', async () => {
-        const { composerID } = prepareMessage({
-            data: {
-                ToList: [recipientGroup],
+        await render(<AddressesSummary {...props} composerID={composerID} />, {
+            onStore: (store) => {
+                prepareMessage(
+                    store,
+                    {
+                        data: {
+                            ToList: [recipientGroup],
+                        },
+                    },
+                    composerID
+                );
+
+                store.dispatch(refresh({ contacts: [], contactGroups: [group] }));
             },
         });
-
-        await render(<AddressesSummary {...props} composerID={composerID} />);
         screen.getByText(group.Name, { exact: false });
     });
 
     it('should render a recipient and a group', async () => {
-        const { composerID } = prepareMessage({
-            data: {
-                ToList: [recipient, recipientGroup],
+        await render(<AddressesSummary {...props} composerID={composerID} />, {
+            onStore: (store) => {
+                prepareMessage(
+                    store,
+                    {
+                        data: {
+                            ToList: [recipient, recipientGroup],
+                        },
+                    },
+                    composerID
+                );
+                store.dispatch(refresh({ contacts: [], contactGroups: [group] }));
             },
         });
 
-        await render(<AddressesSummary {...props} composerID={composerID} />);
         screen.getByText(recipientLabel);
         screen.getByText(group.Name, { exact: false });
     });

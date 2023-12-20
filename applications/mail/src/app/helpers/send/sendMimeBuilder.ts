@@ -7,7 +7,7 @@ import { Api } from '@proton/shared/lib/interfaces';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { getAttachments, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 
-import { MessageEmbeddedImage, MessageImages, MessageKeys, MessageState } from '../../logic/messages/messagesTypes';
+import { MessageEmbeddedImage, MessageImages, MessageKeys, MessageState } from '../../store/messages/messagesTypes';
 import { Download, formatDownload } from '../attachment/attachmentDownloader';
 import { getPlainText } from '../message/messageContent';
 import { readContentIDandLocation } from '../message/messageEmbeddeds';

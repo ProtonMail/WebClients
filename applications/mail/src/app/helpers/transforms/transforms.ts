@@ -10,7 +10,7 @@ import {
     MessageImage,
     MessageRemoteImage,
     MessageState,
-} from '../../logic/messages/messagesTypes';
+} from '../../store/messages/messagesTypes';
 import { transformBase } from './transformBase';
 import { transformEmbedded } from './transformEmbedded';
 import { attachBase64, transformEscape } from './transformEscape';

@@ -1,5 +1,3 @@
-import { useStore } from 'react-redux';
-
 import { useHandler } from '@proton/components';
 import {
     conversationCountsActions,
@@ -9,7 +7,7 @@ import {
 } from '@proton/mail';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 
-import { useMailStore } from 'proton-mail/store/hooks';
+import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 
 import { replaceCounter } from '../../helpers/counter';
 import { hasLabel } from '../../helpers/elements';
@@ -17,24 +15,22 @@ import {
     optimisticDelete as optimisticDeleteConversationAction,
     optimisticDeleteConversationMessages as optimisticDeleteConversationMessagesAction,
     optimisticRestore as optimisticRestoreConversationsAction,
-} from '../../logic/conversations/conversationsActions';
-import { ConversationState } from '../../logic/conversations/conversationsTypes';
+} from '../../store/conversations/conversationsActions';
+import { ConversationState } from '../../store/conversations/conversationsTypes';
 import {
     optimisticEmptyLabel as optimisticEmptyLabelElements,
     optimisticRestoreEmptyLabel as optimisticRestoreEmptyLabelElements,
-} from '../../logic/elements/elementsActions';
-import { MessageState } from '../../logic/messages/messagesTypes';
+} from '../../store/elements/elementsActions';
+import { MessageState } from '../../store/messages/messagesTypes';
 import {
     optimisticEmptyLabel as optimisticEmptyLabelMessage,
     optimisticRestore as optimisticRestoreMessage,
-} from '../../logic/messages/optimistic/messagesOptimisticActions';
-import { RootState, useAppDispatch } from '../../logic/store';
+} from '../../store/messages/optimistic/messagesOptimisticActions';
 import { useGetAllConversations } from '../conversation/useConversation';
 
 export const useOptimisticEmptyLabel = () => {
     const mailStore = useMailStore();
-    const store = useStore<RootState>();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const getAllConversations = useGetAllConversations();
 
     return useHandler((labelID: string) => {
@@ -63,7 +59,7 @@ export const useOptimisticEmptyLabel = () => {
         });
 
         // Elements cache
-        const rollbackElements = Object.values(store.getState().elements.elements);
+        const rollbackElements = Object.values(mailStore.getState().elements.elements);
         dispatch(optimisticEmptyLabelElements());
 
         // Message counters
@@ -100,13 +96,15 @@ export const useOptimisticEmptyLabel = () => {
             dispatch(optimisticRestoreEmptyLabelElements({ elements: rollbackElements }));
             if (rollbackCounters.conversations) {
                 let { value: conversationCounters = [] } = selectConversationCounts(mailStore.getState());
-                store.dispatch(
+                mailStore.dispatch(
                     conversationCountsActions.set(replaceCounter(conversationCounters, rollbackCounters.conversations))
                 );
             }
             if (rollbackCounters.messages) {
                 let { value: messageCounters = [] } = selectMessageCounts(mailStore.getState());
-                store.dispatch(messageCountsActions.set(replaceCounter(messageCounters, rollbackCounters.messages)));
+                mailStore.dispatch(
+                    messageCountsActions.set(replaceCounter(messageCounters, rollbackCounters.messages))
+                );
             }
         };
     });

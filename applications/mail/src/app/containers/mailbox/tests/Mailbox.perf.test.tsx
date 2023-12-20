@@ -1,6 +1,6 @@
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 
-import { clearAll, getHistory } from '../../../helpers/test/helper';
+import { clearAll } from '../../../helpers/test/helper';
 import * as useStarModule from '../../../hooks/actions/useStar';
 import { getElements, sendEvent, setup } from './Mailbox.test.helpers';
 
@@ -25,7 +25,7 @@ describe('Mailbox performance loss check', () => {
         const SomeNonMatchingID = 'SomeNonMatchingID';
 
         const conversations = getElements(total);
-        const { getItems, store } = await setup({ conversations });
+        const { getItems, store, history } = await setup({ conversations });
         const items = getItems();
 
         expect(items.length).toBe(total);
@@ -38,7 +38,7 @@ describe('Mailbox performance loss check', () => {
                 { ID: SomeNonMatchingID, Action: EVENT_ACTIONS.CREATE, Conversation: { ID: SomeNonMatchingID } },
             ],
         });
-        getHistory().push('/elsewhere');
+        history.push('/elsewhere');
 
         // There will be a few more call but it has to be in limited amount
         expect(useStar.mock.calls.length).toBeLessThan(callsAfterInitialization + 6);

@@ -82,7 +82,6 @@ describe('ItemExpiration', () => {
                     expirationTime={expirationTime}
                     labelID={MAILBOX_LABEL_IDS.TRASH}
                 />,
-                false,
                 {
                     preloadedState: {
                         mailSettings: getModelState(mailSettings),
@@ -105,7 +104,6 @@ describe('ItemExpiration', () => {
                     element={getElement()}
                     expirationTime={expirationTime}
                 />,
-                false,
                 {
                     preloadedState: {
                         mailSettings: getModelState(mailSettings),
@@ -128,7 +126,6 @@ describe('ItemExpiration', () => {
                     element={getElement()}
                     expirationTime={expirationTime}
                 />,
-                false,
                 {
                     preloadedState: {
                         mailSettings: getModelState({
@@ -156,7 +153,6 @@ describe('ItemExpiration', () => {
                     element={getElement('message')}
                     expirationTime={expirationTime}
                 />,
-                false,
                 {
                     preloadedState: {
                         mailSettings: getModelState({

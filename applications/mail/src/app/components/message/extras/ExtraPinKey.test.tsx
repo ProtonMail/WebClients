@@ -18,7 +18,7 @@ import {
     tick,
 } from '../../../helpers/test/helper';
 import { message } from '../../../helpers/test/pinKeys';
-import { MessageVerification } from '../../../logic/messages/messagesTypes';
+import { MessageVerification } from '../../../store/messages/messagesTypes';
 import ExtraPinKey from './ExtraPinKey';
 
 const { SIGNED_AND_VALID, SIGNED_AND_INVALID, NOT_SIGNED, NOT_VERIFIED } = VERIFICATION_STATUS;
@@ -31,7 +31,7 @@ const setup = async (
 ) => {
     minimalCache();
 
-    const component = await render(<ExtraPinKey message={message} messageVerification={messageVerification} />, false, {
+    const component = await render(<ExtraPinKey message={message} messageVerification={messageVerification} />, {
         preloadedState: {
             addresses: getModelState(isOwnAddress ? [getCompleteAddress({ Email: 'sender@protonmail.com' })] : []),
             mailSettings: getModelState({

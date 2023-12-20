@@ -5,7 +5,7 @@ import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages
 
 import { MESSAGE_IFRAME_ROOT_ID } from '../../components/message/constants';
 import { MESSAGE_ACTIONS } from '../../constants';
-import { MessageState, PartialMessageState } from '../../logic/messages/messagesTypes';
+import { MessageState, PartialMessageState } from '../../store/messages/messagesTypes';
 import { findSender } from '../message/messageRecipients';
 import { toText } from '../parserHtml';
 import { textToHtml } from '../textToHtml';

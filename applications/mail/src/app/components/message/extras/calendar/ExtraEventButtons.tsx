@@ -4,7 +4,7 @@ import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
 import { InvitationModel, getDoNotDisplayButtons } from '../../../../helpers/calendar/invite';
 import { getCalendarEventLink } from '../../../../helpers/calendar/inviteLink';
-import { MessageState } from '../../../../logic/messages/messagesTypes';
+import { MessageState } from '../../../../store/messages/messagesTypes';
 import ExtraEventAlert from './ExtraEventAlert';
 import ExtraEventAttendeeButtons from './ExtraEventAttendeeButtons';
 import ExtraEventImportButton from './ExtraEventImportButton';

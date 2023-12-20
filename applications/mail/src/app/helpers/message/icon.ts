@@ -9,8 +9,8 @@ import { SIGNATURE_START, VERIFICATION_STATUS } from '@proton/shared/lib/mail/co
 import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import { getParsedHeadersFirstValue, hasProtonSender, inSigningPeriod } from '@proton/shared/lib/mail/messages';
 
-import { MessageState, MessageVerification, MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
 import { MapStatusIcons, STATUS_ICONS_FILLS, StatusIcon, X_PM_HEADERS } from '../../models/crypto';
+import { MessageState, MessageVerification, MessageWithOptionalBody } from '../../store/messages/messagesTypes';
 
 // The logic for determining the status icons can be found in Confluence under the title
 // Encryption status for outgoing and incoming email

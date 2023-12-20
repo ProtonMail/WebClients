@@ -19,7 +19,7 @@ import {
     waitForNotification,
 } from '../../../helpers/test/helper';
 import * as useSimpleLoginExtension from '../../../hooks/simpleLogin/useSimpleLoginExtension';
-import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
+import { MessageStateWithData } from '../../../store/messages/messagesTypes';
 import ExtraUnsubscribe from './ExtraUnsubscribe';
 
 loudRejection();
@@ -68,7 +68,7 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        await render(<ExtraUnsubscribe message={message.data} />, false, {
+        await render(<ExtraUnsubscribe message={message.data} />, {
             preloadedState: {
                 addresses: getModelState([getCompleteAddress({ Email: toAddress })]),
             },
@@ -117,7 +117,7 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        await render(<ExtraUnsubscribe message={message.data} />, false, {
+        await render(<ExtraUnsubscribe message={message.data} />, {
             preloadedState: {
                 addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
                 addressKeys: getAddressKeyCache(toAddressID, keys),
@@ -157,7 +157,7 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        await render(<ExtraUnsubscribe message={message.data} />, false, {
+        await render(<ExtraUnsubscribe message={message.data} />, {
             preloadedState: {
                 addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
             },
@@ -208,7 +208,7 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        await render(<ExtraUnsubscribe message={message.data} />, false, {
+        await render(<ExtraUnsubscribe message={message.data} />, {
             preloadedState: {
                 addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
                 features: getFeatureFlags([[FeatureCode.SLIntegration, true]]),
@@ -259,7 +259,7 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        await render(<ExtraUnsubscribe message={message.data} />, false, {
+        await render(<ExtraUnsubscribe message={message.data} />, {
             preloadedState: {
                 addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
                 features: getFeatureFlags([[FeatureCode.SLIntegration, true]]),
@@ -311,7 +311,7 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        await render(<ExtraUnsubscribe message={message.data} />, false, {
+        await render(<ExtraUnsubscribe message={message.data} />, {
             preloadedState: {
                 addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
                 features: getFeatureFlags([[FeatureCode.SLIntegration, true]]),
@@ -355,7 +355,7 @@ describe('Unsubscribe banner', () => {
             },
         }) as MessageStateWithData;
 
-        await render(<ExtraUnsubscribe message={message.data} />, false, {
+        await render(<ExtraUnsubscribe message={message.data} />, {
             preloadedState: {
                 addresses: getModelState([getCompleteAddress({ ID: toAddressID, Email: toAddress })]),
             },

@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 
 import { hasError } from '../../helpers/errors';
-import { ConversationErrors } from '../../logic/conversations/conversationsTypes';
+import { ConversationErrors } from '../../store/conversations/conversationsTypes';
 
 const getTranslations = (key: keyof ConversationErrors) => {
     switch (key) {

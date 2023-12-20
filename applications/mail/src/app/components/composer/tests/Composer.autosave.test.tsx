@@ -17,8 +17,7 @@ import {
     getCompleteAddress,
     waitForSpyCall,
 } from '../../../helpers/test/helper';
-import { store } from '../../../logic/store';
-import { AddressID, ID, fromAddress, prepareMessage, renderComposer, toAddress } from './Composer.test.helpers';
+import { AddressID, ID, fromAddress, renderComposer, toAddress } from './Composer.test.helpers';
 
 jest.setTimeout(20000);
 
@@ -71,26 +70,25 @@ describe('Composer autosave', () => {
     };
 
     const setup = async (resolved = true) => {
-        prepareMessage({
-            data: { ID: undefined, MIMEType: MIME_TYPES.DEFAULT },
-            messageDocument: { document: createDocument('test') },
-        });
-        const composerID = Object.keys(store.getState().composers.composers)[0];
-        const renderResult = await renderComposer(composerID, true, {
+        const { container, store, ...renderResult } = await renderComposer({
             preloadedState: {
                 addresses: getModelState([getCompleteAddress({ ID: AddressID, Email: fromAddress })]),
                 addressKeys: getAddressKeyCache(AddressID, fromKeys),
             },
+            message: {
+                data: { ID: undefined, MIMEType: MIME_TYPES.DEFAULT },
+                messageDocument: { document: createDocument('test') },
+            },
         });
 
-        triggerRoosterInput(renderResult.container); // Initial dummy Squire input
+        triggerRoosterInput(container); // Initial dummy Squire input
         const { spy: createSpy, resolve: createResolve } = asyncSpy(resolved);
         const { spy: updateSpy, resolve: updateResolve } = asyncSpy(resolved);
         const { spy: sendSpy, resolve: sendResolve } = asyncSpy(resolved);
         addApiMock(`mail/v4/messages`, createSpy, 'post');
         addApiMock(`mail/v4/messages/undefined`, updateSpy, 'put'); // Should be /ID
         addApiMock(`mail/v4/messages/${ID}`, sendSpy, 'post'); // Should be /ID
-        return { ...renderResult, createSpy, updateSpy, sendSpy, createResolve, updateResolve, sendResolve };
+        return { ...renderResult, container, createSpy, updateSpy, sendSpy, createResolve, updateResolve, sendResolve };
     };
 
     it('should wait 2s before saving a change', async () => {

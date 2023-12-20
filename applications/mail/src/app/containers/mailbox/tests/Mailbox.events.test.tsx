@@ -191,10 +191,13 @@ describe('Mailbox elements list reacting to events', () => {
 
         const { resolve } = addApiResolver('mail/v4/messages');
 
-        const { getAllByTestId, store } = await render(<MailboxContainer {...getProps({ search })} />, false, {
+        const { initialPath, ...props } = getProps({ search });
+
+        const { getAllByTestId, store } = await render(<MailboxContainer {...props} />, {
             preloadedState: {
                 messageCounts: getModelState([{ LabelID: labelID, Total: total }]),
             },
+            initialPath,
         });
         const getItems = () => getAllByTestId('message-item', { exact: false });
 
@@ -238,11 +241,13 @@ describe('Mailbox elements list reacting to events', () => {
 
         let { resolve } = addApiResolver('mail/v4/messages');
 
-        const { rerender, getAllByTestId } = await render(<MailboxContainer {...getProps({ search })} />, false, {
+        const { initialPath, ...props } = getProps({ search });
+        const { rerender, getAllByTestId, history } = await render(<MailboxContainer {...props} />, {
             preloadedState: {
                 conversationCounts: getModelState([]),
                 messageCounts: getModelState([{ LabelID: labelID, Total: total }]),
             },
+            initialPath,
         });
         const getItems = () => getAllByTestId('message-item', { exact: false });
 
@@ -257,8 +262,9 @@ describe('Mailbox elements list reacting to events', () => {
         expectElements(getItems, total, false);
 
         resolve = addApiResolver('mail/v4/messages').resolve;
-
-        await rerender(<MailboxContainer {...getProps({ search: { keyword: 'changed' } })} />);
+        const { initialPath: rerenderInitialPath, ...rerenderProps } = getProps({ search: { keyword: 'changed' } });
+        history.push(rerenderInitialPath);
+        await rerender(<MailboxContainer {...rerenderProps} />);
 
         // Params has changed, cache is reset
         expectElements(getItems, DEFAULT_PLACEHOLDERS_COUNT, true);

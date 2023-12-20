@@ -34,11 +34,12 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import { MAX_EXPIRATION_TIME } from '../../../constants';
 import { useExternalExpiration } from '../../../hooks/composer/useExternalExpiration';
-import { updateExpires } from '../../../logic/messages/draft/messagesDraftActions';
-import { MessageState } from '../../../logic/messages/messagesTypes';
-import { useAppDispatch } from '../../../logic/store';
+import { updateExpires } from '../../../store/messages/draft/messagesDraftActions';
+import { MessageState } from '../../../store/messages/messagesTypes';
 import { MessageChange } from '../Composer';
 import ComposerInnerModal from './ComposerInnerModal';
 import PasswordInnerModalForm from './PasswordInnerModalForm';
@@ -62,7 +63,7 @@ interface Props {
 }
 
 const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const { createNotification } = useNotifications();
     const [userSettings] = useUserSettings();
 

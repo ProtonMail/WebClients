@@ -7,7 +7,7 @@ import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 
 import { getAttachmentCounts } from '../../helpers/message/messages';
-import { MessageState } from '../../logic/messages/messagesTypes';
+import { MessageState } from '../../store/messages/messagesTypes';
 
 interface Props {
     message: MessageState;
