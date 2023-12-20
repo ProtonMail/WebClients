@@ -24,9 +24,10 @@ const ReadOnlyInputField: React.FC<ReadOnlyInputFieldProps> = ({ label, value }:
 
 interface Props {
     domain: Domain;
+    includeTimeInformation?: boolean;
 }
 
-const TXTSection = ({ domain }: Props) => {
+const TXTSection = ({ domain, includeTimeInformation }: Props) => {
     const boldDomainName = <b key={domain.ID}>{domain.DomainName}</b>;
 
     return (
@@ -35,6 +36,7 @@ const TXTSection = ({ domain }: Props) => {
                 {c('Info')
                     .jt`To allow the domain ${boldDomainName} to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.`}
             </div>
+            {includeTimeInformation && <div>{c('Info').t`This verification can take up to one hour`}</div>}
             <Href href="https://protonvpn.com/support/sso">{c('Link').t`Learn more`}</Href>
 
             <h3 className="text-semibold text-rg mt-4 mb-1">{c('Info').t`DNS TXT record`}</h3>

@@ -21,7 +21,7 @@ const TXTRecordModal = ({ domain, ...rest }: Props) => {
         <Modal size="large" {...rest}>
             <ModalHeader title={c('Info').t`Verify domain`} />
             <ModalContent>
-                <TXTSection domain={domain} />
+                <TXTSection domain={domain} includeTimeInformation />
             </ModalContent>
             <ModalFooter className="justify-end">
                 <Button color="norm" onClick={rest.onClose}>{c('Action').t`Done`}</Button>
