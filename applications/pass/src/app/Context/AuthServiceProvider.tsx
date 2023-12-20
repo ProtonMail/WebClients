@@ -144,7 +144,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
 
                 if (isTaggedBuild()) {
                     const { plan } = await getUserAccess(withAuthHeaders(UID, AccessToken, {}));
-                    if (plan.Type !== PlanType.plus) {
+                    if (plan.Type !== PlanType.plus || Boolean(plan.TrialEnd)) {
                         setNeedsUpgrade(true);
                         throw new Error(c('Error').t`Please upgrade to have early access to ${PASS_APP_NAME} web app`);
                     }
