@@ -6,6 +6,8 @@ import { c } from 'ttag';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useInviteContext } from '@proton/pass/components/Invite/InviteProvider';
 import { PendingShareAccessModal } from '@proton/pass/components/Spotlight/PendingShareAccessModal';
+import { PASS_EOY_PATH, PASS_UPGRADE_PATH } from '@proton/pass/constants';
+import { isEOY } from '@proton/pass/lib/onboarding/utils';
 import type { Callback, MaybeNull, OnboardingMessage } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
@@ -124,6 +126,7 @@ export const SpotlightProvider: FC = ({ children }) => {
                     state.message?.onClose?.();
                     setState((prev) => ({ ...prev, upselling: null }));
                 }}
+                upgradePath={isEOY() && state.upselling === 'early-access' ? PASS_EOY_PATH : PASS_UPGRADE_PATH}
             />
 
             <PendingShareAccessModal
