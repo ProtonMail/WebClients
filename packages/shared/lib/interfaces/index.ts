@@ -21,6 +21,7 @@ export * from './OrganizationKey';
 export * from './PendingInvitation';
 export * from './Referrals';
 export * from './SignedKeyList';
+export * from './SSO';
 export * from './Subscription';
 export * from './User';
 export * from './UserSettings';
