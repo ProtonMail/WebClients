@@ -63,29 +63,3 @@
 		visibility: hidden;
 	}
 }
-
-/*
- * ratio container (for responsive iframes/videos/etc.)
- */
-[class*='ratio-container-'] {
-	inline-size: 100%;
-	block-size: 0;
-	@extend .relative;
-}
-
-.ratio-container-square {
-	padding-block-start: 100%;
-}
-
-.ratio-container-16-9 {
-	padding-block-start: 56.25%;
-}
-
-.ratio-container-5-1 {
-	padding-block-start: 20%;
-}
-
-.inner-ratio-container {
-	position: absolute;
-	inset: 0;
-}

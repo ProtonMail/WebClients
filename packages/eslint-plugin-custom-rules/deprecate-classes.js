@@ -222,6 +222,18 @@ const deprecatedClassNames = [
         deprecatedClassName: 'no-scroll',
         suggestedClassName: 'overflow-hidden',
     },
+    {
+        deprecatedClassName: 'ratio-container-square',
+        suggestedClassName: 'ratio-square',
+    },
+    {
+        deprecatedClassName: 'ratio-container-16-9',
+        suggestedClassName: 'ratio-16/9',
+    },
+    {
+        deprecatedClassName: 'ratio-container-5-1',
+        suggestedClassName: 'ratio-5/1',
+    },
 ];
 
 module.exports = {
