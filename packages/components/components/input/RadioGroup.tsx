@@ -15,6 +15,7 @@ export interface RadioGroupProps<T> {
     value: T | undefined;
     className?: string;
     ariaDescribedBy?: string;
+    disableChange?: boolean;
 }
 
 const RadioGroup = <T extends string | number>({
@@ -24,6 +25,7 @@ const RadioGroup = <T extends string | number>({
     value,
     className,
     ariaDescribedBy,
+    disableChange,
 }: RadioGroupProps<T>) => {
     return (
         <>
@@ -31,7 +33,13 @@ const RadioGroup = <T extends string | number>({
                 <Radio
                     id={`${option.value}`}
                     key={option.value}
-                    onChange={() => onChange(option.value)}
+                    onChange={() => {
+                        if (disableChange) {
+                            return;
+                        }
+
+                        onChange(option.value);
+                    }}
                     checked={value === option.value}
                     name={name}
                     className={clsx('inline-flex children-self-center mr-8 mb-2', className)}
