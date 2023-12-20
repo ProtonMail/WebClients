@@ -3,7 +3,7 @@ import { format, getUnixTime, nextMonday, nextSaturday, set } from 'date-fns';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { Element } from '../models/element';
-import { getSnoozeDate, getSnoozeNotificationText, getSnoozeTimeFromElement, getSnoozeUnixTime } from './snoozehelpers';
+import { getSnoozeDate, getSnoozeNotificationText, getSnoozeTimeFromElement, getSnoozeUnixTime } from './snooze';
 
 describe('snooze helpers - getSnoozeUnixTime', () => {
     it('Should return tomorrow 9 when snooze duration is tomorrow', () => {

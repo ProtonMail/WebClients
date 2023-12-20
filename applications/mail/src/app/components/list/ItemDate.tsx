@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 
 import { formatDistanceToNow, formatFullDate, formatSimpleDate } from '../../helpers/date';
 import { getDate } from '../../helpers/elements';
+import { getSnoozeTimeFromElement, isElementReminded, isElementSnoozed } from '../../helpers/snooze';
 import { params } from '../../logic/elements/elementsSelectors';
-import { getSnoozeTimeFromElement, isElementReminded, isElementSnoozed } from '../../logic/snoozehelpers';
 import { Element } from '../../models/element';
 import ItemDateRender from './ItemDateRender';
 import ItemDateSnoozedMessage from './ItemDateSnoozedMessage';
