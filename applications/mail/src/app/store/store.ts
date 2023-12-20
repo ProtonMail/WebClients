@@ -4,6 +4,7 @@ import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedS
 
 import { start } from './listener';
 import { rootReducer } from './rootReducer';
+import { mailIgnoredActionPaths, mailIgnoredPaths } from './serializable';
 import { type MailThunkArguments, extraThunkArguments } from './thunk';
 
 export type MailState = ReturnType<typeof rootReducer>;
@@ -17,8 +18,9 @@ export const setupStore = ({ preloadedState }: { preloadedState?: Partial<MailSt
         middleware: (getDefaultMiddleware) =>
             getDefaultMiddleware({
                 serializableCheck: {
-                    ignoredActions: [...ignoredActions],
-                    ignoredPaths: [...ignoredPaths],
+                    ignoredActions,
+                    ignoredPaths: [...ignoredPaths, ...mailIgnoredPaths],
+                    ignoredActionPaths: mailIgnoredActionPaths,
                 },
                 thunk: { extraArgument: extraThunkArguments },
             }).prepend(listenerMiddleware.middleware),
@@ -45,9 +47,13 @@ export const setupStore = ({ preloadedState }: { preloadedState?: Partial<MailSt
 export const extendStore = (newThunkArguments: Partial<MailThunkArguments>) => {
     Object.assign(extraThunkArguments, newThunkArguments);
 };
-
 export type MailStore = ReturnType<typeof setupStore>;
 export type MailDispatch = MailStore['dispatch'];
 type ExtraArgument = typeof extraThunkArguments;
+export type MailThunkExtra = {
+    state: MailState;
+    dispatch: MailDispatch;
+    extra: ExtraArgument;
+};
 
 export type AppStartListening = TypedStartListening<MailState, MailDispatch, ExtraArgument>;

@@ -18,8 +18,7 @@ import {
     generateKeys,
     tick,
 } from '../../../helpers/test/helper';
-import { store } from '../../../logic/store';
-import { addressID, body, initMessage, messageID, setup, subject } from './Message.test.helpers';
+import { addressID, body, messageID, setup, subject } from './Message.test.helpers';
 
 const cid = 'cid';
 const attachment1 = {
@@ -65,9 +64,7 @@ describe('Message attachments', () => {
     afterEach(clearAll);
 
     it('should show attachments with their correct icon', async () => {
-        initMessage({ data: { NumAttachments, Attachments } });
-
-        const { getAllByTestId } = await setup();
+        const { getAllByTestId } = await setup({ data: { NumAttachments, Attachments } });
 
         const items = getAllByTestId('attachment-item');
 
@@ -85,9 +82,7 @@ describe('Message attachments', () => {
     });
 
     it('should show global size and counters', async () => {
-        initMessage({ data: { NumAttachments, Attachments }, messageImages });
-
-        const { getByTestId } = await setup();
+        const { getByTestId } = await setup({ data: { NumAttachments, Attachments }, messageImages });
 
         const header = getByTestId('attachment-list:header');
 
@@ -99,9 +94,7 @@ describe('Message attachments', () => {
     it('should open preview when clicking', async () => {
         window.URL.createObjectURL = jest.fn();
 
-        initMessage({ data: { NumAttachments, Attachments } });
-
-        const { getAllByTestId } = await setup();
+        const { getAllByTestId } = await setup({ data: { NumAttachments, Attachments } });
 
         const items = getAllByTestId('attachment-item');
         const itemButton = items[2].querySelectorAll('button')[1];
@@ -156,7 +149,7 @@ describe('NumAttachments from message initialization', () => {
             } as Message,
         }));
 
-        const { open } = await setup({ conversationMode: true });
+        const { store, open } = await setup(undefined, { conversationMode: true });
         await open();
 
         const messageFromCache = store.getState().messages[messageID];
@@ -185,7 +178,7 @@ describe('NumAttachments from message initialization', () => {
             } as Message,
         }));
 
-        const { open } = await setup({ conversationMode: true });
+        const { store, open } = await setup(undefined, { conversationMode: true });
         await open();
 
         const messageFromCache = store.getState().messages[messageID];

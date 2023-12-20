@@ -10,9 +10,8 @@ import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpo
 import { addApiMock } from '../../../helpers/test/api';
 import { minimalCache } from '../../../helpers/test/cache';
 import { render } from '../../../helpers/test/render';
-import { MessageState } from '../../../logic/messages/messagesTypes';
-import { initialize } from '../../../logic/messages/read/messagesReadActions';
-import { store } from '../../../logic/store';
+import { MessageState } from '../../../store/messages/messagesTypes';
+import { initialize } from '../../../store/messages/read/messagesReadActions';
 import { messageID } from '../../message/tests/Message.test.helpers';
 import MoveDropdown from '../MoveDropdown';
 
@@ -48,9 +47,7 @@ describe('MoveDropdown', () => {
 
         const message = getMessage(labelIDs);
 
-        store.dispatch(initialize(message));
-
-        const result = await render(<MoveDropdown {...props} />, false, {
+        const result = await render(<MoveDropdown {...props} />, {
             preloadedState: {
                 categories: getModelState([
                     {
@@ -70,6 +67,7 @@ describe('MoveDropdown', () => {
                 ]),
             },
         });
+        result.store.dispatch(initialize(message));
         return result;
     };
 

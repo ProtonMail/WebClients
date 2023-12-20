@@ -4,6 +4,8 @@ import loudRejection from 'loud-rejection';
 
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 
+import { PartialMessageState } from 'proton-mail/store/messages/messagesTypes';
+
 import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
     addApiKeys,
@@ -15,7 +17,6 @@ import {
     tick,
     waitForNotification
 } from '../../../helpers/test/helper';
-import { store } from '../../../logic/store';
 import Composer from '../Composer';
 import { AddressID, ID, fromAddress, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
 
@@ -35,17 +36,20 @@ describe('Composer outside encryption', () => {
         await releaseCryptoProxy();
     });
 
-    const setup = async () => {
+    const composerID = 'composer-test-id';
+
+    const setup = async (message: PartialMessageState) => {
         addApiMock(`mail/v4/messages/${ID}`, () => ({ Message: {} }), 'put');
 
         const fromKeys = await generateKeys('me', fromAddress);
         addApiKeys(false, toAddress, []);
 
-        const composerID = Object.keys(store.getState().composers.composers)[0];
-
-        const result = await render(<Composer {...props} composerID={composerID} />, true, {
+        const result = await render(<Composer {...props} composerID={composerID} />, {
             preloadedState: {
                 addressKeys: getAddressKeyCache(AddressID, fromKeys),
+            },
+            onStore: (store) => {
+                prepareMessage(store, message, composerID);
             },
         });
 
@@ -53,13 +57,11 @@ describe('Composer outside encryption', () => {
     };
 
     it('should set outside encryption and display the expiration banner', async () => {
-        prepareMessage({
+        const { getByTestId, getByText, container } = await setup({
             localID: ID,
             data: { MIMEType: 'text/plain' as MIME_TYPES },
             messageDocument: { plainText: '' },
         });
-
-        const { getByTestId, getByText, container } = await setup();
 
         const expirationButton = getByTestId('composer:password-button');
         fireEvent.click(expirationButton);
@@ -84,7 +86,8 @@ describe('Composer outside encryption', () => {
 
     it('should set outside encryption with a default expiration time', async () => {
         // Message will expire tomorrow
-        prepareMessage({
+
+        const { getByTestId, getByText } = await setup({
             localID: ID,
             data: { MIMEType: 'text/plain' as MIME_TYPES },
             messageDocument: { plainText: '' },
@@ -92,8 +95,6 @@ describe('Composer outside encryption', () => {
                 expiresIn: addHours(new Date(), 25), // expires in 25 hours
             },
         });
-
-        const { getByTestId, getByText } = await setup();
 
         const expirationButton = getByTestId('composer:password-button');
         fireEvent.click(expirationButton);
@@ -104,13 +105,11 @@ describe('Composer outside encryption', () => {
     });
 
     it('should be able to edit encryption', async () => {
-        prepareMessage({
+        const { getByTestId, getByText, container } = await setup({
             localID: ID,
             data: { MIMEType: 'text/plain' as MIME_TYPES },
             messageDocument: { plainText: '' },
         });
-
-        const { getByTestId, getByText, container } = await setup();
 
         const expirationButton = getByTestId('composer:password-button');
         fireEvent.click(expirationButton);
@@ -147,13 +146,11 @@ describe('Composer outside encryption', () => {
     });
 
     it('should be able to remove encryption', async () => {
-        prepareMessage({
+        const { getByTestId, getByText, queryByText, container } = await setup({
             localID: ID,
             data: { MIMEType: 'text/plain' as MIME_TYPES },
             messageDocument: { plainText: '' },
         });
-
-        const { getByTestId, getByText, queryByText, container } = await setup();
 
         const expirationButton = getByTestId('composer:password-button');
         fireEvent.click(expirationButton);

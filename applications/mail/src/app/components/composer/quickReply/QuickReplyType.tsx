@@ -9,7 +9,7 @@ import { useAddresses } from '@proton/components/hooks';
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { getRecipients, getReplyRecipientListAsString } from '../../../helpers/message/messageRecipients';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageState } from '../../../store/messages/messagesTypes';
 import { MessageChange } from '../Composer';
 
 const { REPLY, REPLY_ALL } = MESSAGE_ACTIONS;

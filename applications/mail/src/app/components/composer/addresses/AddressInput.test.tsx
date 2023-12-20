@@ -3,10 +3,9 @@ import { ComponentProps, useRef } from 'react';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { getModelState } from '@proton/account/test';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
-import { addToCache } from '@proton/testing/index';
 
-import { minimalCache } from 'proton-mail/helpers/test/cache';
 import { render } from 'proton-mail/helpers/test/render';
 
 import AddressInput from './AddressInput';
@@ -21,8 +20,8 @@ const AddressInputWrapper = (props: AddressInputWrapperProps) => {
         </div>
     );
 };
-const setup = async (props: AddressInputWrapperProps) => {
-    await render(<AddressInputWrapper {...props} />, false);
+const setup = async (props: AddressInputWrapperProps, options: Parameters<typeof render>['1']) => {
+    await render(<AddressInputWrapper {...props} />, options);
 };
 
 describe('AddressInput', () => {
@@ -43,10 +42,7 @@ describe('AddressInput', () => {
             },
         ];
 
-        minimalCache();
-        addToCache('ContactEmails', contact);
-
-        await setup({ value: '', onChange: jest.fn() });
+        await setup({ value: '', onChange: jest.fn() }, { preloadedState: { contactEmails: getModelState(contact) } });
 
         const input = screen.getByTestId('sender');
 

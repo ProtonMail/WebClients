@@ -71,38 +71,46 @@ describe('Composer verify sender', () => {
         clearAll();
     });
 
-    const setup = (sender: Recipient) => {
+    const setup = async (sender: Recipient) => {
         minimalCache();
 
         addApiKeys(false, toAddress, []);
         addApiKeys(false, sender.Address, []);
 
-        const { composerID } = prepareMessage({
-            localID: ID,
-            data: {
-                ID: messageID,
-                MIMEType: MIME_TYPES.PLAINTEXT,
-                Sender: sender,
-                Flags: 12,
-            },
-            draftFlags: { isSentDraft: false, openDraftFromUndo: false },
-            messageDocument: { plainText: '' },
-        });
-
-        return composerID;
-    };
-
-    it('should display the sender address if the address is valid', async () => {
-        const sender = { Name: name1, Address: address1 } as Recipient;
-        const composerID = setup(sender);
-
-        const { findByTestId } = await render(<Composer {...props} composerID={composerID} />, false, {
+        const composerID = 'composer-test-id';
+        const { store, ...rest } = await render(<></>, {
             preloadedState: {
                 user: getModelState(user),
                 addresses: getModelState(addresses),
                 addressKeys: getAddressKeyCache(addressID1, fromKeys),
             },
+            onStore: (store) => {
+                prepareMessage(
+                    store,
+                    {
+                        localID: ID,
+                        data: {
+                            ID: messageID,
+                            MIMEType: MIME_TYPES.PLAINTEXT,
+                            Sender: sender,
+                            Flags: 12,
+                        },
+                        draftFlags: { isSentDraft: false, openDraftFromUndo: false },
+                        messageDocument: { plainText: '' },
+                    },
+                    composerID
+                );
+            },
         });
+
+        return { composerID, store, ...rest };
+    };
+
+    it('should display the sender address if the address is valid', async () => {
+        const sender = { Name: name1, Address: address1 } as Recipient;
+        const { composerID, findByTestId, rerender } = await setup(sender);
+
+        await rerender(<Composer {...props} composerID={composerID} />);
 
         const fromField = await findByTestId('composer:from');
         getByTextDefault(fromField, address1);
@@ -112,19 +120,9 @@ describe('Composer verify sender', () => {
         addApiMock(`mail/v4/messages/${messageID}`, () => ({}));
 
         const sender = { Name: name2, Address: address2 } as Recipient;
-        const composerID = setup(sender);
+        const { composerID, findByTestId, getByText, container, rerender } = await setup(sender);
 
-        const { findByTestId, getByText, container } = await render(
-            <Composer {...props} composerID={composerID} />,
-            false,
-            {
-                preloadedState: {
-                    user: getModelState(user),
-                    addresses: getModelState(addresses),
-                    addressKeys: getAddressKeyCache(addressID1, fromKeys),
-                },
-            }
-        );
+        await rerender(<Composer {...props} composerID={composerID} />);
 
         await saveNow(container);
 
@@ -140,19 +138,9 @@ describe('Composer verify sender', () => {
         addApiMock(`mail/v4/messages/${messageID}`, () => ({}));
 
         const sender = { Name: 'Address 3', Address: 'address3@protonmail.com' } as Recipient;
-        const composerID = setup(sender);
+        const { rerender, composerID, findByTestId, container, getByText } = await setup(sender);
 
-        const { findByTestId, container, getByText } = await render(
-            <Composer {...props} composerID={composerID} />,
-            false,
-            {
-                preloadedState: {
-                    user: getModelState(user),
-                    addresses: getModelState(addresses),
-                    addressKeys: getAddressKeyCache(addressID1, fromKeys),
-                },
-            }
-        );
+        await rerender(<Composer {...props} composerID={composerID} />);
 
         await saveNow(container);
 

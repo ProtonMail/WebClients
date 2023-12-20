@@ -5,7 +5,6 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { clearAll, createDocument, waitForSpyCall } from '../../../helpers/test/helper';
 import { render } from '../../../helpers/test/render';
 import * as useSaveDraft from '../../../hooks/message/useSaveDraft';
-import { store } from '../../../logic/store';
 import Composer from '../Composer';
 import { ID, prepareMessage, props } from './Composer.test.helpers';
 
@@ -46,23 +45,29 @@ describe('Composer switch plaintext <-> html', () => {
     beforeEach(clearAll);
     afterAll(clearAll);
 
+    const composerID = 'composer-test-id';
+
     it('should switch from plaintext to html content without loosing content', async () => {
         const content = 'content';
 
-        prepareMessage({
-            localID: ID,
-            data: {
-                MIMEType: 'text/plain' as MIME_TYPES,
-                ToList: [],
-            },
-            messageDocument: {
-                plainText: content,
+        const { findByTestId } = await render(<Composer {...props} composerID={composerID} />, {
+            onStore: (store) => {
+                prepareMessage(
+                    store,
+                    {
+                        localID: ID,
+                        data: {
+                            MIMEType: 'text/plain' as MIME_TYPES,
+                            ToList: [],
+                        },
+                        messageDocument: {
+                            plainText: content,
+                        },
+                    },
+                    composerID
+                );
             },
         });
-
-        const composerID = Object.keys(store.getState().composers.composers)[0];
-
-        const { findByTestId } = await render(<Composer {...props} composerID={composerID} />);
 
         const moreOptionsButton = await findByTestId('composer:more-options-button');
         fireEvent.click(moreOptionsButton);
@@ -88,20 +93,24 @@ describe('Composer switch plaintext <-> html', () => {
           <div>content line 2<br><div>
         `;
 
-        prepareMessage({
-            localID: ID,
-            data: {
-                MIMEType: 'text/html' as MIME_TYPES,
-                ToList: [],
-            },
-            messageDocument: {
-                document: createDocument(content),
+        const { findByTestId } = await render(<Composer {...props} composerID={composerID} />, {
+            onStore: (store) => {
+                prepareMessage(
+                    store,
+                    {
+                        localID: ID,
+                        data: {
+                            MIMEType: 'text/html' as MIME_TYPES,
+                            ToList: [],
+                        },
+                        messageDocument: {
+                            document: createDocument(content),
+                        },
+                    },
+                    composerID
+                );
             },
         });
-
-        const composerID = Object.keys(store.getState().composers.composers)[0];
-
-        const { findByTestId } = await render(<Composer {...props} composerID={composerID} />);
 
         const moreOptionsButton = await findByTestId('composer:more-options-button');
         fireEvent.click(moreOptionsButton);

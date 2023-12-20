@@ -78,7 +78,7 @@ import unary from '@proton/utils/unary';
 
 import { hasIcalExtension } from 'proton-mail/helpers/attachment/attachment';
 
-import { MessageStateWithData, MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
+import { MessageStateWithData, MessageWithOptionalBody } from '../../store/messages/messagesTypes';
 import { FetchAllEventsByUID } from './inviteApi';
 
 export enum EVENT_TIME_STATUS {

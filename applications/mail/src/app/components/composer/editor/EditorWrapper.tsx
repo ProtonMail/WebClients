@@ -19,7 +19,7 @@ import {
     removeEmbeddedHTML,
 } from '../../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages } from '../../../helpers/message/messageImages';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageState } from '../../../store/messages/messagesTypes';
 import { MessageChange } from '../Composer';
 
 export interface ExternalEditorActions {

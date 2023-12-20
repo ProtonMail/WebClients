@@ -16,6 +16,8 @@ import conversationSvg from '@proton/styles/assets/img/illustrations/selected-em
 
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
+import { useMailSelector } from 'proton-mail/store/hooks';
+
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isSearch as testIsSearch } from '../../helpers/elements';
 import { getLabelName, isCustomLabel as testIsCustomLabel } from '../../helpers/labels';
@@ -24,9 +26,8 @@ import { extractSearchParameters } from '../../helpers/mailboxUrl';
 import { useSimpleLoginExtension } from '../../hooks/simpleLogin/useSimpleLoginExtension';
 import { useSimpleLoginTelemetry } from '../../hooks/simpleLogin/useSimpleLoginTelemetry';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
-import { total as totalSelector } from '../../logic/elements/elementsSelectors';
-import { useAppSelector } from '../../logic/store';
 import { SearchParameters } from '../../models/tools';
+import { total as totalSelector } from '../../store/elements/elementsSelectors';
 import EnableEncryptedSearchModal from '../header/search/AdvancedSearchFields/EnableEncryptedSearchModal';
 import SimpleLoginPlaceholder from './SimpleLoginPlaceholder';
 
@@ -55,7 +56,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     const { selectAll, setSelectAll, getBannerTextWithLocation } = useSelectAll({ labelID });
 
     // We display 50 elements maximum in the list. To know how much results are matching a search, we store it in Redux, in elements.total
-    const elementsFoundCount = useAppSelector(totalSelector) || 0;
+    const elementsFoundCount = useMailSelector(totalSelector) || 0;
 
     const [labels] = useLabels();
     const [folders] = useFolders();

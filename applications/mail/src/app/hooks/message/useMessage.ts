@@ -1,27 +1,28 @@
 import { useCallback, useEffect, useState } from 'react';
-import { useSelector, useStore } from 'react-redux';
 
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { allMessages, localID, messageByID } from '../../logic/messages/messagesSelectors';
-import { MessageState } from '../../logic/messages/messagesTypes';
-import { initialize } from '../../logic/messages/read/messagesReadActions';
-import { RootState, useAppDispatch } from '../../logic/store';
+import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/store/hooks';
+
+import { allMessages, localID, messageByID } from '../../store/messages/messagesSelectors';
+import { MessageState } from '../../store/messages/messagesTypes';
+import { initialize } from '../../store/messages/read/messagesReadActions';
+import { MailState } from '../../store/store';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetElementsFromIDs } from '../mailbox/useElements';
 
 export const useGetLocalID = () => {
-    const store = useStore<RootState>();
+    const store = useMailStore();
     return useCallback((ID: string) => localID(store.getState(), { ID }), []);
 };
 
 export const useGetMessage = () => {
-    const store = useStore<RootState>();
+    const store = useMailStore();
     return useCallback((ID: string) => messageByID(store.getState(), { ID }), []);
 };
 
 export const useGetAllMessages = () => {
-    const store = useStore<RootState>();
+    const store = useMailStore();
     return useCallback(() => {
         return allMessages(store.getState());
     }, []);
@@ -38,13 +39,13 @@ interface UseMessage {
 }
 
 export const useMessage: UseMessage = (inputLocalID: string, conversationID = '') => {
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const getLocalID = useGetLocalID();
     const getElementsFromIDs = useGetElementsFromIDs();
     const getMessage = useGetMessage();
     const getConversationFromState = useGetConversation();
 
-    const messageState = useSelector((state: RootState) => messageByID(state, { ID: inputLocalID }));
+    const messageState = useMailSelector((state: MailState) => messageByID(state, { ID: inputLocalID }));
 
     const initMessage = (canDispatch = true) => {
         const localID = getLocalID(inputLocalID);

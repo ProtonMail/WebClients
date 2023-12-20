@@ -9,7 +9,7 @@ import {
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { MessageEmbeddedImage, MessageImage, MessageImages } from '../../logic/messages/messagesTypes';
+import { MessageEmbeddedImage, MessageImage, MessageImages } from '../../store/messages/messagesTypes';
 import { arrayToBase64, base64ToArray } from '../base64';
 import { readContentIDandLocation } from '../message/messageEmbeddeds';
 import { GeneratedKey, encryptSessionKey, generateSessionKey } from './crypto';

@@ -6,12 +6,13 @@ import { ContactSelectorProps } from '@proton/components/containers/contacts/sel
 import { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
-import { selectComposer } from '../../../logic/composers/composerSelectors';
-import { composerActions } from '../../../logic/composers/composersSlice';
-import { MessageState } from '../../../logic/messages/messagesTypes';
-import { useAppDispatch, useAppSelector } from '../../../logic/store';
 import { RecipientType } from '../../../models/address';
+import { selectComposer } from '../../../store/composers/composerSelectors';
+import { composerActions } from '../../../store/composers/composersSlice';
+import { MessageState } from '../../../store/messages/messagesTypes';
 import AddressesEditor from './AddressesEditor';
 import AddressesSummary from './AddressesSummary';
 
@@ -28,8 +29,8 @@ const Addresses = ({ messageSendInfo, disabled, addressesBlurRef, addressesFocus
     const toFocusRef = useRef<() => void>(noop);
     const ccFocusRef = useRef<() => void>(noop);
     const bccFocusRef = useRef<() => void>(noop);
-    const composer = useAppSelector((store) => selectComposer(store, composerID));
-    const dispatch = useAppDispatch();
+    const composer = useMailSelector((store) => selectComposer(store, composerID));
+    const dispatch = useMailDispatch();
 
     const inputFocusRefs = {
         to: toFocusRef,

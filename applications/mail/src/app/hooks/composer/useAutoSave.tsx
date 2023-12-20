@@ -4,7 +4,7 @@ import { useHandler } from '@proton/components';
 import { Cancellable } from '@proton/components/hooks/useHandler';
 
 import { isDecryptionError, isNetworkError } from '../../helpers/errors';
-import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
 import { useDeleteDraft, useSaveDraft } from '../message/useSaveDraft';
 import { usePromise } from '../usePromise';
 

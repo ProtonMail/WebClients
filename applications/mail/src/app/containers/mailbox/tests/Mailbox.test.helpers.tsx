@@ -15,7 +15,7 @@ import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpo
 import range from '@proton/utils/range';
 
 import { filterToString, keywordToString, sortToString } from '../../../helpers/mailboxUrl';
-import { addApiMock, getHistory, minimalCache, render, triggerEvent } from '../../../helpers/test/helper';
+import { addApiMock, minimalCache, render, triggerEvent } from '../../../helpers/test/helper';
 import { ConversationLabel } from '../../../models/conversation';
 import { Element } from '../../../models/element';
 import { Event } from '../../../models/event';
@@ -111,9 +111,7 @@ export const getProps = ({
         urlSearchParams.set('keyword', keywordToString(search.keyword || '') || '');
     }
 
-    getHistory().push(`#${urlSearchParams.toString()}`);
-
-    return { ...props, labelID, elementID, mailSettings };
+    return { ...props, labelID, elementID, mailSettings, initialPath: `#${urlSearchParams.toString()}` };
 };
 
 export const baseApiMocks = () => {
@@ -135,7 +133,7 @@ export const setup = async ({
 }: SetupArgs = {}) => {
     minimalCache();
     baseApiMocks();
-    const props = getProps(propsArgs);
+    const { initialPath, ...props } = getProps(propsArgs);
     if (mockMessages) {
         addApiMock('mail/v4/messages', () => ({ Total: totalMessages, Messages: messages }));
     }
@@ -144,7 +142,7 @@ export const setup = async ({
         addApiMock('mail/v4/conversations', () => ({ Total: totalConversations, Conversations: conversations }));
     }
 
-    const result = await render(<Component {...props} />, false, {
+    const result = await render(<Component {...props} />, {
         preloadedState: {
             mailSettings: getModelState(props.mailSettings),
             categories: getModelState([...labels, ...folders]),
@@ -157,8 +155,13 @@ export const setup = async ({
                 },
             ]),
         },
+        initialPath,
     });
-    const rerender = (propsArgs: PropsArgs) => result.rerender(<Component {...getProps(propsArgs)} />);
+    const rerender = (propsArgs: PropsArgs) => {
+        const { initialPath, ...props } = getProps(propsArgs);
+        result.history.push(initialPath);
+        return result.rerender(<Component {...props} />);
+    };
     const getItems = () => result.getAllByTestId('message-item', { exact: false });
     return { ...result, rerender, getItems };
 };

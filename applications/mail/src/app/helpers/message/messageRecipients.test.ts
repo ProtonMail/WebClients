@@ -7,9 +7,9 @@ import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
 import { fromFields, recipients } from '../../components/composer/quickReply/tests/QuickReply.test.data';
 import { MESSAGE_ACTIONS } from '../../constants';
-import { MessageState } from '../../logic/messages/messagesTypes';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
+import { MessageState } from '../../store/messages/messagesTypes';
 import {
     findSender,
     getNumParticipants,

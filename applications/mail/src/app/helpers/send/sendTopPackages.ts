@@ -7,7 +7,7 @@ import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import { addReceived } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { MessageKeys, MessageState } from '../../logic/messages/messagesTypes';
+import { MessageKeys, MessageState } from '../../store/messages/messagesTypes';
 import { getPlainText } from '../message/messageContent';
 import { prepareExport } from '../message/messageExport';
 import { constructMime } from './sendMimeBuilder';

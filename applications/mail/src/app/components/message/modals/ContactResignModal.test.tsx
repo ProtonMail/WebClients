@@ -24,7 +24,7 @@ describe('Contact resign modal', () => {
     });
 
     const setup = async (hasFingerprint: boolean) => {
-        const { receiverKeys, senderKeys } = await setupContactsForPinKeys(hasFingerprint);
+        const { receiverKeys, senderKeys, updateSpy } = await setupContactsForPinKeys(hasFingerprint);
 
         addApiMock('core/v4/keys/all', () => ({ Address: { Keys: [{ PublicKey: senderKeys.publicKeyArmored }] } }));
         addApiMock(
@@ -35,16 +35,12 @@ describe('Contact resign modal', () => {
             'get'
         );
 
-        const updateSpy = jest.fn();
-        addApiMock(`contacts/v4/contacts/${contactID}`, updateSpy, 'put');
-
         const onResignSpy = jest.fn();
 
         const view = await render(
             <ContactResignModal title={title} contacts={contacts} onResign={onResignSpy} open>
                 {children}
             </ContactResignModal>,
-            false,
             {
                 preloadedState: {
                     userKeys: getModelState(getStoredKey(receiverKeys)),

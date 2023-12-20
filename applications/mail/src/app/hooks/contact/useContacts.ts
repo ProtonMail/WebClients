@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import {
     contactGroupsMap,
@@ -6,24 +6,24 @@ import {
     groupsLabelCache,
     groupsWithContactsMap,
     recipientsLabelCache,
-} from '../../logic/contacts/contactsSelectors';
+} from '../../store/contacts/contactsSelectors';
 
 export const useContactsMap = () => {
-    return useSelector(contactsMap);
+    return useMailSelector(contactsMap);
 };
 
 export const useContactGroupsMap = () => {
-    return useSelector(contactGroupsMap);
+    return useMailSelector(contactGroupsMap);
 };
 
 export const useGroupsWithContactsMap = () => {
-    return useSelector(groupsWithContactsMap);
+    return useMailSelector(groupsWithContactsMap);
 };
 
 export const useRecipientsLabelCache = () => {
-    return useSelector(recipientsLabelCache);
+    return useMailSelector(recipientsLabelCache);
 };
 
 export const useGroupsLabelCache = () => {
-    return useSelector(groupsLabelCache);
+    return useMailSelector(groupsLabelCache);
 };

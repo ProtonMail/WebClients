@@ -7,7 +7,7 @@ import { getParsedAutocryptHeader } from '@proton/shared/lib/mail/autocrypt';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { LARGE_KEY_SIZE } from '../../constants';
-import { MessageKeys } from '../../logic/messages/messagesTypes';
+import { MessageKeys } from '../../store/messages/messagesTypes';
 import { get } from '../attachment/attachmentLoader';
 
 /**

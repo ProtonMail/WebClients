@@ -35,10 +35,10 @@ describe('Trust public key modal', () => {
 
     afterEach(clearAll);
 
-    const setup = async (senderKeys: GeneratedKey, isContact: boolean, options?: Parameters<typeof render>[2]) => {
+    const setup = async (senderKeys: GeneratedKey, isContact: boolean, options?: Parameters<typeof render>[1]) => {
         const contact = getContact(senderKeys.publicKeys[0], isContact);
 
-        const component = await render(<TrustPublicKeyModal contact={contact} open />, true, options);
+        const component = await render(<TrustPublicKeyModal contact={contact} open />, options);
 
         return component;
     };

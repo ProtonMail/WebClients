@@ -4,10 +4,11 @@ import { c } from 'ttag';
 
 import { useApi, useNotifications } from '@proton/components';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import { EO_MESSAGE_REDIRECT_PATH } from '../../constants';
 import { eoDecrypt } from '../../helpers/eo/message';
-import { loadEOMessage } from '../../logic/eo/eoActions';
-import { useAppDispatch } from '../../logic/store';
+import { loadEOMessage } from '../../store/eo/eoActions';
 
 interface Props {
     id?: string;
@@ -17,7 +18,7 @@ interface Props {
 
 export const useLoadEOToken = ({ id, encryptedToken, setSessionStorage }: Props) => {
     const api = useApi();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const { createNotification } = useNotifications();
     const history = useHistory();
 

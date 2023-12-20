@@ -12,9 +12,8 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { mergeMessages } from '../../../helpers/message/messages';
 import { addApiMock, clearAll, minimalCache, render } from '../../../helpers/test/helper';
 import { MessageSendInfo } from '../../../hooks/useSendInfo';
-import { composerActions } from '../../../logic/composers/composersSlice';
-import { MessageState } from '../../../logic/messages/messagesTypes';
-import { store } from '../../../logic/store';
+import { composerActions } from '../../../store/composers/composersSlice';
+import { MessageState } from '../../../store/messages/messagesTypes';
 import Addresses from './Addresses';
 
 const email1 = 'test@test.com';
@@ -106,29 +105,28 @@ const DEFAULT_PROPS = {
 
 const setup = async ({
     messageProp,
-    minimalCache = true,
     renderOptions,
 }: {
     messageProp?: Partial<MessageState>;
-    minimalCache?: boolean;
-    renderOptions?: Parameters<typeof render>[2];
+    renderOptions?: Parameters<typeof render>[1];
 } = {}) => {
     const nextMessage = mergeMessages(DEFAULT_PROPS.message, messageProp || {});
-    store.dispatch(
-        composerActions.addComposer({
-            messageID: nextMessage.localID || '',
-            // @ts-expect-error
-            recipients: pick(nextMessage?.data, ['ToList', 'CCList', 'BCCList']),
-            senderEmailAddress: nextMessage.data?.Sender.Address,
-        })
-    );
-    const composerID = Object.keys(store.getState().composers.composers)[0];
 
-    const result = await render(
-        <Addresses {...DEFAULT_PROPS} message={nextMessage} composerID={composerID} />,
-        minimalCache,
-        renderOptions
-    );
+    const composerID = 'composer-test-id';
+    const result = await render(<Addresses {...DEFAULT_PROPS} message={nextMessage} composerID={composerID} />, {
+        onStore: (store) => {
+            store.dispatch(
+                composerActions.addComposer({
+                    ID: composerID,
+                    messageID: nextMessage.localID || '',
+                    // @ts-expect-error
+                    recipients: pick(nextMessage?.data, ['ToList', 'CCList', 'BCCList']),
+                    senderEmailAddress: nextMessage.data?.Sender.Address,
+                })
+            );
+        },
+        ...renderOptions,
+    });
 
     return { ...result, composerID };
 };
@@ -163,8 +161,7 @@ describe('Addresses', () => {
         minimalCache();
         addApiMock('core/v4/keys/all', () => ({ Address: { Keys: [] } }));
 
-        const { rerender, composerID } = await setup({
-            minimalCache: false,
+        const { store, rerender, composerID } = await setup({
             renderOptions: {
                 preloadedState: {
                     contactEmails: getModelState(contactEmails),

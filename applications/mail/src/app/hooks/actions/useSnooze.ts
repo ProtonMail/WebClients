@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
 
 import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
 import { snoozeConversations, unsnoozeConversations } from '@proton/shared/lib/api/conversations';
 import { MAILBOX_IDENTIFIERS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+
 import { getSnoozeNotificationText, getSnoozeUnixTime } from '../../helpers/snooze';
-import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
-import { params } from '../../logic/elements/elementsSelectors';
-import { useAppDispatch } from '../../logic/store';
 import { Element } from '../../models/element';
+import { backendActionFinished, backendActionStarted } from '../../store/elements/elementsActions';
+import { params } from '../../store/elements/elementsSelectors';
 import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels';
 
 export type SNOOZE_DURATION = 'tomorrow' | 'later' | 'weekend' | 'nextweek' | 'custom';
@@ -22,14 +22,14 @@ type SnoozeProps = {
 };
 
 const useSnooze = () => {
-    const { labelID, conversationMode } = useSelector(params);
+    const { labelID, conversationMode } = useMailSelector(params);
 
     const api = useApi();
     const { createNotification } = useNotifications();
     const { call, stop, start } = useEventManager();
     const optimisticApplyLabels = useOptimisticApplyLabels();
 
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
 
     const [snoozeState, setSnoozeState] = useState<SnoozeState>('snooze-selection');
 

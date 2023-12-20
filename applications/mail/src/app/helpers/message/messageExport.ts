@@ -10,7 +10,7 @@ import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
-import { MessageKeys, MessageState, MessageStateWithData, PublicPrivateKey } from '../../logic/messages/messagesTypes';
+import { MessageKeys, MessageState, MessageStateWithData, PublicPrivateKey } from '../../store/messages/messagesTypes';
 import { combineHeaders, splitMail } from '../mail';
 import { constructMimeFromSource } from '../send/sendMimeBuilder';
 import { getPlainTextContent } from './messageContent';

@@ -13,11 +13,11 @@ import {
 } from 'proton-mail/helpers/moveToFolder';
 import { getSelectAllNotificationText } from 'proton-mail/helpers/selectAll';
 import { useOptimisticApplyLabels } from 'proton-mail/hooks/optimistic/useOptimisticApplyLabels';
-import { backendActionStarted, moveAll } from 'proton-mail/logic/elements/elementsActions';
-import { elementsMap as elementsMapSelector } from 'proton-mail/logic/elements/elementsSelectors';
-import { layoutActions } from 'proton-mail/logic/layout/layoutSlice';
-import { store, useAppDispatch } from 'proton-mail/logic/store';
 import { Element } from 'proton-mail/models/element';
+import { backendActionStarted, moveAll } from 'proton-mail/store/elements/elementsActions';
+import { elementsMap as elementsMapSelector } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
+import { layoutActions } from 'proton-mail/store/layout/layoutSlice';
 
 interface MoveAllParams {
     fromLabelID: string;
@@ -35,7 +35,8 @@ export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boo
     const api = useApi();
     const [folders = []] = useFolders();
     const { createNotification } = useNotifications();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
+    const store = useMailStore();
     const optimisticApplyLabels = useOptimisticApplyLabels();
     const canUseOptimistic = useFlag('SelectAllOptimistic');
 

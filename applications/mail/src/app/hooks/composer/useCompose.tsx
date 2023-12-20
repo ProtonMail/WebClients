@@ -23,14 +23,14 @@ import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
 
-import { composerActions } from 'proton-mail/logic/composers/composersSlice';
+import { composerActions } from 'proton-mail/store/composers/composersSlice';
+import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 
 import SendingOriginalMessageModal from '../../components/composer/modals/SendingOriginalMessageModal';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { isDirtyAddress } from '../../helpers/addresses';
-import { openDraft } from '../../logic/messages/draft/messagesDraftActions';
-import { MessageState, PartialMessageState } from '../../logic/messages/messagesTypes';
-import { store, useAppDispatch } from '../../logic/store';
+import { openDraft } from '../../store/messages/draft/messagesDraftActions';
+import { MessageState, PartialMessageState } from '../../store/messages/messagesTypes';
 import { useGetLocalID, useGetMessage } from '../message/useMessage';
 import { useDraft } from '../useDraft';
 import { EditorTypes } from './useComposerContent';
@@ -87,9 +87,10 @@ export const useCompose = ({
 }: UseComposeProps) => {
     // Avoid useUser for performance issues
     const getUser = useGetUser();
+    const store = useMailStore();
     const [addresses = []] = useAddresses();
     const { createNotification } = useNotifications();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const { createDraft, sendingFromDefaultAddressModal } = useDraft();
     const goToSettings = useSettingsLink();
     const api = useApi();

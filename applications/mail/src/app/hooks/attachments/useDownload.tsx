@@ -1,11 +1,13 @@
 import { useCallback } from 'react';
 
-import { FeatureCode, useApi, useFeature } from '@proton/components/index';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import { FeatureCode, useApi, useFeature } from '@proton/components/index';
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getAttachments } from '@proton/shared/lib/mail/messages';
+
+import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import ConfirmDownloadAttachments from '../../components/attachment/modals/ConfirmDownloadAttachments';
 import {
@@ -16,9 +18,8 @@ import {
     generateDownloadAll,
 } from '../../helpers/attachment/attachmentDownloader';
 import { getAttachmentCounts } from '../../helpers/message/messages';
-import { updateAttachment } from '../../logic/attachments/attachmentsActions';
-import { MessageKeys, MessageStateWithData, OutsideKey } from '../../logic/messages/messagesTypes';
-import { useAppDispatch } from '../../logic/store';
+import { updateAttachment } from '../../store/attachments/attachmentsActions';
+import { MessageKeys, MessageStateWithData, OutsideKey } from '../../store/messages/messagesTypes';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';
 import { useGetAttachment } from './useAttachment';
@@ -41,7 +42,7 @@ const useSyncedMessageKeys = () => {
 export const useDownload = () => {
     const api = useApi();
     const getAttachment = useGetAttachment();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const getMessageKeys = useSyncedMessageKeys();
     const [confirmDownloadModal, handleShowModal] = useModalTwo(ConfirmDownloadAttachments);
 
@@ -91,7 +92,7 @@ export const useDownload = () => {
 export const useDownloadAll = () => {
     const api = useApi();
     const getAttachment = useGetAttachment();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const getMessageKeys = useSyncedMessageKeys();
     const isNumAttachmentsWithoutEmbedded = useFeature(FeatureCode.NumAttachmentsWithoutEmbedded).feature?.Value;
     const [confirmDownloadModal, handleShowModal] = useModalTwo(ConfirmDownloadAttachments);
@@ -149,7 +150,7 @@ export const useDownloadAll = () => {
 export const usePreview = () => {
     const api = useApi();
     const getAttachment = useGetAttachment();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const getMessageKeys = useSyncedMessageKeys();
     const [confirmDownloadModal, handleShowModal] = useModalTwo(ConfirmDownloadAttachments);
 
