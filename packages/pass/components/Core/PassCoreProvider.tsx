@@ -7,7 +7,7 @@ import type { UsePeriodOtpCodeOptions } from '@proton/pass/hooks/usePeriodicOtpC
 import type { ClientEndpoint, Maybe, MaybeNull, OnboardingMessage } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 
-type PassCoreContextValue = {
+export type PassCoreContextValue = {
     endpoint: ClientEndpoint;
     /** client configuration */
     config: PassConfig;
@@ -23,7 +23,7 @@ type PassCoreContextValue = {
     /** defines how a client handles external links.
      * In extension, this will leverage the `browser.tabs` API
      * whereas in the web-app, we can use `window.location` */
-    onLink: (url: string) => void;
+    onLink: (url: string, options?: { replace?: boolean }) => void;
     /** Processes a telemetry event */
     onTelemetry: (event: TelemetryEvent) => void;
     /** Defines side-effect when user acknowledges a message. */
