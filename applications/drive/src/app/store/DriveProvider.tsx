@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 
+import { UnleashFlagProvider } from '@proton/components/containers';
+
 import { PublicSessionProvider } from './_api';
 import { DevicesProvider } from './_devices';
 import { DownloadsProvider, PublicDownloadsProvider } from './_downloads';
@@ -43,12 +45,14 @@ interface PublicDriveProviderProps {
 
 export function PublicDriveProvider({ children }: PublicDriveProviderProps) {
     return (
-        <PublicSessionProvider>
-            <SharesProvider>
-                <PublicLinksProvider>
-                    <PublicDownloadsProvider>{children}</PublicDownloadsProvider>
-                </PublicLinksProvider>
-            </SharesProvider>
-        </PublicSessionProvider>
+        <UnleashFlagProvider>
+            <PublicSessionProvider>
+                <SharesProvider>
+                    <PublicLinksProvider>
+                        <PublicDownloadsProvider>{children}</PublicDownloadsProvider>
+                    </PublicLinksProvider>
+                </SharesProvider>
+            </PublicSessionProvider>
+        </UnleashFlagProvider>
     );
 }
