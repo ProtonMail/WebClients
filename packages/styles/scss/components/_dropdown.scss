@@ -168,6 +168,7 @@
 			inline-size: 100%;
 			max-inline-size: initial;
 			max-block-size: initial;
+			border-radius: var(--border-radius-md);
 			box-shadow: var(--shadow-lifted);
 			transition: transform 0.1s ease-out;
 			animation: anime-dropdown-content-scale-in 0.15s ease-out both;
