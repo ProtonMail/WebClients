@@ -49,6 +49,7 @@ const OnboardingSetupOrganization = (props: Props) => {
                 <Button
                     size="large"
                     color="norm"
+                    fullWidth
                     onClick={() => {
                         goToSettings('/multi-user-support', undefined, true);
                         props.handleNext();
