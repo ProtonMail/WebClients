@@ -21,7 +21,7 @@ export const selectUserVerified = ({ user }: State) =>
 
 /* Specification for pass specific plans in `/user/access` response :
  * `paid` -> Plan: Plus | Trial: null | Limits: none
- * `trial` -> Plan: Free | Trial: unix timestamp end | Limits
+ * `trial` -> Plan: Plus | Trial: unix timestamp end | Limits
  * `free` -> Plan: Free | Trial: null | Limits */
 export const selectPassPlan = ({ user: { plan } }: State): UserPassPlan => {
     switch (plan?.Type) {
