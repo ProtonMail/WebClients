@@ -1,6 +1,5 @@
 import type { Store } from 'redux';
 
-import { isEOY } from '@proton/pass/components/Spotlight/UpsellingModal';
 import { ITEM_COUNT_RATING_PROMPT, PASS_BF_2023_DATES } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import {
@@ -20,6 +19,7 @@ import { UNIX_DAY } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 
 import { createOnboardingRule } from './service';
+import { isEOY } from './utils';
 
 export const createPendingShareAccessRule = (store: Store<State>) =>
     createOnboardingRule({
