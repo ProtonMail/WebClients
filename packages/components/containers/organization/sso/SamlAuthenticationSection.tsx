@@ -15,6 +15,7 @@ import {
 } from '../../account';
 import ConfigureSamlModal from './ConfigureSamlModal';
 import DomainVerificationState from './DomainVerificationState';
+import RemoveSSODomain from './RemoveSSODomain';
 import SSOInfo from './SSOInfo';
 import SetupSSODomainModal from './SetupSSODomainModal';
 
@@ -31,6 +32,8 @@ const ConfigureSamlContent = ({
     setConfigureSamlModalOpen: (newValue: boolean) => void;
     renderConfigureSamlModal: boolean | undefined;
 }) => {
+    const [removeSSODomainProps, setRemoveSSODomainOpen, renderRemoveSSODomain] = useModalState();
+
     const ssoConfigForDomain = ssoConfigs.find(({ DomainID }) => DomainID === domain.ID);
 
     return (
@@ -63,14 +66,27 @@ const ConfigureSamlContent = ({
                     onImportSamlClick={() => setConfigureSamlModalOpen(true)}
                 />
             ) : (
-                <Button
-                    color="norm"
-                    onClick={() => {
-                        setConfigureSamlModalOpen(true);
-                    }}
-                >
-                    {c('Action').t`Configure SAML`}
-                </Button>
+                <div className="flex gap-4">
+                    <Button
+                        color="norm"
+                        onClick={() => {
+                            setConfigureSamlModalOpen(true);
+                        }}
+                    >
+                        {c('Action').t`Configure SAML`}
+                    </Button>
+
+                    {renderRemoveSSODomain && <RemoveSSODomain domain={domain} {...removeSSODomainProps} />}
+                    <Button
+                        color="danger"
+                        shape="outline"
+                        onClick={() => {
+                            setRemoveSSODomainOpen(true);
+                        }}
+                    >
+                        {c('Action').t`Remove domain`}
+                    </Button>
+                </div>
             )}
         </>
     );
