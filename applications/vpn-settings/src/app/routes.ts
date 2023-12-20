@@ -238,8 +238,7 @@ export const getRoutes = ({ user, subscription, organization, ssoVpnSettingFeatu
             text: c('Title').t`Single Sign-On`,
             to: '/single-sign-on',
             icon: 'key',
-            available:
-                ssoVpnSettingFeature && hasVpnB2BPlan && canHaveOrganization && (hasOrganizationKey || hasOrganization),
+            available: ssoVpnSettingFeature && hasVpnB2BPlan,
             subsections: [
                 {
                     text: c('Title').t`SAML authentication`,
