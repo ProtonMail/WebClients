@@ -12,12 +12,13 @@ import {
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
 import { NavigationProvider } from '@proton/pass/components/Core/NavigationProvider';
+import type { PassCoreContextValue} from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { getLocalPath, history } from '@proton/pass/components/Core/routing';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { generateTOTPCode } from '@proton/pass/lib/otp/generate';
-import type { Maybe, OtpRequest } from '@proton/pass/types';
+import type { Maybe } from '@proton/pass/types';
 
 import { PASS_CONFIG, api } from '../lib/core';
 import { onboarding } from '../lib/onboarding';
@@ -33,15 +34,17 @@ import { API_URL } from './config';
 
 import './app.scss';
 
-const generateOTP = ({ totpUri }: OtpRequest) => generateTOTPCode(totpUri);
-const onLink = (url: string) => window.open(url, '_blank');
+const generateOTP: PassCoreContextValue['generateOTP'] = ({ totpUri }) => generateTOTPCode(totpUri);
+
+const onLink: PassCoreContextValue['onLink'] = (url, options) =>
+    window.open(url, options?.replace ? '_self' : '_blank');
 
 /** If service worker support is unavailable, use a fallback caching strategy for
  * domain images. When service worker is enabled, utilize abort message passing to
  * correctly abort intercepted fetch requests. */
-const getDomainImageFactory = (sw: ServiceWorkerContextValue) => {
+const getDomainImageFactory = (sw: ServiceWorkerContextValue): PassCoreContextValue['getDomainImage'] => {
     const cache = new Map<string, Maybe<string>>();
-    return async (domain: string, signal: AbortSignal): Promise<Maybe<string>> => {
+    return async (domain, signal) => {
         const url = `core/v4/images/logo?Domain=${domain}&Size=32&Mode=light&MaxScaleUpFactor=4`;
 
         const cachedImage = cache.get(url);
@@ -60,7 +63,7 @@ const getDomainImageFactory = (sw: ServiceWorkerContextValue) => {
     };
 };
 
-const openSettings = (page?: string) =>
+const openSettings: PassCoreContextValue['openSettings'] = (page) =>
     history.push({
         pathname: getLocalPath('settings'),
         search: location.search,
