@@ -89,9 +89,10 @@ const useReportSelfAuditErrors = () => {
                 }
 
                 failedAddressAuditsResults.forEach(({ status, warningDetails }) => {
+                    const isWarning = status === AddressAuditStatus.Warning;
                     const dimensions: SimpleMap<string> = {
                         type: 'address',
-                        result: status === AddressAuditStatus.Warning ? 'warning' : 'failure',
+                        result: isWarning ? 'warning' : 'failure',
                         reason: getWarningReason(warningDetails),
                         visibility: visibility,
                     };
@@ -100,7 +101,7 @@ const useReportSelfAuditErrors = () => {
                         dimensions,
                     });
                     void metrics.crypto_keytransparency_errors_total.increment({
-                        level: status === AddressAuditStatus.Warning ? 'warning' : 'error',
+                        level: isWarning ? 'warning' : 'error',
                         type: 'self-audit',
                         visibility: visibility,
                     });
