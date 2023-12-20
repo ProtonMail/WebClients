@@ -25,3 +25,17 @@ export const setupSAMLFields = (data: {
     method: 'POST',
     data,
 });
+
+export const updateSAMLConfig = (
+    uid: number,
+    data: {
+        DomainID: string;
+        SSOURL: string;
+        SSOEntityID: string;
+        Certificate: string;
+    }
+) => ({
+    url: `core/v4/saml/configs/${uid}/fields`,
+    method: 'PUT',
+    data,
+});
