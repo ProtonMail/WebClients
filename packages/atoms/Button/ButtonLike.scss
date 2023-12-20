@@ -95,10 +95,12 @@
 }
 
 .button-underline {
-	--padding-block: em(7); // To ensure vertical alignments
+	--padding-block: #{em(7)}; // To ensure vertical alignments
 
 	position: relative;
 	display: inline-block;
+	padding-block: var(--padding-block);
+	padding-inline: var(--padding-inline);
 	outline: none; // be careful of a11y
 	color: var(--button-default-text-color, inherit);
 	text-decoration: underline;
