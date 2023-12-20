@@ -74,6 +74,7 @@ const Sidebar = ({
     const [subscription] = useSubscription();
     const { UsedSpace, MaxSpace, isMember, isSubUser } = user;
     const spacePercentage = percentage(MaxSpace, UsedSpace);
+    const spacePercentagePrecision = Math.ceil(spacePercentage * 10000) / 10000;
     const { viewportWidth } = useActiveBreakpoint();
     const isElectron = isElectronApp();
     const isElectronMac = isElectronOnMac();
@@ -105,7 +106,7 @@ const Sidebar = ({
     const storageText = (
         <>
             <span
-                className={clsx(['used-space text-bold', `color-${getMeterColor(spacePercentage)}`])}
+                className={clsx(['used-space text-bold', `color-${getMeterColor(spacePercentagePrecision)}`])}
                 style={{ '--signal-success': 'initial' }}
                 // Used by Drive E2E tests
                 data-testid="app-used-space"
@@ -179,7 +180,7 @@ const Sidebar = ({
                             label={`${c('Storage').t`Your current storage:`} ${humanSize(UsedSpace)} / ${humanSize(
                                 MaxSpace
                             )}`}
-                            value={Math.ceil(spacePercentage)}
+                            value={spacePercentagePrecision}
                         />
                         <div className="flex flex-nowrap justify-space-between py-2">
                             <span>
