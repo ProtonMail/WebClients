@@ -10,6 +10,8 @@ import { EO_DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/eo/constants';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 import { isNetworkError } from '../../helpers/errors';
 import { decryptMessage } from '../../helpers/message/messageDecrypt';
@@ -19,8 +21,8 @@ import {
     EODocumentInitializePending,
     EOLoadEmbedded,
     EOLoadRemote,
-} from '../../logic/eo/eoActions';
-import { EOLoadEmbeddedParams, EOLoadRemoteResults } from '../../logic/eo/eoType';
+} from '../../store/eo/eoActions';
+import { EOLoadEmbeddedParams, EOLoadRemoteResults } from '../../store/eo/eoType';
 import {
     LoadEmbeddedResults,
     MessageErrors,
@@ -28,14 +30,13 @@ import {
     MessageRemoteImage,
     MessageState,
     MessageStateWithDataFull,
-} from '../../logic/messages/messagesTypes';
-import { useAppDispatch } from '../../logic/store';
+} from '../../store/messages/messagesTypes';
 import { useBase64Cache } from '../useBase64Cache';
 import { useGetEODecryptedToken, useGetEOMessageState, useGetEOPassword } from './useLoadEOMessage';
 
 export const useInitializeEOMessage = () => {
     const api = useApi();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const getMessage = useGetEOMessageState();
     const getPassword = useGetEOPassword();
     const getEODecryptedToken = useGetEODecryptedToken();

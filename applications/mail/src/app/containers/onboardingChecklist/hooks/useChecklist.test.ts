@@ -43,7 +43,7 @@ describe('useChecklist', () => {
 
     it('Should fetch the get-started checklist', async () => {
         mockedUserSettings.mockReturnValue([{ Checklists: ['get-started'] }]);
-        const { result } = await renderHook(() => useChecklist('get-started'));
+        const { result } = await renderHook({ useCallback: () => useChecklist('get-started') });
 
         expect(getChecklist).toHaveBeenCalled();
         expect(paidChecklist).not.toHaveBeenCalled();
@@ -52,7 +52,7 @@ describe('useChecklist', () => {
 
     it('Should fetch the paying-user checklist', async () => {
         mockedUserSettings.mockReturnValue([{ Checklists: ['paying-user'] }]);
-        const { result } = await renderHook(() => useChecklist('paying-user'));
+        const { result } = await renderHook({ useCallback: () => useChecklist('paying-user') });
 
         expect(getChecklist).not.toHaveBeenCalled();
         expect(paidChecklist).toHaveBeenCalled();
@@ -61,7 +61,7 @@ describe('useChecklist', () => {
 
     it('Should not fetch get started when checklist not present', async () => {
         mockedUserSettings.mockReturnValue([{}]);
-        const { result } = await renderHook(() => useChecklist('get-started'));
+        const { result } = await renderHook({ useCallback: () => useChecklist('get-started') });
 
         expect(getChecklist).not.toHaveBeenCalled();
         expect(paidChecklist).not.toHaveBeenCalled();
@@ -70,7 +70,7 @@ describe('useChecklist', () => {
 
     it('Should not fetch paying user when checklist not present', async () => {
         mockedUserSettings.mockReturnValue([{}]);
-        const { result } = await renderHook(() => useChecklist('paying-user'));
+        const { result } = await renderHook({ useCallback: () => useChecklist('paying-user') });
 
         expect(getChecklist).not.toHaveBeenCalled();
         expect(paidChecklist).not.toHaveBeenCalled();
@@ -79,7 +79,7 @@ describe('useChecklist', () => {
 
     it('Should not fetch get started when checklist empty', async () => {
         mockedUserSettings.mockReturnValue([{ Checklists: [] }]);
-        const { result } = await renderHook(() => useChecklist('get-started'));
+        const { result } = await renderHook({ useCallback: () => useChecklist('get-started') });
 
         expect(getChecklist).not.toHaveBeenCalled();
         expect(paidChecklist).not.toHaveBeenCalled();
@@ -88,7 +88,7 @@ describe('useChecklist', () => {
 
     it('Should not fetch paying user when checklist empty', async () => {
         mockedUserSettings.mockReturnValue([{ Checklists: [] }]);
-        const { result } = await renderHook(() => useChecklist('paying-user'));
+        const { result } = await renderHook({ useCallback: () => useChecklist('paying-user') });
 
         expect(getChecklist).not.toHaveBeenCalled();
         expect(paidChecklist).not.toHaveBeenCalled();

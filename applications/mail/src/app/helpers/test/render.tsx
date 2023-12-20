@@ -1,5 +1,4 @@
 import { PropsWithChildren, ReactElement, ReactNode, useRef } from 'react';
-import { Provider as ReduxProvider } from 'react-redux';
 import { Route, Router } from 'react-router';
 
 import {
@@ -9,7 +8,7 @@ import {
     render as originalRender,
 } from '@testing-library/react';
 import { act as actHook, renderHook as originalRenderHook } from '@testing-library/react-hooks';
-import { MemoryHistory, createMemoryHistory } from 'history';
+import { History, createMemoryHistory } from 'history';
 
 import { getModelState } from '@proton/account/test';
 import {
@@ -42,6 +41,17 @@ import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 import { DEFAULT_MAILSETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
 
+import QuickSettingsTestProvider from 'proton-mail/helpers/test/quick-settings';
+import { AttachmentsState } from 'proton-mail/store/attachments/attachmentsTypes';
+import { composersInitialState } from 'proton-mail/store/composers/composersSlice';
+import { mailContactsInitialState } from 'proton-mail/store/contacts/contactsSlice';
+import { ConversationsState } from 'proton-mail/store/conversations/conversationsTypes';
+import { newElementsState } from 'proton-mail/store/elements/elementsSlice';
+import { incomingDefaultsInitialState } from 'proton-mail/store/incomingDefaults/incomingDefaultsSlice';
+import { layoutInitialState } from 'proton-mail/store/layout/layoutSlice';
+import { MessagesState } from 'proton-mail/store/messages/messagesTypes';
+import { snoozeInitialState } from 'proton-mail/store/snooze/snoozeSlice';
+
 import { LabelActionsContextProvider } from '../../components/sidebar/EditLabelContext';
 import { MAIN_ROUTE_PATH } from '../../constants';
 import { CheckAllRefProvider } from '../../containers/CheckAllRefProvider';
@@ -50,16 +60,15 @@ import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
 import { MailboxContainerContextProvider } from '../../containers/mailbox/MailboxContainerProvider';
 import ChecklistsProvider from '../../containers/onboardingChecklist/provider/ChecklistsProvider';
 import { MailContentRefProvider } from '../../hooks/useClickMailContent';
-import { store, useSetReduxThunkExtraArgs } from '../../logic/store';
 import { MailState, MailStore, extendStore, setupStore } from '../../store/store';
 import { api, getFeatureFlags, mockDomApi } from './api';
-import { minimalCache, mockCache } from './cache';
+import { mockCache } from './cache';
 import NotificationsTestProvider from './notifications';
-import QuickSettingsTestProvider from './quick-settings';
 
 interface RenderResult extends OriginalRenderResult {
     rerender: (ui: React.ReactElement) => Promise<void>;
     store: MailStore;
+    history: History;
 }
 
 export const authentication = {
@@ -68,13 +77,6 @@ export const authentication = {
     getPassword: jest.fn(),
     onLogout: jest.fn(),
 } as unknown as PrivateAuthenticationStore;
-
-let history: MemoryHistory;
-export const getHistory = () => history;
-export const resetHistory = () => {
-    history = createMemoryHistory({ initialEntries: ['/inbox'] });
-};
-resetHistory();
 
 export const config = {
     APP_NAME: APPS.PROTONMAIL,
@@ -86,15 +88,10 @@ export const onCompose = jest.fn();
 
 interface Props {
     children: ReactNode;
+    history: History;
 }
 
-export const ReduxProviderWrapper = ({ children }: Props) => {
-    useSetReduxThunkExtraArgs();
-
-    return <ReduxProvider store={store}>{children}</ReduxProvider>;
-};
-
-const TestProvider = ({ children }: Props) => {
+const TestProvider = ({ children, history }: Props) => {
     const contentRef = useRef<HTMLDivElement>(null);
 
     return (
@@ -109,31 +106,29 @@ const TestProvider = ({ children }: Props) => {
                                         <SpotlightProvider>
                                             <DrawerProvider>
                                                 <ModalsChildren />
-                                                <ReduxProviderWrapper>
-                                                    <MailContentRefProvider mailContentRef={contentRef}>
-                                                        <ChecklistsProvider>
-                                                            <MailboxContainerContextProvider
-                                                                isResizing={false}
-                                                                containerRef={contentRef}
-                                                                elementID={undefined}
-                                                            >
-                                                                <ComposeProvider onCompose={onCompose}>
-                                                                    <CheckAllRefProvider>
-                                                                        <Router history={history}>
-                                                                            <Route path={MAIN_ROUTE_PATH}>
-                                                                                <EncryptedSearchProvider>
-                                                                                    <LabelActionsContextProvider>
-                                                                                        {children}
-                                                                                    </LabelActionsContextProvider>
-                                                                                </EncryptedSearchProvider>
-                                                                            </Route>
-                                                                        </Router>
-                                                                    </CheckAllRefProvider>
-                                                                </ComposeProvider>
-                                                            </MailboxContainerContextProvider>
-                                                        </ChecklistsProvider>
-                                                    </MailContentRefProvider>
-                                                </ReduxProviderWrapper>
+                                                <MailContentRefProvider mailContentRef={contentRef}>
+                                                    <ChecklistsProvider>
+                                                        <MailboxContainerContextProvider
+                                                            isResizing={false}
+                                                            containerRef={contentRef}
+                                                            elementID={undefined}
+                                                        >
+                                                            <ComposeProvider onCompose={onCompose}>
+                                                                <CheckAllRefProvider>
+                                                                    <Router history={history}>
+                                                                        <Route path={MAIN_ROUTE_PATH}>
+                                                                            <EncryptedSearchProvider>
+                                                                                <LabelActionsContextProvider>
+                                                                                    {children}
+                                                                                </LabelActionsContextProvider>
+                                                                            </EncryptedSearchProvider>
+                                                                        </Route>
+                                                                    </Router>
+                                                                </CheckAllRefProvider>
+                                                            </ComposeProvider>
+                                                        </MailboxContainerContextProvider>
+                                                    </ChecklistsProvider>
+                                                </MailContentRefProvider>
                                             </DrawerProvider>
                                         </SpotlightProvider>
                                     </QuickSettingsTestProvider>
@@ -157,6 +152,9 @@ export const tick = () => {
 
 interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
     preloadedState?: Partial<MailState>;
+    onStore?: (store: MailStore) => void;
+    initialEntries?: string[];
+    initialPath?: string;
 }
 
 export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloadedState']) => {
@@ -187,6 +185,15 @@ export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloade
             features: getFeatureFlags([[FeatureCode.SLIntegration, true]]),
             conversationCounts: getModelState([]),
             messageCounts: getModelState([]),
+            attachments: {} as AttachmentsState,
+            composers: composersInitialState,
+            conversations: {} as ConversationsState,
+            elements: newElementsState(),
+            incomingDefaults: incomingDefaultsInitialState,
+            layout: layoutInitialState,
+            mailContacts: mailContactsInitialState,
+            messages: {} as MessagesState,
+            snooze: snoozeInitialState,
             ...preloadedState,
         },
     });
@@ -207,21 +214,22 @@ export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloade
 
 export const render = async (
     ui: ReactElement,
-    useMinimalCache = true,
-    { preloadedState, ...renderOptions }: ExtendedRenderOptions = {}
+    { preloadedState, initialEntries = ['/inbox'], initialPath, onStore, ...renderOptions }: ExtendedRenderOptions = {}
 ): Promise<RenderResult> => {
     mockDomApi();
     registerFeatureFlagsApiMock();
 
-    if (useMinimalCache) {
-        minimalCache();
-    }
-
     const { Wrapper, store } = getStoreWrapper(preloadedState);
+    await onStore?.(store);
+
+    const history = createMemoryHistory({ initialEntries });
+    if (initialPath) {
+        history.push(initialPath);
+    }
 
     const result = originalRender(
         <Wrapper>
-            <TestProvider>{ui}</TestProvider>
+            <TestProvider history={history}>{ui}</TestProvider>
         </Wrapper>,
         renderOptions
     );
@@ -230,7 +238,7 @@ export const render = async (
     const rerender = async (ui: ReactElement) => {
         result.rerender(
             <Wrapper>
-                <TestProvider>{ui}</TestProvider>
+                <TestProvider history={history}>{ui}</TestProvider>
             </Wrapper>
         );
         await tick(); // Should not be necessary, would be better not to use it, but fails without
@@ -240,37 +248,39 @@ export const render = async (
         // Unmounting the component not the whole context
         result.rerender(
             <Wrapper>
-                <TestProvider>{null}</TestProvider>
+                <TestProvider history={history}>{null}</TestProvider>
             </Wrapper>
         );
         return true;
     };
 
-    return { ...result, store, rerender, unmount };
+    return { ...result, store, rerender, unmount, history };
 };
 
-export const renderHook = async <TProps, TResult>(
-    callback: (props: TProps) => TResult,
-    useMinimalCache = true,
-    preloadedState: ExtendedRenderOptions['preloadedState'] = {}
-) => {
+export const renderHook = async <TProps, TResult>({
+    useCallback,
+    preloadedState = {},
+    init,
+}: {
+    useCallback: (props: TProps) => TResult;
+    preloadedState?: ExtendedRenderOptions['preloadedState'];
+    init?: (store: MailStore) => void;
+}) => {
     registerFeatureFlagsApiMock();
 
-    if (useMinimalCache) {
-        minimalCache();
-    }
-
-    const { Wrapper } = getStoreWrapper(preloadedState);
+    const { store, Wrapper } = getStoreWrapper(preloadedState);
+    init?.(store);
+    const history = createMemoryHistory();
 
     function HookWrapper({ children }: PropsWithChildren<{}>): JSX.Element {
         return (
             <Wrapper>
-                <TestProvider>{children}</TestProvider>
+                <TestProvider history={history}>{children}</TestProvider>
             </Wrapper>
         );
     }
 
-    const result = originalRenderHook<TProps, TResult>(callback, { wrapper: HookWrapper });
+    const result = originalRenderHook<TProps, TResult>(useCallback, { wrapper: HookWrapper });
     await actHook(() => wait(0));
-    return result;
+    return { ...result, store };
 };

@@ -1,12 +1,13 @@
 import { useCallback } from 'react';
 
-import { MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
-import { load, reload } from '../../logic/messages/read/messagesReadActions';
-import { useAppDispatch } from '../../logic/store';
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
+import { MessageWithOptionalBody } from '../../store/messages/messagesTypes';
+import { load, reload } from '../../store/messages/read/messagesReadActions';
 import { useInitializeMessage } from './useInitializeMessage';
 
 export const useLoadMessage = (inputMessage: MessageWithOptionalBody) => {
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
 
     return useCallback(async () => {
         dispatch(load({ ID: inputMessage.ID }));
@@ -14,7 +15,7 @@ export const useLoadMessage = (inputMessage: MessageWithOptionalBody) => {
 };
 
 export const useReloadMessage = (localID: string) => {
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const initializeMessage = useInitializeMessage();
 
     return useCallback(async () => {

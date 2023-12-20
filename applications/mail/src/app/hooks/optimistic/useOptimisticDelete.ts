@@ -8,34 +8,33 @@ import {
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { useMailStore } from 'proton-mail/store/hooks';
+import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 
 import { replaceCounter } from '../../helpers/counter';
 import { isConversation, isUnread } from '../../helpers/elements';
+import { Element } from '../../models/element';
 import {
     optimisticDelete as optimisticDeleteConversationAction,
     optimisticDeleteConversationMessages,
     optimisticRestore as optimisticRestoreConversationsAction,
-} from '../../logic/conversations/conversationsActions';
-import { ConversationState } from '../../logic/conversations/conversationsTypes';
+} from '../../store/conversations/conversationsActions';
+import { ConversationState } from '../../store/conversations/conversationsTypes';
 import {
     optimisticDelete as optimisticDeleteElementAction,
     optimisticRestoreDelete as optimisticRestoreDeleteElementAction,
-} from '../../logic/elements/elementsActions';
-import { MessageState } from '../../logic/messages/messagesTypes';
+} from '../../store/elements/elementsActions';
+import { MessageState } from '../../store/messages/messagesTypes';
 import {
     optimisticDelete as optimisticDeleteMessageAction,
     optimisticRestore as optimisticRestoreMessageAction,
-} from '../../logic/messages/optimistic/messagesOptimisticActions';
-import { useAppDispatch } from '../../logic/store';
-import { Element } from '../../models/element';
+} from '../../store/messages/optimistic/messagesOptimisticActions';
 import { useGetAllConversations } from '../conversation/useConversation';
 import { useGetElementByID } from '../mailbox/useElements';
 import { useGetMessage } from '../message/useMessage';
 
 const useOptimisticDelete = () => {
     const store = useMailStore();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const getElementByID = useGetElementByID();
     const getAllConversations = useGetAllConversations();
     const getMessage = useGetMessage();

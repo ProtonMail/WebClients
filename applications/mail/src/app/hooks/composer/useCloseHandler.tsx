@@ -11,7 +11,7 @@ import SavingDraftNotification, {
     SavingDraftNotificationAction,
 } from '../../components/notifications/SavingDraftNotification';
 import { useOnCompose } from '../../containers/ComposeProvider';
-import { MessageState } from '../../logic/messages/messagesTypes';
+import { MessageState } from '../../store/messages/messagesTypes';
 import { PromiseHandlers } from '../usePromise';
 import { ComposeTypes } from './useCompose';
 

@@ -1,18 +1,18 @@
 import { useCallback, useEffect, useState } from 'react';
-import { useSelector, useStore } from 'react-redux';
 
 import { useEventManager } from '@proton/components';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
+import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/store/hooks';
+
 import { LOAD_RETRY_COUNT, LOAD_RETRY_DELAY } from '../../constants';
 import { hasError, hasErrorType } from '../../helpers/errors';
-import { initialize, load as loadAction, retryLoading } from '../../logic/conversations/conversationsActions';
-import { allConversations, conversationByID } from '../../logic/conversations/conversationsSelectors';
-import { ConversationErrors, ConversationState } from '../../logic/conversations/conversationsTypes';
-import { RootState, useAppDispatch } from '../../logic/store';
 import { Conversation } from '../../models/conversation';
+import { initialize, load as loadAction, retryLoading } from '../../store/conversations/conversationsActions';
+import { allConversations, conversationByID } from '../../store/conversations/conversationsSelectors';
+import { ConversationErrors, ConversationState } from '../../store/conversations/conversationsTypes';
 import { useGetElementsFromIDs } from '../mailbox/useElements';
 
 export interface ConversationStateOptional {
@@ -23,12 +23,12 @@ export interface ConversationStateOptional {
 }
 
 export const useGetConversation = () => {
-    const store = useStore<RootState>();
+    const store = useMailStore();
     return useCallback((ID: string) => conversationByID(store.getState(), { ID }), []);
 };
 
 export const useGetAllConversations = () => {
-    const store = useStore<RootState>();
+    const store = useMailStore();
     return useCallback(() => allConversations(store.getState()), []);
 };
 
@@ -47,12 +47,12 @@ interface UseConversation {
 }
 
 export const useConversation: UseConversation = (inputConversationID, messageID) => {
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const getElementsFromIDs = useGetElementsFromIDs();
     const getConversation = useGetConversation();
     const isMounted = useIsMounted();
     const { call } = useEventManager();
-    const conversationState = useSelector((state: RootState) => conversationByID(state, { ID: inputConversationID }));
+    const conversationState = useMailSelector((state) => conversationByID(state, { ID: inputConversationID }));
 
     const init = (conversationID: string): ConversationStateOptional | undefined => {
         if (conversationState) {

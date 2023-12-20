@@ -96,7 +96,7 @@ import { getPrimaryKey } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import { MessageStateWithData } from '../../logic/messages/messagesTypes';
+import { MessageStateWithData } from '../../store/messages/messagesTypes';
 import {
     EventInvitation,
     UPDATE_ACTION,

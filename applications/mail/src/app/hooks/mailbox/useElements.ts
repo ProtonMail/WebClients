@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { useSelector, useStore } from 'react-redux';
 
 import {
     useConversationCounts,
@@ -13,17 +12,21 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/store/hooks';
+
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { hasAttachmentsFilter, isSearch } from '../../helpers/elements';
 import { pageCount } from '../../helpers/paging';
-import { conversationByID } from '../../logic/conversations/conversationsSelectors';
+import { Element } from '../../models/element';
+import { Filter, SearchParameters, Sort } from '../../models/tools';
+import { conversationByID } from '../../store/conversations/conversationsSelectors';
 import {
     load as loadAction,
     removeExpired,
     reset,
     setPageSize,
     updatePage,
-} from '../../logic/elements/elementsActions';
+} from '../../store/elements/elementsActions';
 import {
     dynamicTotal as dynamicTotalSelector,
     elementIDs as elementIDsSelector,
@@ -43,11 +46,9 @@ import {
     stateInconsistency as stateInconsistencySelector,
     taskRunning,
     totalReturned as totalReturnedSelector,
-} from '../../logic/elements/elementsSelectors';
-import { messageByID } from '../../logic/messages/messagesSelectors';
-import { RootState, useAppDispatch } from '../../logic/store';
-import { Element } from '../../models/element';
-import { Filter, SearchParameters, Sort } from '../../models/tools';
+} from '../../store/elements/elementsSelectors';
+import { messageByID } from '../../store/messages/messagesSelectors';
+import { MailState } from '../../store/store';
 import { useElementsEvents } from '../events/useElementsEvents';
 import { useExpirationCheck } from '../useExpirationCheck';
 
@@ -85,8 +86,8 @@ export const useElements: UseElements = ({
     filter,
     onPage,
 }) => {
-    const store = useStore<RootState>();
-    const dispatch = useAppDispatch();
+    const store = useMailStore();
+    const dispatch = useMailDispatch();
 
     const isPageSizeSettingEnabled = useFlag('WebMailPageSizeSetting');
 
@@ -110,28 +111,32 @@ export const useElements: UseElements = ({
     };
     const counts = { counts: countValues, loading: countsLoading };
 
-    const stateParams = useSelector(paramsSelector);
-    const elementsMap = useSelector(elementsMapSelector);
-    const pendingActions = useSelector(pendingActionsSelector);
-    const tasksRunning = useSelector(taskRunning);
-    const elements = useSelector(elementsSelector);
-    const elementIDs = useSelector(elementIDsSelector);
-    const messagesToLoadMoreES = useSelector((state: RootState) =>
+    const stateParams = useMailSelector(paramsSelector);
+    const elementsMap = useMailSelector(elementsMapSelector);
+    const pendingActions = useMailSelector(pendingActionsSelector);
+    const tasksRunning = useMailSelector(taskRunning);
+    const elements = useMailSelector(elementsSelector);
+    const elementIDs = useMailSelector(elementIDsSelector);
+    const messagesToLoadMoreES = useMailSelector((state: MailState) =>
         messagesToLoadMoreESSelector(state, { page, search, esStatus })
     );
-    const shouldResetElementsState = useSelector((state: RootState) =>
+    const shouldResetElementsState = useMailSelector((state: MailState) =>
         shouldResetElementsStateSelector(state, { page, params })
     );
-    const shouldLoadElements = useSelector((state: RootState) => shouldLoadElementsSelector(state, { page, params }));
-    const shouldUpdatePage = useSelector((state: RootState) => shouldUpdatePageSelector(state, { page }));
-    const dynamicTotal = useSelector((state: RootState) => dynamicTotalSelector(state, { counts, labelID }));
-    const placeholderCount = useSelector((state: RootState) => placeholderCountSelector(state, { counts, labelID }));
-    const loading = useSelector((state: RootState) => loadingSelector(state, { page, params }));
-    const totalReturned = useSelector((state: RootState) => totalReturnedSelector(state, { counts, labelID }));
-    const expectingEmpty = useSelector((state: RootState) => expectingEmptySelector(state, { counts, labelID }));
-    const loadedEmpty = useSelector(loadedEmptySelector);
-    const partialESSearch = useSelector((state: RootState) => partialESSearchSelector(state, { search, esStatus }));
-    const stateInconsistency = useSelector((state: RootState) =>
+    const shouldLoadElements = useMailSelector((state: MailState) =>
+        shouldLoadElementsSelector(state, { page, params })
+    );
+    const shouldUpdatePage = useMailSelector((state: MailState) => shouldUpdatePageSelector(state, { page }));
+    const dynamicTotal = useMailSelector((state: MailState) => dynamicTotalSelector(state, { counts, labelID }));
+    const placeholderCount = useMailSelector((state: MailState) =>
+        placeholderCountSelector(state, { counts, labelID })
+    );
+    const loading = useMailSelector((state: MailState) => loadingSelector(state, { page, params }));
+    const totalReturned = useMailSelector((state: MailState) => totalReturnedSelector(state, { counts, labelID }));
+    const expectingEmpty = useMailSelector((state: MailState) => expectingEmptySelector(state, { counts, labelID }));
+    const loadedEmpty = useMailSelector(loadedEmptySelector);
+    const partialESSearch = useMailSelector((state: MailState) => partialESSearchSelector(state, { search, esStatus }));
+    const stateInconsistency = useMailSelector((state: MailState) =>
         stateInconsistencySelector(state, { search, esStatus })
     );
     const getConversationCounts = useGetConversationCounts();
@@ -271,7 +276,7 @@ export const useElements: UseElements = ({
  * Returns the element in the elements state for the given elementID
  */
 export const useGetElementByID = () => {
-    const store = useStore<RootState>();
+    const store = useMailStore();
 
     return useCallback((elementID: string): Element | undefined => {
         return store.getState().elements.elements[elementID];
@@ -283,7 +288,7 @@ export const useGetElementByID = () => {
  * Don't use this for optimistic for example
  */
 export const useGetElementsFromIDs = () => {
-    const store = useStore<RootState>();
+    const store = useMailStore();
 
     return useCallback((elementIDs: string[]): Element[] => {
         const state = store.getState();
@@ -307,7 +312,7 @@ export const useGetElementsFromIDs = () => {
  * It is used to get messages from a list of IDs. If the object do exist in the Message state, we return it, otherwise the element is returned.
  */
 export const useGetMessagesOrElementsFromIDs = () => {
-    const store = useStore<RootState>();
+    const store = useMailStore();
 
     return useCallback((elementIDs: string[]): Element[] => {
         const state = store.getState();

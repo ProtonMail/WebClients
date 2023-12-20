@@ -10,7 +10,7 @@ import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { recipientsToRecipientOrGroup } from '../../../helpers/message/messageRecipients';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageState } from '../../../store/messages/messagesTypes';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
 import ExtraImages from '../../message/extras/ExtraImages';
@@ -63,10 +63,7 @@ const EOHeaderExpanded = ({
                     <div className={clsx(['flex flex-nowrap', !messageLoaded && 'flex-1'])}>
                         <RecipientType
                             label={c('Label Recipient').t`From`}
-                            className={clsx([
-                                'flex items-start flex-nowrap',
-                                !messageLoaded && 'flex-1',
-                            ])}
+                            className={clsx(['flex items-start flex-nowrap', !messageLoaded && 'flex-1'])}
                         >
                             <RecipientItem
                                 recipientOrGroup={{ recipient: message.data?.Sender }}

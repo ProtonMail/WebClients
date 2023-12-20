@@ -48,7 +48,7 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getEventLocalStartEndDates } from '../../../../helpers/calendar/emailReminder';
 import { getParticipantsList } from '../../../../helpers/calendar/invite';
-import { MessageErrors } from '../../../../logic/messages/messagesTypes';
+import { MessageErrors } from '../../../../store/messages/messagesTypes';
 import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
 import EventReminderBanner from './EventReminderBanner';
 import ExtraEventParticipants from './ExtraEventParticipants';

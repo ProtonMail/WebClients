@@ -6,7 +6,7 @@ import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
 import { getCompleteAddress } from '../../../helpers/test/cache';
 import { clearAll } from '../../../helpers/test/helper';
-import { initMessage, setup } from './Message.test.helpers';
+import { setup } from './Message.test.helpers';
 
 describe('Message banners', () => {
     afterEach(clearAll);
@@ -14,9 +14,7 @@ describe('Message banners', () => {
     it('should show expiration banner', async () => {
         const ExpirationTime = new Date().getTime() / 1000 + 1000;
 
-        initMessage({ data: { ExpirationTime } });
-
-        const { getByTestId } = await setup();
+        const { getByTestId } = await setup({ data: { ExpirationTime } });
 
         const banner = await waitFor(() => getByTestId('expiration-banner'));
 
@@ -26,9 +24,7 @@ describe('Message banners', () => {
     it('should show the decrypted subject banner', async () => {
         const decryptedSubject = 'decrypted-subject';
 
-        initMessage({ data: { Subject: '...' }, decryption: { decryptedSubject } });
-
-        const { getByTestId } = await setup();
+        const { getByTestId } = await setup({ data: { Subject: '...' }, decryption: { decryptedSubject } });
 
         const banner = getByTestId('encrypted-subject-banner');
 
@@ -36,7 +32,7 @@ describe('Message banners', () => {
     });
 
     it('should show the spam banner', async () => {
-        initMessage({
+        const { getByTestId } = await setup({
             data: {
                 Flags: setBit(
                     MESSAGE_FLAGS.FLAG_PHISHING_AUTO,
@@ -45,17 +41,13 @@ describe('Message banners', () => {
             },
         });
 
-        const { getByTestId } = await setup();
-
         const banner = getByTestId('spam-banner:phishing-banner');
 
         expect(banner.textContent).toMatch(/phishing/);
     });
 
     it('should show error banner for network error', async () => {
-        initMessage({ errors: { network: [new Error('test')] } });
-
-        const { getByTestId } = await setup();
+        const { getByTestId } = await setup({ errors: { network: [new Error('test')] } });
 
         const banner = getByTestId('errors-banner');
 
@@ -65,18 +57,20 @@ describe('Message banners', () => {
     it('should show the unsubscribe banner with one click method', async () => {
         const toAddress = 'to@domain.com';
 
-        initMessage({
-            data: {
-                ParsedHeaders: { 'X-Original-To': toAddress },
-                UnsubscribeMethods: { OneClick: 'OneClick' },
+        const { getByTestId } = await setup(
+            {
+                data: {
+                    ParsedHeaders: { 'X-Original-To': toAddress },
+                    UnsubscribeMethods: { OneClick: 'OneClick' },
+                },
             },
-        });
-
-        const { getByTestId } = await setup({}, true, {
-            preloadedState: {
-                addresses: getModelState([getCompleteAddress({ Email: toAddress })]),
-            },
-        });
+            {},
+            {
+                preloadedState: {
+                    addresses: getModelState([getCompleteAddress({ Email: toAddress })]),
+                },
+            }
+        );
 
         const banner = getByTestId('unsubscribe-banner');
 

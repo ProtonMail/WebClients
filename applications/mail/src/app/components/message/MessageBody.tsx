@@ -10,7 +10,7 @@ import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useOnMailTo } from '../../containers/ComposeProvider';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { locateBlockquote } from '../../helpers/message/messageBlockquote';
-import { MessageState } from '../../logic/messages/messagesTypes';
+import { MessageState } from '../../store/messages/messagesTypes';
 import MessageBodyIframe from './MessageBodyIframe';
 import useMessageDarkStyles from './hooks/useMessageDarkStyles';
 

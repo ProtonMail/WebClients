@@ -9,7 +9,7 @@ import {
     getModalText,
     getNotificationText,
 } from '../../../hooks/actions/delete/usePermanentDeleteSelection';
-import { MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
+import { MessageWithOptionalBody } from '../../../store/messages/messagesTypes';
 
 interface Props extends ModalProps {
     message: MessageWithOptionalBody;

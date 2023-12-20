@@ -1,14 +1,16 @@
 import { RenderResult, fireEvent } from '@testing-library/react';
 
 import { EORender } from '../../../../helpers/test/eo/EORender';
-import { EOInitStore, EOOriginalMessageOptions } from '../../../../helpers/test/eo/helpers';
+import { EOOriginalMessageOptions } from '../../../../helpers/test/eo/helpers';
 import { addApiMock, waitForNoNotification, waitForNotification } from '../../../../helpers/test/helper';
 import EOReply from '../EOReply';
 
 export const setup = async (options?: EOOriginalMessageOptions) => {
-    await EOInitStore('reply', options);
-
-    const renderResult = await EORender(<EOReply setSessionStorage={jest.fn()} />, '/eo/reply/:id');
+    const renderResult = await EORender(<EOReply setSessionStorage={jest.fn()} />, {
+        routePath: '/eo/reply/:id',
+        options,
+        initialRoute: 'reply',
+    });
 
     return renderResult;
 };
@@ -38,7 +40,7 @@ export const send = async () => {
         // Write a test "T" in the message body
         fireEvent.keyDown(renderResult.container, { key: 'T' });
 
-        return await clickSend(renderResult);
+        return { sendRequest: await clickSend(renderResult), renderResult };
     } catch (error: any) {
         console.log('Error in sending helper', error);
         throw error;

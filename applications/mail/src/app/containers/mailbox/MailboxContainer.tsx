@@ -36,6 +36,7 @@ import { useCheckAllRef } from 'proton-mail/containers/CheckAllRefProvider';
 import useMailDrawer from 'proton-mail/hooks/drawer/useMailDrawer';
 import useMailtoHash from 'proton-mail/hooks/useMailtoHash';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import ConversationView from '../../components/conversation/ConversationView';
 import MailHeader from '../../components/header/MailHeader';
@@ -72,9 +73,8 @@ import usePreLoadElements from '../../hooks/mailbox/usePreLoadElements';
 import { useWelcomeFlag } from '../../hooks/mailbox/useWelcomeFlag';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
 import { useResizeMessageView } from '../../hooks/useResizeMessageView';
-import { selectComposersCount } from '../../logic/composers/composerSelectors';
-import { useAppSelector } from '../../logic/store';
 import { Filter, SearchParameters, Sort } from '../../models/tools';
+import { selectComposersCount } from '../../store/composers/composerSelectors';
 import { useOnCompose } from '../ComposeProvider';
 import MailboxContainerPlaceholder from './MailboxContainerPlaceholder';
 import { MailboxContainerContextProvider } from './MailboxContainerProvider';
@@ -114,7 +114,7 @@ const MailboxContainer = ({
     const messageContainerRef = useRef<HTMLElement>(null);
     const mainAreaRef = useRef<HTMLDivElement>(null);
     const resizeAreaRef = useRef<HTMLButtonElement>(null);
-    const composersCount = useAppSelector(selectComposersCount);
+    const composersCount = useMailSelector(selectComposersCount);
     const isComposerOpened = composersCount > 0;
     const { drawerSidebarButtons, showDrawerSidebar } = useMailDrawer();
     const { selectAll, setSelectAll } = useSelectAll({ labelID: inputLabelID });

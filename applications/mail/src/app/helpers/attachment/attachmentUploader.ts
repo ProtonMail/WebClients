@@ -16,7 +16,7 @@ import {
     MESSAGE_ALREADY_SENT_INTERNAL_ERROR,
     UPLOAD_ATTACHMENT_ERROR_CODES,
 } from '../../constants';
-import { MessageState, MessageStateWithData, PublicPrivateKey } from '../../logic/messages/messagesTypes';
+import { MessageState, MessageStateWithData, PublicPrivateKey } from '../../store/messages/messagesTypes';
 import { generateCid, isEmbeddable } from '../message/messageEmbeddeds';
 import { RequestParams, Upload, upload as uploadHelper } from '../upload';
 

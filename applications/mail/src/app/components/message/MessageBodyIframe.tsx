@@ -10,7 +10,7 @@ import { hasAttachments, isAutoFlaggedPhishing, isSuspicious } from '@proton/sha
 import clsx from '@proton/utils/clsx';
 
 import { useMailboxContainerContext } from '../../containers/mailbox/MailboxContainerProvider';
-import { MessageState } from '../../logic/messages/messagesTypes';
+import { MessageState } from '../../store/messages/messagesTypes';
 import MessageBodyImages from './MessageBodyImages';
 import MessagePrintFooter from './MessagePrintFooter';
 import MessagePrintHeader from './MessagePrintHeader';

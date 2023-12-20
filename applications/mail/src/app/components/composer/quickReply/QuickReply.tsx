@@ -1,5 +1,4 @@
 import { Dispatch, SetStateAction, Suspense, lazy, useCallback, useEffect, useRef, useState } from 'react';
-import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -15,6 +14,7 @@ import { DIRECTION } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { MESSAGE_ACTIONS } from '../../../constants';
 import { getFromAddress } from '../../../helpers/addresses';
@@ -23,8 +23,8 @@ import { toText } from '../../../helpers/parserHtml';
 import { EditorTypes, useComposerContent } from '../../../hooks/composer/useComposerContent';
 import { useGetConversation } from '../../../hooks/conversation/useConversation';
 import { useGetAllMessages } from '../../../hooks/message/useMessage';
-import { removeQuickReplyFlag } from '../../../logic/messages/draft/messagesDraftActions';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { removeQuickReplyFlag } from '../../../store/messages/draft/messagesDraftActions';
+import { MessageState } from '../../../store/messages/messagesTypes';
 import DeleteQuickReplyModal from './DeleteQuickReplyModal';
 import NoAttachmentsModal from './NoAttachmentsModal';
 import QuickReplyType from './QuickReplyType';
@@ -55,7 +55,7 @@ const QuickReply = ({
     const [addresses] = useAddresses();
     const mailSettings = useMailModel('MailSettings');
     const [userSettings] = useUserSettings();
-    const dispatch = useDispatch();
+    const dispatch = useMailDispatch();
     const quickReplyFrameRef = useRef<HTMLDivElement>(null);
 
     const getConversation = useGetConversation();
