@@ -3,9 +3,11 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
+import { getAppHref, getClientID } from '@proton/shared/lib/apps/helper';
 import { sendExtensionMessage } from '@proton/shared/lib/browser/extension';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { isIos, isIpad } from '@proton/shared/lib/helpers/browser';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
 import Layout from '../Layout';
@@ -19,6 +21,7 @@ enum Step {
     Recovery,
     Install,
     Loading,
+    Redirect,
 }
 
 const CustomStep = ({
@@ -37,10 +40,15 @@ const CustomStep = ({
         measure({ event: TelemetryAccountSignupEvents.onboardingStart, dimensions: {} });
     }, []);
 
-    const maybeTriggerExtension = () => {
+    const getNextPassStep = () => {
+        if (model.source === getClientID(APPS.PROTONPASS)) {
+            return Step.Redirect;
+        }
+
         if (!model.extension?.installed) {
             return Step.Install;
         }
+
         return Step.Loading;
     };
 
@@ -48,7 +56,7 @@ const CustomStep = ({
         if (mnemonicData) {
             return Step.Recovery;
         }
-        return maybeTriggerExtension();
+        return getNextPassStep();
     });
 
     const isBrokenBlobDownload = isIos() || isIpad();
@@ -68,9 +76,7 @@ const CustomStep = ({
                                         });
                                     }}
                                     mnemonic={mnemonicData!}
-                                    onContinue={async () => {
-                                        setStep(maybeTriggerExtension());
-                                    }}
+                                    onContinue={async () => setStep(getNextPassStep())}
                                 />
                             </Layout>
                         );
@@ -85,9 +91,7 @@ const CustomStep = ({
                                     });
                                 }}
                                 mnemonic={mnemonicData!}
-                                onContinue={async () => {
-                                    setStep(maybeTriggerExtension());
-                                }}
+                                onContinue={async () => setStep(getNextPassStep())}
                             />
                         </Layout>
                     );
@@ -139,6 +143,27 @@ const CustomStep = ({
                             { type: 'pass-onboarding' },
                             { extensionId: model.extension.ID, maxTimeout: 1000 }
                         ).catch(noop);
+                    }}
+                />
+            )}
+            {step === Step.Redirect && (
+                <Step2
+                    steps={[c('pass_signup_2023: Info').t`Launching ${PASS_APP_NAME}`]}
+                    img={setupImg}
+                    product={productAppName}
+                    logo={logo}
+                    theme={theme}
+                    onSetup={async () => {
+                        const localID = (() => {
+                            if (model.cache?.type === 'user') {
+                                return model.cache.session.localID;
+                            } else if (model.cache?.type === 'signup') {
+                                return model.cache.setupData?.authResponse.LocalID;
+                            }
+                        })();
+
+                        await wait(1_500);
+                        document.location.assign(getAppHref('/', APPS.PROTONPASS, localID));
                     }}
                 />
             )}

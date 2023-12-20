@@ -64,6 +64,7 @@ export interface SignupModelV2 {
     planParameters?: PlanParameters;
     cache: SignupCacheResult | UserCacheResult | undefined;
     step: Steps;
+    source?: string;
     extension?: {
         ID: string;
         installed: boolean;
