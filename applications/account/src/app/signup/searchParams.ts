@@ -86,6 +86,7 @@ export const getSignupSearchParams = (
     const hideFreePlan = ['true', '1'].includes(maybeHfp as any) || getCookie('offer') === 'bestdeal' || false;
     const email = searchParams.get('email') || undefined;
     const orgName = searchParams.get('orgName') || undefined;
+    const source = searchParams.get('source') || undefined;
 
     return {
         email,
@@ -103,6 +104,7 @@ export const getSignupSearchParams = (
         type,
         hideFreePlan,
         orgName,
+        source,
     };
 };
 export type SignupParameters = ReturnType<typeof getSignupSearchParams>;
