@@ -1,11 +1,11 @@
 import { format, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { APPS, MAIL_APP_NAME, OPEN_OFFER_MODAL_EVENT } from '@proton/shared/lib/constants';
 import { isTrial, isTrialExpired, willTrialExpire } from '@proton/shared/lib/helpers/subscription';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { InlineLinkButton } from '../../components';
 import { useConfig, useSubscription } from '../../hooks';
 import TopBanner from './TopBanner';
 

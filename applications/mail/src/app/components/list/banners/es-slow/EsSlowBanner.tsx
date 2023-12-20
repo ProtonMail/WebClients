@@ -2,7 +2,8 @@ import { memo, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Icon, InlineLinkButton, useFlag, useUser } from '@proton/components';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
+import { Icon, useFlag, useUser } from '@proton/components';
 import { sendSlowSearchReport } from '@proton/encrypted-search';
 import clsx from '@proton/utils/clsx';
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
+import { Button, Href, InlineLinkButton } from '@proton/atoms';
 import {
     Challenge,
     ChallengeError,
@@ -12,7 +12,6 @@ import {
     Checkbox,
     Icon,
     Info,
-    InlineLinkButton,
     InputFieldTwo,
     Label,
     PasswordInputTwo,

@@ -1,8 +1,9 @@
 import { c, msgid } from 'ttag';
 
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { InlineLinkButton, SettingsLink, useModalState } from '../../components';
+import { SettingsLink, useModalState } from '../../components';
 import {
     useConfig,
     useIsSessionRecoveryInitiatedByCurrentSession,
