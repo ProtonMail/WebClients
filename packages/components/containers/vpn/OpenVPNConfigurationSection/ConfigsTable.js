@@ -15,6 +15,7 @@ import { Icon, SettingsLink, Table, TableBody, TableCell, TableRow, Tooltip } fr
 import { useApi, useUser } from '../../../hooks';
 import Country from './Country';
 import LoadIndicator from './LoadIndicator';
+import { normalizeName } from './normalizeName';
 import { isP2PEnabled, isTorEnabled } from './utils';
 
 export const CATEGORY = {
@@ -57,34 +58,6 @@ export const TorIcon = () => (
         </Tooltip>
     </span>
 );
-
-const normalizeName = /** @param {Logical} server */ (server) => {
-    let name = server.Name.toLowerCase()
-        .replace(/[^a-zA-Z0-9.#-]/g, '')
-        .replace(/[#.-]+/g, '-')
-        .replace(/^[\s-]+/g, '')
-        .replace(/[\s-]+$/g, '');
-
-    if (name) {
-        let needsFreeSuffix = server.Tier === 0 && name.indexOf('-free') === -1;
-
-        name = name.replace(/^([a-zA-Z]{2}-)((?:[a-zA-Z]{2}-)?)(\d+)$/, (_, start, middle, end) => {
-            if (needsFreeSuffix) {
-                middle += 'free-';
-            }
-
-            needsFreeSuffix = false;
-
-            return start + middle + end.padStart(2, '0');
-        });
-
-        if (needsFreeSuffix) {
-            name += '-free';
-        }
-    }
-
-    return name;
-};
 
 // TODO: Add icons instead of text for p2p and tor when they are ready
 const ConfigsTable = ({ loading, servers = [], platform, protocol, category, onSelect, selecting }) => {
