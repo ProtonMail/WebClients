@@ -2,16 +2,8 @@ import { useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Href } from '@proton/atoms';
-import {
-    Icon,
-    InlineLinkButton,
-    useAddresses,
-    useApi,
-    useEventManager,
-    useModalState,
-    useNotifications,
-} from '@proton/components';
+import { Button, Href, InlineLinkButton } from '@proton/atoms';
+import { Icon, useAddresses, useApi, useEventManager, useModalState, useNotifications } from '@proton/components';
 import { PublicKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { updatePromptPin } from '@proton/shared/lib/api/mailSettings';

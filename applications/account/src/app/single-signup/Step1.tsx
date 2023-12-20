@@ -17,8 +17,9 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Href } from '@proton/atoms/Href';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { Vr } from '@proton/atoms/Vr';
-import { Icon, InlineLinkButton, Price, Toggle, VpnLogo, useModalState } from '@proton/components/components';
+import { Icon, Price, Toggle, VpnLogo, useModalState } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import {
     CurrencySelector,
