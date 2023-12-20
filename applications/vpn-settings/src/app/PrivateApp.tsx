@@ -7,6 +7,7 @@ import {
     MembersModel,
     OrganizationModel,
     PaymentMethodsModel,
+    SamlSSOModel,
     SubscriptionModel,
     UserModel,
     UserSettingsModel,
@@ -26,6 +27,7 @@ const EVENT_MODELS = [
     OrganizationModel,
     DomainsModel,
     MembersModel,
+    SamlSSOModel,
 ];
 
 const PRELOAD_MODELS = [UserModel, UserSettingsModel];
