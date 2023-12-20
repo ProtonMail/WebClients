@@ -1,9 +1,8 @@
 import { Location } from 'history';
 
 import { checkSubscription } from '@proton/shared/lib/api/payments';
-import { APP_NAMES, CYCLE, PLANS, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
-import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
 import { Api, Currency, Cycle, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 
@@ -24,10 +23,7 @@ export const getSubscriptionPrices = async (
             Plans: planIDs,
             Currency: currency,
             Cycle: cycle,
-            CouponCode:
-                planIDs[PLANS.VPN] && getHas2023OfferCoupon(couponCode) && cycle === CYCLE.MONTHLY
-                    ? undefined
-                    : couponCode,
+            CouponCode: couponCode,
         })
     );
 };
