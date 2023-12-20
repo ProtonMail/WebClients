@@ -28,7 +28,7 @@ interface Arguments {
     isProtonSentinelUpsellEnabled: boolean;
     isOrgTwoFactorEnabled: boolean;
     isEmailForwardingEnabled: boolean;
-    isElectronDisabled: boolean;
+    hasUserAccessToInboxDesktop: boolean;
     isNotifInboxDesktopAppOn: boolean;
 }
 
@@ -50,7 +50,7 @@ export const getRoutes = ({
     isProtonSentinelUpsellEnabled,
     isOrgTwoFactorEnabled,
     isEmailForwardingEnabled,
-    isElectronDisabled,
+    hasUserAccessToInboxDesktop,
     isNotifInboxDesktopAppOn,
 }: Arguments) => {
     return {
@@ -76,7 +76,7 @@ export const getRoutes = ({
             organization,
             isSmtpTokenEnabled,
             isEmailForwardingEnabled,
-            isElectronDisabled,
+            hasUserAccessToInboxDesktop,
             isNotifInboxDesktopAppOn,
         }),
         calendar: getCalendarAppRoutes({ app }),
