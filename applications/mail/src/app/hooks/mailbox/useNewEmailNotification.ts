@@ -12,8 +12,8 @@ import { isImported } from '@proton/shared/lib/mail/messages';
 import notificationIcon from '../../assets/notification.png';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { setParamsInLocation } from '../../helpers/mailboxUrl';
+import { isElementReminded } from '../../helpers/snooze';
 import useMailModel from '../../hooks/useMailModel';
-import { isElementReminded } from '../../logic/snoozehelpers';
 import { Event } from '../../models/event';
 
 const displayNotification = (
