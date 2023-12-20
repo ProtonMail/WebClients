@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Button, Card, CircleLoader, Href } from '@proton/atoms';
+import { Button, Card, CircleLoader, Href, InlineLinkButton } from '@proton/atoms';
 import useLoading from '@proton/hooks/useLoading';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -25,7 +25,7 @@ import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string'
 import { Address, AddressConfirmationState, SessionRecoveryState, UserType } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
-import { AppLink, Badge, Icon, Info, InlineLinkButton, Tooltip, useModalState } from '../../components';
+import { AppLink, Badge, Icon, Info, Tooltip, useModalState } from '../../components';
 import { getVerificationSentText } from '../../containers/recovery/email/VerifyRecoveryEmailModal';
 import getBoldFormattedText from '../../helpers/getBoldFormattedText';
 import {

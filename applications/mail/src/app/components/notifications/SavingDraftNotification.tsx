@@ -2,7 +2,7 @@ import { Ref, forwardRef, useImperativeHandle, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { InlineLinkButton } from '@proton/components';
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 
 enum SavingStep {
     saving,

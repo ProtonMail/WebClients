@@ -2,9 +2,8 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import truncate from '@proton/utils/truncate';
-
-import { InlineLinkButton } from '../button';
 
 interface Props {
     children: string;
