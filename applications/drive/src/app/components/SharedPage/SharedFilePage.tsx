@@ -31,10 +31,13 @@ export default function SharedFilePage({ token, link }: Props) {
                 FooterComponent={<SharedPageFooter rootItem={link} items={[{ id: link.linkId, ...link }]} />}
             >
                 <SharedPageHeader rootItem={link} items={[{ id: link.linkId, ...link }]} className="mt-3 mb-4">
-                    <div className="w-full flex items-center">
-                        <FileNameDisplay className="flex-1 text-4xl text-bold p-1" text={link.name} />
-                        <div className="w-full lg:w-auto flex lg:gap-4 lg:flex-row-reverse">
-                            <HeaderSecureLabel className="lg:ml-auto" />
+                    <div className="w-full flex flex-nowrap flex-column md:items-center md:flex-row">
+                        <FileNameDisplay className="text-4xl text-bold py-1 md:p-1" text={link.name} />
+                        <div
+                            className="flex md:flex-1 shrink-0 md:gap-4 md:flex-row-reverse md:grow-1 min-w-custom"
+                            style={{ '--min-w-custom': 'max-content' }}
+                        >
+                            <HeaderSecureLabel className="md:ml-auto" />
                             {link.size ? <HeaderSize size={link.size} /> : null}
                         </div>
                     </div>
