@@ -45,6 +45,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
 
 import { useContactsMap } from 'proton-mail/hooks/contact/useContacts';
+import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import { formatDownload } from '../../../helpers/attachment/attachmentDownloader';
 import {
@@ -58,10 +59,9 @@ import { isNetworkError } from '../../../helpers/errors';
 import { getMessageHasData } from '../../../helpers/message/messages';
 import { useGetAttachment } from '../../../hooks/attachments/useAttachment';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
-import { updateAttachment } from '../../../logic/attachments/attachmentsActions';
-import { MessageErrors, MessageStateWithData } from '../../../logic/messages/messagesTypes';
-import { errors as errorsAction } from '../../../logic/messages/read/messagesReadActions';
-import { useAppDispatch } from '../../../logic/store';
+import { updateAttachment } from '../../../store/attachments/attachmentsActions';
+import { MessageErrors, MessageStateWithData } from '../../../store/messages/messagesTypes';
+import { errors as errorsAction } from '../../../store/messages/read/messagesReadActions';
 import ExtraEvent from './calendar/ExtraEvent';
 
 interface Props {
@@ -73,7 +73,7 @@ const ExtraEvents = ({ message }: Props) => {
     const isMounted = useIsMounted();
     const getMessageKeys = useGetMessageKeys();
     const getAttachment = useGetAttachment();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     // const messageCache = useMessageCache();
     const getCalendars = useGetCalendars();
     const [contactEmails = [], loadingContactEmails] = useContactEmails();

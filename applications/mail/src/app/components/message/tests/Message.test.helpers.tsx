@@ -9,12 +9,13 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import noop from '@proton/utils/noop';
 
+import { MailStore } from 'proton-mail/store/store';
+
 import * as messageDecrypt from '../../../helpers/message/messageDecrypt';
 import { mergeMessages } from '../../../helpers/message/messages';
 import { render } from '../../../helpers/test/render';
-import { MessageState, PartialMessageState } from '../../../logic/messages/messagesTypes';
-import { initialize } from '../../../logic/messages/read/messagesReadActions';
-import { store } from '../../../logic/store';
+import { MessageState, PartialMessageState } from '../../../store/messages/messagesTypes';
+import { initialize } from '../../../store/messages/read/messagesReadActions';
 import MessageView, { MessageViewRef } from '../MessageView';
 import { MESSAGE_IFRAME_ROOT_ID } from '../constants';
 
@@ -42,10 +43,30 @@ export const defaultProps: MessageViewProps = {
     isComposerOpened: false,
 };
 
+export const initMessage = (store: MailStore, message: MessageState) => {
+    store.dispatch(initialize(message));
+};
+
+export const getMessage = (inputMessage: PartialMessageState = {}) => {
+    const defaultMessage = {
+        localID: messageID,
+        data: {
+            ID: messageID,
+            AddressID: addressID,
+            Subject: 'test',
+            Sender: { Name: 'testName', Address: 'testAddress' },
+        },
+        messageDocument: { initialized: true },
+        verification: {},
+    } as MessageState;
+
+    return mergeMessages(defaultMessage, inputMessage);
+};
+
 export const setup = async (
+    message: PartialMessageState | undefined,
     specificProps: Partial<MessageViewProps> = {},
-    useMinimalCache = true,
-    renderOptions?: Parameters<typeof render>[2]
+    renderOptions?: Parameters<typeof render>[1]
 ) => {
     const props = { ...defaultProps, ...specificProps };
 
@@ -54,7 +75,15 @@ export const setup = async (
         ref.current = refValue;
     };
 
-    const renderResult = await render(<MessageView ref={refCallback} {...props} />, useMinimalCache, renderOptions);
+    const renderResult = await render(<MessageView ref={refCallback} {...props} />, {
+        ...renderOptions,
+        onStore: (store) => {
+            if (message) {
+                initMessage(store, getMessage(message));
+            }
+            renderOptions?.onStore?.(store);
+        },
+    });
 
     const open = async () => {
         jest.spyOn(messageDecrypt, 'decryptMessage');
@@ -63,7 +92,7 @@ export const setup = async (
             ref.current?.expand();
             // Wait for message initialization to be finished before continuing
             await waitFor(() => {
-                const message = store.getState().messages[props.message.ID];
+                const message = renderResult.store.getState().messages[props.message.ID];
                 expect(message?.messageDocument?.initialized).toBe(true);
             });
         });
@@ -82,24 +111,6 @@ export const setup = async (
     };
 
     return { ...renderResult, ref, open, details, rerender };
-};
-
-export const initMessage = (inputMessage: PartialMessageState = {}) => {
-    const defaultMessage = {
-        localID: messageID,
-        data: {
-            ID: messageID,
-            AddressID: addressID,
-            Subject: 'test',
-            Sender: { Name: 'testName', Address: 'testAddress' },
-        },
-        messageDocument: { initialized: true },
-        verification: {},
-    } as MessageState;
-
-    const message = mergeMessages(defaultMessage, inputMessage);
-
-    store.dispatch(initialize(message));
 };
 
 export const getIframeRootDiv = async (element: HTMLElement) => {

@@ -40,9 +40,12 @@ describe('PageContainer', () => {
 
         minimalCache();
 
-        const renderResult = await render(<Component {...props} />, false, {
+        const renderResult = await render(<Component {...props} />, {
             preloadedState: {
-                mailSettings: getModelState({ Shortcuts: SHORTCUTS.ENABLED, PageSize: MAIL_PAGE_SIZE.FIFTY } as MailSettings),
+                mailSettings: getModelState({
+                    Shortcuts: SHORTCUTS.ENABLED,
+                    PageSize: MAIL_PAGE_SIZE.FIFTY,
+                } as MailSettings),
             },
         });
         const { container } = renderResult;

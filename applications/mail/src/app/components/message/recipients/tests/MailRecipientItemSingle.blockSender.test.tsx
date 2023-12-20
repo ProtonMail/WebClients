@@ -17,9 +17,8 @@ import {
     render,
     waitForNotification,
 } from '../../../../helpers/test/helper';
-import { load } from '../../../../logic/incomingDefaults/incomingDefaultsActions';
-import { MessageState } from '../../../../logic/messages/messagesTypes';
-import { store } from '../../../../logic/store';
+import { load } from '../../../../store/incomingDefaults/incomingDefaultsActions';
+import { MessageState } from '../../../../store/messages/messagesTypes';
 import MailRecipientItemSingle from '../MailRecipientItemSingle';
 
 const meAddress = 'me@protonmail.com';
@@ -91,7 +90,6 @@ const setup = async (sender: Recipient, isRecipient = false, hasBlockSenderConfi
 
     const container = await render(
         <MailRecipientItemSingle message={message} recipient={sender} isRecipient={isRecipient} {...modalsHandlers} />,
-        false,
         {
             preloadedState: {
                 addresses: getModelState([
@@ -108,7 +106,7 @@ const setup = async (sender: Recipient, isRecipient = false, hasBlockSenderConfi
     );
 
     // Load manually incoming defaults
-    await store.dispatch(load());
+    await container.store.dispatch(load());
 
     const dropdown = await openDropdown(container, sender);
 

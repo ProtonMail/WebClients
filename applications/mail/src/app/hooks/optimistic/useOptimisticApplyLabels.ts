@@ -9,7 +9,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 
-import { useMailStore } from 'proton-mail/store/hooks';
+import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 
 import { updateCounters } from '../../helpers/counter';
 import { getCurrentFolderIDs, hasLabel, isMessage as testIsMessage } from '../../helpers/elements';
@@ -20,15 +20,14 @@ import {
     applyLabelChangesOnMessage,
     applyLabelChangesOnOneMessageOfAConversation,
 } from '../../helpers/labels';
+import { Conversation } from '../../models/conversation';
+import { Element } from '../../models/element';
 import {
     applyLabelsOnConversation,
     applyLabelsOnConversationMessages,
-} from '../../logic/conversations/conversationsActions';
-import { optimisticApplyLabels as optimisticApplyLabelsElementsAction } from '../../logic/elements/elementsActions';
-import { optimisticApplyLabels as optimisticApplyLabelsMessageAction } from '../../logic/messages/optimistic/messagesOptimisticActions';
-import { useAppDispatch } from '../../logic/store';
-import { Conversation } from '../../models/conversation';
-import { Element } from '../../models/element';
+} from '../../store/conversations/conversationsActions';
+import { optimisticApplyLabels as optimisticApplyLabelsElementsAction } from '../../store/elements/elementsActions';
+import { optimisticApplyLabels as optimisticApplyLabelsMessageAction } from '../../store/messages/optimistic/messagesOptimisticActions';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetElementByID } from '../mailbox/useElements';
 
@@ -51,7 +50,7 @@ const computeRollbackLabelChanges = (element: Element, changes: LabelChanges) =>
 
 export const useOptimisticApplyLabels = () => {
     const store = useMailStore();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const getElementByID = useGetElementByID();
     const [folders = []] = useFolders();
     const getConversation = useGetConversation();

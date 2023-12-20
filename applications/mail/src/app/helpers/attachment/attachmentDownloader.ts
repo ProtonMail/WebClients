@@ -8,7 +8,7 @@ import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { MessageKeys, MessageVerification } from '../../logic/messages/messagesTypes';
+import { MessageKeys, MessageVerification } from '../../store/messages/messagesTypes';
 import { getAndVerify } from './attachmentLoader';
 
 export interface Download {

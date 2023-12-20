@@ -2,20 +2,21 @@ import { useSubscribeEventManager } from '@proton/components';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import { parseLabelIDsInEvent } from '../../helpers/elements';
+import { Conversation } from '../../models/conversation';
+import { Event, LabelIDsChanges } from '../../models/event';
 import {
     eventConversationUpdate,
     eventDelete,
     eventMessageUpdate,
     load as loadAction,
-} from '../../logic/conversations/conversationsActions';
-import { useAppDispatch } from '../../logic/store';
-import { Conversation } from '../../models/conversation';
-import { Event, LabelIDsChanges } from '../../models/event';
+} from '../../store/conversations/conversationsActions';
 import { useGetConversation } from '../conversation/useConversation';
 
 export const useConversationsEvent = () => {
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const getConversation = useGetConversation();
 
     useSubscribeEventManager(async ({ Conversations = [], Messages = [] }: Event) => {

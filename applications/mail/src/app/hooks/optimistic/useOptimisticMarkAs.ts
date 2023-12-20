@@ -11,7 +11,7 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { useMailStore } from 'proton-mail/store/hooks';
+import { useMailDispatch, useMailStore } from 'proton-mail/store/hooks';
 
 import { updateCountersForMarkAs } from '../../helpers/counter';
 import { isUnread, isMessage as testIsMessage } from '../../helpers/elements';
@@ -19,15 +19,14 @@ import { isConversationMode } from '../../helpers/mailSettings';
 import { applyMarkAsChangesOnMessage } from '../../helpers/message/messages';
 import { isElementReminded } from '../../helpers/snooze';
 import useMailModel from '../../hooks/useMailModel';
+import { Conversation } from '../../models/conversation';
+import { Element } from '../../models/element';
 import {
     optimisticMarkAsConversation,
     optimisticMarkAsConversationMessages,
-} from '../../logic/conversations/conversationsActions';
-import { optimisticMarkAs as optimisticMarkAsElementAction } from '../../logic/elements/elementsActions';
-import { optimisticMarkAs as optimisticMarkAsMessageAction } from '../../logic/messages/optimistic/messagesOptimisticActions';
-import { useAppDispatch } from '../../logic/store';
-import { Conversation } from '../../models/conversation';
-import { Element } from '../../models/element';
+} from '../../store/conversations/conversationsActions';
+import { optimisticMarkAs as optimisticMarkAsElementAction } from '../../store/elements/elementsActions';
+import { optimisticMarkAs as optimisticMarkAsMessageAction } from '../../store/messages/optimistic/messagesOptimisticActions';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetElementByID } from '../mailbox/useElements';
 
@@ -108,7 +107,7 @@ const applyMarkAsChangesOnConversationWithMessages = (
 
 export const useOptimisticMarkAs = () => {
     const mailStore = useMailStore();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const getElementByID = useGetElementByID();
     const mailSettings = useMailModel('MailSettings');
     const history = useHistory();

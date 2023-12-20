@@ -5,7 +5,7 @@ import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { MessageKeys, MessageVerification } from '../../../logic/messages/messagesTypes';
+import { MessageKeys, MessageVerification } from '../../../store/messages/messagesTypes';
 import { api } from '../../test/api';
 import { GeneratedKey, generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../test/crypto';
 import {

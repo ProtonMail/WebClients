@@ -3,7 +3,7 @@ import { Router } from 'react-router';
 
 import { render as originalRender } from '@testing-library/react';
 import type { RenderOptions } from '@testing-library/react';
-import { MemoryHistory, createMemoryHistory } from 'history';
+import { createMemoryHistory } from 'history';
 
 import { getModelState } from '@proton/account/test';
 import { CryptoApiInterface, VERIFICATION_STATUS } from '@proton/crypto';
@@ -65,13 +65,6 @@ export const notificationManager = {
     setOffset: jest.fn(),
 };
 
-let history: MemoryHistory;
-export const getHistory = () => history;
-export const resetHistory = () => {
-    history = createMemoryHistory({ initialEntries: ['/inbox'] });
-};
-resetHistory();
-
 export const config = {
     APP_NAME: APPS.PROTONMAIL,
     APP_VERSION: 'test-version',
@@ -87,21 +80,24 @@ export const eventManager = {
 
 extendStore({ api: apiMock as unknown as any, eventManager });
 
-const TestProvider = ({ children }: { children: ReactNode }) => (
-    <ConfigProvider config={config}>
-        <ApiContext.Provider value={apiMock}>
-            <CacheProvider cache={mockCache}>
-                <NotificationsContext.Provider value={notificationManager}>
-                    <EventManagerContext.Provider value={eventManager}>
-                        <Router history={history}>
-                            <ContactProvider>{children}</ContactProvider>
-                        </Router>
-                    </EventManagerContext.Provider>
-                </NotificationsContext.Provider>
-            </CacheProvider>
-        </ApiContext.Provider>
-    </ConfigProvider>
-);
+const TestProvider = ({ children }: { children: ReactNode }) => {
+    const history = createMemoryHistory();
+    return (
+        <ConfigProvider config={config}>
+            <ApiContext.Provider value={apiMock}>
+                <CacheProvider cache={mockCache}>
+                    <NotificationsContext.Provider value={notificationManager}>
+                        <EventManagerContext.Provider value={eventManager}>
+                            <Router history={history}>
+                                <ContactProvider>{children}</ContactProvider>
+                            </Router>
+                        </EventManagerContext.Provider>
+                    </NotificationsContext.Provider>
+                </CacheProvider>
+            </ApiContext.Provider>
+        </ConfigProvider>
+    );
+};
 
 interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
     preloadedState?: Partial<Parameters<typeof setupStore>[0]['preloadedState']>;

@@ -1,7 +1,6 @@
 import { CryptoProxy } from '@proton/crypto';
 
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
-import { EOGetHistory } from '../../../../helpers/test/eo/EORender';
 import { EOClearAll, EOPassword, validID } from '../../../../helpers/test/eo/helpers';
 import { send } from './EOReply.test.helpers';
 
@@ -24,7 +23,10 @@ describe('EO Reply send', () => {
                 Test EO body
             </blockquote>`;
 
-        const sendRequest = await send();
+        const {
+            sendRequest,
+            renderResult: { history },
+        } = await send();
 
         const { data: decryptedReplyBody } = await CryptoProxy.decryptMessage({
             armoredMessage: sendRequest.data.ReplyBody,
@@ -37,7 +39,6 @@ describe('EO Reply send', () => {
 
         expect(formattedReplyBody).toContain(formattedExpectedBody);
 
-        const history = EOGetHistory();
         expect(history.location.pathname).toBe(`/eo/message/${validID}`);
     });
 });

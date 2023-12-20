@@ -4,8 +4,7 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { addApiKeys } from '../../../helpers/test/crypto';
-import { initialize } from '../../../logic/messages/read/messagesReadActions';
-import { store } from '../../../logic/store';
+import { initialize } from '../../../store/messages/read/messagesReadActions';
 import {
     MESSAGE_IFRAME_PRINT_CLASS,
     MESSAGE_IFRAME_PRINT_FOOTER_ID,
@@ -32,9 +31,7 @@ describe('Message content', () => {
                 messageDocument: { initialized: true, plainText: 'Body1' },
             };
 
-            store.dispatch(initialize(message1));
-
-            const { container } = await setup({ message: message1.data });
+            const { container } = await setup(message1, { message: message1.data });
             const iframe = await getIframeRootDiv(container);
             const wrapper = document.createElement('div');
             wrapper.appendChild(iframe);
@@ -62,9 +59,9 @@ describe('Message content', () => {
                 } as Message,
                 messageDocument: { initialized: true, plainText: 'Body1' },
             };
-            store.dispatch(initialize(message1));
 
-            await setup({ message: message1.data });
+            const { store } = await setup(message1, { message: message1.data });
+            store.dispatch(initialize(message1));
             const moreDropdown = await screen.findByTestId('message-header-expanded:more-dropdown');
             fireEvent.click(moreDropdown);
             const printButton = await screen.findByTestId('message-view-more-dropdown:print');

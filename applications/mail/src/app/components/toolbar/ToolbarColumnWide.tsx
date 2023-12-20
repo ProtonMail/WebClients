@@ -1,14 +1,15 @@
 import { useMemo, useRef } from 'react';
-import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
 import { useElementBreakpoints, useFolders, useLabels } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
+import { useMailSelector } from 'proton-mail/store/hooks';
+
 import { getLabelName } from '../../helpers/labels';
 import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';
-import { pageSize as pageSizeSelector } from '../../logic/elements/elementsSelectors';
+import { pageSize as pageSizeSelector } from '../../store/elements/elementsSelectors';
 import ListSettings from '../list/ListSettings';
 import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
 import LabelName from './LabelName';
@@ -65,7 +66,7 @@ const ToolbarColumnWide = ({
     const [folders] = useFolders();
     const labelName = useMemo(() => getLabelName(labelID, labels, folders), [labelID, labels, folders]);
 
-    const pageSize = useSelector(pageSizeSelector);
+    const pageSize = useMailSelector(pageSizeSelector);
 
     return (
         <div>

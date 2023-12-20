@@ -4,9 +4,8 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { addApiKeys, addApiMock, clearAll } from '../../../helpers/test/helper';
-import { initialize } from '../../../logic/messages/read/messagesReadActions';
-import { store } from '../../../logic/store';
-import { addressID, getIframeRootDiv, initMessage, messageID, setup } from './Message.test.helpers';
+import { initialize } from '../../../store/messages/read/messagesReadActions';
+import { addressID, getIframeRootDiv, messageID, setup } from './Message.test.helpers';
 
 describe('message state', () => {
     afterEach(clearAll);
@@ -25,7 +24,7 @@ describe('message state', () => {
 
         addApiMock(`mail/v4/messages/${messageID}`, () => ({ Message }));
 
-        await setup();
+        const { store } = await setup(undefined);
 
         const messageFromCache = store.getState().messages[messageID];
         expect(messageFromCache).toBeDefined();
@@ -36,9 +35,7 @@ describe('message state', () => {
         const apiMock = jest.fn();
         addApiMock(`mail/v4/messages/${messageID}`, apiMock);
 
-        initMessage();
-
-        await setup();
+        await setup({});
 
         expect(apiMock).not.toHaveBeenCalled();
     });
@@ -73,10 +70,10 @@ describe('message state', () => {
             messageDocument: { initialized: true, plainText: 'Body2' },
         };
 
-        store.dispatch(initialize(message1));
+        const { store, container, rerender } = await setup(message1, { message: message1.data });
+
         store.dispatch(initialize(message2));
 
-        const { container, rerender } = await setup({ message: message1.data });
         const iframe = await getIframeRootDiv(container);
         await findByText(iframe, 'Body1');
 

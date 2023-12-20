@@ -11,13 +11,13 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { LabelCount } from '@proton/shared/lib/interfaces';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import useScheduleSendFeature from '../../components/composer/actions/scheduleSend/useScheduleSendFeature';
 import { SCHEDULED_MESSAGES_LIMIT } from '../../constants';
 import { isConversationMode } from '../../helpers/mailSettings';
-import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
-import { updateScheduled } from '../../logic/messages/scheduled/scheduledActions';
-import { useAppDispatch } from '../../logic/store';
+import { MessageState, MessageStateWithData } from '../../store/messages/messagesTypes';
+import { updateScheduled } from '../../store/messages/scheduled/scheduledActions';
 import { useSendVerifications } from './useSendVerifications';
 
 interface Props {
@@ -44,7 +44,7 @@ export const useScheduleSend = ({
     const { canScheduleSend } = useScheduleSendFeature();
 
     const location = useLocation();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
 
     const [waitBeforeScheduleModalProps, setWaitBeforeScheduleModalOpen] = useModalState();
 

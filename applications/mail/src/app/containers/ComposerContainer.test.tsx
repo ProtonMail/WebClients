@@ -12,7 +12,7 @@ import { formatFullDate } from '../helpers/date';
 import { clearAll, getCompleteAddress, minimalCache, render, tick } from '../helpers/test/helper';
 import { preparePlainText } from '../helpers/transforms/transforms';
 import { ComposeTypes, OnCompose } from '../hooks/composer/useCompose';
-import { MessageState } from '../logic/messages/messagesTypes';
+import { MessageState } from '../store/messages/messagesTypes';
 import { useOnCompose } from './ComposeProvider';
 import ComposerContainer from './ComposerContainer';
 
@@ -64,7 +64,6 @@ with a link -> https://protonmail.com/`;
             <ComposerContainer breakpoints={mockDefaultBreakpoints}>
                 <Inside />
             </ComposerContainer>,
-            false,
             {
                 preloadedState: {
                     addresses: getModelState([getCompleteAddress({ Email, Signature })]),
@@ -144,7 +143,6 @@ with a link -> https://protonmail.com/`;
             <ComposerContainer breakpoints={mockDefaultBreakpoints}>
                 <Inside />
             </ComposerContainer>,
-            false,
             {
                 preloadedState: {
                     addresses: getModelState([getCompleteAddress({ Email, Signature })]),

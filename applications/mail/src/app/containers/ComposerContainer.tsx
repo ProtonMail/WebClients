@@ -4,13 +4,14 @@ import { c } from 'ttag';
 
 import { Breakpoints, useBeforeUnload, useDrawerWidth } from '@proton/components';
 
+import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
+
 import ComposerFrame from '../components/composer/ComposerFrame';
 import { MAX_ACTIVE_COMPOSER_LARGE_SCREEN, MAX_ACTIVE_COMPOSER_SMALL_SCREEN } from '../helpers/composerPositioning';
 import { useCompose } from '../hooks/composer/useCompose';
 import { useClickMailContent } from '../hooks/useClickMailContent';
-import { selectOpenedComposersIds } from '../logic/composers/composerSelectors';
-import { composerActions } from '../logic/composers/composersSlice';
-import { useAppDispatch, useAppSelector } from '../logic/store';
+import { selectOpenedComposersIds } from '../store/composers/composerSelectors';
+import { composerActions } from '../store/composers/composersSlice';
 import { ComposeProvider } from './ComposeProvider';
 
 import '../components/composer/composer.scss';
@@ -21,8 +22,8 @@ interface Props {
 }
 
 const ComposerContainer = ({ breakpoints, children }: Props) => {
-    const dispatch = useAppDispatch();
-    const composerIDs = useAppSelector(selectOpenedComposersIds);
+    const dispatch = useMailDispatch();
+    const composerIDs = useMailSelector(selectOpenedComposersIds);
     const [focusedComposerID, setFocusedComposerID] = useState<string>();
     const drawerOffset = useDrawerWidth();
     const returnFocusToElementRef = useRef<HTMLElement | null>(null);

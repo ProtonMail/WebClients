@@ -32,10 +32,9 @@ import {
     veventBuilder,
 } from '@proton/testing';
 
-import { refresh } from 'proton-mail/logic/contacts/contactsActions';
-import { store } from 'proton-mail/logic/store';
+import { refresh } from 'proton-mail/store/contacts/contactsActions';
 
-import { ReduxProviderWrapper, authentication, getStoreWrapper, tick } from '../../../../helpers/test/render';
+import { authentication, getStoreWrapper, tick } from '../../../../helpers/test/render';
 import EmailReminderWidget from './EmailReminderWidget';
 
 jest.mock('@proton/components/hooks/useNotifications');
@@ -96,7 +95,7 @@ const mockedUserSettings = mocked(useUserSettings);
 function renderComponent(overrides?: any, preloadedState?: Parameters<typeof getStoreWrapper>[0]) {
     window.history.pushState({}, 'Calendar', '/');
 
-    const { Wrapper: ReduxWrapper } = getStoreWrapper({
+    const { Wrapper: ReduxWrapper, store } = getStoreWrapper({
         calendars: getModelState([calendarBuilder()]),
         calendarUserSettings: getModelState(calendarUserSettingsBuilder()),
         ...preloadedState,
@@ -107,14 +106,13 @@ function renderComponent(overrides?: any, preloadedState?: Parameters<typeof get
             <AuthenticationProvider store={authentication}>
                 <CacheProvider cache={createCache()}>
                     <DrawerProvider>
-                        <ReduxProviderWrapper>
-                            <BrowserRouter>{children}</BrowserRouter>
-                        </ReduxProviderWrapper>
+                        <BrowserRouter>{children}</BrowserRouter>
                     </DrawerProvider>
                 </CacheProvider>
             </AuthenticationProvider>
         </ReduxWrapper>
     );
+    store.dispatch(refresh({ contacts: [], contactGroups: [] }));
 
     return {
         ...render(<EmailReminderWidget message={messageBuilder({ overrides })} />, { wrapper: Wrapper }),
@@ -125,7 +123,6 @@ function renderComponent(overrides?: any, preloadedState?: Parameters<typeof get
 describe('EmailReminderWidget', () => {
     beforeAll(() => {
         // Initialize contactsMap
-        store.dispatch(refresh({ contacts: [], contactGroups: [] }));
         server.listen();
     });
 

@@ -28,7 +28,7 @@ import { RE_PREFIX, formatSubject } from '@proton/shared/lib/mail/messages';
 
 import { InvitationModel, UPDATE_ACTION, getDisableButtons } from '../../../../helpers/calendar/invite';
 import useInviteButtons from '../../../../hooks/useInviteButtons';
-import { MessageState } from '../../../../logic/messages/messagesTypes';
+import { MessageState } from '../../../../store/messages/messagesTypes';
 
 const { EVENT_CREATION_ERROR, EVENT_UPDATE_ERROR } = INVITATION_ERROR_TYPE;
 

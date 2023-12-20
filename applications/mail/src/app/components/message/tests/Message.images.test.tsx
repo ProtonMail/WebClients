@@ -8,9 +8,9 @@ import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/mail/mailSett
 
 import { addApiMock, assertIcon, clearAll, minimalCache } from '../../../helpers/test/helper';
 import { createDocument } from '../../../helpers/test/message';
-import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageState } from '../../../store/messages/messagesTypes';
 import MessageView from '../MessageView';
-import { defaultProps, getIframeRootDiv, initMessage, setup } from './Message.test.helpers';
+import { defaultProps, getIframeRootDiv, setup } from './Message.test.helpers';
 
 const imageURL = 'imageURL';
 const blobURL = 'blobURL';
@@ -84,13 +84,16 @@ describe('Message images', () => {
 
         minimalCache();
 
-        initMessage(message);
+        const { container, rerender, getByTestId } = await setup(
+            message,
+            {},
+            {
+                preloadedState: {
+                    mailSettings: getModelState({ HideRemoteImages: SHOW_IMAGES.HIDE } as MailSettings),
+                },
+            }
+        );
 
-        const { container, rerender, getByTestId } = await setup({}, false, {
-            preloadedState: {
-                mailSettings: getModelState({ HideRemoteImages: SHOW_IMAGES.HIDE } as MailSettings),
-            },
-        });
         const iframe = await getIframeRootDiv(container);
 
         // Check that all elements are displayed in their proton attributes before loading them
@@ -151,16 +154,19 @@ describe('Message images', () => {
 
         minimalCache();
 
-        initMessage(message);
+        const { container, rerender, getByTestId } = await setup(
+            message,
+            {},
+            {
+                preloadedState: {
+                    mailSettings: getModelState({
+                        HideRemoteImages: SHOW_IMAGES.HIDE,
+                        ImageProxy: IMAGE_PROXY_FLAGS.PROXY,
+                    } as MailSettings),
+                },
+            }
+        );
 
-        const { container, rerender, getByTestId } = await setup({}, false, {
-            preloadedState: {
-                mailSettings: getModelState({
-                    HideRemoteImages: SHOW_IMAGES.HIDE,
-                    ImageProxy: IMAGE_PROXY_FLAGS.PROXY,
-                } as MailSettings),
-            },
-        });
         const iframe = await getIframeRootDiv(container);
 
         // Need to mock this function to mock the blob url
@@ -230,16 +236,19 @@ describe('Message images', () => {
 
         minimalCache();
 
-        initMessage(message);
+        const { getByTestId, rerender, container } = await setup(
+            message,
+            {},
+            {
+                preloadedState: {
+                    mailSettings: getModelState({
+                        HideRemoteImages: SHOW_IMAGES.HIDE,
+                        ImageProxy: IMAGE_PROXY_FLAGS.PROXY,
+                    } as MailSettings),
+                },
+            }
+        );
 
-        const { getByTestId, rerender, container } = await setup({}, false, {
-            preloadedState: {
-                mailSettings: getModelState({
-                    HideRemoteImages: SHOW_IMAGES.HIDE,
-                    ImageProxy: IMAGE_PROXY_FLAGS.PROXY,
-                } as MailSettings),
-            },
-        });
         const iframe = await getIframeRootDiv(container);
 
         const image = await findByTestId(iframe, 'image');

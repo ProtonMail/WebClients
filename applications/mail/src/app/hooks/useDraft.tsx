@@ -13,14 +13,14 @@ import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo'
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import SendingFromDefaultAddressModal from '../components/composer/modals/SendingFromDefaultAddressModal';
 import { MESSAGE_ACTIONS } from '../constants';
 import { cloneDraft, createNewDraft } from '../helpers/message/messageDraft';
 import { findSender } from '../helpers/message/messageRecipients';
-import { createDraft as createDraftAction } from '../logic/messages/draft/messagesDraftActions';
-import { MessageState, MessageStateWithData, PartialMessageState } from '../logic/messages/messagesTypes';
-import { useAppDispatch } from '../logic/store';
+import { createDraft as createDraftAction } from '../store/messages/draft/messagesDraftActions';
+import { MessageState, MessageStateWithData, PartialMessageState } from '../store/messages/messagesTypes';
 import { useGetAttachment } from './attachments/useAttachment';
 
 const CACHE_KEY = 'Draft';
@@ -53,7 +53,7 @@ export const useDraft = () => {
     const cache = useCache();
     const getMailSettings = useGetMailSettings();
     const getAddresses = useGetAddresses();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const { handleDraftVerifications: draftVerifications, sendingFromDefaultAddressModal } = useDraftVerifications();
     const [addresses] = useAddresses();
     const mailSettings = useMailModel('MailSettings');

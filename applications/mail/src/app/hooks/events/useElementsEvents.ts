@@ -1,29 +1,28 @@
-import { useSelector, useStore } from 'react-redux';
-
 import { useSubscribeEventManager } from '@proton/components';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 
+import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/store/hooks';
+
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
-import { eventUpdates, invalidate } from '../../logic/elements/elementsActions';
+import { Element } from '../../models/element';
+import { ConversationEvent, ElementEvent, Event, MessageEvent } from '../../models/event';
+import { SearchParameters } from '../../models/tools';
+import { eventUpdates, invalidate } from '../../store/elements/elementsActions';
 import {
     isES as isESSelector,
     shouldInvalidateElementsState as shouldInvalidateElementsStateSelector,
     taskRunning as taskRunningSelector,
-} from '../../logic/elements/elementsSelectors';
-import { EventUpdates } from '../../logic/elements/elementsTypes';
-import { RootState, useAppDispatch } from '../../logic/store';
-import { Element } from '../../models/element';
-import { ConversationEvent, ElementEvent, Event, MessageEvent } from '../../models/event';
-import { SearchParameters } from '../../models/tools';
+} from '../../store/elements/elementsSelectors';
+import { EventUpdates } from '../../store/elements/elementsTypes';
 
 export const useElementsEvents = (conversationMode: boolean, search: SearchParameters) => {
     const { esStatus } = useEncryptedSearchContext();
 
-    const store = useStore<RootState>();
-    const dispatch = useAppDispatch();
-    const shouldInvalidateElementsState = useSelector(shouldInvalidateElementsStateSelector);
-    const isES = useSelector((state: RootState) => isESSelector(state, { search, esStatus }));
-    const taskRunning = useSelector(taskRunningSelector);
+    const store = useMailStore();
+    const dispatch = useMailDispatch();
+    const shouldInvalidateElementsState = useMailSelector(shouldInvalidateElementsStateSelector);
+    const isES = useMailSelector((state) => isESSelector(state, { search, esStatus }));
+    const taskRunning = useMailSelector(taskRunningSelector);
 
     // Listen to event manager and update the cache
     useSubscribeEventManager(async ({ Conversations = [], Messages = [] }: Event) => {

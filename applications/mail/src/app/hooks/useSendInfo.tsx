@@ -22,9 +22,9 @@ import noop from '@proton/utils/noop';
 import AskForKeyPinningModal from '../components/composer/addresses/AskForKeyPinningModal';
 import ContactResignModal from '../components/message/modals/ContactResignModal';
 import { getSendStatusIcon } from '../helpers/message/icon';
-import { ContactsMap } from '../logic/contacts/contactsTypes';
-import { MessageState } from '../logic/messages/messagesTypes';
 import { MapSendInfo, STATUS_ICONS_FILLS } from '../models/crypto';
+import { ContactsMap } from '../store/contacts/contactsTypes';
+import { MessageState } from '../store/messages/messagesTypes';
 import { useContactsMap } from './contact/useContacts';
 
 const { PRIMARY_NOT_PINNED, CONTACT_SIGNATURE_NOT_VERIFIED } = ENCRYPTION_PREFERENCES_ERROR_TYPES;

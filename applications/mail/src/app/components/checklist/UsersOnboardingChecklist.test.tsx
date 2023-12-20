@@ -44,8 +44,8 @@ describe('OnboardingChecklistWrapper', () => {
             changeChecklistDisplay: mockedChangeDisplay,
         } as Partial<ContextState>);
 
-        const { getByText } = await render(<UsersOnboardingChecklist />, false);
-        const { container } = await render(<MailSidebar {...props} />, false);
+        const { getByText } = await render(<UsersOnboardingChecklist />);
+        const { container } = await render(<MailSidebar {...props} />);
 
         const nav = container.querySelector('nav');
         expect(nav?.childNodes.length).toEqual(2);
@@ -61,7 +61,7 @@ describe('OnboardingChecklistWrapper', () => {
             items: new Set(),
         } as Partial<ContextState>);
 
-        const { queryByText } = await render(<UsersOnboardingChecklist hideDismissButton />, false);
+        const { queryByText } = await render(<UsersOnboardingChecklist hideDismissButton />);
         const laterButton = queryByText('Maybe later');
         expect(laterButton).toBeNull();
     });
@@ -72,7 +72,7 @@ describe('OnboardingChecklistWrapper', () => {
             items: new Set(),
         } as Partial<ContextState>);
 
-        const { getByText } = await render(<UsersOnboardingChecklist smallVariant />, false);
+        const { getByText } = await render(<UsersOnboardingChecklist smallVariant />);
         getByText('Discover privacy features');
         getByText('Auto-forward Gmail');
         getByText('Update your logins');

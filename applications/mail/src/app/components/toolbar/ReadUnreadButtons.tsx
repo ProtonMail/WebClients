@@ -1,5 +1,4 @@
 import { useMemo } from 'react';
-import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -8,8 +7,9 @@ import { Icon, ToolbarButton } from '@proton/components';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
-import { elementsAreUnread as elementsAreUnreadSelector } from '../../logic/elements/elementsSelectors';
+import { elementsAreUnread as elementsAreUnreadSelector } from '../../store/elements/elementsSelectors';
 
 const { READ, UNREAD } = MARK_AS_STATUS;
 
@@ -21,7 +21,7 @@ interface Props {
 const ReadUnreadButtons = ({ selectedIDs, onMarkAs }: Props) => {
     const { Shortcuts } = useMailModel('MailSettings');
 
-    const elementsAreUnread = useSelector(elementsAreUnreadSelector);
+    const elementsAreUnread = useMailSelector(elementsAreUnreadSelector);
 
     const buttonMarkAsRead = useMemo(() => {
         const allRead = selectedIDs.every((elementID) => !elementsAreUnread[elementID]);

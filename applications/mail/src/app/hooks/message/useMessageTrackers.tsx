@@ -11,7 +11,7 @@ import {
     getUTMTrackerText,
     getUTMTrackersFromMessage,
 } from '../../helpers/message/trackers';
-import { MessageState } from '../../logic/messages/messagesTypes';
+import { MessageState } from '../../store/messages/messagesTypes';
 
 export interface Tracker {
     name: string;

@@ -1,10 +1,10 @@
 import { useCallback } from 'react';
-import { useStore } from 'react-redux';
 
-import { attachmentByID } from '../../logic/attachments/attachmentsSelectors';
-import { RootState } from '../../logic/store';
+import { useMailStore } from 'proton-mail/store/hooks';
+
+import { attachmentByID } from '../../store/attachments/attachmentsSelectors';
 
 export const useGetAttachment = () => {
-    const store = useStore<RootState>();
+    const store = useMailStore();
     return useCallback((ID: string) => attachmentByID(store.getState(), { ID }), []);
 };

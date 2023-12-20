@@ -12,11 +12,11 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { getFilteredUndoTokens, runParallelChunkedActions } from 'proton-mail/helpers/chunk';
 import { ApplyLabelsParams } from 'proton-mail/hooks/actions/label/useApplyLabels';
+import { backendActionFinished, backendActionStarted } from 'proton-mail/store/elements/elementsActions';
+import { useMailDispatch } from 'proton-mail/store/hooks';
 
 import UndoActionNotification from '../../../components/notifications/UndoActionNotification';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../../constants';
-import { backendActionFinished, backendActionStarted } from '../../../logic/elements/elementsActions';
-import { useAppDispatch } from '../../../logic/store';
 import { useOptimisticApplyLabels } from '../../optimistic/useOptimisticApplyLabels';
 import { useCreateFilters } from '../useCreateFilters';
 
@@ -109,7 +109,7 @@ export const useApplyLabelsToSelection = () => {
     const { createNotification } = useNotifications();
     const getLabels = useGetLabels();
     const optimisticApplyLabels = useOptimisticApplyLabels();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const { getFilterActions } = useCreateFilters();
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
 

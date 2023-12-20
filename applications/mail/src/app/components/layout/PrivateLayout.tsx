@@ -11,11 +11,12 @@ import {
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { Recipient } from '@proton/shared/lib/interfaces';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose, useOnMailTo } from '../../containers/ComposeProvider';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
-import { layoutActions } from '../../logic/layout/layoutSlice';
-import { useAppDispatch } from '../../logic/store';
+import { layoutActions } from '../../store/layout/layoutSlice';
 import MailQuickSettings from '../drawer/MailQuickSettings';
 import MailSidebar from '../sidebar/MailSidebar';
 
@@ -28,7 +29,7 @@ interface Props {
 
 const PrivateLayout = ({ children, labelID }: Props, ref: Ref<HTMLDivElement>) => {
     const location = useLocation();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const onCompose = useOnCompose();
     const onMailTo = useOnMailTo();
 

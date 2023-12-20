@@ -5,19 +5,20 @@ import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
 import { isAttachPublicKey, isPlainText } from '@proton/shared/lib/mail/messages';
 
+import { useMailDispatch } from 'proton-mail/store/hooks';
+
 import { upload } from '../../helpers/attachment/attachmentUploader';
 import { attachPublicKey } from '../../helpers/message/messageAttachPublicKey';
 import { replaceDataUrl } from '../../helpers/message/messageDataUrl';
 import { createEmbeddedImageFromUpload } from '../../helpers/message/messageEmbeddeds';
-import { sendModifications } from '../../logic/messages/draft/messagesDraftActions';
-import { MessageEmbeddedImage, MessageStateWithData } from '../../logic/messages/messagesTypes';
-import { useAppDispatch } from '../../logic/store';
+import { sendModifications } from '../../store/messages/draft/messagesDraftActions';
+import { MessageEmbeddedImage, MessageStateWithData } from '../../store/messages/messagesTypes';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';
 
 export const useSendModifications = () => {
     const getMessage = useGetMessage();
-    const dispatch = useAppDispatch();
+    const dispatch = useMailDispatch();
     const getMessageKeys = useGetMessageKeys();
     const auth = useAuthentication();
 
