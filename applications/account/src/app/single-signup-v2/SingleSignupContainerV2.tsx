@@ -535,6 +535,7 @@ const SingleSignupContainerV2 = ({
                 paymentMethodStatus,
                 subscriptionData,
                 cache: undefined,
+                source: signupParameters.source,
             });
 
             if (session?.user) {
