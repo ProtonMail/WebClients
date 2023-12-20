@@ -1,5 +1,5 @@
 import { act, fireEvent } from '@testing-library/react';
-import { addHours } from 'date-fns';
+import { addHours, set } from 'date-fns';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
@@ -43,9 +43,19 @@ const getMessage = (sendingDate: Date) => {
     } as MessageStateWithData;
 };
 
+const todayAtNine = set(new Date(), { hours: 9, minutes: 0, seconds: 0, milliseconds: 0 });
+
 describe('Scheduled messages banner', () => {
     const useSnoozeMock = useSnooze as jest.Mock;
     const useGetElementsFromIDsMock = jest.fn();
+
+    beforeAll(() => {
+        jest.useFakeTimers({ now: todayAtNine.getTime() });
+    });
+
+    afterAll(() => {
+        jest.useRealTimers();
+    });
 
     afterEach(clearAll);
 
