@@ -30,3 +30,5 @@ export const PASS_BF_2023_DATES = [
 ] as const;
 
 export const PASS_EOY_DATE_END = +new Date('2024-01-03T09:00:00');
+export const PASS_UPGRADE_PATH = 'pass/upgrade';
+export const PASS_EOY_PATH = `pass/signup?plan=pass2023&cycle=12&coupon=EOY2023`;
