@@ -1,19 +1,22 @@
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { type FormikContextType, FormikProvider } from 'formik';
+import { FormikProvider, type FormikContextType } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon, type ModalProps } from '@proton/components/components';
 import { AliasPreview } from '@proton/pass/components/Alias/Alias.preview';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { AliasForm } from '@proton/pass/components/Item/Alias/Alias.form';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
+import { PASS_EOY_PATH, PASS_REF_EXTENSION_ALIAS, PASS_REF_WEB_ALIAS, PASS_UPGRADE_PATH } from '@proton/pass/constants';
 import type { SanitizedAliasOptions } from '@proton/pass/hooks/useAliasOptions';
+import { isEOY } from '@proton/pass/lib/onboarding/utils';
 import { validateAliasForm } from '@proton/pass/lib/validation/alias';
 import { selectAliasLimits } from '@proton/pass/store/selectors';
 import type { AliasFormValues, MaybeNull } from '@proton/pass/types';
@@ -42,6 +45,7 @@ export const AliasModal = <T extends AliasFormValues>({
 }: AliasModalProps<T>) => {
     const [ready, setReady] = useState(false);
     const { needsUpgrade } = useSelector(selectAliasLimits);
+    const { endpoint } = usePassCore();
 
     useEffect(() => {
         if (open && aliasOptions) {
@@ -82,7 +86,7 @@ export const AliasModal = <T extends AliasFormValues>({
                             /* if user has reached his alias limit prompt
                              * him to upgrade his plan*/
                             needsUpgrade ? (
-                                <UpgradeButton key="upgrade-button" />
+                                <UpgradeButton key="upgrade-button" path={isEOY() ? PASS_EOY_PATH : PASS_UPGRADE_PATH} ref={endpoint === 'web' ? PASS_REF_WEB_ALIAS : PASS_REF_EXTENSION_ALIAS} />
                             ) : (
                                 <Button
                                     className="text-sm"

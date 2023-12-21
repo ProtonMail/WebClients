@@ -1,6 +1,6 @@
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 
-export const useNavigateToUpgrade = () => {
+export const useNavigateToUpgrade = (path?: string) => {
     const { onLink, config } = usePassCore();
-    return () => onLink(`${config.SSO_URL}/pass/upgrade`);
+    return () => onLink(path ? `${config.SSO_URL}/${path}` : `${config.SSO_URL}/pass/upgrade`);
 };

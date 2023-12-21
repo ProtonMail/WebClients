@@ -1,4 +1,4 @@
-import { type VFC, useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, type VFC } from 'react';
 
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/common/PauseListDropdown';
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/context/IFrameContextProvider';
@@ -11,12 +11,14 @@ import { c } from 'ttag';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { AliasPreview } from '@proton/pass/components/Alias/legacy/Alias.preview';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
+import { PASS_EOY_PATH, PASS_REF_EXTENSION_ALIAS, PASS_UPGRADE_PATH } from '@proton/pass/constants';
 import { useEnsureMounted } from '@proton/pass/hooks/useEnsureMounted';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import { isEOY } from '@proton/pass/lib/onboarding/utils';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import type { AliasOptions, AliasState } from '@proton/pass/store/reducers';
-import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
+import { WorkerMessageType, type MaybeNull } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -37,7 +39,7 @@ const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 
 export const AliasAutoSuggest: VFC<Props> = ({ hostname, prefix, visible, onClose, onMessage }) => {
     const ensureMounted = useEnsureMounted();
-    const navigateToUpgrade = useNavigateToUpgrade();
+    const navigateToUpgrade = useNavigateToUpgrade(`${isEOY() ? PASS_EOY_PATH : PASS_UPGRADE_PATH }&${PASS_REF_EXTENSION_ALIAS}`);
     const { userEmail } = useIFrameContext();
     const [aliasOptions, setAliasOptions] = useState<MaybeNull<AliasState['aliasOptions']>>(null);
     const [needsUpgrade, setNeedsUpgrade] = useState<boolean>(false);

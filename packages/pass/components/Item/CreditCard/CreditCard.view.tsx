@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { MaskedValueControl } from '@proton/pass/components/Form/Field/Control/MaskedValueControl';
 import { UpgradeControl } from '@proton/pass/components/Form/Field/Control/UpgradeControl';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
@@ -15,12 +16,14 @@ import {
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
 import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
+import { PASS_REF_EXTENSION_CARD, PASS_REF_WEB_CARD } from '@proton/pass/constants';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 
 export const CreditCardView: VFC<ItemViewProps<'creditCard'>> = ({ vault, revision, ...itemViewProps }) => {
     const { data: item } = revision;
+    const { endpoint} = usePassCore();
 
     const {
         metadata: { name, note },
@@ -34,7 +37,7 @@ export const CreditCardView: VFC<ItemViewProps<'creditCard'>> = ({ vault, revisi
             <FieldsetCluster mode="read" as="div">
                 <ValueControl clickToCopy icon="user" label={c('Label').t`Name on card`} value={cardholderName} />
                 {isFreePlan ? (
-                    <UpgradeControl icon="credit-card" label={c('Label').t`Card number`} />
+                    <UpgradeControl icon="credit-card" label={c('Label').t`Card number`} ref={endpoint === 'web' ? PASS_REF_WEB_CARD : PASS_REF_EXTENSION_CARD} />
                 ) : (
                     <MaskedValueControl
                         clickToCopy

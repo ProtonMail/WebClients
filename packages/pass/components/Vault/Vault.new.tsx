@@ -1,4 +1,4 @@
-import { type VFC, useEffect } from 'react';
+import { useEffect, type VFC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -6,12 +6,20 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon, type ModalProps } from '@proton/components/components';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { type RequestEntryFromAction, useActionRequest } from '@proton/pass/hooks/useActionRequest';
+import {
+    PASS_EOY_PATH,
+    PASS_REF_EXTENSION_VAULT,
+    PASS_REF_WEB_VAULT,
+    PASS_UPGRADE_PATH,
+} from '@proton/pass/constants';
+import { useActionRequest, type RequestEntryFromAction } from '@proton/pass/hooks/useActionRequest';
+import { isEOY } from '@proton/pass/lib/onboarding/utils';
 import { validateVaultValues } from '@proton/pass/lib/validation/vault';
 import type { vaultCreationSuccess } from '@proton/pass/store/actions';
 import { vaultCreationIntent } from '@proton/pass/store/actions';
@@ -28,6 +36,7 @@ const FORM_ID = 'vault-create';
 export const VaultNew: VFC<Props> = ({ onSuccess, ...modalProps }) => {
     const { vaultLimitReached } = useSelector(selectVaultLimits);
     const passPlan = useSelector(selectPassPlan);
+    const { endpoint } = usePassCore();
 
     const createVault = useActionRequest({
         action: vaultCreationIntent,
@@ -91,7 +100,11 @@ export const VaultNew: VFC<Props> = ({ onSuccess, ...modalProps }) => {
                                             : c('Action').t`Create vault`}
                                     </Button>
                                 ) : (
-                                    <UpgradeButton key="upgrade-button" />
+                                    <UpgradeButton
+                                        key="upgrade-button"
+                                        path={isEOY() ? PASS_EOY_PATH : PASS_UPGRADE_PATH}
+                                        ref={endpoint === 'web' ? PASS_REF_WEB_VAULT : PASS_REF_EXTENSION_VAULT}
+                                    />
                                 ),
                             ]}
                         />

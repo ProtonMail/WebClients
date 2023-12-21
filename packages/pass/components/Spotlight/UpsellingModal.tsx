@@ -17,7 +17,7 @@ import clsx from '@proton/utils/clsx';
 
 type OfferFeatures = { className: string; icon: IconName; key: string; label: string | string[] };
 type UpsellModalContent = { description?: string; title: string; upgradeLabel: string };
-export type Props = Omit<ModalProps, 'onSubmit'> & { type: UpsellingModalType; upgradePath: string };
+export type Props = Omit<ModalProps, 'onSubmit'> & { type: UpsellingModalType; upgradePath: string, ref: string };
 export type UpsellingModalType = 'free-trial' | 'pass-plus' | 'early-access';
 
 const PROTON_SENTINEL_LINK = (
@@ -83,7 +83,7 @@ const getContent = (type: UpsellingModalType): UpsellModalContent =>
         },
     })[type];
 
-export const UpsellingModal: FC<Props> = ({ type, upgradePath, ...props }) => {
+export const UpsellingModal: FC<Props> = ({ type, upgradePath, ref, ...props }) => {
     const { title, description, upgradeLabel } = getContent(type);
     const features = getFeatures();
 
@@ -91,7 +91,7 @@ export const UpsellingModal: FC<Props> = ({ type, upgradePath, ...props }) => {
         <AdaptiveModal
             {...props}
             size="medium"
-            actions={[<UpgradeButton key="upgrade-button" label={upgradeLabel} path={upgradePath} />]}
+            actions={[<UpgradeButton key="upgrade-button" label={upgradeLabel} path={upgradePath} ref={ref} />]}
         >
             <div className="flex flex-column items-center w-full gap-5 m-auto">
                 <img src={onboardingSVG} className="w-3/5 " alt="user onboarding graphic" />
