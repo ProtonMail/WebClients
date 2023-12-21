@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useInviteContext } from '@proton/pass/components/Invite/InviteProvider';
 import { PendingShareAccessModal } from '@proton/pass/components/Spotlight/PendingShareAccessModal';
-import { PASS_EOY_PATH, PASS_UPGRADE_PATH } from '@proton/pass/constants';
+import { PASS_EOY_PATH, PASS_REF_EXTENSION_MODAL, PASS_REF_WEB_MODAL, PASS_UPGRADE_PATH } from '@proton/pass/constants';
 import { isEOY } from '@proton/pass/lib/onboarding/utils';
 import type { Callback, MaybeNull, OnboardingMessage } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
@@ -49,7 +49,7 @@ export const SpotlightContext = createContext<SpotlightContextValue>({
 });
 
 export const SpotlightProvider: FC = ({ children }) => {
-    const { onOnboardingAck } = usePassCore();
+    const { endpoint, onOnboardingAck } = usePassCore();
     const timer = useRef<NodeJS.Timeout>();
     const [state, setState] = useState<SpotlightState>(INITIAL_STATE);
 
@@ -127,6 +127,7 @@ export const SpotlightProvider: FC = ({ children }) => {
                     setState((prev) => ({ ...prev, upselling: null }));
                 }}
                 upgradePath={isEOY() && state.upselling === 'early-access' ? PASS_EOY_PATH : PASS_UPGRADE_PATH}
+                ref={endpoint === 'web' ? PASS_REF_WEB_MODAL : PASS_REF_EXTENSION_MODAL}
             />
 
             <PendingShareAccessModal

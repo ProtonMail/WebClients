@@ -21,7 +21,7 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPanel';
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
-import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, PASS_EOY_PATH, PASS_REF_EXTENSION_2FA, PASS_REF_WEB_2FA, PASS_UPGRADE_PATH } from '@proton/pass/constants';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { useItemDraft, useItemDraftLocationState } from '@proton/pass/hooks/useItemDraft';
@@ -44,6 +44,8 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { isEOY } from '@proton/pass/lib/onboarding/utils';
 import { usePasswordContext } from '../../Password/PasswordProvider';
 
 const FORM_ID = 'edit-login';
@@ -55,6 +57,7 @@ export const LoginEdit: VFC<ItemEditViewProps<'login'>> = ({ revision, url, vaul
     const { domain, subdomain } = url ?? {};
     const { shareId } = vault;
     const { data: item, itemId, revision: lastRevision } = revision;
+    const { endpoint } = usePassCore();
 
     const {
         metadata: { name, note, itemUuid },
@@ -283,7 +286,7 @@ export const LoginEdit: VFC<ItemEditViewProps<'login'>> = ({ revision, url, vaul
                                      * the secret or remove it */
                                     needsUpgrade && isEmptyString(form.values.totpUri) ? (
                                         <ValueControl icon="lock" label={c('Label').t`2FA secret key (TOTP)`}>
-                                            <UpgradeButton inline />
+                                            <UpgradeButton inline path={isEOY() ? PASS_EOY_PATH : PASS_UPGRADE_PATH} ref={endpoint === 'web' ? PASS_REF_WEB_2FA : PASS_REF_EXTENSION_2FA} />
                                         </ValueControl>
                                     ) : (
                                         <Field

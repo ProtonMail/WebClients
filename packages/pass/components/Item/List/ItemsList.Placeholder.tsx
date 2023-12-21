@@ -1,4 +1,4 @@
-import { type FC, type MouseEvent, useMemo } from 'react';
+import { useMemo, type FC, type MouseEvent } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -13,7 +13,9 @@ import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButt
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
+import { PASS_EOY_PATH, PASS_REF_WEB_VAULT, PASS_UPGRADE_PATH } from '@proton/pass/constants';
 import { useFilteredItems } from '@proton/pass/hooks/useFilteredItems';
+import { isEOY } from '@proton/pass/lib/onboarding/utils';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectAllVaults, selectOwnReadOnlyVaults, selectShare, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { ItemType } from '@proton/pass/types';
@@ -53,6 +55,7 @@ export const ItemsListPlaceholder: FC<Props> = ({ noActions, noImport }) => {
     const empty = totalCount === 0;
     const hasSearch = Boolean(search.trim());
     const showUpgrade = isOwnedReadOnly && totalCount === 0 && didDowngrade;
+    const {endpoint} = usePassCore();
 
     const quickActions = useMemo<ItemQuickAction[]>(
         () => [
@@ -109,7 +112,7 @@ export const ItemsListPlaceholder: FC<Props> = ({ noActions, noImport }) => {
                     {c('Info')
                         .t`You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.`}
                 </Card>
-                <UpgradeButton />
+                <UpgradeButton path={isEOY() ? PASS_EOY_PATH : PASS_UPGRADE_PATH} ref={endpoint === 'web' ? PASS_REF_WEB_VAULT : PASS_REF_EXSTENSION_VAULT} />
             </div>
         );
     }
