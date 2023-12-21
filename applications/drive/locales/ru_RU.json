@@ -625,6 +625,9 @@
       "Skip verification": [
         "Пропустить проверку"
       ],
+      "Start": [
+        "Начать"
+      ],
       "Start import": [
         "Начать импорт"
       ],
@@ -2063,6 +2066,11 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Обновить для события, начинающегося ${ formattedStart }"
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 ТБ"
       ]
     },
     "Error": {
@@ -3542,6 +3550,9 @@
       "Close this screen to exit.": [
         "Закройте этот экран, чтобы выйти."
       ],
+      "Coming soon": [
+        "Скоро появится"
+      ],
       "Conflict": [
         "Конфликт"
       ],
@@ -4261,6 +4272,9 @@
       ],
       "Trash": [
         "Корзина"
+      ],
+      "Trash is empty": [
+        "Корзина пуста"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Испытайте новые функции, обновления и продукты ${ BRAND_NAME } до их выпуска широкой публике. Приложение будет перезапущено."
@@ -5801,6 +5815,11 @@
         "${ gracePeriodHoursRemaining } часа",
         "${ gracePeriodHoursRemaining } часов",
         "${ gracePeriodHoursRemaining } часа"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Сбросить пароль"
       ]
     },
     "Signing preference for emails": {
