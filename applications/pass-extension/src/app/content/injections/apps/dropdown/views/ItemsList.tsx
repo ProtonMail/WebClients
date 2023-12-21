@@ -10,10 +10,11 @@ import type { IFrameCloseOptions, IFrameMessage } from 'proton-pass-extension/ap
 import { IFrameMessageType } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
+import { PASS_EOY_PATH, PASS_REF_EXTENSION_AUTOFILL } from '@proton/pass/constants';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
-import { type SafeLoginItem, WorkerMessageType } from '@proton/pass/types';
+import { WorkerMessageType, type SafeLoginItem } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -23,14 +24,14 @@ type Props = {
     items: SafeLoginItem[];
     hostname: string;
     needsUpgrade: boolean;
+    ref?: string;
     visible?: boolean;
     onClose?: (options?: IFrameCloseOptions) => void;
     onMessage?: (message: IFrameMessage) => void;
 };
 
-export const ItemsList: VFC<Props> = ({ hostname, items, needsUpgrade, visible, onMessage, onClose }) => {
+export const ItemsList: VFC<Props> = ({ hostname, items, needsUpgrade, ref, visible, onMessage, onClose }) => {
     const { settings } = useIFrameContext();
-    const navigateToUpgrade = useNavigateToUpgrade();
 
     useEffect(() => {
         if (visible) {
@@ -54,7 +55,7 @@ export const ItemsList: VFC<Props> = ({ hostname, items, needsUpgrade, visible, 
                         icon="arrow-out-square"
                         title={c('Info').t`Upgrade ${PASS_APP_NAME}`}
                         subTitle={c('Warning').t`Your plan only allows you to autofill from your first two vaults`}
-                        onClick={navigateToUpgrade}
+                        onClick={useNavigateToUpgrade(`${PASS_EOY_PATH}&ref=${PASS_REF_EXTENSION_AUTOFILL}`)}
                         autogrow
                     />
                 ),

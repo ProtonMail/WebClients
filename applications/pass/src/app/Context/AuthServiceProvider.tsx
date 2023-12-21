@@ -1,4 +1,4 @@
-import { type FC, createContext, useContext, useEffect, useMemo, useRef, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useRef, useState, type FC } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -6,16 +6,16 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components/hooks';
 import { getCurrentLocation } from '@proton/pass/components/Core/routing';
 import { UpsellingModal } from '@proton/pass/components/Spotlight/UpsellingModal';
-import { PASS_EOY_PATH } from '@proton/pass/constants';
+import { PASS_EOY_PATH, PASS_REF_WEB_MODAL } from '@proton/pass/constants';
 import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
-import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
+import { createAuthService, type AuthService } from '@proton/pass/lib/auth/service';
 import { isValidPersistedSession } from '@proton/pass/lib/auth/session';
 import { clientReady } from '@proton/pass/lib/client';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import { bootIntent, cacheCancel, sessionLockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
-import { AppStatus, type Maybe, PlanType, SessionLockStatus } from '@proton/pass/types';
+import { AppStatus, PlanType, SessionLockStatus, type Maybe } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { getClientID } from '@proton/shared/lib/apps/helper';
@@ -281,6 +281,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
                     open={upgradeState.upgrade}
                     onClose={() => setUpgradeState({ upgrade: false })}
                     upgradePath={`${PASS_EOY_PATH}&u=${upgradeState.LocalID}&source=${getClientID(APP_NAME)}`}
+                    ref={PASS_REF_WEB_MODAL}
                 />
             )}
         </AuthServiceContext.Provider>

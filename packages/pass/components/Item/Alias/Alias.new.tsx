@@ -1,9 +1,10 @@
-import { type VFC, useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, type VFC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
@@ -15,9 +16,10 @@ import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButt
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
-import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, PASS_EOY_PATH, PASS_REF_EXTENSION_ALIAS, PASS_REF_WEB_ALIAS, PASS_UPGRADE_PATH } from '@proton/pass/constants';
 import { useAliasOptions } from '@proton/pass/hooks/useAliasOptions';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
+import { isEOY } from '@proton/pass/lib/onboarding/utils';
 import { deriveAliasPrefix, reconciliateAliasFromDraft, validateNewAliasForm } from '@proton/pass/lib/validation/alias';
 import { selectAliasLimits, selectUserVerified, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { MaybeNull, NewAliasFormValues } from '@proton/pass/types';
@@ -128,7 +130,8 @@ export const AliasNew: VFC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmi
 
     const { values, touched, setFieldValue } = form;
     const { name, aliasPrefix, aliasSuffix } = values;
-
+    const { endpoint } = usePassCore();
+    
     useEffect(() => {
         /* update the aliasPrefix with the item's name only :
         - if it hasn't been touched by the user yet
@@ -148,7 +151,7 @@ export const AliasNew: VFC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmi
             valid={form.isValid && userVerified}
             discardable={!form.dirty}
             /* if user has reached his alias limit: disable submit and prompt for upgrade */
-            renderSubmitButton={needsUpgrade ? <UpgradeButton key="upgrade-button" /> : undefined}
+            renderSubmitButton={needsUpgrade ? <UpgradeButton key="upgrade-button" path={isEOY() ? PASS_EOY_PATH : PASS_UPGRADE_PATH} ref={endpoint === 'web' ? PASS_REF_WEB_ALIAS : PASS_REF_EXTENSION_ALIAS} /> : undefined}
         >
             {({ didEnter }) => (
                 <>

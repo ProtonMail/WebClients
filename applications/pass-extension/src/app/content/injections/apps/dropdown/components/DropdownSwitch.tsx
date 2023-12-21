@@ -1,4 +1,4 @@
-import { type ForwardRefRenderFunction, forwardRef } from 'react';
+import { forwardRef, type ForwardRefRenderFunction } from 'react';
 
 import { AliasAutoSuggest } from 'proton-pass-extension/app/content/injections/apps/dropdown/views/AliasAutoSuggest';
 import { ItemsList } from 'proton-pass-extension/app/content/injections/apps/dropdown/views/ItemsList';
