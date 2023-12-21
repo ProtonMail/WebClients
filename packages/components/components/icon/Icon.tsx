@@ -284,6 +284,7 @@ export type IconName =
     | 'pen-square'
     | 'pencil'
     | 'phone'
+    | 'pin-angled'
     | 'play'
     | 'plus'
     | 'plus-circle'
