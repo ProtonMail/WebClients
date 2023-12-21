@@ -36,7 +36,7 @@ export const API_PROXY_ENDPOINTS = [API_PROXY_IMAGE_ENDPOINT];
 const getAPIProxyResponse = async (remotePath: string, request: Request, signal: AbortSignal): Promise<Response> => {
     const cache = await getCache();
 
-    const url = new URL(`${API_URL}/${remotePath}`);
+    const url = new URL(`${API_URL}${remotePath}`);
     const cachedResponse = await cache.match(url);
 
     if (cachedResponse && !shouldRevalidate(cachedResponse)) {
@@ -50,7 +50,6 @@ const getAPIProxyResponse = async (remotePath: string, request: Request, signal:
         url: url.toString(),
         output: 'raw',
         method: request.method,
-        headers: request.headers as any,
         signal,
     })
         .then(async (res) => {
@@ -144,7 +143,7 @@ export const createApiProxyService = () => {
                     UID &&
                     AccessToken &&
                     canLoadDomainImages() &&
-                    details.url.startsWith(`${API_URL}/${API_PROXY_IMAGE_ENDPOINT}`)
+                    details.url.startsWith(`${API_URL}${API_PROXY_IMAGE_ENDPOINT}`)
                 ) {
                     details.requestHeaders?.push({ name: 'x-pm-uid', value: UID });
                     details.requestHeaders?.push({ name: 'Authorization', value: `Bearer ${AccessToken}` });
