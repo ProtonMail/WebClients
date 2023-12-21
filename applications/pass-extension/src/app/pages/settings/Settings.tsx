@@ -16,6 +16,7 @@ import { Avatar } from '@proton/atoms/Avatar';
 import { Icon, Tabs, useNotifications } from '@proton/components';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { LockConfirmContextProvider } from '@proton/pass/components/Lock/LockConfirmContextProvider';
+import { UpsellRef } from '@proton/pass/constants';
 import { pageMessage } from '@proton/pass/lib/extension/message';
 import {
     selectPassPlan,
@@ -127,7 +128,7 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
                                                 )})`}
                                         </span>
                                     </span>
-                                    <UpgradeButton inline />
+                                    <UpgradeButton inline upsellRef={UpsellRef.SETTING} />
                                 </>
                             )}
                         </div>

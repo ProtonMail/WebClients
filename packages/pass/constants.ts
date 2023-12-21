@@ -32,3 +32,26 @@ export const PASS_BF_2023_DATES = [
 export const PASS_EOY_DATE_END = +new Date('2024-01-03T09:00:00');
 export const PASS_UPGRADE_PATH = 'pass/upgrade';
 export const PASS_EOY_PATH = `pass/signup?plan=pass2023&cycle=12&coupon=EOY2023`;
+
+export enum UpsellRefPrefix {
+    Extension = 'pass_extension',
+    Web = 'pass_web',
+    Desktop = 'pass_desktop',
+}
+
+export enum UpsellRef {
+    DEFAULT = 'banner',
+    EARLY_ACCESS = 'early_access_banner',
+    FREE_TRIAL = 'free_trial_banner',
+    EOY_2023 = 'eoy_2023_banner',
+    LIMIT_2FA = '2fa_limit',
+    LIMIT_ALIAS = 'alias_limit',
+    LIMIT_AUTOFILL = 'autofill_limit',
+    LIMIT_CC = 'credit_card_limit',
+    LIMIT_EXTRA_FIELD = 'extra_field_limit',
+    LIMIT_IMPORT = 'import_limit',
+    LIMIT_SHARING = 'limit_share',
+    LIMIT_VAULT = 'vault_limit',
+    MENU = 'menu',
+    SETTING = 'setting',
+}

@@ -9,6 +9,7 @@ import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
 import type { ModalProps } from '@proton/components/components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
+import { UpsellRef } from '@proton/pass/constants';
 import { type ImportPayload, type ImportVault } from '@proton/pass/lib/import/types';
 import {
     selectDefaultVault,
@@ -96,7 +97,7 @@ export const ImportVaultsPickerModal: VFC<ImportVaultsPickerProps> = ({ payload,
                                         <>
                                             {c('Warning')
                                                 .t`Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.`}
-                                            <UpgradeButton inline className="ml-1" />
+                                            <UpgradeButton inline className="ml-1" upsellRef={UpsellRef.LIMIT_IMPORT} />
                                         </>
                                     ) : (
                                         c('Warning').t`You cannot create more vaults than your subscription allows.`

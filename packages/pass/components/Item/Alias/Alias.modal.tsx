@@ -13,6 +13,7 @@ import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
+import { UpsellRef } from '@proton/pass/constants';
 import type { SanitizedAliasOptions } from '@proton/pass/hooks/useAliasOptions';
 import { validateAliasForm } from '@proton/pass/lib/validation/alias';
 import { selectAliasLimits } from '@proton/pass/store/selectors';
@@ -82,7 +83,7 @@ export const AliasModal = <T extends AliasFormValues>({
                             /* if user has reached his alias limit prompt
                              * him to upgrade his plan*/
                             needsUpgrade ? (
-                                <UpgradeButton key="upgrade-button" />
+                                <UpgradeButton key="upgrade-button" upsellRef={UpsellRef.LIMIT_ALIAS} />
                             ) : (
                                 <Button
                                     className="text-sm"

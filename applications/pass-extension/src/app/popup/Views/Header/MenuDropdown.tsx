@@ -28,6 +28,7 @@ import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
+import { UpsellRef } from '@proton/pass/constants';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import {
     selectHasRegisteredLock,
@@ -133,7 +134,7 @@ export const MenuDropdown: VFC = () => {
 
                         {passPlan !== UserPassPlan.PLUS && (
                             <div className="pb-2 px-4">
-                                <UpgradeButton className="w-full" />
+                                <UpgradeButton className="w-full" upsellRef={UpsellRef.MENU} />
                             </div>
                         )}
 
