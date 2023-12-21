@@ -33,7 +33,7 @@ const DesktopAppLoginErrorUpsell = (modalProps: ModalStateProps) => {
                         fullWidth
                         color="norm"
                         size="large"
-                        href="https://account.proton.me/mail/signup?plan=visionary2022&billing=12&currency=USD"
+                        href="https://proton.me/visionary"
                         target="_blank"
                     >
                         {c('Action').t`Upgrade to Visionary`}
