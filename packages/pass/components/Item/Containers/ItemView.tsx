@@ -1,4 +1,4 @@
-import { type VFC, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, type VFC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useParams } from 'react-router-dom';
 
@@ -38,7 +38,7 @@ import {
     selectWritableVaultsWithItemsCount,
 } from '@proton/pass/store/selectors';
 import type { ItemType, SelectedItem, ShareType } from '@proton/pass/types';
-import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -70,7 +70,7 @@ export const ItemView: VFC = () => {
 
     useEffect(() => {
         if (item && failure === undefined) {
-            onTelemetry(createTelemetryEvent(TelemetryEventName.ItemRead, {}, { type: item.data.type }));
+            onTelemetry(createTelemetryEvent(TelemetryEventName.ItemRead, {}, { type: TelemetryItemType[item.data.type] }));
         }
     }, [item]);
 
