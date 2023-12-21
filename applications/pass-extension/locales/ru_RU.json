@@ -65,6 +65,9 @@
       "Continue without pinning": [
         "Продолжить без закрепления"
       ],
+      "Copy & fill in": [
+        "Скопировать и заполнить"
+      ],
       "Copy and close": [
         "Скопировать и закрыть"
       ],
@@ -760,9 +763,6 @@
       "Creating alias...": [
         "Создание псевдонима..."
       ],
-      "Credit cards, Custom fields": [
-        "Кредитные карты, настраиваемые поля"
-      ],
       "Decrypting your data": [
         "Расшифровка ваших данных"
       ],
@@ -901,8 +901,11 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
       ],
-      "Multiple vaults": [
-        "Несколько хранилищ"
+      "Never": [
+        "Никогда"
+      ],
+      "No login found": [
+        "Логин не найден"
       ],
       "None": [
         "Ничего"
@@ -976,9 +979,6 @@
       "Settings successfully updated": [
         "Настройки успешно обновлены"
       ],
-      "Share with 10 others": [
-        "Делитесь с 10 другими"
-      ],
       "Sign in or create an account to continue.": [
         "Войдите или создайте аккаунт для продолжения."
       ],
@@ -1032,9 +1032,6 @@
       ],
       "Unable to copy to clipboard": [
         "Не могу скопировать в буфер обмена"
-      ],
-      "Unlimited Aliases": [
-        "Неограниченное число псевдонимов"
       ],
       "Unlock it with your PIN to access the settings": [
         "Разблокируйте его с помощью вашего PIN-кода, чтобы получить доступ к настройкам"
@@ -1523,6 +1520,9 @@
       "Hyphens": [
         "Дефисы"
       ],
+      "Memorizable Password": [
+        "Запоминающийся пароль"
+      ],
       "Numbers": [
         "Цифры"
       ],
@@ -1841,6 +1841,9 @@
       ],
       "Trash alias ?": [
         "Переместить псевдоним в корзину?"
+      ],
+      "Unable to save": [
+        "Не могу сохранить"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Не могу войти в ${ PASS_APP_NAME }. ${ additionalMessage }"
