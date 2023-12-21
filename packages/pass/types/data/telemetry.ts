@@ -1,7 +1,6 @@
 import type { ImportProvider } from '@proton/pass/lib/import/types';
 import type { PassPlanResponse } from '@proton/pass/types';
 
-import type { ItemType } from '../protobuf';
 
 export type TelemetryPlatform = 'browser' | 'any';
 
@@ -24,6 +23,13 @@ export enum TelemetryEventName {
     TwoFAUpdate = '2fa.update',
 }
 
+export enum TelemetryItemType {
+    note = 'note',
+    login = 'login',
+    alias = 'alias',
+    creditCard = 'credit_card',
+}
+
 type BaseTelemetryEvent<T extends TelemetryEventName, V = {}, D = {}> = {
     MeasurementGroup: `pass.${TelemetryPlatform}.user_actions`;
     Event: T;
@@ -35,10 +41,10 @@ type AutofillSource = 'source' | 'app';
 
 export type TelemetryEvent<T extends TelemetryEventName = TelemetryEventName> = Extract<
     {
-        [TelemetryEventName.ItemCreation]: BaseTelemetryEvent<T, {}, { type: ItemType }>;
-        [TelemetryEventName.ItemUpdate]: BaseTelemetryEvent<T, {}, { type: ItemType }>;
-        [TelemetryEventName.ItemRead]: BaseTelemetryEvent<T, {}, { type: ItemType }>;
-        [TelemetryEventName.ItemDeletion]: BaseTelemetryEvent<T, {}, { type: ItemType }>;
+        [TelemetryEventName.ItemCreation]: BaseTelemetryEvent<T, {}, { type: TelemetryItemType }>;
+        [TelemetryEventName.ItemUpdate]: BaseTelemetryEvent<T, {}, { type: TelemetryItemType }>;
+        [TelemetryEventName.ItemRead]: BaseTelemetryEvent<T, {}, { type: TelemetryItemType }>;
+        [TelemetryEventName.ItemDeletion]: BaseTelemetryEvent<T, {}, { type: TelemetryItemType }>;
         [TelemetryEventName.AutosuggestAliasCreated]: BaseTelemetryEvent<T>;
         [TelemetryEventName.AutosaveDisplay]: BaseTelemetryEvent<T>;
         [TelemetryEventName.AutosaveDone]: BaseTelemetryEvent<T>;
