@@ -182,6 +182,11 @@ export const getCurrentFolders = (
             if ([ALL_MAIL, ALMOST_ALL_MAIL].includes(labelID as MAILBOX_LABEL_IDS)) {
                 return false;
             }
+
+            // We don't wait to show both the starred and empty start folder
+            if (labelID === STARRED) {
+                return false;
+            }
             return true;
         })
         .filter((labelID) => standardFolders[labelID] || customFolders[labelID])
