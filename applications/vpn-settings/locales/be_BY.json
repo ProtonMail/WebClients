@@ -809,6 +809,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Абыходзьце блакіроўкі і цэнзуру ў сваёй краіне з дапамогай нашай глабальнай сеткі сервераў."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Уключае падтрымку для ${ domains } карыстальніцкага дамена электроннай пошты, ${ addresses } адраса электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі.",
+        "Уключае падтрымку для ${ domains } карыстальніцкіх даменаў электроннай пошты, ${ addresses } адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі.",
+        "Уключае падтрымку для ${ domains } карыстальніцкіх даменаў электроннай пошты, ${ addresses } адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі.",
+        "Уключае падтрымку для ${ domains } карыстальніцкіх даменаў электроннай пошты, ${ addresses } адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Уключае падтрымку 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў hide-my-email, абагуленне календара і іншыя функцыі."
       ],
@@ -1909,6 +1915,33 @@
     "Enabled 2FA": {
       "2FA": [
         "2ФА"
+      ]
+    },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Платныя функцыі ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Уключае гісторыю версій у ${ DRIVE_SHORT_APP_NAME }, доступ да тысяч высакахуткасных сервераў ${ VPN_SHORT_APP_NAME }, абагуленне ў ${ PASS_SHORT_APP_NAME } і іншыя функцыі."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 ТБ"
+      ],
+      "6 users": [
+        "6 карыстальнікаў"
+      ],
+      "Early access to new apps and features": [
+        "Ранні доступ да новых праграм і функцый"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Ранні доступ для настольнай праграмы ${ MAIL_APP_NAME }"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Платныя функцыі ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_APP_NAME }"
       ]
     },
     "Error": {
@@ -3146,6 +3179,9 @@
       "for choosing ${ product }": [
         "для выбару ${ product }"
       ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Для ўдзельнікаў арганізацыі, якія выкарыстоўваюць адзіны ўваход (SAML SSO)"
+      ],
       "Free forever": [
         "Бясплатна назаўсёды"
       ],
@@ -3994,6 +4030,9 @@
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Пароль вашай арганізацыі можа выкарыстоўвацца некалькімі карыстальнікамі, якім вы вырашыце даць правы адміністратара. Ён таксама з'яўляецца кодам аварыйнага аднаўлення доступу вашай арганізацыі ў выпадку, калі вы раптам страціце доступ да свайго ўліковага запісу. Захавайце дадзены пароль і трымайце яго ў бяспечным месцы."
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Ваша арганізацыя выкарыстоўвае адзіны ўваход (SSO). Націсніце кнопку \"Увайсці\", каб працягнуць уваход з вашым пастаўшчыком SSO."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Вашы рэквізіты плацяжу абаронены шыфраваннем TLS і швейцарскімі законамі аб прыватнасці."
