@@ -63,7 +63,7 @@ function build_firefox_prod {
         -x "applications/pass-extension/dist/*"        \
         -x "applications/pass-extension/*.md"          \
         -x ".yarn/install-state.gz"                    \
-        -x ".yarn/cache"
+        -x ".yarn/cache/*"
     cd "$PASSDIR"
     zip -uqX "$OUTDIR/$BUILD_ID-FF-sources.zip" "FIREFOX_REVIEWERS.md"
     mv "$OUTDIR/$BUILD_ID-FF-sources.zip" "$ARTEFACTSDIR"
