@@ -17,6 +17,7 @@ import {
     isTransferPausedByConnection,
     isTransferProgress,
     isTransferRetry,
+    isTransferSkipError,
 } from '../../../utils/transfer';
 import { MAX_UPLOAD_BLOCKS_LOAD, MAX_UPLOAD_FOLDER_LOAD } from '../constants';
 import { UploadFileItem, UploadFileList } from '../interface';
@@ -200,7 +201,6 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
 
         // Set progress right away to not start the file more than once.
         queue.updateState(nextFileUpload.id, TransferState.Progress);
-
         const controls = initFileUpload(
             nextFileUpload.shareId,
             nextFileUpload.parentId,
@@ -238,6 +238,8 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
                         queue.updateState(nextFileUpload.id, ({ parentId }) =>
                             parentId ? TransferState.Pending : TransferState.Initializing
                         );
+                    } else if (isTransferSkipError(error)) {
+                        queue.updateWithData(nextFileUpload.id, TransferState.Skipped, { error });
                     } else {
                         queue.updateWithData(nextFileUpload.id, TransferState.Error, { error });
                         sendErrorReport(error);
