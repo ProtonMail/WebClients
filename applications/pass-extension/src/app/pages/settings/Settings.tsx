@@ -1,5 +1,5 @@
 import type { VFC } from 'react';
-import { useCallback, useEffect, useMemo, useRef, useState, type ComponentProps, type FC } from 'react';
+import { type ComponentProps, type FC, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Provider as ReduxProvider, useSelector } from 'react-redux';
 import { HashRouter, Route, Switch, useHistory } from 'react-router-dom';
 
@@ -16,6 +16,7 @@ import { Avatar } from '@proton/atoms/Avatar';
 import { Icon, Tabs, useNotifications } from '@proton/components';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { LockConfirmContextProvider } from '@proton/pass/components/Lock/LockConfirmContextProvider';
+import { UpsellRef } from '@proton/pass/constants';
 import { pageMessage } from '@proton/pass/lib/extension/message';
 import {
     selectPassPlan,
@@ -23,7 +24,7 @@ import {
     selectTrialDaysRemaining,
     selectUser,
 } from '@proton/pass/store/selectors';
-import { AppStatus, WorkerMessageType, type Unpack, type WorkerMessageWithSender } from '@proton/pass/types';
+import { AppStatus, type Unpack, WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -34,8 +35,6 @@ import { Import } from './Views/Import';
 import { Security } from './Views/Security';
 import { Support } from './Views/Support';
 
-import { PASS_EOY_PATH, PASS_REF_EXTENSION_SETTINGS, PASS_UPGRADE_PATH } from '@proton/pass/constants';
-import { isEOY } from '@proton/pass/lib/onboarding/utils';
 import './Settings.scss';
 
 type Tab = Unpack<Exclude<ComponentProps<typeof Tabs>['tabs'], undefined>>;
@@ -129,7 +128,7 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
                                                 )})`}
                                         </span>
                                     </span>
-                                    <UpgradeButton inline path={isEOY() ? PASS_EOY_PATH : PASS_UPGRADE_PATH} ref={PASS_REF_EXTENSION_SETTINGS} />
+                                    <UpgradeButton inline upsellRef={UpsellRef.SETTING} />
                                 </>
                             )}
                         </div>

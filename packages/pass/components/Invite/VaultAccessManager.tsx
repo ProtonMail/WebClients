@@ -1,11 +1,10 @@
-import { useMemo, useState, type FC } from 'react';
+import { type FC, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon, Prompt } from '@proton/components/components';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useInviteContext } from '@proton/pass/components/Invite/InviteProvider';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
@@ -15,9 +14,8 @@ import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { ShareMember } from '@proton/pass/components/Share/ShareMember';
 import { PendingExistingMember, PendingNewMember } from '@proton/pass/components/Share/SharePendingMember';
 import { SharedVaultItem } from '@proton/pass/components/Vault/SharedVaultItem';
-import { PASS_EOY_PATH, PASS_REF_EXTENSION_SHARE, PASS_REF_WEB_SHARE, PASS_UPGRADE_PATH } from '@proton/pass/constants';
+import { UpsellRef } from '@proton/pass/constants';
 import { useShareAccessOptionsPolling } from '@proton/pass/hooks/useShareAccessOptionsPolling';
-import { isEOY } from '@proton/pass/lib/onboarding/utils';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
 import { isVaultMemberLimitReached } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectOwnWritableVaults, selectPassPlan, selectShareOrThrow } from '@proton/pass/store/selectors';
@@ -40,7 +38,6 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
     const canManage = isShareManageable(vault);
     const hasMultipleOwnedWritableVaults = useSelector(selectOwnWritableVaults).length > 1;
     const [limitModalOpen, setLimitModalOpen] = useState(false);
-    const { endpoint } = usePassCore();
 
     const members = useMemo<ShareMemberType[]>(() => (vault.members ?? []).sort(sortOn('email', 'ASC')), [vault]);
     const invites = useMemo<InviteListItem[]>(
@@ -64,7 +61,13 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
 
     const warning = (() => {
         if (canManage && memberLimitReached) {
-            const upgradeLink = <UpgradeButton inline label={c('Action').t`Upgrade now to share with more people`} path={isEOY() ? PASS_EOY_PATH : PASS_UPGRADE_PATH} ref={endpoint === 'web' ? PASS_REF_WEB_SHARE : PASS_REF_EXTENSION_SHARE} />;
+            const upgradeLink = (
+                <UpgradeButton
+                    inline
+                    label={c('Action').t`Upgrade now to share with more people`}
+                    upsellRef={UpsellRef.LIMIT_SHARING}
+                />
+            );
             return plan === UserPassPlan.FREE
                 ? c('Warning').jt`You have reached the limit of users in this vault. ${upgradeLink}`
                 : c('Warning').t`You have reached the limit of members who can access this vault.`;

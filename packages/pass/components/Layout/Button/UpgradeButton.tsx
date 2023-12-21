@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { Button, InlineLinkButton } from '@proton/atoms';
 import { Icon } from '@proton/components/components';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { PASS_UPGRADE_PATH } from '@proton/pass/constants';
+import { type UpsellRef } from '@proton/pass/constants';
+import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import clsx from '@proton/utils/clsx';
 
 type UpgradeButtonProps = {
@@ -13,25 +13,19 @@ type UpgradeButtonProps = {
     inline?: boolean;
     label?: string;
     path?: string;
-    ref: string
+    upsellRef: UpsellRef;
 };
 
-export const UpgradeButton: VFC<UpgradeButtonProps> = ({
-    className,
-    inline = false,
-    label,
-    path = PASS_UPGRADE_PATH,
-    ref
-}) => {
-    const { onLink, config } = usePassCore();
+export const UpgradeButton: VFC<UpgradeButtonProps> = ({ className, inline = false, label, path, upsellRef }) => {
     const ButtonComponent = inline ? InlineLinkButton : Button;
     const buttonProps = { pill: true, shape: 'solid' } as const;
+    const navigateToUpgrade = useNavigateToUpgrade({ upsellRef, path });
 
     return (
         <ButtonComponent
             className={clsx('items-center flex-nowrap shrink-0', inline ? 'inline-flex' : 'flex text-sm', className)}
             color="norm"
-            onClick={() => onLink(`${config.SSO_URL}/${path}&ref=${ref}`, { replace: true })}
+            onClick={navigateToUpgrade}
             {...(!inline && buttonProps)}
         >
             {label || c('Action').t`Upgrade`}
