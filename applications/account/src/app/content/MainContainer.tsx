@@ -141,7 +141,8 @@ const MainContainer = () => {
 
     const isEmailForwardingEnabled = useFlag('EmailForwarding') || incomingAddressForwardings.length > 0;
 
-    const isElectronDisabled = useFlag('DisableElectronMail');
+    // Used to determine if a user has access to the desktop app and display page in settings
+    const hasUserAccessToInboxDesktop = useFlag('MailDesktopAppAccess');
 
     const [isDataRecoveryAvailable, loadingDataRecovery] = useIsDataRecoveryAvailable();
     const [isSessionRecoveryAvailable, loadingIsSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
@@ -172,7 +173,7 @@ const MainContainer = () => {
         isProtonSentinelUpsellEnabled,
         isOrgTwoFactorEnabled,
         isEmailForwardingEnabled,
-        isElectronDisabled,
+        hasUserAccessToInboxDesktop,
         isNotifInboxDesktopAppOn,
     });
 
