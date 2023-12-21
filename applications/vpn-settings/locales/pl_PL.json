@@ -1911,6 +1911,33 @@
         "Uwierzytelnianie dwustopniowe"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Płatne funkcje ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Zawiera historię wersji w ${ DRIVE_SHORT_APP_NAME }, dostęp do tysięcy szybkich serwerów ${ VPN_SHORT_APP_NAME }, udostępnianie w ${ PASS_SHORT_APP_NAME } i wiele więcej."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 użytkowników"
+      ],
+      "Early access to new apps and features": [
+        "Wcześniejszy dostęp do nowych aplikacji i funkcji"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Wcześniejszy dostęp do aplikacji desktopowej ${ MAIL_APP_NAME }"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Płatne funkcje ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_APP_NAME }"
+      ]
+    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Możesz również sprawdzić naszą ${ statusPageLink }"
@@ -3146,6 +3173,9 @@
       "for choosing ${ product }": [
         "za wybranie ${ product }"
       ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Logowanie SSO (SAML) dla użytkowników organizacji"
+      ],
       "Free forever": [
         "Darmowy na zawsze"
       ],
@@ -3994,6 +4024,9 @@
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Hasło organizacji może być udostępnione innym użytkownikom, którym chcesz nadać uprawnienia administratora. Jest to również kod odzyskiwania awaryjnego, w przypadku utraty dostępu do głównego konta. Zapisz to hasło w bezpiecznym miejscu."
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Organizacja używa logowania SSO. Kliknij \"Zaloguj się\", aby skorzystać z dostawcy tożsamości SSO."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Szczegóły Twoich płatności są chronione szyfrowaniem TLS i szwajcarskim prawem ochrony danych."

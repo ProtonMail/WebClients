@@ -363,10 +363,10 @@
         "Znížiť účet"
       ],
       "Download": [
-        "Stiahnúť"
+        "Stiahnuť"
       ],
       "Download all configurations": [
-        "Stiahnúť celú konfiguráciu"
+        "Stiahnuť celú konfiguráciu"
       ],
       "Download CSV sample": [
         "Stiahnuť ukážku CSV"
@@ -1488,6 +1488,12 @@
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Obíďte obmedzenia a cenzúru miestneho internetu pomocou našej globálnej siete serverov."
+      ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailovú adresu, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie.",
+        "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailové adresy, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie.",
+        "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailových adries, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie.",
+        "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailových adries, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Zahŕňa podporu pre 1 vlastnú emailovú doménu, 10 emailových adries, 10 hide-my-email aliasov, zdieľanie kalendára a ďalšie."
@@ -3687,7 +3693,37 @@
         "2FA"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Funkcie plateného ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Zahŕňa históriu verzií v ${ DRIVE_SHORT_APP_NAME }, prístup k tisícom vysokorýchlostných ${ VPN_SHORT_APP_NAME } serverov, zdieľanie v ${ PASS_SHORT_APP_NAME } a mnoho ďalšieho."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 používateľov"
+      ],
+      "Early access to new apps and features": [
+        "Skorší prístup k novým aplikáciám a funkciám"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Skorší prístup k desktopovej aplikácii ${ MAIL_APP_NAME }"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Funkcie plateného ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_APP_NAME }"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } sa nedokáže pripojiť k vášmu externému účtu."
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Môžete tiež pozrieť, čo hovorí naša ${ statusPageLink }"
       ],
@@ -4104,6 +4140,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Skúste používať iba písmená, číslice a _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Neočakávaná chyba, nemôžeme importovať kontakty"
       ],
       "Unknown error": [
         "Neznáma chyba"
@@ -6589,6 +6628,9 @@
       "for choosing ${ product }": [
         "za výber ${ product }"
       ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Pre členov organizácií používajúcich jednotné prihlásenie (SAML SSO)"
+      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Preposielajte prichádzajúcu poštu z iného účtu do vašej zabezpečenej schránky ${ MAIL_APP_NAME }."
       ],
@@ -6954,6 +6996,9 @@
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Nie je to vaše zariadenie? K prihláseniu použite okno súkromného prehliadania a po dokončení ho zatvorte. ${ learnMore }"
+      ],
+      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
+        "Aplikácia pre počítače, ktorá je teraz k dispozícii v beta verzii, vám umožňuje pohodlne spustiť ${ MAIL_APP_NAME } priamo z počítača a nerozptyľovať sa prácou s prehliadačom."
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverov v organizácii"
@@ -8074,6 +8119,9 @@
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Heslo organizácie je možné zdieľať so všetkými používateľmi, ktorým chcete prideliť oprávnenia správcu. Heslo slúži tiež ako núdzový kód na obnovenie prístupu do vašej organizácie v prípade, že stratíte prístup k vašemu účtu. Heslo uložte a držte ho v bezpečí."
       ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Vaša organizácia používa jednotné prihlásenie (SSO). Stlačte tlačidlo Prihlásiť sa a pokračujte prostredníctvom vášho poskytovateľa SSO."
+      ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Emaily vašej organizácie sú chránené end-to-end šifrovaním pomocou kľúča organizácie. Tento odtlačok možno použiť na overenie, či všetci správcovia vo vašom účte majú rovnaký kľúč."
       ],
@@ -8642,6 +8690,9 @@
       ],
       "Awarded": [
         "Ocenený"
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billing address": [
         "Fakturačná adresa"
@@ -10606,17 +10657,6 @@
         "Tímový manažment"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačnom prípade bude prístup k vášmu účtu obmedzený a váš účet bude nakoniec deaktivovaný."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ak chcete naďalej používať ${ MAIL_APP_NAME } s prémiovými funkciami, vyberte si predplatné a možnosti platby."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Skúšobná verzia končí ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končiaca na ${ last4 }"
@@ -10710,6 +10750,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačnom prípade bude prístup k vášmu účtu obmedzený a váš účet bude nakoniec deaktivovaný."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ak chcete naďalej používať ${ MAIL_APP_NAME } s prémiovými funkciami, vyberte si predplatné a možnosti platby."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Skúšobná verzia končí ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -12181,6 +12232,9 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Ak ste nepožiadali o obnovenie hesla, zrušte túto žiadosť teraz."
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Žiadosť o obnovenie hesla bola schválená (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Prejdite na prihlásené zariadenie (v relácii, kde bola žiadosť iniciovaná) a zmeňte heslo."
       ],
@@ -12201,6 +12255,9 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Heslo pre účet ${ boldEmail } si teraz môžete ľubovoľne zmeniť po dobu ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Teraz môžete zmeniť heslo pre účet ${ boldEmail }."
       ],
       "You can now reset your password": [
         "Teraz môžete obnoviť vaše heslo"
@@ -13480,6 +13537,9 @@
       ]
     },
     "Title": {
+      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
+        " Získajte ${ MAIL_APP_NAME } pre Mac alebo Windows"
+      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -13837,6 +13897,9 @@
       "Delete version history?": [
         "Vymazať históriu verzií?"
       ],
+      "Desktop app": [
+        "Desktopová aplikácia"
+      ],
       "Disable ${ email }": [
         "Deaktivovať ${ email }"
       ],
@@ -13959,6 +14022,9 @@
       ],
       "Folders and labels": [
         "Priečinky a štítky"
+      ],
+      "For ${ platform }": [
+        "Pre ${ platform }"
       ],
       "Forward and auto-reply": [
         "Preposlať a automaticky odpovedať"
