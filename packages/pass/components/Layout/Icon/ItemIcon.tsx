@@ -34,7 +34,7 @@ type BaseItemIconProps = {
 
 type ItemIconProps = { item: ItemRevisionWithOptimistic; size: IconSize; className: string };
 
-export const BaseItemIcon: VFC<BaseItemIconProps> = ({
+export const ItemIcon: VFC<BaseItemIconProps> = ({
     icon,
     url,
     size,
@@ -45,7 +45,6 @@ export const BaseItemIcon: VFC<BaseItemIconProps> = ({
     renderIndicators,
 }) => {
     const [imageStatus, setImageStatus] = useState<ImageStatus>(ImageStatus.LOADING);
-
     const handleStatusChange = useCallback((status: ImageStatus) => setImageStatus(status), []);
 
     return (
@@ -76,7 +75,7 @@ export const BaseItemIcon: VFC<BaseItemIconProps> = ({
     );
 };
 
-export const ItemIcon: VFC<ItemIconProps> = ({ item, size, className }) => {
+export const OptimisticItemIcon: VFC<ItemIconProps> = ({ item, size, className }) => {
     const { data, optimistic, failed } = item;
     const loadDomainImages = useSelector(selectCanLoadDomainImages);
     const domainURL = data.type === 'login' ? data.content.urls?.[0] : null;
@@ -99,7 +98,7 @@ export const ItemIcon: VFC<ItemIconProps> = ({ item, size, className }) => {
     };
 
     return (
-        <BaseItemIcon
+        <ItemIcon
             icon={presentItemIcon(data)}
             url={domainURL}
             size={size}
