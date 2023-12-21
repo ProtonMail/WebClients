@@ -1,4 +1,4 @@
-import { useMemo, type MouseEvent, type VFC } from 'react';
+import { type MouseEvent, type VFC, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
@@ -10,13 +10,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import type { IconName } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
-import { PASS_EOY_PATH, PASS_REF_EXTENSION_VAULT, PASS_REF_WEB_VAULT, PASS_UPGRADE_PATH } from '@proton/pass/constants';
-import { isEOY } from '@proton/pass/lib/onboarding/utils';
+import { UpsellRef } from '@proton/pass/constants';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectAllVaults, selectOwnReadOnlyVaults, selectShare, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { ItemType } from '@proton/pass/types';
@@ -33,7 +31,6 @@ type QuickAction = {
 
 export const ItemsListPlaceholder: VFC = () => {
     const history = useHistory();
-    const {endpoint} = usePassCore();
     const openSettings = useOpenSettingsTab();
 
     const { isCreating } = useNavigationContext();
@@ -99,7 +96,7 @@ export const ItemsListPlaceholder: VFC = () => {
                     {c('Info')
                         .t`You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.`}
                 </Card>
-                <UpgradeButton path={isEOY() ? PASS_EOY_PATH : PASS_UPGRADE_PATH} ref={endpoint === 'web' ? PASS_REF_WEB_VAULT : PASS_REF_EXTENSION_VAULT} />
+                <UpgradeButton upsellRef={UpsellRef.LIMIT_VAULT} />
             </div>
         );
     }
