@@ -635,6 +635,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Няправільны PIN-код. Паспрабуйце яшчэ раз."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Ваш PIN-код быў выдалены ў іншым кліенце ${ PASS_APP_NAME }"
       ]
     },
     "Error message": {
@@ -806,6 +809,9 @@
       "Autosaved on ${ submissionURL }": [
         "Аўтазахавана на ${ submissionURL }"
       ],
+      "Built in 2FA authenticator": [
+        "Убудаваны аўтэнтыфікатар 2ФА"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Можа ствараць, рэдагаваць, выдаляць і экспартаваць элементы ў гэтым сховішчы."
       ],
@@ -830,9 +836,6 @@
       "Creating alias...": [
         "Стварэнне псеўданіма..."
       ],
-      "Credit cards, Custom fields": [
-        "Крэдытныя карткі, карыстальніцкія палі"
-      ],
       "Decrypting your data": [
         "Расшыфроўка вашых даных"
       ],
@@ -850,6 +853,9 @@
       ],
       "Drop to import": [
         "Перацягніце для імпартавання"
+      ],
+      "Early access to ${ PASS_APP_NAME } web app": [
+        "Ранні доступ да вэб-праграмы ${ PASS_APP_NAME }"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Без намаганняў імпартуйце вашы існуючыя паролі ў ${ PASS_APP_NAME }."
@@ -977,9 +983,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
-      "Multiple vaults": [
-        "Некалькі сховішчаў"
-      ],
       "Never": [
         "Ніколі"
       ],
@@ -1031,17 +1034,26 @@
       "Please enter your current PIN code to continue": [
         "Увядзіце свой бягучы PIN-код для працягу"
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Палепшыце, каб мець ранні доступ да вэб-праграмы ${ PASS_APP_NAME }"
+      ],
       "Press Enter to copy": [
         "Націсніце Enter, каб скапіяваць"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Прыватнасць для нас выклікае вялікую заклапочанасць. Даведайцеся чым ${ PASS_APP_NAME } адрозніваецца ад іншых праграм такога тыпу."
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Абаронена з дапамогай ${ PROTON_SENTINEL_LINK }, якая з'яўляецца нашай перадавой праграмай абароны ўліковых запісаў"
+      ],
       "Restoring trashed items...": [
         "Аднаўленне выдаленых элементаў..."
       ],
       "Save login": [
         "Захаваць запіс уваходу"
+      ],
+      "Save up to 60% on ${ PASS_APP_NAME } Plus": [
+        "Сэканомце да 60% на ${ PASS_APP_NAME } Plus"
       ],
       "Select destination vault": [
         "Выберыце мэтавае сховішча"
@@ -1061,8 +1073,8 @@
       "Settings successfully updated": [
         "Налады паспяхова абноўлены"
       ],
-      "Share with 10 others": [
-        "Абагуліць з 10 іншымі"
+      "Share your logins, secure notes, with up to 10 people": [
+        "Дзяліцеся сваімі запісамі ўваходу і бяспечнымі нататкамі (да 10 карыстальнікаў)"
       ],
       "Sign in or create an account to continue.": [
         "Увайдзіце або стварыце ўліковы запіс, каб працягнуць."
@@ -1121,8 +1133,8 @@
       "Unable to copy to clipboard": [
         "Немагчыма скапіяваць у буфер абмену"
       ],
-      "Unlimited Aliases": [
-        "Неабмежаваная колькасць псеўданімаў"
+      "Unlimited hide-my-email aliases": [
+        "Неабмежаваная колькасць псеўданімаў Hide-my-email"
       ],
       "Unlock it with your PIN to access the settings": [
         "Разблакіруйце яго з дапамогай PIN, каб атрымаць доступ да налад"
@@ -1132,6 +1144,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Палепшыць ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Палепшыце свой тарыфны план, каб разблакіраваць прэміяльныя функцыі"
       ],
       "Use vaults to share this item with others.": [
         "Выкарыстанне сховішча для абагулення элементаў з іншымі."
@@ -1844,6 +1859,9 @@
       ],
       "Update available": [
         "Даступна абнаўленне"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Палепшыце свой тарыфны план, каб разблакіраваць прэміяльныя функцыі"
       ],
       "Use my email": [
         "Выкарыстоўваць маю электронную пошту"

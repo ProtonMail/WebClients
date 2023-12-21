@@ -1481,6 +1481,10 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Sortea la censura y bloqueos locales de Internet con nuestra red global de servidores."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Incluye soporte para ${ domains } dominio de correo electrónico personalizado, ${ addresses } dirección de correo, alias ilimitados de hide-my-email, compartir calendario y más.",
+        "Incluye soporte para ${ domains } dominios de correo electrónico personalizado, ${ addresses } direcciones de correo, alias ilimitados de hide-my-email, compartir calendario y más."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Incluye compatibilidad con 1 dominio de correo electrónico personalizado, 10 direcciones de correo electrónico, 10 alias de hide-my-email, posibilidad de compartir calendario, etc."
       ],
@@ -3663,7 +3667,37 @@
         "2FA"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Funciones de pago de ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Incluye historial de versiones en ${ DRIVE_SHORT_APP_NAME }, acceso a miles de servidores ${ VPN_SHORT_APP_NAME } de gran velocidad, compartir en ${ PASS_SHORT_APP_NAME } y más."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 usuarios"
+      ],
+      "Early access to new apps and features": [
+        "Acceso anticipado a funciones y aplicaciones nuevas"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Acceso anticipado a la aplicación de escritorio de ${ MAIL_APP_NAME }"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Funciones de pago de ${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_APP_NAME }"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } no se puede conectar a tu cuenta externa."
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. También puedes comprobar nuestra ${ statusPageLink }"
       ],
@@ -4070,6 +4104,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Utiliza solo letras, números y _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Se ha producido un error inesperado. No podemos importar los contactos."
       ],
       "Unknown error": [
         "Error desconocido"
@@ -6457,6 +6494,9 @@
       "for choosing ${ product }": [
         "por elegir ${ product }"
       ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Para miembros de organizaciones que utilizan el inicio de sesión único (SAML SSO)"
+      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Redirige correos entrantes desde otra cuenta a tu bandeja de entrada segura de ${ MAIL_APP_NAME }."
       ],
@@ -7912,6 +7952,9 @@
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "La contraseña de tu organización puede compartirse con otros usuarios a los que desees otorgar privilegios administrativos. También es un código de recuperación de emergencia para tener acceso a tu organización en caso de que pierdas el acceso a tu cuenta. Guarda esta contraseña y mantenla segura."
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Tu organización utiliza el inicio de sesión único (SSO). Presiona iniciar sesión para continuar con tu proveedor de SSO."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Los correos electrónicos de tu organización están protegidos con cifrado de extremo a extremo utilizando la clave de la organización. Se puede utilizar esta huella digital para verificar que todos los administradores en tu cuenta tienen la misma clave."
@@ -10378,17 +10421,6 @@
         "Gestión de equipos"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para seguir utilizando ${ MAIL_APP_NAME } con las funciones premium, suscríbete y elige el método de pago."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina con ${ last4 }"
@@ -10482,6 +10514,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para seguir utilizando ${ MAIL_APP_NAME } con las funciones premium, suscríbete y elige el método de pago."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {

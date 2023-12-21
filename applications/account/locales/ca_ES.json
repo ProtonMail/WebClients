@@ -254,6 +254,9 @@
       "Create": [
         "Crear"
       ],
+      "Create a link to share with anyone outside ${ BRAND_NAME }": [
+        "Creeu un enllaç per a compartir amb qualsevol de fora de ${ BRAND_NAME }"
+      ],
       "Create account": [
         "Crea un compte"
       ],
@@ -376,6 +379,9 @@
       ],
       "Download recovery file": [
         "Descarrega el fitxer de recuperació"
+      ],
+      "Download the ${ MAIL_APP_NAME } Export Tool": [
+        "Descarrega l'eina d'exportació de ${ MAIL_APP_NAME }"
       ],
       "Edit": [
         "Edita"
@@ -1056,7 +1062,7 @@
         "Voleu anul·lar tots els fitxers de recuperació?"
       ],
       "What do I get?": [
-        "Què obtinc?"
+        "Què n'obtinc?"
       ],
       "Wipe": [
         "Esborra"
@@ -1421,6 +1427,10 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Eviteu els bloquejos i la censura locals a Internet amb la nostra xarxa global de servidors."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inclou suport per a ${ domains } dominis de correu electrònic personalitzats, ${ addresses } adreça de correu electrònic, àlies hide-my-email il·limitats, compartició de calendari, etc.",
+        "Inclou suport per a ${ domains } dominis de correu electrònic personalitzats, ${ addresses } adreces de correu electrònic, àlies hide-my-email il·limitats, compartició de calendari, etc."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclou suport per a 1 domini de correu electrònic personalitzat, 10 adreces de correu electrònic, 10 àlies hide-my-email, compartició de calendari i més."
       ],
@@ -1595,7 +1605,7 @@
     },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Podeu importar fitxers ICS d'un altre calendari a ${ CALENDAR_APP_NAME }. D'aquesta manera podeu importar ràpidament un esdeveniment o tota la vostra agenda."
+        "Podeu importar fitxers ICS d'un altre calendari a ${ CALENDAR_APP_NAME }. D'aquesta manera, podeu importar ràpidament un esdeveniment o tota la vostra agenda."
       ]
     },
     "Calendar invite status label": {
@@ -3039,7 +3049,7 @@
         "Per a esborrar el peu de pàgina de ${ MAIL_APP_NAME }, milloreu i aconseguiu encara més característiques prèmium."
       ],
       "Track the status and activity of your referrals.": [
-        "Feu un seguiment de l'estat i l'activitat de les vostres referències."
+        "Feu un seguiment de l'estat i l'activitat de les vostres recomanacions."
       ],
       "Unlock shorter email addresses and other premium features by upgrading.": [
         "Desbloquegeu adreces de correu electrònic més curtes i altres característiques prèmium mitjançant la millora del vostre pla."
@@ -3244,7 +3254,7 @@
     },
     "Email spam notification": {
       "${ name } added": [
-        "${ name } afegit"
+        "S'ha afegit ${ name }"
       ],
       "${ name } deletion failed": [
         "No s'ha pogut eliminar ${ name }."
@@ -3259,7 +3269,7 @@
         "No s'ha pogut moure ${ name } a la llista de correu brossa"
       ],
       "${ name } moved to allow list": [
-        "S'ha mogut ${ name } a la vostra llista d'adreces permeses."
+        "S'ha mogut ${ name } a la llista d'adreces permeses."
       ],
       "${ name } moved to block list": [
         "S'ha mogut ${ name } a la llista d'adreces bloquejades"
@@ -3531,7 +3541,37 @@
         "A2F"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Característiques de pagament de ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Inclou l'historial de versions en ${ DRIVE_SHORT_APP_NAME }, accés a milers de servidors d'alta velocitat ${ VPN_SHORT_APP_NAME }, compartició en ${ PASS_SHORT_APP_NAME }, etc."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 usuaris"
+      ],
+      "Early access to new apps and features": [
+        "Accés anticipat a noves aplicacions i característiques"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Accés anticipat a l'aplicació d'escriptori de ${ MAIL_APP_NAME }"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Característiques de pagament de ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_APP_NAME }"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } no es pot connectar al vostre compte extern"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. També podeu comprovar la nostra ${ statusPageLink }"
       ],
@@ -3930,6 +3970,9 @@
       "Try using only letters, numerals, and _.-": [
         "Intenteu utilitzar només lletres, numerals i _.-"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "S'ha produït un error inesperat. No es poden importar els contactes"
+      ],
       "Unknown error": [
         "Error desconegut"
       ],
@@ -3984,6 +4027,9 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Heu utilitzat tots els usuaris del vostre pla. Milloreu-lo per a afegir un usuari."
       ],
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Heu d'activar les claus de la vostra organització. Sense activació, no podreu crear ni accedir a usuaris no privats."
+      ],
       "You must privatize all users before generating new organization keys": [
         "Heu de privatitzar tots els usuaris abans de generar claus d'organització noves"
       ],
@@ -3991,7 +4037,7 @@
         "Heu d'establir un nom"
       ],
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "Heu de tenir una adreça de domini personalitzada per generar un token de tramesa SMTP."
+        "Heu de tenir una adreça de domini personalitzada per generar un testimoni de tramesa SMTP."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
         "Heu arribat al nombre màxim de caràcters. Reduïu el vostre missatge."
@@ -4335,13 +4381,13 @@
         "S'han exportat ${ totalProcessed } esdeveniments de ${ totalToProcess }"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
-        "S'ha exportat el calendari exportat Ja podeu desar el fitxer ICS."
+        "S'ha exportat el calendari. Ja podeu desar el fitxer ICS."
       ],
       "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "Desxifrant esdeveniments del vostre calendari: ${ totalProcessed }/${ totalToProcess }"
+        "S'estan desxifrant esdeveniments del vostre calendari: ${ totalProcessed }/${ totalToProcess }"
       ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
-        "A causa del restabliment de contrasenya, cap dels vostres esdeveniments s'han pogut desxifrar i exportar."
+        "A causa del restabliment de contrasenya, cap dels vostres esdeveniments s'ha pogut desxifrar i exportar."
       ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
         "A causa del restabliment de contrasenya, alguns dels vostres esdeveniments no s'han pogut desxifrar i exportar."
@@ -4350,10 +4396,10 @@
         "S'ha produït un error en desxifrar l'esdeveniment."
       ],
       "Learn how to restore encrypted events with old password": [
-        "Apreneu a restablir esdeveniments xifrats amb l'antiga contrasenya."
+        "Apreneu a restaurar esdeveniments xifrats amb l'antiga contrasenya."
       ],
       "Loading events": [
-        "Carregant esdeveniments"
+        "S'estan carregant esdeveniments"
       ],
       "None of the events could be exported.": [
         "No s'ha pogut exportar cap dels esdeveniments."
@@ -4371,7 +4417,7 @@
         "Alguns dels vostres esdeveniments no s'han pogut exportar."
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "La connexió d'internet s'ha interromput, causant la fallada del procés d'exportació. Torneu-ho a intentar."
+        "La connexió d'internet s'ha interromput i ha causat la fallada del procés d'exportació. Torneu-ho a intentar."
       ],
       "You can save an ICS file of the events that were successfully exported.": [
         "Podeu desar el fitxer ICS dels esdeveniments que han estat exportats."
@@ -4526,7 +4572,7 @@
         "Se us ha convidat a unir-vos a ${ bannerOrganization }. ${ viewInviteButton }"
       ],
       "You have reached the limit of 10 accepted invitations in 6 months.": [
-        "Ha arribat al límit de 10 invitacions acceptades en 6 mesos."
+        "Heu arribat al límit de 10 invitacions acceptades en 6 mesos."
       ],
       "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
         "Heu arribat al límit de 10 invitacions acceptades en 6 mesos. El botó es farà clicable quan pugueu convidar usuaris addicionals."
@@ -4662,7 +4708,7 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Inclou 2700 servidors en més de 65 països, connecteu fins a 10 dispositius, accediu a serveis de transmissió en línia en tot el món, bloquejador de programari maliciós i d'anuncis i més."
+        "Inclou 2700 servidors en més de 65 països, connecteu fins a 10 dispositius, accediu a serveis de transmissió en línia en tot el món, bloquejador de programari maliciós i d'anuncis, etc."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
         "Inclou suport per a 3 dominis de correu electrònic personalitzats, 90 adreces de correu electrònic, àlies il·limitats de Hide-my-email, compartició de calendari i més."
@@ -5661,7 +5707,7 @@
         "${ plan.Title } requereix almenys un servidor dedicat ${ serverPricePerMonth }"
       ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
-        "${ PROTON_SENTINEL_NAME } és un programa avançat de protecció del compte alimentat per sistemes d'IA sofisticats i equips d'especialistes que treballen les 24 hores del dia per protegir-vos d'actors maliciosos i amenaces de seguretat."
+        "${ PROTON_SENTINEL_NAME } és un programa avançat de protecció de comptes alimentat per sofisticats sistemes d'IA i especialistes que treballen tot el dia per protegir-vos dels agents maliciosos i les amenaces de seguretat."
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } carpeta trobada",
@@ -5775,7 +5821,7 @@
         "Un usuari és un compte associat amb un sol nom d'usuari, una bústia de correu i una persona"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "Accediu a les vostres contrasenyes i protegiu les vostres identitats en línia fàcilment a través dels vostres dispositius. Baixeu i instal·leu les aplicacions i extensions rellevants de ${ PASS_APP_NAME }."
+        "Accediu a les vostres contrasenyes i protegiu les vostres identitats en línia fàcilment en tots els vostres dispositius. Baixeu i instal·leu les aplicacions i extensions pertinents de ${ PASS_APP_NAME }."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "L'accés al compte està restringit a causa de factures impagades. Contacteu amb el vostre administrador."
@@ -5958,10 +6004,10 @@
         "La resposta automàtica està sempre activa durant els dies de la setmana seleccionats, entre les hores escollides."
       ],
       "Available on macOS, Windows, and Linux.": [
-        "Disponible per macOS, Windows i Linux."
+        "Disponible per a macOS, Windows i Linux."
       ],
       "Awaiting transaction": [
-        "En espera de transacció"
+        "S'està esperant la transacció"
       ],
       "Background color": [
         "Color de fons"
@@ -6045,7 +6091,7 @@
         "Copia la contrasenya suggerida al porta-retalls"
       ],
       "Copy your referral link": [
-        "Copieu el vostre enllaç de referència"
+        "Copieu el vostre enllaç de recomanació"
       ],
       "Country code": [
         "Codi de país"
@@ -6266,7 +6312,7 @@
         "No s'han pogut trobar els registres."
       ],
       "Fill in user details": [
-        "Ompli els detalls de l'usuari"
+        "Empleneu els detalls de l'usuari"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Els filtres funcionen en tots els correus electrònics, inclosos els que es reben i els enviats. Cada filtre ha de contenir almenys un nom, una condició i una acció."
@@ -6308,7 +6354,7 @@
         "aquí"
       ],
       "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
-        "Amaga la informació d'identificació carregant contingut remot mitjançant un servidor intermediari. Opció per emmagatzemar contingut com a fitxers adjunts."
+        "Amaga la informació d'identificació carregant contingut remot mitjançant un servidor intermediari. Hi ha l'opció d'emmagatzemar contingut com a fitxers adjunts."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Si un altre administrador ha canviat aquesta contrasenya, haureu de preguntar-li quina és la nova contrasenya d'organització."
@@ -6841,7 +6887,7 @@
         "La frase de recuperació no està associada amb cap clau antiquada."
       ],
       "Referral link copied to your clipboard": [
-        "S'ha copiat l'enllaç de referència al porta-retalls"
+        "S'ha copiat l'enllaç de recomanació al porta-retalls"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
@@ -6946,7 +6992,7 @@
         "L'enviament per SMTP permet als serveis o dispositius de tercers enviar correus electrònics a través de ${ MAIL_APP_NAME } per a les adreces del vostre domini personalitzat. Per a sol·licitar accés, ${ createTicket } descrivint els casos d'ús, quins dominis personalitzats voleu utilitzar i els volums de correu electrònic esperats per hora i per dia."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
-        "Una tramesa SMTP permet als serveis de tercers o dispositius enviar correus electrònics a través de ${ MAIL_APP_NAME } per a les adreces de domini personalitzades. Per utilitzar aquesta característica, comenceu generant un nou token."
+        "Una tramesa SMTP permet als serveis de tercers o dispositius enviar correus electrònics a través de ${ MAIL_APP_NAME } per a les vostres adreces de domini personalitzades. Per utilitzar aquesta característica, comenceu generant un testimoni."
       ],
       "Some keys successfully reactivated": [
         "S'han reactivat correctament algunes claus"
@@ -6980,7 +7026,7 @@
         "Emmagatzemeu aquesta contrasenya i aquest fitxer en un lloc segur. Els necessitareu de nou per importar la vostra clau."
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
-        "Envieu un dipòsit utilitzant l'adreça següent o escanegeu el codi QR. El dipòsit es reflectirà al vostre compte després de la confirmació."
+        "Envieu un dipòsit utilitzant l'adreça següent o escanegeu el codi QR. El dipòsit es reflectirà al vostre compte després de confirmar-lo."
       ],
       "Subscription auto-renews every 12 months.": [
         "La subscripció es renova automàticament cada 12 mesos."
@@ -7394,7 +7440,7 @@
         "Us redireccionarem a PayPal en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu bloquejadors emergents, inhabiliteu-los per continuar."
       ],
       "We'll get back to you shortly.": [
-        "Ens posarem en contacte amb vostè tan aviat com puguem."
+        "Ens posarem en contacte aviat."
       ],
       "We'll notify you when the import is done.": [
         "Us notificarem quan la importació s'hagi realitzat."
@@ -7575,7 +7621,7 @@
         "Perdreu accés a les funcions Plus en aquesta data."
       ],
       "You will lose access to Plus servers and features on this date.": [
-        "Perdreu accés a servidors i funcions Plus aquesta data."
+        "Perdreu l'accés a servidors i característiques Plus en aquesta data."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Necessitareu una adreça de ${ BRAND_NAME } per a utilitzar ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }"
@@ -8210,7 +8256,7 @@
         "Elimina automàticament els missatges no desitjats"
       ],
       "Auto-detect primary time zone": [
-        "Detecció automàtica del fus horari principal"
+        "Detecta automàticament el fus horari principal"
       ],
       "Auto-reply": [
         "Resposta automàtica"
@@ -8220,6 +8266,9 @@
       ],
       "Awarded": [
         "Premiat"
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billing address": [
         "Adreça de facturació"
@@ -8312,7 +8361,7 @@
         "Confirma el correu electrònic"
       ],
       "Confirm link URLs": [
-        "Confirma els enllaços de l'URL"
+        "Confirma els URL dels enllaços"
       ],
       "Confirm login password": [
         "Confirma la contrasenya d'inici de sessió"
@@ -8978,7 +9027,7 @@
         "La seva contrasenya (admin)"
       ],
       "Your referral link": [
-        "Enllaç de la vostra recomanació"
+        "El vostre enllaç de recomanació"
       ]
     },
     "label": {
@@ -9799,7 +9848,7 @@
         "Programa ${ PROTON_SENTINEL_NAME }"
       ],
       "${ size } attachment size": [
-        "Mida dels arxius adjunts de ${ size }"
+        "${ size } d'adjunts"
       ],
       "${ size } storage": [
         "${ size } d'emmagatzematge"
@@ -9820,7 +9869,7 @@
         "SLA del 99,5%"
       ],
       "Ad-blocker and malware protection": [
-        "Bloquejador d'anuncis i publicitat, i protecció contra programari maliciós"
+        "Bloquejador d'anuncis i protecció contra programari maliciós"
       ],
       "Admin console": [
         "Consola d'administració"
@@ -9838,7 +9887,7 @@
         "Resposta automàtica"
       ],
       "Autofill credit cards (coming soon)": [
-        "Empleneu automàticament targetes de crèdit (disponible pròximament)"
+        "Emplenament automàtic de targetes de crèdit (disponible pròximament)"
       ],
       "Available on all platforms": [
         "Disponible a totes les plataformes"
@@ -9928,7 +9977,7 @@
         "Àlies hide-my-email"
       ],
       "High-speed streaming": [
-        "Streaming d'alta velocitat"
+        "Transmissió en línia d'alta velocitat"
       ],
       "High-speed Swiss VPN that protects your privacy": [
         "VPN suïssa d'alta velocitat que protegeix la vostra privacitat"
@@ -10039,7 +10088,7 @@
         "Carpetes, etiquetes i filtres il·limitats"
       ],
       "Unlimited hide-my-email aliases": [
-        "Nombre il·limitat d'àlies Hide My Email"
+        "Nombre il·limitat d'àlies hide-my-email"
       ],
       "Unlimited labels": [
         "Etiquetes il·limitades"
@@ -10102,17 +10151,6 @@
       ],
       "Team management": [
         "Gestió d'equips"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuar utilitzant ${ MAIL_APP_NAME } amb característiques prèmium, trieu les opcions de subscripció i pagament."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "El període de prova acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: info": {
@@ -10196,6 +10234,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuar utilitzant ${ MAIL_APP_NAME } amb característiques prèmium, trieu les opcions de subscripció i pagament."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "El període de prova acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -10691,7 +10740,7 @@
         "19 del mes"
       ],
       "1st of the month": [
-        "1r del mes"
+        "1 del mes"
       ],
       "20th of the month": [
         "20 del mes"
@@ -10724,7 +10773,7 @@
         "29 del mes"
       ],
       "2nd of the month": [
-        "2on del mes"
+        "2 del mes"
       ],
       "30th of the month": [
         "30 del mes"
@@ -10733,22 +10782,22 @@
         "31 del mes"
       ],
       "3rd of the month": [
-        "3er del mes"
+        "3 del mes"
       ],
       "4th of the month": [
-        "4rt del mes"
+        "4 del mes"
       ],
       "5th of the month": [
-        "5è del mes"
+        "5 del mes"
       ],
       "6th of the month": [
-        "6è del mes"
+        "6 del mes"
       ],
       "7th of the month": [
-        "7è del mes"
+        "7 del mes"
       ],
       "8th of the month": [
-        "8è del mes"
+        "8 del mes"
       ],
       "9th of the month": [
         "9è del mes"
@@ -11316,8 +11365,8 @@
         "Seleccioneu el nombre d'IP per incloure en el vostre pla. Cada IP addicional té un cost de ${ price }."
       ],
       "Should you need more than ${ maxIPs } IP, ": [
-        "Si necessitàreu més d'${ maxIPs } IP, ",
-        "Si necessitàreu més de ${ maxIPs } IP, "
+        "Si necessitéssiu més d'${ maxIPs } IP, ",
+        "Si necessitéssiu més de ${ maxIPs } IP, "
       ]
     },
     "plan customizer, users": {
@@ -11613,7 +11662,7 @@
         "Ja podeu canviar la contrasenya per al compte ${ boldEmail }."
       ],
       "You can now reset your password": [
-        "Ja podeu restablir la vostra contrasenya."
+        "Ja podeu restablir la contrasenya."
       ],
       "You can reset your password until ${ boldDate }.": [
         "Podeu restablir la vostra contrasenya fins el ${ boldDate }."
@@ -11629,6 +11678,10 @@
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
         "Teniu ${ timeRemaining.inMinutes } minut per a restablir la contrasenya.",
         " Teniu ${ timeRemaining.inMinutes } minuts per a restablir la contrasenya."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Teniu ${ timeRemaining.inSeconds } segon per a restablir la contrasenya.",
+        "Teniu ${ timeRemaining.inSeconds } segons per a restablir la contrasenya."
       ]
     },
     "session_recovery:available:link": {
@@ -11709,7 +11762,7 @@
         "No heu fet aquesta petició?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
-        "Si no heu demanat restablir la teva contrasenya, cancel·leu la sol·licitud ara mateix."
+        "Si no heu demanat restablir la contrasenya, cancel·leu la sol·licitud ara mateix."
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Si no heu demanat restablir la contrasenya, cancel·leu aquesta sol·licitud."
@@ -12138,10 +12191,10 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN per usuari, serveis de transmissió en línia a tot el món, bloquejador de programari maliciós i anuncis i més."
+        "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN per usuari, serveis de transmissió en línia a tot el món, bloquejador de programari maliciós i anuncis, etc."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN, serveis de transmissió en línia a tot el món, bloquejador de programari maliciós i anuncis i més."
+        "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN, serveis de transmissió en línia a tot el món, bloquejador de programari maliciós i anuncis, etc."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Accediu al contingut dels serveis de transmissió en línia, com ara Netflix, Disney+ i Prime Video, des de qualsevol lloc."
@@ -12383,7 +12436,7 @@
         "Adreça afegida"
       ],
       "Address updated": [
-        "Adreça actualitzada"
+        "S'ha actualitzat l'adreça"
       ],
       "Auto-reply disabled": [
         "S'ha desactivat la resposta automàtica."
@@ -12509,7 +12562,7 @@
         "S'ha desat la preferència."
       ],
       "Premium address created": [
-        "S'ha creat l'adreça premium."
+        "S'ha creat l'adreça prèmium."
       ],
       "Resuming import": [
         "Reactivant importació"
@@ -12524,13 +12577,13 @@
         "Sessions revocades"
       ],
       "SMTP token deleted": [
-        "S'ha eliminat el token SMTP."
+        "S'ha eliminat el testimoni SMTP."
       ],
       "SPF value copied to clipboard": [
         "Valor SPF copiat al portaretalls"
       ],
       "Token copied to clipboard": [
-        "S'ha copiat el token al porta-retalls."
+        "S'ha copiat el testimoni al porta-retalls."
       ],
       "Undo in progress": [
         "S'està desfent"
@@ -12989,7 +13042,7 @@
         "Confirmar adreça"
       ],
       "Confirm downgrade": [
-        "Confirmeu el pas a un pla inferior"
+        "Confirma el pas a un pla inferior"
       ],
       "Confirm loss of ${ BRAND_NAME } bonuses": [
         "Confirmeu la pèrdua de les bonificacions de ${ BRAND_NAME }"
@@ -13125,6 +13178,9 @@
       "Delete version history?": [
         "Voleu eliminar l'historial de versions?"
       ],
+      "Desktop app": [
+        "Aplicació d'escriptori"
+      ],
       "Disable ${ email }": [
         "Desactivar ${ email }"
       ],
@@ -13233,6 +13289,9 @@
       ],
       "Folders and labels": [
         "Carpetes i etiquetes"
+      ],
+      "For ${ platform }": [
+        "Per a ${ platform }"
       ],
       "Forward and auto-reply": [
         "Reenviament i resposta automàtica"
@@ -14197,10 +14256,10 @@
         "Al desactivar els registres, també netejaràs l'historial complet de registres. Esteu segur que voleu desactivar els registres?"
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Si desactiveu aquesta adreça, ja no la podreu usar per a enviar o rebre correus electrònics i també es desactivaran tots els productes ${ BRAND_NAME } vinculats. Segur que voleu desactivar-la?"
+        "Si desactiveu aquesta adreça, ja no la podreu usar per a enviar o rebre correus electrònics i també es desactivaran tots els productes de ${ BRAND_NAME } vinculats. Segur que voleu desactivar-la?"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
-        "Si cancel·leu aquesta importació, no la podreu reprendre. ${ BRAND_NAME } ha desat tot el progrés del vostre compte. Voleu cancel·lar-la de totes maneres?"
+        "Si cancel·leu aquesta importació, no la podreu reprendre. ${ BRAND_NAME } ha desat tot el progrés al vostre compte. Voleu cancel·lar-la de totes maneres?"
       ],
       "Please add at least one recipient.": [
         "Afegiu almenys un destinatari."
@@ -14218,7 +14277,7 @@
         "La configuració de data i hora del vostre dispositiu no estan sincronitzats. ${ learnMore }"
       ],
       "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
-        "El dispositiu o servei que utilitza aquest token ja no podrà enviar correus electrònics a través de ${ MAIL_APP_NAME }."
+        "El dispositiu o servei que utilitza aquest testimoni ja no podrà enviar correus electrònics a través de ${ MAIL_APP_NAME }."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Aquesta importació pot superar la capacitat d'emmagatzematge disponible actualment al vostre compte de ${ BRAND_NAME }. Considereu personalitzar la importació."

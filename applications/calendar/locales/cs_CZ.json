@@ -860,6 +860,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Obcházejte místní blokování internetu a cenzuru pomocí naší globální sítě serverů."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Zahrnuje podporu ${ domains } vlastních e-mailových domén, ${ addresses } e-mailovou adresu, neomezený počet aliasů hide-my-email, sdílení kalendáře a další.",
+        "Zahrnuje podporu ${ domains } vlastních e-mailových domén, ${ addresses } e-mailové adresy, neomezený počet aliasů hide-my-email, sdílení kalendáře a další.",
+        "Zahrnuje podporu ${ domains } vlastních e-mailových domén, ${ addresses } e-mailových adres, neomezený počet aliasů hide-my-email, sdílení kalendáře a další.",
+        "Zahrnuje podporu ${ domains } vlastních e-mailových domén, ${ addresses } e-mailových adres, neomezený počet aliasů hide-my-email, sdílení kalendáře a další."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Obsahuje podporu 1 vlastní e-mailové domény, 10 e-mailových adres, 10 aliasů hide-my-email, sdílení kalendáře a další funkce."
       ],
@@ -2379,7 +2385,34 @@
         "Aktualizace události začínající v ${ formattedStart }"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Placené funkce ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Zahrnuje historii verzí v ${ DRIVE_SHORT_APP_NAME }, přístup k tisícům vysokorychlostních serverů ${ VPN_SHORT_APP_NAME }, sdílení v ${ PASS_SHORT_APP_NAME } a další."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 uživatelů"
+      ],
+      "Early access to new apps and features": [
+        "Předběžný přístup k novým aplikacím a funkcím"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Placené funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_APP_NAME }"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } se nemůže připojit k vašemu externímu účtu"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Můžete se také podívat na to, co říká naše ${ statusPageLink }"
       ],
@@ -2751,6 +2784,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Zkuste používat pouze písmena, číslice a _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Neočekávaná chyba, kontakty nelze importovat"
       ],
       "Unknown error": [
         "Neznámá chyba"

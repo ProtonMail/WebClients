@@ -1482,8 +1482,8 @@
         "Aggira i blocchi e la censura a internet imposti dai singoli Paesi grazie alla nostra rete globale di server."
       ],
       "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Include il supporto per ${ domains } domini email personalizzati, ${ addresses } indirizzo email, alias hide-my-email illimitati, condivisione del calendario e molto altro.",
-        "Include il supporto per ${ domains } domini email personalizzati, ${ addresses } indirizzi email, alias hide-my-email illimitati, condivisione del calendario e molto altro."
+        "Include il supporto per ${ domains } domini email personalizzati, ${ addresses } indirizzo email, alias Hide-my-email illimitati, condivisione dei calendari e molto altro.",
+        "Include il supporto per ${ domains } domini email personalizzati, ${ addresses } indirizzi email, alias Hide-my-email illimitati, condivisione dei calendari e molto altro."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Include il supporto per 1 dominio email personalizzato, 10 indirizzi email, 10 alias hide-my-email, condivisione del calendario e altro ancora."
@@ -3674,7 +3674,7 @@
     },
     "eof2023: Tooltip": {
       "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
-        "Include la cronologia delle versioni in ${ DRIVE_SHORT_APP_NAME }, l'accesso a migliaia di server ${ VPN_SHORT_APP_NAME } ad alta velocità, la condivisione in ${ PASS_SHORT_APP_NAME } e altro ancora."
+        "Include la cronologia delle versioni in ${ DRIVE_SHORT_APP_NAME }, l'accesso a migliaia di server ${ VPN_SHORT_APP_NAME } ad alta velocità, la condivisione in ${ PASS_SHORT_APP_NAME } e molto altro."
       ]
     },
     "eoy2023: Deal details": {
@@ -3688,7 +3688,7 @@
         "Accesso anticipato a nuove app e funzionalità"
       ],
       "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Accesso anticipato all'applicazione desktop di ${ MAIL_APP_NAME }"
+        "Accesso anticipato all'app desktop di ${ MAIL_APP_NAME }"
       ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Funzionalità a pagamento di ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_APP_NAME }"
@@ -6495,7 +6495,7 @@
         "per aver scelto ${ product }"
       ],
       "For members of organizations using single sign-on (SAML SSO)": [
-        "Per i membri di organizzazioni che utilizzano il single sign-on (SAML SSO)"
+        "Per i membri di organizzazioni che usano single sign-on (SAML SSO)"
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Inoltra la posta in arrivo da un altro account alla tua casella di posta sicura di ${ MAIL_APP_NAME }."
@@ -7957,7 +7957,7 @@
         "La password dell'organizzazione può essere condivisa con altri utenti a cui desideri concedere i privilegi di amministrazione. È anche un codice di recupero di emergenza per ottenere l'accesso alla tua organizzazione nel caso in cui perdi l'accesso al tuo account. Salva questa password e tienila al sicuro."
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
-        "La tua organizzazione usa single sign-on (SSO). Premi \"Accedi\" per continuare con il tuo provider SSO."
+        "La tua organizzazione usa single sign-on (SSO). Clicca su \"Accedi\" per continuare con il tuo fornitore SSO."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Le email della tua organizzazione sono protette con crittografia end-to-end utilizzando la chiave dell'organizzazione. Questa impronta digitale può essere utilizzata per verificare che tutti gli amministratori del tuo account abbiano la stessa chiave."
@@ -10427,17 +10427,6 @@
         "Gestione del team"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "La tua prova termina ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } che termina con ${ last4 }"
@@ -10531,6 +10520,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "La tua prova termina ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {

@@ -399,6 +399,11 @@
         "Oferta da Black Friday"
       ]
     },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplicativo para computador do ${ MAIL_APP_NAME }"
+      ]
+    },
     "Button": {
       "More info": [
         "Mais informações"
@@ -797,9 +802,6 @@
       "Creating alias...": [
         "Criando alias..."
       ],
-      "Credit cards, Custom fields": [
-        "Cartões de crédito, campos personalizados"
-      ],
       "Decrypting your data": [
         "Descriptografando seus dados"
       ],
@@ -940,9 +942,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
-      "Multiple vaults": [
-        "Múltiplos cofres"
-      ],
       "Never": [
         "Nunca"
       ],
@@ -994,6 +993,9 @@
       "Please enter your current PIN code to continue": [
         "Insira o seu código PIN atual para continuar"
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Faça upgrade para ter acesso antecipado ao aplicativo web do ${ PASS_APP_NAME }"
+      ],
       "Press Enter to copy": [
         "Pressione Enter para copiar"
       ],
@@ -1023,9 +1025,6 @@
       ],
       "Settings successfully updated": [
         "Configurações atualizadas"
-      ],
-      "Share with 10 others": [
-        "Compartilhar com 10 outros"
       ],
       "Sign in or create an account to continue.": [
         "Inicie sessão ou crie uma conta para continuar."
@@ -1082,8 +1081,8 @@
       "Unable to copy to clipboard": [
         "Não é possível copiar para a área de transferência"
       ],
-      "Unlimited Aliases": [
-        "Aliases ilimitados"
+      "Unlimited hide-my-email aliases": [
+        "Aliases do Hide-my-email ilimitados"
       ],
       "Unlock it with your PIN to access the settings": [
         "Desbloqueie com seu código PIN para acessar as configurações"
@@ -1093,6 +1092,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Atualizar o ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Faça upgrade agora para desbloquear recursos premium"
       ],
       "Use vaults to share this item with others.": [
         "Use cofres para compartilhar este item com outros."
@@ -1797,6 +1799,9 @@
       ],
       "Update available": [
         "Atualização disponível"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Faça upgrade para desbloquear recursos premium"
       ],
       "Use my email": [
         "Usar meu e-mail"

@@ -801,6 +801,10 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Contournez les blocages et la censure locale sur internet grâce à notre réseau mondial de serveurs."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Comprend la prise en charge de ${ domains } domaines de messagerie personnalisés, ${ addresses } adresse e-mail, un nombre illimité d'alias « hide-my-email », le partage de calendrier et bien d'autres fonctionnalités.",
+        "Comprend la prise en charge de ${ domains } domaines de messagerie personnalisés, ${ addresses } adresses e-mail, un nombre illimité d'alias « hide-my-email », le partage de calendrier et bien d'autres fonctionnalités."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités."
       ],
@@ -1895,6 +1899,33 @@
     "Enabled 2FA": {
       "2FA": [
         "A2F"
+      ]
+    },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Fonctionnalités payantes de ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } et ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Comprend la fonction Historique des versions pour ${ DRIVE_SHORT_APP_NAME }, un accès à des milliers de serveurs ultrarapides pour ${ VPN_SHORT_APP_NAME }, la fonction de partage dans ${ PASS_SHORT_APP_NAME } et bien plus encore."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 To"
+      ],
+      "6 users": [
+        "6 utilisateurs"
+      ],
+      "Early access to new apps and features": [
+        "Accès en avant-première aux nouvelles fonctionnalités et applications"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Accès anticipé à l'application de bureau ${ MAIL_APP_NAME }"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Fonctionnalités payantes de ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_APP_NAME }"
       ]
     },
     "Error": {
@@ -3088,6 +3119,9 @@
       "for choosing ${ product }": [
         "d'avoir choisi ${ product }"
       ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Pour les membres d'une organisation utilisant une authentification unique (SAML SSO)"
+      ],
       "Free forever": [
         "Gratuit pour toujours"
       ],
@@ -3914,6 +3948,9 @@
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Le mot de passe de votre organisation peut être partagé avec d'autres utilisateurs à qui vous souhaitez donner des droits administrateur. Il s'agit aussi d'un code de récupération d'urgence pour accéder à votre organisation dans le cas où vous perdriez l'accès à votre compte. Nous vous invitons à enregistrer ce mot de passe et à le conserver en lieu sûr."
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Votre organisation utilise une authentification unique (SSO). Appuyez sur Se connecter pour continuer avec votre fournisseur d'authentification unique (SSO)."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Vos informations de paiement sont protégées par le chiffrement TLS et les lois suisses sur la protection de la vie privée."
