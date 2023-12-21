@@ -51,6 +51,42 @@ export const isHostMail = (host: string) => {
     }
 };
 
+export const isHostAccount = (host: string) => {
+    try {
+        const urls = getConfig(app.isPackaged).url;
+        const hostURl = new URL(host);
+
+        return urls.account === hostURl.origin;
+    } catch (error) {
+        log.error("isHostAccount", error);
+        return false;
+    }
+};
+
+export const isAccoutLite = (host: string) => {
+    try {
+        const hostURl = new URL(host);
+        return hostURl.pathname.includes("/lite");
+    } catch (error) {
+        log.error("isAccoutLite", error);
+        return false;
+    }
+};
+
+export const isUpsellURL = (host: string) => {
+    try {
+        const hostURl = new URL(host);
+        const plan = hostURl.searchParams.get("plan");
+        const billing = hostURl.searchParams.get("billing");
+        const currency = hostURl.searchParams.get("currency");
+        const coupon = hostURl.searchParams.get("coupon");
+        return hostURl.pathname.includes("/signup") && (plan || billing || currency || coupon);
+    } catch (error) {
+        log.error("isUpsellURL", error);
+        return false;
+    }
+};
+
 export const isHostAllowed = (host: string, isPackaged: boolean) => {
     try {
         log.info("isHostAllowed", host, isPackaged);

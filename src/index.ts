@@ -5,7 +5,17 @@ import { saveAppID } from "./store/idStore";
 import { saveAppURL } from "./store/urlStore";
 import { checkForUpdates } from "./update";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./utils/constants";
-import { isHostAllowed, isHostCalendar, isHostMail, isMac, isWindows, saveWindowsPosition } from "./utils/helpers";
+import {
+    isAccoutLite,
+    isHostAccount,
+    isHostAllowed,
+    isHostCalendar,
+    isHostMail,
+    isMac,
+    isUpsellURL,
+    isWindows,
+    saveWindowsPosition,
+} from "./utils/helpers";
 import { getSessionID } from "./utils/urlHelpers";
 import {
     handleCalendarWindow,
@@ -120,7 +130,16 @@ app.on("web-contents-created", (_ev, contents) => {
             return { action: "deny" };
         }
 
-        if (isHostAllowed(url, app.isPackaged)) {
+        if (isHostAccount(url)) {
+            // Upsell links should be opened in browser to avoid 3D secure issues
+            log.info("Account link");
+            if (isAccoutLite(url) || isUpsellURL(url)) {
+                log.info("Upsell link or lite account, open in browser", url);
+                shell.openExternal(url);
+                return { action: "deny" };
+            }
+            return { action: "allow" };
+        } else if (isHostAllowed(url, app.isPackaged)) {
             log.info("Open internal link", url);
             return { action: "allow" };
         } else {
