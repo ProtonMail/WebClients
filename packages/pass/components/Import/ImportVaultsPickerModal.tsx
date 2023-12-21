@@ -9,6 +9,7 @@ import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
 import type { ModalProps } from '@proton/components/components';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
+import { UpsellRef } from '@proton/pass/constants';
 import { type ImportPayload, type ImportVault } from '@proton/pass/lib/import/types';
 import {
     selectDefaultVault,
@@ -19,9 +20,6 @@ import {
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { omit } from '@proton/shared/lib/helpers/object';
 
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { PASS_EOY_PATH, PASS_REF_EXTENSION_IMPORT, PASS_REF_WEB_IMPORT, PASS_UPGRADE_PATH } from '@proton/pass/constants';
-import { isEOY } from '@proton/pass/lib/onboarding/utils';
 import { UpgradeButton } from '../Layout/Button/UpgradeButton';
 import { ImportVaultPickerOption } from './ImportVaultsPickerOption';
 
@@ -40,7 +38,6 @@ export const ImportVaultsPickerModal: VFC<ImportVaultsPickerProps> = ({ payload,
     const defaultVault = useSelector(selectDefaultVault);
     const { vaultLimit, vaultTotalCount } = useSelector(selectVaultLimits);
     const plan = useSelector(selectPassPlan);
-    const { endpoint } = usePassCore();
 
     const handleSubmit = useCallback(
         (values: VaultsPickerFormValues) =>
@@ -100,7 +97,7 @@ export const ImportVaultsPickerModal: VFC<ImportVaultsPickerProps> = ({ payload,
                                         <>
                                             {c('Warning')
                                                 .t`Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.`}
-                                            <UpgradeButton inline className="ml-1" path={isEOY() ? PASS_EOY_PATH : PASS_UPGRADE_PATH} ref={endpoint === 'web' ? PASS_REF_WEB_IMPORT : PASS_REF_EXTENSION_IMPORT} />
+                                            <UpgradeButton inline className="ml-1" upsellRef={UpsellRef.LIMIT_IMPORT} />
                                         </>
                                     ) : (
                                         c('Warning').t`You cannot create more vaults than your subscription allows.`

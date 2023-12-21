@@ -2,19 +2,18 @@ import { type VFC } from 'react';
 
 import { type IconName } from '@proton/components/components';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
+import { type UpsellRef } from '@proton/pass/constants';
 
-import { PASS_EOY_PATH, PASS_UPGRADE_PATH } from '@proton/pass/constants';
-import { isEOY } from '@proton/pass/lib/onboarding/utils';
 import { ValueControl } from './ValueControl';
 
 type UpgradeControlProps = {
     icon: IconName;
     label: string;
-    ref: string;
+    upsellRef: UpsellRef;
 };
 
-export const UpgradeControl: VFC<UpgradeControlProps> = ({ icon, label, ref }) => (
+export const UpgradeControl: VFC<UpgradeControlProps> = ({ icon, label, upsellRef }) => (
     <ValueControl icon={icon} label={label}>
-        <UpgradeButton inline ref={ref} path={isEOY() ? PASS_EOY_PATH : PASS_UPGRADE_PATH} />
+        <UpgradeButton inline upsellRef={upsellRef} />
     </ValueControl>
 );

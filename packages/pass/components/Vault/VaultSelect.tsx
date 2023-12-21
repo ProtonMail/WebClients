@@ -1,4 +1,4 @@
-import { useMemo, useState, type VFC } from 'react';
+import { type VFC, useMemo, useState } from 'react';
 import type { Selector } from 'react-redux';
 import { useSelector } from 'react-redux';
 
@@ -7,7 +7,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { RadioButtonGroup, RadioLabelledButton } from '@proton/pass/components/Form/Field/RadioButtonGroupField';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
@@ -15,8 +14,7 @@ import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal'
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import { PASS_EOY_PATH, PASS_REF_EXTENSION_VAULT, PASS_REF_WEB_VAULT } from '@proton/pass/constants';
-import { isEOY } from '@proton/pass/lib/onboarding/utils';
+import { UpsellRef } from '@proton/pass/constants';
 import type { VaultShareItem, WithItemCount } from '@proton/pass/store/reducers';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
 import { NOOP_LIST_SELECTOR } from '@proton/pass/store/selectors/utils';
@@ -38,7 +36,6 @@ export type Props = Omit<ModalProps, 'onSubmit'> & {
 export const VaultSelect: VFC<Props> = ({ downgradeMessage, onSubmit, optionsSelector, shareId, title, ...props }) => {
     const vaults = useSelector(optionsSelector);
     const { didDowngrade } = useSelector(selectVaultLimits);
-    const { endpoint } = usePassCore();
 
     const sortedVaults = useMemo(
         () =>
@@ -67,7 +64,9 @@ export const VaultSelect: VFC<Props> = ({ downgradeMessage, onSubmit, optionsSel
                             >
                                 <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
                             </Button>,
-                            ...(didDowngrade ? [<UpgradeButton key="upgrade-button" path={isEOY() ? PASS_EOY_PATH : undefined} ref={endpoint === 'web' ? PASS_REF_WEB_VAULT : PASS_REF_EXTENSION_VAULT} />] : []),
+                            ...(didDowngrade
+                                ? [<UpgradeButton key="upgrade-button" upsellRef={UpsellRef.LIMIT_VAULT} />]
+                                : []),
                         ]}
                     />
                 }
