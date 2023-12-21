@@ -56,12 +56,14 @@ $container-name: 'group-hover-opacity-container';
 			position: absolute;
 			transition: none;
 			pointer-events: none;
+			visibility: hidden;
 		}
 
 		@at-root {
 			.#{$container-name}:hover &,
 			.#{$container-name}:hover .mouse\:group-hover\:opacity-100 {
 				opacity: 1;
+				visibility: visible;
 			}
 		}
 
