@@ -81,10 +81,10 @@ const SSOInfo = ({ domain, sso, onImportSamlClick }: Props) => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="ssoUrl" className="text-semibold align-top">
-                        <span className="mr-2">{c('Label').t`Single Sign-On URL`}</span>
+                        <span className="mr-2">{c('Label').t`Single sign-on URL`}</span>
                         <Info
                             title={c('Tooltip')
-                                .t`Endpoint URL from Identity Provider (e.g. https://idp.example.com/sso/saml)`}
+                                .t`Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)`}
                         />
                     </label>
                 </SettingsLayoutLeft>
@@ -102,9 +102,9 @@ const SSOInfo = ({ domain, sso, onImportSamlClick }: Props) => {
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="ssoEntity" className="text-semibold align-top">
-                        <span className="mr-2">{c('Label').t`Single Sign-On Entity ID`}</span>
+                        <span className="mr-2">{c('Label').t`Single sign-on entity ID`}</span>
                         <Info
-                            title={c('Tooltip').t`Usually an URL that contains the Identity Provider's name within`}
+                            title={c('Tooltip').t`Usually an URL that contains the identity provider's name within`}
                         />
                     </label>
                 </SettingsLayoutLeft>
@@ -125,7 +125,7 @@ const SSOInfo = ({ domain, sso, onImportSamlClick }: Props) => {
                         <span className="mr-2">{c('Label').t`Public certificate (X.509)`}</span>
                         <Info
                             title={c('Tooltip')
-                                .t`Identity Provider’s public key to sign authentication assertions. Get the certificate hash from your Identity Provider.`}
+                                .t`Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.`}
                         />
                     </label>
                 </SettingsLayoutLeft>
@@ -148,7 +148,7 @@ const SSOInfo = ({ domain, sso, onImportSamlClick }: Props) => {
                         <span className="mr-2">{c('Label').t`Reply (ACS) URL`}</span>
                         <Info
                             title={c('Tooltip')
-                                .t`Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your Identity Provider`}
+                                .t`Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider`}
                         />
                     </label>
                 </SettingsLayoutLeft>
@@ -163,7 +163,7 @@ const SSOInfo = ({ domain, sso, onImportSamlClick }: Props) => {
                         <span className="mr-2">{c('Label').t`Issuer ID`}</span>
                         <Info
                             title={c('Tooltip')
-                                .t`Copy and paste this URL into the Entity ID field of your Identity Provider`}
+                                .t`Copy and paste this URL into the entity ID field of your identity provider`}
                         />
                     </label>
                 </SettingsLayoutLeft>
