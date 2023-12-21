@@ -1,4 +1,4 @@
-import { escapeForbiddenStyle, recurringUnescapeCSSEncoding } from '../../lib/sanitize/escape';
+import { escapeForbiddenStyle, escapeURLinStyle, recurringUnescapeCSSEncoding } from '../../lib/sanitize/escape';
 
 describe('Escape', () => {
     describe('escapeForbiddenStyles', () => {
@@ -43,6 +43,22 @@ describe('Escape', () => {
             const expectedString = ``;
 
             expect(recurringUnescapeCSSEncoding(string)).toEqual(expectedString);
+        });
+    });
+
+    describe('escapeURLinStyle', () => {
+        it('should return an empty string when trying to escape ', () => {
+            const style = `background
+            ur&#x26;#x26;#x26;#x26;#x26;#x26;(https://proton.me/image.jpg);`;
+
+            expect(escapeURLinStyle(style)).toEqual('');
+        });
+
+        it('should keep the same style', () => {
+            const style = `background
+            ur&#x26;#x26;#x26;#x26;#x26;(https://proton.me/image.jpg);`;
+
+            expect(escapeURLinStyle(style)).toEqual(style);
         });
     });
 });
