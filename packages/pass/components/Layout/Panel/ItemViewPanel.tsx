@@ -12,6 +12,7 @@ import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvide
 import { VaultTag } from '@proton/pass/components/Vault/VaultTag';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
+import { UpsellRef } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isVaultMemberLimitReached } from '@proton/pass/lib/vaults/vault.predicates';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
@@ -140,7 +141,11 @@ export const ItemViewPanel: FC<Props> = ({
                                     disabled={readOnly}
                                     onClick={
                                         plan === UserPassPlan.FREE && isVaultMemberLimitReached(vault)
-                                            ? () => spotlight.setUpselling('pass-plus')
+                                            ? () =>
+                                                  spotlight.setUpselling({
+                                                      type: 'pass-plus',
+                                                      upsellRef: UpsellRef.LIMIT_SHARING,
+                                                  })
                                             : handleInviteClick
                                     }
                                 >

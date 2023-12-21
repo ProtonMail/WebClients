@@ -7,6 +7,7 @@ import { ButtonLike } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { VAULT_COLOR_MAP } from '@proton/pass/components/Vault/constants';
+import { UpsellRef } from '@proton/pass/constants';
 import { isVaultMemberLimitReached, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { type ShareItem } from '@proton/pass/store/reducers';
 import { selectPassPlan } from '@proton/pass/store/selectors';
@@ -149,7 +150,11 @@ export const VaultItem: VFC<Props> = ({
                                   label={c('Action').t`Share`}
                                   onClick={
                                       plan === UserPassPlan.FREE && isVaultMemberLimitReached(vault)
-                                          ? () => spotlight.setUpselling('pass-plus')
+                                          ? () =>
+                                                spotlight.setUpselling({
+                                                    type: 'pass-plus',
+                                                    upsellRef: UpsellRef.LIMIT_SHARING,
+                                                })
                                           : handleClickEvent(onInvite)
                                   }
                               />

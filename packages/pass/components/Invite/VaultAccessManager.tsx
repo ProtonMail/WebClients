@@ -14,6 +14,7 @@ import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { ShareMember } from '@proton/pass/components/Share/ShareMember';
 import { PendingExistingMember, PendingNewMember } from '@proton/pass/components/Share/SharePendingMember';
 import { SharedVaultItem } from '@proton/pass/components/Vault/SharedVaultItem';
+import { UpsellRef } from '@proton/pass/constants';
 import { useShareAccessOptionsPolling } from '@proton/pass/hooks/useShareAccessOptionsPolling';
 import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
 import { isVaultMemberLimitReached } from '@proton/pass/lib/vaults/vault.predicates';
@@ -60,7 +61,13 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
 
     const warning = (() => {
         if (canManage && memberLimitReached) {
-            const upgradeLink = <UpgradeButton inline label={c('Action').t`Upgrade now to share with more people`} />;
+            const upgradeLink = (
+                <UpgradeButton
+                    inline
+                    label={c('Action').t`Upgrade now to share with more people`}
+                    upsellRef={UpsellRef.LIMIT_SHARING}
+                />
+            );
             return plan === UserPassPlan.FREE
                 ? c('Warning').jt`You have reached the limit of users in this vault. ${upgradeLink}`
                 : c('Warning').t`You have reached the limit of members who can access this vault.`;

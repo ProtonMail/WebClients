@@ -11,6 +11,7 @@ import { c } from 'ttag';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { AliasPreview } from '@proton/pass/components/Alias/legacy/Alias.preview';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
+import { UpsellRef } from '@proton/pass/constants';
 import { useEnsureMounted } from '@proton/pass/hooks/useEnsureMounted';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
@@ -37,7 +38,7 @@ const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 
 export const AliasAutoSuggest: VFC<Props> = ({ hostname, prefix, visible, onClose, onMessage }) => {
     const ensureMounted = useEnsureMounted();
-    const navigateToUpgrade = useNavigateToUpgrade();
+    const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_ALIAS });
     const { userEmail } = useIFrameContext();
     const [aliasOptions, setAliasOptions] = useState<MaybeNull<AliasState['aliasOptions']>>(null);
     const [needsUpgrade, setNeedsUpgrade] = useState<boolean>(false);
