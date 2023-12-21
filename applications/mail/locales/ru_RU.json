@@ -994,6 +994,9 @@
       "Skip verification": [
         "Пропустить проверку"
       ],
+      "Snooze": [
+        "Приглушение"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "Некоторые изображения не могут быть загружены при включенной защите от отслеживания."
       ],
@@ -3238,6 +3241,11 @@
         "Имя файла с зашифрованными заголовками"
       ]
     },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 ТБ"
+      ]
+    },
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } для ${ email }. Вы можете добавить другой ключ или отключить шифрование для этого контакта, чтобы решить проблему."
@@ -4324,8 +4332,14 @@
       "${ MAIL_APP_NAME } on Play Store": [
         "${ MAIL_APP_NAME } в Play Store"
       ],
+      "account logins": [
+        "имена пользователей аккаунта"
+      ],
       "Auto-forward Gmail": [
         "Автоматическая пересылка Gmail"
+      ],
+      "auto-forwarding": [
+        "автопереадресация"
       ],
       "Block email communications from scammers permanently.": [
         "Навсегда заблокируйте коммуникации с мошенниками."
@@ -4360,6 +4374,9 @@
       "Continue setting up your email": [
         "Продолжить настройку вашей электронной почты"
       ],
+      "Discover privacy features": [
+        "Откройте для себя функции конфиденциальности"
+      ],
       "Double your free storage to 1 GB when you complete the following:": [
         "Ваше доступное бесплатное место удвоится до 1 ГБ, когда вы выполните следующее:"
       ],
@@ -4371,6 +4388,9 @@
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Получить мобильное приложение ${ MAIL_APP_NAME }"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Получить ${ strongText } на Android или iOS"
       ],
       "Get the App": [
         "Скачать приложение"
@@ -4404,6 +4424,9 @@
       ],
       "Protection from trackers": [
         "Защита от трекеров"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Настроить из ${ strongText } из Gmail"
       ],
       "Sign in to the mobile app to complete this step": [
         "Войдите в мобильное приложение, чтобы выполнить это действие"
@@ -7176,9 +7199,6 @@
       ]
     },
     "Link": {
-      "${ DRIVE_APP_NAME } Windows app": [
-        "Приложение ${ DRIVE_APP_NAME } для Windows"
-      ],
       "All mail": [
         "Вся почта"
       ],
@@ -7275,9 +7295,6 @@
       "Scheduled": [
         "Запланированные"
       ],
-      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
-        "Бесшовно синхронизируйте файлы и папки своего компьютера с ${ DRIVE_APP_NAME }."
-      ],
       "Sent": [
         "Отправленные"
       ],
@@ -7286,6 +7303,9 @@
       ],
       "Sign up for free": [
         "Зарегистрируйтесь бесплатно"
+      ],
+      "Snooze": [
+        "Приглушение"
       ],
       "Spam": [
         "Спам"
@@ -8322,6 +8342,11 @@
         "${ gracePeriodHoursRemaining } часа",
         "${ gracePeriodHoursRemaining } часов",
         "${ gracePeriodHoursRemaining } часа"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Сбросить пароль"
       ]
     },
     "Signature verification warning": {
@@ -9581,6 +9606,9 @@
       ],
       "Sign out": [
         "Выйти"
+      ],
+      "Snooze": [
+        "Приглушение"
       ],
       "Sort conversations": [
         "Сортировка цепочек писем"

@@ -5315,7 +5315,7 @@
         "Skjul oprindelig besked"
       ],
       "How hide-my-email aliases works": [
-        "Sådan virker Hide-my-email"
+        "Sådan virker hide-my-email"
       ],
       "I'm sending this message to a non-${ MAIL_APP_NAME } user.": [
         "Jeg sender denne besked til en, som ikke bruger ${ MAIL_APP_NAME }."
@@ -5813,7 +5813,7 @@
         "Der er opstået en fejl med den underskrift, der bruges til at verificere kontaktoplysningerne, hvilket kan være resultatet af en nulstilling af adgangskoden."
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
-        "De kan ikke spamme dig, hvis de ikke kender din e-mailadresse. Beskyt din indbakke med Hide-my-email-aliasser."
+        "De kan ikke spamme dig, hvis de ikke kender din e-mailadresse. Beskyt din indbakke med hide-my-email-aliasser."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
@@ -6082,7 +6082,7 @@
         "Hvornår ønsker du, at din besked skal selvdestruere?"
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
-        "Når du udleverer din e-mail, kan du bruge et unikt Hide-my-email-alias i stedet for din rigtige e-mailadresse."
+        "Når du udleverer din e-mail, kan du bruge et unikt hide-my-email-alias i stedet for din rigtige e-mailadresse."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Da du aktiverede betroede nøgler for ${ senderName }, blev de offentlige nøgler tilføjet til kontaktoplysningerne."
@@ -7040,9 +7040,6 @@
       ]
     },
     "Link": {
-      "${ DRIVE_APP_NAME } Windows app": [
-        "${ DRIVE_APP_NAME } Windows app"
-      ],
       "All mail": [
         "Alle e-mails"
       ],
@@ -7138,9 +7135,6 @@
       ],
       "Scheduled": [
         "Planlagt"
-      ],
-      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
-        "Synkroniser filer og mapper problemfrit mellem din computer og ${ DRIVE_APP_NAME }."
       ],
       "Sent": [
         "Sendt"
@@ -8121,20 +8115,20 @@
         "Du kan nu frit ændre din adgangskode til kontoen ${ boldEmail } i ${ boldDaysRemaining }."
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Du har ${ timeRemaining.inDays } dag til at nulstille dit kodeord.",
-        "Du har ${ timeRemaining.inDays } dage til at nulstille dit kodeord."
+        "Du har ${ timeRemaining.inDays } dag til at nulstille din adgangskode.",
+        "Du har ${ timeRemaining.inDays } dage til at nulstille din adgangskode."
       ],
       "You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Du har ${ timeRemaining.inHours } time til at nulstille dit kodeord.",
-        " Du har ${ timeRemaining.inHours } timer til at nulstille dit kodeord."
+        "Du har ${ timeRemaining.inHours } time til at nulstille din adgangskode.",
+        " Du har ${ timeRemaining.inHours } timer til at nulstille din adgangskode."
       ],
       "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
-        "Du har ${ timeRemaining.inMinutes } minut til at nulstille dit kodeord.",
-        " Du har ${ timeRemaining.inMinutes } minutter til at nulstille dit kodeord."
+        "Du har ${ timeRemaining.inMinutes } minut til at nulstille din adgangskode.",
+        " Du har ${ timeRemaining.inMinutes } minutter til at nulstille din adgangskode."
       ],
       "You have ${ timeRemaining.inSeconds } second to reset your password.": [
-        "Du har ${ timeRemaining.inSeconds } sekund til at nulstille dit kodeord.",
-        " Du har ${ timeRemaining.inSeconds } sekunder til at nulstille dit kodeord."
+        "Du har ${ timeRemaining.inSeconds } sekund til at nulstille din adgangskode.",
+        " Du har ${ timeRemaining.inSeconds } sekunder til at nulstille din adgangskode."
       ]
     },
     "session_recovery:available:link": {
