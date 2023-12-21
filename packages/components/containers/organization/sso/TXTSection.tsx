@@ -36,7 +36,6 @@ const TXTSection = ({ domain, includeTimeInformation }: Props) => {
                 {c('Info')
                     .jt`To allow the domain ${boldDomainName} to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.`}
             </div>
-            {includeTimeInformation && <div>{c('Info').t`This verification can take up to one hour`}</div>}
             <Href href="https://protonvpn.com/support/sso">{c('Link').t`Learn more`}</Href>
 
             <h3 className="text-semibold text-rg mt-4 mb-1">{c('Info').t`DNS TXT record`}</h3>
@@ -48,6 +47,10 @@ const TXTSection = ({ domain, includeTimeInformation }: Props) => {
             <p className="color-weak text-sm mt-1">
                 {c('Hint').t`Add this record to your domain in the control panel of your domain name registrar`}
             </p>
+            {includeTimeInformation && (
+                <div>{c('Info')
+                    .t`This verification can take up to one hour. You can safely continue to the next steps.`}</div>
+            )}
         </div>
     );
 };

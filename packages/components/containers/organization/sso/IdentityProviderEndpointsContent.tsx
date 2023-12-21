@@ -15,7 +15,7 @@ const IdentityProviderEndpointsContent = ({ issuerID, callbackURL }: Props) => {
         <div className="flex flex-column gap-4">
             <div>
                 {c('Info')
-                    .t`When enabling SAML for ${VPN_APP_NAME} in your Identity Provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your Identity Provider fields.`}
+                    .t`When enabling SAML for ${VPN_APP_NAME} in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.`}
                 <br />
                 <Href href="https://protonvpn.com/support/sso">{c('Info').t`Learn more`}</Href>
             </div>
@@ -23,12 +23,12 @@ const IdentityProviderEndpointsContent = ({ issuerID, callbackURL }: Props) => {
                 label={c('Label').t`Assertion Consumer Service URL`}
                 value={callbackURL}
                 assistiveText={c('Info')
-                    .t`Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your Identity Provider`}
+                    .t`Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider`}
             />
             <ReadonlyFieldWithCopy
                 label={c('Label').t`Issuer ID`}
                 value={issuerID}
-                assistiveText={c('Info').t`Copy and paste this URL into the entity ID field of your Identity Provider`}
+                assistiveText={c('Info').t`Copy and paste this URL into the entity ID field of your identity provider`}
             />
         </div>
     );
