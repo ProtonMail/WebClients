@@ -9,7 +9,7 @@ import type { AliasState } from '@proton/pass/store/reducers';
 import { selectAliasDetails, selectAliasOptions, selectItemByShareIdAndId } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemEditIntent, ItemRevision, ItemRevisionContentsResponse } from '@proton/pass/types';
-import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEqual } from '@proton/pass/utils/set/is-equal';
 
@@ -62,7 +62,7 @@ function* itemEditWorker(
         const itemEditSuccessAction = itemEditSuccess({ item, itemId, shareId });
         yield put(itemEditSuccessAction);
 
-        void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemUpdate, {}, { type: item.data.type }));
+        void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemUpdate, {}, { type: TelemetryItemType[item.data.type] }));
 
         if (item.data.type === 'login' && editIntent.type === 'login') {
             const prevTotp = deobfuscate(editIntent.content.totpUri);
