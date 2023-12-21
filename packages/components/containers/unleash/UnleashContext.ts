@@ -12,6 +12,7 @@ enum CommonFeatureFlag {
     EdDSAFaultySignatureCheck = 'EdDSAFaultySignatureCheck',
     CryptoCanaryOpenPGPjsV6 = 'CryptoCanaryOpenPGPjsV6',
     PassWebAppLink = 'PassWebAppLink',
+    MailDesktopAppAccess = 'MailDesktopAppAccess',
 }
 
 enum AccountFlag {
