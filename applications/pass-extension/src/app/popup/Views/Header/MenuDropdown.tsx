@@ -28,9 +28,8 @@ import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import { PASS_EOY_PATH, PASS_REF_EXTENSION_MENU, PASS_UPGRADE_PATH } from '@proton/pass/constants';
+import { UpsellRef } from '@proton/pass/constants';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
-import { isEOY } from '@proton/pass/lib/onboarding/utils';
 import {
     selectHasRegisteredLock,
     selectPassPlan,
@@ -135,7 +134,7 @@ export const MenuDropdown: VFC = () => {
 
                         {passPlan !== UserPassPlan.PLUS && (
                             <div className="pb-2 px-4">
-                                <UpgradeButton className="w-full" path={isEOY() ? PASS_EOY_PATH : PASS_UPGRADE_PATH} ref={PASS_REF_EXTENSION_MENU} />
+                                <UpgradeButton className="w-full" upsellRef={UpsellRef.MENU} />
                             </div>
                         )}
 

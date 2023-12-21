@@ -8,7 +8,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { SpotlightMessageDefinition } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { FiveStarIcon, ShieldIcon } from '@proton/pass/components/Spotlight/SpotlightIcon';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
-import { PASS_BF_MONTHLY_PRICE, PASS_LEARN_MORE_URL } from '@proton/pass/constants';
+import { PASS_BF_MONTHLY_PRICE, PASS_LEARN_MORE_URL, UpsellRef } from '@proton/pass/constants';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { selectUser } from '@proton/pass/store/selectors';
 import { OnboardingMessage } from '@proton/pass/types';
@@ -51,11 +51,17 @@ export const useOnboardingMessages = () => {
                 message: c('Info')
                     .t`7 days to try premium features for free. Only during your first week of ${BRAND_NAME}.`,
                 className: 'ui-orange',
-                onClose: () => acknowledge(OnboardingMessage.TRIAL),
+                onClose: () => acknowledge(OnboardingMessage.TRIAL, () => setUpselling(null)),
                 action: {
                     label: c('Label').t`Learn more`,
                     type: 'link',
-                    onClick: () => acknowledge(OnboardingMessage.TRIAL, () => setUpselling('free-trial')),
+                    onClick: () =>
+                        acknowledge(OnboardingMessage.TRIAL, () =>
+                            setUpselling({
+                                type: 'free-trial',
+                                upsellRef: UpsellRef.FREE_TRIAL,
+                            })
+                        ),
                 },
             },
             [OnboardingMessage.SECURE_EXTENSION]: {
