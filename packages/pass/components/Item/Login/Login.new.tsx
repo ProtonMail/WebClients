@@ -1,4 +1,4 @@
-import { type ReactElement, type VFC, useEffect, useMemo } from 'react';
+import { useEffect, useMemo, type ReactElement, type VFC } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router-dom';
 
@@ -7,6 +7,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components/components/icon';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '@proton/pass/components/Form/Field/Field';
@@ -24,10 +25,11 @@ import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/Qu
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
 import { usePasswordContext } from '@proton/pass/components/Password/PasswordProvider';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
-import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, PASS_EOY_PATH, PASS_REF_EXTENSION_2FA, PASS_REF_WEB_2FA, PASS_UPGRADE_PATH } from '@proton/pass/constants';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
 import { useItemDraft, useItemDraftLocationState } from '@proton/pass/hooks/useItemDraft';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
+import { isEOY } from '@proton/pass/lib/onboarding/utils';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import {
     deriveAliasPrefix,
@@ -56,6 +58,7 @@ export const LoginNew: VFC<ItemNewViewProps<'login'>> = ({ shareId, url, onCance
     const { domain, subdomain } = url ?? {};
     const { search } = useLocation();
     const history = useHistory();
+    const { endpoint } = usePassCore();
 
     const searchParams = new URLSearchParams(search);
 
@@ -290,7 +293,7 @@ export const LoginNew: VFC<ItemNewViewProps<'login'>> = ({ shareId, url, onCance
                                      * has not reached his plan's TOTP limit */
                                     needsUpgrade ? (
                                         <ValueControl icon="lock" label={c('Label').t`2FA secret key (TOTP)`}>
-                                            <UpgradeButton inline />
+                                            <UpgradeButton inline path={isEOY() ? PASS_EOY_PATH : PASS_UPGRADE_PATH} ref={endpoint === 'web' ? PASS_REF_WEB_2FA : PASS_REF_EXTENSION_2FA} />
                                         </ValueControl>
                                     ) : (
                                         <Field
