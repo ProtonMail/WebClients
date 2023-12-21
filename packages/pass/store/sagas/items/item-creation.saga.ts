@@ -13,7 +13,7 @@ import {
 import { aliasOptionsRequest } from '@proton/pass/store/actions/requests';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision, ItemRevisionContentsResponse } from '@proton/pass/types';
-import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 type ItemCreationAction = ReturnType<typeof itemCreationIntent>;
@@ -45,7 +45,7 @@ function* singleItemCreationWorker({ onItemsUpdated, getTelemetry }: RootSagaOpt
         yield put(itemCreationSuccessAction);
         yield isAlias && put(requestInvalidate(aliasOptionsRequest(shareId))); /* reset alias options */
 
-        void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: item.data.type }));
+        void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[item.data.type] }));
 
         if (item.data.type === 'login' && deobfuscate(item.data.content.totpUri)) {
             void telemetry?.push(createTelemetryEvent(TelemetryEventName.TwoFACreation, {}, {}));
@@ -77,8 +77,8 @@ function* withAliasCreationWorker(
         yield put(itemCreationSuccess({ optimisticId, shareId, item: loginItem, alias: aliasItem }));
         yield put(requestInvalidate(aliasOptionsRequest(shareId))); /* reset alias options */
 
-        void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: loginItem.data.type }));
-        void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: aliasItem.data.type }));
+        void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[loginItem.data.type] }));
+        void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: TelemetryItemType[aliasItem.data.type] }));
         if (loginItem.data.type === 'login' && deobfuscate(loginItem.data.content.totpUri)) {
             void telemetry?.push(createTelemetryEvent(TelemetryEventName.TwoFACreation, {}, {}));
         }
