@@ -846,6 +846,10 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Omgå lokale internettblokkeringer og sensur med vårt globale nettverk av tjenere."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inkluderer støtte for ${ domains } egendefinerte e-postdomener, ${ addresses } e-postadresse, ubegrensede hide-my-email-aliaser, kalenderdeling og mer.",
+        "Inkluderer støtte for ${ domains } egendefinerte e-postdomener, ${ addresses } e-postadresser, ubegrensede hide-my-email-aliaser, kalenderdeling og mer."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer støtte for 1 egendefinert e-postdomene, 10 e-postadresser, 10 hide-my-email-aliaser, kalenderdeling og mer."
       ],
@@ -2347,7 +2351,37 @@
         "Oppdatering til en hendelse med start den ${ formattedStart }."
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Betalte ${ DRIVE_SHORT_APP_NAME }-, ${ VPN_SHORT_APP_NAME }- og ${ PASS_SHORT_APP_NAME }-funksjoner"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Inkluderer versjonshistorikk i ${ DRIVE_SHORT_APP_NAME }, tilgang til tusener av høyhastighets ${ VPN_SHORT_APP_NAME }-tjenere, deling i ${ PASS_SHORT_APP_NAME } og mer."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 brukere"
+      ],
+      "Early access to new apps and features": [
+        "Tidlig tilgang til nye apper og funksjoner"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Tidlig tilgang til ${ MAIL_APP_NAME }-skrivebordsappen"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Betalte ${ MAIL_SHORT_APP_NAME }- og ${ CALENDAR_APP_NAME }-funksjoner"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } kan ikke koble til den eksterne kontoen"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også sjekke vår ${ statusPageLink }"
       ],
@@ -2697,6 +2731,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Prøv å bruke bare bokstaver, tall og _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Uventet feil, vi kan ikke importere kontaktene"
       ],
       "Unknown error": [
         "Ukjent feil"
