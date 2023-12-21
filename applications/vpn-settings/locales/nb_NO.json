@@ -801,6 +801,10 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Omgå lokale internettblokkeringer og sensur med vårt globale nettverk av tjenere."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inkluderer støtte for ${ domains } egendefinerte e-postdomener, ${ addresses } e-postadresse, ubegrensede hide-my-email-aliaser, kalenderdeling og mer.",
+        "Inkluderer støtte for ${ domains } egendefinerte e-postdomener, ${ addresses } e-postadresser, ubegrensede hide-my-email-aliaser, kalenderdeling og mer."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer støtte for 1 egendefinert e-postdomene, 10 e-postadresser, 10 hide-my-email-aliaser, kalenderdeling og mer."
       ],
@@ -1895,6 +1899,33 @@
     "Enabled 2FA": {
       "2FA": [
         "2FA"
+      ]
+    },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Betalte ${ DRIVE_SHORT_APP_NAME }-, ${ VPN_SHORT_APP_NAME }- og ${ PASS_SHORT_APP_NAME }-funksjoner"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Inkluderer versjonshistorikk i ${ DRIVE_SHORT_APP_NAME }, tilgang til tusener av høyhastighets ${ VPN_SHORT_APP_NAME }-tjenere, deling i ${ PASS_SHORT_APP_NAME } og mer."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 brukere"
+      ],
+      "Early access to new apps and features": [
+        "Tidlig tilgang til nye apper og funksjoner"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Tidlig tilgang til ${ MAIL_APP_NAME }-skrivebordsappen"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Betalte ${ MAIL_SHORT_APP_NAME }- og ${ CALENDAR_APP_NAME }-funksjoner"
       ]
     },
     "Error": {
@@ -3088,6 +3119,9 @@
       "for choosing ${ product }": [
         "for at du velger ${ product }"
       ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "For medlemmer av organisasjoner som bruker enkel pålogging (SAML SSO)"
+      ],
       "Free forever": [
         "Gratis for alltid"
       ],
@@ -3917,6 +3951,9 @@
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Ditt organisasjonspassord kan deles med andre brukere du ønsker å gi administrative rettigheter. Det er også en kode for å få tilgang til organisasjonen din i tilfelle du mister tilgang til kontoen din. Vennligst lagre dette passordet og oppbevar det trygt."
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Organisasjonen bruker enkel pålogging (SSO). Trykk på 'logg på' for å fortsette med SSO-leverandøren."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Betalingsdetaljene dine er beskyttet med TLS-kryptering og sveitsisk personvernlovgivning."

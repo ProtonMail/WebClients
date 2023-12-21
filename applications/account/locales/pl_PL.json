@@ -3687,7 +3687,37 @@
         "Uwierzytelnianie dwustopniowe"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Płatne funkcje ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Zawiera historię wersji w ${ DRIVE_SHORT_APP_NAME }, dostęp do tysięcy szybkich serwerów ${ VPN_SHORT_APP_NAME }, udostępnianie w ${ PASS_SHORT_APP_NAME } i wiele więcej."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 użytkowników"
+      ],
+      "Early access to new apps and features": [
+        "Wcześniejszy dostęp do nowych aplikacji i funkcji"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Wcześniejszy dostęp do aplikacji desktopowej ${ MAIL_APP_NAME }"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Płatne funkcje ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_APP_NAME }"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } nie może połączyć się z kontem zewnętrznym"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Możesz również sprawdzić naszą ${ statusPageLink }"
       ],
@@ -4104,6 +4134,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Użyj tylko liter, cyfr i znaków _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Wystąpił nieoczekiwany błąd. Nie możemy zaimportować kontaktów"
       ],
       "Unknown error": [
         "Wystąpił nieznany błąd"
@@ -6589,6 +6622,9 @@
       "for choosing ${ product }": [
         "za wybranie ${ product }"
       ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Logowanie SSO (SAML) dla użytkowników organizacji"
+      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Przekieruj wiadomości przychodzące z innego konta do bezpiecznej skrzynki odbiorczej ${ MAIL_APP_NAME }."
       ],
@@ -6954,6 +6990,9 @@
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "To nie jest Twoje urządzenie? Zaloguj się przy użyciu okna prywatnego. ${ learnMore }"
+      ],
+      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
+        "Aplikacja desktopowa w wersji beta pozwala uruchamiać ${ MAIL_APP_NAME } bezpośrednio z pulpitu bez potrzeby otwierania przeglądarki internetowej."
       ],
       "Number of dedicated servers in the organization": [
         "Liczba dedykowanych serwerów organizacji"
@@ -8073,6 +8112,9 @@
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Hasło organizacji może być udostępnione innym użytkownikom, którym chcesz nadać uprawnienia administratora. Jest to również kod odzyskiwania awaryjnego, w przypadku utraty dostępu do głównego konta. Zapisz to hasło w bezpiecznym miejscu."
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Organizacja używa logowania SSO. Kliknij \"Zaloguj się\", aby skorzystać z dostawcy tożsamości SSO."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Wiadomości organizacji są chronione szyfrowaniem end-to-end przy użyciu klucza organizacji. Użyj tego odcisku klucza do sprawdzenia, czy wszyscy administratorzy na Twoim koncie posiadają ten sam klucz."
@@ -10609,17 +10651,6 @@
         "Zarządzanie zespołem"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } kończąca się na ${ last4 }"
@@ -10713,6 +10744,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {

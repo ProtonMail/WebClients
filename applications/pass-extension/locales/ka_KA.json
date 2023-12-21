@@ -628,6 +628,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "PIN-კოდი არასწორია. თავიდან სცადეთ."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "თქვენი PIN-კოდი წაშლილია სხვა ${ PASS_APP_NAME }-ის კლიენტის მიერ"
       ]
     },
     "Error message": {
@@ -773,6 +776,9 @@
       "Autosaved on ${ submissionURL }": [
         "ავტომატურად შენახულია ბმულზე ${ submissionURL }"
       ],
+      "Built in 2FA authenticator": [
+        "ჩაშენებული 2FA ავთენტიკატორი"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "შეუძლია ამ საცავის ელემენტების ჩასწორება, წაშლა და გატანა."
       ],
@@ -797,9 +803,6 @@
       "Creating alias...": [
         "ფსევდონიმის შექმნა..."
       ],
-      "Credit cards, Custom fields": [
-        "საკრედიტო ბარათები, მომხმარებლის ველები"
-      ],
       "Decrypting your data": [
         "თქვენი მონაცემების გაშიფვრა"
       ],
@@ -817,6 +820,9 @@
       ],
       "Drop to import": [
         "შემოსატანად დააგდეთ"
+      ],
+      "Early access to ${ PASS_APP_NAME } web app": [
+        "ადრეული წვდომა ${ PASS_APP_NAME }-ის ვებაპზე"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "ადვილად შემოიტანეთ თქვენი არსებული პაროლები ${ PASS_APP_NAME }-ში."
@@ -940,9 +946,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
       ],
-      "Multiple vaults": [
-        "ბევრი საცავი"
-      ],
       "Never": [
         "არასოდეს"
       ],
@@ -994,17 +997,26 @@
       "Please enter your current PIN code to continue": [
         "გასაგრძელებლად შეიყვანეთ სწორი PIN კოდი"
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "ასწიეთ სატარიფო გეგმა ${ PASS_APP_NAME }-ის ვებაპთან ადრეული წვდომის მისაღებად"
+      ],
       "Press Enter to copy": [
         "დასაკოპირებლად დააჭირეთ Enter-ს"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "კონფიდენციალობა ჩვენი ძირითადი საზრუნავია. გაიგეთ, რატომაა ${ PASS_APP_NAME } განსხვავებული."
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "დაცულია ${ PROTON_SENTINEL_LINK }-ით, ჩვენი გაუმჯობესებული ანგარიშის დაცვის პროგრამით"
+      ],
       "Restoring trashed items...": [
         "ნაგვის ყუთში ჩაყრილი ელემენტების აღდგენა..."
       ],
       "Save login": [
         "შესვლის დეტალების დამახსოვრება"
+      ],
+      "Save up to 60% on ${ PASS_APP_NAME } Plus": [
+        "დაზოგეთ 60%-მდე ${ PASS_APP_NAME } Plus-ზე"
       ],
       "Select destination vault": [
         "აირჩიეთ სამიზნე საცავი"
@@ -1024,8 +1036,8 @@
       "Settings successfully updated": [
         "პარამეტრი წარმატებით განახლდა"
       ],
-      "Share with 10 others": [
-        "გაუზიარეთ 10 პირს"
+      "Share your logins, secure notes, with up to 10 people": [
+        "გააზიარეთ თქვენი შესვლის დეტალები, დაცული შენიშვნები, 10 პიროვნებამდე"
       ],
       "Sign in or create an account to continue.": [
         "გასაგრძელებლად შედით ან შექმენით ანგარიში."
@@ -1082,8 +1094,8 @@
       "Unable to copy to clipboard": [
         "ბუფერში დაკოპირება შეუძლებელია"
       ],
-      "Unlimited Aliases": [
-        "ფსევდონიმების განუსაზღვრელი რაოდენობა"
+      "Unlimited hide-my-email aliases": [
+        "განუსაზღვრელი რაოდენობის მეტსახელი Hide-my-email-სთვის"
       ],
       "Unlock it with your PIN to access the settings": [
         "პარამეტრებთან წვდომისთვის საჭიროა მისი განბლოკვა PIN კოდით"
@@ -1093,6 +1105,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის ტარიფის აწევა"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "დამატებითი ფუნქციების განსაბლოკად ასწიეთ სატარიფო გეგმა ახლავე"
       ],
       "Use vaults to share this item with others.": [
         "ამ ელემენტის სხვებთან გასაზიარებლად, საცავები გამოიყენეთ."
@@ -1797,6 +1812,9 @@
       ],
       "Update available": [
         "განახლება ხელმისაწვდომია"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "დამატებითი ფუნქციების განსაბლოკად ასწიეთ სატარიფო გეგმა"
       ],
       "Use my email": [
         "ჩემი ელფოსტის გამოყენება"

@@ -1478,6 +1478,10 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Ignore os bloqueios locais da Internet e a censura com nossa rede global de servidores."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui suporte para ${ domains } domínio de e-mail personalizado, ${ addresses } endereço de e-mail, aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais.",
+        "Inclui suporte para ${ domains } domínios de e-mail personalizados, ${ addresses } endereços de e-mail, aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do hide-my-email, compartilhamento de calendário e muito mais."
       ],
@@ -1537,6 +1541,11 @@
     "Bridge version load failed": {
       "Failed to find latest version": [
         "Não foi possível encontrar a última versão."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "Aplicativo para computador do ${ MAIL_APP_NAME }"
       ]
     },
     "Bug category": {
@@ -3655,7 +3664,32 @@
         "A2F"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Recursos pagos do ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 usuários"
+      ],
+      "Early access to new apps and features": [
+        "Acesso antecipado a novos aplicativos e recursos"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Acesso antecipado ao aplicativo para computador do ${ MAIL_APP_NAME }"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Recursos pagos do ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_APP_NAME }"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } não pode se conectar na sua conta externa"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Você também pode conferir nossa ${ statusPageLink }"
       ],
@@ -8469,6 +8503,9 @@
       "Awarded": [
         "Premiado"
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billing address": [
         "Endereço de cobrança"
       ],
@@ -10370,17 +10407,6 @@
         "Gerenciamento de equipes"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Sua avaliação termina em ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } com final ${ last4 }"
@@ -10474,6 +10500,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Sua avaliação termina em ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -13131,6 +13168,9 @@
       ]
     },
     "Title": {
+      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
+        " Obter ${ MAIL_APP_NAME } para Mac ou Windows"
+      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -13484,6 +13524,9 @@
       "Delete version history?": [
         "Excluir histórico de versões?"
       ],
+      "Desktop app": [
+        "Aplicativo para computador"
+      ],
       "Disable ${ email }": [
         "Desativar ${ email }"
       ],
@@ -13604,6 +13647,9 @@
       ],
       "Folders and labels": [
         "Pastas e marcadores"
+      ],
+      "For ${ platform }": [
+        "Para ${ platform }"
       ],
       "Forward and auto-reply": [
         "Encaminhamento e resposta automática"

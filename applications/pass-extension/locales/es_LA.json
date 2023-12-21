@@ -633,6 +633,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Código PIN incorrecto. Intente de nuevo."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Su código PIN fue eliminado por otro cliente de ${ PASS_APP_NAME }"
       ]
     },
     "Error message": {
@@ -778,6 +781,9 @@
       "Autosaved on ${ submissionURL }": [
         "Guardado automáticamente el ${ submissionURL }"
       ],
+      "Built in 2FA authenticator": [
+        "Autenticador de 2FA integrado"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Permite crear, editar, eliminar y exportar los elementos en esta bóveda."
       ],
@@ -802,9 +808,6 @@
       "Creating alias...": [
         "Creando alias..."
       ],
-      "Credit cards, Custom fields": [
-        "Tarjetas de crédito, campos personalizados"
-      ],
       "Decrypting your data": [
         "Descifrando sus datos"
       ],
@@ -822,6 +825,9 @@
       ],
       "Drop to import": [
         "Suelte aquí para importar"
+      ],
+      "Early access to ${ PASS_APP_NAME } web app": [
+        "Acceso anticipado a la aplicación web de ${ PASS_APP_NAME }"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importe fácilmente sus contraseñas existentes a ${ PASS_APP_NAME }."
@@ -945,9 +951,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
-      "Multiple vaults": [
-        "Bóvedas múltiples"
-      ],
       "Never": [
         "Nunca"
       ],
@@ -999,17 +1002,26 @@
       "Please enter your current PIN code to continue": [
         "Ingrese su código PIN actual para continuar"
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Mejore su plan para obtener acceso anticipado a la aplicación web de ${ PASS_APP_NAME }"
+      ],
       "Press Enter to copy": [
         "Presione Enter para copiar"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "La privacidad es una gran preocupación para nosotros. Descubra por qué ${ PASS_APP_NAME } es diferente."
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Protegido por ${ PROTON_SENTINEL_LINK }, nuestro programa de protección de cuentas avanzado"
+      ],
       "Restoring trashed items...": [
         "Restaurando elementos de la papelera..."
       ],
       "Save login": [
         "Guardar el inicio de sesión"
+      ],
+      "Save up to 60% on ${ PASS_APP_NAME } Plus": [
+        "Ahorre hasta 60% con ${ PASS_APP_NAME } Plus"
       ],
       "Select destination vault": [
         "Seleccione la bóveda de destino"
@@ -1029,8 +1041,8 @@
       "Settings successfully updated": [
         "Ajustes actualizados con éxito"
       ],
-      "Share with 10 others": [
-        "Compartir con 10 personas más"
+      "Share your logins, secure notes, with up to 10 people": [
+        "Comparta sus inicios de sesión y notas con hasta 10 personas"
       ],
       "Sign in or create an account to continue.": [
         "Inicie sesión o cree una cuenta para continuar."
@@ -1087,8 +1099,8 @@
       "Unable to copy to clipboard": [
         "No se puede copiar al portapapeles"
       ],
-      "Unlimited Aliases": [
-        "Alias ilimitados"
+      "Unlimited hide-my-email aliases": [
+        "Alias de hide-my-email ilimitados"
       ],
       "Unlock it with your PIN to access the settings": [
         "Desbloquéela con su PIN para acceder a los ajustes"
@@ -1098,6 +1110,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Actualizar ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Mejore ahora para desbloquear funciones premium"
       ],
       "Use vaults to share this item with others.": [
         "Use las bóvedas para compartir este elemento con otras personas."
@@ -1802,6 +1817,9 @@
       ],
       "Update available": [
         "Actualización disponible"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Mejore para desbloquear funciones premium"
       ],
       "Use my email": [
         "Usar mi correo"

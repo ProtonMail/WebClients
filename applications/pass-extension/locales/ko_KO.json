@@ -627,6 +627,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "올바르지 않은 PIN 코드입니다. 다시 시도하세요."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "타 ${ PASS_APP_NAME } 클라이언트로 인해 사용자의 PIN 코드가 삭제되었습니다."
       ]
     },
     "Error message": {
@@ -759,6 +762,9 @@
       "Autosaved on ${ submissionURL }": [
         "${ submissionURL }에 자동 저장됨"
       ],
+      "Built in 2FA authenticator": [
+        "내장형 2FA 인증기"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "이 금고에서 항목을 생성, 편집, 삭제 및 불러올 수 있습니다."
       ],
@@ -783,9 +789,6 @@
       "Creating alias...": [
         "별명 생성 중..."
       ],
-      "Credit cards, Custom fields": [
-        "신용 카드, 사용자 지정 필드"
-      ],
       "Decrypting your data": [
         "데이터 복호화 중"
       ],
@@ -803,6 +806,9 @@
       ],
       "Drop to import": [
         "드래그해서 불러오기"
+      ],
+      "Early access to ${ PASS_APP_NAME } web app": [
+        "${ PASS_APP_NAME } 웹 앱 얼리 엑세스"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "기존 비밀번호를 ${ PASS_APP_NAME }로 쉽게 가져오세요."
@@ -924,9 +930,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
-      "Multiple vaults": [
-        "다중 금고"
-      ],
       "Never": [
         "안 함"
       ],
@@ -978,17 +981,26 @@
       "Please enter your current PIN code to continue": [
         "계속하려면 현재 PIN을 입력하세요."
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "${ PASS_APP_NAME } 웹 앱 얼리 엑세스 특전을 얻기 위해선 업그레이드 하세요."
+      ],
       "Press Enter to copy": [
         "복사하기 위해 엔터 키를 누르세요"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "프라이버시는 우리에게 큰 관심사입니다. 왜 ${ PASS_APP_NAME }가 다른지 알아보세요."
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "향상된 계정 보안 프로그램인 ${ PROTON_SENTINEL_LINK }으로 보호되었습니다."
+      ],
       "Restoring trashed items...": [
         "휴지통 내 항목 복구 중..."
       ],
       "Save login": [
         "로그인 저장"
+      ],
+      "Save up to 60% on ${ PASS_APP_NAME } Plus": [
+        "${ PASS_APP_NAME } Plus를 60% 할인된 가격으로 알뜰하게 누리세요."
       ],
       "Select destination vault": [
         "대상 금고 선택"
@@ -1008,8 +1020,8 @@
       "Settings successfully updated": [
         "설정이 성공적으로 업데이트되었습니다."
       ],
-      "Share with 10 others": [
-        "최대 10명과 공유"
+      "Share your logins, secure notes, with up to 10 people": [
+        "최대 10명 까지 로그인을 공유하고, 메모를 보호하세요."
       ],
       "Sign in or create an account to continue.": [
         "계속하기 위해 로그인 하거나 계정을 생성하십시오."
@@ -1065,8 +1077,8 @@
       "Unable to copy to clipboard": [
         "클립보드에 복사할 수 없습니다."
       ],
-      "Unlimited Aliases": [
-        "무제한 별명"
+      "Unlimited hide-my-email aliases": [
+        "무제한 hide-my-email 별칭"
       ],
       "Unlock it with your PIN to access the settings": [
         "설정에 접근하기 위해 PIN으로 잠금 해제 하세요."
@@ -1076,6 +1088,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 업그레이드"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "프리미엄 기능 잠금해제 하려면 업그레이드"
       ],
       "Use vaults to share this item with others.": [
         "다른 사람과 이 항목을 공유하려면 금고를 사용하세요."
@@ -1776,6 +1791,9 @@
       ],
       "Update available": [
         "사용 가능한 업데이트가 있습니다"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "프리미엄 기능을 잠금해제 하려면 업그레이드"
       ],
       "Use my email": [
         "나의 이메일 사용"
