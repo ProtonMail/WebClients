@@ -25,7 +25,7 @@ const ExtraSnoozedMessage = ({ message }: Props) => {
 
     const [nowDate, setNowDate] = useState(() => Date.now());
 
-    const { unsnooze } = useSnooze();
+    const { unsnooze, canUnsnooze } = useSnooze();
 
     const isSnoozedMessage = isSnoozed(message.data);
     const snoozeTime = getSnoozeTimeFromElement(message.data);
@@ -85,7 +85,7 @@ const ExtraSnoozedMessage = ({ message }: Props) => {
         >
             <Icon name="clock" className="mt-1 ml-0.5 shrink-0 color-warning" />
             <span className={clsx(['px-2 flex-1 mt-1'])}>{getSnoozeBannerMessage()}</span>
-            {!isUnsnoozeShortly ? (
+            {canUnsnooze && !isUnsnoozeShortly ? (
                 <span className="shrink-0 items-start flex">
                     <Button
                         size="small"
