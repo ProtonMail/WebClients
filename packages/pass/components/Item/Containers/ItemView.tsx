@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState, type VFC } from 'react';
+import { type VFC, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useParams } from 'react-router-dom';
 
@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { useNavigation } from '@proton/pass/components/Core/NavigationProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { getItemRoute, getLocalPath, preserveSearch } from '@proton/pass/components/Core/routing';
+import { getItemRoute, getLocalPath, maybeTrash, preserveSearch } from '@proton/pass/components/Core/routing';
 import { useInviteContext } from '@proton/pass/components/Invite/InviteProvider';
 import { VaultInviteFromItemModal } from '@proton/pass/components/Invite/VaultInviteFromItemModal';
 import { AliasView } from '@proton/pass/components/Item/Alias/Alias.view';
@@ -50,7 +50,7 @@ const itemTypeViewMap: { [T in ItemType]: VFC<ItemViewProps<T>> } = {
 };
 
 export const ItemView: VFC = () => {
-    const { selectItem } = useNavigation();
+    const { selectItem, matchTrash } = useNavigation();
     const inviteContext = useInviteContext();
     const { onTelemetry } = usePassCore();
 
@@ -70,15 +70,29 @@ export const ItemView: VFC = () => {
 
     useEffect(() => {
         if (item && failure === undefined) {
-            onTelemetry(createTelemetryEvent(TelemetryEventName.ItemRead, {}, { type: TelemetryItemType[item.data.type] }));
+            onTelemetry(
+                createTelemetryEvent(
+                    TelemetryEventName.ItemRead,
+                    {},
+                    {
+                        type: TelemetryItemType[item.data.type],
+                    }
+                )
+            );
         }
     }, [item]);
 
     /* if vault or item cannot be found : redirect to base path */
-    if (!(vault && item)) return <Redirect to={preserveSearch(getLocalPath('/'))} push={false} />;
+    if (!(vault && item)) {
+        const to = preserveSearch(getLocalPath(maybeTrash('', matchTrash)));
+        return <Redirect to={to} push={false} />;
+    }
 
     /* if the item is optimistic and can be resolved to a non-optimistic item : replace */
-    if (optimisticResolved) return <Redirect to={preserveSearch(getItemRoute(shareId, item.itemId))} push={false} />;
+    if (optimisticResolved) {
+        const to = preserveSearch(getItemRoute(shareId, item.itemId));
+        return <Redirect to={to} push={false} />;
+    }
 
     const trashed = isTrashed(item);
 
