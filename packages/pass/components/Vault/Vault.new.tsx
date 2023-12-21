@@ -11,6 +11,7 @@ import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
+import { UpsellRef } from '@proton/pass/constants';
 import { type RequestEntryFromAction, useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { validateVaultValues } from '@proton/pass/lib/validation/vault';
 import type { vaultCreationSuccess } from '@proton/pass/store/actions';
@@ -91,7 +92,7 @@ export const VaultNew: VFC<Props> = ({ onSuccess, ...modalProps }) => {
                                             : c('Action').t`Create vault`}
                                     </Button>
                                 ) : (
-                                    <UpgradeButton key="upgrade-button" />
+                                    <UpgradeButton key="upgrade-button" upsellRef={UpsellRef.LIMIT_VAULT} />
                                 ),
                             ]}
                         />

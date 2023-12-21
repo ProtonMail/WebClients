@@ -13,6 +13,7 @@ import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButt
 import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreInfoDropdown';
 import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
+import { UpsellRef } from '@proton/pass/constants';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator';
 import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store/selectors';
@@ -64,7 +65,7 @@ export const LoginView: VFC<ItemViewProps<'login'>> = ({ vault, revision, ...ite
 
                 {totpUri && !totpAllowed && (
                     <ValueControl icon="lock" label={c('Label').t`2FA secret key (TOTP)`}>
-                        <UpgradeButton inline />
+                        <UpgradeButton inline upsellRef={UpsellRef.LIMIT_2FA} />
                     </ValueControl>
                 )}
             </FieldsetCluster>

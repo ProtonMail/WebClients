@@ -24,7 +24,7 @@ import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/Qu
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
 import { usePasswordContext } from '@proton/pass/components/Password/PasswordProvider';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
-import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
 import { useItemDraft, useItemDraftLocationState } from '@proton/pass/hooks/useItemDraft';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
@@ -290,7 +290,7 @@ export const LoginNew: VFC<ItemNewViewProps<'login'>> = ({ shareId, url, onCance
                                      * has not reached his plan's TOTP limit */
                                     needsUpgrade ? (
                                         <ValueControl icon="lock" label={c('Label').t`2FA secret key (TOTP)`}>
-                                            <UpgradeButton inline />
+                                            <UpgradeButton inline upsellRef={UpsellRef.LIMIT_2FA} />
                                         </ValueControl>
                                     ) : (
                                         <Field
