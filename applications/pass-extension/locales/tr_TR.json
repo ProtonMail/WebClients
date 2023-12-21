@@ -628,6 +628,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "PIN kodu yanlış. Yeniden deneyin."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "PIN kodunuz başka bir ${ PASS_APP_NAME } istemcisi tarafından kaldırıldı"
       ]
     },
     "Error message": {
@@ -773,6 +776,9 @@
       "Autosaved on ${ submissionURL }": [
         "${ submissionURL } üzerinden otomatik olarak kaydedildi"
       ],
+      "Built in 2FA authenticator": [
+        "Hazır iki adımlı kimlik doğrulayıcı"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Bu kasadaki ögeleri oluşturabilir, düzenleyebilir, silebilir ve dışa aktarabilir."
       ],
@@ -797,9 +803,6 @@
       "Creating alias...": [
         "Takma ad oluşturuluyor..."
       ],
-      "Credit cards, Custom fields": [
-        "Kredi kartları, özel alanlar"
-      ],
       "Decrypting your data": [
         "Verilerinizin şifresi çözülüyor"
       ],
@@ -817,6 +820,9 @@
       ],
       "Drop to import": [
         "İçe aktarmak için bırakın"
+      ],
+      "Early access to ${ PASS_APP_NAME } web app": [
+        "${ PASS_APP_NAME } İnternet uygulamasına erken erişim"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Var olan parolalarınızı kolayca ${ PASS_APP_NAME } içine aktarın."
@@ -940,9 +946,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
-      "Multiple vaults": [
-        "Birden çok kasa"
-      ],
       "Never": [
         "Asla"
       ],
@@ -994,17 +997,26 @@
       "Please enter your current PIN code to continue": [
         "İlerlemek için lütfen geçerli PIN kodunuzu yazın"
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "${ PASS_APP_NAME } İnternet uygulamasına erken erişmek için lütfen tarifenizi yükseltin"
+      ],
       "Press Enter to copy": [
         "Kopyalamak için Enter tuşuna basın"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Gizliliğe çok önem veriyoruz. ${ PASS_APP_NAME } neden farklı öğrenin."
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Gelişmiş hesap koruma programımız ${ PROTON_SENTINEL_LINK } ile korunmaktadır"
+      ],
       "Restoring trashed items...": [
         "Çöpe atılmış ögeler geri yükleniyor..."
       ],
       "Save login": [
         "Oturum açmayı kaydet"
+      ],
+      "Save up to 60% on ${ PASS_APP_NAME } Plus": [
+        "${ PASS_APP_NAME } Plus tarifesinde 60% oranına varan indirim alın"
       ],
       "Select destination vault": [
         "Hedef kasayı seçin"
@@ -1024,8 +1036,8 @@
       "Settings successfully updated": [
         "Ayarlar güncellendi"
       ],
-      "Share with 10 others": [
-        "10 kişiyle paylaşın"
+      "Share your logins, secure notes, with up to 10 people": [
+        "Oturum açma bilgilerinizi ve gizli notlarınızı 10 kişiye kadar paylaşın"
       ],
       "Sign in or create an account to continue.": [
         "İlerlemek için oturum ya da hesap açın."
@@ -1082,8 +1094,8 @@
       "Unable to copy to clipboard": [
         "Panoya kopyalanamadı"
       ],
-      "Unlimited Aliases": [
-        "Sınırsız sayıda takma ad"
+      "Unlimited hide-my-email aliases": [
+        "Sınırsız sayıda hide-my-email takma adı"
       ],
       "Unlock it with your PIN to access the settings": [
         "Bu ayarlara erişebilmek için PIN kodunuz ile kilidi açın"
@@ -1093,6 +1105,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasını yükselt"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Ücretli özellikleri kullanabilmek için tarifenizi yükseltin"
       ],
       "Use vaults to share this item with others.": [
         "Bu ögeyi başkaları ile paylaşmak için kasaları kullanın."
@@ -1797,6 +1812,9 @@
       ],
       "Update available": [
         "Güncelleme yayınlanmış"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Ücretli özellikleri kullanabilmek için tarifenizi yükseltin"
       ],
       "Use my email": [
         "E-postamı kullan"

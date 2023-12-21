@@ -633,6 +633,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Código PIN incorrecto. Intenta de nuevo."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Tu código PIN ha sido eliminado por otro cliente de ${ PASS_APP_NAME }"
       ]
     },
     "Error message": {
@@ -778,6 +781,9 @@
       "Autosaved on ${ submissionURL }": [
         "Guardado automáticamente el ${ submissionURL }"
       ],
+      "Built in 2FA authenticator": [
+        "Autenticador de 2FA integrado"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Permite crear, editar, eliminar y exportar los elementos en esta caja fuerte."
       ],
@@ -802,9 +808,6 @@
       "Creating alias...": [
         "Creando alias..."
       ],
-      "Credit cards, Custom fields": [
-        "Tarjetas de crédito, campos personalizados"
-      ],
       "Decrypting your data": [
         "Descifrando tus datos"
       ],
@@ -822,6 +825,9 @@
       ],
       "Drop to import": [
         "Suelta aquí para importar"
+      ],
+      "Early access to ${ PASS_APP_NAME } web app": [
+        "Acceso anticipado a la aplicación web de ${ PASS_APP_NAME }"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importa fácilmente tus contraseñas existentes a ${ PASS_APP_NAME }."
@@ -945,9 +951,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
-      "Multiple vaults": [
-        "Múltiples cajas fuertes"
-      ],
       "Never": [
         "Nunca"
       ],
@@ -999,17 +1002,26 @@
       "Please enter your current PIN code to continue": [
         "Introduce tu código PIN actual para continuar."
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Mejora tu plan para obtener un acceso anticipado a la aplicación web de ${ PASS_APP_NAME }."
+      ],
       "Press Enter to copy": [
         "Presiona Enter para copiar"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "La privacidad es una gran preocupación para nosotros. Descubre por qué ${ PASS_APP_NAME } es diferente."
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Protegido por ${ PROTON_SENTINEL_LINK }, nuestro programa de protección de cuentas avanzado"
+      ],
       "Restoring trashed items...": [
         "Restaurando elementos de la papelera..."
       ],
       "Save login": [
         "Guardar el inicio de sesión"
+      ],
+      "Save up to 60% on ${ PASS_APP_NAME } Plus": [
+        "Ahorra hasta 60% con ${ PASS_APP_NAME } Plus"
       ],
       "Select destination vault": [
         "Selecciona la caja fuerte de destino"
@@ -1029,8 +1041,8 @@
       "Settings successfully updated": [
         "Se ha actualizado la configuración"
       ],
-      "Share with 10 others": [
-        "Compartir con 10 personas más"
+      "Share your logins, secure notes, with up to 10 people": [
+        "Comparte tus inicios de sesión y notas con hasta 10 personas"
       ],
       "Sign in or create an account to continue.": [
         "Inicia sesión o crea una cuenta para continuar."
@@ -1087,8 +1099,8 @@
       "Unable to copy to clipboard": [
         "No se pudo copiar al portapapeles."
       ],
-      "Unlimited Aliases": [
-        "Alias ilimitados"
+      "Unlimited hide-my-email aliases": [
+        "Un número ilimitado de alias de Hide-my-email"
       ],
       "Unlock it with your PIN to access the settings": [
         "Desbloquéala con tu PIN para acceder a los ajustes"
@@ -1098,6 +1110,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Actualizar ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Mejora ahora para desbloquear funciones premium"
       ],
       "Use vaults to share this item with others.": [
         "Utiliza las cajas fuertes para compartir este elemento con otras personas."
@@ -1802,6 +1817,9 @@
       ],
       "Update available": [
         "Actualización disponible"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Mejora para desbloquear funciones premium"
       ],
       "Use my email": [
         "Utilizar mi correo electrónico"

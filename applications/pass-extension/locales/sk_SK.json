@@ -635,6 +635,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Nesprávny PIN. Skúste to znova."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Váš PIN kód bol odstránený iným klientom ${ PASS_APP_NAME }"
       ]
     },
     "Error message": {
@@ -806,6 +809,9 @@
       "Autosaved on ${ submissionURL }": [
         "Automaticky uložené na ${ submissionURL }"
       ],
+      "Built in 2FA authenticator": [
+        "Zabudovaný 2FA autentifikátor"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Môžete vytvárať, upravovať, mazať a exportovať položky v tomto trezore."
       ],
@@ -830,9 +836,6 @@
       "Creating alias...": [
         "Vytváranie aliasu..."
       ],
-      "Credit cards, Custom fields": [
-        "Platobné karty, Vlastné polia"
-      ],
       "Decrypting your data": [
         "Dešifrujeme vaše údaje"
       ],
@@ -850,6 +853,9 @@
       ],
       "Drop to import": [
         "Presuňte na import"
+      ],
+      "Early access to ${ PASS_APP_NAME } web app": [
+        "Skorší prístup k webovej aplikácii ${ PASS_APP_NAME }"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Jednoducho importujte svoje existujúce heslá do ${ PASS_APP_NAME }."
@@ -977,9 +983,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
-      "Multiple vaults": [
-        "Viacero trezorov"
-      ],
       "Never": [
         "Nikdy"
       ],
@@ -1031,17 +1034,26 @@
       "Please enter your current PIN code to continue": [
         "Pre pokračovanie zadajte váš aktuálny PIN kód"
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Aktualizujte, aby ste získali skorší prístup k webovej aplikácii ${ PASS_APP_NAME }"
+      ],
       "Press Enter to copy": [
         "Pre skopírovanie stlačte Enter"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Súkromie berieme veľmi vážne. Prečítajte si, prečo je ${ PASS_APP_NAME } iný."
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Chránené naším pokročilým programom na ochranu účtov ${ PROTON_SENTINEL_LINK }"
+      ],
       "Restoring trashed items...": [
         "Obnovovanie položiek z koša..."
       ],
       "Save login": [
         "Uložiť prihlásenie"
+      ],
+      "Save up to 60% on ${ PASS_APP_NAME } Plus": [
+        "Ušetrite až 60% na ${ PASS_APP_NAME } Plus"
       ],
       "Select destination vault": [
         "Vyberte cieľový trezor"
@@ -1061,8 +1073,8 @@
       "Settings successfully updated": [
         "Nastavenia boli úspešne aktualizované"
       ],
-      "Share with 10 others": [
-        "Zdieľajte s 10 ďalšími osobami"
+      "Share your logins, secure notes, with up to 10 people": [
+        "Zdieľajte vaše prihlasovacie údaje, zabezpečené poznámky až s 10 ľuďmi"
       ],
       "Sign in or create an account to continue.": [
         "Pre pokračovanie sa prihláste alebo si vytvorte účet."
@@ -1121,8 +1133,8 @@
       "Unable to copy to clipboard": [
         "Nedá sa kopírovať do schránky"
       ],
-      "Unlimited Aliases": [
-        "Neobmedzený počet aliasov"
+      "Unlimited hide-my-email aliases": [
+        "Neobmedzený počet hide-my-email aliasov"
       ],
       "Unlock it with your PIN to access the settings": [
         "Ak chcete získať prístup k nastaveniam, odomknite ho pomocou PIN kódu"
@@ -1132,6 +1144,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Upgradovať ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Inovujte teraz na odomknutie prémiových funkcií"
       ],
       "Use vaults to share this item with others.": [
         "Pomocou trezorov môžete túto položku zdieľať s ostatnými."
@@ -1844,6 +1859,9 @@
       ],
       "Update available": [
         "K dispozícii je aktualizácia"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Inovujte na odomknutie prémiových funkcií"
       ],
       "Use my email": [
         "Použiť môj email"
