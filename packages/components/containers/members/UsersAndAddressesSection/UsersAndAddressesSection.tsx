@@ -433,7 +433,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                                     type="success"
                                                     className="rounded-sm"
                                                     tooltip={c('Users table: single sign-on tooltip')
-                                                        .t`SSO user provided by your Identity Provider`}
+                                                        .t`SSO user provided by your identity provider`}
                                                 >
                                                     {c('Users table: single sign-on enabled').t`SSO`}
                                                 </Badge>

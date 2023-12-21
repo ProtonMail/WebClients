@@ -130,7 +130,7 @@ const SamlAuthenticationSection = () => {
                     />
                 ) : (
                     <Button
-                        color="weak"
+                        color="norm"
                         onClick={() => {
                             setSetupSSODomainModalOpen(true);
                         }}

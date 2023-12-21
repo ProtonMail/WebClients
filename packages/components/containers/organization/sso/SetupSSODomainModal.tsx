@@ -93,7 +93,7 @@ const SetupSSODomainModal = ({ onContinue, onClose, ...rest }: Props) => {
 
         if (step === STEP.TXT_RECORD && domain) {
             return {
-                title: c('Info').t`Add domain`,
+                title: c('Info').t`Verify domain`,
                 content: <TXTSection domain={domain} />,
                 footer: (
                     <>
