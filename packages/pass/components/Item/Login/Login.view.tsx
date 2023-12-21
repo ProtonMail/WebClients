@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 
 import { Href } from '@proton/atoms';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { ExtraFieldsControl } from '@proton/pass/components/Form/Field/Control/ExtraFieldsControl';
 import { OTPValueControl } from '@proton/pass/components/Form/Field/Control/OTPValueControl';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
@@ -13,8 +14,10 @@ import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButt
 import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreInfoDropdown';
 import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
+import { PASS_EOY_PATH, PASS_REF_EXTENSION_2FA, PASS_REF_WEB_2FA, PASS_UPGRADE_PATH } from '@proton/pass/constants';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator';
+import { isEOY } from '@proton/pass/lib/onboarding/utils';
 import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store/selectors';
 import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
@@ -28,6 +31,7 @@ export const LoginView: VFC<ItemViewProps<'login'>> = ({ vault, revision, ...ite
 
     const relatedAlias = useSelector(selectAliasByAliasEmail(username));
     const totpAllowed = useSelector(selectTOTPLimits).totpAllowed(itemId);
+    const { endpoint } = usePassCore();
 
     return (
         <ItemViewPanel type="login" name={name} vault={vault} {...itemViewProps}>
@@ -64,7 +68,7 @@ export const LoginView: VFC<ItemViewProps<'login'>> = ({ vault, revision, ...ite
 
                 {totpUri && !totpAllowed && (
                     <ValueControl icon="lock" label={c('Label').t`2FA secret key (TOTP)`}>
-                        <UpgradeButton inline />
+                        <UpgradeButton inline path={isEOY() ? PASS_EOY_PATH : PASS_UPGRADE_PATH} ref={endpoint === 'web' ? PASS_REF_WEB_2FA : PASS_REF_EXTENSION_2FA } />
                     </ValueControl>
                 )}
             </FieldsetCluster>

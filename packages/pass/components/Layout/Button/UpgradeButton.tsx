@@ -13,6 +13,7 @@ type UpgradeButtonProps = {
     inline?: boolean;
     label?: string;
     path?: string;
+    ref: string
 };
 
 export const UpgradeButton: VFC<UpgradeButtonProps> = ({
@@ -20,6 +21,7 @@ export const UpgradeButton: VFC<UpgradeButtonProps> = ({
     inline = false,
     label,
     path = PASS_UPGRADE_PATH,
+    ref
 }) => {
     const { onLink, config } = usePassCore();
     const ButtonComponent = inline ? InlineLinkButton : Button;
@@ -29,7 +31,7 @@ export const UpgradeButton: VFC<UpgradeButtonProps> = ({
         <ButtonComponent
             className={clsx('items-center flex-nowrap shrink-0', inline ? 'inline-flex' : 'flex text-sm', className)}
             color="norm"
-            onClick={() => onLink(`${config.SSO_URL}/${path}`, { replace: true })}
+            onClick={() => onLink(`${config.SSO_URL}/${path}&ref=${ref}`, { replace: true })}
             {...(!inline && buttonProps)}
         >
             {label || c('Action').t`Upgrade`}
