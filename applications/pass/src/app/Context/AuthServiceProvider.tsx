@@ -6,13 +6,14 @@ import { c } from 'ttag';
 import { useNotifications } from '@proton/components/hooks';
 import { getCurrentLocation } from '@proton/pass/components/Core/routing';
 import { UpsellingModal } from '@proton/pass/components/Spotlight/UpsellingModal';
-import { PASS_EOY_PATH } from '@proton/pass/constants';
+import { UpsellRef } from '@proton/pass/constants';
 import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
 import { isValidPersistedSession } from '@proton/pass/lib/auth/session';
 import { clientReady } from '@proton/pass/lib/client';
+import { getUpgradePath, isEOY } from '@proton/pass/lib/onboarding/upselling';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import { bootIntent, cacheCancel, sessionLockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
 import { AppStatus, type Maybe, PlanType, SessionLockStatus } from '@proton/pass/types';
@@ -280,7 +281,8 @@ export const AuthServiceProvider: FC = ({ children }) => {
                     type="early-access"
                     open={upgradeState.upgrade}
                     onClose={() => setUpgradeState({ upgrade: false })}
-                    upgradePath={`${PASS_EOY_PATH}&u=${upgradeState.LocalID}&source=${getClientID(APP_NAME)}`}
+                    upgradePath={`${getUpgradePath()}&u=${upgradeState.LocalID}&source=${getClientID(APP_NAME)}`}
+                    upsellRef={isEOY() ? UpsellRef.EOY_2023 : UpsellRef.EARLY_ACCESS}
                 />
             )}
         </AuthServiceContext.Provider>

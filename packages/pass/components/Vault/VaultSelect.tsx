@@ -14,6 +14,7 @@ import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal'
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
+import { UpsellRef } from '@proton/pass/constants';
 import type { VaultShareItem, WithItemCount } from '@proton/pass/store/reducers';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
 import { NOOP_LIST_SELECTOR } from '@proton/pass/store/selectors/utils';
@@ -63,7 +64,9 @@ export const VaultSelect: VFC<Props> = ({ downgradeMessage, onSubmit, optionsSel
                             >
                                 <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
                             </Button>,
-                            ...(didDowngrade ? [<UpgradeButton key="upgrade-button" />] : []),
+                            ...(didDowngrade
+                                ? [<UpgradeButton key="upgrade-button" upsellRef={UpsellRef.LIMIT_VAULT} />]
+                                : []),
                         ]}
                     />
                 }

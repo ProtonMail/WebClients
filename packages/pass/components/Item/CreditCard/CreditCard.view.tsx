@@ -15,6 +15,7 @@ import {
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
 import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
+import { UpsellRef } from '@proton/pass/constants';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -34,7 +35,11 @@ export const CreditCardView: VFC<ItemViewProps<'creditCard'>> = ({ vault, revisi
             <FieldsetCluster mode="read" as="div">
                 <ValueControl clickToCopy icon="user" label={c('Label').t`Name on card`} value={cardholderName} />
                 {isFreePlan ? (
-                    <UpgradeControl icon="credit-card" label={c('Label').t`Card number`} />
+                    <UpgradeControl
+                        icon="credit-card"
+                        label={c('Label').t`Card number`}
+                        upsellRef={UpsellRef.LIMIT_CC}
+                    />
                 ) : (
                     <MaskedValueControl
                         clickToCopy

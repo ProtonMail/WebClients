@@ -15,7 +15,7 @@ import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButt
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
-import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useAliasOptions } from '@proton/pass/hooks/useAliasOptions';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { deriveAliasPrefix, reconciliateAliasFromDraft, validateNewAliasForm } from '@proton/pass/lib/validation/alias';
@@ -148,7 +148,9 @@ export const AliasNew: VFC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmi
             valid={form.isValid && userVerified}
             discardable={!form.dirty}
             /* if user has reached his alias limit: disable submit and prompt for upgrade */
-            renderSubmitButton={needsUpgrade ? <UpgradeButton key="upgrade-button" /> : undefined}
+            renderSubmitButton={
+                needsUpgrade ? <UpgradeButton key="upgrade-button" upsellRef={UpsellRef.LIMIT_ALIAS} /> : undefined
+            }
         >
             {({ didEnter }) => (
                 <>

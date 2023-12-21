@@ -21,7 +21,7 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPanel';
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
-import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
+import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { useItemDraft, useItemDraftLocationState } from '@proton/pass/hooks/useItemDraft';
@@ -283,7 +283,7 @@ export const LoginEdit: VFC<ItemEditViewProps<'login'>> = ({ revision, url, vaul
                                      * the secret or remove it */
                                     needsUpgrade && isEmptyString(form.values.totpUri) ? (
                                         <ValueControl icon="lock" label={c('Label').t`2FA secret key (TOTP)`}>
-                                            <UpgradeButton inline />
+                                            <UpgradeButton inline upsellRef={UpsellRef.LIMIT_2FA} />
                                         </ValueControl>
                                     ) : (
                                         <Field
