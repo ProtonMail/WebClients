@@ -1481,6 +1481,10 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Omgå lokale internettblokkeringer og sensur med vårt globale nettverk av tjenere."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inkluderer støtte for ${ domains } egendefinerte e-postdomener, ${ addresses } e-postadresse, ubegrensede hide-my-email-aliaser, kalenderdeling og mer.",
+        "Inkluderer støtte for ${ domains } egendefinerte e-postdomener, ${ addresses } e-postadresser, ubegrensede hide-my-email-aliaser, kalenderdeling og mer."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer støtte for 1 egendefinert e-postdomene, 10 e-postadresser, 10 hide-my-email-aliaser, kalenderdeling og mer."
       ],
@@ -3663,7 +3667,37 @@
         "2FA"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Betalte ${ DRIVE_SHORT_APP_NAME }-, ${ VPN_SHORT_APP_NAME }- og ${ PASS_SHORT_APP_NAME }-funksjoner"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Inkluderer versjonshistorikk i ${ DRIVE_SHORT_APP_NAME }, tilgang til tusener av høyhastighets ${ VPN_SHORT_APP_NAME }-tjenere, deling i ${ PASS_SHORT_APP_NAME } og mer."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 brukere"
+      ],
+      "Early access to new apps and features": [
+        "Tidlig tilgang til nye apper og funksjoner"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Tidlig tilgang til ${ MAIL_APP_NAME }-skrivebordsappen"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Betalte ${ MAIL_SHORT_APP_NAME }- og ${ CALENDAR_APP_NAME }-funksjoner"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } kan ikke koble til den eksterne kontoen"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også sjekke vår ${ statusPageLink }"
       ],
@@ -4070,6 +4104,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Prøv å bruke bare bokstaver, tall og _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Uventet feil, vi kan ikke importere kontaktene"
       ],
       "Unknown error": [
         "Ukjent feil"
@@ -6457,6 +6494,9 @@
       "for choosing ${ product }": [
         "for at du velger ${ product }"
       ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "For medlemmer av organisasjoner som bruker enkel pålogging (SAML SSO)"
+      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Videresend innkommende e-post fra en annen konto til din sikre ${ MAIL_APP_NAME }-innboks."
       ],
@@ -7915,6 +7955,9 @@
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Ditt organisasjonspassord kan deles med andre brukere du ønsker å gi administrative rettigheter. Det er også en kode for å få tilgang til organisasjonen din i tilfelle du mister tilgang til kontoen din. Vennligst lagre dette passordet og oppbevar det trygt."
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Organisasjonen bruker enkel pålogging (SSO). Trykk på 'logg på' for å fortsette med SSO-leverandøren."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Organisasjonens e-post er beskyttet med ende-til-ende kryptering ved hjelp av organisasjonsnøkkelen. Dette fingeravtrykket kan brukes til å bekrefte at alle administratorer i kontoen din har samme nøkkel."
@@ -10384,17 +10427,6 @@
         "Teamledelse"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ellers blir tilgangen til kontoen din begrenset, og kontoen din vil til slutt bli deaktivert."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "For å fortsette å bruke ${ MAIL_APP_NAME } med premiumfunksjoner, velg abonnements- og betalingsalternativer."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Prøveversjonen utløper ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutter på ${ last4 }"
@@ -10488,6 +10520,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du får en kampanjepris på det nåværende abonnementet ditt. Hvis du nedgraderer kontoen vil du miste kampanjeprisen og den vil ikke være tilgjengelig hvis du forsøker å abonnere igjen."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ellers blir tilgangen til kontoen din begrenset, og kontoen din vil til slutt bli deaktivert."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "For å fortsette å bruke ${ MAIL_APP_NAME } med premiumfunksjoner, velg abonnements- og betalingsalternativer."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Prøveversjonen utløper ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
