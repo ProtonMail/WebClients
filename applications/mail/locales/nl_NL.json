@@ -570,7 +570,7 @@
         "Labels beheeren"
       ],
       "Manage Snooze": [
-        "Dempen beheren"
+        "Snoozen beheren"
       ],
       "Mark as read": [
         "Markeer als gelezen"
@@ -996,7 +996,7 @@
         "Verificatie overslaan"
       ],
       "Snooze": [
-        "Uitstellen"
+        "Snoozen"
       ],
       "Some images could not be loaded with tracker protection.": [
         "Sommige afbeeldingen konden niet geladen worden met bescherming tegen tracking."
@@ -1084,7 +1084,7 @@
         "Ongenummerde lijst"
       ],
       "Unsnooze": [
-        "Ontdempen"
+        "Unsnoozen"
       ],
       "Unstar": [
         "Ster verwijderen"
@@ -3063,7 +3063,7 @@
         "Ontgrendel aangepaste berichten inplannen en andere voordelen als u uw abonnement upgrade."
       ],
       "Unlock custom snooze times when you upgrade your plan.": [
-        "Toegang krijgen tot aangepaste demptijden als u uw abonnement upgrade"
+        "Toegang krijgen tot aangepaste snooztijden als u uw abonnement upgradet."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Krijg onbeperkt filters die uw postvak voor u sorteren en andere premiumfuncties als u upgrade."
@@ -5734,16 +5734,16 @@
         "SimpleLogin biedt een eenvoudige manier om in te loggen op niet-vertrouwde sites van derden waar u uw eigenlijke e-mailadres niet wilt prijsgeven."
       ],
       "Snoozed until  ${ dateString } at ${ formattedTime }": [
-        "Gedempt tot ${ dateString } om ${ formattedTime }"
+        "Gesnoozed tot ${ dateString } om ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
-        "Gedempt tot vandaag, ${ formattedTime }"
+        "Gesnoozed tot vandaag, ${ formattedTime }"
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
-        "Gedempt tot morgen, ${ formattedTime }"
+        "Gesnoozed tot morgen, ${ formattedTime }"
       ],
       "Snoozing this conversation will be cancelled.": [
-        "Dit gesprek dempen wordt geannuleerd"
+        "Dit gesprek uitstellen wordt geannuleerd"
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Sorry, dit bericht bestaat niet of is al verlopen."
@@ -7043,9 +7043,6 @@
       ]
     },
     "Link": {
-      "${ DRIVE_APP_NAME } Windows app": [
-        "${ DRIVE_APP_NAME } Windows-app"
-      ],
       "All mail": [
         "Alle e-mail"
       ],
@@ -7142,9 +7139,6 @@
       "Scheduled": [
         "Gepland"
       ],
-      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
-        "Synchroniseer naadloos bestanden en mappen tussen uw computer en ${ DRIVE_APP_NAME }."
-      ],
       "Sent": [
         "Verzonden"
       ],
@@ -7155,10 +7149,10 @@
         "Gratis inschrijven"
       ],
       "Snooze": [
-        "Uitstellen"
+        "Snoozen"
       ],
       "Snoozed": [
-        "Uitgesteld"
+        "Gesnoozed"
       ],
       "Spam": [
         "Spam"
@@ -7505,7 +7499,7 @@
         "Aangepaste e-maildomeinen"
       ],
       "Custom snooze time": [
-        "Aangepaste demptijd"
+        "Aangepaste snooztijd"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliassen"
@@ -7534,7 +7528,7 @@
         "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
-        "Berichten dempen en ontvangen wanneer u wilt"
+        "Berichten snoozen en ontvangen wanneer u wil"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
@@ -7970,6 +7964,9 @@
       "No results found": [
         "Geen resultaten"
       ],
+      "No snoozed messages": [
+        "Geen gesnoozede berichten"
+      ],
       "No unread messages found": [
         "Geen ongelezen berichten gevonden"
       ]
@@ -8253,6 +8250,11 @@
         "Ondertekenen"
       ]
     },
+    "Snooze message": {
+      "Snooze Message": [
+        "Bericht snoozen"
+      ]
+    },
     "Sort option": {
       "Largest first": [
         "Grootste eerst"
@@ -8487,10 +8489,10 @@
         "Zoeken werd zonet slimmer en sneller"
       ],
       "Set when an email should reappear in your inbox with the new snooze feature.": [
-        "Stel in wanneer een e-mail weer moet verschijnen in uw inbox met de nieuwe dempfunctie."
+        "Stel in wanneer een e-mail weer moet verschijnen in uw inbox met de nieuwe snoozefunctie."
       ],
       "Snooze it for later": [
-        "Dempen voor later"
+        "Snoozen voor later"
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "Spam en Ongewenste e-mail worden nu automatisch uitgesloten van All Mail. ${ settingsLink }"
@@ -8591,8 +8593,12 @@
         "${ elementsCount } gesprekken verwijderd van ${ labelName }."
       ],
       "${ elementsCount } conversation snoozed": [
-        "${ elementsCount } gesprek gedempt",
-        "${ elementsCount } gesprekken gedempt"
+        "${ elementsCount } gesprek gesnoozed",
+        "${ elementsCount } gesprekken gesnoozed"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } gesprek geünsnoozed",
+        "${ elementsCount } gesprekken geünsnoozed"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } bericht toegevoegd aan ${ labelName }.",
@@ -9266,7 +9272,7 @@
         "Een gepland bericht verplaatsen"
       ],
       "Moving a snoozed message": [
-        "Een gedempt bericht verplaatsen"
+        "Een gesnoozed bericht verplaatsen"
       ],
       "New message": [
         "Nieuw bericht"
@@ -9410,10 +9416,10 @@
         "Uitloggen"
       ],
       "Snooze": [
-        "Uitstellen"
+        "Snoozen"
       ],
       "Snooze message": [
-        "Bericht dempen"
+        "Bericht snoozen"
       ],
       "Sort conversations": [
         "Gesprekken sorteren"
@@ -9462,7 +9468,7 @@
         "Verificatiefout"
       ],
       "Want to snooze any time?": [
-        "Voor enige tijd dempen?"
+        "Voor enige tijd snoozen?"
       ],
       "Warning": [
         "Waarschuwing"

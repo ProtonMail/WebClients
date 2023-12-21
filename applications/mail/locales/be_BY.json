@@ -1418,6 +1418,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Абыходзьце блакіроўкі і цэнзуру ў сваёй краіне з дапамогай нашай глабальнай сеткі сервераў."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Уключае падтрымку для ${ domains } карыстальніцкага дамена электроннай пошты, ${ addresses } адраса электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі.",
+        "Уключае падтрымку для ${ domains } карыстальніцкіх даменаў электроннай пошты, ${ addresses } адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі.",
+        "Уключае падтрымку для ${ domains } карыстальніцкіх даменаў электроннай пошты, ${ addresses } адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі.",
+        "Уключае падтрымку для ${ domains } карыстальніцкіх даменаў электроннай пошты, ${ addresses } адрасоў электроннай пошты, неабмежаваную колькасць псеўданімаў hide-my-email, абагульванне календара і іншыя функцыі."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Уключае падтрымку 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў hide-my-email, абагуленне календара і іншыя функцыі."
       ],
@@ -3275,7 +3281,37 @@
         "Назва файла з зашыфраванымі загалоўкамі"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Платныя функцыі ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } і ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Уключае гісторыю версій у ${ DRIVE_SHORT_APP_NAME }, доступ да тысяч высакахуткасных сервераў ${ VPN_SHORT_APP_NAME }, абагуленне ў ${ PASS_SHORT_APP_NAME } і іншыя функцыі."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 ТБ"
+      ],
+      "6 users": [
+        "6 карыстальнікаў"
+      ],
+      "Early access to new apps and features": [
+        "Ранні доступ да новых праграм і функцый"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Ранні доступ для настольнай праграмы ${ MAIL_APP_NAME }"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Платныя функцыі ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_APP_NAME }"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } не можа падключыцца да вашага знешняга ўліковага запісу"
+      ],
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } для <${ email }>. Вы можаце дадаць іншы ключ або адключыць шыфраванне для гэтага кантакту, каб вырашыць праблему."
       ],
@@ -3665,6 +3701,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Нечаканая памылка. Немагчыма імпартаваць кантакты."
       ],
       "Unknown error": [
         "Невядомая памылка"
@@ -7295,9 +7334,6 @@
       ]
     },
     "Link": {
-      "${ DRIVE_APP_NAME } Windows app": [
-        "Праграма для Windows ${ DRIVE_APP_NAME }"
-      ],
       "All mail": [
         "Уся пошта"
       ],
@@ -7393,9 +7429,6 @@
       ],
       "Scheduled": [
         "Запланавана"
-      ],
-      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
-        "Бесперабойная сінхранізацыя файлаў і папак паміж вашым камп'ютарам і ${ DRIVE_APP_NAME }."
       ],
       "Sent": [
         "Адпраўленыя"

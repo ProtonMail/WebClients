@@ -3275,7 +3275,37 @@
         "Zaszyfrowane nagłówki nazwy pliku"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Płatne funkcje ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Zawiera historię wersji w ${ DRIVE_SHORT_APP_NAME }, dostęp do tysięcy szybkich serwerów ${ VPN_SHORT_APP_NAME }, udostępnianie w ${ PASS_SHORT_APP_NAME } i wiele więcej."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 użytkowników"
+      ],
+      "Early access to new apps and features": [
+        "Wcześniejszy dostęp do nowych aplikacji i funkcji"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Wcześniejszy dostęp do aplikacji desktopowej ${ MAIL_APP_NAME }"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Płatne funkcje ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_APP_NAME }"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } nie może połączyć się z kontem zewnętrznym"
+      ],
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } dla adresu <${ email }>. Aby rozwiązać problem, możesz dodać inny klucz lub wyłączyć szyfrowanie dla tego kontaktu."
       ],
@@ -3343,7 +3373,7 @@
         "Nie można włączyć wyszukiwania zawartości w tej przeglądarce. Wyjdź z trybu prywatnego przeglądarki lub spróbuj użyć innej."
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
-        "Wyszukiwanie zawartości nie może zostać włączone. Uruchom ponownie aplikację lub wyczyść jej dane."
+        "Wyszukiwanie zawartości nie może zostać włączone. Uruchom ponownie aplikację lub wyczyść zapytanie."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Błąd odszyfrowywania: odszyfrowanie tej wiadomości nie powiodło się."
@@ -3665,6 +3695,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Użyj tylko liter, cyfr i znaków _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Wystąpił nieoczekiwany błąd. Nie możemy zaimportować kontaktów"
       ],
       "Unknown error": [
         "Wystąpił nieznany błąd"
@@ -7295,9 +7328,6 @@
       ]
     },
     "Link": {
-      "${ DRIVE_APP_NAME } Windows app": [
-        "Aplikacja ${ DRIVE_APP_NAME } na Windowsa"
-      ],
       "All mail": [
         "Wszystkie wiadomości"
       ],
@@ -7393,9 +7423,6 @@
       ],
       "Scheduled": [
         "Zaplanowane"
-      ],
-      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
-        "Synchronizuj pliki oraz foldery między urządzeniem i ${ DRIVE_APP_NAME }."
       ],
       "Sent": [
         "Wysłane"
