@@ -101,6 +101,9 @@
       "Copy address": [
         "Копировать адрес"
       ],
+      "Copy key to the clipboard": [
+        "Копирование ключа в буфер обмена"
+      ],
       "Create": [
         "Создать"
       ],
@@ -208,6 +211,12 @@
       ],
       "Get a new encrypted email address": [
         "Получите новый адрес зашифрованной электронной почты"
+      ],
+      "Get in touch": [
+        "Связаться с нами"
+      ],
+      "Get more": [
+        "Get more"
       ],
       "Get more addresses": [
         "Получить больше адресов"
@@ -1861,6 +1870,11 @@
         "Двухфакторная аутентификация"
       ]
     },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 ТБ"
+      ]
+    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можете также проверить нашу ${ statusPageLink }"
@@ -2432,6 +2446,9 @@
       "Add a name to identify your security key with.": [
         "Добавьте имя для идентификации ключа безопасности."
       ],
+      "Allow platform keys": [
+        "Разрешить платформенные ключи"
+      ],
       "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
         "Позволяет регистрировать встроенные ключи безопасности (например, Windows Hello, Face ID, Touch ID или внутренние TPM)."
       ],
@@ -2642,6 +2659,9 @@
       ],
       "Server": [
         "Сервер"
+      ],
+      "Server load": [
+        "Нагрузка сервера"
       ],
       "Servers": [
         "Серверы"
@@ -3336,6 +3356,9 @@
       "Session timed out": [
         "Время сеанса истекло"
       ],
+      "Setting up your organization": [
+        "Настройка вашей организации"
+      ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Войдите в ${ MAIL_APP_NAME }, чтобы активировать свой адрес"
       ],
@@ -3801,6 +3824,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Вы можете добавить способ оплаты, чтобы ваша подписка обновилась автоматически. Другие способы оплаты также доступны."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Введите имя и адрес для себя или своей организации. Эти данные будут добавлены в личные и организационные счета-фактуры."
       ]
     },
     "Info subscription": {
@@ -4284,6 +4312,9 @@
       "${ BRAND_NAME } for Business newsletter": [
         "Рассылка ${ BRAND_NAME } for Business"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "Важные оповещения ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } newsletter": [
         "Рассылка ${ BRAND_NAME }"
       ],
@@ -4329,6 +4360,9 @@
       "Add a gift code": [
         "Добавить подарочный код"
       ],
+      "Add gift code": [
+        "Добавить подарочный код"
+      ],
       "clearing your browser cache": [
         "очистка кеша браузера"
       ],
@@ -4367,6 +4401,9 @@
       ],
       "Pay invoice": [
         "Оплатить счёт"
+      ],
+      "Paypal without credit card": [
+        "Paypal без кредитной карты"
       ],
       "Privacy policy": [
         "Политика конфиденциальности"
@@ -4855,6 +4892,12 @@
       "Send & receive invitations": [
         "Отправляйте и получайте приглашения"
       ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Серверы в более чем в ${ vpnServersCountData.paid.countries } стране",
+        "Серверы в более чем в ${ vpnServersCountData.paid.countries } странах",
+        "Серверы в более чем в ${ vpnServersCountData.paid.countries } странах",
+        "Серверы в более чем в ${ vpnServersCountData.paid.countries } странах"
+      ],
       "Share files and folders via link": [
         "Обменивайтесь файлами и папками по ссылке"
       ],
@@ -4984,6 +5027,9 @@
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Комплексная конфиденциальность и безопасность со всеми услугами ${ BRAND_NAME } вместе взятыми."
       ],
+      "Early access to new apps and features": [
+        "Early access to new apps and features"
+      ],
       "For next-level password management and identity protection.": [
         "Для нового уровня управления паролями и защиты личных данных."
       ],
@@ -5066,6 +5112,9 @@
       ]
     },
     "new_plans: signup": {
+      "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
+        "Нажимая на кнопку \"Оплатить\", вы соглашаетесь с нашими ${ termsAndConditions }."
+      ],
       "terms and conditions": [
         "условия"
       ]
@@ -5135,6 +5184,9 @@
         "Создайте до ${ n } календарей или добавляйте календари друзей, семьи, коллег и организаций",
         "Создайте до ${ n } календарей или добавляйте календари друзей, семьи, коллег и организаций"
       ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Создайте до ${ n } адресов электронной почты или псевдонимов, которые можно назначить членам семьи. Используйте их для идентификации в Интернете, например JohnShopper@${ domain } для аккаунтов для покупок."
+      ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
         "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа"
       ],
@@ -5168,6 +5220,9 @@
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
         "Хранилище — это удобный способ хранения элементов, как папка. Возможность делиться хранилищами с друзьями и семьей пока в разработке."
       ],
+      "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
+        "Защитите ресурсы вашей компании от публичного Интернета и сделайте их доступными только через ваши личные шлюзы."
+      ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Управляйте своей подпиской, включая настройку вашего тарифа. Принимаются следующие способы оплаты: кредитная карта, PayPal, криптовалюта и банковский перевод."
       ],
@@ -5188,6 +5243,9 @@
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Жесткие диски наших серверов полностью зашифрованы с помощью нескольких уровней паролей, поэтому ваши данные будут защищены даже в случае взлома нашего оборудования"
+      ],
+      "Password management and identity protection": [
+        "Управление паролями и защита личных данных"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Персонализируйте свою подпись электронной почты с помощью логотипов, изображений, значков социальных сетей, ссылок на контактную информацию и т. д."
@@ -5290,6 +5348,9 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Добавьте больше индивидуальности с помощью 15 адресов электронной почты и поддержки 3 пользовательских доменов электронной почты"
       ],
+      "AES 256-bit VPN encryption": [
+        "Шифрование VPN AES 256-бит"
+      ],
       "Auto-connect": [
         "Автоматическое подключение"
       ],
@@ -5317,11 +5378,23 @@
         "Создайте до ${ n } календарей",
         "Создайте до ${ n } календарей"
       ],
+      "Dedicated Account manager": [
+        "Выделенный менеджер аккаунтов"
+      ],
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Расположение выделенных серверов в более чем ${ numberOfCountries } странах"
+      ],
+      "Dedicated server locations in North America and Europe": [
+        "Выделенные серверы в Северной Америке и Европе"
+      ],
       "Multi-platform support": [
         "Мультиплатформенная поддержка"
       ],
       "Private gateways": [
         "Частные шлюзы"
+      ],
+      "Require 2FA": [
+        "Требуется двухфакторная аутентификация"
       ]
     },
     "Notification": {
@@ -5454,6 +5527,12 @@
       "Creating your account": [
         "Создание вашего аккаунта"
       ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Всего за **${ relativePrice } в месяц** вы получаете доступ к платному менеджеру паролей от ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Всего за на **${ relativePrice } в месяц** больше вы получаете доступ к платной службе ${ BRAND_NAME } VPN!"
+      ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Всего дополнительно за **${ relativePrice } в месяц**, вы получаете доступ ко всем премиальным сервисам ${ BRAND_NAME }!"
       ],
@@ -5555,6 +5634,14 @@
       ],
       "Select a reason": [
         "Выберите причину"
+      ]
+    },
+    "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "${ contactHref } нашим Отделом продаж."
+      ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "Выберите количество адресов IP, которые необходимо включить в ваш тариф. Каждый дополнительный IP стоит ${ price }."
       ]
     },
     "plan customizer, users": {
@@ -5659,6 +5746,9 @@
       "Changing organization password": [
         "Изменение пароля организации"
       ],
+      "Creating or accessing non-private users": [
+        "Создание или доступ к неприватным пользователям"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "По причине смены пароля ваши полномочия администратора организации были ограничены. Указанные действия более не разрешены:"
       ]
@@ -5666,6 +5756,9 @@
     "Role": {
       "Admin": [
         "Администратор"
+      ],
+      "Primary admin": [
+        "Основной администратор"
       ],
       "User": [
         "Пользователь"
@@ -5719,6 +5812,9 @@
         "${ timeRemaining.inHours } часов",
         "${ timeRemaining.inHours } часа"
       ],
+      "Didn’t make this request?": [
+        "Вы не делали этот запрос?"
+      ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Если вы не просили сбросить пароль, отмените этот запрос сейчас."
       ],
@@ -5736,6 +5832,9 @@
       ],
       "You can now reset your password": [
         "Теперь вы можете сбросить свой пароль"
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "Вы можете сбросить свой пароль до ${ boldDate }."
       ]
     },
     "session_recovery:available:link": {
@@ -5784,11 +5883,17 @@
         "ещё ${ gracePeriodHoursRemaining } часов",
         "ещё ${ gracePeriodHoursRemaining } часа"
       ],
+      "Didn’t make this request?": [
+        "Вы не делали этот запрос?"
+      ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Если вы не просили сбросить пароль, отмените этот запрос сейчас."
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Если вы не просили сбросить пароль, отмените этот запрос сейчас."
+      ],
+      "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
+        "Сброс пароля доступен с ${ boldDate }. Это даст вам время отменить все мошеннические запросы."
       ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
         "Запрошен сброс пароля (${ user.Email }). Вы сможете изменить свой пароль через ${ hoursRemaining } час.",
@@ -5798,6 +5903,12 @@
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Мы получили запрос на сброс пароля для ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Вы можете изменить свой пароль через ${ gracePeriodHoursRemaining } час",
+        "Вы можете изменить свой пароль через ${ gracePeriodHoursRemaining } часа",
+        "Вы можете изменить свой пароль через ${ gracePeriodHoursRemaining } часа",
+        "Вы можете изменить свой пароль через ${ gracePeriodHoursRemaining } часов"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -5813,9 +5924,21 @@
     "session_recovery:initiation:action": {
       "Got it": [
         "Применить"
+      ],
+      "Request password reset": [
+        "Запросить сброс пароля"
+      ],
+      "Use recovery method": [
+        "Использовать метод восстановления"
       ]
     },
     "session_recovery:initiation:info": {
+      "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
+        "Если у вас настроен **метод восстановления**, попробуйте вместо этого восстановить аккаунт. Это позволит вам сразу же изменить пароль."
+      ],
+      "We will contact you again when the password reset is available.": [
+        "Мы свяжемся с вами, когда будет доступен сброс пароля."
+      ],
       "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
         "Проверить статус запроса можно в любой момент в разделе ${ accountAndPasswordSectionLink } настроек."
       ]
@@ -5823,6 +5946,16 @@
     "session_recovery:initiation:link": {
       "account and password section": [
         "раздел учетных записей и паролей"
+      ]
+    },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "Сброс пароля подтвержден"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "Запросить сброс пароля?"
       ]
     },
     "session_recovery:sign_out:info": {
@@ -5833,12 +5966,22 @@
         "${ gracePeriodHoursRemaining } часа"
       ]
     },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Сбросить пароль"
+      ]
+    },
     "session_recovery:status:info": {
       "Available": [
         "Доступно"
       ],
       "Pending": [
         "В ожидании"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "Изменение пароля запрошено"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -6486,6 +6629,9 @@
       "Email": [
         "Электронная почта"
       ],
+      "Email address": [
+        "Адрес электронной почты"
+      ],
       "Email addresses": [
         "Адреса электронной почты"
       ],
@@ -6494,6 +6640,9 @@
       ],
       "Password": [
         "Пароль"
+      ],
+      "Role": [
+        "Должность"
       ],
       "Status": [
         "Статус"
@@ -6675,6 +6824,12 @@
       ],
       "Delete account": [
         "Удалить аккаунт"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Удалить сервер ( у вас будет возможность восстановить его в течение ${ days } дня)",
+        "Удалить сервер ( у вас будет возможность восстановить его в течение ${ days } дней)",
+        "Удалить сервер ( у вас будет возможность восстановить его в течение ${ days } дней)",
+        "Удалить сервер ( у вас будет возможность восстановить его в течение ${ days } дней)"
       ],
       "Delete user": [
         "Удалить пользователя"
@@ -7046,6 +7201,9 @@
       ]
     },
     "Tooltip": {
+      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
+        "Администраторы могут вносить изменения в вашу подписку, управлять аккаунтами и паролями пользователей, а также предоставлять права администратора другим пользователям."
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Автоматически переключаться между вашими предпочтительными темами для дня и ночи синхронно с системными дневным и ночным режимами."
       ],
@@ -7103,6 +7261,16 @@
       ],
       "Primary admin": [
         "Основной администратор"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "Пользователь SSO, предоставленный вашим поставщиком идентификационных данных"
       ]
     },
     "Validation": {
