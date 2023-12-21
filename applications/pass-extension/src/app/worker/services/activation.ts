@@ -101,6 +101,8 @@ export const createActivationService = () => {
         void setupUpdateAlarm();
 
         if (details.reason === 'update') {
+            await ctx.service.apiProxy.clear?.();
+
             if (ENV === 'production') {
                 /* in production clear the cache on each extension
                  * update in case the state/snapshot data-structure
