@@ -245,6 +245,9 @@
       "Copy address": [
         "Копировать адрес"
       ],
+      "Copy key to the clipboard": [
+        "Копирование ключа в буфер обмена"
+      ],
       "Copy link": [
         "Копировать ссылку"
       ],
@@ -457,6 +460,12 @@
       ],
       "Get a new encrypted email address": [
         "Получите новый адрес зашифрованной электронной почты"
+      ],
+      "Get in touch": [
+        "Связаться с нами"
+      ],
+      "Get more": [
+        "Get more"
       ],
       "Get more addresses": [
         "Получить больше адресов"
@@ -962,6 +971,9 @@
       "Upgrade now": [
         "Улучшить сейчас"
       ],
+      "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
+        "Улучшение, чтобы включить ${ PROTON_SENTINEL_NAME }"
+      ],
       "Upgrade your plan": [
         "Улучшить тариф"
       ],
@@ -1171,6 +1183,12 @@
       ],
       "Get unlimited aliases!": [
         "Получить неограниченное число псевдонимов!"
+      ],
+      "Try ${ PASS_APP_NAME }": [
+        "Попробуйте ${ PASS_APP_NAME }"
+      ],
+      "With ${ PASS_APP_NAME } you can generate unique aliases to hide your identity and forward emails to your main inbox.": [
+        "С ${ PASS_APP_NAME } вы можете создавать уникальные псевдонимы, чтобы скрыть свои личные данные и пересылать электронные письма в основной почтовый ящик."
       ]
     },
     "Alter": {
@@ -3099,8 +3117,20 @@
       "Back to ${ signIn }.": [
         "Обратно к ${ signIn }."
       ],
+      "Didn't create an account?": [
+        "Не создали аккаунт?"
+      ],
+      "I didn't create this account": [
+        "Я не создавал этот аккаунт"
+      ],
+      "sign in": [
+        "войти"
+      ],
       "Thanks for letting us know": [
         "Спасибо, что уведомили нас."
+      ],
+      "This is usually nothing to worry about. Just click below to confirm that this ${ BRAND_NAME } Account isn't yours, and we'll disable it.": [
+        "Обычно это не то, о чем стоит беспокоиться. Просто нажмите ниже, чтобы подтвердить, что этот аккаунт ${ BRAND_NAME } не ваш, и мы отключим его."
       ],
       "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
         "Мы заметили, что этот аккаунт не принадлежит вам. Мы проведем расследование и примем соответствующие меры."
@@ -3126,11 +3156,20 @@
       "${ name } deletion failed": [
         "Удаление ${ name } не удалось"
       ],
+      "${ name } failed to move to allow list": [
+        "${ name } не удалось переместить в черный список"
+      ],
       "${ name } failed to move to block list": [
         "Не удалось переместить ${ name } в список блокируемых"
       ],
       "${ name } failed to move to spam list": [
         "Не удалось переместить ${ name } в список спама"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } перемещен(а) в черный список"
+      ],
+      "${ name } moved to block list": [
+        "${ name } перемещен(а) в черный список"
       ],
       "${ name } moved to spam list": [
         "${ name } перемещён в список спама"
@@ -3256,11 +3295,20 @@
       "${ name } deletion failed": [
         "Удаление ${ name } не удалось"
       ],
+      "${ name } failed to move to allow list": [
+        "${ name } не удалось переместить в белый список"
+      ],
       "${ name } failed to move to block list": [
         "Не удалось переместить ${ name } в список блокируемых"
       ],
       "${ name } failed to move to spam list": [
         "Не удалось переместить ${ name } в список спама"
+      ],
+      "${ name } moved to allow list": [
+        "${ name } перемещен(а) в черный список"
+      ],
+      "${ name } moved to block list": [
+        "${ name } перемещен(а) в черный список"
       ],
       "${ name } moved to spam list": [
         "${ name } перемещён в список спама"
@@ -3335,6 +3383,9 @@
       "Delete": [
         "Удалить"
       ],
+      "Delete this condition": [
+        "Удалите это условие"
+      ],
       "Edit conditions": [
         "Редактировать условия"
       ],
@@ -3349,6 +3400,9 @@
       ],
       "Re-send confirmation email": [
         "Повторно отправить письмо с подтверждением"
+      ],
+      "Remove “${ value }”": [
+        "Удалить ${ value }"
       ],
       "Request confirmation": [
         "Запросить подтверждение"
@@ -3366,9 +3420,27 @@
         "Настройка пересылки писем"
       ]
     },
+    "email_forwarding_2023: Description": {
+      "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
+        "Разблокируйте переадресацию электронной почты, чтобы легко управлять входящей информацией, и другие платные функции после улучшения."
+      ]
+    },
     "email_forwarding_2023: Error": {
+      "Condition incomplete, please add a token": [
+        "Состояние неполное, добавьте токен"
+      ],
       "Token already exists": [
         "Токен уже существует"
+      ]
+    },
+    "email_forwarding_2023: Error message, recovery": {
+      "Please try opening the link again.": [
+        "Попробуйте открыть ссылку снова."
+      ]
+    },
+    "email_forwarding_2023: Forwarding tooltip": {
+      "Emails forwarded to you are excluded and will not be forwarded.": [
+        "Письма, направленные вам, исключаются и не пересылаются."
       ]
     },
     "email_forwarding_2023: Header": {
@@ -3377,6 +3449,9 @@
       ],
       "From": [
         "От"
+      ],
+      "Status": [
+        "Состояние"
       ],
       "To": [
         "До"
@@ -3388,13 +3463,52 @@
       ]
     },
     "email_forwarding_2023: Info": {
+      "A confirmation email will be sent to ${ boldForwardeeEmail }": [
+        "Письмо с подтверждением будет отослано на ${ boldForwardeeEmail }"
+      ],
+      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "Для ${ boldForwarderEmail } будет сгенерирован новый ключ шифрования."
+      ],
+      "Automatically forward emails to another email address.": [
+        "Автоматическая пересылка электронных писем на другой адрес электронной почты."
+      ],
+      "Forwardee is invited and needs to accept/reject the invitation or update": [
+        "Получатель приглашен и должен принять или отклонить приглашение, либо же обновить его"
+      ],
+      "Forwarding is active": [
+        "Переадресация активна"
+      ],
+      "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
+        "Переадресация на адрес без сквозного шифрования отключит сквозное шифрование для вашего адреса ${ boldForwarderEmail }, но шифрование с нулевым доступом останется включенным. ${ learnMoreLink }"
+      ],
+      "Forwarding to this address will become active once the recipient accepts the forwarding.": [
+        "Переадресация на этот адрес станет активной, как только получатель примет переадресацию."
+      ],
+      "No incoming forwarding rules": [
+        "Правил пересылки входящих сообщений нет"
+      ],
+      "No outgoing forwarding rules": [
+        "Правил пересылки исходящих сообщений нет"
+      ],
+      "Please update your forwarding keys": [
+        "Обновите ключи переадресации"
+      ],
+      "The forwarding is temporarily paused": [
+        "The forwarding is temporarily paused"
+      ],
       "You can safely close this tab.": [
         "Вы можете безопасно закрыть эту вкладку."
+      ],
+      "You won't receive emails forwarded automatically from ${ boldForwarderEmail }.": [
+        "Вы не будете получать письма, пересылаемые автоматически с ${ boldForwarderEmail }."
       ]
     },
     "email_forwarding_2023: Label": {
       "And": [
         "И"
+      ],
+      "Forward from": [
+        "Переслать с"
       ],
       "Forward to": [
         "Переслать на"
@@ -3431,21 +3545,74 @@
       ],
       "Type text or keyword": [
         "Введите текст или ключевое слово"
+      ],
+      "Type text or keyword for this condition:": [
+        "Введите текст или ключевое слово для этого условия:"
+      ]
+    },
+    "email_forwarding_2023: Prompt": {
+      "End-to-end encryption will be re-enabled for the sender address.": [
+        "Для адреса отправителя будет вновь включено сквозное шифрование."
+      ],
+      "Forwarding to the destination address will end.": [
+        "Переадресация на адрес назначения будет завершена."
       ]
     },
     "email_forwarding_2023: Status": {
+      "Active": [
+        "Активный"
+      ],
       "Declined": [
         "Отклонено"
+      ],
+      "Outdated": [
+        "Устаревший"
+      ],
+      "Paused": [
+        "Приостановлено"
       ]
     },
     "email_forwarding_2023: Success": {
+      "A new encryption key has been generated for ${ forwarderEmail }.": [
+        "Для ${ forwarderEmail } был сгенерирован новый ключ шифрования."
+      ],
       "Changes saved": [
         "Изменения сохранены"
+      ],
+      "Email sent to ${ forward.ForwardeeEmail }": [
+        "Электронная почта отосланная на ${ forward.ForwardeeEmail }"
+      ],
+      "Email sent to ${ model.forwardeeEmail }.": [
+        "Электронное письмо отправлено на ${ model.forwardeeEmail }"
+      ],
+      "Forwarding accepted": [
+        "Пересылка принята"
+      ],
+      "Forwarding declined": [
+        "Пересылка отклонена"
+      ],
+      "Forwarding deleted": [
+        "Пересылка удалена"
+      ],
+      "Forwarding paused": [
+        "Перемещение приостановлено"
+      ],
+      "Forwarding resumed": [
+        "Перемещение возобновлено"
       ]
     },
     "email_forwarding_2023: Title": {
+      "Automatically forward emails to other accounts": [
+        "Автоматическая пересылка электронных писем на другие аккаунты"
+      ],
       "Delete forwarding?": [
         "Удалить пересылку?"
+      ],
+      "Email forwarding deactivated": [
+        "Переадресация электронных писем отключена"
+      ],
+      "Forwarding activated": [
+        "Переадресация активирована"
       ],
       "Request confirmation": [
         "Запросить подтверждение"
@@ -3462,6 +3629,11 @@
     "Enabled 2FA": {
       "2FA": [
         "Двухфакторная аутентификация"
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 ТБ"
       ]
     },
     "Error": {
@@ -4156,6 +4328,11 @@
         "Мы не смогли загрузить эту страницу. Пожалуйста, обновите страницу или проверьте подключение к Интернету."
       ]
     },
+    "Error message, Disable account": {
+      "There was a problem disabling your account.": [
+        "Возникла проблема с отключением вашего аккаунта."
+      ]
+    },
     "Error message, recovery": {
       "Contact ${ BRAND_NAME }": [
         "Связаться с ${ BRAND_NAME }"
@@ -4659,6 +4836,9 @@
       "Add a name to identify your security key with.": [
         "Добавьте имя для идентификации ключа безопасности."
       ],
+      "Allow platform keys": [
+        "Разрешить платформенные ключи"
+      ],
       "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
         "Позволяет регистрировать встроенные ключи безопасности (например, Windows Hello, Face ID, Touch ID или внутренние TPM)."
       ],
@@ -4856,6 +5036,9 @@
       "Take control over what lands in your inbox by creating the following lists:": [
         "Получите контроль над тем, что попадает в ваши входящие, создав следующие списки:"
       ],
+      "Take control over what lands in your organization members' inboxes by creating the following lists:": [
+        "Возьмите под контроль то, что попадает в почтовые ящики членов вашей организации, создав следующие списки:"
+      ],
       "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
         "Эти списки применяются ко всем аккаунтам в вашей организации. Пользователи могут создавать собственные индивидуальные фильтры, но не смогут переопределить заблокированные вами адреса или домены."
       ],
@@ -4934,17 +5117,32 @@
       "${ MAIL_APP_NAME } app": [
         "приложение ${ MAIL_APP_NAME }"
       ],
+      "account logins": [
+        "имена пользователей аккаунта"
+      ],
       "Auto-forward Gmail": [
         "Автоматическая пересылка Gmail"
       ],
+      "auto-forwarding": [
+        "автопереадресация"
+      ],
       "Change ${ strongText } to your ${ BRAND_NAME } address": [
         "Измените ${ strongText } на ваш адрес ${ BRAND_NAME }."
+      ],
+      "Discover privacy features": [
+        "Откройте для себя функции конфиденциальности"
+      ],
+      "Get the ${ strongText } on Android or iOS": [
+        "Получить ${ strongText } на Android или iOS"
       ],
       "Get the App": [
         "Скачать приложение"
       ],
       "privacy features": [
         "функции конфиденциальности"
+      ],
+      "Set up ${ strongText } from Gmail": [
+        "Настроить из ${ strongText } из Gmail"
       ],
       "This feature is currently unavailable": [
         "Эта функция временно недоступна"
@@ -4995,6 +5193,12 @@
       "Access": [
         "Доступ"
       ],
+      "Action": [
+        "Действие"
+      ],
+      "Actions": [
+        "Действия"
+      ],
       "App version": [
         "Версия приложения"
       ],
@@ -5016,6 +5220,9 @@
       "Event": [
         "Событие"
       ],
+      "Folders": [
+        "Папки"
+      ],
       "Key type": [
         "Тип ключа"
       ],
@@ -5031,6 +5238,9 @@
       "Name": [
         "Название"
       ],
+      "Notifications": [
+        "Уведомления"
+      ],
       "Organization key fingerprint": [
         "Отпечаток ключа организации"
       ],
@@ -5045,6 +5255,9 @@
       ],
       "Server": [
         "Сервер"
+      ],
+      "Server load": [
+        "Нагрузка сервера"
       ],
       "Servers": [
         "Серверы"
@@ -6886,6 +7099,9 @@
       "Set recovery phrase": [
         "Установить фразу для восстановления"
       ],
+      "Setting up your organization": [
+        "Настройка вашей организации"
+      ],
       "Settings update failed": [
         "Ошибка при обновлении настроек"
       ],
@@ -7692,6 +7908,11 @@
         "Вы можете добавить способ оплаты, чтобы ваша подписка обновилась автоматически. Другие способы оплаты также доступны."
       ]
     },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Введите имя и адрес для себя или своей организации. Эти данные будут добавлены в личные и организационные счета-фактуры."
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Нажмите, чтобы узнать подробности"
@@ -7803,6 +8024,21 @@
       ],
       "Compromised": [
         "Скомпрометирован"
+      ],
+      "Disabled": [
+        "Отключенный"
+      ],
+      "Forwarding": [
+        "Пересылка"
+      ],
+      "Inactive": [
+        "Неактивный"
+      ],
+      "Obsolete": [
+        "Устаревший"
+      ],
+      "Primary": [
+        "Основной"
       ]
     },
     "Key type option": {
@@ -8027,6 +8263,9 @@
       ],
       "Mark not obsolete": [
         "Пометить как не устаревший"
+      ],
+      "Mark obsolete": [
+        "Отметить как устаревший"
       ]
     },
     "Knowledge base link label": {
@@ -8178,6 +8417,9 @@
       ],
       "Awarded": [
         "Присуждено"
+      ],
+      "Beta": [
+        "Бета"
       ],
       "Billing address": [
         "Адрес для выставления счета"
@@ -8969,6 +9211,11 @@
         "Уведомления"
       ]
     },
+    "Label for default event settings": {
+      "Duration": [
+        "Продолжительность"
+      ]
+    },
     "Label for domain modal": {
       "Please add the following TXT record:": [
         "Добавьте, пожалуйста, следующую запись TXT:"
@@ -8991,6 +9238,9 @@
       ],
       "${ BRAND_NAME } for Business newsletter": [
         "Рассылка ${ BRAND_NAME } for Business"
+      ],
+      "${ BRAND_NAME } important announcements": [
+        "Важные оповещения ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } newsletter": [
         "Рассылка ${ BRAND_NAME }"
@@ -9047,11 +9297,17 @@
     "Label to change composer mode": {
       "Maximized": [
         "Развёрнутый"
+      ],
+      "Normal": [
+        "Обычный"
       ]
     },
     "Label to change density": {
       "Comfortable": [
         "Удобный"
+      ],
+      "Compact": [
+        "Компактный"
       ]
     },
     "Label to change view layout": {
@@ -9105,6 +9361,9 @@
     },
     "Link": {
       "Add a gift code": [
+        "Добавить подарочный код"
+      ],
+      "Add gift code": [
         "Добавить подарочный код"
       ],
       "Apps and extensions": [
@@ -9169,6 +9428,9 @@
       ],
       "Pay invoice": [
         "Оплатить счёт"
+      ],
+      "Paypal without credit card": [
+        "Paypal без кредитной карты"
       ],
       "Privacy policy": [
         "Политика конфиденциальности"
@@ -9286,6 +9548,9 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "Limited time offer: Get ${ planTitle } until ${ date }!": [
+        "Предложение ограничено по времени: Получите ${ planTitle } до ${ date }!"
+      ],
       "Secure email that protects your privacy": [
         "Защищенная электронная почта, обеспечивающая неприкосновенность частной жизни"
       ]
@@ -9357,6 +9622,15 @@
       "${ appName }: Sign-up": [
         "${ appName }: Зарегистрироваться"
       ],
+      "${ BRAND_NAME } Account": [
+        "Аккаунт ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
+        "Создайте аккаунт ${ BRAND_NAME }, чтобы использовать все защифрованные службы${ BRAND_NAME }, такими как ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и другим с всего одним логином. Получите бесплатный аккаунт ${ BRAND_NAME }."
+      ],
+      "Create a ${ BRAND_NAME } Account | Take back your privacy": [
+        "Создайте учетную запись ${ BRAND_NAME } | Верните себе приватность"
+      ],
       "Create a new ${ appName } account": [
         "Создать новый аккаунт ${ appName }"
       ],
@@ -9369,11 +9643,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Забыли имя пользователя аккаунта ${ BRAND_NAME }? Найдите его, используя вашу резервную электронную почту или номер телефона, и восстановите доступ к ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и другим сервисам."
       ],
+      "Private and secure email, no credit card required": [
+        "Приватная и защищенная электронная почта, кредитная карта не требуется"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Сбросить пароль от аккаунта ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Войти, чтобы получить доступ к аккаунту ${ appName }"
+      ],
+      "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
+        "Войдите в свой аккаунт ${ BRAND_NAME } для доступа ко всем службам ${ BRAND_NAME }, такими как ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и другим. У вас нет аккаунта? Создайте его БЕСПЛАТНО."
       ],
       "Try ${ planName } for free with this link": [
         "Попробуйте ${ planName } бесплатно, перейдя по этой ссылке"
@@ -9976,6 +10256,12 @@
       "Send & receive invitations": [
         "Отправляйте и получайте приглашения"
       ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Серверы в более чем в ${ vpnServersCountData.paid.countries } стране",
+        "Серверы в более чем в ${ vpnServersCountData.paid.countries } странах",
+        "Серверы в более чем в ${ vpnServersCountData.paid.countries } странах",
+        "Серверы в более чем в ${ vpnServersCountData.paid.countries } странах"
+      ],
       "Share files and folders via link": [
         "Обменивайтесь файлами и папками по ссылке"
       ],
@@ -10086,17 +10372,6 @@
         "Управление командами"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш пробный период заканчивается ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, заканчивающаяся на ${ last4 }"
@@ -10130,6 +10405,9 @@
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Комплексная конфиденциальность и безопасность со всеми услугами ${ BRAND_NAME } вместе взятыми."
+      ],
+      "Early access to new apps and features": [
+        "Early access to new apps and features"
       ],
       "For next-level password management and identity protection.": [
         "Для нового уровня управления паролями и защиты личных данных."
@@ -10170,6 +10448,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "Защищенная электронная почта с дополнительными возможностями для повседневного общения."
       ],
+      "Set automatic replies to inform senders you are out of the office or unable to respond.": [
+        "Установите автоматические ответы, чтобы сообщить отправителям, что вас нет в офисе или вы не можете ответить."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Используйте индивидуальные решения для более крупных организаций с особыми требованиями к безопасности"
       ],
@@ -10184,6 +10465,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге отключен."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш пробный период заканчивается ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10205,6 +10497,9 @@
       ]
     },
     "new_plans: signup": {
+      "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
+        "Нажимая на кнопку \"Оплатить\", вы соглашаетесь с нашими ${ termsAndConditions }."
+      ],
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Создавая аккаунт ${ BRAND_NAME }, вы соглашаетесь на наши ${ terms }"
       ],
@@ -10301,6 +10596,9 @@
         "Создайте до ${ n } календарей или добавляйте календари друзей, семьи, коллег и организаций",
         "Создайте до ${ n } календарей или добавляйте календари друзей, семьи, коллег и организаций"
       ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Создайте до ${ n } адресов электронной почты или псевдонимов, которые можно назначить членам семьи. Используйте их для идентификации в Интернете, например JohnShopper@${ domain } для аккаунтов для покупок."
+      ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
         "Выделенные серверы с индивидуальным(и) IP-адрес(ами) могут быть добавлены к частным шлюзам для точной настройки контроля доступа"
       ],
@@ -10334,6 +10632,9 @@
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
         "Хранилище — это удобный способ хранения элементов, как папка. Возможность делиться хранилищами с друзьями и семьей пока в разработке."
       ],
+      "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
+        "Защитите ресурсы вашей компании от публичного Интернета и сделайте их доступными только через ваши личные шлюзы."
+      ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Управляйте своей подпиской, включая настройку вашего тарифа. Принимаются следующие способы оплаты: кредитная карта, PayPal, криптовалюта и банковский перевод."
       ],
@@ -10354,6 +10655,9 @@
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Жесткие диски наших серверов полностью зашифрованы с помощью нескольких уровней паролей, поэтому ваши данные будут защищены даже в случае взлома нашего оборудования"
+      ],
+      "Password management and identity protection": [
+        "Управление паролями и защита личных данных"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Персонализируйте свою подпись электронной почты с помощью логотипов, изображений, значков социальных сетей, ссылок на контактную информацию и т. д."
@@ -10461,6 +10765,9 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Добавьте больше индивидуальности с помощью 15 адресов электронной почты и поддержки 3 пользовательских доменов электронной почты"
       ],
+      "AES 256-bit VPN encryption": [
+        "Шифрование VPN AES 256-бит"
+      ],
       "Auto-connect": [
         "Автоматическое подключение"
       ],
@@ -10488,11 +10795,23 @@
         "Создайте до ${ n } календарей",
         "Создайте до ${ n } календарей"
       ],
+      "Dedicated Account manager": [
+        "Выделенный менеджер аккаунтов"
+      ],
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Расположение выделенных серверов в более чем ${ numberOfCountries } странах"
+      ],
+      "Dedicated server locations in North America and Europe": [
+        "Выделенные серверы в Северной Америке и Европе"
+      ],
       "Multi-platform support": [
         "Мультиплатформенная поддержка"
       ],
       "Private gateways": [
         "Частные шлюзы"
+      ],
+      "Require 2FA": [
+        "Требуется двухфакторная аутентификация"
       ]
     },
     "Notification": {
@@ -10745,6 +11064,9 @@
       "Add to existing group": [
         "Добавить в существующую группу"
       ],
+      "Ask each time": [
+        "Спрашивать каждый раз"
+      ],
       "Auto": [
         "Авто"
       ],
@@ -10759,6 +11081,9 @@
       ],
       "Create new group": [
         "Создать новую группу"
+      ],
+      "Fixed duration": [
+        "Определенная продолжительность"
       ],
       "Free server configs": [
         "Конфигурации бесплатных серверов"
@@ -10778,11 +11103,17 @@
       "It's too expensive": [
         "Слишком дорого"
       ],
+      "Left to Right": [
+        "Слева направо"
+      ],
       "My reason isn't listed": [
         "Другая причина"
       ],
       "No parent folder": [
         "Без родительской папки"
+      ],
+      "Normal": [
+        "Обычный"
       ],
       "Off": [
         "Выключено"
@@ -10798,6 +11129,15 @@
       ],
       "Repeat daily": [
         "Повторять ежедневно"
+      ],
+      "Repeat monthly": [
+        "Повторять каждый месяц"
+      ],
+      "Repeat weekly": [
+        "Повторять каждую неделю"
+      ],
+      "Right to Left": [
+        "Справа налево"
       ],
       "Router": [
         "Маршрутизатор"
@@ -11052,6 +11392,12 @@
       "End-to-end encryption": [
         "Сквозное шифрование"
       ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Всего за **${ relativePrice } в месяц** вы получаете доступ к платному менеджеру паролей от ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Всего за на **${ relativePrice } в месяц** больше вы получаете доступ к платной службе ${ BRAND_NAME } VPN!"
+      ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Всего дополнительно за **${ relativePrice } в месяц**, вы получаете доступ ко всем премиальным сервисам ${ BRAND_NAME }!"
       ],
@@ -11294,6 +11640,14 @@
         "vashdomain.com"
       ]
     },
+    "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "${ contactHref } нашим Отделом продаж."
+      ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "Выберите количество адресов IP, которые необходимо включить в ваш тариф. Каждый дополнительный IP стоит ${ price }."
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "свяжитесь"
@@ -11478,6 +11832,9 @@
       "Changing organization password": [
         "Изменение пароля организации"
       ],
+      "Creating or accessing non-private users": [
+        "Создание или доступ к неприватным пользователям"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "По причине смены пароля ваши полномочия администратора организации были ограничены. Указанные действия более не разрешены:"
       ]
@@ -11485,6 +11842,9 @@
     "Role": {
       "Admin": [
         "Администратор"
+      ],
+      "Primary admin": [
+        "Основной администратор"
       ],
       "User": [
         "Пользователь"
@@ -11557,6 +11917,9 @@
         "${ timeRemaining.inHours } часов",
         "${ timeRemaining.inHours } часа"
       ],
+      "Didn’t make this request?": [
+        "Вы не делали этот запрос?"
+      ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Если вы не просили сбросить пароль, отмените этот запрос сейчас."
       ],
@@ -11574,6 +11937,9 @@
       ],
       "You can now reset your password": [
         "Теперь вы можете сбросить свой пароль"
+      ],
+      "You can reset your password until ${ boldDate }.": [
+        "Вы можете сбросить свой пароль до ${ boldDate }."
       ]
     },
     "session_recovery:available:link": {
@@ -11606,6 +11972,14 @@
         "Отключить сброс пароля"
       ]
     },
+    "session_recovery:disable:info": {
+      "Make sure you have access to a recovery method.": [
+        "Убедитесь, что у вас есть доступ к методу восстановления."
+      ],
+      "You will no longer be able to request a password reset from your account settings.": [
+        "Вы больше не сможете запросить сброс пароля из настроек вашего аккаунта."
+      ]
+    },
     "session_recovery:disable:title": {
       "Disable password reset?": [
         "Отключить сброс пароля?"
@@ -11632,11 +12006,17 @@
         "ещё ${ gracePeriodHoursRemaining } часов",
         "ещё ${ gracePeriodHoursRemaining } часа"
       ],
+      "Didn’t make this request?": [
+        "Вы не делали этот запрос?"
+      ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Если вы не просили сбросить пароль, отмените этот запрос сейчас."
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Если вы не просили сбросить пароль, отмените этот запрос сейчас."
+      ],
+      "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
+        "Сброс пароля доступен с ${ boldDate }. Это даст вам время отменить все мошеннические запросы."
       ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
         "Запрошен сброс пароля (${ user.Email }). Вы сможете изменить свой пароль через ${ hoursRemaining } час.",
@@ -11646,6 +12026,12 @@
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Мы получили запрос на сброс пароля для ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Вы можете изменить свой пароль через ${ gracePeriodHoursRemaining } час",
+        "Вы можете изменить свой пароль через ${ gracePeriodHoursRemaining } часа",
+        "Вы можете изменить свой пароль через ${ gracePeriodHoursRemaining } часа",
+        "Вы можете изменить свой пароль через ${ gracePeriodHoursRemaining } часов"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -11661,9 +12047,21 @@
     "session_recovery:initiation:action": {
       "Got it": [
         "Применить"
+      ],
+      "Request password reset": [
+        "Запросить сброс пароля"
+      ],
+      "Use recovery method": [
+        "Использовать метод восстановления"
       ]
     },
     "session_recovery:initiation:info": {
+      "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
+        "Если у вас настроен **метод восстановления**, попробуйте вместо этого восстановить аккаунт. Это позволит вам сразу же изменить пароль."
+      ],
+      "We will contact you again when the password reset is available.": [
+        "Мы свяжемся с вами, когда будет доступен сброс пароля."
+      ],
       "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
         "Проверить статус запроса можно в любой момент в разделе ${ accountAndPasswordSectionLink } настроек."
       ]
@@ -11671,6 +12069,32 @@
     "session_recovery:initiation:link": {
       "account and password section": [
         "раздел учетных записей и паролей"
+      ]
+    },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "Сброс пароля подтвержден"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "Request password reset?": [
+        "Запросить сброс пароля?"
+      ]
+    },
+    "session_recovery:settings:action": {
+      "Allow password reset from settings": [
+        "Разрешить сброс пароля из настроек"
+      ],
+      "Request password reset": [
+        "Запросить сброс пароля"
+      ]
+    },
+    "session_recovery:settings:info": {
+      "To disallow password reset, you must have a recovery method set up.": [
+        "Чтобы запретить сброс пароля, необходимо настроить метод восстановления."
+      ],
+      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
+        "Чтобы повысить безопасность вашего аккаунта и защитить ваши данные, вы можете запросить сброс пароля из настроек вашего аккаунта в веб-приложении."
       ]
     },
     "session_recovery:sign_out:info": {
@@ -11681,12 +12105,22 @@
         "${ gracePeriodHoursRemaining } часа"
       ]
     },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Сбросить пароль"
+      ]
+    },
     "session_recovery:status:info": {
       "Available": [
         "Доступно"
       ],
       "Pending": [
         "В ожидании"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "Изменение пароля запрошено"
       ]
     },
     "Settings description": {
@@ -11730,6 +12164,11 @@
       ],
       "Status": [
         "Состояние"
+      ]
+    },
+    "Settings/labels": {
+      "Labels/Folders": [
+        "Ярлыки/Папки"
       ]
     },
     "Settings/labels - table": {
@@ -12474,6 +12913,16 @@
         "Пользователь удалён"
       ]
     },
+    "Success message after sorting folders": {
+      "Folders sorted": [
+        "Папки отсортированы"
+      ]
+    },
+    "Success message after sorting labels": {
+      "Labels sorted": [
+        "Ярлыки отсортированы"
+      ]
+    },
     "Success notification": {
       "${ label.Name } removed": [
         "${ label.Name } удалён"
@@ -12565,6 +13014,11 @@
         "Для частных лиц"
       ]
     },
+    "Table header; invitations to share calendar": {
+      "Shared with me": [
+        "Поделись со мной"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Действие"
@@ -12587,6 +13041,12 @@
       "Email": [
         "Электронная почта"
       ],
+      "Email address": [
+        "Адрес электронной почты"
+      ],
+      "Email address or domain": [
+        "Адрес электронной поты или домен"
+      ],
       "Email addresses": [
         "Адреса электронной почты"
       ],
@@ -12604,6 +13064,9 @@
       ],
       "Password": [
         "Пароль"
+      ],
+      "Role": [
+        "Должность"
       ],
       "Status": [
         "Статус"
@@ -12987,6 +13450,12 @@
       "Delete logs": [
         "Удалить записи журнала"
       ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Удалить сервер ( у вас будет возможность восстановить его в течение ${ days } дня)",
+        "Удалить сервер ( у вас будет возможность восстановить его в течение ${ days } дней)",
+        "Удалить сервер ( у вас будет возможность восстановить его в течение ${ days } дней)",
+        "Удалить сервер ( у вас будет возможность восстановить его в течение ${ days } дней)"
+      ],
       "Delete user": [
         "Удалить пользователя"
       ],
@@ -13286,6 +13755,9 @@
       ],
       "PayPal verification failed": [
         "Сбой проверки PayPal"
+      ],
+      "Personalise your e-mail footer": [
+        "Настройте нижний колонтитул вашего электронного письма"
       ],
       "Phone": [
         "Телефон"
@@ -13701,6 +14173,9 @@
       "Account is disconnected": [
         "Учётная запись отсоединена"
       ],
+      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
+        "Администраторы могут вносить изменения в вашу подписку, управлять аккаунтами и паролями пользователей, а также предоставлять права администратора другим пользователям."
+      ],
       "An approximate location of the IP address": [
         "Примерное местонахождение IP-адреса"
       ],
@@ -13950,6 +14425,16 @@
       ],
       "Primary admin": [
         "Основной администратор"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "Пользователь SSO, предоставленный вашим поставщиком идентификационных данных"
       ]
     },
     "Validation": {
