@@ -1,6 +1,7 @@
 import { type VFC, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 
+import { UpsellRef } from '@proton/pass/constants';
 import { selectExtraFieldLimits } from '@proton/pass/store/selectors';
 import type { UnsafeItemExtraField } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
@@ -27,7 +28,9 @@ export const ExtraFieldsControl: VFC<ExtraFieldsControlProps> = ({ extraFields, 
             const key = `${index}-${fieldName}`;
 
             if (needsUpgrade) {
-                return <UpgradeControl icon={icon} key={key} label={fieldName} />;
+                return (
+                    <UpgradeControl icon={icon} key={key} label={fieldName} upsellRef={UpsellRef.LIMIT_EXTRA_FIELD} />
+                );
             }
 
             switch (type) {

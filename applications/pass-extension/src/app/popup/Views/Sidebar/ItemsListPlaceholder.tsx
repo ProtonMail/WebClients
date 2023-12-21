@@ -14,6 +14,7 @@ import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButt
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
+import { UpsellRef } from '@proton/pass/constants';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectAllVaults, selectOwnReadOnlyVaults, selectShare, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { ItemType } from '@proton/pass/types';
@@ -95,7 +96,7 @@ export const ItemsListPlaceholder: VFC = () => {
                     {c('Info')
                         .t`You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.`}
                 </Card>
-                <UpgradeButton />
+                <UpgradeButton upsellRef={UpsellRef.LIMIT_VAULT} />
             </div>
         );
     }

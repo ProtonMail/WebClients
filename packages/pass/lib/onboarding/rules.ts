@@ -19,7 +19,6 @@ import { UNIX_DAY } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 
 import { createOnboardingRule } from './service';
-import { isEOY } from './utils';
 
 export const createPendingShareAccessRule = (store: Store<State>) =>
     createOnboardingRule({
@@ -110,6 +109,6 @@ export const createEarlyAccessRule = (store: Store<State>) =>
         message: OnboardingMessage.EARLY_ACCESS,
         when: (previous) => {
             const passPlan = selectPassPlan(store.getState());
-            return !previous && passPlan !== UserPassPlan.PLUS && isEOY();
+            return !previous && passPlan !== UserPassPlan.PLUS;
         },
     });

@@ -10,6 +10,7 @@ import type { IFrameCloseOptions, IFrameMessage } from 'proton-pass-extension/ap
 import { IFrameMessageType } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
+import { UpsellRef } from '@proton/pass/constants';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
@@ -30,7 +31,7 @@ type Props = {
 
 export const ItemsList: VFC<Props> = ({ hostname, items, needsUpgrade, visible, onMessage, onClose }) => {
     const { settings } = useIFrameContext();
-    const navigateToUpgrade = useNavigateToUpgrade();
+    const navigateToUpgrade = useNavigateToUpgrade({ upsellRef: UpsellRef.LIMIT_AUTOFILL });
 
     useEffect(() => {
         if (visible) {
