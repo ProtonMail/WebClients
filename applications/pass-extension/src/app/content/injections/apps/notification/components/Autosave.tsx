@@ -11,7 +11,7 @@ import { useNotifications } from '@proton/components/hooks';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
 import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
-import { BaseItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
+import { ItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
@@ -163,7 +163,7 @@ export const Autosave: VFC<Props> = ({ settings, submission, visible, onClose })
                 />
                 <div>
                     <div className="flex flex-nowrap items-center mb-2">
-                        <BaseItemIcon
+                        <ItemIcon
                             url={submission.domain}
                             icon={'user'}
                             size={20}
@@ -194,14 +194,7 @@ export const Autosave: VFC<Props> = ({ settings, submission, visible, onClose })
                 <div className="flex justify-space-between gap-3">
                     <Button pill color="norm" shape="outline" onClick={() => onClose?.({ discard: true })}>{c('Action')
                         .t`Not now`}</Button>
-                    <Button
-                        pill
-                        color="norm"
-                        type="submit"
-                        loading={busy}
-                        disabled={busy}
-                        className="flex-auto"
-                    >
+                    <Button pill color="norm" type="submit" loading={busy} disabled={busy} className="flex-auto">
                         {(() => {
                             switch (submission.autosave.data.action) {
                                 case AutoSaveType.NEW:
