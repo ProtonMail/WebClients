@@ -4,7 +4,7 @@ import { Link, type LinkProps } from 'react-router-dom';
 
 import { ButtonLike, type ButtonLikeProps } from '@proton/atoms/Button';
 import { Marks } from '@proton/components/components';
-import { ItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
+import { OptimisticItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { matchChunks } from '@proton/pass/lib/search/match-chunks';
@@ -43,7 +43,7 @@ const ItemsListItemRaw: VFC<Props> = ({ item, search = '', active = false, ...re
             {...rest}
         >
             <div className="flex-nowrap flex w-full px-3 py-2 items-center">
-                <ItemIcon
+                <OptimisticItemIcon
                     item={item}
                     size={20}
                     className={clsx('mr-3  shrink-0', itemTypeToSubThemeClassName[data.type])}
