@@ -120,6 +120,7 @@ describe('Scheduled messages banner', () => {
         const unsnoozeCall = jest.fn();
         useSnoozeMock.mockReturnValue({
             unsnooze: unsnoozeCall,
+            canUnsnooze: true,
         });
 
         const { getByTestId, getByText } = await render(<ExtraSnoozedMessage message={message} />);
@@ -148,6 +149,7 @@ describe('Scheduled messages banner', () => {
         const unsnoozeCall = jest.fn();
         useSnoozeMock.mockReturnValue({
             unsnooze: unsnoozeCall,
+            canUnsnooze: true,
         });
 
         const { getByTestId, getByText } = await render(<ExtraSnoozedMessage message={message} />);
@@ -165,5 +167,26 @@ describe('Scheduled messages banner', () => {
 
         // Unsnooze route is called
         expect(unsnoozeCall).not.toHaveBeenCalled();
+    });
+
+    it('should not display unsnooze button if cannot usnooze', async () => {
+        const sendingDate = addDays(new Date(), 1);
+        const message = getMessage(sendingDate);
+
+        mockUseGetElementsFromIDs.mockReturnValue(undefined);
+        useGetElementsFromIDsMock.mockReturnValue(undefined);
+        useSnoozeMock.mockReturnValue({
+            canUnsnooze: false,
+        });
+
+        const { getByTestId, getByText, queryByText } = await render(<ExtraSnoozedMessage message={message} />);
+
+        const { formattedTime } = formatDateToHuman(sendingDate);
+
+        getByTestId('message:snooze-banner');
+        getByText(`Snoozed until tomorrow, ${formattedTime}`);
+        const editButton = queryByText('Unsnooze');
+
+        expect(editButton).toBeNull();
     });
 });
