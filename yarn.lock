@@ -5896,7 +5896,7 @@ __metadata:
   resolution: "@proton/styles@workspace:packages/styles"
   dependencies:
     include-media: "npm:^2.0.0"
-    inter-ui: "npm:^3.19.3"
+    inter-ui: "npm:^4.0.0"
     prettier: "npm:^3.1.0"
     sass: "npm:^1.69.5"
     stylelint: "npm:^15.11.0"
@@ -21264,10 +21264,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"inter-ui@npm:^3.19.3":
-  version: 3.19.3
-  resolution: "inter-ui@npm:3.19.3"
-  checksum: 93b3cfd57e5592f87f503ab40724863768296606954735dd4c85ba0cc3287f66db99d22b0447f8d33955c99be14f1e515d5988b7c0f0abac17c465092c38306b
+"inter-ui@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "inter-ui@npm:4.0.0"
+  checksum: 53a1fe90c96ae49081d963822b6026636e2839d75504c175fe2a6cf3b3ba4421ae808965a95b69394759f213c4095c6d7154a8fe1836b700efc994fbb94f8ce7
   languageName: node
   linkType: hard
 
