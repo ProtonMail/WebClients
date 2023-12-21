@@ -338,7 +338,7 @@
         "Hotovo"
       ],
       "Download": [
-        "Stiahnúť"
+        "Stiahnuť"
       ],
       "Download ${ attachmentName }": [
         "Stiahnuť ${ attachmentName }"
@@ -1417,6 +1417,12 @@
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Obíďte obmedzenia a cenzúru miestneho internetu pomocou našej globálnej siete serverov."
+      ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailovú adresu, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie.",
+        "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailové adresy, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie.",
+        "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailových adries, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie.",
+        "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailových adries, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Zahŕňa podporu pre 1 vlastnú emailovú doménu, 10 emailových adries, 10 hide-my-email aliasov, zdieľanie kalendára a ďalšie."
@@ -3275,7 +3281,37 @@
         "Názov súboru šifrovaných hlavičiek"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Funkcie plateného ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Zahŕňa históriu verzií v ${ DRIVE_SHORT_APP_NAME }, prístup k tisícom vysokorýchlostných ${ VPN_SHORT_APP_NAME } serverov, zdieľanie v ${ PASS_SHORT_APP_NAME } a mnoho ďalšieho."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 používateľov"
+      ],
+      "Early access to new apps and features": [
+        "Skorší prístup k novým aplikáciám a funkciám"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Skorší prístup k desktopovej aplikácii ${ MAIL_APP_NAME }"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Funkcie plateného ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_APP_NAME }"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } sa nedokáže pripojiť k vášmu externému účtu."
+      ],
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } pre <${ email }>. Problém môžete vyriešiť pridaním iného kľúča alebo vypnutím šifrovania pre tento kontakt."
       ],
@@ -3665,6 +3701,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Skúste používať iba písmená, číslice a _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Neočakávaná chyba, nemôžeme importovať kontakty"
       ],
       "Unknown error": [
         "Neznáma chyba"
@@ -7295,9 +7334,6 @@
       ]
     },
     "Link": {
-      "${ DRIVE_APP_NAME } Windows app": [
-        "${ DRIVE_APP_NAME } Windows aplikácia"
-      ],
       "All mail": [
         "Všetky správy"
       ],
@@ -7393,9 +7429,6 @@
       ],
       "Scheduled": [
         "Naplánované"
-      ],
-      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
-        "Bezproblémová synchronizácia súborov a priečinkov medzi počítačom a ${ DRIVE_APP_NAME }."
       ],
       "Sent": [
         "Odoslané"
@@ -8403,6 +8436,9 @@
         "${ timeRemaining.inHours } hodín",
         "${ timeRemaining.inHours } hodín"
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Žiadosť o obnovenie hesla bola schválená (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Prejdite na prihlásené zariadenie (v relácii, kde bola žiadosť iniciovaná) a zmeňte heslo."
       ],
@@ -8423,6 +8459,9 @@
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Heslo pre účet ${ boldEmail } si teraz môžete ľubovoľne zmeniť po dobu ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Teraz môžete zmeniť heslo pre účet ${ boldEmail }."
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Na obnovu vášho hesla máte ${ timeRemaining.inDays } deň.",
