@@ -633,6 +633,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Le code PIN n'est pas correct. Veuillez réessayer."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Votre code PIN a été retiré par un autre client de ${ PASS_APP_NAME }."
       ]
     },
     "Error message": {
@@ -778,6 +781,9 @@
       "Autosaved on ${ submissionURL }": [
         "Enregistré automatiquement sur ${ submissionURL }"
       ],
+      "Built in 2FA authenticator": [
+        "Authentificateur A2F intégré"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Permet de créer, modifier, supprimer et exporter des éléments dans ce coffre-fort."
       ],
@@ -802,9 +808,6 @@
       "Creating alias...": [
         "Création de l'alias en cours"
       ],
-      "Credit cards, Custom fields": [
-        "Cartes de paiement, champs personnalisés"
-      ],
       "Decrypting your data": [
         "Déchiffrement de vos données en cours"
       ],
@@ -822,6 +825,9 @@
       ],
       "Drop to import": [
         "Déposez ici pour importer"
+      ],
+      "Early access to ${ PASS_APP_NAME } web app": [
+        "Accès anticipé à l'application de bureau ${ PASS_APP_NAME }"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importez facilement vos mots de passe dans ${ PASS_APP_NAME }."
@@ -945,9 +951,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
-      "Multiple vaults": [
-        "Plusieurs coffres-forts"
-      ],
       "Never": [
         "Jamais"
       ],
@@ -999,17 +1002,26 @@
       "Please enter your current PIN code to continue": [
         "Saisissez votre code PIN pour continuer."
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Changez d'abonnement pour bénéficier d'un accès anticipé à l'application de bureau de ${ PASS_APP_NAME }."
+      ],
       "Press Enter to copy": [
         "Appuyez sur Entrée pour copier."
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "La protection de la vie privée est notre priorité. Découvrez ce qui différencie ${ PASS_APP_NAME } des autres."
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Protégé par ${ PROTON_SENTINEL_LINK }, notre programme avancé de protection de compte"
+      ],
       "Restoring trashed items...": [
         "Restauration des éléments mis à la corbeille en cours"
       ],
       "Save login": [
         "Enregistrer l'identifiant"
+      ],
+      "Save up to 60% on ${ PASS_APP_NAME } Plus": [
+        "Économisez jusqu'à 60 % sur ${ PASS_APP_NAME } Plus"
       ],
       "Select destination vault": [
         "Sélectionner le coffre-fort de destination"
@@ -1029,8 +1041,8 @@
       "Settings successfully updated": [
         "Les paramètres ont été mis à jour."
       ],
-      "Share with 10 others": [
-        "Partage avec 10 autres personnes"
+      "Share your logins, secure notes, with up to 10 people": [
+        "Partagez vos identifiants, notes sécurisées avec jusqu'à 10 personnes"
       ],
       "Sign in or create an account to continue.": [
         "Connectez-vous ou créez un compte pour continuer."
@@ -1087,8 +1099,8 @@
       "Unable to copy to clipboard": [
         "Impossible de copier dans le presse-papiers"
       ],
-      "Unlimited Aliases": [
-        "Nombre illimité d'alias"
+      "Unlimited hide-my-email aliases": [
+        "Nombre illimité d'alias « hide-my-email »"
       ],
       "Unlock it with your PIN to access the settings": [
         "Déverrouillez-la avec votre code PIN pour accéder aux paramètres."
@@ -1098,6 +1110,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Mettre à jour ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Passez dès à présent à la version supérieure pour profiter des fonctionnalités premium."
       ],
       "Use vaults to share this item with others.": [
         "Utilisez les coffres-forts pour partager cet élément avec d'autres personnes."
@@ -1802,6 +1817,9 @@
       ],
       "Update available": [
         "Mise à jour disponible"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Passez à la version supérieure pour profiter des fonctionnalités premium."
       ],
       "Use my email": [
         "Utiliser mon e-mail"

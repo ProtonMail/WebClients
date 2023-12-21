@@ -846,6 +846,10 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Contournez les blocages et la censure locale sur internet grâce à notre réseau mondial de serveurs."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Comprend la prise en charge de ${ domains } domaines de messagerie personnalisés, ${ addresses } adresse e-mail, un nombre illimité d'alias « hide-my-email », le partage de calendrier et bien d'autres fonctionnalités.",
+        "Comprend la prise en charge de ${ domains } domaines de messagerie personnalisés, ${ addresses } adresses e-mail, un nombre illimité d'alias « hide-my-email », le partage de calendrier et bien d'autres fonctionnalités."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Comprend la prise en charge d'un domaine de messagerie personnalisé, de 10 adresses e-mail, de 10 alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités."
       ],
@@ -2347,7 +2351,37 @@
         "Mise à jour d'un événement qui commence ${ formattedStart }"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Fonctionnalités payantes de ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } et ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Comprend la fonction Historique des versions pour ${ DRIVE_SHORT_APP_NAME }, un accès à des milliers de serveurs ultrarapides pour ${ VPN_SHORT_APP_NAME }, la fonction de partage dans ${ PASS_SHORT_APP_NAME } et bien plus encore."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 To"
+      ],
+      "6 users": [
+        "6 utilisateurs"
+      ],
+      "Early access to new apps and features": [
+        "Accès en avant-première aux nouvelles fonctionnalités et applications"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Accès anticipé à l'application de bureau ${ MAIL_APP_NAME }"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Fonctionnalités payantes de ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_APP_NAME }"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } ne parvient pas à se connecter à votre compte externe."
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }."
       ],
@@ -2416,7 +2450,7 @@
         "La recherche dans le contenu ne peut pas être activée dans ce navigateur. Nous vous invitons à quitter la navigation privée ou à essayer avec un autre navigateur."
       ],
       "Content search cannot be enabled. Please restart the application or clear data.": [
-        "La recherche dans le contenu n'a pas pu être activée. Veuillez redémarrer l'application ou effacer les données."
+        "La recherche dans le contenu n'a pas pu être activée. Nous vous invitons à redémarrer l'application ou à effacer les données."
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Erreur de déchiffrement : le contenu de cet événement n'a pas pu être déchiffré."
@@ -2697,6 +2731,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes : _ . -"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Une erreur inattendue s'est produite. Vos contacts n'ont pas pu être importés."
       ],
       "Unknown error": [
         "Erreur inconnue"

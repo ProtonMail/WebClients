@@ -5375,7 +5375,7 @@
         "Deine Daten werden von ${ importedEmailAddress } nach ${ toEmail } importiert."
       ],
       "Include Spam/Trash.": [
-        "Spam/Papierkorb einschließen."
+        "Spam/Papierkorb miteinbeziehen."
       ],
       "Inherited from parent folder": [
         "Von übergeordnetem Ordner übernommen"
@@ -7067,9 +7067,6 @@
       ]
     },
     "Link": {
-      "${ DRIVE_APP_NAME } Windows app": [
-        "${ DRIVE_APP_NAME } Windows-App"
-      ],
       "All mail": [
         "Alle E-Mails"
       ],
@@ -7165,9 +7162,6 @@
       ],
       "Scheduled": [
         "Geplant"
-      ],
-      "Seamlessly sync files and folders between your computer and ${ DRIVE_APP_NAME }.": [
-        "Nahtlose Synchronisation der Dateien und Ordner zwischen deinem Computer und ${ DRIVE_APP_NAME }."
       ],
       "Sent": [
         "Gesendet"
@@ -8025,7 +8019,7 @@
     },
     "Send email with encryption disabled": {
       "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
-        "Die Kontakte der folgenden Adressen haben die Ende-zu-Ende-Verschlüsselung deaktiviert. Dementsprechend wurden die zugehörigen Verschlüsselungseinstellungen aktualisiert."
+        "Die Inhaber der folgenden E-Mail-Adressen haben die Ende-zu-Ende-Verschlüsselung für Ihr Konto deaktiviert. Dementsprechend wurden die zugehörigen Verschlüsselungseinstellungen wie folgt aktualisiert:"
       ]
     },
     "Send email with errors": {

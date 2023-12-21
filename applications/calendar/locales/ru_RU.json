@@ -2365,6 +2365,11 @@
         "Обновить для события, начинающегося ${ formattedStart }"
       ]
     },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 ТБ"
+      ]
+    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можете также проверить нашу ${ statusPageLink }"
@@ -5994,6 +5999,11 @@
         "${ gracePeriodHoursRemaining } часа",
         "${ gracePeriodHoursRemaining } часов",
         "${ gracePeriodHoursRemaining } часа"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Сбросить пароль"
       ]
     },
     "Settings update growler warning": {

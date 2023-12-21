@@ -2532,6 +2532,11 @@
         "${ nbDay } dana",
         "${ nbDay } dana"
       ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } od ${ MaxAddresses } adresa e-pošta",
+        "${ UsedAddresses } od ${ MaxAddresses } adrese e-pošte",
+        "${ UsedAddresses } od ${ MaxAddresses } adresa e-pošte"
+      ],
       "Account storage": [
         "Prostor za pohranu računa"
       ],
@@ -2993,6 +2998,9 @@
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } program"
       ],
+      "${ size } attachment size": [
+        "Veličina privitka: ${ size }"
+      ],
       "${ size } storage per user": [
         "${ size } prostora za pohranu po korisniku"
       ],
@@ -3002,14 +3010,32 @@
       "Auto-reply": [
         "Automatski odgovor"
       ],
+      "Contact groups": [
+        "Grupa kontakata"
+      ],
       "Custom email domains": [
         "Prilagođene domene"
+      ],
+      "Easy Switch import assistant": [
+        "Pomoćnik za uvoz Easy Switch"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "Podrška email klijenta (putem IMAP/SMTP)"
       ],
       "Encrypted contact details": [
         "Šifrirani podaci o kontaktu"
       ],
+      "End-to-end encryption": [
+        "Krajnje do krajnje šifriranje"
+      ],
+      "HTML signatures": [
+        "HTML potpisi"
+      ],
       "Limited support": [
         "Ograničena podrška"
+      ],
+      "Password-protected Emails": [
+        "Emailovi zaštićeni lozinkom"
       ],
       "Priority support": [
         "Prioritetna podrška"
@@ -3020,6 +3046,9 @@
       "Secure Core servers": [
         "Secure Core poslužitelji"
       ],
+      "SMTP submission": [
+        "SMTP predaja"
+      ],
       "Strict no-logs policy": [
         "Stroga politika ne spremanja zapisa"
       ],
@@ -3029,8 +3058,17 @@
       "Two-factor authentication": [
         "Dvofaktorska autentikacija"
       ],
+      "Unlimited filters": [
+        "Neograničen broj filtera"
+      ],
+      "Unlimited folders": [
+        "Neograničen broj mapa"
+      ],
       "Unlimited folders, labels, and filters": [
         "Neograničen broj mapa, oznaka i filtara"
+      ],
+      "Unlimited labels": [
+        "Neograničen broj oznaka"
       ],
       "Unlimited messages per day": [
         "Neograničen broj poruka dnevno"
@@ -3557,6 +3595,16 @@
         "${ UsedAddresses } adresa",
         "${ UsedAddresses } adrese",
         "${ UsedAddresses } adresa"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } od ${ MaxAddresses } adresa e-pošta",
+        "${ UsedAddresses } od ${ MaxAddresses } adrese e-pošte",
+        "${ UsedAddresses } od ${ MaxAddresses } adresa e-pošte"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains } od ${ MaxDomains } prilagođena domena",
+        "${ UsedDomains } od ${ MaxDomains } prilagođena domena",
+        "${ UsedDomains } od ${ MaxDomains } prilagođenih domena"
       ],
       "1 email address": [
         "1 adresa e-pošte"
