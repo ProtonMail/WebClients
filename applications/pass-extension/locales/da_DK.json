@@ -628,6 +628,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Forkert pinkode. Prøv igen."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Din pinkode blev fjernet af en anden ${ PASS_APP_NAME }-klient"
       ]
     },
     "Error message": {
@@ -773,6 +776,9 @@
       "Autosaved on ${ submissionURL }": [
         "Autogemt på ${ submissionURL }"
       ],
+      "Built in 2FA authenticator": [
+        "Indbygget 2FA-godkendelse"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Kan oprette, redigere, slette og eksportere elementer i denne boks."
       ],
@@ -797,9 +803,6 @@
       "Creating alias...": [
         "Opretter alias..."
       ],
-      "Credit cards, Custom fields": [
-        "Betalingskort, brugerdefinerede felter"
-      ],
       "Decrypting your data": [
         "Dekrypterer dine data"
       ],
@@ -817,6 +820,9 @@
       ],
       "Drop to import": [
         "Slip for at importere"
+      ],
+      "Early access to ${ PASS_APP_NAME } web app": [
+        "Tidlig adgang til ${ PASS_APP_NAME } webapp"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importer nemt dine eksisterende adgangskoder til ${ PASS_APP_NAME }."
@@ -940,9 +946,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
-      "Multiple vaults": [
-        "Flere bokse"
-      ],
       "Never": [
         "Aldrig"
       ],
@@ -994,17 +997,26 @@
       "Please enter your current PIN code to continue": [
         "Indtast din nuværende pinkode for at fortsætte"
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Opgrader for at få tidlig adgang ${ PASS_APP_NAME } webapp"
+      ],
       "Press Enter to copy": [
         "Tryk Enter for at kopiere"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Vi bekymrer os om dit privatliv. Få mere at vide om, hvorfor ${ PASS_APP_NAME } er anderledes."
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Beskyttet af ${ PROTON_SENTINEL_LINK }, vores avancerede program til kontobeskyttelse"
+      ],
       "Restoring trashed items...": [
         "Genopretter elementer i papirkurven..."
       ],
       "Save login": [
         "Gem login"
+      ],
+      "Save up to 60% on ${ PASS_APP_NAME } Plus": [
+        "Spar op til 60% på ${ PASS_APP_NAME } Plus"
       ],
       "Select destination vault": [
         "Vælg destinationsboks"
@@ -1024,8 +1036,8 @@
       "Settings successfully updated": [
         "Indstillingerne blev opdateret"
       ],
-      "Share with 10 others": [
-        "Del med 10 andre"
+      "Share your logins, secure notes, with up to 10 people": [
+        "Del dine logins og sikre noter med op til 10 personer"
       ],
       "Sign in or create an account to continue.": [
         "Log ind eller opret en konto for at fortsætte."
@@ -1082,8 +1094,8 @@
       "Unable to copy to clipboard": [
         "Kunne ikke kopiere til udklipsholder"
       ],
-      "Unlimited Aliases": [
-        "Ubegrænsede aliasser"
+      "Unlimited hide-my-email aliases": [
+        "Ubegrænsede hide-my-email-aliasser"
       ],
       "Unlock it with your PIN to access the settings": [
         "Lås den op med din pinkode for at få adgang til indstillingerne."
@@ -1093,6 +1105,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Opgradér ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Opgradér nu for at låse op for premium-funktioner"
       ],
       "Use vaults to share this item with others.": [
         "Brug bokse til at dele dette element med andre."
@@ -1797,6 +1812,9 @@
       ],
       "Update available": [
         "Opdatering tilgængelig"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Opgradér for at låse op for premium-funktioner"
       ],
       "Use my email": [
         "Brug min e-mail"

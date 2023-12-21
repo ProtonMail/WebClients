@@ -628,6 +628,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Λάθος κωδικός PIN. Δοκιμάστε ξανά."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Ο κωδικός PIN σας καταργήθηκε από μία άλλη ${ PASS_APP_NAME } εφαρμογή"
       ]
     },
     "Error message": {
@@ -773,6 +776,9 @@
       "Autosaved on ${ submissionURL }": [
         "Αυτόματη αποθήκευση στο ${ submissionURL }"
       ],
+      "Built in 2FA authenticator": [
+        "Ενσωματωμένος ελεγκτής ταυτότητας 2FA"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Μπορεί να δημιουργήσει, επεξεργαστεί, διαγράψει και εξάγει στοιχεία σε αυτήν την κρύπτη."
       ],
@@ -797,9 +803,6 @@
       "Creating alias...": [
         "Δημιουργία ψευδώνυμου..."
       ],
-      "Credit cards, Custom fields": [
-        "Πιστωτικές κάρτες, Προσαρμοσμένα πεδία"
-      ],
       "Decrypting your data": [
         "Γίνεται αποκρυπτογράφηση των δεδομένων σας"
       ],
@@ -817,6 +820,9 @@
       ],
       "Drop to import": [
         "Απόθεση για εισαγωγή"
+      ],
+      "Early access to ${ PASS_APP_NAME } web app": [
+        "Πρώιμη πρόσβαση στη ${ PASS_APP_NAME } εφαρμογή ιστού"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Εισαγάγετε εύκολα τους υπάρχοντες κωδικούς πρόσβασής σας στο ${ PASS_APP_NAME }."
@@ -940,9 +946,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
-      "Multiple vaults": [
-        "Πολλαπλές κρύπτες"
-      ],
       "Never": [
         "Ποτέ"
       ],
@@ -994,17 +997,26 @@
       "Please enter your current PIN code to continue": [
         "Παρακαλούμε εισάγετε τον τρέχον κωδικό PIN σας για να συνεχίσετε"
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Αναβαθμίστε για να έχετε πρώιμη πρόσβαση στη ${ PASS_APP_NAME } εφαρμογή ιστού"
+      ],
       "Press Enter to copy": [
         "Πατήστε Enter για αντιγραφή"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Το απόρρητο είναι μια μεγάλη ανησυχία για εμάς. Μάθετε γιατί το ${ PASS_APP_NAME } είναι διαφορετικό."
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Προστατεύεται από ${ PROTON_SENTINEL_LINK }, το προηγμένο πρόγραμμα προστασίας λογαριασμού μας"
+      ],
       "Restoring trashed items...": [
         "Η επαναφορά των απορριφθέντων στοιχείων..."
       ],
       "Save login": [
         "Αποθήκευση διαπιστευτηρίων"
+      ],
+      "Save up to 60% on ${ PASS_APP_NAME } Plus": [
+        "Εξοικονομήστε έως και 60% στο ${ PASS_APP_NAME } Plus"
       ],
       "Select destination vault": [
         "Επιλογή κρύπτης προορισμού"
@@ -1024,8 +1036,8 @@
       "Settings successfully updated": [
         "Οι ρυθμίσεις ενημερώθηκαν με επιτυχία"
       ],
-      "Share with 10 others": [
-        "Κοινή χρήση με 10 άλλους"
+      "Share your logins, secure notes, with up to 10 people": [
+        "Μοιραστείτε τα στοιχεία σύνδεσής σας, ασφαλείς σημειώσεις, με έως και 10 άτομα"
       ],
       "Sign in or create an account to continue.": [
         "Για να συνεχίσετε, εισέλθετε ή δημιουργήστε λογαριασμό."
@@ -1082,8 +1094,8 @@
       "Unable to copy to clipboard": [
         "Αδυναμία αντιγραφής στο πρόχειρο"
       ],
-      "Unlimited Aliases": [
-        "Απεριόριστα Ψευδώνυμα"
+      "Unlimited hide-my-email aliases": [
+        "Απεριόριστα hide-my-email ψευδώνυμα"
       ],
       "Unlock it with your PIN to access the settings": [
         "Ξεκλειδώστε το με το PIN σας για πρόσβαση στις ρυθμίσεις"
@@ -1093,6 +1105,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Αναβάθμιση ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Αναβαθμίστε τώρα για να ξεκλειδώσετε Premium χαρακτηριστικά"
       ],
       "Use vaults to share this item with others.": [
         "Χρησιμοποιήστε κρύπτες για να μοιραστείτε αυτό το στοιχείο με άλλους."
@@ -1797,6 +1812,9 @@
       ],
       "Update available": [
         "Υπάρχει διαθέσιμη ενημέρωση"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Αναβαθμίστε για να Ξεκλειδώσετε Προηγμένες Λειτουργίες"
       ],
       "Use my email": [
         "Χρήση της διεύθυνσης ηλεκτρονικού ταχυδρομείου μου"

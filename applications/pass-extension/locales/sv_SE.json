@@ -630,6 +630,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Fel PIN-kod. Försök igen."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Din PIN-kod togs bort av en annan ${ PASS_APP_NAME }-klient"
       ]
     },
     "Error message": {
@@ -775,6 +778,9 @@
       "Autosaved on ${ submissionURL }": [
         "Autosparad på ${ submissionURL }"
       ],
+      "Built in 2FA authenticator": [
+        "Inbyggd 2FA-autentisering"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Kan skapa, redigera, ta bort och exportera objekt i detta valv."
       ],
@@ -799,9 +805,6 @@
       "Creating alias...": [
         "Skapar alias..."
       ],
-      "Credit cards, Custom fields": [
-        "Kreditkort, anpassade fält"
-      ],
       "Decrypting your data": [
         "Dekrypterar dina data"
       ],
@@ -819,6 +822,9 @@
       ],
       "Drop to import": [
         "Släpp för att importera"
+      ],
+      "Early access to ${ PASS_APP_NAME } web app": [
+        "Förhandstillgång till webbappen ${ PASS_APP_NAME }"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importera enkelt dina befintliga lösenord in till ${ PASS_APP_NAME }."
@@ -942,9 +948,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
-      "Multiple vaults": [
-        "Flera valv"
-      ],
       "Never": [
         "Aldrig"
       ],
@@ -996,17 +999,26 @@
       "Please enter your current PIN code to continue": [
         "Ange din nuvarande PIN-kod för att fortsätta"
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Uppgradera för att få förhandstillgång till webbappen ${ PASS_APP_NAME }"
+      ],
       "Press Enter to copy": [
         "Tryck på Enter för att kopiera"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Integritet är en stor angelägenhet för oss. Lär dig varför ${ PASS_APP_NAME } är annorlunda."
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Skyddad av ${ PROTON_SENTINEL_LINK }, vårt avancerade kontoskyddsprogram"
+      ],
       "Restoring trashed items...": [
         "Återställer kastade objekt..."
       ],
       "Save login": [
         "Spara inloggning"
+      ],
+      "Save up to 60% on ${ PASS_APP_NAME } Plus": [
+        "Spara upp till 60 % på ${ PASS_APP_NAME } Plus"
       ],
       "Select destination vault": [
         "Välj målvalv"
@@ -1026,8 +1038,8 @@
       "Settings successfully updated": [
         "Inställningarna har uppdaterats"
       ],
-      "Share with 10 others": [
-        "Dela med 10 andra"
+      "Share your logins, secure notes, with up to 10 people": [
+        "Dela dina inloggningar och säkra anteckningar med upp till 10 personer"
       ],
       "Sign in or create an account to continue.": [
         "Logga in eller skapa ett konto för att fortsätta."
@@ -1084,8 +1096,8 @@
       "Unable to copy to clipboard": [
         "Kan inte kopiera till urklipp"
       ],
-      "Unlimited Aliases": [
-        "Obegränsat antal alias"
+      "Unlimited hide-my-email aliases": [
+        "Obegränsat antal Hide-my-email-alias"
       ],
       "Unlock it with your PIN to access the settings": [
         "Lås upp den med din PIN-kod för att komma åt inställningarna"
@@ -1095,6 +1107,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Uppgradera ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Uppgradera nu för att låsa upp premiumfunktioner"
       ],
       "Use vaults to share this item with others.": [
         "Använd valv för att dela detta objekt med andra."
@@ -1799,6 +1814,9 @@
       ],
       "Update available": [
         "Uppdatering tillgänglig"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Uppgradera för att låsa upp premiumfunktioner"
       ],
       "Use my email": [
         "Använd min e-post"

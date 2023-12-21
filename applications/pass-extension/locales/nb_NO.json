@@ -633,6 +633,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Feil PIN-kode. Prøv igjen."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "PIN-koden ble fjernet av en annen ${ PASS_APP_NAME }-klient"
       ]
     },
     "Error message": {
@@ -778,6 +781,9 @@
       "Autosaved on ${ submissionURL }": [
         "Autolagret på ${ submissionURL }"
       ],
+      "Built in 2FA authenticator": [
+        "Innebygget 2FA-autentisering"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Kan opprette, redigere, slette og eksportere elementer i dette hvelvet."
       ],
@@ -802,9 +808,6 @@
       "Creating alias...": [
         "Oppretter alias..."
       ],
-      "Credit cards, Custom fields": [
-        "Kredittkort, tilpassede felt"
-      ],
       "Decrypting your data": [
         "Dekrypterer dataene dine"
       ],
@@ -822,6 +825,9 @@
       ],
       "Drop to import": [
         "Slipp for å importere"
+      ],
+      "Early access to ${ PASS_APP_NAME } web app": [
+        "Tidlig tilgang til ${ PASS_APP_NAME }-webapp"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importer enkelt dine eksisterende passord til ${ PASS_APP_NAME }."
@@ -945,9 +951,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
-      "Multiple vaults": [
-        "Flere hvelv"
-      ],
       "Never": [
         "Aldri"
       ],
@@ -999,17 +1002,26 @@
       "Please enter your current PIN code to continue": [
         "Vennligst skriv inn din nåværende PIN-kode for å fortsette."
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Vennligst oppgrader for å få tidlig tilgang til ${ PASS_APP_NAME }-webapp"
+      ],
       "Press Enter to copy": [
         "Trykk Enter for å kopiere"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Personvern er en stor bekymring for oss. Finn ut hvorfor ${ PASS_APP_NAME } er annerledes."
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Beskyttet av ${ PROTON_SENTINEL_LINK }, vårt avanserte kontobeskyttelsesprogram"
+      ],
       "Restoring trashed items...": [
         "Gjenoppretter elementer fra papirkurven..."
       ],
       "Save login": [
         "Lagre pålogging"
+      ],
+      "Save up to 60% on ${ PASS_APP_NAME } Plus": [
+        "Spar opptil 60% på ${ PASS_APP_NAME } Plus"
       ],
       "Select destination vault": [
         "Velg destinasjonshvelv"
@@ -1029,8 +1041,8 @@
       "Settings successfully updated": [
         "Innstillinger oppdatert"
       ],
-      "Share with 10 others": [
-        "Del med 10 andre"
+      "Share your logins, secure notes, with up to 10 people": [
+        "Del dine pålogginger og sikre notater med opptil 10 personer"
       ],
       "Sign in or create an account to continue.": [
         "Logg på eller opprett en konto for å fortsette."
@@ -1087,8 +1099,8 @@
       "Unable to copy to clipboard": [
         "Ikke i stand til å kopiere til utklippstavlen"
       ],
-      "Unlimited Aliases": [
-        "Ubegrenset antall aliaser"
+      "Unlimited hide-my-email aliases": [
+        "Ubegrenset antall hide-my-email-aliaser"
       ],
       "Unlock it with your PIN to access the settings": [
         "Lås den opp med PIN-koden din for å få tilgang til innstillingene"
@@ -1098,6 +1110,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Oppgrader ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Oppgrader nå for å låse opp premiumfunksjoner"
       ],
       "Use vaults to share this item with others.": [
         "Bruk hvelv for å dele dette elementet med andre."
@@ -1802,6 +1817,9 @@
       ],
       "Update available": [
         "Oppdatering tilgjengelig"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Oppgrader for å låse opp premiumfunksjoner"
       ],
       "Use my email": [
         "Bruk min e-post"
