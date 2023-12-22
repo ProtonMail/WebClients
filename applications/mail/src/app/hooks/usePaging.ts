@@ -40,8 +40,8 @@ export const usePaging = (
         }
 
         const newTotal = getTotalPagesCount(currentTotalPages, pageSize);
-        if (currentTotalPages !== newTotal) {
-            setTotal(getTotalPagesCount(currentTotalPages, pageSize));
+        if (total !== newTotal) {
+            setTotal(newTotal);
         }
     }, [currentPage, currentTotalPages, pageSize]);
 
