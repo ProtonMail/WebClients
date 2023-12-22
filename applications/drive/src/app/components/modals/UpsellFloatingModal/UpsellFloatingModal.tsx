@@ -1,17 +1,18 @@
-import { MouseEvent as ReactMouseEvent, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
-import { Icon, ModalStateProps, ModalTwo, ModalTwoFooter, Tooltip } from '@proton/components/components';
+import { DriveLogo, Icon, ModalProps, Tooltip, useModalTwo } from '@proton/components/components';
 import Dialog from '@proton/components/components/dialog/Dialog';
 import { Portal } from '@proton/components/components/portal';
 import { useActiveBreakpoint } from '@proton/components/hooks';
+import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProtonUserCookie';
 import usePrevious from '@proton/hooks/usePrevious';
 import { modalTwoRootClassName } from '@proton/shared/lib/busy';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { DRIVE_PRICING_PAGE } from '@proton/shared/lib/drive/urls';
-import bigLogoWhite from '@proton/styles/assets/img/drive/big-logo-white.svg';
+import { getCookie } from '@proton/shared/lib/helpers/cookies';
 import clsx from '@proton/utils/clsx';
 
 import './UpsellFloatingModal.scss';
@@ -19,35 +20,43 @@ import './UpsellFloatingModal.scss';
 interface ChildProps {
     open: boolean;
     onClose: () => void;
+    onExit: () => void;
     onBlockNewOpening: () => void;
 }
 
 const UpsellFloatingModalContent = ({ onClose }: Pick<ChildProps, 'onClose'>) => {
     return (
-        <>
-            <div className="upsell-floating-modal-content w-full flex justify-center p-14">
-                <Tooltip className="upsell-floating-modal-tooltip" title={c('Action').t`Close`} onClick={onClose}>
-                    <Button className="shrink-0" icon shape="ghost" data-testid="modal:close">
-                        <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
-                    </Button>
-                </Tooltip>
-                <img className="block" src={bigLogoWhite} alt={DRIVE_APP_NAME} />
+        <div className="upsell-floating-modal-container relative">
+            <Tooltip
+                className="upsell-floating-modal-tooltip absolute right top mr-1"
+                title={c('Action').t`Close`}
+                onClick={onClose}
+            >
+                <Button className="shrink-0" icon shape="ghost" data-testid="upsell-floating-modal:close">
+                    <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
+                </Button>
+            </Tooltip>
+            <div className="py-3 px-4">
+                <div className="flex flex-nowrap items-center gap-2">
+                    <DriveLogo variant="glyph-only" />
+                    <div className="flex-1">
+                        <h4 className="text-bold">{c('Info').t`Try ${DRIVE_APP_NAME}: Free forever`}</h4>
+                        <div className="flex flex-nowrap items-center gap-6">
+                            <p className="m-0 mt-1 flex-1 max-w-custom" style={{ '--max-w-custom': '12.5em' }}>
+                                {c('Info').t`With ${DRIVE_APP_NAME} your data is protected by end-to-end encryption.`}
+                            </p>
+                            <ButtonLike
+                                as="a"
+                                href={DRIVE_PRICING_PAGE}
+                                target="_blank"
+                                color="norm"
+                                shape="outline"
+                            >{c('Action').t`Get Started`}</ButtonLike>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="my-4 mx-5">
-                <span className="upsell-floating-modal-badge text-semibold rounded py-1 px-4 mt-2">{c('Info')
-                    .t`Free forever`}</span>
-                <h4 className="text-bold mt-3">{c('Info').t`Swiss encrypted file storage`}</h4>
-                <p className="m-0 mt-1">
-                    {c('Info')
-                        .t`With ${DRIVE_APP_NAME}, your data is protected with end-to-end encryption. Only you can decrypt it.`}
-                </p>
-            </div>
-            <ModalTwoFooter>
-                <ButtonLike as="a" href={DRIVE_PRICING_PAGE} target="_blank" className="w-full" color="norm">{c(
-                    'Action'
-                ).t`Get ${DRIVE_APP_NAME}`}</ButtonLike>
-            </ModalTwoFooter>
-        </>
+        </div>
     );
 };
 
@@ -56,7 +65,7 @@ enum ExitState {
     exiting,
     exited,
 }
-const DesktopUpsellFloatingModal = ({ open, onClose, onBlockNewOpening }: ChildProps) => {
+const UpsellFloatingModal = ({ open, onClose }: ChildProps & ModalProps) => {
     const [exit, setExit] = useState(() => (open ? ExitState.idle : ExitState.exited));
     const active = exit !== ExitState.exited;
     const previousOpen = usePrevious(open);
@@ -66,8 +75,6 @@ const DesktopUpsellFloatingModal = ({ open, onClose, onBlockNewOpening }: ChildP
             setExit(ExitState.idle);
         } else if (previousOpen && !open) {
             setExit(ExitState.exiting);
-        } else if (!previousOpen && !open && !active) {
-            onBlockNewOpening();
         }
     }, [previousOpen, open, active]);
 
@@ -79,14 +86,19 @@ const DesktopUpsellFloatingModal = ({ open, onClose, onBlockNewOpening }: ChildP
     return (
         <Portal>
             <div
-                className={clsx(modalTwoRootClassName, 'upsell-floating-modal', exiting && 'modal-two--out')}
+                className={clsx(
+                    modalTwoRootClassName,
+                    'upsell-floating-modal mr-4 mb-2 p-0',
+                    exiting && 'modal-two--out'
+                )}
                 onAnimationEnd={({ animationName }) => {
                     if (exiting && animationName === 'anime-modal-two-out') {
                         setExit(ExitState.exited);
                     }
                 }}
+                data-testid="upsell-floating-modal"
             >
-                <Dialog className="modal-two-dialog upsell-floating-modal-dialog ">
+                <Dialog className="modal-two-dialog upsell-floating-modal-dialog border border-primary rounded">
                     <div className="modal-two-dialog-container">
                         <UpsellFloatingModalContent onClose={onClose} />
                     </div>
@@ -96,61 +108,25 @@ const DesktopUpsellFloatingModal = ({ open, onClose, onBlockNewOpening }: ChildP
     );
 };
 
-const MobileUpsellFloatingModal = ({ open, onClose, onBlockNewOpening }: ChildProps) => {
-    const ref = useRef<HTMLDivElement>(null);
-
-    const handleClose = () => {
-        onClose();
-        onBlockNewOpening();
-    };
-
-    // We listen for click outside and test if the click will contain the ref
-    const handleOutsideClick = (e: ReactMouseEvent<HTMLDivElement, MouseEvent>) => {
-        if (e.target && !ref.current?.contains(e.target as Element)) {
-            handleClose();
-        }
-    };
-
-    return (
-        // TODO: need to find a better way than put a click on div
-        <div onClick={handleOutsideClick}>
-            <ModalTwo open={open} onClose={handleClose}>
-                <div ref={ref}>
-                    <UpsellFloatingModalContent onClose={handleClose} />
-                </div>
-            </ModalTwo>
-        </div>
-    );
-};
-
-interface Props {
-    onResolve: () => void;
-    onlyOnce: boolean;
-}
-const UpsellFloatingModal = ({ onlyOnce = false, ...modalProps }: Props & ModalStateProps) => {
-    const { viewportWidth } = useActiveBreakpoint();
-    const [wasOpened, setWasOpened] = useState(false);
-
-    const handleBlockNewOpening = () => {
-        if (onlyOnce) {
-            setWasOpened(true);
-        }
-    };
-
-    const props = {
-        ...modalProps,
-        onBlockNewOpening: handleBlockNewOpening,
-    };
-
-    if (wasOpened) {
-        return null;
-    }
-
-    if (viewportWidth['<=small']) {
-        return <MobileUpsellFloatingModal {...props} />;
-    }
-
-    return <DesktopUpsellFloatingModal {...props} />;
-};
-
 export default UpsellFloatingModal;
+
+export const useUpsellFloatingModal = (): ReturnType<typeof useModalTwo<ModalProps, unknown>> => {
+    const [renderUpsellFloatingModal, showUpsellFloatingModal] = useModalTwo<ModalProps | void, unknown>(
+        UpsellFloatingModal,
+        false
+    );
+
+    const { viewportWidth } = useActiveBreakpoint();
+
+    // If user is proton user or on mobile we disable upsell modal
+    const hideModal = viewportWidth['<=small'] || !!getCookie(IS_PROTON_USER_COOKIE_NAME);
+
+    useEffect(() => {
+        if (hideModal) {
+            return;
+        }
+        void showUpsellFloatingModal();
+    }, [hideModal, showUpsellFloatingModal]);
+
+    return [hideModal ? null : renderUpsellFloatingModal, showUpsellFloatingModal];
+};
