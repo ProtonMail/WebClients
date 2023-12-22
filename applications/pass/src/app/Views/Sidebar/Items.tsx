@@ -1,7 +1,7 @@
 import { type FC, useEffect } from 'react';
 
 import { useNavigation } from '@proton/pass/components/Core/NavigationProvider';
-import { getLocalPath } from '@proton/pass/components/Core/routing';
+import { getLocalPath, maybeTrash } from '@proton/pass/components/Core/routing';
 import { SortFilter } from '@proton/pass/components/Item/Filters/Sort';
 import { TypeFilter } from '@proton/pass/components/Item/Filters/Type';
 import { ItemsList } from '@proton/pass/components/Item/List/ItemsList';
@@ -18,8 +18,8 @@ export const Items: FC = () => {
     useEffect(() => {
         const itemNotInFilters = itemId && shareId && !items.filtered.some(itemEq({ itemId, shareId }));
         const emptyRouteButResults = matchEmpty && items.filtered.length > 0;
-        if (itemNotInFilters || emptyRouteButResults) navigate(getLocalPath());
-    }, [items, itemId, shareId, matchEmpty]);
+        if (itemNotInFilters || emptyRouteButResults) navigate(getLocalPath(maybeTrash('', matchTrash)));
+    }, [items, itemId, shareId, matchEmpty, matchTrash]);
 
     return (
         <>

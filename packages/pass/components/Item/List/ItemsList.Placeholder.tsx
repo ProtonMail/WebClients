@@ -152,7 +152,7 @@ export const ItemsListPlaceholder: FC<Props> = ({ noActions, noImport }) => {
         <span className="block text-break color-weak text-sm p-2 text-center text-break">
             {(() => {
                 if (matchTrash) {
-                    return empty ? (
+                    return empty || !hasSearch ? (
                         <span>
                             <strong>{c('Title').t`Trash empty`}</strong>
                             <br /> {c('Info').t`Deleted items will be moved here first`}
