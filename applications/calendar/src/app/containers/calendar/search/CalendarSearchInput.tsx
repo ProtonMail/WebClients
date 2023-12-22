@@ -89,6 +89,9 @@ const CalendarSearchInput = (
                     ref={ref}
                 >
                     <div className="w-full m-auto">
+                        <label htmlFor="search-keyword-field" className="sr-only">
+                            {placeholder}
+                        </label>
                         <Input
                             ref={inputRef}
                             inputClassName="cursor-text"
@@ -98,6 +101,7 @@ const CalendarSearchInput = (
                             onKeyDown={handleOnKeyDown}
                             onSubmit={handleSearch}
                             data-testid="search-keyword"
+                            id="search-keyword-field"
                             autoFocus
                             disabled={!isSearchActive}
                             prefix={
