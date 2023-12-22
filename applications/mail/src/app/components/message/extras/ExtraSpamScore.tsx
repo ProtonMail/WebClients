@@ -31,7 +31,7 @@ const ExtraSpamScore = ({ message }: Props) => {
     if (isDMARCValidationFailure(message.data)) {
         return (
             <div
-                className="bg-norm rounded px-2 py-1 mb-3 flex flex-nowrap"
+                className="bg-norm rounded border px-2 py-1 mb-3 flex flex-nowrap"
                 data-testid="spam-banner:failed-dmarc-validation"
             >
                 <Icon name="exclamation-circle-filled" className="shrink-0 mt-1 ml-0.5 color-danger" />
