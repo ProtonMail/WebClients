@@ -263,6 +263,7 @@ const SingleSignupContainerV2 = ({
 
         if (invited && inviter) {
             mode = SignupMode.Invite;
+            localID = -1;
             invite = {
                 type: 'pass',
                 data: { inviter, invited },
@@ -271,20 +272,34 @@ const SingleSignupContainerV2 = ({
 
         if (isMailTrial) {
             result.referrer = REFERRER_CODE_MAIL_TRIAL;
-            localID = -1;
         }
+
         if (result.referrer) {
             mode = SignupMode.MailReferral;
-            result.cycle = CYCLE.MONTHLY;
-            //result.preSelectedPlan = PLANS.MAIL;
             localID = -1;
-        }
-        if (result.referrer && result.invite) {
+            result.cycle = CYCLE.MONTHLY;
+            result.hideFreePlan = false;
+
             invite = {
                 type: 'mail',
-                data: { invite: result.invite },
+                data: {
+                    referrer: result.referrer,
+                    invite: result.invite,
+                },
             };
+        }
+
+        if (location.state?.invite) {
+            mode = SignupMode.Default;
             localID = -1;
+            result.hideFreePlan = false;
+            invite = {
+                type: 'generic',
+                data: {
+                    selector: location.state.invite.selector,
+                    token: location.state.invite.token,
+                },
+            };
         }
 
         return {
@@ -483,11 +498,7 @@ const SingleSignupContainerV2 = ({
             await startUnAuthFlow().catch(noop);
 
             const maybeSession = (() => {
-                if (
-                    signupParameters.localID === -1 ||
-                    !activeSessions?.length ||
-                    signupParameters.mode === SignupMode.Invite
-                ) {
+                if (signupParameters.localID === -1 || !activeSessions?.length) {
                     return undefined;
                 }
                 return (
@@ -519,7 +530,6 @@ const SingleSignupContainerV2 = ({
             const planParameters = getPlanIDsFromParams(plans, signupParameters, defaults);
             const currency = signupParameters.currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;
             const cycle = signupParameters.cycle || defaults.cycle;
-            const referrer = signupParameters.referrer;
             const invite = signupParameters.invite;
 
             const plansMap = toMap(plans, 'Name') as PlansMap;
@@ -528,11 +538,11 @@ const SingleSignupContainerV2 = ({
                 await Promise.all([
                     silentApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
                     silentApi<PaymentMethodStatus>(queryPaymentMethodStatus()),
-                    referrer
-                        ? await silentApi(checkReferrer(referrer))
+                    invite?.type === 'mail'
+                        ? await silentApi(checkReferrer(invite.data.referrer))
                               .then(() => ({
-                                  referrer: referrer || '',
-                                  invite: invite?.type === 'mail' ? invite.data.invite : '' || '',
+                                  referrer: invite.data.referrer,
+                                  invite: invite.data.invite || '',
                               }))
                               .catch(() => undefined)
                         : undefined,
@@ -553,10 +563,6 @@ const SingleSignupContainerV2 = ({
                         toApp: product,
                     }),
                 ]);
-
-            if ((isMailTrial || isMailRefer) && !referralData) {
-                history.replace(SSO_PATHS.SIGNUP);
-            }
 
             let session: SessionData | undefined;
             if (resumedSession) {
@@ -580,6 +586,13 @@ const SingleSignupContainerV2 = ({
             }
             if (referralData) {
                 signupParametersDiff.mode = SignupMode.MailReferral;
+            } else {
+                if (signupParameters.mode === SignupMode.MailReferral) {
+                    signupParametersDiff.mode = SignupMode.Default;
+                }
+                if (isMailTrial || isMailRefer) {
+                    history.replace(SSO_PATHS.SIGNUP);
+                }
             }
             if (Object.keys(signupParametersDiff).length > 0) {
                 setSignupParameters((old) => ({ ...old, ...signupParametersDiff }));
@@ -594,7 +607,7 @@ const SingleSignupContainerV2 = ({
                 planParameters,
                 plansMap,
                 referralData,
-                inviteData: location.state?.invite,
+                inviteData: signupParameters.invite?.type === 'generic' ? signupParameters.invite.data : undefined,
                 paymentMethodStatus,
                 subscriptionData,
                 cache: undefined,

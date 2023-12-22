@@ -619,6 +619,9 @@ const Step1 = ({
                                     <div className="flex items-start justify-space-between gap-14">
                                         <div className="flex-1 w-0 relative">
                                             <AccountStepDetails
+                                                {...(signupParameters.email
+                                                    ? { defaultEmail: signupParameters.email }
+                                                    : undefined)}
                                                 {...(signupParameters.invite?.type === 'pass'
                                                     ? {
                                                           defaultEmail: signupParameters.invite.data.invited,
