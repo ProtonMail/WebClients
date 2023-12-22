@@ -5,9 +5,10 @@ import { getPlanFromPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getLocalPart } from '@proton/shared/lib/keys';
 
 import CongratulationsStep from '../../signup/CongratulationsStep';
+import ExploreStep from '../../signup/ExploreStep';
 import RecoveryStep from '../../signup/RecoveryStep';
-import { SignupCacheResult, SignupType } from '../../signup/interfaces';
-import { handleDisplayName, handleSaveRecovery } from '../../signup/signupActions';
+import { SignupCacheResult, SignupSteps, SignupType } from '../../signup/interfaces';
+import { handleDisplayName, handleDone, handleSaveRecovery } from '../../signup/signupActions';
 import { useFlowRef } from '../../useFlowRef';
 import Layout from '../Layout';
 import { SignupCustomStepProps } from '../interface';
@@ -15,6 +16,7 @@ import { SignupCustomStepProps } from '../interface';
 enum Step {
     Congratulations,
     SaveRecovery,
+    Explore,
 }
 
 const CustomStep = ({ model, onSetup, theme, logo }: SignupCustomStepProps) => {
@@ -37,71 +39,102 @@ const CustomStep = ({ model, onSetup, theme, logo }: SignupCustomStepProps) => {
 
     return (
         <Layout theme={theme} logo={logo} hasDecoration={false}>
-            {step === Step.Congratulations && (
-                <CongratulationsStep
-                    defaultName={
-                        accountData.username ||
-                        (accountData?.signupType === SignupType.Email && getLocalPart(accountData.email)) ||
-                        ''
-                    }
-                    planName={planName}
-                    onSubmit={async ({ displayName }) => {
-                        const validateFlow = createFlow();
-                        try {
-                            if (!cache || cache.type !== 'signup') {
-                                throw new Error('Missing cache');
-                            }
-                            const signupActionResponse = await handleDisplayName({
-                                displayName,
-                                cache,
-                            });
-
-                            if (validateFlow()) {
-                                cacheRef.current = signupActionResponse.cache;
-                                setStep(Step.SaveRecovery);
-                            }
-                        } catch (error) {
-                            handleError(error);
-                        } finally {
-                            createFlow.reset();
+            <main>
+                {step === Step.Congratulations && (
+                    <CongratulationsStep
+                        padding={false}
+                        defaultName={
+                            accountData.username ||
+                            (accountData?.signupType === SignupType.Email && getLocalPart(accountData.email)) ||
+                            ''
                         }
-                    }}
-                />
-            )}
-            {step === Step.SaveRecovery && (
-                <RecoveryStep
-                    onBack={() => setStep(Step.Congratulations)}
-                    defaultCountry={defaultCountry}
-                    defaultEmail={
-                        (verificationModel?.method === 'email' && verificationModel?.value) ||
-                        (accountData?.signupType === SignupType.Email && accountData.email) ||
-                        ''
-                    }
-                    defaultPhone={verificationModel?.method === 'sms' ? verificationModel?.value : ''}
-                    onSubmit={async ({ recoveryEmail, recoveryPhone }) => {
-                        const validateFlow = createFlow();
-                        try {
-                            if (!cache || cache.type !== 'signup') {
-                                throw new Error('Missing cache');
-                            }
-                            const signupActionResponse = await handleSaveRecovery({
-                                cache,
-                                recoveryEmail,
-                                recoveryPhone,
-                            });
+                        planName={planName}
+                        onSubmit={async ({ displayName }) => {
+                            const validateFlow = createFlow();
+                            try {
+                                if (!cache || cache.type !== 'signup') {
+                                    throw new Error('Missing cache');
+                                }
+                                const signupActionResponse = await handleDisplayName({
+                                    displayName,
+                                    cache,
+                                });
 
-                            if (validateFlow()) {
-                                cacheRef.current = signupActionResponse.cache;
-                                await onSetup(signupActionResponse.cache);
+                                if (validateFlow()) {
+                                    cacheRef.current = signupActionResponse.cache;
+                                    setStep(Step.SaveRecovery);
+                                }
+                            } catch (error) {
+                                handleError(error);
+                            } finally {
+                                createFlow.reset();
                             }
-                        } catch (error) {
-                            handleError(error);
-                        } finally {
-                            createFlow.reset();
+                        }}
+                    />
+                )}
+                {step === Step.SaveRecovery && (
+                    <RecoveryStep
+                        padding={false}
+                        onBack={() => setStep(Step.Congratulations)}
+                        defaultCountry={defaultCountry}
+                        defaultEmail={
+                            (verificationModel?.method === 'email' && verificationModel?.value) ||
+                            (accountData?.signupType === SignupType.Email && accountData.email) ||
+                            ''
                         }
-                    }}
-                />
-            )}
+                        defaultPhone={verificationModel?.method === 'sms' ? verificationModel?.value : ''}
+                        onSubmit={async ({ recoveryEmail, recoveryPhone }) => {
+                            const validateFlow = createFlow();
+                            try {
+                                if (!cache || cache.type !== 'signup') {
+                                    throw new Error('Missing cache');
+                                }
+                                const signupActionResponse = await handleSaveRecovery({
+                                    cache,
+                                    recoveryEmail,
+                                    recoveryPhone,
+                                });
+
+                                if (validateFlow()) {
+                                    cacheRef.current = signupActionResponse.cache;
+                                    if (signupActionResponse.to === SignupSteps.Done) {
+                                        await onSetup({ type: 'signup', payload: signupActionResponse });
+                                    } else {
+                                        setStep(Step.Explore);
+                                    }
+                                }
+                            } catch (error) {
+                                handleError(error);
+                            } finally {
+                                createFlow.reset();
+                            }
+                        }}
+                    />
+                )}
+                {step === Step.Explore && (
+                    <ExploreStep
+                        padding={false}
+                        onExplore={async (app) => {
+                            try {
+                                if (!cache || cache.type !== 'signup') {
+                                    throw new Error('Missing cache');
+                                }
+                                const validateFlow = createFlow();
+                                const signupActionResponse = handleDone({
+                                    cache,
+                                    appIntent: { app, ref: 'product-switch' },
+                                });
+
+                                if (validateFlow()) {
+                                    await onSetup({ type: 'signup', payload: signupActionResponse });
+                                }
+                            } catch (error) {
+                                handleError(error);
+                            }
+                        }}
+                    />
+                )}
+            </main>
         </Layout>
     );
 };
