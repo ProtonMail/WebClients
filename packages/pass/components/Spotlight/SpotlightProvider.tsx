@@ -142,7 +142,7 @@ export const SpotlightProvider: FC = ({ children }) => {
                           size: 'small',
                           closable: false,
                           extraActions: ({ onClose }) => [
-                              <Button pill shape="solid" color="weak" onClick={onClose}>{c('Action')
+                              <Button pill shape="solid" color="weak" onClick={onClose} key="not-now">{c('Action')
                                   .t`Not now`}</Button>,
                           ],
                       }
