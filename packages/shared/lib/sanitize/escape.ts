@@ -12,30 +12,30 @@ const REGEXP_HEIGHT_PERCENTAGE = /((?:min-|max-|line-)?height)\s*:\s*([\d.,]+%)/
 const REGEXP_POSITION_ABSOLUTE = /position\s*:\s*absolute/gi;
 const REGEXP_MEDIA_DARK_STYLE_2 = /Color-scheme/gi;
 
-export const escape = (string: string) => {
-    const UNESCAPE_HTML_REGEX = /[&<>"']/g;
-    const HTML_ESCAPES = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#39;',
-    };
+const HTML_ESCAPES: [search: string, replace: string][] = [
+    ['&', '&amp;'],
+    ['<', '&lt;'],
+    ['>', '&gt;'],
+    ['"', '&quot;'],
+    ["'", '&#39;'],
+];
 
-    return string.replace(UNESCAPE_HTML_REGEX, HTML_ESCAPES as any);
+const HTML_UNESCAPES: [search: string, replace: string][] = HTML_ESCAPES.map(([a, b]) => [b, a]);
+
+export const escape = (string: string) => {
+    HTML_ESCAPES.forEach(([search, replace]) => {
+        string = string.replaceAll(search, replace);
+    });
+
+    return string;
 };
 
 export const unescape = (string: string) => {
-    const ESCAPED_HTML_REGEX = /&(?:amp|lt|gt|quot|#39);/g;
-    const HTML_UNESCAPES = {
-        '&amp;': '&',
-        '&lt;': '<',
-        '&gt;': '>',
-        '&quot;': '"',
-        '&#39;': "'",
-    };
+    HTML_UNESCAPES.forEach(([search, replace]) => {
+        string = string.replaceAll(search, replace);
+    });
 
-    return string.replace(ESCAPED_HTML_REGEX, HTML_UNESCAPES as any);
+    return string;
 };
 
 /**

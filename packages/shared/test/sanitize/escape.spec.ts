@@ -1,4 +1,10 @@
-import { escapeForbiddenStyle, escapeURLinStyle, recurringUnescapeCSSEncoding } from '../../lib/sanitize/escape';
+import {
+    escape,
+    escapeForbiddenStyle,
+    escapeURLinStyle,
+    recurringUnescapeCSSEncoding,
+    unescape,
+} from '../../lib/sanitize/escape';
 
 describe('Escape', () => {
     describe('escapeForbiddenStyles', () => {
@@ -59,6 +65,24 @@ describe('Escape', () => {
             ur&#x26;#x26;#x26;#x26;#x26;(https://proton.me/image.jpg);`;
 
             expect(escapeURLinStyle(style)).toEqual(style);
+        });
+    });
+
+    describe('unescape', () => {
+        it('should unescape the string', () => {
+            const string = `&lt;Hello&gt;&amp;&quot;&lt;Bye&gt;&#39;`;
+            const expected = `<Hello>&"<Bye>'`;
+
+            expect(unescape(string)).toEqual(expected);
+        });
+    });
+
+    describe('escape', () => {
+        it('should escape the string', () => {
+            const string = `<Hello>&"<Bye>'`;
+            const expected = `&lt;Hello&gt;&amp;&quot;&lt;Bye&gt;&#39;`;
+
+            expect(escape(string)).toEqual(expected);
         });
     });
 });
