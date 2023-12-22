@@ -28,7 +28,7 @@ import Benefits, { BenefitItem } from '../Benefits';
 import BundlePlanSubSection from '../BundlePlanSubSection';
 import { PlanCard, planCardFeatureProps } from '../PlanCardSelector';
 import { getBenefits, getGenericBenefits, getGenericFeatures, getJoinString } from '../configuration/helper';
-import { SignupConfiguration } from '../interface';
+import { PlanParameters, SignupConfiguration, SignupMode } from '../interface';
 import CustomStep from './CustomStep';
 import setupAccount from './account-setup.svg';
 
@@ -86,27 +86,40 @@ export const getPlanTitle = (plan: Plan | undefined) => {
 };
 
 export const getMailConfiguration = ({
+    mode,
     plan,
     isLargeViewport,
     vpnServersCountData,
+    planParameters,
     hideFreePlan,
     plansMap,
 }: {
+    mode: SignupMode;
     plan: Plan | undefined;
     hideFreePlan: boolean;
     isLargeViewport: boolean;
     vpnServersCountData: VPNServersCountData;
+    planParameters: PlanParameters | undefined;
     plansMap?: PlansMap;
 }): SignupConfiguration => {
     const logo = <MailLogo />;
 
     const title = (() => {
-        return <>{getPlanTitle(plan) || c('mail_signup_2023: Info').t`Secure email that protects your privacy`}</>;
+        if (mode === SignupMode.MailReferral) {
+            return c('Title').t`You’ve been invited to try ${MAIL_APP_NAME}`;
+        }
+
+        return (
+            <>
+                {(planParameters?.defined && getPlanTitle(plan)) ||
+                    c('mail_signup_2023: Info').t`Secure email that protects your privacy`}
+            </>
+        );
     })();
 
     const features = getGenericFeatures(isLargeViewport);
 
-    const planCards: PlanCard[] = [
+    let planCards: PlanCard[] = [
         !hideFreePlan && {
             plan: PLANS.FREE,
             subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getFreeMailFeatures()} />,
@@ -131,6 +144,28 @@ export const getMailConfiguration = ({
             guarantee: true,
         },
     ].filter(isTruthy);
+
+    if (mode === SignupMode.MailReferral) {
+        planCards = [
+            {
+                plan: PLANS.FREE,
+                subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getFreeMailFeatures()} />,
+                type: 'standard' as const,
+                guarantee: false,
+            },
+            {
+                plan: PLANS.MAIL,
+                subsection: (
+                    <PlanCardFeatureList
+                        {...planCardFeatureProps}
+                        features={getCustomMailFeatures(plansMap?.[PLANS.MAIL])}
+                    />
+                ),
+                type: 'best' as const,
+                guarantee: true,
+            },
+        ];
+    }
 
     const benefitItems = getMailBenefits();
     const benefits = benefitItems && (
