@@ -10,11 +10,12 @@ interface Props {
     info: string;
     features: PlanCardFeatureDefinition[];
     downgrade?: boolean;
+    className?: string;
 }
 
-const SubscriptionCancelPlan = ({ name, info, features, downgrade = false }: Props) => {
+const SubscriptionCancelPlan = ({ name, info, features, downgrade = false, className }: Props) => {
     return (
-        <div className="pr-0 py-4 md:pr-4 flex-1">
+        <div className={clsx('pr-0 py-4 md:pr-4', className)}>
             <h3 className="text-bold text-capitalize mb-2" id={`desc_${name}`}>
                 {name}
             </h3>
