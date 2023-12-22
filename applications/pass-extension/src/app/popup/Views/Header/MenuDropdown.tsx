@@ -9,7 +9,7 @@ import { useOpenSettingsTab } from 'proton-pass-extension/lib/hooks/useOpenSetti
 import { usePopupContext } from 'proton-pass-extension/lib/hooks/usePopupContext';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms';
+import { Button, ButtonLike } from '@proton/atoms';
 import type { DropdownProps } from '@proton/components';
 import {
     Collapsible,
@@ -22,6 +22,7 @@ import {
     Icon,
     usePopperAnchor,
 } from '@proton/components';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
@@ -50,6 +51,7 @@ const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
 };
 
 export const MenuDropdown: VFC = () => {
+    const { onLink } = usePassCore();
     const history = useHistory();
     const { lock, logout, ready, expanded } = usePopupContext();
     const { inTrash, unselectItem } = useNavigationContext();
@@ -68,6 +70,14 @@ export const MenuDropdown: VFC = () => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const menu = useMenuItems({ onAction: close });
     const withClose = withTap(close);
+
+    if (!expanded) {
+        menu.advanced.push({
+            icon: 'arrow-out-square',
+            label: c('Action').t`Open in a window`,
+            onClick: withClose(expandPopup),
+        });
+    }
 
     const onVaultSelect = (selected: string) => {
         unselectItem();
@@ -202,13 +212,23 @@ export const MenuDropdown: VFC = () => {
                             />
                         )}
 
-                        {!expanded && (
-                            <DropdownMenuButton
-                                onClick={expandPopup}
-                                label={c('Action').t`Open in a window`}
-                                icon="arrow-out-square"
-                            />
-                        )}
+                        <DropdownMenuButton
+                            onClick={withClose(() => onLink('https://pass.proton.me'))}
+                            label={
+                                <div className="flex items-center flex-nowrap gap-2">
+                                    <span>{c('Action').t`Open web app`}</span>
+                                    <ButtonLike
+                                        as="span"
+                                        color="weak"
+                                        pill
+                                        shape="solid"
+                                        size="small"
+                                        className="text-strong text-uppercase text-sm no-pointer-events no-select"
+                                    >{c('Badge').t`Early access`}</ButtonLike>
+                                </div>
+                            }
+                            icon="arrow-out-square"
+                        />
 
                         <Submenu icon="notepad-checklist" label={c('Action').t`Advanced`} items={menu.advanced} />
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
