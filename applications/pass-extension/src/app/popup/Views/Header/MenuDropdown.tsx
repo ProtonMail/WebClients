@@ -1,4 +1,4 @@
-import { type VFC } from 'react';
+import { type VFC, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
@@ -31,7 +31,7 @@ import { EarlyAccessBadge } from '@proton/pass/components/Upsell/EarlyAccessBadg
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { PASS_WEB_APP_URL, UpsellRef } from '@proton/pass/constants';
-import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
+import { type MenuItem, useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import {
     selectHasRegisteredLock,
     selectPassPlan,
@@ -72,13 +72,20 @@ export const MenuDropdown: VFC = () => {
     const menu = useMenuItems({ onAction: close });
     const withClose = withTap(close);
 
-    if (!expanded) {
-        menu.advanced.push({
-            icon: 'arrow-out-square',
-            label: c('Action').t`Open in a window`,
-            onClick: withClose(expandPopup),
-        });
-    }
+    const advancedMenuItems = useMemo<MenuItem[]>(
+        () =>
+            expanded
+                ? menu.advanced
+                : [
+                      ...menu.advanced,
+                      {
+                          icon: 'arrow-out-square',
+                          label: c('Action').t`Open in a window`,
+                          onClick: withClose(expandPopup),
+                      },
+                  ],
+        []
+    );
 
     const onVaultSelect = (selected: string) => {
         unselectItem();
@@ -224,7 +231,7 @@ export const MenuDropdown: VFC = () => {
                             icon="arrow-out-square"
                         />
 
-                        <Submenu icon="notepad-checklist" label={c('Action').t`Advanced`} items={menu.advanced} />
+                        <Submenu icon="notepad-checklist" label={c('Action').t`Advanced`} items={advancedMenuItems} />
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
                         <Submenu icon="bug" label={c('Action').t`Feedback`} items={menu.feedback} />
                         <Submenu icon="mobile" label={c('Action').t`Get mobile apps`} items={menu.download} />
