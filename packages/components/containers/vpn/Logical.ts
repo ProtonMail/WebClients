@@ -4,6 +4,9 @@ export interface Logical {
     ID: string;
     City?: string | null;
     DisplayTier: number;
+    /**
+     * @deprecated Will be removed, instead we should use the .Name, or Domain from the .Servers property
+     */
     Domain: string;
     EntryCountry: string;
     ExitCountry: string;
