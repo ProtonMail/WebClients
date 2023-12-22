@@ -62,12 +62,14 @@ const HighlightPlanDowngradeModal = ({ onConfirm, onClose, shortPlan, periodEnd,
                         name={downgradedPlanName}
                         info={downgradedShortPlan?.description || ''}
                         features={shortPlanFeatures}
+                        className="md:flex-1"
                         downgrade
                     />
                     <SubscriptionCancelPlan
                         name={currentPlanName}
                         info={shortPlan?.description || ''}
                         features={shortPlanFeatures}
+                        className="md:flex-1"
                     />
                 </div>
             </ModalContent>
