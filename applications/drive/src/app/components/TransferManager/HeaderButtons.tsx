@@ -9,7 +9,6 @@ import {
     isTransferFinalizing,
     isTransferOngoing,
     isTransferPaused,
-    isTransferSkipped,
 } from '../../utils/transfer';
 import Buttons from './Buttons';
 import { TransferManagerButtonProps } from './interfaces';
@@ -27,7 +26,6 @@ const extractTransferFromEntry = ({ transfer }: TransferManagerEntry) => transfe
 
 const isInvalidForCancellation = (transfer: Upload | Download) =>
     isTransferCanceled(transfer) ||
-    isTransferSkipped(transfer) ||
     isTransferFailed(transfer) ||
     isTransferFinalizing(transfer) ||
     isTransferDone(transfer);
