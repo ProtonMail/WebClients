@@ -19,11 +19,3 @@ export const queryDeletePhotosShare = (volumeId: string, shareId: string) => ({
     method: 'delete',
     url: `drive/volumes/${volumeId}/photos/share/${shareId}`,
 });
-
-export const queryPhotosDuplicates = (volumeId: string, { nameHashes }: { nameHashes: string[] }) => ({
-    method: 'post',
-    url: `drive/volumes/${volumeId}/photos/duplicates`,
-    data: {
-        NameHashes: nameHashes,
-    },
-});
