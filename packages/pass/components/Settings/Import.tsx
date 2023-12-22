@@ -2,7 +2,6 @@ import { type VFC, useCallback, useRef, useState } from 'react';
 import { Provider as ReduxProvider, useStore } from 'react-redux';
 
 import { Form, FormikProvider } from 'formik';
-import { SettingsPanel } from 'proton-pass-extension/lib/components/Settings/SettingsPanel';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
@@ -21,6 +20,8 @@ import { importItemsRequest } from '@proton/pass/store/actions/requests';
 import type { MaybeNull } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+
+import { SettingsPanel } from './SettingsPanel';
 
 export const Import: VFC = () => {
     const store = useStore();
