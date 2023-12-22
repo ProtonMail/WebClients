@@ -165,10 +165,6 @@ const useLoadContactImage = ({ photo, onToggleLoadDirectBanner, needsResize = fa
                     return 'needsLoadDirect';
                 }
 
-                if (needsResize && image.isSmall) {
-                    return 'smallImageLoaded';
-                }
-
                 return 'loaded';
             }
 

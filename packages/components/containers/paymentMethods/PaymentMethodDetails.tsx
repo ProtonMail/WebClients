@@ -46,19 +46,17 @@ const PaymentMethodDetailsCard = ({ details }: { details: SavedCardDetails }) =>
     return (
         <Bordered className="bg-weak rounded inline-flex flex-column w-full p-7" data-testid="existing-credit-card">
             {bankIcon ? <img width="70" src={bankIcon} alt={Brand} className="mb-4" /> : null}
-            <span className="block mb-4 opacity-40">{c('Label').t`Card number`}</span>
-            <div className="ratio-container-5-1 text-center">
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="inner-ratio-container fill-currentcolor"
-                    viewBox={`0 0 ${textWidth} 50`}
-                    xmlSpace="preserve"
-                >
-                    <text x="0px" y="40px" className="card-numbers text-strong text-monospace" ref={textRef}>
-                        {cardNumberText}
-                    </text>
-                </svg>
-            </div>
+            <span className="block opacity-40">{c('Label').t`Card number`}</span>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="ratio-5/1 fill-currentcolor mb-4"
+                viewBox={`0 0 ${textWidth} 50`}
+                xmlSpace="preserve"
+            >
+                <text x="0px" y="40px" className="card-numbers text-strong text-monospace" ref={textRef}>
+                    {cardNumberText}
+                </text>
+            </svg>
             <div className="flex flex-nowrap max-w-full">
                 <div className="flex-1">
                     {!!Name && (
