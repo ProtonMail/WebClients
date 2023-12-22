@@ -174,7 +174,8 @@ export interface SignupParameters2 extends Omit<ReturnType<typeof getSignupSearc
     localID: number | undefined;
     mode: SignupMode;
     invite:
+        | { type: 'generic'; data: { selector: string; token: string } }
         | { type: 'pass'; data: { inviter: string; invited: string } }
-        | { type: 'mail'; data: { invite: string } }
+        | { type: 'mail'; data: { referrer: string; invite: string | undefined } }
         | undefined;
 }
