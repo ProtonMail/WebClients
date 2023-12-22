@@ -26,14 +26,14 @@ const DesktopAppLoginErrorUpsell = (modalProps: ModalStateProps) => {
                         <p className="mt-0 mb-4">{c('Desktop app upsell')
                             .t`The beta version of the ${MAIL_APP_NAME} desktop app is currently limited to ${BRAND_NAME} Visionary subscribers. It will be available to all users in early 2024.`}</p>
                         <p className="my-0">{c('Desktop app upsell')
-                            .t`Upgrade today or check again in early 2024 for access`}</p>
+                            .t`Upgrade today or check again in early 2024 for access.`}</p>
                     </div>
                     <ButtonLike
                         as="a"
                         fullWidth
                         color="norm"
                         size="large"
-                        href="https://account.proton.me/mail/signup?plan=visionary2022&billing=12&currency=USD"
+                        href="https://proton.me/visionary"
                         target="_blank"
                     >
                         {c('Action').t`Upgrade to Visionary`}
