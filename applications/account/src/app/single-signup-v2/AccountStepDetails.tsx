@@ -21,6 +21,7 @@ import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import { Challenge, ChallengeRef } from '@proton/components/containers';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import {
     confirmPasswordValidator,
     emailValidator,
@@ -242,7 +243,7 @@ const AccountStepDetails = ({
 
     const domain = maybeDomain || domains?.[0];
 
-    const [details, setDetails] = useState<AccountDetails>(getDefaultInputs({ defaultEmail }));
+    const [details, setDetails] = useState<AccountDetails>(getDefaultInputs({}));
     const [states, setStates] = useState<AccountDetailsInputState>(getDefaultInputStates(details));
 
     const trimmedEmail = details.email.trim();
@@ -403,6 +404,37 @@ const AccountStepDetails = ({
         });
     };
 
+    const onUsernameValue = (value: string, domain: string) => {
+        const sanitizedValue = value.replaceAll('@', '');
+
+        inputValuesRef.current.username = true;
+        setInputsStateDiff({ username: { interactive: true } });
+        setInputsDiff({ username: sanitizedValue });
+        setDomain(domain);
+
+        // If sanitisation happens, force re-render the input with a new value so that the values get removed in the iframe
+        if (sanitizedValue !== value) {
+            flushSync(() => {
+                setInputsDiff({ username: `${value} ` });
+            });
+            setInputsDiff({ username: sanitizedValue });
+        }
+
+        const username = sanitizedValue.trim();
+        const errors = getErrorDetails({
+            signupType,
+            username,
+            domain,
+        });
+        usernameAsyncValidator.trigger({
+            api,
+            error: !!errors.username,
+            value: joinUsernameDomain(username, domain),
+            set: setUsernameAsyncValidationState,
+            measure,
+        });
+    };
+
     useImperativeHandle(accountStepDetailsRef, () => ({
         validate: () => {
             return validateAccountDetails();
@@ -443,10 +475,18 @@ const AccountStepDetails = ({
     }, []);
 
     useEffect(() => {
-        if (disableEmail && defaultEmail) {
+        if (!domains.length || !defaultEmail) {
+            return;
+        }
+        const [local, defaultDomain] = getEmailParts(defaultEmail);
+        if (!defaultDomain || domains.includes(defaultDomain)) {
+            setSignupType(SignupType.Username);
+            onUsernameValue(local, domain || defaultDomain);
+        } else if (signupTypes.includes(SignupType.Email)) {
+            setSignupType(SignupType.Email);
             onEmailValue(defaultEmail);
         }
-    }, [disableEmail, defaultEmail]);
+    }, [defaultEmail, domains]);
 
     const usernameError = states.username.interactive && states.username.focus ? errorDetails.username : undefined;
     const emailError = states.email.interactive && states.email.focus ? errorDetails.email : undefined;
@@ -646,15 +686,7 @@ const AccountStepDetails = ({
                                                     onClose={() => setRerender({})}
                                                     value={domain}
                                                     onChange={({ value }) => {
-                                                        setDomain(value);
-
-                                                        usernameAsyncValidator.trigger({
-                                                            api,
-                                                            error: !!errorDetails.username,
-                                                            value: joinUsernameDomain(trimmedUsername, value),
-                                                            set: setUsernameAsyncValidationState,
-                                                            measure,
-                                                        });
+                                                        onUsernameValue(trimmedUsername, value);
                                                     }}
                                                 >
                                                     {domainOptions.map((option) => (
@@ -675,35 +707,7 @@ const AccountStepDetails = ({
                                     dense={!passwordFields ? !emailError : undefined}
                                     rootClassName={!passwordFields ? (!emailError ? 'pb-2' : undefined) : undefined}
                                     value={details.username}
-                                    onValue={(value: string) => {
-                                        const sanitizedValue = value.replaceAll('@', '');
-
-                                        inputValuesRef.current.username = true;
-                                        setInputsStateDiff({ username: { interactive: true } });
-                                        setInputsDiff({ username: sanitizedValue });
-
-                                        // If sanitisation happens, force re-render the input with a new value so that the values get removed in the iframe
-                                        if (sanitizedValue !== value) {
-                                            flushSync(() => {
-                                                setInputsDiff({ username: `${value} ` });
-                                            });
-                                            setInputsDiff({ username: sanitizedValue });
-                                        }
-
-                                        const username = sanitizedValue.trim();
-                                        const errors = getErrorDetails({
-                                            signupType,
-                                            username,
-                                            domain,
-                                        });
-                                        usernameAsyncValidator.trigger({
-                                            api,
-                                            error: !!errors.username,
-                                            value: joinUsernameDomain(username, domain),
-                                            set: setUsernameAsyncValidationState,
-                                            measure,
-                                        });
-                                    }}
+                                    onValue={(value: string) => onUsernameValue(value, domain)}
                                     onBlur={() => {
                                         // Doesn't work because it's in the challenge
                                         setInputsStateDiff({ username: { focus: true } });
