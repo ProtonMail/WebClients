@@ -7,24 +7,15 @@ import { ButtonLike } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
 import { PLANS } from '@proton/shared/lib/constants';
-import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
-import {
-    DropdownActions,
-    Icon,
-    SettingsLink,
-    Table,
-    TableBody,
-    TableCell,
-    TableRow,
-    Tooltip,
-} from '../../../components';
-import { useApi, useNotifications, useUser } from '../../../hooks';
+import { Icon, SettingsLink, Table, TableBody, TableCell, TableRow, Tooltip } from '../../../components';
+import { useApi, useUser } from '../../../hooks';
 import Country from './Country';
 import LoadIndicator from './LoadIndicator';
+import { normalizeName } from './normalizeName';
 import { isP2PEnabled, isTorEnabled } from './utils';
 
 export const CATEGORY = {
@@ -71,11 +62,10 @@ export const TorIcon = () => (
 // TODO: Add icons instead of text for p2p and tor when they are ready
 const ConfigsTable = ({ loading, servers = [], platform, protocol, category, onSelect, selecting }) => {
     const api = useApi();
-    const { createNotification } = useNotifications();
     const [{ hasPaidVpn }] = useUser();
 
     const handleClickDownload =
-        ({ ID, ExitCountry, Domain }) =>
+        ({ ID, ExitCountry, Tier, Name }) =>
         async () => {
             const buffer = await api(
                 getVPNServerConfig({
@@ -86,9 +76,8 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, onS
                 })
             );
             const blob = new Blob([buffer], { type: 'application/x-openvpn-profile' });
-            const [country, ...rest] = Domain.split('.');
-            const domain = category === CATEGORY.COUNTRY ? [country.substring(0, 2), ...rest].join('.') : Domain;
-            downloadFile(blob, `${domain}.${protocol}.ovpn`);
+            const name = category === CATEGORY.COUNTRY ? ExitCountry.toLowerCase() : normalizeName({ Tier, Name });
+            downloadFile(blob, `${name}.protonvpn.${protocol}.ovpn`);
         };
 
     return (
@@ -117,75 +106,56 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, onS
                 </tr>
             </thead>
             <TableBody loading={loading} colSpan={4}>
-                {servers.map((server) => (
-                    <TableRow
-                        key={server.ID}
-                        cells={[
-                            [CATEGORY.SERVER, CATEGORY.FREE].includes(category) ? (
-                                server.Name
-                            ) : (
-                                <Country key="country" server={server} />
-                            ),
-                            category === CATEGORY.SERVER ? (
-                                <div className="inline-flex children-self-center" key="city">
-                                    {server.City}
-                                </div>
-                            ) : null,
-                            <div className="inline-flex children-self-center" key="status">
-                                <LoadIndicator server={server} />
-                                {server.Tier === 2 && <PlusBadge />}
-                                {server.Servers.every(({ Status }) => !Status) && <ServerDown />}
-                                {isP2PEnabled(server.Features) && <P2PIcon />}
-                                {isTorEnabled(server.Features) && <TorIcon />}
-                            </div>,
-                            server.isUpgradeRequired ? (
-                                <Tooltip
-                                    key="download"
-                                    title={
-                                        server.Tier === 2
-                                            ? c('Info').t`Plus or Visionary subscription required`
-                                            : c('Info').t`Basic, Plus or Visionary subscription required`
-                                    }
-                                >
-                                    <ButtonLike
-                                        as={SettingsLink}
-                                        color="norm"
-                                        size="small"
-                                        path={hasPaidVpn ? `/dashboard?plan=${PLANS.VPN}` : '/upgrade'}
-                                    >{c('Action').t`Upgrade`}</ButtonLike>
-                                </Tooltip>
-                            ) : onSelect ? (
-                                <Button size="small" onClick={() => onSelect(server)} loading={selecting}>{c('Action')
-                                    .t`Create`}</Button>
-                            ) : (
-                                <DropdownActions
-                                    key="dropdown"
-                                    size="small"
-                                    list={[
-                                        {
-                                            text: c('Action').t`Download`,
-                                            onClick: handleClickDownload(server),
-                                        },
-                                        category !== CATEGORY.SECURE_CORE && {
-                                            text: (
-                                                <div className="flex flex-nowrap items-center justify-space-between">
-                                                    <span className="mr-2">{server.Domain}</span>
-                                                    <Icon name="squares" title={c('Action').t`Copy`} />
-                                                </div>
-                                            ),
-                                            onClick(event) {
-                                                textToClipboard(server.Domain, event.currentTarget);
-                                                createNotification({
-                                                    text: c('Success').t`${server.Domain} copied to your clipboard`,
-                                                });
-                                            },
-                                        },
-                                    ].filter(isTruthy)}
-                                />
-                            ),
-                        ].filter(isTruthy)}
-                    />
-                ))}
+                {servers.map(
+                    /** @param {Logical} server */ (server) => (
+                        <TableRow
+                            key={server.ID}
+                            cells={[
+                                [CATEGORY.SERVER, CATEGORY.FREE].includes(category) ? (
+                                    server.Name
+                                ) : (
+                                    <Country key="country" server={server} />
+                                ),
+                                category === CATEGORY.SERVER ? (
+                                    <div className="inline-flex children-self-center" key="city">
+                                        {server.City}
+                                    </div>
+                                ) : null,
+                                <div className="inline-flex children-self-center" key="status">
+                                    <LoadIndicator server={server} />
+                                    {server.Tier === 2 && <PlusBadge />}
+                                    {server.Servers.every(({ Status }) => !Status) && <ServerDown />}
+                                    {isP2PEnabled(server.Features) && <P2PIcon />}
+                                    {isTorEnabled(server.Features) && <TorIcon />}
+                                </div>,
+                                server.isUpgradeRequired ? (
+                                    <Tooltip
+                                        key="download"
+                                        title={
+                                            server.Tier === 2
+                                                ? c('Info').t`Plus or Visionary subscription required`
+                                                : c('Info').t`Basic, Plus or Visionary subscription required`
+                                        }
+                                    >
+                                        <ButtonLike
+                                            as={SettingsLink}
+                                            color="norm"
+                                            size="small"
+                                            path={hasPaidVpn ? `/dashboard?plan=${PLANS.VPN}` : '/upgrade'}
+                                        >{c('Action').t`Upgrade`}</ButtonLike>
+                                    </Tooltip>
+                                ) : onSelect ? (
+                                    <Button size="small" onClick={() => onSelect(server)} loading={selecting}>{c(
+                                        'Action'
+                                    ).t`Create`}</Button>
+                                ) : (
+                                    <Button size="small" onClick={handleClickDownload(server)}>{c('Action')
+                                        .t`Download`}</Button>
+                                ),
+                            ].filter(isTruthy)}
+                        />
+                    )
+                )}
             </TableBody>
         </Table>
     );
