@@ -286,7 +286,8 @@ export const AuthServiceProvider: FC = ({ children }) => {
                     upgradePath={`${getUpgradePath()}&u=${upgradeState.LocalID}&source=${getClientID(APP_NAME)}`}
                     upsellRef={isEOY() ? UpsellRef.EOY_2023 : UpsellRef.EARLY_ACCESS}
                     extraActions={({ onClose }) => [
-                        <Button pill shape="solid" color="weak" onClick={onClose}>{c('Action').t`Not now`}</Button>,
+                        <Button pill shape="solid" color="weak" onClick={onClose} key="not-now">{c('Action')
+                            .t`Not now`}</Button>,
                     ]}
                 />
             )}

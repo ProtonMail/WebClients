@@ -59,7 +59,13 @@ export const UpsellingModal: FC<Props> = ({
             type={type}
             size={size}
             actions={[
-                <UpgradeButton key="upgrade-button" label={upgradeLabel} path={upgradePath} upsellRef={upsellRef} />,
+                <UpgradeButton
+                    key="upgrade-button"
+                    label={upgradeLabel}
+                    onClick={props.onClose}
+                    path={upgradePath}
+                    upsellRef={upsellRef}
+                />,
                 ...(extraActions?.(props) ?? []),
             ]}
         >
