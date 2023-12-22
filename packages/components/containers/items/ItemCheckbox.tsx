@@ -67,7 +67,7 @@ const ItemCheckbox = ({
         >
             <input
                 type="checkbox"
-                className="item-checkbox inner-ratio-container cursor-pointer m-0"
+                className="item-checkbox absolute inset-0 cursor-pointer m-0"
                 checked={checked}
                 onChange={onChange}
                 data-item-id={ID}
