@@ -647,6 +647,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                         onValid={(inviteData) =>
                                                             history.replace({
                                                                 pathname: paths.signup,
+                                                                search: '?mode=sps',
                                                                 state: { invite: inviteData },
                                                             })
                                                         }
