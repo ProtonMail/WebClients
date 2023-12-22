@@ -1,10 +1,8 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */
 import { type FC } from 'react';
 
-import { c } from 'ttag';
-
-import { Button } from '@proton/atoms';
 import { Logo } from '@proton/components/components';
+import { EarlyAccessBadge } from '@proton/pass/components/Upsell/EarlyAccessBadge';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -22,13 +20,7 @@ export const Sidebar: FC<Props> = ({ children, expanded = false, onToggle }) => 
             <h1 className="sr-only">{getAppName(APPS.PROTONPASS)}</h1>
             <div className="w-full logo-container hidden md:flex shrink-0 justify-space-between items-center flex-nowrap">
                 <Logo appName={APPS.PROTONPASS} />
-                <Button
-                    color="weak"
-                    pill
-                    shape="solid"
-                    size="small"
-                    className="text-strong text-uppercase text-xs no-pointer-events no-select"
-                >{c('Badge').t`Early access`}</Button>
+                <EarlyAccessBadge />
             </div>
 
             <div className="mt-1 md:mt-0" aria-hidden="true" />
