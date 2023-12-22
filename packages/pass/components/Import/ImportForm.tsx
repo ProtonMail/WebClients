@@ -7,6 +7,7 @@ import { Href } from '@proton/atoms/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { AttachedFile, Bordered, Dropzone, FileInput, Icon } from '@proton/components/components';
 import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
+import { ImportIcon } from '@proton/pass/components/Import/ImportIcon';
 import type { ImportFormContext } from '@proton/pass/hooks/useImportForm';
 import { SUPPORTED_IMPORT_FILE_TYPES } from '@proton/pass/hooks/useImportForm';
 import { extractFileExtension } from '@proton/pass/lib/import/reader';
@@ -75,12 +76,7 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
                     <div className="flex justify-space-between items-center mt-3 mb-4">
                         <div className="flex items-center">
                             <div className="mr-2">
-                                <img
-                                    src={`/assets/${form.values.provider}-icon-48.png`}
-                                    width="24"
-                                    height="24"
-                                    alt=""
-                                />
+                                <ImportIcon provider={form.values.provider} />
                             </div>
                             <div className="flex flex-column ml-3">
                                 <span>{PROVIDER_INFO_MAP[form.values.provider].title}</span>
