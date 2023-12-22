@@ -4,15 +4,11 @@ import { useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import type { UpsellingModalType } from '@proton/pass/components/Spotlight/UpsellingModal';
 import { PASS_BLOG_TRIAL_URL } from '@proton/pass/constants';
 import { selectTrialDaysRemaining } from '@proton/pass/store/selectors';
 
-export type Props = Omit<ModalProps, 'onSubmit'> & { type: UpsellingModalType };
-
-export const FreeTrialContent: FC = () => {
+export const FreeTrialActions: FC = () => {
     const daysRemaining = useSelector(selectTrialDaysRemaining);
     const { onLink } = usePassCore();
 

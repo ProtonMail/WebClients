@@ -1,5 +1,5 @@
 import { type FC, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -12,11 +12,9 @@ import { getLocalPath, getTrashRoute } from '@proton/pass/components/Core/routin
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
-import { usePasswordContext } from '@proton/pass/components/Password/PasswordProvider';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
-import { syncIntent } from '@proton/pass/store/actions';
 import {
     selectHasRegisteredLock,
     selectPassPlan,
@@ -38,9 +36,6 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const menu = useMenuItems({ onAction: onToggle });
     const vaultActions = useVaultActions();
 
-    const passwordContext = usePasswordContext();
-    const dispatch = useDispatch();
-
     const { filters, matchEmpty, matchSettings, matchTrash, setFilters } = useNavigation();
     const { selectedShareId } = filters;
 
@@ -48,12 +43,6 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const planDisplayName = useSelector(selectPlanDisplayName);
     const user = useSelector(selectUser);
     const canLock = useSelector(selectHasRegisteredLock);
-
-    const onLogout = useCallback(async () => {
-        createNotification(enhance({ text: c('Info').t`Logging you out...`, type: 'info', loading: true }));
-        await authService.logout({ soft: false });
-        clearNotifications();
-    }, []);
 
     const onLock = useCallback(async () => {
         createNotification(enhance({ text: c('Info').t`Locking your session...`, type: 'info', loading: true }));
@@ -110,22 +99,15 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                     />
                 )}
 
-                <DropdownMenuButton
-                    onClick={passwordContext.history.open}
-                    label={c('Label').t`Generated passwords`}
-                    icon={'key-history'}
-                    labelClassname="mx-3"
-                    className="flex-noshrink"
-                />
-
-                <DropdownMenuButton
-                    label={c('Label').t`Manually sync your data`}
-                    icon={'arrow-rotate-right'}
-                    labelClassname="mx-3"
-                    onClick={() => dispatch(syncIntent())}
-                />
-
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
+
+                <Submenu
+                    icon="bolt"
+                    label={c('Action').t`Advanced`}
+                    items={menu.advanced}
+                    headerClassname="mx-3 pr-2 py-1"
+                    contentClassname="mx-3"
+                />
 
                 <Submenu
                     icon="bug"
@@ -141,13 +123,6 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                     items={menu.download}
                     headerClassname="mx-3 pr-2 py-1"
                     contentClassname="mx-3"
-                />
-
-                <DropdownMenuButton
-                    icon="arrow-out-from-rectangle"
-                    label={c('Action').t`Sign out`}
-                    labelClassname="mx-3"
-                    onClick={onLogout}
                 />
 
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
