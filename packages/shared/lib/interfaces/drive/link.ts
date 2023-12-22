@@ -6,11 +6,6 @@ export enum LinkType {
     FOLDER = 1,
     FILE = 2,
 }
-export enum LinkState {
-    DRAFT = 0,
-    ACTIVE = 1,
-    TRASHED = 2,
-}
 
 export type SharedUrlInfo = {
     CreateTime: number;
