@@ -1,4 +1,5 @@
 import { ReactNode, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -20,6 +21,7 @@ import useKTActivation from '@proton/components/containers/keyTransparency/useKT
 import { AuthSession } from '@proton/components/containers/login/interface';
 import { PAYMENT_METHOD_TYPES, PaymentMethodStatus } from '@proton/components/payments/core';
 import { useLoading } from '@proton/hooks';
+import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { updateFeatureValue } from '@proton/shared/lib/api/features';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -42,6 +44,8 @@ import {
     CYCLE,
     DEFAULT_CURRENCY,
     PLANS,
+    REFERRER_CODE_MAIL_TRIAL,
+    SSO_PATHS,
 } from '@proton/shared/lib/constants';
 import { humanPriceWithCurrency } from '@proton/shared/lib/helpers/humanPrice';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
@@ -58,10 +62,13 @@ import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import mailReferPage from '../../pages/refer-a-friend';
+import mailTrialPage from '../../pages/trial';
 import { Paths } from '../content/helper';
-import { SessionData, SignupCacheResult, SubscriptionData, UserCacheResult } from '../signup/interfaces';
+import { isMailReferAFriendSignup, isMailTrialSignup } from '../signup/helper';
+import { InviteData, SessionData, SignupCacheResult, SubscriptionData, UserCacheResult } from '../signup/interfaces';
 import { getPlanIDsFromParams, getSignupSearchParams } from '../signup/searchParams';
-import { handleDone, handleSetupMnemonic, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
+import { handleSetupMnemonic, handleSetupUser, handleSubscribeUser } from '../signup/signupActions';
 import { handleCreateUser } from '../signup/signupActions/handleCreateUser';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import { MetaTags, useMetaTags } from '../useMetaTags';
@@ -69,6 +76,7 @@ import LoginModal from './LoginModal';
 import Step1, { Step1Rref } from './Step1';
 import Step2 from './Step2';
 import { getDriveConfiguration } from './drive/configuration';
+import { getGenericConfiguration } from './generic/configuration';
 import {
     getFreeSubscriptionData,
     getHasBusinessUpsell,
@@ -118,13 +126,13 @@ const subscriptionDataCycleMapping = [
     },
 ];
 
-const getSignupTheme = (toApp: APP_NAMES, signupParameters: SignupParameters2): SignupTheme => {
-    const blackFriday =
+const getSignupTheme = (toApp: APP_NAMES | undefined, signupParameters: SignupParameters2): SignupTheme => {
+    const darkTheme =
         getHas2023OfferCoupon(signupParameters.coupon) || signupParameters.preSelectedPlan === PLANS.NEW_VISIONARY;
     return {
-        type: blackFriday ? ThemeTypes.Carbon : undefined,
-        background: blackFriday ? 'bf' : undefined,
-        intent: toApp,
+        type: darkTheme ? ThemeTypes.Carbon : undefined,
+        background: darkTheme ? 'bf' : undefined,
+        intent: toApp || darkTheme ? APPS.PROTONMAIL : undefined,
     };
 };
 
@@ -191,12 +199,15 @@ const SingleSignupContainerV2 = ({
     productParam,
     clientType,
 }: Props) => {
-    const location = useLocationWithoutLocale();
     const ktActivation = useKTActivation();
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
 
-    useMetaTags(metaTags);
+    const history = useHistory();
+    const location = useLocationWithoutLocale<{ invite?: InviteData }>();
+    const isMailTrial = isMailTrialSignup(location);
+    const isMailRefer = isMailReferAFriendSignup(location);
+    useMetaTags(isMailRefer ? mailReferPage() : isMailTrial ? mailTrialPage() : metaTags);
 
     const [model, setModel] = useState<SignupModelV2>(defaultSignupModel);
     const step1Ref = useRef<Step1Rref | undefined>(undefined);
@@ -207,6 +218,11 @@ const SingleSignupContainerV2 = ({
             ...diff,
         }));
     }, []);
+
+    // Override the app to always be mail in trial or refer-a-friend signup
+    if (isMailTrial || isMailRefer) {
+        toApp = APPS.PROTONMAIL;
+    }
 
     const unauthApi = useApi();
 
@@ -237,7 +253,7 @@ const SingleSignupContainerV2 = ({
         }
         const result = getSignupSearchParams(location.pathname, searchParams);
 
-        const localID = Number(searchParams.get('u'));
+        let localID = Number(searchParams.get('u'));
         let mode = searchParams.get('mode') === SignupMode.Onboarding ? SignupMode.Onboarding : SignupMode.Default;
 
         // pass new user invite
@@ -247,9 +263,42 @@ const SingleSignupContainerV2 = ({
 
         if (invited && inviter) {
             mode = SignupMode.Invite;
+            localID = -1;
             invite = {
                 type: 'pass',
                 data: { inviter, invited },
+            };
+        }
+
+        if (isMailTrial) {
+            result.referrer = REFERRER_CODE_MAIL_TRIAL;
+        }
+
+        if (result.referrer) {
+            mode = SignupMode.MailReferral;
+            localID = -1;
+            result.cycle = CYCLE.MONTHLY;
+            result.hideFreePlan = false;
+
+            invite = {
+                type: 'mail',
+                data: {
+                    referrer: result.referrer,
+                    invite: result.invite,
+                },
+            };
+        }
+
+        if (location.state?.invite) {
+            mode = SignupMode.Default;
+            localID = -1;
+            result.hideFreePlan = false;
+            invite = {
+                type: 'generic',
+                data: {
+                    selector: location.state.invite.selector,
+                    token: location.state.invite.token,
+                },
             };
         }
 
@@ -294,7 +343,9 @@ const SingleSignupContainerV2 = ({
         }
         if (toApp === APPS.PROTONMAIL || toApp === APPS.PROTONCALENDAR) {
             return getMailConfiguration({
+                mode: signupParameters.mode,
                 plan,
+                planParameters: model.planParameters,
                 plansMap: model.plansMap,
                 isLargeViewport: viewportWidth['>=large'],
                 vpnServersCountData,
@@ -318,7 +369,15 @@ const SingleSignupContainerV2 = ({
                 ].some((plan) => planIDs[plan]),
             });
         }
-        throw new Error('Unknown app');
+        return getGenericConfiguration({
+            mode: signupParameters.mode,
+            plan,
+            planParameters: model.planParameters,
+            plansMap: model.plansMap,
+            isLargeViewport: viewportWidth['>=large'],
+            vpnServersCountData,
+            hideFreePlan: signupParameters.hideFreePlan,
+        });
     })();
 
     useEffect(() => {
@@ -378,7 +437,7 @@ const SingleSignupContainerV2 = ({
                 }
                 return 'pass_signup';
             }
-            throw new Error('Unknown telemetry flow');
+            return 'generic_signup';
         })();
         return sendTelemetryReport({
             api: unauthApi,
@@ -439,11 +498,7 @@ const SingleSignupContainerV2 = ({
             await startUnAuthFlow().catch(noop);
 
             const maybeSession = (() => {
-                if (
-                    signupParameters.localID === -1 ||
-                    !activeSessions?.length ||
-                    signupParameters.mode === SignupMode.Invite
-                ) {
+                if (signupParameters.localID === -1 || !activeSessions?.length) {
                     return undefined;
                 }
                 return (
@@ -475,13 +530,22 @@ const SingleSignupContainerV2 = ({
             const planParameters = getPlanIDsFromParams(plans, signupParameters, defaults);
             const currency = signupParameters.currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;
             const cycle = signupParameters.cycle || defaults.cycle;
+            const invite = signupParameters.invite;
 
             const plansMap = toMap(plans, 'Name') as PlansMap;
 
-            const [{ Domains: domains }, paymentMethodStatus, { subscriptionData, upsell, ...userInfo }] =
+            const [{ Domains: domains }, paymentMethodStatus, referralData, { subscriptionData, upsell, ...userInfo }] =
                 await Promise.all([
                     silentApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
                     silentApi<PaymentMethodStatus>(queryPaymentMethodStatus()),
+                    invite?.type === 'mail'
+                        ? await silentApi(checkReferrer(invite.data.referrer))
+                              .then(() => ({
+                                  referrer: invite.data.referrer,
+                                  invite: invite.data.invite || '',
+                              }))
+                              .catch(() => undefined)
+                        : undefined,
                     getUserInfo({
                         api: silentApi,
                         user: resumedSession?.User,
@@ -496,7 +560,7 @@ const SingleSignupContainerV2 = ({
                             cycle,
                             coupon: signupParameters.coupon,
                         },
-                        toApp,
+                        toApp: product,
                     }),
                 ]);
 
@@ -520,6 +584,16 @@ const SingleSignupContainerV2 = ({
             if (signupParameters.mode === SignupMode.Invite && signupParameters.hideFreePlan) {
                 signupParametersDiff.hideFreePlan = false;
             }
+            if (referralData) {
+                signupParametersDiff.mode = SignupMode.MailReferral;
+            } else {
+                if (signupParameters.mode === SignupMode.MailReferral) {
+                    signupParametersDiff.mode = SignupMode.Default;
+                }
+                if (isMailTrial || isMailRefer) {
+                    history.replace(SSO_PATHS.SIGNUP);
+                }
+            }
             if (Object.keys(signupParametersDiff).length > 0) {
                 setSignupParameters((old) => ({ ...old, ...signupParametersDiff }));
             }
@@ -532,6 +606,8 @@ const SingleSignupContainerV2 = ({
                 plans,
                 planParameters,
                 plansMap,
+                referralData,
+                inviteData: signupParameters.invite?.type === 'generic' ? signupParameters.invite.data : undefined,
                 paymentMethodStatus,
                 subscriptionData,
                 cache: undefined,
@@ -637,7 +713,7 @@ const SingleSignupContainerV2 = ({
                 plans: model.plans,
                 plansMap: model.plansMap,
                 upsellPlanCard,
-                toApp,
+                toApp: product,
             });
 
             measure({ event: TelemetryAccountSignupEvents.beSignOutSuccess, dimensions: {} });
@@ -680,7 +756,7 @@ const SingleSignupContainerV2 = ({
                 planIDs: model.subscriptionData.planIDs,
                 coupon: model.subscriptionData.checkResult?.Coupon?.Code,
             },
-            toApp,
+            toApp: product,
         });
 
         const session: SessionData = {
@@ -902,7 +978,7 @@ const SingleSignupContainerV2 = ({
             {renderAccessModal && (
                 <AccessModal
                     {...accessModalProps}
-                    app={toApp}
+                    app={product}
                     onSignOut={() => {
                         return handleSignOut(true);
                     }}
@@ -1008,7 +1084,7 @@ const SingleSignupContainerV2 = ({
                                     appIntent: undefined,
                                     productParam,
                                     // Internal app or oauth app or vpn
-                                    ignoreExplore: true,
+                                    ignoreExplore: toApp !== undefined,
                                     accountData,
                                     subscriptionData,
                                     inviteData: model.inviteData,
@@ -1137,15 +1213,13 @@ const SingleSignupContainerV2 = ({
                         productAppName={productAppName}
                         setupImg={setupImg}
                         logo={logo}
-                        onSetup={async (cache: SignupCacheResult | UserCacheResult) => {
-                            if (cache.type === 'user') {
-                                return handleLoginUser(cache);
+                        onSetup={async (result) => {
+                            if (result.type === 'user') {
+                                return handleLoginUser(result);
                             }
-
-                            if (cache.type === 'signup') {
+                            if (result.type === 'signup') {
                                 try {
-                                    const result = await handleDone({ cache });
-                                    await onLogin(result.session);
+                                    await onLogin(result.payload.session);
                                 } catch (error) {
                                     handleError(error);
                                 }

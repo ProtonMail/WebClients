@@ -43,7 +43,7 @@ const Layout = ({
             className={clsx(
                 'flex children-min-size-auto flex-nowrap flex-column h-full overflow-auto relative',
                 theme.background === 'bf' ? 'signup-v2-bg--bf2023' : 'signup-v2-bg',
-                `signup-v2-bg--${theme.intent.replace('proton-', '')}`,
+                theme.intent && `signup-v2-bg--${theme.intent.replace('proton-', '')}`,
                 className
             )}
         >
@@ -69,10 +69,7 @@ const Layout = ({
                                 {footer}
                                 <div className="w-full flex justify-space-between flex-column md:flex-row">
                                     <div className="flex gap-1 flex-column">
-                                        <LayoutLogosV2
-                                            size={20}
-                                            className="justify-center md:justify-start"
-                                        />
+                                        <LayoutLogosV2 size={20} className="justify-center md:justify-start" />
                                         <span className="text-sm color-weak text-center mb-4 lg:mb-0">
                                             {
                                                 // translator: full sentence 'Proton. Privacy by default.'

@@ -18,9 +18,10 @@ interface Props {
     defaultName?: string;
     planName?: string;
     onSubmit: ({ displayName }: { displayName: string }) => Promise<void>;
+    padding?: boolean;
 }
 
-const CongratulationsStep = ({ defaultName = '', planName: maybePlanName, onSubmit }: Props) => {
+const CongratulationsStep = ({ padding, defaultName = '', planName: maybePlanName, onSubmit }: Props) => {
     const { APP_NAME } = useConfig();
     const [displayName, setDisplayName] = useState(defaultName);
     const [loading, withLoading] = useLoading();
@@ -35,7 +36,7 @@ const CongratulationsStep = ({ defaultName = '', planName: maybePlanName, onSubm
     }, []);
 
     return (
-        <Main>
+        <Main padding={padding}>
             <Header title={c('Title').t`Set a display name`} />
             <Content>
                 {planName ? (

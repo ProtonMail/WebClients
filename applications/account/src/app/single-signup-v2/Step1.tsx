@@ -288,8 +288,11 @@ const Step1 = ({
         value: cycle,
     }));
 
-    const cta = c('pass_signup_2023: Action').t`Start using ${appName} now`;
-    const hasSelectedFree = options.plan.Name === PLANS.FREE;
+    const cta =
+        mode === SignupMode.MailReferral && options.plan.Name !== PLANS.FREE
+            ? c('Action in trial plan').t`Try free for 30 days`
+            : c('pass_signup_2023: Action').t`Start using ${appName} now`;
+    const hasSelectedFree = options.plan.Name === PLANS.FREE || mode === SignupMode.MailReferral;
     const isOnboardingMode = mode === SignupMode.Onboarding;
 
     const isDarkBg = theme.background === 'bf';
@@ -299,7 +302,7 @@ const Step1 = ({
     const hasUpsellSection = model.upsell.mode === UpsellTypes.UPSELL;
     const hasPlanSelector =
         (!model.planParameters?.defined || hasUpsellSection) &&
-        [SignupMode.Default, SignupMode.Onboarding].includes(mode) &&
+        [SignupMode.Default, SignupMode.Onboarding, SignupMode.MailReferral].includes(mode) &&
         // Don't want to show an incomplete plan selector when the user has access to have a nicer UI
         !model.session?.state.access;
 
@@ -435,7 +438,7 @@ const Step1 = ({
                             }
                             right={
                                 <>
-                                    {model.upsell.mode === UpsellTypes.PLANS && (
+                                    {model.upsell.mode === UpsellTypes.PLANS && mode !== SignupMode.MailReferral && (
                                         <CycleSelector
                                             mode="buttons"
                                             cycle={options.cycle}
@@ -616,6 +619,9 @@ const Step1 = ({
                                     <div className="flex items-start justify-space-between gap-14">
                                         <div className="flex-1 w-0 relative">
                                             <AccountStepDetails
+                                                {...(signupParameters.email
+                                                    ? { defaultEmail: signupParameters.email }
+                                                    : undefined)}
                                                 {...(signupParameters.invite?.type === 'pass'
                                                     ? {
                                                           defaultEmail: signupParameters.invite.data.invited,
@@ -642,10 +648,21 @@ const Step1 = ({
                                                 onSubmit={
                                                     hasSelectedFree
                                                         ? () => {
+                                                              let subscriptionData = getFreeSubscriptionData(
+                                                                  model.subscriptionData
+                                                              );
+                                                              if (
+                                                                  mode === SignupMode.MailReferral &&
+                                                                  options.plan.Name !== PLANS.FREE
+                                                              ) {
+                                                                  subscriptionData = {
+                                                                      ...subscriptionData,
+                                                                      cycle: CYCLE.MONTHLY,
+                                                                      planIDs: options.planIDs,
+                                                                  };
+                                                              }
                                                               withLoadingSignup(
-                                                                  handleCompletion(
-                                                                      getFreeSubscriptionData(model.subscriptionData)
-                                                                  )
+                                                                  handleCompletion(subscriptionData)
                                                               ).catch(noop);
                                                           }
                                                         : undefined
@@ -677,22 +694,22 @@ const Step1 = ({
                                                                         color="norm"
                                                                         fullWidth
                                                                     >
-                                                                        {c('pass_signup_2023: Action')
-                                                                            .t`Start using ${appName} now`}
+                                                                        {cta}
                                                                     </Button>
                                                                 </div>
                                                             )}
-                                                            {signupParameters.mode !== SignupMode.Invite && (
-                                                                <div className="text-center">
-                                                                    <span>
-                                                                        {
-                                                                            // translator: Full sentence "Already have an account? Sign in"
-                                                                            c('Go to sign in')
-                                                                                .jt`Already have an account? ${signIn}`
-                                                                        }
-                                                                    </span>
-                                                                </div>
-                                                            )}
+                                                            {signupParameters.mode !== SignupMode.Invite &&
+                                                                signupParameters.mode !== SignupMode.MailReferral && (
+                                                                    <div className="text-center">
+                                                                        <span>
+                                                                            {
+                                                                                // translator: Full sentence "Already have an account? Sign in"
+                                                                                c('Go to sign in')
+                                                                                    .jt`Already have an account? ${signIn}`
+                                                                            }
+                                                                        </span>
+                                                                    </div>
+                                                                )}
                                                         </>
                                                     );
                                                 }}
