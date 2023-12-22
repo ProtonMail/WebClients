@@ -33,12 +33,37 @@ export const headerCellsLargeScreen = [
         type: HeaderCellsPresets.Placeholder,
         props: {
             className: 'w-custom',
-            style: { '--w-custom': '11em' },
+            style: { '--w-custom': '23vw' },
         },
     },
 ];
-export const headerCellsSmallScreen = headerCellsLargeScreen.slice(0, -1);
 
+export const headerCellsSmallScreen = [
+    {
+        type: HeaderCellsPresets.Checkbox,
+    },
+    {
+        type: 'name',
+        getText: () => c('Label').t`Name`,
+        sorting: true,
+    },
+    {
+        type: 'size',
+        getText: () => c('Label').t`Size`,
+        props: {
+            className: 'w-custom text-right',
+            style: { '--w-custom': '11em' },
+        },
+        sorting: true,
+    },
+    {
+        type: HeaderCellsPresets.Placeholder,
+        props: {
+            className: 'w-custom',
+            style: { '--w-custom': '2.75em' },
+        },
+    },
+];
 export const contentCellsLargeScreen: React.FC<{ item: PublicLink }>[] = [
     Cells.CheckboxCell,
     NameCell,
@@ -82,10 +107,14 @@ function SizeCell({ item }: { item: PublicLink }) {
             >
                 {!viewportWidth['<=small'] && item.progress.progress > 0 && (
                     <>
-                        <Cells.SizeCell size={item.progress.progress} />/
+                        <Cells.SizeCell size={item.progress.progress} className="pr-11 md:pr-0" />/
                     </>
                 )}
-                {item.progress.total !== undefined ? <Cells.SizeCell size={item.progress.total} /> : '-'}
+                {item.progress.total !== undefined ? (
+                    <Cells.SizeCell size={item.progress.total} className="pr-11 md:pr-0" />
+                ) : (
+                    <span className="pr-11">--</span>
+                )}
             </TableCell>
         );
     }
@@ -94,11 +123,15 @@ function SizeCell({ item }: { item: PublicLink }) {
 
     return (
         <TableCell
-            className="m-0 flex flex-nowrap justify-end w-custom"
+            className="m-0 flex flex-nowrap md:justify-end w-custom"
             style={{ '--w-custom': styleValue }}
             data-testid="column-size"
         >
-            {item.isFile ? <Cells.SizeCell size={item.size} /> : '-'}
+            {item.isFile ? (
+                <Cells.SizeCell size={item.size} className="pr-11 md:pr-0" />
+            ) : (
+                <span className="pr-11 md:pr-0">--</span>
+            )}
         </TableCell>
     );
 }
@@ -125,8 +158,8 @@ function DownloadCell({ item }: { item: PublicLink }) {
 
     return (
         <TableCell
-            className="m-0 flex flex-nowrap justify-end file-browser-list--icon-column w-custom"
-            style={{ '--w-custom': '11em' }}
+            className="m-0 flex flex-nowrap file-browser-list--icon-column w-custom"
+            style={{ '--w-custom': '23vw' }}
             data-testid="column-size"
         >
             <Button
