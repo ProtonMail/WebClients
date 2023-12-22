@@ -8,7 +8,7 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     className?: string;
     /**
      * stackEarlier is used when content needs to be stacked earlier than only for mobile
-     * this is a "temporary" option, will be soon revamped with settings responsive refacto
+     * this is a "temporary" option, will be soon revamped with settings responsive refactor
      */
     stackEarlier?: boolean;
 }
