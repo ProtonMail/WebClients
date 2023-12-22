@@ -13,7 +13,6 @@ import {
     isTransferDone,
     isTransferError,
     isTransferManuallyPaused,
-    isTransferSkipped,
 } from '../../utils/transfer';
 import { Download, TransfersStats, Upload } from './transfer';
 
@@ -42,7 +41,6 @@ const Header = ({ downloads, uploads, stats, onClose, onToggleMinimize, minimize
     const pausedTransfers = useMemo(() => transfers.filter(isTransferManuallyPaused), [transfers]);
     const failedTransfers = useMemo(() => transfers.filter(isTransferError), [transfers]);
     const canceledTransfers = useMemo(() => transfers.filter(isTransferCanceled), [transfers]);
-    const skippedTransfers = useMemo(() => transfers.filter(isTransferSkipped), [transfers]);
 
     const activeUploadsCount = activeUploads.length;
     const activeDownloadsCount = activeDownloads.length;
@@ -79,7 +77,6 @@ const Header = ({ downloads, uploads, stats, onClose, onToggleMinimize, minimize
 
         const errorCount = failedTransfers.length;
         const canceledCount = canceledTransfers.length;
-        const skippedCount = skippedTransfers.length;
         const pausedCount = pausedTransfers.length;
 
         if (!activeCount) {
@@ -149,13 +146,6 @@ const Header = ({ downloads, uploads, stats, onClose, onToggleMinimize, minimize
         if (canceledCount) {
             headingElements.push(
                 c('Info').ngettext(msgid`${canceledCount} canceled`, `${canceledCount} canceled`, canceledCount)
-            );
-        }
-
-        if (skippedCount) {
-            headingElements.push(
-                // translator: Shown in the transfer manager header - ex. "3 skipped"
-                c('Info').ngettext(msgid`${skippedCount} skipped`, `${skippedCount} skipped`, skippedCount)
             );
         }
 

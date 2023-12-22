@@ -99,13 +99,7 @@ export default function useUploadConflict(
     const openConflictStrategyModal = (
         uploadId: string,
         conflictStrategyRef: React.MutableRefObject<{ [id: string]: TransferConflictStrategy }>,
-        params: {
-            name: string;
-            isFolder?: boolean;
-            originalIsDraft?: boolean;
-            originalIsFolder?: boolean;
-            isForPhotos?: boolean;
-        }
+        params: { name: string; isFolder?: boolean; originalIsDraft?: boolean; originalIsFolder?: boolean }
     ) => {
         isConflictStrategyModalOpen.current = true;
 
@@ -159,7 +153,6 @@ export default function useUploadConflict(
                 name: conflictingFileUpload.meta.filename,
                 originalIsDraft: conflictingFileUpload.originalIsDraft,
                 originalIsFolder: conflictingFileUpload.originalIsFolder,
-                isForPhotos: conflictingFileUpload.isForPhotos,
             });
         }
     }, [fileUploads, folderUploads]);

@@ -8,7 +8,6 @@ export enum TransferState {
     Progress = 'progress',
     Finalizing = 'finalizing',
     Done = 'done',
-    Skipped = 'skipped',
     Canceled = 'canceled',
     Error = 'error',
     NetworkError = 'networkError',
@@ -34,12 +33,6 @@ export class TransferCancel extends Error {
     constructor(options: { id: string } | { message: string }) {
         super('id' in options ? `Transfer ${options.id} canceled` : options.message);
         this.name = 'TransferCancel';
-    }
-}
-export class TransferSkipped extends Error {
-    constructor(options: { id: string } | { message: string }) {
-        super('id' in options ? `Transfer ${options.id} skipped` : options.message);
-        this.name = 'TransferSkipped';
     }
 }
 
@@ -118,7 +111,6 @@ export const STATE_TO_GROUP_MAP = {
     [TransferState.Finalizing]: TransferGroup.ACTIVE,
     [TransferState.Paused]: TransferGroup.ACTIVE,
     [TransferState.SignatureIssue]: TransferGroup.ACTIVE,
-    [TransferState.Skipped]: TransferGroup.FAILURE,
     [TransferState.Canceled]: TransferGroup.FAILURE,
     [TransferState.NetworkError]: TransferGroup.FAILURE,
     [TransferState.Done]: TransferGroup.DONE,
