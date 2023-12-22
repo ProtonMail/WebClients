@@ -29,25 +29,31 @@ const DeleteLabelModal = ({ label, onRemove, ...rest }: Props) => {
         onRemove?.();
     };
 
+    const nameDeleted = (
+        <strong className="text-ellipsis inline-block max-w-full align-bottom" title={label.Name}>
+            {label.Name}
+        </strong>
+    );
+
     const I18N: { [key: number]: any } = {
         [LABEL_TYPE.MESSAGE_LABEL]: {
+            // translator: ${nameDeleted} contain the label name.
             content: c('Info')
-                .t`Emails tagged with this label will not be deleted and can still be found in the respective folder.`,
+                .jt`Emails tagged with this label ${nameDeleted} will not be deleted and can still be found in the respective folder.`,
             confirm: c('Info').t`Are you sure you want to delete this label?`,
         },
         [LABEL_TYPE.MESSAGE_FOLDER]: {
+            // translator: ${nameDeleted} contain the folder name.
             content: c('Info')
-                .t`Emails stored in this folder will not be deleted and can still be found in the All Mail folder.`,
-            confirm: c('Info').t`Are you sure you want to delete this folder? All subfolders will also be deleted.`,
+                .jt`Any subfolders will also be deleted. However, emails stored in this folder ${nameDeleted} will not be deleted and can be found in All Mail folder.`,
+            confirm: c('Info').t`Are you sure you want to delete this folder?`,
         },
     };
 
     return (
         <Prompt
             title={
-                label.Type === LABEL_TYPE.MESSAGE_FOLDER
-                    ? c('Title').t`Delete ${label.Name} folder`
-                    : c('Title').t`Delete ${label.Name} label`
+                label.Type === LABEL_TYPE.MESSAGE_FOLDER ? c('Title').t`Delete folder?` : c('Title').t`Delete label?`
             }
             buttons={[
                 <ErrorButton onClick={handleRemove}>{c('Action').t`Delete`}</ErrorButton>,
