@@ -69,10 +69,6 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
             text: c('Info').t`Network issue`,
             icon: 'exclamation-circle',
         },
-        [TransferState.Skipped]: {
-            text: c('Info').t`Skipped`,
-            icon: 'cross',
-        },
         [TransferState.Canceled]: {
             text: c('Info').t`Canceled`,
             icon: 'cross',
@@ -110,10 +106,10 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
             )}
 
             {/* Desktop text */}
-            <span className="hidden md:inline-flex text-ellipsis" data-testid="transfer-item-status">
+            <span className="hidden md:inline text-ellipsis" data-testid="transfer-item-status">
                 {errorText && (
                     <Tooltip title={errorText} originalPlacement="top">
-                        <span className="flex flex-align-items-center mr-2">
+                        <span className="mr-2">
                             <Icon name="info-circle" />
                         </span>
                     </Tooltip>

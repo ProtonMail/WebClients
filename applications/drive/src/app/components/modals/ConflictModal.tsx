@@ -23,7 +23,6 @@ export interface ConflictModalProps {
     isFolder?: boolean;
     originalIsDraft?: boolean;
     originalIsFolder?: boolean;
-    isForPhotos?: boolean;
     apply: (strategy: TransferConflictStrategy, all: boolean) => void;
     cancelAll: () => void;
     onConfirm?: () => void;
@@ -46,7 +45,6 @@ export default function ConflictModal({
     isFolder = false,
     originalIsDraft = false,
     originalIsFolder = false,
-    isForPhotos = false,
     apply,
     cancelAll,
     onClose,
@@ -113,7 +111,7 @@ export default function ConflictModal({
                             </strong>
                             <br />
                             <span className="color-weak">
-                                {isSameType && !isForPhotos ? (
+                                {isSameType ? (
                                     <>
                                         {originalIsFolder
                                             ? c('Info').t`This will upload a new version of the folder`

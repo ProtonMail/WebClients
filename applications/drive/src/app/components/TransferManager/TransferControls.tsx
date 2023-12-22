@@ -8,7 +8,6 @@ import {
     isTransferFinished,
     isTransferOngoing,
     isTransferPaused,
-    isTransferSkipped,
 } from '../../utils/transfer';
 import Buttons from './Buttons';
 import { TransferManagerButtonProps, TransferProps } from './interfaces';
@@ -20,12 +19,11 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
     const [pauseInProgress, withPauseInProgress] = useLoading();
     const isFinished = isTransferFinished(transfer);
     const isFailed = isTransferFailed(transfer);
-    const isSkipped = isTransferSkipped(transfer);
     const isFinalizing = isTransferFinalizing(transfer);
 
     const isPauseResumeAvailable = isTransferOngoing(transfer);
     const isRestartAvailable = isFailed;
-    const isCancelAvailable = !isFinalizing && !isFinished && !isSkipped;
+    const isCancelAvailable = !isFinalizing && !isFinished;
     const isTransferWithChildrenFinished = (upload: Upload) => {
         if (!isTransferFinished(upload)) {
             return false;
@@ -43,8 +41,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
     // parent with its children is removed from transfer manager but some
     // ongoing transfers are still finishing up.
     const isRemoveAvailable =
-        (isFinished && (type === TransferType.Download || isTransferWithChildrenFinished(transfer as Upload))) ||
-        isSkipped;
+        isFinished && (type === TransferType.Download || isTransferWithChildrenFinished(transfer as Upload));
 
     const pauseText = type === TransferType.Download ? c('Action').t`Pause download` : c('Action').t`Pause upload`;
     const resumeText = type === TransferType.Download ? c('Action').t`Resume download` : c('Action').t`Resume upload`;
