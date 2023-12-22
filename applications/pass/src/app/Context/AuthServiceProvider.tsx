@@ -3,9 +3,10 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button';
 import { useNotifications } from '@proton/components/hooks';
 import { getCurrentLocation } from '@proton/pass/components/Core/routing';
-import { UpsellingModal } from '@proton/pass/components/Spotlight/UpsellingModal';
+import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellRef } from '@proton/pass/constants';
 import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
@@ -66,14 +67,14 @@ export const AuthServiceProvider: FC = ({ children }) => {
     const client = useClientRef();
     const history = useHistory();
     const { SSO_URL } = usePassConfig();
+    const { createNotification } = useNotifications();
 
     const matchConsumeFork = useRouteMatch(SSO_PATHS.FORK);
-
     const redirectPath = useRef(stripLocalBasenameFromPathname(getCurrentLocation()));
     const setRedirectPath = (redirect: string) => (redirectPath.current = redirect);
-    const [upgradeState, setUpgradeState] = useState<{ upgrade: boolean; LocalID?: number }>({ upgrade: false });
 
-    const { createNotification } = useNotifications();
+    const [upgradeState, setUpgradeState] = useState<{ upgrade: boolean; LocalID?: number }>({ upgrade: false });
+    const closeUpselling = () => setUpgradeState({ upgrade: false });
 
     const authService = useMemo(() => {
         const auth = createAuthService({
@@ -278,11 +279,15 @@ export const AuthServiceProvider: FC = ({ children }) => {
             {children}
             {upgradeState.upgrade && (
                 <UpsellingModal
-                    type="early-access"
+                    upsellType="early-access"
                     open={upgradeState.upgrade}
-                    onClose={() => setUpgradeState({ upgrade: false })}
+                    onClose={closeUpselling}
+                    closable={false}
                     upgradePath={`${getUpgradePath()}&u=${upgradeState.LocalID}&source=${getClientID(APP_NAME)}`}
                     upsellRef={isEOY() ? UpsellRef.EOY_2023 : UpsellRef.EARLY_ACCESS}
+                    extraActions={({ onClose }) => [
+                        <Button pill shape="solid" color="weak" onClick={onClose}>{c('Action').t`Not now`}</Button>,
+                    ]}
                 />
             )}
         </AuthServiceContext.Provider>

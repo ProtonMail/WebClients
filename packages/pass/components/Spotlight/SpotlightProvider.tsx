@@ -3,21 +3,23 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef, use
 
 import { c } from 'ttag';
 
+import { Button } from '@proton/atoms/Button';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useInviteContext } from '@proton/pass/components/Invite/InviteProvider';
-import { PendingShareAccessModal } from '@proton/pass/components/Spotlight/PendingShareAccessModal';
+import { PendingShareAccessModal } from '@proton/pass/components/Share/PendingShareAccessModal';
+import type { UpsellType } from '@proton/pass/components/Upsell/UpsellingModal';
+import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellRef } from '@proton/pass/constants';
+import { isEOY } from '@proton/pass/lib/onboarding/upselling';
 import type { Callback, MaybeNull, OnboardingMessage } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 import type { SpotlightMessageDefinition } from './SpotlightContent';
 import { InviteIcon } from './SpotlightIcon';
-import type { UpsellingModalType } from './UpsellingModal';
-import { UpsellingModal } from './UpsellingModal';
 
 import './Spotlight.scss';
 
-type UpsellingState = { type: UpsellingModalType; upsellRef: UpsellRef };
+type UpsellingState = { type: UpsellType; upsellRef: UpsellRef };
 
 type SpotlightState = {
     open: boolean;
@@ -51,15 +53,24 @@ export const SpotlightContext = createContext<SpotlightContextValue>({
 
 export const SpotlightProvider: FC = ({ children }) => {
     const { onOnboardingAck } = usePassCore();
-    const timer = useRef<NodeJS.Timeout>();
-    const [state, setState] = useState<SpotlightState>(INITIAL_STATE);
+    const { latestInvite, respondToInvite } = useInviteContext();
 
-    /* keep a ref to the current message */
+    const [state, setState] = useState<SpotlightState>(INITIAL_STATE);
+    const [onboardingMessage, setOnboardingMessage] = useState<MaybeNull<SpotlightMessageDefinition>>(null);
+
+    const timer = useRef<NodeJS.Timeout>();
     const messageRef = useRef(state.message);
     messageRef.current = state.message;
 
-    const { latestInvite, respondToInvite } = useInviteContext();
-    const [onboardingMessage, setOnboardingMessage] = useState<MaybeNull<SpotlightMessageDefinition>>(null);
+    const closeUpselling = () => {
+        state.message?.onClose?.();
+        setState((prev) => ({ ...prev, upselling: null }));
+    };
+
+    const closePendingShareAccess = () => {
+        state.message?.onClose?.();
+        setState((prev) => ({ ...prev, pendingShareAccess: false }));
+    };
 
     const setMessage = useCallback((next: MaybeNull<SpotlightMessageDefinition>) => {
         if (messageRef.current?.id !== next?.id) {
@@ -121,22 +132,24 @@ export const SpotlightProvider: FC = ({ children }) => {
             {children}
 
             <UpsellingModal
+                onClose={closeUpselling}
                 open={state.upselling !== null}
-                type={state.upselling?.type ?? 'free-trial'}
-                onClose={() => {
-                    state.message?.onClose?.();
-                    setState((prev) => ({ ...prev, upselling: null }));
-                }}
+                upsellType={state.upselling?.type ?? 'free-trial'}
                 upsellRef={state.upselling?.upsellRef ?? UpsellRef.DEFAULT}
+                {...(state.upselling?.type === 'early-access' && isEOY()
+                    ? {
+                          type: 'overlay',
+                          size: 'small',
+                          closable: false,
+                          extraActions: ({ onClose }) => [
+                              <Button pill shape="solid" color="weak" onClick={onClose}>{c('Action')
+                                  .t`Not now`}</Button>,
+                          ],
+                      }
+                    : {})}
             />
 
-            <PendingShareAccessModal
-                open={state.pendingShareAccess}
-                onClose={() => {
-                    state.message?.onClose?.();
-                    setState((prev) => ({ ...prev, pendingShareAccess: false }));
-                }}
-            />
+            <PendingShareAccessModal open={state.pendingShareAccess} onClose={closePendingShareAccess} />
         </SpotlightContext.Provider>
     );
 };
