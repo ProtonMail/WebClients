@@ -39,7 +39,13 @@ const createOTPGenerator = (endpoint: ClientEndpoint) => (payload: OtpRequest) =
         (response) => (response.type === 'success' ? response : null)
     );
 
-const onLink = (url: string) => browser.tabs.create({ url }).catch(noop);
+/** Popup may not auto-close on firefox  */
+const createLinkHandler = (endpoint: ClientEndpoint) => (url: string) => {
+    browser.tabs
+        .create({ url })
+        .then(() => endpoint === 'popup' && BUILD_TARGET === 'firefox' && window.close())
+        .catch(noop);
+};
 
 const createTelemetryHandler = (endpoint: ClientEndpoint) => (event: TelemetryEvent) =>
     sendMessage(
@@ -84,7 +90,7 @@ export const PassExtensionCore: FC<{ endpoint: ClientEndpoint }> = ({ children, 
         getDomainImage={getDomainImageFactory(endpoint)}
         getRatingURL={getWebStoreUrl}
         onForceUpdate={onForceUpdate}
-        onLink={onLink}
+        onLink={createLinkHandler(endpoint)}
         onOnboardingAck={createOnboardingAck(endpoint)}
         onTelemetry={useCallback(createTelemetryHandler(endpoint), [])}
         openSettings={openSettings}
