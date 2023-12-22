@@ -1,11 +1,9 @@
 @use '~inter-ui/default' with (
-	$inter-font-display: swap,
-	$inter-font-path: '~inter-ui/Inter (web)'
+	$inter-font-path: '~inter-ui/web'
 );
 
 @use '~inter-ui/variable' with (
-	$inter-font-display: swap,
-	$inter-font-path: '~inter-ui/Inter (web)'
+	$inter-font-path: '~inter-ui/variable'
 );
 
 /*
@@ -31,7 +29,9 @@ $opendyslexic-font-path: '~@proton/styles/assets/fonts';
 	font-style: normal;
 	font-weight: normal;
 	font-display: swap;
-	src: local('OpenDyslexic'), url('#{$opendyslexic-font-path}/OpenDyslexic-Regular.woff2') format('woff2'),
+	src:
+		local('OpenDyslexic'),
+		url('#{$opendyslexic-font-path}/OpenDyslexic-Regular.woff2') format('woff2'),
 		url('#{$opendyslexic-font-path}/OpenDyslexic-Regular.woff') format('woff');
 }
 
@@ -40,7 +40,9 @@ $opendyslexic-font-path: '~@proton/styles/assets/fonts';
 	font-style: italic;
 	font-weight: normal;
 	font-display: swap;
-	src: local('OpenDyslexic'), url('#{$opendyslexic-font-path}/OpenDyslexic-Italic.woff2') format('woff2'),
+	src:
+		local('OpenDyslexic'),
+		url('#{$opendyslexic-font-path}/OpenDyslexic-Italic.woff2') format('woff2'),
 		url('#{$opendyslexic-font-path}/OpenDyslexic-Italic.woff') format('woff');
 }
 
@@ -49,7 +51,9 @@ $opendyslexic-font-path: '~@proton/styles/assets/fonts';
 	font-style: normal;
 	font-weight: 600;
 	font-display: swap;
-	src: local('OpenDyslexic'), url('#{$opendyslexic-font-path}/OpenDyslexic-Bold.woff2') format('woff2'),
+	src:
+		local('OpenDyslexic'),
+		url('#{$opendyslexic-font-path}/OpenDyslexic-Bold.woff2') format('woff2'),
 		url('#{$opendyslexic-font-path}/OpenDyslexic-Bold.woff') format('woff');
 }
 
@@ -58,7 +62,9 @@ $opendyslexic-font-path: '~@proton/styles/assets/fonts';
 	font-style: italic;
 	font-weight: 600;
 	font-display: swap;
-	src: local('OpenDyslexic'), url('#{$opendyslexic-font-path}/OpenDyslexic-Bold-Italic.woff2') format('woff2'),
+	src:
+		local('OpenDyslexic'),
+		url('#{$opendyslexic-font-path}/OpenDyslexic-Bold-Italic.woff2') format('woff2'),
 		url('#{$opendyslexic-font-path}/OpenDyslexic-Bold-Italic.woff') format('woff');
 }
 
@@ -84,7 +90,7 @@ html,
 
 	// If the browser supports `@supports`, set Inter variable if it supports variable fonts
 	@supports (font-variation-settings: normal) {
-		font-family: var(--setting-font-family, var(--optional-font-family, 'Inter var', #{$fallback-fonts}));
+		font-family: var(--setting-font-family, var(--optional-font-family, 'InterVariable', #{$fallback-fonts}));
 	}
 
 	font-synthesis: none;
