@@ -1,11 +1,14 @@
-import type { VFC } from 'react';
+import { type FC } from 'react';
 
 import ButtonLike from '@proton/atoms/Button/ButtonLike';
+import type { ImportProvider } from '@proton/pass/lib/import/types';
+
+import { ImportIcon } from './ImportIcon';
 
 import './ImportProviderItem.scss';
 
-export const ImportProviderItem: VFC<{
-    value: string;
+export const ImportProviderItem: FC<{
+    value: ImportProvider;
     title: string;
     fileExtension: string;
     onClick?: () => void;
@@ -13,7 +16,7 @@ export const ImportProviderItem: VFC<{
     return (
         <ButtonLike onClick={onClick} shape="ghost" className="rounded pass-import-providers--item px-0 py-2">
             <div className="flex flex-column items-center">
-                <img className="m-2" alt={title} src={`/assets/${value}-icon-48.png`} width="24" height="24"></img>
+                <ImportIcon provider={value} className="m-2" />
                 <span className="mb-0.5">{title}</span>
                 <span className="color-weak">{fileExtension}</span>
             </div>
