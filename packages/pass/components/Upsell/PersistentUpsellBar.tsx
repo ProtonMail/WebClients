@@ -35,7 +35,7 @@ export const PersistentUpsellBar: FC = () => {
                 <span className="text-semibold">{c('Info')
                     .t`Pass Plus for ${eoyRelativePrice}/m, including early access to the web app.`}</span>
                 <UpgradeButton
-                    upsellRef={UpsellRef.EOY_2023}
+                    upsellRef={UpsellRef.PERSISTENT_BAR}
                     buttonSize="small"
                     iconSize={12}
                     className="max-h-custom"
