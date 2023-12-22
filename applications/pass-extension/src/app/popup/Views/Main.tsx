@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import { useNotifications } from '@proton/components/hooks';
 import { Content } from '@proton/pass/components/Layout/Section/Content';
 import { SubSidebar } from '@proton/pass/components/Layout/Section/SubSidebar';
+import { PersistentUpsellBar } from '@proton/pass/components/Upsell/PersistentUpsellBar';
 
 import { Header } from './Header/Header';
 import { ItemEditContainer } from './Item/ItemEditContainer';
@@ -54,6 +55,7 @@ export const Main: VFC = () => {
                     </Switch>
                 </Content>
             </div>
+            <PersistentUpsellBar />
         </main>
     );
 };

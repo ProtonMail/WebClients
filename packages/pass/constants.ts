@@ -8,6 +8,7 @@ export const ALIAS_DETAILS_MAX_AGE = 30;
 export const MAX_ITEM_NAME_LENGTH = 200;
 export const MAX_ITEM_NOTE_LENGTH = 25_000;
 
+export const PASS_WEB_APP_URL = 'https://pass.proton.me';
 export const PASS_LEARN_MORE_URL = 'https://proton.me/pass';
 export const PASS_VIDEO_URL = 'https://www.youtube.com/embed/Nm4DCAjePOM?cc_load_policy=1';
 export const PASS_ANDROID_URL = 'https://play.google.com/store/apps/details?id=proton.android.pass';
@@ -23,15 +24,19 @@ export const PASS_SENTINEL_LINK = 'https://proton.me/blog/sentinel-included-pass
 
 export const ITEM_COUNT_RATING_PROMPT = ENV === 'production' ? 10 : 1;
 
+export const PASS_UPGRADE_PATH = 'pass/upgrade';
+export const PASS_EOY_PATH = `pass/signup?plan=pass2023&cycle=12&coupon=EOY2023`;
+
 export const PASS_BF_MONTHLY_PRICE = 199;
+export const PASS_EOY_MONTHLY_PRICE = 199;
+export const PASS_REGULAR_MONTHLY_PRICE = 399;
+
 export const PASS_BF_2023_DATES = [
     ENV === 'development' ? Date.now() - 1 : +new Date('2023-11-02T06:00:00'),
     +new Date('2023-12-04T00:00:00'),
 ] as const;
 
 export const PASS_EOY_DATE_END = +new Date('2024-01-03T09:00:00');
-export const PASS_UPGRADE_PATH = 'pass/upgrade';
-export const PASS_EOY_PATH = `pass/signup?plan=pass2023&cycle=12&coupon=EOY2023`;
 
 export enum UpsellRefPrefix {
     Extension = 'pass_extension',
