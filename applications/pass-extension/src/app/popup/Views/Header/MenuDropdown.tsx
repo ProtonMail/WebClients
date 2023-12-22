@@ -9,7 +9,7 @@ import { useOpenSettingsTab } from 'proton-pass-extension/lib/hooks/useOpenSetti
 import { usePopupContext } from 'proton-pass-extension/lib/hooks/usePopupContext';
 import { c } from 'ttag';
 
-import { Button, ButtonLike } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import type { DropdownProps } from '@proton/components';
 import {
     Collapsible,
@@ -27,9 +27,10 @@ import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButt
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
+import { EarlyAccessBadge } from '@proton/pass/components/Upsell/EarlyAccessBadge';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import { UpsellRef } from '@proton/pass/constants';
+import { PASS_WEB_APP_URL, UpsellRef } from '@proton/pass/constants';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import {
     selectHasRegisteredLock,
@@ -213,18 +214,11 @@ export const MenuDropdown: VFC = () => {
                         )}
 
                         <DropdownMenuButton
-                            onClick={withClose(() => onLink('https://pass.proton.me'))}
+                            onClick={withClose(() => onLink(PASS_WEB_APP_URL))}
                             label={
                                 <div className="flex items-center flex-nowrap gap-2">
                                     <span>{c('Action').t`Open web app`}</span>
-                                    <ButtonLike
-                                        as="span"
-                                        color="weak"
-                                        pill
-                                        shape="solid"
-                                        size="small"
-                                        className="text-strong text-uppercase text-sm no-pointer-events no-select"
-                                    >{c('Badge').t`Early access`}</ButtonLike>
+                                    <EarlyAccessBadge />
                                 </div>
                             }
                             icon="arrow-out-square"
