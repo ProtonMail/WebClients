@@ -36,6 +36,7 @@ import { WebCoreVpnSingleSignupStep2Setup3Total } from './types/web_core_vpn_sin
 import { WebCoreVpnSingleSignupStep3Complete2Total } from './types/web_core_vpn_single_signup_step3_complete_2_total_v1.schema';
 import { WebCoreVpnSingleSignupStep4OrgSetupTotal } from './types/web_core_vpn_single_signup_step4_orgSetup_total_v1.schema';
 import { WebCoreVpnSingleSignupStep4Setup2Total } from './types/web_core_vpn_single_signup_step4_setup_2_total_v1.schema';
+import { WebCryptoKeyTransparencyErrorsTotal } from './types/web_crypto_keytransparency_errors_total_v1.schema';
 import { WebPaymentsSubscriptionStepsTotal } from './types/web_payments_subscription_steps_total_v1.schema';
 import { WebPaymentsSubscriptionTotal } from './types/web_payments_subscription_total_v1.schema';
 
@@ -106,6 +107,8 @@ class Metrics extends MetricsBase {
     public core_session_recovery_password_reset_available_account_modal_load_total: Counter<WebCoreSessionRecoveryPasswordResetAvailableAccountModalLoadTotal>;
 
     public core_session_recovery_settings_update_total: Counter<WebCoreSessionRecoverySettingsUpdateTotal>;
+
+    public crypto_keytransparency_errors_total: Counter<WebCryptoKeyTransparencyErrorsTotal>;
 
     constructor(requestService: IMetricsRequestService) {
         super(requestService);
@@ -248,6 +251,10 @@ class Metrics extends MetricsBase {
             );
         this.core_session_recovery_settings_update_total = new Counter<WebCoreSessionRecoverySettingsUpdateTotal>(
             { name: 'web_core_session_recovery_settings_update_total', version: 1 },
+            this.requestService
+        );
+        this.crypto_keytransparency_errors_total = new Counter<WebCryptoKeyTransparencyErrorsTotal>(
+            { name: 'web_crypto_keytransparency_errors_total', version: 1 },
             this.requestService
         );
     }

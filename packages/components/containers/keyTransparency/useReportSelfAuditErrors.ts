@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 
 import { AddressAuditStatus, SelfAuditResult, ktSentryReport } from '@proton/key-transparency/lib';
+import metrics from '@proton/metrics';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
     TelemetryKeyTransparencyErrorEvents,
@@ -80,19 +81,29 @@ const useReportSelfAuditErrors = () => {
                         ...group,
                         dimensions,
                     });
+                    void metrics.crypto_keytransparency_errors_total.increment({
+                        level: 'warning',
+                        type: 'self-audit',
+                        visibility: visibility,
+                    });
                 }
 
                 failedAddressAuditsResults.forEach(({ status, warningDetails }) => {
+                    const isWarning = status === AddressAuditStatus.Warning;
                     const dimensions: SimpleMap<string> = {
                         type: 'address',
-                        result: status === AddressAuditStatus.Warning ? 'warning' : 'failure',
+                        result: isWarning ? 'warning' : 'failure',
                         reason: getWarningReason(warningDetails),
                         visibility: visibility,
                     };
-
                     reports.push({
                         ...group,
                         dimensions,
+                    });
+                    void metrics.crypto_keytransparency_errors_total.increment({
+                        level: isWarning ? 'warning' : 'error',
+                        type: 'self-audit',
+                        visibility: visibility,
                     });
                 });
                 failedLocalStorageAuditsOwn.forEach(() => {
@@ -107,6 +118,11 @@ const useReportSelfAuditErrors = () => {
                         ...group,
                         dimensions,
                     });
+                    void metrics.crypto_keytransparency_errors_total.increment({
+                        level: 'error',
+                        type: 'self-audit',
+                        visibility: visibility,
+                    });
                 });
                 failedLocalStorageAuditsOther.forEach(() => {
                     const dimensions: SimpleMap<string> = {
@@ -115,10 +131,14 @@ const useReportSelfAuditErrors = () => {
                         reason: 'past_keys_not_authentic',
                         visibility: visibility,
                     };
-
                     reports.push({
                         ...group,
                         dimensions,
+                    });
+                    void metrics.crypto_keytransparency_errors_total.increment({
+                        level: 'error',
+                        type: 'public-key-audit',
+                        visibility: visibility,
                     });
                 });
 
