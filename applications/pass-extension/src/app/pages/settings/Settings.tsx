@@ -16,6 +16,7 @@ import { Avatar } from '@proton/atoms/Avatar';
 import { Icon, Tabs, useNotifications } from '@proton/components';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { LockConfirmContextProvider } from '@proton/pass/components/Lock/LockConfirmContextProvider';
+import { Import } from '@proton/pass/components/Settings/Import';
 import { UpsellRef } from '@proton/pass/constants';
 import { pageMessage } from '@proton/pass/lib/extension/message';
 import {
@@ -31,7 +32,6 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { Developer } from './Views/Developer';
 import { Export } from './Views/Export';
 import { General } from './Views/General';
-import { Import } from './Views/Import';
 import { Security } from './Views/Security';
 import { Support } from './Views/Support';
 
