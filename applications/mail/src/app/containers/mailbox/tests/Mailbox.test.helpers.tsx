@@ -14,7 +14,7 @@ import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpo
 import range from '@proton/utils/range';
 
 import { filterToString, keywordToString, sortToString } from '../../../helpers/mailboxUrl';
-import { addApiMock, addToCache, getHistory, minimalCache, render, triggerEvent } from '../../../helpers/test/helper';
+import { addApiMock, getHistory, minimalCache, render, triggerEvent } from '../../../helpers/test/helper';
 import { ConversationLabel } from '../../../models/conversation';
 import { Element } from '../../../models/element';
 import { Event } from '../../../models/event';
@@ -143,7 +143,6 @@ export const setup = async ({
         addApiMock('mail/v4/conversations', () => ({ Total: totalConversations, Conversations: conversations }));
     }
 
-    addToCache('Calendars', []);
     const result = await render(<Component {...props} />, false, {
         preloadedState: {
             mailSettings: getModelState(props.mailSettings),

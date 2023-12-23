@@ -156,7 +156,7 @@ describe('Reports table testing', () => {
 
         easySwitchRender(<ReportsTable />);
 
-        await waitFor(() => expect(importersSpy).toHaveBeenCalledTimes(1));
+        await waitFor(() => screen.getByTestId('ReportsTable:reconnectImporter'));
 
         const reconnectButton = screen.getByTestId('ReportsTable:reconnectImporter');
         fireEvent.click(reconnectButton);

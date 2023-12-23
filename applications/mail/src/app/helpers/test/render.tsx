@@ -40,6 +40,7 @@ import {
     UserSettings,
 } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAILSETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
+import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 import { registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
 
 import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider';
@@ -182,6 +183,9 @@ export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloade
             categories: getModelState([]),
             contactEmails: getModelState([]),
             filters: getModelState([]),
+            calendars: getModelState([]),
+            calendarUserSettings: getModelState({} as CalendarUserSettings),
+            holidayCalendars: getModelState([]),
             importerConfig: getModelState({} as ApiEnvironmentConfig),
             features: getFeatureFlags([[FeatureCode.SLIntegration, true]]),
             conversationCounts: getModelState([]),
