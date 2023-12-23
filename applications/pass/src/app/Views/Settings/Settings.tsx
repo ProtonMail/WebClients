@@ -6,8 +6,10 @@ import { c } from 'ttag';
 import { Tabs } from '@proton/components/components';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { LockConfirmContextProvider } from '@proton/pass/components/Lock/LockConfirmContextProvider';
+import { Import } from '@proton/pass/components/Settings/Import';
 import { type Unpack } from '@proton/pass/types';
 
+import { Export } from './Tabs/Export';
 import { Security } from './Tabs/Security';
 import { Support } from './Tabs/Support';
 
@@ -21,6 +23,16 @@ const getSettingsTabs: () => SettingTab[] = () => {
             hash: 'security',
             title: c('Label').t`Security`,
             content: <Security />,
+        },
+        {
+            hash: 'import',
+            title: c('Label').t`Import`,
+            content: <Import />,
+        },
+        {
+            hash: 'export',
+            title: c('Label').t`Export`,
+            content: <Export />,
         },
         {
             hash: 'support',

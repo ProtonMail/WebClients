@@ -17,4 +17,4 @@ export type ExportData = {
 };
 
 export type ExportOptions = { encrypted: true; passphrase: string } | { encrypted: false };
-export type ExportFormValues = ExportOptions;
+export type ExportFormValues = { encrypted: boolean; passphrase: string };
