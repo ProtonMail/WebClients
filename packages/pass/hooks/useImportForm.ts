@@ -8,20 +8,22 @@ import { c } from 'ttag';
 
 import type { Dropzone, FileInput } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
+import { ImportReaderError } from '@proton/pass/lib/import/helpers/error';
 import { extractFileExtension, fileReader } from '@proton/pass/lib/import/reader';
-import type { ImportPayload, ImportReaderPayload } from '@proton/pass/lib/import/types';
+import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { ImportProvider } from '@proton/pass/lib/import/types';
 import { importItemsIntent } from '@proton/pass/store/actions';
+import { importItemsRequest } from '@proton/pass/store/actions/requests';
 import type { ImportState } from '@proton/pass/store/reducers';
 import { selectLatestImport, selectUser } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
+import { fileToTransferable } from '@proton/pass/utils/file/transferable-file';
 import { orThrow, pipe } from '@proton/pass/utils/fp/pipe';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 import identity from '@proton/utils/identity';
-
-import { importItemsRequest } from '../store/actions/requests';
-import { useActionRequest } from './useActionRequest';
 
 type DropzoneProps = ComponentProps<typeof Dropzone>;
 type FileInputProps = ComponentProps<typeof FileInput>;
@@ -84,12 +86,15 @@ export const useImportForm = ({
     beforeSubmit = (payload) => Promise.resolve({ ok: true, payload }),
     onSubmit,
 }: UseImportFormOptions): ImportFormContext => {
+    const { prepareImport } = usePassCore();
+    const { createNotification } = useNotifications();
+
     const [busy, setBusy] = useState(false);
     const [dropzoneHovered, setDropzoneHovered] = useState(false);
-    const { createNotification } = useNotifications();
+    const formRef = useRef<FormikContextType<ImportFormValues>>();
+
     const result = useSelector(selectLatestImport);
     const user = useSelector(selectUser);
-    const formRef = useRef<FormikContextType<ImportFormValues>>();
 
     const importItems = useActionRequest({
         action: importItemsIntent,
@@ -108,38 +113,35 @@ export const useImportForm = ({
         validateOnMount: true,
         validate: validateImportForm,
         onSubmit: async (values) => {
+            if (!values.provider) return setBusy(false);
+            setBusy(true);
+
             try {
-                setBusy(true);
-
-                if (!values.provider) return setBusy(false);
-
-                const payload: ImportReaderPayload = {
-                    file: values.file!,
-                    provider: values.provider,
-                    passphrase: values.passphrase,
-                    userId: user?.ID,
-                };
-
-                const importPayload = await fileReader(payload);
+                const importPayload = await fileReader(
+                    await prepareImport({
+                        file: await fileToTransferable(values.file!),
+                        provider: values.provider,
+                        passphrase: values.passphrase,
+                        userId: user?.ID,
+                    })
+                );
 
                 if (!isNonEmptyImportPayload(importPayload)) {
-                    createNotification({
-                        type: 'error',
-                        text: c('Error').t`The file you are trying to import is empty`,
-                    });
-                    return setBusy(false);
+                    throw new ImportReaderError(c('Error').t`The file you are trying to import is empty`);
                 }
 
                 const result = await beforeSubmit(importPayload);
-                if (!result.ok) return setBusy(false);
 
-                onSubmit?.(result.payload);
-                importItems.dispatch({ data: result.payload, provider: values.provider });
+                if (result.ok) {
+                    onSubmit?.(result.payload);
+                    importItems.dispatch({ data: result.payload, provider: values.provider });
+                }
             } catch (e) {
-                setBusy(false);
                 if (e instanceof Error) {
                     createNotification({ type: 'error', text: e.message });
                 }
+            } finally {
+                setBusy(false);
             }
         },
     });
@@ -163,13 +165,9 @@ export const useImportForm = ({
     const onAttach: FileInputProps['onChange'] = (event) => onAddFiles((event.target.files as File[] | null) ?? []);
 
     return {
-        form,
         busy,
+        dropzone: { hovered: dropzoneHovered, onAttach, onDrop },
+        form,
         result,
-        dropzone: {
-            hovered: dropzoneHovered,
-            onAttach,
-            onDrop,
-        },
     };
 };
