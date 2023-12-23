@@ -17,8 +17,12 @@ import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider'
 import { getLocalPath, history } from '@proton/pass/components/Core/routing';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
+import { createPassExport } from '@proton/pass/lib/export/export';
+import { prepareImport } from '@proton/pass/lib/import/reader';
 import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
+import { selectExportData } from '@proton/pass/store/selectors/export';
 import type { Maybe } from '@proton/pass/types';
+import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 
 import { PASS_CONFIG, api } from '../lib/core';
 import { onboarding } from '../lib/onboarding';
@@ -28,9 +32,10 @@ import { ClientContext, ClientProvider } from './Context/ClientProvider';
 import type { ServiceWorkerContextValue } from './ServiceWorker/ServiceWorkerProvider';
 import { ServiceWorkerContext, ServiceWorkerProvider } from './ServiceWorker/ServiceWorkerProvider';
 import { StoreProvider } from './Store/StoreProvider';
+import { store } from './Store/store';
 import { Lobby } from './Views/Lobby';
 import { Main } from './Views/Main';
-import { API_URL } from './config';
+import * as config from './config';
 
 import './app.scss';
 
@@ -50,7 +55,7 @@ const getDomainImageFactory = (sw: ServiceWorkerContextValue): PassCoreContextVa
         const cachedImage = cache.get(url);
         if (cachedImage) return cachedImage;
 
-        const baseUrl = `${API_URL}/${url}`;
+        const baseUrl = `${config.API_URL}/${url}`;
         const requestUrl = (/^https?:\/\//.test(baseUrl) ? baseUrl : new URL(baseUrl, document.baseURI)).toString();
         signal.onabort = () => sw.send({ type: 'abort', requestUrl });
 
@@ -70,6 +75,12 @@ const openSettings: PassCoreContextValue['openSettings'] = (page) =>
         hash: page,
     });
 
+const exportData: PassCoreContextValue['exportData'] = async (options) => {
+    const state = store.getState();
+    const data = selectExportData({ config, encrypted: options.encrypted })(state);
+    return transferableToFile(await createPassExport(data, options));
+};
+
 export const App = () => {
     return (
         <ServiceWorkerProvider>
@@ -78,12 +89,14 @@ export const App = () => {
                     <PassCoreProvider
                         endpoint="web"
                         config={PASS_CONFIG}
+                        exportData={exportData}
                         generateOTP={generateOTP}
                         getDomainImage={getDomainImageFactory(sw)}
                         onLink={onLink}
-                        onTelemetry={telemetry.push}
                         onOnboardingAck={onboarding.acknowledge}
+                        onTelemetry={telemetry.push}
                         openSettings={openSettings}
+                        prepareImport={prepareImport}
                     >
                         <CompatibilityCheck>
                             <Icons />
