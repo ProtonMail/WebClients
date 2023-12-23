@@ -18,6 +18,11 @@ import type {
     User,
     UserSettings,
 } from '@proton/shared/lib/interfaces';
+import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
+import type {
+    CalendarEventManager,
+    CalendarMemberEventManager,
+} from '@proton/shared/lib/interfaces/calendar/EventManager';
 import type { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 interface EventLoop {
@@ -25,8 +30,11 @@ interface EventLoop {
     Filters?: EventItemUpdate<Filter, 'Filter'>[];
     Domains?: EventItemUpdate<Domain, 'Domain'>[];
     Addresses?: EventItemUpdate<Address, 'Address'>[];
+    CalendarUserSettings?: CalendarUserSettings;
     Contacts?: EventItemUpdate<Contact, 'Contact'>[];
     ContactEmails?: EventItemUpdate<ContactEmail, 'ContactEmail'>[];
+    Calendars?: CalendarEventManager[];
+    CalendarMembers?: CalendarMemberEventManager[];
     Organization?: Organization;
     UserSettings?: UserSettings;
     MailSettings?: MailSettings;

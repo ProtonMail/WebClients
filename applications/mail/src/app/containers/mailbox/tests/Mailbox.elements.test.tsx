@@ -188,7 +188,7 @@ describe('Mailbox element list', () => {
                 totalConversations: total,
             });
 
-            expect(api).toHaveBeenNthCalledWith(4, expectedRequest);
+            expect(api).toHaveBeenNthCalledWith(3, expectedRequest);
 
             const items = getItems();
             expect(items.length).toBe(DEFAULT_MAIL_PAGE_SIZE);

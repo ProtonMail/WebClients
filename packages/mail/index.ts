@@ -7,3 +7,4 @@ export * from './contactEmails';
 export * from './labels';
 export * from './labels/hooks';
 export * from './counts';
+export * from './importerConfig';
