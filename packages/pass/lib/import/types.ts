@@ -1,4 +1,5 @@
 import type { ItemImportIntent, MaybeNull } from '@proton/pass/types';
+import type { TransferableFile } from '@proton/pass/utils/file/transferable-file';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 export enum ImportProvider {
@@ -101,7 +102,7 @@ export const PROVIDER_INFO_MAP: Record<ImportProvider, { title: string; fileExte
 export const ImportProviderValues = Object.values(ImportProvider).sort((a, b) => a.localeCompare(b));
 
 export type ImportReaderPayload = {
-    file: File;
+    file: TransferableFile;
     provider: ImportProvider;
     userId?: string;
     passphrase?: string;
@@ -114,3 +115,4 @@ export type ImportVault = {
 };
 
 export type ImportPayload = { vaults: ImportVault[]; ignored: string[]; warnings: string[] };
+export type ImportDecryptPayload = { data: string; passphrase: string };
