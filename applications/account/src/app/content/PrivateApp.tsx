@@ -1,6 +1,6 @@
 import { userSettingsThunk, userThunk } from '@proton/account';
+import { holidayCalendarsThunk } from '@proton/calendar';
 import { FeatureCode, StandardPrivateApp, useApi } from '@proton/components';
-import { useGetHolidaysDirectory } from '@proton/components/containers/calendar/hooks/useHolidaysDirectory';
 import { fetchFeatures } from '@proton/features';
 import { mailSettingsThunk } from '@proton/mail';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
@@ -24,7 +24,6 @@ interface Props {
 const PrivateApp = ({ onLogout, locales }: Props) => {
     const api = useApi();
     const silentApi = getSilentApi(api);
-    const getHolidaysDirectory = useGetHolidaysDirectory(silentApi);
     const dispatch = useAccountDispatch();
 
     return (
@@ -59,7 +58,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
                 const initPromise = Promise.all([setupModels(), setupEventManager()]);
                 // Intentionally ignoring to return promises to avoid blocking app start
                 loadAllowedTimeZones(silentApi).catch(noop);
-                getHolidaysDirectory().catch(noop);
+                dispatch(holidayCalendarsThunk()).catch(noop);
 
                 const [models, ev] = await initPromise;
 

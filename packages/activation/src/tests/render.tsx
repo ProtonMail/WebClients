@@ -105,6 +105,7 @@ export const getStoreWrapper = (preloadedState?: any) => {
             mailSettings: getModelState({} as MailSettings),
             categories: getModelState([]),
             features: getFeatureFlags([[FeatureCode.EasySwitch, true]]),
+            calendars: getModelState([]),
             ...preloadedState,
         },
     });
