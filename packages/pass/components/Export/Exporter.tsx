@@ -1,62 +1,44 @@
-import { useState } from 'react';
+import { type FC, useState } from 'react';
 
-import { Field, Form, type FormikErrors, FormikProvider, useFormik } from 'formik';
+import { useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
-import { Checkbox, useNotifications } from '@proton/components';
-import { PasswordField } from '@proton/pass/components/Form/legacy/PasswordField';
-import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message';
-import { WorkerMessageType } from '@proton/pass/types';
+import { useNotifications } from '@proton/components';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { ExportForm } from '@proton/pass/components/Export/ExportForm';
+import type { ExportFormValues } from '@proton/pass/lib/export/types';
+import { validateExportForm } from '@proton/pass/lib/validation/export';
+import type { MaybePromise } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { createExportFile } from './createExportFile';
+type Props = {
+    /** Optional assertion function that will be triggered
+     * immediately before an export request */
+    assert?: () => MaybePromise<void>;
+};
 
-type ExportFormValues = { passphrase: string; encrypted: boolean };
-
-const initialValues: ExportFormValues = { passphrase: '', encrypted: false };
-const validateFormValues = ({ encrypted, passphrase }: ExportFormValues): FormikErrors<ExportFormValues> =>
-    encrypted && isEmptyString(passphrase) ? { passphrase: c('Warning').t`Passphrase is required` } : {};
-
-export const Exporter: React.FC = () => {
-    const [loading, setLoading] = useState(false);
+export const Exporter: FC<Props> = ({ assert }) => {
+    const { exportData } = usePassCore();
     const { createNotification } = useNotifications();
+
+    const initialValues: ExportFormValues = { encrypted: false };
+    const [loading, setLoading] = useState(false);
 
     const form = useFormik<ExportFormValues>({
         initialValues: initialValues,
-        initialErrors: validateFormValues(initialValues),
+        initialErrors: validateExportForm(initialValues),
         validateOnChange: true,
         validateOnMount: true,
-        validate: validateFormValues,
-        onSubmit: async ({ encrypted, passphrase }) => {
+        validate: validateExportForm,
+        onSubmit: async (values) => {
             try {
                 setLoading(true);
+                await assert?.();
+                const file = await exportData(values);
 
-                await sendMessage.on(
-                    pageMessage({
-                        type: WorkerMessageType.EXPORT_REQUEST,
-                        payload: encrypted ? { encrypted, passphrase } : { encrypted: false },
-                    }),
-                    async (res) => {
-                        await wait(500);
-
-                        if (res.type === 'success') {
-                            const { filename, blob } = createExportFile(encrypted, res.data);
-                            downloadFile(blob, filename);
-
-                            createNotification({
-                                type: 'success',
-                                text: c('Info').t`Successfully exported all your items`,
-                            });
-                        } else {
-                            throw new Error(res.error);
-                        }
-                    }
-                );
+                createNotification({ type: 'success', text: c('Info').t`Successfully exported all your items` });
+                downloadFile(file, file.name);
             } catch (e) {
                 logger.warn(`[Settings::Exporter] export failed`, e);
                 createNotification({ type: 'error', text: c('Warning').t`An error occured while exporting your data` });
@@ -66,40 +48,5 @@ export const Exporter: React.FC = () => {
         },
     });
 
-    return (
-        <FormikProvider value={form}>
-            <Form className="modal-two-dialog-container">
-                <Checkbox
-                    checked={form.values.encrypted}
-                    onChange={(e) => form.setFieldValue('encrypted', e.target.checked)}
-                    className="mb-4"
-                >
-                    <span>
-                        {c('Label').t`Encrypt your ${PASS_APP_NAME} data export file`}
-                        <span className="block color-weak text-sm">{c('Info')
-                            .t`Export is encrypted using PGP and requires a strong passphrase.`}</span>
-                    </span>
-                </Checkbox>
-
-                {form.values.encrypted ? (
-                    <Field name="passphrase" label={c('Label').t`Passphrase`} component={PasswordField} />
-                ) : (
-                    <em className="block text-sm color-weak mt-2">
-                        {c('Info')
-                            .t`This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.`}
-                    </em>
-                )}
-
-                <Button
-                    type="submit"
-                    color="norm"
-                    loading={loading}
-                    disabled={!form.isValid || loading}
-                    className="mt-3 w-full"
-                >
-                    {c('Action').t`Export`}
-                </Button>
-            </Form>
-        </FormikProvider>
-    );
+    return <ExportForm form={form} loading={loading} />;
 };
