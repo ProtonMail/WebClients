@@ -1,15 +1,14 @@
 import { addressesThunk, userSettingsThunk, userThunk } from '@proton/account';
+import { calendarSettingsThunk, calendarsThunk, holidayCalendarsThunk } from '@proton/calendar';
 import {
     FeatureCode,
     LoaderPage,
     StandardPrivateApp,
     useApi,
     useAppTitle,
-    useCache,
     useDrawer,
     useDrawerParent,
 } from '@proton/components';
-import { useGetHolidaysDirectory } from '@proton/components/containers/calendar/hooks/useHolidaysDirectory';
 import { fetchFeatures } from '@proton/features';
 import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -17,8 +16,6 @@ import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import { CalendarUserSettingsModel, CalendarsModel } from '@proton/shared/lib/models';
-import { loadModels } from '@proton/shared/lib/models/helper';
 import noop from '@proton/utils/noop';
 
 import { useCalendarDispatch } from '../store/hooks';
@@ -33,10 +30,8 @@ interface Props {
 
 const PrivateApp = ({ onLogout, locales }: Props) => {
     const api = useApi();
-    const cache = useCache();
     const silentApi = getSilentApi(api);
     const dispatch = useCalendarDispatch();
-    const getHolidaysDirectory = useGetHolidaysDirectory(silentApi);
     const { setShowDrawerSidebar } = useDrawer();
 
     useAppTitle('');
@@ -62,11 +57,9 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
                                 FeatureCode.AutoAddHolidaysCalendars,
                             ])
                         ),
+                        dispatch(calendarsThunk()),
+                        dispatch(calendarSettingsThunk()),
                     ]);
-                    await loadModels([CalendarsModel, CalendarUserSettingsModel], {
-                        api: silentApi,
-                        cache,
-                    });
 
                     return { user, userSettings, addresses, features };
                 };
@@ -86,7 +79,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
                 const initPromise = Promise.all([setupModels(), setupEventManager()]);
                 // Intentionally ignoring to return promise of the timezone call to avoid blocking app start
                 loadAllowedTimeZones(getSilentApi(api)).catch(noop);
-                getHolidaysDirectory().catch(noop);
+                dispatch(holidayCalendarsThunk()).catch(noop);
 
                 const [models, ev] = await initPromise;
 

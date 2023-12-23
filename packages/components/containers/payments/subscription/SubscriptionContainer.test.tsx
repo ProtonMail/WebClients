@@ -43,6 +43,11 @@ jest.mock('@proton/components/hooks/useFeature', () => ({
     useFeature: jest.fn(() => [{}, false]),
 }));
 
+jest.mock('@proton/components/hooks/useCalendars', () => ({
+    useCalendars: jest.fn(),
+    useGetCalendars: jest.fn(() => []),
+}));
+
 const ContextSubscriptionContainer = applyHOCs(
     withConfig(),
     withNotifications(),

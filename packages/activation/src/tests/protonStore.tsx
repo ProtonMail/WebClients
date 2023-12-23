@@ -1,6 +1,7 @@
 import { combineReducers, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
 import { addressesReducer, userReducer } from '@proton/account';
+import { calendarsReducer } from '@proton/calendar';
 import { featuresReducer } from '@proton/features';
 import { categoriesReducer, importerConfigReducer, mailSettingsReducer } from '@proton/mail';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
     ...mailSettingsReducer,
     ...categoriesReducer,
     ...importerConfigReducer,
+    ...calendarsReducer,
     features: featuresReducer.reducer,
 });
 export type ActivationState = ReturnType<typeof rootReducer>;

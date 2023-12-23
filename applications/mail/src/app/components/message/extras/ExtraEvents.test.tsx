@@ -216,12 +216,6 @@ const getSetup = async ({
     );
 
     // Mock calendar API calls
-    addApiMock('calendar/v1', () => ({
-        Calendars: userCalendars,
-    }));
-    addApiMock('settings/calendar', () => ({
-        CalendarUserSettings: userCalendarSettings,
-    }));
     const bootstrapCalendarID = eventCalendarID || defaultCalendarID;
     if (bootstrapCalendarID) {
         addApiMock(`calendar/v1/${bootstrapCalendarID}/events/${eventID}/upgrade`, () => ({
@@ -304,6 +298,8 @@ const getSetup = async ({
                 }),
             ]),
             addressKeys: getAddressKeyCache(userPrimaryAddressID, addressKey),
+            calendars: getModelState(userCalendars),
+            calendarUserSettings: getModelState(userCalendarSettings),
         },
         message: {
             localID: '1',

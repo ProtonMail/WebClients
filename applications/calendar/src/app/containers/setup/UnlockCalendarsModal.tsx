@@ -13,11 +13,11 @@ import {
     Prompt,
     SettingsLink,
     useApi,
-    useCache,
     useConfig,
     useDrawer,
     useGetAddressKeys,
     useGetAddresses,
+    useGetCalendars,
     useModalState,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
@@ -45,9 +45,10 @@ interface Props {
     onDone: () => void;
     hasReactivatedCalendarsRef: React.MutableRefObject<boolean>;
 }
+
 const UnlockCalendarsModal = ({ calendars, unlockAll, hasReactivatedCalendarsRef, onDone }: Props) => {
     const api = useApi();
-    const cache = useCache();
+    const getCalendars = useGetCalendars();
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
     const { parentApp } = useDrawer();
@@ -88,7 +89,7 @@ const UnlockCalendarsModal = ({ calendars, unlockAll, hasReactivatedCalendarsRef
         return withLoading(
             process({
                 api,
-                cache,
+                getCalendars,
                 getAddressKeys,
                 getAddresses,
                 calendarsToReset,

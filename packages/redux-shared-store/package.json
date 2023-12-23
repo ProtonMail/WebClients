@@ -3,6 +3,7 @@
     "description": "Sharing dispatch and selector context",
     "dependencies": {
         "@proton/account": "workspace:^",
+        "@proton/calendar": "workspace:^",
         "@proton/mail": "workspace:^",
         "@proton/shared": "workspace:^",
         "@reduxjs/toolkit": "^1.9.7",
