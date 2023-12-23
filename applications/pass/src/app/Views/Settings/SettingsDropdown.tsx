@@ -23,6 +23,8 @@ export const SettingsDropdown: FC = () => {
     const settings = useMemo<SettingAction[]>(
         () => [
             { key: 'security', label: c('Label').t`Security`, icon: 'locks' },
+            { key: 'import', label: c('Label').t`Import`, icon: 'arrow-up-line' },
+            { key: 'export', label: c('Label').t`Export`, icon: 'arrow-down-line' },
             { key: 'support', label: c('Label').t`Support`, icon: 'speech-bubble' },
         ],
         []

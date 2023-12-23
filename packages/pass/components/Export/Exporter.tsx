@@ -22,7 +22,7 @@ export const Exporter: FC<Props> = ({ assert }) => {
     const { exportData } = usePassCore();
     const { createNotification } = useNotifications();
 
-    const initialValues: ExportFormValues = { encrypted: false };
+    const initialValues: ExportFormValues = { encrypted: false, passphrase: '' };
     const [loading, setLoading] = useState(false);
 
     const form = useFormik<ExportFormValues>({
