@@ -1,17 +1,18 @@
 import JSZip from 'jszip';
 
 import { CryptoProxy } from '@proton/crypto';
+import { decodeBase64 } from '@proton/crypto/lib/utils';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import { CONTENT_FORMAT_VERSION, ItemState } from '@proton/pass/types';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
-import { createExportZip, encryptZip } from './export';
-import type { ExportPayload } from './types';
+import { createPassExportZip, encryptPassExport } from './export';
+import type { ExportData } from './types';
 
 const EXPORT_TEST_VAULT_ID = 'vault-share-id';
 
-const EXPORT_TEST_PAYLOAD: ExportPayload = {
+const EXPORT_TEST_PAYLOAD: ExportData = {
     version: '5.0.0.99',
     encrypted: true,
     vaults: {
@@ -51,7 +52,7 @@ describe('Pass export', () => {
     afterAll(async () => releaseCryptoProxy());
 
     test('createExportZip should build unencrypted zip', async () => {
-        const zip = await createExportZip(EXPORT_TEST_PAYLOAD);
+        const zip = await createPassExportZip(EXPORT_TEST_PAYLOAD);
         const unzip = await JSZip.loadAsync(zip);
 
         expect(unzip.file('export.json')).not.toBe(undefined);
@@ -65,10 +66,10 @@ describe('Pass export', () => {
 
     test('encryptZip should encrypt zip file to binary format', async () => {
         const uint8Zip = crypto.getRandomValues(new Uint8Array(32));
-        const armoredMessage = await encryptZip(uint8Zip, EXPORT_TEST_PASSPHRASE);
+        const base64Encrypted = await encryptPassExport(uint8Zip, EXPORT_TEST_PASSPHRASE);
 
         const decrypted = await CryptoProxy.decryptMessage({
-            armoredMessage,
+            armoredMessage: decodeBase64(base64Encrypted),
             passwords: [EXPORT_TEST_PASSPHRASE],
             format: 'binary',
         });
