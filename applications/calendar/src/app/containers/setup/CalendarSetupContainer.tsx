@@ -4,10 +4,11 @@ import {
     LoaderPage,
     StandardLoadErrorPage,
     useApi,
-    useCache,
     useEventManager,
     useGetAddressKeys,
     useGetAddresses,
+    useGetCalendarUserSettings,
+    useGetCalendars,
 } from '@proton/components';
 import { useGetHolidaysDirectory } from '@proton/components/containers/calendar/hooks/useHolidaysDirectory';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
@@ -21,8 +22,6 @@ import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { languageCode } from '@proton/shared/lib/i18n';
 import { getBrowserLanguageTags } from '@proton/shared/lib/i18n/helper';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { CalendarUserSettingsModel, CalendarsModel } from '@proton/shared/lib/models';
-import { loadModels } from '@proton/shared/lib/models/helper';
 import noop from '@proton/utils/noop';
 
 interface Props {
@@ -31,15 +30,17 @@ interface Props {
     calendars?: VisualCalendar[];
     onDone: () => void;
 }
+
 const CalendarSetupContainer = ({ hasCalendarToGenerate, hasHolidaysCalendarToGenerate, calendars, onDone }: Props) => {
     const { call } = useEventManager();
-    const cache = useCache();
     const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
+    const getHolidaysDirectory = useGetHolidaysDirectory();
+    const getCalendars = useGetCalendars();
+    const getCalendarUserSettings = useGetCalendarUserSettings();
 
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
-    const getHolidaysDirectory = useGetHolidaysDirectory(silentApi);
 
     const [error, setError] = useState();
 
@@ -98,7 +99,7 @@ const CalendarSetupContainer = ({ hasCalendarToGenerate, hasHolidaysCalendarToGe
             }
 
             await call();
-            await loadModels([CalendarsModel, CalendarUserSettingsModel], { api: silentApi, cache, useCache: false });
+            await Promise.all([getCalendars({ forceFetch: true }), getCalendarUserSettings({ forceFetch: true })]);
         };
         run()
             .then(() => {

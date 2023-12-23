@@ -123,7 +123,8 @@ const HolidaysCalendarModalWithDirectory = ({
     ...rest
 }: Props) => {
     const getAddresses = useGetAddresses();
-    const [{ PrimaryTimezone }] = useCalendarUserSettings();
+    const [calendarUserSettings] = useCalendarUserSettings();
+    const PrimaryTimezone = calendarUserSettings?.PrimaryTimezone!;
     const { call } = useEventManager();
     const { call: calendarCall } = useCalendarModelEventManager();
     const api = useApi();

@@ -1,5 +1,6 @@
 import { TypedStartListening, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
+import { startCalendarEventListener, startHolidayCalendarsListener } from '@proton/calendar';
 import { ignoredActions, ignoredPaths, startSharedListening } from '@proton/redux-shared-store';
 
 import { rootReducer } from './rootReducer';
@@ -36,3 +37,5 @@ type AppStartListening = TypedStartListening<AccountState, AccountDispatch, Extr
 const startListening = listenerMiddleware.startListening as AppStartListening;
 
 startSharedListening(startListening);
+startCalendarEventListener(startListening);
+startHolidayCalendarsListener(startListening);

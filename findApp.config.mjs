@@ -53,6 +53,10 @@ export default {
                 glob: '**/*.{js,jsx,ts,tsx}',
             },
             {
+                name: 'calendar',
+                glob: '**/*.{js,jsx,ts,tsx}',
+            },
+            {
                 name: 'features',
                 glob: '**/*.{js,jsx,ts,tsx}',
             },
