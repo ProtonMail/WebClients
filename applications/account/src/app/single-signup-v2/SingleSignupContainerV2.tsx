@@ -75,6 +75,7 @@ import { MetaTags, useMetaTags } from '../useMetaTags';
 import LoginModal from './LoginModal';
 import Step1, { Step1Rref } from './Step1';
 import Step2 from './Step2';
+import SwitchModal from './SwitchModal';
 import { getDriveConfiguration } from './drive/configuration';
 import { getGenericConfiguration } from './generic/configuration';
 import {
@@ -233,6 +234,7 @@ const SingleSignupContainerV2 = ({
     const [vpnServersCountData] = useVPNServersCount();
     const handleError = useErrorHandler();
     const [tmpLoginEmail, setTmpLoginEmail] = useState('');
+    const [switchModalProps, setSwitchModal, renderSwitchModal] = useModalState();
     const [loginModalProps, setLoginModal, renderLoginModal] = useModalState();
     const { viewportWidth } = useActiveBreakpoint();
 
@@ -669,15 +671,15 @@ const SingleSignupContainerV2 = ({
         return () => {};
     }, []);
 
-    const signingOutRef = useRef(false);
+    const accountRef = useRef({ signingOut: false, signingIn: false });
 
     const handleSignOut = async (reset = false) => {
-        if (!model.plans.length) {
+        if (!model.plans.length || accountRef.current.signingIn || accountRef.current.signingOut) {
             return;
         }
 
         try {
-            signingOutRef.current = true;
+            accountRef.current.signingOut = true;
             await startUnAuthFlow();
 
             // Override the silentApi to not use the one with the UID as we prepare the state
@@ -726,62 +728,88 @@ const SingleSignupContainerV2 = ({
                 subscriptionData,
             });
         } finally {
-            signingOutRef.current = false;
+            accountRef.current.signingOut = false;
         }
     };
 
-    const handleSignIn = async (authSession: AuthSession) => {
-        if (!model.plans.length) {
+    const handleSignIn = async (authSession: AuthSession, options?: { ignore?: boolean }) => {
+        if (
+            !model.plans.length ||
+            (!options?.ignore && accountRef.current.signingIn) ||
+            accountRef.current.signingOut
+        ) {
             return;
         }
 
-        // Override the silentApi to not use the one with the UID as we prepare the state
-        const silentApi = getSilentApi(getUIDApi(authSession.UID, unauthApi));
+        try {
+            accountRef.current.signingIn = true;
+            // Override the silentApi to not use the one with the UID as we prepare the state
+            const silentApi = getSilentApi(getUIDApi(authSession.UID, unauthApi));
 
-        const [user] = await Promise.all([
-            authSession.User || silentApi<{ User: User }>(getUser()).then(({ User }) => User),
-        ]);
+            const [user] = await Promise.all([
+                authSession.User || silentApi<{ User: User }>(getUser()).then(({ User }) => User),
+            ]);
 
-        const { subscriptionData, upsell, ...userInfo } = await getUserInfo({
-            api: silentApi,
-            user,
-            plans: model.plans,
-            plansMap: model.plansMap,
-            upsellPlanCard,
-            planParameters: model.planParameters!,
-            signupParameters,
-            options: {
-                cycle: model.subscriptionData.cycle,
-                currency: model.subscriptionData.currency,
-                planIDs: model.subscriptionData.planIDs,
-                coupon: model.subscriptionData.checkResult?.Coupon?.Code,
-            },
-            toApp: product,
-        });
+            const { subscriptionData, upsell, ...userInfo } = await getUserInfo({
+                api: silentApi,
+                user,
+                plans: model.plans,
+                plansMap: model.plansMap,
+                upsellPlanCard,
+                planParameters: model.planParameters!,
+                signupParameters,
+                options: {
+                    cycle: model.subscriptionData.cycle,
+                    currency: model.subscriptionData.currency,
+                    planIDs: model.subscriptionData.planIDs,
 
-        const session: SessionData = {
-            user,
-            UID: authSession.UID,
-            localID: authSession.LocalID,
-            keyPassword: authSession.keyPassword,
-            trusted: authSession.trusted,
-            persistent: authSession.persistent,
-            ...userInfo,
-        };
+                    coupon: model.subscriptionData.checkResult?.Coupon?.Code,
+                },
+                toApp: product,
+            });
 
-        setModelDiff({
-            optimistic: {},
-            session,
-            cache: undefined,
-            subscriptionData,
-            upsell,
-        });
+            const session: SessionData = {
+                user,
+                UID: authSession.UID,
+                localID: authSession.LocalID,
+                keyPassword: authSession.keyPassword,
+                trusted: authSession.trusted,
+                persistent: authSession.persistent,
+                ...userInfo,
+            };
 
-        triggerModals(session, upsell, subscriptionData);
-        measure({
-            event: TelemetryAccountSignupEvents.beSignInSuccess,
-            dimensions: { plan: getPlanNameFromSession(session) },
-        });
+            setModelDiff({
+                optimistic: {},
+                session,
+                cache: undefined,
+                subscriptionData,
+                upsell,
+            });
+
+            triggerModals(session, upsell, subscriptionData);
+            measure({
+                event: TelemetryAccountSignupEvents.beSignInSuccess,
+                dimensions: { plan: getPlanNameFromSession(session) },
+            });
+        } finally {
+            accountRef.current.signingIn = false;
+        }
+    };
+
+    const handleSwitchSession = async (session: LocalSessionPersisted) => {
+        if (!model.plans.length || accountRef.current.signingIn || accountRef.current.signingOut) {
+            return;
+        }
+        try {
+            accountRef.current.signingIn = true;
+            const silentApi = getSilentApi(unauthApi);
+            const resumedSession = await resumeSession(silentApi, session.persisted.localID);
+            if (resumedSession) {
+                return await handleSignIn(resumedSession, { ignore: true });
+            }
+        } finally {
+            accountRef.current.signingIn = false;
+        }
     };
 
     if (error) {
@@ -937,6 +965,17 @@ const SingleSignupContainerV2 = ({
                     }}
                 />
             )}
+            {renderSwitchModal && (
+                <SwitchModal
+                    user={model.session?.user}
+                    sessions={activeSessions}
+                    {...switchModalProps}
+                    onSwitchSession={async (props) => {
+                        await handleSwitchSession(props);
+                        setSwitchModal(false);
+                    }}
+                />
+            )}
             {(loadingDependencies || loadingChallenge) && <>{loader}</>}
             {renderUnlockModal && (
                 <UnlockModal
@@ -1007,6 +1046,7 @@ const SingleSignupContainerV2 = ({
             <UnAuthenticated theme={theme.type}>
                 {model.step === Steps.Account && (
                     <Step1
+                        activeSessions={activeSessions}
                         signupParameters={signupParameters}
                         signupTypes={signupTypes}
                         theme={theme}
@@ -1027,6 +1067,9 @@ const SingleSignupContainerV2 = ({
                         currentPlan={model.upsell.currentPlan}
                         cycles={cycles}
                         planCards={planCards}
+                        onOpenSwitch={() => {
+                            setSwitchModal(true);
+                        }}
                         onOpenLogin={(options) => {
                             setTmpLoginEmail(options.email);
                             setLoginModal(true);
@@ -1041,7 +1084,7 @@ const SingleSignupContainerV2 = ({
                         onSignOut={handleSignOut}
                         onChallengeError={() => {
                             // Ignore errors that were caused when there's a user and it's not being signed out
-                            if (model.session?.user && !signingOutRef.current) {
+                            if (model.session?.user && !accountRef.current.signingOut) {
                                 return;
                             }
                             setError(new Error('Challenge error'));

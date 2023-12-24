@@ -32,6 +32,7 @@ import { TelemetryMeasurementData } from './measure';
 export type BaseMeasure<T> = (data: T) => Promise<void>;
 export type Measure = BaseMeasure<TelemetryMeasurementData>;
 export type OnOpenLogin = (data: { email: string; location: 'step2' | 'error_msg' }) => void;
+export type OnOpenSwitch = () => void;
 
 export interface OptimisticOptions {
     cycle: CYCLE;
