@@ -27,6 +27,7 @@ import { getShortBillingText } from '@proton/components/containers/payments/help
 import { useLoading } from '@proton/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
+import { LocalSessionPersisted } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APP_NAMES, BRAND_NAME, CYCLE, PASS_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import { getCheckout, getOptimisticCheckResult } from '@proton/shared/lib/helpers/checkout';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
@@ -62,6 +63,7 @@ import { getFreeSubscriptionData, getFreeTitle, visionaryEndDate } from './helpe
 import {
     Measure,
     OnOpenLogin,
+    OnOpenSwitch,
     OptimisticOptions,
     SignupMode,
     SignupModelV2,
@@ -97,11 +99,13 @@ const Step1 = ({
     api: normalApi,
     vpnServersCountData,
     onOpenLogin,
+    onOpenSwitch,
     onChallengeLoaded,
     onChallengeError,
     className,
     onSignOut,
     step1Ref,
+    activeSessions,
     measure,
     mode,
     cycles = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS],
@@ -143,8 +147,10 @@ const Step1 = ({
     benefits: ReactNode;
     api: Api;
     onOpenLogin: OnOpenLogin;
+    onOpenSwitch: OnOpenSwitch;
     className?: string;
     step1Ref: MutableRefObject<Step1Rref | undefined>;
+    activeSessions?: LocalSessionPersisted[];
     cycles?: CYCLE[];
 }) => {
     const silentApi = getSilentApi(normalApi);
@@ -566,7 +572,16 @@ const Step1 = ({
                                     <BoxContent>
                                         <div className="flex justify-space-between gap-14">
                                             <div className="flex-1 w-0">
-                                                <AccountSwitcherItem user={user} />
+                                                <AccountSwitcherItem
+                                                    user={user}
+                                                    right={
+                                                        (activeSessions?.length || 0) > 1 ? (
+                                                            <Button color="norm" onClick={onOpenSwitch} shape="ghost">
+                                                                {c('Action').t`Switch account`}
+                                                            </Button>
+                                                        ) : undefined
+                                                    }
+                                                />
                                                 {hasSelectedFree && (
                                                     <Button
                                                         color="norm"
@@ -683,6 +698,18 @@ const Step1 = ({
                                                         </InlineLinkButton>
                                                     );
 
+                                                    const switchAccount = (
+                                                        <InlineLinkButton
+                                                            key="switch"
+                                                            className="link link-focus text-nowrap"
+                                                            onClick={() => {
+                                                                onOpenSwitch();
+                                                            }}
+                                                        >
+                                                            {c('Link').t`switch account`}
+                                                        </InlineLinkButton>
+                                                    );
+
                                                     return (
                                                         <>
                                                             {hasSelectedFree && (
@@ -702,11 +729,13 @@ const Step1 = ({
                                                                 signupParameters.mode !== SignupMode.MailReferral && (
                                                                     <div className="text-center">
                                                                         <span>
-                                                                            {
-                                                                                // translator: Full sentence "Already have an account? Sign in"
-                                                                                c('Go to sign in')
-                                                                                    .jt`Already have an account? ${signIn}`
-                                                                            }
+                                                                            {(activeSessions?.length || 0) >= 1
+                                                                                ? // translator: Full sentence "Already have an account? Sign in or switch account"
+                                                                              c('Go to sign in')
+                                                                                  .jt`Already have an account? ${signIn} or ${switchAccount}`
+                                                                            : // translator: Full sentence "Already have an account? Sign in"
+                                                                              c('Go to sign in')
+                                                                                  .jt`Already have an account? ${signIn}`}
                                                                         </span>
                                                                     </div>
                                                                 )}
