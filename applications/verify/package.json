@@ -18,7 +18,7 @@
         "@proton/components": "workspace:packages/components",
         "@proton/polyfill": "workspace:packages/polyfill",
         "@proton/testing": "workspace:packages/testing",
-        "@types/react": "^17.0.71",
+        "@types/react": "^17.0.73",
         "@types/react-dom": "^17.0.25",
         "@types/react-router-dom": "^5.3.3",
         "react": "^17.0.2",
@@ -31,10 +31,10 @@
         "@proton/pack": "workspace:packages/pack",
         "babel-jest": "^29.7.0",
         "cross-env": "^7.0.3",
-        "eslint": "^8.55.0",
+        "eslint": "^8.56.0",
         "jest": "^29.7.0",
         "jest-environment-jsdom": "^29.7.0",
         "jest-junit": "^16.0.0",
-        "typescript": "^5.3.2"
+        "typescript": "^5.3.3"
     }
 }
