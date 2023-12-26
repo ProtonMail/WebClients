@@ -316,6 +316,9 @@
       "Get verification code": [
         "Hanki vahvistuskoodi"
       ],
+      "Give feedback": [
+        "Anna palautetta"
+      ],
       "Go to Drive": [
         "Avaa Drive"
       ],
@@ -878,6 +881,10 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Ohita paikalliset Internet-estot ja sensuuri maailmanlaajuisen palvelinverkostomme avulla."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Sisältää tuen ${ domains } omalle sähköpostiverkkotunnukselle, ${ addresses } sähköpostiosoitteen, rajattomasti hide-my-email-aliaksia, kalenterijaon ja paljon muuta.",
+        "Sisältää tuen ${ domains } omalle sähköpostiverkkotunnukselle, ${ addresses } sähköpostiosoitetta, rajattomasti hide-my-email-aliaksia, kalenterijaon ja paljon muuta."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Sisältää tuen yhdelle omalle sähköpostiverkkotunnukselle, 10 sähköpostiosoitetta, 10 hide-my-email-aliasta kalenterijaon ja paljon muuta."
       ],
@@ -898,6 +905,11 @@
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Säilytä jopa 200 versiota kustakin tiedostosta jopa 10 vuoden ajan."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } -työpöytäsovellus"
       ]
     },
     "Bug category": {
@@ -2055,9 +2067,42 @@
         "Päivitys ${ formattedStart } alkavaan tapahtumaan"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Maksulliset ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ja ${ PASS_SHORT_APP_NAME } -ominaisuudet"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Sisältää versiohistorian sovelluksessa ${ DRIVE_SHORT_APP_NAME }, pääsyn tuhansille nopeille ${ VPN_SHORT_APP_NAME } -palvelimille, jakamisen sovelluksessa ${ PASS_SHORT_APP_NAME } ja paljon muuta."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 Tt"
+      ],
+      "6 users": [
+        "6 käyttäjää"
+      ],
+      "Early access to new apps and features": [
+        "Varhainen pääsy uusiin sovelluksiin ja ominaisuuksiin"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Varhainen pääsy ${ MAIL_APP_NAME } -työpöytäsovellukseen"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Maksulliset ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_APP_NAME } -ominaisuudet"
+      ]
+    },
     "Error": {
       "\"${ name }\" already exists": [
         "\"${ name }\" on jo olemassa"
+      ],
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } ei voi yhdistää ulkoiseen tiliisi"
+      ],
+      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
+        "${ DRIVE_APP_NAME } on päivittynyt. Päivitä sivu."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Voit myös tarkistaa tilasivun: ${ statusPageLink }"
@@ -2094,6 +2139,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Sisältöhakua ei voida käyttää tässä selaimessa. Poistu yksityisestä selaustilasta tai käytä eri selainta."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "Sisältöhakua ei voida ottaa käyttöön. Käynnistä sovellus uudelleen tai tyhjennä sen tiedot."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Poista vähintään ${ calendarsToFixCount } kalenterin valinta",
@@ -2216,6 +2264,9 @@
       ],
       "Passwords do not match": [
         "Salasanat eivät täsmää"
+      ],
+      "Photos upload is temporarily disabled. Please try again later": [
+        "Kuvien lähetys on väliaikaisesti pois käytöstä. Yritä myöhemmin uudelleen"
       ],
       "Please activate your search again": [
         "Aktivoi sisältöhakusi uudelleen"
@@ -2340,6 +2391,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Kokeile vain kirjaimia, numeroita ja merkkejä _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Odottamaton virhe, emme voi tuoda yhteystietoja"
       ],
       "Unknown error": [
         "Tuntematon virhe"
@@ -3439,6 +3493,9 @@
       "Close this screen to exit.": [
         "Poistu sulkemalla tämä ruutu."
       ],
+      "Coming soon": [
+        "Tulossa pian"
+      ],
       "Conflict": [
         "Ristiriita"
       ],
@@ -3642,9 +3699,6 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Parasta lopputulosta varten, vältä suoratoistoa ja keskusmuistia kuormittavia toimintoja tai jaa tallennuksesi pienempiin eriin."
-      ],
-      "Free forever": [
-        "Ikuisesti ilmainen"
       ],
       "Free up some space or add more storage space.": [
         "Vapauta tai hanki lisää tallennustilaa."
@@ -4057,9 +4111,6 @@
       "support team": [
         "tukeemme"
       ],
-      "Swiss encrypted file storage": [
-        "Sveitsiläinen salattu tallennustila"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
       ],
@@ -4279,9 +4330,6 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "palautetaan ${ formattedRevisionDate } tallennettuun versioon. Kaikki muut versiot säilytetään."
-      ],
-      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
-        "${ DRIVE_APP_NAME }ssa tietosi suojataan päästä päähän -salauksella, jonka vain sinä voit purkaa."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Haluatko uuden vahvistuskoodin vai käyttää vaihtoehtoista todennustapaa?"
@@ -5617,6 +5665,9 @@
         "${ timeRemaining.inHours } tunti",
         "${ timeRemaining.inHours } tuntia"
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Salasanan nollauspyyntö hyväksyttiin (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Käytä kirjautunutta laitetta (siinä istunnossa, jossa pyyntö käynnistettiin) salasanan vaihtamiseksi."
       ],
@@ -5628,8 +5679,30 @@
         "Tämä käyttöoikeus päättyy ${ timeRemaining.inHours } tunnin kuluttua.",
         "Tämä käyttöoikeus päättyy ${ timeRemaining.inHours } tunnin kuluttua."
       ],
+      "This permission expires soon": [
+        "Tämä käyttöoikeus vanhenee pian"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Voit nyt vaihtaa salasanasi tilille ${ boldEmail } vapaasti ${ boldDaysRemaining } ajan."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Voit nyt vaihtaa salasanasi tilille ${ boldEmail }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Sinulla on ${ timeRemaining.inDays } päivä aikaa nollata salasanasi.",
+        "Sinulla on ${ timeRemaining.inDays } päivää aikaa nollata salasanasi."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Sinulla on ${ timeRemaining.inHours } tunti aikaa nollata salasanasi.",
+        "Sinulla on ${ timeRemaining.inHours } tuntia aikaa nollata salasanasi."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Sinulla on ${ timeRemaining.inMinutes } minuutti aikaa nollata salasanasi.",
+        "Sinulla on ${ timeRemaining.inMinutes } minuuttia aikaa nollata salasanasi."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Sinulla on ${ timeRemaining.inSeconds } sekunti aikaa nollata salasanasi.",
+        "Sinulla on ${ timeRemaining.inSeconds } sekuntia aikaa nollata salasanasi."
       ]
     },
     "session_recovery:available:link": {

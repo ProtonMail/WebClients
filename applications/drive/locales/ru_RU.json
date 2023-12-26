@@ -385,6 +385,9 @@
       "Load image": [
         "Загрузить изображение"
       ],
+      "Loading link": [
+        "Ссылка на загрузку"
+      ],
       "Manage folders": [
         "Управление папками"
       ],
@@ -888,6 +891,12 @@
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Обходите локальные блокировки Интернета и цензуру с помощью нашей глобальной сети серверов."
+      ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Включает поддержку ${ domains } пользовательского почтового домена, ${ addresses } адреса электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое.",
+        "Включает поддержку ${ domains } пользовательских почтовых доменов, ${ addresses } адресов электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое.",
+        "Включает поддержку ${ domains } пользовательских почтовых доменов, ${ addresses } адресов электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое.",
+        "Включает поддержку ${ domains } пользовательских почтовых доменов, ${ addresses } адресов электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
@@ -2068,14 +2077,39 @@
         "Обновить для события, начинающегося ${ formattedStart }"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Платные функции ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } и ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Включает историю версий в ${ DRIVE_SHORT_APP_NAME }, доступ к тысячам высокоскоростных ${ VPN_SHORT_APP_NAME } серверам, совместное использование в ${ PASS_SHORT_APP_NAME } и другое"
+      ]
+    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 ТБ"
+      ],
+      "6 users": [
+        "6 пользователей"
+      ],
+      "Early access to new apps and features": [
+        "Early access to new apps and features"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Ранний доступ к приложению ${ MAIL_APP_NAME } для настольных компьютеров"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Платные функции ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_APP_NAME }"
       ]
     },
     "Error": {
       "\"${ name }\" already exists": [
         "\"${ name }\" уже существует"
+      ],
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } не может подключиться к вашему внешнему аккаунту"
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можете также проверить нашу ${ statusPageLink }"
@@ -2371,6 +2405,9 @@
       "Try using only letters, numerals, and _.-": [
         "Попробуйте, используя только буквы, цифры и _.-"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "Неожиданная ошибка, мы не можем импортировать контакты"
+      ],
       "Unknown error": [
         "Неизвестная ошибка"
       ],
@@ -2440,6 +2477,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Ошибка шифрования"
+      ],
+      "Missing FN property": [
+        "Отсутствует свойство FN"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard версий < 3.0 не поддерживается"
@@ -3469,6 +3509,9 @@
       "An active recovery file": [
         "Активный файл восстановления"
       ],
+      "An issue occurred during the restore process.": [
+        "Во время восстановления возникла проблема."
+      ],
       "and": [
         "и"
       ],
@@ -3628,6 +3671,9 @@
       "double your storage": [
         "удвойте свое хранилище"
       ],
+      "Download ${ name } app": [
+        "Загрузите приложение ${ name }"
+      ],
       "Download canceled": [
         "Скачивание отменено"
       ],
@@ -3654,6 +3700,9 @@
       ],
       "Drop file here to upload": [
         "Переместите файл сюда, чтобы скачать"
+      ],
+      "Drop files here": [
+        "Скидывайте файлы сюда"
       ],
       "Drop to import": [
         "Импортировать"
@@ -3757,9 +3806,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Для достижения наилучших результатов избегайте просмотра трансляций и действий, требующих большого объема памяти, или разделите загрузку на более мелкие пакеты."
       ],
-      "Free forever": [
-        "Бесплатно навсегда"
-      ],
       "Free up some space or add more storage space.": [
         "Освободите место или добавьте больше места для хранения."
       ],
@@ -3768,6 +3814,12 @@
       ],
       "from the version history?": [
         "из истории версий?"
+      ],
+      "Get the app to backup photos from your phone.": [
+        "Получите приложение для резервного копирования фотографий с телефона."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Получите приложение для настольных компьютеров, чтобы синхронизировать файлы с компьютера."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Познакомьтесь с ${ DRIVE_APP_NAME } и получите бонус — 500 МБ хранилища! Действуйте уже сегодня."
@@ -3840,6 +3892,9 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Элементы будут находиться в Корзине до тех пор, пока вы не удалите их окончательно"
+      ],
+      "Items moved to the trash will stay here until deleted": [
+        "Элементы, перемещенные в корзину, будут находиться там до тех пор, пока не будут удалены"
       ],
       "It’s easy and secure": [
         "Он прост и безопасен"
@@ -3970,6 +4025,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Только люди со ссылкой и паролем могут получить доступ к этой папке."
       ],
+      "Or use the \"+ New\" button": [
+        "Или используйте кнопку \"+\""
+      ],
       "Paused": [
         "Приостановлено"
       ],
@@ -3981,6 +4039,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME автоматически отправляет сообщение, используя текущий режим редактора писем."
+      ],
+      "Photos have been successfully recovered.": [
+        "Фотоснимки успешно восстановлены."
       ],
       "Please enter the password to decrypt and view content.": [
         "Для расшифровки и просмотра содержимого введите пароль."
@@ -4051,6 +4112,9 @@
       "Queued": [
         "Поставлено в очередь"
       ],
+      "Ready to add some photos?": [
+        "Готовы добавить фотографии?"
+      ],
       "recommended browser": [
         "рекомендуемый браузер"
       ],
@@ -4072,14 +4136,23 @@
       "Restore is in progress. This can take a few seconds.": [
         "Восстановление идёт. Это может занять несколько секунд."
       ],
+      "Restore Photos": [
+        "Восстановить фотографии"
+      ],
       "Restored files ${ formattedDate }": [
         "Файлы восстановлены ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Восстановление фотографий... Не закрывайте вкладку"
       ],
       "Search cannot be enabled in this browser": [
         "Поиск не может быть включен в этом браузере"
       ],
       "Search Enabled": [
         "Поиск включен"
+      ],
+      "Select a folder to move to.": [
+        "Выберите папку для перемещения."
       ],
       "Select a service provider to start": [
         "Выберите поставщика услуг, чтобы начать"
@@ -4147,9 +4220,6 @@
       "support team": [
         "служба поддержки"
       ],
-      "Swiss encrypted file storage": [
-        "Швейцарское зашифрованное хранилище файлов"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Временно недоступно. Пожалуйста, проверьте позже."
       ],
@@ -4158,6 +4228,9 @@
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Приложению необходимо расшифровать ваши контакты, прежде чем экспортировать их. В конце процесса будет сгенерирован файл VCF, и вы сможете его скачать."
+      ],
+      "The download count includes both actual downloads and instances when files are previewed.": [
+        "Количество загрузок включает как фактические загрузки, так и случаи предварительного просмотра файлов."
       ],
       "The encrypted data is slightly larger due to the overhead of the encryption and signatures, which ensure the security of your data.": [
         "Размер зашифрованных данных увеличивается за счет дополнительной информации о шифровании и подписях, обеспечивающих безопасность ваших данных."
@@ -4282,6 +4355,12 @@
       "Try searching by file name, date, or type.": [
         "Попробуйте выполнить поиск по имени файла, дате или типу."
       ],
+      "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
+        "К сожалению, похоже, что файл или некоторые его данные не удается расшифровать."
+      ],
+      "Unknown date": [
+        "Неизвестная дата"
+      ],
       "Unknown error": [
         "Неизвестная ошибка"
       ],
@@ -4321,6 +4400,9 @@
       "Version is restored": [
         "Версия восстановлена"
       ],
+      "Want to sync files faster?": [
+        "Хотите синхронизировать файлы быстрее?"
+      ],
       "Way to go, you’ve just doubled your free storage!": [
         "Так держать, вы только что удвоили ваше бесплатное хранилище!"
       ],
@@ -4353,9 +4435,6 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "будет восстановлена версия от ${ formattedRevisionDate }. Все другие версии также будут сохранены."
-      ],
-      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
-        "С ${ DRIVE_APP_NAME }, ваши данные защищены сквозным шифрованием. Только вы можете их расшифровать."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Вы хотите получить новый проверочный код или использовать другой метод проверки?"
@@ -4392,6 +4471,12 @@
       ],
       "You cannot undo this action.": [
         "Это действие нельзя отменить."
+      ],
+      "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
+        "У вас остался ${ expiresInDays } день, чтобы получить приветственный бонус в размере 500 МБ и ",
+        "У вас остался ${ expiresInDays } дня, чтобы получить приветственный бонус в размере 500 МБ и ",
+        "У вас остался ${ expiresInDays } дней, чтобы получить приветственный бонус в размере 500 МБ и ",
+        "У вас остался ${ expiresInDays } дней, чтобы получить приветственный бонус в размере 500 МБ и "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Вы достигли ${ spaceDisplayed }% емкости Вашего хранилища. ${ freeUpMessage } ${ upgradeLink }"
@@ -6077,6 +6162,12 @@
         "${ countMergeableContacts } контактов выглядят одинаково.",
         "${ countMergeableContacts } контактов выглядят одинаково."
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "Осталось ${ countOfUnrecoveredLinksLeft }",
+        "Осталось ${ countOfUnrecoveredLinksLeft }",
+        "Осталось ${ countOfUnrecoveredLinksLeft }",
+        "Осталось ${ countOfUnrecoveredLinksLeft }"
+      ],
       "Address copied to clipboard": [
         "Адрес скопирован в буфер обмена"
       ],
@@ -6416,6 +6507,9 @@
       ],
       "Discard changes?": [
         "Сбросить изменения?"
+      ],
+      "Download ${ date }.zip": [
+        "Скачать ${ date }.zip"
       ],
       "Download unverified file?": [
         "Скачать непроверенный файл?"
