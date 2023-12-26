@@ -179,6 +179,9 @@
       "Get mobile apps": [
         "Baixar aplicativos móveis"
       ],
+      "Get the deal": [
+        "Obtenha a oferta"
+      ],
       "Help us improve": [
         "Ajude-nos a melhorar"
       ],
@@ -382,6 +385,11 @@
       ],
       "Your password manager not here? Request it.": [
         "Seu gerenciador de senhas não está aqui? Solicite."
+      ]
+    },
+    "Badge": {
+      "Early access": [
+        "Acesso antecipado"
       ]
     },
     "bf2023: Info": {
@@ -633,6 +641,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Código PIN errado. Tente novamente."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Seu código PIN foi removido por outro cliente ${ PASS_APP_NAME }"
       ]
     },
     "Error message": {
@@ -777,6 +788,9 @@
       ],
       "Autosaved on ${ submissionURL }": [
         "Salvo automaticamente em ${ submissionURL }"
+      ],
+      "Built in 2FA authenticator": [
+        "Feito em autenticador A2F"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Pode criar, editar, excluir, e exportar itens para esse cofre."
@@ -1002,6 +1016,9 @@
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "A privacidade é uma grande preocupação para nós. Saiba por que o ${ PASS_APP_NAME } é diferente."
       ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Protegido por ${ PROTON_SENTINEL_LINK }, nosso programa de proteção avançado para contas"
+      ],
       "Restoring trashed items...": [
         "Restaurando os itens da lixeira..."
       ],
@@ -1025,6 +1042,9 @@
       ],
       "Settings successfully updated": [
         "Configurações atualizadas"
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "Compartilhe seus logins, notas seguras, com até 10 pessoas"
       ],
       "Sign in or create an account to continue.": [
         "Inicie sessão ou crie uma conta para continuar."
