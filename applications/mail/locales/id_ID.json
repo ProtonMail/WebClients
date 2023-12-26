@@ -1391,6 +1391,9 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Lewati pemblokiran dan penyensoran internet lokal dengan jaringan server global kami."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Meliputi dukungan untuk ${ domains } domain email khusus, ${ addresses } alamat email, alias hide-my-email tanpa batasan jumlah, fitur berbagi kalender, dan masih banyak lagi."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Termasuk dukungan untuk 1 domain surel kustom, 10 alamat surel, 10 alias hide-my-email, pembagian kalender, dan lainnya."
       ],
@@ -2129,6 +2132,11 @@
       ],
       "URL": [
         "URL"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Gambar kontak"
       ]
     },
     "Contact type label": {
@@ -3225,6 +3233,33 @@
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "Nama berkas Header Terenkripsi"
+      ]
+    },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Berbagai fitur ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, dan ${ PASS_SHORT_APP_NAME } berbayar"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Meliputi riwayat versi pada ${ DRIVE_SHORT_APP_NAME }, akses ke ratusan server ${ VPN_SHORT_APP_NAME } berkecepatan tinggi, fitur untuk saling berbagi pada ${ PASS_SHORT_APP_NAME }, dan masih banyak lagi."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 pengguna"
+      ],
+      "Early access to new apps and features": [
+        "Akses dini ke berbagai aplikasi dan fitur baru"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Akses dini ke aplikasi desktop ${ MAIL_APP_NAME }"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Berbagai fitur ${ MAIL_SHORT_APP_NAME } dan ${ CALENDAR_APP_NAME } berbayar"
       ]
     },
     "Error": {
@@ -4937,9 +4972,6 @@
       "Are you sure you want to delete all messages with this label?": [
         "Apakah Anda yakin ingin menghapu semua pesan yang ditandai dengan label ini?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Apakah Anda yakin untuk menghapus folder ini? Seluruh sub-folder yang terkandung di dalam folder ini juga akan ikut terhapus."
-      ],
       "Are you sure you want to delete this label?": [
         "Apakah Anda yakin ingin menghapus label ini?"
       ],
@@ -4956,13 +4988,13 @@
         "Apakah Anda yakin untuk memindahkan seluruh pesan yang ada pada lokasi ini ke Sampah?"
       ],
       "Are you sure you want to permanently delete ${ count } conversations?": [
-        "Yakin ingin menghapus ${ count } percakapan secara permanen?"
+        "Apakah Anda yakin untuk menghapus ${ count } percakapan secara permanen?"
       ],
       "Are you sure you want to permanently delete ${ count } drafts?": [
-        "Yakin ingin menghapus ${ count } draf secara permanen?"
+        "Apakah Anda yakin untuk menghapus ${ count } draf secara permanen?"
       ],
       "Are you sure you want to permanently delete ${ count } messages?": [
-        "Yakin ingin menghapus ${ count } pesan secara permanen?"
+        "Apakah Anda yakin untuk menghapus ${ count } pesan secara permanen?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
         "Yakin ingin menghapus percakapan ini secara permanen?"
@@ -5149,12 +5181,6 @@
       ],
       "Emails are automatically signed": [
         "Surel ditandatangani secara otomatis"
-      ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Surel di folder ini tidak akan dihapus dan masih bisa dibuka di folder Semua Surat."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Surel berlabel ini tidak akan dihapus dan masih bisa dibuka di folder asalnya."
       ],
       "embedded images": [
         "gambar yang tersemat"
@@ -8954,12 +8980,6 @@
       "Delete ${ count } messages": [
         "Hapus ${ count } pesan"
       ],
-      "Delete ${ label.Name } folder": [
-        "Hapus ${ label.Name } folder"
-      ],
-      "Delete ${ label.Name } label": [
-        "Hapus ${ label.Name } label"
-      ],
       "Delete ${ Name }": [
         "Hapus ${ Name }"
       ],
@@ -8971,6 +8991,12 @@
       ],
       "Delete draft": [
         "Hapus draf"
+      ],
+      "Delete folder?": [
+        "Hapus folder?"
+      ],
+      "Delete label?": [
+        "Hapus label?"
       ],
       "Delete message": [
         "Hapus pesan"
@@ -9416,6 +9442,9 @@
       ],
       "Hide side panel": [
         "Sembunyikan panel samping"
+      ],
+      "Load image": [
+        "Muat gambar"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Pilih skema PGP yang akan digunakan untuk menandatangani atau mengenkripsi pesan kepada pengguna. Mohon diperhatikan bahwa PGP/Inline mewajibkan penggunaan pesan teks polos"

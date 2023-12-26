@@ -2167,6 +2167,11 @@
         "URL-адрас"
       ]
     },
+    "Contact image": {
+      "Contact image": [
+        "Відарыс кантакту"
+      ]
+    },
     "Contact type label": {
       "Fax": [
         "Факс"
@@ -5228,14 +5233,17 @@
       "and": [
         "і"
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Любыя падпапкі будуць выдалены таксама. Аднак лісты, якія захаваны ў папцы ${ nameDeleted } не будуць выдалены і іх можна будзе знайсці ў папцы \"Уся пошта\"."
+      ],
       "Are you sure you want to delete all messages in this folder?": [
         "Вы сапраўды хочаце выдаліць усе паведамленні ў гэтай папцы?"
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Вы сапраўды хочаце выдаліць усе паведамленні з гэтай меткай?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Вы сапраўды хочаце выдаліць гэту папку? Усе падпапкі будуць выдалены таксама."
+      "Are you sure you want to delete this folder?": [
+        "Вы ўпэўнены, што хочаце выдаліць гэту папку?"
       ],
       "Are you sure you want to delete this label?": [
         "Вы сапраўды хочаце выдаліць гэту метку?"
@@ -5462,11 +5470,8 @@
       "Emails are automatically signed": [
         "Лісты падпісваюцца аўтаматычна"
       ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Лісты, якія захоўваюцца ў гэтай папцы не будуць выдалены і як раней іх можна будзе знайсці ў папцы Уся пошта."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Лісты, якія пазначаны гэтай меткай, не будуць выдалены і іх можна будзе знайсці ў адпаведнай папцы."
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Лісты, якія пазначаны гэтай меткай ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў адпаведнай папцы."
       ],
       "embedded image": [
         "убудаваны відарыс",
@@ -9566,12 +9571,6 @@
         "Выдаліць ${ count } паведамленняў",
         "Выдаліць ${ count } паведамленні"
       ],
-      "Delete ${ label.Name } folder": [
-        "Выдаліць папку ${ label.Name }"
-      ],
-      "Delete ${ label.Name } label": [
-        "Выдаліць метку ${ label.Name }"
-      ],
       "Delete ${ Name }": [
         "Выдаліць ${ Name }"
       ],
@@ -9583,6 +9582,12 @@
       ],
       "Delete draft": [
         "Выдаліць чарнавік"
+      ],
+      "Delete folder?": [
+        "Выдаліць папку?"
+      ],
+      "Delete label?": [
+        "Выдаліць метку?"
       ],
       "Delete message": [
         "Выдаліць паведамленне"
@@ -10037,6 +10042,9 @@
       ],
       "Hide side panel": [
         "Схаваць бакавую панэль"
+      ],
+      "Load image": [
+        "Загрузіць відарыс"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберыце схему PGP, якая будзе выкарыстоўвацца пры падпісанні або шыфраванні для карыстальніка. Звярніце ўвагу, што PGP/Inline прымусова пераўтварае паведамленні ў звычайны тэкст"

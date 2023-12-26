@@ -1409,6 +1409,11 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Ocoliți blocarea locală a internetului și cenzura cu rețeaua noastră globală de servere."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Include suport pentru ${ domains } domenii de e-mail personale, ${ addresses } adresă de e-mail, aliasuri nelimitate hide-my-email, partajare calendar și altele.",
+        "Include suport pentru ${ domains } domenii de e-mail personale, ${ addresses } adrese de e-mail, aliasuri nelimitate hide-my-email, partajare calendar și altele.",
+        "Include suport pentru ${ domains } domenii de e-mail personale, ${ addresses } de adrese de e-mail, aliasuri nelimitate hide-my-email, partajare calendar și altele."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Include suport pentru un domeniu de e-mail personal, 10 adrese de e-mail, 10 aliasuri hide-my-email, partajare calendar și altele."
       ],
@@ -3259,7 +3264,37 @@
         "Antete nume fișier criptate"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Funcții cu plată ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Include istoricul versiunilor în ${ DRIVE_SHORT_APP_NAME }, acces la mii de servere ${ VPN_SHORT_APP_NAME } cu viteză maximă, partajare în ${ PASS_SHORT_APP_NAME } și altele."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TiB"
+      ],
+      "6 users": [
+        "6 utilizatori"
+      ],
+      "Early access to new apps and features": [
+        "Acces timpuriu la aplicațiile și funcțiile noi"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Acces timpuriu la aplicația pentru desktop ${ MAIL_APP_NAME }"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Funcții cu plată ${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_APP_NAME }"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } nu se poate conecta la contul extern."
+      ],
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } pentru <${ email }>. Puteți adăuga o altă cheie sau dezactiva criptarea pentru acest contact pentru a rezolva problema."
       ],
@@ -3639,6 +3674,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Folosiți doar litere, cifre și _ . -"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Eroare neașteptată. Nu se pot importa contactele."
       ],
       "Unknown error": [
         "Eroare necunoscută"
@@ -5103,14 +5141,17 @@
       "and": [
         "și"
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Va fi șters și orice subfolder. Totuși, mesajele stocate în folderul ${ nameDeleted } nu vor fi șterse și pot fi găsite în folderul «Toate mesajele»."
+      ],
       "Are you sure you want to delete all messages in this folder?": [
         "Sigur doriți să ștergeți toate mesajele din acest folder?"
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Sigur doriți să ștergeți toate mesajele cu această etichetă?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Sigur doriți să ștergeți acest folder? Toate subfolderele vor fi și ele șterse."
+      "Are you sure you want to delete this folder?": [
+        "Sigur doriți să ștergeți acest folder?"
       ],
       "Are you sure you want to delete this label?": [
         "Sigur doriţi să ştergeţi această etichetă?"
@@ -5332,11 +5373,8 @@
       "Emails are automatically signed": [
         "Mesajele sunt semnate automat"
       ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Mesajele stocate în acest folder nu vor fi șterse și pot fi găsite în continuare în folderul «Toate mesajele»"
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Mesajele primite etichetate cu această etichetă nu vor fi șterse și pot fi găsite în continuare în folderul respectiv."
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Mesajele primite etichetate cu eticheta ${ nameDeleted } nu vor fi șterse și pot fi găsite în continuare în folderul respectiv."
       ],
       "embedded image": [
         "imagine inclusă",
@@ -9337,12 +9375,6 @@
         "Ștergere ${ count } mesaje",
         "Ștergere ${ count } de mesaje"
       ],
-      "Delete ${ label.Name } folder": [
-        "Ștergere folder ${ label.Name }"
-      ],
-      "Delete ${ label.Name } label": [
-        "Ștergere eticheta ${ label.Name }"
-      ],
       "Delete ${ Name }": [
         "Ștergere ${ Name }"
       ],
@@ -9354,6 +9386,12 @@
       ],
       "Delete draft": [
         "Ștergere ciornă"
+      ],
+      "Delete folder?": [
+        "Ștergere folder?"
+      ],
+      "Delete label?": [
+        "Ștergere etichetă?"
       ],
       "Delete message": [
         "Ștergere mesaj"
