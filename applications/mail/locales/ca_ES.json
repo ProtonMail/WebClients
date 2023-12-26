@@ -2145,6 +2145,11 @@
         "URL"
       ]
     },
+    "Contact image": {
+      "Contact image": [
+        "Imatge del contacte"
+      ]
+    },
     "Contact type label": {
       "Fax": [
         "Fax"
@@ -5060,8 +5065,8 @@
       "Are you sure you want to delete all messages with this label?": [
         "Segur que voleu eliminar tots els missatges amb aquesta etiqueta?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Segur que voleu eliminar aquesta carpeta? També s'eliminaran totes les subcarpetes."
+      "Are you sure you want to delete this folder?": [
+        "Segur que voleu suprimir aquesta carpeta?"
       ],
       "Are you sure you want to delete this label?": [
         "Esteu segur de voler eliminar aquesta etiqueta?"
@@ -5278,11 +5283,8 @@
       "Emails are automatically signed": [
         "Els correus se signen automàticament"
       ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Els correus electrònics emmagatzemats en aquesta carpeta no s'eliminaran i continuaran trobant-se a la carpeta Tot el correu."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Els correus electrònics etiquetats amb aquesta etiqueta no s'esborraran i continuaran trobant-se a la carpeta respectiva."
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Els correus electrònics etiquetats amb aquesta etiqueta ${ nameDeleted } no s'esborraran i continuaran trobant-se a la carpeta respectiva."
       ],
       "embedded image": [
         "imatge integrade",
@@ -9184,12 +9186,6 @@
         "Eliminar ${ count } missatge",
         "Eliminar ${ count } missatges"
       ],
-      "Delete ${ label.Name } folder": [
-        "Eliminar la carpeta ${ label.Name }"
-      ],
-      "Delete ${ label.Name } label": [
-        "Eliminar l'etiqueta ${ label.Name }"
-      ],
       "Delete ${ Name }": [
         "Esborrar ${ Name }"
       ],
@@ -9201,6 +9197,12 @@
       ],
       "Delete draft": [
         "Eliminar esborrany"
+      ],
+      "Delete folder?": [
+        "Voleu eliminar la carpeta?"
+      ],
+      "Delete label?": [
+        "Voleu eliminar l'etiqueta?"
       ],
       "Delete message": [
         "Eliminar missatge"
@@ -9649,6 +9651,9 @@
       ],
       "Hide side panel": [
         "Amaga el panell lateral"
+      ],
+      "Load image": [
+        "Carrega la imatge"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleccioneu l'esquema PGP que s'utilitzarà en signar o xifrar a un usuari. Tingueu en compte que PGP/inline força missatges de text simples"

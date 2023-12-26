@@ -239,9 +239,6 @@
       "Continue with this password": [
         "Continua con questa password"
       ],
-      "Copy": [
-        "Copia"
-      ],
       "Copy address": [
         "Copia indirizzo"
       ],
@@ -364,9 +361,6 @@
       ],
       "Download": [
         "Scarica"
-      ],
-      "Download all configurations": [
-        "Scarica tutte le configurazioni"
       ],
       "Download CSV sample": [
         "Scarica un campione CSV"
@@ -927,7 +921,7 @@
         "Salta"
       ],
       "Skip verification": [
-        "Salta verifica"
+        "Salta la verifica"
       ],
       "Sort": [
         "Ordina"
@@ -1006,6 +1000,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Effettua l'upgrade per abilitare ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to Visionary": [
+        "Effettua l'upgrade a Visionary"
       ],
       "Upgrade your plan": [
         "Effettua l'upgrade del piano"
@@ -3140,6 +3137,17 @@
         "Abbiamo rilevato i seguenti campi nel file CSV che hai caricato. Seleziona quelli che vuoi importare."
       ]
     },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "L'accesso all'app desktop è limitato"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "La versione beta dell'app desktop di ${ MAIL_APP_NAME } è attualmente limitata agli abbonati a ${ BRAND_NAME } Visionary. Sarà disponibile a tutti gli utenti all'inizio del 2024."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Effettua l'upgrade oggi o torna qui all'inizio del 2024 per l'accesso."
+      ]
+    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "Torna a ${ signIn }."
@@ -5230,6 +5238,9 @@
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Hai già un account? ${ signIn }"
+      ],
+      "Already have an account? ${ signIn } or ${ switchAccount }": [
+        "Hai già un account? ${ signIn } o ${ switchAccount }"
       ]
     },
     "Go to sign up": {
@@ -6091,6 +6102,9 @@
       "Any ${ twoFa } method on your account will be disabled.": [
         "Qualsiasi metodo di ${ twoFa } sul tuo account verrà disattivato."
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Verrà eliminata anche qualsiasi sottocartella. Tuttavia non verranno eliminate le email presenti nella cartella ${ nameDeleted }, le quali potranno ancora essere trovate in Tutta la posta."
+      ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Chiunque abbia questo link può vedere tutti i dettagli dell'evento di questo calendario, come titolo, posizione o partecipanti."
       ],
@@ -6121,8 +6135,8 @@
       "Are you sure you want to delete this filter?": [
         "Sei sicuro di voler eliminare questo filtro?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Sei sicuro di voler eliminare questa cartella? Verranno eliminate anche tutte le sottocartelle."
+      "Are you sure you want to delete this folder?": [
+        "Sei sicuro di voler eliminare questa cartella?"
       ],
       "Are you sure you want to delete this label?": [
         "Sei sicuro di voler eliminare quest'etichetta?"
@@ -6410,11 +6424,8 @@
       "Emailing preference saved": [
         "Preferenze email salvate"
       ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Le email memorizzate in questa cartella non verranno eliminate e potranno ancora essere trovate in \"Tutta la posta\"."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Le email etichettate con quest'etichetta non saranno eliminate e possono ancora essere trovate nella rispettiva cartella."
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Le email etichettate con l'etichetta ${ nameDeleted } non verranno eliminate e potranno ancora essere trovate nella loro cartella."
       ],
       "Enable this address to join this calendar": [
         "Abilita questo indirizzo per partecipare a questo calendario"
@@ -6953,9 +6964,6 @@
       "Phone number": [
         "Numero di telefono"
       ],
-      "Plan upgrade required": [
-        "Upgrade del piano necessario"
-      ],
       "Please add a password for the user on row": [
         "Aggiungi una password per l'utente nella riga",
         "Aggiungi le password per gli utenti nelle righe"
@@ -6991,8 +6999,8 @@
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Se si elimina questo dominio, tutti gli indirizzi associati ad esso saranno disabilitati."
       ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Nota che se elimini questo filtro interromperemo l'elaborazione di tutte le azioni automatiche associate a esso."
+      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Nota che se elimini il filtro ${ nameDeleted } interromperemo l'elaborazione di tutte le azioni automatiche associate a esso."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Nota che cliccando sul pulsante Conferma, il tuo account avrà ${ creditsRemaining } crediti rimanenti."
@@ -9558,6 +9566,9 @@
       "Sign in": [
         "Accedi"
       ],
+      "switch account": [
+        "cambia account"
+      ],
       "Terms": [
         "Termini"
       ],
@@ -9986,26 +9997,6 @@
         "Media velocità della VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Scopri tutti i piani ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Da ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Mantieni il mio account ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade now": [
-        "Effettua l'upgrade ora"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Continua per controllare"
@@ -10045,6 +10036,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Aggiorna a ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Scopri tutti i piani ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Da ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Mantieni il mio account ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
       ]
     },
     "new_plans: feature": {
@@ -12820,9 +12831,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } copiato negli appunti"
-      ],
       "Account deleted. Signing out...": [
         "Account eliminato. Disconnessione..."
       ],
@@ -13544,15 +13552,6 @@
       "Delete ${ email }": [
         "Elimina ${ email }"
       ],
-      "Delete ${ filterName }": [
-        "Elimina ${ filterName }"
-      ],
-      "Delete ${ label.Name } folder": [
-        "Elimina la cartella ${ label.Name }"
-      ],
-      "Delete ${ label.Name } label": [
-        "Elimina l'etichetta ${ label.Name }"
-      ],
       "Delete ${ tokenNameToRemove }?": [
         "Eliminare ${ tokenNameToRemove }?"
       ],
@@ -13562,8 +13561,17 @@
       "Delete calendar": [
         "Elimina calendario"
       ],
+      "Delete filter?": [
+        "Vuoi eliminare il filtro?"
+      ],
+      "Delete folder?": [
+        "Vuoi eliminare la cartella?"
+      ],
       "Delete key permanently?": [
         "Eliminare definitivamente la chiave?"
+      ],
+      "Delete label?": [
+        "Vuoi eliminare l'etichetta?"
       ],
       "Delete logs": [
         "Cancella i registi"
@@ -14088,6 +14096,9 @@
       ],
       "Summary": [
         "Riepilogo"
+      ],
+      "Switch account": [
+        "Cambia account"
       ],
       "Switch to one-password mode": [
         "Passa alla modalità singola password"
@@ -14739,7 +14750,7 @@
         "Le segnalazioni non sono crittografate end-to-end, non inviare alcuna informazione sensibile."
       ],
       "Skip verification?": [
-        "Saltare la verifica?"
+        "Vuoi saltare la verifica?"
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "Le impostazioni di data e ora sul dispositivo non sono sincronizzate. ${ learnMore }"

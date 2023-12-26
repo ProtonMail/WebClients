@@ -95,9 +95,6 @@
       "Continue with this password": [
         "Continuar com essa senha"
       ],
-      "Copy": [
-        "Copiar"
-      ],
       "Copy address": [
         "Copiar endereço"
       ],
@@ -163,9 +160,6 @@
       ],
       "Download": [
         "Baixar"
-      ],
-      "Download all configurations": [
-        "Baixar todas as configurações"
       ],
       "Download our CSV template": [
         "Baixar nosso modelo CSV"
@@ -493,6 +487,9 @@
       ],
       "Upgrade to Business": [
         "Fazer upgrade para o Business"
+      ],
+      "Upgrade to Visionary": [
+        "Upgrade para Visionary"
       ],
       "Upgrade your plan": [
         "Faça upgrade do seu plano"
@@ -3111,6 +3108,9 @@
       "for choosing ${ product }": [
         "por escolher ${ product }"
       ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Para membros da organização usando o login único (SAML SSO)"
+      ],
       "Free forever": [
         "Grátis para sempre"
       ],
@@ -3329,9 +3329,6 @@
       ],
       "per month, billed every 24 months": [
         "por mês com cobrança a cada 24 meses"
-      ],
-      "Plan upgrade required": [
-        "Upgrade de plano necessário"
       ],
       "Please add a password for the user on row": [
         "Adicione uma senha para esse usuário na linha",
@@ -3940,6 +3937,9 @@
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "A senha de sua organização pode ser compartilhada com outros usuários aos quais você deseja dar privilégios administrativos. É também um código de recuperação de emergência para obter acesso à sua organização caso você perca o acesso à sua conta. Salve esta senha e a mantenha segura."
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Sua organização usa o login único (SSO). Pressione iniciar seção para continuar com seu provedor SSO."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Suas informações de pagamento estão protegidas com a criptografia TLS e leis de privacidade suíças."
@@ -4646,11 +4646,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Esqueceu o seu nome de usuário ${ BRAND_NAME }? Encontre-o usando seu e-mail ou número de telefone de recuperação e recupere seu acesso aos serviços ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, e muito mais."
       ],
+      "Private and secure email, no credit card required": [
+        "Email privado e seguro, sem necessidade de cartão de crédito"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Redefina a senha da sua conta da ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Inicie sessão para acessar sua conta ${ appName }"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Experimente ${ planName } gratuitamente com este link"
       ]
     },
     "Monetary unit": {
@@ -6550,9 +6556,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } copiado para a área de transferência"
-      ],
       "Account deleted. Signing out...": [
         "Conta excluída. Encerando sessão..."
       ],

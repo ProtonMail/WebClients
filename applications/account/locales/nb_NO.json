@@ -239,9 +239,6 @@
       "Continue with this password": [
         "Fortsett med dette passordet"
       ],
-      "Copy": [
-        "Kopier"
-      ],
       "Copy address": [
         "Kopier adresse"
       ],
@@ -365,9 +362,6 @@
       "Download": [
         "Last ned"
       ],
-      "Download all configurations": [
-        "Last ned alle konfigurasjoner"
-      ],
       "Download CSV sample": [
         "Last ned CSV-eksempel"
       ],
@@ -432,7 +426,7 @@
         "Emoji"
       ],
       "enable desktop notifications": [
-        "aktiver skrivebordsvarsler"
+        "aktivere skrivebordsvarsler"
       ],
       "Enable multi-user support": [
         "Aktiver støtte for flere brukere"
@@ -1006,6 +1000,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Oppgrader for å aktivere ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to Visionary": [
+        "Oppgrader til Visionary"
       ],
       "Upgrade your plan": [
         "Oppgrader planen din"
@@ -3140,6 +3137,17 @@
         "Vi har oppdaget følgende felt i CSV-filen du lastet opp. Merk av for de du ønsker å importere."
       ]
     },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Tilgang til skrivebordsappen er begrenset"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Testversjonen av skrivebordsappen ${ MAIL_APP_NAME } er for øyeblikket begrenset til ${ BRAND_NAME } Visionary-abonnenter. Den vil være tilgjengelig for alle brukere tidlig i 2024."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Oppgrader i dag eller sjekk igjen tidlig i 2024 for tilgang."
+      ]
+    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "Tilbake til ${ signIn }."
@@ -5230,6 +5238,9 @@
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Har du allerede en konto? ${ signIn }"
+      ],
+      "Already have an account? ${ signIn } or ${ switchAccount }": [
+        "Har du allerede en konto? ${ signIn } eller ${ switchAccount }"
       ]
     },
     "Go to sign up": {
@@ -6091,6 +6102,9 @@
       "Any ${ twoFa } method on your account will be disabled.": [
         "Hvilken som helst ${ twoFa }-metode på kontoen din blir deaktivert."
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Eventuelle undermapper vil også bli slettet. E-postmeldinger som er lagret i mappen ${ nameDeleted }, vil imidlertid ikke bli slettet og finnes i All e-post-mappen."
+      ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Alle med denne koblingen kan se alle hendelsesdetaljene i denne kalenderen, for eksempel tittel, sted eller deltakere."
       ],
@@ -6121,8 +6135,8 @@
       "Are you sure you want to delete this filter?": [
         "Er du sikker på at du vil slette dette filteret?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Er du sikker på at du ønsker å slette denne mappen? Alle undermapper blir også slettet."
+      "Are you sure you want to delete this folder?": [
+        "Er du sikker på at du vil slette denne mappen?"
       ],
       "Are you sure you want to delete this label?": [
         "Er du sikker på at du vil slette denne etiketten?"
@@ -6410,11 +6424,8 @@
       "Emailing preference saved": [
         "Preferanse for sending av e-post lagret"
       ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "E-postmeldinger som er lagret i denne mappen, blir ikke slettet og kan fortsatt bli funnet i mappen All e-post."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "E-postmeldinger merket med denne etiketten vil ikke bli slettet og kan fortsatt bli funnet i den respektive mappen."
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "E-postmeldinger merket med etiketten, ${ nameDeleted }, vil ikke bli slettet og kan fortsatt bli funnet i den respektive mappen."
       ],
       "Enable this address to join this calendar": [
         "Aktiver denne adressen for å bli med i denne kalenderen"
@@ -6953,9 +6964,6 @@
       "Phone number": [
         "Telefonnummer"
       ],
-      "Plan upgrade required": [
-        "Planoppgradering kreves"
-      ],
       "Please add a password for the user on row": [
         "Vennligst legg til et passord for brukeren på rad",
         "Vennligst legg til passord for brukerne på radene"
@@ -6991,8 +6999,8 @@
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Vennligst vær oppmerksom på dersom du sletter dette domenet, vil alle adresser forbundet med det bli deaktivert."
       ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Vær oppmerksom på at hvis du sletter dette filteret, slutter vi å behandle alle de automatiserte handlingene det utløser."
+      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Vær oppmerksom på at hvis du sletter filteret, ${ nameDeleted }, slutter vi å behandle alle de automatiserte handlingene det utløser."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Vennligst vær oppmerksom på at ved å klikke på knappen \"bekreft\", vil kontoen din ha ${ creditsRemaining } kreditter igjen."
@@ -9558,6 +9566,9 @@
       "Sign in": [
         "Logg på"
       ],
+      "switch account": [
+        "bytt konto"
+      ],
       "Terms": [
         "Vilkår"
       ],
@@ -9986,26 +9997,6 @@
         "Middels VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforsk alle ${ BRAND_NAME }-planer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Behold min ${ currentPlanName }-konto"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Fortsett gjennomgangen"
@@ -10045,6 +10036,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Oppgrader til ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforsk alle ${ BRAND_NAME }-planer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Behold min ${ currentPlanName }-konto"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
       ]
     },
     "new_plans: feature": {
@@ -12817,9 +12828,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } kopiet til utklippstavlen"
-      ],
       "Account deleted. Signing out...": [
         "Konto slettet. Logger av..."
       ],
@@ -13538,15 +13546,6 @@
       "Delete ${ email }": [
         "Slett ${ email }"
       ],
-      "Delete ${ filterName }": [
-        "Slett ${ filterName }"
-      ],
-      "Delete ${ label.Name } folder": [
-        "Slett ${ label.Name }-mappe"
-      ],
-      "Delete ${ label.Name } label": [
-        "Slett ${ label.Name }-etikett"
-      ],
       "Delete ${ tokenNameToRemove }?": [
         "Slette ${ tokenNameToRemove }?"
       ],
@@ -13556,8 +13555,17 @@
       "Delete calendar": [
         "Slett kalender"
       ],
+      "Delete filter?": [
+        "Slett filter?"
+      ],
+      "Delete folder?": [
+        "Slett mappe?"
+      ],
       "Delete key permanently?": [
         "Slette nøkkel permanent?"
+      ],
+      "Delete label?": [
+        "Slett etikett?"
       ],
       "Delete logs": [
         "Slett logger"
@@ -14082,6 +14090,9 @@
       ],
       "Summary": [
         "Sammendrag"
+      ],
+      "Switch account": [
+        "Bytt konto"
       ],
       "Switch to one-password mode": [
         "Bytt til ett-passordmodus"

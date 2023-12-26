@@ -319,6 +319,9 @@
       "Get started": [
         "Пачаць працу"
       ],
+      "Get Started": [
+        "Пачаць працу"
+      ],
       "Get verification code": [
         "Атрымаць праверачны код"
       ],
@@ -1159,6 +1162,11 @@
       ],
       "URL": [
         "URL-адрас"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Відарыс кантакту"
       ]
     },
     "Contact type label": {
@@ -3835,9 +3843,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Абмяжуйце аперацыі, якія звязаны з праглядам трансляцый і інтэнсіўным спажываннем памяці, або запампоўвайце свае даныя пакетамі меншага аб'ёму."
       ],
-      "Free forever": [
-        "Бясплатна назаўсёды"
-      ],
       "Free up some space or add more storage space.": [
         "Вызваліце ​​месца або павялічце памер сховішча."
       ],
@@ -4255,9 +4260,6 @@
       "support team": [
         "каманда падтрымкі"
       ],
-      "Swiss encrypted file storage": [
-        "Швейцарскае зашыфраванае файлавае сховішча"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Часова недаступны. Паўтарыце спробу пазней."
       ],
@@ -4393,6 +4395,9 @@
       "Trash is empty": [
         "Сметніца пустая"
       ],
+      "Try ${ DRIVE_APP_NAME }: Free forever": [
+        "Паспрабуйце ${ DRIVE_APP_NAME }: бясплатныя назаўсёды"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Паспрабуйце новыя функцыі, абнаўленні і прадукты ${ BRAND_NAME } перад тым, як яны будуць выпушчаны для шырокага кола карыстальнікаў. Гэта прывядзе да перазапуску праграмы"
       ],
@@ -4480,8 +4485,8 @@
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "будзе адноўлены да версіі ад ${ formattedRevisionDate }. Усе астатнія версіі будуць захоўвацца далей."
       ],
-      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
-        "З ${ DRIVE_APP_NAME } вашы даныя абаронены з дапамогай скразнога шыфравання. Толькі вы зможаце расшыфраваць іх."
+      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
+        "З ${ DRIVE_APP_NAME } вашы даныя абаронены з дапамогай скразнога шыфравання."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ці хочаце вы атрымаць новы праверачны код або скарыстацца альтэрнатыўным метадам праверкі?"
@@ -5613,7 +5618,7 @@
         "Далей"
       ],
       "Start using ${ DRIVE_APP_NAME }": [
-        "Пачніце выкарыстоўваць ${ DRIVE_APP_NAME }"
+        "Пачаць выкарыстоўваць ${ DRIVE_APP_NAME }"
       ]
     },
     "Onboarding Info": {
@@ -7052,6 +7057,9 @@
       ],
       "Hide side panel": [
         "Схаваць бакавую панэль"
+      ],
+      "Load image": [
+        "Загрузіць відарыс"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Выберыце схему PGP, якая будзе выкарыстоўвацца пры падпісанні або шыфраванні для карыстальніка. Звярніце ўвагу, што PGP/Inline прымусова пераўтварае паведамленні ў звычайны тэкст"

@@ -166,9 +166,6 @@
       "Continue with Google": [
         "Nastavi s Googleom"
       ],
-      "Copy": [
-        "Kopiraj"
-      ],
       "Copy address": [
         "Kopiraj adresu"
       ],
@@ -264,9 +261,6 @@
       ],
       "Download": [
         "Preuzmi"
-      ],
-      "Download all configurations": [
-        "Preuzmite sve konfiguracije"
       ],
       "Download ICS": [
         "Preuzmi ICS datoteku"
@@ -4214,17 +4208,11 @@
       "Phone number": [
         "Broj telefona"
       ],
-      "Plan upgrade required": [
-        "Potrebna je nadogradnja plana"
-      ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Imajte na umu da ako izbrišete ovu adresu, više nećete moći slati ni primati e-poštu putem ove adrese."
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Imajte na umu da ako izbrišete ovu domenu sve adrese povezane s njom biti će onemogućene."
-      ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Imajte na umu da ako izbrišete ovaj filtar, prestat ćemo obrađivati sve automatizirane radnje koje on pokreće."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Imajte na umu da nakon pritiska na dugme Potvrdi, na vašem računu će ostati ${ creditsRemaining } kredita."
@@ -6003,14 +5991,6 @@
         "Najviša VPN brzina"
       ]
     },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -6032,6 +6012,14 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Nadogradite za ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -7686,9 +7674,6 @@
       ],
       "Delete ${ email }": [
         "Izbriši ${ email }"
-      ],
-      "Delete ${ filterName }": [
-        "Izbriši ${ filterName }"
       ],
       "Delete ${ tokenNameToRemove }?": [
         "Izbriši ${ tokenNameToRemove }?"

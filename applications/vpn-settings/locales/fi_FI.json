@@ -95,9 +95,6 @@
       "Continue with this password": [
         "Jatka tällä salasanalla"
       ],
-      "Copy": [
-        "Kopioi"
-      ],
       "Copy address": [
         "Kopioi osoite"
       ],
@@ -163,9 +160,6 @@
       ],
       "Download": [
         "Lataa"
-      ],
-      "Download all configurations": [
-        "Lataa kaikki määritykset"
       ],
       "Download our CSV template": [
         "Lataa CSV-malli"
@@ -250,6 +244,9 @@
       ],
       "Get verification code": [
         "Hanki vahvistuskoodi"
+      ],
+      "Give feedback": [
+        "Anna palautetta"
       ],
       "Got it": [
         "Selvä"
@@ -493,6 +490,9 @@
       ],
       "Upgrade to Business": [
         "Päivitä Business-tilaukseen"
+      ],
+      "Upgrade to Visionary": [
+        "Päivitä Visionary-tilaukseen"
       ],
       "Upgrade your plan": [
         "päivittämällä tilauksesi"
@@ -798,6 +798,10 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Ohita paikalliset Internet-estot ja sensuuri maailmanlaajuisen palvelinverkostomme avulla."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Sisältää tuen ${ domains } omalle sähköpostiverkkotunnukselle, ${ addresses } sähköpostiosoitteen, rajattomasti hide-my-email-aliaksia, kalenterijaon ja paljon muuta.",
+        "Sisältää tuen ${ domains } omalle sähköpostiverkkotunnukselle, ${ addresses } sähköpostiosoitetta, rajattomasti hide-my-email-aliaksia, kalenterijaon ja paljon muuta."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Sisältää tuen yhdelle omalle sähköpostiverkkotunnukselle, 10 sähköpostiosoitetta, 10 hide-my-email-aliasta kalenterijaon ja paljon muuta."
       ],
@@ -847,6 +851,11 @@
       ],
       "Two-year": [
         "Kaksivuotinen"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } -työpöytäsovellus"
       ]
     },
     "Bug category": {
@@ -1848,6 +1857,14 @@
         "Erota elämäsi eri alueet useilla sähköpostiosoitteilla päivittämällä tilauksesi ja avaa samalla myös muita premium-ominaisuuksia."
       ]
     },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Pääsy työpöytäsovellukseen on rajoitettu"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "${ MAIL_APP_NAME } -työpöytäsovelluksen beta-versio on tällä hetkellä vain ${ BRAND_NAME } Visionary- tilaajien käytettävissä. Se tulee kaikkien käyttäjien saataville vuoden 2024 alussa."
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Vikoja tai laatuongelmia"
@@ -1887,6 +1904,33 @@
     "Enabled 2FA": {
       "2FA": [
         "2FA"
+      ]
+    },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Maksulliset ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ja ${ PASS_SHORT_APP_NAME } -ominaisuudet"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Sisältää versiohistorian sovelluksessa ${ DRIVE_SHORT_APP_NAME }, pääsyn tuhansille nopeille ${ VPN_SHORT_APP_NAME } -palvelimille, jakamisen sovelluksessa ${ PASS_SHORT_APP_NAME } ja paljon muuta."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 Tt"
+      ],
+      "6 users": [
+        "6 käyttäjää"
+      ],
+      "Early access to new apps and features": [
+        "Varhainen pääsy uusiin sovelluksiin ja ominaisuuksiin"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Varhainen pääsy ${ MAIL_APP_NAME } -työpöytäsovellukseen"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Maksulliset ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_APP_NAME } -ominaisuudet"
       ]
     },
     "Error": {
@@ -3080,6 +3124,9 @@
       "for choosing ${ product }": [
         "kun valitsit ${ product }"
       ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Kertakirjautumista (SAML SSO) käyttävien organisaatioiden jäsenille"
+      ],
       "Free forever": [
         "Ikuisesti ilmainen"
       ],
@@ -3295,9 +3342,6 @@
       ],
       "per month, billed every 24 months": [
         "kuukaudessa, laskutus 24 kuukauden välein"
-      ],
-      "Plan upgrade required": [
-        "Tilauspäivitys vaaditaan"
       ],
       "Please add a password for the user on row": [
         "Lisää salasana rivin käyttäjälle",
@@ -3906,6 +3950,9 @@
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Organisaatiosi salasana voidaan jakaa niille käyttäjille, joille haluat myöntää ylläpito-oikeudet. Se toimii myös hätäpalautuskoodina, jolla voit pääset käsiksi organisaatioosi vaikka menettäisit pääsyn omalle tilillesi. Tallenna salasana ja pidä se turvassa."
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Organisaatiosi käyttää kertakirjautumista (SSO). Jatka SSO-palveluntarjoajan kautta painamalla \"Kirjaudu sisään\"."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Maksutietosi on suojattu TLS-salauksella ja Sveitsin tietosuojalailla."
@@ -4612,11 +4659,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Unohditko ${ BRAND_NAME }-tilisi käyttäjätunnuksen? Etsi se palautussähköpostin tai -puhelimen avulla ja jatka ${ MAIL_APP_NAME }in, ${ DRIVE_SHORT_APP_NAME }n, ${ CALENDAR_SHORT_APP_NAME }in ja muiden palveluiden käyttämistä."
       ],
+      "Private and secure email, no credit card required": [
+        "Yksityinen ja turvallinen sähköposti, eikä luottokorttia tarvita"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Nollaa ${ BRAND_NAME }-tilisi salasana"
       ],
       "Sign in to access your ${ appName } account": [
         "Käytä ${ appName } -tiliäsi kirjautumalla sisään"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Kokeile ${ planName } -tilausta ilmaiseksi tästä linkistä"
       ]
     },
     "Monetary unit": {
@@ -5877,6 +5930,9 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Jos et pyytänyt salasanasi nollausta, peruuta tämä pyyntö nyt."
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Salasanan nollauspyyntö hyväksyttiin (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Käytä kirjautunutta laitetta (siinä istunnossa, jossa pyyntö käynnistettiin) salasanan vaihtamiseksi."
       ],
@@ -5888,14 +5944,36 @@
         "Tämä käyttöoikeus päättyy ${ timeRemaining.inHours } tunnin kuluttua.",
         "Tämä käyttöoikeus päättyy ${ timeRemaining.inHours } tunnin kuluttua."
       ],
+      "This permission expires soon": [
+        "Tämä käyttöoikeus vanhenee pian"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Voit nyt vaihtaa salasanasi tilille ${ boldEmail } vapaasti ${ boldDaysRemaining } ajan."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Voit nyt vaihtaa salasanasi tilille ${ boldEmail }."
       ],
       "You can now reset your password": [
         "Voit nyt nollata salasanasi"
       ],
       "You can reset your password until ${ boldDate }.": [
         "Voit nollata salasanasi ${ boldDate } asti."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Sinulla on ${ timeRemaining.inDays } päivä aikaa nollata salasanasi.",
+        "Sinulla on ${ timeRemaining.inDays } päivää aikaa nollata salasanasi."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Sinulla on ${ timeRemaining.inHours } tunti aikaa nollata salasanasi.",
+        "Sinulla on ${ timeRemaining.inHours } tuntia aikaa nollata salasanasi."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Sinulla on ${ timeRemaining.inMinutes } minuutti aikaa nollata salasanasi.",
+        "Sinulla on ${ timeRemaining.inMinutes } minuuttia aikaa nollata salasanasi."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Sinulla on ${ timeRemaining.inSeconds } sekunti aikaa nollata salasanasi.",
+        "Sinulla on ${ timeRemaining.inSeconds } sekuntia aikaa nollata salasanasi."
       ]
     },
     "session_recovery:available:link": {
@@ -6498,9 +6576,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } kopioitiin leikepöydälle"
-      ],
       "Account deleted. Signing out...": [
         "Tili on poistettu. Kirjaudutaan ulos..."
       ],

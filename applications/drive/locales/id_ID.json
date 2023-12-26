@@ -310,6 +310,9 @@
       "Get started": [
         "Selesai"
       ],
+      "Get Started": [
+        "Mulai"
+      ],
       "Get verification code": [
         "Dapatkan kode verifikasi"
       ],
@@ -874,6 +877,9 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Lewati pemblokiran dan penyensoran internet lokal dengan jaringan server global kami."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Meliputi dukungan untuk ${ domains } domain email khusus, ${ addresses } alamat email, alias hide-my-email tanpa batasan jumlah, fitur berbagi kalender, dan masih banyak lagi."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Termasuk dukungan untuk 1 domain surel kustom, 10 alamat surel, 10 alias hide-my-email, pembagian kalender, dan lainnya."
       ],
@@ -1129,6 +1135,11 @@
       ],
       "URL": [
         "URL"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Gambar kontak"
       ]
     },
     "Contact type label": {
@@ -2056,6 +2067,33 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Pembaruan acara mulai pada ${ formattedStart }"
+      ]
+    },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Berbagai fitur ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, dan ${ PASS_SHORT_APP_NAME } berbayar"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Meliputi riwayat versi pada ${ DRIVE_SHORT_APP_NAME }, akses ke ratusan server ${ VPN_SHORT_APP_NAME } berkecepatan tinggi, fitur untuk saling berbagi pada ${ PASS_SHORT_APP_NAME }, dan masih banyak lagi."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 pengguna"
+      ],
+      "Early access to new apps and features": [
+        "Akses dini ke berbagai aplikasi dan fitur baru"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Akses dini ke aplikasi desktop ${ MAIL_APP_NAME }"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Berbagai fitur ${ MAIL_SHORT_APP_NAME } dan ${ CALENDAR_APP_NAME } berbayar"
       ]
     },
     "Error": {
@@ -3601,9 +3639,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Untuk hasil yang maksimal, hindari streaming serta berbagai kegiatan lainnya yang boros akan memori atau pisah unggahan Anda ke dalam beberapa kelompok berkas kecil."
       ],
-      "Free forever": [
-        "Selamanya gratis"
-      ],
       "Free up some space or add more storage space.": [
         "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
       ],
@@ -4012,9 +4047,6 @@
       "support team": [
         "tim dukungan"
       ],
-      "Swiss encrypted file storage": [
-        "Layanan penyimpanan berkas terenkripsi dari Swiss"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Hal yang Anda tuju saat ini sedang tidak tersedia. Mohon periksa lagi nanti."
       ],
@@ -4147,6 +4179,9 @@
       "Trash is empty": [
         "Sampah kosong"
       ],
+      "Try ${ DRIVE_APP_NAME }: Free forever": [
+        "Coba ${ DRIVE_APP_NAME }: Gratis untuk selamanya"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Coba fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum mereka dirilis kepada publik. Ini akan memuat ulang aplikasi"
       ],
@@ -4234,8 +4269,8 @@
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "akan dipulihkan ke versi dari ${ formattedRevisionDate }. Semua versi lainnya masih akan disimpan."
       ],
-      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
-        "Dengan ${ DRIVE_APP_NAME }, data Anda terlindung oleh enkripsi end-to-end. Data Anda hanya akan dapat didekripsi oleh diri Anda seorang."
+      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
+        "Dengan ${ DRIVE_APP_NAME }, data Anda terlindung oleh enkripsi end-to-end."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Apakah Anda mau menerima kode verifikasi baru atau menggunakan metode verifikasi alternatif?"
@@ -6599,6 +6634,9 @@
       ],
       "Hide side panel": [
         "Sembunyikan panel samping"
+      ],
+      "Load image": [
+        "Muat gambar"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Pilih skema PGP yang akan digunakan untuk menandatangani atau mengenkripsi pesan kepada pengguna. Mohon diperhatikan bahwa PGP/Inline mewajibkan penggunaan pesan teks polos"

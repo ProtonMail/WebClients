@@ -853,6 +853,11 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Ocoliți blocarea locală a internetului și cenzura cu rețeaua noastră globală de servere."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Include suport pentru ${ domains } domenii de e-mail personale, ${ addresses } adresă de e-mail, aliasuri nelimitate hide-my-email, partajare calendar și altele.",
+        "Include suport pentru ${ domains } domenii de e-mail personale, ${ addresses } adrese de e-mail, aliasuri nelimitate hide-my-email, partajare calendar și altele.",
+        "Include suport pentru ${ domains } domenii de e-mail personale, ${ addresses } de adrese de e-mail, aliasuri nelimitate hide-my-email, partajare calendar și altele."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Include suport pentru un domeniu de e-mail personal, 10 adrese de e-mail, 10 aliasuri hide-my-email, partajare calendar și altele."
       ],
@@ -2363,7 +2368,37 @@
         "Actualizarea unui eveniment care începe ${ formattedStart }"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Funcții cu plată ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Include istoricul versiunilor în ${ DRIVE_SHORT_APP_NAME }, acces la mii de servere ${ VPN_SHORT_APP_NAME } cu viteză maximă, partajare în ${ PASS_SHORT_APP_NAME } și altele."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TiB"
+      ],
+      "6 users": [
+        "6 utilizatori"
+      ],
+      "Early access to new apps and features": [
+        "Acces timpuriu la aplicațiile și funcțiile noi"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Acces timpuriu la aplicația pentru desktop ${ MAIL_APP_NAME }"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Funcții cu plată ${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_APP_NAME }"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } nu se poate conecta la contul extern."
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Puteți verifica situația și pe ${ statusPageLink }."
       ],
@@ -2724,6 +2759,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Folosiți doar litere, cifre și _ . -"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Eroare neașteptată. Nu se pot importa contactele."
       ],
       "Unknown error": [
         "Eroare necunoscută"

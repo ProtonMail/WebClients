@@ -179,6 +179,9 @@
       "Get mobile apps": [
         "Descargar las aplicaciiones móviles"
       ],
+      "Get the deal": [
+        "Obtener la promoción"
+      ],
       "Help us improve": [
         "Ayúdanos a mejorar"
       ],
@@ -262,6 +265,9 @@
       ],
       "Open navigation": [
         "Abrir la navegación"
+      ],
+      "Open web app": [
+        "Abrir la aplicación web"
       ],
       "Pass for Android": [
         "Pass para Android"
@@ -382,6 +388,14 @@
       ],
       "Your password manager not here? Request it.": [
         "¿No aparece tu gestor de contraseñas? Solicítalo."
+      ]
+    },
+    "Badge": {
+      "Early access": [
+        "Acceso anticipado"
+      ],
+      "Limited time": [
+        "Por tiempo limitado"
       ]
     },
     "bf2023: Info": {
@@ -969,6 +983,9 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "La propiedad ha sido transferida. Ya no tienes la propiedad de esta caja fuerte."
       ],
+      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
+        "Pass Plus por ${ eoyRelativePrice }/mes, incluyendo acceso anticipado a la aplicación web."
+      ],
       "Pass Plus trial": [
         "Prueba Pass Plus"
       ],
@@ -1019,9 +1036,6 @@
       ],
       "Save login": [
         "Guardar el inicio de sesión"
-      ],
-      "Save up to 60% on ${ PASS_APP_NAME } Plus": [
-        "Ahorra hasta 60% con ${ PASS_APP_NAME } Plus"
       ],
       "Select destination vault": [
         "Selecciona la caja fuerte de destino"

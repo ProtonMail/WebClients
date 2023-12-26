@@ -313,6 +313,9 @@
       "Get verification code": [
         "取得驗證碼"
       ],
+      "Give feedback": [
+        "意見回饋"
+      ],
       "Go to Drive": [
         "到 Drive"
       ],
@@ -848,20 +851,52 @@
         "進階版密碼管理器"
       ]
     },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "折扣是以每月標準價格為基礎。"
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "您的訂閱將在您的結算週期結束時以相同的費率自動續訂。"
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 天體驗不滿意退款服務"
       ]
     },
     "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "存取遭封鎖的內容並保持隱私。使用遍佈於65+個國家的超過 3000 台伺服器，讓最快的 VPN 帶您暢享世上的串流平台，還有病毒與廣告攔截器、迅速的 BitTorrent 下載等多項功能可用。"
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "在世界各地暢享串流服務的影音內容，包含 Netflix、Disney+、Prime Video 等平台。"
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "我們遍佈全世界的網路與伺服器助您翻過長城，免於審查。"
+      ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 ${ domains } 組自訂電子郵件網域、${ addresses } 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "在您所有的裝置安全登入。包含無限郵件別名、共享以及整合的 2FA等功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "透過端對端加密保護您的電子郵件。包含自訂電子郵件網域、15 個電子郵件位址、無限的 hide-my-email 別名與行事曆共用等等的功能。"
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
       ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "精心設計的 NetShield 保護您的裝置並攔截讓您變慢的廣告、追蹤程式與惡意軟體。"
+      ],
       "Storage space is shared across all ${ BRAND_NAME } apps.": [
         "儲存空間於${ BRAND_NAME }共用。"
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "包存最多200份檔案歷程記錄長達10年。"
       ]
     },
     "Bug category": {
@@ -1939,6 +1974,11 @@
         "您可以把既不合併也不保留的聯絡人標記為刪除。唯有在點擊「合併」按鈕時，才會執行刪除"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "使用 Easy Switch 匯入小幫手"
+      ]
+    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "另外，我們已將 CSV 自動轉換為 vCard 信息，您可以查看並修改對應關係。"
@@ -2010,6 +2050,11 @@
         "原訂自 ${ formattedStart } 起一事有變"
       ]
     },
+    "eoy2023: Deal details": {
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "${ MAIL_SHORT_APP_NAME }付費及${ CALENDAR_APP_NAME }功能"
+      ]
+    },
     "Error": {
       "\"${ name }\" already exists": [
         "「${ name }」已存在"
@@ -2049,6 +2094,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "內容搜尋無法在此瀏覽器中啟用。請離開無痕模式或使用其它瀏覽器。"
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "無法啟用內文搜尋。請重新啟動應用程式或清除資料。"
       ],
       "Deselect at least ${ calendarsToFixCount } calendars": [
         "請取消選取至少 ${ calendarsToFixCount } 個行事曆"
@@ -2482,6 +2530,9 @@
     "Error message": {
       "Access denied": [
         "存取被拒"
+      ],
+      "App currently unavailable": [
+        "App 目前無法使用"
       ],
       "Brace yourself till we get the error fixed.": [
         "不好意思，這個錯誤有待修正。我們將會處理。"
@@ -3529,9 +3580,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "為取得最佳結果，請避免串流與記憶體密集型活動，或是將您的上傳分割為較小的批次。"
       ],
-      "Free forever": [
-        "永遠免費"
-      ],
       "Free up some space or add more storage space.": [
         "請釋出部分空間或增加更多儲存空間。"
       ],
@@ -3799,6 +3847,9 @@
       "Preview failed to be loaded": [
         "連結載入失敗"
       ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "目前不支援在這個瀏覽器中預覽這個類型的檔案。"
+      ],
       "Preview for this file type is not supported": [
         "不支援預覽此檔案類型"
       ],
@@ -3928,9 +3979,6 @@
       "support team": [
         "支援團隊"
       ],
-      "Swiss encrypted file storage": [
-        "瑞士的加密檔案儲存空間"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "暫時無法使用，請稍後再試。"
       ],
@@ -3948,6 +3996,9 @@
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "下列項目可能已遭竄改：${ items }。除非您信任該檔案，否則切勿開啟。"
+      ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "這個收件者已停用端到端加密。若要傳送加密郵件給這個收件者，該收件者必須重新啟用端到端加密。"
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "目前仍有檔案等候傳輸，關閉傳輸管理員將會終止所有操作。"
@@ -4143,9 +4194,6 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "將還原到 ${ formattedRevisionDate } 的版本。其他所有版本仍會被儲存。"
-      ],
-      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
-        "使用 ${ DRIVE_APP_NAME }，您的資料會以端到端加密保護。僅有您能解密。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想要接收新的驗證碼，還是更換驗證方式？"
@@ -5226,6 +5274,9 @@
       "Set up your organization": [
         "設定您的組織"
       ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "使用左上角的應用程式選取器，所有 ${ BRAND_NAME } 服務供您差遣：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }和${ PASS_SHORT_APP_NAME }。"
+      ],
       "You will be able to change your theme any time in your settings.": [
         "您可於設定隨時變更布景主題。"
       ]
@@ -5435,11 +5486,23 @@
       ]
     },
     "session_recovery:available:info": {
+      " You have ${ timeRemaining.inHours } hours to reset your password.": [
+        " 你有${ timeRemaining.inHours }小時重設密碼。"
+      ],
+      " You have ${ timeRemaining.inMinutes } minutes to reset your password.": [
+        " 你有${ timeRemaining.inMinutes }分鐘重設密碼。"
+      ],
+      " You have ${ timeRemaining.inSeconds } seconds to reset your password.": [
+        " 你有${ timeRemaining.inSeconds }秒重設密碼。"
+      ],
       "${ timeRemaining.inDays } days": [
         "${ timeRemaining.inDays }天"
       ],
       "${ timeRemaining.inHours } hours": [
         "${ timeRemaining.inHours }小時"
+      ],
+      "Password reset request approved (${ user.Email }).": [
+        "密碼重設需要核准(${ user.Email })。"
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "請前往已登入的裝置（在發起需求的工作階段中）變更您的密碼。"
@@ -5450,8 +5513,17 @@
       "This permission expires in ${ timeRemaining.inHours } hours": [
         "此權限將在${ timeRemaining.inHours }小時後過期"
       ],
+      "This permission expires soon": [
+        "此權限即將到期"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "現在您可以在${ boldDaysRemaining }內免費變更帳號 ${ boldEmail } 的密碼。"
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "現在您可以變更此帳號 ${ boldEmail } 的密碼。"
+      ],
+      "You have ${ timeRemaining.inDays } days to reset your password.": [
+        "你有${ timeRemaining.inDays }天重設密碼。"
       ]
     },
     "session_recovery:available:link": {

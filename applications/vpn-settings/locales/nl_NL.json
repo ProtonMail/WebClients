@@ -95,9 +95,6 @@
       "Continue with this password": [
         "Ga verder met dit wachtwoord"
       ],
-      "Copy": [
-        "Kopieer"
-      ],
       "Copy address": [
         "Adres kopiëren"
       ],
@@ -160,9 +157,6 @@
       ],
       "Download": [
         "Downloaden"
-      ],
-      "Download all configurations": [
-        "Download alle configuraties"
       ],
       "Download our CSV template": [
         "Ons CSV-sjabloon downloaden"
@@ -3293,9 +3287,6 @@
       "per month, billed every 24 months": [
         "per maand, gefactureerd elke 24 maanden"
       ],
-      "Plan upgrade required": [
-        "Upgrade van abonnement vereist"
-      ],
       "Please add a password for the user on row": [
         "Voeg een wachtwoord toe voor de gebruiker op de rij",
         "Voeg wachtwoorden toe voor de gebruikers op rijen"
@@ -4609,11 +4600,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "${ BRAND_NAME }-account gebruikersnaam vergeten? Reset het door uw recovery code, e-mail of SMS te gebruiken en krijg toegang tot uw ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, en meer."
       ],
+      "Private and secure email, no credit card required": [
+        "Privé en beveiligde email, geen kredietkaart noodzakelijk"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Reset uw ${ BRAND_NAME }-account wachtwoord"
       ],
       "Sign in to access your ${ appName } account": [
         "Log in om toegang te krijgen tot uw ${ appName }-account"
+      ],
+      "Try ${ planName } for free with this link": [
+        "U kan ${ planName } gratis proberen met deze link."
       ]
     },
     "Monetary unit": {
@@ -4831,7 +4828,7 @@
         "Aangepaste velden"
       ],
       "Custom snooze time": [
-        "Aangepaste snooztijd"
+        "Aangepaste sluimertijd"
       ],
       "Data breach monitoring": [
         "Monitoring van datalekken"
@@ -5050,7 +5047,7 @@
         "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
-        "Berichten snoozen en ontvangen wanneer u wil"
+        "Berichten sluimeren en ontvangen wanneer u wilt"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
@@ -6489,9 +6486,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } gekopieerd naar uw klembord"
-      ],
       "Account deleted. Signing out...": [
         "Account verwijderd. Uitloggen..."
       ],

@@ -179,6 +179,9 @@
       "Get mobile apps": [
         "Obținere aplicați mobil"
       ],
+      "Get the deal": [
+        "Obțineți oferta"
+      ],
       "Help us improve": [
         "Ajutați-ne să se îmbunătățim"
       ],
@@ -382,6 +385,11 @@
       ],
       "Your password manager not here? Request it.": [
         "Managerul de parole pe care îl folosiți nu apare aici? Solicitați-l."
+      ]
+    },
+    "Badge": {
+      "Early access": [
+        "Acces timpuriu"
       ]
     },
     "bf2023: Info": {
@@ -634,6 +642,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Cod PIN greșit. Reîncercați."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Codul dvs. PIN a fost eliminat de către alt utilizator al ${ PASS_APP_NAME }."
       ]
     },
     "Error message": {
@@ -792,6 +803,9 @@
       "Autosaved on ${ submissionURL }": [
         "Autosalvat la ${ submissionURL }"
       ],
+      "Built in 2FA authenticator": [
+        "Autentificator A2F încorporat."
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Poate crea, edita, șterge și exporta articole din acest seif."
       ],
@@ -833,6 +847,9 @@
       ],
       "Drop to import": [
         "Plasare pentru importare"
+      ],
+      "Early access to ${ PASS_APP_NAME } web app": [
+        "Acces timpuriu la aplicația web ${ PASS_APP_NAME }."
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importați ușor parolele existente în ${ PASS_APP_NAME }."
@@ -1009,11 +1026,17 @@
       "Please enter your current PIN code to continue": [
         "Introduceți codul PIN curent pentru a continua"
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Treceți la un plan superior pentru a avea acces timpuriu la aplicația web ${ PASS_APP_NAME }."
+      ],
       "Press Enter to copy": [
         "Apăsați Enter pentru copiere"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Confidențialitatea este o mare preocupare pentru noi. Aflați de ce ${ PASS_APP_NAME } este diferit."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Protejat de ${ PROTON_SENTINEL_LINK }, programul nostru avansat de protecție a contului"
       ],
       "Restoring trashed items...": [
         "Se restaurează articolele din gunoi..."
@@ -1038,6 +1061,9 @@
       ],
       "Settings successfully updated": [
         "Setările s-au actualizat."
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "Partajați-vă datele de conectare și notele securizate, cu până la 10 persoane"
       ],
       "Sign in or create an account to continue.": [
         "Conectați-vă sau creați un cont pentru a continua."
@@ -1096,7 +1122,7 @@
         "Nu se poate copia în memorie."
       ],
       "Unlimited hide-my-email aliases": [
-        "Aliasuri nelimitate „Hide-my-email”"
+        "Aliasuri nelimitate hide-my-email"
       ],
       "Unlock it with your PIN to access the settings": [
         "Deblocați-o cu codul PIN pentru a accesa setările."
@@ -1106,6 +1132,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Actualizare ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Modificați-vă acum contul pentru a debloca funcțiile premium"
       ],
       "Use vaults to share this item with others.": [
         "Folosiți seifurile pentru a partaja acest articol cu alții."
@@ -1814,6 +1843,9 @@
       ],
       "Update available": [
         "Actualizare disponibilă"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Modificați-vă contul pentru a debloca funcțiile premium"
       ],
       "Use my email": [
         "Utilizare e-mail"

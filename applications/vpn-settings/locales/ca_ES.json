@@ -95,9 +95,6 @@
       "Continue with this password": [
         "Continua amb aquesta contrasenya"
       ],
-      "Copy": [
-        "Copia"
-      ],
       "Copy address": [
         "Copiar l'adreça"
       ],
@@ -163,9 +160,6 @@
       ],
       "Download": [
         "Baixa"
-      ],
-      "Download all configurations": [
-        "Baixa tota la configuració"
       ],
       "Download our CSV template": [
         "Descarregueu la nostra plantilla CSV"
@@ -497,6 +491,9 @@
       "Upgrade to Business": [
         "Millora a Business"
       ],
+      "Upgrade to Visionary": [
+        "Actualitza a Visionary"
+      ],
       "Upgrade your plan": [
         "Milloreu el vostre pla"
       ],
@@ -652,8 +649,14 @@
       ]
     },
     "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "**Afegeix el nostre gestor de contrasenyes xifrat** per només ${ price }"
+      ],
       "Add ${ PASS_APP_NAME }": [
         "Afegeix ${ PASS_APP_NAME }"
+      ],
+      "Add ${ plan } for ${ price } per month": [
+        "Afegeix ${ plan } per ${ price } al mes"
       ],
       "Cancel": [
         "Cancel·la"
@@ -662,13 +665,16 @@
         "Tanca"
       ],
       "Get the deal": [
-        "Obtingui l’oferta"
+        "Obteniu l’oferta"
       ],
       "Remove": [
         "Esborra"
       ],
       "Remove ${ PASS_APP_NAME }": [
         "Esborra ${ PASS_APP_NAME }"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "Subscriviu-vos durant 15 mesos i aconseguiu el nostre **gestor de contrasenyes xifrat** per només ${ priceNoSuffix } extra al mes!"
       ]
     },
     "bf2023: Deal details": {
@@ -734,6 +740,15 @@
     "bf2023: info": {
       "All premium ${ BRAND_NAME } services. One easy subscription.": [
         "Tots els serveis prèmium de ${ BRAND_NAME }. Una subscripció senzilla."
+      ],
+      "Secure browsing and premium VPN features.": [
+        "Característiques de navegació segura i VPN prèmium."
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "Aquesta oferta no està disponible amb el pla actual."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Aquesta oferta no està disponible amb el pla actual. Però podeu obtenir un **${ discountPercentage } de descompte en ${ plan.Title }** quan us subscriviu per a **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -3035,6 +3050,9 @@
       "for choosing ${ product }": [
         "per escollir ${ product }"
       ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Per a membres d'organitzacions que utilitzen un inici de sessió únic (SAML SSO)"
+      ],
       "Free forever": [
         "Gratuït per sempre"
       ],
@@ -3230,9 +3248,6 @@
       "per month, billed every 24 months": [
         "al mes amb facturació cada 24 mesos"
       ],
-      "Plan upgrade required": [
-        "Es requereix una millora del pla"
-      ],
       "Please add a password for the user on row": [
         "Afegiu una contrasenya per a l'usuari seleccionat",
         "Afegiu contrasenyes per als usuaris seleccionats"
@@ -3312,6 +3327,9 @@
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
+      ],
+      "Remember to share the user's sign in details with them.": [
+        "Recordeu compartir els detalls d'inici de sessió amb l'usuari."
       ],
       "Resend verification email": [
         "Reenvia el correu electrònic de verificació"
@@ -3575,6 +3593,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
       ],
+      "Upload your completed CSV file to create accounts": [
+        "Pugeu el fitxer CSV completat per a crear comptes"
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utilitzeu el millor servidor segons la càrrega i la ubicació actuals: ${ formattedBestServerName }"
       ],
@@ -3605,6 +3626,9 @@
       "Version ${ version }": [
         "Versió ${ version }"
       ],
+      "View, download, and manage your invoices.": [
+        "Veieu, descarregueu i gestioneu les factures."
+      ],
       "Visa Secure logo": [
         "Logo de Visa Secure"
       ],
@@ -3619,6 +3643,9 @@
       ],
       "We couldn’t process your payment.": [
         "No hem pogut processar el vostre pagament."
+      ],
+      "We generated a strong password for you": [
+        "Us hem generat una contrasenya forta"
       ],
       "We need to authenticate your payment method with your bank.": [
         "Hem d'autenticar el vostre mètode de pagament amb el banc."
@@ -3743,6 +3770,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Heu assolit el 100% de la vostra capacitat d’emmagatzematge. No podeu enviar ni rebre correus electrònics nous. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You will be redirected to ${ destination } after signing in.": [
+        "Se us redirigirà a ${ destination } després d'iniciar la sessió."
+      ],
       "You will lose access to Plus features on this date.": [
         "Perdreu accés a les funcions Plus en aquesta data."
       ],
@@ -3803,6 +3833,9 @@
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "La contrasenya de la seva organització es pot compartir amb altres usuaris als quals voleu atorgar privilegis administratius. També és un codi de recuperació d'emergència per accedir a la seva organització en cas que perdi l'accés al seu compte. Guardeu aquesta contrasenya i mantingui segura."
       ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "La vostra organització utilitza un inici de sessió únic (SSO). Premeu Inicia la sessió per a continuar amb el vostre proveïdor SSO."
+      ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Les dades de pagament estan protegides amb el xifratge TLS i les lleis de privadesa de Suïssa."
       ],
@@ -3821,6 +3854,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Podeu afegir un mètode de pagament per renovar automàticament la vostra subscripció. També hi ha disponibles altres mètodes de pagament."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Introduïu un nom i una adreça pròpia o de la vostra organització. Aquestes dades s'afegiran tant a les factures personals com a les organitzatives."
       ]
     },
     "Info subscription": {
@@ -4196,6 +4234,9 @@
       "Phrase consists of 12 unique words in a specific order": [
         "La frase consta de 12 paraules úniques en un ordre específic"
       ],
+      "Please share any feedback to help us improve.": [
+        "Compartiu qualsevol comentari per ajudar-nos a millorar."
+      ],
       "Postal code": [
         "Codi postal"
       ],
@@ -4500,11 +4541,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Heu oblidat el vostre nom d'usuari del compte ${ BRAND_NAME }? Trobeu-lo mitjançant el vostre correu electrònic de recuperació o el número de telèfon i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, i més."
       ],
+      "Private and secure email, no credit card required": [
+        "Correu electrònic privat i segur, no es requereix targeta de crèdit"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Restabliu la vostra contrasenya del compte ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Inicieu sessió al vostre compte ${ appName }"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Proveu ${ planName } de forma gratuïta amb aquest enllaç."
       ]
     },
     "Monetary unit": {
@@ -4557,13 +4604,13 @@
         "Elimina el compte"
       ],
       "Downgrade account": [
-        "Passa el compte a un pla inferior"
+        "Passa a un pla inferior"
       ],
       "Get ${ BRAND_NAME } for free": [
         "Obtén ${ BRAND_NAME } gratuïtament"
       ],
       "Get ${ planName }": [
-        "Obtén ${ planName }"
+        "Obteniu ${ planName }"
       ],
       "Got it": [
         "Entesos"
@@ -4698,7 +4745,7 @@
         "Compartició de calendari"
       ],
       "Catch-all": [
-        "Capturar-ho tot"
+        "Adreça d'arreplega"
       ],
       "Centralized billing": [
         "Facturació centralitzada"
@@ -4962,6 +5009,9 @@
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } us permet crear adreces de correu electrònic i gestionar comptes per als subusuaris. Ideal per a les vostres famílies i organitzacions."
       ],
+      "Advanced network security and access management with dedicated secure Gateways": [
+        "Seguretat avançada de la xarxa i gestió d'accessos amb passarel·les segures dedicades"
+      ],
       "All ${ BRAND_NAME } apps and their premium features": [
         "Totes les aplicacions de ${ BRAND_NAME } i les seves característiques prèmium"
       ],
@@ -4970,6 +5020,9 @@
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Privadesa i seguretat integrals amb tots els serveis de ${ BRAND_NAME } combinats."
+      ],
+      "Early access to new apps and features": [
+        "Accés anticipat a noves aplicacions i característiques"
       ],
       "For next-level password management and identity protection.": [
         "Per a una gestió de contrasenyes i identitat del més alt nivell."
@@ -4995,6 +5048,9 @@
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Protegiu la privadesa de la vostra família amb tots els serveis de ${ BRAND_NAME } combinats."
       ],
+      "Safely access internet from anywhere with essential network monitoring": [
+        "Accediu a internet de manera segura des de qualsevol lloc amb un monitoratge de xarxa essencial"
+      ],
       "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         "Emmagatzematge al núvol segur que us permet emmagatzemar, sincronitzar i compartir fitxers de manera fàcil i segura."
       ],
@@ -5003,6 +5059,9 @@
       ],
       "Secure email with advanced features for your everyday communications.": [
         "Correu electrònic segur amb funcions avançades per a les vostres comunicacions diàries."
+      ],
+      "Tailor-made solutions for larger organizations with specific security needs": [
+        "Solucions a mida per a organitzacions més grans amb necessitats específiques de seguretat"
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "La solució VPN dedicada que proporciona accés segur, il·limitat i d'alta velocitat a internet."
@@ -5148,6 +5207,9 @@
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
         "Com una carpeta, una caixa forta és una manera pràctica d'organitzar els vostres elements. La compartició de caixes fortes amb amics i familiars està en desenvolupament."
       ],
+      "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
+        "Aïlleu els recursos de la vostra empresa de l'internet públic i feu-los accessibles només a través de les vostres passarel·les privades."
+      ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Gestioneu la vostra subscripció, inclosa la personalització del pla. Els mètodes de pagament acceptats són la targeta de crèdit, PayPal, criptomoneda i transferència bancària."
       ],
@@ -5187,6 +5249,9 @@
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Protegiu la vostra família de llocs web nocius i accediu als nostres servidors VPN d'alta velocitat per veure el vostre contingut preferit"
       ],
+      "Provides the highest level of account security protection and specialist support": [
+        "Proporciona el més alt nivell de protecció de la seguretat del compte i suport especialitzat"
+      ],
       "Quickly set up out-of-office messages": [
         "Configura ràpidament els missatges «fora de l'oficina»"
       ],
@@ -5216,6 +5281,9 @@
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Compartiu fitxers o carpetes amb qualsevol persona utilitzant enllaços segurs i compartibles."
+      ],
+      "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
+        "SMTP permet als serveis o dispositius de tercers enviar correu electrònic a través de ${ MAIL_APP_NAME }."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
         "NetShield, dissenyat especialment, protegeix el vostre dispositiu i accelera la navegació bloquejant anuncis, rastrejadors i programari maliciós"
@@ -5302,6 +5370,9 @@
       ],
       "Dedicated Account manager": [
         "Gestor de comptes dedicat"
+      ],
+      "Dedicated server locations in North America and Europe": [
+        "Ubicacions de servidors dedicats a Amèrica del Nord i Europa"
       ],
       "Multi-platform support": [
         "Suport multiplataforma"
@@ -5655,6 +5726,9 @@
       "Changing organization password": [
         "Canviant la contrasenya de l'organització"
       ],
+      "Creating or accessing non-private users": [
+        "S'estan creant o accedint a usuaris no privats"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "A causa d'un canvi de contrasenya, els privilegis d'administrador de la seva organització han estat restringits. Les següents accions ja no estan permeses:"
       ]
@@ -5841,6 +5915,9 @@
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Si no heu demanat restablir la contrasenya, cancel·leu aquesta sol·licitud."
+      ],
+      "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
+        "Restabliment de contrasenya disponible des de ${ boldDate }. Això us dona temps per a cancel·lar qualsevol sol·licitud fraudulenta."
       ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
         "S'ha sol·licitat el restabliment de la contrasenya (${ user.Email }). Podeu canviar la vostra contrasenya en ${ hoursRemaining } hora.",
@@ -6271,7 +6348,7 @@
         "1 connexió VPN"
       ],
       "Access to streaming services globally": [
-        "Accediu a serveis de reproducció en línia globalment"
+        "Accediu a serveis de transmissió en línia globalment"
       ],
       "Built-in ad blocker (NetShield)": [
         "Bloquejador d'anuncis integrat (NetShield)"
@@ -6349,9 +6426,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } copiat al vostre porta-retalls"
-      ],
       "Account deleted. Signing out...": [
         "S'ha eliminat el compte. S'està tancant la sessió..."
       ],
@@ -6818,6 +6892,9 @@
       "Email subscriptions": [
         "Subscripcions per correu electrònic"
       ],
+      "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
+        "Introduïu els detalls del compte de ${ BRAND_NAME } per unir-vos al programa beta de ${ app }"
+      ],
       "Enter your password": [
         "Introduïu la vostra contrasenya"
       ],
@@ -7052,6 +7129,9 @@
       "Upgrade your network protection with dedicated servers": [
         "Milloreu la vostra protecció de xarxa amb servidors dedicats"
       ],
+      "Upload CSV file to create multiple accounts": [
+        "Puja el fitxer CSV per a crear múltiples comptes"
+      ],
       "Users": [
         "Usuaris"
       ],
@@ -7063,6 +7143,9 @@
       ],
       "Verifying your payment...": [
         "S'està verificant el pagament..."
+      ],
+      "We'll send an email to your new address with instructions on completing the change.": [
+        "Enviarem un correu electrònic a la vostra nova adreça amb instruccions per completar el canvi."
       ],
       "What's new": [
         "Novetats"
@@ -7131,6 +7214,9 @@
       ]
     },
     "Tooltip": {
+      "Admins can make changes to your subscription, manage user accounts and passwords, and give admin privileges to other users.": [
+        "Els administradors poden fer canvis a la vostra subscripció, gestionar comptes d'usuari i contrasenyes i donar privilegis d'administrador a altres usuaris."
+      ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Canvia automàticament entre els temes preferits per a dia i nit en sincronització amb els modes de dia i nit del sistema"
       ],
@@ -7182,6 +7268,11 @@
         "Inici de sessió únic (SSO)"
       ]
     },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "Usuari SSO proporcionat pel vostre proveïdor d'identitat"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ length } character": [
         "La contrasenya ha de tenir com a mínim ${ length } caràcter",
@@ -7194,13 +7285,13 @@
     },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
-        "He trobat un altre servei que m'agrada mes."
+        "He trobat un altre servei que m'agrada més."
       ],
       "It’s missing a key feature": [
         "Li falta una característica clau."
       ],
       "It’s too expensive": [
-        "Es massa car."
+        "És massa car."
       ],
       "Other": [
         "Altre"
