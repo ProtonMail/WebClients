@@ -3,6 +3,7 @@
 ### Improvements
 
 -   Improved the error message for cases where the entered text in auto-replies is too long
+-   Added the ability to display up to 200 messages/conversations per page. You can find the Setting in Settings > Messages > Messages and composing
 
 ### Fixes
 
