@@ -239,9 +239,6 @@
       "Continue with this password": [
         "繼續使用此密碼"
       ],
-      "Copy": [
-        "複製"
-      ],
       "Copy address": [
         "複製郵件位址"
       ],
@@ -361,9 +358,6 @@
       ],
       "Download": [
         "下載"
-      ],
-      "Download all configurations": [
-        "下載所有組態設定"
       ],
       "Download CSV sample": [
         "下載 CSV 範本"
@@ -511,6 +505,9 @@
       ],
       "Get verification code": [
         "取得驗證碼"
+      ],
+      "Give feedback": [
+        "意見回饋"
       ],
       "Go to label": [
         "跳至標籤"
@@ -1001,6 +998,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "升級以啟用${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Visionary": [
+        "升級到 Visionary 方案"
+      ],
       "Upgrade your plan": [
         "升級您的方案"
       ],
@@ -1300,6 +1300,9 @@
       ]
     },
     "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "**購買我們的密碼管理器** 僅需 ${ price }"
+      ],
       "Add ${ PASS_APP_NAME }": [
         "增加 ${ PASS_APP_NAME }"
       ],
@@ -1363,6 +1366,14 @@
         "進階版密碼管理器"
       ]
     },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "折扣是以每月標準價格為基礎。"
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "您的訂閱將在您的結算週期結束時以相同的費率自動續訂。"
+      ]
+    },
     "bf2023: header": {
       "Select your Black Friday offer": [
         "選取您的黑色星期五方案"
@@ -1375,11 +1386,20 @@
       ]
     },
     "bf2023: info": {
+      "Secure browsing and premium VPN features.": [
+        "安全瀏覽和進階 VPN 功能。"
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此優惠無法在您的方案中使用。"
+      ],
       "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
         "抱歉，你目前的方案無法使用此優惠。但是，當你訂購 **${ months }** 時，你可以享受 **${ plan.Title } 的 ${ discountPercentage }** 優惠"
       ]
     },
     "bf2023: Info": {
+      "6 TB storage (2x more than any other plan)": [
+        "6TB 的儲存空間 (比其他方案多兩倍)"
+      ],
       "6 users": [
         "6 位使用者"
       ]
@@ -1403,14 +1423,38 @@
       ]
     },
     "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "存取遭封鎖的內容並保持隱私。使用遍佈於65+個國家的超過 3000 台伺服器，讓最快的 VPN 帶您暢享世上的串流平台，還有病毒與廣告攔截器、迅速的 BitTorrent 下載等多項功能可用。"
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "在世界各地暢享串流服務的影音內容，包含 Netflix、Disney+、Prime Video 等平台。"
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "我們遍佈全世界的網路與伺服器助您翻過長城，免於審查。"
+      ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 ${ domains } 組自訂電子郵件網域、${ addresses } 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "在您所有的裝置安全登入。包含無限郵件別名、共享以及整合的 2FA等功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "透過端對端加密保護您的電子郵件。包含自訂電子郵件網域、15 個電子郵件位址、無限的 hide-my-email 別名與行事曆共用等等的功能。"
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
       ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "精心設計的 NetShield 保護您的裝置並攔截讓您變慢的廣告、追蹤程式與惡意軟體。"
+      ],
       "Storage space is shared across all ${ BRAND_NAME } apps.": [
         "儲存空間於${ BRAND_NAME }共用。"
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "包存最多200份檔案歷程記錄長達10年。"
       ]
     },
     "Billing cycle": {
@@ -3017,6 +3061,11 @@
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
       ]
     },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "使用 Easy Switch 匯入小幫手"
+      ]
+    },
     "Description of the purpose of the import CSV modal": {
       "Also, we have automatically matched CSV fields with vCard fields. You can review and change this matching manually.": [
         "另外，我們已將 CSV 自動轉換為 vCard 信息，您可以查看並修改對應關係。"
@@ -3497,6 +3546,11 @@
         "雙重驗證"
       ]
     },
+    "eoy2023: Deal details": {
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "${ MAIL_SHORT_APP_NAME }付費及${ CALENDAR_APP_NAME }功能"
+      ]
+    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。您也可查看我們的${ statusPageLink }"
@@ -3960,6 +4014,9 @@
       "You need to have a custom domain address in order to generate an SMTP submission token.": [
         "若要產生 SMTP 傳送通證，您需要擁有一個自訂網域位址。"
       ],
+      "You've reached the maximum character number. Please shorten your message.": [
+        "您已達到此訊息的最大字元數。請縮短您的訊息。"
+      ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "您的帳號或組織有待繳清的繳款單。請儘速繳納所有未付繳款單。"
       ],
@@ -4155,6 +4212,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "App 目前無法使用"
+      ],
       "Error: ${ errorMessage }": [
         "錯誤：${ errorMessage }"
       ],
@@ -5850,9 +5910,6 @@
       "Are you sure you want to delete this filter?": [
         "您確定要刪除此篩選器嗎？"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "您確定您要刪除此資料夾嗎？所有下層資料夾也都將會被刪除。"
-      ],
       "Are you sure you want to delete this label?": [
         "您確定要刪除此標籤嗎？"
       ],
@@ -6134,12 +6191,6 @@
       ],
       "Emailing preference saved": [
         "電子通訊喜好設定已儲存"
-      ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "儲存在此資料夾中的電郵不會被刪除，仍可在「所有郵件」資料夾中找到。"
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "帶有此標籤的電郵不會被刪除，仍可在對應的資料夾中找到。"
       ],
       "Enable this address to join this calendar": [
         "啟用此位址來加入這個行事曆"
@@ -6663,9 +6714,6 @@
       "Phone number": [
         "手機號碼"
       ],
-      "Plan upgrade required": [
-        "需要升級方案"
-      ],
       "Please add email addresses for the users on rows": [
         "請在此行使用者處加入電郵位址"
       ],
@@ -6699,9 +6747,6 @@
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "請注意：假如您刪除此域名，所有與其關聯的電郵位址都將被停用。"
       ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "請注意：假如您刪除此篩選器，其觸發的自動化動作將全部停止處理。"
-      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "在按一下「確認」按鈕後，您的帳號儲值餘額將為 ${ creditsRemaining }。"
       ],
@@ -6734,6 +6779,9 @@
       ],
       "Preview failed to be loaded": [
         "連結載入失敗"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "目前不支援在這個瀏覽器中預覽這個類型的檔案。"
       ],
       "Preview for this file type is not supported": [
         "不支援預覽此檔案類型"
@@ -8156,6 +8204,9 @@
       ],
       "Awarded": [
         "獲得獎勵"
+      ],
+      "Beta": [
+        "測試版"
       ],
       "Billing address": [
         "帳單位址"
@@ -9591,26 +9642,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "探索其他 ${ BRAND_NAME } 方案"
-      ],
-      "From ${ price }": [
-        "${ price }起"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "保留我的 ${ currentPlanName } $ 帳號"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "繼續確認方案"
@@ -9650,6 +9681,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "升級到 ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "探索其他 ${ BRAND_NAME } 方案"
+      ],
+      "From ${ price }": [
+        "${ price }起"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "保留我的 ${ currentPlanName } $ 帳號"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
       ]
     },
     "new_plans: feature": {
@@ -11241,6 +11292,11 @@
         "yourdomain.com"
       ]
     },
+    "plan customizer, ips": {
+      "Should you need more than ${ maxIPs } IPs, ": [
+        "您需要多餘 ${ maxIPs } IP, "
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "業務聯繫"
@@ -11495,6 +11551,15 @@
       ]
     },
     "session_recovery:available:info": {
+      " You have ${ timeRemaining.inHours } hours to reset your password.": [
+        " 你有${ timeRemaining.inHours }小時重設密碼。"
+      ],
+      " You have ${ timeRemaining.inMinutes } minutes to reset your password.": [
+        " 你有${ timeRemaining.inMinutes }分鐘重設密碼。"
+      ],
+      " You have ${ timeRemaining.inSeconds } seconds to reset your password.": [
+        " 你有${ timeRemaining.inSeconds }秒重設密碼。"
+      ],
       "${ timeRemaining.inDays } days": [
         "${ timeRemaining.inDays }天"
       ],
@@ -11507,6 +11572,9 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "若您沒有需求重設密碼，請立刻取消需求。"
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "密碼重設需要核准(${ user.Email })。"
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "請前往已登入的裝置（在發起需求的工作階段中）變更您的密碼。"
       ],
@@ -11516,14 +11584,23 @@
       "This permission expires in ${ timeRemaining.inHours } hours": [
         "此權限將在${ timeRemaining.inHours }小時後過期"
       ],
+      "This permission expires soon": [
+        "此權限即將到期"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "現在您可以在${ boldDaysRemaining }內免費變更帳號 ${ boldEmail } 的密碼。"
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "現在您可以變更此帳號 ${ boldEmail } 的密碼。"
       ],
       "You can now reset your password": [
         "您現在可以重設密碼了。"
       ],
       "You can reset your password until ${ boldDate }.": [
         "您可以在 ${ boldDate } 前重設密碼。"
+      ],
+      "You have ${ timeRemaining.inDays } days to reset your password.": [
+        "你有${ timeRemaining.inDays }天重設密碼。"
       ]
     },
     "session_recovery:available:link": {
@@ -11696,6 +11773,9 @@
     "session_recovery:settings:info": {
       "To disallow password reset, you must have a recovery method set up.": [
         "若要停用密碼重設，您必須設定備援方法。"
+      ],
+      "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
+        "為了增強您帳號的安全性和保護您的資料，您可以在網頁應用程式的帳號設定中請求變更密碼。"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -12272,9 +12352,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } 已複製到剪貼簿"
-      ],
       "Account deleted. Signing out...": [
         "帳號已刪除。正在登出..."
       ],
@@ -12671,6 +12748,9 @@
       ]
     },
     "Title": {
+      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
+        " 取得 Windows 和 Mac 版本的 ${ MAIL_APP_NAME }"
+      ],
       "${ appName } Free": [
         "${ appName } Free"
       ],
@@ -12986,15 +13066,6 @@
       "Delete ${ email }": [
         "刪除 ${ email }"
       ],
-      "Delete ${ filterName }": [
-        "刪除 ${ filterName }"
-      ],
-      "Delete ${ label.Name } folder": [
-        "刪除 ${ label.Name } 資料夾"
-      ],
-      "Delete ${ label.Name } label": [
-        "刪除 ${ label.Name } 標籤"
-      ],
       "Delete ${ tokenNameToRemove }?": [
         "刪除 ${ tokenNameToRemove }？"
       ],
@@ -13004,8 +13075,14 @@
       "Delete calendar": [
         "刪除行事曆"
       ],
+      "Delete folder?": [
+        "刪除資料夾?"
+      ],
       "Delete key permanently?": [
         "永久刪除金鑰?"
+      ],
+      "Delete label?": [
+        "刪除標籤?"
       ],
       "Delete logs": [
         "刪除記錄檔"
@@ -13021,6 +13098,9 @@
       ],
       "Delete version history?": [
         "刪除版本歷史紀錄？"
+      ],
+      "Desktop app": [
+        "桌面應用程式"
       ],
       "Disable ${ email }": [
         "停用 ${ email }"
