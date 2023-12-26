@@ -4814,9 +4814,6 @@
       "Are you sure you want to delete all messages with this label?": [
         "确定要删除带有此标签的所有邮件吗？"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "确定要删除此文件夹吗？所有子文件夹也将被删除。"
-      ],
       "Are you sure you want to delete this label?": [
         "确定要删除此标签吗？"
       ],
@@ -5020,12 +5017,6 @@
       ],
       "Emails are automatically signed": [
         "自动对邮件进行数字签名"
-      ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "放在此文件夹中的邮件不会被删除，且仍可在 \"所有邮件\" 文件夹中找到。"
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "带有此标签的邮件不会被删除，且仍可在相应文件夹中找到。"
       ],
       "embedded images": [
         "张嵌入图像"
@@ -8696,12 +8687,6 @@
       ],
       "Delete ${ count } messages": [
         "删除 ${ count } 封邮件"
-      ],
-      "Delete ${ label.Name } folder": [
-        "删除 ${ label.Name } 文件夹"
-      ],
-      "Delete ${ label.Name } label": [
-        "删除 ${ label.Name } 标签"
       ],
       "Delete ${ Name }": [
         "删除 ${ Name }"

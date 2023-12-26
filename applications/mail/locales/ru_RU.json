@@ -1400,6 +1400,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Обходите локальные блокировки Интернета и цензуру с помощью нашей глобальной сети серверов."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Включает поддержку ${ domains } пользовательского почтового домена, ${ addresses } адреса электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое.",
+        "Включает поддержку ${ domains } пользовательских почтовых доменов, ${ addresses } адресов электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое.",
+        "Включает поддержку ${ domains } пользовательских почтовых доменов, ${ addresses } адресов электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое.",
+        "Включает поддержку ${ domains } пользовательских почтовых доменов, ${ addresses } адресов электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
       ],
@@ -3241,12 +3247,37 @@
         "Имя файла с зашифрованными заголовками"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Платные функции ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } и ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Включает историю версий в ${ DRIVE_SHORT_APP_NAME }, доступ к тысячам высокоскоростных ${ VPN_SHORT_APP_NAME } серверам, совместное использование в ${ PASS_SHORT_APP_NAME } и другое"
+      ]
+    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 ТБ"
+      ],
+      "6 users": [
+        "6 пользователей"
+      ],
+      "Early access to new apps and features": [
+        "Early access to new apps and features"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Ранний доступ к приложению ${ MAIL_APP_NAME } для настольных компьютеров"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Платные функции ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_APP_NAME }"
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } не может подключиться к вашему внешнему аккаунту"
+      ],
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } для ${ email }. Вы можете добавить другой ключ или отключить шифрование для этого контакта, чтобы решить проблему."
       ],
@@ -3634,6 +3665,9 @@
       "Try using only letters, numerals, and _.-": [
         "Попробуйте, используя только буквы, цифры и _.-"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "Неожиданная ошибка, мы не можем импортировать контакты"
+      ],
       "Unknown error": [
         "Неизвестная ошибка"
       ],
@@ -3749,6 +3783,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Ошибка шифрования"
+      ],
+      "Missing FN property": [
+        "Отсутствует свойство FN"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard версий < 3.0 не поддерживается"
@@ -4373,6 +4410,9 @@
       ],
       "Continue setting up your email": [
         "Продолжить настройку вашей электронной почты"
+      ],
+      "Discover how our ${ strongText } protect you": [
+        "Узнайте, как наши ${ strongText } защищают вас"
       ],
       "Discover privacy features": [
         "Откройте для себя функции конфиденциальности"
@@ -5139,14 +5179,17 @@
       "and": [
         "и"
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Все вложенные папки также будут удалены. Однако письма, хранящиеся в этой папке ${ nameDeleted }, не будут удалены и могут быть найдены в папке \"Вся почта\"."
+      ],
       "Are you sure you want to delete all messages in this folder?": [
         "Вы уверены, что хотите удалить все письма из этой папки?"
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Вы уверены, что хотите удалить все письма с этим ярлыком?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Вы уверены, что хотите удалить эту папку? Все вложенные папки тоже будут удалены."
+      "Are you sure you want to delete this folder?": [
+        "Вы уверены, что хотите удалить эту папку?"
       ],
       "Are you sure you want to delete this label?": [
         "Вы уверены, что хотите удалить этот ярлык?"
@@ -5373,11 +5416,8 @@
       "Emails are automatically signed": [
         "Электронные письма подписываются автоматически"
       ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Письма, хранящиеся в этой папке, не будут удалены и по-прежнему могут быть найдены в папке \"Вся почта\"."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Письма, помеченные этим ярлыком, не будут удалены и по-прежнему могут быть найдены в соответствующей папке."
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Письма, помеченные этим ярлыком ${ nameDeleted }, не будут удалены и по-прежнему могут быть найдены в соответствующей папке."
       ],
       "embedded image": [
         "встроенное изображение",
@@ -9274,12 +9314,6 @@
         "Удалить ${ count } сообщений",
         "Удалить ${ count } сообщений"
       ],
-      "Delete ${ label.Name } folder": [
-        "Удалить папку ${ label.Name }"
-      ],
-      "Delete ${ label.Name } label": [
-        "Удалить ярлык ${ label.Name }"
-      ],
       "Delete ${ Name }": [
         "Удалить ${ Name }"
       ],
@@ -9291,6 +9325,12 @@
       ],
       "Delete draft": [
         "Удалить черновик"
+      ],
+      "Delete folder?": [
+        "Удалить папку?"
+      ],
+      "Delete label?": [
+        "Удалить ярлык?"
       ],
       "Delete message": [
         "Удалить сообщение"

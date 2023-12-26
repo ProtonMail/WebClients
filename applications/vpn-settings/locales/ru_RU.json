@@ -95,9 +95,6 @@
       "Continue with this password": [
         "Продолжить с этим паролем"
       ],
-      "Copy": [
-        "Копировать"
-      ],
       "Copy address": [
         "Копировать адрес"
       ],
@@ -157,9 +154,6 @@
       ],
       "Download": [
         "Скачать"
-      ],
-      "Download all configurations": [
-        "Скачать все конфигурации"
       ],
       "Download our CSV template": [
         "Скачайте наш шаблон CSV"
@@ -223,6 +217,9 @@
       ],
       "Get more licenses": [
         "Получите больше лицензий"
+      ],
+      "Get more servers": [
+        "Получить больше серверов"
       ],
       "Get the deal": [
         "Воспользоваться"
@@ -469,6 +466,9 @@
       ],
       "Upgrade now": [
         "Улучшить сейчас"
+      ],
+      "Upgrade to Visionary": [
+        "Улучшить до Visionary"
       ],
       "Upgrade your plan": [
         "Улучшить тариф"
@@ -772,6 +772,12 @@
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Обходите локальные блокировки Интернета и цензуру с помощью нашей глобальной сети серверов."
+      ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Включает поддержку ${ domains } пользовательского почтового домена, ${ addresses } адреса электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое.",
+        "Включает поддержку ${ domains } пользовательских почтовых доменов, ${ addresses } адресов электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое.",
+        "Включает поддержку ${ domains } пользовательских почтовых доменов, ${ addresses } адресов электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое.",
+        "Включает поддержку ${ domains } пользовательских почтовых доменов, ${ addresses } адресов электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
@@ -1829,6 +1835,14 @@
         "Выделите различные аспекты своей жизни с помощью нескольких адресов электронной почты и получите доступ к дополнительным функциям при обновлении тарифа."
       ]
     },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Доступ к приложению для настольных компьютеров ограничен"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Бета-версия приложения ${ MAIL_APP_NAME } для настольных компьютеров в настоящее время доступна только для подписчиков ${ BRAND_NAME } Visionary. Она будет доступна всем пользователям в начале 2024 года."
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Ошибки или проблемы с качеством"
@@ -1870,9 +1884,31 @@
         "Двухфакторная аутентификация"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Платные функции ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } и ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Включает историю версий в ${ DRIVE_SHORT_APP_NAME }, доступ к тысячам высокоскоростных ${ VPN_SHORT_APP_NAME } серверам, совместное использование в ${ PASS_SHORT_APP_NAME } и другое"
+      ]
+    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 ТБ"
+      ],
+      "6 users": [
+        "6 пользователей"
+      ],
+      "Early access to new apps and features": [
+        "Early access to new apps and features"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Ранний доступ к приложению ${ MAIL_APP_NAME } для настольных компьютеров"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Платные функции ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_APP_NAME }"
       ]
     },
     "Error": {
@@ -2648,6 +2684,9 @@
       "Create your account": [
         "Создать аккаунт"
       ],
+      "IP address": [
+        "IP-адрес"
+      ],
       "Members": [
         "Участники"
       ],
@@ -2770,6 +2809,9 @@
       ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice } /месяц)"
+      ],
+      "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
+        "**Получите адрес** ${ BRAND_NAME } для использования всех служб ${ BRAND_NAME_TWO }, включая ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонусного пространства"
@@ -2981,6 +3023,9 @@
       "Emailing preference saved": [
         "Настройки отправки почты сохранены"
       ],
+      "Enhance your network security": [
+        "Повысьте безопасность вашей сети"
+      ],
       "Enter key manually instead": [
         "Ввести ключ вручную"
       ],
@@ -3031,6 +3076,9 @@
       ],
       "for choosing ${ product }": [
         "за выбор ${ product }"
+      ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Для членов организаций, использующих единое предъявление пароля (SAML SSO)"
       ],
       "Free forever": [
         "Бесплатно навсегда"
@@ -3122,6 +3170,9 @@
       "Internet connection restored.": [
         "Подключение к Интернету восстановлено."
       ],
+      "Lean more about gateways": [
+        "Узнайте больше о шлюзах"
+      ],
       "Learn how to sign in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Узнайте, как войти в ${ VPN_APP_NAME } с помощью сторонних приложений VPN."
       ],
@@ -3160,6 +3211,12 @@
       ],
       "Multi-user support not enabled.": [
         "Многопользовательский режим не включён."
+      ],
+      "Must be between 3 and 20 characters long.": [
+        "Должен быть длиной от 3 до 20 символов."
+      ],
+      "Must start with a letter.": [
+        "Должен начинаться с буквы."
       ],
       "No addresses exist": [
         "Нет адресов"
@@ -3220,9 +3277,6 @@
       ],
       "per month, billed every 24 months": [
         "в месяц, оплачивается каждые 24 месяца"
-      ],
-      "Plan upgrade required": [
-        "Требуется улучшение тарифа"
       ],
       "Please add a password for the user on row": [
         "Добавьте пароль для пользователя в строке",
@@ -3464,6 +3518,9 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Это может занять от нескольких секунд до нескольких минут в зависимости от вашего устройства"
       ],
+      "This could take some time. Please do not close this page or disconnect from the internet.": [
+        "Это может занять некоторое время. Не закрывайте эту страницу и не отключайтесь от Интернета."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Этот пользователь в настоящее время отвечает за платежи вашей организации. Понизив этого пользователя в должности, вы станете ответственным за платежи вашей организации."
       ],
@@ -3490,6 +3547,9 @@
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
         "Этот мастер включит двухфакторную аутентификацию (2FA) для вашей учетной записи ${ BRAND_NAME }. Двухфакторная аутентификация сделает ваш аккаунт ${ BRAND_NAME_TWO } более безопасным, поэтому мы рекомендуем включить ее."
+      ],
+      "to ${ product } Business": [
+        "на ${ product } Business"
       ],
       "To cancel your subscription, please reach out to us.": [
         "Чтобы отменить вашу подписку, пожалуйста, свяжитесь с нами."
@@ -3632,6 +3692,9 @@
       "We need to authenticate your payment with your bank.": [
         "Нам нужно подтвердить ваш платёж в вашем банке."
       ],
+      "We recommend having at least 2 servers in order to provide redundancy.": [
+        "Мы рекомендуем иметь не менее 2 серверов для обеспечения резервирования."
+      ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Мы рекомендуем уведомить участников организации и попросить их настроить двухфакторную аутентификацию для своих аккаунтов перед введением обязательного использования двухфакторной аутентификации."
       ],
@@ -3688,6 +3751,12 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "В настоящее время вы вошли как ${ user.Name } (${ user.Email })."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Сейчас вы используете ${ organization.UsedMembers } из вашей ${ organization.MaxMembers } доступной пользовательской лицензии.",
+        "Сейчас вы используете ${ organization.UsedMembers } из ваших ${ organization.MaxMembers } доступных пользовательских лицензий.",
+        "Сейчас вы используете ${ organization.UsedMembers } из ваших ${ organization.MaxMembers } доступных пользовательских лицензий.",
+        "Сейчас вы используете ${ organization.UsedMembers } из ваших ${ organization.MaxMembers } доступных пользовательских лицензий."
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "Вы вошли в аккаунт ${ memberAddress }."
@@ -3805,6 +3874,9 @@
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Пароль вашей организации может быть предоставлен другим пользователям, которым вы захотите предоставить права администратора. Он также является кодом аварийного восстановления доступа к вашей организации в случае, если вы вдруг потеряете доступ к своей учётной записи. Пожалуйста, сохраните данный пароль и храните его в безопасности."
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Ваша организация использует единый вход (SSO). Нажмите нв Войти, чтобы продолжить работу с поставщиком услуг SSO."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Ваши платежные данные защищены шифрованием TLS и законами о Швейцарии о частной жизни."
@@ -4516,11 +4588,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Забыли имя пользователя аккаунта ${ BRAND_NAME }? Найдите его, используя вашу резервную электронную почту или номер телефона, и восстановите доступ к ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } и другим сервисам."
       ],
+      "Private and secure email, no credit card required": [
+        "Приватная и защищенная электронная почта, кредитная карта не требуется"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Сбросить пароль от аккаунта ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Войти, чтобы получить доступ к аккаунту ${ appName }"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Попробуйте ${ planName } бесплатно, перейдя по этой ссылке"
       ]
     },
     "Monetary unit": {
@@ -5338,6 +5416,11 @@
         "У вас может быть несколько администраторов. Они все могут добавлять пользователей и управлять ими, но только основной администратор контролирует оплату"
       ]
     },
+    "new_plans: upgrade": {
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "В комплект входит тариф ${ BRAND_NAME } for Business для нескольних пользователей."
+      ]
+    },
     "new_plans: Upsell attribute": {
       "24/7 support": [
         "В любое время"
@@ -5406,6 +5489,9 @@
       ],
       "Invalid code": [
         "Недействительный код"
+      ],
+      "IP Address copied to clipboard": [
+        "İP-адрес скопирован в буфер обмена"
       ],
       "Key copied to the clipboard": [
         "Ключ скопирован в буфер обмена"
@@ -5642,6 +5728,12 @@
       ],
       "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
         "Выберите количество адресов IP, которые необходимо включить в ваш тариф. Каждый дополнительный IP стоит ${ price }."
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "Если вам потребуется больше ${ maxIPs } IP, ",
+        "Если вам потребуется больше ${ maxIPs } IP, ",
+        "Если вам потребуется больше ${ maxIPs } IP, ",
+        "Если вам потребуется больше ${ maxIPs } IP, "
       ]
     },
     "plan customizer, users": {
@@ -5956,6 +6048,12 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "Запросить сброс пароля?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Вы сможете восстановить свой пароль через ${ gracePeriodHoursRemaining } час",
+        "Вы сможете восстановить свой пароль через ${ gracePeriodHoursRemaining } часа",
+        "Вы сможете восстановить свой пароль через ${ gracePeriodHoursRemaining } часов",
+        "Вы сможете восстановить свой пароль через ${ gracePeriodHoursRemaining } часов"
       ]
     },
     "session_recovery:sign_out:info": {
@@ -6430,9 +6528,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } скопирован в ваш буфер обмена"
-      ],
       "Account deleted. Signing out...": [
         "Аккаунт удален. Выходим из системы..."
       ],
@@ -6716,6 +6811,9 @@
       ],
       "Add user accounts": [
         "Добавить учётную запись пользователя"
+      ],
+      "Add users": [
+        "Добавить пользователей"
       ],
       "Allocate storage": [
         "Выделение объёма в хранилище"

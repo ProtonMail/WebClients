@@ -3243,6 +3243,11 @@
         "Verschlüsselter Header-Dateiname"
       ]
     },
+    "eoy2023: Deal details": {
+      "Early access to new apps and features": [
+        "Früher Zugang zu neuen Anwendungen und Funktionen"
+      ]
+    },
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } für <${ email }>. Du kannst einen anderen Schlüssel hinzufügen oder die Verschlüsselung für diesen Kontakt deaktivieren, um das Problem zu beheben."
@@ -5017,14 +5022,17 @@
       "and": [
         "und"
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Alle Unterordner werden ebenfalls gelöscht. E-Mails, die im Ordner ${ nameDeleted } gespeichert sind, werden jedoch nicht gelöscht und können im Ordner \"Alle E-Mails\" gefunden werden."
+      ],
       "Are you sure you want to delete all messages in this folder?": [
         "Möchtest du wirklich alle Nachrichten in diesem Ordner löschen?"
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Möchtest du wirklich alle Nachrichten mit dieser Kategorie löschen?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Bist du sicher, dass du diesen Ordner löschen möchtest? Alle Unterordner werden ebenfalls gelöscht."
+      "Are you sure you want to delete this folder?": [
+        "Möchtest du diesen Ordner wirklich löschen?"
       ],
       "Are you sure you want to delete this label?": [
         "Möchtest du diese Kategorie wirklich löschen?"
@@ -5241,11 +5249,8 @@
       "Emails are automatically signed": [
         "E-Mails werden automatisch signiert."
       ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "E-Mails, die in diesem Ordner abgelegt sind, werden nicht gelöscht und sind weiterhin im Ordner „Alle Nachrichten“ verfügbar."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "E-Mails, die mit dieser Kategorie gekennzeichnet sind, werden nicht gelöscht und sind weiterhin im entsprechenden Ordner zu finden."
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "E-Mails, die mit der Kategorie ${ nameDeleted } gekennzeichnet sind, werden nicht gelöscht und sind weiterhin im entsprechenden Ordner zu finden."
       ],
       "embedded image": [
         "eingebettetes Bild",
@@ -9147,12 +9152,6 @@
         "${ count } Nachricht löschen",
         "${ count } Nachrichten löschen"
       ],
-      "Delete ${ label.Name } folder": [
-        "Ordner „${ label.Name }“ löschen"
-      ],
-      "Delete ${ label.Name } label": [
-        "Kategorie „${ label.Name }“ löschen"
-      ],
       "Delete ${ Name }": [
         "${ Name } löschen"
       ],
@@ -9164,6 +9163,12 @@
       ],
       "Delete draft": [
         "Entwurf löschen"
+      ],
+      "Delete folder?": [
+        "Ordner löschen?"
+      ],
+      "Delete label?": [
+        "Kategorie löschen?"
       ],
       "Delete message": [
         "Nachricht löschen"

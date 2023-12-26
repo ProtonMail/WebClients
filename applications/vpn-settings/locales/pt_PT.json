@@ -95,9 +95,6 @@
       "Continue with this password": [
         "Continuar com esta palavra-passe"
       ],
-      "Copy": [
-        "Copiar"
-      ],
       "Copy address": [
         "Copiar endereço"
       ],
@@ -163,9 +160,6 @@
       ],
       "Download": [
         "Transferir"
-      ],
-      "Download all configurations": [
-        "Transferir todas as definições"
       ],
       "Download our CSV template": [
         "Descarregue o nosso modelo CSV"
@@ -3203,9 +3197,6 @@
       "per month, billed every 24 months": [
         "por mês, faturado a cada 24 meses"
       ],
-      "Plan upgrade required": [
-        "Actualização do plano obrigatória"
-      ],
       "Please add a password for the user on row": [
         "Adicione uma palavra-passe para este utilizador na linha.",
         "Adicione uma palavra-passe para estes utilizadores na linha."
@@ -4510,11 +4501,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Esqueceu-se do seu nome de utilizador da conta ${ BRAND_NAME }? Encontre-o utilizando o seu e-mail ou número de telefone de recuperação e recupere o acesso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e muito mais."
       ],
+      "Private and secure email, no credit card required": [
+        "Endereço eletrónico privado e seguro, sem necessidade de cartão de crédito"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Redefina a palavra-passe da sua conta ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Inicie sessão para aceder à sua conta ${ appName }"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Experimente o ${ planName } gratuitamente com esta ligação"
       ]
     },
     "Monetary unit": {
@@ -6340,9 +6337,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } foi copiado para a área de transferência."
-      ],
       "Account deleted. Signing out...": [
         "Conta eliminada. A terminar sessão..."
       ],

@@ -313,6 +313,9 @@
       "Get started": [
         "Commencer"
       ],
+      "Get Started": [
+        "Commencer"
+      ],
       "Get verification code": [
         "Obtenir un code de vérification"
       ],
@@ -1141,6 +1144,11 @@
       ],
       "URL": [
         "URL"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Image du contact"
       ]
     },
     "Contact type label": {
@@ -2091,7 +2099,7 @@
         "Accès en avant-première aux nouvelles fonctionnalités et applications"
       ],
       "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Accès anticipé à l'application de bureau ${ MAIL_APP_NAME }"
+        "Accès en avant-première à l'application de bureau ${ MAIL_APP_NAME }"
       ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Fonctionnalités payantes de ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_APP_NAME }"
@@ -3703,9 +3711,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Pour de meilleurs résultats, évitez les activités de streaming et gourmandes en mémoire ou réduisez la taille de votre envoi."
       ],
-      "Free forever": [
-        "Gratuit pour toujours"
-      ],
       "Free up some space or add more storage space.": [
         "Libérez de l’espace ou ajoutez plus d’espace de stockage."
       ],
@@ -4117,9 +4122,6 @@
       "support team": [
         "équipe support"
       ],
-      "Swiss encrypted file storage": [
-        "Stockage de fichiers chiffrés, basé en Suisse"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporairement indisponible. Nous vous invitons à vérifier plus tard."
       ],
@@ -4253,6 +4255,9 @@
       "Trash is empty": [
         "Le dossier Corbeille est vide."
       ],
+      "Try ${ DRIVE_APP_NAME }: Free forever": [
+        "Essayez ${ DRIVE_APP_NAME } : gratuit pour toujours"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Testez les nouveaux produits, mises à jour et fonctionnalités de ${ BRAND_NAME } avant qu'ils ne soient accessibles au public. Cela rechargera l'application."
       ],
@@ -4340,8 +4345,8 @@
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "sera restauré dans sa version datée du ${ formattedRevisionDate }. Toutes les autres versions seront conservées."
       ],
-      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
-        "Avec ${ DRIVE_APP_NAME }, vos données sont protégées par un chiffrement de bout en bout. Personne d'autre que vous ne peut les déchiffrer."
+      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
+        "Grâce à ${ DRIVE_APP_NAME }, vos données sont protégées par un chiffrement de bout en bout."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voulez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
@@ -6776,6 +6781,9 @@
       ],
       "Hide side panel": [
         "Masquer le panneau latéral"
+      ],
+      "Load image": [
+        "Charger l'image"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Sélectionnez le schéma PGP à utiliser lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut."
