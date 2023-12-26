@@ -5274,7 +5274,7 @@ __metadata:
     "@types/jasmine": "npm:^5.1.4"
     eslint: "npm:^8.56.0"
     eslint-plugin-jasmine: "npm:^4.1.3"
-    idb: "npm:^7.1.1"
+    idb: "npm:^8.0.0"
     jasmine: "npm:^5.1.0"
     jasmine-core: "npm:^5.1.1"
     karma: "npm:^6.4.2"
@@ -5508,7 +5508,7 @@ __metadata:
     cross-env: "npm:^7.0.3"
     eslint: "npm:^8.56.0"
     formik: "npm:^2.4.5"
-    idb: "npm:^7.1.1"
+    idb: "npm:^8.0.0"
     imask: "npm:^7.3.0"
     jest: "npm:^29.7.0"
     loglevel: "npm:^1.8.1"
@@ -20752,10 +20752,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"idb@npm:^7.0.1, idb@npm:^7.1.1":
+"idb@npm:^7.0.1":
   version: 7.1.1
   resolution: "idb@npm:7.1.1"
   checksum: 72418e4397638797ee2089f97b45fc29f937b830bc0eb4126f4a9889ecf10320ceacf3a177fe5d7ffaf6b4fe38b20bbd210151549bfdc881db8081eed41c870d
+  languageName: node
+  linkType: hard
+
+"idb@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "idb@npm:8.0.0"
+  checksum: d27547e03939d3d269cea38c3d4528569621ec134c717ebfc1ff816dce18e4f77372dba1d930384a9949ac56dc600e3790f98f1812a4164004e71fec302ee491
   languageName: node
   linkType: hard
 
