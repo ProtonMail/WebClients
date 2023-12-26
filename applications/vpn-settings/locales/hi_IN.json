@@ -89,9 +89,6 @@
       "Continue with this password": [
         "इस पासवर्ड के साथ जारी रखें"
       ],
-      "Copy": [
-        "कॉपी करें"
-      ],
       "Copy address": [
         "पता कॉपी करें"
       ],
@@ -148,9 +145,6 @@
       ],
       "Download": [
         "डाउनलोड करें"
-      ],
-      "Download all configurations": [
-        "सभी कॉन्फ़िगरेशन डाउनलोड करें"
       ],
       "Edit": [
         "बदलें"
@@ -211,6 +205,9 @@
       ],
       "Got it": [
         "समझ गए"
+      ],
+      "Help": [
+        "सहायता"
       ],
       "Hide": [
         "छिपाएं"
@@ -747,6 +744,14 @@
       "Total for ${ n } month": [
         "${ n } महीने के लिए पूरा",
         "${ n } महीने के लिए पूरा"
+      ]
+    },
+    "Checkout summary": {
+      "Servers": [
+        "सर्वर"
+      ],
+      "Users": [
+        "यूज़र"
       ]
     },
     "Collapsible tooltip": {
@@ -1686,6 +1691,11 @@
         "2-एफए"
       ]
     },
+    "eoy2023: Deal details": {
+      "6 users": [
+        "6 यूज़र"
+      ]
+    },
     "Error": {
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Messages and composing > Short domain (pm.me)": [
         "${ Local } आपका यूज़रनाम है। ${ Local }@${ Domain } बनाने कि लिए, कृपया जाए सेटिंग > संदेश और बनाना > छोटा डोमेन (pm.me)"
@@ -2107,6 +2117,9 @@
       "Access to all countries": [
         "सभी देशों तक पहुंच"
       ],
+      "Add": [
+        "जोड़ें"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "${ plusVpnConnections } डिवाइस तक के लिए कनेक्शन",
         "अधिकतम ${ plusVpnConnections } उपकरणों के लिए कनेक्शन"
@@ -2319,14 +2332,29 @@
       "Best deal": [
         "सबसे अच्छा सौदा"
       ],
+      "Country": [
+        "देश"
+      ],
       "Create your account": [
         "अपना खाता बनाएं"
+      ],
+      "Members": [
+        "सदस्य"
       ],
       "Name": [
         "नाम"
       ],
       "Select your pricing plan": [
         "अपना दाम संभालने वाला प्लान चुनें"
+      ],
+      "Server": [
+        "सर्वर"
+      ],
+      "Server load": [
+        "सर्वर लोड"
+      ],
+      "Servers": [
+        "सर्वर"
       ],
       "Status": [
         "स्थिति"
@@ -2471,6 +2499,9 @@
       ],
       "Amount below minimum (${ amount }).": [
         "न्यूनतम से कम राशि (${ amount })।"
+      ],
+      "Amount due": [
+        "देय राशि"
       ],
       "Are you sure you want to delete this address?": [
         "क्या आप वाकई इस पते को हटाना चाहते हैं?"
@@ -2775,6 +2806,12 @@
       "Once you reset your password:": [
         "आप एक बार अपना पासवर्ड बदलते है तो:"
       ],
+      "Open source": [
+        "ओपन सोर्स"
+      ],
+      "Optional": [
+        "वैकल्पिक"
+      ],
       "Or select a particular server:": [
         "या किसी विशेष सर्वर का चयन करें:"
       ],
@@ -2795,9 +2832,6 @@
       ],
       "per month": [
         "हर महीने"
-      ],
-      "Plan upgrade required": [
-        "योजना के उन्नयन की आवश्यकता"
       ],
       "Please add a password for the user on row": [
         "रो पे जो यूज़र है उसके लिए कृपया पासवर्ड जोड़ें",
@@ -2936,6 +2970,9 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "निम्नलिखित पते का उपयोग करके जमा करें या क्यूआर कोड स्कैन करें। पुष्टि के बाद आपकी जमा राशि आपके खाते में दिखाई देगी।"
+      ],
+      "Summary": [
+        "सार"
       ],
       "support team": [
         "टीम का समर्थन"
@@ -3425,6 +3462,9 @@
       "BTC address": [
         "बिटकॉइन पता"
       ],
+      "BTC amount": [
+        "बीटीसी राशि"
+      ],
       "Card holder": [
         "कार्ड धारक"
       ],
@@ -3755,11 +3795,17 @@
       "Common sign up issues": [
         "सामान्य साइन अप मुद्दे"
       ],
+      "Contact us": [
+        "हमसे संपर्क करें"
+      ],
       "Create account": [
         "खाता बनाएं"
       ],
       "Forgot username?": [
         "उपयोगकर्ता नाम भूल गए?"
+      ],
+      "Help translate": [
+        "हमें अनुवाद करने में मदद करें"
       ],
       "Learn more": [
         "और जानें"
@@ -4046,6 +4092,9 @@
       ],
       "Custom email domains": [
         "कस्टम ईमेल डोमेन"
+      ],
+      "Custom fields": [
+        "कस्टम फील्ड"
       ],
       "Data breach monitoring": [
         "डाटा लीक की निगरानी"
@@ -4621,11 +4670,17 @@
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "सीमित समय ऑफर"
+      ],
+      "Recommended": [
+        "सलाह"
       ]
     },
     "pass_signup_2023: Info": {
       "Creating your account": [
         "आपका खाता बन रहा है"
+      ],
+      "per month": [
+        "हर महीने"
       ],
       "Verifying your payment": [
         "आपका भुगतान सत्यापित कर रहे"
@@ -4796,9 +4851,19 @@
         "पासवर्ड परिवर्तन के कारण, आपके संगठन व्यवस्थापक विशेषाधिकार प्रतिबंधित कर दिए गए हैं। निम्नलिखित क्रियाओं की अब अनुमति नहीं है:"
       ]
     },
+    "Role": {
+      "Primary admin": [
+        "प्राथमिक व्यवस्थापक"
+      ]
+    },
     "Select file": {
       "Upload CSV file": [
         "CSV फाइल अपलोड करे"
+      ]
+    },
+    "Server-Info": {
+      "pending": [
+        "लंबित"
       ]
     },
     "session_recovery:available:action": {
@@ -4897,6 +4962,9 @@
       ],
       "Email address": [
         "ईमेल पता"
+      ],
+      "Password": [
+        "पासवर्ड"
       ],
       "Username": [
         "उपयोगकर्ता का नाम"
@@ -5236,9 +5304,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } आपके क्लिपबोर्ड पर कॉपी किया गया"
-      ],
       "Account deleted. Signing out...": [
         "खाता मिटाया गया। साइनआउट कर रहे..."
       ],
@@ -5417,11 +5482,20 @@
       "Display name": [
         "प्रदर्शित होने वाला नाम"
       ],
+      "Email": [
+        "ईमेल"
+      ],
       "Email addresses": [
         "ईमेल पता"
       ],
       "Name": [
         "नाम"
+      ],
+      "Password": [
+        "पासवर्ड"
+      ],
+      "Role": [
+        "भूमिका"
       ],
       "Status": [
         "स्थिति"
@@ -5801,6 +5875,9 @@
       "Status": [
         "स्थिति"
       ],
+      "Subscription": [
+        "सदस्यता"
+      ],
       "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
         "सफलतापूर्वक ${ localSuccessfullyCreatedUsers.length } यूज़र खाता बनाया गया",
         "सफलतापूर्वक ${ localSuccessfullyCreatedUsers.length } यूज़र खाते बनाए गए"
@@ -5808,6 +5885,9 @@
       "Successfully created ${ successfullyCreatedUsers.length } user account": [
         "सफलतापूर्वक ${ successfullyCreatedUsers.length } यूज़र खाता बनाया गया",
         "सफलतापूर्वक ${ successfullyCreatedUsers.length } यूज़र खाते बनाए गए"
+      ],
+      "Summary": [
+        "सार"
       ],
       "Switch to one-password mode": [
         "एक-पासवर्ड मोड में स्विच करें"
@@ -5826,6 +5906,9 @@
       ],
       "Unlock your mailbox": [
         "अपना मेलबॉक्स अनलॉक करें"
+      ],
+      "Users": [
+        "यूज़र"
       ],
       "Verification failed": [
         "सत्यापन असफल"
@@ -5878,6 +5961,9 @@
       "Addresses": [
         "पतों"
       ],
+      "Email": [
+        "ईमेल"
+      ],
       "Features": [
         "विशेषताएं"
       ],
@@ -5886,6 +5972,14 @@
       ],
       "Role": [
         "भूमिका"
+      ]
+    },
+    "Title subscription": {
+      "End date": [
+        "समाप्त होने की तारीख"
+      ],
+      "Status": [
+        "स्थिति"
       ]
     },
     "Tooltip": {

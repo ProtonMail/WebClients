@@ -95,9 +95,6 @@
       "Continue with this password": [
         "Συνεχίστε με αυτόν τον κωδικό πρόσβασης"
       ],
-      "Copy": [
-        "Αντιγραφή"
-      ],
       "Copy address": [
         "Αντιγραφή διεύθυνσης"
       ],
@@ -163,9 +160,6 @@
       ],
       "Download": [
         "Λήψη"
-      ],
-      "Download all configurations": [
-        "Λήψη όλων των διαμορφώσεων"
       ],
       "Download our CSV template": [
         "Λήψη του προτύπου CSV αρχείου μας"
@@ -250,6 +244,9 @@
       ],
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
+      ],
+      "Give feedback": [
+        "Αφήστε την κριτική σας"
       ],
       "Got it": [
         "Το κατάλαβα"
@@ -493,6 +490,9 @@
       ],
       "Upgrade to Business": [
         "Αναβαθμίστε στο Business"
+      ],
+      "Upgrade to Visionary": [
+        "Αναβάθμιση σε Visionary"
       ],
       "Upgrade your plan": [
         "Αναβαθμίστε το πρόγραμμά σας"
@@ -798,6 +798,10 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Παρακάμψτε τους τοπικούς αποκλεισμούς στο διαδίκτυο και τη λογοκρισία με το παγκόσμιο δίκτυο διακομιστών μας."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Περιλαμβάνει υποστήριξη για ${ domains } προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ addresses } διεύθυνση ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίων και άλλα.",
+        "Περιλαμβάνει υποστήριξη για ${ domains } προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίων και άλλα."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Περιλαμβάνει υποστήριξη για 1 προσαρμοσμένο τομέα ηλεκτρονικού ταχυδρομείου, 10 διευθύνσεις ηλεκτρονικού ταχυδρομείου, 10 hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
       ],
@@ -847,6 +851,11 @@
       ],
       "Two-year": [
         "Δύο έτη"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } Εφαρμογή Επιφάνειας Εργασίας"
       ]
     },
     "Bug category": {
@@ -1848,6 +1857,14 @@
         "Διαχωρίστε διαφορετικές πτυχές της ζωής σας με πολλές διευθύνσεις email και ξεκλειδώστε περισσότερες premium λειτουργίες όταν αναβαθμίσετε."
       ]
     },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Η πρόσβαση στην εφαρμογή επιφάνειας εργασίας είναι περιορισμένη"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Η έκδοση beta της εφαρμογής επιφάνειας εργασίας ${ MAIL_APP_NAME } περιορίζεται προς το παρόν σε συνδρομητές ${ BRAND_NAME } Visionary. Θα είναι διαθέσιμο σε όλους τους χρήστες στις αρχές του 2024."
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Σφάλματα ή ζητήματα ποιότητας"
@@ -1887,6 +1904,33 @@
     "Enabled 2FA": {
       "2FA": [
         "2FA"
+      ]
+    },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Πληρωμένα ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ PASS_SHORT_APP_NAME } χαρακτηριστικά"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Περιλαμβάνει ιστορικό εκδόσεων σε ${ DRIVE_SHORT_APP_NAME }, πρόσβαση σε χιλιάδες διακομιστές υψηλής ταχύτητας ${ VPN_SHORT_APP_NAME }, κοινή χρήση σε ${ PASS_SHORT_APP_NAME } και πολλά άλλα."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 χρήστες"
+      ],
+      "Early access to new apps and features": [
+        "Πρώιμη πρόσβαση σε νέες εφαρμογές και λειτουργίες"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Πρώιμη πρόσβαση στη ${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "${ MAIL_SHORT_APP_NAME } και ${ CALENDAR_APP_NAME } πληρωμένα χαρακτηριστικά"
       ]
     },
     "Error": {
@@ -3080,6 +3124,9 @@
       "for choosing ${ product }": [
         "για την επιλογή ${ product }"
       ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Για μέλη οργανισμών που χρησιμοποιούν καθολική σύνδεση (SAML SSO)"
+      ],
       "Free forever": [
         "Δωρεάν για πάντα"
       ],
@@ -3295,9 +3342,6 @@
       ],
       "per month, billed every 24 months": [
         "ανά μήνα, χρεώνεται κάθε 24 μήνες"
-      ],
-      "Plan upgrade required": [
-        "Απαιτείται αναβάθμιση πακέτου"
       ],
       "Please add a password for the user on row": [
         "Παρακαλούμε προσθέστε ένα κωδικό πρόσβασης για το χρήστη στη σειρά",
@@ -3906,6 +3950,9 @@
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Ο κωδικός πρόσβασης για τον οργανισμό σας μπορεί να διαμοιραστεί με άλλους χρήστες που θέλετε να δώσετε δικαιώματα διαχειριστή. Είναι επίσης ένας κώδικας επείγουσας ανάκτησης για να αποκτήσετε πρόσβαση στον οργανισμό σας σε περίπτωση που χάσετε την πρόσβαση στο λογαριασμό σας. Παρακαλώ αποθηκεύστε αυτόν τον κωδικό και κρατήστε τον ασφαλή."
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Ο οργανισμός σας χρησιμοποιεί καθολική σύνδεση (SSO). Πατήστε Σύνδεση για να συνεχίσετε με τον πάροχο SSO σας."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Τα στοιχεία πληρωμών σας είναι προστατευμένα με κρυπτογράφηση TLS καθώς και με νόμους της Ελβετίας περί ιδιωτικότητας."
@@ -4612,11 +4659,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Ξεχάσατε τον όνομα χρήστη του ${ BRAND_NAME } λογαριασμού σας; Βρείτε το χρησιμοποιώντας τη διεύθυνση ηλεκτρονικού ταχυδρομείου ή τον αριθμό τηλεφώνου ανάκτησης και αποκτήστε ξανά πρόσβαση στα ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } σας, και παραπάνω."
       ],
+      "Private and secure email, no credit card required": [
+        "Ιδιωτικό και ασφαλές email, δίχως την απαίτηση πιστωτικής κάρτας"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Επαναφορά κωδικού πρόσβασης του ${ BRAND_NAME } λογαριασμού σας"
       ],
       "Sign in to access your ${ appName } account": [
         "Συνδεθείτε για να αποκτήσετε πρόσβαση στον ${ appName } λογαριασμό σας"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Δοκιμάστε το ${ planName } δωρεάν με αυτόν τον σύνδεσμο"
       ]
     },
     "Monetary unit": {
@@ -5883,6 +5936,9 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Εάν δε ζητήσατε να επαναφέρετε τον κωδικό πρόσβασής σας, ακυρώστε το αίτημα τώρα."
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Παρακαλούμε μεταβείτε στη συνδεδεμένη συσκευή (στη συνεδρία όπου ξεκίνησε το αίτημα) για να αλλάξετε τον κωδικό πρόσβασής σας."
       ],
@@ -5894,14 +5950,36 @@
         "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inHours } ώρα",
         "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inHours } ώρες"
       ],
+      "This permission expires soon": [
+        "Αυτό το δικαίωμα λήγει σύντομα"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Τώρα μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας για τον λογαριασμό ${ boldEmail } ελεύθερα για ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Τώρα μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας για τον λογαριασμό ${ boldEmail }"
       ],
       "You can now reset your password": [
         "Τώρα μπορείτε να αλλάξετε τον κωδικό σας"
       ],
       "You can reset your password until ${ boldDate }.": [
         "Μπορείτε να επαναφέρετε τον κωδικό πρόσβασής σας μέχρι ${ boldDate }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Έχετε ${ timeRemaining.inDays } ημέρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        "Έχετε ${ timeRemaining.inDays } ημέρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Έχετε ${ timeRemaining.inHours } ώρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        " Έχετε ${ timeRemaining.inHours } ώρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Έχετε ${ timeRemaining.inMinutes } λεπτό για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        " Έχετε ${ timeRemaining.inMinutes } λεπτά για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτο για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        " Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτα για να επαναφέρετε τον κωδικό πρόσβασής σας."
       ]
     },
     "session_recovery:available:link": {
@@ -6504,9 +6582,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } αντιγράφηκε στο πρόχειρο σας"
-      ],
       "Account deleted. Signing out...": [
         "Ο λογαριασμός διαγράφηκε. Αποσύνδεση..."
       ],
