@@ -194,13 +194,6 @@ export const createActivationService = () => {
         }
     );
 
-    const handleWorkerInit = withContext<MessageHandlerCallback<WorkerMessageType.WORKER_INIT>>(
-        async (ctx, message) => {
-            await ctx.service.auth.init(message.payload);
-            return ctx.getState();
-        }
-    );
-
     const handlePopupInit = withContext<MessageHandlerCallback<WorkerMessageType.POPUP_INIT>>(async (ctx, message) => {
         const { payload } = message;
         const { tabId } = payload;
@@ -274,10 +267,8 @@ export const createActivationService = () => {
     browser.alarms.onAlarm.addListener(({ name }) => name === UPDATE_ALARM_NAME && checkAvailableUpdate());
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_WAKEUP, handleWakeup);
-    WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_INIT, handleWorkerInit);
     WorkerMessageBroker.registerMessage(WorkerMessageType.POPUP_INIT, handlePopupInit);
     WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_TAB, (_, { tab }) => ({ tab }));
-    WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_PROBE, () => true);
 
     void checkAvailableUpdate();
     void checkPermissionsUpdate();
