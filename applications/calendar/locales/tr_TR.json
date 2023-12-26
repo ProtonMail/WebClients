@@ -261,6 +261,9 @@
       "Get verification code": [
         "Doğrulama kodu alın"
       ],
+      "Give feedback": [
+        "Geri bildirimde bulunun"
+      ],
       "Go to label": [
         "Etikete git"
       ],
@@ -843,6 +846,10 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Yerel internet engellemelerini ve sansürü küresel sunucu ağlarımız ile aşın."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "${ domains } özel e-posta etki alanı, ${ addresses } e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşımı ve diğer özellikleri içerir.",
+        "${ domains } özel e-posta etki alanı, ${ addresses } e-posta adresi, sınırsız hide-my-email takma adı, takvim paylaşımı ve diğer özellikleri içerir."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "1 özel e-posta etki alanı, 10 e-posta adresi, 10 hide-my-email takma adı, takvim paylaşma ve daha fazlası için destek içerir."
       ],
@@ -863,6 +870,11 @@
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Her dosyanın 200'e kadar sürümünü 10 yıla kadar tutun."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } masaüstü uygulaması"
       ]
     },
     "Bug category": {
@@ -2339,7 +2351,37 @@
         "${ formattedStart } zamanında başlayan etkinlik için güncelleme"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Ücretli ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ PASS_SHORT_APP_NAME } özellikleri"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "${ DRIVE_SHORT_APP_NAME } sürüm geçmişi, binlerce yüksek hızlı ${ VPN_SHORT_APP_NAME } sunucusuna erişim, ${ PASS_SHORT_APP_NAME } parola paylaşımı ve diğer özellikler."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 kullanıcı"
+      ],
+      "Early access to new apps and features": [
+        "Yeni uygulama ve özelliklere erken erişim"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } masaüstü uygulamasına erken erişim"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_APP_NAME } özellikleri"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } dış hesabınızla bağlantı kuramadı"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Ayrıca ${ statusPageLink }na da bakabilirsiniz"
       ],
@@ -2406,6 +2448,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Bu tarayıcıda içerik arama özelliği açılamıyor. Lütfen gizli/özel tarayıcı kipinden çıkın ya da farklı bir tarayıcı deneyin."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "İçerik arama açılamadı. Lütfen uygulamayı yeniden başlatın ya da verileri temizleyin."
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Şifre çözme sorunu: Bu etkinliğin içeriğinin şifresi çözülemedi."
@@ -2686,6 +2731,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Beklenmeyen bir sorun çıktı. Kişileri içe aktaramadık"
       ],
       "Unknown error": [
         "Bilinmeyen sorun"
@@ -5737,6 +5785,9 @@
         "${ timeRemaining.inHours } saat",
         "${ timeRemaining.inHours } saat"
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Parola sıfırlama isteği onaylandı (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Parolanızı değiştirmek için oturumunuzun açık olduğu (isteğin yapıldığı oturum) aygıta geçin."
       ],
@@ -5748,8 +5799,30 @@
         "Bu iznin süresi ${ timeRemaining.inHours } saat sonra dolacak",
         "Bu iznin süresi ${ timeRemaining.inHours } saat sonra dolacak"
       ],
+      "This permission expires soon": [
+        "Bu izin yakında kaldırılacak"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "${ boldEmail } hesabınızın parolasını ${ boldDaysRemaining } içinde değiştirebilirsiniz."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Şimdi ${ boldEmail } hesabınızın parolasını değiştirebilirsiniz."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Parolanızı ${ timeRemaining.inDays } gün içinde sıfırlayabilirsiniz.",
+        "Parolanızı ${ timeRemaining.inDays } gün içinde sıfırlayabilirsiniz."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Parolanızı ${ timeRemaining.inHours } saat içinde sıfırlayabilirsiniz.",
+        "Parolanızı ${ timeRemaining.inHours } saat içinde sıfırlayabilirsiniz."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Parolanızı ${ timeRemaining.inMinutes } dakika içinde sıfırlayabilirsiniz.",
+        "Parolanızı ${ timeRemaining.inMinutes } dakika içinde sıfırlayabilirsiniz."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Parolanızı ${ timeRemaining.inSeconds } saniye içinde sıfırlayabilirsiniz.",
+        "Parolanızı ${ timeRemaining.inSeconds } saniye içinde sıfırlayabilirsiniz."
       ]
     },
     "session_recovery:available:link": {
