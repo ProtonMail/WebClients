@@ -1,9 +1,12 @@
+import { ReactNode } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
 import { setupAddress } from '@proton/shared/lib/api/addresses';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '@proton/shared/lib/constants';
+import { User } from '@proton/shared/lib/interfaces';
 import { missingKeysSelfProcess } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
@@ -21,7 +24,11 @@ import {
 import { useKTVerifier } from '../keyTransparency';
 import UnlockModal from '../login/UnlockModal';
 
-const PmMeButton = () => {
+export const getActivateString = (user: User) => {
+    return c('Action').t`Activate ${user.Name}@pm.me`;
+};
+
+const PmMeButton = ({ children }: { children: ReactNode }) => {
     const [user] = useUser();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
@@ -71,7 +78,7 @@ const PmMeButton = () => {
             loading={loading}
             onClick={() => withLoading(createPremiumAddress())}
         >
-            {c('Action').t`Activate ${user.Name}@pm.me`}
+            {children}
         </Button>
     );
 };
