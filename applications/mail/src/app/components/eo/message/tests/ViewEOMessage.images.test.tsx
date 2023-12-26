@@ -29,7 +29,6 @@ const embeddedAttachment = {
 
 describe('Encrypted Outside message images', () => {
     beforeAll(async () => {
-        // mockWindowLocation(windowHostname);
         await setupCryptoProxyForTesting();
     });
 
@@ -39,7 +38,6 @@ describe('Encrypted Outside message images', () => {
 
     afterEach(() => {
         EOClearAll();
-        // resetWindowLocation();
     });
 
     it('should load remote images', async () => {

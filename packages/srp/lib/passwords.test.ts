@@ -1,16 +1,17 @@
-import assert from 'assert';
-import { describe, it } from 'mocha';
-
 import { binaryStringToArray } from '@proton/crypto/lib/utils';
 
 import { hashedResult0, hashedResult2, hashedResult4, watResult } from '../test/passwords.data';
 import '../test/setup';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../test/setup';
 import { expandHash, hashPassword } from './passwords';
 
 describe('passwords', () => {
+    beforeAll(setupCryptoProxyForTesting);
+    afterAll(releaseCryptoProxy);
+
     it('should expand a hash', async () => {
         const result = await expandHash(binaryStringToArray('wat'));
-        assert.deepStrictEqual(result, watResult);
+        expect(result).toEqual(watResult);
     });
 
     it('should hash password version 4', async () => {
@@ -21,7 +22,7 @@ describe('passwords', () => {
             modulus: new Uint8Array(256),
             version: 4,
         });
-        assert.deepStrictEqual(hashed, hashedResult4);
+        expect(hashed).toEqual(hashedResult4);
     });
 
     it('should hash password version 3', async () => {
@@ -32,7 +33,7 @@ describe('passwords', () => {
             modulus: new Uint8Array(256),
             version: 3,
         });
-        assert.deepStrictEqual(hashed, hashedResult4);
+        expect(hashed).toEqual(hashedResult4);
     });
 
     it('should hash password version 2', async () => {
@@ -43,7 +44,7 @@ describe('passwords', () => {
             modulus: new Uint8Array(256),
             version: 2,
         });
-        assert.deepStrictEqual(hashed, hashedResult2);
+        expect(hashed).toEqual(hashedResult2);
     });
 
     it('should hash password version 1', async () => {
@@ -54,7 +55,7 @@ describe('passwords', () => {
             modulus: new Uint8Array(256),
             version: 1,
         });
-        assert.deepStrictEqual(hashed, hashedResult2);
+        expect(hashed).toEqual(hashedResult2);
     });
 
     it('should hash password version 0', async () => {
@@ -65,6 +66,6 @@ describe('passwords', () => {
             modulus: new Uint8Array(256),
             version: 0,
         });
-        assert.deepStrictEqual(hashed, hashedResult0);
+        expect(hashed).toEqual(hashedResult0);
     });
 });

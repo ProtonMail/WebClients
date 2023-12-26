@@ -18,7 +18,7 @@ import {
     postMessageFromIframe,
 } from '../../lib/drawer/helpers';
 import window from '../../lib/window';
-import { mockWindowLocation, resetWindowLocation } from '../helpers/url.helper';
+import { getMockedWindowLocation } from '../helpers/url.helper';
 
 const windowHostname = 'mail.proton.me';
 
@@ -59,27 +59,22 @@ describe('drawer helpers', () => {
     });
 
     describe('isAuthorizedDrawerUrl', () => {
-        beforeEach(() => {
-            mockWindowLocation({ hostname: windowHostname });
-        });
-
-        afterEach(() => {
-            resetWindowLocation();
-        });
+        let location = getMockedWindowLocation({ hostname: windowHostname });
+        const hostname = location.hostname;
 
         it('should be a url from an authorized domain', () => {
             drawerAuthorizedApps.forEach((appDomain) => {
                 const url = `https://${appDomain}.proton.me`;
 
-                expect(isAuthorizedDrawerUrl(url)).toBeTruthy();
+                expect(isAuthorizedDrawerUrl(url, hostname)).toBeTruthy();
             });
         });
 
         it('should not be a url from an authorized domain', () => {
             const url1 = 'https://scam.proton.me';
             const url2 = 'https://mail.scam.me';
-            expect(isAuthorizedDrawerUrl(url1)).toBeFalsy();
-            expect(isAuthorizedDrawerUrl(url2)).toBeFalsy();
+            expect(isAuthorizedDrawerUrl(url1, hostname)).toBeFalsy();
+            expect(isAuthorizedDrawerUrl(url2, hostname)).toBeFalsy();
         });
     });
 
@@ -100,13 +95,8 @@ describe('drawer helpers', () => {
     });
 
     describe('getIsDrawerPostMessage', () => {
-        beforeEach(() => {
-            mockWindowLocation({ hostname: windowHostname });
-        });
-
-        afterEach(() => {
-            resetWindowLocation();
-        });
+        let location = getMockedWindowLocation({ hostname: windowHostname });
+        const hostname = location.hostname;
 
         it('should be a drawer message', () => {
             drawerAuthorizedApps.forEach((app) => {
@@ -117,7 +107,7 @@ describe('drawer helpers', () => {
                     },
                 } as MessageEvent;
 
-                expect(getIsDrawerPostMessage(event)).toBeTruthy();
+                expect(getIsDrawerPostMessage(event, hostname)).toBeTruthy();
             });
         });
 
@@ -133,7 +123,7 @@ describe('drawer helpers', () => {
                         },
                     } as MessageEvent;
 
-                    expect(getIsDrawerPostMessage(event)).toBeFalsy();
+                    expect(getIsDrawerPostMessage(event, hostname)).toBeFalsy();
                 }
             });
         });
@@ -148,18 +138,12 @@ describe('drawer helpers', () => {
                 },
             } as MessageEvent;
 
-            expect(getIsDrawerPostMessage(event)).toBeFalsy();
+            expect(getIsDrawerPostMessage(event, hostname)).toBeFalsy();
         });
     });
 
     describe('postMessageFromIframe', () => {
-        beforeEach(() => {
-            mockWindowLocation({ hostname: windowHostname });
-        });
-
-        afterEach(() => {
-            resetWindowLocation();
-        });
+        let location = getMockedWindowLocation({ hostname: windowHostname });
 
         it('should post a message from the iframe', () => {
             const spy = spyOn(window.parent, 'postMessage');
@@ -171,7 +155,7 @@ describe('drawer helpers', () => {
             authorizedApps.forEach((app) => {
                 const parentApp = app as APP_NAMES;
 
-                postMessageFromIframe(message, parentApp);
+                postMessageFromIframe(message, parentApp, location);
 
                 const sentMessage = {
                     ...message,
@@ -193,7 +177,7 @@ describe('drawer helpers', () => {
 
             Object.values(APPS).forEach((app) => {
                 if (!drawerAuthorizedApps.includes(APPS_CONFIGURATION[app].subdomain)) {
-                    postMessageFromIframe(message, app);
+                    postMessageFromIframe(message, app, location);
 
                     expect(spy).not.toHaveBeenCalled();
                 }

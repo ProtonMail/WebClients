@@ -1,6 +1,5 @@
 import { encodeImageUri, forgeImageURL, formatImage, resizeImage, toBlob, toFile } from '../../lib/helpers/image';
 import { img } from './file.data';
-import { mockWindowLocation, resetWindowLocation } from './url.helper';
 
 // width: 300 px, height: 200 px
 
@@ -24,18 +23,10 @@ describe('encodeImageUri', () => {
 describe('forgeImageURL', () => {
     const windowOrigin = 'https://mail.proton.pink';
 
-    beforeEach(() => {
-        mockWindowLocation({ origin: windowOrigin });
-    });
-
-    afterEach(() => {
-        resetWindowLocation();
-    });
-
     it('should forge the expected image URL', () => {
         const imageURL = 'https://example.com/image1.png';
         const uid = 'uid';
-        const forgedURL = forgeImageURL('api', imageURL, uid);
+        const forgedURL = forgeImageURL({ apiUrl: 'api', url: imageURL, uid, origin: windowOrigin });
         const expectedURL = `${windowOrigin}/api/core/v4/images?Url=${encodeURIComponent(
             imageURL
         )}&DryRun=0&UID=${uid}`;
@@ -108,7 +99,7 @@ describe('resizeImage', () => {
     it('it should be respect the MIMEType set', async () => {
         const base64str = await resizeImage({ original: img, maxWidth: 100, finalMimeType: 'image/png' });
 
-        expect(base64str.match(MIMETYPE_REGEX)[1]).toBe('image/png');
+        expect(base64str.match(MIMETYPE_REGEX)?.[1]).toBe('image/png');
     });
 
     it('it should have a difference on image quality', async () => {
