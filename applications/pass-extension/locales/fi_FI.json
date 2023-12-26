@@ -179,6 +179,9 @@
       "Get mobile apps": [
         "Hanki mobiilisovellukset"
       ],
+      "Get the deal": [
+        "Hanki tarjous"
+      ],
       "Help us improve": [
         "Auta meitä parantamaan"
       ],
@@ -384,6 +387,11 @@
         "Eikö salasanahallintasi ole täällä? Pyydä sitä."
       ]
     },
+    "Badge": {
+      "Early access": [
+        "Varhainen pääsy"
+      ]
+    },
     "bf2023: Info": {
       "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
         "Säästä fiksusti. Saat vuoden Pass Plus -tilauksen vain ${ relativePrice } kuukausihintaan."
@@ -397,6 +405,11 @@
     "bf2023: Title": {
       "Black Friday offer": [
         "Black Friday -tarjous"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } -työpöytäsovellus"
       ]
     },
     "Button": {
@@ -628,6 +641,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Väärä PIN-koodi. Yritä uudelleen."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "PIN-koodisi poistettiin toisen ${ PASS_APP_NAME } -asiakassovelluksen kautta"
       ]
     },
     "Error message": {
@@ -770,6 +786,9 @@
       "Autosaved on ${ submissionURL }": [
         "Automaattitallennettiin osoitteesta ${ submissionURL }"
       ],
+      "Built in 2FA authenticator": [
+        "Sisäänrakennettu 2FA-todennus"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Voi luoda, muokata, poistaa ja viedä holvin kohteita."
       ],
@@ -811,6 +830,9 @@
       ],
       "Drop to import": [
         "Tuo pudottamalla"
+      ],
+      "Early access to ${ PASS_APP_NAME } web app": [
+        "Varhainen pääsy ${ PASS_APP_NAME } -verkkosovellukseen"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Tuo olemassa olevat salasanasi ${ PASS_APP_NAME }iin helposti."
@@ -985,11 +1007,17 @@
       "Please enter your current PIN code to continue": [
         "Jatka syöttämällä nykyinen PIN-koodisi"
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Päivitä tilauksesi saadaksesi varhaisen pääsyn ${ PASS_APP_NAME } -verkkosovellukseen"
+      ],
       "Press Enter to copy": [
         "Kopioi painamalla Enter-näppäintä"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Yksityisyys on meille suuri huolenaihe. Katso, mikä tekee ${ PASS_APP_NAME }ista erilaisen."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Sen suojaa ${ PROTON_SENTINEL_LINK }, edistynyt tilinsuojausohjelmamme"
       ],
       "Restoring trashed items...": [
         "Palautetaan roskakorin kohteita..."
@@ -1014,6 +1042,9 @@
       ],
       "Settings successfully updated": [
         "Asetukset tallennettiin"
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "Jaa kirjautumistietosi ja suojatut muistiinpanot jopa 10 henkilön kanssa"
       ],
       "Sign in or create an account to continue.": [
         "Jatka kirjautumalla tai luomalla tili."
@@ -1044,6 +1075,10 @@
       ],
       "The autofill dropdown will automatically open when you click or focus on the field.": [
         "Automaattitäytön pudotusvalikko avautuu automaattisesti, kun klikkaat tai keskityt kenttään."
+      ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "Seuraavaa ${ result.ignored.length } kohdetta ei voitu tuoda:",
+        "Seuraavia ${ result.ignored.length } kohdetta ei voitu tuoda:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Teksti, jota yrität liittää, ylittää ${ maxLength }-merkin enimmäispituuden."
@@ -1077,6 +1112,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Päivitä ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Päivitä tilauksesi nyt avataksesi Premium-ominaisuudet"
       ],
       "Use vaults to share this item with others.": [
         "Jaa tämä kohde muiden kanssa holvien avulla."
