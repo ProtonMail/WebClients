@@ -5234,9 +5234,6 @@
       "Are you sure you want to delete all messages with this label?": [
         "Naozaj chcete vymazať všetky správy s týmto štítkom?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Naozaj chcete vymazať tento priečinok? Vymažú sa zároveň aj všetky podpriečinky."
-      ],
       "Are you sure you want to delete this label?": [
         "Naozaj chcete vymazať tento štítok?"
       ],
@@ -5461,12 +5458,6 @@
       ],
       "Emails are automatically signed": [
         "Emaily sú automaticky podpísané"
-      ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Emaily uložené v tomto priečinku nebudú vymazané a je možné ich stále nájsť v priečinku Všetky správy."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Emaily označené týmto štítkom nebudú vymazané a je možné ich stále nájsť v príslušnom priečinku."
       ],
       "embedded image": [
         "pripojený obrázok",
@@ -9565,12 +9556,6 @@
         "Odstrániť ${ count } správy",
         "Odstrániť ${ count } správ",
         "Odstrániť ${ count } správ"
-      ],
-      "Delete ${ label.Name } folder": [
-        "Odstrániť priečinok ${ label.Name }"
-      ],
-      "Delete ${ label.Name } label": [
-        "Odstrániť štítok ${ label.Name }"
       ],
       "Delete ${ Name }": [
         "Odstrániť ${ Name }"

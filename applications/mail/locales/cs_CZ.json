@@ -3301,6 +3301,9 @@
       "Early access to new apps and features": [
         "Předběžný přístup k novým aplikacím a funkcím"
       ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Předčasný přístup k desktopové aplikaci ${ MAIL_APP_NAME }"
+      ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Placené funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_APP_NAME }"
       ]
@@ -5225,14 +5228,17 @@
       "and": [
         "a"
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Všechny podsložky budou rovněž smazány. E-maily uložené ve složce ${ nameDeleted } však smazány nebudou a lze je nalézt ve složce Všechna pošta."
+      ],
       "Are you sure you want to delete all messages in this folder?": [
         "Jste si jistí, že chcete smazat všechny zprávy v této složce?"
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Opravdu chcete smazat všechny zprávy s tímto štítkem?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Opravdu chcete smazat tuto složku? Budou smazány také všechny podsložky."
+      "Are you sure you want to delete this folder?": [
+        "Opravdu chcete smazat tuto složku?"
       ],
       "Are you sure you want to delete this label?": [
         "Jste si jisti, že chcete odstranit tento štítek?"
@@ -5459,11 +5465,8 @@
       "Emails are automatically signed": [
         "E-maily jsou automaticky podepsány"
       ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "E-maily uložené v tomto souboru nebudou vymazány a je možné je stále nalézt v souboru Všechna Pošta."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "E-maily s tímto štítkem nebudou smazány a je možné je nalézt v příslušné složce."
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "E-maily označené štítkem ${ nameDeleted } nebudou smazány a lze je stále nalézt v příslušné složce."
       ],
       "embedded image": [
         "vložený obrázek",
@@ -9563,12 +9566,6 @@
         "Smazat ${ count } zpráv",
         "Smazat ${ count } zpráv"
       ],
-      "Delete ${ label.Name } folder": [
-        "Smazat ${ label.Name } složku"
-      ],
-      "Delete ${ label.Name } label": [
-        "Smazat ${ label.Name } štítek"
-      ],
       "Delete ${ Name }": [
         "Odstranit ${ Name }"
       ],
@@ -9580,6 +9577,12 @@
       ],
       "Delete draft": [
         "Smazat koncept"
+      ],
+      "Delete folder?": [
+        "Smazat složku?"
+      ],
+      "Delete label?": [
+        "Smazat štítek?"
       ],
       "Delete message": [
         "Smazat zprávu"
@@ -10034,6 +10037,9 @@
       ],
       "Hide side panel": [
         "Skrýt postranní panel"
+      ],
+      "Load image": [
+        "Načíst obrázek"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schéma, které se použije při podepisování, nebo šifrování uživatele. Nezapomeňte, že PGP/Inline vyžaduje zprávy ve formátu prostého textu"

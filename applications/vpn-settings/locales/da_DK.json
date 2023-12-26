@@ -95,9 +95,6 @@
       "Continue with this password": [
         "Fortsæt med denne adgangskode"
       ],
-      "Copy": [
-        "Kopiér"
-      ],
       "Copy address": [
         "Kopiér adresse"
       ],
@@ -163,9 +160,6 @@
       ],
       "Download": [
         "Download"
-      ],
-      "Download all configurations": [
-        "Download alle opsætninger"
       ],
       "Download our CSV template": [
         "Download vores CSV-skabelon"
@@ -250,6 +244,9 @@
       ],
       "Get verification code": [
         "Få bekræftelseskode"
+      ],
+      "Give feedback": [
+        "Giv feedback"
       ],
       "Got it": [
         "Forstået"
@@ -493,6 +490,9 @@
       ],
       "Upgrade to Business": [
         "Opgrader til Business"
+      ],
+      "Upgrade to Visionary": [
+        "Opgradér til Visionary"
       ],
       "Upgrade your plan": [
         "Opgradér dit abonnement"
@@ -798,6 +798,10 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Omgå lokale internetblokeringer og censur med vores globale netværk af servere."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inkluderer understøttelse af ${ domains } brugerdefinerede e-mail-domæner, ${ addresses } e-mailadresse, ubegrænsede hide-my-email-aliasser, kalenderdeling og meget mere.",
+        "Inkluderer understøttelse af ${ domains } brugerdefinerede e-mail-domæner, ${ addresses } e-mailadresser, ubegrænsede hide-my-email-aliasser, kalenderdeling og meget mere."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer support for 1 tilpasset e-maildomæne, 10 e-mailadresser, 10 Hide-my-email-aliasser, kalenderdeling med mere."
       ],
@@ -844,6 +848,11 @@
       ],
       "Two-year": [
         "To-År"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } skrivebordsapp"
       ]
     },
     "Bug category": {
@@ -1842,6 +1851,14 @@
         "Adskil forskellige aspekter af dit liv, med flere e-mailadresser, og lås op for flere premium-funktioner, når du opgraderer."
       ]
     },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Adgang til skrivebordsappen er begrænset"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Beta-versionen af ${ MAIL_APP_NAME } skrivebordsappen er i øjeblikket begrænset til ${ BRAND_NAME } Visionary-abonnenter. Den vil være tilgængelig for alle brugere i begyndelsen af 2024."
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Fejl eller kvalitetsproblem"
@@ -1881,6 +1898,33 @@
     "Enabled 2FA": {
       "2FA": [
         "2FA"
+      ]
+    },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Betalt ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ PASS_SHORT_APP_NAME } funktioner"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Inkluderer ${ DRIVE_SHORT_APP_NAME }, adgang til tusindvis af højhastigheds ${ VPN_SHORT_APP_NAME } servere, deling i ${ PASS_SHORT_APP_NAME } og mere."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 brugere"
+      ],
+      "Early access to new apps and features": [
+        "Tidlig adgang til nye apps og funktioner"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Tidlig adgang til ${ MAIL_APP_NAME } skrivebord-app"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Betalt ${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_APP_NAME } funktioner"
       ]
     },
     "Error": {
@@ -2096,6 +2140,9 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du har brugt alle brugere i dit abonnement. Opgradér abonnementet for at tilføje en ny bruger."
+      ],
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Du skal aktivere dine organisationsnøgler. Uden aktivering vil du ikke kunne oprette eller få adgang til ikke-private brugere."
       ],
       "You must privatize all users before generating new organization keys": [
         "Før generering af nye organisationsnøgler, skal alle brugere gøres private"
@@ -2341,6 +2388,9 @@
       ],
       "Delete organization?": [
         "Slet organisation?"
+      ],
+      "Edit user storage": [
+        "Redigér brugerlager"
       ],
       "Family name": [
         "Familienavn"
@@ -2686,6 +2736,9 @@
         "${ number } server",
         "${ number } servere"
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } fjernet. Pakketilbud er ikke tilgængeligt med et 1-måneders abonnement."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kræver mindst 1 dedikeret server ${ serverPricePerMonth }"
       ],
@@ -3011,6 +3064,9 @@
       "for choosing ${ product }": [
         "for at vælge ${ product }"
       ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "For medlemmer af organisationer, der bruger single sign-on (SAML SSO)"
+      ],
       "Free forever": [
         "Gratis for evigt"
       ],
@@ -3226,9 +3282,6 @@
       ],
       "per month, billed every 24 months": [
         "Pr. måned, faktureres hver 24. måned"
-      ],
-      "Plan upgrade required": [
-        "Abonnementsopgradering påkrævet"
       ],
       "Please add a password for the user on row": [
         "Tilføj en adgangskode til brugeren på række",
@@ -3837,6 +3890,9 @@
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Dit organisationsadgangskode kan deles med andre brugere, som du ønsker at give administrative privilegier. Det er også en nød-gendannelseskode til at få adgang til din organisation, såfremt du mister adgangen til din konto. Gem og opbevar denne adgangskode sikkert."
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Din organisation bruger single sign-on (SSO). Tryk på Log ind for at fortsætte med din SSO-udbyder."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Dine betalinger er beskyttet af TLS-kryptering og schweizisk lovgivning om beskyttelse af privatlivets fred."
@@ -4517,6 +4573,9 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Glemt dit brugernavn til ${ BRAND_NAME }-konto? Find den ved hjælp af din gendannelses-e-mail eller dit telefonnummer, og få adgang til din ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mere."
       ],
+      "Private and secure email, no credit card required": [
+        "Privat og sikker e-mail, intet betalingskort påkrævet"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Nulstil adgangskoden til din ${ BRAND_NAME }-konto"
       ],
@@ -4756,6 +4815,9 @@
       "Document editors (docs, sheets, slides)": [
         "Dokumentredaktører (dokumenter, ark, dias)"
       ],
+      "Double hop": [
+        "Dobbelthop"
+      ],
       "Easy Switch import assistant": [
         "Easy Switch importassistent"
       ],
@@ -4869,6 +4931,9 @@
       ],
       "SMTP submission": [
         "SMTP-indsendelse"
+      ],
+      "SMTP submission for select organizations": [
+        "SMTP indsendelse for udvalgte organisationer"
       ],
       "Split tunneling (Android and Windows)": [
         "Split tunneling (Android og Windows)"
@@ -4987,6 +5052,9 @@
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "Omfattende privatlivsbeskyttelse og sikkerhed med alle ${ BRAND_NAME }-tjenester kombineret."
+      ],
+      "Early access to new apps and features": [
+        "Tidlig adgang til nye apps og funktioner"
       ],
       "For next-level password management and identity protection.": [
         "For avanceret adgangskodehåndtering og identitetsbeskyttelse."
@@ -5241,6 +5309,11 @@
         "Du kan have mere end én administrator. Alle administratorer kan tilføje og administrere brugere, men kun den primære administrator har kontrol over fakturering."
       ]
     },
+    "new_plans: upgrade": {
+      "Included with multiple users ${ BRAND_NAME } for Business plans.": [
+        "Inkluderet med flere brugere ${ BRAND_NAME } for Business-abonnementer."
+      ]
+    },
     "new_plans: Upsell attribute": {
       "24/7 support": [
         "24/7 support"
@@ -5280,6 +5353,9 @@
       ],
       "IP Address copied to clipboard": [
         "IP-adresse kopieret ti udklipsholder"
+      ],
+      "Key copied to the clipboard": [
+        "Nøgle kopieret til klipholder"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2-legitimationsoplysninger regenereret"
@@ -5657,6 +5733,9 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Hvis du ikke har bedt om at nulstille din adgangskode, skal du annullere denne anmodning nu."
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Anmodning om nulstilling af adgangskode godkendt (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Gå til den enhed, hvor du er logget ind (i den session, hvor anmodningen blev indledt) for at ændre din adgangskode."
       ],
@@ -5668,8 +5747,14 @@
         "Denne tilladelse udløber om ${ timeRemaining.inHours } time",
         "Denne tilladelse udløber om ${ timeRemaining.inHours } timer"
       ],
+      "This permission expires soon": [
+        "Denne tilladelse udløber snart"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Du kan nu frit ændre din adgangskode til kontoen ${ boldEmail } i ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Du kan nu ændre din adgangskode til kontoen ${ boldEmail }."
       ],
       "You can now reset your password": [
         "Du kan nu nulstille din adgangskode"
@@ -6262,9 +6347,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } kopieret til din udklipsholder"
-      ],
       "Account deleted. Signing out...": [
         "Konto slettet, logger ud..."
       ],

@@ -261,6 +261,9 @@
       "Get verification code": [
         "Få bekræftelseskode"
       ],
+      "Give feedback": [
+        "Giv feedback"
+      ],
       "Go to label": [
         "Gå til etikette"
       ],
@@ -843,6 +846,10 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Omgå lokale internetblokeringer og censur med vores globale netværk af servere."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inkluderer understøttelse af ${ domains } brugerdefinerede e-mail-domæner, ${ addresses } e-mailadresse, ubegrænsede hide-my-email-aliasser, kalenderdeling og meget mere.",
+        "Inkluderer understøttelse af ${ domains } brugerdefinerede e-mail-domæner, ${ addresses } e-mailadresser, ubegrænsede hide-my-email-aliasser, kalenderdeling og meget mere."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer support for 1 tilpasset e-maildomæne, 10 e-mailadresser, 10 Hide-my-email-aliasser, kalenderdeling med mere."
       ],
@@ -863,6 +870,11 @@
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Gem op til 200 versioner af hver fil i op til 10 år."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } skrivebordsapp"
       ]
     },
     "Bug category": {
@@ -2339,7 +2351,37 @@
         "Opdatering til en begivenhed med start den ${ formattedStart }"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Betalt ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ PASS_SHORT_APP_NAME } funktioner"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Inkluderer ${ DRIVE_SHORT_APP_NAME }, adgang til tusindvis af højhastigheds ${ VPN_SHORT_APP_NAME } servere, deling i ${ PASS_SHORT_APP_NAME } og mere."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 brugere"
+      ],
+      "Early access to new apps and features": [
+        "Tidlig adgang til nye apps og funktioner"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Tidlig adgang til ${ MAIL_APP_NAME } skrivebord-app"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Betalt ${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_APP_NAME } funktioner"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } kan ikke oprette forbindelse til din eksterne konto"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også tjekke vores ${ statusPageLink }"
       ],
@@ -2406,6 +2448,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Indholdssøgning kan ikke aktiveres i denne browser. Afslut privat browsing eller brug en anden browser."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "Indholdssøgning kan ikke aktiveres. Genstart applikationen, eller ryd data."
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Dekrypteringsfejl: Dekryptering af denne begivenheds indhold mislykkedes."
@@ -2686,6 +2731,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Prøv kun at bruge bogstaver, tal og _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Uventet fejl, vi kan ikke importere kontakterne"
       ],
       "Unknown error": [
         "Ukendt fejl"
@@ -5737,6 +5785,9 @@
         "${ timeRemaining.inHours } time",
         "${ timeRemaining.inHours } timer"
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Anmodning om nulstilling af adgangskode godkendt (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Gå til den enhed, hvor du er logget ind (i den session, hvor anmodningen blev indledt) for at ændre din adgangskode."
       ],
@@ -5748,8 +5799,14 @@
         "Denne tilladelse udløber om ${ timeRemaining.inHours } time",
         "Denne tilladelse udløber om ${ timeRemaining.inHours } timer"
       ],
+      "This permission expires soon": [
+        "Denne tilladelse udløber snart"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Du kan nu frit ændre din adgangskode til kontoen ${ boldEmail } i ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Du kan nu ændre din adgangskode til kontoen ${ boldEmail }."
       ],
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Du har ${ timeRemaining.inDays } dag til at nulstille din adgangskode.",

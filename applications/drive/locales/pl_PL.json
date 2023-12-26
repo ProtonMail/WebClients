@@ -319,6 +319,9 @@
       "Get started": [
         "Rozpocznij"
       ],
+      "Get Started": [
+        "Rozpocznij"
+      ],
       "Get verification code": [
         "Otrzymaj kod weryfikacyjny"
       ],
@@ -1153,6 +1156,11 @@
       ],
       "URL": [
         "Adres URL"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Zdjęcie kontaktu"
       ]
     },
     "Contact type label": {
@@ -3829,9 +3837,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Ogranicz aktywność wymagającą dużej ilości pamięci (jak streaming) lub prześlij dane partiami."
       ],
-      "Free forever": [
-        "Darmowy na zawsze"
-      ],
       "Free up some space or add more storage space.": [
         "Zwolnij część miejsca lub dodaj dodatkową przestrzeń dyskową."
       ],
@@ -4249,9 +4254,6 @@
       "support team": [
         "pomocą techniczną"
       ],
-      "Swiss encrypted file storage": [
-        "Szwajcarska zaszyfrowana przestrzeń dyskowa"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Usługa jest tymczasowo niedostępna. Spróbuj ponownie później."
       ],
@@ -4387,6 +4389,9 @@
       "Trash is empty": [
         "Kosz jest pusty"
       ],
+      "Try ${ DRIVE_APP_NAME }: Free forever": [
+        "Wypróbuj ${ DRIVE_APP_NAME }: Darmowy na zawsze"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Wypróbuj nowe funkcje, aktualizacje i usługi ${ BRAND_NAME } przed ich premierą. Spowoduje to odświeżenie strony"
       ],
@@ -4474,8 +4479,8 @@
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "zostanie przywrócony do wersji z ${ formattedRevisionDate }. Wszystkie pozostałe wersje zostaną nadal zachowane."
       ],
-      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
-        "Dzięki ${ DRIVE_APP_NAME } Twoje dane są chronione za pomocą szyfrowania end-to-end. Tylko Ty możesz je odszyfrować."
+      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
+        "Dzięki ${ DRIVE_APP_NAME } Twoje dane są chronione za pomocą szyfrowania end-to-end."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Czy chcesz otrzymać nowy kod weryfikacyjny lub użyć innej metody weryfikacji?"
@@ -7046,6 +7051,9 @@
       ],
       "Hide side panel": [
         "Ukryj panel boczny"
+      ],
+      "Load image": [
+        "Załaduj zdjęcie"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Wybierz schemat PGP, który będzie używany przy podpisywaniu lub szyfrowaniu wiadomości wysyłanych do użytkownika. Pamiętaj, że PGP/Inline wymusza wysyłanie wiadomości w trybie zwykłego tekstu"

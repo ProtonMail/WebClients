@@ -164,6 +164,9 @@
       "Get mobile apps": [
         "Получить мобильные приложения"
       ],
+      "Get the deal": [
+        "Воспользоваться"
+      ],
       "Help us improve": [
         "Помогите нам совершенствоваться"
       ],
@@ -340,6 +343,11 @@
       ],
       "Your password manager not here? Request it.": [
         "Вашего менеджера паролей здесь нет? Запросите его."
+      ]
+    },
+    "Badge": {
+      "Early access": [
+        "Ранний доступ"
       ]
     },
     "bf2023: Info": {
@@ -580,6 +588,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Неверный PIN-код. Попробуйте снова."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Ваш PIN был удален другим клиентом ${ PASS_APP_NAME }"
       ]
     },
     "Error message": {
@@ -742,6 +753,9 @@
       "Autosaved on ${ submissionURL }": [
         "Автосохранено ${ submissionURL }"
       ],
+      "Built in 2FA authenticator": [
+        "Встроенный двухфакторный аутентификатор"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Может создавать, редактировать, удалять и экспортировать элементы этого хранилища."
       ],
@@ -780,6 +794,9 @@
       ],
       "Drop to import": [
         "Импортировать"
+      ],
+      "Early access to ${ PASS_APP_NAME } web app": [
+        "Ранний доступ к веб-приложению ${ PASS_APP_NAME }"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Легко импортируйте ваше существующие пароли в ${ PASS_APP_NAME }."
@@ -952,11 +969,17 @@
       "Please enter your current PIN code to continue": [
         "Пожалуйста, введите свой текущий PIN-код для продолжения"
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Улучшите, чтобы получить ранний доступ к веб-приложению ${ PASS_APP_NAME }"
+      ],
       "Press Enter to copy": [
         "Нажмите Enter, чтобы скопировать"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Конфиденциальность является нашей большой заботой. Узнайте, почему ${ PASS_APP_NAME } отличается."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Защищено ${ PROTON_SENTINEL_LINK }, нашей передовой программой защиты аккаунтов"
       ],
       "Restoring trashed items...": [
         "Восстановление элементов из корзины..."
@@ -978,6 +1001,9 @@
       ],
       "Settings successfully updated": [
         "Настройки успешно обновлены"
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "Делитесь своими логинами и защищенными заметками с максимум 10 людьми."
       ],
       "Sign in or create an account to continue.": [
         "Войдите или создайте аккаунт для продолжения."
@@ -1033,11 +1059,17 @@
       "Unable to copy to clipboard": [
         "Не могу скопировать в буфер обмена"
       ],
+      "Unlimited hide-my-email aliases": [
+        "Неограниченное количество псевдонимов hide-my-email"
+      ],
       "Unlock it with your PIN to access the settings": [
         "Разблокируйте его с помощью вашего PIN-кода, чтобы получить доступ к настройкам"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Улучшить ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Улучшите сейчас, чтобы получить платне функции"
       ],
       "Use vaults to share this item with others.": [
         "Используйте хранилища, чтобы поделиться этим элементом с другими."
@@ -1711,6 +1743,9 @@
       ],
       "Update available": [
         "Доступно обновление"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Улучшите для разблокировки платных функций"
       ],
       "Vault shared with you": [
         "Хранилище, предоставленное вам"

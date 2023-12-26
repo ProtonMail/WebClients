@@ -95,9 +95,6 @@
       "Continue with this password": [
         "ამ პაროლის გამოყენება"
       ],
-      "Copy": [
-        "კოპირება"
-      ],
       "Copy address": [
         "მისამართის კოპირება"
       ],
@@ -163,9 +160,6 @@
       ],
       "Download": [
         "გადმოწერა"
-      ],
-      "Download all configurations": [
-        "ყველა კონფიგურაციის გადმოწერა"
       ],
       "Download our CSV template": [
         "გადმოწერეთ ჩვენი CSV ნიმუში"
@@ -250,6 +244,9 @@
       ],
       "Get verification code": [
         "შემოწმების კოდის მიღება"
+      ],
+      "Give feedback": [
+        "უკუკავშირი"
       ],
       "Got it": [
         "გავიგე"
@@ -493,6 +490,9 @@
       ],
       "Upgrade to Business": [
         "Business-მდე აწევა"
+      ],
+      "Upgrade to Visionary": [
+        "Visionary-მდე აწევა"
       ],
       "Upgrade your plan": [
         "გააუმჯობესეთ თქვენი ტარიფი"
@@ -847,6 +847,11 @@
       ],
       "Two-year": [
         "ორი წლით"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ]
     },
     "Bug category": {
@@ -1848,6 +1853,11 @@
         "ასწიეთ სატარიფო გეგმა და გამოყავით თქვენი ცხოვრების სხვადასხვა ასპექტები სხვადასხვა ელფოსტის მისამართებით და მიიღეთ კიდევ ბევრი სხვა ფასიანი ფუნქცია."
       ]
     },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "კომპიუტერის აპთან წვომა შეზღუდულია"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "შეცდომები ან ხარისხის პრობლემები"
@@ -1887,6 +1897,23 @@
     "Enabled 2FA": {
       "2FA": [
         "2FA"
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 ტბ"
+      ],
+      "6 users": [
+        "6 მომხმარებელი"
+      ],
+      "Early access to new apps and features": [
+        "ადრეული წვდომა ახალ აპებთან და ფუნქციებთან"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "ადრეული წვდომა ${ MAIL_APP_NAME }-ის კომპიუტერის აპზე"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "${ MAIL_SHORT_APP_NAME }-ის და ${ CALENDAR_APP_NAME }-ის ფასიანი ფუნქციები"
       ]
     },
     "Error": {
@@ -3080,6 +3107,9 @@
       "for choosing ${ product }": [
         "${ product }-ის არჩევისთვის"
       ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "ორგანიზაციის წევრებისთვის, რომელიც SSO-ს (SAML SSO) იყენებენ"
+      ],
       "Free forever": [
         "სამუდამოდ უფასო"
       ],
@@ -3295,9 +3325,6 @@
       ],
       "per month, billed every 24 months": [
         "ყოველთვე, გადაიხდით 24 თვეში ერთხელ"
-      ],
-      "Plan upgrade required": [
-        "აუცილებელია ტარიფის აწევა"
       ],
       "Please add a password for the user on row": [
         "მომხმარებლის მწკრივში საჭიროა პაროლის დამატება",
@@ -3906,6 +3933,9 @@
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "თქვენი ორგანიზაციის პაროლი შეიძლება, გაუზიაროთ სხვა მომხმარებლებს, რომელთაც ადმინისტრაციული პრივილეგიების მიღება სურთ. ეს არის ასევე გადაუდებელი აღდგენის კოდი, იმისათვის, რომ მიიღოთ წვდომა თქვენს ორგანიზაციაზე იმ შემთხვევაში, თუ დაკარგავთ თქვენს ანგარიშზე წვდომას. გთხოვთ, უსაფრთხოდ შეინახოთ ეს პაროლი."
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "თქვენი ორგანიზაცია შესვლის ერთწერტილიან სისტემას (SSO) იყენებს. შედით, რომ თქვენს SSO-ის მომწოდებელზე გადახვიდეთ."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "გადახდის თქვენი მეთოდები TLS დაშიფვრითა და კონფიდენციალობის შვეიცარიული კანონებითაა დაცული."
@@ -4612,11 +4642,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "დაგავიწყდათ თქვენი ${ BRAND_NAME }-ის ანგარიშის მომხმარებლის სახელი? იპოვეთ ის თქვენი აღდგენის ელფოსტის ან ტელეფონის ნომრის საშუალებით და დაიბრუნეთ წვდომა ${ MAIL_APP_NAME }-სთან, ${ DRIVE_SHORT_APP_NAME }-სთან, ${ CALENDAR_SHORT_APP_NAME }-სთან და სხვ."
       ],
+      "Private and secure email, no credit card required": [
+        "კოფიდენციალური და უსაფრთხო ელფოსტა. საკრედიტო ბარათი საჭირო არაა"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "შეცვალეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის პაროლი"
       ],
       "Sign in to access your ${ appName } account": [
         "თქვენი ${ appName }-ის ანგარიშთან წვდომისთვის საჭიროა, შეხვიდეთ"
+      ],
+      "Try ${ planName } for free with this link": [
+        "სცადეთ ${ planName } უფასოდ ამ ბმულით"
       ]
     },
     "Monetary unit": {
@@ -5883,6 +5919,9 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "თუ პაროლის შეცვლა თქვენ არ მოგითხოვიათ, გააუქმეთ მოთხოვნა."
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "პაროლის ჩამოყრის მოთხოვნა დადასტურებულია (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "პაროლის შესაცვლელად გადადით მოწყობილობაზე (სესიაში, საიდანაც მოთხოვნა გამოიგაზვნა), რომელზეც შესული ბრძანდებით."
       ],
@@ -5894,8 +5933,14 @@
         "ამ წვდომის ვადა ${ timeRemaining.inHours } საათში იწურება",
         "ამ წვდომის ვადა ${ timeRemaining.inHours } საათში იწურება"
       ],
+      "This permission expires soon": [
+        "ამ წვდომის ვადა მალე იწურება"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "ახლა შეგიძლიათ შეცვალოთ პაროლი ანგარიშისთვის ${ boldEmail }, თავისუფლად, შუალედში \"${ boldDaysRemaining }\"."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "ახლა შეგიძლიათ შეცვალოთ პაროლი ანგარიშისთვის ${ boldEmail }."
       ],
       "You can now reset your password": [
         "ახლა შეგიძლიათ, პაროლი შეცვალოთ"
@@ -6504,9 +6549,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } დაკოპირდა მიმოცვლის ბაფერში"
-      ],
       "Account deleted. Signing out...": [
         "ანგარიში წაიშალა. გასვლა..."
       ],

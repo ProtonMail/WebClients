@@ -114,7 +114,7 @@
         "Elimina"
       ],
       "Delete alias": [
-        "Esborrar àlies"
+        "Esborra l'àlies"
       ],
       "Delete all": [
         "Eliminar-ho tot"
@@ -156,7 +156,7 @@
         "Filtrar els elements de la caixa forta"
       ],
       "Generate alias": [
-        "Generar àlies"
+        "Genera un àlies"
       ],
       "Generate password": [
         "Genera la contrasenya"
@@ -166,6 +166,9 @@
       ],
       "Get mobile apps": [
         "Baixeu l'aplicació mòbil"
+      ],
+      "Get the deal": [
+        "Obteniu l’oferta"
       ],
       "Help us improve": [
         "Ajudeu-nos a millorar"
@@ -364,6 +367,11 @@
       ],
       "Write us on Twitter": [
         "Escriu-nos a Twitter"
+      ]
+    },
+    "Badge": {
+      "Early access": [
+        "Accés anticipat"
       ]
     },
     "bf2023: Label": {
@@ -668,6 +676,9 @@
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } mostrarà la icona de web de l'element a través del proxy d'imatges anònim ${ BRAND_NAME }."
       ],
+      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
+        "${ PASS_APP_NAME } només importarà inicis de sessió, notes i targetes de crèdit."
+      ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } us demanarà que deseu o actualitzeu les credencials."
       ],
@@ -884,6 +895,9 @@
       "Passwords older than 1 day are automatically deleted from history.": [
         "Les contrasenyes generades fa més d'un dia s'esborraran de l'historial."
       ],
+      "Pending access to the shared data": [
+        "Accés a les dades compartides pendent"
+      ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Fixa ${ PASS_APP_NAME } a la barra d'eines"
       ],
@@ -1017,6 +1031,10 @@
       "You cannot change the mailboxes for this alias.": [
         "No podeu canviar les bústies de correu per a aquest àlies."
       ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Us queda ${ daysRemaining } dia per provar aquestes i altres característiques prèmium.",
+        "Us queden ${ daysRemaining } dies per provar aquestes i altres característiques prèmium."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Heu excedit el nombre de caixes fortes incloses a la vostra subscripció. Els elements només es poden moure a les vostres dues primeres caixes fortes. Per moure elements entre totes les caixes fortes milloreu la vostra subscripció."
       ],
@@ -1050,8 +1068,8 @@
     },
     "Label": {
       "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length }/ caràcter",
-        "${ passwordOptions.options.length }/ caràcters"
+        "${ passwordOptions.options.length } caràcter",
+        "${ passwordOptions.options.length } caràcters"
       ],
       "${ passwordOptions.options.wordCount } word": [
         "${ passwordOptions.options.wordCount } paraula",
@@ -1070,7 +1088,7 @@
         "15 minuts"
       ],
       "2FA secret key (TOTP)": [
-        "Clau secreta 2FA (TOTP)"
+        "Clau secreta A2F (TOTP)"
       ],
       "2FA token (TOTP)": [
         "Token 2FA (TOTP)"
@@ -1119,6 +1137,9 @@
       ],
       "Autofill 2FA": [
         "Emplenament automàtic A2F"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "Obre automàticament l'emplenament automàtic quan un camp d'inici de sessió està enfocat"
       ],
       "Autosave": [
         "Desa automàticament"
@@ -1256,7 +1277,7 @@
         "Saber-ne més"
       ],
       "Login": [
-        "Inicia la sessió"
+        "Inici de sessió"
       ],
       "Logins": [
         "Inicis de sessió"
@@ -1479,7 +1500,7 @@
     },
     "Placeholder": {
       "Add 2FA secret key": [
-        "Afegeix una clau secreta 2FA"
+        "Afegeix una clau secreta A2F"
       ],
       "Add hidden text": [
         "Afegir text ocult"
@@ -1557,6 +1578,12 @@
         "Escriviu la vostra nota"
       ]
     },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Les caixes fortes no poden contenir més d'${ vault.targetMaxMembers } usuari.",
+        "Les caixes fortes no poden contenir més de ${ vault.targetMaxMembers } usuaris."
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "Preferències de ${ PASS_APP_NAME }"
@@ -1627,6 +1654,9 @@
       "Password": [
         "Contrasenya"
       ],
+      "Pending access to the shared data": [
+        "Accés a les dades compartides pendent"
+      ],
       "Permanently remove all items ?": [
         "Voleu esborrar els elements de manera permanent?"
       ],
@@ -1696,7 +1726,7 @@
         "Es requereix el nom del camp."
       ],
       "OTP secret or URI is invalid": [
-        "La clau secreta OTP o l'URL no funciona."
+        "La clau secreta OTP o l'URL no són vàlids."
       ],
       "OTP secret or URI required": [
         "Heu d'introduir una clau secreta OTP o un URL."
@@ -1743,7 +1773,7 @@
         "El prefix de l'àlies no és vàlid"
       ],
       "Maximum length is ${ maxLength } character": [
-        "La longitud màxima és de ${ maxLength } caràcter.",
+        "La longitud màxima és d'${ maxLength } caràcter.",
         "La longitud màxima és de ${ maxLength } caràcters."
       ],
       "Missing alias prefix": [
@@ -1774,7 +1804,7 @@
         "El fitxer d'exportació xifrat amb PGP requereix una contrasenya"
       ],
       "Please enter a valid email address": [
-        "Introduïu un correu electrònic vàlid."
+        "Introduïu una adreça de correu electrònic vàlida."
       ],
       "Please verify your email address in order to use email aliases": [
         "Verifiqueu la vostra adreça de correu electrònic per poder utilitzar la compartició d'àlies de correu electrònic."
@@ -1815,8 +1845,14 @@
       "You cannot create more vaults than your subscription allows.": [
         "No podeu crear més caixes fortes del que permet la vostra subscripció."
       ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "Heu assolit el límit d'usuaris en aquesta caixa forta. ${ upgradeLink }"
+      ],
+      "You have unsaved changes.": [
+        "Teniu canvis per desar."
+      ],
       "You must select at least one mailbox": [
-        "Heu de seleccionar almenys una bústia"
+        "Heu de seleccionar almenys una bústia de correu"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Ja no tindreu accés a aquesta caixa forta. Per tornar-hi a entrar, necessitareu una nova invitació."
@@ -1826,6 +1862,18 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "El vostre pla només us permet emplenar automàticament des de les vostres dues primeres caixes fortes."
+      ],
+      "Your session could not be authorized.": [
+        "No s'ha pogut autoritzar la sessió."
+      ],
+      "Your session could not be resumed.": [
+        "No s'ha pogut reprendre la sessió."
+      ],
+      "Your session is inactive. Please log back in.": [
+        "La sessió està inactiva. Torneu a iniciar la sessió."
+      ],
+      "Your session was locked.": [
+        "S'ha bloquejat la sessió."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La vostra subscripció no us permet crear diverses caixes fortes. Tots els elements s'importaran a la vostra primera caixa forta. Per a importar a diverses caixes fortes milloreu la vostra subscripció."

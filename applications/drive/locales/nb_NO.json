@@ -278,7 +278,7 @@
         "Tøm papirkurven"
       ],
       "enable desktop notifications": [
-        "aktiver skrivebordsvarsler"
+        "aktivere skrivebordsvarsler"
       ],
       "Enable drive search": [
         "Aktiver stasjonssøk"
@@ -311,6 +311,9 @@
         "Få kobling"
       ],
       "Get started": [
+        "Kom i gang"
+      ],
+      "Get Started": [
         "Kom i gang"
       ],
       "Get verification code": [
@@ -1141,6 +1144,11 @@
       ],
       "URL": [
         "Nettadresse"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Bilde av kontakt"
       ]
     },
     "Contact type label": {
@@ -3703,9 +3711,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Du får best resultat hvis du unngår strømming og minneintensive oppgaver, eller deler opp opplastingen i mindre grupper."
       ],
-      "Free forever": [
-        "Gratis for alltid"
-      ],
       "Free up some space or add more storage space.": [
         "Frigjør litt plass eller legg til mer lagringsplass."
       ],
@@ -4117,9 +4122,6 @@
       "support team": [
         "støtteapparat"
       ],
-      "Swiss encrypted file storage": [
-        "Sveitsisk kryptert fillagring"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidig utilgjengelig. Vennligst kom tilbake senere."
       ],
@@ -4253,6 +4255,9 @@
       "Trash is empty": [
         "Papirkurven er tom"
       ],
+      "Try ${ DRIVE_APP_NAME }: Free forever": [
+        "Prøv ${ DRIVE_APP_NAME }: Free for alltid"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prøv nye ${ BRAND_NAME }-funksjoner, oppdateringer og produkter før de er utgitt til offentligheten. Dette vil laste inn applikasjonen på nytt."
       ],
@@ -4340,8 +4345,8 @@
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "vil bli gjenopprettet til versjonen fra ${ formattedRevisionDate }. Alle andre versjoner lagres fortsatt."
       ],
-      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
-        "Med ${ DRIVE_APP_NAME }, er dine data beskyttet med ende-til-ende kryptering. Bare du kan dekryptere den."
+      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
+        "Med ${ DRIVE_APP_NAME }, er dine data beskyttet med ende-til-ende kryptering."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Ønsker du å motta en ny verifiseringskode eller å bruke en alternativ verifiseringsmetode?"
@@ -6776,6 +6781,9 @@
       ],
       "Hide side panel": [
         "Skjul sidepanel"
+      ],
+      "Load image": [
+        "Last inn bilde"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Velg PGP-ordningen som skal brukes når du signerer eller krypterer til en bruker. Merk at PGP/Inline tvinger meldinger i ren tekst."

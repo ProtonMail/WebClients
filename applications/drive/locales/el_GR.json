@@ -316,6 +316,9 @@
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
       ],
+      "Give feedback": [
+        "Αφήστε την κριτική σας"
+      ],
       "Go to Drive": [
         "Μετάβαση στο Drive"
       ],
@@ -878,6 +881,10 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Παρακάμψτε τους τοπικούς αποκλεισμούς στο διαδίκτυο και τη λογοκρισία με το παγκόσμιο δίκτυο διακομιστών μας."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Περιλαμβάνει υποστήριξη για ${ domains } προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ addresses } διεύθυνση ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίων και άλλα.",
+        "Περιλαμβάνει υποστήριξη για ${ domains } προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίων και άλλα."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Περιλαμβάνει υποστήριξη για 1 προσαρμοσμένο τομέα ηλεκτρονικού ταχυδρομείου, 10 διευθύνσεις ηλεκτρονικού ταχυδρομείου, 10 hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
       ],
@@ -898,6 +905,11 @@
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "Αποθηκεύστε έως 200 εκδόσεις κάθε αρχείου για έως και 10 χρόνια."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } Εφαρμογή Επιφάνειας Εργασίας"
       ]
     },
     "Bug category": {
@@ -2058,9 +2070,42 @@
         "Ενημέρωση για ένα γεγονός που αρχίζει στις ${ formattedStart }"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Πληρωμένα ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ PASS_SHORT_APP_NAME } χαρακτηριστικά"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Περιλαμβάνει ιστορικό εκδόσεων σε ${ DRIVE_SHORT_APP_NAME }, πρόσβαση σε χιλιάδες διακομιστές υψηλής ταχύτητας ${ VPN_SHORT_APP_NAME }, κοινή χρήση σε ${ PASS_SHORT_APP_NAME } και πολλά άλλα."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 χρήστες"
+      ],
+      "Early access to new apps and features": [
+        "Πρώιμη πρόσβαση σε νέες εφαρμογές και λειτουργίες"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Πρώιμη πρόσβαση στη ${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "${ MAIL_SHORT_APP_NAME } και ${ CALENDAR_APP_NAME } πληρωμένα χαρακτηριστικά"
+      ]
+    },
     "Error": {
       "\"${ name }\" already exists": [
         "\"${ name }\" υπάρχει ήδη"
+      ],
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } δεν είναι δυνατή η σύνδεση στον εξωτερικό λογαριασμό σας"
+      ],
+      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
+        "Η ${ DRIVE_APP_NAME } έχει ενημερωθεί. Παρακαλούμε ανανεώστε τη σελίδα."
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Μπορείτε επίσης να ελέγξετε τη ${ statusPageLink }"
@@ -2097,6 +2142,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Η αναζήτηση περιεχομένου δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή. Παρακαλούμε τερματίστε τη λειτουργία ιδιωτικής περιήγησης ή χρησιμοποιήστε έναν άλλον περιηγητή."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "Δεν είναι δυνατή η ενεργοποίηση της αναζήτησης περιεχομένου. Επανεκκινήστε την εφαρμογή ή διαγράψτε δεδομένα."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο",
@@ -2219,6 +2267,9 @@
       ],
       "Passwords do not match": [
         "Οι κωδικοί πρόσβασης δεν ταυτίζονται"
+      ],
+      "Photos upload is temporarily disabled. Please try again later": [
+        "Η μεταφόρτωση φωτογραφιών είναι προσωρινά απενεργοποιημένη. Προσπαθήστε ξανά αργότερα"
       ],
       "Please activate your search again": [
         "Παρακαλούμε ενεργοποιήστε ξανά την αναζήτησή σας"
@@ -2343,6 +2394,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Δοκιμάστε να χρησιμοποιήσετε μόνο γράμματα, αριθμούς και _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Μη αναμενόμενο σφάλμα, δεν είναι δυνατή η εισαγωγή των επαφών"
       ],
       "Unknown error": [
         "Άγνωστο σφάλμα"
@@ -3442,6 +3496,9 @@
       "Close this screen to exit.": [
         "Κλείστε αυτήν την οθόνη για έξοδο."
       ],
+      "Coming soon": [
+        "Έρχεται σύντομα"
+      ],
       "Conflict": [
         "Διένεξη"
       ],
@@ -3645,9 +3702,6 @@
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Για καλύτερα αποτελέσματα, αποφύγετε ροή ή εντατικές σε μνήμη δραστηριότητες ή χωρίστε τη μεταφόρτωση σε μικρότερες παρτίδες."
-      ],
-      "Free forever": [
-        "Δωρεάν για πάντα"
       ],
       "Free up some space or add more storage space.": [
         "Ελευθερώστε χώρο ή προσθέστε περισσότερο χώρο αποθήκευσης."
@@ -4060,9 +4114,6 @@
       "support team": [
         "ομάδα υποστήριξης"
       ],
-      "Swiss encrypted file storage": [
-        "Ελβετική κρυπτογραφημένη αποθήκευση αρχείων"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
       ],
@@ -4282,9 +4333,6 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "θα γίνει επαναφορά στην έκδοση από ${ formattedRevisionDate }. Όλες οι άλλες εκδόσεις θα εξακολουθούν να αποθηκεύονται."
-      ],
-      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
-        "Με το ${ DRIVE_APP_NAME }, τα δεδομένα σας προστατεύονται με διατερματική κρυπτογράφηση. Μόνο εσείς μπορείτε να τα αποκρυπτογραφήσετε."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
@@ -5620,6 +5668,9 @@
         "${ timeRemaining.inHours } ώρα",
         "${ timeRemaining.inHours } ώρες"
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Παρακαλούμε μεταβείτε στη συνδεδεμένη συσκευή (στη συνεδρία όπου ξεκίνησε το αίτημα) για να αλλάξετε τον κωδικό πρόσβασής σας."
       ],
@@ -5631,8 +5682,30 @@
         "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inHours } ώρα",
         "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inHours } ώρες"
       ],
+      "This permission expires soon": [
+        "Αυτό το δικαίωμα λήγει σύντομα"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Τώρα μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας για τον λογαριασμό ${ boldEmail } ελεύθερα για ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Τώρα μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας για τον λογαριασμό ${ boldEmail }"
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Έχετε ${ timeRemaining.inDays } ημέρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        "Έχετε ${ timeRemaining.inDays } ημέρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Έχετε ${ timeRemaining.inHours } ώρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        " Έχετε ${ timeRemaining.inHours } ώρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Έχετε ${ timeRemaining.inMinutes } λεπτό για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        " Έχετε ${ timeRemaining.inMinutes } λεπτά για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτο για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        " Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτα για να επαναφέρετε τον κωδικό πρόσβασής σας."
       ]
     },
     "session_recovery:available:link": {

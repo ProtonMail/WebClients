@@ -95,9 +95,6 @@
       "Continue with this password": [
         "Pokračovat s tímto heslem"
       ],
-      "Copy": [
-        "Kopírovat"
-      ],
       "Copy address": [
         "Kopírovat adresu"
       ],
@@ -163,9 +160,6 @@
       ],
       "Download": [
         "Stáhnout"
-      ],
-      "Download all configurations": [
-        "Stáhnout všechny konfigurace"
       ],
       "Download our CSV template": [
         "Stáhnout naši šablonu CSV"
@@ -496,6 +490,9 @@
       ],
       "Upgrade to Business": [
         "Upgrade na Business"
+      ],
+      "Upgrade to Visionary": [
+        "Navýšit na Visionary"
       ],
       "Upgrade your plan": [
         "Přejít na vyšší tarif"
@@ -1876,6 +1873,14 @@
         "Oddělte různé aspekty svého života pomocí více e-mailových adres a po navýšení tarifu odemkněte další prémiové funkce."
       ]
     },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Přístup k desktopové aplikaci je omezený"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Beta verze desktopové aplikace ${ MAIL_APP_NAME } je v současné době omezena na ${ BRAND_NAME } předplatitelům tarifu Visionary. Všem uživatelům bude k dispozici na začátku roku 2024."
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Chyby nebo problém s kvalitou"
@@ -1936,6 +1941,9 @@
       ],
       "Early access to new apps and features": [
         "Předběžný přístup k novým aplikacím a funkcím"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Předčasný přístup k desktopové aplikaci ${ MAIL_APP_NAME }"
       ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Placené funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_APP_NAME }"
@@ -3176,6 +3184,9 @@
       "for choosing ${ product }": [
         "za výběr ${ product }"
       ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Pro členy organizací používajících jednotné přihlášení (SAML SSO)"
+      ],
       "Free forever": [
         "Navždy zdarma"
       ],
@@ -3394,9 +3405,6 @@
       ],
       "per month, billed every 24 months": [
         "za měsíc, účtováno každých 24 měsíců"
-      ],
-      "Plan upgrade required": [
-        "Požadováno předplatné"
       ],
       "Please add a password for the user on row": [
         "Přidejte prosím heslo uživatele na řádku",
@@ -4027,6 +4035,9 @@
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Heslo organizace lze sdílet se všemi uživateli, kterým chcete přidělit oprávnění správce. Heslo slouží také jako nouzový kód pro obnovení přístupu do Vaší organizace v případě, že ztratíte přístup ke svému hlavnímu účtu. Heslo uložte a držte v bezpečí."
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Vaše organizace používá jednotné přihlášení (SSO). Stiskněte tlačítko Přihlásit se a pokračujte s poskytovatelem SSO."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Vaše platební údaje jsou chráněny šifrováním TLS a švýcarskými zákony o ochraně soukromí."
@@ -4744,11 +4755,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Zapomněli jste uživatelské jméno svého ${ BRAND_NAME } účtu? Najděte ho pomocí obnovovacího e-mailu nebo telefonního čísla a získejte zpět přístup k ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a dalším."
       ],
+      "Private and secure email, no credit card required": [
+        "Soukromý a zabezpečený e-mail, bez nutnosti platební karty"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Resetujte heslo ke svém účtu ${ BRAND_NAME }."
       ],
       "Sign in to access your ${ appName } account": [
         "Přihlaste se pro přístup do účtu ${ appName }"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Vyzkoušejte ${ planName } zdarma pomocí tohoto odkazu"
       ]
     },
     "Monetary unit": {
@@ -6804,9 +6821,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } byl zkopírován do Vaší schránky"
-      ],
       "Account deleted. Signing out...": [
         "Účet byl smazán. Odhlašování..."
       ],

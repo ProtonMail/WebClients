@@ -179,6 +179,9 @@
       "Get mobile apps": [
         "Získat mobilní aplikace"
       ],
+      "Get the deal": [
+        "Využijte nabídku"
+      ],
       "Help us improve": [
         "Pomozte nám se zlepšit"
       ],
@@ -382,6 +385,11 @@
       ],
       "Your password manager not here? Request it.": [
         "Váš správce hesel zde není? Požádejte o něj."
+      ]
+    },
+    "Badge": {
+      "Early access": [
+        "Předběžný přístup"
       ]
     },
     "bf2023: Info": {
@@ -635,6 +643,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Chybný PIN kód. Zkuste to znovu."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Váš kód PIN byl odstraněn jiným klientem ${ PASS_APP_NAME }"
       ]
     },
     "Error message": {
@@ -806,6 +817,9 @@
       "Autosaved on ${ submissionURL }": [
         "Automaticky uloženo na ${ submissionURL }"
       ],
+      "Built in 2FA authenticator": [
+        "Vestavěný autentizátor 2FA"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Může vytvářet, upravovat, mazat a exportovat položky v tomto trezoru."
       ],
@@ -847,6 +861,9 @@
       ],
       "Drop to import": [
         "Přetažením provedete import"
+      ],
+      "Early access to ${ PASS_APP_NAME } web app": [
+        "Předčasný přístup k webové aplikaci ${ PASS_APP_NAME }"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Snadno importujte svá stávající hesla do ${ PASS_APP_NAME }."
@@ -1025,11 +1042,17 @@
       "Please enter your current PIN code to continue": [
         "Pro pokračování zadejte svůj aktuální PIN kód"
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Pro včasný přístup k webové aplikaci ${ PASS_APP_NAME } prosím upgradujte."
+      ],
       "Press Enter to copy": [
         "Pro kopírování stiskněte Enter"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Velmi nám záleží na ochraně soukromí. Přečtěte si, v čem se ${ PASS_APP_NAME } liší."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Chráněno naším pokročilým programem na ochranu účtů ${ PROTON_SENTINEL_LINK }"
       ],
       "Restoring trashed items...": [
         "Obnovování položek z koše..."
@@ -1054,6 +1077,9 @@
       ],
       "Settings successfully updated": [
         "Nastavení bylo úspěšně aktualizováno"
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "Sdílení přihlašovacích údajů, zabezpečených poznámek, až s 10 lidmi"
       ],
       "Sign in or create an account to continue.": [
         "Pro pokračování se přihlaste nebo si vytvořte účet."
@@ -1123,6 +1149,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Navýšit ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Přejděte na vyšší tarif abyste odemkli prémiové funkce"
       ],
       "Use vaults to share this item with others.": [
         "Pomocí trezorů můžete tuto položku sdílet s ostatními."
@@ -1835,6 +1864,9 @@
       ],
       "Update available": [
         "Aktualizace k dispozici"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Přejděte na vyšší tarif k odemčení prémiových funkcí"
       ],
       "Use my email": [
         "Použít můj e-mail"

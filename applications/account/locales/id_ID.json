@@ -239,9 +239,6 @@
       "Continue with this password": [
         "Lanjutkan dengan kata sandi ini"
       ],
-      "Copy": [
-        "Salin"
-      ],
       "Copy address": [
         "Salin alamat"
       ],
@@ -364,9 +361,6 @@
       ],
       "Download": [
         "Unduh"
-      ],
-      "Download all configurations": [
-        "Unduh seluruh konfigurasi"
       ],
       "Download CSV sample": [
         "Unduh sampel CSV"
@@ -1007,6 +1001,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Tingkatkan untuk mengaktifkan ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Visionary": [
+        "Tingkatkan ke Visionary"
+      ],
       "Upgrade your plan": [
         "Tingkatkan paket Anda"
       ],
@@ -1476,6 +1473,9 @@
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Lewati pemblokiran dan penyensoran internet lokal dengan jaringan server global kami."
+      ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Meliputi dukungan untuk ${ domains } domain email khusus, ${ addresses } alamat email, alias hide-my-email tanpa batasan jumlah, fitur berbagi kalender, dan masih banyak lagi."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Termasuk dukungan untuk 1 domain surel kustom, 10 alamat surel, 10 alias hide-my-email, pembagian kalender, dan lainnya."
@@ -3124,6 +3124,14 @@
         "Kami menemukan baris-baris berikut ini di berkas CSV Anda. Pilih baris yang ingin Anda impor."
       ]
     },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Akses ke aplikasi desktop tengah dibatasi"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Versi beta aplikasi desktop ${ MAIL_APP_NAME } saat ini hanya terbatas bagi para pelanggan ${ BRAND_NAME } Visionary. Versi aplikasi ini akan tersedia bagi seluruh pengguna pada awal 2024."
+      ]
+    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "Kembali ke ${ signIn }."
@@ -3649,6 +3657,33 @@
     "Enabled 2FA": {
       "2FA": [
         "2FA"
+      ]
+    },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Berbagai fitur ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, dan ${ PASS_SHORT_APP_NAME } berbayar"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Meliputi riwayat versi pada ${ DRIVE_SHORT_APP_NAME }, akses ke ratusan server ${ VPN_SHORT_APP_NAME } berkecepatan tinggi, fitur untuk saling berbagi pada ${ PASS_SHORT_APP_NAME }, dan masih banyak lagi."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 pengguna"
+      ],
+      "Early access to new apps and features": [
+        "Akses dini ke berbagai aplikasi dan fitur baru"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Akses dini ke aplikasi desktop ${ MAIL_APP_NAME }"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Berbagai fitur ${ MAIL_SHORT_APP_NAME } dan ${ CALENDAR_APP_NAME } berbayar"
       ]
     },
     "Error": {
@@ -6022,9 +6057,6 @@
       "Are you sure you want to delete this filter?": [
         "Apakah Anda yakin untuk menghapus filter ini?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Apakah Anda yakin untuk menghapus folder ini? Seluruh sub-folder yang terkandung di dalam folder ini juga akan ikut terhapus."
-      ],
       "Are you sure you want to delete this label?": [
         "Apakah Anda yakin ingin menghapus label ini?"
       ],
@@ -6306,12 +6338,6 @@
       ],
       "Emailing preference saved": [
         "Preferensi surel disimpan"
-      ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Surel di folder ini tidak akan dihapus dan masih bisa dibuka di folder Semua Surat."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Surel berlabel ini tidak akan dihapus dan masih bisa dibuka di folder asalnya."
       ],
       "Enable this address to join this calendar": [
         "Aktifkan alamat ini untuk bergabung ke kalender ini"
@@ -6841,9 +6867,6 @@
       "Phone number": [
         "Nomor telepon"
       ],
-      "Plan upgrade required": [
-        "Diperlukan peningkatan paket"
-      ],
       "Please add email addresses for the users on rows": [
         "Silakan tambahkan alamat surel pengguna pada baris berikut"
       ],
@@ -6876,9 +6899,6 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Harap dicatat bahwa dengan menghapus domain ini, seluruh alamat yang terhubung dengan domain tersebut akan dinonaktifkan."
-      ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Mohon diperhatikan bahwa dengan menghapus filter ini, kami tidak akan lagi memproses seluruh tindakan otomatis yang terhubung dengan filter."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Harap diperhatikan bahwa dengan mengeklik tombol Konfirmasi, total saldo Anda akan berkurang menjadi ${ creditsRemaining }."
@@ -9840,26 +9860,6 @@
         "Kecepatan VPN sedang"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Telusuri seluruh paket ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Dari ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Pertahankan akun ${ currentPlanName } yang saya miliki saat ini"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Lanjut ke proses peninjauan"
@@ -9899,6 +9899,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Tingkatkan ke ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Telusuri seluruh paket ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Dari ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Pertahankan akun ${ currentPlanName } yang saya miliki saat ini"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
       ]
     },
     "new_plans: feature": {
@@ -12583,9 +12603,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } disalin ke papan klip Anda"
-      ],
       "Account deleted. Signing out...": [
         "Akun dihapus. Mengeluarkan Anda dari akun..."
       ],
@@ -13300,15 +13317,6 @@
       "Delete ${ email }": [
         "Hapus ${ email }"
       ],
-      "Delete ${ filterName }": [
-        "Hapus ${ filterName }"
-      ],
-      "Delete ${ label.Name } folder": [
-        "Hapus ${ label.Name } folder"
-      ],
-      "Delete ${ label.Name } label": [
-        "Hapus ${ label.Name } label"
-      ],
       "Delete ${ tokenNameToRemove }?": [
         "Hapus ${ tokenNameToRemove }?"
       ],
@@ -13318,8 +13326,14 @@
       "Delete calendar": [
         "Hapus kalender"
       ],
+      "Delete folder?": [
+        "Hapus folder?"
+      ],
       "Delete key permanently?": [
         "Hapus kunci secara permanen?"
+      ],
+      "Delete label?": [
+        "Hapus label?"
       ],
       "Delete logs": [
         "Hapus log"
