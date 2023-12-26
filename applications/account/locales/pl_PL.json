@@ -239,9 +239,6 @@
       "Continue with this password": [
         "Kontynuuj z tym hasłem"
       ],
-      "Copy": [
-        "Kopiuj"
-      ],
       "Copy address": [
         "Kopiuj adres"
       ],
@@ -364,9 +361,6 @@
       ],
       "Download": [
         "Pobierz"
-      ],
-      "Download all configurations": [
-        "Pobierz wszystkie konfiguracje"
       ],
       "Download CSV sample": [
         "Pobierz przykładowy plik CSV"
@@ -1006,6 +1000,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Ulepsz plan, aby włączyć ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to Visionary": [
+        "Ulepsz do planu Visionary"
       ],
       "Upgrade your plan": [
         "Ulepsz plan"
@@ -3160,6 +3157,17 @@
         "Wykryliśmy następujące pola w pliku CSV. Zaznacz te, które chcesz zaimportować."
       ]
     },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Dostęp do aplikacji desktopowej jest ograniczony"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Aplikacja desktopowa ${ MAIL_APP_NAME } w wersji beta jest dostępna dla użytkowników planu ${ BRAND_NAME } Visionary. Aplikacja będzie dostępna dla wszystkich użytkowników na początku 2024 roku."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Ulepsz konto lub poczekaj na jej dostęp na początku 2024 roku."
+      ]
+    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "Powrót do ${ signIn }."
@@ -5282,6 +5290,9 @@
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Masz już konto? ${ signIn }"
+      ],
+      "Already have an account? ${ signIn } or ${ switchAccount }": [
+        "Masz już konto? ${ signIn } lub ${ switchAccount }"
       ]
     },
     "Go to sign up": {
@@ -6211,6 +6222,9 @@
       "Any ${ twoFa } method on your account will be disabled.": [
         "${ twoFa } zostanie wyłączone na koncie."
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Podfoldery również zostaną usunięte. Wiadomości w folderze ${ nameDeleted } nie zostaną usunięte i będą nadal dostępne w folderze Wszystkie wiadomości."
+      ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Każdy, kto posiada link, może zobaczyć szczegóły wydarzenia w kalendarzu, w tym nazwę, lokalizację i uczestników."
       ],
@@ -6241,8 +6255,8 @@
       "Are you sure you want to delete this filter?": [
         "Czy na pewno chcesz usunąć ten filtr?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Czy na pewno chcesz usunąć ten folder? Wszystkie foldery podrzędne również zostaną usunięte."
+      "Are you sure you want to delete this folder?": [
+        "Czy na pewno chcesz usunąć ten folder?"
       ],
       "Are you sure you want to delete this label?": [
         "Czy na pewno chcesz usunąć tę etykietę?"
@@ -6538,11 +6552,8 @@
       "Emailing preference saved": [
         "Ustawienia list mailingowych zostały zapisane"
       ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Wiadomości w tym folderze nie zostaną usunięte i będą nadal dostępne w folderze Wszystkie wiadomości."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Wiadomości oznaczone tą etykietą nie zostaną usunięte i będą nadal dostępne w odpowiednim folderze."
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Wiadomości oznaczone etykietą ${ nameDeleted } nie zostaną usunięte i będą nadal dostępne w odpowiednim folderze."
       ],
       "Enable this address to join this calendar": [
         "Włącz ten adres, aby dołączyć do kalendarza"
@@ -6992,7 +7003,7 @@
         "To nie jest Twoje urządzenie? Zaloguj się przy użyciu okna prywatnego. ${ learnMore }"
       ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "Aplikacja desktopowa w wersji beta pozwala uruchamiać ${ MAIL_APP_NAME } bezpośrednio z pulpitu bez potrzeby otwierania przeglądarki internetowej."
+        "Aplikacja desktopowa jest dostępna w wersji beta. Aplikacja pozwala uruchamiać ${ MAIL_APP_NAME } bezpośrednio z pulpitu bez potrzeby otwierania przeglądarki internetowej."
       ],
       "Number of dedicated servers in the organization": [
         "Liczba dedykowanych serwerów organizacji"
@@ -7084,9 +7095,6 @@
       "Phone number": [
         "Numer telefonu"
       ],
-      "Plan upgrade required": [
-        "Ulepszenie planu jest wymagane"
-      ],
       "Please add a password for the user on row": [
         "Wpisz hasło użytkownika w wierszu",
         "Wpisz hasła użytkowników w wierszach",
@@ -7126,8 +7134,8 @@
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Pamiętaj, że po usunięciu domeny powiązane z nią adresy zostaną wyłączone."
       ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Pamiętaj, że po usunięciu filtra, nie będziemy wykonywać jego automatycznych akcji."
+      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Pamiętaj, że po usunięciu filtra ${ nameDeleted } nie będziemy wykonywać jego automatycznych akcji."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Po kliknięciu przycisku Potwierdź na koncie pozostanie ${ creditsRemaining } środków."
@@ -9720,6 +9728,9 @@
       "Sign in": [
         "Zaloguj się"
       ],
+      "switch account": [
+        "przełącz konto"
+      ],
       "Terms": [
         "Regulamin"
       ],
@@ -10170,26 +10181,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Zachowaj moje konto ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Przejdź do przeglądu"
@@ -10229,6 +10220,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Zachowaj moje konto ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
       ]
     },
     "new_plans: feature": {
@@ -13114,9 +13125,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "Domena serwera ${ server.Domain } została skopiowana do schowka"
-      ],
       "Account deleted. Signing out...": [
         "Konto zostało usunięte. Trwa wylogowywanie..."
       ],
@@ -13852,15 +13860,6 @@
       "Delete ${ email }": [
         "Usuń adres ${ email }"
       ],
-      "Delete ${ filterName }": [
-        "Usuń ${ filterName }"
-      ],
-      "Delete ${ label.Name } folder": [
-        "Usuń folder ${ label.Name }"
-      ],
-      "Delete ${ label.Name } label": [
-        "Usuń etykietę ${ label.Name }"
-      ],
       "Delete ${ tokenNameToRemove }?": [
         "Usunąć token ${ tokenNameToRemove }?"
       ],
@@ -13870,8 +13869,17 @@
       "Delete calendar": [
         "Usuń kalendarz"
       ],
+      "Delete filter?": [
+        "Usunąć filtr?"
+      ],
+      "Delete folder?": [
+        "Usunąć folder?"
+      ],
       "Delete key permanently?": [
         "Usunąć trwale klucz?"
+      ],
+      "Delete label?": [
+        "Usunąć etykietę?"
       ],
       "Delete logs": [
         "Usuń logi"
@@ -14406,6 +14414,9 @@
       ],
       "Summary": [
         "Podsumowanie"
+      ],
+      "Switch account": [
+        "Przełącz konto"
       ],
       "Switch to one-password mode": [
         "Przełącz do trybu pojedynczego hasła"

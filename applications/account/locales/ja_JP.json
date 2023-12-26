@@ -239,9 +239,6 @@
       "Continue with this password": [
         "このパスワードで続行する"
       ],
-      "Copy": [
-        "コピー"
-      ],
       "Copy address": [
         "アドレスをコピー"
       ],
@@ -364,9 +361,6 @@
       ],
       "Download": [
         "ダウンロード"
-      ],
-      "Download all configurations": [
-        "すべての設定ファイルをダウンロード"
       ],
       "Download CSV sample": [
         "CSV サンプルをダウンロード"
@@ -3557,6 +3551,11 @@
         "2要素認証"
       ]
     },
+    "eoy2023: Deal details": {
+      "Early access to new apps and features": [
+        "新しいアプリや機能への早期アクセス"
+      ]
+    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。必要に応じて${ statusPageLink }も確認してください。"
@@ -5916,9 +5915,6 @@
       "Are you sure you want to delete this filter?": [
         "このフィルタを削除してもよろしいですか?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "本当にこのフォルダーを削除してよろしいですか？サブフォルダーもすべて削除されます。"
-      ],
       "Are you sure you want to delete this label?": [
         "このラベルを削除してよろしいですか?"
       ],
@@ -6200,12 +6196,6 @@
       ],
       "Emailing preference saved": [
         "メール設定が保存されました"
-      ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "このフォルダーに保管されたメールは削除されず、すべてのメールフォルダーから見つけることができます。"
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "このラベルが付いたメールは削除されず、各フォルダで見つけることができます。"
       ],
       "Enable this address to join this calendar": [
         "このカレンダーを削除してもよろしいですか?"
@@ -6732,9 +6722,6 @@
       "Phone number": [
         "電話番号"
       ],
-      "Plan upgrade required": [
-        "プランのアップグレードが必要です"
-      ],
       "Please add email addresses for the users on rows": [
         "追加ユーザーのメールアドレスを入力してください。"
       ],
@@ -6767,9 +6754,6 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "注意: このドメインを削除することにより、このアドレスに関連付けられているすべてのアドレスは無効になります。"
-      ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "このフィルターを削除すると、フィルターによってトリガーされるすべての自動アクションの処理が停止されることに注意してください。"
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "確認ボタンをクリックすると、アカウントに ${ creditsRemaining } クレジットが残ります。"
@@ -9702,26 +9686,6 @@
         "中程度の VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "すべての ${ BRAND_NAME } プランを表示"
-      ],
-      "From ${ price }": [
-        "${ price } から"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "${ currentPlanName } アカウントを継続"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "見直しを行う"
@@ -9761,6 +9725,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } へアップグレード"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "すべての ${ BRAND_NAME } プランを表示"
+      ],
+      "From ${ price }": [
+        "${ price } から"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "${ currentPlanName } アカウントを継続"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
       ]
     },
     "new_plans: feature": {
@@ -12415,9 +12399,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } がクリップボードにコピーされました"
-      ],
       "Account deleted. Signing out...": [
         "アカウントが削除されました。サインアウトしています..."
       ],
@@ -13128,15 +13109,6 @@
       ],
       "Delete ${ email }": [
         "${ email } を削除"
-      ],
-      "Delete ${ filterName }": [
-        "${ filterName } を削除します"
-      ],
-      "Delete ${ label.Name } folder": [
-        "${ label.Name } フォルダーを削除"
-      ],
-      "Delete ${ label.Name } label": [
-        "${ label.Name } ラベルを削除"
       ],
       "Delete ${ tokenNameToRemove }?": [
         "${ tokenNameToRemove } を削除しますか?"
