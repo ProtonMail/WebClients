@@ -7,7 +7,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MailUpsellButton, PmMeUpsellModal, useModalState, useSettingsLink } from '../../components';
 import { useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
-import PmMeButton from './PmMeButton';
+import PmMeButton, { getActivateString } from './PmMeButton';
 
 interface Props {
     isPMAddressActive: boolean;
@@ -15,7 +15,7 @@ interface Props {
 
 const PmMeSection = ({ isPMAddressActive }: Props) => {
     const goToSettings = useSettingsLink();
-    const [{ hasPaidMail, Name }] = useUser();
+    const [user] = useUser();
 
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
@@ -31,7 +31,7 @@ const PmMeSection = ({ isPMAddressActive }: Props) => {
     };
 
     const display: 'can-enable' | 'has-enabled' | 'free-needs-upgrade' | 'free-can-only-receive' = (() => {
-        if (hasPaidMail) {
+        if (user.hasPaidMail) {
             if (!isPMAddressActive) {
                 return 'can-enable';
             } else {
@@ -58,7 +58,7 @@ const PmMeSection = ({ isPMAddressActive }: Props) => {
                         {c('Info')
                             .t`Add a @pm.me email address to your account. This simple, shorter domain stands for "${MAIL_APP_NAME} me" or "Private Message me."`}
                     </SettingsParagraph>
-                    <PmMeButton />
+                    <PmMeButton>{getActivateString(user)}</PmMeButton>
                 </>
             )}
             {display === 'free-needs-upgrade' && (
@@ -68,10 +68,7 @@ const PmMeSection = ({ isPMAddressActive }: Props) => {
                             .t`Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${MAIL_APP_NAME} me” or “Private Message me”.`}
                     </SettingsParagraph>
 
-                    <MailUpsellButton
-                        onClick={() => handleUpsellModalDisplay(true)}
-                        text={c('Action').t`Activate ${Name}@pm.me`}
-                    />
+                    <MailUpsellButton onClick={() => handleUpsellModalDisplay(true)} text={getActivateString(user)} />
                 </>
             )}
             {display === 'free-can-only-receive' && (
