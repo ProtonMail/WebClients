@@ -37,14 +37,14 @@ export const getIsDrawerApp = (app: string): app is DRAWER_APPS => {
     return getIsNativeDrawerApp(app) || getIsIframedDrawerApp(app);
 };
 
-export const isAuthorizedDrawerUrl = (url: string) => {
+export const isAuthorizedDrawerUrl = (url: string, hostname: string) => {
     try {
         const originURL = new URL(url);
 
         // Get subdomain of the url => e.g. mail, calendar, drive
         const appFromUrl = originURL.hostname.split('.')[0];
 
-        return isURLProtonInternal(url) && drawerAuthorizedApps.includes(appFromUrl);
+        return isURLProtonInternal(url, hostname) && drawerAuthorizedApps.includes(appFromUrl);
     } catch {
         // the URL constructor will throw if no URL can be built out of url
         return false;
@@ -55,7 +55,10 @@ export const getIsAuthorizedApp = (appName: string): appName is APP_NAMES => {
     return authorizedApps.includes(appName);
 };
 
-export const getIsDrawerPostMessage = (event: MessageEvent): event is MessageEvent<DRAWER_ACTION> => {
+export const getIsDrawerPostMessage = (
+    event: MessageEvent,
+    hostname = window.location.hostname
+): event is MessageEvent<DRAWER_ACTION> => {
     const origin = event.origin;
 
     // sandboxed iframes might have a "null" origin instead of a valid one
@@ -70,24 +73,26 @@ export const getIsDrawerPostMessage = (event: MessageEvent): event is MessageEve
      * - event.data is defined
      * - event.data.type is part of the SIDE_APP_EVENT enum
      */
-    return isAuthorizedDrawerUrl(origin) && event.data && Object.values(DRAWER_EVENTS).includes(event.data.type);
+    return (
+        isAuthorizedDrawerUrl(origin, hostname) && event.data && Object.values(DRAWER_EVENTS).includes(event.data.type)
+    );
 };
 
-export const postMessageFromIframe = (message: DRAWER_ACTION, parentApp: APP_NAMES) => {
+export const postMessageFromIframe = (message: DRAWER_ACTION, parentApp: APP_NAMES, location = window.location) => {
     if (!getIsAuthorizedApp(parentApp)) {
         return;
     }
-    const parentUrl = getAppHref('/', parentApp, getLocalIDFromPathname(window.location.pathname));
+    const parentUrl = getAppHref('/', parentApp, getLocalIDFromPathname(location.pathname), location);
 
     window.parent?.postMessage(message, parentUrl);
 };
 
-export const postMessageToIframe = (message: DRAWER_ACTION, iframedApp: DRAWER_APPS) => {
+export const postMessageToIframe = (message: DRAWER_ACTION, iframedApp: DRAWER_APPS, location = window.location) => {
     if (!getIsAuthorizedApp(iframedApp)) {
         return;
     }
     const iframe = document.querySelector('[id^=drawer-app-iframe]') as HTMLIFrameElement | null;
-    const targetOrigin = getAppHref('/', iframedApp, getLocalIDFromPathname(window.location.pathname));
+    const targetOrigin = getAppHref('/', iframedApp, getLocalIDFromPathname(location.pathname), location);
 
     iframe?.contentWindow?.postMessage(message, targetOrigin);
 };

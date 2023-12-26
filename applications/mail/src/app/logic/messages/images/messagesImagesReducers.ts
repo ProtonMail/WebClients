@@ -125,7 +125,12 @@ export const loadRemoteProxyFromURL = (state: Draft<MessagesState>, action: Payl
 
                 if (imageToLoad.url && uid) {
                     const encodedImageUrl = encodeImageUri(imageToLoad.url);
-                    const loadingURL = forgeImageURL(API_URL, encodedImageUrl, uid);
+                    const loadingURL = forgeImageURL({
+                        apiUrl: API_URL,
+                        url: encodedImageUrl,
+                        uid,
+                        origin: window.location.origin,
+                    });
 
                     // Image is already in state, we only need to put it as loaded
                     if (image) {

@@ -14,10 +14,20 @@ export const encodeImageUri = (url: string) => {
 /**
  * Forge a url to load an image through the Proton proxy
  */
-export const forgeImageURL = (apiUrl: string, url: string, uid: string) => {
+export const forgeImageURL = ({
+    apiUrl,
+    url,
+    uid,
+    origin,
+}: {
+    apiUrl: string;
+    url: string;
+    uid: string;
+    origin: string;
+}) => {
     const config = getImage(url, 0, uid);
     const prefixedUrl = `${apiUrl}/${config.url}`; // api/ is required to set the AUTH cookie
-    const urlToLoad = createUrl(prefixedUrl, config.params);
+    const urlToLoad = createUrl(prefixedUrl, config.params, origin);
     return urlToLoad.toString();
 };
 

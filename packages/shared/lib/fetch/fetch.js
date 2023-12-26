@@ -1,4 +1,5 @@
 import { DEFAULT_TIMEOUT } from '../constants';
+import window from '../window';
 import { createOfflineError, createTimeoutError } from './ApiError';
 import { checkStatus, createUrl, serializeData } from './helpers';
 
@@ -14,7 +15,7 @@ const fetchHelper = ({ url: urlString, params, signal, timeout = DEFAULT_TIMEOUT
         ...rest,
     };
 
-    const url = createUrl(urlString, params);
+    const url = createUrl(urlString, params, window.location.origin);
 
     const timeoutHandle = setTimeout(() => {
         isTimeout = true;
