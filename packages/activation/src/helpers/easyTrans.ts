@@ -19,7 +19,7 @@ class GetLabelsTranslation implements TranslationInterface {
         );
 
     public partialCount = (selectedFoldersCount: number) =>
-        c('Info').ngettext(
+        c('Info: partial').ngettext(
             msgid`${selectedFoldersCount} label selected`,
             `${selectedFoldersCount} labels selected`,
             selectedFoldersCount
@@ -75,7 +75,7 @@ class GetFoldersTranslation implements TranslationInterface {
         );
 
     public partialCount = (selectedFoldersCount: number) =>
-        c('Info').ngettext(
+        c('Info: partial').ngettext(
             msgid`${selectedFoldersCount} folder selected`,
             `${selectedFoldersCount} folders selected`,
             selectedFoldersCount
