@@ -313,6 +313,9 @@
       "Get started": [
         "Inizia ora"
       ],
+      "Get Started": [
+        "Inizia ora"
+      ],
       "Get verification code": [
         "Ottieni il codice di verifica"
       ],
@@ -623,7 +626,7 @@
         "Salta"
       ],
       "Skip verification": [
-        "Salta verifica"
+        "Salta la verifica"
       ],
       "Start": [
         "Inizia"
@@ -1141,6 +1144,11 @@
       ],
       "URL": [
         "URL"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Immagine del contatto"
       ]
     },
     "Contact type label": {
@@ -3703,9 +3711,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Per ottenere risultati migliori, evita lo streaming e le attività che richiedono molta memoria o suddividi il caricamento in batch più piccoli."
       ],
-      "Free forever": [
-        "Gratis per sempre"
-      ],
       "Free up some space or add more storage space.": [
         "Libera dello spazio o aggiungi più spazio di archiviazione."
       ],
@@ -4117,9 +4122,6 @@
       "support team": [
         "team di supporto"
       ],
-      "Swiss encrypted file storage": [
-        "Spazio di archiviazione crittografato svizzero"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito."
       ],
@@ -4242,16 +4244,19 @@
         "Trasferimento annullato per la cartella \"${ name }\""
       ],
       "Transfer skipped for file \"${ file.name }\"": [
-        "Trasferimento saltato per il file \"${ file.name }\""
+        "Trasferimento ignorato per il file \"${ file.name }\""
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
-        "Trasferimento saltato per la cartella \"${ folderName }\""
+        "Trasferimento ignorato per la cartella \"${ folderName }\""
       ],
       "Trash": [
         "Cestino"
       ],
       "Trash is empty": [
         "Il cestino è vuoto"
+      ],
+      "Try ${ DRIVE_APP_NAME }: Free forever": [
+        "Prova ${ DRIVE_APP_NAME }: gratis per sempre"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nuove funzionalità, aggiornamenti e prodotti di ${ BRAND_NAME } prima che vengano rilasciati al pubblico. Questo ricaricherà l'applicazione"
@@ -4340,8 +4345,8 @@
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "verrà ripristinato alla versione del ${ formattedRevisionDate }. Tutte le altre versioni saranno salvate."
       ],
-      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
-        "Con ${ DRIVE_APP_NAME }, i tuoi dati sono protetti dalla crittografia end-to-end. Solo tu puoi decriptarli."
+      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
+        "Con ${ DRIVE_APP_NAME } i tuoi dati sono protetti dalla crittografia end-to-end."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vuoi ricevere un nuovo codice di verifica o utilizzare un metodo alternativo?"
@@ -4886,7 +4891,7 @@
         "Dimensione"
       ],
       "Skip file": [
-        "Salta file"
+        "Ignora file"
       ],
       "Skip folder": [
         "Ignora cartella"
@@ -6777,6 +6782,9 @@
       "Hide side panel": [
         "Nascondi pannello laterale"
       ],
+      "Load image": [
+        "Carica l'immagine"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleziona lo schema PGP da usare quando firmi o usi la crittografia con un utente. Nota che PGP/Inline forza i messaggi in testo semplice"
       ],
@@ -6859,7 +6867,7 @@
         "Le segnalazioni non sono crittografate end-to-end, non inviare alcuna informazione sensibile."
       ],
       "Skip verification?": [
-        "Saltare la verifica?"
+        "Vuoi saltare la verifica?"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Alcuni dei contatti da unire presentano errori. Controllali singolarmente"

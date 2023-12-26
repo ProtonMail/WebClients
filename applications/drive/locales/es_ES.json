@@ -313,6 +313,9 @@
       "Get started": [
         "Comenzar"
       ],
+      "Get Started": [
+        "Comenzar"
+      ],
       "Get verification code": [
         "Obtener código de verificación"
       ],
@@ -1141,6 +1144,11 @@
       ],
       "URL": [
         "URL"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Imagen del contacto"
       ]
     },
     "Contact type label": {
@@ -3703,9 +3711,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Para obtener el mejor resultado, evita las actividades de streaming o demandantes de memoria, o divide tus cargas de archivos en lotes más pequeños."
       ],
-      "Free forever": [
-        "Gratis para siempre"
-      ],
       "Free up some space or add more storage space.": [
         "Libera algo de espacio o añade más espacio de almacenamiento."
       ],
@@ -4117,9 +4122,6 @@
       "support team": [
         "equipo de soporte"
       ],
-      "Swiss encrypted file storage": [
-        "Almacenamiento cifrado de archivos suizo"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporalmente no disponible. Intenta comprobarlo más tarde."
       ],
@@ -4253,6 +4255,9 @@
       "Trash is empty": [
         "La papelera está vacía."
       ],
+      "Try ${ DRIVE_APP_NAME }: Free forever": [
+        "Prueba ${ DRIVE_APP_NAME }: gratis para siempre"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prueba las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
       ],
@@ -4340,8 +4345,8 @@
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "será restaurado a la versión del ${ formattedRevisionDate }. Todas las otras versiones se guardarán."
       ],
-      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
-        "Con ${ DRIVE_APP_NAME }, tus datos están protegidos con cifrado de extremo a extremo. Solo tu puedes descifrarlos."
+      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
+        "Con ${ DRIVE_APP_NAME } tus datos están protegidos con cifrado de extremo a extremo."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Te gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
@@ -6776,6 +6781,9 @@
       ],
       "Hide side panel": [
         "Ocultar el panel lateral"
+      ],
+      "Load image": [
+        "Cargar la imagen"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecciona el esquema PGP a utilizar para firmar o cifrar a un usuario. Ten en cuenta que el formato PGP/Inline te obliga a enviar mensajes de texto plano."
