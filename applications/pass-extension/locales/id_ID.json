@@ -179,6 +179,9 @@
       "Get mobile apps": [
         "Dapatkan aplikasi ponsel"
       ],
+      "Get the deal": [
+        "Dapatkan penawaran"
+      ],
       "Help us improve": [
         "Bantu kami untuk berkembang"
       ],
@@ -262,6 +265,9 @@
       ],
       "Open navigation": [
         "Buka navigasi"
+      ],
+      "Open web app": [
+        "Buka aplikasi web"
       ],
       "Pass for Android": [
         "Pass untuk Android"
@@ -382,6 +388,14 @@
       ],
       "Your password manager not here? Request it.": [
         "Pengelola kata sandi Anda tidak terdaftar? Mintalah kepada kami."
+      ]
+    },
+    "Badge": {
+      "Early access": [
+        "Akses dini"
+      ],
+      "Limited time": [
+        "Waktu terbatas"
       ]
     },
     "bf2023: Info": {
@@ -632,6 +646,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Kode PIN salah. Coba lagi."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Kode PIN Anda telah dihapus oleh klien ${ PASS_APP_NAME } lainnya"
       ]
     },
     "Error message": {
@@ -764,6 +781,9 @@
       "Autosaved on ${ submissionURL }": [
         "Tersimpan secara otomatis pada ${ submissionURL }"
       ],
+      "Built in 2FA authenticator": [
+        "Autentikator 2FA terintegrasi"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Dapat membuat, menyunting, menghapus, dan mengekspor item dalam brankas ini."
       ],
@@ -805,6 +825,9 @@
       ],
       "Drop to import": [
         "Lepaskan untuk mengimpor"
+      ],
+      "Early access to ${ PASS_APP_NAME } web app": [
+        "Akses dini ke aplikasi web ${ PASS_APP_NAME }"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Impor kata sandi Anda secara mudah ke ${ PASS_APP_NAME }."
@@ -944,6 +967,9 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Kepemilikan brankas berhasil dipindahkan. Anda kini tidak lagi menjadi pemilik dari brankas ini."
       ],
+      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
+        "Pass Plus dengan harga ${ eoyRelativePrice }/bln, meliputi akses dini untuk aplikasi web."
+      ],
       "Pass Plus trial": [
         "Uji coba Pass Plus"
       ],
@@ -977,11 +1003,17 @@
       "Please enter your current PIN code to continue": [
         "Silakan masukkan kode PIN Anda saat ini untuk melanjutkan"
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Silakan tingkatkan akun untuk memperoleh akses dini ke aplikasi web ${ PASS_APP_NAME }"
+      ],
       "Press Enter to copy": [
         "Tekan Enter untuk menyalin"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Privasi merupakan hal yang sangat penting bagi kami. Pelajari mengapa ${ PASS_APP_NAME } berbeda."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Terlindung oleh ${ PROTON_SENTINEL_LINK }, program perlindungan akun mutakhir kami"
       ],
       "Restoring trashed items...": [
         "Memulihkan semua item yang dibuang..."
@@ -1006,6 +1038,9 @@
       ],
       "Settings successfully updated": [
         "Pengaturan berhasil diperbarui"
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "Bagikan entri masuk dan catatan aman Anda ke hingga 10 pengguna"
       ],
       "Sign in or create an account to continue.": [
         "Silakan masuk atau buat akun untuk melanjutkan."
@@ -1061,6 +1096,9 @@
       "Unable to copy to clipboard": [
         "Tidak dapat menyalin ke papan klip"
       ],
+      "Unlimited hide-my-email aliases": [
+        "Tanpa batasan jumlah alias hide-my-email"
+      ],
       "Unlock it with your PIN to access the settings": [
         "Buka kunci ini dengan PIN Anda untuk mengakses pengaturan"
       ],
@@ -1069,6 +1107,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Tingkatkan ke ${ PASS_APP_NAME }"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Tingkatkan Sekarang untuk Memperoleh Berbagai Fitur Premium"
       ],
       "Use vaults to share this item with others.": [
         "Gunakan brankas untuk membagikan item ini dengan yang lainnya."
@@ -1769,6 +1810,9 @@
       ],
       "Update available": [
         "Pembaruan tersedia"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Tingkatkan untuk Memperoleh Berbagai Fitur Premium"
       ],
       "Use my email": [
         "Gunakan email saya"
