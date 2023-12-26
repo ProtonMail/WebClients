@@ -95,9 +95,6 @@
       "Continue with this password": [
         "Continuer avec ce mot de passe"
       ],
-      "Copy": [
-        "Copier"
-      ],
       "Copy address": [
         "Copier l'adresse"
       ],
@@ -163,9 +160,6 @@
       ],
       "Download": [
         "Télécharger"
-      ],
-      "Download all configurations": [
-        "Télécharger toutes les configurations"
       ],
       "Download our CSV template": [
         "Télécharger notre modèle CSV"
@@ -496,6 +490,9 @@
       ],
       "Upgrade to Business": [
         "Passer à l'abonnement Business"
+      ],
+      "Upgrade to Visionary": [
+        "Passer à l'abonnement Visionary"
       ],
       "Upgrade your plan": [
         "Passez à un abonnement supérieur"
@@ -1860,6 +1857,17 @@
         "En passant à un abonnement supérieur, vous disposez de plusieurs adresses e-mail qui vous permettent de mieux gérer vos différentes activités et vous bénéficiez de fonctionnalités premium."
       ]
     },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "L'accès à l'application de bureau est limité."
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "La version bêta de l'application de bureau de ${ MAIL_APP_NAME } est actuellement limitée aux utilisateurs ayant souscrit au plan ${ BRAND_NAME } Visionary. Elle sera disponible à tous les utilisateurs début 2024."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Changez d'abonnement dès aujourd'hui ou vérifiez à nouveau début 2024 pour y accéder."
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Bugs ou problème de qualité"
@@ -1922,7 +1930,7 @@
         "Accès en avant-première aux nouvelles fonctionnalités et applications"
       ],
       "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Accès anticipé à l'application de bureau ${ MAIL_APP_NAME }"
+        "Accès en avant-première à l'application de bureau ${ MAIL_APP_NAME }"
       ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Fonctionnalités payantes de ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_APP_NAME }"
@@ -3338,9 +3346,6 @@
       "per month, billed every 24 months": [
         "par mois (facturation tous les 24 mois)"
       ],
-      "Plan upgrade required": [
-        "Un abonnement supérieur est nécessaire."
-      ],
       "Please add a password for the user on row": [
         "Ajoutez un mot de passe pour l'utilisateur choisi.",
         "Ajoutez des mots de passe pour les utilisateurs choisis."
@@ -4657,11 +4662,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Vous avez oublié votre nom d'utilisateur pour votre compte ${ BRAND_NAME } ? Retrouvez-le en utilisant votre e-mail ou votre numéro de téléphone de récupération et accédez de nouveau à ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et aux autres services Proton."
       ],
+      "Private and secure email, no credit card required": [
+        "Messagerie privée et sécurisée, aucune carte de paiement n'est nécessaire"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Réinitialisez le mot de passe de votre compte ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Connectez-vous pour accéder à votre compte ${ appName }"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Essayez gratuitement ${ planName } avec ce lien"
       ]
     },
     "Monetary unit": {
@@ -6574,9 +6585,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } a été copié dans votre presse-papiers."
-      ],
       "Account deleted. Signing out...": [
         "Le compte a été supprimé. Déconnexion…"
       ],

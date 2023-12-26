@@ -95,9 +95,6 @@
       "Continue with this password": [
         "Kontynuuj z tym hasłem"
       ],
-      "Copy": [
-        "Kopiuj"
-      ],
       "Copy address": [
         "Kopiuj adres"
       ],
@@ -163,9 +160,6 @@
       ],
       "Download": [
         "Pobierz"
-      ],
-      "Download all configurations": [
-        "Pobierz wszystkie konfiguracje"
       ],
       "Download our CSV template": [
         "Pobierz szablon pliku CSV"
@@ -496,6 +490,9 @@
       ],
       "Upgrade to Business": [
         "Ulepsz plan do wersji Business"
+      ],
+      "Upgrade to Visionary": [
+        "Ulepsz do planu Visionary"
       ],
       "Upgrade your plan": [
         "Ulepsz plan"
@@ -1868,6 +1865,17 @@
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddziel różne aspekty swojego życia dzięki wielu adresom e-mail i odblokuj więcej funkcji premium po ulepszeniu konta."
+      ]
+    },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Dostęp do aplikacji desktopowej jest ograniczony"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Aplikacja desktopowa ${ MAIL_APP_NAME } w wersji beta jest dostępna dla użytkowników planu ${ BRAND_NAME } Visionary. Aplikacja będzie dostępna dla wszystkich użytkowników na początku 2024 roku."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Ulepsz konto lub poczekaj na jej dostęp na początku 2024 roku."
       ]
     },
     "Downgrade account reason": {
@@ -3392,9 +3400,6 @@
       "per month, billed every 24 months": [
         "miesięcznie, płatne co 24 miesiące"
       ],
-      "Plan upgrade required": [
-        "Ulepszenie planu jest wymagane"
-      ],
       "Please add a password for the user on row": [
         "Wpisz hasło użytkownika w wierszu",
         "Wpisz hasła użytkowników w wierszach",
@@ -4741,11 +4746,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Nie pamiętasz nazwy użytkownika ${ BRAND_NAME }? Znajdź je za pomocą adresu pomocniczego lub numeru telefonu, aby odzyskać dostęp do ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i wiele więcej."
       ],
+      "Private and secure email, no credit card required": [
+        "Prywatna i bezpieczna poczta. Karta płatnicza nie jest wymagana"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Resetowanie hasła ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Zaloguj się do konta ${ appName }"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Wypróbuj plan ${ planName } za darmo za pomocą tego linku"
       ]
     },
     "Monetary unit": {
@@ -6780,9 +6791,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "Domena serwera ${ server.Domain } została skopiowana do schowka"
-      ],
       "Account deleted. Signing out...": [
         "Konto zostało usunięte. Trwa wylogowywanie..."
       ],
