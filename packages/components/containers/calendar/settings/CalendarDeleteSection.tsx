@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { Alert, ErrorButton, Prompt, useModalState } from '@proton/components/components';
 import { SettingsParagraph } from '@proton/components/containers';
+import { getNextDefaultCalendar } from '@proton/components/containers/calendar/settings/defaultCalendar';
 import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { removeCalendar, removeMember, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
@@ -105,15 +106,8 @@ const CalendarDeleteSection = ({ calendars, calendar, defaultCalendar, isShared 
         isSharedAsMember,
     });
 
-    const firstRemainingCalendarName = firstRemainingCalendar ? (
-        <span className="text-strong text-break" key="calendar-name">
-            {firstRemainingCalendar.Name}
-        </span>
-    ) : null;
     const deleteDefaultAlertText =
-        isDeleteDefaultCalendar && firstRemainingCalendarName
-            ? c('Info').jt`${firstRemainingCalendarName} will be set as default calendar.`
-            : '';
+        isDeleteDefaultCalendar && firstRemainingCalendar ? getNextDefaultCalendar(firstRemainingCalendar) : '';
 
     const handleDelete = async () => {
         // If deleting the default calendar, the new calendar to make default is either the first active calendar or null if there is none.
