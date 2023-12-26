@@ -227,9 +227,6 @@
       "Continue with this password": [
         "Kemmel s wawal-a uffir"
       ],
-      "Copy": [
-        "Nɣel"
-      ],
       "Copy address": [
         "Nɣel tansa"
       ],
@@ -340,9 +337,6 @@
       ],
       "Download": [
         "Sader"
-      ],
-      "Download all configurations": [
-        "Sader akk tiwilawin"
       ],
       "Download CSV sample": [
         "Sader amedya CSV"
@@ -5092,12 +5086,6 @@
       "Emailing preference saved": [
         "Iɣewwaṛen n yimayl ttwaskelsen"
       ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Imaylen i yettwaskelsen deg ukaram-a ur ttwakkasen ara, tzemreḍ ad ten-tafeḍ deg ukaram Akk iznan."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Imaylen i icerḍen s tebzimt-a ur ttwakkasen ara, tzemreḍ ad ten-tafeḍ deg yikaramen i asen-ittunefken."
-      ],
       "Encryption setting updated": [
         "Iɣewwaren n uwgelhen ttwaleqqmen"
       ],
@@ -5485,9 +5473,6 @@
       "Phone number": [
         "Uṭṭun n tiliɣri"
       ],
-      "Plan upgrade required": [
-        "Ilaq uleqqem n uɣawas"
-      ],
       "Please add a password for the user on row": [
         "Ttxil-k rnu awal uffir i useqdac ɣef yizirig",
         "Ttxil-k rnu wawalen uffiren i yiseqdacen ɣef yizirigen"
@@ -5507,9 +5492,6 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Ttxil ger tamawt dakken ma tekkseḍ taɣult-a, akk tansiwin i icuddenvur-s ad ttwasensent."
-      ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Ttxil-k·m ẓer belli ma yella tekkseḍ imsizdeg-a, ad nseḥbes asesfer n meṛṛa tigawin tiwurmanin i isenkar."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Ttxil ger tamawt dakken s uttekki $vef tqeffalt n usentem, amiḍan-ik.im ad yesεu ${ creditsRemaining } ismad i d-yeqqimen."
@@ -7865,26 +7847,6 @@
         "Arured alemmas VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Smiren akk iɣawasen ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Seg ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Eǧǧ amiḍan-iw ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Kemmel s uɣawas n baṭel"
@@ -7918,6 +7880,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Leqqem ɣer ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Smiren akk iɣawasen ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Seg ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Eǧǧ amiḍan-iw ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {
@@ -9565,9 +9547,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } yettwanɣel deg tecfawit-inek·inem"
-      ],
       "Account deleted. Signing out...": [
         "Amiḍan yekkes. Tuffɣa..."
       ],
@@ -10216,15 +10195,6 @@
       ],
       "Delete ${ email }": [
         "Kkes ${ email }"
-      ],
-      "Delete ${ filterName }": [
-        "Kkes ${ filterName }"
-      ],
-      "Delete ${ label.Name } folder": [
-        "Kkes akaram ${ label.Name }"
-      ],
-      "Delete ${ label.Name } label": [
-        "Kkes tabzimt ${ label.Name }"
       ],
       "Delete ${ tokenNameToRemove }?": [
         "Kkes ${ tokenNameToRemove }?"
