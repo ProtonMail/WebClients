@@ -258,6 +258,9 @@
       "Get verification code": [
         "인증코드 전송"
       ],
+      "Give feedback": [
+        "피드백 보내기"
+      ],
       "Go to label": [
         "라벨로 이동"
       ],
@@ -836,6 +839,9 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Proton의 글로벌 서버 네트워크로 인터넷 차단 및 검열을 우회하세요."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "사용자 맞춤 도메인 ${ domains } 개, 이메일 주소 ${ addresses }개, 무제한 hide-my-email 별명, 캘린더 공유의 지원 외 기타 등등."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 Hide-my-email 별명, 캘린더 공유 등 지원 포함."
       ],
@@ -856,6 +862,11 @@
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "최대 10년간 각 파일의 최대 200개의 버전을 저장하세요."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } 데스크탑 어플리케이션"
       ]
     },
     "Bug category": {
@@ -2323,7 +2334,37 @@
         "${ formattedStart } 에 시작하는 이벤트를 업데이트 합니다"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "유료 ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } 과 ${ PASS_SHORT_APP_NAME } 기능"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "${ DRIVE_SHORT_APP_NAME }의 버전 히스토리, ${ VPN_SHORT_APP_NAME }의 수천 개 고속 서버 엑세스, ${ PASS_SHORT_APP_NAME }의 공유 기능외 기타 등등."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 명의 사용자"
+      ],
+      "Early access to new apps and features": [
+        "새 앱 및 기능을 위해 얼리 엑세스 시작"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 데스크탑 앱 얼리 엑세스"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "유료 ${ MAIL_SHORT_APP_NAME }과 ${ CALENDAR_APP_NAME } 기능"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } 외부 계정에 연결할 수 없었습니다."
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. ${ statusPageLink }를 확인해볼 수도 있습니다"
       ],
@@ -2374,6 +2415,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "콘텐츠 검색이 이 브라우저에서는 작동하지 않습니다. 시크릿 모드를 종료하거나 다른 브라우저를 이용해 주세요."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "내용 검색을 활성화 할 수 없습니다. 어플리케이션을 재시작하거나 데이터를 제거하십시오."
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "복호화 오류: 이 이벤트 컨텐츠의 복호화 실패."
@@ -2659,6 +2703,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "문자, 숫자 및 _.- 만 사용하십시오"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "예상치 못한 오류가 발생하여, 연락처를 가져올 수 없습니다."
       ],
       "Unknown error": [
         "알 수 없는 오류"
@@ -3689,7 +3736,7 @@
         "암호화된 검색과 관련한 브라우저 데이터를 삭제합니다."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "${ strong } 로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
+        "${ strong }(으)로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
       ],
       "Close this screen to exit.": [
         "이 스크린을 닫아 종료합니다."
@@ -3770,7 +3817,7 @@
         "가져오기를 원하는 이메일 계정의 계정 정보를 입력하세요."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "${ destinationText } 로 전송된 인증 코드를 입력하세요."
+        "${ destinationText }으(로) 인증 코드가 전송되었습니다."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "인증 코드를 입력하세요. ${ digit } 자리."
@@ -5620,11 +5667,23 @@
       ]
     },
     "session_recovery:available:info": {
+      " You have ${ timeRemaining.inHours } hours to reset your password.": [
+        " 비밀번호 재설정까지 ${ timeRemaining.inHours } 시간 남았습니다."
+      ],
+      " You have ${ timeRemaining.inMinutes } minutes to reset your password.": [
+        " 비밀번호 재설정까지 ${ timeRemaining.inMinutes } 분 남았습니다."
+      ],
+      " You have ${ timeRemaining.inSeconds } seconds to reset your password.": [
+        " 비밀번호 재설정까지 ${ timeRemaining.inSeconds } 초 남았습니다."
+      ],
       "${ timeRemaining.inDays } days": [
         "${ timeRemaining.inDays }일"
       ],
       "${ timeRemaining.inHours } hours": [
         "${ timeRemaining.inHours }시간"
+      ],
+      "Password reset request approved (${ user.Email }).": [
+        "비밀번호 재설정 요청이 승인되었습니다 (${ user.Email })."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "비밀번호 재설정의 요청이 시작된 로그인 장치로 이동하십시오."
@@ -5635,8 +5694,17 @@
       "This permission expires in ${ timeRemaining.inHours } hours": [
         "권한이 ${ timeRemaining.inHours }시간 내에 만료됩니다."
       ],
+      "This permission expires soon": [
+        "이 권한은 곧 만료됩니다"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "${ boldDaysRemaining }일 내에 이 계정 ${ boldEmail }에 대한 비밀번호 변경이 이제 가능합니다."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "이제 계정 ${ boldEmail } 에 대한 비밀번호 변경이 가능합니다."
+      ],
+      "You have ${ timeRemaining.inDays } days to reset your password.": [
+        "비밀번호 재설정까지 ${ timeRemaining.inDays } 일 남았습니다."
       ]
     },
     "session_recovery:available:link": {
@@ -6113,7 +6181,7 @@
         "취소 전송됨 및 참가자들이 모든 이벤트에서 제거됨"
       ],
       "Code sent to ${ methodTo }": [
-        "${ methodTo } 로 코드가 전송됨"
+        "${ methodTo }(으)로 코드를 전송했습니다."
       ],
       "Contact groups deleted": [
         "콘텐츠 그룹 삭제됨"
