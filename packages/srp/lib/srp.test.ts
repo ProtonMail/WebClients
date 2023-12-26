@@ -1,21 +1,25 @@
-import assert from 'assert';
-import { describe, it } from 'mocha';
-
 import { disableRandomMock, initRandomMock } from '@proton/testing/lib/mockRandomValues';
 
 import { getRandomSrpVerifier, getSrp } from '../lib/srp';
 import '../test/setup';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../test/setup';
 import { AUTH_RESPONSE, FAKE_RANDOM, SERVER_MODULUS, SERVER_MODULUS_FAKE } from '../test/srp.data';
 
 const mockRandomValues = (buf: Uint8Array) => new Uint8Array(FAKE_RANDOM.slice(0, buf.length));
 
 describe('srp', () => {
-    before(() => initRandomMock(mockRandomValues));
-    after(() => disableRandomMock());
+    beforeAll(async () => {
+        initRandomMock(mockRandomValues);
+        await setupCryptoProxyForTesting();
+    });
+    afterAll(async () => {
+        disableRandomMock();
+        await releaseCryptoProxy();
+    });
 
     it('should generate verifier', async () => {
         const result = await getRandomSrpVerifier({ Modulus: SERVER_MODULUS }, { password: '123' });
-        assert.deepStrictEqual(result, {
+        expect(result).toEqual({
             version: 4,
             salt: 'SzHkg+YYA/eN1A==',
             verifier:
@@ -25,7 +29,7 @@ describe('srp', () => {
 
     it('should reject verify if it is unable to verify identity', async () => {
         const promise = getRandomSrpVerifier({ Modulus: SERVER_MODULUS_FAKE }, { password: 'hello' });
-        await assert.rejects(promise, {
+        await expect(promise).rejects.toMatchObject({
             name: 'Error',
             message: 'Unable to verify server identity',
         });
@@ -33,7 +37,7 @@ describe('srp', () => {
 
     it('should generate auth parameters', async () => {
         const result = await getSrp(AUTH_RESPONSE, { password: '123' });
-        assert.deepStrictEqual(result, {
+        expect(result).toEqual({
             clientEphemeral:
                 'hlszWWqvmsVvSCYdu0Zvmn/Ow9dSkp91vfhd20yYvd8XTcNixlOloz7lbD+bFR/0mAUYrYuOyYwPDoARAqRiAijQTWSkfOsByeKvmHZN7scxsmMQSp/8BdkIpEcJzUBg762o4L2tgrOFdydtagYRH0++qaJI6iMWlGLVI1atJvEcQ1h9xRylYT8rtL+gqKcYOQbqYgl3mXlHE/9uT8qEBFIP8LthQfIntst1p/dUDYyN4GH5Pb3ajL0qehzrQrDkF5xMmggDXgqflwMtcJTSIB0WcyiG+ls8KhUy8NVwyNhJrbikkzAnhAk4Mq3HmTwtj82BNQzSnDDg1W1lvU1JrA==',
             clientProof:
@@ -63,7 +67,7 @@ describe('srp', () => {
             { Modulus: SERVER_MODULUS_FAKE, ServerEphemeral: '', Salt: '', Version: 4 },
             { password: '123' }
         );
-        await assert.rejects(promise, {
+        await expect(promise).rejects.toMatchObject({
             name: 'Error',
             message: 'Unable to verify server identity',
         });
