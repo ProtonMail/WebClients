@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import { c, msgid } from 'ttag';
 
 import { Progress } from '@proton/components';
@@ -29,7 +27,7 @@ export const SearchIndexingProgress = () => {
         progressStatus = c('Info').t`Updating drive search...`;
     } else {
         // translator: esProgress is a number representing the current file being fetched, totalIndexingItems is the total number of files in the drive
-        progressStatus = c('Info').jt`Indexing items ${esProgress} out of ${totalProgressToShow}` as string;
+        progressStatus = c('Info').t`Indexing items ${esProgress} out of ${totalProgressToShow}`;
     }
 
     const etaMessage =

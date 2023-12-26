@@ -58,7 +58,7 @@ export const getRecipientLabel = (recipient: Recipient, contactsMap: ContactsMap
 };
 
 export const getRecipientGroupLabel = (recipientGroup?: RecipientGroup, contactsInGroup = 0, isShortName = false) => {
-    const count = recipientGroup?.recipients.length;
+    const count = recipientGroup?.recipients.length || 0;
 
     if (isShortName) {
         if (count === contactsInGroup) {
@@ -68,7 +68,7 @@ export const getRecipientGroupLabel = (recipientGroup?: RecipientGroup, contacts
     }
 
     // Copy variables to give explicit naming in the translation string
-    const contactGroupName = recipientGroup?.group?.Name;
+    const contactGroupName = recipientGroup?.group?.Name || '';
     const numberOfSelectedContacts = count;
     const numberOfContactsInGroup = contactsInGroup;
 
