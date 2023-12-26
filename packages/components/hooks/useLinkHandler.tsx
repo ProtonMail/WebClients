@@ -131,7 +131,7 @@ export const useLinkHandler: UseLinkHandler = (
 
         if (
             (askForConfirmation || isPhishingAttempt) &&
-            isExternal(src.raw) &&
+            isExternal(src.raw, window.location.hostname) &&
             ![...PROTON_DOMAINS, currentDomain]
                 .filter(isTruthy) // currentDomain can be null
                 .some((domain) => isSubDomain(hostname, domain))
