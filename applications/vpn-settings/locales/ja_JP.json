@@ -95,9 +95,6 @@
       "Continue with this password": [
         "このパスワードで続行する"
       ],
-      "Copy": [
-        "コピー"
-      ],
       "Copy address": [
         "アドレスをコピー"
       ],
@@ -163,9 +160,6 @@
       ],
       "Download": [
         "ダウンロード"
-      ],
-      "Download all configurations": [
-        "すべての設定ファイルをダウンロード"
       ],
       "Download our CSV template": [
         "CSVテンプレートのダウンロード"
@@ -1832,6 +1826,11 @@
         "2要素認証"
       ]
     },
+    "eoy2023: Deal details": {
+      "Early access to new apps and features": [
+        "新しいアプリや機能への早期アクセス"
+      ]
+    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。必要に応じて${ statusPageLink }も確認してください。"
@@ -3208,9 +3207,6 @@
       "per month, billed every 24 months": [
         "月額、24ヶ月ごとに請求"
       ],
-      "Plan upgrade required": [
-        "プランのアップグレードが必要です"
-      ],
       "Please add email addresses for the users on rows": [
         "追加ユーザーのメールアドレスを入力してください。"
       ],
@@ -4500,11 +4496,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "${ BRAND_NAME } アカウントのユーザー名をお忘れですか? 予備のメールアドレスまたは電話番号を使用して検索し、${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } などへのアクセスを取り戻します。"
       ],
+      "Private and secure email, no credit card required": [
+        "プライベートで安全なEメール、クレジットカード不要"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "${ BRAND_NAME } アカウントのパスワードをリセット"
       ],
       "Sign in to access your ${ appName } account": [
         "${ appName } アカウントにアクセスするには、サインインしてください"
+      ],
+      "Try ${ planName } for free with this link": [
+        "このリンクから ${ planName } を無料でお試しください"
       ]
     },
     "Monetary unit": {
@@ -6329,9 +6331,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } がクリップボードにコピーされました"
-      ],
       "Account deleted. Signing out...": [
         "アカウントが削除されました。サインアウトしています..."
       ],

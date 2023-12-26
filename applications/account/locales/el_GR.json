@@ -239,9 +239,6 @@
       "Continue with this password": [
         "Συνεχίστε με αυτόν τον κωδικό πρόσβασης"
       ],
-      "Copy": [
-        "Αντιγραφή"
-      ],
       "Copy address": [
         "Αντιγραφή διεύθυνσης"
       ],
@@ -364,9 +361,6 @@
       ],
       "Download": [
         "Λήψη"
-      ],
-      "Download all configurations": [
-        "Λήψη όλων των διαμορφώσεων"
       ],
       "Download CSV sample": [
         "Λήψη δείγματος CSV"
@@ -514,6 +508,9 @@
       ],
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
+      ],
+      "Give feedback": [
+        "Αφήστε την κριτική σας"
       ],
       "Go to label": [
         "Μετάβαση στην ετικέτα"
@@ -1004,6 +1001,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Αναβαθμίστε για να ενεργοποιήσετε το ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Visionary": [
+        "Αναβάθμιση σε Visionary"
+      ],
       "Upgrade your plan": [
         "Αναβαθμίστε το πρόγραμμά σας"
       ],
@@ -1478,6 +1478,10 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Παρακάμψτε τους τοπικούς αποκλεισμούς στο διαδίκτυο και τη λογοκρισία με το παγκόσμιο δίκτυο διακομιστών μας."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Περιλαμβάνει υποστήριξη για ${ domains } προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ addresses } διεύθυνση ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίων και άλλα.",
+        "Περιλαμβάνει υποστήριξη για ${ domains } προσαρμοσμένους τομείς ηλεκτρονικού ταχυδρομείου, ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίων και άλλα."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Περιλαμβάνει υποστήριξη για 1 προσαρμοσμένο τομέα ηλεκτρονικού ταχυδρομείου, 10 διευθύνσεις ηλεκτρονικού ταχυδρομείου, 10 hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
       ],
@@ -1537,6 +1541,11 @@
     "Bridge version load failed": {
       "Failed to find latest version": [
         "Αποτυχία εύρεσης τελευταίας έκδοσης"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } Εφαρμογή Επιφάνειας Εργασίας"
       ]
     },
     "Bug category": {
@@ -3128,6 +3137,14 @@
         "Έχουμε εντοπίσει τα ακόλουθα πεδία στο αρχείο CSV που μεταφορτώσατε. Επιλέξτε αυτά που θέλετε να εισάγετε."
       ]
     },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Η πρόσβαση στην εφαρμογή επιφάνειας εργασίας είναι περιορισμένη"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Η έκδοση beta της εφαρμογής επιφάνειας εργασίας ${ MAIL_APP_NAME } περιορίζεται προς το παρόν σε συνδρομητές ${ BRAND_NAME } Visionary. Θα είναι διαθέσιμο σε όλους τους χρήστες στις αρχές του 2024."
+      ]
+    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "Πίσω στη ${ signIn }."
@@ -3655,7 +3672,37 @@
         "2FA"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Πληρωμένα ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ PASS_SHORT_APP_NAME } χαρακτηριστικά"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Περιλαμβάνει ιστορικό εκδόσεων σε ${ DRIVE_SHORT_APP_NAME }, πρόσβαση σε χιλιάδες διακομιστές υψηλής ταχύτητας ${ VPN_SHORT_APP_NAME }, κοινή χρήση σε ${ PASS_SHORT_APP_NAME } και πολλά άλλα."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 χρήστες"
+      ],
+      "Early access to new apps and features": [
+        "Πρώιμη πρόσβαση σε νέες εφαρμογές και λειτουργίες"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Πρώιμη πρόσβαση στη ${ MAIL_APP_NAME } εφαρμογή επιφάνειας εργασίας"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "${ MAIL_SHORT_APP_NAME } και ${ CALENDAR_APP_NAME } πληρωμένα χαρακτηριστικά"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } δεν είναι δυνατή η σύνδεση στον εξωτερικό λογαριασμό σας"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Μπορείτε επίσης να ελέγξετε τη ${ statusPageLink }"
       ],
@@ -4062,6 +4109,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Δοκιμάστε να χρησιμοποιήσετε μόνο γράμματα, αριθμούς και _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Μη αναμενόμενο σφάλμα, δεν είναι δυνατή η εισαγωγή των επαφών"
       ],
       "Unknown error": [
         "Άγνωστο σφάλμα"
@@ -6046,6 +6096,9 @@
       "Any ${ twoFa } method on your account will be disabled.": [
         "Τυχόν μέθοδος ${ twoFa } στον λογαριασμό σας θα απενεργοποιηθεί."
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Τυχόν υποφάκελοι θα διαγραφούν επίσης. Ωστόσο, τα μηνύματα ηλεκτρονικού ταχυδρομείου που είναι αποθηκευμένα σε αυτόν τον φάκελο ${ nameDeleted } δε θα διαγραφούν και μπορούν να βρεθούν στο φάκελο Όλα τα Mηνύματα."
+      ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Οποιοσδήποτε με αυτόν τον σύνδεσμο μπορεί να δει όλες τις λεπτομέρειες των εκδηλώσεων σε αυτό το ημερολόγιο, όπως τον τίτλο, την τοποθεσία και τους συμμετέχοντες."
       ],
@@ -6076,8 +6129,8 @@
       "Are you sure you want to delete this filter?": [
         "Θέλετε σίγουρα να διαγράψετε αυτό το φίλτρο;"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Θέλετε σίγουρα να διαγράψετε αυτόν τον φάκελο; Θα διαγραφούν επίσης όλοι οι υποφάκελοι."
+      "Are you sure you want to delete this folder?": [
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτόν το φάκελο;"
       ],
       "Are you sure you want to delete this label?": [
         "Θέλετε σίγουρα να διαγράψετε αυτήν την ετικέτα;"
@@ -6365,11 +6418,8 @@
       "Emailing preference saved": [
         "Η προτίμηση email αποθηκεύτηκε"
       ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Τα μηνύματα ηλεκτρονικού ταχυδρομείου που είναι αποθηκευμένα σε αυτόν το φάκελο δε θα διαγραφούν και εξακολουθούν να βρίσκονται στο φάκελο All Mail."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Τα μηνύματα ηλεκτρονικού ταχυδρομείου με ετικέτα δε θα διαγραφούν και μπορούν ακόμα να βρεθούν στον αντίστοιχο φάκελο."
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Τα μηνύματα ηλεκτρονικού ταχυδρομείου με ετικέτα ${ nameDeleted } δε θα διαγραφούν και μπορούν ακόμα να βρεθούν στον αντίστοιχο φάκελο."
       ],
       "Enable this address to join this calendar": [
         "Ενεργοποιήστε αυτή τη διεύθυνση για συμμετάσχετε σε αυτό το ημερολόγιο"
@@ -6448,6 +6498,9 @@
       ],
       "for choosing ${ product }": [
         "για την επιλογή ${ product }"
+      ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Για μέλη οργανισμών που χρησιμοποιούν καθολική σύνδεση (SAML SSO)"
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Προωθήστε την εισερχόμενη αλληλογραφία από άλλο λογαριασμό στα ασφαλή εισερχόμενά σας ${ MAIL_APP_NAME }."
@@ -6811,6 +6864,9 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Δεν είναι συσκευή σας; Εισέλθετε από παράθυρο ιδιωτικής περιήγησης και κλείστε το όταν τελειώσετε. ${ learnMore }"
       ],
+      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
+        "Τώρα διαθέσιμη σε έκδοση beta, η εφαρμογή για υπολογιστές σας επιτρέπει να εκκινήσετε εύκολα ${ MAIL_APP_NAME } απευθείας από την επιφάνεια εργασίας σας και να παραμένετε συγκεντρωμένοι χωρίς περισπασμούς του προγράμματος περιήγησης."
+      ],
       "Number of dedicated servers in the organization": [
         "Αριθμός αποκλειστικών διακομιστών στον οργανισμό"
       ],
@@ -6899,9 +6955,6 @@
       "Phone number": [
         "Αριθμός τηλεφώνου"
       ],
-      "Plan upgrade required": [
-        "Απαιτείται αναβάθμιση πακέτου"
-      ],
       "Please add a password for the user on row": [
         "Παρακαλούμε προσθέστε ένα κωδικό πρόσβασης για το χρήστη στη σειρά",
         "Παρακαλούμε προσθέστε κωδικούς πρόσβασης για τους χρήστες στις σειρές"
@@ -6936,9 +6989,6 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Σημειώστε ότι εάν διαγράψετε αυτόν τον τομέα, όλες οι διευθύνσεις που σχετίζονται με αυτόν θα απενεργοποιηθούν."
-      ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Λάβετε υπόψη ότι αν διαγράψετε αυτό το φίλτρο, θα σταματήσουμε να επεξεργαζώμαστε όλες τις αυτοματοποιημένες ενέργειες που ενεργοποιεί."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Λάβετε υπόψη ότι όταν κάνετε κλικ στο κουμπί Επιβεβαίωση, ο λογαριασμός σας θα έχει υπόλοιπο ${ creditsRemaining }."
@@ -7902,6 +7952,9 @@
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Ο κωδικός πρόσβασης για τον οργανισμό σας μπορεί να διαμοιραστεί με άλλους χρήστες που θέλετε να δώσετε δικαιώματα διαχειριστή. Είναι επίσης ένας κώδικας επείγουσας ανάκτησης για να αποκτήσετε πρόσβαση στον οργανισμό σας σε περίπτωση που χάσετε την πρόσβαση στο λογαριασμό σας. Παρακαλώ αποθηκεύστε αυτόν τον κωδικό και κρατήστε τον ασφαλή."
       ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Ο οργανισμός σας χρησιμοποιεί καθολική σύνδεση (SSO). Πατήστε Σύνδεση για να συνεχίσετε με τον πάροχο SSO σας."
+      ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Τα ηλ. μηνύματα της εταιρείας σας προστατεύονται με διατερματική κρυπτογράφηση, χρησιμοποιώντας το κλειδί του οργανισμού. Αυτό το δακτυλικό αποτύπωμα μπορεί να χρησιμοποιηθεί για να επαληθεύσει ότι όλοι οι διαχειριστές στον λογαριασμό σας έχουν το ίδιο κλειδί."
       ],
@@ -8462,6 +8515,9 @@
       ],
       "Awarded": [
         "Βραβευμένα"
+      ],
+      "Beta": [
+        "Beta (Δοκιμαστική)"
       ],
       "Billing address": [
         "Διεύθυνση χρέωσης"
@@ -9923,26 +9979,6 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Από ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Διατήρηση του λογαριασμού μου ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Συνεχίστε την αξιολόγηση"
@@ -9982,6 +10018,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Αναβάθμιση σε ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Από ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Διατήρηση του λογαριασμού μου ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
       ]
     },
     "new_plans: feature": {
@@ -11909,6 +11965,9 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Εάν δε ζητήσατε να επαναφέρετε τον κωδικό πρόσβασής σας, ακυρώστε το αίτημα τώρα."
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Παρακαλούμε μεταβείτε στη συνδεδεμένη συσκευή (στη συνεδρία όπου ξεκίνησε το αίτημα) για να αλλάξετε τον κωδικό πρόσβασής σας."
       ],
@@ -11920,14 +11979,36 @@
         "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inHours } ώρα",
         "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inHours } ώρες"
       ],
+      "This permission expires soon": [
+        "Αυτό το δικαίωμα λήγει σύντομα"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Τώρα μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας για τον λογαριασμό ${ boldEmail } ελεύθερα για ${ boldDaysRemaining }."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "Τώρα μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας για τον λογαριασμό ${ boldEmail }"
       ],
       "You can now reset your password": [
         "Τώρα μπορείτε να αλλάξετε τον κωδικό σας"
       ],
       "You can reset your password until ${ boldDate }.": [
         "Μπορείτε να επαναφέρετε τον κωδικό πρόσβασής σας μέχρι ${ boldDate }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Έχετε ${ timeRemaining.inDays } ημέρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        "Έχετε ${ timeRemaining.inDays } ημέρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Έχετε ${ timeRemaining.inHours } ώρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        " Έχετε ${ timeRemaining.inHours } ώρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Έχετε ${ timeRemaining.inMinutes } λεπτό για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        " Έχετε ${ timeRemaining.inMinutes } λεπτά για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτο για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        " Έχετε ${ timeRemaining.inSeconds } δευτερόλεπτα για να επαναφέρετε τον κωδικό πρόσβασής σας."
       ]
     },
     "session_recovery:available:link": {
@@ -12708,9 +12789,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } αντιγράφηκε στο πρόχειρο σας"
-      ],
       "Account deleted. Signing out...": [
         "Ο λογαριασμός διαγράφηκε. Αποσύνδεση..."
       ],
@@ -13113,6 +13191,9 @@
       ]
     },
     "Title": {
+      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
+        " Αποκτήστε ${ MAIL_APP_NAME } για Mac ή Windows"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "Εργαλείο Εξαγωγής ${ MAIL_APP_NAME }"
       ],
@@ -13426,15 +13507,6 @@
       "Delete ${ email }": [
         "Διαγραφή ${ email }"
       ],
-      "Delete ${ filterName }": [
-        "Διαγραφή ${ filterName }"
-      ],
-      "Delete ${ label.Name } folder": [
-        "Διαγραφή φακέλου ${ label.Name }"
-      ],
-      "Delete ${ label.Name } label": [
-        "Διαγραφή ετικέτας ${ label.Name }"
-      ],
       "Delete ${ tokenNameToRemove }?": [
         "Διαγραφή ${ tokenNameToRemove };"
       ],
@@ -13444,8 +13516,14 @@
       "Delete calendar": [
         "Διαγραφή ημερολογίου"
       ],
+      "Delete folder?": [
+        "Διαγραφή φακέλου;"
+      ],
       "Delete key permanently?": [
         "Οριστική διαγραφή κλειδιού;"
+      ],
+      "Delete label?": [
+        "Διαγραφή ετικέτας;"
       ],
       "Delete logs": [
         "Διαγραφή αρχείων καταγραφής"
@@ -13462,6 +13540,9 @@
       ],
       "Delete version history?": [
         "Διαγραφή ιστορικού εκδόσεων;"
+      ],
+      "Desktop app": [
+        "Εφαρμογή σταθερού υπολογιστή"
       ],
       "Disable ${ email }": [
         "Απενεργοποίηση ${ email }"
@@ -13583,6 +13664,9 @@
       ],
       "Folders and labels": [
         "Φάκελοι και ετικέτες"
+      ],
+      "For ${ platform }": [
+        "Για ${ platform }"
       ],
       "Forward and auto-reply": [
         "Προώθηση και αυτόματη απάντηση"

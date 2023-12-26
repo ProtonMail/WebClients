@@ -179,6 +179,9 @@
       "Get mobile apps": [
         "Skaffa mobilappar"
       ],
+      "Get the deal": [
+        "Ta del av erbjudandet"
+      ],
       "Help us improve": [
         "Hjälp oss att förbättra"
       ],
@@ -262,6 +265,9 @@
       ],
       "Open navigation": [
         "Öppna navigering"
+      ],
+      "Open web app": [
+        "Öppna webbapp"
       ],
       "Pass for Android": [
         "Pass för Android"
@@ -382,6 +388,14 @@
       ],
       "Your password manager not here? Request it.": [
         "Är din lösenordshanterare inte här? Begär det."
+      ]
+    },
+    "Badge": {
+      "Early access": [
+        "Förhandstillgång"
+      ],
+      "Limited time": [
+        "Begränsad tid"
       ]
     },
     "bf2023: Info": {
@@ -966,6 +980,9 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Äganderätten har överförts. Du är inte längre ägare till detta valv."
       ],
+      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
+        "Pass Plus för ${ eoyRelativePrice }/månad, inklusive förhandstillgång till webbappen."
+      ],
       "Pass Plus trial": [
         "Pass Plus provperiod"
       ],
@@ -1016,9 +1033,6 @@
       ],
       "Save login": [
         "Spara inloggning"
-      ],
-      "Save up to 60% on ${ PASS_APP_NAME } Plus": [
-        "Spara upp till 60 % på ${ PASS_APP_NAME } Plus"
       ],
       "Select destination vault": [
         "Välj målvalv"

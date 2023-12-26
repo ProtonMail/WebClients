@@ -313,6 +313,9 @@
       "Get started": [
         "Kom igång"
       ],
+      "Get Started": [
+        "Kom igång"
+      ],
       "Get verification code": [
         "Skaffa verifieringskod"
       ],
@@ -1141,6 +1144,11 @@
       ],
       "URL": [
         "URL"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Kontaktbild"
       ]
     },
     "Contact type label": {
@@ -2075,6 +2083,11 @@
         "Betalda funktioner för ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ PASS_SHORT_APP_NAME }"
       ]
     },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Inkluderar versionshistorik i ${ DRIVE_SHORT_APP_NAME }, åtkomst till tusentals höghastighetsservrar för ${ VPN_SHORT_APP_NAME }, delning i ${ PASS_SHORT_APP_NAME } och mer."
+      ]
+    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
@@ -2084,6 +2097,9 @@
       ],
       "Early access to new apps and features": [
         "Förhandstillgång till nya appar och funktioner"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Förhandstillgång till webbappen ${ MAIL_APP_NAME }"
       ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Betalda funktioner för ${ MAIL_SHORT_APP_NAME } och ${ CALENDAR_APP_NAME }"
@@ -3695,9 +3711,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "För bästa resultat bör du undvika streaming och minneskrävande aktiviteter eller dela upp din uppladdning i mindre partier."
       ],
-      "Free forever": [
-        "Gratis för alltid"
-      ],
       "Free up some space or add more storage space.": [
         "Frigör lite utrymme eller lägg till mer lagringsutrymme."
       ],
@@ -4109,9 +4122,6 @@
       "support team": [
         "supportteam"
       ],
-      "Swiss encrypted file storage": [
-        "Schweizisk krypterad fillagring"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Tillfälligt otillgänglig. Återkom senare."
       ],
@@ -4245,6 +4255,9 @@
       "Trash is empty": [
         "Papperskorg är tom"
       ],
+      "Try ${ DRIVE_APP_NAME }: Free forever": [
+        "Prova ${ DRIVE_APP_NAME }: Gratis för alltid"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nya ${ BRAND_NAME }-funktioner, uppdateringar och produkter innan de släpps för allmänheten. Detta kommer ladda om applikationen"
       ],
@@ -4332,8 +4345,8 @@
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "kommer att återställas till versionen från ${ formattedRevisionDate }. Alla andra versioner kommer fortfarande att sparas."
       ],
-      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
-        "Med ${ DRIVE_APP_NAME } är dina data skyddade med end-to-end-kryptering. Bara du kan dekryptera det."
+      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
+        "Med ${ DRIVE_APP_NAME } är din data skyddad av end-to-end-kryptering."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Vill du få en ny verifieringskod eller använda en alternativ verifieringsmetod?"
@@ -4385,7 +4398,7 @@
         "Du kommer att förlora alla osparade ändringar."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "Du har nått det maximala antalet adresser i kontaktgruppen/kontaktgrupperna:"
+        "Du har nått det maximala antalet adresser i kontaktgruppen (kontaktgrupperna):"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Du har nått det maximala antalet adresser i kontaktgruppen."
@@ -6768,6 +6781,9 @@
       ],
       "Hide side panel": [
         "Dölj sidopanel"
+      ],
+      "Load image": [
+        "Ladda bild"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Välj det PGP-schema som ska användas vid signering eller kryptering till en användare. Observera att PGP/Inline tvingar oformaterade textmeddelanden"

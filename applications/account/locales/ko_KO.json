@@ -239,9 +239,6 @@
       "Continue with this password": [
         "이 비밀번호로 계속"
       ],
-      "Copy": [
-        "복사"
-      ],
       "Copy address": [
         "주소 복사"
       ],
@@ -364,9 +361,6 @@
       ],
       "Download": [
         "다운로드"
-      ],
-      "Download all configurations": [
-        "모든 설정 다운로드"
       ],
       "Download CSV sample": [
         "CSV 샘플 다운로드받기"
@@ -514,6 +508,9 @@
       ],
       "Get verification code": [
         "인증코드 전송"
+      ],
+      "Give feedback": [
+        "피드백 보내기"
       ],
       "Go to label": [
         "라벨로 이동"
@@ -1004,6 +1001,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "${ PROTON_SENTINEL_NAME }을 활성화하려면 업그레이드"
       ],
+      "Upgrade to Visionary": [
+        "Visionary로 업그레이드"
+      ],
       "Upgrade your plan": [
         "요금제 업그레이드"
       ],
@@ -1474,6 +1474,9 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Proton의 글로벌 서버 네트워크로 인터넷 차단 및 검열을 우회하세요."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "사용자 맞춤 도메인 ${ domains } 개, 이메일 주소 ${ addresses }개, 무제한 hide-my-email 별명, 캘린더 공유의 지원 외 기타 등등."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 Hide-my-email 별명, 캘린더 공유 등 지원 포함."
       ],
@@ -1532,6 +1535,11 @@
     "Bridge version load failed": {
       "Failed to find latest version": [
         "최신 버전 찾기 실패"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } 데스크탑 어플리케이션"
       ]
     },
     "Bug category": {
@@ -3116,6 +3124,14 @@
         "업로드한 CSV 파일에서 다음 필드를 감지했습니다. 가져오고자 하는 것을 확인하세요"
       ]
     },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "데스크톱 앱에 접근할 수 없습니다"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "${ MAIL_APP_NAME } 데스크톱 앱의 베타 버전은 현재 ${ BRAND_NAME } Visionary 구독자 한정입니다. 2024년 초에는 모두가 이용할 수 있습니다."
+      ]
+    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "${ signIn }으(로) 돌아가기"
@@ -3643,7 +3659,37 @@
         "2단계 인증"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "유료 ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } 과 ${ PASS_SHORT_APP_NAME } 기능"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "${ DRIVE_SHORT_APP_NAME }의 버전 히스토리, ${ VPN_SHORT_APP_NAME }의 수천 개 고속 서버 엑세스, ${ PASS_SHORT_APP_NAME }의 공유 기능외 기타 등등."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 명의 사용자"
+      ],
+      "Early access to new apps and features": [
+        "새 앱 및 기능을 위해 얼리 엑세스 시작"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 데스크탑 앱 얼리 엑세스"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "유료 ${ MAIL_SHORT_APP_NAME }과 ${ CALENDAR_APP_NAME } 기능"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } 외부 계정에 연결할 수 없었습니다."
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. ${ statusPageLink }를 확인해볼 수도 있습니다"
       ],
@@ -4045,6 +4091,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "문자, 숫자 및 _.- 만 사용하십시오"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "예상치 못한 오류가 발생하여, 연락처를 가져올 수 없습니다."
       ],
       "Unknown error": [
         "알 수 없는 오류"
@@ -5984,6 +6033,9 @@
       "Any ${ twoFa } method on your account will be disabled.": [
         "사용자 계정의 어떠한 ${ twoFa } 수단이 비활성화 됩니다."
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "모든 하위폴더 역시 삭제됩니다. 하지만, 이 폴더 ${ nameDeleted } 에 보관된 이메일들은 삭제되지 않으며 모든 메일함에서 찾을 수 있습니다."
+      ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "이 링크를 가진 사용자는 제목, 위치 또는 참가자 등 캘린더에 있는 모든 이벤트의 세부사항을 볼 수 있습니다."
       ],
@@ -6014,8 +6066,8 @@
       "Are you sure you want to delete this filter?": [
         "정말 이 필터를 삭제할까요?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "정말로 이 폴더를 지우시겠습니까? 모든 하위 폴더 또한 삭제됩니다."
+      "Are you sure you want to delete this folder?": [
+        "이 폴더를 삭제하는 것이 확실합니까?"
       ],
       "Are you sure you want to delete this label?": [
         "이 라벨을 정말 제거하시겠어요?"
@@ -6126,7 +6178,7 @@
         "불러오기 및 포워딩 상태를 확인하세요."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "${ strong } 로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
+        "${ strong }(으)로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
       ],
       "Close this screen to exit.": [
         "이 스크린을 닫아 종료합니다."
@@ -6299,11 +6351,8 @@
       "Emailing preference saved": [
         "이메일 환경 설정이 저장됨"
       ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "이 폴더에 저장된 이메일이 지워지지 않으며 여전이 모든 메일 폴더에서 찾을 수 있습니다."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "이 라벨에 태그된 이메일이 지워지지 않으며 여전히 해당 폴더에서 찾을 수 있습니다."
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "라벨 ${ nameDeleted }로 태그된 이메일들은 삭제되지 않으며 해당하는 폴더에서 여전히 찾을 수 있습니다."
       ],
       "Enable this address to join this calendar": [
         "이 주소가 이 캘린더에 가입하도록 설정"
@@ -6342,7 +6391,7 @@
         "조직 비밀번호를 입력해 관리자의 특권을 복구하세요. ${ learnMore }"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "${ destinationText } 로 전송된 인증 코드를 입력하세요."
+        "${ destinationText }으(로) 인증 코드가 전송되었습니다."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "인증 코드를 입력하세요. ${ digit } 자리."
@@ -6382,6 +6431,9 @@
       ],
       "for choosing ${ product }": [
         "${ product }을(를) 선택해 주셔서 진심으로 감사드립니다."
+      ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "싱글 사인 온을 사용하는 조직 내의 구성원 (SAML SSO)용"
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "다른 계정에서 전송되는 메일을 안전한 ${ MAIL_APP_NAME } 받은 편지함으로 전달하세요."
@@ -6743,6 +6795,9 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "내 기기가 아닌가요? 시크릿 브라우징 창을 사용하여 로그인하고 완료되었을 때 닫으세요. ${ learnMore }"
       ],
+      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
+        "이제 베타로 사용 가능한 데스크탑 앱으로 브라우저로 이동할 필요 없이 간단히 ${ MAIL_APP_NAME } 바로 가기로 실행하고, 항상 집중할 수 있어요."
+      ],
       "Number of dedicated servers in the organization": [
         "조직의 전용 서버 수"
       ],
@@ -6833,9 +6888,6 @@
       "Phone number": [
         "전화번호"
       ],
-      "Plan upgrade required": [
-        "요금제 업그레이드 필요"
-      ],
       "Please add email addresses for the users on rows": [
         "행에 있는 사용자의 이메일 주소를 추가해 주세요"
       ],
@@ -6868,9 +6920,6 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "이 도메인을 삭제할 경우 도메인과 연결된 모든 주소도 비활성화됩니다."
-      ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "이 필터를 삭제하면 트리거되는 모든 자동화된 작업이 중단됩니다."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "확인 버튼을 누르면 계정에는 ${ creditsRemaining } 크레딧이 남습니다."
@@ -7820,6 +7869,9 @@
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "조직의 비밀번호는 관리자 권한을 부여하고 싶은 다른 사용자에게 공유할 수 있습니다. 또한 비밀번호는 계정에 대한 액세스 권한을 잃었을 경우 긴급 복구 코드로 사용될 수도 있으니, 비밀번호를 저장하고 안전하게 보관하세요."
       ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "사용자의 조직이 싱글 사인 온 (SSO)를 사용합니다. SSO 제공자로 로그인을 탭하세요."
+      ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "조직의 이메일은 조직 키를 사용한 종단 간 암호화로 보호됩니다. 이 지문은 계정의 모든 관리자가 같은 키를 가지고 있는지 확인할 수 있습니다."
       ],
@@ -8376,6 +8428,9 @@
       ],
       "Awarded": [
         "지급 완료"
+      ],
+      "Beta": [
+        "베타"
       ],
       "Billing address": [
         "청구지 주소"
@@ -9829,26 +9884,6 @@
         "중간 VPN 속도"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
-      ],
-      "From ${ price }": [
-        "시작 가격: ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "나의 ${ currentPlanName } 계정 유지"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "미리보려면 계속하기"
@@ -9888,6 +9923,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } 로 업그레이드"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
+      ],
+      "From ${ price }": [
+        "시작 가격: ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "나의 ${ currentPlanName } 계정 유지"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -11789,6 +11844,15 @@
       ]
     },
     "session_recovery:available:info": {
+      " You have ${ timeRemaining.inHours } hours to reset your password.": [
+        " 비밀번호 재설정까지 ${ timeRemaining.inHours } 시간 남았습니다."
+      ],
+      " You have ${ timeRemaining.inMinutes } minutes to reset your password.": [
+        " 비밀번호 재설정까지 ${ timeRemaining.inMinutes } 분 남았습니다."
+      ],
+      " You have ${ timeRemaining.inSeconds } seconds to reset your password.": [
+        " 비밀번호 재설정까지 ${ timeRemaining.inSeconds } 초 남았습니다."
+      ],
       "${ timeRemaining.inDays } days": [
         "${ timeRemaining.inDays }일"
       ],
@@ -11801,6 +11865,9 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "만약 재설정 요청을 자신이 하지 않았다면, 요청을 즉시 취소하세요."
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "비밀번호 재설정 요청이 승인되었습니다 (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "비밀번호 재설정의 요청이 시작된 로그인 장치로 이동하십시오."
       ],
@@ -11810,14 +11877,23 @@
       "This permission expires in ${ timeRemaining.inHours } hours": [
         "권한이 ${ timeRemaining.inHours }시간 내에 만료됩니다."
       ],
+      "This permission expires soon": [
+        "이 권한은 곧 만료됩니다"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "${ boldDaysRemaining }일 내에 이 계정 ${ boldEmail }에 대한 비밀번호 변경이 이제 가능합니다."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "이제 계정 ${ boldEmail } 에 대한 비밀번호 변경이 가능합니다."
       ],
       "You can now reset your password": [
         "이제 비밀번호를 재설정할 수 있습니다"
       ],
       "You can reset your password until ${ boldDate }.": [
         "${ boldDate }까지 비밀번호 재설정이 가능합니다."
+      ],
+      "You have ${ timeRemaining.inDays } days to reset your password.": [
+        "비밀번호 재설정까지 ${ timeRemaining.inDays } 일 남았습니다."
       ]
     },
     "session_recovery:available:link": {
@@ -12572,9 +12648,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } 이 클립보드에 복사됨"
-      ],
       "Account deleted. Signing out...": [
         "계정이 삭제되었습니다. 로그아웃 중..."
       ],
@@ -12615,7 +12688,7 @@
         "Catch-all 주소 업데이트됨"
       ],
       "Code sent to ${ methodTo }": [
-        "${ methodTo } 로 코드가 전송됨"
+        "${ methodTo }(으)로 코드를 전송했습니다."
       ],
       "Copied to clipboard": [
         "클립보드에 복사됨"
@@ -12971,6 +13044,9 @@
       ]
     },
     "Title": {
+      " Get ${ MAIL_APP_NAME } for Mac or Windows": [
+        " Mac 및 Windows용 ${ MAIL_APP_NAME } 얻기"
+      ],
       "${ MAIL_APP_NAME } Export Tool": [
         "${ MAIL_APP_NAME } Export Tool"
       ],
@@ -13283,15 +13359,6 @@
       "Delete ${ email }": [
         "${ email } 삭제"
       ],
-      "Delete ${ filterName }": [
-        "${ filterName } 삭제"
-      ],
-      "Delete ${ label.Name } folder": [
-        "${ label.Name } 폴더 삭제"
-      ],
-      "Delete ${ label.Name } label": [
-        "${ label.Name } 라벨 삭제"
-      ],
       "Delete ${ tokenNameToRemove }?": [
         "${ tokenNameToRemove }을(를) 삭제할까요?"
       ],
@@ -13301,8 +13368,14 @@
       "Delete calendar": [
         "캘린더 삭제"
       ],
+      "Delete folder?": [
+        "폴더를 삭제합니까?"
+      ],
       "Delete key permanently?": [
         "키를 영구적으로 지울까요?"
+      ],
+      "Delete label?": [
+        "라벨을 삭제합니까?"
       ],
       "Delete logs": [
         "로그 삭제"
@@ -13318,6 +13391,9 @@
       ],
       "Delete version history?": [
         "버전 기록을 삭제하시겠어요?"
+      ],
+      "Desktop app": [
+        "데스크톱 앱"
       ],
       "Disable ${ email }": [
         "${ email } 비활성화"
@@ -13438,6 +13514,9 @@
       ],
       "Folders and labels": [
         "폴더와 라벨"
+      ],
+      "For ${ platform }": [
+        "${ platform }용"
       ],
       "Forward and auto-reply": [
         "전달 및 자동 회신"

@@ -239,9 +239,6 @@
       "Continue with this password": [
         "Pokračovat s tímto heslem"
       ],
-      "Copy": [
-        "Kopírovat"
-      ],
       "Copy address": [
         "Kopírovat adresu"
       ],
@@ -364,9 +361,6 @@
       ],
       "Download": [
         "Stáhnout"
-      ],
-      "Download all configurations": [
-        "Stáhnout všechny konfigurace"
       ],
       "Download CSV sample": [
         "Stáhnout ukázku CSV"
@@ -1006,6 +1000,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Navyšte pro povolení ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to Visionary": [
+        "Navýšit na Visionary"
       ],
       "Upgrade your plan": [
         "Přejít na vyšší tarif"
@@ -3166,6 +3163,14 @@
         "Ve vámi nahraném souboru CSV jsme zjistili následující pole. Zaškrtněte ta, která chcete importovat."
       ]
     },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Přístup k desktopové aplikaci je omezený"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Beta verze desktopové aplikace ${ MAIL_APP_NAME } je v současné době omezena na ${ BRAND_NAME } předplatitelům tarifu Visionary. Všem uživatelům bude k dispozici na začátku roku 2024."
+      ]
+    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "Zpět na ${ signIn }."
@@ -3712,6 +3717,9 @@
       ],
       "Early access to new apps and features": [
         "Předběžný přístup k novým aplikacím a funkcím"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Předčasný přístup k desktopové aplikaci ${ MAIL_APP_NAME }"
       ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Placené funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_APP_NAME }"
@@ -6214,6 +6222,9 @@
       "Any ${ twoFa } method on your account will be disabled.": [
         "Jakákoliv metoda ${ twoFa } bude na vašem účtu deaktivována."
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Všechny podsložky budou rovněž smazány. E-maily uložené ve složce ${ nameDeleted } však smazány nebudou a lze je nalézt ve složce Všechna pošta."
+      ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Kdokoli s tímto odkazem uvidí všechny podrobnosti události v tomto kalendáři, jako je název, umístění nebo účastníci."
       ],
@@ -6244,8 +6255,8 @@
       "Are you sure you want to delete this filter?": [
         "Opravdu chcete smazat tento filtr?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Opravdu chcete smazat tuto složku? Budou smazány také všechny podsložky."
+      "Are you sure you want to delete this folder?": [
+        "Opravdu chcete smazat tuto složku?"
       ],
       "Are you sure you want to delete this label?": [
         "Jste si jisti, že chcete odstranit tento štítek?"
@@ -6541,11 +6552,8 @@
       "Emailing preference saved": [
         "Nastavení e-mailu uloženo"
       ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "E-maily uložené v tomto souboru nebudou vymazány a je možné je stále nalézt v souboru Všechna Pošta."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "E-maily s tímto štítkem nebudou smazány a je možné je nalézt v příslušné složce."
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "E-maily označené štítkem ${ nameDeleted } nebudou smazány a lze je stále nalézt v příslušné složce."
       ],
       "Enable this address to join this calendar": [
         "Povolte tuto adresu, aby se připojila k tomuto kalendáři"
@@ -6624,6 +6632,9 @@
       ],
       "for choosing ${ product }": [
         "za výběr ${ product }"
+      ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Pro členy organizací používajících jednotné přihlášení (SAML SSO)"
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Přepošlete příchozí mail z jiného účtu do vaší bezpečné ${ MAIL_APP_NAME } schránky."
@@ -6992,7 +7003,7 @@
         "Nejste na svém zařízení? K přihlášení použijte okno soukromého procházení a po dokončení jej zavřete. ${ learnMore }"
       ],
       "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
-        "Nyní k dispozici v beta verzi, desktopová aplikace vám výhodně dovolí spustit ${ MAIL_APP_NAME } přímo z vaší plochy a zůstat soustředěný bez rozptylování se prohlížečem."
+        "Nyní k dispozici v beta verzi, aplikaci ${ MAIL_APP_NAME } pro PC spustíte pohodlně z vaší plochy a nebudete tak rozptylováni internetovým prohlížečem."
       ],
       "Number of dedicated servers in the organization": [
         "Počet dedikovaných serverů v organizaci"
@@ -7087,9 +7098,6 @@
       "Phone number": [
         "Telefonní číslo"
       ],
-      "Plan upgrade required": [
-        "Požadováno předplatné"
-      ],
       "Please add a password for the user on row": [
         "Přidejte prosím heslo uživatele na řádku",
         "Přidejte prosím hesla uživatelů na řádcích",
@@ -7129,8 +7137,8 @@
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Vezměte prosím na vědomí, že pokud odstraníte tuto doménu, všechny přidružené adresy budou zakázány."
       ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Vezměte prosím na vědomí, že pokud smažete tento filtr, přestaneme zpracovávat všechny automatické akce, které spouští."
+      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Vezměte prosím na vědomí, že pokud odstraníte filtr ${ nameDeleted }, přestaneme zpracovávat všechny automatické akce, které spouští."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbudou kredity ve výši ${ creditsRemaining }."
@@ -8115,6 +8123,9 @@
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Heslo organizace lze sdílet se všemi uživateli, kterým chcete přidělit oprávnění správce. Heslo slouží také jako nouzový kód pro obnovení přístupu do Vaší organizace v případě, že ztratíte přístup ke svému hlavnímu účtu. Heslo uložte a držte v bezpečí."
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Vaše organizace používá jednotné přihlášení (SSO). Stiskněte tlačítko Přihlásit se a pokračujte s poskytovatelem SSO."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "E-maily vaší organizace jsou chráněny koncovým šifrováním pomocí klíče organizace. Tento otisk klíče lze použít k ověření, že všichni správci účtu mají stejný klíč."
@@ -9723,6 +9734,9 @@
       "Sign in": [
         "Přihlásit se"
       ],
+      "switch account": [
+        "přepnout účet"
+      ],
       "Terms": [
         "Podmínky"
       ],
@@ -10173,26 +10187,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } tarify"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Ponechat můj ${ currentPlanName } účet"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Pokračovat na rekapitulaci"
@@ -10232,6 +10226,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Přejít na ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } tarify"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Ponechat můj ${ currentPlanName } účet"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
       ]
     },
     "new_plans: feature": {
@@ -13138,9 +13152,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } byl zkopírován do Vaší schránky"
-      ],
       "Account deleted. Signing out...": [
         "Účet byl smazán. Odhlašování..."
       ],
@@ -13876,15 +13887,6 @@
       "Delete ${ email }": [
         "Odstranit ${ email }"
       ],
-      "Delete ${ filterName }": [
-        "Smazat ${ filterName }"
-      ],
-      "Delete ${ label.Name } folder": [
-        "Smazat ${ label.Name } složku"
-      ],
-      "Delete ${ label.Name } label": [
-        "Smazat ${ label.Name } štítek"
-      ],
       "Delete ${ tokenNameToRemove }?": [
         "Smazat ${ tokenNameToRemove }?"
       ],
@@ -13894,8 +13896,17 @@
       "Delete calendar": [
         "Smazat kalendář"
       ],
+      "Delete filter?": [
+        "Smazat filtr?"
+      ],
+      "Delete folder?": [
+        "Smazat složku?"
+      ],
       "Delete key permanently?": [
         "Smazat klíč trvale?"
+      ],
+      "Delete label?": [
+        "Smazat štítek?"
       ],
       "Delete logs": [
         "Odstranit záznamy"
@@ -13916,7 +13927,7 @@
         "Smazat historii verzí?"
       ],
       "Desktop app": [
-        "Aplikace pro počítače"
+        "Aplikace pro PC"
       ],
       "Disable ${ email }": [
         "Zakázat ${ email }"
@@ -14430,6 +14441,9 @@
       ],
       "Summary": [
         "Shrnutí"
+      ],
+      "Switch account": [
+        "Přepnout účet"
       ],
       "Switch to one-password mode": [
         "Přepnout do režimu s jedním heslem"

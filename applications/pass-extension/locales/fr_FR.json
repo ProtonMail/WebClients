@@ -179,6 +179,9 @@
       "Get mobile apps": [
         "Télécharger les applications mobiles"
       ],
+      "Get the deal": [
+        "J'en profite"
+      ],
       "Help us improve": [
         "Aidez-nous à nous améliorer"
       ],
@@ -262,6 +265,9 @@
       ],
       "Open navigation": [
         "Ouvrir la navigation"
+      ],
+      "Open web app": [
+        "Ouvrir l’application web"
       ],
       "Pass for Android": [
         "Pass pour Android"
@@ -382,6 +388,14 @@
       ],
       "Your password manager not here? Request it.": [
         "Vous ne trouvez pas votre gestionnaire de mots de passe ? Demandez-le."
+      ]
+    },
+    "Badge": {
+      "Early access": [
+        "Accès anticipé"
+      ],
+      "Limited time": [
+        "Offre à durée limitée"
       ]
     },
     "bf2023: Info": {
@@ -969,6 +983,9 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "La propriété a été transférée. Vous n'êtes plus propriétaire de ce coffre-fort."
       ],
+      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
+        "Pass Plus pour ${ eoyRelativePrice }/mois, y compris un accès en avant-première à l'application web"
+      ],
       "Pass Plus trial": [
         "Version d'essai de Proton Pass Plus"
       ],
@@ -1019,9 +1036,6 @@
       ],
       "Save login": [
         "Enregistrer l'identifiant"
-      ],
-      "Save up to 60% on ${ PASS_APP_NAME } Plus": [
-        "Économisez jusqu'à 60 % sur ${ PASS_APP_NAME } Plus"
       ],
       "Select destination vault": [
         "Sélectionner le coffre-fort de destination"

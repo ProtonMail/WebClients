@@ -857,6 +857,12 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Обходите локальные блокировки Интернета и цензуру с помощью нашей глобальной сети серверов."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Включает поддержку ${ domains } пользовательского почтового домена, ${ addresses } адреса электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое.",
+        "Включает поддержку ${ domains } пользовательских почтовых доменов, ${ addresses } адресов электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое.",
+        "Включает поддержку ${ domains } пользовательских почтовых доменов, ${ addresses } адресов электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое.",
+        "Включает поддержку ${ domains } пользовательских почтовых доменов, ${ addresses } адресов электронной почты, неограниченное количество псевдонимов hide-my-email, совместное использование календаря и многое другое."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
       ],
@@ -2200,6 +2206,9 @@
       ]
     },
     "Description": {
+      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
+        "Повышайте эффективность и отслеживайте свое время, выделяя события цветом по категориям или уровню энергии. Все это и многое другое можно получить в платном тарифе."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Расшифровка контактов... Это может занять несколько минут. По завершении процесса вы сможете загрузить файл с экспортированными контактами."
       ],
@@ -2365,12 +2374,37 @@
         "Обновить для события, начинающегося ${ formattedStart }"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Платные функции ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } и ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Включает историю версий в ${ DRIVE_SHORT_APP_NAME }, доступ к тысячам высокоскоростных ${ VPN_SHORT_APP_NAME } серверам, совместное использование в ${ PASS_SHORT_APP_NAME } и другое"
+      ]
+    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 ТБ"
+      ],
+      "6 users": [
+        "6 пользователей"
+      ],
+      "Early access to new apps and features": [
+        "Early access to new apps and features"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Ранний доступ к приложению ${ MAIL_APP_NAME } для настольных компьютеров"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Платные функции ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_APP_NAME }"
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } не может подключиться к вашему внешнему аккаунту"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можете также проверить нашу ${ statusPageLink }"
       ],
@@ -2740,6 +2774,9 @@
       "Try using only letters, numerals, and _.-": [
         "Попробуйте, используя только буквы, цифры и _.-"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "Неожиданная ошибка, мы не можем импортировать контакты"
+      ],
       "Unknown error": [
         "Неизвестная ошибка"
       ],
@@ -2817,6 +2854,9 @@
     "Error importing contact": {
       "Encryption failed": [
         "Ошибка шифрования"
+      ],
+      "Missing FN property": [
+        "Отсутствует свойство FN"
       ],
       "vCard versions < 3.0 not supported": [
         "vCard версий < 3.0 не поддерживается"
@@ -3809,6 +3849,9 @@
         "Всё (${ totalFoldersCount } ярлыка)",
         "Все (${ totalFoldersCount } ярлыков)",
         "Всё (${ totalFoldersCount } ярлыков)"
+      ],
+      "All participants will get a cancellation email. Which event would you like to delete?": [
+        "Все участники получат сообщение об отмене. Какое мероприятие вы хотите удалить?"
       ],
       "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
         "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
@@ -6281,6 +6324,9 @@
       "Add your country's public holidays to your calendar.": [
         "Добавить государственные праздники вашей страны в календарь."
       ],
+      "Color-coding is here!": [
+        "Цветная кодировка здесь!"
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "С легкостью находите события, которое вы ищете, с нашей новой функции поиска."
       ],
@@ -6295,6 +6341,9 @@
       ],
       "Search for events": [
         "Поиск событий"
+      ],
+      "With customizable event colors, you can color-code the chaos and conquer your day.": [
+        "Благодаря настраиваемым цветам для мероприятий вы можете выделить цветом хаос и покорить свой день."
       ]
     },
     "Storage": {
@@ -6630,6 +6679,9 @@
       ],
       "Add participants": [
         "Добавить участников"
+      ],
+      "Add some color to your day": [
+        "Добавьте немного цвета в свой день"
       ],
       "Add to ${ groupCount } group": [
         "Добавление в ${ groupCount } группу",

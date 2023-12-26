@@ -95,9 +95,6 @@
       "Continue with this password": [
         "Fortsett med dette passordet"
       ],
-      "Copy": [
-        "Kopier"
-      ],
       "Copy address": [
         "Kopier adresse"
       ],
@@ -164,9 +161,6 @@
       "Download": [
         "Last ned"
       ],
-      "Download all configurations": [
-        "Last ned alle konfigurasjoner"
-      ],
       "Download our CSV template": [
         "Last ned vår CSV-mal"
       ],
@@ -210,7 +204,7 @@
         "Rediger brukere"
       ],
       "enable desktop notifications": [
-        "aktiver skrivebordsvarsler"
+        "aktivere skrivebordsvarsler"
       ],
       "Enable multi-user support": [
         "Aktiver støtte for flere brukere"
@@ -496,6 +490,9 @@
       ],
       "Upgrade to Business": [
         "Oppgrader til Business"
+      ],
+      "Upgrade to Visionary": [
+        "Oppgrader til Visionary"
       ],
       "Upgrade your plan": [
         "Oppgrader planen din"
@@ -1858,6 +1855,17 @@
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Skill forskjellige aspekter av livet ditt med flere e-postadresser og lås opp flere premiumfunksjoner når du oppgraderer."
+      ]
+    },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Tilgang til skrivebordsappen er begrenset"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Testversjonen av skrivebordsappen ${ MAIL_APP_NAME } er for øyeblikket begrenset til ${ BRAND_NAME } Visionary-abonnenter. Den vil være tilgjengelig for alle brukere tidlig i 2024."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Oppgrader i dag eller sjekk igjen tidlig i 2024 for tilgang."
       ]
     },
     "Downgrade account reason": {
@@ -3341,9 +3349,6 @@
       "per month, billed every 24 months": [
         "per måned, faktureres hver 24. måned"
       ],
-      "Plan upgrade required": [
-        "Planoppgradering kreves"
-      ],
       "Please add a password for the user on row": [
         "Vennligst legg til et passord for brukeren på rad",
         "Vennligst legg til passord for brukerne på radene"
@@ -4663,11 +4668,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Glemt brukernavnet for ${ BRAND_NAME }-kontoen? Finn den ved hjelp av gjenopprettings-e-postadressen eller telefonnummeret ditt, og få tilgang til ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mer."
       ],
+      "Private and secure email, no credit card required": [
+        "Privat og sikker e-post, ingen kredittkort kreves"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Tilbakestill ditt ${ BRAND_NAME }-kontopassord"
       ],
       "Sign in to access your ${ appName } account": [
         "Logg på for å få tilgang til ${ appName }-kontoen din"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Prøv gratis ${ planName } med denne koblingen"
       ]
     },
     "Monetary unit": {
@@ -6601,9 +6612,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } kopiet til utklippstavlen"
-      ],
       "Account deleted. Signing out...": [
         "Konto slettet. Logger av..."
       ],

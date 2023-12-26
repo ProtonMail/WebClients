@@ -239,9 +239,6 @@
       "Continue with this password": [
         "Ga verder met dit wachtwoord"
       ],
-      "Copy": [
-        "Kopieer"
-      ],
       "Copy address": [
         "Adres kopiëren"
       ],
@@ -358,9 +355,6 @@
       ],
       "Download": [
         "Downloaden"
-      ],
-      "Download all configurations": [
-        "Download alle configuraties"
       ],
       "Download CSV sample": [
         "CSV-voorbeeld downloaden"
@@ -6067,9 +6061,6 @@
       "Are you sure you want to delete this filter?": [
         "Weet u zeker dat u deze filter wil verwijderen?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Weet u zeker dat u deze map wilt verwijderen? Alle onderliggende mappen zullen ook worden verwijderd."
-      ],
       "Are you sure you want to delete this label?": [
         "Weet u zeker dat u dit label wilt verwijderen?"
       ],
@@ -6355,12 +6346,6 @@
       ],
       "Emailing preference saved": [
         "E-mailvoorkeuren opgeslagen"
-      ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "E-mails die in deze map zijn opgeslagen, worden niet verwijderd en zijn nog steeds te vinden in de map Alle Mails."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "E-mails met dit label worden niet verwijderd en zijn nog steeds te vinden in de betreffende map."
       ],
       "Enable this address to join this calendar": [
         "Schakel dit adres in om lid te worden van deze agenda"
@@ -6890,9 +6875,6 @@
       "Phone number": [
         "Telefoonnummer"
       ],
-      "Plan upgrade required": [
-        "Upgrade van abonnement vereist"
-      ],
       "Please add a password for the user on row": [
         "Voeg een wachtwoord toe voor de gebruiker op de rij",
         "Voeg wachtwoorden toe voor de gebruikers op rijen"
@@ -6927,9 +6909,6 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Houd er rekening mee dat als u dit domein verwijdert, alle adressen die eraan gekoppeld zijn uitgeschakeld zullen worden."
-      ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Houd er rekening mee dat als u deze filter verwijdert, we stoppen met het verwerken van alle geautomatiseerde acties die het start."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Let op: wanneer u op de knop Bevestigen klikt, heeft uw account nog ${ creditsRemaining } credits over."
@@ -9896,26 +9875,6 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Bekijk alle ${ BRAND_NAME }-abonnementen"
-      ],
-      "From ${ price }": [
-        "Vanaf ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Behoud mijn ${ currentPlanName }-account"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Doorgaan naar controle"
@@ -9955,6 +9914,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Upgraden naar ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Bekijk alle ${ BRAND_NAME }-abonnementen"
+      ],
+      "From ${ price }": [
+        "Vanaf ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Behoud mijn ${ currentPlanName }-account"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
       ]
     },
     "new_plans: feature": {
@@ -10101,7 +10080,7 @@
         "Aangepaste velden"
       ],
       "Custom snooze time": [
-        "Aangepaste snooztijd"
+        "Aangepaste sluimertijd"
       ],
       "Data breach monitoring": [
         "Monitoring van datalekken"
@@ -10320,7 +10299,7 @@
         "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
-        "Berichten snoozen en ontvangen wanneer u wil"
+        "Berichten sluimeren en ontvangen wanneer u wilt"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
@@ -12666,9 +12645,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } gekopieerd naar uw klembord"
-      ],
       "Account deleted. Signing out...": [
         "Account verwijderd. Uitloggen..."
       ],
@@ -13383,15 +13359,6 @@
       ],
       "Delete ${ email }": [
         "Verwijderen ${ email }"
-      ],
-      "Delete ${ filterName }": [
-        "Verwijder ${ filterName }"
-      ],
-      "Delete ${ label.Name } folder": [
-        "Verwijder ${ label.Name } map"
-      ],
-      "Delete ${ label.Name } label": [
-        "Verwijder ${ label.Name } label"
       ],
       "Delete ${ tokenNameToRemove }?": [
         "Verwijder ${ tokenNameToRemove }?"
