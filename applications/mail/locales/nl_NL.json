@@ -3063,7 +3063,7 @@
         "Ontgrendel aangepaste berichten inplannen en andere voordelen als u uw abonnement upgrade."
       ],
       "Unlock custom snooze times when you upgrade your plan.": [
-        "Toegang krijgen tot aangepaste snooztijden als u uw abonnement upgradet."
+        "Toegang krijgen tot aangepaste sluimertijden als u uw abonnement upgradet."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Krijg onbeperkt filters die uw postvak voor u sorteren en andere premiumfuncties als u upgrade."
@@ -5012,9 +5012,6 @@
       "Are you sure you want to delete all messages with this label?": [
         "Weet u zeker dat u alle berichten met dit label wilt verwijderen?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Weet u zeker dat u deze map wilt verwijderen? Alle onderliggende mappen zullen ook worden verwijderd."
-      ],
       "Are you sure you want to delete this label?": [
         "Weet u zeker dat u dit label wilt verwijderen?"
       ],
@@ -5229,12 +5226,6 @@
       ],
       "Emails are automatically signed": [
         "E-mails zijn automatisch ondertekend"
-      ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "E-mails die in deze map zijn opgeslagen, worden niet verwijderd en zijn nog steeds te vinden in de map Alle Mails."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "E-mails met dit label worden niet verwijderd en zijn nog steeds te vinden in de betreffende map."
       ],
       "embedded image": [
         "ingesloten afbeelding",
@@ -5737,7 +5728,7 @@
         "Gesnoozed tot ${ dateString } om ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
-        "Gesnoozed tot vandaag, ${ formattedTime }"
+        "Gesluimerd tot vandaag, ${ formattedTime }"
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Gesnoozed tot morgen, ${ formattedTime }"
@@ -7499,7 +7490,7 @@
         "Aangepaste e-maildomeinen"
       ],
       "Custom snooze time": [
-        "Aangepaste snooztijd"
+        "Aangepaste sluimertijd"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliassen"
@@ -7528,7 +7519,7 @@
         "Gebruik onbeperkt aliassen met SimpleLogin van ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
-        "Berichten snoozen en ontvangen wanneer u wil"
+        "Berichten sluimeren en ontvangen wanneer u wilt"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }"
@@ -7965,7 +7956,7 @@
         "Geen resultaten"
       ],
       "No snoozed messages": [
-        "Geen gesnoozede berichten"
+        "Geen gesluimerde berichten"
       ],
       "No unread messages found": [
         "Geen ongelezen berichten gevonden"
@@ -8597,8 +8588,8 @@
         "${ elementsCount } gesprekken gesnoozed"
       ],
       "${ elementsCount } conversation unsnoozed": [
-        "${ elementsCount } gesprek geünsnoozed",
-        "${ elementsCount } gesprekken geünsnoozed"
+        "${ elementsCount } gesprek ontsluimerd",
+        "${ elementsCount } gesprekken uit sluimerstand gehaald"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } bericht toegevoegd aan ${ labelName }.",
@@ -9077,12 +9068,6 @@
       "Delete ${ count } message": [
         "${ count } bericht verwijderen",
         "Verwijder ${ count } berichten"
-      ],
-      "Delete ${ label.Name } folder": [
-        "Verwijder ${ label.Name } map"
-      ],
-      "Delete ${ label.Name } label": [
-        "Verwijder ${ label.Name } label"
       ],
       "Delete ${ Name }": [
         "Verwijder ${ Name }"

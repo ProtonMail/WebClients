@@ -239,9 +239,6 @@
       "Continue with this password": [
         "Mit diesem Passwort fortfahren"
       ],
-      "Copy": [
-        "Kopieren"
-      ],
       "Copy address": [
         "E-Mail-Adresse kopieren"
       ],
@@ -364,9 +361,6 @@
       ],
       "Download": [
         "Herunterladen"
-      ],
-      "Download all configurations": [
-        "Alle Konfigurationen herunterladen"
       ],
       "Download CSV sample": [
         "CSV-Beispiel herunterladen"
@@ -3663,6 +3657,11 @@
         "2FA"
       ]
     },
+    "eoy2023: Deal details": {
+      "Early access to new apps and features": [
+        "Früher Zugang zu neuen Anwendungen und Funktionen"
+      ]
+    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kannst auch auf unserer ${ statusPageLink } nachsehen."
@@ -5193,6 +5192,9 @@
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Du hast bereits ein Konto? ${ signIn }"
+      ],
+      "Already have an account? ${ signIn } or ${ switchAccount }": [
+        "Du hast bereits ein Konto? ${ signIn } oder ${ switchAccount }"
       ]
     },
     "Go to sign up": {
@@ -6054,6 +6056,9 @@
       "Any ${ twoFa } method on your account will be disabled.": [
         "Alle ${ twoFa }-Methoden deines Kontos werden deaktiviert."
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Alle Unterordner werden ebenfalls gelöscht. E-Mails, die im Ordner ${ nameDeleted } gespeichert sind, werden jedoch nicht gelöscht und können im Ordner \"Alle E-Mails\" gefunden werden."
+      ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Jeder mit diesem Link kann alle Termindetails dieses Kalenders wie Titel, Ort und Teilnehmer einsehen."
       ],
@@ -6084,8 +6089,8 @@
       "Are you sure you want to delete this filter?": [
         "Möchtest du diesen Filter wirklich löschen?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Bist du sicher, dass du diesen Ordner löschen möchtest? Alle Unterordner werden ebenfalls gelöscht."
+      "Are you sure you want to delete this folder?": [
+        "Möchtest du diesen Ordner wirklich löschen?"
       ],
       "Are you sure you want to delete this label?": [
         "Möchtest du diese Kategorie wirklich löschen?"
@@ -6373,11 +6378,8 @@
       "Emailing preference saved": [
         "E-Mail-Einstellungen gespeichert"
       ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "E-Mails, die in diesem Ordner abgelegt sind, werden nicht gelöscht und sind weiterhin im Ordner „Alle Nachrichten“ verfügbar."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "E-Mails, die mit dieser Kategorie gekennzeichnet sind, werden nicht gelöscht und sind weiterhin im entsprechenden Ordner zu finden."
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "E-Mails, die mit der Kategorie ${ nameDeleted } gekennzeichnet sind, werden nicht gelöscht und sind weiterhin im entsprechenden Ordner zu finden."
       ],
       "Enable this address to join this calendar": [
         "Aktiviere diese Adresse, um diesem Kalender beizutreten."
@@ -6910,9 +6912,6 @@
       "Phone number": [
         "Telefonnummer"
       ],
-      "Plan upgrade required": [
-        "Umstieg auf ein anderes Abo erforderlich"
-      ],
       "Please add a password for the user on row": [
         "Bitte füge ein Passwort für den Benutzer in der folgenden Zeile hinzu:",
         "Bitte füge Passwörter für die Benutzer in den folgenden Zeilen hinzu:"
@@ -6948,8 +6947,8 @@
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Bitte beachte, dass, wenn du diese Domain löschst, alle damit verbundenen E-Mail-Adressen deaktiviert werden."
       ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Bitte beachte, dass durch das Löschen dieses Filters die Verarbeitung aller automatisiert ausgelösten Aktionen beendet wird."
+      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Sei dir darüber im Klaren, dass wenn du diesen Filter ${ nameDeleted } löschst, wir alle automatischen Aktionen, die damit verbunden sind, aufheben."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Bitte beachte, dass nach dem Klicken auf die Schaltfläche „Bestätigen“ auf deinem Konto noch ${ creditsRemaining } Guthaben verbleibt."
@@ -9509,6 +9508,9 @@
       "Sign in": [
         "Anmelden"
       ],
+      "switch account": [
+        "Konto wechseln"
+      ],
       "Terms": [
         "AGB"
       ],
@@ -9937,26 +9939,6 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Alle ${ BRAND_NAME }-Abonnements entdecken"
-      ],
-      "From ${ price }": [
-        "Ab ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Mein ${ currentPlanName }-Konto behalten"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Weiter zur Prüfung"
@@ -9996,6 +9978,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Umsteigen auf ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Alle ${ BRAND_NAME }-Abonnements entdecken"
+      ],
+      "From ${ price }": [
+        "Ab ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Mein ${ currentPlanName }-Konto behalten"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
       ]
     },
     "new_plans: feature": {
@@ -12747,9 +12749,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } in die Zwischenablage kopiert"
-      ],
       "Account deleted. Signing out...": [
         "Konto gelöscht. Abmeldung wird ausgeführt..."
       ],
@@ -13471,15 +13470,6 @@
       "Delete ${ email }": [
         "${ email } löschen"
       ],
-      "Delete ${ filterName }": [
-        "${ filterName } löschen"
-      ],
-      "Delete ${ label.Name } folder": [
-        "Ordner „${ label.Name }“ löschen"
-      ],
-      "Delete ${ label.Name } label": [
-        "Kategorie „${ label.Name }“ löschen"
-      ],
       "Delete ${ tokenNameToRemove }?": [
         "${ tokenNameToRemove } löschen?"
       ],
@@ -13489,8 +13479,17 @@
       "Delete calendar": [
         "Kalender löschen"
       ],
+      "Delete filter?": [
+        "Filter löschen?"
+      ],
+      "Delete folder?": [
+        "Ordner löschen?"
+      ],
       "Delete key permanently?": [
         "Schlüssel dauerhaft löschen?"
+      ],
+      "Delete label?": [
+        "Kategorie löschen?"
       ],
       "Delete logs": [
         "Protokolle löschen"
@@ -14015,6 +14014,9 @@
       ],
       "Summary": [
         "Zusammenfassung"
+      ],
+      "Switch account": [
+        "Konto wechseln"
       ],
       "Switch to one-password mode": [
         "Wechseln zum Ein-Passwort-Modus"

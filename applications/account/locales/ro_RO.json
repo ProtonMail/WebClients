@@ -239,9 +239,6 @@
       "Continue with this password": [
         "Continuare cu această parolă"
       ],
-      "Copy": [
-        "Copiere"
-      ],
       "Copy address": [
         "Copiere adresă"
       ],
@@ -364,9 +361,6 @@
       ],
       "Download": [
         "Descărcare"
-      ],
-      "Download all configurations": [
-        "Descărcare toate configurațiile"
       ],
       "Download CSV sample": [
         "Descărcare exemplu de CSV"
@@ -1007,6 +1001,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Modificați planul pentru a activa ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to Visionary": [
+        "Migrare la Visionary"
+      ],
       "Upgrade your plan": [
         "Modificare plan"
       ],
@@ -1484,6 +1481,11 @@
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Ocoliți blocarea locală a internetului și cenzura cu rețeaua noastră globală de servere."
+      ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Include suport pentru ${ domains } domenii de e-mail personale, ${ addresses } adresă de e-mail, aliasuri nelimitate hide-my-email, partajare calendar și altele.",
+        "Include suport pentru ${ domains } domenii de e-mail personale, ${ addresses } adrese de e-mail, aliasuri nelimitate hide-my-email, partajare calendar și altele.",
+        "Include suport pentru ${ domains } domenii de e-mail personale, ${ addresses } de adrese de e-mail, aliasuri nelimitate hide-my-email, partajare calendar și altele."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Include suport pentru un domeniu de e-mail personal, 10 adrese de e-mail, 10 aliasuri hide-my-email, partajare calendar și altele."
@@ -3148,6 +3150,14 @@
         "S-au detectat următoarele câmpuri în fișierul CSV încărcat. Bifați-le pe cele pe care doriți să le importați."
       ]
     },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Accesul la aplicația pentru desktop este limitat"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Versiunea beta a aplicației pentru desktop ${ MAIL_APP_NAME } este în prezent limitată la abonații cu planul ${ BRAND_NAME } Visionary. Aceasta va fi disponibilă pentru toți utilizatorii la începutul anului 2024."
+      ]
+    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "Înapoi la ${ signIn }."
@@ -3675,7 +3685,37 @@
         "A2F"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Funcții cu plată ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Include istoricul versiunilor în ${ DRIVE_SHORT_APP_NAME }, acces la mii de servere ${ VPN_SHORT_APP_NAME } cu viteză maximă, partajare în ${ PASS_SHORT_APP_NAME } și altele."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TiB"
+      ],
+      "6 users": [
+        "6 utilizatori"
+      ],
+      "Early access to new apps and features": [
+        "Acces timpuriu la aplicațiile și funcțiile noi"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Acces timpuriu la aplicația pentru desktop ${ MAIL_APP_NAME }"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Funcții cu plată ${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_APP_NAME }"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } nu se poate conecta la contul extern."
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Puteți verifica situația și pe ${ statusPageLink }."
       ],
@@ -4087,6 +4127,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Folosiți doar litere, cifre și _ . -"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Eroare neașteptată. Nu se pot importa contactele."
       ],
       "Unknown error": [
         "Eroare necunoscută"
@@ -6116,6 +6159,9 @@
       "Any ${ twoFa } method on your account will be disabled.": [
         "Orice metodă de ${ twoFa } din cont va fi dezactivată."
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Va fi șters și orice subfolder. Totuși, mesajele stocate în folderul ${ nameDeleted } nu vor fi șterse și pot fi găsite în folderul «Toate mesajele»."
+      ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Oricine are această legătură poate vedea toate detaliile evenimentului din acest calendar, cum ar fi titlul, locul sau participanții."
       ],
@@ -6146,8 +6192,8 @@
       "Are you sure you want to delete this filter?": [
         "Sigur doriți ștergerea acestui filtru?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Sigur doriți să ștergeți acest folder? Toate subfolderele vor fi și ele șterse."
+      "Are you sure you want to delete this folder?": [
+        "Sigur doriți să ștergeți acest folder?"
       ],
       "Are you sure you want to delete this label?": [
         "Sigur doriţi să ştergeţi această etichetă?"
@@ -6439,11 +6485,8 @@
       "Emailing preference saved": [
         "Preferințe e-mail salvate"
       ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Mesajele stocate în acest folder nu vor fi șterse și pot fi găsite în continuare în folderul «Toate mesajele»"
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Mesajele primite etichetate cu această etichetă nu vor fi șterse și pot fi găsite în continuare în folderul respectiv."
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Mesajele primite etichetate cu eticheta ${ nameDeleted } nu vor fi șterse și pot fi găsite în continuare în folderul respectiv."
       ],
       "Enable this address to join this calendar": [
         "Permiteți acestei adrese să se alăture acestui calendar"
@@ -6522,6 +6565,9 @@
       ],
       "for choosing ${ product }": [
         "pentru că ați ales ${ product }"
+      ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Pentru membrii organizației care folosesc conectarea unică (SAML SSO)"
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Redirecționați mesajele primite pe e-mail de la un alt cont în contul securizat al ${ MAIL_APP_NAME }."
@@ -6982,9 +7028,6 @@
       "Phone number": [
         "Număr de telefon"
       ],
-      "Plan upgrade required": [
-        "Trebuie trecut la alt plan"
-      ],
       "Please add a password for the user on row": [
         "Adăugați o parolă pentru utilizator pe rândul",
         "Adăugați o parolă pentru utilizatorii de pe rândurile",
@@ -7021,9 +7064,6 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Dacă ștergeți acest domeniu, toate adresele asociate cu el vor fi dezactivate."
-      ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Dacă ștergeți acest filtru, se va opri procesarea tuturor acțiunilor automate pe care le declanșează."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "După apăsarea pe butonul de confirmare, contul va mai avea ${ creditsRemaining } credite rămase."
@@ -7997,6 +8037,9 @@
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Parola organizației poate fi partajată și altor utilizatori cărora doriți să le dați drepturi de administrator. Este de altfel și un cod de recuperare de urgență pentru a avea acces la organizație în cazul în care vă pierdeți accesul la cont. Salvați această parolă și păstrați-o în siguranță."
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Organizația dvs. utilizează conectarea unică (SSO). Apăsați pe Conectare pentru a continua cu furnizorul propriu de conectare unică (SSO)."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Mesajele organizației sunt protejate bilateral folosind cheia organizației. Această amprentă poate fi folosită pentru a verifica dacă toți administratorii din cont au aceeași cheie."
@@ -10040,26 +10083,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Păstrez contul ${ currentPlanName } $"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Continuare revizuire"
@@ -10099,6 +10122,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Trecere la ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Păstrez contul ${ currentPlanName } $"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
       ]
     },
     "new_plans: feature": {
@@ -12938,9 +12981,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } a fost copiat în memorie"
-      ],
       "Account deleted. Signing out...": [
         "Cont șters. Se deconectează..."
       ],
@@ -13669,15 +13709,6 @@
       "Delete ${ email }": [
         "Ștergere ${ email }"
       ],
-      "Delete ${ filterName }": [
-        "Ștergere ${ filterName }"
-      ],
-      "Delete ${ label.Name } folder": [
-        "Ștergere folder ${ label.Name }"
-      ],
-      "Delete ${ label.Name } label": [
-        "Ștergere eticheta ${ label.Name }"
-      ],
       "Delete ${ tokenNameToRemove }?": [
         "Ștergere ${ tokenNameToRemove }?"
       ],
@@ -13687,8 +13718,14 @@
       "Delete calendar": [
         "Ștergere calendar"
       ],
+      "Delete folder?": [
+        "Ștergere folder?"
+      ],
       "Delete key permanently?": [
         "Ștergeți permanent cheia?"
+      ],
+      "Delete label?": [
+        "Ștergere etichetă?"
       ],
       "Delete logs": [
         "Ştergere jurnale"

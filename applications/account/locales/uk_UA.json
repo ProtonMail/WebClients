@@ -8,6 +8,9 @@
       "Full view (see all event details)": [
         "Повний перегляд (усі подробиці події)"
       ],
+      "Limited view": [
+        "Обмежений перегляд"
+      ],
       "Limited view (see only free/busy)": [
         "Обмежений перегляд (лише доступність)"
       ]
@@ -77,6 +80,12 @@
       ],
       "Add domain": [
         "Додати домен"
+      ],
+      "Add filter": [
+        "Додати фільтр"
+      ],
+      "Add folder": [
+        "Додати теку"
       ],
       "Add multiple users": [
         "Додати кількох користувачів"
@@ -213,9 +222,6 @@
       "Continue with this password": [
         "Продовжити з цим паролем"
       ],
-      "Copy": [
-        "Копіювати"
-      ],
       "Copy address": [
         "Копіювати адресу"
       ],
@@ -330,11 +336,11 @@
       "Download": [
         "Завантажити"
       ],
-      "Download all configurations": [
-        "Завантажити всі конфігурації"
-      ],
       "Download CSV sample": [
         "Завантажити зразок CSV"
+      ],
+      "Download ICS": [
+        "Завантажити ICS"
       ],
       "Download our CSV template": [
         "Завантажте наш CSV-шаблон"
@@ -357,6 +363,9 @@
       "Edit Gateway": [
         "Редагувати мережевий шлюз"
       ],
+      "Edit invoice details": [
+        "Змінити подробиці рахунку"
+      ],
       "Edit label": [
         "Редагувати мітку"
       ],
@@ -371,6 +380,9 @@
       ],
       "Edit servers": [
         "Змінити сервери"
+      ],
+      "Edit sieve": [
+        "Редагувати Sieve"
       ],
       "Edit sign-in details": [
         "Змінити дані входу"
@@ -399,6 +411,9 @@
       "Export": [
         "Експортувати"
       ],
+      "Export key": [
+        "Експортувати ключ"
+      ],
       "Export key before deleting": [
         "Експортувати ключ перед видаленням"
       ],
@@ -414,11 +429,20 @@
       "Font": [
         "Шрифт"
       ],
+      "Generate": [
+        "Згенерувати"
+      ],
+      "Generate key": [
+        "Генерувати ключ"
+      ],
       "Generate new recovery phrase": [
         "Згенерувати нову фразу відновлення"
       ],
       "Generate recovery phrase": [
         "Згенерувати фразу відновлення"
+      ],
+      "Generate token": [
+        "Згенерувати токен"
       ],
       "Get ${ vpnPlus }": [
         "Отримати ${ vpnPlus }"
@@ -488,6 +512,9 @@
       ],
       "Import from ICS": [
         "Імпорт з ICS"
+      ],
+      "Import key": [
+        "Імпортувати ключ"
       ],
       "Increase": [
         "Збільшити"
@@ -732,6 +759,12 @@
       "Save address": [
         "Зберегти адресу"
       ],
+      "Save changes": [
+        "Зберегти зміни"
+      ],
+      "Save ICS file": [
+        "Зберегти ICS файл"
+      ],
       "Search": [
         "Пошук"
       ],
@@ -752,6 +785,9 @@
       ],
       "Select calendar view": [
         "Вибрати вигляд календаря"
+      ],
+      "Select files": [
+        "Вибрати файли"
       ],
       "Select language for invitation emails": [
         "Виберіть мову для листів із запрошеннями"
@@ -1026,6 +1062,11 @@
         "Повторна активація"
       ]
     },
+    "Action; decline invitation to share calendar": {
+      "Decline": [
+        "Відхилити"
+      ]
+    },
     "Addon": {
       "${ domains } custom domain": [
         "${ domains } власний домен",
@@ -1228,6 +1269,9 @@
       "Close": [
         "Закрити"
       ],
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ],
       "Remove ${ PASS_APP_NAME }": [
         "Вилучити ${ PASS_APP_NAME }"
       ]
@@ -1235,6 +1279,9 @@
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } сховища"
+      ],
+      "1 user": [
+        "1 користувач"
       ],
       "3 TB": [
         "3 ТБ"
@@ -1249,6 +1296,11 @@
     "bf2023: Footer": {
       "Discounts are based on standard monthly pricing.": [
         "Знижки відносно стандартної місячної ціни."
+      ]
+    },
+    "bf2023: Info": {
+      "6 users": [
+        "6 користувачів"
       ]
     },
     "bf2023: Offers": {
@@ -1406,6 +1458,11 @@
         "Ви можете імпортувати ICS файли з іншого календаря до ${ CALENDAR_APP_NAME }. Це дасть змогу швидко імпортувати одну подію або весь ваш порядок денний."
       ]
     },
+    "Calendar link purpose update success message": {
+      "Label edited": [
+        "Мітку змінено"
+      ]
+    },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
         "Лише ви можете бачити мітку"
@@ -1437,6 +1494,9 @@
       ]
     },
     "Calendar settings section title": {
+      "Share calendar": [
+        "Поширити календар"
+      ],
       "Share with ${ BRAND_NAME } users": [
         "Поділитися з користувачами ${ BRAND_NAME }"
       ],
@@ -1479,6 +1539,12 @@
       ]
     },
     "Calendar status": {
+      "Active": [
+        "Активно"
+      ],
+      "Disabled": [
+        "Вимкнено"
+      ],
       "Not synced": [
         "Не синхронізовано"
       ],
@@ -3100,6 +3166,9 @@
       "Cancel": [
         "Скасувати"
       ],
+      "Decline": [
+        "Відхилити"
+      ],
       "Delete": [
         "Видалити"
       ],
@@ -3114,6 +3183,11 @@
       ],
       "Save": [
         "Зберегти"
+      ]
+    },
+    "email_forwarding_2023: Header": {
+      "Actions": [
+        "Дії"
       ]
     },
     "email_forwarding_2023: Info": {
@@ -3135,6 +3209,11 @@
         "Без вкладення"
       ]
     },
+    "email_forwarding_2023: Link": {
+      "Learn more": [
+        "Докладніше"
+      ]
+    },
     "email_forwarding_2023: Placeholder": {
       "Enter email address": [
         "Введіть адресу е-пошти"
@@ -3149,6 +3228,9 @@
       ],
       "Paused": [
         "Зупинено"
+      ],
+      "Pending": [
+        "У черзі"
       ]
     },
     "email_forwarding_2023: Title": {
@@ -3156,9 +3238,19 @@
         "Налаштувати пересилання"
       ]
     },
+    "email_forwarding_2023: Warning": {
+      "Warning": [
+        "Попередження"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "Двоетапна перевірка (2FA)"
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 ТБ"
       ]
     },
     "Error": {
@@ -4712,6 +4804,15 @@
       ]
     },
     "Header": {
+      "Access": [
+        "Доступ"
+      ],
+      "Action": [
+        "Дія"
+      ],
+      "Actions": [
+        "Дії"
+      ],
       "App version": [
         "Версія програми"
       ],
@@ -4733,6 +4834,9 @@
       "Event": [
         "Подія"
       ],
+      "Folders": [
+        "Теки"
+      ],
       "IP address": [
         "IP-адреса"
       ],
@@ -4753,6 +4857,9 @@
       ],
       "Organization key fingerprint": [
         "Відбиток ключа організації"
+      ],
+      "Permissions": [
+        "Дозволи"
       ],
       "Protection": [
         "Захист"
@@ -4813,7 +4920,21 @@
         "Значення / Дані / Вказувати на"
       ]
     },
+    "Header for table": {
+      "Actions": [
+        "Дії"
+      ],
+      "Created": [
+        "Створено"
+      ],
+      "Token name": [
+        "Назва токена"
+      ]
+    },
     "Header; Table with list of calendars arranged by type": {
+      "Holidays": [
+        "Свята"
+      ],
       "Other": [
         "Інше"
       ]
@@ -5590,9 +5711,6 @@
       "Are you sure you want to delete this filter?": [
         "Ви дійсно хочете видалити цей фільтр?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Ви впевнені, що хочете видалити цю теку? Усі підтеки також будуть видалені."
-      ],
       "Are you sure you want to delete this label?": [
         "Ви дійсно хочете видалити цю мітку?"
       ],
@@ -5670,6 +5788,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перш ніж ви зможете почати надсилати й отримувати електронні листи зі своїх нових адрес, необхідно створити для них ключі шифрування."
+      ],
+      "Billed at ${ price }": [
+        "Оплата ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Платіжний цикл: ${ text }"
@@ -5797,6 +5918,9 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Видаліть будь-які інші MX-записи або впевніться, що встановлено найнижче число пріоритету ${ MAIL_APP_NAME }."
       ],
+      "Delete link?": [
+        "Видалити посилання?"
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Видалення ${ deletedServerCount } шлюзового сервера",
         "Видалення ${ deletedServerCount } шлюзових серверів",
@@ -5857,6 +5981,9 @@
       "Edit email address": [
         "Змінити адресу електронної пошти"
       ],
+      "Edit label": [
+        "Редагувати мітку"
+      ],
       "Edit link": [
         "Редагувати посилання"
       ],
@@ -5871,12 +5998,6 @@
       ],
       "Emailing preference saved": [
         "Налаштування електронної пошти збережено"
-      ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Електронні листи, які містяться у цій теці, не будуть видалені, і їх все ще можна знайти в теці Уся пошта."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Електронні листи, позначені цією міткою, не будуть видалені, і їх все ще можна знайти у відповідній теці."
       ],
       "Enable this address to join this calendar": [
         "Дозвольте цій адресі приєднатися до цього календаря"
@@ -6199,6 +6320,9 @@
       "Link created": [
         "Посилання створено"
       ],
+      "Link deleted": [
+        "Посилання видалено"
+      ],
       "Link type": [
         "Тип посилання"
       ],
@@ -6403,9 +6527,6 @@
       "Phone number": [
         "Номер телефону"
       ],
-      "Plan upgrade required": [
-        "Необхідно передплатити тарифний план"
-      ],
       "Please add a password for the user on row": [
         "Додайте пароль для користувача в рядок",
         "Додайте паролі для користувачів у рядки",
@@ -6444,9 +6565,6 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Зверніть увагу, що якщо ви видалите цей домен, усі пов'язані з ним адреси будуть вимкнені."
-      ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Зверніть увагу, якщо ви видалите цей фільтр, ми припинимо виконувати всі автоматизовані дії, які він виконує."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Зверніть увагу, що натискаючи кнопку Підтвердити, на вашому рахунку залишиться ${ creditsRemaining }."
@@ -7508,6 +7626,9 @@
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
         "Для цієї адреси вже активний ключ з таким самим алгоритмом шифрування. Генерування іншого ключа спричинить сповільнення завантаження облікового запису, а видалення цього ключа може викликати проблеми. Якщо ви генеруєте новий ключ, тому що ваш старий ключ був скомпрометований, будь ласка, позначте той ключ скомпрометованим. Ви дійсно хочете продовжити?"
       ],
+      "Generate key": [
+        "Генерувати ключ"
+      ],
       "Key with fingerprint ${ fp } successfully created.": [
         "Ключ з відбитком ${ fp } успішно створено."
       ],
@@ -7519,6 +7640,11 @@
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "Ви можете генерувати новий ключ шифрування, якщо вважаєте, що попередній ключ був скомпрометований."
+      ]
+    },
+    "Key state badge": {
+      "Primary": [
+        "Основний"
       ]
     },
     "Key type option": {
@@ -7729,6 +7855,9 @@
       "Export public key": [
         "Експортувати відкритий ключ"
       ],
+      "Make primary": [
+        "Зробити основним"
+      ],
       "Mark compromised": [
         "Позначити скомпрометованим"
       ],
@@ -7742,6 +7871,9 @@
     "Knowledge base link label": {
       "Here's how": [
         "Ось, як це зробити"
+      ],
+      "Learn more": [
+        "Докладніше"
       ]
     },
     "Label": {
@@ -7883,6 +8015,9 @@
       "Awarded": [
         "Нагороди"
       ],
+      "Beta": [
+        "Бета"
+      ],
       "Billing address": [
         "Платіжна адреса"
       ],
@@ -7957,6 +8092,9 @@
       ],
       "Composer default font/size": [
         "Типовий шрифт редактора"
+      ],
+      "Composer mode": [
+        "Режим редактора"
       ],
       "Composer text direction": [
         "Напрямок тексту редактора"
@@ -8093,6 +8231,9 @@
       "Don't keep versions": [
         "Не зберігати версії"
       ],
+      "Duration": [
+        "Тривалість"
+      ],
       "Email": [
         "Е-пошта"
       ],
@@ -8119,6 +8260,9 @@
       ],
       "End day of month": [
         "Останній день місяця"
+      ],
+      "End weekday": [
+        "Останній день тижня"
       ],
       "Enter password": [
         "Введіть пароль"
@@ -8245,6 +8389,9 @@
       ],
       "Level for NetShield blocker filtering": [
         "Рівень фільтрації блокувальника NetShield"
+      ],
+      "Link label": [
+        "Мітка посилання"
       ],
       "Mail Server (IMAP)": [
         "Поштовий сервер (IMAP)"
@@ -8465,6 +8612,12 @@
       "Sign external messages": [
         "Підписувати зовнішні повідомлення"
       ],
+      "SMTP server": [
+        "Сервер SMTP"
+      ],
+      "SMTP token": [
+        "Токен SMTP"
+      ],
       "Spam": [
         "Спам"
       ],
@@ -8477,8 +8630,14 @@
       "Start day of month": [
         "Перший день місяця"
       ],
+      "Start weekday": [
+        "Перший день тижня"
+      ],
       "Statement": [
         "Відомість"
+      ],
+      "Sticky labels": [
+        "Липкі мітки"
       ],
       "Subscription options": [
         "Опції передплати"
@@ -8515,6 +8674,9 @@
       ],
       "To: ${ toEmail }": [
         "Кому: ${ toEmail }"
+      ],
+      "Token name": [
+        "Назва токена"
       ],
       "Two-password mode": [
         "Двопарольний режим"
@@ -8610,6 +8772,11 @@
         "Сповіщення про події на цілий день"
       ]
     },
+    "Label for default event settings": {
+      "Duration": [
+        "Тривалість"
+      ]
+    },
     "Label for domain modal": {
       "Please add the following TXT record:": [
         "Додайте такий TXT запис:"
@@ -8673,7 +8840,20 @@
         "Бета"
       ]
     },
+    "Label to change composer mode": {
+      "Normal": [
+        "Звичайний"
+      ]
+    },
+    "Label to change density": {
+      "Compact": [
+        "Компактно"
+      ]
+    },
     "Label to change view layout": {
+      "Column": [
+        "Стовпчик"
+      ],
       "Row": [
         "Рядок"
       ]
@@ -9246,26 +9426,6 @@
         "Середня швидкість VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Переглянути всі тарифні плани ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Від ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Залишити мою передплату ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
-        "Покращити"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Переглядати далі"
@@ -9305,6 +9465,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Покращити до ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Переглянути всі тарифні плани ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Від ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Залишити мою передплату ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade now": [
+        "Покращити"
       ]
     },
     "new_plans: feature": {
@@ -10197,6 +10377,9 @@
         "Учасників додано",
         "Учасників додано",
         "Учасників додано"
+      ],
+      "Member deleted": [
+        "Учасника видалено"
       ]
     },
     "Notification in shared calendar modal": {
@@ -10392,6 +10575,9 @@
       "Create new group": [
         "Створити нову групу"
       ],
+      "Fixed duration": [
+        "Фіксована тривалість"
+      ],
       "Free server configs": [
         "Конфігурації безплатного сервера"
       ],
@@ -10416,6 +10602,18 @@
       "No parent folder": [
         "Немає теки вищого рівня"
       ],
+      "Normal": [
+        "Звичайний"
+      ],
+      "Plain text": [
+        "Звичайний текст"
+      ],
+      "Repeat daily": [
+        "Повторювати щодня"
+      ],
+      "Repeat monthly": [
+        "Повторювати щомісяця"
+      ],
       "Router": [
         "Маршрутизатор"
       ],
@@ -10430,6 +10628,14 @@
       ],
       "The whole organization": [
         "Вся організація"
+      ]
+    },
+    "Option delay send seconds": {
+      "10 seconds": [
+        "10 секунд"
+      ],
+      "20 seconds": [
+        "20 секунд"
       ]
     },
     "Option group": {
@@ -10546,6 +10752,9 @@
       ],
       "Start using ${ appName } now": [
         "Почніть використовувати ${ appName }"
+      ],
+      "Upgrade": [
+        "Покращити"
       ],
       "Upgrade my plan": [
         "Покращити тарифний план"
@@ -11204,6 +11413,11 @@
         "${ gracePeriodHoursRemaining } годин"
       ]
     },
+    "session_recovery:status:info": {
+      "Pending": [
+        "У черзі"
+      ]
+    },
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Перейдіть на новий рівень приватності завдяки нашим інструментам безпечного імпортування і пересилання."
@@ -11229,11 +11443,27 @@
       ]
     },
     "Settings/filters - table": {
+      "Action": [
+        "Дія"
+      ],
       "Name": [
         "Назва"
       ],
       "Order": [
         "Порядок"
+      ],
+      "Status": [
+        "Статус"
+      ]
+    },
+    "Settings/labels": {
+      "Labels/Folders": [
+        "Мітки/Теки"
+      ]
+    },
+    "Settings/labels - table": {
+      "Actions": [
+        "Дії"
       ]
     },
     "Share calendar assistive text": {
@@ -11359,6 +11589,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 користувач"
+      ],
       "3 TB": [
         "3 ТБ"
       ],
@@ -11743,9 +11976,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } скопійовано в буфер обміну"
-      ],
       "Account deleted. Signing out...": [
         "Обліковий запис видалено. Вихід із системи..."
       ],
@@ -11941,6 +12171,11 @@
         "Користувач видалений"
       ]
     },
+    "Success message after sorting folders": {
+      "Folders sorted": [
+        "Збережено тек"
+      ]
+    },
     "Success notification": {
       "${ label.Name } removed": [
         "${ label.Name } вилучено"
@@ -11966,8 +12201,14 @@
       "Creating config file for ${ serverName }": [
         "Створення файлу конфігурації для ${ serverName }"
       ],
+      "Filter removed": [
+        "Фільтр вилучено"
+      ],
       "Preference updated": [
         "Налаштування оновлено"
+      ],
+      "Status updated": [
+        "Стан оновлено"
       ]
     },
     "Suffix": {
@@ -12016,6 +12257,11 @@
       ],
       "For individuals": [
         "Особистий"
+      ]
+    },
+    "Table header; invitations to share calendar": {
+      "Shared with me": [
+        "Отриманий мною доступ"
       ]
     },
     "TableHeader": {
@@ -12443,15 +12689,6 @@
       "Delete ${ email }": [
         "Видалити ${ email }"
       ],
-      "Delete ${ filterName }": [
-        "Видалити ${ filterName }"
-      ],
-      "Delete ${ label.Name } folder": [
-        "Видалити теку ${ label.Name }"
-      ],
-      "Delete ${ label.Name } label": [
-        "Видалити мітку ${ label.Name }"
-      ],
       "Delete ${ tokenNameToRemove }?": [
         "Видалити ${ tokenNameToRemove }?"
       ],
@@ -12520,6 +12757,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Редагувати мережевий шлюз ${ currentName }"
+      ],
+      "Edit invoice details": [
+        "Змінити подробиці рахунку"
       ],
       "Edit servers": [
         "Редагувати сервери"
@@ -12661,6 +12901,9 @@
       ],
       "Import failed": [
         "Не вдалося імпортувати"
+      ],
+      "Import key": [
+        "Імпортувати ключ"
       ],
       "Import messages": [
         "Імпортувати повідомлення"
@@ -13124,6 +13367,11 @@
       ],
       "Status": [
         "Стан"
+      ]
+    },
+    "Title header for keys table": {
+      "Actions": [
+        "Дії"
       ]
     },
     "Title header for members table": {

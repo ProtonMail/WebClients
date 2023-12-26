@@ -95,9 +95,6 @@
       "Continue with this password": [
         "Fortsätt med detta lösenord"
       ],
-      "Copy": [
-        "Kopiera"
-      ],
       "Copy address": [
         "Kopiera adress"
       ],
@@ -163,9 +160,6 @@
       ],
       "Download": [
         "Ladda ner"
-      ],
-      "Download all configurations": [
-        "Ladda ner alla konfigurationer"
       ],
       "Download our CSV template": [
         "Ladda ner vår CSV-mall"
@@ -496,6 +490,9 @@
       ],
       "Upgrade to Business": [
         "Uppgradera till Business"
+      ],
+      "Upgrade to Visionary": [
+        "Uppgradera till Visionary"
       ],
       "Upgrade your plan": [
         "Uppgradera ditt paket"
@@ -1860,6 +1857,17 @@
         "Separera olika aspekter av ditt liv med flera e-postadresser och lås upp fler premiumfunktioner när du uppgraderar."
       ]
     },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Åtkomst till app för stationär dator är begränsat"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Betaversionen av ${ MAIL_APP_NAME }-appen för stationär dator är för närvarande begränsad till ${ BRAND_NAME } Visionary-prenumeranter. Den kommer att vara tillgänglig för alla användare i början av 2024."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Uppgradera idag eller kolla igen i början av 2024 för åtkomst."
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Buggar eller kvalitetsproblem"
@@ -1906,6 +1914,11 @@
         "Betalda funktioner för ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ PASS_SHORT_APP_NAME }"
       ]
     },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Inkluderar versionshistorik i ${ DRIVE_SHORT_APP_NAME }, åtkomst till tusentals höghastighetsservrar för ${ VPN_SHORT_APP_NAME }, delning i ${ PASS_SHORT_APP_NAME } och mer."
+      ]
+    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
@@ -1915,6 +1928,9 @@
       ],
       "Early access to new apps and features": [
         "Förhandstillgång till nya appar och funktioner"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Förhandstillgång till webbappen ${ MAIL_APP_NAME }"
       ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Betalda funktioner för ${ MAIL_SHORT_APP_NAME } och ${ CALENDAR_APP_NAME }"
@@ -3333,9 +3349,6 @@
       "per month, billed every 24 months": [
         "per månad, faktureras var 24:e månad"
       ],
-      "Plan upgrade required": [
-        "Uppgradering av paket krävs"
-      ],
       "Please add a password for the user on row": [
         "Lägg till ett lösenord för användaren på raden",
         "Lägg till lösenord för användarna på raderna"
@@ -4655,11 +4668,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Har du glömt ditt användarnamn för ditt ${ BRAND_NAME }-konto? Hitta den med din e-postadress eller ditt telefonnummer för återställning och återfå åtkomst till dina ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och fler."
       ],
+      "Private and secure email, no credit card required": [
+        "Privat och säker e-post, inget kreditkort krävs"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Återställ lösenordet för ditt ${ BRAND_NAME }-konto"
       ],
       "Sign in to access your ${ appName } account": [
         "Logga in för att komma åt ditt ${ appName }-konto"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Prova ${ planName } gratis med denna länk"
       ]
     },
     "Monetary unit": {
@@ -6593,9 +6612,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } kopierades till ditt urklipp"
-      ],
       "Account deleted. Signing out...": [
         "Konto borttaget. Loggar ut..."
       ],

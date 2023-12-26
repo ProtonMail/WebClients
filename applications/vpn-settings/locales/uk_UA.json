@@ -92,9 +92,6 @@
       "Continue with this password": [
         "Продовжити з цим паролем"
       ],
-      "Copy": [
-        "Копіювати"
-      ],
       "Copy address": [
         "Копіювати адресу"
       ],
@@ -158,9 +155,6 @@
       "Download": [
         "Завантажити"
       ],
-      "Download all configurations": [
-        "Завантажити всі конфігурації"
-      ],
       "Download our CSV template": [
         "Завантажте наш CSV-шаблон"
       ],
@@ -178,6 +172,9 @@
       ],
       "Edit Gateway": [
         "Редагувати мережевий шлюз"
+      ],
+      "Edit invoice details": [
+        "Змінити подробиці рахунку"
       ],
       "Edit name": [
         "Змінити назву"
@@ -649,6 +646,9 @@
       "Close": [
         "Закрити"
       ],
+      "Get the deal": [
+        "Скористатися пропозицією"
+      ],
       "Remove ${ PASS_APP_NAME }": [
         "Вилучити ${ PASS_APP_NAME }"
       ]
@@ -656,6 +656,9 @@
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } сховища"
+      ],
+      "1 user": [
+        "1 користувач"
       ],
       "3 TB": [
         "3 ТБ"
@@ -1757,6 +1760,11 @@
         "Двоетапна перевірка (2FA)"
       ]
     },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 ТБ"
+      ]
+    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Ви також можете перевірити нашу ${ statusPageLink }"
@@ -2785,6 +2793,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перш ніж ви зможете почати надсилати й отримувати електронні листи зі своїх нових адрес, необхідно створити для них ключі шифрування."
       ],
+      "Billed at ${ price }": [
+        "Оплата ${ price }"
+      ],
       "Billing cycle: ${ text }": [
         "Платіжний цикл: ${ text }"
       ],
@@ -3162,9 +3173,6 @@
       ],
       "per month, billed every 24 months": [
         "на місяць, рахунок виставляється кожні 24 місяців"
-      ],
-      "Plan upgrade required": [
-        "Необхідно передплатити тарифний план"
       ],
       "Please add a password for the user on row": [
         "Додайте пароль для користувача в рядок",
@@ -4438,11 +4446,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Забули своє ім'я користувача ${ BRAND_NAME }? Знайдіть його за допомогою пошти або номера телефону для відновлення та отримайте доступ до ваших ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } та багато іншого."
       ],
+      "Private and secure email, no credit card required": [
+        "Приватна та захищена електронна пошта. Банківська картка не потрібна"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Скинути пароль облікового запису ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Увійдіть, щоб отримати доступ до свого облікового запису ${ appName }"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Спробуйте ${ planName } безплатно за цим посиланням"
       ]
     },
     "Monetary unit": {
@@ -5754,6 +5768,11 @@
         "${ gracePeriodHoursRemaining } годин"
       ]
     },
+    "session_recovery:status:info": {
+      "Pending": [
+        "У черзі"
+      ]
+    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Надано спільний доступ від ${ ownerName }"
@@ -5824,6 +5843,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 користувач"
+      ],
       "3 TB": [
         "3 ТБ"
       ],
@@ -6176,9 +6198,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } скопійовано в буфер обміну"
-      ],
       "Account deleted. Signing out...": [
         "Обліковий запис видалено. Вихід із системи..."
       ],
@@ -6628,6 +6647,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Редагувати мережевий шлюз ${ currentName }"
+      ],
+      "Edit invoice details": [
+        "Змінити подробиці рахунку"
       ],
       "Edit servers": [
         "Редагувати сервери"

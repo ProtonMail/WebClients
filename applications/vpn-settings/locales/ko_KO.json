@@ -95,9 +95,6 @@
       "Continue with this password": [
         "이 비밀번호로 계속"
       ],
-      "Copy": [
-        "복사"
-      ],
       "Copy address": [
         "주소 복사"
       ],
@@ -163,9 +160,6 @@
       ],
       "Download": [
         "다운로드"
-      ],
-      "Download all configurations": [
-        "모든 설정 다운로드"
       ],
       "Download our CSV template": [
         "CSV 양식 다운로드"
@@ -250,6 +244,9 @@
       ],
       "Get verification code": [
         "인증코드 전송"
+      ],
+      "Give feedback": [
+        "피드백 보내기"
       ],
       "Got it": [
         "알겠습니다"
@@ -493,6 +490,9 @@
       ],
       "Upgrade to Business": [
         "Business로 업그레이드"
+      ],
+      "Upgrade to Visionary": [
+        "Visionary로 업그레이드"
       ],
       "Upgrade your plan": [
         "요금제 업그레이드"
@@ -794,6 +794,9 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Proton의 글로벌 서버 네트워크로 인터넷 차단 및 검열을 우회하세요."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "사용자 맞춤 도메인 ${ domains } 개, 이메일 주소 ${ addresses }개, 무제한 hide-my-email 별명, 캘린더 공유의 지원 외 기타 등등."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "1개 커스텀 이메일 도메인, 10개 이메일 주소, 10개 Hide-my-email 별명, 캘린더 공유 등 지원 포함."
       ],
@@ -842,6 +845,11 @@
       ],
       "Two-year": [
         "2년"
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME } 데스크탑 어플리케이션"
       ]
     },
     "Bug category": {
@@ -1841,6 +1849,14 @@
         "여러 이메일 주소로 삶의 다양한 측면을 분리하고 업그레이드할 때 더 많은 프리미엄 기능을 잠금 해제하세요."
       ]
     },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "데스크톱 앱에 접근할 수 없습니다"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "${ MAIL_APP_NAME } 데스크톱 앱의 베타 버전은 현재 ${ BRAND_NAME } Visionary 구독자 한정입니다. 2024년 초에는 모두가 이용할 수 있습니다."
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "버그 또는 품질 문제"
@@ -1880,6 +1896,33 @@
     "Enabled 2FA": {
       "2FA": [
         "2단계 인증"
+      ]
+    },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "유료 ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } 과 ${ PASS_SHORT_APP_NAME } 기능"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "${ DRIVE_SHORT_APP_NAME }의 버전 히스토리, ${ VPN_SHORT_APP_NAME }의 수천 개 고속 서버 엑세스, ${ PASS_SHORT_APP_NAME }의 공유 기능외 기타 등등."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 명의 사용자"
+      ],
+      "Early access to new apps and features": [
+        "새 앱 및 기능을 위해 얼리 엑세스 시작"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "${ MAIL_APP_NAME } 데스크탑 앱 얼리 엑세스"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "유료 ${ MAIL_SHORT_APP_NAME }과 ${ CALENDAR_APP_NAME } 기능"
       ]
     },
     "Error": {
@@ -2908,7 +2951,7 @@
         "언제든지 취소하세요"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "${ strong } 로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
+        "${ strong }(으)로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
       ],
       "Continue with ${ freeName }": [
         "${ freeName }으로 계속"
@@ -3019,7 +3062,7 @@
         "조직 비밀번호를 입력해 관리자의 특권을 복구하세요. ${ learnMore }"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "${ destinationText } 로 전송된 인증 코드를 입력하세요."
+        "${ destinationText }으(로) 인증 코드가 전송되었습니다."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "인증 코드를 입력하세요. ${ digit } 자리."
@@ -3050,6 +3093,9 @@
       ],
       "for choosing ${ product }": [
         "${ product }을(를) 선택해 주셔서 진심으로 감사드립니다."
+      ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "싱글 사인 온을 사용하는 조직 내의 구성원 (SAML SSO)용"
       ],
       "Free forever": [
         "영구적으로 무료"
@@ -3269,9 +3315,6 @@
       ],
       "per month, billed every 24 months": [
         "월 기준, 24개월마다 납부됨"
-      ],
-      "Plan upgrade required": [
-        "요금제 업그레이드 필요"
       ],
       "Please add email addresses for the users on rows": [
         "행에 있는 사용자의 이메일 주소를 추가해 주세요"
@@ -3869,6 +3912,9 @@
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "조직의 비밀번호는 관리자 권한을 부여하고 싶은 다른 사용자에게 공유할 수 있습니다. 또한 비밀번호는 계정에 대한 액세스 권한을 잃었을 경우 긴급 복구 코드로 사용될 수도 있으니, 비밀번호를 저장하고 안전하게 보관하세요."
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "사용자의 조직이 싱글 사인 온 (SSO)를 사용합니다. SSO 제공자로 로그인을 탭하세요."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "결제 정보는 TLS 암호화와 스위스의 보안 법에 의해 보호되고 있습니다."
@@ -4574,11 +4620,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "${ BRAND_NAME } 사용자 이름을 잊어버리셨나요? 복구 이메일 및 전화 번호를 사용하여 찾아보신 뒤 ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } 등에 접근해 보세요."
       ],
+      "Private and secure email, no credit card required": [
+        "안전하고 비공개인 이메일, 신용카드 불필요"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "${ BRAND_NAME } 계정 비밀번호를 재설정하세요."
       ],
       "Sign in to access your ${ appName } account": [
         "${ appName } 계정에 접근하려면 로그인"
+      ],
+      "Try ${ planName } for free with this link": [
+        "${ planName }을(를) 이 링크로 무료 체험하세요."
       ]
     },
     "Monetary unit": {
@@ -5824,6 +5876,15 @@
       ]
     },
     "session_recovery:available:info": {
+      " You have ${ timeRemaining.inHours } hours to reset your password.": [
+        " 비밀번호 재설정까지 ${ timeRemaining.inHours } 시간 남았습니다."
+      ],
+      " You have ${ timeRemaining.inMinutes } minutes to reset your password.": [
+        " 비밀번호 재설정까지 ${ timeRemaining.inMinutes } 분 남았습니다."
+      ],
+      " You have ${ timeRemaining.inSeconds } seconds to reset your password.": [
+        " 비밀번호 재설정까지 ${ timeRemaining.inSeconds } 초 남았습니다."
+      ],
       "${ timeRemaining.inDays } days": [
         "${ timeRemaining.inDays }일"
       ],
@@ -5836,6 +5897,9 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "만약 재설정 요청을 자신이 하지 않았다면, 요청을 즉시 취소하세요."
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "비밀번호 재설정 요청이 승인되었습니다 (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "비밀번호 재설정의 요청이 시작된 로그인 장치로 이동하십시오."
       ],
@@ -5845,14 +5909,23 @@
       "This permission expires in ${ timeRemaining.inHours } hours": [
         "권한이 ${ timeRemaining.inHours }시간 내에 만료됩니다."
       ],
+      "This permission expires soon": [
+        "이 권한은 곧 만료됩니다"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "${ boldDaysRemaining }일 내에 이 계정 ${ boldEmail }에 대한 비밀번호 변경이 이제 가능합니다."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "이제 계정 ${ boldEmail } 에 대한 비밀번호 변경이 가능합니다."
       ],
       "You can now reset your password": [
         "이제 비밀번호를 재설정할 수 있습니다"
       ],
       "You can reset your password until ${ boldDate }.": [
         "${ boldDate }까지 비밀번호 재설정이 가능합니다."
+      ],
+      "You have ${ timeRemaining.inDays } days to reset your password.": [
+        "비밀번호 재설정까지 ${ timeRemaining.inDays } 일 남았습니다."
       ]
     },
     "session_recovery:available:link": {
@@ -6430,9 +6503,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } 이 클립보드에 복사됨"
-      ],
       "Account deleted. Signing out...": [
         "계정이 삭제되었습니다. 로그아웃 중..."
       ],
@@ -6443,7 +6513,7 @@
         "버그 신고됨"
       ],
       "Code sent to ${ methodTo }": [
-        "${ methodTo } 로 코드가 전송됨"
+        "${ methodTo }(으)로 코드를 전송했습니다."
       ],
       "Copied to clipboard": [
         "클립보드에 복사됨"

@@ -227,9 +227,6 @@
       "Continue with this password": [
         "Folytatás ezzel a jelszóval"
       ],
-      "Copy": [
-        "Másolás"
-      ],
       "Copy address": [
         "Cím másolása"
       ],
@@ -340,9 +337,6 @@
       ],
       "Download": [
         "Letöltés"
-      ],
-      "Download all configurations": [
-        "Összes beállítás letöltése"
       ],
       "Download CSV sample": [
         "CSV minta letöltése"
@@ -5348,9 +5342,6 @@
       "Are you sure you want to delete this filter?": [
         "Biztosan törölni akarja ezt a szűrőt?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Biztos, hogy törli ezt a mappát? Minden benne lévő mappa szintén törlésre kerül."
-      ],
       "Are you sure you want to delete this label?": [
         "Biztosan törli ezt a címkét?"
       ],
@@ -5601,12 +5592,6 @@
       ],
       "Emailing preference saved": [
         "E-mail beállítás elmentve"
-      ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Az ebben a mappában tárolt levelek nem kerülnek törlésre és megtalálhatók lesznek az Összes üzenet mappában."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Az ezzel a címkével megjelölt levelek nem kerülnek törlésre és megtalálhatók lesznek a megfelelő mappában."
       ],
       "Enable this address to join this calendar": [
         "Engedélyezze ezt a címet a naptárhoz való csatlakozáshoz"
@@ -6091,9 +6076,6 @@
       "Phone number": [
         "Telefonszám"
       ],
-      "Plan upgrade required": [
-        "Nagyobb csomag szükséges"
-      ],
       "Please add a password for the user on row": [
         "A felhasználó jelszava hiányzik a következő sorban:",
         "A felhasználó e-mail címe hiányzik a következő sorokban:"
@@ -6122,9 +6104,6 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Ha törli ezt a domain nevet, minden ehhez kapcsolódó cím kikapcsolásra kerül."
-      ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Ha törli a szűrőt, az összes hozzá kapcsolódó művelet felfüggesztésre kerül."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "A megerősítés gombra kattintva a fiókban ${ creditsRemaining } kredit marad."
@@ -8879,23 +8858,6 @@
         "Közepes VPN sebesség"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "További ${ BRAND_NAME } csomagok megismerése"
-      ],
-      "From ${ price }": [
-        "Már ${ price }-tól"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Megtartom a ${ currentPlanName } fiókot"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Tovább az áttekintéshez"
@@ -8935,6 +8897,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Váltás ${ upsellPlanHumanSize } csomagra"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "További ${ BRAND_NAME } csomagok megismerése"
+      ],
+      "From ${ price }": [
+        "Már ${ price }-tól"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Megtartom a ${ currentPlanName } fiókot"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -11090,9 +11069,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } vágólapra másolva"
-      ],
       "Account deleted. Signing out...": [
         "Fiók törölve. Kijelentkezés..."
       ],
@@ -11760,15 +11736,6 @@
       ],
       "Delete ${ email }": [
         "${ email } törlése"
-      ],
-      "Delete ${ filterName }": [
-        "${ filterName } törlése"
-      ],
-      "Delete ${ label.Name } folder": [
-        "${ label.Name } mappa törlése"
-      ],
-      "Delete ${ label.Name } label": [
-        "${ label.Name } címke törlése"
       ],
       "Delete ${ tokenNameToRemove }?": [
         "${ tokenNameToRemove } törlése?"

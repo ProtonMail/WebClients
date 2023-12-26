@@ -376,6 +376,9 @@
       "Load image": [
         "Завантажити зображення"
       ],
+      "Loading link": [
+        "Завантаження посилання"
+      ],
       "Manage folders": [
         "Керувати теками"
       ],
@@ -816,6 +819,9 @@
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } сховища"
+      ],
+      "1 user": [
+        "1 користувач"
       ],
       "3 TB": [
         "3 ТБ"
@@ -1989,6 +1995,11 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Оновлення для події, що починається ${ formattedStart }"
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 ТБ"
       ]
     },
     "Error": {
@@ -3654,9 +3665,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Щоб досягти найкращих результатів, уникайте потокової трансляції та інших дій, які потребують багато пам'яті, або розбивайте вивантаження на менші частини."
       ],
-      "Free forever": [
-        "Безплатно назавжди"
-      ],
       "Free up some space or add more storage space.": [
         "Звільніть місце або збільште обсяг сховища."
       ],
@@ -4035,9 +4043,6 @@
       "support team": [
         "командою підтримки"
       ],
-      "Swiss encrypted file storage": [
-        "Швейцарське зашифроване сховище файлів"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Тимчасово недоступно. Повторіть спробу пізніше."
       ],
@@ -4088,6 +4093,9 @@
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "Це посилання буде вимкнено. Ніхто не матиме доступу до вашої теки за цим посиланням. Щоб надати спільний доступ до теки, вам знадобиться нове посилання."
+      ],
+      "This month": [
+        "Цього місяця"
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Це видалить посилання та вилучить доступ до вашої теки для всіх, хто має посилання.",
@@ -4160,6 +4168,9 @@
       ],
       "Trash": [
         "Смітник"
+      ],
+      "Trash is empty": [
+        "Смітник порожній"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Спробуйте нові функції, оновлення та продукти ${ BRAND_NAME } до того, як вони будуть випущені для широкого загалу. Це призведе до перезапуску програми"
@@ -4241,9 +4252,6 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "буде відновлено до версії від ${ formattedRevisionDate }. Усі інші версії буде збережено."
-      ],
-      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
-        "Завдяки ${ DRIVE_APP_NAME } ваші дані захищаються наскрізним шифруванням. Лише ви можете їх розшифрувати."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Бажаєте отримати новий код перевірки чи скористатися іншим способом перевірки?"
@@ -4917,6 +4925,9 @@
       ],
       "Pay invoice": [
         "Сплатити рахунок"
+      ],
+      "Photos": [
+        "Фото"
       ],
       "Reactivate now": [
         "Повторно активувати"
@@ -5734,6 +5745,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 користувач"
+      ],
       "3 TB": [
         "3 ТБ"
       ],
@@ -6399,6 +6413,9 @@
       ],
       "Phone numbers": [
         "Номери телефонів"
+      ],
+      "Photos": [
+        "Фото"
       ],
       "Preview": [
         "Попередній перегляд"

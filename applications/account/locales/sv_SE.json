@@ -239,9 +239,6 @@
       "Continue with this password": [
         "Fortsätt med detta lösenord"
       ],
-      "Copy": [
-        "Kopiera"
-      ],
       "Copy address": [
         "Kopiera adress"
       ],
@@ -364,9 +361,6 @@
       ],
       "Download": [
         "Ladda ner"
-      ],
-      "Download all configurations": [
-        "Ladda ner alla konfigurationer"
       ],
       "Download CSV sample": [
         "Ladda ner CSV-exempel"
@@ -1006,6 +1000,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Uppgradera för att aktivera ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to Visionary": [
+        "Uppgradera till Visionary"
       ],
       "Upgrade your plan": [
         "Uppgradera ditt paket"
@@ -3140,6 +3137,17 @@
         "Vi har upptäckt följande fält i CSV-filen du laddade upp. Markera de du vill importera."
       ]
     },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Åtkomst till app för stationär dator är begränsat"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Betaversionen av ${ MAIL_APP_NAME }-appen för stationär dator är för närvarande begränsad till ${ BRAND_NAME } Visionary-prenumeranter. Den kommer att vara tillgänglig för alla användare i början av 2024."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Uppgradera idag eller kolla igen i början av 2024 för åtkomst."
+      ]
+    },
     "Disable account": {
       "Back to ${ signIn }.": [
         "Tillbaka till ${ signIn }."
@@ -3672,6 +3680,11 @@
         "Betalda funktioner för ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ PASS_SHORT_APP_NAME }"
       ]
     },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Inkluderar versionshistorik i ${ DRIVE_SHORT_APP_NAME }, åtkomst till tusentals höghastighetsservrar för ${ VPN_SHORT_APP_NAME }, delning i ${ PASS_SHORT_APP_NAME } och mer."
+      ]
+    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
@@ -3681,6 +3694,9 @@
       ],
       "Early access to new apps and features": [
         "Förhandstillgång till nya appar och funktioner"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Förhandstillgång till webbappen ${ MAIL_APP_NAME }"
       ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Betalda funktioner för ${ MAIL_SHORT_APP_NAME } och ${ CALENDAR_APP_NAME }"
@@ -5222,6 +5238,9 @@
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Har du redan ett konto? ${ signIn }"
+      ],
+      "Already have an account? ${ signIn } or ${ switchAccount }": [
+        "Har du redan ett konto? ${ signIn } eller ${ switchAccount }"
       ]
     },
     "Go to sign up": {
@@ -6083,6 +6102,9 @@
       "Any ${ twoFa } method on your account will be disabled.": [
         "Alla ${ twoFa }-metoder på ditt konto kommer att inaktiveras."
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Eventuella undermappar kommer också att raderas. E-post som finns i mappen ${ nameDeleted } kommer inte att raderas, de finns i mappen All e-post."
+      ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Vem som helst med denna länk kan se alla händelsedetaljer i denna kalender såsom rubrik, plats eller deltagare."
       ],
@@ -6113,8 +6135,8 @@
       "Are you sure you want to delete this filter?": [
         "Är du säker du vill ta bort detta filter?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Är du säker på att du vill ta bort denna mapp? Alla undermappar kommer också att tas bort."
+      "Are you sure you want to delete this folder?": [
+        "Är du säker på att du vill ta bort denna mapp?"
       ],
       "Are you sure you want to delete this label?": [
         "Är du säker på att du vill ta bort denna etikett?"
@@ -6402,11 +6424,8 @@
       "Emailing preference saved": [
         "E-postpreferenser sparade"
       ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "E-postmeddelanden som lagras i denna mapp kommer inte att tas bort och kan fortfarande hittas i mappen All e-post."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "E-post märkta med denna etikett kommer inte att tas bort och kan fortfarande hittas i respektive mapp."
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "E-post märkta med denna ${ nameDeleted }-etikett kommer inte att tas bort och kan fortfarande hittas i respektive mapp."
       ],
       "Enable this address to join this calendar": [
         "Aktivera denna adress för att gå med i denna kalender"
@@ -6851,6 +6870,9 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Inte din enhet? Använd ett privat surffönster för att logga in och stäng det när du är klar. ${ learnMore }"
       ],
+      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
+        "Nu tillgänglig i betaversion, med appen för stationär dator kan du enkelt starta ${ MAIL_APP_NAME } direkt från din stationära dator och behålla fokus utan att störa webbläsaren."
+      ],
       "Number of dedicated servers in the organization": [
         "Antal dedikerade servrar i organisationen"
       ],
@@ -6942,9 +6964,6 @@
       "Phone number": [
         "Telefonnummer"
       ],
-      "Plan upgrade required": [
-        "Uppgradering av paket krävs"
-      ],
       "Please add a password for the user on row": [
         "Lägg till ett lösenord för användaren på raden",
         "Lägg till lösenord för användarna på raderna"
@@ -6980,8 +6999,8 @@
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Observera att om du tar bort denna domän kommer alla adresser som är associerade med den att inaktiveras."
       ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Observera att om du tar bort detta filter stoppas alla automatiserade åtgärder det utlöser."
+      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Observera att om du tar bort detta ${ nameDeleted }-filter stoppas alla automatiserade åtgärder det utlöser."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Observera att när du klickar på knappen ”Bekräfta” kommer ditt konto att ha ${ creditsRemaining } krediter kvar."
@@ -9547,6 +9566,9 @@
       "Sign in": [
         "Logga in"
       ],
+      "switch account": [
+        "byt konto"
+      ],
       "Terms": [
         "Villkor"
       ],
@@ -9975,26 +9997,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Behåll mitt ${ currentPlanName }-konto"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Fortsätt att utvärdera"
@@ -10034,6 +10036,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Uppgradera till ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Behåll mitt ${ currentPlanName }-konto"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
       ]
     },
     "new_plans: feature": {
@@ -12806,9 +12828,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } kopierades till ditt urklipp"
-      ],
       "Account deleted. Signing out...": [
         "Konto borttaget. Loggar ut..."
       ],
@@ -13530,15 +13549,6 @@
       "Delete ${ email }": [
         "Ta bort ${ email }"
       ],
-      "Delete ${ filterName }": [
-        "Ta bort ${ filterName }"
-      ],
-      "Delete ${ label.Name } folder": [
-        "Ta bort mapp ${ label.Name }"
-      ],
-      "Delete ${ label.Name } label": [
-        "Ta bort ${ label.Name }-etikett"
-      ],
       "Delete ${ tokenNameToRemove }?": [
         "Ta bort ${ tokenNameToRemove }?"
       ],
@@ -13548,8 +13558,17 @@
       "Delete calendar": [
         "Ta bort kalender"
       ],
+      "Delete filter?": [
+        "Ta bort filter?"
+      ],
+      "Delete folder?": [
+        "Ta bort mapp?"
+      ],
       "Delete key permanently?": [
         "Ta bort nyckel permanent?"
+      ],
+      "Delete label?": [
+        "Ta bort etikett?"
       ],
       "Delete logs": [
         "Ta bort loggar"
@@ -14074,6 +14093,9 @@
       ],
       "Summary": [
         "Sammanfattning"
+      ],
+      "Switch account": [
+        "Byt konto"
       ],
       "Switch to one-password mode": [
         "Växla till ett-lösenords-läge"

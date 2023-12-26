@@ -2161,6 +2161,11 @@
         "Adres URL"
       ]
     },
+    "Contact image": {
+      "Contact image": [
+        "Zdjęcie kontaktu"
+      ]
+    },
     "Contact type label": {
       "Fax": [
         "Fax"
@@ -5222,14 +5227,17 @@
       "and": [
         "i"
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Podfoldery również zostaną usunięte. Wiadomości w folderze ${ nameDeleted } nie zostaną usunięte i będą nadal dostępne w folderze Wszystkie wiadomości."
+      ],
       "Are you sure you want to delete all messages in this folder?": [
         "Czy na pewno chcesz usunąć wszystkie wiadomości z tego folderu?"
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Czy na pewno chcesz usunąć wszystkie wiadomości z tą etykietą?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Czy na pewno chcesz usunąć ten folder? Wszystkie foldery podrzędne również zostaną usunięte."
+      "Are you sure you want to delete this folder?": [
+        "Czy na pewno chcesz usunąć ten folder?"
       ],
       "Are you sure you want to delete this label?": [
         "Czy na pewno chcesz usunąć tę etykietę?"
@@ -5456,11 +5464,8 @@
       "Emails are automatically signed": [
         "Wiadomości są automatyczne podpisywane"
       ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Wiadomości w tym folderze nie zostaną usunięte i będą nadal dostępne w folderze Wszystkie wiadomości."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Wiadomości oznaczone tą etykietą nie zostaną usunięte i będą nadal dostępne w odpowiednim folderze."
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Wiadomości oznaczone etykietą ${ nameDeleted } nie zostaną usunięte i będą nadal dostępne w odpowiednim folderze."
       ],
       "embedded image": [
         "osadzony obraz",
@@ -9560,12 +9565,6 @@
         "Usuń ${ count } wiadomości",
         "Usuń ${ count } wiadomości"
       ],
-      "Delete ${ label.Name } folder": [
-        "Usuń folder ${ label.Name }"
-      ],
-      "Delete ${ label.Name } label": [
-        "Usuń etykietę ${ label.Name }"
-      ],
       "Delete ${ Name }": [
         "Usuń ${ Name }"
       ],
@@ -9577,6 +9576,12 @@
       ],
       "Delete draft": [
         "Usuń szkic"
+      ],
+      "Delete folder?": [
+        "Usunąć folder?"
+      ],
+      "Delete label?": [
+        "Usunąć etykietę?"
       ],
       "Delete message": [
         "Usuń wiadomość"
@@ -10031,6 +10036,9 @@
       ],
       "Hide side panel": [
         "Ukryj panel boczny"
+      ],
+      "Load image": [
+        "Załaduj zdjęcie"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Wybierz schemat PGP, który będzie używany przy podpisywaniu lub szyfrowaniu wiadomości wysyłanych do użytkownika. Pamiętaj, że PGP/Inline wymusza wysyłanie wiadomości w trybie zwykłego tekstu"
