@@ -3151,6 +3151,11 @@
         "暗号化されたヘッダーファイル名"
       ]
     },
+    "eoy2023: Deal details": {
+      "Early access to new apps and features": [
+        "新しいアプリや機能への早期アクセス"
+      ]
+    },
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "<${ email }> は次のエラーを発生しました: ${ error.message } この連絡先にほかのキーを追加するか、暗号化を無効にすることで問題は解決します。"
@@ -4849,9 +4854,6 @@
       "Are you sure you want to delete all messages with this label?": [
         "このフォルダー内のすべてのラベルを削除してよろしいですか?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "本当にこのフォルダーを削除してよろしいですか？サブフォルダーもすべて削除されます。"
-      ],
       "Are you sure you want to delete this label?": [
         "このラベルを削除してよろしいですか?"
       ],
@@ -5061,12 +5063,6 @@
       ],
       "Emails are automatically signed": [
         "電子メールは自動的に署名されます"
-      ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "このフォルダーに保管されたメールは削除されず、すべてのメールフォルダーから見つけることができます。"
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "このラベルが付いたメールは削除されず、各フォルダで見つけることができます。"
       ],
       "embedded images": [
         "個の埋め込み画像"
@@ -8739,12 +8735,6 @@
       ],
       "Delete ${ count } messages": [
         "${ count } 件のメッセージを削除"
-      ],
-      "Delete ${ label.Name } folder": [
-        "${ label.Name } フォルダーを削除"
-      ],
-      "Delete ${ label.Name } label": [
-        "${ label.Name } ラベルを削除"
       ],
       "Delete ${ Name }": [
         "${ Name } を削除"

@@ -2145,6 +2145,11 @@
         "URL"
       ]
     },
+    "Contact image": {
+      "Contact image": [
+        "Image du contact"
+      ]
+    },
     "Contact type label": {
       "Fax": [
         "Fax"
@@ -3268,7 +3273,7 @@
         "Accès en avant-première aux nouvelles fonctionnalités et applications"
       ],
       "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Accès anticipé à l'application de bureau ${ MAIL_APP_NAME }"
+        "Accès en avant-première à l'application de bureau ${ MAIL_APP_NAME }"
       ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Fonctionnalités payantes de ${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_APP_NAME }"
@@ -5054,14 +5059,17 @@
       "and": [
         "et"
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Tous les sous-dossiers seront également supprimés. Cependant, les messages stockés dans le dossier ${ nameDeleted } ne seront pas supprimés et se trouveront dans le dossier Tous les messages."
+      ],
       "Are you sure you want to delete all messages in this folder?": [
         "Voulez-vous vraiment supprimer tous les messages de ce dossier ?"
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Voulez-vous vraiment supprimer tous les messages avec ce label ?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Voulez-vous vraiment supprimer ce dossier ? Tous ses sous-dossiers seront aussi supprimés."
+      "Are you sure you want to delete this folder?": [
+        "Êtes-vous sûr de vouloir supprimer ce dossier ?"
       ],
       "Are you sure you want to delete this label?": [
         "Voulez-vous vraiment supprimer ce label ?"
@@ -5278,11 +5286,8 @@
       "Emails are automatically signed": [
         "Les messages sont automatiquement signés."
       ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Les messages stockés dans ce dossier ne seront pas effacés et pourront toujours être retrouvés dans le dossier Tous les messages."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Les messages marqués avec ce label ne seront pas effacés et pourront toujours être retrouvés dans leurs dossiers respectifs."
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Les messages marqués avec le label ${ nameDeleted } ne seront pas effacés et pourront toujours être retrouvés dans leurs dossiers respectifs."
       ],
       "embedded image": [
         "image intégrée",
@@ -9184,12 +9189,6 @@
         "Supprimer ${ count } message",
         "Supprimer ${ count } messages"
       ],
-      "Delete ${ label.Name } folder": [
-        "Supprimer le dossier ${ label.Name }"
-      ],
-      "Delete ${ label.Name } label": [
-        "Supprimer le label ${ label.Name }"
-      ],
       "Delete ${ Name }": [
         "Supprimer ${ Name }"
       ],
@@ -9201,6 +9200,12 @@
       ],
       "Delete draft": [
         "Supprimer le brouillon"
+      ],
+      "Delete folder?": [
+        "Supprimer le dossier ?"
+      ],
+      "Delete label?": [
+        "Supprimer le label ?"
       ],
       "Delete message": [
         "Supprimer le message"
@@ -9649,6 +9654,9 @@
       ],
       "Hide side panel": [
         "Masquer le panneau latéral"
+      ],
+      "Load image": [
+        "Charger l'image"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Sélectionnez le schéma PGP à utiliser lors de la signature ou du chiffrement vers un autre utilisateur. Notez que PGP/Inline force le format des messages en texte brut."
