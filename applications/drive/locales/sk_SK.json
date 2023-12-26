@@ -83,7 +83,7 @@
         "Zrušiť všetko"
       ],
       "Cancel all downloads": [
-        "Zrušiť všetky preberania"
+        "Zrušiť všetky sťahovania"
       ],
       "Cancel all uploads": [
         "Zrušiť všetky nahrávania"
@@ -260,7 +260,7 @@
         "Stiahnuť aplikácie"
       ],
       "Drive Locked": [
-        "Drive zamknutý"
+        "Disk uzamknutý"
       ],
       "Edit": [
         "Upraviť"
@@ -318,6 +318,9 @@
       ],
       "Get started": [
         "Začíname"
+      ],
+      "Get Started": [
+        "Začnite"
       ],
       "Get verification code": [
         "Odoslať overovací kód"
@@ -2228,7 +2231,7 @@
         "Nesprávne heslo k poštovej schránke. Skúste to znova, prosím."
       ],
       "Incorrect password. Please try again.": [
-        "Nesprávne heslo. Skúste ešte raz, prosím."
+        "Nesprávne heslo. Skúste to prosím, znovu."
       ],
       "Incorrect username": [
         "Nesprávne používateľské meno"
@@ -3593,7 +3596,7 @@
         "Načítanie odkazov zlyhalo"
       ],
       "Cannot load shared link": [
-        "Nie je možné nahrať zdieľaný odkaz"
+        "Nie je možné načítať zdieľaný odkaz"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nepamätáte si heslo? Môžeme vám pomôcť vymazať zašifrované údaje všetkých kontaktov zašifrovaných týmto kľúčom a počas toho zrušiť upozornenie."
@@ -3835,9 +3838,6 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Na dosiahnutie najlepších výsledkov sa vyhnite streamovaniu a činnostiam náročným na pamäť alebo rozdeľte nahrávanie na menšie časti."
       ],
-      "Free forever": [
-        "Navždy zadarmo"
-      ],
       "Free up some space or add more storage space.": [
         "Uvoľnite miesto alebo pridajte ďalší úložný priestor."
       ],
@@ -3956,7 +3956,7 @@
         "Odkaz bol skopírovaný do schránky"
       ],
       "Link owner has the password": [
-        "Heslo má vlastník súboru"
+        "Vlastník odkazu má heslo"
       ],
       "Loading": [
         "Načítavanie"
@@ -4255,14 +4255,11 @@
       "support team": [
         "tím podpory"
       ],
-      "Swiss encrypted file storage": [
-        "Švajčiarske šifrované úložisko súborov"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasne nedostupné. Skúste to neskôr."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Účet môže mať nový kľúč alebo mohlo dôjsť k manipulácii s nasledujúcimi údajmi: ${ items }. Otvorte iba v prípade, že tomu dôverujete."
+        "Účet môže mať nový kľúč alebo mohlo dôjsť k manipulácii s nasledujúcimi údajmi: ${ items }. Otvorte len v prípade, že tomu dôverujete."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Pred exportom kontaktov musí aplikácia kontakty lokálne dešifrovať. Na konci procesu bude vygenerovaný súbor VCF, ktorý si budete môcť stiahnuť."
@@ -4393,6 +4390,9 @@
       "Trash is empty": [
         "Kôš je prázdny"
       ],
+      "Try ${ DRIVE_APP_NAME }: Free forever": [
+        "Vyskúšajte ${ DRIVE_APP_NAME }: Navždy zadarmo"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyskúšajte nové ${ BRAND_NAME } funkcie, aktualizácie a produkty pred ich zverejnením. Týmto sa obnoví aplikácia"
       ],
@@ -4480,8 +4480,8 @@
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "bude obnovený na verziu z ${ formattedRevisionDate }. Všetky ostatné verzie budú uložené."
       ],
-      "With ${ DRIVE_APP_NAME }, your data is protected with end-to-end encryption. Only you can decrypt it.": [
-        "S ${ DRIVE_APP_NAME } sú vaše dáta chránené end-to-end šifrovaním. Dešifrovať ich môžete len vy."
+      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
+        "S ${ DRIVE_APP_NAME } sú vaše dáta chránené end-to-end šifrovaním."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získať nový overovací kód alebo použiť alternatívnu metódu overovania?"
@@ -4725,7 +4725,7 @@
         "Kalendáre"
       ],
       "Cancel download": [
-        "Zrušiť preberanie"
+        "Zrušiť sťahovanie"
       ],
       "Category": [
         "Kategória"
@@ -4932,7 +4932,7 @@
         "Hlavné"
       ],
       "Malware": [
-        "Malware"
+        "Malvér"
       ],
       "Manage categories": [
         "Spravovať kategórie"
@@ -5106,7 +5106,7 @@
         "Úžasné"
       ],
       "Yes, I want to permanently delete my old files": [
-        "Áno, chcem trvalo zmazať moje staré súbory"
+        "Áno, chcem natrvalo zmazať moje staré súbory"
       ],
       "Your password (admin)": [
         "Vaše heslo (admin)"
