@@ -6,7 +6,6 @@ import {
     isURLProtonInternal,
     punycodeUrl,
 } from '@proton/components/helpers/url';
-import { mockWindowLocation, resetWindowLocation } from '@proton/components/helpers/url.test.helpers';
 
 const windowHostname = 'mail.proton.me';
 
@@ -50,54 +49,35 @@ describe('isMailTo', function () {
 });
 
 describe('isExternal', function () {
-    beforeEach(() => {
-        mockWindowLocation(undefined, windowHostname);
-    });
-
-    afterEach(() => {
-        resetWindowLocation();
-    });
-
     it('should detect that the url is not external', () => {
         const url1 = 'https://mail.proton.me';
-        expect(window.location.hostname).toEqual(windowHostname);
-        expect(isExternal(url1)).toBeFalsy();
+        expect(isExternal(url1, windowHostname)).toBeFalsy();
     });
 
     it('should detect that the url is external', () => {
         const url = 'https://url.whatever.com';
-        expect(window.location.hostname).toEqual(windowHostname);
-        expect(isExternal(url)).toBeTruthy();
+        expect(isExternal(url, windowHostname)).toBeTruthy();
     });
 
     it('should detect that the mailto link is not external', () => {
         const url = 'mailto:mail@proton.me';
-        expect(window.location.hostname).toEqual(windowHostname);
-        expect(isExternal(url)).toBeFalsy();
+        expect(isExternal(url, windowHostname)).toBeFalsy();
     });
 });
 
 describe('isProtonInternal', function () {
-    beforeEach(() => {
-        mockWindowLocation(undefined, windowHostname);
-    });
-
-    afterEach(() => {
-        resetWindowLocation();
-    });
-
     it('should detect that the url is proton internal', () => {
         const url1 = 'https://mail.proton.me';
         const url2 = 'https://calendar.proton.me';
 
-        expect(isURLProtonInternal(url1)).toBeTruthy();
-        expect(isURLProtonInternal(url2)).toBeTruthy();
+        expect(isURLProtonInternal(url1, windowHostname)).toBeTruthy();
+        expect(isURLProtonInternal(url2, windowHostname)).toBeTruthy();
     });
 
     it('should detect that the url is not proton internal', () => {
         const url = 'https://url.whatever.com';
 
-        expect(isURLProtonInternal(url)).toBeFalsy();
+        expect(isURLProtonInternal(url, windowHostname)).toBeFalsy();
     });
 });
 

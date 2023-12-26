@@ -31,7 +31,7 @@ const Challenge = ({
     const challengeLogRef = useRef<ChallengeLog[]>([]);
 
     const challengeSrc = (() => {
-        const url = getApiSubdomainUrl('/challenge/v4/html');
+        const url = getApiSubdomainUrl('/challenge/v4/html', window.location.origin);
         url.searchParams.set('Type', `${type}`);
         url.searchParams.set('Name', name);
         if (errorRetry) {

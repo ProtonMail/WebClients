@@ -1,7 +1,6 @@
 import punycode from 'punycode.js';
 
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
-import window from '@proton/shared/lib/window';
 import isTruthy from '@proton/utils/isTruthy';
 
 export const isSubDomain = (hostname: string, domain: string) => {
@@ -24,9 +23,9 @@ export const isMailTo = (url: string): boolean => {
     return url.toLowerCase().startsWith('mailto:');
 };
 
-export const isExternal = (url: string) => {
+export const isExternal = (url: string, hostname: string) => {
     try {
-        return window.location.hostname !== getHostname(url) && !isMailTo(url);
+        return hostname !== getHostname(url) && !isMailTo(url);
     } catch (e: any) {
         /*
          * IE11/Edge are the worst, they crash when they try to parse
@@ -37,8 +36,8 @@ export const isExternal = (url: string) => {
     }
 };
 
-export const isURLProtonInternal = (url: string) => {
-    const currentDomain = getSecondLevelDomain(window.location.hostname);
+export const isURLProtonInternal = (url: string, hostname: string) => {
+    const currentDomain = getSecondLevelDomain(hostname);
     const targetOriginHostname = getHostname(url);
 
     // Still need to check the current domain otherwise it would not work on proton.local, localhost, etc...

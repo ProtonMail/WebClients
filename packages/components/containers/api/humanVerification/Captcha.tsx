@@ -6,7 +6,7 @@ import { Loader } from '../../../components/loader';
 import { CaptchaTheme } from './interface';
 
 const getIframeUrl = (token: string, theme?: CaptchaTheme) => {
-    const url = getApiSubdomainUrl('/core/v4/captcha');
+    const url = getApiSubdomainUrl('/core/v4/captcha', window.location.origin);
     url.searchParams.set('Token', token);
     url.searchParams.set('ForceWebMessaging', '1');
     if (theme === 'dark') {
