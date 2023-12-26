@@ -42,7 +42,7 @@ const DrawerApiProvider = ({ children }: { children: ReactNode }) => {
 
                 updateServerTime(serverTime);
 
-                if (success) {
+                if (success && data) {
                     if (output === 'raw') {
                         resolve({ ...data, headers: new Headers(data.headers), json: async () => data.json });
                     } else {
