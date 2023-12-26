@@ -184,10 +184,10 @@ const getCustomDailyString = (
     if (endType === END_TYPE.AFTER_N_TIMES) {
         const timesString = getTimesString(count);
         if (interval === 1) {
-            return c('Daily recurring event, frequency').t`Daily, ${timesString}`;
+            return c('Daily recurring event, frequency (times)').t`Daily, ${timesString}`;
         }
         // translator: When interval = 1 we do not use this string; we use 'daily' instead. Treat the case of interval = 1 as dummy
-        return c('Daily recurring event, frequency').ngettext(
+        return c('Daily recurring event, frequency (times)').ngettext(
             msgid`Every ${interval} day, ${timesString}`,
             `Every ${interval} days, ${timesString}`,
             interval
