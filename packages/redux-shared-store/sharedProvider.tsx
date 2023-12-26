@@ -4,6 +4,8 @@ import { Provider, type TypedUseSelectorHook } from 'react-redux';
 import type { Action } from '@reduxjs/toolkit';
 import type { AnyAction, Store } from 'redux';
 
+import { useModelThunkDispatcher } from '@proton/redux-utilities';
+
 import { ProtonStoreContext, baseUseDispatch, baseUseSelector, baseUseStore } from './sharedContext';
 import type { SharedStore } from './sharedStore';
 
@@ -16,6 +18,7 @@ export interface ProtonStoreProviderProps<S = any, A extends Action = AnyAction>
 }
 
 export const ProtonStoreProvider = ({ children, store }: ProtonStoreProviderProps) => {
+    useModelThunkDispatcher(store);
     return (
         <Provider context={ProtonStoreContext} store={store}>
             {children}

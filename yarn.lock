@@ -6230,6 +6230,7 @@ __metadata:
     "@proton/account": "workspace:^"
     "@proton/calendar": "workspace:^"
     "@proton/mail": "workspace:^"
+    "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
     "@reduxjs/toolkit": "npm:^1.9.7"
     react: "npm:^17.0.2"
@@ -6237,7 +6238,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/redux-utilities@workspace:packages/redux-utilities":
+"@proton/redux-utilities@workspace:^, @proton/redux-utilities@workspace:packages/redux-utilities":
   version: 0.0.0-use.local
   resolution: "@proton/redux-utilities@workspace:packages/redux-utilities"
   dependencies:

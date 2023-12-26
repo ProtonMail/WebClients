@@ -41,30 +41,27 @@ describe('hooks', () => {
         const slice = createSlice({
             name: 'myState',
             initialState,
-            reducers: {},
+            reducers: {
+                reset: (state) => {
+                    state.value = undefined;
+                    state.error = undefined;
+                },
+            },
             extraReducers: (builder) => {
                 handleAsyncModel(builder, thunkActionCreator);
             },
         });
-
-        const actions: any[] = [];
 
         const getNewStore = () =>
             configureStore({
                 reducer: {
                     [stateKey]: slice.reducer,
                 },
-                middleware: (getDefaultMiddleware) => {
-                    return getDefaultMiddleware({}).prepend(() => (next) => (action) => {
-                        actions.push(action);
-                        return next(action);
-                    });
-                },
             });
 
         return {
+            slice,
             getNewStore,
-            actions,
             thunkActionCreator,
         };
     };
@@ -122,5 +119,61 @@ describe('hooks', () => {
         );
 
         expect(spy).toHaveBeenCalledTimes(1);
+    });
+
+    test('re-dispatches when value becomes undefined', async () => {
+        const { getNewStore, thunkActionCreator, slice } = setup(async () => 42);
+        const store = getNewStore();
+        const spy = jest.spyOn(thunkActionCreator, 'thunk');
+        const hooks = createHooks(thunkActionCreator.thunk, selectState);
+
+        const Component = () => {
+            const [value, loading] = hooks.useValue();
+            return <div data-testid="result">{`${value}, ${loading}`}</div>;
+        };
+
+        const { getByTestId } = render(
+            <ProtonStoreProvider store={store}>
+                <Component />
+            </ProtonStoreProvider>
+        );
+
+        expect(spy).toHaveBeenCalledTimes(1);
+
+        const div = getByTestId('result');
+        expect(div).toHaveTextContent('undefined, true');
+        await waitFor(() => expect(div).toHaveTextContent('42, false'));
+
+        expect(spy).toHaveBeenCalledTimes(1);
+
+        render(
+            <ProtonStoreProvider store={store}>
+                <Component />
+            </ProtonStoreProvider>
+        );
+
+        expect(spy).toHaveBeenCalledTimes(1);
+
+        store.dispatch(slice.actions.reset());
+
+        render(
+            <ProtonStoreProvider store={store}>
+                <Component />
+            </ProtonStoreProvider>
+        );
+
+        expect(div).toHaveTextContent('undefined, true');
+        expect(spy).toHaveBeenCalledTimes(2);
+        await waitFor(() => expect(div).toHaveTextContent('42, false'));
+
+        expect(spy).toHaveBeenCalledTimes(2);
+
+        render(
+            <ProtonStoreProvider store={store}>
+                <Component />
+            </ProtonStoreProvider>
+        );
+
+        expect(spy).toHaveBeenCalledTimes(2);
     });
 });
