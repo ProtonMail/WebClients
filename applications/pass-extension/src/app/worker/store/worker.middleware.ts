@@ -14,7 +14,7 @@ import WorkerMessageBroker from '../channel';
 export const workerMiddleware: Middleware = () => (next) => (action: AnyAction) => {
     WorkerMessageBroker.ports.broadcast(
         backgroundMessage({
-            type: WorkerMessageType.STORE_ACTION,
+            type: WorkerMessageType.STORE_DISPATCH,
             payload: { action: sanitizeWithCallbackAction(action) },
         }),
         (name) => /^(popup|page)/.test(name)

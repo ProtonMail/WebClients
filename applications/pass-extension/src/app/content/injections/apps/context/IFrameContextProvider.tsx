@@ -122,7 +122,7 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
         if (userEmail === null && workerState && clientReady(workerState?.status)) {
             sendMessage
                 .onSuccess(
-                    contentScriptMessage({ type: WorkerMessageType.RESOLVE_USER_DATA }),
+                    contentScriptMessage({ type: WorkerMessageType.RESOLVE_USER }),
                     (response) => response.user?.Email && setUserEmail(response.user.Email)
                 )
                 .catch(noop);
