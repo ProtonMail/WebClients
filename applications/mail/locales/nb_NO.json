@@ -377,7 +377,7 @@
         "Aktiver"
       ],
       "enable desktop notifications": [
-        "aktiver skrivebordsvarsler"
+        "aktivere skrivebordsvarsler"
       ],
       "Encryption": [
         "Kryptering"
@@ -2143,6 +2143,11 @@
       ],
       "URL": [
         "Nettadresse"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Bilde av kontakt"
       ]
     },
     "Contact type label": {
@@ -5054,14 +5059,17 @@
       "and": [
         "og"
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Eventuelle undermapper vil også bli slettet. E-postmeldinger som er lagret i mappen ${ nameDeleted }, vil imidlertid ikke bli slettet og finnes i All e-post-mappen."
+      ],
       "Are you sure you want to delete all messages in this folder?": [
         "Er du sikker på at du vil slette alle meldingene i denne mappen?"
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Er du sikker på at du vil slette alle meldingene med denne etiketten?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Er du sikker på at du ønsker å slette denne mappen? Alle undermapper blir også slettet."
+      "Are you sure you want to delete this folder?": [
+        "Er du sikker på at du vil slette denne mappen?"
       ],
       "Are you sure you want to delete this label?": [
         "Er du sikker på at du vil slette denne etiketten?"
@@ -5278,11 +5286,8 @@
       "Emails are automatically signed": [
         "E-post signeres automatisk"
       ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "E-postmeldinger som er lagret i denne mappen, blir ikke slettet og kan fortsatt bli funnet i mappen All e-post."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "E-postmeldinger merket med denne etiketten vil ikke bli slettet og kan fortsatt bli funnet i den respektive mappen."
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "E-postmeldinger merket med etiketten, ${ nameDeleted }, vil ikke bli slettet og kan fortsatt bli funnet i den respektive mappen."
       ],
       "embedded image": [
         "innebygd bilde",
@@ -9184,12 +9189,6 @@
         "Slett ${ count } melding",
         "Slett ${ count } meldinger"
       ],
-      "Delete ${ label.Name } folder": [
-        "Slett ${ label.Name }-mappe"
-      ],
-      "Delete ${ label.Name } label": [
-        "Slett ${ label.Name }-etikett"
-      ],
       "Delete ${ Name }": [
         "Slett ${ Name }"
       ],
@@ -9201,6 +9200,12 @@
       ],
       "Delete draft": [
         "Slett utkast"
+      ],
+      "Delete folder?": [
+        "Slett mappe?"
+      ],
+      "Delete label?": [
+        "Slett etikett?"
       ],
       "Delete message": [
         "Slett melding"
@@ -9649,6 +9654,9 @@
       ],
       "Hide side panel": [
         "Skjul sidepanel"
+      ],
+      "Load image": [
+        "Last inn bilde"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Velg PGP-ordningen som skal brukes når du signerer eller krypterer til en bruker. Merk at PGP/Inline tvinger meldinger i ren tekst."
