@@ -15,10 +15,8 @@ import { clientLocked, clientReady } from '@proton/pass/lib/client';
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
 import { sessionUnlockFailure, sessionUnlockIntent, sessionUnlockSuccess } from '@proton/pass/store/actions';
-import { selectUser } from '@proton/pass/store/selectors';
 import type { WorkerMessageResponse } from '@proton/pass/types';
 import { SessionLockStatus, WorkerMessageType } from '@proton/pass/types';
-import { withPayload } from '@proton/pass/utils/fp/lens';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
@@ -29,6 +27,11 @@ export const SESSION_LOCK_ALARM = 'alarm::session-lock';
 
 export const createAuthService = (options: AuthServiceConfig): AuthService => {
     const authService = createCoreAuthService(options);
+
+    const handleInit = withContext<MessageHandlerCallback<WorkerMessageType.AUTH_INIT>>(async (ctx, message) => {
+        await ctx.service.auth.init(message.payload);
+        return ctx.getState();
+    });
 
     const handleAccountFork = withContext<MessageHandlerCallback<WorkerMessageType.ACCOUNT_FORK>>(
         async ({ getState, service, status }, { payload }) => {
@@ -51,10 +54,10 @@ export const createAuthService = (options: AuthServiceConfig): AuthService => {
         }
     );
 
-    const handleUnlockRequest = (request: { pin: string }) =>
-        new Promise<WorkerMessageResponse<WorkerMessageType.UNLOCK_REQUEST>>((resolve) => {
+    const handleUnlock: MessageHandlerCallback<WorkerMessageType.AUTH_UNLOCK> = ({ payload }) =>
+        new Promise<WorkerMessageResponse<WorkerMessageType.AUTH_UNLOCK>>((resolve) => {
             store.dispatch(
-                sessionUnlockIntent({ pin: request.pin }, (action) => {
+                sessionUnlockIntent({ pin: payload.pin }, (action) => {
                     if (sessionUnlockSuccess.match(action)) return resolve({ ok: true });
                     if (sessionUnlockFailure.match(action)) return resolve({ ok: false, ...action.payload });
                 })
@@ -64,7 +67,7 @@ export const createAuthService = (options: AuthServiceConfig): AuthService => {
     /* only extend the session lock if a lock is registered and we've reached at least 50%
      * of the lock TTL since the last extension. Calling `AuthService::syncLock` will extend
      * the lock via the `checkSessionLock` call */
-    const handleActivityProbe = withContext<MessageHandlerCallback<WorkerMessageType.ACTIVITY_PROBE>>(
+    const handleActivityProbe: MessageHandlerCallback<WorkerMessageType.ACTIVITY_PROBE> = withContext(
         async ({ status }) => {
             const registeredLock = options.authStore.getLockStatus() === SessionLockStatus.REGISTERED;
             const ttl = options.authStore.getLockTTL();
@@ -79,13 +82,18 @@ export const createAuthService = (options: AuthServiceConfig): AuthService => {
         }
     );
 
-    const resolveUserData = () => ({ user: selectUser(store.getState()) });
-
+    WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_PROBE, () => true);
     WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_FORK, handleAccountFork);
-    WorkerMessageBroker.registerMessage(WorkerMessageType.UNLOCK_REQUEST, withPayload(handleUnlockRequest));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_INIT, handleInit);
+    WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_UNLOCK, handleUnlock);
     WorkerMessageBroker.registerMessage(WorkerMessageType.ACTIVITY_PROBE, handleActivityProbe);
-    WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_USER_DATA, resolveUserData);
-    browser.alarms.onAlarm.addListener(({ name }) => name === SESSION_LOCK_ALARM && authService.lock({ soft: false }));
+
+    browser.alarms.onAlarm.addListener(({ name }) => {
+        switch (name) {
+            case SESSION_LOCK_ALARM:
+                return authService.lock({ soft: false });
+        }
+    });
 
     return authService;
 };
