@@ -95,9 +95,6 @@
       "Continue with this password": [
         "繼續使用此密碼"
       ],
-      "Copy": [
-        "複製"
-      ],
       "Copy address": [
         "複製郵件位址"
       ],
@@ -163,9 +160,6 @@
       ],
       "Download": [
         "下載"
-      ],
-      "Download all configurations": [
-        "下載所有組態設定"
       ],
       "Download our CSV template": [
         "下載我們的CSV模板"
@@ -250,6 +244,9 @@
       ],
       "Get verification code": [
         "取得驗證碼"
+      ],
+      "Give feedback": [
+        "意見回饋"
       ],
       "Got it": [
         "了解"
@@ -494,6 +491,9 @@
       "Upgrade to Business": [
         "升級企業版"
       ],
+      "Upgrade to Visionary": [
+        "升級到 Visionary 方案"
+      ],
       "Upgrade your plan": [
         "升級您的方案"
       ],
@@ -649,6 +649,9 @@
       ]
     },
     "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "**購買我們的密碼管理器** 僅需 ${ price }"
+      ],
       "Add ${ PASS_APP_NAME }": [
         "增加 ${ PASS_APP_NAME }"
       ],
@@ -709,6 +712,14 @@
         "進階版密碼管理器"
       ]
     },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "折扣是以每月標準價格為基礎。"
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "您的訂閱將在您的結算週期結束時以相同的費率自動續訂。"
+      ]
+    },
     "bf2023: header": {
       "Select your Black Friday offer": [
         "選取您的黑色星期五方案"
@@ -721,6 +732,12 @@
       ]
     },
     "bf2023: info": {
+      "Secure browsing and premium VPN features.": [
+        "安全瀏覽和進階 VPN 功能。"
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此優惠無法在您的方案中使用。"
+      ],
       "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
         "抱歉，你目前的方案無法使用此優惠。但是，當你訂購 **${ months }** 時，你可以享受 **${ plan.Title } 的 ${ discountPercentage }** 優惠"
       ]
@@ -744,14 +761,38 @@
       ]
     },
     "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "存取遭封鎖的內容並保持隱私。使用遍佈於65+個國家的超過 3000 台伺服器，讓最快的 VPN 帶您暢享世上的串流平台，還有病毒與廣告攔截器、迅速的 BitTorrent 下載等多項功能可用。"
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "在世界各地暢享串流服務的影音內容，包含 Netflix、Disney+、Prime Video 等平台。"
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "我們遍佈全世界的網路與伺服器助您翻過長城，免於審查。"
+      ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 ${ domains } 組自訂電子郵件網域、${ addresses } 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "包含對 1 個自訂電子郵件網域、10 組電子郵件位址、10 組 hide-my-email 別名、行事曆分享與更多功能的支援。"
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "在您所有的裝置安全登入。包含無限郵件別名、共享以及整合的 2FA等功能。"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "透過端對端加密保護您的電子郵件。包含自訂電子郵件網域、15 個電子郵件位址、無限的 hide-my-email 別名與行事曆共用等等的功能。"
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "透過加密的雲端儲存保護檔案。包含版本紀錄、加密的檔案共享、及更多。"
       ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "精心設計的 NetShield 保護您的裝置並攔截讓您變慢的廣告、追蹤程式與惡意軟體。"
+      ],
       "Storage space is shared across all ${ BRAND_NAME } apps.": [
         "儲存空間於${ BRAND_NAME }共用。"
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "包存最多200份檔案歷程記錄長達10年。"
       ]
     },
     "Billing cycle": {
@@ -1820,6 +1861,11 @@
         "雙重驗證"
       ]
     },
+    "eoy2023: Deal details": {
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "${ MAIL_SHORT_APP_NAME }付費及${ CALENDAR_APP_NAME }功能"
+      ]
+    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。您也可查看我們的${ statusPageLink }"
@@ -2059,6 +2105,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "App 目前無法使用"
+      ],
       "Error: ${ errorMessage }": [
         "錯誤：${ errorMessage }"
       ],
@@ -3193,9 +3242,6 @@
       "per month, billed every 24 months": [
         "每月，每24個月收費"
       ],
-      "Plan upgrade required": [
-        "需要升級方案"
-      ],
       "Please add email addresses for the users on rows": [
         "請在此行使用者處加入電郵位址"
       ],
@@ -3246,6 +3292,9 @@
       ],
       "Preview failed to be loaded": [
         "連結載入失敗"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "目前不支援在這個瀏覽器中預覽這個類型的檔案。"
       ],
       "Preview for this file type is not supported": [
         "不支援預覽此檔案類型"
@@ -4453,11 +4502,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "忘記您的 ${ BRAND_NAME } 帳號使用者名稱？使用您的備援電子郵件或手機號碼找到它，並重新取得對 ${ MAIL_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 等的存取權。"
       ],
+      "Private and secure email, no credit card required": [
+        "隱私與安全保護的電子郵件，免信用卡身分驗證"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "重設您的 ${ BRAND_NAME } 帳號密碼"
       ],
       "Sign in to access your ${ appName } account": [
         "登入以存取您的 ${ appName } 帳號"
+      ],
+      "Try ${ planName } for free with this link": [
+        "免費 ${ planName } 滿意體驗連結請點擊這裡"
       ]
     },
     "Monetary unit": {
@@ -5506,6 +5561,11 @@
         "選取理由"
       ]
     },
+    "plan customizer, ips": {
+      "Should you need more than ${ maxIPs } IPs, ": [
+        "您需要多餘 ${ maxIPs } IP, "
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "業務聯繫"
@@ -5659,6 +5719,15 @@
       ]
     },
     "session_recovery:available:info": {
+      " You have ${ timeRemaining.inHours } hours to reset your password.": [
+        " 你有${ timeRemaining.inHours }小時重設密碼。"
+      ],
+      " You have ${ timeRemaining.inMinutes } minutes to reset your password.": [
+        " 你有${ timeRemaining.inMinutes }分鐘重設密碼。"
+      ],
+      " You have ${ timeRemaining.inSeconds } seconds to reset your password.": [
+        " 你有${ timeRemaining.inSeconds }秒重設密碼。"
+      ],
       "${ timeRemaining.inDays } days": [
         "${ timeRemaining.inDays }天"
       ],
@@ -5671,6 +5740,9 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "若您沒有需求重設密碼，請立刻取消需求。"
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "密碼重設需要核准(${ user.Email })。"
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "請前往已登入的裝置（在發起需求的工作階段中）變更您的密碼。"
       ],
@@ -5680,14 +5752,23 @@
       "This permission expires in ${ timeRemaining.inHours } hours": [
         "此權限將在${ timeRemaining.inHours }小時後過期"
       ],
+      "This permission expires soon": [
+        "此權限即將到期"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "現在您可以在${ boldDaysRemaining }內免費變更帳號 ${ boldEmail } 的密碼。"
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "現在您可以變更此帳號 ${ boldEmail } 的密碼。"
       ],
       "You can now reset your password": [
         "您現在可以重設密碼了。"
       ],
       "You can reset your password until ${ boldDate }.": [
         "您可以在 ${ boldDate } 前重設密碼。"
+      ],
+      "You have ${ timeRemaining.inDays } days to reset your password.": [
+        "你有${ timeRemaining.inDays }天重設密碼。"
       ]
     },
     "session_recovery:available:link": {
@@ -6265,9 +6346,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } 已複製到剪貼簿"
-      ],
       "Account deleted. Signing out...": [
         "帳號已刪除。正在登出..."
       ],
