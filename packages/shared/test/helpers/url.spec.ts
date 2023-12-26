@@ -1,5 +1,5 @@
 import { APPS } from '@proton/shared/lib/constants';
-import { mockWindowLocation, resetWindowLocation } from '@proton/shared/test/helpers/url.helper';
+import { getMockedWindowLocation } from '@proton/shared/test/helpers/url.helper';
 
 import {
     formatURLForAjaxRequest,
@@ -31,43 +31,42 @@ describe('getRelativeApiHostname', () => {
 });
 
 describe('getApiSubdomainUrl', () => {
-    afterEach(() => {
-        resetWindowLocation();
-    });
-
     it('should return api subdomain url for localhost', () => {
-        mockWindowLocation({ origin: 'https://localhost', hostname: 'localhost' });
-        expect(getApiSubdomainUrl(path).href).toEqual(`https://localhost/api${path}`);
+        expect(getApiSubdomainUrl(path, 'https://localhost').href).toEqual(`https://localhost/api${path}`);
     });
 
     it('should return api subdomain url for DoH', () => {
-        mockWindowLocation({ origin: 'https://34-234.whatever.compute.amazonaws.com' });
-        expect(getApiSubdomainUrl(path).href).toEqual(`https://34-234.whatever.compute.amazonaws.com/api${path}`);
+        expect(getApiSubdomainUrl(path, 'https://34-234.whatever.compute.amazonaws.com').href).toEqual(
+            `https://34-234.whatever.compute.amazonaws.com/api${path}`
+        );
     });
 
     it('should return api subdomain url for DoH IPv4', () => {
-        mockWindowLocation({ origin: 'https://34.234.12.145' });
-        expect(getApiSubdomainUrl(path).href).toEqual(`https://34.234.12.145/api${path}`);
+        expect(getApiSubdomainUrl(path, 'https://34.234.12.145').href).toEqual(`https://34.234.12.145/api${path}`);
     });
 
     it('should return api subdomain url for DoH IPv4 with port', () => {
-        mockWindowLocation({ origin: 'https://34.234.12.145:65' });
-        expect(getApiSubdomainUrl(path).href).toEqual(`https://34.234.12.145:65/api${path}`);
+        expect(getApiSubdomainUrl(path, 'https://34.234.12.145:65').href).toEqual(
+            `https://34.234.12.145:65/api${path}`
+        );
     });
 
     it('should return api subdomain url for DoH IPv6', () => {
-        mockWindowLocation({ origin: 'https://[2001:db8::8a2e:370:7334]' });
-        expect(getApiSubdomainUrl(path).href).toEqual(`https://[2001:db8::8a2e:370:7334]/api${path}`);
+        expect(getApiSubdomainUrl(path, 'https://[2001:db8::8a2e:370:7334]').href).toEqual(
+            `https://[2001:db8::8a2e:370:7334]/api${path}`
+        );
     });
 
     it('should return api subdomain url for DoH IPv6 with port', () => {
-        mockWindowLocation({ origin: 'https://[2001:db8::8a2e:370:7334]:65' });
-        expect(getApiSubdomainUrl(path).href).toEqual(`https://[2001:db8::8a2e:370:7334]:65/api${path}`);
+        expect(getApiSubdomainUrl(path, 'https://[2001:db8::8a2e:370:7334]:65').href).toEqual(
+            `https://[2001:db8::8a2e:370:7334]:65/api${path}`
+        );
     });
 
     it('should return api subdomain url', () => {
-        mockWindowLocation({ hostname: windowHostname });
-        expect(getApiSubdomainUrl(path).href).toEqual(`https://mail-api.proton.pink${path}`);
+        expect(getApiSubdomainUrl(path, 'https://mail.proton.pink').href).toEqual(
+            `https://mail-api.proton.pink${path}`
+        );
     });
 });
 
@@ -86,20 +85,14 @@ describe('getAppUrlRelativeToOrigin', () => {
 });
 
 describe('getStaticURL', () => {
-    afterEach(() => {
-        resetWindowLocation();
-    });
-
     it('should return the static url for localhost', () => {
-        mockWindowLocation({ hostname: 'localhost' });
-
-        expect(getStaticURL(path)).toEqual(`https://proton.me${path}`);
+        const location = getMockedWindowLocation({ hostname: 'localhost' });
+        expect(getStaticURL(path, location)).toEqual(`https://proton.me${path}`);
     });
 
     it('should return the correct static url', () => {
-        mockWindowLocation({ hostname: windowHostname });
-
-        expect(getStaticURL(path)).toEqual(`https://proton.me${path}`);
+        const location = getMockedWindowLocation({ hostname: windowHostname });
+        expect(getStaticURL(path, location)).toEqual(`https://proton.me${path}`);
     });
 });
 
@@ -133,20 +126,12 @@ describe('formatURLForAjaxRequest', () => {
     const ajaxParam = 'load=ajax';
     const randomParam = '?someParam=param';
 
-    afterEach(() => {
-        resetWindowLocation();
-    });
-
     it('should add the ajax params to the URL when no params', () => {
-        mockWindowLocation({ href: mailUrl });
-
-        expect(formatURLForAjaxRequest().search).toEqual(`?${ajaxParam}`);
+        expect(formatURLForAjaxRequest(mailUrl).search).toEqual(`?${ajaxParam}`);
     });
 
     it('should concatenate the ajax params to the URL when params', () => {
-        mockWindowLocation({ href: `${mailUrl}${randomParam}` });
-
-        expect(formatURLForAjaxRequest().search).toEqual(`${randomParam}&${ajaxParam}`);
+        expect(formatURLForAjaxRequest(`${mailUrl}${randomParam}`).search).toEqual(`${randomParam}&${ajaxParam}`);
     });
 });
 

@@ -1,4 +1,3 @@
-import window from '../window';
 import { createApiError } from './ApiError';
 
 const appendQueryParams = (url: URL, params: { [key: string]: any }) => {
@@ -11,10 +10,10 @@ const appendQueryParams = (url: URL, params: { [key: string]: any }) => {
     });
 };
 
-export const createUrl = (urlString: string, params: { [key: string]: any } = {}) => {
+export const createUrl = (urlString: string, params: { [key: string]: any } = {}, origin?: string) => {
     let url: URL;
-    if (typeof window !== 'undefined') {
-        url = new URL(urlString, window.location.origin);
+    if (origin) {
+        url = new URL(urlString, origin);
     } else {
         url = new URL(urlString);
     }
