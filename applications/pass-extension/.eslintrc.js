@@ -9,6 +9,7 @@ module.exports = {
         'no-console': 'off',
         '@typescript-eslint/consistent-type-imports': 'error',
         curly: ['error', 'multi-line'],
+        '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     },
     ignorePatterns: ['.eslintrc.js'],
 };
