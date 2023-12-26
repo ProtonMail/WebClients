@@ -7,11 +7,11 @@ import { Api as CryptoApi } from '../../lib/worker/api';
 chaiUse(chaiAsPromised);
 
 describe('CryptoProxy helpers', () => {
-    before(() => {
+    beforeAll(() => {
         CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
     });
 
-    after(() => {
+    afterAll(() => {
         void CryptoProxy.releaseEndpoint();
     });
 

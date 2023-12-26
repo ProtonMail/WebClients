@@ -16,7 +16,7 @@ chaiUse(chaiAsPromised);
 const runTests = (v6Canary: boolean) =>
     describe(`OpenPGP.js ${v6Canary ? 'v6 (canary)' : 'v5'}`, () => {
         const poolSize = 2;
-        before(async () => {
+        beforeAll(async () => {
             await CryptoWorkerPool.init({ poolSize, openpgpConfigOptions: { v6Canary } });
         });
 
@@ -24,7 +24,7 @@ const runTests = (v6Canary: boolean) =>
             await CryptoWorkerPool.clearKeyStore();
         });
 
-        after(async () => {
+        afterAll(async () => {
             await CryptoWorkerPool.destroy();
         });
 

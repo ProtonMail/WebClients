@@ -1,9 +1,6 @@
 module.exports = {
     extends: ['@proton/eslint-config-proton'],
     parser: '@typescript-eslint/parser',
-    env: {
-        mocha: true,
-    },
     plugins: ['chai-friendly', 'jasmine'],
     parserOptions: {
         tsconfigRootDir: __dirname,
