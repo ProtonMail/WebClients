@@ -102,7 +102,7 @@ export const createAutofillService = () => {
 
             void sendMessage(
                 contentScriptMessage({
-                    type: WorkerMessageType.STORE_ACTION,
+                    type: WorkerMessageType.STORE_DISPATCH,
                     payload: {
                         action: passwordSave({
                             id: uniqueId(),
