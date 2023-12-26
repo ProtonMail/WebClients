@@ -9,7 +9,7 @@ const ReferralFeaturesList = () => {
     return (
         <StripedList>
             <StripedItem left={<Icon className="color-success" name="storage" size={20} />}>
-                {c('Info').t`${storageSize} storage`}
+                {c('bf2023: Deal details').t`${storageSize} storage`}
                 <Info
                     className="ml-2"
                     title={c('Info')

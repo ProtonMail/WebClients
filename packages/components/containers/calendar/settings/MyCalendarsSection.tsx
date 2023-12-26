@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike, Card, Href } from '@proton/atoms';
 import { SettingsParagraph } from '@proton/components/containers';
+import { getNextDefaultCalendar } from '@proton/components/containers/calendar/settings/defaultCalendar';
 import { removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
@@ -105,17 +106,10 @@ const MyCalendarsSection = ({
             : undefined;
 
         await new Promise<void>((resolve, reject) => {
-            const calendarName = firstRemainingCalendar ? (
-                <span key="bold-calendar-name" className="text-bold text-break">
-                    {firstRemainingCalendar.Name}
-                </span>
-            ) : (
-                ''
-            );
             const defaultCalendarWarning =
-                isDeleteDefaultCalendar && firstRemainingCalendar ? (
-                    <div className="mb-4">{c('Info').jt`${calendarName} will be set as default calendar.`}</div>
-                ) : null;
+                isDeleteDefaultCalendar && firstRemainingCalendar
+                    ? getNextDefaultCalendar(firstRemainingCalendar)
+                    : null;
 
             updateModal('deleteCalendarModal', {
                 isOpen: true,
