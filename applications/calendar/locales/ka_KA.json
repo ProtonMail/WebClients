@@ -261,6 +261,9 @@
       "Get verification code": [
         "შემოწმების კოდის მიღება"
       ],
+      "Give feedback": [
+        "უკუკავშირი"
+      ],
       "Go to label": [
         "ჭდეზე გადასვლა"
       ],
@@ -863,6 +866,11 @@
       ],
       "Store up to 200 versions of each file for up to 10 years.": [
         "დაიმახსოვრეთ თითოეული ფაილის 200 ვერსიამდე, 10 წლამდე ვადით."
+      ]
+    },
+    "Browser": {
+      "${ MAIL_APP_NAME } Desktop application": [
+        "${ MAIL_APP_NAME }-ის კომპიუტერის აპლიკაცია"
       ]
     },
     "Bug category": {
@@ -2339,7 +2347,27 @@
         "მოვლენის განახლება ${ formattedStart }-დან"
       ]
     },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 ტბ"
+      ],
+      "6 users": [
+        "6 მომხმარებელი"
+      ],
+      "Early access to new apps and features": [
+        "ადრეული წვდომა ახალ აპებთან და ფუნქციებთან"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "ადრეული წვდომა ${ MAIL_APP_NAME }-ის კომპიუტერის აპზე"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "${ MAIL_SHORT_APP_NAME }-ის და ${ CALENDAR_APP_NAME }-ის ფასიანი ფუნქციები"
+      ]
+    },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } თქვენს გარე ანგარიშს ვერ დაუკავშირდა"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. ასევე შეგიძლიათ, შეამოწმოთ ჩვენი ${ statusPageLink }"
       ],
@@ -2686,6 +2714,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "სცადეთ გამოიყენოთ, მხოლოდ, ანბანის სიმბოლოები, ციფრები და _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "მოულოდნელი შეცდომა. კონტაქტები ვერ შემოვიტანე"
       ],
       "Unknown error": [
         "უცნობი შეცდომა"
@@ -5737,6 +5768,9 @@
         "${ timeRemaining.inHours } საათი",
         "${ timeRemaining.inHours } საათი"
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "პაროლის ჩამოყრის მოთხოვნა დადასტურებულია (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "პაროლის შესაცვლელად გადადით მოწყობილობაზე (სესიაში, საიდანაც მოთხოვნა გამოიგაზვნა), რომელზეც შესული ბრძანდებით."
       ],
@@ -5748,8 +5782,14 @@
         "ამ წვდომის ვადა ${ timeRemaining.inHours } საათში იწურება",
         "ამ წვდომის ვადა ${ timeRemaining.inHours } საათში იწურება"
       ],
+      "This permission expires soon": [
+        "ამ წვდომის ვადა მალე იწურება"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "ახლა შეგიძლიათ შეცვალოთ პაროლი ანგარიშისთვის ${ boldEmail }, თავისუფლად, შუალედში \"${ boldDaysRemaining }\"."
+      ],
+      "You can now change your password for the account ${ boldEmail }.": [
+        "ახლა შეგიძლიათ შეცვალოთ პაროლი ანგარიშისთვის ${ boldEmail }."
       ]
     },
     "session_recovery:available:link": {
