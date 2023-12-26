@@ -216,9 +216,6 @@
       "Continue with this password": [
         "使用此密码继续"
       ],
-      "Copy": [
-        "复制"
-      ],
       "Copy address": [
         "复制地址"
       ],
@@ -329,9 +326,6 @@
       ],
       "Download": [
         "下载"
-      ],
-      "Download all configurations": [
-        "下载所有配置"
       ],
       "Download CSV sample": [
         "下载 csv 样例"
@@ -5360,9 +5354,6 @@
       "Are you sure you want to delete this filter?": [
         "确定要删除此规则吗？"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "确定要删除此文件夹吗？所有子文件夹也将被删除。"
-      ],
       "Are you sure you want to delete this label?": [
         "确定要删除此标签吗？"
       ],
@@ -5632,12 +5623,6 @@
       ],
       "Emailing preference saved": [
         "邮件首选项已更新"
-      ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "放在此文件夹中的邮件不会被删除，且仍可在 \"所有邮件\" 文件夹中找到。"
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "带有此标签的邮件不会被删除，且仍可在相应文件夹中找到。"
       ],
       "Enable this address to join this calendar": [
         "启用此地址以加入日历"
@@ -6131,9 +6116,6 @@
       "Phone number": [
         "电话号码"
       ],
-      "Plan upgrade required": [
-        "需升级账户"
-      ],
       "Please add email addresses for the users on rows": [
         "请按行添加用户电子邮件地址"
       ],
@@ -6166,9 +6148,6 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "请注意，如果删除这个域名，且其下所有地址都将被停用。"
-      ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "请注意，如果删除此筛选规则，我们将不再自动执行其指定的操作。"
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "请注意，点击确认按钮后，您的账户余额将剩余 ${ creditsRemaining }。"
@@ -8954,26 +8933,6 @@
         "VPN 速度一般"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "浏览所有 ${ BRAND_NAME } 账户等级"
-      ],
-      "From ${ price }": [
-        "低至 ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "继续使用 ${ currentPlanName } 账户"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "前去结算"
@@ -9013,6 +8972,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "开通 ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "浏览所有 ${ BRAND_NAME } 账户等级"
+      ],
+      "From ${ price }": [
+        "低至 ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "继续使用 ${ currentPlanName } 账户"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
       ]
     },
     "new_plans: feature": {
@@ -11189,9 +11168,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } 已复制到剪贴板"
-      ],
       "Account deleted. Signing out...": [
         "账户已删除。登出中..."
       ],
@@ -11869,15 +11845,6 @@
       ],
       "Delete ${ email }": [
         "删除 ${ email }"
-      ],
-      "Delete ${ filterName }": [
-        "删除 ${ filterName }"
-      ],
-      "Delete ${ label.Name } folder": [
-        "删除 ${ label.Name } 文件夹"
-      ],
-      "Delete ${ label.Name } label": [
-        "删除 ${ label.Name } 标签"
       ],
       "Delete ${ tokenNameToRemove }?": [
         "删除 ${ tokenNameToRemove }？"

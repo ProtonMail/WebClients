@@ -239,9 +239,6 @@
       "Continue with this password": [
         "Continuar com esta palavra-passe"
       ],
-      "Copy": [
-        "Copiar"
-      ],
       "Copy address": [
         "Copiar endereço"
       ],
@@ -364,9 +361,6 @@
       ],
       "Download": [
         "Transferir"
-      ],
-      "Download all configurations": [
-        "Transferir todas as definições"
       ],
       "Download CSV sample": [
         "Transferir a amostra CSV"
@@ -5883,9 +5877,6 @@
       "Are you sure you want to delete this filter?": [
         "Tem a certeza de que deseja eliminar este filtro?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Tem a certeza de que quer eliminar esta pasta? Todas as subpastas serão também apagadas."
-      ],
       "Are you sure you want to delete this label?": [
         "Tem a certeza de que deseja eliminar esta etiqueta?"
       ],
@@ -6171,12 +6162,6 @@
       ],
       "Emailing preference saved": [
         "Preferências de e-mail guardadas"
-      ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Mensagens armazenadas nesta pasta não serão eliminadas e continuam na pasta Todo o correio."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Mensagens com esta etiqueta não serão eliminadas e continuam na sua pasta respectiva."
       ],
       "Enable this address to join this calendar": [
         "Ative este endereço para aderir a este calendário"
@@ -6709,9 +6694,6 @@
       "Phone number": [
         "Número de telefone"
       ],
-      "Plan upgrade required": [
-        "Actualização do plano obrigatória"
-      ],
       "Please add a password for the user on row": [
         "Adicione uma palavra-passe para este utilizador na linha.",
         "Adicione uma palavra-passe para estes utilizadores na linha."
@@ -6746,9 +6728,6 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Note que se eliminar este domínio. Todos os endereços a ele associados serão desativados."
-      ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Note que se eliminar este filtro, deixaremos de processar todas as ações automáticas que ele provoca."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Note que ao clicar em Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
@@ -9701,26 +9680,6 @@
         "Velocidade VPN média"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Descubra todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Manter a minha conta ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Prosseguir para a revisão"
@@ -9760,6 +9719,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Atualizar para ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Descubra todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Manter a minha conta ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
       ]
     },
     "new_plans: feature": {
@@ -12362,9 +12341,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } foi copiado para a área de transferência."
-      ],
       "Account deleted. Signing out...": [
         "Conta eliminada. A terminar sessão..."
       ],
@@ -13074,15 +13050,6 @@
       ],
       "Delete ${ email }": [
         "Eliminar ${ email }"
-      ],
-      "Delete ${ filterName }": [
-        "Eliminar ${ filterName }"
-      ],
-      "Delete ${ label.Name } folder": [
-        "Eliminar a pasta ${ label.Name }"
-      ],
-      "Delete ${ label.Name } label": [
-        "Eliminar a etiqueta ${ label.Name }"
       ],
       "Delete ${ tokenNameToRemove }?": [
         "Eliminar ${ tokenNameToRemove }?"

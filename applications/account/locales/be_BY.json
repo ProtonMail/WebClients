@@ -239,9 +239,6 @@
       "Continue with this password": [
         "Працягнуць з гэтым паролем"
       ],
-      "Copy": [
-        "Капіяваць"
-      ],
       "Copy address": [
         "Капіяваць адрас"
       ],
@@ -364,9 +361,6 @@
       ],
       "Download": [
         "Спампаваць"
-      ],
-      "Download all configurations": [
-        "Спампаваць усе канфігурацыі"
       ],
       "Download CSV sample": [
         "Спампаваць узор CSV"
@@ -1006,6 +1000,9 @@
       ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Палепшыце, каб уключыць ${ PROTON_SENTINEL_NAME }"
+      ],
+      "Upgrade to Visionary": [
+        "Палепшыць да Visionary"
       ],
       "Upgrade your plan": [
         "Палепшыце свой тарыфны план"
@@ -3164,6 +3161,17 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "Мы выявілі наступныя палі ў файле CSV, які вы запампавалі. Адзначце тыя, якія вы хочаце імпартаваць."
+      ]
+    },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Доступ да настольнай праграмы абмежаваны"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Бэта-версія настольнай праграмы ${ MAIL_APP_NAME } у цяперашні момант абмежавана падпісчыкамі з тарыфным планам ${ BRAND_NAME } Visionary. Яна стане даступна ўсім карыстальнікам у пачатку 2024 года."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Палепшыце сёння або праверце даступнасць на пачатку 2024 года."
       ]
     },
     "Disable account": {
@@ -6217,6 +6225,9 @@
       "Any ${ twoFa } method on your account will be disabled.": [
         "Любы метад ${ twoFa } на вашым уліковым запісе будзе адключаны."
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Любыя падпапкі будуць выдалены таксама. Аднак лісты, якія захаваны ў папцы ${ nameDeleted } не будуць выдалены і іх можна будзе знайсці ў папцы \"Уся пошта\"."
+      ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Любы чалавек з гэтай спасылкай зможа ўбачыць падрабязнасці падзеі ў гэтым календары, напрыклад, назву, размяшчэнне або ўдзельнікаў."
       ],
@@ -6247,8 +6258,8 @@
       "Are you sure you want to delete this filter?": [
         "Вы сапраўды хочаце выдаліць гэты фільтр?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Вы сапраўды хочаце выдаліць гэту папку? Усе падпапкі будуць выдалены таксама."
+      "Are you sure you want to delete this folder?": [
+        "Вы ўпэўнены, што хочаце выдаліць гэту папку?"
       ],
       "Are you sure you want to delete this label?": [
         "Вы сапраўды хочаце выдаліць гэту метку?"
@@ -6544,11 +6555,8 @@
       "Emailing preference saved": [
         "Параметры адпраўкі пошты захаваны"
       ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Лісты, якія захоўваюцца ў гэтай папцы не будуць выдалены і як раней іх можна будзе знайсці ў папцы Уся пошта."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Лісты, якія пазначаны гэтай меткай, не будуць выдалены і іх можна будзе знайсці ў адпаведнай папцы."
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Лісты, якія пазначаны гэтай меткай ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў адпаведнай папцы."
       ],
       "Enable this address to join this calendar": [
         "Уключыце гэты адрас, каб далучыцца да гэтага календара"
@@ -7090,9 +7098,6 @@
       "Phone number": [
         "Нумар тэлефона"
       ],
-      "Plan upgrade required": [
-        "Патрабуецца паляпшэнне тарыфнага плана"
-      ],
       "Please add a password for the user on row": [
         "Дадайце пароль для карыстальніка ў радок",
         "Дадайце паролі для карыстальнікаў у радкі",
@@ -7132,8 +7137,8 @@
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Звярніце ўвагу, што калі вы выдаліце ​​гэты дамен, то ўсе адрасы звязаныя з ім будуць адключаны."
       ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Звярніце ўвагу, што калі вы выдаліце ​​гэты фільтр, то мы больш не будзем апрацоўваць усе аўтаматычныя дзеянні, якія ён запускае."
+      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Звярніце ўвагу, што калі вы выдаліце ​​фільтр ${ nameDeleted }, то мы больш не будзем апрацоўваць усе аўтаматычныя дзеянні, якія ён запускае."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Звярніце ўвагу, што пасля націску на кнопку \"Пацвердзіць\" у вашым уліковым запісе застанецца наступная колькасць крэдытаў: ${ creditsRemaining }."
@@ -10176,26 +10181,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Пакінуць мой уліковы запіс ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Працягнуць агляд"
@@ -10235,6 +10220,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Палепшыць да ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Пакінуць мой уліковы запіс ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
       ]
     },
     "new_plans: feature": {
@@ -11567,7 +11572,7 @@
         "стварыць новы ўліковы запіс"
       ],
       "Create another account instead": [
-        "Стварыце іншы ўліковы запіс"
+        "Стварыць іншы ўліковы запіс"
       ],
       "Download again ${ size }": [
         "Спампаваць яшчэ раз ${ size }"
@@ -11582,10 +11587,10 @@
         "Або ${ createANewAccount }"
       ],
       "Start using ${ appName }": [
-        "Пачніце выкарыстоўваць ${ appName }"
+        "Пачаць выкарыстоўваць ${ appName }"
       ],
       "Start using ${ appName } now": [
-        "Пачніце выкарыстоўваць ${ appName } ужо цяпер"
+        "Пачаць выкарыстоўваць ${ appName } ужо цяпер"
       ],
       "Upgrade": [
         "Палепшыць"
@@ -13120,9 +13125,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } скапіяваны ў буфер абмену"
-      ],
       "Account deleted. Signing out...": [
         "Уліковы запіс выдалены. Адбываецца выхад..."
       ],
@@ -13858,15 +13860,6 @@
       "Delete ${ email }": [
         "Выдаліць ${ email }"
       ],
-      "Delete ${ filterName }": [
-        "Выдаліць ${ filterName }"
-      ],
-      "Delete ${ label.Name } folder": [
-        "Выдаліць папку ${ label.Name }"
-      ],
-      "Delete ${ label.Name } label": [
-        "Выдаліць метку ${ label.Name }"
-      ],
       "Delete ${ tokenNameToRemove }?": [
         "Выдаліць ${ tokenNameToRemove }?"
       ],
@@ -13876,8 +13869,17 @@
       "Delete calendar": [
         "Выдаліць каляндар"
       ],
+      "Delete filter?": [
+        "Выдаліць фільтр?"
+      ],
+      "Delete folder?": [
+        "Выдаліць папку?"
+      ],
       "Delete key permanently?": [
         "Выдаліць ключ незваротна?"
+      ],
+      "Delete label?": [
+        "Выдаліць метку?"
       ],
       "Delete logs": [
         "Выдаліць журналы"
