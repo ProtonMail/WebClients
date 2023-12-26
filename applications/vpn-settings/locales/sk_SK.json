@@ -95,9 +95,6 @@
       "Continue with this password": [
         "Pokračovať s týmto heslom"
       ],
-      "Copy": [
-        "Kopírovať"
-      ],
       "Copy address": [
         "Kopírovať adresu"
       ],
@@ -163,9 +160,6 @@
       ],
       "Download": [
         "Stiahnuť"
-      ],
-      "Download all configurations": [
-        "Stiahnuť celú konfiguráciu"
       ],
       "Download our CSV template": [
         "Stiahnuť šablónu CSV"
@@ -496,6 +490,9 @@
       ],
       "Upgrade to Business": [
         "Aktualizovať na Biznis predplatné"
+      ],
+      "Upgrade to Visionary": [
+        "Aktualizovať na predplatné Visionary"
       ],
       "Upgrade your plan": [
         "Inovujte svoj plán"
@@ -1874,6 +1871,14 @@
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Oddeľte rôzne aspekty svojho života pomocou viacerých emailových adries a odomknite viac prémiových funkcií, ak sa rozhodnete pre upgrade."
+      ]
+    },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Prístup k desktopovej aplikácii je obmedzený"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Beta verzia aplikácie ${ MAIL_APP_NAME } pre desktopy je v súčasnosti obmedzená pre predplatiteľov ${ BRAND_NAME } Visionary. Všetkým používateľom bude k dispozícii začiatkom roka 2024."
       ]
     },
     "Downgrade account reason": {
@@ -3398,9 +3403,6 @@
       "per month, billed every 24 months": [
         "mesačne, účtované každých 24 mesiacov"
       ],
-      "Plan upgrade required": [
-        "Je vyžadované predplatné"
-      ],
       "Please add a password for the user on row": [
         "Pridajte heslo pre používateľa na riadku",
         "Pridajte heslá pre používateľov na riadkoch",
@@ -4747,11 +4749,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Zabudli ste používateľské meno vášho ${ BRAND_NAME } účtu? Nájdite ho pomocou obnovovacieho emailu alebo telefónneho čísla a získajte opätovný prístup k ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ďalším."
       ],
+      "Private and secure email, no credit card required": [
+        "Súkromný a zabezpečený email, bez potreby platobnej karty"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Resetujte heslo k vášmu účtu ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Prihláste sa pre prístup k vášmu účtu ${ appName }"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Vyskúšajte ${ planName } zdarma s týmto odkazom"
       ]
     },
     "Monetary unit": {
@@ -6786,9 +6794,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } bol skopírovaný do schránky"
-      ],
       "Account deleted. Signing out...": [
         "Účet vymazaný. Odhlasovanie..."
       ],

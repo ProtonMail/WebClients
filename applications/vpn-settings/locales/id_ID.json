@@ -95,9 +95,6 @@
       "Continue with this password": [
         "Lanjutkan dengan kata sandi ini"
       ],
-      "Copy": [
-        "Salin"
-      ],
       "Copy address": [
         "Salin alamat"
       ],
@@ -163,9 +160,6 @@
       ],
       "Download": [
         "Unduh"
-      ],
-      "Download all configurations": [
-        "Unduh seluruh konfigurasi"
       ],
       "Download our CSV template": [
         "Unduh template CSV kami"
@@ -497,6 +491,9 @@
       "Upgrade to Business": [
         "Tingkatkan ke Business"
       ],
+      "Upgrade to Visionary": [
+        "Tingkatkan ke Visionary"
+      ],
       "Upgrade your plan": [
         "Tingkatkan paket Anda"
       ],
@@ -796,6 +793,9 @@
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Lewati pemblokiran dan penyensoran internet lokal dengan jaringan server global kami."
+      ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Meliputi dukungan untuk ${ domains } domain email khusus, ${ addresses } alamat email, alias hide-my-email tanpa batasan jumlah, fitur berbagi kalender, dan masih banyak lagi."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Termasuk dukungan untuk 1 domain surel kustom, 10 alamat surel, 10 alias hide-my-email, pembagian kalender, dan lainnya."
@@ -1849,6 +1849,14 @@
         "Pisahkan berbagai aspek kehidupan Anda dengan alamat surelnya masing-masing dan dapatkan lebih banyak fitur premium pada saat Anda meningkatkan akun."
       ]
     },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Akses ke aplikasi desktop tengah dibatasi"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Versi beta aplikasi desktop ${ MAIL_APP_NAME } saat ini hanya terbatas bagi para pelanggan ${ BRAND_NAME } Visionary. Versi aplikasi ini akan tersedia bagi seluruh pengguna pada awal 2024."
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Terdapat bug-bug yang mengganggu saya"
@@ -1888,6 +1896,33 @@
     "Enabled 2FA": {
       "2FA": [
         "2FA"
+      ]
+    },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Berbagai fitur ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, dan ${ PASS_SHORT_APP_NAME } berbayar"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Meliputi riwayat versi pada ${ DRIVE_SHORT_APP_NAME }, akses ke ratusan server ${ VPN_SHORT_APP_NAME } berkecepatan tinggi, fitur untuk saling berbagi pada ${ PASS_SHORT_APP_NAME }, dan masih banyak lagi."
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 pengguna"
+      ],
+      "Early access to new apps and features": [
+        "Akses dini ke berbagai aplikasi dan fitur baru"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Akses dini ke aplikasi desktop ${ MAIL_APP_NAME }"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Berbagai fitur ${ MAIL_SHORT_APP_NAME } dan ${ CALENDAR_APP_NAME } berbayar"
       ]
     },
     "Error": {
@@ -3275,9 +3310,6 @@
       "per month, billed every 24 months": [
         "per bulan, ditagihkan setiap 24 bulan"
       ],
-      "Plan upgrade required": [
-        "Diperlukan peningkatan paket"
-      ],
       "Please add email addresses for the users on rows": [
         "Silakan tambahkan alamat surel pengguna pada baris berikut"
       ],
@@ -4576,11 +4608,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Lupakan nama pengguna Akun ${ BRAND_NAME } Anda? Temukan nama pengguna Anda dengan menggunakan surel atau nomor telepon pemulihan Anda untuk kembali mengakses ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, dan masih banyak lagi."
       ],
+      "Private and secure email, no credit card required": [
+        "Surel pribadi dan aman, tanpa kartu kredit"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Atur ulang kata sandi Akun ${ BRAND_NAME } Anda?"
       ],
       "Sign in to access your ${ appName } account": [
         "Masuk untuk mengakses akun ${ appName } Anda"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Coba ${ planName } secara cuma-cuma melalui tautan ini"
       ]
     },
     "Monetary unit": {
@@ -6432,9 +6470,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } disalin ke papan klip Anda"
-      ],
       "Account deleted. Signing out...": [
         "Akun dihapus. Mengeluarkan Anda dari akun..."
       ],

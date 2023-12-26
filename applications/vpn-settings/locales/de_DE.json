@@ -95,9 +95,6 @@
       "Continue with this password": [
         "Mit diesem Passwort fortfahren"
       ],
-      "Copy": [
-        "Kopieren"
-      ],
       "Copy address": [
         "E-Mail-Adresse kopieren"
       ],
@@ -163,9 +160,6 @@
       ],
       "Download": [
         "Herunterladen"
-      ],
-      "Download all configurations": [
-        "Alle Konfigurationen herunterladen"
       ],
       "Download our CSV template": [
         "Lade unsere CSV-Vorlage herunter"
@@ -1897,6 +1891,11 @@
         "2FA"
       ]
     },
+    "eoy2023: Deal details": {
+      "Early access to new apps and features": [
+        "Früher Zugang zu neuen Anwendungen und Funktionen"
+      ]
+    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kannst auch auf unserer ${ statusPageLink } nachsehen."
@@ -3304,9 +3303,6 @@
       "per month, billed every 24 months": [
         "pro Monat, Abrechnung alle 24 Monate"
       ],
-      "Plan upgrade required": [
-        "Umstieg auf ein anderes Abo erforderlich"
-      ],
       "Please add a password for the user on row": [
         "Bitte füge ein Passwort für den Benutzer in der folgenden Zeile hinzu:",
         "Bitte füge Passwörter für die Benutzer in den folgenden Zeilen hinzu:"
@@ -4620,11 +4616,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Du hast deinen ${ BRAND_NAME }-Benutzernamen vergessen? Finde ihn mit deiner Wiederherstellungs-E-Mail oder -Telefonnummer und erhalte wieder Zugang zu ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } und mehr."
       ],
+      "Private and secure email, no credit card required": [
+        "Private und sichere E-Mails, keine Kreditkarte erforderlich"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "${ BRAND_NAME }-Kontopasswort zurücksetzen"
       ],
       "Sign in to access your ${ appName } account": [
         "Melde dich an, um auf dein ${ appName }-Konto zuzugreifen."
+      ],
+      "Try ${ planName } for free with this link": [
+        "Probiere ${ planName } über diesen Link kostenlos aus"
       ]
     },
     "Monetary unit": {
@@ -6537,9 +6539,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } in die Zwischenablage kopiert"
-      ],
       "Account deleted. Signing out...": [
         "Konto gelöscht. Abmeldung wird ausgeführt..."
       ],

@@ -95,9 +95,6 @@
       "Continue with this password": [
         "Continuar con esta contraseña"
       ],
-      "Copy": [
-        "Copiar"
-      ],
       "Copy address": [
         "Copiar dirección"
       ],
@@ -163,9 +160,6 @@
       ],
       "Download": [
         "Descargar"
-      ],
-      "Download all configurations": [
-        "Descargar toda la configuración"
       ],
       "Download our CSV template": [
         "Descargar nuestra plantilla CSV"
@@ -496,6 +490,9 @@
       ],
       "Upgrade to Business": [
         "Mejorar a Business"
+      ],
+      "Upgrade to Visionary": [
+        "Mejorar a Visionary"
       ],
       "Upgrade your plan": [
         "Mejora tu plan"
@@ -1858,6 +1855,17 @@
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separa diferentes aspectos de tu vida con múltiples direcciones de correo y desbloquea funciones premium al actualizar tu plan."
+      ]
+    },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "El acceso a la aplicación de escritorio está limitado."
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "La versión beta de la aplicación de escritorio de ${ MAIL_APP_NAME } por ahora está limitada a suscriptores de ${ BRAND_NAME } Visionary. Estará disponible a todos los usuarios en 2024."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Mejora ahora o comprueba de nuevo a inicios de 2024 para su acceso."
       ]
     },
     "Downgrade account reason": {
@@ -3338,9 +3346,6 @@
       "per month, billed every 24 months": [
         "al mes, facturado cada 24 meses"
       ],
-      "Plan upgrade required": [
-        "Necesitas pasar a un plan superior."
-      ],
       "Please add a password for the user on row": [
         "Añade una contraseña para el usuario en fila.",
         "Añade contraseñas para los usuarios en filas."
@@ -4657,11 +4662,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "¿Has olvidado tu nombre de usuario de ${ BRAND_NAME }? Encuéntralo con tu correo de recuperación o número de teléfono y retoma el acceso a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y más."
       ],
+      "Private and secure email, no credit card required": [
+        "Correo seguro y privado, sin tarjeta de crédito"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Restablece la contraseña de tu cuenta de ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Inicia sesión para acceder a tu cuenta de ${ appName }"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Prueba ${ planName } gratis con este enlace"
       ]
     },
     "Monetary unit": {
@@ -6574,9 +6585,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } copiado al portapapeles"
-      ],
       "Account deleted. Signing out...": [
         "Cuenta eliminada. Cerrando sesión..."
       ],

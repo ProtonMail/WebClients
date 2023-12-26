@@ -95,9 +95,6 @@
       "Continue with this password": [
         "Працягнуць з гэтым паролем"
       ],
-      "Copy": [
-        "Капіяваць"
-      ],
       "Copy address": [
         "Капіяваць адрас"
       ],
@@ -163,9 +160,6 @@
       ],
       "Download": [
         "Спампаваць"
-      ],
-      "Download all configurations": [
-        "Спампаваць усе канфігурацыі"
       ],
       "Download our CSV template": [
         "Спампаваць наш шаблон CSV"
@@ -496,6 +490,9 @@
       ],
       "Upgrade to Business": [
         "Палепшыць да Business"
+      ],
+      "Upgrade to Visionary": [
+        "Палепшыць да Visionary"
       ],
       "Upgrade your plan": [
         "Палепшыце свой тарыфны план"
@@ -1874,6 +1871,17 @@
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Размяжуйце асобныя аспекты свайго жыцця з дапамогай некалькіх адрасоў электроннай пошты і разблакіруйце больш прэміяльных функцый пасля паляпшэння."
+      ]
+    },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Доступ да настольнай праграмы абмежаваны"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Бэта-версія настольнай праграмы ${ MAIL_APP_NAME } у цяперашні момант абмежавана падпісчыкамі з тарыфным планам ${ BRAND_NAME } Visionary. Яна стане даступна ўсім карыстальнікам у пачатку 2024 года."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Палепшыце сёння або праверце даступнасць на пачатку 2024 года."
       ]
     },
     "Downgrade account reason": {
@@ -3398,9 +3406,6 @@
       "per month, billed every 24 months": [
         "ў месяц (кожныя 24 месяцы)"
       ],
-      "Plan upgrade required": [
-        "Патрабуецца паляпшэнне тарыфнага плана"
-      ],
       "Please add a password for the user on row": [
         "Дадайце пароль для карыстальніка ў радок",
         "Дадайце паролі для карыстальнікаў у радкі",
@@ -4747,11 +4752,17 @@
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Забылі сваё імя карыстальніка ўліковага запісу ${ BRAND_NAME }? Знайдзіце яго выкарыстоўваючы пошту або нумар тэлефона і аднавіце доступ да вашых сэрвісаў ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і іншых."
       ],
+      "Private and secure email, no credit card required": [
+        "Прыватная і бяспечная электронная пошта, якая не патрабуе крэдытную картку"
+      ],
       "Reset your ${ BRAND_NAME } Account password": [
         "Скінуць пароль свайго ўліковага запісу ${ BRAND_NAME }"
       ],
       "Sign in to access your ${ appName } account": [
         "Увайсці, каб атрымаць доступ да свайго ўліковага запісу ${ appName }"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Паспрабуйце тарыфны план ${ planName } бясплатна па гэтай спасылцы"
       ]
     },
     "Monetary unit": {
@@ -5757,7 +5768,7 @@
         "Пакінуць гэты тарыфны план"
       ],
       "Start using ${ appName }": [
-        "Пачніце выкарыстоўваць ${ appName }"
+        "Пачаць выкарыстоўваць ${ appName }"
       ],
       "Upgrade my plan": [
         "Палепшыць мой тарыфны план"
@@ -6786,9 +6797,6 @@
       ]
     },
     "Success": {
-      "${ server.Domain } copied to your clipboard": [
-        "${ server.Domain } скапіяваны ў буфер абмену"
-      ],
       "Account deleted. Signing out...": [
         "Уліковы запіс выдалены. Адбываецца выхад..."
       ],
