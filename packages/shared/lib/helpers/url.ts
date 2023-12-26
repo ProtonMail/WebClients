@@ -207,8 +207,8 @@ const doesHostnameLookLikeIP = (hostname: string) => {
     return /\d$/.test(hostname) || hostname.includes(':');
 };
 
-export const getApiSubdomainUrl = (pathname: string) => {
-    const url = new URL('', window.location.origin);
+export const getApiSubdomainUrl = (pathname: string, origin: string) => {
+    const url = new URL('', origin);
 
     const usePathPrefix =
         url.hostname === 'localhost' || getIsDohDomain(url.origin) || doesHostnameLookLikeIP(url.hostname);
@@ -243,17 +243,17 @@ export const getAppUrlRelativeToOrigin = (origin: string, appName: APP_NAMES) =>
 };
 
 let cache = '';
-export const getStaticURL = (path: string) => {
+export const getStaticURL = (path: string, location = window.location) => {
     if (
-        window.location.hostname === 'localhost' ||
-        getIsDohDomain(window.location.origin) ||
-        EXTENSION_PROTOCOLS.includes(window.location.protocol)
+        location.hostname === 'localhost' ||
+        getIsDohDomain(location.origin) ||
+        EXTENSION_PROTOCOLS.includes(location.protocol)
     ) {
         return `https://proton.me${path}`;
     }
 
     // We create a relative URL to support the TOR domain
-    cache = cache || getSecondLevelDomain(window.location.hostname);
+    cache = cache || getSecondLevelDomain(location.hostname);
     // The VPN domain has a different static site and the proton.me urls are not supported there
     const hostname = cache === 'protonvpn.com' || cache === 'protonmail.com' ? 'proton.me' : cache;
     return `https://${hostname}${path}`;
@@ -363,8 +363,8 @@ export const isAppFromURL = (url: string | undefined, app: APP_NAMES) => {
     return false;
 };
 
-export const formatURLForAjaxRequest = () => {
-    const url = new URL(window.location.href);
+export const formatURLForAjaxRequest = (href: string) => {
+    const url = new URL(href);
     if (url.search.includes('?')) {
         url.search = `${url.search}&load=ajax`;
     } else {
