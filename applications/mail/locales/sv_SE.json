@@ -2145,6 +2145,11 @@
         "URL"
       ]
     },
+    "Contact image": {
+      "Contact image": [
+        "Kontaktbild"
+      ]
+    },
     "Contact type label": {
       "Fax": [
         "Fax"
@@ -3252,6 +3257,11 @@
         "Betalda funktioner för ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } och ${ PASS_SHORT_APP_NAME }"
       ]
     },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Inkluderar versionshistorik i ${ DRIVE_SHORT_APP_NAME }, åtkomst till tusentals höghastighetsservrar för ${ VPN_SHORT_APP_NAME }, delning i ${ PASS_SHORT_APP_NAME } och mer."
+      ]
+    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
@@ -3261,6 +3271,9 @@
       ],
       "Early access to new apps and features": [
         "Förhandstillgång till nya appar och funktioner"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Förhandstillgång till webbappen ${ MAIL_APP_NAME }"
       ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Betalda funktioner för ${ MAIL_SHORT_APP_NAME } och ${ CALENDAR_APP_NAME }"
@@ -5046,14 +5059,17 @@
       "and": [
         "och"
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Eventuella undermappar kommer också att raderas. E-post som finns i mappen ${ nameDeleted } kommer inte att raderas, de finns i mappen All e-post."
+      ],
       "Are you sure you want to delete all messages in this folder?": [
         "Är du säker på att du vill ta bort alla meddelanden i denna mapp?"
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Är du säker på att du vill ta bort alla meddelanden med denna etikett?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Är du säker på att du vill ta bort denna mapp? Alla undermappar kommer också att tas bort."
+      "Are you sure you want to delete this folder?": [
+        "Är du säker på att du vill ta bort denna mapp?"
       ],
       "Are you sure you want to delete this label?": [
         "Är du säker på att du vill ta bort denna etikett?"
@@ -5270,11 +5286,8 @@
       "Emails are automatically signed": [
         "E-post signeras automatiskt"
       ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "E-postmeddelanden som lagras i denna mapp kommer inte att tas bort och kan fortfarande hittas i mappen All e-post."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "E-post märkta med denna etikett kommer inte att tas bort och kan fortfarande hittas i respektive mapp."
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "E-post märkta med denna ${ nameDeleted }-etikett kommer inte att tas bort och kan fortfarande hittas i respektive mapp."
       ],
       "embedded image": [
         "inbäddad bild",
@@ -6235,7 +6248,7 @@
         "Du skrev “${ attachmentsFoundKeyword }”, men ingen bilaga har lagts till. Vill du skicka ditt meddelande i alla fall?"
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
-        "Du har nått det maximala antalet adresser i kontaktgruppen/kontaktgrupperna:"
+        "Du har nått det maximala antalet adresser i kontaktgruppen (kontaktgrupperna):"
       ],
       "You've reached the maximum number of addresses in the contact group.": [
         "Du har nått det maximala antalet adresser i kontaktgruppen."
@@ -9173,12 +9186,6 @@
         "Ta bort ${ count } meddelande",
         "Ta bort ${ count } meddelanden"
       ],
-      "Delete ${ label.Name } folder": [
-        "Ta bort mapp ${ label.Name }"
-      ],
-      "Delete ${ label.Name } label": [
-        "Ta bort ${ label.Name }-etikett"
-      ],
       "Delete ${ Name }": [
         "Ta bort ${ Name }"
       ],
@@ -9190,6 +9197,12 @@
       ],
       "Delete draft": [
         "Ta bort utkast"
+      ],
+      "Delete folder?": [
+        "Ta bort mapp?"
+      ],
+      "Delete label?": [
+        "Ta bort etikett?"
       ],
       "Delete message": [
         "Ta bort meddelande"
@@ -9638,6 +9651,9 @@
       ],
       "Hide side panel": [
         "Dölj sidopanel"
+      ],
+      "Load image": [
+        "Ladda bild"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Välj det PGP-schema som ska användas vid signering eller kryptering till en användare. Observera att PGP/Inline tvingar oformaterade textmeddelanden"

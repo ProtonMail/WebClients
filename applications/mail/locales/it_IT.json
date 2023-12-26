@@ -996,7 +996,7 @@
         "Salta"
       ],
       "Skip verification": [
-        "Salta verifica"
+        "Salta la verifica"
       ],
       "Snooze": [
         "Posticipa"
@@ -2143,6 +2143,11 @@
       ],
       "URL": [
         "URL"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Immagine del contatto"
       ]
     },
     "Contact type label": {
@@ -5054,14 +5059,17 @@
       "and": [
         "e"
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Verrà eliminata anche qualsiasi sottocartella. Tuttavia non verranno eliminate le email presenti nella cartella ${ nameDeleted }, le quali potranno ancora essere trovate in Tutta la posta."
+      ],
       "Are you sure you want to delete all messages in this folder?": [
         "Sei sicuro di voler eliminare tutti i messaggi in questa cartella?"
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Sei sicuro di voler eliminare tutti i messaggi con quest'etichetta?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Sei sicuro di voler eliminare questa cartella? Verranno eliminate anche tutte le sottocartelle."
+      "Are you sure you want to delete this folder?": [
+        "Sei sicuro di voler eliminare questa cartella?"
       ],
       "Are you sure you want to delete this label?": [
         "Sei sicuro di voler eliminare quest'etichetta?"
@@ -5278,11 +5286,8 @@
       "Emails are automatically signed": [
         "Le email sono firmate in automatico"
       ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Le email memorizzate in questa cartella non verranno eliminate e potranno ancora essere trovate in \"Tutta la posta\"."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Le email etichettate con quest'etichetta non saranno eliminate e possono ancora essere trovate nella rispettiva cartella."
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Le email etichettate con l'etichetta ${ nameDeleted } non verranno eliminate e potranno ancora essere trovate nella loro cartella."
       ],
       "embedded image": [
         "immagine incorporata",
@@ -9184,12 +9189,6 @@
         "Elimina ${ count } messaggio",
         "Elimina ${ count } messaggi"
       ],
-      "Delete ${ label.Name } folder": [
-        "Elimina la cartella ${ label.Name }"
-      ],
-      "Delete ${ label.Name } label": [
-        "Elimina l'etichetta ${ label.Name }"
-      ],
       "Delete ${ Name }": [
         "Elimina ${ Name }"
       ],
@@ -9201,6 +9200,12 @@
       ],
       "Delete draft": [
         "Elimina bozza"
+      ],
+      "Delete folder?": [
+        "Vuoi eliminare la cartella?"
+      ],
+      "Delete label?": [
+        "Vuoi eliminare l'etichetta?"
       ],
       "Delete message": [
         "Elimina messaggio"
@@ -9650,6 +9655,9 @@
       "Hide side panel": [
         "Nascondi pannello laterale"
       ],
+      "Load image": [
+        "Carica l'immagine"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Seleziona lo schema PGP da usare quando firmi o usi la crittografia con un utente. Nota che PGP/Inline forza i messaggi in testo semplice"
       ],
@@ -9751,7 +9759,7 @@
         "Le segnalazioni non sono crittografate end-to-end, non inviare alcuna informazione sensibile."
       ],
       "Skip verification?": [
-        "Saltare la verifica?"
+        "Vuoi saltare la verifica?"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Alcuni dei contatti da unire presentano errori. Controllali singolarmente"
