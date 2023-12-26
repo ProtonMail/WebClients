@@ -985,6 +985,9 @@
       "Skip verification": [
         "Пропустити перевірку"
       ],
+      "Snooze": [
+        "Відкласти"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "Деякі зображення неможливо завантажити, якщо увімкнено захист від стеження."
       ],
@@ -1327,6 +1330,9 @@
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } сховища"
+      ],
+      "1 user": [
+        "1 користувач"
       ],
       "3 TB": [
         "3 ТБ"
@@ -3159,6 +3165,11 @@
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "Зашифровані заголовки назв файлів"
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 ТБ"
       ]
     },
     "Error": {
@@ -5048,9 +5059,6 @@
       "Are you sure you want to delete all messages with this label?": [
         "Ви дійсно хочете видалити всі повідомлення з цією міткою?"
       ],
-      "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
-        "Ви впевнені, що хочете видалити цю теку? Усі підтеки також будуть видалені."
-      ],
       "Are you sure you want to delete this label?": [
         "Ви дійсно хочете видалити цю мітку?"
       ],
@@ -5269,12 +5277,6 @@
       ],
       "Emails are automatically signed": [
         "Електронні листи підписуються автоматично"
-      ],
-      "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "Електронні листи, які містяться у цій теці, не будуть видалені, і їх все ще можна знайти в теці Уся пошта."
-      ],
-      "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "Електронні листи, позначені цією міткою, не будуть видалені, і їх все ще можна знайти у відповідній теці."
       ],
       "embedded image": [
         "вбудоване зображення",
@@ -7195,6 +7197,9 @@
       "Sign up for free": [
         "Зареєструватися безплатно"
       ],
+      "Snooze": [
+        "Відкласти"
+      ],
       "Spam": [
         "Спам"
       ],
@@ -8301,6 +8306,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 користувач"
+      ],
       "3 TB": [
         "3 ТБ"
       ],
@@ -9104,12 +9112,6 @@
         "Видалити ${ count } повідомлень",
         "Видалити ${ count } повідомлень"
       ],
-      "Delete ${ label.Name } folder": [
-        "Видалити теку ${ label.Name }"
-      ],
-      "Delete ${ label.Name } label": [
-        "Видалити мітку ${ label.Name }"
-      ],
       "Delete ${ Name }": [
         "Видалити ${ Name }"
       ],
@@ -9436,6 +9438,9 @@
       ],
       "Sign out": [
         "Вийти"
+      ],
+      "Snooze": [
+        "Відкласти"
       ],
       "Sort conversations": [
         "Впорядкувати розмови"
