@@ -48,7 +48,7 @@ chaiUse(chaiAsPromised);
 
 const runTests = (v6Canary: boolean) =>
     describe(`OpenPGP.js ${v6Canary ? 'v6 (canary)' : 'v5'}`, () => {
-        before(async () => {
+        beforeAll(async () => {
             await CryptoWorker.init({ poolSize: 1, openpgpConfigOptions: { v6Canary } });
         });
 
@@ -56,7 +56,7 @@ const runTests = (v6Canary: boolean) =>
             await CryptoWorker.clearKeyStore();
         });
 
-        after(async () => {
+        afterAll(async () => {
             await CryptoWorker.destroy();
         });
 
@@ -1300,7 +1300,7 @@ siLL+xMJ+Hy4AhsMAAAKagEA4Knj6S6nG24nuXfqkkytPlFTHwzurjv3+qqXwWL6
                     userIDs: { name: 'name', email: 'email@test.com' },
                     format: 'object',
                     passphrase,
-                    subkeys: [{}, { type: 'rsa' }]
+                    subkeys: [{}, { type: 'rsa' }],
                 });
 
                 const importedKeyRef = await CryptoWorker.importPrivateKey({

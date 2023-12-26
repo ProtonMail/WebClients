@@ -1,6 +1,11 @@
 const path = require('path');
 const os = require('os');
 const { firefox, chromium } = require('playwright');
+const karmaJasmine = require('karma-jasmine');
+const karmaWebpack = require('karma-webpack');
+const karmaChromeLauncher = require('karma-chrome-launcher');
+const karmaFirefoxLauncher = require('karma-firefox-launcher');
+const karmaSpecReporter = require('karma-spec-reporter');
 process.env.CHROME_BIN = chromium.executablePath();
 process.env.FIREFOX_BIN = firefox.executablePath();
 
@@ -18,15 +23,9 @@ module.exports = function (config) {
 
         // frameworks to use
         // available frameworks: https://www.npmjs.com/search?q=keywords:karma-adapter
-        frameworks: ['mocha', 'webpack'],
+        frameworks: ['jasmine', 'webpack'],
 
-        plugins: [
-            'karma-mocha',
-            'karma-chrome-launcher',
-            'karma-firefox-launcher',
-            'karma-webpack',
-            'karma-mocha-reporter',
-        ],
+        plugins: [karmaJasmine, karmaWebpack, karmaChromeLauncher, karmaFirefoxLauncher, karmaSpecReporter],
 
         // list of files / patterns to load in the browser
         files: [
@@ -80,7 +79,7 @@ module.exports = function (config) {
         },
 
         // available reporters: https://www.npmjs.com/search?q=keywords:karma-reporter
-        reporters: ['mocha'],
+        reporters: ['spec'],
 
         // web server port
         port: 9876,
@@ -112,7 +111,9 @@ module.exports = function (config) {
         concurrency: Infinity,
 
         client: {
-            mocha: {
+            jasmine: {
+                // Run tests in serial so that endpoint release don't interfere
+                random: false,
                 // timeout for mocha tests, default is 2 seconds. Some streaming tests can take longer.
                 timeout: 5000,
             },
