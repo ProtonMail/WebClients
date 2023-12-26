@@ -179,6 +179,9 @@
       "Get mobile apps": [
         "Pobierz aplikację mobilną"
       ],
+      "Get the deal": [
+        "Uzyskaj ofertę"
+      ],
       "Help us improve": [
         "Pomóż nam ulepszyć usługę"
       ],
@@ -262,6 +265,9 @@
       ],
       "Open navigation": [
         "Otwórz nawigację"
+      ],
+      "Open web app": [
+        "Otwórz aplikację internetową"
       ],
       "Pass for Android": [
         "Proton Pass na Androida"
@@ -382,6 +388,14 @@
       ],
       "Your password manager not here? Request it.": [
         "Nie ma Twojego menadżera haseł? Zgłoś to."
+      ]
+    },
+    "Badge": {
+      "Early access": [
+        "Wcześniejszy dostęp"
+      ],
+      "Limited time": [
+        "Oferta ograniczona czasowo"
       ]
     },
     "bf2023: Info": {
@@ -1001,6 +1015,9 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Właściciel został zmieniony. Nie jesteś już właścicielem tego sejfu."
       ],
+      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
+        "Plan Pass Plus za ${ eoyRelativePrice } / miesiąc. Zawiera wcześniejszy dostęp do aplikacji internetowej."
+      ],
       "Pass Plus trial": [
         "Wersja próbna planu Pass Plus"
       ],
@@ -1051,9 +1068,6 @@
       ],
       "Save login": [
         "Zapisz dane logowania"
-      ],
-      "Save up to 60% on ${ PASS_APP_NAME } Plus": [
-        "Zaoszczędź do 60% z planem ${ PASS_APP_NAME } Plus"
       ],
       "Select destination vault": [
         "Wybierz docelowy sejf"
