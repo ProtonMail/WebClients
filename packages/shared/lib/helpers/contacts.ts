@@ -191,11 +191,23 @@ export const getTypeValues: () => { [key: string]: string[] } = () => ({
  * It will allow to load the image normally if a base 64 or using the Proton proxy is disabled
  * Else we will forge the url to load it through the Proton proxy
  */
-export const getContactImageSource = (apiUrl: string, url: string, uid: string, useProxy: boolean) => {
+export const getContactImageSource = ({
+    apiUrl,
+    url,
+    uid,
+    useProxy,
+    origin,
+}: {
+    apiUrl: string;
+    url: string;
+    uid: string;
+    useProxy: boolean;
+    origin: string;
+}) => {
     // If the image is not a base64 but a URL, then we want to load the image through the proxy
     if (!isBase64Image(url) && useProxy) {
         const encodedImageUrl = encodeImageUri(url);
-        return forgeImageURL(apiUrl, encodedImageUrl, uid);
+        return forgeImageURL({ apiUrl, url: encodedImageUrl, uid, origin });
     }
 
     return url;
