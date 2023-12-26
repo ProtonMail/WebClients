@@ -5,7 +5,7 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APP_NAMES, DEFAULT_TIMEOUT } from '@proton/shared/lib/constants';
 import { getIsAuthorizedApp, getIsDrawerPostMessage, postMessageFromIframe } from '@proton/shared/lib/drawer/helpers';
 import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
-import { deserializeApiErrorData } from '@proton/shared/lib/fetch/ApiError';
+import { createTimeoutError, deserializeApiErrorData } from '@proton/shared/lib/fetch/ApiError';
 import noop from '@proton/utils/noop';
 
 import { generateUID } from '../../helpers';
@@ -82,9 +82,9 @@ const DrawerApiProvider = ({ children }: { children: ReactNode }) => {
             );
             window.addEventListener('message', handler);
 
-            // Resolve the promise if the parent app does not respond
+            // Reject the promise if the parent app does not respond
             timeout = setTimeout(() => {
-                resolve(undefined);
+                reject(createTimeoutError({}));
             }, DEFAULT_TIMEOUT);
         }
 
