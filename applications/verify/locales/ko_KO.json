@@ -967,7 +967,7 @@
         "새 인증 코드를 요청하기 전에 스팸 폴더를 확인하고 ${ strong } 이(가) 올바른 주소인지 확인하세요."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "${ strong } 로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
+        "${ strong }(으)로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
       ],
       "Country code": [
         "국가 코드"
@@ -982,7 +982,7 @@
         "인증 앱의 코드를 입력하세요"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "${ destinationText } 로 전송된 인증 코드를 입력하세요."
+        "${ destinationText }으(로) 인증 코드가 전송되었습니다."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "인증 코드를 입력하세요. ${ digit } 자리."
@@ -1086,7 +1086,7 @@
     },
     "Success": {
       "Code sent to ${ methodTo }": [
-        "${ methodTo } 로 코드가 전송됨"
+        "${ methodTo }(으)로 코드를 전송했습니다."
       ],
       "Verification successful": [
         "인증 성공"
