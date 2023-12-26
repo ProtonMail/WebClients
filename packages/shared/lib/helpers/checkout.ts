@@ -6,6 +6,7 @@ import {
     getLoginsAndNotesText,
     getUnlimitedHideMyEmailAliasesText,
 } from '@proton/components/containers/payments/features/pass';
+import { getPremium } from '@proton/shared/lib/helpers/premium';
 import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/features';
 
 import {
@@ -270,7 +271,7 @@ export const getWhatsIncluded = ({
         return [
             {
                 type: 'text',
-                text: c('bf2023: Deal details').t`Premium ${VPN_SHORT_APP_NAME}`,
+                text: getPremium(VPN_SHORT_APP_NAME),
             },
             {
                 type: 'text',
@@ -293,11 +294,11 @@ export const getWhatsIncluded = ({
             },
             {
                 type: 'text',
-                text: c('bf2023: Deal details').t`Premium ${VPN_SHORT_APP_NAME}`,
+                text: getPremium(VPN_SHORT_APP_NAME),
             },
             {
                 type: 'text',
-                text: c('bf2023: Deal details').t`Premium ${DRIVE_SHORT_APP_NAME}`,
+                text: getPremium(DRIVE_SHORT_APP_NAME),
             },
             {
                 type: 'text',
@@ -384,11 +385,11 @@ export const getWhatsIncluded = ({
             },
             {
                 type: 'text',
-                text: c('bf2023: Deal details').t`Premium ${VPN_SHORT_APP_NAME}`,
+                text: getPremium(VPN_SHORT_APP_NAME),
             },
             {
                 type: 'text',
-                text: c('bf2023: Deal details').t`Premium ${DRIVE_SHORT_APP_NAME}`,
+                text: getPremium(DRIVE_SHORT_APP_NAME),
             },
             {
                 type: 'text',
