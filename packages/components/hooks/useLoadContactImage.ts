@@ -21,6 +21,7 @@ interface Props {
     needsResize?: boolean;
     onToggleLoadDirectBanner?: (show: boolean) => void;
 }
+
 const useLoadContactImage = ({ photo, onToggleLoadDirectBanner, needsResize = false }: Props) => {
     const authentication = useAuthentication();
     const { API_URL } = useConfig();
@@ -86,7 +87,13 @@ const useLoadContactImage = ({ photo, onToggleLoadDirectBanner, needsResize = fa
     const loadImage = async () => {
         try {
             const uid = authentication.getUID();
-            const imageURL = getContactImageSource(API_URL, photo, uid, !!mailSettings?.ImageProxy);
+            const imageURL = getContactImageSource({
+                apiUrl: API_URL,
+                url: photo,
+                uid,
+                useProxy: !!mailSettings?.ImageProxy,
+                origin: window.location.origin,
+            });
 
             const { src, width, height } = await toImage(imageURL);
 

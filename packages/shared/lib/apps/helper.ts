@@ -1,4 +1,3 @@
-import window from '@proton/shared/lib/window';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getLocalIDPath, stripLocalBasenameFromPathname } from '../authentication/pathnameHelper';
@@ -6,6 +5,7 @@ import { APPS, APPS_CONFIGURATION, APP_NAMES, EXTENSIONS, VPN_HOSTNAME } from '.
 import { isMac, isWindows } from '../helpers/browser';
 import { isElectronApp } from '../helpers/desktop';
 import { stripLeadingAndTrailingSlash } from '../helpers/string';
+import window from '../window';
 
 interface TargetLocation {
     hostname: string;

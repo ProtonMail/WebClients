@@ -27,7 +27,7 @@ const SINGLE_CHAT_KEY = 'zk_state';
 const SINGLE_CHAT_TIMEOUT = 10000;
 
 const getIframeUrl = (zendeskKey: string) => {
-    const url = getApiSubdomainUrl('/core/v4/resources/zendesk');
+    const url = getApiSubdomainUrl('/core/v4/resources/zendesk', window.location.origin);
     url.searchParams.set('Key', zendeskKey);
     return url;
 };

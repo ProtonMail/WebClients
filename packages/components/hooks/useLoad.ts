@@ -5,7 +5,7 @@ import noop from '@proton/utils/noop';
 
 const useLoad = () => {
     useEffect(() => {
-        const url = formatURLForAjaxRequest();
+        const url = formatURLForAjaxRequest(window.location.href);
         fetch(url).catch(noop);
     }, []);
 };
