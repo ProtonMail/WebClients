@@ -57,17 +57,14 @@ const MemberAddresses = ({ addresses = [] }: MemberAddressesProps) => {
 
     const getAddressesListItems = () => {
         if (amountOfAddresses === 0) {
+            let n = amountOfAddresses;
             return (
                 <li className="py-2">
-                    <span className="md:hidden">{amountOfAddresses}</span>
+                    <span className="md:hidden">{n}</span>
                     <span className="hidden md:inline">
                         {
                             // translator: addresses mean "email addresses" in this context
-                            c('Info').ngettext(
-                                msgid`${amountOfAddresses} address`,
-                                `${amountOfAddresses} addresses`,
-                                amountOfAddresses
-                            )
+                            c('Info').ngettext(msgid`${n} address`, `${n} addresses`, n)
                         }
                     </span>
                 </li>
