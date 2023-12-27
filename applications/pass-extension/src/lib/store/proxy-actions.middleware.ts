@@ -27,7 +27,7 @@ export const proxyActionsMiddleware = ({ endpoint, tabId }: ProxyActionsMiddlewa
 
     return () => (next) => {
         ExtensionContext.get().port.onMessage.addListener((message: WorkerMessageWithSender) => {
-            if (message.sender === 'background' && message.type === WorkerMessageType.STORE_ACTION) {
+            if (message.sender === 'background' && message.type === WorkerMessageType.STORE_DISPATCH) {
                 const unprocessedAction = !isClientSynchronousAction(message.payload.action);
                 const acceptAction = acceptActionWithReceiver(message.payload.action, endpoint, tabId);
 
@@ -41,7 +41,7 @@ export const proxyActionsMiddleware = ({ endpoint, tabId }: ProxyActionsMiddlewa
             if (isClientSynchronousAction(action)) next(action);
 
             /* hydrate the action with the current client's sender data */
-            const message = messageFactory({ type: WorkerMessageType.STORE_ACTION, payload: { action } });
+            const message = messageFactory({ type: WorkerMessageType.STORE_DISPATCH, payload: { action } });
             message.payload.action = withSender({ endpoint: message.sender, tabId })(message.payload.action);
 
             sendMessage(message).catch(noop);

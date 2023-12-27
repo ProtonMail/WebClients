@@ -28,7 +28,7 @@ export const DropdownPinUnlock: VFC<{
         try {
             setLoading(true);
             await sendMessage.onSuccess(
-                contentScriptMessage({ type: WorkerMessageType.UNLOCK_REQUEST, payload: { pin: value } }),
+                contentScriptMessage({ type: WorkerMessageType.AUTH_UNLOCK, payload: { pin: value } }),
                 ensureMounted((res) => {
                     if (!res.ok) setError(res.error);
                     else onUnlock?.();

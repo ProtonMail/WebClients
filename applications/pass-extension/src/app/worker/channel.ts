@@ -31,7 +31,7 @@ const WorkerMessageBroker = createMessageBroker({
         WorkerMessageType.ONBOARDING_REQUEST,
         WorkerMessageType.OTP_CODE_GENERATE,
         WorkerMessageType.POPUP_INIT,
-        WorkerMessageType.UNLOCK_REQUEST,
+        WorkerMessageType.AUTH_UNLOCK,
     ],
     onError: withContext((ctx, err) => {
         if (err instanceof Error && err.name === 'VersionMismatch') void ctx.service.activation.reload();

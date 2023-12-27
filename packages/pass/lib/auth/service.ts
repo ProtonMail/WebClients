@@ -4,7 +4,9 @@ import type { CreateNotificationOptions } from '@proton/components/containers';
 import { SESSION_LOCK_CODE } from '@proton/pass/lib/api/utils';
 import type { Maybe, MaybeNull, MaybePromise } from '@proton/pass/types';
 import { type Api, SessionLockStatus } from '@proton/pass/types';
+import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
+import { withCallCount } from '@proton/pass/utils/fp/with-call-count';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { revoke } from '@proton/shared/lib/api/auth';
@@ -24,6 +26,7 @@ import {
     type AuthSession,
     type PersistedAuthSession,
     encryptPersistedSession,
+    encryptPersistedSessionWithKey,
     isValidSession,
     resumeSession,
 } from './session';
@@ -36,6 +39,13 @@ import {
     unlockSession,
 } from './session-lock';
 import { type AuthStore } from './store';
+
+export type AuthResumeOptions = {
+    /** `forceLock` will locally lock the session upon resuming */
+    forceLock?: boolean;
+    /** If `true`, session resuming should be retried */
+    retryable?: boolean;
+};
 
 export interface AuthServiceConfig {
     api: Api;
@@ -50,7 +60,7 @@ export interface AuthServiceConfig {
     getPersistedSession: (localID: Maybe<number>) => MaybePromise<MaybeNull<PersistedAuthSession>>;
     /**  Implement any service initialization logic in this hook. Should return
      * a boolean flag indicating wether user was authorized or not. */
-    onInit: (options?: { forceLock: boolean }) => Promise<boolean>;
+    onInit: (options: AuthResumeOptions) => Promise<boolean>;
     /** Called when authorization sequence starts: this can happen when consuming a
      * session fork or when trying to resume a session. */
     onAuthorize?: () => void;
@@ -90,7 +100,7 @@ export interface AuthServiceConfig {
     onSessionPersist?: (encryptedSession: string) => MaybePromise<void>;
     /** Called when resuming the session failed for any reason excluding inactive
      * session error. */
-    onSessionResumeFailure?: () => void;
+    onSessionResumeFailure?: (options: AuthResumeOptions) => void;
     /** Called when session tokens have been refreshed. The`broadcast` flag indicates
      * wether we should broadcast the refresh session data to other clients. */
     onSessionRefresh?: (localId: Maybe<number>, data: RefreshSessionData, broadcast: boolean) => MaybePromise<void>;
@@ -102,7 +112,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
     const { api, authStore } = config;
 
     const authService = {
-        init: asyncLock(async (options?: { forceLock: boolean }) => {
+        init: asyncLock(async (options: AuthResumeOptions) => {
             logger.info(`[AuthService] Initialization start`);
             return config.onInit(options).catch((err) => {
                 logger.warn(`[AuthService] Initialization failure`, err);
@@ -347,62 +357,84 @@ export const createAuthService = (config: AuthServiceConfig) => {
             }
         },
 
-        resumeSession: async (localID: Maybe<number>, options?: { forceLock: boolean }): Promise<boolean> => {
-            const memorySession = await config.getMemorySession?.();
+        resumeSession: withCallCount(
+            pipe(
+                async (localID: Maybe<number>, options: AuthResumeOptions): Promise<boolean> => {
+                    if (!options.retryable) authService.resumeSession.resetCount();
+                    const memorySession = await config.getMemorySession?.();
 
-            if (memorySession && isValidSession(memorySession)) {
-                logger.info(`[Worker::Auth] Resuming in-memory session`);
-                return authService.login(memorySession);
-            }
+                    if (memorySession && isValidSession(memorySession)) {
+                        logger.info(`[Worker::Auth] Resuming in-memory session`);
+                        return authService.login(memorySession);
+                    }
 
-            try {
-                const persistedSession = await config.getPersistedSession(localID);
+                    try {
+                        const persistedSession = await config.getPersistedSession(localID);
 
-                if (!persistedSession) {
-                    logger.info(`[AuthService] No persisted session found`);
-                    config.onSessionEmpty?.();
-                    return false;
-                }
+                        if (!persistedSession) {
+                            logger.info(`[AuthService] No persisted session found`);
+                            config.onSessionEmpty?.();
+                            return false;
+                        }
 
-                logger.info(`[AuthService] Resuming persisted session.`);
-                config.onAuthorize?.();
+                        logger.info(`[AuthService] Resuming persisted session.`);
+                        config.onAuthorize?.();
 
-                authStore.setUserID(persistedSession.UserID);
-                authStore.setUID(persistedSession.UID);
-                authStore.setLocalID(persistedSession.LocalID);
-                authStore.setAccessToken(persistedSession.AccessToken);
-                authStore.setRefreshToken(persistedSession.RefreshToken);
-                authStore.setRefreshTime(persistedSession.RefreshTime);
+                        /** Partially configure the auth store before resume sequence.
+                         * `keyPassword` and `sessionLockToken` are still encrypted at
+                         * this point */
+                        authStore.setUserID(persistedSession.UserID);
+                        authStore.setUID(persistedSession.UID);
+                        authStore.setLocalID(persistedSession.LocalID);
+                        authStore.setAccessToken(persistedSession.AccessToken);
+                        authStore.setRefreshToken(persistedSession.RefreshToken);
+                        authStore.setRefreshTime(persistedSession.RefreshTime);
 
-                authService.listen();
-                const session = await resumeSession({
-                    api,
-                    authStore,
-                    persistedSession,
-                    onSessionInvalid: config.onSessionInvalid,
-                });
-                logger.info(`[AuthService] Session successfuly resumed`);
+                        /* Start listening for API errors before resuming the session in order
+                         * to gracefully handle inactive session errors during this sequence */
+                        authService.listen();
 
-                /* on `forceLock: true` remove the `sessionLockToken` from the
-                 * session result to trigger an auth lock during the login sequence */
-                if (options?.forceLock) {
-                    logger.info(`[AuthService] Forcing session lock`);
-                    delete session.sessionLockToken;
-                }
+                        const { session, sessionKey } = await resumeSession({
+                            api,
+                            authStore,
+                            persistedSession,
+                            onSessionInvalid: config.onSessionInvalid,
+                        });
 
-                return await authService.login(session);
-            } catch (error: unknown) {
-                const reason = error instanceof Error ? ` (${getApiErrorMessage(error) ?? error?.message})` : '';
-                logger.warn(`[AuthService] Resuming session failed ${reason}`);
-                config.onNotification?.({ text: c('Warning').t`Your session could not be resumed.` + reason });
+                        logger.info(`[AuthService] Session successfuly resumed`);
 
-                /* if session is inactive : trigger unauthorized sequence */
-                if (api.getState().sessionInactive) await authService.logout({ soft: true, broadcast: true });
-                else config.onSessionResumeFailure?.();
+                        /* on `forceLock: true` remove the `sessionLockToken` from the
+                         * session result to trigger an auth lock during the login sequence.
+                         * Re-persist the session without the `sessionLockToken` in order
+                         * to ensure the `forceLock` effect propagates to future resumes. */
+                        if (session.sessionLockToken && options?.forceLock) {
+                            logger.info(`[AuthService] Force lock requested `);
+                            delete session.sessionLockToken;
+                            const sanitizedPS = await encryptPersistedSessionWithKey(session, sessionKey);
+                            await config?.onSessionPersist?.(sanitizedPS);
+                        }
 
-                return false;
-            }
-        },
+                        return await authService.login(session);
+                    } catch (error: unknown) {
+                        const reason =
+                            error instanceof Error ? ` (${getApiErrorMessage(error) ?? error?.message})` : '';
+                        logger.warn(`[AuthService] Resuming session failed ${reason}`);
+                        config.onNotification?.({ text: c('Warning').t`Your session could not be resumed.` + reason });
+
+                        /* if session is inactive : trigger unauthorized sequence */
+                        if (api.getState().sessionInactive) await authService.logout({ soft: true, broadcast: true });
+                        else config.onSessionResumeFailure?.(options);
+
+                        return false;
+                    }
+                },
+                tap((resumed) => {
+                    /** Reset the internal resume session count when session
+                     * resuming succeeds */
+                    if (resumed) authService.resumeSession.resetCount();
+                })
+            )
+        ),
     };
 
     return authService;
