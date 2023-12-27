@@ -1,9 +1,9 @@
 import { findByText } from '@testing-library/react';
 
 import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { parseInDiv } from '../../../helpers/dom';
 import { constructMime } from '../../../helpers/send/sendMimeBuilder';
 import { addApiContact } from '../../../helpers/test/contact';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
@@ -123,7 +123,7 @@ describe('MessageView encryption', () => {
             addApiKeys(false, fromAddress, []);
 
             const mimeBody = await constructMime(
-                { localID, data: message, messageDocument: { document: parseInDiv(body) } },
+                { localID, data: message, messageDocument: { document: parseStringToDOM(body).body } },
                 publicPrivateKey,
                 jest.fn(),
                 jest.fn(),
@@ -241,7 +241,7 @@ describe('MessageView encryption', () => {
             } as Message;
 
             const mimeBody = await constructMime(
-                { localID, data: message, messageDocument: { document: parseInDiv(body) } },
+                { localID, data: message, messageDocument: { document: parseStringToDOM(body).body } },
                 publicPrivateKey,
                 jest.fn(),
                 jest.fn(),

@@ -1,3 +1,4 @@
+import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
@@ -8,7 +9,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { MessageState } from '../../logic/messages/messagesTypes';
 import { dedentTpl } from '../dedent';
-import { isHTMLEmpty, parseInDiv } from '../dom';
+import { isHTMLEmpty } from '../dom';
 import { replaceLineBreaks } from '../string';
 import { exportPlainText, getPlainTextContent } from './messageContent';
 import { CLASSNAME_BLOCKQUOTE } from './messageDraft';
@@ -126,10 +127,10 @@ export const insertSignature = (
     const template = templateBuilder(signature, mailSettings, userSettings, fontStyle, action !== MESSAGE_ACTIONS.NEW);
 
     // Parse the current message and append before it the signature
-    const element = parseInDiv(content);
-    element.insertAdjacentHTML(position, template);
+    const element = parseStringToDOM(content);
+    element.body.insertAdjacentHTML(position, template);
 
-    return element.innerHTML;
+    return element.body.innerHTML;
 };
 
 /**
