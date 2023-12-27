@@ -49,22 +49,30 @@ export const isValidPersistedSession = (data: any): data is PersistedAuthSession
     Boolean('UserID' in data && data.UserID) &&
     Boolean('blob' in data && data.blob);
 
-export const encryptPersistedSession = async (
-    api: Api,
-    { keyPassword, sessionLockToken, ...session }: AuthSession
-): Promise<string> => {
+/** Given a local session key, encrypts the `AuthSession` before persisting.
+ * Only the `keyPassword` & `sessionLockToken` will be encrypted. If you need
+ * to re-create a random encryption key, use `encryptPersistedSession` directly. */
+export const encryptPersistedSessionWithKey = async (
+    { keyPassword, sessionLockToken, ...session }: AuthSession,
+    sessionKey: CryptoKey
+): Promise<string> =>
+    JSON.stringify({
+        ...session,
+        blob: await getEncryptedBlob(sessionKey, JSON.stringify({ keyPassword, sessionLockToken })),
+    });
+
+/** Encrypts the `AuthSession` with a new encryption key. Will throw if local
+ * key cannot be registered back-end side. */
+export const encryptPersistedSession = async (api: Api, session: AuthSession): Promise<string> => {
     const rawKey = crypto.getRandomValues(new Uint8Array(32));
-    const key = await getKey(rawKey);
+    const sessionKey = await getKey(rawKey);
     const base64StringKey = uint8ArrayToBase64String(rawKey);
 
     await api<LocalKeyResponse>(withAuthHeaders(session.UID, session.AccessToken, setLocalKey(base64StringKey)));
-
-    return JSON.stringify({
-        ...session,
-        blob: await getEncryptedBlob(key, JSON.stringify({ keyPassword, sessionLockToken })),
-    });
+    return encryptPersistedSessionWithKey(session, sessionKey);
 };
 
+/** Retrieves the current local key to decrypt the persisted session */
 export const getPersistedSessionKey = async (api: Api): Promise<CryptoKey> => {
     const { ClientKey } = await api<LocalKeyResponse>(getLocalKey());
     const rawKey = base64StringToUint8Array(ClientKey);
@@ -105,15 +113,16 @@ type ResumeSessionOptions = {
     onSessionInvalid?: () => void;
 };
 
-/* Session resuming flow responsible for decrypting the encrypted session
- * blob. Ensure the authentication store is configured with authentication
- * options in order for requests to succeed */
+/** Session resuming sequence responsible for decrypting the encrypted session
+ * blob. ⚠️ Ensure the authentication store has been configured with authentication
+ * options in order for requests to succeed. Session tokens may be refreshed during
+ * this sequence. Returns the plain-text session alongside its encryption key. */
 export const resumeSession = async ({
     api,
     authStore,
     persistedSession,
     onSessionInvalid,
-}: ResumeSessionOptions): Promise<AuthSession> => {
+}: ResumeSessionOptions): Promise<{ session: AuthSession; sessionKey: CryptoKey }> => {
     try {
         const [sessionKey, { User }] = await Promise.all([
             getPersistedSessionKey(api),
@@ -124,9 +133,12 @@ export const resumeSession = async ({
         const ps = await decryptPersistedSession(sessionKey, persistedSession.blob);
 
         return {
-            ...authStore.getSession(),
-            keyPassword: ps.keyPassword,
-            sessionLockToken: ps.sessionLockToken,
+            sessionKey,
+            session: {
+                ...authStore.getSession(),
+                keyPassword: ps.keyPassword,
+                sessionLockToken: ps.sessionLockToken,
+            },
         };
     } catch (error: any) {
         if (error instanceof InvalidPersistentSessionError) onSessionInvalid?.();
