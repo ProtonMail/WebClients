@@ -1,6 +1,7 @@
 import type { AnyAction } from 'redux';
 import type { Tabs } from 'webextension-polyfill';
 
+import type { AuthResumeOptions } from '@proton/pass/lib/auth/service';
 import type { ExportRequestPayload } from '@proton/pass/lib/export/types';
 import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
 import type { Notification } from '@proton/pass/store/actions/with-notification';
@@ -100,7 +101,7 @@ export type AccountProbeMessage = { type: WorkerMessageType.ACCOUNT_PROBE };
 export type ActivityProbeMessage = { type: WorkerMessageType.ACTIVITY_PROBE };
 export type AliasCreateMessage = WithPayload<WorkerMessageType.ALIAS_CREATE, { url: string; alias: AliasCreationDTO }>;
 export type AliasOptionsMessage = { type: WorkerMessageType.ALIAS_OPTIONS };
-export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; payload?: { forceLock: boolean } };
+export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: AuthResumeOptions };
 export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, { pin: string }>;
 export type AutofillOTPCheckMessage = { type: WorkerMessageType.AUTOFILL_OTP_CHECK };
 export type AutofillPasswordOptionsMessage = { type: WorkerMessageType.AUTOFILL_PASSWORD_OPTIONS };
