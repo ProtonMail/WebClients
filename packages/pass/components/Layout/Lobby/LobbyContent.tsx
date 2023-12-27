@@ -26,7 +26,8 @@ export const LobbyContent: VFC<Props> = ({ status, onLogin, onLogout, onRegister
     const stale = clientStale(status);
     const busy = clientBusy(status);
     const locked = clientLocked(status);
-    const canSignOut = clientErrored(status) || locked;
+    const [unlocking, setUnlocking] = useState(false);
+    const canSignOut = !unlocking && (clientErrored(status) || locked);
 
     useEffect(() => {
         setTimeoutError(false);
@@ -100,17 +101,22 @@ export const LobbyContent: VFC<Props> = ({ status, onLogin, onLogout, onRegister
 
                 {locked && (
                     <div className="mb-8">
-                        <Unlock />
+                        <Unlock
+                            loading={unlocking}
+                            onFailure={() => setUnlocking(false)}
+                            onStart={() => setUnlocking(true)}
+                        />
+                        {unlocking && <CircleLoader size="small" className="mt-12" />}
                     </div>
                 )}
 
                 {canSignOut && (
                     <Button
+                        className="w-full"
+                        color="danger"
+                        onClick={() => onLogout({ soft: true })}
                         pill
                         shape="outline"
-                        color="danger"
-                        className="w-full"
-                        onClick={() => onLogout({ soft: true })}
                     >
                         {c('Action').t`Sign out`}
                     </Button>
