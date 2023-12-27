@@ -1,4 +1,4 @@
-import { isElement, isHTMLEmpty, matches, parseInDiv } from './dom';
+import { isElement, isHTMLEmpty, matches } from './dom';
 
 describe('isElement', () => {
     it('should be an element', () => {
@@ -20,15 +20,6 @@ describe('matches', () => {
         link.setAttribute('href', '#link');
 
         expect(matches(link, '[href^="#"]')).toBeTruthy();
-    });
-});
-
-describe('parseInDiv', () => {
-    it('should add the content in a div', () => {
-        const content = 'This is some content';
-        const result = parseInDiv(content);
-
-        expect(result.innerHTML).toEqual(content);
     });
 });
 

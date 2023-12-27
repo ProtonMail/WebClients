@@ -1,4 +1,4 @@
-import { checkContrast } from '@proton/shared/lib/helpers/dom';
+import { checkContrast, parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
@@ -6,7 +6,6 @@ import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages
 import { MESSAGE_IFRAME_ROOT_ID } from '../../components/message/constants';
 import { MESSAGE_ACTIONS } from '../../constants';
 import { MessageState, PartialMessageState } from '../../logic/messages/messagesTypes';
-import { parseInDiv } from '../dom';
 import { findSender } from '../message/messageRecipients';
 import { toText } from '../parserHtml';
 import { textToHtml } from '../textToHtml';
@@ -45,7 +44,7 @@ export const setDocumentContent = (document: Element | undefined, content: strin
     if (document) {
         document.innerHTML = content;
     } else {
-        document = parseInDiv(content);
+        document = parseStringToDOM(content).body;
     }
 
     return document;
