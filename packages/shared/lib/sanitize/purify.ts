@@ -1,5 +1,7 @@
 import DOMPurify, { Config } from 'dompurify';
 
+import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
+
 import { escapeForbiddenStyle, escapeURLinStyle } from './escape';
 
 const toMap = (list: string[]) =>
@@ -160,8 +162,7 @@ export const input = (str: string) => {
  * and squire is not able to detect them. That's why we are removing them here.
  */
 export const removeImagesFromContent = (message: string) => {
-    const div = document.createElement('div');
-    div.innerHTML = message;
+    const div = parseStringToDOM(message).body;
 
     // Remove all images from the message
     const allImages = div.querySelectorAll('img');
