@@ -46,7 +46,6 @@ const content = `<div>
 
 jest.mock('../../../helpers/dom', () => ({
     ...jest.requireActual('../../../helpers/dom'),
-    preloadImage: jest.fn(() => Promise.resolve()),
 }));
 
 const windowHostname = 'https://mail.proton.pink';

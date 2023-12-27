@@ -6,6 +6,7 @@ import {
     VERIFICATION_STATUS,
     WorkerDecryptionOptions,
 } from '@proton/crypto';
+import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { MessageEmbeddedImage, MessageImage, MessageImages } from '../../logic/messages/messagesTypes';
@@ -19,9 +20,8 @@ export const removeLineBreaks = (text: string) => {
 };
 
 export const createDocument = (content: string): Element => {
-    const document = window.document.createElement('div');
-    document.innerHTML = content;
-    return document;
+    const document = parseStringToDOM(content);
+    return document.body;
 };
 
 export const readSessionKey = (key: any) => {
@@ -133,7 +133,7 @@ export const createEmbeddedImage = (attachment: Attachment) =>
         url: 'url',
         id: 'image-id',
         status: 'loaded',
-    } as MessageEmbeddedImage);
+    }) as MessageEmbeddedImage;
 
 export const createMessageImages = (images: MessageImage[] = []) =>
     ({
@@ -143,4 +143,4 @@ export const createMessageImages = (images: MessageImage[] = []) =>
         hasRemoteImages: true,
         trackersStatus: 'not-loaded',
         images,
-    } as MessageImages);
+    }) as MessageImages;
