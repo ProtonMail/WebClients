@@ -41,7 +41,7 @@ const AliasPromotionSection = () => {
     return (
         <>
             <div className="relative">
-                <Button shape="ghost" icon className="absolute right top mr-2 mt-2" onClick={handleClose}>
+                <Button shape="ghost" icon className="absolute right-0 top-0 mr-2 mt-2" onClick={handleClose}>
                     <Icon name="cross-big" />
                 </Button>
             </div>

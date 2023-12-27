@@ -15,7 +15,7 @@ const InviteHowItWorks = ({ handleClose }: Props) => {
     return (
         <div className="relative rounded p-7 bg-primary">
             <Button
-                className="absolute top right"
+                className="absolute top-0 right-0"
                 icon
                 shape="ghost"
                 onClick={handleClose}

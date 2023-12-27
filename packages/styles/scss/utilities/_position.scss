@@ -1,3 +1,5 @@
+@use "sass:map";
+
 @include responsive-classes(
 	(
 		static: (
@@ -13,14 +15,22 @@
 			z-index: 1,
 		),
 
+		sticky: (
+			position: sticky,
+			z-index: 1,
+		),
+
 		fixed: (
 			position: fixed,
 		),
 	)
 );
 
-.absolute-center {
-	position: absolute;
+.inset-0 {
+	inset: 0;
+}
+
+.inset-center {
 	inset-block-start: 50%;
 	inset-inline-start: 50%;
 	transform: translate(-50%, -50%);
@@ -30,7 +40,7 @@
 	}
 }
 
-.absolute-center-x {
+.inset-x-center {
 	inset-inline-start: 50%;
 	transform: translate(-50%, 0%);
 
@@ -39,89 +49,75 @@
 	}
 }
 
-.absolute-center-y {
+.inset-y-center {
 	inset-block-start: 50%;
 	transform: translateY(-50%);
 }
 
-.absolute-cover {
-	position: absolute;
-	inset: 0;
-}
-
-.sticky {
-	&-top,
-	&-bottom {
-		position: sticky;
-		z-index: 1;
-	}
-
-	&-top {
-		inset-block-start: 0;
-	}
-
-	&-bottom {
-		inset-block-end: 0;
-	}
-}
-
-.upper-layer {
-	z-index: $layer-upper;
-}
-
-/*
- * Placements
- */
-.top,
 .top-0 {
 	inset-block-start: 0;
 }
 
-.right,
-.right-0 {
-	inset-inline-end: 0;
-}
-
-.bottom,
 .bottom-0 {
 	inset-block-end: 0;
 }
 
-.left,
-.left-0 {
+.left-0,
+.start-0 {
 	inset-inline-start: 0;
 }
 
-.inset,
-.inset-0 {
-	inset: 0;
+.right-0,
+.end-0 {
+	inset-inline-end: 0;
 }
 
-/*
- * set up to use inline style with custom props
- * to avoid having logical props in JS, postCSS can't process them
- * Specificity issue with composer and others -_-v
-*/
+///
+/// set up to use inline style with custom props
+/// to avoid having logical props in JS, postCSS can't process them
+///
 .top-custom {
-	&#{&} {
-		inset-block-start: var(--top-custom);
-	}
-}
-
-.right-custom {
-	&#{&} {
-		inset-inline-end: var(--right-custom);
-	}
+	inset-block-start: var(--top-custom);
 }
 
 .bottom-custom {
-	&#{&} {
-		inset-block-end: var(--bottom-custom);
-	}
+	inset-block-end: var(--bottom-custom);
 }
 
 .left-custom {
-	&#{&} {
-		inset-inline-start: var(--left-custom);
-	}
+	inset-inline-start: var(--left-custom);
+}
+
+.start-custom {
+	inset-inline-start: var(--start-custom);
+}
+
+.right-custom {
+	inset-inline-end: var(--right-custom);
+}
+
+.end-custom {
+	inset-inline-end: var(--end-custom);
+}
+
+.inset-custom {
+	inset: var(--inset-custom);
+}
+
+/// ---
+
+.z-0 {
+	z-index: 0;
+}
+
+.z-1 {
+	z-index: 1;
+}
+
+.z-up {
+	z-index: map.get($z-indexes, 'up');
+}
+
+.z-custom {
+	z-index: var(--z-custom);
 }

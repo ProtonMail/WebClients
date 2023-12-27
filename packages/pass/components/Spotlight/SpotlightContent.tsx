@@ -70,7 +70,7 @@ export const SpotlightContent: VFC<Props> = ({
             )}
         >
             {onClose && (
-                <Button icon shape="ghost" color="weak" size="small" className="absolute top right" onClick={onClose}>
+                <Button icon shape="ghost" color="weak" size="small" className="absolute top-0 right-0" onClick={onClose}>
                     <Icon name="cross" color="var(--interaction-norm-contrast)" alt={c('Action').t`Close`} />
                 </Button>
             )}

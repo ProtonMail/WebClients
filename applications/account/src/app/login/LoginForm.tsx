@@ -301,7 +301,7 @@ const LoginForm = ({
     return (
         <>
             {loading && (
-                <div className="text-center absolute absolute-center">
+                <div className="text-center absolute inset-center">
                     <Loader />
                 </div>
             )}

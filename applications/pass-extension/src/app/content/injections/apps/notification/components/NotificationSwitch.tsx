@@ -23,7 +23,7 @@ export const NotificationSwitch: VFC<Props> = ({ children, visible, state, setti
         <div className="h-full p-4 bg-norm relative">
             {children}
             {(() => {
-                if (!state) return <CircleLoader className="absolute absolute-center m-auto" />;
+                if (!state) return <CircleLoader className="absolute inset-center m-auto" />;
 
                 switch (state.action) {
                     case NotificationAction.AUTOSAVE_PROMPT: {

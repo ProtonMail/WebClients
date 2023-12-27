@@ -30,11 +30,7 @@ const Wizard = ({ step = 0, steps = [], hideText = false }: Props) => {
                         >
                             <span className="wizard-marker flex">
                                 {index < step && (
-                                    <Icon
-                                        name="checkmark"
-                                        size={12}
-                                        className="upper-layer m-auto wizard-marker-icon"
-                                    />
+                                    <Icon name="checkmark" size={12} className="z-up m-auto wizard-marker-icon" />
                                 )}
                             </span>
                         </li>
