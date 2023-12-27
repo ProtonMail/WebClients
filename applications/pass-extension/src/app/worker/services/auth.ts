@@ -123,7 +123,6 @@ export const createAuthService = (api: Api, authStore: AuthStore): AuthService =
             store.dispatch(stateDestroy());
 
             void browser.alarms.clear(SESSION_LOCK_ALARM);
-            void ctx.service.auth.init();
         }),
 
         onSessionPersist: withContext((ctx, encryptedSession) => {
