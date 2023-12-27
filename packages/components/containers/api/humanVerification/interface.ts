@@ -50,6 +50,7 @@ export enum HumanVerificationSteps {
     ENTER_DESTINATION,
     VERIFY_CODE,
     INVALID_CODE,
+    SUCCESSFUL_CODE,
 }
 
 export type CaptchaTheme = 'light' | 'dark';
