@@ -18,8 +18,17 @@ export const Lobby: VFC = () => {
     const errored = clientErrored(state.status);
 
     const login = useRequestForkWithPermissions({ autoClose: true });
-    const handleLogin = () => (errored ? sendMessage(popupMessage({ type: WorkerMessageType.WORKER_INIT })) : login());
     const handleRegister = useCallback(async () => login(FORK_TYPE.SIGNUP), []);
+
+    const handleLogin = () =>
+        errored
+            ? sendMessage(
+                  popupMessage({
+                      type: WorkerMessageType.AUTH_INIT,
+                      options: { forceLock: true, retryable: false },
+                  })
+              )
+            : login();
 
     return (
         <LobbyLayout overlay>

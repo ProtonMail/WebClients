@@ -14,6 +14,7 @@ import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
 import { isValidPersistedSession } from '@proton/pass/lib/auth/session';
 import { clientReady } from '@proton/pass/lib/client';
+import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { getUpgradePath, isEOY } from '@proton/pass/lib/onboarding/upselling';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import { bootIntent, cacheCancel, sessionLockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
@@ -128,6 +129,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
             onUnauthorized: (userID, localID, broadcast) => {
                 if (broadcast) sw.send({ type: 'unauthorized', localID, broadcast: true });
                 if (userID) void deletePassDB(userID); /* wipe the local DB cache */
+                PassCrypto.clear();
 
                 onboarding.reset();
                 telemetry.stop();
@@ -176,6 +178,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
             onSessionLocked: (localID, broadcast) => {
                 client.current.setStatus(AppStatus.LOCKED);
                 if (broadcast) sw.send({ type: 'locked', localID, broadcast: true });
+                PassCrypto.clear();
 
                 store.dispatch(cacheCancel());
                 store.dispatch(stopEventPolling());
