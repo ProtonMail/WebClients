@@ -1,5 +1,7 @@
+@use "sass:map";
+
 .row--orderable {
-	z-index: $layer-modals;
+	z-index: map.get($z-indexes, 'modals');
 
 	/* In case the modal is open */
 	background: var(--background-norm);
@@ -117,8 +119,4 @@ $breakpoint-2-columns: 1180 !default;
 .no-pointer-events,
 .no-pointer-events-children * {
 	pointer-events: none;
-}
-
-.z-index-1 {
-	z-index: 1;
 }

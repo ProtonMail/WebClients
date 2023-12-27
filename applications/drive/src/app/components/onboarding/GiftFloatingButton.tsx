@@ -176,7 +176,7 @@ function FloatingSpotlight({
             content={content}
             show={show}
             originalPlacement="top-end"
-            className="max-w-custom upper-layer"
+            className="max-w-custom z-up"
             style={{ '--max-w-custom': '25em' }}
             hasClose={hasClose}
         >

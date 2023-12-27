@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $modal-width: 50% !default;
 $modal-max-width: rem(700) !default;
 $modal-breakpoint-width: 52em !default;
@@ -17,7 +19,7 @@ $modal-tiny-width: em(288) !default;
 	position: fixed;
 	inset: 0;
 	background: var(--backdrop-norm);
-	z-index: $layer-modals;
+	z-index: map.get($z-indexes, 'modals');
 	animation: anime-modal-overlay-in ease 0.5s 1 normal;
 }
 
@@ -27,12 +29,12 @@ $modal-tiny-width: em(288) !default;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	z-index: $layer-modals;
+	z-index: map.get($z-indexes, 'modals');
 
 	// -webkit-tap-highlight-color: rgb(255 255 255 / 0);
 
 	&.is-behind-backdrop {
-		z-index: $layer-modals - 1;
+		z-index: map.get($z-indexes, 'modals') - 1;
 	}
 
 	/* for very large inputs in modals, like rich text editor */

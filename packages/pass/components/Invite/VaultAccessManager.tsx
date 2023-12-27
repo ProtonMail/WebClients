@@ -161,7 +161,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                         {warning && <Card>{warning}</Card>}
                     </div>
                 ) : (
-                    <div className="absolute-center flex flex-column gap-y-3 text-center color-weak text-sm">
+                    <div className="absolute inset-center flex flex-column gap-y-3 text-center color-weak text-sm">
                         {c('Info')
                             .t`This vault is not currently shared with anyone. Invite people to share it with others.`}
                     </div>

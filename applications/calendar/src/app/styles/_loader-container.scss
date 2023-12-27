@@ -1,8 +1,10 @@
+@use "sass:map";
+
 .calendar-loader-container {
 	@extend .notifications-container;
 
 	position: absolute;
-	z-index: $layer-upper;
+	z-index: map.get($z-indexes, 'up');
 	inset-block-start: em(160);
 	inset-block-end: unset;
 	inset-inline-start: 50%;

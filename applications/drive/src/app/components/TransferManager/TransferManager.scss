@@ -1,10 +1,11 @@
+@use "sass:map";
 @import '~@proton/styles/scss/lib';
 
 .transfers-manager {
 	position: fixed;
 	inset-inline-end: 0;
 	inset-block-end: 0;
-	z-index: $layer-transfer-manager;
+	z-index: map.get($z-indexes, 'transfer-manager');
 	box-shadow: var(--shadow-lifted);
 	color: var(--text-norm);
 	transition: 0.15s cubic-bezier(0.22, 1, 0.36, 1);
@@ -75,8 +76,7 @@
 		display: grid;
 		grid-template-rows: 1fr auto;
 		grid-template-areas: 'name size status controls' 'progress progress progress progress';
-		column-gap: 1em;
-		row-gap: 1em;
+		gap: 1em;
 		align-items: center;
 		block-size: 5em; // To avoid height blinking on status changing
 		@extend .border-bottom;

@@ -39,7 +39,7 @@ Utilities for controlling the position of an element.
         </TableRow>
         <TableRow>
             <TableCell>
-                <code>absolute-center</code>
+                <code>absolute inset-center</code>
             </TableCell>
             <TableCell>
                 Position an element outside of the normal flow of the document, and center it horizontaly and verticaly
@@ -48,7 +48,7 @@ Utilities for controlling the position of an element.
         </TableRow>
         <TableRow>
             <TableCell>
-                <code>absolute-center-x</code>
+                <code>absolute inset-x-center</code>
             </TableCell>
             <TableCell>
                 Position an element outside of the normal flow of the document, and center it horizontaly inside the
@@ -57,7 +57,7 @@ Utilities for controlling the position of an element.
         </TableRow>
         <TableRow>
             <TableCell>
-                <code>absolute-cover</code>
+                <code>absolute inset-0</code>
             </TableCell>
             <TableCell>
                 Position an element outside of the normal flow of the document, and cover the nearest positioned parent.
@@ -71,7 +71,7 @@ Utilities for controlling the position of an element.
         </TableRow>
         <TableRow>
             <TableCell>
-                <code>sticky-top</code>
+                <code>sticky top-0</code>
             </TableCell>
             <TableCell>
                 Position an element relative to the normal flow of the document until its containing block crosses the{' '}
@@ -81,7 +81,7 @@ Utilities for controlling the position of an element.
         </TableRow>
         <TableRow>
             <TableCell>
-                <code>sticky-bottom</code>
+                <code>sticky bottom-0</code>
             </TableCell>
             <TableCell>
                 Position an element relative to the normal flow of the document until its containing block crosses the{' '}
@@ -229,7 +229,7 @@ Utilities for controlling the the stack order of an element.
     <TableBody>
         <TableRow>
             <TableCell>
-                <code>upper-layer</code>
+                <code>z-up</code>
             </TableCell>
             <TableCell>
                 Position an element on a layer over other elements, even positioned. Read the{' '}
@@ -247,6 +247,6 @@ Position an element outside of the normal flow of the document, and anchor it ag
     language="html"
     format
     code={`
-<div className="absolute top right upper-layer">Lorem ipsum dolor sit amet</div>
+<div className="absolute top-0 right-0 z-up">Lorem ipsum dolor sit amet</div>
 `}
 />

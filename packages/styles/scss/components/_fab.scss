@@ -1,10 +1,12 @@
+@use "sass:map";
+
 .fab {
 	&#{&} {
 		// Specificity -_-v
 		position: fixed;
 		inset-block-end: em(64);
 		inset-inline-end: var(--right, 1.6em);
-		z-index: $layer-floating-action-buttons;
+		z-index: map.get($z-indexes, 'floating-action-buttons');
 		block-size: rem(56);
 		inline-size: rem(56);
 		border-radius: 50%;

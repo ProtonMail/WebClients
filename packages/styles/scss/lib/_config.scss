@@ -100,14 +100,16 @@ $conversation-icon-size: 32 !default;
 $conversation-icon-size-small: 28 !default;
 
 // Z-indexes for stacking management
-$layer-upper: 10;
-$layer-dropzone: 100;
-$layer-floating-action-buttons: 200;
-$layer-drawer: 300;
-$layer-floating-frames: 400;
-$layer-previewer: 500;
-$layer-transfer-manager: 600;
-$layer-mobile-navigation: 700;
-$layer-modals: 800;
-$layer-notifications: 900;
-$layer-tooltips: 1000;
+$z-indexes: (
+	'up'                     : 10,
+	'dropzone'               : 100,
+	'floating-action-buttons': 200,
+	'drawer'                 : 300,
+	'floating-frames'        : 400,
+	'previewer'              : 500,
+	'transfer-manager'       : 600,
+	'mobile-navigation'      : 700,
+	'modals'                 : 800,
+	'notifications'          : 900,
+	'tooltips'               : 1000,
+);

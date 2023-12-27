@@ -1,9 +1,10 @@
+@use "sass:map";
 @import '~@proton/styles/scss/lib';
 
 .modal-two {
 	position: fixed;
 	inset: 0;
-	z-index: $layer-modals;
+	z-index: map.get($z-indexes, 'modals');
 	display: flex;
 	padding: 3.5em;
 	overflow: hidden;
@@ -63,7 +64,7 @@
 	}
 
 	&--is-behind-backdrop {
-		z-index: $layer-modals - 1;
+		z-index: map.get($z-indexes, 'modals') - 1;
 	}
 
 	@keyframes anime-modal-two-in {

@@ -1,10 +1,11 @@
+@use "sass:map";
 @import '~@proton/styles/scss/lib';
 
 .searchfield-disabled-input-button {
 	position: absolute;
 	inline-size: 100%;
 	block-size: 100%;
-	z-index: $layer-upper;
+	z-index: map.get($z-indexes, 'up');
 	cursor: default;
 }
 

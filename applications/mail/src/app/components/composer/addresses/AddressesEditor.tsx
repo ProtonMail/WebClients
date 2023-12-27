@@ -76,7 +76,7 @@ const AddressesEditor = ({
                         classname="composer-editor-to flex-1"
                         anchorRef={toListAnchorRef}
                     />
-                    <span className="flex children-min-size-auto flex-nowrap shrink-0 max-w-1/2 sm:max-w-1/3 md:max-w-none self-start pt-2 composer-to-ccbcc-buttons sticky-top">
+                    <span className="flex children-min-size-auto flex-nowrap shrink-0 max-w-1/2 sm:max-w-1/3 md:max-w-none self-start pt-2 composer-to-ccbcc-buttons sticky top-0">
                         <>
                             {!ccExpanded && (
                                 <AddressesCCButton

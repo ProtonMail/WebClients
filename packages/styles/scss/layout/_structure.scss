@@ -1,5 +1,5 @@
+@use "sass:map";
 @use 'sass:math';
-
 @import '~@proton/styles/scss/lib';
 
 /* fix bug on Chrome */
@@ -126,7 +126,7 @@ html,
 	@include media('<=small') {
 		position: fixed;
 		inset: 0;
-		z-index: $layer-mobile-navigation;
+		z-index: map.get($z-indexes, 'mobile-navigation');
 		inline-size: 100%;
 		max-inline-size: rem(272);
 		max-block-size: none;
@@ -164,7 +164,7 @@ html,
 			background-color: var(--backdrop-norm);
 			position: fixed;
 			inset: 0;
-			z-index: $layer-mobile-navigation - 1;
+			z-index: map.get($z-indexes, 'mobile-navigation') - 1;
 		}
 	}
 }

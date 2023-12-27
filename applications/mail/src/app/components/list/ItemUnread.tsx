@@ -22,7 +22,7 @@ const ItemUnread = ({ element, labelID, className, isSelected }: Props) => {
 
     return (
         <Tooltip title={c('Alt').t`Unread email`}>
-            <span className={clsx('flex items-center shrink-0 z-index-1', className)}>
+            <span className={clsx('flex items-center shrink-0 z-1', className)}>
                 <Icon
                     name="circle-filled"
                     size={12}

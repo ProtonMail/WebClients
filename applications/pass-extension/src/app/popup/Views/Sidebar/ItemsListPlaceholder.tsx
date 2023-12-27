@@ -124,7 +124,7 @@ export const ItemsListPlaceholder: VFC = () => {
                             <Icon
                                 name={icon}
                                 color="var(--interaction-norm)"
-                                className="absolute left-custom top bottom my-auto"
+                                className="absolute left-custom top-0 bottom-0 my-auto"
                                 style={{ '--left-custom': '1rem' }}
                             />
                             <span>{label}</span>

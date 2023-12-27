@@ -28,7 +28,7 @@ const OfferLayout = ({ children, offer }: Props) => {
                             srcSet={`${sideImage2x}`}
                         />
                         <img
-                            className="offer-side-image absolute absolute-center-y"
+                            className="offer-side-image absolute inset-y-center"
                             src={sideImage}
                             srcSet={`${sideImage}, ${sideImage2x} 2x`}
                             alt=""
