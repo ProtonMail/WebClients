@@ -82,7 +82,7 @@ export const createActivationService = () => {
      * if not in production - use sync.html session to workaround the
      * the SSL handshake (net:ERR_SSL_CLIENT_AUTH_CERT_NEEDED) */
     const handleStartup = withContext(async (ctx) => {
-        const loggedIn = await ctx.service.auth.init({ forceLock: true });
+        const loggedIn = await ctx.service.auth.init({ forceLock: true, retryable: true });
 
         if (ENV === 'development' && RESUME_FALLBACK) {
             if (!loggedIn) {
@@ -112,7 +112,7 @@ export const createActivationService = () => {
 
             if (BUILD_TARGET === 'chrome') void ctx.service.injection.updateInjections();
             ctx.service.onboarding.onUpdate();
-            return ctx.service.auth.init();
+            return ctx.service.auth.init({ forceLock: false, retryable: true });
         }
 
         if (details.reason === 'install') {
@@ -167,7 +167,7 @@ export const createActivationService = () => {
              * connectivity issues -> when network becomes available, automatically
              * resume session without requiring a `Sign back in` click from the lobby) */
             const shouldResume = clientStale(status) || (clientErrored(status) && endpoint === 'popup');
-            if (shouldResume) void ctx.service.auth.init();
+            if (shouldResume) void ctx.service.auth.init({ forceLock: true, retryable: false });
 
             /* dispatch a wakeup action for this specific receiver.
              * tracking the wakeup's request metadata can be consumed
