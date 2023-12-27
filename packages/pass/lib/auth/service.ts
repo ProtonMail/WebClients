@@ -24,6 +24,7 @@ import {
     type AuthSession,
     type PersistedAuthSession,
     encryptPersistedSession,
+    encryptPersistedSessionWithKey,
     isValidSession,
     resumeSession,
 } from './session';
@@ -367,6 +368,9 @@ export const createAuthService = (config: AuthServiceConfig) => {
                 logger.info(`[AuthService] Resuming persisted session.`);
                 config.onAuthorize?.();
 
+                /** Partially configure the auth store before resume sequence.
+                 * `keyPassword` and `sessionLockToken` are still encrypted at
+                 * this point */
                 authStore.setUserID(persistedSession.UserID);
                 authStore.setUID(persistedSession.UID);
                 authStore.setLocalID(persistedSession.LocalID);
@@ -374,20 +378,28 @@ export const createAuthService = (config: AuthServiceConfig) => {
                 authStore.setRefreshToken(persistedSession.RefreshToken);
                 authStore.setRefreshTime(persistedSession.RefreshTime);
 
+                /* Start listening for API errors before resuming the session in order
+                 * to gracefully handle inactive session errors during this sequence */
                 authService.listen();
-                const session = await resumeSession({
+
+                const { session, sessionKey } = await resumeSession({
                     api,
                     authStore,
                     persistedSession,
                     onSessionInvalid: config.onSessionInvalid,
                 });
+
                 logger.info(`[AuthService] Session successfuly resumed`);
 
                 /* on `forceLock: true` remove the `sessionLockToken` from the
-                 * session result to trigger an auth lock during the login sequence */
-                if (options?.forceLock) {
-                    logger.info(`[AuthService] Forcing session lock`);
+                 * session result to trigger an auth lock during the login sequence.
+                 * Re-persist the session without the `sessionLockToken` in order
+                 * to ensure the `forceLock` effect propagates to future resumes. */
+                if (session.sessionLockToken && options?.forceLock) {
+                    logger.info(`[AuthService] Force lock requested `);
                     delete session.sessionLockToken;
+                    const sanitizedPS = await encryptPersistedSessionWithKey(session, sessionKey);
+                    await config?.onSessionPersist?.(sanitizedPS);
                 }
 
                 return await authService.login(session);
