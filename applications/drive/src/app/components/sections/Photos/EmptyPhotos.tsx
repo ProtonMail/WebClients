@@ -32,7 +32,7 @@ export const EmptyPhotos: FC<Props> = () => {
                     <img width="140" src={playStoreSvg} alt={c('Info').t`${DRIVE_APP_NAME} on Play Store`} />
                 </Href>
                 <div className="relative">
-                    <div className="absolute left right top-custom" style={{ '--top-custom': '-15px' }}>
+                    <div className="absolute left-0 right-0 top-custom" style={{ '--top-custom': '-15px' }}>
                         <span className={clsx('bg-weak color-primary px-2 py-0.5 rounded-full text-semibold')}>{c(
                             'Info'
                         ).t`Coming soon`}</span>

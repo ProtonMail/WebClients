@@ -1,3 +1,4 @@
+@use "sass:map";
 @use 'sass:math';
 @import '~@proton/styles/scss/lib';
 
@@ -9,7 +10,7 @@ $searchoverlay-breakpoint: em(1000, 16);
 	--max-height: 100vh;
 
 	position: fixed;
-	z-index: $layer-modals;
+	z-index: map.get($z-indexes, 'modals');
 	transform-origin: top center;
 	color: var(--text-norm);
 	animation: anime-dropdown-in 0.15s easing(ease-out-cubic) both;
@@ -99,7 +100,9 @@ $searchoverlay-breakpoint: em(1000, 16);
 		background-color: var(--background-norm);
 		background-image: radial-gradient(farthest-side at 50% 0, var(--backdrop-norm), transparent),
 			radial-gradient(farthest-side at 50% 100%, var(--backdrop-norm), transparent);
-		background-position: 50% 0, 0 100%;
+		background-position:
+			50% 0,
+			0 100%;
 		background-size: calc(100% - #{rem(20)}) rem(3);
 		background-repeat: no-repeat;
 

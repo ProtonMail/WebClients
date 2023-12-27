@@ -1,3 +1,4 @@
+@use "sass:map";
 @import '~@proton/styles/scss/lib';
 
 :root {
@@ -46,7 +47,7 @@
 		position: absolute;
 		inset-inline-end: 0;
 		block-size: 100%;
-		z-index: $layer-drawer; // Need to be on top of the mail content, but not modals
+		z-index: map.get($z-indexes, 'drawer'); // Need to be on top of the mail content, but not modals
 		box-shadow: var(--shadow-lifted);
 	}
 

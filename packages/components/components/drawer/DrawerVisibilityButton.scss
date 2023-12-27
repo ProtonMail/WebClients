@@ -1,8 +1,9 @@
+@use "sass:map";
 @import '~@proton/styles/scss/lib';
 
 .drawer-visibility-control {
 	position: absolute;
-	z-index: $layer-upper;
+	z-index: map.get($z-indexes, 'up');
 	inset-block-end: rem(8);
 	inset-inline-end: 0;
 	inline-size: rem(46); // same as the drawer sidebar size

@@ -114,13 +114,13 @@ const EmailForwardingContainer = ({ request }: Props) => {
                 if (error) {
                     if (error.type === ErrorType.Expired) {
                         return (
-                            <div className="absolute-center">
+                            <div className="absolute inset-center">
                                 <ExpiredError type="forwarding" />
                             </div>
                         );
                     }
                     return (
-                        <div className="absolute-center">
+                        <div className="absolute inset-center">
                             <GenericError className="text-center">
                                 {c('email_forwarding_2023: Error message, recovery')
                                     .t`Please try opening the link again.`}
@@ -130,7 +130,7 @@ const EmailForwardingContainer = ({ request }: Props) => {
                 }
                 if (loading) {
                     return (
-                        <div className="absolute-center text-center">
+                        <div className="absolute inset-center text-center">
                             <CircleLoader size="large" />
                         </div>
                     );

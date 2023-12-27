@@ -12,7 +12,7 @@ export const LobbyLayout: FC<{ overlay: boolean }> = ({ overlay, children }) => 
             style={{ '--anime-duration': '450ms', '--anime-delay': '100ms' }}
         >
             <div
-                className="absolute absolute-center-x top-custom anime-fade-in"
+                className="absolute inset-x-center top-custom anime-fade-in"
                 style={{ '--top-custom': '-200px', '--anime-duration': '550ms', '--anime-delay': '150ms' }}
             >
                 <img

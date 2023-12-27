@@ -1,3 +1,4 @@
+@use "sass:map";
 @import '~@proton/styles/scss/lib';
 
 .composer {
@@ -5,7 +6,7 @@
 	inset-block-end: 0;
 
 	// When the composer is in focus state, to be placed over any other composer frames
-	z-index: $layer-floating-frames + 1;
+	z-index: map.get($z-indexes, 'floating-frames') + 1;
 	block-size: var(--h-custom, #{rem(640)});
 	inline-size: var(--w-custom, #{rem(640)});
 	max-block-size: 100%;
@@ -14,7 +15,9 @@
 	background: var(--background-norm);
 	box-shadow: var(--shadow-lifted);
 	color: var(--text-norm);
-	transition: 0.15s easing(ease-out-quint), transform 0s;
+	transition:
+		0.15s easing(ease-out-quint),
+		transform 0s;
 	transform: translateX(var(--composer-drag-offset));
 	border-end-start-radius: 0;
 	border-end-end-radius: 0;
@@ -106,8 +109,7 @@
 		flex-wrap: wrap;
 		inline-size: 100%;
 		position: relative;
-		overflow-y: auto;
-		overflow-x: hidden;
+		overflow: hidden auto;
 
 		&.field {
 			padding-block: 0.25em;
@@ -166,8 +168,7 @@
 			margin-inline: 20px 0;
 			padding: 0;
 			max-block-size: rem(200);
-			overflow-y: auto;
-			overflow-x: hidden;
+			overflow: hidden auto;
 		}
 
 		li {
@@ -343,8 +344,7 @@
 	}
 
 	&-body-container {
-		overflow-y: auto;
-		overflow-x: hidden;
+		overflow: hidden auto;
 
 		textarea {
 			resize: none;
@@ -482,7 +482,7 @@
 	&--is-blur {
 		--blur-opacity: 0.25;
 
-		z-index: $layer-floating-frames;
+		z-index: map.get($z-indexes, 'floating-frames');
 		box-shadow: var(--shadow-norm);
 
 		.composer-title-bar {

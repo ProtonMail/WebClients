@@ -1,8 +1,9 @@
+@use "sass:map";
 @import '~@proton/styles/scss/lib';
 
 .eventpopover {
 	position: absolute;
-	z-index: $layer-floating-frames;
+	z-index: map.get($z-indexes, 'floating-frames');
 	transform-origin: 50%;
 	padding: rem(24);
 	overflow: auto;
