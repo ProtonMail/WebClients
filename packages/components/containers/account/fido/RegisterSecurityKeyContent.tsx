@@ -18,7 +18,7 @@ const RegisterSecurityKeyContent = ({ loading, error, checkbox }: Props) => {
         <>
             <div className="flex justify-center mt-4 mb-6 relative">
                 {loading && (
-                    <div className="text-center absolute absolute-center">
+                    <div className="text-center absolute inset-center">
                         <CircleLoader className="color-primary" />
                     </div>
                 )}

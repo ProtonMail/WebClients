@@ -1,10 +1,11 @@
+@use 'sass:map';
 @import '~@proton/styles/scss/lib';
 
 .drawer-app-header {
 	&-dropdownItem {
 		inset-block-start: 100%;
 		background-color: var(--background-norm);
-		z-index: $layer-floating-frames;
+		z-index: map.get($z-indexes, 'floating-frames');
 		border-end-end-radius: var(--border-radius-xl);
 		border-end-start-radius: var(--border-radius-xl);
 	}
@@ -12,7 +13,6 @@
 
 // Need to shift slightly the button to the left and to lower the padding
 .drawer-header-button {
-	padding-inline-start: 0.25em;
-	padding-inline-end: 0.25em;
+	padding-inline: 0.25em;
 	margin-inline-start: -0.25em;
 }

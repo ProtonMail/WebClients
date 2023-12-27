@@ -267,7 +267,7 @@ const AddressesInput = ({
                     </div>
                 </div>
                 {addContactButton ? (
-                    <span className="shrink-0 self-start sticky-top">
+                    <span className="shrink-0 self-start sticky top-0">
                         <Tooltip title={c('Action').t`Insert contacts`}>
                             <Button
                                 type="button"

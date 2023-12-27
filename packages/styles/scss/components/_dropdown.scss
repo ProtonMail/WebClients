@@ -1,3 +1,5 @@
+@use "sass:map";
+
 .dropdown {
 	/*
 		The border is set on the parent, but the max height is set on a child container.
@@ -13,7 +15,7 @@
 	--max-height: min(var(--custom-max-height, 100vh), 100vh);
 
 	position: fixed;
-	z-index: $layer-modals;
+	z-index: map.get($z-indexes, 'modals');
 
 	// NOTE: Don't use logical properties. RTL positioning is done in JS.
 	/* stylelint-disable */

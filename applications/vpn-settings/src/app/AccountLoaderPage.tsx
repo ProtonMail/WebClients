@@ -17,7 +17,7 @@ const AccountLoaderPage = ({ text, loaderClassName = '' }: Props) => {
 
     return (
         <div className="h-full">
-            <div className={clsx(['absolute-center text-center'])}>
+            <div className={clsx(['absolute inset-center text-center'])}>
                 <div>
                     <img
                         className={clsx(['w-custom', loaderClassName])}

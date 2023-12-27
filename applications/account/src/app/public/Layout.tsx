@@ -95,7 +95,7 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
             {hasDecoration ? (
                 <>
                     <LayoutFooter app={APP_NAME} className="shrink-0 text-center p-4" version={appVersion} />
-                    <div className="static lg:fixed m-0 lg:m-8 lg:mr-12 mb-4 lg:mb-12 bottom right text-center lg:text-right text-sm sm:text-rg">
+                    <div className="static lg:fixed m-0 lg:m-8 lg:mr-12 mb-4 lg:mb-12 bottom-0 right-0 text-center lg:text-right text-sm sm:text-rg">
                         {bottomRight}
                     </div>
                     <p
