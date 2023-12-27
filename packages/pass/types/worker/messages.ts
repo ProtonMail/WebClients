@@ -1,6 +1,7 @@
 import type { AnyAction } from 'redux';
 import type { Tabs } from 'webextension-polyfill';
 
+import type { AuthResumeOptions } from '@proton/pass/lib/auth/service';
 import type { ExportRequestPayload } from '@proton/pass/lib/export/types';
 import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
 import type { Notification } from '@proton/pass/store/actions/with-notification';
@@ -45,6 +46,8 @@ export enum WorkerMessageType {
     ACTIVITY_PROBE = 'ACTIVITY_PROBE',
     ALIAS_CREATE = 'ALIAS_CREATE',
     ALIAS_OPTIONS = 'ALIAS_OPTIONS',
+    AUTH_INIT = 'AUTH_INIT',
+    AUTH_UNLOCK = 'AUTH_UNLOCK',
     AUTOFILL_OTP_CHECK = 'AUTOFILL_OTP_CHECK',
     AUTOFILL_PASSWORD_OPTIONS = 'AUTOFILL_PASSWORD_OPTIONS',
     AUTOFILL_QUERY = 'AUTOFILL_QUERY',
@@ -76,17 +79,15 @@ export enum WorkerMessageType {
     PORT_UNAUTHORIZED = 'PORT_UNAUTHORIZED',
     RESOLVE_EXTENSION_KEY = 'RESOLVE_EXTENSION_KEY',
     RESOLVE_TAB = 'RESOLVE_TAB',
-    RESOLVE_USER_DATA = 'RESOLVE_USER_DATA',
+    RESOLVE_USER = 'RESOLVE_USER',
     SENTRY_CS_EVENT = 'SENTRY_CS_EVENT',
     SETTINGS_UPDATE = 'SETTINGS_UPDATE',
     SHARE_SERVER_EVENT = 'SHARE_SERVER_EVENT',
     START_CONTENT_SCRIPT = 'START_CONTENT_SCRIPT',
-    STORE_ACTION = 'STORE_ACTION',
+    STORE_DISPATCH = 'STORE_DISPATCH',
     TELEMETRY_EVENT = 'TELEMETRY_EVENT',
     UNLOAD_CONTENT_SCRIPT = 'UNLOAD_CONTENT_SCRIPT',
-    UNLOCK_REQUEST = 'UNLOCK_REQUEST',
     UPDATE_AVAILABLE = 'UPDATE_AVAILABLE',
-    WORKER_INIT = 'WORKER_INIT',
     WORKER_STATUS = 'WORKER_STATUS',
     WORKER_WAKEUP = 'WORKER_WAKEUP',
 }
@@ -100,6 +101,8 @@ export type AccountProbeMessage = { type: WorkerMessageType.ACCOUNT_PROBE };
 export type ActivityProbeMessage = { type: WorkerMessageType.ACTIVITY_PROBE };
 export type AliasCreateMessage = WithPayload<WorkerMessageType.ALIAS_CREATE, { url: string; alias: AliasCreationDTO }>;
 export type AliasOptionsMessage = { type: WorkerMessageType.ALIAS_OPTIONS };
+export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: AuthResumeOptions };
+export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, { pin: string }>;
 export type AutofillOTPCheckMessage = { type: WorkerMessageType.AUTOFILL_OTP_CHECK };
 export type AutofillPasswordOptionsMessage = { type: WorkerMessageType.AUTOFILL_PASSWORD_OPTIONS };
 export type AutofillQueryMessage = { type: WorkerMessageType.AUTOFILL_QUERY };
@@ -130,17 +133,15 @@ export type PopupInitMessage = WithPayload<WorkerMessageType.POPUP_INIT, { tabId
 export type PortUnauthorizedMessage = { type: WorkerMessageType.PORT_UNAUTHORIZED };
 export type ResolveExtensionKeyMessage = { type: WorkerMessageType.RESOLVE_EXTENSION_KEY };
 export type ResolveTabIdMessage = { type: WorkerMessageType.RESOLVE_TAB };
-export type ResolveUserDataMessage = { type: WorkerMessageType.RESOLVE_USER_DATA };
+export type ResolveUserDataMessage = { type: WorkerMessageType.RESOLVE_USER };
 export type SentryCSEventMessage = WithPayload<WorkerMessageType.SENTRY_CS_EVENT, { message: string; data: any }>;
 export type SettingsUpdateMessage = WithPayload<WorkerMessageType.SETTINGS_UPDATE, ProxiedSettings>;
 export type ShareServerEventMessage = WithPayload<WorkerMessageType.SHARE_SERVER_EVENT, ShareEventPayload>;
 export type StartContentScriptMessage = { type: WorkerMessageType.START_CONTENT_SCRIPT };
-export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_ACTION, { action: AnyAction }>;
+export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_DISPATCH, { action: AnyAction }>;
 export type TelemetryEventMessage = WithPayload<WorkerMessageType.TELEMETRY_EVENT, { event: TelemetryEvent }>;
 export type UnloadContentScriptMessage = { type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT };
-export type UnlockRequestMessage = WithPayload<WorkerMessageType.UNLOCK_REQUEST, { pin: string }>;
 export type UpdateAvailableMessage = { type: WorkerMessageType.UPDATE_AVAILABLE };
-export type WorkerInitMessage = { type: WorkerMessageType.WORKER_INIT; payload?: { forceLock: boolean } };
 export type WorkerStatusMessage = WithPayload<WorkerMessageType.WORKER_STATUS, { state: AppState }>;
 export type WorkerWakeUpMessage = WithPayload<WorkerMessageType.WORKER_WAKEUP, { tabId: TabId }>;
 
@@ -152,6 +153,8 @@ export type WorkerMessage =
     | ActivityProbeMessage
     | AliasCreateMessage
     | AliasOptionsMessage
+    | AuthInitMessage
+    | AuthUnlockMessage
     | AutofillOTPCheckMessage
     | AutofillPasswordOptionsMessage
     | AutofillQueryMessage
@@ -191,9 +194,7 @@ export type WorkerMessage =
     | StoreActionMessage
     | TelemetryEventMessage
     | UnloadContentScriptMessage
-    | UnlockRequestMessage
     | UpdateAvailableMessage
-    | WorkerInitMessage
     | WorkerStatusMessage
     | WorkerWakeUpMessage;
 
@@ -206,6 +207,8 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.ACCOUNT_FORK]: { payload: ExtensionForkResultPayload };
     [WorkerMessageType.ALIAS_CREATE]: Outcome;
     [WorkerMessageType.ALIAS_OPTIONS]: Outcome<{ options: AliasOptions; needsUpgrade: boolean }>;
+    [WorkerMessageType.AUTH_INIT]: AppState;
+    [WorkerMessageType.AUTH_UNLOCK]: Outcome<{}, { canRetry: boolean }>;
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & SelectedItem);
     [WorkerMessageType.AUTOFILL_PASSWORD_OPTIONS]: { options: GeneratePasswordOptions };
     [WorkerMessageType.AUTOFILL_QUERY]: AutofillResult;
@@ -222,9 +225,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.POPUP_INIT]: PopupInitialState;
     [WorkerMessageType.RESOLVE_EXTENSION_KEY]: { key: string };
     [WorkerMessageType.RESOLVE_TAB]: { tab: Maybe<Tabs.Tab> };
-    [WorkerMessageType.RESOLVE_USER_DATA]: { user: MaybeNull<User> };
-    [WorkerMessageType.UNLOCK_REQUEST]: Outcome<{}, { canRetry: boolean }>;
-    [WorkerMessageType.WORKER_INIT]: AppState;
+    [WorkerMessageType.RESOLVE_USER]: { user: MaybeNull<User> };
     [WorkerMessageType.WORKER_WAKEUP]: AppState & { settings: ProxiedSettings; features: FeatureFlagState };
 };
 

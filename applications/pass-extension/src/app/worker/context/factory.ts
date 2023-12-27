@@ -2,11 +2,7 @@ import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { createActivationService } from 'proton-pass-extension/app/worker/services/activation';
 import { createAliasService } from 'proton-pass-extension/app/worker/services/alias';
 import { createApiProxyService } from 'proton-pass-extension/app/worker/services/api-proxy';
-import {
-    clearSessionLockAlarm,
-    createAuthService,
-    syncSessionLockAlarm,
-} from 'proton-pass-extension/app/worker/services/auth';
+import { createAuthService } from 'proton-pass-extension/app/worker/services/auth';
 import { createAutoFillService } from 'proton-pass-extension/app/worker/services/autofill';
 import { createAutoSaveService } from 'proton-pass-extension/app/worker/services/autosave';
 import { createExportService } from 'proton-pass-extension/app/worker/services/export';
@@ -25,10 +21,8 @@ import { getExtensionVersion } from 'proton-pass-extension/lib/utils/version';
 
 import { exposeApi } from '@proton/pass/lib/api/api';
 import { createApi } from '@proton/pass/lib/api/factory';
-import { SESSION_KEYS, isValidPersistedSession } from '@proton/pass/lib/auth/session';
 import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import {
-    clientAuthorized,
     clientErrored,
     clientLocked,
     clientReady,
@@ -36,20 +30,16 @@ import {
     clientStatusResolved,
     clientUnauthorized,
 } from '@proton/pass/lib/client';
-import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
-import { cacheCancel, notification, sessionLockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
-import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import createStore from '@proton/shared/lib/helpers/store';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
-import store from '../store';
-import { WorkerContext, withContext } from './context';
+import { WorkerContext } from './context';
 
 export const createWorkerContext = (config: ProtonConfig) => {
     const storage = createStorageService();
@@ -74,116 +64,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
         status: AppStatus.IDLE,
         authStore,
         service: {
-            auth: createAuthService({
-                api,
-                authStore,
-                onInit: withContext(async (ctx, options) => {
-                    /* if worker is logged out (unauthorized or locked) during an init call,
-                     * this means the login or resumeSession calls failed - we can safely early
-                     * return as the authentication store will have been configured */
-                    if (clientUnauthorized(ctx.status)) return false;
-                    if (clientAuthorized(ctx.status)) return true;
-                    return context.service.auth.resumeSession(undefined, options);
-                }),
-
-                getPersistedSession: async () => {
-                    const ps = await context.service.storage.local.getItem('ps');
-                    if (!ps) return null;
-
-                    const persistedSession = JSON.parse(ps);
-                    return isValidPersistedSession(persistedSession) ? persistedSession : null;
-                },
-
-                getMemorySession: () => context.service.storage.session.getItems(SESSION_KEYS),
-                onAuthorize: () => context.setStatus(AppStatus.AUTHORIZING),
-                onAuthorized: () => {
-                    context.setStatus(AppStatus.AUTHORIZED);
-                    context.service.activation.boot();
-                    context.service.autofill.updateTabsBadgeCount();
-                    setSentryUID(authStore.getUID());
-                },
-                onUnauthorized: () => {
-                    store.dispatch(cacheCancel());
-                    store.dispatch(stopEventPolling());
-
-                    /* important to call setStatus before dispatching the
-                     * the `stateDestroy` action : we might have active
-                     * clients currently consuming the store data */
-                    context.setStatus(AppStatus.UNAUTHORIZED);
-                    store.dispatch(stateDestroy());
-
-                    setSentryUID(undefined);
-                    PassCrypto.clear();
-
-                    context.service.formTracker.clear();
-                    context.service.onboarding.reset();
-                    context.service.telemetry?.stop();
-                    context.service.autofill.clearTabsBadgeCount();
-                    context.service.apiProxy.clear?.().catch(noop);
-
-                    void context.service.storage.session.clear();
-                    void context.service.storage.local.clear();
-                    void clearSessionLockAlarm();
-                },
-                onSessionInvalid: () => {
-                    authStore.clear();
-                    void context.service.storage.local.remove('ps');
-                    void context.service.storage.session.clear();
-                },
-
-                onSessionEmpty: () => context.setStatus(AppStatus.UNAUTHORIZED),
-
-                onSessionLockUpdate: (lock) => {
-                    syncSessionLockAlarm(lock).catch(noop);
-                    store.dispatch(sessionLockSync(lock));
-                },
-
-                onSessionLocked: () => {
-                    context.setStatus(AppStatus.LOCKED);
-                    context.service.autofill.clearTabsBadgeCount();
-                    PassCrypto.clear();
-
-                    store.dispatch(cacheCancel());
-                    store.dispatch(stopEventPolling());
-                    store.dispatch(stateDestroy());
-
-                    void clearSessionLockAlarm();
-                    void context.service.auth.init();
-                },
-
-                onSessionPersist: (encryptedSession) => {
-                    void context.service.storage.local.setItem('ps', encryptedSession);
-                    void context.service.storage.session.setItems(authStore.getSession());
-                },
-
-                onSessionResumeFailure: () => context.setStatus(AppStatus.ERROR),
-
-                onNotification: (data) =>
-                    store.dispatch(
-                        notification({
-                            ...data,
-                            type: 'error',
-                            key: 'authservice',
-                            deduplicate: true,
-                        })
-                    ),
-
-                onSessionRefresh: async (localID, { AccessToken, RefreshToken, RefreshTime }) => {
-                    const persistedSession = await context.service.auth.config.getPersistedSession(localID);
-
-                    if (persistedSession) {
-                        /* update the persisted session tokens without re-encrypting the
-                         * session blob as session refresh may happen before a full login
-                         * with a partially hydrated authentication store. */
-                        persistedSession.AccessToken = AccessToken;
-                        persistedSession.RefreshToken = RefreshToken;
-                        persistedSession.RefreshTime = RefreshTime;
-
-                        void context.service.storage.local.setItem('ps', JSON.stringify(persistedSession));
-                        void context.service.storage.session.setItems({ AccessToken, RefreshToken, RefreshTime });
-                    }
-                },
-            }),
+            auth: createAuthService(api, authStore),
             activation: createActivationService(),
             alias: createAliasService(),
             apiProxy: createApiProxyService(),
