@@ -20,6 +20,7 @@ import { useNotifications } from '../../../hooks';
 import RequestNewCodeModal from './RequestNewCodeModal';
 import Text from './Text';
 import VerifyCodeForm from './VerifyCodeForm';
+import accountVerified from './account-verified.svg';
 import {
     HumanVerificationSteps,
     OwnershipCache,
@@ -134,6 +135,9 @@ const OwnershipMethod = ({
         try {
             const { Token } = await api<VerificationTokenResult>(verifyVerificationCode(token, method, code));
             await onSubmit(Token, verificationModel.method);
+            if (verifyApp) {
+                onChangeStep(HumanVerificationSteps.SUCCESSFUL_CODE);
+            }
         } catch (error: any) {
             const { code } = getApiError(error);
 
@@ -171,6 +175,17 @@ const OwnershipMethod = ({
                 >
                     {c('Action').t`Request new code`}
                 </Button>
+            </>
+        );
+    }
+
+    if (step === HumanVerificationSteps.SUCCESSFUL_CODE) {
+        return (
+            <>
+                <div className="text-center">
+                    <img src={accountVerified} alt="verification successful" />
+                    <p>{c('Info').t`You can now return to the application to continue`}</p>
+                </div>
             </>
         );
     }
