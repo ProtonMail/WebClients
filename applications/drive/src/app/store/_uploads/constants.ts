@@ -35,7 +35,7 @@ export const MAX_BLOCKS_PER_UPLOAD = MAX_ENCRYPTED_BLOCKS + MAX_UPLOADING_BLOCKS
  * worker. Even though browsers support up to hunderds of web workers, still
  * it spawns threads.
  */
-export const MAX_UPLOAD_BLOCKS_LOAD = 10;
+export const MAX_UPLOAD_BLOCKS_LOAD = 4;
 
 /**
  * MAX_UPLOAD_FOLDER_LOAD limits the number of total folder being created
