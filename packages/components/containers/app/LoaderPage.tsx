@@ -55,7 +55,7 @@ const LoaderPage = ({ documentTitle = '', text, loaderClassName = '' }: Props) =
             onDrop={preventDefaultEvent}
         >
             {!isDrawerApp && <ElectronDraggeableHeader />}
-            <div className={clsx(['absolute-center text-center', isDrawerApp && 'w-9/10'])}>
+            <div className={clsx(['absolute inset-center text-center', isDrawerApp && 'w-9/10'])}>
                 {isDrawerApp && <CircleLoader className="m-auto color-primary" size="medium" />}
                 {!isIframe && (
                     <div>

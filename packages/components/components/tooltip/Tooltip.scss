@@ -1,3 +1,4 @@
+@use "sass:map";
 @import '~@proton/styles/scss/lib';
 
 .tooltip {
@@ -5,7 +6,7 @@
 	$arrow-width: 0.5em;
 
 	position: fixed;
-	z-index: $layer-tooltips;
+	z-index: map.get($z-indexes, 'tooltips');
 	min-inline-size: $arrow-width;
 	max-inline-size: $tooltip-width;
 	scale: 1.001; // To avoid text jittering

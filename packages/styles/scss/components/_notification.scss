@@ -1,8 +1,10 @@
+@use "sass:map";
+
 .notifications-container {
 	position: fixed;
 	inset-block-end: calc(em(24) + env(safe-area-inset-bottom));
 	inset-inline-start: 50%;
-	z-index: $layer-notifications;
+	z-index: map.get($z-indexes, 'notifications');
 	transform: translateX(-50%);
 	filter: drop-shadow(var(--shadow-lifted));
 
@@ -172,5 +174,5 @@
 }
 
 .global-loader {
-	z-index: $layer-notifications;
+	z-index: map.get($z-indexes, 'notifications');
 }

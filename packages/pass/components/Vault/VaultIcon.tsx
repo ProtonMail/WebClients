@@ -48,7 +48,7 @@ export const VaultIcon: VFC<Props> = ({
         }}
     >
         <Icon
-            className="absolute-center"
+            className="absolute inset-center"
             name={icon === 'pass-all-vaults' || icon === 'pass-trash' ? icon : VAULT_ICON_MAP[icon]}
             size={size}
         />

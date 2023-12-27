@@ -56,7 +56,7 @@ const UserDropdownButton = ({ user, isOpen, notification, ...rest }: Props, ref:
             {notification && (
                 <NotificationDot
                     color={notification}
-                    className="absolute top right notification-dot--top-right"
+                    className="absolute top-0 right-0 notification-dot--top-right"
                     alt={c('Info').t`Attention required`}
                 />
             )}
