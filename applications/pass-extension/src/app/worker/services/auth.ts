@@ -4,6 +4,7 @@ import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import store from 'proton-pass-extension/app/worker/store';
 import { c } from 'ttag';
 
+import { SESSION_RESUME_MAX_RETRIES, SESSION_RESUME_RETRY_TIMEOUT } from '@proton/pass/constants';
 import { AccountForkResponse, getAccountForkResponsePayload } from '@proton/pass/lib/auth/fork';
 import { type AuthService, createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
 import { SESSION_KEYS, isValidPersistedSession } from '@proton/pass/lib/auth/session';
@@ -24,20 +25,24 @@ import {
 } from '@proton/pass/store/actions';
 import type { Api, WorkerMessageResponse } from '@proton/pass/types';
 import { AppStatus, SessionLockStatus, WorkerMessageType } from '@proton/pass/types';
+import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { FIBONACCI_LIST, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
 import { withContext } from '../context';
 
 export const SESSION_LOCK_ALARM = 'alarm::session-lock';
+export const SESSION_RESUME_ALARM = 'alarm::session-resume';
 
 export const createAuthService = (api: Api, authStore: AuthStore): AuthService => {
     const authService = createCoreAuthService({
         api,
         authStore,
         onInit: withContext(async (ctx, options) => {
+            void browser.alarms.clear(SESSION_RESUME_ALARM);
+
             /* if worker is logged out (unauthorized or locked) during an init call,
              * this means the login or resumeSession calls failed - we can safely early
              * return as the authentication store will have been configured */
@@ -56,7 +61,10 @@ export const createAuthService = (api: Api, authStore: AuthStore): AuthService =
 
         getMemorySession: withContext((ctx) => ctx.service.storage.session.getItems(SESSION_KEYS)),
 
-        onAuthorize: withContext((ctx) => ctx.setStatus(AppStatus.AUTHORIZING)),
+        onAuthorize: withContext((ctx) => {
+            void browser.alarms.clear(SESSION_RESUME_ALARM);
+            ctx.setStatus(AppStatus.AUTHORIZING);
+        }),
 
         onAuthorized: withContext((ctx, _) => {
             ctx.setStatus(AppStatus.AUTHORIZED);
@@ -130,17 +138,27 @@ export const createAuthService = (api: Api, authStore: AuthStore): AuthService =
             void ctx.service.storage.session.setItems(authStore.getSession());
         }),
 
-        onSessionResumeFailure: withContext((ctx) => ctx.setStatus(AppStatus.ERROR)),
+        onSessionResumeFailure: withContext(async (ctx, options) => {
+            ctx.setStatus(AppStatus.ERROR);
+
+            if (options.retryable) {
+                const retryCount = authService.resumeSession.callCount;
+                const retryInfo = `(${retryCount}/${SESSION_RESUME_MAX_RETRIES})`;
+
+                if (retryCount <= SESSION_RESUME_MAX_RETRIES) {
+                    const retryIdx = Math.min(retryCount, FIBONACCI_LIST.length - 1);
+                    const delay = SESSION_RESUME_RETRY_TIMEOUT * FIBONACCI_LIST[retryIdx];
+                    const when = (getEpoch() + delay) * 1_000;
+                    logger.info(`[AuthService] Retrying session resume in ${delay}s ${retryInfo}`);
+
+                    await browser.alarms.clear(SESSION_RESUME_ALARM);
+                    browser.alarms.create(SESSION_RESUME_ALARM, { when });
+                } else logger.info(`[AuthService] Reached max number of resume retries ${retryInfo}`);
+            }
+        }),
 
         onNotification: (data) =>
-            store.dispatch(
-                notification({
-                    ...data,
-                    type: 'error',
-                    key: 'authservice',
-                    deduplicate: true,
-                })
-            ),
+            store.dispatch(notification({ ...data, type: 'error', key: 'authservice', deduplicate: true })),
 
         onSessionRefresh: withContext(async (ctx, localID, { AccessToken, RefreshToken, RefreshTime }) => {
             const persistedSession = await ctx.service.auth.config.getPersistedSession(localID);
@@ -160,7 +178,7 @@ export const createAuthService = (api: Api, authStore: AuthStore): AuthService =
     });
 
     const handleInit = withContext<MessageHandlerCallback<WorkerMessageType.AUTH_INIT>>(async (ctx, message) => {
-        await ctx.service.auth.init(message.payload);
+        await ctx.service.auth.init(message.options);
         return ctx.getState();
     });
 
@@ -174,11 +192,11 @@ export const createAuthService = (api: Api, authStore: AuthStore): AuthService =
                 return getAccountForkResponsePayload(AccountForkResponse.SUCCESS);
             } catch (error: unknown) {
                 authService.logout({ soft: true }).catch(noop);
-                const additionalMessage = error instanceof Error ? error.message : '';
 
-                authService.config.onNotification?.({
-                    text: c('Warning').t`Unable to sign in to ${PASS_APP_NAME}. ${additionalMessage}`,
-                });
+                const additionalMessage = error instanceof Error ? error.message : '';
+                const text = c('Warning').t`Unable to sign in to ${PASS_APP_NAME}. ${additionalMessage}`;
+                authService.config.onNotification?.({ text });
+
                 throw getAccountForkResponsePayload(AccountForkResponse.ERROR, error);
             }
         }
@@ -222,6 +240,8 @@ export const createAuthService = (api: Api, authStore: AuthStore): AuthService =
         switch (name) {
             case SESSION_LOCK_ALARM:
                 return authService.lock({ soft: false });
+            case SESSION_RESUME_ALARM:
+                return authService.init({ forceLock: true, retryable: true });
         }
     });
 
