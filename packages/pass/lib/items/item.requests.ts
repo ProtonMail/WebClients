@@ -19,7 +19,7 @@ import type {
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import chunk from '@proton/utils/chunk';
 
 import { serializeItemContent } from './item-proto.transformer';

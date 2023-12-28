@@ -1,6 +1,6 @@
 import type { ItemImportIntent } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { msToEpoch } from '@proton/pass/utils/time/get-epoch';
+import { msToEpoch } from '@proton/pass/utils/time/epoch';
 
 import { readCSV } from '../helpers/csv.reader';
 import { ImportProviderError } from '../helpers/error';
