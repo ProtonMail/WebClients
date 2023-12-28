@@ -34,8 +34,8 @@ import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
+import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { useCreateFilters } from '../../hooks/actions/useCreateFilters';
-import { useMoveToFolder } from '../../hooks/actions/useMoveToFolder';
 import { useGetElementsFromIDs, useGetMessagesOrElementsFromIDs } from '../../hooks/mailbox/useElements';
 
 import './MoveDropdown.scss';
@@ -72,7 +72,16 @@ interface Props {
     onCheckAll?: (check: boolean) => void;
 }
 
-const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, isMessage: inputIsMessage, selectAll, onCheckAll }: Props) => {
+const MoveDropdown = ({
+    selectedIDs,
+    labelID,
+    onClose,
+    onLock,
+    breakpoints,
+    isMessage: inputIsMessage,
+    selectAll,
+    onCheckAll,
+}: Props) => {
     const [uid] = useState(generateUID('move-dropdown'));
     const [folders = []] = useFolders();
     const [user] = useUser();
