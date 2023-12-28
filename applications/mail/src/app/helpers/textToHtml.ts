@@ -94,6 +94,7 @@ const replaceSignature = (
     const signatureText = toText(signatureTemplate)
         .replace(/\u200B/g, '')
         .trim();
+
     return input.replace(signatureText, SIGNATURE_PLACEHOLDER);
 };
 
