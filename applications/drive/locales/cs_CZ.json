@@ -565,9 +565,6 @@
       "Save": [
         "Uložit"
       ],
-      "Save version as copy": [
-        "Uložit verzi jako kopii"
-      ],
       "Search": [
         "Vyhledat"
       ],
@@ -862,14 +859,8 @@
       "High speed streaming": [
         "Vysokorychlostní streamování"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Prémiový ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Prémiová ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Prémiový správce hesel"
@@ -928,7 +919,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } Desktopová aplikace"
+        "${ MAIL_APP_NAME } desktopová aplikace"
       ]
     },
     "Bug category": {
@@ -1162,6 +1153,11 @@
       ],
       "URL": [
         "URL"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Obrázek kontaktu"
       ]
     },
     "Contact type label": {
@@ -2112,7 +2108,7 @@
         "Předběžný přístup k novým aplikacím a funkcím"
       ],
       "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Předčasný přístup k desktopové aplikaci ${ MAIL_APP_NAME }"
+        "Předběžný přístup k desktopové aplikaci ${ MAIL_APP_NAME }"
       ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Placené funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_APP_NAME }"
@@ -3454,18 +3450,6 @@
         "${ selectedCount } vybráno",
         "${ selectedCount } vybráno"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } vybraná složka",
-        "${ selectedFoldersCount } vybrané složky",
-        "${ selectedFoldersCount } vybraných složek",
-        "${ selectedFoldersCount } vybraných složek"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } vybraný štítek",
-        "${ selectedFoldersCount } vybrané štítky",
-        "${ selectedFoldersCount } vybraných štítků",
-        "${ selectedFoldersCount } vybraných štítků"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } složka vybrána",
         "${ selectedFoldersCountLocalized } vybrané složky",
@@ -3838,6 +3822,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Chcete-li dosáhnout nejlepších výsledků, vyhněte se streamování a činnostem náročným na paměť nebo rozdělte nahrávání na menší části."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Přepošlete příchozí mail z jiného účtu do vaší bezpečné ${ MAIL_APP_NAME } schránky."
+      ],
       "Free up some space or add more storage space.": [
         "Uvolněte místo nebo přidejte další úložný prostor."
       ],
@@ -3892,11 +3879,11 @@
       "Import mailbox": [
         "Importovat poštovní schránku"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importujte své e-maily, kalendáře a kontakty z jiných služeb do ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Import vašich dat z ${ fromEmail } do ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indexování položek ${ esProgress } z ${ totalProgressToShow }"
@@ -4390,6 +4377,9 @@
       "Trash is empty": [
         "Koš je prázdný"
       ],
+      "Try ${ DRIVE_APP_NAME }: Free forever": [
+        "Vyzkoušejte ${ DRIVE_APP_NAME }: Navždy zdarma"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyzkoušejte si nové funkce, aktualizace a produkty ${ BRAND_NAME } ještě před jejich zveřejněním. Toto znovu načte aplikaci"
       ],
@@ -4476,6 +4466,9 @@
       ],
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "bude obnoveno na verzi z ${ formattedRevisionDate }. Všechny ostatní verze budou i nadále uloženy."
+      ],
+      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
+        "S ${ DRIVE_APP_NAME } jsou vaše data chráněna koncovým šifrováním."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Chcete získat nový ověřovací kód nebo použít alternativní metodu ověřování?"
@@ -4591,6 +4584,20 @@
     "Info on errors": {
       "Click for details": [
         "Klikněte pro podrobnosti"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } vybraná složka",
+        "${ selectedFoldersCount } vybrané složky",
+        "${ selectedFoldersCount } vybraných složek",
+        "${ selectedFoldersCount } vybraných složek"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } vybraný štítek",
+        "${ selectedFoldersCount } vybrané štítky",
+        "${ selectedFoldersCount } vybraných štítků",
+        "${ selectedFoldersCount } vybraných štítků"
       ]
     },
     "Item": {

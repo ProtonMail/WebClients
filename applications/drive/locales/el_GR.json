@@ -556,9 +556,6 @@
       "Save": [
         "Αποθήκευση"
       ],
-      "Save version as copy": [
-        "Αποθήκευση έκδοσης ως αντιγράφου"
-      ],
       "Search": [
         "Αναζήτηση"
       ],
@@ -845,14 +842,8 @@
       "High speed streaming": [
         "Ροή υψηλής ταχύτητας"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Premium Διαχειριστής Κωδικών Πρόσβασης"
@@ -3343,14 +3334,6 @@
         "${ selectedCount } επιλεγμένο",
         "${ selectedCount } επιλεγμένα"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } επιλεγμένος φάκελος",
-        "${ selectedFoldersCount } επιλεγμένοι φάκελοι"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } επιλεγμένη ετικέτα",
-        "${ selectedFoldersCount } επιλεγμένες ετικέτες"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } επιλεγμένος φάκελος",
         "${ selectedFoldersCountLocalized } επιλεγμένοι φάκελοι"
@@ -3703,6 +3686,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Για καλύτερα αποτελέσματα, αποφύγετε ροή ή εντατικές σε μνήμη δραστηριότητες ή χωρίστε τη μεταφόρτωση σε μικρότερες παρτίδες."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Προωθήστε την εισερχόμενη αλληλογραφία από άλλο λογαριασμό στα ασφαλή εισερχόμενά σας ${ MAIL_APP_NAME }."
+      ],
       "Free up some space or add more storage space.": [
         "Ελευθερώστε χώρο ή προσθέστε περισσότερο χώρο αποθήκευσης."
       ],
@@ -3755,11 +3741,11 @@
       "Import mailbox": [
         "Εισαγωγή γραμματοκιβωτίου"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Εισαγάγετε τα μηνύματα ηλεκτρονικού ταχυδρομείου, τα ημερολόγια και τις επαφές σας από άλλη υπηρεσία στο ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ fromEmail } προς ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Γίνεται εισαγωγή δεδομένων από ${ importedEmailAddress } προς ${ toEmail }."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Δεικτοδότηση στοιχείων: ${ esProgress } από ${ totalProgressToShow }"
