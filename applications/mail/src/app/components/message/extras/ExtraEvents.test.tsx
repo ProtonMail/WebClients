@@ -380,7 +380,7 @@ END:VCALENDAR`;
         await render(<ExtraEvents message={message} />, false);
 
         // test single banner
-        expect(screen.getAllByText('Unsupported invitation')).toHaveLength(1);
+        expect(await screen.findAllByText('Unsupported invitation')).toHaveLength(1);
     });
 
     describe('organizer mode', () => {
@@ -415,7 +415,7 @@ END:VCALENDAR`;
 
             await render(<ExtraEvents message={message} />, false);
 
-            expect(screen.getByText(/This response is out of date. You have no calendars./)).toBeInTheDocument();
+            expect(await screen.findByText(/This response is out of date. You have no calendars./)).toBeInTheDocument();
         });
 
         it('method=counter: decryption error', async () => {
