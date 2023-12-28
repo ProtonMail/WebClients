@@ -9,7 +9,7 @@ export const MAX_ITEM_NAME_LENGTH = 200;
 export const MAX_ITEM_NOTE_LENGTH = 25_000;
 
 export const SESSION_RESUME_RETRY_TIMEOUT = 15; /* seconds */
-export const SESSION_RESUME_MAX_RETRIES = 5;
+export const SESSION_RESUME_MAX_RETRIES = 7;
 
 export const PASS_WEB_APP_URL = 'https://pass.proton.me';
 export const PASS_LEARN_MORE_URL = 'https://proton.me/pass';
