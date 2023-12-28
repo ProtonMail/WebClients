@@ -30,9 +30,6 @@
       "activate": [
         "激活"
       ],
-      "Activate ${ Name }@pm.me": [
-        "激活 ${ Name }@pm.me"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "激活 ${ user.Name }@pm.me"
       ],
@@ -1236,14 +1233,11 @@
       "High speed streaming": [
         "高速看视频"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "高级 ${ DRIVE_SHORT_APP_NAME } 账户"
+      "Premium ${ appName }": [
+        "高级 ${ appName } 账户"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "高级 ${ MAIL_SHORT_APP_NAME } 与 ${ CALENDAR_SHORT_APP_NAME } 账户"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "高级 ${ VPN_SHORT_APP_NAME } 账户"
       ],
       "Premium Password Manager": [
         "高级密码管理器"
@@ -2810,17 +2804,11 @@
       "Daily": [
         "每天"
       ],
-      "Daily, ${ timesString }": [
-        "每天, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "每天, 直到${ untilString }"
       ],
       "Every ${ interval } days": [
         "每 ${ interval } 天"
-      ],
-      "Every ${ interval } days, ${ timesString }": [
-        "每 ${ interval } 天，${ timesString }"
       ],
       "Every ${ interval } days, ${ untilString }": [
         "每 ${ interval } 天，${ untilString }"
@@ -3167,8 +3155,14 @@
       "Decline": [
         "拒绝"
       ],
+      "Next": [
+        "下一步"
+      ],
       "Remove “${ value }”": [
         "移除 ”${ value }”"
+      ],
+      "Save": [
+        "保存"
       ],
       "Set up email forwarding": [
         "设置邮件自动转发"
@@ -4212,6 +4206,9 @@
       "Access to all countries": [
         "解说全部线路"
       ],
+      "Add": [
+        "添加"
+      ],
       "Connection for up to ${ plusVpnConnections } devices": [
         "最多可连接 ${ plusVpnConnections } 台设备"
       ],
@@ -4622,6 +4619,9 @@
       ],
       "Time": [
         "时间"
+      ],
+      "User": [
+        "用户"
       ]
     },
     "Header for addresses table": {
@@ -5026,12 +5026,23 @@
         "您的日程中有部分内容我们不支持，这些日程将不会被导入。"
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } addresses": [
-        "${ amountOfAddresses } 个地址"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "检测到多余的重复密钥，请单独上传以获取更多信息。"
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "密钥 ${ fingerprint } 已上传"
+      ],
+      "Selected color:": [
+        "所选颜色"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您授权${ enableDesktopNotifications }。"
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "${ boldName } 将设置为默认日历。"
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 如果继续，您将无法访问您账户中的所有当前加密数据。"
@@ -5050,9 +5061,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的前沿加密技术意味着没有人能够窃取您的密码，包括我们自己。"
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } 将设置为默认日历。"
       ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 个新日历"
@@ -5077,9 +5085,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }：小图预览"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } 将设置为默认日历。"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } 也允许只用一个密码代替登录和邮箱密码。输入您要使用的密码并点击保存即可转为单密码模式。"
@@ -5123,12 +5128,6 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "已选中 ${ providerCalendars.length } 个日历中的 ${ selectedCalendarsTotal } 个"
       ],
-      "${ selectedFoldersCount } folders selected": [
-        "已选择 ${ selectedFoldersCount } 个文件夹"
-      ],
-      "${ selectedFoldersCount } labels selected": [
-        "已选择 ${ selectedFoldersCount } 个标签"
-      ],
       "${ selectedFoldersCountLocalized } folders selected": [
         "已选择 ${ selectedFoldersCountLocalized } 个文件夹"
       ],
@@ -5137,9 +5136,6 @@
       ],
       "${ storage } storage": [
         "${ storage } 存储空间"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } 存储空间"
       ],
       "${ userFound } users found": [
         "已找到 ${ userFound } 位用户"
@@ -5836,9 +5832,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "将您的数据从 ${ fromEmail } 导入至 ${ toEmail }。"
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "按需定制 ${ BRAND_NAME }，提升您的使用体验。"
@@ -7065,17 +7058,6 @@
         "您的账户是由 Mozilla 管理的，请联系 Mozilla 获取帮助。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "检测到多余的重复密钥，请单独上传以获取更多信息。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "密钥 ${ fingerprint } 已上传"
-      ],
-      "Selected color:": [
-        "所选颜色"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "令下层文件夹的颜色与上层文件夹一致"
@@ -7579,6 +7561,9 @@
       ],
       "Awarded": [
         "已奖励"
+      ],
+      "Beta": [
+        "测试版"
       ],
       "Billing address": [
         "账单地址"
@@ -8933,6 +8918,26 @@
         "VPN 速度一般"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "浏览所有 ${ BRAND_NAME } 账户等级"
+      ],
+      "From ${ price }": [
+        "低至 ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "继续使用 ${ currentPlanName } 账户"
+      ],
+      "Upgrade": [
+        "升级账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "前去结算"
@@ -8972,26 +8977,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "开通 ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "浏览所有 ${ BRAND_NAME } 账户等级"
-      ],
-      "From ${ price }": [
-        "低至 ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "继续使用 ${ currentPlanName } 账户"
-      ],
-      "Upgrade": [
-        "升级账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
       ]
     },
     "new_plans: feature": {

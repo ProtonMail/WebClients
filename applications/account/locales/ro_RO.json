@@ -50,9 +50,6 @@
       "activate": [
         "activare"
       ],
-      "Activate ${ Name }@pm.me": [
-        "Activare ${ Name }@pm.me"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "Activare ${ user.Name }@pm.me"
       ],
@@ -1368,14 +1365,11 @@
       "High speed streaming": [
         "Transmisii în flux de mare viteză"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } premium"
+      "Premium ${ appName }": [
+        "${ appName } premium"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } premium"
       ],
       "Premium Password Manager": [
         "Manager de parole premium"
@@ -3004,9 +2998,6 @@
       "Daily": [
         "Zilnic"
       ],
-      "Daily, ${ timesString }": [
-        "Zilnic, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Zilnic, ${ untilString }"
       ],
@@ -3014,11 +3005,6 @@
         "Zilnic",
         "La fiecare ${ interval } zile",
         "La fiecare ${ interval } de zile"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Zilnic, ${ timesString }",
-        "La fiecare ${ interval } zile, ${ timesString }",
-        "La fiecare ${ interval } de zile, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Zilnic, ${ untilString }",
@@ -3156,6 +3142,9 @@
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
         "Versiunea beta a aplicației pentru desktop ${ MAIL_APP_NAME } este în prezent limitată la abonații cu planul ${ BRAND_NAME } Visionary. Aceasta va fi disponibilă pentru toți utilizatorii la începutul anului 2024."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Modificați azi planul sau reveniți la începutul lui 2024 pentru a avea acces."
       ]
     },
     "Disable account": {
@@ -5264,6 +5253,9 @@
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Aveți deja un cont? ${ signIn }"
+      ],
+      "Already have an account? ${ signIn } or ${ switchAccount }": [
+        "Aveți deja un cont? ${ signIn } sau ${ switchAccount }."
       ]
     },
     "Go to sign up": {
@@ -5797,14 +5789,23 @@
         "O parte din conținutul calendarului nu este suportat și nu va fi importat."
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } adresă",
-        "${ amountOfAddresses } adrese",
-        "${ amountOfAddresses } de adrese"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Cheia ${ fingerprint } a fost deja încărcată."
+      ],
+      "Selected color:": [
+        "Culoare selectată:"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "Calendarul ${ boldName } va fi setat ca implicit."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Veți pierde accesul la toate datele actuale criptate din cont dacă continuați."
@@ -5823,9 +5824,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Tehnologia de criptare ${ BRAND_NAME } semnifică faptul că nimeni nu vă poate accesa parola - nici măcar noi."
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "Calendarul ${ calendarName } va fi setat ca implicit."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "Un calendar nou",
@@ -5854,9 +5852,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: pictogramă cu rezoluție mică"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "Calendarul ${ firstRemainingCalendarName } va fi setat ca implicit."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } dorește să vă partajeze date în ${ PASS_APP_NAME }"
@@ -5929,16 +5924,6 @@
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } calendare",
         "${ selectedCalendarsTotal } din ${ providerCalendars.length } de calendare"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "S-a selectat un folder",
-        "S-au selectat ${ selectedFoldersCount } foldere",
-        "S-au selectat ${ selectedFoldersCount } de foldere"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "S-a selectat o etichetă",
-        "S-au selectat ${ selectedFoldersCount } etichete",
-        "S-au selectat ${ selectedFoldersCount } de etichete"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "Este selectat un folder",
         "Sunt selectate ${ selectedFoldersCountLocalized } foldere",
@@ -5951,9 +5936,6 @@
       ],
       "${ storage } storage": [
         "Stocare ${ storage }"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } spațiu"
       ],
       "${ userFound } user found": [
         "S-a găsit ${ userFound } utilizator",
@@ -6709,9 +6691,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Se importă datele de la ${ fromEmail } la ${ toEmail }."
       ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Se importă datele de la ${ importedEmailAddress } la ${ toEmail }."
-      ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Îmbunătățiți-vă experiența ${ BRAND_NAME } adaptând aplicație după nevoile personale."
       ],
@@ -7064,6 +7043,9 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Dacă ștergeți acest domeniu, toate adresele asociate cu el vor fi dezactivate."
+      ],
+      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Dacă ștergeți filtrul ${ nameDeleted } se va opri procesarea tuturor acțiunilor automate pe care le declanșează."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "După apăsarea pe butonul de confirmare, contul va mai avea ${ creditsRemaining } credite rămase."
@@ -8061,17 +8043,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Abonamentul vă este gestionat de Mozilla. Contactați Mozilla pentru suport."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Cheia ${ fingerprint } a fost deja încărcată."
-      ],
-      "Selected color:": [
-        "Culoare selectată:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9644,6 +9615,9 @@
       "Sign in": [
         "Autentificare"
       ],
+      "switch account": [
+        "schimbați contul"
+      ],
       "Terms": [
         "Termeni"
       ],
@@ -10083,6 +10057,26 @@
         "Viteză VPN medie"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Păstrez contul ${ currentPlanName } $"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Continuare revizuire"
@@ -10122,26 +10116,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Trecere la ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Păstrez contul ${ currentPlanName } $"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
       ]
     },
     "new_plans: feature": {
@@ -13718,6 +13692,9 @@
       "Delete calendar": [
         "Ștergere calendar"
       ],
+      "Delete filter?": [
+        "Ștergeți filtrul?"
+      ],
       "Delete folder?": [
         "Ștergere folder?"
       ],
@@ -14255,6 +14232,9 @@
       ],
       "Summary": [
         "Sumar"
+      ],
+      "Switch account": [
+        "Comutare cont"
       ],
       "Switch to one-password mode": [
         "Comutați în modul o singură parolă"

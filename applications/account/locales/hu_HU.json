@@ -41,9 +41,6 @@
       "activate": [
         "aktiválás"
       ],
-      "Activate ${ Name }@pm.me": [
-        "${ Name }@pm.me aktiválása"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktiválása"
       ],
@@ -1222,14 +1219,11 @@
       "6 users": [
         "6 felhasználó"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Prémium ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Prémium ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Prémium ${ MAIL_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Prémium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Prémium jelszókezelő"
@@ -2731,19 +2725,12 @@
       "Daily": [
         "Naponta"
       ],
-      "Daily, ${ timesString }": [
-        "Naponta, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Naponta, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "Minden ${ interval }. napon",
         "Minden ${ interval }. napon"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Minden ${ interval }. napon, ${ timesString }",
-        "Minden ${ interval }. napon, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Minden ${ interval }. napon, ${ untilString }",
@@ -3197,6 +3184,11 @@
     "Enabled 2FA": {
       "2FA": [
         "Kétfaktoros hitelesítés"
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
       ]
     },
     "Error": {
@@ -4998,13 +4990,20 @@
         "A naptár tartalmának bizonyos részei nem támogatottak és nem kerülnek importálásra."
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } cím",
-        "${ amountOfAddresses } cím"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A kulcs ${ fingerprint } már feltöltésre került"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "${ boldName } lesz az alapértelmezett naptár."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } A fiókjában lévő összes titkosított adathoz elveszti a hozzáférést ha folytatja."
@@ -5023,9 +5022,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } titkosítási technológiájának köszönhetően senki sem fér hozzá a jelszavához - még mi sem."
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } lesz az alapértelmezett naptár."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } új naptár",
@@ -5052,9 +5048,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: alacsony felbontású előnézet"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } lesz az alapértelmezett naptár."
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "A ${ MAIL_APP_NAME } egy-jelszavas módban is használható, amely leváltja a külön bejelentkezési és e-mail titkosítási jelszavakat. Egy-jelszavas módra váltáshoz, adja meg a kívánt jelszót, majd kattintson a Mentés gombra."
@@ -5107,14 +5100,6 @@
         "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból",
         "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } mappa kiválasztva",
-        "${ selectedFoldersCount } mappa kiválasztva"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } címke kiválasztva",
-        "${ selectedFoldersCount } címke kiválasztva"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } mappa kiválasztva",
         "${ selectedFoldersCountLocalized } mappa kiválasztva"
@@ -5125,9 +5110,6 @@
       ],
       "${ storage } storage": [
         "${ storage } tárhely"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } tárhely"
       ],
       "${ userFound } user found": [
         "${ userFound } felhasználót találtam",
@@ -5800,9 +5782,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Adatok importálása innen: ${ fromEmail }, ide: ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Adatok importálása a(z) ${ importedEmailAddress } címről a(z) ${ toEmail } címre."
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Javítsa a ${ BRAND_NAME } használatának élményét az alkalmazás saját igényekhez való igazításával."
@@ -6964,14 +6943,6 @@
         "Az előfizetését a Mozilla kezeli. Kérjük, forduljon a Mozilla ügyfélszolgálatához az előfizetés lemondásához."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "További duplikált kulcsok is találhatók. Töltse fel egyesével a pontosabb információkért."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A kulcs ${ fingerprint } már feltöltésre került"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Bekapcsolásakor az almappák a szülő mappa színét öröklik."
@@ -7486,6 +7457,9 @@
       ],
       "Awarded": [
         "Megszerezve"
+      ],
+      "Beta": [
+        "Béta"
       ],
       "Billing address": [
         "Számlázási cím"
@@ -8858,6 +8832,23 @@
         "Közepes VPN sebesség"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "További ${ BRAND_NAME } csomagok megismerése"
+      ],
+      "From ${ price }": [
+        "Már ${ price }-tól"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Megtartom a ${ currentPlanName } fiókot"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Tovább az áttekintéshez"
@@ -8897,23 +8888,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Váltás ${ upsellPlanHumanSize } csomagra"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "További ${ BRAND_NAME } csomagok megismerése"
-      ],
-      "From ${ price }": [
-        "Már ${ price }-tól"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Megtartom a ${ currentPlanName } fiókot"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: feature": {
@@ -10578,6 +10552,9 @@
       ]
     },
     "session_recovery:status:info": {
+      "Available": [
+        "Elérhető"
+      ],
       "Pending": [
         "Függőben"
       ]

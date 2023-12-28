@@ -44,9 +44,6 @@
       "activate": [
         "rmed"
       ],
-      "Activate ${ Name }@pm.me": [
-        "Rmed ${ Name }@pm.me"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "Rmed ${ user.Name }@pm.me"
       ],
@@ -2593,19 +2590,12 @@
       "Daily": [
         "Yal ass"
       ],
-      "Daily, ${ timesString }": [
-        "Yal ass, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Yal ass, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "Yal ${ interval } ass",
         "Yal ${ interval } n wussan"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Yal ${ interval } ass, ${ timesString }",
-        "Yal ${ interval } n wussan, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Yal ${ interval } ass, ${ untilString }",
@@ -4609,13 +4599,17 @@
         "Aḥric seg ugbur n uwitay-ik·im ur yettusefrak ara rnu ur d-yettwaktar ara."
       ]
     },
+    "info": {
+      "Key ${ fingerprint } has already been uploaded": [
+        "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
+      ]
+    },
     "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } tansa",
-        "${ amountOfAddresses } tansiwin"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } t•yesra tasiregt-ik•im ɣer ${ enableDesktopNotifications }."
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "${ boldName } ad yettusbadu d awitay amezwer."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } iseḥbes akatar i kra n wakud acku truḥ-as tuqqna d usaǧǧaw-nniḍen n yimayl-ik·im. Ttxil-k·m ales tuqqna."
@@ -4625,9 +4619,6 @@
       ],
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "${ BRAND_NAME } ad yeεreḍ ad ikemmel aktar akken kan ara iwennez usaǧǧaw n yimayl-ik·im ${ bandwidthLimitLink } amiḍan-ik·im. Ur teḥwaǧeḍ ad tgeḍ kra. Ma yella tesfesxeḍ aktar-inek·inem, ur tezmireḍ ara ad t-tkemmleḍ, ilaq ad as-d-tεawdeḍ seg tazwara."
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } ad yettusbadu d awitay amezwer."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } n uwitay amaynut",
@@ -4651,9 +4642,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: taskant s ucegger adday"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } ad yettusbadu d awitay amezwer."
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } yezmer daɣen ad yettwaseqdec s yiwen kan n wawal uffir ara yemselsin win n tuqqna d win n tnaka urmas. Akken ad tuɣaleḍ ar uskar n yiwen n wawal uffir, sekcem awal uffir i tebɣid ad tesqedceḍ sakin sit ɣef Sekles."
@@ -4696,14 +4684,6 @@
         "${ selectedCalendarsTotal } seg ${ providerCalendars.length } n uwitay",
         "${ selectedCalendarsTotal } seg ${ providerCalendars.length } n yiwitayen"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } d akaram yettwafernen",
-        "${ selectedFoldersCount } d ikaramen yettwafernen"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } n tebzimt yettwafernen",
-        "${ selectedFoldersCount } n tebzimin yettwafernen"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } d ukaram yettwefrenn",
         "${ selectedFoldersCountLocalized } d ikaramen yettwefrenn"
@@ -4714,9 +4694,6 @@
       ],
       "${ storage } storage": [
         "${ storage } n uḥraz"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } n uḥraz"
       ],
       "${ userFound } user found": [
         "${ userFound } useqdac yettwafen",
@@ -5245,9 +5222,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Taktert n yisefka-inek•inem seg ${ fromEmail } ɣer ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Taktert n yisefka-inek•inem seg ${ importedEmailAddress } ɣer ${ toEmail }."
       ],
       "inactive": [
         "ur iteddu yara"
@@ -6054,11 +6028,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Amulteɣ-inek·m yettwasefrek s ɣur Mozilla. Ttxil-k·m nermes tallalt n Mozilla."
-      ]
-    },
-    "info": {
-      "Key ${ fingerprint } has already been uploaded": [
-        "Tasarut ${ fingerprint } tesiliḍ-tt yakan"
       ]
     },
     "Info - folder colouring feature": {
@@ -7847,6 +7816,26 @@
         "Arured alemmas VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Smiren akk iɣawasen ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Seg ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Eǧǧ amiḍan-iw ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
+      ]
+    },
     "new_plans: action": {
       "Continue with Free": [
         "Kemmel s uɣawas n baṭel"
@@ -7880,26 +7869,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Leqqem ɣer ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Smiren akk iɣawasen ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Seg ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Eǧǧ amiḍan-iw ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {
