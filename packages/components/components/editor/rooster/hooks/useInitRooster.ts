@@ -58,9 +58,16 @@ const useInitRooster = ({
         const iframe = iframeRef.current as HTMLIFrameElement;
         const iframeDocument = iframe.contentWindow?.document as Document;
 
+        /**
+         * Disable Dark Reader on the composer iframe to avoid sending censored emails
+         * https://github.com/darkreader/darkreader/blob/main/CONTRIBUTING.md#disabling-dark-reader-on-your-site
+         */
+        const disableDarkReaderMeta = '<meta name="darkreader-lock">';
+
         iframeDocument.open();
         iframeDocument.write(`
         <head>
+            ${disableDarkReaderMeta}
             <style>
                 ${iframeCss}
                 ${themeCSSVariables}
