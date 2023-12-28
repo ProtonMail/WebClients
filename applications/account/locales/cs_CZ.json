@@ -50,9 +50,6 @@
       "activate": [
         "aktivovat"
       ],
-      "Activate ${ Name }@pm.me": [
-        "Aktivovat ${ Name }@pm.me"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovat ${ user.Name }@pm.me"
       ],
@@ -1371,14 +1368,11 @@
       "High speed streaming": [
         "Vysokorychlostní streamování"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Prémiový ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Prémiový ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Prémiová ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Prémiový správce hesel"
@@ -1557,7 +1551,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } Desktopová aplikace"
+        "${ MAIL_APP_NAME } desktopová aplikace"
       ]
     },
     "Bug category": {
@@ -3014,9 +3008,6 @@
       "Daily": [
         "Denně"
       ],
-      "Daily, ${ timesString }": [
-        "Denně, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Denně, ${ untilString }"
       ],
@@ -3026,12 +3017,6 @@
         "Každých ${ interval } dnů",
         "Každých ${ interval } dnů"
       ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Každý ${ interval } den, ${ timesString }",
-        "Každé ${ interval } dny, ${ timesString }",
-        "Každých ${ interval } dnů, ${ timesString }",
-        "Každých ${ interval } dnů, ${ timesString }"
-      ],
       "Every ${ interval } day, ${ untilString }": [
         "Každý ${ interval } den, ${ untilString }",
         "Každé ${ interval } dny, ${ untilString }",
@@ -3040,6 +3025,17 @@
       ],
       "until ${ dateString }": [
         "do ${ dateString }"
+      ]
+    },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "Denně, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Každý ${ interval } den, ${ timesString }",
+        "Každé ${ interval } dny, ${ timesString }",
+        "Každých ${ interval } dnů, ${ timesString }",
+        "Každých ${ interval } dnů, ${ timesString }"
       ]
     },
     "Day": {
@@ -3165,10 +3161,13 @@
     },
     "Desktop app upsell": {
       "Access to the desktop app is limited": [
-        "Přístup k desktopové aplikaci je omezený"
+        "Přístup k aplikaci pro stolní PC je omezený"
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Beta verze desktopové aplikace ${ MAIL_APP_NAME } je v současné době omezena na ${ BRAND_NAME } předplatitelům tarifu Visionary. Všem uživatelům bude k dispozici na začátku roku 2024."
+        "Beta verze desktopové aplikace ${ MAIL_APP_NAME } je v současné době omezena na ${ BRAND_NAME } předplatitele tarifu Visionary. Všem uživatelům bude k dispozici na začátku roku 2024."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Navyšte svůj tarif dnes a nebo se vraťte a získejte přístup na začátku roku 2024."
       ]
     },
     "Disable account": {
@@ -3719,7 +3718,7 @@
         "Předběžný přístup k novým aplikacím a funkcím"
       ],
       "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Předčasný přístup k desktopové aplikaci ${ MAIL_APP_NAME }"
+        "Předběžný přístup k desktopové aplikaci ${ MAIL_APP_NAME }"
       ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Placené funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_APP_NAME }"
@@ -5293,6 +5292,9 @@
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Máte již účet? ${ signIn }"
+      ],
+      "Already have an account? ${ signIn } or ${ switchAccount }": [
+        "Máte již účet? ${ signIn } nebo ${ switchAccount }"
       ]
     },
     "Go to sign up": {
@@ -5834,15 +5836,23 @@
         "Část obsahu vašeho kalendáře není podporována a nebude importována."
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } adresa",
-        "${ amountOfAddresses } adresy",
-        "${ amountOfAddresses } adres",
-        "${ amountOfAddresses } adres"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } klíče byl již nahrán"
+      ],
+      "Selected color:": [
+        "Vybraná barva:"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "${ boldName } bude nastaven jako výchozí kalendář."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Pokud budete pokračovat, ztratíte přístup ke všem aktuálním zašifrovaným datům na svém účtu."
@@ -5861,9 +5871,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Díky šifrovací technologii ${ BRAND_NAME } se k vašemu heslu nikdo nedostane - ani my ne."
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } bude nastaven jako výchozí kalendář."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nový kalendář",
@@ -5894,9 +5901,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: náhled v nízkém rozlišení"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } bude nastaven jako výchozí kalendář."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } chce s vámi sdílet data v ${ PASS_APP_NAME }"
@@ -5979,18 +5983,6 @@
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } vybraná složka",
-        "${ selectedFoldersCount } vybrané složky",
-        "${ selectedFoldersCount } vybraných složek",
-        "${ selectedFoldersCount } vybraných složek"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } vybraný štítek",
-        "${ selectedFoldersCount } vybrané štítky",
-        "${ selectedFoldersCount } vybraných štítků",
-        "${ selectedFoldersCount } vybraných štítků"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } složka vybrána",
         "${ selectedFoldersCountLocalized } vybrané složky",
@@ -6005,9 +5997,6 @@
       ],
       "${ storage } storage": [
         "${ storage } úložiště"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } úložiště"
       ],
       "${ userFound } user found": [
         "Nalezen ${ userFound } uživatel",
@@ -6777,9 +6766,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Import vašich dat z ${ fromEmail } do ${ toEmail }."
       ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
-      ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Zlepšete své zkušenosti s ${ BRAND_NAME } tím, že přizpůsobíte aplikaci svým potřebám."
       ],
@@ -7138,7 +7124,7 @@
         "Vezměte prosím na vědomí, že pokud odstraníte tuto doménu, všechny přidružené adresy budou zakázány."
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
-        "Vezměte prosím na vědomí, že pokud odstraníte filtr ${ nameDeleted }, přestaneme zpracovávat všechny automatické akce, které spouští."
+        "Vezměte prosím na vědomí, že pokud smažete filtr ${ nameDeleted }, přestaneme zpracovávat všechny automatické akce, které spouští."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Vezměte prosím na vědomí, že po kliknutí na tlačítko Potvrdit vám na účtu zbudou kredity ve výši ${ creditsRemaining }."
@@ -7339,7 +7325,7 @@
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP odesílání umožňuje službám nebo zařízením třetích stran odesílat e-maily prostřednictvím ${ MAIL_APP_NAME } pro vaše vlastní doménové adresy. Tato funkce je k dispozici pouze uživatele ${ BRAND_NAME } for Business s vlastními doménami."
+        "SMTP odesílání umožňuje službám nebo zařízením třetích stran odesílat e-maily prostřednictvím ${ MAIL_APP_NAME } pro vaše vlastní doménové adresy. Tato funkce je k dispozici pouze uživatelům ${ BRAND_NAME } for Business s vlastními doménami."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP odesílání umožňuje službám nebo zařízením třetích stran odesílat e-maily prostřednictvím ${ MAIL_APP_NAME } pro vaše vlastní doménové adresy. Chcete-li požádat o přístup, ${ createTicket } a popište vaše způsoby použití, které vlastní domény byste chtěli používat a očekávané hodinové a denní objemy e-mailů."
@@ -8149,17 +8135,6 @@
         "Váš předplatné je spravováno Mozillou. Kontaktujte prosím Mozilla podporu."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } klíče byl již nahrán"
-      ],
-      "Selected color:": [
-        "Vybraná barva:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Když je povoleno, podsložky budou mít stejnou barvu jako nadřazená složka."
@@ -8204,6 +8179,20 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Abyste se vyvarovali přerušení služeb z důvodu neuhrazených faktur, prosím zajistěte si, že máte alespoň 1 uloženou platební metodu."
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } vybraná složka",
+        "${ selectedFoldersCount } vybrané složky",
+        "${ selectedFoldersCount } vybraných složek",
+        "${ selectedFoldersCount } vybraných složek"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } vybraný štítek",
+        "${ selectedFoldersCount } vybrané štítky",
+        "${ selectedFoldersCount } vybraných štítků",
+        "${ selectedFoldersCount } vybraných štítků"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -10187,6 +10176,26 @@
         "Střední rychlost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } tarify"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Ponechat můj ${ currentPlanName } účet"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Pokračovat na rekapitulaci"
@@ -10226,26 +10235,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Přejít na ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } tarify"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Ponechat můj ${ currentPlanName } účet"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
       ]
     },
     "new_plans: feature": {
@@ -13927,7 +13916,7 @@
         "Smazat historii verzí?"
       ],
       "Desktop app": [
-        "Aplikace pro PC"
+        "Desktopová aplikace"
       ],
       "Disable ${ email }": [
         "Zakázat ${ email }"

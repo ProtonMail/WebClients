@@ -50,9 +50,6 @@
       "activate": [
         "kullanıma al"
       ],
-      "Activate ${ Name }@pm.me": [
-        "${ Name }@pm.me adresini kullanıma al"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me adresini kullanıma al"
       ],
@@ -1365,14 +1362,11 @@
       "High speed streaming": [
         "Yüksek hızda yayın akışı"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Ücretli ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Ücretli ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Ücretli ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Ücretli Parola Yöneticisi"
@@ -2994,19 +2988,12 @@
       "Daily": [
         "Günlük"
       ],
-      "Daily, ${ timesString }": [
-        "Günde bir, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Günde bir, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "${ interval } günde bir",
         "${ interval } günde bir"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "${ interval } günde bir, ${ timesString }",
-        "${ interval } günde bir, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "${ interval } günde bir, ${ untilString }",
@@ -3143,6 +3130,9 @@
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
         "${ MAIL_APP_NAME } masaüstü uygulamasının Beta sürümünü şu anda yalnızca ${ BRAND_NAME } Visionary aboneleri kullanabilir. 2024 yılının başlarında tüm kullanıcılara sunulacak."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Erişmek için tarifenizi yükseltin ya da 2024 yılının ilk aylarını bekleyin."
       ]
     },
     "Disable account": {
@@ -5235,6 +5225,9 @@
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Zaten bir hesabınız var mı? ${ signIn }"
+      ],
+      "Already have an account? ${ signIn } or ${ switchAccount }": [
+        "Zaten bir hesabınız var mı? ${ signIn }ın ya da ${ switchAccount }in"
       ]
     },
     "Go to sign up": {
@@ -5760,13 +5753,23 @@
         "Takvim içeriğinizin bir bölümü desteklenmiyor ve içe aktarılmayacak."
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } adres",
-        "${ amountOfAddresses } adres"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ek çift anahtar algılandı. Ayrıntılı bilgi almak için lütfen tek tek yükleyin."
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } anahtarı zaten yüklenmiş"
+      ],
+      "Selected color:": [
+        "Seçilmiş renk:"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "${ boldName } varsayılan takvim olarak ayarlanacak."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } İlerlerseniz hesabınızda bulunan tüm şifrelenmiş verilere erişiminizi kaybedeceksiniz."
@@ -5785,9 +5788,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } şifreleme teknolojisi kimsenin parolanıza erişememesini sağlar. Biz bile erişemeyiz."
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } varsayılan takvim olarak ayarlanacak."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } yeni takvim",
@@ -5814,9 +5814,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: düşük çözünürlüklü ön izleme"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } varsayılan takvim olarak ayarlanacak."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } sizinle ${ PASS_APP_NAME } verilerini paylaşmak istiyor"
@@ -5879,14 +5876,6 @@
         "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim",
         "${ selectedCalendarsTotal } / ${ providerCalendars.length } takvim"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } klasör seçildi",
-        "${ selectedFoldersCount } klasör seçildi"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etiket seçildi",
-        "${ selectedFoldersCount } etiket seçildi"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } klasör seçildi",
         "${ selectedFoldersCountLocalized } klasör seçildi"
@@ -5897,9 +5886,6 @@
       ],
       "${ storage } storage": [
         "${ storage } depolama alanı"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } depolama alanı"
       ],
       "${ userFound } user found": [
         "${ userFound } kullanıcı bulundu",
@@ -6641,9 +6627,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } verileriniz ${ toEmail } içine aktarılıyor."
       ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
-      ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Uygulamayı gereksinimlerinize göre uyarlayarak ${ BRAND_NAME } deneyiminizi iyileştirin."
       ],
@@ -6989,6 +6972,9 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Bu etki alanını silerseniz, ilişkili tüm adreslerin kullanım dışı bırakılacağını unutmayın."
+      ],
+      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Bu ${ nameDeleted } süzgecini silerseniz, tetiklediği tüm otomatik işlemlerin durdurulacağını unutmayın."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Lütfen Onayla düğmesine tıkladığınızda, hesabınızda ${ creditsRemaining } kredi kalacağını unutmayın."
@@ -7972,17 +7958,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Aboneliğiniz Mozilla tarafından yönetiliyor. Lütfen Mozilla destek ekibi ile görüşün."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ek çift anahtar algılandı. Ayrıntılı bilgi almak için lütfen tek tek yükleyin."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } anahtarı zaten yüklenmiş"
-      ],
-      "Selected color:": [
-        "Seçilmiş renk:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9548,6 +9523,9 @@
       "Sign in": [
         "Oturum aç"
       ],
+      "switch account": [
+        "hesabı değiştir"
+      ],
       "Terms": [
         "Koşullar"
       ],
@@ -9976,6 +9954,26 @@
         "Orta VPN hızı"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "${ currentPlanName } hesabımı koru"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Gözden geçirmeyi sürdür"
@@ -10015,26 +10013,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } tarifesine yükselt"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "${ currentPlanName } hesabımı koru"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
       ]
     },
     "new_plans: feature": {
@@ -13516,6 +13494,9 @@
       "Delete calendar": [
         "Takvimi sil"
       ],
+      "Delete filter?": [
+        "Süzgeç silinsin mi?"
+      ],
       "Delete folder?": [
         "Klasör silinsin mi?"
       ],
@@ -14045,6 +14026,9 @@
       ],
       "Summary": [
         "Özet"
+      ],
+      "Switch account": [
+        "Hesabı değiştir"
       ],
       "Switch to one-password mode": [
         "Tek parola kipine geç"
