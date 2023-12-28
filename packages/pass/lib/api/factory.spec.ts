@@ -1,5 +1,5 @@
 import type { ApiAuth, Maybe } from '@proton/pass/types';
-import { InactiveSessionError } from '@proton/shared/lib/api/helpers/withApiHandlers';
+import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';

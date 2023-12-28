@@ -1,8 +1,8 @@
 import { combineReducers, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
 import { plansReducer } from '@proton/account';
-import { type ProtonThunkArguments, ignoredActions, ignoredPaths } from '@proton/redux-shared-store';
-import { sharedReducers } from '@proton/redux-shared-store';
+import { type ProtonThunkArguments, sharedReducers } from '@proton/redux-shared-store';
+import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 
 export const extraThunkArguments = {} as ProtonThunkArguments;
 
@@ -13,7 +13,7 @@ const rootReducer = combineReducers({
     ...plansReducer,
 });
 export type RootState = ReturnType<typeof rootReducer>;
-export const setupStore = ({ preloadedState }: { preloadedState: RootState }) => {
+export const setupStore = ({ preloadedState }: { preloadedState: Partial<RootState> }) => {
     return configureStore({
         preloadedState,
         reducer: rootReducer,
@@ -28,6 +28,6 @@ export const setupStore = ({ preloadedState }: { preloadedState: RootState }) =>
     });
 };
 
-export const extendStore = (newThunkArguments: ProtonThunkArguments) => {
+export const extendStore = (newThunkArguments: Partial<ProtonThunkArguments>) => {
     Object.assign(extraThunkArguments, newThunkArguments);
 };

@@ -63,7 +63,7 @@ jest.mock('@proton/components/hooks/useFeature', () => () => ({}));
 
 jest.mock('@proton/components/hooks/useWelcomeFlags', () => ({
     __esModule: true,
-    default: jest.fn(() => [{ isWelcomeFlow: false }]),
+    useWelcomeFlags: jest.fn(() => [{ isWelcomeFlow: false }]),
 }));
 
 jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
@@ -83,7 +83,7 @@ jest.mock('@proton/components/hooks/useSubscribedCalendars', () => ({
 
 jest.mock('@proton/components/hooks/useWelcomeFlags', () => ({
     __esModule: true,
-    default: jest.fn(() => [{ isWelcomeFlow: false }]),
+    useWelcomeFlags: jest.fn(() => [{ isWelcomeFlow: false }]),
 }));
 
 jest.mock('@proton/components/hooks/useUserSettings', () => () => [{}, jest.fn()]);

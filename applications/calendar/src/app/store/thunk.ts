@@ -1,9 +1,5 @@
-import { EventManager } from '@proton/shared/lib/eventManager/eventManager';
-import { Api } from '@proton/shared/lib/interfaces';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 
-export interface CalendarThunkArguments {
-    api: Api;
-    eventManager: EventManager;
-}
+export interface CalendarThunkArguments extends ProtonThunkArguments {}
 
 export const extraThunkArguments = {} as CalendarThunkArguments;

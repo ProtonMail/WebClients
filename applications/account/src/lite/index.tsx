@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 
 import '@proton/polyfill';
 
-import './AppA';
-import App from './AppB';
+import './01-style';
+import LiteApp from './LiteApp';
 
-ReactDOM.render(<App />, document.querySelector('.app-root'));
+ReactDOM.render(<LiteApp />, document.querySelector('.app-root'));

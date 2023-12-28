@@ -1,5 +1,8 @@
 import { useEffect } from 'react';
 
+import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
+import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { PASSWORD_CHANGE_MESSAGE_TYPE, getIsSelf, getMessage } from '@proton/shared/lib/helpers/crossTab';
 
 import { useAuthentication } from '../../hooks';
@@ -22,7 +25,7 @@ const StorageListener = () => {
                 data?.localID === authentication.getLocalID?.() &&
                 !getIsSelf(id)
             ) {
-                authentication.logout({ type: 'soft' });
+                replaceUrl(`${getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT)}`);
             }
         };
         window.addEventListener('storage', cb);

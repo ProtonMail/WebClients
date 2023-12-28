@@ -1,4 +1,5 @@
-import withApiHandlers, { InactiveSessionError } from '../../lib/api/helpers/withApiHandlers';
+import { InactiveSessionError } from '../../lib/api/helpers/errors';
+import withApiHandlers from '../../lib/api/helpers/withApiHandlers';
 import { withUIDHeaders } from '../../lib/fetch/headers';
 
 const getApiError = ({ message, response = { headers: { get: () => '' } }, data, status }) => {
@@ -144,7 +145,8 @@ describe('auth handlers', () => {
         const handleError = jasmine.createSpy('error').and.callFake((e) => {
             return e;
         });
-        const apiWithHandlers = withApiHandlers({ call, UID: '123' });
+        const apiWithHandlers = withApiHandlers({ call });
+        apiWithHandlers.UID = '123';
         const api = (a) => apiWithHandlers(a).catch(handleError);
         const result = await Promise.all([api(123), api(231), api(321)]);
         expect(result).toEqual([123, 231, 321]);
@@ -163,7 +165,8 @@ describe('auth handlers', () => {
         const handleError = jasmine.createSpy('error').and.callFake((e) => {
             throw e;
         });
-        const apiWithHandlers = withApiHandlers({ call, UID: '123' });
+        const apiWithHandlers = withApiHandlers({ call });
+        apiWithHandlers.UID = '123';
         const api = (a) => apiWithHandlers(a).catch(handleError);
         const [p1, p2, p3] = [api(123), api(231), api(321)];
         await expectAsync(p1).toBeRejectedWith(InactiveSessionError());
@@ -186,7 +189,8 @@ describe('auth handlers', () => {
         const handleError = jasmine.createSpy('error').and.callFake((e) => {
             return e;
         });
-        const api = withApiHandlers({ call, UID: '123' });
+        const api = withApiHandlers({ call });
+        api.UID = '123';
 
         const error = await api(123).catch(handleError);
         expect(error.status).toBe(500);
@@ -210,7 +214,8 @@ describe('auth handlers', () => {
         const handleError = jasmine.createSpy('error').and.callFake((e) => {
             return e;
         });
-        const api = withApiHandlers({ call, UID: '123' });
+        const api = withApiHandlers({ call });
+        api.UID = '123';
 
         const error = await api(withUIDHeaders('321', {})).catch(handleError);
         expect(error.status).toBe(401);
@@ -236,7 +241,8 @@ describe('auth handlers', () => {
         let i = 0;
         const call = jasmine.createSpy('call').and.callFake(() => returns[i++]());
 
-        const api = withApiHandlers({ call, UID: '126' });
+        const api = withApiHandlers({ call });
+        api.UID = '126';
         await expectAsync(api(123)).toBeRejectedWith(InactiveSessionError());
         expect(call).toHaveBeenCalledTimes(6);
     });
@@ -251,7 +257,8 @@ describe('auth handlers', () => {
         ];
         let i = 0;
         const call = jasmine.createSpy('call').and.callFake(() => returns[i++]());
-        const api = withApiHandlers({ call, UID: 'abc' });
+        const api = withApiHandlers({ call });
+        api.UID = 'abc';
         const result = await api(123).then((result) => result.json());
         expect(call).toHaveBeenCalledTimes(5);
         expect(result).toBe('123');
@@ -261,7 +268,8 @@ describe('auth handlers', () => {
         const call = jasmine.createSpy('call').and.callFake(async (args) => {
             throw getApiError({ status: 401, data: args });
         });
-        const api = withApiHandlers({ call, UID: '128' });
+        const api = withApiHandlers({ call });
+        api.UID = '128';
         await expectAsync(api()).toBeRejectedWith(InactiveSessionError());
         expect(call).toHaveBeenCalledTimes(2);
         await expectAsync(api()).toBeRejectedWith(InactiveSessionError());

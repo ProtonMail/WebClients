@@ -1,11 +1,11 @@
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import arraysContainSameElements from '@proton/utils/arraysContainSameElements';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import { setNewRecoverySecret } from '../api/settingsRecovery';
-import authentication from '../authentication/authentication';
 import { APP_NAMES } from '../constants';
 import { getItem, removeItem, setItem } from '../helpers/storage';
 import { Address, Api, DecryptedKey, InactiveKey, KeyPair, PreAuthKTVerify, User, UserSettings } from '../interfaces';
@@ -234,7 +234,7 @@ export const storeDeviceRecovery = async ({
 
 export const getIsDeviceRecoveryAvailable = getIsRecoveryFileAvailable;
 
-export const getIsDeviceRecoveryEnabled = (userSettings: UserSettings) => {
+export const getIsDeviceRecoveryEnabled = (userSettings: UserSettings, authentication: AuthenticationStore) => {
     return userSettings.DeviceRecovery && authentication.getTrusted();
 };
 
@@ -246,6 +246,7 @@ export const syncDeviceRecovery = async ({
     appName,
     addresses,
     signal,
+    authentication,
 }: {
     api: Api;
     user: User;
@@ -254,9 +255,10 @@ export const syncDeviceRecovery = async ({
     appName: APP_NAMES;
     addresses: Address[];
     signal?: AbortSignal;
+    authentication: AuthenticationStore;
 }) => {
     const hasRecoveryMessage = getHasRecoveryMessage(user.ID);
-    const isDeviceRecoveryEnabled = getIsDeviceRecoveryEnabled(userSettings);
+    const isDeviceRecoveryEnabled = getIsDeviceRecoveryEnabled(userSettings, authentication);
 
     const shouldRemoveDeviceRecovery = hasRecoveryMessage && !isDeviceRecoveryEnabled;
     if (shouldRemoveDeviceRecovery) {
