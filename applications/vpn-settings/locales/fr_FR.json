@@ -708,14 +708,11 @@
       "High speed streaming": [
         "Streaming ultra-rapide"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } version premium"
+      "Premium ${ appName }": [
+        "${ appName } version premium"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME } version premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } version premium"
       ],
       "Premium Password Manager": [
         "Gestionnaire de mots de passe version premium"
@@ -2766,10 +2763,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } adresse",
-        "${ amountOfAddresses } adresses"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
       ],
@@ -2790,6 +2783,10 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } peut également être utilisé avec un mot de passe unique qui remplace le mot de passe de connexion et celui de la boite de réception. Pour basculer vers le mode à mot de passe simple, saisissez le mot de passe unique que vous souhaitez utiliser et cliquez sur Enregistrer."
+      ],
+      "${ n } address": [
+        "${ n } adresse",
+        "${ n } adresses"
       ],
       "${ number } city": [
         "${ number } ville",
@@ -3856,6 +3853,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Vous pouvez maintenant accéder au compte et le gérer en tant qu'administrateur."
+      ],
+      "You can now return to the application to continue": [
+        "Vous pouvez maintenant revenir à l'application pour continuer."
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Vous ne pouvez avoir qu'une seule session de chat ouverte à la fois. Nous vous invitons à fermer les conversations précédentes avant d'en entamer une nouvelle."
@@ -5632,6 +5632,20 @@
         "Changer d'abonnement"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Chiffré de bout en bout"
+      ],
+      "Open source": [
+        "Open source"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protégé par les lois suisses en matière de données personnelles"
+      ],
+      "Swiss based": [
+        "Basé en Suisse"
+      ]
+    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "Offre à durée limitée"
@@ -5641,6 +5655,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "Les avantages de ${ appName }"
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } par mois"
       ],
@@ -5662,6 +5679,12 @@
       "Includes:": [
         "Comprend :"
       ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Rejoignez plus de 100 millions de personnes qui ont choisi ${ BRAND_NAME } pour être en sécurité en ligne."
+      ],
+      "Open-source and audited": [
+        "Open source et audité"
+      ],
       "per month": [
         "par mois"
       ],
@@ -5677,11 +5700,17 @@
       "Preparing your Recovery Kit": [
         "Préparation de votre kit de récupération"
       ],
+      "Protected by Swiss privacy laws": [
+        "Protégé par les lois suisses en matière de données personnelles"
+      ],
       "Updating your account": [
         "Mise à jour de votre compte"
       ],
       "Verifying your payment": [
         "Vérification de votre paiement"
+      ],
+      "Works on all devices": [
+        "Fonctionne sur tous les appareils"
       ],
       "You currently have": [
         "Votre abonnement actuel"

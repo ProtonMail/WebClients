@@ -708,14 +708,11 @@
       "High speed streaming": [
         "Nopea suoratoisto"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Premium ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Premium salasanahallinta"
@@ -1863,6 +1860,9 @@
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
         "${ MAIL_APP_NAME } -työpöytäsovelluksen beta-versio on tällä hetkellä vain ${ BRAND_NAME } Visionary- tilaajien käytettävissä. Se tulee kaikkien käyttäjien saataville vuoden 2024 alussa."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Päivitä tilauksesi tänään, tai tarkista pääsysi uudelleen vuoden 2024 alussa."
       ]
     },
     "Downgrade account reason": {
@@ -2763,10 +2763,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } -osoite",
-        "${ amountOfAddresses } osoitetta"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
       ],
@@ -2787,6 +2783,10 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME }ia voidaan käyttää myös yhdellä salasanalla, joka korvaa sekä kirjautumisen, että postilaatikon salasanan. Vaihda yhden salasanan tilaan syöttämällä haluamasi yksittäinen salasana ja painamalla Tallenna."
+      ],
+      "${ n } address": [
+        "${ n } osoite",
+        "${ n } osoitetta"
       ],
       "${ number } city": [
         "${ number } kaupungissa",
@@ -3853,6 +3853,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Voit nyt käyttää ja hallita tiliä ylläptäjänä."
+      ],
+      "You can now return to the application to continue": [
+        "Voit nyt jatkaa palaamalla sovellukseen"
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Vain yksi keskustelu voi olla avoinna kerrallaan. Sulje edellinen keskustelu ennen uuden aloittamista."
@@ -5629,6 +5632,20 @@
         "Päivitä tilaukseni"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Päästä päähän -salattu"
+      ],
+      "Open source": [
+        "Avointa lähdekoodia"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Sveitsin tietosuojalakien suojaama"
+      ],
+      "Swiss based": [
+        "Sveitsiläinen"
+      ]
+    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "Vain rajoitetun ajan"
@@ -5638,11 +5655,20 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "${ appName } -edut"
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } kuukaudessa"
       ],
       "Creating your account": [
         "Tiliäsi luodaan"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Vain **${ relativePrice } kuukausikorotuksella** saat käyttöösi ${ BRAND_NAME }in premium-salsanahallinnan!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Vain **${ relativePrice } kuukausikorotuksella** saat käyttöösi ${ BRAND_NAME }in premium-VPN:n!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Saat kaikki ${ BRAND_NAME } premium-palvelut käyttöösi vain **${ relativePrice } kuukausikorotuksella**!"
@@ -5652,6 +5678,12 @@
       ],
       "Includes:": [
         "Sisältää:"
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Liity yli 100 miljoonaan ihmiseen, jotka ovat valinneet ${ BRAND_NAME }:n pysyäkseen turvassa verkossa"
+      ],
+      "Open-source and audited": [
+        "Avoin lähdekoodi ja auditoitu"
       ],
       "per month": [
         "kuukaudessa"
@@ -5668,11 +5700,17 @@
       "Preparing your Recovery Kit": [
         "Palautuspakettiasi valmistellaan"
       ],
+      "Protected by Swiss privacy laws": [
+        "Sveitsin tietosuojalakien suojaama"
+      ],
       "Updating your account": [
         "Tiliäsi päivitetään"
       ],
       "Verifying your payment": [
         "Maksuasi vahvistetaan"
+      ],
+      "Works on all devices": [
+        "Toimii kaikilla laitteilla"
       ],
       "You currently have": [
         "Sinulla on tällä hetkellä"
@@ -7447,6 +7485,11 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "Kertakirjautuminen"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "Identiteettitoimittajasi toimittama kertakirjautumiskäyttäjä"
       ]
     },
     "Validation": {

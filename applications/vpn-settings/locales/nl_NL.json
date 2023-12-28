@@ -699,14 +699,11 @@
       "High speed streaming": [
         "Streamen met hoge snelheid"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Premium ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Premium wachtwoordmanager"
@@ -2710,10 +2707,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } adres",
-        "${ amountOfAddresses } adressen"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
       ],
@@ -2734,6 +2727,10 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan ook met een enkel wachtwoord gebruikt worden dat beide het inlog en mailbox wachtwoord vervangt. Om te schakelen naar een enkel wachtwoord, vul het enkele wachtwoord naar keuze in en klik op opslaan."
+      ],
+      "${ n } address": [
+        "${ n } adres",
+        "${ n } adressen"
       ],
       "${ number } city": [
         "${ number } stad",
@@ -5564,6 +5561,20 @@
         "Mijn abonnement upgraden"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "End-to-end versleuteld"
+      ],
+      "Open source": [
+        "Open source"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Beschermd door Zwitserse privacywetten"
+      ],
+      "Swiss based": [
+        "Gevestigd in Zwitserland"
+      ]
+    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "Tijdelijke aanbieding"
@@ -5573,6 +5584,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "${ appName } voordelen"
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } per maand"
       ],
@@ -5587,6 +5601,12 @@
       ],
       "Includes:": [
         "Omvat:"
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Sluit u aan bij meer dan 100 miljoen anderen die ${ BRAND_NAME } kozen om veilig online te zijn"
+      ],
+      "Open-source and audited": [
+        "Open source en gecontroleerd"
       ],
       "per month": [
         "maandelijks"
@@ -5603,11 +5623,17 @@
       "Preparing your Recovery Kit": [
         "Uw herstelkit voorbereiden"
       ],
+      "Protected by Swiss privacy laws": [
+        "Beschermd door Zwitserse privacywetten"
+      ],
       "Updating your account": [
         "Uw account wordt bijgewerkt"
       ],
       "Verifying your payment": [
         "Verifiëren van uw betaling"
+      ],
+      "Works on all devices": [
+        "Werkt op alle apparaten"
       ],
       "You currently have": [
         "Momenteel heeft u"
