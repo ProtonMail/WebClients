@@ -50,9 +50,6 @@
       "activate": [
         "활성화"
       ],
-      "Activate ${ Name }@pm.me": [
-        "${ Name }@pm.me 활성화"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me 활성화"
       ],
@@ -1362,14 +1359,11 @@
       "High speed streaming": [
         "고속 스트리밍"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Premium ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "프리미엄 암호 관리자"
@@ -2984,17 +2978,11 @@
       "Daily": [
         "일간"
       ],
-      "Daily, ${ timesString }": [
-        "종일, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "종일, ${ untilString }"
       ],
       "Every ${ interval } days": [
         "매 ${ interval }일"
-      ],
-      "Every ${ interval } days, ${ timesString }": [
-        "매 ${ interval }일, ${ timesString }"
       ],
       "Every ${ interval } days, ${ untilString }": [
         "매 ${ interval }일, ${ untilString }"
@@ -3130,6 +3118,9 @@
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
         "${ MAIL_APP_NAME } 데스크톱 앱의 베타 버전은 현재 ${ BRAND_NAME } Visionary 구독자 한정입니다. 2024년 초에는 모두가 이용할 수 있습니다."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "접근을 위해선 오늘 업그레이드 하거나 2024년 초까지 기다려 주세요."
       ]
     },
     "Disable account": {
@@ -5206,6 +5197,9 @@
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "이미 계정이 있으신가요? ${ signIn }"
+      ],
+      "Already have an account? ${ signIn } or ${ switchAccount }": [
+        "계정을 이미 가지고 계신가요? ${ signIn } 또는 ${ switchAccount }"
       ]
     },
     "Go to sign up": {
@@ -5723,12 +5717,23 @@
         "캘린더 콘텐츠 중 일부가 지원되지 않으며, 불러와지지 않습니다."
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } addresses": [
-        "${ amountOfAddresses } 주소들"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "추가적인 복제 키 감지됨. 자세한 정보를 위해 개별적으로 업로드하세요."
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } 키가 업로드 되었습니다"
+      ],
+      "Selected color:": [
+        "선택한 색상:"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "${ boldName }이(가) 기본 일정으로 설정됩니다."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 이 작업을 계속하면 현재 계정에 저장된 모든 암호화된 데이터에 접근할 수 없습니다."
@@ -5747,9 +5752,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }의 암호화 기술은 그 누구도 당신의 비밀번호에 접근할 수 없음을 뜻합니다 - 심지어 우리도요."
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName }이(가) 기본 일정으로 설정됩니다."
       ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount }개 새 달력"
@@ -5774,9 +5776,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: 저화질 미리보기"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName }이(가) 기본 일정으로 설정됩니다."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX }이(가) ${ PASS_APP_NAME }에서 사용자와 데이터 공유를 요청했습니다."
@@ -5829,12 +5828,6 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ selectedCalendarsTotal } 중 ${ providerCalendars.length } 캘린더"
       ],
-      "${ selectedFoldersCount } folders selected": [
-        "${ selectedFoldersCount }개 폴더 선택함"
-      ],
-      "${ selectedFoldersCount } labels selected": [
-        "${ selectedFoldersCount } 개 라벨 선택함"
-      ],
       "${ selectedFoldersCountLocalized } folders selected": [
         "${ selectedFoldersCountLocalized }개 폴더 선택함"
       ],
@@ -5843,9 +5836,6 @@
       ],
       "${ storage } storage": [
         "${ storage } 저장공간"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } 저장공간"
       ],
       "${ userFound } users found": [
         "${ userFound }명 사용자 찾음"
@@ -6573,9 +6563,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ toEmail } 에서 ${ fromEmail } 로 데이터를 가져오세요."
       ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "${ toEmail } 에서 ${ importedEmailAddress } 로 데이터를 가져오세요."
-      ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "필요에 따라 애플리케이션을 조정하여 ${ BRAND_NAME } 경험을 극대화 시키세요."
       ],
@@ -6920,6 +6907,9 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "이 도메인을 삭제할 경우 도메인과 연결된 모든 주소도 비활성화됩니다."
+      ],
+      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "이 필터 (${ nameDeleted }) 삭제시 트리거되는 모든 자동화된 작업이 중단됩니다."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "확인 버튼을 누르면 계정에는 ${ creditsRemaining } 크레딧이 남습니다."
@@ -7892,17 +7882,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "유료 구독은 Mozilla에서 관리합니다. Mozilla 지원에 연락하세요."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "추가적인 복제 키 감지됨. 자세한 정보를 위해 개별적으로 업로드하세요."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } 키가 업로드 되었습니다"
-      ],
-      "Selected color:": [
-        "선택한 색상:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9467,6 +9446,9 @@
       "Sign in": [
         "로그인"
       ],
+      "switch account": [
+        "계정 전환"
+      ],
       "Terms": [
         "조건"
       ],
@@ -9884,6 +9866,26 @@
         "중간 VPN 속도"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
+      ],
+      "From ${ price }": [
+        "시작 가격: ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "나의 ${ currentPlanName } 계정 유지"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "미리보려면 계속하기"
@@ -9923,26 +9925,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } 로 업그레이드"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
-      ],
-      "From ${ price }": [
-        "시작 가격: ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "나의 ${ currentPlanName } 계정 유지"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -13368,6 +13350,9 @@
       "Delete calendar": [
         "캘린더 삭제"
       ],
+      "Delete filter?": [
+        "필터를 삭제하시겠습니까?"
+      ],
       "Delete folder?": [
         "폴더를 삭제합니까?"
       ],
@@ -13892,6 +13877,9 @@
       ],
       "Summary": [
         "요약"
+      ],
+      "Switch account": [
+        "계정 전환"
       ],
       "Switch to one-password mode": [
         "단일 비밀번호 모드로 변경"
