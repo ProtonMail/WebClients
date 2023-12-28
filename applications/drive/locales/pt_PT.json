@@ -550,9 +550,6 @@
       "Save": [
         "Guardar"
       ],
-      "Save version as copy": [
-        "Guardar a versão como cópia"
-      ],
       "Search": [
         "Pesquisar"
       ],
@@ -839,14 +836,8 @@
       "High speed streaming": [
         "Streaming de alta velocidade"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Versão premium do gestor de palavras-passe"
@@ -3254,14 +3245,6 @@
         "${ selectedCount } selecionado",
         "${ selectedCount } selecionados"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } pasta selecionada",
-        "${ selectedFoldersCount } pastas selecionadas"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etiqueta selecionada",
-        "${ selectedFoldersCount } etiquetas selecionadas"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } pasta selecionada",
         "${ selectedFoldersCountLocalized } pastas selecionadas"
@@ -3611,6 +3594,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Para obter melhores resultados, evite atividades de streaming e de memória intensiva ou divida o carregamento em lotes mais pequenos."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Encaminhe o correio recebido de outra conta para a sua caixa de entrada segura de ${ MAIL_APP_NAME }."
+      ],
       "Free up some space or add more storage space.": [
         "Liberte algum espaço ou adicione mais espaço de armazenamento."
       ],
@@ -3663,11 +3649,11 @@
       "Import mailbox": [
         "Importar caixa de correio"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importe os seus e-mails, calendários e contactos de outro serviço para ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando os seus dados de ${ fromEmail } para ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importando os seus dados de ${ importedEmailAddress } para ${ toEmail }."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indexação de itens: ${ esProgress } de ${ totalProgressToShow }"

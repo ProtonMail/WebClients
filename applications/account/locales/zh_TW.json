@@ -50,9 +50,6 @@
       "activate": [
         "啟用"
       ],
-      "Activate ${ Name }@pm.me": [
-        "啟用 ${ Name }@pm.me"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "啟用 ${ user.Name }@pm.me"
       ],
@@ -1353,14 +1350,11 @@
       "High speed streaming": [
         "高速串流"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "進階版 ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "進階版 ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "進階版 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "進階版 ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "進階版密碼管理器"
@@ -2937,17 +2931,11 @@
       "Daily": [
         "每天"
       ],
-      "Daily, ${ timesString }": [
-        "每天，${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "每天，${ untilString }"
       ],
       "Every ${ interval } days": [
         "每 ${ interval } 天"
-      ],
-      "Every ${ interval } days, ${ timesString }": [
-        "每 ${ interval } 天，${ timesString }"
       ],
       "Every ${ interval } days, ${ untilString }": [
         "每 ${ interval } 天，${ untilString }"
@@ -5573,12 +5561,23 @@
         "您的行事曆中有部分內容未受支援，因此不會匯入。"
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } addresses": [
-        "${ amountOfAddresses } 個電郵位址"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "金鑰 ${ fingerprint } 已上傳"
+      ],
+      "Selected color:": [
+        "已選取的色彩:"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "${ boldName } 將會是預設的行事曆。"
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 若你選擇繼續，你會遺失所有的已加密資料。"
@@ -5597,9 +5596,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的加密技術代表無人可以存取您的密碼，包括我們。"
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } 將會是預設的行事曆。"
       ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 個新行事曆"
@@ -5624,9 +5620,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }：低解析度預覽"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } 將會是預設的行事曆。"
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX }希望與您使用${ PASS_APP_NAME }共享檔案"
@@ -5676,12 +5669,6 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
       ],
-      "${ selectedFoldersCount } folders selected": [
-        "已選取 ${ selectedFoldersCount } 個資料夾"
-      ],
-      "${ selectedFoldersCount } labels selected": [
-        "已選取 ${ selectedFoldersCount } 個標籤"
-      ],
       "${ selectedFoldersCountLocalized } folders selected": [
         "已選取 ${ selectedFoldersCountLocalized } 個資料夾"
       ],
@@ -5690,9 +5677,6 @@
       ],
       "${ storage } storage": [
         "${ storage } 儲存空間"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } 儲存空間"
       ],
       "${ userFound } users found": [
         "找到 ${ userFound } 個使用者"
@@ -5909,6 +5893,9 @@
       ],
       "Are you sure you want to delete this filter?": [
         "您確定要刪除此篩選器嗎？"
+      ],
+      "Are you sure you want to delete this folder?": [
+        "您確定要移除這個資料夾嗎？"
       ],
       "Are you sure you want to delete this label?": [
         "您確定要刪除此標籤嗎？"
@@ -6404,9 +6391,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "匯入您的資料自 ${ importedEmailAddress } 至 ${ toEmail }。"
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "增加您${ BRAND_NAME }的使用體驗，使用應用程式以滿足需求"
@@ -7596,6 +7580,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "您無法使用下載的復原檔案進行鎖定資料復原。"
       ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
+        "您將無法使用已下載的還原檔案還原已鎖定的資料。這樣也會停用從信任的裝置還原。"
+      ],
       "You'll stay signed in even after you close the browser.": [
         "即使關閉瀏覽器，您仍會維持登入狀態。"
       ],
@@ -7685,17 +7672,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "您的訂購授權是由 Mozilla 管理。請聯絡 Mozilla 支援。"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "金鑰 ${ fingerprint } 已上傳"
-      ],
-      "Selected color:": [
-        "已選取的色彩:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9043,6 +9019,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } 歡迎電子郵件"
+      ],
+      "${ VPN_APP_NAME } product updates": [
+        "${ VPN_APP_NAME } 產品更新"
       ]
     },
     "Label in domain modal": {
@@ -9642,6 +9621,26 @@
         "一般 VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "探索其他 ${ BRAND_NAME } 方案"
+      ],
+      "From ${ price }": [
+        "${ price }起"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "保留我的 ${ currentPlanName } $ 帳號"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "繼續確認方案"
@@ -9681,26 +9680,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "升級到 ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "探索其他 ${ BRAND_NAME } 方案"
-      ],
-      "From ${ price }": [
-        "${ price }起"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "保留我的 ${ currentPlanName } $ 帳號"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
       ]
     },
     "new_plans: feature": {
@@ -13989,6 +13968,11 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "選擇與非 ${ BRAND_NAME } PGP 使用者簽署或加密郵件所使用的預設 PGP 設定。請注意：內嵌式 PGP 強制採用純文字郵件。"
+      ]
+    },
+    "Tooltip for news": {
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "參與調查以改進 ${ BRAND_NAME } 服務"
       ]
     },
     "Tooltip prompt to trust keys": {

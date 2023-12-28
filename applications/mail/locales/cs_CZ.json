@@ -1382,14 +1382,8 @@
       "High speed streaming": [
         "Vysokorychlostní streamování"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Prémiový ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Prémiová ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Prémiový správce hesel"
@@ -1448,7 +1442,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } Desktopová aplikace"
+        "${ MAIL_APP_NAME } desktopová aplikace"
       ]
     },
     "Bug category": {
@@ -2165,6 +2159,11 @@
       ],
       "URL": [
         "URL"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Obrázek kontaktu"
       ]
     },
     "Contact type label": {
@@ -2987,9 +2986,6 @@
       "Daily": [
         "Denně"
       ],
-      "Daily, ${ timesString }": [
-        "Denně, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Denně, ${ untilString }"
       ],
@@ -2999,12 +2995,6 @@
         "Každých ${ interval } dnů",
         "Každých ${ interval } dnů"
       ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Každý ${ interval } den, ${ timesString }",
-        "Každé ${ interval } dny, ${ timesString }",
-        "Každých ${ interval } dnů, ${ timesString }",
-        "Každých ${ interval } dnů, ${ timesString }"
-      ],
       "Every ${ interval } day, ${ untilString }": [
         "Každý ${ interval } den, ${ untilString }",
         "Každé ${ interval } dny, ${ untilString }",
@@ -3013,6 +3003,17 @@
       ],
       "until ${ dateString }": [
         "do ${ dateString }"
+      ]
+    },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "Denně, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Každý ${ interval } den, ${ timesString }",
+        "Každé ${ interval } dny, ${ timesString }",
+        "Každých ${ interval } dnů, ${ timesString }",
+        "Každých ${ interval } dnů, ${ timesString }"
       ]
     },
     "Date label": {
@@ -3302,7 +3303,7 @@
         "Předběžný přístup k novým aplikacím a funkcím"
       ],
       "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Předčasný přístup k desktopové aplikaci ${ MAIL_APP_NAME }"
+        "Předběžný přístup k desktopové aplikaci ${ MAIL_APP_NAME }"
       ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Placené funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_APP_NAME }"
@@ -5072,18 +5073,6 @@
         "${ selectedContactsLength }/${ contactsLength } vybraných kontaktů",
         "${ selectedContactsLength }/${ contactsLength } vybraných kontaktů"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } vybraná složka",
-        "${ selectedFoldersCount } vybrané složky",
-        "${ selectedFoldersCount } vybraných složek",
-        "${ selectedFoldersCount } vybraných složek"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } vybraný štítek",
-        "${ selectedFoldersCount } vybrané štítky",
-        "${ selectedFoldersCount } vybraných štítků",
-        "${ selectedFoldersCount } vybraných štítků"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } složka vybrána",
         "${ selectedFoldersCountLocalized } vybrané složky",
@@ -5540,6 +5529,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Chcete-li získat více výsledků vyhledávání, zkuste toto klíčové slovo vyhledat v obsahu e-mailových zpráv."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Přepošlete příchozí mail z jiného účtu do vaší bezpečné ${ MAIL_APP_NAME } schránky."
+      ],
       "Free up some space or add more storage space.": [
         "Uvolněte místo nebo přidejte další úložný prostor."
       ],
@@ -5603,11 +5595,11 @@
       "Import mailbox": [
         "Importovat poštovní schránku"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importujte své e-maily, kalendáře a kontakty z jiných služeb do ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Import vašich dat z ${ fromEmail } do ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
       ],
       "Include Spam/Trash.": [
         "Zahrnout spam/koš."
@@ -6533,6 +6525,20 @@
     "Info on errors": {
       "Click for details": [
         "Klikněte pro podrobnosti"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } vybraná složka",
+        "${ selectedFoldersCount } vybrané složky",
+        "${ selectedFoldersCount } vybraných složek",
+        "${ selectedFoldersCount } vybraných složek"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } vybraný štítek",
+        "${ selectedFoldersCount } vybrané štítky",
+        "${ selectedFoldersCount } vybraných štítků",
+        "${ selectedFoldersCount } vybraných štítků"
       ]
     },
     "Key badge": {

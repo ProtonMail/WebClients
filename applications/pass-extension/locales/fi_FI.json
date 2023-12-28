@@ -266,6 +266,9 @@
       "Open navigation": [
         "Avaa navigaatio"
       ],
+      "Open web app": [
+        "Avaa verkkosovellus"
+      ],
       "Pass for Android": [
         "Pass Androidille"
       ],
@@ -390,6 +393,9 @@
     "Badge": {
       "Early access": [
         "Varhainen pääsy"
+      ],
+      "Limited time": [
+        "Rajoitetun ajan"
       ]
     },
     "bf2023: Info": {
@@ -456,7 +462,7 @@
         "Kutsua ei tällä hetkellä ole mahdollista lähettää tähän osoitteeseen"
       ],
       "Could not confirm this invite at the moment": [
-        "Tätä kutsua ei voitu vahvistaa tällä hetkellä"
+        "Tätä kutsua ei voitu vahvistaa juuri nyt"
       ],
       "Could not leave vault.": [
         "Holvista ei voitu poistua."
@@ -514,7 +520,7 @@
         "Käyttäjän käyttöoikeuden muutos epäonnistui."
       ],
       "Failed to move all items from \"${ payload.content.name }\"": [
-        "Kohteiden siirto paikasta \"${ payload.content.name }\" ei onnistunut"
+        "Kaikkien kohteiden siirto sijainnista \"${ payload.content.name }\" ei onnistunut"
       ],
       "Failed to remove user's access.": [
         "Käyttäjän käyttöoikeuden poisto epäonnistui."
@@ -541,7 +547,7 @@
         "Kutsua ei voitu hyväksyä"
       ],
       "Invitation could not be rejected": [
-        "Kutsua ei voitu hylätä"
+        "Kutsusta ei voitu kieltäytyä"
       ],
       "Item content cannot exceed 40KB": [
         "Kohteen sisältö ei saa ylittää 40 kt"
@@ -716,6 +722,9 @@
         "${ memberCount } jäsen",
         "${ memberCount } jäsentä"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } näyttää kohteiden sivustokuvakkeet ${ BRAND_NAME }in anonymisoidun kuvavälityspalvelimen välityksellä."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } tuo vain kirjautumistiedot, muistiinpanot ja luottokortit."
       ],
@@ -751,7 +760,7 @@
         "${ PASS_APP_NAME } -sovelluksesta on saatavilla uusi versio. Nauti uusista ominaisuuksista ja vikakorjauksista päivittämällä se."
       ],
       "Access successfully confirmed": [
-        "Pääsyn vahvistus onnistui"
+        "Käyttöoikeus vahvistettiin"
       ],
       "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
         "${ PASS_APP_NAME }in lukituksen avaus vaatii PIN-koodin"
@@ -896,13 +905,13 @@
         "Kutsu lähetettiin"
       ],
       "Invite successfully removed": [
-        "Kutsun poisto onnistui"
+        "Kutsu poistettiin"
       ],
       "Invite successfully resent": [
-        "Kutsun uudelleenlähetys onnistui"
+        "Kutsu lähetettiin uudelleen"
       ],
       "Invite successfully sent": [
-        "Kutsun lähetys onnistui"
+        "Kutsu lähetettiin"
       ],
       "invites you to access items in": [
         "kutsui sinut käyttämään kohteita holvista"
@@ -974,6 +983,9 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Omistajuus siirretty onnistuneesti. Et ole enää tämän holvin omistaja."
       ],
+      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
+        "Pass Plus ${ eoyRelativePrice }/kk, sisältäen verkkosovelluksen ennakkokäytön."
+      ],
       "Pass Plus trial": [
         "Pass Plus -kokeilu"
       ],
@@ -1020,7 +1032,7 @@
         "Sen suojaa ${ PROTON_SENTINEL_LINK }, edistynyt tilinsuojausohjelmamme"
       ],
       "Restoring trashed items...": [
-        "Palautetaan roskakorin kohteita..."
+        "Roskakorissa olevia kohteita palautetaan..."
       ],
       "Save login": [
         "Tallenna kirjautumistieto"
@@ -1059,7 +1071,7 @@
         "Kaikki kohteesi vietiin"
       ],
       "Successfully left the vault": [
-        "Holvista poistuminen onnistui"
+        "Poistuttiin holvista"
       ],
       "Successfully synced all vaults": [
         "Kaikki holvit synkronoitiin"
@@ -1123,7 +1135,7 @@
         "Käyttäjän käyttöoikeus poistettiin"
       ],
       "User's access sucessfuly updated": [
-        "Käyttäjän käyttöoikeudet päivitettiin"
+        "Käyttäjän käyttöoikeus muutettiin"
       ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Holvi \"${ payload.content.name }\" poistettiin"
@@ -1263,7 +1275,7 @@
         "Kaksivaiheisen todennuskoodin automaattitäyttö"
       ],
       "Automatically open autofill when a login field is focused": [
-        "Avaa autotäyttö automaattisesti, kun kirjautumiskenttä on valittuna."
+        "Näytä automaattitäyttö kirjautumiskentän aktivoituessa."
       ],
       "Autosave": [
         "Automaattitallennus"
@@ -1879,7 +1891,7 @@
         "Aliasta \"${ name }\" käytetään tällä hetkellä kirjautumistiedossa \"${ relatedLoginName }\". Lisäksi osoitteeseen \"${ aliasEmail }\" lähetettyjen viestien vastaanotto loppuu."
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
-        "Kaikki roskakorin kohteet poistetaan pysyvästi. Et voi kumota tätä toimintoa."
+        "Kaikki roskakorin kohteet poistetaan pysyvästi. Et voi kumota toimintoa."
       ],
       "An error occured while exporting your data": [
         "Tietojasi vietäessä tapahtui virhe"
@@ -1937,7 +1949,7 @@
         "Vahvista sähköpostiosoitteesi käyttääksesi sähköpostialiaksia"
       ],
       "Please verify your email address in order to use vault sharing": [
-        "Vahvista sähköpostiosoitteesi käyttääksesi holvin jakamista"
+        "Vahvista sähköpostiosoitteesi käyttääksesi holvijakoa."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Raportit eivät ole päästä päähän -salattuja, joten älä sisällytä niihin arkaluonteisia tietoja."
@@ -1964,7 +1976,7 @@
         "${ PASS_APP_NAME }iin kirjautuminen ei onnistu. ${ additionalMessage }"
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
-        "Holvi \"${ vaultName }\" ja kaikki sen kohteet poistetaan pysyvästi. Et voi kumota tätä toimintoa."
+        "Holvi \"${ vaultName }\" ja kaikki sen kohteet poistetaan pysyvästi. Et voi kumota toimintoa."
       ],
       "Vault name is required": [
         "Holvin nimi vaaditaan"
@@ -1973,13 +1985,13 @@
         "Et voi luoda enempää holveja kuin tilauksesi sallii."
       ],
       "You have reached the limit of members who can access this vault.": [
-        "Tähän holviin pääsevien jäsenten enimmäismäärä on saavutettu."
+        "Tämän holvin käyttöoikeuden omaavien jasenten enimmäismäärä on saavutettu."
       ],
       "You have reached the limit of users in this vault. ${ upgradeLink }": [
-        "Olet saavuttanut tässä holvissa olevien käyttäjien enimmäismäärän. ${ upgradeLink }"
+        "Tämän holvin käyttäjien enimmäismäärä on saavutettu. ${ upgradeLink }"
       ],
       "You have reached the limit of vaults you can have in your plan.": [
-        "Tilauksessasi olevien holvien enimmäismäärä on saavutettu."
+        "Tilaukseesi sisältyvä holvien enimmäismäärä on saavutettu."
       ],
       "You have unsaved changes.": [
         "Sinulla on tallentamattomia muutoksia."
@@ -1988,7 +2000,7 @@
         "Sinun on valittava valita ainakin yksi postilaatikko"
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
-        "Sinulla ei ole enää pääsyä tähän holviin. Jos haluat liittyä siihen uudelleen, tarvitset uuden kutsun."
+        "Sinulla ei ole enää tämän holvin käyttöoikeutta. Jos haluat liittyä siihen uudelleen, tarvitset uuden kutsun."
       ],
       "Your plan does not allow you to create more aliases": [
         "Tilauksesi ei salli sinun luoda enempää aliaksia"
@@ -2003,7 +2015,7 @@
         "Istuntoa ei voitu jatkaa."
       ],
       "Your session is inactive. Please log back in.": [
-        "Istuntosi on inaktiivinen. Ole hyvä ja kirjaudu takaisin sisään."
+        "Istuntosi ei ole aktiivinen. Kirjaudu sisään uudelleen."
       ],
       "Your session was locked.": [
         "Istuntosi on lukittu."

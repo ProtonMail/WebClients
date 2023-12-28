@@ -708,14 +708,11 @@
       "High speed streaming": [
         "Streaming ad alta velocità"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "${ appName } premium"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Password manager premium"
@@ -2766,10 +2763,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } indirizzo",
-        "${ amountOfAddresses } indirizzi"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
       ],
@@ -2790,6 +2783,10 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } può anche essere usato con una singola password, la quale sostituisce sia la password di accesso sia quella della casella di posta. Per passare alla modalità a singola password, inserisci la password che desideri e clicca su Salva."
+      ],
+      "${ n } address": [
+        "${ n } indirizzo",
+        "${ n } indirizzi"
       ],
       "${ number } city": [
         "${ number } città",
@@ -3859,6 +3856,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Ora puoi accedere e gestire l'account come amministratore."
+      ],
+      "You can now return to the application to continue": [
+        "Ora puoi tornare all'applicazione per continuare"
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Puoi avere solamente una chat aperta alla volta. Chiudi le conversazioni precedenti prima di avviarne una nuova."
@@ -5662,6 +5662,20 @@
         "Migliora il mio piano"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Con crittografia end-to-end"
+      ],
+      "Open source": [
+        "Open source"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Ti protegge la legislazione svizzera sulla privacy"
+      ],
+      "Swiss based": [
+        "Sede in Svizzera"
+      ]
+    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "Offerta a tempo limitato"
@@ -5671,6 +5685,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "Vantaggi di ${ appName }"
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } al mese"
       ],
@@ -5692,6 +5709,12 @@
       "Includes:": [
         "Include:"
       ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Unisciti ad oltre 100 milioni di persone che hanno scelto ${ BRAND_NAME } per stare al sicuro online"
+      ],
+      "Open-source and audited": [
+        "Codice open source ed esaminabile"
+      ],
       "per month": [
         "al mese"
       ],
@@ -5707,11 +5730,17 @@
       "Preparing your Recovery Kit": [
         "Preparazione del tuo kit di recupero"
       ],
+      "Protected by Swiss privacy laws": [
+        "Ti protegge la legislazione svizzera sulla privacy"
+      ],
       "Updating your account": [
         "Aggiornamento del tuo account"
       ],
       "Verifying your payment": [
         "Verifica del tuo pagamento"
+      ],
+      "Works on all devices": [
+        "Funziona su tutti i dispositivi"
       ],
       "You currently have": [
         "Al momento hai"

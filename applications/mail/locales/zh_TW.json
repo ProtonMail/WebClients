@@ -1355,14 +1355,8 @@
       "High speed streaming": [
         "高速串流"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "進階版 ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "進階版 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "進階版 ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "進階版密碼管理器"
@@ -2946,17 +2940,11 @@
       "Daily": [
         "每天"
       ],
-      "Daily, ${ timesString }": [
-        "每天，${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "每天，${ untilString }"
       ],
       "Every ${ interval } days": [
         "每 ${ interval } 天"
-      ],
-      "Every ${ interval } days, ${ timesString }": [
-        "每 ${ interval } 天，${ timesString }"
       ],
       "Every ${ interval } days, ${ untilString }": [
         "每 ${ interval } 天，${ untilString }"
@@ -4812,12 +4800,6 @@
       "${ selectedContactsLength }/${ contactsLength } contacts selected": [
         "${ contactsLength }中的${ selectedContactsLength }項目已選取"
       ],
-      "${ selectedFoldersCount } folders selected": [
-        "已選取 ${ selectedFoldersCount } 個資料夾"
-      ],
-      "${ selectedFoldersCount } labels selected": [
-        "已選取 ${ selectedFoldersCount } 個標籤"
-      ],
       "${ selectedFoldersCountLocalized } folders selected": [
         "已選取 ${ selectedFoldersCountLocalized } 個資料夾"
       ],
@@ -4922,6 +4904,9 @@
       ],
       "Are you sure you want to delete all messages with this label?": [
         "您確定要刪除有此標籤的全部郵件？"
+      ],
+      "Are you sure you want to delete this folder?": [
+        "您確定要移除這個資料夾嗎？"
       ],
       "Are you sure you want to delete this label?": [
         "您確定要刪除此標籤嗎？"
@@ -5190,6 +5175,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "若要更多結果，請於通訊錄中搜尋您的電子郵件訊息的關鍵字。"
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "將收到的郵件從另一個帳號轉發至您的安全 ${ MAIL_APP_NAME } 收件匣。"
+      ],
       "Free up some space or add more storage space.": [
         "請釋出部分空間或增加更多儲存空間。"
       ],
@@ -5247,11 +5235,11 @@
       "Import mailbox": [
         "匯入信箱"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "從其它服務匯入您的電子郵件、行事曆與通訊錄至 ${ BRAND_NAME }。"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "匯入您的資料自 ${ importedEmailAddress } 至 ${ toEmail }。"
       ],
       "Include Spam/Trash.": [
         "包含垃圾郵件/垃圾桶。"

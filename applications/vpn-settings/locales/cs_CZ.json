@@ -714,14 +714,11 @@
       "High speed streaming": [
         "Vysokorychlostní streamování"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Prémiový ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Prémiový ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Prémiová ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Prémiový správce hesel"
@@ -867,7 +864,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } Desktopová aplikace"
+        "${ MAIL_APP_NAME } desktopová aplikace"
       ]
     },
     "Bug category": {
@@ -1875,10 +1872,13 @@
     },
     "Desktop app upsell": {
       "Access to the desktop app is limited": [
-        "Přístup k desktopové aplikaci je omezený"
+        "Přístup k aplikaci pro stolní PC je omezený"
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Beta verze desktopové aplikace ${ MAIL_APP_NAME } je v současné době omezena na ${ BRAND_NAME } předplatitelům tarifu Visionary. Všem uživatelům bude k dispozici na začátku roku 2024."
+        "Beta verze desktopové aplikace ${ MAIL_APP_NAME } je v současné době omezena na ${ BRAND_NAME } předplatitele tarifu Visionary. Všem uživatelům bude k dispozici na začátku roku 2024."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Navyšte svůj tarif dnes a nebo se vraťte a získejte přístup na začátku roku 2024."
       ]
     },
     "Downgrade account reason": {
@@ -1943,7 +1943,7 @@
         "Předběžný přístup k novým aplikacím a funkcím"
       ],
       "Early access to the ${ MAIL_APP_NAME } desktop app": [
-        "Předčasný přístup k desktopové aplikaci ${ MAIL_APP_NAME }"
+        "Předběžný přístup k desktopové aplikaci ${ MAIL_APP_NAME }"
       ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Placené funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_APP_NAME }"
@@ -2797,12 +2797,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } adresa",
-        "${ amountOfAddresses } adresy",
-        "${ amountOfAddresses } adres",
-        "${ amountOfAddresses } adres"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
@@ -2823,6 +2817,12 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } lze také použít s jedním heslem, což nahrazuje heslo pro přihlášení a poštovní schránku. Pro přechod do režimu jedno hesla, prosím zadejte Vaše \"jednotné heslo\", které chcete použít a klikněte Uložit."
+      ],
+      "${ n } address": [
+        "${ n } adresa",
+        "${ n } adresy",
+        "${ n } adres",
+        "${ n } adres"
       ],
       "${ number } city": [
         "${ number } město",
@@ -5798,6 +5798,20 @@
         "Přejít na vyšší tarif"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Koncově šifrováno"
+      ],
+      "Open source": [
+        "Open source"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Chráněno švýcarskými zákony o ochraně soukromí"
+      ],
+      "Swiss based": [
+        "Vytvořeno ve Švýcarsku"
+      ]
+    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "Časově omezená nabídka"
@@ -5807,6 +5821,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "Výhody ${ appName }"
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } za měsíc"
       ],
@@ -5828,6 +5845,12 @@
       "Includes:": [
         "Zahrnuje:"
       ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Připojte se k více než 100 milionům lidí, kteří si zvolili ${ BRAND_NAME }, aby zůstali v bezpečí online."
+      ],
+      "Open-source and audited": [
+        "Open-source a auditováno"
+      ],
       "per month": [
         "za měsíc"
       ],
@@ -5843,11 +5866,17 @@
       "Preparing your Recovery Kit": [
         "Příprava sady pro obnovení"
       ],
+      "Protected by Swiss privacy laws": [
+        "Chráněno švýcarskými zákony o ochraně soukromí"
+      ],
       "Updating your account": [
         "Aktualizace vašeho účtu"
       ],
       "Verifying your payment": [
         "Ověřování vaší platby"
+      ],
+      "Works on all devices": [
+        "Funguje na všech zařízeních"
       ],
       "You currently have": [
         "Momentálně máte"

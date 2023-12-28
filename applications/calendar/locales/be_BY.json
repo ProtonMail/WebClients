@@ -824,14 +824,8 @@
       "High speed streaming": [
         "Высакахуткасныя трансляцыі"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Прэміяльны ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Прэміяльны ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Прэміяльны ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Прэміяльны менеджар пароляў"
@@ -2142,9 +2136,6 @@
       "Daily": [
         "Штодзень"
       ],
-      "Daily, ${ timesString }": [
-        "Штодзень а ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Штодзень, ${ untilString }"
       ],
@@ -2153,12 +2144,6 @@
         "Кожныя ${ interval } дні",
         "Кожных ${ interval } дзён",
         "Кожныя ${ interval } дні"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Кожны ${ interval } дзень а ${ timesString }",
-        "Кожныя ${ interval } дні а ${ timesString }",
-        "Кожных ${ interval } дзён а ${ timesString }",
-        "Кожныя ${ interval } дні а ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Кожны ${ interval } дзень, ${ untilString }",
@@ -3803,18 +3788,6 @@
         "Выбрана ${ selectedContactsLength } кантактаў з ${ contactsLength }",
         "Выбрана ${ selectedContactsLength } кантактаў з ${ contactsLength }"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "Выбрана ${ selectedFoldersCount } папка",
-        "Выбраны ${ selectedFoldersCount } папкі",
-        "Выбраны ${ selectedFoldersCount } папак",
-        "Выбраны ${ selectedFoldersCount } папкі"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "Выбрана ${ selectedFoldersCount } метка",
-        "Выбраны ${ selectedFoldersCount } меткі",
-        "Выбраны ${ selectedFoldersCount } метак",
-        "Выбраны ${ selectedFoldersCount } меткі"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "Выбрана ${ selectedFoldersCountLocalized } папка",
         "Выбраны ${ selectedFoldersCountLocalized } папкі",
@@ -4055,6 +4028,9 @@
       "Existent, added and removed participants will be notified.": [
         "Існуючыя, дададзеныя і выдаленыя ўдзельнікі атрымаюць апавяшчэнні."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Перасылка ўваходных лістоў з іншага ўліковага запісу ў вашу бяспечную паштовую скрыню ${ MAIL_APP_NAME }."
+      ],
       "Free up some space or add more storage space.": [
         "Вызваліце ​​месца або павялічце памер сховішча."
       ],
@@ -4091,11 +4067,11 @@
       "Import mailbox": [
         "Імпартаванне паштовай скрыні"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Імпартуйце вашы лісты, календары і кантакты з іншых сэрвісаў у ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпартаванне вашых даных з ${ fromEmail } у ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Імпартаванне вашых даных з ${ importedEmailAddress } у ${ toEmail }."
       ],
       "Indexing events: ${ current }/${ total }": [
         "Індэксаванне падзей: ${ current }/${ total }"

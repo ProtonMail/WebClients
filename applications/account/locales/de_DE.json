@@ -50,9 +50,6 @@
       "activate": [
         "aktivieren"
       ],
-      "Activate ${ Name }@pm.me": [
-        "${ Name }@pm.me aktivieren"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me aktivieren"
       ],
@@ -1001,6 +998,9 @@
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Upgrade um ${ PROTON_SENTINEL_NAME } zu aktivieren"
       ],
+      "Upgrade to Visionary": [
+        "Auf Visionary upgraden"
+      ],
       "Upgrade your plan": [
         "Dein Abonnement upgraden"
       ],
@@ -1362,14 +1362,11 @@
       "High speed streaming": [
         "Hochgeschwindigkeits-Streaming"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium-${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Premium-${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium-${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Premium-Passwortmanager"
@@ -1388,7 +1385,7 @@
         "Spare mit Black-Friday-Angeboten für das Hochgeschwindigkeits-VPN aus der Schweiz"
       ],
       "Save with Cyber Week deals on a high-speed Swiss VPN": [
-        "Spare mit diesen Angeboten anlässlich der Cyber-Woche für ein schweizer Hochgeschwindigkeits-VPN"
+        "Spare mit diesen Cyber Week-Angeboten für ein schweizer Hochgeschwindigkeits-VPN"
       ],
       "Save with End of Year deals on a high-speed Swiss VPN": [
         "Spare mit diesen Jahresendangeboten für ein schweizer Hochgeschwindigkeits-VPN"
@@ -1397,7 +1394,7 @@
         "Wähle dein Black Friday-Angebot"
       ],
       "Select your Cyber Week offer": [
-        "Wähle dein Angebot anlässlich der Cyberwoche"
+        "Wähle dein Cyber Week-Angebot"
       ],
       "Select your End of Year offer": [
         "Wähle dein Jahresendangebot"
@@ -1474,6 +1471,10 @@
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Umgehe lokale Internetsperren und Zensuren mit unserem globalen Servernetz."
+      ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Beinhaltet Unterstützung für ${ domains } eigene E-Mail-Domains, ${ addresses } E-Mail-Adressen, unbegrenzte hide-my-email-Aliasse, Kalenderfreigabe und mehr.",
+        "Beinhaltet Unterstützung für ${ domains } eigene E-Mail-Domains, ${ addresses } E-Mail-Adressen, unbegrenzte hide-my-email-Aliasse, Kalenderfreigabe und mehr."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Beinhaltet Unterstützung für eine eigene E-Mail-Domain, 10 E-Mail-Adressen, 10 „hide-my-email“-Aliasse, Kalenderfreigabe und mehr."
@@ -2987,9 +2988,6 @@
       "Daily": [
         "Täglich"
       ],
-      "Daily, ${ timesString }": [
-        "Täglich, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Täglich, ${ untilString }"
       ],
@@ -2997,16 +2995,17 @@
         "Alle ${ interval } Tage",
         "Alle ${ interval } Tage"
       ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Alle ${ interval } Tage, ${ timesString }",
-        "Alle ${ interval } Tage, ${ timesString }"
-      ],
       "Every ${ interval } day, ${ untilString }": [
         "Täglich, ${ untilString }",
         "Aller ${ interval } Tage, ${ untilString }"
       ],
       "until ${ dateString }": [
         "bis ${ dateString }"
+      ]
+    },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "Täglich, ${ timesString }"
       ]
     },
     "Day": {
@@ -3128,6 +3127,17 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "In der hochgeladenen CSV-Datei wurden die folgenden Felder erkannt. Wähle diejenigen aus, die du importieren möchtest."
+      ]
+    },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "Zugang zur Desktop-App ist beschränkt"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "Die Betaversion der ${ MAIL_APP_NAME } Desktop-App ist derzeit auf ${ BRAND_NAME } Visionary-Abonnenten beschränkt. Sie wird Anfang 2024 für alle Benutzer verfügbar sein."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Upgrade noch heute oder schaue Anfang 2024 nochmal vorbei, um Zugang zu erhalten."
       ]
     },
     "Disable account": {
@@ -3657,12 +3667,37 @@
         "2FA"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Alle kostenpflichtigen ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ PASS_SHORT_APP_NAME } Funktionen"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Enthält Versionshistorie in ${ DRIVE_SHORT_APP_NAME }, Zugriff auf Tausende von Hochgeschwindigkeits-Servern von ${ VPN_SHORT_APP_NAME }, Teilen in ${ PASS_SHORT_APP_NAME } und mehr."
+      ]
+    },
     "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 Benutzer"
+      ],
       "Early access to new apps and features": [
         "Früher Zugang zu neuen Anwendungen und Funktionen"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Früher Zugang zur ${ MAIL_APP_NAME } Desktop App"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Alle kostenpflichtigen ${ MAIL_SHORT_APP_NAME }- und ${ CALENDAR_APP_NAME }-Funktionen"
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } kann sich nicht mit deinem externen Account verbinden"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kannst auch auf unserer ${ statusPageLink } nachsehen."
       ],
@@ -4069,6 +4104,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Bitte nur Buchstaben, Ziffern und die Zeichen _ . - verwenden"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Unerwarteter Fehler, wir können die Kontakte nicht importieren"
       ],
       "Unknown error": [
         "Unbekannter Fehler"
@@ -5720,13 +5758,23 @@
         "Ein Teil deines Kalenderinhalts wird nicht unterstützt und wird nicht importiert."
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } Adresse",
-        "${ amountOfAddresses } Adressen"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
+      ],
+      "Selected color:": [
+        "Ausgewählte Farbe:"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "${ boldName } wird als Standardkalender festgelegt."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Wenn du fortfährst, verlierst du den Zugriff auf alle derzeit verschlüsselten Daten in deinem Konto."
@@ -5745,9 +5793,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s Verschlüsselungstechnologie bedeutet, dass keiner Zugriff auf dein Passwort hat - nicht einmal wir."
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } wird als Standardkalender festgelegt."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } neuer Kalender",
@@ -5774,9 +5819,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: Vorschau in niedriger Auflösung"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } wird als Standardkalender festgelegt."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } möchte Daten in ${ PASS_APP_NAME } mit dir teilen."
@@ -5839,14 +5881,6 @@
         "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalender",
         "${ selectedCalendarsTotal }/${ providerCalendars.length } Kalendern"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } Ordner ausgewählt",
-        "${ selectedFoldersCount } Ordner ausgewählt"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } Kategorie ausgewählt",
-        "${ selectedFoldersCount } Kategorien ausgewählt"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } Ordner ausgewählt",
         "${ selectedFoldersCountLocalized } Ordner ausgewählt"
@@ -5857,9 +5891,6 @@
       ],
       "${ storage } storage": [
         "${ storage } Speicherplatz"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } Speicherplatz"
       ],
       "${ userFound } user found": [
         "${ userFound } Benutzer gefunden",
@@ -6459,6 +6490,9 @@
       "for choosing ${ product }": [
         "dass du dich für ${ product } entschieden hast."
       ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Für Mitglieder von Organisationen, die Single Sign-on (SAML SSO) verwenden."
+      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Leite ankommende E-Mails eines anderen Kontos in deinen sicheren ${ MAIL_APP_NAME } Posteingang weiter."
       ],
@@ -6597,9 +6631,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Deine Daten werden von ${ fromEmail } nach ${ toEmail } importiert."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Deine Daten werden von ${ importedEmailAddress } nach ${ toEmail } importiert."
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Verbessere dein ${ BRAND_NAME }-Erlebnis, indem du die Anwendung an deine Bedürfnisse anpasst."
@@ -7912,6 +7943,9 @@
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Dein Organisationspasswort kann mit anderen Benutzern geteilt werden, wenn du diesen Administrationsberechtigungen erteilen möchtest. Es ist auch ein Notfall-Wiederherstellungscode, um Zugriff auf deine Organisation zu erhalten, wenn du den Zugriff auf dein Konto verlierst. Bitte speichere dieses Passwort sicher ab."
       ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Deine Organisation verwendet Single Sign-on (SSO). Klicke auf \"Anmelden\", um mit deinem SSO-Anbieter fortzufahren."
+      ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Die E-Mails deiner Organisation werden durch eine Ende-zu-Ende-Verschlüsselung mit dem Organisationsschlüssel geschützt. Dieser Fingerabdruck kann verwendet werden, um sicherzustellen, dass alle Administratoren in deinem Konto einen identischen Schlüssel verwenden."
       ],
@@ -7932,17 +7966,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Dein Abonnement wird von Mozilla verwaltet. Bitte kontaktiere den Mozilla-Support."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
-      ],
-      "Selected color:": [
-        "Ausgewählte Farbe:"
       ]
     },
     "Info - folder colouring feature": {
@@ -7989,6 +8012,16 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Um eine Unterbrechung des Dienstes aufgrund unbezahlter Rechnungen zu vermeiden, stelle bitte sicher, dass du zu jedem Zeitpunkt mindestens eine gültige Zahlungsmethode hinterlegt hast."
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } Ordner ausgewählt",
+        "${ selectedFoldersCount } Ordner ausgewählt"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } Kategorie ausgewählt",
+        "${ selectedFoldersCount } Kategorien ausgewählt"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -8567,7 +8600,7 @@
         "E-Mail-Adresse bestätigen"
       ],
       "Confirm link URLs": [
-        "Bestätige die Link-URLs"
+        "Link-URLs bestätigen"
       ],
       "Confirm login password": [
         "Anmeldepasswort bestätigen"
@@ -9446,7 +9479,7 @@
         "Kontaktiere uns"
       ],
       "create a ticket": [
-        "erstelle ein Ticket"
+        "Ein Ticket erstellen"
       ],
       "Create account": [
         "Konto erstellen"
@@ -9939,6 +9972,26 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Alle ${ BRAND_NAME }-Abonnements entdecken"
+      ],
+      "From ${ price }": [
+        "Ab ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Mein ${ currentPlanName }-Konto behalten"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Weiter zur Prüfung"
@@ -9978,26 +10031,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Umsteigen auf ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Alle ${ BRAND_NAME }-Abonnements entdecken"
-      ],
-      "From ${ price }": [
-        "Ab ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Mein ${ currentPlanName }-Konto behalten"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
       ]
     },
     "new_plans: feature": {

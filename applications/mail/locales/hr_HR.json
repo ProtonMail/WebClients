@@ -1108,9 +1108,6 @@
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bf2023: Offers": {
@@ -2454,9 +2451,6 @@
       "Daily": [
         "Dnevno"
       ],
-      "Daily, ${ timesString }": [
-        "Dnevno, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Dnevno, ${ untilString }"
       ],
@@ -2464,11 +2458,6 @@
         "Svaki ${ interval } dan",
         "Svaka ${ interval } dana",
         "Svakih ${ interval } dana"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Svaki ${ interval } dan, ${ timesString }",
-        "Svaka ${ interval } dana, ${ timesString }",
-        "Svakih ${ interval } dana, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Svaki ${ interval } dan, ${ untilString }",
@@ -3654,16 +3643,6 @@
         "${ pureAttachmentsCount } datoteka dodana",
         "${ pureAttachmentsCount } datoteke dodane",
         "${ pureAttachmentsCount } datoteka dodano"
-      ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } mapa odabrana",
-        "${ selectedFoldersCount } mape odabrane",
-        "${ selectedFoldersCount } mapa odabrano"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } oznaka odabrana",
-        "${ selectedFoldersCount } oznake odabrane",
-        "${ selectedFoldersCount } oznaka odabrano"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } mapa odabrana",
