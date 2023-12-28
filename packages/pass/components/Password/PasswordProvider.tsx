@@ -9,7 +9,7 @@ import type { PasswordItem } from '@proton/pass/store/reducers';
 import { selectPasswordOptions } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';
 
 import { PasswordGeneratorModal, type BaseProps as PasswordGeneratorModalProps } from './PasswordGeneratorModal';

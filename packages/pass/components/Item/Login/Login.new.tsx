@@ -42,7 +42,7 @@ import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { merge } from '@proton/pass/utils/object/merge';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 

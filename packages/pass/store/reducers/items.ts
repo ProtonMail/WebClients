@@ -52,7 +52,7 @@ import { CONTENT_FORMAT_VERSION, type ItemRevision, ItemState, type UniqueItem }
 import { or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
 /** itemIds are only guaranteed to be unique per share not globally,
