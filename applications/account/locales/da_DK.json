@@ -44,9 +44,6 @@
       "activate": [
         "aktivér"
       ],
-      "Activate ${ Name }@pm.me": [
-        "Aktiver ${ Name }@pm.me"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivér ${ user.Name }@pm.me"
       ],
@@ -1354,14 +1351,11 @@
       "High speed streaming": [
         "Streaming ved høj hastighed"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Premium ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Premium Adgangskodeadministrator"
@@ -2971,19 +2965,12 @@
       "Daily": [
         "Dagligt"
       ],
-      "Daily, ${ timesString }": [
-        "Daglig, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Daglig, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "Hver ${ interval } dag",
         "Hver ${ interval } dag"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Hver ${ interval } dag, ${ timesString }",
-        "Hver ${ interval } dag, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Hver ${ interval } dag, ${ untilString }",
@@ -3120,6 +3107,9 @@
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
         "Beta-versionen af ${ MAIL_APP_NAME } skrivebordsappen er i øjeblikket begrænset til ${ BRAND_NAME } Visionary-abonnenter. Den vil være tilgængelig for alle brugere i begyndelsen af 2024."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Opgradér i dag eller tjek igen tidligt i 2024 for adgang."
       ]
     },
     "Disable account": {
@@ -3380,6 +3370,9 @@
       "Re-enable": [
         "Genaktivér"
       ],
+      "Re-send confirmation email": [
+        "Gensend bekræftelsesmail"
+      ],
       "Remove “${ value }”": [
         "Fjern “${ value }”"
       ],
@@ -3397,6 +3390,14 @@
       ],
       "Set up email forwarding": [
         "Indstil videresendelse af e-mail"
+      ]
+    },
+    "email_forwarding_2023: Error": {
+      "Condition incomplete, please add a token": [
+        "Betingelsen er mangelfuld, tilføj et token"
+      ],
+      "Token already exists": [
+        "Token eksisterer allerede"
       ]
     },
     "email_forwarding_2023: Forwarding tooltip": {
@@ -3424,6 +3425,9 @@
       ]
     },
     "email_forwarding_2023: Info": {
+      "A confirmation email will be sent to ${ boldForwardeeEmail }": [
+        "En bekræftelsesmail vil blive sendt til ${ boldForwardeeEmail }"
+      ],
       "Automatically forward emails to another email address.": [
         "Videresend automatisk e-mails til en anden e-mailadresse."
       ],
@@ -3479,6 +3483,9 @@
       ],
       "Type text or keyword": [
         "Indtast tekst eller nøgleord"
+      ],
+      "Type text or keyword for this condition:": [
+        "Skriv tekst eller nøgleord for denne betingelse:"
       ]
     },
     "email_forwarding_2023: Status": {
@@ -3499,8 +3506,17 @@
       ]
     },
     "email_forwarding_2023: Success": {
+      "A new encryption key has been generated for ${ forwarderEmail }.": [
+        "En ny krypteringsnøgle er blevet genereret for ${ forwarderEmail }."
+      ],
       "Changes saved": [
         "Ændringer gemt"
+      ],
+      "Email sent to ${ forward.ForwardeeEmail }": [
+        "E-mail sendt til ${ forward.ForwardeeEmail }"
+      ],
+      "Email sent to ${ model.forwardeeEmail }.": [
+        "E-mail sendt til ${ model.forwardeeEmail }."
       ],
       "Forwarding accepted": [
         "Videresending godkendt"
@@ -5566,13 +5582,23 @@
         "En del af dit kalenderindhold er ikke understøttet og vil ikke blive importeret."
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } adresse",
-        "${ amountOfAddresses } adresser"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøgle ${ fingerprint } er allerede blevet uploadet"
+      ],
+      "Selected color:": [
+        "Valgte farve:"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "${ boldName } vil blive indstillet som standardkalender."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Du mister adgangen til alle nuværende krypterede data på din konto, hvis du fortsætter."
@@ -5591,9 +5617,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } vil blive indstillet som standardkalender."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
@@ -5620,9 +5643,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: forhåndsvisning i lav opløsning"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } vil blive indstillet som standardkalender."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } ønsker at dele data med dig i ${ PASS_APP_NAME }"
@@ -5685,14 +5705,6 @@
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } af ${ providerCalendars.length } kalendere"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } mappe valgt",
-        "${ selectedFoldersCount } mapper valgt"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etikette valgt",
-        "${ selectedFoldersCount } etiketter valgt"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } mappe valgt",
         "${ selectedFoldersCountLocalized } mapper valgt"
@@ -5703,9 +5715,6 @@
       ],
       "${ storage } storage": [
         "${ storage } lagerplads"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } lagerplads"
       ],
       "${ userFound } user found": [
         "${ userFound } bruger fundet",
@@ -6446,9 +6455,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importerer dine data fra ${ importedEmailAddress } til ${ toEmail }."
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Forbedr din ${ BRAND_NAME } oplevelse ved at tilpasse applikationen til dine behov."
@@ -7778,17 +7784,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Dit abonnement håndteres af Mozilla. Kontakt venligst Mozilla-support."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøgle ${ fingerprint } er allerede blevet uploadet"
-      ],
-      "Selected color:": [
-        "Valgte farve:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9331,6 +9326,9 @@
       "Sign in": [
         "Log ind"
       ],
+      "switch account": [
+        "skift konto"
+      ],
       "Terms": [
         "Betingelser"
       ],
@@ -9736,6 +9734,26 @@
         "Mellem VPN-hastighed"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Udforsk alle ${ BRAND_NAME }-abonnementer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Behold min ${ currentPlanName }-konto"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Fortsæt for at gennemgå"
@@ -9775,26 +9793,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Opgrader til ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Udforsk alle ${ BRAND_NAME }-abonnementer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Behold min ${ currentPlanName }-konto"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
       ]
     },
     "new_plans: feature": {
@@ -13106,6 +13104,9 @@
       "Delete calendar": [
         "Slet kalender"
       ],
+      "Delete filter?": [
+        "Slet filter?"
+      ],
       "Delete folder?": [
         "Slet mappe?"
       ],
@@ -13635,6 +13636,9 @@
       ],
       "Summary": [
         "Sammenfatning"
+      ],
+      "Switch account": [
+        "Skift konto"
       ],
       "Switch to one-password mode": [
         "Skift til én-adgangskode-tilstand"

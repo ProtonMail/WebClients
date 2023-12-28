@@ -50,9 +50,6 @@
       "activate": [
         "aktivovať"
       ],
-      "Activate ${ Name }@pm.me": [
-        "Aktivovať ${ Name }@pm.me"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivovať ${ user.Name }@pm.me"
       ],
@@ -1371,14 +1368,11 @@
       "High speed streaming": [
         "Vysokorýchlostné streamovanie"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Prémiový ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Prémiový ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Prémiová ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Prémiový správca hesiel"
@@ -3014,9 +3008,6 @@
       "Daily": [
         "Denne"
       ],
-      "Daily, ${ timesString }": [
-        "Denne, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Denne, ${ untilString }"
       ],
@@ -3025,12 +3016,6 @@
         "Každé ${ interval } dni",
         "Každých ${ interval } dní",
         "Každých ${ interval } dní"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Každý ${ interval } deň, ${ timesString }",
-        "Každé ${ interval } dni, ${ timesString }",
-        "Každých ${ interval } dní, ${ timesString }",
-        "Každých ${ interval } dní, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Každý ${ interval } deň, ${ untilString }",
@@ -3169,6 +3154,9 @@
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
         "Beta verzia aplikácie ${ MAIL_APP_NAME } pre desktopy je v súčasnosti obmedzená pre predplatiteľov ${ BRAND_NAME } Visionary. Všetkým používateľom bude k dispozícii začiatkom roka 2024."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Aktualizujte ešte dnes alebo si prístup overte začiatkom roka 2024."
       ]
     },
     "Disable account": {
@@ -5834,15 +5822,23 @@
         "Časť obsahu vášho kalendára nie je podporovaná a nebude importovaná."
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } adresa",
-        "${ amountOfAddresses } adresy",
-        "${ amountOfAddresses } adries",
-        "${ amountOfAddresses } adries"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Boli zistené ďalšie duplicitné kľúče. Pre viac informácií ich prosím nahrajte jednotlivo."
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kľúč ${ fingerprint } už bol nahraný"
+      ],
+      "Selected color:": [
+        "Vybraná farba:"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "${ boldName } bude nastavený ako predvolený kalendár."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Ak budete pokračovať, stratíte prístup ku všetkým aktuálnym zašifrovaným údajom vo vašom účte."
@@ -5861,9 +5857,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Šifrovacia technológia ${ BRAND_NAME } znamená, že nikto nemá prístup k vášmu heslu – dokonca ani my."
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } bude nastavený ako predvolený kalendár."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nový kalendár",
@@ -5894,9 +5887,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: náhľad v nízkom rozlíšení"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } bude nastavený ako predvolený kalendár."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } s vami chce zdieľať údaje v ${ PASS_APP_NAME }"
@@ -5979,18 +5969,6 @@
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendárov",
         "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendárov"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } vybratá zložka",
-        "${ selectedFoldersCount } vybraté zložky",
-        "${ selectedFoldersCount } vybratých zložiek",
-        "${ selectedFoldersCount } vybratých zložiek"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } vybratý štítok",
-        "${ selectedFoldersCount } vybraté štítky",
-        "${ selectedFoldersCount } vybratých štítkov",
-        "${ selectedFoldersCount } vybratých štítkov"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } vybratá zložka",
         "${ selectedFoldersCountLocalized } vybraté zložky",
@@ -6005,9 +5983,6 @@
       ],
       "${ storage } storage": [
         "${ storage } úložisko"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } úložisko"
       ],
       "${ userFound } user found": [
         "${ userFound } nájdený používateľ",
@@ -6767,9 +6742,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importujú sa vaše údaje z ${ fromEmail } do ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importujeme Vaše dáta z ${ importedEmailAddress } do ${ toEmail }."
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Zlepšite svoje skúsenosti so službou ${ BRAND_NAME } prispôsobením aplikácie svojim potrebám."
@@ -8132,17 +8104,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Vaše predplatné je spravované Mozillou. Kontaktujte prosím Mozilla podporu."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Boli zistené ďalšie duplicitné kľúče. Pre viac informácií ich prosím nahrajte jednotlivo."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kľúč ${ fingerprint } už bol nahraný"
-      ],
-      "Selected color:": [
-        "Vybraná farba:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9716,6 +9677,9 @@
       "Sign in": [
         "Prihlásiť sa"
       ],
+      "switch account": [
+        "prepnúť účet"
+      ],
       "Terms": [
         "Podmienky"
       ],
@@ -10166,6 +10130,26 @@
         "Stredná VPN rýchlosť"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Preskúmajte všetky plány ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Ponechať si môj účet ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Pokračovať na rekapituláciu"
@@ -10205,26 +10189,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Prejsť na ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Preskúmajte všetky plány ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Ponechať si môj účet ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
       ]
     },
     "new_plans: feature": {
@@ -13854,8 +13818,17 @@
       "Delete calendar": [
         "Odstrániť kalendár"
       ],
+      "Delete filter?": [
+        "Odstrániť filter?"
+      ],
+      "Delete folder?": [
+        "Odstrániť priečinok?"
+      ],
       "Delete key permanently?": [
         "Odstrániť kľúč natrvalo?"
+      ],
+      "Delete label?": [
+        "Odstrániť štítok?"
       ],
       "Delete logs": [
         "Vymazať záznamy"
@@ -14390,6 +14363,9 @@
       ],
       "Summary": [
         "Zhrnutie"
+      ],
+      "Switch account": [
+        "Prepnúť účet"
       ],
       "Switch to one-password mode": [
         "Prepnúť do režimu s jedným heslom"
