@@ -3,33 +3,14 @@ import { fireEvent, screen, waitFor } from '@testing-library/dom';
 import { ApiMailImporterFolder } from '@proton/activation/src/api/api.interface';
 import MailImportFoldersParser from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
 import { MailImportDestinationFolder, TIME_PERIOD } from '@proton/activation/src/interface';
+import { generateMockAddress } from '@proton/activation/src/tests/data/addresses';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
 import { ModalStateProps } from '@proton/components';
-import { ADDRESS_STATUS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import { Address } from '@proton/shared/lib/interfaces';
 
 import CustomizeMailImportModal from './CustomizeMailImportModal';
 import { MailImportFields } from './CustomizeMailImportModal.interface';
 
-const address: Address = {
-    DisplayName: 'Testing',
-    DomainID: 'proton.ch',
-    Email: 'testing@proton.ch',
-    HasKeys: 1,
-    ID: 'ID',
-    Keys: [],
-    SignedKeyList: null,
-    Order: 1,
-    Priority: 1,
-    Receive: 1,
-    Send: 1,
-    Signature: 'Testing signature',
-    Status: ADDRESS_STATUS.STATUS_ENABLED,
-    Type: ADDRESS_TYPE.TYPE_ORIGINAL,
-    ProtonMX: false,
-    ConfirmationState: 1,
-    CatchAll: false,
-};
+const address = generateMockAddress(1, true);
 
 const isLabelMapping = false;
 const simpleProviderFolders: ApiMailImporterFolder[] = [
