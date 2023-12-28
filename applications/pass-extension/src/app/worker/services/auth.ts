@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { SESSION_RESUME_MAX_RETRIES, SESSION_RESUME_RETRY_TIMEOUT } from '@proton/pass/constants';
 import { AccountForkResponse, getAccountForkResponsePayload } from '@proton/pass/lib/auth/fork';
-import { type AuthService, createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
+import { createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
 import { SESSION_KEYS, isValidPersistedSession } from '@proton/pass/lib/auth/session';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import { clientAuthorized, clientLocked, clientReady, clientUnauthorized } from '@proton/pass/lib/client';
@@ -26,7 +26,7 @@ import {
 import type { Api, WorkerMessageResponse } from '@proton/pass/types';
 import { AppStatus, SessionLockStatus, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
 import { FIBONACCI_LIST, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
@@ -36,7 +36,14 @@ import { withContext } from '../context';
 export const SESSION_LOCK_ALARM = 'alarm::session-lock';
 export const SESSION_RESUME_ALARM = 'alarm::session-resume';
 
-export const createAuthService = (api: Api, authStore: AuthStore): AuthService => {
+export const getSessionResumeAlarm = () => browser.alarms.get(SESSION_RESUME_ALARM);
+
+export const getSessionResumeDelay = (retryCount: number) => {
+    const retryIdx = Math.min(retryCount, FIBONACCI_LIST.length - 1);
+    return SESSION_RESUME_RETRY_TIMEOUT * FIBONACCI_LIST[retryIdx];
+};
+
+export const createAuthService = (api: Api, authStore: AuthStore) => {
     const authService = createCoreAuthService({
         api,
         authStore,
@@ -112,10 +119,9 @@ export const createAuthService = (api: Api, authStore: AuthStore): AuthService =
                 await browser.alarms.clear(SESSION_LOCK_ALARM);
 
                 if (status === SessionLockStatus.REGISTERED && ttl) {
-                    const when = (getEpoch() + ttl) * 1_000;
                     browser.alarms
                         .clear(SESSION_LOCK_ALARM)
-                        .then(() => browser.alarms.create(SESSION_LOCK_ALARM, { when }))
+                        .then(() => browser.alarms.create(SESSION_LOCK_ALARM, { when: epochToMs(getEpoch() + ttl) }))
                         .catch(noop);
                 }
             } catch {}
@@ -146,9 +152,8 @@ export const createAuthService = (api: Api, authStore: AuthStore): AuthService =
                 const retryInfo = `(${retryCount}/${SESSION_RESUME_MAX_RETRIES})`;
 
                 if (retryCount <= SESSION_RESUME_MAX_RETRIES) {
-                    const retryIdx = Math.min(retryCount, FIBONACCI_LIST.length - 1);
-                    const delay = SESSION_RESUME_RETRY_TIMEOUT * FIBONACCI_LIST[retryIdx];
-                    const when = (getEpoch() + delay) * 1_000;
+                    const delay = getSessionResumeDelay(retryCount);
+                    const when = epochToMs(getEpoch() + delay);
                     logger.info(`[AuthService] Retrying session resume in ${delay}s ${retryInfo}`);
 
                     await browser.alarms.clear(SESSION_RESUME_ALARM);

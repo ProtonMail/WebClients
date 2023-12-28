@@ -8,7 +8,7 @@ import {
 } from '@proton/pass/store/actions/creators/password';
 import type { MaybeNull } from '@proton/pass/types';
 import { UNIX_DAY } from '@proton/pass/utils/time/constants';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 export type PasswordHistoryEntry = {
     id: string;

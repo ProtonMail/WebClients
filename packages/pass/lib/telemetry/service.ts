@@ -5,7 +5,7 @@ import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
 import { UNIX_HOUR, UNIX_MINUTE } from '@proton/pass/utils/time/constants';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';
 
 import { sendTelemetryBundle } from './telemetry.requests';
