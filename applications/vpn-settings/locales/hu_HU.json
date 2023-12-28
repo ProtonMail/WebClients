@@ -610,14 +610,11 @@
       "6 users": [
         "6 felhasználó"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Prémium ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Prémium ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Prémium ${ MAIL_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Prémium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Prémium jelszókezelő"
@@ -1713,6 +1710,11 @@
         "Kétfaktoros hitelesítés"
       ]
     },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ]
+    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Továbbá meglátogathatja az ${ statusPageLink }"
@@ -2374,10 +2376,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } cím",
-        "${ amountOfAddresses } cím"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
       ],
@@ -2398,6 +2396,10 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "A ${ MAIL_APP_NAME } egy-jelszavas módban is használható, amely leváltja a külön bejelentkezési és e-mail titkosítási jelszavakat. Egy-jelszavas módra váltáshoz, adja meg a kívánt jelszót, majd kattintson a Mentés gombra."
+      ],
+      "${ n } address": [
+        "${ n } cím",
+        "${ n } cím"
       ],
       "${ number } city": [
         "${ number } város",
@@ -4751,6 +4753,20 @@
         "Váltás nagyobb csomagra"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Végpontok közt titkosított"
+      ],
+      "Open source": [
+        "Nyílt forráskódú"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Svájc adatvédelmi törvényei által védve"
+      ],
+      "Swiss based": [
+        "Svájci székhelyű"
+      ]
+    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "Korlátozott idejű ajánlat"
@@ -4771,6 +4787,9 @@
       ],
       "per month": [
         "havonta"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Svájc adatvédelmi törvényei által védve"
       ],
       "Verifying your payment": [
         "Fizetés ellenőrzése"
@@ -5148,6 +5167,9 @@
       ]
     },
     "session_recovery:status:info": {
+      "Available": [
+        "Elérhető"
+      ],
       "Pending": [
         "Függőben"
       ]

@@ -681,14 +681,11 @@
       "Extended version history": [
         "拡張バージョン履歴"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } プレミアム"
+      "Premium ${ appName }": [
+        "${ appName } プレミアム"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME }と${ CALENDAR_SHORT_APP_NAME }プレミアム"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } プレミアム"
       ],
       "Premium Password Manager": [
         "プレミアムパスワードマネージャー"
@@ -2646,9 +2643,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } addresses": [
-        "${ amountOfAddresses } アドレス"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
@@ -2669,6 +2663,9 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } はログイン用とメールボックス用のパスワードを 1 つに統一できます。1 つのパスワードにするには、パスワードを入力してから保存をクリックしてください。"
+      ],
+      "${ n } addresses": [
+        "${ n } 件のアドレス"
       ],
       "${ number } cities": [
         "${ number } つの都市"
@@ -5434,6 +5431,20 @@
         "プランのアップグレード"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "エンドツーエンド暗号化"
+      ],
+      "Open source": [
+        "オープンソース"
+      ],
+      "Protected by Swiss privacy laws": [
+        "スイスの個人情報保護法により保護されています。"
+      ],
+      "Swiss based": [
+        "スイスベース"
+      ]
+    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "期間限定オファー"
@@ -5443,6 +5454,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "${ appName }の利点"
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice }/月あたり"
       ],
@@ -5464,6 +5478,12 @@
       "Includes:": [
         "含まれるもの:"
       ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "オンラインでの安全を確保するために ${ BRAND_NAME } を選択した 1 億人以上の人々に加わりましょう"
+      ],
+      "Open-source and audited": [
+        "オープンソースで監査済み"
+      ],
       "per month": [
         "月あたり"
       ],
@@ -5479,11 +5499,17 @@
       "Preparing your Recovery Kit": [
         "リカバリーキットの準備"
       ],
+      "Protected by Swiss privacy laws": [
+        "スイスのプライバシー法によって保護されています"
+      ],
       "Updating your account": [
         "アカウントの更新"
       ],
       "Verifying your payment": [
         "お支払いの確認"
+      ],
+      "Works on all devices": [
+        "すべてのデバイスで動作します"
       ],
       "You currently have": [
         "あなたは現在"

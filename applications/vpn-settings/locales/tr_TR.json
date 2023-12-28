@@ -708,14 +708,11 @@
       "High speed streaming": [
         "Yüksek hızda yayın akışı"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Ücretli ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Ücretli ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Ücretli ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Ücretli Parola Yöneticisi"
@@ -1863,6 +1860,9 @@
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
         "${ MAIL_APP_NAME } masaüstü uygulamasının Beta sürümünü şu anda yalnızca ${ BRAND_NAME } Visionary aboneleri kullanabilir. 2024 yılının başlarında tüm kullanıcılara sunulacak."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Erişmek için tarifenizi yükseltin ya da 2024 yılının ilk aylarını bekleyin."
       ]
     },
     "Downgrade account reason": {
@@ -2763,10 +2763,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } adres",
-        "${ amountOfAddresses } adres"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
@@ -2787,6 +2783,10 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME }, oturum açmak ve posta kutusu şifresini çözmek için tek bir parola kullanabilir. Tek parola kipine geçmek için kullanmak istediğiniz tek parolayı yazın ve Kaydet üzerine tıklayın."
+      ],
+      "${ n } address": [
+        "${ n } adres",
+        "${ n } adres"
       ],
       "${ number } city": [
         "${ number } il",
@@ -5629,6 +5629,20 @@
         "Tarifemi yükselt"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Uçtan uca şifrelenmiş"
+      ],
+      "Open source": [
+        "Açık kaynaklı"
+      ],
+      "Protected by Swiss privacy laws": [
+        "İsviçre gizlilik yasaları tarafından korunur"
+      ],
+      "Swiss based": [
+        "İsviçre merkezli"
+      ]
+    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "Sınırlı süreli teklif"
@@ -5638,6 +5652,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "${ appName } yararları"
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } aylık"
       ],
@@ -5659,6 +5676,12 @@
       "Includes:": [
         "İçindekiler:"
       ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "İnternette güvende kalmak için ${ BRAND_NAME } kullanan 100 milyondan fazla kişiye katılın"
+      ],
+      "Open-source and audited": [
+        "Açık kaynaklı ve denetlenmiş"
+      ],
       "per month": [
         "aylık"
       ],
@@ -5674,11 +5697,17 @@
       "Preparing your Recovery Kit": [
         "Kurtarma paketiniz hazırlanıyor"
       ],
+      "Protected by Swiss privacy laws": [
+        "İsviçre gizlilik yasaları tarafından korunur"
+      ],
       "Updating your account": [
         "Hesabınız güncelleniyor"
       ],
       "Verifying your payment": [
         "Ödemeniz doğrulanıyor"
+      ],
+      "Works on all devices": [
+        "Tüm aygıtlarda çalışır"
       ],
       "You currently have": [
         "Şu anda kullanabilecekleriniz"

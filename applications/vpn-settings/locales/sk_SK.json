@@ -714,14 +714,11 @@
       "High speed streaming": [
         "Vysokorýchlostné streamovanie"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Prémiový ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Prémiový ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Prémiová ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Prémiový správca hesiel"
@@ -1879,6 +1876,9 @@
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
         "Beta verzia aplikácie ${ MAIL_APP_NAME } pre desktopy je v súčasnosti obmedzená pre predplatiteľov ${ BRAND_NAME } Visionary. Všetkým používateľom bude k dispozícii začiatkom roka 2024."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Aktualizujte ešte dnes alebo si prístup overte začiatkom roka 2024."
       ]
     },
     "Downgrade account reason": {
@@ -2797,12 +2797,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } adresa",
-        "${ amountOfAddresses } adresy",
-        "${ amountOfAddresses } adries",
-        "${ amountOfAddresses } adries"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
       ],
@@ -2823,6 +2817,12 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } je možné používať aj s jedným heslom, ktoré nahrádza prihlasovacie heslo aj heslo k poštovej schránke. Na prepnutie do režimu jedného hesla prosím zadajte jedno spoločné heslo, ktoré chcete použiť, a kliknite Uložiť."
+      ],
+      "${ n } address": [
+        "${ n } adresa",
+        "${ n } adresy",
+        "${ n } adries",
+        "${ n } adries"
       ],
       "${ number } city": [
         "${ number } mesto",
@@ -5771,6 +5771,20 @@
         "Upgradovať môj plán"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Šifrované End-to-end"
+      ],
+      "Open source": [
+        "Open source"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Chránené švajčiarskymi zákonmi o ochrane osobných údajov"
+      ],
+      "Swiss based": [
+        "So sídlom vo Švajčiarsku"
+      ]
+    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "Časovo obmedzená ponuka"
@@ -5780,6 +5794,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "${ appName } výhody"
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } mesačne"
       ],
@@ -5801,6 +5818,12 @@
       "Includes:": [
         "Obsahuje:"
       ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Pridajte sa k viac ako 100 miliónom ľudí, ktorí si zvolili ${ BRAND_NAME }, aby zostali v bezpečí online"
+      ],
+      "Open-source and audited": [
+        "Open-source a auditovaný"
+      ],
       "per month": [
         "mesačne"
       ],
@@ -5816,11 +5839,17 @@
       "Preparing your Recovery Kit": [
         "Príprava sady na obnovenie"
       ],
+      "Protected by Swiss privacy laws": [
+        "Chránené švajčiarskymi zákonmi o ochrane osobných údajov"
+      ],
       "Updating your account": [
         "Aktualizácia vášho účtu"
       ],
       "Verifying your payment": [
         "Overujeme vašu platbu"
+      ],
+      "Works on all devices": [
+        "Funguje na všetkých zariadeniach"
       ],
       "You currently have": [
         "Aktuálne máte"

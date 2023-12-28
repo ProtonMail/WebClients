@@ -705,14 +705,11 @@
       "High speed streaming": [
         "Streaming berkecepatan tinggi"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } Premium"
+      "Premium ${ appName }": [
+        "${ appName } Premium"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME } Premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } Premium"
       ],
       "Premium Password Manager": [
         "Pengelola Kata Sandi Premium"
@@ -1855,6 +1852,9 @@
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
         "Versi beta aplikasi desktop ${ MAIL_APP_NAME } saat ini hanya terbatas bagi para pelanggan ${ BRAND_NAME } Visionary. Versi aplikasi ini akan tersedia bagi seluruh pengguna pada awal 2024."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Tingkatkan akun Anda sekarang juga atau periksa kembali di awal 2024 untuk memperoleh akses."
       ]
     },
     "Downgrade account reason": {
@@ -2746,9 +2746,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } addresses": [
-        "${ amountOfAddresses } alamat"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
       ],
@@ -2769,6 +2766,9 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } juga mendukung penggunaan kata sandi tunggal yang dapat digunakan baik untuk masuk ataupun untuk mengakses kotak surat Anda. Untuk beralih ke mode kata sandi tunggal, masukkan kata sandi yang hendak Anda gunakan dan klik Simpan."
+      ],
+      "${ n } addresses": [
+        "${ n } alamat"
       ],
       "${ number } cities": [
         "${ number } kota"
@@ -3093,6 +3093,9 @@
       ],
       "for choosing ${ product }": [
         "telah memilih ${ product }"
+      ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Untuk anggota organisasi yang menggunakan single sign-on (SAML SSO)"
       ],
       "Free forever": [
         "Selamanya gratis"
@@ -3906,6 +3909,9 @@
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Kata sandi organisasi Anda dapat dibagikan dengan pengguna yang ingin Anda beri hak istimewa. Ini juga sebagai kode pemulihan darurat untuk mendapatkan akses ke organisasi ketika Anda kehilangan akses akun. Silakan simpan kata sandi ini di tempat yang aman."
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Organisasi Anda menggunakan single sign-on (SSO). Tekan Masuk untuk melanjutkan dengan penyedia SSO Anda."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Detail pembayaran Anda dilindungi dengan enkripsi TLS dan hukum privasi Swiss."
@@ -5552,6 +5558,20 @@
         "Tingkatkan paket saya"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Terenkripsi end-to-end"
+      ],
+      "Open source": [
+        "Open source"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Dilindungi oleh undang-undang privasi Swiss"
+      ],
+      "Swiss based": [
+        "Berbasis di Swiss"
+      ]
+    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "Penawaran waktu terbatas"
@@ -5561,6 +5581,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "Manfaat ${ appName }"
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } per bulan"
       ],
@@ -5582,6 +5605,12 @@
       "Includes:": [
         "Meliputi:"
       ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Bergabunglah dengan lebih dari 100 juta orang yang telah memilih ${ BRAND_NAME } untuk melindungi aktivitas online mereka"
+      ],
+      "Open-source and audited": [
+        "Open-source dan teraudit"
+      ],
       "per month": [
         "per bulan"
       ],
@@ -5597,11 +5626,17 @@
       "Preparing your Recovery Kit": [
         "Menyiapkan Peralatan Pemulihan Anda"
       ],
+      "Protected by Swiss privacy laws": [
+        "Dilindungi oleh undang-undang privasi Swiss"
+      ],
       "Updating your account": [
         "Memperbarui akun Anda"
       ],
       "Verifying your payment": [
         "Memverifikasi pembayaran Anda"
+      ],
+      "Works on all devices": [
+        "Dapat digunakan pada seluruh perangkat"
       ],
       "You currently have": [
         "Anda saat ini memiliki"

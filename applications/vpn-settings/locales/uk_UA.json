@@ -479,6 +479,9 @@
       "Upgrade to Business": [
         "Перейти на Business"
       ],
+      "Upgrade to Visionary": [
+        "Перейти на Visionary"
+      ],
       "Upgrade your plan": [
         "Покращити тарифний план"
       ],
@@ -2583,12 +2586,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } адреса",
-        "${ amountOfAddresses } адреси",
-        "${ amountOfAddresses } адрес",
-        "${ amountOfAddresses } адрес"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
       ],
@@ -2609,6 +2606,12 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } також можна використовувати з єдиним паролем, який замінює пароль входу та пароль поштової скриньки. Щоб перемкнутись на однопарольний режим, введіть єдиний пароль, який ви бажаєте використовувати, а потім натисніть кнопку Зберегти."
+      ],
+      "${ n } address": [
+        "${ n } адреса",
+        "${ n } адреси",
+        "${ n } адрес",
+        "${ n } адрес"
       ],
       "${ number } city": [
         "${ number } місто",
@@ -5420,6 +5423,20 @@
         "Покращити тарифний план"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Наскрізно зашифровано"
+      ],
+      "Open source": [
+        "Відкритий програмний код"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Захищено швейцарськими законами про приватність"
+      ],
+      "Swiss based": [
+        "Розташовано у Швейцарії"
+      ]
+    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "Обмежена пропозиція"
@@ -5429,6 +5446,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "Переваги ${ appName }"
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } на місяць"
       ],
@@ -5440,6 +5460,12 @@
       ],
       "Free forever": [
         "Безплатно назавжди"
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Приєднуйтеся до понад 100 мільйонів людей, які вибрали ${ BRAND_NAME }, щоб бути в безпеці онлайн"
+      ],
+      "Open-source and audited": [
+        "З відкритим кодом та незалежним аудитом"
       ],
       "per month, billed annually": [
         "на місяць, оплачується щороку"
@@ -5453,11 +5479,17 @@
       "Preparing your Recovery Kit": [
         "Підготовка комплекту відновлення"
       ],
+      "Protected by Swiss privacy laws": [
+        "Захищено швейцарським законодавством про приватність"
+      ],
       "Updating your account": [
         "Оновлення облікового запису"
       ],
       "Verifying your payment": [
         "Триває перевірка платежу"
+      ],
+      "Works on all devices": [
+        "Працює на всіх пристроях"
       ],
       "You currently have": [
         "Наразі у вас є"
