@@ -2,7 +2,7 @@ import type { TOTP } from 'otpauth';
 import { URI } from 'otpauth';
 
 import type { MaybeNull, OtpCode } from '@proton/pass/types';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 export const generateTOTPCode = (totpUri?: string): MaybeNull<OtpCode> => {
     try {

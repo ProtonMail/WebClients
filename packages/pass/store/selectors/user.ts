@@ -6,7 +6,7 @@ import { PlanType } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { UNIX_DAY } from '@proton/pass/utils/time/constants';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { type Address, SETTINGS_STATUS, UserType } from '@proton/shared/lib/interfaces';
 
 import type { State } from '../types';
