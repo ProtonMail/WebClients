@@ -1364,14 +1364,8 @@
       "High speed streaming": [
         "Höghastighetsstreaming"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Premium lösenordshanterare"
@@ -2968,9 +2962,6 @@
       "Daily": [
         "Dagligen"
       ],
-      "Daily, ${ timesString }": [
-        "Dagligen, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Dagligen, ${ untilString }"
       ],
@@ -2978,16 +2969,21 @@
         "Varje dag",
         "Var ${ interval }:e dag"
       ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Varje dag, ${ timesString }",
-        "Var ${ interval }:e dag, ${ timesString }"
-      ],
       "Every ${ interval } day, ${ untilString }": [
         "Varje dag, ${ untilString }",
         "Var ${ interval }:e dag, ${ untilString }"
       ],
       "until ${ dateString }": [
         "tills ${ dateString }"
+      ]
+    },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "Dagligen, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Var ${ interval } dag, ${ timesString }",
+        "Var ${ interval }:e dag, ${ timesString }"
       ]
     },
     "Date label": {
@@ -4937,14 +4933,6 @@
         "${ selectedContactsLength }/${ contactsLength } kontakt vald",
         "${ selectedContactsLength }/${ contactsLength } kontakter valda"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } mapp vald",
-        "${ selectedFoldersCount } mappar valda"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etikett vald",
-        "${ selectedFoldersCount } etiketter valda"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } mapp vald",
         "${ selectedFoldersCountLocalized } mappar valda"
@@ -5351,6 +5339,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "För fler sökresultat, prova att söka efter detta nyckelord i innehållet i dina e-postmeddelanden."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Vidarebefordra inkommande e-post från annat konto till din säkra inkorg för ${ MAIL_APP_NAME }."
+      ],
       "Free up some space or add more storage space.": [
         "Frigör lite utrymme eller lägg till mer lagringsutrymme."
       ],
@@ -5410,11 +5401,11 @@
       "Import mailbox": [
         "Importera brevlåda"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importera din e-post, kalendrar och kontakter från en annan tjänst till ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerar din data från ${ fromEmail } till ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importerar din data från ${ importedEmailAddress } till ${ toEmail }."
       ],
       "Include Spam/Trash.": [
         "Inkludera skräppost/papperskorg."
@@ -6179,6 +6170,9 @@
       "You can import one data type at a time.": [
         "Du kan importera en datatyp åt gången."
       ],
+      "You can now return to the application to continue": [
+        "Du kan nu gå tillbaka till applikationen för att fortsätta"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivera aviseringar för att få aviseringar när nya e-postmeddelanden kommer in i den här mappen."
       ],
@@ -6312,6 +6306,16 @@
     "Info on errors": {
       "Click for details": [
         "Klicka för detaljer"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } mapp vald",
+        "${ selectedFoldersCount } mappar valda"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } etikett vald",
+        "${ selectedFoldersCount } etiketter valda"
       ]
     },
     "Key badge": {

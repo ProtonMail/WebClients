@@ -2895,9 +2895,6 @@
       "Daily": [
         "Щодня"
       ],
-      "Daily, ${ timesString }": [
-        "Щодня, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Щодня, ${ untilString }"
       ],
@@ -2906,12 +2903,6 @@
         "Кожні ${ interval } дні",
         "Кожні ${ interval } днів",
         "Кожні ${ interval } днів"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Щодня, ${ timesString }",
-        "Кожні ${ interval } дні, ${ timesString }",
-        "Кожні ${ interval } днів, ${ timesString }",
-        "Кожні ${ interval } днів, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Щодня, ${ untilString }",
@@ -4897,18 +4888,6 @@
         "Вибрано ${ selectedContactsLength } контактів з ${ contactsLength }",
         "Вибрано ${ selectedContactsLength } контактів з ${ contactsLength }"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } вибрана тека",
-        "${ selectedFoldersCount } вибрані теки",
-        "${ selectedFoldersCount } вибраних тек",
-        "${ selectedFoldersCount } вибраних тек"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } вибрана мітка",
-        "${ selectedFoldersCount } вибрані мітки",
-        "${ selectedFoldersCount } вибраних міток",
-        "${ selectedFoldersCount } вибраних міток"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "Вибрано ${ selectedFoldersCountLocalized } теку",
         "Вибрано ${ selectedFoldersCountLocalized } теки",
@@ -5350,6 +5329,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Щоб отримати більше результатів пошуку, спробуйте шукати за цим ключовим словом у вмісті повідомлень вашої пошти."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Пересилайте вхідні повідомлення з іншого облікового запису до своєї захищеної поштової скриньки ${ MAIL_APP_NAME }."
+      ],
       "Free up some space or add more storage space.": [
         "Звільніть місце або збільште обсяг сховища."
       ],
@@ -5413,11 +5395,11 @@
       "Import mailbox": [
         "Імпортувати поштову скриньку"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Імпортуйте ваші електронні листи, календарі та контакти з іншої служби до ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ fromEmail } до ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Імпортування ваших даних із ${ importedEmailAddress } до ${ toEmail }."
       ],
       "Inherited from parent folder": [
         "Успадковано від теки вищого рівня"
