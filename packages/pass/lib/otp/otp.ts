@@ -17,10 +17,10 @@ export const OTP_DEFAULTS = {
 export const INVALID_SECRET_CHARS = /\s|-|_/g;
 
 export const parseOTPValue = (
-    input: string,
+    input?: string,
     { label, issuer }: { label?: MaybeNull<string>; issuer?: MaybeNull<string> } = {}
 ): string => {
-    if (isEmptyString(input)) return '';
+    if (!input || isEmptyString(input)) return '';
 
     try {
         return URI.parse(input).toString();
