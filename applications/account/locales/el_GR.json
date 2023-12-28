@@ -50,9 +50,6 @@
       "activate": [
         "ενεργοποιήστε"
       ],
-      "Activate ${ Name }@pm.me": [
-        "Ενεργοποίηση ${ Name }@pm.me"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "Ενεργοποίηση ${ user.Name }@pm.me"
       ],
@@ -1365,14 +1362,11 @@
       "High speed streaming": [
         "Ροή υψηλής ταχύτητας"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Premium ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Premium Διαχειριστής Κωδικών Πρόσβασης"
@@ -2994,19 +2988,12 @@
       "Daily": [
         "Καθημερινά"
       ],
-      "Daily, ${ timesString }": [
-        "Καθημερινά, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Καθημερινά, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "Κάθε ${ interval } μέρα",
         "Κάθε ${ interval } μέρες"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Κάθε ${ interval } μέρα, ${ timesString }",
-        "Κάθε ${ interval } μέρες, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Κάθε ${ interval } μέρα, ${ untilString }",
@@ -3143,6 +3130,9 @@
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
         "Η έκδοση beta της εφαρμογής επιφάνειας εργασίας ${ MAIL_APP_NAME } περιορίζεται προς το παρόν σε συνδρομητές ${ BRAND_NAME } Visionary. Θα είναι διαθέσιμο σε όλους τους χρήστες στις αρχές του 2024."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Αναβαθμίστε σήμερα ή ελέγξτε ξανά στις αρχές του 2024 για πρόσβαση."
       ]
     },
     "Disable account": {
@@ -5235,6 +5225,9 @@
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Έχετε ήδη λογαριασμό; ${ signIn }"
+      ],
+      "Already have an account? ${ signIn } or ${ switchAccount }": [
+        "Έχετε ήδη λογαριασμό; ${ signIn } ή ${ switchAccount }"
       ]
     },
     "Go to sign up": {
@@ -5760,13 +5753,23 @@
         "Μέρος του περιεχομένου του ημερολογίου σας δεν υποστηρίζεται και δεν θα εισαχθεί."
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } διεύθυνση",
-        "${ amountOfAddresses } διευθύνσεις"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
+      ],
+      "Selected color:": [
+        "Επιλεγμένο χρώμα:"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "Το ${ boldName } θα οριστεί ως προεπιλεγμένο ημερολόγιο."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Αν συνεχίσετε, θα χάσετε την πρόσβαση σε όλα τα τωρινά κρυπτογραφημένα δεδομένα εντός του λογαριασμού σας."
@@ -5785,9 +5788,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Η τεχνολογία κρυπτογράφησης του ${ BRAND_NAME } σημαίνει ότι κανείς δεν μπορεί να έχει πρόσβαση στον κωδικό πρόσβασής σας - ούτε καν εμείς."
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "Το ${ calendarName } θα οριστεί ως προεπιλεγμένο ημερολόγιο."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } νέο ημερολόγιο",
@@ -5814,9 +5814,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: προεπισκόπηση χαμηλής ανάλυσης"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "Το ${ firstRemainingCalendarName } θα οριστεί ως προεπιλεγμένο ημερολόγιο."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } θέλει να μοιραστεί δεδομένα μαζί σας στο ${ PASS_APP_NAME }"
@@ -5879,14 +5876,6 @@
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγιο",
         "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγια"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } επιλεγμένος φάκελος",
-        "${ selectedFoldersCount } επιλεγμένοι φάκελοι"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } επιλεγμένη ετικέτα",
-        "${ selectedFoldersCount } επιλεγμένες ετικέτες"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } επιλεγμένος φάκελος",
         "${ selectedFoldersCountLocalized } επιλεγμένοι φάκελοι"
@@ -5897,9 +5886,6 @@
       ],
       "${ storage } storage": [
         "${ storage } αποθηκευτικού χώρου"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } αποθηκευτικού χώρου"
       ],
       "${ userFound } user found": [
         "${ userFound } χρήστης βρέθηκε",
@@ -6641,9 +6627,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ fromEmail } προς ${ toEmail }."
       ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Γίνεται εισαγωγή δεδομένων από ${ importedEmailAddress } προς ${ toEmail }."
-      ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Βελτιώστε την ${ BRAND_NAME } εμπειρία σας προσαρμόζοντας την εφαρμογή στις ανάγκες σας."
       ],
@@ -6989,6 +6972,9 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Σημειώστε ότι εάν διαγράψετε αυτόν τον τομέα, όλες οι διευθύνσεις που σχετίζονται με αυτόν θα απενεργοποιηθούν."
+      ],
+      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Παρακαλούμε λάβετε υπόψη ότι αν διαγράψετε αυτό το φίλτρο ${ nameDeleted } θα σταματήσουμε να επεξεργαζόμαστε όλες τις αυτοματοποιημένες ενέργειες που ενεργοποιεί."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Λάβετε υπόψη ότι όταν κάνετε κλικ στο κουμπί Επιβεβαίωση, ο λογαριασμός σας θα έχει υπόλοιπο ${ creditsRemaining }."
@@ -7975,17 +7961,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Η συνδρομή σας διαχειρίζεται απο το Mozilla. Επικοινωνήστε με την υποστήριξη του Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
-      ],
-      "Selected color:": [
-        "Επιλεγμένο χρώμα:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9551,6 +9526,9 @@
       "Sign in": [
         "Είσοδος"
       ],
+      "switch account": [
+        "εναλλαγή λογαριασμού"
+      ],
       "Terms": [
         "Όροι"
       ],
@@ -9979,6 +9957,26 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Από ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Διατήρηση του λογαριασμού μου ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Συνεχίστε την αξιολόγηση"
@@ -10018,26 +10016,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Αναβάθμιση σε ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Από ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Διατήρηση του λογαριασμού μου ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
       ]
     },
     "new_plans: feature": {
@@ -13516,6 +13494,9 @@
       "Delete calendar": [
         "Διαγραφή ημερολογίου"
       ],
+      "Delete filter?": [
+        "Διαγραφή φίλτρου;"
+      ],
       "Delete folder?": [
         "Διαγραφή φακέλου;"
       ],
@@ -14048,6 +14029,9 @@
       ],
       "Summary": [
         "Περίληψη"
+      ],
+      "Switch account": [
+        "Εναλλαγή λογαριασμού"
       ],
       "Switch to one-password mode": [
         "Μετάβαση σε λειτουργία ενός κωδικού πρόσβασης"

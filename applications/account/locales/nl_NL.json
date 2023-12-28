@@ -50,9 +50,6 @@
       "activate": [
         "activeer"
       ],
-      "Activate ${ Name }@pm.me": [
-        "Activeer ${ Name }@pm.me"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "Activeer ${ user.Name }@pm.me"
       ],
@@ -1350,14 +1347,11 @@
       "High speed streaming": [
         "Streamen met hoge snelheid"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Premium ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Premium wachtwoordmanager"
@@ -2970,19 +2964,12 @@
       "Daily": [
         "Dagelijks"
       ],
-      "Daily, ${ timesString }": [
-        "Dagelijks, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Dagelijks, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "Elke ${ interval } dag",
         "Elke ${ interval } dagen"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Elke ${ interval } dag, ${ timesString }",
-        "Elke ${ interval } dagen, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Elke ${ interval } dag, ${ untilString }",
@@ -5695,13 +5682,23 @@
         "Een deel van je agenda-inhoud wordt niet ondersteund en zal niet worden geïmporteerd."
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } adres",
-        "${ amountOfAddresses } adressen"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Sleutel ${ fingerprint } is al geüpload"
+      ],
+      "Selected color:": [
+        "Geselecteerde kleur:"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "${ boldName } zal worden ingesteld als standaardagenda."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } U verliest de toegang tot alle huidige versleutelde gegevens in uw account als u doorgaat."
@@ -5720,9 +5717,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s versleutelingstechnologie betekent dat niemand toegang heeft tot uw wachten - zelfs wij niet."
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } zal worden ingesteld als standaardagenda."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nieuwe agenda",
@@ -5749,9 +5743,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: voorbeeld in lage resolutie"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } zal worden ingesteld als standaardagenda."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } wil data met u delen in ${ PASS_APP_NAME }"
@@ -5814,14 +5805,6 @@
         "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda",
         "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda's"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } map geselecteerd",
-        "${ selectedFoldersCount } mappen geselecteerd"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } label geselecteerd",
-        "${ selectedFoldersCount } labels geselecteerd"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } map geselecteerd",
         "${ selectedFoldersCountLocalized } mappen geselecteerd"
@@ -5832,9 +5815,6 @@
       ],
       "${ storage } storage": [
         "${ storage } opslag"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } opslagruimte"
       ],
       "${ userFound } user found": [
         "${ userFound } gebruiker gevonden",
@@ -6563,9 +6543,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Het importeren van uw gegevens van ${ importedEmailAddress } naar ${ toEmail }."
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Verbeter uw ${ BRAND_NAME }-ervaring door de applicatie aan te passen aan uw behoeften."
@@ -7883,17 +7860,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Uw abonnement wordt beheerd door Mozilla. Neem contact op met Mozilla support."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Sleutel ${ fingerprint } is al geüpload"
-      ],
-      "Selected color:": [
-        "Geselecteerde kleur:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9875,6 +9841,26 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Bekijk alle ${ BRAND_NAME }-abonnementen"
+      ],
+      "From ${ price }": [
+        "Vanaf ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Behoud mijn ${ currentPlanName }-account"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Doorgaan naar controle"
@@ -9914,26 +9900,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Upgraden naar ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Bekijk alle ${ BRAND_NAME }-abonnementen"
-      ],
-      "From ${ price }": [
-        "Vanaf ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Behoud mijn ${ currentPlanName }-account"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
       ]
     },
     "new_plans: feature": {

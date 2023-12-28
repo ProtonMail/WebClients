@@ -553,9 +553,6 @@
       "Save": [
         "저장"
       ],
-      "Save version as copy": [
-        "복사본 버전으로 저장"
-      ],
       "Search": [
         "검색"
       ],
@@ -838,14 +835,8 @@
       "High speed streaming": [
         "고속 스트리밍"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "프리미엄 암호 관리자"
@@ -3289,12 +3280,6 @@
       "${ selectedCount } selected": [
         "${ selectedCount }개 선택됨"
       ],
-      "${ selectedFoldersCount } folders selected": [
-        "${ selectedFoldersCount }개 폴더 선택함"
-      ],
-      "${ selectedFoldersCount } labels selected": [
-        "${ selectedFoldersCount } 개 라벨 선택함"
-      ],
       "${ selectedFoldersCountLocalized } folders selected": [
         "${ selectedFoldersCountLocalized }개 폴더 선택함"
       ],
@@ -3637,6 +3622,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "최상의 결과를 얻으려면 스트리밍 및 메모리를 많이 사용하는 활동을 피하거나 파일을 나누어 업로드하세요."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "다른 계정에서 전송되는 메일을 안전한 ${ MAIL_APP_NAME } 받은 편지함으로 전달하세요."
+      ],
       "Free up some space or add more storage space.": [
         "공간을 조금 비우거나 스토리지를 더 추가하세요."
       ],
@@ -3688,11 +3676,11 @@
       "Import mailbox": [
         "메일함 불러오기"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "이메일, 캘린더 및 연락처를 타사 서비스에서 ${ BRAND_NAME } 으로 불러오세요."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ toEmail } 에서 ${ fromEmail } 로 데이터를 가져오세요."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "${ toEmail } 에서 ${ importedEmailAddress } 로 데이터를 가져오세요."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "항목 인덱싱 ${ totalProgressToShow }개 중 ${ esProgress }개"

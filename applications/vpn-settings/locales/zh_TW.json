@@ -699,14 +699,11 @@
       "High speed streaming": [
         "高速串流"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "進階版 ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "進階版 ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "進階版 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "進階版 ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "進階版密碼管理器"
@@ -2681,9 +2678,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } addresses": [
-        "${ amountOfAddresses } 個電郵位址"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
       ],
@@ -2704,6 +2698,9 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } 也可使用單一密碼取代登入密碼和信箱密碼。如要切換為單一密碼模式，請輸入您想使用的單一密碼，然後按一下「儲存」。"
+      ],
+      "${ n } addresses": [
+        "${ n } 個電郵位址"
       ],
       "${ number } cities": [
         "${ number } 座城市"
@@ -4330,6 +4327,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } 歡迎電子郵件"
+      ],
+      "${ VPN_APP_NAME } product updates": [
+        "${ VPN_APP_NAME } 產品更新"
       ]
     },
     "Label on payment method": {
@@ -5440,6 +5440,20 @@
         "升級我的方案"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "端對端加密"
+      ],
+      "Open source": [
+        "開原"
+      ],
+      "Protected by Swiss privacy laws": [
+        "受瑞士隱私法律保障"
+      ],
+      "Swiss based": [
+        "瑞士為基礎"
+      ]
+    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "限時促銷"
@@ -5449,6 +5463,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "${ appName } 福利"
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice }每月"
       ],
@@ -5467,6 +5484,12 @@
       "Includes:": [
         "包含:"
       ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "加入超過一億人的行列，選擇 ${ BRAND_NAME } 確保上網安全"
+      ],
+      "Open-source and audited": [
+        "經過審核開放原始碼"
+      ],
       "per month": [
         "每月"
       ],
@@ -5482,11 +5505,17 @@
       "Preparing your Recovery Kit": [
         "準備復原包"
       ],
+      "Protected by Swiss privacy laws": [
+        "受瑞士隱私法律保障"
+      ],
       "Updating your account": [
         "更新您的帳號"
       ],
       "Verifying your payment": [
         "驗證您的付帳款"
+      ],
+      "Works on all devices": [
+        "於所有裝置皆可使用"
       ],
       "You currently have": [
         "您目前有"
@@ -7175,6 +7204,11 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }：在您的所有裝置上安全登入。包含無限別名、分享、整合 2FA 等。"
+      ]
+    },
+    "Tooltip for news": {
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "參與調查以改進 ${ BRAND_NAME } 服務"
       ]
     },
     "Tor out of date": {

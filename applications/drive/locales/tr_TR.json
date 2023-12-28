@@ -556,9 +556,6 @@
       "Save": [
         "Kaydet"
       ],
-      "Save version as copy": [
-        "Sürümü kopya olarak kaydet"
-      ],
       "Search": [
         "Arama"
       ],
@@ -845,14 +842,8 @@
       "High speed streaming": [
         "Yüksek hızda yayın akışı"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Ücretli ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Ücretli ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Ücretli Parola Yöneticisi"
@@ -3343,14 +3334,6 @@
         "${ selectedCount } seçilmiş",
         "${ selectedCount } seçilmiş"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } klasör seçildi",
-        "${ selectedFoldersCount } klasör seçildi"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etiket seçildi",
-        "${ selectedFoldersCount } etiket seçildi"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } klasör seçildi",
         "${ selectedFoldersCountLocalized } klasör seçildi"
@@ -3703,6 +3686,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "En iyi sonucu almak için yayın akışları ve fazla bellek kullanılması gereken etkinliklerden kaçının ya da yüklemenizi daha küçük gruplara ayırın."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Başka bir hesaptaki e-postalarınızı güvenli ${ MAIL_APP_NAME } gelen kutunuza iletin."
+      ],
       "Free up some space or add more storage space.": [
         "Biraz boş yer açın ya da daha fazla depolama alanı ekleyin."
       ],
@@ -3755,11 +3741,11 @@
       "Import mailbox": [
         "Posta kutusunu içe aktar"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } içine aktarın."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } verileriniz ${ toEmail } içine aktarılıyor."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "${ esProgress } / ${ totalProgressToShow } öge dizine ekleniyor"
