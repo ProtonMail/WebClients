@@ -1337,14 +1337,8 @@
       "High speed streaming": [
         "高速看视频"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "高级 ${ DRIVE_SHORT_APP_NAME } 账户"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "高级 ${ MAIL_SHORT_APP_NAME } 与 ${ CALENDAR_SHORT_APP_NAME } 账户"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "高级 ${ VPN_SHORT_APP_NAME } 账户"
       ],
       "Premium Password Manager": [
         "高级密码管理器"
@@ -2907,17 +2901,11 @@
       "Daily": [
         "每天"
       ],
-      "Daily, ${ timesString }": [
-        "每天, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "每天, 直到${ untilString }"
       ],
       "Every ${ interval } days": [
         "每 ${ interval } 天"
-      ],
-      "Every ${ interval } days, ${ timesString }": [
-        "每 ${ interval } 天，${ timesString }"
       ],
       "Every ${ interval } days, ${ untilString }": [
         "每 ${ interval } 天，${ untilString }"
@@ -4706,12 +4694,6 @@
       "${ selectedContactsLength }/${ contactsLength } contacts selected": [
         "已选择 ${ selectedContactsLength }/${ contactsLength } 位联系人"
       ],
-      "${ selectedFoldersCount } folders selected": [
-        "已选择 ${ selectedFoldersCount } 个文件夹"
-      ],
-      "${ selectedFoldersCount } labels selected": [
-        "已选择 ${ selectedFoldersCount } 个标签"
-      ],
       "${ selectedFoldersCountLocalized } folders selected": [
         "已选择 ${ selectedFoldersCountLocalized } 个文件夹"
       ],
@@ -5075,6 +5057,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "如需更多搜索结果，请尝试全文搜索此关键词。"
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "将其他邮箱收到的邮件自动转发至您安全的 ${ MAIL_APP_NAME } 邮箱。"
+      ],
       "Free up some space or add more storage space.": [
         "释放一些存储空间或付费扩容。"
       ],
@@ -5132,11 +5117,11 @@
       "Import mailbox": [
         "导入收件箱"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "将您的邮件、日历和通讯录从其他邮箱导入至 ${ BRAND_NAME }。"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "将您的数据从 ${ fromEmail } 导入至 ${ toEmail }。"
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
       ],
       "Inherited from parent folder": [
         "与上层文件夹一致"
@@ -7312,8 +7297,14 @@
       "For your eyes only": [
         "密不透风"
       ],
+      "Next": [
+        "下一步"
+      ],
       "Protection from trackers": [
         "抵御追踪脚本"
+      ],
+      "Skip": [
+        "跳过"
       ]
     },
     "Onboarding Proton": {
