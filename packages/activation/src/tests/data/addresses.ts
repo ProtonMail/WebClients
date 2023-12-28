@@ -35,6 +35,7 @@ export const generateMockAddress = (n: number, keyActive: boolean, type?: ADDRES
         Priority: 1,
         Receive: 1,
         Send: 1,
+        Permissions: 0,
         Signature: 'Testing signature',
         Status: 1,
         Type: type ?? 1,
