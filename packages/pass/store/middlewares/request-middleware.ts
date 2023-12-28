@@ -2,7 +2,7 @@ import type { AnyAction, Middleware } from 'redux';
 
 import { isActionWithRequest } from '@proton/pass/store/actions/with-request';
 import { selectRequest } from '@proton/pass/store/selectors';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 import { type RequestState } from '../reducers';
 

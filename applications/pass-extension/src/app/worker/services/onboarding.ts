@@ -15,7 +15,7 @@ import { createOnboardingService as createCoreOnboardingService } from '@proton/
 import type { Storage, TabId } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { withPayloadLens } from '@proton/pass/utils/fp/lens';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import noop from '@proton/utils/noop';
 
 import WorkerMessageBroker from '../channel';

@@ -4,7 +4,7 @@ import browser from '@proton/pass/lib/globals/browser';
 import type { TabId } from '@proton/pass/types';
 import { isFailedRequest } from '@proton/pass/utils/requests';
 import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 
 const filter: WebRequest.RequestFilter = {
@@ -31,7 +31,8 @@ export const createXMLHTTPRequestTracker = ({ acceptRequest, onFailedRequest }: 
             const now = getEpoch();
             if (now - lastGC < UNIX_MINUTE) return;
 
-            const limit = (now - MAX_REQUEST_RETENTION_TIME) * 1_000;
+            const limit = epochToMs(now - MAX_REQUEST_RETENTION_TIME);
+
             for (const [requestId, { requestedAt }] of pendingRequests.entries()) {
                 if (requestedAt < limit) pendingRequests.delete(requestId);
             }
