@@ -8,8 +8,8 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { getFormattedDayFromTimestamp } from '@proton/pass/utils/time/format';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
 
 export const getImportedVaultName = (vaultName?: string) => {

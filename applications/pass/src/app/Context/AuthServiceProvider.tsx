@@ -20,7 +20,7 @@ import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import { bootIntent, cacheCancel, sessionLockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
 import { AppStatus, type Maybe, PlanType, SessionLockStatus } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import {
     getBasename,
