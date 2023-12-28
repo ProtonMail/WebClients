@@ -185,4 +185,21 @@ Testtesttesttest4`;
 
         expect(toText(input)).toBe(result);
     });
+
+    it('should remove images from the content', () => {
+        const input = `
+            <div>
+            <div>Text before image</div>
+            <div><br></div>
+            <img src="imageURL"/>
+            <div>Text after image</div>
+</div>
+        `;
+
+        const result = `Text before image
+
+Text after image`;
+
+        expect(toText(input)).toBe(result);
+    });
 });
