@@ -50,9 +50,6 @@
       "activate": [
         "有効にする"
       ],
-      "Activate ${ Name }@pm.me": [
-        "${ Name } @pm.me をアクティブ化します"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me をアクティブ化します"
       ],
@@ -1335,14 +1332,11 @@
       "Extended version history": [
         "拡張バージョン履歴"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } プレミアム"
+      "Premium ${ appName }": [
+        "${ appName } プレミアム"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME }と${ CALENDAR_SHORT_APP_NAME }プレミアム"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } プレミアム"
       ],
       "Premium Password Manager": [
         "プレミアムパスワードマネージャー"
@@ -2917,17 +2911,11 @@
       "Daily": [
         "毎日"
       ],
-      "Daily, ${ timesString }": [
-        "毎日、${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "毎日、${ untilString }"
       ],
       "Every ${ interval } days": [
         "${ interval } 日毎"
-      ],
-      "Every ${ interval } days, ${ timesString }": [
-        "${ interval } 日毎、${ timesString }"
       ],
       "Every ${ interval } days, ${ untilString }": [
         "${ interval } 日毎、${ untilString }"
@@ -5578,12 +5566,20 @@
         "カレンダーの内容の一部がサポートされていないため、インポートされません。"
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } addresses": [
-        "${ amountOfAddresses } アドレス"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "鍵 ${ fingerprint } は正常にアップロードされました"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "${ boldName } がデフォルトのカレンダーとして設定されます。"
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 続行するとアカウント内にある現在の暗号化されたデータにアクセスすることができなくなります。"
@@ -5602,9 +5598,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } の暗号化技術は私たちでさえもパスワードにアクセスできないことを意味しています。"
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } がデフォルトのカレンダーとして設定されます。"
       ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 個の新しいカレンダー"
@@ -5629,9 +5622,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: 低画質のプレビュー"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } がデフォルトのカレンダーとして設定されます。"
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } は ${ PASS_APP_NAME } であなたとデータを共有したいと考えています"
@@ -5681,12 +5671,6 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ providerCalendars.length } のうち ${ selectedCalendarsTotal } のカレンダー"
       ],
-      "${ selectedFoldersCount } folders selected": [
-        "${ selectedFoldersCount } 件のフォルダーを選択済み"
-      ],
-      "${ selectedFoldersCount } labels selected": [
-        "${ selectedFoldersCount } 件のラベルが選択済み"
-      ],
       "${ selectedFoldersCountLocalized } folders selected": [
         "${ selectedFoldersCountLocalized } 件のフォルダーを選択済み"
       ],
@@ -5695,9 +5679,6 @@
       ],
       "${ storage } storage": [
         "${ storage } ストレージ"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } ストレージ"
       ],
       "${ userFound } users found": [
         "${ userFound } 人のユーザーが見つかりました"
@@ -6412,9 +6393,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "${ BRAND_NAME } での体験を向上させるために、ご希望に合わせてアプリをカスタマイズしてください。"
@@ -7717,14 +7695,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "あなたのサブスクリプションはMozillaによって管理されています。Mozillaのサポートへお問い合わせください。"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "鍵 ${ fingerprint } は正常にアップロードされました"
       ]
     },
     "Info - folder colouring feature": {
@@ -9686,6 +9656,26 @@
         "中程度の VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "すべての ${ BRAND_NAME } プランを表示"
+      ],
+      "From ${ price }": [
+        "${ price } から"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "${ currentPlanName } アカウントを継続"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "見直しを行う"
@@ -9725,26 +9715,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } へアップグレード"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "すべての ${ BRAND_NAME } プランを表示"
-      ],
-      "From ${ price }": [
-        "${ price } から"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "${ currentPlanName } アカウントを継続"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
       ]
     },
     "new_plans: feature": {

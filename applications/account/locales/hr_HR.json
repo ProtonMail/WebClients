@@ -16,9 +16,6 @@
       "activate": [
         "aktiviraj"
       ],
-      "Activate ${ Name }@pm.me": [
-        "Aktiviraj ${ Name }@pm.me"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiviraj ${ user.Name }@pm.me"
       ],
@@ -981,11 +978,11 @@
       "6 users": [
         "6 korisnika"
       ],
+      "Premium ${ appName }": [
+        "Premium ${ appName }"
+      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bf2023: Info": {
@@ -2204,9 +2201,6 @@
       "Daily": [
         "Dnevno"
       ],
-      "Daily, ${ timesString }": [
-        "Dnevno, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Dnevno, ${ untilString }"
       ],
@@ -2214,11 +2208,6 @@
         "Svaki ${ interval } dan",
         "Svaka ${ interval } dana",
         "Svakih ${ interval } dana"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Svaki ${ interval } dan, ${ timesString }",
-        "Svaka ${ interval } dana, ${ timesString }",
-        "Svakih ${ interval } dana, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Svaki ${ interval } dan, ${ untilString }",
@@ -3674,11 +3663,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } adresa",
-        "${ amountOfAddresses } adrese",
-        "${ amountOfAddresses } adresa"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } zahtjeva vaše dopuštenje da ${ enableDesktopNotifications }."
       ],
@@ -3709,16 +3693,6 @@
         "${ providerFoldersNumLocalized } oznaka pronađena u Gmailu",
         "${ providerFoldersNumLocalized } oznake pronađene u Gmailu",
         "${ providerFoldersNumLocalized } oznaka pronađeno u Gmailu"
-      ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } mapa odabrana",
-        "${ selectedFoldersCount } mape odabrane",
-        "${ selectedFoldersCount } mapa odabrano"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } oznaka odabrana",
-        "${ selectedFoldersCount } oznake odabrane",
-        "${ selectedFoldersCount } oznaka odabrano"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } mapa odabrana",
@@ -5991,6 +5965,14 @@
         "Najviša VPN brzina"
       ]
     },
+    "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
+      "Upgrade now": [
+        "Nadogradi sada"
+      ]
+    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
@@ -6012,14 +5994,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Nadogradite za ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Upgrade": [
-        "Nadogradnja"
-      ],
-      "Upgrade now": [
-        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {

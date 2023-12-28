@@ -1355,14 +1355,8 @@
       "High speed streaming": [
         "Streaming berkecepatan tinggi"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } Premium"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME } Premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } Premium"
       ],
       "Premium Password Manager": [
         "Pengelola Kata Sandi Premium"
@@ -2956,23 +2950,25 @@
       "Daily": [
         "Harian"
       ],
-      "Daily, ${ timesString }": [
-        "Harian, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Harian, ${ untilString }"
       ],
       "Every ${ interval } days": [
         "Setiap ${ interval } hari"
       ],
-      "Every ${ interval } days, ${ timesString }": [
-        "Setiap ${ interval } hari, ${ timesString }"
-      ],
       "Every ${ interval } days, ${ untilString }": [
         "Setiap ${ interval } hari, ${ untilString }"
       ],
       "until ${ dateString }": [
         "sampai ${ dateString }"
+      ]
+    },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "Harian, ${ timesString }"
+      ],
+      "Every ${ interval } days, ${ timesString }": [
+        "Setiap ${ interval } hari, ${ timesString }"
       ]
     },
     "Date label": {
@@ -3263,6 +3259,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } tidak dapat terhubung ke akun eksternal Anda"
+      ],
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } untuk <${ email }>. Anda dapat menambahkan kunci baru atau menonaktifkan enkripsi pada kontak yang bersangkutan untuk menyelesaikan masalah ini."
       ],
@@ -3622,6 +3621,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Terdapat kesalahan yang tidak diduga. Kami tidak dapat mengimpor kontak"
       ],
       "Unknown error": [
         "Kesalahan yang tidak diketahui"
@@ -4861,12 +4863,6 @@
       "${ selectedContactsLength }/${ contactsLength } contacts selected": [
         "${ selectedContactsLength }/${ contactsLength } kontak dipilih"
       ],
-      "${ selectedFoldersCount } folders selected": [
-        "${ selectedFoldersCount } folder terpilih"
-      ],
-      "${ selectedFoldersCount } labels selected": [
-        "${ selectedFoldersCount } label terpilih"
-      ],
       "${ selectedFoldersCountLocalized } folders selected": [
         "${ selectedFoldersCountLocalized } folder dipilih"
       ],
@@ -4966,11 +4962,17 @@
       "and": [
         "dan"
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Seluruh subfolder yang ada juga akan dihapus. Meskipun demikian, seluruh email yang tersimpan pada folder ${ nameDeleted } tidak akan dihapus dan tetap akan dapat ditemukan pada folder Semua Surat."
+      ],
       "Are you sure you want to delete all messages in this folder?": [
         "Apakah Anda yakin ingin menghapus semua pesan yang ada di folder ini?"
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Apakah Anda yakin ingin menghapu semua pesan yang ditandai dengan label ini?"
+      ],
+      "Are you sure you want to delete this folder?": [
+        "Apakah Anda yakin untuk menghapus folder ini?"
       ],
       "Are you sure you want to delete this label?": [
         "Apakah Anda yakin ingin menghapus label ini?"
@@ -5182,6 +5184,9 @@
       "Emails are automatically signed": [
         "Surel ditandatangani secara otomatis"
       ],
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Email yang berlabel ${ nameDeleted } tidak akan dihapus dan tetap akan dapat ditemukan pada foldernya masing-masing."
+      ],
       "embedded images": [
         "gambar yang tersemat"
       ],
@@ -5238,6 +5243,9 @@
       ],
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Untuk lebih banyak hasil pencarian, coba mencari untuk kata kunci ini dalam konten pesan surel Anda."
+      ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Teruskan pesan yang datang dari akun lainnya menuju kotak masuk akun ${ MAIL_APP_NAME } aman Anda."
       ],
       "Free up some space or add more storage space.": [
         "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
@@ -5296,11 +5304,11 @@
       "Import mailbox": [
         "Impor kotak surat"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Impor surel, kalender, dan kontak Anda dari layanan lain ke ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ fromEmail } ke ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Mengimpor data Anda dari ${ importedEmailAddress } menuju ${ toEmail }."
       ],
       "Include Spam/Trash.": [
         "Sertakan Spam/Sampah."
@@ -6184,6 +6192,14 @@
     "Info on errors": {
       "Click for details": [
         "Klik untuk rincian"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folders selected": [
+        "${ selectedFoldersCount } folder dipilih"
+      ],
+      "${ selectedFoldersCount } labels selected": [
+        "${ selectedFoldersCount } label dipilih"
       ]
     },
     "Key badge": {

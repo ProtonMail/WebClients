@@ -50,9 +50,6 @@
       "activate": [
         "актываваць"
       ],
-      "Activate ${ Name }@pm.me": [
-        "Актываваць ${ Name }@pm.me"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "Актываваць ${ user.Name }@pm.me"
       ],
@@ -1371,14 +1368,11 @@
       "High speed streaming": [
         "Высакахуткасныя трансляцыі"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Прэміяльны ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Прэміяльны ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Прэміяльны ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Прэміяльны ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Прэміяльны менеджар пароляў"
@@ -3014,9 +3008,6 @@
       "Daily": [
         "Штодзень"
       ],
-      "Daily, ${ timesString }": [
-        "Штодзень а ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Штодзень, ${ untilString }"
       ],
@@ -3025,12 +3016,6 @@
         "Кожныя ${ interval } дні",
         "Кожных ${ interval } дзён",
         "Кожныя ${ interval } дні"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Кожны ${ interval } дзень а ${ timesString }",
-        "Кожныя ${ interval } дні а ${ timesString }",
-        "Кожных ${ interval } дзён а ${ timesString }",
-        "Кожныя ${ interval } дні а ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Кожны ${ interval } дзень, ${ untilString }",
@@ -3171,7 +3156,7 @@
         "Бэта-версія настольнай праграмы ${ MAIL_APP_NAME } у цяперашні момант абмежавана падпісчыкамі з тарыфным планам ${ BRAND_NAME } Visionary. Яна стане даступна ўсім карыстальнікам у пачатку 2024 года."
       ],
       "Upgrade today or check again in early 2024 for access.": [
-        "Палепшыце сёння або праверце даступнасць на пачатку 2024 года."
+        "Палепшыце сёння або праверце даступнасць у пачатку 2024 года."
       ]
     },
     "Disable account": {
@@ -5296,6 +5281,9 @@
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Ужо ёсць уліковы запіс? ${ signIn }"
+      ],
+      "Already have an account? ${ signIn } or ${ switchAccount }": [
+        "Ужо ёсць уліковы запіс? ${ signIn } або ${ switchAccount }"
       ]
     },
     "Go to sign up": {
@@ -5837,15 +5825,23 @@
         "Частка змесціва вашага календара не падтрымліваецца і не будзе імпартавана."
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } адрас",
-        "${ amountOfAddresses } адрасы",
-        "${ amountOfAddresses } адрасоў",
-        "${ amountOfAddresses } адрасоў"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } ужо быў запампаваны"
+      ],
+      "Selected color:": [
+        "Выбраны колер:"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "${ boldName } будзе зададзены ў якасці прадвызначанага календара."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Вы страціце доступ да ўсіх бягучых зашыфраваных даных у вашым уліковым запісе, калі працягніце."
@@ -5864,9 +5860,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Тэхналогія шыфравання ${ BRAND_NAME } азначае, што ніхто не зможа атрымаць доступ да вашага пароля - нават мы."
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } будзе зададзены ў якасці прадвызначанага календара."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } новы каляндар",
@@ -5897,9 +5890,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: папярэдні прагляд у нізкай раздзяляльнасці"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } будзе зададзены ў якасці прадвызначанага календара."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } хоча абагуліць даныя з вамі ў ${ PASS_APP_NAME }"
@@ -5982,18 +5972,6 @@
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў",
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "Выбрана ${ selectedFoldersCount } папка",
-        "Выбраны ${ selectedFoldersCount } папкі",
-        "Выбраны ${ selectedFoldersCount } папак",
-        "Выбраны ${ selectedFoldersCount } папкі"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "Выбрана ${ selectedFoldersCount } метка",
-        "Выбраны ${ selectedFoldersCount } меткі",
-        "Выбраны ${ selectedFoldersCount } метак",
-        "Выбраны ${ selectedFoldersCount } меткі"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "Выбрана ${ selectedFoldersCountLocalized } папка",
         "Выбраны ${ selectedFoldersCountLocalized } папкі",
@@ -6008,9 +5986,6 @@
       ],
       "${ storage } storage": [
         "${ storage } сховішча"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } сховішча"
       ],
       "${ userFound } user found": [
         "Знойдзены ${ userFound } карыстальнік",
@@ -6556,7 +6531,7 @@
         "Параметры адпраўкі пошты захаваны"
       ],
       "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
-        "Лісты, якія пазначаны гэтай меткай ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў адпаведнай папцы."
+        "Лісты, якія пазначаны меткай ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў адпаведнай папцы."
       ],
       "Enable this address to join this calendar": [
         "Уключыце гэты адрас, каб далучыцца да гэтага календара"
@@ -6779,9 +6754,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпартаванне вашых даных з ${ fromEmail } у ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Імпартаванне вашых даных з ${ importedEmailAddress } у ${ toEmail }."
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Паляпшайце свой досвед выкарыстання ${ BRAND_NAME }, адаптаваўшы праграму пад свае патрэбы."
@@ -8147,17 +8119,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша падпіска кіруецца Mozilla. Звяжыцеся са службай падтрымкі Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } ужо быў запампаваны"
-      ],
-      "Selected color:": [
-        "Выбраны колер:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9731,6 +9692,9 @@
       "Sign in": [
         "Увайсці"
       ],
+      "switch account": [
+        "змяніць уліковы запіс"
+      ],
       "Terms": [
         "Умовы"
       ],
@@ -10181,6 +10145,26 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Пакінуць мой уліковы запіс ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Працягнуць агляд"
@@ -10220,26 +10204,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Палепшыць да ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Пакінуць мой уліковы запіс ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
       ]
     },
     "new_plans: feature": {
@@ -14414,6 +14378,9 @@
       ],
       "Summary": [
         "Зводка"
+      ],
+      "Switch account": [
+        "Змяніць уліковы запіс"
       ],
       "Switch to one-password mode": [
         "Пераключыцца ў рэжым з адным паролем"

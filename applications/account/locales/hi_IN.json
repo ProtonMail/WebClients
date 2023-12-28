@@ -47,9 +47,6 @@
       "activate": [
         "सक्रिय"
       ],
-      "Activate ${ Name }@pm.me": [
-        "सक्रिय ${ Name }@pm.me"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me सक्रिय करें"
       ],
@@ -1194,14 +1191,11 @@
       "High speed streaming": [
         "तेज़ स्ट्रीमिंग"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "प्रीमियम ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "प्रीमियम ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "प्रीमियम ${ MAIL_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "प्रीमियम ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "प्रीमियम पासवर्ड मैनेजर"
@@ -1244,6 +1238,9 @@
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "अपने ईमेल और शेड्यूल को एंड-टू-एंड एन्क्रिप्शन के साथ सुरक्षित करें। इसमें कस्टम ईमेल डोमेन, 15 ईमेल पते, असीमित hide-my-email उपनाम, कैलेंडर साझाकरण और बहुत कुछ के लिए समर्थन शामिल है।"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "अपनी फ़ाइलों को एन्क्रिप्टेड क्लाउड स्टोरेज से सुरक्षित करें। संस्करण इतिहास, एन्क्रिप्टेड फ़ाइल साझाकरण, और बहुत कुछ शामिल है।"
       ]
     },
     "Billing cycle": {
@@ -2722,19 +2719,12 @@
       "Daily": [
         "रोज़"
       ],
-      "Daily, ${ timesString }": [
-        "दैनिक, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "दैनिक, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "हर ${ interval } दिन",
         "हर ${ interval } दिन"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "हर ${ interval } दिन, ${ timesString }",
-        "हर ${ interval } दिन, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "हर ${ interval } दिन, ${ untilString }",
@@ -4953,13 +4943,20 @@
         "आपके कैलेंडर कंटेंट का कुछ हिस्सा सपोर्ट नहीं किया जाता है और आयात नहीं किया जाएगा।"
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } पता",
-        "${ amountOfAddresses } पते"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } के लिए आपकी अनुमति की आवश्यकता है ${ enableDesktopNotifications }"
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "${ boldName } डिफॉल्ट कैलेंडर सेट होगा।"
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } अगर आप जारी रखते हैं तो आप अपने खाते के सभी मौजूदा एन्क्रिप्टेड डेटा तक पहुंच खो देंगे।"
@@ -4978,9 +4975,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } की एन्क्रिप्शन टेकनोलॉजी का मतलब है की कोई भी आपका पासवर्ड एक्सेस नहीं कर सकता - यहां तक की हम भी नहीं।"
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } डिफॉल्ट कैलेंडर सेट होगा।"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } नया कैलेंडर",
@@ -5001,9 +4995,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: कम-क्वालिटी का प्रिव्यू"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } डिफॉल्ट कैलेंडर सेट होगा।"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } को सिर्फ एक पासवर्ड से भी इस्तेमाल कर सकते है जो आपके लॉग इन और मेलबॉक्स पासवर्ड की जगह ले लेगा। एक पासवर्ड मोड पे जाने के लिए, पासवर्ड डाले जो आप इस्तेमाल करना चाहते है और सेव दबाएं।"
@@ -5049,14 +5040,6 @@
         "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर",
         "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } फ़ोल्डर चयनित",
-        "${ selectedFoldersCount } फ़ोल्डर्स का चयन किया"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } लेबल चयनित",
-        "${ selectedFoldersCount } लेबल चयनित"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } फ़ोल्डर चयनित",
         "${ selectedFoldersCountLocalized } फ़ोल्डर्स का चयन किया"
@@ -5067,9 +5050,6 @@
       ],
       "${ storage } storage": [
         "${ storage } स्टोरेज"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } स्टोरेज"
       ],
       "${ userFound } user found": [
         "${ userFound } यूज़र मिले",
@@ -5708,9 +5688,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } से ${ toEmail } पे डाटा आयात कर रहे।"
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "अपने डेटा को ${ importedEmailAddress } से ${ toEmail } में आयात करना।"
       ],
       "Inherited from parent folder": [
         "मूल फ़ोल्डर से इनहेरिट की गई"
@@ -6797,14 +6774,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "आपकी सदस्यता का प्रबंधन मोज़िला द्वारा किया जाता है। कृपया मोज़िला समर्थन से संपर्क करें।"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
       ]
     },
     "Info - folder colouring feature": {
@@ -8602,6 +8571,26 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "सारे ${ BRAND_NAME } प्लान देखे"
+      ],
+      "From ${ price }": [
+        "${ price } से"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "मेरा ${ currentPlanName } खाता रखें"
+      ],
+      "Upgrade": [
+        "अपग्रेड"
+      ],
+      "Upgrade now": [
+        "अभी अपग्रेड करें"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "देखना जारी रखें"
@@ -8641,26 +8630,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } पे अपग्रेड करें"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "सारे ${ BRAND_NAME } प्लान देखे"
-      ],
-      "From ${ price }": [
-        "${ price } से"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "मेरा ${ currentPlanName } खाता रखें"
-      ],
-      "Upgrade": [
-        "अपग्रेड"
-      ],
-      "Upgrade now": [
-        "अभी अपग्रेड करें"
       ]
     },
     "new_plans: feature": {
@@ -10392,6 +10361,11 @@
         "ऑनलाइन निजता को बढ़ावा दें"
       ]
     },
+    "specialoffer: Footer": {
+      "This subscription will automatically renew every 2 years at the same rate until it is cancelled.": [
+        "यह सदस्यता रद्द होने तक हर 2 साल में उसी दर पर स्वतः नवीनीकृत हो जाएगी।"
+      ]
+    },
     "specialoffer: Label": {
       "Lifetime deal": [
         "ज़िंदगीभर का सौदा"
@@ -10479,6 +10453,9 @@
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
         "अवरुद्ध सामग्री तक पहुंचें और निजी तौर पर ब्राउज़ करें। इसमें 60 से अधिक देशों में 1700 सर्वर, उच्चतम वीपीएन गति, 10 वीपीएन कनेक्शन, दुनिया भर में स्ट्रीमिंग सेवाएं, मैलवेयर और विज्ञापन-अवरोधक और बहुत कुछ शामिल है।"
+      ],
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
+        "Netflix, Disney+, Prime Video और वैसे स्ट्रीम सेवाओं के कंटेंट तक पहुंचे, चाहे आप जहा भी हो।"
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "हमारी सभी प्रीमियम सेवाएँ अपनी उच्चतम सीमा के साथ: 100 ईमेल पते, 10 कस्टम डोमेन के लिए समर्थन, असीमित hide-my-email उपनाम, कैलेंडर साझाकरण, एन्क्रिप्टेड क्लाउड स्टोरेज और फ़ाइल साझाकरण, और बहुत कुछ।"
@@ -10932,6 +10909,9 @@
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
         "इसमें 65+ देशों में 2950+ सर्वर, 10 डिवाइस तक कनेक्ट, दुनिया भर में स्ट्रीमिंग सेवाओं तक पहुंच, मैलवेयर और विज्ञापन-अवरोधक और बहुत कुछ शामिल है।"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "अपनी फ़ाइलों को एन्क्रिप्टेड क्लाउड स्टोरेज से सुरक्षित करें। संस्करण इतिहास, एन्क्रिप्टेड फ़ाइल साझाकरण, और बहुत कुछ शामिल है।"
       ]
     },
     "Tab in domain modal": {

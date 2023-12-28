@@ -1373,14 +1373,8 @@
       "High speed streaming": [
         "Transmisii în flux de mare viteză"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } premium"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } premium"
       ],
       "Premium Password Manager": [
         "Manager de parole premium"
@@ -2975,9 +2969,6 @@
       "Daily": [
         "Zilnic"
       ],
-      "Daily, ${ timesString }": [
-        "Zilnic, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Zilnic, ${ untilString }"
       ],
@@ -2985,11 +2976,6 @@
         "Zilnic",
         "La fiecare ${ interval } zile",
         "La fiecare ${ interval } de zile"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Zilnic, ${ timesString }",
-        "La fiecare ${ interval } zile, ${ timesString }",
-        "La fiecare ${ interval } de zile, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Zilnic, ${ untilString }",
@@ -5002,16 +4988,6 @@
         "${ selectedContactsLength }/${ contactsLength } contacte selectate",
         "${ selectedContactsLength }/${ contactsLength } de contacte selectate"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "S-a selectat un folder",
-        "S-au selectat ${ selectedFoldersCount } foldere",
-        "S-au selectat ${ selectedFoldersCount } de foldere"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "S-a selectat o etichetă",
-        "S-au selectat ${ selectedFoldersCount } etichete",
-        "S-au selectat ${ selectedFoldersCount } de etichete"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "Este selectat un folder",
         "Sunt selectate ${ selectedFoldersCountLocalized } foldere",
@@ -5443,6 +5419,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Pentru mai multe rezultate, încercați să căutați în conținutul mesajelor."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Redirecționați mesajele primite pe e-mail de la un alt cont în contul securizat al ${ MAIL_APP_NAME }."
+      ],
       "Free up some space or add more storage space.": [
         "Eliberați ceva spațiu sau mai adăugați spațiu de stocare."
       ],
@@ -5504,11 +5483,11 @@
       "Import mailbox": [
         "Importare mesaje"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importați mesajele, calendarele și contactele de la un alt serviciu la ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Se importă datele de la ${ fromEmail } la ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Se importă datele de la ${ importedEmailAddress } la ${ toEmail }."
       ],
       "Include Spam/Trash.": [
         "Includere Nedorite/Gunoi."

@@ -1364,14 +1364,8 @@
       "High speed streaming": [
         "Hochgeschwindigkeits-Streaming"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium-${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium-${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Premium-Passwortmanager"
@@ -1399,6 +1393,10 @@
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Umgehe lokale Internetsperren und Zensuren mit unserem globalen Servernetz."
+      ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Beinhaltet Unterstützung für ${ domains } eigene E-Mail-Domains, ${ addresses } E-Mail-Adressen, unbegrenzte hide-my-email-Aliasse, Kalenderfreigabe und mehr.",
+        "Beinhaltet Unterstützung für ${ domains } eigene E-Mail-Domains, ${ addresses } E-Mail-Adressen, unbegrenzte hide-my-email-Aliasse, Kalenderfreigabe und mehr."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Beinhaltet Unterstützung für eine eigene E-Mail-Domain, 10 E-Mail-Adressen, 10 „hide-my-email“-Aliasse, Kalenderfreigabe und mehr."
@@ -2139,6 +2137,11 @@
       ],
       "URL": [
         "URL"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Bild des Kontakts"
       ]
     },
     "Contact type label": {
@@ -2959,9 +2962,6 @@
       "Daily": [
         "Täglich"
       ],
-      "Daily, ${ timesString }": [
-        "Täglich, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Täglich, ${ untilString }"
       ],
@@ -2969,16 +2969,17 @@
         "Alle ${ interval } Tage",
         "Alle ${ interval } Tage"
       ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Alle ${ interval } Tage, ${ timesString }",
-        "Alle ${ interval } Tage, ${ timesString }"
-      ],
       "Every ${ interval } day, ${ untilString }": [
         "Täglich, ${ untilString }",
         "Aller ${ interval } Tage, ${ untilString }"
       ],
       "until ${ dateString }": [
         "bis ${ dateString }"
+      ]
+    },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "Täglich, ${ timesString }"
       ]
     },
     "Date label": {
@@ -3243,12 +3244,37 @@
         "Verschlüsselter Header-Dateiname"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "Alle kostenpflichtigen ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ PASS_SHORT_APP_NAME } Funktionen"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Enthält Versionshistorie in ${ DRIVE_SHORT_APP_NAME }, Zugriff auf Tausende von Hochgeschwindigkeits-Servern von ${ VPN_SHORT_APP_NAME }, Teilen in ${ PASS_SHORT_APP_NAME } und mehr."
+      ]
+    },
     "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 Benutzer"
+      ],
       "Early access to new apps and features": [
         "Früher Zugang zu neuen Anwendungen und Funktionen"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "Früher Zugang zur ${ MAIL_APP_NAME } Desktop App"
+      ],
+      "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Alle kostenpflichtigen ${ MAIL_SHORT_APP_NAME }- und ${ CALENDAR_APP_NAME }-Funktionen"
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } kann sich nicht mit deinem externen Account verbinden"
+      ],
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
         "${ error.message } für <${ email }>. Du kannst einen anderen Schlüssel hinzufügen oder die Verschlüsselung für diesen Kontakt deaktivieren, um das Problem zu beheben."
       ],
@@ -3618,6 +3644,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Bitte nur Buchstaben, Ziffern und die Zeichen _ . - verwenden"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Unerwarteter Fehler, wir können die Kontakte nicht importieren"
       ],
       "Unknown error": [
         "Unbekannter Fehler"
@@ -4900,14 +4929,6 @@
         "${ selectedContactsLength }/${ contactsLength } Kontakt ausgewählt",
         "${ selectedContactsLength }/${ contactsLength } Kontakte ausgewählt"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } Ordner ausgewählt",
-        "${ selectedFoldersCount } Ordner ausgewählt"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } Kategorie ausgewählt",
-        "${ selectedFoldersCount } Kategorien ausgewählt"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } Ordner ausgewählt",
         "${ selectedFoldersCountLocalized } Ordner ausgewählt"
@@ -5314,6 +5335,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Um mehr Suchergebnisse zu erhalten, suche nach diesem Schlüsselwort im Inhalt deiner E-Mails."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Leite ankommende E-Mails eines anderen Kontos in deinen sicheren ${ MAIL_APP_NAME } Posteingang weiter."
+      ],
       "Free up some space or add more storage space.": [
         "Gib etwas Platz frei oder füge zusätzlichen Speicherplatz hinzu."
       ],
@@ -5373,11 +5397,11 @@
       "Import mailbox": [
         "Postfach importieren"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importiere deine E-Mails, Kalender und Kontakte eines anderen Dienstes zu ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Deine Daten werden von ${ fromEmail } nach ${ toEmail } importiert."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Deine Daten werden von ${ importedEmailAddress } nach ${ toEmail } importiert."
       ],
       "Include Spam/Trash.": [
         "Spam/Papierkorb miteinbeziehen."
@@ -6275,6 +6299,16 @@
     "Info on errors": {
       "Click for details": [
         "Für Details klicken"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } Ordner ausgewählt",
+        "${ selectedFoldersCount } Ordner ausgewählt"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } Kategorie ausgewählt",
+        "${ selectedFoldersCount } Kategorien ausgewählt"
       ]
     },
     "Key badge": {
@@ -7660,7 +7694,7 @@
         "Entdecke alle ${ BRAND_NAME }-Dienste"
       ],
       "Pick a theme": [
-        "Wähle ein Theme"
+        "Wähle ein Design"
       ],
       "Set up your organization": [
         "Organisation einrichten"
@@ -8671,7 +8705,7 @@
         "${ elementsCount } Unterhaltungen stumm geschaltet"
       ],
       "${ elementsCount } conversation unsnoozed": [
-        "${ elementsCount } Unterhaltung unverändert",
+        "${ elementsCount } Unterhaltung stumm geschaltet",
         "${ elementsCount } Unterhaltungen stumm geschaltet"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
@@ -9617,6 +9651,9 @@
       ],
       "Hide side panel": [
         "Seitenleiste ausblenden"
+      ],
+      "Load image": [
+        "Bild laden"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Wähle das PGP-Schema, das beim Signieren oder Verschlüsseln an einen Benutzer genutzt werden soll. Beachte dabei, dass PGP/Inline das Senden als reine Textnachrichten erzwingt."

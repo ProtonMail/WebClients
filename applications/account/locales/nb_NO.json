@@ -50,9 +50,6 @@
       "activate": [
         "aktiver"
       ],
-      "Activate ${ Name }@pm.me": [
-        "Aktiver ${ Name }@pm.me"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "Aktiver ${ user.Name }@pm.me"
       ],
@@ -1365,14 +1362,11 @@
       "High speed streaming": [
         "Strømming med høy hastighet"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium-${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Premium-${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium-${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium-${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Premium passordbehandler"
@@ -2994,9 +2988,6 @@
       "Daily": [
         "Daglig"
       ],
-      "Daily, ${ timesString }": [
-        "Daglig, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Daglig, ${ untilString }"
       ],
@@ -3004,16 +2995,21 @@
         "Hver ${ interval } dag",
         "Hver ${ interval } dag"
       ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Hver ${ interval } dag, ${ timesString }",
-        "Hver ${ interval } dag, ${ timesString }"
-      ],
       "Every ${ interval } day, ${ untilString }": [
         "Hver ${ interval } dag, ${ untilString }",
         "Hver ${ interval } dag, ${ untilString }"
       ],
       "until ${ dateString }": [
         "til ${ dateString }"
+      ]
+    },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "Daglig, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Hver ${ interval } dag, ${ timesString }",
+        "Hver ${ interval } dag, ${ timesString }"
       ]
     },
     "Day": {
@@ -5766,13 +5762,23 @@
         "Deler av kalenderinnholdet ditt støttes ikke, og kan ikke importeres."
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } adresse",
-        "${ amountOfAddresses } adresser"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
+      ],
+      "Selected color:": [
+        "Valgt farge:"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "${ boldName } vil bli angitt som standard kalender."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning }. Du vil miste tilgang til alle gjeldende krypterte data i kontoen din hvis du fortsetter."
@@ -5791,9 +5797,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi betyr at ingen kan få tilgang til ditt passord - ikke engang vi."
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } vil bli angitt som standard kalender."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
@@ -5820,9 +5823,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: forhåndsvisning i lav oppløsning"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } vil bli angitt som standard kalender."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } ønsker å dele data med deg i ${ PASS_APP_NAME }"
@@ -5885,14 +5885,6 @@
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalendere"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } mappe valgt",
-        "${ selectedFoldersCount } mapper valgt"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etikett valgt",
-        "${ selectedFoldersCount } etiketter valgt"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } mappe valgt",
         "${ selectedFoldersCountLocalized } mapper valgt"
@@ -5903,9 +5895,6 @@
       ],
       "${ storage } storage": [
         "${ storage } lagringsplass"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } lagringsplass"
       ],
       "${ userFound } user found": [
         "${ userFound } bruker funnet",
@@ -6646,9 +6635,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importerer dine data fra ${ importedEmailAddress } til ${ toEmail }."
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Forbedre din ${ BRAND_NAME } opplevelse ved å tilpasse applikasjonen til dine behov."
@@ -7989,17 +7975,6 @@
         "Abonnementet ditt administreres av Mozilla. Vennligst kontakt Mozilla-støtte."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
-      ],
-      "Selected color:": [
-        "Valgt farge:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Når aktivert, arver undermapper fargen på den overordnede mappen."
@@ -8044,6 +8019,16 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "For å unngå tjenesteavbrudd på grunn av ubetalte fakturaer, må du sørge for at du har minst 1 gyldig betalingsmåte lagret til enhver tid."
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } mappe valgt",
+        "${ selectedFoldersCount } mapper valgt"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } etikett valgt",
+        "${ selectedFoldersCount } etiketter valgt"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -9997,6 +9982,26 @@
         "Middels VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforsk alle ${ BRAND_NAME }-planer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Behold min ${ currentPlanName }-konto"
+      ],
+      "Upgrade": [
+        "Oppgrader"
+      ],
+      "Upgrade now": [
+        "Oppgrader nå"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Fortsett gjennomgangen"
@@ -10036,26 +10041,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Oppgrader til ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforsk alle ${ BRAND_NAME }-planer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Behold min ${ currentPlanName }-konto"
-      ],
-      "Upgrade": [
-        "Oppgrader"
-      ],
-      "Upgrade now": [
-        "Oppgrader nå"
       ]
     },
     "new_plans: feature": {

@@ -705,14 +705,11 @@
       "High speed streaming": [
         "Streaming de alta velocidade"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "${ appName } Premium"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Gerenciador de senha premium"
@@ -2747,10 +2744,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } endereço",
-        "${ amountOfAddresses } endereços"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
@@ -2771,6 +2764,10 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "O ${ MAIL_APP_NAME } também pode ser usado com uma senha única que substitui as senhas de início de sessão e de acesso à caixa de e-mail. Para habilitar o modo de senha única, digite a senha única que deseja usar e clique em Salvar."
+      ],
+      "${ n } address": [
+        "${ n } endereço",
+        "${ n } endereços"
       ],
       "${ number } city": [
         "${ number } cidade",
@@ -5625,6 +5622,20 @@
         "Fazer upgrade do meu plano"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Criptografado de ponta a ponta"
+      ],
+      "Open source": [
+        "Código aberto"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protegido por leis de privacidade da Suíça"
+      ],
+      "Swiss based": [
+        "Sediado na Suíça"
+      ]
+    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "Oferta por tempo limitado"
@@ -5634,6 +5645,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "Benefícios do ${ appName }"
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } por mês"
       ],
@@ -5655,6 +5669,12 @@
       "Includes:": [
         "Incluí:"
       ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Junte-se a mais de 100 milhões de pessoas que escolheram a ${ BRAND_NAME } para manter a segurança on-line"
+      ],
+      "Open-source and audited": [
+        "Código aberto e auditado"
+      ],
       "per month": [
         "por mês"
       ],
@@ -5670,11 +5690,17 @@
       "Preparing your Recovery Kit": [
         "Preparando o kit de recuperação"
       ],
+      "Protected by Swiss privacy laws": [
+        "Protegido pelas leis de privacidade suíças"
+      ],
       "Updating your account": [
         "Atualizando sua conta"
       ],
       "Verifying your payment": [
         "Verificando seu pagamento"
+      ],
+      "Works on all devices": [
+        "Funciona em todos os dispositivos"
       ],
       "You currently have": [
         "Você tem atualmente"
