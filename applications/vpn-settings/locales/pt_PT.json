@@ -693,14 +693,11 @@
       "High speed streaming": [
         "Streaming de alta velocidade"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Premium ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Versão premium do gestor de palavras-passe"
@@ -2006,7 +2003,7 @@
         "Usou todos os utilizadores do seu plano. Subscreva um plano superior para adicionar um utilizador."
       ],
       "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Deve ativar as chaves da sua organização. Sem ativação não poderá criar ou aceder a utilizadores não-privados."
+        "Deve ativar as chaves da sua organização. Sem ativação não poderá criar ou aceder a utilizadores não privados."
       ],
       "You must privatize all users before generating new organization keys": [
         "É necessário privatizar todos os utilizadores antes de gerar novas chaves de organização"
@@ -2621,10 +2618,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } endereço",
-        "${ amountOfAddresses } endereços"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
@@ -2645,6 +2638,10 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } também pode ser utilizado com uma palavra-passe única que substitui a palavra-passe de início de sessão e da caixa de correio. Para mudar para o modo de palavra-passe única, introduza a palavra-passe única que pretende utilizar e clique em Guardar."
+      ],
+      "${ n } address": [
+        "${ n } endereço",
+        "${ n } endereços"
       ],
       "${ number } city": [
         "${ number } cidade",
@@ -5443,6 +5440,20 @@
         "Actualizar o meu plano"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Encriptado de ponta a ponta"
+      ],
+      "Open source": [
+        "Código aberto"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protegido pelas leis de privacidade suíças"
+      ],
+      "Swiss based": [
+        "Sediado na Suíça"
+      ]
+    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "Oferta por tempo limitado"
@@ -5452,6 +5463,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "Benefícios do ${ appName }"
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } por mês"
       ],
@@ -5466,6 +5480,12 @@
       ],
       "Includes:": [
         "Incluí:"
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Junte-se a mais de 100 milhões de pessoas que escolheram a ${ BRAND_NAME } para se manterem seguras em linha."
+      ],
+      "Open-source and audited": [
+        "Código aberto e auditado"
       ],
       "per month": [
         "por mês"
@@ -5482,11 +5502,17 @@
       "Preparing your Recovery Kit": [
         "Preparação do kit de recuperação"
       ],
+      "Protected by Swiss privacy laws": [
+        "Protegido pelas leis de privacidade suíças"
+      ],
       "Updating your account": [
         "Actualização da sua conta"
       ],
       "Verifying your payment": [
         "Verificação do seu pagamento"
+      ],
+      "Works on all devices": [
+        "Funciona em todos os dispositivos"
       ],
       "You currently have": [
         "Tem atualmente"

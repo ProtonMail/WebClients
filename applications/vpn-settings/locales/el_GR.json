@@ -708,14 +708,11 @@
       "High speed streaming": [
         "Ροή υψηλής ταχύτητας"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Premium ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Premium Διαχειριστής Κωδικών Πρόσβασης"
@@ -1863,6 +1860,9 @@
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
         "Η έκδοση beta της εφαρμογής επιφάνειας εργασίας ${ MAIL_APP_NAME } περιορίζεται προς το παρόν σε συνδρομητές ${ BRAND_NAME } Visionary. Θα είναι διαθέσιμο σε όλους τους χρήστες στις αρχές του 2024."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Αναβαθμίστε σήμερα ή ελέγξτε ξανά στις αρχές του 2024 για πρόσβαση."
       ]
     },
     "Downgrade account reason": {
@@ -2763,10 +2763,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } διεύθυνση",
-        "${ amountOfAddresses } διευθύνσεις"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
       ],
@@ -2787,6 +2783,10 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Το ${ MAIL_APP_NAME } μπορεί επίσης να χρησιμοποιηθεί με έναν μόνο κωδικό πρόσβασης, ο οποίος αντικαθιστά τόσο τον κωδικό εισόδου όσο και τον κωδικό πρόσβασης θυρίδας. Για μετάβαση σε λειτουργία μονού κωδικού πρόσβασης, πληκτρολογήστε αυτόν που θέλετε και πατήστε Αποθήκευση."
+      ],
+      "${ n } address": [
+        "${ n } διεύθυνση",
+        "${ n } διευθύνσεις"
       ],
       "${ number } city": [
         "${ number } πόλη",
@@ -5629,6 +5629,20 @@
         "Αναβαθμίστε το πλάνο μου"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Κρυπτογραφημένο από άκρο σε άκρο (διατερματικά)"
+      ],
+      "Open source": [
+        "Ανοιχτού κώδικα"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Προστατεύεται από τους Ελβετικούς νόμους περί απορρήτου"
+      ],
+      "Swiss based": [
+        "Με έδρα στην Ελβετία"
+      ]
+    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "Προσφορά περιορισμένου χρόνου"
@@ -5638,6 +5652,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "${ appName } οφέλη"
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } ανά μήνα"
       ],
@@ -5659,6 +5676,12 @@
       "Includes:": [
         "Περιλαμβάνει:"
       ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Ενταχθείτε στους περισσότερους από 100 εκατομμυρίων ανθρώπους που έχουν επιλέξει το ${ BRAND_NAME } για να παραμείνουν ασφαλείς στο διαδίκτυο"
+      ],
+      "Open-source and audited": [
+        "Ανοιχτού κώδικα και ελεγμένο"
+      ],
       "per month": [
         "ανά μήνα"
       ],
@@ -5674,11 +5697,17 @@
       "Preparing your Recovery Kit": [
         "Προετοιμασία του Κιτ Αποκατάστασης"
       ],
+      "Protected by Swiss privacy laws": [
+        "Προστατεύεται από τους Ελβετικούς νόμους περί απορρήτου"
+      ],
       "Updating your account": [
         "Πραγματοποιείται ενημέρωση του λογαριασμού σας"
       ],
       "Verifying your payment": [
         "Γίνεται επαλήθευση της πληρωμής σας"
+      ],
+      "Works on all devices": [
+        "Λειτουργεί σε όλες τις συσκευές"
       ],
       "You currently have": [
         "Προς το παρόν έχετε"
