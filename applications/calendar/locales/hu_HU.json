@@ -792,14 +792,8 @@
       "6 users": [
         "6 felhasználó"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Prémium ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Prémium ${ MAIL_SHORT_APP_NAME } és ${ CALENDAR_SHORT_APP_NAME }."
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Prémium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Prémium jelszókezelő"
@@ -2055,19 +2049,12 @@
       "Daily": [
         "Naponta"
       ],
-      "Daily, ${ timesString }": [
-        "Naponta, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Naponta, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "Minden ${ interval }. napon",
         "Minden ${ interval }. napon"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Minden ${ interval }. napon, ${ timesString }",
-        "Minden ${ interval }. napon, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Minden ${ interval }. napon, ${ untilString }",
@@ -2289,6 +2276,11 @@
       ],
       "Update for an event starting on ${ formattedStart }": [
         "Frissítés egy eseményhez: ${ formattedStart }"
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
       ]
     },
     "Error": {
@@ -3577,14 +3569,6 @@
         "${ selectedContactsLength }/${ contactsLength } névjegy kiválasztva",
         "${ selectedContactsLength }/${ contactsLength } névjegy kiválasztva"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } mappa kiválasztva",
-        "${ selectedFoldersCount } mappa kiválasztva"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } címke kiválasztva",
-        "${ selectedFoldersCount } címke kiválasztva"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } mappa kiválasztva",
         "${ selectedFoldersCountLocalized } mappa kiválasztva"
@@ -3804,6 +3788,9 @@
       "Existent, added and removed participants will be notified.": [
         "A meglévő, felvett és az eltávolított résztvevők is értesítést kapnak."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Irányítsa át a bejövő leveleit másik címről, a biztonságos ${ MAIL_APP_NAME } fiókjába."
+      ],
       "Free up some space or add more storage space.": [
         "Szabadítson fel helyet vagy vásároljon több területet."
       ],
@@ -3838,11 +3825,11 @@
       "Import mailbox": [
         "E-mail fiók importálása"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importálja az e-mailjeit, naptárait és névjegyeit másik szolgáltatásból a ${ BRAND_NAME } fiókjába."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Adatok importálása innen: ${ fromEmail }, ide: ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Adatok importálása a(z) ${ importedEmailAddress } címről a(z) ${ toEmail } címre."
       ],
       "Indexing events: ${ current }/${ total }": [
         "${ current }/${ total } esemény indexelése"
@@ -6787,6 +6774,9 @@
       ],
       "Hide side panel": [
         "Az oldalsó panel elrejtése"
+      ],
+      "Load image": [
+        "Kép betöltése"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Megadható a partnernek küldött titkosított vagy aláírt levelekben használandó PGP séma. PGP/Inline esetén az üzenet mindig Egyszerű Szöveg formátumú lesz"
