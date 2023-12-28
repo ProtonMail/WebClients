@@ -4,6 +4,9 @@ import { Breakpoints, DropdownMenu, DropdownMenuButton, Icon, useModalState } fr
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
+import { isConversationMode } from 'proton-mail/helpers/mailSettings';
+import useMailModel from 'proton-mail/hooks/useMailModel';
+
 import { canMoveAll, labelIncludes } from '../../helpers/labels';
 import { useEmptyLabel } from '../../hooks/actions/useEmptyLabel';
 import { useMoveAll } from '../../hooks/actions/useMoveAll';
@@ -78,6 +81,7 @@ const MoreDropdown = ({
     onDelete,
     breakpoints,
 }: Props) => {
+    const mailSettings = useMailModel('MailSettings');
     let [firstActions, actions] = useLabelActions(labelID);
     if (isExtraTiny) {
         actions = [...firstActions, ...actions];
@@ -195,6 +199,7 @@ const MoreDropdown = ({
                           onClose={onClose}
                           onLock={onLock}
                           breakpoints={breakpoints}
+                          isMessage={!isConversationMode(labelID, mailSettings)}
                       />
                   ),
               },
