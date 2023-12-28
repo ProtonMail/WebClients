@@ -2,7 +2,9 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { signoutAction } from '@proton/account';
 import { Button } from '@proton/atoms';
+import { useDispatch } from '@proton/redux-shared-store';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -92,6 +94,7 @@ interface Props extends ModalProps {
 }
 
 const ChangePasswordModal = ({ mode, onSessionRecovery, onSuccess, onClose, ...rest }: Props) => {
+    const dispatch = useDispatch();
     const api = useApi();
     const { call, stop, start } = useEventManager();
     const authentication = useAuthentication();
@@ -491,8 +494,8 @@ const ChangePasswordModal = ({ mode, onSessionRecovery, onSuccess, onClose, ...r
     if (errors.fatalError) {
         const handleFatalErrorClose = () => {
             if (errors.persistError) {
-                // If there was an error with persisting the session, we have no choice but to logout
-                authentication.logout();
+                // If there was an error persisting the session, we have no choice but to logout
+                dispatch(signoutAction({ clearDeviceRecovery: true }));
             }
             lockAndClose();
         };

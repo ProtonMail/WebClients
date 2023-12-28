@@ -26,6 +26,6 @@ export const ProtonStoreProvider = ({ children, store }: ProtonStoreProviderProp
     );
 };
 
-export let useStore: () => SharedStore = baseUseStore;
-export let useDispatch: () => UseProtonDispatch = baseUseDispatch;
-export let useSelector: TypedUseSelectorHook<SharedState> = baseUseSelector;
+export const useStore: () => SharedStore = baseUseStore;
+export const useDispatch: () => UseProtonDispatch = baseUseDispatch;
+export const useSelector: TypedUseSelectorHook<SharedState> = baseUseSelector;

@@ -19,7 +19,6 @@ import {
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import ModalsChildren from '@proton/components/containers/modals/Children';
 import { APPS, CLIENT_TYPES } from '@proton/shared/lib/constants';
-import { setMetricsEnabled } from '@proton/shared/lib/helpers/metrics';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
@@ -30,8 +29,6 @@ import signupPage from '../pages/signup';
 import AccountLoaderPage from './AccountLoaderPage';
 import VPNPublicApp from './VPNPublicApp';
 import LoginContainer from './containers/LoginContainer';
-
-setMetricsEnabled(true);
 
 const getPaths = (maybeLocalePrefix: string): Paths => {
     const localePrefix = maybeLocalePrefix || getLocaleMapping(localeCode);
@@ -142,7 +139,6 @@ const PublicApp = ({ onLogin, locales }: PublicAppProps) => {
     return (
         <VPNPublicApp location={location} pathLocale={location.fullLocale} loader={loader} locales={locales}>
             <InnerPublicApp onLogin={onLogin} loader={loader} location={location} />
-            FeaturesProvider,
         </VPNPublicApp>
     );
 };

@@ -1,18 +1,13 @@
-import { updateVersionCookie, versionCookieAtLoad } from '@proton/components/hooks/useEarlyAccess';
 import { PersistedSessionWithLocalID } from '@proton/shared/lib/authentication/SessionInterface';
-import { getIsIframe } from '@proton/shared/lib/helpers/browser';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { getLocalKey, getLocalSessions, revoke, setLocalKey } from '../api/auth';
 import { getIs401Error } from '../api/helpers/apiErrorHelper';
-import { InactiveSessionError } from '../api/helpers/withApiHandlers';
+import { InactiveSessionError } from '../api/helpers/errors';
 import { getUser } from '../api/user';
-import { getAppFromPathnameSafe } from '../apps/slugHelper';
-import { SECOND, isSSOMode } from '../constants';
-import { getIsAuthorizedApp, getIsDrawerPostMessage, postMessageFromIframe } from '../drawer/helpers';
-import { DRAWER_EVENTS } from '../drawer/interfaces';
+import { isSSOMode } from '../constants';
 import { withUIDHeaders } from '../fetch/headers';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '../helpers/encoding';
 import { Api, User as tsUser } from '../interfaces';
@@ -49,62 +44,7 @@ export const logRemoval = (e: any = {}, UID: string, context: string) => {
     });
 };
 
-const handleDrawerApp = (localID: number) => {
-    let timeout: ReturnType<typeof setTimeout> | undefined;
-
-    let resolve: (arg: undefined | ResumedSessionResult) => void = () => {};
-    const promise = new Promise<undefined | ResumedSessionResult>((res) => {
-        resolve = res;
-    });
-
-    const isIframe = getIsIframe();
-    const parentApp = getAppFromPathnameSafe(window.location.pathname);
-
-    const handler = (event: MessageEvent) => {
-        if (!getIsDrawerPostMessage(event)) {
-            return;
-        }
-
-        if (event.data.type === DRAWER_EVENTS.SESSION) {
-            const { UID, keyPassword, User, persistent, trusted, tag } = event.data.payload;
-            window.removeEventListener('message', handler);
-
-            if (timeout) {
-                clearTimeout(timeout);
-            }
-
-            // When opening the drawer, we might need to set the tag of the app we are opening
-            // Otherwise we will not open the correct version of the app (default instead of beta or alpha)
-            if (tag && versionCookieAtLoad !== tag) {
-                updateVersionCookie(tag, undefined);
-                window.location.reload();
-            }
-
-            resolve({ UID, keyPassword, User, persistent, trusted, LocalID: localID });
-        }
-    };
-
-    if (parentApp && getIsAuthorizedApp(parentApp) && isIframe) {
-        postMessageFromIframe({ type: DRAWER_EVENTS.READY }, parentApp);
-        window.addEventListener('message', handler);
-
-        // Resolve the promise if the parent app does not respond
-        timeout = setTimeout(() => {
-            resolve(undefined);
-        }, SECOND);
-    } else {
-        resolve(undefined);
-    }
-    return promise;
-};
-
 export const resumeSession = async (api: Api, localID: number): Promise<ResumedSessionResult> => {
-    const res = await handleDrawerApp(localID);
-
-    // If we got a res, it means that we are in a drawer app. We don't need to make the whole resumeSession part
-    if (res) {
-        return res;
-    }
     const persistedSession = getPersistedSession(localID);
     if (!persistedSession) {
         throw new InvalidPersistentSessionError('Missing persisted session or UID');

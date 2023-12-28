@@ -1,6 +1,6 @@
-import { useRef } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
+import * as bootstrap from '@proton/account/bootstrap';
 import {
     ApiProvider,
     CacheProvider,
@@ -15,53 +15,52 @@ import {
     RightToLeftProvider,
     StandardPublicApp,
     ThemeProvider,
-    getSessionTrackingEnabled,
 } from '@proton/components';
-import { newVersionUpdater } from '@proton/shared/lib/busy';
-import { getProdId, setVcalProdId } from '@proton/shared/lib/calendar/vcalConfig';
-import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
-import sentry from '@proton/shared/lib/helpers/sentry';
-import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
-import noop from '@proton/utils/noop';
-
-import MailStoreProvider from 'proton-mail/store/MailStoreProvider';
+import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import createApi from '@proton/shared/lib/api/createApi';
+import createCache from '@proton/shared/lib/helpers/cache';
 
 import * as config from './config';
 import EOContainer from './containers/eo/EOContainer';
 import { registerMailToProtocolHandler } from './helpers/url';
 import locales from './locales';
+import { setupStore } from './store/store';
 
-import './app.scss';
+const boostrapApp = () => {
+    const api = createApi({ config });
+    const authentication = bootstrap.createAuthentication({ initialAuth: false });
+    bootstrap.init({ config, locales, authentication });
+    // If the browser is Chromium based, register automatically the mailto protocol handler
+    if ('chrome' in window) {
+        registerMailToProtocolHandler();
+    }
+    const store = setupStore();
+    const cache = createCache();
 
-setTtagLocales(locales);
-newVersionUpdater(config);
-sentry({ config, sessionTracking: getSessionTrackingEnabled() });
-setVcalProdId(getProdId(config));
+    return {
+        authentication,
+        store,
+        cache,
+        api,
+    };
+};
 
-// If the browser is Chromium based, register automatically the mailto protocol handler
-if ('chrome' in window) {
-    registerMailToProtocolHandler();
-}
+const { store, api, cache } = boostrapApp();
 
 const App = () => {
-    const cacheRef = useRef<Cache<string, any>>();
-    if (!cacheRef.current) {
-        cacheRef.current = createCache<string, any>();
-    }
-
     return (
-        <MailStoreProvider>
+        <ProtonStoreProvider store={store}>
             <ConfigProvider config={config}>
                 <CompatibilityCheck>
                     <Icons />
                     <RightToLeftProvider>
-                        <ThemeProvider>
+                        <ThemeProvider appName={config.APP_NAME}>
                             <Router>
                                 <PreventLeaveProvider>
                                     <NotificationsProvider>
                                         <ModalsProvider>
-                                            <ApiProvider config={config} onLogout={noop}>
-                                                <CacheProvider cache={cacheRef.current}>
+                                            <ApiProvider api={api}>
+                                                <CacheProvider cache={cache}>
                                                     <NotificationsChildren />
                                                     <StandardPublicApp loader={<LoaderPage />} locales={locales}>
                                                         <EOContainer />
@@ -76,7 +75,7 @@ const App = () => {
                     </RightToLeftProvider>
                 </CompatibilityCheck>
             </ConfigProvider>
-        </MailStoreProvider>
+        </ProtonStoreProvider>
     );
 };
 

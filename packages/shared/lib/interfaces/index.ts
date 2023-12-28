@@ -28,6 +28,7 @@ export * from './UserSettings';
 export * from './VPN';
 export * from './config';
 export * from './utils';
+export * from './Locale';
 
 export interface EncryptionConfig {
     type?: 'ecc' | 'rsa';

@@ -7,6 +7,7 @@ import { useLoading } from '@proton/hooks';
 import { leaveOrganisation } from '@proton/shared/lib/api/organization';
 import { reportBug } from '@proton/shared/lib/api/reports';
 import { canDelete, deleteUser, unlockPasswordChanges } from '@proton/shared/lib/api/user';
+import { handleLogout } from '@proton/shared/lib/authentication/logout';
 import { ACCOUNT_DELETION_REASONS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { emailValidator, minLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { omit } from '@proton/shared/lib/helpers/object';
@@ -148,7 +149,7 @@ const DeleteAccountModal = (props: Props) => {
 
             await onSuccess?.();
             onClose?.();
-            authentication.logout();
+            handleLogout({ appName: APP_NAME, authentication, clearDeviceRecoveryData: true, type: 'full' });
         } catch (error: any) {
             eventManager.start();
             throw error;

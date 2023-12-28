@@ -8,6 +8,7 @@ import {
     userKeysReducer,
     userReducer,
     userSettingsReducer,
+    welcomeFlagsReducer,
 } from '@proton/account';
 import { featuresReducer } from '@proton/features';
 import {
@@ -20,10 +21,10 @@ import {
 
 export const sharedReducers = {
     ...userReducer,
+    ...userKeysReducer,
     ...addressesReducer,
     ...addressKeysReducer,
     ...userSettingsReducer,
-    ...userKeysReducer,
     ...mailSettingsReducer,
     ...subscriptionReducer,
     ...organizationReducer,
@@ -33,5 +34,6 @@ export const sharedReducers = {
     ...contactEmailsReducer,
     ...categoriesReducer,
     ...importerConfigReducer,
+    ...welcomeFlagsReducer,
     features: featuresReducer.reducer,
 };

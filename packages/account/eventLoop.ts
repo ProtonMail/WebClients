@@ -25,7 +25,7 @@ import type {
 } from '@proton/shared/lib/interfaces/calendar/EventManager';
 import type { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-interface EventLoop {
+export interface EventLoop {
     User?: User;
     Filters?: EventItemUpdate<Filter, 'Filter'>[];
     Domains?: EventItemUpdate<Domain, 'Domain'>[];

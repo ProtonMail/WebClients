@@ -1,13 +1,6 @@
-import { createSelector } from '@reduxjs/toolkit';
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { baseUseSelector } from '@proton/redux-shared-store';
 import type { InactiveKey } from '@proton/shared/lib/interfaces';
-import { getAllKeysReactivationRequests } from '@proton/shared/lib/keys/getInactiveKeys';
-import { KeyReactivationRequest } from '@proton/shared/lib/keys/reactivation/interface';
-
-import { AddressesState, selectAddresses } from '../addresses';
-import { UserState, selectUser } from '../user';
 
 interface State {
     user: InactiveKey[];
@@ -48,20 +41,3 @@ export const selectInactiveKeys = (state: InactiveKeysState) => state.inactiveKe
 
 export const inactiveKeysReducer = slice.reducer;
 export const inactiveKeysActions = slice.actions;
-
-type Result = KeyReactivationRequest[];
-
-const selector = createSelector(
-    [
-        (state: InactiveKeysState) => selectInactiveKeys(state),
-        (state: UserState) => selectUser(state).value,
-        (state: AddressesState) => selectAddresses(state).value,
-    ],
-    (inactiveKeys, user, addresses): Result => {
-        return getAllKeysReactivationRequests({ addresses, user, inactiveKeys });
-    }
-);
-
-export const useInactiveKeys = () => {
-    return baseUseSelector<InactiveKeysState & UserState & AddressesState, Result>(selector);
-};
