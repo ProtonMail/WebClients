@@ -541,9 +541,6 @@
       "Save": [
         "保存"
       ],
-      "Save version as copy": [
-        "将版本另存为副本"
-      ],
       "Search": [
         "搜索"
       ],
@@ -820,14 +817,8 @@
       "High speed streaming": [
         "高速看视频"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "高级 ${ DRIVE_SHORT_APP_NAME } 账户"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "高级 ${ MAIL_SHORT_APP_NAME } 与 ${ CALENDAR_SHORT_APP_NAME } 账户"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "高级 ${ VPN_SHORT_APP_NAME } 账户"
       ],
       "Premium Password Manager": [
         "高级密码管理器"
@@ -3183,12 +3174,6 @@
       "${ selectedCount } selected": [
         "已选择 ${ selectedCount }"
       ],
-      "${ selectedFoldersCount } folders selected": [
-        "已选择 ${ selectedFoldersCount } 个文件夹"
-      ],
-      "${ selectedFoldersCount } labels selected": [
-        "已选择 ${ selectedFoldersCount } 个标签"
-      ],
       "${ selectedFoldersCountLocalized } folders selected": [
         "已选择 ${ selectedFoldersCountLocalized } 个文件夹"
       ],
@@ -3516,6 +3501,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "为了获得最佳效果，请避免流式传输和内存密集型活动，或将上传分成较小的批次。"
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "将其他邮箱收到的邮件自动转发至您安全的 ${ MAIL_APP_NAME } 邮箱。"
+      ],
       "Free up some space or add more storage space.": [
         "释放一些存储空间或付费扩容。"
       ],
@@ -3561,11 +3549,11 @@
       "Import mailbox": [
         "导入收件箱"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "将您的邮件、日历和通讯录从其他邮箱导入至 ${ BRAND_NAME }。"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "将您的数据从 ${ fromEmail } 导入至 ${ toEmail }。"
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "为项目编制索引：${ esProgress } 条 / 共 ${ totalProgressToShow } 条"
