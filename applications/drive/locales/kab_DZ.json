@@ -534,9 +534,6 @@
       "Save": [
         "Sekles"
       ],
-      "Save version as copy": [
-        "Sekles lqem am tenɣalt"
-      ],
       "Search": [
         "Anadi"
       ],
@@ -2924,14 +2921,6 @@
         "${ selectedCount } yettwafernen",
         "${ selectedCount } yettwafernen"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } d akaram yettwafernen",
-        "${ selectedFoldersCount } d ikaramen yettwafernen"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } n tebzimt yettwafernen",
-        "${ selectedFoldersCount } n tebzimin yettwafernen"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } d ukaram yettwefrenn",
         "${ selectedFoldersCountLocalized } d ikaramen yettwefrenn"
@@ -3269,9 +3258,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Taktert n yisefka-inek•inem seg ${ fromEmail } ɣer ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Taktert n yisefka-inek•inem seg ${ importedEmailAddress } ɣer ${ toEmail }."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Timerna n umatar n yiferdisen ${ esProgress } ɣef ${ totalProgressToShow }"
