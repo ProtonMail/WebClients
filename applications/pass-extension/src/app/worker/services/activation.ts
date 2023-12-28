@@ -17,7 +17,7 @@ import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
-import { getEpoch } from '@proton/pass/utils/time/epoch';
+import { getEpoch, msToEpoch } from '@proton/pass/utils/time/epoch';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 
 import { checkExtensionPermissions } from '../../../lib/utils/permissions';
@@ -26,6 +26,7 @@ import { isVivaldiBrowser } from '../../../lib/utils/vivaldi';
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 import store from '../store';
+import { getSessionResumeAlarm, getSessionResumeDelay } from './auth';
 
 type ActivationServiceState = {
     updateAvailable: MaybeNull<string>;
@@ -56,7 +57,7 @@ export const createActivationService = () => {
                 const [updateStatus] = await browser.runtime.requestUpdateCheck();
 
                 if (updateStatus === 'update_available') {
-                    logger.info('[Worker::Activation] update detected');
+                    logger.info('[ActivationService] update detected');
                     return true;
                 }
             }
@@ -119,7 +120,7 @@ export const createActivationService = () => {
                 const url = browser.runtime.getURL('/onboarding.html#/success');
                 await browser.tabs.create({ url });
             } catch (error: any) {
-                logger.warn(`[Worker::Activation] requesting fork failed: ${getErrorMessage(error)}`);
+                logger.warn(`[ActivationService] requesting fork failed: ${getErrorMessage(error)}`);
             }
 
             void ctx.service.settings.onInstall();
@@ -130,7 +131,7 @@ export const createActivationService = () => {
 
     const checkPermissionsUpdate = async () => {
         state.permissionsGranted = await checkExtensionPermissions();
-        if (!state.permissionsGranted) logger.info(`[Worker::Activation] missing permissions`);
+        if (!state.permissionsGranted) logger.info(`[ActivationService] missing permissions`);
 
         WorkerMessageBroker.ports.broadcast(
             backgroundMessage({
@@ -159,12 +160,34 @@ export const createActivationService = () => {
             const { tabId } = payload;
             const { status } = ctx.getState();
 
-            /* If the worker is stale or errored during a 'popup-initiated' wakeup,
-             * re-init the authentication service : this allows resuming a session
-             * without requiring user action (ie: worker could not resume because of
-             * connectivity issues -> when network becomes available, automatically
-             * resume session without requiring a `Sign back in` click from the lobby) */
-            const shouldResume = clientStale(status) || (clientErrored(status) && endpoint === 'popup');
+            /* Resume the session immediately if the worker is stale/idle or if the wakeup request
+             * originated from the popup. For wake-up calls from other extension endpoints (e.g.,
+             * content-script), determine based on the current session resuming state. If an ongoing
+             * alarm exists or if we haven't reached the next session resume delay, take no action */
+            const shouldResume = await (async (): Promise<boolean> => {
+                if (clientStale(status)) return true;
+
+                if (clientErrored(status)) {
+                    if (endpoint === 'popup') return true;
+                    else {
+                        const { lastCalledAt, callCount } = ctx.service.auth.resumeSession;
+                        const nextDelay = getSessionResumeDelay(callCount);
+                        const resumeAlarm = await getSessionResumeAlarm();
+
+                        const scheduledTime = resumeAlarm
+                            ? msToEpoch(resumeAlarm.scheduledTime)
+                            : (lastCalledAt ?? 0) + nextDelay;
+
+                        const delay = scheduledTime - getEpoch();
+                        if (!resumeAlarm && delay <= 0) return true;
+
+                        logger.info(`[ActivationService] Automatic session resume stalled for ${delay}s`);
+                    }
+                }
+
+                return false;
+            })();
+
             if (shouldResume) void ctx.service.auth.init({ forceLock: true, retryable: false });
 
             /* dispatch a wakeup action for this specific receiver.
@@ -238,7 +261,7 @@ export const createActivationService = () => {
 
     const handleOnUpdateAvailable = (details: Runtime.OnUpdateAvailableDetailsType) => {
         if (details.version) {
-            logger.info(`[Worker::Activation] update available ${details.version}`);
+            logger.info(`[ActivationService] update available ${details.version}`);
             state.updateAvailable = details.version;
 
             const popupPorts = WorkerMessageBroker.ports.query(isPopupPort());
@@ -249,7 +272,7 @@ export const createActivationService = () => {
 
             /* if we have ports opened to a popup : notify them in order
              * to manually prompt the user for a runtime reload */
-            logger.info(`[Worker::Activation] update deferred because popup is active`);
+            logger.info(`[ActivationService] update deferred because popup is active`);
             popupPorts.forEach((port) =>
                 port.postMessage(
                     backgroundMessage({

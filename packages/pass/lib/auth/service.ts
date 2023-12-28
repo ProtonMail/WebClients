@@ -216,6 +216,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             api.unsubscribe();
             await api.reset();
 
+            authService.resumeSession.resetCount();
             config.onUnauthorized?.(userID, localID, options.broadcast ?? true);
 
             return true;
@@ -360,7 +361,6 @@ export const createAuthService = (config: AuthServiceConfig) => {
         resumeSession: withCallCount(
             pipe(
                 async (localID: Maybe<number>, options: AuthResumeOptions): Promise<boolean> => {
-                    if (!options.retryable) authService.resumeSession.resetCount();
                     const memorySession = await config.getMemorySession?.();
 
                     if (memorySession && isValidSession(memorySession)) {

@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { SESSION_RESUME_MAX_RETRIES, SESSION_RESUME_RETRY_TIMEOUT } from '@proton/pass/constants';
 import { AccountForkResponse, getAccountForkResponsePayload } from '@proton/pass/lib/auth/fork';
-import { type AuthService, createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
+import { createAuthService as createCoreAuthService } from '@proton/pass/lib/auth/service';
 import { SESSION_KEYS, isValidPersistedSession } from '@proton/pass/lib/auth/session';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import { clientAuthorized, clientLocked, clientReady, clientUnauthorized } from '@proton/pass/lib/client';
@@ -36,7 +36,14 @@ import { withContext } from '../context';
 export const SESSION_LOCK_ALARM = 'alarm::session-lock';
 export const SESSION_RESUME_ALARM = 'alarm::session-resume';
 
-export const createAuthService = (api: Api, authStore: AuthStore): AuthService => {
+export const getSessionResumeAlarm = () => browser.alarms.get(SESSION_RESUME_ALARM);
+
+export const getSessionResumeDelay = (retryCount: number) => {
+    const retryIdx = Math.min(retryCount, FIBONACCI_LIST.length - 1);
+    return SESSION_RESUME_RETRY_TIMEOUT * FIBONACCI_LIST[retryIdx];
+};
+
+export const createAuthService = (api: Api, authStore: AuthStore) => {
     const authService = createCoreAuthService({
         api,
         authStore,
@@ -145,9 +152,8 @@ export const createAuthService = (api: Api, authStore: AuthStore): AuthService =
                 const retryInfo = `(${retryCount}/${SESSION_RESUME_MAX_RETRIES})`;
 
                 if (retryCount <= SESSION_RESUME_MAX_RETRIES) {
-                    const retryIdx = Math.min(retryCount, FIBONACCI_LIST.length - 1);
-                    const delay = SESSION_RESUME_RETRY_TIMEOUT * FIBONACCI_LIST[retryIdx];
-                    const when = (getEpoch() + delay) * 1_000;
+                    const delay = getSessionResumeDelay(retryCount);
+                    const when = epochToMs(getEpoch() + delay);
                     logger.info(`[AuthService] Retrying session resume in ${delay}s ${retryInfo}`);
 
                     await browser.alarms.clear(SESSION_RESUME_ALARM);
