@@ -810,14 +810,8 @@
       "High speed streaming": [
         "ჩქაროსნული სტრიმინგი"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "პაროლების მმართველის ფასიანი ვერსია"
@@ -2105,19 +2099,12 @@
       "Daily": [
         "ყოველდღიურად"
       ],
-      "Daily, ${ timesString }": [
-        "ყოველდღე, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "ყოველდღე, ${ untilString }-მდე"
       ],
       "Every ${ interval } day": [
         "ყოველ ${ interval } დღეში",
         "ყოველ ${ interval } დღეში"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "ყოველ ${ interval } დღეში, ${ timesString }-ზე",
-        "ყოველ ${ interval } დღეში, ${ timesString }-ზე"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "ყოველ ${ interval } დღეში, ${ untilString }-მდე",
@@ -3665,14 +3652,6 @@
         "მონიშნულია ${ selectedContactsLength }/${ contactsLength } კონტაქტი",
         "მონიშნულია ${ selectedContactsLength }/${ contactsLength } კონტაქტი"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "მონიშნულია ${ selectedFoldersCount } საქაღალდე",
-        "მონიშნულია ${ selectedFoldersCount } საქაღალდე"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "მონიშნულია ${ selectedFoldersCount } ჭდე",
-        "მონიშნულია ${ selectedFoldersCount } ჭდე"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "მონიშნულია ${ selectedFoldersCountLocalized } საქაღალდე",
         "მონიშნულია ${ selectedFoldersCountLocalized } საქაღალდე"
@@ -3895,6 +3874,9 @@
       "Existent, added and removed participants will be notified.": [
         "არსებულ, დამატებულ და წაშლილ მონაწილეებს გაფრთხლება გაეგზავნებათ."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "შემომავალი ფოსტის გადამისამართება სხვა ანგარიშიდან თქვენს უსაფრთხო ${ MAIL_APP_NAME } შემოსულებში."
+      ],
       "Free up some space or add more storage space.": [
         "გაათავისუფლეთ ან დაამატეთ ადგილი."
       ],
@@ -3929,11 +3911,11 @@
       "Import mailbox": [
         "საფოსტო ყუთის შემოტანა"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "თქვენი ელფოსტის, კალენდრების და კონტაქტების შემოტანა სხვა სერვისიდან ${ BRAND_NAME }-ში."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "მიმდინარეობს მონაცემების ${ fromEmail }-დან ${ toEmail }-ში შემოტანა."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "მიმდინარეობს მონაცემების ${ importedEmailAddress }-დან ${ toEmail }-ში შემოტანა."
       ],
       "Indexing events: ${ current }/${ total }": [
         "დაინდექსების მოვლენები: ${ current }/${ total }"
