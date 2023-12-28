@@ -1,6 +1,6 @@
 import type { Callback, MaybeNull } from '@proton/pass/types';
 
-import { getEpoch } from '../time/get-epoch';
+import { getEpoch } from '../time/epoch';
 
 type WithCallCount<F extends Callback> = F & {
     /** Number of function calls since last `resetCount` call */

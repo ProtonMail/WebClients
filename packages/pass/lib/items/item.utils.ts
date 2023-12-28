@@ -4,7 +4,7 @@ import type { Draft } from '@proton/pass/store/reducers';
 import type { ItemRevision, ItemSortFilter, ItemType, MaybeNull } from '@proton/pass/types';
 import { arrayInterpolate } from '@proton/pass/utils/array/interpolate';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 import { isEditItemDraft } from './item.predicates';
 
