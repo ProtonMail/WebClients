@@ -708,14 +708,11 @@
       "High speed streaming": [
         "ჩქაროსნული სტრიმინგი"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Premium ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "პაროლების მმართველის ფასიანი ვერსია"
@@ -2746,10 +2743,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } მისამართი",
-        "${ amountOfAddresses } მისამართი"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
       ],
@@ -2770,6 +2763,10 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } ერთი პაროლითაც შეგიძლიათ, გამოიყენოთ, რომელიც ორივე, შესვლის და საფოსტო ყუთის პაროლებს შეცვლის. ერთპაროლიან რეჟიმში გადასართავად შეიყვანეთ პაროლი და შენახვას დააჭირეთ."
+      ],
+      "${ n } address": [
+        "${ n } მისამართი",
+        "${ n } მისამართი"
       ],
       "${ number } city": [
         "${ number } ქალაქი",
@@ -5612,6 +5609,20 @@
         "ტარიფის გაუმჯობესება"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "გამჭოლი შიფრაცია"
+      ],
+      "Open source": [
+        "ღია კოდი"
+      ],
+      "Protected by Swiss privacy laws": [
+        "დაცულია შვეიცარიული კონფიდენციალობის კანონებით"
+      ],
+      "Swiss based": [
+        "ბაზირებულია შვეიცარიაში"
+      ]
+    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "დროში შეზღუდული შეთავაზება"
@@ -5621,6 +5632,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "${ appName }-ის უპირატესობები"
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } თვეში"
       ],
@@ -5642,6 +5656,12 @@
       "Includes:": [
         "შეიცავს:"
       ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "შეუერთდით 100 მილიონ ადამიანზე მეტს, ვინც ინტერნეტში უსაფრთხოდ სამუშაოდ ${ BRAND_NAME } ამოირჩია"
+      ],
+      "Open-source and audited": [
+        "ღია კოდით, გადამოწმებული"
+      ],
       "per month": [
         "თვეში"
       ],
@@ -5657,11 +5677,17 @@
       "Preparing your Recovery Kit": [
         "თქვენი აღგენის ნაკრების მომზადება"
       ],
+      "Protected by Swiss privacy laws": [
+        "დაცულია შვეიცარიული კონფიდენციალობის კანონებით"
+      ],
       "Updating your account": [
         "თქვენი ანგარიშის განახლება"
       ],
       "Verifying your payment": [
         "თქვენი გადახდის შემოწმება"
+      ],
+      "Works on all devices": [
+        "მუშაობს ყველა მოწყობილობაზე"
       ],
       "You currently have": [
         "ამჟამად გაქვთ"

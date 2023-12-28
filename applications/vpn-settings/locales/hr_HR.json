@@ -533,11 +533,11 @@
       "6 users": [
         "6 korisnika"
       ],
+      "Premium ${ appName }": [
+        "Premium ${ appName }"
+      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ]
     },
     "bf2023: Offers": {
@@ -1965,13 +1965,13 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } adresa",
-        "${ amountOfAddresses } adrese",
-        "${ amountOfAddresses } adresa"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } zahtjeva vaše dopuštenje da ${ enableDesktopNotifications }."
+      ],
+      "${ n } address": [
+        "${ n } adresa",
+        "${ n } adrese",
+        "${ n } adresa"
       ],
       "${ number } city": [
         "${ number } grad",
@@ -3160,6 +3160,17 @@
       ],
       "Upgrade my plan": [
         "Nadogradi moj plan"
+      ]
+    },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "End-to-End šifriranje"
+      ],
+      "Open source": [
+        "Otvoreni kôd"
+      ],
+      "Swiss based": [
+        "Bazirano u Švicarskoj"
       ]
     },
     "pass_signup_2023: Header": {
