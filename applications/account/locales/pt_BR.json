@@ -50,9 +50,6 @@
       "activate": [
         "ativar"
       ],
-      "Activate ${ Name }@pm.me": [
-        "Ativar ${ Name }@pm.me"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
       ],
@@ -1362,14 +1359,11 @@
       "High speed streaming": [
         "Streaming de alta velocidade"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "${ appName } Premium"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Gerenciador de senha premium"
@@ -2991,19 +2985,12 @@
       "Daily": [
         "Diariamente"
       ],
-      "Daily, ${ timesString }": [
-        "Diariamente, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Diariamente, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "A cada ${ interval } dia",
         "A cada ${ interval } dias"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "A cada ${ interval } dia, ${ timesString }",
-        "A cada ${ interval } dias, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "A cada ${ interval } dia, ${ untilString }",
@@ -5744,13 +5731,23 @@
         "Parte do conteúdo de seu calendário não é suportado e por isso não será importado."
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } endereço",
-        "${ amountOfAddresses } endereços"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Chave ${ fingerprint } já foi enviada"
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "${ boldName } será definido como calendário padrão."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Você perderá o acesso a todos os dados criptografados atuais em sua conta se continuar."
@@ -5769,9 +5766,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "A tecnologia de criptografia da ${ BRAND_NAME } significa que ninguém pode acessar sua senha - nem mesmo nós."
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } será definido como calendário padrão."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } novo calendário",
@@ -5798,9 +5792,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: pré-visualização em baixa resolução"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } será definido como calendário padrão."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } quer compartilhar dados com você em ${ PASS_APP_NAME }"
@@ -5863,14 +5854,6 @@
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendário",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendários"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } pasta selecionada",
-        "${ selectedFoldersCount } pastas selecionadas"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } marcador selecionado",
-        "${ selectedFoldersCount } marcadores selecionados"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } pasta selecionada",
         "${ selectedFoldersCountLocalized } pastas selecionadas"
@@ -5881,9 +5864,6 @@
       ],
       "${ storage } storage": [
         "${ storage } de armazenamento"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } de armazenamento"
       ],
       "${ userFound } user found": [
         "${ userFound } usuário encontrado",
@@ -6616,9 +6596,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando seus dados de ${ fromEmail } para ${ toEmail }."
       ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importando seus dados de ${ importedEmailAddress } para ${ toEmail }."
-      ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Melhore sua experiência com a ${ BRAND_NAME } adaptando o aplicativo às suas necessidades."
       ],
@@ -6967,6 +6944,9 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Observe que se você excluir este domínio, todos os endereços associados a ele serão desativados."
+      ],
+      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Observe que se você excluir este filtro ${ nameDeleted }, deixaremos de processar todas as ações automatizadas que ele desencadeia."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Note que ao clicar no botão Confirmar a sua conta terá ${ creditsRemaining } créditos restantes."
@@ -7953,17 +7933,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Sua assinatura é gerenciada pela Mozilla. Entre em contato com o suporte da Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Chave ${ fingerprint } já foi enviada"
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9529,6 +9498,9 @@
       "Sign in": [
         "Iniciar sessão"
       ],
+      "switch account": [
+        "alternar de conta"
+      ],
       "Terms": [
         "Termos"
       ],
@@ -9957,6 +9929,26 @@
         "Velocidade média de VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorar todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Manter minha conta do ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade now": [
+        "Fazer upgrade agora"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Prosseguir para a revisão"
@@ -9996,26 +9988,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Fazer upgrade para o ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorar todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Manter minha conta do ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade now": [
-        "Fazer upgrade agora"
       ]
     },
     "new_plans: feature": {
@@ -13484,8 +13456,17 @@
       "Delete calendar": [
         "Excluir calendário"
       ],
+      "Delete filter?": [
+        "Excluir filtro?"
+      ],
+      "Delete folder?": [
+        "Excluir pasta?"
+      ],
       "Delete key permanently?": [
         "Excluir permanentemente a chave?"
+      ],
+      "Delete label?": [
+        "Excluir marcador?"
       ],
       "Delete logs": [
         "Excluir registros"
@@ -14010,6 +13991,9 @@
       ],
       "Summary": [
         "Resumo"
+      ],
+      "Switch account": [
+        "Alternar de conta"
       ],
       "Switch to one-password mode": [
         "Alternar para modo de senha única"

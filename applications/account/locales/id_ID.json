@@ -50,9 +50,6 @@
       "activate": [
         "aktifkan"
       ],
-      "Activate ${ Name }@pm.me": [
-        "Aktifkan ${ Name }@pm.me"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "Aktifkan ${ user.Name }@pm.me"
       ],
@@ -1362,14 +1359,11 @@
       "High speed streaming": [
         "Streaming berkecepatan tinggi"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } Premium"
+      "Premium ${ appName }": [
+        "${ appName } Premium"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME } Premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } Premium"
       ],
       "Premium Password Manager": [
         "Pengelola Kata Sandi Premium"
@@ -2984,23 +2978,25 @@
       "Daily": [
         "Harian"
       ],
-      "Daily, ${ timesString }": [
-        "Harian, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Harian, ${ untilString }"
       ],
       "Every ${ interval } days": [
         "Setiap ${ interval } hari"
       ],
-      "Every ${ interval } days, ${ timesString }": [
-        "Setiap ${ interval } hari, ${ timesString }"
-      ],
       "Every ${ interval } days, ${ untilString }": [
         "Setiap ${ interval } hari, ${ untilString }"
       ],
       "until ${ dateString }": [
         "sampai ${ dateString }"
+      ]
+    },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "Harian, ${ timesString }"
+      ],
+      "Every ${ interval } days, ${ timesString }": [
+        "Setiap ${ interval } hari, ${ timesString }"
       ]
     },
     "Day": {
@@ -3130,6 +3126,9 @@
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
         "Versi beta aplikasi desktop ${ MAIL_APP_NAME } saat ini hanya terbatas bagi para pelanggan ${ BRAND_NAME } Visionary. Versi aplikasi ini akan tersedia bagi seluruh pengguna pada awal 2024."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Tingkatkan akun Anda sekarang juga atau periksa kembali di awal 2024 untuk memperoleh akses."
       ]
     },
     "Disable account": {
@@ -3687,6 +3686,9 @@
       ]
     },
     "Error": {
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } tidak dapat terhubung ke akun eksternal Anda"
+      ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Anda juga dapat mengunjungi ${ statusPageLink } kami"
       ],
@@ -4088,6 +4090,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Terdapat kesalahan yang tidak diduga. Kami tidak dapat mengimpor kontak"
       ],
       "Unknown error": [
         "Kesalahan yang tidak diketahui"
@@ -5200,6 +5205,9 @@
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Sudah memiliki akun? ${ signIn }"
+      ],
+      "Already have an account? ${ signIn } or ${ switchAccount }": [
+        "Sudah memiliki akun? ${ signIn } atau ${ switchAccount }"
       ]
     },
     "Go to sign up": {
@@ -5717,12 +5725,23 @@
         "Sebagian isi kalender Anda tidak didukung dan tidak akan diimpor."
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } addresses": [
-        "${ amountOfAddresses } alamat"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kunci ${ fingerprint } sudah diunggah"
+      ],
+      "Selected color:": [
+        "Warna terpilih:"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "${ boldName } akan ditetapkan sebagai kalender bawaan."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Apabila Anda melanjutkan, Anda akan kehilangan akses menuju seluruh data yang terenkripsi pada akun Anda."
@@ -5741,9 +5760,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Teknologi enkripsi ${ BRAND_NAME } memastikan bahwa tidak ada siapa pun yang dapat mengakses kata sandi Anda — termasuk kami sendiri."
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } akan ditetapkan sebagai kalender bawaan."
       ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } kalender baru"
@@ -5768,9 +5784,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: pratinjau resolusi rendah"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } akan diatur sebagai kalender bawaan."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } ingin berbagi data dengan Anda pada ${ PASS_APP_NAME }"
@@ -5823,12 +5836,6 @@
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ selectedCalendarsTotal } dari ${ providerCalendars.length } kalender"
       ],
-      "${ selectedFoldersCount } folders selected": [
-        "${ selectedFoldersCount } folder terpilih"
-      ],
-      "${ selectedFoldersCount } labels selected": [
-        "${ selectedFoldersCount } label terpilih"
-      ],
       "${ selectedFoldersCountLocalized } folders selected": [
         "${ selectedFoldersCountLocalized } folder dipilih"
       ],
@@ -5837,9 +5844,6 @@
       ],
       "${ storage } storage": [
         "Kuota penyimpanan ${ storage }"
-      ],
-      "${ storageSize } storage": [
-        "Kuota penyimpanan ${ storageSize }"
       ],
       "${ userFound } users found": [
         "${ userFound } pengguna ditemukan"
@@ -6027,6 +6031,9 @@
       "Any ${ twoFa } method on your account will be disabled.": [
         "Metode ${ twoFa } apa pun dalam akun Anda akan dinonaktifkan."
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Seluruh subfolder yang ada juga akan dihapus. Meskipun demikian, seluruh email yang tersimpan pada folder ${ nameDeleted } tidak akan dihapus dan tetap akan dapat ditemukan pada folder Semua Surat."
+      ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Semua orang yang memiliki tautan ini akan dapat melihat seluruh rincian acara yang terdapat pada kalender ini seperti judul acara, lokasi acara, atau daftar peserta."
       ],
@@ -6056,6 +6063,9 @@
       ],
       "Are you sure you want to delete this filter?": [
         "Apakah Anda yakin untuk menghapus filter ini?"
+      ],
+      "Are you sure you want to delete this folder?": [
+        "Apakah Anda yakin untuk menghapus folder ini?"
       ],
       "Are you sure you want to delete this label?": [
         "Apakah Anda yakin ingin menghapus label ini?"
@@ -6339,6 +6349,9 @@
       "Emailing preference saved": [
         "Preferensi surel disimpan"
       ],
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Email yang berlabel ${ nameDeleted } tidak akan dihapus dan tetap akan dapat ditemukan pada foldernya masing-masing."
+      ],
       "Enable this address to join this calendar": [
         "Aktifkan alamat ini untuk bergabung ke kalender ini"
       ],
@@ -6416,6 +6429,9 @@
       ],
       "for choosing ${ product }": [
         "telah memilih ${ product }"
+      ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Untuk anggota organisasi yang menggunakan single sign-on (SAML SSO)"
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Teruskan pesan yang datang dari akun lainnya menuju kotak masuk akun ${ MAIL_APP_NAME } aman Anda."
@@ -6554,9 +6570,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ fromEmail } ke ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Mengimpor data Anda dari ${ importedEmailAddress } menuju ${ toEmail }."
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Perkaya pengalaman ${ BRAND_NAME } Anda dengan menyesuaikan aplikasi sesuai dengan kebutuhan Anda."
@@ -6899,6 +6912,9 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Harap dicatat bahwa dengan menghapus domain ini, seluruh alamat yang terhubung dengan domain tersebut akan dinonaktifkan."
+      ],
+      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Mohon diperhatikan bahwa apabila Anda menghapus filter ${ nameDeleted }, kami tidak lagi akan memproses segala tindakan otomatis yang dipicu oleh filter tersebut."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Harap diperhatikan bahwa dengan mengeklik tombol Konfirmasi, total saldo Anda akan berkurang menjadi ${ creditsRemaining }."
@@ -7851,6 +7867,9 @@
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Kata sandi organisasi Anda dapat dibagikan dengan pengguna yang ingin Anda beri hak istimewa. Ini juga sebagai kode pemulihan darurat untuk mendapatkan akses ke organisasi ketika Anda kehilangan akses akun. Silakan simpan kata sandi ini di tempat yang aman."
       ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Organisasi Anda menggunakan single sign-on (SSO). Tekan Masuk untuk melanjutkan dengan penyedia SSO Anda."
+      ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Surel organisasi Anda terlindungi dengan enkripsi end-to-end melalui kunci organisasi. Sidik jari ini dapat digunakan untuk memverifikasi apakah seluruh administrator pada akun Anda memiliki kunci yang sama."
       ],
@@ -7871,17 +7890,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Langganan Anda dikelola oleh Mozilla. Silakan hubungi layanan dukungan Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Kami menemukan beberapa kunci duplikat. Mohon unggah satu per satu."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kunci ${ fingerprint } sudah diunggah"
-      ],
-      "Selected color:": [
-        "Warna terpilih:"
       ]
     },
     "Info - folder colouring feature": {
@@ -7928,6 +7936,14 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Untuk menghindari gangguan layanan karena tagihan yang belum terbayar, mohon pastikan Anda memiliki paling tidak 1 metode pembayaran yang valid yang telah tersimpan untuk digunakan sewaktu-waktu."
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folders selected": [
+        "${ selectedFoldersCount } folder dipilih"
+      ],
+      "${ selectedFoldersCount } labels selected": [
+        "${ selectedFoldersCount } label dipilih"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -9443,6 +9459,9 @@
       "Sign in": [
         "Masuk"
       ],
+      "switch account": [
+        "ganti akun"
+      ],
       "Terms": [
         "Ketentuan"
       ],
@@ -9860,6 +9879,26 @@
         "Kecepatan VPN sedang"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Telusuri seluruh paket ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Dari ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Pertahankan akun ${ currentPlanName } yang saya miliki saat ini"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Lanjut ke proses peninjauan"
@@ -9899,26 +9938,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Tingkatkan ke ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Telusuri seluruh paket ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Dari ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Pertahankan akun ${ currentPlanName } yang saya miliki saat ini"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
       ]
     },
     "new_plans: feature": {
@@ -13326,6 +13345,9 @@
       "Delete calendar": [
         "Hapus kalender"
       ],
+      "Delete filter?": [
+        "Hapus filter?"
+      ],
       "Delete folder?": [
         "Hapus folder?"
       ],
@@ -13853,6 +13875,9 @@
       ],
       "Summary": [
         "Ikhtisar"
+      ],
+      "Switch account": [
+        "Ganti akun"
       ],
       "Switch to one-password mode": [
         "Beralih ke mode satu kata sandi"
