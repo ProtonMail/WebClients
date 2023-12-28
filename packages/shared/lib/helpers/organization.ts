@@ -26,6 +26,10 @@ export const isProtoneer = (organization: Partial<Organization> = {}) => {
     return hasBit(organization.Flags, ORGANIZATION_FLAGS.PROTON);
 };
 
+export const hasPhoneSupport = (organization: Partial<Organization> = {}) => {
+    return hasBit(organization.Flags, ORGANIZATION_FLAGS.PHONE_SUPPORT);
+};
+
 export const hasBonuses = (organization: Partial<Organization> = {}) => {
     return !!organization.Flags || !!organization.LoyaltyCounter;
 };
@@ -58,6 +62,10 @@ export const humanReadableFlags = (organization: Partial<Organization> = {}) => 
     }
     if (isProtoneer(organization)) {
         flags.push('Proton');
+    }
+
+    if (hasPhoneSupport(organization)) {
+        flags.push('Phone Support');
     }
 
     return flags.length > 0 ? flags.join(', ') : '-';
