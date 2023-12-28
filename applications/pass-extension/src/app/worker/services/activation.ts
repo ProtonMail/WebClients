@@ -17,7 +17,7 @@ import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 
 import { checkExtensionPermissions } from '../../../lib/utils/permissions';

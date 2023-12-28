@@ -18,7 +18,7 @@ import { selectVaultLimits } from '@proton/pass/store/selectors';
 import type { NoteFormValues } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 const FORM_ID = 'new-note';
 

@@ -26,7 +26,7 @@ import {
 import type { Api, WorkerMessageResponse } from '@proton/pass/types';
 import { AppStatus, SessionLockStatus, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { epochToMs, getEpoch } from '@proton/pass/utils/time/epoch';
 import { FIBONACCI_LIST, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
@@ -112,10 +112,9 @@ export const createAuthService = (api: Api, authStore: AuthStore): AuthService =
                 await browser.alarms.clear(SESSION_LOCK_ALARM);
 
                 if (status === SessionLockStatus.REGISTERED && ttl) {
-                    const when = (getEpoch() + ttl) * 1_000;
                     browser.alarms
                         .clear(SESSION_LOCK_ALARM)
-                        .then(() => browser.alarms.create(SESSION_LOCK_ALARM, { when }))
+                        .then(() => browser.alarms.create(SESSION_LOCK_ALARM, { when: epochToMs(getEpoch() + ttl) }))
                         .catch(noop);
                 }
             } catch {}

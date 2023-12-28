@@ -6,7 +6,7 @@ import type { ItemImportIntent } from '@proton/pass/types';
 import type { ImportPayload } from '../types';
 import { readKeeperData } from './keeper.reader';
 
-jest.mock('@proton/pass/utils/time/get-epoch', () => ({
+jest.mock('@proton/pass/utils/time/epoch', () => ({
     getEpoch: jest.fn(() => 1682585156),
 }));
 

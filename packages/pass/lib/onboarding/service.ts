@@ -1,7 +1,7 @@
 import type { Storage } from '@proton/pass/types';
 import { type Maybe, type OnboardingAcknowledgment, OnboardingMessage, type OnboardingState } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import identity from '@proton/utils/identity';
 
 export type OnboardingStorageData = { onboarding: string };

@@ -16,7 +16,7 @@ import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { merge } from '@proton/pass/utils/object/merge';
 import { UNIX_DAY } from '@proton/pass/utils/time/constants';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 import { createOnboardingRule } from './service';
 

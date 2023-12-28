@@ -2,12 +2,12 @@ import fs from 'fs';
 
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import type { ItemImportIntent } from '@proton/pass/types';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 import type { ImportPayload } from '../types';
 import { readLastPassData } from './lastpass.reader';
 
-jest.mock('@proton/pass/utils/time/get-epoch', () => ({
+jest.mock('@proton/pass/utils/time/epoch', () => ({
     getEpoch: jest.fn(() => 1682585156),
 }));
 
