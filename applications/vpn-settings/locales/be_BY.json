@@ -714,14 +714,11 @@
       "High speed streaming": [
         "Высакахуткасныя трансляцыі"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Прэміяльны ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Прэміяльны ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Прэміяльны ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Прэміяльны ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Прэміяльны менеджар пароляў"
@@ -1881,7 +1878,7 @@
         "Бэта-версія настольнай праграмы ${ MAIL_APP_NAME } у цяперашні момант абмежавана падпісчыкамі з тарыфным планам ${ BRAND_NAME } Visionary. Яна стане даступна ўсім карыстальнікам у пачатку 2024 года."
       ],
       "Upgrade today or check again in early 2024 for access.": [
-        "Палепшыце сёння або праверце даступнасць на пачатку 2024 года."
+        "Палепшыце сёння або праверце даступнасць у пачатку 2024 года."
       ]
     },
     "Downgrade account reason": {
@@ -2800,12 +2797,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } адрас",
-        "${ amountOfAddresses } адрасы",
-        "${ amountOfAddresses } адрасоў",
-        "${ amountOfAddresses } адрасоў"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
       ],
@@ -2826,6 +2817,12 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Вы таксама можаце выкарыстоўваць ${ MAIL_APP_NAME } у рэжыме адзінага пароля, які замяняе сабой пароль ад уваходу і паштовай скрыні. Для пераключэння ў рэжым адзінага пароля ўвядзіце пароль, які вы хочаце выкарыстоўваць, а потым націсніце \"Захаваць\"."
+      ],
+      "${ n } address": [
+        "${ n } адрас",
+        "${ n } адрасы",
+        "${ n } адрасоў",
+        "${ n } адрасы"
       ],
       "${ number } city": [
         "${ number } горад",
@@ -5774,6 +5771,20 @@
         "Палепшыць мой тарыфны план"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Зашыфравана скразным метадам"
+      ],
+      "Open source": [
+        "Адкрыты зыходны код"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Абаронены швейцарскімі законамі аб прыватнасці"
+      ],
+      "Swiss based": [
+        "Знаходзіцца ў Швейцарыі"
+      ]
+    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "Абмежаваная прапанова"
@@ -5783,6 +5794,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "Перавагі ${ appName }"
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } у месяц"
       ],
@@ -5804,6 +5818,12 @@
       "Includes:": [
         "Уключае:"
       ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Далучайцеся да больш 100 мільёнаў людзей, якія ўжо выбралі ${ BRAND_NAME }, каб захаваць сваю сеткавую бяспеку."
+      ],
+      "Open-source and audited": [
+        "Адкрыты зыходны код і аўдыт"
+      ],
       "per month": [
         "у месяц"
       ],
@@ -5819,11 +5839,17 @@
       "Preparing your Recovery Kit": [
         "Падрыхтоўка вашага камплекту аднаўлення"
       ],
+      "Protected by Swiss privacy laws": [
+        "Абаронены швейцарскімі законамі аб прыватнасці"
+      ],
       "Updating your account": [
         "Абнаўленне вашага ўліковага запісу"
       ],
       "Verifying your payment": [
         "Праверка вашага плацяжу"
+      ],
+      "Works on all devices": [
+        "Працуе на ўсіх прыладах"
       ],
       "You currently have": [
         "Зараз у вас ёсць"

@@ -708,14 +708,11 @@
       "High speed streaming": [
         "Streaming ved høj hastighed"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Premium ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Premium Adgangskodeadministrator"
@@ -1857,6 +1854,9 @@
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
         "Beta-versionen af ${ MAIL_APP_NAME } skrivebordsappen er i øjeblikket begrænset til ${ BRAND_NAME } Visionary-abonnenter. Den vil være tilgængelig for alle brugere i begyndelsen af 2024."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Opgradér i dag eller tjek igen tidligt i 2024 for adgang."
       ]
     },
     "Downgrade account reason": {
@@ -2703,10 +2703,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } adresse",
-        "${ amountOfAddresses } adresser"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
       ],
@@ -2727,6 +2723,10 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan også benyttes med én enkelt adgangskode, der erstatter både log ind- og postkasseadgangskoden. Skift til enkeltadgangskodetilstand ved at angive den ønskede enkelte adgangskode, og tryk Gem."
+      ],
+      "${ n } address": [
+        "${ n } adresse",
+        "${ n } adresser"
       ],
       "${ number } city": [
         "${ number } by",
@@ -5444,6 +5444,20 @@
         "Opgradér mit abonnement"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "End-to-end krypteret"
+      ],
+      "Open source": [
+        "Open source"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Beskyttet af schweizisk lovgivning om privatlivsbeskyttelse"
+      ],
+      "Swiss based": [
+        "Baseret i Schweiz"
+      ]
+    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "Tidsbegrænset tilbud"
@@ -5453,6 +5467,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "${ appName }-fordele"
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } pr. måned"
       ],
@@ -5467,6 +5484,12 @@
       ],
       "Includes:": [
         "Inkluderer:"
+      ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Slut dig til over 100 millioner personer, som har valgt ${ BRAND_NAME } for at holde sig sikre online"
+      ],
+      "Open-source and audited": [
+        "Open source og revideret"
       ],
       "per month": [
         "pr. måned"
@@ -5483,11 +5506,17 @@
       "Preparing your Recovery Kit": [
         "Forbereder dit gendannelseskit"
       ],
+      "Protected by Swiss privacy laws": [
+        "Beskyttet af schweizisk lovgivning om privatlivsbeskyttelse"
+      ],
       "Updating your account": [
         "Opdaterer din konto"
       ],
       "Verifying your payment": [
         "Verificerer din betaling"
+      ],
+      "Works on all devices": [
+        "Virker på alle enheder"
       ],
       "You currently have": [
         "Du har i øjeblikket"

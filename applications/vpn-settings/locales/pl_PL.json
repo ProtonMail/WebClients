@@ -714,14 +714,11 @@
       "High speed streaming": [
         "Szybki streaming"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } w wersji premium"
+      "Premium ${ appName }": [
+        "${ appName } w wersji premium"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } w wersji premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } w wersji premium"
       ],
       "Premium Password Manager": [
         "Menedżer haseł w wersji premium"
@@ -2794,12 +2791,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } adres",
-        "${ amountOfAddresses } adresy",
-        "${ amountOfAddresses } adresów",
-        "${ amountOfAddresses } adresów"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikacja ${ appName } potrzebuje Twojej zgody, aby ${ enableDesktopNotifications }."
       ],
@@ -2820,6 +2811,12 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } może być również używany z wykorzystaniem pojedynczego hasła, które zastępuje Twoje hasło logowania oraz skrzynki pocztowej. Aby przejść w tryb pojedynczego hasła, wpisz hasło, z którego chcesz korzystać i kliknij przycisk Zapisz."
+      ],
+      "${ n } address": [
+        "${ n } adres",
+        "${ n } adresy",
+        "${ n } adresów",
+        "${ n } adresów"
       ],
       "${ number } city": [
         "${ number } miasto",
@@ -3930,6 +3927,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Możesz zarządzać kontem jako administrator."
+      ],
+      "You can now return to the application to continue": [
+        "Możesz wrócić do aplikacji, aby kontynuować"
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Możesz otworzyć jeden czat jednocześnie. Najpierw zamknij poprzedni wątek."
@@ -5768,6 +5768,20 @@
         "Ulepsz plan"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Szyfrowany end-to-end"
+      ],
+      "Open source": [
+        "Otwarty kod źródłowy"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Chroniony przez szwajcarskie prawa ochrony danych osobowych"
+      ],
+      "Swiss based": [
+        "Ulokowany w Szwajcarii"
+      ]
+    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "Oferta ograniczona czasowo"
@@ -5777,6 +5791,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "Bonusy ${ appName }"
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } miesięcznie"
       ],
@@ -5798,6 +5815,12 @@
       "Includes:": [
         "Zawiera:"
       ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Dołącz do ponad 100 milionów osób, którzy wybrali ${ BRAND_NAME }, aby zachować bezpieczeństwo w sieci"
+      ],
+      "Open-source and audited": [
+        "Aplikacje z otwartym kodem źródłowym zweryfikowane przez audyt"
+      ],
       "per month": [
         "miesięcznie"
       ],
@@ -5813,11 +5836,17 @@
       "Preparing your Recovery Kit": [
         "Przygotowywanie zestawu odzyskiwania"
       ],
+      "Protected by Swiss privacy laws": [
+        "Chroniony przez szwajcarskie prawa ochrony danych osobowych"
+      ],
       "Updating your account": [
         "Aktualizowanie konta"
       ],
       "Verifying your payment": [
         "Weryfikowanie płatności"
+      ],
+      "Works on all devices": [
+        "Działa na wszystkich urządzeniach"
       ],
       "You currently have": [
         "Obecnie masz"

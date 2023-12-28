@@ -711,14 +711,11 @@
       "High speed streaming": [
         "Transmisii în flux de mare viteză"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } premium"
+      "Premium ${ appName }": [
+        "${ appName } premium"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } premium"
       ],
       "Premium Password Manager": [
         "Manager de parole premium"
@@ -1871,6 +1868,9 @@
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
         "Versiunea beta a aplicației pentru desktop ${ MAIL_APP_NAME } este în prezent limitată la abonații cu planul ${ BRAND_NAME } Visionary. Aceasta va fi disponibilă pentru toți utilizatorii la începutul anului 2024."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Modificați azi planul sau reveniți la începutul lui 2024 pentru a avea acces."
       ]
     },
     "Downgrade account reason": {
@@ -2780,11 +2780,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } adresă",
-        "${ amountOfAddresses } adrese",
-        "${ amountOfAddresses } de adrese"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
       ],
@@ -2805,6 +2800,11 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } poate fi utilizat și cu o singură parolă care va înlocui atât parola contului cât și parola mesajelor. Pentru a comuta la modul cu parolă unică, introduceți parola dorită și apăsați pe «Salvare»."
+      ],
+      "${ n } address": [
+        "${ n } adresă",
+        "${ n } adrese",
+        "${ n } de adrese"
       ],
       "${ number } city": [
         "Un oraș",
@@ -5727,6 +5727,20 @@
         "Modificare plan"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Criptat bilateral"
+      ],
+      "Open source": [
+        "Cod sursă public"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protejat de legile elvețiene privind confidențialitatea"
+      ],
+      "Swiss based": [
+        "Situat în Elveția"
+      ]
+    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "Ofertă limitată"
@@ -5736,6 +5750,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "Beneficii ${ appName }"
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } pe lună"
       ],
@@ -5757,6 +5774,12 @@
       "Includes:": [
         "Include:"
       ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Alăturați-vă celor peste 100 de milioane de oameni care au ales ${ BRAND_NAME } pentru a rămâne în siguranță online."
+      ],
+      "Open-source and audited": [
+        "Sursă publică și auditată"
+      ],
       "per month": [
         "pe lună"
       ],
@@ -5772,11 +5795,17 @@
       "Preparing your Recovery Kit": [
         "Se pregătește pachetul de recuperare"
       ],
+      "Protected by Swiss privacy laws": [
+        "Protejat de legile elvețiene privind confidențialitatea"
+      ],
       "Updating your account": [
         "Se actualizează contul"
       ],
       "Verifying your payment": [
         "Verificare plată"
+      ],
+      "Works on all devices": [
+        "Funcționează pe orice dispozitiv"
       ],
       "You currently have": [
         "În prezent aveți"

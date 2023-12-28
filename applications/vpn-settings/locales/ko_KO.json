@@ -705,14 +705,11 @@
       "High speed streaming": [
         "고속 스트리밍"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Premium ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "프리미엄 암호 관리자"
@@ -1855,6 +1852,9 @@
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
         "${ MAIL_APP_NAME } 데스크톱 앱의 베타 버전은 현재 ${ BRAND_NAME } Visionary 구독자 한정입니다. 2024년 초에는 모두가 이용할 수 있습니다."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "접근을 위해선 오늘 업그레이드 하거나 2024년 초까지 기다려 주세요."
       ]
     },
     "Downgrade account reason": {
@@ -2746,9 +2746,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } addresses": [
-        "${ amountOfAddresses } 주소들"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
       ],
@@ -2769,6 +2766,9 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } 은 로그인 및 사서함 암호를 모두 대체하는 단일 암호와 함께 사용할 수도 있습니다. 단일 비밀번호 모드로 전환하려면 사용하려는 단일 비밀번호를 입력하고 저장을 클릭하십시오."
+      ],
+      "${ n } addresses": [
+        "${ n } 주소"
       ],
       "${ number } cities": [
         "${ number } 도시"
@@ -5585,6 +5585,20 @@
         "내 플랜 업그레이드"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "종단간 암호화됨"
+      ],
+      "Open source": [
+        "오픈 소스"
+      ],
+      "Protected by Swiss privacy laws": [
+        "스위스 개인정보법에 의해 보호됨"
+      ],
+      "Swiss based": [
+        "스위스에 위치"
+      ]
+    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "기간 한정 세일"
@@ -5594,6 +5608,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "${ appName } 혜택"
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice }/월간"
       ],
@@ -5615,6 +5632,12 @@
       "Includes:": [
         "포함:"
       ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "온라인에서 안전을 위해 ${ BRAND_NAME }을 선택한 1억 명이 넘는 사람들과 함께 하세요"
+      ],
+      "Open-source and audited": [
+        "오픈소스 및 심사됨"
+      ],
       "per month": [
         "매월"
       ],
@@ -5630,11 +5653,17 @@
       "Preparing your Recovery Kit": [
         "복구 키트를 준비하는 중"
       ],
+      "Protected by Swiss privacy laws": [
+        "스위스 개인정보법에 의해 보호됨"
+      ],
       "Updating your account": [
         "계정 업데이트 중"
       ],
       "Verifying your payment": [
         "결제 수단을 인증 중입니다."
+      ],
+      "Works on all devices": [
+        "모든 디바이스에서 작동"
       ],
       "You currently have": [
         "현재 플랜:"
