@@ -112,6 +112,7 @@ export const ValueControl = <E extends ElementType = 'div'>({
                 <div className="color-weak text-sm">{label}</div>
 
                 <ValueContainer
+                    key={`${hide ? 'hidden' : 'visible'}-container`}
                     className={clsx(
                         'pass-value-control--value m-0 p-0 cursor-pointer',
                         ellipsis && 'text-ellipsis',
