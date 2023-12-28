@@ -807,14 +807,8 @@
       "High speed streaming": [
         "Streamen met hoge snelheid"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Premium wachtwoordmanager"
@@ -2097,19 +2091,12 @@
       "Daily": [
         "Dagelijks"
       ],
-      "Daily, ${ timesString }": [
-        "Dagelijks, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Dagelijks, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "Elke ${ interval } dag",
         "Elke ${ interval } dagen"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Elke ${ interval } dag, ${ timesString }",
-        "Elke ${ interval } dagen, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Elke ${ interval } dag, ${ untilString }",
@@ -3631,14 +3618,6 @@
         "${ selectedContactsLength }/${ contactsLength } contact geselecteerd",
         "${ selectedContactsLength }/${ contactsLength } contacten geselecteerd"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } map geselecteerd",
-        "${ selectedFoldersCount } mappen geselecteerd"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } label geselecteerd",
-        "${ selectedFoldersCount } labels geselecteerd"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } map geselecteerd",
         "${ selectedFoldersCountLocalized } mappen geselecteerd"
@@ -3858,6 +3837,9 @@
       "Existent, added and removed participants will be notified.": [
         "Bestaande, toegevoegde en verwijderde deelnemers zullen op de hoogte worden gebracht."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Binnenkomende mail doorsturen van een ander account naar uw veilige ${ MAIL_APP_NAME }-inbox."
+      ],
       "Free up some space or add more storage space.": [
         "Maak ruimte vrij of voeg meer opslagruimte toe."
       ],
@@ -3892,11 +3874,11 @@
       "Import mailbox": [
         "Mailbox importeren"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importeer uw e-mails, agenda, en contactpersonen van een andere dienst naar ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Het importeren van uw gegevens van ${ importedEmailAddress } naar ${ toEmail }."
       ],
       "Indexing events: ${ current }/${ total }": [
         "Afspraken indexeren: ${ current }/${ total }"

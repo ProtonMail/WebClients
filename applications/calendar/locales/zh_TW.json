@@ -803,14 +803,8 @@
       "High speed streaming": [
         "高速串流"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "進階版 ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "進階版 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "進階版 ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "進階版密碼管理器"
@@ -2090,17 +2084,11 @@
       "Daily": [
         "每天"
       ],
-      "Daily, ${ timesString }": [
-        "每天，${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "每天，${ untilString }"
       ],
       "Every ${ interval } days": [
         "每 ${ interval } 天"
-      ],
-      "Every ${ interval } days, ${ timesString }": [
-        "每 ${ interval } 天，${ timesString }"
       ],
       "Every ${ interval } days, ${ untilString }": [
         "每 ${ interval } 天，${ untilString }"
@@ -3576,12 +3564,6 @@
       "${ selectedContactsLength }/${ contactsLength } contacts selected": [
         "${ contactsLength }中的${ selectedContactsLength }項目已選取"
       ],
-      "${ selectedFoldersCount } folders selected": [
-        "已選取 ${ selectedFoldersCount } 個資料夾"
-      ],
-      "${ selectedFoldersCount } labels selected": [
-        "已選取 ${ selectedFoldersCount } 個標籤"
-      ],
       "${ selectedFoldersCountLocalized } folders selected": [
         "已選取 ${ selectedFoldersCountLocalized } 個資料夾"
       ],
@@ -3792,6 +3774,9 @@
       "Existent, added and removed participants will be notified.": [
         "現有、已加入及已移除的參與者將獲通知。"
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "將收到的郵件從另一個帳號轉發至您的安全 ${ MAIL_APP_NAME } 收件匣。"
+      ],
       "Free up some space or add more storage space.": [
         "請釋出部分空間或增加更多儲存空間。"
       ],
@@ -3825,11 +3810,11 @@
       "Import mailbox": [
         "匯入信箱"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "從其它服務匯入您的電子郵件、行事曆與通訊錄至 ${ BRAND_NAME }。"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "匯入您的資料自 ${ importedEmailAddress } 至 ${ toEmail }。"
       ],
       "Indexing events: ${ current }/${ total }": [
         "正在索引行程：${ current }/${ total }"

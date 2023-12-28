@@ -824,14 +824,8 @@
       "High speed streaming": [
         "Vysokorýchlostné streamovanie"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Prémiový ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Prémiová ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Prémiový správca hesiel"
@@ -2137,9 +2131,6 @@
       "Daily": [
         "Denne"
       ],
-      "Daily, ${ timesString }": [
-        "Denne, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Denne, ${ untilString }"
       ],
@@ -2148,12 +2139,6 @@
         "Každé ${ interval } dni",
         "Každých ${ interval } dní",
         "Každých ${ interval } dní"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Každý ${ interval } deň, ${ timesString }",
-        "Každé ${ interval } dni, ${ timesString }",
-        "Každých ${ interval } dní, ${ timesString }",
-        "Každých ${ interval } dní, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Každý ${ interval } deň, ${ untilString }",
@@ -3798,18 +3783,6 @@
         "${ selectedContactsLength }/${ contactsLength } vybraných kontaktov",
         "${ selectedContactsLength }/${ contactsLength } vybraných kontaktov"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } vybratá zložka",
-        "${ selectedFoldersCount } vybraté zložky",
-        "${ selectedFoldersCount } vybratých zložiek",
-        "${ selectedFoldersCount } vybratých zložiek"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } vybratý štítok",
-        "${ selectedFoldersCount } vybraté štítky",
-        "${ selectedFoldersCount } vybratých štítkov",
-        "${ selectedFoldersCount } vybratých štítkov"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } vybratá zložka",
         "${ selectedFoldersCountLocalized } vybraté zložky",
@@ -4050,6 +4023,9 @@
       "Existent, added and removed participants will be notified.": [
         "Existujúci, pridaní a odobraní účastníci budú oboznámení."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Preposielajte prichádzajúcu poštu z iného účtu do vašej zabezpečenej schránky ${ MAIL_APP_NAME }."
+      ],
       "Free up some space or add more storage space.": [
         "Uvoľnite miesto alebo pridajte ďalší úložný priestor."
       ],
@@ -4086,11 +4062,11 @@
       "Import mailbox": [
         "Importovať poštovú schránku"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importujte svoje emaily, kalendáre a kontakty z inej služby do ${ BRAND_NAME }u."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importujú sa vaše údaje z ${ fromEmail } do ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importujeme Vaše dáta z ${ importedEmailAddress } do ${ toEmail }."
       ],
       "Indexing events: ${ current }/${ total }": [
         "Indexovanie udalostí: ${ current }/${ total }"

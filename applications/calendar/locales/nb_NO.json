@@ -810,14 +810,8 @@
       "High speed streaming": [
         "Strømming med høy hastighet"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium-${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium-${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium-${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Premium passordbehandler"
@@ -2114,9 +2108,6 @@
       "Daily": [
         "Daglig"
       ],
-      "Daily, ${ timesString }": [
-        "Daglig, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Daglig, ${ untilString }"
       ],
@@ -2124,16 +2115,21 @@
         "Hver ${ interval } dag",
         "Hver ${ interval } dag"
       ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Hver ${ interval } dag, ${ timesString }",
-        "Hver ${ interval } dag, ${ timesString }"
-      ],
       "Every ${ interval } day, ${ untilString }": [
         "Hver ${ interval } dag, ${ untilString }",
         "Hver ${ interval } dag, ${ untilString }"
       ],
       "until ${ dateString }": [
         "til ${ dateString }"
+      ]
+    },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "Daglig, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Hver ${ interval } dag, ${ timesString }",
+        "Hver ${ interval } dag, ${ timesString }"
       ]
     },
     "Day": {
@@ -3687,14 +3683,6 @@
         "${ selectedContactsLength }/${ contactsLength } kontakt valgt",
         "${ selectedContactsLength }/${ contactsLength } kontakter valgt"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } mappe valgt",
-        "${ selectedFoldersCount } mapper valgt"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etikett valgt",
-        "${ selectedFoldersCount } etiketter valgt"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } mappe valgt",
         "${ selectedFoldersCountLocalized } mapper valgt"
@@ -3917,6 +3905,9 @@
       "Existent, added and removed participants will be notified.": [
         "Eksisterende, tilføyde og fjernede deltakere vil bli varslet."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Videresend innkommende e-post fra en annen konto til din sikre ${ MAIL_APP_NAME }-innboks."
+      ],
       "Free up some space or add more storage space.": [
         "Frigjør litt plass eller legg til mer lagringsplass."
       ],
@@ -3951,11 +3942,11 @@
       "Import mailbox": [
         "Importer postboks"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importer dine e-poster, kalendere og kontakter fra en annen tjeneste til ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importerer dine data fra ${ importedEmailAddress } til ${ toEmail }."
       ],
       "Indexing events: ${ current }/${ total }": [
         "Indekserer hendelser: ${ current }/${ total }"
@@ -4418,6 +4409,16 @@
     "Info on errors": {
       "Click for details": [
         "Klikk for detaljer"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } mappe valgt",
+        "${ selectedFoldersCount } mapper valgt"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } etikett valgt",
+        "${ selectedFoldersCount } etiketter valgt"
       ]
     },
     "Info; access rights for shared calendar": {
