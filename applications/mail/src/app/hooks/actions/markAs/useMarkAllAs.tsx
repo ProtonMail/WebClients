@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 
 import { useModalTwo } from '@proton/components/components';
+import { useFlag } from '@proton/components/containers';
 import { useApi, useFolders, useNotifications } from '@proton/components/hooks';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -30,48 +31,56 @@ export const useMarkAllAs = () => {
     const [folders = []] = useFolders();
     const dispatch = useAppDispatch();
     const optimisticMarkAs = useOptimisticMarkAs();
+    const canUseOptimistic = useFlag('SelectAllOptimistic');
 
     const [selectAllMarkModal, handleShowSelectAllMarkModal] = useModalTwo(SelectAllMarkModal);
 
-    const markAllAs = useCallback(async ({ isMessage, labelID = '', status, onCheckAll }: MarkAllParams) => {
-        await handleShowSelectAllMarkModal({
-            labelID,
-            isMessage: isMessage,
-            markAction: status,
-        });
+    const markAllAs = useCallback(
+        async ({ isMessage, labelID = '', status, onCheckAll }: MarkAllParams) => {
+            await handleShowSelectAllMarkModal({
+                labelID,
+                isMessage: isMessage,
+                markAction: status,
+            });
 
-        // Send Telemetry
-        const cleanedSourceLabelID = getCleanedFolderID(labelID, folders);
-        void sendSelectAllTelemetryReport({
-            api,
-            sourceLabelID: cleanedSourceLabelID,
-            event:
-                status === MARK_AS_STATUS.READ
-                    ? TelemetryMailSelectAllEvents.banner_mark_as_read
-                    : TelemetryMailSelectAllEvents.banner_mark_as_unread,
-        });
+            // Send Telemetry
+            const cleanedSourceLabelID = getCleanedFolderID(labelID, folders);
+            void sendSelectAllTelemetryReport({
+                api,
+                sourceLabelID: cleanedSourceLabelID,
+                event:
+                    status === MARK_AS_STATUS.READ
+                        ? TelemetryMailSelectAllEvents.banner_mark_as_read
+                        : TelemetryMailSelectAllEvents.banner_mark_as_unread,
+            });
 
-        const state = store.getState();
-        const elements = Object.values(elementsMapSelector(state));
+            const state = store.getState();
+            const elements = Object.values(elementsMapSelector(state));
 
-        // We are applying the select all updates optimistically. However, new load request would cancel the optimistic updates.
-        // Here we are adding a new pending action to the store to prevent loading elements from useElement hook.
-        // Once the request is done, we do know what are the Task running in the labelID
-        // We then can remove the pending action, and block new load requests for the time we have Task running inside a label
-        dispatch(backendActionStarted());
-        const rollback = optimisticMarkAs(elements, labelID, { status });
+            // We are applying the select all updates optimistically. However, new load request would cancel the optimistic updates.
+            // Here we are adding a new pending action to the store to prevent loading elements from useElement hook.
+            // Once the request is done, we do know what are the Task running in the labelID
+            // We then can remove the pending action, and block new load requests for the time we have Task running inside a label
+            dispatch(backendActionStarted());
+            let rollback;
 
-        void dispatch(markAll({ SourceLabelID: labelID, status, rollback }));
+            if (canUseOptimistic) {
+                rollback = optimisticMarkAs(elements, labelID, { status });
+            }
 
-        // Clear elements selection
-        onCheckAll?.(false);
+            void dispatch(markAll({ SourceLabelID: labelID, status, rollback }));
 
-        createNotification({
-            text: getSelectAllNotificationText(isMessage),
-        });
+            // Clear elements selection
+            onCheckAll?.(false);
 
-        dispatch(layoutActions.setSelectAll(false));
-    }, []);
+            createNotification({
+                text: getSelectAllNotificationText(isMessage),
+            });
+
+            dispatch(layoutActions.setSelectAll(false));
+        },
+        [canUseOptimistic]
+    );
 
     return { markAllAs, selectAllMarkModal };
 };

@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction, useCallback } from 'react';
 
 import { useModalTwo } from '@proton/components/components';
+import { useFlag } from '@proton/components/containers';
 import { useApi, useFolders, useNotifications } from '@proton/components/hooks';
 import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 
@@ -36,6 +37,7 @@ export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boo
     const { createNotification } = useNotifications();
     const dispatch = useAppDispatch();
     const optimisticApplyLabels = useOptimisticApplyLabels();
+    const canUseOptimistic = useFlag('SelectAllOptimistic');
 
     const [selectAllMoveModal, handleShowSelectAllMoveModal] = useModalTwo(SelectAllMoveModal);
 
@@ -80,7 +82,10 @@ export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boo
             // Once the request is done, we do know what are the Task running in the labelID
             // We then can remove the pending action, and block new load requests for the time we have Task running inside a label
             dispatch(backendActionStarted());
-            const rollback = optimisticApplyLabels(elements, { [folderID]: true }, true, [], destinationLabelID);
+            let rollback;
+            if (canUseOptimistic) {
+                rollback = optimisticApplyLabels(elements, { [folderID]: true }, true, [], destinationLabelID);
+            }
 
             void dispatch(
                 moveAll({ SourceLabelID: fromLabelID, DestinationLabelID: folderID, selectAll: true, rollback })
@@ -95,7 +100,7 @@ export const useMoveAllToFolder = (setContainFocus?: Dispatch<SetStateAction<boo
 
             dispatch(layoutActions.setSelectAll(false));
         },
-        []
+        [canUseOptimistic]
     );
 
     return { moveAllToFolder, selectAllMoveModal };
