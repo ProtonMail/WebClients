@@ -1,4 +1,6 @@
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
+
+import { render } from 'proton-mail/helpers/test/render';
 
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
@@ -61,99 +63,99 @@ describe('MoreDropdown', () => {
         useSnoozeMock.mockReset();
     });
 
-    it('should contain all option in more when screen is tiny', () => {
-        const { getByTestId } = render(<MoreDropdown {...isTinyProps} />);
-        const moreButton = getByTestId('toolbar:more-dropdown');
+    it('should contain all option in more when screen is tiny', async () => {
+        await render(<MoreDropdown {...isTinyProps} />);
+        const moreButton = screen.getByTestId('toolbar:more-dropdown');
         fireEvent.click(moreButton);
 
-        expect(getByTestId('toolbar:more-dropdown--moveto'));
-        expect(getByTestId('toolbar:more-dropdown--labelas'));
-        expect(getByTestId('toolbar:more-dropdown--snooze'));
+        expect(screen.getByTestId('toolbar:more-dropdown--moveto'));
+        expect(screen.getByTestId('toolbar:more-dropdown--labelas'));
+        expect(screen.getByTestId('toolbar:more-dropdown--snooze'));
     });
 
-    it('should contain no option in more when all breakpoints are false', () => {
-        const { getByTestId, queryByTestId } = render(<MoreDropdown {...props} />);
-        const moreButton = getByTestId('toolbar:more-dropdown');
+    it('should contain no option in more when all breakpoints are false', async () => {
+        await render(<MoreDropdown {...props} />);
+        const moreButton = screen.getByTestId('toolbar:more-dropdown');
         fireEvent.click(moreButton);
 
-        expect(queryByTestId('toolbar:more-dropdown--moveto')).toBeNull();
-        expect(queryByTestId('toolbar:more-dropdown--labelas')).toBeNull();
-        expect(queryByTestId('toolbar:more-dropdown--snooze')).toBeNull();
+        expect(screen.queryByTestId('toolbar:more-dropdown--moveto')).toBeNull();
+        expect(screen.queryByTestId('toolbar:more-dropdown--labelas')).toBeNull();
+        expect(screen.queryByTestId('toolbar:more-dropdown--snooze')).toBeNull();
     });
 
-    it('should contain no option in more when screen narrow', () => {
-        const { getByTestId, queryByTestId } = render(<MoreDropdown {...isNarrowProps} />);
-        const moreButton = getByTestId('toolbar:more-dropdown');
+    it('should contain no option in more when screen narrow', async () => {
+        await render(<MoreDropdown {...isNarrowProps} />);
+        const moreButton = screen.getByTestId('toolbar:more-dropdown');
         fireEvent.click(moreButton);
 
-        expect(queryByTestId('toolbar:more-dropdown--moveto')).toBeNull();
-        expect(queryByTestId('toolbar:more-dropdown--labelas')).toBeNull();
-        expect(queryByTestId('toolbar:more-dropdown--snooze')).toBeNull();
+        expect(screen.queryByTestId('toolbar:more-dropdown--moveto')).toBeNull();
+        expect(screen.queryByTestId('toolbar:more-dropdown--labelas')).toBeNull();
+        expect(screen.queryByTestId('toolbar:more-dropdown--snooze')).toBeNull();
     });
 
-    it('should contain no option in more when screen is extra tiny', () => {
-        const { getByTestId, queryByTestId } = render(<MoreDropdown {...isExtraTinyProps} />);
-        const moreButton = getByTestId('toolbar:more-dropdown');
+    it('should contain no option in more when screen is extra tiny', async () => {
+        await render(<MoreDropdown {...isExtraTinyProps} />);
+        const moreButton = screen.getByTestId('toolbar:more-dropdown');
         fireEvent.click(moreButton);
 
-        expect(queryByTestId('toolbar:more-dropdown--moveto')).toBeNull();
-        expect(queryByTestId('toolbar:more-dropdown--labelas')).toBeNull();
-        expect(queryByTestId('toolbar:more-dropdown--snooze')).toBeNull();
+        expect(screen.queryByTestId('toolbar:more-dropdown--moveto')).toBeNull();
+        expect(screen.queryByTestId('toolbar:more-dropdown--labelas')).toBeNull();
+        expect(screen.queryByTestId('toolbar:more-dropdown--snooze')).toBeNull();
     });
 
-    it('should have move and label action when snooze is disabled and screen tiny', () => {
+    it('should have move and label action when snooze is disabled and screen tiny', async () => {
         useSnoozeMock.mockReturnValue({
             isSnoozeEnabled: false,
             canSnooze: jest.fn(),
             canUnsnooze: jest.fn(),
         });
 
-        const { getByTestId } = render(<MoreDropdown {...isTinyProps} />);
-        const moreButton = getByTestId('toolbar:more-dropdown');
+        await render(<MoreDropdown {...isTinyProps} />);
+        const moreButton = screen.getByTestId('toolbar:more-dropdown');
         fireEvent.click(moreButton);
 
-        expect(getByTestId('toolbar:more-dropdown--moveto'));
-        expect(getByTestId('toolbar:more-dropdown--labelas'));
+        expect(screen.getByTestId('toolbar:more-dropdown--moveto'));
+        expect(screen.getByTestId('toolbar:more-dropdown--labelas'));
     });
 
-    it('should have all move actions returned by useLabelAction hook', () => {
+    it('should have all move actions returned by useLabelAction hook', async () => {
         useLabelActionMock.mockReturnValue([['inbox', 'trash', 'archive', 'spam', 'nospam', 'delete'], ['']]);
 
-        const { getByTestId } = render(<MoreDropdown {...isExtraTinyProps} />);
-        const moreButton = getByTestId('toolbar:more-dropdown');
+        await render(<MoreDropdown {...isExtraTinyProps} />);
+        const moreButton = screen.getByTestId('toolbar:more-dropdown');
         fireEvent.click(moreButton);
 
-        expect(getByTestId('toolbar:more-dropdown--movetoinbox'));
-        expect(getByTestId('toolbar:more-dropdown--movetonospam'));
-        expect(getByTestId('toolbar:more-dropdown--movetonoarchive'));
-        expect(getByTestId('toolbar:more-dropdown--movetotrash'));
-        expect(getByTestId('toolbar:more-dropdown--movetospam'));
-        expect(getByTestId('toolbar:more-dropdown--delete'));
+        expect(screen.getByTestId('toolbar:more-dropdown--movetoinbox'));
+        expect(screen.getByTestId('toolbar:more-dropdown--movetonospam'));
+        expect(screen.getByTestId('toolbar:more-dropdown--movetonoarchive'));
+        expect(screen.getByTestId('toolbar:more-dropdown--movetotrash'));
+        expect(screen.getByTestId('toolbar:more-dropdown--movetospam'));
+        expect(screen.getByTestId('toolbar:more-dropdown--delete'));
     });
 
-    it('should have only move actions returned by useLabelAction hook', () => {
+    it('should have only move actions returned by useLabelAction hook', async () => {
         useLabelActionMock.mockReturnValue([['inbox', 'trash', 'error'], ['not real']]);
 
-        const { getByTestId } = render(<MoreDropdown {...isExtraTinyProps} />);
-        const moreButton = getByTestId('toolbar:more-dropdown');
+        await render(<MoreDropdown {...isExtraTinyProps} />);
+        const moreButton = screen.getByTestId('toolbar:more-dropdown');
         fireEvent.click(moreButton);
 
-        expect(getByTestId('toolbar:more-dropdown--movetoinbox'));
-        expect(getByTestId('toolbar:more-dropdown--movetotrash'));
+        expect(screen.getByTestId('toolbar:more-dropdown--movetoinbox'));
+        expect(screen.getByTestId('toolbar:more-dropdown--movetotrash'));
     });
 
-    it('should have no move actions when screen is not extra tiny', () => {
+    it('should have no move actions when screen is not extra tiny', async () => {
         useLabelActionMock.mockReturnValue([['inbox', 'trash', 'archive', 'spam', 'nospam', 'delete'], ['']]);
 
-        const { getByTestId, queryByTestId } = render(<MoreDropdown {...isTinyProps} />);
-        const moreButton = getByTestId('toolbar:more-dropdown');
+        await render(<MoreDropdown {...isTinyProps} />);
+        const moreButton = screen.getByTestId('toolbar:more-dropdown');
         fireEvent.click(moreButton);
 
-        expect(queryByTestId('toolbar:more-dropdown--movetoinbox')).toBeNull();
-        expect(queryByTestId('toolbar:more-dropdown--movetonospam')).toBeNull();
-        expect(queryByTestId('toolbar:more-dropdown--movetonoarchive')).toBeNull();
-        expect(queryByTestId('toolbar:more-dropdown--movetotrash')).toBeNull();
-        expect(queryByTestId('toolbar:more-dropdown--movetospam')).toBeNull();
-        expect(queryByTestId('toolbar:more-dropdown--delete')).toBeNull();
+        expect(screen.queryByTestId('toolbar:more-dropdown--movetoinbox')).toBeNull();
+        expect(screen.queryByTestId('toolbar:more-dropdown--movetonospam')).toBeNull();
+        expect(screen.queryByTestId('toolbar:more-dropdown--movetonoarchive')).toBeNull();
+        expect(screen.queryByTestId('toolbar:more-dropdown--movetotrash')).toBeNull();
+        expect(screen.queryByTestId('toolbar:more-dropdown--movetospam')).toBeNull();
+        expect(screen.queryByTestId('toolbar:more-dropdown--delete')).toBeNull();
     });
 });
