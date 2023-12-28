@@ -57,6 +57,7 @@ const ErrorDetails = ({ errors, summary = c('Info on errors').t`Click for detail
     if (!errors.length) {
         return null;
     }
+
     return (
         <Details>
             <Summary>{summary}</Summary>
