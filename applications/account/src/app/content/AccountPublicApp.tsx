@@ -3,8 +3,8 @@ import { ReactNode, useEffect, useState } from 'react';
 import * as H from 'history';
 import { c } from 'ttag';
 
+import { publicApp } from '@proton/account/bootstrap';
 import { ProtonLoginCallback, StandardLoadErrorPage, useApi } from '@proton/components';
-import { getCryptoWorkerOptions } from '@proton/components/containers/app/cryptoWorkerOptions';
 import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
 import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
@@ -14,10 +14,7 @@ import {
     getActiveSessions,
     resumeSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { APPS, DEFAULT_LOCALE } from '@proton/shared/lib/constants';
-import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
-import { getBrowserLocale, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
-import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
+import { APPS } from '@proton/shared/lib/constants';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 interface Props {
@@ -47,14 +44,7 @@ const AccountPublicApp = ({
     useEffect(() => {
         const runGetSessions = async () => {
             const searchParams = new URLSearchParams(location.search);
-            const languageParams = searchParams.get('language');
-            const browserLocale = getBrowserLocale();
-            const localeCode = getClosestLocaleMatch(pathLocale || languageParams || '', locales) || DEFAULT_LOCALE;
-            await Promise.all([
-                loadCryptoWorker(getCryptoWorkerOptions(APPS.PROTONACCOUNT, {})),
-                loadLocale(localeCode, locales),
-                loadDateLocale(localeCode, browserLocale),
-            ]);
+            await publicApp({ app: APPS.PROTONACCOUNT, locales, searchParams, pathLocale });
             const activeSessionsResult = await getActiveSessions(silentApi);
             if (!onActiveSessions(activeSessionsResult)) {
                 setLoading(false);

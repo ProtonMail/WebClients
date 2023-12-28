@@ -11,7 +11,6 @@ import {
     ApiProvider,
     CacheProvider,
     EventManagerProvider,
-    EventModelListener,
     FeatureCode,
     ModalsChildren,
     ModalsProvider,
@@ -19,6 +18,7 @@ import {
 } from '@proton/components';
 import ConfigProvider from '@proton/components/containers/config/Provider';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import createApi from '@proton/shared/lib/api/createApi';
 import { APPS } from '@proton/shared/lib/constants';
 import { MailSettings, ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 import { getFeatureFlags } from '@proton/testing';
@@ -76,16 +76,16 @@ const notificationsManager = {
 };
 
 let history = createMemoryHistory();
+const api = createApi({ config });
 
 export const EasySwitchTestProviders = ({ children }: { children: JSX.Element | (JSX.Element | null)[] | null }) => (
     <ConfigProvider config={config}>
         <NotificationsContext.Provider value={notificationsManager}>
             <ModalsProvider>
-                <ApiProvider config={config}>
+                <ApiProvider api={api}>
                     <EventManagerProvider eventManager={eventManager}>
                         <CacheProvider cache={fakeCache.instance}>
                             <ModalsChildren />
-                            <EventModelListener />
                             <Router history={history}>
                                 <EasySwitchStoreProvider>{children}</EasySwitchStoreProvider>
                             </Router>

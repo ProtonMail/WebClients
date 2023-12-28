@@ -1,15 +1,9 @@
-import { useEffect, useRef } from 'react';
+import { FunctionComponent, useEffect, useRef } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
-import {
-    ErrorBoundary,
-    FeatureCode,
-    ModalsChildren,
-    StandardErrorPage,
-    useActiveBreakpoint,
-    useFeatures,
-} from '@proton/components';
+import { FeatureCode, ModalsChildren, useActiveBreakpoint, useFeatures } from '@proton/components';
+import { DrawerThemeInjector } from '@proton/components/containers/themes/ThemeInjector';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 
 import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider';
@@ -23,7 +17,7 @@ import { SimpleLoginExtensionProvider } from './hooks/simpleLogin/useSimpleLogin
 import { MailContentRefProvider } from './hooks/useClickMailContent';
 import { store, useSetReduxThunkExtraArgs } from './logic/store';
 
-const MainContainer = () => {
+const MainContainer: FunctionComponent = () => {
     useSetReduxThunkExtraArgs();
     const breakpoints = useActiveBreakpoint();
     const mailContentRef = useRef<HTMLDivElement>(null);
@@ -69,6 +63,7 @@ const MainContainer = () => {
 
     return (
         <QuickSettingsRemindersProvider>
+            <DrawerThemeInjector />
             <ReduxProvider store={store}>
                 <EncryptedSearchProvider>
                     <SimpleLoginExtensionProvider>
@@ -96,12 +91,4 @@ const MainContainer = () => {
     );
 };
 
-const WrappedMainContainer = () => {
-    return (
-        <ErrorBoundary component={<StandardErrorPage big />}>
-            <MainContainer />
-        </ErrorBoundary>
-    );
-};
-
-export default WrappedMainContainer;
+export default MainContainer;

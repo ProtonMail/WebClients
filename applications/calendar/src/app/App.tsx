@@ -1,35 +1,99 @@
-import { ProtonApp, StandardSetup, getSessionTrackingEnabled } from '@proton/components';
-import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
-import metrics from '@proton/metrics';
-import { getClientID } from '@proton/shared/lib/apps/helper';
-import authentication from '@proton/shared/lib/authentication/authentication';
-import { newVersionUpdater } from '@proton/shared/lib/busy';
-import { getProdId, setVcalProdId } from '@proton/shared/lib/calendar/vcalConfig';
-import sentry from '@proton/shared/lib/helpers/sentry';
-import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
+import { FunctionComponent, useState } from 'react';
+import { Router } from 'react-router-dom';
 
+import FlagProvider from '@protontech/proxy-client-react';
+import { c } from 'ttag';
+
+import {
+    ApiProvider,
+    AuthenticationProvider,
+    CalendarModelEventManagerProvider,
+    DelinquentContainer,
+    DrawerProvider,
+    EventManagerProvider,
+    LoaderPage,
+    ProtonApp,
+    StandardLoadErrorPage,
+    StandardPrivateApp,
+} from '@proton/components';
+import useEffectOnce from '@proton/hooks/useEffectOnce';
+import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
+
+import { bootstrapApp } from './bootstrap';
 import * as config from './config';
-import PrivateApp from './content/PrivateApp';
-import locales from './locales';
-import CalendarStoreProvider from './store/CalendarStoreProvider';
+import { CalendarStore } from './store/store';
+import { extraThunkArguments } from './store/thunk';
 
-import './app.scss';
-
-setTtagLocales(locales);
-setupGuestCrossStorage();
-newVersionUpdater(config);
-sentry({ config, uid: authentication.getUID(), sessionTracking: getSessionTrackingEnabled() });
-setVcalProdId(getProdId(config));
-
-metrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
+const defaultState: {
+    store?: CalendarStore;
+    MainContainer?: FunctionComponent;
+    error?: { message: string } | undefined;
+    showDrawerSidebar?: boolean;
+} = {
+    error: undefined,
+    showDrawerSidebar: false,
+};
 
 const App = () => {
+    const [state, setState] = useState(defaultState);
+
+    useEffectOnce(() => {
+        (async () => {
+            try {
+                const { MainContainer, scopes, userSettings, store } = await bootstrapApp({ config });
+                setState({
+                    MainContainer: scopes.delinquent ? DelinquentContainer : MainContainer,
+                    store,
+                    showDrawerSidebar: userSettings.HideSidePanel === DRAWER_VISIBILITY.SHOW,
+                });
+            } catch (error: any) {
+                setState({
+                    error: {
+                        message: getApiErrorMessage(error) || error?.message || c('Error').t`Unknown error`,
+                    },
+                });
+            }
+        })();
+    });
+
     return (
-        <CalendarStoreProvider>
-            <ProtonApp authentication={authentication} config={config}>
-                <StandardSetup PrivateApp={PrivateApp} locales={locales} />
-            </ProtonApp>
-        </CalendarStoreProvider>
+        <ProtonApp config={config}>
+            {(() => {
+                if (state.error) {
+                    return <StandardLoadErrorPage errorMessage={state.error.message} />;
+                }
+                if (!state.MainContainer || !state.store) {
+                    return <LoaderPage />;
+                }
+                return (
+                    <ProtonStoreProvider store={state.store}>
+                        <AuthenticationProvider store={extraThunkArguments.authentication}>
+                            <ApiProvider api={extraThunkArguments.api}>
+                                <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
+                                    <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+                                        <Router history={extraThunkArguments.history}>
+                                            <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                                                <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                    <StandardPrivateApp
+                                                        hasReadableMemberKeyActivation
+                                                        hasMemberKeyMigration
+                                                        hasPrivateMemberKeyGeneration
+                                                    >
+                                                        <state.MainContainer />
+                                                    </StandardPrivateApp>
+                                                </ErrorBoundary>
+                                            </EventManagerProvider>
+                                        </Router>
+                                    </FlagProvider>
+                                </DrawerProvider>
+                            </ApiProvider>
+                        </AuthenticationProvider>
+                    </ProtonStoreProvider>
+                );
+            })()}
+        </ProtonApp>
     );
 };
 

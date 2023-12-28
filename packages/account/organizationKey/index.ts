@@ -6,7 +6,6 @@ import type { ProtonDispatch, ProtonThunkArguments } from '@proton/redux-shared-
 import type { SharedStartListening } from '@proton/redux-shared-store/listenerInterface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getOrganizationKeys } from '@proton/shared/lib/api/organization';
-import authentication from '@proton/shared/lib/authentication/authentication';
 import type { CachedOrganizationKey, OrganizationKey } from '@proton/shared/lib/interfaces';
 import { getCachedOrganizationKey } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
@@ -34,7 +33,7 @@ const modelThunk = createAsyncModelThunk<Model, OrganizationKeyState, ProtonThun
             return;
         }
         const Key = await extraArgument.api<OrganizationKey>(getOrganizationKeys());
-        return getCachedOrganizationKey({ keyPassword: authentication.getPassword(), Key });
+        return getCachedOrganizationKey({ keyPassword: extraArgument.authentication.getPassword(), Key });
     },
     previous: previousSelector(selectOrganizationKey),
 });

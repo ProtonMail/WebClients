@@ -85,7 +85,7 @@ export const eventManager = {
     subscribe: jest.fn(),
 } as any;
 
-extendStore({ api: apiMock, eventManager });
+extendStore({ api: apiMock as unknown as any, eventManager });
 
 const TestProvider = ({ children }: { children: ReactNode }) => (
     <ConfigProvider config={config}>

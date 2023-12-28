@@ -1,8 +1,9 @@
 import { Fragment, useMemo, useState } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
+import * as bootstrap from '@proton/account/bootstrap';
 import {
-    ApiProvider,
+    AuthenticationProvider,
     CacheProvider,
     CompatibilityCheck,
     ConfigProvider,
@@ -17,42 +18,52 @@ import {
     RightToLeftProvider,
     StandardErrorPage,
     ThemeProvider,
-    UnleashFlagProvider,
-    getSessionTrackingEnabled,
 } from '@proton/components';
-import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
+import useInstance from '@proton/hooks/useInstance';
 import metrics from '@proton/metrics';
-import { getClientID } from '@proton/shared/lib/apps/helper';
-import authentication from '@proton/shared/lib/authentication/authentication';
+import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import createApi from '@proton/shared/lib/api/createApi';
 import { APPS } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
 import * as sentry from '@proton/shared/lib/helpers/sentry';
-import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import { getRedirect } from '@proton/shared/lib/subscription/redirect';
 import noop from '@proton/utils/noop';
 
-import * as config from '../app/config';
+import * as defaultConfig from '../app/config';
 import locales from '../app/locales';
-import AccountStoreProvider from '../app/store/AccountStoreProvider';
+import { extendStore, setupStore } from '../app/store/store';
 import MainContainer from './MainContainer';
 import Setup from './Setup';
 import broadcast, { MessageType } from './broadcast';
 import { SupportedActions, getApp } from './helper';
 
-setTtagLocales(locales);
+const bootstrapApp = () => {
+    const config = {
+        ...defaultConfig,
+        APP_NAME: APPS.PROTONACCOUNTLITE,
+    };
+    const api = createApi({ config, sendLocaleHeaders: true });
+    const authentication = bootstrap.createAuthentication({ initialAuth: false, mode: 'standalone' });
+    bootstrap.init({ config, authentication, locales });
 
-const enhancedConfig = {
-    ...config,
-    APP_NAME: APPS.PROTONACCOUNTLITE,
+    const cache = createCache<string, any>();
+    const store = setupStore();
+
+    extendStore({ api, config, authentication });
+
+    return {
+        api,
+        config,
+        store,
+        cache,
+        authentication,
+    };
 };
 
-sentry.default({ config, uid: authentication.getUID(), sessionTracking: getSessionTrackingEnabled() });
-metrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
-
-const cache = createCache<string, any>();
-
 const App = () => {
-    const [UID, setUID] = useState<string | undefined>(() => authentication.getUID());
+    const { api, config, store, authentication, cache } = useInstance(bootstrapApp);
+
+    const [UID, setUID] = useState<string | undefined>(() => authentication.UID);
     const [isLogout, setLogout] = useState(false);
 
     const searchParams = new URLSearchParams(window.location.search);
@@ -71,9 +82,9 @@ const App = () => {
 
     const handleLogin = (UID: string) => {
         authentication.setUID(UID);
-        setUID(UID);
         sentry.setUID(UID);
         metrics.setAuthHeaders(UID || '');
+        setUID(UID);
     };
 
     const handleLogout = () => {
@@ -92,10 +103,8 @@ const App = () => {
             };
         }
         return {
-            UID,
             ...authentication,
             logout: handleLogout,
-            onLogout: noop as any,
         };
     }, [UID]);
 
@@ -111,14 +120,14 @@ const App = () => {
     };
 
     return (
-        <AccountStoreProvider>
-            <ConfigProvider config={enhancedConfig}>
+        <ProtonStoreProvider store={store}>
+            <ConfigProvider config={config}>
                 <CompatibilityCheck>
                     <Icons />
                     <RightToLeftProvider>
                         <Fragment key={UID}>
-                            <ThemeProvider>
-                                <Router>
+                            <ThemeProvider appName={config.APP_NAME}>
+                                <BrowserRouter>
                                     <PreventLeaveProvider>
                                         <NotificationsProvider>
                                             <NotificationsHijack
@@ -129,45 +138,34 @@ const App = () => {
                                                 }
                                             >
                                                 <ModalsProvider>
-                                                    <ApiProvider
-                                                        UID={UID}
-                                                        config={enhancedConfig}
-                                                        onLogout={handleLogout}
-                                                    >
-                                                        <AuthenticationProvider store={authenticationValue}>
-                                                            <CacheProvider cache={cache}>
-                                                                <UnleashFlagProvider>
-                                                                    <NotificationsChildren />
-                                                                    <ErrorBoundary
-                                                                        big
-                                                                        component={<StandardErrorPage big />}
-                                                                    >
-                                                                        {isLogout ? null : (
-                                                                            <Setup UID={UID} onLogin={handleLogin}>
-                                                                                <MainContainer
-                                                                                    action={action}
-                                                                                    redirect={redirect}
-                                                                                    app={app}
-                                                                                    searchParams={searchParams}
-                                                                                />
-                                                                            </Setup>
-                                                                        )}
-                                                                    </ErrorBoundary>
-                                                                </UnleashFlagProvider>
-                                                            </CacheProvider>
-                                                        </AuthenticationProvider>
-                                                    </ApiProvider>
+                                                    <AuthenticationProvider store={authenticationValue}>
+                                                        <CacheProvider cache={cache}>
+                                                            <NotificationsChildren />
+                                                            <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                                {isLogout ? null : (
+                                                                    <Setup api={api} UID={UID} onLogin={handleLogin}>
+                                                                        <MainContainer
+                                                                            action={action}
+                                                                            redirect={redirect}
+                                                                            app={app}
+                                                                            searchParams={searchParams}
+                                                                        />
+                                                                    </Setup>
+                                                                )}
+                                                            </ErrorBoundary>
+                                                        </CacheProvider>
+                                                    </AuthenticationProvider>
                                                 </ModalsProvider>
                                             </NotificationsHijack>
                                         </NotificationsProvider>
                                     </PreventLeaveProvider>
-                                </Router>
+                                </BrowserRouter>
                             </ThemeProvider>
                         </Fragment>
                     </RightToLeftProvider>
                 </CompatibilityCheck>
             </ConfigProvider>
-        </AccountStoreProvider>
+        </ProtonStoreProvider>
     );
 };
 

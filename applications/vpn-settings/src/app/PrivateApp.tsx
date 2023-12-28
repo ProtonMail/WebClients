@@ -1,72 +1,76 @@
-import { userSettingsThunk, userThunk } from '@proton/account';
-import { FeatureCode, StandardPrivateApp, useApi } from '@proton/components';
-import { fetchFeatures } from '@proton/features';
-import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import createEventManager from '@proton/shared/lib/eventManager/eventManager';
+import { FunctionComponent, useState } from 'react';
+
+import FlagProvider from '@protontech/proxy-client-react';
+import { c } from 'ttag';
+
+import {
+    ErrorBoundary,
+    EventManagerProvider,
+    LoaderPage,
+    StandardErrorPage,
+    StandardLoadErrorPage,
+} from '@proton/components';
+import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
+import useEffectOnce from '@proton/hooks/useEffectOnce';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
-import AccountLoaderPage from './AccountLoaderPage';
-import { useAccountDispatch } from './store/hooks';
-import { extendStore } from './store/store';
-
-const getAppContainer = () => import(/* webpackChunkName: "MainContainer" */ './MainContainer');
+import { bootstrapApp } from './bootstrap';
+import type { AccountStore } from './store/store';
+import { extraThunkArguments } from './store/thunk';
 
 interface Props {
-    onLogout: () => void;
     locales: TtagLocaleMap;
+    store: AccountStore;
 }
 
-const PrivateApp = ({ onLogout, locales }: Props) => {
-    const api = useApi();
-    const silentApi = getSilentApi(api);
-    const dispatch = useAccountDispatch();
+const defaultState: {
+    MainContainer?: FunctionComponent;
+    error?: { message: string } | undefined;
+} = {
+    error: undefined,
+};
+
+const PrivateApp = ({ store, locales }: Props) => {
+    const [state, setState] = useState(defaultState);
+
+    useEffectOnce(() => {
+        (async () => {
+            try {
+                const result = await bootstrapApp({ store, locales });
+                setState({ MainContainer: result.MainContainer });
+            } catch (error: any) {
+                setState({
+                    error: {
+                        message: getApiErrorMessage(error) || error?.message || c('Error').t`Unknown error`,
+                    },
+                });
+            }
+        })();
+    });
+
+    if (state.error) {
+        return <StandardLoadErrorPage errorMessage={state.error.message} />;
+    }
+
+    if (!state.MainContainer) {
+        return <LoaderPage />;
+    }
 
     return (
-        <StandardPrivateApp
-            loader={<AccountLoaderPage />}
-            onLogout={onLogout}
-            onInit={async () => {
-                extendStore({ api: silentApi, eventManager: null as any });
-
-                const setupModels = async () => {
-                    const [user, userSettings, features] = await Promise.all([
-                        dispatch(userThunk()),
-                        dispatch(userSettingsThunk()),
-                        dispatch(fetchFeatures([FeatureCode.EarlyAccessScope])),
-                    ]);
-                    return { user, userSettings, features };
-                };
-
-                const setupEventManager = async () => {
-                    const eventID = await api<{ EventID: string }>(getLatestID()).then(({ EventID }) => EventID);
-
-                    return {
-                        eventManager: createEventManager({
-                            api: silentApi,
-                            eventID,
-                            query: (eventID: string) => getEvents(eventID),
-                        }),
-                    };
-                };
-
-                const initPromise = Promise.all([setupModels(), setupEventManager()]);
-
-                const [models, ev] = await initPromise;
-
-                extendStore({ api: silentApi, eventManager: ev.eventManager });
-
-                return {
-                    ...models,
-                    ...ev,
-                };
-            }}
-            locales={locales}
-            hasPrivateMemberKeyGeneration
-            hasReadableMemberKeyActivation
-            hasMemberKeyMigration
-            app={getAppContainer}
-        />
+        <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+            <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                <ErrorBoundary big component={<StandardErrorPage big />}>
+                    <StandardPrivateApp
+                        hasPrivateMemberKeyGeneration
+                        hasReadableMemberKeyActivation
+                        hasMemberKeyMigration
+                    >
+                        <state.MainContainer />
+                    </StandardPrivateApp>
+                </ErrorBoundary>
+            </EventManagerProvider>
+        </FlagProvider>
     );
 };
 

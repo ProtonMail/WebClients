@@ -13,13 +13,30 @@ import noop from '@proton/utils/noop';
 import { useApi, useDrawer, useUserSettings } from '../../hooks';
 import { useTheme } from './ThemeProvider';
 
-const ThemeInjector = () => {
+export const DrawerThemeInjector = () => {
+    const { settings } = useTheme();
+
+    const { iframeSrcMap } = useDrawer();
+
+    useLayoutEffect(() => {
+        // If apps are opened in drawer, update their theme too
+        if (iframeSrcMap) {
+            Object.keys(iframeSrcMap).map((app) => {
+                if (getIsDrawerApp(app)) {
+                    postMessageToIframe({ type: DRAWER_EVENTS.UPDATE_THEME, payload: { themeSetting: settings } }, app);
+                }
+            });
+        }
+    }, [settings]);
+
+    return null;
+};
+
+export const ThemeInjector = () => {
     const [userSettings] = useUserSettings();
     const { addListener, settings, setThemeSetting } = useTheme();
     const api = useApi();
     const silentApi = getSilentApi(api);
-
-    const { iframeSrcMap } = useDrawer();
 
     const legacyThemeType = userSettings.ThemeType;
     const legacyThemeSettings = useMemo(() => getDefaultThemeSetting(legacyThemeType), [legacyThemeType]);
@@ -38,17 +55,6 @@ const ThemeInjector = () => {
         setThemeSetting(theme);
     }, [themeSetting]);
 
-    useLayoutEffect(() => {
-        // If apps are opened in drawer, update their theme too
-        if (iframeSrcMap) {
-            Object.keys(iframeSrcMap).map((app) => {
-                if (getIsDrawerApp(app)) {
-                    postMessageToIframe({ type: DRAWER_EVENTS.UPDATE_THEME, payload: { themeSetting: settings } }, app);
-                }
-            });
-        }
-    }, [settings]);
-
     useEffect(() => {
         rootFontSize(true);
     }, [settings.FontSize]);
@@ -66,4 +72,3 @@ const ThemeInjector = () => {
 
     return null;
 };
-export default ThemeInjector;

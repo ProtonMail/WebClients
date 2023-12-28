@@ -25,7 +25,7 @@ describe('Mailbox performance loss check', () => {
         const SomeNonMatchingID = 'SomeNonMatchingID';
 
         const conversations = getElements(total);
-        const { getItems } = await setup({ conversations });
+        const { getItems, store } = await setup({ conversations });
         const items = getItems();
 
         expect(items.length).toBe(total);
@@ -33,7 +33,7 @@ describe('Mailbox performance loss check', () => {
         const callsAfterInitialization = useStar.mock.calls.length;
 
         // Send event though the event manager + change location to trigger common app change
-        await sendEvent({
+        await sendEvent(store, {
             Conversations: [
                 { ID: SomeNonMatchingID, Action: EVENT_ACTIONS.CREATE, Conversation: { ID: SomeNonMatchingID } },
             ],

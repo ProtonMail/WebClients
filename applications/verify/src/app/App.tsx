@@ -12,13 +12,13 @@ import {
     RightToLeftProvider,
     ThemeProvider,
 } from '@proton/components';
-import noop from '@proton/utils/noop';
+import createApi from '@proton/shared/lib/api/createApi';
 
 import Verify from './Verify';
 import broadcast, { MessageType } from './broadcast';
 import * as config from './config';
 
-import './app.scss';
+const api = createApi({ config, noErrorState: true });
 
 const App = () => {
     const handleNotificationCreate = (options: CreateNotificationOptions) => {
@@ -37,11 +37,11 @@ const App = () => {
             <Router>
                 <RightToLeftProvider>
                     <Icons />
-                    <ThemeProvider>
+                    <ThemeProvider appName={config.APP_NAME}>
                         <PreventLeaveProvider>
                             <NotificationsHijack onCreate={handleNotificationCreate}>
                                 <ModalsProvider>
-                                    <ApiProvider config={config} onLogout={noop} noErrorState>
+                                    <ApiProvider api={api}>
                                         <Verify />
                                         <ModalsChildren />
                                     </ApiProvider>

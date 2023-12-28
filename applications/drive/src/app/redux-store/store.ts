@@ -1,37 +1,52 @@
 import { TypedStartListening, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
-import { ignoredActions, ignoredPaths, startSharedListening } from '@proton/redux-shared-store';
+import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 
+import { start } from './listener';
 import { rootReducer } from './rootReducer';
-import { DriveThunkArguments, extraThunkArguments } from './thunk';
+import { type DriveThunkArguments, extraThunkArguments } from './thunk';
 
-export const listenerMiddleware = createListenerMiddleware();
+export type DriveState = ReturnType<typeof rootReducer>;
 
-export const store = configureStore({
-    reducer: rootReducer,
-    middleware: (getDefaultMiddleware) =>
-        getDefaultMiddleware({
-            serializableCheck: {
-                ignoredActions: [...ignoredActions],
-                ignoredPaths: [...ignoredPaths],
-            },
-            thunk: { extraArgument: extraThunkArguments },
-        }).prepend(listenerMiddleware.middleware),
-});
+export const setupStore = () => {
+    const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments });
 
-if (process.env.NODE_ENV !== 'production' && module.hot) {
-    module.hot.accept('./rootReducer', () => store.replaceReducer(rootReducer));
-}
+    const store = configureStore({
+        reducer: rootReducer,
+        middleware: (getDefaultMiddleware) =>
+            getDefaultMiddleware({
+                serializableCheck: {
+                    ignoredActions: [...ignoredActions],
+                    ignoredPaths: [...ignoredPaths],
+                },
+                thunk: { extraArgument: extraThunkArguments },
+            }).prepend(listenerMiddleware.middleware),
+    });
 
-export const extendStore = (newThunkArguments: DriveThunkArguments) => {
+    const startListening = listenerMiddleware.startListening as AppStartListening;
+    start(startListening);
+
+    if (process.env.NODE_ENV !== 'production' && module.hot) {
+        module.hot.accept('./rootReducer', () => store.replaceReducer(rootReducer));
+        module.hot.accept('./listener', () => {
+            listenerMiddleware.clearListeners();
+            start(startListening);
+        });
+    }
+
+    return Object.assign(store, {
+        unsubscribe: () => {
+            listenerMiddleware.clearListeners();
+        },
+    });
+};
+
+export const extendStore = (newThunkArguments: Partial<DriveThunkArguments>) => {
     Object.assign(extraThunkArguments, newThunkArguments);
 };
 
-export type DriveState = ReturnType<typeof store.getState>;
-export type DriveDispatch = typeof store.dispatch;
+export type DriveStore = ReturnType<typeof setupStore>;
+export type DriveDispatch = DriveStore['dispatch'];
 type ExtraArgument = typeof extraThunkArguments;
 
-type AppStartListening = TypedStartListening<DriveState, DriveDispatch, ExtraArgument>;
-const startListening = listenerMiddleware.startListening as AppStartListening;
-
-startSharedListening(startListening);
+export type AppStartListening = TypedStartListening<DriveState, DriveDispatch, ExtraArgument>;
