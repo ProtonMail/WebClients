@@ -36,7 +36,7 @@ import { isMessage as testIsMessage } from '../../helpers/elements';
 import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
 import { useCreateFilters } from '../../hooks/actions/useCreateFilters';
 import { useMoveToFolder } from '../../hooks/actions/useMoveToFolder';
-import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
+import { useGetElementsFromIDs, useGetMessagesOrElementsFromIDs } from '../../hooks/mailbox/useElements';
 
 import './MoveDropdown.scss';
 
@@ -67,9 +67,10 @@ interface Props {
     onClose: () => void;
     onLock: (lock: boolean) => void;
     breakpoints: Breakpoints;
+    isMessage?: boolean;
 }
 
-const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Props) => {
+const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, isMessage: inputIsMessage }: Props) => {
     const [uid] = useState(generateUID('move-dropdown'));
     const [folders = []] = useFolders();
     const [user] = useUser();
@@ -80,8 +81,8 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
     const [containFocus, setContainFocus] = useState(true);
     const normSearch = normalize(search, true);
     const getElementsFromIDs = useGetElementsFromIDs();
-    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal } =
-        useMoveToFolder(setContainFocus);
+    const getMessagesOrElements = useGetMessagesOrElementsFromIDs();
+    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal } = useMoveToFolder(setContainFocus);
     const { getSendersToFilter } = useCreateFilters();
 
     const [editLabelProps, setEditLabelModalOpen, renderLabelModal] = useModalState();
@@ -90,7 +91,15 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
     useEffect(() => onLock(!containFocus), [containFocus]);
 
     const treeview = buildTreeview(folders);
-    const elements = getElementsFromIDs(selectedIDs);
+
+    /*
+     * When moving an element to SPAM, we want to open an "Unsubscribe modal" when items in the selections can be unsubscribed.
+     * - If we're dealing with conversations, we cannot get this information from the conversation object, so we can get elements from their IDs.
+     * - However, when dealing with messages, we want to check the UnsubscribeMethod field.
+     *     We cannot use the getElementsFromIDs, since it will always return the element object, which does not contain this information.
+     *     So in that case, we are getting the "real" Message object if found, else the element.
+     */
+    const elements = inputIsMessage ? getMessagesOrElements(selectedIDs) : getElementsFromIDs(selectedIDs);
     const isMessage = testIsMessage(elements[0]);
     const canMoveToInbox = isMessage ? !!getMessagesAuthorizedToMove(elements as Message[], INBOX).length : true;
     const canMoveToSpam = isMessage ? !!getMessagesAuthorizedToMove(elements as Message[], SPAM).length : true;
