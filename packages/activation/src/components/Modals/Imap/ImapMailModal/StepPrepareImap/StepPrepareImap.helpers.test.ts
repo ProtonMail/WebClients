@@ -3,12 +3,11 @@ import { differenceInMonths, fromUnixTime } from 'date-fns';
 import { ApiMailImporterFolder } from '@proton/activation/src/api/api.interface';
 import MailImportFoldersParser from '@proton/activation/src/helpers/MailImportFoldersParser/MailImportFoldersParser';
 import { MailImportDestinationFolder, MailImportMapping, TIME_PERIOD } from '@proton/activation/src/interface';
+import { generateMockAddress } from '@proton/activation/src/tests/data/addresses';
 import { standardFolderResponse } from '@proton/activation/src/tests/data/gmail.formattedResponse';
 import { gmailImapResponse } from '@proton/activation/src/tests/data/gmail.imap.formattedResponse';
 import gmailImapModalLabels from '@proton/activation/src/tests/data/gmail.imap.providerFolders';
 import labels from '@proton/activation/src/tests/data/gmail.providerFolders';
-import { ADDRESS_STATUS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
-import { Address } from '@proton/shared/lib/interfaces';
 
 import { formatPrepareStepPayload } from './StepPrepareImap.helpers';
 import { StepPrepareData } from './useStepPrepareImap';
@@ -16,25 +15,7 @@ import { StepPrepareData } from './useStepPrepareImap';
 // used in MailFoldersMapping.getRandomLabelColor.
 jest.mock('@proton/utils/randomIntFromInterval', () => () => 0);
 
-const address: Address = {
-    DisplayName: 'Testing',
-    DomainID: 'proton.ch',
-    Email: 'testing@proton.ch',
-    HasKeys: 1,
-    ID: 'ID',
-    Keys: [],
-    SignedKeyList: null,
-    Order: 1,
-    Priority: 1,
-    Receive: 1,
-    Send: 1,
-    Signature: 'Testing signature',
-    Status: ADDRESS_STATUS.STATUS_ENABLED,
-    Type: ADDRESS_TYPE.TYPE_ORIGINAL,
-    ProtonMX: true,
-    ConfirmationState: 1,
-    CatchAll: false,
-};
+const address = generateMockAddress(1, true);
 
 const providerLabels = labels.map((label) => {
     return { ...label, Size: 1 } as ApiMailImporterFolder;
