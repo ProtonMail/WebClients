@@ -176,6 +176,7 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
                     setModel({
                         ...model,
                         method,
+                        hashedIcs,
                         step,
                         eventsParsed: parsed,
                         visibleErrors,
@@ -282,8 +283,20 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
                 await Promise.all(calls);
             };
 
+            const handleSingleEditErrors = async (errors: ImportEventError[]) => {
+                // send errors detected at this stage for events with recurrence-id
+                void sendImportErrorTelemetryReport({ errors, api, hash: `${model.hashedIcs}-single-edits` });
+            };
+
             return {
-                content: <ImportingModalContent model={model} setModel={setModel} onFinish={handleFinish} />,
+                content: (
+                    <ImportingModalContent
+                        model={model}
+                        setModel={setModel}
+                        onFinish={handleFinish}
+                        onSingleEditErrors={handleSingleEditErrors}
+                    />
+                ),
                 submit,
                 onSubmit: noop,
             };

@@ -20,6 +20,7 @@ export interface ImportCalendarModel {
     step: IMPORT_STEPS;
     fileAttached?: File;
     method?: ICAL_METHOD;
+    hashedIcs?: string;
     eventsParsed: VcalVeventComponent[];
     totalEncrypted: number;
     totalImported: number;
