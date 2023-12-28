@@ -266,6 +266,9 @@
       "Open navigation": [
         "Otevřít menu"
       ],
+      "Open web app": [
+        "Otevřít webovou aplikaci"
+      ],
       "Pass for Android": [
         "Proton Pass pro Android"
       ],
@@ -390,6 +393,9 @@
     "Badge": {
       "Early access": [
         "Předběžný přístup"
+      ],
+      "Limited time": [
+        "Omezený čas"
       ]
     },
     "bf2023: Info": {
@@ -409,7 +415,7 @@
     },
     "Browser": {
       "${ MAIL_APP_NAME } Desktop application": [
-        "${ MAIL_APP_NAME } Desktopová aplikace"
+        "${ MAIL_APP_NAME } desktopová aplikace"
       ]
     },
     "Button": {
@@ -863,7 +869,7 @@
         "Přetažením provedete import"
       ],
       "Early access to ${ PASS_APP_NAME } web app": [
-        "Předčasný přístup k webové aplikaci ${ PASS_APP_NAME }"
+        "Předběžný přístup k webové aplikaci ${ PASS_APP_NAME }"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Snadno importujte svá stávající hesla do ${ PASS_APP_NAME }."
@@ -1009,6 +1015,9 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Vlastnictví bylo úspěšně převedeno. Již nejste vlastníkem tohoto trezoru."
       ],
+      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
+        "Pass Plus za ${ eoyRelativePrice }/měsíc, včetně předběžného přístupu k webové aplikaci."
+      ],
       "Pass Plus trial": [
         "Zkušební verze Pass Plus"
       ],
@@ -1043,7 +1052,7 @@
         "Pro pokračování zadejte svůj aktuální PIN kód"
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Pro včasný přístup k webové aplikaci ${ PASS_APP_NAME } prosím upgradujte."
+        "Pro předběžný přístup k webové aplikaci ${ PASS_APP_NAME } prosím navyšte svůj tarif"
       ],
       "Press Enter to copy": [
         "Pro kopírování stiskněte Enter"
@@ -1151,7 +1160,7 @@
         "Navýšit ${ PASS_APP_NAME }"
       ],
       "Upgrade Now to Unlock Premium Features": [
-        "Přejděte na vyšší tarif abyste odemkli prémiové funkce"
+        "Přejděte nyní na vyšší tarif pro odemčení prémiových funkcí"
       ],
       "Use vaults to share this item with others.": [
         "Pomocí trezorů můžete tuto položku sdílet s ostatními."
@@ -1866,7 +1875,7 @@
         "Aktualizace k dispozici"
       ],
       "Upgrade to Unlock Premium Features": [
-        "Přejděte na vyšší tarif k odemčení prémiových funkcí"
+        "Přejděte na vyšší tarif pro odemčení prémiových funkcí"
       ],
       "Use my email": [
         "Použít můj e-mail"

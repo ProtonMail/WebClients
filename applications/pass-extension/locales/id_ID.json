@@ -99,7 +99,7 @@
         "Buat kartu"
       ],
       "Create login": [
-        "Buat login"
+        "Buat entri masuk"
       ],
       "Create note": [
         "Buat catatan"
@@ -902,7 +902,7 @@
         "mengundang Anda untuk mengakses item pada"
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
-        "Sepertinya Anda sudah masuk ke ${ PASS_APP_NAME }. Jika Anda mencoba masuk dengan akun lain, mohon keluar dari ekstensi terlebih dahulu."
+        "Sepertinya Anda telah masuk ke ${ PASS_APP_NAME }. Apabila Anda mencoba masuk dengan akun lain, silakan keluar dari ekstensi terlebih dahulu."
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Item \"${ payload.item.data.metadata.name }\" dibuat"
@@ -953,7 +953,7 @@
         "Tidak pernah"
       ],
       "No login found": [
-        "Tidak ada login yang ditemukan"
+        "Tidak ada entri masuk yang ditemukan"
       ],
       "None": [
         "Tidak ada"
@@ -1019,7 +1019,7 @@
         "Memulihkan semua item yang dibuang..."
       ],
       "Save login": [
-        "Simpan login"
+        "Simpan entri masuk"
       ],
       "Select destination vault": [
         "Pilih brankas tujuan"
@@ -1103,7 +1103,7 @@
         "Buka kunci ini dengan PIN Anda untuk mengakses pengaturan"
       ],
       "Update login": [
-        "Perbarui login"
+        "Perbarui entri masuk"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Tingkatkan ke ${ PASS_APP_NAME }"
@@ -1291,7 +1291,7 @@
         "Buat alias hide-my-email"
       ],
       "Create a login": [
-        "Buat login"
+        "Buat entri masuk"
       ],
       "Create an encrypted note": [
         "Buat catatan yang terenkripsi"
@@ -1396,7 +1396,7 @@
         "Masuk"
       ],
       "Logins": [
-        "Login"
+        "Entri masuk"
       ],
       "Members": [
         "Anggota"
@@ -1867,7 +1867,7 @@
         "Penjelasan masalah diperlukan"
       ],
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
-        "Alias \"${ name }\" saat ini digunakan pada item login \"${ relatedLoginName }\". Anda juga tidak lagi akan menerima surel yang dikirim ke \"${ aliasEmail }\""
+        "Alias \"${ name }\" saat ini digunakan pada item entri masuk \"${ relatedLoginName }\". Anda juga tidak lagi akan menerima email yang dikirim ke \"${ aliasEmail }\""
       ],
       "All your trashed items will be permanently deleted. You cannot undo this action.": [
         "Seluruh item yang telah Anda buang ke sampah akan dihapus secara permanen. Tindakan ini tidak dapat diurungkan."
