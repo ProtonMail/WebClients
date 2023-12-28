@@ -1,11 +1,12 @@
 import { TypedStartListening } from '@reduxjs/toolkit';
 
 import {
-    AddressKeysState,
-    OrganizationKeyState,
-    UserInvitationsState,
-    UserKeysState,
+    type AddressKeysState,
+    type OrganizationKeyState,
+    type UserInvitationsState,
+    type UserKeysState,
     addressKeysListener,
+    authenticationListener,
     organizationKeysListener,
     userInvitationsListener,
     userKeysListener,
@@ -22,4 +23,5 @@ export const startSharedListening = (startListening: AppStartListening) => {
     addressKeysListener(startListening);
     organizationKeysListener(startListening);
     userInvitationsListener(startListening);
+    authenticationListener(startListening);
 };

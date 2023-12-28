@@ -17,6 +17,7 @@ const HtmlEditWebpackPlugin = require('./html-edit-webpack-plugin').default;
 
 const defaultFaviconConfig = require('./favicon.config');
 const faviconConfig = require(path.resolve('./favicon.config.js'));
+const { getIndexChunks } = require('../webpack/entries');
 
 module.exports = ({
     isProduction,
@@ -137,6 +138,7 @@ module.exports = ({
             },
             inject: 'body',
             scriptLoading: 'defer',
+            chunks: getIndexChunks('index'),
             minify: isProduction && {
                 removeComments: true,
                 collapseWhitespace: true,

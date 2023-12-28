@@ -3,9 +3,9 @@ import { TypedStartListening, combineReducers, configureStore, createListenerMid
 import { waitFor } from '@testing-library/react';
 
 import { CryptoProxy } from '@proton/crypto';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
-import type { EventManager } from '@proton/shared/lib/eventManager/eventManager';
-import type { Address, Api, DecryptedAddressKey, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address, DecryptedAddressKey, UserModel } from '@proton/shared/lib/interfaces';
 import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 
 import { addressesReducer } from '../addresses';
@@ -20,12 +20,6 @@ import { addressKeysModelThunk } from './thunk';
 
 const mockedAddressKeysThunk = jest.spyOn(addressKeysModule, 'addressKeysThunk');
 
-jest.mock('@proton/shared/lib/authentication/authentication', () => ({
-    __esModule: true,
-    default: {
-        getPassword: () => {},
-    },
-}));
 jest.mock('@proton/srp', () => {});
 jest.mock('@proton/crypto', () => {
     return {
@@ -51,12 +45,11 @@ const reducer = combineReducers({
 const setup = (preloadedState?: Partial<ReturnType<typeof reducer>>) => {
     const actions: any[] = [];
 
-    interface ThunkArguments {
-        api: Api;
-        eventManager: EventManager;
-    }
-
-    const extraThunkArguments = {} as ThunkArguments;
+    const extraThunkArguments = {
+        authentication: {
+            getPassword: () => {},
+        },
+    } as ProtonThunkArguments;
 
     const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments });
 

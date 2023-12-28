@@ -180,7 +180,7 @@ jest.mock('@proton/components/hooks/useSubscribedCalendars', () => () => ({}));
 jest.mock('@proton/components/hooks/useContactEmails', () => () => []);
 jest.mock('@proton/components/hooks/useFeature', () => () => ({}));
 jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
-jest.mock('@proton/components/hooks/useWelcomeFlags', () => () => [{}]);
+jest.mock('@proton/components/hooks/useWelcomeFlags', () => ({ useWelcomeFlags: () => [{}] }));
 jest.mock('@proton/components/hooks/useCachedModelResult', () => () => [{}]);
 jest.mock('@proton/components/hooks/useEventManager', () => () => ({}));
 jest.mock('@proton/components/containers/eventManager/calendar/useCalendarsInfoListener', () => () => ({}));

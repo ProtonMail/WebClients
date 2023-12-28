@@ -1,23 +1,23 @@
-import { ReactNode } from 'react';
-
 import { updateServerTime } from '@proton/crypto';
-import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
-import { APP_NAMES, DEFAULT_TIMEOUT } from '@proton/shared/lib/constants';
-import { getIsAuthorizedApp, getIsDrawerPostMessage, postMessageFromIframe } from '@proton/shared/lib/drawer/helpers';
-import { DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
-import { createTimeoutError, deserializeApiErrorData } from '@proton/shared/lib/fetch/ApiError';
+import { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import noop from '@proton/utils/noop';
 
-import { generateUID } from '../../helpers';
-import { useConfig } from '../../hooks';
-import ApiContext from './apiContext';
+import { APP_NAMES, DEFAULT_TIMEOUT } from '../constants';
+import { createTimeoutError, deserializeApiErrorData } from '../fetch/ApiError';
+import { getIsAuthorizedApp, getIsDrawerPostMessage, postMessageFromIframe } from './helpers';
+import { DRAWER_EVENTS } from './interfaces';
 
-const DrawerApiProvider = ({ children }: { children: ReactNode }) => {
-    const { APP_VERSION } = useConfig();
-    const parentApp = getAppFromPathnameSafe(window.location.pathname);
+export const createDrawerApi = ({
+    parentApp,
+    appVersion,
+}: {
+    parentApp: APP_NAMES | undefined;
+    appVersion: string;
+}): ApiWithListener => {
+    let n = 1;
 
-    const handleIframeApi = (arg: any) => {
-        const id = generateUID();
+    const callback = (arg: any) => {
+        const id = `${n++}`;
         let timeout: ReturnType<typeof setTimeout> | undefined;
 
         let resolve: (arg: any) => void = noop;
@@ -76,7 +76,7 @@ const DrawerApiProvider = ({ children }: { children: ReactNode }) => {
             postMessageFromIframe(
                 {
                     type: DRAWER_EVENTS.API_REQUEST,
-                    payload: { arg: newArg, id, appVersion: APP_VERSION, hasAbortController },
+                    payload: { arg: newArg, id, appVersion, hasAbortController },
                 },
                 parentApp
             );
@@ -91,7 +91,14 @@ const DrawerApiProvider = ({ children }: { children: ReactNode }) => {
         return promise;
     };
 
-    return <ApiContext.Provider value={handleIframeApi}>{children}</ApiContext.Provider>;
-};
+    Object.defineProperties(callback, {
+        UID: {
+            set() {},
+        },
+    });
 
-export default DrawerApiProvider;
+    return Object.assign(callback as ApiWithListener, {
+        addEventListener: () => {},
+        removeEventListener: () => {},
+    });
+};

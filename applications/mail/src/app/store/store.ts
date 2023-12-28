@@ -1,15 +1,16 @@
 import { TypedStartListening, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 
-import { startCalendarEventListener, startHolidayCalendarsListener } from '@proton/calendar';
-import { ignoredActions, ignoredPaths, startSharedListening } from '@proton/redux-shared-store';
+import { ignoredActions, ignoredPaths } from '@proton/redux-shared-store/sharedSerializable';
 
+import { start } from './listener';
 import { rootReducer } from './rootReducer';
-import { MailThunkArguments, extraThunkArguments } from './thunk';
-
-export const listenerMiddleware = createListenerMiddleware();
+import { type MailThunkArguments, extraThunkArguments } from './thunk';
 
 export type MailState = ReturnType<typeof rootReducer>;
-export const setupStore = ({ preloadedState }: { preloadedState?: MailState } = {}) => {
+
+export const setupStore = ({ preloadedState }: { preloadedState?: Partial<MailState> } = {}) => {
+    const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments });
+
     const store = configureStore({
         preloadedState,
         reducer: rootReducer,
@@ -23,14 +24,25 @@ export const setupStore = ({ preloadedState }: { preloadedState?: MailState } = 
             }).prepend(listenerMiddleware.middleware),
     });
 
+    const startListening = listenerMiddleware.startListening as AppStartListening;
+    start(startListening);
+
     if (process.env.NODE_ENV !== 'production' && module.hot) {
         module.hot.accept('./rootReducer', () => store.replaceReducer(rootReducer));
+        module.hot.accept('./listener', () => {
+            listenerMiddleware.clearListeners();
+            start(startListening);
+        });
     }
 
-    return store;
+    return Object.assign(store, {
+        unsubscribe: () => {
+            listenerMiddleware.clearListeners();
+        },
+    });
 };
 
-export const extendStore = (newThunkArguments: MailThunkArguments) => {
+export const extendStore = (newThunkArguments: Partial<MailThunkArguments>) => {
     Object.assign(extraThunkArguments, newThunkArguments);
 };
 
@@ -38,9 +50,4 @@ export type MailStore = ReturnType<typeof setupStore>;
 export type MailDispatch = MailStore['dispatch'];
 type ExtraArgument = typeof extraThunkArguments;
 
-type AppStartListening = TypedStartListening<MailState, MailDispatch, ExtraArgument>;
-const startListening = listenerMiddleware.startListening as AppStartListening;
-
-startSharedListening(startListening);
-startCalendarEventListener(startListening);
-startHolidayCalendarsListener(startListening);
+export type AppStartListening = TypedStartListening<MailState, MailDispatch, ExtraArgument>;

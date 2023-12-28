@@ -4,6 +4,7 @@ import { useLocation } from 'react-router';
 import { addDays, fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import { signoutAction } from '@proton/account';
 import { Button, ButtonLike, NotificationDot } from '@proton/atoms';
 import { ThemeColor } from '@proton/colors';
 import {
@@ -33,6 +34,7 @@ import {
     useUser,
     useUserSettings,
 } from '@proton/components';
+import { useDispatch } from '@proton/redux-shared-store';
 import { getAppHref, getAppShortName } from '@proton/shared/lib/apps/helper';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
@@ -89,6 +91,7 @@ interface Props extends Omit<UserDropdownButtonProps, 'user' | 'isOpen' | 'onCli
 }
 
 const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) => {
+    const dispatch = useDispatch();
     const { APP_NAME, APP_VERSION } = useConfig();
     const [organization] = useOrganization();
     const { Name: organizationName } = organization || {};
@@ -100,7 +103,6 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
     const [redDotReferral, setRedDotReferral] = useState(false);
     const { Email, DisplayName, Name, isMember } = user;
     const nameToDisplay = DisplayName || Name; // nameToDisplay can be falsy for external account
-    const { logout } = useAuthentication();
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [bugReportModal, setBugReportModal, renderBugReportModal] = useModalState();
@@ -147,7 +149,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
         } else if (shouldShowConfirmSignOutModal({ user, authentication })) {
             setConfirmSignOutModal(true);
         } else {
-            logout();
+            dispatch(signoutAction({ clearDeviceRecovery: false }));
         }
     };
 
@@ -210,13 +212,13 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
             {renderBugReportModal && <AuthenticatedBugModal {...bugReportModal} />}
             {renderSessionRecoverySignOutConfirmPrompt && (
                 <SessionRecoverySignOutConfirmPrompt
-                    onSignOut={() => logout()}
+                    onSignOut={() => dispatch(signoutAction({ clearDeviceRecovery: false }))}
                     {...sessionRecoverySignOutConfirmPrompt}
                 />
             )}
             {renderConfirmSignOutModal && (
                 <ConfirmSignOutModal
-                    onSignOut={(clearDeviceRecoveryData: boolean) => logout({ clearDeviceRecoveryData })}
+                    onSignOut={(clearDeviceRecovery) => dispatch(signoutAction({ clearDeviceRecovery }))}
                     {...confirmSignOutModal}
                 />
             )}
@@ -344,7 +346,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                                         !getIsEventModified(event.nativeEvent)
                                     ) {
                                         event.preventDefault();
-                                        return requestFork(APP_NAME, undefined, FORK_TYPE.SWITCH);
+                                        return requestFork({ fromApp: APP_NAME, type: FORK_TYPE.SWITCH });
                                     }
                                 }}
                                 data-testid="userdropdown:button:switch-account"

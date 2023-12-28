@@ -15,7 +15,6 @@ import { getModelState } from '@proton/account/test';
 import {
     CacheProvider,
     CalendarModelEventManagerProvider,
-    EventModelListener,
     FeatureCode,
     ModalsChildren,
     ModalsProvider,
@@ -39,15 +38,13 @@ import {
     UserModel,
     UserSettings,
 } from '@proton/shared/lib/interfaces';
-import { DEFAULT_MAILSETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
+import { DEFAULT_MAILSETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
-
-import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider';
-import QuickSettingsTestProvider from 'proton-mail/helpers/test/quick-settings';
 
 import { LabelActionsContextProvider } from '../../components/sidebar/EditLabelContext';
 import { MAIN_ROUTE_PATH } from '../../constants';
+import { CheckAllRefProvider } from '../../containers/CheckAllRefProvider';
 import { ComposeProvider } from '../../containers/ComposeProvider';
 import EncryptedSearchProvider from '../../containers/EncryptedSearchProvider';
 import { MailboxContainerContextProvider } from '../../containers/mailbox/MailboxContainerProvider';
@@ -58,6 +55,7 @@ import { MailState, MailStore, extendStore, setupStore } from '../../store/store
 import { api, getFeatureFlags, mockDomApi } from './api';
 import { minimalCache, mockCache } from './cache';
 import NotificationsTestProvider from './notifications';
+import QuickSettingsTestProvider from './quick-settings';
 
 interface RenderResult extends OriginalRenderResult {
     rerender: (ui: React.ReactElement) => Promise<void>;
@@ -111,7 +109,6 @@ const TestProvider = ({ children }: Props) => {
                                         <SpotlightProvider>
                                             <DrawerProvider>
                                                 <ModalsChildren />
-                                                <EventModelListener />
                                                 <ReduxProviderWrapper>
                                                     <MailContentRefProvider mailContentRef={contentRef}>
                                                         <ChecklistsProvider>
@@ -193,7 +190,13 @@ export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloade
             ...preloadedState,
         },
     });
-    extendStore({ api: api, eventManager: jest.fn() as any });
+    extendStore({
+        authentication: {
+            getPassword: () => '',
+        } as any,
+        api: api as any,
+        eventManager: jest.fn() as any,
+    });
 
     function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
         return <ProtonStoreProvider store={store}>{children}</ProtonStoreProvider>;

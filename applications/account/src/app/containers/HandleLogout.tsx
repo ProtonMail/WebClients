@@ -9,7 +9,7 @@ const HandleLogout = () => {
     useEffect(() => {
         const params = parseLogoutURL(new URL(window.location.href));
 
-        if (params.flow === 'logout') {
+        if (params.logout) {
             window.location.hash = '';
 
             if (params.clearDeviceRecoveryData) {

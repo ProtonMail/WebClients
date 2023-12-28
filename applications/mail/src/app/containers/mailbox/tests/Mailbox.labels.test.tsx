@@ -197,7 +197,10 @@ describe('Mailbox labels actions', () => {
             const labelRequestSpy = jest.fn(() => ({ UndoToken: { Token: 'Token' } }));
             addApiMock(`mail/v4/conversations/label`, labelRequestSpy, 'put');
 
-            const { getByTestId, getAllByTestId, getItems } = await setup({ conversations, labelID: folder1.ID });
+            const { getByTestId, getAllByTestId, getItems, store } = await setup({
+                conversations,
+                labelID: folder1.ID,
+            });
 
             const checkboxes = getAllByTestId('item-checkbox');
             fireEvent.click(checkboxes[0]);
@@ -207,7 +210,7 @@ describe('Mailbox labels actions', () => {
 
             useMoveDropdown(getByTestId, folder2.ID);
 
-            await sendEvent({ ConversationCounts: [{ LabelID: folder1.ID, Total: 1, Unread: 0 }] });
+            await sendEvent(store, { ConversationCounts: [{ LabelID: folder1.ID, Total: 1, Unread: 0 }] });
 
             await waitForSpyCall({ spy: labelRequestSpy });
 

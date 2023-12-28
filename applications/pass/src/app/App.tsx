@@ -39,8 +39,6 @@ import { Lobby } from './Views/Lobby';
 import { Main } from './Views/Main';
 import * as config from './config';
 
-import './app.scss';
-
 const generateOTP: PassCoreContextValue['generateOTP'] = ({ totpUri }) => generateTOTPCode(totpUri);
 
 const onLink: PassCoreContextValue['onLink'] = (url, options) =>

@@ -1,16 +1,25 @@
-import { ReactNode, useEffect, useRef, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { flushSync } from 'react-dom';
 
-import { userThunk } from '@proton/account';
+import FlagProvider from '@protontech/proxy-client-react';
+import { UnleashClient } from 'unleash-proxy-client';
+
+import { serverEvent, userThunk } from '@proton/account';
 import {
+    ApiProvider,
     EventManagerProvider,
     ModalsChildren,
     StandardLoadErrorPage,
-    useApi,
     useErrorHandler,
     useThemeQueryParameter,
 } from '@proton/components';
+import {
+    createCustomFetch,
+    createUnleashReadyPromise,
+    getUnleashConfig,
+} from '@proton/components/containers/unleash/UnleashFlagProvider';
 import { authJwt, pullForkSession, setCookies, setRefreshCookies } from '@proton/shared/lib/api/auth';
+import { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { getLatestID } from '@proton/shared/lib/api/events';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
@@ -28,6 +37,7 @@ import getRandomString from '@proton/utils/getRandomString';
 
 import { useAccountDispatch } from '../app/store/hooks';
 import { extendStore } from '../app/store/store';
+import { extraThunkArguments } from '../app/store/thunk';
 import broadcast, { MessageType } from './broadcast';
 import ExpiredLink from './components/ExpiredLink';
 import LiteLayout from './components/LiteLayout';
@@ -50,11 +60,10 @@ interface Props {
     onLogin: (UID: string) => void;
     UID?: string;
     children: ReactNode;
+    api: ApiWithListener;
 }
 
-const Setup = ({ onLogin, UID, children }: Props) => {
-    const normalApi = useApi();
-    const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
+const Setup = ({ api, onLogin, UID, children }: Props) => {
     const errorHandler = useErrorHandler();
     const dispatch = useAccountDispatch();
 
@@ -62,18 +71,17 @@ const Setup = ({ onLogin, UID, children }: Props) => {
     const [error, setError] = useState<{ message?: string } | null>(null);
     const [expiredLinkError, setExpiredLinkError] = useState<boolean>(false);
 
-    const eventManagerRef = useRef<ReturnType<typeof createEventManager>>();
-
     useThemeQueryParameter();
 
     const searchParams = new URLSearchParams(location.search);
 
     useEffect(() => {
         const setupCookies = async ({ UID, RefreshToken }: { UID: string; RefreshToken: string }) => {
-            const { AccessToken: newAccessToken, RefreshToken: newRefreshToken } =
-                await silentApi<RefreshSessionResponse>(withUIDHeaders(UID, setRefreshCookies({ RefreshToken })));
+            const { AccessToken: newAccessToken, RefreshToken: newRefreshToken } = await api<RefreshSessionResponse>(
+                withUIDHeaders(UID, setRefreshCookies({ RefreshToken }))
+            );
 
-            await silentApi(
+            await api(
                 withAuthHeaders(
                     UID,
                     newAccessToken,
@@ -88,7 +96,7 @@ const Setup = ({ onLogin, UID, children }: Props) => {
         };
 
         const setupFork = async (selector: string) => {
-            const { UID, RefreshToken } = await silentApi<PullForkResponse>(pullForkSession(selector));
+            const { UID, RefreshToken } = await api<PullForkResponse>(pullForkSession(selector));
 
             await setupCookies({ UID, RefreshToken });
 
@@ -96,7 +104,7 @@ const Setup = ({ onLogin, UID, children }: Props) => {
         };
 
         const setupJwt = async (jwt: string) => {
-            const { UID, RefreshToken } = await silentApi<{
+            const { UID, RefreshToken } = await api<{
                 UID: string;
                 AccessToken: string;
                 RefreshToken?: string;
@@ -112,15 +120,16 @@ const Setup = ({ onLogin, UID, children }: Props) => {
         };
 
         const setupApp = async (UID: string) => {
-            const uidApi = <T,>(config: any) => silentApi<T>(withUIDHeaders(UID, config));
+            api.UID = UID;
 
-            extendStore({ api: uidApi, eventManager: null as any });
+            const unleashClient = new UnleashClient(getUnleashConfig({ fetch: createCustomFetch(api) }));
 
-            const eventManagerPromise = uidApi<{ EventID: string }>(getLatestID())
+            extendStore({ unleashClient });
+
+            const eventManagerPromise = api<{ EventID: string }>(getLatestID())
                 .then(({ EventID }) => EventID)
                 .then((eventID) => {
-                    eventManagerRef.current = createEventManager({ api: uidApi, eventID });
-                    return eventManagerRef.current;
+                    return createEventManager({ api, eventID });
                 });
 
             const setupModels = async () => {
@@ -136,14 +145,19 @@ const Setup = ({ onLogin, UID, children }: Props) => {
                 return Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, browserLocale)]);
             };
 
-            const [ev] = await Promise.all([
+            const [eventManager] = await Promise.all([
                 eventManagerPromise,
                 setupModels(),
                 loadLocales(),
                 loadCryptoWorker({ poolSize: 1 }),
+                createUnleashReadyPromise(unleashClient).promise,
             ]);
 
-            extendStore({ api: uidApi, eventManager: ev });
+            extendStore({ eventManager });
+            eventManager.subscribe((event) => {
+                dispatch(serverEvent(event));
+            });
+            eventManager.start();
 
             flushSync(() => {
                 onLogin(UID);
@@ -221,7 +235,7 @@ const Setup = ({ onLogin, UID, children }: Props) => {
         return <StandardLoadErrorPage errorMessage={error.message} />;
     }
 
-    if (loading || !eventManagerRef.current) {
+    if (loading) {
         return (
             <LiteLayout searchParams={searchParams}>
                 <LiteLoaderPage />
@@ -230,10 +244,14 @@ const Setup = ({ onLogin, UID, children }: Props) => {
     }
 
     return (
-        <EventManagerProvider eventManager={eventManagerRef.current}>
-            <ModalsChildren />
-            {children}
-        </EventManagerProvider>
+        <ApiProvider api={extraThunkArguments.api}>
+            <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+                <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                    <ModalsChildren />
+                    {children}
+                </EventManagerProvider>
+            </FlagProvider>
+        </ApiProvider>
     );
 };
 

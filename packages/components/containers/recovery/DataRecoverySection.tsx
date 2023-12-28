@@ -13,6 +13,7 @@ import { Icon, Info, Toggle, useModalState } from '../../components';
 import { useFlag } from '../../containers/unleash';
 import {
     useApi,
+    useAuthentication,
     useConfig,
     useEventManager,
     useGetAddresses,
@@ -41,6 +42,7 @@ const DataRecoverySection = () => {
     const { call } = useEventManager();
     const api = useApi();
     const { APP_NAME } = useConfig();
+    const authentication = useAuthentication();
 
     const hasTrustedDeviceRecovery = useFlag('TrustedDeviceRecovery');
 
@@ -102,6 +104,7 @@ const DataRecoverySection = () => {
             appName: APP_NAME,
             userSettings: { ...userSettings, ...partialUserSettings },
             userKeys,
+            authentication,
         });
     };
 
