@@ -1364,14 +1364,8 @@
       "High speed streaming": [
         "Nopea suoratoisto"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Premium salasanahallinta"
@@ -1708,7 +1702,7 @@
         "(osallistuminen on vapaaehtoista)"
       ],
       "Adding occurrences to an event is not supported for the moment": [
-        "Esiintymän lisäystä tapahtumaan ei vielä tueta"
+        "Tapahtumakerran lisäystä ketjuun ei vielä tueta."
       ],
       "Event refreshing is not supported for the moment": [
         "Tapahtumapäivityksiä ei toistaiseksi tueta"
@@ -2143,6 +2137,11 @@
       ],
       "URL": [
         "URL-osoite"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Yhteystiedon kuva"
       ]
     },
     "Contact type label": {
@@ -2963,9 +2962,6 @@
       "Daily": [
         "Päivittäin"
       ],
-      "Daily, ${ timesString }": [
-        "Päivittäin, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Päivittäin, ${ untilString }"
       ],
@@ -2973,16 +2969,21 @@
         "${ interval } päivän välein",
         "${ interval } päivän välein"
       ],
-      "Every ${ interval } day, ${ timesString }": [
-        "${ interval } päivän välein, ${ timesString }",
-        "${ interval } päivän välein, ${ timesString }"
-      ],
       "Every ${ interval } day, ${ untilString }": [
         "${ interval } päivän välein, ${ untilString }",
         "${ interval } päivän välein, ${ untilString }"
       ],
       "until ${ dateString }": [
         "päättyen ${ dateString }"
+      ]
+    },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "Päivittäin, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "${ interval } päivän välein, ${ timesString }",
+        "${ interval } päivän välein, ${ timesString }"
       ]
     },
     "Date label": {
@@ -3138,6 +3139,9 @@
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
         "${ eventTitle } päivitettiin.\n${ eventDetailsText }"
+      ],
+      "This occurrence of ${ eventTitle } has been canceled.": [
+        "Ketjun ${ eventTitle } tämä tapahtuma on peruttu."
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "Sinut on kutsuttu tapahtumaan ${ eventTitle }\n${ eventDetailsText }"
@@ -3724,7 +3728,7 @@
     },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "Tiedostoa \"${ formattedFilename }\" luettaessa tapahtui virhe. Väärä tiedostomuoto."
+        "Virhe luettaessa tiedostoa \"${ formattedFilename }\". Väärä tiedostomuoto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Virhe siirrettäessä tiedostoa ${ formattedFilename }. Tiedoston enimmäiskoko on ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3736,7 +3740,7 @@
         "Virhe siirrettäessä tiedostoa. Tiedostoa ei ole valittu."
       ],
       "An unexpected error occurred. Import must be restarted.": [
-        "Tapahtui odottamaton virhe. Tuonti on aloitettava uudelleen."
+        "Odottamaton virhe. Tuonti on aloitettava uudelleen."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
         "Tiedosto ${ formattedFilename } sisältää enemmän kuin ${ MAX_IMPORT_EVENTS_STRING } tapahtuman.",
@@ -3768,7 +3772,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
-        "Tiedostoa \"${ formattedFilename }\" luettaessa tapahtui virhe. Väärä tiedostomuoto."
+        "Virhe luettaessa tiedostoa \"${ formattedFilename }\". Väärä tiedostomuoto."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Virhe siirrettäessä tiedostoa ${ formattedFilename }. Suurin sallittu tiedostokoko on ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3863,7 +3867,7 @@
         "Ketjun alkuperäistä toistuvaa tapahtumaa ei löytynyt"
       ],
       "Recurring event has no occurrences": [
-        "Toistuvalla tapahtuma ei sisällä tapahtumakertoja"
+        "Toistuva tapahtuma ei sisällä tapahtumakertoja"
       ],
       "Recurring rule not supported": [
         "Toistuvaa sääntöä ei tueta"
@@ -4542,11 +4546,11 @@
         "${ totalImported }/${ totalToImport } tapahtumaa salattiin ja lisättiin kalenteriisi"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Tapahtumaa lisättäessä ja salattaessa tapahtui virhe. ${ totalImported }/${ totalToImport } tapahtuma tuotiin.",
-        "Tapahtumaa lisättäessä ja salattaessa tapahtui virhe. ${ totalImported }/${ totalToImport } tapahtumaa tuotiin."
+        "Virhe salattaessa ja lisättäessä tapahtumaa. ${ totalImported }/${ totalToImport } tapahtuma tuotiin.",
+        "Virhe salattaessa ja lisättäessä tapahtumia. ${ totalImported }/${ totalToImport } tapahtumaa tuotiin."
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "Lisättäessä ja salattaessa tapahtumia tapahtui virhe. Tapahtumia ei tuotu."
+        "Virhe salattaessa ja lisättäessä yhteystietoja, jonka vuoksi tapahtumia ei tuotu."
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "Virhe salattaessa ja lisättäessä tapahtumia, jonka seurauksena tapahtumia ei tuotu."
@@ -4907,7 +4911,7 @@
       ],
       "${ numOccurrences } occurrence found in the mail content": [
         "Viestin sisällöstä löytyi ${ numOccurrences } tapahtumakerta",
-        "Viestin sisällöstä löytyi ${ numOccurrences } esiintymää"
+        "Viestin sisällöstä löytyi ${ numOccurrences } tapahtumakertaa"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } kansio löytyi",
@@ -4928,14 +4932,6 @@
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ selectedContactsLength }/${ contactsLength } yhteystieto valittu",
         "${ selectedContactsLength }/${ contactsLength } yhteystietoa valittu"
-      ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } kansio valittu",
-        "${ selectedFoldersCount } kansiota valittu"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } tunniste valittu",
-        "${ selectedFoldersCount } tunnistetta valittu"
       ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } kansio valittu",
@@ -5343,6 +5339,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Jos haluat enemmän hakutuloksia, kokeile etsiä tätä avainsanaa myös sähköpostiviestien sisällöstä"
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Ohjaa muiden tilien saapuvat viestit suojattuun ${ MAIL_APP_NAME } -postilaatikkoosi."
+      ],
       "Free up some space or add more storage space.": [
         "Vapauta tai hanki lisää tallennustilaa."
       ],
@@ -5402,11 +5401,11 @@
       "Import mailbox": [
         "Tuo postilaatikko"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Tuo viestit, kalenterit ja yhteystiedot muista palveluista ${ BRAND_NAME }iin."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Tietojasi tuodaan tililtä ${ fromEmail } tilille ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Tietojasi tuodaan tililtä ${ importedEmailAddress } tilille ${ toEmail }."
       ],
       "Include Spam/Trash.": [
         "Sisällytä roskaposti ja roskakorin sisältö."
@@ -6171,6 +6170,9 @@
       "You can import one data type at a time.": [
         "Voit tuoda vain yhden tietotyypin kerrallaan."
       ],
+      "You can now return to the application to continue": [
+        "Voit nyt jatkaa palaamalla sovellukseen"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Käytä ilmoituksia saadaksesi hälytyksen kansioon saapuvista uusista viesteistä."
       ],
@@ -6304,6 +6306,16 @@
     "Info on errors": {
       "Click for details": [
         "Painamalla lisätietoja"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } kansio valittu",
+        "${ selectedFoldersCount } kansiota valittu"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } tunniste valittu",
+        "${ selectedFoldersCount } tunnistetta valittu"
       ]
     },
     "Key badge": {
@@ -6729,6 +6741,9 @@
       ],
       "Frequency": [
         "Tiheys"
+      ],
+      "From (senders in message print header)": [
+        "Lähettäjältä (lähettäjät viestin tulostusotsakkeessa)"
       ],
       "From:": [
         "Lähettäjä:"
@@ -9643,6 +9658,9 @@
       ],
       "Hide side panel": [
         "Piilota sivupaneeli"
+      ],
+      "Load image": [
+        "Lataa kuva"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Valitse PGP-malli, jota käytetään kun allekirjoitetaan tai salataan sisältöä käyttäjälle. Huomioi, että PGP/Inline-standardi pakottaa viestien muotoiluksi pelkän tekstin"
