@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { FunctionComponent, useEffect, useRef, useState } from 'react';
 import { Route } from 'react-router';
 import { Redirect, Switch, useHistory, useLocation } from 'react-router-dom';
 
@@ -14,7 +14,6 @@ import {
     DeleteSection,
     DowngradeSubscriptionSection,
     EmailSubscriptionSection,
-    ErrorBoundary,
     FreeUserLiveChatModal,
     GatewaysSection,
     GiftCodeSection,
@@ -36,7 +35,6 @@ import {
     Sidebar,
     SidebarList,
     SidebarNav,
-    StandardErrorPage,
     SubscriptionModalProvider,
     SubscriptionsSection,
     ThemesSection,
@@ -82,7 +80,7 @@ import { getRoutes } from './routes';
 
 const vpnZendeskKey = 'c08ab87d-68c3-4d7d-a419-a0a1ef34759d';
 
-const MainContainer = () => {
+const MainContainer: FunctionComponent = () => {
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
@@ -347,12 +345,4 @@ const MainContainer = () => {
     );
 };
 
-const WrappedMainContainer = () => {
-    return (
-        <ErrorBoundary component={<StandardErrorPage />}>
-            <MainContainer />
-        </ErrorBoundary>
-    );
-};
-
-export default WrappedMainContainer;
+export default MainContainer;

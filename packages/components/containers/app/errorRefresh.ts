@@ -56,7 +56,7 @@ const handleError = (error: any) => {
     return false;
 };
 
-export const wrapUnloadError = <T>(promise: Promise<T>) => {
+export const wrapUnloadError = <T>(promise: Promise<T>): Promise<T> => {
     // In Firefox, navigation events cancel ongoing network requests. This triggers the error handler and error
     // screen to be displayed. We set up a 'beforeunload' listener to detect unload to not unnecessarily
     // show cancelled network requests errors as fatal errors, and keep showing the loader screen instead.

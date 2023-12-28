@@ -4,6 +4,8 @@ import 'webpack-dev-server';
 // @ts-ignore
 import { parseResource } from 'webpack/lib/util/identifier';
 
+import { getEntries } from './webpack/entries';
+
 const { getJsLoaders } = require('./webpack/js.loader');
 const getCssLoaders = require('./webpack/css.loader');
 const getAssetsLoaders = require('./webpack/assets.loader');
@@ -64,12 +66,7 @@ const getConfig = (env: any): Configuration => {
                 punycode: false,
             },
         },
-        entry: {
-            // The order is important. The pre.js listens to index.js, and supported.js file sets a global variable that is used by unsupported.js to detect if the main bundle could be parsed.
-            pre: [require.resolve('@proton/shared/lib/supported/pre.ts')],
-            index: [path.resolve('./src/app/index.tsx'), require.resolve('@proton/shared/lib/supported/supported.ts')],
-            unsupported: [require.resolve('@proton/shared/lib/supported/unsupported.ts')],
-        },
+        entry: getEntries(),
         output: {
             filename: isProduction
                 ? `${assetsFolder}/[name].[contenthash:8].js?v=${version}`
@@ -170,12 +167,3 @@ const getConfig = (env: any): Configuration => {
 };
 
 export default getConfig;
-
-export const mergeEntry = (originalEntry: any, entry: any) => {
-    const { pre, ...rest } = originalEntry;
-    return {
-        pre,
-        ...entry,
-        ...rest,
-    };
-};

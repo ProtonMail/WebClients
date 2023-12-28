@@ -330,7 +330,7 @@ describe('Mailbox element list', () => {
             }));
             addApiMock(`mail/v4/conversations/label`, labelRequestSpy, 'put');
 
-            const { getByTestId } = await setup({
+            const { getByTestId, store } = await setup({
                 conversations,
                 page: 1,
                 mockConversations: false,
@@ -342,7 +342,7 @@ describe('Mailbox element list', () => {
             const archive = getByTestId('toolbar:movetoarchive');
             fireEvent.click(archive);
 
-            await sendEvent({
+            await sendEvent(store, {
                 ConversationCounts: [
                     {
                         LabelID: labelID,

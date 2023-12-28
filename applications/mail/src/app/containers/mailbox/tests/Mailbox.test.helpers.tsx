@@ -3,6 +3,7 @@ import { MutableRefObject, ReactElement, ReactNode } from 'react';
 import { act } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
+import { serverEvent } from '@proton/account';
 import { getModelState } from '@proton/account/test';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -162,8 +163,9 @@ export const setup = async ({
     return { ...result, rerender, getItems };
 };
 
-export const sendEvent = async (event: Event) => {
+export const sendEvent = async (store: any, event: Event) => {
     await act(async () => {
+        store.dispatch(serverEvent(event as any));
         triggerEvent(event);
         await wait(0);
     });

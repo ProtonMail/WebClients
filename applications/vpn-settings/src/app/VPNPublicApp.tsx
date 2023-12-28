@@ -3,14 +3,11 @@ import { ReactNode, useEffect, useState } from 'react';
 import * as H from 'history';
 import { c } from 'ttag';
 
+import { publicApp } from '@proton/account/bootstrap';
 import { StandardLoadErrorPage } from '@proton/components';
-import { getCryptoWorkerOptions } from '@proton/components/containers/app/cryptoWorkerOptions';
 import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { APPS, DEFAULT_LOCALE } from '@proton/shared/lib/constants';
-import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
-import { getBrowserLocale, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
-import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
+import { APPS } from '@proton/shared/lib/constants';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 interface Props {
@@ -28,14 +25,7 @@ const VPNPublicApp = ({ pathLocale, loader, location, locales = {}, children }: 
     useEffect(() => {
         const run = async () => {
             const searchParams = new URLSearchParams(location.search);
-            const languageParams = searchParams.get('language');
-            const browserLocale = getBrowserLocale();
-            const localeCode = getClosestLocaleMatch(pathLocale || languageParams || '', locales) || DEFAULT_LOCALE;
-            await Promise.all([
-                loadCryptoWorker(getCryptoWorkerOptions(APPS.PROTONVPN_SETTINGS, {})),
-                loadLocale(localeCode, locales),
-                loadDateLocale(localeCode, browserLocale),
-            ]);
+            await publicApp({ app: APPS.PROTONVPN_SETTINGS, pathLocale, searchParams, locales });
             setLoading(false);
         };
 

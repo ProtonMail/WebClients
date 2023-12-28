@@ -1,7 +1,6 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import {
-    CacheProvider,
     Icons,
     ModalsChildren,
     ModalsProvider,
@@ -9,23 +8,13 @@ import {
     NotificationsProvider,
     ThemeProvider,
 } from '@proton/components';
-import ApiProvider from '@proton/components/containers/api/ApiProvider';
-import ConfigProvider from '@proton/components/containers/config/Provider';
-import createCache from '@proton/shared/lib/helpers/cache';
+import { APPS } from '@proton/shared/lib/constants';
 import { PROTON_DEFAULT_THEME, PROTON_THEMES_MAP, getThemes } from '@proton/shared/lib/themes/themes';
 
-import * as config from '../src/app/config';
 import './prismjs.js';
 import storybookTheme from './theme';
 
 import '../src/app/index.scss';
-
-const cacheRef = createCache();
-
-const tempConfig = {
-    ...config,
-    APP_NAME: 'proton-mail',
-};
 
 const colorSchemes = ['default', 'ui-alias', 'ui-note', 'ui-password', 'ui-login'];
 const themes = getThemes(true);
@@ -67,22 +56,16 @@ export const decorators = [
 
         return (
             <Router>
-                <ConfigProvider config={tempConfig}>
-                    <ThemeProvider initial={initialTheme}>
-                        <Icons />
-                        <NotificationsProvider>
-                            <ModalsProvider>
-                                <ApiProvider config={tempConfig}>
-                                    <NotificationsChildren />
-                                    <ModalsChildren />
-                                    <CacheProvider cache={cacheRef}>
-                                        <Story />
-                                    </CacheProvider>
-                                </ApiProvider>
-                            </ModalsProvider>
-                        </NotificationsProvider>
-                    </ThemeProvider>
-                </ConfigProvider>
+                <ThemeProvider initial={initialTheme} appName={APPS.PROTONMAIL}>
+                    <Icons />
+                    <NotificationsProvider>
+                        <ModalsProvider>
+                            <NotificationsChildren />
+                            <ModalsChildren />
+                            <Story />
+                        </ModalsProvider>
+                    </NotificationsProvider>
+                </ThemeProvider>
             </Router>
         );
     },

@@ -1,80 +1,90 @@
-import { userSettingsThunk, userThunk } from '@proton/account';
-import { holidayCalendarsThunk } from '@proton/calendar';
-import { FeatureCode, StandardPrivateApp, useApi } from '@proton/components';
-import { fetchFeatures } from '@proton/features';
-import { mailSettingsThunk } from '@proton/mail';
-import { getEvents, getLatestID } from '@proton/shared/lib/api/events';
-import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
-import createEventManager from '@proton/shared/lib/eventManager/eventManager';
-import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import noop from '@proton/utils/noop';
+import { FunctionComponent, useState } from 'react';
+import { Router } from 'react-router-dom';
 
-import { useAccountDispatch } from '../store/hooks';
-import { extendStore } from '../store/store';
+import FlagProvider from '@protontech/proxy-client-react';
+import { c } from 'ttag';
+
+import {
+    AuthenticationProvider,
+    CalendarModelEventManagerProvider,
+    ErrorBoundary,
+    ProtonApp,
+    StandardErrorPage,
+} from '@proton/components/containers';
+import ApiProvider from '@proton/components/containers/api/ApiProvider';
+import StandardLoadErrorPage from '@proton/components/containers/app/StandardLoadErrorPage';
+import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
+import EventManagerProvider from '@proton/components/containers/eventManager/EventManagerProvider';
+import useEffectOnce from '@proton/hooks/useEffectOnce';
+import { ProtonStoreProvider } from '@proton/redux-shared-store';
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+
+import * as config from '../config';
+import { AccountStore } from '../store/store';
+import { extraThunkArguments } from '../store/thunk';
 import AccountLoaderPage from './AccountLoaderPage';
+import { bootstrapApp } from './bootstrap';
 
-const getAppContainer = () => import(/* webpackChunkName: "MainContainer" */ './SetupMainContainer');
+const defaultState: {
+    error?: { message: string } | undefined;
+    MainContainer?: FunctionComponent;
+    store?: AccountStore;
+} = { error: undefined };
 
-interface Props {
-    onLogout: () => void;
-    locales: TtagLocaleMap;
-}
+const PrivateApp = () => {
+    const [state, setState] = useState(defaultState);
 
-const PrivateApp = ({ onLogout, locales }: Props) => {
-    const api = useApi();
-    const silentApi = getSilentApi(api);
-    const dispatch = useAccountDispatch();
+    useEffectOnce(() => {
+        (async () => {
+            try {
+                const result = await bootstrapApp({ config });
+                setState({ store: result.store, MainContainer: result.MainContainer, error: undefined });
+            } catch (error: any) {
+                setState({
+                    error: {
+                        message: getApiErrorMessage(error) || error?.message || c('Error').t`Unknown error`,
+                    },
+                });
+            }
+        })();
+    });
 
     return (
-        <StandardPrivateApp
-            loader={<AccountLoaderPage />}
-            onLogout={onLogout}
-            onInit={async () => {
-                extendStore({ api: silentApi, eventManager: null as any });
+        <ProtonApp config={config}>
+            {(() => {
+                if (state.error) {
+                    return <StandardLoadErrorPage errorMessage={state.error.message} />;
+                }
 
-                const setupModels = async () => {
-                    const [user, userSettings, features] = await Promise.all([
-                        dispatch(userThunk()),
-                        dispatch(userSettingsThunk()),
-                        dispatch(fetchFeatures([FeatureCode.EarlyAccessScope])),
-                        dispatch(mailSettingsThunk()),
-                    ]);
-                    return { user, userSettings, features };
-                };
+                if (!state.MainContainer || !state.store) {
+                    return <AccountLoaderPage />;
+                }
 
-                const setupEventManager = async () => {
-                    const eventID = await api<{ EventID: string }>(getLatestID()).then(({ EventID }) => EventID);
-
-                    return {
-                        eventManager: createEventManager({
-                            api: silentApi,
-                            eventID,
-                            query: (eventID: string) => getEvents(eventID),
-                        }),
-                    };
-                };
-
-                const initPromise = Promise.all([setupModels(), setupEventManager()]);
-                // Intentionally ignoring to return promises to avoid blocking app start
-                loadAllowedTimeZones(silentApi).catch(noop);
-                dispatch(holidayCalendarsThunk()).catch(noop);
-
-                const [models, ev] = await initPromise;
-
-                extendStore({ api: silentApi, eventManager: ev.eventManager });
-
-                return {
-                    ...models,
-                    ...ev,
-                };
-            }}
-            locales={locales}
-            hasPrivateMemberKeyGeneration
-            hasReadableMemberKeyActivation
-            hasMemberKeyMigration
-            app={getAppContainer}
-        />
+                return (
+                    <ProtonStoreProvider store={state.store}>
+                        <AuthenticationProvider store={extraThunkArguments.authentication}>
+                            <ApiProvider api={extraThunkArguments.api}>
+                                <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
+                                    <Router history={extraThunkArguments.history}>
+                                        <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
+                                            <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                <StandardPrivateApp
+                                                    hasReadableMemberKeyActivation
+                                                    hasMemberKeyMigration
+                                                    hasPrivateMemberKeyGeneration
+                                                >
+                                                    <state.MainContainer />
+                                                </StandardPrivateApp>
+                                            </ErrorBoundary>
+                                        </EventManagerProvider>
+                                    </Router>
+                                </FlagProvider>
+                            </ApiProvider>
+                        </AuthenticationProvider>
+                    </ProtonStoreProvider>
+                );
+            })()}
+        </ProtonApp>
     );
 };
 

@@ -2,6 +2,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpack from 'webpack';
 
 import getConfig from '@proton/pack/webpack.config';
+import { addDevEntry, getIndexChunks } from '@proton/pack/webpack/entries';
 
 /**
  * There are some specific references to Buffer in the drive application,
@@ -29,6 +30,7 @@ const result = (env: any): webpack.Configuration => {
             templateParameters: htmlPlugin.userOptions.templateParameters,
             scriptLoading: 'defer',
             inject: 'body',
+            chunks: getIndexChunks('index'),
         })
     );
 
@@ -41,8 +43,13 @@ const result = (env: any): webpack.Configuration => {
             templateParameters: htmlPlugin.userOptions.templateParameters,
             scriptLoading: 'defer',
             inject: 'body',
+            chunks: getIndexChunks('index'),
         })
     );
+
+    if (env.appMode === 'standalone') {
+        addDevEntry(config);
+    }
 
     return {
         ...config,

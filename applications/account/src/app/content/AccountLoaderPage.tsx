@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { TextLoader } from '@proton/components';
 import ElectronDraggeableHeaderWrapper from '@proton/components/components/electron/ElectronDraggeableHeaderWrapper';
+import { TextLoader } from '@proton/components/components/loader';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import protonSpinner from '@proton/styles/assets/img/loading-spinners/proton-spinner.svg';

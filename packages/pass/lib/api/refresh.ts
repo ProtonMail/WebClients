@@ -1,8 +1,8 @@
 import type { ApiAuth, ApiCallFn, Maybe, MaybePromise } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { setRefreshCookies as refreshTokens } from '@proton/shared/lib/api/auth';
+import { InactiveSessionError } from '@proton/shared/lib/api/helpers/errors';
 import { retryHandler } from '@proton/shared/lib/api/helpers/retryHandler';
-import { InactiveSessionError } from '@proton/shared/lib/api/helpers/withApiHandlers';
 import { createOnceHandler } from '@proton/shared/lib/apiHandlers';
 import type { RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
 import { OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY, RETRY_ATTEMPTS_MAX } from '@proton/shared/lib/constants';

@@ -3,7 +3,7 @@ import { useLoading } from '@proton/hooks';
 import { updateEarlyAccess } from '@proton/shared/lib/api/settings';
 import { doesNotSupportEarlyAccessVersion } from '@proton/shared/lib/helpers/browser';
 import { deleteCookie, getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
-import { Environment } from '@proton/shared/lib/interfaces';
+import type { Environment } from '@proton/shared/lib/interfaces';
 
 import useApi from './useApi';
 import useFeature from './useFeature';
