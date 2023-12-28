@@ -1,4 +1,4 @@
-import { forwardRef, type ForwardRefRenderFunction } from 'react';
+import { type ForwardRefRenderFunction, forwardRef } from 'react';
 
 import { AliasAutoSuggest } from 'proton-pass-extension/app/content/injections/apps/dropdown/views/AliasAutoSuggest';
 import { ItemsList } from 'proton-pass-extension/app/content/injections/apps/dropdown/views/ItemsList';
@@ -9,9 +9,10 @@ import { useRequestFork } from 'proton-pass-extension/lib/hooks/useRequestFork';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { clientBusy } from '@proton/pass/lib/client';
-import type { MaybeNull } from '@proton/pass/types';
-import { AppStatus } from '@proton/pass/types';
+import { clientBusy, clientErrored, clientLocked, clientUnauthorized } from '@proton/pass/lib/client';
+import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import type { MaybeNull , AppStatus} from '@proton/pass/types';
+import { WorkerMessageType } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
@@ -32,7 +33,7 @@ type Props = {
 };
 
 const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
-    { state, loggedIn, status, visible, onClose, onReset = noop, onMessage = noop },
+    { state, status, visible, onClose, onReset = noop, onMessage = noop },
     ref
 ) => {
     const accountFork = useRequestFork();
@@ -49,11 +50,36 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
                     return <CircleLoader className="absolute inset-center m-auto" />;
                 }
 
-                if (status === AppStatus.LOCKED) {
+                if (clientLocked(status)) {
                     return <DropdownPinUnlock onUnlock={() => onClose?.({ refocus: true })} visible={visible} />;
                 }
 
-                if (!loggedIn) {
+                if (clientErrored(status)) {
+                    return (
+                        <DropdownItem
+                            onClick={() =>
+                                sendMessage(
+                                    contentScriptMessage({
+                                        type: WorkerMessageType.AUTH_INIT,
+                                        options: {
+                                            retryable: false,
+                                            forceLock: true,
+                                        },
+                                    })
+                                )
+                            }
+                            title={c('Action').t`Sign back in`}
+                            subTitle={
+                                <span className="color-danger">{c('Warning')
+                                    .t`Your session could not be resumed.`}</span>
+                            }
+                            icon={PassIconStatus.DISABLED}
+                            autogrow
+                        />
+                    );
+                }
+
+                if (clientUnauthorized(status)) {
                     return (
                         <DropdownItem
                             onClick={async () => {

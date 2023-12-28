@@ -5,7 +5,7 @@ import type { RequestType } from '@proton/pass/store/actions/with-request';
 import { isActionWithRequest } from '@proton/pass/store/actions/with-request';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { partialMerge } from '@proton/pass/utils/object/merge';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 
 export type RequestEntry<Type extends RequestType = RequestType, Data = undefined> = Extract<
     | { status: 'start'; progress?: number }

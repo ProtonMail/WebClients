@@ -8,7 +8,7 @@ import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { withCallCount } from '@proton/pass/utils/fp/with-call-count';
 import { logger } from '@proton/pass/utils/logger';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { getApiError, getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -216,6 +216,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             api.unsubscribe();
             await api.reset();
 
+            authService.resumeSession.resetCount();
             config.onUnauthorized?.(userID, localID, options.broadcast ?? true);
 
             return true;
@@ -360,7 +361,6 @@ export const createAuthService = (config: AuthServiceConfig) => {
         resumeSession: withCallCount(
             pipe(
                 async (localID: Maybe<number>, options: AuthResumeOptions): Promise<boolean> => {
-                    if (!options.retryable) authService.resumeSession.resetCount();
                     const memorySession = await config.getMemorySession?.();
 
                     if (memorySession && isValidSession(memorySession)) {
