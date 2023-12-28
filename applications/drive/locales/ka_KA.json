@@ -556,9 +556,6 @@
       "Save": [
         "შენახვა"
       ],
-      "Save version as copy": [
-        "ვერსიის ასლის სახით შენახვა"
-      ],
       "Search": [
         "ძებნა"
       ],
@@ -845,14 +842,8 @@
       "High speed streaming": [
         "ჩქაროსნული სტრიმინგი"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "პაროლების მმართველის ფასიანი ვერსია"
@@ -3323,14 +3314,6 @@
         "მონიშნულია ${ selectedCount }",
         "მონიშნულია ${ selectedCount }"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "მონიშნულია ${ selectedFoldersCount } საქაღალდე",
-        "მონიშნულია ${ selectedFoldersCount } საქაღალდე"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "მონიშნულია ${ selectedFoldersCount } ჭდე",
-        "მონიშნულია ${ selectedFoldersCount } ჭდე"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "მონიშნულია ${ selectedFoldersCountLocalized } საქაღალდე",
         "მონიშნულია ${ selectedFoldersCountLocalized } საქაღალდე"
@@ -3683,6 +3666,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "საუკეთესო შედეგისთვის, მოერიდეთ სტრიმინგს და მეხსიერების ინტენსიურ აქტივობებს, ან დაყავით თქვენი ატვირთვა მცირე ნაკრებებად."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "შემომავალი ფოსტის გადამისამართება სხვა ანგარიშიდან თქვენს უსაფრთხო ${ MAIL_APP_NAME } შემოსულებში."
+      ],
       "Free up some space or add more storage space.": [
         "გაათავისუფლეთ ან დაამატეთ ადგილი."
       ],
@@ -3735,11 +3721,11 @@
       "Import mailbox": [
         "საფოსტო ყუთის შემოტანა"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "თქვენი ელფოსტის, კალენდრების და კონტაქტების შემოტანა სხვა სერვისიდან ${ BRAND_NAME }-ში."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "მიმდინარეობს მონაცემების ${ fromEmail }-დან ${ toEmail }-ში შემოტანა."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "მიმდინარეობს მონაცემების ${ importedEmailAddress }-დან ${ toEmail }-ში შემოტანა."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "მიმდინარეობს ${ esProgress }-ე ჩანაწერის ინდექსირება (${ totalProgressToShow }-დან)"

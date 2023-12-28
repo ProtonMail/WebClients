@@ -556,9 +556,6 @@
       "Save": [
         "Simpan"
       ],
-      "Save version as copy": [
-        "Simpan versi sebagai salinan"
-      ],
       "Search": [
         "Pencarian"
       ],
@@ -841,14 +838,8 @@
       "High speed streaming": [
         "Streaming berkecepatan tinggi"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } Premium"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME } Premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } Premium"
       ],
       "Premium Password Manager": [
         "Pengelola Kata Sandi Premium"
@@ -2100,6 +2091,9 @@
       "\"${ name }\" already exists": [
         "\"${ name }\" telah ada"
       ],
+      "${ BRAND_NAME } can't connect to your external account": [
+        "${ BRAND_NAME } tidak dapat terhubung ke akun eksternal Anda"
+      ],
       "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
         "${ DRIVE_APP_NAME } telah diperbarui. Silakan muat ulang halaman."
       ],
@@ -2384,6 +2378,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
+      ],
+      "Unexpected error, we can't import the contacts": [
+        "Terdapat kesalahan yang tidak diduga. Kami tidak dapat mengimpor kontak"
       ],
       "Unknown error": [
         "Kesalahan yang tidak diketahui"
@@ -3291,12 +3288,6 @@
       "${ selectedCount } selected": [
         "${ selectedCount } dipilih"
       ],
-      "${ selectedFoldersCount } folders selected": [
-        "${ selectedFoldersCount } folder terpilih"
-      ],
-      "${ selectedFoldersCount } labels selected": [
-        "${ selectedFoldersCount } label terpilih"
-      ],
       "${ selectedFoldersCountLocalized } folders selected": [
         "${ selectedFoldersCountLocalized } folder dipilih"
       ],
@@ -3639,6 +3630,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Untuk hasil yang maksimal, hindari streaming serta berbagai kegiatan lainnya yang boros akan memori atau pisah unggahan Anda ke dalam beberapa kelompok berkas kecil."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Teruskan pesan yang datang dari akun lainnya menuju kotak masuk akun ${ MAIL_APP_NAME } aman Anda."
+      ],
       "Free up some space or add more storage space.": [
         "Kosongkan beberapa ruang atau tambah ruang penyimpanan."
       ],
@@ -3690,11 +3684,11 @@
       "Import mailbox": [
         "Impor kotak surat"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Impor surel, kalender, dan kontak Anda dari layanan lain ke ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ fromEmail } ke ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Mengimpor data Anda dari ${ importedEmailAddress } menuju ${ toEmail }."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Mengindeks item ${ esProgress } dari ${ totalProgressToShow }"
@@ -4383,6 +4377,14 @@
     "Info on errors": {
       "Click for details": [
         "Klik untuk rincian"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folders selected": [
+        "${ selectedFoldersCount } folder dipilih"
+      ],
+      "${ selectedFoldersCount } labels selected": [
+        "${ selectedFoldersCount } label dipilih"
       ]
     },
     "Item": {

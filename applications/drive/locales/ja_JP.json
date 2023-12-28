@@ -547,9 +547,6 @@
       "Save": [
         "保存"
       ],
-      "Save version as copy": [
-        "バージョンをコピーとして保存"
-      ],
       "Search": [
         "検索"
       ],
@@ -814,14 +811,8 @@
       "Extended version history": [
         "拡張バージョン履歴"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } プレミアム"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME }と${ CALENDAR_SHORT_APP_NAME }プレミアム"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } プレミアム"
       ],
       "Premium Password Manager": [
         "プレミアムパスワードマネージャー"
@@ -3176,12 +3167,6 @@
       "${ selectedCount } selected": [
         "${ selectedCount } 選択"
       ],
-      "${ selectedFoldersCount } folders selected": [
-        "${ selectedFoldersCount } 件のフォルダーを選択済み"
-      ],
-      "${ selectedFoldersCount } labels selected": [
-        "${ selectedFoldersCount } 件のラベルが選択済み"
-      ],
       "${ selectedFoldersCountLocalized } folders selected": [
         "${ selectedFoldersCountLocalized } 件のフォルダーを選択済み"
       ],
@@ -3512,6 +3497,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "最適な結果を得るには、ストリーミングやメモリ消費の大きな処理を避けるか、より小さな処理単位にアップロードを分割してください。"
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "他のアカウントで受信したメールを、安全な ${ MAIL_APP_NAME } 受信トレイへ転送します。"
+      ],
       "Free up some space or add more storage space.": [
         "スペースを解放するか、ストレージのスペースをさらに増やしてください。"
       ],
@@ -3557,11 +3545,11 @@
       "Import mailbox": [
         "メールボックスのインポート"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートします。"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "${ totalProgressToShow }件のうち${ esProgress }件目のアイテムをインデックス中"
