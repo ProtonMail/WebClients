@@ -34,6 +34,7 @@ export interface Address {
     Flags?: ADDRESS_FLAGS;
     ProtonMX: boolean;
     ConfirmationState: AddressConfirmationState;
+    Permissions: number;
 }
 
 export type DomainAddress = Omit<Address, 'SignedKeyList' | 'Keys'>;
