@@ -1,7 +1,7 @@
 export const standardFolderResponse = {
     ImporterID: 'importerID',
     Mail: {
-        AddressID: 'ID',
+        AddressID: 'ID-1',
         Mapping: [
             {
                 Source: 'Inbox',
