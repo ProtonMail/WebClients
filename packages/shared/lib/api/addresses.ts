@@ -1,3 +1,5 @@
+import { ADDRESS_PERMISSIONS } from '@proton/shared/lib/constants';
+
 import { Address, Api, SignedKeyList } from '../interfaces';
 import queryPages from './helpers/queryPages';
 import { PaginationParams } from './interface';
@@ -121,4 +123,16 @@ export const addressType = (addressID: string, data: { Type: number; SignedKeyLi
     url: `core/v4/addresses/${addressID}/type`,
     method: 'put',
     data,
+});
+
+export const switchAddressesOrganizationPermissions = ({
+    Ids,
+    Permissions,
+}: {
+    Ids: string[];
+    Permissions: ADDRESS_PERMISSIONS[];
+}) => ({
+    url: `core/v4/members/addresses/permissions/organization/switch`,
+    method: 'put',
+    data: { Ids, Permissions },
 });
