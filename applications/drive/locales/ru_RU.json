@@ -559,9 +559,6 @@
       "Save": [
         "Сохранить"
       ],
-      "Save version as copy": [
-        "Сохранить версию как копию"
-      ],
       "Search": [
         "Поиск"
       ],
@@ -856,14 +853,8 @@
       "High speed streaming": [
         "Высокоскоростной стриминг"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Платная версия ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Платные версии ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Платная версия ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Платная версия менеджера паролей"
@@ -3422,18 +3413,6 @@
         "${ selectedCount } выбран",
         "${ selectedCount } выбран"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } папка выбрана",
-        "${ selectedFoldersCount } папки выбрано",
-        "${ selectedFoldersCount } папок выбрано",
-        "${ selectedFoldersCount } папок выбрано"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } ярлык выбран",
-        "${ selectedFoldersCount } ярлыка выбрано",
-        "${ selectedFoldersCount } ярлыков выбрано",
-        "${ selectedFoldersCount } ярлыков выбрано"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "Выбрана ${ selectedFoldersCountLocalized } папка",
         "Выбрана ${ selectedFoldersCountLocalized } папки",
@@ -3806,6 +3785,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Для достижения наилучших результатов избегайте просмотра трансляций и действий, требующих большого объема памяти, или разделите загрузку на более мелкие пакеты."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Пересылка входящей почты в ваш безопасный почтовый ящик ${ MAIL_APP_NAME } из другого аккаунта."
+      ],
       "Free up some space or add more storage space.": [
         "Освободите место или добавьте больше места для хранения."
       ],
@@ -3860,11 +3842,11 @@
       "Import mailbox": [
         "Импорт почтового ящика"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Импортируйте ваши письма, календари и контакты в ${ BRAND_NAME } из другого сервиса."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Импорт данных из ${ fromEmail } в ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Импорт ваших данных из ${ importedEmailAddress } в ${ toEmail }."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Индексирование элементов: ${ esProgress } из ${ totalProgressToShow }"

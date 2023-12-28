@@ -565,9 +565,6 @@
       "Save": [
         "Zapisz"
       ],
-      "Save version as copy": [
-        "Zapisz wersję jako kopię"
-      ],
       "Search": [
         "Szukaj"
       ],
@@ -862,14 +859,8 @@
       "High speed streaming": [
         "Szybki streaming"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } w wersji premium"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } w wersji premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } w wersji premium"
       ],
       "Premium Password Manager": [
         "Menedżer haseł w wersji premium"
@@ -3453,18 +3444,6 @@
         "${ selectedCount } zaznaczonych",
         "${ selectedCount } zaznaczonych"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } zaznaczony folder",
-        "${ selectedFoldersCount } zaznaczone foldery",
-        "${ selectedFoldersCount } zaznaczonych folderów",
-        "${ selectedFoldersCount } zaznaczonych folderów"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } zaznaczona etykieta",
-        "${ selectedFoldersCount } zaznaczone etykiety",
-        "${ selectedFoldersCount } zaznaczonych etykiet",
-        "${ selectedFoldersCount } zaznaczonych etykiet"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } zaznaczony folder",
         "${ selectedFoldersCountLocalized } zaznaczone foldery",
@@ -3837,6 +3816,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Ogranicz aktywność wymagającą dużej ilości pamięci (jak streaming) lub prześlij dane partiami."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Przekieruj wiadomości przychodzące z innego konta do bezpiecznej skrzynki odbiorczej ${ MAIL_APP_NAME }."
+      ],
       "Free up some space or add more storage space.": [
         "Zwolnij część miejsca lub dodaj dodatkową przestrzeń dyskową."
       ],
@@ -3891,11 +3873,11 @@
       "Import mailbox": [
         "Importuj skrzynkę pocztową"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importuj wiadomości, kalendarze i kontakty z innej usługi do ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Trwa importowanie danych z konta ${ fromEmail } do ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Trwa importowanie danych z konta ${ importedEmailAddress } do ${ toEmail }."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indeksowanie elementów (${ esProgress }/${ totalProgressToShow })"
@@ -4512,6 +4494,9 @@
       "You can import one data type at a time.": [
         "Możesz importować jeden typ danych jednocześnie."
       ],
+      "You can now return to the application to continue": [
+        "Możesz wrócić do aplikacji, aby kontynuować"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Możesz włączyć powiadomienia, aby otrzymywać informacje o nowych wiadomościach w tym folderze."
       ],
@@ -4596,6 +4581,20 @@
     "Info on errors": {
       "Click for details": [
         "Kliknij po szczegóły"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } zaznaczony folder",
+        "${ selectedFoldersCount } zaznaczone foldery",
+        "${ selectedFoldersCount } zaznaczonych folderów",
+        "${ selectedFoldersCount } zaznaczonych folderów"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } zaznaczona etykieta",
+        "${ selectedFoldersCount } zaznaczone etykiety",
+        "${ selectedFoldersCount } zaznaczonych etykiet",
+        "${ selectedFoldersCount } zaznaczonych etykiet"
       ]
     },
     "Item": {

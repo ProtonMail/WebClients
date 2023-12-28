@@ -553,9 +553,6 @@
       "Save": [
         "儲存"
       ],
-      "Save version as copy": [
-        "將版本另存為複本"
-      ],
       "Search": [
         "搜尋"
       ],
@@ -838,14 +835,8 @@
       "High speed streaming": [
         "高速串流"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "進階版 ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "進階版 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "進階版 ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "進階版密碼管理器"
@@ -3238,12 +3229,6 @@
       "${ selectedCount } selected": [
         "${ selectedCount }已選取"
       ],
-      "${ selectedFoldersCount } folders selected": [
-        "已選取 ${ selectedFoldersCount } 個資料夾"
-      ],
-      "${ selectedFoldersCount } labels selected": [
-        "已選取 ${ selectedFoldersCount } 個標籤"
-      ],
       "${ selectedFoldersCountLocalized } folders selected": [
         "已選取 ${ selectedFoldersCountLocalized } 個資料夾"
       ],
@@ -3580,6 +3565,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "為取得最佳結果，請避免串流與記憶體密集型活動，或是將您的上傳分割為較小的批次。"
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "將收到的郵件從另一個帳號轉發至您的安全 ${ MAIL_APP_NAME } 收件匣。"
+      ],
       "Free up some space or add more storage space.": [
         "請釋出部分空間或增加更多儲存空間。"
       ],
@@ -3628,11 +3616,11 @@
       "Import mailbox": [
         "匯入信箱"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "從其它服務匯入您的電子郵件、行事曆與通訊錄至 ${ BRAND_NAME }。"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "正在把你的資料從 ${ fromEmail } 匯入至 ${ toEmail }。"
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "匯入您的資料自 ${ importedEmailAddress } 至 ${ toEmail }。"
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "正在索引項目 ${ esProgress } / ${ totalProgressToShow }"

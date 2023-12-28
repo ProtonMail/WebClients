@@ -559,9 +559,6 @@
       "Save": [
         "Salva"
       ],
-      "Save version as copy": [
-        "Salva la versione come copia"
-      ],
       "Search": [
         "Cerca"
       ],
@@ -848,14 +845,8 @@
       "High speed streaming": [
         "Streaming ad alta velocità"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Password manager premium"
@@ -3351,14 +3342,6 @@
         "${ selectedCount } selezionato",
         "${ selectedCount } selezionati"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } cartella selezionata",
-        "${ selectedFoldersCount } cartelle selezionate"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etichetta selezionata",
-        "${ selectedFoldersCount } etichette selezionate"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } cartella selezionata",
         "${ selectedFoldersCountLocalized } cartelle selezionate"
@@ -3711,6 +3694,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Per ottenere risultati migliori, evita lo streaming e le attività che richiedono molta memoria o suddividi il caricamento in batch più piccoli."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Inoltra la posta in arrivo da un altro account alla tua casella di posta sicura di ${ MAIL_APP_NAME }."
+      ],
       "Free up some space or add more storage space.": [
         "Libera dello spazio o aggiungi più spazio di archiviazione."
       ],
@@ -3763,11 +3749,11 @@
       "Import mailbox": [
         "Importa casella di posta"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importa le tue email, calendari e contatti da un altro servizio su ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importazione dei tuoi dati da ${ fromEmail } a ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importazione dei tuoi dati da ${ importedEmailAddress } a ${ toEmail }."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indicizzazione elemento ${ esProgress } di ${ totalProgressToShow }"
@@ -4378,6 +4364,9 @@
       "You can import one data type at a time.": [
         "Puoi importare un tipo di dati alla volta."
       ],
+      "You can now return to the application to continue": [
+        "Ora puoi tornare all'applicazione per continuare"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puoi attivare le notifiche per ricevere avvisi quando arrivano nuovi messaggi email in questa cartella."
       ],
@@ -4460,6 +4449,16 @@
     "Info on errors": {
       "Click for details": [
         "Clicca per maggiori dettagli"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } cartella selezionata",
+        "${ selectedFoldersCount } cartelle selezionate"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } etichetta selezionata",
+        "${ selectedFoldersCount } etichette selezionate"
       ]
     },
     "Item": {
