@@ -3,7 +3,7 @@ import JSZip from 'jszip';
 import { CryptoProxy } from '@proton/crypto';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import { CONTENT_FORMAT_VERSION, ItemState } from '@proton/pass/types';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { createExportZip, encryptZip } from './export';
