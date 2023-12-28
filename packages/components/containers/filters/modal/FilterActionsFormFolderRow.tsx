@@ -8,7 +8,7 @@ import { buildTreeview, formatFolderName, hasReachedFolderLimit } from '@proton/
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import clsx from '@proton/utils/clsx';
 
-import { Icon, IconName, InputFieldTwo, Option, SelectTwo, useModalState } from '../../../components';
+import { Icon, IconName, InputFieldTwo, Option, SearchableSelect, useModalState } from '../../../components';
 import EditLabelModal, { LabelModel } from '../../labels/modals/EditLabelModal';
 import { getDefaultFolderOptions, noFolderOption, noFolderValue } from '../constants';
 import { Actions } from '../interfaces';
@@ -125,12 +125,7 @@ const FilterActionsFormFolderRow = ({ folders, actions, handleUpdateActions }: P
                             }}
                         />
                     )}
-                    <span
-                        className={clsx([
-                            'max-w-full flex-nowrap inline-flex items-center',
-                            i !== 0 && 'ml-2',
-                        ])}
-                    >
+                    <span className={clsx(['max-w-full flex-nowrap inline-flex items-center', i !== 0 && 'ml-2'])}>
                         <Icon name="folder" className="mr-2" />
                         <span className="text-ellipsis" title={f}>
                             {f}
@@ -156,10 +151,12 @@ const FilterActionsFormFolderRow = ({ folders, actions, handleUpdateActions }: P
                 {isOpen ? (
                     <div className="w-full">
                         <InputFieldTwo
-                            as={SelectTwo}
-                            id="memberSelect"
+                            as={SearchableSelect<string>}
+                            id="move-to-select"
                             value={moveTo.folder || noFolderValue}
-                            onValue={(value: any) => handleChangeModel({ folder: value })}
+                            onChange={({ value }: any) => {
+                                handleChangeModel({ folder: value });
+                            }}
                         >
                             {folderOptions}
                         </InputFieldTwo>
