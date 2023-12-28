@@ -1932,19 +1932,12 @@
       "Daily": [
         "Yal ass"
       ],
-      "Daily, ${ timesString }": [
-        "Yal ass, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Yal ass, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "Yal ${ interval } ass",
         "Yal ${ interval } n wussan"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Yal ${ interval } ass, ${ timesString }",
-        "Yal ${ interval } n wussan, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Yal ${ interval } ass, ${ untilString }",
@@ -3200,14 +3193,6 @@
         "${ selectedCalendarsTotal } seg ${ providerCalendars.length } n uwitay",
         "${ selectedCalendarsTotal } seg ${ providerCalendars.length } n yiwitayen"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } d akaram yettwafernen",
-        "${ selectedFoldersCount } d ikaramen yettwafernen"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } n tebzimt yettwafernen",
-        "${ selectedFoldersCount } n tebzimin yettwafernen"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } d ukaram yettwefrenn",
         "${ selectedFoldersCountLocalized } d ikaramen yettwefrenn"
@@ -3442,9 +3427,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Taktert n yisefka-inek•inem seg ${ fromEmail } ɣer ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Taktert n yisefka-inek•inem seg ${ importedEmailAddress } ɣer ${ toEmail }."
       ],
       "Indexing paused": [
         "Teḥbes tmerna ɣer umatar"

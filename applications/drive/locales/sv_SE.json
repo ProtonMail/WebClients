@@ -559,9 +559,6 @@
       "Save": [
         "Spara"
       ],
-      "Save version as copy": [
-        "Spara version som kopia"
-      ],
       "Search": [
         "Sök"
       ],
@@ -848,14 +845,8 @@
       "High speed streaming": [
         "Höghastighetsstreaming"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Premium lösenordshanterare"
@@ -3351,14 +3342,6 @@
         "${ selectedCount } vald",
         "${ selectedCount } valda"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } mapp vald",
-        "${ selectedFoldersCount } mappar valda"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etikett vald",
-        "${ selectedFoldersCount } etiketter valda"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } mapp vald",
         "${ selectedFoldersCountLocalized } mappar valda"
@@ -3711,6 +3694,9 @@
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "För bästa resultat bör du undvika streaming och minneskrävande aktiviteter eller dela upp din uppladdning i mindre partier."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Vidarebefordra inkommande e-post från annat konto till din säkra inkorg för ${ MAIL_APP_NAME }."
+      ],
       "Free up some space or add more storage space.": [
         "Frigör lite utrymme eller lägg till mer lagringsutrymme."
       ],
@@ -3763,11 +3749,11 @@
       "Import mailbox": [
         "Importera brevlåda"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importera din e-post, kalendrar och kontakter från en annan tjänst till ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerar din data från ${ fromEmail } till ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importerar din data från ${ importedEmailAddress } till ${ toEmail }."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indexerar objekt ${ esProgress } av ${ totalProgressToShow }"
@@ -4378,6 +4364,9 @@
       "You can import one data type at a time.": [
         "Du kan importera en datatyp åt gången."
       ],
+      "You can now return to the application to continue": [
+        "Du kan nu gå tillbaka till applikationen för att fortsätta"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivera aviseringar för att få aviseringar när nya e-postmeddelanden kommer in i den här mappen."
       ],
@@ -4460,6 +4449,16 @@
     "Info on errors": {
       "Click for details": [
         "Klicka för detaljer"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } mapp vald",
+        "${ selectedFoldersCount } mappar valda"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } etikett vald",
+        "${ selectedFoldersCount } etiketter valda"
       ]
     },
     "Item": {

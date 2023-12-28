@@ -50,9 +50,6 @@
       "activate": [
         "აქტივაცია"
       ],
-      "Activate ${ Name }@pm.me": [
-        "${ Name }@pm.me-ის აქტივაცია"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "${ user.Name }@pm.me-ის აქტივაცია"
       ],
@@ -1365,14 +1362,11 @@
       "High speed streaming": [
         "ჩქაროსნული სტრიმინგი"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Premium ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "პაროლების მმართველის ფასიანი ვერსია"
@@ -2990,19 +2984,12 @@
       "Daily": [
         "ყოველდღიურად"
       ],
-      "Daily, ${ timesString }": [
-        "ყოველდღე, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "ყოველდღე, ${ untilString }-მდე"
       ],
       "Every ${ interval } day": [
         "ყოველ ${ interval } დღეში",
         "ყოველ ${ interval } დღეში"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "ყოველ ${ interval } დღეში, ${ timesString }-ზე",
-        "ყოველ ${ interval } დღეში, ${ timesString }-ზე"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "ყოველ ${ interval } დღეში, ${ untilString }-მდე",
@@ -5743,13 +5730,23 @@
         "თქვენი კალენდრის შემცველობის ნაწილი მხარდაუჭერელია და შემოტანილი არ იქნება."
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } მისამართი",
-        "${ amountOfAddresses } მისამართი"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "გასაღები ${ fingerprint } უკვე ატვირთულია"
+      ],
+      "Selected color:": [
+        "არჩეული ფერი:"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "${ boldName } გამოყენებული იქნება, როგორც ნაგულისხმევი კალენდარი."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } თუ გააგრძელებთ, თქვენს დაშიფრულ მონაცემებთან წვდომას სრულად დაკარგავთ."
@@ -5768,9 +5765,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }-ის დაშიფვრის ტექნოლოგია ნიშნავს, რომ თქვენს პაროლთან წვდომა არავის აქვს, ჩვენც კი."
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } გამოყენებული იქნება, როგორც ნაგულისხმევი კალენდარი."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ახალი კალენდარი",
@@ -5797,9 +5791,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: დაბალი გაფართოების მინიატურა"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } გამოყენებული იქნება, როგორც ნაგულისხმევი კალენდარი."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX }-ს უნდა, მონაცემები გაგიზიაროთ ${ PASS_APP_NAME }-ში"
@@ -5862,14 +5853,6 @@
         "კალენდარი ${ selectedCalendarsTotal } ${ providerCalendars.length }-დან",
         "კალენდარი ${ selectedCalendarsTotal } ${ providerCalendars.length }-დან"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "მონიშნულია ${ selectedFoldersCount } საქაღალდე",
-        "მონიშნულია ${ selectedFoldersCount } საქაღალდე"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "მონიშნულია ${ selectedFoldersCount } ჭდე",
-        "მონიშნულია ${ selectedFoldersCount } ჭდე"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "მონიშნულია ${ selectedFoldersCountLocalized } საქაღალდე",
         "მონიშნულია ${ selectedFoldersCountLocalized } საქაღალდე"
@@ -5880,9 +5863,6 @@
       ],
       "${ storage } storage": [
         "${ storage } საცავი"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } საცავი"
       ],
       "${ userFound } user found": [
         "აღმოჩენილია ${ userFound } მომხმარებელი",
@@ -6617,9 +6597,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "მიმდინარეობს მონაცემების ${ fromEmail }-დან ${ toEmail }-ში შემოტანა."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "მიმდინარეობს მონაცემების ${ importedEmailAddress }-დან ${ toEmail }-ში შემოტანა."
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "გაიუმჯობესეთ ${ BRAND_NAME }-ის გამოცდილება, მოარგეთ აპლიკაცია თქვენს საჭიროებებს."
@@ -7949,17 +7926,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "თქვენი გამოწერა Mozilla-ს მიერ იმართება. დაუკავშირდით მათ მხარდაჭერის გუნდს."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "ნაპოვნია დამატებით დუბლირებული გასაღებები. მეტი ინფორმაციისთვის გთხოვთ, ატვირთოთ სათითაოდ."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "გასაღები ${ fingerprint } უკვე ატვირთულია"
-      ],
-      "Selected color:": [
-        "არჩეული ფერი:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9953,6 +9919,26 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
+      ],
+      "From ${ price }": [
+        "${ price }-დან"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "ჩემი მიმდინარე ${ currentPlanName } ანგარიშის დატოვება"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "გადახედვაზე გადასვლა"
@@ -9992,26 +9978,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "სატარიფო გეგმის განახლება: ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
-      ],
-      "From ${ price }": [
-        "${ price }-დან"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "ჩემი მიმდინარე ${ currentPlanName } ანგარიშის დატოვება"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
       ]
     },
     "new_plans: feature": {

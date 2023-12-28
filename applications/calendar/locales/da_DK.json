@@ -810,14 +810,8 @@
       "High speed streaming": [
         "Streaming ved høj hastighed"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Premium Adgangskodeadministrator"
@@ -2109,19 +2103,12 @@
       "Daily": [
         "Dagligt"
       ],
-      "Daily, ${ timesString }": [
-        "Daglig, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Daglig, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "Hver ${ interval } dag",
         "Hver ${ interval } dag"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Hver ${ interval } dag, ${ timesString }",
-        "Hver ${ interval } dag, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Hver ${ interval } dag, ${ untilString }",
@@ -3682,14 +3669,6 @@
         "${ selectedContactsLength }/${ contactsLength } kontakt valgt",
         "${ selectedContactsLength }/${ contactsLength } kontakter valgt"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } mappe valgt",
-        "${ selectedFoldersCount } mapper valgt"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etikette valgt",
-        "${ selectedFoldersCount } etiketter valgt"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } mappe valgt",
         "${ selectedFoldersCountLocalized } mapper valgt"
@@ -3912,6 +3891,9 @@
       "Existent, added and removed participants will be notified.": [
         "Eksisterende, tilføjede og fjernede deltagere vil blive underrettet."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Videresend indgående e-mails fra en anden konto til din sikre ${ MAIL_APP_NAME }-indbakke."
+      ],
       "Free up some space or add more storage space.": [
         "Frigør plads eller tilføj mere lagerplads."
       ],
@@ -3946,11 +3928,11 @@
       "Import mailbox": [
         "Importér postkasse"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importér dine e-mails, kalendere og kontakter fra en anden tjeneste til ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importerer dine data fra ${ importedEmailAddress } til ${ toEmail }."
       ],
       "Indexing events: ${ current }/${ total }": [
         "Indekserer begivenheder: ${ current }/${ total }"

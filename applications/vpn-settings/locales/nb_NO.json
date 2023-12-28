@@ -708,14 +708,11 @@
       "High speed streaming": [
         "Strømming med høy hastighet"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium-${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Premium-${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium-${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium-${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Premium passordbehandler"
@@ -2766,10 +2763,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } adresse",
-        "${ amountOfAddresses } adresser"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } trenger din tillatelse til å ${ enableDesktopNotifications }."
       ],
@@ -2790,6 +2783,10 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan også bli brukt med et enkelt passord som erstatter både innloggings- og postbokspassordet. For å bytte til enkel passordmodus, angi det enkelt passordet du ønsker å bruke og klikk Lagre."
+      ],
+      "${ n } address": [
+        "${ n } adresse",
+        "${ n } adresser"
       ],
       "${ number } city": [
         "${ number } by",
@@ -5659,6 +5656,20 @@
         "Oppgrader min plan"
       ]
     },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "Ende-til-ende kryptert"
+      ],
+      "Open source": [
+        "Åpen kildekode"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Beskyttet av sveitsiske personvernlover"
+      ],
+      "Swiss based": [
+        "Sveitsisk basert"
+      ]
+    },
     "pass_signup_2023: Header": {
       "Limited time offer": [
         "Tidsbegrenset tilbud"
@@ -5668,6 +5679,9 @@
       ]
     },
     "pass_signup_2023: Info": {
+      "${ appName } benefits": [
+        "${ appName } fordeler"
+      ],
       "+ ${ relativePrice } per month": [
         "+ ${ relativePrice } per måned"
       ],
@@ -5689,6 +5703,12 @@
       "Includes:": [
         "Inkluderer:"
       ],
+      "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
+        "Bli med over 100 millioner mennesker som har valgt ${ BRAND_NAME } for å være trygg på nettet"
+      ],
+      "Open-source and audited": [
+        "Åpen kildekode og overvåket"
+      ],
       "per month": [
         "per måned"
       ],
@@ -5704,11 +5724,17 @@
       "Preparing your Recovery Kit": [
         "Forbereder gjenopprettingssettet ditt"
       ],
+      "Protected by Swiss privacy laws": [
+        "Beskyttet av sveitsiske personvernlover"
+      ],
       "Updating your account": [
         "Oppdaterer kontoen din"
       ],
       "Verifying your payment": [
         "Verifiserer betalingen din"
+      ],
+      "Works on all devices": [
+        "Fungerer på alle enheter"
       ],
       "You currently have": [
         "Du har for øyeblikket"

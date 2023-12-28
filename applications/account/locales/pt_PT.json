@@ -50,9 +50,6 @@
       "activate": [
         "ativar"
       ],
-      "Activate ${ Name }@pm.me": [
-        "Ativar ${ Name }@pm.me"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "Ativar ${ user.Name }@pm.me"
       ],
@@ -252,7 +249,7 @@
         "Criar"
       ],
       "Create a link to share with anyone outside ${ BRAND_NAME }": [
-        "Crie um 'link' para partilhar com qualquer pessoa fora do ${ BRAND_NAME }"
+        "Crie um link para partilhar com qualquer pessoa fora do ${ BRAND_NAME }"
       ],
       "Create account": [
         "Criar conta"
@@ -822,7 +819,7 @@
         "Selecionar vista de calendário"
       ],
       "Select files": [
-        "Seleccionar ficheiros"
+        "Selecionar ficheiros"
       ],
       "Select language for invitation emails": [
         "Selecione o idioma para os e-mails de convite"
@@ -1347,14 +1344,11 @@
       "High speed streaming": [
         "Streaming de alta velocidade"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Premium ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Versão premium do gestor de palavras-passe"
@@ -2860,19 +2854,12 @@
       "Daily": [
         "Diariamente"
       ],
-      "Daily, ${ timesString }": [
-        "Diariamente, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Diariamente, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "A cada ${ interval } dia",
         "A cada ${ interval } dias"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "A cada ${ interval } dia, ${ timesString }",
-        "A cada ${ interval } dias, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "A cada ${ interval } dia, ${ untilString }",
@@ -3498,7 +3485,7 @@
         "Erro de autenticação."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "A resposta automática é uma funcionalidade paga. Actualize para uma conta paga para utilizar esta funcionalidade."
+        "A resposta automática é uma funcionalidade paga. Atualize para uma conta paga para utilizar esta funcionalidade."
       ],
       "Calendar cannot be found": [
         "Não é possível encontrar o calendário."
@@ -3923,7 +3910,7 @@
         "Usou todos os utilizadores do seu plano. Subscreva um plano superior para adicionar um utilizador."
       ],
       "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Deve ativar as chaves da sua organização. Sem ativação não poderá criar ou aceder a utilizadores não-privados."
+        "Deve ativar as chaves da sua organização. Sem ativação não poderá criar ou aceder a utilizadores não privados."
       ],
       "You must privatize all users before generating new organization keys": [
         "É necessário privatizar todos os utilizadores antes de gerar novas chaves de organização"
@@ -5515,13 +5502,23 @@
         "Parte do conteúdo do seu calendário não é suportado e não será importado."
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } endereço",
-        "${ amountOfAddresses } endereços"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Foram detetadas chaves duplicadas adicionais. Carregue individualmente para obter mais informações."
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A chave ${ fingerprint } já foi carregada."
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "${ boldName } passará a ser o calendário predefinido."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Se continuar, perderá o acesso a todos os dados encriptados existentes na sua conta."
@@ -5540,9 +5537,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "A tecnologia de encriptação da ${ BRAND_NAME } significa que ninguém pode aceder à sua palavra-passe - nem mesmo nós."
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } passará a ser o calendário predefinido."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } novo calendário",
@@ -5569,9 +5563,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: pré-visualização de baixa resolução"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } passará a ser o calendário predefinido."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } quer partilhar dados consigo em ${ PASS_APP_NAME }"
@@ -5630,14 +5621,6 @@
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendário",
         "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendários"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } pasta selecionada",
-        "${ selectedFoldersCount } pastas selecionadas"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etiqueta selecionada",
-        "${ selectedFoldersCount } etiquetas selecionadas"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } pasta selecionada",
         "${ selectedFoldersCountLocalized } pastas selecionadas"
@@ -5648,9 +5631,6 @@
       ],
       "${ storage } storage": [
         "${ storage } de armazenamento"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } de armazenamento"
       ],
       "${ userFound } user found": [
         "${ userFound } utilizador encontrado",
@@ -6380,9 +6360,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando os seus dados de ${ fromEmail } para ${ toEmail }."
       ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importando os seus dados de ${ importedEmailAddress } para ${ toEmail }."
-      ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Melhore a sua experiência com a ${ BRAND_NAME } adaptando a aplicação às suas necessidades."
       ],
@@ -7106,7 +7083,7 @@
         "Esta ligação pode ser um ataque homográfico. Verifique se esta é a ligação que deseja visitar, ou não a abra."
       ],
       "This promotion link has expired.": [
-        "O 'link' desta promoção expirou."
+        "O link desta promoção expirou."
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "Este token não estará disponível depois de fechar esta janela e não deve ser partilhado com ninguém."
@@ -7705,17 +7682,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "A sua subscrição é gerida pela Mozilla. Contacte o suporte da Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Foram detetadas chaves duplicadas adicionais. Carregue individualmente para obter mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A chave ${ fingerprint } já foi carregada."
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9680,6 +9646,26 @@
         "Velocidade VPN média"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Descubra todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Manter a minha conta ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Prosseguir para a revisão"
@@ -9719,26 +9705,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Atualizar para ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Descubra todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Manter a minha conta ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
       ]
     },
     "new_plans: feature": {

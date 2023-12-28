@@ -1325,14 +1325,8 @@
       "Extended version history": [
         "拡張バージョン履歴"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } プレミアム"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME }と${ CALENDAR_SHORT_APP_NAME }プレミアム"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } プレミアム"
       ],
       "Premium Password Manager": [
         "プレミアムパスワードマネージャー"
@@ -2881,17 +2875,11 @@
       "Daily": [
         "毎日"
       ],
-      "Daily, ${ timesString }": [
-        "毎日、${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "毎日、${ untilString }"
       ],
       "Every ${ interval } days": [
         "${ interval } 日毎"
-      ],
-      "Every ${ interval } days, ${ timesString }": [
-        "${ interval } 日毎、${ timesString }"
       ],
       "Every ${ interval } days, ${ untilString }": [
         "${ interval } 日毎、${ untilString }"
@@ -4743,12 +4731,6 @@
       "${ selectedContactsLength }/${ contactsLength } contacts selected": [
         "${ selectedContactsLength } / ${ contactsLength } 件の連絡先が選択されました"
       ],
-      "${ selectedFoldersCount } folders selected": [
-        "${ selectedFoldersCount } 件のフォルダーを選択済み"
-      ],
-      "${ selectedFoldersCount } labels selected": [
-        "${ selectedFoldersCount } 件のラベルが選択済み"
-      ],
       "${ selectedFoldersCountLocalized } folders selected": [
         "${ selectedFoldersCountLocalized } 件のフォルダーを選択済み"
       ],
@@ -5121,6 +5103,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "さらに検索結果を表示するには、メッセージ内容の検索をお試しください。"
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "他のアカウントで受信したメールを、安全な ${ MAIL_APP_NAME } 受信トレイへ転送します。"
+      ],
       "Free up some space or add more storage space.": [
         "スペースを解放するか、ストレージのスペースをさらに増やしてください。"
       ],
@@ -5178,11 +5163,11 @@
       "Import mailbox": [
         "メールボックスのインポート"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "メール、カレンダー、連絡先を他のサービスから ${ BRAND_NAME } にインポートします。"
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "データを ${ fromEmail } から ${ toEmail } にインポートしています。"
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
       ],
       "Inherited from parent folder": [
         "親フォルダーから継承"

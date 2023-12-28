@@ -50,9 +50,6 @@
       "activate": [
         "attiva"
       ],
-      "Activate ${ Name }@pm.me": [
-        "Attiva ${ Name }@pm.me"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "Attiva ${ user.Name }@pm.me"
       ],
@@ -1365,14 +1362,11 @@
       "High speed streaming": [
         "Streaming ad alta velocità"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "${ appName } premium"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Password manager premium"
@@ -2994,9 +2988,6 @@
       "Daily": [
         "Giornalmente"
       ],
-      "Daily, ${ timesString }": [
-        "Giornaliero, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Giornaliero, ${ untilString }"
       ],
@@ -3004,16 +2995,21 @@
         "Ogni ${ interval } giorno",
         "Ogni ${ interval } giorni"
       ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Ogni ${ interval } giorno, ${ timesString }",
-        "Ogni ${ interval } giorni, ${ timesString }"
-      ],
       "Every ${ interval } day, ${ untilString }": [
         "Ogni ${ interval } giorno, ${ untilString }",
         "Ogni ${ interval } giorni, ${ untilString }"
       ],
       "until ${ dateString }": [
         "fino a ${ dateString }"
+      ]
+    },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "Ogni giorno, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Ogni ${ interval } giorno, ${ timesString }",
+        "Ogni ${ interval } giorni, ${ timesString }"
       ]
     },
     "Day": {
@@ -5766,13 +5762,23 @@
         "Parte del contenuto del calendario non è supportata e non sarà importata."
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } indirizzo",
-        "${ amountOfAddresses } indirizzi"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La chiave ${ fingerprint } è già stata caricata"
+      ],
+      "Selected color:": [
+        "Colore selezionato:"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } ha bisogno della tua autorizzazione per ${ enableDesktopNotifications }."
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "${ boldName } verrà impostato come calendario predefinito."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Se continui, perderai l'accesso a tutti i dati crittografati correnti nel tuo account."
@@ -5791,9 +5797,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnologia di crittografia di ${ BRAND_NAME } implica che nessuno può accedere alla tua password - nemmeno noi."
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } verrà impostato come calendario predefinito."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nuovo calendario",
@@ -5820,9 +5823,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: anteprima a bassa risoluzione"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } verrà impostato come calendario predefinito."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } vuole condividere dei dati con te su ${ PASS_APP_NAME }"
@@ -5885,14 +5885,6 @@
         "${ selectedCalendarsTotal } di ${ providerCalendars.length } calendario",
         "${ selectedCalendarsTotal } di ${ providerCalendars.length } calendari"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } cartella selezionata",
-        "${ selectedFoldersCount } cartelle selezionate"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etichetta selezionata",
-        "${ selectedFoldersCount } etichette selezionate"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } cartella selezionata",
         "${ selectedFoldersCountLocalized } cartelle selezionate"
@@ -5903,9 +5895,6 @@
       ],
       "${ storage } storage": [
         "${ storage } di archiviazione"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } di archiviazione"
       ],
       "${ userFound } user found": [
         "${ userFound } utente trovato",
@@ -6646,9 +6635,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importazione dei tuoi dati da ${ fromEmail } a ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importazione dei tuoi dati da ${ importedEmailAddress } a ${ toEmail }."
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Migliora la tua esperienza con ${ BRAND_NAME } adattando l'applicazione alle tue esigenze."
@@ -7802,6 +7788,9 @@
       "You can now close this window.": [
         "Ora puoi chiudere la finestra."
       ],
+      "You can now return to the application to continue": [
+        "Ora puoi tornare all'applicazione per continuare"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puoi attivare le notifiche per ricevere avvisi quando arrivano nuovi messaggi email in questa cartella."
       ],
@@ -7989,17 +7978,6 @@
         "Il tuo abbonamento è gestito da Mozilla. Contatta l'assistenza di Mozilla."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La chiave ${ fingerprint } è già stata caricata"
-      ],
-      "Selected color:": [
-        "Colore selezionato:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Se abilitata, le sottocartelle prendono il colore della cartella principale."
@@ -8044,6 +8022,16 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Per evitare interruzioni di servizio dovute a fatture non pagate, assicurati di avere almeno 1 metodo di pagamento valido salvato in qualsiasi momento."
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } cartella selezionata",
+        "${ selectedFoldersCount } cartelle selezionate"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } etichetta selezionata",
+        "${ selectedFoldersCount } etichette selezionate"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -9997,6 +9985,26 @@
         "Media velocità della VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Scopri tutti i piani ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Da ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Mantieni il mio account ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Continua per controllare"
@@ -10036,26 +10044,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Aggiorna a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Scopri tutti i piani ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Da ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Mantieni il mio account ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade now": [
-        "Effettua l'upgrade ora"
       ]
     },
     "new_plans: feature": {

@@ -1364,14 +1364,8 @@
       "High speed streaming": [
         "Yüksek hızlı yayın akışı izleme"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Ücretli ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Ücretli ${ MAIL_SHORT_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Ücretli ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Ücretli parola yöneticisi"
@@ -2963,19 +2957,12 @@
       "Daily": [
         "Günlük"
       ],
-      "Daily, ${ timesString }": [
-        "Günde bir, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Günde bir, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "${ interval } günde bir",
         "${ interval } günde bir"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "${ interval } günde bir, ${ timesString }",
-        "${ interval } günde bir, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "${ interval } günde bir, ${ untilString }",
@@ -4932,14 +4919,6 @@
         "${ selectedContactsLength }/${ contactsLength } kişi seçildi",
         "${ selectedContactsLength }/${ contactsLength } kişi seçildi"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } klasör seçildi",
-        "${ selectedFoldersCount } klasör seçildi"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etiket seçildi",
-        "${ selectedFoldersCount } etiket seçildi"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } klasör seçildi",
         "${ selectedFoldersCountLocalized } klasör seçildi"
@@ -5346,6 +5325,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Daha fazla sonuç bulmak için e-posta iletilerinizin içeriğini bu sözcük ile aramayı deneyin."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Başka bir hesaptaki e-postalarınızı güvenli ${ MAIL_APP_NAME } gelen kutunuza iletin."
+      ],
       "Free up some space or add more storage space.": [
         "Biraz boş yer açın ya da daha fazla depolama alanı ekleyin."
       ],
@@ -5405,11 +5387,11 @@
       "Import mailbox": [
         "Posta kutusunu içe aktar"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "E-postalarınızı, takvimlerinizi ve kişilerinizi başka bir hizmetten ${ BRAND_NAME } içine aktarın."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ fromEmail } verileriniz ${ toEmail } içine aktarılıyor."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
       ],
       "Include Spam/Trash.": [
         "İstenmeyen/Çöp katılsın"

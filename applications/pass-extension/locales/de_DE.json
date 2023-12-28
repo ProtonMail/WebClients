@@ -266,6 +266,9 @@
       "Open navigation": [
         "Navigation öffnen"
       ],
+      "Open web app": [
+        "Web-App öffnen"
+      ],
       "Pass for Android": [
         "Pass für Android"
       ],
@@ -385,6 +388,14 @@
       ],
       "Your password manager not here? Request it.": [
         "Ist dein Passwort-Manager nicht dabei? Fordere ihn an."
+      ]
+    },
+    "Badge": {
+      "Early access": [
+        "Früherer Zugang"
+      ],
+      "Limited time": [
+        "Beschränkte Zeit"
       ]
     },
     "bf2023: Info": {
@@ -636,6 +647,9 @@
       ],
       "Wrong PIN code. Try again.": [
         "Falscher PIN-Code. Versuche es erneut."
+      ],
+      "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
+        "Dein PIN-Code wurde von einem anderen ${ PASS_APP_NAME }-Client entfernt"
       ]
     },
     "Error message": {
@@ -781,6 +795,9 @@
       "Autosaved on ${ submissionURL }": [
         "Auf ${ submissionURL } automatisch gespeichert"
       ],
+      "Built in 2FA authenticator": [
+        "Integrierter 2FA-Authenticator"
+      ],
       "Can create, edit, delete, and export items in this vault.": [
         "Darf Einträge in diesem Tresor erstellen, bearbeiten, löschen und exportieren."
       ],
@@ -822,6 +839,9 @@
       ],
       "Drop to import": [
         "Ablegen zum Importieren"
+      ],
+      "Early access to ${ PASS_APP_NAME } web app": [
+        "Früher Zugang zur ${ PASS_APP_NAME } Web-App"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importiere bestehende Passwörter ganz einfach in ${ PASS_APP_NAME }."
@@ -963,6 +983,9 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Das Eigentumsrecht wurde erfolgreich übertragen. Du bist nicht mehr der Eigentümer dieses Tresors."
       ],
+      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
+        "Pass Plus für ${ eoyRelativePrice }/Monat, einschließlich frühem Zugang zur Web-App."
+      ],
       "Pass Plus trial": [
         "Pass Plus-Testversion"
       ],
@@ -996,11 +1019,17 @@
       "Please enter your current PIN code to continue": [
         "Bitte gib deinen aktuellen PIN-Code ein, um fortzufahren."
       ],
+      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
+        "Bitte upgrade, um frühen Zugang zur ${ PASS_APP_NAME } Web-App zu erhalten."
+      ],
       "Press Enter to copy": [
         "Drücke Enter zum Kopieren"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Der Datenschutz ist uns ein großes Anliegen. Erfahre, warum ${ PASS_APP_NAME } anders ist."
+      ],
+      "Protected by ${ PROTON_SENTINEL_LINK }, our advanced account protection program": [
+        "Geschützt durch ${ PROTON_SENTINEL_LINK }, unserem fortschrittlichen Kontoschutzprogramm"
       ],
       "Restoring trashed items...": [
         "Stelle Einträge aus dem Papierkorb wieder her..."
@@ -1025,6 +1054,9 @@
       ],
       "Settings successfully updated": [
         "Einstellungen erfolgreich aktualisiert."
+      ],
+      "Share your logins, secure notes, with up to 10 people": [
+        "Teile deine Logins und sichere Notizen mit bis zu 10 Personen."
       ],
       "Sign in or create an account to continue.": [
         "Melde dich an oder erstelle ein Konto, um fortzufahren."
@@ -1092,6 +1124,9 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } upgraden"
+      ],
+      "Upgrade Now to Unlock Premium Features": [
+        "Upgrade jetzt zum Freischalten von Premiumfunktionen"
       ],
       "Use vaults to share this item with others.": [
         "Verwende Tresore, um diesen Eintrag mit anderen zu teilen."
@@ -1796,6 +1831,9 @@
       ],
       "Update available": [
         "Update verfügbar"
+      ],
+      "Upgrade to Unlock Premium Features": [
+        "Upgrade zum Freischalten von Premiumfunktionen"
       ],
       "Use my email": [
         "Meine E-Mail-Adresse verwenden"

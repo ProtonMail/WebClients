@@ -1361,14 +1361,8 @@
       "High speed streaming": [
         "Streaming de alta velocidade"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Gerenciador de senha premium"
@@ -2140,6 +2134,11 @@
       ],
       "URL": [
         "URL"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Imagem do contato"
       ]
     },
     "Contact type label": {
@@ -2960,19 +2959,12 @@
       "Daily": [
         "Diariamente"
       ],
-      "Daily, ${ timesString }": [
-        "Diariamente, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Diariamente, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "A cada ${ interval } dia",
         "A cada ${ interval } dias"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "A cada ${ interval } dia, ${ timesString }",
-        "A cada ${ interval } dias, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "A cada ${ interval } dia, ${ untilString }",
@@ -4918,14 +4910,6 @@
         "${ selectedContactsLength }/${ contactsLength } contato selecionado",
         "${ selectedContactsLength }/${ contactsLength } contatos selecionados"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } pasta selecionada",
-        "${ selectedFoldersCount } pastas selecionadas"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } marcador selecionado",
-        "${ selectedFoldersCount } marcadores selecionados"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } pasta selecionada",
         "${ selectedFoldersCountLocalized } pastas selecionadas"
@@ -5323,6 +5307,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Para obter mais resultados de pesquisa, tente pesquisar essa palavra-chave no conteúdo de suas mensagens de e-mail."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Encaminhe e-mails recebidos de outra conta para sua caixa de entrada segura do ${ MAIL_APP_NAME }."
+      ],
       "Free up some space or add more storage space.": [
         "Libere algum espaço ou adicione mais espaço de armazenamento."
       ],
@@ -5382,11 +5369,11 @@
       "Import mailbox": [
         "Importar Caixa de Entrada"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importe seus e-mails, calendários e contatos de outro serviço para ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importando seus dados de ${ fromEmail } para ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importando seus dados de ${ importedEmailAddress } para ${ toEmail }."
       ],
       "Include Spam/Trash.": [
         "Incluir Spam/Lixeira."
@@ -9148,6 +9135,12 @@
       "Delete draft": [
         "Excluir rascunho"
       ],
+      "Delete folder?": [
+        "Excluir pasta?"
+      ],
+      "Delete label?": [
+        "Excluir marcador?"
+      ],
       "Delete message": [
         "Excluir mensagem"
       ],
@@ -9595,6 +9588,9 @@
       ],
       "Hide side panel": [
         "Ocultar o painel lateral"
+      ],
+      "Load image": [
+        "Carregar imagem"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selecione o esquema PGP a ser usado durante a assinatura ou criptografia de um usuário. Observe que o PGP/Incorporado força o envio de mensagens de texto sem formatação"

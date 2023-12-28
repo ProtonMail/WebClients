@@ -50,9 +50,6 @@
       "activate": [
         "включить"
       ],
-      "Activate ${ Name }@pm.me": [
-        "Активируйте ${ Name }@pm.me"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "Активировать ${ user.Name }@pm.me"
       ],
@@ -263,6 +260,9 @@
       "Create folder": [
         "Создать папку"
       ],
+      "Create Gateway": [
+        "Создать Шлюз"
+      ],
       "Create label": [
         "Создать ярлык"
       ],
@@ -301,6 +301,9 @@
       ],
       "Delete and confirm": [
         "Удалить и подтвердить"
+      ],
+      "Delete Gateway": [
+        "Удалить Шлюз"
       ],
       "Delete link": [
         "Удалить ссылку"
@@ -383,17 +386,26 @@
       "Edit email address": [
         "Изменить адрес эл. почты"
       ],
+      "Edit Gateway": [
+        "Изменить Шлюз"
+      ],
       "Edit invoice details": [
         "Изменение информации счета-фактуры"
       ],
       "Edit label": [
         "Изменить ярлык"
       ],
+      "Edit name": [
+        "Изменить имя"
+      ],
       "Edit password": [
         "Изменить пароль"
       ],
       "Edit phone number": [
         "Изменить номер телефона"
+      ],
+      "Edit servers": [
+        "Изменить серверы"
       ],
       "Edit sieve": [
         "Изменить Sieve-фильтр"
@@ -403,6 +415,9 @@
       ],
       "Edit subscription": [
         "Изменить подписку"
+      ],
+      "Edit users": [
+        "Изменить пользователей"
       ],
       "Emoji": [
         "Эмоджи"
@@ -974,6 +989,9 @@
       "Upgrade now": [
         "Улучшить сейчас"
       ],
+      "Upgrade to Business": [
+        "Улучшить до Business"
+      ],
       "Upgrade to enable ${ PROTON_SENTINEL_NAME }": [
         "Улучшение, чтобы включить ${ PROTON_SENTINEL_NAME }"
       ],
@@ -1045,6 +1063,9 @@
       ],
       "Yes, undo": [
         "Да, отменить"
+      ],
+      "Your server will be provisioned in the next days": [
+        "Ваш сервер будет предоставлен в ближайшие дни"
       ],
       "Zoom in": [
         "Увеличить масштаб"
@@ -1338,14 +1359,11 @@
       "High speed streaming": [
         "Высокоскоростной стриминг"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Платная версия ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Платная версия ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Платные версии ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Платная версия ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Платная версия менеджера паролей"
@@ -2976,9 +2994,6 @@
       "Daily": [
         "Ежедневно"
       ],
-      "Daily, ${ timesString }": [
-        "Ежедневно, в ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Ежедневно, ${ untilString }"
       ],
@@ -2987,12 +3002,6 @@
         "Каждые ${ interval } дня",
         "Каждые ${ interval } дней",
         "Каждые ${ interval } дня"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Каждый ${ interval } день, ${ timesString }",
-        "Каждые ${ interval } дня, ${ timesString }",
-        "Каждые ${ interval } дней, ${ timesString }",
-        "Каждые ${ interval } дня, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Каждый ${ interval } день, ${ untilString }",
@@ -3801,6 +3810,15 @@
       ],
       "IMAP server is required": [
         "Нужно укзать сервер IMAP"
+      ],
+      "Impossible to create the gateway": [
+        "Невозможно создать шлюз"
+      ],
+      "Impossible to edit the gateway": [
+        "Невозможно изменить шлюз"
+      ],
+      "Impossible to rename the gateway": [
+        "Невозможно переименовать шлюз"
       ],
       "Incorrect login credentials. Please try again.": [
         "Неверные учетные данные для входа. Пожалуйста, попробуйте снова."
@@ -4848,6 +4866,12 @@
       "Add": [
         "Добавить"
       ],
+      "Add (${ numberOfAddedServers })": [
+        "Добавить (${ numberOfAddedServers })",
+        "Добавить (${ numberOfAddedServers })",
+        "Добавить (${ numberOfAddedServers })",
+        "Добавить (${ numberOfAddedServers })"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Подключение до ${ plusVpnConnections } устройства",
         "Подключение до ${ plusVpnConnections } устройств",
@@ -5766,15 +5790,20 @@
         "Часть содержимого вашего календаря не поддерживается и не будет импортирована."
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } адрес",
-        "${ amountOfAddresses } адреса",
-        "${ amountOfAddresses } адресов",
-        "${ amountOfAddresses } адресов"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } уже был загружен"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "${ boldName } будет установлен в качестве календаря по умолчанию."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Если вы продолжите, то потеряете доступ ко всем текущим зашифрованным данным в вашего аккаунта."
@@ -5793,9 +5822,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Технология шифрования ${ BRAND_NAME } означает, что никто не сможет получить доступ к вашему паролю, даже мы."
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } будет установлен в качестве календаря по умолчанию."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } новый календарь",
@@ -5826,9 +5852,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: предпросмотр в низком разрешении"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } будет установлен в как календарь по умолчанию."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } хочет поделиться с вами данными в ${ PASS_APP_NAME }"
@@ -5887,6 +5910,12 @@
         "В Gmail найдено ${ providerFoldersNumLocalized } ярлыков",
         "В Gmail найдено ${ providerFoldersNumLocalized } ярлыков"
       ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } сервер все еще настраивается. Обычно это занимает около ${ provisioningDuration }.",
+        "${ provisioningCounter } сервера все еще настраивается. Обычно это занимает около ${ provisioningDuration }.",
+        "${ provisioningCounter } серверов все еще настраивается. Обычно это занимает около ${ provisioningDuration }.",
+        "${ provisioningCounter } серверов все еще настраивается. Обычно это занимает около ${ provisioningDuration }."
+      ],
       "${ remainingAddresses.length } more": [
         "Ещё ${ remainingAddresses.length }",
         "Ещё ${ remainingAddresses.length }",
@@ -5905,18 +5934,6 @@
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей",
         "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } папка выбрана",
-        "${ selectedFoldersCount } папки выбрано",
-        "${ selectedFoldersCount } папок выбрано",
-        "${ selectedFoldersCount } папок выбрано"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } ярлык выбран",
-        "${ selectedFoldersCount } ярлыка выбрано",
-        "${ selectedFoldersCount } ярлыков выбрано",
-        "${ selectedFoldersCount } ярлыков выбрано"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "Выбрана ${ selectedFoldersCountLocalized } папка",
         "Выбрана ${ selectedFoldersCountLocalized } папки",
@@ -5931,9 +5948,6 @@
       ],
       "${ storage } storage": [
         "${ storage } хранилища"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } хранилища"
       ],
       "${ userFound } user found": [
         "${ userFound } пользователь найден",
@@ -6031,6 +6045,9 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "Активируйте хотя бы один метод восстановления данных, чтобы убедиться, что вы сможете продолжить доступ к содержимому вашего аккаунта ${ BRAND_NAME } в случае утери пароля."
       ],
+      "active": [
+        "активен"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Добавьте адрес электронной почты @pm.me в ваш аккаунт. Этот простой и короткий домен означает \"Напиши мне в ${ MAIL_APP_NAME }\" или \"Отправь мне личное сообщение\"."
       ],
@@ -6054,6 +6071,24 @@
       ],
       "Add multiple users to your organization at once.": [
         "Добавить в вашу организацию нескольких пользователей разом."
+      ],
+      "Add server (${ availableAddedCount } available)": [
+        "Добавить сервер (доступен ${ availableAddedCount })",
+        "Добавить сервер (доступно ${ availableAddedCount })",
+        "Добавить сервер (доступно ${ availableAddedCount })",
+        "Добавить сервер (доступно ${ availableAddedCount })"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "Добавление ${ addedServerCount } сервера шлюза",
+        "Добавление ${ addedServerCount } серверов шлюза",
+        "Добавление ${ addedServerCount } серверов шлюза",
+        "Добавление ${ addedServerCount } серверов шлюза"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Добавление сервера шлюза: ${ serverNumber } / ${ total }",
+        "Добавление серверов шлюза: ${ serverNumber } / ${ total }",
+        "Добавление серверов шлюза: ${ serverNumber } / ${ total }",
+        "Добавление серверов шлюза: ${ serverNumber } / ${ total }"
       ],
       "Additional options": [
         "Дополнительные параметры"
@@ -6180,6 +6215,9 @@
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
         "Вы уверены, что хотите удалить административные полномочия у этого пользователя?"
+      ],
+      "Ask your organisation admin to setup Gateways.": [
+        "Попросите администратора вашей организации настроить Шлюзы."
       ],
       "Attention required": [
         "Требуется внимание"
@@ -6316,6 +6354,15 @@
       "Create in": [
         "Создать в"
       ],
+      "Create your first Gateway": [
+        "Создайте свой первый Шлюз"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Создание сервера шлюза: ${ serverNumber } / ${ total }",
+        "Создание серверов шлюза: ${ serverNumber } / ${ total }",
+        "Создание серверов шлюза: ${ serverNumber } / ${ total }",
+        "Создание серверов шлюза: ${ serverNumber } / ${ total }"
+      ],
       "Creating your account": [
         "Создание вашего аккаунта"
       ],
@@ -6366,6 +6413,12 @@
       ],
       "Delete link?": [
         "Удалить ссылку?"
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "Удаление ${ deletedServerCount } сервера шлюза",
+        "Удаление ${ deletedServerCount } серверов шлюза",
+        "Удаление ${ deletedServerCount } серверов шлюза",
+        "Удаление ${ deletedServerCount } серверов шлюза"
       ],
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
@@ -6664,9 +6717,6 @@
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Импорт данных из ${ fromEmail } в ${ toEmail }."
       ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Импорт ваших данных из ${ importedEmailAddress } в ${ toEmail }."
-      ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Улучшите свой опыт использования ${ BRAND_NAME }, адаптировав приложение под свои потребности."
       ],
@@ -6823,6 +6873,12 @@
       "Must be between 3 and 20 characters long.": [
         "Должен быть длиной от 3 до 20 символов."
       ],
+      "Must contain only letters, digits, and dashes (-).": [
+        "Должно содержать только буквы, цифры и тире (-)."
+      ],
+      "Must not contain spaces.": [
+        "Не должно содержать пробелов."
+      ],
       "Must start with a letter.": [
         "Должен начинаться с буквы."
       ],
@@ -6853,6 +6909,12 @@
       "No folder selected": [
         "Папка не выбрана"
       ],
+      "No gateways": [
+        "Нет шлюзов"
+      ],
+      "No Gateways yet": [
+        "Пока нет шлюзов"
+      ],
       "No imports or forwarding history.": [
         "Нет истории импорта или пересылки."
       ],
@@ -6882,6 +6944,9 @@
       ],
       "Number of dedicated servers in the organization": [
         "Количество выделенных серверов в организации"
+      ],
+      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
+        "Количество выделенных серверов, которые вы пытаетесь установить (${ addedCount }), больше, чем осталось в вашем тарифе (${ remainingCount }), поскольку у вас есть ${ ownedCount } и вы уже используете ${ usedCount }."
       ],
       "of": [
         "из"
@@ -6918,6 +6983,9 @@
       ],
       "Organization size": [
         "Размер организации"
+      ],
+      "Organize your dedicated servers into Gateways and decide which members can access them.": [
+        "Организуйте выделенные серверы в шлюзы и определите, какие пользователи могут получить к ним доступ."
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "В вашей организации есть другие администраторы, ответственность сообщить им новый пароль лежит на вас."
@@ -7210,6 +7278,9 @@
       "Some keys successfully reactivated": [
         "Некоторые ключи успешно реактивированы"
       ],
+      "Some of your available servers can only be used in specific countries due to recent removals": [
+        "Некоторые из доступных вам серверов могут быть использованы только в определенных странах из-за недавних удалений"
+      ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF используется для указания того, кому разрешено отправлять электронную почту для домена, поэтому мы настоятельно рекомендуем включить ${ MAIL_APP_NAME } в вашу запись SPF. Пожалуйста, добавьте следующую запись TXT в ваш DNS. Обычно это можно сделать в панели управления вашего регистратора доменов."
       ],
@@ -7341,6 +7412,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Эти конфигурации предоставляются для работы с маршрутизаторами WireGuard и официальными клиентами."
+      ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "Эти учетные данные не могут быть использованы для входа в наши официальные ${ VPN_APP_NAME } приложения ${ learnMore }"
       ],
       "They will be removed from your organization": [
         "Они будут удалены из вашей организации"
@@ -7627,6 +7701,9 @@
       "Visa Secure logo": [
         "Логотип Visa Secure"
       ],
+      "Want servers in other countries?": [
+        "Хотите серверы в других странах?"
+      ],
       "Warning:": [
         "Предупреждение:"
       ],
@@ -7653,6 +7730,9 @@
       ],
       "We recommend having at least 2 servers in order to provide redundancy.": [
         "Мы рекомендуем иметь не менее 2 серверов для обеспечения резервирования."
+      ],
+      "We recommend having multiple servers in different locations to provide redundancy.": [
+        "Мы рекомендуем иметь несколько серверов в разных местах для обеспечения резервирования."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
         "Мы рекомендуем уведомить участников организации и попросить их настроить двухфакторную аутентификацию для своих аккаунтов перед введением обязательного использования двухфакторной аутентификации."
@@ -7714,8 +7794,14 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "При продлении вашей подписки мы сначала используем любой доступный баланс и только после этого списываем недостающую сумму через вышеуказанный способ оплаты."
       ],
+      "Whole organization": [
+        "Вся организация"
+      ],
       "Why?": [
         "Почему?"
+      ],
+      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "С тарифом \"Business\" или \"Enterprise\" вы можете приобрести для своей организации ${ boldDedicatedServers } и настроить ${ boldGateways }, чтобы контролировать, какие пользователи могут получить к ним доступ."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Имея зашифрованный адрес ${ BRAND_NAME }, вы можете пользоваться всеми услугами ${ BRAND_NAME }"
@@ -7743,6 +7829,12 @@
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "В настоящее время вы вошли как ${ user.Name } (${ user.Email })."
+      ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "В настоящее время вы используете ${ ipCount } из ${ ipAddresses } доступного выделенного сервера.",
+        "В настоящее время вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов.",
+        "В настоящее время вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов.",
+        "В настоящее время вы используете ${ ipCount } из ${ ipAddresses } доступных выделенных серверов."
       ],
       "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
         "Сейчас вы используете ${ organization.UsedMembers } из вашей ${ organization.MaxMembers } доступной пользовательской лицензии.",
@@ -7812,6 +7904,12 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Вы не задали способ восстановления доступа, поэтому, если вы забудете пароль, восстановление аккаунта будет невозможно. Продолжить без метода восстановления?"
+      ],
+      "You have ${ availableCount } dedicated server available.": [
+        "У вас есть ${ availableCount } доступный выделенный сервер.",
+        "У вас есть ${ availableCount } доступных выделенных сервера.",
+        "У вас есть ${ availableCount } доступных выделенных серверов.",
+        "У вас есть ${ availableCount } доступных выделенных серверов."
       ],
       "You have no calendars to export.": [
         "У вас нет календарей для экспорта."
@@ -7974,14 +8072,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } уже был загружен"
       ]
     },
     "Info - folder colouring feature": {
@@ -8816,6 +8906,9 @@
       ],
       "From: ${ fromEmail }": [
         "От: ${ fromEmail }"
+      ],
+      "Gateway name": [
+        "Имя Шлюза"
       ],
       "Gift code": [
         "Подарочный код"
@@ -9999,6 +10092,26 @@
         "Средняя скорость VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "От: ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Сохранить мой аккаунт ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Перейти к обзору"
@@ -10038,26 +10151,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Улучшить до ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "От: ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Сохранить мой аккаунт ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
       ]
     },
     "new_plans: feature": {
@@ -11256,8 +11349,14 @@
       "Secure Core configs": [
         "Конфигурации Secure Core"
       ],
+      "Select who can access...": [
+        "Выберите, кто может получить доступ к..."
+      ],
       "Standard server configs": [
         "Стандартные конфигурации сервера"
+      ],
+      "The whole organization": [
+        "Вся организация"
       ]
     },
     "Option delay send seconds": {
@@ -13339,6 +13438,9 @@
       "Add PayPal payment method": [
         "Добавить способ оплаты PayPal"
       ],
+      "Add servers": [
+        "Добавить серверы"
+      ],
       "Add Sieve filter": [
         "Добавить фильтр Sieve"
       ],
@@ -13486,6 +13588,15 @@
         "Создать ${ selectedUserIds.length } пользователей",
         "Создать ${ selectedUserIds.length } пользователей"
       ],
+      "Create a new Gateway": [
+        "Создать новый Шлюз"
+      ],
+      "Create a new gateway": [
+        "Создать новый шлюз"
+      ],
+      "Create Gateway": [
+        "Создать Шлюз"
+      ],
       "Create multiple user accounts": [
         "Создать несколько пользовательских аккаунтов"
       ],
@@ -13516,11 +13627,17 @@
       "Custom filters": [
         "Пользовательские фильтры"
       ],
+      "Custom selection of users": [
+        "Индивидуальный выбор пользователей"
+      ],
       "Customize and confirm": [
         "Настройте и подтвердите"
       ],
       "Customize calendar import": [
         "Настройка импорта календаря"
+      ],
+      "Customize the number of IP addresses in your plan": [
+        "Настройте количество адресов IP в вашем тарифе"
       ],
       "Customize your mail import": [
         "Настройка импорта вашей почты"
@@ -13627,14 +13744,29 @@
       "Edit filter": [
         "Изменение фильтра"
       ],
+      "Edit Gateway ${ currentName }": [
+        "Изменить Шлюз ${ currentName }"
+      ],
       "Edit invoice details": [
         "Изменение информации счета-фактуры"
+      ],
+      "Edit servers": [
+        "Изменить серверы"
       ],
       "Edit Sieve filter": [
         "Изменение Sieve-фильтра"
       ],
+      "Edit the list of servers of the gateway": [
+        "Изменение списка серверов шлюза"
+      ],
       "Edit user": [
         "Изменение пользователя"
+      ],
+      "Edit users": [
+        "Изменить пользователей"
+      ],
+      "Edit who can access the gateway": [
+        "Изменение круга лиц, имеющих доступ к шлюзу"
       ],
       "Email": [
         "Эл. почта"
@@ -13662,6 +13794,9 @@
       ],
       "Error": [
         "Ошибка"
+      ],
+      "Every member of the organization can access": [
+        "Каждый член организации может получить доступ"
       ],
       "Export": [
         "Экспорт"
@@ -13927,6 +14062,9 @@
       "Remove user?": [
         "Удалить пользователя?"
       ],
+      "Rename the gateway": [
+        "Изменить шлюз"
+      ],
       "Report a problem": [
         "Сообщить о проблеме"
       ],
@@ -14013,6 +14151,9 @@
       ],
       "Settings": [
         "Настройки"
+      ],
+      "Setup dedicated servers by upgrading to Business": [
+        "Настройка выделенных серверов, улучшив тариф до Business"
       ],
       "Short domain (@pm.me)": [
         "Короткий домен (@pm.me)"
