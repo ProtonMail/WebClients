@@ -810,14 +810,8 @@
       "High speed streaming": [
         "Streaming d'alta velocitat"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } prèmium"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } prèmium"
       ],
       "Premium Password Manager": [
         "Gestor de contrasenyes prèmium"
@@ -2114,19 +2108,12 @@
       "Daily": [
         "Diàriament"
       ],
-      "Daily, ${ timesString }": [
-        "Diàriament, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Diàriament, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "Cada ${ interval } dia",
         "Cada ${ interval } dies"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Cada ${ interval } dia, ${ timesString }",
-        "Cada ${ interval } dies, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Cada ${ interval } dia, ${ untilString }",
@@ -3687,14 +3674,6 @@
         "${ selectedContactsLength } contacte seleccionat de ${ contactsLength }",
         "${ selectedContactsLength } contactes seleccionats de ${ contactsLength }"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } carpeta seleccionada",
-        "${ selectedFoldersCount } carpetes seleccionades"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etiqueta seleccionada",
-        "${ selectedFoldersCount } etiquetes seleccionades"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } carpeta seleccionada",
         "${ selectedFoldersCountLocalized } carpetes seleccionades"
@@ -3917,6 +3896,9 @@
       "Existent, added and removed participants will be notified.": [
         "Els participants existents, els afegits i els esborrats seran notificats."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Reenvieu els missatges entrants d'un altre compte a la vostra safata d'entrada segura de ${ MAIL_APP_NAME }."
+      ],
       "Free up some space or add more storage space.": [
         "Allibereu una mica d’espai o afegiu més espai d’emmagatzematge."
       ],
@@ -3951,11 +3933,11 @@
       "Import mailbox": [
         "Importar bústia de correu"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importeu els vostres correus electrònics, calendaris i contactes d'un altre servei a ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "S'estan important les vostres dades des de ${ fromEmail } a ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Important les vostres dades des de ${ importedEmailAddress } a ${ toEmail }."
       ],
       "Indexing events: ${ current }/${ total }": [
         "S'estan indexant esdeveniments: ${ current }/${ total }"

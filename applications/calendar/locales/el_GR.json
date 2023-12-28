@@ -810,14 +810,8 @@
       "High speed streaming": [
         "Ροή υψηλής ταχύτητας"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Premium Διαχειριστής Κωδικών Πρόσβασης"
@@ -2109,19 +2103,12 @@
       "Daily": [
         "Καθημερινά"
       ],
-      "Daily, ${ timesString }": [
-        "Καθημερινά, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Καθημερινά, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "Κάθε ${ interval } μέρα",
         "Κάθε ${ interval } μέρες"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Κάθε ${ interval } μέρα, ${ timesString }",
-        "Κάθε ${ interval } μέρες, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Κάθε ${ interval } μέρα, ${ untilString }",
@@ -3682,14 +3669,6 @@
         "${ selectedContactsLength }/${ contactsLength } επιλεγμένη επαφή",
         "${ selectedContactsLength }/${ contactsLength } επιλεγμένες επαφές"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } επιλεγμένος φάκελος",
-        "${ selectedFoldersCount } επιλεγμένοι φάκελοι"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } επιλεγμένη ετικέτα",
-        "${ selectedFoldersCount } επιλεγμένες ετικέτες"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } επιλεγμένος φάκελος",
         "${ selectedFoldersCountLocalized } επιλεγμένοι φάκελοι"
@@ -3912,6 +3891,9 @@
       "Existent, added and removed participants will be notified.": [
         "Θα ειδοποιούνται οι συμμετέχοντες, οι οποίοι έχουν προστεθεί και αφαιρεθεί."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Προωθήστε την εισερχόμενη αλληλογραφία από άλλο λογαριασμό στα ασφαλή εισερχόμενά σας ${ MAIL_APP_NAME }."
+      ],
       "Free up some space or add more storage space.": [
         "Ελευθερώστε χώρο ή προσθέστε περισσότερο χώρο αποθήκευσης."
       ],
@@ -3946,11 +3928,11 @@
       "Import mailbox": [
         "Εισαγωγή γραμματοκιβωτίου"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Εισαγάγετε τα μηνύματα ηλεκτρονικού ταχυδρομείου, τα ημερολόγια και τις επαφές σας από άλλη υπηρεσία στο ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ fromEmail } προς ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Γίνεται εισαγωγή δεδομένων από ${ importedEmailAddress } προς ${ toEmail }."
       ],
       "Indexing events: ${ current }/${ total }": [
         "Ενημέρωση ευρετηρίου με εκδηλώσεις: ${ current }/${ total }"
