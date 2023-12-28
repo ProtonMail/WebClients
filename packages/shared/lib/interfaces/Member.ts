@@ -1,9 +1,12 @@
-import { MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_TYPE } from '../constants';
+import { ADDRESS_STATUS, ADDRESS_TYPE, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_TYPE } from '../constants';
 import { Key } from './Key';
 
 export interface PartialMemberAddress {
     ID: string;
     Email: string;
+    Status: ADDRESS_STATUS;
+    Type: ADDRESS_TYPE;
+    Permissions: number;
 }
 
 export enum FAMILY_PLAN_INVITE_STATE {

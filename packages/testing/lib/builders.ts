@@ -170,6 +170,7 @@ export const addressBuilder = build<Address>('Address', {
         Type: ADDRESS_TYPE.TYPE_ORIGINAL,
         ProtonMX: true,
         ConfirmationState: 1,
+        Permissions: 7,
     },
     postBuild: (address) => {
         address.Keys = [addressKeyBuilder()];
@@ -479,6 +480,7 @@ export const generateTestAddress = (compelled?: Partial<Address>): Address => {
         Type: ADDRESS_TYPE.TYPE_ORIGINAL,
         ProtonMX: true,
         ConfirmationState: 1,
+        Permissions: 7,
         ...compelled,
     };
 };

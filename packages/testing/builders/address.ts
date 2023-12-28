@@ -36,6 +36,7 @@ export const buildAddress = (value?: Partial<Address>): Address => {
         SignedKeyList: null,
         ProtonMX: true,
         ConfirmationState: 1,
+        Permissions: 7,
         ...value,
     };
 };
