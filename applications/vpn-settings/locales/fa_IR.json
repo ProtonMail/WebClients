@@ -1887,10 +1887,6 @@
       ]
     },
     "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } آدرس",
-        "${ amountOfAddresses } آدرس"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } به اجازه شما برای ${ enableDesktopNotifications } نیاز دارد."
       ],
@@ -1899,6 +1895,10 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "همچنین میتوان از ${ MAIL_APP_NAME } با یک رمزعبور واحد که جایگزین رمزهای عبور حساب و صندوق نامه میشود استفاده کرد. برای تغییر به حالت رمزعبور واحد، رمزعبور واحدی که مایلید از آن استفاده کنید را وارد کرده و روی دکمه ذخیره کلیک کنید."
+      ],
+      "${ n } address": [
+        "${ n } نشانی",
+        "${ n } نشانی"
       ],
       "${ number } city": [
         "${ number } شهر",
@@ -3647,6 +3647,11 @@
     "pass_signup_2023: Action": {
       "Start using ${ appName }": [
         "شروع به استفاده از ${ appName } کنید"
+      ]
+    },
+    "pass_signup_2023: Feature": {
+      "End-to-end encrypted": [
+        "رمزنگاری شده سرتاسری"
       ]
     },
     "pass_signup_2023: Info": {

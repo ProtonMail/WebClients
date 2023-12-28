@@ -50,9 +50,6 @@
       "activate": [
         "aktivera"
       ],
-      "Activate ${ Name }@pm.me": [
-        "Aktivera ${ Name }@pm.me"
-      ],
       "Activate ${ user.Name }@pm.me": [
         "Aktivera ${ user.Name }@pm.me"
       ],
@@ -1365,14 +1362,11 @@
       "High speed streaming": [
         "Höghastighetsstreaming"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName }": [
+        "Premium ${ appName }"
       ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Premium lösenordshanterare"
@@ -2994,9 +2988,6 @@
       "Daily": [
         "Dagligen"
       ],
-      "Daily, ${ timesString }": [
-        "Dagligen, ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Dagligen, ${ untilString }"
       ],
@@ -3004,16 +2995,21 @@
         "Varje dag",
         "Var ${ interval }:e dag"
       ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Varje dag, ${ timesString }",
-        "Var ${ interval }:e dag, ${ timesString }"
-      ],
       "Every ${ interval } day, ${ untilString }": [
         "Varje dag, ${ untilString }",
         "Var ${ interval }:e dag, ${ untilString }"
       ],
       "until ${ dateString }": [
         "tills ${ dateString }"
+      ]
+    },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "Dagligen, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Var ${ interval } dag, ${ timesString }",
+        "Var ${ interval }:e dag, ${ timesString }"
       ]
     },
     "Day": {
@@ -5766,13 +5762,23 @@
         "En del av ditt kalenderinnehåll stöds inte och kommer inte att importeras."
       ]
     },
-    "Info": {
-      "${ amountOfAddresses } address": [
-        "${ amountOfAddresses } adress",
-        "${ amountOfAddresses } adresser"
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
       ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nyckel ${ fingerprint } har redan laddats upp"
+      ],
+      "Selected color:": [
+        "Vald färg:"
+      ]
+    },
+    "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse till ${ enableDesktopNotifications }."
+      ],
+      "${ boldName } will be set as default calendar.": [
+        "${ boldName } kommer att ställas in som standardkalender."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Du kommer att förlora åtkomst till alla nuvarande krypterade data på ditt konto om du fortsätter."
@@ -5791,9 +5797,6 @@
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi innebär att ingen kan få åtkomst till dina lösenord - inte ens vi."
-      ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } kommer att ställas in som standardkalender."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
@@ -5820,9 +5823,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: lågupplöst förhandsgranskning"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } kommer att ställas in som standardkalender."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } vill dela data med dig i ${ PASS_APP_NAME }"
@@ -5885,14 +5885,6 @@
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalender",
         "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalendrar"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } mapp vald",
-        "${ selectedFoldersCount } mappar valda"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etikett vald",
-        "${ selectedFoldersCount } etiketter valda"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } mapp vald",
         "${ selectedFoldersCountLocalized } mappar valda"
@@ -5903,9 +5895,6 @@
       ],
       "${ storage } storage": [
         "${ storage } lagringsutrymme"
-      ],
-      "${ storageSize } storage": [
-        "${ storageSize } lagringsutrymme"
       ],
       "${ userFound } user found": [
         "${ userFound } användare hittades",
@@ -6646,9 +6635,6 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerar din data från ${ fromEmail } till ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Importerar din data från ${ importedEmailAddress } till ${ toEmail }."
       ],
       "Improve your ${ BRAND_NAME } experience by adapting the application to your needs.": [
         "Förbättra din ${ BRAND_NAME }-upplevelse genom att anpassa applikationen efter dina behov."
@@ -7802,6 +7788,9 @@
       "You can now close this window.": [
         "Du kan nu stänga detta fönster."
       ],
+      "You can now return to the application to continue": [
+        "Du kan nu gå tillbaka till applikationen för att fortsätta"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivera aviseringar för att få aviseringar när nya e-postmeddelanden kommer in i den här mappen."
       ],
@@ -7989,17 +7978,6 @@
         "Din prenumeration hanteras av Mozilla. Kontakta Mozillas support."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Ytterligare dubbletter av nycklar upptäcktes. Ladda upp individuellt för mer information."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nyckel ${ fingerprint } har redan laddats upp"
-      ],
-      "Selected color:": [
-        "Vald färg:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "När det är aktiverat ärver undermappar färgen på den överordnade mappen."
@@ -8044,6 +8022,16 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "För att undvika eventuella avbrott i tjänsten på grund av obetalda fakturor, se till att du har sparat minst en giltig betalningsmetod någon gång."
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } mapp vald",
+        "${ selectedFoldersCount } mappar valda"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } etikett vald",
+        "${ selectedFoldersCount } etiketter valda"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -9997,6 +9985,26 @@
         "Medelhög VPN-hastighet"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Behåll mitt ${ currentPlanName }-konto"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Fortsätt att utvärdera"
@@ -10036,26 +10044,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Uppgradera till ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Behåll mitt ${ currentPlanName }-konto"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
       ]
     },
     "new_plans: feature": {

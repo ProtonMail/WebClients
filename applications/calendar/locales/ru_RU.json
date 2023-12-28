@@ -821,14 +821,8 @@
       "High speed streaming": [
         "Высокоскоростной стриминг"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Платная версия ${ DRIVE_SHORT_APP_NAME }"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "Платные версии ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Платная версия ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Платная версия менеджера паролей"
@@ -2129,9 +2123,6 @@
       "Daily": [
         "Ежедневно"
       ],
-      "Daily, ${ timesString }": [
-        "Ежедневно, в ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Ежедневно, ${ untilString }"
       ],
@@ -2140,12 +2131,6 @@
         "Каждые ${ interval } дня",
         "Каждые ${ interval } дней",
         "Каждые ${ interval } дня"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Каждый ${ interval } день, ${ timesString }",
-        "Каждые ${ interval } дня, ${ timesString }",
-        "Каждые ${ interval } дней, ${ timesString }",
-        "Каждые ${ interval } дня, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
         "Каждый ${ interval } день, ${ untilString }",
@@ -3775,18 +3760,6 @@
         "Выбраны контакты: ${ selectedContactsLength } из ${ contactsLength }",
         "Выбраны контакты: ${ selectedContactsLength } из ${ contactsLength }"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } папка выбрана",
-        "${ selectedFoldersCount } папки выбрано",
-        "${ selectedFoldersCount } папок выбрано",
-        "${ selectedFoldersCount } папок выбрано"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } ярлык выбран",
-        "${ selectedFoldersCount } ярлыка выбрано",
-        "${ selectedFoldersCount } ярлыков выбрано",
-        "${ selectedFoldersCount } ярлыков выбрано"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "Выбрана ${ selectedFoldersCountLocalized } папка",
         "Выбрана ${ selectedFoldersCountLocalized } папки",
@@ -4027,6 +4000,9 @@
       "Existent, added and removed participants will be notified.": [
         "Существующие, добавленные и удаленные участники будут уведомлены."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Пересылка входящей почты в ваш безопасный почтовый ящик ${ MAIL_APP_NAME } из другого аккаунта."
+      ],
       "Free up some space or add more storage space.": [
         "Освободите место или добавьте больше места для хранения."
       ],
@@ -4063,11 +4039,11 @@
       "Import mailbox": [
         "Импорт почтового ящика"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Импортируйте ваши письма, календари и контакты в ${ BRAND_NAME } из другого сервиса."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Импорт данных из ${ fromEmail } в ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Импорт ваших данных из ${ importedEmailAddress } в ${ toEmail }."
       ],
       "Indexing events: ${ current }/${ total }": [
         "Индексирование событий: ${ current }/${ total }"

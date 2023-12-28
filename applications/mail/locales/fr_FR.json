@@ -1364,14 +1364,8 @@
       "High speed streaming": [
         "Streaming ultra-rapide"
       ],
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } version premium"
-      ],
       "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME } version premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } version premium"
       ],
       "Premium Password Manager": [
         "Gestionnaire de mots de passe version premium"
@@ -2968,9 +2962,6 @@
       "Daily": [
         "Chaque jour"
       ],
-      "Daily, ${ timesString }": [
-        "Chaque jour, à ${ timesString }"
-      ],
       "Daily, ${ untilString }": [
         "Chaque jour, ${ untilString }"
       ],
@@ -2978,16 +2969,21 @@
         "Chaque ${ interval } jour",
         "Tous les ${ interval } jours"
       ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Chaque ${ interval } jour, à ${ timesString }",
-        "Tous les ${ interval } jours, à ${ timesString }"
-      ],
       "Every ${ interval } day, ${ untilString }": [
         "Chaque ${ interval } jour, ${ untilString }",
         "Tous les ${ interval } jours, jusqu'au ${ untilString }"
       ],
       "until ${ dateString }": [
         "jusqu’au ${ dateString }"
+      ]
+    },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "Chaque jour, à ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Chaque ${ interval } jour, à ${ timesString }",
+        "Tous les ${ interval } jours, à ${ timesString }"
       ]
     },
     "Date label": {
@@ -4937,14 +4933,6 @@
         "Nombre de contacts sélectionnés : ${ selectedContactsLength } sur ${ contactsLength }",
         "Contacts sélectionnés : ${ selectedContactsLength } sur ${ contactsLength }"
       ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } dossier sélectionné",
-        "${ selectedFoldersCount } dossiers sélectionnés"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } label sélectionné",
-        "${ selectedFoldersCount } labels sélectionnés"
-      ],
       "${ selectedFoldersCountLocalized } folder selected": [
         "${ selectedFoldersCountLocalized } dossier sélectionné",
         "${ selectedFoldersCountLocalized } dossiers sélectionnés"
@@ -5351,6 +5339,9 @@
       "For more search results, try searching for this keyword in the content of your email messages.": [
         "Pour avoir plus de résultats, essayez de faire une recherche avec ce mot-clé dans le contenu de vos messages."
       ],
+      "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
+        "Transférez les messages entrants d'un autre compte vers votre boite de réception sécurisée ${ MAIL_APP_NAME }."
+      ],
       "Free up some space or add more storage space.": [
         "Libérez de l’espace ou ajoutez plus d’espace de stockage."
       ],
@@ -5410,11 +5401,11 @@
       "Import mailbox": [
         "Importer une messagerie"
       ],
+      "Import your emails, calendars, and contacts from another service to ${ BRAND_NAME }.": [
+        "Importez vos messages, calendriers et contacts depuis un autre service vers ${ BRAND_NAME }."
+      ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Vos données sont en cours d'importation depuis ${ fromEmail } vers ${ toEmail }."
-      ],
-      "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        "Vos données sont en cours d'importation depuis ${ importedEmailAddress } vers ${ toEmail }."
       ],
       "Include Spam/Trash.": [
         "Inclure les messages des dossiers Indésirables/spam et Corbeille."
@@ -6179,6 +6170,9 @@
       "You can import one data type at a time.": [
         "Vous pouvez importer un type de données à la fois."
       ],
+      "You can now return to the application to continue": [
+        "Vous pouvez maintenant revenir à l'application pour continuer."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Vous pouvez activer les notifications pour recevoir des alertes quand de nouveaux messages arrivent dans ce dossier."
       ],
@@ -6312,6 +6306,16 @@
     "Info on errors": {
       "Click for details": [
         "Cliquez pour plus de détails."
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } dossier sélectionné",
+        "${ selectedFoldersCount } dossiers sélectionnés"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } label sélectionné",
+        "${ selectedFoldersCount } labels sélectionnés"
       ]
     },
     "Key badge": {
