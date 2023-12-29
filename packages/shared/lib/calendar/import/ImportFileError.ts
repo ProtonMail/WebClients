@@ -6,7 +6,6 @@ import {
     IMPORT_ERROR_TYPE,
     MAX_FILENAME_CHARS_DISPLAY,
     MAX_IMPORT_EVENTS,
-    MAX_IMPORT_EVENTS_STRING,
     MAX_IMPORT_FILE_SIZE_STRING,
 } from '../constants';
 
@@ -38,8 +37,8 @@ const getErrorMessage = (errorType: IMPORT_ERROR_TYPE, filename = '') => {
     }
     if (errorType === IMPORT_ERROR_TYPE.TOO_MANY_EVENTS) {
         return c('Error importing calendar').ngettext(
-            msgid`Your file ${formattedFilename} contains more than ${MAX_IMPORT_EVENTS_STRING} event.`,
-            `Your file ${formattedFilename} contains more than ${MAX_IMPORT_EVENTS_STRING} events.`,
+            msgid`Your file ${formattedFilename} contains more than ${MAX_IMPORT_EVENTS} event.`,
+            `Your file ${formattedFilename} contains more than ${MAX_IMPORT_EVENTS} events.`,
             MAX_IMPORT_EVENTS
         );
     }

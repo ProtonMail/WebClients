@@ -1,14 +1,15 @@
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 
 export enum TelemetryMeasurementGroups {
-    mailSimpleLogin = 'mail.web.simplelogin_popups',
-    calendarTimeZoneSelector = 'calendar.web.timezone_selector',
-    calendarEncryptedSearch = 'calendar.web.encrypted_search',
-    accountSignupBasic = 'account.any.signup_basic',
     accountSignup = 'account.any.signup',
+    accountSignupBasic = 'account.any.signup_basic',
+    calendarEncryptedSearch = 'calendar.web.encrypted_search',
+    calendarIcsSurgery = 'calendar.web.ics_surgery',
+    calendarTimeZoneSelector = 'calendar.web.timezone_selector',
     keyTransparency = 'any.web.key_transparency',
     mailPrivacyDropdown = 'mail.web.privacy_dropdown',
     mailSelectAll = 'mail.web.select_all',
+    mailSimpleLogin = 'mail.web.simplelogin_popups',
 }
 
 export enum TelemetrySimpleLoginEvents {
@@ -21,6 +22,12 @@ export enum TelemetrySimpleLoginEvents {
 export enum TelemetryCalendarEvents {
     change_temporary_time_zone = 'change_temporary_time_zone',
     enable_encrypted_search = 'enable_encrypted_search',
+}
+
+export enum TelemetryIcsSurgeryEvents {
+    import = 'import',
+    import_publish = 'import_publish',
+    invitation = 'invitation',
 }
 
 export enum TelemetryAccountSignupBasicEvents {
@@ -76,6 +83,7 @@ export enum TelemetryMailSelectAllEvents {
 export type TelemetryEvents =
     | TelemetrySimpleLoginEvents
     | TelemetryCalendarEvents
+    | TelemetryIcsSurgeryEvents
     | TelemetryAccountSignupBasicEvents
     | TelemetryAccountSignupEvents
     | TelemetryKeyTransparencyErrorEvents
