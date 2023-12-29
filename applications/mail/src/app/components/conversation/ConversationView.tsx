@@ -238,9 +238,14 @@ const ConversationView = ({
                     ))}
                 </div>
             </div>
+
+            {/*
+             * Use filtered messages, so that we do not show the unread message notification
+             * in Trash folder for new messages that are in Inbox (they are not shown by default)
+             */}
             <UnreadMessages
                 conversationID={conversationID}
-                messages={conversationState?.Messages}
+                messages={messagesWithoutQuickReplies}
                 onClick={handleClickUnread}
             />
         </Scroll>
