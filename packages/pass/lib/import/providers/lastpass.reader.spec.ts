@@ -90,7 +90,7 @@ describe('Import LastPass csv', () => {
         expect(loginItem3.content.password).toEqual('proton123');
         expect(loginItem3.content.urls[0]).toEqual('https://twitter.com/login');
         expect(loginItem3.content.totpUri).toEqual(
-            'otpauth://totp/Twitter?secret=BASE32SECREQ&algorithm=SHA1&digits=6&period=30'
+            'otpauth://totp/Twitter?secret=BASE32SECRET&algorithm=SHA1&digits=6&period=30'
         );
 
         /* Login */
@@ -102,7 +102,7 @@ describe('Import LastPass csv', () => {
         expect(loginItem4.content.password).toEqual('proton123');
         expect(loginItem4.content.urls[0]).toEqual('https://fb.com/login');
         expect(loginItem4.content.totpUri).toEqual(
-            'otpauth://totp/fb.com?secret=BASE32SECREQ&algorithm=SHA1&digits=6&period=30'
+            'otpauth://totp/fb.com?secret=BASE32SECRET&algorithm=SHA1&digits=6&period=30'
         );
 
         /* Login broken url */

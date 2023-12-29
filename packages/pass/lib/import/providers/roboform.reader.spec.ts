@@ -46,7 +46,7 @@ describe('Import Roboform csv', () => {
         expect(loginItem1.content.password).toEqual('some@password');
         expect(loginItem1.content.urls[0]).toEqual('http://example.com/');
         expect(loginItem1.content.totpUri).toEqual(
-            'otpauth://totp/Example:none?issuer=Example&secret=FDKJJKDS&algorithm=SHA1&digits=6&period=30'
+            'otpauth://totp/Example:none?issuer=Example&secret=FDKJJKDSF&algorithm=SHA1&digits=6&period=30'
         );
 
         /* Note */
