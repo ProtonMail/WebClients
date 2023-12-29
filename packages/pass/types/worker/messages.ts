@@ -2,16 +2,18 @@ import type { AnyAction } from 'redux';
 import type { Tabs } from 'webextension-polyfill';
 
 import type { AuthResumeOptions } from '@proton/pass/lib/auth/service';
-import type { ExportRequestPayload } from '@proton/pass/lib/export/types';
+import type { ExportOptions } from '@proton/pass/lib/export/types';
+import type { ImportReaderPayload } from '@proton/pass/lib/import/types';
 import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
 import type { Notification } from '@proton/pass/store/actions/with-notification';
 import type { AliasOptions, FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { PauseListEntry } from '@proton/pass/types/worker/settings';
+import type { TransferableFile } from '@proton/pass/utils/file/transferable-file';
 import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/sessionForking';
 import type { User } from '@proton/shared/lib/interfaces';
 
-import type { ShareEventPayload } from '../api';
+import type { SessionLockStatus, ShareEventPayload } from '../api';
 import type { ForkPayload } from '../api/fork';
 import type { AliasCreationDTO, SelectedItem } from '../data';
 import type { TelemetryEvent } from '../data/telemetry';
@@ -24,7 +26,7 @@ import type { OtpCode, OtpRequest } from './otp';
 import type { TabId } from './runtime';
 import type { AppState, PopupInitialState } from './state';
 
-type WithPayload<T extends WorkerMessageType, P extends {}> = { type: T; payload: P };
+export type WithPayload<T extends WorkerMessageType, P extends {}> = { type: T; payload: P };
 export type ClientEndpoint = 'popup' | 'contentscript' | 'background' | 'page' | 'notification' | 'dropdown' | 'web';
 
 export type WorkerMessageWithSender<T extends WorkerMessage = WorkerMessage> = T & {
@@ -43,9 +45,10 @@ export enum WorkerMessageType {
     ACCOUNT_FORK = 'fork',
     ACCOUNT_ONBOARDING = 'pass-onboarding',
     ACCOUNT_PROBE = 'pass-installed',
-    ACTIVITY_PROBE = 'ACTIVITY_PROBE',
     ALIAS_CREATE = 'ALIAS_CREATE',
     ALIAS_OPTIONS = 'ALIAS_OPTIONS',
+    AUTH_CHECK = 'AUTH_CHECK',
+    AUTH_CONFIRM_PASSWORD = 'AUTH_CONFIRM_PASSWORD',
     AUTH_INIT = 'AUTH_INIT',
     AUTH_UNLOCK = 'AUTH_UNLOCK',
     AUTOFILL_OTP_CHECK = 'AUTOFILL_OTP_CHECK',
@@ -55,7 +58,6 @@ export enum WorkerMessageType {
     AUTOFILL_SYNC = 'AUTOFILL_SYNC',
     AUTOSAVE_REQUEST = 'AUTOSAVE_REQUEST',
     DEBUG = 'DEBUG',
-    EXPORT_DECRYPT = 'EXPORT_DECRYPT',
     EXPORT_REQUEST = 'EXPORT_REQUEST',
     FEATURE_FLAGS_UPDATE = 'FEATURE_FLAGS_UPDATE',
     FETCH_ABORT = 'FETCH_ABORT',
@@ -63,6 +65,7 @@ export enum WorkerMessageType {
     FORM_ENTRY_REQUEST = 'FORM_ENTRY_REQUEST',
     FORM_ENTRY_STAGE = 'FORM_ENTRY_STAGE',
     FORM_ENTRY_STASH = 'FORM_ENTRY_STASH',
+    IMPORT_PREPARE = 'IMPORT_PREPARE',
     LOAD_CONTENT_SCRIPT = 'LOAD_CONTENT_SCRIPT',
     LOCALE_REQUEST = 'LOCALE_REQUEST',
     LOG_EVENT = 'LOG_EVENT',
@@ -98,9 +101,10 @@ export type AccountForkMessage = WithPayload<WorkerMessageType.ACCOUNT_FORK, For
 export type AccountPassOnboardingMessage = { type: WorkerMessageType.ACCOUNT_ONBOARDING };
 export type AccountProbeMessage = { type: WorkerMessageType.ACCOUNT_PROBE };
 
-export type ActivityProbeMessage = { type: WorkerMessageType.ACTIVITY_PROBE };
 export type AliasCreateMessage = WithPayload<WorkerMessageType.ALIAS_CREATE, { url: string; alias: AliasCreationDTO }>;
 export type AliasOptionsMessage = { type: WorkerMessageType.ALIAS_OPTIONS };
+export type AuthCheckMessage = WithPayload<WorkerMessageType.AUTH_CHECK, { immediate?: boolean }>;
+export type AuthConfirmPasswordMessage = WithPayload<WorkerMessageType.AUTH_CONFIRM_PASSWORD, { password: string }>;
 export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: AuthResumeOptions };
 export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, { pin: string }>;
 export type AutofillOTPCheckMessage = { type: WorkerMessageType.AUTOFILL_OTP_CHECK };
@@ -110,14 +114,14 @@ export type AutofillSelectMessage = WithPayload<WorkerMessageType.AUTOFILL_SELEC
 export type AutofillSyncMessage = WithPayload<WorkerMessageType.AUTOFILL_SYNC, AutofillResult>;
 export type AutoSaveRequestMessage = WithPayload<WorkerMessageType.AUTOSAVE_REQUEST, AutosavePayload>;
 export type DebugMessage = WithPayload<WorkerMessageType.DEBUG, { debug: string }>;
-export type ExportRequestMessage = WithPayload<WorkerMessageType.EXPORT_REQUEST, ExportRequestPayload>;
+export type ExportRequestMessage = WithPayload<WorkerMessageType.EXPORT_REQUEST, ExportOptions>;
 export type FeatureFlagsUpdateMessage = WithPayload<WorkerMessageType.FEATURE_FLAGS_UPDATE, FeatureFlagState>;
 export type FetchAbortMessage = WithPayload<WorkerMessageType.FETCH_ABORT, { requestUrl: string }>;
 export type FormEntryCommitMessage = WithPayload<WorkerMessageType.FORM_ENTRY_COMMIT, { reason: string }>;
 export type FormEntryRequestMessage = { type: WorkerMessageType.FORM_ENTRY_REQUEST };
 export type FormEntryStageMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STAGE, NewFormEntry & { reason: string }>;
 export type FormEntryStashMessage = WithPayload<WorkerMessageType.FORM_ENTRY_STASH, { reason: string }>;
-export type ImportDecryptMessage = WithPayload<WorkerMessageType.EXPORT_DECRYPT, { data: string; passphrase: string }>;
+export type ImportDecryptMessage = WithPayload<WorkerMessageType.IMPORT_PREPARE, ImportReaderPayload>;
 export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
 export type LocaleRequestMessage = { type: WorkerMessageType.LOCALE_REQUEST };
 export type LogEventMessage = WithPayload<WorkerMessageType.LOG_EVENT, { log: string }>;
@@ -150,9 +154,10 @@ export type WorkerMessage =
     | AccountForkMessage
     | AccountPassOnboardingMessage
     | AccountProbeMessage
-    | ActivityProbeMessage
     | AliasCreateMessage
     | AliasOptionsMessage
+    | AuthCheckMessage
+    | AuthConfirmPasswordMessage
     | AuthInitMessage
     | AuthUnlockMessage
     | AutofillOTPCheckMessage
@@ -201,23 +206,25 @@ export type WorkerMessage =
 export type MessageFailure = { type: 'error'; error: string; payload?: string };
 export type MessageSuccess<T> = T extends { [key: string]: any } ? T & { type: 'success' } : { type: 'success' };
 export type MaybeMessage<T> = MessageSuccess<T> | MessageFailure;
-export type Outcome<T = {}, F = {}> = ({ ok: true } & T) | ({ ok: false; error: MaybeNull<string> } & F);
+export type Result<T = {}, F = {}> = ({ ok: true } & T) | ({ ok: false; error: MaybeNull<string> } & F);
 
 type WorkerMessageResponseMap = {
     [WorkerMessageType.ACCOUNT_FORK]: { payload: ExtensionForkResultPayload };
-    [WorkerMessageType.ALIAS_CREATE]: Outcome;
-    [WorkerMessageType.ALIAS_OPTIONS]: Outcome<{ options: AliasOptions; needsUpgrade: boolean }>;
+    [WorkerMessageType.ALIAS_CREATE]: Result;
+    [WorkerMessageType.ALIAS_OPTIONS]: Result<{ options: AliasOptions; needsUpgrade: boolean }>;
+    [WorkerMessageType.AUTH_CHECK]: Result<{ status: SessionLockStatus }, {}>;
+    [WorkerMessageType.AUTH_CONFIRM_PASSWORD]: Result;
     [WorkerMessageType.AUTH_INIT]: AppState;
-    [WorkerMessageType.AUTH_UNLOCK]: Outcome<{}, { canRetry: boolean }>;
+    [WorkerMessageType.AUTH_UNLOCK]: Result<{}, { canRetry: boolean }>;
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & SelectedItem);
     [WorkerMessageType.AUTOFILL_PASSWORD_OPTIONS]: { options: GeneratePasswordOptions };
     [WorkerMessageType.AUTOFILL_QUERY]: AutofillResult;
     [WorkerMessageType.AUTOFILL_SELECT]: { username: string; password: string };
-    [WorkerMessageType.EXPORT_DECRYPT]: { data: string };
-    [WorkerMessageType.EXPORT_REQUEST]: { data: string };
+    [WorkerMessageType.EXPORT_REQUEST]: { file: TransferableFile };
     [WorkerMessageType.FORM_ENTRY_COMMIT]: { committed: Maybe<FormEntryPrompt> };
     [WorkerMessageType.FORM_ENTRY_REQUEST]: { submission: Maybe<WithAutoSavePromptOptions<FormEntry>> };
     [WorkerMessageType.FORM_ENTRY_STAGE]: { staged: FormEntry };
+    [WorkerMessageType.IMPORT_PREPARE]: { payload: ImportReaderPayload };
     [WorkerMessageType.LOCALE_REQUEST]: { locale: string };
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };
     [WorkerMessageType.ONBOARDING_REQUEST]: { message: MaybeNull<OnboardingMessage> };
