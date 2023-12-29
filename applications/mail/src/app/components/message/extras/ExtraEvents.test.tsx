@@ -1,7 +1,6 @@
 import { act, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { useCalendarUserSettings } from '@proton/components/hooks/useCalendarUserSettings';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
@@ -55,10 +54,6 @@ jest.mock('@proton/components/hooks/useSendIcs', () => {
         default: jest.fn(() => () => Promise.resolve(undefined)),
     };
 });
-jest.mock('@proton/components/hooks/useCalendarUserSettings', () => ({
-    ...jest.requireActual('@proton/components/hooks/useCalendarUserSettings'),
-    useCalendarUserSettings: jest.fn(),
-}));
 jest.mock('@proton/components/hooks/useGetVtimezonesMap');
 
 const nextYear = new Date().getFullYear() + 1;
@@ -340,8 +335,6 @@ describe('ICS widget', () => {
 
     beforeEach(() => {
         jest.spyOn(inviteApi, 'createCalendarEventFromInvitation');
-        // @ts-ignore
-        useCalendarUserSettings.mockReturnValue([{}, false]);
     });
 
     afterEach(clearAll);
@@ -1095,8 +1088,8 @@ END:VCALENDAR`;
             });
             await render(<ExtraEvents message={message} />, false);
 
-            expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument();
             await screen.findByText('Unsupported event');
+            expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument();
         });
 
         it('should show the correct UI for a supported ics with import PUBLISH', async () => {
@@ -1129,6 +1122,7 @@ END:VCALENDAR`;
 
             await render(<ExtraEvents message={message} />, false);
 
+            expect(await screen.findByText(/Add to Proton Calendar/)).toBeInTheDocument();
             expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument();
         });
 
