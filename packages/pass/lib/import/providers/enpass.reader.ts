@@ -1,10 +1,12 @@
 import { capitalize } from 'lodash';
+import { c } from 'ttag';
 
 import type { ItemImportIntent, Maybe, UnsafeItemExtraField } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
+import { isObject } from '@proton/pass/utils/object/is-object';
 
-import { ImportProviderError } from '../helpers/error';
+import { ImportProviderError, ImportReaderError } from '../helpers/error';
 import { getImportedVaultName, importCreditCardItem, importLoginItem, importNoteItem } from '../helpers/transformers';
 import type { ImportPayload, ImportVault } from '../types';
 import type { EnpassField, EnpassItem } from './enpass.types';
@@ -113,9 +115,16 @@ const processCreditCardItem = (item: EnpassItem<EnpassCategory.CREDIT_CARD>): It
     return [ccItem];
 };
 
+const validateEnpassData = (data: any): data is EnpassData =>
+    isObject(data) && 'items' in data && Array.isArray(data.items);
+
 export const readEnpassData = (data: string): ImportPayload => {
     try {
-        const result = JSON.parse(data) as EnpassData;
+        const result = JSON.parse(data);
+        const valid = validateEnpassData(result);
+
+        if (!valid) throw new ImportReaderError(c('Error').t`File does not match expected format`);
+
         const items = result.items.map((i) => i);
         const ignored: string[] = [];
 
