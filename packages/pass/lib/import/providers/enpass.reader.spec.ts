@@ -16,7 +16,10 @@ describe('Import bitwarden json', () => {
     });
 
     it('should throw on corrupted files', () => {
-        expect(() => readEnpassData('not-a-json-body')).toThrow();
+        expect(() => readEnpassData('not-a-json-body')).toThrow('Enpass file could not be parsed.');
+        expect(() => readEnpassData('{ "items": null }')).toThrow('File does not match expected format');
+        expect(() => readEnpassData('{ "items": {} }')).toThrow('File does not match expected format');
+        expect(() => readEnpassData('{}')).toThrow('File does not match expected format');
     });
 
     it('should correctly parse items', () => {
