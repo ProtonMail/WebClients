@@ -4,6 +4,7 @@ import { Provider as ReduxProvider } from 'react-redux';
 import { useNotifications } from '@proton/components/hooks';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { isDocumentVisible, useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
+import { authStore } from '@proton/pass/lib/auth/store';
 import { clientReady } from '@proton/pass/lib/client';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import {
@@ -18,7 +19,6 @@ import { AppStatus } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
 
-import { authStore } from '../../lib/core';
 import { deletePassDB, getDBCache, writeDBCache } from '../../lib/database';
 import { telemetry } from '../../lib/telemetry';
 import { useAuthService } from '../Context/AuthServiceProvider';
