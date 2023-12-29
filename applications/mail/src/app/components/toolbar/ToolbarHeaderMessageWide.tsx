@@ -48,6 +48,7 @@ const ToolbarHeaderMessageWide = ({
     loading = false,
     labelDropdownToggleRef,
     moveDropdownToggleRef,
+    onCheckAll,
 }: Props) => {
     const toolbarRef = useRef<HTMLDivElement>(null);
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
@@ -85,6 +86,7 @@ const ToolbarHeaderMessageWide = ({
                         breakpoints={breakpoints}
                         labelDropdownToggleRef={labelDropdownToggleRef}
                         moveDropdownToggleRef={moveDropdownToggleRef}
+                        onCheckAll={onCheckAll}
                     />
 
                     <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} />

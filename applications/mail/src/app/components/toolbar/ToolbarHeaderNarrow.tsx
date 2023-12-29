@@ -40,6 +40,7 @@ const ToolbarHeaderNarrow = ({
     onMove,
     selectedIDs,
     isSearch,
+    onCheckAll,
 }: Props) => {
     const toolbarRef = useRef<HTMLDivElement>(null);
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
@@ -59,9 +60,7 @@ const ToolbarHeaderNarrow = ({
                 aria-label={c('Label').t`Toolbar`}
                 ref={toolbarRef}
             >
-                <div
-                    className={clsx('flex items-center toolbar-inner gap-2', !selectedIDs.length && 'pl-2')}
-                >
+                <div className={clsx('flex items-center toolbar-inner gap-2', !selectedIDs.length && 'pl-2')}>
                     <LabelName selectedIDs={selectedIDs} labelName={labelName} />
 
                     <ReadUnreadButtons selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
@@ -83,6 +82,7 @@ const ToolbarHeaderNarrow = ({
                             breakpoints={breakpoints}
                             labelDropdownToggleRef={labelDropdownToggleRef}
                             moveDropdownToggleRef={moveDropdownToggleRef}
+                            onCheckAll={onCheckAll}
                         />
                     ) : null}
 
@@ -99,6 +99,7 @@ const ToolbarHeaderNarrow = ({
                         onMove={onMove}
                         onDelete={onDelete}
                         breakpoints={breakpoints}
+                        onCheckAll={onCheckAll}
                     />
 
                     <MoreActions selectedIDs={selectedIDs} />

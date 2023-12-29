@@ -48,7 +48,6 @@ const MailSearch = ({ breakpoints, labelID, location, columnMode }: Props) => {
     const { esStatus, cacheIndexedDB, closeDropdown, esIndexingProgressState } = useEncryptedSearchContext();
     const { dropdownOpened } = esStatus;
     const showEncryptedSearch = isEncryptedSearchAvailable(user, isESUserInterfaceAvailable);
-
     // Show more from inside AdvancedSearch to persist the state when the overlay is closed
     const { state: showMore, toggle: toggleShowMore } = useToggle(false);
 

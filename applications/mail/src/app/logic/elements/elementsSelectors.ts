@@ -48,7 +48,7 @@ const currentESDBStatus = (
     }
 ) => esStatus;
 const currentCounts = (_: RootState, { counts }: { counts: { counts: LabelCount[]; loading: boolean } }) => counts;
-const currentLabelID = (_: RootState, { labelID }: { labelID?: string }) => labelID;
+const currentLabelID = (_: RootState, { labelID }: { labelID: string }) => labelID;
 
 export const elements = createSelector(
     [elementsMap, params, page, pageSize, pages, bypassFilter],
@@ -326,6 +326,6 @@ export const stateInconsistency = createSelector(
         !beforeFirstLoad && !pendingRequest && retry.error === undefined && retry.count === 3 && !useES
 );
 
-export const showLabelTaskRunningBanner = createSelector([taskRunning], (taskRunning) => {
-    return taskRunning.labelIDs.length > 0;
+export const showLabelTaskRunningBanner = createSelector([taskRunning, currentLabelID], (taskRunning, labelID) => {
+    return taskRunning.labelIDs.includes(labelID);
 });

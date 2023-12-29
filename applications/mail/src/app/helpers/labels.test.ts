@@ -1,4 +1,6 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { Label } from '@proton/shared/lib/interfaces';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
 
 import { MessageWithOptionalBody } from '../logic/messages/messagesTypes';
 import { Conversation } from '../models/conversation';
@@ -7,6 +9,8 @@ import {
     applyLabelChangesOnMessage,
     applyLabelChangesOnOneMessageOfAConversation,
     canMoveAll,
+    getLabelNames,
+    getSortedChanges,
     shouldDisplayTotal,
 } from './labels';
 
@@ -158,6 +162,53 @@ describe('labels', () => {
 
         it('should be possible to move all', () => {
             expect(canMoveAll(SENT, TRASH, ['elementID'], [], false));
+        });
+    });
+
+    describe('getLabelNames', () => {
+        const folders: Folder[] = [
+            { ID: 'folder1', Name: 'Folder 1' } as Folder,
+            { ID: 'folder2', Name: 'Folder 2' } as Folder,
+        ];
+
+        const labels: Label[] = [
+            { ID: 'label1', Name: 'Label 1' } as Label,
+            { ID: 'label2', Name: 'Label 2' } as Label,
+        ];
+
+        it('should return undefined when no changes', () => {
+            expect(getLabelNames([], labels, folders)).toBeUndefined();
+        });
+
+        it('should return the expected name', () => {
+            expect(getLabelNames(['folder1'], labels, folders)).toEqual(['Folder 1']);
+            expect(getLabelNames(['label2'], labels, folders)).toEqual(['Label 2']);
+            expect(getLabelNames(['label2', 'label1'], labels, folders)).toEqual(['Label 2', 'Label 1']);
+        });
+    });
+
+    describe('getSortedChanges', () => {
+        it('should return the expected changes', () => {
+            const label1 = 'label1';
+            const label2 = 'label2';
+            const label3 = 'label3';
+
+            const changes1 = { [label1]: true };
+            const changes2 = { [label2]: false };
+            const changes3 = { [label2]: true, [label1]: false, [label3]: true };
+
+            const result1 = getSortedChanges(changes1);
+            const result2 = getSortedChanges(changes2);
+            const result3 = getSortedChanges(changes3);
+
+            expect(result1.toLabel).toEqual([label1]);
+            expect(result1.toUnlabel).toEqual([]);
+
+            expect(result2.toLabel).toEqual([]);
+            expect(result2.toUnlabel).toEqual([label2]);
+
+            expect(result3.toLabel).toEqual([label2, label3]);
+            expect(result3.toUnlabel).toEqual([label1]);
         });
     });
 });

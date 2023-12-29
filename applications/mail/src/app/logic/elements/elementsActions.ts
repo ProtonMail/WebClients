@@ -1,8 +1,16 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { moveAll as moveAllRequest, queryMessageMetadata } from '@proton/shared/lib/api/messages';
+import {
+    labelAll as labelAllRequest,
+    markAllMessagesAsRead,
+    markAllMessagesAsUnread,
+    moveAllBatch,
+    moveAll as moveAllRequest,
+    queryMessageMetadata,
+} from '@proton/shared/lib/api/messages';
 import { DEFAULT_MAIL_PAGE_SIZE, MAILBOX_LABEL_IDS, SECOND } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
 
@@ -199,19 +207,109 @@ export const pollTaskRunning = createAsyncThunk<TaskRunningInfo, undefined, AppT
 
 export const moveAll = createAsyncThunk<
     { LabelID: string; timeoutID: NodeJS.Timeout },
-    { SourceLabelID: string; DestinationLabelID: string },
+    { SourceLabelID: string; DestinationLabelID: string; selectAll?: boolean; rollback?: (() => void) | undefined },
     AppThunkExtra
->('elements/moveAll', async ({ SourceLabelID, DestinationLabelID }, { dispatch, getState, extra }) => {
-    // If we move all to trash, we don't want to keep labels attached to the elements
-    const isMoveToTrash = SourceLabelID === MAILBOX_LABEL_IDS.TRASH;
+>(
+    'elements/moveAll',
+    async ({ SourceLabelID, DestinationLabelID, selectAll, rollback }, { dispatch, getState, extra }) => {
+        // If we move all to trash, we don't want to keep labels attached to the elements
+        const isMoveToTrash = SourceLabelID === MAILBOX_LABEL_IDS.TRASH;
 
-    await extra.api(
-        moveAllRequest({
-            SourceLabelID,
-            DestinationLabelID,
-            KeepSourceLabel: isMoveToTrash ? 0 : 1,
-        })
-    );
+        if (selectAll) {
+            try {
+                await extra.api(
+                    moveAllBatch({
+                        SearchContext: {
+                            LabelID: SourceLabelID,
+                        },
+                        DestinationLabelID,
+                    })
+                );
+            } catch {
+                rollback?.();
+            } finally {
+                // Once the action is done, we can remove the pending action, and since we know what are the task running,
+                // there should be no elements loaded in the location for the time a task is running
+                dispatch(backendActionFinished());
+            }
+        } else {
+            await extra.api(
+                moveAllRequest({
+                    SourceLabelID,
+                    DestinationLabelID,
+                    KeepSourceLabel: isMoveToTrash ? 0 : 1,
+                })
+            );
+        }
+
+        const timeoutID = refreshTaskRunningTimeout([SourceLabelID], {
+            getState,
+            dispatch,
+        });
+
+        return {
+            LabelID: SourceLabelID,
+            timeoutID: timeoutID as NodeJS.Timeout,
+        };
+    }
+);
+
+export const markAll = createAsyncThunk<
+    { LabelID: string; timeoutID: NodeJS.Timeout },
+    { SourceLabelID: string; status: MARK_AS_STATUS; rollback?: () => void },
+    AppThunkExtra
+>('elements/markAll', async ({ SourceLabelID, status, rollback }, { dispatch, getState, extra }) => {
+    const action = status === MARK_AS_STATUS.READ ? markAllMessagesAsRead : markAllMessagesAsUnread;
+
+    try {
+        await extra.api(
+            action({
+                SearchContext: {
+                    LabelID: SourceLabelID,
+                },
+            })
+        );
+    } catch {
+        rollback?.();
+    } finally {
+        // Once the action is done, we can remove the pending action, and since we know what are the task running,
+        // there should be no elements loaded in the location for the time a task is running
+        dispatch(backendActionFinished());
+    }
+
+    const timeoutID = refreshTaskRunningTimeout([SourceLabelID], {
+        getState,
+        dispatch,
+    });
+
+    return {
+        LabelID: SourceLabelID,
+        timeoutID: timeoutID as NodeJS.Timeout,
+    };
+});
+
+export const labelAll = createAsyncThunk<
+    { LabelID: string; timeoutID: NodeJS.Timeout },
+    { SourceLabelID: string; toLabel: string[]; toUnlabel: string[]; rollback?: () => void },
+    AppThunkExtra
+>('elements/markAll', async ({ SourceLabelID, toLabel, toUnlabel, rollback }, { dispatch, getState, extra }) => {
+    try {
+        await extra.api(
+            labelAllRequest({
+                SearchContext: {
+                    LabelID: SourceLabelID,
+                },
+                AddLabelIDs: toLabel,
+                RemoveLabelIDs: toUnlabel,
+            })
+        );
+    } catch {
+        rollback?.();
+    } finally {
+        // Once the action is done, we can remove the pending action, and since we know what are the task running,
+        // there should be no elements loaded in the location for the time a task is running
+        dispatch(backendActionFinished());
+    }
 
     const timeoutID = refreshTaskRunningTimeout([SourceLabelID], {
         getState,
