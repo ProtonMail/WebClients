@@ -36,7 +36,9 @@ export const PinLockSetting: VFC = () => {
     const handleSessionLockToggle = async () =>
         sessionLockRegistered
             ? confirmPin({
-                  onSubmit: (pin) => disableLock.dispatch({ pin }),
+                  onSubmit: (pin) => {
+                      disableLock.dispatch({ pin });
+                  },
                   assistiveText: c('Info').t`Please confirm your PIN code in order to unregister your current lock.
                         ${PASS_APP_NAME} will then never lock.`,
               })

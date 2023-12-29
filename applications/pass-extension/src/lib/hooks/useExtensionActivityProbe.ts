@@ -7,7 +7,8 @@ export const useExtensionActivityProbe = (messageFactory: MessageWithSenderFacto
     useActivityProbe(() =>
         sendMessage(
             messageFactory({
-                type: WorkerMessageType.ACTIVITY_PROBE,
+                type: WorkerMessageType.AUTH_CHECK,
+                payload: { immediate: false },
             })
         ).catch(noop)
     );
