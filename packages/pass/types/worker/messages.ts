@@ -13,7 +13,7 @@ import type { TransferableFile } from '@proton/pass/utils/file/transferable-file
 import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/sessionForking';
 import type { User } from '@proton/shared/lib/interfaces';
 
-import type { ShareEventPayload } from '../api';
+import type { SessionLockStatus, ShareEventPayload } from '../api';
 import type { ForkPayload } from '../api/fork';
 import type { AliasCreationDTO, SelectedItem } from '../data';
 import type { TelemetryEvent } from '../data/telemetry';
@@ -45,9 +45,10 @@ export enum WorkerMessageType {
     ACCOUNT_FORK = 'fork',
     ACCOUNT_ONBOARDING = 'pass-onboarding',
     ACCOUNT_PROBE = 'pass-installed',
-    ACTIVITY_PROBE = 'ACTIVITY_PROBE',
     ALIAS_CREATE = 'ALIAS_CREATE',
     ALIAS_OPTIONS = 'ALIAS_OPTIONS',
+    AUTH_CHECK = 'AUTH_CHECK',
+    AUTH_CONFIRM_PASSWORD = 'AUTH_CONFIRM_PASSWORD',
     AUTH_INIT = 'AUTH_INIT',
     AUTH_UNLOCK = 'AUTH_UNLOCK',
     AUTOFILL_OTP_CHECK = 'AUTOFILL_OTP_CHECK',
@@ -100,9 +101,10 @@ export type AccountForkMessage = WithPayload<WorkerMessageType.ACCOUNT_FORK, For
 export type AccountPassOnboardingMessage = { type: WorkerMessageType.ACCOUNT_ONBOARDING };
 export type AccountProbeMessage = { type: WorkerMessageType.ACCOUNT_PROBE };
 
-export type ActivityProbeMessage = { type: WorkerMessageType.ACTIVITY_PROBE };
 export type AliasCreateMessage = WithPayload<WorkerMessageType.ALIAS_CREATE, { url: string; alias: AliasCreationDTO }>;
 export type AliasOptionsMessage = { type: WorkerMessageType.ALIAS_OPTIONS };
+export type AuthCheckMessage = WithPayload<WorkerMessageType.AUTH_CHECK, { immediate?: boolean }>;
+export type AuthConfirmPasswordMessage = WithPayload<WorkerMessageType.AUTH_CONFIRM_PASSWORD, { password: string }>;
 export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: AuthResumeOptions };
 export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, { pin: string }>;
 export type AutofillOTPCheckMessage = { type: WorkerMessageType.AUTOFILL_OTP_CHECK };
@@ -152,9 +154,10 @@ export type WorkerMessage =
     | AccountForkMessage
     | AccountPassOnboardingMessage
     | AccountProbeMessage
-    | ActivityProbeMessage
     | AliasCreateMessage
     | AliasOptionsMessage
+    | AuthCheckMessage
+    | AuthConfirmPasswordMessage
     | AuthInitMessage
     | AuthUnlockMessage
     | AutofillOTPCheckMessage
@@ -203,14 +206,16 @@ export type WorkerMessage =
 export type MessageFailure = { type: 'error'; error: string; payload?: string };
 export type MessageSuccess<T> = T extends { [key: string]: any } ? T & { type: 'success' } : { type: 'success' };
 export type MaybeMessage<T> = MessageSuccess<T> | MessageFailure;
-export type Outcome<T = {}, F = {}> = ({ ok: true } & T) | ({ ok: false; error: MaybeNull<string> } & F);
+export type Result<T = {}, F = {}> = ({ ok: true } & T) | ({ ok: false; error: MaybeNull<string> } & F);
 
 type WorkerMessageResponseMap = {
     [WorkerMessageType.ACCOUNT_FORK]: { payload: ExtensionForkResultPayload };
-    [WorkerMessageType.ALIAS_CREATE]: Outcome;
-    [WorkerMessageType.ALIAS_OPTIONS]: Outcome<{ options: AliasOptions; needsUpgrade: boolean }>;
+    [WorkerMessageType.ALIAS_CREATE]: Result;
+    [WorkerMessageType.ALIAS_OPTIONS]: Result<{ options: AliasOptions; needsUpgrade: boolean }>;
+    [WorkerMessageType.AUTH_CHECK]: Result<{ status: SessionLockStatus }, {}>;
+    [WorkerMessageType.AUTH_CONFIRM_PASSWORD]: Result;
     [WorkerMessageType.AUTH_INIT]: AppState;
-    [WorkerMessageType.AUTH_UNLOCK]: Outcome<{}, { canRetry: boolean }>;
+    [WorkerMessageType.AUTH_UNLOCK]: Result<{}, { canRetry: boolean }>;
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & SelectedItem);
     [WorkerMessageType.AUTOFILL_PASSWORD_OPTIONS]: { options: GeneratePasswordOptions };
     [WorkerMessageType.AUTOFILL_QUERY]: AutofillResult;
