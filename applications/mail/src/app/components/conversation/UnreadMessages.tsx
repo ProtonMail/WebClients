@@ -1,56 +1,25 @@
-import { useEffect, useState } from 'react';
-
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { getNUnreadMessagesText } from 'proton-mail/helpers/text';
-
-import { isUnread } from '../../helpers/elements';
-
 interface Props {
-    conversationID: string;
-    messages?: Message[];
+    messagesIDs?: string[];
     onClick: (messageID: string) => void;
 }
 
-const UnreadMessages = ({ conversationID, messages, onClick }: Props) => {
-    const [count, setCount] = useState(0);
-    const [initials, setInitials] = useState(messages);
-
-    const newUnreads = () => {
-        if (initials === undefined || messages === undefined) {
-            return [];
-        }
-
-        const initialsIDs = initials.map((message) => message.ID);
-        return messages
-            .filter((message) => !initialsIDs.includes(message.ID))
-            .filter((message) => isUnread(message, undefined));
-    };
-
-    // Reset initials if conversation changed
-    useEffect(() => {
-        setInitials(messages);
-    }, [conversationID]);
-
-    // Reset initials if messages are loaded
-    useEffect(() => {
-        if (initials === undefined && Array.isArray(messages)) {
-            setInitials(messages);
-        }
-    }, [messages]);
-
-    // Update unreads count
-    useEffect(() => setCount(newUnreads().length)); // No deps not to miss unread change status on newUnreads
-
-    if (count === 0) {
+const UnreadMessages = ({ messagesIDs, onClick }: Props) => {
+    const unreadCount = messagesIDs?.length || 0;
+    if (unreadCount === 0) {
         return null;
     }
 
-    const handleClick = () => onClick(newUnreads()[0].ID);
+    const handleClick = () => {
+        if (messagesIDs) {
+            onClick(messagesIDs[0]);
+        }
+    };
 
-    const text = getNUnreadMessagesText(count);
+    const text = getNUnreadMessagesText(unreadCount);
 
     return (
         <span className="absolute inset-x-center bottom-0 pb-4" aria-live="assertive" aria-atomic="true">
