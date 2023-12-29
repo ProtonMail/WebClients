@@ -1,8 +1,10 @@
 import { c } from 'ttag';
 
+import { EventComponentIdentifiers } from '@proton/shared/lib/calendar/icsSurgery/interface';
+
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, ICAL_METHODS_ATTENDEE } from '../constants';
 
-export enum EVENT_INVITATION_ERROR_TYPE {
+export enum INVITATION_ERROR_TYPE {
     INVITATION_INVALID,
     INVITATION_UNSUPPORTED,
     INVALID_METHOD,
@@ -17,6 +19,32 @@ export enum EVENT_INVITATION_ERROR_TYPE {
     CANCELLATION_ERROR,
     UNEXPECTED_ERROR,
     EXTERNAL_ERROR,
+}
+
+export enum EVENT_INVITATION_ERROR_TYPE {
+    NON_GREGORIAN,
+    INVALID_METHOD,
+    NO_VEVENT,
+    MISSING_ORIGINAL_UID,
+    MISSING_ORGANIZER,
+    MISSING_ORIGINAL_ORGANIZER,
+    MISSING_ATTENDEE,
+    DUPLICATE_ATTENDEES,
+    UNEXPECTED_FLOATING_TIME,
+    X_WR_TIMEZONE_UNSUPPORTED,
+    TZID_UNSUPPORTED,
+    DTSTART_MISSING,
+    ALLDAY_INCONSISTENCY,
+    DTSTART_MALFORMED,
+    DTSTART_OUT_OF_BOUNDS,
+    DTEND_MALFORMED,
+    DTEND_OUT_OF_BOUNDS,
+    RRULE_MALFORMED,
+    RRULE_UNSUPPORTED,
+    SINGLE_EDIT_UNSUPPORTED,
+    NO_OCCURRENCES,
+    EXTERNAL_ERROR,
+    VALIDATION_ERROR,
 }
 
 const {
@@ -34,9 +62,9 @@ const {
     CANCELLATION_ERROR,
     UNEXPECTED_ERROR,
     EXTERNAL_ERROR,
-} = EVENT_INVITATION_ERROR_TYPE;
+} = INVITATION_ERROR_TYPE;
 
-export const getErrorMessage = (errorType: EVENT_INVITATION_ERROR_TYPE, config?: EventInvitationErrorConfig) => {
+export const getErrorMessage = (errorType: INVITATION_ERROR_TYPE, config?: EventInvitationErrorConfig) => {
     const isUnknown = !config?.method;
     const isImport = config?.method === ICAL_METHOD.PUBLISH;
     const isResponse = config?.method && ICAL_METHODS_ATTENDEE.includes(config?.method);
@@ -111,6 +139,9 @@ export const getErrorMessage = (errorType: EVENT_INVITATION_ERROR_TYPE, config?:
 };
 
 interface EventInvitationErrorConfig {
+    hashedIcs?: string;
+    componentIdentifiers?: EventComponentIdentifiers;
+    extendedType?: EVENT_INVITATION_ERROR_TYPE;
     externalError?: Error;
     partstat?: ICAL_ATTENDEE_STATUS;
     timestamp?: number;
@@ -120,7 +151,15 @@ interface EventInvitationErrorConfig {
 }
 
 export class EventInvitationError extends Error {
-    type: EVENT_INVITATION_ERROR_TYPE;
+    type: INVITATION_ERROR_TYPE;
+
+    hashedIcs: string;
+
+    componentIdentifiers?: EventComponentIdentifiers;
+
+    extendedType?: EVENT_INVITATION_ERROR_TYPE;
+
+    method?: ICAL_METHOD;
 
     partstat?: ICAL_ATTENDEE_STATUS;
 
@@ -130,18 +169,19 @@ export class EventInvitationError extends Error {
 
     externalError?: Error;
 
-    method?: ICAL_METHOD;
-
     originalUniqueIdentifier?: string;
 
-    constructor(errorType: EVENT_INVITATION_ERROR_TYPE, config?: EventInvitationErrorConfig) {
+    constructor(errorType: INVITATION_ERROR_TYPE, config?: EventInvitationErrorConfig) {
         super(getErrorMessage(errorType, config));
         this.type = errorType;
+        this.hashedIcs = config?.hashedIcs || '';
+        this.componentIdentifiers = config?.componentIdentifiers;
+        this.extendedType = config?.extendedType;
+        this.method = config?.method;
         this.partstat = config?.partstat;
         this.timestamp = config?.timestamp;
         this.isProtonInvite = config?.isProtonInvite;
         this.externalError = config?.externalError;
-        this.method = config?.method;
         this.originalUniqueIdentifier = config?.originalUniqueIdentifier;
         Object.setPrototypeOf(this, EventInvitationError.prototype);
     }
@@ -149,6 +189,9 @@ export class EventInvitationError extends Error {
     getConfig() {
         return {
             type: this.type,
+            hashedIcs: this.hashedIcs,
+            extendedType: this.extendedType,
+            componentIdentifiers: this.componentIdentifiers,
             partstat: this.partstat,
             timestamp: this.timestamp,
             isProtonInvite: this.isProtonInvite,

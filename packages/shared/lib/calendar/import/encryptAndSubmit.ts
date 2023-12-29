@@ -20,6 +20,7 @@ import { getCreationKeys } from '../crypto/keys/helpers';
 import { getIsSuccessSyncApiResponse } from '../helper';
 import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../icsSurgery/ImportEventError';
 import { createCalendarEvent } from '../serialize';
+import { prodId } from '../vcalConfig';
 import { getComponentIdentifier, splitErrors } from './import';
 
 const BATCH_SIZE = 10;
@@ -49,7 +50,10 @@ const encryptEvent = async ({
         }
         return { data, component: eventComponent };
     } catch (error: any) {
-        return new ImportEventError(IMPORT_EVENT_ERROR_TYPE.ENCRYPTION_ERROR, 'vevent', componentId);
+        return new ImportEventError({
+            errorType: IMPORT_EVENT_ERROR_TYPE.ENCRYPTION_ERROR,
+            componentIdentifiers: { component: 'vevent', componentId, prodId, domain: 'proton.me' },
+        });
     }
 };
 
@@ -101,7 +105,11 @@ const processResponses = (responses: SyncMultipleApiResponses[], events: Encrypt
         const error = new Error(errorMessage);
         const component = events[Index]?.component;
         const componentId = component ? getComponentIdentifier(component) : '';
-        return new ImportEventError(IMPORT_EVENT_ERROR_TYPE.EXTERNAL_ERROR, 'vevent', componentId, error);
+        return new ImportEventError({
+            errorType: IMPORT_EVENT_ERROR_TYPE.EXTERNAL_ERROR,
+            componentIdentifiers: { component: 'vevent', componentId, prodId, domain: 'proton.me' },
+            externalError: error,
+        });
     });
 };
 

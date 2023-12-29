@@ -10,8 +10,8 @@ import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelpe
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import {
-    EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
+    INVITATION_ERROR_TYPE,
     getErrorMessage,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { getAttendeePartstat, getAttendeeToken } from '@proton/shared/lib/calendar/vcalHelper';
@@ -30,7 +30,7 @@ import { InvitationModel, UPDATE_ACTION, getDisableButtons } from '../../../../h
 import useInviteButtons from '../../../../hooks/useInviteButtons';
 import { MessageState } from '../../../../logic/messages/messagesTypes';
 
-const { EVENT_CREATION_ERROR, EVENT_UPDATE_ERROR } = EVENT_INVITATION_ERROR_TYPE;
+const { EVENT_CREATION_ERROR, EVENT_UPDATE_ERROR } = INVITATION_ERROR_TYPE;
 
 interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
@@ -125,7 +125,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message, reloadWidget }: P
     const handleUnexpectedError = () => {
         setModel({
             ...model,
-            error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_ERROR),
+            error: new EventInvitationError(INVITATION_ERROR_TYPE.UNEXPECTED_ERROR),
         });
     };
     const handleCreateEventError = (partstat: ICAL_ATTENDEE_STATUS, isProtonInvite: boolean, error?: any) => {
@@ -134,14 +134,14 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message, reloadWidget }: P
             type: 'error',
             text: errorMessage,
         });
-        if (error instanceof EventInvitationError && error.type === EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_ERROR) {
+        if (error instanceof EventInvitationError && error.type === INVITATION_ERROR_TYPE.UNEXPECTED_ERROR) {
             handleUnexpectedError();
             return;
         }
         setModel({
             ...model,
             hideLink: true,
-            error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.EVENT_CREATION_ERROR, {
+            error: new EventInvitationError(INVITATION_ERROR_TYPE.EVENT_CREATION_ERROR, {
                 partstat,
                 isProtonInvite,
             }),
@@ -158,14 +158,14 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message, reloadWidget }: P
             type: 'error',
             text: errorMessage,
         });
-        if (error instanceof EventInvitationError && error.type === EVENT_INVITATION_ERROR_TYPE.UNEXPECTED_ERROR) {
+        if (error instanceof EventInvitationError && error.type === INVITATION_ERROR_TYPE.UNEXPECTED_ERROR) {
             handleUnexpectedError();
             return;
         }
         setModel({
             ...model,
             hideLink: true,
-            error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.EVENT_UPDATE_ERROR, {
+            error: new EventInvitationError(INVITATION_ERROR_TYPE.EVENT_UPDATE_ERROR, {
                 partstat,
                 timestamp,
                 isProtonInvite,
