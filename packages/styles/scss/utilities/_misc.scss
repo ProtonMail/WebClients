@@ -1,12 +1,4 @@
-@use "sass:map";
-
-.row--orderable {
-	z-index: map.get($z-indexes, 'modals');
-
-	/* In case the modal is open */
-	background: var(--background-norm);
-	color: var(--text-norm);
-}
+@use 'sass:map';
 
 /*
  * Welcome boxes in a 2 column design
