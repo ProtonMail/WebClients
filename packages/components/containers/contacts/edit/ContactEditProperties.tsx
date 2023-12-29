@@ -218,7 +218,7 @@ const ContactEditProperties = (
                 <span className="text-semibold ml-5 pl-1 mb-2">{c('Info').t`Primary`}</span>
             )}
             {sortable ? (
-                <OrderableContainer helperClass="row--orderable" onSortEnd={handleSortEnd} useDragHandle>
+                <OrderableContainer helperClass="z-modals bg-norm color-norm" onSortEnd={handleSortEnd} useDragHandle>
                     <div className="mt-2">
                         {rows.map((row, index) => (
                             <OrderableElement key={row.key || `row${index}`} index={index}>
