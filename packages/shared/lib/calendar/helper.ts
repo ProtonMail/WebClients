@@ -109,6 +109,21 @@ export const getIsProtonUID = (uid = '') => {
     return uid.endsWith('@proton.me') || uid.startsWith('proton-calendar-');
 };
 
+/**
+ * Try to naively guess the domain of a provider from the uid.
+ * This helper only works when the uid is of the form `${randomString}@${domain}`
+ */
+export const getNaiveDomainFromUID = (uid = '') => {
+    const parts = uid.split('@');
+    const numberOfParts = parts.length;
+
+    if (numberOfParts <= 1) {
+        return '';
+    }
+
+    return parts[numberOfParts - 1];
+};
+
 export const getDisplayTitle = (title = '') => {
     return title.trim() || c('Event title').t`(no title)`;
 };

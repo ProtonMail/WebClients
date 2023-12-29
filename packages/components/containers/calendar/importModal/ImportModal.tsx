@@ -7,12 +7,14 @@ import useFlag from '@proton/components/containers/unleash/useFlag';
 import { updateMember } from '@proton/shared/lib/api/calendars';
 import { getProbablyActiveCalendars, getWritableCalendars } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_METHOD, IMPORT_ERROR_TYPE, MAX_IMPORT_FILE_SIZE } from '@proton/shared/lib/calendar/constants';
+import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
 import { ImportFatalError } from '@proton/shared/lib/calendar/import/ImportFatalError';
 import { ImportFileError } from '@proton/shared/lib/calendar/import/ImportFileError';
 import {
     extractTotals,
-    getSupportedEvents,
+    getSupportedEventsOrErrors,
     parseIcs,
+    sendImportErrorTelemetryReport,
     splitErrors,
     splitHiddenErrors,
 } from '@proton/shared/lib/calendar/import/import';
@@ -123,7 +125,6 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
             const handleSelectCalendar = (calendar: VisualCalendar) => {
                 setModel({ ...model, calendar });
             };
-
             const handleSubmit = async () => {
                 const { fileAttached } = model;
                 if (!fileAttached) {
@@ -133,20 +134,33 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
                     const canImportEventColor = isColorPerEventEnabled && hasPaidMail;
 
                     setModel({ ...model, loading: true });
-                    const [{ PrimaryTimezone: primaryTimezone }, { components, calscale, xWrTimezone, method }] =
-                        await Promise.all([getCalendarUserSettings(), parseIcs(fileAttached)]);
+                    const [
+                        { PrimaryTimezone: primaryTimezone },
+                        { components, prodId, calscale, xWrTimezone, method, hashedIcs },
+                    ] = await Promise.all([getCalendarUserSettings(), parseIcs(fileAttached)]);
                     const { errors, rest: parsed } = splitErrors(
-                        await getSupportedEvents({
+                        await getSupportedEventsOrErrors({
                             components,
                             method,
+                            prodId,
                             calscale,
                             xWrTimezone,
                             primaryTimezone,
                             canImportEventColor,
                         })
                     );
+                    // ignore time zone errors
+                    const nonIgnoredErrors = errors.filter(
+                        (error) =>
+                            error instanceof ImportEventError && error.type !== IMPORT_EVENT_ERROR_TYPE.TIMEZONE_IGNORE
+                    );
+                    sendImportErrorTelemetryReport({
+                        errors: nonIgnoredErrors,
+                        api,
+                        hash: hashedIcs,
+                    });
 
-                    const { hidden: hiddenErrors, visible: visibleErrors } = splitHiddenErrors(errors);
+                    const { hidden: hiddenErrors, visible: visibleErrors } = splitHiddenErrors(nonIgnoredErrors);
 
                     const totalToImport = parsed.length + hiddenErrors.length;
                     const totalErrors = visibleErrors.length;
@@ -162,6 +176,7 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
                     setModel({
                         ...model,
                         method,
+                        hashedIcs,
                         step,
                         eventsParsed: parsed,
                         visibleErrors,
@@ -268,8 +283,20 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
                 await Promise.all(calls);
             };
 
+            const handleSingleEditErrors = async (errors: ImportEventError[]) => {
+                // send errors detected at this stage for events with recurrence-id
+                void sendImportErrorTelemetryReport({ errors, api, hash: `${model.hashedIcs}-single-edits` });
+            };
+
             return {
-                content: <ImportingModalContent model={model} setModel={setModel} onFinish={handleFinish} />,
+                content: (
+                    <ImportingModalContent
+                        model={model}
+                        setModel={setModel}
+                        onFinish={handleFinish}
+                        onSingleEditErrors={handleSingleEditErrors}
+                    />
+                ),
                 submit,
                 onSubmit: noop,
             };

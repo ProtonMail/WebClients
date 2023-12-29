@@ -15,8 +15,8 @@ import {
 } from '@proton/components';
 import useFlag from '@proton/components/containers/unleash/useFlag';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
-import { WorkerDecryptionResult } from '@proton/crypto';
-import { arrayToBinaryString, decodeUtf8 } from '@proton/crypto/lib/utils';
+import { CryptoProxy, WorkerDecryptionResult } from '@proton/crypto';
+import { arrayToBinaryString, arrayToHexString, decodeUtf8 } from '@proton/crypto/lib/utils';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import {
@@ -29,8 +29,11 @@ import { ICAL_MIME_TYPE } from '@proton/shared/lib/calendar/constants';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
+    INVITATION_ERROR_TYPE,
+    cloneEventInvitationErrorWithConfig,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { getIsVcalErrorComponent, getVcalendarHasNoErrorComponents } from '@proton/shared/lib/calendar/vcalHelper';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
     VcalErrorComponent,
     VcalVcalendarWithMaybeErrors,
@@ -171,6 +174,7 @@ const ExtraEvents = ({ message }: Props) => {
                     const invitations = (
                         await Promise.all(
                             sortedEventAttachments.map(async (attachment: Attachment) => {
+                                let hashedIcs = '';
                                 try {
                                     const messageKeys = await getMessageKeys(message.data);
                                     const download = await formatDownload(
@@ -183,9 +187,21 @@ const ExtraEvents = ({ message }: Props) => {
                                         message.data.Flags
                                     );
                                     if (download.isError) {
-                                        return new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.DECRYPTION_ERROR);
+                                        return new EventInvitationError(INVITATION_ERROR_TYPE.DECRYPTION_ERROR);
                                     }
                                     const icsBinaryString = arrayToBinaryString(download.data);
+                                    hashedIcs = await CryptoProxy.computeHash({
+                                        algorithm: 'unsafeSHA1',
+                                        data: download.data,
+                                    })
+                                        .then((result) => arrayToHexString(result))
+                                        .catch((error: any) => {
+                                            captureMessage('Failed to hash ics', {
+                                                level: 'info',
+                                                extra: { error },
+                                            });
+                                            return 'failed_to_hash';
+                                        });
                                     const parsedVcalendar = parseVcalendar(
                                         decodeUtf8(icsBinaryString)
                                     ) as VcalVcalendarWithMaybeErrors;
@@ -197,10 +213,17 @@ const ExtraEvents = ({ message }: Props) => {
                                             (component): component is VcalErrorComponent =>
                                                 getIsVcalErrorComponent(component)
                                         )!.error;
-                                        return new EventInvitationError(
-                                            EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID,
-                                            { externalError }
-                                        );
+                                        return new EventInvitationError(INVITATION_ERROR_TYPE.INVITATION_INVALID, {
+                                            hashedIcs,
+                                            externalError,
+                                            componentIdentifiers: {
+                                                component: 'vcalendar',
+                                                componentId: '',
+                                                prodId: parsedVcalendar.prodid?.value,
+                                                domain: '',
+                                            },
+                                            extendedType: EVENT_INVITATION_ERROR_TYPE.VALIDATION_ERROR,
+                                        });
                                     }
                                     const { PrimaryTimezone: primaryTimezone } = await getCalendarUserSettings();
                                     const supportedEventInvitation = await getSupportedEventInvitation({
@@ -214,10 +237,21 @@ const ExtraEvents = ({ message }: Props) => {
                                     return supportedEventInvitation;
                                 } catch (error: any) {
                                     if (error instanceof EventInvitationError) {
-                                        return error;
+                                        return cloneEventInvitationErrorWithConfig(error, {
+                                            ...error.getConfig(),
+                                            hashedIcs,
+                                        });
                                     }
-                                    return new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, {
+                                    return new EventInvitationError(INVITATION_ERROR_TYPE.INVITATION_INVALID, {
+                                        hashedIcs,
                                         externalError: error,
+                                        componentIdentifiers: {
+                                            component: 'unknown',
+                                            componentId: '',
+                                            prodId: '',
+                                            domain: '',
+                                        },
+                                        extendedType: EVENT_INVITATION_ERROR_TYPE.EXTERNAL_ERROR,
                                     });
                                 }
                             })

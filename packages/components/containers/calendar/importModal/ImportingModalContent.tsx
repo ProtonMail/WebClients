@@ -34,8 +34,9 @@ interface Props {
     model: ImportCalendarModel;
     setModel: Dispatch<SetStateAction<ImportCalendarModel>>;
     onFinish: (result: ImportedEvent[]) => void;
+    onSingleEditErrors: (errors: ImportEventError[]) => void;
 }
-const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
+const ImportingModalContent = ({ model, setModel, onFinish, onSingleEditErrors }: Props) => {
     const api = useApi();
     const getCalendarInfo = useGetCalendarInfo();
 
@@ -102,6 +103,7 @@ const ImportingModalContent = ({ model, setModel, onFinish }: Props) => {
                 });
                 const { errors, rest: supportedEventsWithRecurrenceID } = splitErrors(formattedEventsWithRecurrenceId);
                 handleImportProgress([], [], errors);
+                onSingleEditErrors(errors);
 
                 const { importedEvents: recurrenceImportedEvents } = await processWithJails({
                     ...processData,

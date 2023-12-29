@@ -3,7 +3,7 @@ import {
     getMillisecondsFromTriggerString,
     getVeventWithoutErrors,
     parse,
-    parseWithRecoveryAndMaybeErrors,
+    parseVcalendarWithRecoveryAndMaybeErrors,
     serialize,
 } from '../../lib/calendar/vcal';
 import { DAY, HOUR, MINUTE, SECOND, WEEK } from '../../lib/constants';
@@ -1046,7 +1046,9 @@ END:VEVENT`;
     });
 
     it('should filter out invalid vAlarm', () => {
-        const parsed = parseWithRecoveryAndMaybeErrors(veventWithInvalidVAlarm) as VcalVeventComponentWithMaybeErrors;
+        const parsed = parseVcalendarWithRecoveryAndMaybeErrors(
+            veventWithInvalidVAlarm
+        ) as VcalVeventComponentWithMaybeErrors;
         expect(getVeventWithoutErrors(parsed)).toEqual({
             component: 'vevent',
             components: [],
@@ -1080,7 +1082,17 @@ END:VEVENT`;
     });
 });
 
-describe('parseWithRecoveryAndMaybeErrors', () => {
+describe('parseVcalendarWithRecoveryAndMaybeErrors', () => {
+    it('should add missing mandatory properties', () => {
+        const ics = `BEGIN:VCALENDAR
+END:VCALENDAR`;
+        const result = parseVcalendarWithRecoveryAndMaybeErrors(ics) as VcalVcalendarWithMaybeErrors;
+
+        expect(result.component).toEqual('vcalendar');
+        expect(result.version.value).toEqual('2.0');
+        expect(result.prodid.value).toEqual('');
+    });
+
     it('should catch errors from badly formatted all-day dates (with recovery for those off)', () => {
         const ics = `BEGIN:VCALENDAR
 BEGIN:VEVENT
@@ -1089,7 +1101,9 @@ DTSTAMP:20200405T143241Z
 DTSTART:20200309
 END:VEVENT
 END:VCALENDAR`;
-        const result = parseWithRecoveryAndMaybeErrors(ics, { retryDateTimes: false }) as VcalVcalendarWithMaybeErrors;
+        const result = parseVcalendarWithRecoveryAndMaybeErrors(ics, {
+            retryDateTimes: false,
+        }) as VcalVcalendarWithMaybeErrors;
 
         expect(result.component).toEqual('vcalendar');
         expect((result.components as VcalErrorComponent[])[0].error).toMatch('invalid date-time value');
@@ -1111,7 +1125,9 @@ DTSTAMP:2023-06-13T212500Z
 END:VEVENT
 END:VCALENDAR`;
 
-        const result = parseWithRecoveryAndMaybeErrors(ics, { retryDateTimes: false }) as VcalVcalendarWithMaybeErrors;
+        const result = parseVcalendarWithRecoveryAndMaybeErrors(ics, {
+            retryDateTimes: false,
+        }) as VcalVcalendarWithMaybeErrors;
 
         expect(result.component).toEqual('vcalendar');
         expect((result.components as VcalErrorComponent[])[0].error).toMatch('invalid date-time value');
@@ -1133,7 +1149,9 @@ DTSTAMP:20230613T212500Z
 END:VEVENT
 END:VCALENDAR`;
 
-        const result = parseWithRecoveryAndMaybeErrors(ics, { retryDateTimes: false }) as VcalVcalendarWithMaybeErrors;
+        const result = parseVcalendarWithRecoveryAndMaybeErrors(ics, {
+            retryDateTimes: false,
+        }) as VcalVcalendarWithMaybeErrors;
 
         expect(result.component).toEqual('vcalendar');
         expect((result.components as VcalErrorComponent[])[0].error).toMatch('could not extract integer');
