@@ -11,9 +11,11 @@ import { UpsellRef } from '@proton/pass/constants';
 import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
+import { api } from '@proton/pass/lib/api/api';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
 import { isValidPersistedSession } from '@proton/pass/lib/auth/session';
-import { clientReady } from '@proton/pass/lib/client';
+import { authStore } from '@proton/pass/lib/auth/store';
+import { clientReady, isTaggedBuild } from '@proton/pass/lib/client';
 import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { getUpgradePath, isEOY } from '@proton/pass/lib/onboarding/upselling';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
@@ -32,7 +34,6 @@ import { APPS, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import noop from '@proton/utils/noop';
 
-import { api, authStore, isTaggedBuild } from '../../lib/core';
 import { deletePassDB } from '../../lib/database';
 import { onboarding } from '../../lib/onboarding';
 import { telemetry } from '../../lib/telemetry';
@@ -67,7 +68,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
     const sw = useServiceWorker();
     const client = useClientRef();
     const history = useHistory();
-    const { SSO_URL } = usePassConfig();
+    const config = usePassConfig();
     const { createNotification } = useNotifications();
 
     const matchConsumeFork = useRouteMatch(SSO_PATHS.FORK);
@@ -107,7 +108,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
                  * we are likely dealing with an app-switch request from another client.
                  * In this case, redirect to account through a fork request */
                 if (!loggedIn && client.current.state.status !== AppStatus.LOCKED && pathLocalID !== undefined) {
-                    authService.requestFork({ app: APPS.PROTONPASS, host: SSO_URL });
+                    authService.requestFork({ app: APPS.PROTONPASS, host: config.SSO_URL });
                 }
 
                 return loggedIn;
@@ -147,7 +148,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
             onForkConsumed: async ({ UID, AccessToken, LocalID }, state) => {
                 removeHashParameters();
 
-                if (isTaggedBuild()) {
+                if (isTaggedBuild(config)) {
                     const { plan } = await getUserAccess(withAuthHeaders(UID, AccessToken, {}));
                     if (plan.Type !== PlanType.plus || Boolean(plan.TrialEnd)) {
                         setUpgradeState({ upgrade: true, LocalID });
