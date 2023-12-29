@@ -20,6 +20,7 @@ import { itemsImportRequest } from '@proton/pass/store/actions/requests';
 import type { MaybeNull } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
 import { SettingsPanel } from './SettingsPanel';
 import { getItemsText } from './helper';
@@ -154,9 +155,12 @@ export const Import: FC = () => {
                             </div>
                         )}
 
-                        <div className="mt-2">
-                            {c('Info').t`To review your imported data, click on the Pass icon in your browser toolbar.`}
-                        </div>
+                        {!isElectronApp && (
+                            <div className="mt-2">
+                                {c('Info')
+                                    .t`To review your imported data, click on the Pass icon in your browser toolbar.`}
+                            </div>
+                        )}
                     </div>
                 </SettingsPanel>
             )}
