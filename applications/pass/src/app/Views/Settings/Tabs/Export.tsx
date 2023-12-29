@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Exporter } from '@proton/pass/components/Export/Exporter';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import { SessionLockStatus } from '@proton/pass/types';
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { throwError } from '@proton/pass/utils/fp/throw';
 
 import { useAuthService } from '../../../Context/AuthServiceProvider';
 
@@ -15,11 +15,12 @@ export const Export: FC = () => {
     return (
         <SettingsPanel title={c('Label').t`Export`}>
             <Exporter
-                assert={async () => {
-                    const lock = await authService.checkLock();
-                    if (lock.status === SessionLockStatus.LOCKED) {
-                        throw Error(c('Error').t`Your ${PASS_APP_NAME} session is locked`);
-                    }
+                onConfirm={async (password) => {
+                    const { status } = await authService.checkLock();
+                    if (status === SessionLockStatus.LOCKED) throwError({ message: 'Session is locked' });
+
+                    const check = await authService.confirmPassword(password);
+                    if (!check) throwError({ message: 'Session not confirmed' });
                 }}
             />
         </SettingsPanel>
