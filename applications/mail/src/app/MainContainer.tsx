@@ -12,6 +12,8 @@ import {
 } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 
+import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider';
+
 import { MAIN_ROUTE_PATH } from './constants';
 import ComposerContainer from './containers/ComposerContainer';
 import EncryptedSearchProvider from './containers/EncryptedSearchProvider';
@@ -74,15 +76,17 @@ const MainContainer = () => {
                         <MailContentRefProvider mailContentRef={mailContentRef}>
                             <ChecklistsProvider>
                                 <ComposerContainer breakpoints={breakpoints}>
-                                    <ModalsChildren />
-                                    <Switch>
-                                        <Route
-                                            path={MAIN_ROUTE_PATH}
-                                            render={() => (
-                                                <PageContainer ref={mailContentRef} breakpoints={breakpoints} />
-                                            )}
-                                        />
-                                    </Switch>
+                                    <CheckAllRefProvider>
+                                        <ModalsChildren />
+                                        <Switch>
+                                            <Route
+                                                path={MAIN_ROUTE_PATH}
+                                                render={() => (
+                                                    <PageContainer ref={mailContentRef} breakpoints={breakpoints} />
+                                                )}
+                                            />
+                                        </Switch>
+                                    </CheckAllRefProvider>
                                 </ComposerContainer>
                             </ChecklistsProvider>
                         </MailContentRefProvider>

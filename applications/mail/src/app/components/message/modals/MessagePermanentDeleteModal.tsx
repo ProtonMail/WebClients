@@ -4,7 +4,11 @@ import { Button } from '@proton/atoms';
 import { ErrorButton, ModalProps, Prompt, useApi, useEventManager, useNotifications } from '@proton/components';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 
-import { getDeleteTitle, getModalText, getNotificationText } from '../../../hooks/actions/usePermanentDelete';
+import {
+    getDeleteTitle,
+    getModalText,
+    getNotificationText,
+} from '../../../hooks/actions/delete/usePermanentDeleteSelection';
 import { MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
 
 interface Props extends ModalProps {

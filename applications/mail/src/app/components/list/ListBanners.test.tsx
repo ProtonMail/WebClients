@@ -19,6 +19,7 @@ const baseProps = {
         isSearch: false,
         showESSlowToolbar: false,
     },
+    selectedCount: 0,
 };
 
 describe('ListBanners', () => {
@@ -125,7 +126,7 @@ describe('ListBanners', () => {
         it('should display task running banner', async () => {
             mockUseSelector(true);
             render(<ListBanners {...baseProps} />);
-            expect(screen.getByText(/Moving messages. This may take a while./i)).toBeInTheDocument();
+            expect(screen.getByText(/Message actions in progress. This may take a while./i)).toBeInTheDocument();
         });
     });
 

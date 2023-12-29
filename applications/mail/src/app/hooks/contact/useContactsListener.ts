@@ -66,15 +66,19 @@ export const useContactsListener = () => {
         dispatch(resetVerification(emails));
     };
 
-    useEffect(
-        () =>
-            subscribe(({ Contacts = [] }: Event) => {
-                for (const { Contact } of Contacts) {
-                    void processContactUpdate(Contact, publicKeys, globalCache, handleResetMessageForEmails);
-                }
-            }),
-        [publicKeys]
-    );
+    useEffect(() => {
+        const unsubscribe = subscribe(({ Contacts = [] }: Event) => {
+            for (const { Contact } of Contacts) {
+                void processContactUpdate(Contact, publicKeys, globalCache, handleResetMessageForEmails);
+            }
+        });
+
+        return () => {
+            if (unsubscribe) {
+                unsubscribe();
+            }
+        };
+    }, [publicKeys]);
 
     useEffect(() => {
         dispatch(refresh({ contacts, contactGroups }));

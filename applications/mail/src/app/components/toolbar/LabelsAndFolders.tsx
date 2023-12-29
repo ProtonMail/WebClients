@@ -7,6 +7,7 @@ import { Breakpoints, DropdownSizeUnit, Icon } from '@proton/components';
 
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import LabelDropdown, { labelDropdownContentProps } from '../dropdown/LabelDropdown';
 import MoveDropdown, { moveDropdownContentProps } from '../dropdown/MoveDropdown';
@@ -18,6 +19,7 @@ interface Props {
     breakpoints: Breakpoints;
     labelDropdownToggleRef: Ref<() => void>;
     moveDropdownToggleRef: Ref<() => void>;
+    onCheckAll?: (check: boolean) => void;
 }
 
 const LabelsAndFolders = ({
@@ -26,8 +28,10 @@ const LabelsAndFolders = ({
     breakpoints,
     labelDropdownToggleRef,
     moveDropdownToggleRef,
+    onCheckAll,
 }: Props) => {
     const mailSettings = useMailModel('MailSettings');
+    const { selectAll } = useSelectAll({ labelID });
 
     if (!selectedIDs.length) {
         return null;
@@ -78,6 +82,8 @@ const LabelsAndFolders = ({
                             onLock={onLock}
                             breakpoints={breakpoints}
                             isMessage={!isConversationMode(labelID, mailSettings)}
+                            selectAll={selectAll}
+                            onCheckAll={onCheckAll}
                         />
                     ),
                 }}
@@ -103,6 +109,8 @@ const LabelsAndFolders = ({
                             onClose={onClose}
                             onLock={onLock}
                             breakpoints={breakpoints}
+                            selectAll={selectAll}
+                            onCheckAll={onCheckAll}
                         />
                     ),
                 }}
