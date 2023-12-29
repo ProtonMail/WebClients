@@ -12,7 +12,7 @@ export default {
 
 export const Columns = () => (
     <div className="w-1/2 self-center">
-        <ul className="list-columns md:column-2">
+        <ul className="columns-1 md:columns-2">
             <li>This is</li>
             <li>just</li>
             <li>one</li>
