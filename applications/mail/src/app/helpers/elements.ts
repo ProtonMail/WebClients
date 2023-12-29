@@ -209,3 +209,17 @@ export const getFirstSenderAddress = (element: Element) => {
     const { Address = '' } = sender || {};
     return Address;
 };
+
+export const getLocationElementsCount = (
+    labelID: string,
+    conversationsCount: LabelCount[],
+    messagesCount: LabelCount[],
+    conversationMode: boolean
+) => {
+    if (conversationMode && conversationsCount && conversationsCount.length > 0) {
+        return conversationsCount.find((conversationCount) => labelID === conversationCount.LabelID)?.Total || 0;
+    } else if (messagesCount && messagesCount.length > 0) {
+        return messagesCount.find((messageCount) => labelID === messageCount.LabelID)?.Total || 0;
+    }
+    return 0;
+};

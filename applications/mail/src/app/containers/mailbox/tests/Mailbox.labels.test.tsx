@@ -2,7 +2,7 @@ import { Matcher, fireEvent } from '@testing-library/react';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import { DEFAULT_MAILSETTINGS, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { addApiMock, clearAll, waitForSpyCall } from '../../../helpers/test/helper';
 import { Element } from '../../../models/element';
@@ -303,7 +303,7 @@ describe('Mailbox labels actions', () => {
             });
 
             const { getByTestId, getAllByTestId, getItems } = await setup({
-                mailSettings: { ViewMode: VIEW_MODE.SINGLE } as MailSettings,
+                mailSettings: { ...DEFAULT_MAILSETTINGS, ViewMode: VIEW_MODE.SINGLE } as MailSettings,
                 messages: trashedMessages,
                 labelID: MAILBOX_LABEL_IDS.TRASH,
             });

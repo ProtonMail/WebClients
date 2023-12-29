@@ -44,7 +44,7 @@ import {
     load,
 } from '../../logic/messages/read/messagesReadActions';
 import { useAppDispatch } from '../../logic/store';
-import { useMarkAs } from '../actions/useMarkAs';
+import { useMarkAs } from '../actions/markAs/useMarkAs';
 import { useGetAttachment } from '../attachments/useAttachment';
 import { useBase64Cache } from '../useBase64Cache';
 import { useGetMessageKeys } from './useGetMessageKeys';
@@ -53,7 +53,7 @@ import { useGetMessage } from './useMessage';
 
 export const useInitializeMessage = () => {
     const api = useApi();
-    const markAs = useMarkAs();
+    const { markAs } = useMarkAs();
     const dispatch = useAppDispatch();
     const getMessage = useGetMessage();
     const getMessageKeys = useGetMessageKeys();
@@ -138,7 +138,11 @@ export const useInitializeMessage = () => {
             }
 
             if (isUnreadMessage(getData())) {
-                markAs([getData()], labelID, MARK_AS_STATUS.READ);
+                void markAs({
+                    elements: [getData()],
+                    labelID,
+                    status: MARK_AS_STATUS.READ,
+                });
                 dataChanges = { ...dataChanges, Unread: 0 };
             }
 

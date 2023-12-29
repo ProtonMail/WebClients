@@ -1,0 +1,15 @@
+.selection-pane {
+	> * {
+		display: inline;
+	}
+
+	span:last-child {
+		display: inline-block;
+		max-inline-size: 100%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		margin-inline-start: var(--space-1);
+		vertical-align: bottom;
+	}
+}

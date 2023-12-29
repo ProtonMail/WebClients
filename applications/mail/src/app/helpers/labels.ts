@@ -159,6 +159,14 @@ export const getLabelName = (labelID: string, labels: Label[] = [], folders: Fol
     return labelID;
 };
 
+export const getLabelNames = (changes: string[], labels: Label[], folders: Folder[]) => {
+    if (!changes || changes.length === 0) {
+        return;
+    }
+
+    return changes.map((ID) => getLabelName(ID, labels, folders));
+};
+
 export const getCurrentFolders = (
     element: Element | undefined,
     labelID: string,
@@ -366,5 +374,22 @@ export const canMoveAll = (
         elementIDs.length > 0 &&
         selectedIDs.length === 0 &&
         !isSearch
+    );
+};
+
+export const getSortedChanges = (changes: {
+    [labelID: string]: boolean;
+}): { toLabel: string[]; toUnlabel: string[] } => {
+    return Object.keys(changes).reduce<{ toLabel: string[]; toUnlabel: string[] }>(
+        (acc, labelID) => {
+            if (changes[labelID]) {
+                acc.toLabel.push(labelID);
+            } else {
+                acc.toUnlabel.push(labelID);
+            }
+
+            return acc;
+        },
+        { toLabel: [], toUnlabel: [] }
     );
 };

@@ -10,8 +10,8 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
 import { isMessage, isStarred as testIsStarred, isUnread as testIsUnread } from '../../helpers/elements';
-import { useMarkAs } from '../../hooks/actions/useMarkAs';
-import { useMoveToFolder } from '../../hooks/actions/useMoveToFolder';
+import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
+import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { useStar } from '../../hooks/actions/useStar';
 import { selectSnoozeDropdownState, selectSnoozeElement } from '../../logic/snooze/snoozeSliceSelectors';
 import { useAppSelector } from '../../logic/store';
@@ -40,7 +40,7 @@ const ItemHoverButtons = ({
     hasStar = true,
     size = 'medium',
 }: Props) => {
-    const markAs = useMarkAs();
+    const { markAs } = useMarkAs();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal } = useMoveToFolder();
     const star = useStar();
     const snoozedElement = useAppSelector(selectSnoozeElement);
@@ -56,17 +56,31 @@ const ItemHoverButtons = ({
         if (element.ID === elementID && !isUnread) {
             onBack();
         }
-        markAs([element], labelID, isUnread ? READ : UNREAD);
+        markAs({
+            elements: [element],
+            labelID,
+            status: isUnread ? READ : UNREAD,
+        });
     };
 
     const handleArchive = (event: MouseEvent) => {
         event.stopPropagation();
-        void moveToFolder([element], ARCHIVE, c('Title').t`Archive`, labelID, false);
+        void moveToFolder({
+            elements: [element],
+            folderID: ARCHIVE,
+            folderName: c('Title').t`Archive`,
+            fromLabelID: labelID,
+        });
     };
 
     const handleTrash = (event: MouseEvent) => {
         event.stopPropagation();
-        void moveToFolder([element], TRASH, c('Title').t`Trash`, labelID, false);
+        void moveToFolder({
+            elements: [element],
+            folderID: TRASH,
+            folderName: c('Title').t`Trash`,
+            fromLabelID: labelID,
+        });
     };
 
     const handleStar = (event: MouseEvent) => {
