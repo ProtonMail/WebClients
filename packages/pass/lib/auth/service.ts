@@ -11,7 +11,9 @@ import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { revoke } from '@proton/shared/lib/api/auth';
 import { getApiError, getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { queryUnlock } from '@proton/shared/lib/api/user';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { srpAuth } from '@proton/shared/lib/srp';
 import noop from '@proton/utils/noop';
 
 import { type RefreshSessionData } from '../api/refresh';
@@ -416,10 +418,13 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
                         return await authService.login(session);
                     } catch (error: unknown) {
-                        const reason =
-                            error instanceof Error ? ` (${getApiErrorMessage(error) ?? error?.message})` : '';
-                        logger.warn(`[AuthService] Resuming session failed ${reason}`);
-                        config.onNotification?.({ text: c('Warning').t`Your session could not be resumed.` + reason });
+                        if (error instanceof Error) {
+                            const reason = ` (${getApiErrorMessage(error) ?? error?.message})`;
+                            logger.warn(`[AuthService] Resuming session failed ${reason}`);
+                            config.onNotification?.({
+                                text: c('Warning').t`Your session could not be resumed.` + reason,
+                            });
+                        }
 
                         /* if session is inactive : trigger unauthorized sequence */
                         if (api.getState().sessionInactive) await authService.logout({ soft: true, broadcast: true });
@@ -435,6 +440,17 @@ export const createAuthService = (config: AuthServiceConfig) => {
                 })
             )
         ),
+
+        confirmPassword: (password: string): Promise<boolean> =>
+            srpAuth({ api, credentials: { password }, config: { ...queryUnlock(), silence: true } })
+                .then(() => true)
+                .catch((error) => {
+                    if (error instanceof Error) {
+                        config.onNotification?.({ text: getApiErrorMessage(error) ?? error?.message });
+                    }
+
+                    return false;
+                }),
     };
 
     return authService;

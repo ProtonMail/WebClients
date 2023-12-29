@@ -10,6 +10,7 @@ import type { AutoSaveService } from '../services/autosave';
 import type { ExportService } from '../services/export';
 import type { FormTrackerService } from '../services/form.tracker';
 import type { I18NService } from '../services/i18n';
+import type { ImportService } from '../services/import';
 import type { InjectionService } from '../services/injection';
 import type { LoggerService } from '../services/logger';
 import type { OnboardingService } from '../services/onboarding';
@@ -37,6 +38,7 @@ export interface WorkerContextInterface {
         export: ExportService;
         formTracker: FormTrackerService;
         i18n: I18NService;
+        import: ImportService;
         injection: InjectionService;
         logger: LoggerService;
         onboarding: OnboardingService;

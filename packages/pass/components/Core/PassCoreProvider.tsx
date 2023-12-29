@@ -4,6 +4,8 @@ import { createContext, useContext, useMemo } from 'react';
 import { ConfigProvider } from '@proton/components/containers/config';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { UsePeriodOtpCodeOptions } from '@proton/pass/hooks/usePeriodicOtpCode';
+import type { ExportOptions } from '@proton/pass/lib/export/types';
+import type { ImportReaderPayload } from '@proton/pass/lib/import/types';
 import type { ClientEndpoint, Maybe, MaybeNull, OnboardingMessage } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 
@@ -11,6 +13,8 @@ export type PassCoreContextValue = {
     endpoint: ClientEndpoint;
     /** client configuration */
     config: PassConfig;
+    /** Resolves a users */
+    exportData: (options: ExportOptions) => Promise<File>;
     /** In the extension: leverage worker communication to generate
      * a token. In the web-app: use the OTP utils in-place */
     generateOTP: UsePeriodOtpCodeOptions['generate'];
@@ -32,6 +36,9 @@ export type PassCoreContextValue = {
     onForceUpdate?: () => void;
     /** Open the settings view at a particular page */
     openSettings?: (page?: string) => void;
+    /** This allows processing an import reader payload before feeding
+     * it to the import readers. Used to process encrypted import files. */
+    prepareImport: (payload: ImportReaderPayload) => Promise<ImportReaderPayload>;
     /** Prompts for client specific permissions */
     promptForPermissions?: () => void;
 };
