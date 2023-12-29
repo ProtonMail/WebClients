@@ -84,7 +84,7 @@ describe('Import 1password 1pif', () => {
                 fieldName: 'one-time password',
                 type: 'totp',
                 data: {
-                    totpUri: 'otpauth://totp/az?secret=QQ&algorithm=SHA1&digits=6&period=30',
+                    totpUri: 'otpauth://totp/az?secret=QS&algorithm=SHA1&digits=6&period=30',
                 },
             },
         ]);
