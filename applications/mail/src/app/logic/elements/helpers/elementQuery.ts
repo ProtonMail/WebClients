@@ -11,7 +11,7 @@ import { RootState } from '../../store';
 import { pollTaskRunning } from '../elementsActions';
 import { ElementsStateParams, QueryParams, QueryResults, RetryData } from '../elementsTypes';
 
-export const TASK_RUNNING_POLLING_INTERVAL = 2000;
+export const TASK_RUNNING_POLLING_INTERVAL = 10000;
 
 const PAGE_FETCH_COUNT = 2;
 

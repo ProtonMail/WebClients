@@ -6,6 +6,7 @@ import { UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { isAllowedAutoDeleteLabelID } from 'proton-mail/helpers/autoDelete';
+import { RootState } from 'proton-mail/logic/store';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import useShowUpsellBanner from '../../hooks/useShowUpsellBanner';
@@ -45,14 +46,16 @@ const ListBanners = ({
     esState: { isESLoading, showESSlowToolbar: canDisplayESSlowToolbar },
 }: Props) => {
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
-    // Override compactness of the list view to accomodate body preview when showing encrypted search results
+    // Override compactness of the list view to accommodate body preview when showing encrypted search results
     const { contentIndexingDone, esEnabled } = esStatus;
     const shouldOverrideCompactness = shouldHighlight() && contentIndexingDone && esEnabled;
     const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldOverrideCompactness;
 
     const bannerType = useAutoDeleteBanner(labelID);
 
-    const canDisplayTaskRunningBanner = useSelector(showLabelTaskRunningBanner);
+    const canDisplayTaskRunningBanner = useSelector((state: RootState) =>
+        showLabelTaskRunningBanner(state, { labelID })
+    );
     const { canDisplayUpsellBanner, needToShowUpsellBanner, handleDismissBanner } = useShowUpsellBanner(labelID);
 
     /**
@@ -94,18 +97,9 @@ const ListBanners = ({
         },
         {
             id: 'task-running',
-            banner: () => (
-                <TaskRunningBanner
-                    key="task-running"
-                    className={clsx([
-                        !canDisplayESSlowToolbar && 'mt-3',
-                        columnLayout ? 'mb-0' : 'my-3',
-                        isCompactView && 'mb-3',
-                    ])}
-                />
-            ),
+            banner: () => <TaskRunningBanner key="task-running" />,
             condition: () => canDisplayTaskRunningBanner,
-            canWith: ['es-slow'],
+            canWith: ['es-slow', 'almost-all-mail', 'mail-upsell', 'auto-delete'],
         },
         {
             id: 'auto-delete',

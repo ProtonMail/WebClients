@@ -5,6 +5,8 @@ import { Icon, useModalState, useSpotlightShow } from '@proton/components/compon
 import { FeatureCode } from '@proton/components/containers';
 import { useSpotlightOnFeature } from '@proton/components/hooks';
 
+import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
+
 import useSnooze from '../../../../hooks/actions/useSnooze';
 import ToolbarDropdown, { DropdownRenderProps } from '../../../toolbar/ToolbarDropdown';
 import SnoozeSpotlight from '../components/SnoozeSpotlight';
@@ -18,8 +20,10 @@ interface Props {
     selectedIDs: string[];
 }
 
-const SnoozeToolbarDropdown = ({ selectedIDs }: Props) => {
+const SnoozeToolbarDropdown = ({ selectedIDs, labelID }: Props) => {
     const { canSnooze, canUnsnooze, isSnoozeEnabled } = useSnooze();
+    const { selectAll } = useSelectAll({ labelID });
+
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
     const { show: showSpotlight, onDisplayed, onClose } = useSpotlightOnFeature(FeatureCode.SpotlightSnooze, canSnooze);
     const show = useSpotlightShow(showSpotlight);
@@ -35,7 +39,7 @@ const SnoozeToolbarDropdown = ({ selectedIDs }: Props) => {
         <>
             <Vr />
             <ToolbarDropdown
-                disabled={!selectedIDs || !selectedIDs.length}
+                disabled={!selectedIDs || !selectedIDs.length || selectAll}
                 content={
                     <SnoozeSpotlight show={show} onDisplayed={onDisplayed} onClose={onClose}>
                         <Icon className="toolbar-icon flex" name="clock" alt={c('Title').t`Snooze`} />

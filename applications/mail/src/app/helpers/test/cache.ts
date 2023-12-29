@@ -1,7 +1,7 @@
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
-import { Address, DecryptedKey, Key } from '@proton/shared/lib/interfaces';
-import { SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
+import { Address, DecryptedKey, Key, MailSettings } from '@proton/shared/lib/interfaces';
+import { DEFAULT_MAILSETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { ResolvedRequest, addToCache, clearCache, mockCache, resolvedRequest } from '@proton/testing';
 
 import { Base64Cache } from '../../hooks/useBase64Cache';
@@ -28,7 +28,11 @@ export const minimalCache = () => {
     addToCache('User', { UsedSpace: 10, MaxSpace: 100, Flags: {} });
     addToCache('Addresses', []);
     // Enable hotkeys to trigger composer save easily
-    addToCache('MailSettings', { Shortcuts: SHORTCUTS.ENABLED });
+    addToCache('MailSettings', {
+        ...DEFAULT_MAILSETTINGS,
+        PMSignature: PM_SIGNATURE.ENABLED,
+        DelaySendSeconds: DELAY_IN_SECONDS.NONE,
+    } as MailSettings);
     addToCache('UserSettings', { Flags: {} });
     addToCache('ContactEmails', []);
     addToCache('Labels', []);
