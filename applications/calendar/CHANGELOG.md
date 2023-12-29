@@ -1,3 +1,9 @@
+## Release 5.0.19 — Jan 10th, 2024
+
+### Improvements
+
+-   Small improvements in the import flow
+
 ## Release 5.0.18 — Dec 18th, 2023
 
 ### New features
