@@ -16,6 +16,7 @@ import {
 import { INITIAL_SETTINGS } from '@proton/pass/store/reducers/settings';
 import { AppStatus } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import noop from '@proton/utils/noop';
 
 import { authStore } from '../../lib/core';
 import { deletePassDB, getDBCache, writeDBCache } from '../../lib/database';
@@ -47,7 +48,7 @@ export const StoreProvider: FC = ({ children }) => {
                 onBoot: (res) => {
                     if (res.ok) {
                         client.current.setStatus(AppStatus.READY);
-                        telemetry.start();
+                        telemetry.start().catch(noop);
                         store.dispatch(draftsGarbageCollect());
                         store.dispatch(passwordHistoryGarbageCollect());
                         if (isDocumentVisible()) store.dispatch(startEventPolling());

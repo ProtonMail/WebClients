@@ -5,7 +5,7 @@ export type ExportedItem<T extends ItemType = ItemType> = Omit<
     'revision' | 'revisionTime' | 'lastUseTime'
 >;
 
-export type ExportPayload = {
+export type ExportData = {
     version: string;
     encrypted: boolean;
     userId?: string;
@@ -16,4 +16,5 @@ export type ExportPayload = {
     };
 };
 
-export type ExportRequestPayload = { encrypted: true; passphrase: string } | { encrypted: false };
+export type ExportOptions = { encrypted: true; passphrase: string } | { encrypted: false };
+export type ExportFormValues = { encrypted: boolean; passphrase: string };

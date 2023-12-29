@@ -39,6 +39,7 @@ import createStore from '@proton/shared/lib/helpers/store';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
+import { createImportService } from '../services/import';
 import { WorkerContext } from './context';
 
 export const createWorkerContext = (config: ProtonConfig) => {
@@ -73,6 +74,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             export: createExportService(),
             formTracker: createFormTrackerService(),
             i18n: createI18nService(),
+            import: createImportService(),
             injection: createInjectionService(),
             logger: createLoggerService(),
             onboarding: createOnboardingService(storage.local),
