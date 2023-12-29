@@ -1,0 +1,26 @@
+$header-height: 52;
+
+@import '~@proton/pass/styles/common';
+@import '~@proton/styles/scss/lib/config';
+
+.app-root {
+	background-color: var(--background-norm);
+}
+
+:not(input, textarea),
+:not(input, textarea)::after,
+:not(input, textarea)::before {
+	user-select: none;
+}
+
+.is-electron-windows {
+	.logo-container {
+		display: none;
+	}
+}
+
+.is-electron-mac {
+	.logo-container > * {
+		display: none;
+	}
+}
