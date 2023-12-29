@@ -103,6 +103,13 @@ export const escapeURLinStyle = (style: string) => {
     // background:&#117;rl(&quot;https://i.imgur.com/WScAnHr.jpg&quot;)
 
     const unescapedEncoding = recurringUnescapeCSSEncoding(style);
+
+    // If we cancelled the unescape encoding step because it was too long, we are returning an empty string.
+    // In that case we also need to return an empty string in this function, otherwise we will not escape correctly the content
+    if (unescapedEncoding === '') {
+        return '';
+    }
+
     const escapeFlag = unescapedEncoding !== style;
 
     const escapedStyle = unescapedEncoding.replace(/\\r/g, 'r').replace(REGEXP_URL_ATTR, 'proton-$2(');
