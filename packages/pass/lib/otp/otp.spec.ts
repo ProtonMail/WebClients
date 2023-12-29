@@ -1,9 +1,14 @@
 import { getOTPSecret, getSecretOrUri, hasDefaultOTPOptions, parseOTPValue } from './otp';
+import { B32_ALPHABET } from './patch';
 
 const toOtpUri = (secret: string) =>
     `otpauth://totp/Proton%20Pass?secret=${secret.split(' ').join('')}&algorithm=SHA1&digits=6&period=30`;
 
 describe('otp parser', () => {
+    test('should parse one character secrets using PatchedSecret', () => {
+        B32_ALPHABET.split('').forEach((secret) => expect(parseOTPValue(secret)).toEqual(toOtpUri(secret)));
+    });
+
     test('should parse raw base32 secrets', () => {
         [
             'NMC2NUFEYUEBIT4U',
