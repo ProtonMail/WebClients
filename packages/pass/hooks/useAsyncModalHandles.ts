@@ -1,30 +1,25 @@
-/**
- * FIXME: split the responsibilities into 2 separate
- * building blocks that consumers can compose :
- * 1. a component for handling the modal
- * 2. a hook for handling the async resolver
- */
 import { useCallback, useMemo, useRef, useState } from 'react';
 
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import type { MaybePromise } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 export class AsyncModalAbortedError extends Error {}
 
 type ModalState<T> = T & Omit<ModalProps, 'onSubmit'>;
-type HookOptions<T> = { getInitialModalState: () => T };
+type HookOptions<T> = { getInitialModalState?: () => T };
 export type UseAsyncModalHandle<V, T> = (options: UseAsyncModalHandlerOptions<V, T>) => Promise<void>;
 
 type UseAsyncModalHandlerOptions<V, T> = Partial<T> & {
-    onError?: (error: unknown) => any | Promise<any>;
-    onAbort?: () => any | Promise<any>;
-    onSubmit: (value: V) => any | Promise<any>;
+    onError?: (error: unknown) => MaybePromise<void>;
+    onAbort?: () => MaybePromise<void>;
+    onSubmit: (value: V) => MaybePromise<void>;
 };
 
-export const useAsyncModalHandles = <V, T>({ getInitialModalState }: HookOptions<T>) => {
+export const useAsyncModalHandles = <V, T = {}>(options?: HookOptions<T>) => {
     const getInitialState = useCallback(
-        (): ModalState<T> => ({ ...getInitialModalState(), open: false, disabled: false }),
-        [getInitialModalState]
+        (): ModalState<T> => ({ ...(options?.getInitialModalState?.() ?? ({} as T)), open: false, disabled: false }),
+        [options?.getInitialModalState]
     );
     const [state, setState] = useState<ModalState<T>>(getInitialState());
 
@@ -50,14 +45,11 @@ export const useAsyncModalHandles = <V, T>({ getInitialModalState }: HookOptions
 
                 setState((state) => ({ ...state, disabled: true }));
                 await onSubmit(value);
-            } catch (e) {
+            } catch (error) {
                 setState((state) => ({ ...state, disabled: false }));
 
-                if (e instanceof AsyncModalAbortedError) {
-                    await onAbort?.();
-                } else {
-                    await onError?.(e);
-                }
+                if (error instanceof AsyncModalAbortedError) await onAbort?.();
+                else await onError?.(error);
             } finally {
                 setState({ ...getInitialState(), ...modalOptions });
             }
