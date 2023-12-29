@@ -41,23 +41,24 @@ export const createRandomKey = async (): Promise<DecryptedKey> => {
 
 export function randomAddress(): Address {
     return {
+        CatchAll: false,
         ConfirmationState: AddressConfirmationState.CONFIRMATION_CONFIRMED,
         DisplayName: '',
         DomainID: '',
         Email: '',
         HasKeys: 0,
+        ID: '345',
         Keys: [],
         Order: 0,
+        Permissions: 7,
         Priority: 0,
+        ProtonMX: true,
         Receive: 0,
         Send: 0,
         Signature: '',
         SignedKeyList: null,
         Status: 0,
         Type: ADDRESS_TYPE.TYPE_ORIGINAL,
-        ID: '345',
-        ProtonMX: true,
-        CatchAll: false,
     };
 }
 
