@@ -1,5 +1,4 @@
-import { generateTOTPCode } from '@proton/pass/lib/otp/generate';
-import { parseOTPValue } from '@proton/pass/lib/otp/otp';
+import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { selectAutofillCandidates, selectItemByShareIdAndId } from '@proton/pass/store/selectors';
 import type { OtpRequest, WorkerMessageResponse } from '@proton/pass/types';
 import { type OtpCode, WorkerMessageType } from '@proton/pass/types';
@@ -36,7 +35,7 @@ export const createOTPService = () => {
                         : extraField?.type === 'totp' && extraField.data.totpUri;
 
                 if (totpUri) {
-                    const otp = generateTOTPCode(parseOTPValue(deobfuscate(totpUri)));
+                    const otp = generateTOTPCode(deobfuscate(totpUri));
                     if (otp) return otp;
                 }
             }

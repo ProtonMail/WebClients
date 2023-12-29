@@ -114,7 +114,7 @@ describe('Import 1password 1pux', () => {
         expect(deobfuscate(loginItemSingleTOTP.content.username)).toEqual('');
         expect(deobfuscate(loginItemSingleTOTP.content.password)).toEqual('');
         expect(deobfuscate(loginItemSingleTOTP.content.totpUri)).toEqual(
-            'otpauth://totp/az?secret=QQ&algorithm=SHA1&digits=6&period=30'
+            'otpauth://totp/az?secret=QS&algorithm=SHA1&digits=6&period=30'
         );
         expect(loginItemSingleTOTP.content.urls).toEqual([]);
         expect(loginItemSingleTOTP.trashed).toEqual(false);
