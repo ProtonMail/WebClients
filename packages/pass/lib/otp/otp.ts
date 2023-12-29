@@ -38,7 +38,21 @@ export const parseOTPFromURI = (totpUri: string, options: OTPOptions): TOTP => {
         const urlIssuerAndLabel = decodeURIComponent(url.pathname.slice(1)).split(':', 2);
         const issuer = options.issuer ?? (urlIssuerAndLabel.length === 2 ? urlIssuerAndLabel[0] : null);
         const label = options.label ?? urlIssuerAndLabel[urlIssuerAndLabel.length - 1];
-        const totpOptions = merge(OTP_DEFAULTS, { ...params, secret, issuer, label }, { excludeEmpty: true });
+        const period = params.period ? parseInt(params.period, 10) : undefined;
+        const digits = params.digits ? parseInt(params.digits, 10) : undefined;
+
+        const totpOptions = merge(
+            OTP_DEFAULTS,
+            {
+                ...params,
+                digits: Number.isInteger(digits) ? digits : undefined,
+                period: Number.isInteger(period) ? period : undefined,
+                issuer,
+                label,
+                secret,
+            },
+            { excludeEmpty: true }
+        );
 
         return new TOTP(totpOptions);
     }
