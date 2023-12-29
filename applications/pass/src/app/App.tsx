@@ -16,6 +16,7 @@ import type { PassCoreContextValue } from '@proton/pass/components/Core/PassCore
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { getLocalPath, history } from '@proton/pass/components/Core/routing';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
+import { api } from '@proton/pass/lib/api/api';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { createPassExport } from '@proton/pass/lib/export/export';
 import { prepareImport } from '@proton/pass/lib/import/reader';
@@ -24,7 +25,7 @@ import { selectExportData } from '@proton/pass/store/selectors/export';
 import type { Maybe } from '@proton/pass/types';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 
-import { PASS_CONFIG, api } from '../lib/core';
+import { PASS_CONFIG } from '../lib/core';
 import { onboarding } from '../lib/onboarding';
 import { telemetry } from '../lib/telemetry';
 import { AuthServiceProvider } from './Context/AuthServiceProvider';
