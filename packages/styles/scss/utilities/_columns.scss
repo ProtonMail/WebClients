@@ -1,0 +1,21 @@
+@include responsive-classes(
+	(
+		columns-1: (
+			column-count: 1,
+		),
+
+		columns-2: (
+			column-count: 2,
+		),
+	)
+);
+
+[class*='columns'] > * {
+	@supports (break-inside: avoid-column) {
+		break-inside: avoid-column;
+	}
+
+	@supports not (break-inside: avoid-column) {
+		break-inside: avoid;
+	}
+}
