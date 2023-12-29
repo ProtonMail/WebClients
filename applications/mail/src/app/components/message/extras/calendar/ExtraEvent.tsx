@@ -8,8 +8,8 @@ import { BannerBackgroundColor } from '@proton/components/components/banner/Bann
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import {
-    EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
+    INVITATION_ERROR_TYPE,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { Address, UserSettings } from '@proton/shared/lib/interfaces';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -34,6 +34,7 @@ import {
     getIsPartyCrasher,
     getIsProtonInvite,
     getIsReinvite,
+    sendInviteErrorTelemetryReport,
 } from '../../../../helpers/calendar/invite';
 import { fetchEventInvitation, updateEventInvitation } from '../../../../helpers/calendar/inviteApi';
 import { MessageStateWithData } from '../../../../logic/messages/messagesTypes';
@@ -55,7 +56,7 @@ const {
     CANCELLATION_ERROR,
     EVENT_CREATION_ERROR,
     EVENT_UPDATE_ERROR,
-} = EVENT_INVITATION_ERROR_TYPE;
+} = INVITATION_ERROR_TYPE;
 
 interface Props {
     message: MessageStateWithData;
@@ -295,7 +296,7 @@ const ExtraEvent = ({
                         ...model,
                         invitationApi,
                         parentInvitationApi,
-                        error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.UPDATING_ERROR),
+                        error: new EventInvitationError(INVITATION_ERROR_TYPE.UPDATING_ERROR),
                     });
                 }
             }
@@ -313,6 +314,12 @@ const ExtraEvent = ({
         const canTryAgain = [DECRYPTION_ERROR, FETCHING_ERROR, UPDATING_ERROR, CANCELLATION_ERROR].includes(
             model.error.type
         );
+
+        sendInviteErrorTelemetryReport({
+            error: model.error,
+            api,
+            hash: model.error.hashedIcs,
+        });
 
         return (
             <Banner

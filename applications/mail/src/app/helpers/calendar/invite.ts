@@ -1,14 +1,16 @@
 import { getUnixTime } from 'date-fns';
 
 import { serverTime } from '@proton/crypto';
+import { TelemetryIcsSurgeryEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { generateAttendeeToken, getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { getDoesCalendarNeedUserAction, getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_METHOD, ICAL_METHODS_ATTENDEE } from '@proton/shared/lib/calendar/constants';
 import { getSelfAddressData } from '@proton/shared/lib/calendar/deserialize';
-import { generateVeventHashUID, getIsProtonUID } from '@proton/shared/lib/calendar/helper';
+import { generateVeventHashUID, getIsProtonUID, getNaiveDomainFromUID } from '@proton/shared/lib/calendar/helper';
 import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
+    INVITATION_ERROR_TYPE,
     cloneEventInvitationErrorWithConfig,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { getSupportedCalscale } from '@proton/shared/lib/calendar/icsSurgery/vcal';
@@ -19,7 +21,7 @@ import {
     getParticipant,
 } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurrence/recurring';
-import { parseWithRecoveryAndMaybeErrors, serialize } from '@proton/shared/lib/calendar/vcal';
+import { parseVcalendarWithRecoveryAndMaybeErrors, serialize } from '@proton/shared/lib/calendar/vcal';
 import {
     buildVcalOrganizer,
     getDtendProperty,
@@ -50,8 +52,9 @@ import { SECOND } from '@proton/shared/lib/constants';
 import { getSupportedTimezone } from '@proton/shared/lib/date/timezone';
 import { getIsAddressActive, getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { Address } from '@proton/shared/lib/interfaces';
+import { Address, Api, SimpleMap } from '@proton/shared/lib/interfaces';
 import {
     CalendarEvent,
     CalendarEventEncryptionData,
@@ -90,10 +93,12 @@ export interface EventInvitation {
     originalIcsHasNoOrganizer?: boolean;
     legacyUid?: string;
     fileName?: string;
+    hashedIcs?: string;
     vevent: VcalVeventComponent;
     hasMultipleVevents?: boolean;
     calendarEvent?: CalendarEvent;
     method?: ICAL_METHOD;
+    prodId?: string;
     vtimezone?: VcalVtimezoneComponent;
     xOrIanaComponents?: VcalXOrIanaComponent[];
     organizer?: Participant;
@@ -382,14 +387,58 @@ export const getEventTimeStatus = (vevent: VcalVeventComponent, now: number) => 
     return EVENT_TIME_STATUS.FUTURE;
 };
 
+const icsHashesForInviteTelemetry = new Set<string>();
+
+/**
+ * Send telemetry event if we got some fails during import process, so that we know how common errors are, and which error users are facing
+ */
+export const sendInviteErrorTelemetryReport = async ({
+    error,
+    api,
+    hash,
+}: {
+    error: EventInvitationError;
+    api: Api;
+    hash: string;
+}) => {
+    if (icsHashesForInviteTelemetry.has(hash)) {
+        return;
+    }
+
+    const { method, extendedType, componentIdentifiers } = error;
+
+    if (extendedType === undefined || !componentIdentifiers) {
+        // not intended for report
+        return;
+    }
+
+    const isImportPublish = !method || method === ICAL_METHOD.PUBLISH;
+
+    const dimensions: SimpleMap<string> = {
+        reason: EVENT_INVITATION_ERROR_TYPE[extendedType],
+        component: componentIdentifiers.component,
+        prodid: componentIdentifiers.prodId,
+        domain: componentIdentifiers.domain,
+    };
+
+    // Assume the telemetry will be sent successfully. It's not worth it to handle the error case here, it's ok to lose the report
+    icsHashesForInviteTelemetry.add(hash);
+    await sendTelemetryReport({
+        api: api,
+        measurementGroup: TelemetryMeasurementGroups.calendarIcsSurgery,
+        event: isImportPublish ? TelemetryIcsSurgeryEvents.import_publish : TelemetryIcsSurgeryEvents.invitation,
+        dimensions,
+    });
+};
+
 export const parseVcalendar = (data: string) => {
     try {
         if (!data) {
             return;
         }
-        return parseWithRecoveryAndMaybeErrors(data);
+        return parseVcalendarWithRecoveryAndMaybeErrors(data);
     } catch (e: any) {
-        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.PARSING_ERROR);
+        throw new EventInvitationError(INVITATION_ERROR_TYPE.PARSING_ERROR);
     }
 };
 
@@ -560,12 +609,23 @@ export const getInitialInvitationModel = ({
         contactEmails,
         ownAddresses
     );
+    const { hashedIcs } = invitation;
+    const uid = getUidValue(invitation.vevent);
+    const componentIdentifiers = {
+        component: 'vevent',
+        componentId: uid,
+        prodId: invitation.prodId || '',
+        domain: getNaiveDomainFromUID(uid),
+    };
     if (invitation.method === ICAL_METHOD.REPLY && !invitation.attendee) {
         // If we couldn't find the attendee in the REPLY ics, something is wrong in the ics
         return {
             ...errorModel,
-            error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, {
+            error: new EventInvitationError(INVITATION_ERROR_TYPE.INVITATION_INVALID, {
+                hashedIcs,
                 method: invitation.method,
+                extendedType: EVENT_INVITATION_ERROR_TYPE.MISSING_ATTENDEE,
+                componentIdentifiers,
             }),
         };
     }
@@ -577,8 +637,11 @@ export const getInitialInvitationModel = ({
          */
         return {
             ...errorModel,
-            error: new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, {
+            error: new EventInvitationError(INVITATION_ERROR_TYPE.INVITATION_INVALID, {
+                hashedIcs,
                 method: invitation.method,
+                extendedType: EVENT_INVITATION_ERROR_TYPE.MISSING_ORIGINAL_ORGANIZER,
+                componentIdentifiers,
             }),
         };
     }
@@ -604,8 +667,11 @@ export const getInitialInvitationModel = ({
         };
     }
     if (!isImport && !getIsValidMethod(invitation.method, isOrganizerMode)) {
-        result.error = new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVALID_METHOD, {
+        result.error = new EventInvitationError(INVITATION_ERROR_TYPE.INVALID_METHOD, {
             method: invitation.method,
+            extendedType: EVENT_INVITATION_ERROR_TYPE.INVALID_METHOD,
+            hashedIcs,
+            componentIdentifiers,
         });
     }
     const isProtonReply = getIsProtonReply(invitation.vevent);
@@ -649,25 +715,58 @@ export const getSupportedEventInvitation = async ({
     primaryTimezone: string;
     canImportEventColor: boolean;
 }): Promise<EventInvitation | undefined> => {
-    const { calscale, 'x-wr-timezone': xWrTimezone, method } = vcalComponent;
+    const { calscale, 'x-wr-timezone': xWrTimezone, method, prodid: prodIdProperty } = vcalComponent;
+    const prodId = prodIdProperty.value;
     const supportedMethod = getIcalMethod(method);
     const supportedCalscale = getSupportedCalscale(calscale);
-    if (!supportedMethod) {
-        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVALID_METHOD);
-    }
-    if (!supportedCalscale) {
-        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { method: supportedMethod });
-    }
-    if (!vcalComponent.components?.length) {
-        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.NO_COMPONENT, { method: supportedMethod });
-    }
+    let originalUniqueIdentifier = await generateVeventHashUID(serialize(vcalComponent));
     const vevent = extractVevent(vcalComponent);
     const vtimezone = extractUniqueVTimezone(vcalComponent);
+    const uid = vevent?.uid?.value || '';
+    const componentIdentifiers = {
+        component: vevent ? 'vevent' : 'unknown',
+        componentId: uid,
+        prodId,
+        domain: getNaiveDomainFromUID(uid),
+    };
+    if (!supportedMethod) {
+        throw new EventInvitationError(INVITATION_ERROR_TYPE.INVALID_METHOD, {
+            extendedType: EVENT_INVITATION_ERROR_TYPE.INVALID_METHOD,
+            componentIdentifiers,
+            originalUniqueIdentifier,
+        });
+    }
+    if (!supportedCalscale) {
+        throw new EventInvitationError(INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, {
+            method: supportedMethod,
+            extendedType: EVENT_INVITATION_ERROR_TYPE.NON_GREGORIAN,
+            componentIdentifiers,
+            originalUniqueIdentifier,
+        });
+    }
+    if (!vcalComponent.components?.length) {
+        throw new EventInvitationError(INVITATION_ERROR_TYPE.NO_COMPONENT, {
+            method: supportedMethod,
+            extendedType: EVENT_INVITATION_ERROR_TYPE.NO_VEVENT,
+            componentIdentifiers,
+            originalUniqueIdentifier,
+        });
+    }
     if (!vevent) {
-        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.NO_VEVENT, { method: supportedMethod });
+        throw new EventInvitationError(INVITATION_ERROR_TYPE.NO_VEVENT, {
+            method: supportedMethod,
+            extendedType: EVENT_INVITATION_ERROR_TYPE.NO_VEVENT,
+            componentIdentifiers,
+            originalUniqueIdentifier,
+        });
     }
     if (!getHasDtStart(vevent)) {
-        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: supportedMethod });
+        throw new EventInvitationError(INVITATION_ERROR_TYPE.INVITATION_INVALID, {
+            method: supportedMethod,
+            componentIdentifiers,
+            extendedType: EVENT_INVITATION_ERROR_TYPE.DTSTART_MISSING,
+            originalUniqueIdentifier,
+        });
     }
     const completeVevent = withOutsideUIDAndSequence(
         withSupportedDtstamp(vevent, message.Time * SECOND),
@@ -678,8 +777,9 @@ export const getSupportedEventInvitation = async ({
     // To filter potentially equivalent invitation ics's, we have to generate a reliable
     // unique identifier (resistant to format differences, like \n --> \r\n) for the ics if it has no UID
     const originalUID = completeVevent.uid?.value;
-    const originalUniqueIdentifier =
-        hasMultipleVevents || !originalUID ? await generateVeventHashUID(serialize(vcalComponent)) : originalUID;
+    if (originalUID && !hasMultipleVevents) {
+        originalUniqueIdentifier = originalUID;
+    }
     let legacyUid;
     let originalIcsHasNoOrganizer = false;
     if (isImport) {
@@ -692,7 +792,12 @@ export const getSupportedEventInvitation = async ({
         completeVevent.uid = { value: sha1Uid };
     } else if (!originalUID) {
         // Invitations without UID should be considered invalid
-        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, { method: supportedMethod });
+        throw new EventInvitationError(INVITATION_ERROR_TYPE.INVITATION_INVALID, {
+            method: supportedMethod,
+            componentIdentifiers,
+            extendedType: EVENT_INVITATION_ERROR_TYPE.MISSING_ORIGINAL_UID,
+            originalUniqueIdentifier,
+        });
     } else if (!completeVevent.organizer) {
         originalIcsHasNoOrganizer = true;
         // The ORGANIZER field is mandatory in an invitation
@@ -720,10 +825,12 @@ export const getSupportedEventInvitation = async ({
             guessTzid,
             isEventInvitation: true,
             generatedHashUid: isImport,
+            componentIdentifiers,
             canImportEventColor,
         });
         return {
             method: supportedMethod,
+            prodId,
             vevent: supportedEvent,
             vtimezone,
             originalVcalInvitation: vcalComponent,
@@ -736,14 +843,16 @@ export const getSupportedEventInvitation = async ({
     } catch (error: any) {
         if (error instanceof EventInvitationError) {
             throw cloneEventInvitationErrorWithConfig(error, {
+                ...error.getConfig(),
                 method: supportedMethod,
                 originalUniqueIdentifier,
             });
         }
-        throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, {
+        throw new EventInvitationError(INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, {
             externalError: error,
             method: supportedMethod,
-            originalUniqueIdentifier: originalUniqueIdentifier,
+            extendedType: EVENT_INVITATION_ERROR_TYPE.EXTERNAL_ERROR,
+            originalUniqueIdentifier,
         });
     }
 };
