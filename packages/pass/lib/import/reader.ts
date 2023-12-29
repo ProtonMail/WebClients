@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
 
 import { read1Password1PifData } from './providers/1password.reader.1pif';
 import { read1Password1PuxData } from './providers/1password.reader.1pux';
@@ -13,7 +13,7 @@ import { readKeePassData } from './providers/keepass.reader';
 import { readKeeperData } from './providers/keeper.reader';
 import { readLastPassData } from './providers/lastpass.reader';
 import { readNordPassData } from './providers/nordpass.reader';
-import { readProtonPassData } from './providers/protonpass.reader';
+import { decryptProtonPassImport, readProtonPassData } from './providers/protonpass.reader';
 import { readRoboformData } from './providers/roboform.reader';
 import { readSafariData } from './providers/safari.reader';
 import { type ImportPayload, ImportProvider, type ImportReaderPayload } from './types';
@@ -23,85 +23,84 @@ export const extractFileExtension = (fileName: string): string => {
     return parts[parts.length - 1];
 };
 
+export const prepareImport = async (payload: ImportReaderPayload): Promise<ImportReaderPayload> => {
+    switch (payload.provider) {
+        case ImportProvider.PROTONPASS: {
+            const fileExtension = extractFileExtension(payload.file.name);
+            if (fileExtension === 'pgp') return { ...payload, file: await decryptProtonPassImport(payload) };
+        }
+        default:
+            return payload;
+    }
+};
+
 export const fileReader = async (payload: ImportReaderPayload): Promise<ImportPayload> => {
+    const file = transferableToFile(payload.file);
     const fileExtension = extractFileExtension(payload.file.name);
 
     switch (payload.provider) {
         case ImportProvider.BITWARDEN: {
-            return readBitwardenData(await payload.file.text());
+            return readBitwardenData(await file.text());
         }
 
         case ImportProvider.BRAVE:
         case ImportProvider.CHROME:
         case ImportProvider.EDGE: {
-            return readChromiumData(await payload.file.text());
+            return readChromiumData(await file.text());
         }
 
         case ImportProvider.FIREFOX: {
-            return readFirefoxData(await payload.file.text());
+            return readFirefoxData(await file.text());
         }
 
         case ImportProvider.KEEPASS: {
-            return readKeePassData(await payload.file.text());
+            return readKeePassData(await file.text());
         }
 
         case ImportProvider.LASTPASS: {
-            return readLastPassData(await payload.file.text());
+            return readLastPassData(await file.text());
         }
 
         case ImportProvider.ONEPASSWORD: {
             switch (fileExtension) {
                 case '1pif':
-                    return read1Password1PifData(await payload.file.text());
+                    return read1Password1PifData(await file.text());
                 case '1pux':
-                    return read1Password1PuxData(await payload.file.arrayBuffer());
+                    return read1Password1PuxData(await file.arrayBuffer());
                 default:
                     throw new Error(c('Error').t`Unsupported 1Password file format`);
             }
         }
 
         case ImportProvider.PROTONPASS: {
-            switch (fileExtension) {
-                case 'zip':
-                    return readProtonPassData({
-                        data: await payload.file.arrayBuffer(),
-                        encrypted: false,
-                        userId: payload.userId,
-                    });
-                case 'pgp':
-                    return readProtonPassData({
-                        data: await payload.file.text(),
-                        encrypted: true,
-                        userId: payload.userId,
-                        passphrase: payload.passphrase ?? '',
-                    });
-                default:
-                    throw new Error(c('Error').t`Unsupported ${PASS_APP_NAME} file format`);
-            }
+            return readProtonPassData({
+                data: await file.arrayBuffer(),
+                userId: payload.userId,
+            });
         }
 
         case ImportProvider.DASHLANE: {
-            return readDashlaneData(await payload.file.arrayBuffer());
+            return readDashlaneData(await file.arrayBuffer());
         }
 
         case ImportProvider.SAFARI: {
-            return readSafariData(await payload.file.text());
+            return readSafariData(await file.text());
         }
 
         case ImportProvider.KEEPER: {
-            return readKeeperData(await payload.file.text());
+            return readKeeperData(await file.text());
         }
 
         case ImportProvider.ROBOFORM: {
-            return readRoboformData(await payload.file.text());
+            return readRoboformData(await file.text());
         }
 
         case ImportProvider.NORDPASS: {
-            return readNordPassData(await payload.file.text());
+            return readNordPassData(await file.text());
         }
 
         case ImportProvider.ENPASS: {
-            return readEnpassData(await payload.file.text());
+            return readEnpassData(await file.text());
         }
 
         default:
