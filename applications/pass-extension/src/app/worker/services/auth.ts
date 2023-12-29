@@ -220,26 +220,41 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
     /* only extend the session lock if a lock is registered and we've reached at least 50%
      * of the lock TTL since the last extension. Calling `AuthService::syncLock` will extend
      * the lock via the `checkSessionLock` call */
-    const handleActivityProbe: MessageHandlerCallback<WorkerMessageType.ACTIVITY_PROBE> = withContext(
-        async ({ status }) => {
-            const registeredLock = authStore.getLockStatus() === SessionLockStatus.REGISTERED;
-            const ttl = authStore.getLockTTL();
+    const handleAuthCheck: MessageHandlerCallback<WorkerMessageType.AUTH_CHECK> = withContext(
+        async (ctx, { payload: { immediate } }) => {
+            try {
+                const status = await (async (): Promise<SessionLockStatus> => {
+                    const lockStatus = authStore.getLockStatus();
+                    const registeredLock = lockStatus === SessionLockStatus.REGISTERED;
+                    const ttl = authStore.getLockTTL();
 
-            if (clientReady(status) && registeredLock && ttl) {
-                const now = getEpoch();
-                const diff = now - (authStore.getLockLastExtendTime() ?? 0);
-                if (diff > ttl * 0.5) await authService.checkLock();
+                    if (clientReady(ctx.status) && registeredLock && ttl) {
+                        const now = getEpoch();
+                        const diff = now - (authStore.getLockLastExtendTime() ?? 0);
+                        if (immediate || diff > ttl * 0.5) return (await authService.checkLock()).status;
+                    }
+
+                    return lockStatus ?? SessionLockStatus.NONE;
+                })();
+
+                return { ok: true, status };
+            } catch {
+                return { ok: false, error: null };
             }
-
-            return true;
         }
     );
 
+    const handlePasswordConfirm: MessageHandlerCallback<WorkerMessageType.AUTH_CONFIRM_PASSWORD> = async (message) => {
+        const confirmed = await authService.confirmPassword(message.payload.password);
+        return confirmed ? { ok: true } : { ok: false, error: null };
+    };
+
     WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_PROBE, () => true);
     WorkerMessageBroker.registerMessage(WorkerMessageType.ACCOUNT_FORK, handleAccountFork);
+    WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_CHECK, handleAuthCheck);
+    WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_CONFIRM_PASSWORD, handlePasswordConfirm);
     WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_INIT, handleInit);
     WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_UNLOCK, handleUnlock);
-    WorkerMessageBroker.registerMessage(WorkerMessageType.ACTIVITY_PROBE, handleActivityProbe);
 
     browser.alarms.onAlarm.addListener(({ name }) => {
         switch (name) {
