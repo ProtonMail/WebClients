@@ -55,7 +55,11 @@ const MergeTable = ({
 
                 return (
                     <Block key={`${group && group[0].Name}`} className="mb-8 flex flex-column items-center">
-                        <OrderableTable onSortEnd={onSortEnd(i)} className="mb-4" helperClass="row--orderable">
+                        <OrderableTable
+                            onSortEnd={onSortEnd(i)}
+                            className="mb-4"
+                            helperClass="z-modals bg-norm color-norm"
+                        >
                             <MergeTableHeader />
                             <MergeTableBody
                                 contacts={group}
