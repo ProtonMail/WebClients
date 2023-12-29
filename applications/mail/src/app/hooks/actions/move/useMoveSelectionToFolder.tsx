@@ -4,53 +4,64 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useApi, useEventManager, useFolders, useLabels, useNotifications, useFeature, FeatureCode } from '@proton/components';
-import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
+import { useModalTwo } from '@proton/components/components';
+import { FeatureCode } from '@proton/components/containers';
+import { useApi, useEventManager, useFeature, useFolders, useNotifications } from '@proton/components/hooks';
+import { useGetLabels } from '@proton/components/hooks/useCategories';
 import { labelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { labelMessages } from '@proton/shared/lib/api/messages';
+import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 
-import MoveSnoozedModal from '../../components/list/snooze/components/MoveSnoozedModal';
-import MoveScheduledModal from '../../components/message/modals/MoveScheduledModal';
-import MoveToSpamModal from '../../components/message/modals/MoveToSpamModal';
-import MoveAllNotificationButton from '../../components/notifications/MoveAllNotificationButton';
-import UndoActionNotification from '../../components/notifications/UndoActionNotification';
-import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
-import { isMessage as testIsMessage, isSearch as testIsSearch } from '../../helpers/elements';
-import { isCustomLabel, isLabel } from '../../helpers/labels';
-import { extractSearchParameters } from '../../helpers/mailboxUrl';
-import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
+import MoveSnoozedModal from 'proton-mail/components/list/snooze/components/MoveSnoozedModal';
+import MoveScheduledModal from 'proton-mail/components/message/modals/MoveScheduledModal';
+import MoveToSpamModal from 'proton-mail/components/message/modals/MoveToSpamModal';
+import MoveAllNotificationButton from 'proton-mail/components/notifications/MoveAllNotificationButton';
+import UndoActionNotification from 'proton-mail/components/notifications/UndoActionNotification';
+import { SUCCESS_NOTIFICATION_EXPIRATION } from 'proton-mail/constants';
+import { getFilteredUndoTokens, runParallelChunkedActions } from 'proton-mail/helpers/chunk';
+import { isSearch as testIsSearch } from 'proton-mail/helpers/elements';
+import { isCustomLabel, isLabel } from 'proton-mail/helpers/labels';
+import { extractSearchParameters } from 'proton-mail/helpers/mailboxUrl';
 import {
     askToUnsubscribe,
     getNotificationTextMoved,
     getNotificationTextUnauthorized,
     searchForScheduled,
     searchForSnoozed,
-} from '../../helpers/moveToFolder';
-import { useDeepMemo } from '../../hooks/useDeepMemo';
-import useMailModel from '../../hooks/useMailModel';
-import { getFilteredUndoTokens, runParallelChunkedActions } from '../../helpers/chunk';
-import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
-import { pageSize as pageSizeSelector } from '../../logic/elements/elementsSelectors';
-import { useAppDispatch } from '../../logic/store';
-import { Element } from '../../models/element';
-import { SearchParameters } from '../../models/tools';
-import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels';
-import { useCreateFilters } from './useCreateFilters';
-import { useMoveAll } from './useMoveAll';
+} from 'proton-mail/helpers/moveToFolder';
+import { MoveParams } from 'proton-mail/hooks/actions/move/useMoveToFolder';
+import { useCreateFilters } from 'proton-mail/hooks/actions/useCreateFilters';
+import { useMoveAll } from 'proton-mail/hooks/actions/useMoveAll';
+import { useOptimisticApplyLabels } from 'proton-mail/hooks/optimistic/useOptimisticApplyLabels';
+import { useDeepMemo } from 'proton-mail/hooks/useDeepMemo';
+import useMailModel from 'proton-mail/hooks/useMailModel';
+import { backendActionFinished, backendActionStarted } from 'proton-mail/logic/elements/elementsActions';
+import { pageSize as pageSizeSelector } from 'proton-mail/logic/elements/elementsSelectors';
+import { useAppDispatch } from 'proton-mail/logic/store';
+import { Element } from 'proton-mail/models/element';
+import { SearchParameters } from 'proton-mail/models/tools';
 
-const { TRASH, ARCHIVE, ALMOST_ALL_MAIL: ALMOST_ALL_MAIL_ID, SNOOZED, ALL_MAIL, INBOX } = MAILBOX_LABEL_IDS;
+const { TRASH, ARCHIVE, ALMOST_ALL_MAIL: ALMOST_ALL_MAIL_ID, SNOOZED, ALL_MAIL } = MAILBOX_LABEL_IDS;
 const MOVE_ALL_FOLDERS = [TRASH, ARCHIVE];
 
-export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolean>>) => {
+interface MoveSelectionParams extends MoveParams {
+    isMessage: boolean;
+    authorizedToMove: Element[];
+    destinationLabelID: string;
+}
+
+/**
+ * If you need to use move on an element selection, prefer to use the hook "useMoveToFolder" with selectAll to false or undefined instead.
+ */
+export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateAction<boolean>>) => {
     const api = useApi();
     const location = useLocation();
     const { call, stop, start } = useEventManager();
     const { createNotification } = useNotifications();
-    const [labels = []] = useLabels();
+    const getLabels = useGetLabels();
     const [folders = []] = useFolders();
     const optimisticApplyLabels = useOptimisticApplyLabels();
     const mailSettings = useMailModel('MailSettings');
@@ -58,12 +69,12 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
     const { getFilterActions } = useCreateFilters();
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
 
+    const { moveAll, modal: moveAllModal } = useMoveAll();
+
     const searchParameters = useDeepMemo<SearchParameters>(() => extractSearchParameters(location), [location]);
     const isSearch = testIsSearch(searchParameters);
 
     const [canUndo, setCanUndo] = useState(true); // Used to not display the Undo button if moving only scheduled messages/conversations to trash
-
-    const { moveAll, modal: moveAllModal } = useMoveAll();
 
     const [moveScheduledModal, handleShowScheduledModal] = useModalTwo(MoveScheduledModal);
     const [moveSnoozedModal, handleMoveSnoozedModal] = useModalTwo(MoveSnoozedModal);
@@ -74,23 +85,21 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
 
     const pageSize = useSelector(pageSizeSelector);
 
-    const moveToFolder = useCallback(
-        async (
-            elements: Element[],
-            folderID: string,
-            folderName: string,
-            fromLabelID: string,
-            createFilters: boolean,
+    const moveSelectionToFolder = useCallback(
+        async ({
+            elements,
+            folderID,
+            folderName,
+            fromLabelID,
+            createFilters = false,
             silent = false,
-            askUnsub = true
-        ) => {
-            if (!elements.length) {
-                return;
-            }
-
+            askUnsub = true,
+            isMessage,
+            authorizedToMove,
+            destinationLabelID,
+        }: MoveSelectionParams) => {
             let undoing = false;
-            const isMessage = testIsMessage(elements[0]);
-            const destinationLabelID = isCustomLabel(fromLabelID, labels) ? INBOX : fromLabelID;
+            let spamAction: SPAM_ACTION | undefined = undefined;
 
             // Open a modal when moving a scheduled message/conversation to trash to inform the user that it will be cancelled
             await searchForScheduled(
@@ -116,8 +125,6 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                 );
             }
 
-            let spamAction: SPAM_ACTION | undefined = undefined;
-
             if (askUnsub) {
                 // Open a modal when moving items to spam to propose to unsubscribe them
                 spamAction = await askToUnsubscribe(
@@ -130,12 +137,6 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                 );
             }
 
-            const action = isMessage ? labelMessages : labelConversations;
-            const authorizedToMove = isMessage
-                ? getMessagesAuthorizedToMove(elements as Message[], folderID)
-                : elements;
-            const elementIDs = authorizedToMove.map((element) => element.ID);
-
             if (!authorizedToMove.length) {
                 createNotification({
                     text: getNotificationTextUnauthorized(folderID, destinationLabelID),
@@ -145,6 +146,8 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
             }
 
             const { doCreateFilters, undoCreateFilters } = getFilterActions();
+
+            const labels = (await getLabels()) || [];
 
             let rollback = () => {};
 
@@ -173,6 +176,9 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
             };
 
             const handleDo = async () => {
+                const action = isMessage ? labelMessages : labelConversations;
+                const elementIDs = authorizedToMove.map((element) => element.ID);
+
                 let tokens: PromiseSettledResult<string | undefined>[] = [];
                 try {
                     // Stop the event manager to prevent race conditions
@@ -231,7 +237,9 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                     !isCustomLabel(fromLabelID, labels) &&
                     !isSearch;
 
-                const handleMoveAll = suggestMoveAll ? () => moveAll(fromLabelID, folderID) : undefined;
+                const handleMoveAll = suggestMoveAll
+                    ? () => moveAll(fromLabelID, folderID, TelemetryMailSelectAllEvents.notification_move_to)
+                    : undefined;
 
                 const moveAllButton = handleMoveAll ? (
                     <MoveAllNotificationButton
@@ -254,8 +262,8 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                 });
             }
         },
-        [labels]
+        [isSearch, pageSize]
     );
 
-    return { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal };
+    return { moveSelectionToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal };
 };

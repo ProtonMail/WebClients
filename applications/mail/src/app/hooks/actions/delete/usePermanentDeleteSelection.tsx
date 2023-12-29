@@ -19,12 +19,12 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { runParallelChunkedActions } from 'proton-mail/helpers/chunk';
 
-import { isConversation } from '../../helpers/elements';
-import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
-import { useAppDispatch } from '../../logic/store';
-import { Element } from '../../models/element';
-import { useGetElementsFromIDs } from '../mailbox/useElements';
-import useOptimisticDelete from '../optimistic/useOptimisticDelete';
+import { isConversation } from '../../../helpers/elements';
+import { backendActionFinished, backendActionStarted } from '../../../logic/elements/elementsActions';
+import { useAppDispatch } from '../../../logic/store';
+import { Element } from '../../../models/element';
+import { useGetElementsFromIDs } from '../../mailbox/useElements';
+import useOptimisticDelete from '../../optimistic/useOptimisticDelete';
 
 const { DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
 
@@ -143,7 +143,10 @@ export const getNotificationText = (
     return c('Success').ngettext(msgid`${count} message deleted`, `${count} messages deleted`, count);
 };
 
-export const usePermanentDelete = (labelID: string) => {
+/**
+ * If you need to use permanent delete on an element selection, prefer to use the hook "usePermanentDelete" with selectAll to false or undefined instead.
+ */
+export const usePermanentDeleteSelection = (labelID: string) => {
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
@@ -205,7 +208,7 @@ export const usePermanentDelete = (labelID: string) => {
         await call();
     };
 
-    const modal = (
+    const deleteSelectionModal = (
         <Prompt
             title={getDeleteTitle(draft, conversationMode, selectedItemsCount, totalMessages)}
             buttons={[
@@ -219,10 +222,10 @@ export const usePermanentDelete = (labelID: string) => {
         </Prompt>
     );
 
-    const handleDelete = async (selectedIDs: string[]) => {
+    const handleDeleteSelection = async (selectedIDs: string[]) => {
         setSelectedIDs(selectedIDs);
         setDeleteModalOpen(true);
     };
 
-    return { handleDelete, modal };
+    return { handleDeleteSelection, deleteSelectionModal };
 };

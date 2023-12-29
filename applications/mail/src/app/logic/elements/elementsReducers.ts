@@ -247,7 +247,7 @@ export const backendActionFinished = (state: Draft<ElementsState>) => {
     state.pendingActions--;
 };
 
-export const moveAllFulfilled = (
+export const selectAllFulfilled = (
     state: Draft<ElementsState>,
     { payload: { LabelID, timeoutID } }: PayloadAction<{ LabelID: string; timeoutID: NodeJS.Timeout }>
 ) => {

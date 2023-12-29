@@ -55,6 +55,7 @@ const ToolbarRowWide = ({
     page,
     onPage,
     total,
+    onCheckAll,
 }: Props) => {
     const toolbarRef = useRef<HTMLDivElement>(null);
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
@@ -97,6 +98,7 @@ const ToolbarRowWide = ({
                             breakpoints={breakpoints}
                             labelDropdownToggleRef={labelDropdownToggleRef}
                             moveDropdownToggleRef={moveDropdownToggleRef}
+                            onCheckAll={onCheckAll}
                         />
                     ) : null}
 

@@ -1,9 +1,17 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import { LabelCount, MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { Conversation, ConversationLabel } from '../models/conversation';
-import { getCounterMap, getDate, isConversation, isMessage, isUnread, sort } from './elements';
+import {
+    getCounterMap,
+    getDate,
+    getLocationElementsCount,
+    isConversation,
+    isMessage,
+    isUnread,
+    sort,
+} from './elements';
 
 describe('elements', () => {
     describe('isConversation / isMessage', () => {
@@ -163,6 +171,28 @@ describe('elements', () => {
                 Labels: [{ ID: LabelID, ContextNumUnread: 0 } as ConversationLabel],
             };
             expect(isUnread(conversation, LabelID)).toBe(false);
+        });
+    });
+
+    describe('getLocationElementsCount', () => {
+        const labelID = 'labelID';
+
+        const messageCounts: LabelCount[] = [
+            { LabelID: '0', Unread: 5, Total: 20 },
+            { LabelID: labelID, Unread: 2, Total: 10 },
+        ];
+
+        const conversationCounts: LabelCount[] = [
+            { LabelID: '0', Unread: 2, Total: 10 },
+            { LabelID: labelID, Unread: 1, Total: 5 },
+        ];
+
+        it('should return the expected count for messages', () => {
+            expect(getLocationElementsCount(labelID, conversationCounts, messageCounts, false)).toEqual(10);
+        });
+
+        it('should return the expected count for conversations', () => {
+            expect(getLocationElementsCount(labelID, conversationCounts, messageCounts, true)).toEqual(5);
         });
     });
 });
