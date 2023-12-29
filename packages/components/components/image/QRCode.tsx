@@ -4,6 +4,8 @@ import QRCodeReact from 'qrcode.react';
 
 import clsx from '@proton/utils/clsx';
 
+import './QRCode.scss';
+
 interface Props extends ComponentPropsWithoutRef<'svg'> {
     size?: number;
     value: string;
