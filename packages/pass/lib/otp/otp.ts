@@ -1,10 +1,19 @@
-import { Secret, TOTP, URI } from 'otpauth';
+import { TOTP, URI } from 'otpauth';
 
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull, OtpCode } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object/merge';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
+import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { isTotpUri } from '@proton/pass/utils/url/totp';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
+
+import { PatchedSecret } from './patch';
+
+type OTPOptions = {
+    secret?: string;
+    issuer?: MaybeNull<string>;
+    label?: MaybeNull<string>;
+};
 
 export const OTP_DEFAULTS = {
     issuer: '',
@@ -16,72 +25,74 @@ export const OTP_DEFAULTS = {
 
 export const INVALID_SECRET_CHARS = /\s|-|_/g;
 
-export const parseOTPValue = (
-    input?: string,
-    { label, issuer }: { label?: MaybeNull<string>; issuer?: MaybeNull<string> } = {}
-): string => {
-    if (!input || isEmptyString(input)) return '';
-
+/** Validates a `totpUri`. If the default parser fails, will attempt to re-build
+ * the totp options by parsing the supplied `totpUri` search parameters.  */
+export const parseOTPFromURI = (totpUri: string, options: OTPOptions): TOTP => {
     try {
-        return URI.parse(input).toString();
+        return URI.parse(totpUri) as TOTP;
     } catch (err) {
-        try {
-            if (isTotpUri(input)) {
-                const url = new URL(input);
-                const params = Object.fromEntries(url.searchParams);
-                const secret = params.secret?.replaceAll(INVALID_SECRET_CHARS, '');
-                if (!secret) return '';
+        const url = new URL(totpUri);
+        const params = Object.fromEntries(url.searchParams);
+        const rawSecret = params.secret?.replaceAll(INVALID_SECRET_CHARS, '');
+        const secret = PatchedSecret.fromBase32(rawSecret ?? '');
+        const urlIssuerAndLabel = decodeURIComponent(url.pathname.slice(1)).split(':', 2);
+        const issuer = options.issuer ?? (urlIssuerAndLabel.length === 2 ? urlIssuerAndLabel[0] : null);
+        const label = options.label ?? urlIssuerAndLabel[urlIssuerAndLabel.length - 1];
+        const totpOptions = merge(OTP_DEFAULTS, { ...params, secret, issuer, label }, { excludeEmpty: true });
 
-                const urlIssuerAndLabel = decodeURIComponent(url.pathname.slice(1)).split(':', 2);
-
-                return new TOTP(
-                    merge(
-                        OTP_DEFAULTS,
-                        {
-                            ...params,
-                            secret,
-                            issuer: issuer ?? (urlIssuerAndLabel.length === 2 ? urlIssuerAndLabel[0] : null),
-                            label: label ?? urlIssuerAndLabel[urlIssuerAndLabel.length - 1],
-                        },
-                        { excludeEmpty: true }
-                    )
-                ).toString();
-            }
-
-            /* remove spaces, dashes and underscores */
-            let maybeBase32Secret = decodeURIComponent(input).replace(INVALID_SECRET_CHARS, '');
-            let secret = Secret.fromBase32(maybeBase32Secret);
-
-            return new TOTP(
-                merge(
-                    OTP_DEFAULTS,
-                    {
-                        label,
-                        issuer,
-                        secret,
-                    },
-                    { excludeEmpty: true }
-                )
-            ).toString();
-        } catch (err) {
-            return '';
-        }
+        return new TOTP(totpOptions);
     }
 };
 
-export const getOPTSecret = (totpUri: string): string => {
-    const params = getSearchParams(totpUri.split('?')?.[1]);
-    return params.secret === undefined ? '' : params.secret;
+export const parseOTPFromSecret = (rawSecret: string, { issuer, label }: OTPOptions): TOTP => {
+    const base32Secret = decodeURIComponent(rawSecret).replace(INVALID_SECRET_CHARS, '');
+    const secret = PatchedSecret.fromBase32(base32Secret);
+    const totpOptions = merge(OTP_DEFAULTS, { label, issuer, secret }, { excludeEmpty: true });
+
+    return new TOTP(totpOptions);
 };
 
-/* we like to compare just algorithm: 'SHA1', digits: 6, period: 30, */
-export const hasDefaultOTP = (totpUri: string): boolean => {
+export const parseOTPValue = (uriOrSecret?: string, options: OTPOptions = {}): string => {
+    try {
+        if (!uriOrSecret || isEmptyString(uriOrSecret)) throw new Error('Invalid parameter');
+        const totp = (isTotpUri(uriOrSecret) ? parseOTPFromURI : parseOTPFromSecret)(uriOrSecret, options);
+        return totp.toString();
+    } catch {
+        return '';
+    }
+};
+
+/** Checks if a `totpUri` has default configuration values
+ * - algorithm: SHA1
+ * - digits: 6
+ * - period: 30 */
+export const hasDefaultOTPOptions = (totpUri: string): boolean => {
     const keysToCompare = ['algorithm', 'digits', 'period'] as const;
     const totpUriParams = getSearchParams(totpUri.split('?')?.[1]);
     return keysToCompare.every((key) => !(key in totpUriParams) || totpUriParams[key] === String(OTP_DEFAULTS[key]));
 };
 
-/* returns just the secret when we have defaults */
-export const getSecretOrUri = (totpUri: string): string => {
-    return hasDefaultOTP(totpUri) ? getOPTSecret(totpUri) : totpUri;
+/** Extracts the OTP secret from a `totpUri` string */
+export const getOTPSecret = (totpUri: string): string => {
+    const params = getSearchParams(totpUri.split('?')?.[1]);
+    return params.secret === undefined ? '' : params.secret;
+};
+
+/** If the supplied `totpUri` has the default configuration this will return the secret */
+export const getSecretOrUri = (totpUri: string): string =>
+    hasDefaultOTPOptions(totpUri) ? getOTPSecret(totpUri) : totpUri;
+
+export const generateTOTPCode = (totpUri?: string): MaybeNull<OtpCode> => {
+    try {
+        if (!totpUri) return null;
+        const otp = parseOTPFromURI(totpUri, {});
+
+        const token = otp.generate();
+        const timestamp = getEpoch();
+        const expiry = timestamp + otp.period - (timestamp % otp.period);
+
+        return { token, period: otp.period, expiry };
+    } catch {
+        return null;
+    }
 };
