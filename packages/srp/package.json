@@ -18,9 +18,9 @@
         "bcryptjs": "^2.4.3"
     },
     "devDependencies": {
-        "@babel/preset-env": "^7.23.6",
+        "@babel/preset-env": "^7.23.7",
         "@babel/preset-typescript": "^7.23.3",
-        "@babel/register": "^7.22.15",
+        "@babel/register": "^7.23.7",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "eslint": "^8.56.0",
         "jest": "^29.7.0",
