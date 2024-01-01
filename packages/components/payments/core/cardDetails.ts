@@ -113,5 +113,5 @@ export function isExpired(cardDetails: CreateCardDetailsBackend | unknown): bool
     const currentMonth = currentTime.getMonth() + 1;
     const currentYear = currentTime.getFullYear();
 
-    return currentMonth > +ExpMonth && currentYear >= +ExpYear;
+    return currentYear > +ExpYear || (currentMonth > +ExpMonth && currentYear === +ExpYear);
 }
