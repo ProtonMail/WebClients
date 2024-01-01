@@ -27,7 +27,7 @@
         "@protontech/timezone-support": "^3.0.0",
         "@sentry/browser": "^7.91.0",
         "@types/dompurify": "^3.0.5",
-        "@types/node": "^20.10.5",
+        "@types/node": "^20.10.6",
         "@types/papaparse": "^5.3.14",
         "@types/ua-parser-js": "^0.7.39",
         "@types/webpack-env": "^1.18.4",
@@ -45,7 +45,7 @@
         "web-streams-polyfill": "^3.2.1"
     },
     "devDependencies": {
-        "@babel/plugin-transform-runtime": "^7.23.6",
+        "@babel/plugin-transform-runtime": "^7.23.7",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
         "@types/jasmine": "^5.1.4",
