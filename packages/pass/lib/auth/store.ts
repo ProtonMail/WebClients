@@ -64,5 +64,5 @@ export const createAuthStore = (store: Store) => {
     return authStore;
 };
 
-export let authentication: AuthStore;
-export const exposeAuthStore = (value: AuthStore) => (authentication = value);
+export let authStore: AuthStore;
+export const exposeAuthStore = (value: AuthStore) => (authStore = value);

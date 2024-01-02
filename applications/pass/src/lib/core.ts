@@ -8,26 +8,6 @@ import { APPS } from '@proton/shared/lib/constants';
 
 import * as config from '../app/config';
 
-export const PASS_CONFIG = {
-    ...config,
-    SSO_URL: getAppHref('/', APPS.PROTONACCOUNT),
-} as PassConfig;
-
-export const isTaggedBuild = () => ENV === 'production' && config.BRANCH.startsWith('proton-pass@');
-
-export const authStore = exposeAuthStore(createAuthStore(createSecureSessionStorage()));
-
-export const api = exposeApi(
-    createApi({
-        config,
-        getAuth: () => {
-            const AccessToken = authStore.getAccessToken();
-            const RefreshToken = authStore.getRefreshToken();
-            const RefreshTime = authStore.getRefreshTime();
-            const UID = authStore.getUID();
-
-            if (!(UID && AccessToken && RefreshToken)) return undefined;
-            return { UID, AccessToken, RefreshToken, RefreshTime };
-        },
-    })
-);
+export const PASS_CONFIG = { ...config, SSO_URL: getAppHref('/', APPS.PROTONACCOUNT) } as PassConfig;
+exposeAuthStore(createAuthStore(createSecureSessionStorage()));
+exposeApi(createApi({ config }));

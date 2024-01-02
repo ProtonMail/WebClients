@@ -1,6 +1,6 @@
 import { CryptoProxy } from '@proton/crypto';
 import { Api as CryptoApi } from '@proton/crypto/lib/worker/api';
-import { authentication } from '@proton/pass/lib/auth/store';
+import { authStore } from '@proton/pass/lib/auth/store';
 import type {
     PassCryptoManagerContext,
     PassCryptoWorker,
@@ -82,7 +82,7 @@ const createPassCrypto = (): PassCryptoWorker => {
             address.Keys,
             context.user,
             context.userKeys,
-            authentication.getPassword()
+            authStore.getPassword()
         );
 
         return primaryAddressKey;
