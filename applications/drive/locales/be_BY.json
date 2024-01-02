@@ -2474,11 +2474,11 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Адбылася нечаканая памылка. Неабходна перазапусціць імпартаванне."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS_STRING } падзею.",
-        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS_STRING } падзеі.",
-        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS_STRING } падзей.",
-        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS_STRING } падзеі."
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS } падзею.",
+        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS } падзеі.",
+        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS } падзей.",
+        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS } падзей."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Ваш файл ${ formattedFilename } мае памылковы метад і яго немагчыма імпартаваць."
@@ -4500,6 +4500,9 @@
       "You can import one data type at a time.": [
         "Вы можаце імпартаваць адзін тып даных за раз."
       ],
+      "You can now return to the application to continue": [
+        "Цяпер вы можаце вярнуцца да праграмы, каб працягнуць"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Вы можаце ўключыць апавяшчэнні, каб атрымліваць абвесткі пра новыя паведамленні электроннай пошты ў гэтай папцы."
       ],
@@ -4584,6 +4587,20 @@
     "Info on errors": {
       "Click for details": [
         "Націсніце, каб даведацца падрабязнасці"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "Выбрана ${ selectedFoldersCount } папка",
+        "Выбраны ${ selectedFoldersCount } папкі",
+        "Выбраны ${ selectedFoldersCount } папак",
+        "Выбраны ${ selectedFoldersCount } папак"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "Выбрана ${ selectedFoldersCount } метка",
+        "Выбраны ${ selectedFoldersCount } меткі",
+        "Выбраны ${ selectedFoldersCount } метак",
+        "Выбраны ${ selectedFoldersCount } метак"
       ]
     },
     "Item": {
@@ -5757,6 +5774,9 @@
       "Search for name or email": [
         "Шукаць імя або электронную пошту"
       ],
+      "Search parent folder": [
+        "Пошук бацькоўскай папкі"
+      ],
       "Select": [
         "Выбраць"
       ],
@@ -5841,6 +5861,11 @@
     "Select files": {
       "Upload": [
         "Запампаваць"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Нічога не знойдзена"
       ]
     },
     "session_recovery:available:action": {

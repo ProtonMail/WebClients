@@ -2468,11 +2468,11 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Wystąpił nieoczekiwany błąd. Importowanie musi zostać ponownie uruchomione."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzenie.",
-        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzenia.",
-        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzeń.",
-        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzeń."
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_EVENTS } wydarzenie.",
+        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_EVENTS } wydarzenia.",
+        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_EVENTS } wydarzeń.",
+        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_EVENTS } wydarzeń."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Plik ${ formattedFilename } jest nieprawidłowy i nie może zostać zaimportowany."
@@ -5768,6 +5768,9 @@
       "Search for name or email": [
         "Szukaj nazwy lub adresu e-mail"
       ],
+      "Search parent folder": [
+        "Przeszukaj folder nadrzędny"
+      ],
       "Select": [
         "Wybierz"
       ],
@@ -5852,6 +5855,11 @@
     "Select files": {
       "Upload": [
         "Prześlij"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Nie znaleziono żadnych wyników"
       ]
     },
     "session_recovery:available:action": {

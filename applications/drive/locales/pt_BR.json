@@ -319,6 +319,9 @@
       "Get verification code": [
         "Obter código de verificação"
       ],
+      "Give feedback": [
+        "Dar feedback"
+      ],
       "Go to Drive": [
         "Ir para o Drive"
       ],
@@ -2071,6 +2074,11 @@
         "Recursos pagos do ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ PASS_SHORT_APP_NAME }"
       ]
     },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Inclui histórico de versão no ${ DRIVE_SHORT_APP_NAME }, acesso a centenas de servidores ${ VPN_SHORT_APP_NAME } de alta velocidade, compartilhamento no ${ PASS_SHORT_APP_NAME } e mais."
+      ]
+    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 TB"
@@ -2096,7 +2104,7 @@
         "${ BRAND_NAME } não pode se conectar na sua conta externa"
       ],
       "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
-        "${ DRIVE_APP_NAME } foi atualizado. Atualize a página"
+        "${ DRIVE_APP_NAME } foi atualizado. Recarregue a página"
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Você também pode conferir nossa ${ statusPageLink }"
@@ -2133,6 +2141,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Não é possível ativar a pesquisa de conteúdo neste navegador. Saia do modo de navegação privada ou use outro navegador."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "A pesquisa de conteúdo não pode ser ativada. Reinicie o aplicativo ou limpe os dados."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Desmarque pelo menos ${ calendarsToFixCount } calendário",
@@ -2383,6 +2394,9 @@
       "Try using only letters, numerals, and _.-": [
         "Tente usar apenas letras, números e _.-"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "Erro inesperado, não podemos importar os contatos"
+      ],
       "Unknown error": [
         "Erro desconhecido"
       ],
@@ -2428,9 +2442,9 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Ocorreu um erro inesperado. A importação deve ser reiniciada."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "O arquivo ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS_STRING } evento.",
-        "O arquivo ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS_STRING } eventos."
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "O arquivo ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS } evento.",
+        "O arquivo ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS } eventos."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Seu arquivo ${ formattedFilename } tem um método incorreto e não é possível importá-lo."
@@ -4428,6 +4442,16 @@
         "Clique para ver detalhes"
       ]
     },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } pasta selecionada",
+        "${ selectedFoldersCount } pastas selecionadas"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } marcador selecionado",
+        "${ selectedFoldersCount } marcadores selecionados"
+      ]
+    },
     "Item": {
       "file attributes": [
         "atributos do arquivo"
@@ -5623,6 +5647,11 @@
         "Enviar"
       ]
     },
+    "Select search results": {
+      "No results found": [
+        "Nenhum resultado encontrado"
+      ]
+    },
     "session_recovery:available:action": {
       "Cancel reset": [
         "Cancelar redefinição"
@@ -5648,6 +5677,9 @@
         "${ timeRemaining.inHours } hora",
         "${ timeRemaining.inHours } horas"
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Solicitação de redefinição de senha aprovada (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Vá ao dispositivo onde a solicitação (na sessão iniciada) para mudar a sua senha."
       ],
@@ -5659,11 +5691,30 @@
         "Essa permissão expira em ${ timeRemaining.inHours } hora",
         "Essa permissão expira em ${ timeRemaining.inHours } horas"
       ],
+      "This permission expires soon": [
+        "Esta permissão expira em breve"
+      ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Agora você pode alterar a senha da conta ${ boldEmail } gratuitamente por ${ boldDaysRemaining }."
       ],
       "You can now change your password for the account ${ boldEmail }.": [
         "Agora você pode alterar a senha da conta ${ boldEmail }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Você tem ${ timeRemaining.inDays } dia para redefinir sua senha.",
+        "Você tem ${ timeRemaining.inDays } dias para redefinir sua senha."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Você tem ${ timeRemaining.inHours } hora para redefinir sua senha.",
+        " Você tem ${ timeRemaining.inHours } horas para redefinir sua senha."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Você tem ${ timeRemaining.inMinutes } minuto para redefinir sua senha.",
+        " Você tem ${ timeRemaining.inMinutes } minutos para redefinir sua senha."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Você tem ${ timeRemaining.inSeconds } segundo para redefinir sua senha.",
+        " Você tem ${ timeRemaining.inSeconds } segundos para redefinir sua senha."
       ]
     },
     "session_recovery:available:link": {
