@@ -6,9 +6,9 @@ import { useApi, useEventManager, useNotifications } from '@proton/components/ho
 import { snoozeConversations, unsnoozeConversations } from '@proton/shared/lib/api/conversations';
 import { MAILBOX_IDENTIFIERS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
+import { getSnoozeNotificationText, getSnoozeUnixTime } from '../../helpers/snooze';
 import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
 import { params } from '../../logic/elements/elementsSelectors';
-import { getSnoozeNotificationText, getSnoozeUnixTime } from '../../logic/snoozehelpers';
 import { useAppDispatch } from '../../logic/store';
 import { Element } from '../../models/element';
 import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels';
