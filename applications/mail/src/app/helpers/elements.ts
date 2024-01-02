@@ -12,7 +12,6 @@ import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
 
 import { ELEMENT_TYPES } from '../constants';
-import { getSnoozeDate } from '../logic/snoozehelpers';
 import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
 import { LabelIDsChanges } from '../models/event';
@@ -26,6 +25,7 @@ import {
     getNumAttachments as conversationNumAttachments,
 } from './conversation';
 import { isConversationMode } from './mailSettings';
+import { getSnoozeDate } from './snooze';
 
 const { INBOX, TRASH, SPAM, ARCHIVE, SCHEDULED, SNOOZED } = MAILBOX_LABEL_IDS;
 
