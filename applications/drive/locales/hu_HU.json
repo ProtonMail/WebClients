@@ -2343,10 +2343,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Váratlan hiba történt. Az importálást újra kell kezdeni."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "A fájl több mint ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmaz: ${ formattedFilename }.",
-        "A fájl több mint ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmaz: ${ formattedFilename }."
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "A(z) ${ formattedFilename } fájl érvénytelen metódust tartalmaz és nem importálható."
       ],
@@ -5449,6 +5445,11 @@
     "Select files": {
       "Upload": [
         "Feltöltés"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Nincs találat"
       ]
     },
     "session_recovery:available:action": {

@@ -682,12 +682,6 @@
       "${ title } started on ${ formattedDate } at ${ formattedHour }": [
         "${ title } ${ formattedDate } 开始, ${ formattedHour }"
       ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } 开始于 ${ formattedDateWithoutTime }"
-      ],
-      "${ title } started on ${ formattedDateWithTime }": [
-        "${ title } 开始于 ${ formattedDateWithTime }"
-      ],
       "${ title } started yesterday": [
         "${ title } 于昨天开始"
       ],
@@ -705,12 +699,6 @@
       ],
       "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
         "${ title } 开始于 ${ formattedDate } ${ formattedHour }"
-      ],
-      "${ title } starts on ${ formattedDateWithoutTime }": [
-        "${ title } 开始于 ${ formattedDateWithoutTime }"
-      ],
-      "${ title } starts on ${ formattedDateWithTime }": [
-        "${ title } 在 ${ formattedDateWithTime } 开始"
       ],
       "${ title } starts today": [
         "${ title } 今天开始"
@@ -2054,17 +2042,16 @@
       "Daily": [
         "每天"
       ],
-      "Daily, ${ untilString }": [
-        "每天, 直到${ untilString }"
-      ],
       "Every ${ interval } days": [
         "每 ${ interval } 天"
       ],
-      "Every ${ interval } days, ${ untilString }": [
-        "每 ${ interval } 天，${ untilString }"
-      ],
       "until ${ dateString }": [
         "直到${ dateString }"
+      ]
+    },
+    "Daily recurring event, frequency (times)": {
+      "Every ${ interval } days, ${ timesString }": [
+        "每 ${ interval } 天，${ timesString }"
       ]
     },
     "Day": {
@@ -2116,6 +2103,9 @@
       ]
     },
     "Description": {
+      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
+        "通过按类别或精力水平对事件进行颜色编码，提高效率并跟踪时间。通过付费计划获得此功能以及更多功能。"
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "正在解密通讯录，可能需要几分钟的时间。完成后您就可以下载导出的通讯录文件了。"
       ],
@@ -2270,6 +2260,14 @@
         "更新开始于 ${ formattedStart } 的活动"
       ]
     },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 位用户"
+      ]
+    },
     "Error": {
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }，或查看我们的${ statusPageLink }"
@@ -2361,6 +2359,9 @@
       "Event not found": [
         "未找到事件"
       ],
+      "Failed to get event": [
+        "获取事件失败"
+      ],
       "Failed to get original occurrence in series": [
         "无法获取序列中的原始事件"
       ],
@@ -2384,6 +2385,9 @@
       ],
       "Incorrect username": [
         "用户名不正确"
+      ],
+      "Intended recipient does not support calendar sharing": [
+        "目标收件人不支持日历共享"
       ],
       "Interval cannot be empty": [
         "重复周期不能为空"
@@ -2649,9 +2653,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "出现意外错误，需重新开始导入。"
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "文件 ${ formattedFilename } 中的日程数已超过 ${ MAX_IMPORT_EVENTS_STRING }。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "您的文件 ${ formattedFilename } 包含一个无效的 method 属性，无法导入。"
@@ -3551,6 +3552,9 @@
       "All (${ totalFoldersCount } labels)": [
         "全部（${ totalFoldersCount } 个标签）"
       ],
+      "All participants will get a cancellation email. Which event would you like to delete?": [
+        "所有参与者都会收到取消电子邮件的通知。您想删除哪个事件？"
+      ],
       "An invitation will be sent to added participants.": [
         "邀请函将发送至所有已添加的参与者"
       ],
@@ -4208,6 +4212,14 @@
         "点击查看详情"
       ]
     },
+    "Info: partial": {
+      "${ selectedFoldersCount } folders selected": [
+        "已选择 ${ selectedFoldersCount } 个文件夹"
+      ],
+      "${ selectedFoldersCount } labels selected": [
+        "已选择 ${ selectedFoldersCount } 个标签"
+      ]
+    },
     "Info; access rights for shared calendar": {
       "View only": [
         "仅查看"
@@ -4862,20 +4874,8 @@
       "Every ${ interval } months ${ onDayString }": [
         "每 ${ interval } 个月的 ${ onDayString }"
       ],
-      "Every ${ interval } months ${ onDayString }, ${ timesString }": [
-        "每 ${ interval } 月的 ${ onDayString }，${ timesString }"
-      ],
-      "Every ${ interval } months ${ onDayString }, ${ untilString }": [
-        "每 ${ interval } 月的 ${ onDayString }，直到 ${ untilString }"
-      ],
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "每月${ onDayString }，${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "每月${ onDayString }，直到${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -5241,6 +5241,9 @@
       ],
       "Set up your organization": [
         "填写机构信息"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "通过左上角的切换按钮可以前往所有 ${ BRAND_NAME } 服务：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 且 ${ PASS_SHORT_APP_NAME }。"
       ]
     },
     "Option": {
@@ -5916,6 +5919,9 @@
       "Add your country's public holidays to your calendar.": [
         "将您所在国家/地区的公共假期添加到您的日历中。"
       ],
+      "Color-coding is here!": [
+        "颜色编码就在这里！"
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "使用我们新的搜索功能轻松找到您正在寻找的活动。"
       ],
@@ -5930,6 +5936,9 @@
       ],
       "Search for events": [
         "搜索事件"
+      ],
+      "With customizable event colors, you can color-code the chaos and conquer your day.": [
+        "通过可定制的活动颜色，您可以对混乱进行颜色编码并控制您的一天。"
       ]
     },
     "Storage": {
@@ -6232,6 +6241,9 @@
       ],
       "Add participants": [
         "添加成员"
+      ],
+      "Add some color to your day": [
+        "为你的一天增添一些色彩"
       ],
       "Add to ${ groupCount } groups": [
         "添加到 ${ groupCount } 个群组"
@@ -6636,6 +6648,9 @@
       "Hide side panel": [
         "隐藏侧边栏"
       ],
+      "Load image": [
+        "加载图片"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
       ],
@@ -6773,29 +6788,11 @@
       "Every ${ interval } weeks on ${ multipleDaysString }": [
         "每 ${ interval } 周的${ multipleDaysString }"
       ],
-      "Every ${ interval } weeks on ${ multipleDaysString }, ${ timesString }": [
-        "每${ interval } 周的${ multipleDaysString }，${ timesString }"
-      ],
-      "Every ${ interval } weeks on ${ multipleDaysString }, ${ untilString }": [
-        "每${ interval } 周的${ multipleDaysString }，知道${ untilString }"
-      ],
       "Every ${ interval } weeks on all days": [
         "每 ${ interval } 周整周"
       ],
-      "Every ${ interval } weeks on all days, ${ timesString }": [
-        "每 ${ interval } 周整周，${ timesString }"
-      ],
-      "Every ${ interval } weeks on all days, ${ untilString }": [
-        "每 ${ interval } 周所有天，${ untilString }"
-      ],
       "Every ${ interval } weeks on Friday": [
         "每 ${ interval } 周的星期五"
-      ],
-      "Every ${ interval } weeks on Friday, ${ timesString }": [
-        "每 ${ interval } 周星期五，${ timesString }"
-      ],
-      "Every ${ interval } weeks on Friday, ${ untilString }": [
-        "每 ${ interval } 周星期五，${ untilString }"
       ],
       "Every ${ interval } weeks on Monday": [
         "每 ${ interval } 周的星期一"
@@ -6803,17 +6800,8 @@
       "Every ${ interval } weeks on Monday, ${ timesString }": [
         "每 ${ interval } 周星期一，${ timesString }"
       ],
-      "Every ${ interval } weeks on Monday, ${ untilString }": [
-        "每 ${ interval } 周星期一，${ untilString }"
-      ],
       "Every ${ interval } weeks on Saturday": [
         "每 ${ interval } 周的星期六"
-      ],
-      "Every ${ interval } weeks on Saturday, ${ timesString }": [
-        "每 ${ interval } 周星期六，${ timesString }"
-      ],
-      "Every ${ interval } weeks on Saturday, ${ untilString }": [
-        "每 ${ interval } 周星期六，${ untilString }"
       ],
       "Every ${ interval } weeks on Sunday": [
         "每 ${ interval } 周的星期日"
@@ -6821,17 +6809,8 @@
       "Every ${ interval } weeks on Sunday, ${ timesString }": [
         "每 ${ interval } 周星期日，${ timesString }"
       ],
-      "Every ${ interval } weeks on Sunday, ${ untilString }": [
-        "每 ${ interval } 周星期日，${ untilString }"
-      ],
       "Every ${ interval } weeks on Thursday": [
         "每 ${ interval } 周的星期四"
-      ],
-      "Every ${ interval } weeks on Thursday, ${ timesString }": [
-        "每 ${ interval } 周星期四，${ timesString }"
-      ],
-      "Every ${ interval } weeks on Thursday, ${ untilString }": [
-        "每 ${ interval } 周星期四，${ untilString }"
       ],
       "Every ${ interval } weeks on Tuesday": [
         "每 ${ interval } 周的星期二"
@@ -6839,98 +6818,35 @@
       "Every ${ interval } weeks on Tuesday, ${ timesString }": [
         "每 ${ interval } 周星期二，${ timesString }"
       ],
-      "Every ${ interval } weeks on Tuesday, ${ untilString }": [
-        "每 ${ interval } 周星期二，${ untilString }"
-      ],
       "Every ${ interval } weeks on Wednesday": [
         "每 ${ interval } 周的星期三"
-      ],
-      "Every ${ interval } weeks on Wednesday, ${ timesString }": [
-        "每 ${ interval } 周星期三，${ timesString }"
-      ],
-      "Every ${ interval } weeks on Wednesday, ${ untilString }": [
-        "每 ${ interval } 周星期三，${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "每周的 ${ multipleDaysString }"
       ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "每周${ multipleDaysString }，${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "每周${ multipleDaysString }，${ untilString }"
-      ],
       "Weekly on all days": [
         "每周所有天"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "每周所有天数，${ timesString }。"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "每天，直到${ untilString }"
       ],
       "Weekly on Friday": [
         "每周星期五"
       ],
-      "Weekly on Friday, ${ timesString }": [
-        "每周星期五，${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "每周星期五，直到${ untilString }"
-      ],
       "Weekly on Monday": [
         "每周星期一"
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        "每周星期一，${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "每周星期一，直到${ untilString }"
       ],
       "Weekly on Saturday": [
         "每周星期六"
       ],
-      "Weekly on Saturday, ${ timesString }": [
-        "每周星期六，${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "每周星期六，直到${ untilString }"
-      ],
       "Weekly on Sunday": [
         "每周星期日"
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        "每周星期日，${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "每周星期日，直到${ untilString }"
       ],
       "Weekly on Thursday": [
         "每周星期四"
       ],
-      "Weekly on Thursday, ${ timesString }": [
-        "每周星期四，${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "每周星期四，直到${ untilString }"
-      ],
       "Weekly on Tuesday": [
         "每周星期二"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "每周星期二，${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "每周星期二，直到${ untilString }"
-      ],
       "Weekly on Wednesday": [
         "每周星期三"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "每周星期三，${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "每周星期三，直到${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -6960,20 +6876,8 @@
       "Every ${ interval } years": [
         "每 ${ interval } 年"
       ],
-      "Every ${ interval } years, ${ timesString }": [
-        "每 ${ interval } 年，${ timesString }"
-      ],
-      "Every ${ interval } years, ${ untilString }": [
-        "每 ${ interval } 年，直到 ${ untilString }"
-      ],
       "Yearly": [
         "每年"
-      ],
-      "Yearly, ${ timesString }": [
-        "每年, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "每年, ${ untilString }"
       ]
     }
   }

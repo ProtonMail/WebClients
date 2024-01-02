@@ -2994,23 +2994,19 @@
       "Daily": [
         "Ежедневно"
       ],
-      "Daily, ${ untilString }": [
-        "Ежедневно, ${ untilString }"
-      ],
       "Every ${ interval } day": [
         "Каждый ${ interval } день",
         "Каждые ${ interval } дня",
         "Каждые ${ interval } дней",
         "Каждые ${ interval } дня"
       ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Каждый ${ interval } день, ${ untilString }",
-        "Каждые ${ interval } дня, ${ untilString }",
-        "Каждые ${ interval } дней, ${ untilString }",
-        "Каждые ${ interval } дней, ${ untilString }"
-      ],
       "until ${ dateString }": [
         "до ${ dateString }"
+      ]
+    },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "Ежедневно, в ${ timesString }"
       ]
     },
     "Day": {
@@ -4212,12 +4208,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Произошла непредвиденная ошибка. Необходимо начать импорт заново."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS_STRING } события.",
-        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS_STRING } событий.",
-        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS_STRING } событий.",
-        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS_STRING } событий."
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Ваш файл ${ formattedFilename } имеет недопустимый метод и не может быть импортирован."
       ],
@@ -4389,6 +4379,9 @@
       ],
       "Oops, something went wrong": [
         "Хм. Что-то пошло не так"
+      ],
+      "Open in browser": [
+        "Открыть в браузере"
       ],
       "Please refresh the page or try again later.": [
         "Пожалуйста, обновите страницу или повторите попытку позже."
@@ -5249,6 +5242,9 @@
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "У вас уже есть аккаунт? ${ signIn }"
+      ],
+      "Already have an account? ${ signIn } or ${ switchAccount }": [
+        "У вас уже есть аккаунт? ${ signIn } или ${ switchAccount }"
       ]
     },
     "Go to sign up": {
@@ -7433,6 +7429,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Это может занять некоторое время. Не закрывайте эту страницу и не отключайтесь от Интернета."
+      ],
+      "This file is too large to preview": [
+        "Этот файл слишком большой для предпросмотра"
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Это фраза из 12 слов, которую вам было предложено задать."
@@ -9645,6 +9644,9 @@
       "Sign in": [
         "Войти"
       ],
+      "switch account": [
+        "переключить аккаунт"
+      ],
       "Terms": [
         "Правила"
       ],
@@ -9906,26 +9908,8 @@
         "Каждые ${ interval } месяцев (${ onDayString })",
         "Каждые ${ interval } месяца (${ onDayString })"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Каждый ${ interval } месяц (${ onDayString }, ${ timesString })",
-        "Каждые ${ interval } месяца (${ onDayString }, ${ timesString })",
-        "Каждые ${ interval } месяцев (${ onDayString }, ${ timesString })",
-        "Каждые ${ interval } месяцев ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Каждый ${ interval } месяц (${ onDayString }, ${ untilString })",
-        "Каждые ${ interval } месяца (${ onDayString } ${ untilString })",
-        "Каждые ${ interval } месяцев (${ onDayString }, ${ untilString })",
-        "Каждые ${ interval } месяца (${ onDayString }, ${ untilString })"
-      ],
       "Monthly ${ onDayString }": [
         "Ежемесячно по ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Ежемесячно по ${ onDayString } в ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Ежемесячно ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -11352,6 +11336,12 @@
       "Select who can access...": [
         "Выберите, кто может получить доступ к..."
       ],
+      "Send to all": [
+        "Отправить всем"
+      ],
+      "Setup incomplete": [
+        "Настройка завершена"
+      ],
       "Standard server configs": [
         "Стандартные конфигурации сервера"
       ],
@@ -11740,6 +11730,11 @@
       ],
       "New credit/debit card": [
         "Новая кредитная/дебетовая карта"
+      ]
+    },
+    "Permission": {
+      "Setup incomplete": [
+        "Настройка завершена"
       ]
     },
     "Personal calendar section description": {
@@ -12163,6 +12158,11 @@
         "Посмотреть, как"
       ]
     },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Пароль сохранен"
+      ]
+    },
     "session_recovery:available:title": {
       "Reset your password": [
         "Сбросить пароль"
@@ -12317,6 +12317,11 @@
       ],
       "To enhance the security of your account and protect your data, you can request a password reset from your account settings in the web application.": [
         "Чтобы повысить безопасность вашего аккаунта и защитить ваши данные, вы можете запросить сброс пароля из настроек вашего аккаунта в веб-приложении."
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Выйти"
       ]
     },
     "session_recovery:sign_out:info": {
@@ -13678,6 +13683,9 @@
       "Delete calendar": [
         "Удалить календарь"
       ],
+      "Delete filter?": [
+        "Удалить фильтр?"
+      ],
       "Delete folder?": [
         "Удалить папку?"
       ],
@@ -14220,6 +14228,9 @@
       ],
       "Summary": [
         "Сводка"
+      ],
+      "Switch account": [
+        "Переключить аккаунт"
       ],
       "Switch to one-password mode": [
         "Переключить в режим с одним паролем"
@@ -14943,53 +14954,17 @@
         "Каждые ${ interval } недель в ${ multipleDaysString }",
         "Каждые ${ interval } недель в ${ multipleDaysString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Каждую ${ interval } неделю по ${ multipleDaysString }, ${ timesString }",
-        "Каждые ${ interval } недели по ${ multipleDaysString }, ${ timesString }",
-        "Каждые ${ interval } недель по ${ multipleDaysString }, ${ timesString }",
-        "Каждые ${ interval } недели по ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Каждую ${ interval } неделю по ${ multipleDaysString }, ${ untilString }",
-        "Каждые ${ interval } недели по ${ multipleDaysString }, ${ untilString }",
-        "Каждые ${ interval } недель по ${ multipleDaysString }, ${ untilString }",
-        "Каждые ${ interval } недели по ${ multipleDaysString }, ${ untilString }"
-      ],
       "Every ${ interval } week on all days": [
         "Каждую ${ interval } неделю во все дни",
         "Каждые ${ interval } недели, каждый день",
         "Каждые ${ interval } недель, каждый день",
         "Каждые ${ interval } недель, каждый день"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Каждую ${ interval } неделю по всем дням, ${ timesString }",
-        "Каждые ${ interval } недели по всем дням, ${ timesString }",
-        "Каждые ${ interval } недель по всем дням, ${ timesString }",
-        "Каждые ${ interval } недель по всем дням, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Каждую ${ interval } неделю каждый день, ${ untilString }",
-        "Каждые ${ interval } недели каждый день, ${ untilString }",
-        "Каждые ${ interval } недель каждый день, ${ untilString }",
-        "Каждые ${ interval } недели каждый день, ${ untilString }"
-      ],
       "Every ${ interval } week on Friday": [
         "Каждую ${ interval } неделю в пятницу",
         "Каждые ${ interval } недели в пятницу",
         "Каждые ${ interval } недель в пятницу",
         "Каждые ${ interval } недель в пятницу"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Каждую ${ interval } неделю по пятницам, ${ timesString }",
-        "Каждые ${ interval } недели по пятницам, ${ timesString }",
-        "Каждые ${ interval } недель по пятницам, ${ timesString }",
-        "Каждые ${ interval } недели по пятницам, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Каждую ${ interval } неделю в пятницу, ${ untilString }",
-        "Каждые ${ interval } недели в пятницу, ${ untilString }",
-        "Каждые ${ interval } недель в пятницу, ${ untilString }",
-        "Каждые ${ interval } недели в пятницу, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Каждую ${ interval } неделю в понедельник",
@@ -15003,29 +14978,11 @@
         "Каждые ${ interval } недель по понедельникам, ${ timesString }",
         "Каждые ${ interval } недели по понедельникам, ${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Каждую ${ interval } неделю в понедельник, ${ untilString }",
-        "Каждые ${ interval } недели в понедельник, ${ untilString }",
-        "Каждые ${ interval } недель в понедельник, ${ untilString }",
-        "Каждые ${ interval } недели в понедельник, ${ untilString }"
-      ],
       "Every ${ interval } week on Saturday": [
         "Каждую ${ interval } неделю в субботу",
         "Каждые ${ interval } недели в субботу",
         "Каждые ${ interval } недель в субботу",
         "Каждые ${ interval } недель в субботу"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Каждую ${ interval } неделю по субботам, ${ timesString }",
-        "Каждые ${ interval } недели по субботам, ${ timesString }",
-        "Каждые ${ interval } недель по субботам, ${ timesString }",
-        "Каждые ${ interval } недели по субботам, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Каждую ${ interval } неделю в субботу, ${ untilString }",
-        "Каждые ${ interval } недели в субботу, ${ untilString }",
-        "Каждые ${ interval } недель в субботу, ${ untilString }",
-        "Каждые ${ interval } недели в субботу, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Каждую ${ interval } неделю в воскресенье",
@@ -15039,29 +14996,11 @@
         "Каждые ${ interval } недель в воскресенье, ${ timesString }",
         "Каждые ${ interval } недель в воскресенье, ${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Каждую ${ interval } неделю в воскресенье, ${ untilString }",
-        "Каждые ${ interval } недели в воскресенье, ${ untilString }",
-        "Каждые ${ interval } недель в воскресенье, ${ untilString }",
-        "Каждые ${ interval } недели в воскресенье, ${ untilString }"
-      ],
       "Every ${ interval } week on Thursday": [
         "Каждую ${ interval } неделю в четверг",
         "Каждые ${ interval } недели в четверг",
         "Каждые ${ interval } недель в четверг",
         "Каждые ${ interval } недель в четверг"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Каждую ${ interval } неделю по четвергам, ${ timesString }",
-        "Каждые ${ interval } недели по четвергам, ${ timesString }",
-        "Каждые ${ interval } недель по четвергам, ${ timesString }",
-        "Каждые ${ interval } недели по четвергам, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Каждую ${ interval } неделю в четверг, ${ untilString }",
-        "Каждые ${ interval } недели в четверг, ${ untilString }",
-        "Каждые ${ interval } недель в четверг, ${ untilString }",
-        "Каждые ${ interval } недели в четверг, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Каждую ${ interval } неделю во вторник",
@@ -15075,110 +15014,38 @@
         "Каждые ${ interval } недель по вторникам, ${ timesString }",
         "Каждые ${ interval } недели по вторникам, ${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Каждую ${ interval } неделю во вторник, ${ untilString }",
-        "Каждые ${ interval } недели во вторник, ${ untilString }",
-        "Каждые ${ interval } недель во вторник, ${ untilString }",
-        "Каждые ${ interval } недели во вторник, ${ untilString }"
-      ],
       "Every ${ interval } week on Wednesday": [
         "Каждую ${ interval } неделю в среду",
         "Каждые ${ interval } недели в среду",
         "Каждые ${ interval } недель в среду",
         "Каждые ${ interval } недель в среду"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Каждую ${ interval } неделю по средам, ${ timesString }",
-        "Каждые ${ interval } недели по средам, ${ timesString }",
-        "Каждые ${ interval } недель по средам, ${ timesString }",
-        "Каждые ${ interval } недели по средам, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Каждую ${ interval } неделю в среду, ${ untilString }",
-        "Каждые ${ interval } недели в среду, ${ untilString }",
-        "Каждые ${ interval } недель в среду, ${ untilString }",
-        "Каждые ${ interval } недели в среду, ${ untilString }"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "Еженедельно по следующим дням: ${ multipleDaysString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Еженедельно по следующим дням: ${ multipleDaysString } в ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Еженедельно по ${ multipleDaysString } ${ untilString }"
       ],
       "Weekly on all days": [
         "Еженедельно, каждый день"
       ],
-      "Weekly on all days, ${ timesString }": [
-        "Еженедельно во все дни в ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Еженедельно, каждый день ${ untilString }"
-      ],
       "Weekly on Friday": [
         "Еженедельно, в пятницу"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Еженедельно по пятницам в ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Еженедельно по пятницам ${ untilString }"
       ],
       "Weekly on Monday": [
         "Еженедельно, в понедельник"
       ],
-      "Weekly on Monday, ${ timesString }": [
-        "Еженедельно, по понедельникам в ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Еженедельно в понедельник ${ untilString }"
-      ],
       "Weekly on Saturday": [
         "Еженедельно в субботу"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Еженедельно по субботам в ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Еженедельно по субботам ${ untilString }"
       ],
       "Weekly on Sunday": [
         "Еженедельно, в воскресенье"
       ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Еженедельно, по воскресеньям в ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Еженедельно по воскресеньям ${ untilString }"
-      ],
       "Weekly on Thursday": [
         "Еженедельно, в четверг"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Еженедельно по четвергам в ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Еженедельно по четвергам ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "Еженедельно, во вторник"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Еженедельно, по вторникам в ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Еженедельно по вторникам ${ untilString }"
-      ],
       "Weekly on Wednesday": [
         "Еженедельно, в среду"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Еженедельно по средам в ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Еженедельно по средам ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -15211,26 +15078,8 @@
         "Каждые ${ interval } лет",
         "Каждые ${ interval } лет"
       ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Каждый ${ interval } год, ${ timesString }",
-        "Каждые ${ interval } года, ${ timesString }",
-        "Каждые ${ interval } лет, ${ timesString }",
-        "Каждые ${ interval } лет, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Каждый ${ interval } год ${ untilString }",
-        "Каждые ${ interval } года ${ untilString }",
-        "Каждые ${ interval } лет ${ untilString }",
-        "Каждые ${ interval } лет ${ untilString }"
-      ],
       "Yearly": [
         "Ежегодно"
-      ],
-      "Yearly, ${ timesString }": [
-        "Ежегодно в ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Ежегодно ${ untilString }"
       ]
     }
   }

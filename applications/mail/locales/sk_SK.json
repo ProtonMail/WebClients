@@ -184,6 +184,9 @@
       "Clear search": [
         "Vyčistiť vyhľadávanie"
       ],
+      "Clear selection": [
+        "Zrušiť výber"
+      ],
       "Click here.": [
         "Kliknite sem."
       ],
@@ -315,9 +318,6 @@
       ],
       "Delete permanently": [
         "Navždy vymazať"
-      ],
-      "Deselect": [
-        "Zrušiť výber"
       ],
       "Deselect all": [
         "Zrušiť výber všetkého"
@@ -2981,20 +2981,11 @@
       "Daily": [
         "Denne"
       ],
-      "Daily, ${ untilString }": [
-        "Denne, ${ untilString }"
-      ],
       "Every ${ interval } day": [
         "Každý ${ interval } deň",
         "Každé ${ interval } dni",
         "Každých ${ interval } dní",
         "Každých ${ interval } dní"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Každý ${ interval } deň, ${ untilString }",
-        "Každé ${ interval } dni, ${ untilString }",
-        "Každých ${ interval } dní, ${ untilString }",
-        "Každých ${ interval } dní, ${ untilString }"
       ],
       "until ${ dateString }": [
         "do ${ dateString }"
@@ -3251,14 +3242,6 @@
     "email_forwarding_2023: Composer email icon": {
       "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
         "Šifrované s nulovým prístupom. Príjemca má na svojom účte vypnuté end-to-end šifrovanie."
-      ]
-    },
-    "empty messages: success": {
-      "Folder cleared": [
-        "Priečinok vyčistený"
-      ],
-      "Label cleared": [
-        "Štítok odstránený"
       ]
     },
     "Encrypted Headers": {
@@ -3786,11 +3769,11 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Vyskytla sa neočakávaná chyba. Import sa musí reštartovať."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Váš súbor ${ formattedFilename } obsahuje viac ako ${ MAX_IMPORT_EVENTS_STRING } udalosť.",
-        "Váš súbor ${ formattedFilename } obsahuje viac ako ${ MAX_IMPORT_EVENTS_STRING } udalosti.",
-        "Váš súbor ${ formattedFilename } obsahuje viac ako ${ MAX_IMPORT_EVENTS_STRING } udalosti.",
-        "Váš súbor ${ formattedFilename } obsahuje viac ako ${ MAX_IMPORT_EVENTS_STRING } udalosti."
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Váš súbor ${ formattedFilename } obsahuje viac ako ${ MAX_IMPORT_EVENTS } udalosť.",
+        "Váš súbor ${ formattedFilename } obsahuje viac ako ${ MAX_IMPORT_EVENTS } udalosti.",
+        "Váš súbor ${ formattedFilename } obsahuje viac ako ${ MAX_IMPORT_EVENTS } udalostí.",
+        "Váš súbor ${ formattedFilename } obsahuje viac ako ${ MAX_IMPORT_EVENTS } udalostí."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Váš súbor ${ formattedFilename } má neplatnú metódu a nemožno ho importovať."
@@ -5201,11 +5184,17 @@
       "and": [
         "a"
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Budú odstránené aj všetky podpriečinky. Emaily uložené v priečinku ${ nameDeleted } sa však neodstránia a nájdete ich v priečinku Všetka pošta."
+      ],
       "Are you sure you want to delete all messages in this folder?": [
         "Naozaj chcete vymazať všetky správy v tomto priečinku?"
       ],
       "Are you sure you want to delete all messages with this label?": [
         "Naozaj chcete vymazať všetky správy s týmto štítkom?"
+      ],
+      "Are you sure you want to delete this folder?": [
+        "Naozaj chcete odstrániť tento priečinok?"
       ],
       "Are you sure you want to delete this label?": [
         "Naozaj chcete vymazať tento štítok?"
@@ -5431,6 +5420,9 @@
       ],
       "Emails are automatically signed": [
         "Emaily sú automaticky podpísané"
+      ],
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Emaily označené štítkom ${ nameDeleted } nebudú vymazané a je možné ich stále nájsť v príslušnom priečinku."
       ],
       "embedded image": [
         "pripojený obrázok",
@@ -5689,9 +5681,6 @@
       ],
       "Monthly ${ onDayString }": [
         "Mesačne ${ onDayString }"
-      ],
-      "Moving messages. This may take a while.": [
-        "Presúvanie správ. Môže to chvíľu trvať."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Pomenujte svoj nový priečinok a vyberte nadradený priečinok, do ktorého ho chcete vložiť. Pokiaľ nadradený priečinok nevyberiete, bude nový priečinok vytvorený v hlavnom priečinku."
@@ -7610,26 +7599,8 @@
         "Každých ${ interval } mesiacov ${ onDayString }",
         "Každých ${ interval } mesiacov ${ onDayString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Každý ${ interval } mesiac ${ onDayString }, ${ timesString }",
-        "Každé ${ interval } mesiace ${ onDayString }, ${ timesString }",
-        "Každých ${ interval } mesiacov ${ onDayString }, ${ timesString }",
-        "Každých ${ interval } mesiacov ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Každý ${ interval } mesiac ${ onDayString }, ${ untilString }",
-        "Každé ${ interval } mesiace ${ onDayString }, ${ untilString }",
-        "Každých ${ interval } mesiacov ${ onDayString }, ${ untilString }",
-        "Každých ${ interval } mesiacov ${ onDayString }, ${ untilString }"
-      ],
       "Monthly ${ onDayString }": [
         "Mesačne ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Mesačne ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Mesačne ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -8270,6 +8241,11 @@
     "Select files": {
       "Upload": [
         "Nahrať"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Neboli nájdené žiadne výsledky"
       ]
     },
     "Send email with changed preferences": {
@@ -10175,53 +10151,17 @@
         "Každých ${ interval } týždňov v ${ multipleDaysString }",
         "Každých ${ interval } týždňov v ${ multipleDaysString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Každý ${ interval } týždeň v ${ multipleDaysString }, ${ timesString }",
-        "Každé ${ interval } týždne v ${ multipleDaysString }, ${ timesString }",
-        "Každých ${ interval } týždňov v ${ multipleDaysString }, ${ timesString }",
-        "Každých ${ interval } týždňov v ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Každý ${ interval } týždeň v ${ multipleDaysString }, ${ untilString }",
-        "Každé ${ interval } týždne v ${ multipleDaysString }, ${ untilString }",
-        "Každých ${ interval } týždňov v ${ multipleDaysString }, ${ untilString }",
-        "Každých ${ interval } týždňov v ${ multipleDaysString }, ${ untilString }"
-      ],
       "Every ${ interval } week on all days": [
         "Každý ${ interval } týždeň vo všetky dni",
         "Každé ${ interval } týždne vo všetky dni",
         "Každých ${ interval } týždňov vo všetky dni",
         "${ interval } týždňov vo všetky dni"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Každý ${ interval } týždeň vo všetky dni, ${ timesString }",
-        "Každé ${ interval } týždne vo všetky dni, ${ timesString }",
-        "Každých ${ interval } týždňov vo všetky dni, ${ timesString }",
-        "Každých ${ interval } týždňov vo všetky dni, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Každý ${ interval } týždeň vo všetky dni, ${ untilString }",
-        "Každé ${ interval } týždne vo všetky dni, ${ untilString }",
-        "Každých ${ interval } týždňov vo všetky dni, ${ untilString }",
-        "Každých ${ interval } týždňov vo všetky dni, ${ untilString }"
-      ],
       "Every ${ interval } week on Friday": [
         "Každý ${ interval } týždeň v piatok",
         "Každé ${ interval } týždne v piatok",
         "Každých ${ interval } týždňov v piatok",
         "Každých ${ interval } týždňov v piatok"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Každý ${ interval } týždeň v piatok, ${ timesString }",
-        "Každé ${ interval } týždne v piatok, ${ timesString }",
-        "Každých ${ interval } týždňov v piatok, ${ timesString }",
-        "Každých ${ interval } týždňov v piatok, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Každý ${ interval } týždeň v piatok, ${ untilString }",
-        "Každé ${ interval } týždne v piatok, ${ untilString }",
-        "Každých ${ interval } týždňov v piatok, ${ untilString }",
-        "Každých ${ interval } týždňov v piatok, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Každý ${ interval } týždeň v pondelok",
@@ -10235,29 +10175,11 @@
         "Každých ${ interval } týždňov v pondelok, ${ timesString }",
         "Každých ${ interval } týždňov v pondelok, ${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Každý ${ interval } týždeň v pondelok, ${ untilString }",
-        "Každé ${ interval } týždne v pondelok, ${ untilString }",
-        "Každých ${ interval } týždňov v pondelok, ${ untilString }",
-        "Každých ${ interval } týždňov v pondelok, ${ untilString }"
-      ],
       "Every ${ interval } week on Saturday": [
         "Každý ${ interval } týždeň v sobotu",
         "Každé ${ interval } týždne v sobotu",
         "Každých ${ interval } týždňov v sobotu",
         "Každých ${ interval } týždňov v sobotu"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Každý ${ interval } týždeň v sobotu, ${ timesString }",
-        "Každé ${ interval } týždne v sobotu, ${ timesString }",
-        "Každých ${ interval } týždňov v sobotu, ${ timesString }",
-        "Každých ${ interval } týždňov v sobotu, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Každý ${ interval } týždeň v sobotu, ${ untilString }",
-        "Každé ${ interval } týždne v sobotu, ${ untilString }",
-        "Každých ${ interval } týždňov v sobotu, ${ untilString }",
-        "Každých ${ interval } týždňov v sobotu, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Každý ${ interval } týždeň v nedeľu",
@@ -10271,29 +10193,11 @@
         "Každých ${ interval } týždňov v nedeľu, ${ timesString }",
         "Každých ${ interval } týždňov v nedeľu, ${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Každý ${ interval } týždeň v nedeľu, ${ untilString }",
-        "Každé ${ interval } týždne v nedeľu, ${ untilString }",
-        "Každých ${ interval } týždňov v nedeľu, ${ untilString }",
-        "Každých ${ interval } týždňov v nedeľu, ${ untilString }"
-      ],
       "Every ${ interval } week on Thursday": [
         "Každý ${ interval } týždeň vo štvrtok",
         "Každé ${ interval } týždne vo štvrtok",
         "Každých ${ interval } týždňov vo štvrtok",
         "Každých ${ interval } týždňov vo štvrtok"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Každý ${ interval } týždeň vo štvrtok, ${ timesString }",
-        "Každé ${ interval } týždne vo štvrtok, ${ timesString }",
-        "Každých ${ interval } týždňov vo štvrtok, ${ timesString }",
-        "Každých ${ interval } týždňov vo štvrtok, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Každý ${ interval } týždeň vo štvrtok, ${ untilString }",
-        "Každé ${ interval } týždne vo štvrtok, ${ untilString }",
-        "Každých ${ interval } týždňov vo štvrtok, ${ untilString }",
-        "Každých ${ interval } týždňov vo štvrtok, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Každý ${ interval } týždeň v utorok",
@@ -10307,110 +10211,38 @@
         "Každých ${ interval } týždňov v utorok, ${ timesString }",
         "Každých ${ interval } týždňov v utorok, ${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Každý ${ interval } týždeň v utorok, ${ untilString }",
-        "Každé ${ interval } týždne v utorok, ${ untilString }",
-        "Každých ${ interval } týždňov v utorok, ${ untilString }",
-        "Každých ${ interval } týždňov v utorok, ${ untilString }"
-      ],
       "Every ${ interval } week on Wednesday": [
         "Každý ${ interval } týždeň v stredu",
         "Každé ${ interval } týždne v stredu",
         "Každých ${ interval } týždňov v stredu",
         "Každých ${ interval } týždňov v stredu"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Každý ${ interval } týždeň v stredu, ${ timesString }",
-        "Každé ${ interval } týždne v stredu, ${ timesString }",
-        "Každých ${ interval } týždňov v stredu, ${ timesString }",
-        "Každých ${ interval } týždňov v stredu, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Každý ${ interval } týždeň v stredu, ${ untilString }",
-        "Každé ${ interval } týždne v stredu, ${ untilString }",
-        "Každých ${ interval } týždňov v stredu, ${ untilString }",
-        "Každých ${ interval } týždňov v stredu, ${ untilString }"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "Týždenne v ${ multipleDaysString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Týždenne v ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Týždenne v ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Týždenne vo všetky dni"
       ],
-      "Weekly on all days, ${ timesString }": [
-        "Týždenne vo všetky dni, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Týždenne vo všetky dni, ${ untilString }"
-      ],
       "Weekly on Friday": [
         "Každý týždeň v piatok"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Týždenne v piatok, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Týždenne v piatok, ${ untilString }"
       ],
       "Weekly on Monday": [
         "Každý týždeň v pondelok"
       ],
-      "Weekly on Monday, ${ timesString }": [
-        "Týždenne v pondelok, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Týždenne v pondelok, ${ untilString }"
-      ],
       "Weekly on Saturday": [
         "Každý týždeň v sobotu"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Týždenne v sobotu, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Týždenne v sobotu, ${ untilString }"
       ],
       "Weekly on Sunday": [
         "Každý týždeň v nedeľu"
       ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Týždenne v nedeľu, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Týždenne v nedeľu, ${ untilString }"
-      ],
       "Weekly on Thursday": [
         "Každý týždeň vo štvrtok"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Týždenne vo štvrtok, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Týždenne vo štvrtok, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "Každý týždeň v utorok"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Týždenne v utorok, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Týždenne v utorok, ${ untilString }"
-      ],
       "Weekly on Wednesday": [
         "Každý týždeň v stredu"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Týždenne v stredu, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Týždenne v stredu, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -10443,26 +10275,8 @@
         "Každých ${ interval } rokov",
         "Každých ${ interval } rokov"
       ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Každý ${ interval } rok, ${ timesString }",
-        "Každé ${ interval } roky, ${ timesString }",
-        "Každých ${ interval } rokov, ${ timesString }",
-        "Každých ${ interval } rokov, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Každý ${ interval } rok, ${ untilString }",
-        "Každé ${ interval } roky, ${ untilString }",
-        "Každých ${ interval } rokov, ${ untilString }",
-        "Každých ${ interval } rokov, ${ untilString }"
-      ],
       "Yearly": [
         "Ročne"
-      ],
-      "Yearly, ${ timesString }": [
-        "Ročne, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Ročne, ${ untilString }"
       ]
     }
   }

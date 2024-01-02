@@ -2442,9 +2442,9 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Ett oväntat fel uppstod. Importen måste startas om."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Din fil ${ formattedFilename } innehåller fler än ${ MAX_IMPORT_EVENTS_STRING } händelse.",
-        "Din fil ${ formattedFilename } innehåller fler än ${ MAX_IMPORT_EVENTS_STRING } händelser."
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Din fil ${ formattedFilename } innehåller fler än ${ MAX_IMPORT_EVENTS } händelse.",
+        "Din fil ${ formattedFilename } innehåller fler än ${ MAX_IMPORT_EVENTS } händelser."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Din fil ${ formattedFilename } har en ogiltig metod och kan inte importeras."
@@ -5576,6 +5576,9 @@
       "Search for name or email": [
         "Sök efter namn eller e-postadress"
       ],
+      "Search parent folder": [
+        "Sök överordnad mapp"
+      ],
       "Select": [
         "Välj"
       ],
@@ -5654,6 +5657,11 @@
     "Select files": {
       "Upload": [
         "Ladda upp"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Inga resultat hittades"
       ]
     },
     "session_recovery:available:action": {
