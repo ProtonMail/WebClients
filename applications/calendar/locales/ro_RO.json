@@ -708,12 +708,6 @@
       "${ title } started on ${ formattedDate } at ${ formattedHour }": [
         "${ title } a început ${ formattedDate } la ${ formattedHour }"
       ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } a început ${ formattedDateWithoutTime }"
-      ],
-      "${ title } started on ${ formattedDateWithTime }": [
-        "${ title } a început ${ formattedDateWithTime }"
-      ],
       "${ title } started yesterday": [
         "${ title } a început ieri"
       ],
@@ -731,12 +725,6 @@
       ],
       "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
         "${ title } începe ${ formattedDate } la ${ formattedHour }"
-      ],
-      "${ title } starts on ${ formattedDateWithoutTime }": [
-        "${ title } începe ${ formattedDateWithoutTime }"
-      ],
-      "${ title } starts on ${ formattedDateWithTime }": [
-        "${ title } începe ${ formattedDateWithTime }"
       ],
       "${ title } starts today": [
         "${ title } începe astăzi"
@@ -2117,18 +2105,10 @@
       "Daily": [
         "Zilnic"
       ],
-      "Daily, ${ untilString }": [
-        "Zilnic, ${ untilString }"
-      ],
       "Every ${ interval } day": [
         "Zilnic",
         "La fiecare ${ interval } zile",
         "La fiecare ${ interval } de zile"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Zilnic, ${ untilString }",
-        "La fiecare ${ interval } zile, ${ untilString }",
-        "La fiecare ${ interval } de zile, ${ untilString }"
       ],
       "until ${ dateString }": [
         "până la ${ dateString }"
@@ -2802,11 +2782,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "A apărut o eroare neașteptată. Importarea trebuie repornită."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Fișierul ${ formattedFilename } conține mai mult de un eveniment.",
-        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS_STRING } evenimente.",
-        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS_STRING } de evenimente."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Fișierul ${ formattedFilename } are o metodă nevalidă și nu poat fi importat."
@@ -5135,24 +5110,8 @@
         "${ onDayString }, la fiecare ${ interval } luni",
         "${ onDayString }, la fiecare ${ interval } de luni"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "${ onDayString }, lunar, ${ timesString }",
-        "${ onDayString }, la fiecare ${ interval } luni, ${ timesString }",
-        "${ onDayString }, la fiecare ${ interval } de luni, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "${ onDayString }, lunar, ${ untilString }",
-        "${ onDayString }, la fiecare ${ interval } luni, ${ untilString }",
-        "${ onDayString }, la fiecare ${ interval } de luni, ${ untilString }"
-      ],
       "Monthly ${ onDayString }": [
         "Lunar, ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Lunar, ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Lunar, ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -7219,45 +7178,15 @@
         "La fiecare ${ interval } săptămâni, ${ multipleDaysString }",
         "La fiecare ${ interval } de săptămâni, ${ multipleDaysString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Săptămânal, ${ multipleDaysString }, ${ timesString }",
-        "La fiecare ${ interval } săptămâni, ${ multipleDaysString }, ${ timesString }",
-        "La fiecare ${ interval } de săptămâni, ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Săptămânal, ${ multipleDaysString }, ${ untilString }",
-        "La fiecare ${ interval } săptămâni, ${ multipleDaysString }, ${ untilString }",
-        "La fiecare ${ interval } de săptămâni, ${ multipleDaysString }, ${ untilString }"
-      ],
       "Every ${ interval } week on all days": [
         "Săptămânal, toate zilele",
         "La fiecare ${ interval } săptămâni, toate zilele",
         "La fiecare ${ interval } de săptămâni, toate zilele"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Săptămânal, toate zilele, ${ timesString }",
-        "La fiecare ${ interval } săptămâni, toate zilele, ${ timesString }",
-        "La fiecare ${ interval } de săptămâni, toate zilele, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Săptămânal, toate zilele, ${ untilString }",
-        "La fiecare ${ interval } săptămâni, toate zilele, ${ untilString }",
-        "La fiecare ${ interval } de săptămâni, toate zilele, ${ untilString }"
-      ],
       "Every ${ interval } week on Friday": [
         "Săptămânal, vineri",
         "La fiecare ${ interval } săptămâni, vineri",
         "La fiecare ${ interval } de săptămâni, vineri"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Săptămânal, vineri, ${ timesString }",
-        "La fiecare ${ interval } săptămâni, vineri, ${ timesString }",
-        "La fiecare ${ interval } de săptămâni, vineri, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Săptămânal, vineri, ${ untilString }",
-        "La fiecare ${ interval } săptămâni, vineri, ${ untilString }",
-        "La fiecare ${ interval } de săptămâni, vineri, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Săptămânal, luni",
@@ -7269,25 +7198,10 @@
         "La fiecare ${ interval } săptămâni, luni, ${ timesString }",
         "La fiecare ${ interval } de săptămâni, luni, ${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Săptămânal, luni, ${ untilString }",
-        "La fiecare ${ interval } săptămâni, luni, ${ untilString }",
-        "La fiecare ${ interval } de săptămâni, luni, ${ untilString }"
-      ],
       "Every ${ interval } week on Saturday": [
         "Săptămânal, sâmbătă",
         "La fiecare ${ interval } săptămâni, sâmbătă",
         "La fiecare ${ interval } de săptămâni, sâmbătă"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Săptămânal, sâmbătă, ${ timesString }",
-        "La fiecare ${ interval } săptămâni, sâmbătă, ${ timesString }",
-        "La fiecare ${ interval } săptămâni, sâmbătă, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Sâmbătă, săptămânal, ${ untilString }",
-        "Sâmbătă, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Sâmbătă, la fiecare ${ interval } de săptămâni, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Săptămânal, duminică",
@@ -7299,25 +7213,10 @@
         "La fiecare ${ interval } săptămâni, duminică, ${ timesString }",
         "La fiecare ${ interval } de săptămâni, duminică, ${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Săptămânal, duminică, ${ untilString }",
-        "La fiecare ${ interval } săptămâni, duminică, ${ untilString }",
-        "La fiecare ${ interval } de săptămâni, duminică, ${ untilString }"
-      ],
       "Every ${ interval } week on Thursday": [
         "Săptămânal, joi",
         "La fiecare ${ interval } săptămâni, joi",
         "La fiecare ${ interval } de săptămâni, joi"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Săptămânal, joi, ${ timesString }",
-        "La fiecare ${ interval } săptămâni, joi, ${ timesString }",
-        "La fiecare ${ interval } de săptămâni, joi, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Joi, săptămânal, ${ untilString }",
-        "Joi, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Joi, la fiecare ${ interval } de săptămâni, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Săptămânal, marți",
@@ -7329,106 +7228,37 @@
         "La fiecare ${ interval } săptămâni, marți, ${ timesString }",
         "La fiecare ${ interval } de săptămâni, marți, ${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Marți, săptâmânal, ${ untilString }",
-        "La fiecare ${ interval } săptămâni, marți, ${ untilString }",
-        "La fiecare ${ interval } de săptămâni, marți, ${ untilString }"
-      ],
       "Every ${ interval } week on Wednesday": [
         "Săptămânal, miercuri",
         "La fiecare ${ interval } săptămâni, miercuri",
         "La fiecare ${ interval } de săptămâni, miercuri"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Miercuri, săptămânal, ${ timesString }",
-        "Miercuri, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "Miercuri, la fiecare ${ interval } de săptămâni, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Săptămânal, miercuri, ${ untilString }",
-        "La fiecare ${ interval } săptămâni, miercuri, ${ untilString }",
-        "La fiecare ${ interval } de săptămâni, miercuri, ${ untilString }"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "Săptămânal, ${ multipleDaysString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Săptămânal, ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Săptămânal, ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Săptămânal, toate zilele"
       ],
-      "Weekly on all days, ${ timesString }": [
-        "Săptămânal, toate zilele, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Săptămânal, toate zilele, ${ untilString }"
-      ],
       "Weekly on Friday": [
         "Săptămânal, vineri"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Săptămânal, vineri, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Săptămânal, vineri, ${ untilString }"
       ],
       "Weekly on Monday": [
         "Săptămânal, luni"
       ],
-      "Weekly on Monday, ${ timesString }": [
-        "Săptămânal, luni, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Săptămânal, luni, ${ untilString }"
-      ],
       "Weekly on Saturday": [
         "Săptămânal, sâmbătă"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Săptămânal, sâmbătă, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Săptămânal, sâmbătă, ${ untilString }"
       ],
       "Weekly on Sunday": [
         "Săptămânal, duminică"
       ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Săptămânal, duminică, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Săptămânal, duminică, ${ untilString }"
-      ],
       "Weekly on Thursday": [
         "Săptămânal, joi"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Săptămânal, joi, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Săptămânal, joi, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "Săptămânal, marți"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Săptămânal, marți, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Săptămânal, marți, ${ untilString }"
-      ],
       "Weekly on Wednesday": [
         "Săptămânal, miercuri"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Săptămânal, miercuri, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Săptămânal, miercuri, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -7460,24 +7290,8 @@
         "La fiecare ${ interval } ani",
         "La fiecare ${ interval } de ani"
       ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Anual, ${ timesString }",
-        "La fiecare ${ interval } ani, ${ timesString }",
-        "La fiecare ${ interval } de ani, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Anual, ${ untilString }",
-        "La fiecare ${ interval } ani, ${ untilString }",
-        "La fiecare ${ interval } de ani, ${ untilString }"
-      ],
       "Yearly": [
         "Anual"
-      ],
-      "Yearly, ${ timesString }": [
-        "Anual, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Anual, ${ untilString }"
       ]
     }
   }
