@@ -43,23 +43,9 @@ import { createImportService } from '../services/import';
 import { WorkerContext } from './context';
 
 export const createWorkerContext = (config: ProtonConfig) => {
-    const storage = createStorageService();
+    const api = exposeApi(createApi({ config }));
     const authStore = exposeAuthStore(createAuthStore(createStore()));
-
-    const api = createApi({
-        config,
-        getAuth: () => {
-            const AccessToken = authStore.getAccessToken();
-            const RefreshToken = authStore.getRefreshToken();
-            const RefreshTime = authStore.getRefreshTime();
-            const UID = authStore.getUID();
-
-            if (!(UID && AccessToken && RefreshToken)) return undefined;
-            return { UID, AccessToken, RefreshToken, RefreshTime };
-        },
-    });
-
-    exposeApi(api);
+    const storage = createStorageService();
 
     const context = WorkerContext.set({
         status: AppStatus.IDLE,

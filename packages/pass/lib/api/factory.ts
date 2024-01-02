@@ -1,5 +1,6 @@
 import { defaultApiStatus } from '@proton/components/containers/api/apiStatusContext';
 import { updateServerTime } from '@proton/crypto/lib/serverTime';
+import { authStore } from '@proton/pass/lib/auth/store';
 import type {
     Api,
     ApiAuth,
@@ -35,10 +36,20 @@ import { getSilenced } from './utils';
 
 export type ApiFactoryOptions = {
     config: ProtonConfig;
-    getAuth: () => Maybe<ApiAuth>;
+    getAuth?: () => Maybe<ApiAuth>;
 };
 
-export const createApi = ({ config, getAuth }: ApiFactoryOptions): Api => {
+export const getAPIAuth = () => {
+    const AccessToken = authStore.getAccessToken();
+    const RefreshToken = authStore.getRefreshToken();
+    const RefreshTime = authStore.getRefreshTime();
+    const UID = authStore.getUID();
+
+    if (!(UID && AccessToken && RefreshToken)) return undefined;
+    return { UID, AccessToken, RefreshToken, RefreshTime };
+};
+
+export const createApi = ({ config, getAuth = getAPIAuth }: ApiFactoryOptions): Api => {
     const pubsub = createPubSub<ApiSubscribtionEvent>();
     const clientID = getClientID(config.APP_NAME);
 

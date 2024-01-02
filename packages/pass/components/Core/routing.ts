@@ -1,6 +1,6 @@
 import { createBrowserHistory } from 'history';
 
-import { authentication } from '@proton/pass/lib/auth/store';
+import { authStore } from '@proton/pass/lib/auth/store';
 import { type ItemType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
@@ -15,7 +15,7 @@ export const preserveHash = (path: string) => path + location.hash;
 export const getCurrentLocation = () => pipe(preserveSearch, preserveHash)(location.pathname);
 
 /** Appends the localID path to the provided path */
-export const getLocalPath = (path: string = '') => `/${getLocalIDPath(authentication.getLocalID())}/${path}`;
+export const getLocalPath = (path: string = '') => `/${getLocalIDPath(authStore.getLocalID())}/${path}`;
 
 export const maybeTrash = (path: string, inTrash?: boolean) => `${inTrash ? 'trash/' : ''}${path}`;
 export const getTrashRoute = () => getLocalPath('trash');
