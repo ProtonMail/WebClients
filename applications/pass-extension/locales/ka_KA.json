@@ -26,6 +26,9 @@
       "Advanced options": [
         "დამატებითი პარამეტრები"
       ],
+      "Authenticate": [
+        "ავთენტიკაცია"
+      ],
       "Back": [
         "უკან"
       ],
@@ -620,9 +623,6 @@
       ],
       "Unknown invite": [
         "უცნობი მოწვევა"
-      ],
-      "Unsupported ${ PASS_APP_NAME } file format": [
-        "მხარდაუჭერელი ${ PASS_APP_NAME } ფაილის ფორმატი"
       ],
       "Unsupported 1Password file format": [
         "მხარდაუჭერელი 1Password-ის ფაილის ფორმატი"
@@ -1662,6 +1662,9 @@
       "Other": [
         "სხვა"
       ],
+      "Password": [
+        "პაროლი"
+      ],
       "Pick a vault": [
         "აირჩიეთ საცავი"
       ],
@@ -1738,6 +1741,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "მოგწონთ${ PASS_APP_NAME }?"
+      ],
+      "Enter your password": [
+        "შეიყვანეთ თქვენი პაროლი"
       ],
       "Enter your PIN": [
         "შეიყვანეთ PIN-კოდი"
