@@ -41,7 +41,7 @@ const ConfigureSamlContent = ({
             {renderConfigureSamlModal && <ConfigureSamlModal domain={domain} {...configureSamlModalProps} />}
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label htmlFor="domainName" className="text-semibold align-top">
+                    <label htmlFor="domainName" className="text-semibold">
                         <span className="mr-2">{c('Label').t`Allowed Domain`}</span>
                         <Info
                             title={c('Tooltip').t`Specify the domain which is allowed to authenticate with SAML SSO`}
