@@ -26,6 +26,9 @@
       "Advanced options": [
         "Geavanceerde instellingen"
       ],
+      "Authenticate": [
+        "Authenticeren"
+      ],
       "Back": [
         "Terug"
       ],
@@ -598,9 +601,6 @@
       ],
       "Unknown invite": [
         "Onbekende uitnodiging"
-      ],
-      "Unsupported ${ PASS_APP_NAME } file format": [
-        "Niet-ondersteund ${ PASS_APP_NAME }-bestandsformaat"
       ],
       "Unsupported 1Password file format": [
         "Niet-ondersteund 1Password-bestandsformaat"
@@ -1601,6 +1601,9 @@
       "Other": [
         "Anders"
       ],
+      "Password": [
+        "Wachtwoord"
+      ],
       "Pick a vault": [
         "Kies een kluis"
       ],
@@ -1677,6 +1680,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Tevreden met ${ PASS_APP_NAME }?"
+      ],
+      "Enter your password": [
+        "Voer uw wachtwoord in"
       ],
       "Enter your PIN": [
         "Voer uw pincode in"
