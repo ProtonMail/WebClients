@@ -137,19 +137,13 @@ export interface Transaction {
     ModifyTime: number;
 }
 
-export enum BitcoinUnitEnum {
-    BTC = 'BTC',
-    mBTC = 'mBTC',
-    SAT = 'SAT',
-}
-
 export interface BitcoinUnit {
     // Autoincrement ID
     BitcoinUnitID: number;
     // Name of the Bitcoin unit (e.g. satoshi, bitcoin)
     Name: string;
     // Symbol of the currency (e.g. sats and btc)
-    Symbol: string;
+    Symbol: number;
 }
 
 export interface FiatCurrency {

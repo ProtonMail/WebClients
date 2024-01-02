@@ -9,6 +9,7 @@ import { BitcoinOnRampContainer } from './BitcoinOnRampContainer';
 import { BitcoinTransferContainer } from './BitcoinTransferContainer';
 import { MultiWalletDashboardContainer } from './MultiWalletDashboardContainer';
 import { SingleWalletDashboardContainer } from './SingleWalletDashboardContainer';
+import { TransactionHistoryContainer } from './TransactionHistoryContainer';
 
 const MainContainer = () => {
     return (
@@ -23,11 +24,14 @@ const MainContainer = () => {
                             <Route path={'/buy'}>
                                 <BitcoinOnRampContainer />
                             </Route>
-                            <Route path={'/wallets'} exact>
-                                <MultiWalletDashboardContainer />
+                            <Route path={'/transactions'} exact>
+                                <TransactionHistoryContainer />
                             </Route>
                             <Route path={'/wallets/:walletId'}>
                                 <SingleWalletDashboardContainer />
+                            </Route>
+                            <Route path={'/wallets'} exact>
+                                <MultiWalletDashboardContainer />
                             </Route>
                             <Redirect to="/wallets" />
                         </Switch>

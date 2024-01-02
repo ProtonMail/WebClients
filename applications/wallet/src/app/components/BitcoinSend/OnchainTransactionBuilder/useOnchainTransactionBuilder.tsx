@@ -1,138 +1,63 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { c } from 'ttag';
-
-import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-import { useNotifications } from '@proton/components/hooks';
-import useLoading from '@proton/hooks/useLoading';
-
-import { WasmChain, WasmNetwork, WasmPartiallySignedTransaction, WasmTxBuilder } from '../../../../pkg';
+import { WalletAndAccountSelectorValue } from '../../../atoms';
 import { useBlockchainContext } from '../../../contexts';
-import { BitcoinUnitEnum } from '../../../types';
-import { getDefaultAccount, getSelectedAccount, getSelectedWallet, tryHandleWasmError } from '../../../utils';
+import { usePsbt } from '../../../hooks/usePsbt';
+import { useRecipients } from '../../../hooks/useRecipients';
+import { useTxBuilder } from '../../../hooks/useTxBuilder';
+import { getDefaultAccount, getSelectedWallet } from '../../../utils';
 
 export const useOnchainTransactionBuilder = (defaultWalletId?: number) => {
     const { wallets } = useBlockchainContext();
 
-    const { createNotification } = useNotifications();
     const defaultWallet = getSelectedWallet(wallets, defaultWalletId);
-    const [selectedWallet, setSelectedWallet] = useState(defaultWallet);
-    const [finalPsbt, setFinalPsbt] = useState<WasmPartiallySignedTransaction>();
-    const [txid, setTxid] = useState<string>();
-    const [loadindBroadcast, withLoadingBroadcast] = useLoading();
+    const [walletAndAccount, setWalletAndAccount] = useState<WalletAndAccountSelectorValue>({
+        wallet: defaultWallet,
+        account: getDefaultAccount(defaultWallet),
+    });
 
-    const [selectedAccount, setSelectedAccount] = useState(getDefaultAccount(selectedWallet));
-    const [txBuilder, setTxBuilder] = useState<WasmTxBuilder>(new WasmTxBuilder());
-    const [unitByRecipient, setUnitByRecipient] = useState<Partial<Record<string, BitcoinUnitEnum>>>({});
+    const { txBuilder, updateTxBuilder } = useTxBuilder();
 
-    const updateTxBuilder = (updater: (txBuilder: WasmTxBuilder) => WasmTxBuilder) => {
-        setTxBuilder(updater);
+    const { addRecipient, removeRecipient, updateRecipient, updateRecipientAmountToMax } =
+        useRecipients(updateTxBuilder);
+
+    const { finalPsbt, loadingBroadcast, broadcastedTxId, createPsbt, erasePsbt, signAndBroadcastPsbt } = usePsbt({
+        walletAndAccount,
+        txBuilder,
+    });
+
+    const handleSelectWalletAndAccount = (value: WalletAndAccountSelectorValue) => {
+        setWalletAndAccount((prev) => ({ ...prev, ...value }));
     };
 
-    const handleSelectWallet = ({ value }: SelectChangeEvent<number>) => {
-        const wallet = wallets?.find(({ WalletID }) => WalletID === value);
-        if (wallet) {
-            setSelectedWallet(wallet);
-        }
-    };
+    useEffect(() => {
+        setWalletAndAccount((prev) => ({ ...prev, account: getDefaultAccount(walletAndAccount.wallet) }));
+    }, [walletAndAccount.wallet]);
 
-    const handleSelectAccount = ({ value }: SelectChangeEvent<number>) => {
-        const account = getSelectedAccount(selectedWallet, value);
+    useEffect(() => {
+        const account = walletAndAccount.account;
         if (account) {
-            setSelectedAccount(account);
+            void updateTxBuilder((txBuilder) => txBuilder.setAccount(account.wasmAccount));
         }
-    };
-
-    useEffect(() => {
-        setSelectedAccount(getDefaultAccount(selectedWallet));
-    }, [selectedWallet]);
-
-    useEffect(() => {
-        if (selectedAccount) {
-            updateTxBuilder((txBuilder) => txBuilder.set_account(selectedAccount.wasmAccount));
-        }
-    }, [selectedAccount]);
-
-    const addRecipient = useCallback(() => {
-        updateTxBuilder((txBuilder) => txBuilder.add_recipient());
-    }, []);
-
-    const removeRecipient = useCallback((index) => {
-        updateTxBuilder((txBuilder) => txBuilder.remove_recipient(index));
-    }, []);
-
-    const updateRecipient = useCallback(
-        (index: number, update: Partial<{ amount: number; address: string; unit: BitcoinUnitEnum }>) => {
-            const recipient = txBuilder.get_recipients()[index];
-            if (!recipient) {
-                return;
-            }
-
-            if (update.unit) {
-                setUnitByRecipient((prev) => ({ ...prev, [recipient[0]]: update.unit }));
-            }
-
-            if (update.address || update.amount) {
-                updateTxBuilder((txBuilder) =>
-                    txBuilder.update_recipient(index, update.address, update.amount ? BigInt(update.amount) : undefined)
-                );
-            }
-        },
-        [txBuilder]
-    );
-
-    const createPsbt = () => {
-        if (selectedAccount) {
-            try {
-                const psbt = txBuilder.create_pbst(WasmNetwork.Testnet);
-
-                setFinalPsbt(psbt);
-            } catch (err) {
-                const msg = tryHandleWasmError(err);
-                if (msg) {
-                    createNotification({ text: msg, type: 'error' });
-                }
-            }
-        }
-    };
-
-    const handleSignAndSend = () => {
-        void withLoadingBroadcast(async () => {
-            if (!finalPsbt || !selectedAccount) {
-                return;
-            }
-
-            const signed = finalPsbt.sign(selectedAccount?.wasmAccount, WasmNetwork.Testnet);
-            try {
-                const txid = await new WasmChain().broadcast_psbt(signed);
-                setTxid(txid);
-            } catch (err) {
-                const msg = tryHandleWasmError(err);
-                createNotification({ text: msg ?? c('Wallet Send').t`Could not broadcast transaction`, type: 'error' });
-            }
-        });
-    };
+    }, [walletAndAccount.account, updateTxBuilder]);
 
     return {
-        selectedWallet,
-        selectedAccount,
-        handleSelectWallet,
-        handleSelectAccount,
+        walletAndAccount,
+        handleSelectWalletAndAccount,
+
         addRecipient,
         removeRecipient,
         updateRecipient,
+        updateRecipientAmountToMax,
 
         updateTxBuilder,
         txBuilder,
 
-        unitByRecipient,
-
-        createPsbt,
         finalPsbt,
-        backToTxBuilder: () => setFinalPsbt(undefined),
-
-        handleSignAndSend,
-        txid,
-        loadindBroadcast,
+        broadcastedTxId,
+        loadingBroadcast,
+        createPsbt,
+        erasePsbt,
+        signAndBroadcastPsbt,
     };
 };

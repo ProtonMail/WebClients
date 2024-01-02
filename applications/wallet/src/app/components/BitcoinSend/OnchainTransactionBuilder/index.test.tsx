@@ -19,20 +19,18 @@ describe('OnchainTransactionBuilder', () => {
         mockUseBlockchainContext();
 
         helper = {
-            selectedWallet: testWallet,
-            selectedAccount: testAccount,
-            handleSelectWallet: vi.fn(),
-            handleSelectAccount: vi.fn(),
+            walletAndAccount: { wallet: testWallet, account: testAccount },
+            handleSelectWalletAndAccount: vi.fn(),
             addRecipient: vi.fn(),
             updateRecipient: vi.fn(),
+            updateRecipientAmountToMax: vi.fn(),
             removeRecipient: vi.fn(),
             updateTxBuilder: vi.fn(),
             createPsbt: vi.fn(),
-            backToTxBuilder: vi.fn(),
-            handleSignAndSend: vi.fn(),
-            unitByRecipient: {},
-            loadindBroadcast: false,
-            txid: undefined,
+            erasePsbt: vi.fn(),
+            signAndBroadcastPsbt: vi.fn(),
+            broadcastedTxId: undefined,
+            loadingBroadcast: false,
             finalPsbt: undefined,
             txBuilder: new WasmTxBuilder(),
         };
@@ -51,8 +49,10 @@ describe('OnchainTransactionBuilder', () => {
             expect(options).toHaveLength(4);
             await fireEvent.click(options[1]);
 
-            expect(helper.handleSelectWallet).toHaveBeenCalledTimes(1);
-            expect(helper.handleSelectWallet).toHaveBeenCalledWith({ selectedIndex: 1, value: 1 });
+            expect(helper.handleSelectWalletAndAccount).toHaveBeenCalledTimes(1);
+            expect(helper.handleSelectWalletAndAccount).toHaveBeenCalledWith({
+                wallet: walletsWithAccountsWithBalanceAndTxs[1],
+            });
         });
     });
 
@@ -63,8 +63,7 @@ describe('OnchainTransactionBuilder', () => {
 
             mockUseBitcoinReceive.mockReturnValue({
                 ...helper,
-                selectedWallet: testWallet,
-                selectedAccount: testAccount,
+                walletAndAccount: { wallet: testWallet, account: testAccount },
             });
 
             render(<OnchainTransactionBuilder />);
@@ -83,8 +82,10 @@ describe('OnchainTransactionBuilder', () => {
                 expect(options).toHaveLength(2);
                 await fireEvent.click(options[1]);
 
-                expect(helper.handleSelectAccount).toHaveBeenCalledTimes(1);
-                expect(helper.handleSelectAccount).toHaveBeenCalledWith({ selectedIndex: 1, value: 9 });
+                expect(helper.handleSelectWalletAndAccount).toHaveBeenCalledTimes(1);
+                expect(helper.handleSelectWalletAndAccount).toHaveBeenCalledWith({
+                    account: walletsWithAccountsWithBalanceAndTxs[0].accounts[1],
+                });
             });
         });
     });

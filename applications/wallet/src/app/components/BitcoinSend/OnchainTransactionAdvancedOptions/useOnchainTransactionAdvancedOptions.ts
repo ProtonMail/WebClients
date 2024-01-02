@@ -9,7 +9,7 @@ import { WasmChangeSpendPolicy, WasmCoinSelection, WasmLockTime, WasmOutPoint, W
 const getCoinSelectionOptions = () => {
     return [
         { label: c('Wallet Send').t`Minimized Fees`, value: WasmCoinSelection.BranchAndBound },
-        // { label: c('Wallet Send').t`Maximised Privacy`, value: WasmCoinSelection.BranchAndBound }, // TODO add coin selection algorithm
+        // { label: c('Wallet Send').t`Maximised Privacy`, value: WasmCoinSelection.BranchAndBound }, // TODO add privacy first algorithm
         { label: c('Wallet Send').t`Largest first`, value: WasmCoinSelection.LargestFirst },
         { label: c('Wallet Send').t`Oldest first`, value: WasmCoinSelection.OldestFirst },
         { label: c('Wallet Send').t`Manual`, value: WasmCoinSelection.Manual },
@@ -32,17 +32,19 @@ export const useOnchainTransactionAdvancedOptions = (
     const openManualCoinSelectionModal = () => setIsManualCoinSelectionModalOpen(true);
     const closeManualCoinSelectionModal = () => setIsManualCoinSelectionModalOpen(false);
 
-    const handleManualCoinSelection = (outpoints: WasmOutPoint[]) => {
-        updateTxBuilder((txBuilder) => txBuilder.clear_utxos_to_spend());
-        outpoints.forEach((outpoint) => {
-            updateTxBuilder((txBuilder) => txBuilder.add_utxo_to_spend(outpoint));
-        });
+    const handleManualCoinSelection = async (outpoints: WasmOutPoint[]) => {
+        updateTxBuilder((txBuilder) => txBuilder.clearUtxosToSpend());
+        for (const outpoint of outpoints) {
+            await updateTxBuilder((txBuilder) => txBuilder.addUtxoToSpend(outpoint));
+        }
 
         closeManualCoinSelectionModal();
     };
 
     const toggleEnableRBF = () => {
-        updateTxBuilder((txBuilder: WasmTxBuilder) => txBuilder.enable_rbf());
+        updateTxBuilder((txBuilder: WasmTxBuilder) =>
+            txBuilder.getRbfEnabled() ? txBuilder.disableRbf() : txBuilder.enableRbf()
+        );
     };
 
     const [useLocktime, setUseLocktime] = useState(false);
@@ -50,41 +52,41 @@ export const useOnchainTransactionAdvancedOptions = (
         const newUseLocktime = !useLocktime;
         setUseLocktime(newUseLocktime);
         if (!newUseLocktime) {
-            updateTxBuilder((txBuilder) => txBuilder.remove_locktime());
+            updateTxBuilder((txBuilder) => txBuilder.removeLocktime());
         }
     };
 
     const handleLocktimeValueChange = (event: ChangeEvent<HTMLInputElement>) => {
-        updateTxBuilder((txBuilder) => txBuilder.add_locktime(WasmLockTime.fromHeight(Number(event.target.value))));
+        updateTxBuilder((txBuilder) => txBuilder.addLocktime(WasmLockTime.fromHeight(Number(event.target.value))));
     };
 
     const changePolicyOptions = getChangePolicyOptions();
     const handleChangePolicySelect = (event: SelectChangeEvent<WasmChangeSpendPolicy>) => {
         const selected = changePolicyOptions.find((opt) => opt.value === event.value);
         if (selected) {
-            updateTxBuilder((txBuilder) => txBuilder.set_change_policy(selected.value));
+            updateTxBuilder((txBuilder) => txBuilder.setChangePolicy(selected.value));
         }
     };
 
     const handleCoinSelectionOptionSelect = (coinSelection: WasmCoinSelection) => {
-        updateTxBuilder((txBuilder) => txBuilder.set_coin_selection(coinSelection));
+        updateTxBuilder((txBuilder) => txBuilder.setCoinSelection(coinSelection));
     };
 
     return {
         coinSelectionOptions,
-        changePolicyOptions,
-
         isManualCoinSelectionModalOpen,
         openManualCoinSelectionModal,
         closeManualCoinSelectionModal,
 
+        changePolicyOptions,
+        handleChangePolicySelect,
+
         handleCoinSelectionOptionSelect,
         handleManualCoinSelection,
         toggleEnableRBF,
+
         useLocktime,
         toggleUseLocktime,
         handleLocktimeValueChange,
-
-        handleChangePolicySelect,
     };
 };

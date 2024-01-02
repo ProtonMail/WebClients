@@ -4,11 +4,11 @@ import Card from '@proton/atoms/Card/Card';
 import Href from '@proton/atoms/Href/Href';
 import Icon from '@proton/components/components/icon/Icon';
 
+import { BLOCKCHAIN_EXPLORER_BASE_URL } from '../../../constants';
+
 interface Props {
     txid: string;
 }
-
-const BLOCKCHAIN_EXPLORER_BASE_URL = 'https://mempool.space/testnet/tx';
 
 export const OnchainTransactionBroadcastConfirmation = ({ txid }: Props) => {
     return (

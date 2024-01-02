@@ -3,13 +3,18 @@ import { c } from 'ttag';
 import { DetailledWasmError, WasmError } from '../../../pkg';
 
 const humanReadableByError: Record<WasmError, () => string> = {
+    [WasmError.AccountNotFound]: () => c('Wasm Error').t`Account not found`,
     [WasmError.Bip32]: () => c('Wasm Error').t`An error occured with BIP32`,
+    [WasmError.Bip39]: () => c('Wasm Error').t`An error occured related to BIP39`,
     [WasmError.BnBNoExactMatch]: () =>
         c('Wasm Error').t`Could not find exact match for 'branch and bound' coin selection`,
     [WasmError.BnBTotalTriesExceeded]: () =>
         c('Wasm Error').t`Maximum 'branch and bound' coin selection possible attempts reached`,
     [WasmError.CannotComputeTxFees]: () => c('Wasm Error').t`Cannot compute fees for the transaction`,
+    [WasmError.CannotCreateAddressFromScript]: () => c('Wasm Error').t`Cannot create address from script`,
+    [WasmError.CannotCreateDescriptor]: () => c('Wasm Error').t`Cannot create descriptor`,
     [WasmError.CannotFindPersistedData]: () => c('Wasm Error').t`Could not find persist data`,
+    [WasmError.CannotGetAddressFromScript]: () => c('Wasm Error').t`Cannot get address from provided script`,
     [WasmError.CannotGetFeeEstimation]: () => c('Wasm Error').t`Cannot fetch fees estimations`,
     [WasmError.CannotGetLocalStorage]: () => c('Wasm Error').t`Could not get access to local storage`,
     [WasmError.CannotParsePersistedData]: () => c('Wasm Error').t`Could not read persist data`,
@@ -19,6 +24,7 @@ const humanReadableByError: Record<WasmError, () => string> = {
     [WasmError.ChecksumMismatch]: () => c('Wasm Error').t`Checksum does not match`,
     [WasmError.DerivationError]: () => c('Wasm Error').t`Could derive extended key`,
     [WasmError.Descriptor]: () => c('Wasm Error').t`An error occured with descriptor`,
+    [WasmError.DescriptorError]: () => c('Wasm Error').t`An error occured with descriptor`,
     [WasmError.FeeRateTooLow]: () => c('Wasm Error').t`Used fee rate is too low`,
     [WasmError.FeeRateUnavailable]: () => c('Wasm Error').t`Fee rate is not available`,
     [WasmError.FeeTooLow]: () => c('Wasm Error').t`Used fees are too low`,
@@ -38,6 +44,8 @@ const humanReadableByError: Record<WasmError, () => string> = {
     [WasmError.InvalidTxId]: () => c('Wasm Error').t`Invalid transaction id provided`,
     [WasmError.IrreplaceableTransaction]: () => c('Wasm Error').t`Transaction is not replaceable`,
     [WasmError.Key]: () => c('Wasm Error').t`An error occured on key process`,
+    [WasmError.LoadError]: () => c('Wasm Error').t`Could not load data`,
+    [WasmError.LockError]: () => c('Wasm Error').t`System error. Please contact support`,
     [WasmError.Miniscript]: () => c('Wasm Error').t`An error occured with miniscipt`,
     [WasmError.MiniscriptPsbt]: () => c('Wasm Error').t`An error occured with miniscipt PSBT`,
     [WasmError.MissingKeyOrigin]: () => c('Wasm Error').t`Key origin is missing`,

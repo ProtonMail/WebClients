@@ -1,3 +1,4 @@
+import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 import { Mock } from 'vitest';
 
@@ -10,8 +11,8 @@ describe('useOnChainFeesSelector', () => {
     let txBuilder: WasmTxBuilder;
 
     beforeEach(() => {
-        updateTxBuilder = vi.fn().mockImplementation((updater) => {
-            txBuilder = updater(txBuilder);
+        updateTxBuilder = vi.fn().mockImplementation(async (updater) => {
+            txBuilder = await updater(txBuilder);
             return txBuilder;
         });
 
@@ -37,7 +38,9 @@ describe('useOnChainFeesSelector', () => {
         it('should set default fee to target next 5th block', async () => {
             renderHook(() => useOnChainFeesSelector(txBuilder, updateTxBuilder));
 
-            expect(txBuilder.get_fee_rate()).toBe(29);
+            await waitFor(() => {
+                expect(txBuilder.getFeeRate()).toBe(29);
+            });
         });
 
         it('should keep isRecommended to true', async () => {
@@ -48,23 +51,47 @@ describe('useOnChainFeesSelector', () => {
     });
 
     describe('handleFeesSelected', () => {
-        describe('when a lower block target is available for same feeRate', () => {
-            it.todo('use lower block target', () => {});
-            it.todo('should turn isRecomended to false by default');
+        describe('should set fee rate', () => {
+            it('use lower block target', async () => {
+                const { result } = renderHook(() => useOnChainFeesSelector(txBuilder, updateTxBuilder));
+                result.current.handleFeesSelected(4);
+
+                await waitFor(() => {
+                    expect(txBuilder.getFeeRate()).toBe(4);
+                });
+            });
+
+            it('should turn isRecommended to false by default', () => {
+                const { result } = renderHook(() => useOnChainFeesSelector(txBuilder, updateTxBuilder));
+                result.current.handleFeesSelected(4);
+                expect(result.current.isRecommended).toBeFalsy();
+            });
         });
     });
 
     describe('feeRateNote', () => {
         describe('when below 5th next block', () => {
-            it.todo('should `HIGH` note');
+            it('should `HIGH` note', async () => {
+                txBuilder = await txBuilder.setFeeRate(165);
+                const { result } = renderHook(() => useOnChainFeesSelector(txBuilder, updateTxBuilder));
+                expect(result.current.feeRateNote).toBe('HIGH');
+            });
         });
 
         describe('when below 10th next block', () => {
-            it.todo('should `MODERATE` note');
+            it('should `MODERATE` note', async () => {
+                txBuilder = await txBuilder.setFeeRate(15);
+                const { result } = renderHook(() => useOnChainFeesSelector(txBuilder, updateTxBuilder));
+                expect(result.current.feeRateNote).toBe('MODERATE');
+            });
         });
 
         describe('when above 10th next block', () => {
-            it.todo('should `MODERATE` note');
+            it('should `LOW` note', async () => {
+                txBuilder = await txBuilder.setFeeRate(1);
+                const { result } = renderHook(() => useOnChainFeesSelector(txBuilder, updateTxBuilder));
+                expect(result.current.feeRateNote).toBe('LOW');
+            });
         });
     });
 });

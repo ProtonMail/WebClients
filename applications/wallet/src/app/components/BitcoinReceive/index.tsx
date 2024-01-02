@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,12 +10,11 @@ import Copy from '@proton/components/components/button/Copy';
 import Icon from '@proton/components/components/icon/Icon';
 import QRCode from '@proton/components/components/image/QRCode';
 import { Tooltip } from '@proton/components/components/tooltip';
-import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import { SECOND } from '@proton/shared/lib/constants';
 
-import { Selector } from '../../atoms/Selector';
-import { WalletType } from '../../types/api';
-import { getLightningFormatOptions } from './constants';
+import { WalletSelector } from '../../atoms';
+import { BitcoinAmountInput } from '../../atoms/BitcoinAmountInput';
+import { useBlockchainContext } from '../../contexts';
 import { useBitcoinReceive } from './useBitcoinReceive';
 
 const CopyPasteButton = ({ value }: { value: string }) => {
@@ -47,78 +46,42 @@ interface Props {
 }
 
 export const BitcoinReceive = ({ defaultWalletId }: Props) => {
+    const { wallets } = useBlockchainContext();
+
     const {
+        handleSelectWallet,
         paymentLink,
         selectedWallet,
-        walletsOptions,
-        selectedAccount,
-        accountsOptions,
-        selectedFormat,
         shouldShowAmountInput,
         amount,
-        handleSelectWallet,
-        handleSelectAccount,
-        handleSelectFormat,
         handleChangeAmount,
         showAmountInput,
     } = useBitcoinReceive(defaultWalletId);
 
-    const [walletSelectorLabel, accountSelectorLabel, formatSelectorLabel, amountInputLabel] = [
-        c('Wallet Receive').t`Receive to wallet`,
-        c('Wallet Receive').t`on account`,
-        c('Wallet Receive').t`using format`,
-        c('Wallet Receive').t`Amount`,
-    ];
+    const walletSelectorLabels = {
+        wallet: c('Wallet Receive').t`Receive to wallet`,
+        account: c('Wallet Receive').t`on account`,
+        format: c('Wallet Receive').t`using format`,
+    };
 
     return (
         <div className="flex flex-column items-center">
             {/* Wallets and Account/format selector */}
             <div className="flex w-full flex-row px-8">
-                <Selector
-                    id="wallet-selector"
-                    label={walletSelectorLabel}
-                    selected={selectedWallet?.WalletID}
+                <WalletSelector
                     onSelect={handleSelectWallet}
-                    options={walletsOptions}
+                    value={selectedWallet}
+                    label={walletSelectorLabels}
+                    wallets={wallets}
                 />
 
-                {selectedWallet?.Type === WalletType.OnChain && accountsOptions && (
-                    <Selector
-                        id="account-selector"
-                        label={accountSelectorLabel}
-                        selected={selectedAccount?.WalletAccountID}
-                        onSelect={handleSelectAccount}
-                        options={accountsOptions}
-                    />
-                )}
-
-                {selectedWallet?.Type === WalletType.Lightning && (
-                    <Selector
-                        id="format-selector"
-                        label={formatSelectorLabel}
-                        selected={selectedFormat.value}
-                        onSelect={handleSelectFormat}
-                        options={getLightningFormatOptions().map((format) => ({
-                            value: format.value,
-                            label: format.name,
-                        }))}
-                    />
-                )}
-
                 {shouldShowAmountInput ? (
-                    <div className="w-3/10">
-                        <InputFieldTwo
-                            dense
-                            title={amountInputLabel}
-                            label={amountInputLabel}
-                            type="number"
-                            className="mt-2"
-                            id="amount-input"
+                    <div className="w-3/10 mt-7">
+                        <BitcoinAmountInput
                             data-testid="amount-input"
+                            title={c('Wallet Receive').t`Amount`}
                             value={amount}
-                            onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                                handleChangeAmount(Number(event.target.value));
-                            }}
+                            onValueChange={(amount: number) => handleChangeAmount(amount)}
                             suffix="SAT"
                         />
                     </div>
@@ -143,8 +106,8 @@ export const BitcoinReceive = ({ defaultWalletId }: Props) => {
             {/* Payment info data */}
             {paymentLink &&
                 (() => {
-                    const paymentLinkString = paymentLink.to_string();
-                    const paymentLinkUri = paymentLink.to_uri();
+                    const paymentLinkString = paymentLink.toString();
+                    const paymentLinkUri = paymentLink.toUri();
 
                     return (
                         <Card
@@ -160,15 +123,14 @@ export const BitcoinReceive = ({ defaultWalletId }: Props) => {
                                 className="flex flex-column w-custom justify-space-between"
                                 style={{ '--w-custom': '15rem' }}
                             >
-                                <h3 className="text-lg text-semibold mt-4">{selectedWallet?.Name}</h3>
+                                <h3 className="text-lg text-semibold mt-4">{selectedWallet.wallet?.Name}</h3>
                                 <Href href={paymentLinkUri}>
                                     <Tooltip title={paymentLinkString}>
                                         <p
                                             className="text-monospace h-custom bg-norm m-0 text-break overflow-hidden"
                                             style={{ '--h-custom': '3rem', lineHeight: '1rem' }}
                                         >
-                                            {[...paymentLinkString].slice(0, 60).join('')}
-                                            {paymentLinkString.length > 60 && '...'}
+                                            {paymentLinkString}
                                         </p>
                                     </Tooltip>
                                 </Href>

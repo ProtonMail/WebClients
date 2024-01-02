@@ -15,12 +15,12 @@ export enum BitcoinSendViews {
 
 export const useBitcoinSend = () => {
     const [view, setView] = useState<BitcoinSendViews>(BitcoinSendViews.PaymentLinkInput);
-    const [, setParsedPaymentLink] = useState<WasmPaymentLink>();
+    const [parsedPaymentLink, setParsedPaymentLink] = useState<WasmPaymentLink>();
 
-    const handlePaymentLinkSubmit = useCallback((paymentLink) => {
+    const handlePaymentLinkSubmit = useCallback((paymentLink: WasmPaymentLink) => {
         setParsedPaymentLink(paymentLink);
 
-        switch (paymentLink.get_kind()) {
+        switch (paymentLink.getKind()) {
             case WasmPaymentLinkKind.BitcoinAddress:
             case WasmPaymentLinkKind.BitcoinURI:
                 setView(BitcoinSendViews.OnchainSimpleSend);
@@ -47,5 +47,5 @@ export const useBitcoinSend = () => {
         }
     }, []);
 
-    return { view, handlePaymentLinkSubmit, handleCreateTxFromScratch, handleSelectSendMethod };
+    return { view, parsedPaymentLink, handlePaymentLinkSubmit, handleCreateTxFromScratch, handleSelectSendMethod };
 };

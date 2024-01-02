@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import {
@@ -23,6 +23,7 @@ import { newVersionUpdater } from '@proton/shared/lib/busy';
 import sentry from '@proton/shared/lib/helpers/sentry';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 
+import { setPanicHook } from '../pkg';
 import PrivateApp from './PrivateApp';
 import * as config from './config';
 import locales from './locales';
@@ -42,6 +43,10 @@ const App = () => {
     const [hasInitialAuth] = useState(() => {
         return !window.location.pathname.startsWith('/pay');
     });
+
+    useEffect(() => {
+        setPanicHook();
+    }, []);
 
     return (
         <ProtonApp authentication={authentication} config={config} hasInitialAuth={hasInitialAuth}>
