@@ -3002,20 +3002,11 @@
       "Daily": [
         "Codziennie"
       ],
-      "Daily, ${ untilString }": [
-        "Codziennie, ${ untilString }"
-      ],
       "Every ${ interval } day": [
         "Codziennie",
         "Co ${ interval } dni",
         "Co ${ interval } dni",
         "Co ${ interval } dnia"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Codziennie, ${ untilString }",
-        "Co ${ interval } dni, ${ untilString }",
-        "Co ${ interval } dni, ${ untilString }",
-        "Co ${ interval } dnia, ${ untilString }"
       ],
       "until ${ dateString }": [
         "do ${ dateString }"
@@ -3030,6 +3021,17 @@
         "Co ${ interval } dni, ${ timesString }",
         "Co ${ interval } dni, ${ timesString }",
         "Co ${ interval } dnia, ${ timesString }"
+      ]
+    },
+    "Daily recurring event, frequency (until)": {
+      "Daily, ${ untilString }": [
+        "Codziennie, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Co ${ interval } dzień, ${ untilString }",
+        "Co ${ interval } dni, ${ untilString }",
+        "Co ${ interval } dni, ${ untilString }",
+        "Co ${ interval } dnia, ${ untilString }"
       ]
     },
     "Day": {
@@ -4240,11 +4242,11 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Wystąpił nieoczekiwany błąd. Importowanie musi zostać ponownie uruchomione."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzenie.",
-        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzenia.",
-        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzeń.",
-        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_EVENTS_STRING } wydarzeń."
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_EVENTS } wydarzenie.",
+        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_EVENTS } wydarzenia.",
+        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_EVENTS } wydarzeń.",
+        "Plik ${ formattedFilename } zawiera więcej niż ${ MAX_IMPORT_EVENTS } wydarzeń."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Plik ${ formattedFilename } jest nieprawidłowy i nie może zostać zaimportowany."
@@ -9981,20 +9983,22 @@
         "Co ${ interval } miesięcy ${ onDayString }",
         "Co ${ interval } miesiąca ${ onDayString }"
       ],
+      "Monthly ${ onDayString }": [
+        "Co miesiąc ${ onDayString }"
+      ]
+    },
+    "Monthly recurring event, frequency (times)": {
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Co miesiąc ${ onDayString }, ${ timesString }",
+        "Co ${ interval } miesiąc ${ onDayString }, ${ timesString }",
         "Co ${ interval } miesiące ${ onDayString }, ${ timesString }",
         "Co ${ interval } miesięcy ${ onDayString }, ${ timesString }",
         "Co ${ interval } miesiąca ${ onDayString }, ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Co miesiąc ${ onDayString }, ${ untilString }",
+        "Co ${ interval } miesiąc ${ onDayString }, ${ untilString }",
         "Co ${ interval } miesiące ${ onDayString }, ${ untilString }",
         "Co ${ interval } miesięcy ${ onDayString }, ${ untilString }",
         "Co ${ interval } miesiąca ${ onDayString }, ${ untilString }"
-      ],
-      "Monthly ${ onDayString }": [
-        "Co miesiąc ${ onDayString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "Co miesiąc ${ onDayString }, ${ timesString }"
@@ -11397,6 +11401,9 @@
       "No parent folder": [
         "Brak folderu nadrzędnego"
       ],
+      "No permission": [
+        "Brak uprawnienia"
+      ],
       "Normal": [
         "Standardowy"
       ],
@@ -11432,6 +11439,12 @@
       ],
       "Select who can access...": [
         "Wybierz, kto może uzyskać dostęp..."
+      ],
+      "Send to all": [
+        "Wyślij do wszystkich"
+      ],
+      "Setup incomplete": [
+        "Konfiguracja niekompletna"
       ],
       "Standard server configs": [
         "Konfiguracje standardowego serwera"
@@ -11823,6 +11836,17 @@
         "Nowa karta płatnicza"
       ]
     },
+    "Permission": {
+      "No permission": [
+        "Brak uprawnienia"
+      ],
+      "Send to all": [
+        "Wyślij do wszystkich"
+      ],
+      "Setup incomplete": [
+        "Konfiguracja niekompletna"
+      ]
+    },
     "Personal calendar section description": {
       "Create a calendar to stay on top of your schedule while keeping your data secure.": [
         "Utwórz kalendarz, aby zapanować nad swoim harmonogramem, jednocześnie dbając o bezpieczeństwo danych."
@@ -11911,6 +11935,9 @@
       ],
       "Search for a user or address": [
         "Szukaj użytkownika lub adresu"
+      ],
+      "Search parent folder": [
+        "Przeszukaj folder nadrzędny"
       ],
       "Search users": [
         "Szukaj użytkowników"
@@ -15126,53 +15153,17 @@
         "Co ${ interval } tygodni w ${ multipleDaysString }",
         "Co ${ interval } tygodnia w ${ multipleDaysString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Co tydzień w ${ multipleDaysString }, ${ timesString }",
-        "Co ${ interval } tygodnie w ${ multipleDaysString }, ${ timesString }",
-        "Co ${ interval } tygodni w ${ multipleDaysString }, ${ timesString }",
-        "Co ${ interval } tygodnia w ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Co tydzień w ${ multipleDaysString }, ${ untilString }",
-        "Co ${ interval } tygodnie w ${ multipleDaysString }, ${ untilString }",
-        "Co ${ interval } tygodni w ${ multipleDaysString }, ${ untilString }",
-        "Co ${ interval } tygodnia w ${ multipleDaysString }, ${ untilString }"
-      ],
       "Every ${ interval } week on all days": [
         "Codziennie",
         "Co ${ interval } tygodnie we wszystkie dni",
         "Co ${ interval } tygodni we wszystkie dni",
         "Co ${ interval } tygodnia we wszystkie dni"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Codziennie, ${ timesString }",
-        "Co ${ interval } tygodnie we wszystkie dni, ${ timesString }",
-        "Co ${ interval } tygodni we wszystkie dni, ${ timesString }",
-        "Co ${ interval } tygodnia we wszystkie dni, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Codziennie, ${ untilString }",
-        "Co ${ interval } tygodnie we wszystkie dni, ${ untilString }",
-        "Co ${ interval } tygodni we wszystkie dni, ${ untilString }",
-        "Co ${ interval } tygodnia we wszystkie dni, ${ untilString }"
-      ],
       "Every ${ interval } week on Friday": [
         "Co tydzień w piątek",
         "Co ${ interval } tygodnie w piątek",
         "Co ${ interval } tygodni w piątek",
         "Co ${ interval } tygodnia w piątek"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Co tydzień w piątek, ${ timesString }",
-        "Co ${ interval } tygodnie w piątek, ${ timesString }",
-        "Co ${ interval } tygodni w piątek, ${ timesString }",
-        "Co ${ interval } tygodnia w piątek, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Co tydzień w piątek, ${ untilString }",
-        "Co ${ interval } tygodnie w piątek, ${ untilString }",
-        "Co ${ interval } tygodni w piątek, ${ untilString }",
-        "Co ${ interval } tygodnia w piątek, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Co tydzień w poniedziałek",
@@ -15186,29 +15177,11 @@
         "Co ${ interval } tygodni w poniedziałek, ${ timesString }",
         "Co ${ interval } tygodnia w poniedziałek, ${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Co tydzień w poniedziałek, ${ untilString }",
-        "Co ${ interval } tygodnie w poniedziałek, ${ untilString }",
-        "Co ${ interval } tygodni w poniedziałek, ${ untilString }",
-        "Co ${ interval } tygodnia w poniedziałek, ${ untilString }"
-      ],
       "Every ${ interval } week on Saturday": [
         "Co tydzień w sobotę",
         "Co ${ interval } tygodnie w sobotę",
         "Co ${ interval } tygodni w sobotę",
         "Co ${ interval } tygodnia w sobotę"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Co tydzień w sobotę, ${ timesString }",
-        "Co ${ interval } tygodnie w sobotę, ${ timesString }",
-        "Co ${ interval } tygodni w sobotę, ${ timesString }",
-        "Co ${ interval } tygodnia w sobotę, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Co tydzień w sobotę, ${ untilString }",
-        "Co ${ interval } tygodnie w sobotę, ${ untilString }",
-        "Co ${ interval } tygodni w sobotę, ${ untilString }",
-        "Co ${ interval } tygodnia w sobotę, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Co tydzień w niedzielę",
@@ -15222,29 +15195,11 @@
         "Co ${ interval } tygodni w niedzielę, ${ timesString }",
         "Co ${ interval } tygodnia w niedzielę, ${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Co tydzień w niedzielę, ${ untilString }",
-        "Co ${ interval } tygodnie w niedzielę, ${ untilString }",
-        "Co ${ interval } tygodni w niedzielę, ${ untilString }",
-        "Co ${ interval } tygodnia w niedzielę, ${ untilString }"
-      ],
       "Every ${ interval } week on Thursday": [
         "Co tydzień w czwartek",
         "Co ${ interval } tygodnie w czwartek",
         "Co ${ interval } tygodni w czwartek",
         "Co ${ interval } tygodnia w czwartek"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Co tydzień w czwartek, ${ timesString }",
-        "Co ${ interval } tygodnie w czwartek, ${ timesString }",
-        "Co ${ interval } tygodni w czwartek, ${ timesString }",
-        "Co ${ interval } tygodnia w czwartek, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Co tydzień w czwartek, ${ untilString }",
-        "Co ${ interval } tygodnie w czwartek, ${ untilString }",
-        "Co ${ interval } tygodni w czwartek, ${ untilString }",
-        "Co ${ interval } tygodnia w czwartek, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Co tydzień we wtorek",
@@ -15258,107 +15213,183 @@
         "Co ${ interval } tygodni we wtorek, ${ timesString }",
         "Co ${ interval } tygodnia we wtorek, ${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Co tydzień we wtorek, ${ untilString }",
-        "Co ${ interval } tygodnie we wtorek, ${ untilString }",
-        "Co ${ interval } tygodni we wtorek, ${ untilString }",
-        "Co ${ interval } tygodnia we wtorek, ${ untilString }"
-      ],
       "Every ${ interval } week on Wednesday": [
         "Co tydzień w środę",
         "Co ${ interval } tygodnie w środę",
         "Co ${ interval } tygodni w środę",
         "Co ${ interval } tygodnia w środę"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Co tydzień w środę, ${ timesString }",
-        "Co ${ interval } tygodnie w środę, ${ timesString }",
-        "Co ${ interval } tygodni w środę, ${ timesString }",
-        "Co ${ interval } tygodnia w środę, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Co tydzień w środę, ${ untilString }",
-        "Co ${ interval } tygodnie w środę, ${ untilString }",
-        "Co ${ interval } tygodni w środę, ${ untilString }",
-        "Co ${ interval } tygodnia w środę, ${ untilString }"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "Co tydzień w: ${ multipleDaysString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Co tydzień w: ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Co tydzień w: ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Codziennie"
       ],
-      "Weekly on all days, ${ timesString }": [
-        "Codziennie, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Codziennie, ${ untilString }"
-      ],
       "Weekly on Friday": [
         "Co tydzień w piątek"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Co tydzień w piątek, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Co tydzień w piątek, ${ untilString }"
       ],
       "Weekly on Monday": [
         "Co tydzień w poniedziałek"
       ],
-      "Weekly on Monday, ${ timesString }": [
-        "Co tydzień w poniedziałek, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Co tydzień w poniedziałek, ${ untilString }"
-      ],
       "Weekly on Saturday": [
         "Co tydzień w sobotę"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Co tydzień w sobotę, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Co tydzień w sobotę, ${ untilString }"
       ],
       "Weekly on Sunday": [
         "Co tydzień w niedzielę"
       ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Co tydzień w niedzielę, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Co tydzień w niedzielę, ${ untilString }"
-      ],
       "Weekly on Thursday": [
         "Co tydzień w czwartek"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Co tydzień w czwartek, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Co tydzień w czwartek, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "Co tydzień we wtorek"
       ],
+      "Weekly on Wednesday": [
+        "Co tydzień w środę"
+      ]
+    },
+    "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Co ${ interval } tydzień w: ${ multipleDaysString }, ${ timesString }",
+        "Co ${ interval } tygodnie w: ${ multipleDaysString }, ${ timesString }",
+        "Co ${ interval } tygodni w: ${ multipleDaysString }, ${ timesString }",
+        "Co ${ interval } tygodnia w: ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Co ${ interval } tydzień we wszystkie dni, ${ timesString }",
+        "Co ${ interval } tygodnie we wszystkie dni, ${ timesString }",
+        "Co ${ interval } tygodni we wszystkie dni, ${ timesString }",
+        "Co ${ interval } tygodnia we wszystkie dni, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Co ${ interval } tydzień w piątek, ${ timesString }",
+        "Co ${ interval } tygodnie w piątek, ${ timesString }",
+        "Co ${ interval } tygodni w piątek, ${ timesString }",
+        "Co ${ interval } tygodnia w piątek, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Co ${ interval } tydzień w sobotę, ${ timesString }",
+        "Co ${ interval } tygodnie w sobotę, ${ timesString }",
+        "Co ${ interval } tygodni w sobotę, ${ timesString }",
+        "Co ${ interval } tygodnia w sobotę, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Co ${ interval } tydzień w czwartek, ${ timesString }",
+        "Co ${ interval } tygodnie w czwartek, ${ timesString }",
+        "Co ${ interval } tygodni w czwartek, ${ timesString }",
+        "Co ${ interval } tygodnia w czwartek, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Co ${ interval } tydzień w środę, ${ timesString }",
+        "Co ${ interval } tygodnie w środę, ${ timesString }",
+        "Co ${ interval } tygodni w środę, ${ timesString }",
+        "Co ${ interval } tygodnia w środę, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Co tydzień w: ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Codziennie, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Co tydzień w piątek, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Co tydzień w poniedziałek, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Co tydzień w sobotę, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Co tydzień w niedzielę, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Co tydzień w czwartek, ${ timesString }"
+      ],
       "Weekly on Tuesday, ${ timesString }": [
         "Co tydzień we wtorek, ${ timesString }"
       ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Co tydzień we wtorek, ${ untilString }"
-      ],
-      "Weekly on Wednesday": [
-        "Co tydzień w środę"
-      ],
       "Weekly on Wednesday, ${ timesString }": [
         "Co tydzień w środę, ${ timesString }"
+      ]
+    },
+    "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Co ${ interval } tydzień w: ${ multipleDaysString }, ${ untilString }",
+        "Co ${ interval } tygodnie w: ${ multipleDaysString }, ${ untilString }",
+        "Co ${ interval } tygodni w: ${ multipleDaysString }, ${ untilString }",
+        "Co ${ interval } tygodnia w: ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Co ${ interval } tydzień we wszystkie dni, ${ untilString }",
+        "Co ${ interval } tygodnie we wszystkie dni, ${ untilString }",
+        "Co ${ interval } tygodni we wszystkie dni, ${ untilString }",
+        "Co ${ interval } tygodnia we wszystkie dni, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Co ${ interval } tydzień w piątek, ${ untilString }",
+        "Co ${ interval } tygodnie w piątek, ${ untilString }",
+        "Co ${ interval } tygodni w piątek, ${ untilString }",
+        "Co ${ interval } tygodnia w piątek, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Co ${ interval } tydzień w poniedziałek, ${ untilString }",
+        "Co ${ interval } tygodnie w poniedziałek, ${ untilString }",
+        "Co ${ interval } tygodni w poniedziałek, ${ untilString }",
+        "Co ${ interval } tygodnia w poniedziałek, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Co ${ interval } tydzień w sobotę, ${ untilString }",
+        "Co ${ interval } tygodnie w sobotę, ${ untilString }",
+        "Co ${ interval } tygodni w sobotę, ${ untilString }",
+        "Co ${ interval } tygodnia w sobotę, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Co ${ interval } tydzień w niedzielę, ${ untilString }",
+        "Co ${ interval } tygodnie w niedzielę, ${ untilString }",
+        "Co ${ interval } tygodni w niedzielę, ${ untilString }",
+        "Co ${ interval } tygodnia w niedzielę, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Co ${ interval } tydzień w czwartek, ${ untilString }",
+        "Co ${ interval } tygodnie w czwartek, ${ untilString }",
+        "Co ${ interval } tygodni w czwartek, ${ untilString }",
+        "Co ${ interval } tygodnia w czwartek, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Co ${ interval } tydzień we wtorek, ${ untilString }",
+        "Co ${ interval } tygodnie we wtorek, ${ untilString }",
+        "Co ${ interval } tygodni we wtorek, ${ untilString }",
+        "Co ${ interval } tygodnia we wtorek, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Co ${ interval } tydzień w środę, ${ untilString }",
+        "Co ${ interval } tygodnie w środę, ${ untilString }",
+        "Co ${ interval } tygodni w środę, ${ untilString }",
+        "Co ${ interval } tygodnia w środę, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Co tydzień w: ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Codziennie, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Co tydzień w piątek, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Co tydzień w poniedziałek, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Co tydzień w sobotę, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Co tydzień w niedzielę, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Co tydzień w czwartek, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Co tydzień we wtorek, ${ untilString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
         "Co tydzień w środę, ${ untilString }"
@@ -15394,23 +15425,27 @@
         "Co ${ interval } lat",
         "Co ${ interval } roku"
       ],
+      "Yearly": [
+        "Co rok"
+      ]
+    },
+    "Yearly recurring event, frequency (times)": {
       "Every ${ interval } year, ${ timesString }": [
-        "Co rok, ${ timesString }",
+        "Co ${ interval } rok, ${ timesString }",
         "Co ${ interval } lata, ${ timesString }",
         "Co ${ interval } lat, ${ timesString }",
         "Co ${ interval } roku, ${ timesString }"
       ],
+      "Yearly, ${ timesString }": [
+        "Co rok, ${ timesString }"
+      ]
+    },
+    "Yearly recurring event, frequency (until)": {
       "Every ${ interval } year, ${ untilString }": [
-        "Co rok, ${ untilString }",
+        "Co ${ interval } rok, ${ untilString }",
         "Co ${ interval } lata, ${ untilString }",
         "Co ${ interval } lat, ${ untilString }",
         "Co ${ interval } roku, ${ untilString }"
-      ],
-      "Yearly": [
-        "Co rok"
-      ],
-      "Yearly, ${ timesString }": [
-        "Co rok, ${ timesString }"
       ],
       "Yearly, ${ untilString }": [
         "Co rok, ${ untilString }"

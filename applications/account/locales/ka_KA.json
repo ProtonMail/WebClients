@@ -1472,6 +1472,10 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "აუარეთ გვერდი ლოკალური ინტერნეტის დაბლოკვებს და ცენზურას ჩვენი სერვერების გლობალური ქსელით."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "შეიცავს ${ domains } მომხმარებლის დომენის, ${ addresses } ელფოსტის მისამართის, განუსაზღვრელი hide-my-email ფსევდონიმებს, კალენდრის გაზიარებას და სხვ.",
+        "შეიცავს ${ domains } მომხმარებლის დომენის, ${ addresses } ელფოსტის მისამართის, განუსაზღვრელი hide-my-email ფსევდონიმებს, კალენდრის გაზიარებას და სხვ."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "შეიცავს 1 თქვენი ელფოსტის დომენის, 10 ელფოსტის მისამართის, 10 Hide-my-email-ის მეტსახელს, კალენდრის გაზიარებას და სხვ."
       ],
@@ -2984,16 +2988,9 @@
       "Daily": [
         "ყოველდღიურად"
       ],
-      "Daily, ${ untilString }": [
-        "ყოველდღე, ${ untilString }-მდე"
-      ],
       "Every ${ interval } day": [
         "ყოველ ${ interval } დღეში",
         "ყოველ ${ interval } დღეში"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "ყოველ ${ interval } დღეში, ${ untilString }-მდე",
-        "ყოველ ${ interval } დღეში, ${ untilString }-მდე"
       ],
       "until ${ dateString }": [
         "${ dateString }-მდე"
@@ -3123,6 +3120,12 @@
     "Desktop app upsell": {
       "Access to the desktop app is limited": [
         "კომპიუტერის აპთან წვომა შეზღუდულია"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "${ MAIL_APP_NAME }-ის სამუშაო მაგიდის აპის ბეტა ვერსია ამჟამად ${ BRAND_NAME } Visionary გამომწერზეა შეზღუდული. ის ყველა მომხმარებლისთვის 2024-ის დასაწყისში გახდება ხელმისაწვდომი."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "ასწიეთ სატარიფო გეგმა დღეს ან გადაამოწმეთ 2024-ის დასაწყისში."
       ]
     },
     "Disable account": {
@@ -3650,6 +3653,16 @@
     "Enabled 2FA": {
       "2FA": [
         "2FA"
+      ]
+    },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "${ DRIVE_SHORT_APP_NAME }-ის, ${ VPN_SHORT_APP_NAME }-ის და ${ PASS_SHORT_APP_NAME }-ის ფასიანი ფუნქციები"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "შეიცავს ვერსიის ისტორიას ${ DRIVE_SHORT_APP_NAME }-ში, წვდომას ათასობით ${ VPN_SHORT_APP_NAME }-ის სერვერებზე, მის ${ PASS_SHORT_APP_NAME }-ზე გაზიარებას და ა.შ."
       ]
     },
     "eoy2023: Deal details": {
@@ -4180,10 +4193,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "მოულოდნელი შეცდომა. შემოტანა თავიდან უნდა დაიწყოთ."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "ფაილი ${ formattedFilename } ${ MAX_IMPORT_EVENTS_STRING }-ზე მეტ მოვლენას შეიცავს.",
-        "ფაილი ${ formattedFilename } ${ MAX_IMPORT_EVENTS_STRING }-ზე მეტ მოვლენას შეიცავს."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "თქვენს ფაილს ${ formattedFilename } არასწორი მეთოდი აქვს და მისი შემოტანა შეუძლებელია."
@@ -5205,6 +5214,9 @@
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "უკვე გაქვთ ანგარიში? ${ signIn }"
+      ],
+      "Already have an account? ${ signIn } or ${ switchAccount }": [
+        "უკვე გაქვთ ანგარიში? ${ signIn } ან ${ switchAccount }"
       ]
     },
     "Go to sign up": {
@@ -6059,6 +6071,9 @@
       "Any ${ twoFa } method on your account will be disabled.": [
         "თქვენი ანგარიშის ${ twoFa }-ის მეთოდი გაითიშება."
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "წაშლება ასევე ყველა ქვესაქაღალდეც. მაგრამ ელფოსტა, რომელიც დამახსოვრებულია საქაღალდეში ${ nameDeleted }, არ წაიშლება და შეგიძლიათ, ყველა ელფოსტის საქაღალდეში იპოვოთ."
+      ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "ნებისმიერს, ვისაც ეს ბმული აქვს, შეუძლია ნახოს კალენდრის ამ მოვლენის ისეთი დეტალები, როგორიცაა სათაური, მდებარეობა და მონაწილეები."
       ],
@@ -6377,6 +6392,9 @@
       ],
       "Emailing preference saved": [
         "დაგზავნის მორგება შენახულია"
+      ],
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "ჭდით ${ nameDeleted } მონიშნული ელფოსტები არ წაიშლება და ჯერ კიდევ შეგიძლიათ იპოვოთ შესაბამის საქაღალდეში."
       ],
       "Enable this address to join this calendar": [
         "ჩართეთ ეს მისამართი, რომ ამ კალენდარს მიუერთდეს"
@@ -6943,6 +6961,9 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "ჩაინიშნეთ, რომ თუ დომენს წაშლით, მასზე მიბმული ყველა მისამართი გაითიშება."
+      ],
+      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "დაიმახსოვრეთ, რომ ფილტრის ${ nameDeleted } წაშლის შედეგად ასევე შეწყდება იმ ავტომატური ქმედებების დამუშავებაც, რომელსაც ის ატრიგერებს."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "დადასტურების ღილაკზე დაწოლის შემდეგ თქვენს ანგარიშზე ${ creditsRemaining } კრედიტი იქნება დარჩენილი."
@@ -9491,6 +9512,9 @@
       "Sign in": [
         "შესვლა"
       ],
+      "switch account": [
+        "ანგარიშის გადართვა"
+      ],
       "Terms": [
         "წესები"
       ],
@@ -9737,22 +9761,8 @@
         "ყოველ ${ interval } თვეში ${ onDayString }",
         "ყოველ ${ interval } თვეში ${ onDayString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "ყოველ ${ interval } თვეში ერთხელ, ${ onDayString }, ${ timesString }-ზე",
-        "ყოველ ${ interval } თვეში ერთხელ, ${ onDayString }, ${ timesString }-ზე"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "ყოველ ${ interval } თვეში, ${ onDayString }, ${ untilString }-მდე",
-        "ყოველ ${ interval } თვეში, ${ onDayString }, ${ untilString }-მდე"
-      ],
       "Monthly ${ onDayString }": [
         "ყოველ თვე, ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "თვეში ერთხელ ${ onDayString }, ${ timesString }-ზე"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "თვეში ერთხელ, ${ onDayString }, ${ untilString }-მდე"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -11093,6 +11103,9 @@
       "No parent folder": [
         "მშობელი საქაღალდის გარეშე"
       ],
+      "No permission": [
+        "წვდომის გარეშე"
+      ],
       "Normal": [
         "ნორმალური"
       ],
@@ -11102,11 +11115,17 @@
       "On": [
         "ჩართ"
       ],
+      "Organization only": [
+        "მხოლოდ ორგანიზაცია"
+      ],
       "Permanent": [
         "მუდმივი"
       ],
       "Plain text": [
         "უბრალო ტექსტი"
+      ],
+      "Receive from all": [
+        "ყველასგან მიღება"
       ],
       "Repeat daily": [
         "დღიურად გამეორება"
@@ -11128,6 +11147,12 @@
       ],
       "Select who can access...": [
         "აირჩიეთ, ვის აქვს წვდომა..."
+      ],
+      "Send to all": [
+        "ყველასთვის გაგზავნა"
+      ],
+      "Setup incomplete": [
+        "დაყენება არასრულია"
       ],
       "Standard server configs": [
         "სერვერის სტანდარტული კონფიგურაციები"
@@ -11511,6 +11536,23 @@
       ],
       "New credit/debit card": [
         "ახალი საკრედიტო/სადებეტო ბარათი"
+      ]
+    },
+    "Permission": {
+      "No permission": [
+        "წვდომის გარეშე"
+      ],
+      "Organization only": [
+        "მხოლოდ ორგანიზაცია"
+      ],
+      "Receive from all": [
+        "ყველასგან მიღება"
+      ],
+      "Send to all": [
+        "ყველასთვის გაგზავნა"
+      ],
+      "Setup incomplete": [
+        "დაყენება არასრულია"
       ]
     },
     "Personal calendar section description": {
@@ -11933,6 +11975,22 @@
       ],
       "You can reset your password until ${ boldDate }.": [
         "პაროლის შეცვლა, შეგიძლიათ, თარიღამდე ${ boldDate }"
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "გაქვთ ${ timeRemaining.inDays } დღე, ჩამოყაროთ თქვენი პაროლი.",
+        "გაქვთ ${ timeRemaining.inDays } დღე, ჩამოყაროთ თქვენი პაროლი."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "გაქვთ ${ timeRemaining.inHours } საათი, ჩამოყაროთ თქვენი პაროლი.",
+        " გაქვთ ${ timeRemaining.inHours } საათი ჩამოყაროთ თქვენი პაროლი."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "გაქვთ ${ timeRemaining.inMinutes } წუთი, ჩამოყაროთ თქვენი პაროლი.",
+        " გაქვთ ${ timeRemaining.inMinutes } წუთი ჩამოყაროთ თქვენი პაროლი."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "გაქვთ ${ timeRemaining.inSeconds } წამი, ჩამოყაროთ თქვენი პაროლი.",
+        " გაქვთ ${ timeRemaining.inSeconds } წამი ჩამოყაროთ თქვენი პაროლი."
       ]
     },
     "session_recovery:available:link": {
@@ -13443,6 +13501,9 @@
       "Delete calendar": [
         "კალენდრის წაშლა"
       ],
+      "Delete filter?": [
+        "წ:ავშალო ფილტრი?"
+      ],
       "Delete folder?": [
         "წავშალო საქაღალდე?"
       ],
@@ -13972,6 +14033,9 @@
       ],
       "Summary": [
         "შეჯამება"
+      ],
+      "Switch account": [
+        "ანგარიშის გადართვა"
       ],
       "Switch to one-password mode": [
         "ერთპაროლიან რეჟიმზე გადართვა"
@@ -14675,37 +14739,13 @@
         "ყოველ ${ interval } კვირას ${ multipleDaysString }-ზე",
         "ყოველ ${ interval } კვირას ${ multipleDaysString }-ზე"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "ყოველ ${ interval } კვირაში, ${ multipleDaysString }, ${ timesString }-ზე",
-        "ყოველ ${ interval } კვირაში, ${ multipleDaysString }, ${ timesString }-ზე"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "ყოველ ${ interval } კვირაში, ${ multipleDaysString }, ${ untilString }-მდე",
-        "ყოველ ${ interval } კვირაში, ${ multipleDaysString }, ${ untilString }-მდე"
-      ],
       "Every ${ interval } week on all days": [
         "ყოველ ${ interval }-ე კვირის ყოველ დღეს",
         "ყოველ ${ interval }-ე კვირის ყოველ დღეს"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "ყოველ ${ interval } კვირაში, ყოველდღე, ${ timesString }-ზე",
-        "ყოველ ${ interval } კვირაში, ყოველდღე, ${ timesString }-ზე"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "ყოველ ${ interval } კვირაში ერთხელ, ყოველდღე, ${ untilString }-მდე",
-        "ყოველ ${ interval } კვირაში ერთხელ, ყოველდღე, ${ untilString }-მდე"
-      ],
       "Every ${ interval } week on Friday": [
         "ყოველ ${ interval } კვირაში ერთხელ, პარასკეობით",
         "ყოველ ${ interval } კვირაში ერთხელ, პარასკეობით"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "ყოველ ${ interval } კვირაში, პარასკეობით, ${ timesString }",
-        "ყოველ ${ interval } კვირაში, პარასკეობით, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "ყოველ ${ interval } კვირაში, პარასკეობით, ${ untilString }-მდე",
-        "ყოველ ${ interval } კვირაში, პარასკეობით, ${ untilString }-მდე"
       ],
       "Every ${ interval } week on Monday": [
         "ყოველ ${ interval } კვირაში ერთხელ, ორშაბათობით",
@@ -14715,21 +14755,9 @@
         "ყოველ ${ interval } კვირაში ერთხელ, ორშაბათობით, ${ timesString }",
         "ყოველ ${ interval } კვირაში ერთხელ, ორშაბათობით, ${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "ყოველ ${ interval } კვირაში ერთხელ, ორშაბათობით, ${ untilString }-მდე",
-        "ყოველ ${ interval } კვირაში ერთხელ, ორშაბათობით, ${ untilString }-მდე"
-      ],
       "Every ${ interval } week on Saturday": [
         "ყოველ ${ interval } კვირაში ერთხელ, შაბათობით",
         "ყოველ ${ interval } კვირაში ერთხელ, შაბათობით"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "ყოველ ${ interval } კვირაში ერთხელ, შაბათობით, ${ timesString }",
-        "ყოველ ${ interval } კვირაში ერთხელ, შაბათობით, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "ყოველ ${ interval } კვირაში ერთხელ, შაბათობით, ${ untilString }-მდე",
-        "ყოველ ${ interval } კვირაში ერთხელ, შაბათობით, ${ untilString }-მდე"
       ],
       "Every ${ interval } week on Sunday": [
         "ყოველ ${ interval } კვირაში, კვირაობით",
@@ -14739,21 +14767,9 @@
         "ყოველ ${ interval } კვირაში, კვირაობით, ${ timesString }",
         "ყოველ ${ interval } კვირაში, კვირაობით, ${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "ყოველ ${ interval } კვირაში, კვირაობით, ${ untilString }-მდე",
-        "ყოველ ${ interval } კვირაში, კვირაობით, ${ untilString }-მდე"
-      ],
       "Every ${ interval } week on Thursday": [
         "ყოველ ${ interval } კვირაში ერთხელ, ხუთშაბათობით",
         "ყოველ ${ interval } კვირაში ერთხელ, ხუთშაბათობით"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "ყოველ ${ interval } კვირაში ერთხელ, ხუთშაბათობით, ${ timesString }",
-        "ყოველ ${ interval } კვირაში ერთხელ, ხუთშაბათობით, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "ყოველ ${ interval } კვირაში ერთხელ, ხუთშაბათობით, ${ untilString }-მდე",
-        "ყოველ ${ interval } კვირაში ერთხელ, ხუთშაბათობით, ${ untilString }-მდე"
       ],
       "Every ${ interval } week on Tuesday": [
         "ყოველ ${ interval } კვირაში ერთხელ, სამშაბათობით",
@@ -14763,102 +14779,36 @@
         "ყოველ ${ interval } კვირაში ერთხელ, სამშაბათობით, ${ timesString }",
         "ყოველ ${ interval } კვირაში ერთხელ, სამშაბათობით, ${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "ყოველ ${ interval } კვირაში ერთხელ, სამშაბათობით, ${ untilString }-მდე",
-        "ყოველ ${ interval } კვირაში ერთხელ, სამშაბათობით, ${ untilString }-მდე"
-      ],
       "Every ${ interval } week on Wednesday": [
         "ყოველ ${ interval } კვირაში, ოთხშაბათობით",
         "ყოველ ${ interval } კვირაში, ოთხშაბათობით"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "ყოველ ${ interval } კვირაში, ოთხშაბათობით, ${ timesString }",
-        "ყოველ ${ interval } კვირაში, ოთხშაბათობით, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "ყოველ ${ interval } კვირაში, ოთხშაბათობით, ${ untilString }-მდე",
-        "ყოველ ${ interval } კვირაში, ოთხშაბათობით, ${ untilString }-მდე"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "კვირაში ერთხელ ${ multipleDaysString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "ყოველკვირეულად, ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "ყოველკვირეულად, ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "ყოველ კვირას, ყოველდღე"
       ],
-      "Weekly on all days, ${ timesString }": [
-        "ყოველდღე ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "ყოველდღე ${ untilString }-მდე"
-      ],
       "Weekly on Friday": [
         "ყოველკვირა პარასკეობით"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "ყოველკვირა, პარასკეობით, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "ყოველკვირა, პარასკეობით, ${ untilString }-მდე"
       ],
       "Weekly on Monday": [
         "ყოველკვირა ორშაბათობით"
       ],
-      "Weekly on Monday, ${ timesString }": [
-        "ყოველკვირა, ორშაბათობით, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "ყოველკვირა, ორშაბათობით, ${ untilString }-მდე"
-      ],
       "Weekly on Saturday": [
         "ყოველკვირა შაბათს"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "ყოველ კვირა, პარასკეობით, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "ყოველკვირა, პარასკეობით, ${ untilString }-მდე"
       ],
       "Weekly on Sunday": [
         "ყოველკვირა კვირაობით"
       ],
-      "Weekly on Sunday, ${ timesString }": [
-        "ყოველკვირა, კვირაობით, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "ყოველკვირა, კვირაობით, ${ untilString }-მდე"
-      ],
       "Weekly on Thursday": [
         "ყოველკვირა ხუთშაბათს"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "ყოველ კვირა, ხუთშაბათობით, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "ყოველკვირა, ხუთშაბათობით, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "ყოველკვირა სამშაბათს"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "ყოველკვირა, სამშაბათობით, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "ყოველკვირა, სამშაბათობით, ${ untilString }-მდე"
-      ],
       "Weekly on Wednesday": [
         "ყოველკვირა ოთხშაბათობით"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "ყოველკვირა ოთხშაბათობით, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "ყოველ კვირა ოთხშაბათობით, ${ untilString }-მდე"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -14889,22 +14839,8 @@
         "ყოველ ${ interval } წელიწადში",
         "ყოველ ${ interval } წელიწადში"
       ],
-      "Every ${ interval } year, ${ timesString }": [
-        "ყოველ ${ interval } წელიწადში, ${ timesString }-ზე",
-        "ყოველ ${ interval } წელიწადში, ${ timesString }-ზე"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "ყოველ ${ interval } წელიწადში, ${ untilString }-მდე",
-        "ყოველ ${ interval } წელიწადში, ${ untilString }-მდე"
-      ],
       "Yearly": [
         "წლიურად"
-      ],
-      "Yearly, ${ timesString }": [
-        "ყოველწლიურად, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "ყოველწლიურად, ${ untilString }-მდე"
       ]
     }
   }

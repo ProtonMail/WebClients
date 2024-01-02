@@ -701,12 +701,6 @@
       "${ title } started on ${ formattedDate } at ${ formattedHour }": [
         "${ title } va començar el ${ formattedDate } a les ${ formattedHour }"
       ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } va començar el ${ formattedDateWithoutTime }"
-      ],
-      "${ title } started on ${ formattedDateWithTime }": [
-        "${ title } va començar el ${ formattedDateWithTime }."
-      ],
       "${ title } started yesterday": [
         "${ title } va començar ahir"
       ],
@@ -724,12 +718,6 @@
       ],
       "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
         "${ title } comença el ${ formattedDate } a les ${ formattedHour }"
-      ],
-      "${ title } starts on ${ formattedDateWithoutTime }": [
-        "${ title } comença el ${ formattedDateWithoutTime }"
-      ],
-      "${ title } starts on ${ formattedDateWithTime }": [
-        "${ title } va començar el ${ formattedDateWithTime }"
       ],
       "${ title } starts today": [
         "${ title } comença avui"
@@ -2108,19 +2096,21 @@
       "Daily": [
         "Diàriament"
       ],
-      "Daily, ${ untilString }": [
-        "Diàriament, ${ untilString }"
-      ],
       "Every ${ interval } day": [
         "Cada ${ interval } dia",
         "Cada ${ interval } dies"
       ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Cada ${ interval } dia, ${ untilString }",
-        "Cada ${ interval } dies, ${ untilString }"
-      ],
       "until ${ dateString }": [
         "fins el ${ dateString }"
+      ]
+    },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "Diàriament, a les ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Cada ${ interval } dia, a les ${ timesString }",
+        "Cada ${ interval } dies, a les ${ timesString }"
       ]
     },
     "Day": {
@@ -2779,10 +2769,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "S'ha produït un error inesperat. S'ha de reiniciar la importació."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniment.",
-        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniments."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "El fitxer ${ formattedFilename } conté un mètode invàlid i no es pot importar."
@@ -4294,6 +4280,9 @@
       "You can import one data type at a time.": [
         "Podeu importar un tipus de dades alhora."
       ],
+      "You can now return to the application to continue": [
+        "Ara podeu tornar a l'aplicació per continuar."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Podeu activar les notificacions per obtenir alertes quan arribin missatges de correu electrònic nous en aquesta carpeta."
       ],
@@ -4400,6 +4389,16 @@
     "Info on errors": {
       "Click for details": [
         "Cliqueu per veure'n detalls"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } carpeta seleccionada",
+        "${ selectedFoldersCount } carpetes seleccionades"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } etiqueta seleccionada",
+        "${ selectedFoldersCount } etiquetes seleccionades"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -5064,22 +5063,8 @@
         "Cada ${ interval } mes ${ onDayString }",
         "Cada ${ interval } messos ${ onDayString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Cada ${ interval } mes ${ onDayString }, ${ timesString }",
-        "Cada ${ interval } messos ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Cada ${ interval } mes ${ onDayString }, ${ untilString }",
-        "Cada ${ interval } mesos ${ onDayString }, ${ untilString }"
-      ],
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Mensualment ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Mensualment ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -7084,37 +7069,13 @@
         "Cada ${ interval } setmana els ${ multipleDaysString }",
         "Cada ${ interval } setmanes els ${ multipleDaysString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Cada ${ interval } setmana els ${ multipleDaysString }, ${ timesString }",
-        "Cada ${ interval } setmanes els ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Cada ${ interval } setmana els ${ multipleDaysString }, ${ untilString }",
-        "Cada ${ interval } setmanes els ${ multipleDaysString }, ${ untilString }"
-      ],
       "Every ${ interval } week on all days": [
         "Cada ${ interval } setmana tots els dies",
         "Cada ${ interval } setmanes tots els dies"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Cada ${ interval } setmana tots els dies, ${ timesString }",
-        "Cada ${ interval } setmanes tots els dies, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Cada ${ interval } setmana tots els dies, ${ untilString }",
-        "Cada ${ interval } setmanes tots els dies, ${ untilString }"
-      ],
       "Every ${ interval } week on Friday": [
         "Cada ${ interval } setmana els Divendres",
         "Cada ${ interval } setmanes els Divendres"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Cada ${ interval } setmana tots els Divendres, ${ timesString }",
-        "Cada ${ interval } setmanes tots els Divendres, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Cada ${ interval } setmana el Divendres, ${ untilString }",
-        "Cada ${ interval } setmanes el Divendres, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Cada ${ interval } setmana els Dilluns",
@@ -7124,21 +7085,9 @@
         "Cada ${ interval } setmana tots els Dilluns, ${ timesString }",
         "Cada ${ interval } setmanes tots els Dilluns, ${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Cada ${ interval } setmana tots els Dilluns, ${ untilString }",
-        "Cada ${ interval } setmanes tots els Dilluns, ${ untilString }"
-      ],
       "Every ${ interval } week on Saturday": [
         "Cada ${ interval } setmana els Dissabtes",
         "Cada ${ interval } setmanes els Dissabtes"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Cada ${ interval } setmana tots els Dissaptes, ${ timesString }",
-        "Cada ${ interval } setmanes tots els Dissaptes, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Cada ${ interval } setmana el Dissapte, ${ untilString }",
-        "Cada ${ interval } setmanes el Dissapte, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Cada ${ interval } setmana els Diumenges",
@@ -7148,21 +7097,9 @@
         "Cada ${ interval } setmana tots els Diumenges, ${ timesString }",
         "Cada ${ interval } setmanes tots els Diumenges, ${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Cada ${ interval } setmana tots els Diumenges, ${ untilString }",
-        "Cada ${ interval } setmanes tots els Diumenges, ${ untilString }"
-      ],
       "Every ${ interval } week on Thursday": [
         "Cada ${ interval } setmana els Dijous",
         "Cada ${ interval } setmanes els Dijous"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Cada ${ interval } setmana els Dijous, ${ timesString }",
-        "Cada ${ interval } setmanes els Dijous, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Cada ${ interval } setmana el Dijous, ${ untilString }",
-        "Cada ${ interval } setmanes el Dijous, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Cada ${ interval } setmana els Dimarts",
@@ -7172,102 +7109,36 @@
         "Cada ${ interval } setmana els Dimarts, ${ timesString }",
         "Cada ${ interval } setmanes els Dimarts, ${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Cada ${ interval } setmana el Dimarts, ${ untilString }",
-        "Cada ${ interval } setmanes el Dimarts, ${ untilString }"
-      ],
       "Every ${ interval } week on Wednesday": [
         "Cada ${ interval } setmana els Dimecres",
         "Cada ${ interval } setmanes els Dimecres"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Cada ${ interval } setmana els Dimecres, ${ timesString }",
-        "Cada ${ interval } setmanes els Dimecres, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Cada ${ interval } setmana el Dimecres, ${ untilString }",
-        "Cada ${ interval } setmanes el Dimecres, ${ untilString }"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "Setmanalment els ${ multipleDaysString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Semanalment els ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Semanalment els ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Setmanalment tots els dies"
       ],
-      "Weekly on all days, ${ timesString }": [
-        "Semanalment tots els dies, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Semanalment tots els dies, ${ untilString }"
-      ],
       "Weekly on Friday": [
         "Setmanalment al Divendres"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Semanalment el Dilluns, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Semanalment el Divendres, ${ untilString }"
       ],
       "Weekly on Monday": [
         "Setmanalment al Dilluns"
       ],
-      "Weekly on Monday, ${ timesString }": [
-        "Semanalment els Dilluns, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Semanalment el Dilluns, ${ untilString }"
-      ],
       "Weekly on Saturday": [
         "Setmanalment al Dissabte"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Semanalment el Dissapte, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Semanalment el Dissapte, ${ untilString }"
       ],
       "Weekly on Sunday": [
         "Setmanalment al Diumenge"
       ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Semanalment el Diumenge, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Semanalment el Diumenge, ${ untilString }"
-      ],
       "Weekly on Thursday": [
         "Setmanalment al Dijous"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Semanalment els Dijous, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Semanalment el Dijous, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "Setmanalment al Dimarts"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Semanalment els Dimarts, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Semanalment el Dimarts, ${ untilString }"
-      ],
       "Weekly on Wednesday": [
         "Setmanalment al Dimecres"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Dimecres setmanalmenty, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Semanalment el Dimecres, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -7298,22 +7169,8 @@
         "Cada ${ interval } any",
         "Cada ${ interval } anys"
       ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Cada ${ interval } any, ${ timesString }",
-        "Cada ${ interval } anys, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Cada ${ interval } any, ${ untilString }",
-        "Cada ${ interval } anys, ${ untilString }"
-      ],
       "Yearly": [
         "Anual"
-      ],
-      "Yearly, ${ timesString }": [
-        "Anualment, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Anualment, ${ untilString }"
       ]
     }
   }

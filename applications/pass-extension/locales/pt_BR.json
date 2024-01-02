@@ -26,6 +26,9 @@
       "Advanced options": [
         "Opções avançadas"
       ],
+      "Authenticate": [
+        "Autenticar"
+      ],
       "Back": [
         "Voltar"
       ],
@@ -627,9 +630,6 @@
       "Unknown invite": [
         "Convite desconhecido"
       ],
-      "Unsupported ${ PASS_APP_NAME } file format": [
-        "Formato de arquivo do ${ PASS_APP_NAME } não suportado"
-      ],
       "Unsupported 1Password file format": [
         "Formato de arquivo do 1Password não suportado"
       ],
@@ -796,7 +796,7 @@
         "Salvo automaticamente em ${ submissionURL }"
       ],
       "Built in 2FA authenticator": [
-        "Feito em autenticador A2F"
+        "Autenticador 2FA integrado"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Pode criar, editar, excluir, e exportar itens para esse cofre."
@@ -839,6 +839,9 @@
       ],
       "Drop to import": [
         "Solte para importar"
+      ],
+      "Early access to ${ PASS_APP_NAME } web app": [
+        "Acesso antecipado ao aplicativo web do ${ PASS_APP_NAME }"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Transfira suas senhas existentes para o ${ PASS_APP_NAME } de forma simples e rápida."
@@ -1665,6 +1668,9 @@
       "Other": [
         "Outro"
       ],
+      "Password": [
+        "Senha"
+      ],
       "Pick a vault": [
         "Escolher um cofre"
       ],
@@ -1741,6 +1747,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Aproveitando o ${ PASS_APP_NAME }?"
+      ],
+      "Enter your password": [
+        "Digite sua senha"
       ],
       "Enter your PIN": [
         "Digite o seu PIN"

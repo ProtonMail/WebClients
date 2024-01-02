@@ -304,6 +304,9 @@
       "Get started": [
         "入门"
       ],
+      "Get Started": [
+        "立即体验"
+      ],
       "Get verification code": [
         "获取验证码"
       ],
@@ -369,6 +372,9 @@
       ],
       "Load image": [
         "加载图片"
+      ],
+      "Loading link": [
+        "链接加载中"
       ],
       "Manage folders": [
         "管理文件夹"
@@ -2000,9 +2006,20 @@
         "更新开始于 ${ formattedStart } 的活动"
       ]
     },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 位用户"
+      ]
+    },
     "Error": {
       "\"${ name }\" already exists": [
         "“${ name }”已存在"
+      ],
+      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
+        "${ DRIVE_APP_NAME } 已更新。请刷新页面。"
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }，或查看我们的${ statusPageLink }"
@@ -2150,6 +2167,9 @@
       ],
       "Passwords do not match": [
         "密码不匹配"
+      ],
+      "Photos upload is temporarily disabled. Please try again later": [
+        "照片上传暂时被禁用。请稍后再试"
       ],
       "Please activate your search again": [
         "请重新开启全文搜索"
@@ -2320,9 +2340,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "出现意外错误，需重新开始导入。"
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "文件 ${ formattedFilename } 中的日程数已超过 ${ MAX_IMPORT_EVENTS_STRING }。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "您的文件 ${ formattedFilename } 包含一个无效的 method 属性，无法导入。"
@@ -3309,6 +3326,9 @@
       "Close this screen to exit.": [
         "关闭这个窗口以退出"
       ],
+      "Coming soon": [
+        "即将推出"
+      ],
       "Conflict": [
         "冲突"
       ],
@@ -3375,6 +3395,9 @@
       "double your storage": [
         "存储空间翻倍"
       ],
+      "Download ${ name } app": [
+        "下载 ${ name } app"
+      ],
       "Download canceled": [
         "下载已取消"
       ],
@@ -3401,6 +3424,9 @@
       ],
       "Drop file here to upload": [
         "拖至此处即可上传"
+      ],
+      "Drop files here": [
+        "将文件拖放到此处"
       ],
       "Drop to import": [
         "拖至此处即可导入"
@@ -3513,6 +3539,12 @@
       "from the version history?": [
         "版本历史记录中永久删除吗？"
       ],
+      "Get the app to backup photos from your phone.": [
+        "获取应用程序来备份手机中的照片。"
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "获取桌面应用程序以同步计算机上的文件。"
+      ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "了解 ${ DRIVE_APP_NAME } 即可获得 500 MB 存储空间奖励，赶快行动吧！"
       ],
@@ -3581,6 +3613,9 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "若不手动删除，回收站中的文件将一直保留"
+      ],
+      "Items moved to the trash will stay here until deleted": [
+        "移至回收站的项目将留在这里直至被删除"
       ],
       "It’s easy and secure": [
         "简便与安全兼得"
@@ -3708,6 +3743,9 @@
       "Only the people with the link and the password can access this folder.": [
         "只有同时知道链接和密码的人才能访问此文件夹。"
       ],
+      "Or use the \"+ New\" button": [
+        "或者使用“+新建”按钮"
+      ],
       "Paused": [
         "已暂停"
       ],
@@ -3782,6 +3820,9 @@
       ],
       "Queued": [
         "等待中"
+      ],
+      "Ready to add some photos?": [
+        "准备好添加一些照片了吗？"
       ],
       "recommended browser": [
         "推荐浏览器"
@@ -4011,6 +4052,9 @@
       "Trash": [
         "回收站"
       ],
+      "Trash is empty": [
+        "回收站为空"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "抢先体验尚未开放的 ${ BRAND_NAME } 新功能、新特性和新产品。此操作将导致页面重新载入。"
       ],
@@ -4019,6 +4063,9 @@
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "很不幸，此文件或其部分数据无法解密。"
+      ],
+      "Unknown date": [
+        "未知日期"
       ],
       "Unknown error": [
         "未知错误"
@@ -4058,6 +4105,9 @@
       ],
       "Version is restored": [
         "版本已恢复"
+      ],
+      "Want to sync files faster?": [
+        "想要更快地同步文件吗？"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "恭喜，您已获得双倍免费存储空间！"
@@ -4203,6 +4253,14 @@
     "Info on errors": {
       "Click for details": [
         "点击查看详情"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folders selected": [
+        "已选择 ${ selectedFoldersCount } 个文件夹"
+      ],
+      "${ selectedFoldersCount } labels selected": [
+        "已选择 ${ selectedFoldersCount } 个标签"
       ]
     },
     "Item": {
@@ -5173,6 +5231,9 @@
       ],
       "Set up your organization": [
         "填写机构信息"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "通过左上角的切换按钮可以前往所有 ${ BRAND_NAME } 服务：${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME } 且 ${ PASS_SHORT_APP_NAME }。"
       ]
     },
     "Onboarding Title": {
@@ -5361,6 +5422,11 @@
     "Select files": {
       "Upload": [
         "上传"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "未找到结果"
       ]
     },
     "session_recovery:available:action": {
@@ -6427,6 +6493,9 @@
       ],
       "Hide side panel": [
         "隐藏侧边栏"
+      ],
+      "Load image": [
+        "加载图片"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"

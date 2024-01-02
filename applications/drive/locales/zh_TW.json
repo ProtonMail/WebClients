@@ -2041,7 +2041,24 @@
         "原訂自 ${ formattedStart } 起一事有變"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "付費${ DRIVE_SHORT_APP_NAME }，${ VPN_SHORT_APP_NAME }及${ PASS_SHORT_APP_NAME }功能"
+      ]
+    },
     "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 位使用者"
+      ],
+      "Early access to new apps and features": [
+        "搶先體驗新應用程式與功能"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "提早存取${ MAIL_APP_NAME }桌面應用程式"
+      ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "${ MAIL_SHORT_APP_NAME }付費及${ CALENDAR_APP_NAME }功能"
       ]
@@ -2049,6 +2066,9 @@
     "Error": {
       "\"${ name }\" already exists": [
         "「${ name }」已存在"
+      ],
+      "${ DRIVE_APP_NAME } has updated. Please refresh the page.": [
+        "${ DRIVE_APP_NAME }已已更新。請重新整理此頁。"
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }。您也可查看我們的${ statusPageLink }"
@@ -2326,6 +2346,9 @@
       "Try using only letters, numerals, and _.-": [
         "嘗試僅使用字母、數字與 _.-"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "未知錯誤，無法匯入聯絡人"
+      ],
       "Unknown error": [
         "未知錯誤"
       ],
@@ -2369,9 +2392,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "發生未知的錯誤。需重新開始匯入。"
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "您的檔案 ${ formattedFilename } 包含超過 ${ MAX_IMPORT_EVENTS_STRING } 則事件。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "您的檔案 ${ formattedFilename } 有一個無效的方法，因此無法匯入。"
@@ -2548,6 +2568,9 @@
       ],
       "Something went wrong": [
         "發生錯誤"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "切換至網頁版，以使用${ MAIL_APP_NAME }或${ CALENDAR_APP_NAME }。"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "我們無法載入此頁面。請重新整理頁面或檢查您的網際網路連線。"
@@ -3283,6 +3306,9 @@
       "An active recovery file": [
         "作用的還原檔案"
       ],
+      "An issue occurred during the restore process.": [
+        "問題發生於還原程序。"
+      ],
       "and": [
         "和"
       ],
@@ -3363,6 +3389,9 @@
       ],
       "Close this screen to exit.": [
         "關閉此螢幕以離開。"
+      ],
+      "Coming soon": [
+        "即將推出"
       ],
       "Conflict": [
         "衝突"
@@ -3790,6 +3819,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME 使用目前的編輯器模式自動傳送訊息。"
       ],
+      "Photos have been successfully recovered.": [
+        "照片已成功復原。"
+      ],
       "Please enter the password to decrypt and view content.": [
         "請輸入密碼以解密並檢視內容。"
       ],
@@ -4149,6 +4181,9 @@
       ],
       "Version is restored": [
         "版本已還原"
+      ],
+      "Want to sync files faster?": [
+        "想更快同步?"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "成功了，您的免費儲存空間加倍了！"
@@ -5010,6 +5045,9 @@
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "使用 ${ BRAND_NAME } 的 SimpleLogin 取得無限的別名"
       ],
+      "Snooze messages and get reminded when you want": [
+        "延後訊息急於想要時獲得通知"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }"
       ],
@@ -5455,6 +5493,11 @@
     "Select files": {
       "Upload": [
         "上載"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "查無結果"
       ]
     },
     "session_recovery:available:action": {

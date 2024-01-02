@@ -229,6 +229,9 @@
       "Continue with Google": [
         "Продовжити з Google"
       ],
+      "Continue with Outlook": [
+        "Продовжити з Outlook"
+      ],
       "Contract composer": [
         "Зменшити редактор"
       ],
@@ -309,9 +312,6 @@
       ],
       "Delete permanently": [
         "Видалити остаточно"
-      ],
-      "Deselect": [
-        "Прибрати вибір"
       ],
       "Deselect all": [
         "Скасувати вибір"
@@ -1339,6 +1339,9 @@
       ],
       "6 users": [
         "6 користувачів"
+      ],
+      "High speed streaming": [
+        "Перегляд трансляцій на високій швидкості"
       ],
       "Premium Password Manager": [
         "Premium Менеджер паролів"
@@ -2895,23 +2898,24 @@
       "Daily": [
         "Щодня"
       ],
-      "Daily, ${ untilString }": [
-        "Щодня, ${ untilString }"
-      ],
       "Every ${ interval } day": [
         "Щодня",
         "Кожні ${ interval } дні",
         "Кожні ${ interval } днів",
         "Кожні ${ interval } днів"
       ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Щодня, ${ untilString }",
-        "Кожні ${ interval } дні, ${ untilString }",
-        "Кожні ${ interval } днів, ${ untilString }",
-        "Кожні ${ interval } днів, ${ untilString }"
-      ],
       "until ${ dateString }": [
         "до ${ dateString }"
+      ]
+    },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "Щодня, ${ timesString }"
+      ]
+    },
+    "Daily recurring event, frequency (until)": {
+      "Daily, ${ untilString }": [
+        "Щодня, ${ untilString }"
       ]
     },
     "Date label": {
@@ -3145,14 +3149,6 @@
         "Оновлення для події, що починається ${ formattedStart }"
       ]
     },
-    "empty messages: success": {
-      "Folder cleared": [
-        "Теку очищено"
-      ],
-      "Label cleared": [
-        "Мітку очищено"
-      ]
-    },
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "Зашифровані заголовки назв файлів"
@@ -3161,6 +3157,9 @@
     "eoy2023: Deal details": {
       "6 TB": [
         "6 ТБ"
+      ],
+      "6 users": [
+        "6 користувачів"
       ]
     },
     "Error": {
@@ -3644,12 +3643,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Сталася неочікувана помилка. Потрібно перезапустити імпорт."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS_STRING } подію.",
-        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS_STRING } події.",
-        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS_STRING } подій.",
-        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS_STRING } події."
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Ваш файл ${ formattedFilename } має недійсний метод і його неможливо імпортувати."
       ],
@@ -3918,6 +3911,9 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Преміум ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "До 6 користувачів"
       ]
@@ -5511,9 +5507,6 @@
       ],
       "Monthly ${ onDayString }": [
         "Щомісяця ${ onDayString }"
-      ],
-      "Moving messages. This may take a while.": [
-        "Переміщення повідомлень. Це може тривати деякий час."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Дайте назву своїй новій теці та виберіть теку вищого рівня, в яку ви хочете її вкласти. Якщо ви не виберете теку вищого рівня, цю нову теку буде створено як теку вищого рівня."
@@ -7380,21 +7373,11 @@
         "Кожні ${ interval } місяців ${ onDayString }",
         "Кожні ${ interval } місяців ${ onDayString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Щомісяця ${ onDayString }, ${ timesString }",
-        "Кожні ${ interval } місяці ${ onDayString }, ${ timesString }",
-        "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }",
-        "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Щомісяця ${ onDayString }, ${ untilString }",
-        "Кожні ${ interval } місяці ${ onDayString }, ${ untilString }",
-        "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }",
-        "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }"
-      ],
       "Monthly ${ onDayString }": [
         "Щомісяця ${ onDayString }"
-      ],
+      ]
+    },
+    "Monthly recurring event, frequency (times)": {
       "Monthly ${ onDayString }, ${ timesString }": [
         "Щомісяця ${ onDayString }, ${ timesString }"
       ],
@@ -8012,6 +7995,11 @@
         "Вивантажити"
       ]
     },
+    "Select search results": {
+      "No results found": [
+        "Результатів не знайдено"
+      ]
+    },
     "Send email with changed preferences": {
       "The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:": [
         "Контакти для цих адрес були видалені, тож відповідні налаштування шифрування були оновлені відповідно:"
@@ -8133,6 +8121,11 @@
         "${ timeRemaining.inHours } годин"
       ]
     },
+    "session_recovery:available:link": {
+      "See how": [
+        "Подивитись як"
+      ]
+    },
     "session_recovery:available:notification": {
       "Password saved": [
         "Пароль збережено"
@@ -8193,6 +8186,11 @@
         "${ gracePeriodHoursRemaining } години",
         "${ gracePeriodHoursRemaining } годин",
         "${ gracePeriodHoursRemaining } годин"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Скидання пароля"
       ]
     },
     "Signature verification warning": {
@@ -8805,6 +8803,11 @@
         "Відгук надіслано"
       ]
     },
+    "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Преміум ${ DRIVE_SHORT_APP_NAME }"
+      ]
+    },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
         "Створюйте надійні дані для входу на всіх своїх пристроях з необмеженою кількістю псевдонімів, 20 сховищами, інтегрованою 2FA, автозаповненням кредитних карток та іншими можливостями."
@@ -9105,6 +9108,12 @@
       ],
       "Delete draft": [
         "Видалити чернетку"
+      ],
+      "Delete folder?": [
+        "Видалити теку?"
+      ],
+      "Delete label?": [
+        "Видалити мітку?"
       ],
       "Delete message": [
         "Видалити повідомлення"
@@ -9548,6 +9557,9 @@
       "Hide side panel": [
         "Приховати бічну панель"
       ],
+      "Load image": [
+        "Завантажити зображення"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Оберіть PGP-схему для використання при підписуванні чи шифруванні для користувача. Зауважте, що PGP/Inline примусово перетворює повідомлення у звичайний текст"
       ],
@@ -9707,53 +9719,17 @@
         "Кожні ${ interval } тижнів у ${ multipleDaysString }",
         "Кожні ${ interval } тижня ${ multipleDaysString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Щотижня у ${ multipleDaysString }, ${ timesString }",
-        "Кожні ${ interval } тижні у ${ multipleDaysString }, ${ timesString }",
-        "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ timesString }",
-        "Кожні ${ interval } тижня у ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Щотижня у ${ multipleDaysString }, ${ untilString }",
-        "Кожні ${ interval } тижні у ${ multipleDaysString }, ${ untilString }",
-        "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ untilString }",
-        "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ untilString }"
-      ],
       "Every ${ interval } week on all days": [
         "Щотижня в усі дні",
         "Кожні ${ interval } тижні в усі дні",
         "Кожні ${ interval } тижнів у всі дні",
         "Кожні ${ interval } тижнів у всі дні"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Щотижня кожен день, ${ timesString }",
-        "Кожні ${ interval } тижні щодня, ${ timesString }",
-        "Кожні ${ interval } тижнів щодня, ${ timesString }",
-        "Кожні ${ interval } тижнів щодня, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Щотижня кожен день, ${ untilString }",
-        "Кожні ${ interval } тижні щодня, ${ untilString }",
-        "Кожні ${ interval } тижнів щодня, ${ untilString }",
-        "Кожні ${ interval } тижнів щодня, ${ untilString }"
-      ],
       "Every ${ interval } week on Friday": [
         "Щотижня у п'ятницю",
         "Кожні ${ interval } тижні у п'ятницю",
         "Кожні ${ interval } тижнів у п'ятницю",
         "Кожні ${ interval } тижнів у п'ятницю"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Щотижня у п'ятницю, ${ timesString }",
-        "Кожні ${ interval } тижні у п'ятницю, ${ timesString }",
-        "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }",
-        "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Щотижня у п'ятницю, ${ untilString }",
-        "Кожні ${ interval } тижні у п'ятницю, ${ untilString }",
-        "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }",
-        "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Щотижня в понеділок",
@@ -9767,29 +9743,11 @@
         "Кожні ${ interval } тижнів у понеділок, ${ timesString }",
         "Кожні ${ interval } тижнів у понеділок, ${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Щотижня у понеділок, ${ untilString }",
-        "Кожні ${ interval } тижні у понеділок, ${ untilString }",
-        "Кожні ${ interval } тижнів у понеділок, ${ untilString }",
-        "Кожні ${ interval } тижнів у понеділок, ${ untilString }"
-      ],
       "Every ${ interval } week on Saturday": [
         "Щотижня у суботу",
         "Кожні ${ interval } тижні у суботу",
         "Кожні ${ interval } тижнів у суботу",
         "Кожні ${ interval } тижнів у суботу"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Щотижня у суботу, ${ timesString }",
-        "Кожні ${ interval } тижні у суботу, ${ timesString }",
-        "Кожні ${ interval } тижнів у суботу, ${ timesString }",
-        "Кожні ${ interval } тижнів у суботу, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Щотижня у суботу, ${ untilString }",
-        "Кожні ${ interval } тижні у суботу, ${ untilString }",
-        "Кожні ${ interval } тижнів у суботу, ${ untilString }",
-        "Кожні ${ interval } тижнів у суботу, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Щотижня в неділю",
@@ -9803,29 +9761,11 @@
         "Кожні ${ interval } тижнів у неділю, ${ timesString }",
         "Кожні ${ interval } тижнів у неділю, ${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Щотижня у неділю, ${ untilString }",
-        "Кожні ${ interval } тижні у неділю, ${ untilString }",
-        "Кожні ${ interval } тижнів у неділю, ${ untilString }",
-        "Кожні ${ interval } тижнів у неділю, ${ untilString }"
-      ],
       "Every ${ interval } week on Thursday": [
         "Щотижня у четвер",
         "Кожні ${ interval } тижні у четвер",
         "Кожні ${ interval } тижнів у четвер",
         "Кожні ${ interval } тижнів у четвер"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Щотижня у четвер, ${ timesString }",
-        "Кожні ${ interval } тижні у четвер, ${ timesString }",
-        "Кожні ${ interval } тижнів у четвер, ${ timesString }",
-        "Кожні ${ interval } тижнів у четвер, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Щотижня у четвер, ${ untilString }",
-        "Кожні ${ interval } тижні у четвер, ${ untilString }",
-        "Кожні ${ interval } тижнів у четвер, ${ untilString }",
-        "Кожні ${ interval } тижнів у четвер, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Щотижня у вівторок",
@@ -9839,107 +9779,87 @@
         "Кожні ${ interval } тижнів у вівторок, ${ timesString }",
         "Кожні ${ interval } тижнів у вівторок, ${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Щотижня у вівторок, ${ untilString }",
-        "Кожні ${ interval } тижні у вівторок, ${ untilString }",
-        "Кожні ${ interval } тижнів у вівторок, ${ untilString }",
-        "Кожні ${ interval } тижнів у вівторок, ${ untilString }"
-      ],
       "Every ${ interval } week on Wednesday": [
         "Щотижня у середу",
         "Кожні ${ interval } тижні у середу",
         "Кожні ${ interval } тижнів у середу",
         "Кожні ${ interval } тижнів у середу"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Щотижня у середу, ${ timesString }",
-        "Кожні ${ interval } тижні у середу, ${ timesString }",
-        "Кожні ${ interval } тижнів у середу, ${ timesString }",
-        "Кожні ${ interval } тижнів у середу, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Щотижня у середу, ${ untilString }",
-        "Кожні ${ interval } тижні у середу, ${ untilString }",
-        "Кожні ${ interval } тижнів у середу, ${ untilString }",
-        "Кожні ${ interval } тижнів у середу, ${ untilString }"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "Щотижня ${ multipleDaysString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Щотижня ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Щотижня ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Щотижня в усі дні"
       ],
-      "Weekly on all days, ${ timesString }": [
-        "Щотижня кожного дня, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Щотижня кожного дня, ${ untilString }"
-      ],
       "Weekly on Friday": [
         "Щоп'ятниці"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Щоп'ятниці, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Щоп'ятниці, ${ untilString }"
       ],
       "Weekly on Monday": [
         "Щопонеділка"
       ],
-      "Weekly on Monday, ${ timesString }": [
-        "Щопонеділка, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Щопонеділка, ${ untilString }"
-      ],
       "Weekly on Saturday": [
         "Щосуботи"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Щосуботи, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Щосуботи, ${ untilString }"
       ],
       "Weekly on Sunday": [
         "Щонеділі"
       ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Щонеділі, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Щонеділі, ${ untilString }"
-      ],
       "Weekly on Thursday": [
         "Щочетверга"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Щочетверга, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Щочетверга, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "Щовівторка"
       ],
+      "Weekly on Wednesday": [
+        "Щосереди"
+      ]
+    },
+    "Weekly recurring event, frequency (times)": {
+      "Weekly on all days, ${ timesString }": [
+        "Щотижня кожного дня, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Щоп'ятниці, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Щопонеділка, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Щосуботи, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Щонеділі, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Щочетверга, ${ timesString }"
+      ],
       "Weekly on Tuesday, ${ timesString }": [
         "Щовівторка, ${ timesString }"
       ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Щовівторка, ${ untilString }"
-      ],
-      "Weekly on Wednesday": [
-        "Щосереди"
-      ],
       "Weekly on Wednesday, ${ timesString }": [
         "Щосереди, ${ timesString }"
+      ]
+    },
+    "Weekly recurring event, frequency (until)": {
+      "Weekly on all days, ${ untilString }": [
+        "Щотижня кожного дня, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Щоп'ятниці, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Щопонеділка, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Щосуботи, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Щонеділі, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Щочетверга, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Щовівторка, ${ untilString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
         "Щосереди, ${ untilString }"
@@ -9975,24 +9895,16 @@
         "Кожні ${ interval } років",
         "Кожні ${ interval } років"
       ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Щороку, ${ timesString }",
-        "Кожні ${ interval } роки, ${ timesString }",
-        "Кожні ${ interval } років, ${ timesString }",
-        "Кожні ${ interval } років, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Кожен ${ interval } рік, ${ untilString }",
-        "Кожні ${ interval } роки, ${ untilString }",
-        "Кожні ${ interval } років, ${ untilString }",
-        "Кожні ${ interval } років, ${ untilString }"
-      ],
       "Yearly": [
         "Щороку"
-      ],
+      ]
+    },
+    "Yearly recurring event, frequency (times)": {
       "Yearly, ${ timesString }": [
         "Щороку, ${ timesString }"
-      ],
+      ]
+    },
+    "Yearly recurring event, frequency (until)": {
       "Yearly, ${ untilString }": [
         "Щороку, ${ untilString }"
       ]
