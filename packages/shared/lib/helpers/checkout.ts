@@ -290,7 +290,7 @@ export const getWhatsIncluded = ({
             },
             {
                 type: 'text',
-                text: c('bf2023: Deal details').t`Premium ${MAIL_SHORT_APP_NAME} & ${CALENDAR_SHORT_APP_NAME}`,
+                text: getPremium(MAIL_SHORT_APP_NAME, CALENDAR_SHORT_APP_NAME),
             },
             {
                 type: 'text',
@@ -381,7 +381,7 @@ export const getWhatsIncluded = ({
             },
             {
                 type: 'text',
-                text: c('bf2023: Deal details').t`Premium ${MAIL_SHORT_APP_NAME} & ${CALENDAR_SHORT_APP_NAME}`,
+                text: getPremium(MAIL_SHORT_APP_NAME, CALENDAR_SHORT_APP_NAME),
             },
             {
                 type: 'text',
