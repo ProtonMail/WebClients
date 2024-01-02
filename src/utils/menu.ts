@@ -53,6 +53,7 @@ export const setApplicationMenu = (isPackaged: boolean) => {
                 { role: "cut" },
                 { role: "copy" },
                 { role: "paste" },
+                { role: "pasteAndMatchStyle", accelerator: isMac ? "Cmd+Shift+V" : "Ctrl+Shift+V" },
                 { role: "selectAll" },
             ],
         },
