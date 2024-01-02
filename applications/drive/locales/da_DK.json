@@ -2434,10 +2434,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "En uventet fejl opstod. Import skal genstartes."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Din fil ${ formattedFilename } indeholder mere end ${ MAX_IMPORT_EVENTS_STRING } begivenhed.",
-        "Din fil ${ formattedFilename } indeholder mere end ${ MAX_IMPORT_EVENTS_STRING } begivenheder."
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Din fil ${ formattedFilename } har en ugyldig metode og kan ikke importeres."
       ],
@@ -3751,7 +3747,7 @@
         "Indekserer ${ esProgress } elementer out of ${ totalProgressToShow }"
       ],
       "Indexing search results…": [
-        "Indexerer søgeresultater…"
+        "Indekserer søgeresultater…"
       ],
       "Inherited from parent folder": [
         "Nedarvet fra overordnet mappe"
@@ -5627,6 +5623,11 @@
     "Select files": {
       "Upload": [
         "Overfør"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Ingen resultater fundet"
       ]
     },
     "session_recovery:available:action": {

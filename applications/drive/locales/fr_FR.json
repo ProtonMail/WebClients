@@ -2442,10 +2442,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Une erreur inattendue s'est produite. L'importation doit être relancée."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_EVENTS_STRING } événement.",
-        "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_EVENTS_STRING } événements."
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Le format de votre fichier ${ formattedFilename } n'est pas valide, il ne peut pas être importé."
       ],
@@ -5576,6 +5572,9 @@
       "Search for name or email": [
         "Recherchez par nom ou adresse e-mail."
       ],
+      "Search parent folder": [
+        "Rechercher le dossier principal"
+      ],
       "Select": [
         "Sélectionnez"
       ],
@@ -5654,6 +5653,11 @@
     "Select files": {
       "Upload": [
         "Importer"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Aucun résultat n'a été trouvé."
       ]
     },
     "session_recovery:available:action": {
