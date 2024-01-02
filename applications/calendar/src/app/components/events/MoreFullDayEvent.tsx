@@ -16,23 +16,15 @@ const MoreFullDayEvent = ({ style, more, eventRef, isSelected }: Props) => {
     const moreText = c('Calendar view; more events collapsed').ngettext(msgid`${more} more`, `${more} more`, more);
 
     return (
-        <div
-            style={style}
-            className="
-            calendar-dayeventcell
-            h-custom
-            w-custom
-            top-custom
-            left-custom
-            absolute
-        "
-        >
+        <div style={style} className="calendar-dayeventcell h-custom w-custom top-custom left-custom absolute">
             <div
                 className={clsx([
                     'calendar-dayeventcell-inner isNotAllDay isLoaded inline-flex text-left w-full px-2',
                     isSelected && 'isSelected',
                 ])}
                 ref={eventRef}
+                // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+                tabIndex={0}
             >
                 <span
                     data-testid="calendar-view:more-events-collapsed"
