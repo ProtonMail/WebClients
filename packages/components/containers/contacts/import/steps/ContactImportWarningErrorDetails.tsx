@@ -6,9 +6,12 @@ import { Bordered, Details, Summary } from '../../../../components';
 
 const ErrorDetail = ({ error, ...rest }: { error: ImportContactError }) => {
     const { contactId } = error;
+    const errorLabel = c('Import contact error').t`Contact ${contactId}: `;
     return (
-        <div {...rest}>
-            <span>{c('Import contact error').t`Contact ${contactId}: `}</span>
+        <div {...rest} className="mb-1 flex flex-column md:flex-row flex-wrap">
+            <span className="inline-block max-w-full text-ellipsis mr-1" title={errorLabel}>
+                {errorLabel}
+            </span>
             <span className="color-danger">{error.message}</span>
         </div>
     );

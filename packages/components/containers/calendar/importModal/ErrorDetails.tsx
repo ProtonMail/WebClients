@@ -40,9 +40,12 @@ const getErrorIdentifierText = (error: ImportEventError) => {
 };
 
 const ErrorDetail = ({ error, ...rest }: { error: ImportEventError }) => {
+    const errorLabel = `${getErrorIdentifierText(error)}: `;
     return (
-        <div {...rest}>
-            <span>{`${getErrorIdentifierText(error)}: `}</span>
+        <div {...rest} className="mb-1 flex flex-column md:flex-row flex-wrap">
+            <span className="inline-block max-w-full text-ellipsis mr-1" title={errorLabel}>
+                {errorLabel}
+            </span>
             <span className="color-danger">{error.message}</span>
         </div>
     );
