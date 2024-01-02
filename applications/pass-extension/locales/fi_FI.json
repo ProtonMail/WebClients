@@ -26,6 +26,9 @@
       "Advanced options": [
         "Lisävalinnat"
       ],
+      "Authenticate": [
+        "Todenna"
+      ],
       "Back": [
         "Takaisin"
       ],
@@ -626,9 +629,6 @@
       ],
       "Unknown invite": [
         "Tuntematon kutsu"
-      ],
-      "Unsupported ${ PASS_APP_NAME } file format": [
-        "Ei tuettu ${ PASS_APP_NAME } -tiedostomuoto"
       ],
       "Unsupported 1Password file format": [
         "Ei tuettu 1Password-tiedostomuoto"
@@ -1671,6 +1671,9 @@
       "Other": [
         "Muu"
       ],
+      "Password": [
+        "Salasana"
+      ],
       "Pick a vault": [
         "Valitse holvi"
       ],
@@ -1747,6 +1750,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Nautitko ${ PASS_APP_NAME }ista?"
+      ],
+      "Enter your password": [
+        "Syötä salasanasi"
       ],
       "Enter your PIN": [
         "Syötä PIN-koodi"

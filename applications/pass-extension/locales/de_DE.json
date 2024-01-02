@@ -26,6 +26,9 @@
       "Advanced options": [
         "Erweiterte Optionen"
       ],
+      "Authenticate": [
+        "Authentifizieren"
+      ],
       "Back": [
         "Zurück"
       ],
@@ -626,9 +629,6 @@
       ],
       "Unknown invite": [
         "Unbekannte Einladung"
-      ],
-      "Unsupported ${ PASS_APP_NAME } file format": [
-        "Nicht unterstütztes ${ PASS_APP_NAME }-Dateiformat."
       ],
       "Unsupported 1Password file format": [
         "Nicht unterstütztes 1Password-Dateiformat."
@@ -1671,6 +1671,9 @@
       "Other": [
         "Weitere"
       ],
+      "Password": [
+        "Passwort"
+      ],
       "Pick a vault": [
         "Wähle einen Tresor"
       ],
@@ -1747,6 +1750,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gefällt dir ${ PASS_APP_NAME }?"
+      ],
+      "Enter your password": [
+        "Passwort eingeben"
       ],
       "Enter your PIN": [
         "PIN eingeben"
