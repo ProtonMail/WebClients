@@ -2911,14 +2911,8 @@
       "Daily": [
         "毎日"
       ],
-      "Daily, ${ untilString }": [
-        "毎日、${ untilString }"
-      ],
       "Every ${ interval } days": [
         "${ interval } 日毎"
-      ],
-      "Every ${ interval } days, ${ untilString }": [
-        "${ interval } 日毎、${ untilString }"
       ],
       "until ${ dateString }": [
         "${ dateString } まで"
@@ -4041,9 +4035,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "予期しないエラーが発生しました。インポートを再起動する必要があります。"
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "ファイル ${ formattedFilename } には ${ MAX_IMPORT_EVENTS_STRING } 以上の予定が含まれています。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "ファイル　${ formattedFilename }はメソッドが正しくなく、インポートできません。"
@@ -9476,20 +9467,8 @@
       "Every ${ interval } months ${ onDayString }": [
         "${ interval } か月毎の ${ onDayString }"
       ],
-      "Every ${ interval } months ${ onDayString }, ${ timesString }": [
-        "${ interval } か月毎の ${ onDayString } 、${ timesString }"
-      ],
-      "Every ${ interval } months ${ onDayString }, ${ untilString }": [
-        "${ interval } か月毎の ${ onDayString } 、${ untilString }"
-      ],
       "Monthly ${ onDayString }": [
         "毎月 ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "毎月 ${ onDayString } 、${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "毎月 ${ onDayString } 、${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -14294,29 +14273,11 @@
       "Every ${ interval } weeks on ${ multipleDaysString }": [
         "${ interval } 週間毎の ${ multipleDaysString }"
       ],
-      "Every ${ interval } weeks on ${ multipleDaysString }, ${ timesString }": [
-        "${ interval } 週間毎の ${ multipleDaysString } 、${ timesString }"
-      ],
-      "Every ${ interval } weeks on ${ multipleDaysString }, ${ untilString }": [
-        "${ interval } 週間毎の ${ multipleDaysString } 、${ untilString }"
-      ],
       "Every ${ interval } weeks on all days": [
         "${ interval } 週間毎の全曜日"
       ],
-      "Every ${ interval } weeks on all days, ${ timesString }": [
-        "${ interval } 週間毎の全曜日、${ timesString }"
-      ],
-      "Every ${ interval } weeks on all days, ${ untilString }": [
-        "${ interval } 週間毎の全曜日、${ untilString }"
-      ],
       "Every ${ interval } weeks on Friday": [
         "${ interval } 週間毎の金曜日"
-      ],
-      "Every ${ interval } weeks on Friday, ${ timesString }": [
-        "${ interval } 週間毎の金曜日、${ timesString }"
-      ],
-      "Every ${ interval } weeks on Friday, ${ untilString }": [
-        "${ interval } 週間毎の金曜日、${ untilString }"
       ],
       "Every ${ interval } weeks on Monday": [
         "${ interval } 週間毎の月曜日"
@@ -14324,17 +14285,8 @@
       "Every ${ interval } weeks on Monday, ${ timesString }": [
         "${ interval } 週間毎の月曜日、${ timesString }"
       ],
-      "Every ${ interval } weeks on Monday, ${ untilString }": [
-        "${ interval } 週間毎の月曜日、${ untilString }"
-      ],
       "Every ${ interval } weeks on Saturday": [
         "${ interval } 週間毎の土曜日"
-      ],
-      "Every ${ interval } weeks on Saturday, ${ timesString }": [
-        "${ interval } 週間毎の土曜日、${ timesString }"
-      ],
-      "Every ${ interval } weeks on Saturday, ${ untilString }": [
-        "${ interval } 週間毎の土曜日、${ untilString }"
       ],
       "Every ${ interval } weeks on Sunday": [
         "${ interval } 週間毎の日曜日"
@@ -14342,17 +14294,8 @@
       "Every ${ interval } weeks on Sunday, ${ timesString }": [
         "${ interval } 週間毎の日曜日、${ timesString }"
       ],
-      "Every ${ interval } weeks on Sunday, ${ untilString }": [
-        "${ interval } 週間毎の日曜日、${ untilString }"
-      ],
       "Every ${ interval } weeks on Thursday": [
         "${ interval } 週間毎の木曜日"
-      ],
-      "Every ${ interval } weeks on Thursday, ${ timesString }": [
-        "${ interval } 週間毎の木曜日、${ timesString }"
-      ],
-      "Every ${ interval } weeks on Thursday, ${ untilString }": [
-        "${ interval } 週間毎の木曜日、${ untilString }"
       ],
       "Every ${ interval } weeks on Tuesday": [
         "${ interval } 週間毎の火曜日"
@@ -14360,98 +14303,35 @@
       "Every ${ interval } weeks on Tuesday, ${ timesString }": [
         "${ interval } 週間毎の火曜日、${ timesString }"
       ],
-      "Every ${ interval } weeks on Tuesday, ${ untilString }": [
-        "${ interval } 週間毎の火曜日、${ untilString }"
-      ],
       "Every ${ interval } weeks on Wednesday": [
         "${ interval } 週間毎の水曜日"
-      ],
-      "Every ${ interval } weeks on Wednesday, ${ timesString }": [
-        "${ interval } 週間毎の水曜日、${ timesString }"
-      ],
-      "Every ${ interval } weeks on Wednesday, ${ untilString }": [
-        "${ interval } 週間毎の水曜日、${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "毎週 ${ multipleDaysString }"
       ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "毎週 ${ multipleDaysString } 、${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "毎週 ${ multipleDaysString } 、${ untilString }"
-      ],
       "Weekly on all days": [
         "毎週の全曜日"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "毎週の全曜日、${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "毎週のすべての日、${ untilString }"
       ],
       "Weekly on Friday": [
         "毎週金曜日"
       ],
-      "Weekly on Friday, ${ timesString }": [
-        "毎週金曜日、${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "毎週金曜日、${ untilString }"
-      ],
       "Weekly on Monday": [
         "毎週月曜日"
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        "毎週月曜日、${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "毎週月曜日、${ untilString }"
       ],
       "Weekly on Saturday": [
         "毎週土曜日"
       ],
-      "Weekly on Saturday, ${ timesString }": [
-        "毎週土曜日、${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "毎週土曜日、${ untilString }"
-      ],
       "Weekly on Sunday": [
         "毎週日曜日"
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        "毎週日曜日、${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "毎週日曜日、${ untilString }"
       ],
       "Weekly on Thursday": [
         "毎週木曜日"
       ],
-      "Weekly on Thursday, ${ timesString }": [
-        "毎週木曜日、${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "毎週木曜日、${ untilString }"
-      ],
       "Weekly on Tuesday": [
         "毎週火曜日"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "毎週火曜日、${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "毎週火曜日、${ untilString }"
-      ],
       "Weekly on Wednesday": [
         "毎週水曜日"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "毎週水曜日、${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "毎週水曜日、${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -14481,20 +14361,8 @@
       "Every ${ interval } years": [
         "${ interval } 年毎"
       ],
-      "Every ${ interval } years, ${ timesString }": [
-        "${ interval } 年毎、${ timesString }"
-      ],
-      "Every ${ interval } years, ${ untilString }": [
-        "${ interval } 年毎、${ untilString }"
-      ],
       "Yearly": [
         "年払い"
-      ],
-      "Yearly, ${ timesString }": [
-        "毎年、${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "毎年、${ untilString }"
       ]
     }
   }
