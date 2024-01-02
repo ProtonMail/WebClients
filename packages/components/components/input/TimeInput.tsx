@@ -138,6 +138,45 @@ const TimeInput = ({
     const valueMinutes = getMinutes(value);
     const normalizedMinutes = valueMinutes - minMinutes;
 
+    const options = useMemo(() => {
+        const totalMinutes = preventNextDayOverflow ? getBaseDateMinutes(base, interval) : MAX_MINUTES;
+        const length = Math.floor(totalMinutes / interval);
+        const minutes = Array.from({ length }, (a, i) => i * interval);
+
+        return minutes.map((minutes) => {
+            const value = addMinutes(base, minutes);
+            const label = toFormatted(value, dateLocale);
+            return {
+                minutes,
+                value,
+                label,
+                display: displayDuration ? (
+                    <>
+                        {label} ({getDurationOptionDisplay(label, minutes)})
+                    </>
+                ) : (
+                    label
+                ),
+            };
+        });
+    }, [normalizedMinutes, base]);
+
+    const filteredOptions = useMemo(() => {
+        return options.filter(({ value }) => {
+            const minCondition = min ? value >= min : true;
+            const maxCondition = max ? value <= max : true;
+            return minCondition && maxCondition;
+        });
+    }, [options, min, max]);
+
+    const matchingIndex = useMemo(() => {
+        const idx = findLongestMatchingIndex(
+            filteredOptions.map(({ label }) => label),
+            temporaryInput
+        );
+        return idx === -1 ? undefined : idx;
+    }, [filteredOptions, temporaryInput]);
+
     const handleSelectDate = (newDate: Date) => {
         const newMinutes = getMinutes(newDate);
 
@@ -160,12 +199,17 @@ const TimeInput = ({
 
     const parseAndSetDate = (temporaryInput: string) => {
         try {
-            const newDate = fromFormatted(temporaryInput, dateLocale);
-            const newDateTime = +newDate;
-            if (!Number.isNaN(newDateTime)) {
-                handleSelectDate(newDate);
+            const matchingOption = matchingIndex !== undefined ? filteredOptions[matchingIndex] : undefined;
+            if (matchingOption?.value && matchingOption?.label === temporaryInput) {
+                // if we highlighted an option in the UI, select that one
+                handleSelectDate(matchingOption.value);
+            } else {
+                const newDate = fromFormatted(temporaryInput, dateLocale);
+                const newDateTime = +newDate;
+                if (!Number.isNaN(newDateTime)) {
+                    handleSelectDate(newDate);
+                }
             }
-            // eslint-disable-next-line no-empty
         } catch (e: any) {}
 
         setTemporaryInput(toFormatted(value, dateLocale));
@@ -227,45 +271,6 @@ const TimeInput = ({
 
     const scrollRef = useRef<HTMLDivElement>(null);
     const listRef = useRef<HTMLUListElement>(null);
-
-    const options = useMemo(() => {
-        const totalMinutes = preventNextDayOverflow ? getBaseDateMinutes(base, interval) : MAX_MINUTES;
-        const length = Math.floor(totalMinutes / interval);
-        const minutes = Array.from({ length }, (a, i) => i * interval);
-
-        return minutes.map((minutes) => {
-            const value = addMinutes(base, minutes);
-            const label = toFormatted(value, dateLocale);
-            return {
-                minutes,
-                value,
-                label,
-                display: displayDuration ? (
-                    <>
-                        {label} ({getDurationOptionDisplay(label, minutes)})
-                    </>
-                ) : (
-                    label
-                ),
-            };
-        });
-    }, [normalizedMinutes, base]);
-
-    const filteredOptions = useMemo(() => {
-        return options.filter(({ value }) => {
-            const minCondition = min ? value >= min : true;
-            const maxCondition = max ? value <= max : true;
-            return minCondition && maxCondition;
-        });
-    }, [options, min, max]);
-
-    const matchingIndex = useMemo(() => {
-        const idx = findLongestMatchingIndex(
-            filteredOptions.map(({ label }) => label),
-            temporaryInput
-        );
-        return idx === -1 ? undefined : idx;
-    }, [filteredOptions, temporaryInput]);
 
     const scrollToSelection = () => {
         if (!isOpen) {
