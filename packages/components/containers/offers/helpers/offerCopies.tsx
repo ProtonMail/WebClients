@@ -18,6 +18,7 @@ import {
 } from '@proton/shared/lib/constants';
 import { getPremiumPasswordManagerText } from '@proton/shared/lib/helpers/checkout';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { getPremium } from '@proton/shared/lib/helpers/premium';
 
 export const getMonthFreeText = (n: number) => {
     return c('specialoffer: Deal').ngettext(msgid`${n} month FREE`, `${n} months FREE`, n);
@@ -65,7 +66,7 @@ export const getMailDealFeatures = () => {
     return [
         getStorageSizeFeature(humanSize(15 * 1024 ** 3, undefined, undefined, 0)),
         {
-            name: c('summer2023: Deal details').t`Premium ${MAIL_SHORT_APP_NAME} & ${CALENDAR_SHORT_APP_NAME}`,
+            name: getPremium(MAIL_SHORT_APP_NAME, CALENDAR_SHORT_APP_NAME),
             tooltip: c('summer2023: Tooltip')
                 .t`Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.`,
         },
@@ -76,17 +77,17 @@ export const getUnlimitedDealFeatures = () => {
     return [
         getStorageSizeFeature(humanSize(500 * 1024 ** 3, undefined, undefined, 0)),
         {
-            name: c('specialoffer: Deal details').t`Premium ${MAIL_SHORT_APP_NAME} & ${CALENDAR_SHORT_APP_NAME}`,
+            name: getPremium(MAIL_SHORT_APP_NAME, CALENDAR_SHORT_APP_NAME),
             tooltip: c('specialoffer: Tooltip')
                 .t`Includes support for 3 custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.`,
         },
         {
-            name: c('summer2023: Deal details').t`Premium ${DRIVE_SHORT_APP_NAME}`,
+            name: getPremium(DRIVE_SHORT_APP_NAME),
             tooltip: c('summer2023: Tooltip')
                 .t`Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.`,
         },
         {
-            name: c('specialoffer: Deal details').t`Premium ${VPN_SHORT_APP_NAME}`,
+            name: getPremium(VPN_SHORT_APP_NAME),
             tooltip: c('summer2023: Tooltip')
                 .t`Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.`,
         },
@@ -264,13 +265,12 @@ export const getVisionaryFeatures = () => [
             .t`Perfect for families or small teams, each can have their own inbox and aliases. Requires a custom domain.`,
     },
     {
-        name: c('specialoffer: Deal details')
-            .t`Premium ${MAIL_SHORT_APP_NAME}, ${CALENDAR_SHORT_APP_NAME} & ${DRIVE_SHORT_APP_NAME}`,
+        name: getPremium(MAIL_SHORT_APP_NAME, CALENDAR_SHORT_APP_NAME, DRIVE_SHORT_APP_NAME),
         tooltip: c('specialoffer: Tooltip')
             .t`All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.`,
     },
     {
-        name: c('specialoffer: Deal details').t`Premium ${VPN_SHORT_APP_NAME}`,
+        name: getPremium(VPN_SHORT_APP_NAME),
         tooltip: c('specialoffer: Tooltip')
             .t`Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.`,
     },
@@ -294,17 +294,17 @@ export const getFamilyFeatures = () => [
             .t`Storage space is shared between family members across ${MAIL_APP_NAME}, ${CALENDAR_APP_NAME}, and ${DRIVE_APP_NAME}.`,
     },
     {
-        name: c('familyOffer_2023:Deal details').t`Premium ${MAIL_SHORT_APP_NAME} & ${CALENDAR_SHORT_APP_NAME}`,
+        name: getPremium(MAIL_SHORT_APP_NAME, CALENDAR_SHORT_APP_NAME),
         tooltip: c('familyOffer_2023:Tooltip')
             .t`Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.`,
     },
     {
-        name: c('familyOffer_2023:Deal details').t`Premium ${DRIVE_SHORT_APP_NAME}`,
+        name: getPremium(DRIVE_SHORT_APP_NAME),
         tooltip: c('familyOffer_2023:Tooltip')
             .t`Secure your files with encrypted cloud storage. Includes automatic sync, encrypted file sharing, and more.`,
     },
     {
-        name: c('familyOffer_2023:Deal details').t`Premium ${VPN_SHORT_APP_NAME}`,
+        name: getPremium(VPN_SHORT_APP_NAME),
         tooltip: c('familyOffer_2023:Tooltip')
             .t`Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.`,
     },
