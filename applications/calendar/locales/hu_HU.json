@@ -698,12 +698,6 @@
       "${ title } started on ${ formattedDate } at ${ formattedHour }": [
         "${ title } ekkor kezdődött: ${ formattedDate } ${ formattedHour }"
       ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } elkezdődött ekkor: ${ formattedDateWithoutTime }"
-      ],
-      "${ title } started on ${ formattedDateWithTime }": [
-        "${ title } elkezdődött ekkor: ${ formattedDateWithTime }"
-      ],
       "${ title } started yesterday": [
         "${ title } tegnap kezdődött"
       ],
@@ -721,12 +715,6 @@
       ],
       "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
         "${ title } ekkor kezdődik: ${ formattedDate } ${ formattedHour }"
-      ],
-      "${ title } starts on ${ formattedDateWithoutTime }": [
-        "${ title } elkezdődik ekkor: ${ formattedDateWithoutTime }"
-      ],
-      "${ title } starts on ${ formattedDateWithTime }": [
-        "${ title } elkezdődik ekkor: ${ formattedDateWithTime }"
       ],
       "${ title } starts today": [
         "${ title } ma kezdődik"
@@ -2049,16 +2037,9 @@
       "Daily": [
         "Naponta"
       ],
-      "Daily, ${ untilString }": [
-        "Naponta, ${ untilString }"
-      ],
       "Every ${ interval } day": [
         "Minden ${ interval }. napon",
         "Minden ${ interval }. napon"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Minden ${ interval }. napon, ${ untilString }",
-        "Minden ${ interval }. napon, ${ untilString }"
       ],
       "until ${ dateString }": [
         "eddig: ${ dateString }"
@@ -2683,10 +2664,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Váratlan hiba történt. Az importálást újra kell kezdeni."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "A fájl több mint ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmaz: ${ formattedFilename }.",
-        "A fájl több mint ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmaz: ${ formattedFilename }."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "A(z) ${ formattedFilename } fájl érvénytelen metódust tartalmaz és nem importálható."
@@ -4948,22 +4925,8 @@
         "Minden ${ interval }. hónapban, ${ onDayString }",
         "Minden ${ interval }. hónapban, ${ onDayString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Minden ${ interval }. hónapban, ${ onDayString }, ${ timesString }",
-        "Minden ${ interval }. hónapban, ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Minden ${ interval }. hónapban, ${ onDayString }, ${ untilString }",
-        "Minden ${ interval }. hónapban, ${ onDayString }, ${ untilString }"
-      ],
       "Monthly ${ onDayString }": [
         "Havonta: ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Havonta ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Havonta ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -6919,37 +6882,13 @@
         "Minden ${ interval }. héten, ${ multipleDaysString }",
         "Minden ${ interval }. héten, ${ multipleDaysString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ timesString }",
-        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ untilString }",
-        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ untilString }"
-      ],
       "Every ${ interval } week on all days": [
         "Minden ${ interval } héten, minden nap",
         "Minden ${ interval } héten, minden nap"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Minden ${ interval }. héten, minden nap, ${ timesString }",
-        "Minden ${ interval }. héten, minden nap, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Minden ${ interval }. héten, minden nap, ${ untilString }",
-        "Minden ${ interval }. héten, minden nap, ${ untilString }"
-      ],
       "Every ${ interval } week on Friday": [
         "Minden ${ interval }. héten, pénteken",
         "Minden ${ interval }. héten, pénteken"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Minden ${ interval }. héten, pénteken, ${ timesString }",
-        "Minden ${ interval }. héten, pénteken, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Minden ${ interval }. héten, pénteken, ${ untilString }",
-        "Minden ${ interval }. héten, pénteken, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Minden ${ interval } héten, hétfőn",
@@ -6959,21 +6898,9 @@
         "Minden ${ interval }. héten, hétfőn, ${ timesString }",
         "Minden ${ interval }. héten, hétfőn, ${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Minden ${ interval }. héten, hétfőn, ${ untilString }",
-        "Minden ${ interval }. héten, hétfőn, ${ untilString }"
-      ],
       "Every ${ interval } week on Saturday": [
         "Minden ${ interval }. héten, szombaton",
         "Minden ${ interval }. héten, szombaton"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Minden ${ interval }. héten, vasárnap, ${ timesString }",
-        "Minden ${ interval }. héten, vasárnap, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Minden ${ interval }. héten, szombaton, ${ untilString }",
-        "Minden ${ interval }. héten, szombaton, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Minden ${ interval }. héten, vasárnap",
@@ -6983,21 +6910,9 @@
         "Minden ${ interval }. héten, vasárnap, ${ timesString }",
         "Minden ${ interval }. héten, vasárnap, ${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Minden ${ interval }. héten, vasárnap, ${ untilString }",
-        "Minden ${ interval }. héten, vasárnap, ${ untilString }"
-      ],
       "Every ${ interval } week on Thursday": [
         "Minden ${ interval }. héten, csütörtökön",
         "Minden ${ interval }. héten, csütörtökön"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Minden ${ interval }. héten, csütörtökön, ${ timesString }",
-        "Minden ${ interval }. héten, csütörtökön, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Minden ${ interval }. héten, csütörtökön, ${ untilString }",
-        "Minden ${ interval }. héten, csütörtökön, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Minden ${ interval }. héten, kedden",
@@ -7007,102 +6922,36 @@
         "Minden ${ interval }. héten, kedden, ${ timesString }",
         "Minden ${ interval }. héten, kedden, ${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Minden ${ interval }. héten, kedden, ${ untilString }",
-        "Minden ${ interval }. héten, kedden, ${ untilString }"
-      ],
       "Every ${ interval } week on Wednesday": [
         "Minden ${ interval }. héten, szerdán",
         "Minden ${ interval }. héten, szerdán"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Minden ${ interval }. héten, szerdán, ${ timesString }",
-        "Minden ${ interval }. héten, szerdán, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Minden ${ interval }. héten, szerdán, ${ untilString }",
-        "Minden ${ interval }. héten, szerdán, ${ untilString }"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "Hetente ${ multipleDaysString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Hetente ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Hetente ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Hetente, minden nap"
       ],
-      "Weekly on all days, ${ timesString }": [
-        "Hetente minden nap, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Hetente minden nap, ${ untilString }"
-      ],
       "Weekly on Friday": [
         "Minden pénteken"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Minden pénteken, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Hetente, péntekenként, ${ untilString }"
       ],
       "Weekly on Monday": [
         "Minden hétfőn"
       ],
-      "Weekly on Monday, ${ timesString }": [
-        "Minden hétfőn, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Hetente, hétfőnként, ${ untilString }"
-      ],
       "Weekly on Saturday": [
         "Minden szombaton"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Minden szombaton, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Hetente, szombatonként, ${ untilString }"
       ],
       "Weekly on Sunday": [
         "Minden vasárnap"
       ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Minden vasárnap, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Hetente, vasárnaponként, ${ untilString }"
-      ],
       "Weekly on Thursday": [
         "Minden csütörtökön"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Minden csütörtökön, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Hetente, csütörtökönként, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "Minden kedden"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Minden kedden, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Hetente, keddenként, ${ untilString }"
-      ],
       "Weekly on Wednesday": [
         "Minden szerdán"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Minden szerdán, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Hetente, szerdánként, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -7133,22 +6982,8 @@
         "Minden ${ interval }. évben",
         "Minden ${ interval }. évben"
       ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Minden ${ interval }. évben, ${ timesString }",
-        "Minden ${ interval }. évben, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Minden ${ interval }. évben, ${ untilString }",
-        "Minden ${ interval }. évben, ${ untilString }"
-      ],
       "Yearly": [
         "Évente"
-      ],
-      "Yearly, ${ timesString }": [
-        "Évente, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Évente, ${ untilString }"
       ]
     }
   }

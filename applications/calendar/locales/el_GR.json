@@ -701,12 +701,6 @@
       "${ title } started on ${ formattedDate } at ${ formattedHour }": [
         "${ title } ξεκίνησε στις ${ formattedDate } στις ${ formattedHour }"
       ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } ξεκίνησε στις ${ formattedDateWithoutTime }"
-      ],
-      "${ title } started on ${ formattedDateWithTime }": [
-        "${ title } ξεκίνησε στις ${ formattedDateWithTime }"
-      ],
       "${ title } started yesterday": [
         "${ title } ξεκίνησε χθες"
       ],
@@ -724,12 +718,6 @@
       ],
       "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
         "Το ${ title } ξεκινά την ${ formattedDate } στις ${ formattedHour }"
-      ],
-      "${ title } starts on ${ formattedDateWithoutTime }": [
-        "Το ${ title } ξεκινά την ${ formattedDateWithoutTime }"
-      ],
-      "${ title } starts on ${ formattedDateWithTime }": [
-        "Το ${ title } ξεκινά την ${ formattedDateWithTime }"
       ],
       "${ title } starts today": [
         "${ title } ξεκινά σήμερα"
@@ -2103,16 +2091,9 @@
       "Daily": [
         "Καθημερινά"
       ],
-      "Daily, ${ untilString }": [
-        "Καθημερινά, ${ untilString }"
-      ],
       "Every ${ interval } day": [
         "Κάθε ${ interval } μέρα",
         "Κάθε ${ interval } μέρες"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Κάθε ${ interval } μέρα, ${ untilString }",
-        "Κάθε ${ interval } μέρες, ${ untilString }"
       ],
       "until ${ dateString }": [
         "μέχρι ${ dateString }"
@@ -2774,10 +2755,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Παρουσιάστηκε μη αναμενόμενο σφάλμα. Πρέπει να γίνει επανεκκίνηση της εισαγωγής."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Το αρχείο ${ formattedFilename } περιέχει περισσότερο από ${ MAX_IMPORT_EVENTS_STRING } γεγονός.",
-        "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS_STRING } γεγονότα."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Το αρχείο σας ${ formattedFilename } έχει μη έγκυρη μέθοδο και δεν μπορεί να εισαχθεί."
@@ -5059,22 +5036,8 @@
         "Κάθε ${ interval } μήνας ${ onDayString }",
         "Κάθε ${ interval } μήνες ${ onDayString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Κάθε ${ interval } μήνας ${ onDayString }, ${ timesString }",
-        "Κάθε ${ interval } μήνες ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Κάθε ${ interval } μήνας ${ onDayString }, ${ untilString }",
-        "Κάθε ${ interval } μήνες ${ onDayString }, ${ untilString }"
-      ],
       "Monthly ${ onDayString }": [
         "Μηνιαίως ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Μηνιαίως ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Μηνιαίως ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -7076,37 +7039,13 @@
         "Κάθε ${ interval } εβδομάδα σε ${ multipleDaysString }",
         "Κάθε ${ interval } εβδομάδες στις ${ multipleDaysString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα στις ${ multipleDaysString }, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες στις ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα σε ${ multipleDaysString }, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες στις ${ multipleDaysString }, ${ untilString }"
-      ],
       "Every ${ interval } week on all days": [
         "Κάθε ${ interval } εβδομάδα όλες τις ημέρες",
         "Κάθε ${ interval } εβδομάδες, σε όλες τις μέρες"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα όλες τις μέρες, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες όλες τις ημέρες, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα όλες τις μέρες, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες σε όλες τις μέρες, ${ untilString }"
-      ],
       "Every ${ interval } week on Friday": [
         "Κάθε ${ interval } εβδομάδα την Παρασκευή",
         "Κάθε ${ interval } εβδομάδες την Παρασκευή"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα την Παρασκευή, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες την Παρασκευή, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα την Παρασκευή, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες την Παρασκευή, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Κάθε ${ interval } εβδομάδα τη Δευτέρα",
@@ -7116,21 +7055,9 @@
         "Κάθε ${ interval } εβδομάδα την Δευτέρα, ${ timesString }",
         "Κάθε ${ interval } εβδομάδες την Δευτέρα, ${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα τη Δευτέρα, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες την Δευτέρα, ${ untilString }"
-      ],
       "Every ${ interval } week on Saturday": [
         "Κάθε ${ interval } εβδομάδα το Σάββατο",
         "Κάθε ${ interval } εβδομάδες το Σάββατο"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα το Σάββατο, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες το Σάββατο, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα το Σάββατο, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες το Σάββατο, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Κάθε ${ interval } εβδομάδα την Κυριακή",
@@ -7140,21 +7067,9 @@
         "Κάθε ${ interval } εβδομάδα την Κυριακή, ${ timesString }",
         "Κάθε ${ interval } εβδομάδες την Κυριακή, ${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα την Κυριακή, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες την Κυριακή, ${ untilString }"
-      ],
       "Every ${ interval } week on Thursday": [
         "Κάθε ${ interval } εβδομάδα την Πέμπτη",
         "Κάθε ${ interval } εβδομάδες την Πέμπτη"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα την Πέμπτη, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες την Πέμπτη, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα την Πέμπτη, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες την Πέμπτη, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Κάθε ${ interval } εβδομάδα την Τρίτη",
@@ -7164,102 +7079,36 @@
         "Κάθε ${ interval } εβδομάδα την Τρίτη, ${ timesString }",
         "Κάθε ${ interval } εβδομάδες την Τρίτη, ${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα την Τρίτη, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες την Τρίτη, ${ untilString }"
-      ],
       "Every ${ interval } week on Wednesday": [
         "Κάθε ${ interval } εβδομάδα την Τετάρτη",
         "Κάθε ${ interval } εβδομάδες την Τετάρτη"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Κάθε ${ interval } εβδομάδα την Τετάρτη, ${ timesString }",
-        "Κάθε ${ interval } εβδομάδες την Τετάρτη, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Κάθε ${ interval } εβδομάδα την Τετάρτη, ${ untilString }",
-        "Κάθε ${ interval } εβδομάδες την Τετάρτη, ${ untilString }"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "Εβδομαδιαία στις ${ multipleDaysString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Εβδομαδιαία στις ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Εβδομαδιαία στις ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Εβδομαδιαία σε όλες τις μέρες"
       ],
-      "Weekly on all days, ${ timesString }": [
-        "Εβδομαδιαία σε όλες τις μέρες, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Εβδομαδιαία σε όλες τις μέρες, ${ untilString }"
-      ],
       "Weekly on Friday": [
         "Εβδομαδιαία την Παρασκευή"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Εβδομαδιαία την Παρασκευή, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Εβδομαδιαία την Παρασκευή, ${ untilString }"
       ],
       "Weekly on Monday": [
         "Εβδομαδιαία την Δευτέρα"
       ],
-      "Weekly on Monday, ${ timesString }": [
-        "Εβδομαδιαία την Δευτέρα, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Εβδομαδιαία την Δευτέρα, ${ untilString }"
-      ],
       "Weekly on Saturday": [
         "Εβδομαδιαία το Σάββατο"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Εβδομαδιαία το Σάββατο, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Εβδομαδιαία το Σάββατο, ${ untilString }"
       ],
       "Weekly on Sunday": [
         "Εβδομαδιαία την Κυριακή"
       ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Εβδομαδιαία την Κυριακή, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Εβδομαδιαία την Κυριακή, ${ untilString }"
-      ],
       "Weekly on Thursday": [
         "Εβδομαδιαία την Πέμπτη"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Εβδομαδιαία την Πέμπτη, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Εβδομαδιαία την Πέμπτη, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "Εβδομαδιαία την Τρίτη"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Εβδομαδιαία την Τρίτη, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Εβδομαδιαία την Τρίτη, ${ untilString }"
-      ],
       "Weekly on Wednesday": [
         "Εβδομαδιαία την Τετάρτη"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Εβδομαδιαία την Τετάρτη, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Εβδομαδιαία την Τετάρτη, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -7290,22 +7139,8 @@
         "Κάθε ${ interval } χρόνο",
         "Κάθε ${ interval } χρόνια"
       ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Κάθε ${ interval } χρόνο, ${ timesString }",
-        "Κάθε ${ interval } χρόνια, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Κάθε ${ interval } χρόνο, ${ untilString }",
-        "Κάθε ${ interval } χρόνια, ${ untilString }"
-      ],
       "Yearly": [
         "Ετησίως"
-      ],
-      "Yearly, ${ timesString }": [
-        "Ετησίως, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Ετησίως, ${ untilString }"
       ]
     }
   }
