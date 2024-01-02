@@ -646,11 +646,20 @@
       ]
     },
     "bf2023: Action": {
+      "Add ${ PASS_APP_NAME }": [
+        "Додати ${ PASS_APP_NAME }"
+      ],
+      "Cancel": [
+        "Скасувати"
+      ],
       "Close": [
         "Закрити"
       ],
       "Get the deal": [
         "Скористатися пропозицією"
+      ],
+      "Remove": [
+        "Вилучити"
       ],
       "Remove ${ PASS_APP_NAME }": [
         "Вилучити ${ PASS_APP_NAME }"
@@ -668,6 +677,9 @@
       ],
       "6 users": [
         "6 користувачів"
+      ],
+      "High speed streaming": [
+        "Перегляд трансляцій на високій швидкості"
       ],
       "Premium Password Manager": [
         "Premium Менеджер паролів"
@@ -1766,6 +1778,9 @@
     "eoy2023: Deal details": {
       "6 TB": [
         "6 ТБ"
+      ],
+      "6 users": [
+        "6 користувачів"
       ]
     },
     "Error": {
@@ -2076,6 +2091,9 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Преміум ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "До 6 користувачів"
       ]
@@ -4083,6 +4101,9 @@
       "Name": [
         "Назва"
       ],
+      "Name and address": [
+        "Ім'я і адреса"
+      ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Пересилання порту)"
       ],
@@ -4277,6 +4298,12 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Вітальні листи ${ BRAND_NAME }"
+      ],
+      "${ DRIVE_APP_NAME } product updates": [
+        "Оновлення продукту ${ DRIVE_APP_NAME }"
+      ],
+      "${ PASS_APP_NAME } product updates": [
+        "Оновлення продукту ${ PASS_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -4632,6 +4659,9 @@
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } з необмеженою кількістю псевдонімів hide-my-email"
+      ],
+      "${ PROTON_SENTINEL_NAME } program": [
+        "Програма ${ PROTON_SENTINEL_NAME }"
       ],
       "${ size } attachment size": [
         "Розмір вкладень ${ size }"
@@ -5467,6 +5497,9 @@
       "Open-source and audited": [
         "З відкритим кодом та незалежним аудитом"
       ],
+      "per month": [
+        "на місяць"
+      ],
       "per month, billed annually": [
         "на місяць, оплачується щороку"
       ],
@@ -5730,6 +5763,11 @@
         "Тепер ви можете скинути пароль"
       ]
     },
+    "session_recovery:available:link": {
+      "See how": [
+        "Подивитись як"
+      ]
+    },
     "session_recovery:available:notification": {
       "Password saved": [
         "Пароль збережено"
@@ -5798,6 +5836,11 @@
         "${ gracePeriodHoursRemaining } години",
         "${ gracePeriodHoursRemaining } годин",
         "${ gracePeriodHoursRemaining } годин"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Скидання пароля"
       ]
     },
     "session_recovery:status:info": {
@@ -6375,6 +6418,11 @@
     "Suffix for price": {
       "per month": [
         "на місяць"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Преміум ${ DRIVE_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {
