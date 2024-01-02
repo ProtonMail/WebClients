@@ -133,7 +133,7 @@ async function start(
         if (buffer.uploadedBlockCount !== expectedBlockCount) {
             throw new Error('Some file parts failed to upload');
         }
-        if (buffer.processedFileSize !== file.size) {
+        if (buffer.totalProcessedSize !== file.size) {
             throw new Error('Some file bytes failed to upload');
         }
 
@@ -201,11 +201,7 @@ async function start(
  * createdBlocks is called as a result to postCreateBlocks.
  */
 function createdBlocks(fileLinks: Link[], thumbnailLinks?: Link[]) {
-    buffer.setFileBlockLinks(fileLinks);
-    if (thumbnailLinks) {
-        buffer.setThumbnailBlockLinks(thumbnailLinks);
-    }
-    buffer.requestingBlockLinks = false;
+    buffer.setAllBlockLinks({ fileLinks, thumbnailLinks });
 }
 
 function pause() {
