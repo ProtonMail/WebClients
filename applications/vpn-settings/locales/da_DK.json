@@ -825,6 +825,9 @@
       "${ n } month": [
         "${ n } måned",
         "${ n } måneder"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "Fornyes automatisk til ${ renewPrice } i ${ renewalLength }."
       ]
     },
     "Billing cycle option": {
@@ -1823,6 +1826,9 @@
       "Error on row ${ erroredRowsString }.": [
         "Fejl i række ${ erroredRowsString }."
       ],
+      "It looks like your file is missing the '${ options.fieldName }' header.": [
+        "Det ser ud til, at din fil mangler headeroplysningen '${ options.fieldName }'."
+      ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
         "Vi fandt fejl i flere rækker under import, gennemse venligst din CSV-fil."
       ]
@@ -2357,6 +2363,40 @@
         "Dit nuværende abonnement kan ikke tilmelde sig et Visionary- eller familie-abonnement."
       ]
     },
+    "familyOffer_2023:Info": {
+      "*Only one free trial per user.": [
+        "*Kun én gratis prøveperiode pr. bruger."
+      ],
+      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
+        "Som standard tildeler vi ${ formattedStorage } lagerplads til administratorkontoen. Du kan administrere den tildelte lagerplads, så den fordeles mellem flere brugere senere."
+      ],
+      "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
+        "Opret og administrer familiemedlemmer, og tildel dem lagerplads, der deles mellem ${ DRIVE_APP_NAME } og ${ MAIL_APP_NAME }."
+      ],
+      "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
+        "Hvis brugeren allerede har en ${ MAIL_APP_NAME } adresse, skal du indtaste den her. Ellers skal de først oprette en konto."
+      ],
+      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
+        "Invitationen annulleres, og brugeren kan ikke tilmelde sig ${ organization.Name }."
+      ],
+      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
+        "Brugerens konto vil blive flyttet til et ${ BRAND_NAME } Unlimited-abonnement i en 30-dages gratis prøveperiode*."
+      ],
+      "To create a new user, a configured custom domain is required.": [
+        "For at oprette en ny bruger kræves et konfigureret brugerdefineret domæne."
+      ],
+      "You can increase or reduce the storage for this user.": [
+        "Du kan øge eller reducere lagerpladsen for denne bruger."
+      ]
+    },
+    "familyOffer_2023:Info for members section": {
+      "Add, remove, and make changes to user accounts in your family group.": [
+        "Tilføj, fjern og foretag ændringer af brugerkonti i din familiegruppe."
+      ],
+      "Add, remove, and make changes to user accounts in your organization.": [
+        "Tilføj, fjern og foretag ændringer af brugerkonti i din organisation."
+      ]
+    },
     "familyOffer_2023:Label": {
       "Enter family group name to confirm": [
         "Indtast navn på familiegruppe for at bekræfte"
@@ -2374,6 +2414,17 @@
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
         "Dette fjerner alle ${ BRAND_NAME } premium-funktioner for alle familiemedlemmer."
+      ]
+    },
+    "familyOffer_2023:Success": {
+      "${ member.Name } has been removed from ${ organization.Name }": [
+        "${ member.Name } er blevet fjernet fra ${ organization.Name }"
+      ],
+      "An error occurred, please try again": [
+        "Der skete en fejl, prøv igen"
+      ],
+      "Member updated": [
+        "Medlem opdateret"
       ]
     },
     "familyOffer_2023:Title": {
@@ -2454,6 +2505,9 @@
       ]
     },
     "fido2: Error": {
+      "Please disable 2FA via security key before disabling TOTP": [
+        "Deaktivér 2FA via sikkerhedsnøgle, før du deaktiverer TOTP."
+      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
       ],
@@ -2467,6 +2521,12 @@
       ],
       "Add a name to identify your security key with.": [
         "Tilføj et navn til at identificere din sikkerhedsnøgle med."
+      ],
+      "Allow platform keys": [
+        "Tillad platformsnøgler"
+      ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Giver dig mulighed for at registrere indbyggede sikkerhedsnøgler (som Windows Hello, Face ID, Touch ID eller interne TPM'er)"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Er du sikker på du vil slette sikkerhedsnøgle ${ name }?"
@@ -3503,7 +3563,7 @@
         "Disse konfigurationer er beregnet til at fungere med WireGuard-routere og officielle klienter."
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
-        "Disse legitimationsoplysninger kan ikke bruges til at logge ind på vores officielle ${ VPN_APP_NAME } apps. ${ learnMore }"
+        "Disse legitimationsoplysninger kan ikke bruges til at logge ind på vores officielle ${ VPN_APP_NAME }-apps. ${ learnMore }"
       ],
       "They will be removed from your organization": [
         "De vil blive fjernet fra din organisation"
@@ -3912,6 +3972,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Du kan tilføje en betalingsmetode for at få dit abonnement fornyet automatisk. Andre betalingsmetoder er også tilgængelige."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Indtast et navn og en adresse for dig selv eller din organisation. Disse oplysninger vil blive tilføjet til både personlige og organisatoriske fakturaer."
       ]
     },
     "Info subscription": {
@@ -4392,6 +4457,9 @@
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } for Business nyhedsbrev"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "${ BRAND_NAME } vigtige meddelelser"
+      ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME }-nyhedsbrev"
       ],
@@ -4401,8 +4469,23 @@
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME }-produktannonceringer"
       ],
+      "${ BRAND_NAME } user survey": [
+        "${ BRAND_NAME } brugerundersøgelse"
+      ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }-velkomstmails"
+      ],
+      "${ DRIVE_APP_NAME } product updates": [
+        "${ DRIVE_APP_NAME }-produktopdateringer"
+      ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
+        "${ MAIL_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME } nye funktioner"
+      ],
+      "${ PASS_APP_NAME } product updates": [
+        "${ PASS_APP_NAME }-produktopdateringer"
+      ],
+      "${ VPN_APP_NAME } product updates": [
+        "${ VPN_APP_NAME }-produktopdateringer"
       ]
     },
     "Label on payment method": {
@@ -4567,6 +4650,9 @@
       "Create a new ${ appName } account": [
         "Opret en ny ${ appName }-konto"
       ],
+      "Find your ${ BRAND_NAME } Account username": [
+        "Find dit brugernavn til ${ BRAND_NAME }-konto"
+      ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Glemt adgangskoden til din ${ BRAND_NAME }-konto? Nulstil den her ved hjælp af en gendannelseskode, e-mail eller SMS, og få adgang til din ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mere."
       ],
@@ -4581,6 +4667,9 @@
       ],
       "Sign in to access your ${ appName } account": [
         "Log ind for at få adgang til din ${ appName }-konto"
+      ],
+      "Try ${ planName } for free with this link": [
+        "Prøv ${ planName } gratis med dette link"
       ]
     },
     "Monetary unit": {
@@ -5136,6 +5225,9 @@
       ]
     },
     "new_plans: signup": {
+      "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
+        "Ved at klikke på \"Betal\" accepterer du vores ${ termsAndConditions }."
+      ],
       "terms and conditions": [
         "vilkår og betingelser"
       ]
@@ -5175,14 +5267,23 @@
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Beskyt dine e-mails med end-to-end kryptering. Inkluderer understøttelse af brugerdefinerede e-mail-domæner, 15 e-mail-adresser, ubegrænsede hide-my-email-aliaser, og mere."
       ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: Få adgang til blokeret indhold, og browse privat. Inkluderer ${ serversAndCountries }, højeste VPN-hastigheder, adgang til verdensomspændende streamingtjenester, malware- og reklamer-blokering, hurtige BitTorrent-downloads og meget mere."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+ og Prime Video, hvor som helst"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "Adresser har fuld sende- og modtagefunktion. En bruger kan få tildelt flere adresser, men en enkelt adresse kan ikke tildeles til flere brugere."
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
         "Tillader at du forbinder til mere end ét netværk samtidigt, eks. kan du streame en film fra et andet land, samtidigt med at du får lokale søgeresultater"
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Giver dig mulighed for at indstille automatiske svar (autosvar) på dine indgående beskeder"
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "Masseudsendelse af salgsfremmende eller programmatiske e-mails understøttes ikke i øjeblikket. Vi anbefaler, at du bruger en dedikeret e-mailtjenesteudbyder til dette formål."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Kontroller adgang til dine delte filer ved at tilføje adgangskodebeskyttelse og link-udløbsdatoer"
@@ -5193,6 +5294,9 @@
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "Opret op til ${ n } kalender eller tilføj kalendere fra venner, familie, kollegaer og organisationer",
         "Opret op til ${ n } kalendere eller tilføj kalendere fra venner, familie, kollegaer og organisationer"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Opret op til ${ n } e-mailadresser/aliasser, som du kan tildele familiemedlemmer. Brug dem til onlineidentiteter, f.eks. JohnShopper@${ domain } til shoppingkonti."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
         "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen"
@@ -5209,17 +5313,35 @@
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Sikrer at du modtager alle e-mails sendt til dit domæne, selvom e-mailadressen ikke eksisterer, ikke længere eksisterer eller har en tastefejl"
       ],
+      "Force sign-out of user sessions when user credentials are believed to be compromised": [
+        "Gennemtving udlogning af brugersessioner, når brugeroplysningerne menes at være kompromitterede."
+      ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP-understøttelse er begrænset til skrivebords-apps (f.eks. Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-baserede IMAP-integrationer er i øjeblikket ikke understøttet."
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Hold dine planer private for dig og din familie med en krypteret kalender"
       ],
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "Holder dig beskyttet ved at blokere alle netværksforbindelser, når du uventet mister forbindelsen til vores VPN-server."
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Etiketter er enkle tags, du kan tilføje til beskeder for at gøre dem lettere at finde eller anvende filtre på."
+      ],
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
         "Ligesom en mappe, er en boks et praktisk måde at organisere dine ting på. At dele bokse med venner og familie er på vej."
       ],
+      "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
+        "Spær adgangen til din virksomheds ressourcer fra det offentlige internet, og gør dem kun tilgængelige via dine private gateways."
+      ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Administrer dit abonnement, herunder tilpasning af dit abonnement. Accepterede betalingsmetoder er betalingskort, PayPal, kryptovaluta og bankoverførsel."
+      ],
+      "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
+        "På hverdage kan du modtage support fra ${ BRAND_NAME } kundesupportteamet inden for 24 timer efter en henvendelse."
+      ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
+        "Én VPN-forbindelse gør det muligt for én enhed at oprette forbindelse til ${ BRAND_NAME } VPN på ethvert givet tidspunkt. Hvis du f.eks. vil forbinde en telefon og en bærbar computer til ${ BRAND_NAME_TWO } VPN på samme tid, skal du bruge to VPN-forbindelser."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mulighed for at se ikke-private brugerindbakker som brugeren ville, herunder fulde besked- og kontaktoplysninger"
@@ -5239,6 +5361,9 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personliggør din e-mail-signatur med logoer, billeder, ikoner til sociale medier, links til dine kontaktoplysninger og meget mere."
       ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
+        "Telefonsupport er tilgængelig fra ${ BRAND_NAME } Kundesucces-teamet i den europæiske åbningstid for kunder med 6 eller flere brugere."
+      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Forhindrer, at beskeder kan tilgås af ${ BRAND_NAME } eller tredjeparter. De eneste personer, der kan læse beskederne, er afsenderen og den tilsigtede modtager."
       ],
@@ -5247,6 +5372,9 @@
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Beskyt din familie mod skadelige hjemmesider, og få adgang til vores højhastigheds-VPN-servere for at streame dit yndlingsindhold."
+      ],
+      "Provides the highest level of account security protection and specialist support": [
+        "Giver det højeste niveau af kontosikkerhedsbeskyttelse og specialsupport"
       ],
       "Quickly set up out-of-office messages": [
         "Hurtig opsætning af meddelelser til automatisk svar, når du ikke er på kontoret"
@@ -5281,6 +5409,9 @@
       "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
         "SMTP gør det muligt for tredjepartstjenester eller -enheder at sende e-mail via ${ MAIL_APP_NAME }."
       ],
+      "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
+        "Det specialudviklede NetShield beskytter din enhed og gør din browsing hurtigere ved at blokere reklamer, trackere og malware."
+      ],
       "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Start med ${ freeStorageSize } og lås op for mere lagerplads undervejs. Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
       ],
@@ -5296,11 +5427,20 @@
       "Support for file-sharing protocols like BitTorrent": [
         "Understøttelse af fildelingsprotokoller såsom BitTorrent"
       ],
+      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
+        "Unikke e-mailadresser, der oprettes løbende og beskytter din online identitet og lader dig kontrollere, hvad der lander i din indbakke. Fra SimpleLogin af ${ BRAND_NAME }."
+      ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Brug dine egne brugerdefinerede e-mail-domæneadresser, f.eks. dig@ditnavn.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
         "Vi gemmer ingen sessionslog af din færden online og vi logger ikke metadata, som kan kompromittere dit privatliv"
+      ],
+      "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
+        "Vi stræber efter at hjælpe kunder, der er underlagt HIPAA/HITECH-bestemmelser, med at beskytte beskyttede sundhedsoplysninger (PHI). Underskrevne BAA'er er tilgængelige for alle ${ BRAND_NAME } for Business-kunder."
+      ],
+      "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
+        "Når du er forbundet til vores VPN, går dine DNS-forespørgsler gennem vores krypterede VPN-tunnel, hvilket øger dit privatliv og din sikkerhed online."
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
         "Når du sender til andre ${ MAIL_APP_NAME } brugere, er krypteringen automatisk. Afsendelse til ikke-${ MAIL_APP_NAME_TWO } brugere kræver en adgangskode før afsendelse."
@@ -5324,6 +5464,9 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Tilføj mere personalisering med 15 e-mailadresser og understøttelse af 3 brugerdefinerede e-maildomæner"
       ],
+      "AES 256-bit VPN encryption": [
+        "VPN-kryptering med AES 256-bit"
+      ],
       "Auto-connect": [
         "Forbind automatisk"
       ],
@@ -5333,12 +5476,39 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "Forøg din lagerplads til ${ bundleStorage } i alt"
       ],
+      "Browser extension": [
+        "Browser-udvidelse"
+      ],
+      "Censorship circumvention": [
+        "Omgåelse af censur"
+      ],
+      "Central control panel": [
+        "Centralt kontrolpanel"
+      ],
       "Cover more ground with support for 10 custom email domains": [
         "Dæk dig mere ind, med understøttelse af 10 brugerdefinerede domæner"
       ],
       "Create up to ${ n } calendar": [
         "Opret op til ${ n } kalender",
         "Opret op til ${ n } kalendere"
+      ],
+      "Dedicated Account manager": [
+        "Dedikeret kontoadministrator"
+      ],
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Dedikerede serverplaceringer i ${ numberOfCountries }+ lande"
+      ],
+      "Dedicated server locations in North America and Europe": [
+        "Dedikerede serverplaceringer i Nordamerika og Europa"
+      ],
+      "Multi-platform support": [
+        "Understøttelse af flere platforme"
+      ],
+      "Private gateways": [
+        "Private gateways"
+      ],
+      "Require 2FA": [
+        "Kræve 2FA"
       ]
     },
     "Notification": {
@@ -5403,6 +5573,15 @@
       "My reason isn't listed": [
         "Min grund er ikke angivet"
       ],
+      "No permission": [
+        "Ingen tilladelse"
+      ],
+      "Organization only": [
+        "Kun organisation"
+      ],
+      "Receive from all": [
+        "Modtag fra alle"
+      ],
       "Router": [
         "Router"
       ],
@@ -5412,6 +5591,12 @@
       "Select who can access...": [
         "Vælg, hvem der kan få adgang..."
       ],
+      "Send to all": [
+        "Send til alle"
+      ],
+      "Setup incomplete": [
+        "Opsætning ikke fuldført"
+      ],
       "Standard server configs": [
         "Standard serverkonfigurer"
       ],
@@ -5420,6 +5605,18 @@
       ]
     },
     "Organization capacity error": {
+      "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
+        "${ upgradeLink } for at tilføje flere brugere eller fjerne nogle brugerkonti for at frigøre plads."
+      ],
+      "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
+        "${ upgradeLink } for at få flere konti eller fjerne VPN-adgang fra nogle brugere."
+      ],
+      "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
+        "${ upgradeLink } for at få flere adresser, eller fjerne nogle adresser for at frigøre plads."
+      ],
+      "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
+        "${ upgradeLink } for at få mere lagerplads, eller fjerne noget lagerplads for at frigøre plads."
+      ],
       "Your plan includes a maximum of ${ availableAddresses } more address.": [
         "Dit abonnement har et maksimum ${ availableAddresses } adresse.",
         "Dit abonnement har et maksimum ${ availableAddresses } adresser."
@@ -5437,6 +5634,9 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Behold dette abonnement"
+      ],
       "Start using ${ appName }": [
         "Begynd at bruge ${ appName }"
       ],
@@ -5475,6 +5675,12 @@
       ],
       "Creating your account": [
         "Opretter din konto"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "For kun **${ relativePrice } pr. måned** mere, får du adgang til ${ BRAND_NAME }'s førsteklasses adgangskodeadministrator!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "For kun **${ relativePrice } pr. måned** mere, får du adgang til ${ BRAND_NAME }'s førsteklasses VPN-tjeneste!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "For kun **${ relativePrice } pr. måned** mere, får du adgang til alle premium ${ BRAND_NAME }-tjenester!"
@@ -5535,6 +5741,23 @@
         "Nyt kredit/debetkort"
       ]
     },
+    "Permission": {
+      "No permission": [
+        "Ingen tilladelse"
+      ],
+      "Organization only": [
+        "Kun organisation"
+      ],
+      "Receive from all": [
+        "Modtag fra alle"
+      ],
+      "Send to all": [
+        "Send til alle"
+      ],
+      "Setup incomplete": [
+        "Opsætning ikke fuldført"
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "En måde at kontakte dig på"
@@ -5592,6 +5815,12 @@
       ]
     },
     "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "så ${ contactHref } vores salgsteam."
+      ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "Vælg det antal IP'er, du vil inkludere i dit abonnement. Hver ekstra IP koster ${ price }."
+      ],
       "Should you need more than ${ maxIPs } IP, ": [
         "Hvis du skulle have brug for flere end ${ maxIPs } IP-adresse, ",
         "Hvis du skulle have brug for flere end ${ maxIPs } IP-adresser, "
@@ -5600,6 +5829,9 @@
     "plan customizer, users": {
       "contact": [
         "kontakt"
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        "Vælg det antal brugere, du vil inkludere i dit abonnement. Hver ekstra bruger koster ${ price }."
       ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
         "Hvis du har brug for mere end ${ maxUsers } konto, bedes du ${ contact } vores salgsteam.",
@@ -5693,6 +5925,9 @@
       ],
       "Changing organization password": [
         "Opretning af organisationsadgangskode"
+      ],
+      "Creating or accessing non-private users": [
+        "Oprettelse af eller adgang til ikke-private brugere"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Grundet en adgangskodeændring er dine organisations administratorprivilegier blevet begrænset. De følgende handlinger er ikke længere tilladt:"
@@ -5915,6 +6150,30 @@
       ],
       "Request password reset": [
         "Anmod om nulstilling af adgangskode"
+      ],
+      "Use recovery method": [
+        "Brug gendannelsesmetode"
+      ]
+    },
+    "session_recovery:initiation:info": {
+      "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
+        "Hvis du har indstillet en **gendannelsesmetode**, kan du prøve kontogendannelse i stedet. Det vil give dig mulighed for at ændre din adgangskode med det samme."
+      ],
+      "We will contact you again when the password reset is available.": [
+        "Vi kontakter dig igen, når nulstillingen af adgangskoden er tilgængelig."
+      ],
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "Du kan til enhver tid tjekke status for din anmodning i ${ accountAndPasswordSectionLink } i indstillingerne."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "sektionen for konto og adgangskode"
+      ]
+    },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "Nulstilling af adgangskode bekræftet"
       ]
     },
     "session_recovery:initiation:title": {
@@ -5968,6 +6227,11 @@
       ],
       "Pending": [
         "Afventer"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "Anmodning om nulstilling af adgangskode"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -7207,6 +7471,19 @@
         "Verificeret e-mailadresse"
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
+      ]
+    },
+    "Tooltip for news": {
+      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
+        "Få de seneste nyheder om privatlivets fred, og hvad der foregår i ${ BRAND_NAME }-universet"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Deltag i undersøgelser for at forbedre ${ BRAND_NAME } tjenester"
+      ]
+    },
     "Tor out of date": {
       "stable release": [
         "stabil udgave"
@@ -7229,6 +7506,16 @@
       ],
       "Primary admin": [
         "Primær admin"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "SSO-bruger leveret af din identitetsudbyder"
       ]
     },
     "Validation": {
@@ -7287,11 +7574,28 @@
       "1-year": [
         "1 år"
       ],
+      "15-month": [
+        "15 måneders"
+      ],
       "2-year": [
         "2 år"
       ],
+      "30-month": [
+        "30 måneders"
+      ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "Spar ${ discount } med et ${ billingCycle }-abonnement"
+      ],
       "monthly": [
         "månedligt"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Avancerede VPN-tilpasninger"
+      ],
+      "No ads": [
+        "Ingen reklamer"
       ]
     },
     "vpn_2step: info": {
@@ -7302,6 +7606,17 @@
       "${ n } year": [
         "${ n } år",
         "${ n } år"
+      ],
+      "Try ${ upsellPlanName } risk-free": [
+        "Prøv ${ upsellPlanName } risikofrit"
+      ],
+      "Your ${ selected } plan": [
+        "Dit ${ selected }-abonnement"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Adgang til Secure Core-servere, hurtige P2P/BitTorrent-downloads, Tor over VPN og meget mere."
       ]
     },
     "Warning": {
