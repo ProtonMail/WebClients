@@ -36,7 +36,7 @@ import { withContext } from '../context';
 export const SESSION_LOCK_ALARM = 'alarm::session-lock';
 export const SESSION_RESUME_ALARM = 'alarm::session-resume';
 
-export const getSessionResumeAlarm = () => browser.alarms.get(SESSION_RESUME_ALARM);
+export const getSessionResumeAlarm = () => browser.alarms.get(SESSION_RESUME_ALARM).catch(noop);
 
 export const getSessionResumeDelay = (retryCount: number) => {
     const retryIdx = Math.min(retryCount, FIBONACCI_LIST.length - 1);
@@ -48,7 +48,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         api,
         authStore,
         onInit: withContext(async (ctx, options) => {
-            void browser.alarms.clear(SESSION_RESUME_ALARM);
+            browser.alarms.clear(SESSION_RESUME_ALARM).catch(noop);
 
             /* if worker is logged out (unauthorized or locked) during an init call,
              * this means the login or resumeSession calls failed - we can safely early
@@ -69,7 +69,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         getMemorySession: withContext((ctx) => ctx.service.storage.session.getItems(SESSION_KEYS)),
 
         onAuthorize: withContext((ctx) => {
-            void browser.alarms.clear(SESSION_RESUME_ALARM);
+            browser.alarms.clear(SESSION_RESUME_ALARM).catch(noop);
             ctx.setStatus(AppStatus.AUTHORIZING);
         }),
 
@@ -101,12 +101,12 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
             void ctx.service.storage.session.clear();
             void ctx.service.storage.local.clear();
-            void browser.alarms.clear(SESSION_LOCK_ALARM);
+            browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
         }),
 
         onSessionInvalid: withContext((ctx) => {
             authStore.clear();
-            void ctx.service.storage.local.remove('ps');
+            void ctx.service.storage.local.removeItem('ps');
             void ctx.service.storage.session.clear();
         }),
 
@@ -136,7 +136,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             store.dispatch(stopEventPolling());
             store.dispatch(stateDestroy());
 
-            void browser.alarms.clear(SESSION_LOCK_ALARM);
+            browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
         }),
 
         onSessionPersist: withContext((ctx, encryptedSession) => {
@@ -156,7 +156,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                     const when = epochToMs(getEpoch() + delay);
                     logger.info(`[AuthService] Retrying session resume in ${delay}s ${retryInfo}`);
 
-                    await browser.alarms.clear(SESSION_RESUME_ALARM);
+                    await browser.alarms.clear(SESSION_RESUME_ALARM).catch(noop);
                     browser.alarms.create(SESSION_RESUME_ALARM, { when });
                 } else logger.info(`[AuthService] Reached max number of resume retries ${retryInfo}`);
             }
