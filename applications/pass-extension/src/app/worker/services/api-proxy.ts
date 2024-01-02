@@ -14,7 +14,7 @@ import {
 } from '@proton/pass/lib/api/cache';
 import { fetchController } from '@proton/pass/lib/api/fetch-controller';
 import { API_BODYLESS_STATUS_CODES } from '@proton/pass/lib/api/utils';
-import { authentication } from '@proton/pass/lib/auth/store';
+import { authStore } from '@proton/pass/lib/auth/store';
 import browser from '@proton/pass/lib/globals/browser';
 import { selectCanLoadDomainImages } from '@proton/pass/store/selectors';
 import { type Api, WorkerMessageType } from '@proton/pass/types';
@@ -136,8 +136,8 @@ export const createApiProxyService = () => {
     if (BUILD_TARGET === 'firefox') {
         browser.webRequest.onBeforeSendHeaders.addListener(
             (details) => {
-                const UID = authentication.getUID();
-                const AccessToken = authentication.getAccessToken();
+                const UID = authStore.getUID();
+                const AccessToken = authStore.getAccessToken();
 
                 if (
                     UID &&
