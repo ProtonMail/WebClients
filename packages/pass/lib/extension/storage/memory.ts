@@ -15,6 +15,7 @@ import browser from '@proton/pass/lib/globals/browser';
 import type {
     GetItem,
     GetItems,
+    Maybe,
     RemoveItem,
     RemoveItems,
     SetItem,
@@ -50,10 +51,15 @@ export const createMemoryStorage = (): StorageInterface => {
 
     const applyStorageAction = <Action extends StorageAction['action']>(
         action: Extract<StorageAction, { action: Action }>
-    ): Promise<Action extends 'get' ? Storage : void> =>
-        browser.runtime.sendMessage(browser.runtime.id, { type: MEMORY_STORAGE_EVENT, ...action });
+    ): Promise<Action extends 'get' ? Maybe<Storage> : undefined> =>
+        browser.runtime
+            .sendMessage(browser.runtime.id, {
+                type: MEMORY_STORAGE_EVENT,
+                ...action,
+            })
+            .catch(noop);
 
-    const resolveStorage = async (): Promise<MemoryStore> =>
+    const resolveStorage = async (): Promise<Maybe<MemoryStore>> =>
         (await isBackground()) ? context.store : applyStorageAction<'get'>({ action: 'get' });
 
     const getItems: GetItems = async (keys) => {
