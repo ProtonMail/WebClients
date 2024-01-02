@@ -35,8 +35,8 @@ export const Export: FC = () => {
         <SettingsPanel title={c('Label').t`Export`}>
             <Exporter
                 onConfirm={async (password) => {
-                    if (!(await checkLock())) throwError({ message: 'Session is locked' });
                     if (!(await confirmPassword(password))) throwError({ message: 'Session not confirmed' });
+                    if (!(await checkLock())) throwError({ message: 'Session is locked' });
                 }}
             />
         </SettingsPanel>
