@@ -80,7 +80,7 @@ const SSOInfo = ({ domain, sso, onImportSamlClick }: Props) => {
         >
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label htmlFor="ssoUrl" className="text-semibold align-top">
+                    <label htmlFor="ssoUrl" className="text-semibold">
                         <span className="mr-2">{c('Label').t`Single sign-on URL`}</span>
                         <Info
                             title={c('Tooltip')
@@ -101,7 +101,7 @@ const SSOInfo = ({ domain, sso, onImportSamlClick }: Props) => {
 
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label htmlFor="ssoEntity" className="text-semibold align-top">
+                    <label htmlFor="ssoEntity" className="text-semibold">
                         <span className="mr-2">{c('Label').t`Single sign-on entity ID`}</span>
                         <Info
                             title={c('Tooltip').t`Usually an URL that contains the identity provider's name within`}
@@ -121,7 +121,7 @@ const SSOInfo = ({ domain, sso, onImportSamlClick }: Props) => {
 
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label htmlFor="ssoCertificate" className="text-semibold align-top">
+                    <label htmlFor="ssoCertificate" className="text-semibold">
                         <span className="mr-2">{c('Label').t`Public certificate (X.509)`}</span>
                         <Info
                             title={c('Tooltip')
@@ -144,7 +144,7 @@ const SSOInfo = ({ domain, sso, onImportSamlClick }: Props) => {
 
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label htmlFor="acsUrl" className="text-semibold align-top">
+                    <label htmlFor="acsUrl" className="text-semibold">
                         <span className="mr-2">{c('Label').t`Reply (ACS) URL`}</span>
                         <Info
                             title={c('Tooltip')
@@ -159,7 +159,7 @@ const SSOInfo = ({ domain, sso, onImportSamlClick }: Props) => {
 
             <SettingsLayout>
                 <SettingsLayoutLeft>
-                    <label htmlFor="acsUrl" className="text-semibold align-top">
+                    <label htmlFor="acsUrl" className="text-semibold">
                         <span className="mr-2">{c('Label').t`Issuer ID`}</span>
                         <Info
                             title={c('Tooltip')
