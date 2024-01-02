@@ -1,4 +1,5 @@
 // This file defines interfaces for model received from Wallet API
+import { WasmScriptType } from '../../pkg';
 
 export enum WalletPassphrase {
     WithoutPassphrase = 0,
@@ -98,13 +99,6 @@ export interface UserWalletSettings {
     ModifyTime: number;
 }
 
-export enum ScriptType {
-    Legacy = 0,
-    NestedSegwit = 1,
-    NativeSegwit = 2,
-    Taproot = 3,
-}
-
 export interface WalletAccount {
     // Autoincrement ID
     WalletAccountID: number;
@@ -115,7 +109,7 @@ export interface WalletAccount {
     // Encrypted version of the label of the account with the wallet key
     Label: string;
     // Type of accounts
-    ScriptType: ScriptType;
+    ScriptType: WasmScriptType;
     // Creation time
     CreateTime: number;
     // Time of last update

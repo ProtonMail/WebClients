@@ -4,10 +4,11 @@ import {
     WasmDetailledTransaction,
     WasmNetwork,
     WasmPaymentLink,
+    WasmScriptType,
     WasmWallet,
 } from '../../../pkg';
 import { WalletWithAccountsWithBalanceAndTxs } from '../../types';
-import { ScriptType, WalletPassphrase, WalletSetupMode, WalletStatus, WalletType } from '../../types/api';
+import { WalletPassphrase, WalletSetupMode, WalletStatus, WalletType } from '../../types/api';
 import { wallets as apiWallets } from '../fixtures/api';
 import { simpleTransactions } from './transactions';
 
@@ -119,7 +120,7 @@ export const walletsWithAccountsWithBalanceAndTxs: WalletWithAccountsWithBalance
                 WalletID: 3,
                 Index: 0,
                 Label: 'Account 1',
-                ScriptType: ScriptType.NativeSegwit,
+                ScriptType: WasmScriptType.NativeSegwit,
                 CreateTime: 1701139393899,
                 ModifyTime: 1701139393899,
                 utxos: [],
