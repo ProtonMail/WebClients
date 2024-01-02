@@ -795,6 +795,10 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "აუარეთ გვერდი ლოკალური ინტერნეტის დაბლოკვებს და ცენზურას ჩვენი სერვერების გლობალური ქსელით."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "შეიცავს ${ domains } მომხმარებლის დომენის, ${ addresses } ელფოსტის მისამართის, განუსაზღვრელი hide-my-email ფსევდონიმებს, კალენდრის გაზიარებას და სხვ.",
+        "შეიცავს ${ domains } მომხმარებლის დომენის, ${ addresses } ელფოსტის მისამართის, განუსაზღვრელი hide-my-email ფსევდონიმებს, კალენდრის გაზიარებას და სხვ."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "შეიცავს 1 თქვენი ელფოსტის დომენის, 10 ელფოსტის მისამართის, 10 Hide-my-email-ის მეტსახელს, კალენდრის გაზიარებას და სხვ."
       ],
@@ -1853,6 +1857,12 @@
     "Desktop app upsell": {
       "Access to the desktop app is limited": [
         "კომპიუტერის აპთან წვომა შეზღუდულია"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "${ MAIL_APP_NAME }-ის სამუშაო მაგიდის აპის ბეტა ვერსია ამჟამად ${ BRAND_NAME } Visionary გამომწერზეა შეზღუდული. ის ყველა მომხმარებლისთვის 2024-ის დასაწყისში გახდება ხელმისაწვდომი."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "ასწიეთ სატარიფო გეგმა დღეს ან გადაამოწმეთ 2024-ის დასაწყისში."
       ]
     },
     "Downgrade account reason": {
@@ -1894,6 +1904,16 @@
     "Enabled 2FA": {
       "2FA": [
         "2FA"
+      ]
+    },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "${ DRIVE_SHORT_APP_NAME }-ის, ${ VPN_SHORT_APP_NAME }-ის და ${ PASS_SHORT_APP_NAME }-ის ფასიანი ფუნქციები"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "შეიცავს ვერსიის ისტორიას ${ DRIVE_SHORT_APP_NAME }-ში, წვდომას ათასობით ${ VPN_SHORT_APP_NAME }-ის სერვერებზე, მის ${ PASS_SHORT_APP_NAME }-ზე გაზიარებას და ა.შ."
       ]
     },
     "eoy2023: Deal details": {
@@ -5553,6 +5573,15 @@
       "My reason isn't listed": [
         "ჩემი მიზეზი სიაში არაა"
       ],
+      "No permission": [
+        "წვდომის გარეშე"
+      ],
+      "Organization only": [
+        "მხოლოდ ორგანიზაცია"
+      ],
+      "Receive from all": [
+        "ყველასგან მიღება"
+      ],
       "Router": [
         "რაუტერი"
       ],
@@ -5561,6 +5590,12 @@
       ],
       "Select who can access...": [
         "აირჩიეთ, ვის აქვს წვდომა..."
+      ],
+      "Send to all": [
+        "ყველასთვის გაგზავნა"
+      ],
+      "Setup incomplete": [
+        "დაყენება არასრულია"
       ],
       "Standard server configs": [
         "სერვერის სტანდარტული კონფიგურაციები"
@@ -5704,6 +5739,23 @@
       ],
       "New credit/debit card": [
         "ახალი საკრედიტო/სადებეტო ბარათი"
+      ]
+    },
+    "Permission": {
+      "No permission": [
+        "წვდომის გარეშე"
+      ],
+      "Organization only": [
+        "მხოლოდ ორგანიზაცია"
+      ],
+      "Receive from all": [
+        "ყველასგან მიღება"
+      ],
+      "Send to all": [
+        "ყველასთვის გაგზავნა"
+      ],
+      "Setup incomplete": [
+        "დაყენება არასრულია"
       ]
     },
     "Placeholder": {
@@ -5973,6 +6025,22 @@
       ],
       "You can reset your password until ${ boldDate }.": [
         "პაროლის შეცვლა, შეგიძლიათ, თარიღამდე ${ boldDate }"
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "გაქვთ ${ timeRemaining.inDays } დღე, ჩამოყაროთ თქვენი პაროლი.",
+        "გაქვთ ${ timeRemaining.inDays } დღე, ჩამოყაროთ თქვენი პაროლი."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "გაქვთ ${ timeRemaining.inHours } საათი, ჩამოყაროთ თქვენი პაროლი.",
+        " გაქვთ ${ timeRemaining.inHours } საათი ჩამოყაროთ თქვენი პაროლი."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "გაქვთ ${ timeRemaining.inMinutes } წუთი, ჩამოყაროთ თქვენი პაროლი.",
+        " გაქვთ ${ timeRemaining.inMinutes } წუთი ჩამოყაროთ თქვენი პაროლი."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "გაქვთ ${ timeRemaining.inSeconds } წამი, ჩამოყაროთ თქვენი პაროლი.",
+        " გაქვთ ${ timeRemaining.inSeconds } წამი ჩამოყაროთ თქვენი პაროლი."
       ]
     },
     "session_recovery:available:link": {

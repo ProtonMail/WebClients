@@ -1875,10 +1875,10 @@
         "Доступ да настольнай праграмы абмежаваны"
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
-        "Бэта-версія настольнай праграмы ${ MAIL_APP_NAME } у цяперашні момант абмежавана падпісчыкамі з тарыфным планам ${ BRAND_NAME } Visionary. Яна стане даступна ўсім карыстальнікам у пачатку 2024 года."
+        "Бэта-версія настольнай праграмы ${ MAIL_APP_NAME } у цяперашні момант абмежавана падпісчыкамі з тарыфным планам ${ BRAND_NAME } Visionary. Яна стане даступна ўсім карыстальнікам на пачатку 2024 года."
       ],
       "Upgrade today or check again in early 2024 for access.": [
-        "Палепшыце сёння або праверце даступнасць у пачатку 2024 года."
+        "Палепшыце сёння або праверце даступнасць на пачатку 2024 года."
       ]
     },
     "Downgrade account reason": {
@@ -3934,6 +3934,9 @@
       "You can now access and manage the account as an administrator.": [
         "Цяпер вы можаце атрымаць доступ да ўліковага запісу ў якасці адміністратара."
       ],
+      "You can now return to the application to continue": [
+        "Цяпер вы можаце вярнуцца да праграмы, каб працягнуць"
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Толькі адзін экзэмпляр чата можа быць адкрыты адначасова. Закрыйце папярэднюю размову перад тым, як пачаць новую."
       ],
@@ -5709,6 +5712,15 @@
       "My reason isn't listed": [
         "Нічога з пералічанага"
       ],
+      "No permission": [
+        "Няма дазволу"
+      ],
+      "Organization only": [
+        "Толькі арганізацыі"
+      ],
+      "Receive from all": [
+        "Атрымліваць ад усіх"
+      ],
       "Router": [
         "Маршрутызатар"
       ],
@@ -5717,6 +5729,12 @@
       ],
       "Select who can access...": [
         "Выберыце ўдзельнікаў, якія будуць мець доступ..."
+      ],
+      "Send to all": [
+        "Адпраўляць усім"
+      ],
+      "Setup incomplete": [
+        "Наладжванне не завершана"
       ],
       "Standard server configs": [
         "Канфігурацыі стандартнага сервера"
@@ -5866,6 +5884,23 @@
       ],
       "New credit/debit card": [
         "Новая банкаўская картка"
+      ]
+    },
+    "Permission": {
+      "No permission": [
+        "Няма дазволу"
+      ],
+      "Organization only": [
+        "Толькі арганізацыі"
+      ],
+      "Receive from all": [
+        "Атрымліваць ад усіх"
+      ],
+      "Send to all": [
+        "Адпраўляць усім"
+      ],
+      "Setup incomplete": [
+        "Наладжванне не завершана"
       ]
     },
     "Placeholder": {
