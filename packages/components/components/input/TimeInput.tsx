@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 import { Input, InputProps } from '@proton/atoms';
 import { findLongestMatchingIndex } from '@proton/shared/lib/helpers/string';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import noop from '@proton/utils/noop';
 import withDecimalPrecision from '@proton/utils/withDecimalPrecision';
 
 import { generateUID } from '../../helpers';
@@ -198,21 +199,30 @@ const TimeInput = ({
     };
 
     const parseAndSetDate = (temporaryInput: string) => {
+        let hasSet = false;
         try {
             const matchingOption = matchingIndex !== undefined ? filteredOptions[matchingIndex] : undefined;
-            if (matchingOption?.value && matchingOption?.label === temporaryInput) {
+            if (matchingOption?.value && matchingOption?.label?.includes(temporaryInput)) {
                 // if we highlighted an option in the UI, select that one
                 handleSelectDate(matchingOption.value);
+                setTemporaryInput(toFormatted(matchingOption.value, dateLocale));
+                hasSet = true;
             } else {
                 const newDate = fromFormatted(temporaryInput, dateLocale);
                 const newDateTime = +newDate;
                 if (!Number.isNaN(newDateTime)) {
                     handleSelectDate(newDate);
+                    setTemporaryInput(toFormatted(newDate, dateLocale));
+                    hasSet = true;
                 }
             }
-        } catch (e: any) {}
-
-        setTemporaryInput(toFormatted(value, dateLocale));
+        } catch {
+            noop();
+        } finally {
+            if (!hasSet) {
+                setTemporaryInput(toFormatted(value, dateLocale));
+            }
+        }
     };
 
     const handleBlur = () => {
@@ -300,9 +310,9 @@ const TimeInput = ({
             <Input
                 type="text"
                 ref={anchorRef}
-                onFocus={() => open()}
+                onFocus={open}
                 onBlur={handleBlur}
-                onClick={() => open()}
+                onClick={open}
                 value={temporaryInput}
                 onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) => setTemporaryInput(value)}
                 {...rest}
