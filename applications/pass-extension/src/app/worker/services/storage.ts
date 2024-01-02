@@ -15,7 +15,6 @@ import noop from '@proton/utils/noop';
 
 type StorageState = { storageFull: boolean };
 export interface ExtensionStorage<T, K extends StorageKeys<T>> extends Storage<T> {
-    remove: (key: StorageKeys<T>) => Promise<void>;
     getItems: GetItems<T, K[]>;
     setItems: SetItems<T>;
     removeItems: RemoveItems<T>;
@@ -41,8 +40,7 @@ export const createStorageService = () => {
                     state.storageFull = true;
                 }),
         setItems: (items) => localStorage.setItems(items).catch(noop),
-        remove: (key) => localStorage.removeItem(key).catch(noop),
-        removeItem: localStorage.removeItem,
+        removeItem: (key) => localStorage.removeItem(key).catch(noop),
         removeItems: (keys) => localStorage.removeItems(keys).catch(noop),
         clear: () => localStorage.clear().catch(noop),
     };
@@ -56,8 +54,7 @@ export const createStorageService = () => {
         getItems: (keys) => sessionStorage.getItems(keys).catch(() => ({})),
         setItem: (key, value) => sessionStorage.setItem(key, value).catch(noop),
         setItems: (items) => sessionStorage.setItems(items).catch(noop),
-        remove: (key) => sessionStorage.removeItem(key).catch(noop),
-        removeItem: sessionStorage.removeItem,
+        removeItem: (key) => sessionStorage.removeItem(key).catch(noop),
         removeItems: (keys) => sessionStorage.removeItems(keys).catch(noop),
         clear: () => sessionStorage.clear().catch(noop),
     };
