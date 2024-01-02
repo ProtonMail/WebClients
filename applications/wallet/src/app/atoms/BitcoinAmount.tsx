@@ -3,8 +3,8 @@ import { useMemo } from 'react';
 import { Price } from '@proton/components/components/price';
 import clsx from '@proton/utils/clsx';
 
-import { BitcoinUnitEnum } from '../types';
-import { satsToBitcoin, satsToMBitcoin, toFiat } from '../utils';
+import { WasmBitcoinUnit } from '../../pkg';
+import { getLabelByUnit, satsToBitcoin, satsToMBitcoin, toFiat } from '../utils';
 
 interface Props {
     /**
@@ -13,39 +13,60 @@ interface Props {
     children: number;
     precision?: number;
 
-    unit?: BitcoinUnitEnum;
+    unit?: WasmBitcoinUnit;
     fiat?: string;
 
     className?: string;
     fiatClassName?: string;
+    /**
+     * Show sign even when amount is positive
+     */
+    showExplicitSign?: boolean;
+    /**
+     * Display negative amount in red and positive/null amount in green
+     */
+    showColor?: boolean;
 }
 
 export const BitcoinAmount = ({
-    unit = BitcoinUnitEnum.BTC,
+    unit = WasmBitcoinUnit.BTC,
     fiat,
     children,
     precision = 6,
     className,
     fiatClassName,
+    showExplicitSign,
+    showColor,
 }: Props) => {
+    const colorClassName = children < 0 ? 'color-danger' : 'color-success';
+
     const amount = useMemo(() => {
         switch (unit) {
-            case BitcoinUnitEnum.BTC:
+            case WasmBitcoinUnit.BTC:
                 return satsToBitcoin(children).toFixed(precision);
-            case BitcoinUnitEnum.mBTC:
+            case WasmBitcoinUnit.MBTC:
                 return satsToMBitcoin(children).toFixed(precision - 3);
             default:
                 return children;
         }
     }, [unit, children, precision]);
 
+    const sign = useMemo(() => {
+        if (showExplicitSign && children > 0) {
+            return '+';
+        }
+
+        return '';
+    }, [children, showExplicitSign]);
+
     return (
         <>
-            <span className={clsx('block', className)}>
-                {amount} {unit}
+            <span className={clsx('block', className, showColor && colorClassName)}>
+                {sign}
+                {amount} {getLabelByUnit(unit)}
             </span>
             {fiat && (
-                <Price className={clsx('color-hint m-0 text-sm', fiatClassName)} currency={fiat}>
+                <Price className={clsx('color-hint m-0 text-sm', fiatClassName)} currency={fiat} prefix={sign}>
                     {toFiat(children).toFixed(2)}
                 </Price>
             )}

@@ -4,12 +4,12 @@ import { Button } from '@proton/atoms/Button/Button';
 import Tooltip from '@proton/components/components/tooltip/Tooltip';
 import clsx from '@proton/utils/clsx';
 
-import { WasmSimpleTransaction } from '../../../pkg';
+import { IWasmSimpleTransactionArray } from '../../../pkg';
 import { BitcoinAmount } from '../../atoms';
 import { confirmationTimeToHumanReadable, sortTransactionsByTime } from '../../utils';
 
 interface Props {
-    transactions: WasmSimpleTransaction[];
+    transactions: IWasmSimpleTransactionArray;
     max?: number;
 }
 
@@ -28,7 +28,7 @@ export const TransactionHistoryOverview = ({ transactions, max = 7 }: Props) => 
                             >
                                 <div className="flex flex-column">
                                     <span className="block color-weak text-sm">
-                                        {confirmationTimeToHumanReadable(transaction.confirmation)}
+                                        {confirmationTimeToHumanReadable(transaction.time)}
                                     </span>
                                     <Tooltip title={transaction.txid}>
                                         <span className="block text-sm">
@@ -40,7 +40,7 @@ export const TransactionHistoryOverview = ({ transactions, max = 7 }: Props) => 
                                     <BitcoinAmount
                                         className={clsx(
                                             'text-sm',
-                                            transaction.value < 0 ? 'color-danger' : 'color-success'
+                                            Number(transaction.value) < 0 ? 'color-danger' : 'color-success'
                                         )}
                                     >
                                         {Number(transaction.value)}

@@ -3,10 +3,10 @@ import { useMemo } from 'react';
 import { format, sub } from 'date-fns';
 import { groupBy } from 'lodash';
 
-import { WasmSimpleTransaction } from '../../pkg';
+import { IWasmSimpleTransactionArray } from '../../pkg';
 import { sortTransactionsByTime, transactionTime } from '../utils';
 
-export const useBalanceEvolution = (currentBalance: number, lastTransactions: WasmSimpleTransaction[]) => {
+export const useBalanceEvolution = (currentBalance: number, lastTransactions: IWasmSimpleTransactionArray) => {
     /**
      * Balance evolution from oldest transaction to newest one
      */
@@ -21,7 +21,7 @@ export const useBalanceEvolution = (currentBalance: number, lastTransactions: Wa
 
         const [mostRecentTx] = sorted;
 
-        return sorted.reduce(
+        const evolByTx: { balance: number; timestamp: number }[] = sorted.reduce(
             (acc, transaction) => {
                 const [lastAccTx] = acc;
 
@@ -40,6 +40,8 @@ export const useBalanceEvolution = (currentBalance: number, lastTransactions: Wa
                 },
             ]
         );
+
+        return evolByTx;
     }, [currentBalance, lastTransactions]);
 
     /**
@@ -63,7 +65,7 @@ export const useBalanceEvolution = (currentBalance: number, lastTransactions: Wa
         });
 
         const [mostRecentDay] = lastSevenDays;
-        return lastSevenDays.reduce(
+        const newAcc = lastSevenDays.reduce(
             (acc, day) => {
                 const txs = txGroupedByDay[day];
                 const [lastAccDay] = acc;
@@ -73,11 +75,14 @@ export const useBalanceEvolution = (currentBalance: number, lastTransactions: Wa
             },
             [{ balance: currentBalance, day: mostRecentDay }]
         );
+
+        return newAcc;
     }, [currentBalance, lastTransactions]);
 
-    const [oldestBalance] = evolutionByTx;
+    const [firstDayBalance] = evolutionByDay;
+    const lastDayBalance = evolutionByDay[evolutionByDay.length - 1];
 
-    const balanceDifference = evolutionByTx.length >= 1 ? currentBalance - oldestBalance.balance : 0;
+    const balanceDifference = evolutionByTx.length >= 1 ? lastDayBalance.balance - firstDayBalance.balance : 0;
 
     return { balanceDifference, evolutionByTx, evolutionByDay };
 };

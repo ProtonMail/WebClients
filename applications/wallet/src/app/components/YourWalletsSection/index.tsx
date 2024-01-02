@@ -6,10 +6,10 @@ import { ButtonLike } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
 import { Pill } from '@proton/atoms/Pill';
 
+import { WasmBitcoinUnit } from '../../../pkg';
 import { BitcoinAmount } from '../../atoms';
 import { useBlockchainContext } from '../../contexts';
 import { useBalanceDistribution } from '../../hooks/useBalanceDistribution';
-import { BitcoinUnitEnum } from '../../types';
 import { WalletType } from '../../types/api';
 
 interface Props {
@@ -18,7 +18,7 @@ interface Props {
 
 // TODO: change this when wallet settings API is ready
 const fiatCurrency = 'USD';
-const bitcoinUnit = BitcoinUnitEnum.BTC;
+const bitcoinUnit = WasmBitcoinUnit.BTC;
 
 export const YourWalletsSection = ({ onAddWallet }: Props) => {
     const { wallets } = useBlockchainContext();

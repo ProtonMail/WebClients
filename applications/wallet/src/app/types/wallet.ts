@@ -1,14 +1,15 @@
-import { WasmAccount, WasmBalance, WasmSimpleTransaction, WasmUtxo } from '../../pkg';
+import { IWasmSimpleTransactionArray, IWasmUtxoArray, WasmAccount, WasmBalance, WasmWallet } from '../../pkg';
 import { Wallet, WalletAccount } from './api';
 
 export type AccountWithBlockchainData = WalletAccount & {
     balance: WasmBalance;
-    transactions: WasmSimpleTransaction[];
-    utxos: WasmUtxo[];
+    transactions: IWasmSimpleTransactionArray;
+    utxos: IWasmUtxoArray;
     wasmAccount: WasmAccount;
 };
 
 export type WalletWithAccountsWithBalanceAndTxs = Wallet & {
+    wasmWallet: WasmWallet;
     accounts: AccountWithBlockchainData[];
 };
 
@@ -18,6 +19,7 @@ export type BlockchainWalletRecord = Partial<
     Record<
         string,
         Wallet & {
+            wasmWallet: WasmWallet;
             accounts: BlockchainAccountRecord;
         }
     >

@@ -1,7 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { keyBy } from 'lodash';
-
 import { WasmOutPoint } from '../../../../pkg';
 import { AccountWithBlockchainData } from '../../../types';
 
@@ -14,21 +12,24 @@ export const useManualCoinSelectionModal = (
     const [tmpSelectedUtxos, setTmpSelectedUtxos] = useState<string[]>([]);
     const [activeUtxo, setActiveUtxo] = useState<string>();
 
-    const handleToggleUtxoSelection = (script_pubkey: string) => {
+    const toggleUtxoSelection = (outpoint: string) => {
         setTmpSelectedUtxos((prev) => {
-            if (prev.includes(script_pubkey)) {
-                return prev.filter((spub) => spub !== script_pubkey);
+            if (prev.includes(outpoint)) {
+                return prev.filter((outpointB) => outpointB !== outpoint);
             }
 
-            return [...prev, script_pubkey];
+            return [...prev, outpoint];
         });
     };
 
     const utxos = useMemo(() => account?.utxos ?? [], [account]);
 
-    const handleConfirmCoinSelection = () => {
-        const utxoByOutpoint = keyBy(utxos, (utxo) => utxo.outpoint[0]);
-        onCoinSelected(tmpSelectedUtxos.map((outpoint) => utxoByOutpoint[outpoint].outpoint));
+    const confirmCoinSelection = () => {
+        onCoinSelected(
+            tmpSelectedUtxos.map((outpoint) => {
+                return WasmOutPoint.fromRawTs(outpoint);
+            })
+        );
     };
 
     useEffect(() => {
@@ -46,8 +47,8 @@ export const useManualCoinSelectionModal = (
         tmpSelectedUtxos,
         activeUtxo,
         utxos,
-        handleToggleUtxoSelection,
+        toggleUtxoSelection,
         setActiveUtxo,
-        handleConfirmCoinSelection,
+        confirmCoinSelection,
     };
 };

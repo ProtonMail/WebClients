@@ -26,14 +26,8 @@ interface Props {
 }
 
 export const ManualCoinSelectionModal = ({ isOpen, onClose, account, selectedUtxos, onCoinSelected }: Props) => {
-    const {
-        utxos,
-        activeUtxo,
-        setActiveUtxo,
-        tmpSelectedUtxos,
-        handleToggleUtxoSelection,
-        handleConfirmCoinSelection,
-    } = useManualCoinSelectionModal(isOpen, selectedUtxos, onCoinSelected, account);
+    const { utxos, activeUtxo, setActiveUtxo, tmpSelectedUtxos, toggleUtxoSelection, confirmCoinSelection } =
+        useManualCoinSelectionModal(isOpen, selectedUtxos, onCoinSelected, account);
 
     return (
         <ModalTwo
@@ -52,14 +46,13 @@ export const ManualCoinSelectionModal = ({ isOpen, onClose, account, selectedUtx
                             <TableHeader>
                                 <TableRow>
                                     <TableHeaderCell className="w-3/10">{c('Wallet Send').t`Date`}</TableHeaderCell>
-                                    <TableHeaderCell className="w-4/10">{c('Wallet Send')
-                                        .t`Script public key`}</TableHeaderCell>
+                                    <TableHeaderCell className="w-4/10">{c('Wallet Send').t`Outpoint`}</TableHeaderCell>
                                     <TableHeaderCell className="w-3/10">{c('Wallet Send').t`Value`}</TableHeaderCell>
                                 </TableRow>
                             </TableHeader>
                             <TableBody>
                                 {utxos.map((utxo) => {
-                                    const outpoint = utxo.outpoint[0];
+                                    const { outpoint } = utxo;
                                     const isSelected = tmpSelectedUtxos.includes(outpoint);
                                     const isActive = activeUtxo === outpoint;
 
@@ -80,7 +73,7 @@ export const ManualCoinSelectionModal = ({ isOpen, onClose, account, selectedUtx
                                             onMouseEnter={() => setActiveUtxo(outpoint)}
                                             onMouseLeave={() => setActiveUtxo(undefined)}
                                             key={outpoint}
-                                            onClick={() => handleToggleUtxoSelection(outpoint)}
+                                            onClick={() => toggleUtxoSelection(outpoint)}
                                             className={clsx(
                                                 'cursor-pointer',
                                                 isSelected ? 'color-invert' : 'color-norm'
@@ -109,7 +102,7 @@ export const ManualCoinSelectionModal = ({ isOpen, onClose, account, selectedUtx
 
                 <div className="my-3 flex w-full items-end">
                     <Button className="ml-auto" onClick={onClose}>{c('Wallet Send').t`Cancel`}</Button>
-                    <Button color="norm" className="ml-3" onClick={() => handleConfirmCoinSelection()}>{c('Wallet Send')
+                    <Button color="norm" className="ml-3" onClick={() => confirmCoinSelection()}>{c('Wallet Send')
                         .t`Done`}</Button>
                 </div>
             </ModalContent>

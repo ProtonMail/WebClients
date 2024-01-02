@@ -59,7 +59,7 @@ export const MnemonicBackup = ({ mnemonic, onContinue }: Props) => {
 
                     {/* Credit card design */}
                     {/* TODO: add name input somewhere or generated it randomly? */}
-                    {wallet && <CreditCard walletName="Bitcoin 01" walletFingerprint={wallet.get_fingerprint()} />}
+                    {wallet && <CreditCard walletName="Bitcoin 01" walletFingerprint={wallet.getFingerprint()} />}
 
                     <p className="my-0 block text-center color-weak">{c('Wallet setup')
                         .t`Your new wallet is created. Make sure you back it up`}</p>

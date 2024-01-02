@@ -4,8 +4,9 @@ import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
 
+import { WasmBitcoinUnit } from '../../../pkg';
 import { BitcoinAmount } from '../../atoms';
-import { BitcoinUnitEnum, WalletWithAccountsWithBalanceAndTxs } from '../../types';
+import { WalletWithAccountsWithBalanceAndTxs } from '../../types';
 import { DoughnutChart } from '../charts/DoughnutChart';
 import { LineChart } from '../charts/LineChart';
 import { WelcomeCard } from './WelcomeCard';
@@ -13,7 +14,7 @@ import { useBalanceOverview } from './useBalanceOverview';
 
 // TODO: change this when wallet settings API is ready
 const fiatCurrency = 'USD';
-const bitcoinUnit = BitcoinUnitEnum.BTC;
+const bitcoinUnit = WasmBitcoinUnit.BTC;
 
 interface SingleWalletBalanceOverviewProps {
     wallet?: WalletWithAccountsWithBalanceAndTxs;
@@ -31,6 +32,7 @@ export const BalanceOverview = (props: Props) => {
     const {
         totalBalance,
         transactions,
+        dataCount,
         balanceDistributionDoughnutChartData,
         balanceEvolutionLineChartData,
         last7DaysBalanceDifference,
@@ -41,7 +43,7 @@ export const BalanceOverview = (props: Props) => {
     }
 
     return (
-        <div>
+        <div className="shrink-0">
             <h2 className="h4 text-semibold">{c('Wallet Dashboard').t`Your current balance`}</h2>
 
             <div className="flex flex-row justify-space-evenly">
@@ -52,9 +54,14 @@ export const BalanceOverview = (props: Props) => {
                     </BitcoinAmount>
                 </div>
 
-                <div className="mt-8 mr-10 h-custom flex flex-column justify-center" style={{ '--h-custom': '6rem' }}>
-                    <DoughnutChart data={balanceDistributionDoughnutChartData} />
-                </div>
+                {dataCount > 1 && (
+                    <div
+                        className="mt-8 mr-10 h-custom flex flex-column justify-center"
+                        style={{ '--h-custom': '6rem' }}
+                    >
+                        <DoughnutChart data={balanceDistributionDoughnutChartData} />
+                    </div>
+                )}
 
                 <div
                     data-testid="7DaysDifference"
@@ -65,10 +72,9 @@ export const BalanceOverview = (props: Props) => {
                     <BitcoinAmount
                         unit={bitcoinUnit}
                         fiat={fiatCurrency}
-                        className={clsx(
-                            'my-0.5 text-xl',
-                            last7DaysBalanceDifference < 0 ? 'color-danger' : 'color-success'
-                        )}
+                        className={clsx('my-0.5 text-xl')}
+                        showColor
+                        showExplicitSign
                     >
                         {last7DaysBalanceDifference}
                     </BitcoinAmount>

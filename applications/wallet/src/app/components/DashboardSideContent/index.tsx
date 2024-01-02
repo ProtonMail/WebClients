@@ -5,11 +5,11 @@ import { c } from 'ttag';
 import { Button, ButtonLike } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
 
-import { WasmSimpleTransaction } from '../../../pkg';
+import { IWasmSimpleTransactionArray } from '../../../pkg';
 import { TransactionHistoryOverview } from '../TransactionHistoryOverview';
 
 interface Props {
-    transactions: WasmSimpleTransaction[];
+    transactions?: IWasmSimpleTransactionArray;
     walletId?: number;
 }
 
@@ -41,12 +41,16 @@ export const DashboardSideContent = ({ transactions, walletId }: Props) => {
                 </Button>
             </div>
 
-            <hr className="my-10" />
-
-            <div>
-                <h2 className="h4 text-left w-full text-semibold">{c('Wallet Dashboard').t`Last transactions`}</h2>
-                <TransactionHistoryOverview transactions={transactions} />
-            </div>
+            {transactions && (
+                <>
+                    <hr className="my-10" />
+                    <div>
+                        <h2 className="h4 text-left w-full text-semibold">{c('Wallet Dashboard')
+                            .t`Last transactions`}</h2>
+                        <TransactionHistoryOverview transactions={transactions} />
+                    </div>
+                </>
+            )}
         </div>
     );
 };

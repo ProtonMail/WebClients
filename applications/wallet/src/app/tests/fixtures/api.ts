@@ -1,7 +1,7 @@
+import { WasmBitcoinUnit } from '../../../pkg';
 import {
     ApiWallet,
     BitcoinUnit,
-    BitcoinUnitEnum,
     FiatCurrency,
     ScriptType,
     UserWalletSettings,
@@ -193,19 +193,19 @@ export const wallets: ApiWallet[] = [
 const bitcoinUnitA: BitcoinUnit = {
     BitcoinUnitID: 13,
     Name: 'bitcoin',
-    Symbol: BitcoinUnitEnum.BTC,
+    Symbol: WasmBitcoinUnit.BTC,
 };
 
 const bitcoinUnitB: BitcoinUnit = {
     BitcoinUnitID: 14,
     Name: 'satoshi',
-    Symbol: BitcoinUnitEnum.SAT,
+    Symbol: WasmBitcoinUnit.SAT,
 };
 
 const bitcoinUnitC: BitcoinUnit = {
     BitcoinUnitID: 15,
     Name: 'millibitcoin',
-    Symbol: BitcoinUnitEnum.mBTC,
+    Symbol: WasmBitcoinUnit.MBTC,
 };
 
 export const bitcoinUnits = [bitcoinUnitA, bitcoinUnitB, bitcoinUnitC];

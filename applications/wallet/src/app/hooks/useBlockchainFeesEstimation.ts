@@ -13,13 +13,14 @@ export const useBlockchainFeesEstimation = () => {
 
     useEffect(() => {
         const fees = cache.get(FEES_ESTIMATION_KEY);
+
         if (fees) {
             setFeesEstimation(fees);
             return;
         } else {
             setLoading(true);
             new WasmChain()
-                .get_fees_estimation()
+                .getFeesEstimation()
                 .then((est) => {
                     setFeesEstimation(est);
                     cache.set(FEES_ESTIMATION_KEY, est);

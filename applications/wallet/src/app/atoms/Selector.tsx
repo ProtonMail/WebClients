@@ -24,7 +24,7 @@ export const Selector = <TSelectValue extends string | number, TOption extends B
     options,
 }: Props<TSelectValue, TOption>) => {
     return (
-        <div className="mr-6 w-3/10">
+        <div className="mr-6">
             <Label className="text-semibold">{label}</Label>
             <SelectTwo title={label} className="mt-2" id={id} data-testid={id} value={selected} onChange={onSelect}>
                 {options.map((option) => (

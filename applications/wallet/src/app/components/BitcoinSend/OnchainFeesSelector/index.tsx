@@ -26,7 +26,7 @@ const labelTextByFeeRateNote: Record<FeeRateNote, () => string> = {
 
 interface Props {
     txBuilder: WasmTxBuilder;
-    updateTxBuilder: (updater: (txBuilder: WasmTxBuilder) => WasmTxBuilder) => void;
+    updateTxBuilder: (updater: (txBuilder: WasmTxBuilder) => WasmTxBuilder | Promise<WasmTxBuilder>) => void;
 }
 
 export const OnChainFeesSelector = ({ txBuilder, updateTxBuilder }: Props) => {
@@ -41,7 +41,7 @@ export const OnChainFeesSelector = ({ txBuilder, updateTxBuilder }: Props) => {
         openModal,
     } = useOnChainFeesSelector(txBuilder, updateTxBuilder);
 
-    const feeRate = txBuilder.get_fee_rate() ?? 1;
+    const feeRate = txBuilder.getFeeRate() ?? 1;
 
     const strFeeRate = feeRate.toFixed(2);
     const estimatedConfirmationTime = blockTarget * 10;
