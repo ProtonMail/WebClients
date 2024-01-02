@@ -9,7 +9,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
 import { formatDateToHuman, formatFullDate, formatSimpleDate } from '../../helpers/date';
-import { isElementReminded } from '../../logic/snoozehelpers';
+import { isElementReminded } from '../../helpers/snooze';
 import { Element } from '../../models/element';
 import ItemDateRender from './ItemDateRender';
 
@@ -59,10 +59,7 @@ const RemindedConversation = ({ className, snoozeDate }: { className?: string; s
     }, [snoozeDate]);
 
     return (
-        <span
-            className={clsx(className, 'item-date-snoozed flex items-center')}
-            data-testid="item-date-reminded"
-        >
+        <span className={clsx(className, 'item-date-snoozed flex items-center')} data-testid="item-date-reminded">
             <Icon name="bell" className="mr-1" />
             <span>{snoozeTime}</span>
         </span>
