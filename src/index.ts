@@ -1,4 +1,4 @@
-import { app, BrowserWindow, session, shell } from "electron";
+import { BrowserWindow, Notification, app, session, shell } from "electron";
 import log from "electron-log/main";
 import { moveUninstaller } from "./macos/uninstall";
 import { saveAppID } from "./store/idStore";
@@ -54,6 +54,9 @@ app.whenReady().then(() => {
 
     // Check updates
     checkForUpdates();
+
+    // Trigger blank notification to force presence in settings
+    new Notification();
 
     app.on("activate", () => {
         if (BrowserWindow.getAllWindows().filter((windows) => windows.isVisible()).length === 0) {
