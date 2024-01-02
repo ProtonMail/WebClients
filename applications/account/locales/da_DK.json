@@ -35,6 +35,12 @@
       ],
       "Reconnect": [
         "Tilslut igen"
+      ],
+      "Remove forward": [
+        "Fjern videresendelse"
+      ],
+      "You will stop the mail forwarding.": [
+        "Du stopper videresendelsen af mail."
       ]
     },
     "Action": {
@@ -1071,6 +1077,11 @@
         "Zoom ud"
       ]
     },
+    "action": {
+      "Resuming forward": [
+        "Genoptager videresendelse"
+      ]
+    },
     "Action for user session": {
       "Revoke": [
         "Tilbagekald"
@@ -1491,6 +1502,9 @@
       "${ n } month": [
         "${ n } måned",
         "${ n } måneder"
+      ],
+      "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
+        "Fornyes automatisk til ${ renewPrice } i ${ renewalLength }."
       ]
     },
     "Billing cycle option": {
@@ -1700,6 +1714,12 @@
       ],
       "Share with anyone": [
         "Del med enhver"
+      ]
+    },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Vis ${ remainingItems } mere",
+        "Vis ${ remainingItems } mere"
       ]
     },
     "Calendar share permission label": {
@@ -2945,6 +2965,9 @@
       "Error on row ${ erroredRowsString }.": [
         "Fejl i række ${ erroredRowsString }."
       ],
+      "It looks like your file is missing the '${ options.fieldName }' header.": [
+        "Det ser ud til, at din fil mangler headeroplysningen '${ options.fieldName }'."
+      ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
         "Vi fandt fejl i flere rækker under import, gennemse venligst din CSV-fil."
       ]
@@ -2965,16 +2988,9 @@
       "Daily": [
         "Dagligt"
       ],
-      "Daily, ${ untilString }": [
-        "Daglig, ${ untilString }"
-      ],
       "Every ${ interval } day": [
         "Hver ${ interval } dag",
         "Hver ${ interval } dag"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Hver ${ interval } dag, ${ untilString }",
-        "Hver ${ interval } dag, ${ untilString }"
       ],
       "until ${ dateString }": [
         "indtil ${ dateString }"
@@ -3116,6 +3132,24 @@
       "Back to ${ signIn }.": [
         "Tilbage til ${ signIn }."
       ],
+      "Didn't create an account?": [
+        "Har du ikke oprettet en konto?"
+      ],
+      "I didn't create this account": [
+        "Jeg har ikke oprettet denne konto"
+      ],
+      "sign in": [
+        "log ind"
+      ],
+      "Thanks for letting us know": [
+        "Tak, fordi du gav os besked"
+      ],
+      "This is usually nothing to worry about. Just click below to confirm that this ${ BRAND_NAME } Account isn't yours, and we'll disable it.": [
+        "Det er normalt ikke noget at bekymre sig om. Bare klik nedenfor for at bekræfte, at denne ${ BRAND_NAME }-konto er ikke din, så deaktiverer vi den."
+      ],
+      "We've noted that this account doesn't belong to you. We'll investigate and act accordingly.": [
+        "Vi har bemærket, at denne konto ikke tilhører dig. Vi undersøger sagen og handler derefter."
+      ],
       "You can safely close this tab.": [
         "Du kan godt lukke denne fane."
       ]
@@ -3193,6 +3227,12 @@
     "drive_signup_2023: Info": {
       "Advanced sharing security": [
         "Avanceret delingssikkerhed"
+      ],
+      "Encrypted cloud storage for all your files": [
+        "Krypteret cloud-lagring til alle dine filer"
+      ],
+      "Secure cloud storage and file sharing that protects your data": [
+        "Sikker cloud-lagring og fildeling, der beskytter dine data"
       ]
     },
     "Duration": {
@@ -3210,6 +3250,12 @@
       ]
     },
     "Email": {
+      "Email verified": [
+        "E-mail bekræftet"
+      ],
+      "Thank you for verifying your email address.": [
+        "Tak, fordi du bekræftede din e-mailadresse."
+      ],
       "You can safely close this tab.": [
         "Du kan godt lukke denne fane."
       ]
@@ -3392,12 +3438,22 @@
         "Indstil videresendelse af e-mail"
       ]
     },
+    "email_forwarding_2023: Description": {
+      "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
+        "Lås op for videresendelse af e-mails, så du nemt kan håndtere indgående information og flere premium-funktioner, når du opgraderer."
+      ]
+    },
     "email_forwarding_2023: Error": {
       "Condition incomplete, please add a token": [
         "Betingelsen er mangelfuld, tilføj et token"
       ],
       "Token already exists": [
         "Token eksisterer allerede"
+      ]
+    },
+    "email_forwarding_2023: Error message, recovery": {
+      "Please try opening the link again.": [
+        "Prøv at åbne linket igen."
       ]
     },
     "email_forwarding_2023: Forwarding tooltip": {
@@ -3428,11 +3484,38 @@
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "En bekræftelsesmail vil blive sendt til ${ boldForwardeeEmail }"
       ],
+      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "En ny krypteringsnøgle vil blive genereret for ${ boldForwarderEmail }."
+      ],
       "Automatically forward emails to another email address.": [
         "Videresend automatisk e-mails til en anden e-mailadresse."
       ],
+      "Forwardee is invited and needs to accept/reject the invitation or update": [
+        "Modtageren af videresendelse er inviteret og skal acceptere/afvise invitationen eller opdatere."
+      ],
       "Forwarding is active": [
         "Videresending er aktiv"
+      ],
+      "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
+        "Videresendelse til en adresse uden end-to-end-kryptering vil deaktivere end-to-end-kryptering for din ${ boldForwarderEmail } adresse, men nuladgangskryptering forbliver aktiveret. ${ learnMoreLink }"
+      ],
+      "Forwarding to this address will become active once the recipient accepts the forwarding.": [
+        "Videresendelse til denne adresse bliver aktiv, når modtageren har accepteret videresendelsen."
+      ],
+      "No incoming forwarding rules": [
+        "Ingen regler for indgående videresendelse"
+      ],
+      "No outgoing forwarding rules": [
+        "Ingen regler for udgående videresendelse"
+      ],
+      "Please update your forwarding keys": [
+        "Opdater dine videresendelsesnøgler"
+      ],
+      "The forwardee rejected the forwarding request": [
+        "Modtageren afviste anmodningen om videresendelse."
+      ],
+      "The forwarding is temporarily paused": [
+        "Videresendelsen er midlertidigt sat på pause"
       ],
       "You can safely close this tab.": [
         "Du kan godt lukke denne fane."
@@ -3486,6 +3569,14 @@
       ],
       "Type text or keyword for this condition:": [
         "Skriv tekst eller nøgleord for denne betingelse:"
+      ]
+    },
+    "email_forwarding_2023: Prompt": {
+      "End-to-end encryption will be re-enabled for the sender address.": [
+        "End-to-end-kryptering vil blive genaktiveret for afsenderadressen."
+      ],
+      "Forwarding to the destination address will end.": [
+        "Videresendelse til destinationsadressen afsluttes."
       ]
     },
     "email_forwarding_2023: Status": {
@@ -4103,10 +4194,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "En uventet fejl opstod. Import skal genstartes."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Din fil ${ formattedFilename } indeholder mere end ${ MAX_IMPORT_EVENTS_STRING } begivenhed.",
-        "Din fil ${ formattedFilename } indeholder mere end ${ MAX_IMPORT_EVENTS_STRING } begivenheder."
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Din fil ${ formattedFilename } har en ugyldig metode og kan ikke importeres."
       ],
@@ -4301,6 +4388,11 @@
         "Vi kunne ikke indlæse denne side. Opdater siden eller tjek din internetforbindelse."
       ]
     },
+    "Error message, Disable account": {
+      "There was a problem disabling your account.": [
+        "Der opstod et problem med at deaktivere din konto."
+      ]
+    },
     "Error message, recovery": {
       "Contact ${ BRAND_NAME }": [
         "Kontakt ${ BRAND_NAME }"
@@ -4310,6 +4402,9 @@
       ],
       "sign in": [
         "log ind"
+      ],
+      "Sign in to verify": [
+        "Log ind for at bekræfte"
       ],
       "There was a problem removing your email address.": [
         "Der opstod et problem med at fjerne din e-mailadresse."
@@ -4450,6 +4545,11 @@
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 TB samlet lagerplads"
+      ]
+    },
+    "familyOffer_2023: Title": {
+      "Your account's benefits": [
+        "Din kontos fordele"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -4621,6 +4721,43 @@
         "Dit nuværende abonnement kan ikke tilmelde sig et Visionary- eller familie-abonnement."
       ]
     },
+    "familyOffer_2023:Info": {
+      "*Only one free trial per user.": [
+        "*Kun én gratis prøveperiode pr. bruger."
+      ],
+      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
+        "Som standard tildeler vi ${ formattedStorage } lagerplads til administratorkontoen. Du kan administrere den tildelte lagerplads, så den fordeles mellem flere brugere senere."
+      ],
+      "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
+        "Opret og administrer familiemedlemmer, og tildel dem lagerplads, der deles mellem ${ DRIVE_APP_NAME } og ${ MAIL_APP_NAME }."
+      ],
+      "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
+        "Hvis brugeren allerede har en ${ MAIL_APP_NAME } adresse, skal du indtaste den her. Ellers skal de først oprette en konto."
+      ],
+      "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
+        "Invitationen annulleres, og brugeren kan ikke tilmelde sig ${ organization.Name }."
+      ],
+      "The user's account will be moved to a ${ BRAND_NAME } Unlimited plan for a 30-day free trial*.": [
+        "Brugerens konto vil blive flyttet til et ${ BRAND_NAME } Unlimited-abonnement i en 30-dages gratis prøveperiode*."
+      ],
+      "To create a new user, a configured custom domain is required.": [
+        "For at oprette en ny bruger kræves et konfigureret brugerdefineret domæne."
+      ],
+      "You can increase or reduce the storage for this user.": [
+        "Du kan øge eller reducere lagerpladsen for denne bruger."
+      ],
+      "You left this plan": [
+        "Du forlod dette abonnement"
+      ]
+    },
+    "familyOffer_2023:Info for members section": {
+      "Add, remove, and make changes to user accounts in your family group.": [
+        "Tilføj, fjern og foretag ændringer af brugerkonti i din familiegruppe."
+      ],
+      "Add, remove, and make changes to user accounts in your organization.": [
+        "Tilføj, fjern og foretag ændringer af brugerkonti i din organisation."
+      ]
+    },
     "familyOffer_2023:Label": {
       "Enter family group name to confirm": [
         "Indtast navn på familiegruppe for at bekræfte"
@@ -4643,6 +4780,17 @@
     "familyOffer_2023:Settings section title": {
       "Family": [
         "Familie"
+      ]
+    },
+    "familyOffer_2023:Success": {
+      "${ member.Name } has been removed from ${ organization.Name }": [
+        "${ member.Name } er blevet fjernet fra ${ organization.Name }"
+      ],
+      "An error occurred, please try again": [
+        "Der skete en fejl, prøv igen"
+      ],
+      "Member updated": [
+        "Medlem opdateret"
       ]
     },
     "familyOffer_2023:Title": {
@@ -4729,6 +4877,9 @@
       ]
     },
     "fido2: Error": {
+      "Please disable 2FA via security key before disabling TOTP": [
+        "Deaktivér 2FA via sikkerhedsnøgle, før du deaktiverer TOTP."
+      ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
       ],
@@ -4742,6 +4893,12 @@
       ],
       "Add a name to identify your security key with.": [
         "Tilføj et navn til at identificere din sikkerhedsnøgle med."
+      ],
+      "Allow platform keys": [
+        "Tillad platformsnøgler"
+      ],
+      "Allows you to register built-in security keys (like Windows Hello, Face ID, Touch ID, or internal TPMs)": [
+        "Giver dig mulighed for at registrere indbyggede sikkerhedsnøgler (som Windows Hello, Face ID, Touch ID eller interne TPM'er)"
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Er du sikker på du vil slette sikkerhedsnøgle ${ name }?"
@@ -5057,6 +5214,9 @@
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Har du allerede en konto? ${ signIn }"
+      ],
+      "Already have an account? ${ signIn } or ${ switchAccount }": [
+        "Har du allerede en konto? ${ signIn } eller ${ switchAccount }"
       ]
     },
     "Go to sign up": {
@@ -6802,6 +6962,9 @@
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Bemærk at hvis du sletter dette domæne vil alle de adresser, der er knyttet til det, blive deaktiveret."
       ],
+      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Bemærk, at hvis du sletter dette filter ${ nameDeleted } stopper vi med at behandle alle de automatiserede handlinger, det udløser."
+      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Bemærk at når du klikker på Bekræft-knappen vil din konto have ${ creditsRemaining } kreditter tilbage."
       ],
@@ -7137,7 +7300,7 @@
         "Disse konfigurationer er beregnet til at fungere med WireGuard-routere og officielle klienter."
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
-        "Disse legitimationsoplysninger kan ikke bruges til at logge ind på vores officielle ${ VPN_APP_NAME } apps. ${ learnMore }"
+        "Disse legitimationsoplysninger kan ikke bruges til at logge ind på vores officielle ${ VPN_APP_NAME }-apps. ${ learnMore }"
       ],
       "They will be removed from your organization": [
         "De vil blive fjernet fra din organisation"
@@ -7810,6 +7973,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Du kan tilføje en betalingsmetode for at få dit abonnement fornyet automatisk. Andre betalingsmetoder er også tilgængelige."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Indtast et navn og en adresse for dig selv eller din organisation. Disse oplysninger vil blive tilføjet til både personlige og organisatoriske fakturaer."
       ]
     },
     "Info on errors": {
@@ -9133,6 +9301,9 @@
       "${ BRAND_NAME } for Business newsletter": [
         "${ BRAND_NAME } for Business nyhedsbrev"
       ],
+      "${ BRAND_NAME } important announcements": [
+        "${ BRAND_NAME } vigtige meddelelser"
+      ],
       "${ BRAND_NAME } newsletter": [
         "${ BRAND_NAME }-nyhedsbrev"
       ],
@@ -9142,8 +9313,23 @@
       "${ BRAND_NAME } product announcements": [
         "${ BRAND_NAME }-produktannonceringer"
       ],
+      "${ BRAND_NAME } user survey": [
+        "${ BRAND_NAME } brugerundersøgelse"
+      ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }-velkomstmails"
+      ],
+      "${ DRIVE_APP_NAME } product updates": [
+        "${ DRIVE_APP_NAME }-produktopdateringer"
+      ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
+        "${ MAIL_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME } nye funktioner"
+      ],
+      "${ PASS_APP_NAME } product updates": [
+        "${ PASS_APP_NAME }-produktopdateringer"
+      ],
+      "${ VPN_APP_NAME } product updates": [
+        "${ VPN_APP_NAME }-produktopdateringer"
       ]
     },
     "Label in domain modal": {
@@ -9414,6 +9600,17 @@
         "Importer alle beskeder fra ${ selectedItemsToImportCount } ud af ${ itemsToImportCount } etiketter og giv dem etiketten"
       ]
     },
+    "mail_signup_2023: Info": {
+      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
+        "Bliv en Visionary og vær en del af ${ BRAND_NAME }'s historie"
+      ],
+      "Limited time offer: Get ${ planTitle } until ${ date }!": [
+        "Tidsbegrænset tilbud: Få ${ planTitle } indtil ${ date }!"
+      ],
+      "Secure email that protects your privacy": [
+        "Sikker e-mail, der beskytter dit privatliv"
+      ]
+    },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
         "Prøv igen om et par minutter."
@@ -9483,8 +9680,14 @@
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "Opret en ${ BRAND_NAME }-konto for at bruge alle krypterede ${ BRAND_NAME }-tjenester som ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mere, med blot et login. Få en gratis ${ BRAND_NAME }-konto."
       ],
+      "Create a ${ BRAND_NAME } Account | Take back your privacy": [
+        "Opret en ${ BRAND_NAME }-konto | Få dit privatliv tilbage"
+      ],
       "Create a new ${ appName } account": [
         "Opret en ny ${ appName }-konto"
+      ],
+      "Find your ${ BRAND_NAME } Account username": [
+        "Find dit brugernavn til ${ BRAND_NAME }-konto"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Glemt adgangskoden til din ${ BRAND_NAME }-konto? Nulstil den her ved hjælp af en gendannelseskode, e-mail eller SMS, og få adgang til din ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mere."
@@ -9500,6 +9703,12 @@
       ],
       "Sign in to access your ${ appName } account": [
         "Log ind for at få adgang til din ${ appName }-konto"
+      ],
+      "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
+        "Log ind på din ${ BRAND_NAME }-konto for at få adgang til alle krypterede ${ BRAND_NAME }-tjenester som ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og meget mere. Har du ikke en konto? Opret en helt GRATIS."
+      ],
+      "Try ${ planName } for free with this link": [
+        "Prøv ${ planName } gratis med dette link"
       ]
     },
     "Modal title": {
@@ -9552,22 +9761,8 @@
         "Hver ${ interval } måned ${ onDayString }",
         "Hver ${ interval } måned ${ onDayString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Hver ${ interval } måned ${ onDayString }, ${ timesString }",
-        "Hver ${ interval } måned ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Hver ${ interval } måned ${ onDayString }, ${ untilString }",
-        "Hver ${ interval } måned ${ onDayString }, ${ untilString }"
-      ],
       "Monthly ${ onDayString }": [
         "Månedligt ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Månedligt ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Månedligt ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -10298,14 +10493,26 @@
       ]
     },
     "new_plans: signup": {
+      "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
+        "Ved at klikke på \"Betal\" accepterer du vores ${ termsAndConditions }."
+      ],
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
+        "Ved at oprette en ${ BRAND_NAME }-konto accepterer du vores ${ terms }"
+      ],
       "Payment details": [
         "Betalingsoplysninger"
+      ],
+      "Save your email address or phone number to use for verification if you need to reset your account.": [
+        "Gem din e-mailadresse eller dit telefonnummer, som du kan bruge til bekræftelse, hvis du har brug for at nulstille din konto."
       ],
       "Subscription": [
         "Abonnement"
       ],
       "terms and conditions": [
         "vilkår og betingelser"
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "For at komme i gang skal du vælge et visningsnavn. Det er det, folk vil se, når du sender en e-mail, inviterer dem til en begivenhed eller deler en fil."
       ],
       "Your ${ planName } subscription is now active.": [
         "Dit ${ planName } abonnement er nu aktivt."
@@ -10355,14 +10562,23 @@
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: Beskyt dine e-mails med end-to-end kryptering. Inkluderer understøttelse af brugerdefinerede e-mail-domæner, 15 e-mail-adresser, ubegrænsede hide-my-email-aliaser, og mere."
       ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: Få adgang til blokeret indhold, og browse privat. Inkluderer ${ serversAndCountries }, højeste VPN-hastigheder, adgang til verdensomspændende streamingtjenester, malware- og reklamer-blokering, hurtige BitTorrent-downloads og meget mere."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+ og Prime Video, hvor som helst"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "Adresser har fuld sende- og modtagefunktion. En bruger kan få tildelt flere adresser, men en enkelt adresse kan ikke tildeles til flere brugere."
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
         "Tillader at du forbinder til mere end ét netværk samtidigt, eks. kan du streame en film fra et andet land, samtidigt med at du får lokale søgeresultater"
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Giver dig mulighed for at indstille automatiske svar (autosvar) på dine indgående beskeder"
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "Masseudsendelse af salgsfremmende eller programmatiske e-mails understøttes ikke i øjeblikket. Vi anbefaler, at du bruger en dedikeret e-mailtjenesteudbyder til dette formål."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Kontroller adgang til dine delte filer ved at tilføje adgangskodebeskyttelse og link-udløbsdatoer"
@@ -10373,6 +10589,9 @@
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "Opret op til ${ n } kalender eller tilføj kalendere fra venner, familie, kollegaer og organisationer",
         "Opret op til ${ n } kalendere eller tilføj kalendere fra venner, familie, kollegaer og organisationer"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "Opret op til ${ n } e-mailadresser/aliasser, som du kan tildele familiemedlemmer. Brug dem til onlineidentiteter, f.eks. JohnShopper@${ domain } til shoppingkonti."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
         "Dedikerede servere med dedikerede IP adresse(r) kan tilføjes til private gateways for at finjustere adgangen"
@@ -10389,17 +10608,35 @@
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Sikrer at du modtager alle e-mails sendt til dit domæne, selvom e-mailadressen ikke eksisterer, ikke længere eksisterer eller har en tastefejl"
       ],
+      "Force sign-out of user sessions when user credentials are believed to be compromised": [
+        "Gennemtving udlogning af brugersessioner, når brugeroplysningerne menes at være kompromitterede."
+      ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "IMAP-understøttelse er begrænset til skrivebords-apps (f.eks. Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-baserede IMAP-integrationer er i øjeblikket ikke understøttet."
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
         "Hold dine planer private for dig og din familie med en krypteret kalender"
       ],
+      "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
+        "Holder dig beskyttet ved at blokere alle netværksforbindelser, når du uventet mister forbindelsen til vores VPN-server."
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Etiketter er enkle tags, du kan tilføje til beskeder for at gøre dem lettere at finde eller anvende filtre på."
+      ],
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
         "Ligesom en mappe, er en boks et praktisk måde at organisere dine ting på. At dele bokse med venner og familie er på vej."
       ],
+      "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
+        "Spær adgangen til din virksomheds ressourcer fra det offentlige internet, og gør dem kun tilgængelige via dine private gateways."
+      ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Administrer dit abonnement, herunder tilpasning af dit abonnement. Accepterede betalingsmetoder er betalingskort, PayPal, kryptovaluta og bankoverførsel."
+      ],
+      "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
+        "På hverdage kan du modtage support fra ${ BRAND_NAME } kundesupportteamet inden for 24 timer efter en henvendelse."
+      ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
+        "Én VPN-forbindelse gør det muligt for én enhed at oprette forbindelse til ${ BRAND_NAME } VPN på ethvert givet tidspunkt. Hvis du f.eks. vil forbinde en telefon og en bærbar computer til ${ BRAND_NAME_TWO } VPN på samme tid, skal du bruge to VPN-forbindelser."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mulighed for at se ikke-private brugerindbakker som brugeren ville, herunder fulde besked- og kontaktoplysninger"
@@ -10419,6 +10656,9 @@
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
         "Personliggør din e-mail-signatur med logoer, billeder, ikoner til sociale medier, links til dine kontaktoplysninger og meget mere."
       ],
+      "Phone support is available from the ${ BRAND_NAME } Customer Success team during European business hours, for customers with 6 or more users": [
+        "Telefonsupport er tilgængelig fra ${ BRAND_NAME } Kundesucces-teamet i den europæiske åbningstid for kunder med 6 eller flere brugere."
+      ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Forhindrer, at beskeder kan tilgås af ${ BRAND_NAME } eller tredjeparter. De eneste personer, der kan læse beskederne, er afsenderen og den tilsigtede modtager."
       ],
@@ -10427,6 +10667,9 @@
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "Beskyt din familie mod skadelige hjemmesider, og få adgang til vores højhastigheds-VPN-servere for at streame dit yndlingsindhold."
+      ],
+      "Provides the highest level of account security protection and specialist support": [
+        "Giver det højeste niveau af kontosikkerhedsbeskyttelse og specialsupport"
       ],
       "Quickly set up out-of-office messages": [
         "Hurtig opsætning af meddelelser til automatisk svar, når du ikke er på kontoret"
@@ -10461,6 +10704,9 @@
       "SMTP allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME }.": [
         "SMTP gør det muligt for tredjepartstjenester eller -enheder at sende e-mail via ${ MAIL_APP_NAME }."
       ],
+      "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
+        "Det specialudviklede NetShield beskytter din enhed og gør din browsing hurtigere ved at blokere reklamer, trackere og malware."
+      ],
       "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Start med ${ freeStorageSize } og lås op for mere lagerplads undervejs. Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
       ],
@@ -10476,11 +10722,20 @@
       "Support for file-sharing protocols like BitTorrent": [
         "Understøttelse af fildelingsprotokoller såsom BitTorrent"
       ],
+      "Unique, on-the-fly email addresses that protect your online identity and let you control what lands in your inbox. From SimpleLogin by ${ BRAND_NAME }.": [
+        "Unikke e-mailadresser, der oprettes løbende og beskytter din online identitet og lader dig kontrollere, hvad der lander i din indbakke. Fra SimpleLogin af ${ BRAND_NAME }."
+      ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Brug dine egne brugerdefinerede e-mail-domæneadresser, f.eks. dig@ditnavn.com"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
         "Vi gemmer ingen sessionslog af din færden online og vi logger ikke metadata, som kan kompromittere dit privatliv"
+      ],
+      "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
+        "Vi stræber efter at hjælpe kunder, der er underlagt HIPAA/HITECH-bestemmelser, med at beskytte beskyttede sundhedsoplysninger (PHI). Underskrevne BAA'er er tilgængelige for alle ${ BRAND_NAME } for Business-kunder."
+      ],
+      "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
+        "Når du er forbundet til vores VPN, går dine DNS-forespørgsler gennem vores krypterede VPN-tunnel, hvilket øger dit privatliv og din sikkerhed online."
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME_TWO } users requires setting a password prior to sending.": [
         "Når du sender til andre ${ MAIL_APP_NAME } brugere, er krypteringen automatisk. Afsendelse til ikke-${ MAIL_APP_NAME_TWO } brugere kræver en adgangskode før afsendelse."
@@ -10510,6 +10765,9 @@
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Tilføj mere personalisering med 15 e-mailadresser og understøttelse af 3 brugerdefinerede e-maildomæner"
       ],
+      "AES 256-bit VPN encryption": [
+        "VPN-kryptering med AES 256-bit"
+      ],
       "Auto-connect": [
         "Forbind automatisk"
       ],
@@ -10519,12 +10777,39 @@
       "Boost your storage space to ${ bundleStorage } total": [
         "Forøg din lagerplads til ${ bundleStorage } i alt"
       ],
+      "Browser extension": [
+        "Browser-udvidelse"
+      ],
+      "Censorship circumvention": [
+        "Omgåelse af censur"
+      ],
+      "Central control panel": [
+        "Centralt kontrolpanel"
+      ],
       "Cover more ground with support for 10 custom email domains": [
         "Dæk dig mere ind, med understøttelse af 10 brugerdefinerede domæner"
       ],
       "Create up to ${ n } calendar": [
         "Opret op til ${ n } kalender",
         "Opret op til ${ n } kalendere"
+      ],
+      "Dedicated Account manager": [
+        "Dedikeret kontoadministrator"
+      ],
+      "Dedicated server locations in ${ numberOfCountries }+ countries": [
+        "Dedikerede serverplaceringer i ${ numberOfCountries }+ lande"
+      ],
+      "Dedicated server locations in North America and Europe": [
+        "Dedikerede serverplaceringer i Nordamerika og Europa"
+      ],
+      "Multi-platform support": [
+        "Understøttelse af flere platforme"
+      ],
+      "Private gateways": [
+        "Private gateways"
+      ],
+      "Require 2FA": [
+        "Kræve 2FA"
       ]
     },
     "Notification": {
@@ -10818,6 +11103,9 @@
       "No parent folder": [
         "Ingen overordnet mappe"
       ],
+      "No permission": [
+        "Ingen tilladelse"
+      ],
       "Normal": [
         "Normal"
       ],
@@ -10827,11 +11115,17 @@
       "On": [
         "Til"
       ],
+      "Organization only": [
+        "Kun organisation"
+      ],
       "Permanent": [
         "Permanent"
       ],
       "Plain text": [
         "Simpel tekst"
+      ],
+      "Receive from all": [
+        "Modtag fra alle"
       ],
       "Repeat daily": [
         "Gentag dagligt"
@@ -10853,6 +11147,12 @@
       ],
       "Select who can access...": [
         "Vælg, hvem der kan få adgang..."
+      ],
+      "Send to all": [
+        "Send til alle"
+      ],
+      "Setup incomplete": [
+        "Opsætning ikke fuldført"
       ],
       "Standard server configs": [
         "Standard serverkonfigurer"
@@ -10903,6 +11203,18 @@
       ]
     },
     "Organization capacity error": {
+      "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
+        "${ upgradeLink } for at tilføje flere brugere eller fjerne nogle brugerkonti for at frigøre plads."
+      ],
+      "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
+        "${ upgradeLink } for at få flere konti eller fjerne VPN-adgang fra nogle brugere."
+      ],
+      "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
+        "${ upgradeLink } for at få flere adresser, eller fjerne nogle adresser for at frigøre plads."
+      ],
+      "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
+        "${ upgradeLink } for at få mere lagerplads, eller fjerne noget lagerplads for at frigøre plads."
+      ],
       "Your plan includes a maximum of ${ availableAddresses } more address.": [
         "Dit abonnement har et maksimum ${ availableAddresses } adresse.",
         "Dit abonnement har et maksimum ${ availableAddresses } adresser."
@@ -10948,6 +11260,9 @@
       "Continue": [
         "Fortsæt"
       ],
+      "Continue to ${ appName } without upgrading": [
+        "Fortsæt til ${ appName } uden at opgradere"
+      ],
       "Continue to ${ free }": [
         "Fortsæt til ${ free }"
       ],
@@ -10965,6 +11280,9 @@
       ],
       "Download to continue ${ size }": [
         "Download for at fortsætte ${ size }"
+      ],
+      "Keep this plan": [
+        "Behold dette abonnement"
       ],
       "Or ${ createANewAccount }": [
         "Eller ${ createANewAccount }"
@@ -11041,8 +11359,17 @@
       "All premium ${ BRAND_NAME } services.": [
         "Alle premium ${ BRAND_NAME }-tjenester"
       ],
+      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Men du kan få ${ discount } i rabat ved at opgradere til **${ upsellPlanTitle }** - det koster kun ${ relativePrice } ekstra pr. måned."
+      ],
+      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
+        "Men du kan få ${ discount } i rabat ved at opgradere til **${ upsellPlanTitle }**."
+      ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Men du kan låse op for **${ unlockPlanTitle }** og alle premium ${ BRAND_NAME }-tjenester ved at opgradere til **${ upsellPlanTitle }** — det er kun ${ relativePrice } ekstra om måneden."
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }**.": [
+        "Men du kan låse op for **${ unlockPlanTitle }** og alle ekstra ${ BRAND_NAME }-tjenester ved at opgradere til **${ upsellPlanTitle }**."
       ],
       "By continuing, you agree to our ${ termsAndConditions }": [
         "Ved at fortsætte, accepterer du vores ${ termsAndConditions }"
@@ -11070,6 +11397,12 @@
       ],
       "End-to-end encryption": [
         "End-to-end kryptering"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "For kun **${ relativePrice } pr. måned** mere, får du adgang til ${ BRAND_NAME }'s førsteklasses adgangskodeadministrator!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "For kun **${ relativePrice } pr. måned** mere, får du adgang til ${ BRAND_NAME }'s førsteklasses VPN-tjeneste!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "For kun **${ relativePrice } pr. måned** mere, får du adgang til alle premium ${ BRAND_NAME }-tjenester!"
@@ -11205,6 +11538,23 @@
         "Nyt kredit/debetkort"
       ]
     },
+    "Permission": {
+      "No permission": [
+        "Ingen tilladelse"
+      ],
+      "Organization only": [
+        "Kun organisation"
+      ],
+      "Receive from all": [
+        "Modtag fra alle"
+      ],
+      "Send to all": [
+        "Send til alle"
+      ],
+      "Setup incomplete": [
+        "Opsætning ikke fuldført"
+      ]
+    },
     "Personal calendar section description": {
       "Create a calendar to stay on top of your schedule while keeping your data secure.": [
         "Opret en kalender, så du kan holde styr på din tidsplan, samtidig med at dine data er sikre."
@@ -11314,6 +11664,12 @@
       ]
     },
     "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "så ${ contactHref } vores salgsteam."
+      ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "Vælg det antal IP'er, du vil inkludere i dit abonnement. Hver ekstra IP koster ${ price }."
+      ],
       "Should you need more than ${ maxIPs } IP, ": [
         "Hvis du skulle have brug for flere end ${ maxIPs } IP-adresse, ",
         "Hvis du skulle have brug for flere end ${ maxIPs } IP-adresser, "
@@ -11322,6 +11678,9 @@
     "plan customizer, users": {
       "contact": [
         "kontakt"
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        "Vælg det antal brugere, du vil inkludere i dit abonnement. Hver ekstra bruger koster ${ price }."
       ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
         "Hvis du har brug for mere end ${ maxUsers } konto, bedes du ${ contact } vores salgsteam.",
@@ -11497,6 +11856,9 @@
       ],
       "Changing organization password": [
         "Opretning af organisationsadgangskode"
+      ],
+      "Creating or accessing non-private users": [
+        "Oprettelse af eller adgang til ikke-private brugere"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Grundet en adgangskodeændring er dine organisations administratorprivilegier blevet begrænset. De følgende handlinger er ikke længere tilladt:"
@@ -11756,6 +12118,30 @@
       ],
       "Request password reset": [
         "Anmod om nulstilling af adgangskode"
+      ],
+      "Use recovery method": [
+        "Brug gendannelsesmetode"
+      ]
+    },
+    "session_recovery:initiation:info": {
+      "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
+        "Hvis du har indstillet en **gendannelsesmetode**, kan du prøve kontogendannelse i stedet. Det vil give dig mulighed for at ændre din adgangskode med det samme."
+      ],
+      "We will contact you again when the password reset is available.": [
+        "Vi kontakter dig igen, når nulstillingen af adgangskoden er tilgængelig."
+      ],
+      "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
+        "Du kan til enhver tid tjekke status for din anmodning i ${ accountAndPasswordSectionLink } i indstillingerne."
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "sektionen for konto og adgangskode"
+      ]
+    },
+    "session_recovery:initiation:notification": {
+      "Password reset confirmed": [
+        "Nulstilling af adgangskode bekræftet"
       ]
     },
     "session_recovery:initiation:title": {
@@ -11827,9 +12213,17 @@
         "Afventer"
       ]
     },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "Anmodning om nulstilling af adgangskode"
+      ]
+    },
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "Gennemfør omstillingen til privatliv med vores sikre værktøjer til import og videresendelse."
+      ],
+      "Complete the transition to privacy with our secure importing tools.": [
+        "Fuldfør overgangen til privatlivsbeskyttelse med vores sikre importværktøjer."
       ],
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Hold din indbakke organiseret med mapper og etiketter ${ learnMoreLink }"
@@ -14019,6 +14413,11 @@
         "Din eksterne konto har muligvis nået sin 24-timers båndbreddegrænse. ${ BRAND_NAME } vil forsøge at genoptage importen så hurtig som muligt."
       ]
     },
+    "tooltip": {
+      "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "${ PASS_APP_NAME }: Sikre logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og meget mere."
+      ]
+    },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
         "Dette føjer automatisk din offentlige nøgle til hver besked, du afsender. Modtagere kan benytte denne til at bekræfte ægtheden af dine beskeder og sende krypterede beskeder til dig."
@@ -14027,6 +14426,14 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "Vælg de PGP-standardindstillinger, der bruges til at signere eller kryptere beskeder med brugere, som ikke benytter ${ BRAND_NAME }. Bemærk at Inline PGP fremtvinger almindelige tekstbeskeder."
+      ]
+    },
+    "Tooltip for news": {
+      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
+        "Få de seneste nyheder om privatlivets fred, og hvad der foregår i ${ BRAND_NAME }-universet"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Deltag i undersøgelser for at forbedre ${ BRAND_NAME } tjenester"
       ]
     },
     "Tooltip prompt to trust keys": {
@@ -14106,6 +14513,16 @@
         "Primær admin"
       ]
     },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "SSO-bruger leveret af din identitetsudbyder"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ length } character": [
         "Adgangskode skal indeholde mindst ${ length } tegn",
@@ -14170,11 +14587,28 @@
       "1-year": [
         "1 år"
       ],
+      "15-month": [
+        "15 måneders"
+      ],
       "2-year": [
         "2 år"
       ],
+      "30-month": [
+        "30 måneders"
+      ],
+      "Get ${ discount } off with a ${ billingCycle } subscription": [
+        "Spar ${ discount } med et ${ billingCycle }-abonnement"
+      ],
       "monthly": [
         "månedligt"
+      ]
+    },
+    "vpn_2step: feature": {
+      "Advanced VPN customizations": [
+        "Avancerede VPN-tilpasninger"
+      ],
+      "No ads": [
+        "Ingen reklamer"
       ]
     },
     "vpn_2step: info": {
@@ -14185,6 +14619,17 @@
       "${ n } year": [
         "${ n } år",
         "${ n } år"
+      ],
+      "Try ${ upsellPlanName } risk-free": [
+        "Prøv ${ upsellPlanName } risikofrit"
+      ],
+      "Your ${ selected } plan": [
+        "Dit ${ selected }-abonnement"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Adgang til Secure Core-servere, hurtige P2P/BitTorrent-downloads, Tor over VPN og meget mere."
       ]
     },
     "Warning": {
@@ -14291,37 +14736,13 @@
         "Hver ${ interval } uge på ${ multipleDaysString }",
         "Hver ${ interval } uge på ${ multipleDaysString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Hver ${ interval } uge på ${ multipleDaysString }, ${ timesString }",
-        "Hver ${ interval } uge på ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Hver ${ interval } uge på ${ multipleDaysString }, ${ untilString }",
-        "Hver ${ interval } uge på ${ multipleDaysString }, ${ untilString }"
-      ],
       "Every ${ interval } week on all days": [
         "Hver ${ interval } uge på alle dage",
         "Hver ${ interval } uge på alle dage"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Hver ${ interval } uge på alle dage, ${ timesString }",
-        "Hver ${ interval } uge på alle dage, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Hver ${ interval } uge på alle dage, ${ untilString }",
-        "Hver ${ interval } uge på alle dage, ${ untilString }"
-      ],
       "Every ${ interval } week on Friday": [
         "Hver ${ interval } uge om fredagen",
         "Hver ${ interval } uge om fredagen"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Hver ${ interval } uge om fredagen, ${ timesString }",
-        "Hver ${ interval } uge om fredagen, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Hver ${ interval } uge om fredagen, ${ untilString }",
-        "Hver ${ interval } uge om fredagen, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Hver ${ interval } uge om mandagen",
@@ -14331,21 +14752,9 @@
         "Hver ${ interval } uge om mandagen, ${ timesString }",
         "Hver ${ interval } uge om mandagen, ${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Hver ${ interval } uge om mandagen, ${ untilString }",
-        "Hver ${ interval } uge om mandagen, ${ untilString }"
-      ],
       "Every ${ interval } week on Saturday": [
         "Hver ${ interval } uge om lørdagen",
         "Hver ${ interval } uge om lørdagen"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Hver ${ interval } uge om lørdagen, ${ timesString }",
-        "Hver ${ interval } uge om lørdagen, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Hver ${ interval } uge om lørdagen, ${ untilString }",
-        "Hver ${ interval } uge om lørdagen, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Hver ${ interval } uge om søndagen",
@@ -14355,21 +14764,9 @@
         "Hver ${ interval } uge om søndagen, ${ timesString }",
         "Hver ${ interval } uge om søndagen, ${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Hver ${ interval } uge om søndagen, ${ untilString }",
-        "Hver ${ interval } uge om søndagen, ${ untilString }"
-      ],
       "Every ${ interval } week on Thursday": [
         "Hver ${ interval } uge om torsdagen",
         "Hver ${ interval } uge om torsdagen"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Hver ${ interval } uge om torsdagen, ${ timesString }",
-        "Hver ${ interval } uge om torsdagen, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Hver ${ interval } uge om torsdagen, ${ untilString }",
-        "Hver ${ interval } uge om torsdagen, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Hver ${ interval } uge om tirsdagen",
@@ -14379,102 +14776,36 @@
         "Hver ${ interval } uge om tirsdagen, ${ timesString }",
         "Hver ${ interval } uge om tirsdagen, ${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Hver ${ interval } uge om tirsdagen, ${ untilString }",
-        "Hver ${ interval } uge om tirsdagen, ${ untilString }"
-      ],
       "Every ${ interval } week on Wednesday": [
         "Hver ${ interval } uge om onsdagen",
         "Hver ${ interval } uge om onsdagen"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Hver ${ interval } uge om onsdagen, ${ timesString }",
-        "Hver ${ interval } uge om onsdagen, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Hver ${ interval } uge om onsdagen, ${ untilString }",
-        "Hver ${ interval } uge om onsdagen, ${ untilString }"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "Ugentlig på ${ multipleDaysString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Ugentligt på ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Ugentligt på ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Ugentligt på alle dage"
       ],
-      "Weekly on all days, ${ timesString }": [
-        "Ugentlig på alle dage, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Ugentlig på alle dage, ${ untilString }"
-      ],
       "Weekly on Friday": [
         "Ugentligt om fredagen"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Ugentligt om fredagen, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Ugentligt om fredagen, ${ untilString }"
       ],
       "Weekly on Monday": [
         "Ugentligt om mandagen"
       ],
-      "Weekly on Monday, ${ timesString }": [
-        "Ugentligt om mandagen, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Ugentligt om mandagen, ${ untilString }"
-      ],
       "Weekly on Saturday": [
         "Ugentligt om lørdagen"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Ugentligt om lørdagen, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Ugentligt om lørdagen, ${ untilString }"
       ],
       "Weekly on Sunday": [
         "Ugentligt om søndagen"
       ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Ugentligt om søndagen, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Ugentligt om søndagen, ${ untilString }"
-      ],
       "Weekly on Thursday": [
         "Ugentligt om torsdagen"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Ugentligt om torsdagen, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Ugentligt om torsdagen, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "Ugentligt om tirsdagen"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Ugentligt om tirsdagen, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Ugentligt om tirsdagen, ${ untilString }"
-      ],
       "Weekly on Wednesday": [
         "Ugentligt om onsdagen"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Ugentligt om onsdagen, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Ugentligt om onsdagen, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -14505,22 +14836,8 @@
         "Hver ${ interval } år",
         "Hver ${ interval } år"
       ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Hver ${ interval } år, ${ timesString }",
-        "Hver ${ interval } år, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Hver ${ interval } år, ${ untilString }",
-        "Hver ${ interval } år, ${ untilString }"
-      ],
       "Yearly": [
         "Årligt"
-      ],
-      "Yearly, ${ timesString }": [
-        "Årligt, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Årligt, ${ untilString }"
       ]
     }
   }
