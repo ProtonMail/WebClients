@@ -2442,10 +2442,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Odottamaton virhe. Tuonti on aloitettava uudelleen."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Tiedosto ${ formattedFilename } sisältää enemmän kuin ${ MAX_IMPORT_EVENTS_STRING } tapahtuman.",
-        "Tiedosto ${ formattedFilename } sisältää yli ${ MAX_IMPORT_EVENTS_STRING } tapahtumaa."
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Tiedostossa ${ formattedFilename } on virheellinen method-tietue, eikä sitä voida tuoda."
       ],
@@ -5654,6 +5650,11 @@
     "Select files": {
       "Upload": [
         "Lataa"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Tuloksia ei löytynyt"
       ]
     },
     "session_recovery:available:action": {

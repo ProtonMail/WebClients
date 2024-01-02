@@ -248,6 +248,9 @@
       "Create": [
         "創建"
       ],
+      "Create a link to share with anyone outside ${ BRAND_NAME }": [
+        "建立連結將檔案分享給 ${ BRAND_NAME } 用戶以外的任何人"
+      ],
       "Create account": [
         "創建帳號"
       ],
@@ -1302,6 +1305,9 @@
       ],
       "Add ${ PASS_APP_NAME }": [
         "增加 ${ PASS_APP_NAME }"
+      ],
+      "Add ${ plan } for ${ price } per month": [
+        "每月${ price }以添加${ plan }"
       ],
       "Become a Visionary": [
         "成為 Visionary"
@@ -2931,14 +2937,8 @@
       "Daily": [
         "每天"
       ],
-      "Daily, ${ untilString }": [
-        "每天，${ untilString }"
-      ],
       "Every ${ interval } days": [
         "每 ${ interval } 天"
-      ],
-      "Every ${ interval } days, ${ untilString }": [
-        "每 ${ interval } 天，${ untilString }"
       ],
       "until ${ dateString }": [
         "直到 ${ dateString } 為止"
@@ -3060,6 +3060,11 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "我們在您上載的 CSV 檔案中偵測到以下欄位。請勾選您想匯入的内容。"
+      ]
+    },
+    "Desktop app upsell": {
+      "Upgrade today or check again in early 2024 for access.": [
+        "現在升級或等到2024年初再來看看。"
       ]
     },
     "Disable account": {
@@ -3405,6 +3410,9 @@
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "確認電子郵件將寄至${ boldForwardeeEmail }"
       ],
+      "Automatically forward emails to another email address.": [
+        "自動轉寄電子郵件到電郵地址。"
+      ],
       "Forwarding is active": [
         "轉寄已啟用"
       ],
@@ -3508,6 +3516,9 @@
       ]
     },
     "email_forwarding_2023: Title": {
+      "Automatically forward emails to other accounts": [
+        "自動轉寄電子郵件到其他帳戶"
+      ],
       "Delete forwarding?": [
         "刪除轉寄?"
       ],
@@ -3534,7 +3545,24 @@
         "雙重驗證"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "付費${ DRIVE_SHORT_APP_NAME }，${ VPN_SHORT_APP_NAME }及${ PASS_SHORT_APP_NAME }功能"
+      ]
+    },
     "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 位使用者"
+      ],
+      "Early access to new apps and features": [
+        "搶先體驗新應用程式與功能"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "提早存取${ MAIL_APP_NAME }桌面應用程式"
+      ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "${ MAIL_SHORT_APP_NAME }付費及${ CALENDAR_APP_NAME }功能"
       ]
@@ -3939,6 +3967,9 @@
       "Try using only letters, numerals, and _.-": [
         "嘗試僅使用字母、數字與 _.-"
       ],
+      "Unexpected error, we can't import the contacts": [
+        "未知錯誤，無法匯入聯絡人"
+      ],
       "Unknown error": [
         "未知錯誤"
       ],
@@ -3993,6 +4024,9 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "您已使用您的方案中所有使用者。請升級您的方案以加入使用者。"
       ],
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "您必須啟用您的組織機構金鑰。非私人用戶沒有辦法在缺少組織機構金鑰的狀況下建立或存取。"
+      ],
       "You must privatize all users before generating new organization keys": [
         "在產生新的組織金鑰前，必須將所有使用者私有化"
       ],
@@ -4033,9 +4067,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "發生未知的錯誤。需重新開始匯入。"
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "您的檔案 ${ formattedFilename } 包含超過 ${ MAX_IMPORT_EVENTS_STRING } 則事件。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "您的檔案 ${ formattedFilename } 有一個無效的方法，因此無法匯入。"
@@ -4220,6 +4251,9 @@
       ],
       "Something went wrong": [
         "發生錯誤"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "切換至網頁版，以使用${ MAIL_APP_NAME }或${ CALENDAR_APP_NAME }。"
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "太多子系作業階段，請清除您的 cookies 然後重新登入。"
@@ -5645,6 +5679,9 @@
       "${ numberOfNonPrivateKeys } uploaded files are not valid private keys. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } 個上傳的檔案並非正確的私鑰。請確認後再試一次"
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } 已被移除。此套餐不適用於月訂方案。"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
       ],
@@ -6179,6 +6216,9 @@
       "Emailing preference saved": [
         "電子通訊喜好設定已儲存"
       ],
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "帶有此標籤${ nameDeleted }的電子郵件不會被刪除，仍可在對應的資料夾中找到。"
+      ],
       "Enable this address to join this calendar": [
         "啟用此位址來加入這個行事曆"
       ],
@@ -6611,6 +6651,9 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "不是您的裝置？請使用隱私瀏覽視窗登入並在完成後關閉它。${ learnMore }"
       ],
+      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
+        "軟體現處於測試版本。桌面版 ${ MAIL_APP_NAME } 可以在沒有瀏覽器的干擾下從電腦啟動。"
+      ],
       "Number of dedicated servers in the organization": [
         "團隊專用的伺服器數量"
       ],
@@ -6730,6 +6773,9 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "請注意：假如您刪除此域名，所有與其關聯的電郵位址都將被停用。"
+      ],
+      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "請知悉，若您刪除 ${ nameDeleted } 篩選器，我們將會停止處理任何有關於此篩選器的自動化操作。"
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "在按一下「確認」按鈕後，您的帳號儲值餘額將為 ${ creditsRemaining }。"
@@ -6944,6 +6990,9 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF 是用來指定使用者，已獲授權足以網域身分進行傳送電子郵件。因此，我們強烈建議將 ${ MAIL_APP_NAME } 加入到您的 SPF 記錄。請在 DNS 加入以下 TXT 記錄。這步驟通常可以在網域名稱註冊商的控制台完成。"
       ],
+      "Stay tuned for future promotions.": [
+        "持續關注未來的促銷活動。"
+      ],
       "Step ${ step }": [
         "步驟 ${ step }"
       ],
@@ -7009,6 +7058,9 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked }這一訊息將不再顯示，然而您仍可在${ encryptionAndKeysLink }中解除鎖定您的資料。"
+      ],
+      "The ${ MAIL_APP_NAME } Export Tool lets you export decrypted emails from your ${ MAIL_APP_NAME } account to your device. You can then view the messages or import them into another email account or email client.": [
+        "${ MAIL_APP_NAME } 帳戶匯出工具可讓您從 ${ MAIL_APP_NAME } 匯出已解密的電子郵件到您的裝置。您之後可以檢視訊息或將訊息匯入到其他帳戶或郵件應用程式。"
       ],
       "The calendar will be removed from your account.": [
         "該行事曆將會從您的帳號中移除。"
@@ -7093,6 +7145,9 @@
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此連結可能是同形異義字攻擊，請核對此連結是否是您想要造訪的連結，否則請不要開啟。"
+      ],
+      "This promotion link has expired.": [
+        "此促銷連結已過期。"
       ],
       "This token won’t be available after you close this window, and you should not share it with anyone.": [
         "這個權杖在您關閉這個視窗後將無法使用，而且您不該將它分享給任何人。"
@@ -7806,6 +7861,12 @@
       ]
     },
     "Key state badge": {
+      "Active": [
+        "啟用的"
+      ],
+      "Compromised": [
+        "已外洩"
+      ],
       "Disabled": [
         "已停用"
       ],
@@ -7814,6 +7875,12 @@
       ],
       "Inactive": [
         "未啟用"
+      ],
+      "Obsolete": [
+        "過時的"
+      ],
+      "Primary": [
+        "主要的"
       ]
     },
     "Key type option": {
@@ -9020,6 +9087,12 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } 歡迎電子郵件"
       ],
+      "${ DRIVE_APP_NAME } product updates": [
+        "${ DRIVE_APP_NAME } 產品更新"
+      ],
+      "${ PASS_APP_NAME } product updates": [
+        "${ PASS_APP_NAME } 產品更新"
+      ],
       "${ VPN_APP_NAME } product updates": [
         "${ VPN_APP_NAME } 產品更新"
       ]
@@ -9203,6 +9276,9 @@
       ],
       "Sign in": [
         "登入"
+      ],
+      "switch account": [
+        "切換帳號"
       ],
       "Terms": [
         "條款"
@@ -9441,20 +9517,8 @@
       "Every ${ interval } months ${ onDayString }": [
         "每 ${ interval } 個月的${ onDayString }"
       ],
-      "Every ${ interval } months ${ onDayString }, ${ timesString }": [
-        "每 ${ interval } 個月的${ onDayString }，${ timesString }"
-      ],
-      "Every ${ interval } months ${ onDayString }, ${ untilString }": [
-        "每 ${ interval } 個月的${ onDayString }，${ untilString }"
-      ],
       "Monthly ${ onDayString }": [
         "每月的${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "每月的${ onDayString }，${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "每月的${ onDayString }，${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -10024,6 +10088,9 @@
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "使用 ${ BRAND_NAME } 的 SimpleLogin 取得無限的別名"
       ],
+      "Snooze messages and get reminded when you want": [
+        "延後訊息急於想要時獲得通知"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }"
       ],
@@ -10072,6 +10139,9 @@
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "結合所有 ${ BRAND_NAME } 服務的全面隱私與安全性。"
+      ],
+      "Early access to new apps and features": [
+        "搶先體驗新應用程式與功能"
       ],
       "For next-level password management and identity protection.": [
         "用於下一個層級的密碼管理與身份保護。"
@@ -11854,6 +11924,9 @@
       ]
     },
     "Settings/labels - table": {
+      "Actions": [
+        "操作"
+      ],
       "Labels": [
         "標籤"
       ]
@@ -13054,6 +13127,9 @@
       "Delete calendar": [
         "刪除行事曆"
       ],
+      "Delete filter?": [
+        "刪除篩選器？"
+      ],
       "Delete folder?": [
         "刪除資料夾?"
       ],
@@ -13200,6 +13276,9 @@
       ],
       "Folders and labels": [
         "資料夾和標籤"
+      ],
+      "For ${ platform }": [
+        "${ platform } 版"
       ],
       "Forward and auto-reply": [
         "轉寄及自動回覆"
@@ -13576,6 +13655,9 @@
       "Summary": [
         "總結"
       ],
+      "Switch account": [
+        "切換帳號"
+      ],
       "Switch to one-password mode": [
         "切換為單一密碼模式"
       ],
@@ -13805,7 +13887,7 @@
         "IP 位址的大概位置"
       ],
       "Any protection applied to suspicious activity": [
-        "套用安全至可疑的活動"
+        "針對可疑活動所採取的保護措施"
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "與系統的日夜模式同步，在白天和晚上的偏好布景主題之間自動切換"
@@ -14260,29 +14342,11 @@
       "Every ${ interval } weeks on ${ multipleDaysString }": [
         "每 ${ interval } 個星期的${ multipleDaysString }"
       ],
-      "Every ${ interval } weeks on ${ multipleDaysString }, ${ timesString }": [
-        "每 ${ interval } 個星期的${ multipleDaysString }，${ timesString }"
-      ],
-      "Every ${ interval } weeks on ${ multipleDaysString }, ${ untilString }": [
-        "每 ${ interval } 個星期的${ multipleDaysString }，${ untilString }"
-      ],
       "Every ${ interval } weeks on all days": [
         "每${ interval }個星期，整週"
       ],
-      "Every ${ interval } weeks on all days, ${ timesString }": [
-        "每 ${ interval } 個星期，整周，${ timesString }"
-      ],
-      "Every ${ interval } weeks on all days, ${ untilString }": [
-        "每 ${ interval } 個星期，整週，${ untilString }"
-      ],
       "Every ${ interval } weeks on Friday": [
         "每 ${ interval } 個星期的週五"
-      ],
-      "Every ${ interval } weeks on Friday, ${ timesString }": [
-        "每 ${ interval } 個星期的週五，${ timesString }"
-      ],
-      "Every ${ interval } weeks on Friday, ${ untilString }": [
-        "每 ${ interval } 個星期的週五，${ untilString }"
       ],
       "Every ${ interval } weeks on Monday": [
         "每${ interval }個星期的週一"
@@ -14290,17 +14354,8 @@
       "Every ${ interval } weeks on Monday, ${ timesString }": [
         "每 ${ interval } 個星期的週一，${ timesString }"
       ],
-      "Every ${ interval } weeks on Monday, ${ untilString }": [
-        "每 ${ interval } 個星期的週一，${ untilString }"
-      ],
       "Every ${ interval } weeks on Saturday": [
         "每 ${ interval } 個星期的週六"
-      ],
-      "Every ${ interval } weeks on Saturday, ${ timesString }": [
-        "每 ${ interval } 個星期的週六，${ timesString }"
-      ],
-      "Every ${ interval } weeks on Saturday, ${ untilString }": [
-        "每 ${ interval } 個星期的週六，${ untilString }"
       ],
       "Every ${ interval } weeks on Sunday": [
         "每${ interval }個星期的週日"
@@ -14308,17 +14363,8 @@
       "Every ${ interval } weeks on Sunday, ${ timesString }": [
         "每 ${ interval } 個星期的週日，${ timesString }"
       ],
-      "Every ${ interval } weeks on Sunday, ${ untilString }": [
-        "每 ${ interval } 個星期的週日，${ untilString }"
-      ],
       "Every ${ interval } weeks on Thursday": [
         "每 ${ interval } 個星期的週四"
-      ],
-      "Every ${ interval } weeks on Thursday, ${ timesString }": [
-        "每 ${ interval } 個星期的週四，${ timesString }"
-      ],
-      "Every ${ interval } weeks on Thursday, ${ untilString }": [
-        "每 ${ interval } 個星期的週四，${ untilString }"
       ],
       "Every ${ interval } weeks on Tuesday": [
         "每 ${ interval } 個星期的週二"
@@ -14326,98 +14372,35 @@
       "Every ${ interval } weeks on Tuesday, ${ timesString }": [
         "每 ${ interval } 個星期的週二，${ timesString }"
       ],
-      "Every ${ interval } weeks on Tuesday, ${ untilString }": [
-        "每 ${ interval } 個星期的週二，${ untilString }"
-      ],
       "Every ${ interval } weeks on Wednesday": [
         "每 ${ interval } 個星期的週三"
-      ],
-      "Every ${ interval } weeks on Wednesday, ${ timesString }": [
-        "每 ${ interval } 個星期的週三，${ timesString }"
-      ],
-      "Every ${ interval } weeks on Wednesday, ${ untilString }": [
-        "每 ${ interval } 個星期的週三，${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "每星期的${ multipleDaysString }"
       ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "每星期的${ multipleDaysString }，${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "每星期的${ multipleDaysString }，${ untilString }"
-      ],
       "Weekly on all days": [
         "每星期的所有工作日"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "每星期的所有工作日，${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "每星期的所有工作日，${ untilString }"
       ],
       "Weekly on Friday": [
         "每星期的週五"
       ],
-      "Weekly on Friday, ${ timesString }": [
-        "每星期的週五，${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "每星期的週五，${ untilString }"
-      ],
       "Weekly on Monday": [
         "每星期的週一"
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        "每星期的週一，${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "每星期的週一，${ untilString }"
       ],
       "Weekly on Saturday": [
         "每星期的週六"
       ],
-      "Weekly on Saturday, ${ timesString }": [
-        "每星期的週六，${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "每星期的週六，${ untilString }"
-      ],
       "Weekly on Sunday": [
         "每星期的週日"
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        "每星期的週日，${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "每星期的週一，${ untilString }"
       ],
       "Weekly on Thursday": [
         "每星期的週四"
       ],
-      "Weekly on Thursday, ${ timesString }": [
-        "每星期的週四，${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "每星期的週四，${ untilString }"
-      ],
       "Weekly on Tuesday": [
         "每星期的週二"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "每星期的週二，${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "每星期的週二，${ untilString }"
-      ],
       "Weekly on Wednesday": [
         "每星期的週三"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "每星期的週三，${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "每星期的週三，${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -14447,20 +14430,8 @@
       "Every ${ interval } years": [
         "每 ${ interval } 年"
       ],
-      "Every ${ interval } years, ${ timesString }": [
-        "每${ interval }年，${ timesString }"
-      ],
-      "Every ${ interval } years, ${ untilString }": [
-        "每${ interval }年，${ untilString }"
-      ],
       "Yearly": [
         "每年"
-      ],
-      "Yearly, ${ timesString }": [
-        "每年，${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "每年，${ untilString }"
       ]
     }
   }

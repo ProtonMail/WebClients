@@ -26,6 +26,9 @@
       "Advanced options": [
         "Opzioni avanzate"
       ],
+      "Authenticate": [
+        "Autentica"
+      ],
       "Back": [
         "Indietro"
       ],
@@ -449,6 +452,9 @@
       "Authentication error": [
         "Errore di autenticazione"
       ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "Autenticazione non riuscita. Conferma la password del tuo account ${ BRAND_NAME } per procedere con l'esportazione."
+      ],
       "Auto-lock could not be activated": [
         "Impossibile attivare il blocco automatico"
       ],
@@ -530,6 +536,9 @@
       ],
       "File could not be parsed": [
         "Impossibile analizzare il file"
+      ],
+      "File does not match expected format": [
+        "Il formato del file non è corretto"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "Importazione per la cassaforte \"${ vaultData.name }\" non riuscita: ${ description }"
@@ -626,9 +635,6 @@
       ],
       "Unknown invite": [
         "Invito sconosciuto"
-      ],
-      "Unsupported ${ PASS_APP_NAME } file format": [
-        "Formato del file ${ PASS_APP_NAME } non supportato"
       ],
       "Unsupported 1Password file format": [
         "Formato del file 1Password non supportato"
@@ -1003,6 +1009,9 @@
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Codice PIN impostato con successo. Usalo per sbloccare ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "Conferma la password del tuo account ${ BRAND_NAME } per esportare i dati di ${ PASS_APP_NAME }"
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "Conferma il tuo codice PIN per disabilitare il blocco attuale.\n${ PASS_APP_NAME } non si bloccherà più."
@@ -1671,6 +1680,9 @@
       "Other": [
         "Altro"
       ],
+      "Password": [
+        "Password"
+      ],
       "Pick a vault": [
         "Scegli una cassaforte"
       ],
@@ -1747,6 +1759,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Ti piace ${ PASS_APP_NAME }?"
+      ],
+      "Enter your password": [
+        "Inserisci la tua password"
       ],
       "Enter your PIN": [
         "Inserisci il tuo PIN"

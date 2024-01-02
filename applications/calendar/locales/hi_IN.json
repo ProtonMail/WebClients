@@ -672,12 +672,6 @@
       "${ title } started on ${ formattedDate } at ${ formattedHour }": [
         "${ title } ${ formattedDate } को ${ formattedHour } पर शुरू हुआ"
       ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } ${ formattedDateWithoutTime } को शुरू हुआ"
-      ],
-      "${ title } started on ${ formattedDateWithTime }": [
-        "${ title } ${ formattedDateWithTime } को शुरू हुआ"
-      ],
       "${ title } started yesterday": [
         "${ title } कल शुरू हुआ"
       ],
@@ -695,12 +689,6 @@
       ],
       "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
         "${ title } ${ formattedDate } को ${ formattedHour } पे शुरू हुआ"
-      ],
-      "${ title } starts on ${ formattedDateWithoutTime }": [
-        "${ title } शुरू होगा ${ formattedDateWithoutTime } पे"
-      ],
-      "${ title } starts on ${ formattedDateWithTime }": [
-        "${ title } शुरू होगा ${ formattedDateWithTime } पे"
       ],
       "${ title } starts today": [
         "${ title } आज से शुरू हो रहा है"
@@ -2032,16 +2020,9 @@
       "Daily": [
         "रोज़"
       ],
-      "Daily, ${ untilString }": [
-        "दैनिक, ${ untilString }"
-      ],
       "Every ${ interval } day": [
         "हर ${ interval } दिन",
         "हर ${ interval } दिन"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "हर ${ interval } दिन, ${ untilString }",
-        "हर ${ interval } दिन, ${ untilString }"
       ],
       "until ${ dateString }": [
         "${ dateString } तक"
@@ -2631,10 +2612,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "एक अप्रत्याशित त्रुटि हुई। आयात फिर से शुरू होना चाहिए।"
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "आपके फाइल ${ formattedFilename } में ${ MAX_IMPORT_EVENTS_STRING } से ज़्यादा इवेंट हैं।",
-        "आपके फाइल ${ formattedFilename } में ${ MAX_IMPORT_EVENTS_STRING } से ज़्यादा इवेंट हैं।"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "आपके फाइल ${ formattedFilename } में एक अमान्य तरीका है और आयात नहीं जा सकता"
@@ -4776,22 +4753,8 @@
         "प्रत्येक ${ interval } माह ${ onDayString }",
         "प्रत्येक ${ interval } महीने ${ onDayString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "प्रत्येक ${ interval } महीना ${ onDayString }, ${ timesString } पर",
-        "प्रत्येक ${ interval } महीने ${ onDayString }, ${ timesString } पर"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "प्रत्येक ${ interval } महीना ${ onDayString }, ${ untilString } पर",
-        "प्रत्येक ${ interval } महीने ${ onDayString }, ${ untilString } पर"
-      ],
       "Monthly ${ onDayString }": [
         "मासिक ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "मासिक ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "मासिक ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -6589,37 +6552,13 @@
         "${ multipleDaysString } पर हर ${ interval } सप्ताह",
         "${ multipleDaysString } पर हर ${ interval } सप्ताह"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ timesString } पर",
-        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ timesString } पर"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ untilString } पर",
-        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ untilString } पर"
-      ],
       "Every ${ interval } week on all days": [
         "सभी दिनों पर हर ${ interval } सप्ताह",
         "सभी दिनों पर हर ${ interval } सप्ताह"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "प्रतिसप्ताह, ${ timesString }",
-        "प्रति ${ interval } सप्ताह, प्रतिदिन, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "सभी दिनों पर हर ${ interval } सप्ताह, ${ untilString }",
-        "सभी दिनों पर हर ${ interval } सप्ताह, ${ untilString }"
-      ],
       "Every ${ interval } week on Friday": [
         "प्रत्येक ${ interval } सप्ताह शुक्रवार को",
         "प्रत्येक ${ interval } सप्ताह शुक्रवार को"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ timesString }",
-        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ untilString }",
-        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "सोमवार को प्रत्येक ${ interval } सप्ताह",
@@ -6629,21 +6568,9 @@
         "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ timesString }",
         "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ untilString }",
-        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ untilString }"
-      ],
       "Every ${ interval } week on Saturday": [
         "शनिवार को प्रत्येक ${ interval } सप्ताह",
         "प्रति ${ interval } शनिवार को"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "प्रत्येक ${ interval } सप्ताह शनिवार को, ${ timesString }",
-        "शनिवार को प्रत्येक ${ interval } सप्ताह, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "हर ${ interval } हफ्ते शनिवार को, ${ untilString }",
-        "शनिवार को प्रत्येक ${ interval } सप्ताह, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "प्रत्येक ${ interval } सप्ताह रविवार को",
@@ -6653,21 +6580,9 @@
         "प्रत्येक ${ interval } सप्ताह रविवार को, ${ timesString }",
         "प्रत्येक ${ interval } सप्ताह रविवार को, ${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ untilString }",
-        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ untilString }"
-      ],
       "Every ${ interval } week on Thursday": [
         "प्रत्येक ${ interval } सप्ताह गुरुवार को",
         "प्रत्येक ${ interval } सप्ताह गुरुवार को"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ timesString }",
-        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ untilString }",
-        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "प्रत्येक ${ interval }} सप्ताह के मंगलवार को",
@@ -6677,102 +6592,36 @@
         "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ timesString }",
         "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ untilString }",
-        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ untilString }"
-      ],
       "Every ${ interval } week on Wednesday": [
         "बुधवार को हर ${ interval } सप्ताह",
         "प्रति ${ interval } बुधवार को"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "बुधवार को हर ${ interval } सप्ताह, ${ timesString }",
-        "बुधवार को हर ${ interval } सप्ताह, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "बुधवार को हर ${ interval } सप्ताह, ${ untilString }",
-        "बुधवार को हर ${ interval } सप्ताह, ${ untilString }"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "प्रतिसप्ताह ${ multipleDaysString } को"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "${ multipleDaysString }, ${ timesString } पर साप्ताहिक"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "${ multipleDaysString }, ${ untilString } पर साप्ताहिक"
       ],
       "Weekly on all days": [
         "साप्ताहिक सभी दिनों पर"
       ],
-      "Weekly on all days, ${ timesString }": [
-        "साप्ताहिक रूप से सभी दिन, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "साप्ताहिक रूप से सभी दिन, ${ untilString }"
-      ],
       "Weekly on Friday": [
         "शुक्रवार को साप्ताहिक"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "शुक्रवार को साप्ताहिक, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "शुक्रवार को साप्ताहिक, ${ untilString }"
       ],
       "Weekly on Monday": [
         "साप्ताहिक सोमवार को"
       ],
-      "Weekly on Monday, ${ timesString }": [
-        "सोमवार को साप्ताहिक, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "सोमवार को साप्ताहिक, ${ untilString }"
-      ],
       "Weekly on Saturday": [
         "शनिवार को साप्ताहिक"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "शनिवार को साप्ताहिक, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "शनिवार को साप्ताहिक, ${ untilString }"
       ],
       "Weekly on Sunday": [
         "साप्ताहिक रविवार को"
       ],
-      "Weekly on Sunday, ${ timesString }": [
-        "रविवार को साप्ताहिक, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "रविवार को साप्ताहिक, ${ untilString }"
-      ],
       "Weekly on Thursday": [
         "गुरुवार को साप्ताहिक"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "गुरुवार को साप्ताहिक, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "गुरुवार को साप्ताहिक, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "साप्ताहिक मंगलवार को"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "साप्ताहिक रूप से मंगलवार को, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "साप्ताहिक रूप से मंगलवार को, ${ untilString }"
-      ],
       "Weekly on Wednesday": [
         "बुधवार को साप्ताहिक"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "बुधवार को साप्ताहिक, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "बुधवार को साप्ताहिक, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -6803,22 +6652,8 @@
         "हर ${ interval } साल",
         "हर ${ interval } साल"
       ],
-      "Every ${ interval } year, ${ timesString }": [
-        "हर ${ interval } साल, ${ timesString }",
-        "हर ${ interval } वर्षों, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "हर ${ interval } साल, ${ untilString }",
-        "हर ${ interval } वर्षों, ${ untilString }"
-      ],
       "Yearly": [
         "सालाना"
-      ],
-      "Yearly, ${ timesString }": [
-        "वार्षिक, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "वार्षिक, ${ untilString }"
       ]
     }
   }

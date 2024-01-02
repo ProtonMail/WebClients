@@ -2380,10 +2380,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Er is een onverwachte fout opgetreden. Importeren moet opnieuw gestart worden."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS_STRING } afspraak.",
-        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS_STRING } afspraken."
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Uw bestand ${ formattedFilename } heeft een ongeldige methode en kan niet worden geïmporteerd."
       ],
@@ -5543,6 +5539,11 @@
     "Select files": {
       "Upload": [
         "Uploaden"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Geen resultaten gevonden"
       ]
     },
     "session_recovery:available:action": {

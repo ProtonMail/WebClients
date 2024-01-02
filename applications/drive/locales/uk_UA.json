@@ -163,6 +163,9 @@
       "Continue with Google": [
         "Продовжити з Google"
       ],
+      "Continue with Outlook": [
+        "Продовжити з Outlook"
+      ],
       "Copy address": [
         "Копіювати адресу"
       ],
@@ -311,6 +314,9 @@
         "Отримати посилання"
       ],
       "Get started": [
+        "Розпочнімо"
+      ],
+      "Get Started": [
         "Розпочнімо"
       ],
       "Get verification code": [
@@ -825,6 +831,9 @@
       ],
       "6 users": [
         "6 користувачів"
+      ],
+      "High speed streaming": [
+        "Перегляд трансляцій на високій швидкості"
       ],
       "Premium Password Manager": [
         "Premium Менеджер паролів"
@@ -1997,6 +2006,9 @@
     "eoy2023: Deal details": {
       "6 TB": [
         "6 ТБ"
+      ],
+      "6 users": [
+        "6 користувачів"
       ]
     },
     "Error": {
@@ -2341,12 +2353,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Сталася неочікувана помилка. Потрібно перезапустити імпорт."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS_STRING } подію.",
-        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS_STRING } події.",
-        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS_STRING } подій.",
-        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS_STRING } події."
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Ваш файл ${ formattedFilename } має недійсний метод і його неможливо імпортувати."
       ],
@@ -2624,6 +2630,9 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Преміум ${ DRIVE_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "До 6 користувачів"
       ]
@@ -3448,6 +3457,9 @@
       ],
       "Close this screen to exit.": [
         "Закрийте це вікно, щоб вийти."
+      ],
+      "Coming soon": [
+        "Незабаром"
       ],
       "Conflict": [
         "Конфлікт"
@@ -5588,6 +5600,11 @@
         "Вивантажити"
       ]
     },
+    "Select search results": {
+      "No results found": [
+        "Результатів не знайдено"
+      ]
+    },
     "session_recovery:available:action": {
       "Reset password": [
         "Скинути пароль"
@@ -5610,6 +5627,11 @@
         "${ timeRemaining.inHours } години",
         "${ timeRemaining.inHours } годин",
         "${ timeRemaining.inHours } годин"
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "Подивитись як"
       ]
     },
     "session_recovery:available:notification": {
@@ -5672,6 +5694,11 @@
         "${ gracePeriodHoursRemaining } години",
         "${ gracePeriodHoursRemaining } годин",
         "${ gracePeriodHoursRemaining } годин"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Скидання пароля"
       ]
     },
     "Signing preference for emails": {
@@ -5978,6 +6005,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Відгук надіслано"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Преміум ${ DRIVE_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {
@@ -6630,6 +6662,9 @@
       ],
       "Hide side panel": [
         "Приховати бічну панель"
+      ],
+      "Load image": [
+        "Завантажити зображення"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Оберіть PGP-схему для використання при підписуванні чи шифруванні для користувача. Зауважте, що PGP/Inline примусово перетворює повідомлення у звичайний текст"

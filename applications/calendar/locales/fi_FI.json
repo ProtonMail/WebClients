@@ -701,12 +701,6 @@
       "${ title } started on ${ formattedDate } at ${ formattedHour }": [
         "${ title } alkoi ${ formattedDate } klo ${ formattedHour }"
       ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } alkoi ${ formattedDateWithoutTime }"
-      ],
-      "${ title } started on ${ formattedDateWithTime }": [
-        "${ title } alkoi ${ formattedDateWithTime }"
-      ],
       "${ title } started yesterday": [
         "${ title } alkoi eilen"
       ],
@@ -724,12 +718,6 @@
       ],
       "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
         "${ title } alkaa ${ formattedDate } klo ${ formattedHour }"
-      ],
-      "${ title } starts on ${ formattedDateWithoutTime }": [
-        "${ title } alkaa ${ formattedDateWithoutTime }"
-      ],
-      "${ title } starts on ${ formattedDateWithTime }": [
-        "${ title } alkaa ${ formattedDateWithTime }"
       ],
       "${ title } starts today": [
         "${ title } alkaa tänään"
@@ -2108,16 +2096,9 @@
       "Daily": [
         "Päivittäin"
       ],
-      "Daily, ${ untilString }": [
-        "Päivittäin, ${ untilString }"
-      ],
       "Every ${ interval } day": [
         "${ interval } päivän välein",
         "${ interval } päivän välein"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "${ interval } päivän välein, ${ untilString }",
-        "${ interval } päivän välein, ${ untilString }"
       ],
       "until ${ dateString }": [
         "päättyen ${ dateString }"
@@ -2788,10 +2769,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Odottamaton virhe. Tuonti on aloitettava uudelleen."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Tiedosto ${ formattedFilename } sisältää enemmän kuin ${ MAX_IMPORT_EVENTS_STRING } tapahtuman.",
-        "Tiedosto ${ formattedFilename } sisältää yli ${ MAX_IMPORT_EVENTS_STRING } tapahtumaa."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Tiedostossa ${ formattedFilename } on virheellinen method-tietue, eikä sitä voida tuoda."
@@ -5086,22 +5063,8 @@
         "${ interval } kuukauden välein ${ onDayString }",
         "${ interval } kuukauden välein ${ onDayString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "${ interval } kuukauden välein ${ onDayString }, ${ timesString }",
-        "${ interval } kuukauden välein ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "${ interval } kuukauden välein ${ onDayString }, ${ untilString }",
-        "${ interval } kuukauden välein ${ onDayString }, ${ untilString }"
-      ],
       "Monthly ${ onDayString }": [
         "Kuukausittain ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Kuukausittain ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Kuukausittain ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -7106,37 +7069,13 @@
         "${ interval } viikon välein ${ multipleDaysString }",
         "${ interval } viikon välein ${ multipleDaysString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "${ interval } viikon välein ${ multipleDaysString }, ${ timesString }",
-        "${ interval } viikon välein ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "${ interval } viikon välein ${ multipleDaysString }, ${ untilString }",
-        "${ interval } viikon välein ${ multipleDaysString }, ${ untilString }"
-      ],
       "Every ${ interval } week on all days": [
         "${ interval } viikon välein kaikkina päivinä",
         "${ interval } viikon välein kaikkina päivinä"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "${ interval } viikon välein kaikkina päivinä, ${ timesString }",
-        "${ interval } viikon välein kaikkina päivinä, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "${ interval } viikon välein kaikkina päivinä, ${ untilString }",
-        "${ interval } viikon välein kaikkina päivinä, ${ untilString }"
-      ],
       "Every ${ interval } week on Friday": [
         "${ interval } viikon välein perjantaisin",
         "${ interval } viikon välein perjantaisin"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "${ interval } viikon välein perjantaisin, ${ timesString }",
-        "${ interval } viikon välein perjantaisin, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "${ interval } viikon välein perjantaisin, ${ untilString }",
-        "${ interval } viikon välein perjantaisin, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "${ interval } viikon välein maanantaisin",
@@ -7146,21 +7085,9 @@
         "${ interval } viikon välein maanantaisin, ${ timesString }",
         "${ interval } viikon välein maanantaisin, ${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "${ interval } viikon välein maanantaisin, ${ untilString }",
-        "${ interval } viikon välein maanantaisin, ${ untilString }"
-      ],
       "Every ${ interval } week on Saturday": [
         "${ interval } viikon välein lauantaisin",
         "${ interval } viikon välein lauantaisin"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "${ interval } viikon välein lauantaisin, ${ timesString }",
-        "${ interval } viikon välein lauantaisin, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "${ interval } viikon välein lauantaisin, ${ untilString }",
-        "${ interval } viikon välein lauantaisin, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "${ interval } viikon välein sunnuntaisin",
@@ -7170,21 +7097,9 @@
         "${ interval } viikon välein sunnuntaisin, ${ timesString }",
         "${ interval } viikon välein sunnuntaisin, ${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "${ interval } viikon välein sunnuntaisin, ${ untilString }",
-        "${ interval } viikon välein sunnuntaisin, ${ untilString }"
-      ],
       "Every ${ interval } week on Thursday": [
         "${ interval } viikon välein torstaisin",
         "${ interval } viikon välein torstaisin"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "${ interval } viikon välein torstaisin, ${ timesString }",
-        "${ interval } viikon välein torstaisin, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "${ interval } viikon välein torstaisin, ${ untilString }",
-        "${ interval } viikon välein torstaisin, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "${ interval } viikon välein tiistaisin",
@@ -7194,102 +7109,36 @@
         "${ interval } viikon välein tiistaisin, ${ timesString }",
         "${ interval } viikon välein tiistaisin, ${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "${ interval } viikon välein tiistaisin, ${ untilString }",
-        "${ interval } viikon välein tiistaisin, ${ untilString }"
-      ],
       "Every ${ interval } week on Wednesday": [
         "${ interval } viikon välein keskiviikkoisin",
         "${ interval } viikon välein keskiviikkoisin"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "${ interval } viikon välein keskiviikkoisin, ${ timesString }",
-        "${ interval } viikon välein keskiviikkoisin, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "${ interval } viikon välein keskiviikkoisin, ${ untilString }",
-        "${ interval } viikon välein keskiviikkoisin, ${ untilString }"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "Viikoittain ${ multipleDaysString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Viikoittain ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Viikoittain ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Viikoittain kaikkina päivinä"
       ],
-      "Weekly on all days, ${ timesString }": [
-        "Viikoittain kaikkina päivinä, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Viikoittain kaikkina päivinä, ${ untilString }"
-      ],
       "Weekly on Friday": [
         "Viikoittain perjantaisin"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Viikoittain perjantaisin, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Viikoittain perjantaisin, ${ untilString }"
       ],
       "Weekly on Monday": [
         "Viikoittain maanantaisin"
       ],
-      "Weekly on Monday, ${ timesString }": [
-        "Viikoittain maanantaisin, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Viikoittain maanantaisin, ${ untilString }"
-      ],
       "Weekly on Saturday": [
         "Viikoittain lauantaisin"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Viikoittain lauantaisin, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Viikoittain lauantaisin, ${ untilString }"
       ],
       "Weekly on Sunday": [
         "Viikoittain sunnuntaisin"
       ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Viikoittain sunnuntaisin, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Viikoittain sunnuntaisin, ${ untilString }"
-      ],
       "Weekly on Thursday": [
         "Viikoittain torstaisin"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Viikoittain torstaisin, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Viikoittain torstaisin, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "Viikoittain tiistaisin"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Viikoittain tiistaisin, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Viikoittain tiistaisin, ${ untilString }"
-      ],
       "Weekly on Wednesday": [
         "Viikoittain keskiviikkoisin"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Viikoittain keskiviikkoisin, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Viikoittain keskiviikkoisin, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -7320,22 +7169,8 @@
         "${ interval } vuoden välein",
         "${ interval } vuoden välein"
       ],
-      "Every ${ interval } year, ${ timesString }": [
-        "${ interval } vuoden välein, ${ timesString }",
-        "${ interval } vuoden välein, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "${ interval } vuoden välein, ${ untilString }",
-        "${ interval } vuoden välein, ${ untilString }"
-      ],
       "Yearly": [
         "Vuosittain"
-      ],
-      "Yearly, ${ timesString }": [
-        "Vuosittain, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Vuosittain, ${ untilString }"
       ]
     }
   }

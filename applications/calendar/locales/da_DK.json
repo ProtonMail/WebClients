@@ -409,7 +409,7 @@
         "Åbn Indstillinger"
       ],
       "Pause indexing": [
-        "Pause indeksering"
+        "Sæt indeksering på pause"
       ],
       "Preview contact": [
         "Forhåndsvis kontakt"
@@ -701,12 +701,6 @@
       "${ title } started on ${ formattedDate } at ${ formattedHour }": [
         "${ title } startede ${ formattedDate } ${ formattedHour }"
       ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } startede ${ formattedDateWithoutTime }"
-      ],
-      "${ title } started on ${ formattedDateWithTime }": [
-        "${ title } startede ${ formattedDateWithTime }"
-      ],
       "${ title } started yesterday": [
         "${ title } startede i går"
       ],
@@ -724,12 +718,6 @@
       ],
       "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
         "${ title } starter ${ formattedDate } ${ formattedHour }"
-      ],
-      "${ title } starts on ${ formattedDateWithoutTime }": [
-        "${ title } starter ${ formattedDateWithoutTime }"
-      ],
-      "${ title } starts on ${ formattedDateWithTime }": [
-        "${ title } starter ${ formattedDateWithTime }"
       ],
       "${ title } starts today": [
         "${ title } starter i dag"
@@ -2103,16 +2091,9 @@
       "Daily": [
         "Dagligt"
       ],
-      "Daily, ${ untilString }": [
-        "Daglig, ${ untilString }"
-      ],
       "Every ${ interval } day": [
         "Hver ${ interval } dag",
         "Hver ${ interval } dag"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Hver ${ interval } dag, ${ untilString }",
-        "Hver ${ interval } dag, ${ untilString }"
       ],
       "until ${ dateString }": [
         "indtil ${ dateString }"
@@ -2774,10 +2755,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "En uventet fejl opstod. Import skal genstartes."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Din fil ${ formattedFilename } indeholder mere end ${ MAX_IMPORT_EVENTS_STRING } begivenhed.",
-        "Din fil ${ formattedFilename } indeholder mere end ${ MAX_IMPORT_EVENTS_STRING } begivenheder."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Din fil ${ formattedFilename } har en ugyldig metode og kan ikke importeres."
@@ -3692,10 +3669,10 @@
         "En aflysningsmail vil blive sendt til fjernede deltagere."
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
-        "En aflysningsmail vil blive sendt til deltagerne i arrangementet. Vil du slette denne begivenhed?"
+        "En aflysningsmail vil blive sendt til begivenhedens deltagere. Vil du slette alle begivenheder i denne serie?"
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
-        "En aflysningsmail vil blive sendt til deltagerne i arrangementet. Vil du slette denne begivenhed?"
+        "En aflysningsmail vil blive sendt til begivenhedens deltagere. Vil du slette denne begivenhed?"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Et telefonnummer kan kun bruges til at verificere én ${ BRAND_NAME } konto"
@@ -4314,7 +4291,7 @@
         "Du vil opdatere alle begivenheder i denne serie. Tilføjede og fjernede deltagere vil blive underrettet."
       ],
       "You will update all the events in this series. An invitation will be sent to the event participants.": [
-        "Du vil opdatere alle begivenheder i denne serie. En invitation vil blive sendt til deltagerne i arrangementet."
+        "Alle begivenheder i denne serie vil blive opdateret. En invitation vil blive sendt til begivenhedens deltagere."
       ],
       "You will update all the events in this series. Existent and added participants will be notified.": [
         "Du vil opdatere alle begivenheder i denne serie. Eksisterende og tilføjede deltagere vil blive underrettet."
@@ -4350,10 +4327,10 @@
         "Din konto har mindst én faktura, der er forfalden. Din konto er begrænset. Fortsat manglende betaling vil blokere dine e-mails og delingslinks. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        "Din adresse er deaktiveret. En aflysningsmail kan ikke sendes til deltagerne i arrangementet. Vil du slette denne begivenhed alligevel?"
+        "Din adresse er deaktiveret. En aflysningsmail kan ikke blive sendt til begivenhedens deltagere. Vil du alligevel slette alle begivenheder i denne serie?"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        "Din adresse er deaktiveret. En aflysningsmail kan ikke sendes til deltagerne i arrangementet. Vil du slette denne begivenhed alligevel?"
+        "Din adresse er deaktiveret. En aflysningsmail kan ikke blive sendt til begivenhedens deltagere. Vil du alligevel slette denne begivenhed?"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
@@ -5059,22 +5036,8 @@
         "Hver ${ interval } måned ${ onDayString }",
         "Hver ${ interval } måned ${ onDayString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Hver ${ interval } måned ${ onDayString }, ${ timesString }",
-        "Hver ${ interval } måned ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Hver ${ interval } måned ${ onDayString }, ${ untilString }",
-        "Hver ${ interval } måned ${ onDayString }, ${ untilString }"
-      ],
       "Monthly ${ onDayString }": [
         "Månedligt ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Månedligt ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Månedligt ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -7076,37 +7039,13 @@
         "Hver ${ interval } uge på ${ multipleDaysString }",
         "Hver ${ interval } uge på ${ multipleDaysString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Hver ${ interval } uge på ${ multipleDaysString }, ${ timesString }",
-        "Hver ${ interval } uge på ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Hver ${ interval } uge på ${ multipleDaysString }, ${ untilString }",
-        "Hver ${ interval } uge på ${ multipleDaysString }, ${ untilString }"
-      ],
       "Every ${ interval } week on all days": [
         "Hver ${ interval } uge på alle dage",
         "Hver ${ interval } uge på alle dage"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Hver ${ interval } uge på alle dage, ${ timesString }",
-        "Hver ${ interval } uge på alle dage, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Hver ${ interval } uge på alle dage, ${ untilString }",
-        "Hver ${ interval } uge på alle dage, ${ untilString }"
-      ],
       "Every ${ interval } week on Friday": [
         "Hver ${ interval } uge om fredagen",
         "Hver ${ interval } uge om fredagen"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Hver ${ interval } uge om fredagen, ${ timesString }",
-        "Hver ${ interval } uge om fredagen, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Hver ${ interval } uge om fredagen, ${ untilString }",
-        "Hver ${ interval } uge om fredagen, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Hver ${ interval } uge om mandagen",
@@ -7116,21 +7055,9 @@
         "Hver ${ interval } uge om mandagen, ${ timesString }",
         "Hver ${ interval } uge om mandagen, ${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Hver ${ interval } uge om mandagen, ${ untilString }",
-        "Hver ${ interval } uge om mandagen, ${ untilString }"
-      ],
       "Every ${ interval } week on Saturday": [
         "Hver ${ interval } uge om lørdagen",
         "Hver ${ interval } uge om lørdagen"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Hver ${ interval } uge om lørdagen, ${ timesString }",
-        "Hver ${ interval } uge om lørdagen, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Hver ${ interval } uge om lørdagen, ${ untilString }",
-        "Hver ${ interval } uge om lørdagen, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Hver ${ interval } uge om søndagen",
@@ -7140,21 +7067,9 @@
         "Hver ${ interval } uge om søndagen, ${ timesString }",
         "Hver ${ interval } uge om søndagen, ${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Hver ${ interval } uge om søndagen, ${ untilString }",
-        "Hver ${ interval } uge om søndagen, ${ untilString }"
-      ],
       "Every ${ interval } week on Thursday": [
         "Hver ${ interval } uge om torsdagen",
         "Hver ${ interval } uge om torsdagen"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Hver ${ interval } uge om torsdagen, ${ timesString }",
-        "Hver ${ interval } uge om torsdagen, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Hver ${ interval } uge om torsdagen, ${ untilString }",
-        "Hver ${ interval } uge om torsdagen, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Hver ${ interval } uge om tirsdagen",
@@ -7164,102 +7079,36 @@
         "Hver ${ interval } uge om tirsdagen, ${ timesString }",
         "Hver ${ interval } uge om tirsdagen, ${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Hver ${ interval } uge om tirsdagen, ${ untilString }",
-        "Hver ${ interval } uge om tirsdagen, ${ untilString }"
-      ],
       "Every ${ interval } week on Wednesday": [
         "Hver ${ interval } uge om onsdagen",
         "Hver ${ interval } uge om onsdagen"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Hver ${ interval } uge om onsdagen, ${ timesString }",
-        "Hver ${ interval } uge om onsdagen, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Hver ${ interval } uge om onsdagen, ${ untilString }",
-        "Hver ${ interval } uge om onsdagen, ${ untilString }"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "Ugentlig på ${ multipleDaysString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Ugentligt på ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Ugentligt på ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Ugentligt på alle dage"
       ],
-      "Weekly on all days, ${ timesString }": [
-        "Ugentlig på alle dage, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Ugentlig på alle dage, ${ untilString }"
-      ],
       "Weekly on Friday": [
         "Ugentligt om fredagen"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Ugentligt om fredagen, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Ugentligt om fredagen, ${ untilString }"
       ],
       "Weekly on Monday": [
         "Ugentligt om mandagen"
       ],
-      "Weekly on Monday, ${ timesString }": [
-        "Ugentligt om mandagen, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Ugentligt om mandagen, ${ untilString }"
-      ],
       "Weekly on Saturday": [
         "Ugentligt om lørdagen"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Ugentligt om lørdagen, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Ugentligt om lørdagen, ${ untilString }"
       ],
       "Weekly on Sunday": [
         "Ugentligt om søndagen"
       ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Ugentligt om søndagen, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Ugentligt om søndagen, ${ untilString }"
-      ],
       "Weekly on Thursday": [
         "Ugentligt om torsdagen"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Ugentligt om torsdagen, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Ugentligt om torsdagen, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "Ugentligt om tirsdagen"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Ugentligt om tirsdagen, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Ugentligt om tirsdagen, ${ untilString }"
-      ],
       "Weekly on Wednesday": [
         "Ugentligt om onsdagen"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Ugentligt om onsdagen, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Ugentligt om onsdagen, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -7290,22 +7139,8 @@
         "Hver ${ interval } år",
         "Hver ${ interval } år"
       ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Hver ${ interval } år, ${ timesString }",
-        "Hver ${ interval } år, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Hver ${ interval } år, ${ untilString }",
-        "Hver ${ interval } år, ${ untilString }"
-      ],
       "Yearly": [
         "Årligt"
-      ],
-      "Yearly, ${ timesString }": [
-        "Årligt, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Årligt, ${ untilString }"
       ]
     }
   }

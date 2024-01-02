@@ -2964,16 +2964,9 @@
       "Daily": [
         "Dagelijks"
       ],
-      "Daily, ${ untilString }": [
-        "Dagelijks, ${ untilString }"
-      ],
       "Every ${ interval } day": [
         "Elke ${ interval } dag",
         "Elke ${ interval } dagen"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Elke ${ interval } dag, ${ untilString }",
-        "Elke ${ interval } dagen, ${ untilString }"
       ],
       "until ${ dateString }": [
         "tot ${ dateString }"
@@ -4132,10 +4125,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Er is een onverwachte fout opgetreden. Importeren moet opnieuw gestart worden."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS_STRING } afspraak.",
-        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS_STRING } afspraken."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Uw bestand ${ formattedFilename } heeft een ongeldige methode en kan niet worden geïmporteerd."
@@ -9659,22 +9648,8 @@
         "Elke ${ interval } maand ${ onDayString }",
         "Elke ${ interval } maanden ${ onDayString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Elke ${ interval } maand ${ onDayString }, ${ timesString }",
-        "Elke ${ interval } maanden ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Elke ${ interval } maand ${ onDayString }, ${ untilString }",
-        "Elke ${ interval } maanden ${ onDayString }, ${ untilString }"
-      ],
       "Monthly ${ onDayString }": [
         "Maandelijks ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Maandelijks ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Maandelijks ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -14542,37 +14517,13 @@
         "Elke week op ${ multipleDaysString }",
         "Elke ${ interval } weken op ${ multipleDaysString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Elke ${ interval } week op ${ multipleDaysString }, ${ timesString }",
-        "Elke ${ interval } weken op ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Elke ${ interval } week op ${ multipleDaysString }, ${ untilString }",
-        "Elke ${ interval } weken op ${ multipleDaysString }, ${ untilString }"
-      ],
       "Every ${ interval } week on all days": [
         "Elke ${ interval } op alle dagen",
         "Elke ${ interval } weken op alle dagen"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Elke week op alle dagen, ${ timesString }",
-        "Elke ${ interval } weken op alle dagen, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Elke ${ interval } week op alle dagen, ${ untilString }",
-        "Elke ${ interval } weken op alle dagen, ${ untilString }"
-      ],
       "Every ${ interval } week on Friday": [
         "Elke week op vrijdag",
         "Elke ${ interval } weken op vrijdag"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Elke ${ interval } week op vrijdag, ${ timesString }",
-        "Elke ${ interval } weken op vrijdag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Elke ${ interval } week op vrijdag, ${ untilString }",
-        "Elke ${ interval } week op vrijdag, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Elke ${ interval } op maandag",
@@ -14582,21 +14533,9 @@
         "Elke ${ interval } week op maandag, ${ timesString }",
         "Elke ${ interval } weken op maandag, ${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Elke ${ interval } week op maandag, ${ untilString }",
-        "Elke ${ interval } weken op maandag, ${ untilString }"
-      ],
       "Every ${ interval } week on Saturday": [
         "Elke week op zaterdag",
         "Elke ${ interval } weken op zaterdag"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Elke ${ interval } week op zaterdag, ${ timesString }",
-        "Elke ${ interval } weken op zaterdag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Elke ${ interval } week op zaterdag, ${ untilString }",
-        "Elke ${ interval } weken op zaterdag, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Elke ${ interval } op zondag",
@@ -14606,21 +14545,9 @@
         "Elke week op zondag, ${ timesString }",
         "Elke ${ interval } weken op zondag, ${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Elke ${ interval } week op zondag, ${ untilString }",
-        "Elke ${ interval } weken op zondag, ${ untilString }"
-      ],
       "Every ${ interval } week on Thursday": [
         "Elke ${ interval } op donderdag",
         "Elke ${ interval } weken op donderdag"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Elke ${ interval } week op donderdag, ${ timesString }",
-        "Elke ${ interval } weken op donderdag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Elke ${ interval } week op donderdag, ${ untilString }",
-        "Elke ${ interval } weken op donderdag, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Elke ${ interval } op dinsdag",
@@ -14630,102 +14557,36 @@
         "Elke ${ interval } week op dinsdag, ${ timesString }",
         "Elke ${ interval } weken op dinsdag, ${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Elke ${ interval } week op dinsdag, ${ untilString }",
-        "Elke ${ interval } weken op dinsdag, ${ untilString }"
-      ],
       "Every ${ interval } week on Wednesday": [
         "Elke ${ interval } op woensdag",
         "Elke ${ interval } weken op woensdag"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Elke ${ interval } week op woensdag, ${ timesString }",
-        "Elke ${ interval } weken op woensdag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Elke ${ interval } week op woensdag, ${ untilString }",
-        "Elke ${ interval } week op woensdag, ${ untilString }"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "Wekelijks op ${ multipleDaysString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Wekelijks op ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Wekelijks op ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Wekelijks op alle dagen"
       ],
-      "Weekly on all days, ${ timesString }": [
-        "Wekelijks op alle dagen, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Wekelijks op alle dagen, ${ untilString }"
-      ],
       "Weekly on Friday": [
         "Wekelijks op vrijdag"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Wekelijks op vrijdag ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Wekelijks op vrijdag ${ untilString }"
       ],
       "Weekly on Monday": [
         "Wekelijks op maandag"
       ],
-      "Weekly on Monday, ${ timesString }": [
-        "Wekelijks op maandag, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Wekelijks op maandag, ${ untilString }"
-      ],
       "Weekly on Saturday": [
         "Wekelijks op zaterdag"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Wekelijks op zaterdag ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Wekelijks op zaterdag ${ untilString }"
       ],
       "Weekly on Sunday": [
         "Wekelijks op zondag"
       ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Wekelijks op zondag ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Wekelijks op zondag ${ untilString }"
-      ],
       "Weekly on Thursday": [
         "Wekelijks op donderdag"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Wekelijks op donderdag ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Wekelijks op donderdag ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "Wekelijks op dinsdag"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Wekelijks op dinsdag ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Wekelijks op dinsdag ${ untilString }"
-      ],
       "Weekly on Wednesday": [
         "Wekelijks op woensdag"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Wekelijks op woensdag ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Wekelijks op woensdag ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -14756,22 +14617,8 @@
         "Elk jaar",
         "Elke ${ interval } jaar"
       ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Elke jaar, ${ timesString }",
-        "Elke ${ interval } jaar, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Elke jaar, ${ untilString }",
-        "Elke ${ interval } jaar, ${ untilString }"
-      ],
       "Yearly": [
         "Jaarlijks"
-      ],
-      "Yearly, ${ timesString }": [
-        "Jaarlijks ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Jaarlijks ${ untilString }"
       ]
     }
   }
