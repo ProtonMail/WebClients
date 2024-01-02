@@ -7,7 +7,6 @@ import { MINUTE } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { WasmAccount, WasmChain, WasmNetwork, WasmPagination, WasmWallet, WasmWalletConfig } from '../../pkg';
-import { scriptTypeToBip } from '../constants';
 import {
     ApiWallet,
     BlockchainAccountRecord,
@@ -131,7 +130,7 @@ export const useBlockchainSyncing = (wallets?: ApiWallet[]) => {
 
                 for (const account of wallet.accounts) {
                     try {
-                        const accountKey = wasmWallet.addAccount(scriptTypeToBip[account.ScriptType], account.Index);
+                        const accountKey = wasmWallet.addAccount(account.ScriptType, account.Index);
                         const wasmAccount = wasmWallet.getAccount(accountKey);
 
                         if (!wasmAccount) {

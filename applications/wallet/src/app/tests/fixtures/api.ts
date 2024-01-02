@@ -1,9 +1,8 @@
-import { WasmBitcoinUnit } from '../../../pkg';
+import { WasmBitcoinUnit, WasmScriptType } from '../../../pkg';
 import {
     ApiWallet,
     BitcoinUnit,
     FiatCurrency,
-    ScriptType,
     UserWalletSettings,
     Wallet,
     WalletAccount,
@@ -139,7 +138,7 @@ const walletAccountOneA: WalletAccount = {
     WalletID: 0,
     Index: 0,
     Label: 'Account 1',
-    ScriptType: ScriptType.NativeSegwit,
+    ScriptType: WasmScriptType.NativeSegwit,
     CreateTime: 1701139393899,
     ModifyTime: 1701139393899,
 };
@@ -149,7 +148,7 @@ const walletAccountOneB: WalletAccount = {
     WalletID: 0,
     Index: 2,
     Label: 'Account 2',
-    ScriptType: ScriptType.NativeSegwit,
+    ScriptType: WasmScriptType.NativeSegwit,
     CreateTime: 1701139393899,
     ModifyTime: 1701139393899,
 };
@@ -159,7 +158,7 @@ const walletAccountTwoA: WalletAccount = {
     WalletID: 1,
     Index: 0,
     Label: 'Main account',
-    ScriptType: ScriptType.NestedSegwit,
+    ScriptType: WasmScriptType.NestedSegwit,
     CreateTime: 1701139393899,
     ModifyTime: 1701139393899,
 };
@@ -169,7 +168,7 @@ const walletAccountTwoB: WalletAccount = {
     WalletID: 1,
     Index: 0,
     Label: 'Segwit Account',
-    ScriptType: ScriptType.NativeSegwit,
+    ScriptType: WasmScriptType.NativeSegwit,
     CreateTime: 1701139393899,
     ModifyTime: 1701139393899,
 };
@@ -179,7 +178,7 @@ const walletAccountThree: WalletAccount = {
     WalletID: 2,
     Index: 0,
     Label: 'Electrum account',
-    ScriptType: ScriptType.NativeSegwit,
+    ScriptType: WasmScriptType.NativeSegwit,
     CreateTime: 1701139393899,
     ModifyTime: 1701139393899,
 };

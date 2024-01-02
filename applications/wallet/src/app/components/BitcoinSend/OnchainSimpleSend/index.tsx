@@ -1,23 +1,17 @@
-import { useEffect, useState } from 'react';
-
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 
-import { WasmBitcoinUnit, WasmPaymentLink } from '../../../../pkg';
-import { WalletAndAccountSelectorValue, WalletSelector } from '../../../atoms';
-import { useBlockchainContext } from '../../../contexts';
-import { usePsbt } from '../../../hooks/usePsbt';
-import { useRecipients } from '../../../hooks/useRecipients';
-import { useTxBuilder } from '../../../hooks/useTxBuilder';
-import { getDefaultAccount, getSelectedWallet } from '../../../utils';
+import { WasmPaymentLink } from '../../../../pkg';
+import { WalletSelector } from '../../../atoms';
 import { OnChainFeesSelector } from '../OnchainFeesSelector';
 import { OnchainTransactionAdvancedOptions } from '../OnchainTransactionAdvancedOptions';
 import { OnchainTransactionBroadcastConfirmation } from '../OnchainTransactionBroadcastConfirmation';
 import { OnchainTransactionReview } from '../OnchainTransactionReview';
 import { RecipientList } from '../RecipientList';
+import { useOnchainSimpleSend } from './useOnchainSimpleSend';
 
 interface Props {
     paymentLink?: WasmPaymentLink;
@@ -25,48 +19,25 @@ interface Props {
 }
 
 export const OnchainSimpleSend = ({ paymentLink, defaultWalletId }: Props) => {
-    const { wallets } = useBlockchainContext();
-    const { txBuilder, updateTxBuilder } = useTxBuilder();
-
-    const { updateRecipient } = useRecipients(updateTxBuilder);
-
-    const defaultWallet = getSelectedWallet(wallets, defaultWalletId);
-    const [walletAndAccount, setWalletAndAccount] = useState({
-        wallet: defaultWallet,
-        account: getDefaultAccount(defaultWallet),
-    });
-
-    const handleSelectWalletAndAccount = (value: WalletAndAccountSelectorValue) => {
-        setWalletAndAccount((prev) => ({ ...prev, ...value }));
-    };
-
-    const account = walletAndAccount.account;
-    const { finalPsbt, loadingBroadcast, broadcastedTxId, createPsbt, erasePsbt, signAndBroadcastPsbt } = usePsbt({
+    const {
         walletAndAccount,
+        wallets,
+
         txBuilder,
-    });
+        updateTxBuilder,
 
-    useEffect(() => {
-        const account = walletAndAccount.account?.wasmAccount;
-        if (account) {
-            void updateTxBuilder((txBuilder) => txBuilder.setAccount(account));
-        }
-    }, [walletAndAccount.account, updateTxBuilder]);
+        finalPsbt,
+        loadingBroadcast,
+        broadcastedTxId,
+        createPsbt,
+        erasePsbt,
+        signAndBroadcastPsbt,
 
-    useEffect(() => {
-        if (!paymentLink) {
-            return;
-        }
+        account,
 
-        const data = paymentLink.assumeOnchain();
-
-        void updateTxBuilder((txBuilder) =>
-            txBuilder
-                .clearRecipients()
-                .addRecipient()
-                .updateRecipient(0, data.address, Number(data.amount), WasmBitcoinUnit.SAT)
-        );
-    }, [paymentLink, updateTxBuilder]);
+        updateRecipient,
+        handleSelectWalletAndAccount,
+    } = useOnchainSimpleSend(defaultWalletId, paymentLink);
 
     if (loadingBroadcast) {
         return (

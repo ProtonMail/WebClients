@@ -9,6 +9,14 @@ export function library_version(): string;
 export function setPanicHook(): void;
 /**
 */
+export enum WasmCoinSelection {
+  BranchAndBound = 0,
+  LargestFirst = 1,
+  OldestFirst = 2,
+  Manual = 3,
+}
+/**
+*/
 export enum WasmNetwork {
 /**
 * Mainnet Bitcoin.
@@ -26,6 +34,30 @@ export enum WasmNetwork {
 * Bitcoin's regtest network.
 */
   Regtest = 3,
+}
+/**
+*/
+export enum WasmWordCount {
+  Words12 = 0,
+  Words15 = 1,
+  Words18 = 2,
+  Words21 = 3,
+  Words24 = 4,
+}
+/**
+*/
+export enum WasmBitcoinUnit {
+  BTC = 0,
+  MBTC = 1,
+  SAT = 2,
+}
+/**
+*/
+export enum WasmPaymentLinkKind {
+  BitcoinAddress = 0,
+  BitcoinURI = 1,
+  LightningURI = 2,
+  UnifiedURI = 3,
 }
 /**
 */
@@ -89,33 +121,11 @@ export enum WasmError {
 }
 /**
 */
-export enum WasmChangeSpendPolicy {
-  ChangeAllowed = 0,
-  OnlyChange = 1,
-  ChangeForbidden = 2,
-}
-/**
-*/
-export enum WasmCoinSelection {
-  BranchAndBound = 0,
-  LargestFirst = 1,
-  OldestFirst = 2,
-  Manual = 3,
-}
-/**
-*/
-export enum WasmBitcoinUnit {
-  BTC = 0,
-  MBTC = 1,
-  SAT = 2,
-}
-/**
-*/
-export enum WasmSupportedBIPs {
-  Bip44 = 0,
-  Bip49 = 1,
-  Bip84 = 2,
-  Bip86 = 3,
+export enum WasmScriptType {
+  Legacy = 0,
+  NestedSegwit = 1,
+  NativeSegwit = 2,
+  Taproot = 3,
 }
 /**
 */
@@ -132,20 +142,10 @@ export enum WasmLanguage {
 }
 /**
 */
-export enum WasmPaymentLinkKind {
-  BitcoinAddress = 0,
-  BitcoinURI = 1,
-  LightningURI = 2,
-  UnifiedURI = 3,
-}
-/**
-*/
-export enum WasmWordCount {
-  Words12 = 0,
-  Words15 = 1,
-  Words18 = 2,
-  Words21 = 3,
-  Words24 = 4,
+export enum WasmChangeSpendPolicy {
+  ChangeAllowed = 0,
+  OnlyChange = 1,
+  ChangeForbidden = 2,
 }
 /**
 */
@@ -288,20 +288,20 @@ export class WasmAccount {
 export class WasmAccountConfig {
   free(): void;
 /**
-* @param {WasmSupportedBIPs | undefined} [bip]
+* @param {WasmScriptType} script_type
 * @param {WasmNetwork | undefined} [network]
 * @param {number | undefined} [account_index]
 */
-  constructor(bip?: WasmSupportedBIPs, network?: WasmNetwork, account_index?: number);
+  constructor(script_type: WasmScriptType, network?: WasmNetwork, account_index?: number);
 /**
 */
   account_index: number;
 /**
 */
-  bip: WasmSupportedBIPs;
+  network: WasmNetwork;
 /**
 */
-  network: WasmNetwork;
+  script_type: WasmScriptType;
 }
 /**
 */
@@ -864,11 +864,11 @@ export class WasmWallet {
 */
   constructor(bip39_mnemonic: string, bip38_passphrase: string | undefined, config: WasmWalletConfig);
 /**
-* @param {WasmSupportedBIPs} bip
+* @param {WasmScriptType} script_type
 * @param {number} account_index
 * @returns {WasmDerivationPath}
 */
-  addAccount(bip: WasmSupportedBIPs, account_index: number): WasmDerivationPath;
+  addAccount(script_type: WasmScriptType, account_index: number): WasmDerivationPath;
 /**
 * @param {WasmDerivationPath} account_key
 * @returns {WasmAccount | undefined}
