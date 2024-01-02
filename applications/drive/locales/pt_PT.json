@@ -2345,10 +2345,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Ocorreu um erro inesperado. A importação tem de ser reiniciada."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "O ficheiro ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS_STRING } evento.",
-        "O ficheiro ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS_STRING } eventos."
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "O seu ficheiro ${ formattedFilename } tem um método inválido e não pode ser importado."
       ],
@@ -5520,6 +5516,11 @@
     "Select files": {
       "Upload": [
         "Enviar"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Nenhum resultado encontrado"
       ]
     },
     "session_recovery:available:action": {

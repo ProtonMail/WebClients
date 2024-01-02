@@ -2450,11 +2450,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "A apărut o eroare neașteptată. Importarea trebuie repornită."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Fișierul ${ formattedFilename } conține mai mult de un eveniment.",
-        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS_STRING } evenimente.",
-        "Fișierul ${ formattedFilename } conține mai mult de ${ MAX_IMPORT_EVENTS_STRING } de evenimente."
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Fișierul ${ formattedFilename } are o metodă nevalidă și nu poat fi importat."
       ],
@@ -5727,6 +5722,11 @@
     "Select files": {
       "Upload": [
         "Încărcare"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Nu s-au găsit rezultate"
       ]
     },
     "session_recovery:available:action": {
