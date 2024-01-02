@@ -59,12 +59,13 @@ const formatWalletToDoughnutChart = (
 export const useBalanceOverview = (
     data?: WalletWithAccountsWithBalanceAndTxs | WalletWithAccountsWithBalanceAndTxs[]
 ) => {
-    const [transactions, totalBalance] = Array.isArray(data)
+    const [transactions, totalBalance, dataCount] = Array.isArray(data)
         ? [
               data.flatMap((wallet) => getWalletTransactions(wallet)),
               data.reduce((acc, wallet) => acc + getWalletBalance(wallet), 0),
+              data.length ?? 0,
           ]
-        : [getWalletTransactions(data), getWalletBalance(data)];
+        : [getWalletTransactions(data), getWalletBalance(data), data?.accounts.length ?? 0];
 
     const balanceDistributionDoughnutChartData: BalanceDistributionChartData = useMemo(
         () => formatWalletToDoughnutChart(data),
@@ -84,6 +85,7 @@ export const useBalanceOverview = (
     return {
         totalBalance,
         transactions,
+        dataCount,
         last7DaysBalanceDifference,
         balanceDistributionDoughnutChartData,
         balanceEvolutionLineChartData,

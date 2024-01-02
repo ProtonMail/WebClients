@@ -8,7 +8,7 @@ import { findLowestBlockTargetByFeeRate, findNearestBlockTargetFeeRate } from '.
 
 export type FeeRateNote = 'LOW' | 'MODERATE' | 'HIGH';
 
-const getFeeRate = (blockTarget: number): FeeRateNote => {
+const getFeeRateNote = (blockTarget: number): FeeRateNote => {
     if (blockTarget < 5) {
         return 'HIGH';
     } else if (blockTarget > 10) {
@@ -20,7 +20,7 @@ const getFeeRate = (blockTarget: number): FeeRateNote => {
 
 export const useOnChainFeesSelector = (
     txBuilder: WasmTxBuilder,
-    updateTxBuilder: (updater: (txBuilder: WasmTxBuilder) => WasmTxBuilder) => void
+    updateTxBuilder: (updater: (txBuilder: WasmTxBuilder) => WasmTxBuilder | Promise<WasmTxBuilder>) => void
 ) => {
     const { fees } = useBlockchainContext();
     const [isRecommended, setIsRecommended] = useState(true);
@@ -38,7 +38,7 @@ export const useOnChainFeesSelector = (
 
     const handleFeesSelected = useCallback(
         (feeRate: number, isRecommended = false) => {
-            updateTxBuilder((txBuilder) => txBuilder.set_fee_rate(feeRate));
+            updateTxBuilder((txBuilder) => txBuilder.setFeeRate(feeRate));
             setIsRecommended(isRecommended);
             closeModal();
         },
@@ -50,19 +50,19 @@ export const useOnChainFeesSelector = (
     useEffect(() => {
         const defaultFeeRate = findNearestBlockTargetFeeRate(DEFAULT_TARGET_BLOCK, feeEstimations);
 
-        if (defaultFeeRate && !txBuilder.get_fee_rate()) {
+        if (defaultFeeRate && !txBuilder.getFeeRate()) {
             handleFeesSelected(defaultFeeRate, true);
         }
     }, [feeEstimations, handleFeesSelected, txBuilder]);
 
     const blockTarget = useMemo(() => {
-        const feeRate = txBuilder.get_fee_rate() ?? MIN_FEE_RATE;
+        const feeRate = txBuilder.getFeeRate() ?? MIN_FEE_RATE;
         return findLowestBlockTargetByFeeRate(feeRate, feeEstimations) ?? MAX_BLOCK_TARGET;
     }, [feeEstimations, txBuilder]);
 
     return {
         feeEstimations,
-        feeRateNote: getFeeRate(blockTarget),
+        feeRateNote: getFeeRateNote(blockTarget),
         blockTarget,
         isModalOpen,
         isRecommended,

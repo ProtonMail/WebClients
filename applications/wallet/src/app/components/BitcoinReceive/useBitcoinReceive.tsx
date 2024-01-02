@@ -1,114 +1,63 @@
-import { useEffect, useMemo, useState } from 'react';
-
-import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
+import { useEffect, useState } from 'react';
 
 import { WasmPaymentLink } from '../../../pkg';
+import { WalletAndAccountSelectorValue, getDefaultFormat } from '../../atoms';
 import { useBlockchainContext } from '../../contexts';
-import { AccountWithBlockchainData, LightningUriFormat, WalletWithAccountsWithBalanceAndTxs } from '../../types';
 import { WalletType } from '../../types/api';
-import { getDefaultAccount, getSelectedAccount, getSelectedWallet } from '../../utils';
-import { getLightningFormatOptions } from './constants';
+import { getDefaultAccount, getSelectedWallet } from '../../utils';
 
 export interface UseBitcoinReceiveHelper {
     /**
      * Memoized. Can be either a bitcoin Address, a bitcoin URI, a lightning URI or unified URI (URI containing both bitcoin and lightning needed payment informations)
      */
     paymentLink: WasmPaymentLink | null;
-    selectedWallet?: WalletWithAccountsWithBalanceAndTxs;
-    walletsOptions: { value: number; label: string; disabled: boolean }[];
-    accountsOptions?: { value: number; label: string }[];
-    selectedAccount?: AccountWithBlockchainData;
-    selectedFormat: {
-        name: string;
-        value: LightningUriFormat;
-    };
+    selectedWallet: WalletAndAccountSelectorValue;
     shouldShowAmountInput: boolean;
     amount: number;
-    handleSelectWallet: (event: SelectChangeEvent<number>) => void;
-    handleSelectAccount: (event: SelectChangeEvent<number>) => void;
-    handleSelectFormat: (event: SelectChangeEvent<LightningUriFormat>) => void;
+    handleSelectWallet: (value: WalletAndAccountSelectorValue) => void;
     handleChangeAmount: (amount?: number) => void;
     showAmountInput: () => void;
 }
 
 export const useBitcoinReceive = (defaultWalletId?: number): UseBitcoinReceiveHelper => {
+    const [paymentLink, setPaymentLink] = useState<WasmPaymentLink | null>(null);
     const { wallets } = useBlockchainContext();
-
-    const walletsOptions = useMemo(
-        () =>
-            wallets?.map((wallet) => ({
-                value: wallet.WalletID,
-                label: wallet.Name,
-                disabled: !wallet?.accounts?.length,
-            })) ?? [],
-        [wallets]
-    );
 
     const defaultWallet = getSelectedWallet(wallets, defaultWalletId);
 
-    const [selectedWallet, setSelectedWallet] = useState(defaultWallet);
-    const accountsOptions = useMemo(
-        () =>
-            selectedWallet?.accounts?.map((account) => ({
-                value: account.WalletAccountID,
-                label: account.Label,
-            })),
-        [selectedWallet]
-    );
-
-    const [selectedAccount, setSelectedAccount] = useState(getDefaultAccount(selectedWallet));
-
-    const lightningFormats = getLightningFormatOptions();
-    const [defaultFormat] = lightningFormats;
-    const [selectedFormat, setSelectedFormat] = useState(defaultFormat);
+    const [selectedWallet, setSelectedWallet] = useState<WalletAndAccountSelectorValue>({
+        wallet: defaultWallet,
+        account: getDefaultAccount(defaultWallet),
+        format: getDefaultFormat().value,
+    });
 
     const [amount, setAmount] = useState(0);
     const [shouldShowAmountInput, setShouldShowAmountInput] = useState(false);
 
-    const handleSelectWallet = ({ value }: SelectChangeEvent<number>) => {
-        const wallet = getSelectedWallet(wallets, value);
-        if (wallet) {
-            setSelectedWallet(wallet);
-        }
+    const handleSelectWallet = (value: WalletAndAccountSelectorValue) => {
+        setSelectedWallet((prev) => ({ ...prev, ...value }));
     };
 
     useEffect(() => {
-        setSelectedAccount(getDefaultAccount(selectedWallet));
-    }, [selectedWallet]);
+        setSelectedWallet((prev) => ({ ...prev, account: getDefaultAccount(selectedWallet.wallet) }));
+    }, [selectedWallet.wallet]);
 
-    const handleSelectAccount = ({ value }: SelectChangeEvent<number>) => {
-        const account = getSelectedAccount(selectedWallet, value);
-        if (account) {
-            setSelectedAccount(account);
+    useEffect(() => {
+        const { account, wallet } = selectedWallet;
+        if (account && wallet?.Type === WalletType.OnChain) {
+            void account.wasmAccount
+                .getBitcoinUri(undefined, amount ? BigInt(amount) : undefined)
+                .then((bitcoinUri) => setPaymentLink(bitcoinUri));
         }
-    };
-
-    const paymentLink = useMemo(() => {
-        if (!selectedAccount || !selectedWallet) {
-            return null;
-        }
-
-        if (selectedWallet.Type === WalletType.OnChain) {
-            return selectedAccount.wasmAccount.get_bitcoin_uri(undefined, amount ? BigInt(amount) : undefined);
-        }
-
-        return null;
-    }, [selectedAccount, selectedWallet, amount]);
+    }, [amount, selectedWallet]);
 
     return {
-        paymentLink,
         selectedWallet,
-        walletsOptions,
-        selectedAccount,
-        accountsOptions,
-        selectedFormat,
+        paymentLink,
         shouldShowAmountInput,
         amount,
+
         handleSelectWallet,
-        handleSelectAccount,
-        handleSelectFormat: ({ value }) => {
-            setSelectedFormat(lightningFormats.find((format) => format.value === value) ?? defaultFormat);
-        },
         showAmountInput: () => setShouldShowAmountInput(true),
         handleChangeAmount: (inputAmount) => {
             const numbered = Number(inputAmount);

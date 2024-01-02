@@ -42,7 +42,7 @@ export const usePaymentLinkInput = () => {
         }
 
         try {
-            const parsedPaymentLink = WasmPaymentLink.try_parse(debouncedPaymentLinkInput, WasmNetwork.Testnet);
+            const parsedPaymentLink = WasmPaymentLink.tryParse(debouncedPaymentLinkInput, WasmNetwork.Testnet);
             setParsedPaymentLink(parsedPaymentLink);
         } catch (error) {
             setParsedPaymentLink(undefined);

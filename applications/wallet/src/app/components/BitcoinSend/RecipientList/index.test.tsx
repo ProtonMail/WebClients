@@ -1,10 +1,8 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { vi } from 'vitest';
 
-import { WasmRecipient } from '../../../../pkg';
-import { walletsWithAccountsWithBalanceAndTxs } from '../../../tests';
-import { BitcoinUnitEnum } from '../../../types';
-import { RecipientList } from './RecipientList';
+import { RecipientList } from '.';
+import { WasmBitcoinUnit, WasmRecipient } from '../../../../pkg';
 
 const buildWasmRecipient = (uuid: string) => {
     return [uuid, '', BigInt(0)] as unknown as WasmRecipient;
@@ -14,16 +12,14 @@ const recipients: WasmRecipient[] = [buildWasmRecipient('1'), buildWasmRecipient
 
 describe('RecipientList', () => {
     let baseProps: Parameters<typeof RecipientList>[0];
-    const testAccount = walletsWithAccountsWithBalanceAndTxs[0].accounts[0];
 
     beforeEach(() => {
         baseProps = {
-            selectedAccount: testAccount,
             recipients,
-            unitByRecipient: {},
             onRecipientUpdate: vi.fn(),
             onRecipientAddition: vi.fn(),
             onRecipientRemove: vi.fn(),
+            onRecipientMaxAmount: vi.fn(),
         };
     });
 
@@ -102,14 +98,14 @@ describe('RecipientList', () => {
         it('should call `onRecipientUpdate` callback with correct index and update', () => {
             render(<RecipientList {...baseProps} />);
 
-            const btcButtons = screen.getAllByTestId('recipient-btc-display-button');
+            const btcButtons = screen.getAllByTestId('0-amount-input-unit-button');
 
             expect(btcButtons).toHaveLength(3);
             const [firstBtcButton] = btcButtons;
 
             fireEvent.click(firstBtcButton);
             expect(baseProps.onRecipientUpdate).toHaveBeenCalledTimes(1);
-            expect(baseProps.onRecipientUpdate).toHaveBeenCalledWith(0, { unit: BitcoinUnitEnum.BTC });
+            expect(baseProps.onRecipientUpdate).toHaveBeenCalledWith(0, { unit: WasmBitcoinUnit.BTC });
         });
     });
 
@@ -132,8 +128,8 @@ describe('RecipientList', () => {
                     const maxAmountButton = screen.getByText('Maximum amount');
                     fireEvent.click(maxAmountButton);
 
-                    expect(baseProps.onRecipientUpdate).toHaveBeenCalledTimes(1);
-                    expect(baseProps.onRecipientUpdate).toHaveBeenCalledWith(0, { amount: 100067 });
+                    expect(baseProps.onRecipientMaxAmount).toHaveBeenCalledTimes(1);
+                    expect(baseProps.onRecipientMaxAmount).toHaveBeenCalledWith(0);
                 });
             });
         });

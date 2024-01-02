@@ -62,13 +62,13 @@ describe('OnChainFeesSelector', () => {
         expect(screen.getByText(/recommended/i)).toBeInTheDocument();
     });
 
-    it('should display fee rate and approx confirmation time', () => {
+    it('should display fee rate and approx confirmation time', async () => {
         vi.spyOn(useOnChainFeesSelectorModule, 'useOnChainFeesSelector').mockReturnValue({
             ...baseMock,
             blockTarget: 9,
         });
 
-        const updated = txBuilder.set_fee_rate(3.4);
+        const updated = await txBuilder.setFeeRate(3.4);
         render(<OnChainFeesSelector txBuilder={updated} updateTxBuilder={mockUpdateTxBuilder} />);
 
         expect(screen.getByText('3.40sats/vb')).toBeInTheDocument();

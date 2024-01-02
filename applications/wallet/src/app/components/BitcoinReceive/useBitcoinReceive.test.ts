@@ -1,53 +1,12 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
-
 import { mockUseBlockchainContext, walletsWithAccountsWithBalanceAndTxs } from '../../tests';
 import { LightningUriFormat } from '../../types';
 import { useBitcoinReceive } from './useBitcoinReceive';
 
-describe.skip('useBitcoinReceive', () => {
+describe('useBitcoinReceive', () => {
     beforeEach(() => {
         mockUseBlockchainContext();
-    });
-
-    describe('walletOptions', () => {
-        it('should return walletsOptions', () => {
-            const { result } = renderHook(() => useBitcoinReceive());
-            expect(result.current.walletsOptions).toStrictEqual([
-                { disabled: false, label: 'Bitcoin 01', value: 0 },
-                { disabled: false, label: 'Savings on Jade', value: 1 },
-                { disabled: false, label: 'Savings on Electrum', value: 2 },
-                { disabled: false, label: 'Lightning 01', value: 3 },
-            ]);
-        });
-
-        describe('when a wallet has no account', () => {
-            it('should disable the option', () => {
-                const [walletA, walletB, walletC, walletD] = walletsWithAccountsWithBalanceAndTxs;
-                const wallets = [walletA, walletB, { ...walletC, accounts: [] }, walletD];
-
-                mockUseBlockchainContext({ wallets });
-
-                const { result } = renderHook(() => useBitcoinReceive());
-                expect(result.current.walletsOptions).toStrictEqual([
-                    { disabled: false, label: 'Bitcoin 01', value: 0 },
-                    { disabled: false, label: 'Savings on Jade', value: 1 },
-                    { disabled: true, label: 'Savings on Electrum', value: 2 },
-                    { disabled: false, label: 'Lightning 01', value: 3 },
-                ]);
-            });
-        });
-    });
-
-    describe('accountsOption', () => {
-        it('should return account options', () => {
-            const { result } = renderHook(() => useBitcoinReceive());
-            expect(result.current.accountsOptions).toStrictEqual([
-                { label: 'Account 1', value: 8 },
-                { label: 'Account 2', value: 9 },
-            ]);
-        });
     });
 
     describe('when wallets is empty', () => {
@@ -56,10 +15,8 @@ describe.skip('useBitcoinReceive', () => {
 
             const { result } = renderHook(() => useBitcoinReceive());
 
-            expect(result.current.accountsOptions).toBeUndefined();
-            expect(result.current.walletsOptions).toHaveLength(0);
-            expect(result.current.selectedWallet).toBeUndefined();
-            expect(result.current.selectedAccount).toBeUndefined();
+            expect(result.current.selectedWallet.wallet).toBeUndefined();
+            expect(result.current.selectedWallet.account).toBeUndefined();
             expect(result.current.paymentLink).toBeNull();
         });
     });
@@ -68,30 +25,30 @@ describe.skip('useBitcoinReceive', () => {
         it('should set `selectedWallet`', () => {
             const { result } = renderHook(() => useBitcoinReceive());
 
-            act(() => result.current.handleSelectWallet({ value: 1 } as SelectChangeEvent<number>));
-            expect(result.current.selectedWallet).toStrictEqual(walletsWithAccountsWithBalanceAndTxs[1]);
+            act(() => result.current.handleSelectWallet({ wallet: walletsWithAccountsWithBalanceAndTxs[1] }));
+            expect(result.current.selectedWallet.wallet).toStrictEqual(walletsWithAccountsWithBalanceAndTxs[1]);
         });
-    });
 
-    describe('handleSelectAccount', () => {
         it('should set `selectedAccount`', () => {
             const { result } = renderHook(() => useBitcoinReceive());
 
-            act(() => result.current.handleSelectAccount({ value: 9 } as SelectChangeEvent<number>));
-            expect(result.current.selectedAccount).toStrictEqual(walletsWithAccountsWithBalanceAndTxs[0].accounts[1]);
+            act(() =>
+                result.current.handleSelectWallet({ account: walletsWithAccountsWithBalanceAndTxs[0].accounts[1] })
+            );
+            expect(result.current.selectedWallet.account).toStrictEqual(
+                walletsWithAccountsWithBalanceAndTxs[0].accounts[1]
+            );
         });
-    });
 
-    describe('handleSelectFormat', () => {
         it('should set `selectedFormat`', () => {
             const { result } = renderHook(() => useBitcoinReceive());
 
             act(() =>
-                result.current.handleSelectFormat({
-                    value: LightningUriFormat.ONCHAIN,
-                } as SelectChangeEvent<LightningUriFormat>)
+                result.current.handleSelectWallet({
+                    format: LightningUriFormat.ONCHAIN,
+                })
             );
-            expect(result.current.selectedFormat).toStrictEqual({ name: 'Onchain', value: LightningUriFormat.ONCHAIN });
+            expect(result.current.selectedWallet.format).toStrictEqual(LightningUriFormat.ONCHAIN);
         });
     });
 
@@ -126,7 +83,7 @@ describe.skip('useBitcoinReceive', () => {
         it('should select the associated wallet by default', () => {
             const { result } = renderHook(() => useBitcoinReceive(walletsWithAccountsWithBalanceAndTxs[1].WalletID));
 
-            expect(result.current.selectedWallet).toStrictEqual(walletsWithAccountsWithBalanceAndTxs[1]);
+            expect(result.current.selectedWallet.wallet).toStrictEqual(walletsWithAccountsWithBalanceAndTxs[1]);
         });
     });
 });

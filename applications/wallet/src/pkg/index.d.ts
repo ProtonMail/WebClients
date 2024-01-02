@@ -6,28 +6,7 @@
 export function library_version(): string;
 /**
 */
-export enum WasmPaymentLinkKind {
-  BitcoinAddress = 0,
-  BitcoinURI = 1,
-  LightningURI = 2,
-  UnifiedURI = 3,
-}
-/**
-*/
-export enum WasmWordCount {
-  Words12 = 0,
-  Words15 = 1,
-  Words18 = 2,
-  Words21 = 3,
-  Words24 = 4,
-}
-/**
-*/
-export enum WasmChangeSpendPolicy {
-  ChangeAllowed = 0,
-  OnlyChange = 1,
-  ChangeForbidden = 2,
-}
+export function setPanicHook(): void;
 /**
 */
 export enum WasmNetwork {
@@ -47,26 +26,6 @@ export enum WasmNetwork {
 * Bitcoin's regtest network.
 */
   Regtest = 3,
-}
-/**
-*/
-export enum WasmKeychainKind {
-/**
-* External keychain, used for deriving recipient addresses.
-*/
-  External = 0,
-/**
-* Internal keychain, used for deriving change addresses.
-*/
-  Internal = 1,
-}
-/**
-*/
-export enum WasmCoinSelection {
-  BranchAndBound = 0,
-  LargestFirst = 1,
-  OldestFirst = 2,
-  Manual = 3,
 }
 /**
 */
@@ -93,32 +52,70 @@ export enum WasmError {
   CannotPersistData = 19,
   CannotFindPersistedData = 20,
   CannotParsePersistedData = 21,
-  Generic = 22,
-  NoRecipients = 23,
-  NoUtxosSelected = 24,
-  OutputBelowDustLimit = 25,
-  InsufficientFunds = 26,
-  BnBTotalTriesExceeded = 27,
-  BnBNoExactMatch = 28,
-  UnknownUtxo = 29,
-  TransactionNotFound = 30,
-  TransactionConfirmed = 31,
-  IrreplaceableTransaction = 32,
-  FeeRateTooLow = 33,
-  FeeTooLow = 34,
-  FeeRateUnavailable = 35,
-  MissingKeyOrigin = 36,
-  Key = 37,
-  ChecksumMismatch = 38,
-  SpendingPolicyRequired = 39,
-  InvalidPolicyPathError = 40,
-  Signer = 41,
-  InvalidOutpoint = 42,
-  Descriptor = 43,
-  Miniscript = 44,
-  MiniscriptPsbt = 45,
-  Bip32 = 46,
-  Psbt = 47,
+  CannotGetAddressFromScript = 22,
+  CannotCreateDescriptor = 23,
+  DescriptorError = 24,
+  LoadError = 25,
+  CannotCreateAddressFromScript = 26,
+  AccountNotFound = 27,
+  Generic = 28,
+  NoRecipients = 29,
+  NoUtxosSelected = 30,
+  OutputBelowDustLimit = 31,
+  InsufficientFunds = 32,
+  BnBTotalTriesExceeded = 33,
+  BnBNoExactMatch = 34,
+  UnknownUtxo = 35,
+  TransactionNotFound = 36,
+  TransactionConfirmed = 37,
+  IrreplaceableTransaction = 38,
+  FeeRateTooLow = 39,
+  FeeTooLow = 40,
+  FeeRateUnavailable = 41,
+  MissingKeyOrigin = 42,
+  Key = 43,
+  ChecksumMismatch = 44,
+  SpendingPolicyRequired = 45,
+  InvalidPolicyPathError = 46,
+  Signer = 47,
+  InvalidOutpoint = 48,
+  Descriptor = 49,
+  Miniscript = 50,
+  MiniscriptPsbt = 51,
+  Bip32 = 52,
+  Bip39 = 53,
+  Psbt = 54,
+  LockError = 55,
+}
+/**
+*/
+export enum WasmChangeSpendPolicy {
+  ChangeAllowed = 0,
+  OnlyChange = 1,
+  ChangeForbidden = 2,
+}
+/**
+*/
+export enum WasmCoinSelection {
+  BranchAndBound = 0,
+  LargestFirst = 1,
+  OldestFirst = 2,
+  Manual = 3,
+}
+/**
+*/
+export enum WasmBitcoinUnit {
+  BTC = 0,
+  MBTC = 1,
+  SAT = 2,
+}
+/**
+*/
+export enum WasmSupportedBIPs {
+  Bip44 = 0,
+  Bip49 = 1,
+  Bip84 = 2,
+  Bip86 = 3,
 }
 /**
 */
@@ -135,12 +132,102 @@ export enum WasmLanguage {
 }
 /**
 */
-export enum WasmSupportedBIPs {
-  Bip44 = 0,
-  Bip49 = 1,
-  Bip84 = 2,
-  Bip86 = 3,
+export enum WasmPaymentLinkKind {
+  BitcoinAddress = 0,
+  BitcoinURI = 1,
+  LightningURI = 2,
+  UnifiedURI = 3,
 }
+/**
+*/
+export enum WasmWordCount {
+  Words12 = 0,
+  Words15 = 1,
+  Words18 = 2,
+  Words21 = 3,
+  Words24 = 4,
+}
+/**
+*/
+export enum WasmKeychainKind {
+/**
+* External keychain, used for deriving recipient addresses.
+*/
+  External = 0,
+/**
+* Internal keychain, used for deriving change addresses.
+*/
+  Internal = 1,
+}
+
+interface IWasmTransactionTime {
+    confirmed: boolean;
+    confirmation_time?: BigInt;
+    last_seen?: BigInt;
+}
+
+
+
+interface IWasmDerivationPath {
+    inner: {
+        to_string: () => string
+    }
+}
+
+
+
+interface IWasmSimpleTransaction {
+    txid: string;
+    value: BigInt;
+    fees?: BigInt;
+    time: IWasmTransactionTime,
+    account_key?: IWasmDerivationPath,
+}
+
+
+
+type IWasmSimpleTransactionArray = IWasmSimpleTransaction[]
+
+
+
+interface IWasmAddress {
+    to_string: () => string
+}
+
+
+
+interface IWasmScript {
+    to_address: () => IWasmAddress
+}
+
+
+
+enum IWasmKeychainKind {
+    External, 
+    Internal
+}
+
+
+
+type IWasmOutpoint = string
+
+
+
+interface IWasmUtxo {
+    value: BigInt;
+    outpoint: IWasmOutpoint;
+    script_pubkey: IWasmScript;
+    keychain: IWasmKeychainKind;
+    is_spent: boolean;
+    derivation_index: BigInt;
+    confirmation_time: IWasmTransactionTime;
+}
+
+
+
+type IWasmUtxoArray = IWasmUtxo[]
+
+
 /**
 */
 export class DetailledWasmError {
@@ -157,39 +244,44 @@ export class DetailledWasmError {
 export class WasmAccount {
   free(): void;
 /**
-* @returns {boolean}
+* @returns {Promise<boolean>}
 */
-  has_sync_data(): boolean;
+  hasSyncData(): Promise<boolean>;
 /**
 * @param {number | undefined} [index]
 * @param {bigint | undefined} [amount]
 * @param {string | undefined} [label]
 * @param {string | undefined} [message]
-* @returns {WasmPaymentLink}
+* @returns {Promise<WasmPaymentLink>}
 */
-  get_bitcoin_uri(index?: number, amount?: bigint, label?: string, message?: string): WasmPaymentLink;
+  getBitcoinUri(index?: number, amount?: bigint, label?: string, message?: string): Promise<WasmPaymentLink>;
 /**
 * @param {WasmAddress} address
-* @returns {boolean}
+* @returns {Promise<boolean>}
 */
-  owns(address: WasmAddress): boolean;
+  owns(address: WasmAddress): Promise<boolean>;
 /**
-* @returns {WasmBalance}
+* @returns {Promise<WasmBalance>}
 */
-  get_balance(): WasmBalance;
+  getBalance(): Promise<WasmBalance>;
 /**
-* @returns {string}
+* @returns {Promise<string>}
 */
-  get_derivation_path(): string;
+  getDerivationPath(): Promise<string>;
 /**
-* @returns {(WasmUtxo)[]}
+* @returns {Promise<IWasmUtxoArray>}
 */
-  get_utxos(): (WasmUtxo)[];
+  getUtxos(): Promise<IWasmUtxoArray>;
 /**
 * @param {WasmPagination | undefined} [pagination]
-* @returns {(WasmSimpleTransaction)[]}
+* @returns {Promise<IWasmSimpleTransactionArray>}
 */
-  get_transactions(pagination?: WasmPagination): (WasmSimpleTransaction)[];
+  getTransactions(pagination?: WasmPagination): Promise<IWasmSimpleTransactionArray>;
+/**
+* @param {string} txid
+* @returns {Promise<WasmDetailledTransaction>}
+*/
+  getTransaction(txid: string): Promise<WasmDetailledTransaction>;
 }
 /**
 */
@@ -225,33 +317,15 @@ export class WasmAddress {
 * @param {WasmNetwork} network
 * @returns {WasmAddress}
 */
-  static from_script(value: WasmScript, network: WasmNetwork): WasmAddress;
+  static fromScript(value: WasmScript, network: WasmNetwork): WasmAddress;
 /**
 * @returns {string}
 */
-  to_string(): string;
+  toString(): string;
 /**
 * @returns {WasmScript}
 */
-  into_script(): WasmScript;
-}
-/**
-*/
-export class WasmAddressIndex {
-  free(): void;
-/**
-* @returns {WasmAddressIndex}
-*/
-  static createNew(): WasmAddressIndex;
-/**
-* @returns {WasmAddressIndex}
-*/
-  static createLastUnused(): WasmAddressIndex;
-/**
-* @param {number} index
-* @returns {WasmAddressIndex}
-*/
-  static createPeek(index: number): WasmAddressIndex;
+  intoScript(): WasmScript;
 }
 /**
 */
@@ -297,36 +371,22 @@ export class WasmChain {
 /**
 * @returns {Promise<Map<string, number>>}
 */
-  get_fees_estimation(): Promise<Map<string, number>>;
+  getFeesEstimation(): Promise<Map<string, number>>;
 /**
 * @param {WasmAccount} account
 * @returns {Promise<void>}
 */
-  full_sync(account: WasmAccount): Promise<void>;
+  fullSync(account: WasmAccount): Promise<void>;
 /**
 * @param {WasmAccount} account
 * @returns {Promise<void>}
 */
-  partial_sync(account: WasmAccount): Promise<void>;
+  partialSync(account: WasmAccount): Promise<void>;
 /**
 * @param {WasmPartiallySignedTransaction} psbt
 * @returns {Promise<string>}
 */
-  broadcast_psbt(psbt: WasmPartiallySignedTransaction): Promise<string>;
-}
-/**
-*/
-export class WasmConfirmation {
-  free(): void;
-/**
-*/
-  confirmation_time?: bigint;
-/**
-*/
-  confirmed: boolean;
-/**
-*/
-  last_seen?: bigint;
+  broadcastPsbt(psbt: WasmPartiallySignedTransaction): Promise<string>;
 }
 /**
 */
@@ -336,6 +396,40 @@ export class WasmDerivationPath {
 * @param {string} path
 */
   constructor(path: string);
+/**
+* @param {IWasmDerivationPath} raw_ts
+* @returns {WasmDerivationPath}
+*/
+  static fromRawTs(raw_ts: IWasmDerivationPath): WasmDerivationPath;
+}
+/**
+*/
+export class WasmDetailledTransaction {
+  free(): void;
+/**
+* @param {WasmPartiallySignedTransaction} psbt
+* @param {WasmAccount} account
+* @returns {Promise<WasmDetailledTransaction>}
+*/
+  static fromPsbt(psbt: WasmPartiallySignedTransaction, account: WasmAccount): Promise<WasmDetailledTransaction>;
+/**
+*/
+  fees?: bigint;
+/**
+*/
+  inputs: (WasmTxIn)[];
+/**
+*/
+  outputs: (WasmTxOut)[];
+/**
+*/
+  time?: WasmTransactionTime;
+/**
+*/
+  txid: string;
+/**
+*/
+  value: bigint;
 }
 /**
 */
@@ -354,15 +448,15 @@ export class WasmLockTime {
 /**
 * @returns {boolean}
 */
-  is_block_height(): boolean;
+  isBlockHeight(): boolean;
 /**
 * @returns {boolean}
 */
-  is_block_time(): boolean;
+  isBlockTime(): boolean;
 /**
 * @returns {number}
 */
-  to_consensus_u32(): number;
+  toConsensusU32(): number;
 }
 /**
 */
@@ -390,10 +484,32 @@ export class WasmMnemonic {
   toWords(): (string)[];
 }
 /**
+*/
+export class WasmOnchainPaymentLink {
+  free(): void;
+/**
+*/
+  address?: string;
+/**
+*/
+  amount?: bigint;
+/**
+*/
+  label?: string;
+/**
+*/
+  message?: string;
+}
+/**
 * Serialised Outpoint under the form <txid>:<index>
 */
 export class WasmOutPoint {
   free(): void;
+/**
+* @param {IWasmOutpoint} raw_ts
+* @returns {WasmOutPoint}
+*/
+  static fromRawTs(raw_ts: IWasmOutpoint): WasmOutPoint;
 /**
 */
   0: string;
@@ -421,9 +537,9 @@ export class WasmPartiallySignedTransaction {
 /**
 * @param {WasmAccount} wasm_account
 * @param {WasmNetwork} network
-* @returns {WasmPartiallySignedTransaction}
+* @returns {Promise<WasmPartiallySignedTransaction>}
 */
-  sign(wasm_account: WasmAccount, network: WasmNetwork): WasmPartiallySignedTransaction;
+  sign(wasm_account: WasmAccount, network: WasmNetwork): Promise<WasmPartiallySignedTransaction>;
 /**
 */
   recipients: (WasmPsbtRecipient)[];
@@ -438,21 +554,25 @@ export class WasmPaymentLink {
 /**
 * @returns {string}
 */
-  to_string(): string;
+  toString(): string;
 /**
 * @returns {string}
 */
-  to_uri(): string;
+  toUri(): string;
 /**
 * @param {string} str
 * @param {WasmNetwork} network
 * @returns {WasmPaymentLink}
 */
-  static try_parse(str: string, network: WasmNetwork): WasmPaymentLink;
+  static tryParse(str: string, network: WasmNetwork): WasmPaymentLink;
 /**
 * @returns {WasmPaymentLinkKind}
 */
-  get_kind(): WasmPaymentLinkKind;
+  getKind(): WasmPaymentLinkKind;
+/**
+* @returns {WasmOnchainPaymentLink}
+*/
+  assumeOnchain(): WasmOnchainPaymentLink;
 }
 /**
 */
@@ -477,12 +597,20 @@ export class WasmRecipient {
   1: string;
 /**
 */
-  2: bigint;
+  2: number;
+/**
+*/
+  3: WasmBitcoinUnit;
 }
 /**
 */
 export class WasmScript {
   free(): void;
+/**
+* @param {WasmNetwork} network
+* @returns {WasmAddress}
+*/
+  toAddress(network: WasmNetwork): WasmAddress;
 /**
 */
   0: Uint8Array;
@@ -501,10 +629,13 @@ export class WasmSimpleTransaction {
   free(): void;
 /**
 */
-  confirmation: WasmConfirmation;
+  account_key?: WasmDerivationPath;
 /**
 */
   fees?: bigint;
+/**
+*/
+  time: WasmTransactionTime;
 /**
 */
   txid: string;
@@ -514,20 +645,17 @@ export class WasmSimpleTransaction {
 }
 /**
 */
-export class WasmTransaction {
+export class WasmTransactionTime {
   free(): void;
 /**
 */
-  input: (WasmTxIn)[];
+  confirmation_time?: bigint;
 /**
 */
-  lock_time: WasmLockTime;
+  confirmed: boolean;
 /**
 */
-  output: (WasmTxOut)[];
-/**
-*/
-  version: number;
+  last_seen?: bigint;
 }
 /**
 */
@@ -538,29 +666,39 @@ export class WasmTxBuilder {
   constructor();
 /**
 * @param {WasmAccount} account
-* @returns {WasmTxBuilder}
+* @returns {Promise<WasmTxBuilder>}
 */
-  set_account(account: WasmAccount): WasmTxBuilder;
+  setAccount(account: WasmAccount): Promise<WasmTxBuilder>;
 /**
 * @returns {WasmTxBuilder}
 */
-  add_recipient(): WasmTxBuilder;
+  clearRecipients(): WasmTxBuilder;
+/**
+* @returns {WasmTxBuilder}
+*/
+  addRecipient(): WasmTxBuilder;
 /**
 * @param {number} index
 * @returns {WasmTxBuilder}
 */
-  remove_recipient(index: number): WasmTxBuilder;
+  removeRecipient(index: number): WasmTxBuilder;
 /**
 * @param {number} index
 * @param {string | undefined} [address_str]
-* @param {bigint | undefined} [amount]
-* @returns {WasmTxBuilder}
+* @param {number | undefined} [amount]
+* @param {WasmBitcoinUnit | undefined} [unit]
+* @returns {Promise<WasmTxBuilder>}
 */
-  update_recipient(index: number, address_str?: string, amount?: bigint): WasmTxBuilder;
+  updateRecipient(index: number, address_str?: string, amount?: number, unit?: WasmBitcoinUnit): Promise<WasmTxBuilder>;
+/**
+* @param {number} index
+* @returns {Promise<WasmTxBuilder>}
+*/
+  updateRecipientAmountToMax(index: number): Promise<WasmTxBuilder>;
 /**
 * @returns {(WasmRecipient)[]}
 */
-  get_recipients(): (WasmRecipient)[];
+  getRecipients(): (WasmRecipient)[];
 /**
 *
 *     * UTXOs
@@ -568,20 +706,20 @@ export class WasmTxBuilder {
 * @param {WasmOutPoint} outpoint
 * @returns {WasmTxBuilder}
 */
-  add_utxo_to_spend(outpoint: WasmOutPoint): WasmTxBuilder;
+  addUtxoToSpend(outpoint: WasmOutPoint): WasmTxBuilder;
 /**
 * @param {WasmOutPoint} outpoint
 * @returns {WasmTxBuilder}
 */
-  remove_utxo_to_spend(outpoint: WasmOutPoint): WasmTxBuilder;
+  removeUtxoToSpend(outpoint: WasmOutPoint): WasmTxBuilder;
 /**
 * @returns {WasmTxBuilder}
 */
-  clear_utxos_to_spend(): WasmTxBuilder;
+  clearUtxosToSpend(): WasmTxBuilder;
 /**
 * @returns {(WasmOutPoint)[]}
 */
-  get_utxos_to_spend(): (WasmOutPoint)[];
+  getUtxosToSpend(): (WasmOutPoint)[];
 /**
 *
 *     * Coin selection enforcement
@@ -589,26 +727,26 @@ export class WasmTxBuilder {
 * @param {WasmCoinSelection} coin_selection
 * @returns {WasmTxBuilder}
 */
-  set_coin_selection(coin_selection: WasmCoinSelection): WasmTxBuilder;
+  setCoinSelection(coin_selection: WasmCoinSelection): WasmTxBuilder;
 /**
 * @returns {WasmCoinSelection}
 */
-  get_coin_selection(): WasmCoinSelection;
+  getCoinSelection(): WasmCoinSelection;
 /**
 *
 *     * RBF
 *     
 * @returns {WasmTxBuilder}
 */
-  enable_rbf(): WasmTxBuilder;
+  enableRbf(): WasmTxBuilder;
 /**
 * @returns {WasmTxBuilder}
 */
-  disable_rbf(): WasmTxBuilder;
+  disableRbf(): WasmTxBuilder;
 /**
 * @returns {boolean}
 */
-  get_rbf_enabled(): boolean;
+  getRbfEnabled(): boolean;
 /**
 *
 *     * Change policy
@@ -616,23 +754,23 @@ export class WasmTxBuilder {
 * @param {WasmChangeSpendPolicy} change_policy
 * @returns {WasmTxBuilder}
 */
-  set_change_policy(change_policy: WasmChangeSpendPolicy): WasmTxBuilder;
+  setChangePolicy(change_policy: WasmChangeSpendPolicy): WasmTxBuilder;
 /**
 * @returns {WasmChangeSpendPolicy}
 */
-  get_change_policy(): WasmChangeSpendPolicy;
+  getChangePolicy(): WasmChangeSpendPolicy;
 /**
 *
 *     * Fees
 *     
 * @param {number} sat_per_vb
-* @returns {WasmTxBuilder}
+* @returns {Promise<WasmTxBuilder>}
 */
-  set_fee_rate(sat_per_vb: number): WasmTxBuilder;
+  setFeeRate(sat_per_vb: number): Promise<WasmTxBuilder>;
 /**
 * @returns {number | undefined}
 */
-  get_fee_rate(): number | undefined;
+  getFeeRate(): number | undefined;
 /**
 *
 *     * Locktime
@@ -640,23 +778,23 @@ export class WasmTxBuilder {
 * @param {WasmLockTime} locktime
 * @returns {WasmTxBuilder}
 */
-  add_locktime(locktime: WasmLockTime): WasmTxBuilder;
+  addLocktime(locktime: WasmLockTime): WasmTxBuilder;
 /**
 * @returns {WasmTxBuilder}
 */
-  remove_locktime(): WasmTxBuilder;
+  removeLocktime(): WasmTxBuilder;
 /**
 * @returns {WasmLockTime | undefined}
 */
-  get_locktime(): WasmLockTime | undefined;
+  getLocktime(): WasmLockTime | undefined;
 /**
 *
 *     * Final
 *     
 * @param {WasmNetwork} network
-* @returns {WasmPartiallySignedTransaction}
+* @returns {Promise<WasmPartiallySignedTransaction>}
 */
-  create_pbst(network: WasmNetwork): WasmPartiallySignedTransaction;
+  createPsbt(network: WasmNetwork): Promise<WasmPartiallySignedTransaction>;
 }
 /**
 */
@@ -678,6 +816,12 @@ export class WasmTxOut {
   free(): void;
 /**
 */
+  address: WasmAddress;
+/**
+*/
+  is_mine: boolean;
+/**
+*/
   script_pubkey: WasmScript;
 /**
 */
@@ -689,7 +833,7 @@ export class WasmUtxo {
   free(): void;
 /**
 */
-  confirmation_time: WasmConfirmation;
+  confirmation_time: WasmTransactionTime;
 /**
 */
   derivation_index: number;
@@ -722,23 +866,33 @@ export class WasmWallet {
 /**
 * @param {WasmSupportedBIPs} bip
 * @param {number} account_index
-* @returns {string}
+* @returns {WasmDerivationPath}
 */
-  add_account(bip: WasmSupportedBIPs, account_index: number): string;
+  addAccount(bip: WasmSupportedBIPs, account_index: number): WasmDerivationPath;
 /**
-* @param {WasmSupportedBIPs} bip
-* @param {number} account_index
+* @param {WasmDerivationPath} account_key
 * @returns {WasmAccount | undefined}
 */
-  get_account(bip: WasmSupportedBIPs, account_index: number): WasmAccount | undefined;
+  getAccount(account_key: WasmDerivationPath): WasmAccount | undefined;
 /**
-* @returns {WasmBalance}
+* @returns {Promise<WasmBalance>}
 */
-  get_balance(): WasmBalance;
+  getBalance(): Promise<WasmBalance>;
+/**
+* @param {WasmPagination | undefined} [pagination]
+* @returns {Promise<IWasmSimpleTransactionArray>}
+*/
+  getTransactions(pagination?: WasmPagination): Promise<IWasmSimpleTransactionArray>;
+/**
+* @param {WasmDerivationPath} account_key
+* @param {string} txid
+* @returns {Promise<WasmDetailledTransaction>}
+*/
+  getTransaction(account_key: WasmDerivationPath, txid: string): Promise<WasmDetailledTransaction>;
 /**
 * @returns {string}
 */
-  get_fingerprint(): string;
+  getFingerprint(): string;
 }
 /**
 */
@@ -746,9 +900,13 @@ export class WasmWalletConfig {
   free(): void;
 /**
 * @param {WasmNetwork | undefined} [network]
+* @param {boolean | undefined} [no_persist]
 */
-  constructor(network?: WasmNetwork);
+  constructor(network?: WasmNetwork, no_persist?: boolean);
 /**
 */
   network: WasmNetwork;
+/**
+*/
+  no_persist: boolean;
 }

@@ -2,12 +2,12 @@ import { renderHook } from '@testing-library/react-hooks';
 import { format, set } from 'date-fns';
 import { describe } from 'vitest';
 
-import { WasmSimpleTransaction } from '../../pkg';
+import { IWasmSimpleTransactionArray } from '../../pkg';
 import { BITCOIN } from '../constants';
 import { useBalanceEvolution } from './useBalanceEvolution';
 
 describe('useBalanceEvolution', () => {
-    let simpleTransactions: WasmSimpleTransaction[];
+    let simpleTransactions: IWasmSimpleTransactionArray;
 
     beforeEach(() => {
         vi.useFakeTimers();
@@ -17,44 +17,44 @@ describe('useBalanceEvolution', () => {
         simpleTransactions = [
             {
                 txid: '1',
-                confirmation: {
+                time: {
                     confirmed: true,
                     confirmation_time: BigInt(Math.floor(set(baseDate, { date: 22, hours: 13 }).getTime() / 1000)),
                 },
                 value: BigInt(-0.24 * BITCOIN),
-            } as WasmSimpleTransaction,
+            },
             {
                 txid: '2',
-                confirmation: {
+                time: {
                     confirmed: true,
                     confirmation_time: BigInt(Math.floor(set(baseDate, { date: 22, hours: 6 }).getTime() / 1000)),
                 },
                 value: BigInt(0.04 * BITCOIN),
-            } as WasmSimpleTransaction,
+            },
             {
                 txid: '3',
-                confirmation: {
+                time: {
                     confirmed: true,
                     confirmation_time: BigInt(Math.floor(set(baseDate, { date: 21, hours: 7 }).getTime() / 1000)),
                 },
                 value: BigInt(0.8 * BITCOIN),
-            } as WasmSimpleTransaction,
+            },
             {
                 txid: '4',
-                confirmation: {
+                time: {
                     confirmed: true,
                     confirmation_time: BigInt(Math.floor(set(baseDate, { date: 21, hours: 8 }).getTime() / 1000)),
                 },
                 value: BigInt(-0.05 * BITCOIN),
-            } as WasmSimpleTransaction,
+            },
             {
                 txid: '5',
-                confirmation: {
+                time: {
                     confirmed: true,
                     confirmation_time: BigInt(Math.floor(set(baseDate, { date: 21, hours: 9 }).getTime() / 1000)),
                 },
                 value: BigInt(-0.05 * BITCOIN),
-            } as WasmSimpleTransaction,
+            },
         ];
     });
 
@@ -62,9 +62,7 @@ describe('useBalanceEvolution', () => {
         vi.useRealTimers();
     });
 
-    describe.todo('evolutionByTx', () => {
-        // TODO when/if used
-    });
+    describe.todo('evolutionByTx');
 
     describe('evolutionByDay', () => {
         /**

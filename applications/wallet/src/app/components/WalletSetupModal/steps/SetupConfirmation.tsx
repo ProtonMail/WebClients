@@ -21,7 +21,7 @@ export const SetupConfirmation = ({ onOpenWallet, mnemonic, passphrase }: Props)
 
             {/* Credit card design */}
             {/* TODO: add name input somewhere or generated it randomly? */}
-            {wallet && <CreditCard walletName="Bitcoin 01" walletFingerprint={wallet.get_fingerprint()} />}
+            {wallet && <CreditCard walletName="Bitcoin 01" walletFingerprint={wallet.getFingerprint()} />}
 
             <Button className="mt-8" color="norm" onClick={onOpenWallet}>{c('Wallet setup')
                 .t`Open your wallet`}</Button>

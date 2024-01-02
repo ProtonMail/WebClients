@@ -6,38 +6,24 @@ import { useNotifications } from '@proton/components/hooks';
 import { MINUTE } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
-import {
-    WasmAccount,
-    WasmChain,
-    WasmNetwork,
-    WasmPagination,
-    WasmSupportedBIPs,
-    WasmWallet,
-    WasmWalletConfig,
-} from '../../pkg';
+import { WasmAccount, WasmChain, WasmNetwork, WasmPagination, WasmWallet, WasmWalletConfig } from '../../pkg';
+import { scriptTypeToBip } from '../constants';
 import {
     ApiWallet,
     BlockchainAccountRecord,
     BlockchainWalletRecord,
     WalletWithAccountsWithBalanceAndTxs,
 } from '../types';
-import { ScriptType, WalletAccount } from '../types/api';
+import { WalletAccount } from '../types/api';
 import { tryHandleWasmError } from '../utils/wasm/errors';
 
-const scriptTypeToBip: Record<ScriptType, WasmSupportedBIPs> = {
-    [ScriptType.Legacy]: WasmSupportedBIPs.Bip44,
-    [ScriptType.NestedSegwit]: WasmSupportedBIPs.Bip49,
-    [ScriptType.NativeSegwit]: WasmSupportedBIPs.Bip84,
-    [ScriptType.Taproot]: WasmSupportedBIPs.Bip86,
-};
-
-const syncAccount = (wasmAccount: WasmAccount) => {
+const syncAccount = async (wasmAccount: WasmAccount) => {
     const wasmChain = new WasmChain();
-    if (wasmAccount.has_sync_data()) {
-        return wasmChain.partial_sync(wasmAccount);
+    if (await wasmAccount.hasSyncData()) {
+        return wasmChain.partialSync(wasmAccount);
     }
 
-    return wasmChain.full_sync(wasmAccount);
+    return wasmChain.fullSync(wasmAccount);
 };
 
 export type SyncingMetadata = { syncing: boolean; count: number; lastSyncing: number };
@@ -72,11 +58,11 @@ export const useBlockchainSyncing = (wallets?: ApiWallet[]) => {
         [createNotification]
     );
 
-    const getAccountData = (account: WalletAccount, wasmAccount: WasmAccount) => {
-        const balance = wasmAccount.get_balance();
+    const getAccountData = async (account: WalletAccount, wasmAccount: WasmAccount) => {
+        const balance = await wasmAccount.getBalance();
         const pagination = new WasmPagination(0, 10);
-        const transactions = wasmAccount.get_transactions(pagination);
-        const utxos = wasmAccount.get_utxos();
+        const transactions = await wasmAccount.getTransactions(pagination);
+        const utxos = await wasmAccount.getUtxos();
 
         return {
             ...account,
@@ -119,6 +105,7 @@ export const useBlockchainSyncing = (wallets?: ApiWallet[]) => {
                 } catch (error) {
                     handleError(error);
                 }
+
                 removeSyncing(account.WalletAccountID);
             }
 
@@ -128,7 +115,7 @@ export const useBlockchainSyncing = (wallets?: ApiWallet[]) => {
         [addNewSyncing, handleError, removeSyncing]
     );
 
-    const initAccountsBlockchainData = useCallback(() => {
+    const initAccountsBlockchainData = useCallback(async () => {
         if (!wallets) {
             return;
         }
@@ -144,20 +131,20 @@ export const useBlockchainSyncing = (wallets?: ApiWallet[]) => {
 
                 for (const account of wallet.accounts) {
                     try {
-                        void wasmWallet.add_account(scriptTypeToBip[account.ScriptType], account.Index);
-                        const wasmAccount = wasmWallet.get_account(scriptTypeToBip[account.ScriptType], account.Index);
+                        const accountKey = wasmWallet.addAccount(scriptTypeToBip[account.ScriptType], account.Index);
+                        const wasmAccount = wasmWallet.getAccount(accountKey);
 
                         if (!wasmAccount) {
                             return;
                         }
 
-                        tmpAccounts[account.WalletAccountID] = getAccountData(account, wasmAccount);
+                        tmpAccounts[account.WalletAccountID] = await getAccountData(account, wasmAccount);
                     } catch (error) {
                         handleError(error);
                     }
                 }
 
-                tmpWallets[wallet.WalletID] = { ...wallet, accounts: { ...tmpAccounts } };
+                tmpWallets[wallet.WalletID] = { ...wallet, wasmWallet, accounts: { ...tmpAccounts } };
             } catch (error) {
                 handleError(error);
             }

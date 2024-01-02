@@ -39,7 +39,7 @@ export const OnchainTransactionAdvancedOptions = ({ account, txBuilder, updateTx
         handleChangePolicySelect,
     } = useOnchainTransactionAdvancedOptions(updateTxBuilder);
 
-    const nbUtxosToSpend = txBuilder.get_utxos_to_spend().length;
+    const nbUtxosToSpend = txBuilder.getUtxosToSpend().length;
 
     return (
         <>
@@ -68,7 +68,7 @@ export const OnchainTransactionAdvancedOptions = ({ account, txBuilder, updateTx
                                         <Button
                                             className="text-sm"
                                             key={option.value}
-                                            selected={txBuilder.get_coin_selection() === option.value}
+                                            selected={txBuilder.getCoinSelection() === option.value}
                                             onClick={() => handleCoinSelectionOptionSelect(option.value)}
                                         >
                                             {option.label}
@@ -76,7 +76,7 @@ export const OnchainTransactionAdvancedOptions = ({ account, txBuilder, updateTx
                                     );
                                 })}
                             </ButtonGroup>
-                            {txBuilder.get_coin_selection() === WasmCoinSelection.Manual && (
+                            {txBuilder.getCoinSelection() === WasmCoinSelection.Manual && (
                                 <Button
                                     shape="underline"
                                     onClick={openManualCoinSelectionModal}
@@ -104,7 +104,7 @@ export const OnchainTransactionAdvancedOptions = ({ account, txBuilder, updateTx
                             </label>
                             <Toggle
                                 id="enable-rbf"
-                                checked={txBuilder.get_rbf_enabled()}
+                                checked={txBuilder.getRbfEnabled()}
                                 onClick={() => toggleEnableRBF()}
                             />
                         </div>
@@ -128,9 +128,8 @@ export const OnchainTransactionAdvancedOptions = ({ account, txBuilder, updateTx
                                     type="number"
                                     disabled={!useLocktime}
                                     hint={c('Wallet Advanced Options').t`Block(s)`}
-                                    // value={txBuilder.get_locktime() ?? 0} TODO: fix this
+                                    value={txBuilder.getLocktime()?.toConsensusU32() ?? 0}
                                     onChange={handleLocktimeValueChange}
-                                    // TODO: add max?
                                 />
                             </div>
                         </div>
@@ -148,7 +147,7 @@ export const OnchainTransactionAdvancedOptions = ({ account, txBuilder, updateTx
                             <div className="w-custom" style={{ '--w-custom': '16rem' }}>
                                 <SelectTwo
                                     id="change-policy-select"
-                                    value={txBuilder.get_change_policy()}
+                                    value={txBuilder.getChangePolicy()}
                                     onChange={handleChangePolicySelect}
                                 >
                                     {changePolicyOptions.map((option) => (
@@ -180,7 +179,7 @@ export const OnchainTransactionAdvancedOptions = ({ account, txBuilder, updateTx
             <ManualCoinSelectionModal
                 account={account}
                 isOpen={isManualCoinSelectionModalOpen}
-                selectedUtxos={txBuilder.get_utxos_to_spend()}
+                selectedUtxos={txBuilder.getUtxosToSpend()}
                 onClose={closeManualCoinSelectionModal}
                 onCoinSelected={handleManualCoinSelection}
             />

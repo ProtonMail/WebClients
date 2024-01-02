@@ -7,6 +7,7 @@ export const mockUseBlockchainContext = (
     const spy = vi.spyOn(useBlockchainContextModule, 'useBlockchainContext');
 
     spy.mockReturnValue({
+        isInitialised: false,
         wallets: walletsWithAccountsWithBalanceAndTxs,
         fees: getFeesEstimationMap(),
         syncingMetatadaByAccountId: {},
