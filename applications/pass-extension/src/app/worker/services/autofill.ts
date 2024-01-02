@@ -137,15 +137,18 @@ export const createAutoFillService = () => {
         })
     );
 
-    /* onUpdated will be triggered every time a tab
-     * has been loaded with a new url : update the
-     * badge count accordingly */
+    /* onUpdated will be triggered every time a tab has been loaded with a new url :
+     * update the badge count accordingly. `ensureReady` is used in place instead of
+     * leveraging `onContextReady` to properly handle errors.  */
     browser.tabs.onUpdated.addListener(
-        onContextReady(async (_, tabId, __, tab) => {
-            if (tabId) {
-                const items = getAutofillCandidates(parseUrl(tab.url));
-                return setPopupIconBadge(tabId, items.length);
-            }
+        withContext(async (ctx, tabId, __, tab) => {
+            try {
+                await ctx.ensureReady();
+                if (tabId) {
+                    const items = getAutofillCandidates(parseUrl(tab.url));
+                    await setPopupIconBadge(tabId, items.length);
+                }
+            } catch {}
         })
     );
 

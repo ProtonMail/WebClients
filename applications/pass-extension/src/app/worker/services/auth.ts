@@ -218,12 +218,14 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         });
 
     /* only extend the session lock if a lock is registered and we've reached at least 50%
-     * of the lock TTL since the last extension. Calling `AuthService::syncLock` will extend
+     * of the lock TTL since the last extension. Calling `AuthService::checkLock` will extend
      * the lock via the `checkSessionLock` call */
     const handleAuthCheck: MessageHandlerCallback<WorkerMessageType.AUTH_CHECK> = withContext(
         async (ctx, { payload: { immediate } }) => {
             try {
                 const status = await (async (): Promise<SessionLockStatus> => {
+                    if (immediate) return (await authService.checkLock()).status;
+
                     const lockStatus = authStore.getLockStatus();
                     const registeredLock = lockStatus === SessionLockStatus.REGISTERED;
                     const ttl = authStore.getLockTTL();
@@ -231,7 +233,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                     if (clientReady(ctx.status) && registeredLock && ttl) {
                         const now = getEpoch();
                         const diff = now - (authStore.getLockLastExtendTime() ?? 0);
-                        if (immediate || diff > ttl * 0.5) return (await authService.checkLock()).status;
+                        if (diff > ttl * 0.5) return (await authService.checkLock()).status;
                     }
 
                     return lockStatus ?? SessionLockStatus.NONE;
