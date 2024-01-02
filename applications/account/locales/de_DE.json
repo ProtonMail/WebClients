@@ -2988,16 +2988,9 @@
       "Daily": [
         "Täglich"
       ],
-      "Daily, ${ untilString }": [
-        "Täglich, ${ untilString }"
-      ],
       "Every ${ interval } day": [
         "Alle ${ interval } Tage",
         "Alle ${ interval } Tage"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Täglich, ${ untilString }",
-        "Aller ${ interval } Tage, ${ untilString }"
       ],
       "until ${ dateString }": [
         "bis ${ dateString }"
@@ -4205,10 +4198,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Ein unerwarteter Fehler ist aufgetreten. Der Import muss neu ausgeführt werden."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Deine Datei „${ formattedFilename }“ enthält mehr als ${ MAX_IMPORT_EVENTS_STRING } Termin.",
-        "Deine Datei „${ formattedFilename }“ enthält mehr als ${ MAX_IMPORT_EVENTS_STRING } Termine."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Deine Datei \"${ formattedFilename }\" enthält eine ungültige Methode und konnte nicht importiert werden."
@@ -7781,6 +7770,9 @@
       "You can now close this window.": [
         "Du kannst dieses Fenster jetzt schließen."
       ],
+      "You can now return to the application to continue": [
+        "Du kannst jetzt zur Anwendung zurückkehren, um fortzufahren."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kannst Mitteilungen aktivieren, um Benachrichtigungen zu erhalten, sobald neue E-Mail-Nachrichten in diesem Ordner eingehen."
       ],
@@ -9790,22 +9782,8 @@
         "Alle ${ interval } Monate ${ onDayString }",
         "Alle ${ interval } Monate ${ onDayString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Alle ${ interval } Monate ${ onDayString }, ${ timesString }",
-        "Alle ${ interval } Monate ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Monatlich am ${ onDayString }, ${ untilString }",
-        "Aller ${ interval } Monate am ${ onDayString }, ${ untilString }"
-      ],
       "Monthly ${ onDayString }": [
         "Monatlich ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Monatlich ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Monatlich ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -11146,6 +11124,9 @@
       "No parent folder": [
         "Kein übergeordneter Ordner"
       ],
+      "No permission": [
+        "Keine Berechtigung"
+      ],
       "Normal": [
         "Standard"
       ],
@@ -11155,11 +11136,17 @@
       "On": [
         "Ein"
       ],
+      "Organization only": [
+        "Nur Organisation"
+      ],
       "Permanent": [
         "Dauerhaft"
       ],
       "Plain text": [
         "Unformatierter Klartext"
+      ],
+      "Receive from all": [
+        "Von allen empfangen"
       ],
       "Repeat daily": [
         "Täglich wiederholen"
@@ -11181,6 +11168,12 @@
       ],
       "Select who can access...": [
         "Wähle aus, wer darauf zugreifen kann..."
+      ],
+      "Send to all": [
+        "An alle senden"
+      ],
+      "Setup incomplete": [
+        "Einrichtung unvollständig"
       ],
       "Standard server configs": [
         "Standard-Server-Konfigurationen"
@@ -11566,6 +11559,23 @@
         "Neue Kredit-/Debitkarte"
       ]
     },
+    "Permission": {
+      "No permission": [
+        "Keine Berechtigung"
+      ],
+      "Organization only": [
+        "Nur Organisation"
+      ],
+      "Receive from all": [
+        "Von allen empfangen"
+      ],
+      "Send to all": [
+        "An alle senden"
+      ],
+      "Setup incomplete": [
+        "Einrichtung unvollständig"
+      ]
+    },
     "Personal calendar section description": {
       "Create a calendar to stay on top of your schedule while keeping your data secure.": [
         "Erstelle einen Kalender, um den Überblick über deinen Zeitplan zu behalten und gleichzeitig deine Daten zu schützen."
@@ -11654,6 +11664,9 @@
       ],
       "Search for a user or address": [
         "Nach einem Benutzer oder einer Adresse suchen"
+      ],
+      "Search parent folder": [
+        "Übergeordneten Ordner durchsuchen"
       ],
       "Search users": [
         "Benutzer suchen"
@@ -14753,37 +14766,13 @@
         "Alle ${ interval } Wochen am ${ multipleDaysString }",
         "Alle ${ interval } Wochen am ${ multipleDaysString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Alle ${ interval } Wochen am ${ multipleDaysString }, ${ timesString }",
-        "Alle ${ interval } Wochen am ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Wöchentlich am ${ multipleDaysString }, ${ untilString }",
-        "Aller ${ interval } Wochen am ${ multipleDaysString }, ${ untilString }"
-      ],
       "Every ${ interval } week on all days": [
         "Alle ${ interval } Wochen an allen Tagen",
         "Alle ${ interval } Wochen an allen Tagen"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Alle ${ interval } Wochen an allen Tagen, ${ timesString }",
-        "Alle ${ interval } Wochen an allen Tagen, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Wöchentlich an allen Tagen, ${ untilString }",
-        "Aller ${ interval } Wochen an allen Tagen, ${ untilString }"
-      ],
       "Every ${ interval } week on Friday": [
         "Alle ${ interval } Wochen am Freitag",
         "Alle ${ interval } Wochen am Freitag"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Alle ${ interval } Wochen am Freitag, ${ timesString }",
-        "Alle ${ interval } Wochen am Freitag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Wöchentlich am Freitag, ${ untilString }",
-        "Aller ${ interval } Wochen am Freitag, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Alle ${ interval } Wochen am Montag",
@@ -14793,21 +14782,9 @@
         "Alle ${ interval } Wochen am Montag, ${ timesString }",
         "Alle ${ interval } Wochen am Montag, ${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Wöchentlich am Montag, ${ untilString }",
-        "Aller ${ interval } Wochen am Montag, ${ untilString }"
-      ],
       "Every ${ interval } week on Saturday": [
         "Alle ${ interval } Wochen am Samstag",
         "Alle ${ interval } Wochen am Samstag"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Alle ${ interval } Wochen am Samstag, ${ timesString }",
-        "Alle ${ interval } Wochen am Samstag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Wöchentlich am Samstag, ${ untilString }",
-        "Aller ${ interval } Wochen am Samstag, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Alle ${ interval } Wochen am Sonntag",
@@ -14817,21 +14794,9 @@
         "Alle ${ interval } Wochen am Sonntag, ${ timesString }",
         "Alle ${ interval } Wochen am Sonntag, ${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Wöchentlich am Sonntag, ${ untilString }",
-        "Aller ${ interval } Wochen am Sonntag, ${ untilString }"
-      ],
       "Every ${ interval } week on Thursday": [
         "Alle ${ interval } Wochen am Donnerstag",
         "Alle ${ interval } Wochen am Donnerstag"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Alle ${ interval } Wochen am Donnerstag, ${ timesString }",
-        "Alle ${ interval } Wochen am Donnerstag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Wöchentlich am Donnerstag, ${ untilString }",
-        "Aller ${ interval } Wochen am Donnerstag, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Alle ${ interval } Wochen am Dienstag",
@@ -14841,102 +14806,36 @@
         "Alle ${ interval } Wochen am Dienstag, ${ timesString }",
         "Alle ${ interval } Wochen am Dienstag, ${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Wöchentlich am Dienstag, ${ untilString }",
-        "Aller ${ interval } Wochen am Dienstag, ${ untilString }"
-      ],
       "Every ${ interval } week on Wednesday": [
         "Alle ${ interval } Wochen am Mittwoch",
         "Alle ${ interval } Wochen am Mittwoch"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Alle ${ interval } Wochen am Mittwoch, ${ timesString }",
-        "Alle ${ interval } Wochen am Mittwoch, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Wöchentlich am Mittwoch, ${ untilString }",
-        "Aller ${ interval } Wochen am Mittwoch, ${ untilString }"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "Wöchentlich am ${ multipleDaysString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Wöchentlich am ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Wöchentlich am ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Wöchentlich an allen Tagen"
       ],
-      "Weekly on all days, ${ timesString }": [
-        "Wöchentlich an allen Tagen, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Wöchentlich an allen Tagen, ${ untilString }"
-      ],
       "Weekly on Friday": [
         "Wöchentlich am Freitag"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Wöchentlich am Freitag, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Wöchentlich am Freitag, ${ untilString }"
       ],
       "Weekly on Monday": [
         "Wöchentlich am Montag"
       ],
-      "Weekly on Monday, ${ timesString }": [
-        "Wöchentlich am Montag, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Wöchentlich am Montag, ${ untilString }"
-      ],
       "Weekly on Saturday": [
         "Wöchentlich am Samstag"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Wöchentlich am Samstag, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Wöchentlich am Samstag, ${ untilString }"
       ],
       "Weekly on Sunday": [
         "Wöchentlich am Sonntag"
       ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Wöchentlich am Sonntag, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Wöchentlich am Sonntag, ${ untilString }"
-      ],
       "Weekly on Thursday": [
         "Wöchentlich am Donnerstag"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Wöchentlich am Donnerstag, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Wöchentlich am Donnerstag, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "Wöchentlich am Dienstag"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Wöchentlich am Dienstag, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Wöchentlich am Dienstag, ${ untilString }"
-      ],
       "Weekly on Wednesday": [
         "Wöchentlich am Mittwoch"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Wöchentlich am Mittwoch, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Wöchentlich am Mittwoch, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -14967,22 +14866,8 @@
         "Alle ${ interval } Jahre",
         "Alle ${ interval } Jahre"
       ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Alle ${ interval } Jahre, ${ timesString }",
-        "Alle ${ interval } Jahre, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Jährlich, ${ untilString }",
-        "Aller ${ interval } Jahre, ${ untilString }"
-      ],
       "Yearly": [
         "Jährlich"
-      ],
-      "Yearly, ${ timesString }": [
-        "Jährlich, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Jährlich, ${ untilString }"
       ]
     }
   }
