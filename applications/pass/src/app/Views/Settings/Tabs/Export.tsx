@@ -16,11 +16,11 @@ export const Export: FC = () => {
         <SettingsPanel title={c('Label').t`Export`}>
             <Exporter
                 onConfirm={async (password) => {
-                    const { status } = await authService.checkLock();
-                    if (status === SessionLockStatus.LOCKED) throwError({ message: 'Session is locked' });
-
                     const check = await authService.confirmPassword(password);
                     if (!check) throwError({ message: 'Session not confirmed' });
+
+                    const { status } = await authService.checkLock();
+                    if (status === SessionLockStatus.LOCKED) throwError({ message: 'Session is locked' });
                 }}
             />
         </SettingsPanel>
