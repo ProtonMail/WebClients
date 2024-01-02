@@ -2442,10 +2442,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Ein unerwarteter Fehler ist aufgetreten. Der Import muss neu ausgeführt werden."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Deine Datei „${ formattedFilename }“ enthält mehr als ${ MAX_IMPORT_EVENTS_STRING } Termin.",
-        "Deine Datei „${ formattedFilename }“ enthält mehr als ${ MAX_IMPORT_EVENTS_STRING } Termine."
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Deine Datei \"${ formattedFilename }\" enthält eine ungültige Methode und konnte nicht importiert werden."
       ],
@@ -4364,6 +4360,9 @@
       "You can import one data type at a time.": [
         "Du kannst jeweils nur einen Datentyp importieren."
       ],
+      "You can now return to the application to continue": [
+        "Du kannst jetzt zur Anwendung zurückkehren, um fortzufahren."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kannst Mitteilungen aktivieren, um Benachrichtigungen zu erhalten, sobald neue E-Mail-Nachrichten in diesem Ordner eingehen."
       ],
@@ -5573,6 +5572,9 @@
       "Search for name or email": [
         "Nach Namen oder E-Mail-Adressen suchen"
       ],
+      "Search parent folder": [
+        "Übergeordneten Ordner durchsuchen"
+      ],
       "Select": [
         "Auswählen"
       ],
@@ -5651,6 +5653,11 @@
     "Select files": {
       "Upload": [
         "Hochladen"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Keine Ergebnisse gefunden"
       ]
     },
     "session_recovery:available:action": {

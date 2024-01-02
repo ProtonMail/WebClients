@@ -2190,10 +2190,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Tella-d tuccḍa ur nettwarǧa ara. Aktar ilaq ad yales asenker."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Afaylu-inek·inem ${ formattedFilename } deg-s ugar n ${ MAX_IMPORT_EVENTS_STRING } n tedyant.",
-        "Afaylu-inek·inem ${ formattedFilename } deg-s ugar n ${ MAX_IMPORT_EVENTS_STRING } n tedyanin."
-      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Afaylu-inek/m ${ formattedFilename } ur yesɛi ara tidyanin ara nsifeḍ."
       ],
@@ -4822,6 +4818,11 @@
     "Select files": {
       "Upload": [
         "Ali"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Ulac igmaḍ"
       ]
     },
     "session_recovery:available:action": {
