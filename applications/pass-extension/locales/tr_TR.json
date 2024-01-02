@@ -26,6 +26,9 @@
       "Advanced options": [
         "Gelişmiş seçenekler"
       ],
+      "Authenticate": [
+        "Kimliği doğrula"
+      ],
       "Back": [
         "Geri"
       ],
@@ -620,9 +623,6 @@
       ],
       "Unknown invite": [
         "Davet bilinmiyor"
-      ],
-      "Unsupported ${ PASS_APP_NAME } file format": [
-        "Desteklenmeyen ${ PASS_APP_NAME } dosya biçimi"
       ],
       "Unsupported 1Password file format": [
         "Desteklenmeyen 1Password dosya biçimi"
@@ -1662,6 +1662,9 @@
       "Other": [
         "Diğer"
       ],
+      "Password": [
+        "Parola"
+      ],
       "Pick a vault": [
         "Bir kasa seçin"
       ],
@@ -1738,6 +1741,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } hoşunuza gitti mi?"
+      ],
+      "Enter your password": [
+        "Parolanızı yazın"
       ],
       "Enter your PIN": [
         "PIN kodunuzu yazın"

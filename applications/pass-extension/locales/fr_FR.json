@@ -26,6 +26,9 @@
       "Advanced options": [
         "Options avancées"
       ],
+      "Authenticate": [
+        "S'authentifier"
+      ],
       "Back": [
         "Précédent"
       ],
@@ -626,9 +629,6 @@
       ],
       "Unknown invite": [
         "Invitation inconnue"
-      ],
-      "Unsupported ${ PASS_APP_NAME } file format": [
-        "Le format de fichier ${ PASS_APP_NAME } n'est pas pris en charge."
       ],
       "Unsupported 1Password file format": [
         "Le format de fichier 1Password n'est pas pris en charge."
@@ -1671,6 +1671,9 @@
       "Other": [
         "Autre"
       ],
+      "Password": [
+        "Mot de passe"
+      ],
       "Pick a vault": [
         "Sélectionnez un coffre-fort."
       ],
@@ -1747,6 +1750,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Vous appréciez ${ PASS_APP_NAME } ?"
+      ],
+      "Enter your password": [
+        "Saisissez votre mot de passe."
       ],
       "Enter your PIN": [
         "Saisissez votre code PIN"

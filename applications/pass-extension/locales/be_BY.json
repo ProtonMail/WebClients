@@ -26,6 +26,9 @@
       "Advanced options": [
         "Дадатковыя параметры"
       ],
+      "Authenticate": [
+        "Аўтэнтыфікацыя"
+      ],
       "Back": [
         "Назад"
       ],
@@ -449,6 +452,9 @@
       "Authentication error": [
         "Памылка аўтэнтыфікацыі"
       ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "Збой аўтэнтыфікацыі. Пацвердзіце пароль ${ BRAND_NAME }, каб працягнуць экспартаванне"
+      ],
       "Auto-lock could not be activated": [
         "Не атрымалася актываваць аўтаблакіроўку"
       ],
@@ -532,6 +538,9 @@
       ],
       "File could not be parsed": [
         "Не атрымалася прааналізаваць файл"
+      ],
+      "File does not match expected format": [
+        "Файл не адпавядае фармату, які чакаўся"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "Збой імпартавання для сховішча \"${ vaultData.name }\" : ${ description }"
@@ -628,9 +637,6 @@
       ],
       "Unknown invite": [
         "Невядомае запрашэнне"
-      ],
-      "Unsupported ${ PASS_APP_NAME } file format": [
-        "Фармат файла ${ PASS_APP_NAME } не падтрымліваецца"
       ],
       "Unsupported 1Password file format": [
         "Фармат файла 1Password не падтрымліваецца"
@@ -1035,6 +1041,9 @@
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-код паспяхова зарэгістраваны. Вы можаце выкарыстоўваць яго, каб разблакіраваць ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "Пацвердзіце пароль ${ BRAND_NAME } для таго, каб экспартаваць даныя ${ PASS_APP_NAME }"
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "Пацвердзіце свой PIN-код, каб скасаваць рэгістрацыю бягучай блакіроўкі.\nПасля гэтага дзеяння ${ PASS_APP_NAME } ніколі не будзе блакіравацца."
@@ -1711,6 +1720,9 @@
       "Other": [
         "Іншае"
       ],
+      "Password": [
+        "Пароль"
+      ],
       "Pick a vault": [
         "Выберыце сховішча"
       ],
@@ -1789,6 +1801,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Падабаецца ${ PASS_APP_NAME }?"
+      ],
+      "Enter your password": [
+        "Увядзіце пароль"
       ],
       "Enter your PIN": [
         "Увядзіце свой PIN"
