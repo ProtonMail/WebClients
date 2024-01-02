@@ -6,12 +6,14 @@ export const setPopupIcon = (options: { disabled: boolean; locked: boolean }): P
     if (options.disabled) suffix = '-disabled';
     if (options.locked) suffix = '-locked';
 
-    return browser.action.setIcon({
-        path: {
-            16: `./assets/protonpass-icon-16${suffix}.png`,
-            32: `./assets/protonpass-icon-32${suffix}.png`,
-        },
-    });
+    return browser.action
+        .setIcon({
+            path: {
+                16: `./assets/protonpass-icon-16${suffix}.png`,
+                32: `./assets/protonpass-icon-32${suffix}.png`,
+            },
+        })
+        .catch(noop);
 };
 
 /* this function should gracefully fail if the tabId
