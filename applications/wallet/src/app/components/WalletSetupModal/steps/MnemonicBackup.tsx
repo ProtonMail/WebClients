@@ -5,7 +5,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
 
-import { WasmMnemonic, WasmNetwork, WasmWallet, WasmWalletConfig } from '../../../../pkg';
+import { WasmMnemonic, WasmWallet, WasmWalletConfig } from '../../../../pkg';
+import { useOnchainWalletContext } from '../../../contexts';
 import { CreditCard } from './CreditCard';
 
 interface Props {
@@ -14,9 +15,11 @@ interface Props {
 }
 
 export const MnemonicBackup = ({ mnemonic, onContinue }: Props) => {
+    const { network } = useOnchainWalletContext();
+
     const [showMnemonic, setShowMnemonic] = useState(false);
 
-    const walletConfig = new WasmWalletConfig(WasmNetwork.Testnet);
+    const walletConfig = new WasmWalletConfig(network);
     const wallet = mnemonic ? new WasmWallet(mnemonic.asString(), undefined, walletConfig) : null;
 
     return (

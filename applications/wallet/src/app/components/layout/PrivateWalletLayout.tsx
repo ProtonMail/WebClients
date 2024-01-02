@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { DrawerApp, PrivateAppContainer, PrivateMainArea, TopBanners, useToggle } from '@proton/components';
 
-import { useBlockchainContext } from '../../contexts';
+import { useOnchainWalletContext } from '../../contexts';
 import WalletHeader from './WalletHeader';
 import WalletQuickSettings from './WalletQuickSettings';
 import WalletSidebar from './WalletSidebar';
@@ -14,7 +14,7 @@ interface Props {
 
 export const PrivateWalletLayout = ({ children }: Props) => {
     const { state: expanded, toggle: toggleExpanded } = useToggle();
-    const { wallets, isInitialised } = useBlockchainContext();
+    const { wallets, isInitialised } = useOnchainWalletContext();
 
     return (
         <PrivateAppContainer

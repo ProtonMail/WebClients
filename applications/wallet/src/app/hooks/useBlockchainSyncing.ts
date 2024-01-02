@@ -27,7 +27,7 @@ const syncAccount = async (wasmAccount: WasmAccount) => {
 
 export type SyncingMetadata = { syncing: boolean; count: number; lastSyncing: number };
 
-export const useBlockchainSyncing = (wallets?: ApiWallet[]) => {
+export const useBlockchainSyncing = (network: WasmNetwork, wallets?: ApiWallet[]) => {
     // Here undefined means there is no wallet loaded yet, it is different from {} which means that there is no wallet TO BE loaded
     const [blockchainWalletRecord, setBlockchainWalletRecord] = useState<BlockchainWalletRecord | undefined>();
     const [syncingMetatadaByAccountId, setSyncingMetatadaByAccountId] = useState<
@@ -124,7 +124,7 @@ export const useBlockchainSyncing = (wallets?: ApiWallet[]) => {
             try {
                 const tmpAccounts: BlockchainAccountRecord = {};
 
-                const config = new WasmWalletConfig(WasmNetwork.Testnet);
+                const config = new WasmWalletConfig(network);
                 // TODO: handle passphrase wallets
                 const wasmWallet = new WasmWallet(wallet.Mnemonic, '', config);
 

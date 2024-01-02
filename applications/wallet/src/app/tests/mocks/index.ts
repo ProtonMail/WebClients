@@ -1,1 +1,1 @@
-export * from './useBlockchainContext';
+export * from './useOnchainWalletContext';

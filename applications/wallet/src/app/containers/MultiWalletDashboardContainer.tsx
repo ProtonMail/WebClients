@@ -7,10 +7,10 @@ import {
     WalletSetupModal,
     YourWalletsSection,
 } from '../components';
-import { useBlockchainContext } from '../contexts';
+import { useOnchainWalletContext } from '../contexts';
 
 export const MultiWalletDashboardContainer = () => {
-    const { wallets } = useBlockchainContext();
+    const { wallets } = useOnchainWalletContext();
 
     const [isSetupModalOpenned, setIsSetupModalOpenned] = useState(false);
     const accounts = wallets?.flatMap(({ accounts }) => accounts) ?? [];
