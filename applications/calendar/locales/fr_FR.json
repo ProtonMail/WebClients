@@ -701,12 +701,6 @@
       "${ title } started on ${ formattedDate } at ${ formattedHour }": [
         "${ title } a commencé le ${ formattedDate } à ${ formattedHour }."
       ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } a commencé le ${ formattedDateWithoutTime }."
-      ],
-      "${ title } started on ${ formattedDateWithTime }": [
-        "${ title } a commencé le ${ formattedDateWithTime }."
-      ],
       "${ title } started yesterday": [
         "${ title } a commencé hier."
       ],
@@ -724,12 +718,6 @@
       ],
       "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
         "${ title } commence le ${ formattedDate } à ${ formattedHour }."
-      ],
-      "${ title } starts on ${ formattedDateWithoutTime }": [
-        "${ title } commence le ${ formattedDateWithoutTime }."
-      ],
-      "${ title } starts on ${ formattedDateWithTime }": [
-        "${ title } commencera à ${ formattedDateWithTime }."
       ],
       "${ title } starts today": [
         "${ title } commence aujourd’hui."
@@ -2108,16 +2096,9 @@
       "Daily": [
         "Chaque jour"
       ],
-      "Daily, ${ untilString }": [
-        "Chaque jour, ${ untilString }"
-      ],
       "Every ${ interval } day": [
         "Chaque ${ interval } jour",
         "Tous les ${ interval } jours"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Chaque ${ interval } jour, ${ untilString }",
-        "Tous les ${ interval } jours, jusqu'au ${ untilString }"
       ],
       "until ${ dateString }": [
         "jusqu’au ${ dateString }"
@@ -2788,10 +2769,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Une erreur inattendue s'est produite. L'importation doit être relancée."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_EVENTS_STRING } événement.",
-        "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_EVENTS_STRING } événements."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Le format de votre fichier ${ formattedFilename } n'est pas valide, il ne peut pas être importé."
@@ -5086,22 +5063,8 @@
         "Chaque ${ interval } mois, ${ onDayString }",
         "Tous les ${ interval } mois, le ${ onDayString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Chaque ${ interval } mois, ${ onDayString }, à ${ timesString }",
-        "Tous les ${ interval } mois, ${ onDayString }, à ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Chaque ${ interval } mois, ${ onDayString }, jusqu'au ${ untilString }",
-        "Tous les ${ interval } mois, ${ onDayString }, ${ untilString }"
-      ],
       "Monthly ${ onDayString }": [
         "Chaque mois, ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Chaque mois, ${ onDayString }, à ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Chaque mois, ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -5670,6 +5633,9 @@
       ],
       "Search for name or email": [
         "Recherchez par nom ou adresse e-mail."
+      ],
+      "Search parent folder": [
+        "Rechercher le dossier principal"
       ],
       "Select": [
         "Sélectionnez"
@@ -7106,37 +7072,13 @@
         "Chaque ${ interval } semaine, les ${ multipleDaysString }",
         "Toutes les ${ interval } semaines, les ${ multipleDaysString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Chaque ${ interval } semaine le ${ multipleDaysString }, ${ timesString }",
-        "Toutes les ${ interval } semaines le ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Chaque ${ interval } semaine, les ${ multipleDaysString }, jusqu’au ${ untilString }",
-        "Toutes les ${ interval } semaines, les ${ multipleDaysString }, ${ untilString }"
-      ],
       "Every ${ interval } week on all days": [
         "Chaque ${ interval } semaine, chaque jour",
         "Toutes les ${ interval } semaines, chaque jour"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Chaque ${ interval } semaine, chaque jour, à ${ timesString }",
-        "Toutes les ${ interval } semaines, chaque jour, à ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Chaque ${ interval } semaine, chaque jour, ${ untilString }",
-        "Toutes les ${ interval } semaines, chaque jour, ${ untilString }"
-      ],
       "Every ${ interval } week on Friday": [
         "Chaque ${ interval } semaine, le vendredi",
         "Toutes les ${ interval } semaines, le vendredi"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Chaque ${ interval } semaine le vendredi, ${ timesString }",
-        "Toutes les ${ interval } semaines le vendredi, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le vendredi, ${ untilString }",
-        "Toutes les ${ interval } semaines, le vendredi, jusqu’au ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Chaque ${ interval } semaine, le lundi",
@@ -7146,21 +7088,9 @@
         "Chaque ${ interval } semaine, le lundi, à ${ timesString }",
         "Toutes les ${ interval } semaines, le lundi, à ${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le lundi, ${ untilString }",
-        "Toutes les ${ interval } semaines, le lundi, ${ untilString }"
-      ],
       "Every ${ interval } week on Saturday": [
         "Chaque semaine, le samedi ${ interval }",
         "Toutes les ${ interval } semaines, le samedi"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Chaque ${ interval } semaine le samedi, ${ timesString }",
-        "Toutes les ${ interval } semaines le samedi, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le samedi, jusqu’au ${ untilString }",
-        "Toutes les ${ interval } semaines, le samedi, jusqu’au ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Chaque ${ interval } semaine, le dimanche",
@@ -7170,21 +7100,9 @@
         "Chaque ${ interval } semaine, le dimanche, à ${ timesString }",
         "Toutes les ${ interval } semaines, le dimanche, à ${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le dimanche, jusqu’au ${ untilString }",
-        "Toutes les ${ interval } semaines, le dimanche, ${ untilString }"
-      ],
       "Every ${ interval } week on Thursday": [
         "Chaque ${ interval } semaine, le jeudi",
         "Toutes les ${ interval } semaines, le jeudi"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Chaque ${ interval } semaine le jeudi, ${ timesString }",
-        "Toutes les ${ interval } semaines le jeudi, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le jeudi, jusqu’au ${ untilString }",
-        "Toutes les ${ interval } semaines, le jeudi, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Chaque ${ interval } semaine, le mardi",
@@ -7194,102 +7112,36 @@
         "Chaque ${ interval } semaine le mardi, ${ timesString }",
         "Toutes les ${ interval } semaines le mardi, ${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le mardi, ${ untilString }",
-        "Toutes les ${ interval } semaines, le mardi, jusqu’au ${ untilString }"
-      ],
       "Every ${ interval } week on Wednesday": [
         "Chaque ${ interval } semaine, le mercredi",
         "Toutes les ${ interval } semaines, le mercredi"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Chaque ${ interval } semaine le mercredi, ${ timesString }",
-        "Toutes les ${ interval } semaines le mercredi, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le mercredi, ${ untilString }",
-        "Toutes les ${ interval } semaines, le mercredi, jusqu'au ${ untilString }"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "Chaque semaine, les ${ multipleDaysString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Tous les ${ multipleDaysString }, à ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Tous les ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Chaque semaine, tous les jours"
       ],
-      "Weekly on all days, ${ timesString }": [
-        "Tous les jours, à ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Chaque semaine, tous les jours, ${ untilString }"
-      ],
       "Weekly on Friday": [
         "Tous les vendredis"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Tous les vendredis, à ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Tous les vendredis, ${ untilString }"
       ],
       "Weekly on Monday": [
         "Tous les lundis"
       ],
-      "Weekly on Monday, ${ timesString }": [
-        "Tous les lundis, à ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Tous les lundis, ${ untilString }"
-      ],
       "Weekly on Saturday": [
         "Tous les samedis"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Tous les samedis, à ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Tous les samedis, ${ untilString }"
       ],
       "Weekly on Sunday": [
         "Tous les dimanches"
       ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Tous les dimanches, à ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Tous les dimanches, ${ untilString }"
-      ],
       "Weekly on Thursday": [
         "Tous les jeudis"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Tous les jeudis, à ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Tous les jeudis, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "Tous les mardis"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Tous les mardis, à ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Tous les mardis, ${ untilString }"
-      ],
       "Weekly on Wednesday": [
         "Tous les mercredis"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Tous les mercredis, à ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Tous les mercredis, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -7320,22 +7172,8 @@
         "Chaque ${ interval } an",
         "Tous les ${ interval } ans"
       ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Chaque ${ interval } an, ${ timesString }",
-        "Tous les ${ interval } ans, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Chaque ${ interval } an, ${ untilString }",
-        "Tous les ${ interval } ans, ${ untilString }"
-      ],
       "Yearly": [
         "Chaque année"
-      ],
-      "Yearly, ${ timesString }": [
-        "Chaque année à ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Chaque année, ${ untilString }"
       ]
     }
   }

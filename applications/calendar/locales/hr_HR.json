@@ -579,12 +579,6 @@
       "${ title } started on ${ formattedDate } at ${ formattedHour }": [
         "${ title } započelo ${ formattedDate } u ${ formattedHour }"
       ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } započeo u ${ formattedDateWithoutTime }"
-      ],
-      "${ title } started on ${ formattedDateWithTime }": [
-        "${ title } započinje ${ formattedDateWithTime }"
-      ],
       "${ title } started yesterday": [
         "${ title } započeo jučer"
       ],
@@ -1741,18 +1735,10 @@
       "Daily": [
         "Dnevno"
       ],
-      "Daily, ${ untilString }": [
-        "Dnevno, ${ untilString }"
-      ],
       "Every ${ interval } day": [
         "Svaki ${ interval } dan",
         "Svaka ${ interval } dana",
         "Svakih ${ interval } dana"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Svaki ${ interval } dan, ${ untilString }",
-        "Svaka ${ interval } dana, ${ untilString }",
-        "Svakih ${ interval } dana, ${ untilString }"
       ],
       "until ${ dateString }": [
         "do ${ dateString }"
@@ -3692,24 +3678,8 @@
         "Svaka ${ interval } mjeseca ${ onDayString }",
         "Svakih ${ interval } mjeseci ${ onDayString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Svaki ${ interval } mjesec ${ onDayString }, ${ timesString }",
-        "Svaka ${ interval } mjeseca ${ onDayString }, ${ timesString }",
-        "Svakih ${ interval } mjeseci ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Svaki ${ interval } mjesec ${ onDayString }, ${ untilString }",
-        "Svaka ${ interval } mjeseca ${ onDayString }, ${ untilString }",
-        "Svakih ${ interval } mjeseci ${ onDayString }, ${ untilString }"
-      ],
       "Monthly ${ onDayString }": [
         "Mjesečno ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Mjesečno ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Mjesečno ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -5130,45 +5100,15 @@
         "Svaka ${ interval } tjedna na ${ multipleDaysString }",
         "Svakih ${ interval } tjedana na ${ multipleDaysString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Svaki ${ interval } tjedan na ${ multipleDaysString }, ${ timesString }",
-        "Svaka ${ interval } tjedna na ${ multipleDaysString }, ${ timesString }",
-        "Svakih ${ interval } tjedana na ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Svaki ${ interval } tjedan na ${ multipleDaysString }, ${ untilString }",
-        "Svaka ${ interval } tjedna na ${ multipleDaysString }, ${ untilString }",
-        "Svakih ${ interval } tjedana na ${ multipleDaysString }, ${ untilString }"
-      ],
       "Every ${ interval } week on all days": [
         "Svaki ${ interval } tjedan, svim danima",
         "Svaka ${ interval } tjedna, svim danima",
         "Svakih ${ interval } tjedana, svim danima"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Svaki ${ interval } tjedan svakim danom, ${ timesString }",
-        "Svaka ${ interval } tjedna svakim danom, ${ timesString }",
-        "Svakih ${ interval } tjedana svakim danom, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Svaki ${ interval } tjedan svakim danom, ${ untilString }",
-        "Svaka ${ interval } tjedna svakim danom, ${ untilString }",
-        "Svakih ${ interval } tjedana svakim danom, ${ untilString }"
-      ],
       "Every ${ interval } week on Friday": [
         "Svaki ${ interval } tjedan petkom",
         "Svaka ${ interval } tjedna petkom",
         "Svakih ${ interval } tjedana petkom"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Svaki ${ interval } tjedan petkom, ${ timesString }",
-        "Svaka ${ interval } tjedna petkom, ${ timesString }",
-        "Svakih ${ interval } tjedana petkom, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Svaki ${ interval } tjedan petkom, ${ untilString }",
-        "Svaka ${ interval } tjedna petkom, ${ untilString }",
-        "Svakih ${ interval } tjedana petkom, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Svaki ${ interval } tjedan ponedjeljkom",
@@ -5180,25 +5120,10 @@
         "Svaka ${ interval } tjedna ponedjeljkom, ${ timesString }",
         "Svakih ${ interval } tjedana ponedjeljkom, ${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Svaki ${ interval } tjedan ponedjeljkom, ${ untilString }",
-        "Svaka ${ interval } tjedna ponedjeljkom, ${ untilString }",
-        "Svakih ${ interval } tjedana ponedjeljkom, ${ untilString }"
-      ],
       "Every ${ interval } week on Saturday": [
         "Svaki ${ interval } tjedan subotom",
         "Svaka ${ interval } tjedna subotom",
         "Svakih ${ interval } tjedana subotom"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Svaki ${ interval } tjedan subotom, ${ timesString }",
-        "Svaka ${ interval } tjedna subotom, ${ timesString }",
-        "Svakih ${ interval } tjedana subotom, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Svaki ${ interval } tjedan subotom, ${ untilString }",
-        "Svaka ${ interval } tjedna subotom, ${ untilString }",
-        "Svakih ${ interval } tjedana subotom, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Svaki ${ interval } tjedan nedjeljom",
@@ -5210,25 +5135,10 @@
         "Svaka ${ interval } tjedna nedjeljom, ${ timesString }",
         "Svakih ${ interval } tjedana nedjeljom, ${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Svaki ${ interval } tjedan nedjeljom, ${ untilString }",
-        "Svaka ${ interval } tjedna nedjeljom, ${ untilString }",
-        "Svakih ${ interval } tjedana nedjeljom, ${ untilString }"
-      ],
       "Every ${ interval } week on Thursday": [
         "Svaki ${ interval } tjedan četvrtkom",
         "Svaka ${ interval } tjedna četvrtkom",
         "Svakih ${ interval } tjedana četvrtkom"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Svaki ${ interval } tjedan četvrtkom, ${ timesString }",
-        "Svaka ${ interval } tjedna četvrtkom, ${ timesString }",
-        "Svakih ${ interval } tjedana četvrtkom, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Svaki ${ interval } tjedan četvrtkom, ${ untilString }",
-        "Svaka ${ interval } tjedna četvrtkom, ${ untilString }",
-        "Svakih ${ interval } tjedana četvrtkom, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Svaki ${ interval } tjedan utorkom",
@@ -5240,106 +5150,37 @@
         "Svaka ${ interval } tjedna utorkom, ${ timesString }",
         "Svakih ${ interval } tjedana utorkom, ${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Svaki ${ interval } tjedan utorkom, ${ untilString }",
-        "Svaka ${ interval } tjedna utorkom, ${ untilString }",
-        "Svakih ${ interval } tjedana utorkom, ${ untilString }"
-      ],
       "Every ${ interval } week on Wednesday": [
         "Svaki ${ interval } tjedan srijedom",
         "Svaka ${ interval } tjedna srijedom",
         "Svakih ${ interval } tjedana srijedom"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Svaki ${ interval } tjedan srijedom, ${ timesString }",
-        "Svaka ${ interval } tjedna srijedom, ${ timesString }",
-        "Svakih ${ interval } tjedana srijedom, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Svaki ${ interval } tjedan srijedom, ${ untilString }",
-        "Svaka ${ interval } tjedna srijedom, ${ untilString }",
-        "Svakih ${ interval } tjedana srijedom, ${ untilString }"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "Tjedno na ${ multipleDaysString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Tjedno na ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Tjedno na ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Tjedno, svim danima"
       ],
-      "Weekly on all days, ${ timesString }": [
-        "Tjedno svakim danom, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Tjedno svakim danom, ${ untilString }"
-      ],
       "Weekly on Friday": [
         "Tjedno petkom"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Tjedno petkom, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Tjedno petkom, ${ untilString }"
       ],
       "Weekly on Monday": [
         "Tjedno ponedjeljkom"
       ],
-      "Weekly on Monday, ${ timesString }": [
-        "Tjedno ponedjeljkom, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Tjedno ponedjeljkom, ${ untilString }"
-      ],
       "Weekly on Saturday": [
         "Tjedno subotom"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Tjedno subotom, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Tjedno subotom, ${ untilString }"
       ],
       "Weekly on Sunday": [
         "Tjedno nedjeljom"
       ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Tjedno nedjeljom, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Tjedno nedjeljom, ${ untilString }"
-      ],
       "Weekly on Thursday": [
         "Tjedno četvrtkom"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Tjedno četvrtkom, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Tjedno četvrtkom, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "Tjedno utorkom"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Tjedno utorkom, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Tjedno utorkom, ${ untilString }"
-      ],
       "Weekly on Wednesday": [
         "Tjedno srijedom"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Tjedno srijedom, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Tjedno srijedom, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -5371,24 +5212,8 @@
         "Svake ${ interval } godine",
         "Svakih ${ interval } godina"
       ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Svaku ${ interval } godinu, ${ timesString }",
-        "Svake ${ interval } godine, ${ timesString }",
-        "Svakih ${ interval } godina, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Svaku ${ interval } godinu, ${ untilString }",
-        "Svake ${ interval } godine, ${ untilString }",
-        "Svakih ${ interval } godina, ${ untilString }"
-      ],
       "Yearly": [
         "Godišnje"
-      ],
-      "Yearly, ${ timesString }": [
-        "Godišnje, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Godišnje, ${ untilString }"
       ]
     }
   }

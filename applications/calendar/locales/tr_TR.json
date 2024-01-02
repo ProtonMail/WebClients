@@ -701,12 +701,6 @@
       "${ title } started on ${ formattedDate } at ${ formattedHour }": [
         "${ title }, ${ formattedDate } tarihinde ${ formattedHour } saatinde başladı"
       ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title }, ${ formattedDateWithoutTime } tarihinde başladı"
-      ],
-      "${ title } started on ${ formattedDateWithTime }": [
-        "${ title }, ${ formattedDateWithTime } zamanında başladı"
-      ],
       "${ title } started yesterday": [
         "${ title } dün başladı"
       ],
@@ -724,12 +718,6 @@
       ],
       "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
         "${ title }, ${ formattedDate } tarihinde ${ formattedHour } saatinde başlayacak"
-      ],
-      "${ title } starts on ${ formattedDateWithoutTime }": [
-        "${ title }, ${ formattedDateWithoutTime } tarihinde başlayacak"
-      ],
-      "${ title } starts on ${ formattedDateWithTime }": [
-        "${ title }, ${ formattedDateWithTime } zamanında başlayacak"
       ],
       "${ title } starts today": [
         "${ title } bugün başlıyor"
@@ -2103,16 +2091,9 @@
       "Daily": [
         "Günlük"
       ],
-      "Daily, ${ untilString }": [
-        "Günde bir, ${ untilString }"
-      ],
       "Every ${ interval } day": [
         "${ interval } günde bir",
         "${ interval } günde bir"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "${ interval } günde bir, ${ untilString }",
-        "${ interval } günde bir, ${ untilString }"
       ],
       "until ${ dateString }": [
         "${ dateString } tarihine kadar"
@@ -2774,10 +2755,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Beklenmedik bir sorun çıktı. İçe aktarma işlemi yeniden başlatılmalı."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS_STRING } etkinlikten daha fazla etkinlik var.",
-        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS_STRING } etkinlikten daha fazla etkinlik var."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "${ formattedFilename } dosyanız geçersiz bir yöntem içerdiğinden içe aktarılamıyor."
@@ -5059,22 +5036,8 @@
         "${ interval } ayda bir ${ onDayString }",
         "${ interval } ayda bir ${ onDayString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "${ interval } ayda bir ${ onDayString }, ${ timesString }",
-        "${ interval } ayda bir ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "${ interval } ayda bir ${ onDayString }, ${ untilString }",
-        "${ interval } ayda bir ${ onDayString }, ${ untilString }"
-      ],
       "Monthly ${ onDayString }": [
         "Ayda bir ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Ayda bir ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Ayda bir ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -7076,37 +7039,13 @@
         "${ interval } haftada bir ${ multipleDaysString }",
         "${ interval } haftada bir ${ multipleDaysString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "${ interval } haftada bir ${ multipleDaysString }, ${ timesString }",
-        "${ interval } haftada bir ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "${ interval } haftada bir ${ multipleDaysString }, ${ untilString }",
-        "${ interval } haftada bir ${ multipleDaysString }, ${ untilString }"
-      ],
       "Every ${ interval } week on all days": [
         "${ interval } haftada bir her gün",
         "${ interval } haftada bir her gün"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "${ interval } haftada bir her gün, ${ timesString }",
-        "${ interval } haftada bir her gün, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "${ interval } haftada bir her gün, ${ untilString }",
-        "${ interval } haftada bir her gün, ${ untilString }"
-      ],
       "Every ${ interval } week on Friday": [
         "${ interval } haftada bir Cuma günü",
         "${ interval } haftada bir Cuma günü"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "${ interval } haftada bir Cuma günü, ${ timesString }",
-        "${ interval } haftada bir Cuma günü, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "${ interval } haftada bir Cuma günü, ${ untilString }",
-        "${ interval } haftada bir Cuma günü, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "${ interval } haftada bir Pazartesi günü",
@@ -7116,21 +7055,9 @@
         "${ interval } haftada bir Pazartesi günü, ${ timesString }",
         "${ interval } haftada bir Pazartesi günü, ${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "${ interval } haftada bir Pazartesi günü, ${ untilString }",
-        "${ interval } haftada bir Pazartesi günü, ${ untilString }"
-      ],
       "Every ${ interval } week on Saturday": [
         "${ interval } haftada bir Cumartesi günü",
         "${ interval } haftada bir Cumartesi günü"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "${ interval } haftada bir Cumartesi günü, ${ timesString }",
-        "${ interval } haftada bir Cumartesi günü, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "${ interval } haftada bir Cumartesi günü, ${ untilString }",
-        "${ interval } haftada bir Cumartesi günü, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "${ interval } haftada bir Pazar günü",
@@ -7140,21 +7067,9 @@
         "${ interval } haftada bir Pazar günü, ${ timesString }",
         "${ interval } haftada bir Pazar günü, ${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "${ interval } haftada bir Pazar günü, ${ untilString }",
-        "${ interval } haftada bir Pazar günü, ${ untilString }"
-      ],
       "Every ${ interval } week on Thursday": [
         "${ interval } haftada bir Perşembe günü",
         "${ interval } haftada bir Perşembe günü"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "${ interval } haftada bir Perşembe günü, ${ timesString }",
-        "${ interval } haftada bir Perşembe günü, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "${ interval } haftada bir Perşembe günü, ${ untilString }",
-        "${ interval } haftada bir Perşembe günü, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "${ interval } haftada bir Salı günü",
@@ -7164,102 +7079,36 @@
         "${ interval } haftada bir Salı günü, ${ timesString }",
         "${ interval } haftada bir Salı günü, ${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "${ interval } haftada bir Salı günü, ${ untilString }",
-        "${ interval } haftada bir Salı günü, ${ untilString }"
-      ],
       "Every ${ interval } week on Wednesday": [
         "${ interval } haftada bir Çarşamba günü",
         "${ interval } haftada bir Çarşamba günü"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "${ interval } haftada bir Çarşamba günü, ${ timesString }",
-        "${ interval } haftada bir Çarşamba günü, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "${ interval } haftada bir Çarşamba günü, ${ untilString }",
-        "${ interval } haftada bir Çarşamba günü, ${ untilString }"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "Haftada bir ${ multipleDaysString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Haftada bir ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Haftada bir ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Haftada bir her gün"
       ],
-      "Weekly on all days, ${ timesString }": [
-        "Haftada bir her gün, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Haftada bir her gün, ${ untilString }"
-      ],
       "Weekly on Friday": [
         "Haftada bir Cuma günü"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Haftada bir Cuma günü, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Haftada bir Cuma günü, ${ untilString }"
       ],
       "Weekly on Monday": [
         "Haftada bir Pazartesi günü"
       ],
-      "Weekly on Monday, ${ timesString }": [
-        "Haftada bir Pazartesi günü, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Haftada bir Pazartesi günü, ${ untilString }"
-      ],
       "Weekly on Saturday": [
         "Haftada bir Cumartesi günü"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Haftada bir Cumartesi günü, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Haftada bir Cumartesi günü, ${ untilString }"
       ],
       "Weekly on Sunday": [
         "Haftada bir Pazar günü"
       ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Haftada bir Pazar günü, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Haftada bir Pazar günü, ${ untilString }"
-      ],
       "Weekly on Thursday": [
         "Haftada bir Perşembe günü"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Haftada bir Perşembe günü, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Haftada bir Perşembe günü, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "Haftada bir Salı günü"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Haftada bir Salı günü, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Haftada bir Salı günü, ${ untilString }"
-      ],
       "Weekly on Wednesday": [
         "Haftada bir Çarşamba günü"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Haftada bir Çarşamba günü, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Haftada bir Çarşamba günü, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -7290,22 +7139,8 @@
         "${ interval } yılda bir",
         "${ interval } yılda bir"
       ],
-      "Every ${ interval } year, ${ timesString }": [
-        "${ interval } yılda bir, ${ timesString }",
-        "${ interval } yılda bir, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "${ interval } yılda bir, ${ untilString }",
-        "${ interval } yılda bir, ${ untilString }"
-      ],
       "Yearly": [
         "Yıllık"
-      ],
-      "Yearly, ${ timesString }": [
-        "Yılda bir, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "Yılda bir, ${ untilString }"
       ]
     }
   }
