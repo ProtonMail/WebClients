@@ -26,6 +26,9 @@
       "Advanced options": [
         "Opsi lanjutan"
       ],
+      "Authenticate": [
+        "Autentikasi"
+      ],
       "Back": [
         "Kembali"
       ],
@@ -625,9 +628,6 @@
       ],
       "Unknown invite": [
         "Undangan tidak dikenal"
-      ],
-      "Unsupported ${ PASS_APP_NAME } file format": [
-        "Berkas format ${ PASS_APP_NAME } tidak didukung"
       ],
       "Unsupported 1Password file format": [
         "Format berkas 1Password tidak didukung"
@@ -1651,6 +1651,9 @@
       "Other": [
         "Lainnya"
       ],
+      "Password": [
+        "Kata sandi"
+      ],
       "Pick a vault": [
         "Pilih brankas"
       ],
@@ -1726,6 +1729,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Menikmati ${ PASS_APP_NAME }?"
+      ],
+      "Enter your password": [
+        "Masukkan kata sandi Anda"
       ],
       "Enter your PIN": [
         "Masukkan PIN Anda"

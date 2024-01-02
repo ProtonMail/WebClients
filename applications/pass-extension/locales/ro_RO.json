@@ -26,6 +26,9 @@
       "Advanced options": [
         "Opțiuni avansate"
       ],
+      "Authenticate": [
+        "Autentificare"
+      ],
       "Back": [
         "Înapoi"
       ],
@@ -621,9 +624,6 @@
       ],
       "Unknown invite": [
         "Invitație necunoscută."
-      ],
-      "Unsupported ${ PASS_APP_NAME } file format": [
-        "Formatul fișierului ${ PASS_APP_NAME } nu este suportat."
       ],
       "Unsupported 1Password file format": [
         "Format de fișier 1Password neacceptat."
@@ -1682,6 +1682,9 @@
       "Other": [
         "Altele"
       ],
+      "Password": [
+        "Parola"
+      ],
       "Pick a vault": [
         "Alegeți un seif"
       ],
@@ -1759,6 +1762,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Vă bucurați de ${ PASS_APP_NAME }?"
+      ],
+      "Enter your password": [
+        "Introduceţi parola"
       ],
       "Enter your PIN": [
         "Introduceți codul PIN"
