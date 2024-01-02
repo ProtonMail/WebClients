@@ -5,6 +5,7 @@
  * of them are also used in the UI code to trigger
  * certain effects.
  */
+import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import { AppStatus } from '@proton/pass/types';
 import { oneOf, or } from '@proton/pass/utils/fp/predicates';
 
@@ -19,3 +20,5 @@ export const clientBusy = oneOf(AppStatus.IDLE, AppStatus.AUTHORIZED, AppStatus.
 
 export const clientStatusResolved = or(clientReady, clientUnauthorized, clientErrored);
 export const clientCanBoot = or(clientAuthorized, clientUnauthorized, clientErrored);
+
+export const isTaggedBuild = (config: PassConfig) => ENV === 'production' && config.BRANCH.startsWith('proton-pass@');

@@ -1,11 +1,10 @@
 import { type FC, createContext, useContext, useMemo, useRef, useState } from 'react';
 
+import { authStore } from '@proton/pass/lib/auth/store';
 import { clientReady } from '@proton/pass/lib/client';
 import { AppStatus, type Maybe } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
-
-import { authStore } from '../../lib/core';
 
 type ClientState = { status: AppStatus; loggedIn: boolean; localID: Maybe<number>; UID: Maybe<string> };
 type ClientContextValue = { state: ClientState; setStatus: (status: AppStatus) => void };
