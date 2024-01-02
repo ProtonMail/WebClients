@@ -14,7 +14,7 @@ import { SECOND } from '@proton/shared/lib/constants';
 
 import { WalletSelector } from '../../atoms';
 import { BitcoinAmountInput } from '../../atoms/BitcoinAmountInput';
-import { useBlockchainContext } from '../../contexts';
+import { useOnchainWalletContext } from '../../contexts';
 import { useBitcoinReceive } from './useBitcoinReceive';
 
 const CopyPasteButton = ({ value }: { value: string }) => {
@@ -46,7 +46,7 @@ interface Props {
 }
 
 export const BitcoinReceive = ({ defaultWalletId }: Props) => {
-    const { wallets } = useBlockchainContext();
+    const { wallets } = useOnchainWalletContext();
 
     const {
         handleSelectWallet,

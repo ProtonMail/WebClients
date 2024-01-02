@@ -6,7 +6,7 @@ import { mockUseNotifications } from '@proton/testing/lib/vitest';
 
 import { WasmTxBuilder } from '../../../../pkg';
 import * as useTxBuilderModule from '../../../hooks/useTxBuilder';
-import { mockUseBlockchainContext, walletsWithAccountsWithBalanceAndTxs } from '../../../tests';
+import { mockUseOnchainWalletContext, walletsWithAccountsWithBalanceAndTxs } from '../../../tests';
 import { useOnchainTransactionBuilder } from './useOnchainTransactionBuilder';
 
 describe('useOnchainTransactionBuilder', () => {
@@ -14,7 +14,7 @@ describe('useOnchainTransactionBuilder', () => {
 
     beforeEach(() => {
         mockUseNotifications();
-        mockUseBlockchainContext();
+        mockUseOnchainWalletContext();
 
         mockSetAccount = vi.fn();
 

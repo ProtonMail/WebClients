@@ -6,11 +6,11 @@ import { Option, SelectTwo } from '@proton/components/components';
 import useSearchParams from '@proton/hooks/useSearchParams';
 
 import { TransactionList } from '../components/TransactionList';
-import { useBlockchainContext } from '../contexts';
+import { useOnchainWalletContext } from '../contexts';
 
 export const TransactionHistoryContainer = () => {
     const [params] = useSearchParams();
-    const { wallets } = useBlockchainContext();
+    const { wallets } = useOnchainWalletContext();
     const [walletId, setWalletId] = useState<number>();
 
     useEffect(() => {

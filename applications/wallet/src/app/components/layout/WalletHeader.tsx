@@ -6,7 +6,7 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { PrivateHeader, QuickSettingsAppButton, UserDropdown, useActiveBreakpoint } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
-import { useBlockchainContext } from '../../contexts';
+import { useOnchainWalletContext } from '../../contexts';
 
 interface Props {
     isHeaderExpanded: boolean;
@@ -16,7 +16,7 @@ interface Props {
 
 const WalletHeader = ({ isHeaderExpanded, toggleHeaderExpanded, title = c('Title').t`Wallet` }: Props) => {
     const { viewportWidth } = useActiveBreakpoint();
-    const { syncingMetatadaByAccountId } = useBlockchainContext();
+    const { syncingMetatadaByAccountId } = useOnchainWalletContext();
 
     const syncingText = useMemo(() => {
         const hasSyncingAccounts = Object.values(syncingMetatadaByAccountId).some((account) => account?.syncing);
@@ -30,6 +30,7 @@ const WalletHeader = ({ isHeaderExpanded, toggleHeaderExpanded, title = c('Title
 
     return (
         <PrivateHeader
+            app={APPS.PROTONWALLET}
             userDropdown={<UserDropdown app={APPS.PROTONWALLET} />}
             title={title}
             expanded={isHeaderExpanded}

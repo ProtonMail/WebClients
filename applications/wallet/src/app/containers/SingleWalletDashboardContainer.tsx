@@ -5,13 +5,13 @@ import { BalanceOverview, DashboardSideContent } from '../components';
 import { OnchainTransactionDetailsProps } from '../components/OnchainTransactionDetails';
 import { OnchainTransactionDetailsModal } from '../components/OnchainTransactionDetailsModal';
 import { TransactionList } from '../components/TransactionList';
-import { useBlockchainContext } from '../contexts';
+import { useOnchainWalletContext } from '../contexts';
 
 export const SingleWalletDashboardContainer = () => {
     const [modalData, setModalData] = useState<OnchainTransactionDetailsProps>();
     const { walletId } = useParams<{ walletId: string }>();
 
-    const { wallets } = useBlockchainContext();
+    const { wallets } = useOnchainWalletContext();
     const wallet = useMemo(() => wallets?.find(({ WalletID }) => WalletID === Number(walletId)), [walletId, wallets]);
 
     if (!wallet) {

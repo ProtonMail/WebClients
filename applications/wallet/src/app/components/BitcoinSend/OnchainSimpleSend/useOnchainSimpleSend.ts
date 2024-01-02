@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 
 import { WasmBitcoinUnit, WasmPaymentLink } from '../../../../pkg';
 import { WalletAndAccountSelectorValue } from '../../../atoms';
-import { useBlockchainContext } from '../../../contexts';
+import { useOnchainWalletContext } from '../../../contexts';
 import { usePsbt } from '../../../hooks/usePsbt';
 import { useRecipients } from '../../../hooks/useRecipients';
 import { useTxBuilder } from '../../../hooks/useTxBuilder';
 import { getDefaultAccount, getSelectedWallet } from '../../../utils';
 
 export const useOnchainSimpleSend = (defaultWalletId?: number, paymentLink?: WasmPaymentLink) => {
-    const { wallets } = useBlockchainContext();
+    const { wallets } = useOnchainWalletContext();
     const { txBuilder, updateTxBuilder } = useTxBuilder();
 
     const { updateRecipient } = useRecipients(updateTxBuilder);
