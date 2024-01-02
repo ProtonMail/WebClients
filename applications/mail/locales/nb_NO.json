@@ -182,6 +182,9 @@
       "Clear search": [
         "Tøm søk"
       ],
+      "Clear selection": [
+        "Nullstill valg"
+      ],
       "Click here.": [
         "Klikk her"
       ],
@@ -309,9 +312,6 @@
       ],
       "Delete permanently": [
         "Slett permanent"
-      ],
-      "Deselect": [
-        "Fjern merket"
       ],
       "Deselect all": [
         "Fjern merket for alle"
@@ -2962,16 +2962,9 @@
       "Daily": [
         "Daglig"
       ],
-      "Daily, ${ untilString }": [
-        "Daglig, ${ untilString }"
-      ],
       "Every ${ interval } day": [
         "Hver ${ interval } dag",
         "Hver ${ interval } dag"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Hver ${ interval } dag, ${ untilString }",
-        "Hver ${ interval } dag, ${ untilString }"
       ],
       "until ${ dateString }": [
         "til ${ dateString }"
@@ -2984,6 +2977,15 @@
       "Every ${ interval } day, ${ timesString }": [
         "Hver ${ interval } dag, ${ timesString }",
         "Hver ${ interval } dag, ${ timesString }"
+      ]
+    },
+    "Daily recurring event, frequency (until)": {
+      "Daily, ${ untilString }": [
+        "Daglig, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Hver ${ interval } dag, ${ untilString }",
+        "Hver ${ interval } dag, ${ untilString }"
       ]
     },
     "Date label": {
@@ -3233,14 +3235,6 @@
     "email_forwarding_2023: Composer email icon": {
       "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
         "Nulltilgangskryptert. Mottakeren har deaktivert ende-til-ende-kryptering på kontoen sin."
-      ]
-    },
-    "empty messages: success": {
-      "Folder cleared": [
-        "Mappe klarert"
-      ],
-      "Label cleared": [
-        "Etikett klarert"
       ]
     },
     "Encrypted Headers": {
@@ -3742,9 +3736,9 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Det oppstod en uventet feil. Importen må startes på nytt."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Filen din ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_EVENTS_STRING } hendelse.",
-        "Filen din ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_EVENTS_STRING } hendelser."
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Filen din ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_EVENTS } hendelse.",
+        "Filen din ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_EVENTS } hendelser."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Filen ${ formattedFilename } har en ugyldig metode og kan ikke importeres."
@@ -4868,6 +4862,46 @@
         "${ currentProgress } ut av ${ totalProgress }",
         "${ currentProgress } ut av ${ totalProgress }"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } samtale merkes som:",
+        "${ elementsCount } samtaler merkes som:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } samtale merkes som lest.",
+        "${ elementsCount } samtaler merkes som lest."
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } samtale merkes som ulest.",
+        "${ elementsCount } samtaler merkes som ulest."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } samtale flyttes",
+        "${ elementsCount } samtaler flyttes"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } samtale vil bli avmerket fra:",
+        "${ elementsCount } samtaler vil bli avmerket fra:"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } melding merkes som:",
+        "${ elementsCount } meldinger merkes som:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } melding merkes som lest.",
+        "${ elementsCount } meldinger merkes som lest."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } melding merkes som ulest.",
+        "${ elementsCount } meldinger merkes som ulest."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } melding flyttes",
+        "${ elementsCount } meldinger flyttes"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } melding vil bli avmerket fra:",
+        "${ elementsCount } meldinger vil bli avmerket fra:"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } innebygd bilde",
         "${ embeddedAttachmentsCount } innebygde bilder"
@@ -5047,8 +5081,17 @@
       "and": [
         "og"
       ],
+      "Any scheduled or snoozed messages will be cancelled.": [
+        "Alle planlagte eller utsatte meldinger blir kansellert."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Eventuelle undermapper vil også bli slettet. E-postmeldinger som er lagret i mappen ${ nameDeleted }, vil imidlertid ikke bli slettet og finnes i All e-post-mappen."
+      ],
+      "Applying actions to conversations": [
+        "Anvender handlinger på samtaler"
+      ],
+      "Applying actions to messages": [
+        "Anvender handlinger på meldinger"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Er du sikker på at du vil slette alle meldingene i denne mappen?"
@@ -5133,6 +5176,9 @@
       ],
       "Clear data": [
         "Tøm data"
+      ],
+      "Clear selection": [
+        "Nullstill valg"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Sletting av nettleserdata deaktiverer også meldingsinnholdssøk på denne enheten. Alle meldinger må lastes ned på nytt for å søke i dem."
@@ -5488,6 +5534,9 @@
       "Merged": [
         "Slått sammen"
       ],
+      "Message actions in progress. This may take a while.": [
+        "Meldingshandlinger pågår. Dette kan ta litt tid."
+      ],
       "Message download status:": [
         "Status for nedlasting av melding:"
       ],
@@ -5520,9 +5569,6 @@
       ],
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
-      ],
-      "Moving messages. This may take a while.": [
-        "Flytter meldinger. Dette kan ta en stund."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Gi den nye mappen et navn, og velg den overordnede mappen du vil legge den i. Hvis du ikke velger en overordnet mappe, opprettes denne nye mappen som en mappe på øverste nivå."
@@ -5728,6 +5774,10 @@
       ],
       "Select a service provider to start": [
         "Velg en tjenestetilbyder for å starte"
+      ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Velg ${ elementsCount } i ${ location }",
+        "Velg alle ${ elementsCount } i ${ location }"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vennligst velg det e-postformatet du vil bruke som standard når du sender en e-post til denne adressen."
@@ -5966,6 +6016,9 @@
       "This sender's public key has not been trusted yet.": [
         "Denne avsenderens offentlige nøkkel er ikke klarert enda."
       ],
+      "to ${ destinationElement } folder.": [
+        "til ${ destinationElement }mappen"
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "For å bekjempe søppelpost og misbruk, vennligst verifiser at du er et menneske."
       ],
@@ -6170,6 +6223,9 @@
       "You can import one data type at a time.": [
         "Du kan importere én datatype om gangen."
       ],
+      "You can now return to the application to continue": [
+        "Du kan nå gå tilbake til programmet for å fortsette"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere varsler for å få varsler når det kommer nye e-postmeldinger i denne mappen."
       ],
@@ -6234,6 +6290,22 @@
       "You selected **${ count } message** with this label": [
         "Du valgte **${ count } melding** med denne etiketten",
         "Du valgte **${ count } meldinger** med denne etiketten"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Du valgte **${ elementsCount } samtale** i ${ location }.",
+        "Du valgte **${ elementsCount } samtaler** i ${ location }."
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "Du valgte **${ elementsCount } samtale**.",
+        "Du valgte **${ elementsCount } samtaler**."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Du valgte **${ elementsCount } melding** i ${ location }.",
+        "Du valgte **${ elementsCount } meldinger** i ${ location }."
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Du valgte **${ elementsCount } melding**.",
+        "Du valgte **${ elementsCount } meldinger**."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Du skrev \"${ attachmentsFoundKeyword }\", men ingen vedlegg er lagt til. Ønsker du å sende meldingen uansett?"
@@ -7407,6 +7479,11 @@
         "Hver ${ interval } måned ${ onDayString }",
         "Hver ${ interval } måned ${ onDayString }"
       ],
+      "Monthly ${ onDayString }": [
+        "Månedlig ${ onDayString }"
+      ]
+    },
+    "Monthly recurring event, frequency (times)": {
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
         "Hver ${ interval } måned ${ onDayString }, ${ timesString }",
         "Hver ${ interval } måned ${ onDayString }, ${ timesString }"
@@ -7414,9 +7491,6 @@
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
         "Hver ${ interval } måned ${ onDayString }, ${ untilString }",
         "Hver ${ interval } måned ${ onDayString }, ${ untilString }"
-      ],
-      "Monthly ${ onDayString }": [
-        "Månedlig ${ onDayString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "Månedlig ${ onDayString }, ${ timesString }"
@@ -7879,6 +7953,9 @@
       "Search name, email or group": [
         "Søk navn, e-post eller gruppe"
       ],
+      "Search parent folder": [
+        "Søk i overordnet mappe"
+      ],
       "Select": [
         "Velg"
       ],
@@ -8053,6 +8130,11 @@
     "Select files": {
       "Upload": [
         "Last opp"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Ingen resultater funnet"
       ]
     },
     "Send email with changed preferences": {
@@ -9052,6 +9134,12 @@
       "Account suspended": [
         "Kontoen er suspendert"
       ],
+      "Action all conversations": [
+        "Handling på alle samtaler"
+      ],
+      "Action all messages": [
+        "Handling på alle meldinger"
+      ],
       "Add contact group name": [
         "Legg til navn på kontaktgruppen"
       ],
@@ -9326,8 +9414,20 @@
       "Mark as unread": [
         "Marker som ulest"
       ],
+      "Mark conversations as read": [
+        "Marker samtaler som lest"
+      ],
+      "Mark conversations as unread": [
+        "Marker samtaler som ulest"
+      ],
       "Mark email as legitimate": [
         "Marker e-post som legitim"
+      ],
+      "Mark messages as read": [
+        "Marker meldinger som lest"
+      ],
+      "Mark messages as unread": [
+        "Marker meldinger som ulest"
       ],
       "Merge contacts": [
         "Slå sammen kontakter"
@@ -9358,6 +9458,12 @@
       ],
       "More selections": [
         "Flere valg"
+      ],
+      "Move all conversations": [
+        "Flytt alle samtaler"
+      ],
+      "Move all messages": [
+        "Flytt alle meldinger"
       ],
       "Move all messages to Archive": [
         "Flytt alle meldingene til arkivet"
@@ -9819,37 +9925,13 @@
         "Hver ${ interval } uke på ${ multipleDaysString }",
         "Hver ${ interval } uke på ${ multipleDaysString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Hver ${ interval } uke på ${ multipleDaysString }, ${ timesString }",
-        "Hver ${ interval } uke på ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Hver ${ interval } uke på ${ multipleDaysString }, ${ untilString }",
-        "Hver ${ interval } uke på ${ multipleDaysString }, ${ untilString }"
-      ],
       "Every ${ interval } week on all days": [
         "Hver ${ interval } uke på alle dager",
         "Hver ${ interval } uke på alle dager"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Hver ${ interval } uke på alle dager, ${ timesString }",
-        "Hver ${ interval } uke på alle dager, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Hver ${ interval } uke på alle dager, ${ untilString }",
-        "Hver ${ interval } uke på alle dager, ${ untilString }"
-      ],
       "Every ${ interval } week on Friday": [
         "Hver ${ interval } uke på fredag",
         "Hver ${ interval } uke på fredag"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Hver ${ interval } uke på fredag, ${ timesString }",
-        "Hver ${ interval } uke på fredag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Hver ${ interval } uke på fredag, ${ untilString }",
-        "Hver ${ interval } uke på fredag, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Hver ${ interval } uke på mandag",
@@ -9859,21 +9941,9 @@
         "Hver ${ interval } uke på mandag, ${ timesString }",
         "Hver ${ interval } uke på mandag, ${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Hver ${ interval } uke på mandag, ${ untilString }",
-        "Hver ${ interval } uke på mandag, ${ untilString }"
-      ],
       "Every ${ interval } week on Saturday": [
         "Hver ${ interval } uke på lørdag",
         "Hver ${ interval } uke på lørdag"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Hver ${ interval } uke på lørdag, ${ timesString }",
-        "Hver ${ interval } uke på lørdag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Hver ${ interval } uke på lørdag, ${ untilString }",
-        "Hver ${ interval } uke på lørdag, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Hver ${ interval } uke på søndag",
@@ -9883,21 +9953,9 @@
         "Hver ${ interval } uke på søndag, ${ timesString }",
         "Hver ${ interval } uke på søndag, ${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Hver ${ interval } uke på søndag, ${ untilString }",
-        "Hver ${ interval } uke på søndag, ${ untilString }"
-      ],
       "Every ${ interval } week on Thursday": [
         "Hver ${ interval } uke på torsdag",
         "Hver ${ interval } uke på torsdag"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Hver ${ interval } uke på torsdag, ${ timesString }",
-        "Hver ${ interval } uke på torsdag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Hver ${ interval } uke på torsdag, ${ untilString }",
-        "Hver ${ interval } uke på torsdag, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Hver ${ interval } uke på tirsdag",
@@ -9907,99 +9965,151 @@
         "Hver ${ interval } uke på tirsdag, ${ timesString }",
         "Hver ${ interval } uke på tirsdag, ${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Hver ${ interval } uke på tirsdag, ${ untilString }",
-        "Hver ${ interval } uke på tirsdag, ${ untilString }"
-      ],
       "Every ${ interval } week on Wednesday": [
         "Hver ${ interval } uke på onsdag",
         "Hver ${ interval } uke på onsdag"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Ukentlig på ${ multipleDaysString }"
+      ],
+      "Weekly on all days": [
+        "Ukentlig på alle dager"
+      ],
+      "Weekly on Friday": [
+        "Ukentlig på fredag"
+      ],
+      "Weekly on Monday": [
+        "Ukentlig på mandag"
+      ],
+      "Weekly on Saturday": [
+        "Ukentlig på lørdag"
+      ],
+      "Weekly on Sunday": [
+        "Ukentlig på søndag"
+      ],
+      "Weekly on Thursday": [
+        "Ukentlig på torsdag"
+      ],
+      "Weekly on Tuesday": [
+        "Ukentlig på tirsdag"
+      ],
+      "Weekly on Wednesday": [
+        "Ukentlig på onsdag"
+      ]
+    },
+    "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Hver ${ interval } uke på ${ multipleDaysString }, ${ timesString }",
+        "Hver ${ interval } uke på ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Hver ${ interval } uke på alle dager, ${ timesString }",
+        "Hver ${ interval } uke på alle dager, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Hver ${ interval } uke på fredag, ${ timesString }",
+        "Hver ${ interval } uke på fredag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Hver ${ interval } uke på lørdag, ${ timesString }",
+        "Hver ${ interval } uke på lørdag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Hver ${ interval } uke på torsdag, ${ timesString }",
+        "Hver ${ interval } uke på torsdag, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
         "Hver ${ interval } uke på onsdag, ${ timesString }",
         "Hver ${ interval } uke på onsdag, ${ timesString }"
       ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Hver ${ interval } uke på onsdag, ${ untilString }",
-        "Hver ${ interval } uke på onsdag, ${ untilString }"
-      ],
-      "Weekly on ${ multipleDaysString }": [
-        "Ukentlig på ${ multipleDaysString }"
-      ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
         "Ukentlig på ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Ukentlig på ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Weekly on all days": [
-        "Ukentlig på alle dager"
       ],
       "Weekly on all days, ${ timesString }": [
         "Ukentlig på alle dager, ${ timesString }"
       ],
-      "Weekly on all days, ${ untilString }": [
-        "Ukentlig på alle dager, ${ untilString }"
-      ],
-      "Weekly on Friday": [
-        "Ukentlig på fredag"
-      ],
       "Weekly on Friday, ${ timesString }": [
         "Ukentlig på fredag, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Ukentlig på fredag, ${ untilString }"
-      ],
-      "Weekly on Monday": [
-        "Ukentlig på mandag"
       ],
       "Weekly on Monday, ${ timesString }": [
         "Ukentlig på mandag, ${ timesString }"
       ],
-      "Weekly on Monday, ${ untilString }": [
-        "Ukentlig på mandag, ${ untilString }"
-      ],
-      "Weekly on Saturday": [
-        "Ukentlig på lørdag"
-      ],
       "Weekly on Saturday, ${ timesString }": [
         "Ukentlig på lørdag, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Ukentlig på lørdag, ${ untilString }"
-      ],
-      "Weekly on Sunday": [
-        "Ukentlig på søndag"
       ],
       "Weekly on Sunday, ${ timesString }": [
         "Ukentlig på søndag, ${ timesString }"
       ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Ukentlig på søndag, ${ untilString }"
-      ],
-      "Weekly on Thursday": [
-        "Ukentlig på torsdag"
-      ],
       "Weekly on Thursday, ${ timesString }": [
         "Ukentlig på torsdag, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Ukentlig på torsdag, ${ untilString }"
-      ],
-      "Weekly on Tuesday": [
-        "Ukentlig på tirsdag"
       ],
       "Weekly on Tuesday, ${ timesString }": [
         "Ukentlig på tirsdag, ${ timesString }"
       ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Ukentlig på tirsdag, ${ untilString }"
-      ],
-      "Weekly on Wednesday": [
-        "Ukentlig på onsdag"
-      ],
       "Weekly on Wednesday, ${ timesString }": [
         "Ukentlig på onsdag, ${ timesString }"
+      ]
+    },
+    "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Hver ${ interval } uke på ${ multipleDaysString }, ${ untilString }",
+        "Hver ${ interval } uke på ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Hver ${ interval } uke på alle dager, ${ untilString }",
+        "Hver ${ interval } uke på alle dager, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Hver ${ interval } uke på fredag, ${ untilString }",
+        "Hver ${ interval } uke på fredag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Hver ${ interval } uke på mandag, ${ untilString }",
+        "Hver ${ interval } uke på mandag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Hver ${ interval } uke på lørdag, ${ untilString }",
+        "Hver ${ interval } uke på lørdag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Hver ${ interval } uke på søndag, ${ untilString }",
+        "Hver ${ interval } uke på søndag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Hver ${ interval } uke på torsdag, ${ untilString }",
+        "Hver ${ interval } uke på torsdag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Hver ${ interval } uke på tirsdag, ${ untilString }",
+        "Hver ${ interval } uke på tirsdag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Hver ${ interval } uke på onsdag, ${ untilString }",
+        "Hver ${ interval } uke på onsdag, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Ukentlig på ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Ukentlig på alle dager, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Ukentlig på fredag, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Ukentlig på mandag, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Ukentlig på lørdag, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Ukentlig på søndag, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Ukentlig på torsdag, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Ukentlig på tirsdag, ${ untilString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
         "Ukentlig på onsdag, ${ untilString }"
@@ -10033,19 +10143,23 @@
         "Hvert ${ interval } år",
         "Hvert ${ interval } år"
       ],
+      "Yearly": [
+        "Årlig"
+      ]
+    },
+    "Yearly recurring event, frequency (times)": {
       "Every ${ interval } year, ${ timesString }": [
         "Hvert ${ interval } år, ${ timesString }",
         "Hvert ${ interval } år, ${ timesString }"
       ],
+      "Yearly, ${ timesString }": [
+        "Årlig, ${ timesString }"
+      ]
+    },
+    "Yearly recurring event, frequency (until)": {
       "Every ${ interval } year, ${ untilString }": [
         "Hvert ${ interval } år, ${ untilString }",
         "Hvert ${ interval } år, ${ untilString }"
-      ],
-      "Yearly": [
-        "Årlig"
-      ],
-      "Yearly, ${ timesString }": [
-        "Årlig, ${ timesString }"
       ],
       "Yearly, ${ untilString }": [
         "Årlig, ${ untilString }"
