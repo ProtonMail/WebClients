@@ -4,10 +4,13 @@ import { useDebounceInput } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
 import { SECOND } from '@proton/shared/lib/constants';
 
-import { WasmError, WasmNetwork, WasmPaymentLink } from '../../../../pkg';
+import { WasmError, WasmPaymentLink } from '../../../../pkg';
+import { useOnchainWalletContext } from '../../../contexts';
 import { getHumanReadableErrorFromWasmError, tryHandleWasmError } from '../../../utils';
 
 export const usePaymentLinkInput = () => {
+    const { network } = useOnchainWalletContext();
+
     const [isOpen, setIsOpen] = useState(false);
     const [parsedPaymentLink, setParsedPaymentLink] = useState<WasmPaymentLink>();
     const closeModal = useCallback(() => setIsOpen(false), []);
@@ -42,7 +45,7 @@ export const usePaymentLinkInput = () => {
         }
 
         try {
-            const parsedPaymentLink = WasmPaymentLink.tryParse(debouncedPaymentLinkInput, WasmNetwork.Testnet);
+            const parsedPaymentLink = WasmPaymentLink.tryParse(debouncedPaymentLinkInput, network);
             setParsedPaymentLink(parsedPaymentLink);
         } catch (error) {
             setParsedPaymentLink(undefined);

@@ -4,7 +4,7 @@ import { vi } from 'vitest';
 
 import { OnchainTransactionBuilder } from '.';
 import { WasmTxBuilder } from '../../../../pkg';
-import { mockUseBlockchainContext, walletsWithAccountsWithBalanceAndTxs } from '../../../tests';
+import { mockUseOnchainWalletContext, walletsWithAccountsWithBalanceAndTxs } from '../../../tests';
 import * as useOnchainTransactionBuilderModule from './useOnchainTransactionBuilder';
 
 describe('OnchainTransactionBuilder', () => {
@@ -16,7 +16,7 @@ describe('OnchainTransactionBuilder', () => {
     const [testAccount] = testWallet.accounts;
 
     beforeEach(() => {
-        mockUseBlockchainContext();
+        mockUseOnchainWalletContext();
 
         helper = {
             walletAndAccount: { wallet: testWallet, account: testAccount },

@@ -5,7 +5,7 @@ import Card from '@proton/atoms/Card/Card';
 import CircleLoader from '@proton/atoms/CircleLoader/CircleLoader';
 
 import { WalletSelector } from '../../../atoms';
-import { useBlockchainContext } from '../../../contexts';
+import { useOnchainWalletContext } from '../../../contexts';
 import { OnChainFeesSelector } from '../OnchainFeesSelector';
 import { OnchainTransactionAdvancedOptions } from '../OnchainTransactionAdvancedOptions';
 import { OnchainTransactionBroadcastConfirmation } from '../OnchainTransactionBroadcastConfirmation';
@@ -20,7 +20,7 @@ interface Props {
 }
 
 export const OnchainTransactionBuilder = ({ defaultWalletId }: Props) => {
-    const { wallets } = useBlockchainContext();
+    const { wallets } = useOnchainWalletContext();
 
     const {
         walletAndAccount,

@@ -8,7 +8,7 @@ import { Pill } from '@proton/atoms/Pill';
 
 import { WasmBitcoinUnit } from '../../../pkg';
 import { BitcoinAmount } from '../../atoms';
-import { useBlockchainContext } from '../../contexts';
+import { useOnchainWalletContext } from '../../contexts';
 import { useBalanceDistribution } from '../../hooks/useBalanceDistribution';
 import { WalletType } from '../../types/api';
 
@@ -21,7 +21,7 @@ const fiatCurrency = 'USD';
 const bitcoinUnit = WasmBitcoinUnit.BTC;
 
 export const YourWalletsSection = ({ onAddWallet }: Props) => {
-    const { wallets } = useBlockchainContext();
+    const { wallets } = useOnchainWalletContext();
     const distribution = useBalanceDistribution(wallets);
 
     const lightningBalance = distribution[WalletType.Lightning];

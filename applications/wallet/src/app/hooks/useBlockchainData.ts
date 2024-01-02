@@ -1,16 +1,16 @@
+import { WasmNetwork } from '../../pkg';
 import { ApiWallet } from '../types';
 import { useBlockchainFeesEstimation } from './useBlockchainFeesEstimation';
 import { useBlockchainSyncing } from './useBlockchainSyncing';
 
-// TODO: replace by redux when ready to bootstrap it
-export const useBlockchainData = (wallets?: ApiWallet[]) => {
+export const useBlockchainData = (network: WasmNetwork, wallets?: ApiWallet[]) => {
     const {
         syncingMetatadaByAccountId,
         walletsWithBalanceAndTxs,
         syncSingleWalletAccountBlockchainData,
         syncAllWalletAccountsBlockchainData,
         syncAllWalletsBlockchainData,
-    } = useBlockchainSyncing(wallets);
+    } = useBlockchainSyncing(network, wallets);
 
     const { feesEstimation, loading: loadingFeesEstimation } = useBlockchainFeesEstimation();
 

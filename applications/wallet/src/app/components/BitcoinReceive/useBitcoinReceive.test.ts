@@ -1,17 +1,17 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { mockUseBlockchainContext, walletsWithAccountsWithBalanceAndTxs } from '../../tests';
+import { mockUseOnchainWalletContext, walletsWithAccountsWithBalanceAndTxs } from '../../tests';
 import { LightningUriFormat } from '../../types';
 import { useBitcoinReceive } from './useBitcoinReceive';
 
 describe('useBitcoinReceive', () => {
     beforeEach(() => {
-        mockUseBlockchainContext();
+        mockUseOnchainWalletContext();
     });
 
     describe('when wallets is empty', () => {
         it('should return undefined wallet and account', () => {
-            mockUseBlockchainContext({ wallets: [] });
+            mockUseOnchainWalletContext({ wallets: [] });
 
             const { result } = renderHook(() => useBitcoinReceive());
 

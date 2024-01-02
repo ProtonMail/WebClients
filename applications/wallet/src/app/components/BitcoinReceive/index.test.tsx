@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 
 import { BitcoinReceive } from '.';
 import { WasmNetwork, WasmPaymentLink } from '../../../pkg';
-import { mockUseBlockchainContext, walletsWithAccountsWithBalanceAndTxs } from '../../tests';
+import { mockUseOnchainWalletContext, walletsWithAccountsWithBalanceAndTxs } from '../../tests';
 import { LightningUriFormat } from '../../types';
 import * as useBitcoinReceiveModule from './useBitcoinReceive';
 
@@ -16,7 +16,7 @@ describe('BitcoinReceive', () => {
     const [testAccount] = testWallet.accounts;
 
     beforeEach(() => {
-        mockUseBlockchainContext();
+        mockUseOnchainWalletContext();
 
         helper = {
             paymentLink: null,

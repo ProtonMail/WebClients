@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 
 import { WalletAndAccountSelectorValue } from '../../../atoms';
-import { useBlockchainContext } from '../../../contexts';
+import { useOnchainWalletContext } from '../../../contexts';
 import { usePsbt } from '../../../hooks/usePsbt';
 import { useRecipients } from '../../../hooks/useRecipients';
 import { useTxBuilder } from '../../../hooks/useTxBuilder';
 import { getDefaultAccount, getSelectedWallet } from '../../../utils';
 
 export const useOnchainTransactionBuilder = (defaultWalletId?: number) => {
-    const { wallets } = useBlockchainContext();
+    const { wallets } = useOnchainWalletContext();
 
     const defaultWallet = getSelectedWallet(wallets, defaultWalletId);
     const [walletAndAccount, setWalletAndAccount] = useState<WalletAndAccountSelectorValue>({

@@ -2,11 +2,11 @@ import { fireEvent, render, screen, within } from '@testing-library/react';
 import { vi } from 'vitest';
 
 import { YourWalletsSection } from '.';
-import { mockUseBlockchainContext } from '../../tests';
+import { mockUseOnchainWalletContext } from '../../tests';
 
 describe('YourWalletsSection', () => {
     beforeEach(() => {
-        mockUseBlockchainContext();
+        mockUseOnchainWalletContext();
     });
 
     it('should display lightning wallets total balance and fiat amount', () => {

@@ -4,7 +4,7 @@ import { ErrorBoundary, StandardErrorPage } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 
 import { PrivateWalletLayout } from '../components';
-import { BlockchainContextProvider } from '../contexts';
+import { OnchainWalletContextProvider } from '../contexts';
 import { BitcoinOnRampContainer } from './BitcoinOnRampContainer';
 import { BitcoinTransferContainer } from './BitcoinTransferContainer';
 import { MultiWalletDashboardContainer } from './MultiWalletDashboardContainer';
@@ -15,7 +15,7 @@ const MainContainer = () => {
     return (
         <ErrorBoundary component={<StandardErrorPage big />}>
             <QuickSettingsRemindersProvider>
-                <BlockchainContextProvider>
+                <OnchainWalletContextProvider>
                     <PrivateWalletLayout>
                         <Switch>
                             <Route path={'/transfer'}>
@@ -36,7 +36,7 @@ const MainContainer = () => {
                             <Redirect to="/wallets" />
                         </Switch>
                     </PrivateWalletLayout>
-                </BlockchainContextProvider>
+                </OnchainWalletContextProvider>
             </QuickSettingsRemindersProvider>
         </ErrorBoundary>
     );

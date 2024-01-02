@@ -6,9 +6,9 @@ import { useNotifications } from '@proton/components/hooks';
 import useLoading from '@proton/hooks/useLoading';
 import { SECOND } from '@proton/shared/lib/constants';
 
-import { WasmChain, WasmNetwork, WasmPartiallySignedTransaction, WasmTxBuilder } from '../../pkg';
+import { WasmChain, WasmPartiallySignedTransaction, WasmTxBuilder } from '../../pkg';
 import { WalletAndAccountSelectorValue } from '../atoms';
-import { useBlockchainContext } from '../contexts';
+import { useOnchainWalletContext } from '../contexts';
 import { tryHandleWasmError } from '../utils';
 
 export const usePsbt = ({
@@ -18,7 +18,7 @@ export const usePsbt = ({
     walletAndAccount: WalletAndAccountSelectorValue;
     txBuilder: WasmTxBuilder;
 }) => {
-    const { syncSingleWalletAccountBlockchainData } = useBlockchainContext();
+    const { syncSingleWalletAccountBlockchainData, network } = useOnchainWalletContext();
     const { createNotification } = useNotifications();
     const [loadingBroadcast, withLoadingBroadcast] = useLoading();
     const [finalPsbt, setFinalPsbt] = useState<WasmPartiallySignedTransaction>();
@@ -28,7 +28,7 @@ export const usePsbt = ({
         const { account } = walletAndAccount;
         if (account) {
             try {
-                const psbt = await txBuilder.createPsbt(WasmNetwork.Testnet);
+                const psbt = await txBuilder.createPsbt(network);
                 setFinalPsbt(psbt);
             } catch (err) {
                 const msg = tryHandleWasmError(err);
@@ -46,7 +46,7 @@ export const usePsbt = ({
                 return;
             }
 
-            const signed = await finalPsbt.sign(account?.wasmAccount, WasmNetwork.Testnet);
+            const signed = await finalPsbt.sign(account?.wasmAccount, network);
 
             try {
                 const txId = await new WasmChain().broadcastPsbt(signed);

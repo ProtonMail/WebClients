@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { WasmPaymentLink } from '../../../pkg';
 import { WalletAndAccountSelectorValue, getDefaultFormat } from '../../atoms';
-import { useBlockchainContext } from '../../contexts';
+import { useOnchainWalletContext } from '../../contexts';
 import { WalletType } from '../../types/api';
 import { getDefaultAccount, getSelectedWallet } from '../../utils';
 
@@ -21,7 +21,7 @@ export interface UseBitcoinReceiveHelper {
 
 export const useBitcoinReceive = (defaultWalletId?: number): UseBitcoinReceiveHelper => {
     const [paymentLink, setPaymentLink] = useState<WasmPaymentLink | null>(null);
-    const { wallets } = useBlockchainContext();
+    const { wallets } = useOnchainWalletContext();
 
     const defaultWallet = getSelectedWallet(wallets, defaultWalletId);
 
