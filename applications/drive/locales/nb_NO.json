@@ -2442,9 +2442,9 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Det oppstod en uventet feil. Importen må startes på nytt."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Filen din ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_EVENTS_STRING } hendelse.",
-        "Filen din ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_EVENTS_STRING } hendelser."
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Filen din ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_EVENTS } hendelse.",
+        "Filen din ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_EVENTS } hendelser."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Filen ${ formattedFilename } har en ugyldig metode og kan ikke importeres."
@@ -4364,6 +4364,9 @@
       "You can import one data type at a time.": [
         "Du kan importere én datatype om gangen."
       ],
+      "You can now return to the application to continue": [
+        "Du kan nå gå tilbake til programmet for å fortsette"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere varsler for å få varsler når det kommer nye e-postmeldinger i denne mappen."
       ],
@@ -5573,6 +5576,9 @@
       "Search for name or email": [
         "Søk etter navn eller e-post"
       ],
+      "Search parent folder": [
+        "Søk i overordnet mappe"
+      ],
       "Select": [
         "Velg"
       ],
@@ -5651,6 +5657,11 @@
     "Select files": {
       "Upload": [
         "Last opp"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Ingen resultater funnet"
       ]
     },
     "session_recovery:available:action": {
