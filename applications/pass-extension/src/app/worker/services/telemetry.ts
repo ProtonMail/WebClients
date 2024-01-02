@@ -15,7 +15,7 @@ export const createTelemetryService = (storage: Storage<TelemetryStorageData>) =
     const { push, send, start, stop } = createCoreTelemetryService({
         alarm: {
             reset: () => browser.alarms.clear(TELEMETRY_ALARM_NAME).catch(noop),
-            when: async () => (await browser.alarms.get(TELEMETRY_ALARM_NAME))?.scheduledTime,
+            when: async () => (await browser.alarms.get(TELEMETRY_ALARM_NAME).catch(noop))?.scheduledTime,
             set: (when) => browser.alarms.create(TELEMETRY_ALARM_NAME, { when }),
         },
         getEnabled: () => selectTelemetryEnabled(store.getState()),
