@@ -598,10 +598,10 @@ const getCustomMonthlyString = (
         const dateString = format(until, 'PP', { locale });
         const untilString = getUntilString(dateString);
         if (interval === 1) {
-            return c('Monthly recurring event, frequency (times)').t`Monthly ${onDayString}, ${untilString}`;
+            return c('Monthly recurring event, frequency (until)').t`Monthly ${onDayString}, ${untilString}`;
         }
         // translator: When interval = 1 we do not use this string; we use 'monthly' instead. Treat the case of interval = 1 as dummy
-        return c('Monthly recurring event, frequency (times)').ngettext(
+        return c('Monthly recurring event, frequency (until)').ngettext(
             msgid`Every ${interval} month ${onDayString}, ${untilString}`,
             `Every ${interval} months ${onDayString}, ${untilString}`,
             interval
