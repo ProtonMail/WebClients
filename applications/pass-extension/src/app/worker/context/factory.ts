@@ -86,9 +86,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
         },
 
         async ensureReady() {
-            const context = WorkerContext.get();
             await waitUntil(() => clientStatusResolved(context.getState().status), 50);
-
             return context;
         },
 
