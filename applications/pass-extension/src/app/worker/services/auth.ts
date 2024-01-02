@@ -106,7 +106,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
         onSessionInvalid: withContext((ctx) => {
             authStore.clear();
-            void ctx.service.storage.local.remove('ps');
+            void ctx.service.storage.local.removeItem('ps');
             void ctx.service.storage.session.clear();
         }),
 
