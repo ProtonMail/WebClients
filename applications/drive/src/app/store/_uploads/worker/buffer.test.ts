@@ -73,6 +73,7 @@ describe('upload worker buffer', () => {
         expectedKeys.push(1000);
         expectedKeys.push(1001);
         await expect(Array.from(buffer.encryptedBlocks.keys())).toMatchObject(expectedKeys);
+        expect(buffer.totalProcessedSize).toEqual(2201);
     });
 
     it('reads next encrypted block if both encrypted and upload buffer is not full', async () => {
@@ -147,10 +148,7 @@ describe('upload worker buffer', () => {
         buffer.encryptedBlocks.set(1, createBlock(1));
         buffer.encryptedBlocks.set(2, createBlock(2));
 
-        buffer.setThumbnailBlockLinks([createLink(0)]);
-        buffer.setFileBlockLinks([createLink(1)]);
-
-        buffer.requestingBlockLinks = false;
+        buffer.setAllBlockLinks({ fileLinks: [createLink(1)], thumbnailLinks: [createLink(0)] });
 
         expect(Array.from(buffer.thumbnailsEncryptedBlocks.keys())).toMatchObject([1]);
         expect(Array.from(buffer.encryptedBlocks.keys())).toMatchObject([2]);
