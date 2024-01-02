@@ -3179,6 +3179,9 @@
       "Multi-user support not enabled.": [
         "Suport multi-usuari no activat."
       ],
+      "Must start with a letter.": [
+        "Ha de començar amb una lletra."
+      ],
       "No addresses exist": [
         "No existeix cap adreça de correu electrònic"
       ],
@@ -3736,6 +3739,9 @@
       ],
       "You can now access and manage the account as an administrator.": [
         "Ara podeu accedir i gestionar el compte com a administrador."
+      ],
+      "You can now return to the application to continue": [
+        "Ara podeu tornar a l'aplicació per continuar."
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Només podeu tenir una instància de xat oberta a la vegada. Tanqueu les converses anteriors abans d'iniciar-ne una de nova."
@@ -5443,11 +5449,26 @@
       "My reason isn't listed": [
         "La meva raó no apareix"
       ],
+      "No permission": [
+        "Sense permís"
+      ],
+      "Organization only": [
+        "Només organització"
+      ],
+      "Receive from all": [
+        "Rep de tots"
+      ],
       "Router": [
         "Router"
       ],
       "Secure Core configs": [
         "Configuracions Secure Core"
+      ],
+      "Send to all": [
+        "Envia a tots"
+      ],
+      "Setup incomplete": [
+        "La configuració és incompleta."
       ],
       "Standard server configs": [
         "Configuracions estàndard de servidor"
@@ -5587,6 +5608,23 @@
         "Nova targeta de crèdit/dèbit"
       ]
     },
+    "Permission": {
+      "No permission": [
+        "Sense permís"
+      ],
+      "Organization only": [
+        "Només organització"
+      ],
+      "Receive from all": [
+        "Rep de tots"
+      ],
+      "Send to all": [
+        "Envia a tots"
+      ],
+      "Setup incomplete": [
+        "La configuració és incompleta."
+      ]
+    },
     "Placeholder": {
       "A way to contact you": [
         "Una manera de contactar amb tu"
@@ -5644,6 +5682,9 @@
       ]
     },
     "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "${ contactHref } el nostre equip de vendes."
+      ],
       "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
         "Seleccioneu el nombre d'IP per incloure en el vostre pla. Cada IP addicional té un cost de ${ price }."
       ],

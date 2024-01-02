@@ -2297,10 +2297,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "एक अप्रत्याशित त्रुटि हुई। आयात फिर से शुरू होना चाहिए।"
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "आपके फाइल ${ formattedFilename } में ${ MAX_IMPORT_EVENTS_STRING } से ज़्यादा इवेंट हैं।",
-        "आपके फाइल ${ formattedFilename } में ${ MAX_IMPORT_EVENTS_STRING } से ज़्यादा इवेंट हैं।"
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "आपके फाइल ${ formattedFilename } में एक अमान्य तरीका है और आयात नहीं जा सकता"
       ],
@@ -5264,6 +5260,11 @@
     "Select files": {
       "Upload": [
         "अपलोड करें"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "कोई परिणाम नहीं मिला"
       ]
     },
     "session_recovery:available:action": {

@@ -655,6 +655,9 @@
       "Add ${ PASS_APP_NAME }": [
         "增加 ${ PASS_APP_NAME }"
       ],
+      "Add ${ plan } for ${ price } per month": [
+        "每月${ price }以添加${ plan }"
+      ],
       "Cancel": [
         "取消"
       ],
@@ -1817,6 +1820,11 @@
         "使用多個電子郵件位址分隔生活的不同方面，並在升級時解鎖更多進階功能。"
       ]
     },
+    "Desktop app upsell": {
+      "Upgrade today or check again in early 2024 for access.": [
+        "現在升級或等到2024年初再來看看。"
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "臭蟲或品質問題"
@@ -1858,7 +1866,24 @@
         "雙重驗證"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "付費${ DRIVE_SHORT_APP_NAME }，${ VPN_SHORT_APP_NAME }及${ PASS_SHORT_APP_NAME }功能"
+      ]
+    },
     "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 位使用者"
+      ],
+      "Early access to new apps and features": [
+        "搶先體驗新應用程式與功能"
+      ],
+      "Early access to the ${ MAIL_APP_NAME } desktop app": [
+        "提早存取${ MAIL_APP_NAME }桌面應用程式"
+      ],
       "Paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "${ MAIL_SHORT_APP_NAME }付費及${ CALENDAR_APP_NAME }功能"
       ]
@@ -2077,6 +2102,9 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "您已使用您的方案中所有使用者。請升級您的方案以加入使用者。"
       ],
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "您必須啟用您的組織機構金鑰。非私人用戶沒有辦法在缺少組織機構金鑰的狀況下建立或存取。"
+      ],
       "You must privatize all users before generating new organization keys": [
         "在產生新的組織金鑰前，必須將所有使用者私有化"
       ],
@@ -2119,6 +2147,9 @@
       ],
       "Something went wrong": [
         "發生錯誤"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "切換至網頁版，以使用${ MAIL_APP_NAME }或${ CALENDAR_APP_NAME }。"
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "我們無法載入此頁面。請重新整理頁面或檢查您的網際網路連線。"
@@ -2707,6 +2738,9 @@
       ],
       "${ number } servers": [
         "${ number } 個伺服器"
+      ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } 已被移除。此套餐不適用於月訂方案。"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
@@ -4328,6 +4362,12 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } 歡迎電子郵件"
       ],
+      "${ DRIVE_APP_NAME } product updates": [
+        "${ DRIVE_APP_NAME } 產品更新"
+      ],
+      "${ PASS_APP_NAME } product updates": [
+        "${ PASS_APP_NAME } 產品更新"
+      ],
       "${ VPN_APP_NAME } product updates": [
         "${ VPN_APP_NAME } 產品更新"
       ]
@@ -4928,6 +4968,9 @@
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "使用 ${ BRAND_NAME } 的 SimpleLogin 取得無限的別名"
       ],
+      "Snooze messages and get reminded when you want": [
+        "延後訊息急於想要時獲得通知"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "儲存空間乃一併用於 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME }"
       ],
@@ -4961,6 +5004,9 @@
       ],
       "Comprehensive privacy and security with all ${ BRAND_NAME } services combined.": [
         "結合所有 ${ BRAND_NAME } 服務的全面隱私與安全性。"
+      ],
+      "Early access to new apps and features": [
+        "搶先體驗新應用程式與功能"
       ],
       "For next-level password management and identity protection.": [
         "用於下一個層級的密碼管理與身份保護。"

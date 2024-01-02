@@ -26,6 +26,9 @@
       "Advanced options": [
         "Avanserte innstillinger"
       ],
+      "Authenticate": [
+        "Autentiser"
+      ],
       "Back": [
         "Tilbake"
       ],
@@ -449,6 +452,9 @@
       "Authentication error": [
         "Autentiseringsfeil"
       ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "Autentisering mislyktes. Bekreft ${ BRAND_NAME }-passordet for å forsette med eksporten."
+      ],
       "Auto-lock could not be activated": [
         "Autolås kunne ikke aktiveres"
       ],
@@ -530,6 +536,9 @@
       ],
       "File could not be parsed": [
         "Fil kunne ikke tolkes"
+      ],
+      "File does not match expected format": [
+        "Fil samsvarer ikke med forventet format"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "Import mislyktes for hvelv \"${ vaultData.name }\" : ${ description }"
@@ -626,9 +635,6 @@
       ],
       "Unknown invite": [
         "Ukjent invitasjon"
-      ],
-      "Unsupported ${ PASS_APP_NAME } file format": [
-        "Ikke støttet ${ PASS_APP_NAME }-filformat"
       ],
       "Unsupported 1Password file format": [
         "Ikke støttet 1Password-filformat"
@@ -1003,6 +1009,9 @@
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-koden er registrert. Bruk den til å låse opp ${ PASS_APP_NAME }."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "Vennligst bekreft passordet for ${ BRAND_NAME } for å eksportere ${ PASS_APP_NAME }-dataene dine."
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "Vennligst bekreft PIN-koden din for å avregistrere din nåværende lås.\n${ PASS_APP_NAME } vil deretter aldri låses."
@@ -1671,6 +1680,9 @@
       "Other": [
         "Annet"
       ],
+      "Password": [
+        "Passord"
+      ],
       "Pick a vault": [
         "Velg et hvelv"
       ],
@@ -1747,6 +1759,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Koser du deg med ${ PASS_APP_NAME }?"
+      ],
+      "Enter your password": [
+        "Skriv inn passord"
       ],
       "Enter your PIN": [
         "Skriv inn PIN-koden din"

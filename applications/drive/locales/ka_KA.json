@@ -872,6 +872,10 @@
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "აუარეთ გვერდი ლოკალური ინტერნეტის დაბლოკვებს და ცენზურას ჩვენი სერვერების გლობალური ქსელით."
       ],
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "შეიცავს ${ domains } მომხმარებლის დომენის, ${ addresses } ელფოსტის მისამართის, განუსაზღვრელი hide-my-email ფსევდონიმებს, კალენდრის გაზიარებას და სხვ.",
+        "შეიცავს ${ domains } მომხმარებლის დომენის, ${ addresses } ელფოსტის მისამართის, განუსაზღვრელი hide-my-email ფსევდონიმებს, კალენდრის გაზიარებას და სხვ."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "შეიცავს 1 თქვენი ელფოსტის დომენის, 10 ელფოსტის მისამართის, 10 Hide-my-email-ის მეტსახელს, კალენდრის გაზიარებას და სხვ."
       ],
@@ -2057,6 +2061,16 @@
         "მოვლენის განახლება ${ formattedStart }-დან"
       ]
     },
+    "eof2023: Deal details": {
+      "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
+        "${ DRIVE_SHORT_APP_NAME }-ის, ${ VPN_SHORT_APP_NAME }-ის და ${ PASS_SHORT_APP_NAME }-ის ფასიანი ფუნქციები"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "შეიცავს ვერსიის ისტორიას ${ DRIVE_SHORT_APP_NAME }-ში, წვდომას ათასობით ${ VPN_SHORT_APP_NAME }-ის სერვერებზე, მის ${ PASS_SHORT_APP_NAME }-ზე გაზიარებას და ა.შ."
+      ]
+    },
     "eoy2023: Deal details": {
       "6 TB": [
         "6 ტბ"
@@ -2119,6 +2133,9 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "ამ ბრაუზერში შემცველობაში ძებნის ჩართვა შეუძლებელია. გამოდით პირადულობის დაცვის რეჟიმიდან ან გამოიყენეთ სხვა ბრაუზერი."
+      ],
+      "Content search cannot be enabled. Please restart the application or clear data.": [
+        "შემცველობაში ძებნის ჩართვა შეუძლებელია. მონაცემების გასასუფთავებლად, გთხოვთ, გადატვირთეთ აპლიკაცია."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "მოხსენით მონიშვნა, სულ ცოტა, ${ calendarsToFixCount } კალენდარზე",
@@ -2241,6 +2258,9 @@
       ],
       "Passwords do not match": [
         "პაროლები არ ემთხვევა"
+      ],
+      "Photos upload is temporarily disabled. Please try again later": [
+        "სურათების ატვირთვა დროებით გათიშულია. მოგვიანებით სცადეთ"
       ],
       "Please activate your search again": [
         "თავიდან ჩართეთ შემცველობაში ძებნის ფუნქცია"
@@ -2413,10 +2433,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "მოულოდნელი შეცდომა. შემოტანა თავიდან უნდა დაიწყოთ."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "ფაილი ${ formattedFilename } ${ MAX_IMPORT_EVENTS_STRING }-ზე მეტ მოვლენას შეიცავს.",
-        "ფაილი ${ formattedFilename } ${ MAX_IMPORT_EVENTS_STRING }-ზე მეტ მოვლენას შეიცავს."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "თქვენს ფაილს ${ formattedFilename } არასწორი მეთოდი აქვს და მისი შემოტანა შეუძლებელია."
@@ -5609,6 +5625,11 @@
         "ატვირთვა"
       ]
     },
+    "Select search results": {
+      "No results found": [
+        "შედეგების გარეშე"
+      ]
+    },
     "session_recovery:available:action": {
       "Cancel reset": [
         "საწყის მნიშვნელობებზე დაბრუნების გაუქმება"
@@ -5656,6 +5677,22 @@
       ],
       "You can now change your password for the account ${ boldEmail }.": [
         "ახლა შეგიძლიათ შეცვალოთ პაროლი ანგარიშისთვის ${ boldEmail }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "გაქვთ ${ timeRemaining.inDays } დღე, ჩამოყაროთ თქვენი პაროლი.",
+        "გაქვთ ${ timeRemaining.inDays } დღე, ჩამოყაროთ თქვენი პაროლი."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "გაქვთ ${ timeRemaining.inHours } საათი, ჩამოყაროთ თქვენი პაროლი.",
+        " გაქვთ ${ timeRemaining.inHours } საათი ჩამოყაროთ თქვენი პაროლი."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "გაქვთ ${ timeRemaining.inMinutes } წუთი, ჩამოყაროთ თქვენი პაროლი.",
+        " გაქვთ ${ timeRemaining.inMinutes } წუთი ჩამოყაროთ თქვენი პაროლი."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "გაქვთ ${ timeRemaining.inSeconds } წამი, ჩამოყაროთ თქვენი პაროლი.",
+        " გაქვთ ${ timeRemaining.inSeconds } წამი ჩამოყაროთ თქვენი პაროლი."
       ]
     },
     "session_recovery:available:link": {

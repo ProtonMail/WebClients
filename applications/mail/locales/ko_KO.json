@@ -181,6 +181,9 @@
       "Clear search": [
         "검색 지우기"
       ],
+      "Clear selection": [
+        "선택 지우기"
+      ],
       "Click here.": [
         "여기를 클릭하세요."
       ],
@@ -306,9 +309,6 @@
       ],
       "Delete permanently": [
         "영구적으로 삭제"
-      ],
-      "Deselect": [
-        "선택 해제"
       ],
       "Deselect all": [
         "선택 해제"
@@ -2945,14 +2945,8 @@
       "Daily": [
         "일간"
       ],
-      "Daily, ${ untilString }": [
-        "종일, ${ untilString }"
-      ],
       "Every ${ interval } days": [
         "매 ${ interval }일"
-      ],
-      "Every ${ interval } days, ${ untilString }": [
-        "매 ${ interval }일, ${ untilString }"
       ],
       "until ${ dateString }": [
         "${ dateString } 까지"
@@ -3203,14 +3197,6 @@
     "email_forwarding_2023: Composer email icon": {
       "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
         "완전한 비접근화 암호화됨. 수신자가 이 계정에 대해 종단 간 암호화를 비활성화 했습니다."
-      ]
-    },
-    "empty messages: success": {
-      "Folder cleared": [
-        "폴더 삭제됨"
-      ],
-      "Label cleared": [
-        "라벨 지움"
       ]
     },
     "Encrypted Headers": {
@@ -3698,9 +3684,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "알 수 없는 오류. 불러오기가 재시작되어야 함."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "파일 ${ formattedFilename }에 이벤트가 ${ MAX_IMPORT_EVENTS_STRING }개 넘게 포함되어 있습니다."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "사용자의 ${ formattedFilename } 파일은 유효하지 않은 방법이므로 불러올 수 없습니다."
@@ -5410,9 +5393,6 @@
       ],
       "Monthly ${ onDayString }": [
         "매월 ${ onDayString }"
-      ],
-      "Moving messages. This may take a while.": [
-        "메시지를 이동하고 있습니다. 시간이 걸릴 수도 있습니다."
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "새 폴더의 이름을 지정하고 넣고 싶은 상위 폴더를 선택하세요. 상위 폴더를 선택하지 않으면, 이 새 폴더는 최상위 폴더로 생성됩니다."
@@ -7265,20 +7245,8 @@
       "Every ${ interval } months ${ onDayString }": [
         "매 ${ interval }개월 ${ onDayString }"
       ],
-      "Every ${ interval } months ${ onDayString }, ${ timesString }": [
-        "매 ${ interval }개월 ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } months ${ onDayString }, ${ untilString }": [
-        "매 ${ interval }개월 ${ onDayString }, ${ untilString }"
-      ],
       "Monthly ${ onDayString }": [
         "매월 ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "매월 ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "매월 ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -7904,6 +7872,11 @@
     "Select files": {
       "Upload": [
         "업로드"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "결과를 찾을 수 없음"
       ]
     },
     "Send email with changed preferences": {
@@ -9593,29 +9566,11 @@
       "Every ${ interval } weeks on ${ multipleDaysString }": [
         "매 ${ interval }주 ${ multipleDaysString }"
       ],
-      "Every ${ interval } weeks on ${ multipleDaysString }, ${ timesString }": [
-        "매 ${ interval } 주 ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } weeks on ${ multipleDaysString }, ${ untilString }": [
-        "매 ${ interval }주 ${ multipleDaysString }, ${ untilString }"
-      ],
       "Every ${ interval } weeks on all days": [
         "매 ${ interval }주 모든 요일"
       ],
-      "Every ${ interval } weeks on all days, ${ timesString }": [
-        "매 ${ interval }주 모든 요일, ${ timesString }"
-      ],
-      "Every ${ interval } weeks on all days, ${ untilString }": [
-        "매 ${ interval }주 모든 요일, ${ untilString }"
-      ],
       "Every ${ interval } weeks on Friday": [
         "매 ${ interval }주 금요일"
-      ],
-      "Every ${ interval } weeks on Friday, ${ timesString }": [
-        "매 ${ interval }주 금요일, ${ timesString }"
-      ],
-      "Every ${ interval } weeks on Friday, ${ untilString }": [
-        "매 ${ interval }주 금요일, ${ untilString }"
       ],
       "Every ${ interval } weeks on Monday": [
         "매 ${ interval }주 월요일"
@@ -9623,17 +9578,8 @@
       "Every ${ interval } weeks on Monday, ${ timesString }": [
         "매 ${ interval }주 월요일, ${ timesString }"
       ],
-      "Every ${ interval } weeks on Monday, ${ untilString }": [
-        "매 ${ interval }주 월요일, ${ untilString }"
-      ],
       "Every ${ interval } weeks on Saturday": [
         "매 ${ interval }주 토요일"
-      ],
-      "Every ${ interval } weeks on Saturday, ${ timesString }": [
-        "매 ${ interval }주 토요일, ${ timesString }"
-      ],
-      "Every ${ interval } weeks on Saturday, ${ untilString }": [
-        "매 ${ interval }주 토요일, ${ untilString }"
       ],
       "Every ${ interval } weeks on Sunday": [
         "매 ${ interval }주 일요일"
@@ -9641,17 +9587,8 @@
       "Every ${ interval } weeks on Sunday, ${ timesString }": [
         "매 ${ interval }주 일요일, ${ timesString }"
       ],
-      "Every ${ interval } weeks on Sunday, ${ untilString }": [
-        "매 ${ interval }주 일요일, ${ untilString }"
-      ],
       "Every ${ interval } weeks on Thursday": [
         "매 ${ interval }주 목요일"
-      ],
-      "Every ${ interval } weeks on Thursday, ${ timesString }": [
-        "매 ${ interval }주 목요일, ${ timesString }"
-      ],
-      "Every ${ interval } weeks on Thursday, ${ untilString }": [
-        "매 ${ interval }주 목요일, ${ untilString }"
       ],
       "Every ${ interval } weeks on Tuesday": [
         "매 ${ interval }주 화요일"
@@ -9659,98 +9596,35 @@
       "Every ${ interval } weeks on Tuesday, ${ timesString }": [
         "매 ${ interval }주 화요일, ${ timesString }"
       ],
-      "Every ${ interval } weeks on Tuesday, ${ untilString }": [
-        "매 ${ interval }주 화요일, ${ untilString }"
-      ],
       "Every ${ interval } weeks on Wednesday": [
         "매 ${ interval }주 수요일"
-      ],
-      "Every ${ interval } weeks on Wednesday, ${ timesString }": [
-        "매 ${ interval }주 수요일, ${ timesString }"
-      ],
-      "Every ${ interval } weeks on Wednesday, ${ untilString }": [
-        "매 ${ interval }주 수요일, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "주의 ${ multipleDaysString }"
       ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "주의 ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "주의 ${ multipleDaysString }, ${ untilString }"
-      ],
       "Weekly on all days": [
         "주의 종일"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "주의 종일, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "주의 종일, ${ untilString }"
       ],
       "Weekly on Friday": [
         "주의 금요일"
       ],
-      "Weekly on Friday, ${ timesString }": [
-        "주의 금요일, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "주의 금요일, ${ untilString }"
-      ],
       "Weekly on Monday": [
         "주의 월요일"
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        "주의 월요일, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "주의 월요일, ${ untilString }"
       ],
       "Weekly on Saturday": [
         "주의 토요일"
       ],
-      "Weekly on Saturday, ${ timesString }": [
-        "주의 토요일, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "주의 토요일, ${ untilString }"
-      ],
       "Weekly on Sunday": [
         "주의 일요일"
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        "주의 일요일, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "주의 일요일, ${ untilString }"
       ],
       "Weekly on Thursday": [
         "주의 목요일"
       ],
-      "Weekly on Thursday, ${ timesString }": [
-        "주의 목요일, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "주의 목요일, ${ untilString }"
-      ],
       "Weekly on Tuesday": [
         "주의 화요일"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "주의 화요일, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "주의 화요일, ${ untilString }"
-      ],
       "Weekly on Wednesday": [
         "주의 수요일"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "주의 수요일, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "주의 수요일, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -9780,20 +9654,8 @@
       "Every ${ interval } years": [
         "매 ${ interval }년"
       ],
-      "Every ${ interval } years, ${ timesString }": [
-        "매 ${ interval }년, ${ timesString }"
-      ],
-      "Every ${ interval } years, ${ untilString }": [
-        "매 ${ interval }년, ${ untilString }"
-      ],
       "Yearly": [
         "연간"
-      ],
-      "Yearly, ${ timesString }": [
-        "년간, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "년간, ${ untilString }"
       ]
     }
   }
