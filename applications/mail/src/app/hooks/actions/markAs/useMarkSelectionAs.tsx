@@ -9,12 +9,12 @@ import { markMessageAsRead, markMessageAsUnread } from '@proton/shared/lib/api/m
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import { getFilteredUndoTokens, runParallelChunkedActions } from 'proton-mail/helpers/chunk';
+import { isElementReminded } from 'proton-mail/helpers/snooze';
 import { MarkAsParams } from 'proton-mail/hooks/actions/markAs/useMarkAs';
 
 import UndoActionNotification from '../../../components/notifications/UndoActionNotification';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../../constants';
 import { backendActionFinished, backendActionStarted } from '../../../logic/elements/elementsActions';
-import { isElementReminded } from '../../../logic/snoozehelpers';
 import { useAppDispatch } from '../../../logic/store';
 import { Element } from '../../../models/element';
 import { useOptimisticMarkAs } from '../../optimistic/useOptimisticMarkAs';
