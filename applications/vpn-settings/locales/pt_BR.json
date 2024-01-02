@@ -245,6 +245,9 @@
       "Get verification code": [
         "Obter código de verificação"
       ],
+      "Give feedback": [
+        "Dar feedback"
+      ],
       "Got it": [
         "Entendi"
       ],
@@ -1851,6 +1854,17 @@
         "Separe diferentes aspectos da sua vida com vários endereços de e-mail e desbloqueie mais recursos premium ao atualizar."
       ]
     },
+    "Desktop app upsell": {
+      "Access to the desktop app is limited": [
+        "O acesso ao aplicativo de desktop é limitado"
+      ],
+      "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
+        "A versão beta do aplicativo de desktop ${ MAIL_APP_NAME } é atualmente limitada aos assinantes ${ BRAND_NAME } Visionary. Ela estará disponível para todos os usuários no início de 2024."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Faça upgrade hoje ou verifique novamente no começo de 2024 para obter acesso."
+      ]
+    },
     "Downgrade account reason": {
       "Bugs or quality issue": [
         "Defeitos ou problema de qualidade"
@@ -1895,6 +1909,11 @@
     "eof2023: Deal details": {
       "Paid ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME } features": [
         "Recursos pagos do ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ PASS_SHORT_APP_NAME }"
+      ]
+    },
+    "eof2023: Tooltip": {
+      "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
+        "Inclui histórico de versão no ${ DRIVE_SHORT_APP_NAME }, acesso a centenas de servidores ${ VPN_SHORT_APP_NAME } de alta velocidade, compartilhamento no ${ PASS_SHORT_APP_NAME } e mais."
       ]
     },
     "eoy2023: Deal details": {
@@ -5560,6 +5579,15 @@
       "My reason isn't listed": [
         "Meu motivo não está listado"
       ],
+      "No permission": [
+        "Sem permissão"
+      ],
+      "Organization only": [
+        "Apenas organização"
+      ],
+      "Receive from all": [
+        "Receber de todos"
+      ],
       "Router": [
         "Roteador"
       ],
@@ -5568,6 +5596,12 @@
       ],
       "Select who can access...": [
         "Selecionar quem pode acessar..."
+      ],
+      "Send to all": [
+        "Enviar à todos"
+      ],
+      "Setup incomplete": [
+        "Configuração incompleta"
       ],
       "Standard server configs": [
         "Configurações padrão do servidor"
@@ -5717,6 +5751,23 @@
       ],
       "New credit/debit card": [
         "Novo cartão de crédito/débito"
+      ]
+    },
+    "Permission": {
+      "No permission": [
+        "Sem permissão"
+      ],
+      "Organization only": [
+        "Apenas organização"
+      ],
+      "Receive from all": [
+        "Receber de todos"
+      ],
+      "Send to all": [
+        "Enviar a todos"
+      ],
+      "Setup incomplete": [
+        "Configuração incompleta"
       ]
     },
     "Placeholder": {
@@ -5958,6 +6009,9 @@
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Se você não pediu para redefinir sua senha, cancele a solicitação agora."
       ],
+      "Password reset request approved (${ user.Email }).": [
+        "Solicitação de redefinição de senha aprovada (${ user.Email })."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Vá ao dispositivo onde a solicitação (na sessão iniciada) para mudar a sua senha."
       ],
@@ -5968,6 +6022,9 @@
       "This permission expires in ${ timeRemaining.inHours } hour": [
         "Essa permissão expira em ${ timeRemaining.inHours } hora",
         "Essa permissão expira em ${ timeRemaining.inHours } horas"
+      ],
+      "This permission expires soon": [
+        "Esta permissão expira em breve"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Agora você pode alterar a senha da conta ${ boldEmail } gratuitamente por ${ boldDaysRemaining }."
@@ -5980,6 +6037,22 @@
       ],
       "You can reset your password until ${ boldDate }.": [
         "Você pode redefinir sua senha até ${ boldDate }."
+      ],
+      "You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Você tem ${ timeRemaining.inDays } dia para redefinir sua senha.",
+        "Você tem ${ timeRemaining.inDays } dias para redefinir sua senha."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Você tem ${ timeRemaining.inHours } hora para redefinir sua senha.",
+        " Você tem ${ timeRemaining.inHours } horas para redefinir sua senha."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Você tem ${ timeRemaining.inMinutes } minuto para redefinir sua senha.",
+        " Você tem ${ timeRemaining.inMinutes } minutos para redefinir sua senha."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Você tem ${ timeRemaining.inSeconds } segundo para redefinir sua senha.",
+        " Você tem ${ timeRemaining.inSeconds } segundos para redefinir sua senha."
       ]
     },
     "session_recovery:available:link": {
