@@ -8,6 +8,9 @@
       "Full view (see all event details)": [
         "允许查看所有日程详情"
       ],
+      "Limited view": [
+        "简视图"
+      ],
       "Limited view (see only free/busy)": [
         "只允许查看是否空闲"
       ]
@@ -326,6 +329,9 @@
       ],
       "Download CSV sample": [
         "下载 csv 样例"
+      ],
+      "Download ICS": [
+        "下载ICS"
       ],
       "Download our CSV template": [
         "下载我们的 CSV 模板"
@@ -735,6 +741,9 @@
       "Save changes": [
         "保存更改"
       ],
+      "Save ICS file": [
+        "保存 ICS 文件"
+      ],
       "Search": [
         "搜索"
       ],
@@ -755,6 +764,9 @@
       ],
       "Select calendar view": [
         "选择日历视图"
+      ],
+      "Select files": [
+        "选择文件"
       ],
       "Select language for invitation emails": [
         "选择邀请邮件的使用语言"
@@ -1010,6 +1022,11 @@
         "不用了，谢谢"
       ]
     },
+    "Action; accept invitation to share calendar": {
+      "Accept": [
+        "接受"
+      ]
+    },
     "Action; decline invitation to share calendar": {
       "Decline": [
         "拒绝"
@@ -1044,6 +1061,9 @@
       ],
       "Edit": [
         "编辑"
+      ],
+      "Edit address": [
+        "编辑地址"
       ],
       "Enable": [
         "启用"
@@ -1512,6 +1532,9 @@
       ],
       "Label deleted": [
         "标签已删除"
+      ],
+      "Label edited": [
+        "标签已编辑"
       ]
     },
     "Calendar link sharing label input assistive text": {
@@ -2804,17 +2827,16 @@
       "Daily": [
         "每天"
       ],
-      "Daily, ${ untilString }": [
-        "每天, 直到${ untilString }"
-      ],
       "Every ${ interval } days": [
         "每 ${ interval } 天"
       ],
-      "Every ${ interval } days, ${ untilString }": [
-        "每 ${ interval } 天，${ untilString }"
-      ],
       "until ${ dateString }": [
         "直到${ dateString }"
+      ]
+    },
+    "Daily recurring event, frequency (times)": {
+      "Every ${ interval } days, ${ timesString }": [
+        "每 ${ interval } 天，${ timesString }"
       ]
     },
     "Day": {
@@ -3149,17 +3171,32 @@
       ]
     },
     "email_forwarding_2023: Action": {
+      "Accept": [
+        "接受"
+      ],
       "Add condition": [
         "添加条件"
+      ],
+      "Cancel": [
+        "关闭"
       ],
       "Decline": [
         "拒绝"
       ],
+      "Delete": [
+        "刪除"
+      ],
       "Next": [
         "下一步"
       ],
+      "Pause": [
+        "暂停"
+      ],
       "Remove “${ value }”": [
         "移除 ”${ value }”"
+      ],
+      "Resume": [
+        "继续"
       ],
       "Save": [
         "保存"
@@ -3176,6 +3213,9 @@
     "email_forwarding_2023: Header": {
       "Actions": [
         "操作"
+      ],
+      "Status": [
+        "状态"
       ]
     },
     "email_forwarding_2023: Incoming forwarding tab name": {
@@ -3224,8 +3264,14 @@
       ]
     },
     "email_forwarding_2023: Status": {
+      "Active": [
+        "启用"
+      ],
       "Declined": [
         "已拒绝"
+      ],
+      "Paused": [
+        "已暂停"
       ],
       "Pending": [
         "等待"
@@ -3247,6 +3293,14 @@
     "Enabled 2FA": {
       "2FA": [
         "双重验证"
+      ]
+    },
+    "eoy2023: Deal details": {
+      "6 TB": [
+        "6 TB"
+      ],
+      "6 users": [
+        "6 位用户"
       ]
     },
     "Error": {
@@ -3369,6 +3423,9 @@
       ],
       "Incorrect username": [
         "用户名不正确"
+      ],
+      "Intended recipient does not support calendar sharing": [
+        "目标收件人不支持日历共享"
       ],
       "Invalid ${ name } code": [
         "${ name } 码不正确"
@@ -3731,9 +3788,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "出现意外错误，需重新开始导入。"
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "文件 ${ formattedFilename } 中的日程数已超过 ${ MAX_IMPORT_EVENTS_STRING }。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "您的文件 ${ formattedFilename } 包含一个无效的 method 属性，无法导入。"
@@ -4132,6 +4186,9 @@
       ],
       "Owners of a plan with members cannot join another group plan.": [
         "包含子用户的邮箱不能加入其他团体账户。"
+      ],
+      "Pending": [
+        "等待"
       ],
       "Sorry, you can't switch plans at this time.": [
         "抱歉，您目前无法变更账户等级。"
@@ -4554,6 +4611,12 @@
       ]
     },
     "Header": {
+      "Access": [
+        "权限"
+      ],
+      "Action": [
+        "操作"
+      ],
       "Actions": [
         "操作"
       ],
@@ -4580,6 +4643,9 @@
       ],
       "Key type": [
         "密钥类型"
+      ],
+      "Label": [
+        "标签"
       ],
       "Location": [
         "地理位置"
@@ -5548,6 +5614,9 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "删除其他 MX 记录，或者确保 ${ MAIL_APP_NAME } 的优先级数字最小。"
       ],
+      "Delete link?": [
+        "删除链接？"
+      ],
       "Deleting ${ deletedServerCount } gateway servers": [
         "删除${ deletedServerCount }网关服务器"
       ],
@@ -5928,6 +5997,9 @@
       ],
       "Link created": [
         "链接已创建"
+      ],
+      "Link deleted": [
+        "链接已删除"
       ],
       "Link expired": [
         "链接已过期"
@@ -7099,6 +7171,14 @@
         "为避免欠费导致服务中断，请确保账户中随时都有一种有效的支付方式。"
       ]
     },
+    "Info: partial": {
+      "${ selectedFoldersCount } folders selected": [
+        "已选择 ${ selectedFoldersCount } 个文件夹"
+      ],
+      "${ selectedFoldersCount } labels selected": [
+        "已选择 ${ selectedFoldersCount } 个标签"
+      ]
+    },
     "Info; access rights for shared calendar": {
       "View only": [
         "仅查看"
@@ -7393,6 +7473,9 @@
       ]
     },
     "Keys actions": {
+      "Delete": [
+        "刪除"
+      ],
       "Disables encryption with this key": [
         "停止使用此密钥加密"
       ],
@@ -7410,6 +7493,9 @@
       ],
       "Export public key": [
         "导出公钥"
+      ],
+      "Make primary": [
+        "设为主密钥"
       ],
       "Mark compromised": [
         "标为已泄露"
@@ -7949,6 +8035,9 @@
       "Mark as": [
         "标为"
       ],
+      "Message": [
+        "内容"
+      ],
       "Messages per page": [
         "每页邮件数量"
       ],
@@ -8141,6 +8230,9 @@
       "Send crash reports": [
         "发送崩溃报告"
       ],
+      "Send in": [
+        "信函语种"
+      ],
       "Show secondary time zone": [
         "显示次要时区"
       ],
@@ -8185,6 +8277,9 @@
       ],
       "Start time": [
         "起始时间"
+      ],
+      "Start weekday": [
+        "起始日"
       ],
       "Statement": [
         "要求"
@@ -8666,6 +8761,9 @@
       "Edit": [
         "编辑"
       ],
+      "Remove": [
+        "注销"
+      ],
       "Revoke sessions": [
         "下线登录设备"
       ],
@@ -8738,20 +8836,8 @@
       "Every ${ interval } months ${ onDayString }": [
         "每 ${ interval } 个月的 ${ onDayString }"
       ],
-      "Every ${ interval } months ${ onDayString }, ${ timesString }": [
-        "每 ${ interval } 月的 ${ onDayString }，${ timesString }"
-      ],
-      "Every ${ interval } months ${ onDayString }, ${ untilString }": [
-        "每 ${ interval } 月的 ${ onDayString }，直到 ${ untilString }"
-      ],
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "每月${ onDayString }，${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "每月${ onDayString }，直到${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -9343,6 +9429,9 @@
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "如果您切换到其他套餐，您将失去${ visionary } 套餐的所有福利，并且无法切换回${ visionary }。"
       ],
+      "Most popular": [
+        "常用"
+      ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "我们的 ${ visionary } 套餐已不再适用于新订阅者，因为它是针对原始 ${ BRAND_NAME } 用户的特殊套餐，具有特殊功能和优势。"
       ],
@@ -9624,11 +9713,17 @@
       ]
     },
     "new_plans: Upsell attribute": {
+      "24/7 support": [
+        "全天候支持"
+      ],
       "Access advanced VPN features": [
         "解锁高级 VPN 功能"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "15 个邮箱地址和 3 个自有域名供您选择"
+      ],
+      "Auto-connect": [
+        "自动连接"
       ],
       "Boost your storage space to ${ bundleStorage } per user": [
         "每位用户存储空间可升至 ${ bundleStorage }"
@@ -9926,6 +10021,9 @@
       "Plain text": [
         "纯文本"
       ],
+      "Repeat daily": [
+        "每天"
+      ],
       "Repeat monthly": [
         "每月"
       ],
@@ -10116,6 +10214,9 @@
       "End-to-end encryption": [
         "端到端加密"
       ],
+      "Free forever": [
+        "永久免费"
+      ],
       "per month": [
         "每月"
       ],
@@ -10236,6 +10337,9 @@
       ],
       "Please select the main reason": [
         "请选择主要原因"
+      ],
+      "Printer": [
+        "打印机"
       ],
       "Search": [
         "搜索"
@@ -10428,6 +10532,9 @@
       ],
       "Remove calendar": [
         "删除日历"
+      ],
+      "Unsubscribe?": [
+        "取消订阅？"
       ]
     },
     "Restore administrator panel": {
@@ -10637,6 +10744,9 @@
       ]
     },
     "session_recovery:initiation:action": {
+      "Got it": [
+        "好"
+      ],
       "Request password reset": [
         "请求重置密码"
       ]
@@ -10724,6 +10834,12 @@
       ]
     },
     "Settings/filters - table": {
+      "Action": [
+        "操作"
+      ],
+      "Name": [
+        "名称"
+      ],
       "Order": [
         "排序"
       ],
@@ -10734,6 +10850,14 @@
     "Settings/labels": {
       "Labels/Folders": [
         "标签/文件夹"
+      ]
+    },
+    "Settings/labels - table": {
+      "Actions": [
+        "操作"
+      ],
+      "Labels": [
+        "标签"
       ]
     },
     "Share calendar assistive text": {
@@ -11140,6 +11264,9 @@
     "Subscription renewal state": {
       "Are you sure?": [
         "确定要这样做吗?"
+      ],
+      "Disable": [
+        "关闭"
       ]
     },
     "Subscription saving": {
@@ -11496,6 +11623,9 @@
       ],
       "Name": [
         "姓名"
+      ],
+      "Role": [
+        "角色"
       ],
       "Status": [
         "状态"
@@ -12143,6 +12273,9 @@
       "PayPal verification failed": [
         "PayPal 验证失败"
       ],
+      "Personalise your e-mail footer": [
+        "个性化您的电子邮件页脚"
+      ],
       "Phone": [
         "电话"
       ],
@@ -12314,6 +12447,9 @@
       "Status": [
         "状态"
       ],
+      "Success": [
+        "成功"
+      ],
       "Successfully created ${ localSuccessfullyCreatedUsers.length } user accounts": [
         "${ localSuccessfullyCreatedUsers.length } 位用户创建成功"
       ],
@@ -12322,6 +12458,9 @@
       ],
       "Summary": [
         "概览"
+      ],
+      "Switch account": [
+        "切换账户"
       ],
       "Switch to one-password mode": [
         "切换到单密码模式"
@@ -12487,6 +12626,9 @@
       ],
       "Fingerprint": [
         "指纹"
+      ],
+      "Status": [
+        "状态"
       ]
     },
     "Title header for members table": {
@@ -12501,6 +12643,11 @@
       ],
       "Role": [
         "角色"
+      ]
+    },
+    "Title subscription": {
+      "Status": [
+        "状态"
       ]
     },
     "Title; create calendar modal": {
@@ -12934,29 +13081,11 @@
       "Every ${ interval } weeks on ${ multipleDaysString }": [
         "每 ${ interval } 周的${ multipleDaysString }"
       ],
-      "Every ${ interval } weeks on ${ multipleDaysString }, ${ timesString }": [
-        "每${ interval } 周的${ multipleDaysString }，${ timesString }"
-      ],
-      "Every ${ interval } weeks on ${ multipleDaysString }, ${ untilString }": [
-        "每${ interval } 周的${ multipleDaysString }，知道${ untilString }"
-      ],
       "Every ${ interval } weeks on all days": [
         "每 ${ interval } 周整周"
       ],
-      "Every ${ interval } weeks on all days, ${ timesString }": [
-        "每 ${ interval } 周整周，${ timesString }"
-      ],
-      "Every ${ interval } weeks on all days, ${ untilString }": [
-        "每 ${ interval } 周所有天，${ untilString }"
-      ],
       "Every ${ interval } weeks on Friday": [
         "每 ${ interval } 周的星期五"
-      ],
-      "Every ${ interval } weeks on Friday, ${ timesString }": [
-        "每 ${ interval } 周星期五，${ timesString }"
-      ],
-      "Every ${ interval } weeks on Friday, ${ untilString }": [
-        "每 ${ interval } 周星期五，${ untilString }"
       ],
       "Every ${ interval } weeks on Monday": [
         "每 ${ interval } 周的星期一"
@@ -12964,17 +13093,8 @@
       "Every ${ interval } weeks on Monday, ${ timesString }": [
         "每 ${ interval } 周星期一，${ timesString }"
       ],
-      "Every ${ interval } weeks on Monday, ${ untilString }": [
-        "每 ${ interval } 周星期一，${ untilString }"
-      ],
       "Every ${ interval } weeks on Saturday": [
         "每 ${ interval } 周的星期六"
-      ],
-      "Every ${ interval } weeks on Saturday, ${ timesString }": [
-        "每 ${ interval } 周星期六，${ timesString }"
-      ],
-      "Every ${ interval } weeks on Saturday, ${ untilString }": [
-        "每 ${ interval } 周星期六，${ untilString }"
       ],
       "Every ${ interval } weeks on Sunday": [
         "每 ${ interval } 周的星期日"
@@ -12982,17 +13102,8 @@
       "Every ${ interval } weeks on Sunday, ${ timesString }": [
         "每 ${ interval } 周星期日，${ timesString }"
       ],
-      "Every ${ interval } weeks on Sunday, ${ untilString }": [
-        "每 ${ interval } 周星期日，${ untilString }"
-      ],
       "Every ${ interval } weeks on Thursday": [
         "每 ${ interval } 周的星期四"
-      ],
-      "Every ${ interval } weeks on Thursday, ${ timesString }": [
-        "每 ${ interval } 周星期四，${ timesString }"
-      ],
-      "Every ${ interval } weeks on Thursday, ${ untilString }": [
-        "每 ${ interval } 周星期四，${ untilString }"
       ],
       "Every ${ interval } weeks on Tuesday": [
         "每 ${ interval } 周的星期二"
@@ -13000,98 +13111,35 @@
       "Every ${ interval } weeks on Tuesday, ${ timesString }": [
         "每 ${ interval } 周星期二，${ timesString }"
       ],
-      "Every ${ interval } weeks on Tuesday, ${ untilString }": [
-        "每 ${ interval } 周星期二，${ untilString }"
-      ],
       "Every ${ interval } weeks on Wednesday": [
         "每 ${ interval } 周的星期三"
-      ],
-      "Every ${ interval } weeks on Wednesday, ${ timesString }": [
-        "每 ${ interval } 周星期三，${ timesString }"
-      ],
-      "Every ${ interval } weeks on Wednesday, ${ untilString }": [
-        "每 ${ interval } 周星期三，${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "每周的 ${ multipleDaysString }"
       ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "每周${ multipleDaysString }，${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "每周${ multipleDaysString }，${ untilString }"
-      ],
       "Weekly on all days": [
         "每周所有天"
-      ],
-      "Weekly on all days, ${ timesString }": [
-        "每周所有天数，${ timesString }。"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "每天，直到${ untilString }"
       ],
       "Weekly on Friday": [
         "每周星期五"
       ],
-      "Weekly on Friday, ${ timesString }": [
-        "每周星期五，${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "每周星期五，直到${ untilString }"
-      ],
       "Weekly on Monday": [
         "每周星期一"
-      ],
-      "Weekly on Monday, ${ timesString }": [
-        "每周星期一，${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "每周星期一，直到${ untilString }"
       ],
       "Weekly on Saturday": [
         "每周星期六"
       ],
-      "Weekly on Saturday, ${ timesString }": [
-        "每周星期六，${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "每周星期六，直到${ untilString }"
-      ],
       "Weekly on Sunday": [
         "每周星期日"
-      ],
-      "Weekly on Sunday, ${ timesString }": [
-        "每周星期日，${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "每周星期日，直到${ untilString }"
       ],
       "Weekly on Thursday": [
         "每周星期四"
       ],
-      "Weekly on Thursday, ${ timesString }": [
-        "每周星期四，${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "每周星期四，直到${ untilString }"
-      ],
       "Weekly on Tuesday": [
         "每周星期二"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "每周星期二，${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "每周星期二，直到${ untilString }"
-      ],
       "Weekly on Wednesday": [
         "每周星期三"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "每周星期三，${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "每周星期三，直到${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -13121,20 +13169,8 @@
       "Every ${ interval } years": [
         "每 ${ interval } 年"
       ],
-      "Every ${ interval } years, ${ timesString }": [
-        "每 ${ interval } 年，${ timesString }"
-      ],
-      "Every ${ interval } years, ${ untilString }": [
-        "每 ${ interval } 年，直到 ${ untilString }"
-      ],
       "Yearly": [
         "每年"
-      ],
-      "Yearly, ${ timesString }": [
-        "每年, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "每年, ${ untilString }"
       ]
     }
   }

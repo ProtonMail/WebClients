@@ -26,6 +26,9 @@
       "Advanced options": [
         "고급 옵션"
       ],
+      "Authenticate": [
+        "인증"
+      ],
       "Back": [
         "이전"
       ],
@@ -619,9 +622,6 @@
       ],
       "Unknown invite": [
         "알 수 없는 초대"
-      ],
-      "Unsupported ${ PASS_APP_NAME } file format": [
-        "지원되지 않는 ${ PASS_APP_NAME } 파일 포맷"
       ],
       "Unsupported 1Password file format": [
         "지원되지 않는 1Password 파일 포맷"
@@ -1642,6 +1642,9 @@
       "Other": [
         "기타"
       ],
+      "Password": [
+        "비밀번호"
+      ],
       "Pick a vault": [
         "금고 선택"
       ],
@@ -1717,6 +1720,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME }를 잘 사용하고 계신가요?"
+      ],
+      "Enter your password": [
+        "비밀번호를 입력하세요"
       ],
       "Enter your PIN": [
         "PIN을 입력해 주세요."

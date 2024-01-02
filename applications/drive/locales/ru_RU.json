@@ -319,6 +319,9 @@
       "Get started": [
         "Приступить к работе"
       ],
+      "Get Started": [
+        "Начать"
+      ],
       "Get verification code": [
         "Получить проверочный код"
       ],
@@ -2446,12 +2449,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Произошла непредвиденная ошибка. Необходимо начать импорт заново."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS_STRING } события.",
-        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS_STRING } событий.",
-        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS_STRING } событий.",
-        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS_STRING } событий."
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Ваш файл ${ formattedFilename } имеет недопустимый метод и не может быть импортирован."
       ],
@@ -2615,6 +2612,9 @@
       ],
       "Oops, something went wrong": [
         "Хм. Что-то пошло не так"
+      ],
+      "Open in browser": [
+        "Открыть в браузере"
       ],
       "Please refresh the page or try again later.": [
         "Пожалуйста, обновите страницу или повторите попытку позже."
@@ -4232,6 +4232,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Браузер не поддерживает предварительный просмотр документов PDF. Пожалуйста, скачайте файл."
       ],
+      "This file is too large to preview": [
+        "Этот файл слишком большой для предпросмотра"
+      ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Файл возможно был удалён, перемещён или стал недоступен. Обратитесь к владельцу файла."
       ],
@@ -5570,6 +5573,9 @@
       "Discover all ${ BRAND_NAME } services": [
         "Узнайте обо всех службах ${ BRAND_NAME }"
       ],
+      "Pick a theme": [
+        "Выбрать тему"
+      ],
       "Set up your organization": [
         "Настройка организации"
       ]
@@ -5771,6 +5777,11 @@
         "Загрузить"
       ]
     },
+    "Select search results": {
+      "No results found": [
+        "Результаты не найдены"
+      ]
+    },
     "session_recovery:available:action": {
       "Cancel reset": [
         "Отменить сброс"
@@ -5813,6 +5824,11 @@
     "session_recovery:available:link": {
       "See how": [
         "Посмотреть, как"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "Пароль сохранен"
       ]
     },
     "session_recovery:available:title": {
@@ -5874,6 +5890,11 @@
     "session_recovery:in_progress:title": {
       "Password reset requested": [
         "Получен запрос на сброс пароля"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Выйти"
       ]
     },
     "session_recovery:sign_out:info": {

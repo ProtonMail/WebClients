@@ -26,6 +26,9 @@
       "Advanced options": [
         "Pokročilé nastavení"
       ],
+      "Authenticate": [
+        "Ověřit"
+      ],
       "Back": [
         "Zpět"
       ],
@@ -628,9 +631,6 @@
       ],
       "Unknown invite": [
         "Neznámá pozvánka"
-      ],
-      "Unsupported ${ PASS_APP_NAME } file format": [
-        "Neodporovaný formát souboru ${ PASS_APP_NAME }"
       ],
       "Unsupported 1Password file format": [
         "Nepodporovaný formát souboru 1Password"
@@ -1711,6 +1711,9 @@
       "Other": [
         "Ostatní"
       ],
+      "Password": [
+        "Heslo"
+      ],
       "Pick a vault": [
         "Vyberte si trezor"
       ],
@@ -1789,6 +1792,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Užíváte si ${ PASS_APP_NAME }?"
+      ],
+      "Enter your password": [
+        "Zadejte Vaše heslo"
       ],
       "Enter your PIN": [
         "Zadejte svůj PIN"

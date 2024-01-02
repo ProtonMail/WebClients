@@ -2426,9 +2426,6 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Terdapat kesalahan yang tidak terduga. Proses impor harus diulang."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
-        "Berkas ${ formattedFilename } milik Anda mengandung lebih dari ${ MAX_IMPORT_EVENTS_STRING } acara."
-      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Berkas ${ formattedFilename } tidak dapat diimpor karena mengandung metode yang tidak valid."
       ],
@@ -4296,6 +4293,9 @@
       "You can import one data type at a time.": [
         "Anda hanya dapat mengimpor satu tipe data dalam satu waktu."
       ],
+      "You can now return to the application to continue": [
+        "Anda kini dapat kembali ke aplikasi untuk melanjutkan"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan setiap kali terdapat surel baru yang masuk ke folder ini."
       ],
@@ -5549,6 +5549,11 @@
     "Select files": {
       "Upload": [
         "Unggah"
+      ]
+    },
+    "Select search results": {
+      "No results found": [
+        "Hasil tidak ditemukan"
       ]
     },
     "session_recovery:available:action": {

@@ -5140,7 +5140,7 @@
     },
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "그렇지 않으면 귀하의 계정에 접근하는 것이 제한될 것이며, 귀하의 계정은 결국 비활성화됩니다."
+        "그렇지 않으면 사용자의 계정이 제한될 수 있으며, 지속적으로 방치되면 비활성화될 수 있습니다."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "${ MAIL_APP_NAME } 의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
@@ -5523,6 +5523,15 @@
       "My reason isn't listed": [
         "기타 사유"
       ],
+      "No permission": [
+        "권한 없음"
+      ],
+      "Organization only": [
+        "조직 전용"
+      ],
+      "Receive from all": [
+        "전체로 부터 받기"
+      ],
       "Router": [
         "라우터"
       ],
@@ -5531,6 +5540,12 @@
       ],
       "Select who can access...": [
         "접근할 수 있는 사용자를 선택하십시오..."
+      ],
+      "Send to all": [
+        "모두에게 보내기"
+      ],
+      "Setup incomplete": [
+        "설치가 완료되지 않음"
       ],
       "Standard server configs": [
         "기본 서버 구성"
@@ -5680,6 +5695,23 @@
       ],
       "New credit/debit card": [
         "신용/체크카드 추가"
+      ]
+    },
+    "Permission": {
+      "No permission": [
+        "권한 없음"
+      ],
+      "Organization only": [
+        "조직 전용"
+      ],
+      "Receive from all": [
+        "전체로 부터 받기"
+      ],
+      "Send to all": [
+        "모두에게 보내기"
+      ],
+      "Setup incomplete": [
+        "설치가 완료되지 않음"
       ]
     },
     "Placeholder": {

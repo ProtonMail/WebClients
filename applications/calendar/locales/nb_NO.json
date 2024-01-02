@@ -701,12 +701,6 @@
       "${ title } started on ${ formattedDate } at ${ formattedHour }": [
         "${ title } startet ${ formattedDate } ${ formattedHour }"
       ],
-      "${ title } started on ${ formattedDateWithoutTime }": [
-        "${ title } startet ${ formattedDateWithoutTime }"
-      ],
-      "${ title } started on ${ formattedDateWithTime }": [
-        "${ title } startet ${ formattedDateWithTime }"
-      ],
       "${ title } started yesterday": [
         "${ title } startet i går"
       ],
@@ -724,12 +718,6 @@
       ],
       "${ title } starts on ${ formattedDate } at ${ formattedHour }": [
         "${ title } starter ${ formattedDate } kl. ${ formattedHour }"
-      ],
-      "${ title } starts on ${ formattedDateWithoutTime }": [
-        "${ title } starter ${ formattedDateWithoutTime }"
-      ],
-      "${ title } starts on ${ formattedDateWithTime }": [
-        "${ title } starter ${ formattedDateWithTime }"
       ],
       "${ title } starts today": [
         "${ title } starter i dag"
@@ -2108,16 +2096,9 @@
       "Daily": [
         "Daglig"
       ],
-      "Daily, ${ untilString }": [
-        "Daglig, ${ untilString }"
-      ],
       "Every ${ interval } day": [
         "Hver ${ interval } dag",
         "Hver ${ interval } dag"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Hver ${ interval } dag, ${ untilString }",
-        "Hver ${ interval } dag, ${ untilString }"
       ],
       "until ${ dateString }": [
         "til ${ dateString }"
@@ -2130,6 +2111,15 @@
       "Every ${ interval } day, ${ timesString }": [
         "Hver ${ interval } dag, ${ timesString }",
         "Hver ${ interval } dag, ${ timesString }"
+      ]
+    },
+    "Daily recurring event, frequency (until)": {
+      "Daily, ${ untilString }": [
+        "Daglig, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Hver ${ interval } dag, ${ untilString }",
+        "Hver ${ interval } dag, ${ untilString }"
       ]
     },
     "Day": {
@@ -2789,9 +2779,9 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Det oppstod en uventet feil. Importen må startes på nytt."
       ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Filen din ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_EVENTS_STRING } hendelse.",
-        "Filen din ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_EVENTS_STRING } hendelser."
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Filen din ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_EVENTS } hendelse.",
+        "Filen din ${ formattedFilename } inneholder flere enn ${ MAX_IMPORT_EVENTS } hendelser."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Filen ${ formattedFilename } har en ugyldig metode og kan ikke importeres."
@@ -4303,6 +4293,9 @@
       "You can import one data type at a time.": [
         "Du kan importere én datatype om gangen."
       ],
+      "You can now return to the application to continue": [
+        "Du kan nå gå tilbake til programmet for å fortsette"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Du kan aktivere varsler for å få varsler når det kommer nye e-postmeldinger i denne mappen."
       ],
@@ -5083,6 +5076,11 @@
         "Hver ${ interval } måned ${ onDayString }",
         "Hver ${ interval } måned ${ onDayString }"
       ],
+      "Monthly ${ onDayString }": [
+        "Månedlig ${ onDayString }"
+      ]
+    },
+    "Monthly recurring event, frequency (times)": {
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
         "Hver ${ interval } måned ${ onDayString }, ${ timesString }",
         "Hver ${ interval } måned ${ onDayString }, ${ timesString }"
@@ -5090,9 +5088,6 @@
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
         "Hver ${ interval } måned ${ onDayString }, ${ untilString }",
         "Hver ${ interval } måned ${ onDayString }, ${ untilString }"
-      ],
-      "Monthly ${ onDayString }": [
-        "Månedlig ${ onDayString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "Månedlig ${ onDayString }, ${ timesString }"
@@ -5667,6 +5662,9 @@
       ],
       "Search for name or email": [
         "Søk etter navn eller e-post"
+      ],
+      "Search parent folder": [
+        "Søk i overordnet mappe"
       ],
       "Select": [
         "Velg"
@@ -7103,37 +7101,13 @@
         "Hver ${ interval } uke på ${ multipleDaysString }",
         "Hver ${ interval } uke på ${ multipleDaysString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Hver ${ interval } uke på ${ multipleDaysString }, ${ timesString }",
-        "Hver ${ interval } uke på ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Hver ${ interval } uke på ${ multipleDaysString }, ${ untilString }",
-        "Hver ${ interval } uke på ${ multipleDaysString }, ${ untilString }"
-      ],
       "Every ${ interval } week on all days": [
         "Hver ${ interval } uke på alle dager",
         "Hver ${ interval } uke på alle dager"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Hver ${ interval } uke på alle dager, ${ timesString }",
-        "Hver ${ interval } uke på alle dager, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Hver ${ interval } uke på alle dager, ${ untilString }",
-        "Hver ${ interval } uke på alle dager, ${ untilString }"
-      ],
       "Every ${ interval } week on Friday": [
         "Hver ${ interval } uke på fredag",
         "Hver ${ interval } uke på fredag"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Hver ${ interval } uke på fredag, ${ timesString }",
-        "Hver ${ interval } uke på fredag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Hver ${ interval } uke på fredag, ${ untilString }",
-        "Hver ${ interval } uke på fredag, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Hver ${ interval } uke på mandag",
@@ -7143,21 +7117,9 @@
         "Hver ${ interval } uke på mandag, ${ timesString }",
         "Hver ${ interval } uke på mandag, ${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Hver ${ interval } uke på mandag, ${ untilString }",
-        "Hver ${ interval } uke på mandag, ${ untilString }"
-      ],
       "Every ${ interval } week on Saturday": [
         "Hver ${ interval } uke på lørdag",
         "Hver ${ interval } uke på lørdag"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Hver ${ interval } uke på lørdag, ${ timesString }",
-        "Hver ${ interval } uke på lørdag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Hver ${ interval } uke på lørdag, ${ untilString }",
-        "Hver ${ interval } uke på lørdag, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Hver ${ interval } uke på søndag",
@@ -7167,21 +7129,9 @@
         "Hver ${ interval } uke på søndag, ${ timesString }",
         "Hver ${ interval } uke på søndag, ${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Hver ${ interval } uke på søndag, ${ untilString }",
-        "Hver ${ interval } uke på søndag, ${ untilString }"
-      ],
       "Every ${ interval } week on Thursday": [
         "Hver ${ interval } uke på torsdag",
         "Hver ${ interval } uke på torsdag"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Hver ${ interval } uke på torsdag, ${ timesString }",
-        "Hver ${ interval } uke på torsdag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Hver ${ interval } uke på torsdag, ${ untilString }",
-        "Hver ${ interval } uke på torsdag, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Hver ${ interval } uke på tirsdag",
@@ -7191,99 +7141,151 @@
         "Hver ${ interval } uke på tirsdag, ${ timesString }",
         "Hver ${ interval } uke på tirsdag, ${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Hver ${ interval } uke på tirsdag, ${ untilString }",
-        "Hver ${ interval } uke på tirsdag, ${ untilString }"
-      ],
       "Every ${ interval } week on Wednesday": [
         "Hver ${ interval } uke på onsdag",
         "Hver ${ interval } uke på onsdag"
+      ],
+      "Weekly on ${ multipleDaysString }": [
+        "Ukentlig på ${ multipleDaysString }"
+      ],
+      "Weekly on all days": [
+        "Ukentlig på alle dager"
+      ],
+      "Weekly on Friday": [
+        "Ukentlig på fredag"
+      ],
+      "Weekly on Monday": [
+        "Ukentlig på mandag"
+      ],
+      "Weekly on Saturday": [
+        "Ukentlig på lørdag"
+      ],
+      "Weekly on Sunday": [
+        "Ukentlig på søndag"
+      ],
+      "Weekly on Thursday": [
+        "Ukentlig på torsdag"
+      ],
+      "Weekly on Tuesday": [
+        "Ukentlig på tirsdag"
+      ],
+      "Weekly on Wednesday": [
+        "Ukentlig på onsdag"
+      ]
+    },
+    "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Hver ${ interval } uke på ${ multipleDaysString }, ${ timesString }",
+        "Hver ${ interval } uke på ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Hver ${ interval } uke på alle dager, ${ timesString }",
+        "Hver ${ interval } uke på alle dager, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Hver ${ interval } uke på fredag, ${ timesString }",
+        "Hver ${ interval } uke på fredag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Hver ${ interval } uke på lørdag, ${ timesString }",
+        "Hver ${ interval } uke på lørdag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Hver ${ interval } uke på torsdag, ${ timesString }",
+        "Hver ${ interval } uke på torsdag, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
         "Hver ${ interval } uke på onsdag, ${ timesString }",
         "Hver ${ interval } uke på onsdag, ${ timesString }"
       ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Hver ${ interval } uke på onsdag, ${ untilString }",
-        "Hver ${ interval } uke på onsdag, ${ untilString }"
-      ],
-      "Weekly on ${ multipleDaysString }": [
-        "Ukentlig på ${ multipleDaysString }"
-      ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
         "Ukentlig på ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Ukentlig på ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Weekly on all days": [
-        "Ukentlig på alle dager"
       ],
       "Weekly on all days, ${ timesString }": [
         "Ukentlig på alle dager, ${ timesString }"
       ],
-      "Weekly on all days, ${ untilString }": [
-        "Ukentlig på alle dager, ${ untilString }"
-      ],
-      "Weekly on Friday": [
-        "Ukentlig på fredag"
-      ],
       "Weekly on Friday, ${ timesString }": [
         "Ukentlig på fredag, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Ukentlig på fredag, ${ untilString }"
-      ],
-      "Weekly on Monday": [
-        "Ukentlig på mandag"
       ],
       "Weekly on Monday, ${ timesString }": [
         "Ukentlig på mandag, ${ timesString }"
       ],
-      "Weekly on Monday, ${ untilString }": [
-        "Ukentlig på mandag, ${ untilString }"
-      ],
-      "Weekly on Saturday": [
-        "Ukentlig på lørdag"
-      ],
       "Weekly on Saturday, ${ timesString }": [
         "Ukentlig på lørdag, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Ukentlig på lørdag, ${ untilString }"
-      ],
-      "Weekly on Sunday": [
-        "Ukentlig på søndag"
       ],
       "Weekly on Sunday, ${ timesString }": [
         "Ukentlig på søndag, ${ timesString }"
       ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Ukentlig på søndag, ${ untilString }"
-      ],
-      "Weekly on Thursday": [
-        "Ukentlig på torsdag"
-      ],
       "Weekly on Thursday, ${ timesString }": [
         "Ukentlig på torsdag, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Ukentlig på torsdag, ${ untilString }"
-      ],
-      "Weekly on Tuesday": [
-        "Ukentlig på tirsdag"
       ],
       "Weekly on Tuesday, ${ timesString }": [
         "Ukentlig på tirsdag, ${ timesString }"
       ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Ukentlig på tirsdag, ${ untilString }"
-      ],
-      "Weekly on Wednesday": [
-        "Ukentlig på onsdag"
-      ],
       "Weekly on Wednesday, ${ timesString }": [
         "Ukentlig på onsdag, ${ timesString }"
+      ]
+    },
+    "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Hver ${ interval } uke på ${ multipleDaysString }, ${ untilString }",
+        "Hver ${ interval } uke på ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Hver ${ interval } uke på alle dager, ${ untilString }",
+        "Hver ${ interval } uke på alle dager, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Hver ${ interval } uke på fredag, ${ untilString }",
+        "Hver ${ interval } uke på fredag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Hver ${ interval } uke på mandag, ${ untilString }",
+        "Hver ${ interval } uke på mandag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Hver ${ interval } uke på lørdag, ${ untilString }",
+        "Hver ${ interval } uke på lørdag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Hver ${ interval } uke på søndag, ${ untilString }",
+        "Hver ${ interval } uke på søndag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Hver ${ interval } uke på torsdag, ${ untilString }",
+        "Hver ${ interval } uke på torsdag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Hver ${ interval } uke på tirsdag, ${ untilString }",
+        "Hver ${ interval } uke på tirsdag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Hver ${ interval } uke på onsdag, ${ untilString }",
+        "Hver ${ interval } uke på onsdag, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Ukentlig på ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Ukentlig på alle dager, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Ukentlig på fredag, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Ukentlig på mandag, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Ukentlig på lørdag, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Ukentlig på søndag, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Ukentlig på torsdag, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Ukentlig på tirsdag, ${ untilString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
         "Ukentlig på onsdag, ${ untilString }"
@@ -7317,19 +7319,23 @@
         "Hvert ${ interval } år",
         "Hvert ${ interval } år"
       ],
+      "Yearly": [
+        "Årlig"
+      ]
+    },
+    "Yearly recurring event, frequency (times)": {
       "Every ${ interval } year, ${ timesString }": [
         "Hvert ${ interval } år, ${ timesString }",
         "Hvert ${ interval } år, ${ timesString }"
       ],
+      "Yearly, ${ timesString }": [
+        "Årlig, ${ timesString }"
+      ]
+    },
+    "Yearly recurring event, frequency (until)": {
       "Every ${ interval } year, ${ untilString }": [
         "Hvert ${ interval } år, ${ untilString }",
         "Hvert ${ interval } år, ${ untilString }"
-      ],
-      "Yearly": [
-        "Årlig"
-      ],
-      "Yearly, ${ timesString }": [
-        "Årlig, ${ timesString }"
       ],
       "Yearly, ${ untilString }": [
         "Årlig, ${ untilString }"

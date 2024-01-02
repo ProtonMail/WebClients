@@ -2590,16 +2590,9 @@
       "Daily": [
         "Yal ass"
       ],
-      "Daily, ${ untilString }": [
-        "Yal ass, ${ untilString }"
-      ],
       "Every ${ interval } day": [
         "Yal ${ interval } ass",
         "Yal ${ interval } n wussan"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Yal ${ interval } ass, ${ untilString }",
-        "Yal ${ interval } n wussan, ${ untilString }"
       ],
       "until ${ dateString }": [
         "alamma d ${ dateString }"
@@ -3408,10 +3401,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Tella-d tuccḍa ur nettwarǧa ara. Aktar ilaq ad yales asenker."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Afaylu-inek·inem ${ formattedFilename } deg-s ugar n ${ MAX_IMPORT_EVENTS_STRING } n tedyant.",
-        "Afaylu-inek·inem ${ formattedFilename } deg-s ugar n ${ MAX_IMPORT_EVENTS_STRING } n tedyanin."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Afaylu-inek/m ${ formattedFilename } ur yesɛi ara tidyanin ara nsifeḍ."
@@ -7634,22 +7623,8 @@
         "Yal ${ interval } n wayyur ${ onDayString }",
         "Yal ${ interval } n wayyuren ${ onDayString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Yal ${ interval } n wayyur ${ onDayString }, ${ timesString }",
-        "Yal ${ interval } n wayyuren ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Yal ${ interval } n wayyur ${ onDayString }, ${ untilString }",
-        "Yal ${ interval } n wayyuren ${ onDayString }, ${ untilString }"
-      ],
       "Monthly ${ onDayString }": [
         "Yal ayyur ${ onDayString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Yal ayyur ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Yal ayyur ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -11196,37 +11171,13 @@
         "Yal ${ interval } n dduṛt deg ${ multipleDaysString }",
         "Yal ${ interval } n ledwaṛ deg ${ multipleDaysString }"
       ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Yal ${ interval } n umalas deg ${ multipleDaysString }, ${ timesString }",
-        "Yal ${ interval } n yimalasen deg ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Yal ${ interval } n umalas deg ${ multipleDaysString }, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg ${ multipleDaysString }, ${ untilString }"
-      ],
       "Every ${ interval } week on all days": [
         "Yal ${ interval } n umalas deg meṛṛa ussan",
         "Yal ${ interval } ledwaṛ deg meṛṛa ussan"
       ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wussan akk, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wussan akk, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wussan akk, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wussan akk, ${ untilString }"
-      ],
       "Every ${ interval } week on Friday": [
         "Yal ${ interval } n dduṛt deg wass n sem",
         "Yal ${ interval } n ledwaṛ deg wass n sem"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n sem, ${ timesString }",
-        "Yal ${ interval } n ledwar deg wass n sem, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass sem, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass sem, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Yal ${ interval } n dduṛt deg wass n warim",
@@ -11236,21 +11187,9 @@
         "Yal ${ interval } n dduṛt deg wass n warim, ${ timesString }",
         "Yal ${ interval } n ledwaṛ deg wass n warim, ${ timesString }"
       ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n warim, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n warim, ${ untilString }"
-      ],
       "Every ${ interval } week on Saturday": [
         "Yal ${ interval } n dduṛt deg wass n sed",
         "Yal ${ interval } n ledwaṛ deg wass n sed"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n sed, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wass n sed, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n sed, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n sed, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Yal ${ interval } n dduṛt deg wass n wacer",
@@ -11260,21 +11199,9 @@
         "Yal ${ interval } n dduṛt deg wass n wacer, ${ timesString }",
         "Yal ${ interval } n ledwaṛ deg wass n wacer, ${ timesString }"
       ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n wacer, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n wacer, ${ untilString }"
-      ],
       "Every ${ interval } week on Thursday": [
         "Yal ${ interval } n dduṛt deg wass n wamhad",
         "Yal ${ interval } n ledwaṛ deg wass n wamhad"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n umhad, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wass n umhad, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n umhad, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n umhad, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Yal ${ interval } n dduṛt deg wass n waram",
@@ -11284,102 +11211,36 @@
         "Yal ${ interval } n dduṛt deg wass n waram, ${ timesString }",
         "Yal ${ interval } n ledwaṛ deg wass n waram, ${ timesString }"
       ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n waram, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n waram, ${ untilString }"
-      ],
       "Every ${ interval } week on Wednesday": [
         "Yal ${ interval } n dduṛt deg wass n wahad",
         "Yal ${ interval } n ledwaṛ deg wass n wahad"
       ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Yal ${ interval } n dduṛt deg wass n wahad, ${ timesString }",
-        "Yal ${ interval } n ledwaṛ deg wass n wahad, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Yal ${ interval } n umalas deg wass n wahad, ${ untilString }",
-        "Yal ${ interval } n yimalasen deg wass n wahad, ${ untilString }"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "Yal imalas deg ${ multipleDaysString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Yal imalas deg ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Yal imalas deg ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Yal imalas deg wussan akk"
       ],
-      "Weekly on all days, ${ timesString }": [
-        "Yal imalas deg wussan akk, ${ timesString }"
-      ],
-      "Weekly on all days, ${ untilString }": [
-        "Yal imalas deg wussan akk, ${ untilString }"
-      ],
       "Weekly on Friday": [
         "Yal imalas deg wass n sem"
-      ],
-      "Weekly on Friday, ${ timesString }": [
-        "Yal imalas deg wass n sem, ${ timesString }"
-      ],
-      "Weekly on Friday, ${ untilString }": [
-        "Yal imalas deg wass n sem, ${ untilString }"
       ],
       "Weekly on Monday": [
         "Yal imalas deg wass n warim"
       ],
-      "Weekly on Monday, ${ timesString }": [
-        "Yal imalas deg wass n warim, ${ timesString }"
-      ],
-      "Weekly on Monday, ${ untilString }": [
-        "Yal imalas deg wass n warim, ${ untilString }"
-      ],
       "Weekly on Saturday": [
         "Yal imalas deg wass n sed"
-      ],
-      "Weekly on Saturday, ${ timesString }": [
-        "Yal imalas deg wass n sed, ${ timesString }"
-      ],
-      "Weekly on Saturday, ${ untilString }": [
-        "Yal imalas deg wass n sed, ${ untilString }"
       ],
       "Weekly on Sunday": [
         "Acer n yal imalas"
       ],
-      "Weekly on Sunday, ${ timesString }": [
-        "Yal imalas deg wass n acer, ${ timesString }"
-      ],
-      "Weekly on Sunday, ${ untilString }": [
-        "Yal imalas deg wass n acer, ${ untilString }"
-      ],
       "Weekly on Thursday": [
         "Yal imalas deg wass n umhad"
-      ],
-      "Weekly on Thursday, ${ timesString }": [
-        "Yal imalas deg wass n umhad, ${ timesString }"
-      ],
-      "Weekly on Thursday, ${ untilString }": [
-        "Yal imalas deg wass n umhad, ${ untilString }"
       ],
       "Weekly on Tuesday": [
         "Yal imalas deg wass n waram"
       ],
-      "Weekly on Tuesday, ${ timesString }": [
-        "Yal imalas deg wass n waram, ${ timesString }"
-      ],
-      "Weekly on Tuesday, ${ untilString }": [
-        "Yal imalas deg wass n waram, ${ untilString }"
-      ],
       "Weekly on Wednesday": [
         "Yal imalas deg wass n wahad"
-      ],
-      "Weekly on Wednesday, ${ timesString }": [
-        "Yal imalas deg wass n wahad, ${ timesString }"
-      ],
-      "Weekly on Wednesday, ${ untilString }": [
-        "Yal imalas deg wass n wahad, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -11410,22 +11271,8 @@
         "Yal ${ interval } n useggas",
         "Yal ${ interval } n yiseggasen"
       ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Yal ${ interval } n useggas, ${ timesString }",
-        "Yal ${ interval } n yiseggasen, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Yal ${ interval } n useggas, ${ untilString }",
-        "Yal ${ interval } n yiseggasen, ${ untilString }"
-      ],
       "Yearly": [
         "S useggas"
-      ],
-      "Yearly, ${ timesString }": [
-        "S useggas, ${ timesString }"
-      ],
-      "Yearly, ${ untilString }": [
-        "S useggas, ${ untilString }"
       ]
     }
   }
