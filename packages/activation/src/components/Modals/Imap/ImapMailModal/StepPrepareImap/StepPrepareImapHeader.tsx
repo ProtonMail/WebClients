@@ -18,8 +18,8 @@ const StepPrepareHeader = ({ fromEmail, toEmail }: Props) => {
                     .t`${BRAND_NAME} will transfer as much data as possible, starting with your most recent messages.`}
             </div>
             <div className="flex pb-4 mb-4 border-bottom">
-                <div className="flex-1 text-ellipsis mr-2">{c('Label').jt`From: ${from}`}</div>
-                <div className="flex-1 text-ellipsis ml-2 text-right">{c('Label').jt`To: ${to}`}</div>
+                <div className="flex-1 text-ellipsis mr-2">{c('Label; import email').jt`From: ${from}`}</div>
+                <div className="flex-1 text-ellipsis ml-2 text-right">{c('Label; import email').jt`To: ${to}`}</div>
             </div>
         </>
     );
