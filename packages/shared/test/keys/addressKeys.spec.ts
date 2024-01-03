@@ -1,4 +1,11 @@
-import { decryptAddressKeyToken, generateAddressKeyTokens, generateUserKey } from '../../lib/keys';
+import { Address } from '@proton/shared/lib/interfaces';
+
+import {
+    decryptAddressKeyToken,
+    generateAddressKeyTokens,
+    generateUserKey,
+    getNewAddressKeyToken,
+} from '../../lib/keys';
 
 describe('address keys', () => {
     it('should generate address key tokens', async () => {
@@ -48,5 +55,48 @@ describe('address keys', () => {
             publicKeys: organizationKey,
         });
         expect(decryptedResult2).toEqual(result.token);
+    });
+
+    it('should generate a new address key token without any existing tokens', async () => {
+        const { privateKey } = await generateUserKey({
+            passphrase: '123',
+        });
+        const address = {
+            Keys: [],
+        } as unknown as Address;
+        const userKeys = [{ privateKey, publicKey: privateKey }];
+
+        const result = await getNewAddressKeyToken({ userKeys, address });
+
+        const decryptedResult = await decryptAddressKeyToken({
+            Token: result.encryptedToken,
+            Signature: result.signature,
+            privateKeys: privateKey,
+            publicKeys: privateKey,
+        });
+        expect(decryptedResult).toEqual(result.token);
+    });
+
+    it('should re-use an existing address key token when generating a new token', async () => {
+        const { privateKey } = await generateUserKey({
+            passphrase: '123',
+        });
+        const existingToken = await generateAddressKeyTokens(privateKey);
+
+        const address = {
+            Keys: [{ Token: existingToken.encryptedToken, Signature: existingToken.signature }],
+        } as unknown as Address;
+        const userKeys = [{ privateKey, publicKey: privateKey }];
+
+        const result = await getNewAddressKeyToken({ userKeys, address });
+
+        const decryptedResult = await decryptAddressKeyToken({
+            Token: result.encryptedToken,
+            Signature: result.signature,
+            privateKeys: privateKey,
+            publicKeys: privateKey,
+        });
+        expect(decryptedResult).toEqual(existingToken.token);
+        expect(result.signature).toEqual(existingToken.signature);
     });
 });

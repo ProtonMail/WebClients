@@ -414,9 +414,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
                         {model?.keyErrors?.length ? (
                             <div className="border rounded-lg p-4 flex flex-nowrap items-center">
                                 <Icon name="exclamation-circle" className="shrink-0 color-danger" />
-                                <p className="text-sm color-weak flex-1 pl-4 my-0">
-                                    {model.keyErrors.join(' ')}
-                                </p>
+                                <p className="text-sm color-weak flex-1 pl-4 my-0">{model.keyErrors.join(' ')}</p>
                             </div>
                         ) : null}
                     </>

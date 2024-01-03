@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS, serverTime } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
+import { getPrimaryKey } from '@proton/shared/lib/keys/getPrimaryKey';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -391,4 +392,52 @@ export const getRenamedAddressKeys = async ({
 
     const result = await Promise.all(addressKeys.map(cb));
     return result.filter(isTruthy);
+};
+
+export const getPreviousAddressKeyToken = async ({
+    addressKey,
+    privateKeys,
+    publicKeys,
+}: {
+    addressKey: AddressKey;
+    privateKeys: PrivateKeyReference | PrivateKeyReference[];
+    publicKeys: PublicKeyReference | PublicKeyReference[];
+}) => {
+    const encryptedToken = addressKey.Token;
+    if (!encryptedToken) {
+        throw new Error('Missing token');
+    }
+    const signature = addressKey.Signature;
+    const token = await getAddressKeyToken({
+        Token: encryptedToken,
+        Signature: signature,
+        privateKeys,
+        publicKeys,
+    });
+    return { signature, token, encryptedToken };
+};
+
+export const getNewAddressKeyToken = async ({ address, userKeys }: { address: Address; userKeys: KeyPair[] }) => {
+    const userPrimaryKey = getPrimaryKey(userKeys);
+    const userKey = userPrimaryKey?.privateKey;
+    const splitUserKeys = splitKeys(userKeys);
+    if (!userKey) {
+        throw new Error('Missing primary user key');
+    }
+    if (!address.Keys.length) {
+        return generateAddressKeyTokens(userKey);
+    }
+    // When a primary key is available, we prefer re-using the existing token instead of generating a new one.
+    // For non-private members we can generate a new key without requiring access to the org key
+    // For future shared addresses, reusing the token will ensure other users can decrypt the new key as well
+    const [primaryAddressKey] = address.Keys;
+    try {
+        return await getPreviousAddressKeyToken({
+            addressKey: primaryAddressKey,
+            privateKeys: splitUserKeys.privateKeys,
+            publicKeys: splitUserKeys.publicKeys,
+        });
+    } catch {
+        return generateAddressKeyTokens(userKey);
+    }
 };

@@ -1,7 +1,6 @@
 import { ADDRESS_STATUS, MEMBER_PRIVATE } from '../constants';
 import { Address, Api, DecryptedKey, KeyTransparencyVerify, UserModel as tsUserModel } from '../interfaces';
 import { createAddressKeyLegacy, createAddressKeyV2 } from './add';
-import { getPrimaryKey } from './getPrimaryKey';
 import { getHasMigratedAddressKeys } from './keyMigration';
 
 export const getAddressesWithKeysToGenerate = (user: tsUserModel, addresses: Address[]) => {
@@ -37,15 +36,11 @@ export const generateAllPrivateMemberKeys = async ({
     }
 
     if (getHasMigratedAddressKeys(addresses)) {
-        const primaryUserKey = getPrimaryKey(userKeys)?.privateKey;
-        if (!primaryUserKey) {
-            throw new Error('Missing primary user key');
-        }
         return Promise.all(
             addressesToGenerate.map((address) => {
                 return createAddressKeyV2({
                     api,
-                    userKey: primaryUserKey,
+                    userKeys,
                     address,
                     activeKeys: [],
                     keyTransparencyVerify,
