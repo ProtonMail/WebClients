@@ -161,6 +161,9 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
                         }
                         onKeyDown?.(event);
                     }}
+                    name="search" // only to avoid Safari suggest autocomplete
+                    spellCheck={false}
+                    autoCorrect="false"
                     onBlur={() => {
                         inputProps.onBlur();
                         if (hasAddOnBlur) {
