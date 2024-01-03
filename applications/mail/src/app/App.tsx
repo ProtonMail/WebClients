@@ -7,6 +7,7 @@ import { c } from 'ttag';
 import {
     ApiProvider,
     AuthenticationProvider,
+    CalendarModelEventManagerProvider,
     DelinquentContainer,
     DrawerProvider,
     ErrorBoundary,
@@ -76,16 +77,22 @@ const App = () => {
                                     <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
                                         <Router history={extraThunkArguments.history}>
                                             <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
-                                                <ErrorBoundary big component={<StandardErrorPage big />}>
-                                                    <StandardPrivateApp
-                                                        hasReadableMemberKeyActivation
-                                                        hasMemberKeyMigration
-                                                        hasPrivateMemberKeyGeneration
-                                                        noModals
-                                                    >
-                                                        <state.MainContainer />
-                                                    </StandardPrivateApp>
-                                                </ErrorBoundary>
+                                                <CalendarModelEventManagerProvider
+                                                    calendarModelEventManager={
+                                                        extraThunkArguments.calendarModelEventManager
+                                                    }
+                                                >
+                                                    <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                        <StandardPrivateApp
+                                                            hasReadableMemberKeyActivation
+                                                            hasMemberKeyMigration
+                                                            hasPrivateMemberKeyGeneration
+                                                            noModals
+                                                        >
+                                                            <state.MainContainer />
+                                                        </StandardPrivateApp>
+                                                    </ErrorBoundary>
+                                                </CalendarModelEventManagerProvider>
                                             </EventManagerProvider>
                                         </Router>
                                     </FlagProvider>
