@@ -10,6 +10,7 @@ import {
     ErrorBoundary,
     LoaderPage,
     ModalsChildren,
+    NotificationsChildren,
     ProtonApp,
     StandardErrorPage,
     StandardLoadErrorPage,
@@ -71,6 +72,7 @@ const UrlsApp = () => {
                                 <ApiProvider api={extraThunkArguments.api}>
                                     <ErrorBoundary big component={<StandardErrorPage big />}>
                                         <div className="h-full">
+                                            <NotificationsChildren />
                                             <ModalsChildren />
                                             <PublicSharedLinkContainer />
                                         </div>

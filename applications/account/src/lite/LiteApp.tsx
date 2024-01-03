@@ -11,7 +11,6 @@ import {
     ErrorBoundary,
     Icons,
     ModalsProvider,
-    NotificationsChildren,
     NotificationsHijack,
     NotificationsProvider,
     PreventLeaveProvider,
@@ -140,7 +139,6 @@ const App = () => {
                                                 <ModalsProvider>
                                                     <AuthenticationProvider store={authenticationValue}>
                                                         <CacheProvider cache={cache}>
-                                                            <NotificationsChildren />
                                                             <ErrorBoundary big component={<StandardErrorPage big />}>
                                                                 {isLogout ? null : (
                                                                     <Setup api={api} UID={UID} onLogin={handleLogin}>
