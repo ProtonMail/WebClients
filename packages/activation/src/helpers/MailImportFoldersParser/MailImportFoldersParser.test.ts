@@ -39,7 +39,7 @@ export const getApiFoldersTestHelper = (paths: string[]) =>
                 ...(Object.values(MailImportDestinationFolder).some((dest) => dest.toLowerCase() === path.toLowerCase())
                     ? { DestinationFolder: path }
                     : {}),
-            } as ApiMailImporterFolder)
+            }) as ApiMailImporterFolder
     );
 
 /** Used for testing purpose: Allows to navigate quickier through results */
@@ -137,6 +137,13 @@ describe('MailFolderMapping', () => {
             const labelsMapping = getMappingTestHelper(new MailImportFoldersParser(apiFolders, true).folders);
             expect(labelsMapping['Inbox/c'].protonPath).toEqual(['[Inbox]c']);
             expect(labelsMapping['Inbox/c/cc'].protonPath).toEqual(['[Inbox]c-cc']);
+        });
+
+        it('Should have a specific syntax when system folders have subfolders with slashes in folder name', () => {
+            const apiFolders = getApiFoldersTestHelper(['Inbox', 'Inbox/test/with/slash']);
+
+            const foldersMapping = getMappingTestHelper(new MailImportFoldersParser(apiFolders, false).folders);
+            expect(foldersMapping['Inbox/test/with/slash'].protonPath).toEqual(['[Inbox]test/with/slash']);
         });
 
         it('Should tag systemfoldersChilds', () => {
