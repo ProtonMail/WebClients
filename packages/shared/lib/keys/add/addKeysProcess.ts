@@ -7,7 +7,6 @@ import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../../constants';
 import { Address, Api, DecryptedKey, EncryptionConfig, KeyTransparencyVerify, UserModel } from '../../interfaces';
 import { storeDeviceRecovery } from '../../recoveryFile/deviceRecovery';
 import { getActiveKeys } from '../getActiveKeys';
-import { getPrimaryKey } from '../getPrimaryKey';
 import { getHasMigratedAddressKeys } from '../keyMigration';
 import { generateUserKey } from '../userKeys';
 import { createAddressKeyLegacy, createAddressKeyV2 } from './addAddressKeyHelper';
@@ -38,13 +37,9 @@ export const addAddressKeysProcess = async ({
     const activeKeys = await getActiveKeys(address, address.SignedKeyList, address.Keys, addressKeys);
 
     if (hasMigratedAddressKeys) {
-        const userKey = getPrimaryKey(userKeys)?.privateKey;
-        if (!userKey) {
-            throw new Error('Missing primary user key');
-        }
         return createAddressKeyV2({
             api,
-            userKey,
+            userKeys,
             encryptionConfig,
             activeKeys,
             address,
