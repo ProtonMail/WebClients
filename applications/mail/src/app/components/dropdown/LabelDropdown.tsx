@@ -254,9 +254,9 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, sel
             promises.push(
                 moveToFolder({
                     elements,
-                    folderID: MAILBOX_IDENTIFIERS.archive,
+                    sourceLabelID: labelID,
+                    destinationLabelID: MAILBOX_IDENTIFIERS.archive,
                     folderName,
-                    fromLabelID: labelID,
                 })
             );
         }

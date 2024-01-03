@@ -13,8 +13,8 @@ jest.mock('../../hooks/actions/useSnooze');
 jest.mock('../../hooks/actions/useEmptyLabel', () => ({
     useEmptyLabel: () => ({ emptyLabel: '', modal: null }),
 }));
-jest.mock('../../hooks/actions/useMoveAll', () => ({
-    useMoveAll: () => ({ moveAll: '', modal: null }),
+jest.mock('../../hooks/actions/move/useMoveAllToFolder', () => ({
+    useMoveAllToFolder: () => ({ moveAllToFolder: '', selectAllMoveModal: null, moveAllModal: null }),
 }));
 
 const BREAKPOINTS = mockDefaultBreakpoints;
