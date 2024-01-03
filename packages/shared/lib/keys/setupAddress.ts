@@ -20,7 +20,6 @@ import { getUser, queryCheckUsernameAvailability } from '../api/user';
 import { Address, Api, PreAuthKTVerify, UserType, User as tsUser } from '../interfaces';
 import { createAddressKeyLegacy, createAddressKeyV2 } from './add';
 import { getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
-import { getPrimaryKey } from './getPrimaryKey';
 import { getHasMigratedAddressKeys } from './keyMigration';
 import { handleSetupAddress } from './setupAddressKeys';
 import { handleSetupKeys } from './setupKeys';
@@ -206,13 +205,9 @@ export const handleCreateAddressAndKey = async ({
     const userKeys = await getDecryptedUserKeysHelper(user, passphrase);
     const keyTransparencyVerify = preAuthKTVerify(userKeys);
     if (getHasMigratedAddressKeys(addresses)) {
-        const primaryUserKey = getPrimaryKey(userKeys)?.privateKey;
-        if (!primaryUserKey) {
-            throw new Error('Missing primary user key');
-        }
         await createAddressKeyV2({
             api,
-            userKey: primaryUserKey,
+            userKeys,
             address,
             activeKeys: [],
             keyTransparencyVerify,
