@@ -265,20 +265,6 @@ export const labelAll = ({
     data: { SearchContext, AddLabelIDs, RemoveLabelIDs },
 });
 
-export const moveAll = ({
-    SourceLabelID,
-    DestinationLabelID,
-    KeepSourceLabel = 1,
-}: {
-    SourceLabelID: string;
-    DestinationLabelID: string;
-    KeepSourceLabel?: number;
-}) => ({
-    method: 'put',
-    url: 'mail/v4/messages/move',
-    data: { SourceLabelID, DestinationLabelID, KeepSourceLabel },
-});
-
 export const moveAllBatch = ({
     SearchContext,
     DestinationLabelID,
