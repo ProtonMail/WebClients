@@ -10,6 +10,7 @@ enum CommonFeatureFlag {
     KeyTransparencyShowUI = 'KeyTransparencyShowUI',
     KeyTransparencyLogOnly = 'KeyTransparencyLogOnly',
     EdDSAFaultySignatureCheck = 'EdDSAFaultySignatureCheck',
+    CryptoDisableUndecryptableKeys = 'CryptoDisableUndecryptableKeys',
     CryptoCanaryOpenPGPjsV6 = 'CryptoCanaryOpenPGPjsV6',
     PassWebAppLink = 'PassWebAppLink',
     MailDesktopAppAccess = 'MailDesktopAppAccess',
