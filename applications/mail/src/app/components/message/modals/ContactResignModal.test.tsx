@@ -3,7 +3,7 @@ import { fireEvent, waitFor } from '@testing-library/react';
 import { getModelState } from '@proton/account/test';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import { addApiMock } from '../../../helpers/test/api';
+import { addApiMock, clearApiMocks } from '../../../helpers/test/api';
 import { getCompleteAddress } from '../../../helpers/test/cache';
 import { getStoredKey, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import { contactID, receiver, sender, setupContactsForPinKeys } from '../../../helpers/test/pinKeys';
@@ -21,6 +21,10 @@ describe('Contact resign modal', () => {
 
     afterAll(async () => {
         await releaseCryptoProxy();
+    });
+
+    beforeEach(() => {
+        clearApiMocks();
     });
 
     const setup = async (hasFingerprint: boolean) => {
