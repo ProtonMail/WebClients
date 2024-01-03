@@ -42,7 +42,7 @@ export const PauseListDropdown: FC<Props> = ({ criteria, dense, hostname, label,
                 ? {
                       className: 'shrink-0 button-xs',
                       iconSize: 12,
-                      menuClassName: 'text-xs',
+                      menuClassName: 'text-sm',
                       offset: 2,
                       size: 'small',
                   }
