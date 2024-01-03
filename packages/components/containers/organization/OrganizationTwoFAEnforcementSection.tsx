@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Alert, Info, useApi } from '@proton/components';
+import { Info, useApi } from '@proton/components';
 import { queryEnforceTwoFA, queryRemoveTwoFA } from '@proton/shared/lib/api/organization';
 import { APPS, ORGANIZATION_TWOFA_SETTING } from '@proton/shared/lib/constants';
 import { hasTwoFARequiredForAdminOnly, hasTwoFARequiredForAll } from '@proton/shared/lib/helpers/organization';
@@ -31,11 +31,6 @@ const OrganizationTwoFAEnforcementSection = ({ organization }: Props) => {
 
     if (!organization) {
         return <Loader />;
-    }
-
-    // Organization is not setup.
-    if (!organization?.HasKeys) {
-        return <Alert className="mb-1" type="warning">{c('Info').t`Multi-user support not enabled.`}</Alert>;
     }
 
     const handleEnforceTwoFA = async (require: number) => {
