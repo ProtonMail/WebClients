@@ -13,6 +13,7 @@ interface Props<V> {
     isOpen: boolean;
     highlightedIndex: number;
     anchorRef: RefObject<HTMLElement>;
+    dataTestId?: string;
 }
 
 const AutocompleteList = <V,>({ id, children, onClose, isOpen, highlightedIndex, anchorRef }: Props<V>) => {
