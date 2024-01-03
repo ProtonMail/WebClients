@@ -161,9 +161,9 @@ const MoveDropdown = ({
 
         await moveToFolder({
             elements,
-            folderID: selectedFolderID,
+            sourceLabelID: labelID,
+            destinationLabelID: selectedFolderID,
             folderName: selectedFolderName,
-            fromLabelID: labelID,
             createFilters: canApplyAlways ? always : false,
             selectAll,
             onCheckAll,

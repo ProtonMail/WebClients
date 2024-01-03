@@ -130,9 +130,9 @@ const SidebarItem = ({
             if (isFolder) {
                 void moveToFolder({
                     elements,
-                    folderID: labelID,
+                    sourceLabelID: currentLabelID,
+                    destinationLabelID: labelID,
                     folderName: text,
-                    fromLabelID: currentLabelID,
                     selectAll,
                     onCheckAll: checkAllRef?.current ? checkAllRef.current : undefined,
                 });
