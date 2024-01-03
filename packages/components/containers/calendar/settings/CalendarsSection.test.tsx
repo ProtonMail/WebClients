@@ -27,7 +27,7 @@ jest.mock('../../../hooks/useAddresses', () => ({
 }));
 jest.mock('../../../hooks/useEventManager', () => () => ({}));
 jest.mock('../../eventManager/calendar/useCalendarsInfoListener', () => () => ({}));
-jest.mock('../../eventManager/calendar/ModelEventManagerProvider', () => ({
+jest.mock('../../eventManager/calendar/CalendarModelEventManagerProvider', () => ({
     useCalendarModelEventManager: jest.fn(),
 }));
 jest.mock('@proton/components/hooks/useConfig', () => () => ({ APP_NAME: 'proton-calendar', APP_VERSION: 'test' }));

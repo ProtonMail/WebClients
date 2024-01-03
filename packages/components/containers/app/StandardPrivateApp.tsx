@@ -4,7 +4,6 @@ import { useConfig, useIsInboxElectronApp } from '../../hooks';
 import SessionRecoveryLocalStorageManager from '../account/sessionRecovery/SessionRecoveryLocalStorageManager';
 import { ContactProvider } from '../contacts';
 import { EventNotices } from '../eventManager';
-import { CalendarModelEventManagerProvider } from '../eventManager/calendar';
 import ForceRefreshProvider from '../forceRefresh/Provider';
 import { KeyTransparencyManager } from '../keyTransparency';
 import { DensityInjector } from '../layouts';
@@ -37,25 +36,23 @@ const StandardPrivateApp = ({
     }
 
     return (
-        <CalendarModelEventManagerProvider>
-            <ContactProvider>
-                <KeyTransparencyManager appName={APP_NAME}>
-                    <SessionRecoveryLocalStorageManager>
-                        <EventNotices />
-                        <ThemeInjector />
-                        <DensityInjector />
-                        {!noModals && <ModalsChildren />}
-                        <KeyBackgroundManager
-                            hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
-                            hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
-                            hasMemberKeyMigration={hasMemberKeyMigration}
-                        />
-                        <StorageListener />
-                        <ForceRefreshProvider>{children}</ForceRefreshProvider>
-                    </SessionRecoveryLocalStorageManager>
-                </KeyTransparencyManager>
-            </ContactProvider>
-        </CalendarModelEventManagerProvider>
+        <ContactProvider>
+            <KeyTransparencyManager appName={APP_NAME}>
+                <SessionRecoveryLocalStorageManager>
+                    <EventNotices />
+                    <ThemeInjector />
+                    <DensityInjector />
+                    {!noModals && <ModalsChildren />}
+                    <KeyBackgroundManager
+                        hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
+                        hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
+                        hasMemberKeyMigration={hasMemberKeyMigration}
+                    />
+                    <StorageListener />
+                    <ForceRefreshProvider>{children}</ForceRefreshProvider>
+                </SessionRecoveryLocalStorageManager>
+            </KeyTransparencyManager>
+        </ContactProvider>
     );
 };
 

@@ -8,7 +8,7 @@ import {
 import { useCache, useEventManager } from '../../../hooks';
 import { KEY as CALENDAR_BOOTSTRAP_CACHE } from '../../../hooks/useGetCalendarBootstrap';
 import { CACHE_KEY as CALENDAR_KEYS_CACHE } from '../../../hooks/useGetDecryptedPassphraseAndCalendarKeys';
-import { useCalendarModelEventManager } from './ModelEventManagerProvider';
+import { useCalendarModelEventManager } from './CalendarModelEventManagerProvider';
 
 /**
  * Listen to updates to calendars, calendar members and calendar user settings (via core event loop)
