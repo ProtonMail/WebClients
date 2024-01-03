@@ -24,6 +24,13 @@ const config: ForgeConfig = {
         asar: true,
         name: getName(),
         extraResource: getExtraResource(),
+        // Required for macOS mailto protocol
+        protocols: [
+            {
+                name: "mailto",
+                schemes: ["mailto"],
+            },
+        ],
         appBundleId: "ch.protonmail.desktop",
         osxSign: {},
         osxNotarize: {

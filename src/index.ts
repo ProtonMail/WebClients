@@ -18,7 +18,7 @@ import {
     isWindows,
     saveWindowsPosition,
 } from "./utils/helpers";
-import { getSessionID } from "./utils/urlHelpers";
+import { getSessionID, handleMailToUrls } from "./utils/urlHelpers";
 import {
     handleCalendarWindow,
     handleMailWindow,
@@ -47,6 +47,13 @@ moveUninstaller();
 // Used to make the app run on Parallels Desktop
 // app.commandLine.appendSwitch("no-sandbox");
 
+// Detects if the application is default handler for mailto, works on macOS for now
+if (app.isDefaultProtocolClient("mailto")) {
+    log.info("App is default mailto client");
+} else {
+    log.info("App is not default mailto client");
+}
+
 app.whenReady().then(() => {
     const secureSession = session.fromPartition(PARTITION, {
         cache: false,
@@ -66,6 +73,12 @@ app.whenReady().then(() => {
             const window = BrowserWindow.getAllWindows()[0];
             handleMailWindow(window.webContents);
         }
+    });
+
+    // Normally this only works on macOS and is not required for Windows
+    app.on("open-url", (e, url) => {
+        log.info("Opening url", url);
+        handleMailToUrls(url);
     });
 
     // Security addition, reject all permissions except notifications

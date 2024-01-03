@@ -195,3 +195,13 @@ export const refreshCalendarPage = (sessionID: number) => {
         calendarWindow.loadURL(newCalendarUrl);
     }
 };
+
+export const getMailWindow = () => {
+    log.info("getMailWindow", windowMap.has("MAIL"));
+    return windowMap.get("MAIL");
+};
+
+export const getCalendarWindow = () => {
+    log.info("getCalendarWindow", windowMap.has("CALENDAR"));
+    return windowMap.get("CALENDAR");
+};
