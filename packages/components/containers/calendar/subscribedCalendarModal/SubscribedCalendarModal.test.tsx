@@ -48,7 +48,7 @@ jest.mock('@proton/components/hooks/useEventManager', () => ({
     })),
 }));
 
-jest.mock('@proton/components/containers/eventManager/calendar/ModelEventManagerProvider', () => ({
+jest.mock('@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider', () => ({
     useCalendarModelEventManager: jest.fn(() => ({
         subscribe: jest.fn(),
     })),

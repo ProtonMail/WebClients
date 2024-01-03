@@ -184,7 +184,7 @@ jest.mock('@proton/components/hooks/useWelcomeFlags', () => ({ useWelcomeFlags: 
 jest.mock('@proton/components/hooks/useCachedModelResult', () => () => [{}]);
 jest.mock('@proton/components/hooks/useEventManager', () => () => ({}));
 jest.mock('@proton/components/containers/eventManager/calendar/useCalendarsInfoListener', () => () => ({}));
-jest.mock('@proton/components/containers/eventManager/calendar/ModelEventManagerProvider', () => ({
+jest.mock('@proton/components/containers/eventManager/calendar/CalendarModelEventManagerProvider', () => ({
     useCalendarModelEventManager: () => () => {
         call: jest.fn();
     },

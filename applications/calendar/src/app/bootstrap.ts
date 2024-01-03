@@ -7,7 +7,12 @@ import {
     welcomeFlagsActions,
 } from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
-import { calendarSettingsThunk, calendarsThunk, holidayCalendarsThunk } from '@proton/calendar';
+import {
+    calendarSettingsThunk,
+    calendarsThunk,
+    createCalendarModelEventManager,
+    holidayCalendarsThunk,
+} from '@proton/calendar';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import { FeatureCode, fetchFeatures } from '@proton/features';
 import createApi from '@proton/shared/lib/api/createApi';
@@ -113,7 +118,9 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         // Needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...models, history });
 
-        extendStore({ eventManager });
+        const calendarModelEventManager = createCalendarModelEventManager({ api: silentApi });
+
+        extendStore({ eventManager, calendarModelEventManager });
         const unsubscribeEventManager = eventManager.subscribe((event) => {
             dispatch(serverEvent(event));
         });

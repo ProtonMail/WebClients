@@ -11,6 +11,7 @@ import { act as actHook, renderHook as originalRenderHook } from '@testing-libra
 import { History, createMemoryHistory } from 'history';
 
 import { getModelState } from '@proton/account/test';
+import { createCalendarModelEventManager } from '@proton/calendar/calendarModelEventManager';
 import {
     CacheProvider,
     CalendarModelEventManagerProvider,
@@ -91,6 +92,8 @@ interface Props {
     history: History;
 }
 
+const calendarModelEventManager = createCalendarModelEventManager({ api });
+
 const TestProvider = ({ children, history }: Props) => {
     const contentRef = useRef<HTMLDivElement>(null);
 
@@ -100,7 +103,7 @@ const TestProvider = ({ children, history }: Props) => {
                 <NotificationsTestProvider>
                     <ModalsProvider>
                         <AuthenticationProvider store={authentication}>
-                            <CalendarModelEventManagerProvider>
+                            <CalendarModelEventManagerProvider calendarModelEventManager={calendarModelEventManager}>
                                 <CacheProvider cache={mockCache}>
                                     <QuickSettingsTestProvider>
                                         <SpotlightProvider>

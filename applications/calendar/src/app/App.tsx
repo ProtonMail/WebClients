@@ -10,9 +10,11 @@ import {
     CalendarModelEventManagerProvider,
     DelinquentContainer,
     DrawerProvider,
+    ErrorBoundary,
     EventManagerProvider,
     LoaderPage,
     ProtonApp,
+    StandardErrorPage,
     StandardLoadErrorPage,
     StandardPrivateApp,
 } from '@proton/components';
@@ -75,15 +77,21 @@ const App = () => {
                                     <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
                                         <Router history={extraThunkArguments.history}>
                                             <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
-                                                <ErrorBoundary big component={<StandardErrorPage big />}>
-                                                    <StandardPrivateApp
-                                                        hasReadableMemberKeyActivation
-                                                        hasMemberKeyMigration
-                                                        hasPrivateMemberKeyGeneration
-                                                    >
-                                                        <state.MainContainer />
-                                                    </StandardPrivateApp>
-                                                </ErrorBoundary>
+                                                <CalendarModelEventManagerProvider
+                                                    calendarModelEventManager={
+                                                        extraThunkArguments.calendarModelEventManager
+                                                    }
+                                                >
+                                                    <ErrorBoundary big component={<StandardErrorPage big />}>
+                                                        <StandardPrivateApp
+                                                            hasReadableMemberKeyActivation
+                                                            hasMemberKeyMigration
+                                                            hasPrivateMemberKeyGeneration
+                                                        >
+                                                            <state.MainContainer />
+                                                        </StandardPrivateApp>
+                                                    </ErrorBoundary>
+                                                </CalendarModelEventManagerProvider>
                                             </EventManagerProvider>
                                         </Router>
                                     </FlagProvider>
