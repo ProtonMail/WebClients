@@ -424,7 +424,7 @@ export const getNewAddressKeyToken = async ({ address, userKeys }: { address: Ad
     if (!userKey) {
         throw new Error('Missing primary user key');
     }
-    if (!address.Keys.length) {
+    if (!address.Keys?.length) {
         return generateAddressKeyTokens(userKey);
     }
     // When a primary key is available, we prefer re-using the existing token instead of generating a new one.
