@@ -49,6 +49,7 @@ export const CreditCardView: VFC<ItemViewProps<'creditCard'>> = ({ vault, revisi
                         label={c('Label').t`Card number`}
                         mask={cardNumberMask(number)}
                         value={number}
+                        clipboardValue={number}
                     />
                 )}
                 <MaskedValueControl

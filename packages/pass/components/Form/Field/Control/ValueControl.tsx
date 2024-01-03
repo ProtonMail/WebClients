@@ -19,6 +19,7 @@ export type ValueControlProps<E extends ElementType> = Omit<FieldBoxProps, 'icon
     as?: E;
     children?: E extends ComponentType<infer U> ? (U extends { children?: infer C } ? C : never) : ReactNode;
     clickToCopy?: boolean;
+    clipboardValue?: string;
     error?: boolean;
     ellipsis?: boolean;
     extra?: ReactNode;
@@ -54,6 +55,7 @@ export const ValueControl = <E extends ElementType = 'div'>({
     as,
     children,
     clickToCopy = false,
+    clipboardValue,
     ellipsis = true,
     error = false,
     extra,
@@ -98,7 +100,7 @@ export const ValueControl = <E extends ElementType = 'div'>({
     return (
         <MaybeClickToCopy
             className={clsx(canCopy && 'pass-value-control--interactive', !loading && error && 'border-danger')}
-            {...(canCopy ? { value } : {})}
+            {...(canCopy ? { value: clipboardValue ?? value } : {})}
         >
             <FieldBox
                 actions={
