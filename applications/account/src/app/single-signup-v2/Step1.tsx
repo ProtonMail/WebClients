@@ -10,7 +10,6 @@ import {
     useState,
 } from 'react';
 
-import { format as formatDate } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
@@ -38,7 +37,6 @@ import {
     getPricingFromPlanIDs,
     getTotalFromPricing,
 } from '@proton/shared/lib/helpers/subscription';
-import { dateLocale } from '@proton/shared/lib/i18n';
 import { Api, Currency, Cycle, Plan, PlanIDs, VPNServersCountData } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
@@ -59,7 +57,7 @@ import Layout from './Layout';
 import { PlanCard, PlanCardSelector, UpsellCardSelector } from './PlanCardSelector';
 import RightPlanSummary from './RightPlanSummary';
 import RightSummary from './RightSummary';
-import { getFreeSubscriptionData, getFreeTitle, visionaryEndDate } from './helper';
+import { getFreeSubscriptionData, getFreeTitle } from './helper';
 import {
     Measure,
     OnOpenLogin,
@@ -392,13 +390,7 @@ const Step1 = ({
                     }
 
                     if (options.plan?.Name === PLANS.NEW_VISIONARY) {
-                        const planTitle = options.plan.Title;
-                        const date = (
-                            <span key="date">{formatDate(visionaryEndDate, 'LLLL d', { locale: dateLocale })}</span>
-                        );
-                        // translator: full sentence is: Limited time offer: Get Visionary until 4 January
-                        const textLaunchOffer = c('mail_signup_2023: Info')
-                            .jt`Limited time offer: Get ${planTitle} until ${date}!`;
+                        const textLaunchOffer = c('mail_signup_2023: Info').t`Limited time offer`;
                         return wrap('hourglass', textLaunchOffer);
                     }
 
@@ -731,11 +723,11 @@ const Step1 = ({
                                                                         <span>
                                                                             {(activeSessions?.length || 0) >= 1
                                                                                 ? // translator: Full sentence "Already have an account? Sign in or switch account"
-                                                                              c('Go to sign in')
-                                                                                  .jt`Already have an account? ${signIn} or ${switchAccount}`
-                                                                            : // translator: Full sentence "Already have an account? Sign in"
-                                                                              c('Go to sign in')
-                                                                                  .jt`Already have an account? ${signIn}`}
+                                                                                  c('Go to sign in')
+                                                                                      .jt`Already have an account? ${signIn} or ${switchAccount}`
+                                                                                : // translator: Full sentence "Already have an account? Sign in"
+                                                                                  c('Go to sign in')
+                                                                                      .jt`Already have an account? ${signIn}`}
                                                                         </span>
                                                                     </div>
                                                                 )}
