@@ -585,5 +585,3 @@ export const runAfterScroll = (el: Element, done: () => void) => {
 
     requestAnimationFrame(cb);
 };
-
-export const visionaryEndDate = new Date(2024, 0, 4);
