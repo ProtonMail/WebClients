@@ -11,7 +11,6 @@ export interface CalendarModelEventManager {
     call: (calendarIDs: string[]) => Promise<void[]>;
     subscribe: (calendarIDs: string[], cb: SubscribeCallback) => () => void;
     clear: () => void;
-    setApi: (api: Api) => void;
 }
 
 const createCalendarEventManagerById = async (api: Api, calendarID: string) => {
@@ -58,9 +57,8 @@ type EventManagerCacheRecord =
           eventManager: undefined;
       };
 
-const createCalendarModelEventManager = (): CalendarModelEventManager => {
+export const createCalendarModelEventManager = ({ api }: { api: Api }): CalendarModelEventManager => {
     let eventManagers: SimpleMap<EventManagerCacheRecord> = {};
-    let api: Api = null as any;
 
     const clear = () => {
         Object.values(eventManagers).forEach((record) => {
@@ -144,10 +142,5 @@ const createCalendarModelEventManager = (): CalendarModelEventManager => {
         call,
         subscribe,
         clear,
-        setApi: (newApi: Api) => {
-            api = newApi;
-        },
     };
 };
-
-export const calendarEventModelManager = createCalendarModelEventManager();

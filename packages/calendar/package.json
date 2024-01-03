@@ -7,8 +7,8 @@
     "scripts": {
         "check-types": "tsc",
         "lint": "true",
-        "test": "true",
-        "test:ci": "true"
+        "test": "jest",
+        "test:ci": "jest --runInBand"
     },
     "dependencies": {
         "@proton/account": "workspace:^",
