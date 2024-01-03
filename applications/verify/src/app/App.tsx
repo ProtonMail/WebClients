@@ -7,6 +7,7 @@ import {
     Icons,
     ModalsChildren,
     ModalsProvider,
+    NotificationsChildren,
     NotificationsHijack,
     PreventLeaveProvider,
     RightToLeftProvider,
@@ -44,6 +45,7 @@ const App = () => {
                                     <ApiProvider api={api}>
                                         <Verify />
                                         <ModalsChildren />
+                                        <NotificationsChildren />
                                     </ApiProvider>
                                 </ModalsProvider>
                             </NotificationsHijack>
