@@ -1,6 +1,5 @@
 import { Address, Api, DecryptedKey, EncryptionConfig, KeyTransparencyVerify } from '../interfaces';
 import { createAddressKeyLegacy, createAddressKeyV2 } from './add';
-import { getPrimaryKey } from './getPrimaryKey';
 import { getHasMigratedAddressKeys } from './keyMigration';
 
 type OnUpdateCallback = (ID: string, update: { status: 'loading' | 'error' | 'ok'; result?: string }) => void;
@@ -27,10 +26,6 @@ export const missingKeysSelfProcess = ({
     keyTransparencyVerify,
 }: MissingKeysSelfProcessArguments) => {
     const hasMigratedAddressKeys = getHasMigratedAddressKeys(addresses);
-    const primaryUserKey = getPrimaryKey(userKeys)?.privateKey;
-    if (!primaryUserKey) {
-        throw new Error('Missing primary user key');
-    }
 
     return Promise.all(
         addressesToGenerate.map(async (address) => {
@@ -42,7 +37,7 @@ export const missingKeysSelfProcess = ({
                         api,
                         address,
                         encryptionConfig,
-                        userKey: primaryUserKey,
+                        userKeys,
                         activeKeys: [],
                         keyTransparencyVerify,
                     });
