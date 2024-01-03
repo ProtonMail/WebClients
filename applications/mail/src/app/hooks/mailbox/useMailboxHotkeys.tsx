@@ -126,9 +126,9 @@ export const useMailboxHotkeys = (
 
         await moveToFolder({
             elements,
-            folderID: LabelID,
+            sourceLabelID: labelID,
+            destinationLabelID: LabelID,
             folderName,
-            fromLabelID: labelID,
             selectAll,
             onCheckAll: handleCheckAll,
         });

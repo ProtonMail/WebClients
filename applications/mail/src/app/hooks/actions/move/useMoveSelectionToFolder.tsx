@@ -31,9 +31,9 @@ import {
     searchForScheduled,
     searchForSnoozed,
 } from 'proton-mail/helpers/moveToFolder';
+import { MoveAllType, useMoveAllToFolder } from 'proton-mail/hooks/actions/move/useMoveAllToFolder';
 import { MoveParams } from 'proton-mail/hooks/actions/move/useMoveToFolder';
 import { useCreateFilters } from 'proton-mail/hooks/actions/useCreateFilters';
-import { useMoveAll } from 'proton-mail/hooks/actions/useMoveAll';
 import { useOptimisticApplyLabels } from 'proton-mail/hooks/optimistic/useOptimisticApplyLabels';
 import { useDeepMemo } from 'proton-mail/hooks/useDeepMemo';
 import useMailModel from 'proton-mail/hooks/useMailModel';
@@ -43,13 +43,12 @@ import { backendActionFinished, backendActionStarted } from 'proton-mail/store/e
 import { pageSize as pageSizeSelector } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
-const { TRASH, ARCHIVE, ALMOST_ALL_MAIL: ALMOST_ALL_MAIL_ID, SNOOZED, ALL_MAIL } = MAILBOX_LABEL_IDS;
+const { INBOX, TRASH, ARCHIVE, ALMOST_ALL_MAIL: ALMOST_ALL_MAIL_ID, SNOOZED, ALL_MAIL } = MAILBOX_LABEL_IDS;
 const MOVE_ALL_FOLDERS = [TRASH, ARCHIVE];
 
 interface MoveSelectionParams extends MoveParams {
     isMessage: boolean;
     authorizedToMove: Element[];
-    destinationLabelID: string;
 }
 
 /**
@@ -68,7 +67,7 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
     const { getFilterActions } = useCreateFilters();
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
 
-    const { moveAll, modal: moveAllModal } = useMoveAll();
+    const { moveAllToFolder, moveAllModal } = useMoveAllToFolder();
 
     const searchParameters = useDeepMemo<SearchParameters>(() => extractSearchParameters(location), [location]);
     const isSearch = testIsSearch(searchParameters);
@@ -87,15 +86,14 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
     const moveSelectionToFolder = useCallback(
         async ({
             elements,
-            folderID,
+            sourceLabelID,
             folderName,
-            fromLabelID,
+            destinationLabelID,
             createFilters = false,
             silent = false,
             askUnsub = true,
             isMessage,
             authorizedToMove,
-            destinationLabelID,
         }: MoveSelectionParams) => {
             let undoing = false;
             let spamAction: SPAM_ACTION | undefined = undefined;
@@ -104,7 +102,7 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
 
             // Open a modal when moving a scheduled message/conversation to trash to inform the user that it will be cancelled
             await searchForScheduled(
-                folderID,
+                destinationLabelID,
                 isMessage,
                 elements,
                 setCanUndo,
@@ -114,9 +112,9 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
 
             // Open a modal when moving a snoozed message/conversation to trash or archive to inform the user that it will be cancelled
             // We only check if we're in the ALMOST_ALL_MAIL, ALL_MAIL or SNOOZE folder since this is the only place where we have snoozed emails
-            if (fromLabelID === ALMOST_ALL_MAIL_ID || fromLabelID === ALL_MAIL || fromLabelID === SNOOZED) {
+            if (sourceLabelID === ALMOST_ALL_MAIL_ID || sourceLabelID === ALL_MAIL || sourceLabelID === SNOOZED) {
                 await searchForSnoozed(
-                    folderID,
+                    destinationLabelID,
                     isMessage,
                     elements,
                     setCanUndo,
@@ -129,7 +127,7 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
             if (askUnsub) {
                 // Open a modal when moving items to spam to propose to unsubscribe them
                 spamAction = await askToUnsubscribe(
-                    folderID,
+                    destinationLabelID,
                     isMessage,
                     elements,
                     api,
@@ -140,7 +138,7 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
 
             if (!authorizedToMove.length) {
                 createNotification({
-                    text: getNotificationTextUnauthorized(folderID, destinationLabelID),
+                    text: getNotificationTextUnauthorized(destinationLabelID, sourceLabelID),
                     type: 'error',
                 });
                 return;
@@ -185,10 +183,11 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
                     dispatch(backendActionStarted());
                     rollback = optimisticApplyLabels(
                         authorizedToMove,
-                        { [folderID]: true },
+                        { [destinationLabelID]: true },
                         true,
                         [],
-                        destinationLabelID
+                        // We need to pass a "real" folder to perform optimistic on custom labels
+                        isCustomLabel(sourceLabelID, labels) ? INBOX : sourceLabelID
                     );
 
                     [tokens] = await Promise.all([
@@ -196,9 +195,10 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
                             api,
                             items: elementIDs,
                             chunkSize: mailActionsChunkSize,
-                            action: (chunk) => action({ LabelID: folderID, IDs: chunk, SpamAction: spamAction }),
+                            action: (chunk) =>
+                                action({ LabelID: destinationLabelID, IDs: chunk, SpamAction: spamAction }),
                         }),
-                        createFilters ? doCreateFilters(elements, [folderID], true) : undefined,
+                        createFilters ? doCreateFilters(elements, [destinationLabelID], true) : undefined,
                     ]);
                 } catch (error: any) {
                     createNotification({
@@ -226,25 +226,31 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
                     authorizedToMove.length,
                     elements.length - authorizedToMove.length,
                     folderName,
-                    folderID,
-                    destinationLabelID
+                    destinationLabelID,
+                    sourceLabelID
                 );
 
                 const suggestMoveAll =
                     elements.length === pageSize &&
-                    MOVE_ALL_FOLDERS.includes(folderID as MAILBOX_LABEL_IDS) &&
-                    !isCustomLabel(fromLabelID, labels) &&
+                    MOVE_ALL_FOLDERS.includes(destinationLabelID as MAILBOX_LABEL_IDS) &&
+                    !isCustomLabel(sourceLabelID, labels) &&
                     !isSearch;
 
                 const handleMoveAll = suggestMoveAll
-                    ? () => moveAll(fromLabelID, folderID, TelemetryMailSelectAllEvents.notification_move_to)
+                    ? () =>
+                          moveAllToFolder({
+                              type: MoveAllType.moveAll,
+                              sourceLabelID: sourceLabelID,
+                              destinationLabelID: destinationLabelID,
+                              telemetryEvent: TelemetryMailSelectAllEvents.notification_move_to,
+                          })
                     : undefined;
 
                 const moveAllButton = handleMoveAll ? (
                     <MoveAllNotificationButton
                         onMoveAll={handleMoveAll}
                         isMessage={isMessage}
-                        isLabel={isLabel(fromLabelID, labels)}
+                        isLabel={isLabel(sourceLabelID, labels)}
                     />
                 ) : null;
 
@@ -261,7 +267,7 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
                 });
             }
         },
-        [isSearch, pageSize]
+        [isSearch, pageSize, moveAllToFolder]
     );
 
     return { moveSelectionToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal };

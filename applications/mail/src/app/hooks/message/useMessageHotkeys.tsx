@@ -107,9 +107,9 @@ export const useMessageHotkeys = (
 
         await moveToFolder({
             elements: [message.data],
-            folderID: LabelID,
+            sourceLabelID: labelID,
+            destinationLabelID: LabelID,
             folderName,
-            fromLabelID: labelID,
         });
     };
 
