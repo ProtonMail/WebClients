@@ -168,8 +168,7 @@ class MailImportFoldersParser {
                  * expectedParentSource value changes through each iterations
                  *
                  * If we discover that parent/child relationship is broken at any chunk
-                 * we concatenate for every following chunks, starting on last chunk
-                 * except for the case where the last chunk is a system folder
+                 * we concatenate for every following chunks
                  *
                  * Example:
                  * - Given the following path ['p', 'c', 'cc', 'ccc'] with '/' separator
@@ -185,19 +184,9 @@ class MailImportFoldersParser {
                 } else {
                     isBroken = true;
 
-                    // Checking whether we should start a new chunk or concatenate current chunk with last chunk
-                    const shouldStartNewChunk =
-                        isFirstChunk ||
-                        (this.providerFoldersSources.includes(acc[acc.length - 1]) &&
-                            DESTINATION_FOLDERS.find(
-                                (destFolder) =>
-                                    destFolder.toLocaleLowerCase() === acc[acc.length - 1].toLocaleLowerCase()
-                            ));
-
-                    const lastChunk = shouldStartNewChunk ? pathChunk : acc[acc.length - 1] + separator + pathChunk;
-
                     const accWithoutLastChunk = acc.filter((_, accIndex) => acc.length - 1 !== accIndex);
-                    return shouldStartNewChunk ? [...acc, lastChunk] : [...accWithoutLastChunk, lastChunk];
+                    const lastChunk = isFirstChunk ? pathChunk : acc[acc.length - 1] + separator + pathChunk;
+                    return [...accWithoutLastChunk, lastChunk];
                 }
             }, []);
 
