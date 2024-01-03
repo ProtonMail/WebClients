@@ -29,6 +29,7 @@ import {
 } from '../../hooks';
 import useApi from '../../hooks/useApi';
 import { useKTVerifier, useKeyMigrationKTVerifier } from '../keyTransparency';
+import useFlag from '../unleash/useFlag';
 
 interface Props {
     hasPrivateMemberKeyGeneration?: boolean;
@@ -52,6 +53,7 @@ const KeyBackgroundManager = ({
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(silentApi, getUser);
     const { keyMigrationKTVerifier } = useKeyMigrationKTVerifier();
+    const runActiveKeysCheckFlag = useFlag('CryptoDisableUndecryptableKeys');
 
     useEffect(() => {
         const run = async () => {
@@ -152,6 +154,9 @@ const KeyBackgroundManager = ({
         };
 
         const runActiveKeysCheck = async () => {
+            if (!runActiveKeysCheckFlag) {
+                return;
+            }
             const addresses = await getAddresses();
             const updatesHappened = await Promise.all(
                 addresses.map(async (address) => {
