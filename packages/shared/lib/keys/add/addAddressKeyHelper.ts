@@ -1,11 +1,9 @@
-import { PrivateKeyReference } from '@proton/crypto';
-import { getDefaultKeyFlags } from '@proton/shared/lib/keys';
-
 import { createAddressKeyRoute, createAddressKeyRouteV2 } from '../../api/keys';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '../../constants';
-import { ActiveKey, Address, Api, EncryptionConfig, KeyTransparencyVerify } from '../../interfaces';
-import { generateAddressKey, generateAddressKeyTokens } from '../addressKeys';
+import { ActiveKey, Address, Api, EncryptionConfig, KeyPair, KeyTransparencyVerify } from '../../interfaces';
+import { generateAddressKey, getNewAddressKeyToken } from '../addressKeys';
 import { getActiveKeyObject, getNormalizedActiveKeys } from '../getActiveKeys';
+import { getDefaultKeyFlags } from '../keyFlags';
 import { getSignedKeyListWithDeferredPublish } from '../signedKeyList';
 
 interface CreateAddressKeyLegacyArguments {
@@ -70,7 +68,7 @@ export const createAddressKeyLegacy = async ({
 
 interface CreateAddressKeyV2Arguments {
     api: Api;
-    userKey: PrivateKeyReference;
+    userKeys: KeyPair[];
     encryptionConfig?: EncryptionConfig;
     address: Address;
     activeKeys: ActiveKey[];
@@ -79,13 +77,13 @@ interface CreateAddressKeyV2Arguments {
 
 export const createAddressKeyV2 = async ({
     api,
-    userKey,
+    userKeys,
     encryptionConfig = ENCRYPTION_CONFIGS[DEFAULT_ENCRYPTION_CONFIG],
     address,
     activeKeys,
     keyTransparencyVerify,
 }: CreateAddressKeyV2Arguments) => {
-    const { token, encryptedToken, signature } = await generateAddressKeyTokens(userKey);
+    const { token, encryptedToken, signature } = await getNewAddressKeyToken({ address, userKeys });
     const { privateKey, privateKeyArmored } = await generateAddressKey({
         email: address.Email,
         passphrase: token,
