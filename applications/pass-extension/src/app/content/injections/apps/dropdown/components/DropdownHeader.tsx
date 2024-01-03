@@ -9,7 +9,7 @@ export const DropdownHeader: VFC<Props> = ({ title, extra }) => (
         className="flex flex-nowrap shrink-0 items-center justify-space-between h-custom pl-3 pr-2 pt-2"
         style={{ '--h-custom': `${DROPDOWN_HEADER_HEIGHT}rem` }}
     >
-        <span className="text-xs text-semibold text-ellipsis">{title}</span>
+        <span className="text-sm text-semibold text-ellipsis">{title}</span>
         {extra}
     </div>
 );
