@@ -1,6 +1,5 @@
 import { useCallback, useState } from 'react';
 
-import { ModalsChildren } from '@proton/components';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -18,7 +17,6 @@ const EOContainer = () => {
                 <EOLayout toApp={APPS.PROTONMAIL}>
                     <EOPageContainer />
                 </EOLayout>
-                <ModalsChildren />
             </ForceRefreshContext.Provider>
         </FakeEventManagerProvider>
     );

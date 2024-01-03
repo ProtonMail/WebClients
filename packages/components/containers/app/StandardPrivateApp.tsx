@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 
+import { NotificationsChildren } from '@proton/components/containers';
+
 import { useConfig, useIsInboxElectronApp } from '../../hooks';
 import SessionRecoveryLocalStorageManager from '../account/sessionRecovery/SessionRecoveryLocalStorageManager';
 import { ContactProvider } from '../contacts';
@@ -42,6 +44,7 @@ const StandardPrivateApp = ({
                     <EventNotices />
                     <ThemeInjector />
                     <DensityInjector />
+                    <NotificationsChildren />
                     {!noModals && <ModalsChildren />}
                     <KeyBackgroundManager
                         hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}

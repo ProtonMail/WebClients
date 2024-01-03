@@ -9,7 +9,6 @@ import CacheProvider from '../cache/Provider';
 import CompatibilityCheck from '../compatibilityCheck/CompatibilityCheck';
 import ConfigProvider from '../config/Provider';
 import ModalsProvider from '../modals/Provider';
-import NotificationsChildren from '../notifications/Children';
 import NotificationsProvider from '../notifications/Provider';
 import RightToLeftProvider from '../rightToLeft/Provider';
 import ThemeProvider from '../themes/ThemeProvider';
@@ -30,10 +29,7 @@ const ProtonApp = ({ config, children }: Props) => {
                             <SpotlightProvider>
                                 <NotificationsProvider>
                                     <ModalsProvider>
-                                        <CacheProvider>
-                                            <NotificationsChildren />
-                                            {children}
-                                        </CacheProvider>
+                                        <CacheProvider>{children}</CacheProvider>
                                     </ModalsProvider>
                                 </NotificationsProvider>
                             </SpotlightProvider>
