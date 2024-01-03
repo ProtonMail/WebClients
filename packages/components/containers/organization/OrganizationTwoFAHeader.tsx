@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { Card } from '@proton/atoms';
-import { Alert, useMembers } from '@proton/components';
+import { useMembers } from '@proton/components';
 import { Organization } from '@proton/shared/lib/interfaces';
 
 import { Loader } from '../../components';
@@ -15,11 +15,6 @@ const OrganizationTwoFAHeader = ({ organization }: Props) => {
 
     if (!organization || loadingMembers) {
         return <Loader />;
-    }
-
-    // Organization is not setup.
-    if (!organization?.HasKeys) {
-        return <Alert className="mb-1" type="warning">{c('Info').t`Multi-user support not enabled.`}</Alert>;
     }
 
     const twoFAMembers = members.filter((member) => member['2faStatus'] !== 0) || [];
