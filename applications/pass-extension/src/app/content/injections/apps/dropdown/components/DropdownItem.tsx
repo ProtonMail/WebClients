@@ -36,7 +36,7 @@ export const DropdownItem: VFC<
                 {title && <span className="block text-ellipsis">{title}</span>}
                 <span
                     className={clsx(
-                        'pass-injected-dropdown--subtitle block color-weak text-xs',
+                        'pass-injected-dropdown--subtitle block color-weak text-sm',
                         !autogrow && 'text-ellipsis'
                     )}
                 >
