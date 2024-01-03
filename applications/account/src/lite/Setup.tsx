@@ -9,6 +9,7 @@ import {
     ApiProvider,
     EventManagerProvider,
     ModalsChildren,
+    NotificationsChildren,
     StandardLoadErrorPage,
     useErrorHandler,
     useThemeQueryParameter,
@@ -248,6 +249,7 @@ const Setup = ({ api, onLogin, UID, children }: Props) => {
             <FlagProvider unleashClient={extraThunkArguments.unleashClient} startClient={false}>
                 <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
                     <ModalsChildren />
+                    <NotificationsChildren />
                     {children}
                 </EventManagerProvider>
             </FlagProvider>

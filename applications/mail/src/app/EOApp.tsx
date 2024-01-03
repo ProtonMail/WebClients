@@ -9,7 +9,6 @@ import {
     Icons,
     LoaderPage,
     ModalsProvider,
-    NotificationsChildren,
     NotificationsProvider,
     PreventLeaveProvider,
     RightToLeftProvider,
@@ -60,7 +59,6 @@ const App = () => {
                                         <ModalsProvider>
                                             <ApiProvider api={api}>
                                                 <CacheProvider cache={cache}>
-                                                    <NotificationsChildren />
                                                     <StandardPublicApp loader={<LoaderPage />} locales={locales}>
                                                         <EOContainer />
                                                     </StandardPublicApp>

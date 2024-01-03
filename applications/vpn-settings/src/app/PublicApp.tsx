@@ -11,6 +11,7 @@ import AccountSingleSignupContainer from 'proton-account/src/app/single-signup/S
 import useLocationWithoutLocale, { getLocalePathPrefix } from 'proton-account/src/app/useLocationWithoutLocale';
 
 import {
+    NotificationsChildren,
     ProtonLoginCallback,
     UnAuthenticated,
     UnAuthenticatedApiProvider,
@@ -56,6 +57,7 @@ const InnerPublicApp = ({ onLogin, loader, location }: InnerPublicAppProps) => {
 
     return (
         <>
+            <NotificationsChildren />
             <ModalsChildren />
             <UnAuthenticatedApiProvider loader={loader}>
                 <UnleashFlagProvider>

@@ -9,6 +9,7 @@ import {
     AuthenticationProvider,
     ErrorBoundary,
     ModalsChildren,
+    NotificationsChildren,
     ProtonApp,
     SSOForkProducer,
     StandardErrorPage,
@@ -458,6 +459,7 @@ const BasePublicApp = ({ onLogin }: Props) => {
     return (
         <>
             <HandleLogout />
+            <NotificationsChildren />
             <ModalsChildren />
             <Switch>
                 <Route path={`${UNAUTHENTICATED_ROUTES.UNSUBSCRIBE}/:subscriptions?`}>
