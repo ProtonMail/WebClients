@@ -1856,6 +1856,9 @@
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
         "Бета-версия приложения ${ MAIL_APP_NAME } для настольных компьютеров в настоящее время доступна только для подписчиков ${ BRAND_NAME } Visionary. Она будет доступна всем пользователям в начале 2024 года."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Обновитесь сегодня или проверьте снова в начале 2024 года для получения доступа."
       ]
     },
     "Downgrade account reason": {
@@ -3278,9 +3281,6 @@
       "MM/YY": [
         "ММ/ГГ"
       ],
-      "Multi-user support not enabled.": [
-        "Многопользовательский режим не включён."
-      ],
       "Must be between 3 and 20 characters long.": [
         "Должен быть длиной от 3 до 20 символов."
       ],
@@ -3659,9 +3659,6 @@
       "to continue to ${ product }": [
         "чтобы продолжить в ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "чтобы продолжить в ${ toAppName }"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
       ],
@@ -3721,9 +3718,6 @@
       ],
       "Unverified email address.": [
         "Неподтверждённый адрес эл. почты."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "До ${ FAMILY_MAX_USERS } пользователей"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Улучшить сейчас, чтобы получить платные функции, программное обеспечение и хранилище по специальной цене"
@@ -4525,17 +4519,8 @@
       "${ BRAND_NAME } welcome emails": [
         "Приветственные письма ${ BRAND_NAME }"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "Обновления продукта от ${ DRIVE_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "Новые функции ${ MAIL_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "Обновления продукта от ${ PASS_APP_NAME }"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "Обновления продукта от ${ VPN_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -4796,12 +4781,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } календарь",
-        "${ maximumNumberOfCalendars } календаря",
-        "${ maximumNumberOfCalendars } календарей",
-        "${ maximumNumberOfCalendars } календарей"
-      ],
       "${ n } calendar": [
         "${ n } календарь",
         "${ n } календаря",
@@ -5158,12 +5137,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Неограниченные объем данных и пропускная способность"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "До ${ FAMILY_MAX_USERS } пользователей"
-      ],
-      "Up to ${ n } users": [
-        "До ${ n } пользователей"
       ],
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } хранилища"
@@ -5636,11 +5609,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Добро пожаловать в ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Добро пожаловать в ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Добро пожаловать в ${ appName }"
       ]
     },
     "Option": {
@@ -5664,6 +5634,15 @@
       ],
       "My reason isn't listed": [
         "Другая причина"
+      ],
+      "No permission": [
+        "Нет разрешения"
+      ],
+      "Organization only": [
+        "Только организация"
+      ],
+      "Receive from all": [
+        "Получать от всех"
       ],
       "Router": [
         "Маршрутизатор"
@@ -5831,6 +5810,18 @@
       ]
     },
     "Permission": {
+      "No permission": [
+        "Нет разрешения"
+      ],
+      "Organization only": [
+        "Только организация"
+      ],
+      "Receive from all": [
+        "Получать от всех"
+      ],
+      "Send to all": [
+        "Отправить всем"
+      ],
       "Setup incomplete": [
         "Настройка завершена"
       ]
@@ -6539,18 +6530,6 @@
         "${ ipAddresses } выделенных серверов",
         "${ ipAddresses } выделенных серверов"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } высокоскоростное подключение к VPN",
-        "${ maxVpn } высокоскоростных подключения к VPN",
-        "${ maxVpn } высокоскоростных подключений к VPN",
-        "${ maxVpn } высокоскоростных подключений к VPN"
-      ],
-      "${ n } calendar": [
-        "${ n } календарь",
-        "${ n } календаря",
-        "${ n } календарей",
-        "${ n } календаря"
-      ],
       "${ n } calendar per user": [
         "${ n } календарь на пользователя",
         "${ n } календаря на пользователя",
@@ -7097,9 +7076,6 @@
       "Delete": [
         "Удалить"
       ],
-      "Delete ${ email }": [
-        "Удалить ${ email }"
-      ],
       "Delete account": [
         "Удалить аккаунт"
       ],
@@ -7375,18 +7351,6 @@
       ],
       "Subscription": [
         "Подписка"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "Успешно создан ${ localSuccessfullyCreatedUsers.length } аккаунт",
-        "Успешно созданы ${ localSuccessfullyCreatedUsers.length } аккаунта",
-        "Успешно созданы ${ localSuccessfullyCreatedUsers.length } аккаунтов",
-        "Успешно созданы ${ localSuccessfullyCreatedUsers.length } аккаунтов"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "Успешно создан ${ successfullyCreatedUsers.length } аккаунт",
-        "Успешно созданы ${ successfullyCreatedUsers.length } аккаунта",
-        "Успешно созданы ${ successfullyCreatedUsers.length } аккаунтов",
-        "Успешно созданы ${ successfullyCreatedUsers.length } аккаунтов"
       ],
       "Summary": [
         "Сводка"

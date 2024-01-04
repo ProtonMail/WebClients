@@ -3241,9 +3241,6 @@
       "MM/YY": [
         "თთ/წწ"
       ],
-      "Multi-user support not enabled.": [
-        "მრავალმომხმარებლიანობის მხარდაჭერა ჩართული არაა."
-      ],
       "Must be between 3 and 20 characters long.": [
         "სიგრძე 3-სა და 20 სიმბოლოს შორის უნდა მერყეობდეს."
       ],
@@ -3610,9 +3607,6 @@
       "to continue to ${ product }": [
         "${ product }-ზე გაგრძელება"
       ],
-      "to continue to ${ toAppName }": [
-        "${ toAppName }-ზე გაგრძელება"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "სპამისაგან თავდასაცავად გთხოვთ, დაამტკიცოთ, რომ ადამიანი ხართ."
       ],
@@ -3672,9 +3666,6 @@
       ],
       "Unverified email address.": [
         "გადაუმოწმებელი ელფოსტის მისამართი."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "${ FAMILY_MAX_USERS }-მდე მომხმარებელი"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "განაახლეთ ახლავე, რომ მიიღოთ პრემიუმ ფუნქციები, პროდუქტები და საცავი სპეციალურ ფასად"
@@ -4460,17 +4451,8 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }-ის მისალმების ელფოსტები"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "${ DRIVE_APP_NAME }-ის პროდუქტის განახლებები"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "${ MAIL_APP_NAME }-ის და ${ CALENDAR_SHORT_APP_NAME }-ის ახალი ფუნქციები"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "${ PASS_APP_NAME }-ის პროდუქტის განახლებები"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "${ VPN_APP_NAME }-ის პროდუქტის განახლებები"
       ]
     },
     "Label on payment method": {
@@ -4729,10 +4711,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } კალენდარი",
-        "${ maximumNumberOfCalendars } კალენდარი"
-      ],
       "${ n } calendar": [
         "${ n } კალენდარი",
         "${ n } კალენდარი"
@@ -5056,12 +5034,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "ულიმიტო საცავი/გამტარობა"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "${ FAMILY_MAX_USERS }-მდე მომხმარებელი"
-      ],
-      "Up to ${ n } users": [
-        "${ n }-მდე მომხმარებელი"
       ],
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize }-მდე საცავი"
@@ -5529,11 +5501,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "კეთილი იყოს თქვენი მობრძანება ${ product }-ში"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "კეთილი იყოს თქვენი მობრძანება ${ VPN_APP_NAME }-ში"
+      "Welcome to ${ appName }": [
+        "კეთილი იყოს თქვენი მობრძანება ${ appName }-ში"
       ]
     },
     "Option": {
@@ -6486,14 +6455,6 @@
         "${ ipAddresses } გამოყოფილი სერვერი",
         "${ ipAddresses } გამოყოფილი სერვერი"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } ჩქაროსნული VPN შეერთება",
-        "${ maxVpn } ჩქაროსნული VPN შეერთება"
-      ],
-      "${ n } calendar": [
-        "${ n } კალენდარი",
-        "${ n } კალენდარი"
-      ],
       "${ n } calendar per user": [
         "${ n } კალენდარი თითოეული მომხმარებლისათვის",
         "${ n } კალენდარი თითოეული მომხმარებლისათვის"
@@ -7019,9 +6980,6 @@
       "Delete": [
         "წაშლა"
       ],
-      "Delete ${ email }": [
-        "${ email }-ის წაშლა"
-      ],
       "Delete account": [
         "ანგარიშის წაშლა"
       ],
@@ -7293,14 +7251,6 @@
       ],
       "Subscription": [
         "გამოწერა"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "${ localSuccessfullyCreatedUsers.length } მომხმარებლის ანგარიში წარმატებით შეიქმნა",
-        "${ localSuccessfullyCreatedUsers.length } მომხმარებლის ანგარიში წარმატებით შეიქმნა"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "${ successfullyCreatedUsers.length } მომხმარებლის ანგარიში წარმატებით შეიქმნა",
-        "${ successfullyCreatedUsers.length } მომხმარებლის ანგარიში წარმატებით შეიქმნა"
       ],
       "Summary": [
         "შეჯამება"

@@ -3301,9 +3301,6 @@
       "MM/YY": [
         "MM/RR"
       ],
-      "Multi-user support not enabled.": [
-        "Podpora viacerých používateľov nie je povolená."
-      ],
       "Must be between 3 and 20 characters long.": [
         "Musí mať dĺžku 3 až 20 znakov."
       ],
@@ -3682,9 +3679,6 @@
       "to continue to ${ product }": [
         "pokračovať na ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "pre pokračovanie do ${ toAppName }"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Aby ste zamedzili spamu a obťažovaniu, potvrďte, že ste človek."
       ],
@@ -3744,9 +3738,6 @@
       ],
       "Unverified email address.": [
         "Neoverená emailová adresa."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Až ${ FAMILY_MAX_USERS } používateľov"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navýšte teraz a získajte prémiové funkcie, produkty a úložisko za špeciálnu cenu"
@@ -4548,17 +4539,8 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } uvítacie emaily"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "Aktualizácie produktu ${ DRIVE_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "Nové funkcie ${ MAIL_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "Aktualizácie produktu ${ PASS_APP_NAME }"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "Aktualizácie produktu ${ VPN_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -4819,12 +4801,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } kalendár",
-        "${ maximumNumberOfCalendars } kalendáre",
-        "${ maximumNumberOfCalendars } kalendárov",
-        "${ maximumNumberOfCalendars } kalendárov"
-      ],
       "${ n } calendar": [
         "${ n } kalendár",
         "${ n } kalendáre",
@@ -5184,12 +5160,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Neobmedzený objem / šírka pásma"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Až ${ FAMILY_MAX_USERS } používateľov"
-      ],
-      "Up to ${ n } users": [
-        "Až ${ n } používateľov"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Až ${ totalStorageSize } úložného priestoru"
@@ -5665,11 +5635,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Víta vás ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Víta vás ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Víta vás ${ appName }"
       ]
     },
     "Option": {
@@ -6666,18 +6633,6 @@
         "${ ipAddresses } dedikovaných serverov",
         "${ ipAddresses } dedikovaných serverov"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } vysoko rýchlostné VPN pripojenie",
-        "${ maxVpn } vysoko rýchlostné VPN pripojenia",
-        "${ maxVpn } vysoko rýchlostných VPN pripojení",
-        "${ maxVpn } vysoko rýchlostných VPN pripojení"
-      ],
-      "${ n } calendar": [
-        "${ n } kalendár",
-        "${ n } kalendáre",
-        "${ n } kalendárov",
-        "${ n } kalendárov"
-      ],
       "${ n } calendar per user": [
         "${ n } kalendár na používateľa",
         "${ n } kalendáre na používateľa",
@@ -7227,9 +7182,6 @@
       "Delete": [
         "Vymazať"
       ],
-      "Delete ${ email }": [
-        "Vymazať ${ email }"
-      ],
       "Delete account": [
         "Zmazať účet"
       ],
@@ -7505,18 +7457,6 @@
       ],
       "Subscription": [
         "Predplatné"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "Bolo úspešne vytvorených ${ localSuccessfullyCreatedUsers.length } používateľských účtov",
-        "${ localSuccessfullyCreatedUsers.length } používateľské účty boli úspešne vytvorené",
-        "${ localSuccessfullyCreatedUsers.length } používateľských účtov bolo úspešne vytvorenéných",
-        "${ localSuccessfullyCreatedUsers.length } používateľských účtov bolo úspešne vytvorenéných"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "Používateľský účet ${ successfullyCreatedUsers.length } bol úspešne vytvorený",
-        "Používateľské účty ${ successfullyCreatedUsers.length } boli úspešne vytvorené",
-        "Používateľské účty ${ successfullyCreatedUsers.length } boli úspešne vytvorené",
-        "Používateľské účty ${ successfullyCreatedUsers.length } boli úspešne vytvorené"
       ],
       "Summary": [
         "Zhrnutie"

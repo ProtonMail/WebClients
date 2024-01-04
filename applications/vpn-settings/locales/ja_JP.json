@@ -3102,9 +3102,6 @@
       "MM/YY": [
         "MM/YY"
       ],
-      "Multi-user support not enabled.": [
-        "複数ユーザー対応が有効になっていません。"
-      ],
       "Must be between 3 and 20 characters long.": [
         "3文字以上20文字以内。"
       ],
@@ -3456,9 +3453,6 @@
       "to continue to ${ product }": [
         "${ product } に進む"
       ],
-      "to continue to ${ toAppName }": [
-        "サインイン後 ${ toAppName } を開きます"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
       ],
@@ -3518,9 +3512,6 @@
       ],
       "Unverified email address.": [
         "未検証のメールアドレス"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "最大 ${ FAMILY_MAX_USERS } ユーザーまで"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "今すぐアップグレードして、プレミアム機能、製品、ストレージを特別価格で手に入れよう"
@@ -4295,17 +4286,8 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } ウェルカムメール"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "${ DRIVE_APP_NAME } 製品のアップデート"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "${ MAIL_APP_NAME } と ${ CALENDAR_SHORT_APP_NAME } の新機能"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "${ PASS_APP_NAME } 製品のアップデート"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "${ VPN_APP_NAME } 製品のアップデート"
       ]
     },
     "Label on payment method": {
@@ -4563,9 +4545,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendars": [
-        "${ maximumNumberOfCalendars } 件のカレンダー"
-      ],
       "${ n } calendars": [
         "${ n } カレンダー"
       ],
@@ -4868,12 +4847,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "通信量/帯域幅制限なし"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "最大 ${ FAMILY_MAX_USERS } ユーザーまで"
-      ],
-      "Up to ${ n } users": [
-        "最大 ${ n } ユーザーまで"
       ],
       "Up to ${ totalStorageSize } storage": [
         "最大 ${ totalStorageSize } のストレージ"
@@ -5334,11 +5307,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "${ product } へようこそ"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME } へようこそ"
+      "Welcome to ${ appName }": [
+        "${ appName } へようこそ"
       ]
     },
     "Option": {
@@ -6213,12 +6183,6 @@
       "${ ipAddresses } dedicated servers": [
         "${ ipAddresses } の専用サーバー"
       ],
-      "${ maxVpn } high-speed VPN connections": [
-        "${ maxVpn } 件の高速 VPN 接続"
-      ],
-      "${ n } calendars": [
-        "${ n } カレンダー"
-      ],
       "${ n } calendars per user": [
         "1 ユーザーあたり ${ n } 件のカレンダー"
       ],
@@ -6732,9 +6696,6 @@
       "Delete": [
         "削除"
       ],
-      "Delete ${ email }": [
-        "${ email } を削除"
-      ],
       "Delete account": [
         "アカウントの削除"
       ],
@@ -7004,12 +6965,6 @@
       ],
       "Subscription": [
         "サブスクリプション"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user accounts": [
-        "${ localSuccessfullyCreatedUsers.length } ユーザー アカウントが正常に作成されました"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user accounts": [
-        "${ successfullyCreatedUsers.length }ユーザー アカウントが正常に作成されました"
       ],
       "Summary": [
         "概要"

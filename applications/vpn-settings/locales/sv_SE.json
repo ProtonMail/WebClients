@@ -3241,9 +3241,6 @@
       "MM/YY": [
         "MM/ÅÅ"
       ],
-      "Multi-user support not enabled.": [
-        "Stöd för flera användare är inte aktiverat."
-      ],
       "Must be between 3 and 20 characters long.": [
         "Måste vara mellan 3 och 20 tecken långt."
       ],
@@ -3613,9 +3610,6 @@
       "to continue to ${ product }": [
         "för att fortsätta till ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "för att fortsätta till ${ toAppName }"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "För att bekämpa skräppost och missbruk, verifiera att du är människa."
       ],
@@ -3675,9 +3669,6 @@
       ],
       "Unverified email address.": [
         "Overifierad e-postadress."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Upp till ${ FAMILY_MAX_USERS } användare"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
@@ -4445,6 +4436,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "Produktuppdateringar för ${ app }"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME } meddelanden om beta-versioner"
       ],
@@ -4469,17 +4463,8 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }-välkomstmeddelande"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "Produktuppdateringar för ${ DRIVE_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "Nya funktioner för ${ MAIL_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "Produktuppdateringar för ${ PASS_APP_NAME }"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "Produktuppdateringar för ${ VPN_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -4738,10 +4723,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } kalender",
-        "${ maximumNumberOfCalendars } kalendrar"
-      ],
       "${ n } calendar": [
         "${ n } kalender",
         "${ n } kalendrar"
@@ -5066,10 +5047,8 @@
       "Unlimited volume/bandwidth": [
         "Obegränsad bandbredd"
       ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Upp till ${ FAMILY_MAX_USERS } användare"
-      ],
-      "Up to ${ n } users": [
+      "Up to ${ n } user": [
+        "Upp till ${ n } användare",
         "Upp till ${ n } användare"
       ],
       "Up to ${ totalStorageSize } storage": [
@@ -5538,16 +5517,16 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Välkommen till ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Välkommen till ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Välkommen till ${ appName }"
       ]
     },
     "Option": {
       "Android": [
         "Android"
+      ],
+      "Automatic (${ value })": [
+        "Automatiskt (${ value })"
       ],
       "Country configs": [
         "Landskonfigurationer"
@@ -6525,14 +6504,6 @@
         "${ ipAddresses } dedikerad server",
         "${ ipAddresses } dedikerade servrar"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } höghastighets VPN-anslutning",
-        "${ maxVpn } höghastighets VPN-anslutningar"
-      ],
-      "${ n } calendar": [
-        "${ n } kalender",
-        "${ n } kalendrar"
-      ],
       "${ n } calendar per user": [
         "${ n } kalender per användare",
         "${ n } kalendrar per användare"
@@ -7058,8 +7029,8 @@
       "Delete": [
         "Ta bort"
       ],
-      "Delete ${ email }": [
-        "Ta bort ${ email }"
+      "Delete ${ value }": [
+        "Ta bort ${ value }"
       ],
       "Delete account": [
         "Ta bort konto"
@@ -7333,13 +7304,9 @@
       "Subscription": [
         "Prenumeration"
       ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "${ localSuccessfullyCreatedUsers.length } användarkonto skapades",
-        "${ localSuccessfullyCreatedUsers.length } användarkonton skapades"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "${ successfullyCreatedUsers.length } användarkonto skapades",
-        "${ successfullyCreatedUsers.length } användarkonton skapades"
+      "Successfully created ${ n } user account": [
+        "${ n } användarkonto skapades",
+        "${ n } användarkonton skapades"
       ],
       "Summary": [
         "Sammanfattning"
