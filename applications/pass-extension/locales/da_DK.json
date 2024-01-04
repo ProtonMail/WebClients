@@ -269,6 +269,9 @@
       "Open navigation": [
         "Åbn navigation"
       ],
+      "Open web app": [
+        "Åbn webapp"
+      ],
       "Pass for Android": [
         "Pass til Android"
       ],
@@ -393,6 +396,9 @@
     "Badge": {
       "Early access": [
         "Tidlig adgang"
+      ],
+      "Limited time": [
+        "Begrænset tid"
       ]
     },
     "bf2023: Info": {
@@ -441,10 +447,13 @@
         "${ provider }-fil kunne ikke fortolkes. ${ errorDetail }"
       ],
       "Alias options could not be resolved": [
-        "Aliasindstillinger kunne ikke løses"
+        "Alias-indstillinger kunne ikke hentes"
       ],
       "Authentication error": [
         "Godkendelsesfejl"
+      ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "Godkendelse mislykkedes. Bekræft din ${ BRAND_NAME }-adgangskode for at fortsætte med eksporten."
       ],
       "Auto-lock could not be activated": [
         "Autolås kunne ikke aktiveres"
@@ -489,8 +498,8 @@
         "Sletning af boksen \"${ payload.content.name }\" mislykkedes"
       ],
       "Detected ${ errors.length } corrupted csv row": [
-        "Opdagede ${ errors.length } beskadiget CSV-række",
-        "Opdagede ${ errors.length } beskadigede CSV-rækker"
+        "Registrerede ${ errors.length } beskadiget CSV-række",
+        "Registrerede ${ errors.length } beskadigede CSV-rækker"
       ],
       "Editing item failed": [
         "Redigering af element mislykkedes"
@@ -528,6 +537,9 @@
       "File could not be parsed": [
         "Fil kunne ikke fortolkes"
       ],
+      "File does not match expected format": [
+        "Fil svarer ikke til det forventede format"
+      ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "Import mislykkedes for boks \"${ vaultData.name }\" : ${ description }"
       ],
@@ -553,7 +565,7 @@
         "Oprettelse af element mislykkedes"
       ],
       "LastPass will export a corrupted CSV file if any of your item fields contain unexpected commas, quotes or multiple lines": [
-        "LastPass vil eksportere en korrupteret CSV-fil hvis nogle af dine element-felter indeholder uventede kommaet, citationstegn eller flere linjer."
+        "LastPass eksporterer en beskadiget CSV-fil, hvis et af dine elementfelter indeholder uventede kommaer, anførselstegn eller flere linjer."
       ],
       "Moving item failed": [
         "Flytning af element mislykkedes"
@@ -610,7 +622,7 @@
         "Kunne ikke flytte element til papirkurven"
       ],
       "Unable to boot": [
-        "Kan ikke logge boote"
+        "Kan ikke boote"
       ],
       "Unable to generate an OTP code for this item": [
         "Kunne ikke generere en OTP-kode for dette element"
@@ -778,7 +790,7 @@
         "Alle elementer i papirkurven blev genoprettet"
       ],
       "An item previously shared with you was removed": [
-        "Et element der tidligere var delt med dig er blevet fjernet"
+        "Et element, der tidligere var delt med dig, er blevet fjernet"
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "Er du sikker på at du vil flytte alle elementer fra \"${ fromVaultName }\" til \"${ toVaultName }\" ?"
@@ -954,7 +966,7 @@
         "mig"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
-        "Mere end en adgangskodeadministrator, ${ PASS_APP_NAME } beskytter dine adgangskoder og din personlige e-mailadresse via e-mail-aliasser. Med den samme teknologi, som ligger bag ${ MAIL_APP_NAME }, er dine data end-to-end krypteret og kun tilgængelige for dig."
+        "${ PASS_APP_NAME } er mere end en adgangskodeadministrator, den beskytter din adgangskode og din personlige e-mailadresse via e-mailaliaser. Med samme teknologi, som bruges til ${ MAIL_APP_NAME }, er dine data end-to-end krypteret og kun tilgængelige for dig."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
@@ -977,6 +989,9 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Ejerskab overført. Du er ikke længere ejer af denne boks."
       ],
+      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
+        "Pass Plus for ${ eoyRelativePrice }/md, inklusive tidlig adgang til webappen."
+      ],
       "Pass Plus trial": [
         "Pass Plus prøveversion"
       ],
@@ -994,6 +1009,9 @@
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Pinkode registreret. Brug den til at låse ${ PASS_APP_NAME } op."
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "Bekræft din adgangskode til ${ BRAND_NAME } for at eksportere dine ${ PASS_APP_NAME }-data"
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "Bekræft venligst din pinkode for at afregistrere din nuværende lås.\n${ PASS_APP_NAME } vil derefter aldrig låse."
@@ -1023,7 +1041,7 @@
         "Beskyttet af ${ PROTON_SENTINEL_LINK }, vores avancerede program til kontobeskyttelse"
       ],
       "Restoring trashed items...": [
-        "Genopretter elementer i papirkurven..."
+        "Gendanner elementer i papirkurven..."
       ],
       "Save login": [
         "Gem login"
@@ -1335,7 +1353,7 @@
         "Tøm papirkurv"
       ],
       "Encrypt your ${ PASS_APP_NAME } data export file": [
-        "Krypter din ${ PASS_APP_NAME } dataeksportfil"
+        "Kryptér din ${ PASS_APP_NAME } dataeksportfil"
       ],
       "Expiration date": [
         "Udløbsdato"
@@ -1610,10 +1628,10 @@
         "Tal"
       ],
       "Numbers and Symbols": [
-        "Tal og Symboler"
+        "Tal og symboler"
       ],
       "Periods": [
-        "Pumktummer"
+        "Punktummer"
       ],
       "Random Password": [
         "Tilfældig adgangskode"

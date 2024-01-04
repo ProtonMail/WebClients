@@ -708,12 +708,6 @@
       "High speed streaming": [
         "Ροή υψηλής ταχύτητας"
       ],
-      "Premium ${ appName }": [
-        "Premium ${ appName }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "Premium Password Manager": [
         "Premium Διαχειριστής Κωδικών Πρόσβασης"
       ]
@@ -2253,15 +2247,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
-      ],
       "Up to 6 users": [
         "Έως 6 χρήστες"
       ]
@@ -5573,6 +5558,15 @@
       "My reason isn't listed": [
         "Ο λόγος δεν συμπεριλαμβάνεται στη λίστα"
       ],
+      "No permission": [
+        "Χωρίς δικαίωμα"
+      ],
+      "Organization only": [
+        "Μόνο στον Οργανισμό"
+      ],
+      "Receive from all": [
+        "Λήψη από όλους"
+      ],
       "Router": [
         "Ρούτερ"
       ],
@@ -5581,6 +5575,12 @@
       ],
       "Select who can access...": [
         "Επιλέξτε ποιος μπορεί να έχει πρόσβαση..."
+      ],
+      "Send to all": [
+        "Αποστολή σε όλους"
+      ],
+      "Setup incomplete": [
+        "Η ρύθμιση δεν είναι ολοκληρωμένη"
       ],
       "Standard server configs": [
         "Ρυθμίσεις τυπικού διακομιστή"
@@ -5724,6 +5724,23 @@
       ],
       "New credit/debit card": [
         "Νέα πιστωτική/χρεωστική κάρτα"
+      ]
+    },
+    "Permission": {
+      "No permission": [
+        "Χωρίς δικαίωμα"
+      ],
+      "Organization only": [
+        "Μόνο στον Οργανισμό"
+      ],
+      "Receive from all": [
+        "Λήψη από όλους"
+      ],
+      "Send to all": [
+        "Αποστολή σε όλους"
+      ],
+      "Setup incomplete": [
+        "Η ρύθμιση δεν είναι ολοκληρωμένη"
       ]
     },
     "Placeholder": {
@@ -6286,15 +6303,6 @@
       "Highest VPN speed": [
         "Ύψιστη ταχύτητα VPN"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
-      ],
       "Premium early access": [
         "Premium πρώιμη πρόσβαση"
       ],
@@ -6756,14 +6764,6 @@
     "Suffix for price": {
       "per month": [
         "ανά μήνα"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {

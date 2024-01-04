@@ -705,12 +705,6 @@
       "High speed streaming": [
         "Streaming d'alta velocitat"
       ],
-      "Premium ${ appName }": [
-        "${ appName } prèmium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
-      ],
       "Premium Password Manager": [
         "Gestor de contrasenyes prèmium"
       ]
@@ -820,7 +814,7 @@
         "24 mesos"
       ],
       "Annually": [
-        "Anualment"
+        "Cada any"
       ],
       "Monthly": [
         "Mensual"
@@ -2212,15 +2206,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } prèmium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } prèmium"
-      ],
       "Up to 6 users": [
         "Fins a 6 usuaris"
       ]
@@ -6171,14 +6156,14 @@
       "Highest VPN speed": [
         "La velocitat VPN més alta"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
+      "Premium ${ appName1 }": [
+        "${ appName1 } prèmium"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME } prèmium"
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "${ appName1 } i ${ appName2 } prèmium"
       ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } prèmium"
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "${ appName1 }, ${ appName2 } i ${ appName3 } prèmium"
       ],
       "Premium early access": [
         "Accés anticipat prèmium"
@@ -6638,14 +6623,6 @@
     "Suffix for price": {
       "per month": [
         "per mes"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } prèmium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
       ]
     },
     "summer2023: Tooltip": {
@@ -7389,7 +7366,7 @@
     },
     "vpn_2step: billing": {
       "Billed monthly": [
-        "Facturat mensualment"
+        "Facturat cada mesc"
       ]
     },
     "vpn_2step: discount": {
@@ -7409,7 +7386,7 @@
         "Obteniu un descompte dec ${ discount } amb una subscripció a ${ billingCycle }"
       ],
       "monthly": [
-        "mensualment"
+        "cada mesc"
       ]
     },
     "vpn_2step: feature": {

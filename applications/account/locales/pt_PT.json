@@ -1344,12 +1344,6 @@
       "High speed streaming": [
         "Streaming de alta velocidade"
       ],
-      "Premium ${ appName }": [
-        "Premium ${ appName }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "Premium Password Manager": [
         "Versão premium do gestor de palavras-passe"
       ]
@@ -4342,15 +4336,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
-      ],
       "Up to 6 users": [
         "Até 6 utilizadores"
       ]
@@ -5489,17 +5474,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Parte do conteúdo do seu calendário não é suportado e não será importado."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Foram detetadas chaves duplicadas adicionais. Carregue individualmente para obter mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A chave ${ fingerprint } já foi carregada."
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
       ]
     },
     "Info": {
@@ -7673,6 +7647,17 @@
         "A sua subscrição é gerida pela Mozilla. Contacte o suporte da Mozilla."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Foram detetadas chaves duplicadas adicionais. Carregue individualmente para obter mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A chave ${ fingerprint } já foi carregada."
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Quando ativado, as sub-pastas herdam a cor da pasta principal."
@@ -8486,9 +8471,6 @@
       "Font size": [
         "Tamanho das letras"
       ],
-      "From: ${ from }": [
-        "De: ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
@@ -8875,9 +8857,6 @@
       ],
       "Time zone": [
         "Fuso horário"
-      ],
-      "To: ${ to }": [
-        "Para: ${ to }"
       ],
       "To: ${ toEmail }": [
         "Para: ${ toEmail }"
@@ -11931,15 +11910,6 @@
       "Highest VPN speed": [
         "Velocidade VPN mais elevada"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
-      ],
       "Premium early access": [
         "Acesso antecipado premium"
       ],
@@ -12448,7 +12418,7 @@
         "Utilizador atualizado"
       ],
       "Username copied to clipboard": [
-        "O nome de usuário foi copiado para a área de transferência."
+        "O nome de utilizador foi copiado para a área de transferência."
       ],
       "Value copied to clipboard": [
         "O valor foi copiado para a área de transferência."
@@ -12530,14 +12500,6 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Detalhes sobre os eventos que não puderam ser exportados"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {
@@ -13470,7 +13432,7 @@
         "Inicie sessão para aderir ao programa Beta"
       ],
       "Sign in to your organization": [
-        "Faça o login na sua organização"
+        "Iniciar sessão na sua organização"
       ],
       "Sign in with 2FA": [
         "Autenticação com 2FA"
