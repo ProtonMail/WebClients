@@ -61,6 +61,8 @@ import {
     OrganizationTwoFAEnforcementSection,
     OrganizationTwoFAHeader,
     OrganizationTwoFARemindersSection,
+    SamlAuthenticationSection,
+    useFlag,
 } from '@proton/components/containers';
 import TwoFactorSection from '@proton/components/containers/account/TwoFactorSection';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
@@ -92,7 +94,8 @@ const MainContainer = () => {
     const location = useLocation();
     const zendeskRef = useRef<ZendeskRef>();
     const [showChat, setShowChat] = useState({ autoToggle: false, render: false });
-    const routes = getRoutes(user, subscription, organization);
+    const ssoVpnSettingFeature = useFlag('SSOVpnSettings');
+    const routes = getRoutes({ user, subscription, organization, ssoVpnSettingFeature });
     const canEnableChat = useCanEnableChat(user);
     const [authenticatedBugReportMode, setAuthenticatedBugReportMode] = useState<BugModalMode>();
     const [authenticatedBugReportModal, setAuthenticatedBugReportModal, render] = useModalState();
@@ -297,6 +300,13 @@ const MainContainer = () => {
                                         <OrganizationTwoFAHeader organization={organization} />
                                         <OrganizationTwoFARemindersSection organization={organization} />
                                         <OrganizationTwoFAEnforcementSection organization={organization} />
+                                    </PrivateMainSettingsArea>
+                                </Route>
+                            )}
+                            {getIsSectionAvailable(routes.sso) && (
+                                <Route path={routes.sso.to}>
+                                    <PrivateMainSettingsArea config={routes.sso}>
+                                        <SamlAuthenticationSection />
                                     </PrivateMainSettingsArea>
                                 </Route>
                             )}
