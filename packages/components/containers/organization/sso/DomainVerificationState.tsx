@@ -38,7 +38,13 @@ const DomainVerificationState = ({ domain }: Props) => {
         },
     };
 
-    const { text, className, iconName } = domainStateMap[domain.State];
+    const domainStateProperties = domainStateMap[domain.State];
+
+    if (!domainStateProperties) {
+        return null;
+    }
+
+    const { text, className, iconName } = domainStateProperties;
 
     return (
         <>
