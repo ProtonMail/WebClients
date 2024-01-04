@@ -294,7 +294,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                 if (domainModel.ID) {
                     return next();
                 }
-                const { Domain } = await api<{ Domain: Domain }>(addDomain(domainName));
+                const { Domain } = await api<{ Domain: Domain }>(addDomain({ Name: domainName }));
                 setDomain(Domain);
                 await call();
                 next();
