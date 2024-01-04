@@ -713,11 +713,11 @@
       "Not saved": [
         "Inte sparad"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Öppna i ${ CALENDAR_APP_NAME }"
@@ -3299,14 +3299,6 @@
       "Choose a date in the future.": [
         "Välj ett datum i framtiden."
       ],
-      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
-        "Välj ett datum inom den kommande ${ EXPIRATION_TIME_MAX_DAYS } dagen.",
-        "Välj ett datum inom de kommande ${ EXPIRATION_TIME_MAX_DAYS } dagarna."
-      ],
-      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
-        "Välj ett datum inom den kommande ${ SCHEDULED_MAX_DATE_DAYS } dagen.",
-        "Välj ett datum inom de kommande ${ SCHEDULED_MAX_DATE_DAYS } dagarna."
-      ],
       "Condition incomplete": [
         "Villkor ofullständig"
       ],
@@ -4264,6 +4256,22 @@
         "stjärnmärkt"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "e-postmeddelandet skickades ${ label }"
+      ],
+      "with attachments": [
+        "med bilagor"
+      ],
+      "without attachments": [
+        "utan bilagor"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "e-postmeddelandet skickades ${ label }"
+      ]
+    },
     "Font Face Default": {
       "Default": [
         "Standard"
@@ -4838,10 +4846,6 @@
         "${ contactsLength } kontakt",
         "${ contactsLength } kontakter"
       ],
-      "${ count } unread message": [
-        "${ count } oläst meddelande",
-        "${ count } olästa meddelanden"
-      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } av ${ totalProgress }",
         "${ currentProgress } av ${ totalProgress }"
@@ -4955,9 +4959,6 @@
         "${ selectedFoldersCountLocalized } etikett vald",
         "${ selectedFoldersCountLocalized } etiketter valda"
       ],
-      "${ storage } storage": [
-        "${ storage } lagringsutrymme"
-      ],
       "${ total } conversation": [
         "${ total } konversation",
         "${ total } konversationer"
@@ -4966,25 +4967,9 @@
         "${ total } meddelande",
         "${ total } meddelanden"
       ],
-      "${ unread } unread conversation": [
-        "${ unread } oläst konversation",
-        "${ unread } olästa konversationer"
-      ],
-      "${ unread } unread message": [
-        "${ unread } oläst meddelande",
-        "${ unread } olästa meddelanden"
-      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } schemalagt meddelande",
         "${ unreadCount } schemalagda meddelanden"
-      ],
-      "${ unreadCount } unread conversation": [
-        "${ unreadCount } oläst konversation",
-        "${ unreadCount } olästa konversationer"
-      ],
-      "${ unreadCount } unread message": [
-        "${ unreadCount } oläst meddelande",
-        "${ unreadCount } olästa meddelanden"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt uppdaterades.",
@@ -5876,9 +5861,6 @@
       "The sender has requested a read receipt.": [
         "Avsändaren har begärt ett läskvitto."
       ],
-      "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "Verifieringen av ${ contactName } har misslyckats: kontakten är inte korrekt signerad.\nDetta kan vara resultatet av en lösenordsåterställning.\nDu måste signera om kontakten för att kunna skicka ett meddelande till ${ contactAddress } eller redigera kontakten."
-      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "Verifieringen av ${ contactNames } misslyckades: kontakten är inte undertecknad korrekt.\nDetta kan vara resultatet av en lösenordsåterställning.\nDu måste signera kontakten igen för att skicka ett meddelande till ${ contactAddresses } eller redigera kontakten.",
         "Verifieringen av ${ contactNames } misslyckades: kontakterna är inte undertecknade korrekt.\nDetta kan vara resultatet av en lösenordsåterställning.\nDu måste signera kontakterna igen för att skicka ett meddelande till ${ contactAddresses } eller redigera kontakterna."
@@ -5950,12 +5932,6 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Detta meddelande är signerat med den bifogade nyckeln som inte har blivit betrodd ännu."
       ],
-      "This message will be automatically deleted on ${ longDateMEssage }": [
-        "Detta meddelande kommer tas bort automatiskt den ${ longDateMEssage }"
-      ],
-      "This message will be automatically deleted on ${ shortDateMessage }": [
-        "Detta meddelande kommer tas bort automatiskt den ${ shortDateMessage }"
-      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Detta meddelande kommer att markeras som skräppost. Vill du också avsluta prenumeration på kommande e-postmeddelanden?",
         "Dessa meddelanden kommer att markeras som skräppost. Vill du också avsluta prenumeration på kommande e-postmeddelanden?"
@@ -5980,15 +5956,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Detta meddelande kommer löpa ut den ${ formattedDate }"
-      ],
-      "This message will expire on ${ longDateMEssage }": [
-        "Detta meddelande kommer löpa ut den ${ longDateMEssage }"
-      ],
-      "This message will expire today at ${ shortDateMessage }": [
-        "Detta meddelande kommer löpa ut idag kl. ${ shortDateMessage }"
-      ],
-      "This message will expire tomorrow at ${ shortDateMessage }": [
-        "Detta meddelande kommer löpa ut imorgon kl. ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Denna offentliga nyckel kommer automatiskt att användas för att kryptera e-post som skickas till denna adress."
@@ -6026,18 +5993,6 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Många meddelanden väntar på att skickas. Vänta tills ett annat meddelande har skickats för att schemalägga detta."
       ],
-      "Total email addresses": [
-        "Totalt antal e-postadresser"
-      ],
-      "Total storage": [
-        "Totalt lagringsutrymme"
-      ],
-      "Total supported domains": [
-        "Totalt antal domäner som stöds"
-      ],
-      "Total VPN connections": [
-        "Totalt antal VPN-anslutningar"
-      ],
       "Trackers blocked:": [
         "Spårare blockerade:"
       ],
@@ -6058,9 +6013,6 @@
       ],
       "Unsupported file": [
         "Fil stöds inte"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Upp till ${ FAMILY_MAX_USERS } användare"
       ],
       "Updating message content search...": [
         "Uppdaterar sökning av meddelandeinnehåll..."
@@ -6217,12 +6169,6 @@
       ],
       "You do not have any messages here": [
         "Du har inga meddelanden här"
-      ],
-      "You have ${ totalLabel } in your inbox.": [
-        "Du har ${ totalLabel } i din inkorg."
-      ],
-      "You have ${ unreadsLabel } in your inbox.": [
-        "Du har ${ unreadsLabel } i din inkorg."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Du har **${ count } konversation** lagrad i denna mapp",
@@ -7004,18 +6950,6 @@
       "System information": [
         "Systeminformation"
       ],
-      "The email was sent ${ attachment }": [
-        "E-postmeddelandet skickades ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "e-postmeddelandet skickades ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "E-postmeddelandet skickades ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "e-postmeddelandet skickades ${ label }"
-      ],
       "Theme": [
         "Tema"
       ],
@@ -7052,17 +6986,8 @@
       "With attachment": [
         "Med bilagor"
       ],
-      "with attachments": [
-        "med bilagor"
-      ],
       "Without attachment": [
         "Utan bilagor"
-      ],
-      "without attachment": [
-        "utan bilagor"
-      ],
-      "without attachments": [
-        "utan bilagor"
       ],
       "Wonderful": [
         "Underbar"
@@ -7599,9 +7524,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } kalender",
-        "${ maximumNumberOfCalendars } kalendrar"
+      "${ n } calendar": [
+        "${ n } kalender",
+        "${ n } kalendrar"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalender per användare",
+        "${ n } kalendrar per användare"
       ],
       "Auto-delete spam and trashed messages": [
         "Ta bort skräppost och kastade meddelanden automatiskt"
@@ -7615,6 +7544,9 @@
       "Custom snooze time": [
         "Anpassad tid för snooza"
       ],
+      "End-to-end encryption": [
+        "End-to-end-kryptering"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-alias"
       ],
@@ -7623,6 +7555,9 @@
       ],
       "Search message content": [
         "Sök meddelandeinnehåll"
+      ],
+      "Send & receive invitations": [
+        "Skicka och ta emot inbjudningar"
       ],
       "Unlimited folders, labels, and filters": [
         "Obegränsade mappar, etiketter och filter"
@@ -7659,6 +7594,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Feedback"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Säkra ditt schema med end-to-end-kryptering. Inkluderar stöd för anpassade kalendrar, kalenderdelning och mer."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Skapa upp till ${ n } kalender eller lägg till kalendrar från vänner, familj, kollegor och organisationer",
+        "Skapa upp till ${ n } kalendrar eller lägg till kalendrar från vänner, familj, kollegor och organisationer"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Dela enkelt dina kalendrar med din familj, vänner eller kollegor"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Håll dina planer privata för dig och din familj med en krypterad kalender"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Skapa upp till ${ n } kalender",
+        "Skapa upp till ${ n } kalendrar"
       ]
     },
     "Notification": {
@@ -7797,6 +7753,9 @@
       ],
       "All": [
         "Alla"
+      ],
+      "Automatic (${ value })": [
+        "Automatiskt (${ value })"
       ],
       "Create new group": [
         "Skapa ny grupp"
@@ -9243,8 +9202,8 @@
         "Ta bort ${ count } meddelande",
         "Ta bort ${ count } meddelanden"
       ],
-      "Delete ${ Name }": [
-        "Ta bort ${ Name }"
+      "Delete ${ value }": [
+        "Ta bort ${ value }"
       ],
       "Delete all messages": [
         "Ta bort alla meddelanden"

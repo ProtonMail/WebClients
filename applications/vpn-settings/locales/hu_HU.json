@@ -2782,9 +2782,6 @@
       "MM/YY": [
         "HH/ÉÉ"
       ],
-      "Multi-user support not enabled.": [
-        "Többfelhasználós mód nem engedélyezett."
-      ],
       "No addresses exist": [
         "Nincsenek címek"
       ],
@@ -3067,9 +3064,6 @@
       "to continue to ${ product }": [
         "alkalmazás: ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "alkalmazás: ${ toAppName }"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
       ],
@@ -3123,9 +3117,6 @@
       ],
       "Unverified email address.": [
         "Hitelesítetlen e-mail cím"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Legfeljebb ${ FAMILY_MAX_USERS } felhasználó"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Váltson nagyobb csomagra a prémium funkciókért, termékekért és tárhelyért, egy kedvezményes áron"
@@ -4038,10 +4029,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } naptár",
-        "${ maximumNumberOfCalendars } naptár"
-      ],
       "${ n } calendar": [
         "${ n } naptár",
         "${ n } naptár"
@@ -4302,12 +4289,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Korlátlan adatmennyiség és forgalom"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Akár ${ FAMILY_MAX_USERS } felhasználó"
-      ],
-      "Up to ${ n } users": [
-        "Akár ${ n } felhasználó"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Akár ${ totalStorageSize } tárhely"
@@ -4662,11 +4643,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Üdvözli a ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Üdvözli a ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Üdvözli a ${ appName }"
       ]
     },
     "Option": {
@@ -5413,14 +5391,6 @@
         "${ ipAddresses } dedikált szerver",
         "${ ipAddresses } dedikált szerver"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } nagysebességű VPN kapcsolat",
-        "${ maxVpn } nagysebességű VPN kapcsolat"
-      ],
-      "${ n } calendar": [
-        "${ n } naptár",
-        "${ n } naptár"
-      ],
       "${ n } calendar per user": [
         "${ n } naptár felhasználónként",
         "${ n } naptár felhasználónként"
@@ -5874,9 +5844,6 @@
       "Delete": [
         "Törlés"
       ],
-      "Delete ${ email }": [
-        "${ email } törlése"
-      ],
       "Delete account": [
         "Fiók törlése"
       ],
@@ -6121,14 +6088,6 @@
       ],
       "Subscription": [
         "Előfizetés"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "${ localSuccessfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva",
-        "${ localSuccessfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "${ successfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva",
-        "${ successfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva"
       ],
       "Summary": [
         "Összegzés"

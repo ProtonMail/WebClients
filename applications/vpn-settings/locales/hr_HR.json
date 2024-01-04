@@ -2166,9 +2166,6 @@
       "MM/YY": [
         "MM/GG"
       ],
-      "Multi-user support not enabled.": [
-        "Višekorisnička podrška nije omogućena."
-      ],
       "No addresses exist": [
         "Ne postoji ni jedna adresa e-pošte"
       ],
@@ -2305,9 +2302,6 @@
       ],
       "to continue to ${ product }": [
         "za nastavak u ${ product }"
-      ],
-      "to continue to ${ toAppName }": [
-        "za nastavak u ${ toAppName }"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
@@ -3103,11 +3097,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Dobrodošli u ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Dobrodošli u ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Dobrodošli u ${ appName }"
       ]
     },
     "Option": {
@@ -3549,11 +3540,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ n } calendar": [
-        "${ n } kalendar",
-        "${ n } kalendara",
-        "${ n } kalendara"
-      ],
       "${ n } calendar per user": [
         "${ n } kalendar po korisniku",
         "${ n } kalendara po korisniku",
@@ -3884,9 +3870,6 @@
       ],
       "Delete": [
         "Izbriši"
-      ],
-      "Delete ${ email }": [
-        "Izbriši ${ email }"
       ],
       "Delete account": [
         "Ukloni račun"

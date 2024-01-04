@@ -7460,9 +7460,6 @@
       "to continue to ${ product }": [
         "pentru a continua cu ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "pentru a continua cu ${ toAppName }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Pentru a îmbunătăți continuu serviciile noastre, uneori colectăm date pentru a monitoriza buna funcționare a aplicațiilor noastre. Aceste informații nu sunt partajate cu niciun serviciu terț."
       ],
@@ -7561,9 +7558,6 @@
       ],
       "Unverified email address.": [
         "Adresă de e-mail neverificată."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Până la ${ FAMILY_MAX_USERS } utilizatori"
       ],
       "Update recovery file": [
         "Actualizare fișier de recuperare"
@@ -9209,18 +9203,6 @@
       "System information": [
         "Informații sistem"
       ],
-      "The email was sent ${ attachment }": [
-        "Mesajul a fost trimis ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "mesajul a fost trimis ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Mesajul a fost trimis ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "mesajul a fost trimis ${ label }"
-      ],
       "Then": [
         "Atunci"
       ],
@@ -9293,17 +9275,8 @@
       "With attachment": [
         "Cu atașamente"
       ],
-      "with attachments": [
-        "cu atașamente"
-      ],
       "Without attachment": [
         "Fără atașamente"
-      ],
-      "without attachment": [
-        "fără atașamente"
-      ],
-      "without attachments": [
-        "fără atașamente"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Da, vreau să șterg definitiv acest cont și toate datele sale."
@@ -9388,17 +9361,8 @@
       "${ BRAND_NAME } welcome emails": [
         "Mesaje de bun venit ${ BRAND_NAME }"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "Actualizări ale produsului ${ DRIVE_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "Funcții noi ${ MAIL_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "Actualizări ale produsului ${ PASS_APP_NAME }"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "Actualizări ale produsului ${ VPN_APP_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -10040,14 +10004,8 @@
       "Get ${ BRAND_NAME } for free": [
         "Luați ${ BRAND_NAME } gratuit"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "Luați ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "Luați ${ planName }"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "Luați ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "Am înțeles"
@@ -10066,11 +10024,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } calendar",
-        "${ maximumNumberOfCalendars } calendare",
-        "${ maximumNumberOfCalendars } de calendare"
-      ],
       "${ n } calendar": [
         "${ n } calendar",
         "${ n } calendare",
@@ -10412,12 +10365,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Lățime de bandă și volum nelimitate"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Până la ${ FAMILY_MAX_USERS } utilizatori"
-      ],
-      "Up to ${ n } users": [
-        "Până la ${ n } utilizatori"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Până la ${ totalStorageSize } spațiu"
@@ -11054,11 +11001,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Bun venit la ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Bun venit la ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Bun venit la ${ appName }"
       ]
     },
     "Option": {
@@ -11166,12 +11110,6 @@
       ],
       "Auto": [
         "Automat"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automat (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "Automat (${ defaultFormat })"
       ],
       "Country configs": [
         "Configurări țară"
@@ -12779,16 +12717,6 @@
         "${ ipAddresses } servere dedicate",
         "${ ipAddresses } de servere dedicate"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "o conexiune VPN de mare viteză",
-        "${ maxVpn } conexiuni VPN de mare viteză",
-        "${ maxVpn } de conexiuni VPN de mare viteză"
-      ],
-      "${ n } calendar": [
-        "Un calendar",
-        "${ n } calendare",
-        "${ n } de calendare"
-      ],
       "${ n } calendar per user": [
         "Un calendar per utilizator",
         "${ n } calendare per utilizator",
@@ -13639,15 +13567,6 @@
       "Decrypt key": [
         "Cheie decriptare"
       ],
-      "Delete ${ domain.DomainName }": [
-        "Ștergere ${ domain.DomainName }"
-      ],
-      "Delete ${ email }": [
-        "Ștergere ${ email }"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "Ștergere ${ tokenNameToRemove }?"
-      ],
       "Delete account": [
         "Ștergere cont"
       ],
@@ -14181,16 +14100,6 @@
       ],
       "Success": [
         "Operație reușită"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "S-a reușit crearea unui cont de utilizator",
-        "S-a reușit crearea a ${ localSuccessfullyCreatedUsers.length } conturi de utilizator",
-        "S-a reușit crearea a ${ localSuccessfullyCreatedUsers.length } de conturi de utilizator"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "S-a reușit crearea unui cont",
-        "S-a reușit crearea a ${ successfullyCreatedUsers.length } conturi",
-        "S-a reușit crearea a ${ successfullyCreatedUsers.length } de conturi"
       ],
       "Summary": [
         "Sumar"

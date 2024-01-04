@@ -679,14 +679,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" update is afgewezen"
       ],
-      "${ count } item": [
-        "${ count } item",
-        "${ count } items"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } item",
-        "${ itemCount } items"
-      ],
       "${ memberCount } member": [
         "${ memberCount } lid",
         "${ memberCount } leden"
@@ -709,14 +701,6 @@
       "${ revisionNumber } time": [
         "${ revisionNumber } keer",
         "${ revisionNumber } keer"
-      ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } item",
-        "${ totalImportedItems } items"
-      ],
-      "${ totalItems } item": [
-        "${ totalItems } item",
-        "${ totalItems } items"
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag over",
@@ -1008,9 +992,6 @@
       ],
       "Sign in or create an account to continue.": [
         "Log in of maak een account aan om verder te gaan."
-      ],
-      "Sign in to your account": [
-        "Inloggen bij uw account"
       ],
       "Signing you in": [
         "U wordt ingelogd"
@@ -1538,6 +1519,11 @@
         "U staat op het punt volgende aan te maken"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Welkom bij ${ appName }"
+      ]
+    },
     "Option": {
       "Commas": [
         "Komma's"
@@ -1759,9 +1745,6 @@
       "Trash empty": [
         "Prullenbak leeg"
       ],
-      "Unlock ${ brandNameJSX }": [
-        "Ontgrendel ${ brandNameJSX }"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Ontgrendel ${ PASS_APP_NAME }"
       ],
@@ -1773,12 +1756,6 @@
       ],
       "Vault shared with you": [
         "Kluis gedeeld met u"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Welkom bij ${ brandNameJSX }"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Welkom bij ${ PASS_APP_NAME }"
       ],
       "Welcome to your new password manager!": [
         "Welkom bij uw nieuwe wachtwoordbeheerder!"

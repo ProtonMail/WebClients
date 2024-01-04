@@ -545,14 +545,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "A atualização do \"${ payload.item.data.metadata.name }\" foi descartada."
       ],
-      "${ count } item": [
-        "${ count } item",
-        "${ count } itens"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } item",
-        "${ itemCount } itens"
-      ],
       "${ memberCount } member": [
         "${ memberCount } membro",
         "${ memberCount } membros"
@@ -560,14 +552,6 @@
       "${ revisionNumber } time": [
         "${ revisionNumber } vez.",
         "${ revisionNumber } vezes."
-      ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } item",
-        "${ totalImportedItems } itens"
-      ],
-      "${ totalItems } item": [
-        "${ totalItems } item",
-        "${ totalItems } itens"
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dia restante",
@@ -757,9 +741,6 @@
       ],
       "Sign in or create an account to continue.": [
         "Inicie sessão ou crie uma conta para continuar."
-      ],
-      "Sign in to your account": [
-        "Iniciar sessão na sua conta"
       ],
       "Signing you in": [
         "A iniciar sessão"
@@ -1222,6 +1203,11 @@
         "Está prestes a criar"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Boas-vindas ao ${ appName }"
+      ]
+    },
     "Option": {
       "Commas": [
         "Vírgulas"
@@ -1410,9 +1396,6 @@
       "Trash empty": [
         "O lixo está vazio."
       ],
-      "Unlock ${ brandNameJSX }": [
-        "Desbloquear ${ brandNameJSX }"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Desbloquear ${ PASS_APP_NAME }"
       ],
@@ -1421,12 +1404,6 @@
       ],
       "Vault shared with you": [
         "Cofre partilhado consigo"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Boas-vindas ao ${ brandNameJSX }"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Boas-vindas ao ${ PASS_APP_NAME }"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "Por que escolher o ${ PASS_APP_NAME }?"

@@ -7415,9 +7415,6 @@
       "to continue to ${ product }": [
         "para continuar para ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "para continuar para ${ toAppName }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Para melhorar continuamente nossos serviços, às vezes coletamos dados para monitorar o funcionamento adequado de nossos aplicativos. Essas informações não são compartilhadas com nenhum serviço de terceiros."
       ],
@@ -7516,9 +7513,6 @@
       ],
       "Unverified email address.": [
         "Endereço de e-mail não verificado."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Até ${ FAMILY_MAX_USERS } usuários"
       ],
       "Update recovery file": [
         "Atualizar o arquivo de recuperação"
@@ -9163,18 +9157,6 @@
       "System information": [
         "Informações do sistema"
       ],
-      "The email was sent ${ attachment }": [
-        "O e-mail foi enviado ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "o e-mail foi enviado ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "O e-mail foi enviado ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "o e-mail foi enviado ${ label }"
-      ],
       "Then": [
         "Então"
       ],
@@ -9244,17 +9226,8 @@
       "With attachment": [
         "Com anexo"
       ],
-      "with attachments": [
-        "com anexos"
-      ],
       "Without attachment": [
         "Sem anexo"
-      ],
-      "without attachment": [
-        "sem anexo"
-      ],
-      "without attachments": [
-        "sem anexos"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sim, eu quero excluir permanentemente esta conta e todos os seus dados."
@@ -9339,17 +9312,8 @@
       "${ BRAND_NAME } welcome emails": [
         "E-mails de boas-vindas da ${ BRAND_NAME }"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "Atualizações de produto da ${ DRIVE_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "Novos recursos da ${ MAIL_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "Atualizações de produto da ${ PASS_APP_NAME }"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "Atualizações de produto da ${ VPN_APP_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -9991,14 +9955,8 @@
       "Get ${ BRAND_NAME } for free": [
         "Obter ${ BRAND_NAME } gratuitamente"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "Obtenha o ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "Obter o ${ planName }"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "Obter o ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "Entendi"
@@ -10017,10 +9975,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } calendário",
-        "${ maximumNumberOfCalendars } calendários"
-      ],
       "${ n } calendar": [
         "${ n } calendário",
         "${ n } calendários"
@@ -10344,12 +10298,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Volume/largura de banda ilimitados"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Até ${ FAMILY_MAX_USERS } usuários"
-      ],
-      "Up to ${ n } users": [
-        "Até ${ n } usuários"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Até ${ totalStorageSize } de armazenamento"
@@ -10977,11 +10925,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Bem-vindo ao ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Boas-vindas ao ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Bem-vindo ao ${ appName }"
       ]
     },
     "Option": {
@@ -11086,12 +11031,6 @@
       ],
       "Auto": [
         "Automático"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automático (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "Automático (${ defaultFormat })"
       ],
       "Country configs": [
         "Configurações do país"
@@ -12664,14 +12603,6 @@
         "${ ipAddresses } servidor dedicado",
         "${ ipAddresses } servidores dedicados"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } conexão VPN de alta velocidade",
-        "${ maxVpn } conexões VPN de alta velocidade"
-      ],
-      "${ n } calendar": [
-        "${ n } calendário",
-        "${ n } calendarios"
-      ],
       "${ n } calendar per user": [
         "${ n } calendário por usuario",
         "${ n } calendarios por usuario"
@@ -13504,15 +13435,6 @@
       "Decrypt key": [
         "Descriptografar chave"
       ],
-      "Delete ${ domain.DomainName }": [
-        "Excluir ${ domain.DomainName }"
-      ],
-      "Delete ${ email }": [
-        "Excluir ${ email }"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "Excluir ${ tokenNameToRemove }?"
-      ],
       "Delete account": [
         "Excluir conta"
       ],
@@ -14043,14 +13965,6 @@
       ],
       "Success": [
         "Sucesso"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "${ localSuccessfullyCreatedUsers.length } conta de usuário criada",
-        "${ localSuccessfullyCreatedUsers.length } contas de usuário criadas"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "Conta de usuário ${ successfullyCreatedUsers.length } criada",
-        "Contas de usuário ${ successfullyCreatedUsers.length } criadas"
       ],
       "Summary": [
         "Resumo"

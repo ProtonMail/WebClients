@@ -716,14 +716,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" güncellemesi yok sayıldı"
       ],
-      "${ count } item": [
-        "${ count } öge",
-        "${ count } öge"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } öge",
-        "${ itemCount } öge"
-      ],
       "${ memberCount } member": [
         "${ memberCount } üye",
         "${ memberCount } üye"
@@ -746,14 +738,6 @@
       "${ revisionNumber } time": [
         "${ revisionNumber } kez",
         "${ revisionNumber } kez"
-      ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } öge",
-        "${ totalImportedItems } öge"
-      ],
-      "${ totalItems } item": [
-        "${ totalItems } öge",
-        "${ totalItems } öge"
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } gün kaldı",
@@ -1069,9 +1053,6 @@
       ],
       "Sign in or create an account to continue.": [
         "İlerlemek için oturum ya da hesap açın."
-      ],
-      "Sign in to your account": [
-        "Hesabınızda oturum açın"
       ],
       "Signing you in": [
         "Oturumunuz açılıyor"
@@ -1614,6 +1595,11 @@
         "Şunu oluşturmak üzeresiniz"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "${ appName } hoş geldiniz"
+      ]
+    },
     "Option": {
       "Commas": [
         "Virgül"
@@ -1838,9 +1824,6 @@
       "Trash empty": [
         "Çöp kutusu boş"
       ],
-      "Unlock ${ brandNameJSX }": [
-        "${ brandNameJSX } kilidini aç"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } kilidini aç"
       ],
@@ -1855,12 +1838,6 @@
       ],
       "Vault shared with you": [
         "Sizinle bir kasa paylaşıldı"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "${ brandNameJSX } uygulamasına hoş geldiniz"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } uygulamasına hoş geldiniz"
       ],
       "Welcome to your new password manager!": [
         "Yeni parola yöneticinize hoş geldiniz!"

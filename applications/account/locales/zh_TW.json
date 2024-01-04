@@ -7186,9 +7186,6 @@
       "to continue to ${ product }": [
         "繼續使用 ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "繼續使用 ${ toAppName }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "為持續精進我們的服務品質，我們有時會蒐集一些資料用以監控應用程式的功能是否正常。此類資訊不會與第三方服務共享。"
       ],
@@ -7287,9 +7284,6 @@
       ],
       "Unverified email address.": [
         "未經驗證的電子郵件位址。"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "多達 ${ FAMILY_MAX_USERS } 位使用者"
       ],
       "Update recovery file": [
         "更新帳號救援檔案"
@@ -8893,18 +8887,6 @@
       "System information": [
         "系統資訊"
       ],
-      "The email was sent ${ attachment }": [
-        "電郵${ attachment }送出"
-      ],
-      "the email was sent ${ attachment }": [
-        "電郵${ attachment }送出"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "電郵${ attachmentStrong }送出"
-      ],
-      "the email was sent ${ label }": [
-        "電郵${ label }送出"
-      ],
       "Then": [
         "則"
       ],
@@ -8974,16 +8956,7 @@
       "With attachment": [
         "連同附件"
       ],
-      "with attachments": [
-        "連同附件"
-      ],
       "Without attachment": [
-        "不帶附件"
-      ],
-      "without attachment": [
-        "不帶附件"
-      ],
-      "without attachments": [
         "不帶附件"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
@@ -9065,15 +9038,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } 歡迎電子郵件"
-      ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "${ DRIVE_APP_NAME } 產品更新"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "${ PASS_APP_NAME } 產品更新"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "${ VPN_APP_NAME } 產品更新"
       ]
     },
     "Label in domain modal": {
@@ -9697,14 +9661,8 @@
       "Get ${ BRAND_NAME } for free": [
         "取得免費的 ${ BRAND_NAME }"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "取得 ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "取得 ${ planName }"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "取得 ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "了解"
@@ -9723,9 +9681,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendars": [
-        "${ maximumNumberOfCalendars } 個行事曆"
-      ],
       "${ n } calendars": [
         "${ n } 個行事曆"
       ],
@@ -10031,12 +9986,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "無限流量/頻寬"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "多達 ${ FAMILY_MAX_USERS } 位使用者"
-      ],
-      "Up to ${ n } users": [
-        "多達 ${ n } 位使用者"
       ],
       "Up to ${ totalStorageSize } storage": [
         "最多至 ${ totalStorageSize } 儲存空間"
@@ -10655,11 +10604,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "歡迎使用 ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "歡迎使用 ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "歡迎來到 ${ appName }"
       ]
     },
     "Option": {
@@ -10764,12 +10710,6 @@
       ],
       "Auto": [
         "自動"
-      ],
-      "Automatic (${ defaultDay })": [
-        "自動 (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "自動 (${ defaultFormat })"
       ],
       "Country configs": [
         "國家組態設定"
@@ -12251,12 +12191,6 @@
       "${ ipAddresses } dedicated servers": [
         "${ ipAddresses } 專用伺服器"
       ],
-      "${ maxVpn } high-speed VPN connections": [
-        "${ maxVpn } 個極飆速 VPN 連線"
-      ],
-      "${ n } calendars": [
-        "${ n } 個行事曆"
-      ],
       "${ n } calendars per user": [
         "${ n } 個行事曆分配給每位使用者"
       ],
@@ -13071,15 +13005,6 @@
       "Decrypt key": [
         "解密金鑰"
       ],
-      "Delete ${ domain.DomainName }": [
-        "刪除 ${ domain.DomainName }"
-      ],
-      "Delete ${ email }": [
-        "刪除 ${ email }"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "刪除 ${ tokenNameToRemove }？"
-      ],
       "Delete account": [
         "刪除帳號"
       ],
@@ -13604,12 +13529,6 @@
       ],
       "Success": [
         "成功"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user accounts": [
-        "已成功創建 ${ localSuccessfullyCreatedUsers.length } 個使用者帳號"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user accounts": [
-        "成功創建 ${ successfullyCreatedUsers.length } 使用者帳號"
       ],
       "Summary": [
         "總結"

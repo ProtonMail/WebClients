@@ -3447,9 +3447,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storage } storage": [
-        "${ storage } úložiště"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt úspěšně aktualizován.",
         "${ updated } kontakty úspěšně aktualizovány.",
@@ -4329,18 +4326,6 @@
       "Today": [
         "Dnes"
       ],
-      "Total email addresses": [
-        "Celkem e-mailových adres"
-      ],
-      "Total storage": [
-        "Celkem prostoru"
-      ],
-      "Total supported domains": [
-        "Celkem vlastních domén"
-      ],
-      "Total VPN connections": [
-        "Celkem VPN připojení"
-      ],
       "Transfer canceled for file \"${ name }\"": [
         "Přenos zrušen pro soubor \"${ name }\""
       ],
@@ -4385,9 +4370,6 @@
       ],
       "Unsupported file": [
         "Nepodporovaný soubor"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Až ${ FAMILY_MAX_USERS } uživatelů"
       ],
       "Updating drive search...": [
         "Aktulizace vyhledání na disku..."
@@ -5273,11 +5255,17 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } kalendář",
-        "${ maximumNumberOfCalendars } kalendáře",
-        "${ maximumNumberOfCalendars } kalendářů",
-        "${ maximumNumberOfCalendars } kalendářů"
+      "${ n } calendar": [
+        "${ n } kalendář",
+        "${ n } kalendáře",
+        "${ n } kalendářů",
+        "${ n } kalendářů"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalendář na uživatele",
+        "${ n } kalendáře na uživatele",
+        "${ n } kalendářů na uživatele",
+        "${ n } kalendářů na uživatele"
       ],
       "Auto-delete spam and trashed messages": [
         "Automaticky mazat zprávy ve spamu a koši"
@@ -5291,6 +5279,9 @@
       "Custom snooze time": [
         "Vlastní čas odložení"
       ],
+      "End-to-end encryption": [
+        "Koncové šifrování"
+      ],
       "Hide-my-email aliases": [
         "Aliasy Hide-my-email"
       ],
@@ -5299,6 +5290,9 @@
       ],
       "Search message content": [
         "Hledat v obsahu zpráv"
+      ],
+      "Send & receive invitations": [
+        "Odesílání a přijímání pozvánek"
       ],
       "Unlimited folders, labels, and filters": [
         "Neomezený počet složek, štítků a filtrů"
@@ -5335,6 +5329,31 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Zpětná vazba"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Zabezpečte svůj tarif pomocí koncového šifrování. Obsahuje podporu vlastních kalendářů, sdílení kalendáře a další funkce."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Vytvořte až ${ n } kalendář nebo přidejte kalendáře přátel, rodiny, kolegů a organizací",
+        "Vytvořte až ${ n } kalendáře nebo přidejte kalendáře přátel, rodiny, kolegů a organizací",
+        "Vytvořte až ${ n } kalendářů nebo přidejte kalendáře přátel, rodiny, kolegů a organizací",
+        "Vytvořte až ${ n } kalendářů nebo přidejte kalendáře přátel, rodiny, kolegů a organizací"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Snadno sdílejte své kalendáře s rodinou, přáteli nebo kolegy"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Pomocí šifrovaného kalendáře uchovejte své plány v soukromí pouze pro sebe a svou rodinu"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Vytvořte až ${ n } kalendář",
+        "Vytvořte až ${ n } kalendáře",
+        "Vytvořte až ${ n } kalendářů",
+        "Vytvořte až ${ n } kalendářů"
       ]
     },
     "Notification": {
@@ -5500,42 +5519,6 @@
       "Link copied to clipboard": [
         "Odkaz zkopírován do schránky"
       ],
-      "Move ${ itemsToMoveCount } file": [
-        "Přesunout ${ itemsToMoveCount } soubor",
-        "Přesunout ${ itemsToMoveCount } soubory",
-        "Přesunout ${ itemsToMoveCount } souborů",
-        "Přesunout ${ itemsToMoveCount } souborů"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Přesunout ${ itemsToMoveCount } složku",
-        "Přesunout ${ itemsToMoveCount } složky",
-        "Přesunout ${ itemsToMoveCount } složek",
-        "Přesunout ${ itemsToMoveCount } složek"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "Přesunout ${ itemsToMoveCount } položku",
-        "Přesunout ${ itemsToMoveCount } položky",
-        "Přesunout ${ itemsToMoveCount } položek",
-        "Přesunout ${ itemsToMoveCount } položek"
-      ],
-      "Move ${ movingCount } file": [
-        "Přesunout ${ movingCount } soubor",
-        "Přesunout ${ movingCount } soubory",
-        "Přesunout ${ movingCount } souborů",
-        "Přesunout ${ movingCount } souborů"
-      ],
-      "Move ${ movingCount } folder": [
-        "Přesunout ${ movingCount } složku",
-        "Přesunout ${ movingCount } složky",
-        "Přesunout ${ movingCount } složek",
-        "Přesunout ${ movingCount } složek"
-      ],
-      "Move ${ movingCount } item": [
-        "Přesunout ${ movingCount } položku",
-        "Přesunout ${ movingCount } položky",
-        "Přesunout ${ movingCount } položek",
-        "Přesunout ${ movingCount } položek"
-      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Není dostatek místa pro nahrání ${ formattedTotal }"
       ],
@@ -5583,6 +5566,11 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "Vyberte, k čemu může ${ BRAND_NAME } přistupovat: zobrazit e-mailové zprávy a nastavení, zobrazit a stáhnout kontakty, zobrazit a stáhnout všechny denní události, ke kterým máte přístup z kalendáře Google."
+      ]
+    },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Vítejte v ${ appName }"
       ]
     },
     "Onboarding Action": {
@@ -5637,9 +5625,6 @@
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "Vítejte v ${ DRIVE_APP_NAME }"
-      ],
       "Your welcome bonus": [
         "Váš uvítací bonus"
       ]
@@ -6614,9 +6599,6 @@
         "Smazat ${ count } skupiny kontaktů",
         "Smazat ${ count } skupin kontaktů",
         "Smazat ${ count } skupin kontaktů"
-      ],
-      "Delete ${ Name }": [
-        "Odstranit ${ Name }"
       ],
       "Delete permanently": [
         "Trvale smazat"

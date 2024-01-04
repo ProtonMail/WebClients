@@ -709,12 +709,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Pembaruan \"${ payload.item.data.metadata.name }\" telah diabaikan"
       ],
-      "${ count } items": [
-        "${ count } item"
-      ],
-      "${ itemCount } items": [
-        "${ itemCount } item"
-      ],
       "${ memberCount } members": [
         "${ memberCount } anggota"
       ],
@@ -735,12 +729,6 @@
       ],
       "${ revisionNumber } times": [
         "${ revisionNumber } kali"
-      ],
-      "${ totalImportedItems } items": [
-        "${ totalImportedItems } item"
-      ],
-      "${ totalItems } items": [
-        "${ totalItems } item"
       ],
       "${ trialDaysLeft } days left": [
         "${ trialDaysLeft } hari tersisa"
@@ -1053,9 +1041,6 @@
       ],
       "Sign in or create an account to continue.": [
         "Silakan masuk atau buat akun untuk melanjutkan."
-      ],
-      "Sign in to your account": [
-        "Masuk ke akun Anda"
       ],
       "Signing you in": [
         "Memasukkan Anda ke akun"
@@ -1594,6 +1579,11 @@
         "Anda akan membuat"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Selamat datang di ${ appName }"
+      ]
+    },
     "Option": {
       "Commas": [
         "Koma"
@@ -1817,9 +1807,6 @@
       "Trash empty": [
         "Sampah kosong"
       ],
-      "Unlock ${ brandNameJSX }": [
-        "Buka kunci ${ brandNameJSX }"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Buka kunci ${ PASS_APP_NAME }"
       ],
@@ -1834,12 +1821,6 @@
       ],
       "Vault shared with you": [
         "Brankas yang dibagikan dengan Anda"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Selamat datang di ${ brandNameJSX }"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Selamat datang di ${ PASS_APP_NAME }"
       ],
       "Welcome to your new password manager!": [
         "Selamat datang di pengelola kata sandi Anda yang baru!"

@@ -3329,9 +3329,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storage } storage": [
-        "${ storage } lagerplads"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt blev opdateret.",
         "${ updated } kontakter blev opdateret."
@@ -4187,18 +4184,6 @@
       "Today": [
         "I dag"
       ],
-      "Total email addresses": [
-        "Samlet antal e-mailadresser"
-      ],
-      "Total storage": [
-        "Lagerplads i alt"
-      ],
-      "Total supported domains": [
-        "Samlet antal understøttede domæner"
-      ],
-      "Total VPN connections": [
-        "Samlet antal VPN-forbindelser"
-      ],
       "Transfer canceled for file \"${ name }\"": [
         "Overførsel annulleret for fil \"${ name }\""
       ],
@@ -4240,9 +4225,6 @@
       ],
       "Unsupported file": [
         "Ikke-understøttet fil"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Op til ${ FAMILY_MAX_USERS } brugere"
       ],
       "Updating drive search...": [
         "Opdaterer drevsøgning..."
@@ -5093,9 +5075,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } kalender",
-        "${ maximumNumberOfCalendars } kalendere"
+      "${ n } calendar": [
+        "${ n } kalender",
+        "${ n } kalendere"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalender pr. bruger",
+        "${ n } kalendere pr. bruger"
       ],
       "Auto-delete spam and trashed messages": [
         "Slet automatisk spam og beskeder i papirkurven"
@@ -5109,6 +5095,9 @@
       "Custom snooze time": [
         "Brugerdefineret udsættelsestid"
       ],
+      "End-to-end encryption": [
+        "End-to-end kryptering"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliasser"
       ],
@@ -5117,6 +5106,9 @@
       ],
       "Search message content": [
         "Søg i beskedindhold"
+      ],
+      "Send & receive invitations": [
+        "Send og modtag invitationer"
       ],
       "Unlimited folders, labels, and filters": [
         "Ubegrænsede mapper, etiketter og filtre"
@@ -5153,6 +5145,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Feedback"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Beskyt din planlægning med end-to-end kryptering. Inkluderer understøttelse af brugerdefinerede kalendere, kalenderdeling og mere."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Opret op til ${ n } kalender eller tilføj kalendere fra venner, familie, kollegaer og organisationer",
+        "Opret op til ${ n } kalendere eller tilføj kalendere fra venner, familie, kollegaer og organisationer"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Del nemt dine kalendere med din familie, venner eller kolleger"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Hold dine planer private for dig og din familie med en krypteret kalender"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Opret op til ${ n } kalender",
+        "Opret op til ${ n } kalendere"
       ]
     },
     "Notification": {
@@ -5294,30 +5307,6 @@
       "Link copied to clipboard": [
         "Link kopieret til udklipsholder"
       ],
-      "Move ${ itemsToMoveCount } file": [
-        "Flyt ${ itemsToMoveCount } fil",
-        "Flyt ${ itemsToMoveCount } filer"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Flyt ${ itemsToMoveCount } mappe",
-        "Flyt ${ itemsToMoveCount } mapper"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "Flyt ${ itemsToMoveCount } element",
-        "Flyt ${ itemsToMoveCount } elementer"
-      ],
-      "Move ${ movingCount } file": [
-        "Flyt ${ movingCount } fil",
-        "Flyt ${ movingCount } filer"
-      ],
-      "Move ${ movingCount } folder": [
-        "Flyt ${ movingCount } mappe",
-        "Flyt ${ movingCount } mapper"
-      ],
-      "Move ${ movingCount } item": [
-        "Flyt ${ movingCount } element",
-        "Flyt ${ movingCount } elementer"
-      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Ikke nok plads til at uploade ${ formattedTotal }"
       ],
@@ -5365,6 +5354,11 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "Vælg, hvad ${ BRAND_NAME } kan få adgang til: se dine e-mailbeskeder og indstillinger, se og downloade dine kontakter, se og downloade alle kalendere, du har adgang til fra Google Kalender."
+      ]
+    },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Velkommen til ${ appName }"
       ]
     },
     "Onboarding Action": {
@@ -5417,9 +5411,6 @@
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "Velkommen til ${ DRIVE_APP_NAME }"
-      ],
       "Your welcome bonus": [
         "Din velkomstbonus"
       ]
@@ -6320,9 +6311,6 @@
       "Delete ${ count } contact group": [
         "Slet ${ count } kontaktgruppe",
         "Slet ${ count } kontaktgrupper"
-      ],
-      "Delete ${ Name }": [
-        "Slet ${ Name }"
       ],
       "Delete permanently": [
         "Slet permanent"

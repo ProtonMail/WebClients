@@ -710,14 +710,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Die Aktualisierung von \"${ payload.item.data.metadata.name }\" wurde verworfen."
       ],
-      "${ count } item": [
-        "${ count } Eintrag",
-        "${ count } Einträge"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } Eintrag",
-        "${ itemCount } Einträge"
-      ],
       "${ memberCount } member": [
         "${ memberCount } Mitglied",
         "${ memberCount } Mitglieder"
@@ -740,14 +732,6 @@
       "${ revisionNumber } time": [
         "${ revisionNumber } Mal",
         "${ revisionNumber } Mal"
-      ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } Eintrag",
-        "${ totalImportedItems } Einträge"
-      ],
-      "${ totalItems } item": [
-        "${ totalItems } Eintrag",
-        "${ totalItems } Einträge"
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } verbleibender Tag",
@@ -1060,9 +1044,6 @@
       ],
       "Sign in or create an account to continue.": [
         "Melde dich an oder erstelle ein Konto, um fortzufahren."
-      ],
-      "Sign in to your account": [
-        "Mit deinem Konto anmelden"
       ],
       "Signing you in": [
         "Du wirst angemeldet"
@@ -1605,6 +1586,11 @@
         "Folgender Alias wird erstellt:"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Willkommen bei ${ appName }"
+      ]
+    },
     "Option": {
       "Commas": [
         "Kommas"
@@ -1829,9 +1815,6 @@
       "Trash empty": [
         "Papierkorb leer"
       ],
-      "Unlock ${ brandNameJSX }": [
-        "${ brandNameJSX } entsperren"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } entsperren"
       ],
@@ -1846,12 +1829,6 @@
       ],
       "Vault shared with you": [
         "Mit dir geteilter Tresor"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Willkommen bei ${ brandNameJSX }"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Willkommen bei ${ PASS_APP_NAME }"
       ],
       "Welcome to your new password manager!": [
         "Willkommen bei deinem neuen Passwort-Manager!"

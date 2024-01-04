@@ -3301,9 +3301,6 @@
       "MM/YY": [
         "MM/RR"
       ],
-      "Multi-user support not enabled.": [
-        "Podpora více uživatelů není povolena."
-      ],
       "Must be between 3 and 20 characters long.": [
         "Musí obsahovat 3 až 20 znaků."
       ],
@@ -3685,9 +3682,6 @@
       "to continue to ${ product }": [
         "pro pokračování na ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "pokračovat do ${ toAppName }"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
       ],
@@ -3747,9 +3741,6 @@
       ],
       "Unverified email address.": [
         "Neověřená e-mailová adresa."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Až ${ FAMILY_MAX_USERS } uživatelů"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
@@ -4554,17 +4545,8 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } uvítací e-maily"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "Aktualizace produktu ${ DRIVE_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "Nové funkce ${ MAIL_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "Aktualizace produktu ${ PASS_APP_NAME }"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "Aktualizace produktu ${ VPN_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -4825,12 +4807,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } kalendář",
-        "${ maximumNumberOfCalendars } kalendáře",
-        "${ maximumNumberOfCalendars } kalendářů",
-        "${ maximumNumberOfCalendars } kalendářů"
-      ],
       "${ n } calendar": [
         "${ n } kalendář",
         "${ n } kalendáře",
@@ -5190,12 +5166,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Neomezený objem/šířka pásma"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Až ${ FAMILY_MAX_USERS } uživatelů"
-      ],
-      "Up to ${ n } users": [
-        "Až ${ n } uživatelů"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Až ${ totalStorageSize } úložného prostoru"
@@ -5671,11 +5641,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Vítejte v ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Vítejte v ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Vítejte v ${ appName }"
       ]
     },
     "Option": {
@@ -6687,18 +6654,6 @@
         "${ ipAddresses } dedikovaných serverů",
         "${ ipAddresses } dedikovaných serverů"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } vysokorychlostní připojení VPN",
-        "${ maxVpn } vysokorychlostní připojení VPN",
-        "${ maxVpn } vysokorychlostních připojení VPN",
-        "${ maxVpn } vysokorychlostních připojení VPN"
-      ],
-      "${ n } calendar": [
-        "${ n } kalendář",
-        "${ n } kalendáře",
-        "${ n } kalendářů",
-        "${ n } kalendářů"
-      ],
       "${ n } calendar per user": [
         "${ n } kalendář na uživatele",
         "${ n } kalendáře na uživatele",
@@ -7248,9 +7203,6 @@
       "Delete": [
         "Smazat"
       ],
-      "Delete ${ email }": [
-        "Odstranit ${ email }"
-      ],
       "Delete account": [
         "Smazat účet"
       ],
@@ -7526,18 +7478,6 @@
       ],
       "Subscription": [
         "Předplatné"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "Úspěšně vytvořen ${ localSuccessfullyCreatedUsers.length } uživatelský účet",
-        "Úspěšně vytvořeny ${ localSuccessfullyCreatedUsers.length } uživatelské účty",
-        "Úspěšně vytvořeno ${ localSuccessfullyCreatedUsers.length } uživatelských účtů",
-        "Úspěšně vytvořeno ${ localSuccessfullyCreatedUsers.length } uživatelských účtů"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "Úspěšně vytvořen ${ successfullyCreatedUsers.length } uživatelský účet",
-        "Úspěšně vytvořeny ${ successfullyCreatedUsers.length } uživatelské účty",
-        "Úspěšně vytvořeno ${ successfullyCreatedUsers.length } uživatelských účtů",
-        "Úspěšně vytvořeno ${ successfullyCreatedUsers.length } uživatelských účtů"
       ],
       "Summary": [
         "Shrnutí"

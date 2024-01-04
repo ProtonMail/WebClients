@@ -7384,9 +7384,6 @@
       "to continue to ${ product }": [
         "${ product }-ზე გაგრძელება"
       ],
-      "to continue to ${ toAppName }": [
-        "${ toAppName }-ზე გაგრძელება"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "ჩვენი სერვისების მუდმივად გასაუმჯობესებლად ჩვენ ხანდახან ვაგროვებთ მონაცემებს ჩვენი აპლიკაციების ნორმალურად ფუნქციონირების შესახებ. ეს ინფორმაცია მესამე პირებთან არასოდეს ზიარდება."
       ],
@@ -7485,9 +7482,6 @@
       ],
       "Unverified email address.": [
         "გადაუმოწმებელი ელფოსტის მისამართი."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "${ FAMILY_MAX_USERS }-მდე მომხმარებელი"
       ],
       "Update recovery file": [
         "აღდგენის ფაილის განახლება"
@@ -9122,18 +9116,6 @@
       "System information": [
         "სისტემის ინფორმაცია"
       ],
-      "The email was sent ${ attachment }": [
-        "ელფოსტა გაგზავნილია ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "ელფოსტა გაგზავნილია ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "ელფოსტა გაგზავნილია ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "ელ-ფოსტა გაგზავნილია ${ label }"
-      ],
       "Then": [
         "მაშინ"
       ],
@@ -9203,16 +9185,7 @@
       "With attachment": [
         "მიმაგრებებით"
       ],
-      "with attachments": [
-        "მიმაგრებებით"
-      ],
       "Without attachment": [
-        "მიმაგრების გარეშე"
-      ],
-      "without attachment": [
-        "მიმაგრების გარეშე"
-      ],
-      "without attachments": [
         "მიმაგრების გარეშე"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
@@ -9298,17 +9271,8 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }-ის მისალმების ელფოსტები"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "${ DRIVE_APP_NAME }-ის პროდუქტის განახლებები"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "${ MAIL_APP_NAME }-ის და ${ CALENDAR_SHORT_APP_NAME }-ის ახალი ფუნქციები"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "${ PASS_APP_NAME }-ის პროდუქტის განახლებები"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "${ VPN_APP_NAME }-ის პროდუქტის განახლებები"
       ]
     },
     "Label in domain modal": {
@@ -9941,14 +9905,8 @@
       "Get ${ BRAND_NAME } for free": [
         "მიიღეთ ${ BRAND_NAME } უფასოდ"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "${ mostPopularShortPlan.title }-ის მიღება"
-      ],
       "Get ${ planName }": [
         "${ planName }-ის მიღება"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "${ upsellShortPlan.title }-ის მიღება"
       ],
       "Got it": [
         "გავიგე"
@@ -9967,10 +9925,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } კალენდარი",
-        "${ maximumNumberOfCalendars } კალენდარი"
-      ],
       "${ n } calendar": [
         "${ n } კალენდარი",
         "${ n } კალენდარი"
@@ -10294,12 +10248,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "ულიმიტო საცავი/გამტარობა"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "${ FAMILY_MAX_USERS }-მდე მომხმარებელი"
-      ],
-      "Up to ${ n } users": [
-        "${ n }-მდე მომხმარებელი"
       ],
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize }-მდე საცავი"
@@ -10927,11 +10875,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "კეთილი იყოს თქვენი მობრძანება ${ product }-ში"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "კეთილი იყოს თქვენი მობრძანება ${ VPN_APP_NAME }-ში"
+      "Welcome to ${ appName }": [
+        "კეთილი იყოს თქვენი მობრძანება ${ appName }-ში"
       ]
     },
     "Option": {
@@ -11036,12 +10981,6 @@
       ],
       "Auto": [
         "ავტო"
-      ],
-      "Automatic (${ defaultDay })": [
-        "$ავტომატური (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "ავტომატური (${ defaultFormat })"
       ],
       "Country configs": [
         "ქვეყნების მორგება"
@@ -12605,14 +12544,6 @@
         "${ ipAddresses } გამოყოფილი სერვერი",
         "${ ipAddresses } გამოყოფილი სერვერი"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } ჩქაროსნული VPN შეერთება",
-        "${ maxVpn } ჩქაროსნული VPN შეერთება"
-      ],
-      "${ n } calendar": [
-        "${ n } კალენდარი",
-        "${ n } კალენდარი"
-      ],
       "${ n } calendar per user": [
         "${ n } კალენდარი თითოეული მომხმარებლისათვის",
         "${ n } კალენდარი თითოეული მომხმარებლისათვის"
@@ -13445,15 +13376,6 @@
       "Decrypt key": [
         "გასაღების გაშიფრვა"
       ],
-      "Delete ${ domain.DomainName }": [
-        "${ domain.DomainName }-ის წაშლა"
-      ],
-      "Delete ${ email }": [
-        "${ email }-ის წაშლა"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "${ tokenNameToRemove }-ის წაშლა"
-      ],
       "Delete account": [
         "ანგარიშის წაშლა"
       ],
@@ -13981,14 +13903,6 @@
       ],
       "Success": [
         "წარმატება"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "${ localSuccessfullyCreatedUsers.length } მომხმარებლის ანგარიში წარმატებით შეიქმნა",
-        "${ localSuccessfullyCreatedUsers.length } მომხმარებლის ანგარიში წარმატებით შეიქმნა"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "${ successfullyCreatedUsers.length } მომხმარებლის ანგარიში წარმატებით შეიქმნა",
-        "${ successfullyCreatedUsers.length } მომხმარებლის ანგარიში წარმატებით შეიქმნა"
       ],
       "Summary": [
         "შეჯამება"

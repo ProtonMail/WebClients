@@ -3329,9 +3329,6 @@
       "${ speed }/s": [
         "${ speed }/δ"
       ],
-      "${ storage } storage": [
-        "${ storage } αποθηκευτικού χώρου"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } επαφή ενημερώθηκε επιτυχώς.",
         "${ updated } επαφές ενημερώθηκαν επιτυχώς."
@@ -4187,18 +4184,6 @@
       "Today": [
         "Σήμερα"
       ],
-      "Total email addresses": [
-        "Σύνολο διευθύνσεων ηλεκτρονικού ταχυδρομείου"
-      ],
-      "Total storage": [
-        "Συνολικός αποθηκευτικός χώρος"
-      ],
-      "Total supported domains": [
-        "Σύνολο υποστηριζόμενων τομέων"
-      ],
-      "Total VPN connections": [
-        "Σύνολο συνδέσεων VPN"
-      ],
       "Transfer canceled for file \"${ name }\"": [
         "Ακύρωση μεταφοράς για το αρχείο \"${ name }\""
       ],
@@ -4240,9 +4225,6 @@
       ],
       "Unsupported file": [
         "Μη υποστηριζόμενο αρχείο"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Μέχρι και ${ FAMILY_MAX_USERS } χρήστες"
       ],
       "Updating drive search...": [
         "Ενημέρωση τοπικής αναζήτησης..."
@@ -5093,9 +5075,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } ημερολόγιο",
-        "${ maximumNumberOfCalendars } ημερολόγια"
+      "${ n } calendar": [
+        "${ n } ημερολόγιο",
+        "${ n } ημερολόγια"
+      ],
+      "${ n } calendar per user": [
+        "${ n } ημερολόγιο ανά χρήστη",
+        "${ n } ημερολόγια ανά χρήστη"
       ],
       "Auto-delete spam and trashed messages": [
         "Αυτόματη διαγραφή ανεπιθύμητων και απορριφθέντων μηνυμάτων"
@@ -5109,6 +5095,9 @@
       "Custom snooze time": [
         "Προσαρμοσμένος χρόνος αναβολής"
       ],
+      "End-to-end encryption": [
+        "Διατερματική κρυπτογράφηση"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email ψευδώνυμα"
       ],
@@ -5117,6 +5106,9 @@
       ],
       "Search message content": [
         "Αναζήτηση εντός περιεχομένου μηνυμάτων"
+      ],
+      "Send & receive invitations": [
+        "Αποστολή & λήψη προσκλήσεων"
       ],
       "Unlimited folders, labels, and filters": [
         "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
@@ -5153,6 +5145,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Σχόλια"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Ασφαλίστε το χρονοδιάγραμμά σας με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένα ημερολόγια, κοινή χρήση ημερολογίου και πολλά άλλα."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Δημιουργήστε έως και ${ n } ημερολόγιο ή προσθέστε ημερολόγια από φίλους, συγγενείς, συναδέλφους και οργανισμούς",
+        "Δημιουργήστε έως και ${ n } ημερολόγια ή προσθέστε ημερολόγια από φίλους, συγγενείς, συναδέλφους και οργανισμούς"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Μοιραστείτε εύκολα τα ημερολόγιά σας με την οικογένεια, τους φίλους ή τους συναδέλφους σας"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Διατηρήστε τα σχέδιά σας ιδιωτικά για εσάς και την οικογένειά σας με ένα κρυπτογραφημένο ημερολόγιο"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Δημιουργήστε μέχρι και ${ n } ημερολόγιο",
+        "Δημιουργήστε μέχρι και ${ n } ημερολόγια"
       ]
     },
     "Notification": {
@@ -5294,30 +5307,6 @@
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
       ],
-      "Move ${ itemsToMoveCount } file": [
-        "Μετακίνηση ${ itemsToMoveCount } αρχείου",
-        "Μετακίνηση ${ itemsToMoveCount } αρχείων"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Μετακίνηση ${ itemsToMoveCount } φακέλου",
-        "Μετακίνηση ${ itemsToMoveCount } φακέλων"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "Μετακίνηση ${ itemsToMoveCount } στοιχείου",
-        "Μετακίνηση ${ itemsToMoveCount } στοιχείων"
-      ],
-      "Move ${ movingCount } file": [
-        "Μετακίνηση ${ movingCount } αρχείου",
-        "Μετακίνηση ${ movingCount } αρχείων"
-      ],
-      "Move ${ movingCount } folder": [
-        "Μετακίνηση ${ movingCount } φακέλου",
-        "Μετακίνηση ${ movingCount } φακέλων"
-      ],
-      "Move ${ movingCount } item": [
-        "Μετακίνηση ${ movingCount } στοιχείου",
-        "Μετακίνηση ${ movingCount } στοιχείων"
-      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Δεν υπάρχει αρκετός χώρος για αποστολή ${ formattedTotal }"
       ],
@@ -5365,6 +5354,11 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "Επιλέξτε σε τι μπορεί να έχει πρόσβαση το ${ BRAND_NAME }: δείτε τα μηνύματα ηλεκτρονικού ταχυδρομείου και τις ρυθμίσεις σας, προβάλετε και κατεβάστε τις επαφές σας, προβάλετε και κατεβάστε όλες τις ατζέντες στις οποίες έχετε πρόσβαση από την Ατζέντα Google."
+      ]
+    },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Καλώς ήρθατε στο ${ appName }"
       ]
     },
     "Onboarding Action": {
@@ -5417,9 +5411,6 @@
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "Καλώς ήρθατε στο ${ DRIVE_APP_NAME }"
-      ],
       "Your welcome bonus": [
         "Το μπόνους καλωσορίσματος σας"
       ]
@@ -6320,9 +6311,6 @@
       "Delete ${ count } contact group": [
         "Διαγραφή ${ count } ομάδα επαφών",
         "Διαγραφή ${ count } ομάδες επαφών"
-      ],
-      "Delete ${ Name }": [
-        "Διαγραφή ${ Name }"
       ],
       "Delete permanently": [
         "Οριστική διαγραφή"
