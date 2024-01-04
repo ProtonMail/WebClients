@@ -16,6 +16,12 @@
         "You can't send vCard files of more than ${ maxAttachments } contacts"
       ]
     },
+    "bf2023: Tooltip": {
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Includes support for ${ domains } custom email domain, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.",
+        "Includes support for ${ domains } custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more."
+      ]
+    },
     "Description": {
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "Automatically clear out messages that have been in Trash or Spam for over 30 days. Enjoy this and other benefits when you upgrade."
@@ -51,8 +57,14 @@
       ]
     },
     "Info": {
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder."
+      ],
       "Contact unassigned to group ${ contactGroupName }": [
         "Contact removed from ${ contactGroupName }"
+      ],
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder."
       ],
       "file attached": [
         "attachment",

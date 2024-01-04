@@ -1356,12 +1356,6 @@
       "High speed streaming": [
         "高速串流"
       ],
-      "Premium ${ appName }": [
-        "進階版 ${ appName }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "進階版 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "Premium Password Manager": [
         "進階版密碼管理器"
       ]
@@ -4463,15 +4457,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "進階 ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "進階 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "進階 ${ VPN_SHORT_APP_NAME }"
-      ],
       "Up to 6 users": [
         "多達 6 位使用者"
       ]
@@ -5593,17 +5578,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "您的行事曆中有部分內容未受支援，因此不會匯入。"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "金鑰 ${ fingerprint } 已上傳"
-      ],
-      "Selected color:": [
-        "已選取的色彩:"
       ]
     },
     "Info": {
@@ -7729,6 +7703,17 @@
         "您的訂購授權是由 Mozilla 管理。請聯絡 Mozilla 支援。"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "金鑰 ${ fingerprint } 已上傳"
+      ],
+      "Selected color:": [
+        "已選取的色彩:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "啟用時，子資料夾繼承上層資料夾的色彩。"
@@ -8539,9 +8524,6 @@
       "Font size": [
         "字體大小"
       ],
-      "From: ${ from }": [
-        "寄件者: ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "寄件者: ${ fromEmail }"
       ],
@@ -8931,9 +8913,6 @@
       ],
       "Time zone": [
         "時區"
-      ],
-      "To: ${ to }": [
-        "收件者：${ to }"
       ],
       "To: ${ toEmail }": [
         "收件者：${ toEmail }"
@@ -9362,9 +9341,6 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "成為Visionary並成為${ BRAND_NAME }的故事"
-      ],
-      "Limited time offer: Get ${ planTitle } until ${ date }!": [
-        "現實方案:取得${ planTitle }直到${ date }!"
       ],
       "Secure email that protects your privacy": [
         "安全防護的電子郵件保護隱私"
@@ -12062,15 +12038,6 @@
       "Highest VPN speed": [
         "業界最高 VPN 速率"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "進階 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "進階 ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 與 ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "進階 ${ VPN_SHORT_APP_NAME }"
-      ],
       "Premium early access": [
         "進階版搶先體驗"
       ],
@@ -12660,14 +12627,6 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "無法匯出行程的詳細資訊"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "進階 ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "進階 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {
