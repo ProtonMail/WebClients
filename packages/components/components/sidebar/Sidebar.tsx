@@ -170,6 +170,7 @@ const Sidebar = ({
                         growContent ? 'flex-1' : 'grow-0',
                         'flex-nowrap flex flex-column overflow-overlay pb-2 md:mt-2'
                     )}
+                    tabIndex={-1}
                 >
                     {contactsButton}
                     {children}
