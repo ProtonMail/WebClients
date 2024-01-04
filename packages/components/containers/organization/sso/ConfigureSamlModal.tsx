@@ -199,6 +199,25 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
                 </label>
             );
 
+            // Using a function here so that we can extend to other applications without requiring retranslation of this string
+            const getDescriptionString = (appName: typeof VPN_APP_NAME) => {
+                // translator: variable here is an application name. Example full sentence "Go to your identity provider, get the the SAML metadata for Proton VPN and import it here."
+                return c('Info')
+                    .t`Go to your identity provider, get the the SAML metadata for ${appName} and import it here.`;
+            };
+
+            // Using a function here so that we can extend to other applications without requiring retranslation of this string
+            const getUrlLabelString = (appName: typeof VPN_APP_NAME) => {
+                // translator: variable here is an application name. Example full sentence "Metadata URL for Proton VPN"
+                return c('Label').t`Metadata URL for ${appName}`;
+            };
+
+            // Using a function here so that we can extend to other applications without requiring retranslation of this string
+            const getFileLabelString = (appName: typeof VPN_APP_NAME) => {
+                // translator: variable here is an application name. Example full sentence "Metadata file for Proton VPN"
+                return c('Label').t`Metadata file for ${appName}`;
+            };
+
             return {
                 title: c('Title').t`Enter SAML metadata`,
                 onSubmit: () =>
@@ -211,8 +230,7 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
                 content: (
                     <div>
                         <div className="mb-4">
-                            {c('Info')
-                                .t`Go to your identity provider, get the the SAML metadata for ${VPN_APP_NAME} and import it here.`}
+                            {getDescriptionString(VPN_APP_NAME)}
                             <br />
                             <Href href="https://protonvpn.com/support/sso">{c('Link').t`Learn more`}</Href>
                         </div>
@@ -246,7 +264,7 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
                                 <>
                                     <InputFieldTwo
                                         autoFocus
-                                        label={c('Label').t`Metadata URL for ${VPN_APP_NAME}`}
+                                        label={getUrlLabelString(VPN_APP_NAME)}
                                         placeholder={c('Placeholder')
                                             .t`e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata`}
                                         value={metadata[METADATA_METHOD.URL].value}
@@ -264,9 +282,7 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
                             )}
                             {metadataMethod === METADATA_METHOD.XML && (
                                 <>
-                                    <div className="text-semibold mb-1">
-                                        {c('Label').t`Metadata file for ${VPN_APP_NAME}`}
-                                    </div>
+                                    <div className="text-semibold mb-1">{getFileLabelString(VPN_APP_NAME)}</div>
                                     <Dropzone
                                         onDrop={handleFileUpload}
                                         shape="flashy"

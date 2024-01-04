@@ -11,11 +11,17 @@ interface Props {
 }
 
 const IdentityProviderEndpointsContent = ({ issuerID, callbackURL }: Props) => {
+    // Using a function here so that we can extend to other applications without requiring retranslation of this string
+    const getDescriptionString = (appName: typeof VPN_APP_NAME) => {
+        // translator: variable here is an application name. Example full sentence "When enabling SAML for Proton VPN in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields."
+        return c('Info')
+            .t`When enabling SAML for ${appName} in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.`;
+    };
+
     return (
         <div className="flex flex-column gap-4">
             <div>
-                {c('Info')
-                    .t`When enabling SAML for ${VPN_APP_NAME} in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.`}
+                {getDescriptionString(VPN_APP_NAME)}
                 <br />
                 <Href href="https://protonvpn.com/support/sso">{c('Info').t`Learn more`}</Href>
             </div>
