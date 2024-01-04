@@ -3274,9 +3274,6 @@
       "${ speed }/s": [
         "${ speed }/초"
       ],
-      "${ storage } storage": [
-        "${ storage } 저장공간"
-      ],
       "${ updated } contacts updated successfully.": [
         "${ updated } 연락처가 성공적으로 업데이트 되었습니다."
       ],
@@ -4120,18 +4117,6 @@
       "Today": [
         "오늘"
       ],
-      "Total email addresses": [
-        "총 이메일 주소"
-      ],
-      "Total storage": [
-        "총 저장공간"
-      ],
-      "Total supported domains": [
-        "총 지원 도메인"
-      ],
-      "Total VPN connections": [
-        "총 VPN 연결"
-      ],
       "Transfer canceled for file \"${ name }\"": [
         "파일 \"${ name }\" 의 이동 취소됨"
       ],
@@ -4176,9 +4161,6 @@
       ],
       "Unsupported file": [
         "지원되지 않는 파일"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "최대 ${ FAMILY_MAX_USERS }명 구성원"
       ],
       "Updating drive search...": [
         "드라이브 검색을 업데이트하는 중..."
@@ -5023,8 +5005,11 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendars": [
-        "${ maximumNumberOfCalendars } 캘린더"
+      "${ n } calendars": [
+        "${ n } 캘린더"
+      ],
+      "${ n } calendars per user": [
+        "사용자 당 ${ n }개 캘린더"
       ],
       "Auto-delete spam and trashed messages": [
         "스팸 및 휴지통의 메시지를 자동 삭제"
@@ -5038,6 +5023,9 @@
       "Custom snooze time": [
         "사용자 지정 방해 금지 시간"
       ],
+      "End-to-end encryption": [
+        "종단간 암호화"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email 별칭"
       ],
@@ -5046,6 +5034,9 @@
       ],
       "Search message content": [
         "메시지 내용 검색"
+      ],
+      "Send & receive invitations": [
+        "전송 및 받은 초대"
       ],
       "Unlimited folders, labels, and filters": [
         "무제한 폴더, 라벨, 그리고 필터"
@@ -5082,6 +5073,25 @@
     "new_plans: placeholder": {
       "Feedback": [
         "피드백"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: 커스텀 캘린더, 캘린더 공유 등의 기능을 포함하는 종단 간 암호화로 보호되는 캘린더를 사용해 보세요."
+      ],
+      "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
+        "최대 ${ n }개 캘린더를 생성하거나 친구, 가족, 동료 및 조직에서 생성하세요."
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "캘린더를 가족, 친구 및 동료들에게 쉽게 공유하세요"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "암호화된 캘린더로 당신과 당신의 가족의 사적인 계획을 지키세요"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendars": [
+        "최대 ${ n }개 캘린더 생성"
       ]
     },
     "Notification": {
@@ -5211,24 +5221,6 @@
       "Link copied to clipboard": [
         "링크가 클립보드에 복사됨"
       ],
-      "Move ${ itemsToMoveCount } files": [
-        "파일 ${ itemsToMoveCount }개 이동"
-      ],
-      "Move ${ itemsToMoveCount } folders": [
-        "폴더 ${ itemsToMoveCount }개 이동"
-      ],
-      "Move ${ itemsToMoveCount } items": [
-        "항목 ${ itemsToMoveCount }개 이동"
-      ],
-      "Move ${ movingCount } files": [
-        "파일 ${ movingCount }개 이동"
-      ],
-      "Move ${ movingCount } folders": [
-        "폴더 ${ movingCount }개 이동"
-      ],
-      "Move ${ movingCount } items": [
-        "항목 ${ movingCount }개 이동"
-      ],
       "Not enough space to upload ${ formattedTotal }": [
         "${ formattedTotal }을(를) 업로드할 공간이 없습니다"
       ],
@@ -5276,6 +5268,11 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "${ BRAND_NAME }이 접근할 수 있는 것을 선택하세요: 이메일 메시지와 설정을 확인하고, 연락처를 확인 및 다운로드하고, Google Agenda에서 액세스하는 모든 아젠다를 확인하고 다운로드하세요."
+      ]
+    },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "${ appName }에 오신 것을 환영합니다"
       ]
     },
     "Onboarding Action": {
@@ -5327,9 +5324,6 @@
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME }에 오신 것을 환영합니다"
-      ],
       "Your welcome bonus": [
         "내 환영 보너스"
       ]
@@ -6190,9 +6184,6 @@
       ],
       "Delete ${ count } contacts": [
         "${ count }개의 연락처 삭제"
-      ],
-      "Delete ${ Name }": [
-        "${ Name } 삭제"
       ],
       "Delete permanently": [
         "영구적으로 삭제"

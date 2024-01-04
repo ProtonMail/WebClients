@@ -3329,9 +3329,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storage } storage": [
-        "${ storage } depolama alanı"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kişi güncellendi.",
         "${ updated } kişi güncellendi."
@@ -4187,18 +4184,6 @@
       "Today": [
         "Bugün"
       ],
-      "Total email addresses": [
-        "Toplam e-posta adresi"
-      ],
-      "Total storage": [
-        "Toplam depolama alanı"
-      ],
-      "Total supported domains": [
-        "Toplam etki alanı"
-      ],
-      "Total VPN connections": [
-        "Toplam VPN bağlantısı"
-      ],
       "Transfer canceled for file \"${ name }\"": [
         "\"${ name }\" dosyasının aktarımı iptal edildi"
       ],
@@ -4240,9 +4225,6 @@
       ],
       "Unsupported file": [
         "Dosya desteklenmiyor"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "En fazla ${ FAMILY_MAX_USERS } kullanıcı"
       ],
       "Updating drive search...": [
         "Drive araması güncelleniyor..."
@@ -5093,9 +5075,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } takvim",
-        "${ maximumNumberOfCalendars } takvim"
+      "${ n } calendar": [
+        "${ n } takvim",
+        "${ n } takvim"
+      ],
+      "${ n } calendar per user": [
+        "Her kullanıcı için ${ n } takvim",
+        "Her kullanıcı için ${ n } takvim"
       ],
       "Auto-delete spam and trashed messages": [
         "İstenmeyen ve çöp kutularındaki iletileri otomatik olarak silin"
@@ -5109,6 +5095,9 @@
       "Custom snooze time": [
         "Özel erteleme zamanı"
       ],
+      "End-to-end encryption": [
+        "Uçtan uca şifreleme"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email takma adları"
       ],
@@ -5117,6 +5106,9 @@
       ],
       "Search message content": [
         "İleti içeriğinde arama"
+      ],
+      "Send & receive invitations": [
+        "Davetleri alma ve gönderme"
       ],
       "Unlimited folders, labels, and filters": [
         "Sınırsız sayıda klasör, etiket ve süzgeç"
@@ -5153,6 +5145,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Geri bildirim"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Takviminizi uçtan uca şifrelemeyle koruyun. Özel takvimler, takvim paylaşımı ve diğer özellikler."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "${ n } taneye kadar takvim oluşturun ya da arkadaşlarınızın, ailenizin, iş arkadaşlarınızın ve kuruluşların takvimlerini ekleyin",
+        "${ n } taneye kadar takvim oluşturun ya da arkadaşlarınızın, ailenizin, iş arkadaşlarınızın ve kuruluşların takvimlerini ekleyin"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Takvimlerinizi aileniz, arkadaşlarınız veya iş arkadaşlarınızla kolayca paylaşın"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Şifrelenmiş bir takvim kullanarak planlarınızı kendiniz ve aileniz için gizli tutun"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "${ n } taneye kadar takvim oluşturun",
+        "${ n } taneye kadar takvim oluşturun"
       ]
     },
     "Notification": {
@@ -5294,30 +5307,6 @@
       "Link copied to clipboard": [
         "Bağlantı panoya kopyalandı"
       ],
-      "Move ${ itemsToMoveCount } file": [
-        "${ itemsToMoveCount } dosyayı taşı",
-        "${ itemsToMoveCount } dosyayı taşı"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "${ itemsToMoveCount } klasörü taşı",
-        "${ itemsToMoveCount } klasörü taşı"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "${ itemsToMoveCount } ögeyi taşı",
-        "${ itemsToMoveCount } ögeyi taşı"
-      ],
-      "Move ${ movingCount } file": [
-        "${ movingCount } dosyayı taşı",
-        "${ movingCount } dosyayı taşı"
-      ],
-      "Move ${ movingCount } folder": [
-        "${ movingCount } klasörü taşı",
-        "${ movingCount } klasörü taşı"
-      ],
-      "Move ${ movingCount } item": [
-        "${ movingCount } ögeyi taşı",
-        "${ movingCount } ögeyi taşı"
-      ],
       "Not enough space to upload ${ formattedTotal }": [
         "${ formattedTotal } yüklemek için yeterli alan yok"
       ],
@@ -5365,6 +5354,11 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "${ BRAND_NAME } uygulamasının nelere erişebileceğini seçin: E-posta iletilerinizi ve ayarlarınızı görüntüleme, kişilerinizi görüntüleme ve indirme, Google Takvim üzerinde eriştiğiniz tüm takvimleri görüntüleme ve indirme."
+      ]
+    },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "${ appName } hoş geldiniz"
       ]
     },
     "Onboarding Action": {
@@ -5417,9 +5411,6 @@
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } uygulamasına hoş geldiniz"
-      ],
       "Your welcome bonus": [
         "Karşılama hediyeniz"
       ]
@@ -6320,9 +6311,6 @@
       "Delete ${ count } contact group": [
         "${ count } kişi grubunu sil",
         "${ count } kişi grubunu sil"
-      ],
-      "Delete ${ Name }": [
-        "${ Name } kişisini sil"
       ],
       "Delete permanently": [
         "Kalıcı olarak sil"

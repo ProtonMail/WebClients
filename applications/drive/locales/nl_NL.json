@@ -3275,9 +3275,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storage } storage": [
-        "${ storage } opslag"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact bijgewerkt.",
         "${ updated } contacten bijgewerkt."
@@ -4109,18 +4106,6 @@
       "Today": [
         "Vandaag"
       ],
-      "Total email addresses": [
-        "Totaal e-mailadressen"
-      ],
-      "Total storage": [
-        "Totale opslagruimte"
-      ],
-      "Total supported domains": [
-        "Totaal ondersteunde domeinen"
-      ],
-      "Total VPN connections": [
-        "Totale VPN-verbindingen"
-      ],
       "Transfer canceled for file \"${ name }\"": [
         "Overdracht geannuleerd voor bestand \"${ name }\""
       ],
@@ -4162,9 +4147,6 @@
       ],
       "Unsupported file": [
         "Niet-ondersteund bestand"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Tot ${ FAMILY_MAX_USERS } gebruikers"
       ],
       "Updating drive search...": [
         "Drive doorzoeken updaten..."
@@ -5012,9 +4994,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } agenda",
-        "${ maximumNumberOfCalendars } agenda's"
+      "${ n } calendar": [
+        "${ n } agenda",
+        "${ n } agenda's"
+      ],
+      "${ n } calendar per user": [
+        "${ n } agenda per gebruiker",
+        "${ n } agenda's per gebruiker"
       ],
       "Auto-delete spam and trashed messages": [
         "Automatisch spam en verwijderde berichten verwijderen"
@@ -5028,6 +5014,9 @@
       "Custom snooze time": [
         "Aangepaste sluimertijd"
       ],
+      "End-to-end encryption": [
+        "End-to-end versleuteling"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliassen"
       ],
@@ -5036,6 +5025,9 @@
       ],
       "Search message content": [
         "Doorzoek berichtinhoud"
+      ],
+      "Send & receive invitations": [
+        "Uitnodigingen verzenden & ontvangen"
       ],
       "Unlimited folders, labels, and filters": [
         "Ongelimiteerde mappen, labels en filters"
@@ -5072,6 +5064,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Feedback"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Beveilig uw agenda met end-to-end versleuteling. Dit is inclusief ondersteuning voor aangepaste agenda's, agenda-delen en meer."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Maak tot ${ n } agenda of voeg agenda's van vrienden, familie, collega's of andere organisaties toe",
+        "Maak tot ${ n } agenda's of voeg agenda's van vrienden, familie, collega's of andere organisaties toe"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Deel uw agenda's eenvoudig met uw familie, vrienden of collega's."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Houd uw plannen privé voor u en uw gezin met een versleutelde agenda"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Maak tot ${ n } agenda",
+        "Maak tot ${ n } agenda's"
       ]
     },
     "Notification": {
@@ -5213,30 +5226,6 @@
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
       ],
-      "Move ${ itemsToMoveCount } file": [
-        "Verplaats ${ itemsToMoveCount } bestand",
-        "Verplaats ${ itemsToMoveCount } bestanden"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Verplaats ${ itemsToMoveCount } map",
-        "Verplaats ${ itemsToMoveCount } mappen"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "Verplaats ${ itemsToMoveCount } item",
-        "Verplaats ${ itemsToMoveCount } items"
-      ],
-      "Move ${ movingCount } file": [
-        "Verplaats ${ movingCount } bestand",
-        "Verplaats ${ movingCount } bestanden"
-      ],
-      "Move ${ movingCount } folder": [
-        "Verplaats ${ movingCount } map",
-        "Verplaats ${ movingCount } mappen"
-      ],
-      "Move ${ movingCount } item": [
-        "Verplaats ${ movingCount } item",
-        "Verplaats ${ movingCount } items"
-      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Onvoldoende ruimte om ${ formattedTotal } te uploaden"
       ],
@@ -5286,6 +5275,11 @@
         "Selecteer waar ${ BRAND_NAME } toegang toe heeft: uw e-mailberichten en -instellingen bekijken, uw contacten bekijken en downloaden, al uw agenda's bekijken en downloaden die u gebruikt vanuit Google Calendar."
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Welkom bij ${ appName }"
+      ]
+    },
     "Onboarding Action": {
       "Next": [
         "Volgende"
@@ -5333,9 +5327,6 @@
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "Welkom bij ${ DRIVE_APP_NAME }"
-      ],
       "Your welcome bonus": [
         "Uw welkomsbonus"
       ]
@@ -6211,9 +6202,6 @@
       "Delete ${ count } contact group": [
         "${ count } contactgroep verwijderen",
         "${ count } contactgroepen verwijderen"
-      ],
-      "Delete ${ Name }": [
-        "Verwijder ${ Name }"
       ],
       "Delete permanently": [
         "Permanent verwijderen"
