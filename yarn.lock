@@ -35234,16 +35234,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ttag@patch:ttag@^1.8.5#~/.yarn/patches/ttag-npm-1.8.5-bf3d560d9a.patch":
-  version: 1.8.5
-  resolution: "ttag@patch:ttag@npm%3A1.8.5#~/.yarn/patches/ttag-npm-1.8.5-bf3d560d9a.patch::version=1.8.5&hash=3b67fd"
-  dependencies:
-    dedent: "npm:1.5.1"
-    plural-forms: "npm:^0.5.3"
-  checksum: d699af1019d485d59fbd71343a7cf118dd9c821a041c5d1a0e347bee3f24638e99a46710ef465f65d6503c8bb72fe171ddf2d26f6177919a982aedcfc9f5e1e8
-  languageName: node
-  linkType: hard
-
 "tty-browserify@npm:0.0.0":
   version: 0.0.0
   resolution: "tty-browserify@npm:0.0.0"

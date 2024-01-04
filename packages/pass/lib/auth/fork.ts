@@ -4,6 +4,7 @@ import type { Api, MaybeNull } from '@proton/pass/types';
 import { pullForkSession, setRefreshCookies as refreshTokens } from '@proton/shared/lib/api/auth';
 import { getUser } from '@proton/shared/lib/api/user';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
+import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import type { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { getKey } from '@proton/shared/lib/authentication/cryptoHelper';
 import { InvalidForkConsumeError } from '@proton/shared/lib/authentication/error';
@@ -110,7 +111,7 @@ export const getAccountForkResponsePayload = (type: AccountForkResponse, error?:
             }
             case AccountForkResponse.SUCCESS: {
                 return {
-                    title: c('Title').t`Welcome to ${PASS_APP_NAME}`,
+                    title: getWelcomeToText(PASS_APP_NAME),
                     message: c('Info')
                         .t`More than a password manager, ${PASS_APP_NAME} protects your password and your personal email address via email aliases. Powered by the same technology behind ${MAIL_APP_NAME}, your data is end to end encrypted and is only accessible by you.`,
                 };

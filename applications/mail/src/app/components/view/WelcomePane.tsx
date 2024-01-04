@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { ReactNode } from 'react';
 
 import { Location } from 'history';
 import { c, msgid } from 'ttag';
@@ -9,6 +10,8 @@ import { MailSettings } from '@proton/shared/lib/interfaces';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import envelope from '@proton/styles/assets/img/illustrations/welcome-pane.svg';
 import capitalize from '@proton/utils/capitalize';
+
+import { getNUnreadConversationsText, getNUnreadMessagesText } from 'proton-mail/helpers/text';
 
 import { isConversationMode } from '../../helpers/mailSettings';
 
@@ -23,6 +26,7 @@ const Container = ({ children }: ContainerProps) => (
         </div>
     </div>
 );
+
 interface Props {
     mailSettings: MailSettings;
     location: Location;
@@ -44,13 +48,9 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
     );
 
     const unreadsLabel = conversationMode ? (
-        <strong key="unreads-label">
-            {c('Info').ngettext(msgid`${unread} unread conversation`, `${unread} unread conversations`, unread)}
-        </strong>
+        <strong key="unreads-label">{getNUnreadConversationsText(unread)}</strong>
     ) : (
-        <strong key="unreads-label">
-            {c('Info').ngettext(msgid`${unread} unread message`, `${unread} unread messages`, unread)}
-        </strong>
+        <strong key="unreads-label">{getNUnreadMessagesText(unread)}</strong>
     );
 
     const totalLabel = conversationMode ? (
@@ -61,9 +61,11 @@ const WelcomePane = ({ mailSettings, location, labelCount }: Props) => {
         <strong key="total-label">{c('Info').ngettext(msgid`${total} message`, `${total} messages`, total)}</strong>
     );
 
-    const counterMessage = unread
-        ? c('Info').jt`You have ${unreadsLabel} in your inbox.`
-        : c('Info').jt`You have ${totalLabel} in your inbox.`;
+    const getUnreadText = (unread: ReactNode) => {
+        return c('Info').jt`You have ${unread} in your inbox.`;
+    };
+
+    const counterMessage = unread ? getUnreadText(unreadsLabel) : getUnreadText(totalLabel);
 
     if (loadingUser) {
         return (

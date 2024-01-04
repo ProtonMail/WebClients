@@ -8,6 +8,7 @@ import { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 
 import { Alert, ModalProps, Prompt } from '../../../components';
 import { useApi, useContactGroups, useEventManager, useNotifications } from '../../../hooks';
+import { getDeleteText } from '../../general/helper';
 
 export interface ContactGroupDeleteProps {
     groupIDs: string[];
@@ -41,7 +42,7 @@ const ContactGroupDeleteModal = ({ groupIDs = [], onDelete, ...rest }: Props) =>
     const { Name = '' } = groups.find((group: ContactGroup) => group.ID === groupIDs[0]) || {};
     const title =
         count === 1
-            ? c('Title').t`Delete ${Name}`
+            ? getDeleteText(Name)
             : // translator: the variable is a positive integer (written in digits) always strictly bigger than 1
               c('Title').ngettext(msgid`Delete ${count} contact group`, `Delete ${count} contact groups`, count);
 
