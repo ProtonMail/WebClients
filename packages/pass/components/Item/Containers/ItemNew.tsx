@@ -2,12 +2,12 @@ import type { VFC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 
-import { useNavigation } from '@proton/pass/components/Core/NavigationProvider';
-import type { ItemNewRouteParams } from '@proton/pass/components/Core/routing';
 import { AliasNew } from '@proton/pass/components/Item/Alias/Alias.new';
 import { CreditCardNew } from '@proton/pass/components/Item/CreditCard/CreditCard.new';
 import { LoginNew } from '@proton/pass/components/Item/Login/Login.new';
 import { NoteNew } from '@proton/pass/components/Item/Note/Note.new';
+import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import type { ItemNewRouteParams } from '@proton/pass/components/Navigation/routing';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { itemCreationIntent } from '@proton/pass/store/actions';
 import { selectDefaultVault, selectVaultLimits } from '@proton/pass/store/selectors';
