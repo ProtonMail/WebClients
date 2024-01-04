@@ -58,7 +58,7 @@ const SSOInfo = ({ domain, sso, onImportSamlClick }: Props) => {
 
         const { url, entity, certificate } = ssoInfo;
         await api(
-            updateSAMLConfig(sso.SSOID, {
+            updateSAMLConfig(sso.ID, {
                 DomainID: domain.ID,
                 SSOURL: url,
                 SSOEntityID: entity,
