@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Alert, Info, useConfig, useMembers, useModals } from '@proton/components';
+import { Info, useConfig, useMembers, useModals } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Organization } from '@proton/shared/lib/interfaces';
@@ -21,11 +21,6 @@ const OrganizationTwoFARemindersSection = ({ organization }: Props) => {
 
     if (!organization || loadingMembers) {
         return <Loader />;
-    }
-
-    // Organization is not setup.
-    if (!organization?.HasKeys) {
-        return <Alert className="mb-1" type="warning">{c('Info').t`Multi-user support not enabled.`}</Alert>;
     }
 
     const noTwoFAMembers =
