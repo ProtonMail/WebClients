@@ -7387,9 +7387,6 @@
       "to continue to ${ product }": [
         "για συνέχιση στο ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "για συνέχιση στο ${ toAppName }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Για τη συνεχή βελτίωση των υπηρεσιών μας, μερικές φορές συλλέγουμε δεδομένα για την παρακολούθηση της ορθής λειτουργίας των εφαρμογών μας. Αυτές οι πληροφορίες δε μοιράζονται με οποιεσδήποτε υπηρεσίες τρίτων."
       ],
@@ -7488,9 +7485,6 @@
       ],
       "Unverified email address.": [
         "Μην επαληθευμένη διεύθυνση ηλεκτρονικού ταχυδρομείου."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Μέχρι και ${ FAMILY_MAX_USERS } χρήστες"
       ],
       "Update recovery file": [
         "Ενημέρωση αρχείου ανάκτησης"
@@ -9125,18 +9119,6 @@
       "System information": [
         "Πληροφορίες Συστήματος"
       ],
-      "The email was sent ${ attachment }": [
-        "Το μήνυμα ηλεκτρονικού ταχυδρομείου στάλθηκε ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "το email στάλθηκε ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Το μήνυμα ηλεκτρονικού ταχυδρομείου στάλθηκε ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "το email στάλθηκε ${ label }"
-      ],
       "Then": [
         "Τότε"
       ],
@@ -9206,17 +9188,8 @@
       "With attachment": [
         "Με συνημμένα"
       ],
-      "with attachments": [
-        "με συνημμένα"
-      ],
       "Without attachment": [
         "Χωρίς συνημμένα"
-      ],
-      "without attachment": [
-        "χωρίς συνημμένα"
-      ],
-      "without attachments": [
-        "χωρίς συνημμένα"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ναι, θέλω να διαγράψω οριστικά αυτόν τον λογαριασμό και όλα τα δεδομένα του."
@@ -9301,17 +9274,8 @@
       "${ BRAND_NAME } welcome emails": [
         "Emails καλωσορίσματος ${ BRAND_NAME }"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "${ DRIVE_APP_NAME } ενημερώσεις προϊόντων"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "${ MAIL_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME } νέες δυνατότητες"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "${ PASS_APP_NAME } ενημερώσεις προϊόντων"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "${ VPN_APP_NAME } ενημερώσεις προϊόντων"
       ]
     },
     "Label in domain modal": {
@@ -9944,14 +9908,8 @@
       "Get ${ BRAND_NAME } for free": [
         "Απόκτηση ${ BRAND_NAME } δωρεάν"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "Απόκτηση ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "Απόκτηση ${ planName }"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "Απόκτηση ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "Το κατάλαβα"
@@ -9970,10 +9928,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } ημερολόγιο",
-        "${ maximumNumberOfCalendars } ημερολόγια"
-      ],
       "${ n } calendar": [
         "${ n } ημερολόγιο",
         "${ n } ημερολόγια"
@@ -10297,12 +10251,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Απεριόριστος όγκος / εύρος ζώνης"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Μέχρι και ${ FAMILY_MAX_USERS } χρήστες"
-      ],
-      "Up to ${ n } users": [
-        "Μέχρι και ${ n } χρήστες"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Έως και ${ totalStorageSize } αποθηκευτικού χώρου"
@@ -10930,11 +10878,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Καλώς ήρθατε στο ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Καλώς ήρθατε στο ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Καλώς ήρθατε στο ${ appName }"
       ]
     },
     "Option": {
@@ -11039,12 +10984,6 @@
       ],
       "Auto": [
         "Αυτόματο"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Αυτόματο (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "Αυτόματο (${ defaultFormat })"
       ],
       "Country configs": [
         "Διαμορφώσεις χώρας"
@@ -12608,14 +12547,6 @@
         "${ ipAddresses } αποκλειστικός διακομιστής",
         "${ ipAddresses } αποκλειστικοί διακομιστές"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } σύνδεση VPN υψηλής ταχύτητας",
-        "${ maxVpn } συνδέσεις VPN υψηλής ταχύτητας"
-      ],
-      "${ n } calendar": [
-        "${ n } ημερολόγιο",
-        "${ n } ημερολόγια"
-      ],
       "${ n } calendar per user": [
         "${ n } ημερολόγιο ανά χρήστη",
         "${ n } ημερολόγια ανά χρήστη"
@@ -13445,15 +13376,6 @@
       "Decrypt key": [
         "Αποκρυπτογράφηση κλειδιού"
       ],
-      "Delete ${ domain.DomainName }": [
-        "Διαγραφή ${ domain.DomainName }"
-      ],
-      "Delete ${ email }": [
-        "Διαγραφή ${ email }"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "Διαγραφή ${ tokenNameToRemove };"
-      ],
       "Delete account": [
         "Διαγραφή λογαριασμού"
       ],
@@ -13984,14 +13906,6 @@
       ],
       "Success": [
         "Επιτυχία"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "Δημιουργήθηκε με επιτυχία ${ localSuccessfullyCreatedUsers.length } ο λογαριασμός χρήστη",
-        "Δημιουργήθηκαν με επιτυχία ${ localSuccessfullyCreatedUsers.length } οι λογαριασμοί χρηστων"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "Επιτυχής δημιουργία ${ successfullyCreatedUsers.length } λογαριασμού χρήστη",
-        "Επιτυχής δημιουργία ${ successfullyCreatedUsers.length } λογαριασμών χρηστών"
       ],
       "Summary": [
         "Περίληψη"

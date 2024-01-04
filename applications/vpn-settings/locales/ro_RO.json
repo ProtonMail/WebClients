@@ -3271,9 +3271,6 @@
       "MM/YY": [
         "LL/AA"
       ],
-      "Multi-user support not enabled.": [
-        "Suportul pentru utilizatori multipli nu e activat."
-      ],
       "Must be between 3 and 20 characters long.": [
         "Trebuie să aibă între 3 și 20 de caractere."
       ],
@@ -3649,9 +3646,6 @@
       "to continue to ${ product }": [
         "pentru a continua cu ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "pentru a continua cu ${ toAppName }"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
       ],
@@ -3711,9 +3705,6 @@
       ],
       "Unverified email address.": [
         "Adresă de e-mail neverificată."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Până la ${ FAMILY_MAX_USERS } utilizatori"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
@@ -4510,17 +4501,8 @@
       "${ BRAND_NAME } welcome emails": [
         "Mesaje de bun venit ${ BRAND_NAME }"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "Actualizări ale produsului ${ DRIVE_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "Funcții noi ${ MAIL_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "Actualizări ale produsului ${ PASS_APP_NAME }"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "Actualizări ale produsului ${ VPN_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -4780,11 +4762,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } calendar",
-        "${ maximumNumberOfCalendars } calendare",
-        "${ maximumNumberOfCalendars } de calendare"
-      ],
       "${ n } calendar": [
         "${ n } calendar",
         "${ n } calendare",
@@ -5126,12 +5103,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Lățime de bandă și volum nelimitate"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Până la ${ FAMILY_MAX_USERS } utilizatori"
-      ],
-      "Up to ${ n } users": [
-        "Până la ${ n } utilizatori"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Până la ${ totalStorageSize } spațiu"
@@ -5603,11 +5574,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Bun venit la ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Bun venit la ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Bun venit la ${ appName }"
       ]
     },
     "Option": {
@@ -6606,16 +6574,6 @@
         "${ ipAddresses } servere dedicate",
         "${ ipAddresses } de servere dedicate"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "o conexiune VPN de mare viteză",
-        "${ maxVpn } conexiuni VPN de mare viteză",
-        "${ maxVpn } de conexiuni VPN de mare viteză"
-      ],
-      "${ n } calendar": [
-        "Un calendar",
-        "${ n } calendare",
-        "${ n } de calendare"
-      ],
       "${ n } calendar per user": [
         "Un calendar per utilizator",
         "${ n } calendare per utilizator",
@@ -7153,9 +7111,6 @@
       "Delete": [
         "Ștergere"
       ],
-      "Delete ${ email }": [
-        "Ștergere ${ email }"
-      ],
       "Delete account": [
         "Ștergere cont"
       ],
@@ -7429,16 +7384,6 @@
       ],
       "Subscription": [
         "Abonament"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "S-a reușit crearea unui cont de utilizator",
-        "S-a reușit crearea a ${ localSuccessfullyCreatedUsers.length } conturi de utilizator",
-        "S-a reușit crearea a ${ localSuccessfullyCreatedUsers.length } de conturi de utilizator"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "S-a reușit crearea unui cont",
-        "S-a reușit crearea a ${ successfullyCreatedUsers.length } conturi",
-        "S-a reușit crearea a ${ successfullyCreatedUsers.length } de conturi"
       ],
       "Summary": [
         "Sumar"

@@ -700,11 +700,11 @@
       "Not saved": [
         "未保存"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } を開く"
@@ -3161,12 +3161,6 @@
       "Choose a date in the future.": [
         "未来の日付を入力してください。"
       ],
-      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } days.": [
-        "次の ${ EXPIRATION_TIME_MAX_DAYS } 日間から日付を選択してください"
-      ],
-      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } days.": [
-        "次の ${ SCHEDULED_MAX_DATE_DAYS } 日間から日付を選択してください"
-      ],
       "Condition incomplete": [
         "条件が不完全です"
       ],
@@ -4645,9 +4639,6 @@
       "${ contactsLength } contacts": [
         "${ contactsLength } 件の連絡先"
       ],
-      "${ count } unread messages": [
-        "${ count } 件の未読メッセージ"
-      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ totalProgress } のうち ${ currentProgress }"
       ],
@@ -4708,29 +4699,14 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "${ selectedFoldersCountLocalized } 件のラベルを選択"
       ],
-      "${ storage } storage": [
-        "${ storage } ストレージ"
-      ],
       "${ total } conversations": [
         "${ total } 件の会話"
       ],
       "${ total } messages": [
         "${ total } 件のメッセージ"
       ],
-      "${ unread } unread conversations": [
-        "${ unread } 件の未読の会話"
-      ],
-      "${ unread } unread messages": [
-        "${ unread } 件の未読のメッセージ"
-      ],
       "${ unreadCount } scheduled messages": [
         "${ unreadCount } 件の送信予約メッセージ"
-      ],
-      "${ unreadCount } unread conversations": [
-        "${ unreadCount } 件の未読の会話"
-      ],
-      "${ unreadCount } unread messages": [
-        "${ unreadCount } 件の未読メッセージ"
       ],
       "${ updated } contacts updated successfully.": [
         "${ updated } 連絡先が正常に更新されました。"
@@ -5548,9 +5524,6 @@
       "The sender has requested a read receipt.": [
         "差出人が開封確認を要求しています。"
       ],
-      "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "${ contactName } の検証に失敗しました: 連絡先は正常に署名されていません。\nおそらくパスワードをリセットしたことが原因です。\n${ contactAddress } にメッセージを送信したり連絡先を編集するには、連絡先を再署名する必要があります。"
-      ],
       "The verification of ${ contactNames } has failed: the contacts are not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contacts in order to send a message to ${ contactAddresses } or edit the contacts.": [
         "${ contactNames } の検証に失敗しました: 連絡先は正常に署名されていません。\nおそらくパスワードをリセットしたことが原因です。\n${ contactAddresses } にメッセージを送信したり連絡先を編集するには、連絡先を再署名する必要があります。"
       ],
@@ -5620,12 +5593,6 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "このメッセージはまだ信頼されていない添付された鍵で署名されています。"
       ],
-      "This message will be automatically deleted on ${ longDateMEssage }": [
-        "このメッセージは ${ longDateMEssage } に自動的に削除されます。"
-      ],
-      "This message will be automatically deleted on ${ shortDateMessage }": [
-        "このメッセージは ${ shortDateMessage } に自動的に削除されます。"
-      ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "編集のため、このメッセージは下書きへ移動されます。送信するにはもう一度、送信を予約する必要があります。"
       ],
@@ -5646,15 +5613,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "このメッセージの期限は ${ formattedDate } までです"
-      ],
-      "This message will expire on ${ longDateMEssage }": [
-        "このメッセージの有効期限は ${ longDateMEssage } です。"
-      ],
-      "This message will expire today at ${ shortDateMessage }": [
-        "このメッセージの有効期限は今日の ${ shortDateMessage } までです"
-      ],
-      "This message will expire tomorrow at ${ shortDateMessage }": [
-        "このメッセージの有効期限は明日の ${ shortDateMessage } までです"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "この公開鍵は自動的に、このメールアドレスへ送信するメールの暗号化に使用されます。"
@@ -5689,18 +5647,6 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "送信予約メッセージが多すぎます。他のメッセージが送信されれば、このメッセージを送信予約できます。"
       ],
-      "Total email addresses": [
-        "総メールアドレス数"
-      ],
-      "Total storage": [
-        "総ストレージ容量"
-      ],
-      "Total supported domains": [
-        "総対応ドメイン数"
-      ],
-      "Total VPN connections": [
-        "総VPN接続数"
-      ],
       "Trackers blocked:": [
         "ブロックしたトラッカー:"
       ],
@@ -5721,9 +5667,6 @@
       ],
       "Unsupported file": [
         "非対応のファイル"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "最大 ${ FAMILY_MAX_USERS } ユーザーまで"
       ],
       "Updating message content search...": [
         "メッセージ内容の検索を更新中..."
@@ -5874,12 +5817,6 @@
       ],
       "You do not have any messages here": [
         "ここにはメッセージがありません"
-      ],
-      "You have ${ totalLabel } in your inbox.": [
-        "受信箱に ${ totalLabel } があります。"
-      ],
-      "You have ${ unreadsLabel } in your inbox.": [
-        "受信箱に ${ unreadsLabel } があります。"
       ],
       "You have **${ count } conversations** stored in this folder": [
         "このフォルダー内に **${ count } 件の会話**があります"
@@ -6620,18 +6557,6 @@
       "System information": [
         "システム情報"
       ],
-      "The email was sent ${ attachment }": [
-        "${ attachment } でメールを送信"
-      ],
-      "the email was sent ${ attachment }": [
-        "メールを ${ attachment } で送信"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "${ attachmentStrong } でメールを送信"
-      ],
-      "the email was sent ${ label }": [
-        "${ label } でメールを送信"
-      ],
       "Theme": [
         "テーマ"
       ],
@@ -6668,16 +6593,7 @@
       "With attachment": [
         "添付ファイルあり"
       ],
-      "with attachments": [
-        "添付ファイルあり"
-      ],
       "Without attachment": [
-        "添付ファイルなし"
-      ],
-      "without attachment": [
-        "添付ファイルなし"
-      ],
-      "without attachments": [
         "添付ファイルなし"
       ],
       "Wonderful": [
@@ -7175,8 +7091,11 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendars": [
-        "${ maximumNumberOfCalendars } 件のカレンダー"
+      "${ n } calendars": [
+        "${ n } カレンダー"
+      ],
+      "${ n } calendars per user": [
+        "1 ユーザーあたり ${ n } 件のカレンダー"
       ],
       "Auto-delete spam and trashed messages": [
         "迷惑メールとごみ箱のメッセージを自動削除"
@@ -7187,6 +7106,9 @@
       "Custom email domains": [
         "独自メールドメイン"
       ],
+      "End-to-end encryption": [
+        "エンドツーエンド暗号化"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email エイリアス"
       ],
@@ -7195,6 +7117,9 @@
       ],
       "Search message content": [
         "メッセージ内容の検索"
+      ],
+      "Send & receive invitations": [
+        "招待を送受信"
       ],
       "Unlimited folders, labels, and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
@@ -7231,6 +7156,25 @@
     "new_plans: placeholder": {
       "Feedback": [
         "フィードバック"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: エンドツーエンドの暗号化でスケジュールを保護します。 カスタム カレンダー、カレンダー共有などのサポートが含まれます。"
+      ],
+      "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
+        "${ n } 個までのカレンダーを作成または友人/家族/同僚/組織のカレンダーを追加"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "家族、友人、同僚とカレンダーを簡単に共有できます。"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "暗号化されたカレンダーで、自分自身や家族の予定を非公開にすることができます。"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendars": [
+        "最大 ${ n } 個までのカレンダーを作成"
       ]
     },
     "Notification": {
@@ -8658,9 +8602,6 @@
       ],
       "Delete ${ count } messages": [
         "${ count } 件のメッセージを削除"
-      ],
-      "Delete ${ Name }": [
-        "${ Name } を削除"
       ],
       "Delete all messages": [
         "すべてのメッセージを削除"

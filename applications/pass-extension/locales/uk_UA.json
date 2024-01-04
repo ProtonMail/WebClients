@@ -631,18 +631,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Оновлення \"${ payload.item.data.metadata.name }\" було відхилено"
       ],
-      "${ count } item": [
-        "${ count } елемент",
-        "${ count } елементи",
-        "${ count } елементів",
-        "${ count } елементів"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } елемент",
-        "${ itemCount } елементи",
-        "${ itemCount } елементів",
-        "${ itemCount } елементів"
-      ],
       "${ memberCount } member": [
         "${ memberCount } учасник",
         "${ memberCount } учасники",
@@ -663,18 +651,6 @@
         "${ revisionNumber } рази",
         "${ revisionNumber } разів",
         "${ revisionNumber } разів"
-      ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } елемент",
-        "${ totalImportedItems } елементи",
-        "${ totalImportedItems } елементів",
-        "${ totalImportedItems } елементів"
-      ],
-      "${ totalItems } item": [
-        "${ totalItems } елемент",
-        "${ totalItems } елементи",
-        "${ totalItems } елементів",
-        "${ totalItems } елементів"
       ],
       "${ trialDaysLeft } day left": [
         "Залишився ${ trialDaysLeft } день",
@@ -918,9 +894,6 @@
       ],
       "Sign in or create an account to continue.": [
         "Увійдіть або створіть обліковий запис, щоб продовжити."
-      ],
-      "Sign in to your account": [
-        "Увійдіть у свій обліковий запис"
       ],
       "Signing you in": [
         "Виконується вхід"
@@ -1402,6 +1375,11 @@
         "Ви збираєтеся створити"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Вітаємо у ${ appName }"
+      ]
+    },
     "Option": {
       "Commas": [
         "Коми"
@@ -1602,9 +1580,6 @@
       "Trash empty": [
         "Смітник порожній"
       ],
-      "Unlock ${ brandNameJSX }": [
-        "Розблокувати ${ brandNameJSX }"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Розблокувати ${ PASS_APP_NAME }"
       ],
@@ -1616,12 +1591,6 @@
       ],
       "Vault shared with you": [
         "Вам надано спільний доступ до сховища"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Ласкаво просимо до ${ brandNameJSX }"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Ласкаво просимо до ${ PASS_APP_NAME }"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "Чому ${ PASS_APP_NAME }?"

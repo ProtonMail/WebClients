@@ -713,14 +713,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" განახლება წაიშალა"
       ],
-      "${ count } item": [
-        "${ count } ელემენტი",
-        "${ count } ელემენტი"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } ელემენტი",
-        "${ itemCount } ელემენტი"
-      ],
       "${ memberCount } member": [
         "${ memberCount } წევრი",
         "${ memberCount } წევრი"
@@ -743,14 +735,6 @@
       "${ revisionNumber } time": [
         "${ revisionNumber }-ჯერ",
         "${ revisionNumber } ჯერ"
-      ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } ელემენტი",
-        "${ totalImportedItems } ელემენტი"
-      ],
-      "${ totalItems } item": [
-        "${ totalItems } ელემენტი",
-        "${ totalItems } ელემენტი"
       ],
       "${ trialDaysLeft } day left": [
         "დარჩენილია ${ trialDaysLeft } დღე",
@@ -1060,9 +1044,6 @@
       ],
       "Sign in or create an account to continue.": [
         "გასაგრძელებლად შედით ან შექმენით ანგარიში."
-      ],
-      "Sign in to your account": [
-        "შედით თქვენს ანგარიშში"
       ],
       "Signing you in": [
         "შესვლა"
@@ -1605,6 +1586,11 @@
         "აპირებთ, შექმნათ"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "კეთილი იყოს თქვენი მობრძანება ${ appName }-ში"
+      ]
+    },
     "Option": {
       "Commas": [
         "მძიმეები"
@@ -1829,9 +1815,6 @@
       "Trash empty": [
         "სანაგვე ყუთი ცარიელია"
       ],
-      "Unlock ${ brandNameJSX }": [
-        "განბლოკეთ ${ brandNameJSX }"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "განბლოკეთ ${ PASS_APP_NAME }"
       ],
@@ -1846,12 +1829,6 @@
       ],
       "Vault shared with you": [
         "თქვენთან გაზიარებული საცავი"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "კეთილი იყოს თქვენი მობრძანება ${ brandNameJSX }-ში"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "კეთილი იყოს თქვენი მობრძანება ${ PASS_APP_NAME }-ში"
       ],
       "Welcome to your new password manager!": [
         "მოგესალმებით თქვენი ახალ პაროლების მმართველში!"

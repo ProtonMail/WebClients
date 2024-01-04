@@ -685,10 +685,10 @@
       "Not saved": [
         "सहेजा नहीं गया"
       ],
-      "OK": [
+      "Ok": [
         "ठीक है"
       ],
-      "Ok": [
+      "OK": [
         "ठीक है"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -3126,14 +3126,6 @@
       "Choose a date in the future.": [
         "भविष्य में एक तिथि चुनें।"
       ],
-      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
-        "अगले ${ EXPIRATION_TIME_MAX_DAYS } दिन में तारीख चुनें।",
-        "अगले ${ EXPIRATION_TIME_MAX_DAYS } दिन में तारीख चुनें।"
-      ],
-      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
-        "अगले ${ SCHEDULED_MAX_DATE_DAYS } दिन के भीतर कोई तिथि चुनें।",
-        "अगले ${ SCHEDULED_MAX_DATE_DAYS } दिनों के भीतर एक तिथि चुनें।"
-      ],
       "Condition incomplete": [
         "हालत अधूरी"
       ],
@@ -4461,10 +4453,6 @@
         "${ contactsLength } संपर्क",
         "${ contactsLength } संपर्क"
       ],
-      "${ count } unread message": [
-        "${ count } अपठित संदेश",
-        "${ count } अपठित संदेश"
-      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } एम्बेडेड छवि",
         "${ embeddedAttachmentsCount } एम्बेडेड चित्र"
@@ -4534,9 +4522,6 @@
         "${ selectedFoldersCountLocalized } लेबल चयनित",
         "${ selectedFoldersCountLocalized } लेबल चयनित"
       ],
-      "${ storage } storage": [
-        "${ storage } स्टोरेज"
-      ],
       "${ total } conversation": [
         "${ total } बातचीत",
         "${ total } वार्तालाप"
@@ -4545,25 +4530,9 @@
         "${ total } संदेश",
         "${ total } संदेश"
       ],
-      "${ unread } unread conversation": [
-        "${ unread } अपठित वार्तालाप",
-        "${ unread } अपठित वार्तालाप"
-      ],
-      "${ unread } unread message": [
-        "${ unread } अपठित संदेश",
-        "${ unread } अपठित संदेश"
-      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } शेड्यूल संदेश",
         "${ unreadCount } शेड्यूल संदेश"
-      ],
-      "${ unreadCount } unread conversation": [
-        "${ unreadCount } अपठित वार्तालाप",
-        "${ unreadCount } बिना पढ़े बातचीत"
-      ],
-      "${ unreadCount } unread message": [
-        "${ unreadCount } बिना पढ़े संदेश",
-        "${ unreadCount } अपठित संदेश"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } संपर्क सफलतापूर्वक अपडेट किया गया।",
@@ -5338,9 +5307,6 @@
       "The sender has requested a read receipt.": [
         "प्रेषक ने एक पावती रसीद का अनुरोध किया है।"
       ],
-      "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "${ contactName } का सत्यापन विफल हो गया है: संपर्क सही तरीके से हस्ताक्षरित नहीं है।\nयह पासवर्ड रीसेट का परिणाम हो सकता है।\n${ contactAddress } को संदेश भेजने के लिए या संपर्क संपादित करने के लिए आपको संपर्क पुनः साइन करना होगा।"
-      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "${ contactNames } का सत्यापन विफल हो गया है: संपर्क सही तरीके से हस्ताक्षरित नहीं है।\nयह पासवर्ड रीसेट का परिणाम हो सकता है।\n${ contactAddresses } को संदेश भेजने के लिए या संपर्क संपादित करने के लिए आपको संपर्क पुनः साइन करना होगा।",
         "${ contactNames } का सत्यापन विफल हो गया है: संपर्कों पर सही हस्ताक्षर नहीं किए गए हैं।\nयह पासवर्ड रीसेट का परिणाम हो सकता है।\n${ contactAddresses } को संदेश भेजने या संपर्कों को संपादित करने के लिए आपको संपर्कों पर फिर से हस्ताक्षर करना होगा।"
@@ -5406,12 +5372,6 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "यह संदेश कुंजी से जुड़ा हुआ है, जिस पर अभी तक भरोसा नहीं किया गया है।"
       ],
-      "This message will be automatically deleted on ${ longDateMEssage }": [
-        "ये संदेश ${ longDateMEssage } को अपनेआप मिट जाएगा"
-      ],
-      "This message will be automatically deleted on ${ shortDateMessage }": [
-        "ये संदेश ${ shortDateMessage } को अपनेआप मिट जाएगा"
-      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "इस संदेश पर अनिष्ट छाप लगायी जाएगी। साथ में भविश्य के ईपत्र नहीं मंगाना चाहते हैं क्या?",
         "इन संदेशों पर अनिष्ट छाप लगायी जाएगी। साथ में भविश्य के ईपत्र नहीं मंगाना चाहते हैं क्या?"
@@ -5436,15 +5396,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "यह संदेश ${ formattedDate } समाप्त हो जाएगा"
-      ],
-      "This message will expire on ${ longDateMEssage }": [
-        "ये संदेश ${ longDateMEssage } को खत्म होगा"
-      ],
-      "This message will expire today at ${ shortDateMessage }": [
-        "ये संदेश आज ${ shortDateMessage } पे खत्म हो जाएगा"
-      ],
-      "This message will expire tomorrow at ${ shortDateMessage }": [
-        "यह संदेश कल ${ shortDateMessage } पे खत्म हो जाएगा"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "यह सार्वजनिक कुंजी स्वचालित रूप से इस पते पर भेजे गए ईमेल को एन्क्रिप्ट करने के लिए उपयोग की जाएगी।"
@@ -5479,18 +5430,6 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "बहुत सारे संदेश भेजे जाने की प्रतीक्षा कर रहे हैं। कृपया इसे शेड्यूल करने के लिए कोई अन्य संदेश भेजे जाने तक प्रतीक्षा करें।"
       ],
-      "Total email addresses": [
-        "कुल ईमेल पते"
-      ],
-      "Total storage": [
-        "कुल स्टोरेज"
-      ],
-      "Total supported domains": [
-        "कुल सपोर्ट किए डोमेन"
-      ],
-      "Total VPN connections": [
-        "कुल VPN कनेक्शन"
-      ],
       "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
         "केवल दिनांक, नाम, ईमेल पता या विषय के आधार पर खोजने के लिए इसे बंद करें। संदेश सामग्री में खोज को अक्षम करने और डाउनलोड किए गए संदेशों को हटाने के लिए सेटिंग्स पर जाएं।"
       ],
@@ -5505,9 +5444,6 @@
       ],
       "Unsupported file": [
         "असमर्थित फ़ाइल"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "${ FAMILY_MAX_USERS } यूज़र तक"
       ],
       "Updating message content search...": [
         "संदेश सामग्री खोज अपडेट की जा रही है..."
@@ -5652,12 +5588,6 @@
       ],
       "You do not have any messages here": [
         "आपके पास यहां कोई संदेश नहीं है"
-      ],
-      "You have ${ totalLabel } in your inbox.": [
-        "आपके इनबॉक्स में ${ totalLabel } है।"
-      ],
-      "You have ${ unreadsLabel } in your inbox.": [
-        "आपके इनबॉक्स में ${ unreadsLabel } है।"
       ],
       "You have **${ count } conversation** stored in this folder": [
         "आपके पास **${ count } वार्तालाप** इस फ़ोल्डर में संग्रहीत है",
@@ -6395,18 +6325,6 @@
       "System information": [
         "प्रणाली की जानकारी"
       ],
-      "The email was sent ${ attachment }": [
-        "ईमेल भेजा गया था ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "ईमेल भेजा गया था ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "ईमेल भेजा गया था ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "ईमेल भेजा गया था ${ label }"
-      ],
       "Theme": [
         "थीम"
       ],
@@ -6440,16 +6358,7 @@
       "With attachment": [
         "अनुलग्नक के साथ"
       ],
-      "with attachments": [
-        "संलग्नक के साथ"
-      ],
       "Without attachment": [
-        "संलग्नक के बिना"
-      ],
-      "without attachment": [
-        "संलग्नक के बिना"
-      ],
-      "without attachments": [
         "संलग्नक के बिना"
       ],
       "Wonderful": [
@@ -6950,9 +6859,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } कैलेंडर",
-        "${ maximumNumberOfCalendars } कैलेंडर"
+      "${ n } calendar": [
+        "${ n } कैलेंडर",
+        "${ n } कैलेंडर"
+      ],
+      "${ n } calendar per user": [
+        "${ n } कैलेंडर हर यूज़र पे",
+        "${ n } कैलेंडर हर यूज़र पे"
       ],
       "Auto-delete spam and trashed messages": [
         "स्पैम और कचरे के संदेशो को अपनेआप मिटाएं"
@@ -6963,6 +6876,9 @@
       "Custom email domains": [
         "कस्टम ईमेल डोमेन"
       ],
+      "End-to-end encryption": [
+        "शुरु-से-अंत तक एन्क्रिप्शन"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email नकलीनाम"
       ],
@@ -6971,6 +6887,9 @@
       ],
       "Search message content": [
         "संदेश कंटेंट खोजें"
+      ],
+      "Send & receive invitations": [
+        "न्योते भेजें और लें"
       ],
       "Unlimited folders, labels, and filters": [
         "असीमित फोल्डर, लेबल, और फिल्टर"
@@ -7001,6 +6920,24 @@
     "new_plans: placeholder": {
       "Feedback": [
         "फीडबैक"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: एंड-टू-एंड एन्क्रिप्शन के साथ अपना शेड्यूल सुरक्षित करें। इसमें कस्टम कैलेंडर, कैलेंडर शेयरिंग और बहुत कुछ के लिए समर्थन शामिल है।"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "${ n } कैलेंडर बनाएं या दोस्त, परिवार, सहकर्मी, और संगठन से कैलेंडर जोड़े।",
+        "${ n } कैलेंडर तक बनाएं या दोस्त, परिवार, सहकर्मी, और संगठन से कैलेंडर जोड़े।"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "आसानी से अपना कैलेंडर अपने परिवार, दोस्तों, या सहकर्मियों के साथ शेयर करें।"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "${ n } कैलेंडर तक बनाएं",
+        "${ n } कैलेंडर तक बनाएं"
       ]
     },
     "Notification": {
@@ -8338,9 +8275,6 @@
       "Delete ${ count } message": [
         "हटाएं ${ count } संदेश",
         "हटाएं ${ count } messages"
-      ],
-      "Delete ${ Name }": [
-        "${ Name } हटाएं"
       ],
       "Delete all messages": [
         "सभी संदेश डिलीट करें"

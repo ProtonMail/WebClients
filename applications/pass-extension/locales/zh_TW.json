@@ -653,23 +653,11 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "${ payload.item.data.metadata.name }已忽略更新"
       ],
-      "${ count } items": [
-        "${ count } 個項目"
-      ],
-      "${ itemCount } items": [
-        "${ itemCount }項目"
-      ],
       "${ memberCount } members": [
         "${ memberCount } 位成員"
       ],
       "${ revisionNumber } times": [
         "${ revisionNumber }次數"
-      ],
-      "${ totalImportedItems } items": [
-        "${ totalImportedItems } 個項目"
-      ],
-      "${ totalItems } items": [
-        "${ totalItems } 個項目"
       ],
       "${ trialDaysLeft } days left": [
         "剩下${ trialDaysLeft }天"
@@ -919,9 +907,6 @@
       ],
       "Sign in or create an account to continue.": [
         "請登入或註冊一個帳號以繼續。"
-      ],
-      "Sign in to your account": [
-        "登入您的帳戶"
       ],
       "Signing you in": [
         "將您登入"
@@ -1418,6 +1403,11 @@
         "您將要創建"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "歡迎來到 ${ appName }"
+      ]
+    },
     "Option": {
       "Commas": [
         "逗號"
@@ -1638,9 +1628,6 @@
       "Trash empty": [
         "垃圾桶已清空"
       ],
-      "Unlock ${ brandNameJSX }": [
-        "解鎖${ brandNameJSX }"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "解鎖 ${ PASS_APP_NAME }"
       ],
@@ -1652,12 +1639,6 @@
       ],
       "Vault shared with you": [
         "與您分享的保管庫"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "歡迎使用 ${ brandNameJSX }"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "歡迎使用 ${ PASS_APP_NAME }"
       ],
       "Welcome to your new password manager!": [
         "歡迎來到你的新密碼管理器!"

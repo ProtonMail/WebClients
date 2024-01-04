@@ -3414,8 +3414,21 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } kalendar",
+        "${ n } kalendara",
+        "${ n } kalendara"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalendar po korisniku",
+        "${ n } kalendara po korisniku",
+        "${ n } kalendara po korisniku"
+      ],
       "Custom email domains": [
         "Prilagođene domene"
+      ],
+      "End-to-end encryption": [
+        "Krajnje do krajnje šifriranje"
       ],
       "Search message content": [
         "Pretraži sadržaj poruka"
@@ -3445,41 +3458,16 @@
       "Failed to move, please try again": [
         "Neuspješno premještanje, pokušajte ponovo"
       ],
-      "Move ${ itemsToMoveCount } file": [
-        "Premjesti ${ itemsToMoveCount } datoteku",
-        "Premjesti ${ itemsToMoveCount } datoteke",
-        "Premjesti ${ itemsToMoveCount } datoteka"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Premjesti ${ itemsToMoveCount } mapu",
-        "Premjesti ${ itemsToMoveCount } mape",
-        "Premjesti ${ itemsToMoveCount } mapa"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "Premjesti ${ itemsToMoveCount } stavku",
-        "Premjesti ${ itemsToMoveCount } stavke",
-        "Premjesti ${ itemsToMoveCount } stavki"
-      ],
-      "Move ${ movingCount } file": [
-        "Premjesti ${ movingCount } datoteku",
-        "Premjesti ${ movingCount } datoteke",
-        "Premjesti ${ movingCount } datoteka"
-      ],
-      "Move ${ movingCount } folder": [
-        "Premjesti ${ movingCount } mapu",
-        "Premjesti ${ movingCount } mape",
-        "Premjesti ${ movingCount } mapa"
-      ],
-      "Move ${ movingCount } item": [
-        "Premjesti ${ movingCount } stavku",
-        "Premjesti ${ movingCount } stavke",
-        "Premjesti ${ movingCount } stavki"
-      ],
       "The link to \"${ name }\" was deleted": [
         "Poveznica do \"${ name }\" je izbrisana."
       ],
       "Your settings have been changed successfully": [
         "Vaše postavke su promijenjene."
+      ]
+    },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Dobrodošli u ${ appName }"
       ]
     },
     "Onboarding Action": {
@@ -3507,11 +3495,6 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
         "Upotrijebite birač aplikacija u gornjem lijevom kutu za pristup svim uslugama ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }."
-      ]
-    },
-    "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "Dobrodošli u ${ DRIVE_APP_NAME }"
       ]
     },
     "Option": {
@@ -4089,9 +4072,6 @@
         "Izbriši ${ count } grupu kontakata",
         "Izbriši ${ count } grupe kontakata",
         "Izbriši ${ count } grupa kontakata"
-      ],
-      "Delete ${ Name }": [
-        "Izbriši ${ Name }"
       ],
       "Delete permanently": [
         "Ukloni trajno"

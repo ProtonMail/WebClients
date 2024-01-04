@@ -3241,9 +3241,6 @@
       "MM/YY": [
         "MM/AA"
       ],
-      "Multi-user support not enabled.": [
-        "Suporte a múltiplos usuários desativado."
-      ],
       "Must be between 3 and 20 characters long.": [
         "Deve ter entre 3 e 20 caracteres."
       ],
@@ -3613,9 +3610,6 @@
       "to continue to ${ product }": [
         "para continuar para ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "para continuar para ${ toAppName }"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
       ],
@@ -3675,9 +3669,6 @@
       ],
       "Unverified email address.": [
         "Endereço de e-mail não verificado."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Até ${ FAMILY_MAX_USERS } usuários"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
@@ -4463,17 +4454,8 @@
       "${ BRAND_NAME } welcome emails": [
         "E-mails de boas-vindas da ${ BRAND_NAME }"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "Atualizações de produto da ${ DRIVE_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "Novos recursos da ${ MAIL_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "Atualizações de produto da ${ PASS_APP_NAME }"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "Atualizações de produto da ${ VPN_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -4732,10 +4714,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } calendário",
-        "${ maximumNumberOfCalendars } calendários"
-      ],
       "${ n } calendar": [
         "${ n } calendário",
         "${ n } calendários"
@@ -5059,12 +5037,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Volume/largura de banda ilimitados"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Até ${ FAMILY_MAX_USERS } usuários"
-      ],
-      "Up to ${ n } users": [
-        "Até ${ n } usuários"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Até ${ totalStorageSize } de armazenamento"
@@ -5532,11 +5504,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Bem-vindo ao ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Boas-vindas ao ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Bem-vindo ao ${ appName }"
       ]
     },
     "Option": {
@@ -6498,14 +6467,6 @@
         "${ ipAddresses } servidor dedicado",
         "${ ipAddresses } servidores dedicados"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } conexão VPN de alta velocidade",
-        "${ maxVpn } conexões VPN de alta velocidade"
-      ],
-      "${ n } calendar": [
-        "${ n } calendário",
-        "${ n } calendarios"
-      ],
       "${ n } calendar per user": [
         "${ n } calendário por usuario",
         "${ n } calendarios por usuario"
@@ -7031,9 +6992,6 @@
       "Delete": [
         "Excluir"
       ],
-      "Delete ${ email }": [
-        "Excluir ${ email }"
-      ],
       "Delete account": [
         "Excluir conta"
       ],
@@ -7305,14 +7263,6 @@
       ],
       "Subscription": [
         "Assinatura"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "${ localSuccessfullyCreatedUsers.length } conta de usuário criada",
-        "${ localSuccessfullyCreatedUsers.length } contas de usuário criadas"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "Conta de usuário ${ successfullyCreatedUsers.length } criada",
-        "Contas de usuário ${ successfullyCreatedUsers.length } criadas"
       ],
       "Summary": [
         "Resumo"

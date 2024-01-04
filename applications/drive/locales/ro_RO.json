@@ -3384,9 +3384,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storage } storage": [
-        "Stocare ${ storage }"
-      ],
       "${ updated } contact updated successfully.": [
         "S-a actualizat un contact.",
         "S-au actualizat ${ updated } contacte.",
@@ -4254,18 +4251,6 @@
       "Today": [
         "Astăzi"
       ],
-      "Total email addresses": [
-        "Total adrese de e-mail"
-      ],
-      "Total storage": [
-        "Spațiu total"
-      ],
-      "Total supported domains": [
-        "Total domenii suportate"
-      ],
-      "Total VPN connections": [
-        "Total conexiuni VPN"
-      ],
       "Transfer canceled for file \"${ name }\"": [
         "Transfer anulat pentru fișierul „${ name }”."
       ],
@@ -4307,9 +4292,6 @@
       ],
       "Unsupported file": [
         "Fişier nesuportat"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Până la ${ FAMILY_MAX_USERS } utilizatori"
       ],
       "Updating drive search...": [
         "Actualizare căutare în unitate..."
@@ -5169,10 +5151,15 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } calendar",
-        "${ maximumNumberOfCalendars } calendare",
-        "${ maximumNumberOfCalendars } de calendare"
+      "${ n } calendar": [
+        "${ n } calendar",
+        "${ n } calendare",
+        "${ n } de calendare"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendar per utilizator",
+        "${ n } calendare per utilizator",
+        "${ n } de calendare per utilizator"
       ],
       "Auto-delete spam and trashed messages": [
         "Ștergere automată mesaje nedorite și din gunoi"
@@ -5186,6 +5173,9 @@
       "Custom snooze time": [
         "Timp amânare personal"
       ],
+      "End-to-end encryption": [
+        "Criptare bilaterală"
+      ],
       "Hide-my-email aliases": [
         "Aliasuri hide-my-email"
       ],
@@ -5194,6 +5184,9 @@
       ],
       "Search message content": [
         "Căutare în conținut mesaj"
+      ],
+      "Send & receive invitations": [
+        "Trimiteți și primiți invitații"
       ],
       "Unlimited folders, labels, and filters": [
         "Foldere, etichete și filtre nelimitate"
@@ -5230,6 +5223,29 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Feedback"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Asigurați-vă programul cu criptare bilaterală. Include suport pentru calendare personalizate, calendare partajate și multe altele."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Creați până la ${ n } calendar sau adăugați calendare de la prieteni, familie, colegi și organizații",
+        "Creați până la ${ n } calendare sau adăugați calendare de la prieteni, familie, colegi și organizații",
+        "Creați până la ${ n } de calendare sau adăugați calendare de la prieteni, familie, colegi și organizații"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Partajați calendarele ușor cu familia, prietenii sau colegii."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Păstrați-vă private propriile planuri și ale familiei cu calendarul criptat"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Creați maxim ${ n } calendar",
+        "Creați până la ${ n } calendare",
+        "Creați până la ${ n } de calendare"
       ]
     },
     "Notification": {
@@ -5383,36 +5399,6 @@
       "Link copied to clipboard": [
         "Legătura a fost copiată în memorie."
       ],
-      "Move ${ itemsToMoveCount } file": [
-        "Mutare un fișier.",
-        "Mutare ${ itemsToMoveCount } fișiere.",
-        "Mutare ${ itemsToMoveCount } de fișiere."
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Mutare un folder.",
-        "Mutare ${ itemsToMoveCount } foldere.",
-        "Mutare ${ itemsToMoveCount } de foldere."
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "Mutare un element.",
-        "Mutare ${ itemsToMoveCount } elemente.",
-        "Mutare ${ itemsToMoveCount } de elemente."
-      ],
-      "Move ${ movingCount } file": [
-        "Mutare un fișier.",
-        "Mutare ${ movingCount } fișiere.",
-        "Mutare ${ movingCount } de fișiere."
-      ],
-      "Move ${ movingCount } folder": [
-        "Mutare un folder.",
-        "Mutare ${ movingCount } foldere.",
-        "Mutare ${ movingCount } de foldere."
-      ],
-      "Move ${ movingCount } item": [
-        "Mutare un element.",
-        "Mutare ${ movingCount } elemente.",
-        "Mutare ${ movingCount } de elemente."
-      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Nu este suficient spațiu pentru a încărca ${ formattedTotal }."
       ],
@@ -5460,6 +5446,11 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "Selectați ce poate accesa ${ BRAND_NAME }: accesare mesaje e-mail și setări, afișare și descărcare contacte, afișare și descărcare toate agendele pe care le accesați din Google Agenda."
+      ]
+    },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Bun venit la ${ appName }"
       ]
     },
     "Onboarding Action": {
@@ -5513,9 +5504,6 @@
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "Bun venit la ${ DRIVE_APP_NAME }"
-      ],
       "Your welcome bonus": [
         "Bonusul de bun venit"
       ]
@@ -6453,9 +6441,6 @@
         "Ștergere grup de contacte",
         "Ștergere ${ count } grupuri de contacte",
         "Ștergere ${ count } de grupuri de contacte"
-      ],
-      "Delete ${ Name }": [
-        "Ștergere ${ Name }"
       ],
       "Delete permanently": [
         "Ștergere permanentă"

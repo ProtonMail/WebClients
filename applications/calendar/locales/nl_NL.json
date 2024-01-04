@@ -3591,9 +3591,6 @@
         "${ selectedFoldersCountLocalized } label geselecteerd",
         "${ selectedFoldersCountLocalized } labels geselecteerd"
       ],
-      "${ storage } storage": [
-        "${ storage } opslag"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact bijgewerkt.",
         "${ updated } contacten bijgewerkt."
@@ -4107,23 +4104,8 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "U moet een of meerdere beschikbare openbare sleutels vertrouwen, als u adresverificatie wil gebruiken. Dit betreft ook de sleutels die u wil gebruiken voor het versturen. Het voorkomt dat er misbruik gemaakt wordt van de sleutels."
       ],
-      "Total email addresses": [
-        "Totaal e-mailadressen"
-      ],
-      "Total storage": [
-        "Totale opslagruimte"
-      ],
-      "Total supported domains": [
-        "Totaal ondersteunde domeinen"
-      ],
-      "Total VPN connections": [
-        "Totale VPN-verbindingen"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Probeer de nieuwe ${ BRAND_NAME } mogelijkheden, updates en producten voordat ze publiekelijk gelanceerd worden. Dit herlaadt de applicatie"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Tot ${ FAMILY_MAX_USERS } gebruikers"
       ],
       "Update recurring event": [
         "Terugkerende afspraak bijwerken"
@@ -5095,9 +5077,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } agenda",
-        "${ maximumNumberOfCalendars } agenda's"
+      "${ n } calendar": [
+        "${ n } agenda",
+        "${ n } agenda's"
+      ],
+      "${ n } calendar per user": [
+        "${ n } agenda per gebruiker",
+        "${ n } agenda's per gebruiker"
       ],
       "Auto-delete spam and trashed messages": [
         "Automatisch spam en verwijderde berichten verwijderen"
@@ -5111,6 +5097,9 @@
       "Custom snooze time": [
         "Aangepaste sluimertijd"
       ],
+      "End-to-end encryption": [
+        "End-to-end versleuteling"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliassen"
       ],
@@ -5119,6 +5108,9 @@
       ],
       "Search message content": [
         "Doorzoek berichtinhoud"
+      ],
+      "Send & receive invitations": [
+        "Uitnodigingen verzenden & ontvangen"
       ],
       "Unlimited folders, labels, and filters": [
         "Ongelimiteerde mappen, labels en filters"
@@ -5155,6 +5147,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Feedback"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Beveilig uw agenda met end-to-end versleuteling. Dit is inclusief ondersteuning voor aangepaste agenda's, agenda-delen en meer."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Maak tot ${ n } agenda of voeg agenda's van vrienden, familie, collega's of andere organisaties toe",
+        "Maak tot ${ n } agenda's of voeg agenda's van vrienden, familie, collega's of andere organisaties toe"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Deel uw agenda's eenvoudig met uw familie, vrienden of collega's."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Houd uw plannen privé voor u en uw gezin met een versleutelde agenda"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Maak tot ${ n } agenda",
+        "Maak tot ${ n } agenda's"
       ]
     },
     "Notification": {
@@ -5367,9 +5380,6 @@
       ],
       "Auto": [
         "Automatisch"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automatisch (${ defaultDay })"
       ],
       "Create new group": [
         "Nieuwe groep maken"
@@ -6448,9 +6458,6 @@
       "Delete ${ count } contact group": [
         "${ count } contactgroep verwijderen",
         "${ count } contactgroepen verwijderen"
-      ],
-      "Delete ${ Name }": [
-        "Verwijder ${ Name }"
       ],
       "Delete event": [
         "Afspraak verwijderen"

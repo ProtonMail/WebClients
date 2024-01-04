@@ -709,10 +709,10 @@
       "Not saved": [
         "Belum disimpan"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -3278,12 +3278,6 @@
       "Choose a date in the future.": [
         "Pilih tanggal yang akan datang."
       ],
-      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } days.": [
-        "Pilih tanggal yang berada dalam rentang ${ EXPIRATION_TIME_MAX_DAYS } hari ke depan."
-      ],
-      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } days.": [
-        "Pilih tanggal yang berjarak ${ SCHEDULED_MAX_DATE_DAYS } hari dari sekarang."
-      ],
       "Condition incomplete": [
         "Kondisi tidak lengkap"
       ],
@@ -4777,9 +4771,6 @@
       "${ contactsLength } contacts": [
         "${ contactsLength } kontak"
       ],
-      "${ count } unread messages": [
-        "${ count } pesan yang belum dibaca"
-      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } dari ${ totalProgress }"
       ],
@@ -4840,29 +4831,14 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "${ selectedFoldersCountLocalized } label dipilih"
       ],
-      "${ storage } storage": [
-        "Kuota penyimpanan ${ storage }"
-      ],
       "${ total } conversations": [
         "${ total } percakapan"
       ],
       "${ total } messages": [
         "${ total } pesan"
       ],
-      "${ unread } unread conversations": [
-        "${ unread } percakapan yang belum dibaca"
-      ],
-      "${ unread } unread messages": [
-        "${ unread } pesan yang belum dibaca"
-      ],
       "${ unreadCount } scheduled messages": [
         "${ unreadCount } pesan terjadwal"
-      ],
-      "${ unreadCount } unread conversations": [
-        "${ unreadCount } percakapan yang belum dibaca"
-      ],
-      "${ unreadCount } unread messages": [
-        "${ unreadCount } pesan yang belum dibaca"
       ],
       "${ updated } contacts updated successfully.": [
         "${ updated } kontak berhasil diperbarui."
@@ -5716,9 +5692,6 @@
       "The sender has requested a read receipt.": [
         "Pengirim pesan meminta bukti yang membenarkan bahwa Anda telah membaca pesan ini."
       ],
-      "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "Verifikasi ${ contactName } gagal: kontak tidak ditandatangani dengan benar.\nKesalahan ini kemungkinan disebabkan oleh pengaturan ulang kata sandi.\nAnda harus terlebih dahulu menandatangani ulang atau menyunting rincian kontak agar Anda dapat mengirim pesan ke ${ contactAddress }."
-      ],
       "The verification of ${ contactNames } has failed: the contacts are not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contacts in order to send a message to ${ contactAddresses } or edit the contacts.": [
         "Verifikasi ${ contactNames } gagal: kontak tidak ditandatangani dengan benar.\nHal ini kemungkinan disebabkan oleh pengaturan ulang kata sandi.\nAnda harus terlebih dahulu menandatangani ulang kontak agar Anda dapat mengirim pesan ke ${ contactAddresses } atau menyunting kontak yang bersangkutan."
       ],
@@ -5791,12 +5764,6 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Pesan ini ditandatangani dengan kunci terlampir yang belum dipercaya."
       ],
-      "This message will be automatically deleted on ${ longDateMEssage }": [
-        "Pesan ini akan dihapus secara otomatis pada ${ longDateMEssage }"
-      ],
-      "This message will be automatically deleted on ${ shortDateMessage }": [
-        "Pesan ini akan dihapus secara otomatis pada ${ shortDateMessage }"
-      ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Pesan ini akan secara otomatis berpindah ke Draf agar Anda dapat menyunting isi pesan ini di kemudian waktu. Anda harus mengatur ulang waktu pengiriman pesan ini."
       ],
@@ -5817,15 +5784,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Pesan ini akan kedaluwarsa pada ${ formattedDate }"
-      ],
-      "This message will expire on ${ longDateMEssage }": [
-        "Pesan ini akan kedaluwarsa pada ${ longDateMEssage }"
-      ],
-      "This message will expire today at ${ shortDateMessage }": [
-        "Pesan ini akan kedaluwarsa hari ini pada pukul ${ shortDateMessage }"
-      ],
-      "This message will expire tomorrow at ${ shortDateMessage }": [
-        "Pesan ini akan kedaluwarsa besok pada pukul ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Kunci publik ini akan digunakan secara otomatis untuk mengenkripsi surel-surel yang dikirim ke alamat ini."
@@ -5860,18 +5818,6 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Pesan yang akan dikirim sudah terlalu banyak. Mohon tunggu sejenak sebelum Anda menjadwalkan pengiriman pesan ini."
       ],
-      "Total email addresses": [
-        "Total alamat surel"
-      ],
-      "Total storage": [
-        "Total kuota penyimpanan"
-      ],
-      "Total supported domains": [
-        "Total domain yang didukung"
-      ],
-      "Total VPN connections": [
-        "Total koneksi VPN"
-      ],
       "Trackers blocked:": [
         "Pelacak yang diblokir:"
       ],
@@ -5892,9 +5838,6 @@
       ],
       "Unsupported file": [
         "Berkas tidak didukung"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Hingga ${ FAMILY_MAX_USERS } pengguna"
       ],
       "Updating message content search...": [
         "Memperbarui pencarian konten pesan..."
@@ -6051,12 +5994,6 @@
       ],
       "You do not have any messages here": [
         "Anda tidak memiliki pesan apa pun di sini"
-      ],
-      "You have ${ totalLabel } in your inbox.": [
-        "Anda mempunyai ${ totalLabel } di kotak masuk Anda."
-      ],
-      "You have ${ unreadsLabel } in your inbox.": [
-        "Anda mempunyai ${ unreadsLabel } di kotak masuk Anda."
       ],
       "You have **${ count } conversations** stored in this folder": [
         "Anda memiliki **${ count } percakapan** di folder ini"
@@ -6811,18 +6748,6 @@
       "System information": [
         "Informasi sistem"
       ],
-      "The email was sent ${ attachment }": [
-        "Surel terkirim ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "surel terkirim ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Surel terkirim ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "surel terkirim ${ label }"
-      ],
       "Theme": [
         "Tema"
       ],
@@ -6859,17 +6784,8 @@
       "With attachment": [
         "Dengan lampiran"
       ],
-      "with attachments": [
-        "dengan lampiran"
-      ],
       "Without attachment": [
         "Tanpa lampiran"
-      ],
-      "without attachment": [
-        "tanpa lampiran"
-      ],
-      "without attachments": [
-        "tanpa lampiran"
       ],
       "Wonderful": [
         "Luar Biasa"
@@ -7382,8 +7298,11 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendars": [
-        "${ maximumNumberOfCalendars } kalender"
+      "${ n } calendars": [
+        "${ n } kalender"
+      ],
+      "${ n } calendars per user": [
+        "${ n } kalender per pengguna"
       ],
       "Auto-delete spam and trashed messages": [
         "Hapus pesan spam dan sampah secara otomatis"
@@ -7397,6 +7316,9 @@
       "Custom snooze time": [
         "Pilih sendiri waktu tunda"
       ],
+      "End-to-end encryption": [
+        "Enkripsi end-to-end"
+      ],
       "Hide-my-email aliases": [
         "Alias hide-my-email"
       ],
@@ -7405,6 +7327,9 @@
       ],
       "Search message content": [
         "Cari konten pesan"
+      ],
+      "Send & receive invitations": [
+        "Kirim & terima undangan"
       ],
       "Unlimited folders, labels, and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
@@ -7441,6 +7366,25 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Masukan"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Amankan jadwal Anda dengan enkripsi ujung ke ujung. Meliputi dukungan untuk kalender khusus, fitur berbagi kalender, dan masih banyak lagi."
+      ],
+      "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
+        "Buat hingga ${ n } kalender atau tambahkan kalender dari teman, keluarga, rekan kerja, dan organisasi Anda"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Bagikan kalender Anda dengan keluarga, teman, atau rekan kerja Anda secara mudah"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Jaga agar rencana Anda tetap menjadi rahasia antara Anda dan keluarga dengan kalender yang terenkripsi"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendars": [
+        "Buat hingga ${ n } kalender"
       ]
     },
     "Notification": {
@@ -8936,9 +8880,6 @@
       ],
       "Delete ${ count } messages": [
         "Hapus ${ count } pesan"
-      ],
-      "Delete ${ Name }": [
-        "Hapus ${ Name }"
       ],
       "Delete all messages": [
         "Hapus seluruh pesan"

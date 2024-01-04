@@ -716,14 +716,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Kohteen \"${ payload.item.data.metadata.name }\" päivitys hylättiin"
       ],
-      "${ count } item": [
-        "${ count } kohde",
-        "${ count } kohdetta"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } kohde",
-        "${ itemCount } kohdetta"
-      ],
       "${ memberCount } member": [
         "${ memberCount } jäsen",
         "${ memberCount } jäsentä"
@@ -746,14 +738,6 @@
       "${ revisionNumber } time": [
         "${ revisionNumber } kerran",
         "${ revisionNumber } kertaa"
-      ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } kohde",
-        "${ totalImportedItems } kohdetta"
-      ],
-      "${ totalItems } item": [
-        "${ totalItems } kohde",
-        "${ totalItems } kohdetta"
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } päivä jäljellä",
@@ -1069,9 +1053,6 @@
       ],
       "Sign in or create an account to continue.": [
         "Jatka kirjautumalla tai luomalla tili."
-      ],
-      "Sign in to your account": [
-        "Kirjaudu tilillesi"
       ],
       "Signing you in": [
         "Kirjaudutaan sisään"
@@ -1614,6 +1595,11 @@
         "Luot aliasta"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Tervetuloa ${ appName } -sovellukseen"
+      ]
+    },
     "Option": {
       "Commas": [
         "Pilkku"
@@ -1838,9 +1824,6 @@
       "Trash empty": [
         "Roskakori on tyhjä"
       ],
-      "Unlock ${ brandNameJSX }": [
-        "Avaa ${ brandNameJSX }"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Avaa ${ PASS_APP_NAME }"
       ],
@@ -1855,12 +1838,6 @@
       ],
       "Vault shared with you": [
         "Sinulle on jaettu holvi"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Tervetuloa ${ brandNameJSX }iin"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Tervetuloa ${ PASS_APP_NAME }iin"
       ],
       "Welcome to your new password manager!": [
         "Tervetuloa uuteen salasanahallintaasi!"

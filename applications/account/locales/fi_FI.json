@@ -7396,9 +7396,6 @@
       "to continue to ${ product }": [
         "jatkaaksesi palveluun ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "jatkaaksesi ${ toAppName } -palveluun"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Kehittääksemme palveluitamme edelleen, keräämme ajoittain jotakin tietoja seurataksemme niiden normaalia toimintaa. Näitä tietoja ei jaeta ulkopuolisten tahojen kanssa."
       ],
@@ -7497,9 +7494,6 @@
       ],
       "Unverified email address.": [
         "Vahvistamaton sähköpostiosoite."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Enintään ${ FAMILY_MAX_USERS } käyttäjää"
       ],
       "Update recovery file": [
         "Päivitä palautustiedosto"
@@ -9147,18 +9141,6 @@
       "System information": [
         "Järjestelmätiedot"
       ],
-      "The email was sent ${ attachment }": [
-        "Viesti lähetettiin ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "viesti lähetettiin ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Viesti lähetettiin ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "viesti lähetettiin ${ label }"
-      ],
       "Then": [
         "Niin"
       ],
@@ -9228,17 +9210,8 @@
       "With attachment": [
         "Liitteillä"
       ],
-      "with attachments": [
-        "liitteiden kanssa"
-      ],
       "Without attachment": [
         "Ilman liitteitä"
-      ],
-      "without attachment": [
-        "ilman liitteitä"
-      ],
-      "without attachments": [
-        "ilman liitteitä"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Kyllä, haluan poistaa tilin ja kaikki sen tiedot pysyvästi."
@@ -9323,17 +9296,8 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }in tervetuloviestit"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "${ DRIVE_APP_NAME } tuotepäivitykset"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "${ MAIL_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME } uusia ominaisuuksia"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "${ PASS_APP_NAME } tuotepäivitykset"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "${ VPN_APP_NAME } tuotepäivitykset"
       ]
     },
     "Label in domain modal": {
@@ -9966,14 +9930,8 @@
       "Get ${ BRAND_NAME } for free": [
         "Hanki ${ BRAND_NAME } ilmaiseksi"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "Hanki ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "Hanki ${ planName }"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "Hanki ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "Selvä"
@@ -9992,10 +9950,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } kalenteri",
-        "${ maximumNumberOfCalendars } kalenteria"
-      ],
       "${ n } calendar": [
         "${ n } kalenteri",
         "${ n } kalenteria"
@@ -10319,12 +10273,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Rajaton tiedonsiirto/kaistanleveys"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Enintään ${ FAMILY_MAX_USERS } käyttäjää"
-      ],
-      "Up to ${ n } users": [
-        "Enintään ${ n } käyttäjää"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Jopa ${ totalStorageSize } tallennustilaa"
@@ -10952,11 +10900,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Tervetuloa palveluun ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Tervetuloa ${ VPN_APP_NAME }:ään"
+      "Welcome to ${ appName }": [
+        "Tervetuloa ${ appName } -sovellukseen"
       ]
     },
     "Option": {
@@ -11061,12 +11006,6 @@
       ],
       "Auto": [
         "Autom."
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automaattinen (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "Automaattinen (${ defaultFormat })"
       ],
       "Country configs": [
         "Maakohtaiset määritykset"
@@ -12630,14 +12569,6 @@
         "${ ipAddresses } dedikoitu palvelin",
         "${ ipAddresses } dedikoitua palvelinta"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } nopea VPN-yhteys",
-        "${ maxVpn } nopeaa VPN-yhteyttä"
-      ],
-      "${ n } calendar": [
-        "${ n } kalenteri",
-        "${ n } kalenteria"
-      ],
       "${ n } calendar per user": [
         "${ n } kalenteri/käyttäjä",
         "${ n } kalenteria/käyttäjä"
@@ -13470,15 +13401,6 @@
       "Decrypt key": [
         "Pura avaimen salaus"
       ],
-      "Delete ${ domain.DomainName }": [
-        "Poista ${ domain.DomainName }"
-      ],
-      "Delete ${ email }": [
-        "Poista ${ email }"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "Poista ${ tokenNameToRemove }?"
-      ],
       "Delete account": [
         "Poista tili"
       ],
@@ -14009,14 +13931,6 @@
       ],
       "Success": [
         "Onnistui"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "${ localSuccessfullyCreatedUsers.length } käyttäjätili luotiin",
-        "${ localSuccessfullyCreatedUsers.length } käyttäjätiliä luotiin"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "${ successfullyCreatedUsers.length } käyttäjätili luotiin",
-        "${ successfullyCreatedUsers.length } käyttäjätiliä luotiin"
       ],
       "Summary": [
         "Yhteenveto"

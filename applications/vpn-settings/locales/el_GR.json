@@ -3241,9 +3241,6 @@
       "MM/YY": [
         "ΜΜ/ΧΧ"
       ],
-      "Multi-user support not enabled.": [
-        "Η υποστήριξη πολλαπλών χρηστών δεν είναι ενεργοποιημένη."
-      ],
       "Must be between 3 and 20 characters long.": [
         "Πρέπει να είναι μεταξύ 3 και 20 χαρακτήρες."
       ],
@@ -3610,9 +3607,6 @@
       "to continue to ${ product }": [
         "για συνέχιση στο ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "για συνέχιση στο ${ toAppName }"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
       ],
@@ -3672,9 +3666,6 @@
       ],
       "Unverified email address.": [
         "Μην επαληθευμένη διεύθυνση ηλεκτρονικού ταχυδρομείου."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Μέχρι και ${ FAMILY_MAX_USERS } χρήστες"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Αναβαθμίστε τώρα τον λογαριασμό σας για να λάβετε premium χαρακτηριστικά, προϊόντα και αποθηκευτικό χώρο σε ειδική τιμή"
@@ -4460,17 +4451,8 @@
       "${ BRAND_NAME } welcome emails": [
         "Emails καλωσορίσματος ${ BRAND_NAME }"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "${ DRIVE_APP_NAME } ενημερώσεις προϊόντων"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "${ MAIL_APP_NAME } και ${ CALENDAR_SHORT_APP_NAME } νέες δυνατότητες"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "${ PASS_APP_NAME } ενημερώσεις προϊόντων"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "${ VPN_APP_NAME } ενημερώσεις προϊόντων"
       ]
     },
     "Label on payment method": {
@@ -4729,10 +4711,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } ημερολόγιο",
-        "${ maximumNumberOfCalendars } ημερολόγια"
-      ],
       "${ n } calendar": [
         "${ n } ημερολόγιο",
         "${ n } ημερολόγια"
@@ -5056,12 +5034,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Απεριόριστος όγκος / εύρος ζώνης"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Μέχρι και ${ FAMILY_MAX_USERS } χρήστες"
-      ],
-      "Up to ${ n } users": [
-        "Μέχρι και ${ n } χρήστες"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Έως και ${ totalStorageSize } αποθηκευτικού χώρου"
@@ -5529,11 +5501,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Καλώς ήρθατε στο ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Καλώς ήρθατε στο ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Καλώς ήρθατε στο ${ appName }"
       ]
     },
     "Option": {
@@ -6486,14 +6455,6 @@
         "${ ipAddresses } αποκλειστικός διακομιστής",
         "${ ipAddresses } αποκλειστικοί διακομιστές"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } σύνδεση VPN υψηλής ταχύτητας",
-        "${ maxVpn } συνδέσεις VPN υψηλής ταχύτητας"
-      ],
-      "${ n } calendar": [
-        "${ n } ημερολόγιο",
-        "${ n } ημερολόγια"
-      ],
       "${ n } calendar per user": [
         "${ n } ημερολόγιο ανά χρήστη",
         "${ n } ημερολόγια ανά χρήστη"
@@ -7016,9 +6977,6 @@
       "Delete": [
         "Διαγραφή"
       ],
-      "Delete ${ email }": [
-        "Διαγραφή ${ email }"
-      ],
       "Delete account": [
         "Διαγραφή λογαριασμού"
       ],
@@ -7290,14 +7248,6 @@
       ],
       "Subscription": [
         "Συνδρομή"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "Δημιουργήθηκε με επιτυχία ${ localSuccessfullyCreatedUsers.length } ο λογαριασμός χρήστη",
-        "Δημιουργήθηκαν με επιτυχία ${ localSuccessfullyCreatedUsers.length } οι λογαριασμοί χρηστων"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "Επιτυχής δημιουργία ${ successfullyCreatedUsers.length } λογαριασμού χρήστη",
-        "Επιτυχής δημιουργία ${ successfullyCreatedUsers.length } λογαριασμών χρηστών"
       ],
       "Summary": [
         "Περίληψη"
