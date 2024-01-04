@@ -19,7 +19,14 @@ export const createContentScriptContext = (options: {
     mainFrame: boolean;
     destroy: (options: { reason: string }) => void;
 }): ContentScriptContext => {
-    const state: CSContextState = { active: true, loggedIn: false, status: AppStatus.IDLE, UID: undefined };
+    const state: CSContextState = {
+        active: true,
+        localID: undefined,
+        loggedIn: false,
+        status: AppStatus.IDLE,
+        UID: undefined,
+    };
+
     const settings: ProxiedSettings = INITIAL_SETTINGS;
     const featureFlags: FeatureFlagState = {};
 
