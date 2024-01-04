@@ -2,10 +2,12 @@ import { StandardPrivateApp } from '@proton/components';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import {
     AddressesModel,
+    DomainsModel,
     MailSettingsModel,
     MembersModel,
     OrganizationModel,
     PaymentMethodsModel,
+    SamlSSOModel,
     SubscriptionModel,
     UserModel,
     UserSettingsModel,
@@ -23,7 +25,9 @@ const EVENT_MODELS = [
     SubscriptionModel,
     PaymentMethodsModel,
     OrganizationModel,
+    DomainsModel,
     MembersModel,
+    SamlSSOModel,
 ];
 
 const PRELOAD_MODELS = [UserModel, UserSettingsModel];
