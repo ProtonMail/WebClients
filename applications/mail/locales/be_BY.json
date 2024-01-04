@@ -721,10 +721,10 @@
       "Not saved": [
         "Не захавана"
       ],
-      "Ok": [
+      "OK": [
         "Добра"
       ],
-      "OK": [
+      "Ok": [
         "Добра"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -1381,9 +1381,6 @@
       ],
       "High speed streaming": [
         "Высакахуткасныя трансляцыі"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Прэміяльны ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Прэміяльны менеджар пароляў"
@@ -4079,15 +4076,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Прэміяльны ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Прэміяльны ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Прэміяльны ${ VPN_SHORT_APP_NAME }"
-      ],
       "Up to 6 users": [
         "Да 6 карыстальнікаў"
       ]
@@ -7077,9 +7065,6 @@
       "From:": [
         "Ад:"
       ],
-      "From: ${ from }": [
-        "Ад: ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "Ад: ${ fromEmail }"
       ],
@@ -7314,9 +7299,6 @@
       "To:": [
         "Каму:"
       ],
-      "To: ${ to }": [
-        "Каму: ${ to }"
-      ],
       "To: ${ toEmail }": [
         "Каму: ${ toEmail }"
       ],
@@ -7415,6 +7397,14 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } створана"
+      ]
+    },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Ад: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Каму: ${ to }"
       ]
     },
     "Landmarks": {
@@ -7762,14 +7752,16 @@
         "Кожных ${ interval } месяцаў ${ onDayString }, ${ timesString }",
         "Кожных ${ interval } месяцаў ${ onDayString }, ${ timesString }"
       ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Штомесяц ${ onDayString }, ${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
         "Кожны ${ interval } месяц у ${ onDayString }, ${ untilString }",
         "Кожныя ${ interval } месяцы ў ${ onDayString }, ${ untilString }",
         "Кожныя ${ interval } месяцаў у ${ onDayString }, ${ untilString }",
         "Кожныя ${ interval } месяцаў у ${ onDayString }, ${ untilString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Штомесяц ${ onDayString }, ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Штомесяц ${ onDayString }, ${ untilString }"
@@ -8855,14 +8847,14 @@
       "Highest VPN speed": [
         "Найвышэйшая хуткасць VPN"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Прэміяльны ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
+      "Premium ${ appName1 }": [
+        "Прэміяльны ${ appName1 }"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "Прэміяльны ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } і ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Прэміяльны ${ appName1 } і ${ appName2 }"
       ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Прэміяльны ${ VPN_SHORT_APP_NAME }"
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Прэміяльны ${ appName1 }, ${ appName2 } і ${ appName3 }"
       ],
       "Premium early access": [
         "Ранні доступ да новых функцый"
@@ -9385,14 +9377,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Водгук адпраўлены"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Прэміяльны ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Прэміяльны ${ MAIL_SHORT_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {

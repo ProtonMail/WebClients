@@ -713,11 +713,11 @@
       "Not saved": [
         "Non salvato"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Apri ${ CALENDAR_APP_NAME }"
@@ -1363,9 +1363,6 @@
       ],
       "High speed streaming": [
         "Streaming ad alta velocità"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME } premium"
       ],
       "Premium Password Manager": [
         "Gestore di password premium"
@@ -4017,15 +4014,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } premium"
-      ],
       "Up to 6 users": [
         "Fino a 6 utenti"
       ]
@@ -4875,8 +4863,8 @@
         "${ elementsCount } conversazioni verranno segnate come non lette."
       ],
       "${ elementsCount } conversation will be moved": [
-        "${ elementsCount } conversazione verrà spostata",
-        "${ elementsCount } conversazioni verranno spostate"
+        "${ elementsCount } conversazione verrà spostata.",
+        "${ elementsCount } conversazioni verranno spostate."
       ],
       "${ elementsCount } conversation will be unlabelled from:": [
         "${ elementsCount } conversazione non verrà più etichettata come:",
@@ -4895,8 +4883,8 @@
         "${ elementsCount } messaggi verranno segnati come non letti."
       ],
       "${ elementsCount } message will be moved": [
-        "${ elementsCount } messaggio verrà spostato",
-        "${ elementsCount } messaggi verranno spostati"
+        "${ elementsCount } messaggio verrà spostato.",
+        "${ elementsCount } messaggi verranno spostati."
       ],
       "${ elementsCount } message will be unlabelled from:": [
         "${ elementsCount } messaggio non verrà più etichettato come:",
@@ -5776,8 +5764,8 @@
         "Seleziona un fornitore di servizi per iniziare"
       ],
       "Select all ${ elementsCount } in ${ location }": [
-        "Seleziona ${ elementsCount } messaggio in ${ location }.",
-        "Seleziona tutti i ${ elementsCount } messaggi in ${ location }."
+        "Seleziona ${ elementsCount } elemento in ${ location }",
+        "Seleziona tutti i ${ elementsCount } elementi in ${ location }"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleziona il formato email che desideri usare per impostazione predefinita quando invii un'email a questo indirizzo email."
@@ -6292,8 +6280,8 @@
         "Hai selezionato **${ count } messaggi** con questa etichetta"
       ],
       "You selected **${ elementsCount } conversation** in ${ location }": [
-        "Hai selezionato **${ elementsCount } conversazione** in ${ location }",
-        "Hai selezionato **${ elementsCount } conversazioni** in ${ location }"
+        "Hai selezionato **${ elementsCount } conversazione** in ${ location }.",
+        "Hai selezionato **${ elementsCount } conversazioni** in ${ location }."
       ],
       "You selected **${ elementsCount } conversation**.": [
         "Hai selezionato **${ elementsCount } conversazione**.",
@@ -6817,9 +6805,6 @@
       "From:": [
         "Da:"
       ],
-      "From: ${ from }": [
-        "Da: ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "Da: ${ fromEmail }"
       ],
@@ -7054,9 +7039,6 @@
       "To:": [
         "A:"
       ],
-      "To: ${ to }": [
-        "A: ${ to }"
-      ],
       "To: ${ toEmail }": [
         "A: ${ toEmail }"
       ],
@@ -7155,6 +7137,14 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } creato"
+      ]
+    },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Da: ${ from }"
+      ],
+      "To: ${ to }": [
+        "A: ${ to }"
       ]
     },
     "Landmarks": {
@@ -7488,12 +7478,14 @@
         "Ogni ${ interval } mese, ${ onDayString }, ${ timesString }",
         "Ogni ${ interval } mesi, ${ onDayString }, ${ timesString }"
       ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Ogni mese, ${ onDayString }, ${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
         "Ogni ${ interval } mese, ${ onDayString }, ${ untilString }",
         "Ogni ${ interval } mesi, ${ onDayString }, ${ untilString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Ogni mese, ${ onDayString }, ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Ogni mese, ${ onDayString }, ${ untilString }"
@@ -8525,14 +8517,14 @@
       "Highest VPN speed": [
         "Massima velocità della VPN"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME } premium"
+      "Premium ${ appName1 }": [
+        "${ appName1 } premium"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME } premium"
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "${ appName1 } e ${ appName2 } premium"
       ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } premium"
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "${ appName1 }, ${ appName2 } e ${ appName3 } premium"
       ],
       "Premium early access": [
         "Accesso anticipato premium"
@@ -9001,14 +8993,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Feedback inviato"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME } premium"
       ]
     },
     "summer2023: Tooltip": {

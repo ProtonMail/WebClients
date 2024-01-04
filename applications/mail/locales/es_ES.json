@@ -713,11 +713,11 @@
       "Not saved": [
         "No guardado"
       ],
-      "Ok": [
-        "OK"
-      ],
       "OK": [
         "Aceptar"
+      ],
+      "Ok": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
@@ -1363,9 +1363,6 @@
       ],
       "High speed streaming": [
         "Transmisión de alta velocidad"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
       ],
       "Premium Password Manager": [
         "Administrador de contraseñas premium"
@@ -2960,7 +2957,7 @@
         "${ count } veces"
       ],
       "Daily": [
-        "Diariamente"
+        "Cada día"
       ],
       "Every ${ interval } day": [
         "Cada ${ interval } día",
@@ -2972,11 +2969,20 @@
     },
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
-        "Diariamente, a las ${ timesString }"
+        "Cada día, a las ${ timesString }"
       ],
       "Every ${ interval } day, ${ timesString }": [
         "Cada ${ interval } día a las ${ timesString }",
         "Cada ${ interval } días a las ${ timesString }"
+      ]
+    },
+    "Daily recurring event, frequency (until)": {
+      "Daily, ${ untilString }": [
+        "Cada día hasta ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Cada ${ interval } día hasta ${ untilString }",
+        "Cada ${ interval } días hasta ${ untilString }"
       ]
     },
     "Date label": {
@@ -4008,15 +4014,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } premium"
-      ],
       "Up to 6 users": [
         "Hasta 6 usuarios"
       ]
@@ -4885,6 +4882,10 @@
         "${ elementsCount } mensaje se marcará como no leído.",
         "${ elementsCount } mensajes se marcarán como no leídos."
       ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } mensaje será movido.",
+        "${ elementsCount } mensajes serán movidos"
+      ],
       "${ elementsCount } message will be unlabelled from:": [
         "Se quitará la etiqueta de ${ elementsCount } mensaje:",
         "Se quitará la etiqueta de ${ elementsCount } mensajes:"
@@ -5074,6 +5075,9 @@
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Las subcarpetas también se eliminarán. Sin embargo, los correos electrónicos almacenados en esta carpeta ${ nameDeleted } no se eliminarán y se pueden encontrar en la carpeta Todos los mensajes."
       ],
+      "Applying actions to conversations": [
+        "Aplicando las acciones a las conversaciones"
+      ],
       "Applying actions to messages": [
         "Aplicando las acciones a los mensajes"
       ],
@@ -5220,22 +5224,22 @@
         "Personalizado"
       ],
       "Custom daily": [
-        "Personalización diaria"
+        "Personalización del día"
       ],
       "Custom monthly": [
-        "Personalización mensual"
+        "Personalización del mes"
       ],
       "Custom weekly": [
-        "Personalización semanal"
+        "Personalización de la semana"
       ],
       "Custom yearly": [
-        "Personalización anual"
+        "Personalización del año"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personaliza el aspecto de las aplicaciones de ${ BRAND_NAME }"
       ],
       "Daily": [
-        "Diariamente"
+        "Cada día"
       ],
       "Default email application": [
         "Aplicación de correo electrónico por defecto"
@@ -5759,6 +5763,10 @@
       "Select a service provider to start": [
         "Selecciona un proveedor de servicios para empezar"
       ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Seleccionar ${ elementsCount } elemento en ${ location }",
+        "Seleccionar todos los ${ elementsCount } en ${ location }"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecciona el formato de correo electrónico que quieres utilizar por defecto al enviar un correo electrónico a esta dirección."
       ],
@@ -6177,7 +6185,7 @@
         "¿Quieres recibir un nuevo código de verificación?"
       ],
       "Yearly": [
-        "Anualmente"
+        "Cada año"
       ],
       "You are about to open another browser tab and visit:": [
         "Estás a punto de abrir otra pestaña del navegador y visitar:"
@@ -6797,9 +6805,6 @@
       "From:": [
         "De:"
       ],
-      "From: ${ from }": [
-        "De: ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
@@ -7034,9 +7039,6 @@
       "To:": [
         "Para:"
       ],
-      "To: ${ to }": [
-        "Para: ${ to }"
-      ],
       "To: ${ toEmail }": [
         "Para: ${ toEmail }"
       ],
@@ -7135,6 +7137,14 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } creado"
+      ]
+    },
+    "Label; import email": {
+      "From: ${ from }": [
+        "De: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Para: ${ to }"
       ]
     },
     "Landmarks": {
@@ -7460,7 +7470,25 @@
         "Cada ${ interval } meses los ${ onDayString }"
       ],
       "Monthly ${ onDayString }": [
-        "Mensualmente el ${ onDayString }"
+        "Cada mes el ${ onDayString }"
+      ]
+    },
+    "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Cada ${ interval } mes el ${ onDayString } a las ${ timesString }",
+        "Cada ${ interval } meses el ${ onDayString } a las ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Cada mes los ${ onDayString } ${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Cada ${ interval } mes el ${ onDayString } hasta ${ untilString }",
+        "Cada ${ interval } meses el ${ onDayString } hasta ${ untilString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Cada mes los ${ onDayString } hasta ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -8489,14 +8517,14 @@
       "Highest VPN speed": [
         "VPN de máxima velocidad"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
+      "Premium ${ appName1 }": [
+        "${ appName1 } premium"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y ${ DRIVE_SHORT_APP_NAME } premium"
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "${ appName1 } y ${ appName2 } premium"
       ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } premium"
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "${ appName1 }, ${ appName2 } y ${ appName3 } premium"
       ],
       "Premium early access": [
         "Acceso anticipado premium"
@@ -8967,14 +8995,6 @@
         "Comentarios enviados"
       ]
     },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
-      ]
-    },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
         "Crea credenciales seguras de inicio de sesión en todos tus dispositivos. Incluye alias ilimitados, 20 cámaras acorazadas, 2FA integrado, introducción automática de datos de tarjeta de pago, etc."
@@ -9097,6 +9117,9 @@
       ],
       "Account suspended": [
         "Cuenta suspendida"
+      ],
+      "Action all conversations": [
+        "Acción en todas las conversaciones"
       ],
       "Action all messages": [
         "Aplicar a todos los mensajes"
@@ -9931,31 +9954,149 @@
         "Cada ${ interval } semanas los miércoles"
       ],
       "Weekly on ${ multipleDaysString }": [
-        "Semanalmente los ${ multipleDaysString }"
+        "Cada semana los ${ multipleDaysString }"
       ],
       "Weekly on all days": [
-        "Semanalmente todos los días"
+        "Cada semanatodos los días"
       ],
       "Weekly on Friday": [
-        "Semanalmente los viernes"
+        "Cada semana los viernes"
       ],
       "Weekly on Monday": [
-        "Semanalmente los lunes"
+        "Cada semana los lunes"
       ],
       "Weekly on Saturday": [
-        "Semanalmente los sábados"
+        "Cada semana los sábados"
       ],
       "Weekly on Sunday": [
-        "Semanalmente los domingos"
+        "Cada semana los domingos"
       ],
       "Weekly on Thursday": [
-        "Semanalmente los jueves"
+        "Cada semana los jueves"
       ],
       "Weekly on Tuesday": [
-        "Semanalmente los martes"
+        "Cada semana los martes"
       ],
       "Weekly on Wednesday": [
-        "Semanalmente los miércoles"
+        "Cada semana los miércoles"
+      ]
+    },
+    "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Cada ${ interval } semana los ${ multipleDaysString } a las ${ timesString }",
+        "Cada ${ interval } semanas los ${ multipleDaysString } a las ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Cada ${ interval } semana todos los días a las ${ timesString }",
+        "Cada ${ interval } semanas todos los días a las ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Cada ${ interval } semana el viernes a las ${ timesString }",
+        "Cada ${ interval } semanas el viernes a las ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Cada ${ interval } semana el sábado a las ${ timesString }",
+        "Cada ${ interval } semanas el sábado a las ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Cada ${ interval } semana el jueves a las ${ timesString }",
+        "Cada ${ interval } semanas el jueves a las ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Cada ${ interval } semana el miércoles a las ${ timesString }",
+        "Cada ${ interval } semanas el miércoles a las ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Cada semana los ${ multipleDaysString } a las ${ timesString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Cada semana todos los días a las ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Cada semana el viernes a las ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Cada semana el lunes a las ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Cada semana el sábado a las ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Cada semana el domingo a las ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Cada semana el jueves a las ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Cada semana el martes a las ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Cada semana el miércoles a las ${ timesString }"
+      ]
+    },
+    "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Cada ${ interval } semana los ${ multipleDaysString } hasta ${ untilString }",
+        "Cada ${ interval } semanas los ${ multipleDaysString } hasta ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Cada ${ interval } semana todos los días hasta ${ untilString }",
+        "Cada ${ interval } semanas todos los días hasta ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Cada ${ interval } semana el viernes hasta ${ untilString }",
+        "Cada ${ interval } semanas el viernes hasta ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Cada ${ interval } semana el lunes hasta ${ untilString }",
+        "Cada ${ interval } semanas el lunes hasta ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Cada ${ interval } semana el sábado hasta ${ untilString }",
+        "Cada ${ interval } semanas el sábado hasta ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Cada ${ interval } semana el domingo hasta ${ untilString }",
+        "Cada ${ interval } semanas el domingo hasta ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Cada ${ interval } semana el jueves hasta ${ untilString }",
+        "Cada ${ interval } semanas el jueves hasta ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Cada ${ interval } semana el martes hasta ${ untilString }",
+        "Cada ${ interval } semanas el martes hasta ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Cada ${ interval } semana el miércoles hasta ${ untilString }",
+        "Cada ${ interval } semanas el miércoles hasta ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Cada semana los ${ multipleDaysString } hasta ${ untilString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Cada semana todos los días hasta ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Cada viernes hasta ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Cada lunes hasta ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Cada sábado hasta ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Cada domingo hasta ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Cada jueves hasta ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Cada martes hasta ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Cada miércoles hasta ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -9987,7 +10128,25 @@
         "Cada ${ interval } años"
       ],
       "Yearly": [
-        "Anualmente"
+        "Cada año"
+      ]
+    },
+    "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "Cada ${ interval } año, ${ timesString }",
+        "Cada ${ interval } años, ${ timesString }"
+      ],
+      "Yearly, ${ timesString }": [
+        "Cada año, ${ timesString }"
+      ]
+    },
+    "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "Cada ${ interval } año hasta ${ untilString }",
+        "Cada ${ interval } años hasta ${ untilString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Cada año hasta ${ untilString }"
       ]
     }
   }
