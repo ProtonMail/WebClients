@@ -12,6 +12,7 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
 } from '../../components';
+import { getDeleteText } from '../general/helper';
 
 interface Props extends ModalProps {
     email: string;
@@ -22,7 +23,7 @@ const DeleteAddressModal = ({ email, onDeleteAddress, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
     return (
         <ModalTwo {...rest}>
-            <ModalTwoHeader title={c('Title').t`Delete ${email}`} />
+            <ModalTwoHeader title={getDeleteText(email)} />
             <ModalTwoContent>
                 <Alert className="mb-4" type="info">{c('Info')
                     .t`Please note that if you delete this address, you will no longer be able to send or receive emails using this address.`}</Alert>

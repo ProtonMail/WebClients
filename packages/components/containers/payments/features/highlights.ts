@@ -1,10 +1,14 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { FAMILY_MAX_USERS, PLANS, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import { Audience, PlansMap } from '@proton/shared/lib/interfaces';
 
 import { getStorage } from './drive';
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
+
+export const getNUsersText = (n: number) => {
+    return c('new_plans: feature').ngettext(msgid`Up to ${n} user`, `Up to ${n} users`, n);
+};
 
 const getUsers = (): PlanCardFeature => {
     return {
@@ -21,7 +25,7 @@ const getUsers = (): PlanCardFeature => {
             [PLANS.PASS_PLUS]: null,
             [PLANS.DRIVE]: null,
             [PLANS.FAMILY]: {
-                text: c('new_plans: feature').t`Up to ${FAMILY_MAX_USERS} users`,
+                text: getNUsersText(FAMILY_MAX_USERS),
                 included: true,
                 highlight: true,
             },
@@ -35,7 +39,7 @@ const getUsers = (): PlanCardFeature => {
 
 export const getUsersFeature = (n: number): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').t`Up to ${n} users`,
+        text: getNUsersText(n),
         icon: 'users',
         included: true,
     };

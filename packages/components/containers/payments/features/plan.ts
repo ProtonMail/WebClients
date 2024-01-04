@@ -74,7 +74,7 @@ export const getEarlyAccessFeature = (): PlanCardFeatureDefinition => {
     };
 };
 
-const getCTA = (planName: string) => {
+export const getCTA = (planName: string) => {
     return c('new_plans: action').t`Get ${planName}`;
 };
 
