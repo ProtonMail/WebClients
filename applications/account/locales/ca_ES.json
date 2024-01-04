@@ -1359,12 +1359,6 @@
       "High speed streaming": [
         "Streaming d'alta velocitat"
       ],
-      "Premium ${ appName }": [
-        "${ appName } prèmium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
-      ],
       "Premium Password Manager": [
         "Gestor de contrasenyes prèmium"
       ]
@@ -1488,7 +1482,7 @@
         "24 mesos"
       ],
       "Annually": [
-        "Anualment"
+        "Cada any"
       ],
       "Monthly": [
         "Mensual"
@@ -2956,7 +2950,7 @@
         "${ count } vegades"
       ],
       "Daily": [
-        "Diàriament"
+        "Cada dia"
       ],
       "Every ${ interval } day": [
         "Cada ${ interval } dia",
@@ -2968,11 +2962,20 @@
     },
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
-        "Diàriament, a les ${ timesString }"
+        "Cada dia, a les ${ timesString }"
       ],
       "Every ${ interval } day, ${ timesString }": [
         "Cada ${ interval } dia, a les ${ timesString }",
         "Cada ${ interval } dies, a les ${ timesString }"
+      ]
+    },
+    "Daily recurring event, frequency (until)": {
+      "Daily, ${ untilString }": [
+        "Cada dia a les ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Cada ${ interval } dia fins ${ untilString }",
+        "Cada ${ interval } dias fins ${ untilString }"
       ]
     },
     "Day": {
@@ -4500,15 +4503,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } prèmium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } prèmium"
-      ],
       "Up to 6 users": [
         "Fins a 6 usuaris"
       ]
@@ -5646,17 +5640,6 @@
         "Part del contingut del vostre calendari no és compatible i no s'importarà."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clau ${ fingerprint } ja s'ha carregat"
-      ],
-      "Selected color:": [
-        "Color seleccionat:"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
@@ -6168,19 +6151,19 @@
         "Dominis de correu personalitzats"
       ],
       "Custom monthly": [
-        "Personalitzat mensualment"
+        "Personalització del mes"
       ],
       "Custom weekly": [
-        "Personalitzat setmanalment"
+        "Personalització de la setmana"
       ],
       "Custom yearly": [
-        "Personalitzat anualment"
+        "Personalització de l'any"
       ],
       "Customize the look and feel of ${ BRAND_NAME } applications.": [
         "Personalitzeu l'aspecte de les aplicacions de ${ BRAND_NAME }."
       ],
       "Daily": [
-        "Diàriament"
+        "Cada dia"
       ],
       "Data locked": [
         "Dades bloquejades"
@@ -7785,6 +7768,17 @@
         "La vostra subscripció és gestionada per Mozilla. Contacteu amb el suport de Mozilla."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clau ${ fingerprint } ja s'ha carregat"
+      ],
+      "Selected color:": [
+        "Color seleccionat:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Si s'activa, les subcarpetes hereten el color de la carpeta principal."
@@ -8614,9 +8608,6 @@
       "Font size": [
         "Mida de la lletra"
       ],
-      "From: ${ from }": [
-        "De: ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
@@ -9007,9 +8998,6 @@
       "Time zone": [
         "Zona horària"
       ],
-      "To: ${ to }": [
-        "Per a: ${ to }"
-      ],
       "To: ${ toEmail }": [
         "Per a: ${ toEmail }"
       ],
@@ -9254,6 +9242,14 @@
       ],
       "Preference saved": [
         "S'ha desat la preferència."
+      ]
+    },
+    "Label; import email": {
+      "From: ${ from }": [
+        "De: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Per a: ${ to }"
       ]
     },
     "Limit of calendars reached": {
@@ -9603,6 +9599,24 @@
       ],
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
+      ]
+    },
+    "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Cada ${ interval } mes, el ${ onDayString } a les ${ timesString }",
+        "Cada ${ interval } mesos, el ${ onDayString } a les ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Cada mes el ${ onDayString } a les ${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Cada ${ interval } mes, el ${ onDayString } fins ${ untilString }",
+        "Cada ${ interval } mesos, el ${ onDayString } fins ${ untilString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Cada mes el ${ onDayString } fins ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -10959,13 +10973,13 @@
         "Rep de tots"
       ],
       "Repeat daily": [
-        "Repeteix diàriament"
+        "Repeteix cada dia"
       ],
       "Repeat monthly": [
-        "Repeteix mensualment"
+        "Repeteix cada mesc"
       ],
       "Repeat weekly": [
-        "Repeteix setmanalment"
+        "Repeteix cada setmana"
       ],
       "Right to Left": [
         "Dreta a esquerra"
@@ -12210,14 +12224,14 @@
       "Highest VPN speed": [
         "La velocitat VPN més alta"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
+      "Premium ${ appName1 }": [
+        "${ appName1 } prèmium"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME } prèmium"
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "${ appName1 } i ${ appName2 } prèmium"
       ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } prèmium"
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "${ appName1 }, ${ appName2 } i ${ appName3 } prèmium"
       ],
       "Premium early access": [
         "Accés anticipat prèmium"
@@ -12820,14 +12834,6 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Detalls dels esdeveniments que no s'han pogut exportar"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } prèmium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
       ]
     },
     "summer2023: Tooltip": {
@@ -14348,7 +14354,7 @@
     },
     "vpn_2step: billing": {
       "Billed monthly": [
-        "Facturat mensualment"
+        "Facturat cada mesc"
       ]
     },
     "vpn_2step: discount": {
@@ -14368,7 +14374,7 @@
         "Obteniu un descompte dec ${ discount } amb una subscripció a ${ billingCycle }"
       ],
       "monthly": [
-        "mensualment"
+        "cada mesc"
       ]
     },
     "vpn_2step: feature": {
@@ -14549,31 +14555,139 @@
         "Cada ${ interval } setmanes els Dimecres"
       ],
       "Weekly on ${ multipleDaysString }": [
-        "Setmanalment els ${ multipleDaysString }"
+        "Cada setmana els ${ multipleDaysString }"
       ],
       "Weekly on all days": [
-        "Setmanalment tots els dies"
+        "Cada setmana tots els dies"
       ],
       "Weekly on Friday": [
-        "Setmanalment al Divendres"
+        "Cada setmana al Divendres"
       ],
       "Weekly on Monday": [
-        "Setmanalment al Dilluns"
+        "Cada setmana al Dilluns"
       ],
       "Weekly on Saturday": [
-        "Setmanalment al Dissabte"
+        "Cada setmana al Dissabte"
       ],
       "Weekly on Sunday": [
-        "Setmanalment al Diumenge"
+        "Cada setmana al Diumenge"
       ],
       "Weekly on Thursday": [
-        "Setmanalment al Dijous"
+        "Cada setmana al Dijous"
       ],
       "Weekly on Tuesday": [
-        "Setmanalment al Dimarts"
+        "Cada setmana al Dimarts"
       ],
       "Weekly on Wednesday": [
-        "Setmanalment al Dimecres"
+        "Cada setmana al Dimecres"
+      ]
+    },
+    "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Cada ${ interval } setmana, el ${ multipleDaysString } a les ${ timesString }",
+        "Cada ${ interval } setmanes, el ${ multipleDaysString } a les ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Cada ${ interval } setmana, cada dia a les ${ timesString }",
+        "Cada ${ interval } setmanas, cada dia a les ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Cada ${ interval } setmana, el divendres a les ${ timesString }",
+        "Cada ${ interval } setmanes, el divendres a les ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Cada ${ interval } setmana, el dissabte a les ${ timesString }",
+        "Cada ${ interval } setmanes, el dissabte a les ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Cada ${ interval } setmana, el dijous a les ${ timesString }",
+        "Cada ${ interval } setmanes, el dijous a les ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Cada ${ interval } setmana, el dimecres a les ${ timesString }",
+        "Cada ${ interval } setmanas, el dimecres a les ${ timesString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Cada setmana, cada dia a les ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Cada setmana el divendres a les ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Cada setmana el dilluns a les ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Cada setmana el dissabte a les ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Cada setmana el diumenge a les ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Cada setmana el dijous a les ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Cada setmana el dimarts a les ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Cada setmana el dimecres a les ${ timesString }"
+      ]
+    },
+    "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Cada ${ interval } setmana, el ${ multipleDaysString } fins ${ untilString }",
+        "Cada ${ interval } setmanes, el ${ multipleDaysString } fins ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Cada ${ interval } setmana, cada dia fins ${ untilString }",
+        "Cada ${ interval } setmanes, cada dia fins ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Cada ${ interval } setmana, el divendres fins ${ untilString }",
+        "Cada ${ interval } setmanes, el divendres fins ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Cada ${ interval } setmana, el dilluns fins ${ untilString }",
+        "Cada ${ interval } setmanes, el dilluns fins ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Cada ${ interval } setmana, el dissabte fins ${ untilString }",
+        "Cada ${ interval } setmanes, el dissabte fins ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Cada ${ interval } setmana, el diumenge fins ${ untilString }",
+        "Cada ${ interval } setmanes, el diumenge fins ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Cada ${ interval } setmanes, el dijous fins ${ untilString }",
+        "Cada ${ interval } setmanes, el dijous fins ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Cada ${ interval } setmana, el dimecres fins ${ untilString }",
+        "Cada ${ interval } setmanas, el dimecres fins ${ untilString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Cada setmana, cada dia fins ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Cada setmana el divendres fins ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Cada setmana el dilluns fins ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Cada setmana el dissabte fins ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Cada setmana el diumenge fins ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Cada setmana el dijous fins ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Cada setmana el dimarts fins ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Cada setmana el dimecres fins ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -14606,6 +14720,24 @@
       ],
       "Yearly": [
         "Anual"
+      ]
+    },
+    "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "Cada ${ interval } any, ${ timesString }",
+        "Cada ${ interval } anys, ${ timesString }"
+      ],
+      "Yearly, ${ timesString }": [
+        "Cada any, ${ timesString }"
+      ]
+    },
+    "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "Cada ${ interval } any, ${ untilString }",
+        "Cada ${ interval } anys, ${ untilString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Cada any fins ${ untilString }"
       ]
     }
   }
