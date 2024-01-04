@@ -61,6 +61,47 @@ function getWithoutMatchingVariables(translations) {
         .map((x) => JSON.stringify(x, null, 2));
 }
 
+function validateContextAndVariables(translations) {
+    const getDuplicates = (translationsInContext) => {
+        const map = {};
+        Object.entries(translationsInContext).forEach(([key, value]) => {
+            const variables = getVariables(key);
+            if (variables) {
+                const replacedString = variables.reduce((acc, value, i) => {
+                    return acc.replace(value, `\${${i}}`);
+                }, key);
+                if (!map[replacedString]) {
+                    map[replacedString] = [];
+                }
+                map[replacedString].push(value);
+            }
+        });
+        return Object.fromEntries(Object.entries(map).filter(([, value]) => value.length > 1));
+    };
+
+    const result = Object.keys(translations)
+        .map((contextKey) => {
+            const translationsInContext = translations[contextKey];
+            return getDuplicates(translationsInContext);
+        })
+        .filter((x) => Object.keys(x).length >= 1);
+
+    const total = result.reduce((acc, cur) => acc + Object.values(cur).length, 0);
+    if (!total) {
+        !isLint && success('All translations have unique variables in their context');
+        return;
+    }
+
+    !isLint &&
+        console.log(
+            result
+                .map((x) => JSON.stringify(x, null, 2))
+                .sort()
+                .join('\n')
+        );
+    throw new Error(`${total} ${total > 1 ? 'translations' : 'translation'} with duplicate variables in same context!`);
+}
+
 function validateVariables(translations) {
     const translationsWithoutMatching = getWithoutMatchingVariables(translations);
 
@@ -87,6 +128,7 @@ async function main(mode, { dir, flags = {} } = {}) {
     const { translations } = gettextParser.po.parse(doc);
     validateWithoutContext(translations);
     validateVariables(translations);
+    validateContextAndVariables(translations);
 }
 
 module.exports = main;
