@@ -1365,12 +1365,6 @@
       "High speed streaming": [
         "Transmisii în flux de mare viteză"
       ],
-      "Premium ${ appName }": [
-        "${ appName } premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
       "Premium Password Manager": [
         "Manager de parole premium"
       ]
@@ -4607,15 +4601,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } premium"
-      ],
       "Up to 6 users": [
         "Până la 6 utilizatori"
       ]
@@ -5774,17 +5759,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "O parte din conținutul calendarului nu este suportat și nu va fi importat."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Cheia ${ fingerprint } a fost deja încărcată."
-      ],
-      "Selected color:": [
-        "Culoare selectată:"
       ]
     },
     "Info": {
@@ -8032,6 +8006,17 @@
         "Abonamentul vă este gestionat de Mozilla. Contactați Mozilla pentru suport."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Cheia ${ fingerprint } a fost deja încărcată."
+      ],
+      "Selected color:": [
+        "Culoare selectată:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Când este activată, subfolderele moștenesc culoarea folderului părinte."
@@ -8855,9 +8840,6 @@
       "Font size": [
         "Mărime font"
       ],
-      "From: ${ from }": [
-        "De la: ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "De la: ${ fromEmail }"
       ],
@@ -9247,9 +9229,6 @@
       ],
       "Time zone": [
         "Fus orar"
-      ],
-      "To: ${ to }": [
-        "Către: ${ to }"
       ],
       "To: ${ toEmail }": [
         "Către: ${ toEmail }"
@@ -9699,9 +9678,6 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Luați planul Visionary și faceți parte din povestea ${ BRAND_NAME }"
-      ],
-      "Limited time offer: Get ${ planTitle } until ${ date }!": [
-        "Ofertă limitată: Obțineți ${ planTitle } până la ${ date }!"
       ],
       "Secure email that protects your privacy": [
         "E-mail securizat care vă protejează confidențialitatea"
@@ -11242,6 +11218,9 @@
       "No parent folder": [
         "Fără folder părinte"
       ],
+      "No permission": [
+        "Fără permisiune"
+      ],
       "Normal": [
         "Normal"
       ],
@@ -11251,11 +11230,17 @@
       "On": [
         "Pornită"
       ],
+      "Organization only": [
+        "Doar de la organizație"
+      ],
       "Permanent": [
         "Permanent"
       ],
       "Plain text": [
         "Text simplu"
+      ],
+      "Receive from all": [
+        "Primire de la toți"
       ],
       "Repeat daily": [
         "Repetare zilnică"
@@ -11277,6 +11262,12 @@
       ],
       "Select who can access...": [
         "Selectați cine are acces..."
+      ],
+      "Send to all": [
+        "Trimitere către toți"
+      ],
+      "Setup incomplete": [
+        "Setare incompletă"
       ],
       "Standard server configs": [
         "Configurări standard de server"
@@ -11672,6 +11663,23 @@
       ],
       "New credit/debit card": [
         "Card nou de credit/debit"
+      ]
+    },
+    "Permission": {
+      "No permission": [
+        "Fără permisiune"
+      ],
+      "Organization only": [
+        "Doar de la organizație"
+      ],
+      "Receive from all": [
+        "Primire de la toți"
+      ],
+      "Send to all": [
+        "Trimitere către toți"
+      ],
+      "Setup incomplete": [
+        "Setare incompletă"
       ]
     },
     "Personal calendar section description": {
@@ -12554,15 +12562,6 @@
       "Highest VPN speed": [
         "Viteză VPN maximă"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și ${ DRIVE_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } premium"
-      ],
       "Premium early access": [
         "Acces timpuriu premium"
       ],
@@ -13182,14 +13181,6 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Detalii despre evenimentele care nu au putut fi exportate."
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
       ]
     },
     "summer2023: Tooltip": {

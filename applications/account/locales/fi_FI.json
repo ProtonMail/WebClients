@@ -1362,12 +1362,6 @@
       "High speed streaming": [
         "Nopea suoratoisto"
       ],
-      "Premium ${ appName }": [
-        "Premium ${ appName }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "Premium Password Manager": [
         "Premium salasanahallinta"
       ]
@@ -4599,15 +4593,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
-      ],
       "Up to 6 users": [
         "6 käyttäjälle"
       ]
@@ -5749,17 +5734,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Osaa kalenterisi sisällöstä ei tueta, eikä sitä tämän vuoksi tuoda."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Avain ${ fingerprint } on jo ladattu"
-      ],
-      "Selected color:": [
-        "Valittu väri:"
       ]
     },
     "Info": {
@@ -7964,6 +7938,17 @@
         "Tilaustasi hallinnoi Mozilla. Ota yhteyttä Mozillan tukeen."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Avain ${ fingerprint } on jo ladattu"
+      ],
+      "Selected color:": [
+        "Valittu väri:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Tämän ollessa käytössä, alikansiot perivät yläkansioidensa värin."
@@ -8793,9 +8778,6 @@
       "Font size": [
         "Tekstin koko"
       ],
-      "From: ${ from }": [
-        "Lähettäjä: ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "Lähettäjä: ${ fromEmail }"
       ],
@@ -9185,9 +9167,6 @@
       ],
       "Time zone": [
         "Aikavyöhyke"
-      ],
-      "To: ${ to }": [
-        "Vastaanottaja: ${ to }"
       ],
       "To: ${ toEmail }": [
         "Vastaanottaja: ${ toEmail }"
@@ -9628,9 +9607,6 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Ole Visionary ja olet osa ${ BRAND_NAME } tarinaa"
-      ],
-      "Limited time offer: Get ${ planTitle } until ${ date }!": [
-        "Määräaikainen tarjous: Hanki ${ planTitle } ${ date } mennessä!"
       ],
       "Secure email that protects your privacy": [
         "Turvallinen sähköposti, joka suojaa yksityisyyttäsi"
@@ -12439,15 +12415,6 @@
       "Highest VPN speed": [
         "Korkein VPN-nopeus"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ja ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
-      ],
       "Premium early access": [
         "Premium-ennakkokäyttö"
       ],
@@ -13052,14 +13019,6 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Tietoja tapahtumista, joita ei voitu viedä"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {

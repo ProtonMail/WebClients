@@ -1362,12 +1362,6 @@
       "High speed streaming": [
         "Strømming med høy hastighet"
       ],
-      "Premium ${ appName }": [
-        "Premium-${ appName }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium-${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "Premium Password Manager": [
         "Premium passordbehandler"
       ]
@@ -4612,15 +4606,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium-${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium-${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium-${ VPN_SHORT_APP_NAME }"
-      ],
       "Up to 6 users": [
         "Opptil 6 brukere"
       ]
@@ -5762,17 +5747,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Deler av kalenderinnholdet ditt støttes ikke, og kan ikke importeres."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
-      ],
-      "Selected color:": [
-        "Valgt farge:"
       ]
     },
     "Info": {
@@ -7980,6 +7954,17 @@
         "Abonnementet ditt administreres av Mozilla. Vennligst kontakt Mozilla-støtte."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
+      ],
+      "Selected color:": [
+        "Valgt farge:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Når aktivert, arver undermapper fargen på den overordnede mappen."
@@ -8809,9 +8794,6 @@
       "Font size": [
         "Skriftstørrelse"
       ],
-      "From: ${ from }": [
-        "Fra: ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
       ],
@@ -9202,9 +9184,6 @@
       "Time zone": [
         "Tidssone"
       ],
-      "To: ${ to }": [
-        "Til: ${ to }"
-      ],
       "To: ${ toEmail }": [
         "Til: ${ toEmail }"
       ],
@@ -9454,6 +9433,14 @@
         "Preferanse lagret"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Fra: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Til: ${ to }"
+      ]
+    },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
         "For å legge til en ny kalender, fjern en eksisterende."
@@ -9648,8 +9635,8 @@
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Bli en Visionary og bli en del av ${ BRAND_NAME }s historie"
       ],
-      "Limited time offer: Get ${ planTitle } until ${ date }!": [
-        "Begrenset tidstilbud: Få ${ planTitle } til ${ date }!"
+      "Limited time offer": [
+        "Tidsbegrenset tilbud"
       ],
       "Secure email that protects your privacy": [
         "Sikker e-post som beskytter personvernet ditt"
@@ -9814,12 +9801,14 @@
         "Hver ${ interval } måned ${ onDayString }, ${ timesString }",
         "Hver ${ interval } måned ${ onDayString }, ${ timesString }"
       ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Månedlig ${ onDayString }, ${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
         "Hver ${ interval } måned ${ onDayString }, ${ untilString }",
         "Hver ${ interval } måned ${ onDayString }, ${ untilString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Månedlig ${ onDayString }, ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Månedlig ${ onDayString }, ${ untilString }"
@@ -12498,14 +12487,14 @@
       "Highest VPN speed": [
         "Høyeste VPN-hastighet"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium-${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+      "Premium ${ appName1 }": [
+        "Premium ${ appName1 }"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium-${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium ${ appName1 } og ${ appName2 }"
       ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium-${ VPN_SHORT_APP_NAME }"
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
       "Premium early access": [
         "Tidlig premiumtilgang"
@@ -13111,14 +13100,6 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Detaljer om hendelser som ikke ble eksportert"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium-${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium-${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {

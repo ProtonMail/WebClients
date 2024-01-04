@@ -452,6 +452,9 @@
       "Authentication error": [
         "Ověření selhalo"
       ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "Ověření se nezdařilo. Potvrďte své ${ BRAND_NAME } heslo, abyste mohli pokračovat v exportu."
+      ],
       "Auto-lock could not be activated": [
         "Automatické zamykání nelze aktivovat"
       ],
@@ -535,6 +538,9 @@
       ],
       "File could not be parsed": [
         "Soubor nelze analyzovat"
+      ],
+      "File does not match expected format": [
+        "Soubor neodpovídá očekávanému formátu"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "Import pro trezor \"${ vaultData.name }\" selhal : ${ description }"
@@ -1035,6 +1041,9 @@
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN kód byl úspěšně zaregistrován. Použijte jej k odemknutí ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "Potvrďte prosím své ${ BRAND_NAME } heslo, abyste mohli exportovat svá data z aplikace ${ PASS_APP_NAME }."
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "Prosím, potvrďte svůj PIN kód, pro zrušení registrace stávajícího zámku.\n${ PASS_APP_NAME } pak nebude zamykán."
