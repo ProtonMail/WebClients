@@ -717,10 +717,10 @@
       "Not saved": [
         "Nesalvat"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -3295,16 +3295,6 @@
       "Choose a date in the future.": [
         "Alegeți o dată în viitor."
       ],
-      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
-        "Alegeți o dată mai târziu cu ${ EXPIRATION_TIME_MAX_DAYS } zi.",
-        "Alegeți o dată în următoarele ${ EXPIRATION_TIME_MAX_DAYS } zile.",
-        "Alegeți o dată în următoarele ${ EXPIRATION_TIME_MAX_DAYS } de zile."
-      ],
-      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
-        "Alegeți o dată în următoarea zi.",
-        "Alegeți o dată în următoarele ${ SCHEDULED_MAX_DATE_DAYS } zile.",
-        "Alegeți o dată în următoarele ${ SCHEDULED_MAX_DATE_DAYS } de zile."
-      ],
       "Condition incomplete": [
         "Condiție incompletă"
       ],
@@ -4866,11 +4856,6 @@
         "${ contactsLength } contacte",
         "${ contactsLength } de contacte"
       ],
-      "${ count } unread message": [
-        "Un mesaj necitit",
-        "${ count } mesaje necitite",
-        "${ count } de mesaje necitite"
-      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } din ${ totalProgress }",
         "${ currentProgress } din ${ totalProgress }",
@@ -4965,9 +4950,6 @@
         "S-au selectat ${ selectedFoldersCountLocalized } etichete",
         "S-au selectat ${ selectedFoldersCountLocalized } de etichete"
       ],
-      "${ storage } storage": [
-        "Stocare ${ storage }"
-      ],
       "${ total } conversation": [
         "o conversație",
         "${ total } conversații",
@@ -4978,30 +4960,10 @@
         "${ total } mesaje",
         "${ total } de mesaje"
       ],
-      "${ unread } unread conversation": [
-        "o conversație necitită",
-        "${ unread } conversații necitite",
-        "${ unread } de conversații necitite"
-      ],
-      "${ unread } unread message": [
-        "Un mesaj necitit",
-        "${ unread } mesaje necitite",
-        "${ unread } de mesaje necitite"
-      ],
       "${ unreadCount } scheduled message": [
         "S-a programat un mesaj.",
         "S-au programat ${ unreadCount } mesaje.",
         "S-au programat ${ unreadCount } de mesaje."
-      ],
-      "${ unreadCount } unread conversation": [
-        "${ unreadCount } conversație necitită",
-        "${ unreadCount } conversații necitite",
-        "${ unreadCount } de conversații necitite"
-      ],
-      "${ unreadCount } unread message": [
-        "Un mesaj necitit",
-        "${ unreadCount } mesaje necitite",
-        "${ unreadCount } de mesaje necitite"
       ],
       "${ updated } contact updated successfully.": [
         "S-a actualizat un contact.",
@@ -5893,9 +5855,6 @@
       "The sender has requested a read receipt.": [
         "Expeditorul a solicitat o confirmare de primire a citirii."
       ],
-      "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "Verificarea pentru ${ contactName } a eșuat: contactul nu este semnat corect.\nAcesta poate fi rezultatul resetării parolei.\nTrebuie să reînscrieți persoana de contact pentru a trimite un mesaj către ${ contactAddress } sau să editați contactul."
-      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "Verificarea pentru ${ contactNames } a eșuat: contactul nu este semnat corect.\nAcesta poate fi rezultatul resetării parolei.\nTrebuie să reînscrieți contactul pentru a trimite un mesaj către ${ contactAddresses } sau să-l editați.",
         "Verificarea pentru ${ contactNames } a eșuat: contactul nu este semnat corect.\nAcesta poate fi rezultatul resetării parolei.\nTrebuie să reînscrieți contactele pentru a trimite un mesaj către ${ contactAddresses } sau să le editați.",
@@ -5969,12 +5928,6 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Acest mesaj este semnat cu o cheie atașată care încă nu a fost încă aprobată."
       ],
-      "This message will be automatically deleted on ${ longDateMEssage }": [
-        "Acest mesaj va fi șters automat ${ longDateMEssage }"
-      ],
-      "This message will be automatically deleted on ${ shortDateMessage }": [
-        "Acest mesaj va fi șters automat la ${ shortDateMessage }"
-      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Acest mesaj va fi marcat ca nedorit. Doriți să vă dezabonați și de la mesajele ulterioare?",
         "Aceste mesaje vor fi marcate ca nedorite. Doriți să vă dezabonați și de la mesajele ulterioare?",
@@ -6000,15 +5953,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Acest mesaj va expira ${ formattedDate }"
-      ],
-      "This message will expire on ${ longDateMEssage }": [
-        "Acest mesaj va expira peste ${ longDateMEssage }"
-      ],
-      "This message will expire today at ${ shortDateMessage }": [
-        "Acest mesaj va expira astăzi la ora ${ shortDateMessage }."
-      ],
-      "This message will expire tomorrow at ${ shortDateMessage }": [
-        "Acest mesaj va expira mâine la ora ${ shortDateMessage }."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Această cheie publică va fi folosită automat pentru criptarea mesajelor trimise la această adresă."
@@ -6043,18 +5987,6 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Prea multe mesaje așteaptă să fie trimise. Așteptați până când un alt mesaj va fi trimis pentru a-l programa pe acesta."
       ],
-      "Total email addresses": [
-        "Total adrese de e-mail"
-      ],
-      "Total storage": [
-        "Spațiu total"
-      ],
-      "Total supported domains": [
-        "Total domenii suportate"
-      ],
-      "Total VPN connections": [
-        "Total conexiuni VPN"
-      ],
       "Trackers blocked:": [
         "Urmăritori blocați:"
       ],
@@ -6075,9 +6007,6 @@
       ],
       "Unsupported file": [
         "Fişier nesuportat"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Până la ${ FAMILY_MAX_USERS } utilizatori"
       ],
       "Updating message content search...": [
         "Se actualizează căutarea în conținutul mesajelor..."
@@ -6231,12 +6160,6 @@
       ],
       "You do not have any messages here": [
         "Nu aveți mesaje aici"
-      ],
-      "You have ${ totalLabel } in your inbox.": [
-        "Aveți ${ totalLabel } primite."
-      ],
-      "You have ${ unreadsLabel } in your inbox.": [
-        "Aveți ${ unreadsLabel } primite."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Aveți **o conversație** în acest folder",
@@ -7007,18 +6930,6 @@
       "System information": [
         "Informații sistem"
       ],
-      "The email was sent ${ attachment }": [
-        "Mesajul a fost trimis ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "mesajul a fost trimis ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Mesajul a fost trimis ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "mesajul a fost trimis ${ label }"
-      ],
       "Theme": [
         "Tema"
       ],
@@ -7055,17 +6966,8 @@
       "With attachment": [
         "Cu atașamente"
       ],
-      "with attachments": [
-        "cu atașamente"
-      ],
       "Without attachment": [
         "Fără atașamente"
-      ],
-      "without attachment": [
-        "fără atașamente"
-      ],
-      "without attachments": [
-        "fără atașamente"
       ],
       "Wonderful": [
         "Minunată"
@@ -7590,10 +7492,15 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } calendar",
-        "${ maximumNumberOfCalendars } calendare",
-        "${ maximumNumberOfCalendars } de calendare"
+      "${ n } calendar": [
+        "${ n } calendar",
+        "${ n } calendare",
+        "${ n } de calendare"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendar per utilizator",
+        "${ n } calendare per utilizator",
+        "${ n } de calendare per utilizator"
       ],
       "Auto-delete spam and trashed messages": [
         "Ștergere automată mesaje nedorite și din gunoi"
@@ -7607,6 +7514,9 @@
       "Custom snooze time": [
         "Timp amânare personal"
       ],
+      "End-to-end encryption": [
+        "Criptare bilaterală"
+      ],
       "Hide-my-email aliases": [
         "Aliasuri hide-my-email"
       ],
@@ -7615,6 +7525,9 @@
       ],
       "Search message content": [
         "Căutare în conținut mesaj"
+      ],
+      "Send & receive invitations": [
+        "Trimiteți și primiți invitații"
       ],
       "Unlimited folders, labels, and filters": [
         "Foldere, etichete și filtre nelimitate"
@@ -7651,6 +7564,29 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Feedback"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Asigurați-vă programul cu criptare bilaterală. Include suport pentru calendare personalizate, calendare partajate și multe altele."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Creați până la ${ n } calendar sau adăugați calendare de la prieteni, familie, colegi și organizații",
+        "Creați până la ${ n } calendare sau adăugați calendare de la prieteni, familie, colegi și organizații",
+        "Creați până la ${ n } de calendare sau adăugați calendare de la prieteni, familie, colegi și organizații"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Partajați calendarele ușor cu familia, prietenii sau colegii."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Păstrați-vă private propriile planuri și ale familiei cu calendarul criptat"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Creați maxim ${ n } calendar",
+        "Creați până la ${ n } calendare",
+        "Creați până la ${ n } de calendare"
       ]
     },
     "Notification": {
@@ -9283,9 +9219,6 @@
         "Ștergere un mesaj",
         "Ștergere ${ count } mesaje",
         "Ștergere ${ count } de mesaje"
-      ],
-      "Delete ${ Name }": [
-        "Ștergere ${ Name }"
       ],
       "Delete all messages": [
         "Ștergere toate mesajele"

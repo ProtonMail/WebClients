@@ -713,10 +713,10 @@
       "Not saved": [
         "Kaydedilmemiş"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -3280,14 +3280,6 @@
       "Choose a date in the future.": [
         "Gelecekte bir zaman seçin."
       ],
-      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
-        "Sonraki ${ EXPIRATION_TIME_MAX_DAYS } gün içinde bir tarih seçin.",
-        "Sonraki ${ EXPIRATION_TIME_MAX_DAYS } gün içinde bir tarih seçin."
-      ],
-      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
-        "Gelecek ${ SCHEDULED_MAX_DATE_DAYS } gün içindeki bir tarih seçin.",
-        "Gelecek ${ SCHEDULED_MAX_DATE_DAYS } gün içindeki bir tarih seçin."
-      ],
       "Condition incomplete": [
         "Koşul eksik"
       ],
@@ -4815,10 +4807,6 @@
         "${ contactsLength } kişi",
         "${ contactsLength } kişi"
       ],
-      "${ count } unread message": [
-        "${ count } okunmamış ileti",
-        "${ count } okunmamış ileti"
-      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } / ${ totalProgress }",
         "${ currentProgress } / ${ totalProgress }"
@@ -4896,9 +4884,6 @@
         "${ selectedFoldersCountLocalized } etiket seçildi",
         "${ selectedFoldersCountLocalized } etiket seçildi"
       ],
-      "${ storage } storage": [
-        "${ storage } depolama alanı"
-      ],
       "${ total } conversation": [
         "${ total } yazışma",
         "${ total } yazışma"
@@ -4907,25 +4892,9 @@
         "${ total } ileti",
         "${ total } ileti"
       ],
-      "${ unread } unread conversation": [
-        "${ unread } okunmamış yazışma",
-        "${ unread } okunmamış yazışma"
-      ],
-      "${ unread } unread message": [
-        "${ unread } okunmamış ileti",
-        "${ unread } okunmamış ileti"
-      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } zamanlanmış ileti",
         "${ unreadCount } zamanlanmış ileti"
-      ],
-      "${ unreadCount } unread conversation": [
-        "${ unreadCount } okunmamış yazışma",
-        "${ unreadCount } okunmamış yazışma"
-      ],
-      "${ unreadCount } unread message": [
-        "${ unreadCount } okunmamış ileti",
-        "${ unreadCount } okunmamış ileti"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } kişi güncellendi.",
@@ -5798,9 +5767,6 @@
       "The sender has requested a read receipt.": [
         "Gönderici okundu bilgisi istedi."
       ],
-      "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "${ contactName } doğrulanamadı: Kişi doğru şekilde imzalanmamış.\nBu durum, parola sıfırlama işleminden kaynaklanabilir.\n${ contactAddress } adresine ileti göndermek veya kişiyi düzenlemek için kişiyi yeniden imzalamanız gerekir."
-      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "${ contactNames } doğrulanamadı: Kişi doğru şekilde imzalanmamış.\nBu durum, parola sıfırlama işleminden kaynaklanabilir.\n${ contactAddresses } adresine ileti göndermek veya kişiyi düzenlemek için kişiyi yeniden imzalamanız gerekir.",
         "${ contactNames } doğrulanamadı: Kişi doğru şekilde imzalanmamış.\nBu durum, parola sıfırlama işleminden kaynaklanabilir.\n${ contactAddresses } adresine ileti göndermek veya kişiyi düzenlemek için kişiyi yeniden imzalamanız gerekir."
@@ -5872,12 +5838,6 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Bu ileti, ekteki henüz güvenilmemiş anahtar ile imzalanmış."
       ],
-      "This message will be automatically deleted on ${ longDateMEssage }": [
-        "Bu iletinin ${ longDateMEssage } zamanında otomatik olarak silinecek"
-      ],
-      "This message will be automatically deleted on ${ shortDateMessage }": [
-        "Bu ileti ${ shortDateMessage } saatinde otomatik olarak silinecek"
-      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Bu ileti istenmeyen olarak işaretlenecek. Gelecekte bu e-postaları almamak için abonelikten ayrılmayı da ister misiniz?",
         "Bu iletiler istenmeyen olarak işaretlenecek. Gelecekte bu e-postaları almamak için abonelikten ayrılmayı da ister misiniz?"
@@ -5902,15 +5862,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Bu ileti ${ formattedDate } tarihinde geçersiz olacak"
-      ],
-      "This message will expire on ${ longDateMEssage }": [
-        "Bu iletinin geçerlilik süresi ${ longDateMEssage } zamanında dolacak"
-      ],
-      "This message will expire today at ${ shortDateMessage }": [
-        "Bu iletinin geçerlilik süresi bugün ${ shortDateMessage } saatinde dolacak"
-      ],
-      "This message will expire tomorrow at ${ shortDateMessage }": [
-        "Bu iletinin geçerlilik süresi yarın ${ shortDateMessage } saatinde dolacak"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Bu herkese açık anahtar, bu adrese gönderilen e-postaların otomatik olarak şifrelenmesi için kullanılacak."
@@ -5945,18 +5896,6 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Gönderilecek çok fazla ileti var. Lütfen, bunun zamanlanması için başka bir ileti gönderilene kadar bekleyin."
       ],
-      "Total email addresses": [
-        "Toplam e-posta adresi"
-      ],
-      "Total storage": [
-        "Toplam depolama alanı"
-      ],
-      "Total supported domains": [
-        "Toplam etki alanı"
-      ],
-      "Total VPN connections": [
-        "Toplam VPN bağlantısı"
-      ],
       "Trackers blocked:": [
         "Engellenen izleyiciler:"
       ],
@@ -5977,9 +5916,6 @@
       ],
       "Unsupported file": [
         "Dosya desteklenmiyor"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "En fazla ${ FAMILY_MAX_USERS } kullanıcı"
       ],
       "Updating message content search...": [
         "İleti içerikleri araması güncelleniyor..."
@@ -6133,12 +6069,6 @@
       ],
       "You do not have any messages here": [
         "Burada herhangi bir ileti yok"
-      ],
-      "You have ${ totalLabel } in your inbox.": [
-        "Gelen kutunuzda ${ totalLabel } var."
-      ],
-      "You have ${ unreadsLabel } in your inbox.": [
-        "Gelen kutunuzda ${ unreadsLabel } var."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Bu klasörde **${ count } yazışma** var",
@@ -6897,18 +6827,6 @@
       "System information": [
         "Sistem bilgileri"
       ],
-      "The email was sent ${ attachment }": [
-        "Gönderilen e-postada ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "gönderilen e-postada ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "E-posta gönderildi ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "gönderilen e-postada ${ label }"
-      ],
       "Theme": [
         "Tema"
       ],
@@ -6945,17 +6863,8 @@
       "With attachment": [
         "Ek dosyası olan"
       ],
-      "with attachments": [
-        "ek dosyası olan"
-      ],
       "Without attachment": [
         "Ek dosyası olmayan"
-      ],
-      "without attachment": [
-        "ek dosyası olmayan"
-      ],
-      "without attachments": [
-        "ek dosyaları olmayan"
       ],
       "Wonderful": [
         "Çok iyi"
@@ -7474,9 +7383,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } takvim",
-        "${ maximumNumberOfCalendars } takvim"
+      "${ n } calendar": [
+        "${ n } takvim",
+        "${ n } takvim"
+      ],
+      "${ n } calendar per user": [
+        "Her kullanıcı için ${ n } takvim",
+        "Her kullanıcı için ${ n } takvim"
       ],
       "Auto-delete spam and trashed messages": [
         "İstenmeyen ve çöp kutularındaki iletileri otomatik olarak silin"
@@ -7490,6 +7403,9 @@
       "Custom snooze time": [
         "Özel erteleme zamanı"
       ],
+      "End-to-end encryption": [
+        "Uçtan uca şifreleme"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email takma adları"
       ],
@@ -7498,6 +7414,9 @@
       ],
       "Search message content": [
         "İleti içeriğinde arama"
+      ],
+      "Send & receive invitations": [
+        "Davetleri alma ve gönderme"
       ],
       "Unlimited folders, labels, and filters": [
         "Sınırsız sayıda klasör, etiket ve süzgeç"
@@ -7534,6 +7453,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Geri bildirim"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Takviminizi uçtan uca şifrelemeyle koruyun. Özel takvimler, takvim paylaşımı ve diğer özellikler."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "${ n } taneye kadar takvim oluşturun ya da arkadaşlarınızın, ailenizin, iş arkadaşlarınızın ve kuruluşların takvimlerini ekleyin",
+        "${ n } taneye kadar takvim oluşturun ya da arkadaşlarınızın, ailenizin, iş arkadaşlarınızın ve kuruluşların takvimlerini ekleyin"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Takvimlerinizi aileniz, arkadaşlarınız veya iş arkadaşlarınızla kolayca paylaşın"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Şifrelenmiş bir takvim kullanarak planlarınızı kendiniz ve aileniz için gizli tutun"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "${ n } taneye kadar takvim oluşturun",
+        "${ n } taneye kadar takvim oluşturun"
       ]
     },
     "Notification": {
@@ -9099,9 +9039,6 @@
       "Delete ${ count } message": [
         "${ count } iletiyi sil",
         "${ count } iletiyi sil"
-      ],
-      "Delete ${ Name }": [
-        "${ Name } kişisini sil"
       ],
       "Delete all messages": [
         "Tüm iletileri sil"
