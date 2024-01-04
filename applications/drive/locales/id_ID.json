@@ -3282,9 +3282,6 @@
       "${ speed }/s": [
         "${ speed }/dtk"
       ],
-      "${ storage } storage": [
-        "Kuota penyimpanan ${ storage }"
-      ],
       "${ updated } contacts updated successfully.": [
         "${ updated } kontak berhasil diperbarui."
       ],
@@ -4128,18 +4125,6 @@
       "Today": [
         "Hari ini"
       ],
-      "Total email addresses": [
-        "Total alamat surel"
-      ],
-      "Total storage": [
-        "Total kuota penyimpanan"
-      ],
-      "Total supported domains": [
-        "Total domain yang didukung"
-      ],
-      "Total VPN connections": [
-        "Total koneksi VPN"
-      ],
       "Transfer canceled for file \"${ name }\"": [
         "Transfer berkas \"${ name }\" dibatalkan"
       ],
@@ -4184,9 +4169,6 @@
       ],
       "Unsupported file": [
         "Berkas tidak didukung"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Hingga ${ FAMILY_MAX_USERS } pengguna"
       ],
       "Updating drive search...": [
         "Memperbarui pencarian drive..."
@@ -5042,8 +5024,11 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendars": [
-        "${ maximumNumberOfCalendars } kalender"
+      "${ n } calendars": [
+        "${ n } kalender"
+      ],
+      "${ n } calendars per user": [
+        "${ n } kalender per pengguna"
       ],
       "Auto-delete spam and trashed messages": [
         "Hapus pesan spam dan sampah secara otomatis"
@@ -5057,6 +5042,9 @@
       "Custom snooze time": [
         "Pilih sendiri waktu tunda"
       ],
+      "End-to-end encryption": [
+        "Enkripsi end-to-end"
+      ],
       "Hide-my-email aliases": [
         "Alias hide-my-email"
       ],
@@ -5065,6 +5053,9 @@
       ],
       "Search message content": [
         "Cari konten pesan"
+      ],
+      "Send & receive invitations": [
+        "Kirim & terima undangan"
       ],
       "Unlimited folders, labels, and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
@@ -5101,6 +5092,25 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Masukan"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Amankan jadwal Anda dengan enkripsi ujung ke ujung. Meliputi dukungan untuk kalender khusus, fitur berbagi kalender, dan masih banyak lagi."
+      ],
+      "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
+        "Buat hingga ${ n } kalender atau tambahkan kalender dari teman, keluarga, rekan kerja, dan organisasi Anda"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Bagikan kalender Anda dengan keluarga, teman, atau rekan kerja Anda secara mudah"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Jaga agar rencana Anda tetap menjadi rahasia antara Anda dan keluarga dengan kalender yang terenkripsi"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendars": [
+        "Buat hingga ${ n } kalender"
       ]
     },
     "Notification": {
@@ -5230,24 +5240,6 @@
       "Link copied to clipboard": [
         "Tautan disalin ke papan klip"
       ],
-      "Move ${ itemsToMoveCount } files": [
-        "Pindahkan ${ itemsToMoveCount } berkas"
-      ],
-      "Move ${ itemsToMoveCount } folders": [
-        "Pindahkan ${ itemsToMoveCount } folder"
-      ],
-      "Move ${ itemsToMoveCount } items": [
-        "Pindahkan ${ itemsToMoveCount } item"
-      ],
-      "Move ${ movingCount } files": [
-        "Pindah ${ movingCount } berkas"
-      ],
-      "Move ${ movingCount } folders": [
-        "Pindah ${ movingCount } folder"
-      ],
-      "Move ${ movingCount } items": [
-        "Pindah ${ movingCount } item"
-      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Kapasitas penyimpanan tidak cukup untuk menampung ${ formattedTotal }"
       ],
@@ -5295,6 +5287,11 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "Tentukan apa-apa saja yang akan dapat diakses oleh ${ BRAND_NAME }: melihat isi pesan dan pengaturan surel Anda, melihat dan mengunduh kontak Anda, serta melihat dan mengunduh seluruh agenda yang Anda akses dari Google Agenda."
+      ]
+    },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Selamat datang di ${ appName }"
       ]
     },
     "Onboarding Action": {
@@ -5346,9 +5343,6 @@
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "Selamat datang di ${ DRIVE_APP_NAME }"
-      ],
       "Your welcome bonus": [
         "Hadiah selamat datang Anda"
       ]
@@ -6209,9 +6203,6 @@
       ],
       "Delete ${ count } contacts": [
         "Hapus ${ count } kontak"
-      ],
-      "Delete ${ Name }": [
-        "Hapus ${ Name }"
       ],
       "Delete permanently": [
         "Hapus permanen"

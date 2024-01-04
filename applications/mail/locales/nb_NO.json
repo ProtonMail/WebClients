@@ -713,10 +713,10 @@
       "Not saved": [
         "Ikke lagret"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -3303,14 +3303,6 @@
       "Choose a date in the future.": [
         "Velg en dato i fremtiden."
       ],
-      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
-        "Velg en dato i løpet av ${ EXPIRATION_TIME_MAX_DAYS } dag.",
-        "Velg en dato i løpet av de neste ${ EXPIRATION_TIME_MAX_DAYS } dagene."
-      ],
-      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
-        "Velg en dato i løpet av ${ SCHEDULED_MAX_DATE_DAYS } dag.",
-        "Velg en dato i løpet av de neste ${ SCHEDULED_MAX_DATE_DAYS } dagene."
-      ],
       "Condition incomplete": [
         "Betingelse ufullstendig"
       ],
@@ -4842,10 +4834,6 @@
         "${ contactsLength } kontakt",
         "${ contactsLength } kontakter"
       ],
-      "${ count } unread message": [
-        "${ count } ulest melding",
-        "${ count } uleste meldinger"
-      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } ut av ${ totalProgress }",
         "${ currentProgress } ut av ${ totalProgress }"
@@ -4963,9 +4951,6 @@
         "${ selectedFoldersCountLocalized } etikett valgt",
         "${ selectedFoldersCountLocalized } etiketter valgt"
       ],
-      "${ storage } storage": [
-        "${ storage } lagringsplass"
-      ],
       "${ total } conversation": [
         "${ total } samtale",
         "${ total } samtaler"
@@ -4974,25 +4959,9 @@
         "${ total } melding",
         "${ total } meldinger"
       ],
-      "${ unread } unread conversation": [
-        "${ unread } ulest samtale",
-        "${ unread } uleste samtaler"
-      ],
-      "${ unread } unread message": [
-        "${ unread } ulest melding",
-        "${ unread } uleste meldinger"
-      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } planlagt melding",
         "${ unreadCount } planlagte meldinger"
-      ],
-      "${ unreadCount } unread conversation": [
-        "${ unreadCount } ulest samtale",
-        "${ unreadCount } uleste samtaler"
-      ],
-      "${ unreadCount } unread message": [
-        "${ unreadCount } ulest melding",
-        "${ unreadCount } uleste meldinger"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt oppdatert",
@@ -5884,9 +5853,6 @@
       "The sender has requested a read receipt.": [
         "Avsenderen har bedt om lesebekreftelse."
       ],
-      "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "Bekreftelsen av ${ contactName } har mislyktes: kontakten er ikke signert riktig.\nDette kan være et resultat av tilbakestilling av passord.\nDu må signere kontakten på nytt for å sende en melding til ${ contactAddress } eller redigere kontakten."
-      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "Bekreftelsen av ${ contactNames } har mislyktes: kontakten er ikke signert riktig.\nDette kan være et resultat av tilbakestilling av passord.\nDu må signere kontakten på nytt for å sende en melding til ${ contactAddresses } eller redigere kontakten.",
         "Bekreftelsen av ${ contactNames } har mislyktes: kontaktene er ikke signert riktig.\nDette kan være et resultat av tilbakestilling av passord.\nDu må signere kontaktene på nytt for å sende en melding til ${ contactAddresses } eller redigere kontaktene."
@@ -5958,12 +5924,6 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Denne meldingen er signert av nøkkelen vedlagt, som ikke er klarert enda."
       ],
-      "This message will be automatically deleted on ${ longDateMEssage }": [
-        "Denne meldingen slettes automatisk på ${ longDateMEssage }."
-      ],
-      "This message will be automatically deleted on ${ shortDateMessage }": [
-        "Denne meldingen slettes automatisk kl. ${ shortDateMessage }."
-      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Denne meldingen vil bli markert som søppelpost. Ønsker du å melde deg av fremtidige e-poster?",
         "Disse meldingene vil bli markert som søppelpost. Ønsker du å melde deg av fremtidige e-poster?"
@@ -5988,15 +5948,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Denne meldingen vil utløpe ${ formattedDate }."
-      ],
-      "This message will expire on ${ longDateMEssage }": [
-        "Denne meldingen utløper på ${ longDateMEssage }."
-      ],
-      "This message will expire today at ${ shortDateMessage }": [
-        "Denne meldingen utløper i dag kl. ${ shortDateMessage }."
-      ],
-      "This message will expire tomorrow at ${ shortDateMessage }": [
-        "Denne meldingen utløper i morgen kl. ${ shortDateMessage }."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Denne offentlige nøkkelen brukes automatisk til å kryptere e-post som sendes til denne adressen."
@@ -6034,18 +5985,6 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "For mange meldinger venter på å bli sendt. Vennligst vent til en annen melding er sendt før du planlegger denne."
       ],
-      "Total email addresses": [
-        "Totalt antall e-postadresser"
-      ],
-      "Total storage": [
-        "Total lagringsplass"
-      ],
-      "Total supported domains": [
-        "Totalt antall domener som støttes"
-      ],
-      "Total VPN connections": [
-        "Totalt antall VPN-forbindelser"
-      ],
       "Trackers blocked:": [
         "Sporere blokkert:"
       ],
@@ -6066,9 +6005,6 @@
       ],
       "Unsupported file": [
         "Fil som ikke støttes"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Opptil ${ FAMILY_MAX_USERS } brukere"
       ],
       "Updating message content search...": [
         "Oppdaterer meldingsinnholdssøk..."
@@ -6225,12 +6161,6 @@
       ],
       "You do not have any messages here": [
         "Du har ingen meldinger her"
-      ],
-      "You have ${ totalLabel } in your inbox.": [
-        "Du har ${ totalLabel } i innboksen din."
-      ],
-      "You have ${ unreadsLabel } in your inbox.": [
-        "Du har ${ unreadsLabel } i innboksen din."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Du har **${ count } samtale** lagret i denne mappen",
@@ -7015,18 +6945,6 @@
       "System information": [
         "Systeminformasjon"
       ],
-      "The email was sent ${ attachment }": [
-        "E-posten ble sendt ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "e-posten ble sendt ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "E-posten ble sendt ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "e-posten ble sendt ${ label }"
-      ],
       "Theme": [
         "Tema"
       ],
@@ -7063,17 +6981,8 @@
       "With attachment": [
         "Med vedlegg"
       ],
-      "with attachments": [
-        "med vedlegg"
-      ],
       "Without attachment": [
         "Uten vedlegg"
-      ],
-      "without attachment": [
-        "uten vedlegg"
-      ],
-      "without attachments": [
-        "uten vedlegg"
       ],
       "Wonderful": [
         "Fantastisk"
@@ -7618,9 +7527,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } kalender",
-        "${ maximumNumberOfCalendars } kalendere"
+      "${ n } calendar": [
+        "${ n } kalender",
+        "${ n } kalendere"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalender per bruker",
+        "${ n } kalendere per bruker"
       ],
       "Auto-delete spam and trashed messages": [
         "Autoslett søppelpost og meldinger i papirkurven"
@@ -7634,6 +7547,9 @@
       "Custom snooze time": [
         "Tilpasset slumretid"
       ],
+      "End-to-end encryption": [
+        "Ende-til-ende kryptering"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliaser"
       ],
@@ -7642,6 +7558,9 @@
       ],
       "Search message content": [
         "Søk i meldingsinnhold"
+      ],
+      "Send & receive invitations": [
+        "Send & motta invitasjoner"
       ],
       "Unlimited folders, labels, and filters": [
         "Ubegrenset antall mapper, etiketter og filtre"
@@ -7678,6 +7597,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Tilbakemelding"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: sikre tidsplanen din med ende-til-ende kryptering. Inkluderer støtte for tilpassede kalendere, kalenderdeling og mer."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Opprett opptil ${ n } kalender eller legg til kalendere fra venner, familie, kollegaer og organisasjoner.",
+        "Opprett opptil ${ n } kalendere eller legg til kalendere fra venner, familie, kollegaer og organisasjoner."
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Del kalenderne dine med familie, venner eller kolleger på en enkel måte."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Hold planene dine private for deg og familien din med en kryptert kalender."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Opprett opptil ${ n } kalender",
+        "Opprett opptil ${ n } kalendere"
       ]
     },
     "Notification": {
@@ -9261,9 +9201,6 @@
       "Delete ${ count } message": [
         "Slett ${ count } melding",
         "Slett ${ count } meldinger"
-      ],
-      "Delete ${ Name }": [
-        "Slett ${ Name }"
       ],
       "Delete all messages": [
         "Slett alle meldinger"

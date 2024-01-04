@@ -730,18 +730,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Абнаўленне \"${ payload.item.data.metadata.name }\" было адхілена"
       ],
-      "${ count } item": [
-        "${ count } элемент",
-        "${ count } элементы",
-        "${ count } элементаў",
-        "${ count } элементаў"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } элемент",
-        "${ itemCount } элементы",
-        "${ itemCount } элементаў",
-        "${ itemCount } элементаў"
-      ],
       "${ memberCount } member": [
         "${ memberCount } удзельнік",
         "${ memberCount } удзельнікі",
@@ -768,18 +756,6 @@
         "${ revisionNumber } разы",
         "${ revisionNumber } разоў",
         "${ revisionNumber } разоў"
-      ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } элемент",
-        "${ totalImportedItems } элементы",
-        "${ totalImportedItems } элементаў",
-        "${ totalImportedItems } элементаў"
-      ],
-      "${ totalItems } item": [
-        "${ totalItems } элемент",
-        "${ totalItems } элементы",
-        "${ totalItems } элементаў",
-        "${ totalItems } элементаў"
       ],
       "${ trialDaysLeft } day left": [
         "Застаўся ${ trialDaysLeft } дзень",
@@ -1101,9 +1077,6 @@
       ],
       "Sign in or create an account to continue.": [
         "Увайдзіце або стварыце ўліковы запіс, каб працягнуць."
-      ],
-      "Sign in to your account": [
-        "Увайдзіце ў свой уліковы запіс"
       ],
       "Signing you in": [
         "Адбываецца ўваход…"
@@ -1654,6 +1627,11 @@
         "Вы збіраецеся стварыць"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Вітаем у ${ appName }"
+      ]
+    },
     "Option": {
       "Commas": [
         "Коскі"
@@ -1880,9 +1858,6 @@
       "Trash empty": [
         "Сметніца пустая"
       ],
-      "Unlock ${ brandNameJSX }": [
-        "Разблакіраваць ${ brandNameJSX }"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Разблакіраваць ${ PASS_APP_NAME }"
       ],
@@ -1897,12 +1872,6 @@
       ],
       "Vault shared with you": [
         "Сховішча абагуленае з вамі"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Вітаем у ${ brandNameJSX }"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Вітаем у ${ PASS_APP_NAME }"
       ],
       "Welcome to your new password manager!": [
         "Вітаем у вашым новым менеджары пароляў!"

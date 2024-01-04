@@ -3241,9 +3241,6 @@
       "MM/YY": [
         "MM/AA"
       ],
-      "Multi-user support not enabled.": [
-        "La prise en charge du multi-utilisateur n'est pas activée."
-      ],
       "Must be between 3 and 20 characters long.": [
         "La longueur doit être comprise entre 3 et 20 caractères."
       ],
@@ -3610,9 +3607,6 @@
       "to continue to ${ product }": [
         "pour continuer vers ${ product }."
       ],
-      "to continue to ${ toAppName }": [
-        "pour continuer vers ${ toAppName }."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous n'êtes pas un robot."
       ],
@@ -3672,9 +3666,6 @@
       ],
       "Unverified email address.": [
         "L'adresse e-mail n'a pas été vérifiée."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Jusqu'à ${ FAMILY_MAX_USERS } utilisateurs"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
@@ -4463,17 +4454,8 @@
       "${ BRAND_NAME } welcome emails": [
         "Messages de bienvenue ${ BRAND_NAME }"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "Mises à jour du produit ${ DRIVE_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "Nouvelles fonctionnalités de ${ MAIL_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "Mises à jour du produit ${ PASS_APP_NAME }"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "Mises à jour du produit ${ VPN_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -4732,10 +4714,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } calendrier",
-        "${ maximumNumberOfCalendars } calendriers"
-      ],
       "${ n } calendar": [
         "${ n } calendrier",
         "${ n } calendriers"
@@ -5059,12 +5037,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Volume et bande passante illimités"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Jusqu'à ${ FAMILY_MAX_USERS } utilisateurs"
-      ],
-      "Up to ${ n } users": [
-        "Jusqu'à ${ n } utilisateurs"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Jusqu'à ${ totalStorageSize } d'espace de stockage"
@@ -5532,11 +5504,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Bienvenue dans ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Bienvenue dans ${ VPN_APP_NAME }."
+      "Welcome to ${ appName }": [
+        "Bienvenue dans ${ appName }"
       ]
     },
     "Option": {
@@ -6498,14 +6467,6 @@
         "${ ipAddresses } serveur dédié",
         "${ ipAddresses } serveurs dédiés"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } connexion VPN haut débit",
-        "${ maxVpn } connexions VPN haut débit"
-      ],
-      "${ n } calendar": [
-        "${ n } calendrier",
-        "${ n } calendriers"
-      ],
       "${ n } calendar per user": [
         "${ n } calendrier par utilisateur",
         "${ n } calendriers par utilisateur"
@@ -7031,9 +6992,6 @@
       "Delete": [
         "Supprimer"
       ],
-      "Delete ${ email }": [
-        "Supprimer ${ email }"
-      ],
       "Delete account": [
         "Supprimer le compte"
       ],
@@ -7305,14 +7263,6 @@
       ],
       "Subscription": [
         "Abonnement"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "Le compte utilisateur ${ localSuccessfullyCreatedUsers.length } a été créé.",
-        "Les comptes utilisateurs ${ localSuccessfullyCreatedUsers.length } ont été créés."
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "Le compte utilisateur ${ successfullyCreatedUsers.length } a été créé.",
-        "Les comptes utilisateurs ${ successfullyCreatedUsers.length } ont été créés."
       ],
       "Summary": [
         "Résumé"

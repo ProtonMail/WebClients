@@ -4308,9 +4308,6 @@
       "to continue to ${ product }": [
         "za nastavak u ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "za nastavak u ${ toAppName }"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "U borbi protiv spama i zlouporabe, molimo potvrdite da ste čovjek."
       ],
@@ -5412,18 +5409,6 @@
       "System information": [
         "Informacije o sustavu"
       ],
-      "The email was sent ${ attachment }": [
-        "E-pošta je poslana ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "e-pošta je poslana ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "E-pošta je poslana ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "e-pošta je poslana ${ label }"
-      ],
       "Then": [
         "Zatim"
       ],
@@ -5478,17 +5463,8 @@
       "With attachment": [
         "S privitkom"
       ],
-      "with attachments": [
-        "s privitcima"
-      ],
       "Without attachment": [
         "Bez privitka"
-      ],
-      "without attachment": [
-        "bez privitka"
-      ],
-      "without attachments": [
-        "bez privitaka"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Da, želim trajno izbrisati ovaj račun i sve njegove podatke."
@@ -5935,14 +5911,8 @@
       "Downgrade account": [
         "Smanjite svoj plan"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "Nabavite ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "Nabavite ${ planName }"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "Nabavite ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "Shvaćam"
@@ -6212,11 +6182,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Dobrodošli u ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Dobrodošli u ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Dobrodošli u ${ appName }"
       ]
     },
     "Option": {
@@ -6321,12 +6288,6 @@
       ],
       "Auto": [
         "Automatski"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automatski (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "Automatski (${ defaultFormat })"
       ],
       "Country configs": [
         "Postavke države"
@@ -7058,11 +7019,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ n } calendar": [
-        "${ n } kalendar",
-        "${ n } kalendara",
-        "${ n } kalendara"
-      ],
       "${ n } calendar per user": [
         "${ n } kalendar po korisniku",
         "${ n } kalendara po korisniku",
@@ -7580,15 +7536,6 @@
       ],
       "Decrypt key": [
         "Dešifriranje ključa"
-      ],
-      "Delete ${ domain.DomainName }": [
-        "Izbriši ${ domain.DomainName }"
-      ],
-      "Delete ${ email }": [
-        "Izbriši ${ email }"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "Izbriši ${ tokenNameToRemove }?"
       ],
       "Delete account": [
         "Ukloni račun"

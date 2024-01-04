@@ -3171,9 +3171,6 @@
       "MM/YY": [
         "月月/年年"
       ],
-      "Multi-user support not enabled.": [
-        "多使用者支援尚未啟用。"
-      ],
       "Must be between 3 and 20 characters long.": [
         "必須在 3 到 20 個字元長度之間。"
       ],
@@ -3528,9 +3525,6 @@
       "to continue to ${ product }": [
         "繼續使用 ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "繼續使用 ${ toAppName }"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "為防止垃圾郵件及濫用行為，請驗證您是真人。"
       ],
@@ -3590,9 +3584,6 @@
       ],
       "Unverified email address.": [
         "未經驗證的電子郵件位址。"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "多達 ${ FAMILY_MAX_USERS } 位使用者"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
@@ -4346,15 +4337,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } 歡迎電子郵件"
-      ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "${ DRIVE_APP_NAME } 產品更新"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "${ PASS_APP_NAME } 產品更新"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "${ VPN_APP_NAME } 產品更新"
       ]
     },
     "Label on payment method": {
@@ -4612,9 +4594,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendars": [
-        "${ maximumNumberOfCalendars } 個行事曆"
-      ],
       "${ n } calendars": [
         "${ n } 個行事曆"
       ],
@@ -4920,12 +4899,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "無限流量/頻寬"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "多達 ${ FAMILY_MAX_USERS } 位使用者"
-      ],
-      "Up to ${ n } users": [
-        "多達 ${ n } 位使用者"
       ],
       "Up to ${ totalStorageSize } storage": [
         "最多至 ${ totalStorageSize } 儲存空間"
@@ -5389,11 +5362,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "歡迎使用 ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "歡迎使用 ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "歡迎來到 ${ appName }"
       ]
     },
     "Option": {
@@ -6277,12 +6247,6 @@
       "${ ipAddresses } dedicated servers": [
         "${ ipAddresses } 專用伺服器"
       ],
-      "${ maxVpn } high-speed VPN connections": [
-        "${ maxVpn } 個極飆速 VPN 連線"
-      ],
-      "${ n } calendars": [
-        "${ n } 個行事曆"
-      ],
       "${ n } calendars per user": [
         "${ n } 個行事曆分配給每位使用者"
       ],
@@ -6796,9 +6760,6 @@
       "Delete": [
         "刪除"
       ],
-      "Delete ${ email }": [
-        "刪除 ${ email }"
-      ],
       "Delete account": [
         "刪除帳號"
       ],
@@ -7068,12 +7029,6 @@
       ],
       "Subscription": [
         "訂閲"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user accounts": [
-        "已成功創建 ${ localSuccessfullyCreatedUsers.length } 個使用者帳號"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user accounts": [
-        "成功創建 ${ successfullyCreatedUsers.length } 使用者帳號"
       ],
       "Summary": [
         "總結"

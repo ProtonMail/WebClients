@@ -3650,9 +3650,6 @@
         "${ selectedFoldersCountLocalized } вибраних міток",
         "${ selectedFoldersCountLocalized } вибраних міток"
       ],
-      "${ storage } storage": [
-        "${ storage } сховища"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успішно оновлений.",
         "${ updated } контакти успішно оновлені.",
@@ -4178,23 +4175,8 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Для використання перевірки адреси ви повинні зробити довіреним один чи декілька доступних відкритих ключів, включаючи той, який ви хочете використовувати для надсилання. Це запобігає підроблюванню ключів шифрування."
       ],
-      "Total email addresses": [
-        "Усього адрес електронної пошти"
-      ],
-      "Total storage": [
-        "Усього сховища"
-      ],
-      "Total supported domains": [
-        "Усього підтримуваних доменів"
-      ],
-      "Total VPN connections": [
-        "Усього VPN-з'єднань"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Спробуйте нові функції, оновлення та продукти ${ BRAND_NAME } до того, як вони будуть випущені для широкого загалу. Це призведе до перезапуску програми"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "До ${ FAMILY_MAX_USERS } користувачів"
       ],
       "Update recurring event": [
         "Оновити повторювану подію"
@@ -5182,11 +5164,17 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } календар",
-        "${ maximumNumberOfCalendars } календарі",
-        "${ maximumNumberOfCalendars } календарів",
-        "${ maximumNumberOfCalendars } календарів"
+      "${ n } calendar": [
+        "${ n } календар",
+        "${ n } календарі",
+        "${ n } календарів",
+        "${ n } календарів"
+      ],
+      "${ n } calendar per user": [
+        "${ n } календар на користувача",
+        "${ n } календарі на користувача",
+        "${ n } календарів на користувача",
+        "${ n } календарів на користувача"
       ],
       "Auto-delete spam and trashed messages": [
         "Автоматичне видалення спаму та повідомлень зі смітника"
@@ -5197,6 +5185,9 @@
       "Custom email domains": [
         "Власні домени електронної пошти"
       ],
+      "End-to-end encryption": [
+        "Наскрізне шифрування"
+      ],
       "Hide-my-email aliases": [
         "Псевдоніми Hide-my-email"
       ],
@@ -5205,6 +5196,9 @@
       ],
       "Search message content": [
         "Пошук вмісту повідомлень"
+      ],
+      "Send & receive invitations": [
+        "Надсилайте й отримуйте запрошення"
       ],
       "Unlimited folders, labels, and filters": [
         "Необмежена кількість тек, міток і фільтрів"
@@ -5238,6 +5232,28 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Відгук"
+      ]
+    },
+    "new_plans: tooltip": {
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Створіть максимум ${ n } календар або додайте календарі друзів, рідних, колег та організацій",
+        "Створіть максимум ${ n } календарі або додайте календарі друзів, рідних, колег та організацій",
+        "Створіть максимум ${ n } календарів або додайте календарі друзів, рідних, колег та організацій",
+        "Створіть максимум ${ n } календарів або додайте календарі друзів, рідних, колег та організацій"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Легко діліться календарями з родиною, друзями чи колегами"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Захистіть приватність власних і родинних планів, користуючись зашифрованим календарем"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Створіть до ${ n } календаря",
+        "Створіть до ${ n } календарів",
+        "Створіть до ${ n } календарів",
+        "Створіть до ${ n } календарів"
       ]
     },
     "Notification": {
@@ -5486,9 +5502,6 @@
       ],
       "Auto": [
         "Авто"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Автоматично (${ defaultDay })"
       ],
       "Create new group": [
         "Створити нову групу"
@@ -6550,9 +6563,6 @@
         "Видалити ${ count } групи контактів",
         "Видалити ${ count } груп контактів",
         "Видалити ${ count } груп контактів"
-      ],
-      "Delete ${ Name }": [
-        "Видалити ${ Name }"
       ],
       "Delete event": [
         "Видалити подію"

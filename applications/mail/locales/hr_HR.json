@@ -593,10 +593,10 @@
       "Not saved": [
         "Nije spremljeno"
       ],
-      "OK": [
+      "Ok": [
         "U redu"
       ],
-      "Ok": [
+      "OK": [
         "U redu"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -3581,11 +3581,6 @@
         "${ contactsLength } kontakta",
         "${ contactsLength } kontakata"
       ],
-      "${ count } unread message": [
-        "${ count } nepročitana poruka",
-        "${ count } nepročitane poruke",
-        "${ count } nepročitanih poruka"
-      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } ugrađena slika",
         "${ embeddedAttachmentsCount } ugrađene slike",
@@ -3635,26 +3630,6 @@
         "${ total } e-poruka",
         "${ total } e-poruke",
         "${ total } e-poruka"
-      ],
-      "${ unread } unread conversation": [
-        "${ unread } nepročitan razgovor",
-        "${ unread } nepročitanih razgovora",
-        "${ unread } nepročitana razgovora"
-      ],
-      "${ unread } unread message": [
-        "${ unread } nepročitana poruka",
-        "${ unread } nepročitanih poruka",
-        "${ unread } nepročitane poruke"
-      ],
-      "${ unreadCount } unread conversation": [
-        "${ unreadCount } nepročitan razgovor",
-        "${ unreadCount } nepročitana razgovora",
-        "${ unreadCount } nepročitanih razgovora"
-      ],
-      "${ unreadCount } unread message": [
-        "${ unreadCount } nepročitana poruka",
-        "${ unreadCount } nepročitane poruke",
-        "${ unreadCount } nepročitanih poruka"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt je uspješno ažuriran.",
@@ -4163,9 +4138,6 @@
       "The sender has requested a read receipt.": [
         "Pošiljatelj je zatražio potvrdu o čitanju poruke."
       ],
-      "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "Potvrda ${ contactName } nije uspjela: kontakt nije pravilno potpisan.\nTo može biti rezultat poništavanja lozinke.\nMorate ponovo potpisati kontakt da biste mogli poslati poruku na ${ contactAddress } ili urediti kontakt."
-      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "Potvrda ${ contactNames } nije uspjela: kontakt nije pravilno potpisan.\nTo može biti rezultat poništavanja lozinke.\nMorate ponovo potpisati kontakt da biste mogli poslati poruku na ${ contactAddresses } ili urediti kontakt.",
         "Potvrda ${ contactNames } nije uspjela: kontakti nisu pravilno potpisani.\nTo može biti rezultat poništavanja lozinke.\nMorate ponovo potpisati kontakte da biste mogli poslati poruku na ${ contactAddresses } ili urediti kontakte.",
@@ -4305,12 +4277,6 @@
       ],
       "You do not have any messages here": [
         "Nemate niti jednu poruku ovdje"
-      ],
-      "You have ${ totalLabel } in your inbox.": [
-        "Imate ${ totalLabel }} u vašoj pristigloj pošti."
-      ],
-      "You have ${ unreadsLabel } in your inbox.": [
-        "Imate ${ unreadsLabel } u vašoj pristigloj pošti."
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Vaša poruka nema predmet. Želite li svejedno poslati poruku?"
@@ -4929,18 +4895,6 @@
       "System information": [
         "Informacije o sustavu"
       ],
-      "The email was sent ${ attachment }": [
-        "E-pošta je poslana ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "e-pošta je poslana ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "E-pošta je poslana ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "e-pošta je poslana ${ label }"
-      ],
       "Theme": [
         "Tema"
       ],
@@ -4974,17 +4928,8 @@
       "With attachment": [
         "S privitkom"
       ],
-      "with attachments": [
-        "s privitcima"
-      ],
       "Without attachment": [
         "Bez privitka"
-      ],
-      "without attachment": [
-        "bez privitka"
-      ],
-      "without attachments": [
-        "bez privitaka"
       ],
       "Wonderful": [
         "Izvanredno"
@@ -5374,8 +5319,21 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } kalendar",
+        "${ n } kalendara",
+        "${ n } kalendara"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalendar po korisniku",
+        "${ n } kalendara po korisniku",
+        "${ n } kalendara po korisniku"
+      ],
       "Custom email domains": [
         "Prilagođene domene"
+      ],
+      "End-to-end encryption": [
+        "Krajnje do krajnje šifriranje"
       ],
       "Search message content": [
         "Pretraži sadržaj poruka"
@@ -6445,9 +6403,6 @@
         "Izbriši ${ count } poruku",
         "Izbriši ${ count } poruke",
         "Izbriši ${ count } poruka"
-      ],
-      "Delete ${ Name }": [
-        "Izbriši ${ Name }"
       ],
       "Delete all messages": [
         "Izbriši sve poruke"

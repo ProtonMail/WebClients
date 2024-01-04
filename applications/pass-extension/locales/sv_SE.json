@@ -713,17 +713,13 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Uppdatering ”${ payload.item.data.metadata.name }” avfärdades"
       ],
-      "${ count } item": [
-        "${ count } objekt",
-        "${ count } objekt"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } objekt",
-        "${ itemCount } objekt"
-      ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
         "${ memberCount } medlemmar"
+      ],
+      "${ n } item": [
+        "${ n } objekt",
+        "${ n } objekt"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } kommer visa objektets favicon via ${ BRAND_NAME } anonymiserade bildproxy."
@@ -743,14 +739,6 @@
       "${ revisionNumber } time": [
         "${ revisionNumber } gång",
         "${ revisionNumber } gånger"
-      ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } objekt",
-        "${ totalImportedItems } objekt"
-      ],
-      "${ totalItems } item": [
-        "${ totalItems } objekt",
-        "${ totalItems } objekt"
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag kvar",
@@ -1066,9 +1054,6 @@
       ],
       "Sign in or create an account to continue.": [
         "Logga in eller skapa ett konto för att fortsätta."
-      ],
-      "Sign in to your account": [
-        "Logga in på ditt konto"
       ],
       "Signing you in": [
         "Loggar in dig"
@@ -1611,6 +1596,27 @@
         "Du är på väg att skapa"
       ]
     },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Ange din PIN-kod"
+      ],
+      "Sign in to your account": [
+        "Logga in på ditt konto"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Lås upp ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Välkommen till ${ brandNameJSX }"
+      ]
+    },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Välkommen till ${ appName }"
+      ]
+    },
     "Option": {
       "Commas": [
         "Kommatecken"
@@ -1835,9 +1841,6 @@
       "Trash empty": [
         "Papperskorg tom"
       ],
-      "Unlock ${ brandNameJSX }": [
-        "Lås upp ${ brandNameJSX }"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Lås upp ${ PASS_APP_NAME }"
       ],
@@ -1852,12 +1855,6 @@
       ],
       "Vault shared with you": [
         "Valv delade med dig"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Välkommen till ${ brandNameJSX }"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Välkommen till ${ PASS_APP_NAME }"
       ],
       "Welcome to your new password manager!": [
         "Välkommen till din nya lösenordshanterare!"

@@ -3161,9 +3161,6 @@
       "MM/YY": [
         "MM/AA"
       ],
-      "Multi-user support not enabled.": [
-        "Suport multi-usuari no activat."
-      ],
       "Must start with a letter.": [
         "Ha de començar amb una lletra."
       ],
@@ -3509,9 +3506,6 @@
       "to continue to ${ product }": [
         "per continuar a ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "per continuar a ${ toAppName }"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
       ],
@@ -3571,9 +3565,6 @@
       ],
       "Unverified email address.": [
         "No s'ha verificat l'adreça de correu electrònic."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Fins a ${ FAMILY_MAX_USERS } usuaris"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Milloreu ara per obtenir característiques prèmium, productes i emmagatzematge a un preu especial"
@@ -4345,17 +4336,8 @@
       "${ BRAND_NAME } welcome emails": [
         "Missatges de benvinguda de ${ BRAND_NAME }"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "Actualitzacions del producte ${ DRIVE_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "Noves característiques de ${ MAIL_APP_NAME } i de ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "Actualitzacions del producte ${ PASS_APP_NAME }"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "Actualitzacions del producte ${ VPN_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -4614,10 +4596,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } calendari",
-        "${ maximumNumberOfCalendars } calendaris"
-      ],
       "${ n } calendar": [
         "${ n } calendari",
         "${ n } calendaris"
@@ -4938,12 +4916,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Sense límit de volum / amplada de banda"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Fins a ${ FAMILY_MAX_USERS } usuaris"
-      ],
-      "Up to ${ n } users": [
-        "Fins a ${ n } usuaris"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Fins a ${ totalStorageSize } d'emmagatzematge"
@@ -5405,11 +5377,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Us donem la benvinguda a ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Us donem la benvinguda a ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Us donem la benvinguda a ${ appName }"
       ]
     },
     "Option": {
@@ -6345,14 +6314,6 @@
         "${ ipAddresses } servidor dedicat",
         "${ ipAddresses } servidors dedicats"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } connexió VPN d'alta velocitat",
-        "${ maxVpn } connexions VPN d'alta velocitat"
-      ],
-      "${ n } calendar": [
-        "${ n } calendari",
-        "${ n } calendaris"
-      ],
       "${ n } calendar per user": [
         "${ n } calendari per usuari",
         "${ n } calendaris per usuari"
@@ -6872,9 +6833,6 @@
       "Delete": [
         "Elimina"
       ],
-      "Delete ${ email }": [
-        "Eliminar ${ email }"
-      ],
       "Delete account": [
         "Elimina el compte"
       ],
@@ -7134,14 +7092,6 @@
       ],
       "Subscription": [
         "Subscripció"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "S'ha creat ${ localSuccessfullyCreatedUsers.length } compte d'usuari.",
-        "S'han creat ${ localSuccessfullyCreatedUsers.length } comptes d'usuari."
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "S'ha creat ${ successfullyCreatedUsers.length } compte d'usuari.",
-        "S'han creat ${ successfullyCreatedUsers.length } comptes d'usuari."
       ],
       "Summary": [
         "Resum"

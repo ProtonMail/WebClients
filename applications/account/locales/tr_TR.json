@@ -7384,9 +7384,6 @@
       "to continue to ${ product }": [
         "${ product } ile ilerlemek için"
       ],
-      "to continue to ${ toAppName }": [
-        "${ toAppName } uygulamasına ilerlemek için"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Hizmetlerimizi sürekli olarak geliştirmek için bazen uygulamalarımızın düzgün çalışıp çalışmadığını izlemek amacıyla veri topluyoruz. Bu bilgiler herhangi bir üçüncü taraf ile paylaşılmıyor."
       ],
@@ -7485,9 +7482,6 @@
       ],
       "Unverified email address.": [
         "E-posta adresi doğrulanmamış."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "En fazla ${ FAMILY_MAX_USERS } kullanıcı"
       ],
       "Update recovery file": [
         "Kurtarma dosyasını güncelle"
@@ -9122,18 +9116,6 @@
       "System information": [
         "Sistem bilgileri"
       ],
-      "The email was sent ${ attachment }": [
-        "Gönderilen e-postada ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "gönderilen e-postada ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "E-posta gönderildi ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "gönderilen e-postada ${ label }"
-      ],
       "Then": [
         "Önce"
       ],
@@ -9203,17 +9185,8 @@
       "With attachment": [
         "Ek dosyası olan"
       ],
-      "with attachments": [
-        "ek dosyası olan"
-      ],
       "Without attachment": [
         "Ek dosyası olmayan"
-      ],
-      "without attachment": [
-        "ek dosyası olmayan"
-      ],
-      "without attachments": [
-        "ek dosyaları olmayan"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Evet, bu hesabı ve tüm verilerini kalıcı olarak silmek istiyorum."
@@ -9298,17 +9271,8 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } karşılama e-postaları"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "${ DRIVE_APP_NAME } ürün güncellemeleri"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "Yeni ${ MAIL_APP_NAME } ve ${ CALENDAR_SHORT_APP_NAME } özellikleri"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "${ PASS_APP_NAME } ürün güncellemeleri"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "${ VPN_APP_NAME } ürün güncellemeleri"
       ]
     },
     "Label in domain modal": {
@@ -9941,14 +9905,8 @@
       "Get ${ BRAND_NAME } for free": [
         "Ücretsiz ${ BRAND_NAME } edinin"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "${ mostPopularShortPlan.title } tarifesini edinin"
-      ],
       "Get ${ planName }": [
         "${ planName } alın"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "${ upsellShortPlan.title } alın"
       ],
       "Got it": [
         "Anladım"
@@ -9967,10 +9925,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } takvim",
-        "${ maximumNumberOfCalendars } takvim"
-      ],
       "${ n } calendar": [
         "${ n } takvim",
         "${ n } takvim"
@@ -10294,12 +10248,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Sınırsız trafik/bant genişliği"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "En fazla ${ FAMILY_MAX_USERS } kullanıcı"
-      ],
-      "Up to ${ n } users": [
-        "En fazla ${ n } kullanıcı"
       ],
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize } boyutuna kadar depolama alanı"
@@ -10927,11 +10875,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "${ product } hizmetine hoş geldiniz"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME } hoş geldiniz"
+      "Welcome to ${ appName }": [
+        "${ appName } hoş geldiniz"
       ]
     },
     "Option": {
@@ -11036,12 +10981,6 @@
       ],
       "Auto": [
         "Otomatik"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Otomatik (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "Otomatik (${ defaultFormat })"
       ],
       "Country configs": [
         "Ülke yapılandırmaları"
@@ -12605,14 +12544,6 @@
         "${ ipAddresses } size ayrılmış sunucu",
         "${ ipAddresses } size ayrılmış sunucu"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } yüksek hızlı VPN bağlantısı",
-        "${ maxVpn } yüksek hızlı VPN bağlantısı"
-      ],
-      "${ n } calendar": [
-        "${ n } takvim",
-        "${ n } takvim"
-      ],
       "${ n } calendar per user": [
         "Kullanıcı başına ${ n } takvim",
         "Kullanıcı başına ${ n } takvim"
@@ -13445,15 +13376,6 @@
       "Decrypt key": [
         "Anahtarın şifresini çöz"
       ],
-      "Delete ${ domain.DomainName }": [
-        "${ domain.DomainName } sil"
-      ],
-      "Delete ${ email }": [
-        "${ email } adresini sil"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "${ tokenNameToRemove } kodu silinsin mi?"
-      ],
       "Delete account": [
         "Hesabı sil"
       ],
@@ -13981,14 +13903,6 @@
       ],
       "Success": [
         "Başarılı"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "${ localSuccessfullyCreatedUsers.length } kullanıcı hesabı eklendi",
-        "${ localSuccessfullyCreatedUsers.length } kullanıcı hesabı eklendi"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "${ successfullyCreatedUsers.length } kullanıcı hesabı eklendi",
-        "${ successfullyCreatedUsers.length } kullanıcı hesabı eklendi"
       ],
       "Summary": [
         "Özet"

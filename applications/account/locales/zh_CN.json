@@ -6602,9 +6602,6 @@
       "to continue to ${ product }": [
         "继续使用 ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "即可使用 ${ toAppName }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "为持续改进我们的服务，我们有时会收集数据用于侦测系统运行是否正常。这些数据不会传输至任何第三方平台。"
       ],
@@ -6703,9 +6700,6 @@
       ],
       "Unverified email address.": [
         "未经验证的电子邮件地址。"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "最多 ${ FAMILY_MAX_USERS } 个用户"
       ],
       "Update recovery file": [
         "更新恢复文件"
@@ -8278,18 +8272,6 @@
       "System information": [
         "系统信息"
       ],
-      "The email was sent ${ attachment }": [
-        "邮件${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "邮件${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "邮件${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "邮件${ label }"
-      ],
       "Then": [
         "则"
       ],
@@ -8359,16 +8341,7 @@
       "With attachment": [
         "含有附件"
       ],
-      "with attachments": [
-        "含有附件"
-      ],
       "Without attachment": [
-        "不含附件"
-      ],
-      "without attachment": [
-        "不含附件"
-      ],
-      "without attachments": [
         "不含附件"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
@@ -8449,17 +8422,8 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } 欢迎信"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "${ DRIVE_APP_NAME } 产品资讯"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "${ MAIL_APP_NAME } 与 ${ CALENDAR_SHORT_APP_NAME } 的新功能"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "${ PASS_APP_NAME } 产品资讯"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "${ VPN_APP_NAME } 产品资讯"
       ]
     },
     "Label in domain modal": {
@@ -9019,14 +8983,8 @@
       "Get ${ BRAND_NAME } for free": [
         "免费获得 ${ BRAND_NAME }"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "开通 ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "开通 ${ planName }"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "开通 ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "知道了"
@@ -9045,9 +9003,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendars": [
-        "${ maximumNumberOfCalendars } 个日历"
-      ],
       "${ n } calendars": [
         "${ n } 个日历"
       ],
@@ -9314,12 +9269,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "流量与带宽不限"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "最多 ${ FAMILY_MAX_USERS } 名用户"
-      ],
-      "Up to ${ n } users": [
-        "最多 ${ n } 名用户"
       ],
       "Up to ${ totalStorageSize } storage": [
         "升级容量至 ${ totalStorageSize }"
@@ -9842,11 +9791,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "欢迎来到 ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "欢迎来到 ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "欢迎来到 ${ appName }"
       ]
     },
     "Option": {
@@ -9951,12 +9897,6 @@
       ],
       "Auto": [
         "自动"
-      ],
-      "Automatic (${ defaultDay })": [
-        "自动 (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "自动 (${ defaultFormat })"
       ],
       "Country configs": [
         "国家配置"
@@ -11166,12 +11106,6 @@
       "${ ipAddresses } dedicated servers": [
         "${ ipAddresses } 个专用服务器"
       ],
-      "${ maxVpn } high-speed VPN connections": [
-        "${ maxVpn } 个高速 VPN 连接"
-      ],
-      "${ n } calendars": [
-        "${ n } 份日历"
-      ],
       "${ n } calendars per user": [
         "每位用户 ${ n } 份日历"
       ],
@@ -11917,15 +11851,6 @@
       "Decrypt key": [
         "解密密钥"
       ],
-      "Delete ${ domain.DomainName }": [
-        "删除 ${ domain.DomainName }"
-      ],
-      "Delete ${ email }": [
-        "删除 ${ email }"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "删除 ${ tokenNameToRemove }？"
-      ],
       "Delete account": [
         "删除账户"
       ],
@@ -12411,12 +12336,6 @@
       ],
       "Success": [
         "成功"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user accounts": [
-        "${ localSuccessfullyCreatedUsers.length } 位用户创建成功"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user accounts": [
-        "已成功创建 ${ successfullyCreatedUsers.length } 个账户"
       ],
       "Summary": [
         "概览"

@@ -704,10 +704,10 @@
       "Not saved": [
         "Nincs mentve"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -3178,14 +3178,6 @@
       "Choose a date in the future.": [
         "Egy jövőbeli időpontot válasszon ki."
       ],
-      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
-        "A következő ${ EXPIRATION_TIME_MAX_DAYS } napon belüli dátumot válasszon.",
-        "A következő ${ EXPIRATION_TIME_MAX_DAYS } napon belüli dátumot válasszon."
-      ],
-      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
-        "A következő ${ SCHEDULED_MAX_DATE_DAYS } napon belüli dátumot válasszon.",
-        "A következő ${ SCHEDULED_MAX_DATE_DAYS } napon belüli dátumot válasszon."
-      ],
       "Condition incomplete": [
         "Hiányos feltétel"
       ],
@@ -4695,10 +4687,6 @@
         "${ contactsLength } névjegy",
         "${ contactsLength } névjegy"
       ],
-      "${ count } unread message": [
-        "${ count } olvasatlan üzenet",
-        "${ count } olvasatlan üzenet"
-      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "Jelenleg: ${ currentProgress }, összesen: ${ totalProgress }",
         "Jelenleg: ${ currentProgress }, összesen: ${ totalProgress }"
@@ -4776,9 +4764,6 @@
         "${ selectedFoldersCountLocalized } címke kiválasztva",
         "${ selectedFoldersCountLocalized } címke kiválasztva"
       ],
-      "${ storage } storage": [
-        "${ storage } tárhely"
-      ],
       "${ total } conversation": [
         "${ total } beszélgetés",
         "${ total } beszélgetés"
@@ -4787,25 +4772,9 @@
         "${ total } üzenet",
         "${ total } üzenet"
       ],
-      "${ unread } unread conversation": [
-        "${ unread } olvasatlan beszélgetés",
-        "${ unread } olvasatlan beszélgetés"
-      ],
-      "${ unread } unread message": [
-        "${ unread } olvasatlan üzenet",
-        "${ unread } olvasatlan üzenet"
-      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } időzített üzenet",
         "${ unreadCount } időzített üzenet"
-      ],
-      "${ unreadCount } unread conversation": [
-        "${ unreadCount } olvasatlan beszélgetés",
-        "${ unreadCount } olvasatlan beszélgetés"
-      ],
-      "${ unreadCount } unread message": [
-        "${ unreadCount } olvasatlan üzenet",
-        "${ unreadCount } olvasatlan üzenet"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } névjegy sikeresen frissítve.",
@@ -5642,9 +5611,6 @@
       "The sender has requested a read receipt.": [
         "A feladó olvasási visszaigazolást kért."
       ],
-      "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "${ contactName } névjegyének ellenőrzése nem sikerült, az aláírás hibás.\nEzt a jelszó visszaállítása is okozhatja.\nÜzenet küldéséhez (${ contactAddress }) újra alá kell írni vagy átszerkeszteni a névjegyet."
-      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "${ contactNames } névjegyének ellenőrzése nem sikerült, az aláírás hibás.\nEzt a jelszó visszaállítása is okozhatja.\nÜzenet küldéséhez (${ contactAddresses }) újra alá kell írni vagy átszerkeszteni a névjegyet.",
         "${ contactNames } névjegyének ellenőrzése nem sikerült, az aláírás hibás.\nEzt a jelszó visszaállítása is okozhatja.\nÜzenet küldéséhez (${ contactAddresses }) újra alá kell írni vagy átszerkeszteni a névjegyeket."
@@ -5713,12 +5679,6 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Ez az üzenet a csatolt kulccsal van aláírva, ami még nincs megbízhatóként megjelölve."
       ],
-      "This message will be automatically deleted on ${ longDateMEssage }": [
-        "Ez az üzenet automatikusan törlésre kerül, ekkor: ${ longDateMEssage }"
-      ],
-      "This message will be automatically deleted on ${ shortDateMessage }": [
-        "Ez az üzenet automatikusan törlésre kerül, ekkor: ${ shortDateMessage }"
-      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Ez az üzenet levélszemétként lesz megjelölve. Le szeretne iratkozni a jövőbeli e-mailekről?",
         "Ezek az üzenetek levélszemétként lesznek megjelölve. Le szeretne iratkozni a jövőbeli e-mailekről?"
@@ -5743,15 +5703,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Ez az üzenet időkorlátos, lejár: ${ formattedDate }"
-      ],
-      "This message will expire on ${ longDateMEssage }": [
-        "Ez az üzenet le fog járni, ekkor: ${ longDateMEssage }"
-      ],
-      "This message will expire today at ${ shortDateMessage }": [
-        "Ez az üzenet ma fog lejárni, ekkor: ${ shortDateMessage }"
-      ],
-      "This message will expire tomorrow at ${ shortDateMessage }": [
-        "Ez az üzenet holnap fog lejárni, ekkor: ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Erre a címre küldéskor automatikusan ez a nyilvános kulcs lesz használva a titkosításhoz."
@@ -5786,18 +5737,6 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Túl sok üzenet vár elküldésre. Várjon amíg elküldődik egy üzenet, mielőtt ezt ütemezné."
       ],
-      "Total email addresses": [
-        "Összes e-mail cím"
-      ],
-      "Total storage": [
-        "Összes tárhely"
-      ],
-      "Total supported domains": [
-        "Összes támogatott domain név"
-      ],
-      "Total VPN connections": [
-        "Összes VPN kapcsolat"
-      ],
       "Trackers blocked:": [
         "Követők blokkolva:"
       ],
@@ -5818,9 +5757,6 @@
       ],
       "Unsupported file": [
         "Ismeretlen file"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Legfeljebb ${ FAMILY_MAX_USERS } felhasználó"
       ],
       "Updating message content search...": [
         "Üzenetek tartalmában való keresés frissítése..."
@@ -5971,12 +5907,6 @@
       ],
       "You do not have any messages here": [
         "Itt nincsenek üzenetek"
-      ],
-      "You have ${ totalLabel } in your inbox.": [
-        "${ totalLabel } van a fiókjában."
-      ],
-      "You have ${ unreadsLabel } in your inbox.": [
-        "A beérkezett üzeneteknél ${ unreadsLabel } van."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Ebben a mappában **${ count } beszélgetés** van tárolva",
@@ -6729,18 +6659,6 @@
       "System information": [
         "Rendszer információk"
       ],
-      "The email was sent ${ attachment }": [
-        "Az e-mail ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "az e-mail ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Az e-mail ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "az e-mail ${ label }"
-      ],
       "Theme": [
         "Téma"
       ],
@@ -6777,17 +6695,8 @@
       "With attachment": [
         "Mellékletet tartalmaz"
       ],
-      "with attachments": [
-        "mellékletet tartalmaz"
-      ],
       "Without attachment": [
         "Nem tartalmaz mellékletet"
-      ],
-      "without attachment": [
-        "nem tartalmaz mellékletet"
-      ],
-      "without attachments": [
-        "nem tartalmaz mellékletet"
       ],
       "Wonderful": [
         "Csodás"
@@ -7298,9 +7207,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } naptár",
-        "${ maximumNumberOfCalendars } naptár"
+      "${ n } calendar": [
+        "${ n } naptár",
+        "${ n } naptár"
+      ],
+      "${ n } calendar per user": [
+        "${ n } naptár felhasználónként",
+        "${ n } naptár felhasználónként"
       ],
       "Auto-delete spam and trashed messages": [
         "A Levélszemét és a Lomtár mappában lévő üzenetek automatikus törlése"
@@ -7311,6 +7224,9 @@
       "Custom email domains": [
         "Saját domain nevek"
       ],
+      "End-to-end encryption": [
+        "Végpontok közti titkosítás"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email álnevek"
       ],
@@ -7319,6 +7235,9 @@
       ],
       "Search message content": [
         "Keresés az üzenetek tartalmában"
+      ],
+      "Send & receive invitations": [
+        "Meghívók küldése és fogadása"
       ],
       "Unlimited folders, labels, and filters": [
         "Korlátlan számú mappa, címke és szűrő"
@@ -7352,6 +7271,18 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Visszajelzés"
+      ]
+    },
+    "new_plans: tooltip": {
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől",
+        "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Akár ${ n } naptár létrehozása",
+        "Akár ${ n } naptár létrehozása"
       ]
     },
     "Notification": {
@@ -8838,9 +8769,6 @@
       "Delete ${ count } message": [
         "${ count } üzenet törlése",
         "${ count } üzenet törlése"
-      ],
-      "Delete ${ Name }": [
-        "${ Name } törlése"
       ],
       "Delete all messages": [
         "Összes üzenet törlése"
