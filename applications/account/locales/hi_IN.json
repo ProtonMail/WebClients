@@ -6302,9 +6302,6 @@
       "to continue to ${ product }": [
         "${ product } को जारी रखने के लिए"
       ],
-      "to continue to ${ toAppName }": [
-        "${ toAppName } को जारी रखने के लिए"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "हमारी सेवाओं को लगातार बेहतर करने के लिए, हम कभी-कभी डाटा लेते है ये देखने के लिए की हमारे ऐप सही चल रहे है या नहीं। हम ये डाटा किसी और के साथ शेयर नहीं करते।"
       ],
@@ -6394,9 +6391,6 @@
       ],
       "Unsupported file": [
         "असमर्थित फ़ाइल"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "${ FAMILY_MAX_USERS } यूज़र तक"
       ],
       "Update recovery file": [
         "पुनर्प्राप्ति फ़ाइल अपडेट करें"
@@ -7849,18 +7843,6 @@
       "System information": [
         "प्रणाली की जानकारी"
       ],
-      "The email was sent ${ attachment }": [
-        "ईमेल भेजा गया था ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "ईमेल भेजा गया था ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "ईमेल भेजा गया था ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "ईमेल भेजा गया था ${ label }"
-      ],
       "Then": [
         "तब"
       ],
@@ -7924,16 +7906,7 @@
       "With attachment": [
         "अनुलग्नक के साथ"
       ],
-      "with attachments": [
-        "संलग्नक के साथ"
-      ],
       "Without attachment": [
-        "संलग्नक के बिना"
-      ],
-      "without attachment": [
-        "संलग्नक के बिना"
-      ],
-      "without attachments": [
         "संलग्नक के बिना"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
@@ -8567,14 +8540,8 @@
       "Get ${ BRAND_NAME } for free": [
         "${ BRAND_NAME } पाएं मुफ्त में"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "${ mostPopularShortPlan.title } लें"
-      ],
       "Get ${ planName }": [
         "${ planName } लें"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "${ upsellShortPlan.title } लें"
       ],
       "Got it": [
         "समझ लिया"
@@ -8593,10 +8560,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } कैलेंडर",
-        "${ maximumNumberOfCalendars } कैलेंडर"
-      ],
       "${ n } calendar": [
         "${ n } कैलेंडर",
         "${ n } कैलेंडर"
@@ -8863,12 +8826,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "असीमित वॉल्युम/बैंडविड्थ"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "${ FAMILY_MAX_USERS } यूज़र तक"
-      ],
-      "Up to ${ n } users": [
-        "${ n } यूज़र तक"
       ],
       "Up to ${ totalStorageSize } storage": [
         "${ totalStorageSize } स्टोरेज तक"
@@ -9354,11 +9311,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "${ product } में स्वागत"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME } में स्वागत"
+      "Welcome to ${ appName }": [
+        "${ appName } में आपका स्वागत है"
       ]
     },
     "Option": {
@@ -9460,12 +9414,6 @@
       ],
       "Ask each time": [
         "हर बार पूछें"
-      ],
-      "Automatic (${ defaultDay })": [
-        "स्वचालित (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "स्वचालित (${ defaultFormat })"
       ],
       "Country configs": [
         "देश विन्यास"
@@ -10472,14 +10420,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } तेज़ वीपीएन कनेक्शन",
-        "${ maxVpn } तेज़ वीपीएन कनेक्शन"
-      ],
-      "${ n } calendar": [
-        "${ n } कैलेंडर",
-        "${ n } कैलेंडर"
-      ],
       "${ n } calendar per user": [
         "${ n } कैलेंडर हर यूजर पे",
         "${ n } कैलेंडर हर यूजर पे"
@@ -11218,15 +11158,6 @@
       "Decrypt key": [
         "डिक्रिप्ट कुंजी"
       ],
-      "Delete ${ domain.DomainName }": [
-        "${ domain.DomainName } हटाएं"
-      ],
-      "Delete ${ email }": [
-        "${ email } हटाएं"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "${ tokenNameToRemove } मिटाएं?"
-      ],
       "Delete account": [
         "खाता हटा दो"
       ],
@@ -11663,14 +11594,6 @@
       ],
       "Success": [
         "सफल"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "सफलतापूर्वक ${ localSuccessfullyCreatedUsers.length } यूज़र खाता बनाया गया",
-        "सफलतापूर्वक ${ localSuccessfullyCreatedUsers.length } यूज़र खाते बनाए गए"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "सफलतापूर्वक ${ successfullyCreatedUsers.length } यूज़र खाता बनाया गया",
-        "सफलतापूर्वक ${ successfullyCreatedUsers.length } यूज़र खाते बनाए गए"
       ],
       "Summary": [
         "सार"
