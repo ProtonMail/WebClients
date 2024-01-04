@@ -1,6 +1,6 @@
 export * from './calendarModelEventManager';
 export * from './calendars';
-export * from './holidayCalendars';
+export * from './holidaysDirectory';
 export * from './calendarUserSettings';
 export { startCalendarEventListener } from './calendars/listener';
-export { startHolidayCalendarsListener } from './holidayCalendars/listener';
+export { startHolidaysDirectoryListener } from './holidaysDirectory/listener';

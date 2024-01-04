@@ -61,7 +61,7 @@ jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
 jest.mock('@proton/components/hooks/useFeature', () => jest.fn(() => ({ feature: { Value: true } })));
 jest.mock('@proton/components/hooks/useEarlyAccess', () => () => ({}));
 
-jest.mock('@proton/components/containers/calendar/hooks/useHolidaysDirectory', () => ({
+jest.mock('@proton/calendar/holidaysDirectory/hooks', () => ({
     __esModule: true,
     default: jest.fn(() => []),
 }));

@@ -1,8 +1,8 @@
 import { createHooks } from '@proton/redux-utilities';
 
-import { holidayCalendarsThunk, selectHolidayCalendars } from './index';
+import { holidaysDirectoryThunk, selectHolidaysDirectory } from './index';
 
-const hooks = createHooks(holidayCalendarsThunk, selectHolidayCalendars);
+const hooks = createHooks(holidaysDirectoryThunk, selectHolidaysDirectory);
 
 export const useHolidaysDirectory = hooks.useValue;
 export const useGetHolidaysDirectory = hooks.useGet;

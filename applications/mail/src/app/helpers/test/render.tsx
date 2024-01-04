@@ -183,7 +183,7 @@ export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloade
             filters: getModelState([]),
             calendars: getModelState([]),
             calendarUserSettings: getModelState({} as CalendarUserSettings),
-            holidayCalendars: getModelState([]),
+            holidaysDirectory: getModelState([]),
             importerConfig: getModelState({} as ApiEnvironmentConfig),
             features: getFeatureFlags([[FeatureCode.SLIntegration, true]]),
             conversationCounts: getModelState([]),

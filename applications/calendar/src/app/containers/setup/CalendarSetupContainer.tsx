@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { useGetHolidaysDirectory } from '@proton/calendar/holidaysDirectory/hooks';
 import {
     LoaderPage,
     StandardLoadErrorPage,
@@ -10,7 +11,6 @@ import {
     useGetCalendarUserSettings,
     useGetCalendars,
 } from '@proton/components';
-import { useGetHolidaysDirectory } from '@proton/components/containers/calendar/hooks/useHolidaysDirectory';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import setupCalendarHelper from '@proton/shared/lib/calendar/crypto/keys/setupCalendarHelper';
 import { setupCalendarKeys } from '@proton/shared/lib/calendar/crypto/keys/setupCalendarKeys';

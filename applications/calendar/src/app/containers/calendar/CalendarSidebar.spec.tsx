@@ -109,7 +109,7 @@ jest.mock('@proton/components/hooks/useConfig', () => ({
     default: jest.fn(() => ({ APP_NAME: 'proton-calendar' })),
 }));
 
-jest.mock('@proton/components/containers/calendar/hooks/useHolidaysDirectory', () => ({
+jest.mock('@proton/calendar/holidaysDirectory/hooks', () => ({
     __esModule: true,
     default: jest.fn(() => []),
 }));
