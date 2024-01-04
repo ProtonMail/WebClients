@@ -730,18 +730,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Aktualizacja \"${ payload.item.data.metadata.name }\" została odrzucona"
       ],
-      "${ count } item": [
-        "${ count } element",
-        "${ count } elementy",
-        "${ count } elementów",
-        "${ count } elementów"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } element",
-        "${ itemCount } elementy",
-        "${ itemCount } elementów",
-        "${ itemCount } elementów"
-      ],
       "${ memberCount } member": [
         "${ memberCount } użytkownik",
         "${ memberCount } użytkowników",
@@ -768,18 +756,6 @@
         "${ revisionNumber } razy",
         "${ revisionNumber } razy",
         "${ revisionNumber } razy"
-      ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } element",
-        "${ totalImportedItems } elementy",
-        "${ totalImportedItems } elementów",
-        "${ totalImportedItems } elementów"
-      ],
-      "${ totalItems } item": [
-        "${ totalItems } element",
-        "${ totalItems } elementy",
-        "${ totalItems } elementów",
-        "${ totalItems } elementów"
       ],
       "${ trialDaysLeft } day left": [
         "Pozostał ${ trialDaysLeft } dzień",
@@ -1101,9 +1077,6 @@
       ],
       "Sign in or create an account to continue.": [
         "Zaloguj się lub utwórz konto, aby kontynuować."
-      ],
-      "Sign in to your account": [
-        "Zaloguj się"
       ],
       "Signing you in": [
         "Logowanie"
@@ -1651,6 +1624,11 @@
         "Utworzysz"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Witaj w ${ appName }"
+      ]
+    },
     "Option": {
       "Commas": [
         "Przecinki"
@@ -1877,9 +1855,6 @@
       "Trash empty": [
         "Kosz jest pusty"
       ],
-      "Unlock ${ brandNameJSX }": [
-        "Odblokuj ${ brandNameJSX }"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Odblokuj ${ PASS_APP_NAME }"
       ],
@@ -1894,12 +1869,6 @@
       ],
       "Vault shared with you": [
         "Udostępniony sejf"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Witaj w ${ brandNameJSX }"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Witaj w ${ PASS_APP_NAME }"
       ],
       "Welcome to your new password manager!": [
         "Witaj w nowym menadżerze haseł!"
