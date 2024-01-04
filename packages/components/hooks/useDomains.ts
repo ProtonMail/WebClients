@@ -12,7 +12,7 @@ const useDomains = (): [Domain[], boolean, Error] => {
 
     const miss = () => {
         const user = cache.get(UserModel.key).value as tsUserModel;
-        if (!user.hasPaidMail) {
+        if (!user.isPaid) {
             return Promise.resolve([]);
         }
 
