@@ -711,12 +711,6 @@
       "High speed streaming": [
         "Transmisii în flux de mare viteză"
       ],
-      "Premium ${ appName }": [
-        "${ appName } premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
       "Premium Password Manager": [
         "Manager de parole premium"
       ]
@@ -2261,15 +2255,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } premium"
-      ],
       "Up to 6 users": [
         "Până la 6 utilizatori"
       ]
@@ -5659,6 +5644,15 @@
       "My reason isn't listed": [
         "Motivul meu nu este afișat"
       ],
+      "No permission": [
+        "Fără permisiune"
+      ],
+      "Organization only": [
+        "Doar de la organizație"
+      ],
+      "Receive from all": [
+        "Primire de la toți"
+      ],
       "Router": [
         "Ruter"
       ],
@@ -5667,6 +5661,12 @@
       ],
       "Select who can access...": [
         "Selectați cine are acces..."
+      ],
+      "Send to all": [
+        "Trimitere către toți"
+      ],
+      "Setup incomplete": [
+        "Setare incompletă"
       ],
       "Standard server configs": [
         "Configurări standard de server"
@@ -5822,6 +5822,23 @@
       ],
       "New credit/debit card": [
         "Card nou de credit/debit"
+      ]
+    },
+    "Permission": {
+      "No permission": [
+        "Fără permisiune"
+      ],
+      "Organization only": [
+        "Doar de la organizație"
+      ],
+      "Receive from all": [
+        "Primire de la toți"
+      ],
+      "Send to all": [
+        "Trimitere către toți"
+      ],
+      "Setup incomplete": [
+        "Setare incompletă"
       ]
     },
     "Placeholder": {
@@ -6404,15 +6421,6 @@
       "Highest VPN speed": [
         "Viteză VPN maximă"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și ${ DRIVE_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } premium"
-      ],
       "Premium early access": [
         "Acces timpuriu premium"
       ],
@@ -6889,14 +6897,6 @@
     "Suffix for price": {
       "per month": [
         "pe lună"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } și ${ CALENDAR_SHORT_APP_NAME } premium"
       ]
     },
     "summer2023: Tooltip": {
