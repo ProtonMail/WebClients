@@ -798,9 +798,6 @@
       "High speed streaming": [
         "Strømming med høy hastighet"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium-${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "Premium Password Manager": [
         "Premium passordbehandler"
       ]
@@ -3104,15 +3101,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium-${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium-${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium-${ VPN_SHORT_APP_NAME }"
-      ],
       "Up to 6 users": [
         "Opptil 6 brukere"
       ]
@@ -4648,9 +4636,6 @@
       "Frequency": [
         "Frekvens"
       ],
-      "From: ${ from }": [
-        "Fra: ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
       ],
@@ -4817,9 +4802,6 @@
       "Time zone": [
         "Tidssone"
       ],
-      "To: ${ to }": [
-        "Til: ${ to }"
-      ],
       "To: ${ toEmail }": [
         "Til: ${ toEmail }"
       ],
@@ -4878,6 +4860,14 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } opprettet"
+      ]
+    },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Fra: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Til: ${ to }"
       ]
     },
     "Landmarks": {
@@ -5085,12 +5075,14 @@
         "Hver ${ interval } måned ${ onDayString }, ${ timesString }",
         "Hver ${ interval } måned ${ onDayString }, ${ timesString }"
       ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Månedlig ${ onDayString }, ${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
         "Hver ${ interval } måned ${ onDayString }, ${ untilString }",
         "Hver ${ interval } måned ${ onDayString }, ${ untilString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Månedlig ${ onDayString }, ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Månedlig ${ onDayString }, ${ untilString }"
@@ -6069,14 +6061,14 @@
       "Highest VPN speed": [
         "Høyeste VPN-hastighet"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium-${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
+      "Premium ${ appName1 }": [
+        "Premium ${ appName1 }"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium-${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }"
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium ${ appName1 } og ${ appName2 }"
       ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium-${ VPN_SHORT_APP_NAME }"
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
       "Premium early access": [
         "Tidlig premiumtilgang"
@@ -6406,14 +6398,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Tilbakemelding sendt"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium-${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium-${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {
