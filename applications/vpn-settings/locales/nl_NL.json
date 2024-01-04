@@ -3182,9 +3182,6 @@
       "MM/YY": [
         "MM/JJ"
       ],
-      "Multi-user support not enabled.": [
-        "Ondersteuning voor meerdere gebruikers niet ingeschakeld."
-      ],
       "Must be between 3 and 20 characters long.": [
         "Moet tussen de 3 en 20 tekens lang zijn."
       ],
@@ -3551,9 +3548,6 @@
       "to continue to ${ product }": [
         "om door te gaan naar ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "om door te gaan naar ${ toAppName }"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
       ],
@@ -3613,9 +3607,6 @@
       ],
       "Unverified email address.": [
         "Niet-geverifieerd e-mailadres."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Tot ${ FAMILY_MAX_USERS } gebruikers"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
@@ -4398,17 +4389,8 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } welkomst-e-mail"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "${ DRIVE_APP_NAME } productupdates"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "${ MAIL_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME } nieuwe functies"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "${ PASS_APP_NAME } productupdates"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "${ VPN_APP_NAME } productupdates"
       ]
     },
     "Label on payment method": {
@@ -4667,10 +4649,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } agenda",
-        "${ maximumNumberOfCalendars } agenda's"
-      ],
       "${ n } calendar": [
         "${ n } agenda",
         "${ n } agenda's"
@@ -4994,12 +4972,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ongelimiteerd(e) volume/bandbreedte"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Tot ${ FAMILY_MAX_USERS } gebruikers"
-      ],
-      "Up to ${ n } users": [
-        "Tot ${ n } gebruikers"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Tot ${ totalStorageSize } opslag"
@@ -5461,11 +5433,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Welkom bij ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Welkom bij ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Welkom bij ${ appName }"
       ]
     },
     "Option": {
@@ -6355,14 +6324,6 @@
         "${ ipAddresses } toegewijde server",
         "${ ipAddresses } toegewijde servers"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } supersnelle VPN-verbinding",
-        "${ maxVpn } supersnelle VPN-verbindingen"
-      ],
-      "${ n } calendar": [
-        "${ n } agenda",
-        "${ n } agenda's"
-      ],
       "${ n } calendar per user": [
         "${ n } agenda per gebruiker",
         "${ n } agenda's per gebruiker"
@@ -6888,9 +6849,6 @@
       "Delete": [
         "Verwijderen"
       ],
-      "Delete ${ email }": [
-        "Verwijderen ${ email }"
-      ],
       "Delete account": [
         "Account verwijderen"
       ],
@@ -7162,14 +7120,6 @@
       ],
       "Subscription": [
         "Abonnement"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "Met succes ${ localSuccessfullyCreatedUsers.length } gebruikersaccount aangemaakt",
-        "Met succes ${ localSuccessfullyCreatedUsers.length } gebruikersaccounts aangemaakt"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "Met succes een gebruikersaccount aangemaakt",
-        "Met succes ${ successfullyCreatedUsers.length } gebruikersaccounts aangemaakt"
       ],
       "Summary": [
         "Overzicht"

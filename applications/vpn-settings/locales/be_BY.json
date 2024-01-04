@@ -3301,9 +3301,6 @@
       "MM/YY": [
         "ММ/ГГ"
       ],
-      "Multi-user support not enabled.": [
-        "Падтрымка шматкарыстальніцкага рэжыму не ўключана."
-      ],
       "Must be between 3 and 20 characters long.": [
         "Даўжыня назвы павінна быць у межах ад 3 да 20 сімвалаў."
       ],
@@ -3682,9 +3679,6 @@
       "to continue to ${ product }": [
         "для працягу ў ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "для працягу ў ${ toAppName }"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
       ],
@@ -3744,9 +3738,6 @@
       ],
       "Unverified email address.": [
         "Неправераны адрас электроннай пошты"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Да ${ FAMILY_MAX_USERS } карыстальнікаў"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Палепшыце зараз, каб атрымаць прэміяльныя функцыі прадуктаў і сховішча па спецыяльным кошце"
@@ -4551,17 +4542,8 @@
       "${ BRAND_NAME } welcome emails": [
         "Прывітальныя лісты ${ BRAND_NAME }"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "Абнаўленні прадукту ${ DRIVE_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "Новыя функцыі ${ MAIL_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "Абнаўленні прадукту ${ PASS_APP_NAME }"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "Абнаўленні прадукту ${ VPN_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -4822,12 +4804,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } каляндар",
-        "${ maximumNumberOfCalendars } календары",
-        "${ maximumNumberOfCalendars } календароў",
-        "${ maximumNumberOfCalendars } календароў"
-      ],
       "${ n } calendar": [
         "${ n } каляндар",
         "${ n } календары",
@@ -5187,12 +5163,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Неабмежаваны аб'ём даных і паласа прапускання"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Да ${ FAMILY_MAX_USERS } карыстальнікаў"
-      ],
-      "Up to ${ n } users": [
-        "Да ${ n } карыстальнікаў"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Да ${ totalStorageSize } сховішча"
@@ -5668,11 +5638,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Вітаем у ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Вітаем у ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Вітаем у ${ appName }"
       ]
     },
     "Option": {
@@ -6684,18 +6651,6 @@
         "${ ipAddresses } вылучаных сервераў",
         "${ ipAddresses } вылучаных сервераў"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } высакахуткаснае падключэнне па VPN",
-        "${ maxVpn } высакахуткасныя падключэнні па VPN",
-        "${ maxVpn } высакахуткасных падключэнняў па VPN",
-        "${ maxVpn } высакахуткасныя падключэнні па VPN"
-      ],
-      "${ n } calendar": [
-        "${ n } каляндар",
-        "${ n } календары",
-        "${ n } календароў",
-        "${ n } календары"
-      ],
       "${ n } calendar per user": [
         "${ n } каляндар на карыстальніка",
         "${ n } календары на карыстальніка",
@@ -7245,9 +7200,6 @@
       "Delete": [
         "Выдаліць"
       ],
-      "Delete ${ email }": [
-        "Выдаліць ${ email }"
-      ],
       "Delete account": [
         "Выдаліць уліковы запіс"
       ],
@@ -7523,18 +7475,6 @@
       ],
       "Subscription": [
         "Падпіска"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "Паспяхова створаны ${ localSuccessfullyCreatedUsers.length } уліковы запіс карыстальніка",
-        "Паспяхова створана ${ localSuccessfullyCreatedUsers.length } уліковыя запісы карыстальніка",
-        "Паспяхова створана ${ localSuccessfullyCreatedUsers.length } уліковых запісаў карыстальніка",
-        "Паспяхова створана ${ localSuccessfullyCreatedUsers.length } уліковыя запісы карыстальніка"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "Паспяхова створаны ${ successfullyCreatedUsers.length } уліковы запіс карыстальніка",
-        "Паспяхова створана ${ successfullyCreatedUsers.length } уліковыя запісы карыстальніка",
-        "Паспяхова створана ${ successfullyCreatedUsers.length } уліковых запісаў карыстальніка",
-        "Паспяхова створана ${ successfullyCreatedUsers.length } уліковыя запісы карыстальніка"
       ],
       "Summary": [
         "Зводка"
