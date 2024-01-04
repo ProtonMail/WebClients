@@ -13,7 +13,7 @@ function main {
     echo "[~] validate ${file}";
 
     local expectedFile="$(sed 's/\.js$//; s/input/output/' <<< "$file")";
-    local output="$(node scripts/linter.mjs "$file")";
+    local output="$(FORCE_COLOR=0 node scripts/linter.mjs "$file")";
     local expectedOutput="$(cat "$expectedFile")";
 
     if [ "$expectedOutput" != "$output" ]; then
