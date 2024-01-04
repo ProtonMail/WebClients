@@ -269,6 +269,9 @@
       "Open navigation": [
         "ნავიგაციის გახსნა"
       ],
+      "Open web app": [
+        "ვებ-აპის გახსნა"
+      ],
       "Pass for Android": [
         "Pass-ი Android-სთვის"
       ],
@@ -393,6 +396,9 @@
     "Badge": {
       "Early access": [
         "ადრეული წვდომა"
+      ],
+      "Limited time": [
+        "შეზღუდული დრო"
       ]
     },
     "bf2023: Info": {
@@ -527,6 +533,9 @@
       ],
       "File could not be parsed": [
         "ფაილის დამუშავება შეუძლებელია"
+      ],
+      "File does not match expected format": [
+        "ფაილი არ ემთხვევა სასურველ ფორმატს"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "შემოტანა ჩავარდა საცავისთვის \"${ vaultData.name }\" : ${ description }"
