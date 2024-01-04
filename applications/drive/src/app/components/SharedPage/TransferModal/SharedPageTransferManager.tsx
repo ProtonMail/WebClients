@@ -236,10 +236,11 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
     if (!nbFile || !currentDownload) {
         return null;
     }
+
     return (
         <div
             className={clsx(
-                'transfer-modal fixed bottom right border border-primary w-full md:min-w-custom max-w-custom m-0 md:mr-10 overflow-hidden',
+                'transfer-modal fixed bottom-0 right-0 border border-primary w-full md:min-w-custom max-w-custom m-0 md:mr-10 overflow-hidden',
                 currentDownload.state === TransferState.Canceled && 'transfer-modal--canceled border-norm',
                 (currentDownload.state === TransferState.Error ||
                     currentDownload.state === TransferState.NetworkError) &&
@@ -247,11 +248,14 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
             )}
             style={{ '--min-w-custom': '27.5em', '--max-w-custom': '31.25em' }}
         >
-            <div className="transfer-modal-header flex justify-space-between">
-                <div className="flex items-center gap-2 py-2 pl-3">
-                    {getHeaderText({ transferState: currentDownload.state, percentageValue })}
-                </div>
-                {currentDownload.state === TransferState.Progress ? (
+            {currentDownload.state === TransferState.Progress ? (
+                <button
+                    className="transfer-modal-header w-full flex items-center justify-space-between"
+                    onClick={() => setIsMinimized(!isMinimized)}
+                >
+                    <div className="flex items-center gap-2 py-2 pl-3">
+                        {getHeaderText({ transferState: currentDownload.state, percentageValue })}
+                    </div>
                     <Tooltip title={isMinimized ? c('Action').t`Maximize` : c('Action').t`Minimize`}>
                         <Button
                             icon
@@ -265,14 +269,19 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
                             />
                         </Button>
                     </Tooltip>
-                ) : (
+                </button>
+            ) : (
+                <div className="transfer-modal-header w-full flex items-center justify-space-between">
+                    <div className="flex items-center gap-2 py-2 pl-3">
+                        {getHeaderText({ transferState: currentDownload.state, percentageValue })}
+                    </div>
                     <Tooltip title={c('Action').t`Close`} onClick={() => clearDownloads()}>
                         <Button icon shape="ghost" data-testid="transfer-modal:close">
                             <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
                         </Button>
                     </Tooltip>
-                )}
-            </div>
+                </div>
+            )}
             <div
                 className={clsx(
                     'transfer-modal-content',
