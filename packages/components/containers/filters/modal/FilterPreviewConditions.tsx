@@ -6,7 +6,8 @@ import clsx from '@proton/utils/clsx';
 
 import { Icon } from '../../../components';
 import { getComparatorLabels, getConditionTypeLabels } from '../constants';
-import { ConditionComparator, ConditionType, FilterStatement, SimpleFilterModalModel } from '../interfaces';
+import { ConditionType, FilterStatement, SimpleFilterModalModel } from '../interfaces';
+import { getConditionLabel, getEmailSentLabel, getEmailSentLabelJt } from './helper';
 
 interface Props {
     model: SimpleFilterModalModel;
@@ -20,10 +21,7 @@ const FilterPreviewConditions = ({ isOpen, toggleOpen, model }: Props) => {
     const conditionsRenderer = useMemo(() => {
         const conditionsRows = conditions?.map((cond) => {
             if (cond.type === ConditionType.ATTACHMENTS) {
-                const label =
-                    cond.comparator === ConditionComparator.CONTAINS
-                        ? c('Label').t`with attachments`
-                        : c('Label').t`without attachments`;
+                const label = getConditionLabel(cond);
                 const attachment = isOpen ? (
                     <span
                         key={`filter_preview_${label}`}
@@ -39,8 +37,8 @@ const FilterPreviewConditions = ({ isOpen, toggleOpen, model }: Props) => {
                 );
 
                 return {
-                    element: c('Label').jt`the email was sent ${attachment}`,
-                    title: c('Label').t`the email was sent ${label}`,
+                    element: getEmailSentLabelJt(attachment),
+                    title: getEmailSentLabel(label),
                 };
             }
 
