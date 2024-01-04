@@ -721,10 +721,10 @@
       "Not saved": [
         "Не захавана"
       ],
-      "OK": [
+      "Ok": [
         "Добра"
       ],
-      "Ok": [
+      "OK": [
         "Добра"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -3337,18 +3337,6 @@
       "Choose a date in the future.": [
         "Выберыце дату ў будучыні."
       ],
-      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
-        "Выберыце дату ў межах наступнага ${ EXPIRATION_TIME_MAX_DAYS } дня.",
-        "Выберыце дату ў межах наступных ${ EXPIRATION_TIME_MAX_DAYS } дзён.",
-        "Выберыце дату ў межах наступных ${ EXPIRATION_TIME_MAX_DAYS } дзён.",
-        "Выберыце дату ў межах наступных ${ EXPIRATION_TIME_MAX_DAYS } дзён."
-      ],
-      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
-        "Выберыце дату ў межах наступнага ${ SCHEDULED_MAX_DATE_DAYS } дня.",
-        "Выберыце дату ў межах наступных ${ SCHEDULED_MAX_DATE_DAYS } дзён.",
-        "Выберыце дату ў межах наступных ${ SCHEDULED_MAX_DATE_DAYS } дзён.",
-        "Выберыце дату ў межах наступных ${ SCHEDULED_MAX_DATE_DAYS } дзён."
-      ],
       "Condition incomplete": [
         "Няпоўная ўмова"
       ],
@@ -4950,12 +4938,6 @@
         "${ contactsLength } кантактаў",
         "${ contactsLength } кантактаў"
       ],
-      "${ count } unread message": [
-        "${ count } непрачытанае паведамленне",
-        "${ count } непрачытаныя паведамленні",
-        "${ count } непрачытаных паведамленняў",
-        "${ count } непрачытаныя паведамленні"
-      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } з ${ totalProgress }",
         "${ currentProgress } з ${ totalProgress }",
@@ -5127,9 +5109,6 @@
         "Выбраны ${ selectedFoldersCountLocalized } метак",
         "Выбраны ${ selectedFoldersCountLocalized } меткі"
       ],
-      "${ storage } storage": [
-        "${ storage } сховішча"
-      ],
       "${ total } conversation": [
         "${ total } размова",
         "${ total } размовы",
@@ -5142,35 +5121,11 @@
         "${ total } паведамленняў",
         "${ total } паведамленні"
       ],
-      "${ unread } unread conversation": [
-        "${ unread } непрачытаная размова",
-        "${ unread } непрачытаныя размовы",
-        "${ unread } непрачытаных размоў",
-        "${ unread } непрачытаныя размовы"
-      ],
-      "${ unread } unread message": [
-        "${ unread } непрачытанае паведамленне",
-        "${ unread } непрачытаныя паведамленні",
-        "${ unread } непрачытаных паведамленняў",
-        "${ unread } непрачытаныя паведамленні"
-      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } запланаванае паведамленне",
         "${ unreadCount } запланаваныя паведамленні",
         "${ unreadCount } запланаваных паведамленняў",
         "${ unreadCount } запланаваныя паведамленні"
-      ],
-      "${ unreadCount } unread conversation": [
-        "${ unreadCount } непрачытаная размова",
-        "${ unreadCount } непрачытаныя размовы",
-        "${ unreadCount } непрачытаных размоў",
-        "${ unreadCount } непрачытаныя размовы"
-      ],
-      "${ unreadCount } unread message": [
-        "${ unreadCount } непрачытанае паведамленне",
-        "${ unreadCount } непрачытаныя паведамленні",
-        "${ unreadCount } непрачытаных паведамленняў",
-        "${ unreadCount } непрачытаныя паведамленні"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } кантакт паспяхова абноўлены.",
@@ -6102,9 +6057,6 @@
       "The sender has requested a read receipt.": [
         "Адпраўнік запытаў апавяшчэнне пра прачытанне."
       ],
-      "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "Не ўдалося праверыць ${ contactName }: кантакт падпісаны няправільна.\nГэта можа быць вынікам скідання пароля.\nВы павінны паўторна падпісаць кантакт, каб адправіць паведамленне на ${ contactAddress } або адрэдагаваць яго."
-      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "Не ўдалося праверыць ${ contactNames }: кантакт падпісаны няправільна.\nГэта можа быць вынікам скідання пароля.\nВы павінны паўторна падпісаць кантакт, каб адправіць паведамленне на ${ contactAddresses } або адрэдагаваць яго.",
         "Не ўдалося праверыць ${ contactNames }: кантакты падпісаны няправільна.\nГэта можа быць вынікам скідання пароля.\nВы павінны паўторна падпісаць кантакты, каб адправіць паведамленне на ${ contactAddresses } або адрэдагаваць іх.",
@@ -6180,12 +6132,6 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Гэта паведамленне падпісана далучаным ключом, які яшчэ не быў давераным."
       ],
-      "This message will be automatically deleted on ${ longDateMEssage }": [
-        "Гэта паведамленне будзе аўтаматычна выдалена ${ longDateMEssage }"
-      ],
-      "This message will be automatically deleted on ${ shortDateMessage }": [
-        "Гэта паведамленне будзе аўтаматычна выдалена ў ${ shortDateMessage }"
-      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Гэта паведамленне будзе пазначана як спам. Ці хочаце вы таксама скасаваць падпіску на будучыя лісты?",
         "Гэтыя паведамленні будуць пазначаны як спам. Ці хочаце вы таксама скасаваць падпіску на будучыя лісты?",
@@ -6212,15 +6158,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Тэрмін дзеяння гэтага паведамлення міне ${ formattedDate }"
-      ],
-      "This message will expire on ${ longDateMEssage }": [
-        "Тэрмін дзеяння гэтага паведамлення міне ${ longDateMEssage }"
-      ],
-      "This message will expire today at ${ shortDateMessage }": [
-        "Тэрмін дзеяння гэтага паведамлення міне сёння ў ${ shortDateMessage }"
-      ],
-      "This message will expire tomorrow at ${ shortDateMessage }": [
-        "Тэрмін дзеяння гэтага паведамлення міне заўтра ў ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Гэты публічны ключ будзе аўтаматычна выкарыстаны для шыфравання лістоў, якія адпраўляюцца на гэты адрас."
@@ -6258,18 +6195,6 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Занадта шмат паведамленняў чакаюць адпраўкі. Пачакайце, пакуль адправіцца іншае паведамленне, каб запланаваць гэта."
       ],
-      "Total email addresses": [
-        "Колькасць адрасоў электроннай пошты"
-      ],
-      "Total storage": [
-        "Агульны аб'ём сховішча"
-      ],
-      "Total supported domains": [
-        "Колькасць даменаў, якія падтрымліваюцца"
-      ],
-      "Total VPN connections": [
-        "Колькасць падключэнняў па VPN"
-      ],
       "Trackers blocked:": [
         "Праграм сачэння заблакіравана:"
       ],
@@ -6290,9 +6215,6 @@
       ],
       "Unsupported file": [
         "Файл не падтрымліваецца"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Да ${ FAMILY_MAX_USERS } карыстальнікаў"
       ],
       "Updating message content search...": [
         "Абнаўленне пошуку змесціва паведамлення..."
@@ -6449,12 +6371,6 @@
       ],
       "You do not have any messages here": [
         "Тут няма паведамленняў"
-      ],
-      "You have ${ totalLabel } in your inbox.": [
-        "У вашай паштовай скрыні ${ totalLabel }."
-      ],
-      "You have ${ unreadsLabel } in your inbox.": [
-        "У вашай паштовай скрыні ${ unreadsLabel }."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "У гэтай папцы ў вас захоўваецца **${ count } размова**",
@@ -7275,18 +7191,6 @@
       "System information": [
         "Сістэмная інфармацыя"
       ],
-      "The email was sent ${ attachment }": [
-        "Ліст быў адпраўлены ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "ліст быў адпраўлены ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Ліст быў адпраўлены ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "ліст быў адпраўлены ${ label }"
-      ],
       "Theme": [
         "Тэма"
       ],
@@ -7323,17 +7227,8 @@
       "With attachment": [
         "З далучэннем"
       ],
-      "with attachments": [
-        "з далучэннямі"
-      ],
       "Without attachment": [
         "Без далучэння"
-      ],
-      "without attachment": [
-        "без далучэння"
-      ],
-      "without attachments": [
-        "без далучэнняў"
       ],
       "Wonderful": [
         "Цудоўна"
@@ -7894,11 +7789,17 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } каляндар",
-        "${ maximumNumberOfCalendars } календары",
-        "${ maximumNumberOfCalendars } календароў",
-        "${ maximumNumberOfCalendars } календароў"
+      "${ n } calendar": [
+        "${ n } каляндар",
+        "${ n } календары",
+        "${ n } календароў",
+        "${ n } календары"
+      ],
+      "${ n } calendar per user": [
+        "${ n } каляндар на карыстальніка",
+        "${ n } календары на карыстальніка",
+        "${ n } календароў на карыстальніка",
+        "${ n } календароў на карыстальніка"
       ],
       "Auto-delete spam and trashed messages": [
         "Аўтаматычна выдаляць паведамленні ў спаме і сметніцы"
@@ -7912,6 +7813,9 @@
       "Custom snooze time": [
         "Карыстальніцкі час адкладання"
       ],
+      "End-to-end encryption": [
+        "Скразное шыфраванне"
+      ],
       "Hide-my-email aliases": [
         "Псеўданімаў Hide-my-email"
       ],
@@ -7920,6 +7824,9 @@
       ],
       "Search message content": [
         "Пошук змесціва паведамлення"
+      ],
+      "Send & receive invitations": [
+        "Адпраўка і атрыманне запрашэнняў"
       ],
       "Unlimited folders, labels, and filters": [
         "Неабмежаваная колькасць папак, метак і фільтраў"
@@ -7956,6 +7863,31 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Зваротная сувязь"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Абараняйце свой расклад з дапамогай скразнога шыфравання. Уключае падтрымку для карыстальніцкіх календароў, абагуленых календароў і іншыя функцыі."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Стварайце да ${ n } календара або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
+        "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
+        "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
+        "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Лёгка дзяліцеся вашымі календарамі з сям'ёй, сябрамі або калегамі"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Трымайце ў прыватнасці свае і сямейныя планы з зашыфраваным календаром"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Стварыць да ${ n } календара",
+        "Стварыць да ${ n } календароў",
+        "Стварыць да ${ n } календароў",
+        "Стварыць да ${ n } календароў"
       ]
     },
     "Notification": {
@@ -9673,9 +9605,6 @@
         "Выдаліць ${ count } паведамленні",
         "Выдаліць ${ count } паведамленняў",
         "Выдаліць ${ count } паведамленні"
-      ],
-      "Delete ${ Name }": [
-        "Выдаліць ${ Name }"
       ],
       "Delete all messages": [
         "Выдаліць усе паведамленні"

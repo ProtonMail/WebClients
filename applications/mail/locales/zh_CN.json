@@ -697,10 +697,10 @@
       "Not saved": [
         "未保存"
       ],
-      "OK": [
+      "Ok": [
         "确定"
       ],
-      "Ok": [
+      "OK": [
         "确定"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -3182,12 +3182,6 @@
       "Choose a date in the future.": [
         "选择未来的日期。"
       ],
-      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } days.": [
-        "选择接下来 ${ EXPIRATION_TIME_MAX_DAYS } 天内的日期。"
-      ],
-      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } days.": [
-        "请在接下来的 ${ SCHEDULED_MAX_DATE_DAYS } 天内选择一个日期。"
-      ],
       "Condition incomplete": [
         "条件不完整"
       ],
@@ -4624,9 +4618,6 @@
       "${ contactsLength } contacts": [
         "${ contactsLength } 位联系人"
       ],
-      "${ count } unread messages": [
-        "${ count } 封未读邮件"
-      ],
       "${ embeddedAttachmentsCount } embedded images": [
         "${ embeddedAttachmentsCount } 张图片已嵌入。"
       ],
@@ -4684,29 +4675,14 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "已选择 ${ selectedFoldersCountLocalized } 个标签"
       ],
-      "${ storage } storage": [
-        "${ storage } 存储空间"
-      ],
       "${ total } conversations": [
         "${ total } 条会话"
       ],
       "${ total } messages": [
         "${ total } 封邮件"
       ],
-      "${ unread } unread conversations": [
-        "${ unread } 条未读会话"
-      ],
-      "${ unread } unread messages": [
-        "${ unread } 封未读邮件"
-      ],
       "${ unreadCount } scheduled messages": [
         "${ unreadCount } 封定时发送邮件"
-      ],
-      "${ unreadCount } unread conversations": [
-        "${ unreadCount } 条未读会话"
-      ],
-      "${ unreadCount } unread messages": [
-        "${ unreadCount } 封未读邮件"
       ],
       "${ updated } contacts updated successfully.": [
         "已成功更新 ${ updated } 位联系人。"
@@ -5512,9 +5488,6 @@
       "The sender has requested a read receipt.": [
         "发件人请您寄回执。"
       ],
-      "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "${ contactName } 验证失败：联系人签名不正确。\n这可能是密码重置的结果。\n您必须重新签名联系人才能发送一条消息到 ${ contactAddress } 或编辑联系人。"
-      ],
       "The verification of ${ contactNames } has failed: the contacts are not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contacts in order to send a message to ${ contactAddresses } or edit the contacts.": [
         "${ contactNames } 验证失败：联系人签名不正确。\n这可能是密码重置的结果。\n您必须重新签名联系人才能发送一条消息到 ${ contactAddresses } 或编辑联系人。"
       ],
@@ -5584,12 +5557,6 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "这条消息是由所附的密钥签署的，还没有被信任。"
       ],
-      "This message will be automatically deleted on ${ longDateMEssage }": [
-        "此邮件将于 ${ longDateMEssage } 自动删除"
-      ],
-      "This message will be automatically deleted on ${ shortDateMessage }": [
-        "此邮件将于 ${ shortDateMessage } 自动删除"
-      ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "此邮件将移至草稿箱，以便您进行编辑。您需要为其重新安排发送时间。"
       ],
@@ -5610,15 +5577,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "此邮件将于 ${ formattedDate } 过期"
-      ],
-      "This message will expire on ${ longDateMEssage }": [
-        "此邮件将于 ${ longDateMEssage } 过期"
-      ],
-      "This message will expire today at ${ shortDateMessage }": [
-        "此邮件将于今天 ${ shortDateMessage } 过期"
-      ],
-      "This message will expire tomorrow at ${ shortDateMessage }": [
-        "此邮件将于明天 ${ shortDateMessage } 过期"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "该公钥将自动用于加密发送到该地址的电子邮件。"
@@ -5653,18 +5611,6 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "待发送的邮件过多，请静待另一封邮件发送后陆续发送此邮件。"
       ],
-      "Total email addresses": [
-        "邮箱地址总数"
-      ],
-      "Total storage": [
-        "存储空间总量"
-      ],
-      "Total supported domains": [
-        "自有域名总数"
-      ],
-      "Total VPN connections": [
-        "VPN 同时在线设备总数"
-      ],
       "Trackers blocked:": [
         "已屏蔽的跟踪器："
       ],
@@ -5685,9 +5631,6 @@
       ],
       "Unsupported file": [
         "不支持文件"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "最多 ${ FAMILY_MAX_USERS } 个用户"
       ],
       "Updating message content search...": [
         "正在更新邮件内容..."
@@ -5838,12 +5781,6 @@
       ],
       "You do not have any messages here": [
         "这里没有邮件"
-      ],
-      "You have ${ totalLabel } in your inbox.": [
-        "您的收件箱中有 ${ totalLabel }。"
-      ],
-      "You have ${ unreadsLabel } in your inbox.": [
-        "您的收件箱有 ${ unreadsLabel }。"
       ],
       "You have **${ count } conversations** stored in this folder": [
         "此文件夹中有 **${ count } 项会话**"
@@ -6595,18 +6532,6 @@
       "System information": [
         "系统信息"
       ],
-      "The email was sent ${ attachment }": [
-        "邮件${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "邮件${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "邮件${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "邮件${ label }"
-      ],
       "Theme": [
         "配色"
       ],
@@ -6643,16 +6568,7 @@
       "With attachment": [
         "含有附件"
       ],
-      "with attachments": [
-        "含有附件"
-      ],
       "Without attachment": [
-        "不含附件"
-      ],
-      "without attachment": [
-        "不含附件"
-      ],
-      "without attachments": [
         "不含附件"
       ],
       "Wonderful": [
@@ -7156,8 +7072,11 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendars": [
-        "${ maximumNumberOfCalendars } 个日历"
+      "${ n } calendars": [
+        "${ n } 个日历"
+      ],
+      "${ n } calendars per user": [
+        "每位用户 ${ n } 个日历"
       ],
       "Auto-delete spam and trashed messages": [
         "自动删除垃圾邮件和废件箱中邮件"
@@ -7171,6 +7090,9 @@
       "Custom snooze time": [
         "自由调整免打扰时间"
       ],
+      "End-to-end encryption": [
+        "端到端加密"
+      ],
       "Hide-my-email aliases": [
         "Hide My Email 邮箱别名"
       ],
@@ -7179,6 +7101,9 @@
       ],
       "Search message content": [
         "搜索邮件全文"
+      ],
+      "Send & receive invitations": [
+        "发送和接收邀请"
       ],
       "Unlimited folders, labels, and filters": [
         "不限量文件夹、标签和筛选规则"
@@ -7215,6 +7140,16 @@
     "new_plans: placeholder": {
       "Feedback": [
         "反馈内容"
+      ]
+    },
+    "new_plans: tooltip": {
+      "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
+        "创建多达 ${ n } 份日历或添加朋友、家人、同事、企业分享的日历"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendars": [
+        "创建最多 ${ n } 个日历"
       ]
     },
     "Notification": {
@@ -8643,9 +8578,6 @@
       ],
       "Delete ${ count } messages": [
         "删除 ${ count } 封邮件"
-      ],
-      "Delete ${ Name }": [
-        "删除 ${ Name }"
       ],
       "Delete all messages": [
         "刪除所有邮件"
