@@ -714,12 +714,6 @@
       "High speed streaming": [
         "Szybki streaming"
       ],
-      "Premium ${ appName }": [
-        "${ appName } w wersji premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } w wersji premium"
-      ],
       "Premium Password Manager": [
         "Menedżer haseł w wersji premium"
       ]
@@ -2263,15 +2257,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } w wersji premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } w wersji premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } w wersji premium"
-      ],
       "Up to 6 users": [
         "Do 6 użytkowników"
       ]
@@ -5709,6 +5694,12 @@
       "No permission": [
         "Brak uprawnienia"
       ],
+      "Organization only": [
+        "Tylko w organizacji"
+      ],
+      "Receive from all": [
+        "Odbieraj od wszystkich"
+      ],
       "Router": [
         "Router"
       ],
@@ -5719,7 +5710,7 @@
         "Wybierz, kto może uzyskać dostęp..."
       ],
       "Send to all": [
-        "Wyślij do wszystkich"
+        "Wysyłaj do wszystkich"
       ],
       "Setup incomplete": [
         "Konfiguracja niekompletna"
@@ -5878,8 +5869,14 @@
       "No permission": [
         "Brak uprawnienia"
       ],
+      "Organization only": [
+        "Tylko w organizacji"
+      ],
+      "Receive from all": [
+        "Odbieraj od wszystkich"
+      ],
       "Send to all": [
-        "Wyślij do wszystkich"
+        "Wysyłaj do wszystkich"
       ],
       "Setup incomplete": [
         "Konfiguracja niekompletna"
@@ -6485,14 +6482,14 @@
       "Highest VPN speed": [
         "Najwyższa prędkość VPN"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } w wersji premium"
+      "Premium ${ appName1 }": [
+        "${ appName1 } w wersji premium"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME } w wersji premium"
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "${ appName1 } i ${ appName2 } w wersji premium"
       ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } w wersji premium"
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "${ appName1 }, ${ appName2 } i ${ appName3 } w wersji premium"
       ],
       "Premium early access": [
         "Wcześniejszy dostęp premium"
@@ -6985,14 +6982,6 @@
     "Suffix for price": {
       "per month": [
         "miesięcznie"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } w wersji premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } w wersji premium"
       ]
     },
     "summer2023: Tooltip": {

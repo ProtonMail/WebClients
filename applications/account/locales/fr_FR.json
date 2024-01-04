@@ -1362,12 +1362,6 @@
       "High speed streaming": [
         "Streaming ultra-rapide"
       ],
-      "Premium ${ appName }": [
-        "${ appName } version premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME } version premium"
-      ],
       "Premium Password Manager": [
         "Gestionnaire de mots de passe version premium"
       ]
@@ -3005,6 +2999,15 @@
         "Tous les ${ interval } jours, à ${ timesString }"
       ]
     },
+    "Daily recurring event, frequency (until)": {
+      "Daily, ${ untilString }": [
+        "Chaque jour, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Chaque ${ interval } jour, ${ untilString }",
+        "Tous les ${ interval } jours, ${ untilString }"
+      ]
+    },
     "Day": {
       "Friday": [
         "Vendredi"
@@ -3671,7 +3674,7 @@
     },
     "eof2023: Tooltip": {
       "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
-        "Comprend la fonction Historique des versions pour ${ DRIVE_SHORT_APP_NAME }, un accès à des milliers de serveurs ultrarapides pour ${ VPN_SHORT_APP_NAME }, la fonction de partage dans ${ PASS_SHORT_APP_NAME } et bien plus encore."
+        "Comprend l'historique des versions pour ${ DRIVE_SHORT_APP_NAME }, l'accès à des milliers de serveurs ultra-rapides pour ${ VPN_SHORT_APP_NAME }, le partage dans ${ PASS_SHORT_APP_NAME } et bien d'autres fonctionnalités."
       ]
     },
     "eoy2023: Deal details": {
@@ -4103,7 +4106,7 @@
         "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes : _ . -"
       ],
       "Unexpected error, we can't import the contacts": [
-        "Une erreur inattendue s'est produite. Vos contacts n'ont pas pu être importés."
+        "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -4202,6 +4205,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Une erreur inattendue s'est produite. L'importation doit être relancée."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_EVENTS } événement.",
+        "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_EVENTS } événements."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Le format de votre fichier ${ formattedFilename } n'est pas valide, il ne peut pas être importé."
@@ -4599,15 +4606,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } version premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME } version premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } version premium"
-      ],
       "Up to 6 users": [
         "Jusqu'à 6 utilisateurs"
       ]
@@ -5751,17 +5749,6 @@
         "Une partie du contenu de votre calendrier n'est pas prise en charge et ne sera pas importée."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clé ${ fingerprint } a déjà été chargée."
-      ],
-      "Selected color:": [
-        "Couleur sélectionnée :"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
@@ -6081,7 +6068,7 @@
         "Toute méthode d'${ twoFa } sur votre compte sera désactivée."
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
-        "Tous les sous-dossiers seront également supprimés. Cependant, les messages stockés dans le dossier ${ nameDeleted } ne seront pas supprimés et se trouveront dans le dossier Tous les messages."
+        "Tous les sous-dossiers seront également supprimés. Les messages conservés dans le dossier ${ nameDeleted } ne seront toutefois pas supprimés et pourront toujours être retrouvés dans le dossier Tous les messages."
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
         "Toute personne ayant ce lien peut voir toutes les informations des événements de ce calendrier, comme le titre, le lieu ou les participants."
@@ -6114,7 +6101,7 @@
         "Voulez-vous vraiment supprimer ce filtre ?"
       ],
       "Are you sure you want to delete this folder?": [
-        "Êtes-vous sûr de vouloir supprimer ce dossier ?"
+        "Voulez-vous vraiment supprimer ce dossier ?"
       ],
       "Are you sure you want to delete this label?": [
         "Voulez-vous vraiment supprimer ce label ?"
@@ -6972,7 +6959,7 @@
         "Notez que si vous supprimez ce domaine, toutes les adresses qui lui sont associées seront désactivées."
       ],
       "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
-        "Veuillez noter que si vous supprimez le filtre ${ nameDeleted }, nous cesserons de traiter toutes les actions automatisées qu'il déclenche."
+        "Notez que si vous supprimez le filtre ${ nameDeleted }, nous ne traiterons plus toutes les actions automatisées qu'il déclenche."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Après avoir cliqué sur le bouton Confirmer, il restera ${ creditsRemaining } crédits sur votre compte."
@@ -7964,6 +7951,17 @@
         "Votre abonnement est géré par Mozilla. Nous vous invitons à contacter le support Mozilla."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clé ${ fingerprint } a déjà été chargée."
+      ],
+      "Selected color:": [
+        "Couleur sélectionnée :"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Quand cette option est activée, les sous-dossiers sont de la même couleur que le dossier dans lequel ils se trouvent."
@@ -8793,9 +8791,6 @@
       "Font size": [
         "Taille de police"
       ],
-      "From: ${ from }": [
-        "De : ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "De : ${ fromEmail }"
       ],
@@ -9186,9 +9181,6 @@
       "Time zone": [
         "Fuseau horaire"
       ],
-      "To: ${ to }": [
-        "À : ${ to }"
-      ],
       "To: ${ toEmail }": [
         "À : ${ toEmail }"
       ],
@@ -9435,6 +9427,14 @@
         "La préférence a été enregistrée."
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "De : ${ from }"
+      ],
+      "To: ${ to }": [
+        "À : ${ to }"
+      ]
+    },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
         "Pour ajouter un nouveau calendrier, retirez d'abord un calendrier existant."
@@ -9627,10 +9627,7 @@
     },
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
-        "Bénéficiez du plan Visionary et construisons ensemble l'histoire de ${ BRAND_NAME }."
-      ],
-      "Limited time offer: Get ${ planTitle } until ${ date }!": [
-        "Offre à durée limitée : obtenez ${ planTitle } jusqu'au ${ date } !"
+        "Passez à l'abonnement Visionary et participez à l’histoire de ${ BRAND_NAME }"
       ],
       "Secure email that protects your privacy": [
         "La messagerie sécurisée qui protège votre vie privée"
@@ -9788,6 +9785,24 @@
       ],
       "Monthly ${ onDayString }": [
         "Chaque mois, ${ onDayString }"
+      ]
+    },
+    "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Chaque ${ interval } mois, ${ onDayString }, à ${ timesString }",
+        "Tous les ${ interval } mois, ${ onDayString }, à ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Chaque mois, ${ onDayString }, à ${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Chaque ${ interval } mois, le ${ onDayString }, ${ untilString }",
+        "Tous les ${ interval } mois, le ${ onDayString }, ${ untilString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Chaque mois, le ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -11177,7 +11192,7 @@
         "Envoyer à tous"
       ],
       "Setup incomplete": [
-        "La configuration est incomplète."
+        "La configuration n'est pas terminée."
       ],
       "Standard server configs": [
         "Configurations standards des serveurs"
@@ -11577,7 +11592,7 @@
         "Envoyer à tous"
       ],
       "Setup incomplete": [
-        "La configuration est incomplète."
+        "La configuration n'est pas terminée."
       ]
     },
     "Personal calendar section description": {
@@ -12442,14 +12457,14 @@
       "Highest VPN speed": [
         "Vitesse VPN maximale"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME } version premium"
+      "Premium ${ appName1 }": [
+        "${ appName1 } version premium"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et ${ DRIVE_SHORT_APP_NAME } version premium"
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "${ appName1 } et ${ appName2 } version premium"
       ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } version premium"
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "${ appName1 }, ${ appName2 } et ${ appName3 } version premium"
       ],
       "Premium early access": [
         "Accès premium en avant-première"
@@ -13055,14 +13070,6 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Informations sur les événements qui n'ont pas pu être exportés"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } version premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME } version premium"
       ]
     },
     "summer2023: Tooltip": {
@@ -14842,6 +14849,124 @@
         "Tous les mercredis"
       ]
     },
+    "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Chaque ${ interval } semaine, le ${ multipleDaysString } à ${ timesString }",
+        "Toutes les ${ interval } semaines, le ${ multipleDaysString } à ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Chaque ${ interval } semaine, tous les jours à ${ timesString }",
+        "Toutes les ${ interval } semaines, tous les jours, à ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Chaque ${ interval } semaine, le vendredi à ${ timesString }",
+        "Toutes les ${ interval } semaines, le vendredi à ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Chaque ${ interval } semaine, le samedi à ${ timesString }",
+        "Toutes les ${ interval } semaines, le samedi à ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Chaque ${ interval } semaine, le jeudi à ${ timesString }",
+        "Toutes les ${ interval } semaines, le jeudi à ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Chaque ${ interval } semaine, le mercredi à ${ timesString }",
+        "Toutes les ${ interval } semaines, le mercredi à ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Chaque semaine le ${ multipleDaysString }, à ${ timesString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Tous les jours, à ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Tous les vendredis, à ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Tous les lundis, à ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Tous les samedis, à ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Tous les dimanches, à ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Tous les jeudis, à ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Tous les mardis, à ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Tous les mercredis, à ${ timesString }"
+      ]
+    },
+    "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Chaque ${ interval } semaine, le ${ multipleDaysString }, ${ untilString }",
+        "Toutes les ${ interval } semaines, le ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Chaque ${ interval } semaine, tous les jours, ${ untilString }",
+        "Toutes les ${ interval } semaines, tous les jours, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Chaque ${ interval } semaine, le vendredi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le vendredi, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Chaque ${ interval } semaine, le lundi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le lundi, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Chaque ${ interval } semaine, le samedi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le samedi, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Chaque ${ interval } semaine, le dimanche, ${ untilString }",
+        "Toutes les ${ interval } semaines, le dimanche, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Chaque ${ interval } semaine, le jeudi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le jeudi, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Chaque ${ interval } semaine, le mardi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le mardi, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Chaque ${ interval } semaine, le mercredi, ${ untilString }",
+        "Toutes les ${ interval } semaines, le mercredi, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Chaque semaine le ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Chaque semaine, tous les jours, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Tous les vendredis, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Tous les lundis, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Tous les samedis, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Tous les dimanches, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Tous les jeudis, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Tous les mardis, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Tous les mercredis, ${ untilString }"
+      ]
+    },
     "Weekly recurring event, repeats on (multiple days), frequency": {
       "Friday": [
         "Vendredi"
@@ -14872,6 +14997,24 @@
       ],
       "Yearly": [
         "Chaque année"
+      ]
+    },
+    "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "Chaque ${ interval } an, ${ timesString }",
+        "Tous les ${ interval } ans, ${ timesString }"
+      ],
+      "Yearly, ${ timesString }": [
+        "Chaque année, ${ timesString }"
+      ]
+    },
+    "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "Chaque ${ interval } an, ${ untilString }",
+        "Tous les ${ interval } ans, ${ untilString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Chaque année, ${ untilString }"
       ]
     }
   }

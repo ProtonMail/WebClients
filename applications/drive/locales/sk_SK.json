@@ -859,9 +859,6 @@
       "High speed streaming": [
         "Vysokorýchlostné streamovanie"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "Premium Password Manager": [
         "Prémiový správca hesiel"
       ]
@@ -893,7 +890,7 @@
         "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailovú adresu, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie.",
         "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailové adresy, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie.",
         "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailových adries, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie.",
-        "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailových adries, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie."
+        "Obsahuje podporu ${ domains } vlastných emailových domén, ${ addresses } emailových adries, neobmedzené množstvo hide-my-email aliasov, zdieľanie kalendára a ďalšie."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Zahŕňa podporu pre 1 vlastnú emailovú doménu, 10 emailových adries, 10 hide-my-email aliasov, zdieľanie kalendára a ďalšie."
@@ -2761,15 +2758,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Prémiový ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Prémiová ${ VPN_SHORT_APP_NAME }"
-      ],
       "Up to 6 users": [
         "Až do 6 užívateľov"
       ]
@@ -4581,6 +4569,20 @@
         "Kliknite pre podrobnosti"
       ]
     },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } vybratá zložka",
+        "${ selectedFoldersCount } vybraté zložky",
+        "${ selectedFoldersCount } vybratých zložiek",
+        "${ selectedFoldersCount } vybratých zložiek"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } vybratý štítok",
+        "${ selectedFoldersCount } vybraté štítky",
+        "${ selectedFoldersCount } vybratých štítkov",
+        "${ selectedFoldersCount } vybratých štítkov"
+      ]
+    },
     "Item": {
       "file attributes": [
         "atribúty súboru"
@@ -4844,9 +4846,6 @@
       "Folder name": [
         "Názov priečinku"
       ],
-      "From: ${ from }": [
-        "Od: ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
@@ -5044,9 +5043,6 @@
       ],
       "This will permanently delete all files in your locked drive.": [
         "Týmto sa trvalo zmažú všetky súbory na vašom zamknutom disku."
-      ],
-      "To: ${ to }": [
-        "Komu: ${ to }"
       ],
       "To: ${ toEmail }": [
         "Komu: ${ toEmail }"
@@ -6131,15 +6127,6 @@
       "Highest VPN speed": [
         "Najvyššia rýchlosť VPN"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "Prémiový ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Prémiová ${ VPN_SHORT_APP_NAME }"
-      ],
       "Premium early access": [
         "Prémiový predbežný prístup"
       ],
@@ -6376,14 +6363,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Spätná väzba bola odoslaná"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Prémiový ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {

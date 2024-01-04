@@ -1368,12 +1368,6 @@
       "High speed streaming": [
         "Vysokorychlostní streamování"
       ],
-      "Premium ${ appName }": [
-        "Prémiový ${ appName }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "Premium Password Manager": [
         "Prémiový správce hesel"
       ]
@@ -3029,6 +3023,14 @@
         "Každých ${ interval } dnů, ${ timesString }"
       ]
     },
+    "Daily recurring event, frequency (until)": {
+      "Every ${ interval } day, ${ untilString }": [
+        "Každý ${ interval } den, ${ untilString }",
+        "Každé ${ interval } dny, ${ untilString }",
+        "Každých ${ interval } dnů, ${ untilString }",
+        "Každých ${ interval } dnů, ${ untilString }"
+      ]
+    },
     "Day": {
       "Friday": [
         "Pátek"
@@ -4635,15 +4637,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Prémiový ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Prémiové funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Prémiová ${ VPN_SHORT_APP_NAME }"
-      ],
       "Up to 6 users": [
         "Až 6 uživatelů"
       ]
@@ -5819,17 +5812,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Část obsahu vašeho kalendáře není podporována a nebude importována."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } klíče byl již nahrán"
-      ],
-      "Selected color:": [
-        "Vybraná barva:"
       ]
     },
     "Info": {
@@ -8120,6 +8102,17 @@
         "Váš předplatné je spravováno Mozillou. Kontaktujte prosím Mozilla podporu."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } klíče byl již nahrán"
+      ],
+      "Selected color:": [
+        "Vybraná barva:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Když je povoleno, podsložky budou mít stejnou barvu jako nadřazená složka."
@@ -8961,9 +8954,6 @@
       "Font size": [
         "Velikost písma"
       ],
-      "From: ${ from }": [
-        "Od: ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
@@ -9353,9 +9343,6 @@
       ],
       "Time zone": [
         "Časové pásmo"
-      ],
-      "To: ${ to }": [
-        "Komu: ${ to }"
       ],
       "To: ${ toEmail }": [
         "Komu: ${ toEmail }"
@@ -9812,9 +9799,6 @@
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Pořiďte si tarif Visionary a buďte součástí příběhu ${ BRAND_NAME }"
       ],
-      "Limited time offer: Get ${ planTitle } until ${ date }!": [
-        "Časově omezená nabídka: Získejte ${ planTitle } do ${ date }!"
-      ],
       "Secure email that protects your privacy": [
         "Zabezpečený e-mail, který chrání vaše soukromí"
       ]
@@ -9977,6 +9961,14 @@
       ],
       "Monthly ${ onDayString }": [
         "Měsíčně ${ onDayString }"
+      ]
+    },
+    "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Každý ${ interval } měsíc ${ onDayString }, ${ timesString }",
+        "Každé ${ interval } měsíce ${ onDayString }, ${ timesString }",
+        "Každých ${ interval } měsíců ${ onDayString }, ${ timesString }",
+        "Každých ${ interval } měsíců ${ onDayString }, ${ timesString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -11385,6 +11377,9 @@
       "No parent folder": [
         "Žádná nadřazená složka"
       ],
+      "No permission": [
+        "Nemáte dostatečné oprávnění"
+      ],
       "Normal": [
         "Normální"
       ],
@@ -11420,6 +11415,12 @@
       ],
       "Select who can access...": [
         "Vyberte, kdo má přístup k..."
+      ],
+      "Send to all": [
+        "Odeslat všem"
+      ],
+      "Setup incomplete": [
+        "Nastavení nebylo dokončeno"
       ],
       "Standard server configs": [
         "Konfigurace standardního serveru"
@@ -11818,6 +11819,17 @@
       ],
       "New credit/debit card": [
         "Nová kreditní/debetní karta"
+      ]
+    },
+    "Permission": {
+      "No permission": [
+        "Nemáte dostatečné oprávnění"
+      ],
+      "Send to all": [
+        "Odeslat všem"
+      ],
+      "Setup incomplete": [
+        "Nastavení nebylo dokončeno"
       ]
     },
     "Personal calendar section description": {
@@ -12721,15 +12733,6 @@
       "Highest VPN speed": [
         "Nejvyšší rychlost VPN"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Prémiové funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "Prémiové funkce ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Prémiová ${ VPN_SHORT_APP_NAME }"
-      ],
       "Premium early access": [
         "Prémiový předběžný přístup"
       ],
@@ -13364,14 +13367,6 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Detaily událostí, které nemohly být exportovány"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Prémiový ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Prémiové funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {
@@ -15240,6 +15235,100 @@
         "Každý týden ve středu"
       ]
     },
+    "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Každý ${ interval } týden v ${ multipleDaysString }, ${ timesString }",
+        "Každé ${ interval } týdny v ${ multipleDaysString }, ${ timesString }",
+        "Každých ${ interval } týdnů v ${ multipleDaysString }, ${ timesString }",
+        "Každých ${ interval } týdnů v ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Každý ${ interval } týden všechny dny, ${ timesString }",
+        "Každé ${ interval } týdny a všechny dny, ${ timesString }",
+        "Každých ${ interval } týdnů a všechny dny, ${ timesString }",
+        "Každých ${ interval } týdnů a všechny dny, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Každý ${ interval } týden v pátek, ${ timesString }",
+        "Každé ${ interval } týdny v pátek, ${ timesString }",
+        "Každých ${ interval } týdnů v pátek, ${ timesString }",
+        "Každých ${ interval } týdnů v pátek, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Každý ${ interval } týden v sobotu, ${ timesString }",
+        "Každé ${ interval } týdny v sobotu, ${ timesString }",
+        "Každých ${ interval } týdnů v sobotu, ${ timesString }",
+        "Každých ${ interval } týdnů v sobotu, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Každý ${ interval } týden ve čvrtek, ${ timesString }",
+        "Každé ${ interval } týdny ve čtvrtek, ${ timesString }",
+        "Každých ${ interval } týdnů ve čtvrtek, ${ timesString }",
+        "Každých ${ interval } týdnů ve čtvrtek, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Každý ${ interval } týden ve středu, ${ timesString }",
+        "Každé ${ interval } týdny ve středu, ${ timesString }",
+        "Každých ${ interval } týdnů ve středu, ${ timesString }",
+        "Každých ${ interval } týdnů ve středu, ${ timesString }"
+      ]
+    },
+    "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Každý ${ interval } týden v ${ multipleDaysString }, ${ untilString }",
+        "Každých ${ interval } týdnů v ${ multipleDaysString }, ${ untilString }",
+        "Každých ${ interval } týdnů v ${ multipleDaysString }, ${ untilString }",
+        "Každých ${ interval } týdnů v ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Každý ${ interval } týden všechny dny, ${ untilString }",
+        "Každé ${ interval } týdny a všechny dny, ${ untilString }",
+        "Každých ${ interval } týdnů všechny dny, ${ untilString }",
+        "Každých ${ interval } týdnů všechny dny, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Každý ${ interval } týden v pátek, ${ untilString }",
+        "Každé ${ interval } týdny v pátek, ${ untilString }",
+        "Každých ${ interval } týdnů v pátek, ${ untilString }",
+        "Každých ${ interval } týdnů v pátek, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Každý ${ interval } týden v pondělí, ${ untilString }",
+        "Každé ${ interval } týdny v pondělí, ${ untilString }",
+        "Každých ${ interval } týdnů v pondělí, ${ untilString }",
+        "Každých ${ interval } týdnů v pondělí, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Každý ${ interval } týden v sobotu, ${ untilString }",
+        "Každé ${ interval } týdny v sobotu, ${ untilString }",
+        "Každých ${ interval } týdnů v sobotu, ${ untilString }",
+        "Každých ${ interval } týdnů v sobotu, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Každý ${ interval } týden v neděli, ${ untilString }",
+        "Každé ${ interval } týdny v neděli, ${ untilString }",
+        "Každých ${ interval } týdnů v neděli, ${ untilString }",
+        "Každých ${ interval } týdnů v neděli, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Každý ${ interval } týden ve čvrtek, ${ untilString }",
+        "Každé ${ interval } týdny ve čtvrtek, ${ untilString }",
+        "Každých ${ interval } týdnů ve čtvrtek, ${ untilString }",
+        "Každých ${ interval } týdnů ve čtvrtek, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Každý ${ interval } týden v úterý, ${ untilString }",
+        "Každé ${ interval } týdny v úterý, ${ untilString }",
+        "Každých ${ interval } týdnů v úterý, ${ untilString }",
+        "Každých ${ interval } týdnů v úterý, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Každý ${ interval } týden ve středu, ${ untilString }",
+        "Každé ${ interval } týdny ve středu, ${ untilString }",
+        "Každých ${ interval } týdnů ve středu, ${ untilString }",
+        "Každých ${ interval } týdnů ve středu, ${ untilString }"
+      ]
+    },
     "Weekly recurring event, repeats on (multiple days), frequency": {
       "Friday": [
         "Pátek"
@@ -15272,6 +15361,22 @@
       ],
       "Yearly": [
         "Ročně"
+      ]
+    },
+    "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "Každý ${ interval } rok, ${ timesString }",
+        "Každé ${ interval } roky, ${ timesString }",
+        "Každých ${ interval } let, ${ timesString }",
+        "Každých ${ interval } let, ${ timesString }"
+      ]
+    },
+    "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "Každý ${ interval } rok, ${ untilString }",
+        "Každé ${ interval } roky, ${ untilString }",
+        "Každých ${ interval } let, ${ untilString }",
+        "Každých ${ interval } let, ${ untilString }"
       ]
     }
   }

@@ -1362,12 +1362,6 @@
       "High speed streaming": [
         "Streaming de alta velocidade"
       ],
-      "Premium ${ appName }": [
-        "${ appName } Premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "Premium Password Manager": [
         "Gerenciador de senha premium"
       ]
@@ -4612,15 +4606,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } Premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium de ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } Premium"
-      ],
       "Up to 6 users": [
         "Até 6 usuários"
       ]
@@ -5765,17 +5750,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Parte do conteúdo de seu calendário não é suportado e por isso não será importado."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Chave ${ fingerprint } já foi enviada"
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
       ]
     },
     "Info": {
@@ -7980,6 +7954,17 @@
         "Sua assinatura é gerenciada pela Mozilla. Entre em contato com o suporte da Mozilla."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Chave ${ fingerprint } já foi enviada"
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Quando habilitado, as subpastas herdam a cor da pasta pai."
@@ -8809,9 +8794,6 @@
       "Font size": [
         "Tamanho da fonte"
       ],
-      "From: ${ from }": [
-        "De: ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
@@ -9201,9 +9183,6 @@
       ],
       "Time zone": [
         "Fuso horário"
-      ],
-      "To: ${ to }": [
-        "Para: ${ to }"
       ],
       "To: ${ toEmail }": [
         "Para: ${ toEmail }"
@@ -9645,9 +9624,6 @@
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Torne-se um Visionário e faça parte da história da ${ BRAND_NAME }"
       ],
-      "Limited time offer: Get ${ planTitle } until ${ date }!": [
-        "Oferta por tempo limitado: adquira ${ planTitle } até ${ date }!"
-      ],
       "Secure email that protects your privacy": [
         "E-mail seguro que protege sua privacidade"
       ]
@@ -9811,15 +9787,8 @@
         "A cada ${ interval } mês ${ onDayString }, ${ timesString }",
         "A cada ${ interval } meses ${ onDayString }, ${ timesString }"
       ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "A cada ${ interval } mês ${ onDayString }, ${ untilString }",
-        "A cada ${ interval } meses ${ onDayString }, ${ untilString }"
-      ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "Mensal ${ onDayString }, ${ timesString }"
-      ],
-      "Monthly ${ onDayString }, ${ untilString }": [
-        "Mensalmente ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -12480,15 +12449,6 @@
       "Highest VPN speed": [
         "VPN de altíssima velocidade"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium de ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium de ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } Premium"
-      ],
       "Premium early access": [
         "Acesso antecipado premium"
       ],
@@ -13093,14 +13053,6 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Detalhes sobre os eventos que não puderam ser exportados"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } Premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium de ${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {

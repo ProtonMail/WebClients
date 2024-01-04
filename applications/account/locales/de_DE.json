@@ -1362,12 +1362,6 @@
       "High speed streaming": [
         "Hochgeschwindigkeits-Streaming"
       ],
-      "Premium ${ appName }": [
-        "Premium-${ appName }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "Premium Password Manager": [
         "Premium-Passwortmanager"
       ]
@@ -4595,15 +4589,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium-${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium-${ VPN_SHORT_APP_NAME }"
-      ],
       "Up to 6 users": [
         "Bis zu 6 Benutzer"
       ]
@@ -5745,17 +5730,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Ein Teil deines Kalenderinhalts wird nicht unterstützt und wird nicht importiert."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
-      ],
-      "Selected color:": [
-        "Ausgewählte Farbe:"
       ]
     },
     "Info": {
@@ -7960,6 +7934,17 @@
         "Dein Abonnement wird von Mozilla verwaltet. Bitte kontaktiere den Mozilla-Support."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
+      ],
+      "Selected color:": [
+        "Ausgewählte Farbe:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Wenn aktiviert, übernehmen Unterordner die Farbe des übergeordneten Ordners."
@@ -8789,9 +8774,6 @@
       "Font size": [
         "Schriftgröße"
       ],
-      "From: ${ from }": [
-        "Von: ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "Von: ${ fromEmail }"
       ],
@@ -9181,9 +9163,6 @@
       ],
       "Time zone": [
         "Zeitzone"
-      ],
-      "To: ${ to }": [
-        "An: ${ to }"
       ],
       "To: ${ toEmail }": [
         "An: ${ toEmail }"
@@ -9624,9 +9603,6 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Werde ein Visionary und sei Teil der Geschichte von ${ BRAND_NAME }."
-      ],
-      "Limited time offer: Get ${ planTitle } until ${ date }!": [
-        "Zeitlich begrenztes Angebot: Hol dir ${ planTitle } bis zum ${ date }!"
       ],
       "Secure email that protects your privacy": [
         "Sichere E-Mails, die deine Privatsphäre schützen"
@@ -12438,15 +12414,6 @@
       "Highest VPN speed": [
         "Höchste VPN-Geschwindigkeit"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium-${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium-${ VPN_SHORT_APP_NAME }"
-      ],
       "Premium early access": [
         "Premium-frühzeitiger Zugang"
       ],
@@ -13051,14 +13018,6 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Details zu den Terminen, die nicht exportiert werden konnten"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium-${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {
