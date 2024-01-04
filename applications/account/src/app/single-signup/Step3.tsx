@@ -33,6 +33,7 @@ import noop from '@proton/utils/noop';
 import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
+import { getContinueToString } from '../public/helper';
 import Layout, { Background } from './Layout';
 import { Measure } from './interface';
 
@@ -91,12 +92,7 @@ const GeneratedPasswordDisplay = ({
     const { createNotification } = useNotifications();
 
     return (
-        <div
-            className={clsx(
-                'pl-4 py-1 bg-weak rounded flex justify-space-between items-center',
-                className
-            )}
-        >
+        <div className={clsx('pl-4 py-1 bg-weak rounded flex justify-space-between items-center', className)}>
             <div
                 className="user-select text-pre-wrap break"
                 onCopy={() => {
@@ -190,7 +186,7 @@ const Step3 = ({
             <Main>
                 <Header
                     title={c('Title').t`Set your password`}
-                    subTitle={c('Info').t`to continue to ${product}`}
+                    subTitle={getContinueToString(product)}
                     onBack={onBack}
                 />
                 <Content>

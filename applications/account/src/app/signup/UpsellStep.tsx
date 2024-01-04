@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms';
 import { CurrencySelector, Price, useConfig } from '@proton/components';
 import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import {
+    getCTA,
     getFreeDrivePlan,
     getFreePassPlan,
     getFreePlan,
@@ -162,7 +163,7 @@ const UpsellStep = ({
                                     void withLoading(onPlan({ [mostPopularShortPlan.plan]: 1 }));
                                 }}
                             >
-                                {c('new_plans: action').t`Get ${mostPopularShortPlan.title}`}
+                                {getCTA(mostPopularShortPlan.title)}
                             </Button>
                         }
                         price={
@@ -254,7 +255,7 @@ const UpsellStep = ({
                                 >
                                     {upsellPlanName === PLANS.DRIVE
                                         ? c('new_plans: action').t`Upgrade to ${upsellPlanHumanSize}`
-                                        : c('new_plans: action').t`Get ${upsellShortPlan.title}`}
+                                        : getCTA(upsellShortPlan.title)}
                                 </Button>
                             }
                             price={

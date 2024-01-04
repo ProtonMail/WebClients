@@ -13,6 +13,7 @@ import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store/actio
 import { selectUserVerified, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { Invite } from '@proton/pass/types/data/invites';
 
+import { getItemsText } from '../Settings/helper';
 import { useInviteContext } from './InviteProvider';
 import { UserVerificationMessage } from './UserVerificationMessage';
 
@@ -54,7 +55,7 @@ export const VaultInviteRespond: VFC<Invite> = (invite) => {
                 />
                 <div className="text-xl text-bold text-ellipsis max-w-full">{vault.content.name}</div>
                 <div className="color-weak">
-                    <span>{c('Info').ngettext(msgid`${itemCount} item`, `${itemCount} items`, itemCount)}</span>
+                    <span>{getItemsText(itemCount)}</span>
                     <span> • </span>
                     <span>
                         {c('Info').ngettext(msgid`${memberCount} member`, `${memberCount} members`, memberCount)}

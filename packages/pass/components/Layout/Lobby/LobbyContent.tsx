@@ -77,10 +77,12 @@ export const LobbyContent: VFC<Props> = ({ status, onLogin, onLogout, onRegister
         <div key="lobby" className="anime-fade-in" style={{ '--anime-delay': '250ms' }}>
             <div className="flex flex-column items-center gap-3">
                 <span className="pass-lobby--heading text-bold text-norm flex items-end justify-center user-select-none">
-                    {locked ? c('Title').jt`Unlock ${brandNameJSX}` : c('Title').jt`Welcome to ${brandNameJSX}`}
+                    {locked
+                        ? c('lobby: Title').jt`Unlock ${brandNameJSX}`
+                        : c('lobby: Title').jt`Welcome to ${brandNameJSX}`}
                 </span>
                 <span className="text-norm">
-                    {locked ? c('Info').jt`Enter your PIN code` : c('Info').jt`Sign in to your account`}
+                    {locked ? c('lobby: Info').jt`Enter your PIN code` : c('lobby: Info').jt`Sign in to your account`}
                 </span>
             </div>
 

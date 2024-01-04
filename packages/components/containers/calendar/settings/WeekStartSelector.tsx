@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
 import { DropdownSizeUnit, Option, SelectTwo } from '@proton/components/components';
-import { useApi, useEventManager, useNotifications, useUserSettings } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
 import { updateWeekStart } from '@proton/shared/lib/api/settings';
 import { dateLocaleCode } from '@proton/shared/lib/i18n';
@@ -9,6 +8,9 @@ import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
 import { getDefaultWeekStartsOn } from '@proton/shared/lib/settings/helper';
+
+import { getAutomaticText } from '../../../containers/general/helper';
+import { useApi, useEventManager, useNotifications, useUserSettings } from '../../../hooks';
 
 interface Props {
     className?: string;
@@ -43,7 +45,7 @@ const WeekStartSelector = ({ className, unstyledSelect, shortText = false }: Pro
     const defaultDay = days[getDefaultWeekStartsOn()].text;
 
     const selectOptions = [
-        { text: c('Option').t`Automatic (${defaultDay})`, value: SETTINGS_WEEK_START.LOCALE_DEFAULT },
+        { text: getAutomaticText(defaultDay), value: SETTINGS_WEEK_START.LOCALE_DEFAULT },
         ...days.filter(({ value }) =>
             [SETTINGS_WEEK_START.SUNDAY, SETTINGS_WEEK_START.MONDAY, SETTINGS_WEEK_START.SATURDAY].includes(value)
         ),

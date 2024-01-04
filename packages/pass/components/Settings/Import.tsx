@@ -22,6 +22,7 @@ import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SettingsPanel } from './SettingsPanel';
+import { getItemsText } from './helper';
 
 export const Import: VFC = () => {
     const store = useStore();
@@ -119,20 +120,12 @@ export const Import: VFC = () => {
 
                         <div>
                             <span className="color-weak">{c('Label').t`Total items : `}</span>
-                            <span>
-                                {c('Info').ngettext(msgid`${totalItems} item`, `${totalItems} items`, totalItems)}
-                            </span>
+                            <span>{getItemsText(totalItems)}</span>
                         </div>
 
                         <div>
                             <span className="color-weak">{c('Label').t`Total imported items : `}</span>
-                            <span>
-                                {c('Info').ngettext(
-                                    msgid`${totalImportedItems} item`,
-                                    `${totalImportedItems} items`,
-                                    totalImportedItems
-                                )}
-                            </span>
+                            <span>{getItemsText(totalImportedItems)}</span>
                         </div>
 
                         {showResultDetails && (

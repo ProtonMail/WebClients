@@ -25,9 +25,13 @@ export const getNCalendarToCreateFeature = (n: number): PlanCardFeatureDefinitio
     ),
 });
 
+export const getNCalendarsText = (n: number) => {
+    return c('new_plans: feature').ngettext(msgid`${n} calendar`, `${n} calendars`, n);
+};
+
 export const getNCalendarsFeature = (n: number): PlanCardFeatureDefinition => {
     return {
-        text: c('new_plans: feature').ngettext(msgid`${n} calendar`, `${n} calendars`, n),
+        text: getNCalendarsText(n),
         tooltip: n > 1 ? getNCalendarsTooltipText(n) : '',
         included: true,
         icon: 'brand-proton-calendar',

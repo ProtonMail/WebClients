@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import metrics from '@proton/metrics';
+import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
@@ -47,7 +48,7 @@ const Step4 = ({
                         <span className="color-weak">{c('Info').t`to ${product} Business`}</span>
                     </div>
                     <div className="pb-4 text-center m-auto w-full">
-                        <img src={illustration} alt={c('Onboarding').t`Welcome to ${product}`} />
+                        <img src={illustration} alt={getWelcomeToText(product)} />
                     </div>
                     <div className="text-center pt-7 md:pt-0" role="alert">
                         <div className="inline-block w-7/10">

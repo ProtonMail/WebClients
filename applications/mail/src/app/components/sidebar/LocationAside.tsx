@@ -4,6 +4,7 @@ import { ReloadSpinner } from '@proton/components';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
 
+import { getNUnreadConversationsText, getNUnreadMessagesText } from 'proton-mail/helpers/text';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 interface Props {
@@ -43,13 +44,9 @@ const LocationAside = ({
             );
         }
         if (mailSettings.ViewMode === GROUP) {
-            return c('Info').ngettext(
-                msgid`${unreadCount} unread conversation`,
-                `${unreadCount} unread conversations`,
-                unreadCount
-            );
+            return getNUnreadConversationsText(unreadCount);
         }
-        return c('Info').ngettext(msgid`${unreadCount} unread message`, `${unreadCount} unread messages`, unreadCount);
+        return getNUnreadMessagesText(unreadCount);
     };
 
     const unreadText = unreadCount > UNREAD_LIMIT ? '9999+' : unreadCount;

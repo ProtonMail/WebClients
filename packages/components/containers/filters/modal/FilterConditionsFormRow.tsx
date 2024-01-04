@@ -8,6 +8,7 @@ import clsx from '@proton/utils/clsx';
 import { Icon, Input, Option, Radio, SelectTwo, Tooltip } from '../../../components';
 import { COMPARATORS, TYPES, getComparatorLabels, getConditionTypeLabels } from '../constants';
 import { Condition, ConditionComparator, ConditionType, FilterStatement } from '../interfaces';
+import { getConditionLabel, getEmailSentLabel, getEmailSentLabelJt } from './helper';
 
 import './FilterConditionsFormRow.scss';
 
@@ -177,13 +178,10 @@ const FilterConditionsFormRow = ({
         let title;
 
         if (type === ConditionType.ATTACHMENTS) {
-            const attachment =
-                condition?.comparator === ConditionComparator.CONTAINS
-                    ? c('Label').t`with attachments`
-                    : c('Label').t`without attachment`;
+            const attachment = getConditionLabel(condition);
             const attachmentStrong = <strong key="attachments">{attachment}</strong>;
-            label = c('Label').jt`The email was sent ${attachmentStrong}`;
-            title = c('Label').t`The email was sent ${attachment}`;
+            label = getEmailSentLabelJt(attachmentStrong);
+            title = getEmailSentLabel(attachment);
         } else {
             const typeLabel = getConditionTypeLabels(type);
             const comparatorLabel = getComparatorLabels(comparator);

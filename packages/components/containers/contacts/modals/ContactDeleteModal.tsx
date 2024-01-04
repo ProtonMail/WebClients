@@ -9,6 +9,7 @@ import { Contact } from '@proton/shared/lib/interfaces/contacts';
 
 import { Alert, ErrorButton, ModalProps, Prompt } from '../../../components';
 import { useApi, useContacts, useEventManager, useNotifications } from '../../../hooks';
+import { getDeleteText } from '../../general/helper';
 
 export interface ContactDeleteProps {
     contactIDs: string[];
@@ -55,7 +56,7 @@ const ContactDeleteModal = ({ contactIDs = [], deleteAll, onDelete, ...rest }: P
     const Name = contact?.Name || contact?.ContactEmails?.[0]?.Email || '';
     const title =
         count === 1
-            ? c('Title').t`Delete ${Name}`
+            ? getDeleteText(Name)
             : c('Title').ngettext(msgid`Delete ${count} contact`, `Delete ${count} contacts`, count);
 
     const text =
