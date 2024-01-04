@@ -9,7 +9,7 @@ import {
     plansReducer,
     protonDomainsReducer,
 } from '@proton/account';
-import { calendarSettingsReducer, calendarsReducer, holidayCalendarsReducer } from '@proton/calendar';
+import { calendarSettingsReducer, calendarsReducer, holidaysDirectoryReducer } from '@proton/calendar';
 import { filtersReducer, incomingAddressForwardingsReducer, outgoingAddressForwardingsReducer } from '@proton/mail';
 import { sharedReducers } from '@proton/redux-shared-store';
 
@@ -26,6 +26,6 @@ export const rootReducer = combineReducers({
     ...domainsAddressesReducer,
     ...calendarSettingsReducer,
     ...calendarsReducer,
-    ...holidayCalendarsReducer,
+    ...holidaysDirectoryReducer,
     inactiveKeys: inactiveKeysReducer,
 });

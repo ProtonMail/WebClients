@@ -11,7 +11,7 @@ import {
     calendarSettingsThunk,
     calendarsThunk,
     createCalendarModelEventManager,
-    holidayCalendarsThunk,
+    holidaysDirectoryThunk,
 } from '@proton/calendar';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import { FeatureCode, fetchFeatures } from '@proton/features';
@@ -102,7 +102,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
         const ignored = () => {
             loadAllowedTimeZones(silentApi).catch(noop);
-            dispatch(holidayCalendarsThunk()).catch(noop);
+            dispatch(holidaysDirectoryThunk()).catch(noop);
         };
 
         const [models, eventManager] = await Promise.all([
