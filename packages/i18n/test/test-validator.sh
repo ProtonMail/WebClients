@@ -3,7 +3,6 @@
 set -eo pipefail
 
 readonly TEST_FILES='test/input/po';
-export FORCE_COLOR=1
 
 function main {
 #  $ for file in test/po/*; do
