@@ -3188,9 +3188,6 @@
       "${ speed }/s": [
         "${ speed }/秒"
       ],
-      "${ storage } storage": [
-        "${ storage } 存储空间"
-      ],
       "${ updated } contacts updated successfully.": [
         "已成功更新 ${ updated } 位联系人。"
       ],
@@ -4013,18 +4010,6 @@
       "Today": [
         "今天"
       ],
-      "Total email addresses": [
-        "邮箱地址总数"
-      ],
-      "Total storage": [
-        "存储空间总量"
-      ],
-      "Total supported domains": [
-        "自有域名总数"
-      ],
-      "Total VPN connections": [
-        "VPN 同时在线设备总数"
-      ],
       "Transfer canceled for file \"${ name }\"": [
         "已取消文件“${ name }”的传输"
       ],
@@ -4066,9 +4051,6 @@
       ],
       "Unsupported file": [
         "不支持文件"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "最多 ${ FAMILY_MAX_USERS } 个用户"
       ],
       "Updating drive search...": [
         "正在更新网盘搜索..."
@@ -4918,8 +4900,11 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendars": [
-        "${ maximumNumberOfCalendars } 个日历"
+      "${ n } calendars": [
+        "${ n } 个日历"
+      ],
+      "${ n } calendars per user": [
+        "每位用户 ${ n } 个日历"
       ],
       "Auto-delete spam and trashed messages": [
         "自动删除垃圾邮件和废件箱中邮件"
@@ -4933,6 +4918,9 @@
       "Custom snooze time": [
         "自由调整免打扰时间"
       ],
+      "End-to-end encryption": [
+        "端到端加密"
+      ],
       "Hide-my-email aliases": [
         "Hide My Email 邮箱别名"
       ],
@@ -4941,6 +4929,9 @@
       ],
       "Search message content": [
         "搜索邮件全文"
+      ],
+      "Send & receive invitations": [
+        "发送和接收邀请"
       ],
       "Unlimited folders, labels, and filters": [
         "不限量文件夹、标签和筛选规则"
@@ -4977,6 +4968,16 @@
     "new_plans: placeholder": {
       "Feedback": [
         "反馈内容"
+      ]
+    },
+    "new_plans: tooltip": {
+      "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
+        "创建多达 ${ n } 份日历或添加朋友、家人、同事、企业分享的日历"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendars": [
+        "创建最多 ${ n } 个日历"
       ]
     },
     "Notification": {
@@ -5106,24 +5107,6 @@
       "Link copied to clipboard": [
         "链接已复制到剪贴板"
       ],
-      "Move ${ itemsToMoveCount } files": [
-        "移动 ${ itemsToMoveCount } 个文件"
-      ],
-      "Move ${ itemsToMoveCount } folders": [
-        "移动 ${ itemsToMoveCount } 个文件夹"
-      ],
-      "Move ${ itemsToMoveCount } items": [
-        "移动 ${ itemsToMoveCount } 个文件"
-      ],
-      "Move ${ movingCount } files": [
-        "移动 ${ movingCount } 个文件"
-      ],
-      "Move ${ movingCount } folders": [
-        "移动 ${ movingCount } 个文件夹"
-      ],
-      "Move ${ movingCount } items": [
-        "移动 ${ movingCount } 个项目"
-      ],
       "Not enough space to upload ${ formattedTotal }": [
         "没有足够的空间来上传这 ${ formattedTotal }"
       ],
@@ -5173,6 +5156,11 @@
         "选择 ${ BRAND_NAME } 可以访问的内容：查看您的电子邮件和设置、查看和下载您的联系人、查看和下载您从 Google 议程访问的所有议程。"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "欢迎来到 ${ appName }"
+      ]
+    },
     "Onboarding Action": {
       "Next": [
         "下一步"
@@ -5219,9 +5207,6 @@
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "欢迎来到 ${ DRIVE_APP_NAME }"
-      ],
       "Your welcome bonus": [
         "您的欢迎奖励"
       ]
@@ -6061,9 +6046,6 @@
       ],
       "Delete ${ count } contacts": [
         "删除 ${ count } 联系人"
-      ],
-      "Delete ${ Name }": [
-        "删除 ${ Name }"
       ],
       "Delete permanently": [
         "永久删除"

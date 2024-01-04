@@ -3416,9 +3416,6 @@
       "${ speed }/s": [
         "${ speed }/с"
       ],
-      "${ storage } storage": [
-        "${ storage } хранилища"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успешно обновлен.",
         "${ updated } контакта успешно обновлено.",
@@ -4292,18 +4289,6 @@
       "Today": [
         "Сегодня"
       ],
-      "Total email addresses": [
-        "Всего адресов электронной почты"
-      ],
-      "Total storage": [
-        "Общий объем хранилища"
-      ],
-      "Total supported domains": [
-        "Всего поддерживаемых доменов"
-      ],
-      "Total VPN connections": [
-        "Всего подключений к VPN"
-      ],
       "Transfer canceled for file \"${ name }\"": [
         "Отменена передача файла \"${ name }\""
       ],
@@ -4345,9 +4330,6 @@
       ],
       "Unsupported file": [
         "Неподдерживаемый файл"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "До ${ FAMILY_MAX_USERS } пользователей"
       ],
       "Updating drive search...": [
         "Обновляем поиск по хранилищу..."
@@ -5211,11 +5193,17 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } календарь",
-        "${ maximumNumberOfCalendars } календаря",
-        "${ maximumNumberOfCalendars } календарей",
-        "${ maximumNumberOfCalendars } календарей"
+      "${ n } calendar": [
+        "${ n } календарь",
+        "${ n } календаря",
+        "${ n } календарей",
+        "${ n } календарей"
+      ],
+      "${ n } calendar per user": [
+        "${ n } календарь на пользователя",
+        "${ n } календаря на пользователя",
+        "${ n } календаря на пользователя",
+        "${ n } календарей на пользователя"
       ],
       "Auto-delete spam and trashed messages": [
         "Автоудаление спама и удаленных сообщений"
@@ -5226,6 +5214,9 @@
       "Custom email domains": [
         "Пользовательские домены электронной почты"
       ],
+      "End-to-end encryption": [
+        "Сквозное шифрование"
+      ],
       "Hide-my-email aliases": [
         "Псевдонимы hide-my-email"
       ],
@@ -5234,6 +5225,9 @@
       ],
       "Search message content": [
         "Поиск содержимого сообщения"
+      ],
+      "Send & receive invitations": [
+        "Отправляйте и получайте приглашения"
       ],
       "Unlimited folders, labels, and filters": [
         "Неограниченное количество папок, ярлыков и фильтров"
@@ -5267,6 +5261,31 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Обратная связь"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME } Защитите свое расписание с помощью сквозного шифрования. Включает поддержку пользовательских календарей, совместное использование календарей и многое другое."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Создайте до ${ n } календаря или добавляйте календари друзей, семьи, коллег и организаций",
+        "Создайте до ${ n } календарей или добавляйте календари друзей, семьи, коллег и организаций",
+        "Создайте до ${ n } календарей или добавляйте календари друзей, семьи, коллег и организаций",
+        "Создайте до ${ n } календарей или добавляйте календари друзей, семьи, коллег и организаций"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Легко делитесь своими календарями с семьей, друзьями или коллегами"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Обеспечьте конфиденциальность своих планов и планов вашей семьи с помощью зашифрованного календаря"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Создайте до ${ n } календаря",
+        "Создайте до ${ n } календарей",
+        "Создайте до ${ n } календарей",
+        "Создайте до ${ n } календарей"
       ]
     },
     "Notification": {
@@ -5432,42 +5451,6 @@
       "Link copied to clipboard": [
         "Ссылка скопирована в буфер обмена"
       ],
-      "Move ${ itemsToMoveCount } file": [
-        "Переместить ${ itemsToMoveCount } файл",
-        "Переместить ${ itemsToMoveCount } файла",
-        "Переместить ${ itemsToMoveCount } файлов",
-        "Переместить ${ itemsToMoveCount } файлов"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Переместить ${ itemsToMoveCount } папку",
-        "Переместить ${ itemsToMoveCount } папки",
-        "Переместить ${ itemsToMoveCount } папок",
-        "Переместить ${ itemsToMoveCount } папок"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "Переместить ${ itemsToMoveCount } элемент",
-        "Переместить ${ itemsToMoveCount } элемента",
-        "Переместить ${ itemsToMoveCount } элементов",
-        "Переместить ${ itemsToMoveCount } элементов"
-      ],
-      "Move ${ movingCount } file": [
-        "Переместить ${ movingCount } файл",
-        "Переместить ${ movingCount } файла",
-        "Переместить ${ movingCount } файлов",
-        "Переместить ${ movingCount } файлов"
-      ],
-      "Move ${ movingCount } folder": [
-        "Переместить ${ movingCount } папку",
-        "Переместить ${ movingCount } папки",
-        "Переместить ${ movingCount } папок",
-        "Переместить ${ movingCount } папок"
-      ],
-      "Move ${ movingCount } item": [
-        "Переместить ${ movingCount } элемент",
-        "Переместить ${ movingCount } элемента",
-        "Переместить ${ movingCount } элементов",
-        "Переместить ${ movingCount } элементов"
-      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Недостаточно места для загрузки ${ formattedTotal }"
       ],
@@ -5517,6 +5500,11 @@
         "Укажите, к чему ${ BRAND_NAME } может получить доступ: просмотр электронных писем и настроек, просмотр и скачивание контактов, просмотр и скачивание всех расписаний из Календаря Google."
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Добро пожаловать в ${ appName }"
+      ]
+    },
     "Onboarding Action": {
       "Next": [
         "Далее"
@@ -5563,9 +5551,6 @@
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "Добро пожаловать в ${ DRIVE_APP_NAME }"
-      ],
       "Your welcome bonus": [
         "Ваш приветственный подарок"
       ]
@@ -6460,9 +6445,6 @@
         "Удаление ${ count } групп контактов",
         "Удаление ${ count } групп контактов",
         "Удаление ${ count } группы контактов"
-      ],
-      "Delete ${ Name }": [
-        "Удалить ${ Name }"
       ],
       "Delete permanently": [
         "Удалить безвозвратно"

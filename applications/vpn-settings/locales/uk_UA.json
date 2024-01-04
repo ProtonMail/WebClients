@@ -3105,9 +3105,6 @@
       "MM/YY": [
         "ММ/РР"
       ],
-      "Multi-user support not enabled.": [
-        "Підтримка декількох користувачів не увімкнена."
-      ],
       "Must be between 3 and 20 characters long.": [
         "Повинно бути від 3 до 20 символів."
       ],
@@ -3462,9 +3459,6 @@
       "to continue to ${ product }": [
         "щоб продовжити в ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "для переходу до ${ toAppName }"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "З метою протидії спаму та зловживанням, будь ласка, підтвердьте, що ви людина."
       ],
@@ -3524,9 +3518,6 @@
       ],
       "Unverified email address.": [
         "Непідтверджена адреса електронної пошти."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "До ${ FAMILY_MAX_USERS } користувачів"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
@@ -4295,12 +4286,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Вітальні листи ${ BRAND_NAME }"
-      ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "Оновлення продукту ${ DRIVE_APP_NAME }"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "Оновлення продукту ${ PASS_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -4558,12 +4543,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } календар",
-        "${ maximumNumberOfCalendars } календарі",
-        "${ maximumNumberOfCalendars } календарів",
-        "${ maximumNumberOfCalendars } календарів"
-      ],
       "${ n } calendar": [
         "${ n } календар",
         "${ n } календарі",
@@ -4914,12 +4893,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Необмежена пропускна здатність"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "До ${ FAMILY_MAX_USERS } користувачів"
-      ],
-      "Up to ${ n } users": [
-        "До ${ n } користувачів"
       ],
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } сховища"
@@ -5362,11 +5335,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Ласкаво просимо до ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Вітаємо у ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Вітаємо у ${ appName }"
       ]
     },
     "Option": {
@@ -6111,18 +6081,6 @@
         "${ ipAddresses } виділених серверів",
         "${ ipAddresses } виділених серверів"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } високошвидкісне VPN-з'єднання",
-        "${ maxVpn } високошвидкісні VPN-з'єднання",
-        "${ maxVpn } високошвидкісних VPN-з'єднань",
-        "${ maxVpn } високошвидкісних VPN-з'єднань"
-      ],
-      "${ n } calendar": [
-        "${ n } календар",
-        "${ n } календарі",
-        "${ n } календарів",
-        "${ n } календарі"
-      ],
       "${ n } calendar per user": [
         "${ n } календар на користувача",
         "${ n } календарі на користувача",
@@ -6672,9 +6630,6 @@
       "Delete": [
         "Видалити"
       ],
-      "Delete ${ email }": [
-        "Видалити ${ email }"
-      ],
       "Delete account": [
         "Видалити обліковий запис"
       ],
@@ -6950,18 +6905,6 @@
       ],
       "Subscription": [
         "Передплата"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "Успішно створено ${ localSuccessfullyCreatedUsers.length } обліковий запис користувача",
-        "Успішно створено ${ localSuccessfullyCreatedUsers.length } облікові записи користувачів",
-        "Успішно створено ${ localSuccessfullyCreatedUsers.length } облікових записів користувачів",
-        "Успішно створено ${ localSuccessfullyCreatedUsers.length } облікові записи користувачів"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "Успішно створено ${ successfullyCreatedUsers.length } обліковий запис",
-        "Успішно створено ${ successfullyCreatedUsers.length } облікові записи",
-        "Успішно створено ${ successfullyCreatedUsers.length } облікових записів",
-        "Успішно створено ${ successfullyCreatedUsers.length } облікових записів"
       ],
       "Summary": [
         "Підсумок"

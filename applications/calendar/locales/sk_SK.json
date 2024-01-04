@@ -3778,9 +3778,6 @@
         "${ selectedFoldersCountLocalized } vybratých štítkov",
         "${ selectedFoldersCountLocalized } vybratých štítkov"
       ],
-      "${ storage } storage": [
-        "${ storage } úložisko"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt bol úspešne aktualizovaný.",
         "${ updated } kontakty boli úspešne aktualizované.",
@@ -4315,23 +4312,8 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Ak chcete použiť overenie adresy, musíte nastaviť povolenie dôveryhodných kľúčov a nadviazať tak na jeden alebo viac dostupných verejných kľúčov, vrátane primárneho kľúča pre túto adresu. Zabránite tak použitiu falošných šifrovacích kľúčov."
       ],
-      "Total email addresses": [
-        "Všetky e-mailové adresy"
-      ],
-      "Total storage": [
-        "Celkové úložisko "
-      ],
-      "Total supported domains": [
-        "Celkom podporovaných domén"
-      ],
-      "Total VPN connections": [
-        "Celkom VPN pripojení"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyskúšajte nové ${ BRAND_NAME } funkcie, aktualizácie a produkty pred ich zverejnením. Týmto sa obnoví aplikácia"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Až ${ FAMILY_MAX_USERS } používateľov"
       ],
       "Update recurring event": [
         "Aktualizovať opakujúcu sa udalosť."
@@ -5333,11 +5315,17 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } kalendár",
-        "${ maximumNumberOfCalendars } kalendáre",
-        "${ maximumNumberOfCalendars } kalendárov",
-        "${ maximumNumberOfCalendars } kalendárov"
+      "${ n } calendar": [
+        "${ n } kalendár",
+        "${ n } kalendáre",
+        "${ n } kalendárov",
+        "${ n } kalendárov"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalendár na používateľa",
+        "${ n } kalendáre na používateľa",
+        "${ n } kalendárov na používateľa",
+        "${ n } kalendárov na používateľa"
       ],
       "Auto-delete spam and trashed messages": [
         "Automaticky mazať správy v spame a koši"
@@ -5351,6 +5339,9 @@
       "Custom snooze time": [
         "Vlastný čas odloženia"
       ],
+      "End-to-end encryption": [
+        "Šifrovanie End-to-end"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email aliasy"
       ],
@@ -5359,6 +5350,9 @@
       ],
       "Search message content": [
         "Hľadať v obsahu správy"
+      ],
+      "Send & receive invitations": [
+        "Odosielanie a prijímanie pozvánok"
       ],
       "Unlimited folders, labels, and filters": [
         "Neobmedzené množstvo priečinkov, štítkov a filtrov"
@@ -5395,6 +5389,31 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Spätná väzba"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Zabezpečte svoj kalendár pomocou end-to-end šifrovania. Súčasťou je podpora vlastných kalendárov, zdieľanie kalendára a ďalšie funkcie."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Vytvorte si ${ n } kalendár alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
+        "Vytvorte si až ${ n } kalendáre alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
+        "Vytvorte si až ${ n } kalendárov alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
+        "Vytvorte si až ${ n } kalendárov alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Svoje kalendáre zdieľajte jednoducho s rodinou, priateľmi alebo kolegami"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Udržujte svoje plány v súkromí pre seba a svoju rodinu pomocou šifrovaného kalendára"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Vytvorte až ${ n } kalendár",
+        "Vytvorte až ${ n } kalendáre",
+        "Vytvorte až ${ n } kalendárov",
+        "Vytvorte až ${ n } kalendárov"
       ]
     },
     "Notification": {
@@ -5652,9 +5671,6 @@
       ],
       "Auto": [
         "Automaticky"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automaticky (${ defaultDay })"
       ],
       "Create new group": [
         "Vytvoriť novú skupinu"
@@ -6843,9 +6859,6 @@
         "Zmazať ${ count } skupiny kontaktov",
         "Zmazať ${ count } skupín kontaktov",
         "Zmazať ${ count } skupín kontaktov"
-      ],
-      "Delete ${ Name }": [
-        "Odstrániť ${ Name }"
       ],
       "Delete event": [
         "Vymazať udalosť"

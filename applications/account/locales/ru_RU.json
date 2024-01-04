@@ -3130,6 +3130,9 @@
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
         "Бета-версия приложения ${ MAIL_APP_NAME } для настольных компьютеров в настоящее время доступна только для подписчиков ${ BRAND_NAME } Visionary. Она будет доступна всем пользователям в начале 2024 года."
+      ],
+      "Upgrade today or check again in early 2024 for access.": [
+        "Обновитесь сегодня или проверьте снова в начале 2024 года для получения доступа."
       ]
     },
     "Disable account": {
@@ -7044,6 +7047,9 @@
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Пожалуйста, обратите внимание, что если вы удалите этот домен, все адреса, связанные с ним будут отключены."
       ],
+      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Обратите внимание, что если вы удалите этот фильтр ${ nameDeleted }, мы перестанем обрабатывать все автоматические действия, которые он запускает."
+      ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Пожалуйста, учтите, что после нажатия на кнопку \"Подтвердить\" в аккаунте останется ${ creditsRemaining } кредитов на счету."
       ],
@@ -7497,9 +7503,6 @@
       "to continue to ${ product }": [
         "чтобы продолжить в ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "чтобы продолжить в ${ toAppName }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Для постоянного совершенствования наших услуг мы иногда собираем данные для контроля надлежащего функционирования наших приложений. Эта информация не передается никаким сторонним службам."
       ],
@@ -7598,9 +7601,6 @@
       ],
       "Unverified email address.": [
         "Неподтверждённый адрес эл. почты."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "До ${ FAMILY_MAX_USERS } пользователей"
       ],
       "Update recovery file": [
         "Обновить файл восстановления"
@@ -9254,18 +9254,6 @@
       "System information": [
         "Сведения о системе"
       ],
-      "The email was sent ${ attachment }": [
-        "Письмо было отправлено ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "письмо было отправлено ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Письмо было отправлено ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "письмо было отправлено ${ label }"
-      ],
       "Then": [
         "Затем"
       ],
@@ -9335,17 +9323,8 @@
       "With attachment": [
         "С вложением"
       ],
-      "with attachments": [
-        "с вложениями"
-      ],
       "Without attachment": [
         "Без вложения"
-      ],
-      "without attachment": [
-        "без вложения"
-      ],
-      "without attachments": [
-        "без вложений"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Да, я хочу навсегда удалить этот аккаунт и все его данные."
@@ -9430,17 +9409,8 @@
       "${ BRAND_NAME } welcome emails": [
         "Приветственные письма ${ BRAND_NAME }"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "Обновления продукта от ${ DRIVE_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "Новые функции ${ MAIL_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "Обновления продукта от ${ PASS_APP_NAME }"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "Обновления продукта от ${ VPN_APP_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -9724,6 +9694,9 @@
       ]
     },
     "mail_signup_2023: Info": {
+      "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
+        "Перейдите на тариф Visionary и станьте частью истории ${ BRAND_NAME }"
+      ],
       "Secure email that protects your privacy": [
         "Защищенная электронная почта, обеспечивающая неприкосновенность частной жизни"
       ]
@@ -10088,14 +10061,8 @@
       "Get ${ BRAND_NAME } for free": [
         "Получить ${ BRAND_NAME } бесплатно"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "Перейти на тариф ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "Получить ${ planName }"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "Получить ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "ОК"
@@ -10114,12 +10081,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } календарь",
-        "${ maximumNumberOfCalendars } календаря",
-        "${ maximumNumberOfCalendars } календарей",
-        "${ maximumNumberOfCalendars } календарей"
-      ],
       "${ n } calendar": [
         "${ n } календарь",
         "${ n } календаря",
@@ -10476,12 +10437,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Неограниченные объем данных и пропускная способность"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "До ${ FAMILY_MAX_USERS } пользователей"
-      ],
-      "Up to ${ n } users": [
-        "До ${ n } пользователей"
       ],
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } хранилища"
@@ -11124,11 +11079,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Добро пожаловать в ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Добро пожаловать в ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Добро пожаловать в ${ appName }"
       ]
     },
     "Option": {
@@ -11234,12 +11186,6 @@
       "Auto": [
         "Авто"
       ],
-      "Automatic (${ defaultDay })": [
-        "Автоматический (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "Автоматический (${ defaultFormat })"
-      ],
       "Country configs": [
         "Конфигурации стран"
       ],
@@ -11276,6 +11222,9 @@
       "No parent folder": [
         "Без родительской папки"
       ],
+      "No permission": [
+        "Нет разрешения"
+      ],
       "Normal": [
         "Обычный"
       ],
@@ -11285,11 +11234,17 @@
       "On": [
         "Включено"
       ],
+      "Organization only": [
+        "Только организация"
+      ],
       "Permanent": [
         "Постоянно"
       ],
       "Plain text": [
         "Простой текст"
+      ],
+      "Receive from all": [
+        "Получать от всех"
       ],
       "Repeat daily": [
         "Повторять ежедневно"
@@ -11709,6 +11664,18 @@
       ]
     },
     "Permission": {
+      "No permission": [
+        "Нет разрешения"
+      ],
+      "Organization only": [
+        "Только организация"
+      ],
+      "Receive from all": [
+        "Получать от всех"
+      ],
+      "Send to all": [
+        "Отправить всем"
+      ],
       "Setup incomplete": [
         "Настройка завершена"
       ]
@@ -12750,18 +12717,6 @@
         "${ ipAddresses } выделенных серверов",
         "${ ipAddresses } выделенных серверов"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } высокоскоростное подключение к VPN",
-        "${ maxVpn } высокоскоростных подключения к VPN",
-        "${ maxVpn } высокоскоростных подключений к VPN",
-        "${ maxVpn } высокоскоростных подключений к VPN"
-      ],
-      "${ n } calendar": [
-        "${ n } календарь",
-        "${ n } календаря",
-        "${ n } календарей",
-        "${ n } календаря"
-      ],
       "${ n } calendar per user": [
         "${ n } календарь на пользователя",
         "${ n } календаря на пользователя",
@@ -13627,15 +13582,6 @@
       "Decrypt key": [
         "Расшифровать ключ"
       ],
-      "Delete ${ domain.DomainName }": [
-        "Удалить ${ domain.DomainName }"
-      ],
-      "Delete ${ email }": [
-        "Удалить ${ email }"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "Удалить ${ tokenNameToRemove }?"
-      ],
       "Delete account": [
         "Удалить аккаунт"
       ],
@@ -14172,18 +14118,6 @@
       ],
       "Success": [
         "Успешно"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "Успешно создан ${ localSuccessfullyCreatedUsers.length } аккаунт",
-        "Успешно созданы ${ localSuccessfullyCreatedUsers.length } аккаунта",
-        "Успешно созданы ${ localSuccessfullyCreatedUsers.length } аккаунтов",
-        "Успешно созданы ${ localSuccessfullyCreatedUsers.length } аккаунтов"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "Успешно создан ${ successfullyCreatedUsers.length } аккаунт",
-        "Успешно созданы ${ successfullyCreatedUsers.length } аккаунта",
-        "Успешно созданы ${ successfullyCreatedUsers.length } аккаунтов",
-        "Успешно созданы ${ successfullyCreatedUsers.length } аккаунтов"
       ],
       "Summary": [
         "Сводка"

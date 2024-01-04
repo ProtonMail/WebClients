@@ -3341,9 +3341,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storage } storage": [
-        "${ storage } lagringsutrymme"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt uppdaterades.",
         "${ updated } kontakter uppdaterades."
@@ -4199,18 +4196,6 @@
       "Today": [
         "Idag"
       ],
-      "Total email addresses": [
-        "Totalt antal e-postadresser"
-      ],
-      "Total storage": [
-        "Totalt lagringsutrymme"
-      ],
-      "Total supported domains": [
-        "Totalt antal domäner som stöds"
-      ],
-      "Total VPN connections": [
-        "Totalt antal VPN-anslutningar"
-      ],
       "Transfer canceled for file \"${ name }\"": [
         "Överföringen avbröts för filen \"${ name }\""
       ],
@@ -4255,9 +4240,6 @@
       ],
       "Unsupported file": [
         "Fil stöds inte"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Upp till ${ FAMILY_MAX_USERS } användare"
       ],
       "Updating drive search...": [
         "Uppdaterar hårddisksökning..."
@@ -5132,9 +5114,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } kalender",
-        "${ maximumNumberOfCalendars } kalendrar"
+      "${ n } calendar": [
+        "${ n } kalender",
+        "${ n } kalendrar"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalender per användare",
+        "${ n } kalendrar per användare"
       ],
       "Auto-delete spam and trashed messages": [
         "Ta bort skräppost och kastade meddelanden automatiskt"
@@ -5148,6 +5134,9 @@
       "Custom snooze time": [
         "Anpassad tid för snooza"
       ],
+      "End-to-end encryption": [
+        "End-to-end-kryptering"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-alias"
       ],
@@ -5156,6 +5145,9 @@
       ],
       "Search message content": [
         "Sök meddelandeinnehåll"
+      ],
+      "Send & receive invitations": [
+        "Skicka och ta emot inbjudningar"
       ],
       "Unlimited folders, labels, and filters": [
         "Obegränsade mappar, etiketter och filter"
@@ -5192,6 +5184,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Feedback"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Säkra ditt schema med end-to-end-kryptering. Inkluderar stöd för anpassade kalendrar, kalenderdelning och mer."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Skapa upp till ${ n } kalender eller lägg till kalendrar från vänner, familj, kollegor och organisationer",
+        "Skapa upp till ${ n } kalendrar eller lägg till kalendrar från vänner, familj, kollegor och organisationer"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Dela enkelt dina kalendrar med din familj, vänner eller kollegor"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Håll dina planer privata för dig och din familj med en krypterad kalender"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Skapa upp till ${ n } kalender",
+        "Skapa upp till ${ n } kalendrar"
       ]
     },
     "Notification": {
@@ -5333,29 +5346,17 @@
       "Link copied to clipboard": [
         "Länk kopierad till urklipp"
       ],
-      "Move ${ itemsToMoveCount } file": [
-        "Flytta ${ itemsToMoveCount } fil",
-        "Flytta ${ itemsToMoveCount } filer"
+      "Move ${ n } file": [
+        "Flytta ${ n } fil",
+        "Flytta ${ n } filer"
       ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Flytta ${ itemsToMoveCount } mapp",
-        "Flytta ${ itemsToMoveCount } mappar"
+      "Move ${ n } folder": [
+        "Flytta ${ n } mapp",
+        "Flytta ${ n } mappar"
       ],
-      "Move ${ itemsToMoveCount } item": [
-        "Flytta ${ itemsToMoveCount } objekt",
-        "Flytta ${ itemsToMoveCount } objekt"
-      ],
-      "Move ${ movingCount } file": [
-        "Flytta ${ movingCount } fil",
-        "Flytta ${ movingCount } filer"
-      ],
-      "Move ${ movingCount } folder": [
-        "Flytta ${ movingCount } mapp",
-        "Flytta ${ movingCount } mappar"
-      ],
-      "Move ${ movingCount } item": [
-        "Flytta ${ movingCount } objekt",
-        "Flytta ${ movingCount } objekt"
+      "Move ${ n } item": [
+        "Flytta ${ n } objekt",
+        "Flytta ${ n } objekt"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Inte tillräckligt med utrymme för att ladda upp ${ formattedTotal }"
@@ -5404,6 +5405,11 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "Välj vad ${ BRAND_NAME } har åtkomst till: visa dina e-postmeddelanden och inställningar, visa och ladda ner dina kontakter, visa och ladda ner alla agendor du kommer åt från Google Agenda."
+      ]
+    },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Välkommen till ${ appName }"
       ]
     },
     "Onboarding Action": {
@@ -5456,9 +5462,6 @@
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "Välkommen till ${ DRIVE_APP_NAME }"
-      ],
       "Your welcome bonus": [
         "Din välkomstbonus"
       ]
@@ -5466,6 +5469,9 @@
     "Option": {
       "Add to existing group": [
         "Lägg till i befintlig grupp"
+      ],
+      "Automatic (${ value })": [
+        "Automatiskt (${ value })"
       ],
       "Create new group": [
         "Skapa ny grupp"
@@ -6372,8 +6378,8 @@
         "Ta bort ${ count } kontaktgrupp",
         "Ta bort ${ count } kontaktgrupper"
       ],
-      "Delete ${ Name }": [
-        "Ta bort ${ Name }"
+      "Delete ${ value }": [
+        "Ta bort ${ value }"
       ],
       "Delete permanently": [
         "Ta bort permanent"

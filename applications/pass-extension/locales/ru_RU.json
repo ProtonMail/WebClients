@@ -669,18 +669,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Обновление \"${ payload.item.data.metadata.name }\" было отклонено"
       ],
-      "${ count } item": [
-        "${ count } элемент",
-        "${ count } элемента",
-        "${ count } элементов",
-        "${ count } элементов"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } элемент",
-        "${ itemCount } элемента",
-        "${ itemCount } элементов",
-        "${ itemCount } элемента"
-      ],
       "${ memberCount } member": [
         "${ memberCount } член",
         "${ memberCount } члена",
@@ -704,18 +692,6 @@
         "${ revisionNumber } раза",
         "${ revisionNumber } раз",
         "${ revisionNumber } раза"
-      ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } элемент",
-        "${ totalImportedItems } элемента",
-        "${ totalImportedItems } элементов",
-        "${ totalImportedItems } элемента"
-      ],
-      "${ totalItems } item": [
-        "${ totalItems } элемент",
-        "${ totalItems } элемента",
-        "${ totalItems } элементов",
-        "${ totalItems } элементов"
       ],
       "${ trialDaysLeft } day left": [
         "Остался ${ trialDaysLeft } день",
@@ -1016,9 +992,6 @@
       ],
       "Sign in or create an account to continue.": [
         "Войдите или создайте аккаунт для продолжения."
-      ],
-      "Sign in to your account": [
-        "Войти в ваш аккаунт"
       ],
       "Signing you in": [
         "Выполняется вход"
@@ -1557,6 +1530,11 @@
         "Вы собираетесь создать"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Добро пожаловать в ${ appName }"
+      ]
+    },
     "Option": {
       "Commas": [
         "Запятые"
@@ -1756,9 +1734,6 @@
       "Trash empty": [
         "Корзина пуста"
       ],
-      "Unlock ${ brandNameJSX }": [
-        "Разблокировать ${ brandNameJSX }"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Разблокировать ${ PASS_APP_NAME }"
       ],
@@ -1773,12 +1748,6 @@
       ],
       "Vault shared with you": [
         "Хранилище, предоставленное вам"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Добро пожаловать в ${ brandNameJSX }"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Добро пожаловать в ${ PASS_APP_NAME }"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "Почему ${ PASS_APP_NAME }?"

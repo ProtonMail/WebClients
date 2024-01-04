@@ -664,14 +664,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "S'ha descartat l'actualització de \"${ payload.item.data.metadata.name }\""
       ],
-      "${ count } item": [
-        "${ count } element",
-        "${ count } elements"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } element",
-        "${ itemCount } elements"
-      ],
       "${ memberCount } member": [
         "${ memberCount } membre",
         "${ memberCount } membres"
@@ -694,14 +686,6 @@
       "${ revisionNumber } time": [
         "${ revisionNumber } vegada",
         "${ revisionNumber } vegades"
-      ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } element",
-        "${ totalImportedItems } elements"
-      ],
-      "${ totalItems } item": [
-        "${ totalItems } element",
-        "${ totalItems } elements"
       ],
       "${ trialDaysLeft } day left": [
         "Queda ${ trialDaysLeft } dia",
@@ -945,9 +929,6 @@
       ],
       "Sign in or create an account to continue.": [
         "Inicieu sessió o creeu un compte per continuar."
-      ],
-      "Sign in to your account": [
-        "Inicieu sessió al vostre compte"
       ],
       "Signing you in": [
         "S'està iniciant la sessió"
@@ -1472,6 +1453,11 @@
         "Esteu a punt de crear"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Us donem la benvinguda a ${ appName }"
+      ]
+    },
     "Option": {
       "Commas": [
         "Comes"
@@ -1696,9 +1682,6 @@
       "Trash empty": [
         "La paperera està buida."
       ],
-      "Unlock ${ brandNameJSX }": [
-        "Desbloqueja ${ brandNameJSX }"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Desbloqueja ${ PASS_APP_NAME }"
       ],
@@ -1710,12 +1693,6 @@
       ],
       "Vault shared with you": [
         "Caixa forta compartida amb vosaltres"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Us donem la benvinguda a ${ brandNameJSX }"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Us donem la benvinguda a ${ PASS_APP_NAME }"
       ],
       "Welcome to your new password manager!": [
         "Us donem la benvinguda al vostre nou gestor de contrasenyes!"

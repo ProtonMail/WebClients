@@ -7034,9 +7034,6 @@
       "to continue to ${ product }": [
         "щоб продовжити в ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "для переходу до ${ toAppName }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Щоб постійно вдосконалювати наші служби, ми іноді збираємо дані для моніторингу належного функціонування наших програм. Ці дані не передаються жодним стороннім службам."
       ],
@@ -7135,9 +7132,6 @@
       ],
       "Unverified email address.": [
         "Непідтверджена адреса електронної пошти."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "До ${ FAMILY_MAX_USERS } користувачів"
       ],
       "Update recovery file": [
         "Оновити файл відновлення"
@@ -8732,18 +8726,6 @@
       "System information": [
         "Інформація про систему"
       ],
-      "The email was sent ${ attachment }": [
-        "Лист було надіслано ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "лист було надіслано ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Лист було надіслано ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "лист було надіслано ${ label }"
-      ],
       "Then": [
         "Потім"
       ],
@@ -8810,17 +8792,8 @@
       "With attachment": [
         "Має вкладення"
       ],
-      "with attachments": [
-        "має вкладення"
-      ],
       "Without attachment": [
         "Без вкладення"
-      ],
-      "without attachment": [
-        "без вкладень"
-      ],
-      "without attachments": [
-        "без вкладень"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Так, я хочу остаточно видалити цей обліковий запис та всі пов'язані дані."
@@ -8901,12 +8874,6 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "Вітальні листи ${ BRAND_NAME }"
-      ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "Оновлення продукту ${ DRIVE_APP_NAME }"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "Оновлення продукту ${ PASS_APP_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -9548,14 +9515,8 @@
       "Get ${ BRAND_NAME } for free": [
         "Отримати ${ BRAND_NAME } безплатно"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "Отримати ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "Отримати ${ planName }"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "Отримати ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "Зрозуміло"
@@ -9574,12 +9535,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } календар",
-        "${ maximumNumberOfCalendars } календарі",
-        "${ maximumNumberOfCalendars } календарів",
-        "${ maximumNumberOfCalendars } календарів"
-      ],
       "${ n } calendar": [
         "${ n } календар",
         "${ n } календарі",
@@ -9930,12 +9885,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Необмежена пропускна здатність"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "До ${ FAMILY_MAX_USERS } користувачів"
-      ],
-      "Up to ${ n } users": [
-        "До ${ n } користувачів"
       ],
       "Up to ${ totalStorageSize } storage": [
         "До ${ totalStorageSize } сховища"
@@ -10545,11 +10494,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Ласкаво просимо до ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Вітаємо у ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Вітаємо у ${ appName }"
       ]
     },
     "Option": {
@@ -10654,12 +10600,6 @@
       ],
       "Auto": [
         "Авто"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Автоматично (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "Автоматично (${ defaultFormat })"
       ],
       "Country configs": [
         "Конфігурації країн"
@@ -11956,18 +11896,6 @@
         "${ ipAddresses } виділених серверів",
         "${ ipAddresses } виділених серверів"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } високошвидкісне VPN-з'єднання",
-        "${ maxVpn } високошвидкісні VPN-з'єднання",
-        "${ maxVpn } високошвидкісних VPN-з'єднань",
-        "${ maxVpn } високошвидкісних VPN-з'єднань"
-      ],
-      "${ n } calendar": [
-        "${ n } календар",
-        "${ n } календарі",
-        "${ n } календарів",
-        "${ n } календарі"
-      ],
       "${ n } calendar per user": [
         "${ n } календар на користувача",
         "${ n } календарі на користувача",
@@ -12827,15 +12755,6 @@
       "Decrypt key": [
         "Розшифрувати ключ"
       ],
-      "Delete ${ domain.DomainName }": [
-        "Видалити ${ domain.DomainName }"
-      ],
-      "Delete ${ email }": [
-        "Видалити ${ email }"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "Видалити ${ tokenNameToRemove }?"
-      ],
       "Delete account": [
         "Видалити обліковий запис"
       ],
@@ -13351,18 +13270,6 @@
       ],
       "Success": [
         "Успішно"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "Успішно створено ${ localSuccessfullyCreatedUsers.length } обліковий запис користувача",
-        "Успішно створено ${ localSuccessfullyCreatedUsers.length } облікові записи користувачів",
-        "Успішно створено ${ localSuccessfullyCreatedUsers.length } облікових записів користувачів",
-        "Успішно створено ${ localSuccessfullyCreatedUsers.length } облікові записи користувачів"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "Успішно створено ${ successfullyCreatedUsers.length } обліковий запис",
-        "Успішно створено ${ successfullyCreatedUsers.length } облікові записи",
-        "Успішно створено ${ successfullyCreatedUsers.length } облікових записів",
-        "Успішно створено ${ successfullyCreatedUsers.length } облікових записів"
       ],
       "Summary": [
         "Підсумок"

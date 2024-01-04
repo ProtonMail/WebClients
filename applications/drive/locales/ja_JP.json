@@ -3170,9 +3170,6 @@
       "${ speed }/s": [
         "${ speed }/秒"
       ],
-      "${ storage } storage": [
-        "${ storage } ストレージ"
-      ],
       "${ updated } contacts updated successfully.": [
         "${ updated } 連絡先が正常に更新されました。"
       ],
@@ -4004,18 +4001,6 @@
       "Today": [
         "今日"
       ],
-      "Total email addresses": [
-        "総メールアドレス数"
-      ],
-      "Total storage": [
-        "総ストレージ容量"
-      ],
-      "Total supported domains": [
-        "総対応ドメイン数"
-      ],
-      "Total VPN connections": [
-        "総VPN接続数"
-      ],
       "Transfer canceled for file \"${ name }\"": [
         "ファイル「${ name }」の転送をキャンセルしました"
       ],
@@ -4057,9 +4042,6 @@
       ],
       "Unsupported file": [
         "非対応のファイル"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "最大 ${ FAMILY_MAX_USERS } ユーザーまで"
       ],
       "Updating drive search...": [
         "ドライブ内検索の更新中..."
@@ -4896,8 +4878,11 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendars": [
-        "${ maximumNumberOfCalendars } 件のカレンダー"
+      "${ n } calendars": [
+        "${ n } カレンダー"
+      ],
+      "${ n } calendars per user": [
+        "1 ユーザーあたり ${ n } 件のカレンダー"
       ],
       "Auto-delete spam and trashed messages": [
         "迷惑メールとごみ箱のメッセージを自動削除"
@@ -4908,6 +4893,9 @@
       "Custom email domains": [
         "独自メールドメイン"
       ],
+      "End-to-end encryption": [
+        "エンドツーエンド暗号化"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email エイリアス"
       ],
@@ -4916,6 +4904,9 @@
       ],
       "Search message content": [
         "メッセージ内容の検索"
+      ],
+      "Send & receive invitations": [
+        "招待を送受信"
       ],
       "Unlimited folders, labels, and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
@@ -4952,6 +4943,25 @@
     "new_plans: placeholder": {
       "Feedback": [
         "フィードバック"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: エンドツーエンドの暗号化でスケジュールを保護します。 カスタム カレンダー、カレンダー共有などのサポートが含まれます。"
+      ],
+      "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
+        "${ n } 個までのカレンダーを作成または友人/家族/同僚/組織のカレンダーを追加"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "家族、友人、同僚とカレンダーを簡単に共有できます。"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "暗号化されたカレンダーで、自分自身や家族の予定を非公開にすることができます。"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendars": [
+        "最大 ${ n } 個までのカレンダーを作成"
       ]
     },
     "Notification": {
@@ -5081,24 +5091,6 @@
       "Link copied to clipboard": [
         "クリップボードにリンクがコピーされました"
       ],
-      "Move ${ itemsToMoveCount } files": [
-        "${ itemsToMoveCount } 件のファイルを移動"
-      ],
-      "Move ${ itemsToMoveCount } folders": [
-        "${ itemsToMoveCount } 件のフォルダーを移動"
-      ],
-      "Move ${ itemsToMoveCount } items": [
-        "${ itemsToMoveCount } 件のアイテムを移動"
-      ],
-      "Move ${ movingCount } files": [
-        "${ movingCount } 件のファイルの移動"
-      ],
-      "Move ${ movingCount } folders": [
-        "${ movingCount } 件のフォルダーの移動"
-      ],
-      "Move ${ movingCount } items": [
-        "${ movingCount } 件のアイテムの移動"
-      ],
       "Not enough space to upload ${ formattedTotal }": [
         "${ formattedTotal }をアップロードする容量がありません"
       ],
@@ -5148,6 +5140,11 @@
         "${ BRAND_NAME } のアクセス権を選択してください: メールメッセージと設定の閲覧 / 連絡先の閲覧とダウンロード / Google Agendaの全アジェンダの閲覧とダウンロード。"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "${ appName } へようこそ"
+      ]
+    },
     "Onboarding Action": {
       "Next": [
         "次へ"
@@ -5188,9 +5185,6 @@
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "${ DRIVE_APP_NAME } へようこそ"
-      ],
       "Your welcome bonus": [
         "ウェルカムボーナス"
       ]
@@ -6030,9 +6024,6 @@
       ],
       "Delete ${ count } contacts": [
         "${ count } 件の連絡先を削除"
-      ],
-      "Delete ${ Name }": [
-        "${ Name } を削除"
       ],
       "Delete permanently": [
         "完全に削除"

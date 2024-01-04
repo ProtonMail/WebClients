@@ -7136,9 +7136,6 @@
       "to continue to ${ product }": [
         "${ product } に進む"
       ],
-      "to continue to ${ toAppName }": [
-        "サインイン後 ${ toAppName } を開きます"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "サービスを継続的に改善するため、アプリケーションの正常な動作を監視するためのデータを収集することがあります。この情報は、いかなる第三者サービスにも共有されません。"
       ],
@@ -7237,9 +7234,6 @@
       ],
       "Unverified email address.": [
         "未検証のメールアドレス"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "最大 ${ FAMILY_MAX_USERS } ユーザーまで"
       ],
       "Update recovery file": [
         "回復用ファイルを更新"
@@ -8851,18 +8845,6 @@
       "System information": [
         "システム情報"
       ],
-      "The email was sent ${ attachment }": [
-        "${ attachment } でメールを送信"
-      ],
-      "the email was sent ${ attachment }": [
-        "メールを ${ attachment } で送信"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "${ attachmentStrong } でメールを送信"
-      ],
-      "the email was sent ${ label }": [
-        "${ label } でメールを送信"
-      ],
       "Then": [
         "その後"
       ],
@@ -8932,16 +8914,7 @@
       "With attachment": [
         "添付ファイルあり"
       ],
-      "with attachments": [
-        "添付ファイルあり"
-      ],
       "Without attachment": [
-        "添付ファイルなし"
-      ],
-      "without attachment": [
-        "添付ファイルなし"
-      ],
-      "without attachments": [
         "添付ファイルなし"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
@@ -9022,17 +8995,8 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } ウェルカムメール"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "${ DRIVE_APP_NAME } 製品のアップデート"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "${ MAIL_APP_NAME } と ${ CALENDAR_SHORT_APP_NAME } の新機能"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "${ PASS_APP_NAME } 製品のアップデート"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "${ VPN_APP_NAME } 製品のアップデート"
       ]
     },
     "Label in domain modal": {
@@ -9650,14 +9614,8 @@
       "Get ${ BRAND_NAME } for free": [
         "無料で ${ BRAND_NAME } を入手"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "${ mostPopularShortPlan.title } を取得"
-      ],
       "Get ${ planName }": [
         "${ planName } を入手"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "${ upsellShortPlan.title } を入手"
       ],
       "Got it": [
         "はい"
@@ -9676,9 +9634,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendars": [
-        "${ maximumNumberOfCalendars } 件のカレンダー"
-      ],
       "${ n } calendars": [
         "${ n } カレンダー"
       ],
@@ -9981,12 +9936,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "通信量/帯域幅制限なし"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "最大 ${ FAMILY_MAX_USERS } ユーザーまで"
-      ],
-      "Up to ${ n } users": [
-        "最大 ${ n } ユーザーまで"
       ],
       "Up to ${ totalStorageSize } storage": [
         "最大 ${ totalStorageSize } のストレージ"
@@ -10602,11 +10551,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "${ product } へようこそ"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME } へようこそ"
+      "Welcome to ${ appName }": [
+        "${ appName } へようこそ"
       ]
     },
     "Option": {
@@ -10711,12 +10657,6 @@
       ],
       "Auto": [
         "自動"
-      ],
-      "Automatic (${ defaultDay })": [
-        "自動 (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "自動 (${ defaultFormat })"
       ],
       "Country configs": [
         "各国の設定ファイル"
@@ -12198,12 +12138,6 @@
       "${ ipAddresses } dedicated servers": [
         "${ ipAddresses } の専用サーバー"
       ],
-      "${ maxVpn } high-speed VPN connections": [
-        "${ maxVpn } 件の高速 VPN 接続"
-      ],
-      "${ n } calendars": [
-        "${ n } カレンダー"
-      ],
       "${ n } calendars per user": [
         "1 ユーザーあたり ${ n } 件のカレンダー"
       ],
@@ -13015,15 +12949,6 @@
       "Decrypt key": [
         "キーを復号"
       ],
-      "Delete ${ domain.DomainName }": [
-        "${ domain.DomainName } を削除"
-      ],
-      "Delete ${ email }": [
-        "${ email } を削除"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "${ tokenNameToRemove } を削除しますか?"
-      ],
       "Delete account": [
         "アカウントの削除"
       ],
@@ -13533,12 +13458,6 @@
       ],
       "Success": [
         "完了"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user accounts": [
-        "${ localSuccessfullyCreatedUsers.length } ユーザー アカウントが正常に作成されました"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user accounts": [
-        "${ successfullyCreatedUsers.length }ユーザー アカウントが正常に作成されました"
       ],
       "Summary": [
         "概要"

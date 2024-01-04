@@ -7292,9 +7292,6 @@
       "to continue to ${ product }": [
         "om door te gaan naar ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "om door te gaan naar ${ toAppName }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Om onze diensten voortdurend te verbeteren, verzamelen wij soms gegevens om de goede werking van onze toepassingen te controleren. Deze informatie wordt niet gedeeld met diensten van derden."
       ],
@@ -7393,9 +7390,6 @@
       ],
       "Unverified email address.": [
         "Niet-geverifieerd e-mailadres."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Tot ${ FAMILY_MAX_USERS } gebruikers"
       ],
       "Update recovery file": [
         "Herstelbestand bijwerken"
@@ -9018,18 +9012,6 @@
       "System information": [
         "Systeeminformatie"
       ],
-      "The email was sent ${ attachment }": [
-        "De e-mail was verzonden ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "de e-mail was verzonden ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "De e-mail was verzonden ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "de e-mail was verzonden ${ label }"
-      ],
       "Then": [
         "Dan"
       ],
@@ -9099,17 +9081,8 @@
       "With attachment": [
         "Met bijlage"
       ],
-      "with attachments": [
-        "met bijlagen"
-      ],
       "Without attachment": [
         "Zonder bijlage"
-      ],
-      "without attachment": [
-        "zonder bijlagen"
-      ],
-      "without attachments": [
-        "zonder bijlagen"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, ik wil permanent mijn account inclusief alle gegevens verwijderen."
@@ -9194,17 +9167,8 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } welkomst-e-mail"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "${ DRIVE_APP_NAME } productupdates"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "${ MAIL_APP_NAME } en ${ CALENDAR_SHORT_APP_NAME } nieuwe functies"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "${ PASS_APP_NAME } productupdates"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "${ VPN_APP_NAME } productupdates"
       ]
     },
     "Label in domain modal": {
@@ -9831,14 +9795,8 @@
       "Get ${ BRAND_NAME } for free": [
         "Gebruik ${ BRAND_NAME } gratis"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "Kies ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "Kies ${ planName }"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "Kies ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "Begrepen"
@@ -9857,10 +9815,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } agenda",
-        "${ maximumNumberOfCalendars } agenda's"
-      ],
       "${ n } calendar": [
         "${ n } agenda",
         "${ n } agenda's"
@@ -10184,12 +10138,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ongelimiteerd(e) volume/bandbreedte"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Tot ${ FAMILY_MAX_USERS } gebruikers"
-      ],
-      "Up to ${ n } users": [
-        "Tot ${ n } gebruikers"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Tot ${ totalStorageSize } opslag"
@@ -10811,11 +10759,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Welkom bij ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Welkom bij ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Welkom bij ${ appName }"
       ]
     },
     "Option": {
@@ -10920,12 +10865,6 @@
       ],
       "Auto": [
         "Automatisch"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automatisch (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "Automatisch (${ defaultFormat })"
       ],
       "Country configs": [
         "Landconfiguraties"
@@ -12423,14 +12362,6 @@
         "${ ipAddresses } toegewijde server",
         "${ ipAddresses } toegewijde servers"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } supersnelle VPN-verbinding",
-        "${ maxVpn } supersnelle VPN-verbindingen"
-      ],
-      "${ n } calendar": [
-        "${ n } agenda",
-        "${ n } agenda's"
-      ],
       "${ n } calendar per user": [
         "${ n } agenda per gebruiker",
         "${ n } agenda's per gebruiker"
@@ -13257,15 +13188,6 @@
       "Decrypt key": [
         "Sleutel decoderen"
       ],
-      "Delete ${ domain.DomainName }": [
-        "Verwijder ${ domain.DomainName }"
-      ],
-      "Delete ${ email }": [
-        "Verwijderen ${ email }"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "Verwijder ${ tokenNameToRemove }?"
-      ],
       "Delete account": [
         "Account verwijderen"
       ],
@@ -13775,14 +13697,6 @@
       ],
       "Success": [
         "Succes"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "Met succes ${ localSuccessfullyCreatedUsers.length } gebruikersaccount aangemaakt",
-        "Met succes ${ localSuccessfullyCreatedUsers.length } gebruikersaccounts aangemaakt"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "Met succes een gebruikersaccount aangemaakt",
-        "Met succes ${ successfullyCreatedUsers.length } gebruikersaccounts aangemaakt"
       ],
       "Summary": [
         "Overzicht"
