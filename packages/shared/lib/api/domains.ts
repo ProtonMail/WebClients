@@ -26,10 +26,10 @@ export const queryPremiumDomains = () => ({
     method: 'get',
 });
 
-export const addDomain = (Name: string) => ({
+export const addDomain = (data: { Name: string; AllowedForSSO?: boolean; AllowedForMail?: boolean }) => ({
     url: 'domains',
     method: 'post',
-    data: { Name },
+    data,
 });
 
 export const updateCatchAll = (domainID: string, AddressID: string | null) => ({
