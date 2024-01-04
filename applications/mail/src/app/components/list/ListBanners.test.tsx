@@ -20,6 +20,7 @@ const baseProps = {
         showESSlowToolbar: false,
     },
     selectedCount: 0,
+    canDisplayTaskRunningBanner: false,
 };
 
 describe('ListBanners', () => {
@@ -124,8 +125,7 @@ describe('ListBanners', () => {
 
     describe('when canDisplayTaskRunningBanner is true', () => {
         it('should display task running banner', async () => {
-            mockUseSelector(true);
-            render(<ListBanners {...baseProps} />);
+            render(<ListBanners {...baseProps} canDisplayTaskRunningBanner={true} />);
             expect(screen.getByText(/Message actions in progress. This may take a while./i)).toBeInTheDocument();
         });
     });
