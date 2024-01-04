@@ -3669,9 +3669,6 @@
         "${ selectedFoldersCountLocalized } label sélectionné",
         "${ selectedFoldersCountLocalized } labels sélectionnés"
       ],
-      "${ storage } storage": [
-        "${ storage } d'espace de stockage"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact a été mis à jour.",
         "${ updated } contacts ont été mis à jour."
@@ -4188,23 +4185,8 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Pour utiliser la vérification d’adresse, vous devez approuver une ou plusieurs clés publiques disponibles, y compris celle que vous voulez utiliser pour l’envoi. Cela empêche la falsification des clés de chiffrement."
       ],
-      "Total email addresses": [
-        "Nombre total d'adresses e-mail"
-      ],
-      "Total storage": [
-        "Espace de stockage total"
-      ],
-      "Total supported domains": [
-        "Nombre total de domaines pris en charge"
-      ],
-      "Total VPN connections": [
-        "Nombre total de connexions VPN"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Testez les nouveaux produits, mises à jour et fonctionnalités de ${ BRAND_NAME } avant qu'ils ne soient accessibles au public. Cela rechargera l'application."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Jusqu'à ${ FAMILY_MAX_USERS } utilisateurs"
       ],
       "Update recurring event": [
         "Mettre à jour l'événement récurrent"
@@ -5215,9 +5197,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } calendrier",
-        "${ maximumNumberOfCalendars } calendriers"
+      "${ n } calendar": [
+        "${ n } calendrier",
+        "${ n } calendriers"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendrier par utilisateur",
+        "${ n } calendriers par utilisateur"
       ],
       "Auto-delete spam and trashed messages": [
         "Suppression automatique des messages dans les dossiers Indésirables/spam et Corbeille"
@@ -5231,6 +5217,9 @@
       "Custom snooze time": [
         "Périodes de mise en attente personnalisées"
       ],
+      "End-to-end encryption": [
+        "Chiffrement de bout en bout"
+      ],
       "Hide-my-email aliases": [
         "Alias « hide-my-email »"
       ],
@@ -5239,6 +5228,9 @@
       ],
       "Search message content": [
         "Recherche dans le contenu des messages"
+      ],
+      "Send & receive invitations": [
+        "Envoyer et recevoir des invitations"
       ],
       "Unlimited folders, labels, and filters": [
         "Nombre illimité de dossiers, de labels et de filtres"
@@ -5275,6 +5267,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Commentaires"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME } : sécurisez votre calendrier avec le chiffrement de bout en bout. Comprend la prise en charge des calendriers personnalisés, du partage de calendrier et bien d'autres fonctionnalités."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Créez jusqu'à ${ n } calendrier ou ajoutez les calendriers d'amis, de la famille, de collègues et d'organisations.",
+        "Créez jusqu'à ${ n } calendriers ou ajoutez les calendriers d'amis, de la famille, de collègues et d'organisations."
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Partagez facilement vos calendriers avec votre famille, vos amis ou vos collègues."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Assurez la confidentialité de vos activités familiales avec un calendrier chiffré."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Créez jusqu'à ${ n } calendrier",
+        "Créez jusqu'à ${ n } calendriers"
       ]
     },
     "Notification": {
@@ -5490,9 +5503,6 @@
       ],
       "Auto": [
         "Automatique"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automatique (${ defaultDay })"
       ],
       "Create new group": [
         "Créer un nouveau groupe"
@@ -6617,9 +6627,6 @@
       "Delete ${ count } contact group": [
         "Supprimer ${ count } groupe de contacts",
         "Supprimer ${ count } groupes de contacts"
-      ],
-      "Delete ${ Name }": [
-        "Supprimer ${ Name }"
       ],
       "Delete event": [
         "Supprimer l'événement"

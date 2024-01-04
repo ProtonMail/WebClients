@@ -3652,9 +3652,6 @@
         "${ selectedFoldersCountLocalized } Kategorie ausgewählt",
         "${ selectedFoldersCountLocalized } Kategorien ausgewählt"
       ],
-      "${ storage } storage": [
-        "${ storage } Speicherplatz"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } Kontakt erfolgreich aktualisiert.",
         "${ updated } Kontakte erfolgreich aktualisiert."
@@ -4171,23 +4168,8 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Um die Adressprüfung verwenden zu können, musst du einem oder mehreren verfügbaren öffentlichen Schlüsseln vertrauen, einschließlich desjenigen, den du zum Senden verwenden möchtest. Dadurch wird verhindert, dass die Verschlüsselungsschlüssel gefälscht werden können."
       ],
-      "Total email addresses": [
-        "Anzahl E-Mail-Adressen"
-      ],
-      "Total storage": [
-        "Gesamter Speicherplatz"
-      ],
-      "Total supported domains": [
-        "Anzahl unterstützter Domains"
-      ],
-      "Total VPN connections": [
-        "Anzahl VPN‐Verbindungen"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Teste neue Funktionen, Updates und Produkte von ${ BRAND_NAME }, bevor sie für die Öffentlichkeit freigegeben werden. Dadurch wird die Seite neu geladen."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Bis zu ${ FAMILY_MAX_USERS } Benutzer"
       ],
       "Update recurring event": [
         "Wiederkehrenden Termin aktualisieren"
@@ -5172,9 +5154,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } Kalender",
-        "${ maximumNumberOfCalendars } Kalender"
+      "${ n } calendar": [
+        "${ n } Kalender",
+        "${ n } Kalender"
+      ],
+      "${ n } calendar per user": [
+        "${ n } Kalender je Benutzer",
+        "${ n } Kalender je Benutzer"
       ],
       "Auto-delete spam and trashed messages": [
         "Automatisches Bereinigen von Spam und gelöschten Nachrichten"
@@ -5188,6 +5174,9 @@
       "Custom snooze time": [
         "Eigene stumm Zeit"
       ],
+      "End-to-end encryption": [
+        "Ende-zu-Ende-Verschlüsselung"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-Aliasse"
       ],
@@ -5196,6 +5185,9 @@
       ],
       "Search message content": [
         "Nachrichteninhalt durchsuchen"
+      ],
+      "Send & receive invitations": [
+        "Einladungen senden & empfangen"
       ],
       "Unlimited folders, labels, and filters": [
         "Unbegrenzte Anzahl an Ordnern, Kategorien und Filtern."
@@ -5232,6 +5224,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Feedback"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Sichere deinen Kalender mit Ende-zu-Ende-Verschlüsselung. Beinhaltet Unterstützung für benutzerdefinierte Kalender, Kalenderfreigabe und mehr."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Erstelle bis zu ${ n } Kalender oder füge Kalender von Freunden, Familie, Kollegen und Organisationen hinzu",
+        "Erstelle bis zu ${ n } Kalender oder füge Kalender von Freunden, Familie, Kollegen und Organisationen hinzu"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Teile deine Kalender ganz einfach mit Verwandten, Freunden oder Kollegen"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Sichere die Privatsphäre deiner Familienaktivitäten mit einem verschlüsselten Kalender ab."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Erstelle bis zu ${ n } Kalender",
+        "Erstelle bis zu ${ n } Kalender"
       ]
     },
     "Notification": {
@@ -5447,9 +5460,6 @@
       ],
       "Auto": [
         "Automatisch"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automatisch (${ defaultDay })"
       ],
       "Create new group": [
         "Neue Gruppe erstellen"
@@ -6565,9 +6575,6 @@
       "Delete ${ count } contact group": [
         "${ count } Kontaktgruppe löschen",
         "${ count } Kontaktgruppen löschen"
-      ],
-      "Delete ${ Name }": [
-        "${ Name } löschen"
       ],
       "Delete event": [
         "Termin löschen"

@@ -3665,9 +3665,6 @@
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetes seleccionades"
       ],
-      "${ storage } storage": [
-        "${ storage } d'emmagatzematge"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacte actualitzat amb èxit.",
         "${ updated } contactes actualitzats amb èxit."
@@ -4184,23 +4181,8 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Per utilitzar la verificació d'adreça, heu d'habilitar les claus de confiança i confiar en una o més de les claus públiques disponibles, incloent la clau primària per a aquesta adreça. Això evita que les claus de xifratge es falsifiquin."
       ],
-      "Total email addresses": [
-        "Adreces de correu totals"
-      ],
-      "Total storage": [
-        "Emmagatzematge"
-      ],
-      "Total supported domains": [
-        "Dominis suportats totals"
-      ],
-      "Total VPN connections": [
-        "Connexions VPN totals"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Això tornarà a carregar l'aplicació"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Fins a ${ FAMILY_MAX_USERS } usuaris"
       ],
       "Update recurring event": [
         "Actualitza l'esdeveniment recurrent"
@@ -5211,9 +5193,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } calendari",
-        "${ maximumNumberOfCalendars } calendaris"
+      "${ n } calendar": [
+        "${ n } calendari",
+        "${ n } calendaris"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendari per usuari",
+        "${ n } calendaris per usuari"
       ],
       "Auto-delete spam and trashed messages": [
         "Suprimeix automàticament el correu brossa i els missatges enviats a la paperera"
@@ -5227,6 +5213,9 @@
       "Custom snooze time": [
         "Períodes de posposició personalitzats"
       ],
+      "End-to-end encryption": [
+        "Xifratge d'extrem a extrem"
+      ],
       "Hide-my-email aliases": [
         "Àlies hide-my-email"
       ],
@@ -5235,6 +5224,9 @@
       ],
       "Search message content": [
         "Cerca al contingut del missatge"
+      ],
+      "Send & receive invitations": [
+        "Enviament i recepció d'invitacions"
       ],
       "Unlimited folders, labels, and filters": [
         "Carpetes, etiquetes i filtres il·limitats"
@@ -5271,6 +5263,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Comentaris"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Protegiu el vostre calendari amb xifratge d'extrem a extrem. Inclou suport per a calendaris personalitzats, compartició de calendaris, etc."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Creeu fins a ${ n } calendari o afegiu calendaris d'amics, família, col·legues i organitzacions",
+        "Creeu fins a ${ n } calendaris o afegiu calendaris d'amics, família, col·legues i organitzacions"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Compartiu fàcilment els vostres calendaris amb la família, els amics o els col·legues."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Manteniu els vostres plans en privat amb la vostra família amb un calendari xifrat."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Crea fins a ${ n } calendari",
+        "Crea fins a ${ n } calendaris"
       ]
     },
     "Notification": {
@@ -5486,9 +5499,6 @@
       ],
       "Auto": [
         "Automàtic"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automàtic (${ defaultDay })"
       ],
       "Create new group": [
         "Crea un grup nou"
@@ -6610,9 +6620,6 @@
       "Delete ${ count } contact group": [
         "Eliminar ${ count } grup de contactes",
         "Eliminar ${ count } grups de contactes"
-      ],
-      "Delete ${ Name }": [
-        "Esborrar ${ Name }"
       ],
       "Delete event": [
         "Elimina l'esdeveniment"

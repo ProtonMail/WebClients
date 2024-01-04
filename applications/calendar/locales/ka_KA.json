@@ -3642,9 +3642,6 @@
         "მონიშნულია ${ selectedFoldersCountLocalized } ჭდე",
         "მონიშნულია ${ selectedFoldersCountLocalized } ჭდე"
       ],
-      "${ storage } storage": [
-        "${ storage } საცავი"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } კონტაქტი წარმატებით განახლდა.",
         "${ updated } კონტაქტი წარმატებით განახლდა."
@@ -4161,23 +4158,8 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "მისამართის დადასტურების გამოსაყენებლად უნდა ენდოთ ერთ ან მეტ საჯარო გასაღებს, მათ შორის, რომლის გამოყენებაც გსურთ გასაგზავნად. ეს ხელს უშლის დაშიფვრის გასაღებების გაყალბებას."
       ],
-      "Total email addresses": [
-        "ელფოსტები სულ"
-      ],
-      "Total storage": [
-        "სრული საცავი"
-      ],
-      "Total supported domains": [
-        "მხარდაჭერილი დომენები სულ"
-      ],
-      "Total VPN connections": [
-        "VPN შეერთებები სულ"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "სცადეთ ახალი ${ BRAND_NAME }-ის თვისებები, განახლებები და პროდუქტები მანამდე, სანამ ისინი საჯარო გახდება. ეს ქმედება აპლიკაციას თავიდან ჩატვირთავს."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "${ FAMILY_MAX_USERS }-მდე მომხმარებელი"
       ],
       "Update recurring event": [
         "განმეორებადი მოვლენის განახლება"
@@ -5149,9 +5131,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } კალენდარი",
-        "${ maximumNumberOfCalendars } კალენდარი"
+      "${ n } calendar": [
+        "${ n } კალენდარი",
+        "${ n } კალენდარი"
+      ],
+      "${ n } calendar per user": [
+        "${ n } კალენდარი თითოეული მომხმარებლისათვის",
+        "${ n } კალენდარი თითოეული მომხმარებლისათვის"
       ],
       "Auto-delete spam and trashed messages": [
         "სპამისა და სანაგვე ყუთში მდებარე შეტყობინებების ავტომატური წაშლა"
@@ -5165,6 +5151,9 @@
       "Custom snooze time": [
         "მომხმარებლის დროებით დადუმების დრო"
       ],
+      "End-to-end encryption": [
+        "გამჭოლი შიფრაცია"
+      ],
       "Hide-my-email aliases": [
         "მეტსახელი Hide My Email-სთვის"
       ],
@@ -5173,6 +5162,9 @@
       ],
       "Search message content": [
         "შეტყობინების შიგთავსში ძებნა"
+      ],
+      "Send & receive invitations": [
+        "მოსაწვევების გაგზავნა და მიღება"
       ],
       "Unlimited folders, labels, and filters": [
         "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
@@ -5209,6 +5201,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "უკუკავშირი"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: დაიცავით თქვენი განრიგი გამჭოლი დაშიფვრით. შეიცავს მომხმარებლის კალენდრების მხარდაჭერას, კალენდრის გაზიარებას და ა.შ."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "შექმენით ${ n }-მდე კალენდარი ან დაამატეთ მეგობრების, ოჯახის, კოლეგების და ორგანიზაციების კალენდრები",
+        "შექმენით ${ n }-მდე კალენდარი ან დაამატეთ მეგობრების, ოჯახის, კოლეგების და ორგანიზაციების კალენდრები"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "გაუზიარეთ კალენდარი თქვენს ოჯახს, მეგობრებს და კოლეგებს"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "დაიტოვეთ თქვენი გეგმები თქვენთვის და თქვენი ოჯახისთვის, დაშიფრული კალენდრით"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "შექმენით ${ n }-მდე კალენდარი",
+        "შექმენით ${ n }-მდე კალენდარი"
       ]
     },
     "Notification": {
@@ -5424,9 +5437,6 @@
       ],
       "Auto": [
         "ავტო"
-      ],
-      "Automatic (${ defaultDay })": [
-        "$ავტომატური (${ defaultDay })"
       ],
       "Create new group": [
         "ახალი ჯგუფის შექმნა"
@@ -6539,9 +6549,6 @@
       "Delete ${ count } contact group": [
         "${ count } კონტაქტების ჯგუფის წაშლა",
         "${ count } კონტაქტების ჯგუფის წაშლა"
-      ],
-      "Delete ${ Name }": [
-        "${ Name }-ის წაშლა"
       ],
       "Delete event": [
         "მოვლენის წაშლა"

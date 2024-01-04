@@ -3501,9 +3501,6 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "已选择 ${ selectedFoldersCountLocalized } 个标签"
       ],
-      "${ storage } storage": [
-        "${ storage } 存储空间"
-      ],
       "${ updated } contacts updated successfully.": [
         "已成功更新 ${ updated } 位联系人。"
       ],
@@ -3999,23 +3996,8 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "开启地址密钥验证前，您需要先信任其若干个公钥，包括您要用于发送邮件的密钥。这样可以防止其密钥被伪造。"
       ],
-      "Total email addresses": [
-        "邮箱地址总数"
-      ],
-      "Total storage": [
-        "存储空间总量"
-      ],
-      "Total supported domains": [
-        "自有域名总数"
-      ],
-      "Total VPN connections": [
-        "VPN 同时在线设备总数"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "抢先体验尚未开放的 ${ BRAND_NAME } 新功能、新特性和新产品。此操作将导致页面重新载入。"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "最多 ${ FAMILY_MAX_USERS } 个用户"
       ],
       "Update recurring event": [
         "更新循环周期性日程"
@@ -4987,8 +4969,11 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendars": [
-        "${ maximumNumberOfCalendars } 个日历"
+      "${ n } calendars": [
+        "${ n } 个日历"
+      ],
+      "${ n } calendars per user": [
+        "每位用户 ${ n } 个日历"
       ],
       "Auto-delete spam and trashed messages": [
         "自动删除垃圾邮件和废件箱中邮件"
@@ -5002,6 +4987,9 @@
       "Custom snooze time": [
         "自由调整免打扰时间"
       ],
+      "End-to-end encryption": [
+        "端到端加密"
+      ],
       "Hide-my-email aliases": [
         "Hide My Email 邮箱别名"
       ],
@@ -5010,6 +4998,9 @@
       ],
       "Search message content": [
         "搜索邮件全文"
+      ],
+      "Send & receive invitations": [
+        "发送和接收邀请"
       ],
       "Unlimited folders, labels, and filters": [
         "不限量文件夹、标签和筛选规则"
@@ -5046,6 +5037,16 @@
     "new_plans: placeholder": {
       "Feedback": [
         "反馈内容"
+      ]
+    },
+    "new_plans: tooltip": {
+      "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
+        "创建多达 ${ n } 份日历或添加朋友、家人、同事、企业分享的日历"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendars": [
+        "创建最多 ${ n } 个日历"
       ]
     },
     "Notification": {
@@ -5237,9 +5238,6 @@
       ],
       "Auto": [
         "自动"
-      ],
-      "Automatic (${ defaultDay })": [
-        "自动 (${ defaultDay })"
       ],
       "Create new group": [
         "创建群组"
@@ -6290,9 +6288,6 @@
       ],
       "Delete ${ count } contacts": [
         "删除 ${ count } 联系人"
-      ],
-      "Delete ${ Name }": [
-        "删除 ${ Name }"
       ],
       "Delete event": [
         "删除日程"

@@ -3178,9 +3178,6 @@
         "${ selectedFoldersCountLocalized } d tebzimt yettwefrenn",
         "${ selectedFoldersCountLocalized } n tebzimin yettwafernen"
       ],
-      "${ storage } storage": [
-        "${ storage } n uḥraz"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } n unermis yettwaleqqem akken iwata.",
         "${ updated } n yinermisen ttwaleqqemen akken iwata."
@@ -3627,18 +3624,6 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "I useqdec n usenqed n tansa, issefk ad tettekleḍ ɣef yiwet neɣ ugar seg tsura tizuyaz i yellan, ula d tin i tebɣiḍ ad tt-tesqedceḍ i tuzna. Aya ad isewḥel abeddel n tsura n uwgelhen."
-      ],
-      "Total email addresses": [
-        "Asemday n tansiwin n yimayl"
-      ],
-      "Total storage": [
-        "Amḍiq n usekles amatu"
-      ],
-      "Total VPN connections": [
-        "Asemday n tuqqniwin VPN"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Alamma d ${ FAMILY_MAX_USERS } yiseqdacen"
       ],
       "Update recurring event": [
         "Leqqem tadyant d-ittuɣalen"
@@ -4510,15 +4495,22 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } uwitay",
-        "${ maximumNumberOfCalendars } yiwitayen"
+      "${ n } calendar": [
+        "${ n } uwitay",
+        "${ n } yiwitayen"
+      ],
+      "${ n } calendar per user": [
+        "${ n } uwitay i yal aseqdac",
+        "${ n } yiwitayen i yal aseqdac"
       ],
       "Calendar sharing": [
         "Beṭṭu n uwitay"
       ],
       "Custom email domains": [
         "Tiɣula n yimayl tudmawanin"
+      ],
+      "End-to-end encryption": [
+        "Awgelhen seg yixef ɣer yixef"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email aliases"
@@ -4528,6 +4520,9 @@
       ],
       "Search message content": [
         "Agbur n yizen n unadi"
+      ],
+      "Send & receive invitations": [
+        "Azen & nermes-d tinubgiwin"
       ],
       "Unlimited folders, labels, and filters": [
         "Ikaramen, tibzimin, d yimsizedgen war tilas"
@@ -4555,6 +4550,12 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Tikti"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Rnu alamma d ${ n } n uwitay",
+        "Rnu alamma d ${ n } n yiwitayen"
       ]
     },
     "Notification": {
@@ -4729,9 +4730,6 @@
       ],
       "Auto": [
         "Awurman"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Awurman (${ defaultDay })"
       ],
       "Create new group": [
         "Snulfu-d agraw amaynut"
@@ -5567,9 +5565,6 @@
       "Delete ${ count } contact group": [
         "Kkes ${ count } n ugraw n yinermisen",
         "Kkes ${ count } n yigrawen n yinermisen"
-      ],
-      "Delete ${ Name }": [
-        "Kkes ${ Name }"
       ],
       "Delete event": [
         "Kkes tadyant"

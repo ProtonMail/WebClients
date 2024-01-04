@@ -3585,9 +3585,6 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "${ selectedFoldersCountLocalized }개 라벨 선택함"
       ],
-      "${ storage } storage": [
-        "${ storage } 저장공간"
-      ],
       "${ updated } contacts updated successfully.": [
         "${ updated } 연락처가 성공적으로 업데이트 되었습니다."
       ],
@@ -4095,23 +4092,8 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "주소 검증을 사용하려면 신뢰할 수 있는 키를 활성화하고 이 주소의 기본 키를 포함하여 사용 가능한 하나 이상의 공개 키를 신뢰해야 합니다. 이렇게 하면 암호화 키가 위조되지 않습니다."
       ],
-      "Total email addresses": [
-        "총 이메일 주소"
-      ],
-      "Total storage": [
-        "총 저장공간"
-      ],
-      "Total supported domains": [
-        "총 지원 도메인"
-      ],
-      "Total VPN connections": [
-        "총 VPN 연결"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요. 이렇게 하면 애플리케이션이 새로고침됩니다"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "최대 ${ FAMILY_MAX_USERS }명 구성원"
       ],
       "Update recurring event": [
         "반복 이벤트 업데이트"
@@ -5075,8 +5057,11 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendars": [
-        "${ maximumNumberOfCalendars } 캘린더"
+      "${ n } calendars": [
+        "${ n } 캘린더"
+      ],
+      "${ n } calendars per user": [
+        "사용자 당 ${ n }개 캘린더"
       ],
       "Auto-delete spam and trashed messages": [
         "스팸 및 휴지통의 메시지를 자동 삭제"
@@ -5090,6 +5075,9 @@
       "Custom snooze time": [
         "사용자 지정 방해 금지 시간"
       ],
+      "End-to-end encryption": [
+        "종단간 암호화"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email 별칭"
       ],
@@ -5098,6 +5086,9 @@
       ],
       "Search message content": [
         "메시지 내용 검색"
+      ],
+      "Send & receive invitations": [
+        "전송 및 받은 초대"
       ],
       "Unlimited folders, labels, and filters": [
         "무제한 폴더, 라벨, 그리고 필터"
@@ -5134,6 +5125,25 @@
     "new_plans: placeholder": {
       "Feedback": [
         "피드백"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: 커스텀 캘린더, 캘린더 공유 등의 기능을 포함하는 종단 간 암호화로 보호되는 캘린더를 사용해 보세요."
+      ],
+      "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
+        "최대 ${ n }개 캘린더를 생성하거나 친구, 가족, 동료 및 조직에서 생성하세요."
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "캘린더를 가족, 친구 및 동료들에게 쉽게 공유하세요"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "암호화된 캘린더로 당신과 당신의 가족의 사적인 계획을 지키세요"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendars": [
+        "최대 ${ n }개 캘린더 생성"
       ]
     },
     "Notification": {
@@ -5328,9 +5338,6 @@
       ],
       "Auto": [
         "자동"
-      ],
-      "Automatic (${ defaultDay })": [
-        "자동 (${ defaultDay })"
       ],
       "Create new group": [
         "새 그룹 만들기"
@@ -6402,9 +6409,6 @@
       ],
       "Delete ${ count } contacts": [
         "${ count }개의 연락처 삭제"
-      ],
-      "Delete ${ Name }": [
-        "${ Name } 삭제"
       ],
       "Delete event": [
         "이벤트 지우기"

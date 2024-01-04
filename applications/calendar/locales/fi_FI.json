@@ -3656,9 +3656,6 @@
         "${ selectedFoldersCountLocalized } tunniste valittu",
         "${ selectedFoldersCountLocalized } tunnistetta valittu"
       ],
-      "${ storage } storage": [
-        "${ storage } tallennustilaa"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } yhteystieto päivitettiin.",
         "${ updated } yhteystietoa päivitettiin."
@@ -4175,23 +4172,8 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Käyttääksesi osoitteen vahvistusta, sinun on luotettava yhteen tai useampaan käytettävissä olevaan julkiseen avaimeen, mukaan lukien se, jota haluat käyttää lähetykseen. Tämä estää salausavainten väärennyksen."
       ],
-      "Total email addresses": [
-        "Sähköpostiosoitteita yhteensä"
-      ],
-      "Total storage": [
-        "Tallennustilaa yhteensä"
-      ],
-      "Total supported domains": [
-        "Tuettuja verkkotunnuksia yhteensä"
-      ],
-      "Total VPN connections": [
-        "VPN-yhteyksiä yhteensä"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Kokeile uusia ${ BRAND_NAME } -ominaisuuksia, -päivityksiä ja -tuotteita ennen kuin ne julkaistaan kaikille. Tämä käynnistää sovelluksen uudelleen"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Enintään ${ FAMILY_MAX_USERS } käyttäjää"
       ],
       "Update recurring event": [
         "Päivitä toistuva tapahtuma"
@@ -5176,9 +5158,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } kalenteri",
-        "${ maximumNumberOfCalendars } kalenteria"
+      "${ n } calendar": [
+        "${ n } kalenteri",
+        "${ n } kalenteria"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalenteri per käyttäjä",
+        "${ n } kalenteria per käyttäjä"
       ],
       "Auto-delete spam and trashed messages": [
         "Poista roskakorin ja roskapostin viestit automaattisesti"
@@ -5192,6 +5178,9 @@
       "Custom snooze time": [
         "Oma torkutusaika"
       ],
+      "End-to-end encryption": [
+        "Päästä päähän -salaus"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliakset"
       ],
@@ -5200,6 +5189,9 @@
       ],
       "Search message content": [
         "Etsi viestien sisällöstä"
+      ],
+      "Send & receive invitations": [
+        "Lähetä ja vastaanota kutsuja"
       ],
       "Unlimited folders, labels, and filters": [
         "Rajattomasti kansioita, tunnisteita ja suodattimia"
@@ -5236,6 +5228,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Palaute"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Suojaa aikataulusi päästä päähän -salauksella. Sisältää tuen mukautetuille kalentereille, kalenterin jakamiseen ja muuta."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Luo enintään ${ n } kalenteri tai lisää kavereiden, perheen, kollegoiden tai organisaatioiden kalentereita",
+        "Luo enintään ${ n } kalenteria tai lisää kavereiden, perheen, kollegoiden tai organisaatioiden kalentereita"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Jaa kalentereita helposti perheenjäsenille, kavereille tai kollegoille"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Pidä suunnitelmasi yksityisinä sinulle ja perheellesi salatun kalenterin avulla"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Luo enintään ${ n } kalenteri",
+        "Luo enintään ${ n } kalenteria"
       ]
     },
     "Notification": {
@@ -5451,9 +5464,6 @@
       ],
       "Auto": [
         "Autom."
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automaattinen (${ defaultDay })"
       ],
       "Create new group": [
         "Luo uusi ryhmä"
@@ -6566,9 +6576,6 @@
       "Delete ${ count } contact group": [
         "Poista ${ count } yhteystietoryhmä",
         "Poista ${ count } yhteystietoryhmää"
-      ],
-      "Delete ${ Name }": [
-        "Poista ${ Name }"
       ],
       "Delete event": [
         "Poista tapahtuma"
