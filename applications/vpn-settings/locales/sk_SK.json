@@ -714,12 +714,6 @@
       "High speed streaming": [
         "Vysokorýchlostné streamovanie"
       ],
-      "Premium ${ appName }": [
-        "Prémiový ${ appName }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "Premium Password Manager": [
         "Prémiový správca hesiel"
       ]
@@ -807,7 +801,7 @@
         "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailovú adresu, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie.",
         "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailové adresy, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie.",
         "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailových adries, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie.",
-        "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailových adries, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie."
+        "Obsahuje podporu ${ domains } vlastných emailových domén, ${ addresses } emailových adries, neobmedzené množstvo hide-my-email aliasov, zdieľanie kalendára a ďalšie."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Zahŕňa podporu pre 1 vlastnú emailovú doménu, 10 emailových adries, 10 hide-my-email aliasov, zdieľanie kalendára a ďalšie."
@@ -2269,15 +2263,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Prémiový ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Prémiová ${ VPN_SHORT_APP_NAME }"
-      ],
       "Up to 6 users": [
         "Až do 6 užívateľov"
       ]
@@ -5709,6 +5694,12 @@
       "My reason isn't listed": [
         "Môj dôvod nie je na zozname"
       ],
+      "Organization only": [
+        "Len z organizácie"
+      ],
+      "Receive from all": [
+        "Prijímať od všetkých"
+      ],
       "Router": [
         "Router"
       ],
@@ -5717,6 +5708,12 @@
       ],
       "Select who can access...": [
         "Vyberte, kto môže pristupovať..."
+      ],
+      "Send to all": [
+        "Poslať všetkým"
+      ],
+      "Setup incomplete": [
+        "Nastavenie nebolo dokončené"
       ],
       "Standard server configs": [
         "Konfigurácia štandardného servera"
@@ -5866,6 +5863,20 @@
       ],
       "New credit/debit card": [
         "Nová platobná karta"
+      ]
+    },
+    "Permission": {
+      "Organization only": [
+        "Len z organizácie"
+      ],
+      "Receive from all": [
+        "Prijímať od všetkých"
+      ],
+      "Send to all": [
+        "Poslať všetkým"
+      ],
+      "Setup incomplete": [
+        "Nastavenie nebolo dokončené"
       ]
     },
     "Placeholder": {
@@ -6468,15 +6479,6 @@
       "Highest VPN speed": [
         "Najvyššia rýchlosť VPN"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "Prémiový ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Prémiová ${ VPN_SHORT_APP_NAME }"
-      ],
       "Premium early access": [
         "Prémiový predbežný prístup"
       ],
@@ -6968,14 +6970,6 @@
     "Suffix for price": {
       "per month": [
         "mesačne"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Prémiový ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {

@@ -1362,12 +1362,6 @@
       "High speed streaming": [
         "Streaming ad alta velocità"
       ],
-      "Premium ${ appName }": [
-        "${ appName } premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "Premium Password Manager": [
         "Password manager premium"
       ]
@@ -4612,15 +4606,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } premium"
-      ],
       "Up to 6 users": [
         "Fino a 6 utenti"
       ]
@@ -5762,17 +5747,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Parte del contenuto del calendario non è supportata e non sarà importata."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La chiave ${ fingerprint } è già stata caricata"
-      ],
-      "Selected color:": [
-        "Colore selezionato:"
       ]
     },
     "Info": {
@@ -7980,6 +7954,17 @@
         "Il tuo abbonamento è gestito da Mozilla. Contatta l'assistenza di Mozilla."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La chiave ${ fingerprint } è già stata caricata"
+      ],
+      "Selected color:": [
+        "Colore selezionato:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Se abilitata, le sottocartelle prendono il colore della cartella principale."
@@ -8809,9 +8794,6 @@
       "Font size": [
         "Dimensione del carattere"
       ],
-      "From: ${ from }": [
-        "Da: ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "Da: ${ fromEmail }"
       ],
@@ -9202,9 +9184,6 @@
       "Time zone": [
         "Fuso orario"
       ],
-      "To: ${ to }": [
-        "A: ${ to }"
-      ],
       "To: ${ toEmail }": [
         "A: ${ toEmail }"
       ],
@@ -9454,6 +9433,14 @@
         "Preferenza salvata"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Da: ${ from }"
+      ],
+      "To: ${ to }": [
+        "A: ${ to }"
+      ]
+    },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
         "Per aggiungere un nuovo calendario, rimuovi un calendario esistente."
@@ -9648,8 +9635,8 @@
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Diventa un utente Visionary ed entra a far parte della storia di ${ BRAND_NAME }"
       ],
-      "Limited time offer: Get ${ planTitle } until ${ date }!": [
-        "Offerta a tempo limitato: Ottieni ${ planTitle } fino al ${ date }!"
+      "Limited time offer": [
+        "Offerta a tempo limitato"
       ],
       "Secure email that protects your privacy": [
         "Un'email sicura che protegge la tua privacy"
@@ -9814,12 +9801,14 @@
         "Ogni ${ interval } mese, ${ onDayString }, ${ timesString }",
         "Ogni ${ interval } mesi, ${ onDayString }, ${ timesString }"
       ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Ogni mese, ${ onDayString }, ${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
         "Ogni ${ interval } mese, ${ onDayString }, ${ untilString }",
         "Ogni ${ interval } mesi, ${ onDayString }, ${ untilString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Ogni mese, ${ onDayString }, ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Ogni mese, ${ onDayString }, ${ untilString }"
@@ -11630,10 +11619,10 @@
         "Solo organizzazione"
       ],
       "Receive from all": [
-        "Ricevi da tutti"
+        "Riceve da chiunque"
       ],
       "Send to all": [
-        "Invia a tutti"
+        "Invia a chiunque"
       ],
       "Setup incomplete": [
         "Configurazione incompleta"
@@ -12501,14 +12490,14 @@
       "Highest VPN speed": [
         "Massima velocità della VPN"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME } premium"
+      "Premium ${ appName1 }": [
+        "${ appName1 } premium"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME } premium"
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "${ appName1 } e ${ appName2 } premium"
       ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } premium"
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "${ appName1 }, ${ appName2 } e ${ appName3 } premium"
       ],
       "Premium early access": [
         "Accesso anticipato premium"
@@ -13114,14 +13103,6 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Impossibile esportare i dettagli sugli eventi"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } e ${ CALENDAR_SHORT_APP_NAME } premium"
       ]
     },
     "summer2023: Tooltip": {
