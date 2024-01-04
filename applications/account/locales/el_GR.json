@@ -1362,12 +1362,6 @@
       "High speed streaming": [
         "Ροή υψηλής ταχύτητας"
       ],
-      "Premium ${ appName }": [
-        "Premium ${ appName }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "Premium Password Manager": [
         "Premium Διαχειριστής Κωδικών Πρόσβασης"
       ]
@@ -4590,15 +4584,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
-      ],
       "Up to 6 users": [
         "Έως 6 χρήστες"
       ]
@@ -5740,17 +5725,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Μέρος του περιεχομένου του ημερολογίου σας δεν υποστηρίζεται και δεν θα εισαχθεί."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
-      ],
-      "Selected color:": [
-        "Επιλεγμένο χρώμα:"
       ]
     },
     "Info": {
@@ -7952,6 +7926,17 @@
         "Η συνδρομή σας διαχειρίζεται απο το Mozilla. Επικοινωνήστε με την υποστήριξη του Mozilla."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
+      ],
+      "Selected color:": [
+        "Επιλεγμένο χρώμα:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Όταν είναι ενεργό, οι υποφάκελοι κληρονομούν το χρώμα του γονικού φακέλου."
@@ -8771,9 +8756,6 @@
       "Font size": [
         "Μέγεθος γραμματοσειράς"
       ],
-      "From: ${ from }": [
-        "Από: ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "Από: ${ fromEmail }"
       ],
@@ -9163,9 +9145,6 @@
       ],
       "Time zone": [
         "Ζώνη ώρας"
-      ],
-      "To: ${ to }": [
-        "Προς: ${ to }"
       ],
       "To: ${ toEmail }": [
         "Προς: ${ toEmail }"
@@ -9606,9 +9585,6 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Γίνετε Visionary και γίνετε μέρος της ιστορίας του ${ BRAND_NAME }"
-      ],
-      "Limited time offer: Get ${ planTitle } until ${ date }!": [
-        "Προσφορά περιορισμένου χρόνου: Αποκτήστε ${ planTitle } μέχρι ${ date }!"
       ],
       "Secure email that protects your privacy": [
         "Ασφαλές ηλεκτρονικό ταχυδρομείο που προστατεύει το απόρρητό σας"
@@ -11106,6 +11082,9 @@
       "No parent folder": [
         "Δεν υπάρχει γονικός φάκελος"
       ],
+      "No permission": [
+        "Χωρίς δικαίωμα"
+      ],
       "Normal": [
         "Κανονικό"
       ],
@@ -11115,11 +11094,17 @@
       "On": [
         "Ενεργό"
       ],
+      "Organization only": [
+        "Μόνο στον Οργανισμό"
+      ],
       "Permanent": [
         "Μόνιμο"
       ],
       "Plain text": [
         "Σκέτο κείμενο"
+      ],
+      "Receive from all": [
+        "Λήψη από όλους"
       ],
       "Repeat daily": [
         "Επανάληψη καθημερινά"
@@ -11141,6 +11126,12 @@
       ],
       "Select who can access...": [
         "Επιλέξτε ποιος μπορεί να έχει πρόσβαση..."
+      ],
+      "Send to all": [
+        "Αποστολή σε όλους"
+      ],
+      "Setup incomplete": [
+        "Η ρύθμιση δεν είναι ολοκληρωμένη"
       ],
       "Standard server configs": [
         "Ρυθμίσεις τυπικού διακομιστή"
@@ -11524,6 +11515,23 @@
       ],
       "New credit/debit card": [
         "Νέα πιστωτική/χρεωστική κάρτα"
+      ]
+    },
+    "Permission": {
+      "No permission": [
+        "Χωρίς δικαίωμα"
+      ],
+      "Organization only": [
+        "Μόνο στον Οργανισμό"
+      ],
+      "Receive from all": [
+        "Λήψη από όλους"
+      ],
+      "Send to all": [
+        "Αποστολή σε όλους"
+      ],
+      "Setup incomplete": [
+        "Η ρύθμιση δεν είναι ολοκληρωμένη"
       ]
     },
     "Personal calendar section description": {
@@ -12385,15 +12393,6 @@
       "Highest VPN speed": [
         "Ύψιστη ταχύτητα VPN"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
-      ],
       "Premium early access": [
         "Premium πρώιμη πρόσβαση"
       ],
@@ -12998,14 +12997,6 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Λεπτομέρειες σχετικά με συμβάντα που δεν ήταν μπορούσαν να εξαχθούν"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {
