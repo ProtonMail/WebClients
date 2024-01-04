@@ -1030,6 +1030,9 @@
       "Disable E2EE mail": [
         "E2EE मेल अक्षम करें"
       ],
+      "Edit": [
+        "बदलाव करें"
+      ],
       "Enable": [
         "एनेबल"
       ],
@@ -1190,12 +1193,6 @@
       ],
       "High speed streaming": [
         "तेज़ स्ट्रीमिंग"
-      ],
-      "Premium ${ appName }": [
-        "प्रीमियम ${ appName }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "प्रीमियम ${ MAIL_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "प्रीमियम पासवर्ड मैनेजर"
@@ -3040,6 +3037,9 @@
       ],
       "Resume": [
         "जारी रखें"
+      ],
+      "Save": [
+        "सेव करें"
       ]
     },
     "email_forwarding_2023: Header": {
@@ -3965,15 +3965,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "प्रीमियम ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "प्रीमियम ${ MAIL_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "प्रीमियम ${ VPN_SHORT_APP_NAME }"
-      ],
       "Up to 6 users": [
         "6 यूज़र तक"
       ]
@@ -4930,14 +4921,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "आपके कैलेंडर कंटेंट का कुछ हिस्सा सपोर्ट नहीं किया जाता है और आयात नहीं किया जाएगा।"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
       ]
     },
     "Info": {
@@ -6765,6 +6748,14 @@
         "आपकी सदस्यता का प्रबंधन मोज़िला द्वारा किया जाता है। कृपया मोज़िला समर्थन से संपर्क करें।"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "सक्षम होने पर, उप-फ़ोल्डर मूल फ़ोल्डर का रंग इनहेरिट करते हैं।"
@@ -7534,9 +7525,6 @@
       "Folder location": [
         "फ़ोल्डर स्थान"
       ],
-      "From: ${ from }": [
-        "प्रेषक: ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "से: ${ fromEmail }"
       ],
@@ -7881,9 +7869,6 @@
       ],
       "Time zone": [
         "समय क्षेत्र"
-      ],
-      "To: ${ to }": [
-        "को: ${ to }"
       ],
       "To: ${ toEmail }": [
         "को: ${ toEmail }"
@@ -10314,15 +10299,6 @@
       "Highest VPN speed": [
         "सबसे तेज़ वीपीएन रफ्तार"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "प्रीमियम ${ MAIL_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "प्रीमियम ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } और ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "प्रीमियम ${ VPN_SHORT_APP_NAME }"
-      ],
       "Premium early access": [
         "प्रीमियम जल्दी एक्सेस"
       ],
@@ -10868,14 +10844,6 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "इवेंट के बारे में जानकारी जो निर्यात नहीं हो सकी"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "प्रीमियम ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "प्रीमियम ${ MAIL_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {

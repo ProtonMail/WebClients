@@ -9,6 +9,12 @@
         "OK"
       ]
     },
+    "bf2023: Tooltip": {
+      "Includes support for ${ domains } custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Includes support for ${ domains } custom email domain, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.",
+        "Includes support for ${ domains } custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more."
+      ]
+    },
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "Edit (view, create or edit event details)"
@@ -53,11 +59,17 @@
       "A recovery file lets you unlock and view your data after an account reset": [
         "A recovery file lets you unlock and view your data after account recovery"
       ],
+      "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
+        "Any subfolders will also be deleted. However, emails stored in the folder ${ nameDeleted } will not be deleted and can be found in All Mail folder."
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Ask your organization admin to set up Gateways."
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control."
+      ],
+      "Emails tagged with this label ${ nameDeleted } will not be deleted and can still be found in the respective folder.": [
+        "Emails tagged with the label ${ nameDeleted } will not be deleted and can still be found in the respective folder."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "Event invitations and responses will be sent in this language."
@@ -74,6 +86,9 @@
       ],
       "Lean more about gateways": [
         "Learn more about Gateways"
+      ],
+      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Please note that if you delete the filter ${ nameDeleted } we will stop processing all the automated actions it triggers."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
         "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains."

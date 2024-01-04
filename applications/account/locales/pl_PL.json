@@ -1368,12 +1368,6 @@
       "High speed streaming": [
         "Szybki streaming"
       ],
-      "Premium ${ appName }": [
-        "${ appName } w wersji premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } w wersji premium"
-      ],
       "Premium Password Manager": [
         "Menedżer haseł w wersji premium"
       ]
@@ -4646,15 +4640,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } w wersji premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } w wersji premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } w wersji premium"
-      ],
       "Up to 6 users": [
         "Do 6 użytkowników"
       ]
@@ -5830,17 +5815,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Część zawartości kalendarza nie jest obsługiwana i nie zostanie zaimportowana."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Klucz ${ fingerprint } został już przesłany"
-      ],
-      "Selected color:": [
-        "Wybrany kolor:"
       ]
     },
     "Info": {
@@ -8131,6 +8105,17 @@
         "Twoja subskrypcja jest zarządzana przez Mozillę. Skontaktuj się z pomocą techniczną Mozilli."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Wykryto dodatkowe zduplikowane klucze. Prześlij klucze pojedynczo, aby uzyskać więcej informacji."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Klucz ${ fingerprint } został już przesłany"
+      ],
+      "Selected color:": [
+        "Wybrany kolor:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Jeśli włączysz tę opcję, kolor folderu nadrzędnego zostanie zastosowany do podfolderów."
@@ -8972,9 +8957,6 @@
       "Font size": [
         "Rozmiar czcionki"
       ],
-      "From: ${ from }": [
-        "Od: ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
@@ -9365,9 +9347,6 @@
       "Time zone": [
         "Strefa czasowa"
       ],
-      "To: ${ to }": [
-        "Do: ${ to }"
-      ],
       "To: ${ toEmail }": [
         "Do: ${ toEmail }"
       ],
@@ -9614,6 +9593,14 @@
         "Ustawienia zostały zapisane"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Od: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Do: ${ to }"
+      ]
+    },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
         "Aby dodać nowy kalendarz, usuń obecny."
@@ -9820,8 +9807,8 @@
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Wybierz plan Visionary i bądź częścią historii ${ BRAND_NAME }"
       ],
-      "Limited time offer: Get ${ planTitle } until ${ date }!": [
-        "Oferta ograniczona czasowo: Uzyskaj plan ${ planTitle } do ${ date }!"
+      "Limited time offer": [
+        "Oferta ograniczona czasowo"
       ],
       "Secure email that protects your privacy": [
         "Bezpieczna poczta e-mail, która chroni Twoją prywatność"
@@ -9994,14 +9981,16 @@
         "Co ${ interval } miesięcy ${ onDayString }, ${ timesString }",
         "Co ${ interval } miesiąca ${ onDayString }, ${ timesString }"
       ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Co miesiąc ${ onDayString }, ${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
         "Co ${ interval } miesiąc ${ onDayString }, ${ untilString }",
         "Co ${ interval } miesiące ${ onDayString }, ${ untilString }",
         "Co ${ interval } miesięcy ${ onDayString }, ${ untilString }",
         "Co ${ interval } miesiąca ${ onDayString }, ${ untilString }"
-      ],
-      "Monthly ${ onDayString }, ${ timesString }": [
-        "Co miesiąc ${ onDayString }, ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Co miesiąc ${ onDayString }, ${ untilString }"
@@ -11413,11 +11402,17 @@
       "On": [
         "Włączone"
       ],
+      "Organization only": [
+        "Tylko w organizacji"
+      ],
       "Permanent": [
         "Na stałe"
       ],
       "Plain text": [
         "Zwykły tekst"
+      ],
+      "Receive from all": [
+        "Odbieraj od wszystkich"
       ],
       "Repeat daily": [
         "Powtarzaj codziennie"
@@ -11441,7 +11436,7 @@
         "Wybierz, kto może uzyskać dostęp..."
       ],
       "Send to all": [
-        "Wyślij do wszystkich"
+        "Wysyłaj do wszystkich"
       ],
       "Setup incomplete": [
         "Konfiguracja niekompletna"
@@ -11840,8 +11835,14 @@
       "No permission": [
         "Brak uprawnienia"
       ],
+      "Organization only": [
+        "Tylko w organizacji"
+      ],
+      "Receive from all": [
+        "Odbieraj od wszystkich"
+      ],
       "Send to all": [
-        "Wyślij do wszystkich"
+        "Wysyłaj do wszystkich"
       ],
       "Setup incomplete": [
         "Konfiguracja niekompletna"
@@ -12751,14 +12752,14 @@
       "Highest VPN speed": [
         "Najwyższa prędkość VPN"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } w wersji premium"
+      "Premium ${ appName1 }": [
+        "${ appName1 } w wersji premium"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME } w wersji premium"
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "${ appName1 } i ${ appName2 } w wersji premium"
       ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } w wersji premium"
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "${ appName1 }, ${ appName2 } i ${ appName3 } w wersji premium"
       ],
       "Premium early access": [
         "Wcześniejszy dostęp premium"
@@ -13394,14 +13395,6 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "Szczegóły wydarzeń, które nie mogły zostać wyeksportowane"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } w wersji premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } w wersji premium"
       ]
     },
     "summer2023: Tooltip": {
