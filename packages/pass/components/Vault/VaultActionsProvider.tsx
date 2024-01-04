@@ -5,6 +5,8 @@ import { c } from 'ttag';
 
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { useInviteContext } from '@proton/pass/components/Invite/InviteProvider';
+import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { getLocalPath, getTrashRoute } from '@proton/pass/components/Navigation/routing';
 import { VaultDelete } from '@proton/pass/components/Vault/Vault.delete';
 import { emptyTrashIntent, restoreTrashIntent, shareLeaveIntent } from '@proton/pass/store/actions';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
@@ -24,13 +26,9 @@ type VaultActionsContextValue = {
     leave: (vault: VaultShareItem) => void;
     manage: (vault: VaultShareItem) => void;
     moveItems: (vault: VaultShareItem) => void;
+    select: (selected: string) => void;
     trashEmpty: () => void;
     trashRestore: () => void;
-};
-
-type VaultActionsProviderProps = {
-    onVaultCreated: (shareId: string) => void;
-    onVaultDeleted: (shareId: string) => void;
 };
 
 type VaultActionState =
@@ -45,21 +43,25 @@ export const VaultActionsContext = createContext<VaultActionsContextValue>({
     leave: noop,
     manage: noop,
     moveItems: noop,
+    select: noop,
     trashEmpty: noop,
     trashRestore: noop,
 });
 
 export const useVaultActions = () => useContext(VaultActionsContext);
 
-export const VaultActionsProvider: FC<VaultActionsProviderProps> = ({ onVaultCreated, onVaultDeleted, children }) => {
+export const VaultActionsProvider: FC = ({ children }) => {
     const inviteContext = useInviteContext();
+    const { navigate, setFilters } = useNavigation();
     const dispatch = useDispatch();
 
     const [state, setState] = useState<MaybeNull<VaultActionState>>();
     const reset = () => setState(null);
 
-    const handleVaultLeave = useCallback(({ shareId }: VaultShareItem) => dispatch(shareLeaveIntent({ shareId })), []);
-    const handleTrashEmpty = useCallback(() => dispatch(emptyTrashIntent()), []);
+    const onVaultLeave = useCallback(({ shareId }: VaultShareItem) => dispatch(shareLeaveIntent({ shareId })), []);
+    const onTrashEmpty = useCallback(() => dispatch(emptyTrashIntent()), []);
+    const onVaultCreated = (selectedShareId: string) => setFilters({ selectedShareId });
+    const onVaultDeleted = () => setFilters({ selectedShareId: null });
 
     const actions = useMemo<VaultActionsContextValue>(
         () => ({
@@ -70,6 +72,17 @@ export const VaultActionsProvider: FC<VaultActionsProviderProps> = ({ onVaultCre
             leave: (vault) => setState({ view: 'leave', vault }),
             manage: (vault) => inviteContext.manageAccess(vault.shareId),
             moveItems: (vault) => setState({ view: 'move', vault }),
+            select: (selected) => {
+                switch (selected) {
+                    case 'all':
+                        return navigate(getLocalPath(), { filters: { selectedShareId: null, search: '' } });
+                    case 'trash':
+                        return navigate(getTrashRoute(), { filters: { selectedShareId: null, search: '' } });
+                    default: {
+                        return navigate(getLocalPath(), { filters: { selectedShareId: selected, search: '' } });
+                    }
+                }
+            },
             trashEmpty: () => setState({ view: 'trash-empty' }),
             trashRestore: () => dispatch(restoreTrashIntent()),
         }),
@@ -99,7 +112,7 @@ export const VaultActionsProvider: FC<VaultActionsProviderProps> = ({ onVaultCre
                             <ConfirmationModal
                                 open
                                 onClose={reset}
-                                onSubmit={pipe(() => handleVaultLeave(state.vault), reset)}
+                                onSubmit={pipe(() => onVaultLeave(state.vault), reset)}
                                 title={c('Title').t`Leave vault ?`}
                                 submitText={c('Action').t`Leave`}
                                 alertText={c('Warning')
@@ -111,7 +124,7 @@ export const VaultActionsProvider: FC<VaultActionsProviderProps> = ({ onVaultCre
                             <ConfirmationModal
                                 open
                                 onClose={reset}
-                                onSubmit={pipe(handleTrashEmpty, reset)}
+                                onSubmit={pipe(onTrashEmpty, reset)}
                                 title={c('Title').t`Permanently remove all items ?`}
                                 submitText={c('Action').t`Delete all`}
                                 alertText={c('Warning')

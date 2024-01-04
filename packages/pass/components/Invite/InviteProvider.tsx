@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
+import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { selectMostRecentInvite } from '@proton/pass/store/selectors/invites';
 import type { MaybeNull } from '@proton/pass/types';
 import type { Invite } from '@proton/pass/types/data/invites';
@@ -38,9 +39,9 @@ type InviteContextState =
     | ({ view: 'invite-new' } & VaultInviteCreateValues<true>)
     | { view: 'manage'; shareId: string };
 
-type InviteContextProps = { onVaultCreated?: (shareId: string) => void };
+export const InviteProvider: FC = ({ children }) => {
+    const { setFilters } = useNavigation();
 
-export const InviteProvider: FC<InviteContextProps> = ({ children, onVaultCreated }) => {
     const [state, setState] = useState<MaybeNull<InviteContextState>>(null);
     const [invite, setInvite] = useState<MaybeNull<Invite>>(null);
     const latestInvite = useSelector(selectMostRecentInvite);
@@ -95,7 +96,13 @@ export const InviteProvider: FC<InviteContextProps> = ({ children, onVaultCreate
                     case 'invite':
                         return <VaultInviteCreate withVaultCreation={false} {...state} />;
                     case 'invite-new':
-                        return <VaultInviteCreate withVaultCreation {...state} onVaultCreated={onVaultCreated} />;
+                        return (
+                            <VaultInviteCreate
+                                withVaultCreation
+                                {...state}
+                                onVaultCreated={(selectedShareId) => setFilters({ selectedShareId })}
+                            />
+                        );
                     case 'manage':
                         return <VaultAccessManager shareId={state.shareId} />;
                     default:
