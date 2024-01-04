@@ -9,7 +9,6 @@ import {
     RequiredCheckResponse,
     getCheckout,
     getDiscountText,
-    getWhatsIncluded,
 } from '@proton/shared/lib/helpers/checkout';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getHas2023OfferCoupon } from '@proton/shared/lib/helpers/subscription';
@@ -33,6 +32,7 @@ import StartDateCheckoutRow from '../../StartDateCheckoutRow';
 import { getTotalBillingText } from '../../helper';
 import { CheckoutModifiers } from '../useCheckoutModifiers';
 import CheckoutRow from './CheckoutRow';
+import { getWhatsIncluded } from './included';
 
 const PlanDescription = ({ list }: { list: Included[] }) => {
     return (
