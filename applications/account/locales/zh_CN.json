@@ -1253,12 +1253,6 @@
       "High speed streaming": [
         "高速看视频"
       ],
-      "Premium ${ appName }": [
-        "高级 ${ appName } 账户"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "高级 ${ MAIL_SHORT_APP_NAME } 与 ${ CALENDAR_SHORT_APP_NAME } 账户"
-      ],
       "Premium Password Manager": [
         "高级密码管理器"
       ]
@@ -4147,15 +4141,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "高级 ${ DRIVE_SHORT_APP_NAME } 账户"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "高级 ${ MAIL_SHORT_APP_NAME } 与 ${ CALENDAR_SHORT_APP_NAME } 账户"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "高级 ${ VPN_SHORT_APP_NAME } 账户"
-      ],
       "Up to 6 users": [
         "多达 6 位用户"
       ]
@@ -5090,17 +5075,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "您的日程中有部分内容我们不支持，这些日程将不会被导入。"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "检测到多余的重复密钥，请单独上传以获取更多信息。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "密钥 ${ fingerprint } 已上传"
-      ],
-      "Selected color:": [
-        "所选颜色"
       ]
     },
     "Info": {
@@ -7130,6 +7104,17 @@
         "您的账户是由 Mozilla 管理的，请联系 Mozilla 获取帮助。"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "检测到多余的重复密钥，请单独上传以获取更多信息。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "密钥 ${ fingerprint } 已上传"
+      ],
+      "Selected color:": [
+        "所选颜色"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "令下层文件夹的颜色与上层文件夹一致"
@@ -7930,9 +7915,6 @@
       "Font size": [
         "字号"
       ],
-      "From: ${ from }": [
-        "发件人：${ from }"
-      ],
       "From: ${ fromEmail }": [
         "发件人：${ fromEmail }"
       ],
@@ -8316,9 +8298,6 @@
       ],
       "Time zone": [
         "时区"
-      ],
-      "To: ${ to }": [
-        "收件人：${ to }"
       ],
       "To: ${ toEmail }": [
         "收件人：${ toEmail }"
@@ -10983,15 +10962,6 @@
       "Highest VPN speed": [
         "VPN 速度最快"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "高级 ${ MAIL_SHORT_APP_NAME } 与 ${ CALENDAR_SHORT_APP_NAME } 账户"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "高级 ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME } 与 ${ DRIVE_SHORT_APP_NAME } 账户"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "高级 ${ VPN_SHORT_APP_NAME } 账户"
-      ],
       "Premium early access": [
         "抢先体验高级功能"
       ],
@@ -11536,14 +11506,6 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "事件无法导出的详细信息"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "高级 ${ DRIVE_SHORT_APP_NAME } 账户"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "高级 ${ MAIL_SHORT_APP_NAME } 与 ${ CALENDAR_SHORT_APP_NAME } 账户"
       ]
     },
     "summer2023: Tooltip": {
