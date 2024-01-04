@@ -5,6 +5,7 @@ import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@prot
 import { getAllMembers } from '@proton/shared/lib/api/members';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
 import type { Member } from '@proton/shared/lib/interfaces';
+import { isAdmin } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
 import type { ModelState } from '../interface';
@@ -43,7 +44,7 @@ const slice = createSlice({
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
         builder.addCase(serverEvent, (state, action) => {
-            if (state.value && state.value.length > 0 && action.payload.User && !action.payload.User.Subscribed) {
+            if (state.value && state.value.length > 0 && action.payload.User && !isAdmin(action.payload.User)) {
                 // Do not get any members update when user becomes unsubscribed.
                 state.value = [];
                 return;

@@ -7,6 +7,7 @@ import { FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
 import { SubscriptionModel, Subscription as tsSubscription } from '@proton/shared/lib/interfaces';
 import formatSubscription from '@proton/shared/lib/subscription/format';
+import { isAdmin, isPaid } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
 import type { ModelState } from '../interface';
@@ -55,7 +56,7 @@ const slice = createSlice({
                 state.value &&
                 state.value !== (FREE_SUBSCRIPTION as unknown as SubscriptionModel) &&
                 action.payload.User &&
-                !action.payload.User.Subscribed
+                (!isPaid(action.payload.User) || !isAdmin(action.payload.User))
             ) {
                 // Do not get any subscription update when user becomes unsubscribed.
                 state.value = FREE_SUBSCRIPTION as unknown as SubscriptionModel;

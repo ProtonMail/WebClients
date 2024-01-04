@@ -6,6 +6,7 @@ import { getOrganization } from '@proton/shared/lib/api/organization';
 import { FREE_ORGANIZATION } from '@proton/shared/lib/constants';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
 import type { Organization } from '@proton/shared/lib/interfaces';
+import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
 import type { ModelState } from '../interface';
@@ -48,7 +49,7 @@ const slice = createSlice({
                 state.value &&
                 state.value !== FREE_ORGANIZATION &&
                 action.payload.User &&
-                !action.payload.User.Subscribed
+                !isPaid(action.payload.User)
             ) {
                 // Do not get any organization update when user becomes unsubscribed.
                 state.value = FREE_ORGANIZATION as Organization;
