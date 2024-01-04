@@ -14,6 +14,7 @@ import type {
     Organization,
     OutgoingAddressForwarding,
     PendingInvitation,
+    SSO,
     Subscription,
     User,
     UserSettings,
@@ -48,6 +49,7 @@ export interface EventLoop {
     OutgoingAddressForwardings?: EventItemUpdate<OutgoingAddressForwarding, 'OutgoingAddressForwarding'>[];
     Subscription?: Subscription & { UpcomingSubscription?: Subscription };
     Config?: ApiEnvironmentConfig;
+    SSO?: EventItemUpdate<SSO, 'SSO'>[];
     UsedSpace?: number;
     Refresh?: number;
 }

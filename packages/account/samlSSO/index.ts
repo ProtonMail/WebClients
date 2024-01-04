@@ -2,26 +2,25 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
-import { queryDomains } from '@proton/shared/lib/api/domains';
-import queryPages from '@proton/shared/lib/api/helpers/queryPages';
+import { getSAMLConfigs } from '@proton/shared/lib/api/samlSSO';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Domain } from '@proton/shared/lib/interfaces';
+import { SSO } from '@proton/shared/lib/interfaces';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
 import type { ModelState } from '../interface';
 import { UserState, userThunk } from '../user';
 
-const name = 'domains' as const;
+const name = 'sso' as const;
 
 interface State extends UserState {
-    [name]: ModelState<Domain[]>;
+    [name]: ModelState<SSO[]>;
 }
 
 type SliceState = State[typeof name];
 type Model = NonNullable<SliceState['value']>;
 
-export const selectDomains = (state: State) => state.domains;
+export const selectSamlSSO = (state: State) => state[name];
 
 const modelThunk = createAsyncModelThunk<Model, State, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ dispatch, extraArgument }) => {
@@ -29,18 +28,11 @@ const modelThunk = createAsyncModelThunk<Model, State, ProtonThunkArguments>(`${
         if (!isPaid(user)) {
             return [];
         }
-        return queryPages((page, pageSize) => {
-            return extraArgument.api(
-                queryDomains({
-                    Page: page,
-                    PageSize: pageSize,
-                })
-            );
-        }).then((pages) => {
-            return pages.flatMap(({ Domains }) => Domains);
+        return extraArgument.api<{ Configs: SSO[] }>(getSAMLConfigs()).then(({ Configs }) => {
+            return Configs;
         });
     },
-    previous: previousSelector(selectDomains),
+    previous: previousSelector(selectSamlSSO),
 });
 
 const initialState: SliceState = {
@@ -55,21 +47,21 @@ const slice = createSlice({
         handleAsyncModel(builder, modelThunk);
         builder.addCase(serverEvent, (state, action) => {
             if (state.value && state.value.length > 0 && action.payload.User && !isPaid(action.payload.User)) {
-                // Do not get any domain update when user becomes unsubscribed.
+                // Do not get any SSO update when user becomes unsubscribed.
                 state.value = [];
                 return;
             }
 
-            if (state.value && action.payload.Domains) {
+            if (state.value && action.payload.SSO) {
                 state.value = updateCollection({
                     model: state.value,
-                    events: action.payload.Domains,
-                    itemKey: 'Domain',
+                    events: action.payload.SSO,
+                    itemKey: 'SSO',
                 });
             }
         });
     },
 });
 
-export const domainsReducer = { [name]: slice.reducer };
-export const domainsThunk = modelThunk.thunk;
+export const samlReducer = { [name]: slice.reducer };
+export const samlSSOThunk = modelThunk.thunk;

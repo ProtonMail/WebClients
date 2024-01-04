@@ -22,3 +22,4 @@ export * from './authenticationService';
 export * from './eventLoop';
 export * from './interface';
 export * from './welcomeFlags';
+export * from './samlSSO';
