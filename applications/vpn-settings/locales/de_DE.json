@@ -3241,9 +3241,6 @@
       "MM/YY": [
         "MM/JJ"
       ],
-      "Multi-user support not enabled.": [
-        "Mehrbenutzerunterstützung nicht aktiviert."
-      ],
       "Must be between 3 and 20 characters long.": [
         "Muss zwischen 3 und 20 Zeichen lang sein."
       ],
@@ -3610,9 +3607,6 @@
       "to continue to ${ product }": [
         "um zu ${ product } zu gelangen."
       ],
-      "to continue to ${ toAppName }": [
-        "um zu ${ toAppName } zu gelangen."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
       ],
@@ -3672,9 +3666,6 @@
       ],
       "Unverified email address.": [
         "Unbestätigte E-Mail-Adresse"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Bis zu ${ FAMILY_MAX_USERS } Benutzer"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
@@ -4463,17 +4454,8 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }-Willkommens-E-Mails"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "${ DRIVE_APP_NAME }-Produktaktualisierungen"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "${ MAIL_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME } neue Funktionen"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "${ PASS_APP_NAME }-Produktaktualisierungen"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "${ VPN_APP_NAME }-Produktaktualisierungen"
       ]
     },
     "Label on payment method": {
@@ -4732,10 +4714,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } Kalender",
-        "${ maximumNumberOfCalendars } Kalender"
-      ],
       "${ n } calendar": [
         "${ n } Kalender",
         "${ n } Kalender"
@@ -5059,12 +5037,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Volumen/Bandbreite unbegrenzt"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Bis zu ${ FAMILY_MAX_USERS } Benutzer"
-      ],
-      "Up to ${ n } users": [
-        "Bis zu ${ n } Benutzer"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Bis zu ${ totalStorageSize } Speicherplatz"
@@ -5532,11 +5504,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Willkommen bei ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Willkommen bei ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Willkommen bei ${ appName }"
       ]
     },
     "Option": {
@@ -6489,14 +6458,6 @@
         "${ ipAddresses } dedizierter Server",
         "${ ipAddresses } dedizierte Server"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } Hochgeschwindigkeits-VPN-Verbindung",
-        "${ maxVpn } Hochgeschwindigkeits-VPN-Verbindungen"
-      ],
-      "${ n } calendar": [
-        "${ n } Kalender",
-        "${ n } Kalender"
-      ],
       "${ n } calendar per user": [
         "${ n } Kalender je Nutzer",
         "${ n } Kalender je Nutzer"
@@ -7022,9 +6983,6 @@
       "Delete": [
         "Löschen"
       ],
-      "Delete ${ email }": [
-        "${ email } löschen"
-      ],
       "Delete account": [
         "Konto löschen"
       ],
@@ -7296,14 +7254,6 @@
       ],
       "Subscription": [
         "Abonnement"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "${ localSuccessfullyCreatedUsers.length } Benutzerkonto erfolgreich erstellt",
-        "${ localSuccessfullyCreatedUsers.length } Benutzerkonten erfolgreich erstellt"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "${ successfullyCreatedUsers.length } Benutzerkonto erfolgreich erstellt",
-        "${ successfullyCreatedUsers.length } Benutzerkonten erfolgreich erstellt"
       ],
       "Summary": [
         "Zusammenfassung"

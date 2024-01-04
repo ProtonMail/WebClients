@@ -3211,9 +3211,6 @@
       "MM/YY": [
         "MM/YY"
       ],
-      "Multi-user support not enabled.": [
-        "멀티 유저 지원이 활성화되지 않았습니다."
-      ],
       "Must be between 3 and 20 characters long.": [
         "3~20글자 사이여야 합니다."
       ],
@@ -3577,9 +3574,6 @@
       "to continue to ${ product }": [
         "${ product } 로 진행하기 위해서"
       ],
-      "to continue to ${ toAppName }": [
-        "${ toAppName }을(를) 계속하려면 계정이 필요합니다."
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "스팸 및 남용을 방지하려면 사람임을 확인하세요."
       ],
@@ -3639,9 +3633,6 @@
       ],
       "Unverified email address.": [
         "확인되지 않은 이메일 주소."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "최대 ${ FAMILY_MAX_USERS }명 구성원"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
@@ -4422,17 +4413,8 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } 환영 이메일"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "${ DRIVE_APP_NAME } 제품 업데이트"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "${ MAIL_APP_NAME } 및 ${ CALENDAR_SHORT_APP_NAME } 새 기능"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "${ PASS_APP_NAME } 제품 업데이트"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "${ VPN_APP_NAME } 제품 업데이트"
       ]
     },
     "Label on payment method": {
@@ -4690,9 +4672,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendars": [
-        "${ maximumNumberOfCalendars } 캘린더"
-      ],
       "${ n } calendars": [
         "${ n } 캘린더"
       ],
@@ -4998,12 +4977,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "무제한 볼륨/대역폭"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "최대 ${ FAMILY_MAX_USERS }명 구성원"
-      ],
-      "Up to ${ n } users": [
-        "사용자 최대 ${ n }명"
       ],
       "Up to ${ totalStorageSize } storage": [
         "최대 ${ totalStorageSize } 스토리지"
@@ -5467,11 +5440,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "${ product }에 오신 것을 환영합니다"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "${ VPN_APP_NAME }에 오신 것을 환영합니다"
+      "Welcome to ${ appName }": [
+        "${ appName }에 오신 것을 환영합니다"
       ]
     },
     "Option": {
@@ -6420,12 +6390,6 @@
       "${ ipAddresses } dedicated servers": [
         "${ ipAddresses }개 전용 서버"
       ],
-      "${ maxVpn } high-speed VPN connections": [
-        "${ maxVpn } 빠른 속도의 VPN 연결"
-      ],
-      "${ n } calendars": [
-        "${ n } 캘린더"
-      ],
       "${ n } calendars per user": [
         "사용자 당 ${ n } 캘린더"
       ],
@@ -6936,9 +6900,6 @@
       "Delete": [
         "삭제"
       ],
-      "Delete ${ email }": [
-        "${ email } 삭제"
-      ],
       "Delete account": [
         "계정 삭제"
       ],
@@ -7208,12 +7169,6 @@
       ],
       "Subscription": [
         "구독"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user accounts": [
-        "성공적으로 ${ localSuccessfullyCreatedUsers.length } 사용자 계정이 생성되었습니다"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user accounts": [
-        "성공적으로 ${ successfullyCreatedUsers.length } 사용자 계정이 생성되었습니다"
       ],
       "Summary": [
         "요약"
