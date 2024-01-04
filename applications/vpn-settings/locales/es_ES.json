@@ -708,12 +708,6 @@
       "High speed streaming": [
         "Transmisión de alta velocidad"
       ],
-      "Premium ${ appName }": [
-        "${ appName } premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
       "Premium Password Manager": [
         "Administrador de contraseñas premium"
       ]
@@ -2253,15 +2247,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } premium"
-      ],
       "Up to 6 users": [
         "Hasta 6 usuarios"
       ]
@@ -6321,14 +6306,14 @@
       "Highest VPN speed": [
         "VPN de máxima velocidad"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
+      "Premium ${ appName1 }": [
+        "${ appName1 } premium"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } y ${ DRIVE_SHORT_APP_NAME } premium"
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "${ appName1 } y ${ appName2 } premium"
       ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } premium"
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "${ appName1 }, ${ appName2 } y ${ appName3 } premium"
       ],
       "Premium early access": [
         "Acceso anticipado premium"
@@ -6505,7 +6490,7 @@
         "Facturación mensual"
       ],
       "Billed yearly": [
-        "Facturado anualmente"
+        "Facturado cada año"
       ]
     },
     "Subscription attribute": {
@@ -6791,14 +6776,6 @@
     "Suffix for price": {
       "per month": [
         "por mes"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } y ${ CALENDAR_SHORT_APP_NAME } premium"
       ]
     },
     "summer2023: Tooltip": {
@@ -7573,7 +7550,7 @@
     },
     "vpn_2step: billing": {
       "Billed monthly": [
-        "Facturado mensualmente"
+        "Facturado cada mes"
       ]
     },
     "vpn_2step: discount": {
@@ -7593,7 +7570,7 @@
         "Obtén ${ discount } de descuento con una suscripción de ${ billingCycle }."
       ],
       "monthly": [
-        "mensualmente"
+        "cada mes"
       ]
     },
     "vpn_2step: feature": {
