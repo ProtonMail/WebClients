@@ -41,6 +41,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import percentage from '@proton/utils/percentage';
 
 import { Icon, IconName, Meter, Price, StripedItem, StripedList } from '../../../../components';
+import { getNCalendarsText } from '../../features/calendar';
 import { PlanCardFeatureDefinition } from '../../features/interface';
 import {
     FREE_PASS_ALIASES,
@@ -102,10 +103,7 @@ const SubscriptionItems = ({ items }: SubscriptionListProps) => {
                             className={clsx(status === 'coming-soon' && 'color-weak')}
                             left={<Icon className={clsx(included && 'color-success')} size={20} name={icon} />}
                         >
-                            <div
-                                className="flex justify-space-between items-baseline"
-                                data-testid={dataTestId}
-                            >
+                            <div className="flex justify-space-between items-baseline" data-testid={dataTestId}>
                                 {text}
                                 {actionElement}
                             </div>
@@ -471,8 +469,7 @@ const SubscriptionPanel = ({
                             n
                         );
                     }
-                    const n = user.hasPaidMail ? MAX_CALENDARS_PAID : MAX_CALENDARS_FREE;
-                    return c('Subscription attribute').ngettext(msgid`${n} calendar`, `${n} calendars`, n);
+                    return getNCalendarsText(user.hasPaidMail ? MAX_CALENDARS_PAID : MAX_CALENDARS_FREE);
                 })(),
             },
             {

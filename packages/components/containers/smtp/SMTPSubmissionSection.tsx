@@ -45,6 +45,7 @@ import { isOrganizationB2B } from '@proton/shared/lib/organization/helper';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { getDeleteText } from '../general/helper';
 import SMTPTokenModal from './SMTPTokenModal';
 
 interface SmtpTokens {
@@ -242,7 +243,7 @@ const SMTPSubmissionSection = () => {
             </Table>
             {renderConfirmModal ? (
                 <Prompt
-                    title={c('Title').t`Delete ${tokenNameToRemove}?`}
+                    title={getDeleteText(tokenNameToRemove)}
                     buttons={[
                         <Button
                             color="danger"

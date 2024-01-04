@@ -13,6 +13,7 @@ import { useApi, useEventManager, useNotifications, useUserSettings } from '../.
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import { getAutomaticText } from './helper';
 
 const TimeSection = () => {
     const api = useApi();
@@ -54,7 +55,7 @@ const TimeSection = () => {
                 >
                     {[
                         {
-                            title: c('Option').t`Automatic (${defaultFormat})`,
+                            title: getAutomaticText(defaultFormat),
                             value: SETTINGS_TIME_FORMAT.LOCALE_DEFAULT,
                         },
                         ...timeFormats,

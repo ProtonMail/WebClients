@@ -2,6 +2,7 @@ import { PropsWithChildren } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { getHighSpeedVPNConnectionsText } from '@proton/components/containers/payments/features/vpn';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
@@ -56,11 +57,7 @@ const UsagePanel = ({ addresses, calendars, organization, user, children }: Prop
         {
             icon: 'brand-proton-vpn',
             text: user.hasPaidVpn
-                ? c('Subscription attribute').ngettext(
-                      msgid`${maxVpn} high-speed VPN connection`,
-                      `${maxVpn} high-speed VPN connections`,
-                      maxVpn
-                  )
+                ? getHighSpeedVPNConnectionsText(maxVpn)
                 : c('Subscription attribute').t`1 VPN connection`,
         },
     ];
