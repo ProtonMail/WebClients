@@ -19,6 +19,10 @@ export interface EmailSubscription {
     tooltip?: string;
 }
 
+const getProductUpdatesString = (app: string) => {
+    return c('Label for news').t`${app} product updates`;
+};
+
 export const getEmailSubscriptions: () => EmailSubscription[] = () => [
     {
         id: 'announcements',
@@ -79,19 +83,19 @@ export const getEmailSubscriptions: () => EmailSubscription[] = () => [
     {
         id: 'news_product_drive',
         flag: NEWSLETTER_SUBSCRIPTIONS_BITS.DRIVE_NEWS,
-        title: c('Label for news').t`${DRIVE_APP_NAME} product updates`,
+        title: getProductUpdatesString(DRIVE_APP_NAME),
         frequency: c('Frequency of news').t`(4-6 emails per year)`,
     },
     {
         id: 'news_product_pass',
         flag: NEWSLETTER_SUBSCRIPTIONS_BITS.PASS_NEWS,
-        title: c('Label for news').t`${PASS_APP_NAME} product updates`,
+        title: getProductUpdatesString(PASS_APP_NAME),
         frequency: c('Frequency of news').t`(4-6 emails per year)`,
     },
     {
         id: 'news_product_vpn',
         flag: NEWSLETTER_SUBSCRIPTIONS_BITS.VPN_NEWS,
-        title: c('Label for news').t`${VPN_APP_NAME} product updates`,
+        title: getProductUpdatesString(VPN_APP_NAME),
         frequency: c('Frequency of news').t`(4-6 emails per year)`,
     },
 ];
