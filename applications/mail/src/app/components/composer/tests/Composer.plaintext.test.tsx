@@ -72,14 +72,14 @@ describe('Composer switch plaintext <-> html', () => {
 
         await findByTestId('rooster-iframe');
 
-        await waitForSpyCall(mockSetContent);
+        await waitForSpyCall({ spy: mockSetContent });
 
         expect(mockSetContent).toHaveBeenCalledWith(
             `<div style="font-family: Arial, sans-serif; font-size: 14px;">${content}</div>`
         );
 
         // Wait for auto save
-        await waitForSpyCall(saveSpy);
+        await waitForSpyCall({ spy: saveSpy });
     });
 
     it('should switch from html to plaintext content without loosing content', async () => {
@@ -114,6 +114,6 @@ describe('Composer switch plaintext <-> html', () => {
         expect(textarea.value).toBe('content line 1\ncontent line 2');
 
         // Wait for auto save
-        await waitForSpyCall(saveSpy);
+        await waitForSpyCall({ spy: saveSpy });
     });
 });

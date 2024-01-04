@@ -1,4 +1,4 @@
-import { fireEvent, getByTestId, waitFor } from '@testing-library/react';
+import { fireEvent, getByTestId } from '@testing-library/react';
 import { act } from '@testing-library/react';
 
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
@@ -14,16 +14,12 @@ import {
     clearAll,
     createDocument,
     generateKeys,
+    waitForSpyCall
 } from '../../../helpers/test/helper';
 import { store } from '../../../logic/store';
 import { AddressID, ID, fromAddress, prepareMessage, renderComposer, toAddress } from './Composer.test.helpers';
 
 jest.setTimeout(20000);
-
-/**
- * Those tests are slow, I'm sorry for that
- * But I found no way of making jest fake timers works (at least with the composer)
- */
 
 describe('Composer autosave', () => {
     let fromKeys: GeneratedKey;
@@ -92,14 +88,6 @@ describe('Composer autosave', () => {
         return { ...renderResult, createSpy, updateSpy, sendSpy, createResolve, updateResolve, sendResolve };
     };
 
-    const waitForSpy = (spy: jest.Mock<Promise<unknown>, []>) =>
-        waitFor(
-            () => {
-                expect(spy).toHaveBeenCalled();
-            },
-            { timeout: 10000 }
-        );
-
     it('should wait 2s before saving a change', async () => {
         const { createSpy, container } = await setup();
 
@@ -108,7 +96,7 @@ describe('Composer autosave', () => {
             jest.advanceTimersByTime(1500);
             expect(createSpy).not.toHaveBeenCalled();
             jest.advanceTimersByTime(1500);
-            await waitForSpy(createSpy);
+            await waitForSpyCall({ spy: createSpy, disableFakeTimers: true });
         });
     });
 
@@ -122,7 +110,7 @@ describe('Composer autosave', () => {
             jest.advanceTimersByTime(1500);
             expect(createSpy).not.toHaveBeenCalled();
             jest.advanceTimersByTime(1500);
-            await waitForSpy(createSpy);
+            await waitForSpyCall({ spy: createSpy, disableFakeTimers: true });
         });
     });
 
@@ -134,7 +122,7 @@ describe('Composer autosave', () => {
             jest.advanceTimersByTime(1500);
             expect(createSpy).not.toHaveBeenCalled();
             jest.advanceTimersByTime(1500);
-            await waitForSpy(createSpy);
+            await waitForSpyCall({ spy: createSpy, disableFakeTimers: true });
             triggerRoosterInput(container);
             jest.advanceTimersByTime(1500);
             expect(updateSpy).not.toHaveBeenCalled();
@@ -144,13 +132,11 @@ describe('Composer autosave', () => {
             jest.advanceTimersByTime(1500);
             expect(updateSpy).not.toHaveBeenCalled();
             jest.advanceTimersByTime(1500);
-            await waitForSpy(updateSpy);
+            await waitForSpyCall({ spy: updateSpy, disableFakeTimers: true });
         });
     });
 
     it('should wait previous save before sending', async () => {
-        jest.useFakeTimers();
-
         const { createSpy, createResolve, sendSpy, container, ...renderResult } = await setup(false);
 
         await act(async () => {
@@ -159,10 +145,10 @@ describe('Composer autosave', () => {
             const sendButton = await renderResult.findByTestId('composer:send-button');
             fireEvent.click(sendButton);
             jest.advanceTimersByTime(1500);
-            await waitForSpy(createSpy);
+            await waitForSpyCall({ spy: createSpy, disableFakeTimers: true });
             expect(sendSpy).not.toHaveBeenCalled();
             createResolve({ Message: { ID, Attachments: [] } });
-            await waitForSpy(sendSpy);
+            await waitForSpyCall({ spy: sendSpy, disableFakeTimers: true });
         });
     });
 });

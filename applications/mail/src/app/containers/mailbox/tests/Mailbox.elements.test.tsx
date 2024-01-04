@@ -352,7 +352,7 @@ describe('Mailbox element list', () => {
                 ],
             });
 
-            await waitForSpyCall(labelRequestSpy);
+            await waitForSpyCall({ spy: labelRequestSpy });
 
             expect(getHistory().location.hash).toBe('');
         });
