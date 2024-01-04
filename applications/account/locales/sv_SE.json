@@ -5066,6 +5066,22 @@
         "stjärnmärkt"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "e-postmeddelandet skickades ${ label }"
+      ],
+      "with attachments": [
+        "med bilagor"
+      ],
+      "without attachments": [
+        "utan bilagor"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "e-postmeddelandet skickades ${ label }"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Lägg till ett anpassat filter för att automatiskt utföra vissa åtgärder som märkning eller arkivering av meddelanden."
@@ -7408,9 +7424,6 @@
       "to continue to ${ product }": [
         "för att fortsätta till ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "för att fortsätta till ${ toAppName }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "För att kontinuerligt förbättra våra tjänster samlar vi ibland in data för att övervaka att våra applikationer fungerar korrekt. Denna information delas inte med några tredjepartstjänster."
       ],
@@ -7509,9 +7522,6 @@
       ],
       "Unverified email address.": [
         "Overifierad e-postadress."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Upp till ${ FAMILY_MAX_USERS } användare"
       ],
       "Update recovery file": [
         "Uppdatera återställningsfil"
@@ -9159,18 +9169,6 @@
       "System information": [
         "Systeminformation"
       ],
-      "The email was sent ${ attachment }": [
-        "E-postmeddelandet skickades ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "e-postmeddelandet skickades ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "E-postmeddelandet skickades ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "e-postmeddelandet skickades ${ label }"
-      ],
       "Then": [
         "Sedan"
       ],
@@ -9243,17 +9241,8 @@
       "With attachment": [
         "Med bilagor"
       ],
-      "with attachments": [
-        "med bilagor"
-      ],
       "Without attachment": [
         "Utan bilagor"
-      ],
-      "without attachment": [
-        "utan bilagor"
-      ],
-      "without attachments": [
-        "utan bilagor"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jag vill permanent ta bort detta konto och alla dess data."
@@ -9314,6 +9303,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "Produktuppdateringar för ${ app }"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME } meddelanden om beta-versioner"
       ],
@@ -9338,17 +9330,8 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }-välkomstmeddelande"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "Produktuppdateringar för ${ DRIVE_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "Nya funktioner för ${ MAIL_APP_NAME } och ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "Produktuppdateringar för ${ PASS_APP_NAME }"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "Produktuppdateringar för ${ VPN_APP_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -10002,14 +9985,8 @@
       "Get ${ BRAND_NAME } for free": [
         "Skaffa ${ BRAND_NAME } gratis"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "Skaffa ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "Skaffa ${ planName }"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "Skaffa ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "Jag förstår"
@@ -10028,10 +10005,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } kalender",
-        "${ maximumNumberOfCalendars } kalendrar"
-      ],
       "${ n } calendar": [
         "${ n } kalender",
         "${ n } kalendrar"
@@ -10356,10 +10329,8 @@
       "Unlimited volume/bandwidth": [
         "Obegränsad bandbredd"
       ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Upp till ${ FAMILY_MAX_USERS } användare"
-      ],
-      "Up to ${ n } users": [
+      "Up to ${ n } user": [
+        "Upp till ${ n } användare",
         "Upp till ${ n } användare"
       ],
       "Up to ${ totalStorageSize } storage": [
@@ -10988,11 +10959,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Välkommen till ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Välkommen till ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Välkommen till ${ appName }"
       ]
     },
     "Option": {
@@ -11101,11 +11069,8 @@
       "Auto": [
         "Auto"
       ],
-      "Automatic (${ defaultDay })": [
-        "Automatiskt (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "Automatiskt (${ defaultFormat })"
+      "Automatic (${ value })": [
+        "Automatiskt (${ value })"
       ],
       "Country configs": [
         "Landskonfigurationer"
@@ -12699,14 +12664,6 @@
         "${ ipAddresses } dedikerad server",
         "${ ipAddresses } dedikerade servrar"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } höghastighets VPN-anslutning",
-        "${ maxVpn } höghastighets VPN-anslutningar"
-      ],
-      "${ n } calendar": [
-        "${ n } kalender",
-        "${ n } kalendrar"
-      ],
       "${ n } calendar per user": [
         "${ n } kalender per användare",
         "${ n } kalendrar per användare"
@@ -13539,14 +13496,8 @@
       "Decrypt key": [
         "Avkryptera nyckel"
       ],
-      "Delete ${ domain.DomainName }": [
-        "Ta bort ${ domain.DomainName }"
-      ],
-      "Delete ${ email }": [
-        "Ta bort ${ email }"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "Ta bort ${ tokenNameToRemove }?"
+      "Delete ${ value }": [
+        "Ta bort ${ value }"
       ],
       "Delete account": [
         "Ta bort konto"
@@ -14079,13 +14030,9 @@
       "Success": [
         "Lyckades"
       ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "${ localSuccessfullyCreatedUsers.length } användarkonto skapades",
-        "${ localSuccessfullyCreatedUsers.length } användarkonton skapades"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "${ successfullyCreatedUsers.length } användarkonto skapades",
-        "${ successfullyCreatedUsers.length } användarkonton skapades"
+      "Successfully created ${ n } user account": [
+        "${ n } användarkonto skapades",
+        "${ n } användarkonton skapades"
       ],
       "Summary": [
         "Sammanfattning"
