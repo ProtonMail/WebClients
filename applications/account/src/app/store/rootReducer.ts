@@ -8,6 +8,7 @@ import {
     paymentMethodsReducer,
     plansReducer,
     protonDomainsReducer,
+    samlReducer,
 } from '@proton/account';
 import { calendarSettingsReducer, calendarsReducer, holidaysDirectoryReducer } from '@proton/calendar';
 import { filtersReducer, incomingAddressForwardingsReducer, outgoingAddressForwardingsReducer } from '@proton/mail';
@@ -27,5 +28,6 @@ export const rootReducer = combineReducers({
     ...calendarSettingsReducer,
     ...calendarsReducer,
     ...holidaysDirectoryReducer,
+    ...samlReducer,
     inactiveKeys: inactiveKeysReducer,
 });
