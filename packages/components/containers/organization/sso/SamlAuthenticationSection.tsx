@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import useSAMLConfigs from '@proton/components/hooks/useSAMLConfigs';
+import { useSamlSSO } from '@proton/components/hooks/useSAMLConfigs';
 import { Domain, SSO } from '@proton/shared/lib/interfaces';
 
 import { Info, InputFieldTwo, Loader, ModalStateProps, useModalState } from '../../../components';
@@ -93,13 +93,13 @@ const ConfigureSamlContent = ({
 };
 
 const SamlAuthenticationSection = () => {
-    const [customDomains, loadingCustomDomains] = useCustomDomains();
-    const [ssoConfigs, loadingSSOConfigs] = useSAMLConfigs();
+    const [customDomains] = useCustomDomains();
+    const [ssoConfigs] = useSamlSSO();
 
     const [setupSSODomainModalProps, setSetupSSODomainModalOpen, renderSetupSSODomainModal] = useModalState();
     const [configureSamlModalProps, setConfigureSamlModalOpen, renderConfigureSamlModal] = useModalState();
 
-    if (loadingCustomDomains || loadingSSOConfigs) {
+    if (!customDomains || !ssoConfigs) {
         return <Loader />;
     }
 
