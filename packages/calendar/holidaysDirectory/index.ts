@@ -7,17 +7,17 @@ import { getDirectoryCalendars } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import type { HolidaysDirectoryCalendar } from '@proton/shared/lib/interfaces/calendar';
 
-export interface HolidayCalendarsState extends UserSettingsState {
-    holidayCalendars: ModelState<HolidaysDirectoryCalendar[]>;
+const name = 'holidaysDirectory' as const;
+export interface HolidaysDirectoryState extends UserSettingsState {
+    [name]: ModelState<HolidaysDirectoryCalendar[]>;
 }
 
-const name = 'holidayCalendars' as const;
-type SliceState = HolidayCalendarsState[typeof name];
+type SliceState = HolidaysDirectoryState[typeof name];
 type Model = NonNullable<SliceState['value']>;
 
-export const selectHolidayCalendars = (state: HolidayCalendarsState) => state[name];
+export const selectHolidaysDirectory = (state: HolidaysDirectoryState) => state[name];
 
-const modelThunk = createAsyncModelThunk<Model, HolidayCalendarsState, ProtonThunkArguments>(`${name}/fetch`, {
+const modelThunk = createAsyncModelThunk<Model, HolidaysDirectoryState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: ({ extraArgument }) => {
         return extraArgument
             .api<{ Calendars: HolidaysDirectoryCalendar[] }>(getDirectoryCalendars(CALENDAR_TYPE.HOLIDAYS))
@@ -25,7 +25,7 @@ const modelThunk = createAsyncModelThunk<Model, HolidayCalendarsState, ProtonThu
                 return Calendars;
             });
     },
-    previous: previousSelector(selectHolidayCalendars),
+    previous: previousSelector(selectHolidaysDirectory),
 });
 
 const initialState: SliceState = {
@@ -41,5 +41,5 @@ const slice = createSlice({
     },
 });
 
-export const holidayCalendarsReducer = { [name]: slice.reducer };
-export const holidayCalendarsThunk = modelThunk.thunk;
+export const holidaysDirectoryReducer = { [name]: slice.reducer };
+export const holidaysDirectoryThunk = modelThunk.thunk;
