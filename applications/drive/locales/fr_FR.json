@@ -845,9 +845,6 @@
       "High speed streaming": [
         "Streaming ultra-rapide"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME } version premium"
-      ],
       "Premium Password Manager": [
         "Gestionnaire de mots de passe version premium"
       ]
@@ -2076,7 +2073,7 @@
     },
     "eof2023: Tooltip": {
       "Includes version history in ${ DRIVE_SHORT_APP_NAME }, access to thousands of high-speed ${ VPN_SHORT_APP_NAME } servers, sharing in ${ PASS_SHORT_APP_NAME } and more.": [
-        "Comprend la fonction Historique des versions pour ${ DRIVE_SHORT_APP_NAME }, un accès à des milliers de serveurs ultrarapides pour ${ VPN_SHORT_APP_NAME }, la fonction de partage dans ${ PASS_SHORT_APP_NAME } et bien plus encore."
+        "Comprend l'historique des versions pour ${ DRIVE_SHORT_APP_NAME }, l'accès à des milliers de serveurs ultra-rapides pour ${ VPN_SHORT_APP_NAME }, le partage dans ${ PASS_SHORT_APP_NAME } et bien d'autres fonctionnalités."
       ]
     },
     "eoy2023: Deal details": {
@@ -2395,7 +2392,7 @@
         "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes : _ . -"
       ],
       "Unexpected error, we can't import the contacts": [
-        "Une erreur inattendue s'est produite. Vos contacts n'ont pas pu être importés."
+        "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -2441,6 +2438,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Une erreur inattendue s'est produite. L'importation doit être relancée."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_EVENTS } événement.",
+        "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_EVENTS } événements."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Le format de votre fichier ${ formattedFilename } n'est pas valide, il ne peut pas être importé."
@@ -2726,15 +2727,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } version premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME } version premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } version premium"
-      ],
       "Up to 6 users": [
         "Jusqu'à 6 utilisateurs"
       ]
@@ -4045,7 +4037,7 @@
         "Sélectionner tous les éléments pour"
       ],
       "Select an uploaded file or folder and create a link to it.": [
-        "Sélectionnez un fichier ou un dossier chargé et créez un lien vers celui-ci."
+        "Sélectionnez un fichier ou un dossier importé et créez un lien permettant d'y accéder."
       ],
       "Select item": [
         "Sélectionner un élément"
@@ -4328,7 +4320,7 @@
         "sera restauré dans sa version datée du ${ formattedRevisionDate }. Toutes les autres versions seront conservées."
       ],
       "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
-        "Grâce à ${ DRIVE_APP_NAME }, vos données sont protégées par un chiffrement de bout en bout."
+        "Grâce à ${ DRIVE_APP_NAME }, vos données sont protégées par le chiffrement de bout en bout."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voulez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
@@ -4714,9 +4706,6 @@
       "Folder name": [
         "Nom du dossier"
       ],
-      "From: ${ from }": [
-        "De : ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "De : ${ fromEmail }"
       ],
@@ -4915,9 +4904,6 @@
       "This will permanently delete all files in your locked drive.": [
         "Cela supprimera définitivement tous les fichiers dans votre disque verrouillé."
       ],
-      "To: ${ to }": [
-        "À : ${ to }"
-      ],
       "To: ${ toEmail }": [
         "À : ${ toEmail }"
       ],
@@ -4991,6 +4977,14 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } a été créé."
+      ]
+    },
+    "Label; import email": {
+      "From: ${ from }": [
+        "De : ${ from }"
+      ],
+      "To: ${ to }": [
+        "À : ${ to }"
       ]
     },
     "Landmarks": {
@@ -5916,14 +5910,14 @@
       "Highest VPN speed": [
         "Vitesse VPN maximale"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME } version premium"
+      "Premium ${ appName1 }": [
+        "${ appName1 } version premium"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et ${ DRIVE_SHORT_APP_NAME } version premium"
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "${ appName1 } et ${ appName2 } version premium"
       ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } version premium"
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "${ appName1 }, ${ appName2 } et ${ appName3 } version premium"
       ],
       "Premium early access": [
         "Accès premium en avant-première"
@@ -6151,14 +6145,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Votre commentaire a été envoyé."
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } version premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME } version premium"
       ]
     },
     "summer2023: Tooltip": {

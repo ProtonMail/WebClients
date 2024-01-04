@@ -859,9 +859,6 @@
       "High speed streaming": [
         "Szybki streaming"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } w wersji premium"
-      ],
       "Premium Password Manager": [
         "Menedżer haseł w wersji premium"
       ]
@@ -2760,15 +2757,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } w wersji premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } w wersji premium"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } w wersji premium"
-      ],
       "Up to 6 users": [
         "Do 6 użytkowników"
       ]
@@ -4860,9 +4848,6 @@
       "Folder name": [
         "Nazwa folderu"
       ],
-      "From: ${ from }": [
-        "Od: ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
@@ -5061,9 +5046,6 @@
       "This will permanently delete all files in your locked drive.": [
         "Spowoduje to trwałe usunięcie wszystkich plików w zablokowanym dysku."
       ],
-      "To: ${ to }": [
-        "Do: ${ to }"
-      ],
       "To: ${ toEmail }": [
         "Do: ${ toEmail }"
       ],
@@ -5137,6 +5119,14 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "Utworzono \"${ Label.Name }\""
+      ]
+    },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Od: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Do: ${ to }"
       ]
     },
     "Landmarks": {
@@ -6150,14 +6140,14 @@
       "Highest VPN speed": [
         "Najwyższa prędkość VPN"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } w wersji premium"
+      "Premium ${ appName1 }": [
+        "${ appName1 } w wersji premium"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME } w wersji premium"
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "${ appName1 } i ${ appName2 } w wersji premium"
       ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "${ VPN_SHORT_APP_NAME } w wersji premium"
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "${ appName1 }, ${ appName2 } i ${ appName3 } w wersji premium"
       ],
       "Premium early access": [
         "Wcześniejszy dostęp premium"
@@ -6395,14 +6385,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Opinia została wysłana"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "${ DRIVE_SHORT_APP_NAME } w wersji premium"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } w wersji premium"
       ]
     },
     "summer2023: Tooltip": {
