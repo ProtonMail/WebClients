@@ -713,11 +713,11 @@
       "Not saved": [
         "Nicht gespeichert"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } öffnen"
@@ -1363,9 +1363,6 @@
       ],
       "High speed streaming": [
         "Hochgeschwindigkeits-Streaming"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
       ],
       "Premium Password Manager": [
         "Premium-Passwortmanager"
@@ -4000,15 +3997,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium-${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium-${ VPN_SHORT_APP_NAME }"
-      ],
       "Up to 6 users": [
         "Bis zu 6 Benutzer"
       ]
@@ -5110,6 +5098,9 @@
       ],
       "Clear data": [
         "Daten bereinigen"
+      ],
+      "Clear selection": [
+        "Auswahl aufheben"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Durch das Löschen der Browserdaten wird auch das Suchen von Nachrichteninhalten auf diesem Gerät deaktiviert. Alle Nachrichten müssen dann erneut heruntergeladen werden, um sie durchsuchen zu können."
@@ -6717,13 +6708,10 @@
         "Häufigkeit"
       ],
       "From (senders in message print header)": [
-        "Von (Absender in der Kopfzeile der Nachricht)"
+        "Von (Absender im Header der E-Mail)"
       ],
       "From:": [
         "Von:"
-      ],
-      "From: ${ from }": [
-        "Von: ${ from }"
       ],
       "From: ${ fromEmail }": [
         "Von: ${ fromEmail }"
@@ -6958,9 +6946,6 @@
       ],
       "To:": [
         "An:"
-      ],
-      "To: ${ to }": [
-        "An: ${ to }"
       ],
       "To: ${ toEmail }": [
         "An: ${ toEmail }"
@@ -8414,15 +8399,6 @@
       "Highest VPN speed": [
         "Höchste VPN-Geschwindigkeit"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium-${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium-${ VPN_SHORT_APP_NAME }"
-      ],
       "Premium early access": [
         "Premium-frühzeitiger Zugang"
       ],
@@ -8890,14 +8866,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Feedback gesendet"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium-${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium-${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {
