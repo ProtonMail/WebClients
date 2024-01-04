@@ -1,23 +1,21 @@
-import { type VFC, useEffect, useMemo, useState } from 'react';
+import { type VFC, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useNavigation } from '@proton/pass/components/Core/NavigationProvider';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { getItemRoute, getLocalPath, maybeTrash, preserveSearch } from '@proton/pass/components/Core/routing';
 import { useInviteContext } from '@proton/pass/components/Invite/InviteProvider';
 import { VaultInviteFromItemModal } from '@proton/pass/components/Invite/VaultInviteFromItemModal';
 import { AliasView } from '@proton/pass/components/Item/Alias/Alias.view';
 import { CreditCardView } from '@proton/pass/components/Item/CreditCard/CreditCard.view';
 import { LoginView } from '@proton/pass/components/Item/Login/Login.view';
 import { NoteView } from '@proton/pass/components/Item/Note/Note.view';
+import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { getItemRoute, getLocalPath, maybeTrash, preserveSearch } from '@proton/pass/components/Navigation/routing';
 import { VaultSelect, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { getItemActionId } from '@proton/pass/lib/items/item.utils';
-import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import {
     itemCreationDismiss,
     itemCreationIntent,
@@ -38,7 +36,6 @@ import {
     selectWritableVaultsWithItemsCount,
 } from '@proton/pass/store/selectors';
 import type { ItemType, SelectedItem, ShareType } from '@proton/pass/types';
-import { TelemetryEventName, TelemetryItemType } from '@proton/pass/types/data/telemetry';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -52,7 +49,6 @@ const itemTypeViewMap: { [T in ItemType]: VFC<ItemViewProps<T>> } = {
 export const ItemView: VFC = () => {
     const { selectItem, matchTrash } = useNavigation();
     const inviteContext = useInviteContext();
-    const { onTelemetry } = usePassCore();
 
     const dispatch = useDispatch();
     const { shareId, itemId } = useParams<SelectedItem>();
@@ -68,20 +64,6 @@ export const ItemView: VFC = () => {
     const item = useSelector(itemSelector);
     const failure = useSelector(failedItemActionSelector);
 
-    useEffect(() => {
-        if (item && failure === undefined) {
-            onTelemetry(
-                createTelemetryEvent(
-                    TelemetryEventName.ItemRead,
-                    {},
-                    {
-                        type: TelemetryItemType[item.data.type],
-                    }
-                )
-            );
-        }
-    }, [item]);
-
     /* if vault or item cannot be found : redirect to base path */
     if (!(vault && item)) {
         const to = preserveSearch(getLocalPath(maybeTrash('', matchTrash)));
@@ -96,7 +78,7 @@ export const ItemView: VFC = () => {
 
     const trashed = isTrashed(item);
 
-    const handleEdit = () => selectItem(shareId, itemId, { view: 'edit', mode: 'replace' });
+    const handleEdit = () => selectItem(shareId, itemId, { view: 'edit' });
     const handleRetry = () => failure !== undefined && dispatch(failure.action);
     const handleTrash = () => dispatch(itemTrashIntent({ itemId, shareId, item }));
     const handleMove = () => openVaultSelect(item.shareId, selectWritableVaultsWithItemsCount);

@@ -17,8 +17,6 @@ import noop from '@proton/utils/noop';
 import type { SpotlightMessageDefinition } from './SpotlightContent';
 import { InviteIcon } from './SpotlightIcon';
 
-import './Spotlight.scss';
-
 type UpsellingState = { type: UpsellType; upsellRef: UpsellRef };
 
 type SpotlightState = {

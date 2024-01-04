@@ -1,75 +1,36 @@
-import { type FC, type ReactElement, useEffect, useMemo, useRef } from 'react';
-import type { List } from 'react-virtualized';
+import { type FC } from 'react';
 
-import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsList.Item';
-import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
-import { itemEq } from '@proton/pass/lib/items/item.predicates';
-import { interpolateRecentItems } from '@proton/pass/lib/items/item.utils';
-import type { ItemFilters, ItemRevisionWithOptimistic, SelectedItem } from '@proton/pass/types';
+import { useItems } from '@proton/pass/components/Item/Context/ItemsProvider';
+import { SortFilter } from '@proton/pass/components/Item/Filters/Sort';
+import { TypeFilter } from '@proton/pass/components/Item/Filters/Type';
+import { ItemsListBase } from '@proton/pass/components/Item/List/ItemsListBase';
+import { ItemsListPlaceholder } from '@proton/pass/components/Item/List/ItemsListPlaceholder';
+import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
 
-type Props = {
-    filters: ItemFilters;
-    items: ItemRevisionWithOptimistic[];
-    selectedItem?: SelectedItem;
-    totalCount: number;
-    onFilter: (update: Partial<ItemFilters>) => void;
-    onSelect: (shareId: string, itemId: string) => void;
-    placeholder: () => ReactElement;
-};
-
-export const ItemsList: FC<Props> = ({ items, filters, selectedItem, onSelect, placeholder }) => {
-    const listRef = useRef<List>(null);
-
-    useEffect(() => listRef.current?.scrollToRow(0), [filters.type, filters.sort]);
-
-    const { interpolation, interpolationIndexes } = useMemo(
-        () => interpolateRecentItems(items)(filters.sort === 'recent'),
-        [filters.type, filters.sort, items]
-    );
+export const ItemsList: FC = () => {
+    const { filters, matchTrash, selectedItem, setFilters } = useNavigation();
+    const items = useItems();
+    const selectItem = useSelectItemAction();
 
     return (
         <>
-            {items.length === 0 ? (
-                <div className="flex justify-center items-center w-full m-auto overflow-x-auto py-3">
-                    {placeholder()}
+            {!matchTrash && items.totalCount > 0 && (
+                <div className="flex flex-row grow-0 shrink-0 flex-nowrap p-3 gap-1 overflow-x-auto">
+                    <TypeFilter items={items.searched} value={filters.type} onChange={(type) => setFilters({ type })} />
+                    <SortFilter value={filters.sort} onChange={(sort) => setFilters({ sort })} />
                 </div>
-            ) : (
-                <VirtualList
-                    ref={listRef}
-                    rowCount={interpolation.length}
-                    interpolationIndexes={interpolationIndexes}
-                    rowRenderer={({ style, index, key }) => {
-                        const row = interpolation[index];
-
-                        switch (row.type) {
-                            case 'entry': {
-                                const item = row.entry;
-                                return (
-                                    <div style={style} key={key}>
-                                        <ItemsListItem
-                                            item={item}
-                                            onClick={(e) => {
-                                                e.preventDefault();
-                                                onSelect(item.shareId, item.itemId);
-                                            }}
-                                            id={`item-${item.shareId}-${item.itemId}`}
-                                            search={filters.search}
-                                            active={selectedItem && itemEq(selectedItem)(item)}
-                                        />
-                                    </div>
-                                );
-                            }
-                            case 'interpolation': {
-                                return (
-                                    <div style={style} key={key} className="flex color-weak text-sm pt-2 pb-1 pl-3">
-                                        {row.cluster.label}
-                                    </div>
-                                );
-                            }
-                        }
-                    }}
-                />
             )}
+
+            <ItemsListBase
+                filters={filters}
+                items={items.filtered}
+                totalCount={items.totalCount}
+                onFilter={setFilters}
+                onSelect={(item) => selectItem(item, { inTrash: matchTrash })}
+                selectedItem={selectedItem}
+                placeholder={() => <ItemsListPlaceholder />}
+            />
         </>
     );
 };
