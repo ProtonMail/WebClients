@@ -13,6 +13,7 @@ import SelectAllBanner from 'proton-mail/components/list/select-all/SelectAllBan
 import { getCanDisplaySelectAllBanner } from 'proton-mail/helpers/selectAll';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
+import { RootState } from 'proton-mail/logic/store';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
@@ -20,7 +21,7 @@ import { isMessage as testIsMessage } from '../../helpers/elements';
 import { isColumnMode } from '../../helpers/mailSettings';
 import { usePaging } from '../../hooks/usePaging';
 import { PLACEHOLDER_ID_PREFIX, usePlaceholders } from '../../hooks/usePlaceholders';
-import { pageSize as pageSizeSelector } from '../../logic/elements/elementsSelectors';
+import { pageSize as pageSizeSelector, showLabelTaskRunningBanner } from '../../logic/elements/elementsSelectors';
 import { Element } from '../../models/element';
 import { Filter } from '../../models/tools';
 import UsersOnboardingChecklist from '../checklist/UsersOnboardingChecklist';
@@ -122,6 +123,9 @@ const List = (
     const hasFilter = Object.keys(filter).length > 0;
 
     const pageSize = useSelector(pageSizeSelector);
+    const canDisplayTaskRunningBanner = useSelector((state: RootState) =>
+        showLabelTaskRunningBanner(state, { labelID })
+    );
 
     const canShowSelectAllBanner = getCanDisplaySelectAllBanner({
         selectAllFeatureAvailable: selectAllAvailable,
@@ -236,19 +240,21 @@ const List = (
                         </div>
                     )}
 
+                    <ListBanners
+                        labelID={labelID}
+                        columnLayout={columnLayout}
+                        userSettings={userSettings}
+                        esState={{ isESLoading, isSearch, showESSlowToolbar }}
+                        canDisplayTaskRunningBanner={canDisplayTaskRunningBanner}
+                    />
+
                     <div
                         className={clsx(
                             isDelightMailListEnabled && 'delight-items-column-list-container',
                             'h-full overflow-auto flex flex-column flex-nowrap w-full'
                         )}
                     >
-                        <ListBanners
-                            labelID={labelID}
-                            columnLayout={columnLayout}
-                            userSettings={userSettings}
-                            esState={{ isESLoading, isSearch, showESSlowToolbar }}
-                        />
-                        {elements.length === 0 && displayState !== FULL && (
+                        {elements.length === 0 && displayState !== FULL && !canDisplayTaskRunningBanner && (
                             <EmptyListPlaceholder
                                 labelID={labelID}
                                 isSearch={isSearch}
