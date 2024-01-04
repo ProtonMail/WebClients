@@ -716,14 +716,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" oppdatering ble avvist"
       ],
-      "${ count } item": [
-        "${ count } element",
-        "${ count } elementer"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } element",
-        "${ itemCount } elementer"
-      ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
         "${ memberCount } medlemmer"
@@ -746,14 +738,6 @@
       "${ revisionNumber } time": [
         "${ revisionNumber } gang",
         "${ revisionNumber } ganger"
-      ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } element",
-        "${ totalImportedItems } elementer"
-      ],
-      "${ totalItems } item": [
-        "${ totalItems } element",
-        "${ totalItems } elementer"
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag igjen",
@@ -1069,9 +1053,6 @@
       ],
       "Sign in or create an account to continue.": [
         "Logg på eller opprett en konto for å fortsette."
-      ],
-      "Sign in to your account": [
-        "Logg på kontoen din"
       ],
       "Signing you in": [
         "Logger deg på"
@@ -1614,6 +1595,11 @@
         "Du er i ferd med å opprette"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Velkommen til ${ appName }"
+      ]
+    },
     "Option": {
       "Commas": [
         "Kommaer"
@@ -1838,9 +1824,6 @@
       "Trash empty": [
         "Papirkurven er tom"
       ],
-      "Unlock ${ brandNameJSX }": [
-        "Lås opp ${ brandNameJSX }"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Lås opp ${ PASS_APP_NAME }"
       ],
@@ -1855,12 +1838,6 @@
       ],
       "Vault shared with you": [
         "Hvelv delt med deg"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Velkommen til ${ brandNameJSX }"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Velkommen til ${ PASS_APP_NAME }"
       ],
       "Welcome to your new password manager!": [
         "Velkommen til din nye passordbehandler!"

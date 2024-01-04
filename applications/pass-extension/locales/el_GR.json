@@ -716,14 +716,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Η ενημερωμένη έκδοση του \"${ payload.item.data.metadata.name }\" απορρίφθηκε"
       ],
-      "${ count } item": [
-        "${ count } στοιχείο",
-        "${ count } στοιχεία"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } στοιχείο",
-        "${ itemCount } στοιχεία"
-      ],
       "${ memberCount } member": [
         "${ memberCount } μέλος",
         "${ memberCount } μέλη"
@@ -746,14 +738,6 @@
       "${ revisionNumber } time": [
         "${ revisionNumber } φορά",
         "${ revisionNumber } φορές"
-      ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } στοιχείο",
-        "${ totalImportedItems } στοιχεία"
-      ],
-      "${ totalItems } item": [
-        "${ totalItems } στοιχείο",
-        "${ totalItems } στοιχεία"
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } ημέρα απομένει",
@@ -1069,9 +1053,6 @@
       ],
       "Sign in or create an account to continue.": [
         "Για να συνεχίσετε, εισέλθετε ή δημιουργήστε λογαριασμό."
-      ],
-      "Sign in to your account": [
-        "Συνδεθείτε στον λογαριασμό σας"
       ],
       "Signing you in": [
         "Γίνεται είσοδος"
@@ -1614,6 +1595,11 @@
         "Είστε έτοιμοι να δημιουργήσετε"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Καλώς ήρθατε στο ${ appName }"
+      ]
+    },
     "Option": {
       "Commas": [
         "Κόμματα"
@@ -1838,9 +1824,6 @@
       "Trash empty": [
         "Ο κάδος απορριμμάτων είναι άδειος"
       ],
-      "Unlock ${ brandNameJSX }": [
-        "Ξεκλειδώστε ${ brandNameJSX }"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Ξεκλειδώστε το ${ PASS_APP_NAME }"
       ],
@@ -1855,12 +1838,6 @@
       ],
       "Vault shared with you": [
         "Η κρύπτη που έχει κοινοποιηθεί σε εσάς"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Καλώς ήρθατε στο ${ brandNameJSX }"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Καλώς ήρθατε στο ${ PASS_APP_NAME }"
       ],
       "Welcome to your new password manager!": [
         "Καλώς ήρθατε στον νέο σας διαχειριστή κωδικών πρόσβασης!"
