@@ -3453,9 +3453,6 @@
       "${ speed }/s": [
         "${ speed }/с"
       ],
-      "${ storage } storage": [
-        "${ storage } сховішча"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } кантакт паспяхова абноўлены.",
         "${ updated } кантакты паспяхова абноўлены.",
@@ -4335,18 +4332,6 @@
       "Today": [
         "Сёння"
       ],
-      "Total email addresses": [
-        "Колькасць адрасоў электроннай пошты"
-      ],
-      "Total storage": [
-        "Агульны аб'ём сховішча"
-      ],
-      "Total supported domains": [
-        "Колькасць даменаў, якія падтрымліваюцца"
-      ],
-      "Total VPN connections": [
-        "Колькасць падключэнняў па VPN"
-      ],
       "Transfer canceled for file \"${ name }\"": [
         "Перадача скасавана для файла \"${ name }\""
       ],
@@ -4391,9 +4376,6 @@
       ],
       "Unsupported file": [
         "Файл не падтрымліваецца"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Да ${ FAMILY_MAX_USERS } карыстальнікаў"
       ],
       "Updating drive search...": [
         "Абнаўленне пошуку на дыску..."
@@ -5290,11 +5272,17 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } каляндар",
-        "${ maximumNumberOfCalendars } календары",
-        "${ maximumNumberOfCalendars } календароў",
-        "${ maximumNumberOfCalendars } календароў"
+      "${ n } calendar": [
+        "${ n } каляндар",
+        "${ n } календары",
+        "${ n } календароў",
+        "${ n } календары"
+      ],
+      "${ n } calendar per user": [
+        "${ n } каляндар на карыстальніка",
+        "${ n } календары на карыстальніка",
+        "${ n } календароў на карыстальніка",
+        "${ n } календароў на карыстальніка"
       ],
       "Auto-delete spam and trashed messages": [
         "Аўтаматычна выдаляць паведамленні ў спаме і сметніцы"
@@ -5308,6 +5296,9 @@
       "Custom snooze time": [
         "Карыстальніцкі час адкладання"
       ],
+      "End-to-end encryption": [
+        "Скразное шыфраванне"
+      ],
       "Hide-my-email aliases": [
         "Псеўданімаў Hide-my-email"
       ],
@@ -5316,6 +5307,9 @@
       ],
       "Search message content": [
         "Пошук змесціва паведамлення"
+      ],
+      "Send & receive invitations": [
+        "Адпраўка і атрыманне запрашэнняў"
       ],
       "Unlimited folders, labels, and filters": [
         "Неабмежаваная колькасць папак, метак і фільтраў"
@@ -5352,6 +5346,31 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Зваротная сувязь"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Абараняйце свой расклад з дапамогай скразнога шыфравання. Уключае падтрымку для карыстальніцкіх календароў, абагуленых календароў і іншыя функцыі."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Стварайце да ${ n } календара або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
+        "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
+        "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
+        "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Лёгка дзяліцеся вашымі календарамі з сям'ёй, сябрамі або калегамі"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Трымайце ў прыватнасці свае і сямейныя планы з зашыфраваным календаром"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Стварыць да ${ n } календара",
+        "Стварыць да ${ n } календароў",
+        "Стварыць да ${ n } календароў",
+        "Стварыць да ${ n } календароў"
       ]
     },
     "Notification": {
@@ -5517,42 +5536,6 @@
       "Link copied to clipboard": [
         "Спасылка скапіявана ў буфер абмену"
       ],
-      "Move ${ itemsToMoveCount } file": [
-        "Перамясціць ${ itemsToMoveCount } файл",
-        "Перамясціць ${ itemsToMoveCount } файлы",
-        "Перамясціць ${ itemsToMoveCount } файлаў",
-        "Перамясціць ${ itemsToMoveCount } файлы"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Перамясціць ${ itemsToMoveCount } папку",
-        "Перамясціць ${ itemsToMoveCount } папкі",
-        "Перамясціць ${ itemsToMoveCount } папак",
-        "Перамясціць ${ itemsToMoveCount } папкі"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "Перамясціць ${ itemsToMoveCount } элемент",
-        "Перамясціць ${ itemsToMoveCount } элементы",
-        "Перамясціць ${ itemsToMoveCount } элементаў",
-        "Перамясціць ${ itemsToMoveCount } элементы"
-      ],
-      "Move ${ movingCount } file": [
-        "Перамясціць ${ movingCount } файл",
-        "Перамясціць ${ movingCount } файлы",
-        "Перамясціць ${ movingCount } файлаў",
-        "Перамясціць ${ movingCount } файлы"
-      ],
-      "Move ${ movingCount } folder": [
-        "Перамясціць ${ movingCount } папку",
-        "Перамясціць ${ movingCount } папкі",
-        "Перамясціць ${ movingCount } папак",
-        "Перамясціць ${ movingCount } папкі"
-      ],
-      "Move ${ movingCount } item": [
-        "Перамясціць ${ movingCount } элемент",
-        "Перамясціць ${ movingCount } элементы",
-        "Перамясціць ${ movingCount } элементаў",
-        "Перамясціць ${ movingCount } элементы"
-      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Недастаткова месца для запампоўвання ${ formattedTotal }"
       ],
@@ -5600,6 +5583,11 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "Выберыце, да чаго можа атрымліваць доступ ${ BRAND_NAME }: прагляд вашых электронных лістоў і налад, прагляд і спампоўванне кантактаў, прагляд і спампоўванне распарадку дня з праграмы Каляндар Google."
+      ]
+    },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Вітаем у ${ appName }"
       ]
     },
     "Onboarding Action": {
@@ -5654,9 +5642,6 @@
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "Вітаем у ${ DRIVE_APP_NAME }"
-      ],
       "Your welcome bonus": [
         "Ваш прывітальны бонус"
       ]
@@ -6643,9 +6628,6 @@
         "Выдаліць ${ count } групы кантактаў",
         "Выдаліць ${ count } груп кантактаў",
         "Выдаліць ${ count } групы кантактаў"
-      ],
-      "Delete ${ Name }": [
-        "Выдаліць ${ Name }"
       ],
       "Delete permanently": [
         "Выдаліць незваротна"

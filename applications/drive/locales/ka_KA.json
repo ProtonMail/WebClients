@@ -3329,9 +3329,6 @@
       "${ speed }/s": [
         "${ speed }/წმ"
       ],
-      "${ storage } storage": [
-        "${ storage } საცავი"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } კონტაქტი წარმატებით განახლდა.",
         "${ updated } კონტაქტი წარმატებით განახლდა."
@@ -4187,18 +4184,6 @@
       "Today": [
         "დღეს"
       ],
-      "Total email addresses": [
-        "ელფოსტები სულ"
-      ],
-      "Total storage": [
-        "სრული საცავი"
-      ],
-      "Total supported domains": [
-        "მხარდაჭერილი დომენები სულ"
-      ],
-      "Total VPN connections": [
-        "VPN შეერთებები სულ"
-      ],
       "Transfer canceled for file \"${ name }\"": [
         "\"${ name }\"-ის გადაცემა გაუქმებულია"
       ],
@@ -4240,9 +4225,6 @@
       ],
       "Unsupported file": [
         "ფაილის მხარდაჭერა არ არსებობს"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "${ FAMILY_MAX_USERS }-მდე მომხმარებელი"
       ],
       "Updating drive search...": [
         "Drive-ზე ძებნის განახლება..."
@@ -5093,9 +5075,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } კალენდარი",
-        "${ maximumNumberOfCalendars } კალენდარი"
+      "${ n } calendar": [
+        "${ n } კალენდარი",
+        "${ n } კალენდარი"
+      ],
+      "${ n } calendar per user": [
+        "${ n } კალენდარი თითოეული მომხმარებლისათვის",
+        "${ n } კალენდარი თითოეული მომხმარებლისათვის"
       ],
       "Auto-delete spam and trashed messages": [
         "სპამისა და სანაგვე ყუთში მდებარე შეტყობინებების ავტომატური წაშლა"
@@ -5109,6 +5095,9 @@
       "Custom snooze time": [
         "მომხმარებლის დროებით დადუმების დრო"
       ],
+      "End-to-end encryption": [
+        "გამჭოლი შიფრაცია"
+      ],
       "Hide-my-email aliases": [
         "მეტსახელი Hide My Email-სთვის"
       ],
@@ -5117,6 +5106,9 @@
       ],
       "Search message content": [
         "შეტყობინების შიგთავსში ძებნა"
+      ],
+      "Send & receive invitations": [
+        "მოსაწვევების გაგზავნა და მიღება"
       ],
       "Unlimited folders, labels, and filters": [
         "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
@@ -5153,6 +5145,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "უკუკავშირი"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: დაიცავით თქვენი განრიგი გამჭოლი დაშიფვრით. შეიცავს მომხმარებლის კალენდრების მხარდაჭერას, კალენდრის გაზიარებას და ა.შ."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "შექმენით ${ n }-მდე კალენდარი ან დაამატეთ მეგობრების, ოჯახის, კოლეგების და ორგანიზაციების კალენდრები",
+        "შექმენით ${ n }-მდე კალენდარი ან დაამატეთ მეგობრების, ოჯახის, კოლეგების და ორგანიზაციების კალენდრები"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "გაუზიარეთ კალენდარი თქვენს ოჯახს, მეგობრებს და კოლეგებს"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "დაიტოვეთ თქვენი გეგმები თქვენთვის და თქვენი ოჯახისთვის, დაშიფრული კალენდრით"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "შექმენით ${ n }-მდე კალენდარი",
+        "შექმენით ${ n }-მდე კალენდარი"
       ]
     },
     "Notification": {
@@ -5294,30 +5307,6 @@
       "Link copied to clipboard": [
         "ბმული კოპირებულია ბუფერში"
       ],
-      "Move ${ itemsToMoveCount } file": [
-        "${ itemsToMoveCount } ფაილის გადატანა",
-        "${ itemsToMoveCount } ფაილის გადატანა"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "${ itemsToMoveCount } საქაღალდის გადატანა",
-        "${ itemsToMoveCount } საქაღალდის გადატანა"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "${ itemsToMoveCount } ელემენტის გადატანა",
-        "${ itemsToMoveCount } ელემენტის გადატანა"
-      ],
-      "Move ${ movingCount } file": [
-        "${ movingCount } ფაილის გადატანა",
-        "${ movingCount } ფაილის გადატანა"
-      ],
-      "Move ${ movingCount } folder": [
-        "${ movingCount } საქაღალდის გადატანა",
-        "${ movingCount } საქაღალდის გადატანა"
-      ],
-      "Move ${ movingCount } item": [
-        "${ movingCount } ელემენტის გადატანა",
-        "${ movingCount } ელემენტის გადატანა"
-      ],
       "Not enough space to upload ${ formattedTotal }": [
         "არასაკმარისი ადგილი ${ formattedTotal }-ის ასატვირთად"
       ],
@@ -5365,6 +5354,11 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "აირჩიეთ, რასთან აქვს ${ BRAND_NAME }-ს წვდომა: ნახოს თქვენი ელფოსტის შეტყობინებები დ პარამეტრები, ნახოს და გადმოწეროს თქვენი კონტაქტები; გადმოწეროს და ნახოს ყველა გეგმა Google Agenda-დან."
+      ]
+    },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "კეთილი იყოს თქვენი მობრძანება ${ appName }-ში"
       ]
     },
     "Onboarding Action": {
@@ -5417,9 +5411,6 @@
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "კეთილი იყოს თქვენი მობრძანება ${ DRIVE_APP_NAME }-ში"
-      ],
       "Your welcome bonus": [
         "თქვენი მობრძანების საჩუქარი"
       ]
@@ -6320,9 +6311,6 @@
       "Delete ${ count } contact group": [
         "${ count } კონტაქტების ჯგუფის წაშლა",
         "${ count } კონტაქტების ჯგუფის წაშლა"
-      ],
-      "Delete ${ Name }": [
-        "${ Name }-ის წაშლა"
       ],
       "Delete permanently": [
         "სამუდამოდ წაშლა"

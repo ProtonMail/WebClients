@@ -3229,9 +3229,6 @@
       "${ speed }/s": [
         "${ speed }/mp"
       ],
-      "${ storage } storage": [
-        "${ storage } tárhely"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } névjegy sikeresen frissítve.",
         "${ updated } névjegy sikeresen frissítve."
@@ -4039,18 +4036,6 @@
       "Today": [
         "Ma"
       ],
-      "Total email addresses": [
-        "Összes e-mail cím"
-      ],
-      "Total storage": [
-        "Összes tárhely"
-      ],
-      "Total supported domains": [
-        "Összes támogatott domain név"
-      ],
-      "Total VPN connections": [
-        "Összes VPN kapcsolat"
-      ],
       "Transfer canceled for file \"${ name }\"": [
         "\"${ name }\" fájl átvitele megszakítva"
       ],
@@ -4089,9 +4074,6 @@
       ],
       "Unsupported file": [
         "Ismeretlen file"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Legfeljebb ${ FAMILY_MAX_USERS } felhasználó"
       ],
       "Updating drive search...": [
         "Felhőtárban keresés frissítése..."
@@ -4930,9 +4912,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } naptár",
-        "${ maximumNumberOfCalendars } naptár"
+      "${ n } calendar": [
+        "${ n } naptár",
+        "${ n } naptár"
+      ],
+      "${ n } calendar per user": [
+        "${ n } naptár felhasználónként",
+        "${ n } naptár felhasználónként"
       ],
       "Auto-delete spam and trashed messages": [
         "A Levélszemét és a Lomtár mappában lévő üzenetek automatikus törlése"
@@ -4943,6 +4929,9 @@
       "Custom email domains": [
         "Saját domain nevek"
       ],
+      "End-to-end encryption": [
+        "Végpontok közti titkosítás"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email álnevek"
       ],
@@ -4951,6 +4940,9 @@
       ],
       "Search message content": [
         "Keresés az üzenetek tartalmában"
+      ],
+      "Send & receive invitations": [
+        "Meghívók küldése és fogadása"
       ],
       "Unlimited folders, labels, and filters": [
         "Korlátlan számú mappa, címke és szűrő"
@@ -4984,6 +4976,18 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Visszajelzés"
+      ]
+    },
+    "new_plans: tooltip": {
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől",
+        "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Akár ${ n } naptár létrehozása",
+        "Akár ${ n } naptár létrehozása"
       ]
     },
     "Notification": {
@@ -5125,30 +5129,6 @@
       "Link copied to clipboard": [
         "Hivatkozás a vágólapra másolva"
       ],
-      "Move ${ itemsToMoveCount } file": [
-        "${ itemsToMoveCount } fájl áthelyezése",
-        "${ itemsToMoveCount } fájl áthelyezése"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "${ itemsToMoveCount } mappa áthelyezése",
-        "${ itemsToMoveCount } mappa áthelyezése"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "${ itemsToMoveCount } elem áthelyezése",
-        "${ itemsToMoveCount } elem áthelyezése"
-      ],
-      "Move ${ movingCount } file": [
-        "${ movingCount } fájl áthelyezése",
-        "${ movingCount } fájl áthelyezése"
-      ],
-      "Move ${ movingCount } folder": [
-        "${ movingCount } mappa áthelyezése",
-        "${ movingCount } mappa áthelyezése"
-      ],
-      "Move ${ movingCount } item": [
-        "${ movingCount } elem áthelyezése",
-        "${ movingCount } elem áthelyezése"
-      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Nincs elég hely a feltöltéshez: ${ formattedTotal }"
       ],
@@ -5198,6 +5178,11 @@
         "Válassza ki, ${ BRAND_NAME } mihez tud hozzáférni: megnézheti az e-mailjeit és beállításait, megnézheti és letöltheti a kapcsolatait és letöltheti az összes naptárát, amihez a Google Naptárból hozzá tud férni."
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Üdvözli a ${ appName }"
+      ]
+    },
     "Onboarding Action": {
       "Next": [
         "Következő"
@@ -5239,9 +5224,6 @@
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "Üdvözli a ${ DRIVE_APP_NAME }"
-      ],
       "Your welcome bonus": [
         "Indulási bónusz"
       ]
@@ -6113,9 +6095,6 @@
       "Delete ${ count } contact group": [
         "${ count } névjegy csoport törlése",
         "${ count } névjegy csoport törlése"
-      ],
-      "Delete ${ Name }": [
-        "${ Name } törlése"
       ],
       "Delete permanently": [
         "Végleges törlés"
