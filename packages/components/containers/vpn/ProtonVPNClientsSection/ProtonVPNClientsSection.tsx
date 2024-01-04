@@ -3,6 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button, ButtonLike, Href } from '@proton/atoms';
+import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 
@@ -20,7 +21,7 @@ const DownloadModal = ({ downloadUrl, ...rest }: DownloadModalProps) => {
         <ModalTwo {...rest} size="small">
             <ModalTwoContent className="m-8 text-center">
                 <OnboardingContent
-                    img={<img src={onboardingVPNWelcome} alt={c('Onboarding').t`Welcome to ${VPN_APP_NAME}`} />}
+                    img={<img src={onboardingVPNWelcome} alt={getWelcomeToText(VPN_APP_NAME)} />}
                     title={c('Title').t`Download ${VPN_APP_NAME}`}
                     description={c('Info').t`The securest way to browse, stream, and be online.`}
                 />

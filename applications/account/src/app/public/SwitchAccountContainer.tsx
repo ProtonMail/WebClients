@@ -38,6 +38,7 @@ import Content from './Content';
 import Header from './Header';
 import Layout from './Layout';
 import Main from './Main';
+import { getContinueToString } from './helper';
 
 interface Props {
     onLogin: (data: OnLoginCallbackArguments) => Promise<void>;
@@ -255,7 +256,7 @@ const SwitchAccountContainer = ({ metaTags, toAppName, onLogin, activeSessions, 
         <Main>
             <Header
                 title={c('Title').t`Choose an account`}
-                subTitle={toAppName ? c('Info').t`to continue to ${toAppName}` : undefined}
+                subTitle={toAppName ? getContinueToString(toAppName) : undefined}
             />
             <Content className="flex">
                 <div className="w-full max-h-custom" style={{ '--max-h-custom': '25em' }}>

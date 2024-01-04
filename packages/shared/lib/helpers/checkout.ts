@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
 
+import { getNUsersText } from '@proton/components/containers/payments/features/highlights';
 import {
     get2FAAuthenticatorText,
     getDevicesText,
@@ -373,7 +374,7 @@ export const getWhatsIncluded = ({
         return [
             {
                 type: 'text',
-                text: c('Info').t`Up to ${FAMILY_MAX_USERS} users`,
+                text: getNUsersText(FAMILY_MAX_USERS),
             },
             {
                 type: 'text',
