@@ -7243,9 +7243,6 @@
       "to continue to ${ product }": [
         "per continuar a ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "per continuar a ${ toAppName }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Per tal de millorar contínuament els nostres serveis, de vegades recopilem dades per controlar el bon funcionament de les nostres aplicacions. Aquesta informació no es comparteix amb serveis de tercers."
       ],
@@ -7344,9 +7341,6 @@
       ],
       "Unverified email address.": [
         "No s'ha verificat l'adreça de correu electrònic."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Fins a ${ FAMILY_MAX_USERS } usuaris"
       ],
       "Update recovery file": [
         "Actualitza el fitxer de recuperació"
@@ -8977,18 +8971,6 @@
       "System information": [
         "Informació del sistema"
       ],
-      "The email was sent ${ attachment }": [
-        "El correu ha estat enviat ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "el correu ha estat enviat ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "El correu ha estat enviat ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "el correu ha estat enviat ${ label }"
-      ],
       "Then": [
         "Aleshores"
       ],
@@ -9058,17 +9040,8 @@
       "With attachment": [
         "Amb fitxers adjunts"
       ],
-      "with attachments": [
-        "amb fitxers adjunts"
-      ],
       "Without attachment": [
         "Sense fitxers adjunts"
-      ],
-      "without attachment": [
-        "sense fitxers adjunts"
-      ],
-      "without attachments": [
-        "sense fitxers adjunts"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, vull suprimir definitivament aquest compte i totes les seves dades."
@@ -9153,17 +9126,8 @@
       "${ BRAND_NAME } welcome emails": [
         "Missatges de benvinguda de ${ BRAND_NAME }"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "Actualitzacions del producte ${ DRIVE_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "Noves característiques de ${ MAIL_APP_NAME } i de ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "Actualitzacions del producte ${ PASS_APP_NAME }"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "Actualitzacions del producte ${ VPN_APP_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -9819,14 +9783,8 @@
       "Get ${ BRAND_NAME } for free": [
         "Obtén ${ BRAND_NAME } gratuïtament"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "Obteniu ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "Obteniu ${ planName }"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "Obteniu ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "Entesos"
@@ -9845,10 +9803,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } calendari",
-        "${ maximumNumberOfCalendars } calendaris"
-      ],
       "${ n } calendar": [
         "${ n } calendari",
         "${ n } calendaris"
@@ -10169,12 +10123,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Sense límit de volum / amplada de banda"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Fins a ${ FAMILY_MAX_USERS } usuaris"
-      ],
-      "Up to ${ n } users": [
-        "Fins a ${ n } usuaris"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Fins a ${ totalStorageSize } d'emmagatzematge"
@@ -10796,11 +10744,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Us donem la benvinguda a ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Us donem la benvinguda a ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Us donem la benvinguda a ${ appName }"
       ]
     },
     "Option": {
@@ -10905,12 +10850,6 @@
       ],
       "Auto": [
         "Automàtic"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automàtic (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "Automàtic (${ defaultFormat })"
       ],
       "Country configs": [
         "Configuracions de país"
@@ -12445,14 +12384,6 @@
         "${ ipAddresses } servidor dedicat",
         "${ ipAddresses } servidors dedicats"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } connexió VPN d'alta velocitat",
-        "${ maxVpn } connexions VPN d'alta velocitat"
-      ],
-      "${ n } calendar": [
-        "${ n } calendari",
-        "${ n } calendaris"
-      ],
       "${ n } calendar per user": [
         "${ n } calendari per usuari",
         "${ n } calendaris per usuari"
@@ -13279,15 +13210,6 @@
       "Decrypt key": [
         "Desxifra la clau"
       ],
-      "Delete ${ domain.DomainName }": [
-        "Esborrar ${ domain.DomainName }"
-      ],
-      "Delete ${ email }": [
-        "Eliminar ${ email }"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "Voleu eliminar ${ tokenNameToRemove }?"
-      ],
       "Delete account": [
         "Elimina el compte"
       ],
@@ -13806,14 +13728,6 @@
       ],
       "Success": [
         "Operació reeixida"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "S'ha creat ${ localSuccessfullyCreatedUsers.length } compte d'usuari.",
-        "S'han creat ${ localSuccessfullyCreatedUsers.length } comptes d'usuari."
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "S'ha creat ${ successfullyCreatedUsers.length } compte d'usuari.",
-        "S'han creat ${ successfullyCreatedUsers.length } comptes d'usuari."
       ],
       "Summary": [
         "Resum"

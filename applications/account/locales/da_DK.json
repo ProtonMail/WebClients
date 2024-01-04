@@ -7384,9 +7384,6 @@
       "to continue to ${ product }": [
         "for at fortsætte til ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "for at fortsætte til ${ toAppName }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "For løbende at forbedre vores tjenester indsamler vi nogle gange data for at overvåge, at vore applikationer fungerer korrekt. Disse oplysninger deles med nogen tredjepartstjenester."
       ],
@@ -7485,9 +7482,6 @@
       ],
       "Unverified email address.": [
         "Uverificeret e-mailadresse."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Op til ${ FAMILY_MAX_USERS } brugere"
       ],
       "Update recovery file": [
         "Opdater gendannelsesfil"
@@ -9122,18 +9116,6 @@
       "System information": [
         "Systemoplysninger"
       ],
-      "The email was sent ${ attachment }": [
-        "E-mailen blev sendt ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "e-mailen blev sendt ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "E-mailen blev sendt ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "e-mailen blev sendt ${ label }"
-      ],
       "Then": [
         "Så"
       ],
@@ -9203,17 +9185,8 @@
       "With attachment": [
         "Med vedhæftning"
       ],
-      "with attachments": [
-        "med vedhæftninger"
-      ],
       "Without attachment": [
         "Uden vedhæftning"
-      ],
-      "without attachment": [
-        "uden vedhæftning"
-      ],
-      "without attachments": [
-        "uden vedhæftninger"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jeg ønsker at slette denne konto og alle dens data permanent."
@@ -9298,17 +9271,8 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }-velkomstmails"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "${ DRIVE_APP_NAME }-produktopdateringer"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "${ MAIL_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME } nye funktioner"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "${ PASS_APP_NAME }-produktopdateringer"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "${ VPN_APP_NAME }-produktopdateringer"
       ]
     },
     "Label in domain modal": {
@@ -9941,14 +9905,8 @@
       "Get ${ BRAND_NAME } for free": [
         "Få ${ BRAND_NAME } gratis"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "Få ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "Få ${ planName }"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "Få ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "Forstået"
@@ -9967,10 +9925,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } kalender",
-        "${ maximumNumberOfCalendars } kalendere"
-      ],
       "${ n } calendar": [
         "${ n } kalender",
         "${ n } kalendere"
@@ -10294,12 +10248,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ubegrænset mængde/båndbredde"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Op til ${ FAMILY_MAX_USERS } brugere"
-      ],
-      "Up to ${ n } users": [
-        "Op til ${ n } brugere"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Op til ${ totalStorageSize } lagerplads"
@@ -10927,11 +10875,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Velkommen til ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Velkommen til ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Velkommen til ${ appName }"
       ]
     },
     "Option": {
@@ -11036,12 +10981,6 @@
       ],
       "Auto": [
         "Auto"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automatisk (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "Automatisk (${ defaultFormat })"
       ],
       "Country configs": [
         "Landeopsætninger"
@@ -12602,14 +12541,6 @@
         "${ ipAddresses } dedikeret server",
         "${ ipAddresses } dedikerede servere"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } højhastigheds VPN-forbindelse",
-        "${ maxVpn } højhastigheds VPN-forbindelser"
-      ],
-      "${ n } calendar": [
-        "${ n } kalender",
-        "${ n } kalendere"
-      ],
       "${ n } calendar per user": [
         "${ n } kalender pr. bruger",
         "${ n } kalendere pr. bruger"
@@ -13442,15 +13373,6 @@
       "Decrypt key": [
         "Dekryptér nøgle"
       ],
-      "Delete ${ domain.DomainName }": [
-        "Slet ${ domain.DomainName }"
-      ],
-      "Delete ${ email }": [
-        "Slet ${ email }"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "Slet ${ tokenNameToRemove }?"
-      ],
       "Delete account": [
         "Slet konto"
       ],
@@ -13978,14 +13900,6 @@
       ],
       "Success": [
         "Lykkedes"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "Oprettede ${ localSuccessfullyCreatedUsers.length } brugerkonto",
-        "Oprettede ${ localSuccessfullyCreatedUsers.length } brugerkonti"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "Oprettede ${ successfullyCreatedUsers.length } brugerkonto",
-        "Oprettede ${ successfullyCreatedUsers.length } brugerkonti"
       ],
       "Summary": [
         "Sammenfatning"

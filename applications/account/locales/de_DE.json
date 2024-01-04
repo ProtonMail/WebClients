@@ -7392,9 +7392,6 @@
       "to continue to ${ product }": [
         "um zu ${ product } zu gelangen."
       ],
-      "to continue to ${ toAppName }": [
-        "um zu ${ toAppName } zu gelangen."
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Um unsere Dienste kontinuierlich zu verbessern, sammeln wir manchmal Daten, um das ordnungsgemäße Funktionieren unserer Anwendungen zu überwachen. Diese Informationen werden nicht an Dienste von Drittanbietern weitergegeben."
       ],
@@ -7493,9 +7490,6 @@
       ],
       "Unverified email address.": [
         "Unbestätigte E-Mail-Adresse"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Bis zu ${ FAMILY_MAX_USERS } Benutzer"
       ],
       "Update recovery file": [
         "Wiederherstellungsdatei aktualisieren"
@@ -9143,18 +9137,6 @@
       "System information": [
         "Systeminformationen"
       ],
-      "The email was sent ${ attachment }": [
-        "Die E-Mail wurde gesendet ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "Die E-Mail wurde gesendet ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Die E-Mail wurde gesendet ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "Die E-Mail wurde gesendet ${ label }"
-      ],
       "Then": [
         "Dann"
       ],
@@ -9224,17 +9206,8 @@
       "With attachment": [
         "Mit Anhängen"
       ],
-      "with attachments": [
-        "mit Anhängen"
-      ],
       "Without attachment": [
         "Ohne Anhänge"
-      ],
-      "without attachment": [
-        "ohne Anhänge"
-      ],
-      "without attachments": [
-        "ohne Anhänge"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, ich möchte dieses Konto und alle enthaltenen Daten endgültig und unwiderruflich löschen."
@@ -9319,17 +9292,8 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME }-Willkommens-E-Mails"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "${ DRIVE_APP_NAME }-Produktaktualisierungen"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "${ MAIL_APP_NAME } und ${ CALENDAR_SHORT_APP_NAME } neue Funktionen"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "${ PASS_APP_NAME }-Produktaktualisierungen"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "${ VPN_APP_NAME }-Produktaktualisierungen"
       ]
     },
     "Label in domain modal": {
@@ -9962,14 +9926,8 @@
       "Get ${ BRAND_NAME } for free": [
         "${ BRAND_NAME } kostenlos holen"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "Hol dir ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "${ planName } holen"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "${ upsellShortPlan.title } holen"
       ],
       "Got it": [
         "Verstanden"
@@ -9988,10 +9946,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } Kalender",
-        "${ maximumNumberOfCalendars } Kalender"
-      ],
       "${ n } calendar": [
         "${ n } Kalender",
         "${ n } Kalender"
@@ -10315,12 +10269,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Volumen/Bandbreite unbegrenzt"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Bis zu ${ FAMILY_MAX_USERS } Benutzer"
-      ],
-      "Up to ${ n } users": [
-        "Bis zu ${ n } Benutzer"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Bis zu ${ totalStorageSize } Speicherplatz"
@@ -10948,11 +10896,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Willkommen bei ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Willkommen bei ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Willkommen bei ${ appName }"
       ]
     },
     "Option": {
@@ -11057,12 +11002,6 @@
       ],
       "Auto": [
         "Automatisch"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automatisch (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "Automatisch (${ defaultFormat })"
       ],
       "Country configs": [
         "Länderkonfigurationen"
@@ -12629,14 +12568,6 @@
         "${ ipAddresses } dedizierter Server",
         "${ ipAddresses } dedizierte Server"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } Hochgeschwindigkeits-VPN-Verbindung",
-        "${ maxVpn } Hochgeschwindigkeits-VPN-Verbindungen"
-      ],
-      "${ n } calendar": [
-        "${ n } Kalender",
-        "${ n } Kalender"
-      ],
       "${ n } calendar per user": [
         "${ n } Kalender je Nutzer",
         "${ n } Kalender je Nutzer"
@@ -13469,15 +13400,6 @@
       "Decrypt key": [
         "Schlüssel entschlüsseln"
       ],
-      "Delete ${ domain.DomainName }": [
-        "${ domain.DomainName } löschen"
-      ],
-      "Delete ${ email }": [
-        "${ email } löschen"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "${ tokenNameToRemove } löschen?"
-      ],
       "Delete account": [
         "Konto löschen"
       ],
@@ -14008,14 +13930,6 @@
       ],
       "Success": [
         "Erfolgreich"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "${ localSuccessfullyCreatedUsers.length } Benutzerkonto erfolgreich erstellt",
-        "${ localSuccessfullyCreatedUsers.length } Benutzerkonten erfolgreich erstellt"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "${ successfullyCreatedUsers.length } Benutzerkonto erfolgreich erstellt",
-        "${ successfullyCreatedUsers.length } Benutzerkonten erfolgreich erstellt"
       ],
       "Summary": [
         "Zusammenfassung"
