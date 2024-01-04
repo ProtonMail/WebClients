@@ -14,34 +14,46 @@ export const getMessageExpirationDate = (message: MessageState) => {
     return undefined;
 };
 
+const getTodayText = (value: string) => {
+    //translator: Full sentence for reference: "This message will expire today at 12:30 PM"
+    return c('Info').t`This message will expire today at ${value}`;
+};
+
+const getTomorrowText = (value: string) => {
+    // translator: Full sentence for reference: "This message will expire tomorrow at 12:30 PM"
+    return c('Info').t`This message will expire tomorrow at ${value}`;
+};
+
+const getOnText = (value: string) => {
+    // translator: Full sentence for reference: "This message will expire on Tuesday, May 11 at 12:30 PM"
+    return c('Info').t`This message will expire on ${value}`;
+};
+
 export const getExpiresOnMessage = (expirationDate: Date) => {
     const shortDateMessage = format(expirationDate, 'p');
 
     if (isToday(expirationDate)) {
-        //translator: Full sentence for reference: "This message will expire today at 12:30 PM"
-        return c('Info').t`This message will expire today at ${shortDateMessage}`;
+        return getTodayText(shortDateMessage);
     } else if (isTomorrow(expirationDate)) {
-        // translator: Full sentence for reference: "This message will expire tomorrow at 12:30 PM"
-        return c('Info').t`This message will expire tomorrow at ${shortDateMessage}`;
+        return getTomorrowText(shortDateMessage);
     } else {
-        const longDateMEssage = formatFullDate(expirationDate);
-        // translator: Full sentence for reference: "This message will expire on Tuesday, May 11 at 12:30 PM"
-        return c('Info').t`This message will expire on ${longDateMEssage}`;
+        return getOnText(formatFullDate(expirationDate));
     }
+};
+
+const getDeletedOnText = (value: string) => {
+    //translator: Full sentence for reference: "This message will be automatically deleted on 12:30 PM"
+    return c('Info').t`This message will be automatically deleted on ${value}`;
 };
 
 export const getAutoDeleteOnMessage = (expirationDate: Date) => {
     const shortDateMessage = format(expirationDate, 'p');
 
     if (isToday(expirationDate)) {
-        //translator: Full sentence for reference: "This message will be automatically deleted on 12:30 PM"
-        return c('Info').t`This message will be automatically deleted on ${shortDateMessage}`;
+        return getDeletedOnText(shortDateMessage);
     } else if (isTomorrow(expirationDate)) {
-        // translator: Full sentence for reference: "This message will be automatically deleted on 12:30 PM"
-        return c('Info').t`This message will be automatically deleted on ${shortDateMessage}`;
+        return getDeletedOnText(shortDateMessage);
     } else {
-        const longDateMEssage = formatFullDate(expirationDate);
-        // translator: Full sentence for reference: "This message will be automatically deleted on Tuesday, May 11 at 12:30 PM"
-        return c('Info').t`This message will be automatically deleted on ${longDateMEssage}`;
+        return getDeletedOnText(formatFullDate(expirationDate));
     }
 };
