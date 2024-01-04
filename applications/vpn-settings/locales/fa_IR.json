@@ -2185,9 +2185,6 @@
       "Member": [
         "عضو"
       ],
-      "Multi-user support not enabled.": [
-        "پشتیبانی چند کاربره فعال نیست."
-      ],
       "No addresses exist": [
         "نشانی‌ای وجود ندارد"
       ],
@@ -2358,9 +2355,6 @@
       ],
       "to continue to ${ product }": [
         "برای ادامه به ${ product }"
-      ],
-      "to continue to ${ toAppName }": [
-        "برای ادامه به ${ toAppName }"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "برای نبرد با هرزنامه و سوء استفاده، لطفا تایید کنید که شما انسان هستید."
@@ -3124,10 +3118,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } تقویم",
-        "${ maximumNumberOfCalendars } تقویم"
-      ],
       "${ n } calendar": [
         "${ n } تقویم",
         "${ n } تقویم"
@@ -3608,11 +3598,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "به ${ product } خوش آمدید"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "به ${ VPN_APP_NAME } خوش آمدید"
+      "Welcome to ${ appName }": [
+        "خوش آمدید به ${ appName }"
       ]
     },
     "Option": {
@@ -3898,14 +3885,6 @@
       ]
     },
     "Subscription attribute": {
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } اتصال VPN پرسرعت",
-        "${ maxVpn } اتصال VPN پرسرعت"
-      ],
-      "${ n } calendar": [
-        "${ n } تقویم",
-        "${ n } تقویم"
-      ],
       "${ n } high-speed VPN connection": [
         "${ n } اتصال VPN پرسرعت",
         "${ n } اتصال VPN پرسرعت"
@@ -4268,9 +4247,6 @@
       "Delete": [
         "حذف"
       ],
-      "Delete ${ email }": [
-        "حذف ${ email }"
-      ],
       "Delete account": [
         "حذف حساب کاربری"
       ],
@@ -4465,14 +4441,6 @@
       ],
       "Status": [
         "وضعیت"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "${ localSuccessfullyCreatedUsers.length } حساب کابری با موفقیت ایجاد شد",
-        "${ localSuccessfullyCreatedUsers.length } حساب کابری با موفقیت ایجاد شدند"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "با موفقیت ${ successfullyCreatedUsers.length } حساب کاربری ایجاد شد",
-        "با موفقیت ${ successfullyCreatedUsers.length } حساب کاربری ایجاد شد"
       ],
       "Switch to one-password mode": [
         "گذر به حالت تک‌گذرواژه"
