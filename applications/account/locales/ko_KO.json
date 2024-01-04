@@ -1359,12 +1359,6 @@
       "High speed streaming": [
         "고속 스트리밍"
       ],
-      "Premium ${ appName }": [
-        "Premium ${ appName }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "Premium Password Manager": [
         "프리미엄 암호 관리자"
       ]
@@ -4573,15 +4567,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
-      ],
       "Up to 6 users": [
         "최대 6명 사용자"
       ]
@@ -5706,17 +5691,6 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "캘린더 콘텐츠 중 일부가 지원되지 않으며, 불러와지지 않습니다."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "추가적인 복제 키 감지됨. 자세한 정보를 위해 개별적으로 업로드하세요."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } 키가 업로드 되었습니다"
-      ],
-      "Selected color:": [
-        "선택한 색상:"
       ]
     },
     "Info": {
@@ -7875,6 +7849,17 @@
         "유료 구독은 Mozilla에서 관리합니다. Mozilla 지원에 연락하세요."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "추가적인 복제 키 감지됨. 자세한 정보를 위해 개별적으로 업로드하세요."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } 키가 업로드 되었습니다"
+      ],
+      "Selected color:": [
+        "선택한 색상:"
+      ]
+    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "활성화되면, 하위 폴더는 상위 폴더의 색상과 일치됩니다."
@@ -8690,9 +8675,6 @@
       "Font size": [
         "글자 크기"
       ],
-      "From: ${ from }": [
-        "보낸 사람: ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "보낸 사람: ${ fromEmail }"
       ],
@@ -9082,9 +9064,6 @@
       ],
       "Time zone": [
         "시간대"
-      ],
-      "To: ${ to }": [
-        "받는 사람: ${ to }"
       ],
       "To: ${ toEmail }": [
         "받는 사람: ${ toEmail }"
@@ -9522,9 +9501,6 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "${ BRAND_NAME }의 스토리 중 일부가 되고 싶으시면 Visionary가 되어 주세요."
-      ],
-      "Limited time offer: Get ${ planTitle } until ${ date }!": [
-        "제한 기간 특가: ${ planTitle } 플랜을 ${ date }까지 구매하세요!"
       ],
       "Secure email that protects your privacy": [
         "프라이버시를 지켜주는 이메일로 보호하세요."
@@ -12299,15 +12275,6 @@
       "Highest VPN speed": [
         "가장 빠른 VPN 속도"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Premium ${ VPN_SHORT_APP_NAME }"
-      ],
       "Premium early access": [
         "프리미엄 얼리 엑세스"
       ],
@@ -12897,14 +12864,6 @@
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
         "내보낼 수 없는 이벤트에 대한 세부 사항"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Premium ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {
