@@ -713,11 +713,11 @@
       "Not saved": [
         "Não salvo"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
@@ -3303,14 +3303,6 @@
       "Choose a date in the future.": [
         "Escolha uma data futura."
       ],
-      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
-        "Escolha uma data no próximo ${ EXPIRATION_TIME_MAX_DAYS } dia.",
-        "Escolha uma data nos próximos ${ EXPIRATION_TIME_MAX_DAYS } dias."
-      ],
-      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
-        "Escolha uma data no próximo ${ SCHEDULED_MAX_DATE_DAYS } dia.",
-        "Escolha uma data nos próximos ${ SCHEDULED_MAX_DATE_DAYS } dias."
-      ],
       "Condition incomplete": [
         "Condição incompleta"
       ],
@@ -4842,10 +4834,6 @@
         "${ contactsLength } contato",
         "${ contactsLength } contatos"
       ],
-      "${ count } unread message": [
-        "${ count } mensagem não lida",
-        "${ count } mensagens não lidas"
-      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } de ${ totalProgress }",
         "${ currentProgress } de ${ totalProgress }"
@@ -4923,9 +4911,6 @@
         "${ selectedFoldersCountLocalized } marcador selecionado",
         "${ selectedFoldersCountLocalized } marcadores selecionados"
       ],
-      "${ storage } storage": [
-        "${ storage } de armazenamento"
-      ],
       "${ total } conversation": [
         "${ total } conversa",
         "${ total } conversas"
@@ -4934,25 +4919,9 @@
         "${ total } mensagem",
         "${ total } mensagens"
       ],
-      "${ unread } unread conversation": [
-        "${ unread } conversa não lida",
-        "${ unread } conversas não lidas"
-      ],
-      "${ unread } unread message": [
-        "${ unread } mensagem não lida",
-        "${ unread } mensagens não lidas"
-      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } mensagem programada",
         "${ unreadCount } mensagens programadas"
-      ],
-      "${ unreadCount } unread conversation": [
-        "${ unreadCount } conversa não lida",
-        "${ unreadCount } conversas não lidas"
-      ],
-      "${ unreadCount } unread message": [
-        "${ unreadCount } mensagem não lida",
-        "${ unreadCount } mensagens não lidas"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contato atualizado.",
@@ -5828,9 +5797,6 @@
       "The sender has requested a read receipt.": [
         "O remetente solicitou uma confirmação de leitura."
       ],
-      "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "Não foi possível verificar ${ contactName }: o contato não está assinado corretamente.\nPode ser o resultado de uma redefinição de senha.\nVocê precisa assinar novamente o contato para poder enviar uma mensagem para ${ contactAddress } ou editar o contato."
-      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "Não foi possível verificar ${ contactNames }: o contato não está assinado corretamente.\nPode ser o resultado de uma redefinição de senha.\nVocê precisa assinar novamente o contato para poder enviar a mensagem para ${ contactAddresses } ou editar o contato.",
         "Não foi possível verificar ${ contactNames }: o contato não está assinado corretamente.\nPode ser o resultado de uma redefinição de senha.\nVocê precisa assinar novamente os contatos para poder enviar a mensagem para ${ contactAddresses } ou editar os contatos."
@@ -5902,12 +5868,6 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Esta mensagem é assinada pela chave anexa, que ainda não é confiável."
       ],
-      "This message will be automatically deleted on ${ longDateMEssage }": [
-        "Essa mensagem será automaticamente excluída em ${ longDateMEssage }"
-      ],
-      "This message will be automatically deleted on ${ shortDateMessage }": [
-        "Essa mensagem será automaticamente excluída em ${ shortDateMessage }"
-      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Esta mensagem será marcada como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?",
         "Estas mensagens serão marcadas como spam. Você também gostaria de cancelar a assinatura de futuros e-mails?"
@@ -5932,15 +5892,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Esta mensagem irá expirar em ${ formattedDate }"
-      ],
-      "This message will expire on ${ longDateMEssage }": [
-        "Esta mensagem expirará em ${ longDateMEssage }"
-      ],
-      "This message will expire today at ${ shortDateMessage }": [
-        "Esta mensagem expirará hoje às ${ shortDateMessage }."
-      ],
-      "This message will expire tomorrow at ${ shortDateMessage }": [
-        "Esta mensagem expirará amanhã às ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Esta chave pública será automaticamente usada para criptografar e-mails enviados para este endereço."
@@ -5975,18 +5926,6 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Muitas mensagens esperando para serem enviadas. Aguarde até que outra mensagem seja enviada para agendar esta."
       ],
-      "Total email addresses": [
-        "Endereços de e-mail adicionais"
-      ],
-      "Total storage": [
-        "Total de armazenamento"
-      ],
-      "Total supported domains": [
-        "Total de domínios suportados"
-      ],
-      "Total VPN connections": [
-        "Conexões VPN adicionais"
-      ],
       "Trackers blocked:": [
         "Rastreadores bloqueados:"
       ],
@@ -6007,9 +5946,6 @@
       ],
       "Unsupported file": [
         "Arquivo não suportado"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Até ${ FAMILY_MAX_USERS } usuários"
       ],
       "Updating message content search...": [
         "Atualizando pesquisa de conteúdo de mensagens..."
@@ -6163,12 +6099,6 @@
       ],
       "You do not have any messages here": [
         "Você não tem mensagens aqui"
-      ],
-      "You have ${ totalLabel } in your inbox.": [
-        "Você tem ${ totalLabel } na sua caixa de entrada."
-      ],
-      "You have ${ unreadsLabel } in your inbox.": [
-        "Você tem ${ unreadsLabel } na sua caixa de entrada."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Você tem **${ count } conversa** armazenada nesta pasta",
@@ -6937,18 +6867,6 @@
       "System information": [
         "Informações do sistema"
       ],
-      "The email was sent ${ attachment }": [
-        "O e-mail foi enviado ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "o e-mail foi enviado ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "O e-mail foi enviado ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "o e-mail foi enviado ${ label }"
-      ],
       "Theme": [
         "Tema"
       ],
@@ -6985,17 +6903,8 @@
       "With attachment": [
         "Com anexo"
       ],
-      "with attachments": [
-        "com anexos"
-      ],
       "Without attachment": [
         "Sem anexo"
-      ],
-      "without attachment": [
-        "sem anexo"
-      ],
-      "without attachments": [
-        "sem anexos"
       ],
       "Wonderful": [
         "Maravilhoso"
@@ -7523,9 +7432,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } calendário",
-        "${ maximumNumberOfCalendars } calendários"
+      "${ n } calendar": [
+        "${ n } calendário",
+        "${ n } calendários"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendário por usuário",
+        "${ n } calendários por usuário"
       ],
       "Auto-delete spam and trashed messages": [
         "Excluir automaticamente spam e mensagens da lixeira"
@@ -7539,6 +7452,9 @@
       "Custom snooze time": [
         "Adiamento personalizado"
       ],
+      "End-to-end encryption": [
+        "Criptografia de ponta a ponta"
+      ],
       "Hide-my-email aliases": [
         "Aliases do Hide-my-email"
       ],
@@ -7547,6 +7463,9 @@
       ],
       "Search message content": [
         "Pesquisar conteúdo da mensagem"
+      ],
+      "Send & receive invitations": [
+        "Enviar e receber convites"
       ],
       "Unlimited folders, labels, and filters": [
         "Pastas ilimitadas, marcadores e filtros"
@@ -7583,6 +7502,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Comentários"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Proteja sua agenda com criptografia de ponta a ponta. Inclui suporte para calendários personalizados, compartilhamento de calendário e muito mais."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Crie até ${ n } calendário ou adicione calendários de amigos, familiares, colegas e organizações",
+        "Crie até ${ n } calendários ou adicione calendários de amigos, familiares, colegas e organizações"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Compartilhe facilmente seus calendários com familiares, amigos ou colegas."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Mantenha seus planos privados para você e sua família com um calendário criptografado"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Crie até ${ n } calendário",
+        "Crie até ${ n } calendários"
       ]
     },
     "Notification": {
@@ -9148,9 +9088,6 @@
       "Delete ${ count } message": [
         "Excluir ${ count } mensagens",
         "Excluir ${ count } mensagens"
-      ],
-      "Delete ${ Name }": [
-        "Excluir ${ Name }"
       ],
       "Delete all messages": [
         "Excluir todas as mensagens"

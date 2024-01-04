@@ -713,10 +713,10 @@
       "Not saved": [
         "არაა შენახული"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -3280,14 +3280,6 @@
       "Choose a date in the future.": [
         "თარიღი მომავალში უნდა იყოს."
       ],
-      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
-        "აირჩიეთ თარიღი შემდეგი ${ EXPIRATION_TIME_MAX_DAYS } დღის განმავლობაში.",
-        "აირჩიეთ თარიღი შემდეგი ${ EXPIRATION_TIME_MAX_DAYS } დღის განმავლობაში."
-      ],
-      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
-        "აირჩიეთ თარიღი შემდეგი ${ SCHEDULED_MAX_DATE_DAYS } დღის განმავლობაში.",
-        "აირჩიეთ თარიღი შემდეგი ${ SCHEDULED_MAX_DATE_DAYS } დღის განმავლობაში."
-      ],
       "Condition incomplete": [
         "არასრული პირობა"
       ],
@@ -4815,10 +4807,6 @@
         "${ contactsLength } კონტაქტი",
         "${ contactsLength } კონტაქტი"
       ],
-      "${ count } unread message": [
-        "${ count } წაუკითხავი შეტყობინება",
-        "${ count } წაუკითხავი შეტყობინება"
-      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } ${ totalProgress }-დან",
         "${ currentProgress } ${ totalProgress }-დან"
@@ -4896,9 +4884,6 @@
         "მონიშნულია ${ selectedFoldersCountLocalized } ჭდე",
         "მონიშნულია ${ selectedFoldersCountLocalized } ჭდე"
       ],
-      "${ storage } storage": [
-        "${ storage } საცავი"
-      ],
       "${ total } conversation": [
         "${ total } საუბარი",
         "${ total } საუბარი"
@@ -4907,25 +4892,9 @@
         "${ total } შეტყობინება",
         "${ total } შეტყობინება"
       ],
-      "${ unread } unread conversation": [
-        "${ unread } წაუკითხავი საუბარი",
-        "${ unread } წაუკითხავი საუბარი"
-      ],
-      "${ unread } unread message": [
-        "${ unread } წაუკითხავი შეტყობინება",
-        "${ unread } წაუკითხავი შეტყობინება"
-      ],
       "${ unreadCount } scheduled message": [
         "რიგშია ${ unreadCount } შეტყობინება",
         "რიგშია ${ unreadCount } შეტყობინება"
-      ],
-      "${ unreadCount } unread conversation": [
-        "${ unreadCount } წაუკითხავი საუბარი",
-        "${ unreadCount } წაუკითხავი საუბარი"
-      ],
-      "${ unreadCount } unread message": [
-        "${ unreadCount } წაუკითხავი შეტყობინება",
-        "${ unreadCount } წაუკითხავი შეტყობინება"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } კონტაქტი წარმატებით განახლდა.",
@@ -5798,9 +5767,6 @@
       "The sender has requested a read receipt.": [
         "გამომგზავნმა მოითხოვა წაკითხვის ანგარიშის გადაგზავნა."
       ],
-      "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "${ contactName }-ის შემოწმების შეცდომა: კონტაქტი სწორად არაა ხელმოწერილი.\nეს შეიძლება პაროლის შეცვლის ბრალი იყოს.\n${ contactAddress }-ზე შეტყობინების გასაგზავნად საჭიროა კონტაქტის თავიდან ხელმოწერა ან მისი ჩასწორება."
-      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "${ contactNames }-ის შემოწმების შეცდომა: კონტაქტი სწორად არაა ხელმოწერილი.\nეს შეიძლება პაროლის შეცვლის ბრალი იყოს.\n${ contactAddresses }-ზე შეტყობინების გასაგზავნად საჭიროა კონტაქტის თავიდან ხელმოწერა ან მისი ჩასწორება.",
         "${ contactNames }-ის შემოწმების შეცდომა: კონტაქტი სწორად არაა ხელმოწერილი.\nეს შეიძლება პაროლის შეცვლის ბრალი იყოს.\n${ contactAddresses }-ზე შეტყობინების გასაგზავნად საჭიროა კონტაქტის თავიდან ხელმოწერა ან მისი ჩასწორება."
@@ -5872,12 +5838,6 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "შეტყობინება ხელმოწერილია მიმაგრებული გასაღებით, რომელიც, ჯერ, სანდო არაა."
       ],
-      "This message will be automatically deleted on ${ longDateMEssage }": [
-        "შეტყობინების ავტომატური წაშლის თარიღი: ${ longDateMEssage }"
-      ],
-      "This message will be automatically deleted on ${ shortDateMessage }": [
-        "ამ შეტყობინების ავტომატური წაშლის თარიღი: ${ shortDateMessage }"
-      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "ეს შეტყობინება აღინიშნება როგორც სპამი. გსურთ, ასევე გააუქმოთ გამოწერა მომავალი ელფოსტისგან?",
         "ეს შეტყობინებები აღინიშნება როგორც სპამი. გსურთ, ასევე გააუქმოთ გამოწერა მომავალი ელფოსტისგან?"
@@ -5902,15 +5862,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "შეტყობინების ვადაა ${ formattedDate }"
-      ],
-      "This message will expire on ${ longDateMEssage }": [
-        "შეტყობინებას ვადაა ${ longDateMEssage }"
-      ],
-      "This message will expire today at ${ shortDateMessage }": [
-        "ამ შეტყობინების ვადაა დღეს, ${ shortDateMessage }-მდე"
-      ],
-      "This message will expire tomorrow at ${ shortDateMessage }": [
-        "ამ შეტყობინების ვადაა ხვალ, ${ shortDateMessage }-მდე"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "ეს საჯარო გასაღები ავტომატურად იქნება გამოყენებული ამ მისამართზე გამოგზავნილი ელფოსტის დასაშიფრად."
@@ -5945,18 +5896,6 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "გაგზავნას მეტისმეტად ბევრი შეტყობინება ელოდება. დაელოდეთ, სანამ ერთი მაინც გაიგზავნება."
       ],
-      "Total email addresses": [
-        "ელფოსტები სულ"
-      ],
-      "Total storage": [
-        "სრული საცავი"
-      ],
-      "Total supported domains": [
-        "მხარდაჭერილი დომენები სულ"
-      ],
-      "Total VPN connections": [
-        "VPN შეერთებები სულ"
-      ],
       "Trackers blocked:": [
         "დაბლოკილი ტრეკერები:"
       ],
@@ -5977,9 +5916,6 @@
       ],
       "Unsupported file": [
         "ფაილის მხარდაჭერა არ არსებობს"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "${ FAMILY_MAX_USERS }-მდე მომხმარებელი"
       ],
       "Updating message content search...": [
         "შეტყობინების შიგთავსში ძებნის განახლება..."
@@ -6133,12 +6069,6 @@
       ],
       "You do not have any messages here": [
         "არ გაქვთ არცერთი შეტყობინება"
-      ],
-      "You have ${ totalLabel } in your inbox.": [
-        "შემომავლებში გაქვთ ${ totalLabel } ცალი."
-      ],
-      "You have ${ unreadsLabel } in your inbox.": [
-        "შემომავლებში გაქვთ ${ unreadsLabel } ცალი."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "ამ საქაღალდეში გაქვთ **${ count } შეტყობინება",
@@ -6897,18 +6827,6 @@
       "System information": [
         "სისტემის ინფორმაცია"
       ],
-      "The email was sent ${ attachment }": [
-        "ელფოსტა გაგზავნილია ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "ელფოსტა გაგზავნილია ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "ელფოსტა გაგზავნილია ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "ელ-ფოსტა გაგზავნილია ${ label }"
-      ],
       "Theme": [
         "თემა"
       ],
@@ -6945,16 +6863,7 @@
       "With attachment": [
         "მიმაგრებებით"
       ],
-      "with attachments": [
-        "მიმაგრებებით"
-      ],
       "Without attachment": [
-        "მიმაგრების გარეშე"
-      ],
-      "without attachment": [
-        "მიმაგრების გარეშე"
-      ],
-      "without attachments": [
         "მიმაგრების გარეშე"
       ],
       "Wonderful": [
@@ -7474,9 +7383,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } კალენდარი",
-        "${ maximumNumberOfCalendars } კალენდარი"
+      "${ n } calendar": [
+        "${ n } კალენდარი",
+        "${ n } კალენდარი"
+      ],
+      "${ n } calendar per user": [
+        "${ n } კალენდარი თითოეული მომხმარებლისათვის",
+        "${ n } კალენდარი თითოეული მომხმარებლისათვის"
       ],
       "Auto-delete spam and trashed messages": [
         "სპამისა და სანაგვე ყუთში მდებარე შეტყობინებების ავტომატური წაშლა"
@@ -7490,6 +7403,9 @@
       "Custom snooze time": [
         "მომხმარებლის დროებით დადუმების დრო"
       ],
+      "End-to-end encryption": [
+        "გამჭოლი შიფრაცია"
+      ],
       "Hide-my-email aliases": [
         "მეტსახელი Hide My Email-სთვის"
       ],
@@ -7498,6 +7414,9 @@
       ],
       "Search message content": [
         "შეტყობინების შიგთავსში ძებნა"
+      ],
+      "Send & receive invitations": [
+        "მოსაწვევების გაგზავნა და მიღება"
       ],
       "Unlimited folders, labels, and filters": [
         "ულიმიტო საქაღალდეები, ჭდეები და ფილტრები"
@@ -7534,6 +7453,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "უკუკავშირი"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: დაიცავით თქვენი განრიგი გამჭოლი დაშიფვრით. შეიცავს მომხმარებლის კალენდრების მხარდაჭერას, კალენდრის გაზიარებას და ა.შ."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "შექმენით ${ n }-მდე კალენდარი ან დაამატეთ მეგობრების, ოჯახის, კოლეგების და ორგანიზაციების კალენდრები",
+        "შექმენით ${ n }-მდე კალენდარი ან დაამატეთ მეგობრების, ოჯახის, კოლეგების და ორგანიზაციების კალენდრები"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "გაუზიარეთ კალენდარი თქვენს ოჯახს, მეგობრებს და კოლეგებს"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "დაიტოვეთ თქვენი გეგმები თქვენთვის და თქვენი ოჯახისთვის, დაშიფრული კალენდრით"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "შექმენით ${ n }-მდე კალენდარი",
+        "შექმენით ${ n }-მდე კალენდარი"
       ]
     },
     "Notification": {
@@ -9099,9 +9039,6 @@
       "Delete ${ count } message": [
         "${ count } შეტყობინების წაშლა",
         "${ count } შეტყობინების წაშლა"
-      ],
-      "Delete ${ Name }": [
-        "${ Name }-ის წაშლა"
       ],
       "Delete all messages": [
         "ყველა შეტყობინების წაშლა"
