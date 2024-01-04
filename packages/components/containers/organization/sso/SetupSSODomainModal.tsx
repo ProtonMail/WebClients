@@ -53,7 +53,9 @@ const SetupSSODomainModal = ({ onContinue, onClose, ...rest }: Props) => {
                     return;
                 }
 
-                const { Domain } = await api<{ Domain: Domain }>(addDomain(domainName));
+                const { Domain } = await api<{ Domain: Domain }>(
+                    addDomain({ Name: domainName, AllowedForMail: false, AllowedForSSO: true })
+                );
                 setDomain(Domain);
 
                 await call();
