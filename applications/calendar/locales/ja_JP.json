@@ -3481,9 +3481,6 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "${ selectedFoldersCountLocalized } 件のラベルを選択"
       ],
-      "${ storage } storage": [
-        "${ storage } ストレージ"
-      ],
       "${ updated } contacts updated successfully.": [
         "${ updated } 連絡先が正常に更新されました。"
       ],
@@ -3985,23 +3982,8 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "アドレスの検証を利用するには、送信で使う鍵を含む 1 つ以上の公開鍵を信頼する必要があります。これにより、暗号鍵の偽装を防ぐことができます。"
       ],
-      "Total email addresses": [
-        "総メールアドレス数"
-      ],
-      "Total storage": [
-        "総ストレージ容量"
-      ],
-      "Total supported domains": [
-        "総対応ドメイン数"
-      ],
-      "Total VPN connections": [
-        "総VPN接続数"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "${ BRAND_NAME } の新しい機能、アップデート、製品を一般公開される前にお試しください。 これによりアプリケーションがリロードされます"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "最大 ${ FAMILY_MAX_USERS } ユーザーまで"
       ],
       "Update recurring event": [
         "定期的な予定の更新"
@@ -4960,8 +4942,11 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendars": [
-        "${ maximumNumberOfCalendars } 件のカレンダー"
+      "${ n } calendars": [
+        "${ n } カレンダー"
+      ],
+      "${ n } calendars per user": [
+        "1 ユーザーあたり ${ n } 件のカレンダー"
       ],
       "Auto-delete spam and trashed messages": [
         "迷惑メールとごみ箱のメッセージを自動削除"
@@ -4972,6 +4957,9 @@
       "Custom email domains": [
         "独自メールドメイン"
       ],
+      "End-to-end encryption": [
+        "エンドツーエンド暗号化"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email エイリアス"
       ],
@@ -4980,6 +4968,9 @@
       ],
       "Search message content": [
         "メッセージ内容の検索"
+      ],
+      "Send & receive invitations": [
+        "招待を送受信"
       ],
       "Unlimited folders, labels, and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
@@ -5016,6 +5007,25 @@
     "new_plans: placeholder": {
       "Feedback": [
         "フィードバック"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: エンドツーエンドの暗号化でスケジュールを保護します。 カスタム カレンダー、カレンダー共有などのサポートが含まれます。"
+      ],
+      "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
+        "${ n } 個までのカレンダーを作成または友人/家族/同僚/組織のカレンダーを追加"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "家族、友人、同僚とカレンダーを簡単に共有できます。"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "暗号化されたカレンダーで、自分自身や家族の予定を非公開にすることができます。"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendars": [
+        "最大 ${ n } 個までのカレンダーを作成"
       ]
     },
     "Notification": {
@@ -5201,9 +5211,6 @@
       ],
       "Auto": [
         "自動"
-      ],
-      "Automatic (${ defaultDay })": [
-        "自動 (${ defaultDay })"
       ],
       "Create new group": [
         "新しいグループを作成"
@@ -6254,9 +6261,6 @@
       ],
       "Delete ${ count } contacts": [
         "${ count } 件の連絡先を削除"
-      ],
-      "Delete ${ Name }": [
-        "${ Name } を削除"
       ],
       "Delete event": [
         "予定の削除"

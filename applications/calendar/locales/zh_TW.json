@@ -3560,9 +3560,6 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "已選取 ${ selectedFoldersCountLocalized } 種標籤"
       ],
-      "${ storage } storage": [
-        "${ storage } 儲存空間"
-      ],
       "${ updated } contacts updated successfully.": [
         "已成功更新 ${ updated } 位聯絡人。"
       ],
@@ -4067,23 +4064,8 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "若要使用電郵驗證，您必須啟用信任金鑰並信任一個或多個可用的公開金鑰，包括此電郵的主要金鑰。這樣可以防止加密金鑰遭到偽造。"
       ],
-      "Total email addresses": [
-        "可使用的電郵位址總數"
-      ],
-      "Total storage": [
-        "總儲存量"
-      ],
-      "Total supported domains": [
-        "可支援的網域總數"
-      ],
-      "Total VPN connections": [
-        "總 VPN 連線數量"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "在它們公開前，嘗試新的 ${ BRAND_NAME } 功能，更新與產品。這將會重新載入應用程式"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "多達 ${ FAMILY_MAX_USERS } 位使用者"
       ],
       "Update recurring event": [
         "更新週期性事件"
@@ -5047,8 +5029,11 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendars": [
-        "${ maximumNumberOfCalendars } 個行事曆"
+      "${ n } calendars": [
+        "${ n } 個行事曆"
+      ],
+      "${ n } calendars per user": [
+        "${ n } 個行事曆分配給每位使用者"
       ],
       "Auto-delete spam and trashed messages": [
         "自動刪除垃圾郵件與垃圾桶中的訊息"
@@ -5062,6 +5047,9 @@
       "Custom snooze time": [
         "自訂延遲時間"
       ],
+      "End-to-end encryption": [
+        "端對端加密"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email 別名"
       ],
@@ -5070,6 +5058,9 @@
       ],
       "Search message content": [
         "搜尋郵件內容"
+      ],
+      "Send & receive invitations": [
+        "傳送並接收邀請"
       ],
       "Unlimited folders, labels, and filters": [
         "資料夾、標籤和篩選器無上限"
@@ -5106,6 +5097,25 @@
     "new_plans: placeholder": {
       "Feedback": [
         "意見回饋"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }：透過端對端加密保護您的行程安排。包括對自訂行事曆、行事曆共用等的支援。"
+      ],
+      "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
+        "創建多達 ${ n } 個行事曆或新增好友、家人、同事和組織的行事曆"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "輕鬆與您的家人、好友或同事分享您的行事曆"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "使用加密日曆讓您的方案對您和您的家人保密"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendars": [
+        "創建多達 ${ n } 個行事曆"
       ]
     },
     "Notification": {
@@ -5300,9 +5310,6 @@
       ],
       "Auto": [
         "自動"
-      ],
-      "Automatic (${ defaultDay })": [
-        "自動 (${ defaultDay })"
       ],
       "Create new group": [
         "創建新群組"
@@ -6371,9 +6378,6 @@
       ],
       "Delete ${ count } contacts": [
         "刪除 ${ count } 位聯絡人"
-      ],
-      "Delete ${ Name }": [
-        "刪除 ${ Name }"
       ],
       "Delete event": [
         "刪除事件"

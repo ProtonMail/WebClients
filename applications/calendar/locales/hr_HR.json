@@ -3791,8 +3791,21 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } kalendar",
+        "${ n } kalendara",
+        "${ n } kalendara"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalendar po korisniku",
+        "${ n } kalendara po korisniku",
+        "${ n } kalendara po korisniku"
+      ],
       "Custom email domains": [
         "Prilagođene domene"
+      ],
+      "End-to-end encryption": [
+        "Krajnje do krajnje šifriranje"
       ],
       "Search message content": [
         "Pretraži sadržaj poruka"
@@ -3992,9 +4005,6 @@
       ],
       "Auto": [
         "Automatski"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automatski (${ defaultDay })"
       ],
       "Create new group": [
         "Stvori novu grupu"
@@ -4730,9 +4740,6 @@
         "Izbriši ${ count } grupu kontakata",
         "Izbriši ${ count } grupe kontakata",
         "Izbriši ${ count } grupa kontakata"
-      ],
-      "Delete ${ Name }": [
-        "Izbriši ${ Name }"
       ],
       "Delete event": [
         "Izbriši događaj"

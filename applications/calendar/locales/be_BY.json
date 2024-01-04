@@ -3789,9 +3789,6 @@
         "Выбраны ${ selectedFoldersCountLocalized } метак",
         "Выбраны ${ selectedFoldersCountLocalized } меткі"
       ],
-      "${ storage } storage": [
-        "${ storage } сховішча"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } кантакт паспяхова абноўлены.",
         "${ updated } кантакты паспяхова абноўлены.",
@@ -4326,23 +4323,8 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Для таго, каб выкарыстоўваць праверку адраса вы павінны давяраць аднаму або некалькім з даступных публічных ключоў, уключаючы той, які вы хочаце выкарыстоўваць для адпраўкі. Гэта прадухіляе падробку ключоў шыфравання."
       ],
-      "Total email addresses": [
-        "Колькасць адрасоў электроннай пошты"
-      ],
-      "Total storage": [
-        "Агульны аб'ём сховішча"
-      ],
-      "Total supported domains": [
-        "Колькасць даменаў, якія падтрымліваюцца"
-      ],
-      "Total VPN connections": [
-        "Колькасць падключэнняў па VPN"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Паспрабуйце новыя функцыі, абнаўленні і прадукты ${ BRAND_NAME } перад тым, як яны будуць выпушчаны для шырокага кола карыстальнікаў. Гэта прывядзе да перазапуску праграмы"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Да ${ FAMILY_MAX_USERS } карыстальнікаў"
       ],
       "Update recurring event": [
         "Абнавіць перыядычную падзею"
@@ -5377,11 +5359,17 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } каляндар",
-        "${ maximumNumberOfCalendars } календары",
-        "${ maximumNumberOfCalendars } календароў",
-        "${ maximumNumberOfCalendars } календароў"
+      "${ n } calendar": [
+        "${ n } каляндар",
+        "${ n } календары",
+        "${ n } календароў",
+        "${ n } календары"
+      ],
+      "${ n } calendar per user": [
+        "${ n } каляндар на карыстальніка",
+        "${ n } календары на карыстальніка",
+        "${ n } календароў на карыстальніка",
+        "${ n } календароў на карыстальніка"
       ],
       "Auto-delete spam and trashed messages": [
         "Аўтаматычна выдаляць паведамленні ў спаме і сметніцы"
@@ -5395,6 +5383,9 @@
       "Custom snooze time": [
         "Карыстальніцкі час адкладання"
       ],
+      "End-to-end encryption": [
+        "Скразное шыфраванне"
+      ],
       "Hide-my-email aliases": [
         "Псеўданімаў Hide-my-email"
       ],
@@ -5403,6 +5394,9 @@
       ],
       "Search message content": [
         "Пошук змесціва паведамлення"
+      ],
+      "Send & receive invitations": [
+        "Адпраўка і атрыманне запрашэнняў"
       ],
       "Unlimited folders, labels, and filters": [
         "Неабмежаваная колькасць папак, метак і фільтраў"
@@ -5439,6 +5433,31 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Зваротная сувязь"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Абараняйце свой расклад з дапамогай скразнога шыфравання. Уключае падтрымку для карыстальніцкіх календароў, абагуленых календароў і іншыя функцыі."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Стварайце да ${ n } календара або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
+        "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
+        "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
+        "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Лёгка дзяліцеся вашымі календарамі з сям'ёй, сябрамі або калегамі"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Трымайце ў прыватнасці свае і сямейныя планы з зашыфраваным календаром"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Стварыць да ${ n } календара",
+        "Стварыць да ${ n } календароў",
+        "Стварыць да ${ n } календароў",
+        "Стварыць да ${ n } календароў"
       ]
     },
     "Notification": {
@@ -5696,9 +5715,6 @@
       ],
       "Auto": [
         "Аўтаматычна"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Аўтаматычна (${ defaultDay })"
       ],
       "Create new group": [
         "Стварыць новую групу"
@@ -6899,9 +6915,6 @@
         "Выдаліць ${ count } групы кантактаў",
         "Выдаліць ${ count } груп кантактаў",
         "Выдаліць ${ count } групы кантактаў"
-      ],
-      "Delete ${ Name }": [
-        "Выдаліць ${ Name }"
       ],
       "Delete event": [
         "Выдаліць падзею"
