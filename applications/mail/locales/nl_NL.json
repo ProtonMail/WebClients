@@ -710,11 +710,11 @@
       "Not saved": [
         "Niet opgeslagen"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Open ${ CALENDAR_APP_NAME }"
@@ -3238,14 +3238,6 @@
       "Choose a date in the future.": [
         "Kies een datum in de toekomst."
       ],
-      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
-        "Kies een datum binnen de volgende ${ EXPIRATION_TIME_MAX_DAYS } dag.",
-        "Kies een datum binnen de volgende ${ EXPIRATION_TIME_MAX_DAYS } dagen."
-      ],
-      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
-        "Kies een datum binnen de volgende ${ SCHEDULED_MAX_DATE_DAYS } dag.",
-        "Kies een datum binnen de volgende ${ SCHEDULED_MAX_DATE_DAYS } dagen."
-      ],
       "Condition incomplete": [
         "Onvolledig ingevulde voorwaarde"
       ],
@@ -4767,10 +4759,6 @@
         "${ contactsLength } contact",
         "${ contactsLength } contacten"
       ],
-      "${ count } unread message": [
-        "${ count } ongelezen bericht",
-        "${ count } ongelezen berichten"
-      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } van ${ totalProgress }",
         "${ currentProgress } van ${ totalProgress }"
@@ -4848,9 +4836,6 @@
         "${ selectedFoldersCountLocalized } label geselecteerd",
         "${ selectedFoldersCountLocalized } labels geselecteerd"
       ],
-      "${ storage } storage": [
-        "${ storage } opslag"
-      ],
       "${ total } conversation": [
         "${ total } gesprek",
         "${ total } gesprekken"
@@ -4859,25 +4844,9 @@
         "${ total } bericht",
         "${ total } berichten"
       ],
-      "${ unread } unread conversation": [
-        "${ unread } ongelezen gesprek",
-        "${ unread } ongelezen gesprekken"
-      ],
-      "${ unread } unread message": [
-        "${ unread } ongelezen bericht",
-        "${ unread } ongelezen berichten"
-      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } ingepland bericht",
         "${ unreadCount } ingeplande berichten"
-      ],
-      "${ unreadCount } unread conversation": [
-        "${ unreadCount } ongelezen gesprek",
-        "${ unreadCount } ongelezen gesprekken"
-      ],
-      "${ unreadCount } unread message": [
-        "${ unreadCount } ongelezen bericht",
-        "${ unreadCount } ongelezen berichten"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact bijgewerkt.",
@@ -5741,9 +5710,6 @@
       "The sender has requested a read receipt.": [
         "De zender heeft om een leesbevestiging gevraagd."
       ],
-      "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "Het controleren van ${ contactName } is mislukt: de gegevens van deze contactpersoon zijn niet juist ondertekend.\nDit kan het gevolg zijn van het resetten van uw wachtwoord.\nU moet deze contactpersoon opnieuw ondertekenen of bewerken om berichten te versturen aan ${ contactAddress }."
-      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "Het controleren van ${ contactNames } is mislukt: de gegevens van deze contactpersoon zijn niet juist ondertekend.\nDit kan het gevolg zijn van het resetten van uw wachtwoord.\nU moet deze contactpersoon opnieuw ondertekenen of bewerken om berichten te versturen aan ${ contactAddresses }.",
         "Het controleren van ${ contactNames } is mislukt: de gegevens van deze contactpersonen zijn niet juist ondertekend.\nDit kan het gevolg zijn van het resetten van uw wachtwoord.\nU moet deze contactpersonen opnieuw ondertekenen of bewerken om berichten te versturen aan ${ contactAddresses }."
@@ -5815,12 +5781,6 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Dit bericht is ondertekend door de bijgevoegde sleutel, die nog niet als vertrouwd is aangemerkt."
       ],
-      "This message will be automatically deleted on ${ longDateMEssage }": [
-        "Dit bericht wordt automatisch verwijderd op ${ longDateMEssage }"
-      ],
-      "This message will be automatically deleted on ${ shortDateMessage }": [
-        "Dit bericht wordt automatisch verwijderd op ${ shortDateMessage }"
-      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Dit bericht wordt gemarkeerd als spam. Wilt u zich ook afmelden van toekomstige e-mails?",
         "Deze berichten worden gemarkeerd als spam. Wilt u zich ook afmelden van toekomstige e-mails?"
@@ -5845,15 +5805,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Dit bericht verloopt op ${ formattedDate }"
-      ],
-      "This message will expire on ${ longDateMEssage }": [
-        "Dit bericht verloopt over ${ longDateMEssage }"
-      ],
-      "This message will expire today at ${ shortDateMessage }": [
-        "Dit bericht verloopt vandaag om ${ shortDateMessage }"
-      ],
-      "This message will expire tomorrow at ${ shortDateMessage }": [
-        "Dit bericht verloopt morgen om ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Deze openbare sleutel wordt automatisch gebruikt voor het versturen van versleutelde e-mailberichten naar dit adres."
@@ -5888,18 +5839,6 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Te veel berichten die wachten om te worden verzonden. Wacht tot een ander bericht is verzonden om dit bericht te plannen."
       ],
-      "Total email addresses": [
-        "Totaal e-mailadressen"
-      ],
-      "Total storage": [
-        "Totale opslagruimte"
-      ],
-      "Total supported domains": [
-        "Totaal ondersteunde domeinen"
-      ],
-      "Total VPN connections": [
-        "Totale VPN-verbindingen"
-      ],
       "Trackers blocked:": [
         "Trackers geblokkeerd:"
       ],
@@ -5920,9 +5859,6 @@
       ],
       "Unsupported file": [
         "Niet-ondersteund bestand"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Tot ${ FAMILY_MAX_USERS } gebruikers"
       ],
       "Updating message content search...": [
         "Zoeken naar berichtinhoud bijwerken..."
@@ -6076,12 +6012,6 @@
       ],
       "You do not have any messages here": [
         "U hebt hier geen berichten"
-      ],
-      "You have ${ totalLabel } in your inbox.": [
-        "U hebt ${ totalLabel } in uw inbox."
-      ],
-      "You have ${ unreadsLabel } in your inbox.": [
-        "U heeft ${ unreadsLabel } in uw inbox."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "U heeft **${ count } gesprek** uit deze map opgeslagen",
@@ -6837,18 +6767,6 @@
       "System information": [
         "Systeeminformatie"
       ],
-      "The email was sent ${ attachment }": [
-        "De e-mail was verzonden ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "de e-mail was verzonden ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "De e-mail was verzonden ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "de e-mail was verzonden ${ label }"
-      ],
       "Theme": [
         "Thema"
       ],
@@ -6885,17 +6803,8 @@
       "With attachment": [
         "Met bijlage"
       ],
-      "with attachments": [
-        "met bijlagen"
-      ],
       "Without attachment": [
         "Zonder bijlage"
-      ],
-      "without attachment": [
-        "zonder bijlagen"
-      ],
-      "without attachments": [
-        "zonder bijlagen"
       ],
       "Wonderful": [
         "Uitstekend"
@@ -7404,9 +7313,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } agenda",
-        "${ maximumNumberOfCalendars } agenda's"
+      "${ n } calendar": [
+        "${ n } agenda",
+        "${ n } agenda's"
+      ],
+      "${ n } calendar per user": [
+        "${ n } agenda per gebruiker",
+        "${ n } agenda's per gebruiker"
       ],
       "Auto-delete spam and trashed messages": [
         "Automatisch spam en verwijderde berichten verwijderen"
@@ -7420,6 +7333,9 @@
       "Custom snooze time": [
         "Aangepaste sluimertijd"
       ],
+      "End-to-end encryption": [
+        "End-to-end versleuteling"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliassen"
       ],
@@ -7428,6 +7344,9 @@
       ],
       "Search message content": [
         "Doorzoek berichtinhoud"
+      ],
+      "Send & receive invitations": [
+        "Uitnodigingen verzenden & ontvangen"
       ],
       "Unlimited folders, labels, and filters": [
         "Ongelimiteerde mappen, labels en filters"
@@ -7464,6 +7383,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Feedback"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Beveilig uw agenda met end-to-end versleuteling. Dit is inclusief ondersteuning voor aangepaste agenda's, agenda-delen en meer."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Maak tot ${ n } agenda of voeg agenda's van vrienden, familie, collega's of andere organisaties toe",
+        "Maak tot ${ n } agenda's of voeg agenda's van vrienden, familie, collega's of andere organisaties toe"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Deel uw agenda's eenvoudig met uw familie, vrienden of collega's."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Houd uw plannen privé voor u en uw gezin met een versleutelde agenda"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Maak tot ${ n } agenda",
+        "Maak tot ${ n } agenda's"
       ]
     },
     "Notification": {
@@ -8984,9 +8924,6 @@
       "Delete ${ count } message": [
         "${ count } bericht verwijderen",
         "Verwijder ${ count } berichten"
-      ],
-      "Delete ${ Name }": [
-        "Verwijder ${ Name }"
       ],
       "Delete all messages": [
         "Alle berichten verwijderen"

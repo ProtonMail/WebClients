@@ -709,11 +709,11 @@
       "Not saved": [
         "尚未儲存"
       ],
-      "OK": [
-        "好"
-      ],
       "Ok": [
         "確定"
+      ],
+      "OK": [
+        "好"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "開啟 ${ CALENDAR_APP_NAME }"
@@ -3241,12 +3241,6 @@
       "Choose a date in the future.": [
         "選擇一個未來的日期。"
       ],
-      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } days.": [
-        "在接下來的${ EXPIRATION_TIME_MAX_DAYS }天內選擇一個日期。"
-      ],
-      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } days.": [
-        "在接下來的${ SCHEDULED_MAX_DATE_DAYS }天內選擇一個日期。"
-      ],
       "Condition incomplete": [
         "條件不完整"
       ],
@@ -4740,9 +4734,6 @@
       "${ contactsLength } contacts": [
         "${ contactsLength } 位聯絡人"
       ],
-      "${ count } unread messages": [
-        "${ count } 封未讀郵件"
-      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ totalProgress } 中的 ${ currentProgress }"
       ],
@@ -4803,29 +4794,14 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "已選取 ${ selectedFoldersCountLocalized } 種標籤"
       ],
-      "${ storage } storage": [
-        "${ storage } 儲存空間"
-      ],
       "${ total } conversations": [
         "${ total } 則往來對話"
       ],
       "${ total } messages": [
         "${ total } 封郵件"
       ],
-      "${ unread } unread conversations": [
-        "${ unread } 篇未讀往來對話"
-      ],
-      "${ unread } unread messages": [
-        "${ unread } 封未讀郵件"
-      ],
       "${ unreadCount } scheduled messages": [
         "${ unreadCount } 封已排程訊息"
-      ],
-      "${ unreadCount } unread conversations": [
-        "${ unreadCount } 篇未讀往來對話"
-      ],
-      "${ unreadCount } unread messages": [
-        "${ unreadCount } 封未讀郵件"
       ],
       "${ updated } contacts updated successfully.": [
         "已成功更新 ${ updated } 位聯絡人。"
@@ -5676,9 +5652,6 @@
       "The sender has requested a read receipt.": [
         "寄件人要求發送讀取回條。"
       ],
-      "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "驗證 ${ contactName } 失敗：聯絡人簽章不正確。\n可能是重設密碼所導致。\n您必須重新簽署聯絡人才能發送郵件給 ${ contactAddress }，又或者編輯聯絡人。"
-      ],
       "The verification of ${ contactNames } has failed: the contacts are not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contacts in order to send a message to ${ contactAddresses } or edit the contacts.": [
         "無法驗證 ${ contactNames } ：聯絡人名片並未正確地簽署。\n這很可能是因為重設密碼所導致。\n您必須重新簽署聯絡人名片後，才能發送郵件給 ${ contactAddresses }，或是編輯聯絡人名片。"
       ],
@@ -5751,12 +5724,6 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "簽署此郵件的金鑰已隨函附上，惟尚未信任。"
       ],
-      "This message will be automatically deleted on ${ longDateMEssage }": [
-        "此郵件將會自動於${ longDateMEssage }刪除"
-      ],
-      "This message will be automatically deleted on ${ shortDateMessage }": [
-        "此郵件將會自動於${ shortDateMessage }刪除"
-      ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "此郵件將被移動至「草稿」，讓您可以繼續編輯。您必須重新安排寄送時間。"
       ],
@@ -5777,15 +5744,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "此郵件將在 ${ formattedDate } 到期"
-      ],
-      "This message will expire on ${ longDateMEssage }": [
-        "此郵件的有效期限尚餘${ longDateMEssage }"
-      ],
-      "This message will expire today at ${ shortDateMessage }": [
-        "此郵件將於今天${ shortDateMessage }過期"
-      ],
-      "This message will expire tomorrow at ${ shortDateMessage }": [
-        "此郵件將於明天${ shortDateMessage }過期"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "將自動使用此公開金鑰加密寄送到此電郵位址的電郵。"
@@ -5820,18 +5778,6 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "等待傳送的訊息太多了。請等其它訊息傳送後再安排此訊息。"
       ],
-      "Total email addresses": [
-        "可使用的電郵位址總數"
-      ],
-      "Total storage": [
-        "總儲存量"
-      ],
-      "Total supported domains": [
-        "可支援的網域總數"
-      ],
-      "Total VPN connections": [
-        "總 VPN 連線數量"
-      ],
       "Trackers blocked:": [
         "追蹤器已封鎖:"
       ],
@@ -5852,9 +5798,6 @@
       ],
       "Unsupported file": [
         "不支援的檔案"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "多達 ${ FAMILY_MAX_USERS } 位使用者"
       ],
       "Updating message content search...": [
         "正在更新郵件內容搜尋..."
@@ -6008,12 +5951,6 @@
       ],
       "You do not have any messages here": [
         "這裡無任何郵件"
-      ],
-      "You have ${ totalLabel } in your inbox.": [
-        "您有 ${ totalLabel } 在收件匣中。"
-      ],
-      "You have ${ unreadsLabel } in your inbox.": [
-        "您有 ${ unreadsLabel } 在收件匣中。"
       ],
       "You have **${ count } conversations** stored in this folder": [
         "您有 **${ count } 則往來對話** 儲存於此資料夾"
@@ -6757,18 +6694,6 @@
       "System information": [
         "系統資訊"
       ],
-      "The email was sent ${ attachment }": [
-        "電郵${ attachment }送出"
-      ],
-      "the email was sent ${ attachment }": [
-        "電郵${ attachment }送出"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "電郵${ attachmentStrong }送出"
-      ],
-      "the email was sent ${ label }": [
-        "電郵${ label }送出"
-      ],
       "Theme": [
         "主題"
       ],
@@ -6805,16 +6730,7 @@
       "With attachment": [
         "連同附件"
       ],
-      "with attachments": [
-        "連同附件"
-      ],
       "Without attachment": [
-        "不帶附件"
-      ],
-      "without attachment": [
-        "不帶附件"
-      ],
-      "without attachments": [
         "不帶附件"
       ],
       "Wonderful": [
@@ -7328,8 +7244,11 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendars": [
-        "${ maximumNumberOfCalendars } 個行事曆"
+      "${ n } calendars": [
+        "${ n } 個行事曆"
+      ],
+      "${ n } calendars per user": [
+        "${ n } 個行事曆分配給每位使用者"
       ],
       "Auto-delete spam and trashed messages": [
         "自動刪除垃圾郵件與垃圾桶中的訊息"
@@ -7343,6 +7262,9 @@
       "Custom snooze time": [
         "自訂延遲時間"
       ],
+      "End-to-end encryption": [
+        "端對端加密"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email 別名"
       ],
@@ -7351,6 +7273,9 @@
       ],
       "Search message content": [
         "搜尋郵件內容"
+      ],
+      "Send & receive invitations": [
+        "傳送並接收邀請"
       ],
       "Unlimited folders, labels, and filters": [
         "資料夾、標籤和篩選器無上限"
@@ -7387,6 +7312,25 @@
     "new_plans: placeholder": {
       "Feedback": [
         "意見回饋"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }：透過端對端加密保護您的行程安排。包括對自訂行事曆、行事曆共用等的支援。"
+      ],
+      "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
+        "創建多達 ${ n } 個行事曆或新增好友、家人、同事和組織的行事曆"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "輕鬆與您的家人、好友或同事分享您的行事曆"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "使用加密日曆讓您的方案對您和您的家人保密"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendars": [
+        "創建多達 ${ n } 個行事曆"
       ]
     },
     "Notification": {
@@ -8873,9 +8817,6 @@
       ],
       "Delete ${ count } messages": [
         "刪除 ${ count } 封電郵"
-      ],
-      "Delete ${ Name }": [
-        "刪除 ${ Name }"
       ],
       "Delete all messages": [
         "刪除所有訊息"

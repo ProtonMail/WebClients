@@ -713,11 +713,11 @@
       "Not saved": [
         "Μη αποθηκευμένο"
       ],
-      "OK": [
-        "ΟΚ"
-      ],
       "Ok": [
         "OK"
+      ],
+      "OK": [
+        "ΟΚ"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Άνοιγμα ${ CALENDAR_APP_NAME }"
@@ -3280,14 +3280,6 @@
       "Choose a date in the future.": [
         "Επιλογή μελλοντικής ημερομηνίας."
       ],
-      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
-        "Επιλέξτε μια ημ/νία εντός της επόμενης ${ EXPIRATION_TIME_MAX_DAYS } ημέρας",
-        "Επιλέξτε μια ημ/νία εντός των επόμενων ${ EXPIRATION_TIME_MAX_DAYS } ημερών."
-      ],
-      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
-        "Επιλέξτε μια ημ/νία εντός της επόμενης ${ SCHEDULED_MAX_DATE_DAYS } ημέρας.",
-        "Επιλέξτε μια ημ/νία εντός των επόμενων ${ SCHEDULED_MAX_DATE_DAYS } ημερών."
-      ],
       "Condition incomplete": [
         "Μη ολοκληρωμένη συνθήκη"
       ],
@@ -4815,10 +4807,6 @@
         "${ contactsLength } επαφή",
         "${ contactsLength } επαφές"
       ],
-      "${ count } unread message": [
-        "${ count } μη διαβασμένο μήνυμα",
-        "${ count } μη διαβασμένα μηνύματα"
-      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } από ${ totalProgress }",
         "${ currentProgress } από ${ totalProgress }"
@@ -4896,9 +4884,6 @@
         "${ selectedFoldersCountLocalized } ετικέτα επιλέχθηκε",
         "${ selectedFoldersCountLocalized } ετικέτες επιλέχθηκαν"
       ],
-      "${ storage } storage": [
-        "${ storage } αποθηκευτικού χώρου"
-      ],
       "${ total } conversation": [
         "${ total } συνομιλία",
         "${ total } συνομιλίες"
@@ -4907,25 +4892,9 @@
         "${ total } μήνυμα",
         "${ total } μηνύματα"
       ],
-      "${ unread } unread conversation": [
-        "${ unread } μη διαβασμένη συνομιλία",
-        "${ unread } μη διαβασμένες συνομιλίες"
-      ],
-      "${ unread } unread message": [
-        "${ unread } μη διαβασμένο μήνυμα",
-        "${ unread } μη διαβασμένα μηνύματα"
-      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } προγραμματισμένο μήνυμα",
         "${ unreadCount } προγραμματισμένα μηνύματα"
-      ],
-      "${ unreadCount } unread conversation": [
-        "${ unreadCount } μη διαβασμένη συνομιλία",
-        "${ unreadCount } μη διαβασμένες συνομιλίες"
-      ],
-      "${ unreadCount } unread message": [
-        "${ unreadCount } μη διαβασμένο μήνυμα",
-        "${ unreadCount } μη διαβασμένα μηνύματα"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } επαφή ενημερώθηκε επιτυχώς.",
@@ -5798,9 +5767,6 @@
       "The sender has requested a read receipt.": [
         "Ο αποστολέας έχει ζητήσει αποδεικτικό ανάγνωσης."
       ],
-      "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "Η επαλήθευση του ${ contactName } απέτυχε: η επαφή δεν έχει υπογραφεί σωστά.\nΑυτό μπορεί να είναι αποτέλεσμα επαναφοράς κωδικού πρόσβασης.\nΠρέπει να υπογράψετε ξανά την επαφή για να στείλετε ένα μήνυμα ${ contactAddress } ή επεξεργαστείτε την επαφή."
-      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "Η επαλήθευση του ${ contactNames } απέτυχε: η επαφή δεν έχει υπογραφεί σωστά.\nΑυτό μπορεί να είναι αποτέλεσμα επαναφοράς κωδικού πρόσβασης.\nΠρέπει να υπογράψετε ξανά την επαφή για να στείλετε ένα μήνυμα ${ contactAddresses } ή επεξεργαστείτε την επαφή.",
         "Η επαλήθευση των ${ contactNames } απέτυχε: οι επαφές δεν έχουν υπογραφεί σωστά.\nΑυτό μπορεί να είναι αποτέλεσμα επαναφοράς κωδικού πρόσβασης.\nΠρέπει να υπογράψετε ξανά τις επαφές για να στείλετε ένα μήνυμα ${ contactAddresses } ή επεξεργαστείτε τις επαφές."
@@ -5872,12 +5838,6 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Αυτό το μήνυμα υπογράφεται από συνημμένο κλειδί που δεν έχει γίνει εμπιστεύσιμο ακόμη."
       ],
-      "This message will be automatically deleted on ${ longDateMEssage }": [
-        "Αυτό το μήνυμα θα διαγραφεί αυτόματα στις ${ longDateMEssage }"
-      ],
-      "This message will be automatically deleted on ${ shortDateMessage }": [
-        "Αυτό το μήνυμα θα διαγραφεί αυτόματα στις ${ shortDateMessage }"
-      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Αυτό το μήνυμα θα σημανθεί ως ενοχλητικό. Θα θέλατε επίσης να απεγγραφείτε από μελλοντικά μηνύματα;",
         "Αυτά τα μηνύματα θα σημανθούν ως ενοχλητικά. Θα θέλατε επίσης να απεγγραφείτε από μελλοντικά μηνύματα;"
@@ -5902,15 +5862,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Αυτό το μήνυμα θα λήξει ${ formattedDate }"
-      ],
-      "This message will expire on ${ longDateMEssage }": [
-        "Αυτό το μήνυμα θα λήξει τη ${ longDateMEssage }"
-      ],
-      "This message will expire today at ${ shortDateMessage }": [
-        "Αυτό το μήνυμα θα λήξει σήμερα στις ${ shortDateMessage }"
-      ],
-      "This message will expire tomorrow at ${ shortDateMessage }": [
-        "Αυτό το μήνυμα θα λήξει αύριο στις ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Αυτό το δημόσιο κλειδί θα χρησιμοποιηθεί αυτόματα για την κρυπτογράφηση email που αποστέλλεται σε αυτήν τη διεύθυνση."
@@ -5945,18 +5896,6 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Υπερβολικός αριθμός μηνυμάτων σε αναμονή αποστολής. Για προγραμματισμό αυτού του μηνύματος, παρακαλούμε περιμένετε μέχρι την αποστολή ενός άλλου."
       ],
-      "Total email addresses": [
-        "Σύνολο διευθύνσεων ηλεκτρονικού ταχυδρομείου"
-      ],
-      "Total storage": [
-        "Συνολικός αποθηκευτικός χώρος"
-      ],
-      "Total supported domains": [
-        "Σύνολο υποστηριζόμενων τομέων"
-      ],
-      "Total VPN connections": [
-        "Σύνολο συνδέσεων VPN"
-      ],
       "Trackers blocked:": [
         "Αποκλεισμένοι ιχνηλάτες:"
       ],
@@ -5977,9 +5916,6 @@
       ],
       "Unsupported file": [
         "Μη υποστηριζόμενο αρχείο"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Μέχρι και ${ FAMILY_MAX_USERS } χρήστες"
       ],
       "Updating message content search...": [
         "Γίνεται ενημέρωση αναζήτησης εντός περιεχομένου μηνυμάτων..."
@@ -6133,12 +6069,6 @@
       ],
       "You do not have any messages here": [
         "Δεν έχετε μηνύματα εδώ"
-      ],
-      "You have ${ totalLabel } in your inbox.": [
-        "Έχετε ${ totalLabel } στα εισερχόμενά σας."
-      ],
-      "You have ${ unreadsLabel } in your inbox.": [
-        "Έχετε ${ unreadsLabel } στα εισερχόμενά σας."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Έχετε **${ count } συνομιλία** αποθηκευμένη σε αυτόν το φάκελο",
@@ -6897,18 +6827,6 @@
       "System information": [
         "Πληροφορίες Συστήματος"
       ],
-      "The email was sent ${ attachment }": [
-        "Το μήνυμα ηλεκτρονικού ταχυδρομείου στάλθηκε ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "το email στάλθηκε ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Το μήνυμα ηλεκτρονικού ταχυδρομείου στάλθηκε ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "το email στάλθηκε ${ label }"
-      ],
       "Theme": [
         "Θέμα"
       ],
@@ -6945,17 +6863,8 @@
       "With attachment": [
         "Με συνημμένα"
       ],
-      "with attachments": [
-        "με συνημμένα"
-      ],
       "Without attachment": [
         "Χωρίς συνημμένα"
-      ],
-      "without attachment": [
-        "χωρίς συνημμένα"
-      ],
-      "without attachments": [
-        "χωρίς συνημμένα"
       ],
       "Wonderful": [
         "Θαυμάσια"
@@ -7474,9 +7383,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } ημερολόγιο",
-        "${ maximumNumberOfCalendars } ημερολόγια"
+      "${ n } calendar": [
+        "${ n } ημερολόγιο",
+        "${ n } ημερολόγια"
+      ],
+      "${ n } calendar per user": [
+        "${ n } ημερολόγιο ανά χρήστη",
+        "${ n } ημερολόγια ανά χρήστη"
       ],
       "Auto-delete spam and trashed messages": [
         "Αυτόματη διαγραφή ανεπιθύμητων και απορριφθέντων μηνυμάτων"
@@ -7490,6 +7403,9 @@
       "Custom snooze time": [
         "Προσαρμοσμένος χρόνος αναβολής"
       ],
+      "End-to-end encryption": [
+        "Διατερματική κρυπτογράφηση"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email ψευδώνυμα"
       ],
@@ -7498,6 +7414,9 @@
       ],
       "Search message content": [
         "Αναζήτηση εντός περιεχομένου μηνυμάτων"
+      ],
+      "Send & receive invitations": [
+        "Αποστολή & λήψη προσκλήσεων"
       ],
       "Unlimited folders, labels, and filters": [
         "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
@@ -7534,6 +7453,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Σχόλια"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Ασφαλίστε το χρονοδιάγραμμά σας με κρυπτογράφηση από άκρο σε άκρο. Περιλαμβάνει υποστήριξη για προσαρμοσμένα ημερολόγια, κοινή χρήση ημερολογίου και πολλά άλλα."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Δημιουργήστε έως και ${ n } ημερολόγιο ή προσθέστε ημερολόγια από φίλους, συγγενείς, συναδέλφους και οργανισμούς",
+        "Δημιουργήστε έως και ${ n } ημερολόγια ή προσθέστε ημερολόγια από φίλους, συγγενείς, συναδέλφους και οργανισμούς"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Μοιραστείτε εύκολα τα ημερολόγιά σας με την οικογένεια, τους φίλους ή τους συναδέλφους σας"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Διατηρήστε τα σχέδιά σας ιδιωτικά για εσάς και την οικογένειά σας με ένα κρυπτογραφημένο ημερολόγιο"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Δημιουργήστε μέχρι και ${ n } ημερολόγιο",
+        "Δημιουργήστε μέχρι και ${ n } ημερολόγια"
       ]
     },
     "Notification": {
@@ -9099,9 +9039,6 @@
       "Delete ${ count } message": [
         "Διαγραφή ${ count } μηνύματος",
         "Διαγραφή ${ count } μηνυμάτων"
-      ],
-      "Delete ${ Name }": [
-        "Διαγραφή ${ Name }"
       ],
       "Delete all messages": [
         "Διαγραφή όλων των μηνυμάτων"
