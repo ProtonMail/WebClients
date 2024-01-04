@@ -730,18 +730,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Aktualizácia \"${ payload.item.data.metadata.name }\" bola zamietnutá"
       ],
-      "${ count } item": [
-        "${ count } položka",
-        "${ count } položky",
-        "${ count } položiek",
-        "${ count } položiek"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } položka",
-        "${ itemCount } položky",
-        "${ itemCount } položiek",
-        "${ itemCount } položiek"
-      ],
       "${ memberCount } member": [
         "${ memberCount } člen",
         "${ memberCount } členovia",
@@ -768,18 +756,6 @@
         "${ revisionNumber }-krát",
         "${ revisionNumber }-krát",
         "${ revisionNumber }-krát"
-      ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } položka",
-        "${ totalImportedItems } položky",
-        "${ totalImportedItems } položiek",
-        "${ totalImportedItems } položiek"
-      ],
-      "${ totalItems } item": [
-        "${ totalItems } položka",
-        "${ totalItems } položky",
-        "${ totalItems } položiek",
-        "${ totalItems } položiek"
       ],
       "${ trialDaysLeft } day left": [
         "Zostáva ${ trialDaysLeft } deň",
@@ -1101,9 +1077,6 @@
       ],
       "Sign in or create an account to continue.": [
         "Pre pokračovanie sa prihláste alebo si vytvorte účet."
-      ],
-      "Sign in to your account": [
-        "Prihláste sa do svojho účtu"
       ],
       "Signing you in": [
         "Prihlasujeme vás"
@@ -1654,6 +1627,11 @@
         "Chystáte sa vytvoriť"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Víta vás ${ appName }"
+      ]
+    },
     "Option": {
       "Commas": [
         "Čiarky"
@@ -1880,9 +1858,6 @@
       "Trash empty": [
         "Kôš je prázdny"
       ],
-      "Unlock ${ brandNameJSX }": [
-        "Odomknúť ${ brandNameJSX }"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Odomknúť ${ PASS_APP_NAME }"
       ],
@@ -1897,12 +1872,6 @@
       ],
       "Vault shared with you": [
         "Trezor zdieľaný s vami"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Víta vás ${ brandNameJSX }"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Víta vás ${ PASS_APP_NAME }"
       ],
       "Welcome to your new password manager!": [
         "Vitajte vo svojom novom správcovi hesiel!"
