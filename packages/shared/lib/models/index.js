@@ -21,3 +21,4 @@ export { MessageCountsModel } from './messageCountsModel';
 export { ImportersModel, ImportReportsModel } from './importersModel';
 export { IncomingAddressForwardingModel } from './incomingAddressForwardingModel';
 export { OutgoingAddressForwardingModel } from './outgoingAddressForwardingModel';
+export { SamlSSOModel } from './samlSSOModel';
