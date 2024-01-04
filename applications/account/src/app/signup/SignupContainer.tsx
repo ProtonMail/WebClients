@@ -50,7 +50,7 @@ import noop from '@proton/utils/noop';
 import mailReferPage from '../../pages/refer-a-friend';
 import mailTrialPage from '../../pages/trial';
 import Layout from '../public/Layout';
-import { defaultPersistentKey } from '../public/helper';
+import { defaultPersistentKey, getContinueToString } from '../public/helper';
 import { useFlowRef } from '../useFlowRef';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import { MetaTags, useMetaTags } from '../useMetaTags';
@@ -580,7 +580,7 @@ const SignupContainer = ({
                             if (signupType.type === SignupType.Username && signupTypes.includes(SignupType.Email)) {
                                 return c('Info').t`to use ${toAppName} and all ${BRAND_NAME} services`;
                             }
-                            return c('Info').t`to continue to ${toAppName}`;
+                            return getContinueToString(toAppName);
                         }
                         if (signupType.type === SignupType.Email) {
                             return '';

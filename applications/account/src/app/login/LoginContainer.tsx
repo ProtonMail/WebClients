@@ -37,6 +37,7 @@ import Header from '../public/Header';
 import Layout from '../public/Layout';
 import Main from '../public/Main';
 import Text from '../public/Text';
+import { getContinueToString } from '../public/helper';
 import { useFlowRef } from '../useFlowRef';
 import { MetaTags, useMetaTags } from '../useMetaTags';
 import LoginForm, { LoginFormRef } from './LoginForm';
@@ -179,7 +180,7 @@ const LoginContainer = ({
                 subTitle: c('Title').t`Enter your ${BRAND_NAME} Account details to join the ${app} Beta program`,
             };
         }
-        const continueTo = toAppName ? c('Info').t`to continue to ${toAppName}` : '';
+        const continueTo = toAppName ? getContinueToString(toAppName) : '';
         if (authType === AuthType.ExternalSSO) {
             return {
                 title: c('Title').t`Sign in to your organization`,

@@ -1,7 +1,5 @@
 import { ReactNode, useEffect, useState } from 'react';
 
-import { c } from 'ttag';
-
 import {
     OnLoginCallback,
     StandardLoadErrorPage,
@@ -21,6 +19,7 @@ import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { queryPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { ProductParam } from '@proton/shared/lib/apps/product';
+import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import { APP_NAMES, CLIENT_TYPES, CYCLE, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { toMap } from '@proton/shared/lib/helpers/object';
@@ -337,7 +336,7 @@ const SingleSignupContainer = ({ metaTags, clientType, loader, onLogin, productP
                         product={VPN_APP_NAME}
                         isB2bPlan={isB2bPlan}
                         background={background}
-                        img={<img src={onboardingVPNWelcome} alt={c('Onboarding').t`Welcome to ${VPN_APP_NAME}`} />}
+                        img={<img src={onboardingVPNWelcome} alt={getWelcomeToText(VPN_APP_NAME)} />}
                         onSetup={async () => {
                             if (!cache || cache.type !== 'signup') {
                                 throw new Error('Missing cache');
