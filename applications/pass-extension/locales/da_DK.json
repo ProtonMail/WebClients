@@ -716,14 +716,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" opdatering blev afvist"
       ],
-      "${ count } item": [
-        "${ count } element",
-        "${ count } elementer"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } element",
-        "${ itemCount } elementer"
-      ],
       "${ memberCount } member": [
         "${ memberCount } medlem",
         "${ memberCount } medlemmer"
@@ -746,14 +738,6 @@
       "${ revisionNumber } time": [
         "${ revisionNumber } gang",
         "${ revisionNumber } gange"
-      ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } element",
-        "${ totalImportedItems } elementer"
-      ],
-      "${ totalItems } item": [
-        "${ totalItems } element",
-        "${ totalItems } elementer"
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dag tilbage",
@@ -1070,9 +1054,6 @@
       "Sign in or create an account to continue.": [
         "Log ind eller opret en konto for at fortsætte."
       ],
-      "Sign in to your account": [
-        "Log ind på din konto"
-      ],
       "Signing you in": [
         "Logger dig ind"
       ],
@@ -1102,13 +1083,13 @@
         "Følgende ${ result.ignored.length } elementer kunne ikke importeres:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
-        "Teksten du forsøger at indsætte er længere end den maksimalt tilladte længde på ${ maxLength } tegn."
+        "Teksten, du forsøger at indsætte, er længere end den maksimalt tilladte længde på ${ maxLength } tegn."
       ],
       "The user did not accept the invitation yet.": [
         "Brugeren har ikke accepteret invitationen endnu."
       ],
       "This export will be unencrypted and anyone with access to your exported file will be able to see your passwords. For security, please delete it after you are done using it.": [
-        "Denne eksport vil ikke være krypteret og hvem som helst med adgang til den eksporterede fil vil kunne se dine adgangskoder. For en sikkerheds skyld bedes du slette den når du er færdig med at bruge den."
+        "Denne eksport vil ikke være krypteret, og hvem som helst med adgang til den eksporterede fil vil kunne se dine adgangskoder. For en sikkerheds skyld bedes du slette den, når du er færdig med at bruge den."
       ],
       "This vault is not currently shared with anyone. Invite people to share it with others.": [
         "Denne boks deles i øjeblikket ikke med nogen. Inviter folk for at dele den med andre."
@@ -1614,6 +1595,11 @@
         "Du er ved at oprette"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Velkommen til ${ appName }"
+      ]
+    },
     "Option": {
       "Commas": [
         "Kommaer"
@@ -1838,9 +1824,6 @@
       "Trash empty": [
         "Papirkurv tom"
       ],
-      "Unlock ${ brandNameJSX }": [
-        "Lås op for ${ brandNameJSX }"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Lås op for ${ PASS_APP_NAME }"
       ],
@@ -1855,12 +1838,6 @@
       ],
       "Vault shared with you": [
         "Boks delt med dig"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Velkommen til ${ brandNameJSX }"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Velkommen til ${ PASS_APP_NAME }"
       ],
       "Welcome to your new password manager!": [
         "Vælg din nye adgangskodeadministrator!"

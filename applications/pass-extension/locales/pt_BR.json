@@ -710,14 +710,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "A atualização \"${ payload.item.data.metadata.name } foi descartada"
       ],
-      "${ count } item": [
-        "${ count } item",
-        "${ count } itens"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } item",
-        "${ itemCount } itens"
-      ],
       "${ memberCount } member": [
         "${ memberCount } membro",
         "${ memberCount } membros"
@@ -740,14 +732,6 @@
       "${ revisionNumber } time": [
         "${ revisionNumber } vez",
         "${ revisionNumber } vezes"
-      ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } item",
-        "${ totalImportedItems } itens"
-      ],
-      "${ totalItems } item": [
-        "${ totalItems } item",
-        "${ totalItems } itens"
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } dia restante",
@@ -1057,9 +1041,6 @@
       ],
       "Sign in or create an account to continue.": [
         "Inicie sessão ou crie uma conta para continuar."
-      ],
-      "Sign in to your account": [
-        "Faça login em sua conta"
       ],
       "Signing you in": [
         "Fazendo seu login"
@@ -1602,6 +1583,11 @@
         "Você está prestes a criar"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Bem-vindo ao ${ appName }"
+      ]
+    },
     "Option": {
       "Commas": [
         "Vírgulas"
@@ -1826,9 +1812,6 @@
       "Trash empty": [
         "Lixeira vazia"
       ],
-      "Unlock ${ brandNameJSX }": [
-        "Desbloquear ${ brandNameJSX }"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Desbloquear ${ PASS_APP_NAME }"
       ],
@@ -1843,12 +1826,6 @@
       ],
       "Vault shared with you": [
         "Cofre compartilhado com você"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Boas-vindas ao ${ brandNameJSX }"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Boas-vindas ao ${ PASS_APP_NAME }"
       ],
       "Welcome to your new password manager!": [
         "Bem-vindo ao seu novo gerenciador de senhas!"

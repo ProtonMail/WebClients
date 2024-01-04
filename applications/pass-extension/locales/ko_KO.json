@@ -709,12 +709,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" 업데이트가 무시되었습니다."
       ],
-      "${ count } items": [
-        "${ count }개 항목"
-      ],
-      "${ itemCount } items": [
-        "${ itemCount }개 항목"
-      ],
       "${ memberCount } members": [
         "${ memberCount }명 회원"
       ],
@@ -735,12 +729,6 @@
       ],
       "${ revisionNumber } times": [
         "${ revisionNumber } 번"
-      ],
-      "${ totalImportedItems } items": [
-        "${ totalImportedItems }개 항목"
-      ],
-      "${ totalItems } items": [
-        "${ totalItems }개 항목"
       ],
       "${ trialDaysLeft } days left": [
         "${ trialDaysLeft }일 남음"
@@ -1053,9 +1041,6 @@
       ],
       "Sign in or create an account to continue.": [
         "계속하기 위해 로그인 하거나 계정을 생성하십시오."
-      ],
-      "Sign in to your account": [
-        "계정에 로그인하세요"
       ],
       "Signing you in": [
         "로그인 중"
@@ -1594,6 +1579,11 @@
         "생성하려고 하는 주소:"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "${ appName }에 오신 것을 환영합니다"
+      ]
+    },
     "Option": {
       "Commas": [
         "쉼표"
@@ -1817,9 +1807,6 @@
       "Trash empty": [
         "휴지통이 비어있음"
       ],
-      "Unlock ${ brandNameJSX }": [
-        "${ brandNameJSX } 잠금 해제"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 잠금 해제"
       ],
@@ -1834,12 +1821,6 @@
       ],
       "Vault shared with you": [
         "나와 공유된 금고"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "${ brandNameJSX }에 오신 것을 환영합니다."
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME }에 오신 것을 환영합니다."
       ],
       "Welcome to your new password manager!": [
         "새로운 비밀번호 관리자에 오신 것을 환영해요!"
