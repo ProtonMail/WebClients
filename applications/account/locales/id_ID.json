@@ -7325,9 +7325,6 @@
       "to continue to ${ product }": [
         "untuk melanjutkan ke ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "untuk melanjutkan ke ${ toAppName }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Agar layanan kami dapat terus berkembang, kami mengumpulkan berbagai data yang akan digunakan untuk memonitor kinerja aplikasi kami dari waktu ke waktu. Seluruh informasi yang kami kumpulkan tidak akan dibagikan kepada layanan pihak ketiga mana pun."
       ],
@@ -7426,9 +7423,6 @@
       ],
       "Unverified email address.": [
         "Alamat surel belum diverifikasi."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Hingga ${ FAMILY_MAX_USERS } pengguna"
       ],
       "Update recovery file": [
         "Perbarui berkas pemulihan"
@@ -9063,18 +9057,6 @@
       "System information": [
         "Informasi sistem"
       ],
-      "The email was sent ${ attachment }": [
-        "Surel terkirim ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "surel terkirim ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Surel terkirim ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "surel terkirim ${ label }"
-      ],
       "Then": [
         "Maka"
       ],
@@ -9144,17 +9126,8 @@
       "With attachment": [
         "Dengan lampiran"
       ],
-      "with attachments": [
-        "dengan lampiran"
-      ],
       "Without attachment": [
         "Tanpa lampiran"
-      ],
-      "without attachment": [
-        "tanpa lampiran"
-      ],
-      "without attachments": [
-        "tanpa lampiran"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ya, saya ingin menghapus akun ini beserta seluruh data yang terkandung di dalamnya secara permanen."
@@ -9239,17 +9212,8 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } surel datang"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "Pembaruan produk ${ DRIVE_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "Fitur baru ${ MAIL_APP_NAME } dan ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "Pembaruan produk ${ PASS_APP_NAME }"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "Pembaruan produk ${ VPN_APP_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -9873,14 +9837,8 @@
       "Get ${ BRAND_NAME } for free": [
         "Dapatkan ${ BRAND_NAME } secara cuma-cuma"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "Dapatkan ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "Dapatkan ${ planName }"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "Dapatkan ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "Mengerti"
@@ -9899,9 +9857,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendars": [
-        "${ maximumNumberOfCalendars } kalender"
-      ],
       "${ n } calendars": [
         "${ n } kalender"
       ],
@@ -10207,12 +10162,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Tanpa batasan bandwidth/volume penyimpanan"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Hingga ${ FAMILY_MAX_USERS } pengguna"
-      ],
-      "Up to ${ n } users": [
-        "Hingga ${ n } pengguna"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Kuota penyimpanan hingga ${ totalStorageSize }"
@@ -10831,11 +10780,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Selamat datang di ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Selamat datang di ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Selamat datang di ${ appName }"
       ]
     },
     "Option": {
@@ -10940,12 +10886,6 @@
       ],
       "Auto": [
         "Otomatis"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Otomatis (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "Otomatis (${ defaultFormat })"
       ],
       "Country configs": [
         "Konfigurasi negara"
@@ -12483,12 +12423,6 @@
       "${ ipAddresses } dedicated servers": [
         "${ ipAddresses } server terdedikasi"
       ],
-      "${ maxVpn } high-speed VPN connections": [
-        "${ maxVpn } koneksi VPN berkecepatan tinggi"
-      ],
-      "${ n } calendars": [
-        "${ n } kalender"
-      ],
       "${ n } calendars per user": [
         "${ n } kalender per pengguna"
       ],
@@ -13303,15 +13237,6 @@
       "Decrypt key": [
         "Dekripsi kunci"
       ],
-      "Delete ${ domain.DomainName }": [
-        "Hapus ${ domain.DomainName }"
-      ],
-      "Delete ${ email }": [
-        "Hapus ${ email }"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "Hapus ${ tokenNameToRemove }?"
-      ],
       "Delete account": [
         "Hapus akun"
       ],
@@ -13839,12 +13764,6 @@
       ],
       "Success": [
         "Sukses"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user accounts": [
-        "${ localSuccessfullyCreatedUsers.length } akun pengguna berhasil dibuat"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user accounts": [
-        "Akun pengguna ${ successfullyCreatedUsers.length } berhasil dibuat"
       ],
       "Summary": [
         "Ikhtisar"

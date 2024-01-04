@@ -6429,9 +6429,6 @@
       "to continue to ${ product }": [
         "alkalmazás: ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "alkalmazás: ${ toAppName }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "A szolgáltatásaink javítása érdekében, néha adatokat gyűjtünk, hogy az alkalmazásaink megfelelő működését ellenőrizhessük. Ez az információ nem kerül megosztásra harmadik féllel."
       ],
@@ -6524,9 +6521,6 @@
       ],
       "Unverified email address.": [
         "Hitelesítetlen e-mail cím"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Legfeljebb ${ FAMILY_MAX_USERS } felhasználó"
       ],
       "Update recovery file": [
         "Helyreállító fájl frissítése"
@@ -8080,18 +8074,6 @@
       "System information": [
         "Rendszer információk"
       ],
-      "The email was sent ${ attachment }": [
-        "Az e-mail ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "az e-mail ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Az e-mail ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "az e-mail ${ label }"
-      ],
       "Then": [
         "Akkor"
       ],
@@ -8161,17 +8143,8 @@
       "With attachment": [
         "Mellékletet tartalmaz"
       ],
-      "with attachments": [
-        "mellékletet tartalmaz"
-      ],
       "Without attachment": [
         "Nem tartalmaz mellékletet"
-      ],
-      "without attachment": [
-        "nem tartalmaz mellékletet"
-      ],
-      "without attachments": [
-        "nem tartalmaz mellékletet"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Igen, törölni szeretném a fiókomat és az összes adatát."
@@ -8819,14 +8792,8 @@
       "Get ${ BRAND_NAME } for free": [
         "Legyen ${ BRAND_NAME }os ingyen"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "${ mostPopularShortPlan.title } beszerzése"
-      ],
       "Get ${ planName }": [
         "${ planName } megszerzése"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "${ upsellShortPlan.title } megszerzése"
       ],
       "Got it": [
         "Értem"
@@ -8845,10 +8812,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } naptár",
-        "${ maximumNumberOfCalendars } naptár"
-      ],
       "${ n } calendar": [
         "${ n } naptár",
         "${ n } naptár"
@@ -9109,12 +9072,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Korlátlan adatmennyiség és forgalom"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Akár ${ FAMILY_MAX_USERS } felhasználó"
-      ],
-      "Up to ${ n } users": [
-        "Akár ${ n } felhasználó"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Akár ${ totalStorageSize } tárhely"
@@ -9628,11 +9585,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Üdvözli a ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Üdvözli a ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Üdvözli a ${ appName }"
       ]
     },
     "Option": {
@@ -9737,12 +9691,6 @@
       ],
       "Auto": [
         "Automatikus"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automatikus (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "Automatikus (${ defaultFormat })"
       ],
       "Country configs": [
         "Ország konfigurációk"
@@ -10900,14 +10848,6 @@
         "${ ipAddresses } dedikált szerver",
         "${ ipAddresses } dedikált szerver"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } nagysebességű VPN kapcsolat",
-        "${ maxVpn } nagysebességű VPN kapcsolat"
-      ],
-      "${ n } calendar": [
-        "${ n } naptár",
-        "${ n } naptár"
-      ],
       "${ n } calendar per user": [
         "${ n } naptár felhasználónként",
         "${ n } naptár felhasználónként"
@@ -11645,15 +11585,6 @@
       "Decrypt key": [
         "Kulcs visszafejtése"
       ],
-      "Delete ${ domain.DomainName }": [
-        "${ domain.DomainName } törlése"
-      ],
-      "Delete ${ email }": [
-        "${ email } törlése"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "${ tokenNameToRemove } törlése?"
-      ],
       "Delete account": [
         "Fiók törlése"
       ],
@@ -12133,14 +12064,6 @@
       ],
       "Success": [
         "Sikeres"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "${ localSuccessfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva",
-        "${ localSuccessfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "${ successfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva",
-        "${ successfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva"
       ],
       "Summary": [
         "Összegzés"
