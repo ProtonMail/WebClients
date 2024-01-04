@@ -1,9 +1,10 @@
 import { expect } from '@jest/globals';
-import { TypedStartListening, combineReducers, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
+import { combineReducers } from '@reduxjs/toolkit';
 import { waitFor } from '@testing-library/react';
 
 import { CryptoProxy } from '@proton/crypto';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
+import { getTestStore } from '@proton/redux-shared-store/test';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 
@@ -42,26 +43,14 @@ const setup = (preloadedState?: Partial<ReturnType<typeof reducer>>) => {
         },
     } as ProtonThunkArguments;
 
-    const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments });
-
-    const store = configureStore({
+    const { store, startListening } = getTestStore({
         preloadedState: {
             user: getModelState({ Keys: [{ PrivateKey: '1' }] } as UserModel),
             ...preloadedState,
         },
         reducer,
-        middleware: (getDefaultMiddleware) =>
-            getDefaultMiddleware({
-                thunk: { extraArgument: extraThunkArguments },
-            }).prepend(listenerMiddleware.middleware),
+        extraThunkArguments,
     });
-
-    type State = ReturnType<typeof store.getState>;
-    type Dispatch = typeof store.dispatch;
-    type ExtraArgument = typeof extraThunkArguments;
-
-    type AppStartListening = TypedStartListening<State, Dispatch, ExtraArgument>;
-    const startListening = listenerMiddleware.startListening as AppStartListening;
 
     userKeysListener(startListening);
 

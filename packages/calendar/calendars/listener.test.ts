@@ -1,7 +1,8 @@
-import { TypedStartListening, combineReducers, configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
+import { combineReducers } from '@reduxjs/toolkit';
 
 import { addressesReducer, serverEvent, userReducer } from '@proton/account';
 import { getModelState } from '@proton/account/test';
+import { getTestStore } from '@proton/redux-shared-store/test';
 import { CALENDAR_DISPLAY, CALENDAR_TYPE } from '@proton/shared/lib/calendar/constants';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
@@ -32,9 +33,7 @@ const setup = (preloadedState?: Partial<ReturnType<typeof reducer>>) => {
     });
     const extraThunkArguments = { calendarModelEventManager } as CalendarThunkArguments;
 
-    const listenerMiddleware = createListenerMiddleware({ extra: extraThunkArguments });
-
-    const store = configureStore({
+    const { store, startListening } = getTestStore({
         preloadedState: {
             user: getModelState({ Keys: [{ PrivateKey: '1' }] } as UserModel),
             calendars: getModelState([]),
@@ -42,18 +41,8 @@ const setup = (preloadedState?: Partial<ReturnType<typeof reducer>>) => {
             ...preloadedState,
         },
         reducer,
-        middleware: (getDefaultMiddleware) =>
-            getDefaultMiddleware({
-                thunk: { extraArgument: extraThunkArguments },
-            }).prepend(listenerMiddleware.middleware),
+        extraThunkArguments,
     });
-
-    type State = ReturnType<typeof store.getState>;
-    type Dispatch = typeof store.dispatch;
-    type ExtraArgument = typeof extraThunkArguments;
-
-    type AppStartListening = TypedStartListening<State, Dispatch, ExtraArgument>;
-    const startListening = listenerMiddleware.startListening as AppStartListening;
 
     startCalendarEventListener(startListening);
 
