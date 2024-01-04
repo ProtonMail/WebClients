@@ -1,4 +1,4 @@
-import { waitFor } from '@testing-library/react';
+import { waitFor, act } from '@testing-library/react';
 
 import { useEventManager } from '@proton/components';
 
@@ -40,21 +40,51 @@ export const mockConsole = (level: keyof Console = 'error') => {
     console[level] = jest.fn();
 };
 
-export const waitForSpyCall = async (mock: jest.Mock) =>
-    waitFor(
-        () => {
-            expect(mock).toHaveBeenCalled();
-        },
-        {
-            interval: 100,
-            timeout: 5000,
+export const waitForSpyCall = async <T = Promise<unknown>, Y extends any[] = []>({ 
+    spy,
+    callTimes,
+    disableFakeTimers = false,
+}: {
+    spy: jest.Mock<T, Y>,
+    /** Expected number of calls (defaults to >= 1) */
+    callTimes?: number,
+    /**
+     * If fake timers are being used, they need to be temporarily disabled for the `waitFor` timeout to work if the CryptoProxy
+     * is being used with a non-mocked CryptoApi.
+     * This is because the fake timers meddle with Promise resolution/process ticks to speed up the app time,
+     * but SubtleCrypto is normally unaffected as it usually runs in a separate, non-JS process, meaning its
+     * operations will run in "real time" and timeout as a result.
+     * NB: the fake timers are re-enabled before returning.
+     */
+    disableFakeTimers?: boolean,
+}) => (
+    act(async () => {
+        if (disableFakeTimers) {
+            jest.runOnlyPendingTimers();
+            jest.useRealTimers();
         }
-    );
+
+        try {
+            await waitFor(
+                async () => (
+                    callTimes ? 
+                        expect(spy).toHaveBeenCalledTimes(callTimes) :
+                        expect(spy).toHaveBeenCalled()
+                ),
+                { timeout: 10000 }
+            );
+        } finally {
+            if (disableFakeTimers) {
+                jest.useFakeTimers();
+            }
+        }
+    })
+);
 
 export const waitForEventManagerCall = async () => {
     // Hard override of the typing as event manager is mocked
     const { call } = (useEventManager as any as () => { call: jest.Mock })();
-    await waitForSpyCall(call);
+    await waitForSpyCall({ spy: call });
 };
 
 export const getModal = () => {
@@ -88,7 +118,7 @@ export const getDropdown = () =>
         }
     );
 
-export const waitForNotification = (content: string) =>
+export const waitForNotification = (content: string, timeout = 8000) =>
     waitFor(
         () => {
             const notifications = document.querySelectorAll('div[role="alert"].notification');
@@ -102,11 +132,11 @@ export const waitForNotification = (content: string) =>
         },
         {
             interval: 100,
-            timeout: 5000,
+            timeout,
         }
     );
 
-export const waitForNoNotification = () =>
+export const waitForNoNotification = (timeout = 8000) =>
     waitFor(
         () => {
             const notifications = document.querySelectorAll('div[role="alert"].notification:not(.notification--out)');
@@ -118,6 +148,6 @@ export const waitForNoNotification = () =>
         },
         {
             interval: 100,
-            timeout: 5000,
+            timeout,
         }
     );
