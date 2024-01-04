@@ -43,6 +43,7 @@ const PrivateMainAreaBase = (
                 className,
             ])}
             ref={ref}
+            tabIndex={-1}
             {...rest}
         >
             <div
