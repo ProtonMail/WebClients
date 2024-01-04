@@ -129,12 +129,12 @@ export default class UploadWorkerBuffer {
         });
     }
 
-    setFileBlockLinks(fileLinks: Link[]) {
+    setAllBlockLinks({ fileLinks, thumbnailLinks }: { fileLinks: Link[]; thumbnailLinks?: Link[] }) {
+        if (thumbnailLinks) {
+            this.setBlockLinks(thumbnailLinks, this.thumbnailsEncryptedBlocks);
+        }
         this.setBlockLinks(fileLinks, this.encryptedBlocks);
-    }
-
-    setThumbnailBlockLinks(thumbnailLinks: Link[]) {
-        this.setBlockLinks(thumbnailLinks, this.thumbnailsEncryptedBlocks);
+        this.requestingBlockLinks = false;
     }
 
     async *generateUploadingBlocks(): AsyncGenerator<UploadingBlockControl> {
@@ -201,5 +201,9 @@ export default class UploadWorkerBuffer {
 
     get uploadedBlockCount(): number {
         return this.blockHashes.length + this.thumbnailBlockHashes.length;
+    }
+
+    get totalProcessedSize(): number {
+        return this.processedFileSize;
     }
 }
