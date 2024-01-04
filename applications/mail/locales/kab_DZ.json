@@ -2963,14 +2963,6 @@
       "Choose a date in the future.": [
         "Fren azemz deg yimal."
       ],
-      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
-        "Fren azemz deg ${ EXPIRATION_TIME_MAX_DAYS } n wass i d-itteddun.",
-        "Fren azemz deg ${ EXPIRATION_TIME_MAX_DAYS } n wussan i d-itteddun."
-      ],
-      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
-        "Fren azemz deg ${ SCHEDULED_MAX_DATE_DAYS } n wass i d-itteddun.",
-        "Fren azemz deg ${ SCHEDULED_MAX_DATE_DAYS } n wussan i d-itteddun."
-      ],
       "Condition incomplete": [
         "Tawtilt tarummidt"
       ],
@@ -4224,10 +4216,6 @@
         "${ contactsLength } n unermis",
         "${ contactsLength } inermisen"
       ],
-      "${ count } unread message": [
-        "${ count } n yizen ur yettwaɣran ara",
-        "${ count } n yiznan yettwaɣran ara"
-      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } ɣef ${ totalProgress }",
         "${ currentProgress } ɣef ${ totalProgress }"
@@ -4301,9 +4289,6 @@
         "${ selectedFoldersCountLocalized } d tebzimt yettwefrenn",
         "${ selectedFoldersCountLocalized } n tebzimin yettwafernen"
       ],
-      "${ storage } storage": [
-        "${ storage } n uḥraz"
-      ],
       "${ total } conversation": [
         "${ total } udiwenni",
         "${ total } n yidienniyen"
@@ -4312,25 +4297,9 @@
         "${ total } n yizen",
         "${ total } n yiznan"
       ],
-      "${ unread } unread conversation": [
-        "${ unread } n udiwenni ur yettwaɣran ara",
-        "${ unread } n yidiwenniyen ur yettwaɣran ara"
-      ],
-      "${ unread } unread message": [
-        "${ unread } n yizen ur yettwaɣran ara",
-        "${ unread } n yiznan ur yettwaɣran ara"
-      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } n yizen i yettusɣawsen",
         "${ unreadCount } n yizenan i yettusɣawsen"
-      ],
-      "${ unreadCount } unread conversation": [
-        "${ unreadCount } adiwenni ur nettwaɣra ara",
-        "${ unreadCount } idiwenniyen ur nettwaɣra ara"
-      ],
-      "${ unreadCount } unread message": [
-        "${ unreadCount } n yizen ur nettwaɣer ara",
-        "${ unreadCount } n yizenan ur nettwaɣer ara"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } n unermis yettwaleqqem akken iwata.",
@@ -5036,9 +5005,6 @@
       "The sender has requested a read receipt.": [
         "Amazan yetter-d talɣut ɣef tɣuri n yizen."
       ],
-      "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "Asenqed n ${ contactName } yecceḍ: anermis ur yettuzmel ara akken iwata. \nAyagi yezmer d agmuḍ n wawal uffir yettuwennzen. \nIlaq-ak·am ad talseḍ asezmel n unermis i wakken ad tazneḍ izen ɣer ${ contactAddress } neɣ ẓreg anermis."
-      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "Asenqed n ${ contactNames } yecceḍ: anermis ur yettuzmel ara akken iwata. \nAyagi yezmer d agmuḍ n wawal uffir yettuwennzen. \nIlaq-ak·am ad talseḍ asezmel n unermis i wakken ad tazneḍ izen ɣer ${ contactAddresses } neɣ ẓreg anermis.",
         "Asenqed n ${ contactNames } yecceḍ: inermisen ur ttuzemlen ara akken iwata. \nAyagi yezmer d agmuḍ n wawal uffir yettuwennzen. \nIlaq-ak·am ad talseḍ asezmel n yinermisen i wakken ad tazneḍ izen ɣer ${ contactAddresses } neɣ ẓreg inermisen."
@@ -5095,12 +5061,6 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Izen-agi yettuzmel s tsarut yeddan, ur nettwaman ara yakan."
       ],
-      "This message will be automatically deleted on ${ longDateMEssage }": [
-        "Izen-a ad yettwakkes s wudem awurman deg ${ longDateMEssage }"
-      ],
-      "This message will be automatically deleted on ${ shortDateMessage }": [
-        "Izen-a ad yettwakkes s wudem awurman deg ${ shortDateMessage }"
-      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Izen-a ad yettwacreḍ d aspam. Tebɣiḍ ad tesfesxeḍ amultaɣ seg yimaylen i d-iteddun?",
         "Iznan-a ad ttwacerḍen d ispamen. Tebɣiḍ ad tesfesxeḍ amultaɣ seg yimaylen i d-iteddun?"
@@ -5125,15 +5085,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Izen-agi ad yemmet deg ${ formattedDate }"
-      ],
-      "This message will expire on ${ longDateMEssage }": [
-        "Izen-agi ad yemmet di ${ longDateMEssage }"
-      ],
-      "This message will expire today at ${ shortDateMessage }": [
-        "Izen-agi ad immet ass-a ɣef ${ shortDateMessage }"
-      ],
-      "This message will expire tomorrow at ${ shortDateMessage }": [
-        "Izen-agi ad immet azekka ɣef ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Tasarut-a tazayezt ad tettwaseqdec s wudem awurman i uwgelhen n yimayl i yettwaznen ɣer tansa-a."
@@ -5168,15 +5119,6 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Aṭas n yimaylen i yettraǧun ad ttwaznen. Ttxil raǧu almi yettwazen yimayl-nniḍen akken ad tesɣiwseḍ wa."
       ],
-      "Total email addresses": [
-        "Asemday n tansiwin n yimayl"
-      ],
-      "Total storage": [
-        "Amḍiq n usekles amatu"
-      ],
-      "Total VPN connections": [
-        "Asemday n tuqqniwin VPN"
-      ],
       "Trackers blocked:": [
         "Ineḍfaren yettusweḥlen:"
       ],
@@ -5191,9 +5133,6 @@
       ],
       "Unsupported file": [
         "Afaylu ur yettwadhel ara"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Alamma d ${ FAMILY_MAX_USERS } yiseqdacen"
       ],
       "Updating message content search...": [
         "Aleqqem n unadi n ugbur n yizen..."
@@ -5308,12 +5247,6 @@
       ],
       "You do not have any messages here": [
         "Ur teɛiḍ ula d izen da"
-      ],
-      "You have ${ totalLabel } in your inbox.": [
-        "Tesɛiḍ ${ totalLabel } deg tebwaṭ-ik·im n yiznan."
-      ],
-      "You have ${ unreadsLabel } in your inbox.": [
-        "Tesɛiḍ ${ unreadsLabel } deg tebwaṭ-ik·im n yiznan."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Ɣur-k **${ count } usqerdec** i yettaskelsen deg ukaram-a",
@@ -6047,18 +5980,6 @@
       "System information": [
         "Talɣut n unagraw"
       ],
-      "The email was sent ${ attachment }": [
-        "Imayl yettwazen ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "imayl yettwazen ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Imayl yettwazen ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "imayl yettwazen ${ label }"
-      ],
       "Theme": [
         "Asentel"
       ],
@@ -6095,17 +6016,8 @@
       "With attachment": [
         "S ufaylu yeddan"
       ],
-      "with attachments": [
-        "s ifuyla yeddan"
-      ],
       "Without attachment": [
         "War afaylu yeddan"
-      ],
-      "without attachment": [
-        "war afaylu yeddan"
-      ],
-      "without attachments": [
-        "war ifuyla yeddan"
       ],
       "Wonderful": [
         "Igerrez"
@@ -6581,15 +6493,22 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } uwitay",
-        "${ maximumNumberOfCalendars } yiwitayen"
+      "${ n } calendar": [
+        "${ n } uwitay",
+        "${ n } yiwitayen"
+      ],
+      "${ n } calendar per user": [
+        "${ n } uwitay i yal aseqdac",
+        "${ n } yiwitayen i yal aseqdac"
       ],
       "Calendar sharing": [
         "Beṭṭu n uwitay"
       ],
       "Custom email domains": [
         "Tiɣula n yimayl tudmawanin"
+      ],
+      "End-to-end encryption": [
+        "Awgelhen seg yixef ɣer yixef"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email aliases"
@@ -6599,6 +6518,9 @@
       ],
       "Search message content": [
         "Agbur n yizen n unadi"
+      ],
+      "Send & receive invitations": [
+        "Azen & nermes-d tinubgiwin"
       ],
       "Unlimited folders, labels, and filters": [
         "Ikaramen, tibzimin, d yimsizedgen war tilas"
@@ -6626,6 +6548,12 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Tikti"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Rnu alamma d ${ n } n uwitay",
+        "Rnu alamma d ${ n } n yiwitayen"
       ]
     },
     "Notification": {
@@ -7861,9 +7789,6 @@
       "Delete ${ count } message": [
         "Kkes ${ count } n yizen",
         "Kkes ${ count } n yiznan"
-      ],
-      "Delete ${ Name }": [
-        "Kkes ${ Name }"
       ],
       "Delete all messages": [
         "Kkes akk iznan"

@@ -3341,9 +3341,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storage } storage": [
-        "${ storage } de armazenamento"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contato atualizado.",
         "${ updated } contatos atualizados."
@@ -4199,18 +4196,6 @@
       "Today": [
         "Hoje"
       ],
-      "Total email addresses": [
-        "Endereços de e-mail adicionais"
-      ],
-      "Total storage": [
-        "Total de armazenamento"
-      ],
-      "Total supported domains": [
-        "Total de domínios suportados"
-      ],
-      "Total VPN connections": [
-        "Conexões VPN adicionais"
-      ],
       "Transfer canceled for file \"${ name }\"": [
         "A transferência do arquivo \"${ name }\" foi cancelado"
       ],
@@ -4252,9 +4237,6 @@
       ],
       "Unsupported file": [
         "Arquivo não suportado"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Até ${ FAMILY_MAX_USERS } usuários"
       ],
       "Updating drive search...": [
         "Atualizando pesquisa de drive..."
@@ -5115,9 +5097,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } calendário",
-        "${ maximumNumberOfCalendars } calendários"
+      "${ n } calendar": [
+        "${ n } calendário",
+        "${ n } calendários"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendário por usuário",
+        "${ n } calendários por usuário"
       ],
       "Auto-delete spam and trashed messages": [
         "Excluir automaticamente spam e mensagens da lixeira"
@@ -5131,6 +5117,9 @@
       "Custom snooze time": [
         "Adiamento personalizado"
       ],
+      "End-to-end encryption": [
+        "Criptografia de ponta a ponta"
+      ],
       "Hide-my-email aliases": [
         "Aliases do Hide-my-email"
       ],
@@ -5139,6 +5128,9 @@
       ],
       "Search message content": [
         "Pesquisar conteúdo da mensagem"
+      ],
+      "Send & receive invitations": [
+        "Enviar e receber convites"
       ],
       "Unlimited folders, labels, and filters": [
         "Pastas ilimitadas, marcadores e filtros"
@@ -5175,6 +5167,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Comentários"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Proteja sua agenda com criptografia de ponta a ponta. Inclui suporte para calendários personalizados, compartilhamento de calendário e muito mais."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Crie até ${ n } calendário ou adicione calendários de amigos, familiares, colegas e organizações",
+        "Crie até ${ n } calendários ou adicione calendários de amigos, familiares, colegas e organizações"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Compartilhe facilmente seus calendários com familiares, amigos ou colegas."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Mantenha seus planos privados para você e sua família com um calendário criptografado"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Crie até ${ n } calendário",
+        "Crie até ${ n } calendários"
       ]
     },
     "Notification": {
@@ -5316,30 +5329,6 @@
       "Link copied to clipboard": [
         "Link copiado para área de transferência"
       ],
-      "Move ${ itemsToMoveCount } file": [
-        "Mover ${ itemsToMoveCount } arquivo",
-        "Mover ${ itemsToMoveCount } arquivos"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Mover ${ itemsToMoveCount } pasta",
-        "Mover ${ itemsToMoveCount } pastas"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "Mover ${ itemsToMoveCount } item",
-        "Mover ${ itemsToMoveCount } itens"
-      ],
-      "Move ${ movingCount } file": [
-        "Mover ${ movingCount } arquivo",
-        "Mover ${ movingCount } arquivos"
-      ],
-      "Move ${ movingCount } folder": [
-        "Mover ${ movingCount } pasta",
-        "Mover ${ movingCount } pastas"
-      ],
-      "Move ${ movingCount } item": [
-        "Mover ${ movingCount } item",
-        "Mover ${ movingCount } itens"
-      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Não há espaço suficiente para fazer o envio de ${ formattedTotal }"
       ],
@@ -5387,6 +5376,11 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "Selecione o que a ${ BRAND_NAME } pode acessar: visualize suas mensagens de e-mail e configurações, visualize e baixe seus contatos, visualize e baixe todas as agendas que você acessa no Google Agenda."
+      ]
+    },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Bem-vindo ao ${ appName }"
       ]
     },
     "Onboarding Action": {
@@ -5439,9 +5433,6 @@
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "Boas-vindas ao ${ DRIVE_APP_NAME }"
-      ],
       "Your welcome bonus": [
         "Seu bônus de boas-vindas"
       ]
@@ -6342,9 +6333,6 @@
       "Delete ${ count } contact group": [
         "Excluir ${ count } grupo de contatos",
         "Excluir ${ count } grupos de contatos"
-      ],
-      "Delete ${ Name }": [
-        "Excluir ${ Name }"
       ],
       "Delete permanently": [
         "Excluir permanentemente"

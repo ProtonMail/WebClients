@@ -5704,9 +5704,6 @@
       "to continue to ${ product }": [
         "i ukemmel ɣer ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "i ukemmel ɣer ${ toAppName }"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Akken ad nennaɣ mgal ispament, senqed ma yella kečč d amdan."
       ],
@@ -5769,9 +5766,6 @@
       ],
       "Unsupported file": [
         "Afaylu ur yettwadhel ara"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Alamma d ${ FAMILY_MAX_USERS } yiseqdacen"
       ],
       "Update recovery file": [
         "Leqqem afaylu n tririt"
@@ -7107,18 +7101,6 @@
       "System information": [
         "Talɣut n unagraw"
       ],
-      "The email was sent ${ attachment }": [
-        "Imayl yettwazen ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "imayl yettwazen ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Imayl yettwazen ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "imayl yettwazen ${ label }"
-      ],
       "Then": [
         "Sakin"
       ],
@@ -7185,17 +7167,8 @@
       "With attachment": [
         "S ufaylu yeddan"
       ],
-      "with attachments": [
-        "s ifuyla yeddan"
-      ],
       "Without attachment": [
         "War afaylu yeddan"
-      ],
-      "without attachment": [
-        "war afaylu yeddan"
-      ],
-      "without attachments": [
-        "war ifuyla yeddan"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ih, bɣiɣ ad kkseɣ amiḍan-a i lebda akked meṛṛa isefka-ines."
@@ -7818,14 +7791,8 @@
       "Get ${ BRAND_NAME } for free": [
         "Awi ${ BRAND_NAME } baṭel"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "Awi ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "Awi ${ planName }"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "Awi ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "Gziɣ-t"
@@ -7841,10 +7808,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } uwitay",
-        "${ maximumNumberOfCalendars } yiwitayen"
-      ],
       "${ n } calendar": [
         "${ n } uwitay",
         "${ n } yiwitayen"
@@ -8066,12 +8029,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ableɣ/Tehri n tesfift war talast"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Alamma d ${ FAMILY_MAX_USERS } yiseqdacen"
-      ],
-      "Up to ${ n } users": [
-        "Alamma d ${ n } yiseqdacen"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Alamma d ${ totalStorageSize } n uḥraz"
@@ -8333,11 +8290,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Ansuf ɣer ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Ansuf ɣer ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Ansuf ɣer ${ appName }"
       ]
     },
     "Option": {
@@ -8442,12 +8396,6 @@
       ],
       "Auto": [
         "Awurman"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Awurman (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "Awurman (${ defaultFormat })"
       ],
       "Country configs": [
         "Tiwilawin n tmura"
@@ -9379,14 +9327,6 @@
         "${ ipAddresses } uqeddac yettwamudden",
         "${ ipAddresses } yiqeddacen yettwamudden"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } n tuqqna VPN s urured ɛlayen",
-        "${ maxVpn } n tuqqna VPN s urured ɛlayen"
-      ],
-      "${ n } calendar": [
-        "${ n } uwitay",
-        "${ n } yiwitayen"
-      ],
       "${ n } calendar per user": [
         "${ n } uwitay i yal aseqdac",
         "${ n } yiwitayen i yal aseq"
@@ -10128,15 +10068,6 @@
       "Decrypt key": [
         "Tasarut n tukksa n uwgelhen"
       ],
-      "Delete ${ domain.DomainName }": [
-        "Kkes ${ domain.DomainName }"
-      ],
-      "Delete ${ email }": [
-        "Kkes ${ email }"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "Kkes ${ tokenNameToRemove }?"
-      ],
       "Delete account": [
         "Kkes amiḍan"
       ],
@@ -10612,14 +10543,6 @@
       ],
       "Success": [
         "Yedda"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "Ttwarnan akken iwata ${ localSuccessfullyCreatedUsers.length } umiḍan n useqdac",
-        "Ttwarnan akken iwata ${ localSuccessfullyCreatedUsers.length } imiḍanen n useqdac"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "Ttwarnan akken iwata ${ successfullyCreatedUsers.length } umiḍan n useqdac",
-        "Ttwarnan akken iwata ${ successfullyCreatedUsers.length } imiḍanen n useqdac"
       ],
       "Summary": [
         "Agzul"

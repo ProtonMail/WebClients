@@ -657,12 +657,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "「${ payload.item.data.metadata.name }」更新が却下されました"
       ],
-      "${ count } items": [
-        "${ count } 件のアイテム"
-      ],
-      "${ itemCount } items": [
-        "${ itemCount }個のアイテム"
-      ],
       "${ memberCount } members": [
         "${ memberCount }人のメンバー"
       ],
@@ -683,12 +677,6 @@
       ],
       "${ revisionNumber } times": [
         "${ revisionNumber } 回"
-      ],
-      "${ totalImportedItems } items": [
-        "${ totalImportedItems } 件のアイテム"
-      ],
-      "${ totalItems } items": [
-        "${ totalItems } 件のアイテム"
       ],
       "${ trialDaysLeft } days left": [
         "残り ${ trialDaysLeft } 日"
@@ -965,9 +953,6 @@
       ],
       "Sign in or create an account to continue.": [
         "サインインするか、アカウントを作成してください。"
-      ],
-      "Sign in to your account": [
-        "アカウントにサインインする"
       ],
       "Signing you in": [
         "サインインする"
@@ -1494,6 +1479,11 @@
         "作成しようとしています"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "${ appName } へようこそ"
+      ]
+    },
     "Option": {
       "Commas": [
         "コンマ"
@@ -1709,9 +1699,6 @@
       "Trash empty": [
         "ゴミ箱は空です"
       ],
-      "Unlock ${ brandNameJSX }": [
-        "${ brandNameJSX } のロックを解除します"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }のロックを解除します"
       ],
@@ -1723,12 +1710,6 @@
       ],
       "Vault shared with you": [
         "あなたと共有しているフォルダー"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "${ brandNameJSX } へようこそ"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } へようこそ"
       ],
       "Welcome to your new password manager!": [
         "新しいパスワード マネージャーへようこそ!"

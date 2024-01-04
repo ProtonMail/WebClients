@@ -3598,9 +3598,6 @@
       "${ selectedFoldersCountLocalized } labels selected": [
         "${ selectedFoldersCountLocalized } label dipilih"
       ],
-      "${ storage } storage": [
-        "Kuota penyimpanan ${ storage }"
-      ],
       "${ updated } contacts updated successfully.": [
         "${ updated } kontak berhasil diperbarui."
       ],
@@ -4108,23 +4105,8 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Untuk menggunakan Verifikasi Alamat, Anda harus terlebih dahulu memercayai satu atau lebih kunci publik yang tersedia, termasuk yang ingin Anda gunakan untuk mengirim. Hal ini mencegah kunci enkripsi untuk dapat dipalsukan."
       ],
-      "Total email addresses": [
-        "Total alamat surel"
-      ],
-      "Total storage": [
-        "Total kuota penyimpanan"
-      ],
-      "Total supported domains": [
-        "Total domain yang didukung"
-      ],
-      "Total VPN connections": [
-        "Total koneksi VPN"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Coba fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum mereka dirilis kepada publik. Ini akan memuat ulang aplikasi"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Hingga ${ FAMILY_MAX_USERS } pengguna"
       ],
       "Update recurring event": [
         "Perbarui acara berulang"
@@ -5099,8 +5081,11 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendars": [
-        "${ maximumNumberOfCalendars } kalender"
+      "${ n } calendars": [
+        "${ n } kalender"
+      ],
+      "${ n } calendars per user": [
+        "${ n } kalender per pengguna"
       ],
       "Auto-delete spam and trashed messages": [
         "Hapus pesan spam dan sampah secara otomatis"
@@ -5114,6 +5099,9 @@
       "Custom snooze time": [
         "Pilih sendiri waktu tunda"
       ],
+      "End-to-end encryption": [
+        "Enkripsi end-to-end"
+      ],
       "Hide-my-email aliases": [
         "Alias hide-my-email"
       ],
@@ -5122,6 +5110,9 @@
       ],
       "Search message content": [
         "Cari konten pesan"
+      ],
+      "Send & receive invitations": [
+        "Kirim & terima undangan"
       ],
       "Unlimited folders, labels, and filters": [
         "Tanpa batasan jumlah folder, label, dan filter"
@@ -5158,6 +5149,25 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Masukan"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Amankan jadwal Anda dengan enkripsi ujung ke ujung. Meliputi dukungan untuk kalender khusus, fitur berbagi kalender, dan masih banyak lagi."
+      ],
+      "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
+        "Buat hingga ${ n } kalender atau tambahkan kalender dari teman, keluarga, rekan kerja, dan organisasi Anda"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Bagikan kalender Anda dengan keluarga, teman, atau rekan kerja Anda secara mudah"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Jaga agar rencana Anda tetap menjadi rahasia antara Anda dan keluarga dengan kalender yang terenkripsi"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendars": [
+        "Buat hingga ${ n } kalender"
       ]
     },
     "Notification": {
@@ -5352,9 +5362,6 @@
       ],
       "Auto": [
         "Otomatis"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Otomatis (${ defaultDay })"
       ],
       "Create new group": [
         "Buat grup baru"
@@ -6426,9 +6433,6 @@
       ],
       "Delete ${ count } contacts": [
         "Hapus ${ count } kontak"
-      ],
-      "Delete ${ Name }": [
-        "Hapus ${ Name }"
       ],
       "Delete event": [
         "Hapus acara"

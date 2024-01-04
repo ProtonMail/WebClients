@@ -3665,9 +3665,6 @@
         "${ selectedFoldersCountLocalized } etikett vald",
         "${ selectedFoldersCountLocalized } etiketter valda"
       ],
-      "${ storage } storage": [
-        "${ storage } lagringsutrymme"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt uppdaterades.",
         "${ updated } kontakter uppdaterades."
@@ -4181,23 +4178,8 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "För att använda adressverifiering måste du lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar krypteringsnycklarna att förfalskas."
       ],
-      "Total email addresses": [
-        "Totalt antal e-postadresser"
-      ],
-      "Total storage": [
-        "Totalt lagringsutrymme"
-      ],
-      "Total supported domains": [
-        "Totalt antal domäner som stöds"
-      ],
-      "Total VPN connections": [
-        "Totalt antal VPN-anslutningar"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nya ${ BRAND_NAME }-funktioner, uppdateringar och produkter innan de släpps för allmänheten. Detta kommer ladda om applikationen"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Upp till ${ FAMILY_MAX_USERS } användare"
       ],
       "Update recurring event": [
         "Uppdatera återkommande händelse"
@@ -5200,9 +5182,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } kalender",
-        "${ maximumNumberOfCalendars } kalendrar"
+      "${ n } calendar": [
+        "${ n } kalender",
+        "${ n } kalendrar"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalender per användare",
+        "${ n } kalendrar per användare"
       ],
       "Auto-delete spam and trashed messages": [
         "Ta bort skräppost och kastade meddelanden automatiskt"
@@ -5216,6 +5202,9 @@
       "Custom snooze time": [
         "Anpassad tid för snooza"
       ],
+      "End-to-end encryption": [
+        "End-to-end-kryptering"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-alias"
       ],
@@ -5224,6 +5213,9 @@
       ],
       "Search message content": [
         "Sök meddelandeinnehåll"
+      ],
+      "Send & receive invitations": [
+        "Skicka och ta emot inbjudningar"
       ],
       "Unlimited folders, labels, and filters": [
         "Obegränsade mappar, etiketter och filter"
@@ -5260,6 +5252,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Feedback"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Säkra ditt schema med end-to-end-kryptering. Inkluderar stöd för anpassade kalendrar, kalenderdelning och mer."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Skapa upp till ${ n } kalender eller lägg till kalendrar från vänner, familj, kollegor och organisationer",
+        "Skapa upp till ${ n } kalendrar eller lägg till kalendrar från vänner, familj, kollegor och organisationer"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Dela enkelt dina kalendrar med din familj, vänner eller kollegor"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Håll dina planer privata för dig och din familj med en krypterad kalender"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Skapa upp till ${ n } kalender",
+        "Skapa upp till ${ n } kalendrar"
       ]
     },
     "Notification": {
@@ -5476,8 +5489,8 @@
       "Auto": [
         "Auto"
       ],
-      "Automatic (${ defaultDay })": [
-        "Automatiskt (${ defaultDay })"
+      "Automatic (${ value })": [
+        "Automatiskt (${ value })"
       ],
       "Create new group": [
         "Skapa ny grupp"
@@ -6603,8 +6616,8 @@
         "Ta bort ${ count } kontaktgrupp",
         "Ta bort ${ count } kontaktgrupper"
       ],
-      "Delete ${ Name }": [
-        "Ta bort ${ Name }"
+      "Delete ${ value }": [
+        "Ta bort ${ value }"
       ],
       "Delete event": [
         "Ta bort händelse"

@@ -3211,9 +3211,6 @@
       "MM/YY": [
         "BB/TT"
       ],
-      "Multi-user support not enabled.": [
-        "Dukungan multi-pengguna tidak diaktifkan."
-      ],
       "Must be between 3 and 20 characters long.": [
         "Nama gateway harus memiliki panjang antara 3 dan 20 karakter."
       ],
@@ -3574,9 +3571,6 @@
       "to continue to ${ product }": [
         "untuk melanjutkan ke ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "untuk melanjutkan ke ${ toAppName }"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda memang manusia."
       ],
@@ -3636,9 +3630,6 @@
       ],
       "Unverified email address.": [
         "Alamat surel belum diverifikasi."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Hingga ${ FAMILY_MAX_USERS } pengguna"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
@@ -4419,17 +4410,8 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } surel datang"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "Pembaruan produk ${ DRIVE_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "Fitur baru ${ MAIL_APP_NAME } dan ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "Pembaruan produk ${ PASS_APP_NAME }"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "Pembaruan produk ${ VPN_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -4687,9 +4669,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendars": [
-        "${ maximumNumberOfCalendars } kalender"
-      ],
       "${ n } calendars": [
         "${ n } kalender"
       ],
@@ -4995,12 +4974,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Tanpa batasan bandwidth/volume penyimpanan"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Hingga ${ FAMILY_MAX_USERS } pengguna"
-      ],
-      "Up to ${ n } users": [
-        "Hingga ${ n } pengguna"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Kuota penyimpanan hingga ${ totalStorageSize }"
@@ -5464,11 +5437,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Selamat datang di ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Selamat datang di ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Selamat datang di ${ appName }"
       ]
     },
     "Option": {
@@ -6396,12 +6366,6 @@
       "${ ipAddresses } dedicated servers": [
         "${ ipAddresses } server terdedikasi"
       ],
-      "${ maxVpn } high-speed VPN connections": [
-        "${ maxVpn } koneksi VPN berkecepatan tinggi"
-      ],
-      "${ n } calendars": [
-        "${ n } kalender"
-      ],
       "${ n } calendars per user": [
         "${ n } kalender per pengguna"
       ],
@@ -6915,9 +6879,6 @@
       "Delete": [
         "Hapus"
       ],
-      "Delete ${ email }": [
-        "Hapus ${ email }"
-      ],
       "Delete account": [
         "Hapus akun"
       ],
@@ -7187,12 +7148,6 @@
       ],
       "Subscription": [
         "Langganan"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user accounts": [
-        "${ localSuccessfullyCreatedUsers.length } akun pengguna berhasil dibuat"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user accounts": [
-        "Akun pengguna ${ successfullyCreatedUsers.length } berhasil dibuat"
       ],
       "Summary": [
         "Ikhtisar"

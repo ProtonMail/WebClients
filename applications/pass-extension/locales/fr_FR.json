@@ -716,14 +716,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "La mise à jour de « ${ payload.item.data.metadata.name } » a été rejetée."
       ],
-      "${ count } item": [
-        "${ count } élément",
-        "${ count } éléments"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } élément",
-        "${ itemCount } éléments"
-      ],
       "${ memberCount } member": [
         "${ memberCount } membre",
         "${ memberCount } membres"
@@ -746,14 +738,6 @@
       "${ revisionNumber } time": [
         "${ revisionNumber } fois",
         "${ revisionNumber } fois"
-      ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } élément",
-        "${ totalImportedItems } éléments"
-      ],
-      "${ totalItems } item": [
-        "${ totalItems } élément",
-        "${ totalItems } éléments"
       ],
       "${ trialDaysLeft } day left": [
         "Il reste ${ trialDaysLeft } jour.",
@@ -1069,9 +1053,6 @@
       ],
       "Sign in or create an account to continue.": [
         "Connectez-vous ou créez un compte pour continuer."
-      ],
-      "Sign in to your account": [
-        "Connectez-vous à votre compte"
       ],
       "Signing you in": [
         "Identification en cours"
@@ -1614,6 +1595,11 @@
         "Vous êtes sur le point de créer"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Bienvenue dans ${ appName }"
+      ]
+    },
     "Option": {
       "Commas": [
         "Virgules"
@@ -1838,9 +1824,6 @@
       "Trash empty": [
         "La corbeille est vide."
       ],
-      "Unlock ${ brandNameJSX }": [
-        "Débloquer ${ brandNameJSX }"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Débloquer ${ PASS_APP_NAME }"
       ],
@@ -1855,12 +1838,6 @@
       ],
       "Vault shared with you": [
         "Coffre-fort partagé avec vous"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Bienvenue dans ${ brandNameJSX }"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Bienvenue dans ${ PASS_APP_NAME }"
       ],
       "Welcome to your new password manager!": [
         "Bienvenue dans votre nouveau gestionnaire de mots de passe !"

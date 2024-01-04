@@ -723,16 +723,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Actualizarea pentru „${ payload.item.data.metadata.name }” a fost respinsă."
       ],
-      "${ count } item": [
-        "${ count } element",
-        "${ count } elemente",
-        "${ count } de elemente"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } articol",
-        "${ itemCount } articole",
-        "${ itemCount } de articole"
-      ],
       "${ memberCount } member": [
         "${ memberCount } membru",
         "${ memberCount } membri",
@@ -757,16 +747,6 @@
         "${ revisionNumber } dată",
         "de ${ revisionNumber } ori",
         "de ${ revisionNumber } de ori"
-      ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } element",
-        "${ totalImportedItems } elemente",
-        "${ totalImportedItems } de elemente"
-      ],
-      "${ totalItems } item": [
-        "${ totalItems } element",
-        "${ totalItems } elemente",
-        "${ totalItems } de elemente"
       ],
       "${ trialDaysLeft } day left": [
         "A mai rămas ${ trialDaysLeft } zi",
@@ -1085,9 +1065,6 @@
       ],
       "Sign in or create an account to continue.": [
         "Conectați-vă sau creați un cont pentru a continua."
-      ],
-      "Sign in to your account": [
-        "Conectare la cont"
       ],
       "Signing you in": [
         "Conectare la"
@@ -1634,6 +1611,11 @@
         "Sunteți pe cale să creați"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Bun venit la ${ appName }"
+      ]
+    },
     "Option": {
       "Commas": [
         "Virgule"
@@ -1859,9 +1841,6 @@
       "Trash empty": [
         "Gunoiul este gol"
       ],
-      "Unlock ${ brandNameJSX }": [
-        "Deblocare ${ brandNameJSX }"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Deblocare ${ PASS_APP_NAME }"
       ],
@@ -1876,12 +1855,6 @@
       ],
       "Vault shared with you": [
         "Seif partajat cu dvs."
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Bun venit la ${ brandNameJSX }"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Bun venit la ${ PASS_APP_NAME }"
       ],
       "Welcome to your new password manager!": [
         "Bun venit la noul manager de parole!"

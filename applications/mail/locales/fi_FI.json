@@ -713,10 +713,10 @@
       "Not saved": [
         "Tallentamaton"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -3294,14 +3294,6 @@
       "Choose a date in the future.": [
         "Valitse päiväys tulevaisuudesta."
       ],
-      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
-        "Valitse päiväys seuraavalta ${ EXPIRATION_TIME_MAX_DAYS } päivältä.",
-        "Valitse päiväys seuraavilta ${ EXPIRATION_TIME_MAX_DAYS } päivältä."
-      ],
-      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
-        "Valitse päiväys seuraavalta ${ SCHEDULED_MAX_DATE_DAYS } päivältä.",
-        "Valitse päiväys seuraavilta ${ SCHEDULED_MAX_DATE_DAYS } päivältä."
-      ],
       "Condition incomplete": [
         "Puutteellinen ehto"
       ],
@@ -4829,10 +4821,6 @@
         "${ contactsLength } yhteystieto",
         "${ contactsLength } yhteystietoa"
       ],
-      "${ count } unread message": [
-        "${ count } lukematon viesti",
-        "${ count } lukematonta viestiä"
-      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } / ${ totalProgress }",
         "${ currentProgress } / ${ totalProgress }"
@@ -4910,9 +4898,6 @@
         "${ selectedFoldersCountLocalized } tunniste valittu",
         "${ selectedFoldersCountLocalized } tunnistetta valittu"
       ],
-      "${ storage } storage": [
-        "${ storage } tallennustilaa"
-      ],
       "${ total } conversation": [
         "${ total } keskustelu",
         "${ total } keskustelua"
@@ -4921,25 +4906,9 @@
         "${ total } viesti",
         "${ total } viestiä"
       ],
-      "${ unread } unread conversation": [
-        "${ unread } lukematon keskustelu",
-        "${ unread } lukematonta keskustelua"
-      ],
-      "${ unread } unread message": [
-        "${ unread } lukematon viesti",
-        "${ unread } lukematonta viestiä"
-      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } ajoitettu viesti",
         "${ unreadCount } ajoitettua viestiä"
-      ],
-      "${ unreadCount } unread conversation": [
-        "${ unreadCount } lukematon keskustelu",
-        "${ unreadCount } lukematonta keskustelua"
-      ],
-      "${ unreadCount } unread message": [
-        "${ unreadCount } lukematon viesti",
-        "${ unreadCount } lukematonta viestiä"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } yhteystieto päivitettiin.",
@@ -5812,9 +5781,6 @@
       "The sender has requested a read receipt.": [
         "Lähettäjä on pyytänyt lukukuittausta."
       ],
-      "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "Yhteystiedon ${ contactName } vahvistus epäonnistui, koska sitä ei ole allekirjoitettu oikein. Tämä voi johtua salasanan nollauksesta. Lähettääksesi viestin osoitteeseen ${ contactAddress } sinun on on allekirjoitettava yhteystieto uudelleen tai muokattava sitä."
-      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "Yhteystiedon ${ contactNames } vahvistus epäonnistui, koska sitä ei ole allekirjoitettu oikein. Tämä voi johtua salasanan nollauksesta. Lähettääksesi viestin osoitteeseen ${ contactAddresses } sinun on on allekirjoitettava yhteystieto uudelleen tai muokattava sitä.",
         "Yhteystietojen ${ contactNames } vahvistus epäonnistui, koska niitä ei ole allekirjoitettu oikein. Tämä voi johtua salasanan nollauksesta. Lähettääksesi viestin osoitteeseen ${ contactAddresses } sinun on on allekirjoitettava yhteystiedot uudelleen tai muokattava niitä."
@@ -5886,12 +5852,6 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Tämä viesti on allekirjoitettu liitetyllä avaimella, johon ei ole vielä luotettu."
       ],
-      "This message will be automatically deleted on ${ longDateMEssage }": [
-        "Viesti tuhoutuu automaattisesti ${ longDateMEssage }"
-      ],
-      "This message will be automatically deleted on ${ shortDateMessage }": [
-        "Viesti tuhoutuu automaattisesti klo ${ shortDateMessage }"
-      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Viesti merkitään roskapostiksi. Haluatko myös perua uusien viestien tilauksen?",
         "Viestit merkitään roskapostiksi. Haluatko myös perua uusien viestien tilauksen?"
@@ -5916,15 +5876,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Viesti tuhoutuu ${ formattedDate }"
-      ],
-      "This message will expire on ${ longDateMEssage }": [
-        "Viesti tuhoutuu ${ longDateMEssage }"
-      ],
-      "This message will expire today at ${ shortDateMessage }": [
-        "Viesti tuhoutuu tänään klo ${ shortDateMessage }"
-      ],
-      "This message will expire tomorrow at ${ shortDateMessage }": [
-        "Viesti tuhoutuu huomenna klo ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Tätä julkista avainta käytetään automaattisesti tähän osoitteeseen lähetettävien viestien salaukseen."
@@ -5959,18 +5910,6 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Lähetysjonossa on liikaa viestejä. Odota, kunnes seuraava viesti on lähetetty ajoittaaksesi tämän lähetyksen."
       ],
-      "Total email addresses": [
-        "Sähköpostiosoitteita yhteensä"
-      ],
-      "Total storage": [
-        "Tallennustilaa yhteensä"
-      ],
-      "Total supported domains": [
-        "Tuettuja verkkotunnuksia yhteensä"
-      ],
-      "Total VPN connections": [
-        "VPN-yhteyksiä yhteensä"
-      ],
       "Trackers blocked:": [
         "Seurantoja estetty:"
       ],
@@ -5991,9 +5930,6 @@
       ],
       "Unsupported file": [
         "Tiedostoa ei tueta"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Enintään ${ FAMILY_MAX_USERS } käyttäjää"
       ],
       "Updating message content search...": [
         "Päivitetään viestien sisältöhakua..."
@@ -6150,12 +6086,6 @@
       ],
       "You do not have any messages here": [
         "Sinulla ei ole viestejä täällä"
-      ],
-      "You have ${ totalLabel } in your inbox.": [
-        "Saapuneissa on ${ totalLabel }."
-      ],
-      "You have ${ unreadsLabel } in your inbox.": [
-        "Saapuneissa on ${ unreadsLabel }."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Kansio sisältää **${ count } keskustelun**",
@@ -6924,18 +6854,6 @@
       "System information": [
         "Järjestelmätiedot"
       ],
-      "The email was sent ${ attachment }": [
-        "Viesti lähetettiin ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "viesti lähetettiin ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Viesti lähetettiin ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "viesti lähetettiin ${ label }"
-      ],
       "Theme": [
         "Teema"
       ],
@@ -6972,17 +6890,8 @@
       "With attachment": [
         "Liitteillä"
       ],
-      "with attachments": [
-        "liitteiden kanssa"
-      ],
       "Without attachment": [
         "Ilman liitteitä"
-      ],
-      "without attachment": [
-        "ilman liitteitä"
-      ],
-      "without attachments": [
-        "ilman liitteitä"
       ],
       "Wonderful": [
         "Erinomainen"
@@ -7501,9 +7410,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } kalenteri",
-        "${ maximumNumberOfCalendars } kalenteria"
+      "${ n } calendar": [
+        "${ n } kalenteri",
+        "${ n } kalenteria"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalenteri per käyttäjä",
+        "${ n } kalenteria per käyttäjä"
       ],
       "Auto-delete spam and trashed messages": [
         "Poista roskakorin ja roskapostin viestit automaattisesti"
@@ -7517,6 +7430,9 @@
       "Custom snooze time": [
         "Oma torkutusaika"
       ],
+      "End-to-end encryption": [
+        "Päästä päähän -salaus"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliakset"
       ],
@@ -7525,6 +7441,9 @@
       ],
       "Search message content": [
         "Etsi viestien sisällöstä"
+      ],
+      "Send & receive invitations": [
+        "Lähetä ja vastaanota kutsuja"
       ],
       "Unlimited folders, labels, and filters": [
         "Rajattomasti kansioita, tunnisteita ja suodattimia"
@@ -7561,6 +7480,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Palaute"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Suojaa aikataulusi päästä päähän -salauksella. Sisältää tuen mukautetuille kalentereille, kalenterin jakamiseen ja muuta."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Luo enintään ${ n } kalenteri tai lisää kavereiden, perheen, kollegoiden tai organisaatioiden kalentereita",
+        "Luo enintään ${ n } kalenteria tai lisää kavereiden, perheen, kollegoiden tai organisaatioiden kalentereita"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Jaa kalentereita helposti perheenjäsenille, kavereille tai kollegoille"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Pidä suunnitelmasi yksityisinä sinulle ja perheellesi salatun kalenterin avulla"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Luo enintään ${ n } kalenteri",
+        "Luo enintään ${ n } kalenteria"
       ]
     },
     "Notification": {
@@ -9126,9 +9066,6 @@
       "Delete ${ count } message": [
         "Poista ${ count } viesti",
         "Poista ${ count } viestiä"
-      ],
-      "Delete ${ Name }": [
-        "Poista ${ Name }"
       ],
       "Delete all messages": [
         "Poista kaikki viestit"

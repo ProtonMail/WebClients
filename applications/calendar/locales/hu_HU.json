@@ -3542,9 +3542,6 @@
         "${ selectedFoldersCountLocalized } címke kiválasztva",
         "${ selectedFoldersCountLocalized } címke kiválasztva"
       ],
-      "${ storage } storage": [
-        "${ storage } tárhely"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } névjegy sikeresen frissítve.",
         "${ updated } névjegy sikeresen frissítve."
@@ -4055,23 +4052,8 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "A cím hitelesítés használatához egy vagy több nyilvános kulcsot megbízhatóként kell megjelölnie, beleértve azt is amelyiket a küldéshez szeretné használni. Ez megakadályozza hamisított titkosítási kulcsok használatát."
       ],
-      "Total email addresses": [
-        "Összes e-mail cím"
-      ],
-      "Total storage": [
-        "Összes tárhely"
-      ],
-      "Total supported domains": [
-        "Összes támogatott domain név"
-      ],
-      "Total VPN connections": [
-        "Összes VPN kapcsolat"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Próbálja ki a ${ BRAND_NAME } új funkcióit, frissítéseit és termékeit mielőtt azok elérhetővé válnak a nyilvánosság számára. Ez újra fogja tölteni az alkalmazást"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Legfeljebb ${ FAMILY_MAX_USERS } felhasználó"
       ],
       "Update recurring event": [
         "Ismétlődő esemény frissítése"
@@ -5038,9 +5020,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } naptár",
-        "${ maximumNumberOfCalendars } naptár"
+      "${ n } calendar": [
+        "${ n } naptár",
+        "${ n } naptár"
+      ],
+      "${ n } calendar per user": [
+        "${ n } naptár felhasználónként",
+        "${ n } naptár felhasználónként"
       ],
       "Auto-delete spam and trashed messages": [
         "A Levélszemét és a Lomtár mappában lévő üzenetek automatikus törlése"
@@ -5051,6 +5037,9 @@
       "Custom email domains": [
         "Saját domain nevek"
       ],
+      "End-to-end encryption": [
+        "Végpontok közti titkosítás"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email álnevek"
       ],
@@ -5059,6 +5048,9 @@
       ],
       "Search message content": [
         "Keresés az üzenetek tartalmában"
+      ],
+      "Send & receive invitations": [
+        "Meghívók küldése és fogadása"
       ],
       "Unlimited folders, labels, and filters": [
         "Korlátlan számú mappa, címke és szűrő"
@@ -5092,6 +5084,18 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Visszajelzés"
+      ]
+    },
+    "new_plans: tooltip": {
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől",
+        "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Akár ${ n } naptár létrehozása",
+        "Akár ${ n } naptár létrehozása"
       ]
     },
     "Notification": {
@@ -5298,9 +5302,6 @@
       ],
       "Auto": [
         "Automatikus"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automatikus (${ defaultDay })"
       ],
       "Create new group": [
         "Új csoport létrehozása"
@@ -6379,9 +6380,6 @@
       "Delete ${ count } contact group": [
         "${ count } névjegy csoport törlése",
         "${ count } névjegy csoport törlése"
-      ],
-      "Delete ${ Name }": [
-        "${ Name } törlése"
       ],
       "Delete event": [
         "Esemény törlése"

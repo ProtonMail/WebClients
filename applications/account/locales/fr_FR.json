@@ -7409,9 +7409,6 @@
       "to continue to ${ product }": [
         "pour continuer vers ${ product }."
       ],
-      "to continue to ${ toAppName }": [
-        "pour continuer vers ${ toAppName }."
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Afin d'améliorer continuellement nos services, nous collectons parfois des données pour contrôler le bon fonctionnement de nos applications. Ces informations ne sont pas partagées avec des services tiers."
       ],
@@ -7510,9 +7507,6 @@
       ],
       "Unverified email address.": [
         "L'adresse e-mail n'a pas été vérifiée."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Jusqu'à ${ FAMILY_MAX_USERS } utilisateurs"
       ],
       "Update recovery file": [
         "Mettre à jour le fichier de récupération"
@@ -9160,18 +9154,6 @@
       "System information": [
         "Informations système"
       ],
-      "The email was sent ${ attachment }": [
-        "Le message a été envoyé ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "le message a été envoyé ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Le message a été envoyé ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "le message a été envoyé ${ label }"
-      ],
       "Then": [
         "Alors"
       ],
@@ -9241,17 +9223,8 @@
       "With attachment": [
         "Avec pièce jointe"
       ],
-      "with attachments": [
-        "avec pièces jointes"
-      ],
       "Without attachment": [
         "Sans pièce jointe"
-      ],
-      "without attachment": [
-        "sans pièce jointe"
-      ],
-      "without attachments": [
-        "sans pièce jointe"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Oui, je veux supprimer définitivement ce compte et toutes ses données."
@@ -9336,17 +9309,8 @@
       "${ BRAND_NAME } welcome emails": [
         "Messages de bienvenue ${ BRAND_NAME }"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "Mises à jour du produit ${ DRIVE_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "Nouvelles fonctionnalités de ${ MAIL_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "Mises à jour du produit ${ PASS_APP_NAME }"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "Mises à jour du produit ${ VPN_APP_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -9628,6 +9592,9 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Passez à l'abonnement Visionary et participez à l’histoire de ${ BRAND_NAME }"
+      ],
+      "Limited time offer": [
+        "Offre à durée limitée"
       ],
       "Secure email that protects your privacy": [
         "La messagerie sécurisée qui protège votre vie privée"
@@ -10005,14 +9972,8 @@
       "Get ${ BRAND_NAME } for free": [
         "Obtenir gratuitement ${ BRAND_NAME }"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "Obtenir ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "Obtenir ${ planName }"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "Obtenir ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "J'ai compris"
@@ -10031,10 +9992,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } calendrier",
-        "${ maximumNumberOfCalendars } calendriers"
-      ],
       "${ n } calendar": [
         "${ n } calendrier",
         "${ n } calendriers"
@@ -10358,12 +10315,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Volume et bande passante illimités"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Jusqu'à ${ FAMILY_MAX_USERS } utilisateurs"
-      ],
-      "Up to ${ n } users": [
-        "Jusqu'à ${ n } utilisateurs"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Jusqu'à ${ totalStorageSize } d'espace de stockage"
@@ -10991,11 +10942,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Bienvenue dans ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Bienvenue dans ${ VPN_APP_NAME }."
+      "Welcome to ${ appName }": [
+        "Bienvenue dans ${ appName }"
       ]
     },
     "Option": {
@@ -11100,12 +11048,6 @@
       ],
       "Auto": [
         "Automatique"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automatique (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "Automatique (${ defaultFormat })"
       ],
       "Country configs": [
         "Configurations pays"
@@ -12681,14 +12623,6 @@
         "${ ipAddresses } serveur dédié",
         "${ ipAddresses } serveurs dédiés"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } connexion VPN haut débit",
-        "${ maxVpn } connexions VPN haut débit"
-      ],
-      "${ n } calendar": [
-        "${ n } calendrier",
-        "${ n } calendriers"
-      ],
       "${ n } calendar per user": [
         "${ n } calendrier par utilisateur",
         "${ n } calendriers par utilisateur"
@@ -13521,15 +13455,6 @@
       "Decrypt key": [
         "Déchiffrer la clé"
       ],
-      "Delete ${ domain.DomainName }": [
-        "Supprimer ${ domain.DomainName }"
-      ],
-      "Delete ${ email }": [
-        "Supprimer ${ email }"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "Retirer ${ tokenNameToRemove } ?"
-      ],
       "Delete account": [
         "Supprimer le compte"
       ],
@@ -14060,14 +13985,6 @@
       ],
       "Success": [
         "Opération réussie"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "Le compte utilisateur ${ localSuccessfullyCreatedUsers.length } a été créé.",
-        "Les comptes utilisateurs ${ localSuccessfullyCreatedUsers.length } ont été créés."
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "Le compte utilisateur ${ successfullyCreatedUsers.length } a été créé.",
-        "Les comptes utilisateurs ${ successfullyCreatedUsers.length } ont été créés."
       ],
       "Summary": [
         "Résumé"

@@ -7555,9 +7555,6 @@
       "to continue to ${ product }": [
         "для працягу ў ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "для працягу ў ${ toAppName }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Для пастаяннага ўдасканалення нашых сэрвісаў, мы час ад часу збіраем даныя для назірання за належным функцыянаваннем нашых праграм. Гэта інфармацыя ніколі не абагульваецца з іншымі сэрвісамі."
       ],
@@ -7656,9 +7653,6 @@
       ],
       "Unverified email address.": [
         "Неправераны адрас электроннай пошты"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Да ${ FAMILY_MAX_USERS } карыстальнікаў"
       ],
       "Update recovery file": [
         "Абнавіць файл аднаўлення"
@@ -9332,18 +9326,6 @@
       "System information": [
         "Сістэмная інфармацыя"
       ],
-      "The email was sent ${ attachment }": [
-        "Ліст быў адпраўлены ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "ліст быў адпраўлены ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "Ліст быў адпраўлены ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "ліст быў адпраўлены ${ label }"
-      ],
       "Then": [
         "Потым"
       ],
@@ -9413,17 +9395,8 @@
       "With attachment": [
         "З далучэннем"
       ],
-      "with attachments": [
-        "з далучэннямі"
-      ],
       "Without attachment": [
         "Без далучэння"
-      ],
-      "without attachment": [
-        "без далучэння"
-      ],
-      "without attachments": [
-        "без далучэнняў"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Так, я хачу незваротна выдаліць гэты ўліковы запіс і ўсе яго даныя."
@@ -9508,17 +9481,8 @@
       "${ BRAND_NAME } welcome emails": [
         "Прывітальныя лісты ${ BRAND_NAME }"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "Абнаўленні прадукту ${ DRIVE_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "Новыя функцыі ${ MAIL_APP_NAME } і ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "Абнаўленні прадукту ${ PASS_APP_NAME }"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "Абнаўленні прадукту ${ VPN_APP_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -10202,14 +10166,8 @@
       "Get ${ BRAND_NAME } for free": [
         "Атрымаць ${ BRAND_NAME } бясплатна"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "Атрымаць тарыфны план ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "Атрымаць ${ planName }"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "Атрымаць ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "Зразумела"
@@ -10228,12 +10186,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } каляндар",
-        "${ maximumNumberOfCalendars } календары",
-        "${ maximumNumberOfCalendars } календароў",
-        "${ maximumNumberOfCalendars } календароў"
-      ],
       "${ n } calendar": [
         "${ n } каляндар",
         "${ n } календары",
@@ -10593,12 +10545,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Неабмежаваны аб'ём даных і паласа прапускання"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Да ${ FAMILY_MAX_USERS } карыстальнікаў"
-      ],
-      "Up to ${ n } users": [
-        "Да ${ n } карыстальнікаў"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Да ${ totalStorageSize } сховішча"
@@ -11244,11 +11190,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Вітаем у ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Вітаем у ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Вітаем у ${ appName }"
       ]
     },
     "Option": {
@@ -11353,12 +11296,6 @@
       ],
       "Auto": [
         "Аўтаматычна"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Аўтаматычна (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "Аўтаматычна (${ defaultFormat })"
       ],
       "Country configs": [
         "Канфігурацыі краіны"
@@ -12986,18 +12923,6 @@
         "${ ipAddresses } вылучаных сервераў",
         "${ ipAddresses } вылучаных сервераў"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } высакахуткаснае падключэнне па VPN",
-        "${ maxVpn } высакахуткасныя падключэнні па VPN",
-        "${ maxVpn } высакахуткасных падключэнняў па VPN",
-        "${ maxVpn } высакахуткасныя падключэнні па VPN"
-      ],
-      "${ n } calendar": [
-        "${ n } каляндар",
-        "${ n } календары",
-        "${ n } календароў",
-        "${ n } календары"
-      ],
       "${ n } calendar per user": [
         "${ n } каляндар на карыстальніка",
         "${ n } календары на карыстальніка",
@@ -13866,15 +13791,6 @@
       "Decrypt key": [
         "Расшыфраваць ключ"
       ],
-      "Delete ${ domain.DomainName }": [
-        "Выдаліць ${ domain.DomainName }"
-      ],
-      "Delete ${ email }": [
-        "Выдаліць ${ email }"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "Выдаліць ${ tokenNameToRemove }?"
-      ],
       "Delete account": [
         "Выдаліць уліковы запіс"
       ],
@@ -14411,18 +14327,6 @@
       ],
       "Success": [
         "Паспяхова"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "Паспяхова створаны ${ localSuccessfullyCreatedUsers.length } уліковы запіс карыстальніка",
-        "Паспяхова створана ${ localSuccessfullyCreatedUsers.length } уліковыя запісы карыстальніка",
-        "Паспяхова створана ${ localSuccessfullyCreatedUsers.length } уліковых запісаў карыстальніка",
-        "Паспяхова створана ${ localSuccessfullyCreatedUsers.length } уліковыя запісы карыстальніка"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "Паспяхова створаны ${ successfullyCreatedUsers.length } уліковы запіс карыстальніка",
-        "Паспяхова створана ${ successfullyCreatedUsers.length } уліковыя запісы карыстальніка",
-        "Паспяхова створана ${ successfullyCreatedUsers.length } уліковых запісаў карыстальніка",
-        "Паспяхова створана ${ successfullyCreatedUsers.length } уліковыя запісы карыстальніка"
       ],
       "Summary": [
         "Зводка"

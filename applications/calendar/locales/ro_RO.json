@@ -3699,9 +3699,6 @@
         "S-au selectat ${ selectedFoldersCountLocalized } etichete",
         "S-au selectat ${ selectedFoldersCountLocalized } de etichete"
       ],
-      "${ storage } storage": [
-        "Stocare ${ storage }"
-      ],
       "${ updated } contact updated successfully.": [
         "S-a actualizat un contact.",
         "S-au actualizat ${ updated } contacte.",
@@ -4227,23 +4224,8 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Pentru a utiliza verificarea adresei, trebuie să aprobați una sau mai multe chei publice disponibile, inclusiv pe cea care o veți folosi pentru trimiteri. Aceasta va împiedica falsificarea cheilor de criptare."
       ],
-      "Total email addresses": [
-        "Total adrese de e-mail"
-      ],
-      "Total storage": [
-        "Spațiu total"
-      ],
-      "Total supported domains": [
-        "Total domenii suportate"
-      ],
-      "Total VPN connections": [
-        "Total conexiuni VPN"
-      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Încercați noile funcții, actualizări și produse ${ BRAND_NAME } înainte ca acestea să fie lansate publicului. Aceasta va reporni aplicația."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Până la ${ FAMILY_MAX_USERS } utilizatori"
       ],
       "Update recurring event": [
         "Actualizare eveniment recurent"
@@ -5223,10 +5205,15 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } calendar",
-        "${ maximumNumberOfCalendars } calendare",
-        "${ maximumNumberOfCalendars } de calendare"
+      "${ n } calendar": [
+        "${ n } calendar",
+        "${ n } calendare",
+        "${ n } de calendare"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendar per utilizator",
+        "${ n } calendare per utilizator",
+        "${ n } de calendare per utilizator"
       ],
       "Auto-delete spam and trashed messages": [
         "Ștergere automată mesaje nedorite și din gunoi"
@@ -5240,6 +5227,9 @@
       "Custom snooze time": [
         "Timp amânare personal"
       ],
+      "End-to-end encryption": [
+        "Criptare bilaterală"
+      ],
       "Hide-my-email aliases": [
         "Aliasuri hide-my-email"
       ],
@@ -5248,6 +5238,9 @@
       ],
       "Search message content": [
         "Căutare în conținut mesaj"
+      ],
+      "Send & receive invitations": [
+        "Trimiteți și primiți invitații"
       ],
       "Unlimited folders, labels, and filters": [
         "Foldere, etichete și filtre nelimitate"
@@ -5284,6 +5277,29 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Feedback"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Asigurați-vă programul cu criptare bilaterală. Include suport pentru calendare personalizate, calendare partajate și multe altele."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Creați până la ${ n } calendar sau adăugați calendare de la prieteni, familie, colegi și organizații",
+        "Creați până la ${ n } calendare sau adăugați calendare de la prieteni, familie, colegi și organizații",
+        "Creați până la ${ n } de calendare sau adăugați calendare de la prieteni, familie, colegi și organizații"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Partajați calendarele ușor cu familia, prietenii sau colegii."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Păstrați-vă private propriile planuri și ale familiei cu calendarul criptat"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Creați maxim ${ n } calendar",
+        "Creați până la ${ n } calendare",
+        "Creați până la ${ n } de calendare"
       ]
     },
     "Notification": {
@@ -5520,9 +5536,6 @@
       ],
       "Auto": [
         "Automat"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automat (${ defaultDay })"
       ],
       "Create new group": [
         "Creare grup"
@@ -6673,9 +6686,6 @@
         "Ștergere grup de contacte",
         "Ștergere ${ count } grupuri de contacte",
         "Ștergere ${ count } de grupuri de contacte"
-      ],
-      "Delete ${ Name }": [
-        "Ștergere ${ Name }"
       ],
       "Delete event": [
         "Ștergere eveniment"

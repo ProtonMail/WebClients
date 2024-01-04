@@ -3241,9 +3241,6 @@
       "MM/YY": [
         "MM/ÅÅ"
       ],
-      "Multi-user support not enabled.": [
-        "Flerbruker støtte er ikke aktivert."
-      ],
       "Must be between 3 and 20 characters long.": [
         "Må bestå av mellom 3 og 20 tegn."
       ],
@@ -3613,9 +3610,6 @@
       "to continue to ${ product }": [
         "for å fortsette til ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "for å fortsette til ${ toAppName }"
-      ],
       "To fight spam and abuse, please verify you are human.": [
         "For å bekjempe søppelpost og misbruk, vennligst verifiser at du er et menneske."
       ],
@@ -3675,9 +3669,6 @@
       ],
       "Unverified email address.": [
         "Ikke verifisert e-postadresse."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Opptil ${ FAMILY_MAX_USERS } brukere"
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Oppgrader nå for å få premiumfunksjoner, produkter og lagringsplass til spesialpris."
@@ -4469,17 +4460,8 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } velkommen e-post"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "${ DRIVE_APP_NAME } produktoppdateringer"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "${ MAIL_APP_NAME } og ${ CALENDAR_SHORT_APP_NAME } nye funksjoner"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "${ PASS_APP_NAME } produktoppdateringer"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "${ VPN_APP_NAME } produktoppdateringer"
       ]
     },
     "Label on payment method": {
@@ -4738,10 +4720,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } kalender",
-        "${ maximumNumberOfCalendars } kalendere"
-      ],
       "${ n } calendar": [
         "${ n } kalender",
         "${ n } kalendere"
@@ -5065,12 +5043,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ubegrenset volum/båndbredde"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Opptil ${ FAMILY_MAX_USERS } brukere"
-      ],
-      "Up to ${ n } users": [
-        "Opptil ${ n } brukere"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Opptil ${ totalStorageSize } lagringsplass"
@@ -5538,11 +5510,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Velkommen til ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Velkommen til ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Velkommen til ${ appName }"
       ]
     },
     "Option": {
@@ -6525,14 +6494,6 @@
         "${ ipAddresses } dedikert tjener",
         "${ ipAddresses } dedikerte tjenere"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } høyhastighets VPN-tilkobling",
-        "${ maxVpn } høyhastighets VPN-tilkoblinger"
-      ],
-      "${ n } calendar": [
-        "${ n } kalender",
-        "${ n } kalendere"
-      ],
       "${ n } calendar per user": [
         "${ n } kalender per bruker",
         "${ n } kalendere per bruker"
@@ -7055,9 +7016,6 @@
       "Delete": [
         "Slett"
       ],
-      "Delete ${ email }": [
-        "Slett ${ email }"
-      ],
       "Delete account": [
         "Slett konto"
       ],
@@ -7329,14 +7287,6 @@
       ],
       "Subscription": [
         "Abonnement"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "Opprettet ${ localSuccessfullyCreatedUsers.length } brukerkonto",
-        "Opprettet ${ localSuccessfullyCreatedUsers.length } brukerkontoer"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "Opprettet ${ successfullyCreatedUsers.length } brukerkonto",
-        "Opprettet ${ successfullyCreatedUsers.length } brukerkontoer"
       ],
       "Summary": [
         "Sammendrag"

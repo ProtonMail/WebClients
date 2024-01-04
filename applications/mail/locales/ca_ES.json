@@ -713,10 +713,10 @@
       "Not saved": [
         "No s'ha desat"
       ],
-      "OK": [
+      "Ok": [
         "D'acord"
       ],
-      "Ok": [
+      "OK": [
         "D'acord"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -3303,14 +3303,6 @@
       "Choose a date in the future.": [
         "Escolliu una data futura."
       ],
-      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
-        "Escolliu una data dintre d'${ EXPIRATION_TIME_MAX_DAYS } dia.",
-        "Escolliu una data dintre dels propers ${ EXPIRATION_TIME_MAX_DAYS } dies."
-      ],
-      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
-        "Escolliu una data dintre del proper ${ SCHEDULED_MAX_DATE_DAYS } dia.",
-        "Escolliu una data dintre dels propers ${ SCHEDULED_MAX_DATE_DAYS } dies."
-      ],
       "Condition incomplete": [
         "Condició incompleta"
       ],
@@ -4838,10 +4830,6 @@
         "${ contactsLength } contacte",
         "${ contactsLength } contactes"
       ],
-      "${ count } unread message": [
-        "${ count } missatge no llegit",
-        "${ count } missatges no llegits"
-      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } de ${ totalProgress }",
         "${ currentProgress } de ${ totalProgress }"
@@ -4927,9 +4915,6 @@
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetes seleccionades"
       ],
-      "${ storage } storage": [
-        "${ storage } d'emmagatzematge"
-      ],
       "${ total } conversation": [
         "${ total } conversa",
         "${ total } converses"
@@ -4938,25 +4923,9 @@
         "${ total } missatge",
         "${ total } missatges"
       ],
-      "${ unread } unread conversation": [
-        "${ unread } conversació sense llegir",
-        "${ unread } conversacions sense llegir"
-      ],
-      "${ unread } unread message": [
-        "${ unread } missatge sense llegir",
-        "${ unread } missatges sense llegir"
-      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } missatge programat",
         "${ unreadCount } missatges programats"
-      ],
-      "${ unreadCount } unread conversation": [
-        "${ unreadCount } conversa sense llegir",
-        "${ unreadCount } converses sense llegir"
-      ],
-      "${ unreadCount } unread message": [
-        "${ unreadCount } missatge sense llegir",
-        "${ unreadCount } missatges sense llegir"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacte actualitzat amb èxit.",
@@ -5832,9 +5801,6 @@
       "The sender has requested a read receipt.": [
         "L'emissor ha sol·licitat una confirmació de lectura."
       ],
-      "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "No s'ha pogut verificar ${ contactName }: el contacte no s'ha signat correctament.\nPot ser a causa d'un restabliment de la contrasenya.\nHeu de tornar a signar el contacte per enviar un missatge a ${ contactAddress } o bé editar el contacte."
-      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "No s'ha pogut verificar ${ contactNames }: el contacte no s'ha signat correctament.\nPot ser el resultat d’un restabliment de la contrasenya.\nHeu de tornar a signar el contacte per enviar un missatge a ${ contactAddresses } o editar el contacte.",
         "No s'ha pogut verificar ${ contactNames }: els contactes no s'han signat correctament.\nPot ser el resultat d’un restabliment de la contrasenya.\nHeu de tornar a signar els contactes per enviar un missatge a ${ contactAddresses } o editar els contactes."
@@ -5906,12 +5872,6 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Aquest missatge està signat per una clau que encara no s'ha confiat."
       ],
-      "This message will be automatically deleted on ${ longDateMEssage }": [
-        "Aquest missatge s'eliminarà automàticament el ${ longDateMEssage }"
-      ],
-      "This message will be automatically deleted on ${ shortDateMessage }": [
-        "Aquest missatge s'eliminarà automàticament el ${ shortDateMessage }."
-      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Aquest missatge serà marcat com a correu brossa. Us agradaria també cancel·lar la subscripció per a futurs correus?",
         "Aquests missatges seran marcat com a correu brossa. Us agradaria també cancel·lar la subscripció per a futurs correus?"
@@ -5936,15 +5896,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Aquest missatge expirarà el ${ formattedDate }"
-      ],
-      "This message will expire on ${ longDateMEssage }": [
-        "Aquest missatge caducarà el ${ longDateMEssage }."
-      ],
-      "This message will expire today at ${ shortDateMessage }": [
-        "Aquest missatge caducarà avui a les ${ shortDateMessage }."
-      ],
-      "This message will expire tomorrow at ${ shortDateMessage }": [
-        "Aquest missatge caducarà demà a les ${ shortDateMessage }."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Aquesta clau pública serà utilitzada automàticament per xifrar el correu electrónic enviat a aquenta adreça."
@@ -5979,18 +5930,6 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Hi ha massa missatges esperant per ser enviats. Espereu que s'enviï un altre missatge per programar aquest."
       ],
-      "Total email addresses": [
-        "Adreces de correu totals"
-      ],
-      "Total storage": [
-        "Emmagatzematge"
-      ],
-      "Total supported domains": [
-        "Dominis suportats totals"
-      ],
-      "Total VPN connections": [
-        "Connexions VPN totals"
-      ],
       "Trackers blocked:": [
         "Rastrejadors bloquejats:"
       ],
@@ -6011,9 +5950,6 @@
       ],
       "Unsupported file": [
         "Fitxer no compatible"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Fins a ${ FAMILY_MAX_USERS } usuaris"
       ],
       "Updating message content search...": [
         "Actualitzant la cerca del contingut del missatge..."
@@ -6170,12 +6106,6 @@
       ],
       "You do not have any messages here": [
         "No teniu cap missatge aquí."
-      ],
-      "You have ${ totalLabel } in your inbox.": [
-        "Teniu ${ totalLabel } a la safata d'entrada."
-      ],
-      "You have ${ unreadsLabel } in your inbox.": [
-        "Teniu ${ unreadsLabel } a la safata d'entrada."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Teniu **${ count } conversa** emmagatzemada en aquesta carpeta",
@@ -6944,18 +6874,6 @@
       "System information": [
         "Informació del sistema"
       ],
-      "The email was sent ${ attachment }": [
-        "El correu ha estat enviat ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "el correu ha estat enviat ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "El correu ha estat enviat ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "el correu ha estat enviat ${ label }"
-      ],
       "Theme": [
         "Tema"
       ],
@@ -6992,17 +6910,8 @@
       "With attachment": [
         "Amb fitxers adjunts"
       ],
-      "with attachments": [
-        "amb fitxers adjunts"
-      ],
       "Without attachment": [
         "Sense fitxers adjunts"
-      ],
-      "without attachment": [
-        "sense fitxers adjunts"
-      ],
-      "without attachments": [
-        "sense fitxers adjunts"
       ],
       "Wonderful": [
         "Meravellosa"
@@ -7547,9 +7456,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } calendari",
-        "${ maximumNumberOfCalendars } calendaris"
+      "${ n } calendar": [
+        "${ n } calendari",
+        "${ n } calendaris"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendari per usuari",
+        "${ n } calendaris per usuari"
       ],
       "Auto-delete spam and trashed messages": [
         "Suprimeix automàticament el correu brossa i els missatges enviats a la paperera"
@@ -7563,6 +7476,9 @@
       "Custom snooze time": [
         "Períodes de posposició personalitzats"
       ],
+      "End-to-end encryption": [
+        "Xifratge d'extrem a extrem"
+      ],
       "Hide-my-email aliases": [
         "Àlies hide-my-email"
       ],
@@ -7571,6 +7487,9 @@
       ],
       "Search message content": [
         "Cerca al contingut del missatge"
+      ],
+      "Send & receive invitations": [
+        "Enviament i recepció d'invitacions"
       ],
       "Unlimited folders, labels, and filters": [
         "Carpetes, etiquetes i filtres il·limitats"
@@ -7607,6 +7526,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Comentaris"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Protegiu el vostre calendari amb xifratge d'extrem a extrem. Inclou suport per a calendaris personalitzats, compartició de calendaris, etc."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Creeu fins a ${ n } calendari o afegiu calendaris d'amics, família, col·legues i organitzacions",
+        "Creeu fins a ${ n } calendaris o afegiu calendaris d'amics, família, col·legues i organitzacions"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Compartiu fàcilment els vostres calendaris amb la família, els amics o els col·legues."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Manteniu els vostres plans en privat amb la vostra família amb un calendari xifrat."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Crea fins a ${ n } calendari",
+        "Crea fins a ${ n } calendaris"
       ]
     },
     "Notification": {
@@ -9181,9 +9121,6 @@
       "Delete ${ count } message": [
         "Eliminar ${ count } missatge",
         "Eliminar ${ count } missatges"
-      ],
-      "Delete ${ Name }": [
-        "Esborrar ${ Name }"
       ],
       "Delete all messages": [
         "Eliminar tots els missatges"

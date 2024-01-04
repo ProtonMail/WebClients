@@ -721,11 +721,11 @@
       "Not saved": [
         "Neuloženo"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Otevřít ${ CALENDAR_APP_NAME }"
@@ -3334,18 +3334,6 @@
       "Choose a date in the future.": [
         "Vyberte budoucí datum."
       ],
-      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
-        "Vyberte datum v příštím ${ EXPIRATION_TIME_MAX_DAYS } dni.",
-        "Vyberte datum v příštích ${ EXPIRATION_TIME_MAX_DAYS } dnech.",
-        "Vyberte datum v příštích ${ EXPIRATION_TIME_MAX_DAYS } dnech.",
-        "Vyberte datum v příštích ${ EXPIRATION_TIME_MAX_DAYS } dnech."
-      ],
-      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
-        "Vyberte datum v příštím ${ SCHEDULED_MAX_DATE_DAYS } dni.",
-        "Vyberte datum v příštích ${ SCHEDULED_MAX_DATE_DAYS } dnech.",
-        "Vyberte datum v příštích ${ SCHEDULED_MAX_DATE_DAYS } dnech.",
-        "Vyberte datum v příštích ${ SCHEDULED_MAX_DATE_DAYS } dnech."
-      ],
       "Condition incomplete": [
         "Neúplná podmínka"
       ],
@@ -4941,12 +4929,6 @@
         "${ contactsLength } kontaktů",
         "${ contactsLength } kontaktů"
       ],
-      "${ count } unread message": [
-        "${ count } nepřečtená zpráva",
-        "${ count } nepřečtené zprávy",
-        "${ count } nepřečtených zpráv",
-        "${ count } nepřečtených zpráv"
-      ],
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } z ${ totalProgress }",
         "${ currentProgress } ze ${ totalProgress }",
@@ -5058,9 +5040,6 @@
         "vybráno ${ selectedFoldersCountLocalized } štítků",
         "vybráno ${ selectedFoldersCountLocalized } štítků"
       ],
-      "${ storage } storage": [
-        "${ storage } úložiště"
-      ],
       "${ total } conversation": [
         "${ total } konverzace",
         "${ total } konverzace",
@@ -5073,35 +5052,11 @@
         "${ total } zpráv",
         "${ total } zpráv"
       ],
-      "${ unread } unread conversation": [
-        "${ unread } nepřečtená konverzace",
-        "${ unread } nepřečtené konverzace",
-        "${ unread } nepřečtených konverzací",
-        "${ unread } nepřečtených konverzací"
-      ],
-      "${ unread } unread message": [
-        "${ unread } nepřečtená zpráva",
-        "${ unread } nepřečtené zprávy",
-        "${ unread } nepřečtených zpráv",
-        "${ unread } nepřečtených zpráv"
-      ],
       "${ unreadCount } scheduled message": [
         "${ unreadCount } naplánovaná zpráva",
         "${ unreadCount } naplánované zprávy",
         "${ unreadCount } naplánovaných zpráv",
         "${ unreadCount } naplánovaných zpráv"
-      ],
-      "${ unreadCount } unread conversation": [
-        "${ unreadCount } nepřečtená konverzace",
-        "${ unreadCount } nepřečtené konverzace",
-        "${ unreadCount } nepřečtených konverzací",
-        "${ unreadCount } nepřečtených konverzací"
-      ],
-      "${ unreadCount } unread message": [
-        "${ unreadCount } nepřečtená zpráva",
-        "${ unreadCount } nepřečtené zprávy",
-        "${ unreadCount } nepřečtených zpráv",
-        "${ unreadCount } nepřečtených zpráv"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt úspěšně aktualizován.",
@@ -6012,9 +5967,6 @@
       "The sender has requested a read receipt.": [
         "Odesílatel požádal o potvrzení o přečtení."
       ],
-      "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "Ověření ${ contactName } selhalo: kontakt není správně podepsaný.\nDůvodem může být reset hesla.\nMusíte znovu podepsat kontakt, abyste mohli poslat zprávu ${ contactAddress } a nebo upravit kontakt."
-      ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
         "Ověření ${ contactNames } selhalo: kontakt není správně podepsaný.\nDůvodem může být reset hesla.\nMusíte znovu podepsat kontakt, abyste mohli poslat zprávu ${ contactAddresses } a nebo upravit kontakt.",
         "Ověření ${ contactNames } selhalo: kontakty nejsou správně podepsané.\nDůvodem může být reset hesla.\nMusíte znovu podepsat kontakty, abyste mohli poslat zprávy pro ${ contactAddresses } a nebo upravit kontakty.",
@@ -6090,12 +6042,6 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Tato zpráva je podepsána přiloženým klíčem, který nebyl dosud označen jako důvěryhodný."
       ],
-      "This message will be automatically deleted on ${ longDateMEssage }": [
-        "Tato zpráva bude automaticky smazána ${ longDateMEssage }"
-      ],
-      "This message will be automatically deleted on ${ shortDateMessage }": [
-        "Tato zpráva bude automaticky smazána ${ shortDateMessage }"
-      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Tato zpráva bude označena jako spam. Chcete také odhlásit příjem budoucích e-mailů?",
         "Tyto zprávy budou označeny jako spam. Chcete také odhlásit příjem budoucích e-mailů?",
@@ -6122,15 +6068,6 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Tato zpráva vyprší ${ formattedDate }"
-      ],
-      "This message will expire on ${ longDateMEssage }": [
-        "Tato zpráva vyprší ${ longDateMEssage }"
-      ],
-      "This message will expire today at ${ shortDateMessage }": [
-        "Platnost této zprávy vyprší dnes v ${ shortDateMessage }"
-      ],
-      "This message will expire tomorrow at ${ shortDateMessage }": [
-        "Platnost této zprávy vyprší zítra v ${ shortDateMessage }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Tento veřejný klíč bude automaticky využit pro šifrování zpráv odesílaných na tuto adresu."
@@ -6165,18 +6102,6 @@
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Příliš mnoho zpráv čeká na odeslání. Prosím počkejte až bude další zpráva odeslána k naplánování této zprávy."
       ],
-      "Total email addresses": [
-        "Celkem e-mailových adres"
-      ],
-      "Total storage": [
-        "Celkem prostoru"
-      ],
-      "Total supported domains": [
-        "Celkem vlastních domén"
-      ],
-      "Total VPN connections": [
-        "Celkem VPN připojení"
-      ],
       "Trackers blocked:": [
         "Zablokováno sledovacích prvků:"
       ],
@@ -6197,9 +6122,6 @@
       ],
       "Unsupported file": [
         "Nepodporovaný soubor"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Až ${ FAMILY_MAX_USERS } uživatelů"
       ],
       "Updating message content search...": [
         "Aktualizuji vyhledávání ve zprávách..."
@@ -6353,12 +6275,6 @@
       ],
       "You do not have any messages here": [
         "Zde nemáte žádné zprávy"
-      ],
-      "You have ${ totalLabel } in your inbox.": [
-        "Máte ${ totalLabel } v doručené poště."
-      ],
-      "You have ${ unreadsLabel } in your inbox.": [
-        "Máte ${ unreadsLabel } ve Vaší schránce."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "V této složce máte uloženou **${ count } konverzaci**",
@@ -7179,18 +7095,6 @@
       "System information": [
         "Informace o systému"
       ],
-      "The email was sent ${ attachment }": [
-        "E-mail byl odeslán ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "e-mail byl odeslán ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "E-mail byl odeslán ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "e-mail byl odeslán ${ label }"
-      ],
       "Theme": [
         "Motiv"
       ],
@@ -7227,17 +7131,8 @@
       "With attachment": [
         "S přílohami"
       ],
-      "with attachments": [
-        "s přílohami"
-      ],
       "Without attachment": [
         "Bez příloh"
-      ],
-      "without attachment": [
-        "bez příloh"
-      ],
-      "without attachments": [
-        "bez příloh"
       ],
       "Wonderful": [
         "Úžasné"
@@ -7776,11 +7671,17 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } kalendář",
-        "${ maximumNumberOfCalendars } kalendáře",
-        "${ maximumNumberOfCalendars } kalendářů",
-        "${ maximumNumberOfCalendars } kalendářů"
+      "${ n } calendar": [
+        "${ n } kalendář",
+        "${ n } kalendáře",
+        "${ n } kalendářů",
+        "${ n } kalendářů"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalendář na uživatele",
+        "${ n } kalendáře na uživatele",
+        "${ n } kalendářů na uživatele",
+        "${ n } kalendářů na uživatele"
       ],
       "Auto-delete spam and trashed messages": [
         "Automaticky mazat zprávy ve spamu a koši"
@@ -7794,6 +7695,9 @@
       "Custom snooze time": [
         "Vlastní čas odložení"
       ],
+      "End-to-end encryption": [
+        "Koncové šifrování"
+      ],
       "Hide-my-email aliases": [
         "Aliasy Hide-my-email"
       ],
@@ -7802,6 +7706,9 @@
       ],
       "Search message content": [
         "Hledat v obsahu zpráv"
+      ],
+      "Send & receive invitations": [
+        "Odesílání a přijímání pozvánek"
       ],
       "Unlimited folders, labels, and filters": [
         "Neomezený počet složek, štítků a filtrů"
@@ -7838,6 +7745,31 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Zpětná vazba"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Zabezpečte svůj tarif pomocí koncového šifrování. Obsahuje podporu vlastních kalendářů, sdílení kalendáře a další funkce."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Vytvořte až ${ n } kalendář nebo přidejte kalendáře přátel, rodiny, kolegů a organizací",
+        "Vytvořte až ${ n } kalendáře nebo přidejte kalendáře přátel, rodiny, kolegů a organizací",
+        "Vytvořte až ${ n } kalendářů nebo přidejte kalendáře přátel, rodiny, kolegů a organizací",
+        "Vytvořte až ${ n } kalendářů nebo přidejte kalendáře přátel, rodiny, kolegů a organizací"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Snadno sdílejte své kalendáře s rodinou, přáteli nebo kolegy"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Pomocí šifrovaného kalendáře uchovejte své plány v soukromí pouze pro sebe a svou rodinu"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Vytvořte až ${ n } kalendář",
+        "Vytvořte až ${ n } kalendáře",
+        "Vytvořte až ${ n } kalendářů",
+        "Vytvořte až ${ n } kalendářů"
       ]
     },
     "Notification": {
@@ -9537,9 +9469,6 @@
         "Smazat ${ count } zprávy",
         "Smazat ${ count } zpráv",
         "Smazat ${ count } zpráv"
-      ],
-      "Delete ${ Name }": [
-        "Odstranit ${ Name }"
       ],
       "Delete all messages": [
         "Smazat všechny zprávy"

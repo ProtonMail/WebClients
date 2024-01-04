@@ -7549,9 +7549,6 @@
       "to continue to ${ product }": [
         "pro pokračování na ${ product }"
       ],
-      "to continue to ${ toAppName }": [
-        "pokračovat do ${ toAppName }"
-      ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "Abychom průběžně vylepšovali naše služby, shromažďujeme data kvůli monitorování funkčnosti našich aplikací. Tato data nejsou sdílena se službami třetích stran."
       ],
@@ -7650,9 +7647,6 @@
       ],
       "Unverified email address.": [
         "Neověřená e-mailová adresa."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Až ${ FAMILY_MAX_USERS } uživatelů"
       ],
       "Update recovery file": [
         "Aktualizovat soubor pro obnovení"
@@ -9323,18 +9317,6 @@
       "System information": [
         "Informace o systému"
       ],
-      "The email was sent ${ attachment }": [
-        "E-mail byl odeslán ${ attachment }"
-      ],
-      "the email was sent ${ attachment }": [
-        "e-mail byl odeslán ${ attachment }"
-      ],
-      "The email was sent ${ attachmentStrong }": [
-        "E-mail byl odeslán ${ attachmentStrong }"
-      ],
-      "the email was sent ${ label }": [
-        "e-mail byl odeslán ${ label }"
-      ],
       "Then": [
         "Potom"
       ],
@@ -9407,17 +9389,8 @@
       "With attachment": [
         "S přílohami"
       ],
-      "with attachments": [
-        "s přílohami"
-      ],
       "Without attachment": [
         "Bez příloh"
-      ],
-      "without attachment": [
-        "bez příloh"
-      ],
-      "without attachments": [
-        "bez příloh"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ano, chci trvale smazat tento účet a všechna data s ním spojená."
@@ -9502,17 +9475,8 @@
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } uvítací e-maily"
       ],
-      "${ DRIVE_APP_NAME } product updates": [
-        "Aktualizace produktu ${ DRIVE_APP_NAME }"
-      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "Nové funkce ${ MAIL_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "${ PASS_APP_NAME } product updates": [
-        "Aktualizace produktu ${ PASS_APP_NAME }"
-      ],
-      "${ VPN_APP_NAME } product updates": [
-        "Aktualizace produktu ${ VPN_APP_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -10171,14 +10135,8 @@
       "Get ${ BRAND_NAME } for free": [
         "Získat ${ BRAND_NAME } zdarma"
       ],
-      "Get ${ mostPopularShortPlan.title }": [
-        "Získat ${ mostPopularShortPlan.title }"
-      ],
       "Get ${ planName }": [
         "Získejte ${ planName }"
-      ],
-      "Get ${ upsellShortPlan.title }": [
-        "Získejte ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "Rozumím"
@@ -10197,12 +10155,6 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } kalendář",
-        "${ maximumNumberOfCalendars } kalendáře",
-        "${ maximumNumberOfCalendars } kalendářů",
-        "${ maximumNumberOfCalendars } kalendářů"
-      ],
       "${ n } calendar": [
         "${ n } kalendář",
         "${ n } kalendáře",
@@ -10562,12 +10514,6 @@
       ],
       "Unlimited volume/bandwidth": [
         "Neomezený objem/šířka pásma"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Až ${ FAMILY_MAX_USERS } uživatelů"
-      ],
-      "Up to ${ n } users": [
-        "Až ${ n } uživatelů"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Až ${ totalStorageSize } úložného prostoru"
@@ -11213,11 +11159,8 @@
       ]
     },
     "Onboarding": {
-      "Welcome to ${ product }": [
-        "Vítejte v ${ product }"
-      ],
-      "Welcome to ${ VPN_APP_NAME }": [
-        "Vítejte v ${ VPN_APP_NAME }"
+      "Welcome to ${ appName }": [
+        "Vítejte v ${ appName }"
       ]
     },
     "Option": {
@@ -11325,12 +11268,6 @@
       ],
       "Auto": [
         "Automaticky"
-      ],
-      "Automatic (${ defaultDay })": [
-        "Automatické (${ defaultDay })"
-      ],
-      "Automatic (${ defaultFormat })": [
-        "Automatické (${ defaultFormat })"
       ],
       "Country configs": [
         "Konfigurace země"
@@ -12952,18 +12889,6 @@
         "${ ipAddresses } dedikovaných serverů",
         "${ ipAddresses } dedikovaných serverů"
       ],
-      "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } vysokorychlostní připojení VPN",
-        "${ maxVpn } vysokorychlostní připojení VPN",
-        "${ maxVpn } vysokorychlostních připojení VPN",
-        "${ maxVpn } vysokorychlostních připojení VPN"
-      ],
-      "${ n } calendar": [
-        "${ n } kalendář",
-        "${ n } kalendáře",
-        "${ n } kalendářů",
-        "${ n } kalendářů"
-      ],
       "${ n } calendar per user": [
         "${ n } kalendář na uživatele",
         "${ n } kalendáře na uživatele",
@@ -13832,15 +13757,6 @@
       "Decrypt key": [
         "Dešifrovat klíč"
       ],
-      "Delete ${ domain.DomainName }": [
-        "Odstranit ${ domain.DomainName }"
-      ],
-      "Delete ${ email }": [
-        "Odstranit ${ email }"
-      ],
-      "Delete ${ tokenNameToRemove }?": [
-        "Smazat ${ tokenNameToRemove }?"
-      ],
       "Delete account": [
         "Smazat účet"
       ],
@@ -14377,18 +14293,6 @@
       ],
       "Success": [
         "Dokončeno"
-      ],
-      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
-        "Úspěšně vytvořen ${ localSuccessfullyCreatedUsers.length } uživatelský účet",
-        "Úspěšně vytvořeny ${ localSuccessfullyCreatedUsers.length } uživatelské účty",
-        "Úspěšně vytvořeno ${ localSuccessfullyCreatedUsers.length } uživatelských účtů",
-        "Úspěšně vytvořeno ${ localSuccessfullyCreatedUsers.length } uživatelských účtů"
-      ],
-      "Successfully created ${ successfullyCreatedUsers.length } user account": [
-        "Úspěšně vytvořen ${ successfullyCreatedUsers.length } uživatelský účet",
-        "Úspěšně vytvořeny ${ successfullyCreatedUsers.length } uživatelské účty",
-        "Úspěšně vytvořeno ${ successfullyCreatedUsers.length } uživatelských účtů",
-        "Úspěšně vytvořeno ${ successfullyCreatedUsers.length } uživatelských účtů"
       ],
       "Summary": [
         "Shrnutí"

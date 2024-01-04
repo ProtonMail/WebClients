@@ -3341,9 +3341,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storage } storage": [
-        "${ storage } d'espace de stockage"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact a été mis à jour.",
         "${ updated } contacts ont été mis à jour."
@@ -4199,18 +4196,6 @@
       "Today": [
         "Aujourd'hui"
       ],
-      "Total email addresses": [
-        "Nombre total d'adresses e-mail"
-      ],
-      "Total storage": [
-        "Espace de stockage total"
-      ],
-      "Total supported domains": [
-        "Nombre total de domaines pris en charge"
-      ],
-      "Total VPN connections": [
-        "Nombre total de connexions VPN"
-      ],
       "Transfer canceled for file \"${ name }\"": [
         "Le transfert a été annulé pour le fichier « ${ name } »."
       ],
@@ -4255,9 +4240,6 @@
       ],
       "Unsupported file": [
         "Le fichier n'est pas pris en charge."
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Jusqu'à ${ FAMILY_MAX_USERS } utilisateurs"
       ],
       "Updating drive search...": [
         "Actualisation de la recherche dans Drive en cours"
@@ -5132,9 +5114,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } calendrier",
-        "${ maximumNumberOfCalendars } calendriers"
+      "${ n } calendar": [
+        "${ n } calendrier",
+        "${ n } calendriers"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendrier par utilisateur",
+        "${ n } calendriers par utilisateur"
       ],
       "Auto-delete spam and trashed messages": [
         "Suppression automatique des messages dans les dossiers Indésirables/spam et Corbeille"
@@ -5148,6 +5134,9 @@
       "Custom snooze time": [
         "Périodes de mise en attente personnalisées"
       ],
+      "End-to-end encryption": [
+        "Chiffrement de bout en bout"
+      ],
       "Hide-my-email aliases": [
         "Alias « hide-my-email »"
       ],
@@ -5156,6 +5145,9 @@
       ],
       "Search message content": [
         "Recherche dans le contenu des messages"
+      ],
+      "Send & receive invitations": [
+        "Envoyer et recevoir des invitations"
       ],
       "Unlimited folders, labels, and filters": [
         "Nombre illimité de dossiers, de labels et de filtres"
@@ -5192,6 +5184,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Commentaires"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME } : sécurisez votre calendrier avec le chiffrement de bout en bout. Comprend la prise en charge des calendriers personnalisés, du partage de calendrier et bien d'autres fonctionnalités."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Créez jusqu'à ${ n } calendrier ou ajoutez les calendriers d'amis, de la famille, de collègues et d'organisations.",
+        "Créez jusqu'à ${ n } calendriers ou ajoutez les calendriers d'amis, de la famille, de collègues et d'organisations."
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Partagez facilement vos calendriers avec votre famille, vos amis ou vos collègues."
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Assurez la confidentialité de vos activités familiales avec un calendrier chiffré."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Créez jusqu'à ${ n } calendrier",
+        "Créez jusqu'à ${ n } calendriers"
       ]
     },
     "Notification": {
@@ -5333,30 +5346,6 @@
       "Link copied to clipboard": [
         "Le lien est copié dans le presse-papiers."
       ],
-      "Move ${ itemsToMoveCount } file": [
-        "Déplacer ${ itemsToMoveCount } fichier",
-        "Déplacer ${ itemsToMoveCount } fichiers"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Déplacer ${ itemsToMoveCount } dossier",
-        "Déplacer ${ itemsToMoveCount } dossiers"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "Déplacer ${ itemsToMoveCount } élément",
-        "Déplacer ${ itemsToMoveCount } éléments"
-      ],
-      "Move ${ movingCount } file": [
-        "Déplacer ${ movingCount } fichier",
-        "Déplacer ${ movingCount } fichiers"
-      ],
-      "Move ${ movingCount } folder": [
-        "Déplacer ${ movingCount } dossier",
-        "Déplacer ${ movingCount } dossiers"
-      ],
-      "Move ${ movingCount } item": [
-        "Déplacer ${ movingCount } élément",
-        "Déplacer ${ movingCount } éléments"
-      ],
       "Not enough space to upload ${ formattedTotal }": [
         "L'espace est insuffisant pour charger ${ formattedTotal }."
       ],
@@ -5404,6 +5393,11 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "Sélectionnez ce à quoi ${ BRAND_NAME } peut accéder : afficher vos messages électroniques et leurs paramètres, afficher et télécharger vos contacts, afficher et télécharger tous les agendas auxquels vous accédez à partir de Google Agenda."
+      ]
+    },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Bienvenue dans ${ appName }"
       ]
     },
     "Onboarding Action": {
@@ -5456,9 +5450,6 @@
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "Bienvenue dans ${ DRIVE_APP_NAME }"
-      ],
       "Your welcome bonus": [
         "Votre bonus de bienvenue"
       ]
@@ -6371,9 +6362,6 @@
       "Delete ${ count } contact group": [
         "Supprimer ${ count } groupe de contacts",
         "Supprimer ${ count } groupes de contacts"
-      ],
-      "Delete ${ Name }": [
-        "Supprimer ${ Name }"
       ],
       "Delete permanently": [
         "Supprimer définitivement"

@@ -3337,9 +3337,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storage } storage": [
-        "${ storage } tallennustilaa"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } yhteystieto päivitettiin.",
         "${ updated } yhteystietoa päivitettiin."
@@ -4195,18 +4192,6 @@
       "Today": [
         "Tänään"
       ],
-      "Total email addresses": [
-        "Sähköpostiosoitteita yhteensä"
-      ],
-      "Total storage": [
-        "Tallennustilaa yhteensä"
-      ],
-      "Total supported domains": [
-        "Tuettuja verkkotunnuksia yhteensä"
-      ],
-      "Total VPN connections": [
-        "VPN-yhteyksiä yhteensä"
-      ],
       "Transfer canceled for file \"${ name }\"": [
         "Tiedoston \"${ name }\" siirto peruttiin"
       ],
@@ -4251,9 +4236,6 @@
       ],
       "Unsupported file": [
         "Tiedostoa ei tueta"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Enintään ${ FAMILY_MAX_USERS } käyttäjää"
       ],
       "Updating drive search...": [
         "Päivitetään levyhakua..."
@@ -5120,9 +5102,13 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } kalenteri",
-        "${ maximumNumberOfCalendars } kalenteria"
+      "${ n } calendar": [
+        "${ n } kalenteri",
+        "${ n } kalenteria"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalenteri per käyttäjä",
+        "${ n } kalenteria per käyttäjä"
       ],
       "Auto-delete spam and trashed messages": [
         "Poista roskakorin ja roskapostin viestit automaattisesti"
@@ -5136,6 +5122,9 @@
       "Custom snooze time": [
         "Oma torkutusaika"
       ],
+      "End-to-end encryption": [
+        "Päästä päähän -salaus"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliakset"
       ],
@@ -5144,6 +5133,9 @@
       ],
       "Search message content": [
         "Etsi viestien sisällöstä"
+      ],
+      "Send & receive invitations": [
+        "Lähetä ja vastaanota kutsuja"
       ],
       "Unlimited folders, labels, and filters": [
         "Rajattomasti kansioita, tunnisteita ja suodattimia"
@@ -5180,6 +5172,27 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Palaute"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Suojaa aikataulusi päästä päähän -salauksella. Sisältää tuen mukautetuille kalentereille, kalenterin jakamiseen ja muuta."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Luo enintään ${ n } kalenteri tai lisää kavereiden, perheen, kollegoiden tai organisaatioiden kalentereita",
+        "Luo enintään ${ n } kalenteria tai lisää kavereiden, perheen, kollegoiden tai organisaatioiden kalentereita"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Jaa kalentereita helposti perheenjäsenille, kavereille tai kollegoille"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Pidä suunnitelmasi yksityisinä sinulle ja perheellesi salatun kalenterin avulla"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Luo enintään ${ n } kalenteri",
+        "Luo enintään ${ n } kalenteria"
       ]
     },
     "Notification": {
@@ -5321,30 +5334,6 @@
       "Link copied to clipboard": [
         "Linkki kopioitu leikepöydälle"
       ],
-      "Move ${ itemsToMoveCount } file": [
-        "Siirrä ${ itemsToMoveCount } tiedosto",
-        "Siirrä ${ itemsToMoveCount } tiedostoa"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Siirrä ${ itemsToMoveCount } kansio",
-        "Siirrä ${ itemsToMoveCount } kansiota"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "Siirrä ${ itemsToMoveCount } kohde",
-        "Siirrä ${ itemsToMoveCount } kohdetta"
-      ],
-      "Move ${ movingCount } file": [
-        "Siirrä ${ movingCount } tiedosto",
-        "Siirrä ${ movingCount } tiedostoa"
-      ],
-      "Move ${ movingCount } folder": [
-        "Siirrä ${ movingCount } kansio",
-        "Siirrä ${ movingCount } kansiota"
-      ],
-      "Move ${ movingCount } item": [
-        "Siirrä ${ movingCount } kohde",
-        "Siirrä ${ movingCount } kohdetta"
-      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Tila ei riitä ${ formattedTotal } tiedoston tallennukseen"
       ],
@@ -5392,6 +5381,11 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "Valitse, mitä ${ BRAND_NAME } voi käyttää: tarkastele sähköpostiviestejäsi ja -asetuksiasi, tarkastele ja lataa yhteystietojasi, tarkastele ja lataa kaikkia esityslistoja, joita käytät Google Agendasta."
+      ]
+    },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Tervetuloa ${ appName } -sovellukseen"
       ]
     },
     "Onboarding Action": {
@@ -5444,9 +5438,6 @@
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "Tervetuloa ${ DRIVE_APP_NAME }en"
-      ],
       "Your welcome bonus": [
         "Tervetuliaisbonuksesi"
       ]
@@ -6347,9 +6338,6 @@
       "Delete ${ count } contact group": [
         "Poista ${ count } yhteystietoryhmä",
         "Poista ${ count } yhteystietoryhmää"
-      ],
-      "Delete ${ Name }": [
-        "Poista ${ Name }"
       ],
       "Delete permanently": [
         "Poista pysyvästi"
