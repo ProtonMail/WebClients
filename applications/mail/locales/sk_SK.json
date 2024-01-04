@@ -721,11 +721,11 @@
       "Not saved": [
         "Neuložené"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Otvoriť ${ CALENDAR_APP_NAME }"
@@ -1382,9 +1382,6 @@
       "High speed streaming": [
         "Vysokorýchlostné streamovanie"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
       "Premium Password Manager": [
         "Prémiový správca hesiel"
       ]
@@ -1416,7 +1413,7 @@
         "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailovú adresu, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie.",
         "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailové adresy, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie.",
         "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailových adries, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie.",
-        "Obsahuje podporu pre ${ domains } vlastné emailové domény, ${ addresses } emailových adries, neobmedzené množstvo ide-my-email aliasov, zdieľanie kalendára a ďalšie."
+        "Obsahuje podporu ${ domains } vlastných emailových domén, ${ addresses } emailových adries, neobmedzené množstvo hide-my-email aliasov, zdieľanie kalendára a ďalšie."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Zahŕňa podporu pre 1 vlastnú emailovú doménu, 10 emailových adries, 10 hide-my-email aliasov, zdieľanie kalendára a ďalšie."
@@ -2991,6 +2988,22 @@
         "do ${ dateString }"
       ]
     },
+    "Daily recurring event, frequency (times)": {
+      "Every ${ interval } day, ${ timesString }": [
+        "Každý ${ interval } deň, ${ timesString }",
+        "Každé ${ interval } dni, ${ timesString }",
+        "Každých ${ interval } dní, ${ timesString }",
+        "Každých ${ interval } dní, ${ timesString }"
+      ]
+    },
+    "Daily recurring event, frequency (until)": {
+      "Every ${ interval } day, ${ untilString }": [
+        "Každý ${ interval } deň, ${ untilString }",
+        "Každé ${ interval } dni, ${ untilString }",
+        "Každých ${ interval } dní, ${ untilString }",
+        "Každých ${ interval } dní, ${ untilString }"
+      ]
+    },
     "Date label": {
       "Today": [
         "Dnes"
@@ -4052,15 +4065,6 @@
       ]
     },
     "familyOffer_2023:Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Prémiový ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Prémiová ${ VPN_SHORT_APP_NAME }"
-      ],
       "Up to 6 users": [
         "Až do 6 užívateľov"
       ]
@@ -6491,6 +6495,20 @@
         "Kliknite pre podrobnosti"
       ]
     },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } vybratá zložka",
+        "${ selectedFoldersCount } vybraté zložky",
+        "${ selectedFoldersCount } vybratých zložiek",
+        "${ selectedFoldersCount } vybratých zložiek"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } vybratý štítok",
+        "${ selectedFoldersCount } vybraté štítky",
+        "${ selectedFoldersCount } vybratých štítkov",
+        "${ selectedFoldersCount } vybratých štítkov"
+      ]
+    },
     "Key badge": {
       "Compromised": [
         "Kompromitovaný"
@@ -6925,9 +6943,6 @@
       "From:": [
         "Od:"
       ],
-      "From: ${ from }": [
-        "Od: ${ from }"
-      ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
@@ -7161,9 +7176,6 @@
       ],
       "To:": [
         "Komu:"
-      ],
-      "To: ${ to }": [
-        "Komu: ${ to }"
       ],
       "To: ${ toEmail }": [
         "Komu: ${ toEmail }"
@@ -8680,15 +8692,6 @@
       "Highest VPN speed": [
         "Najvyššia rýchlosť VPN"
       ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
-        "Prémiový ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ VPN_SHORT_APP_NAME }": [
-        "Prémiová ${ VPN_SHORT_APP_NAME }"
-      ],
       "Premium early access": [
         "Prémiový predbežný prístup"
       ],
@@ -9210,14 +9213,6 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Spätná väzba bola odoslaná"
-      ]
-    },
-    "summer2023: Deal details": {
-      "Premium ${ DRIVE_SHORT_APP_NAME }": [
-        "Prémiový ${ DRIVE_SHORT_APP_NAME }"
-      ],
-      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
-        "Prémiový ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {
@@ -10243,6 +10238,64 @@
       ],
       "Weekly on Wednesday": [
         "Každý týždeň v stredu"
+      ]
+    },
+    "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Každý ${ interval } týždeň v ${ multipleDaysString }, ${ timesString }",
+        "Každé ${ interval } týždne v ${ multipleDaysString }, ${ timesString }",
+        "Každých ${ interval } týždňov v ${ multipleDaysString }, ${ timesString }",
+        "Každých ${ interval } týždňov v ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Každý ${ interval } týždeň vo všetky dni, ${ timesString }",
+        "Každé ${ interval } týždne vo všetky dni, ${ timesString }",
+        "Každých ${ interval } týždňov vo všetky dni, ${ timesString }",
+        "Každých ${ interval } týždňov vo všetky dni, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Každý ${ interval } týždeň v piatok, ${ timesString }",
+        "Každé ${ interval } týždne v piatok, ${ timesString }",
+        "Každých ${ interval } týždňov v piatok, ${ timesString }",
+        "Každých ${ interval } týždňov v piatok, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Každý ${ interval } týždeň v sobotu, ${ timesString }",
+        "Každé ${ interval } týždne v sobotu, ${ timesString }",
+        "Každých ${ interval } týždňov v sobotu, ${ timesString }",
+        "Každých ${ interval } týždňov v sobotu, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Každý ${ interval } týždeň vo štvrtok, ${ timesString }",
+        "Každé ${ interval } týždne vo štvrtok, ${ timesString }",
+        "Každých ${ interval } týždňov vo štvrtok, ${ timesString }",
+        "Každých ${ interval } týždňov vo štvrtok, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Každý ${ interval } týždeň v stredu, ${ timesString }",
+        "Každé ${ interval } týždne v stredu, ${ timesString }",
+        "Každých ${ interval } týždňov v stredu, ${ timesString }",
+        "Každých ${ interval } týždňov v stredu, ${ timesString }"
+      ]
+    },
+    "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Každý ${ interval } týždeň vo všetky dni, ${ untilString }",
+        "Každé ${ interval } týždne vo všetky dni, ${ untilString }",
+        "Každých ${ interval } týždňov vo všetky dni, ${ untilString }",
+        "Každých ${ interval } týždňov vo všetky dni, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Každý ${ interval } týždeň v pondelok, ${ untilString }",
+        "Každé ${ interval } týždne v pondelok, ${ untilString }",
+        "Každých ${ interval } týždňov v pondelok, ${ untilString }",
+        "Každých ${ interval } týždňov v pondelok, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Každý ${ interval } týždeň v nedeľu, ${ untilString }",
+        "Každé ${ interval } týždne v nedeľu, ${ untilString }",
+        "Každých ${ interval } týždňov v nedeľu, ${ untilString }",
+        "Každých ${ interval } týždňov v nedeľu, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
