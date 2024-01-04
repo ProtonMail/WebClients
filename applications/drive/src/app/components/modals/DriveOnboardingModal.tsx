@@ -11,6 +11,7 @@ import {
     OnboardingStep,
     OnboardingStepRenderCallback,
 } from '@proton/components';
+import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import drive1gbSvg from '@proton/styles/assets/img/onboarding/drive-1gb.svg';
 import onboardingWelcome from '@proton/styles/assets/img/onboarding/drive-welcome.svg';
@@ -42,7 +43,7 @@ const DriveOnboardingModal = (props: Props) => {
         ({ onNext, displayGenericSteps }: OnboardingStepRenderCallback) => (
             <OnboardingStep>
                 <OnboardingContent
-                    title={c('Onboarding Title').t`Welcome to ${DRIVE_APP_NAME}`}
+                    title={getWelcomeToText(DRIVE_APP_NAME)}
                     description={c('Onboarding Info')
                         .t`Your trusty online vault for vital documents and precious memories.`}
                     img={<img src={onboardingWelcome} alt={DRIVE_APP_NAME} />}

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { addDays, endOfToday, getUnixTime, isToday } from 'date-fns';
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
 import { DateInputTwo, InputFieldTwo, TimeInput, generateUID, useUserSettings } from '@proton/components';
@@ -15,6 +15,7 @@ import { MessageState } from '../../../logic/messages/messagesTypes';
 import { updateScheduled } from '../../../logic/messages/scheduled/scheduledActions';
 import { useAppDispatch } from '../../../logic/store';
 import ComposerInnerModal from './ComposerInnerModal';
+import { getChooseDateText } from './helper';
 
 interface Props {
     message: MessageState;
@@ -37,12 +38,7 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
         defaultDate.setHours(8, 0, 0, 0);
     }
 
-    // translator : The variable is the number of days, written in digits
-    const maxDateErrorMessage = c('Error').ngettext(
-        msgid`Choose a date within the next ${SCHEDULED_MAX_DATE_DAYS} day.`,
-        `Choose a date within the next ${SCHEDULED_MAX_DATE_DAYS} days.`,
-        SCHEDULED_MAX_DATE_DAYS
-    );
+    const maxDateErrorMessage = getChooseDateText(SCHEDULED_MAX_DATE_DAYS);
 
     const {
         date,

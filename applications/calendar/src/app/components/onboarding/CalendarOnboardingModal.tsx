@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { OnboardingContent, OnboardingModal, OnboardingStep, OnboardingStepRenderCallback } from '@proton/components';
+import { getWelcomeToText } from '@proton/shared/lib/apps/text';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
 import onboardingWelcome from '@proton/styles/assets/img/onboarding/calendar-welcome.svg';
 
@@ -21,7 +22,7 @@ const CalendarOnboardingModal = (props: Props) => {
                     return (
                         <OnboardingStep>
                             <OnboardingContent
-                                title={c('Onboarding').t`Welcome to ${appName}`}
+                                title={getWelcomeToText(appName)}
                                 description={c('Onboarding').t`Where you can take control of your time and your data.`}
                                 img={<img src={onboardingWelcome} alt={appName} />}
                             />

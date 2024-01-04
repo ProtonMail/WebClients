@@ -56,6 +56,14 @@ enum STEPS {
     DONE_WITH_ERRORS,
 }
 
+const getCreatedText = (n: number) => {
+    return c('Title').ngettext(
+        msgid`Successfully created ${n} user account`,
+        `Successfully created ${n} user accounts`,
+        n
+    );
+};
+
 const search = (text: string, regex: RegExp | undefined) => {
     return {
         text,
@@ -291,11 +299,7 @@ const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose,
 
         createNotification({
             type: 'success',
-            text: c('Title').ngettext(
-                msgid`Successfully created ${localSuccessfullyCreatedUsers.length} user account`,
-                `Successfully created ${localSuccessfullyCreatedUsers.length} user accounts`,
-                localSuccessfullyCreatedUsers.length
-            ),
+            text: getCreatedText(localSuccessfullyCreatedUsers.length),
         });
         onClose?.();
     };
@@ -418,10 +422,7 @@ const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose,
                         </TableBody>
                     </Table>
                 ) : (
-                    <div
-                        className="flex items-center justify-center min-h-custom"
-                        style={{ '--min-h-custom': '10em' }}
-                    >
+                    <div className="flex items-center justify-center min-h-custom" style={{ '--min-h-custom': '10em' }}>
                         <p className="color-weak">{c('Create user accounts empty state').t`No search results found`}</p>
                     </div>
                 ),
@@ -473,11 +474,7 @@ const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose,
 
         if (step === STEPS.DONE_WITH_ERRORS) {
             const title = successfullyCreatedUsers.length
-                ? c('Title').ngettext(
-                      msgid`Successfully created ${successfullyCreatedUsers.length} user account`,
-                      `Successfully created ${successfullyCreatedUsers.length} user accounts`,
-                      successfullyCreatedUsers.length
-                  )
+                ? getCreatedText(successfullyCreatedUsers.length)
                 : c('Title').t`Couldn’t create accounts`;
 
             const renderAddressList = (addresses: string[]) => {

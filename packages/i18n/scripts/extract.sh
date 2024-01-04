@@ -92,11 +92,7 @@ function main {
 
   # Remove useless path
   if [[ "$OSTYPE" = "darwin"* ]]; then
-    if [[ "$(uname -m)" == 'arm64'  ]]; then
-      sed -i 's|webpack:/||g;s| /src/app/| src/app/|g' "$1";
-    else
-      sed -i '' 's|webpack:/||g;s| /src/app/| src/app/|g' "$1";
-    fi
+    sed -i '' 's|webpack:/||g;s| /src/app/| src/app/|g' "$1";
   else
     sed -i 's|webpack:/||g;s| /src/app/| src/app/|g' "$1";
   fi

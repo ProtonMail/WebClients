@@ -13,6 +13,7 @@ import { useApi, useEventManager, useNotifications, useUserSettings } from '../.
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
+import { getAutomaticText } from './helper';
 
 const DateFormatSection = () => {
     const api = useApi();
@@ -45,10 +46,7 @@ const DateFormatSection = () => {
                     onChange={({ value }) => withLoading(handleDateFormat(value))}
                     aria-describedby="label-date-format-select"
                 >
-                    <Option
-                        title={c('Option').t`Automatic (${defaultFormat})`}
-                        value={SETTINGS_DATE_FORMAT.LOCALE_DEFAULT}
-                    />
+                    <Option title={getAutomaticText(defaultFormat)} value={SETTINGS_DATE_FORMAT.LOCALE_DEFAULT} />
                     <Option title="DD/MM/YYYY" value={SETTINGS_DATE_FORMAT.DDMMYYYY} />
                     <Option title="MM/DD/YYYY" value={SETTINGS_DATE_FORMAT.MMDDYYYY} />
                     <Option title="YYYY/MM/DD" value={SETTINGS_DATE_FORMAT.YYYYMMDD} />
