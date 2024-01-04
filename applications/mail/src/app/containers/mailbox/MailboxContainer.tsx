@@ -34,6 +34,7 @@ import clsx from '@proton/utils/clsx';
 import SpotlightEmailForwarding from 'proton-mail/components/header/SpotlightEmailForwarding';
 import { useCheckAllRef } from 'proton-mail/containers/CheckAllRefProvider';
 import useMailDrawer from 'proton-mail/hooks/drawer/useMailDrawer';
+import useMailtoHash from 'proton-mail/hooks/useMailtoHash';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import ConversationView from '../../components/conversation/ConversationView';
@@ -43,7 +44,7 @@ import useScrollToTop from '../../components/list/useScrollToTop';
 import MessageOnlyView from '../../components/message/MessageOnlyView';
 import { useLabelActionsContext } from '../../components/sidebar/EditLabelContext';
 import Toolbar from '../../components/toolbar/Toolbar';
-import { LABEL_IDS_TO_HUMAN, MAILTO_PROTOCOL_HANDLER_SEARCH_PARAM, MESSAGE_ACTIONS } from '../../constants';
+import { LABEL_IDS_TO_HUMAN, MESSAGE_ACTIONS } from '../../constants';
 import { isMessage, isSearch as testIsSearch } from '../../helpers/elements';
 import { getFolderName } from '../../helpers/labels';
 import { isColumnMode, isConversationMode } from '../../helpers/mailSettings';
@@ -74,7 +75,7 @@ import { useResizeMessageView } from '../../hooks/useResizeMessageView';
 import { selectComposersCount } from '../../logic/composers/composerSelectors';
 import { useAppSelector } from '../../logic/store';
 import { Filter, SearchParameters, Sort } from '../../models/tools';
-import { useOnCompose, useOnMailTo } from '../ComposeProvider';
+import { useOnCompose } from '../ComposeProvider';
 import MailboxContainerPlaceholder from './MailboxContainerPlaceholder';
 import { MailboxContainerContextProvider } from './MailboxContainerProvider';
 
@@ -115,7 +116,6 @@ const MailboxContainer = ({
     const resizeAreaRef = useRef<HTMLButtonElement>(null);
     const composersCount = useAppSelector(selectComposersCount);
     const isComposerOpened = composersCount > 0;
-    const onMailTo = useOnMailTo();
     const { drawerSidebarButtons, showDrawerSidebar } = useMailDrawer();
     const { selectAll, setSelectAll } = useSelectAll({ labelID: inputLabelID });
     const { setCheckAllRef } = useCheckAllRef();
@@ -139,21 +139,7 @@ const MailboxContainer = ({
     };
 
     // Open a composer when the url contains a mailto query
-    useEffect(() => {
-        if (!isSearch && location.hash) {
-            const searchParams = location.hash.substring(1).split('&');
-            searchParams.forEach((param) => {
-                const pair = param.split('=');
-                if (pair[0] === MAILTO_PROTOCOL_HANDLER_SEARCH_PARAM) {
-                    try {
-                        onMailTo(decodeURIComponent(pair[1]));
-                    } catch (e: any) {
-                        console.error(e);
-                    }
-                }
-            });
-        }
-    }, [location.hash, isSearch]);
+    useMailtoHash({ isSearch });
 
     const handlePage = useCallback(
         (pageNumber: number) => {
