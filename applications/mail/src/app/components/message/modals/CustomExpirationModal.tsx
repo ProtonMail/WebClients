@@ -1,7 +1,7 @@
 import { useMemo, useRef, useState } from 'react';
 
 import { addDays, endOfDay, endOfToday, isBefore, isToday, startOfToday } from 'date-fns';
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
@@ -20,6 +20,7 @@ import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import { getMinExpirationTime } from 'proton-mail/helpers/expiration';
 
 import { EXPIRATION_TIME_MAX_DAYS } from '../../../constants';
+import { getChooseDateText } from '../../composer/modals/helper';
 
 interface Props extends Omit<ModalProps, 'onSubmit'> {
     onSubmit: (expirationDate: Date) => void;
@@ -39,11 +40,7 @@ const CustomExpirationModal = ({ onSubmit, ...rest }: Props) => {
         }
         if (date > maxDate) {
             // translator : The variable is the number of days, written in digits
-            return c('Error').ngettext(
-                msgid`Choose a date within the next ${EXPIRATION_TIME_MAX_DAYS} day.`,
-                `Choose a date within the next ${EXPIRATION_TIME_MAX_DAYS} days.`,
-                EXPIRATION_TIME_MAX_DAYS
-            );
+            return getChooseDateText(EXPIRATION_TIME_MAX_DAYS);
         }
         return undefined;
     }, [date]);
