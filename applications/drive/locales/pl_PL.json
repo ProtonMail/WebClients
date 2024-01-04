@@ -3447,9 +3447,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storage } storage": [
-        "${ storage } przestrzeni dyskowej"
-      ],
       "${ updated } contact updated successfully.": [
         "Kontakt został zaktualizowany.",
         "${ updated } kontakty zostały zaktualizowane.",
@@ -4329,18 +4326,6 @@
       "Today": [
         "Dzisiaj"
       ],
-      "Total email addresses": [
-        "Adresy e-mail"
-      ],
-      "Total storage": [
-        "Przestrzeń dyskowa"
-      ],
-      "Total supported domains": [
-        "Wsparcie dla domen"
-      ],
-      "Total VPN connections": [
-        "Połączenia VPN"
-      ],
       "Transfer canceled for file \"${ name }\"": [
         "Transfer pliku \"${ name }\" został anulowany"
       ],
@@ -4385,9 +4370,6 @@
       ],
       "Unsupported file": [
         "Plik jest nieobsługiwany"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Do ${ FAMILY_MAX_USERS } użytkowników"
       ],
       "Updating drive search...": [
         "Aktualizacja wyszukiwania zawartości dysku..."
@@ -5284,11 +5266,17 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } kalendarz",
-        "${ maximumNumberOfCalendars } kalendarze",
-        "${ maximumNumberOfCalendars } kalendarzy",
-        "${ maximumNumberOfCalendars } kalendarzy"
+      "${ n } calendar": [
+        "${ n } kalendarz",
+        "${ n } kalendarze",
+        "${ n } kalendarzy",
+        "${ n } kalendarzy"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalendarz na użytkownika",
+        "${ n } kalendarze na użytkownika",
+        "${ n } kalendarzy na użytkownika",
+        "${ n } kalendarzy na użytkownika"
       ],
       "Auto-delete spam and trashed messages": [
         "Automatyczne usuwanie Spamu i Kosza"
@@ -5302,6 +5290,9 @@
       "Custom snooze time": [
         "Niestandardowy czas odłożenia"
       ],
+      "End-to-end encryption": [
+        "Szyfrowanie end-to-end"
+      ],
       "Hide-my-email aliases": [
         "Aliasy hide-my-email"
       ],
@@ -5310,6 +5301,9 @@
       ],
       "Search message content": [
         "Wyszukiwanie zawartości wiadomości"
+      ],
+      "Send & receive invitations": [
+        "Wysyłaj i otrzymuj zaproszenia"
       ],
       "Unlimited folders, labels, and filters": [
         "Nieograniczona liczba folderów, etykiet i filtrów"
@@ -5346,6 +5340,31 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Opinia"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Zabezpiecz swój harmonogram dzięki szyfrowaniu end-to-end. Zawiera obsługę niestandardowych kalendarzy, udostępnianie kalendarzy i wiele więcej."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Utwórz do ${ n } kalendarza lub dodaj kalendarze od znajomych, rodziny, współpracowników i organizacji",
+        "Utwórz do ${ n } kalendarzy lub dodaj kalendarze od znajomych, rodziny, współpracowników i organizacji",
+        "Utwórz do ${ n } kalendarzy lub dodaj kalendarze od znajomych, rodziny, współpracowników i organizacji",
+        "Utwórz do ${ n } kalendarzy lub dodaj kalendarze od znajomych, rodziny, współpracowników i organizacji"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Udostępnij swoje kalendarze rodzinie, znajomym i współpracownikom"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Zachowaj prywatne plany dla siebie i swojej rodziny za pomocą zaszyfrowanego kalendarza"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Utwórz do ${ n } kalendarza",
+        "Utwórz do ${ n } kalendarzy",
+        "Utwórz do ${ n } kalendarzy",
+        "Utwórz do ${ n } kalendarzy"
       ]
     },
     "Notification": {
@@ -5511,42 +5530,6 @@
       "Link copied to clipboard": [
         "Link został skopiowany do schowka"
       ],
-      "Move ${ itemsToMoveCount } file": [
-        "Przenieś plik",
-        "Przenieś ${ itemsToMoveCount } pliki",
-        "Przenieś ${ itemsToMoveCount } plików",
-        "Przenieś ${ itemsToMoveCount } plików"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Przenieś folder",
-        "Przenieś ${ itemsToMoveCount } foldery",
-        "Przenieś ${ itemsToMoveCount } folderów",
-        "Przenieś ${ itemsToMoveCount } folderów"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "Przenieś element",
-        "Przenieś ${ itemsToMoveCount } elementy",
-        "Przenieś ${ itemsToMoveCount } elementów",
-        "Przenieś ${ itemsToMoveCount } elementów"
-      ],
-      "Move ${ movingCount } file": [
-        "Przenieś plik",
-        "Przenieś ${ movingCount } pliki",
-        "Przenieś ${ movingCount } plików",
-        "Przenieś ${ movingCount } plików"
-      ],
-      "Move ${ movingCount } folder": [
-        "Przenieś folder",
-        "Przenieś ${ movingCount } foldery",
-        "Przenieś ${ movingCount } folderów",
-        "Przenieś ${ movingCount } folderów"
-      ],
-      "Move ${ movingCount } item": [
-        "Przenieś element",
-        "Przenieś ${ movingCount } elementy",
-        "Przenieś ${ movingCount } elementów",
-        "Przenieś ${ movingCount } elementów"
-      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Brak przestrzeni dyskowej do przesłania ${ formattedTotal }"
       ],
@@ -5594,6 +5577,11 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "Wybierz, do czego ${ BRAND_NAME } może uzyskać dostęp: odczytywać wiadomości i ustawienia, odczytywać i pobierać kontakty, odczytywać i pobierać wszystkie harmonogramy, do których masz dostęp w Kalendarzu Google."
+      ]
+    },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Witaj w ${ appName }"
       ]
     },
     "Onboarding Action": {
@@ -5648,9 +5636,6 @@
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "Witaj w ${ DRIVE_APP_NAME }"
-      ],
       "Your welcome bonus": [
         "Twój bonus powitalny"
       ]
@@ -6637,9 +6622,6 @@
         "Usuń ${ count } grupy kontaktów",
         "Usuń ${ count } grup kontaktów",
         "Usuń ${ count } grupy kontaktów"
-      ],
-      "Delete ${ Name }": [
-        "Usuń ${ Name }"
       ],
       "Delete permanently": [
         "Usuń trwale"
