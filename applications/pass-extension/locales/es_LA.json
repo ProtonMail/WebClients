@@ -716,14 +716,6 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Actualización de \"${ payload.item.data.metadata.name }\" descartada"
       ],
-      "${ count } item": [
-        "${ count } elemento",
-        "${ count } elementos"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } elemento",
-        "${ itemCount } elementos"
-      ],
       "${ memberCount } member": [
         "${ memberCount } miembro",
         "${ memberCount } miembros"
@@ -746,14 +738,6 @@
       "${ revisionNumber } time": [
         "${ revisionNumber } vez",
         "${ revisionNumber } veces"
-      ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } elemento",
-        "${ totalImportedItems } elementos"
-      ],
-      "${ totalItems } item": [
-        "${ totalItems } elemento",
-        "${ totalItems } elementos"
       ],
       "${ trialDaysLeft } day left": [
         "${ trialDaysLeft } día restante",
@@ -1069,9 +1053,6 @@
       ],
       "Sign in or create an account to continue.": [
         "Inicie sesión o cree una cuenta para continuar."
-      ],
-      "Sign in to your account": [
-        "Iniciar sesión en su cuenta"
       ],
       "Signing you in": [
         "Iniciando sesión"
@@ -1614,6 +1595,11 @@
         "Está por crear"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Bienvenido/a a ${ appName }"
+      ]
+    },
     "Option": {
       "Commas": [
         "Comas"
@@ -1838,9 +1824,6 @@
       "Trash empty": [
         "Papelera vacía"
       ],
-      "Unlock ${ brandNameJSX }": [
-        "Desbloquear ${ brandNameJSX }"
-      ],
       "Unlock ${ PASS_APP_NAME }": [
         "Desbloquear ${ PASS_APP_NAME }"
       ],
@@ -1855,12 +1838,6 @@
       ],
       "Vault shared with you": [
         "Bóveda compartida con usted"
-      ],
-      "Welcome to ${ brandNameJSX }": [
-        "Le damos la bienvenida a ${ brandNameJSX }"
-      ],
-      "Welcome to ${ PASS_APP_NAME }": [
-        "Le damos la bienvenida a ${ PASS_APP_NAME }"
       ],
       "Welcome to your new password manager!": [
         "¡Le damos la bienvenida a su nuevo gestor de contraseñas!"
