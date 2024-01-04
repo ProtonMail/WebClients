@@ -3,6 +3,7 @@
 set -eo pipefail
 
 readonly TEST_FILES='test/input/po';
+export FORCE_COLOR=1
 
 function main {
 #  $ for file in test/po/*; do
@@ -18,7 +19,7 @@ function main {
     echo "[~] validate ${file}";
 
     local expectedFile="$(sed 's/input/output/' <<< "$file")";
-    local output="$(I18N_TEMPLATE_FILE="$file" node index validate)";
+    local output="$(FORCE_COLOR=0 I18N_TEMPLATE_FILE="$file" node index validate)";
     local expectedOutput="$(cat "$expectedFile")";
 
     if [ "$expectedOutput" != "$output" ]; then
