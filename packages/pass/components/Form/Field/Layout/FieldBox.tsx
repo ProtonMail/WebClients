@@ -1,4 +1,12 @@
-import { Children, type FC, type ReactElement, cloneElement, isValidElement } from 'react';
+import {
+    Children,
+    type ForwardRefRenderFunction,
+    type ReactElement,
+    type ReactNode,
+    cloneElement,
+    forwardRef,
+    isValidElement,
+} from 'react';
 
 import { Icon, type IconName } from '@proton/components';
 import type { MaybeArray } from '@proton/pass/types';
@@ -9,6 +17,7 @@ import './FieldBox.scss';
 export type FieldBoxProps = {
     actions?: MaybeArray<ReactElement>;
     actionsContainerClassName?: string;
+    children?: ReactNode | undefined;
     className?: string;
     icon?: IconName | ReactElement;
 };
@@ -33,19 +42,16 @@ const stopOnClickPropagation = (nodes: MaybeArray<ReactElement>): MaybeArray<Rea
             : node;
     });
 
-export const FieldBox: FC<FieldBoxProps> = (props) => {
+const FieldBoxRender: ForwardRefRenderFunction<HTMLDivElement, FieldBoxProps> = (props, ref) => {
     const { className, actions, actionsContainerClassName, children, icon } = props;
     const isCoreIcon = typeof icon == 'string';
     const iconEl = isCoreIcon ? <Icon name={icon} size={20} /> : icon;
 
     return (
-        <div className={clsx('pass-field-box flex flex-nowrap items-start px-4 py-3', className)}>
+        <div className={clsx('pass-field-box flex flex-nowrap items-start px-4 py-3', className)} ref={ref}>
             {icon && (
                 <span
-                    className={clsx(
-                        'flex justify-center items-center shrink-0 pr-4',
-                        isCoreIcon && 'mt-2'
-                    )}
+                    className={clsx('flex justify-center items-center shrink-0 pr-4', isCoreIcon && 'mt-2')}
                     style={{ color: 'var(--fieldset-cluster-icon-color)' }}
                 >
                     {iconEl}
@@ -62,3 +68,5 @@ export const FieldBox: FC<FieldBoxProps> = (props) => {
         </div>
     );
 };
+
+export const FieldBox = forwardRef(FieldBoxRender);
