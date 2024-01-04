@@ -269,6 +269,9 @@
       "Open navigation": [
         "Gezinmeyi aç"
       ],
+      "Open web app": [
+        "İnternet uygulamasını aç"
+      ],
       "Pass for Android": [
         "Android için Proton Pass"
       ],
@@ -393,6 +396,9 @@
     "Badge": {
       "Early access": [
         "Erken erişim"
+      ],
+      "Limited time": [
+        "Sınırlı süreyle"
       ]
     },
     "bf2023: Info": {
@@ -445,6 +451,9 @@
       ],
       "Authentication error": [
         "Kimlik doğrulayıcı sorunu"
+      ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "Kimlik doğrulanamadı. Dışa aktarma işlemini yapabilmek için ${ BRAND_NAME } parolasını yazın"
       ],
       "Auto-lock could not be activated": [
         "Otomatik kilit özelliği açılamadı"
@@ -527,6 +536,9 @@
       ],
       "File could not be parsed": [
         "Dosya işlenemedi"
+      ],
+      "File does not match expected format": [
+        "Dosya beklenen biçimde değil"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "\"${ vaultData.name }\" kasası içine aktarılamadı: ${ description }"
@@ -977,6 +989,9 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Sahiplik aktarıldı. Artık bu kasanın sahibi değilsiniz."
       ],
+      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
+        "${ eoyRelativePrice }/ay tutarla Pass Plus, İnternet uygulamasına erken erişim ile."
+      ],
       "Pass Plus trial": [
         "Proton Pass Plus denemesi"
       ],
@@ -994,6 +1009,9 @@
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN kodu kaydedildi. ${ PASS_APP_NAME } kilidini açmak için kullanabilirsiniz"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "${ PASS_APP_NAME } verilerinizi dışa aktarmak için lütfen ${ BRAND_NAME } parolanızı yazın"
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "Geçerli kilidin kaydını kaldırmak için PIN kodunuzu yazın.\nBu durumda ${ PASS_APP_NAME } asla kilitlenmez."

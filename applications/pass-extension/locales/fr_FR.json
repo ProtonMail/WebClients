@@ -395,7 +395,7 @@
     },
     "Badge": {
       "Early access": [
-        "Accès anticipé"
+        "Accès en avant-première"
       ],
       "Limited time": [
         "Offre à durée limitée"
@@ -451,6 +451,9 @@
       ],
       "Authentication error": [
         "Erreur d'authentification"
+      ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "L'authentification n'a pas abouti. Confirmez votre mot de passe ${ BRAND_NAME } pour poursuivre l'exportation."
       ],
       "Auto-lock could not be activated": [
         "Le verrouillage automatique n’a pu être activé."
@@ -533,6 +536,9 @@
       ],
       "File could not be parsed": [
         "Le fichier n'a pas pu être analysé."
+      ],
+      "File does not match expected format": [
+        "Le fichier ne correspond pas au format attendu."
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "L'importation du coffre-fort « ${ vaultData.name } » n'a pas abouti : ${ description }."
@@ -796,7 +802,7 @@
         "Enregistré automatiquement sur ${ submissionURL }"
       ],
       "Built in 2FA authenticator": [
-        "Authentificateur A2F intégré"
+        "Authentification A2F intégrée"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Permet de créer, modifier, supprimer et exporter des éléments dans ce coffre-fort."
@@ -841,7 +847,7 @@
         "Déposez ici pour importer"
       ],
       "Early access to ${ PASS_APP_NAME } web app": [
-        "Accès anticipé à l'application de bureau ${ PASS_APP_NAME }"
+        "Accès en avant-première à l'application de bureau ${ PASS_APP_NAME }"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importez facilement vos mots de passe dans ${ PASS_APP_NAME }."
@@ -984,7 +990,7 @@
         "La propriété a été transférée. Vous n'êtes plus propriétaire de ce coffre-fort."
       ],
       "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
-        "Pass Plus pour ${ eoyRelativePrice }/mois, y compris un accès en avant-première à l'application web"
+        "Pass Plus pour ${ eoyRelativePrice }/mois, avec un accès en avant-première à l'application web."
       ],
       "Pass Plus trial": [
         "Version d'essai de Proton Pass Plus"
@@ -1004,6 +1010,9 @@
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Le code PIN a été enregistré. Utilisez-le pour débloquer ${ PASS_APP_NAME }."
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "Confirmez votre mot de passe ${ BRAND_NAME } pour exporter vos données ${ PASS_APP_NAME }."
+      ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "Confirmez votre code PIN pour annuler l'enregistrement de votre verrouillage actuel.\nEnsuite, ${ PASS_APP_NAME } ne se verrouillera plus."
       ],
@@ -1020,7 +1029,7 @@
         "Saisissez votre code PIN pour continuer."
       ],
       "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Changez d'abonnement pour bénéficier d'un accès anticipé à l'application de bureau de ${ PASS_APP_NAME }."
+        "Changez d'abonnement pour bénéficier d'un accès en avant-première à l'application de bureau de ${ PASS_APP_NAME }."
       ],
       "Press Enter to copy": [
         "Appuyez sur Entrée pour copier."
@@ -1056,7 +1065,7 @@
         "Les paramètres ont été mis à jour."
       ],
       "Share your logins, secure notes, with up to 10 people": [
-        "Partagez vos identifiants, notes sécurisées avec jusqu'à 10 personnes"
+        "Partagez vos identifiants et notes sécurisées avec jusqu'à 10 personnes"
       ],
       "Sign in or create an account to continue.": [
         "Connectez-vous ou créez un compte pour continuer."
@@ -1126,7 +1135,7 @@
         "Mettre à jour ${ PASS_APP_NAME }"
       ],
       "Upgrade Now to Unlock Premium Features": [
-        "Passez dès à présent à la version supérieure pour profiter des fonctionnalités premium."
+        "Passez à la version supérieure dès maintenant pour profiter des fonctionnalités premium."
       ],
       "Use vaults to share this item with others.": [
         "Utilisez les coffres-forts pour partager cet élément avec d'autres personnes."
