@@ -2928,9 +2928,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storage } storage": [
-        "${ storage } n uḥraz"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } n unermis yettwaleqqem akken iwata.",
         "${ updated } n yinermisen ttwaleqqemen akken iwata."
@@ -3549,15 +3546,6 @@
       "Today": [
         "Ass-a"
       ],
-      "Total email addresses": [
-        "Asemday n tansiwin n yimayl"
-      ],
-      "Total storage": [
-        "Amḍiq n usekles amatu"
-      ],
-      "Total VPN connections": [
-        "Asemday n tuqqniwin VPN"
-      ],
       "Transfer canceled for file \"${ name }\"": [
         "Awelleh yettwasefsex i ufaylu \"${ name }\""
       ],
@@ -3587,9 +3575,6 @@
       ],
       "Unsupported file": [
         "Afaylu ur yettwadhel ara"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Alamma d ${ FAMILY_MAX_USERS } yiseqdacen"
       ],
       "Updating drive search...": [
         "Akeqqem n unadi n yimeɣri..."
@@ -4354,15 +4339,22 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } uwitay",
-        "${ maximumNumberOfCalendars } yiwitayen"
+      "${ n } calendar": [
+        "${ n } uwitay",
+        "${ n } yiwitayen"
+      ],
+      "${ n } calendar per user": [
+        "${ n } uwitay i yal aseqdac",
+        "${ n } yiwitayen i yal aseqdac"
       ],
       "Calendar sharing": [
         "Beṭṭu n uwitay"
       ],
       "Custom email domains": [
         "Tiɣula n yimayl tudmawanin"
+      ],
+      "End-to-end encryption": [
+        "Awgelhen seg yixef ɣer yixef"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email aliases"
@@ -4372,6 +4364,9 @@
       ],
       "Search message content": [
         "Agbur n yizen n unadi"
+      ],
+      "Send & receive invitations": [
+        "Azen & nermes-d tinubgiwin"
       ],
       "Unlimited folders, labels, and filters": [
         "Ikaramen, tibzimin, d yimsizedgen war tilas"
@@ -4399,6 +4394,12 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Tikti"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Rnu alamma d ${ n } n uwitay",
+        "Rnu alamma d ${ n } n yiwitayen"
       ]
     },
     "Notification": {
@@ -4540,30 +4541,6 @@
       "Link copied to clipboard": [
         "Aseɣwen yettwanɣel ɣer ɣefwafus"
       ],
-      "Move ${ itemsToMoveCount } file": [
-        "Smutti ${ itemsToMoveCount } n ufaylu",
-        "Smutti ifuyla ${ itemsToMoveCount }"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Smutti ${ itemsToMoveCount } n ukaram",
-        "Smutti ${ itemsToMoveCount } n yikaramen"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "Smutti ${ itemsToMoveCount } n uferdis",
-        "Smutti ${ itemsToMoveCount } n yiferdisen"
-      ],
-      "Move ${ movingCount } file": [
-        "Smutti afaylu ${ movingCount }",
-        "Smutti ifuyla ${ movingCount }"
-      ],
-      "Move ${ movingCount } folder": [
-        "Smutti akaram ${ movingCount }",
-        "Smutti akaram ${ movingCount }"
-      ],
-      "Move ${ movingCount } item": [
-        "Smutti aferdis  ${ movingCount }",
-        "Smutti aferdis  ${ movingCount }"
-      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Ulac tallunt i usali n ${ formattedTotal }"
       ],
@@ -4598,6 +4575,11 @@
         "Iɣewwaren-ik·im ggwabeddlen war ugur"
       ]
     },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Ansuf ɣer ${ appName }"
+      ]
+    },
     "Onboarding Action": {
       "Next": [
         "Ɣer sdat"
@@ -4630,9 +4612,6 @@
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "Ansuf ɣer ${ DRIVE_APP_NAME }"
-      ],
       "Your welcome bonus": [
         "Abunus-ik n unsuf"
       ]
@@ -5291,9 +5270,6 @@
       "Delete ${ count } contact group": [
         "Kkes ${ count } n ugraw n yinermisen",
         "Kkes ${ count } n yigrawen n yinermisen"
-      ],
-      "Delete ${ Name }": [
-        "Kkes ${ Name }"
       ],
       "Delete permanently": [
         "Kkes i lebda"

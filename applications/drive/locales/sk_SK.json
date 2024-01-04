@@ -2288,7 +2288,7 @@
         "Heslá sa nezhodujú"
       ],
       "Photos upload is temporarily disabled. Please try again later": [
-        "Nahrávanie fotografií je dočasne nedostupné. Skúste to znova, prosím."
+        "Nahrávanie fotografií je dočasne nedostupné. Skúste to prosím, neskôr."
       ],
       "Please activate your search again": [
         "Aktivujte znovu vyhľadávanie"
@@ -3448,9 +3448,6 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
-      "${ storage } storage": [
-        "${ storage } úložisko"
-      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt bol úspešne aktualizovaný.",
         "${ updated } kontakty boli úspešne aktualizované.",
@@ -4330,18 +4327,6 @@
       "Today": [
         "Dnes"
       ],
-      "Total email addresses": [
-        "Všetky e-mailové adresy"
-      ],
-      "Total storage": [
-        "Celkové úložisko "
-      ],
-      "Total supported domains": [
-        "Celkom podporovaných domén"
-      ],
-      "Total VPN connections": [
-        "Celkom VPN pripojení"
-      ],
       "Transfer canceled for file \"${ name }\"": [
         "Prenos súboru „${ name }“ zrušený"
       ],
@@ -4386,9 +4371,6 @@
       ],
       "Unsupported file": [
         "Nepodporovaný súbor"
-      ],
-      "Up to ${ FAMILY_MAX_USERS } users": [
-        "Až ${ FAMILY_MAX_USERS } používateľov"
       ],
       "Updating drive search...": [
         "Aktualizácia vyhľadávania na disku..."
@@ -4745,7 +4727,7 @@
         "Krajina"
       ],
       "Create ${ BRAND_NAME } account": [
-        "Vytvorte účet ${ BRAND_NAME }"
+        "Vytvoriť účet ${ BRAND_NAME }"
       ],
       "Create a share link": [
         "Vytvoriť odkaz na zdieľanie"
@@ -4781,7 +4763,7 @@
         "Stiahnuť aj tak"
       ],
       "Downloading ${ percentageValue }%": [
-        "Sťahovanie ${ percentageValue } %"
+        "Sťahovanie ${ percentageValue }%"
       ],
       "Duplicate found": [
         "Nájdený duplikát"
@@ -5274,11 +5256,17 @@
       ]
     },
     "new_plans: feature": {
-      "${ maximumNumberOfCalendars } calendar": [
-        "${ maximumNumberOfCalendars } kalendár",
-        "${ maximumNumberOfCalendars } kalendáre",
-        "${ maximumNumberOfCalendars } kalendárov",
-        "${ maximumNumberOfCalendars } kalendárov"
+      "${ n } calendar": [
+        "${ n } kalendár",
+        "${ n } kalendáre",
+        "${ n } kalendárov",
+        "${ n } kalendárov"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalendár na používateľa",
+        "${ n } kalendáre na používateľa",
+        "${ n } kalendárov na používateľa",
+        "${ n } kalendárov na používateľa"
       ],
       "Auto-delete spam and trashed messages": [
         "Automaticky mazať správy v spame a koši"
@@ -5292,6 +5280,9 @@
       "Custom snooze time": [
         "Vlastný čas odloženia"
       ],
+      "End-to-end encryption": [
+        "Šifrovanie End-to-end"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email aliasy"
       ],
@@ -5300,6 +5291,9 @@
       ],
       "Search message content": [
         "Hľadať v obsahu správy"
+      ],
+      "Send & receive invitations": [
+        "Odosielanie a prijímanie pozvánok"
       ],
       "Unlimited folders, labels, and filters": [
         "Neobmedzené množstvo priečinkov, štítkov a filtrov"
@@ -5336,6 +5330,31 @@
     "new_plans: placeholder": {
       "Feedback": [
         "Spätná väzba"
+      ]
+    },
+    "new_plans: tooltip": {
+      "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
+        "${ CALENDAR_APP_NAME }: Zabezpečte svoj kalendár pomocou end-to-end šifrovania. Súčasťou je podpora vlastných kalendárov, zdieľanie kalendára a ďalšie funkcie."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Vytvorte si ${ n } kalendár alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
+        "Vytvorte si až ${ n } kalendáre alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
+        "Vytvorte si až ${ n } kalendárov alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
+        "Vytvorte si až ${ n } kalendárov alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues": [
+        "Svoje kalendáre zdieľajte jednoducho s rodinou, priateľmi alebo kolegami"
+      ],
+      "Keep your plans private to you and your family with an encrypted calendar": [
+        "Udržujte svoje plány v súkromí pre seba a svoju rodinu pomocou šifrovaného kalendára"
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "Create up to ${ n } calendar": [
+        "Vytvorte až ${ n } kalendár",
+        "Vytvorte až ${ n } kalendáre",
+        "Vytvorte až ${ n } kalendárov",
+        "Vytvorte až ${ n } kalendárov"
       ]
     },
     "Notification": {
@@ -5501,42 +5520,6 @@
       "Link copied to clipboard": [
         "Odkaz bol skopírovaný do schránky"
       ],
-      "Move ${ itemsToMoveCount } file": [
-        "Presunúť ${ itemsToMoveCount } súbor",
-        "Presunúť ${ itemsToMoveCount } súbory",
-        "Presunúť ${ itemsToMoveCount } súborov",
-        "Presunúť ${ itemsToMoveCount } súborov"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Presunúť ${ itemsToMoveCount } priečinok",
-        "Presunúť ${ itemsToMoveCount } priečinky",
-        "Presunúť ${ itemsToMoveCount } priečinkov",
-        "Presunúť ${ itemsToMoveCount } priečinkov"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "Presunúť ${ itemsToMoveCount } položku",
-        "Presunúť ${ itemsToMoveCount } položky",
-        "Presunúť ${ itemsToMoveCount } položiek",
-        "Presunúť ${ itemsToMoveCount } položiek"
-      ],
-      "Move ${ movingCount } file": [
-        "Presunúť ${ movingCount } súbor",
-        "Presunúť ${ movingCount } súbory",
-        "Presunúť ${ movingCount } súborov",
-        "Presunúť ${ movingCount } súborov"
-      ],
-      "Move ${ movingCount } folder": [
-        "Presunúť ${ movingCount } priečinok",
-        "Presunúť ${ movingCount } priečinky",
-        "Presunúť ${ movingCount } priečinkov",
-        "Presunúť ${ movingCount } priečinkov"
-      ],
-      "Move ${ movingCount } item": [
-        "Presunúť ${ movingCount } položku",
-        "Presunúť ${ movingCount } položky",
-        "Presunúť ${ movingCount } položiek",
-        "Presunúť ${ movingCount } položiek"
-      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Nedostatok miesta na nahratie ${ formattedTotal }"
       ],
@@ -5584,6 +5567,11 @@
     "Oauth instructions video alternative": {
       "Select what ${ BRAND_NAME } can access: view your email messages and settings, view and download your contacts, view and download all agendas you access from Google Agenda.": [
         "Vyberte, k čomu môže ${ BRAND_NAME } pristupovať: prezerajte si emailové správy a nastavenia, prezerajte a sťahujte svoje kontakty, zobrazujte a sťahujte všetky agendy, ku ktorým máte prístup z Agendy Google."
+      ]
+    },
+    "Onboarding": {
+      "Welcome to ${ appName }": [
+        "Víta vás ${ appName }"
       ]
     },
     "Onboarding Action": {
@@ -5638,9 +5626,6 @@
       ]
     },
     "Onboarding Title": {
-      "Welcome to ${ DRIVE_APP_NAME }": [
-        "Víta vás ${ DRIVE_APP_NAME }"
-      ],
       "Your welcome bonus": [
         "Váš uvítací bonus"
       ]
@@ -6616,9 +6601,6 @@
         "Zmazať ${ count } skupín kontaktov",
         "Zmazať ${ count } skupín kontaktov"
       ],
-      "Delete ${ Name }": [
-        "Odstrániť ${ Name }"
-      ],
       "Delete permanently": [
         "Navždy zmazať"
       ],
@@ -6734,7 +6716,7 @@
         "Potvrdenie pred otvorením odkazu"
       ],
       "Location": [
-        "Lokácia"
+        "Umiestnenie"
       ],
       "Manage secure link": [
         "Spravovať zabezpečený odkaz"
@@ -6785,7 +6767,7 @@
         "Ostatné mená"
       ],
       "Performance might be affected": [
-        "Môže byť zasiahnutý výkon"
+        "Môže byť ovplyvnený výkon"
       ],
       "Phone numbers": [
         "Telefónne čísla"
