@@ -43,8 +43,15 @@ export const useWorkerStateEvents = ({ onWorkerStateChange, ...options }: UseWor
         ExtensionContext.get().port.onMessage.addListener(onMessage);
 
         wakeup(options)
-            .then(({ UID, loggedIn, status }) => onWorkerStateChange({ UID, loggedIn, status }))
-            .catch(() => onWorkerStateChange({ UID: undefined, loggedIn: false, status: AppStatus.ERROR }));
+            .then(({ localID, loggedIn, status, UID }) => onWorkerStateChange({ localID, loggedIn, status, UID }))
+            .catch(() =>
+                onWorkerStateChange({
+                    localID: undefined,
+                    loggedIn: false,
+                    status: AppStatus.ERROR,
+                    UID: undefined,
+                })
+            );
 
         return () => ExtensionContext.get().port.onMessage.removeListener(onMessage);
     }, []);
