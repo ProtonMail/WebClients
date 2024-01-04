@@ -1,12 +1,12 @@
 import { selectUserSettings } from '@proton/account';
 import type { SharedStartListening } from '@proton/redux-shared-store/listenerInterface';
 
-import { HolidayCalendarsState, holidayCalendarsThunk, selectHolidayCalendars } from './index';
+import { HolidaysDirectoryState, holidaysDirectoryThunk, selectHolidaysDirectory } from './index';
 
-export const startHolidayCalendarsListener = (startListening: SharedStartListening<HolidayCalendarsState>) => {
+export const startHolidaysDirectoryListener = (startListening: SharedStartListening<HolidaysDirectoryState>) => {
     startListening({
         predicate: (action, currentState, nextState) => {
-            const currentCalendars = selectHolidayCalendars(currentState);
+            const currentCalendars = selectHolidaysDirectory(currentState);
             if (!currentCalendars?.value) {
                 return false;
             }
@@ -15,7 +15,7 @@ export const startHolidayCalendarsListener = (startListening: SharedStartListeni
             return Boolean(currentUserSettings?.Locale && currentUserSettings.Locale !== nextUserSettings?.Locale);
         },
         effect: async (action, listenerApi) => {
-            listenerApi.dispatch(holidayCalendarsThunk({ forceFetch: true }));
+            listenerApi.dispatch(holidaysDirectoryThunk({ forceFetch: true }));
         },
     });
 };

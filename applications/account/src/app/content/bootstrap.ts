@@ -1,6 +1,6 @@
 import { initEvent, serverEvent, userSettingsThunk, userThunk, welcomeFlagsActions } from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
-import { createCalendarModelEventManager, holidayCalendarsThunk } from '@proton/calendar';
+import { createCalendarModelEventManager, holidaysDirectoryThunk } from '@proton/calendar';
 import { initMainHost } from '@proton/cross-storage';
 import { FeatureCode, fetchFeatures } from '@proton/features';
 import { mailSettingsThunk } from '@proton/mail';
@@ -63,7 +63,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
         const ignored = () => {
             loadAllowedTimeZones(silentApi).catch(noop);
-            dispatch(holidayCalendarsThunk()).catch(noop);
+            dispatch(holidaysDirectoryThunk()).catch(noop);
         };
 
         const [models, eventManager] = await Promise.all([
