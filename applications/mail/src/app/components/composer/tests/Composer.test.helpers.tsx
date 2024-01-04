@@ -1,9 +1,6 @@
-import { act } from 'react-dom/test-utils';
-
 import { RenderResult, fireEvent } from '@testing-library/react';
 
 import { pick } from '@proton/shared/lib/helpers/object';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
@@ -14,7 +11,6 @@ import {
     apiKeys,
     parseFormData,
     render,
-    tick,
     waitForNoNotification,
     waitForNotification,
 } from '../../../helpers/test/helper';
@@ -142,11 +138,8 @@ export const send = async (composerID: string, useMinimalCache = true) => {
 
 export const saveNow = async (container: HTMLElement) => {
     fireEvent.keyDown(container, { key: 's', ctrlKey: true });
-    await tick();
 
     // Mandatory to wait on every consequence of the change before starting another test
-    // Definitely not proud of this, any better suggestion is welcomed
-    await act(async () => {
-        await wait(3000);
-    });
+    // Any better suggestion is welcomed
+    await waitForNotification('Draft saved');
 };
