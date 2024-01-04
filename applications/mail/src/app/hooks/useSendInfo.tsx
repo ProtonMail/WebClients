@@ -29,6 +29,18 @@ import { useContactsMap } from './contact/useContacts';
 
 const { PRIMARY_NOT_PINNED, CONTACT_SIGNATURE_NOT_VERIFIED } = ENCRYPTION_PREFERENCES_ERROR_TYPES;
 
+const getSignText = (n: number, contactNames: string, contactAddresses: string) => {
+    return c('Info').ngettext(
+        msgid`The verification of ${contactNames} has failed: the contact is not signed correctly.
+                                    This may be the result of a password reset.
+                                    You must re-sign the contact in order to send a message to ${contactAddresses} or edit the contact.`,
+        `The verification of ${contactNames} has failed: the contacts are not signed correctly.
+                                    This may be the result of a password reset.
+                                    You must re-sign the contacts in order to send a message to ${contactAddresses} or edit the contacts.`,
+        n
+    );
+};
+
 export interface MessageSendInfo {
     message: MessageState;
     mapSendInfo: MapSendInfo;
@@ -129,10 +141,7 @@ export const useUpdateRecipientSendInfo = (
                 const contactAddress = recipient.Address;
                 const contactName = recipient.Name || contactAddress;
 
-                const text = c('Info')
-                    .t`The verification of ${contactName} has failed: the contact is not signed correctly.
-                                This may be the result of a password reset.
-                                You must re-sign the contact in order to send a message to ${contactAddress} or edit the contact.`;
+                const text = getSignText(1, contactName, contactAddress);
 
                 await handleContactResignModal({
                     title: c('Title').t`Re-sign contact`,
@@ -323,15 +332,7 @@ export const useUpdateGroupSendInfo = (
                 const contactNames = contactsResign.map(({ contactName }) => contactName).join(', ');
                 const contactAddresses = contactsResign.map(({ emailAddress }) => emailAddress).join(', ');
 
-                const text = c('Info').ngettext(
-                    msgid`The verification of ${contactNames} has failed: the contact is not signed correctly.
-                                    This may be the result of a password reset.
-                                    You must re-sign the contact in order to send a message to ${contactAddresses} or edit the contact.`,
-                    `The verification of ${contactNames} has failed: the contacts are not signed correctly.
-                                    This may be the result of a password reset.
-                                    You must re-sign the contacts in order to send a message to ${contactAddresses} or edit the contacts.`,
-                    totalContactsResign
-                );
+                const text = getSignText(totalContactsResign, contactNames, contactAddresses);
 
                 await handleContactResignModal({
                     title: title,

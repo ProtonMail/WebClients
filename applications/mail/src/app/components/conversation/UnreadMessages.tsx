@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
-import { c, msgid } from 'ttag';
-
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+
+import { getNUnreadMessagesText } from 'proton-mail/helpers/text';
 
 import { isUnread } from '../../helpers/elements';
 
@@ -50,7 +50,7 @@ const UnreadMessages = ({ conversationID, messages, onClick }: Props) => {
 
     const handleClick = () => onClick(newUnreads()[0].ID);
 
-    const text = c('Info').ngettext(msgid`${count} unread message`, `${count} unread messages`, count);
+    const text = getNUnreadMessagesText(count);
 
     return (
         <span className="absolute inset-x-center bottom-0 pb-4" aria-live="assertive" aria-atomic="true">

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { ModalTwo, useActiveBreakpoint, useModalTwo } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 
 import { DecryptedLink, useActions, useTreeForModals } from '../../../store';
+import { getMovedFiles } from '../../../utils/moveTexts';
 import { selectMessageForItemList } from '../../sections/helpers';
 import CreateFolderModal from '../CreateFolderModal';
 import ModalContentLoader from '../ModalContentLoader';
@@ -74,23 +75,7 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...modalProps }: P
 
     const itemsToMove = selectedItems.map((item) => item.linkId);
     const itemsToMoveCount = itemsToMove.length;
-    const messages = {
-        allFiles: c('Notification').ngettext(
-            msgid`Move ${itemsToMoveCount} file`,
-            `Move ${itemsToMoveCount} files`,
-            itemsToMoveCount
-        ),
-        allFolders: c('Notification').ngettext(
-            msgid`Move ${itemsToMoveCount} folder`,
-            `Move ${itemsToMoveCount} folders`,
-            itemsToMoveCount
-        ),
-        mixed: c('Notification').ngettext(
-            msgid`Move ${itemsToMoveCount} item`,
-            `Move ${itemsToMoveCount} items`,
-            itemsToMoveCount
-        ),
-    };
+    const messages = getMovedFiles(itemsToMoveCount);
 
     const isMoveDisabled =
         !selectedFolder ||

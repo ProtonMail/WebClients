@@ -7,6 +7,7 @@ import { Domain } from '@proton/shared/lib/interfaces';
 
 import { Alert, ErrorButton, Prompt, PromptProps } from '../../components';
 import { useApi, useEventManager, useNotifications } from '../../hooks';
+import { getDeleteText } from '../general/helper';
 
 interface Props extends Omit<PromptProps, 'title' | 'buttons' | 'children'> {
     domain: Domain;
@@ -27,7 +28,7 @@ const DeleteDomainModal = ({ domain, ...rest }: Props) => {
 
     return (
         <Prompt
-            title={c('Title').t`Delete ${domain.DomainName}`}
+            title={getDeleteText(domain.DomainName)}
             buttons={[
                 <ErrorButton
                     onClick={() => {

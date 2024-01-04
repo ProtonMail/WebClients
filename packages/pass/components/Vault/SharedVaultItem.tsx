@@ -1,12 +1,11 @@
 import type { VFC } from 'react';
 import { useSelector } from 'react-redux';
 
-import { c, msgid } from 'ttag';
-
 import { selectVaultItemsCount } from '@proton/pass/store/selectors';
 import type { VaultColor, VaultIcon as VaultIconEnum } from '@proton/pass/types/protobuf/vault-v1';
 import clsx from '@proton/utils/clsx';
 
+import { getItemsText } from '../Settings/helper';
 import { VaultIcon } from './VaultIcon';
 
 type SharedVaultItemProps = {
@@ -31,11 +30,7 @@ export const SharedVaultItem: VFC<SharedVaultItemProps> = ({
             <VaultIcon color={color} icon={icon} size={20} background />
             <div className="flex-1">
                 <div className="text-xl text-bold text-ellipsis">{name}</div>
-                {count !== null && (
-                    <span className="color-weak">
-                        {c('Info').ngettext(msgid`${count} item`, `${count} items`, count)}
-                    </span>
-                )}
+                {count !== null && <span className="color-weak">{getItemsText(count)}</span>}
             </div>
         </div>
     );
