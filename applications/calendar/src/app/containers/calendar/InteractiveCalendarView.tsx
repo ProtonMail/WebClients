@@ -71,6 +71,7 @@ import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import { canonicalizeEmailByGuess, canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
+import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -1217,7 +1218,10 @@ const InteractiveCalendarView = ({
             const noisyResponses = await processApiRequestsSafe(noisyRequests, 25000, 900 * SECOND);
             responses.push(...noisyResponses);
         } catch (e: any) {
-            const errorMessage = e?.data?.Error || e?.message || 'Error changing answer';
+            const errorMessage = getNonEmptyErrorMessage(
+                e,
+                c('Error changing answer of a calendar invitation').t`Error changing answer`
+            );
             throw new Error(errorMessage);
         }
 
@@ -1357,7 +1361,7 @@ const InteractiveCalendarView = ({
                 changeDate(newStartDate, hasChanged);
             }
         } catch (e: any) {
-            createNotification({ text: e.message, type: 'error' });
+            createNotification({ text: getNonEmptyErrorMessage(e), type: 'error' });
         } finally {
             isSavingEvent.current = false;
         }
@@ -1416,7 +1420,7 @@ const InteractiveCalendarView = ({
             // call the calendar event managers to trigger an ES IndexedDB sync (needed in case you search immediately for the events you just deleted)
             void calendarCall(uniqueCalendarIDs);
         } catch (e: any) {
-            createNotification({ text: e.message, type: 'error' });
+            createNotification({ text: getNonEmptyErrorMessage(e), type: 'error' });
         }
     };
 
