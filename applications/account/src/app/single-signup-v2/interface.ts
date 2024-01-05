@@ -14,6 +14,7 @@ import type {
     PlanIDs,
     PlansMap,
     SubscriptionPlan,
+    VPNServersCountData,
 } from '@proton/shared/lib/interfaces';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
@@ -78,6 +79,7 @@ export interface SignupModelV2 {
         ID: string;
         installed: boolean;
     };
+    vpnServersCountData: VPNServersCountData;
 }
 
 export type ActionResponse =

@@ -9,6 +9,7 @@ import {
 import { createToken, subscribe } from '@proton/shared/lib/api/payments';
 import { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
 import { Audience, Organization, Plan } from '@proton/shared/lib/interfaces';
+import { defaultVPNServersCountData as mockDefaultVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 import {
     apiMock,
     applyHOCs,
@@ -46,6 +47,11 @@ jest.mock('@proton/components/hooks/useFeature', () => ({
 jest.mock('@proton/components/hooks/useCalendars', () => ({
     useCalendars: jest.fn(),
     useGetCalendars: jest.fn(() => []),
+}));
+
+jest.mock('@proton/components/hooks/useVPNServersCount', () => ({
+    __esModule: true,
+    default: jest.fn(() => [mockDefaultVPNServersCountData, false]),
 }));
 
 const ContextSubscriptionContainer = applyHOCs(
