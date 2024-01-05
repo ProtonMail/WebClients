@@ -308,3 +308,15 @@ export const importItemsBatch = async (options: {
 
     return result.Revisions.RevisionsData;
 };
+
+export const pinItem = async (shareId: string, itemId: string) =>
+    api({
+        url: `pass/v1/share/${shareId}/item/${itemId}/pin`,
+        method: 'post',
+    });
+
+export const unpinItem = async (shareId: string, itemId: string) =>
+    api({
+        url: `pass/v1/share/${shareId}/item/${itemId}/pin`,
+        method: 'delete',
+    });
