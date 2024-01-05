@@ -33,17 +33,17 @@ export const cardNumberHiddenValue = (value: string): string => {
 };
 
 export const expDateMask = {
-    mask: 'MM/YYYY',
+    mask: 'MM/YY',
     blocks: {
         MM: {
             mask: MaskedRange,
             from: 1,
             to: 12,
         },
-        YYYY: {
+        YY: {
             mask: MaskedRange,
-            from: 1900,
-            to: 2100,
+            from: 0,
+            to: 99,
         },
     },
 } as FactoryOpts;

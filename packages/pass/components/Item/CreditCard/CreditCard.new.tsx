@@ -21,7 +21,7 @@ import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import type { CreditCardItemFormValues } from '@proton/pass/lib/validation/credit-card';
-import { validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
+import { expirationDateMMYYYY, validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
 import { CardType } from '@proton/pass/types/protobuf/item-v1';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -60,6 +60,7 @@ export const CreditCardNew: VFC<ItemNewViewProps<'creditCard'>> = ({ shareId, on
                 content: {
                     ...creditCardValues,
                     cardType: CardType.Unspecified,
+                    expirationDate: expirationDateMMYYYY(creditCardValues.expirationDate),
                     number: obfuscate(creditCardValues.number),
                     verificationNumber: obfuscate(creditCardValues.verificationNumber),
                     pin: obfuscate(creditCardValues.pin),
@@ -125,7 +126,7 @@ export const CreditCardNew: VFC<ItemNewViewProps<'creditCard'>> = ({ shareId, on
                                 icon="calendar-today"
                                 label={c('Label').t`Expiration date`}
                                 mask={expDateMask}
-                                placeholder={c('Placeholder').t`MM/YYYY`}
+                                placeholder={c('Placeholder').t`MM/YY`}
                             />
                             <Field
                                 hidden

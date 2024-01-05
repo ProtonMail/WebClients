@@ -6,7 +6,7 @@ import type { ItemExtraField, ItemImportIntent } from '@proton/pass/types';
 import type { ImportPayload } from '../types';
 import { readEnpassData } from './enpass.reader';
 
-describe('Import bitwarden json', () => {
+describe('Import Enpass json', () => {
     let sourceData: string;
     let payload: ImportPayload;
 
@@ -80,7 +80,7 @@ describe('Import bitwarden json', () => {
         expect(creditCardItem1.metadata.note).toEqual('');
         expect(creditCardItem1.content.cardholderName).toEqual('Emily Sample');
         expect(creditCardItem1.content.number).toEqual('1234 123456 00000');
-        expect(creditCardItem1.content.expirationDate).toEqual('03/27');
+        expect(creditCardItem1.content.expirationDate).toEqual('032027');
         expect(creditCardItem1.content.verificationNumber).toEqual('1234');
         expect(creditCardItem1.content.pin).toEqual('9874');
 
