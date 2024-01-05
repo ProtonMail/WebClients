@@ -1,16 +1,11 @@
-import { ListenerEffectAPI, createSlice } from '@reduxjs/toolkit';
-import { AnyAction } from 'redux';
+import { createSlice } from '@reduxjs/toolkit';
 
-import { CryptoProxy } from '@proton/crypto';
-import type { ProtonDispatch, ProtonThunkArguments } from '@proton/redux-shared-store';
-import type { SharedStartListening } from '@proton/redux-shared-store/listenerInterface';
+import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getOrganizationKeys } from '@proton/shared/lib/api/organization';
 import type { CachedOrganizationKey, OrganizationKey } from '@proton/shared/lib/interfaces';
 import { getCachedOrganizationKey } from '@proton/shared/lib/keys';
-import noop from '@proton/utils/noop';
 
-import { serverEvent } from '../eventLoop';
 import type { ModelState } from '../interface';
 import { OrganizationState, organizationThunk } from '../organization';
 import { UserState, userThunk } from '../user';
@@ -53,44 +48,3 @@ const slice = createSlice({
 
 export const organizationKeyReducer = { [name]: slice.reducer };
 export const organizationKeyThunk = modelThunk.thunk;
-
-export const organizationKeysListener = (startListening: SharedStartListening<OrganizationKeyState>) => {
-    startListening({
-        predicate: (action: AnyAction, currentState: OrganizationKeyState) => {
-            // Warning: There is no event update coming for organization key changes, however, an update for the organization
-            // is received as the keys are changed. So each time it changes, it will redo this.
-            return !!(
-                serverEvent.match(action) &&
-                action.payload.Organization &&
-                !!selectOrganizationKey(currentState).value
-            );
-        },
-        effect: async (action, listenerApi) => {
-            await listenerApi.dispatch(
-                organizationKeyThunk({
-                    forceFetch: true,
-                })
-            );
-        },
-    });
-
-    startListening({
-        predicate: (action: AnyAction, currentState: OrganizationKeyState, nextState: OrganizationKeyState) => {
-            const oldValue = selectOrganizationKey(currentState).value;
-            return !!(oldValue && oldValue !== selectOrganizationKey(nextState).value);
-        },
-        effect: async (
-            action: AnyAction,
-            listenerApi: ListenerEffectAPI<
-                OrganizationKeyState,
-                ProtonDispatch<OrganizationKeyState>,
-                ProtonThunkArguments
-            >
-        ) => {
-            const oldValue = selectOrganizationKey(listenerApi.getOriginalState())?.value;
-            if (oldValue?.privateKey) {
-                await CryptoProxy.clearKey({ key: oldValue.privateKey }).catch(noop);
-            }
-        },
-    });
-};
