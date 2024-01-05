@@ -13,6 +13,7 @@ export * from './protonDomains';
 export * from './subscription';
 export * from './organization';
 export * from './organizationKey';
+export * from './organizationKey/listener';
 export * from './members';
 export * from './plans';
 export * from './domains';
