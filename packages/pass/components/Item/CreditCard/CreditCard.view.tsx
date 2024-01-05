@@ -17,6 +17,7 @@ import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPane
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
+import { expirationDateMMYY } from '@proton/pass/lib/validation/credit-card';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 
@@ -29,6 +30,14 @@ export const CreditCardView: VFC<ItemViewProps<'creditCard'>> = (itemViewProps) 
     } = useDeobfuscatedItem(item);
 
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
+
+    const displayExpirationDateMMYY = (expirationDate: string) => {
+        try {
+            return expirationDateMMYY(expirationDate);
+        } catch (e) {
+            return '';
+        }
+    };
 
     return (
         <ItemViewPanel type="creditCard" {...itemViewProps}>
@@ -57,7 +66,7 @@ export const CreditCardView: VFC<ItemViewProps<'creditCard'>> = (itemViewProps) 
                     icon="calendar-today"
                     label={c('Label').t`Expiration date`}
                     mask={expDateMask}
-                    value={expirationDate}
+                    value={expirationDate ? displayExpirationDateMMYY(expirationDate) : ''}
                 />
                 <ValueControl
                     clickToCopy
