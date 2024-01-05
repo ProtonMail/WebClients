@@ -54,7 +54,7 @@ export const ItemIcon: VFC<BaseItemIconProps> = ({
             {loadImage && (
                 <DomainIcon
                     className={clsx('w-custom h-custom absolute inset-center', iconClassName)}
-                    style={{ '--w-custom': `${size}px`, '--h-custom': `${size}px` }}
+                    style={{ '--w-custom': `${size}px`, '--h-custom': `${size}px`, '--anime-delay': '0s' }}
                     onStatusChange={handleStatusChange}
                     status={imageStatus}
                     url={url ?? ''}
