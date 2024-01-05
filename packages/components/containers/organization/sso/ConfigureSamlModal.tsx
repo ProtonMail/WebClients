@@ -101,7 +101,7 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
                     const { SSO } = await api<{ SSO: SSO }>(
                         setupSAMLUrl({
                             DomainID: domain.ID,
-                            MetadataURL: metadata[METADATA_METHOD.URL].value,
+                            MetadataURL: metadata[METADATA_METHOD.URL].value.trim(),
                         })
                     );
 
@@ -128,8 +128,8 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
                     const { SSO } = await api<{ SSO: SSO }>(
                         setupSAMLFields({
                             DomainID: domain.ID,
-                            SSOURL: url,
-                            SSOEntityID: entityId,
+                            SSOURL: url.trim(),
+                            SSOEntityID: entityId.trim(),
                             Certificate: certificate,
                         })
                     );
@@ -220,13 +220,7 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
 
             return {
                 title: c('Title').t`Enter SAML metadata`,
-                onSubmit: () =>
-                    withSubmitting(handleSubmit).catch(() =>
-                        createNotification({
-                            text: c('Error').t`An unexpected error occurred. Please try again or contact support.`,
-                            type: 'error',
-                        })
-                    ),
+                onSubmit: () => withSubmitting(handleSubmit),
                 content: (
                     <div>
                         <div className="mb-4">
