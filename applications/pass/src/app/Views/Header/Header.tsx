@@ -5,22 +5,21 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { Header as CoreHeader } from '@proton/components';
 import { Icon } from '@proton/components/components';
-import { useNavigation } from '@proton/pass/components/Core/NavigationProvider';
-import { getLocalPath } from '@proton/pass/components/Core/routing';
 import { SearchBar } from '@proton/pass/components/Item/Search/SearchBar';
 import { ItemQuickActions } from '@proton/pass/components/Menu/Item/ItemQuickActions';
-import { SpotlightContent } from '@proton/pass/components/Spotlight/SpotlightContent';
+import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+import { Spotlight } from '@proton/pass/components/Spotlight/Spotlight';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { useOnboardingMessages } from '@proton/pass/hooks/useOnboardingMessages';
 import { type ItemType, OnboardingMessage } from '@proton/pass/types';
-import clsx from '@proton/utils/clsx';
 
 import { onboarding } from '../../../lib/onboarding';
 
 type Props = { hamburger?: ReactElement; searchable?: boolean; title?: string };
 
 export const Header: FC<Props> = ({ hamburger }) => {
-    const { filters, setFilters, navigate, matchSettings } = useNavigation();
+    const { filters, navigate, matchSettings } = useNavigation();
     const onCreate = (type: ItemType) => navigate(getLocalPath(`item/new/${type}`));
 
     const spotlight = useSpotlight();
@@ -46,7 +45,7 @@ export const Header: FC<Props> = ({ hamburger }) => {
                                     icon
                                     pill
                                     shape="solid"
-                                    onClick={() => navigate(getLocalPath(), { mode: 'push' })}
+                                    onClick={() => navigate(getLocalPath())}
                                 >
                                     <Icon
                                         className="modal-close-icon"
@@ -62,24 +61,13 @@ export const Header: FC<Props> = ({ hamburger }) => {
 
                     return (
                         <>
-                            <SearchBar filters={filters} onChange={(search) => setFilters({ search })} />
+                            <SearchBar initial={filters.search} />
                             <ItemQuickActions onCreate={onCreate} />
                         </>
                     );
                 })()}
 
-                <div className="flex-auto w-full">
-                    <div
-                        className={clsx(
-                            'pass-spotlight-panel',
-                            !spotlight.state.open && 'pass-spotlight-panel--hidden'
-                        )}
-                    >
-                        {spotlight.state.message && !spotlight.state.message.hidden && (
-                            <SpotlightContent {...spotlight.state.message} />
-                        )}
-                    </div>
-                </div>
+                <Spotlight />
             </div>
         </CoreHeader>
     );

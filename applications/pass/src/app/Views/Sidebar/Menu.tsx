@@ -7,11 +7,10 @@ import { Button } from '@proton/atoms/Button';
 import { Scroll } from '@proton/atoms/Scroll';
 import { Icon } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
-import { useNavigation } from '@proton/pass/components/Core/NavigationProvider';
-import { getLocalPath, getTrashRoute } from '@proton/pass/components/Core/routing';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
+import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
@@ -36,7 +35,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const menu = useMenuItems({ onAction: onToggle });
     const vaultActions = useVaultActions();
 
-    const { filters, matchEmpty, matchSettings, matchTrash, setFilters } = useNavigation();
+    const { filters, matchTrash } = useNavigation();
     const { selectedShareId } = filters;
 
     const passPlan = useSelector(selectPassPlan);
@@ -49,23 +48,6 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
         await authService.lock({ soft: false, broadcast: true });
         clearNotifications();
     }, []);
-
-    const onVaultSelect = useCallback(
-        (selected: string) => {
-            switch (selected) {
-                case 'all':
-                    /* if in trash or empty screen -> trigger autoselect via redirect */
-                    const redirect = matchEmpty || matchTrash || matchSettings ? getLocalPath() : undefined;
-                    return setFilters({ selectedShareId: null, search: '' }, redirect);
-                case 'trash':
-                    return setFilters({ selectedShareId: null, search: '' }, getTrashRoute());
-                default: {
-                    return setFilters({ selectedShareId: selected }, getLocalPath());
-                }
-            }
-        },
-        [setFilters, matchEmpty]
-    );
 
     return (
         <div className="flex flex-column flex-nowrap justify-space-between flex-1 overflow-auto gap-2">
@@ -84,7 +66,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
 
             <Scroll className="flex flex-1 h-1/2 min-h-custom" style={{ '--min-h-custom': '5em' }}>
                 <div className="flex mx-3">
-                    <VaultMenu selectedShareId={selectedShareId} inTrash={matchTrash} onSelect={onVaultSelect} />
+                    <VaultMenu selectedShareId={selectedShareId} inTrash={matchTrash} onSelect={vaultActions.select} />
                 </div>
             </Scroll>
 

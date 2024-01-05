@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { useNotifications } from '@proton/components/hooks';
-import { getCurrentLocation } from '@proton/pass/components/Core/routing';
+import { getCurrentLocation } from '@proton/pass/components/Navigation/routing';
 import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellRef } from '@proton/pass/constants';
 import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
