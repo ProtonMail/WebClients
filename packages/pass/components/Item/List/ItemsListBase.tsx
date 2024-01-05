@@ -44,17 +44,19 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
                         switch (row.type) {
                             case 'entry': {
                                 const item = row.entry;
+                                const id = `item-${item.shareId}-${item.itemId}`;
                                 return (
                                     <div style={style} key={key}>
                                         <ItemsListItem
+                                            active={selectedItem && itemEq(selectedItem)(item)}
+                                            id={id}
                                             item={item}
+                                            key={id}
+                                            search={filters.search}
                                             onClick={(e) => {
                                                 e.preventDefault();
                                                 onSelect(item);
                                             }}
-                                            id={`item-${item.shareId}-${item.itemId}`}
-                                            search={filters.search}
-                                            active={selectedItem && itemEq(selectedItem)(item)}
                                         />
                                     </div>
                                 );
