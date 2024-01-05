@@ -1,7 +1,7 @@
 import { type VFC, useCallback } from 'react';
 
+import { usePopupContext } from 'proton-pass-extension/lib/components/Context/PopupProvider';
 import { PromptForReload } from 'proton-pass-extension/lib/components/Extension/ExtensionError';
-import { usePopupContext } from 'proton-pass-extension/lib/hooks/usePopupContext';
 import { useRequestForkWithPermissions } from 'proton-pass-extension/lib/hooks/useRequestFork';
 import { c } from 'ttag';
 
