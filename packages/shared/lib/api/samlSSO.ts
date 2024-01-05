@@ -27,7 +27,7 @@ export const setupSAMLFields = (data: {
 });
 
 export const updateSAMLConfig = (
-    uid: number,
+    uid: string,
     data: {
         DomainID: string;
         SSOURL: string;
