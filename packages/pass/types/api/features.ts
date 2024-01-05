@@ -4,6 +4,7 @@ export enum PassFeature {
     PassSharingV1 = 'PassSharingV1',
     PassRemovePrimaryVault = 'PassRemovePrimaryVault',
     PassSharingNewUsers = 'PassSharingNewUsers',
+    PassPinningV1 = 'PassPinningV1',
 }
 
 export const PassFeaturesValues = Object.values(PassFeature);
