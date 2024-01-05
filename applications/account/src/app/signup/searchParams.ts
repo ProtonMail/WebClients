@@ -1,6 +1,7 @@
 import { OtherProductParam, ProductParam, otherProductParamValues } from '@proton/shared/lib/apps/product';
 import {
     ADDON_NAMES,
+    APPS,
     APP_NAMES,
     MAX_DOMAIN_PRO_ADDON,
     MAX_IPS_ADDON,
@@ -45,8 +46,13 @@ export const getProductParam = (product: APP_NAMES | undefined, productParam: st
 export const getProductParams = (pathname: string, searchParams: URLSearchParams) => {
     const maybeProductPathname = pathname.match(/\/([^/]*)/)?.[1];
     const maybeProductParam = (searchParams.get('service') || searchParams.get('product') || undefined)?.toLowerCase();
-    const product = getProduct(maybeProductPathname) || getProduct(maybeProductParam);
+    let product = getProduct(maybeProductPathname) || getProduct(maybeProductParam);
     const productParam = getProductParam(product, maybeProductParam || maybeProductPathname);
+    if (!product) {
+        if ([PLANS.MAIL_PRO, PLANS.BUNDLE_PRO].includes(searchParams.get('plan') as any)) {
+            product = APPS.PROTONMAIL;
+        }
+    }
     return { product, productParam };
 };
 
@@ -75,8 +81,6 @@ export const getSignupSearchParams = (
 
     // plan is validated by comparing plans after it's loaded
     const maybePreSelectedPlan = searchParams.get('plan');
-    // static sites use 'business' for pro plan
-    const preSelectedPlan = maybePreSelectedPlan === 'business' ? 'professional' : maybePreSelectedPlan;
 
     const referrer = searchParams.get('referrer') || undefined; // referral ID
     const invite = searchParams.get('invite') || undefined;
@@ -94,7 +98,7 @@ export const getSignupSearchParams = (
         currency,
         cycle: cycle || defaults?.cycle,
         minimumCycle,
-        preSelectedPlan: preSelectedPlan || defaults?.plan,
+        preSelectedPlan: maybePreSelectedPlan || defaults?.plan,
         product,
         users,
         domains,
