@@ -1,0 +1,9 @@
+.button.pass-pinned-list--item {
+	padding-block: 0.375rem;
+	padding-inline: 0.5rem;
+	box-sizing: border-box;
+}
+
+.button.pass-pinned-list--item.is-active {
+	background-color: var(--interaction-norm-minor-1);
+}
