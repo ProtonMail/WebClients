@@ -1,72 +1,38 @@
 import { type VFC } from 'react';
-import { useHistory } from 'react-router-dom';
 
-import { vaultDeletionEffect } from 'proton-pass-extension/lib/components/Context/Items/ItemEffects';
-import { useItemsFilteringContext } from 'proton-pass-extension/lib/hooks/useItemsFilteringContext';
+import { usePopupContext } from 'proton-pass-extension/lib/components/Context/PopupProvider';
 import { useOnboardingListener } from 'proton-pass-extension/lib/hooks/useOnboardingListener';
-import { usePopupContext } from 'proton-pass-extension/lib/hooks/usePopupContext';
 
-import { Header as HeaderComponent } from '@proton/components';
+import { Header as CoreHeader } from '@proton/components';
 import { SearchBar } from '@proton/pass/components/Item/Search/SearchBar';
 import { ItemQuickActions } from '@proton/pass/components/Menu/Item/ItemQuickActions';
-import { SpotlightContent } from '@proton/pass/components/Spotlight/SpotlightContent';
-import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
+import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { getLocalPath } from '@proton/pass/components/Navigation/routing';
+import { Spotlight } from '@proton/pass/components/Spotlight/Spotlight';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import type { ItemType } from '@proton/pass/types';
-import clsx from '@proton/utils/clsx';
 
 import { MenuDropdown } from './MenuDropdown';
 
 export const Header: VFC = () => {
-    const { ready, context } = usePopupContext();
+    const { ready, context, state } = usePopupContext();
     const { domain, subdomain, hostname } = context?.url ?? {};
-    const history = useHistory();
 
-    const filtering = useItemsFilteringContext();
-    const { search, shareId, sort, type, setSearch } = filtering;
+    const { navigate } = useNavigation();
+    const onCreate = (type: ItemType) => navigate(getLocalPath(`item/new/${type}`));
 
-    const onVaultDeleted = (shareId: string) => vaultDeletionEffect(shareId, filtering);
-    const onVaultCreated = filtering.setShareId;
-
-    const onCreate = (type: ItemType) => {
-        /* Trick to be able to return to the initial route using
-         * history.goBack() if user switches from item creation
-         * routes for multiple subsequent item types. */
-        const shouldReplace = history.location.pathname.includes('/item/new/');
-        history[shouldReplace ? 'replace' : 'push'](`/item/new/${type}`);
-    };
-
-    const spotlight = useSpotlight();
     useOnboardingListener();
 
     return (
-        <VaultActionsProvider onVaultCreated={onVaultCreated} onVaultDeleted={onVaultDeleted}>
-            <HeaderComponent className="border-bottom h-auto p-2">
+        <VaultActionsProvider>
+            <CoreHeader className="border-bottom h-auto p-2">
                 <div className="flex items-center gap-x-2 w-full">
                     <MenuDropdown />
-
-                    <SearchBar
-                        disabled={!ready}
-                        filters={{ search, selectedShareId: shareId, sort, type }}
-                        onChange={setSearch}
-                    />
-
+                    <SearchBar disabled={!ready} initial={state.initial.search} />
                     <ItemQuickActions onCreate={onCreate} origin={subdomain ?? domain ?? hostname ?? null} />
-
-                    <div className="flex-auto w-full">
-                        <div
-                            className={clsx(
-                                'pass-spotlight-panel',
-                                !spotlight.state.open && 'pass-spotlight-panel--hidden'
-                            )}
-                        >
-                            {spotlight.state.message && !spotlight.state.message.hidden && (
-                                <SpotlightContent {...spotlight.state.message} />
-                            )}
-                        </div>
-                    </div>
+                    <Spotlight />
                 </div>
-            </HeaderComponent>
+            </CoreHeader>
         </VaultActionsProvider>
     );
 };
