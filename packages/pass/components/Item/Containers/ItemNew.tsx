@@ -13,6 +13,8 @@ import { itemCreationIntent } from '@proton/pass/store/actions';
 import { selectDefaultVault, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { ItemCreateIntent, ItemType } from '@proton/pass/types';
 
+import { usePassCore } from '../../Core/PassCoreProvider';
+
 const itemNewMap: { [T in ItemType]: VFC<ItemNewViewProps<T>> } = {
     login: LoginNew,
     note: NoteNew,
@@ -21,6 +23,7 @@ const itemNewMap: { [T in ItemType]: VFC<ItemNewViewProps<T>> } = {
 };
 
 export const ItemNew: VFC = () => {
+    const { getCurrentTabUrl } = usePassCore();
     const { selectItem, setFilters, filters } = useNavigation();
     const selectedShareId = filters.selectedShareId;
 
@@ -50,5 +53,12 @@ export const ItemNew: VFC = () => {
 
     const handleCancel = () => history.goBack();
 
-    return <ItemNewComponent shareId={shareId} onSubmit={handleSubmit} onCancel={handleCancel} url={null} />;
+    return (
+        <ItemNewComponent
+            onCancel={handleCancel}
+            onSubmit={handleSubmit}
+            shareId={shareId}
+            url={getCurrentTabUrl?.() ?? null}
+        />
+    );
 };
