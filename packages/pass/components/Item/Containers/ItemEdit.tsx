@@ -2,6 +2,7 @@ import { type VFC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useParams } from 'react-router-dom';
 
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { AliasEdit } from '@proton/pass/components/Item/Alias/Alias.edit';
 import { CreditCardEdit } from '@proton/pass/components/Item/CreditCard/CreditCard.edit';
 import { LoginEdit } from '@proton/pass/components/Item/Login/Login.edit';
@@ -21,6 +22,7 @@ const itemEditMap: { [T in ItemType]: VFC<ItemEditViewProps<T>> } = {
 };
 
 export const ItemEdit: VFC = () => {
+    const { getCurrentTabUrl } = usePassCore();
     const { shareId, itemId } = useParams<SelectedItem>();
     const { selectItem } = useNavigation();
     const dispatch = useDispatch();
@@ -39,11 +41,11 @@ export const ItemEdit: VFC = () => {
 
     return (
         <EditViewComponent
-            vault={vault}
-            revision={item}
-            onSubmit={handleSubmit}
-            url={null}
             onCancel={() => selectItem(shareId, itemId)}
+            onSubmit={handleSubmit}
+            revision={item}
+            url={getCurrentTabUrl?.() ?? null}
+            vault={vault}
         />
     );
 };

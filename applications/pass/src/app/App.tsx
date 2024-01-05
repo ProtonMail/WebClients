@@ -24,6 +24,7 @@ import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { selectExportData } from '@proton/pass/store/selectors/export';
 import type { Maybe } from '@proton/pass/types';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
+import noop from '@proton/utils/noop';
 
 import { PASS_CONFIG } from '../lib/core';
 import { onboarding } from '../lib/onboarding';
