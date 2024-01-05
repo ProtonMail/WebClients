@@ -1,5 +1,5 @@
 export interface SSO {
-    SSOID: number;
+    ID: number;
     SSOURL: string;
     SSOEntityID: string;
     IssuerID: string;
