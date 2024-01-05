@@ -45,4 +45,5 @@ export const API_CUSTOM_ERROR_CODES = {
 export const EVENT_ERRORS = {
     MAIL: 1,
     CONTACTS: 2,
+    ALL: 255,
 };

@@ -22,6 +22,7 @@ import {
     importerConfigReducer,
     mailSettingsReducer,
 } from '@proton/mail';
+import { selectPersistModel } from '@proton/redux-utilities';
 
 export const sharedReducers = {
     ...userReducer,
@@ -44,4 +45,19 @@ export const sharedReducers = {
     ...membersReducer,
     ...scheduleCallReducer,
     features: featuresReducer.reducer,
+};
+
+export const sharedPersistReducer: Partial<{ [key in keyof typeof sharedReducers]: any }> = {
+    user: selectPersistModel,
+    addresses: selectPersistModel,
+    userSettings: selectPersistModel,
+    mailSettings: selectPersistModel,
+    subscription: selectPersistModel,
+    contacts: selectPersistModel,
+    contactEmails: selectPersistModel,
+    categories: selectPersistModel,
+    organization: selectPersistModel,
+    userInvitations: selectPersistModel,
+    vpnServersCount: selectPersistModel,
+    features: (state: any) => state,
 };
