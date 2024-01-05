@@ -17,8 +17,6 @@ import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { syncRequest } from '@proton/pass/store/actions/requests';
 import type { AppState, MaybeNull, PopupInitialState } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
-import type { ParsedUrl } from '@proton/pass/utils/url/parser';
-import { parseUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';
 
 export interface PopupContextValue extends ExtensionConnectContextValue {
@@ -26,7 +24,6 @@ export interface PopupContextValue extends ExtensionConnectContextValue {
     expanded: boolean /* is popup expanded into a separate window */;
     ready: boolean /* enable UI user actions */;
     state: AppState & { initial: PopupInitialState };
-    url: ParsedUrl /* current tab parsed URL */;
     sync: () => void;
 }
 
@@ -42,7 +39,6 @@ export const PopupContext = createContext<PopupContextValue>({
     expanded: false,
     ready: false,
     state: { ...INITIAL_WORKER_STATE, initial: INITIAL_POPUP_STATE },
-    url: parseUrl(),
     lock: noop,
     logout: noop,
     sync: noop,
@@ -54,7 +50,7 @@ export const PopupContext = createContext<PopupContextValue>({
 const PopupContextProvider: FC = ({ children }) => {
     const extensionContext = useExtensionConnect();
     const { status } = extensionContext.state;
-    const { url, tabId } = extensionContext.context!;
+    const { tabId } = extensionContext.context!;
 
     const notificationsManager = useContext(NotificationsContext);
     useEffect(() => notificationsManager.setOffset({ y: 10 }), []);
@@ -84,7 +80,6 @@ const PopupContextProvider: FC = ({ children }) => {
             expanded,
             ready: ready && !syncing /* worker ready and no ongoing syncs */,
             state: { ...state, initial: initial ?? INITIAL_POPUP_STATE },
-            url,
         };
     }, [extensionContext, syncing, initial]);
 
