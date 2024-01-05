@@ -2,14 +2,16 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { getItemActionId } from '@proton/pass/lib/items/item.utils';
+import { pinItemRequest, unpinItemRequest } from '@proton/pass/store/actions/requests';
 import { withCache, withThrottledCache } from '@proton/pass/store/actions/with-cache';
 import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
 import withCallback from '@proton/pass/store/actions/with-callback';
 import withNotification from '@proton/pass/store/actions/with-notification';
+import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import withSynchronousClientAction from '@proton/pass/store/actions/with-synchronous-client-action';
 import { createOptimisticAction } from '@proton/pass/store/optimistic/action/create-optimistic-action';
 import type { Draft, DraftBase } from '@proton/pass/store/reducers';
-import type { ItemCreateIntent, ItemEditIntent, ItemRevision, SelectedItem } from '@proton/pass/types';
+import type { ItemCreateIntent, ItemEditIntent, ItemRevision, SelectedItem, UniqueItem } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const draftSave = createAction('draft::save', (payload: Draft) => withThrottledCache({ payload }));
@@ -244,4 +246,60 @@ export const itemAutofilled = createAction('item::autofilled', (payload: Selecte
 export const itemUsedSync = createAction(
     'item::used::sync',
     (payload: { shareId: string; itemId: string; lastUseTime: number }) => withCache({ payload })
+);
+
+export const itemPinIntent = createAction('item::pin::intent', (payload: UniqueItem) =>
+    withRequest({ type: 'start', id: pinItemRequest(payload.itemId) })({ payload })
+);
+
+export const itemPinSuccess = createAction(
+    'item::pin::success',
+    withRequestSuccess((payload: UniqueItem) =>
+        pipe(
+            withCache,
+            withNotification({
+                type: 'info',
+                text: c('Info').t`Item pinned`,
+            })
+        )({ payload })
+    )
+);
+
+export const itemPinFailure = createAction(
+    'item::pin::failure',
+    withRequestFailure((error: unknown) =>
+        withNotification({
+            type: 'error',
+            text: c('Error').t`Failed to pin item`,
+            error,
+        })({ payload: {}, error })
+    )
+);
+
+export const itemUnpinIntent = createAction('item::unpin::intent', (payload: UniqueItem) =>
+    withRequest({ type: 'start', id: unpinItemRequest(payload.itemId) })({ payload })
+);
+
+export const itemUnpinSuccess = createAction(
+    'item::unpin::success',
+    withRequestSuccess((payload: UniqueItem) =>
+        pipe(
+            withCache,
+            withNotification({
+                type: 'info',
+                text: c('Info').t`Item unpinned`,
+            })
+        )({ payload })
+    )
+);
+
+export const itemUnpinFailure = createAction(
+    'item::unpin::failure',
+    withRequestFailure((error: unknown) =>
+        withNotification({
+            type: 'error',
+            text: c('Error').t`Failed to unpin item`,
+            error,
+        })({ payload: {}, error })
+    )
 );
