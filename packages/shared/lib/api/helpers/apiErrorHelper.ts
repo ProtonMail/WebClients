@@ -8,7 +8,7 @@ export const isNotExistError = (error: any) => {
         API_CODES.INVALID_ID_ERROR,
         API_CODES.NOT_FOUND_ERROR,
         /**
-         * Mail Specific: Conversation does not exists
+         * Mail Specific: Conversation does not exist
          */
         20052,
     ];
@@ -52,6 +52,9 @@ export const getIs401Error = (e: any) => {
 };
 
 export const getIsOfflineError = (e: any) => {
+    if (!e) {
+        return false;
+    }
     return e.name === 'OfflineError';
 };
 
@@ -88,7 +91,7 @@ export const getIsConnectionIssue = (e: any) => {
     return getIsOfflineError(e) || getIsUnreachableError(e) || getIsNetworkError(e) || getIsTimeoutError(e);
 };
 
-export const getApiErrorMessage = (e: Error): string | undefined => {
+export const getApiErrorMessage = (e: any): string | undefined => {
     const { message } = getApiError(e);
     if (getIs401Error(e)) {
         return message || c('Info').t`Session timed out`;
