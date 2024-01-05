@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
+import { expirationDateMMYYYY } from '@proton/pass/lib/validation/credit-card';
 import type { Item, ItemImportIntent, Maybe, MaybeNull, UnsafeItemExtraField } from '@proton/pass/types';
 import { CardType } from '@proton/pass/types/protobuf/item-v1';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -113,6 +114,13 @@ export const importCreditCardItem = (options: {
     createTime?: number;
     modifyTime?: number;
 }): ItemImportIntent<'creditCard'> => {
+    let validExpirationDate = '';
+    try {
+        if (options.expirationDate) {
+            validExpirationDate = expirationDateMMYYYY(options.expirationDate);
+        }
+    } catch (_) {}
+
     return {
         ...(obfuscateItem({
             type: 'creditCard',
@@ -126,7 +134,7 @@ export const importCreditCardItem = (options: {
                 cardholderName: options.cardholderName || '',
                 number: options.number || '',
                 verificationNumber: options.verificationNumber || '',
-                expirationDate: options.expirationDate || '',
+                expirationDate: validExpirationDate,
                 pin: options.pin || '',
             },
 
