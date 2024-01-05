@@ -36,6 +36,9 @@ export const inviteRemoveRequest = (inviteId: string) => `invite::remove::${invi
 export const newUserInvitePromoteRequest = (newUserInviteId: string) => `new-user-invite::promote::${newUserInviteId}`;
 export const newUserInviteRemoveRequest = (newUserInviteId: string) => `new-user-invite::remove::${newUserInviteId}`;
 
+export const pinItemRequest = (itemId: string) => `pin::item::${itemId}`;
+export const unpinItemRequest = (itemId: string) => `unpin::item::${itemId}`;
+
 export const userAccessRequest = (userId: string) => `user::access::${userId}`;
 export const userFeaturesRequest = (userId: string) => `user::features::${userId}`;
 

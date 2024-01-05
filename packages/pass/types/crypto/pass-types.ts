@@ -69,6 +69,7 @@ export type OpenedItem = {
     itemId: string;
     lastUseTime: MaybeNull<number>;
     modifyTime: number;
+    pinned: boolean;
     revision: number;
     revisionTime: number;
     state: ItemState;
