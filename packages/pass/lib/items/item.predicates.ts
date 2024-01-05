@@ -19,3 +19,5 @@ export const isTrashed = ({ state }: ItemRevision) => state === ItemState.Trashe
 
 export const isEditItemDraft = (draft?: Draft): draft is EditDraft => draft?.mode === 'edit';
 export const isNewItemDraft = (draft?: Draft): draft is NewDraft => draft?.mode === 'new';
+
+export const isPinned = ({ pinned }: ItemRevision) => pinned;

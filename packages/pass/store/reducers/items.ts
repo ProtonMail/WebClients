@@ -27,12 +27,14 @@ import {
     itemMoveFailure,
     itemMoveIntent,
     itemMoveSuccess,
+    itemPinSuccess,
     itemRestoreFailure,
     itemRestoreIntent,
     itemRestoreSuccess,
     itemTrashFailure,
     itemTrashIntent,
     itemTrashSuccess,
+    itemUnpinSuccess,
     itemUsedSync,
     restoreTrashSuccess,
     shareDeleteSync,
@@ -119,6 +121,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
                         state: ItemState.Active,
                         createTime,
                         modifyTime: createTime,
+                        pinned: false,
                         revisionTime: createTime,
                         lastUseTime: null,
                         contentFormatVersion: CONTENT_FORMAT_VERSION,
@@ -232,6 +235,16 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
                 { ...state, [shareId]: objectDelete(state[item.shareId], optimisticId) },
                 { [shareId]: { [item.itemId]: item } }
             );
+        }
+
+        if (itemPinSuccess.match(action)) {
+            const { shareId, itemId } = action.payload;
+            return partialMerge(state, { [shareId]: { [itemId]: { pinned: true } } });
+        }
+
+        if (itemUnpinSuccess.match(action)) {
+            const { shareId, itemId } = action.payload;
+            return partialMerge(state, { [shareId]: { [itemId]: { pinned: false } } });
         }
 
         if (inviteCreationSuccess.match(action) && action.payload.withVaultCreation) {

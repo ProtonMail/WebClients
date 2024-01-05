@@ -27,8 +27,10 @@ import itemCreation from '@proton/pass/store/sagas/items/item-creation.saga';
 import itemDelete from '@proton/pass/store/sagas/items/item-delete.saga';
 import itemEdit from '@proton/pass/store/sagas/items/item-edit.saga';
 import itemMove from '@proton/pass/store/sagas/items/item-move.saga';
+import itemPin from '@proton/pass/store/sagas/items/item-pin.saga';
 import itemRestore from '@proton/pass/store/sagas/items/item-restore.saga';
 import itemTrash from '@proton/pass/store/sagas/items/item-trash.saga';
+import itemUnpin from '@proton/pass/store/sagas/items/item-unpin.saga';
 import shareAccessOptions from '@proton/pass/store/sagas/shares/share-access-options.saga';
 import shareEditRole from '@proton/pass/store/sagas/shares/share-edit-role.saga';
 import shareLeave from '@proton/pass/store/sagas/shares/share-leave.saga';
@@ -65,6 +67,8 @@ export function* rootSaga(options: RootSagaOptions) {
             itemMove,
             itemRestore,
             itemsImport,
+            itemPin,
+            itemUnpin,
             itemTrash,
             newUserInvitePromote,
             newUserInviteRemove,
