@@ -4,6 +4,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useEnsureMounted } from '@proton/pass/hooks/useEnsureMounted';
 import type { Maybe } from '@proton/pass/types';
 import { parseUrl } from '@proton/pass/utils/url/parser';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 export enum ImageStatus {
@@ -47,7 +48,7 @@ export const DomainIcon: VFC<Props> = ({ className, status, style = {}, url, onS
     return (
         <img
             alt=""
-            className={className}
+            className={clsx(status === ImageStatus.READY && 'anime-fade-in', className)}
             onError={() => onStatusChange(ImageStatus.ERROR)}
             onLoad={() => onStatusChange(ImageStatus.READY)}
             src={src}
