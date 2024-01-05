@@ -41,6 +41,7 @@ export const ItemViewPanel: FC<Props> = ({
     trashed,
     actions = [],
     quickActions = [],
+    pinned,
 
     handleEditClick,
     handleRetryClick,
@@ -51,12 +52,13 @@ export const ItemViewPanel: FC<Props> = ({
     handleDeleteClick,
     handleInviteClick,
     handleManageClick,
-
+    handlePinClick,
     children,
 }) => {
     const vaults = useSelector(selectAllVaults);
     const plan = useSelector(selectPassPlan);
     const sharingEnabled = useFeatureFlag(PassFeature.PassSharingV1);
+    const pinningEnabled = useFeatureFlag(PassFeature.PassPinningV1);
     const hasMultipleVaults = vaults.length > 1;
     const { shareRoleId, shared } = vault;
     const showVaultTag = hasMultipleVaults || shared;
@@ -184,6 +186,14 @@ export const ItemViewPanel: FC<Props> = ({
                                 )}
 
                                 {quickActions}
+
+                                {pinningEnabled && (
+                                    <DropdownMenuButton
+                                        onClick={handlePinClick}
+                                        label={pinned ? c('Action').t`Unpin item` : c('Action').t`Pin item`}
+                                        icon={pinned ? 'pin-angled-slash' : 'pin-angled'}
+                                    />
+                                )}
 
                                 <DropdownMenuButton
                                     onClick={handleMoveToTrashClick}

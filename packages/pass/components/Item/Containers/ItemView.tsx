@@ -23,8 +23,10 @@ import {
     itemEditDismiss,
     itemEditIntent,
     itemMoveIntent,
+    itemPinIntent,
     itemRestoreIntent,
     itemTrashIntent,
+    itemUnpinIntent,
 } from '@proton/pass/store/actions';
 import selectFailedAction from '@proton/pass/store/optimistic/selectors/select-failed-action';
 import {
@@ -123,6 +125,8 @@ export const ItemView: VFC = () => {
         setInviteOpen(false);
     };
 
+    const handlePinClick = () => dispatch((item.pinned ? itemUnpinIntent : itemPinIntent)({ shareId, itemId }));
+
     const ItemTypeViewComponent = itemTypeViewMap[item.data.type] as VFC<ItemViewProps>;
 
     return (
@@ -140,9 +144,11 @@ export const ItemView: VFC = () => {
                 handleDeleteClick={handleDelete}
                 handleInviteClick={handleInviteClick}
                 handleManageClick={handleVaultManage}
+                handlePinClick={handlePinClick}
                 optimistic={item.optimistic}
                 failed={item.failed}
                 trashed={trashed}
+                pinned={item.pinned}
             />
 
             <VaultSelect
