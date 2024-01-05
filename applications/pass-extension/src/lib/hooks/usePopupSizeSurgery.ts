@@ -5,7 +5,7 @@ import noop from '@proton/utils/noop';
 
 import { isVivaldiBrowser } from '../utils/vivaldi';
 
-/* Adjusts the size of the popup element to account for inconsistent sizing behavior
+/** Adjusts the size of the popup element to account for inconsistent sizing behavior
  * when the user changes the default page zoom in their browser settings. */
 export const usePopupSizeSurgery = () => {
     useEffect(() => {

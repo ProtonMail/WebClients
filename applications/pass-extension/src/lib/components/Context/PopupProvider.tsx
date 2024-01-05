@@ -4,9 +4,9 @@ import {
     ExtensionConnect,
     type ExtensionConnectContextValue,
     INITIAL_WORKER_STATE,
+    useExtensionConnect,
 } from 'proton-pass-extension/lib/components/Extension/ExtensionConnect';
 import { useExpanded } from 'proton-pass-extension/lib/hooks/useExpanded';
-import { useExtensionConnectContext } from 'proton-pass-extension/lib/hooks/useExtensionConnectContext';
 
 import { NotificationsContext } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
@@ -51,8 +51,8 @@ export const PopupContext = createContext<PopupContextValue>({
 /* this cannot be included directly in `PopupContextProvider` because
  * of the `useExtensionContext` call which requires this component to
  * be a descendant of `ExtensionConnect` */
-const PopupContextContainer: FC = ({ children }) => {
-    const extensionContext = useExtensionConnectContext();
+const PopupContextProvider: FC = ({ children }) => {
+    const extensionContext = useExtensionConnect();
     const { status } = extensionContext.state;
     const { url, tabId } = extensionContext.context!;
 
@@ -91,7 +91,7 @@ const PopupContextContainer: FC = ({ children }) => {
     return <PopupContext.Provider value={popupContext}>{children}</PopupContext.Provider>;
 };
 
-export const PopupContextProvider: FC = ({ children }) => {
+export const PopupProvider: FC = ({ children }) => {
     const { createNotification } = useNotifications();
     const enhance = useNotificationEnhancer();
 
@@ -103,7 +103,9 @@ export const PopupContextProvider: FC = ({ children }) => {
 
     return (
         <ExtensionConnect endpoint="popup" messageFactory={popupMessage} onWorkerMessage={onWorkerMessage}>
-            <PopupContextContainer>{children}</PopupContextContainer>
+            <PopupContextProvider>{children}</PopupContextProvider>
         </ExtensionConnect>
     );
 };
+
+export const usePopupContext = () => useContext(PopupContext);
