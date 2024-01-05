@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
 import { useWorkerStateEvents } from 'proton-pass-extension/lib/hooks/useWorkerStateEvents';
 
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { clientReady } from '@proton/pass/lib/client';
 import type { MessageWithSenderFactory } from '@proton/pass/lib/extension/message';
@@ -55,7 +56,8 @@ export const ExtensionConnect = <T extends ClientEndpoint>({
     onWorkerMessage,
     children,
 }: ExtensionConnectProps<T>) => {
-    const { tabId } = ExtensionContext.get();
+    const { tabId, url } = ExtensionContext.get();
+    usePassCore().setCurrentTabUrl?.(url);
 
     const dispatch = useDispatch();
     const activityProbe = useExtensionActivityProbe(messageFactory);
@@ -91,7 +93,7 @@ export const ExtensionConnect = <T extends ClientEndpoint>({
         if (!onWorkerMessage) return;
         ExtensionContext.get().port.onMessage.addListener(onWorkerMessage);
         return () => ExtensionContext.get().port.onMessage.removeListener(onWorkerMessage);
-    });
+    }, []);
 
     useEffect(() => {
         const onVisibilityChange = () => activityProbe[document.visibilityState === 'visible' ? 'start' : 'cancel']();
