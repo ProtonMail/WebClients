@@ -113,7 +113,12 @@ export const ItemView: VFC = () => {
     const doMoveItem = (destinationShareId: string) => {
         const optimisticId = uniqueId();
         dispatch(itemMoveIntent({ item, shareId: destinationShareId, optimisticId }));
-        selectItem(destinationShareId, optimisticId, { mode: 'replace' });
+
+        selectItem(destinationShareId, optimisticId, {
+            mode: 'replace',
+            filters: { selectedShareId: destinationShareId },
+        });
+
         closeVaultSelect();
         setInviteOpen(false);
     };

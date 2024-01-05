@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { usePopupContext } from 'proton-pass-extension/lib/components/Context/PopupProvider';
 
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import type { LocationDraftState } from '@proton/pass/hooks/useItemDraft';
@@ -15,6 +16,7 @@ import { selectLatestDraft } from '@proton/pass/store/selectors';
  * initial popup state on first mount: will navigate to the previously
  * selected item and/or re-hydrate the draft view */
 export const usePopupStateEffects = () => {
+    const { getCurrentTabUrl } = usePassCore();
     const popup = usePopupContext();
     const { navigate, selectItem, selectedItem, filters, setFilters } = useNavigation();
     const dispatch = useDispatch();
@@ -29,16 +31,17 @@ export const usePopupStateEffects = () => {
     const { search, sort, type, selectedShareId } = filters;
 
     const savePopupState = useRef(false);
-    const popupTabState = useMemo(
-        () => ({
-            domain: popup.url.subdomain ?? popup.url.domain ?? null,
+
+    const popupTabState = useMemo(() => {
+        const url = getCurrentTabUrl?.();
+        return {
+            domain: url?.subdomain ?? url?.domain ?? null,
             filters: { search, sort, type, selectedShareId },
             search,
             selectedItem: selectedItem ? { shareId: selectedItem.shareId, itemId: selectedItem.itemId } : null,
             tabId: popup.context!.tabId,
-        }),
-        [itemId, shareId, search, sort, type, selectedShareId]
-    );
+        };
+    }, [itemId, shareId, search, sort, type, selectedShareId]);
 
     useEffect(() => {
         const { initial } = popup.state;
