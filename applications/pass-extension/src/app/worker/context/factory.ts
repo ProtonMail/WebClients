@@ -77,6 +77,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
         },
 
         getState: () => ({
+            localID: authStore.getLocalID(),
             loggedIn: authStore.hasSession() && clientReady(context.status),
             status: context.status,
             UID: authStore.getUID(),

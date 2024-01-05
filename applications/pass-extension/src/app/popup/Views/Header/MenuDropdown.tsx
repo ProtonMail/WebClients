@@ -1,12 +1,9 @@
 import { type VFC, useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 
+import { usePopupContext } from 'proton-pass-extension/lib/components/Context/PopupProvider';
 import { useExpandPopup } from 'proton-pass-extension/lib/hooks/useExpandPopup';
-import { useItemsFilteringContext } from 'proton-pass-extension/lib/hooks/useItemsFilteringContext';
-import { useNavigationContext } from 'proton-pass-extension/lib/hooks/useNavigationContext';
 import { useOpenSettingsTab } from 'proton-pass-extension/lib/hooks/useOpenSettingsTab';
-import { usePopupContext } from 'proton-pass-extension/lib/hooks/usePopupContext';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -27,6 +24,7 @@ import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButt
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
+import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { EarlyAccessBadge } from '@proton/pass/components/Upsell/EarlyAccessBadge';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
@@ -53,24 +51,23 @@ const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
 
 export const MenuDropdown: VFC = () => {
     const { onLink } = usePassCore();
-    const history = useHistory();
     const { lock, logout, ready, expanded } = usePopupContext();
-    const { inTrash, unselectItem } = useNavigationContext();
-    const { shareId, setSearch, setShareId } = useItemsFilteringContext();
-    const vaultActions = useVaultActions();
+    const { filters, matchTrash } = useNavigation();
+    const { selectedShareId } = filters;
 
-    const vault = useSelector(selectShare<ShareType.Vault>(shareId));
+    const vault = useSelector(selectShare<ShareType.Vault>(selectedShareId));
     const passPlan = useSelector(selectPassPlan);
     const planDisplayName = useSelector(selectPlanDisplayName);
     const user = useSelector(selectUser);
     const canLock = useSelector(selectHasRegisteredLock);
 
+    const vaultActions = useVaultActions();
     const openSettings = useOpenSettingsTab();
     const expandPopup = useExpandPopup();
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const menu = useMenuItems({ onAction: close });
     const withClose = withTap(close);
+    const menu = useMenuItems({ onAction: close });
 
     const advancedMenuItems = useMemo<MenuItem[]>(
         () =>
@@ -86,22 +83,6 @@ export const MenuDropdown: VFC = () => {
                   ],
         []
     );
-
-    const onVaultSelect = (selected: string) => {
-        unselectItem();
-        setSearch('');
-
-        switch (selected) {
-            case 'all':
-            case 'trash':
-                setShareId(null);
-                return history.push(`/${selected === 'trash' ? 'trash' : ''}`);
-            default: {
-                setShareId(selected);
-                return history.push(`/share/${selected}`);
-            }
-        }
-    };
 
     return (
         <>
@@ -119,8 +100,8 @@ export const MenuDropdown: VFC = () => {
                     <VaultIcon
                         className="shrink-0"
                         size={16}
-                        color={inTrash ? VaultColor.COLOR_UNSPECIFIED : vault?.content.display.color}
-                        icon={inTrash ? 'pass-trash' : vault?.content.display.icon}
+                        color={matchTrash ? VaultColor.COLOR_UNSPECIFIED : vault?.content.display.color}
+                        icon={matchTrash ? 'pass-trash' : vault?.content.display.icon}
                     />
                 </Button>
 
@@ -160,10 +141,10 @@ export const MenuDropdown: VFC = () => {
 
                         <VaultMenu
                             dense
-                            inTrash={inTrash}
+                            inTrash={matchTrash}
                             onAction={close}
-                            onSelect={onVaultSelect}
-                            selectedShareId={shareId}
+                            onSelect={vaultActions.select}
+                            selectedShareId={selectedShareId}
                             render={(selected, menu) => (
                                 <Collapsible>
                                     <CollapsibleHeader

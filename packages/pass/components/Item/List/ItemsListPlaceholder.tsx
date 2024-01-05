@@ -6,15 +6,15 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import type { IconName } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
-import { useNavigation } from '@proton/pass/components/Core/NavigationProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { getNewItemRoute } from '@proton/pass/components/Core/routing';
+import { useItems } from '@proton/pass/components/Item/Context/ItemsProvider';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
+import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import { UpsellRef } from '@proton/pass/constants';
-import { useFilteredItems } from '@proton/pass/hooks/useFilteredItems';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { selectAllVaults, selectOwnReadOnlyVaults, selectShare, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { ItemType } from '@proton/pass/types';
@@ -32,18 +32,13 @@ type ItemQuickAction = {
 type Props = {
     /** When `noActions` is `true`, item quick actions will not render */
     noActions?: boolean;
-    /** Wether to allow import quick action. FIXME: remove when supporting
-     * importing from the web-app settings tab */
-    noImport?: boolean;
 };
 
-/** When migrating the extension to the browser router, use this component and remove
- * `applications/pass-extension/src/app/popup/Views/Sidebar/ItemsListPlaceholder.tsx` */
-export const ItemsListPlaceholder: FC<Props> = ({ noActions, noImport }) => {
+export const ItemsListPlaceholder: FC<Props> = ({ noActions }) => {
     const { openSettings } = usePassCore();
     const { navigate, matchTrash, filters } = useNavigation();
     const { search, selectedShareId } = filters;
-    const { totalCount } = useFilteredItems(filters);
+    const { totalCount } = useItems();
 
     const { didDowngrade } = useSelector(selectVaultLimits);
     const selectedShare = useSelector(selectShare(selectedShareId));
@@ -62,39 +57,36 @@ export const ItemsListPlaceholder: FC<Props> = ({ noActions, noImport }) => {
                 label: c('Label').t`Create a login`,
                 subTheme: SubTheme.VIOLET,
                 type: 'login',
-                onClick: () => navigate(getNewItemRoute('login'), { mode: 'push' }),
+                onClick: () => navigate(getNewItemRoute('login')),
             },
             {
                 icon: itemTypeToIconName.alias,
                 label: c('Label').t`Create a hide-my-email alias`,
                 subTheme: SubTheme.TEAL,
                 type: 'alias',
-                onClick: () => navigate(getNewItemRoute('alias'), { mode: 'push' }),
+                onClick: () => navigate(getNewItemRoute('alias')),
             },
             {
                 icon: itemTypeToIconName.creditCard,
                 label: c('Label').t`Create a credit card`,
                 subTheme: SubTheme.LIME,
                 type: 'creditCard',
-                onClick: () => navigate(getNewItemRoute('creditCard'), { mode: 'push' }),
+                onClick: () => navigate(getNewItemRoute('creditCard')),
             },
             {
-                type: 'note',
                 icon: itemTypeToIconName.note,
                 label: c('Label').t`Create an encrypted note`,
-                onClick: () => navigate(getNewItemRoute('note'), { mode: 'push' }),
                 subTheme: SubTheme.ORANGE,
+                type: 'note',
+                onClick: () => navigate(getNewItemRoute('note')),
             },
-            ...(noImport
-                ? []
-                : [
-                      {
-                          type: 'import',
-                          icon: 'arrow-up-line',
-                          label: c('Label').t`Import passwords`,
-                          onClick: () => openSettings?.('import'),
-                      } as const,
-                  ]),
+
+            {
+                type: 'import',
+                icon: 'arrow-up-line',
+                label: c('Label').t`Import passwords`,
+                onClick: () => openSettings?.('import'),
+            },
         ],
         []
     );

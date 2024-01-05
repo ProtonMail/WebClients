@@ -2,12 +2,13 @@ import { type VFC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useParams } from 'react-router-dom';
 
-import { useNavigation } from '@proton/pass/components/Core/NavigationProvider';
-import { getLocalPath, preserveSearch } from '@proton/pass/components/Core/routing';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { AliasEdit } from '@proton/pass/components/Item/Alias/Alias.edit';
 import { CreditCardEdit } from '@proton/pass/components/Item/CreditCard/CreditCard.edit';
 import { LoginEdit } from '@proton/pass/components/Item/Login/Login.edit';
 import { NoteEdit } from '@proton/pass/components/Item/Note/Note.edit';
+import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { itemEditIntent } from '@proton/pass/store/actions';
 import { selectItemByShareIdAndId, selectShare } from '@proton/pass/store/selectors';
@@ -21,8 +22,9 @@ const itemEditMap: { [T in ItemType]: VFC<ItemEditViewProps<T>> } = {
 };
 
 export const ItemEdit: VFC = () => {
+    const { getCurrentTabUrl } = usePassCore();
     const { shareId, itemId } = useParams<SelectedItem>();
-    const { selectItem } = useNavigation();
+    const { selectItem, preserveSearch } = useNavigation();
     const dispatch = useDispatch();
 
     const vault = useSelector(selectShare<ShareType.Vault>(shareId));
@@ -33,16 +35,17 @@ export const ItemEdit: VFC = () => {
         selectItem(shareId, itemId, { mode: 'replace' });
     };
 
-    if (!(item && vault)) return <Redirect to={preserveSearch(getLocalPath('/'))} push={false} />;
+    if (!(item && vault)) return <Redirect to={preserveSearch(getLocalPath())} push={false} />;
 
     const EditViewComponent = itemEditMap[item.data.type] as VFC<ItemEditViewProps>;
+
     return (
         <EditViewComponent
-            vault={vault}
-            revision={item}
+            onCancel={() => selectItem(shareId, itemId)}
             onSubmit={handleSubmit}
-            url={null}
-            onCancel={() => selectItem(shareId, itemId, { mode: 'replace' })}
+            revision={item}
+            url={getCurrentTabUrl?.() ?? null}
+            vault={vault}
         />
     );
 };
