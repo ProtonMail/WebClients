@@ -11,11 +11,11 @@ import {
     StandardErrorPage,
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
-import { NavigationProvider } from '@proton/pass/components/Core/NavigationProvider';
 import type { PassCoreContextValue } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
-import { getLocalPath, history } from '@proton/pass/components/Core/routing';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
+import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
+import { getLocalPath, history } from '@proton/pass/components/Navigation/routing';
 import { api } from '@proton/pass/lib/api/api';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { createPassExport } from '@proton/pass/lib/export/export';

@@ -4,10 +4,10 @@ import { c } from 'ttag';
 
 import { type IconName } from '@proton/components/components';
 import { useNotifications } from '@proton/components/hooks';
-import { useNavigation } from '@proton/pass/components/Core/NavigationProvider';
-import { getLocalPath } from '@proton/pass/components/Core/routing';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
+import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 
 import { useAuthService } from '../../Context/AuthServiceProvider';
@@ -41,7 +41,7 @@ export const SettingsDropdown: FC = () => {
             {settings.map((setting) => (
                 <DropdownMenuButton
                     key={setting.key}
-                    onClick={() => navigate(getLocalPath('settings'), { mode: 'push', hash: setting.key })}
+                    onClick={() => navigate(getLocalPath('settings'), { hash: setting.key })}
                     label={setting.label}
                     ellipsis={false}
                     icon={setting.icon}
