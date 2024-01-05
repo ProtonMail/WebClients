@@ -1,5 +1,6 @@
 import { initEvent, serverEvent, userSettingsThunk, userThunk, welcomeFlagsActions } from '@proton/account';
 import * as bootstrap from '@proton/account/bootstrap';
+import { getDecryptedPersistedState } from '@proton/account/persist/helper';
 import { createCalendarModelEventManager, holidaysDirectoryThunk } from '@proton/calendar';
 import { initMainHost } from '@proton/cross-storage';
 import { FeatureCode, fetchFeatures } from '@proton/features';
@@ -15,7 +16,7 @@ import { ProtonConfig } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import locales from '../locales';
-import { extendStore, setupStore } from '../store/store';
+import { AccountState, extendStore, setupStore } from '../store/store';
 
 const getAppContainer = () =>
     import(/* webpackChunkName: "MainContainer" */ './SetupMainContainer').then((result) => result.default);
@@ -43,12 +44,19 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         const history = bootstrap.createHistory({ basename: session.payload.basename, path: session.payload.path });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
 
-        const store = setupStore({ mode: 'default' });
+        const user = session.payload?.User;
+
+        const persistedState = await getDecryptedPersistedState<Partial<AccountState>>({
+            authentication,
+            user,
+        });
+
+        const store = setupStore({ preloadedState: persistedState?.state, mode: 'default' });
         const dispatch = store.dispatch;
         extendStore({ config, api, authentication, history, unleashClient });
 
-        if (session.payload?.User) {
-            dispatch(initEvent({ User: session.payload.User }));
+        if (user) {
+            dispatch(initEvent({ User: user }));
         }
 
         const loadUser = async () => {
@@ -79,7 +87,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
         const userPromise = loadUser();
         const preloadPromise = loadPreload();
-        const evPromise = bootstrap.eventManager({ api: silentApi });
+        const evPromise = bootstrap.eventManager({ api: silentApi, eventID: persistedState?.eventID });
         const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
         loadPreloadButIgnored();
 

@@ -251,13 +251,17 @@ const defaultQuery = (eventID: string) => getEvents(eventID);
 export const eventManager = async ({
     api,
     query = defaultQuery,
+    eventID: maybeEventID,
 }: {
     api: Api;
     query?: Parameters<typeof createEventManager>[0]['query'];
+    eventID?: string;
 }) => {
-    const eventID = await api<{
-        EventID: string;
-    }>(getLatestID()).then(({ EventID }) => EventID);
+    const eventID = maybeEventID
+        ? maybeEventID
+        : await api<{
+              EventID: string;
+          }>(getLatestID()).then(({ EventID }) => EventID);
 
     const eventManager = createEventManager({
         api: api,
