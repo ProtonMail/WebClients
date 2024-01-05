@@ -5,6 +5,7 @@ import type { ParsedUrl } from '@proton/pass/utils/url/parser';
 export type ItemViewProps<T extends ItemType = ItemType> = {
     failed: boolean;
     optimistic: boolean;
+    pinned: boolean;
     revision: ItemRevision<T>;
     trashed: boolean;
     vault: VaultShareItem;
@@ -17,6 +18,7 @@ export type ItemViewProps<T extends ItemType = ItemType> = {
     handleRetryClick: () => void;
     handleInviteClick: () => void;
     handleManageClick: () => void;
+    handlePinClick: () => void;
 };
 
 export type ItemEditViewProps<T extends ItemType = ItemType> = {
