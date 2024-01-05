@@ -1,4 +1,4 @@
-import { type FC, createContext, useCallback, useContext, useMemo } from 'react';
+import { type FC, createContext, useContext, useMemo } from 'react';
 import { useHistory, useLocation, useRouteMatch } from 'react-router-dom';
 
 import type { ItemFilters, Maybe, MaybeNull, SelectedItem } from '@proton/pass/types';
@@ -62,7 +62,7 @@ export const NavigationProvider: FC = ({ children }) => {
     const matchTrash = useRouteMatch(getTrashRoute()) !== null;
     const selectedItem = useRouteMatch<SelectedItem>(getItemRoute(':shareId', ':itemId', matchTrash))?.params;
 
-    const navigate = useCallback((pathname: string, options: NavigateOptions = { mode: 'push' }) => {
+    const navigate = (pathname: string, options: NavigateOptions = { mode: 'push' }) => {
         const search = new URLSearchParams(history.location.search);
 
         if (options.searchParams) {
@@ -84,7 +84,29 @@ export const NavigationProvider: FC = ({ children }) => {
             hash: options.hash,
             state: options.state,
         });
-    }, []);
+    };
+
+    const selectItem = (shareId: string, itemId: string, options?: ItemSelectOptions) => {
+        const base = getItemRoute(shareId, itemId, options?.inTrash);
+        const view = options?.view && options.view !== 'view' ? `/${options.view}` : '';
+        navigate(base + view, options);
+    };
+
+    /** Determines whether to replace the history entry only when the search
+     * filter have changed. For all other changes, it is preferred to push to
+     * the history. This approach prevents creating a new route every time the
+     * debounced search value changes, which would pollute the history stack. */
+    const setFilters = (update: Partial<ItemFilters>) => {
+        const shouldPush =
+            (update.selectedShareId && update.selectedShareId !== filters.selectedShareId) ||
+            (update.sort && update.sort !== filters.sort) ||
+            (update.type && update.type !== filters.type);
+
+        navigate(history.location.pathname, {
+            mode: shouldPush ? 'push' : 'replace',
+            filters: update,
+        });
+    };
 
     const navigation = useMemo<NavigationContextValue>(
         () => ({
@@ -93,26 +115,8 @@ export const NavigationProvider: FC = ({ children }) => {
             matchTrash,
             selectedItem,
             navigate,
-            selectItem: (shareId: string, itemId: string, options?: ItemSelectOptions) => {
-                const base = getItemRoute(shareId, itemId, options?.inTrash);
-                const view = options?.view && options.view !== 'view' ? `/${options.view}` : '';
-                navigate(base + view, options);
-            },
-            setFilters: (update: Partial<ItemFilters>) => {
-                /** Determines whether to replace the history entry only when the search
-                 * filter have changed. For all other changes, it is preferred to push to
-                 * the history. This approach prevents creating a new route every time the
-                 * debounced search value changes, which would pollute the history stack. */
-                const shouldPush =
-                    (update.selectedShareId && update.selectedShareId !== filters.selectedShareId) ||
-                    (update.sort && update.sort !== filters.sort) ||
-                    (update.type && update.type !== filters.type);
-
-                navigate(history.location.pathname, {
-                    mode: shouldPush ? 'push' : 'replace',
-                    filters: update,
-                });
-            },
+            selectItem,
+            setFilters,
             preserveSearch: (path) => path + history.location.search,
             getCurrentLocation: () => history.createHref(history.location),
         }),
