@@ -8,6 +8,7 @@ import {
     userKeysReducer,
     userReducer,
     userSettingsReducer,
+    vpnServersCountReducer,
     welcomeFlagsReducer,
 } from '@proton/account';
 import { featuresReducer } from '@proton/features';
@@ -34,6 +35,7 @@ export const sharedReducers = {
     ...contactEmailsReducer,
     ...categoriesReducer,
     ...importerConfigReducer,
+    ...vpnServersCountReducer,
     ...welcomeFlagsReducer,
     features: featuresReducer.reducer,
 };
