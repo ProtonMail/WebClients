@@ -23,7 +23,7 @@ type Props = {
     trash?: boolean;
 };
 
-const SEARCH_DEBOUNCE_TIME = 150;
+const SEARCH_DEBOUNCE_TIME = 75;
 
 const SearchBarRaw: VFC<Props> = ({ disabled, initial, trash }) => {
     const { onTelemetry } = usePassCore();
