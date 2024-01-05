@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -45,6 +47,12 @@ const ShareCalendarInvitationModal = ({ addresses, calendars, user, invitation, 
         renderSignatureVerificationErrorModal,
     ] = useModalState();
 
+    const memoizedCalendars = useMemo(() => {
+        // Prevent the list of user holidays calendars from changing (via event loop) once the modal opened.
+        // This avoids possible UI jumps and glitches
+        return calendars;
+    }, [rest.open]);
+
     const canonicalizedInvitedEmail = canonicalizeInternalEmail(invitation.Email);
     const invitedAddress = addresses.find(
         ({ Email }) => canonicalizeInternalEmail(Email) === canonicalizedInvitedEmail
@@ -62,7 +70,7 @@ const ShareCalendarInvitationModal = ({ addresses, calendars, user, invitation, 
     const calendarOwnerEmail = invitation.Calendar.SenderEmail;
     const calendarName = invitation.Calendar.Name;
     const isInvitedAddressDisabled = getIsAddressDisabled(invitedAddress);
-    const { isOtherCalendarsLimitReached } = getHasUserReachedCalendarsLimit(calendars, isFreeUser);
+    const { isOtherCalendarsLimitReached } = getHasUserReachedCalendarsLimit(memoizedCalendars, isFreeUser);
 
     const handleAcceptError = (e: Error) => {
         if (e instanceof ShareCalendarSignatureVerificationError) {
