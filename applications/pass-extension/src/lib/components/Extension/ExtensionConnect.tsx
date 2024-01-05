@@ -1,9 +1,10 @@
-import { createContext, useCallback, useEffect, useMemo, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
 import { useWorkerStateEvents } from 'proton-pass-extension/lib/hooks/useWorkerStateEvents';
 
+import { authStore } from '@proton/pass/lib/auth/store';
 import { clientReady } from '@proton/pass/lib/client';
 import type { MessageWithSenderFactory } from '@proton/pass/lib/extension/message';
 import { sessionLockIntent, signoutIntent, syncIntent } from '@proton/pass/store/actions';
@@ -17,6 +18,7 @@ import noop from '@proton/utils/noop';
 import { ExtensionContext, type ExtensionContextType } from '../../context/extension-context';
 
 export const INITIAL_WORKER_STATE: AppState = {
+    localID: undefined,
     loggedIn: false,
     status: AppStatus.IDLE,
     UID: undefined,
@@ -53,8 +55,9 @@ export const ExtensionConnect = <T extends ClientEndpoint>({
     onWorkerMessage,
     children,
 }: ExtensionConnectProps<T>) => {
-    const dispatch = useDispatch();
     const { tabId } = ExtensionContext.get();
+
+    const dispatch = useDispatch();
     const activityProbe = useExtensionActivityProbe(messageFactory);
 
     const [state, setState] = useState<AppState>(INITIAL_WORKER_STATE);
@@ -80,6 +83,7 @@ export const ExtensionConnect = <T extends ClientEndpoint>({
         onWorkerStateChange: (workerState) => {
             setSentryUID(workerState.UID);
             setState((prevState) => ({ ...prevState, ...workerState }));
+            authStore.setLocalID(workerState.localID);
         },
     });
 
@@ -98,9 +102,11 @@ export const ExtensionConnect = <T extends ClientEndpoint>({
     }, []);
 
     const context = useMemo<ExtensionConnectContextValue>(
-        () => ({ context: ExtensionContext.get(), state, ready, logout, lock, sync }),
+        () => ({ context: ExtensionContext.get(), ready, state, lock, logout, sync }),
         [state, ready]
     );
 
     return <ExtensionConnectContext.Provider value={context}>{children}</ExtensionConnectContext.Provider>;
 };
+
+export const useExtensionConnect = () => useContext(ExtensionConnectContext);
