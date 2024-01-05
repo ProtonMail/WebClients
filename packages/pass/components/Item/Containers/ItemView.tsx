@@ -11,7 +11,7 @@ import { CreditCardView } from '@proton/pass/components/Item/CreditCard/CreditCa
 import { LoginView } from '@proton/pass/components/Item/Login/Login.view';
 import { NoteView } from '@proton/pass/components/Item/Note/Note.view';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { getItemRoute, getLocalPath, maybeTrash, preserveSearch } from '@proton/pass/components/Navigation/routing';
+import { getItemRoute, getLocalPath, maybeTrash } from '@proton/pass/components/Navigation/routing';
 import { VaultSelect, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
@@ -47,7 +47,7 @@ const itemTypeViewMap: { [T in ItemType]: VFC<ItemViewProps<T>> } = {
 };
 
 export const ItemView: VFC = () => {
-    const { selectItem, matchTrash } = useNavigation();
+    const { selectItem, matchTrash, preserveSearch } = useNavigation();
     const inviteContext = useInviteContext();
 
     const dispatch = useDispatch();

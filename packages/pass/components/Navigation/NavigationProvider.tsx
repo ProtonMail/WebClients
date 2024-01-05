@@ -45,6 +45,10 @@ export type NavigationContextValue = {
     /** Sets the filters and updates the location's search parameters. You can pass
      * an optional `pathname` argument if you want to navigate in the same call */
     setFilters: (filters: Partial<ItemFilters>, pathname?: string) => void;
+    /** Joins the current location search parameters to the provided path */
+    preserveSearch: (path: string) => string;
+    /** Resolves the current location */
+    getCurrentLocation: () => string;
 };
 
 const NavigationContext = createContext<MaybeNull<NavigationContextValue>>(null);
@@ -109,6 +113,8 @@ export const NavigationProvider: FC = ({ children }) => {
                     filters: update,
                 });
             },
+            preserveSearch: (path) => path + history.location.search,
+            getCurrentLocation: () => history.createHref(history.location),
         }),
         [location.search /* indirectly matches filter changes */, selectedItem, matchSettings, matchTrash]
     );
