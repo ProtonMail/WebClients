@@ -62,11 +62,13 @@ const getDomainImageFactory = (sw: ServiceWorkerContextValue): PassCoreContextVa
         signal.onabort = () => sw.send({ type: 'abort', requestUrl });
 
         /* Forward the abort signal to the service worker. */
-        return api<Response>({ url, output: 'raw', signal }).then(async (res) => {
-            const dataURL = await imageResponsetoDataURL(res);
-            if (!sw.enabled) cache.set(url, dataURL);
-            return dataURL;
-        });
+        return api<Response>({ url, output: 'raw', signal })
+            .then(async (res) => {
+                const dataURL = await imageResponsetoDataURL(res);
+                if (!sw.enabled) cache.set(url, dataURL);
+                return dataURL;
+            })
+            .catch(noop);
     };
 };
 
