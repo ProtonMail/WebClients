@@ -1,4 +1,4 @@
-import { type FC, useCallback } from 'react';
+import { type FC, useCallback, useRef } from 'react';
 
 import * as config from 'proton-pass-extension/app/config';
 import { API_PROXY_URL } from 'proton-pass-extension/app/worker/services/api-proxy';
@@ -10,8 +10,9 @@ import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { pageMessage, resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
 import { getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';
 import browser from '@proton/pass/lib/globals/browser';
-import { type ClientEndpoint, WorkerMessageType } from '@proton/pass/types';
+import { type ClientEndpoint, type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
+import type { ParsedUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';
 
 const getDomainImageFactory =
@@ -106,22 +107,28 @@ const exportData: PassCoreContextValue['exportData'] = (payload) =>
 
 const onForceUpdate = () => browser.runtime.reload();
 
-export const PassExtensionCore: FC<{ endpoint: ClientEndpoint }> = ({ children, endpoint }) => (
-    <PassCoreProvider
-        endpoint={endpoint}
-        config={config}
-        exportData={exportData}
-        generateOTP={useCallback(createOTPGenerator(endpoint), [])}
-        getDomainImage={getDomainImageFactory(endpoint)}
-        getRatingURL={getWebStoreUrl}
-        onForceUpdate={onForceUpdate}
-        onLink={createLinkHandler(endpoint)}
-        onOnboardingAck={createOnboardingAck(endpoint)}
-        onTelemetry={useCallback(createTelemetryHandler(endpoint), [])}
-        openSettings={openSettings}
-        prepareImport={prepareImport}
-        promptForPermissions={promptForPermissions}
-    >
-        {children}
-    </PassCoreProvider>
-);
+export const PassExtensionCore: FC<{ endpoint: ClientEndpoint }> = ({ children, endpoint }) => {
+    const currentTabUrl = useRef<MaybeNull<ParsedUrl>>(null);
+
+    return (
+        <PassCoreProvider
+            config={config}
+            endpoint={endpoint}
+            exportData={exportData}
+            generateOTP={useCallback(createOTPGenerator(endpoint), [])}
+            getCurrentTabUrl={() => currentTabUrl.current}
+            getDomainImage={getDomainImageFactory(endpoint)}
+            getRatingURL={getWebStoreUrl}
+            onForceUpdate={onForceUpdate}
+            onLink={createLinkHandler(endpoint)}
+            onOnboardingAck={createOnboardingAck(endpoint)}
+            onTelemetry={useCallback(createTelemetryHandler(endpoint), [])}
+            openSettings={openSettings}
+            prepareImport={prepareImport}
+            promptForPermissions={promptForPermissions}
+            setCurrentTabUrl={(parsedUrl) => (currentTabUrl.current = parsedUrl)}
+        >
+            {children}
+        </PassCoreProvider>
+    );
+};
