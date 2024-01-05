@@ -5,7 +5,7 @@ import { isObject } from './is-object';
 type MergeOptions = { excludeEmpty: boolean };
 type Obj = { [key: PropertyKey]: any };
 
-export const merge = <Original extends Obj, Overwrite extends Obj>(
+const merge = <Original extends Obj, Overwrite extends Obj>(
     original: Original,
     overwrite: Overwrite,
     options: MergeOptions = { excludeEmpty: false }
@@ -27,5 +27,7 @@ export const merge = <Original extends Obj, Overwrite extends Obj>(
 };
 
 /* Type safe merge functions that preserve the original input type */
-export const fullMerge: <T extends Obj>(original: T, overwrite: T) => T = merge;
-export const partialMerge: <T extends Obj>(original: T, overwrite: RecursivePartial<T>) => T = merge;
+const fullMerge: <T extends Obj>(original: T, overwrite: T, options?: MergeOptions) => T = merge;
+const partialMerge: <T extends Obj>(original: T, overwrite: RecursivePartial<T>, opts?: MergeOptions) => T = merge;
+
+export { fullMerge, merge, partialMerge };
