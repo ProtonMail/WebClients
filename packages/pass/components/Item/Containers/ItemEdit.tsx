@@ -8,7 +8,7 @@ import { CreditCardEdit } from '@proton/pass/components/Item/CreditCard/CreditCa
 import { LoginEdit } from '@proton/pass/components/Item/Login/Login.edit';
 import { NoteEdit } from '@proton/pass/components/Item/Note/Note.edit';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { getLocalPath, preserveSearch } from '@proton/pass/components/Navigation/routing';
+import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { itemEditIntent } from '@proton/pass/store/actions';
 import { selectItemByShareIdAndId, selectShare } from '@proton/pass/store/selectors';
@@ -24,7 +24,7 @@ const itemEditMap: { [T in ItemType]: VFC<ItemEditViewProps<T>> } = {
 export const ItemEdit: VFC = () => {
     const { getCurrentTabUrl } = usePassCore();
     const { shareId, itemId } = useParams<SelectedItem>();
-    const { selectItem } = useNavigation();
+    const { selectItem, preserveSearch } = useNavigation();
     const dispatch = useDispatch();
 
     const vault = useSelector(selectShare<ShareType.Vault>(shareId));
