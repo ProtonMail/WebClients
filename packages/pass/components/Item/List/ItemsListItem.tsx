@@ -15,7 +15,7 @@ import clsx from '@proton/utils/clsx';
 
 import { presentListItem } from './utils';
 
-import './ItemsList.Item.scss';
+import './ItemsListItem.scss';
 
 type Props = Partial<LinkProps> &
     ButtonLikeProps<any> & {

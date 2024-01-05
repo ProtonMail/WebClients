@@ -8,6 +8,7 @@ import type { ExportOptions } from '@proton/pass/lib/export/types';
 import type { ImportReaderPayload } from '@proton/pass/lib/import/types';
 import type { ClientEndpoint, Maybe, MaybeNull, OnboardingMessage } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
+import type { ParsedUrl } from '@proton/pass/utils/url/parser';
 
 export type PassCoreContextValue = {
     endpoint: ClientEndpoint;
@@ -18,6 +19,8 @@ export type PassCoreContextValue = {
     /** In the extension: leverage worker communication to generate
      * a token. In the web-app: use the OTP utils in-place */
     generateOTP: UsePeriodOtpCodeOptions['generate'];
+    /** Resolves the current tab's parsed url - only relevant for extension */
+    getCurrentTabUrl?: () => MaybeNull<ParsedUrl>;
     /** Resolves a domain image as a data URL. Uses an abort signal to
      * cancel the image request if the image component is unmounted,
      * applying back-pressure when users scroll rapidly through items */
@@ -41,6 +44,8 @@ export type PassCoreContextValue = {
     prepareImport: (payload: ImportReaderPayload) => Promise<ImportReaderPayload>;
     /** Prompts for client specific permissions */
     promptForPermissions?: () => void;
+    /** Sets the current tab's url - only relevant for extension */
+    setCurrentTabUrl?: (url: ParsedUrl) => void;
 };
 
 const PassCoreContext = createContext<MaybeNull<PassCoreContextValue>>(null);

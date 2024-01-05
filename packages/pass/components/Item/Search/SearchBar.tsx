@@ -5,13 +5,13 @@ import { c } from 'ttag';
 
 import { Button, Input } from '@proton/atoms';
 import { Icon } from '@proton/components/components';
-import usePrevious from '@proton/hooks/usePrevious';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { getItemTypeOptions } from '@proton/pass/components/Item/Filters/Type';
+import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { useDebouncedValue } from '@proton/pass/hooks/useDebouncedValue';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { selectShare } from '@proton/pass/store/selectors';
-import type { ItemFilters, ShareType } from '@proton/pass/types';
+import type { MaybeNull, ShareType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 
@@ -19,17 +19,17 @@ import './SearchBar.scss';
 
 type Props = {
     disabled?: boolean;
-    filters: ItemFilters;
+    initial?: MaybeNull<string>;
     trash?: boolean;
-    onChange: (value: string) => void;
 };
 
-const SEARCH_DEBOUNCE_TIME = 150;
+const SEARCH_DEBOUNCE_TIME = 75;
 
-const SearchBarRaw: VFC<Props> = ({ disabled, filters, trash, onChange }) => {
+const SearchBarRaw: VFC<Props> = ({ disabled, initial, trash }) => {
     const { onTelemetry } = usePassCore();
-    const [search, setSearch] = useState<string>(filters.search ?? '');
-    const searchRef = usePrevious(search);
+    const { filters, setFilters } = useNavigation();
+
+    const [search, setSearch] = useState<string>(initial ?? '');
     const debouncedSearch = useDebouncedValue(search, SEARCH_DEBOUNCE_TIME);
 
     const inputRef = useRef<HTMLInputElement>(null);
@@ -57,7 +57,7 @@ const SearchBarRaw: VFC<Props> = ({ disabled, filters, trash, onChange }) => {
 
     const handleClear = () => {
         setSearch('');
-        onChange('');
+        setFilters({ search: '' });
         inputRef.current?.focus();
     };
 
@@ -69,12 +69,8 @@ const SearchBarRaw: VFC<Props> = ({ disabled, filters, trash, onChange }) => {
     };
 
     useEffect(() => handleFocus(), []);
-    useEffect(() => onChange(debouncedSearch), [debouncedSearch]);
-
-    useEffect(() => {
-        if (!filters.search) setSearch('');
-        if (filters.search !== searchRef) onChange(search);
-    }, [filters.search]);
+    useEffect(() => setFilters({ search: debouncedSearch }), [debouncedSearch]);
+    useEffect(() => setSearch(filters.search), [filters.search]);
 
     return (
         <Input
