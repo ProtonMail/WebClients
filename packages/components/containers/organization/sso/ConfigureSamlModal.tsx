@@ -220,13 +220,7 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
 
             return {
                 title: c('Title').t`Enter SAML metadata`,
-                onSubmit: () =>
-                    withSubmitting(handleSubmit).catch(() =>
-                        createNotification({
-                            text: c('Error').t`An unexpected error occurred. Please try again or contact support.`,
-                            type: 'error',
-                        })
-                    ),
+                onSubmit: () => withSubmitting(handleSubmit),
                 content: (
                     <div>
                         <div className="mb-4">
