@@ -101,7 +101,7 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
                     const { SSO } = await api<{ SSO: SSO }>(
                         setupSAMLUrl({
                             DomainID: domain.ID,
-                            MetadataURL: metadata[METADATA_METHOD.URL].value,
+                            MetadataURL: metadata[METADATA_METHOD.URL].value.trim(),
                         })
                     );
 
@@ -128,8 +128,8 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
                     const { SSO } = await api<{ SSO: SSO }>(
                         setupSAMLFields({
                             DomainID: domain.ID,
-                            SSOURL: url,
-                            SSOEntityID: entityId,
+                            SSOURL: url.trim(),
+                            SSOEntityID: entityId.trim(),
                             Certificate: certificate,
                         })
                     );
