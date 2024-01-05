@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { Header as CoreHeader } from '@proton/components';
 import { Icon } from '@proton/components/components';
+import { PinnedItemsBar } from '@proton/pass/components/Item/Pinned/PinnedItemsBar';
 import { SearchBar } from '@proton/pass/components/Item/Search/SearchBar';
 import { ItemQuickActions } from '@proton/pass/components/Menu/Item/ItemQuickActions';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
@@ -32,8 +33,8 @@ export const Header: FC<Props> = ({ hamburger }) => {
     }, []);
 
     return (
-        <CoreHeader className="border-bottom h-auto p-2">
-            <div className="flex items-center gap-x-2 w-full">
+        <>
+            <CoreHeader className="border-bottom h-auto p-2">
                 {hamburger}
                 {(() => {
                     if (matchSettings) {
@@ -60,15 +61,15 @@ export const Header: FC<Props> = ({ hamburger }) => {
                     }
 
                     return (
-                        <>
+                        <div className="flex items-center gap-x-2 w-full">
                             <SearchBar initial={filters.search} />
                             <ItemQuickActions onCreate={onCreate} />
-                        </>
+                            <Spotlight />
+                        </div>
                     );
                 })()}
-
-                <Spotlight />
-            </div>
-        </CoreHeader>
+            </CoreHeader>
+            {!matchSettings && <PinnedItemsBar />}
+        </>
     );
 };
