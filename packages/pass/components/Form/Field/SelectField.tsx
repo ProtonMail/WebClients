@@ -1,4 +1,4 @@
-import { type FC } from 'react';
+import { type FC, type MutableRefObject, useRef } from 'react';
 
 import { type FieldProps } from 'formik';
 
@@ -25,16 +25,20 @@ export const SelectField: FC<SelectFieldProps> = ({
     ...props
 }) => {
     const { error } = useFieldControl({ field, form, meta });
+    const fieldBoxRef = useRef<HTMLDivElement>(null);
+
     return (
-        <FieldBox className={clsx('items-center', className)} icon={icon}>
+        <FieldBox className={clsx('items-center', className)} icon={icon} ref={fieldBoxRef}>
             <InputFieldTwo<typeof SelectTwo>
-                unstyled
                 as={SelectTwo}
                 assistContainerClassName="empty:hidden"
                 caretIconName="chevron-down"
                 error={error}
                 labelContainerClassName="increase-click-surface color-weak m-0 text-normal text-sm"
+                originalPlacement="bottom"
                 renderSelected={loading ? () => <div className="pass-skeleton pass-skeleton--select" /> : undefined}
+                anchorRef={fieldBoxRef as MutableRefObject<any>}
+                unstyled
                 {...field}
                 {...props}
                 onChange={undefined}

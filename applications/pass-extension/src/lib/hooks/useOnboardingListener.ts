@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
+import { useExtensionConnect } from 'proton-pass-extension/lib/components/Extension/ExtensionConnect';
+
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { UpsellRef } from '@proton/pass/constants';
 import { useOnboardingMessages } from '@proton/pass/hooks/useOnboardingMessages';
@@ -11,11 +13,9 @@ import type { WorkerMessageWithSender } from '@proton/pass/types';
 import { OnboardingMessage, WorkerMessageType } from '@proton/pass/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { useExtensionConnectContext } from './useExtensionConnectContext';
-
 export const useOnboardingListener = () => {
     const { setOnboardingMessage, setPendingShareAccess, setUpselling } = useSpotlight();
-    const { context: extensionContext } = useExtensionConnectContext();
+    const { context: extensionContext } = useExtensionConnect();
     const createdItemsCount = useSelector(selectCreatedItemsCount);
     const definitions = useOnboardingMessages();
 

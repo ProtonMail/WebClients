@@ -11,11 +11,11 @@ import {
     StandardErrorPage,
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
-import { NavigationProvider } from '@proton/pass/components/Core/NavigationProvider';
 import type { PassCoreContextValue } from '@proton/pass/components/Core/PassCoreProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
-import { getLocalPath, history } from '@proton/pass/components/Core/routing';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
+import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
+import { getLocalPath, history } from '@proton/pass/components/Navigation/routing';
 import { api } from '@proton/pass/lib/api/api';
 import { imageResponsetoDataURL } from '@proton/pass/lib/api/images';
 import { createPassExport } from '@proton/pass/lib/export/export';
@@ -24,6 +24,7 @@ import { generateTOTPCode } from '@proton/pass/lib/otp/otp';
 import { selectExportData } from '@proton/pass/store/selectors/export';
 import type { Maybe } from '@proton/pass/types';
 import { transferableToFile } from '@proton/pass/utils/file/transferable-file';
+import noop from '@proton/utils/noop';
 
 import { PASS_CONFIG } from '../lib/core';
 import { onboarding } from '../lib/onboarding';
@@ -61,11 +62,13 @@ const getDomainImageFactory = (sw: ServiceWorkerContextValue): PassCoreContextVa
         signal.onabort = () => sw.send({ type: 'abort', requestUrl });
 
         /* Forward the abort signal to the service worker. */
-        return api<Response>({ url, output: 'raw', signal }).then(async (res) => {
-            const dataURL = await imageResponsetoDataURL(res);
-            if (!sw.enabled) cache.set(url, dataURL);
-            return dataURL;
-        });
+        return api<Response>({ url, output: 'raw', signal })
+            .then(async (res) => {
+                const dataURL = await imageResponsetoDataURL(res);
+                if (!sw.enabled) cache.set(url, dataURL);
+                return dataURL;
+            })
+            .catch(noop);
     };
 };
 

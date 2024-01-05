@@ -1,24 +1,22 @@
 import { type MouseEvent, type VFC, useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 
 import { c, msgid } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton';
 import { useNotifications } from '@proton/components';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { getNewItemRoute } from '@proton/pass/components/Core/routing';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { MoreInfoDropdown } from '@proton/pass/components/Layout/Dropdown/MoreInfoDropdown';
 import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPanel';
+import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
+import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
-import { useFilters } from '@proton/pass/hooks/useFilters';
 import { getAliasDetailsIntent } from '@proton/pass/store/actions';
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
 import { selectAliasDetails, selectLoginItemByUsername } from '@proton/pass/store/selectors';
@@ -26,10 +24,8 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
 export const AliasView: VFC<ItemViewProps<'alias'>> = ({ vault, revision, ...itemViewProps }) => {
-    const history = useHistory();
     const { createNotification } = useNotifications();
-    const { endpoint } = usePassCore();
-    const { setFilters } = useFilters();
+    const { navigate } = useNavigation();
 
     const { data: item, itemId, createTime, modifyTime, revision: revisionNumber } = revision;
     const { name } = item.metadata;
@@ -60,13 +56,11 @@ export const AliasView: VFC<ItemViewProps<'alias'>> = ({ vault, revision, ...ite
     const createLoginFromAlias = (evt: MouseEvent) => {
         evt.stopPropagation();
         evt.preventDefault();
-        // FIXME: change this when migrating the extension to the browser router
-        if (endpoint === 'web') {
-            history.push(`${getNewItemRoute('login')}?username=${aliasEmail}`);
-            setFilters({ selectedShareId: shareId });
-        } else {
-            history.replace(`/item/new/login?username=${aliasEmail}`);
-        }
+
+        navigate(getNewItemRoute('login'), {
+            searchParams: { username: aliasEmail },
+            filters: { selectedShareId: shareId },
+        });
     };
 
     useEffect(() => {

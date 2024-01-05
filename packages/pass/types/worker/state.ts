@@ -15,8 +15,9 @@ export enum AppStatus {
 }
 
 export type AppState = {
-    status: AppStatus;
+    localID: Maybe<number>;
     loggedIn: boolean;
+    status: AppStatus;
     UID: Maybe<string>;
 };
 

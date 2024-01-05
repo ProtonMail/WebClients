@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { useNotifications } from '@proton/components/hooks';
-import { getCurrentLocation } from '@proton/pass/components/Core/routing';
+import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellRef } from '@proton/pass/constants';
 import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
@@ -70,6 +70,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
     const history = useHistory();
     const config = usePassConfig();
     const { createNotification } = useNotifications();
+    const { getCurrentLocation } = useNavigation();
 
     const matchConsumeFork = useRouteMatch(SSO_PATHS.FORK);
     const redirectPath = useRef(stripLocalBasenameFromPathname(getCurrentLocation()));

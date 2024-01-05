@@ -1,8 +1,7 @@
 import { useRef } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
-import { MemoryRouter as Router } from 'react-router-dom';
 
-import { PopupContextProvider } from 'proton-pass-extension/lib/components/Context/Popup/PopupContext';
+import { PopupProvider } from 'proton-pass-extension/lib/components/Context/PopupProvider';
 import { ExtensionApp } from 'proton-pass-extension/lib/components/Extension/ExtensionApp';
 import { ExtensionError } from 'proton-pass-extension/lib/components/Extension/ExtensionError';
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
@@ -28,13 +27,11 @@ const Popup = () => {
                             store.current ??
                             (store.current = createClientStore('popup', ExtensionContext.get().tabId)))()}
                     >
-                        <Router>
-                            <ErrorBoundary component={<ExtensionError />}>
-                                <PopupContextProvider>
-                                    <App key={locale} />
-                                </PopupContextProvider>
-                            </ErrorBoundary>
-                        </Router>
+                        <ErrorBoundary component={<ExtensionError />}>
+                            <PopupProvider>
+                                <App key={locale} />
+                            </PopupProvider>
+                        </ErrorBoundary>
                     </ReduxProvider>
                 )
             }

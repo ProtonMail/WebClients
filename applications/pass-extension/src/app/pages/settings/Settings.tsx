@@ -5,10 +5,9 @@ import { HashRouter, Route, Switch, useHistory } from 'react-router-dom';
 
 import { APP_VERSION } from 'proton-pass-extension/app/config';
 import { ExtensionApp } from 'proton-pass-extension/lib/components/Extension/ExtensionApp';
-import { ExtensionConnect } from 'proton-pass-extension/lib/components/Extension/ExtensionConnect';
+import { ExtensionConnect, useExtensionConnect } from 'proton-pass-extension/lib/components/Extension/ExtensionConnect';
 import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/ExtensionHead';
 import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
-import { useExtensionConnectContext } from 'proton-pass-extension/lib/hooks/useExtensionConnectContext';
 import { createClientStore } from 'proton-pass-extension/lib/store/client-store';
 import { c, msgid } from 'ttag';
 
@@ -79,7 +78,7 @@ const getSettingsTabs: () => (Tab & { pathname: string })[] = () => {
 };
 
 const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
-    const context = useExtensionConnectContext();
+    const context = useExtensionConnect();
     const user = useSelector(selectUser);
     const passPlan = useSelector(selectPassPlan);
     const planDisplayName = useSelector(selectPlanDisplayName);
