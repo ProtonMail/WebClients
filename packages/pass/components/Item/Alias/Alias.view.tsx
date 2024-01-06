@@ -17,21 +17,23 @@ import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
+import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { getAliasDetailsIntent } from '@proton/pass/store/actions';
 import { aliasDetailsRequest } from '@proton/pass/store/actions/requests';
 import { selectAliasDetails, selectLoginItemByUsername } from '@proton/pass/store/selectors';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
-export const AliasView: VFC<ItemViewProps<'alias'>> = ({ vault, revision, ...itemViewProps }) => {
+export const AliasView: VFC<ItemViewProps<'alias'>> = (itemViewProps) => {
     const { createNotification } = useNotifications();
     const { navigate } = useNavigation();
 
-    const { data: item, itemId, createTime, modifyTime, revision: revisionNumber } = revision;
+    const { revision, vault } = itemViewProps;
+    const { data: item, itemId, createTime, modifyTime, revision: revisionNumber, optimistic } = revision;
     const { name } = item.metadata;
     const { shareId } = vault;
-    const { optimistic, trashed } = itemViewProps;
     const aliasEmail = revision.aliasEmail!;
+    const trashed = isTrashed(revision);
 
     const relatedLogin = useSelector(selectLoginItemByUsername(aliasEmail));
     const relatedLoginName = relatedLogin?.data.metadata.name ?? '';
@@ -75,8 +77,6 @@ export const AliasView: VFC<ItemViewProps<'alias'>> = ({ vault, revision, ...ite
     return (
         <ItemViewPanel
             type="alias"
-            name={name}
-            vault={vault}
             {...itemViewProps}
             {...(!trashed
                 ? {

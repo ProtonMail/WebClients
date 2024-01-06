@@ -15,7 +15,7 @@ import { extractFileExtension, fileReader } from '@proton/pass/lib/import/reader
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { ImportProvider } from '@proton/pass/lib/import/types';
 import { importItemsIntent } from '@proton/pass/store/actions';
-import { importItemsRequest } from '@proton/pass/store/actions/requests';
+import { itemsImportRequest } from '@proton/pass/store/actions/requests';
 import type { ImportState } from '@proton/pass/store/reducers';
 import { selectLatestImport, selectUser } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
@@ -98,7 +98,7 @@ export const useImportForm = ({
 
     const importItems = useActionRequest({
         action: importItemsIntent,
-        initialRequestId: importItemsRequest(),
+        initialRequestId: itemsImportRequest(),
         onSuccess: () => {
             setBusy(false);
             void formRef.current?.setValues(getInitialFormValues());

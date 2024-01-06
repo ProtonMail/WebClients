@@ -32,6 +32,7 @@ export const selectExportData =
                             contentFormatVersion: item.contentFormatVersion,
                             createTime: item.createTime,
                             modifyTime: item.modifyTime,
+                            pinned: item.pinned,
                         })),
                     },
                 ];

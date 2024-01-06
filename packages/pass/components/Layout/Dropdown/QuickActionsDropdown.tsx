@@ -23,6 +23,7 @@ export type QuickActionsDropdownProps = {
     menuClassName?: string;
     offset?: number;
     originalPlacement?: PopperPlacement;
+    pill?: boolean;
     shape?: ButtonLikeShape;
     size?: ButtonLikeSize;
     style?: CSSProperties;
@@ -38,6 +39,7 @@ export const QuickActionsDropdown: FC<QuickActionsDropdownProps> = ({
     menuClassName,
     offset,
     originalPlacement,
+    pill = true,
     shape,
     size = 'medium',
     style,
@@ -47,17 +49,17 @@ export const QuickActionsDropdown: FC<QuickActionsDropdownProps> = ({
     return (
         <>
             <Button
-                icon
-                pill
+                className={className}
                 color={color}
+                disabled={disabled}
+                icon
+                onClick={toggle}
+                pill={pill}
+                ref={anchorRef}
                 shape={shape}
                 size={size}
-                className={className}
-                ref={anchorRef}
-                onClick={toggle}
-                disabled={disabled}
-                title={c('Action').t`More options`}
                 style={style}
+                title={c('Action').t`More options`}
             >
                 <Icon name={icon} alt={c('Action').t`More options`} size={iconSize} />
             </Button>
