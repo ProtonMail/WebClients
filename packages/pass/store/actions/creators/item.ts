@@ -2,7 +2,7 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { getItemActionId } from '@proton/pass/lib/items/item.utils';
-import { pinItemRequest, unpinItemRequest } from '@proton/pass/store/actions/requests';
+import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
 import { withCache, withThrottledCache } from '@proton/pass/store/actions/with-cache';
 import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
 import withCallback from '@proton/pass/store/actions/with-callback';
@@ -249,7 +249,7 @@ export const itemUsedSync = createAction(
 );
 
 export const itemPinIntent = createAction('item::pin::intent', (payload: UniqueItem) =>
-    withRequest({ type: 'start', id: pinItemRequest(payload.itemId) })({ payload })
+    withRequest({ type: 'start', id: itemPinRequest(payload.shareId, payload.itemId) })({ payload })
 );
 
 export const itemPinSuccess = createAction(
@@ -259,7 +259,7 @@ export const itemPinSuccess = createAction(
             withCache,
             withNotification({
                 type: 'info',
-                text: c('Info').t`Item pinned`,
+                text: c('Info').t`Item successfully pinned`,
             })
         )({ payload })
     )
@@ -277,7 +277,7 @@ export const itemPinFailure = createAction(
 );
 
 export const itemUnpinIntent = createAction('item::unpin::intent', (payload: UniqueItem) =>
-    withRequest({ type: 'start', id: unpinItemRequest(payload.itemId) })({ payload })
+    withRequest({ type: 'start', id: itemUnpinRequest(payload.shareId, payload.itemId) })({ payload })
 );
 
 export const itemUnpinSuccess = createAction(
@@ -287,7 +287,7 @@ export const itemUnpinSuccess = createAction(
             withCache,
             withNotification({
                 type: 'info',
-                text: c('Info').t`Item unpinned`,
+                text: c('Info').t`Item successfully unpinned`,
             })
         )({ payload })
     )
