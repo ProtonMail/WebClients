@@ -40,8 +40,10 @@ function assertHydrated(ctx: PassCryptoManagerContext): asserts ctx is Required<
     }
 }
 
-const createPassCrypto = (): PassCryptoWorker => {
-    if (process.env.NODE_ENV !== 'test') {
+type PassCryptoOptions = { initCryptoEndpoint: boolean };
+
+export const createPassCrypto = (options: PassCryptoOptions): PassCryptoWorker => {
+    if (options.initCryptoEndpoint && process.env.NODE_ENV !== 'test') {
         CryptoApi.init({});
         CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
     }
@@ -382,5 +384,3 @@ const createPassCrypto = (): PassCryptoWorker => {
 
     return worker;
 };
-
-export const PassCrypto = createPassCrypto();
