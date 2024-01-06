@@ -99,7 +99,7 @@ export const getSecretOrUri = (totpUri: string): string =>
 export const generateTOTPCode = (totpUri?: string): MaybeNull<OtpCode> => {
     try {
         if (!totpUri) return null;
-        const otp = parseOTPFromURI(totpUri, {});
+        const otp = (isTotpUri(totpUri) ? parseOTPFromURI : parseOTPFromSecret)(totpUri, {});
 
         const token = otp.generate();
         const timestamp = getEpoch();
