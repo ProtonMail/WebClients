@@ -11,16 +11,13 @@ import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
 import { useDeobfuscatedValue } from '../../../hooks/useDeobfuscatedValue';
 import { ItemViewPanel } from '../../Layout/Panel/ItemViewPanel';
 
-export const NoteView: VFC<ItemViewProps<'note'>> = ({ vault, revision, ...itemViewProps }) => {
-    const { name } = revision.data.metadata;
-    const note = useDeobfuscatedValue(revision.data.metadata.note);
+export const NoteView: VFC<ItemViewProps<'note'>> = (itemViewProps) => {
+    const note = useDeobfuscatedValue(itemViewProps.revision.data.metadata.note);
     const copyToClipboard = useCopyToClipboard();
 
     return (
         <ItemViewPanel
             type="note"
-            name={name}
-            vault={vault}
             actions={
                 Boolean(note.length)
                     ? [
@@ -32,7 +29,7 @@ export const NoteView: VFC<ItemViewProps<'note'>> = ({ vault, revision, ...itemV
                               shape="solid"
                               size="medium"
                               onClick={() => copyToClipboard(note)}
-                              disabled={itemViewProps.optimistic}
+                              disabled={itemViewProps.revision.optimistic}
                               title={c('Action').t`Copy to clipboard`}
                           >
                               <Icon name="squares" alt={c('Action').t`Copy to clipboard`} size={20} />

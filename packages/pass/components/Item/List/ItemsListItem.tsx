@@ -3,13 +3,16 @@ import { useSelector } from 'react-redux';
 import { Link, type LinkProps } from 'react-router-dom';
 
 import { ButtonLike, type ButtonLikeProps } from '@proton/atoms/Button';
-import { Marks } from '@proton/components/components';
+import { Icon, Marks } from '@proton/components/components';
+import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
 import { OptimisticItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
+import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { matchChunks } from '@proton/pass/lib/search/match-chunks';
 import { selectShare } from '@proton/pass/store/selectors';
 import type { ItemRevisionWithOptimistic, ShareType } from '@proton/pass/types';
+import { PassFeature } from '@proton/pass/types/api/features';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
 
@@ -28,6 +31,7 @@ const ItemsListItemRaw: VFC<Props> = ({ item, search = '', active = false, ...re
     const { data, optimistic, failed, shareId } = item;
     const { heading, subheading } = presentListItem(item);
     const vault = useSelector(selectShare<ShareType.Vault>(shareId));
+    const pinningEnabled = useFeatureFlag(PassFeature.PassPinningV1);
 
     return (
         <ButtonLike
@@ -48,6 +52,19 @@ const ItemsListItemRaw: VFC<Props> = ({ item, search = '', active = false, ...re
                     size={20}
                     className={clsx('mr-3  shrink-0', itemTypeToSubThemeClassName[data.type])}
                 />
+                {pinningEnabled && item.pinned && (
+                    <IconBox
+                        size={10}
+                        mode="transparent"
+                        className={clsx(
+                            'pass-item-list--item--pin absolute top-custom left-custom flex items-center justify-center',
+                            itemTypeToSubThemeClassName[data.type]
+                        )}
+                        style={{ '--top-custom': '32px', '--left-custom': '36px' }}
+                    >
+                        <Icon name="pin-angled-filled" size={11} className="absolute-center" color="black" />
+                    </IconBox>
+                )}
                 <div className="text-left">
                     <span className="flex items-center">
                         {search && (

@@ -14,9 +14,10 @@ import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
+import { isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { isVaultMemberLimitReached } from '@proton/pass/lib/vaults/vault.predicates';
-import type { VaultShareItem } from '@proton/pass/store/reducers';
-import { selectAllVaults, selectPassPlan } from '@proton/pass/store/selectors';
+import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
+import { selectAllVaults, selectPassPlan, selectRequestInFlight } from '@proton/pass/store/selectors';
 import { type ItemType, ShareRole } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -25,44 +26,50 @@ import { Panel } from './Panel';
 import { PanelHeader } from './PanelHeader';
 
 type Props = {
-    type: ItemType;
-    name: string;
-    vault: VaultShareItem;
+    /** extra actions visible on the panel header */
     actions?: ReactElement[];
+    /** extra quick actions in the actions dropdown menu */
     quickActions?: ReactElement[];
-} & Omit<ItemViewProps, 'revision' | 'vault'>;
+    type: ItemType;
+} & ItemViewProps;
 
 export const ItemViewPanel: FC<Props> = ({
-    type,
-    name,
-    vault,
-    optimistic,
-    failed,
-    trashed,
     actions = [],
+    children,
     quickActions = [],
-
-    handleEditClick,
-    handleRetryClick,
-    handleDismissClick,
-    handleMoveToTrashClick,
-    handleMoveToVaultClick,
-    handleRestoreClick,
+    revision,
+    type,
+    vault,
     handleDeleteClick,
+    handleDismissClick,
+    handleEditClick,
     handleInviteClick,
     handleManageClick,
-
-    children,
+    handleMoveToTrashClick,
+    handleMoveToVaultClick,
+    handlePinClick,
+    handleRestoreClick,
+    handleRetryClick,
 }) => {
+    const { shareId, itemId, data, optimistic, failed } = revision;
+    const { name } = data.metadata;
+    const trashed = isTrashed(revision);
+    const pinned = isPinned(revision);
+
     const vaults = useSelector(selectAllVaults);
     const plan = useSelector(selectPassPlan);
     const sharingEnabled = useFeatureFlag(PassFeature.PassSharingV1);
+    const pinningEnabled = useFeatureFlag(PassFeature.PassPinningV1);
     const hasMultipleVaults = vaults.length > 1;
     const { shareRoleId, shared } = vault;
     const showVaultTag = hasMultipleVaults || shared;
     const readOnly = shareRoleId === ShareRole.READ;
     const sharedReadOnly = shared && readOnly;
     const spotlight = useSpotlight();
+
+    const pinInFlight = useSelector(selectRequestInFlight(itemPinRequest(shareId, itemId)));
+    const unpinInFlight = useSelector(selectRequestInFlight(itemUnpinRequest(shareId, itemId)));
+    const canTogglePinned = !(pinInFlight || unpinInFlight);
 
     return (
         <Panel
@@ -138,7 +145,7 @@ export const ItemViewPanel: FC<Props> = ({
                                     shape="solid"
                                     size="medium"
                                     title={c('Action').t`Share`}
-                                    disabled={readOnly}
+                                    disabled={optimistic || readOnly}
                                     onClick={
                                         plan === UserPassPlan.FREE && isVaultMemberLimitReached(vault)
                                             ? () =>
@@ -184,6 +191,16 @@ export const ItemViewPanel: FC<Props> = ({
                                 )}
 
                                 {quickActions}
+
+                                {pinningEnabled && (
+                                    <DropdownMenuButton
+                                        onClick={handlePinClick}
+                                        label={pinned ? c('Action').t`Unpin item` : c('Action').t`Pin item`}
+                                        icon={pinned ? 'pin-angled-slash' : 'pin-angled'}
+                                        disabled={optimistic || !canTogglePinned}
+                                        loading={!canTogglePinned}
+                                    />
+                                )}
 
                                 <DropdownMenuButton
                                     onClick={handleMoveToTrashClick}
