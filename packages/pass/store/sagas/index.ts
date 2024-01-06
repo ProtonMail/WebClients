@@ -30,8 +30,10 @@ import itemCreation from './items/item-creation.saga';
 import itemDelete from './items/item-delete.saga';
 import itemEdit from './items/item-edit.saga';
 import itemMove from './items/item-move.saga';
+import itemPin from './items/item-pin.saga';
 import itemRestore from './items/item-restore.saga';
 import itemTrash from './items/item-trash.saga';
+import itemUnpin from './items/item-unpin.saga';
 import shareAccessOptions from './shares/share-access-options.saga';
 import shareEditRole from './shares/share-edit-role.saga';
 import shareLeave from './shares/share-leave.saga';
@@ -63,6 +65,8 @@ export function* workerRootSaga(options: RootSagaOptions) {
             itemCreation,
             itemDelete,
             itemEdit,
+            itemPin,
+            itemUnpin,
             itemMove,
             itemRestore,
             itemsImport,

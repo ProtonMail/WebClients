@@ -45,6 +45,7 @@ export const openItem = async ({ encryptedItem, vaultKey }: OpenItemKeyProcessPa
         content: decryptedContent,
         aliasEmail: encryptedItem.AliasEmail ?? null,
         createTime: encryptedItem.CreateTime,
+        pinned: encryptedItem.Pinned ?? false,
         revisionTime: encryptedItem.RevisionTime,
         modifyTime: encryptedItem.ModifyTime,
         lastUseTime: encryptedItem.LastUseTime ?? null,
