@@ -30,6 +30,8 @@ import {
     clientStatusResolved,
     clientUnauthorized,
 } from '@proton/pass/lib/client';
+import { exposePassCrypto } from '@proton/pass/lib/crypto';
+import { createPassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { or } from '@proton/pass/utils/fp/predicates';
@@ -46,6 +48,8 @@ export const createWorkerContext = (config: ProtonConfig) => {
     const api = exposeApi(createApi({ config }));
     const authStore = exposeAuthStore(createAuthStore(createStore()));
     const storage = createStorageService();
+
+    exposePassCrypto(createPassCrypto({ initCryptoEndpoint: true }));
 
     const context = WorkerContext.set({
         status: AppStatus.IDLE,
