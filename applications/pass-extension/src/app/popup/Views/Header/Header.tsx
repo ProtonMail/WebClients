@@ -4,6 +4,7 @@ import { usePopupContext } from 'proton-pass-extension/lib/components/Context/Po
 import { useOnboardingListener } from 'proton-pass-extension/lib/hooks/useOnboardingListener';
 
 import { Header as CoreHeader } from '@proton/components';
+import { PinnedItemsBar } from '@proton/pass/components/Item/Pinned/PinnedItemsBar';
 import { SearchBar } from '@proton/pass/components/Item/Search/SearchBar';
 import { ItemQuickActions } from '@proton/pass/components/Menu/Item/ItemQuickActions';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
@@ -33,6 +34,7 @@ export const Header: VFC = () => {
                     <Spotlight />
                 </div>
             </CoreHeader>
+            <PinnedItemsBar />
         </VaultActionsProvider>
     );
 };

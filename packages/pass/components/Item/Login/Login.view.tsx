@@ -19,10 +19,12 @@ import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator'
 import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store/selectors';
 import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
-export const LoginView: VFC<ItemViewProps<'login'>> = ({ vault, revision, ...itemViewProps }) => {
+export const LoginView: VFC<ItemViewProps<'login'>> = (itemViewProps) => {
+    const { revision } = itemViewProps;
     const { data: item, createTime, lastUseTime, modifyTime, revision: revisionNumber, shareId, itemId } = revision;
+
     const {
-        metadata: { name, note },
+        metadata: { note },
         content: { username, password, urls, totpUri },
         extraFields,
     } = useDeobfuscatedItem(item);
@@ -31,7 +33,7 @@ export const LoginView: VFC<ItemViewProps<'login'>> = ({ vault, revision, ...ite
     const totpAllowed = useSelector(selectTOTPLimits).totpAllowed(itemId);
 
     return (
-        <ItemViewPanel type="login" name={name} vault={vault} {...itemViewProps}>
+        <ItemViewPanel type="login" {...itemViewProps}>
             <FieldsetCluster mode="read" as="div">
                 <ValueControl
                     clickToCopy
