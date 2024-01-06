@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 
-import { isLoginItem, isTrashed } from '@proton/pass/lib/items/item.predicates';
+import { isLoginItem, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
 import {
     filterItemsByShareId,
     filterItemsByType,
@@ -52,6 +52,7 @@ export const selectByShareIdAsIfNotOptimistic = createSelector(selectByShareId, 
 export const selectItems = createSelector([selectByShareId], unwrapOptimisticState);
 export const selectAllItems = createSelector(selectItems, flattenItemsByShareId);
 export const selectAllTrashedItems = createSelector([selectAllItems], (items) => items.filter(isTrashed));
+export const selectPinnedItems = createSelector([selectAllItems], (items) => items.filter(isPinned));
 
 export const selectItemsByShareId = (shareId?: string) =>
     createSelector([selectItems, () => shareId], (items, shareId): ItemRevision[] =>

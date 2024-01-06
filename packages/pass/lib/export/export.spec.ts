@@ -37,6 +37,7 @@ const EXPORT_TEST_PAYLOAD: ExportData = {
                         extraFields: [],
                     },
                     contentFormatVersion: CONTENT_FORMAT_VERSION,
+                    pinned: false,
                     aliasEmail: null,
                     createTime: getEpoch(),
                     modifyTime: getEpoch() + 100,

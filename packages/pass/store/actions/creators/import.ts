@@ -2,7 +2,7 @@ import { createAction } from '@reduxjs/toolkit';
 import { c, msgid } from 'ttag';
 
 import type { ImportPayload, ImportProvider } from '@proton/pass/lib/import/types';
-import { importItemsRequest } from '@proton/pass/store/actions/requests';
+import { itemsImportRequest } from '@proton/pass/store/actions/requests';
 import { withCache } from '@proton/pass/store/actions/with-cache';
 import withNotification from '@proton/pass/store/actions/with-notification';
 import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
@@ -13,7 +13,7 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 export const importItemsIntent = createAction(
     'import::items::intent',
     (payload: { data: ImportPayload; provider: ImportProvider }) =>
-        withRequest({ type: 'start', id: importItemsRequest() })({ payload })
+        withRequest({ type: 'start', id: itemsImportRequest() })({ payload })
 );
 
 export const importItemsSuccess = createAction(

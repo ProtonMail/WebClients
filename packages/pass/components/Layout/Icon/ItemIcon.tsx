@@ -1,12 +1,12 @@
 import type { ReactNode } from 'react';
-import { type VFC, useCallback, useState } from 'react';
+import { type FC, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import type { IconName, IconSize } from '@proton/components';
 import { Icon } from '@proton/components';
 import { selectCanLoadDomainImages } from '@proton/pass/store/selectors';
-import type { Item, ItemMap, ItemRevisionWithOptimistic, MaybeNull } from '@proton/pass/types';
+import type { Item, ItemMap, ItemRevision, ItemRevisionWithOptimistic, MaybeNull } from '@proton/pass/types';
 import clsx from '@proton/utils/clsx';
 
 import { DomainIcon, ImageStatus } from './DomainIcon';
@@ -22,33 +22,38 @@ export const itemTypeToIconName: ItemMap<IconName> = {
 export const presentItemIcon = (item: Item) => itemTypeToIconName[item.type];
 
 type BaseItemIconProps = {
-    icon: IconName;
-    url?: MaybeNull<string>;
-    size: IconSize;
-    loadImage?: boolean;
     alt: string;
     className?: string;
+    icon: IconName;
     iconClassName?: string;
+    loadImage?: boolean;
+    pill?: boolean;
+    size: IconSize;
+    url?: MaybeNull<string>;
     renderIndicators?: () => ReactNode;
 };
 
-type ItemIconProps = { item: ItemRevisionWithOptimistic; size: IconSize; className: string };
-
-export const ItemIcon: VFC<BaseItemIconProps> = ({
-    icon,
-    url,
-    size,
-    loadImage = true,
+export const ItemIcon: FC<BaseItemIconProps> = ({
     alt,
     className,
+    icon,
     iconClassName,
+    loadImage = true,
+    pill,
+    size,
+    url,
     renderIndicators,
 }) => {
     const [imageStatus, setImageStatus] = useState<ImageStatus>(ImageStatus.LOADING);
     const handleStatusChange = useCallback((status: ImageStatus) => setImageStatus(status), []);
 
     return (
-        <IconBox size={size} className={className} mode={url && imageStatus === ImageStatus.READY ? 'image' : 'icon'}>
+        <IconBox
+            className={className}
+            mode={url && imageStatus === ImageStatus.READY ? 'image' : 'icon'}
+            size={size}
+            pill={pill}
+        >
             <span className="sr-only">{alt}</span>
 
             {loadImage && (
@@ -75,10 +80,35 @@ export const ItemIcon: VFC<BaseItemIconProps> = ({
     );
 };
 
-export const OptimisticItemIcon: VFC<ItemIconProps> = ({ item, size, className }) => {
-    const { data, optimistic, failed } = item;
+type ItemIconProps<T extends ItemRevision> = {
+    className: string;
+    item: T;
+    pill?: boolean;
+    size: IconSize;
+    renderIndicators?: () => ReactNode;
+};
+
+export const SafeItemIcon: FC<ItemIconProps<ItemRevision>> = ({ className, item, pill, size, renderIndicators }) => {
+    const { data } = item;
     const loadDomainImages = useSelector(selectCanLoadDomainImages);
     const domainURL = data.type === 'login' ? data.content.urls?.[0] : null;
+
+    return (
+        <ItemIcon
+            alt={data.type}
+            className={className}
+            icon={presentItemIcon(data)}
+            loadImage={loadDomainImages}
+            pill={pill}
+            renderIndicators={renderIndicators}
+            size={size}
+            url={domainURL}
+        />
+    );
+};
+
+export const OptimisticItemIcon: FC<ItemIconProps<ItemRevisionWithOptimistic>> = (props) => {
+    const { optimistic, failed } = props.item;
 
     const renderIndicators = () => {
         if (failed) {
@@ -87,7 +117,7 @@ export const OptimisticItemIcon: VFC<ItemIconProps> = ({ item, size, className }
                     className="absolute inset-center"
                     color="var(--signal-warning)"
                     name="exclamation-circle-filled"
-                    size={size}
+                    size={props.size}
                 />
             );
         }
@@ -97,16 +127,5 @@ export const OptimisticItemIcon: VFC<ItemIconProps> = ({ item, size, className }
         }
     };
 
-    return (
-        <ItemIcon
-            icon={presentItemIcon(data)}
-            url={domainURL}
-            size={size}
-            alt={data.type}
-            className={className}
-            iconClassName={clsx(optimistic && 'opacity-30', failed && 'hidden')}
-            renderIndicators={renderIndicators}
-            loadImage={loadDomainImages}
-        />
-    );
+    return <SafeItemIcon {...props} renderIndicators={renderIndicators} />;
 };

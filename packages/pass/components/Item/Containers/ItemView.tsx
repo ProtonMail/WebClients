@@ -14,7 +14,6 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import { getItemRoute, getLocalPath, maybeTrash } from '@proton/pass/components/Navigation/routing';
 import { VaultSelect, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
-import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { getItemActionId } from '@proton/pass/lib/items/item.utils';
 import {
     itemCreationDismiss,
@@ -23,8 +22,10 @@ import {
     itemEditDismiss,
     itemEditIntent,
     itemMoveIntent,
+    itemPinIntent,
     itemRestoreIntent,
     itemTrashIntent,
+    itemUnpinIntent,
 } from '@proton/pass/store/actions';
 import selectFailedAction from '@proton/pass/store/optimistic/selectors/select-failed-action';
 import {
@@ -76,8 +77,6 @@ export const ItemView: VFC = () => {
         return <Redirect to={to} push={false} />;
     }
 
-    const trashed = isTrashed(item);
-
     const handleEdit = () => selectItem(shareId, itemId, { view: 'edit' });
     const handleRetry = () => failure !== undefined && dispatch(failure.action);
     const handleTrash = () => dispatch(itemTrashIntent({ itemId, shareId, item }));
@@ -123,6 +122,8 @@ export const ItemView: VFC = () => {
         setInviteOpen(false);
     };
 
+    const handlePinClick = () => dispatch((item.pinned ? itemUnpinIntent : itemPinIntent)({ shareId, itemId }));
+
     const ItemTypeViewComponent = itemTypeViewMap[item.data.type] as VFC<ItemViewProps>;
 
     return (
@@ -140,9 +141,7 @@ export const ItemView: VFC = () => {
                 handleDeleteClick={handleDelete}
                 handleInviteClick={handleInviteClick}
                 handleManageClick={handleVaultManage}
-                optimistic={item.optimistic}
-                failed={item.failed}
-                trashed={trashed}
+                handlePinClick={handlePinClick}
             />
 
             <VaultSelect
