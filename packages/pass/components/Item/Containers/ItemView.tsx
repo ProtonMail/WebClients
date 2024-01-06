@@ -14,7 +14,6 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import { getItemRoute, getLocalPath, maybeTrash } from '@proton/pass/components/Navigation/routing';
 import { VaultSelect, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
-import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { getItemActionId } from '@proton/pass/lib/items/item.utils';
 import {
     itemCreationDismiss,
@@ -77,8 +76,6 @@ export const ItemView: VFC = () => {
         const to = preserveSearch(getItemRoute(shareId, item.itemId));
         return <Redirect to={to} push={false} />;
     }
-
-    const trashed = isTrashed(item);
 
     const handleEdit = () => selectItem(shareId, itemId, { view: 'edit' });
     const handleRetry = () => failure !== undefined && dispatch(failure.action);
@@ -145,10 +142,6 @@ export const ItemView: VFC = () => {
                 handleInviteClick={handleInviteClick}
                 handleManageClick={handleVaultManage}
                 handlePinClick={handlePinClick}
-                optimistic={item.optimistic}
-                failed={item.failed}
-                trashed={trashed}
-                pinned={item.pinned}
             />
 
             <VaultSelect
