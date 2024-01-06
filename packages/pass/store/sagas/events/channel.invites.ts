@@ -2,7 +2,7 @@
 import { all, fork, put, select } from 'redux-saga/effects';
 
 import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
-import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
+import { PassCrypto } from '@proton/pass/lib/crypto';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { type EventManagerEvent, NOOP_EVENT } from '@proton/pass/lib/events/manager';
 import { decodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';

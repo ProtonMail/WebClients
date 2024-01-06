@@ -1,6 +1,6 @@
 import { MAX_BATCH_ITEMS_PER_REQUEST } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
-import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
+import { PassCrypto } from '@proton/pass/lib/crypto';
 import type {
     AliasAndItemCreateRequest,
     CustomAliasCreateRequest,
