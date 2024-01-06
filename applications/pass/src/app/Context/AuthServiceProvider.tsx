@@ -16,7 +16,7 @@ import { type AuthService, createAuthService } from '@proton/pass/lib/auth/servi
 import { isValidPersistedSession } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { clientReady, isTaggedBuild } from '@proton/pass/lib/client';
-import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
+import { PassCrypto } from '@proton/pass/lib/crypto';
 import { getUpgradePath, isEOY } from '@proton/pass/lib/onboarding/upselling';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import { bootIntent, cacheCancel, sessionLockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';

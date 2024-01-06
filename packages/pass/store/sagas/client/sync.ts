@@ -1,18 +1,18 @@
 import { put, select } from 'redux-saga/effects';
 
-import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
+import { PassCrypto } from '@proton/pass/lib/crypto';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
 import { requestShares } from '@proton/pass/lib/shares/share.requests';
-import { isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
+import { isActiveVault, isOwnVault, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { createVault } from '@proton/pass/lib/vaults/vault.requests';
 import { asIfNotOptimistic } from '@proton/pass/store//optimistic/selectors/select-is-optimistic';
 import { notification } from '@proton/pass/store/actions';
 import { type ItemsByShareId, type SharesState, reducerMap } from '@proton/pass/store/reducers';
 import { selectAllShares, selectItems } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
-import type { Maybe } from '@proton/pass/types';
-import { type Share, type ShareGetResponse, ShareType } from '@proton/pass/types';
+import type { Maybe , ShareType } from '@proton/pass/types';
+import { type Share, type ShareGetResponse } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { partition } from '@proton/pass/utils/array/partition';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -32,9 +32,6 @@ export enum SyncType {
     FULL = 'full' /* fetches all items */,
     PARTIAL = 'partial' /* fetches only diff */,
 }
-
-const isActiveVault = <T extends Share>({ targetType, shareId }: T) =>
-    targetType === ShareType.Vault && PassCrypto.canOpenShare(shareId);
 
 export function* synchronize(options: SynchronizationOptions, { onShareDeleted }: RootSagaOptions) {
     try {

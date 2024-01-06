@@ -1,6 +1,6 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
-import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
+import { PassCrypto } from '@proton/pass/lib/crypto';
 import { deleteVault } from '@proton/pass/lib/vaults/vault.requests';
 import { vaultDeleteFailure, vaultDeleteIntent, vaultDeleteSuccess } from '@proton/pass/store/actions';
 import type { RootSagaOptions } from '@proton/pass/store/types';
