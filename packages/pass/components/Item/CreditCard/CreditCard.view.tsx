@@ -20,18 +20,18 @@ import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 
-export const CreditCardView: VFC<ItemViewProps<'creditCard'>> = ({ vault, revision, ...itemViewProps }) => {
-    const { data: item } = revision;
+export const CreditCardView: VFC<ItemViewProps<'creditCard'>> = (itemViewProps) => {
+    const { data: item } = itemViewProps.revision;
 
     const {
-        metadata: { name, note },
+        metadata: { note },
         content: { cardholderName, expirationDate, number, verificationNumber, pin },
     } = useDeobfuscatedItem(item);
 
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
 
     return (
-        <ItemViewPanel type="creditCard" name={name} vault={vault} {...itemViewProps}>
+        <ItemViewPanel type="creditCard" {...itemViewProps}>
             <FieldsetCluster mode="read" as="div">
                 <ValueControl clickToCopy icon="user" label={c('Label').t`Name on card`} value={cardholderName} />
                 {isFreePlan ? (
