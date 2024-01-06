@@ -16,7 +16,7 @@ import {
 } from '@proton/pass/hooks/useImportForm';
 import type { ImportPayload } from '@proton/pass/lib/import/types';
 import { PROVIDER_INFO_MAP } from '@proton/pass/lib/import/types';
-import { importItemsRequest } from '@proton/pass/store/actions/requests';
+import { itemsImportRequest } from '@proton/pass/store/actions/requests';
 import type { MaybeNull } from '@proton/pass/types';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -50,7 +50,7 @@ export const Import: VFC = () => {
         onSubmit: (payload) => {
             const total = payload.vaults.reduce((count, vault) => count + vault.items.length, 0);
             createNotification({
-                key: importItemsRequest(),
+                key: itemsImportRequest(),
                 showCloseButton: false,
                 expiration: -1,
                 text: (
