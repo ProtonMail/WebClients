@@ -255,7 +255,7 @@ const ItemColumnLayout = ({
                                 labels={labels}
                                 element={element}
                                 labelID={labelID}
-                                maxNumber={breakpoints.viewportWidth['<=small'] ? 1 : 3}
+                                maxNumber={breakpoints.viewportWidth['<=small'] ? 1 : 5}
                                 isCollapsed={false}
                             />
                         </div>
