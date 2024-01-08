@@ -29,7 +29,7 @@ import {
     getLocalIDFromPathname,
     stripLocalBasenameFromPathname,
 } from '@proton/shared/lib/authentication/pathnameHelper';
-import { getConsumeForkParameters, removeHashParameters } from '@proton/shared/lib/authentication/sessionForking';
+import { getConsumeForkParameters } from '@proton/shared/lib/authentication/sessionForking';
 import { APPS, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import noop from '@proton/utils/noop';
@@ -147,7 +147,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
             },
 
             onForkConsumed: async ({ UID, AccessToken, LocalID }, state) => {
-                removeHashParameters();
+                history.replace({ hash: '' }); /** removes selector from hash */
 
                 if (isTaggedBuild(config)) {
                     const { plan } = await getUserAccess(withAuthHeaders(UID, AccessToken, {}));
