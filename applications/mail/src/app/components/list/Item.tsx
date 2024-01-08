@@ -203,6 +203,7 @@ const Item = ({
                 <ItemLayout
                     isCompactView={isCompactView}
                     labelID={labelID}
+                    loading={loading}
                     elementID={elementID}
                     labels={labels}
                     element={element}
