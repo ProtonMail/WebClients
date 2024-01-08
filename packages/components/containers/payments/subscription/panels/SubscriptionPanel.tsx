@@ -56,8 +56,8 @@ import {
     getVaults,
 } from '../../features/pass';
 import {
+    getB2BFreeVPNConnectionsText,
     getB2BHighSpeedVPNConnectionsText,
-    getFreeVPNConnectionTotal,
     getHighSpeedVPNConnectionsText,
     getVPNConnectionsFeature,
     getVPNConnectionsText,
@@ -482,7 +482,7 @@ const SubscriptionPanel = ({
                         return getHighSpeedVPNConnectionsText(VPN_CONNECTIONS);
                     }
                     if (MaxMembers > 1) {
-                        return getFreeVPNConnectionTotal();
+                        return getB2BFreeVPNConnectionsText(1);
                     }
                     return getVPNConnectionsText(1);
                 })(),
