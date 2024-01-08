@@ -42,7 +42,7 @@ import {
 } from '../../components';
 import {
     useApi,
-    useDomains,
+    useCustomDomains,
     useEventManager,
     useGetAddressKeys,
     useGetAddresses,
@@ -123,7 +123,7 @@ const convertToInternalAddress = async ({
 };
 
 const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
-    const [domains, loadingDomains] = useDomains();
+    const [customDomains, loadingCustomDomains] = useCustomDomains();
     const onceRef = useRef(false);
     const [domainModel, setDomain] = useState<Partial<Domain>>(() => ({ ...domain }));
     const getAddresses = useGetAddresses();
@@ -392,13 +392,13 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
     })();
 
     useEffect(() => {
-        if (!loadingDomains) {
-            const maybeDomain = domains.find(({ ID }) => ID === domainModel.ID);
+        if (!loadingCustomDomains) {
+            const maybeDomain = customDomains.find(({ ID }) => ID === domainModel.ID);
             if (maybeDomain) {
                 setDomain({ ...maybeDomain });
             }
         }
-    }, [domains]);
+    }, [customDomains]);
 
     return (
         <ModalTwo className="modal--full" as={Form} onSubmit={onSubmit} {...rest}>
