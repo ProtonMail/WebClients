@@ -1,16 +1,13 @@
 import { ReactNode, memo } from 'react';
-import { useSelector } from 'react-redux';
 
 import { DENSITY, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { isAllowedAutoDeleteLabelID } from 'proton-mail/helpers/autoDelete';
-import { RootState } from 'proton-mail/logic/store';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import useShowUpsellBanner from '../../hooks/useShowUpsellBanner';
-import { showLabelTaskRunningBanner } from '../../logic/elements/elementsSelectors';
 import {
     AlmostAllMailBanner,
     AutoDeleteBanner,
@@ -29,6 +26,7 @@ interface Props {
         isSearch: boolean;
         showESSlowToolbar: boolean;
     };
+    canDisplayTaskRunningBanner: boolean;
 }
 
 type BannerId = 'es-slow' | 'almost-all-mail' | 'mail-upsell' | 'task-running' | 'auto-delete';
@@ -44,6 +42,7 @@ const ListBanners = ({
     columnLayout,
     userSettings,
     esState: { isESLoading, showESSlowToolbar: canDisplayESSlowToolbar },
+    canDisplayTaskRunningBanner,
 }: Props) => {
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
     // Override compactness of the list view to accommodate body preview when showing encrypted search results
@@ -53,9 +52,6 @@ const ListBanners = ({
 
     const bannerType = useAutoDeleteBanner(labelID);
 
-    const canDisplayTaskRunningBanner = useSelector((state: RootState) =>
-        showLabelTaskRunningBanner(state, { labelID })
-    );
     const { canDisplayUpsellBanner, needToShowUpsellBanner, handleDismissBanner } = useShowUpsellBanner(labelID);
 
     /**
