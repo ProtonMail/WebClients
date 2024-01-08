@@ -88,7 +88,9 @@
 	border: 1px solid var(--field-norm);
 	background-color: var(--field-background-color);
 	color: var(--field-text-color);
-	transition: 0.15s easing(ease-out-quint), visibility 0s; // Disable visibility transition due to auto focus, e.g. login form
+	transition:
+		0.15s easing(ease-out-quint),
+		visibility 0s; // Disable visibility transition due to auto focus, e.g. login form
 
 	&:hover,
 	&.hover {
@@ -167,7 +169,7 @@
 
 	&-adornment {
 		color: var(--text-weak);
-		max-inline-size: 60vw; // arbitrary value to avoid issues in case of super long suffix - domain names suffix on mobile for example
+		max-inline-size: 60%;
 
 		.button:not([class*='button-underline']) {
 			&:first-child {
