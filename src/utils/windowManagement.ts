@@ -8,6 +8,8 @@ import { areAllWindowsClosedOrHidden, isMac, isWindows } from "./helpers";
 import { setApplicationMenu } from "./menu";
 import { getSessionID } from "./urlHelpers";
 
+declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
+
 interface WindowCreationProps {
     session: Session;
     mailVisible?: boolean;
@@ -22,22 +24,18 @@ contextMenu({
     showSaveImage: true,
 });
 
-const windowOSConfig: BrowserWindowConstructorOptions = {};
-
-const macOSConfig: BrowserWindowConstructorOptions = {
-    frame: false,
-    titleBarStyle: "hidden",
-    vibrancy: "sidebar",
-    trafficLightPosition: { x: 12, y: 18 },
-};
-
-const getOSSpecificConfig = () => {
+const getOSSpecificConfig = (): BrowserWindowConstructorOptions => {
     if (isMac) {
         log.info("getOSSpecificConfig, macOSConfig");
-        return macOSConfig;
+        return {
+            frame: false,
+            titleBarStyle: "hidden",
+            vibrancy: "sidebar",
+            trafficLightPosition: { x: 12, y: 18 },
+        };
     } else if (isWindows) {
         log.info("getOSSpecificConfig, windowOSConfig");
-        return windowOSConfig;
+        return {};
     }
     log.info("getOSSpecificConfig, empty object");
     return {};
@@ -59,6 +57,7 @@ const createWindow = (session: Session, url: string, visible: boolean, windowCon
         ...getOSSpecificConfig(),
         webPreferences: {
             devTools: true,
+            preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
             spellcheck: true,
             // Security additions
             session,
