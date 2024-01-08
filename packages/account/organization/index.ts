@@ -1,11 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, original } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getOrganization } from '@proton/shared/lib/api/organization';
 import { FREE_ORGANIZATION } from '@proton/shared/lib/constants';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
-import type { Organization } from '@proton/shared/lib/interfaces';
+import type { Organization, User } from '@proton/shared/lib/interfaces';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
@@ -23,13 +23,19 @@ type Model = NonNullable<SliceState['value']>;
 
 export const selectOrganization = (state: OrganizationState) => state[name];
 
+const canFetch = (user: User) => {
+    return isPaid(user);
+};
+
+const freeOrganization = FREE_ORGANIZATION as unknown as Organization;
+
 const modelThunk = createAsyncModelThunk<Model, OrganizationState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ dispatch, extraArgument }) => {
         const user = await dispatch(userThunk());
-        if (user.isPaid) {
+        if (canFetch(user)) {
             return extraArgument.api(getOrganization()).then(({ Organization }) => Organization);
         }
-        return FREE_ORGANIZATION as unknown as Organization;
+        return freeOrganization;
     },
     previous: previousSelector(selectOrganization),
 });
@@ -45,19 +51,24 @@ const slice = createSlice({
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
         builder.addCase(serverEvent, (state, action) => {
-            if (
-                state.value &&
-                state.value !== FREE_ORGANIZATION &&
-                action.payload.User &&
-                !isPaid(action.payload.User)
-            ) {
-                // Do not get any organization update when user becomes unsubscribed.
-                state.value = FREE_ORGANIZATION as Organization;
+            if (!state.value) {
                 return;
             }
 
-            if (state.value && action.payload.Organization) {
+            if (action.payload.Organization) {
                 state.value = updateObject(state.value, action.payload.Organization);
+            }
+
+            const isFreeOrganization = original(state)?.value === freeOrganization;
+
+            if (!isFreeOrganization && action.payload.User && !canFetch(action.payload.User)) {
+                // Do not get any organization update when user becomes unsubscribed.
+                state.value = freeOrganization;
+            }
+
+            if (isFreeOrganization && action.payload.User && canFetch(action.payload.User)) {
+                state.value = undefined;
+                state.error = undefined;
             }
         });
     },
