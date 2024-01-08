@@ -32,6 +32,7 @@ import ItemExpiration from './item-expiration/ItemExpiration';
 interface Props {
     isCompactView: boolean;
     labelID: string;
+    loading: boolean;
     elementID?: string;
     labels?: Label[];
     element: Element;
@@ -46,6 +47,7 @@ interface Props {
 const ItemRowLayout = ({
     isCompactView,
     labelID,
+    loading,
     elementID,
     labels,
     element,
@@ -133,7 +135,10 @@ const ItemRowLayout = ({
                         isCollapsed={false}
                     />
 
-                    <div className="item-subject flex items-center flex-nowrap">
+                    <div
+                        className={clsx('item-subject flex items-center flex-nowrap', loading && 'w-custom')}
+                        style={loading ? { '--w-custom': '15rem' } : {}}
+                    >
                         <div className="flex flex-column inline-block">
                             <span
                                 role="heading"
@@ -177,7 +182,13 @@ const ItemRowLayout = ({
                             hasStar={false}
                             size="small"
                         />
-                        <span className="item-senddate-row flex flex-nowrap items-center gap-3">
+                        <span
+                            className={clsx(
+                                'item-senddate-row flex flex-nowrap items-center gap-3',
+                                loading && 'w-custom'
+                            )}
+                            style={loading ? { '--w-custom': '5rem' } : {}}
+                        >
                             {hasExpiration && (
                                 <ItemExpiration expirationTime={expirationTime} element={element} labelID={labelID} />
                             )}
