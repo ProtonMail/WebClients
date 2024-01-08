@@ -15,7 +15,7 @@ export const history = createBrowserHistory();
  * session's LocalID */
 export const getLocalPath = (path: string = '') => {
     const localID = authStore.getLocalID();
-    return localID ? `/${getLocalIDPath(localID)}/${path}` : `/${path}`;
+    return localID !== undefined ? `/${getLocalIDPath(localID)}/${path}` : `/${path}`;
 };
 
 export const maybeTrash = (path: string, inTrash?: boolean) => `${inTrash ? 'trash/' : ''}${path}`;
