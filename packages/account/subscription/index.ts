@@ -1,11 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, original } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getSubscription } from '@proton/shared/lib/api/payments';
 import { FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
 import updateObject from '@proton/shared/lib/helpers/updateObject';
-import { SubscriptionModel, Subscription as tsSubscription } from '@proton/shared/lib/interfaces';
+import { SubscriptionModel, User, Subscription as tsSubscription } from '@proton/shared/lib/interfaces';
 import formatSubscription from '@proton/shared/lib/subscription/format';
 import { isAdmin, isPaid } from '@proton/shared/lib/user/helpers';
 
@@ -24,19 +24,25 @@ type Model = NonNullable<SliceState['value']>;
 
 export const selectSubscription = (state: State) => state[name];
 
+const freeSubscription = FREE_SUBSCRIPTION as unknown as SubscriptionModel;
+
+const canFetch = (user: User) => {
+    return isAdmin(user) && isPaid(user);
+};
+
 const modelThunk = createAsyncModelThunk<Model, State, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ dispatch, extraArgument }) => {
         const user = await dispatch(userThunk());
 
-        if (user.isAdmin && Boolean(user.Subscribed)) {
-            const { Subscription, UpcomingSubscription } = await extraArgument.api<{
-                Subscription: tsSubscription;
-                UpcomingSubscription: tsSubscription;
-            }>(getSubscription());
-            return formatSubscription(Subscription, UpcomingSubscription);
+        if (!canFetch(user)) {
+            return freeSubscription;
         }
 
-        return FREE_SUBSCRIPTION as unknown as SubscriptionModel;
+        const { Subscription, UpcomingSubscription } = await extraArgument.api<{
+            Subscription: tsSubscription;
+            UpcomingSubscription: tsSubscription;
+        }>(getSubscription());
+        return formatSubscription(Subscription, UpcomingSubscription);
     },
     previous: previousSelector(selectSubscription),
 });
@@ -52,18 +58,11 @@ const slice = createSlice({
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
         builder.addCase(serverEvent, (state, action) => {
-            if (
-                state.value &&
-                state.value !== (FREE_SUBSCRIPTION as unknown as SubscriptionModel) &&
-                action.payload.User &&
-                (!isPaid(action.payload.User) || !isAdmin(action.payload.User))
-            ) {
-                // Do not get any subscription update when user becomes unsubscribed.
-                state.value = FREE_SUBSCRIPTION as unknown as SubscriptionModel;
+            if (!state.value) {
                 return;
             }
 
-            if (state.value && action.payload.Subscription) {
+            if (action.payload.Subscription) {
                 const events = action.payload.Subscription;
                 const eventsSubscription = updateObject(state.value, events);
 
@@ -85,6 +84,19 @@ const slice = createSlice({
                     eventsSubscription,
                     eventsSubscription.UpcomingSubscription || undefined
                 );
+            }
+
+            const isFreeSubscription = original(state)?.value === freeSubscription;
+
+            // User who downgrades does not receive a subscription update, so this resets it to free.
+            if (!isFreeSubscription && action.payload.User && !canFetch(action.payload.User)) {
+                state.value = freeSubscription;
+            }
+
+            // Otherwise, if there was no subscription update received, but the user became an admin, we reset the value so that it gets re-fetched. Typically happens for members who get promoted.
+            if (isFreeSubscription && action.payload.User && canFetch(action.payload.User)) {
+                state.value = undefined;
+                state.error = undefined;
             }
         });
     },

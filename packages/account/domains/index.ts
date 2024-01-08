@@ -1,11 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, original } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { queryDomains } from '@proton/shared/lib/api/domains';
 import queryPages from '@proton/shared/lib/api/helpers/queryPages';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Domain } from '@proton/shared/lib/interfaces';
+import type { Domain, User } from '@proton/shared/lib/interfaces';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
@@ -23,11 +23,16 @@ type Model = NonNullable<SliceState['value']>;
 
 export const selectDomains = (state: State) => state.domains;
 
+const canFetch = (user: User) => {
+    return isPaid(user);
+};
+const freeDomains: Domain[] = [];
+
 const modelThunk = createAsyncModelThunk<Model, State, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ dispatch, extraArgument }) => {
         const user = await dispatch(userThunk());
-        if (!isPaid(user)) {
-            return [];
+        if (!canFetch(user)) {
+            return freeDomains;
         }
         return queryPages((page, pageSize) => {
             return extraArgument.api(
@@ -54,18 +59,28 @@ const slice = createSlice({
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
         builder.addCase(serverEvent, (state, action) => {
-            if (state.value && state.value.length > 0 && action.payload.User && !isPaid(action.payload.User)) {
-                // Do not get any domain update when user becomes unsubscribed.
-                state.value = [];
+            if (!state.value) {
                 return;
             }
 
-            if (state.value && action.payload.Domains) {
+            if (action.payload.Domains) {
                 state.value = updateCollection({
                     model: state.value,
                     events: action.payload.Domains,
                     itemKey: 'Domain',
                 });
+            }
+
+            const isFreeDomains = original(state)?.value === freeDomains;
+
+            if (!isFreeDomains && action.payload.User && !canFetch(action.payload.User)) {
+                // Do not get any domain update when user becomes unsubscribed.
+                state.value = freeDomains;
+            }
+
+            if (isFreeDomains && action.payload.User && canFetch(action.payload.User)) {
+                delete state.value;
+                delete state.error;
             }
         });
     },
