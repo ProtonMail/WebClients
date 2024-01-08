@@ -918,7 +918,7 @@ export type ApiResponse<Path extends string, Method extends ApiMethod> = Path ex
                                                                                       ? Method extends `get`
                                                                                           ? {
                                                                                                 Code?: ResponseCodeSuccess;
-                                                                                                Item?: AliasDetailsResponse;
+                                                                                                Alias?: AliasDetailsResponse;
                                                                                             }
                                                                                           : never
                                                                                       : Path extends `pass/v1/share/${string}`

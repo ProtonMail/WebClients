@@ -1,8 +1,8 @@
 import { put, takeEvery } from 'redux-saga/effects';
 
-import { api } from '@proton/pass/lib/api/api';
+import { getAliasDetails } from '@proton/pass/lib/alias/alias.requests';
 import { getAliasDetailsFailure, getAliasDetailsIntent, getAliasDetailsSuccess } from '@proton/pass/store/actions';
-import type { AliasDetailsResponse } from '@proton/pass/types';
+import type { AliasDetails } from '@proton/pass/types';
 
 function* requestAliasDetails(action: ReturnType<typeof getAliasDetailsIntent>) {
     const {
@@ -10,13 +10,8 @@ function* requestAliasDetails(action: ReturnType<typeof getAliasDetailsIntent>) 
         meta: { request },
     } = action;
     try {
-        const result: { Alias: AliasDetailsResponse } = yield api({
-            url: `pass/v1/share/${shareId}/alias/${itemId}`,
-            method: 'get',
-        });
-
-        const mailboxes = result.Alias.Mailboxes.map(({ Email, ID }) => ({ id: ID, email: Email }));
-        yield put(getAliasDetailsSuccess(request.id, { aliasEmail, mailboxes }));
+        const result: AliasDetails = yield getAliasDetails(shareId, itemId);
+        yield put(getAliasDetailsSuccess(request.id, result));
     } catch (e) {
         yield put(getAliasDetailsFailure(request.id, { aliasEmail }, e));
     }
