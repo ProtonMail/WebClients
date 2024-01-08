@@ -1,5 +1,6 @@
 import { BrowserWindow, Notification, app, session, shell } from "electron";
 import log from "electron-log/main";
+import { handleIPCCalls } from "./ipc/main";
 import { moveUninstaller } from "./macos/uninstall";
 import { saveAppID } from "./store/idStore";
 import { saveAppURL } from "./store/urlStore";
@@ -66,6 +67,9 @@ app.whenReady().then(() => {
 
     // Trigger blank notification to force presence in settings
     new Notification();
+
+    // Handle IPC calls coming from the destkop application
+    handleIPCCalls();
 
     app.on("activate", () => {
         if (BrowserWindow.getAllWindows().filter((windows) => windows.isVisible()).length === 0) {
