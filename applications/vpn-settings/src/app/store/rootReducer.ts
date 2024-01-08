@@ -7,6 +7,7 @@ import {
     membersReducer,
     paymentMethodsReducer,
     plansReducer,
+    protonDomainsReducer,
     samlReducer,
 } from '@proton/account';
 import { calendarsReducer } from '@proton/calendar';
@@ -17,6 +18,7 @@ export const rootReducer = combineReducers({
     ...paymentMethodsReducer,
     ...plansReducer,
     ...membersReducer,
+    ...protonDomainsReducer,
     ...domainsReducer,
     ...domainsAddressesReducer,
     ...calendarsReducer,
