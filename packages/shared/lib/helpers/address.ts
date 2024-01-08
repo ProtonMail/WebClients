@@ -1,7 +1,7 @@
 import unary from '@proton/utils/unary';
 
-import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE } from '../constants';
-import { Address, Recipient } from '../interfaces';
+import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE, MEMBER_TYPE } from '../constants';
+import { Address, Domain, Member, Recipient, UserModel } from '../interfaces';
 import { ContactEmail } from '../interfaces/contacts';
 import { canonicalizeInternalEmail } from './email';
 
@@ -68,4 +68,26 @@ export const getPrimaryAddress = (addresses: Address[]) => {
     }
 
     return address;
+};
+
+export const getAvailableAddressDomains = ({
+    member,
+    user,
+    premiumDomains,
+    protonDomains,
+    customDomains,
+}: {
+    user: UserModel;
+    member: Member;
+    premiumDomains: string[];
+    protonDomains: string[];
+    customDomains: Domain[];
+}) => {
+    const hasProtonDomains = member.Type === MEMBER_TYPE.PROTON;
+
+    return [
+        ...(hasProtonDomains ? protonDomains : []),
+        ...(Array.isArray(customDomains) ? customDomains.map(({ DomainName }) => DomainName) : []),
+        ...(hasProtonDomains && user.hasPaidMail && Array.isArray(premiumDomains) ? premiumDomains : []),
+    ];
 };

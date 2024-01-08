@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { useModalState } from '@proton/components/components/modalTwo';
 import { Tooltip } from '@proton/components/components/tooltip';
 import { UserManagementMode } from '@proton/components/containers/members/types';
-import useDomains from '@proton/components/hooks/useDomains';
+import useCustomDomains from '@proton/components/hooks/useCustomDomains';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 
@@ -17,11 +17,11 @@ import { downloadSampleCSV } from './csv';
 import { UserTemplate } from './types';
 
 const MultiUserCreationSection = ({ app }: { app: APP_NAMES }) => {
-    const [domains = []] = useDomains();
+    const [customDomains = []] = useCustomDomains();
     const [usersToImport, setUsersToImport] = useState<UserTemplate[]>();
     const [createUserAccountsModal, setCreateUserAccountsModal, renderCreateUserAccountsModal] = useModalState();
 
-    const verifiedDomains = useMemo(() => (domains || []).filter(getIsDomainActive), [domains]);
+    const verifiedDomains = useMemo(() => (customDomains || []).filter(getIsDomainActive), [customDomains]);
 
     const onCSVFileUpload = (usersToImport: UserTemplate[]) => {
         setUsersToImport(usersToImport);

@@ -18,7 +18,7 @@ import {
     useGetUserKeys,
     useModals,
     useNotifications,
-    usePremiumDomains,
+    useProtonDomains,
     useUser,
 } from '../../hooks';
 import { useKTVerifier } from '../keyTransparency';
@@ -37,10 +37,10 @@ const PmMeButton = ({ children }: { children: ReactNode }) => {
     const { call } = useEventManager();
     const authentication = useAuthentication();
     const [addresses, loadingAddresses] = useAddresses();
-    const [premiumDomains, loadingPremiumDomains] = usePremiumDomains();
+    const [{ premiumDomains }, loadingProtonDomains] = useProtonDomains();
     const getUserKeys = useGetUserKeys();
-    const isLoadingDependencies = loadingAddresses || loadingPremiumDomains;
-    const [Domain = ''] = premiumDomains || [];
+    const isLoadingDependencies = loadingAddresses || loadingProtonDomains;
+    const [Domain = ''] = premiumDomains;
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => user);
 
     const createPremiumAddress = async () => {
