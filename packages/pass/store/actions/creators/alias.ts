@@ -8,8 +8,7 @@ import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
 import withCallback from '@proton/pass/store/actions/with-callback';
 import withNotification from '@proton/pass/store/actions/with-notification';
 import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
-import type { AliasOptions } from '@proton/pass/store/reducers';
-import type { AliasMailbox } from '@proton/pass/types';
+import type { AliasMailbox, AliasOptions } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const getAliasOptionsIntent = createAction(

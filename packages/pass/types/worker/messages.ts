@@ -6,7 +6,7 @@ import type { ExportOptions } from '@proton/pass/lib/export/types';
 import type { ImportReaderPayload } from '@proton/pass/lib/import/types';
 import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
 import type { Notification } from '@proton/pass/store/actions/with-notification';
-import type { AliasOptions, FeatureFlagState } from '@proton/pass/store/reducers';
+import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { PauseListEntry } from '@proton/pass/types/worker/settings';
 import type { TransferableFile } from '@proton/pass/utils/file/transferable-file';
@@ -15,7 +15,7 @@ import type { User } from '@proton/shared/lib/interfaces';
 
 import type { SessionLockStatus, ShareEventPayload } from '../api';
 import type { ForkPayload } from '../api/fork';
-import type { AliasCreationDTO, SelectedItem } from '../data';
+import type { AliasCreationDTO, AliasOptions, SelectedItem } from '../data';
 import type { TelemetryEvent } from '../data/telemetry';
 import type { Maybe, MaybeNull } from '../utils';
 import type { AutofillResult } from './autofill';
