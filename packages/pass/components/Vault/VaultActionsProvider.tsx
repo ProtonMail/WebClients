@@ -52,16 +52,25 @@ export const useVaultActions = () => useContext(VaultActionsContext);
 
 export const VaultActionsProvider: FC = ({ children }) => {
     const inviteContext = useInviteContext();
-    const { navigate, setFilters } = useNavigation();
+    const { navigate, setFilters, filters } = useNavigation();
     const dispatch = useDispatch();
 
     const [state, setState] = useState<MaybeNull<VaultActionState>>();
     const reset = () => setState(null);
 
-    const onVaultLeave = useCallback(({ shareId }: VaultShareItem) => dispatch(shareLeaveIntent({ shareId })), []);
     const onTrashEmpty = useCallback(() => dispatch(emptyTrashIntent()), []);
+
+    const onVaultDisabled = (shareId: string) => {
+        if (filters.selectedShareId === shareId) setFilters({ selectedShareId: null });
+        reset();
+    };
+
     const onVaultCreated = (selectedShareId: string) => setFilters({ selectedShareId });
-    const onVaultDeleted = () => setFilters({ selectedShareId: null });
+
+    const onVaultLeave = ({ shareId }: VaultShareItem) => {
+        onVaultDisabled(shareId);
+        dispatch(shareLeaveIntent({ shareId }));
+    };
 
     const actions = useMemo<VaultActionsContextValue>(
         () => ({
@@ -101,9 +110,7 @@ export const VaultActionsProvider: FC = ({ children }) => {
                     case 'edit':
                         return <VaultEdit vault={state.vault} onSuccess={reset} onClose={reset} />;
                     case 'delete':
-                        return (
-                            <VaultDelete vault={state.vault} onSubmit={pipe(onVaultDeleted, reset)} onClose={reset} />
-                        );
+                        return <VaultDelete vault={state.vault} onSubmit={onVaultDisabled} onClose={reset} />;
                     case 'move':
                         return <VaultMove vault={state.vault} onClose={reset} />;
 
@@ -112,7 +119,7 @@ export const VaultActionsProvider: FC = ({ children }) => {
                             <ConfirmationModal
                                 open
                                 onClose={reset}
-                                onSubmit={pipe(() => onVaultLeave(state.vault), reset)}
+                                onSubmit={() => onVaultLeave(state.vault)}
                                 title={c('Title').t`Leave vault ?`}
                                 submitText={c('Action').t`Leave`}
                                 alertText={c('Warning')
