@@ -11,6 +11,7 @@ import clsx from '@proton/utils/clsx';
 
 import SelectAllBanner from 'proton-mail/components/list/select-all/SelectAllBanner';
 import { getCanDisplaySelectAllBanner } from 'proton-mail/helpers/selectAll';
+import useDesktopAppIpc from 'proton-mail/hooks/useDesktopAppIpc';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { RootState } from 'proton-mail/logic/store';
@@ -145,6 +146,9 @@ const List = (
 
     const [messageCounts] = useMessageCounts();
     const [conversationCounts] = useConversationCounts();
+
+    // Handle IPC communication between React and Electron
+    useDesktopAppIpc();
 
     // Reduce the checklist if there are more than 4 elements in the view
     useEffect(() => {
