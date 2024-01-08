@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { KeyboardEvent, useEffect, useMemo, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -6,6 +6,8 @@ import { Button } from '@proton/atoms';
 import { AddressesAutocomplete, Icon, useApi, useContactEmails, useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { sendEmailInvitation } from '@proton/shared/lib/api/core/referrals';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { PROTONMAIL_DOMAINS, getEmailParts } from '@proton/shared/lib/helpers/email';
 import { Recipient, Referral } from '@proton/shared/lib/interfaces';
 
 import { useReferralInvitesContext } from '../ReferralInvitesContext';
@@ -29,14 +31,15 @@ const InviteSendEmail = () => {
     const [contactEmails, contactEmailIsLoading] = useContactEmails();
     const { createNotification } = useNotifications();
     const [apiLoading, withLoading] = useLoading();
+    const [protonDomains, setProtonDomains] = useState<Set<string>>(() => new Set(PROTONMAIL_DOMAINS));
 
     const filteredContactEmails = useMemo(() => {
         if (!contactEmails || contactEmailIsLoading) {
             return [];
         }
 
-        return filterContactEmails(contactEmails);
-    }, [contactEmails, contactEmailIsLoading]);
+        return filterContactEmails(protonDomains, contactEmails);
+    }, [protonDomains, contactEmails, contactEmailIsLoading]);
 
     const handleSendEmails = () => {
         if (!recipients.length) {
@@ -45,7 +48,7 @@ const InviteSendEmail = () => {
         }
 
         const emails = recipients
-            .filter((recipient) => isValidEmailAdressToRefer(recipient.Address))
+            .filter((recipient) => isValidEmailAdressToRefer(protonDomains, recipient.Address))
             .map((recipient) => recipient.Address);
 
         const emailSendLimitNumber = emailsAvailable - invitedReferrals.length;
@@ -63,24 +66,49 @@ const InviteSendEmail = () => {
 
         const request = api<SendEmailInvitationResult>(sendEmailInvitation({ emails }));
 
-        void withLoading(request).then((result) => {
-            if (result?.Referrals && result?.Referrals.length) {
-                createNotification({
-                    text: c('Info').ngettext(
-                        msgid`Invite successfully sent`,
-                        `Invites successfully sent`,
-                        result.Referrals.length
-                    ),
-                });
+        void withLoading(
+            request
+                .then((result) => {
+                    if (result?.Referrals && result?.Referrals.length) {
+                        createNotification({
+                            text: c('Info').ngettext(
+                                msgid`Invite successfully sent`,
+                                `Invites successfully sent`,
+                                result.Referrals.length
+                            ),
+                        });
 
-                setInvitedReferrals(result.Referrals);
-            }
+                        setInvitedReferrals(result.Referrals);
+                    }
 
-            setRecipients([]);
-        });
+                    setRecipients([]);
+                })
+                .catch((error) => {
+                    const { message } = getApiError(error);
+                    if (!message) {
+                        return;
+                    }
+
+                    const domains = emails.reduce<string[]>((acc, email) => {
+                        if (message.includes(email)) {
+                            const [, domain] = getEmailParts(email);
+                            if (domain) {
+                                acc.push(domain);
+                            }
+                        }
+                        return acc;
+                    }, []);
+
+                    if (domains.length) {
+                        setProtonDomains((set) => {
+                            return new Set([...set, ...domains]);
+                        });
+                    }
+                })
+        );
     };
 
-    const onAutocompleteKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    const onAutocompleteKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Backspace' && event.currentTarget.value.length === 0 && recipients.length > 0) {
             const lastRecipient = recipients[recipients.length - 1];
             const nextRecipients = recipients.filter((recipient) => recipient.Address !== lastRecipient.Address);
@@ -97,13 +125,12 @@ const InviteSendEmail = () => {
     };
 
     useEffect(() => {
-        if (recipients.some((recipient) => !isValidEmailAdressToRefer(recipient.Address))) {
+        if (recipients.some((recipient) => !isValidEmailAdressToRefer(protonDomains, recipient.Address))) {
             setHasInvalidRecipients(true);
             return;
         }
-
         setHasInvalidRecipients(false);
-    }, [recipients]);
+    }, [protonDomains, recipients]);
 
     return (
         <div>
@@ -118,9 +145,10 @@ const InviteSendEmail = () => {
                     >
                         {recipients.map((recipient) => (
                             <InviteSendEmailRecipient
+                                protonDomains={protonDomains}
                                 key={recipient.Address}
                                 recipient={recipient}
-                                isValid={isValidEmailAdressToRefer(recipient.Address)}
+                                isValid={isValidEmailAdressToRefer(protonDomains, recipient.Address)}
                                 onDeleteRecipient={(e) => {
                                     e.stopPropagation();
                                     setRecipients(recipients.filter((rec) => rec.Address !== recipient.Address));
