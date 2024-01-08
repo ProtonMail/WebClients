@@ -37,7 +37,6 @@ export const OTHER_INFORMATION_FIELDS = [
     'gender',
     'lang',
     'tz',
-    'geo',
     'title',
     'role',
     'photo',
