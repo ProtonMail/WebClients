@@ -33,7 +33,7 @@ const AlmostAllMailBanner = ({ className }: Props) => {
     return (
         <div
             className={clsx([
-                'rounded mx-2 px-4 py-2 flex flex-nowrap',
+                'rounded mx-2 px-4 py-2 flex flex-nowrap mb-2',
                 !isDelightMailListEnabled && 'bg-weak',
                 className,
             ])}
