@@ -20,7 +20,7 @@ export const useResponsiveHorizontalList = <T>(items: T[], options: UseResponsiv
 
         const children = Array.from(ref.current?.children ?? []) as HTMLElement[];
         const maxWidth = ref.current?.offsetWidth ?? 0;
-        if (children.length === 0 || maxWidth === 0) return;
+        if (maxWidth === 0) return;
 
         const checkLower = (n: number): number => {
             const widthForCount = seen.current.get(n);
@@ -38,7 +38,8 @@ export const useResponsiveHorizontalList = <T>(items: T[], options: UseResponsiv
             const cached = seen.current.get(currentCount);
             const width = cached ?? children.reduce((total, { offsetWidth }) => total + offsetWidth + options.gap, 0);
 
-            seen.current.set(currentCount, width);
+            /* children may have not rendered yet */
+            if (width !== 0) seen.current.set(currentCount, width);
 
             if (width > maxWidth) return Math.max(0, checkLower(currentCount - 1));
             if (width < maxWidth) return Math.min(max.current, checkUpper(currentCount + 1));
