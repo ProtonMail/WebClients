@@ -4,7 +4,9 @@ import { Button } from '@proton/atoms/Button';
 import { APP_NAMES, BRAND_NAME, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { CachedOrganizationKey, Domain, Organization } from '@proton/shared/lib/interfaces';
 
-import { ModalStateProps, Prompt, SubUserCreateModal, Tooltip, useDomains, useModalState } from '../..';
+import { ModalStateProps, Prompt, Tooltip, useModalState } from '../../components';
+import { useCustomDomains } from '../../hooks';
+import SubUserCreateModal from './SubUserCreateModal';
 
 interface Props extends ModalStateProps {
     organization: Organization;
@@ -19,9 +21,9 @@ interface ButtonProps {
 }
 
 const AddUserButton = ({ onClick }: ButtonProps) => {
-    const [domains = []] = useDomains();
+    const [customDomains = []] = useCustomDomains();
 
-    if (domains.length === 0) {
+    if (customDomains.length === 0) {
         return (
             <Tooltip
                 title={c('familyOffer_2023:Family plan')

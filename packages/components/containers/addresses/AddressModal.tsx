@@ -12,6 +12,7 @@ import {
     ENCRYPTION_CONFIGS,
     MEMBER_PRIVATE,
 } from '@proton/shared/lib/constants';
+import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import {
     confirmPasswordValidator,
     passwordLengthValidator,
@@ -43,15 +44,15 @@ import {
     useAddresses,
     useApi,
     useAuthentication,
+    useCustomDomains,
     useEventManager,
     useGetUserKeys,
     useNotifications,
-    usePremiumDomains,
+    useProtonDomains,
     useUser,
 } from '../../hooks';
 import { useKTVerifier } from '../keyTransparency';
 import SelectEncryption from '../keys/addKey/SelectEncryption';
-import useAddressDomains from './useAddressDomains';
 
 interface Props extends ModalProps<'form'> {
     member?: Member;
@@ -63,8 +64,10 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
     const { call } = useEventManager();
     const [user] = useUser();
     const [addresses] = useAddresses();
-    const [premiumDomains] = usePremiumDomains();
-    const [premiumDomain = ''] = premiumDomains || [];
+    const [customDomains, loadingCustomDomains] = useCustomDomains();
+    const [{ premiumDomains, protonDomains }, loadingProtonDomains] = useProtonDomains();
+    const loadingDomains = loadingCustomDomains || loadingProtonDomains;
+    const [premiumDomain = ''] = premiumDomains;
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const api = useApi();
@@ -85,7 +88,13 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
     const hasPremium = addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
 
     const selectedMember = members.find((otherMember) => otherMember.ID === model.id);
-    const [addressDomains, loadingDomains] = useAddressDomains(selectedMember || initialMember);
+    const addressDomains = getAvailableAddressDomains({
+        member: selectedMember || initialMember,
+        user,
+        protonDomains,
+        premiumDomains,
+        customDomains,
+    });
     const domainOptions = addressDomains.map((DomainName) => ({ text: DomainName, value: DomainName }));
     const selectedDomain = model.domain || domainOptions[0]?.text;
     const getUserKeys = useGetUserKeys();
@@ -238,18 +247,25 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
                     label={c('Label').t`Address`}
                     placeholder={c('Placeholder').t`Address`}
                     data-testid="settings:identity-section:add-address:address"
-                    suffix={
-                        loadingDomains ? (
-                            <CircleLoader />
-                        ) : domainOptions.length === 1 ? (
-                            <span
-                                className="text-ellipsis"
-                                id="user-domain-selected"
-                                title={`@${domainOptions[0].value}`}
-                            >
-                                @{domainOptions[0].value}
-                            </span>
-                        ) : (
+                    suffix={(() => {
+                        if (loadingDomains) {
+                            return <CircleLoader />;
+                        }
+                        if (domainOptions.length === 0) {
+                            return null;
+                        }
+                        if (domainOptions.length === 1) {
+                            return (
+                                <span
+                                    className="text-ellipsis"
+                                    id="user-domain-selected"
+                                    title={`@${domainOptions[0].value}`}
+                                >
+                                    @{domainOptions[0].value}
+                                </span>
+                            );
+                        }
+                        return (
                             <SelectTwo
                                 unstyled
                                 size={{ width: DropdownSizeUnit.Static }}
@@ -265,8 +281,8 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
                                     </Option>
                                 ))}
                             </SelectTwo>
-                        )
-                    }
+                        );
+                    })()}
                 />
                 <InputFieldTwo
                     id="name"
