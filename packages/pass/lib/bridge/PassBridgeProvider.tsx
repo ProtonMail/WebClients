@@ -1,4 +1,4 @@
-import type { FC} from 'react';
+import type { FC } from 'react';
 import { createContext, useContext, useRef } from 'react';
 
 import { useAddresses, useApi, useAuthentication, useUser } from '@proton/components/hooks';
@@ -15,7 +15,7 @@ export const PassBridgeProvider: FC = ({ children }) => {
     const [addresses] = useAddresses();
     const authStore = useAuthentication();
 
-    const bridge = useRef(createPassBridge({ api, user, addresses, authStore }));
+    const bridge = useRef(createPassBridge({ api, user, addresses: addresses!, authStore }));
 
     return <PassBridgeContext.Provider value={bridge.current}>{children}</PassBridgeContext.Provider>;
 };
