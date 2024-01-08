@@ -6,3 +6,13 @@ export type AliasSuffix = {
     isCustom: boolean;
     domain: string;
 };
+
+export type AliasOptions = {
+    mailboxes: AliasMailbox[];
+    suffixes: AliasSuffix[];
+};
+
+export type AliasDetails = {
+    aliasEmail: string;
+    mailboxes: AliasMailbox;
+};
