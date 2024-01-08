@@ -3,12 +3,22 @@ import { useMemo, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
+import { getDomainAdressError } from '@proton/components/containers/members/validateAddUser';
 import { ALL_MEMBERS_ID, BRAND_NAME, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
+import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Member, Organization, UserModel } from '@proton/shared/lib/interfaces';
 
 import { Alert, Loader, SettingsLink, useModalState } from '../../components';
-import { useAddresses, useMemberAddresses, useMembers, useNotifications, useOrganizationKey } from '../../hooks';
+import {
+    useAddresses,
+    useCustomDomains,
+    useMemberAddresses,
+    useMembers,
+    useNotifications,
+    useOrganizationKey,
+    useProtonDomains,
+} from '../../hooks';
 import { SettingsParagraph } from '../account';
 import AddressModal from './AddressModal';
 import AddressesTable from './AddressesTable';
@@ -35,6 +45,8 @@ interface Props {
 const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Props) => {
     const [members, loadingMembers] = useMembers();
     const [addresses, loadingAddresses] = useAddresses();
+    const [customDomains] = useCustomDomains();
+    const [{ premiumDomains, protonDomains }] = useProtonDomains();
     const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
     const [addressModalProps, setAddressModalOpen, renderAddressModal] = useModalState();
     const { createNotification } = useNotifications();
@@ -77,7 +89,18 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
     const handleAddAddress = (member: Member) => {
         if (member.Private === MEMBER_PRIVATE.READABLE && !organizationKey?.privateKey) {
             createNotification({ type: 'error', text: c('Error').t`The organization key must be activated first` });
-            throw new Error('Organization key is not decrypted');
+            return;
+        }
+        const domains = getAvailableAddressDomains({
+            member,
+            user,
+            premiumDomains,
+            customDomains,
+            protonDomains,
+        });
+        if (!domains.length) {
+            createNotification({ type: 'error', text: getDomainAdressError() });
+            return;
         }
         setTmpMember(member);
         setAddressModalOpen(true);

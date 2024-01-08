@@ -5,7 +5,7 @@ import useSAMLConfigs from '@proton/components/hooks/useSAMLConfigs';
 import { Domain, SSO } from '@proton/shared/lib/interfaces';
 
 import { Info, InputFieldTwo, Loader, ModalStateProps, useModalState } from '../../../components';
-import { useDomains } from '../../../hooks';
+import { useCustomDomains } from '../../../hooks';
 import {
     SettingsLayout,
     SettingsLayoutLeft,
@@ -93,13 +93,13 @@ const ConfigureSamlContent = ({
 };
 
 const SamlAuthenticationSection = () => {
-    const [domains, loadingDomains] = useDomains();
+    const [customDomains, loadingCustomDomains] = useCustomDomains();
     const [ssoConfigs, loadingSSOConfigs] = useSAMLConfigs();
 
     const [setupSSODomainModalProps, setSetupSSODomainModalOpen, renderSetupSSODomainModal] = useModalState();
     const [configureSamlModalProps, setConfigureSamlModalOpen, renderConfigureSamlModal] = useModalState();
 
-    if (loadingDomains || loadingSSOConfigs) {
+    if (loadingCustomDomains || loadingSSOConfigs) {
         return <Loader />;
     }
 
@@ -120,9 +120,9 @@ const SamlAuthenticationSection = () => {
                         .t`Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.`}
                 </SettingsParagraph>
 
-                {domains.length > 0 ? (
+                {customDomains.length > 0 ? (
                     <ConfigureSamlContent
-                        domain={domains[0]}
+                        domain={customDomains[0]}
                         ssoConfigs={ssoConfigs}
                         configureSamlModalProps={configureSamlModalProps}
                         setConfigureSamlModalOpen={setConfigureSamlModalOpen}

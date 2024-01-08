@@ -6,6 +6,7 @@ import { Avatar, Button } from '@proton/atoms';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { removeMember, updateRole } from '@proton/shared/lib/api/members';
 import { APP_NAMES, MEMBER_ROLE, MEMBER_TYPE } from '@proton/shared/lib/constants';
+import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import { getInitials, normalize } from '@proton/shared/lib/helpers/string';
 import { getHasVpnB2BPlan, hasFamily, hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
@@ -27,13 +28,14 @@ import {
 } from '../../../components';
 import {
     useApi,
-    useDomains,
+    useCustomDomains,
     useEventManager,
     useMemberAddresses,
     useMembers,
     useNotifications,
     useOrganization,
     useOrganizationKey,
+    useProtonDomains,
     useSubscription,
     useUser,
 } from '../../../hooks';
@@ -60,7 +62,8 @@ import UsersAndAddressesSectionHeader from './UsersAndAddressesSectionHeader';
 const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const [organization, loadingOrganization] = useOrganization();
     const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
-    const [domains, loadingDomains] = useDomains();
+    const [customDomains, loadingCustomDomains] = useCustomDomains();
+    const [{ protonDomains, premiumDomains }] = useProtonDomains();
     const [members, loadingMembers] = useMembers();
     const [subscription] = useSubscription();
     const [user] = useUser();
@@ -97,7 +100,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const [userInviteOrEditModalProps, setUserInviteOrEditModalOpen, renderUserInviteOrEditModal] =
         useModalState(cleanOption);
 
-    const verifiedDomains = useMemo(() => (domains || []).filter(getIsDomainActive), [domains]);
+    const verifiedDomains = useMemo(() => (customDomains || []).filter(getIsDomainActive), [customDomains]);
 
     const handleSearch = (value: string) => setKeywords(value);
 
@@ -208,6 +211,15 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         });
     };
 
+    // Members for which addresses can be created
+    const filteredMembers =
+        mode === UserManagementMode.DEFAULT
+            ? members?.filter((member) => {
+                  return getAvailableAddressDomains({ user, member, protonDomains, customDomains, premiumDomains })
+                      .length;
+              })
+            : members;
+
     const userFound = membersSelected.length;
 
     const tableLabel = [
@@ -221,14 +233,14 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         '',
     ];
 
-    const disableInviteUserButton = loadingOrganization || loadingDomains || hasReachedLimit;
+    const disableInviteUserButton = loadingOrganization || loadingCustomDomains || hasReachedLimit;
 
     const disableAddUserButton =
         loadingOrganization ||
-        loadingDomains ||
+        loadingCustomDomains ||
         loadingOrganizationKey ||
         organization.UsedMembers >= organization.MaxMembers;
-    const loadingAddAddresses = loadingOrganization || loadingDomains || loadingOrganizationKey || loadingMembers;
+    const loadingAddAddresses = loadingOrganization || loadingCustomDomains || loadingOrganizationKey || loadingMembers;
 
     const settingsTitle = (() => {
         if (hasFamily(subscription)) {
@@ -260,8 +272,12 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                 )}
             </SettingsParagraph>
             <Block className="flex items-start">
-                {renderAddAddressModal && members && (
-                    <AddressModal members={members} organizationKey={organizationKey} {...addAddressModalProps} />
+                {renderAddAddressModal && filteredMembers && (
+                    <AddressModal
+                        members={filteredMembers}
+                        organizationKey={organizationKey}
+                        {...addAddressModalProps}
+                    />
                 )}
                 {renderSubUserDeleteModal && tmpMember && (
                     <SubUserDeleteModal
