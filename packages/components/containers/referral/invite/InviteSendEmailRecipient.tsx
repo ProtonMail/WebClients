@@ -10,19 +10,20 @@ import clsx from '@proton/utils/clsx';
 import { isProtonAddress } from './helpers';
 
 interface Props {
+    protonDomains: Set<string>;
     recipient: Recipient;
     onDeleteRecipient: MouseEventHandler;
     isValid: boolean;
 }
 
-const getErrorMessage = (emailAddress: string) => {
-    if (isProtonAddress(emailAddress)) {
+const getErrorMessage = (protonDomains: Set<string>, emailAddress: string) => {
+    if (isProtonAddress(protonDomains, emailAddress)) {
         return c('Info').t`You cannot refer ${MAIL_APP_NAME} users`;
     }
     return c('Info').t`${emailAddress} is invalid`;
 };
 
-const InviteSendEmailRecipient = ({ recipient, onDeleteRecipient, isValid }: Props) => {
+const InviteSendEmailRecipient = ({ protonDomains, recipient, onDeleteRecipient, isValid }: Props) => {
     const emailAddress = recipient.Address;
 
     return (
@@ -33,7 +34,7 @@ const InviteSendEmailRecipient = ({ recipient, onDeleteRecipient, isValid }: Pro
             ])}
             key={recipient.Address}
         >
-            <Tooltip title={!isValid ? getErrorMessage(emailAddress) : undefined}>
+            <Tooltip title={!isValid ? getErrorMessage(protonDomains, emailAddress) : undefined}>
                 <span className="flex items-center px-2">
                     <span className="text-ellipsis">{recipient.Address}</span>
                 </span>

@@ -1,24 +1,21 @@
-import { PROTONMAIL_DOMAINS, getEmailParts, validateEmailAddress } from '@proton/shared/lib/helpers/email';
+import { getEmailParts, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-export const isProtonAddress = (address: string) => {
+export const isProtonAddress = (protonDomains: Set<string>, address: string) => {
     const [, domain] = getEmailParts(address);
 
-    return PROTONMAIL_DOMAINS.includes(domain);
+    return protonDomains.has(domain);
 };
 
-export const isValidEmailAdressToRefer = (address: string) => {
+export const isValidEmailAdressToRefer = (protonDomains: Set<string>, address: string) => {
     const isValid = validateEmailAddress(address);
-    return isValid && !isProtonAddress(address);
+    return isValid && !isProtonAddress(protonDomains, address);
 };
 
-export const filterContactEmails = (contactEmails: ContactEmail[]) => {
+export const filterContactEmails = (protonDomains: Set<string>, contactEmails: ContactEmail[]) => {
     return contactEmails.filter((contact) => {
-        if (isValidEmailAdressToRefer(contact.Email)) {
-            return true;
-        }
-        return false;
+        return isValidEmailAdressToRefer(protonDomains, contact.Email);
     });
 };
 
