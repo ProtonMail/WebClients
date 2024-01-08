@@ -15,7 +15,13 @@ import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features'
 
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
-export const getFreeVPNConnectionTotal = () => c('new_plans: feature').t`1 free VPN connection in total`;
+export const getB2BFreeVPNConnectionsText = (n: number) => {
+    return c('Subscription attribute').ngettext(
+        msgid`${n} free VPN connection per user`,
+        `${n} free VPN connections per user`,
+        n
+    );
+};
 
 export const getAdvancedVPNFeature = (): PlanCardFeatureDefinition => ({
     icon: 'checkmark-circle',
@@ -190,19 +196,10 @@ export const getTor = (included: boolean, highlight?: boolean): PlanCardFeatureD
 };
 
 const getVPNConnectionsB2B = (n = 0, highlight?: boolean): PlanCardFeatureDefinition => {
-    const BRAND_NAME_TWO = BRAND_NAME;
-
     return {
-        text:
-            n === 1
-                ? getFreeVPNConnectionTotal()
-                : c('new_plans: feature').ngettext(
-                      msgid`${n} VPN connection per user`,
-                      `${n} VPN connections per user`,
-                      n
-                  ),
+        text: n === 1 ? getB2BFreeVPNConnectionsText(1) : getB2BHighSpeedVPNConnectionsText(n),
         tooltip: c('new_plans: tooltip')
-            .t`One VPN connection allows one device to connect to ${BRAND_NAME} VPN at any given time. For instance, to connect a phone and a laptop to ${BRAND_NAME_TWO} VPN at the same time, you need two VPN connections.`,
+            .t`One VPN connection allows one device to connect to ${VPN_APP_NAME} at any given time. For instance, to connect a phone and a laptop to ${VPN_APP_NAME} at the same time, you need two VPN connections.`,
         included: true,
         highlight,
         icon: 'brand-proton-vpn',
@@ -447,12 +444,12 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
             name: 'vpn-connections-per-user',
             target: Audience.B2B,
             plans: {
-                [PLANS.FREE]: getVPNConnectionsB2B(1),
+                [PLANS.FREE]: getVPNConnections(1),
                 [PLANS.BUNDLE]: getVPNConnectionsB2B(VPN_CONNECTIONS),
-                [PLANS.MAIL]: getVPNConnectionsB2B(1),
+                [PLANS.MAIL]: getVPNConnections(1),
                 [PLANS.VPN]: getVPNConnectionsB2B(VPN_CONNECTIONS),
-                [PLANS.DRIVE]: getVPNConnectionsB2B(1),
-                [PLANS.PASS_PLUS]: getVPNConnectionsB2B(1),
+                [PLANS.DRIVE]: getVPNConnections(1),
+                [PLANS.PASS_PLUS]: getVPNConnections(1),
                 [PLANS.FAMILY]: getVPNConnectionsB2B(1),
                 [PLANS.MAIL_PRO]: getVPNConnectionsB2B(1),
                 [PLANS.BUNDLE_PRO]: getVPNConnectionsB2B(VPN_CONNECTIONS),
