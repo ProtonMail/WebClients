@@ -23,9 +23,7 @@ const RewardsProgress = ({ rewards, rewardsLimit }: Props) => {
             <div className="lg:flex-1">
                 <b>{c('Info').t`Credits earned`}</b>
             </div>
-            <div className="lg:flex-1">
-                <Meter value={5} max={rewardsLimit} />
-            </div>
+            <div className="lg:flex-1">{rewards > 0 && <Meter value={rewards} max={rewardsLimit} />}</div>
             <div className="lg:flex-1 text-right">{
                 // translator: Full sentence can be something like this : "$30 of $90"
                 c('Info').t`${current} of ${total}`
