@@ -1,4 +1,4 @@
-@use "sass:map";
+@use 'sass:map';
 @import '~@proton/styles/scss/lib';
 
 .modal-two {
@@ -13,6 +13,10 @@
 	justify-content: center;
 	animation: 0.1s ease-out forwards;
 	animation-name: anime-modal-two-in;
+
+	// these avoids some weird sizes on edge cases like changing screens
+	max-inline-size: 100vw;
+	max-block-size: 100vh;
 
 	@include media('<=small') {
 		padding: 2em;
