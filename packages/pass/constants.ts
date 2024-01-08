@@ -25,7 +25,7 @@ export const PASS_CHROME_URL = 'https://chrome.google.com/webstore/detail/proton
 export const PASS_FIREFOX_URL = 'https://addons.mozilla.org/en-US/firefox/addon/proton-pass/';
 export const PASS_SENTINEL_LINK = 'https://proton.me/blog/sentinel-included-pass-plus';
 
-export const ITEM_COUNT_RATING_PROMPT = ENV === 'production' ? 10 : 1;
+export const ITEM_COUNT_RATING_PROMPT = 10;
 
 export const PASS_UPGRADE_PATH = 'pass/upgrade';
 export const PASS_EOY_PATH = `pass/signup?plan=pass2023&cycle=12&coupon=EOY2023`;
@@ -34,11 +34,7 @@ export const PASS_BF_MONTHLY_PRICE = 199;
 export const PASS_EOY_MONTHLY_PRICE = 199;
 export const PASS_REGULAR_MONTHLY_PRICE = 399;
 
-export const PASS_BF_2023_DATES = [
-    ENV === 'development' ? Date.now() - 1 : +new Date('2023-11-02T06:00:00'),
-    +new Date('2023-12-04T00:00:00'),
-] as const;
-
+export const PASS_BF_2023_DATES = [+new Date('2023-11-02T06:00:00'), +new Date('2023-12-04T00:00:00')] as const;
 export const PASS_EOY_DATE_END = +new Date('2024-01-03T09:00:00');
 
 export enum UpsellRefPrefix {

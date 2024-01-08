@@ -1,4 +1,4 @@
-import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
+import { PassCrypto } from '@proton/pass/lib/crypto';
 import { getAllShareKeys, getShareLatestEventId } from '@proton/pass/lib/shares/share.requests';
 import { decodeVaultContent } from '@proton/pass/lib/vaults/vault-proto.transformer';
 import type { Maybe, Share, ShareGetResponse, ShareKeyResponse, ShareType } from '@proton/pass/types';

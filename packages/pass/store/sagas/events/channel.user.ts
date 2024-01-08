@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-throw-literal, curly */
 import { all, fork, put, select } from 'redux-saga/effects';
 
-import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
+import { PassCrypto } from '@proton/pass/lib/crypto';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import type { EventCursor, EventManagerEvent } from '@proton/pass/lib/events/manager';
 import { getUserAccessIntent, syncIntent, userEvent } from '@proton/pass/store/actions';
