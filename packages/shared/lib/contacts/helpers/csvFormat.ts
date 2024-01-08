@@ -533,7 +533,6 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
             value,
             checked: true,
             field: 'note',
-            type: 'work',
         });
     }
     if (property === 'gender') {
