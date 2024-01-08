@@ -14,5 +14,5 @@ export type AliasOptions = {
 
 export type AliasDetails = {
     aliasEmail: string;
-    mailboxes: AliasMailbox;
+    mailboxes: AliasMailbox[];
 };
