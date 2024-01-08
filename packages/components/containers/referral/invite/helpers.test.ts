@@ -1,3 +1,5 @@
+import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
+
 import { isValidEmailAdressToRefer } from './helpers';
 
 describe('Referral helpers', () => {
@@ -9,9 +11,11 @@ describe('Referral helpers', () => {
         ['àaaaa@yahoo.fr', false],
     ];
 
+    const protonDomains = new Set(PROTON_DOMAINS);
+
     describe('isValidEmailAddress', () => {
         it.each(addresses)('%s should be %p', (address, expectedResult) => {
-            expect(isValidEmailAdressToRefer(address)).toBe(expectedResult);
+            expect(isValidEmailAdressToRefer(protonDomains, address)).toBe(expectedResult);
         });
     });
 });
