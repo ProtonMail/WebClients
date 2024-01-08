@@ -1,10 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, original } from '@reduxjs/toolkit';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getAllMembers } from '@proton/shared/lib/api/members';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Member } from '@proton/shared/lib/interfaces';
+import type { Member, User } from '@proton/shared/lib/interfaces';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 
 import { serverEvent } from '../eventLoop';
@@ -22,13 +22,19 @@ type Model = NonNullable<SliceState['value']>;
 
 export const selectMembers = (state: State) => state.members;
 
+const canFetch = (user: User) => {
+    return isAdmin(user);
+};
+
+const freeMembers: Member[] = [];
+
 const modelThunk = createAsyncModelThunk<Model, State, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ dispatch, extraArgument }) => {
         const user = await dispatch(userThunk());
-        if (user.isAdmin) {
+        if (canFetch(user)) {
             return getAllMembers(extraArgument.api);
         }
-        return [];
+        return freeMembers;
     },
     previous: previousSelector(selectMembers),
 });
@@ -44,18 +50,28 @@ const slice = createSlice({
     extraReducers: (builder) => {
         handleAsyncModel(builder, modelThunk);
         builder.addCase(serverEvent, (state, action) => {
-            if (state.value && state.value.length > 0 && action.payload.User && !isAdmin(action.payload.User)) {
-                // Do not get any members update when user becomes unsubscribed.
-                state.value = [];
+            if (!state.value) {
                 return;
             }
 
-            if (state.value && action.payload.Members) {
+            if (action.payload.Members) {
                 state.value = updateCollection({
                     model: state.value,
                     events: action.payload.Members,
                     itemKey: 'Member',
                 });
+            }
+
+            const isFreeMembers = original(state)?.value === freeMembers;
+
+            if (!isFreeMembers && action.payload.User && !canFetch(action.payload.User)) {
+                // Do not get any members update when user becomes unsubscribed.
+                state.value = freeMembers;
+            }
+
+            if (isFreeMembers && action.payload.User && canFetch(action.payload.User)) {
+                delete state.value;
+                delete state.error;
             }
         });
     },
