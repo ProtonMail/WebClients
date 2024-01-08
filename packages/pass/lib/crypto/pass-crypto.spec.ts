@@ -5,7 +5,8 @@ import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS } from '@proton/shared/li
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { Address, DecryptedKey, Key, User } from '@proton/shared/lib/interfaces';
 
-import { PassCrypto } from './pass-crypto';
+import { PassCrypto, exposePassCrypto } from './index';
+import { createPassCrypto } from './pass-crypto';
 import * as processes from './processes';
 import { decryptData } from './utils/crypto-helpers';
 import { PassCryptoHydrationError, PassCryptoNotHydratedError, PassCryptoShareError } from './utils/errors';
@@ -48,6 +49,8 @@ describe('PassCrypto', () => {
                 } as Key,
             ],
         } as User;
+
+        exposePassCrypto(createPassCrypto({ initCryptoEndpoint: false }));
     });
 
     afterAll(async () => releaseCryptoProxy());

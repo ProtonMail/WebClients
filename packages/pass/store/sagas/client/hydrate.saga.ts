@@ -1,6 +1,6 @@
 import { put, select, takeLeading } from 'redux-saga/effects';
 
-import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
+import { PassCrypto } from '@proton/pass/lib/crypto';
 import { decryptCachedState } from '@proton/pass/lib/crypto/utils/cache.decrypt';
 import { getUserState } from '@proton/pass/lib/user/user.requests';
 import {

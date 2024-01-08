@@ -1,4 +1,4 @@
-import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
+import { PassCrypto } from '@proton/pass/lib/crypto';
 import type { ItemRevision, ItemRevisionContentsResponse } from '@proton/pass/types';
 
 import { parseOpenedItem } from './item-proto.transformer';

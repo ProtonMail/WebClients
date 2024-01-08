@@ -1,10 +1,8 @@
 import { put, takeEvery } from 'redux-saga/effects';
-import { c } from 'ttag';
 
-import { api } from '@proton/pass/lib/api/api';
+import { getAliasOptions } from '@proton/pass/lib/alias/alias.requests';
 import { getAliasOptionsFailure, getAliasOptionsIntent, getAliasOptionsSuccess } from '@proton/pass/store/actions';
-import type { AliasOptions } from '@proton/pass/store/reducers';
-import type { AliasOptionsResponse } from '@proton/pass/types';
+import type { AliasOptions } from '@proton/pass/types';
 
 function* requestAliasOptions(action: ReturnType<typeof getAliasOptionsIntent>) {
     const {
@@ -13,27 +11,7 @@ function* requestAliasOptions(action: ReturnType<typeof getAliasOptionsIntent>) 
     } = action;
 
     try {
-        const aliasOptions: AliasOptionsResponse = yield api({
-            url: `pass/v1/share/${shareId}/alias/options`,
-            method: 'get',
-        }).then(({ Options }) => {
-            if (!Options) throw new Error(c('Error').t`Alias options could not be resolved`);
-            return Options;
-        });
-
-        const options: AliasOptions = {
-            suffixes: aliasOptions.Suffixes.map((data) => ({
-                signedSuffix: data.SignedSuffix!,
-                suffix: data.Suffix!,
-                isCustom: data.IsCustom!,
-                domain: data.Domain!,
-            })),
-            mailboxes: aliasOptions.Mailboxes.map((mailbox) => ({
-                email: mailbox.Email,
-                id: mailbox.ID,
-            })),
-        };
-
+        const options: AliasOptions = yield getAliasOptions(shareId);
         const aliasOptionsSuccessAction = getAliasOptionsSuccess(request.id, { options });
         yield put(aliasOptionsSuccessAction);
         onAliasOptionsIntentProcessed?.(aliasOptionsSuccessAction);
