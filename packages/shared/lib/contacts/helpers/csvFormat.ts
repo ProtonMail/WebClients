@@ -523,7 +523,7 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
             header,
             value,
             checked: true,
-            field: 'geo',
+            field: 'note',
             type: 'main',
         });
     }
@@ -532,7 +532,7 @@ export const toPreVcard = ({ original, standard }: { original: string; standard:
             header,
             value,
             checked: true,
-            field: 'geo',
+            field: 'note',
             type: 'work',
         });
     }
