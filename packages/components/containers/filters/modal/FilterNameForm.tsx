@@ -3,6 +3,7 @@ import { KeyboardEvent } from 'react';
 import { c } from 'ttag';
 
 import { Input } from '@proton/atoms';
+import { useNotifications } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
 import { Field } from '../../../components';
@@ -21,22 +22,36 @@ interface Props {
 }
 
 const FilterNameForm = ({ isSieveFilter = false, model, errors, onChange, loading }: Props) => {
+    const { createNotification } = useNotifications();
+
     const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-        if (e.key === 'Enter' && !loading && !errors.name) {
+        if (e.key === 'Enter') {
             e.preventDefault();
             e.stopPropagation();
+            if (!loading && !errors.name) {
+                if (isSieveFilter) {
+                    onChange({
+                        ...model,
+                    } as AdvancedSimpleFilterModalModel);
 
-            if (isSieveFilter) {
+                    return;
+                }
                 onChange({
                     ...model,
-                } as AdvancedSimpleFilterModalModel);
-
-                return;
+                    step: Step.CONDITIONS,
+                } as SimpleFilterModalModel);
+            } else {
+                // If there is an error in the name, it can be for two reasons:
+                // - The filter has no name
+                // - The filter has a name that is already used
+                // For the 2nd case, we want to display an error notification
+                if (model.name.length > 0) {
+                    createNotification({
+                        text: c('Title').t`A filter with this name already exists`,
+                        type: 'error',
+                    });
+                }
             }
-            onChange({
-                ...model,
-                step: Step.CONDITIONS,
-            } as SimpleFilterModalModel);
         }
     };
 
