@@ -8,13 +8,8 @@ import {
     itemEditIntent,
 } from '@proton/pass/store/actions';
 import type { MaybeNull } from '@proton/pass/types';
-import type { AliasMailbox, AliasSuffix } from '@proton/pass/types/data/alias';
+import type { AliasMailbox, AliasOptions } from '@proton/pass/types/data/alias';
 import { merge } from '@proton/pass/utils/object/merge';
-
-export type AliasOptions = {
-    mailboxes: AliasMailbox[];
-    suffixes: AliasSuffix[];
-};
 
 export type AliasState = {
     aliasOptions: MaybeNull<AliasOptions>;
