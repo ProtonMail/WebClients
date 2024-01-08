@@ -72,8 +72,7 @@ interface AppConfiguration {
     subdomain: string;
     name: string;
     bareName: string;
-    clientID?: string;
-    webClientID?: string;
+    clientID: string;
     windowsClientID?: string;
     macosClientID?: string;
     icon: string;
@@ -86,9 +85,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         subdomain: 'account',
         name: 'Proton Account',
         bareName: 'Account',
-        webClientID: 'web-account',
-        windowsClientID: 'windows-mail',
-        macosClientID: 'macos-mail',
+        clientID: 'web-account',
         icon: 'brand-proton',
         settingsSlug: 'account',
     },
@@ -97,7 +94,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         subdomain: 'account',
         name: 'Proton Account',
         bareName: 'Account',
-        webClientID: 'web-account-lite',
+        clientID: 'web-account-lite',
         windowsClientID: 'windows-mail',
         macosClientID: 'macos-mail',
         icon: 'brand-proton',
@@ -108,7 +105,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         subdomain: '',
         name: 'Proton VPN Browser Extension',
         bareName: 'Browser VPN Extension',
-        webClientID: 'browser-vpn',
+        clientID: 'browser-vpn',
         icon: 'brand-proton-vpn',
         settingsSlug: '',
     },
@@ -117,7 +114,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         subdomain: 'mail',
         name: MAIL_APP_NAME,
         bareName: MAIL_SHORT_APP_NAME,
-        webClientID: 'web-mail',
+        clientID: 'web-mail',
         windowsClientID: 'windows-mail',
         macosClientID: 'macos-mail',
         icon: 'brand-proton-mail',
@@ -128,7 +125,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         subdomain: 'contacts',
         name: 'ProtonContacts',
         bareName: 'Contacts',
-        webClientID: 'web-contacts',
+        clientID: 'web-contacts',
         icon: 'brand-proton',
         settingsSlug: 'contacts',
     },
@@ -137,7 +134,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         subdomain: 'drive',
         name: DRIVE_APP_NAME,
         bareName: DRIVE_SHORT_APP_NAME,
-        webClientID: 'web-drive',
+        clientID: 'web-drive',
         icon: 'brand-proton-drive',
         settingsSlug: 'drive',
     },
@@ -146,7 +143,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         subdomain: 'calendar',
         name: CALENDAR_APP_NAME,
         bareName: CALENDAR_SHORT_APP_NAME,
-        webClientID: 'web-calendar',
+        clientID: 'web-calendar',
         windowsClientID: 'windows-mail',
         macosClientID: 'macos-mail',
         icon: 'brand-proton-calendar',
@@ -157,7 +154,9 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         subdomain: 'pass',
         name: PASS_APP_NAME,
         bareName: PASS_SHORT_APP_NAME,
-        webClientID: 'web-pass',
+        clientID: 'web-pass',
+        windowsClientID: 'windows-pass',
+        macosClientID: 'macos-pass',
         icon: 'brand-proton-pass',
         settingsSlug: 'pass',
     },
@@ -184,7 +183,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         subdomain: '',
         name: VPN_APP_NAME,
         bareName: VPN_SHORT_APP_NAME,
-        webClientID: 'web-vpn-settings',
+        clientID: 'web-vpn-settings',
         icon: 'brand-proton-vpn',
         settingsSlug: 'vpn',
     },
@@ -193,7 +192,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         subdomain: '',
         name: '',
         bareName: 'Admin',
-        webClientID: 'web-admin',
+        clientID: 'web-admin',
         icon: 'brand-proton',
         settingsSlug: '',
     },
@@ -202,7 +201,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         subdomain: 'verify',
         name: VERIFY_APP_NAME,
         bareName: 'Verify',
-        webClientID: 'web-verify',
+        clientID: 'web-verify',
         icon: 'brand-proton',
         settingsSlug: '',
     },
@@ -218,7 +217,7 @@ export enum PRODUCT_BIT {
 export type APP_KEYS = keyof typeof APPS;
 export type APP_NAMES = (typeof APPS)[APP_KEYS];
 export type APP_CLIENT_IDS =
-    | (typeof APPS_CONFIGURATION)[keyof typeof APPS_CONFIGURATION]['webClientID']
+    | (typeof APPS_CONFIGURATION)[keyof typeof APPS_CONFIGURATION]['clientID']
     | 'android_tv-vpn';
 export const SSO_PATHS = {
     EXTERNAL_SSO_LOGIN: '/sso/login',
