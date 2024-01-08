@@ -42,9 +42,8 @@ export type NavigationContextValue = {
     /** Navigates to an item view. By default it will go to the `view` screen,
      * but this can be customized via options. */
     selectItem: <S>(shareId: string, itemId: string, options?: ItemSelectOptions<S>) => void;
-    /** Sets the filters and updates the location's search parameters. You can pass
-     * an optional `pathname` argument if you want to navigate in the same call */
-    setFilters: (filters: Partial<ItemFilters>, pathname?: string) => void;
+    /** Sets the filters and updates the location's search parameters. */
+    setFilters: (filters: Partial<ItemFilters>) => void;
     /** Joins the current location search parameters to the provided path */
     preserveSearch: (path: string) => string;
     /** Resolves the current location */
