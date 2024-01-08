@@ -231,7 +231,7 @@ export const updateItemLastUseTime = async (shareId: string, itemId: string) =>
         })
     ).Revision!;
 
-const requestAllItemsForShareId = async (
+export const requestAllItemsForShareId = async (
     shareId: string,
     onItemsLoaded?: (total: number) => void
 ): Promise<ItemRevisionContentsResponse[]> => {
