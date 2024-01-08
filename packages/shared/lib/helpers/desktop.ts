@@ -30,3 +30,8 @@ export const getTypeformDesktopUrl = (appVersion: string, appName: APP_NAMES) =>
     // const clientID = getClientID(appName);
     return `https://form.typeform.com/to/XNqstRfx#electron_version=${browser.version}=&os=${os.name}&app_version=${appName}@${appVersion}`;
 };
+
+/* Electron apps built with Electron Forge will inject the `productName` and
+ * `version` properties of the app's package.json in the user-agent. */
+export const isElectronMail = () => isElectronApp() && /ProtonMail/i.test(ua.ua);
+export const isElectronPass = () => isElectronApp() && /ProtonPass/i.test(ua.ua);
