@@ -47,7 +47,8 @@ const RepeatEveryRow = ({ frequencyModel, start, weekStartsOn, onChange, errors,
     return (
         <div className="flex flex-column md:flex-row">
             <div className="md:flex-1">
-                <label htmlFor="event-custom-frequency-number">{c('Label').t`Repeat every`}</label>
+                <label htmlFor="event-custom-frequency-number" id="label-event-custom-frequency">{c('Label')
+                    .t`Repeat every`}</label>
                 <div className="flex flex-column md:flex-row my-2">
                     <div className="flex flex-nowrap md:flex-1">
                         <span className="w-custom" style={{ '--w-custom': '6em' }}>
@@ -65,6 +66,7 @@ const RepeatEveryRow = ({ frequencyModel, start, weekStartsOn, onChange, errors,
                                 aria-invalid={isSubmitted && !!errors.interval}
                                 isSubmitted={isSubmitted}
                                 title={c('Title').t`Choose how often this event repeats`}
+                                aria-describedby="label-event-custom-frequency event-custom-frequency-select"
                             />
                         </span>
                         <span className="flex-1 ml-2">
@@ -74,6 +76,7 @@ const RepeatEveryRow = ({ frequencyModel, start, weekStartsOn, onChange, errors,
                                 value={frequencyModel.frequency}
                                 onChange={({ value }) => handleChangeFrequency(value as FREQUENCY)}
                                 title={c('Title').t`Select event frequency interval`}
+                                aria-describedby="label-event-custom-frequency event-custom-frequency-number event-custom-frequency-select"
                             >
                                 {intervalOptions.map(({ text, value }) => (
                                     <Option key={value} value={value} title={text} />
