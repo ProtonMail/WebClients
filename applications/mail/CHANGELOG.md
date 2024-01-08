@@ -1,3 +1,20 @@
+## Release 5.0.34 — Jan 23th, 2024
+
+### New features
+
+-   Introducing bulk actions for Mail! You can now choose an action to be applied to all messages/conversations in a given location, whether it's moving to another folder, labeling or marking as read/unread. Just select all messages on a page to see the new option.
+
+### Improvements
+
+-   When creating a folder, you can now find the respective parent folder more easily - just start typing the folder name and you will now see a list of suggestions
+
+### Fixes
+
+-   Fixed an issue where the option to unsubscribe from a newsletter would not be displayed when moving to Spam while conversation grouping is disabled
+-   Fixed an issue where on rare occasions a "No messages found" screen would be displayed if switching between pages in search results too fast
+-   Fixed an issue where the folder message count would be wrongly displayed for Snoozed messages
+-   Fixed an issue where a reference to a base64 image would be added if switching the signature from plain text to HTML
+
 ## Release 5.0.33 — Dec 27th, 2023
 
 ### Improvements
