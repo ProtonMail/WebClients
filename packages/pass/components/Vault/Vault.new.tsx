@@ -28,7 +28,7 @@ const FORM_ID = 'vault-create';
 
 export const VaultNew: VFC<Props> = ({ onSuccess, ...modalProps }) => {
     const { vaultLimitReached } = useSelector(selectVaultLimits);
-    const passPlan = useSelector(selectPassPlan);
+    const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
 
     const createVault = useActionRequest({
         action: vaultCreationIntent,
@@ -77,7 +77,9 @@ export const VaultNew: VFC<Props> = ({ onSuccess, ...modalProps }) => {
                                     <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
                                 </Button>,
 
-                                !vaultLimitReached ? (
+                                vaultLimitReached && isFreePlan ? (
+                                    <UpgradeButton key="upgrade-button" upsellRef={UpsellRef.LIMIT_VAULT} />
+                                ) : (
                                     <Button
                                         key="modal-submit-button"
                                         type="submit"
@@ -85,14 +87,12 @@ export const VaultNew: VFC<Props> = ({ onSuccess, ...modalProps }) => {
                                         color="norm"
                                         pill
                                         loading={createVault.loading}
-                                        disabled={!form.isValid || createVault.loading}
+                                        disabled={!form.isValid || createVault.loading || vaultLimitReached}
                                     >
                                         {createVault.loading
                                             ? c('Action').t`Creating vault`
                                             : c('Action').t`Create vault`}
                                     </Button>
-                                ) : (
-                                    <UpgradeButton key="upgrade-button" upsellRef={UpsellRef.LIMIT_VAULT} />
                                 ),
                             ]}
                         />
@@ -102,8 +102,7 @@ export const VaultNew: VFC<Props> = ({ onSuccess, ...modalProps }) => {
                         {vaultLimitReached && (
                             <Card className="mb-4">
                                 {c('Info').t`You have reached the limit of vaults you can create.`}
-                                {passPlan === UserPassPlan.FREE &&
-                                    c('Info').t` Upgrade to a paid plan to create multiple vaults.`}
+                                {isFreePlan && c('Info').t` Upgrade to a paid plan to create multiple vaults.`}
                             </Card>
                         )}
                         <FormikProvider value={form}>
