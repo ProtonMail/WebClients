@@ -3,8 +3,7 @@ import { c } from 'ttag';
 
 import { api } from '@proton/pass/lib/api/api';
 import { getAliasOptionsFailure, getAliasOptionsIntent, getAliasOptionsSuccess } from '@proton/pass/store/actions';
-import type { AliasOptions } from '@proton/pass/store/reducers';
-import type { AliasOptionsResponse } from '@proton/pass/types';
+import type { AliasOptions, AliasOptionsResponse } from '@proton/pass/types';
 
 function* requestAliasOptions(action: ReturnType<typeof getAliasOptionsIntent>) {
     const {
