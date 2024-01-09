@@ -32,6 +32,7 @@ export type PassCryptoManagerContext = {
 export type PassCryptoSnapshot = Pick<PassCryptoManagerContext, 'shareManagers'>;
 
 export interface PassCryptoWorker extends SerializableCryptoContext<PassCryptoSnapshot> {
+    ready: boolean;
     getContext: () => PassCryptoManagerContext;
     hydrate: (data: {
         addresses: Address[];
@@ -110,11 +111,11 @@ export interface SerializableCryptoContext<S> {
 export type SerializedCryptoContext<T> = T extends SerializableCryptoContext<infer U>
     ? SerializedCryptoContext<U>
     : T extends Uint8Array
-    ? string
-    : T extends Map<infer K, infer U>
-    ? (readonly [K, SerializedCryptoContext<U>])[]
-    : T extends (infer U)[]
-    ? SerializedCryptoContext<U>[]
-    : T extends {}
-    ? { [K in keyof T as T[K] extends CryptoKey ? never : K]: SerializedCryptoContext<T[K]> }
-    : T;
+      ? string
+      : T extends Map<infer K, infer U>
+        ? (readonly [K, SerializedCryptoContext<U>])[]
+        : T extends (infer U)[]
+          ? SerializedCryptoContext<U>[]
+          : T extends {}
+            ? { [K in keyof T as T[K] extends CryptoKey ? never : K]: SerializedCryptoContext<T[K]> }
+            : T;
