@@ -2143,6 +2143,9 @@
       ]
     },
     "Daily recurring event, frequency (until)": {
+      "Daily, ${ untilString }": [
+        "Denně, ${ untilString }"
+      ],
       "Every ${ interval } day, ${ untilString }": [
         "Každý ${ interval } den, ${ untilString }",
         "Každé ${ interval } dny, ${ untilString }",
@@ -2830,6 +2833,12 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Došlo k neočekávané chybě. Import musí být restartován."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } událost.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } události.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } událostí.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } událostí."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Váš soubor ${ formattedFilename } má neplatnou metodu a nelze jej importovat."
@@ -4392,6 +4401,9 @@
       "You can import one data type at a time.": [
         "Importovat můžete vždy jeden typ dat."
       ],
+      "You can now return to the application to continue": [
+        "Nyní se můžete vrátit do aplikace a pokračovat"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
       ],
@@ -4978,6 +4990,14 @@
         "${ Label.Name } byl vytvořen"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Od: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Komu: ${ to }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Postranní panel"
@@ -5196,6 +5216,20 @@
         "Každé ${ interval } měsíce ${ onDayString }, ${ timesString }",
         "Každých ${ interval } měsíců ${ onDayString }, ${ timesString }",
         "Každých ${ interval } měsíců ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Měsíčně ${ onDayString }, ${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Každý ${ interval } měsíc ${ onDayString }, ${ untilString }",
+        "Každé ${ interval } měsíce ${ onDayString }, ${ untilString }",
+        "Každých ${ interval } měsíců ${ onDayString }, ${ untilString }",
+        "Každých ${ interval } měsíců ${ onDayString }, ${ untilString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Měsíčně ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -6294,6 +6328,15 @@
       "Highest VPN speed": [
         "Nejvyšší rychlost VPN"
       ],
+      "Premium ${ appName1 }": [
+        "Prémiové funkce ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Prémiové funkce ${ appName1 } a ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Prémiové funkce ${ appName1 }, ${ appName2 } a ${ appName3 }"
+      ],
       "Premium early access": [
         "Prémiový předběžný přístup"
       ],
@@ -6869,6 +6912,9 @@
         "Smazat ${ count } skupiny kontaktů",
         "Smazat ${ count } skupin kontaktů",
         "Smazat ${ count } skupin kontaktů"
+      ],
+      "Delete ${ value }": [
+        "Smazat ${ value }"
       ],
       "Delete event": [
         "Smazat událost"
@@ -7474,6 +7520,33 @@
         "Každé ${ interval } týdny ve středu, ${ timesString }",
         "Každých ${ interval } týdnů ve středu, ${ timesString }",
         "Každých ${ interval } týdnů ve středu, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Týdně v(ve) ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Týdně všechny dny, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Týdně v pátek, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Týdně v pondělí, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Týdně v sobotu, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Týdně v neděli, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Týdně ve čtvrtek, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Týdně v úterý, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Týdně ve středu, ${ timesString }"
       ]
     },
     "Weekly recurring event, frequency (until)": {
@@ -7530,6 +7603,33 @@
         "Každé ${ interval } týdny ve středu, ${ untilString }",
         "Každých ${ interval } týdnů ve středu, ${ untilString }",
         "Každých ${ interval } týdnů ve středu, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Týdně v(ve) ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Týdně všechny dny, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Týdně v pátek, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Týdně v pondělí, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Týdně v sobotu, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Týdně v neděli, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Týdně ve čtvrtek, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Týdně v úterý, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Týdně ve středu, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -7572,6 +7672,9 @@
         "Každé ${ interval } roky, ${ timesString }",
         "Každých ${ interval } let, ${ timesString }",
         "Každých ${ interval } let, ${ timesString }"
+      ],
+      "Yearly, ${ timesString }": [
+        "Ročně, ${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
@@ -7580,6 +7683,9 @@
         "Každé ${ interval } roky, ${ untilString }",
         "Každých ${ interval } let, ${ untilString }",
         "Každých ${ interval } let, ${ untilString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Ročně, ${ untilString }"
       ]
     }
   }

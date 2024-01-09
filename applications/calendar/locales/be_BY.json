@@ -2133,13 +2133,13 @@
     },
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
-        "Штодзень у ${ timesString }"
+        "Штодзень, ${ timesString }"
       ],
       "Every ${ interval } day, ${ timesString }": [
-        "Кожны ${ interval } дзень у ${ timesString }",
-        "Кожныя ${ interval } дні ў ${ timesString }",
-        "Кожных ${ interval } дзён у ${ timesString }",
-        "Кожных ${ interval } дзён у ${ timesString }"
+        "Кожны ${ interval } дзень, ${ timesString }",
+        "Кожныя ${ interval } дні, ${ timesString }",
+        "Кожных ${ interval } дзён, ${ timesString }",
+        "Кожных ${ interval } дзён, ${ timesString }"
       ]
     },
     "Daily recurring event, frequency (until)": {
@@ -2816,6 +2816,11 @@
     "Error accepting calendar invitation": {
       "Invited address does not exist": [
         "Запрошаны адрас не існуе"
+      ]
+    },
+    "Error changing answer of a calendar invitation": {
+      "Error changing answer": [
+        "Памылка пры змяненні адказу"
       ]
     },
     "Error importing calendar": {
@@ -5214,8 +5219,8 @@
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
         "Кожны ${ interval } месяц у ${ onDayString }, ${ timesString }",
         "Кожныя ${ interval } месяцы ў ${ onDayString }, ${ timesString }",
-        "Кожных ${ interval } месяцаў ${ onDayString }, ${ timesString }",
-        "Кожных ${ interval } месяцаў ${ onDayString }, ${ timesString }"
+        "Кожных ${ interval } месяцаў у ${ onDayString }, ${ timesString }",
+        "Кожных ${ interval } месяцаў у ${ onDayString }, ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "Штомесяц ${ onDayString }, ${ timesString }"
@@ -5225,8 +5230,8 @@
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
         "Кожны ${ interval } месяц у ${ onDayString }, ${ untilString }",
         "Кожныя ${ interval } месяцы ў ${ onDayString }, ${ untilString }",
-        "Кожныя ${ interval } месяцаў у ${ onDayString }, ${ untilString }",
-        "Кожныя ${ interval } месяцаў у ${ onDayString }, ${ untilString }"
+        "Кожных ${ interval } месяцаў у ${ onDayString }, ${ untilString }",
+        "Кожных ${ interval } месяцаў у ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Штомесяц ${ onDayString }, ${ untilString }"
@@ -5715,6 +5720,9 @@
       ],
       "Auto": [
         "Аўтаматычна"
+      ],
+      "Automatic (${ value })": [
+        "Аўтаматычна (${ value })"
       ],
       "Create new group": [
         "Стварыць новую групу"
@@ -6915,6 +6923,9 @@
         "Выдаліць ${ count } групы кантактаў",
         "Выдаліць ${ count } груп кантактаў",
         "Выдаліць ${ count } групы кантактаў"
+      ],
+      "Delete ${ value }": [
+        "Выдаліць ${ value }"
       ],
       "Delete event": [
         "Выдаліць падзею"
