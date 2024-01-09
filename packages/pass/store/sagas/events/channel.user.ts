@@ -34,7 +34,7 @@ function* onUserEvent(
     /* dispatch only if there was a change */
     if (currentEventId !== event.EventID) yield put(userEvent(event));
 
-    logger.info(`[ServerEvents::User] event ${logId(event.EventID!)}`);
+    logger.debug(`[ServerEvents::User] event ${logId(event.EventID!)}`);
     const { User: user } = event;
 
     if (event.UserSettings && telemetry) {
@@ -63,7 +63,7 @@ function* onUserEvent(
             activeUserKeys.some(({ ID }) => notIn(localUserKeyIds)(ID));
 
         if (keysUpdated) {
-            logger.info(`[Saga::Events] Detected user keys update`);
+            logger.info(`[ServerEvents::User] Detected user keys update`);
             const keyPassword = getAuthStore().getPassword();
             const addresses = (yield select(selectAllAddresses)) as Address[];
             yield PassCrypto.hydrate({ user, keyPassword, addresses });
@@ -81,11 +81,11 @@ export const createUserChannel = (api: Api, eventID: string) =>
         getCursor: ({ EventID, More }) => ({ EventID, More: Boolean(More) }),
         getLatestEventID: () => api<EventCursor>(getLatestID()).then(({ EventID }) => EventID),
         onEvent: onUserEvent,
-        onClose: () => logger.info(`[Saga::UserChannel] closing channel`),
+        onClose: () => logger.info(`[ServerEvents::User] closing channel`),
     });
 
 export function* userChannel(api: Api, options: RootSagaOptions) {
-    logger.info(`[Saga::UserChannel] start polling for user events`);
+    logger.info(`[ServerEvents::User] start polling for user events`);
 
     const eventID: string = ((yield select(selectLatestEventId)) as ReturnType<typeof selectLatestEventId>) ?? '';
     const eventsChannel = createUserChannel(api, eventID);

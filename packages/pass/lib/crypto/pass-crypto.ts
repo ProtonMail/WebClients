@@ -67,7 +67,7 @@ export const createPassCrypto = (options: PassCryptoOptions): PassCryptoWorker =
     const unregisterInactiveShares = () => {
         context.shareManagers.forEach((shareManager, shareId) => {
             if (!shareManager.isActive(context.userKeys)) {
-                logger.debug(`[PassCrypto::Worker] Unregistering share ${logId(shareId)} (inactive)`);
+                logger.info(`[PassCrypto] Unregistering share ${logId(shareId)} (inactive)`);
                 context.shareManagers.delete(shareId);
             }
         });
@@ -94,7 +94,7 @@ export const createPassCrypto = (options: PassCryptoOptions): PassCryptoWorker =
         getContext: () => context,
 
         async hydrate({ user, addresses, keyPassword, snapshot }) {
-            logger.debug('[PassCrypto::Worker] Hydrating...');
+            logger.info('[PassCrypto] Hydrating crypto state');
 
             try {
                 const userKeys = await getDecryptedUserKeysHelper(user, keyPassword);
@@ -113,10 +113,10 @@ export const createPassCrypto = (options: PassCryptoOptions): PassCryptoWorker =
                     const entries = snapshot.shareManagers as [string, SerializedCryptoContext<ShareContext>][];
                     const shareManagers = await unwrap(entriesMap(entries)(createShareManager.fromSnapshot));
                     context.shareManagers = new Map(shareManagers);
-                    logger.debug('[PassCrypto::Worker] Hydrated from snapshot');
+                    logger.info('[PassCrypto] Hydrated from local snapshot');
                 }
             } catch (e) {
-                logger.warn('[PassCrypto::Worker] hydration failed', e);
+                logger.warn('[PassCrypto] Hydration failed', e);
                 throw new PassCryptoHydrationError('Hydration failure');
             }
 
@@ -124,6 +124,7 @@ export const createPassCrypto = (options: PassCryptoOptions): PassCryptoWorker =
         },
 
         clear() {
+            logger.info('[PassCrypto] Clearing state');
             context.user = undefined;
             context.userKeys = [];
             context.addresses = [];

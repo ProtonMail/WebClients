@@ -40,9 +40,10 @@ function* onSharesEvent(
     const remoteShares = event.Shares;
 
     const newShares = remoteShares.filter((share) => !localShareIds.includes(share.ShareID));
-    logger.info(`[Saga::SharesChannel]`, `${newShares.length} remote share(s) not in cache`);
 
     if (newShares.length) {
+        logger.info(`[ServerEvents::Shares]`, `${newShares.length} remote share(s) not in cache`);
+
         const activeNewShares = (
             (yield Promise.all(
                 newShares
@@ -98,7 +99,7 @@ export const createSharesChannel = (api: Api) =>
         interval: ACTIVE_POLLING_TIMEOUT,
         initialEventID: NOOP_EVENT,
         getCursor: () => ({ EventID: NOOP_EVENT, More: false }),
-        onClose: () => logger.info(`[Saga::SharesChannel] closing channel`),
+        onClose: () => logger.info(`[ServerEvents::Shares] closing channel`),
         onEvent: onSharesEvent,
         query: () => ({ url: 'pass/v1/share', method: 'get' }),
     });
@@ -112,7 +113,7 @@ function* onNewShare(api: Api, options: RootSagaOptions) {
 }
 
 export function* sharesChannel(api: Api, options: RootSagaOptions) {
-    logger.info(`[Saga::SharesChannel] start polling for new shares`);
+    logger.info(`[ServerEvents::Shares] start polling for new shares`);
     const eventsChannel = createSharesChannel(api);
     const events = fork(channelEventsWorker<SharesGetResponse>, eventsChannel, options);
     const wakeup = fork(channelWakeupWorker<SharesGetResponse>, eventsChannel);
