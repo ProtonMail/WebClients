@@ -246,7 +246,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                     toApp: toApp,
                 };
             }
-            if ([APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS].includes(toApp as any)) {
+            if (toApp === APPS.PROTONVPN_SETTINGS) {
                 return {
                     path: joinPaths(getSlugFromApp(toApp), '/'),
                     toApp: toApp,
