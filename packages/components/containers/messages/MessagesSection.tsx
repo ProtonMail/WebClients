@@ -206,17 +206,17 @@ const MessagesSection = () => {
             </SettingsLayout>
 
             {isPageSizeSettingEnabled && (
-                <SettingsLayout className="items-center">
+                <SettingsLayout>
                     <SettingsLayoutLeft>
-                        <label htmlFor="pageSizeSelector">
-                            <span className="text-semibold mr-2">
+                        <label htmlFor="pageSizeSelector" className="text-semibold" id="label-pageSizeSelector">
+                            <span className="mr-2">
                                 {ViewMode === VIEW_MODE.GROUP
                                     ? c('Label').t`Conversations per page`
                                     : c('Label').t`Messages per page`}
                             </span>
                         </label>
                     </SettingsLayoutLeft>
-                    <SettingsLayoutRight isToggleContainer>
+                    <SettingsLayoutRight>
                         <PageSizeSelector id="pageSizeSelector" />
                     </SettingsLayoutRight>
                 </SettingsLayout>
