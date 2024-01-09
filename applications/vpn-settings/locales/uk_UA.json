@@ -2832,6 +2832,9 @@
       "Continue with ${ freeName }": [
         "Продовжити з ${ freeName }"
       ],
+      "Copied to clipboard": [
+        "Скопійовано до буфера обміну"
+      ],
       "Copy the suggested password to clipboard": [
         "Скопіюйте запропонований пароль до буфера обміну"
       ],
@@ -2906,6 +2909,12 @@
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Завантажте свою улюблену програму й отримайте приватність з собою всюди."
+      ],
+      "Drop file here to upload": [
+        "Перетягніть файл сюди, щоб вивантажити"
+      ],
+      "Drop to import": [
+        "Перетягніть, щоб імпортувати"
       ],
       "Each code can only be used once": [
         "Кожен код можна використати лише один раз"
@@ -3155,6 +3164,9 @@
       ],
       "Optional": [
         "Необов'язково"
+      ],
+      "or ${ selectFileButton }": [
+        "або ${ selectFileButton }"
       ],
       "Or select a particular server:": [
         "Або виберіть певний сервер:"
@@ -3765,6 +3777,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Ваші наявні повідомлення, календарі або контакти будуть заблоковані. Щоб відновити ці дані, вам знадобиться ваша фраза для відновлення або ${ oldPassword }."
       ],
+      "Your files will be encrypted and then saved": [
+        "Ваші файли буде зашифровано, а потім збережено"
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Ваша інформація в безпеці з нами. Ми зв'яжемося з вами лише тоді, коли це буде необхідно для надання наших послуг."
       ],
@@ -4215,6 +4230,9 @@
       "Two-password mode": [
         "Двопарольний режим"
       ],
+      "Type": [
+        "Тип"
+      ],
       "User": [
         "Користувач"
       ],
@@ -4621,12 +4639,6 @@
         "${ n } VPN-з'єднань",
         "${ n } VPN-з'єднань"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-з'єднання на користувача",
-        "${ n } VPN-з'єднання на користувача",
-        "${ n } VPN-з'єднань на користувача",
-        "${ n } VPN-з'єднань на користувача"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } з ${ n } псевдонімом hide-my-email",
         "${ PASS_APP_NAME } з ${ n } псевдонімами hide-my-email",
@@ -4647,9 +4659,6 @@
       ],
       "${ size } storage per user": [
         "${ size } сховища на користувача"
-      ],
-      "1 free VPN connection in total": [
-        "Загалом 1 безплатне VPN-з'єднання"
       ],
       "1 user": [
         "1 користувач"
@@ -5137,9 +5146,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Отримуйте допомогу від команди підтримки клієнтів ${ BRAND_NAME } упродовж 24 годин після запиту в робочі дні"
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Одне VPN-з'єднання дає можливість одному пристрою під'єднуватися до ${ BRAND_NAME } VPN коли завгодно. Наприклад, щоб одночасно під'єднати телефон і ноутбук до ${ BRAND_NAME_TWO } VPN, потрібно два VPN-з'єднання."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Можливість перегляду не приватних вхідних скриньок користувача, включно з усіма повідомленнями та подробицями контактів"
@@ -6329,6 +6335,9 @@
       ]
     },
     "Success message": {
+      "Domain deleted": [
+        "Домен видалено"
+      ],
       "Sessions revoked": [
         "Сеанси відкликано"
       ],

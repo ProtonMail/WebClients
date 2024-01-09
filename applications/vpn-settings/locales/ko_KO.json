@@ -77,6 +77,9 @@
       "Close this banner": [
         "이 배너 닫기"
       ],
+      "Configure SAML": [
+        "SAML 구성"
+      ],
       "Confirm": [
         "확인"
       ],
@@ -260,6 +263,9 @@
       "Hide plan features": [
         "플랜 기능 숨기기"
       ],
+      "Import new SAML metadata": [
+        "새 SAML 메타 데이터 불러오기"
+      ],
       "Increase": [
         "증가"
       ],
@@ -338,6 +344,9 @@
       "Remove bonuses": [
         "보너스 제거"
       ],
+      "Remove domain": [
+        "도메인 제거"
+      ],
       "Remove gift code": [
         "기프트 코드 삭제"
       ],
@@ -389,11 +398,17 @@
       "Save address": [
         "주소 저장"
       ],
+      "Save SAML configuration": [
+        "SAML 구성 저장"
+      ],
       "Search": [
         "검색"
       ],
       "Search countries": [
         "국가 검색"
+      ],
+      "See DNS TXT record": [
+        "DNS TXT 레코드 보기"
       ],
       "See how": [
         "방법 보기"
@@ -403,6 +418,9 @@
       ],
       "Select ${ planTitle }": [
         "${ planTitle } 선택"
+      ],
+      "Select file": [
+        "파일 선택"
       ],
       "Send code": [
         "코드 보내기"
@@ -2058,6 +2076,12 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "1명 보다 더 많은 다중 사용자를 관리하려면 비즈니스 플랜으로 업그레이드 하세요."
       ],
+      "Please upload an xml file": [
+        "xml 파일을 업로드 하세요."
+      ],
+      "Please upload only 1 file": [
+        "하나의 파일만 업로드 하세요."
+      ],
       "Process aborted": [
         "과정 중단됨"
       ],
@@ -2108,6 +2132,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "문자, 숫자 및 _.- 만 사용하십시오"
+      ],
+      "Unable to upload file": [
+        "업로드 파일 불가"
       ],
       "Unknown error": [
         "알 수 없는 오류"
@@ -2719,6 +2746,11 @@
         "사용자 이름"
       ]
     },
+    "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "도메인 이름 등록 기관의 제어판에서 이 기록을 도메인에 추가하세요."
+      ]
+    },
     "Human verification method": {
       "Email": [
         "이메일"
@@ -2833,6 +2865,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "계정에 또 다른 보안 계층을 추가하세요. 로그인할 때마다 2FA로 본인 확인해야 합니다."
       ],
+      "Add domain": [
+        "도메인 추가"
+      ],
       "Add server (${ availableAddedCount } available)": [
         "서버 추가 (${ availableAddedCount }개 가능)"
       ],
@@ -2887,6 +2922,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "이 사용자로부터 관리 권한을 제거하시겠습니까?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "이 도메인 ${ boldDomain }을(를) 정말 제거하시겠습니까?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "게이트웨이를 설정하도록 조직의 관리자에 연락하십시오."
       ],
@@ -2938,8 +2976,20 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong }(으)로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Azure or Onelogin. This will enable SAML for the whole organization.": [
+        "Okta, Azure 또는 Onelogin과 같은 인증 제공자를 통해 조직의 SAML 인증을 구성하십시오. 이 설정값은 전체 조직의 SAML 활성화가 진행됩니다."
+      ],
       "Continue with ${ freeName }": [
         "${ freeName }으로 계속"
+      ],
+      "Copied to clipboard": [
+        "클립보드에 복사됨"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "사용자의 인증 제공자로 URL 입력란에 ACS (Assertion Consumer Service) 값을 복사 및 붙여놓기 하십시오."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "사용자의 인증 제공자의 엔티티 ID 입력란에 URL 값을 복사 후 붙여놓기 하세요."
       ],
       "Copy the suggested password to clipboard": [
         "클립보드로 비밀번호 제안을 복사하십시오"
@@ -2989,11 +3039,23 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 로고"
       ],
+      "DNS TXT record": [
+        "DNS TXT 레코드"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "이 비밀번호를 잊지 마세요. 잊을 경우 조직을 관리할 수 없습니다."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "이 비밀번호를 잊지 마세요. 잊어버릴 경우 로그인을 할 수 없거나 메시지를 읽을 수 없습니다."
+      ],
+      "Domain ownership failed verification.": [
+        "도메인 소유권 인증을 실패했습니다."
+      ],
+      "Domain ownership not verified.": [
+        "도메인 소유권이 인증되지 않았습니다."
+      ],
+      "Domain ownership verified.": [
+        "도메인 소유권이 인증되었습니다."
       ],
       "Done": [
         "완료"
@@ -3010,6 +3072,12 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "당신이 가장 좋아하는 앱을 다운받고 어디서나 보안을 유지하세요."
       ],
+      "Drop file here to upload": [
+        "업로드할 파일을 여기에 놓습니다"
+      ],
+      "Drop to import": [
+        "드래그해서 불러오기"
+      ],
       "Each code can only be used once": [
         "각각의 코드는 한 번만 사용 가능합니다"
       ],
@@ -3024,6 +3092,9 @@
       ],
       "Emailing preference saved": [
         "이메일 환경 설정이 저장됨"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "사용자의 인증 제공자로 부터 받은 엔드포인트 URL (예: https://idp.example.com/sso/saml)"
       ],
       "Enhance your network security": [
         "네트워크 보안을 향상시키기"
@@ -3097,8 +3168,14 @@
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } 받기"
       ],
+      "Go to your identity provider, get the the SAML metadata for ${ appName } and import it here.": [
+        "인증 제공자 페이지 이동 후, ${ appName }에 사용할 SAML 메타데이터를 받은 뒤 여기에 불러오세요."
+      ],
       "here": [
         "여기"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "인증 주장에 서명하기 위한 신원 제공자의 공개 키입니다. 인증 제공자로부터 인증서 해시값을 다운로드하거나 복사할 수 있는 장소가 있어야 합니다. 텍스트 영역 입력란에 인증서 해시를 붙여넣기만 하면 됩니다."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "다른 관리자가 이 비밀번호를 변경 한 경우 새 조직 비밀번호를 요청해야 합니다."
@@ -3262,6 +3339,9 @@
       "Optional": [
         "선택 사항"
       ],
+      "or ${ selectFileButton }": [
+        "또는 ${ selectFileButton }"
+      ],
       "Or select a particular server:": [
         "또는 특정 서버 선택:"
       ],
@@ -3388,6 +3468,9 @@
       "Revoke certificate ${ name }": [
         "${ name } 인증서 취소"
       ],
+      "SAML configuration saved": [
+        "SAML 구성 저장됨"
+      ],
       "Save ${ percentage }": [
         "${ percentage } 할인"
       ],
@@ -3435,6 +3518,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "사용 가능한 서버 중 일부는 최근 제거로 인해 특정 국가에서만 사용할 수 있습니다."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "SAML SSO로 인증할 수 있는 도메인을 지정하십시오."
       ],
       "Step ${ step }": [
         "${ step } 단계"
@@ -3535,6 +3621,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "이 사용자는 현재 조직의 지불에 대한 책임이 있습니다. 이 멤버를 강등하면 귀하가 조직에 대한 지불 책임을 지게 됩니다."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "이 인증은 최대 한 시간 소요될 수 있습니다. 다음 단계를 계속 진행해도 안전합니다."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "현재 유료 구독이 취소되며 누적된 로열티 혜택을 잃게 됩니다."
       ],
@@ -3561,6 +3650,9 @@
       ],
       "to ${ product } Business": [
         "${ product } 비즈니스로"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "SAML SSO에 사용하기 위해 ${ boldDomainName } 도메인을 허용하려면, 다음 DNS TXT 레코드를 사용자의 DNS 제공자 입력란에 추가하여 소유권 인증 절차를 밟아야 합니다."
       ],
       "To cancel your subscription, please reach out to us.": [
         "구독을 취소하려면, Proton에 연락하세요."
@@ -3622,6 +3714,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "이 계정에는 저장된 복구 방법이 없습니다."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "ID 공급자에 의해 생성된 고유 ID는 일반적으로 ID 공급자의 이름이 포함된 URL의 형태입니다. (예: e.g. https://idp.example.com/XXXXX)"
+      ],
       "Unsaved changes": [
         "저장되지 않은 변경 사항"
       ],
@@ -3660,6 +3755,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "인증은 새 탭에서 열리기 때문에 팝업 차단기를 비활성화해주세요. 요금은 청구되지 않습니다. 카드 확인에 사용한 금액은 즉시 환불됩니다."
+      ],
+      "Verify domain": [
+        "도메인 소유권 인증"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "인증 앱에서 실시간 일회용 비밀번호로 신원을 확인하세요"
@@ -3735,6 +3833,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "우리는 현재 플랜에서 같은 가격에 더 많은 것을 제공하도록 업그레이드하고 있습니다. 시스템이 업데이트되는 동안, 플랜을 변경할 수 없습니다. 완료되는 대로 이메일을 보내드리겠습니다."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "사용자의 제공자로 부터 ${ appName }을 위한 SAML 활성화 시,  콜백 URL (callback, ACS라고 함) 및 issuer ID를 사용하라는 안내창이 표시될 수 있습니다. 아래의 데이터를 제공자 입력란에 복사 후 붙여넣기를 하면 됩니다."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "이중 인증을 설정하면, 인증 앱에 접근할 수 없을 때 로그인 시 사용할 수 없는 복구 코드를 제공해드립니다."
@@ -3880,6 +3981,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "사용자의 존재하는 메시지, 캘린더 및 연락처가 잠깁니다. 이 데이터를 복구하려면, 복구 방법이나 ${ oldPassword }가 필요합니다."
       ],
+      "Your files will be encrypted and then saved": [
+        "파일이 암호화된 후 저장됩니다"
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "고객님의 정보는 Proton에서 안전하게 보호되고 있습니다. 서비스 제공에 필요한 상황에만 연락해 드립니다."
       ],
@@ -4023,11 +4127,20 @@
       "Allow recovery by phone": [
         "스마트폰을 통한 복구 허용"
       ],
+      "Allowed domain": [
+        "허용된 도메인"
+      ],
+      "Allowed Domain": [
+        "허용된 도메인"
+      ],
       "Amount": [
         "양"
       ],
       "Amount due": [
         "지불할 금액"
+      ],
+      "Assertion Consumer Service URL": [
+        "문제 알림 소비자 서비스 (ACS, 약칭;Assertion Consumer Service) URL"
       ],
       "Attach screenshot(s)": [
         "스크린샷 첨부"
@@ -4152,6 +4265,9 @@
       "Do you have any suggestions for our team?": [
         "저희 팀에 질문이 있으신가요?"
       ],
+      "e.g. example.com": [
+        "예시: example.com"
+      ],
       "Email": [
         "이메일"
       ],
@@ -4182,6 +4298,9 @@
       "Interval": [
         "유효시간"
       ],
+      "Issuer ID": [
+        "Issuer ID"
+      ],
       "Keep me signed in": [
         "로그인 상태 유지"
       ],
@@ -4199,6 +4318,15 @@
       ],
       "Main": [
         "메인"
+      ],
+      "Metadata file for ${ appName }": [
+        "${ appName } 메타데이터 파일"
+      ],
+      "Metadata URL for ${ appName }": [
+        "${ appName } 메타데이터 URL"
+      ],
+      "Method for importing metadata": [
+        "메타데이터를 불러올 방법"
       ],
       "Moderate NAT": [
         "일반형 NAT"
@@ -4296,6 +4424,9 @@
       "Proration": [
         "할당"
       ],
+      "Public certificate (X.509)": [
+        "공개 인증서 (X.509)"
+      ],
       "Recovery email address": [
         "복구 이메일 주소"
       ],
@@ -4304,6 +4435,9 @@
       ],
       "Recovery phrase": [
         "복구 문구"
+      ],
+      "Reply (ACS) URL": [
+        "Reply (ACS) URL"
       ],
       "Require 2FA for administrators": [
         "관리자에 2FA가 필요합니다."
@@ -4320,6 +4454,15 @@
       "Select your plan": [
         "플랜을 선택하세요."
       ],
+      "Single sign-on Entity ID": [
+        "싱글 사인 온 엔티티 ID"
+      ],
+      "Single sign-on entity ID": [
+        "싱글 사인 온 엔티티 ID"
+      ],
+      "Single sign-on URL": [
+        "싱글 사인 온 URL"
+      ],
       "Start date": [
         "시작일"
       ],
@@ -4335,6 +4478,9 @@
       "Two-password mode": [
         "이중 비밀번호 방식"
       ],
+      "Type": [
+        "유형"
+      ],
       "User": [
         "사용자"
       ],
@@ -4343,6 +4489,9 @@
       ],
       "Username": [
         "사용자 이름"
+      ],
+      "Value": [
+        "값"
       ],
       "Verification code": [
         "인증 코드"
@@ -4711,9 +4860,6 @@
       "${ n } VPN connections": [
         "${ n } 개 VPN 연결"
       ],
-      "${ n } VPN connections per user": [
-        "사용자 당 ${ n }개 VPN 연결"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email aliases": [
         "${ n }개의 Hide-my-email이 포함된 ${ PASS_APP_NAME }"
       ],
@@ -4731,9 +4877,6 @@
       ],
       "${ size } storage per user": [
         "사용자 당 ${ size } 스토리지"
-      ],
-      "1 free VPN connection in total": [
-        "총 1개의 무료 VPN 연결"
       ],
       "1 user": [
         "사용자 1명"
@@ -5237,9 +5380,6 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "영업일 기준, 요청 24시간 내에 ${ BRAND_NAME } 고객 지원팀으로부터 지원을 받습니다"
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "하나의 VPN 연결은 한 장치가 ${ BRAND_NAME } VPN에 동시에 연결될 수 있도록 합니다. 예를 들어, 전화와 노트북을 동시에 ${ BRAND_NAME_TWO } VPN에 연결하기 위해서는 두 개의 VPN 연결이 필요합니다."
-      ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "비공개가 아닌 사용자의 수신함을 사용자가 볼 수 있는 옵션으로, 전체 메시지와 연락처 세부사항을 포함하여 볼 수 있습니다"
       ],
@@ -5687,6 +5827,15 @@
       ],
       "Confirm": [
         "확인"
+      ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "예시: https://example.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "예시: https://idp.example.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "예시: https://idp.example.com/XXXXX"
       ],
       "Email address": [
         "이메일 주소"
@@ -6605,6 +6754,9 @@
       ]
     },
     "Success message": {
+      "Domain deleted": [
+        "도메인 삭제됨"
+      ],
       "Sessions revoked": [
         "세션 취소됨"
       ],
@@ -6966,6 +7118,12 @@
       "Email subscriptions": [
         "이메일 구독"
       ],
+      "Enter endpoints into your identity provider": [
+        "사용자의 인증 제공자로 부터 엔드포인트를 입력하십시오."
+      ],
+      "Enter SAML metadata": [
+        "SAML 메타데이터 입력"
+      ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } 베타 프로그램에 참여하려면 ${ BRAND_NAME } 계정 상세 사항을 입력하세요."
       ],
@@ -7089,6 +7247,9 @@
       "Recovery": [
         "복구"
       ],
+      "Remove domain": [
+        "도메인 제거"
+      ],
       "Remove user?": [
         "사용자를 삭제할까요?"
       ],
@@ -7118,6 +7279,9 @@
       ],
       "Revoke certificate": [
         "인증서 취소"
+      ],
+      "SAML authentication": [
+        "SAML 인증"
       ],
       "Select a plan": [
         "플랜 선택"
@@ -7163,6 +7327,9 @@
       ],
       "Signed in to member account": [
         "회원 계정으로 로그인됨"
+      ],
+      "Single Sign-On": [
+        "싱글 사인 온 (SSO)"
       ],
       "Status": [
         "상태"
@@ -7291,11 +7458,26 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "시스템의 주/야간 모드와 동기화하여 선호하는 테마를 주/야간에 맞춰 자동으로 전환합니다"
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "사용자의 인증 제공자로 URL 입력란에 ACS (Assertion Consumer Service) 값을 복사 및 붙여놓기 하십시오."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "사용자의 인증 제공자의 엔티티 ID 입력란에 URL 값을 복사 후 붙여놓기 하세요."
+      ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "사용자의 인증 제공자로 부터 받은 엔드포인트 URL (예: https://idp.example.com/sso/saml)"
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "인증 주장에 서명하기 위한 인증 제공자의 공개 키입니다. 인증 제공자로부터 인증서 해시값을 받으세요."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "기프트 코드를 구매하셨거나 서포트 팀에서 받으셨다면, 여기에 입력하실 수 있습니다."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "2FA를 사용하지 않는 회원들은 가능한 한 빨리 활성화하라는 메일을 받게 됩니다."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "SAML SSO로 인증할 수 있는 도메인을 지정하십시오"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "새로운 구독 결제 주기가 ${ formattedTime } 부터 시작합니다"
@@ -7305,6 +7487,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "사용자의 시스템이 \"라이트 모드\"일 때 선택된 테마가 적용됩니다"
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "일반적으로 인증 제공자의 이름이 포함된 URL"
       ],
       "Verified email address": [
         "인증된 이메일 주소"
@@ -7350,11 +7535,6 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "SSO가 사용자의 정보 제공사로 부터 제공되었습니다."
       ]
     },
     "Validation": {

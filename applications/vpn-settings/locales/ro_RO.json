@@ -77,6 +77,9 @@
       "Close this banner": [
         "Închidere norificare"
       ],
+      "Configure SAML": [
+        "Configurare SAML"
+      ],
       "Confirm": [
         "Confirmare"
       ],
@@ -260,6 +263,9 @@
       "Hide plan features": [
         "Ascundere caracteristici plan"
       ],
+      "Import new SAML metadata": [
+        "Importare metadate SAML noi"
+      ],
       "Increase": [
         "Mărire"
       ],
@@ -338,6 +344,9 @@
       "Remove bonuses": [
         "Anulare bonusuri"
       ],
+      "Remove domain": [
+        "Ștergere domeniu"
+      ],
       "Remove gift code": [
         "Eliminare cod cadou"
       ],
@@ -389,11 +398,17 @@
       "Save address": [
         "Salvare adresă"
       ],
+      "Save SAML configuration": [
+        "Salvare configurare SAML"
+      ],
       "Search": [
         "Căutare"
       ],
       "Search countries": [
         "Căutare țări"
+      ],
+      "See DNS TXT record": [
+        "Afișare înregistrare TXT DNS"
       ],
       "See how": [
         "Vedeți cum"
@@ -403,6 +418,9 @@
       ],
       "Select ${ planTitle }": [
         "Selectare ${ planTitle }"
+      ],
+      "Select file": [
+        "Selectare fișier"
       ],
       "Send code": [
         "Trimitere cod"
@@ -2074,6 +2092,12 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Migrați la un plan de afaceri cu mai mult de un utilizator pentru a destiona mai mulți utilizatori."
       ],
+      "Please upload an xml file": [
+        "Încărcați un fișier xml."
+      ],
+      "Please upload only 1 file": [
+        "Încărcați numai un fișier."
+      ],
       "Process aborted": [
         "Proces abandonat"
       ],
@@ -2124,6 +2148,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Folosiți doar litere, cifre și _ . -"
+      ],
+      "Unable to upload file": [
+        "Fișierul nu se poate încărca."
       ],
       "Unknown error": [
         "Eroare necunoscută"
@@ -2753,6 +2780,11 @@
         "Nume utilizator"
       ]
     },
+    "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Adăugați această înregistrare la domeniul personal în panoul de control al registratorului de nume de domeniu."
+      ]
+    },
     "Human verification method": {
       "Email": [
         "E-mail"
@@ -2883,6 +2915,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Aceasta adaugă un nivel suplimentar de protecție a contului. Va trebui să folosiți autentificarea cu doi factori de fiecare dată când vă conectați."
       ],
+      "Add domain": [
+        "Adăugare domeniu"
+      ],
       "Add server (${ availableAddedCount } available)": [
         "Adăugare server (${ availableAddedCount } disponibil)",
         "Adăugare server (${ availableAddedCount } disponibile)",
@@ -2943,6 +2978,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Sigur doriți să eliminați drepturile administrative ale acestui utilizator?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "Sigur doriți să eliminați domeniul ${ boldDomain }?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Solicitați administratorului organizației să seteze porți de acces."
       ],
@@ -2994,8 +3032,20 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Azure or Onelogin. This will enable SAML for the whole organization.": [
+        "Configurați autentificarea SAML pentru organizația proprie printr-un furnizor de identitate precum Okta, Azure sau Onelogin. Acest lucru va activa SAML pentru întreaga organizație."
+      ],
       "Continue with ${ freeName }": [
         "Continuare cu ${ freeName }"
+      ],
+      "Copied to clipboard": [
+        "Copiat în memorie"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Copiați și inserați această adresă URL în câmpul URL ACS (Assertion Consumer Service) al furnizorului de identitate."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Copiați și lipiți această adresă URL în câmpul ID-ului entității furnizorului de identitate."
       ],
       "Copy the suggested password to clipboard": [
         "Copiați parola sugerată în memorie."
@@ -3049,11 +3099,23 @@
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
+      "DNS TXT record": [
+        "Înregistrare DNS TXT"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NU uitați această parolă. În cazul în care o uitați, nu vă veți mai putea administra organizația."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "NU uitați această parolă. Dacă o uitați, nu vă veți mai putea conecta sau decripta mesajele."
+      ],
+      "Domain ownership failed verification.": [
+        "Verificarea deținerii domeniului a eșuat."
+      ],
+      "Domain ownership not verified.": [
+        "Dovada deținerii domeniului nu este verificată."
+      ],
+      "Domain ownership verified.": [
+        "Dovada deținerii domeniului este verificată."
       ],
       "Done": [
         "Gata"
@@ -3070,6 +3132,12 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descărcați aplicația favorită astăzi și păstrați-vă intimitatea oriunde mergeți."
       ],
+      "Drop file here to upload": [
+        "Plasați fișiere aici pentru încărcare"
+      ],
+      "Drop to import": [
+        "Plasare pentru importare"
+      ],
       "Each code can only be used once": [
         "Fiecare cod poate fi folosit doar odată."
       ],
@@ -3084,6 +3152,9 @@
       ],
       "Emailing preference saved": [
         "Preferințe e-mail salvate"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "Adresa URL a punctului final primită de la furnizorul de identitate (ex. https://idp.exemplu.com/sso/saml)."
       ],
       "Enhance your network security": [
         "Îmbunătățiți-vă securitatea rețelei"
@@ -3157,8 +3228,14 @@
       "Get ${ upsellPlanName }": [
         "Luați ${ upsellPlanName }"
       ],
+      "Go to your identity provider, get the the SAML metadata for ${ appName } and import it here.": [
+        "Accesați furnizorul de identitate, obțineți metadatele SAML pentru ${ appName } și importați-le aici."
+      ],
       "here": [
         "aici"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Cheia publică a furnizorului de identitate pentru a semna afirmațiile de autentificare. Ar trebui să existe un loc pentru a descărca sau copia hash-ul certificatului de la furnizorul de identitate. Doar lipiți hash-ul certificatului în câmpul de text."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Dacă un alt administrator a schimbat această parolă, va trebui să-i solicitați noua parolă a organizației."
@@ -3322,6 +3399,9 @@
       "Optional": [
         "Opțional"
       ],
+      "or ${ selectFileButton }": [
+        "sau ${ selectFileButton }"
+      ],
       "Or select a particular server:": [
         "Sau selectați un server anume:"
       ],
@@ -3452,6 +3532,9 @@
       "Revoke certificate ${ name }": [
         "Anulare certificat ${ name }"
       ],
+      "SAML configuration saved": [
+        "Configurare SAML salvată."
+      ],
       "Save ${ percentage }": [
         "Salvați ${ percentage }"
       ],
@@ -3499,6 +3582,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Unele dintre serverele dvs. disponibile pot fi utilizate numai în anumite țări din cauza eliminărilor recente."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Specificați domeniul căruia i se permite autentificarea cu SAML SSO."
       ],
       "Step ${ step }": [
         "Pasul ${ step }",
@@ -3607,6 +3693,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Acest utilizator este în prezent responsabil pentru plăţile organizaţiei. Retrogradând acest membru, veți deveni responsabil pentru plăţile organizaţiei."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Această verificare poate dura până la o oră. Puteți continua în siguranță cu pașii următori."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Aceasta va anula abonamentul cu plată actual și veți pierde orice beneficii de loialitate pe care le-ați acumulat."
       ],
@@ -3633,6 +3722,9 @@
       ],
       "to ${ product } Business": [
         "la ${ product } Business"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Pentru a permite domeniului ${ boldDomainName } să utilizeze SAML SSO, trebuie să verificați calitatea de proprietar a acestuia adăugând următoarea înregistrare DNS TXT la domeniul propriu la furnizorul de DNS."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Pentru a anula abonamentul, contactați-ne."
@@ -3694,6 +3786,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "Din păcate nu există nicio metodă de recuperare salvată pentru acest cont."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "ID unic generat de furnizorul de identitate, de obicei sub forma unei adrese URL care conține numele furnizorului de identitate (ex. https://idp.exemplu.com/XXXX)."
+      ],
       "Unsaved changes": [
         "Modificări nesalvate"
       ],
@@ -3732,6 +3827,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verificarea va deschide o filă nouă. Dezactivați programele care blochează ferestrele flotante. Nu veți fi taxat. Orice sumă retrasă pentru verificarea cardului vă va fi rambursată imediat."
+      ],
+      "Verify domain": [
+        "Verificare domeniu"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Vă verificați identitatea cu o parolă unică temporară, generată de o aplicație de autentificare."
@@ -3807,6 +3905,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Vă modificăm planul actual la un plan îmbunătățit care oferă mai mult pentru același preț. În timp ce sistemele noastre se actualizează, nu veți putea să îl schimbați. Vă vom trimite un e-mail imediat după finalizare."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "Când activați SAML pentru ${ appName } în furnizorul de identitate, vi se poate solicita să utilizați adresa URL de apel invers (ACS) și ID-ul emitentului. Doar copiați și lipiți datele de mai jos în câmpurile furnizorului de identitate."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Când setați autentificarea prin doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi dacă vă pierdeți accesul la aplicația Authenticator."
@@ -3962,6 +4063,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Mesajele, calendarele sau contactele existente vor fi blocate. Pentru a recupera aceste date, veți avea nevoie de fraza de recuperare sau de ${ oldPassword }."
       ],
+      "Your files will be encrypted and then saved": [
+        "Fișierele vor fi criptate și apoi salvate."
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Informațiile vă sunt în siguranță la noi. Vă vom contacta doar atunci când este necesar să vă furnizăm serviciile."
       ],
@@ -4111,11 +4215,20 @@
       "Allow recovery by phone": [
         "Permitere recuperare prin telefon"
       ],
+      "Allowed domain": [
+        "Domeniu permis"
+      ],
+      "Allowed Domain": [
+        "Domeniu permis"
+      ],
       "Amount": [
         "Suma"
       ],
       "Amount due": [
         "Suma datorată"
+      ],
+      "Assertion Consumer Service URL": [
+        "URL ACS (Assertion Consumer Service)"
       ],
       "Attach screenshot(s)": [
         "Atașare capturi de ecran"
@@ -4240,6 +4353,9 @@
       "Do you have any suggestions for our team?": [
         "Aveți sugestii pentru echipa noastră?"
       ],
+      "e.g. example.com": [
+        "ex. exemplu.com"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -4270,6 +4386,9 @@
       "Interval": [
         "Interval"
       ],
+      "Issuer ID": [
+        "ID emitent"
+      ],
       "Keep me signed in": [
         "Păstrați-mă conectat"
       ],
@@ -4287,6 +4406,15 @@
       ],
       "Main": [
         "Principală"
+      ],
+      "Metadata file for ${ appName }": [
+        "Fișier metadate pentru ${ appName }"
+      ],
+      "Metadata URL for ${ appName }": [
+        "URL metadate pentru ${ appName }"
+      ],
+      "Method for importing metadata": [
+        "Metoda de importare a metadatelor"
       ],
       "Moderate NAT": [
         "NAT moderat"
@@ -4384,6 +4512,9 @@
       "Proration": [
         "Taxe zilnice"
       ],
+      "Public certificate (X.509)": [
+        "Certificat public (X.509)"
+      ],
       "Recovery email address": [
         "Adresa de e-mail de recuperare"
       ],
@@ -4392,6 +4523,9 @@
       ],
       "Recovery phrase": [
         "Fraza de recuperare"
+      ],
+      "Reply (ACS) URL": [
+        "URL răspuns (ACS)"
       ],
       "Require 2FA for administrators": [
         "Solicitare A2F pentru administratori"
@@ -4408,6 +4542,15 @@
       "Select your plan": [
         "Selectați planul"
       ],
+      "Single sign-on Entity ID": [
+        "ID entitate SSO"
+      ],
+      "Single sign-on entity ID": [
+        "ID entitate SSO"
+      ],
+      "Single sign-on URL": [
+        "URL SSO (autentificare unică)"
+      ],
       "Start date": [
         "Dată început"
       ],
@@ -4423,6 +4566,9 @@
       "Two-password mode": [
         "Mod cu două parole"
       ],
+      "Type": [
+        "Tip"
+      ],
       "User": [
         "Utilizator"
       ],
@@ -4431,6 +4577,9 @@
       ],
       "Username": [
         "Nume utilizator"
+      ],
+      "Value": [
+        "Valoare"
       ],
       "Verification code": [
         "Cod de verificare"
@@ -4827,11 +4976,6 @@
         "${ n } conexiuni VPN",
         "${ n } de conexiuni VPN"
       ],
-      "${ n } VPN connection per user": [
-        "O conexiune VPN per utilizator",
-        "${ n } conexiuni VPN per utilizator",
-        "${ n } de conexiuni VPN per utilizator"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } cu ${ n } alias hide-my-email",
         "${ PASS_APP_NAME } cu ${ n } aliasuri hide-my-email",
@@ -4851,9 +4995,6 @@
       ],
       "${ size } storage per user": [
         "${ size } spațiu per utilizator"
-      ],
-      "1 free VPN connection in total": [
-        "O conexiune VPN gratuită"
       ],
       "1 user": [
         "Un utilizator"
@@ -5369,9 +5510,6 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "În zilele lucrătoare, primiți asistență de la echipa de Asistență pentru clienți ${ BRAND_NAME } în termen de 24 de ore de la solicitări."
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "O conexiune VPN permite conectarea unui dispozitiv la ${ BRAND_NAME } VPN la un moment dat. De exemplu, pentru a conecta un telefon și un laptop la ${ BRAND_NAME_TWO } VPN în același timp, aveți nevoie de două conexiuni VPN."
-      ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opțiunea de a vedea căsuțele de e-mail ale utilizatorilor neprivați, inclusiv mesajul complet și datele de contact."
       ],
@@ -5827,6 +5965,15 @@
       ],
       "Confirm": [
         "Confirmare"
+      ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "ex. https://exemplu.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "ex. https://idp.exemplu.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "ex. https://idp.exemplu.com/XXXXX"
       ],
       "Email address": [
         "Adresă e-mail"
@@ -6811,6 +6958,9 @@
       ]
     },
     "Success message": {
+      "Domain deleted": [
+        "Domeniu șters"
+      ],
       "Sessions revoked": [
         "Sesiuni anulate"
       ],
@@ -7179,6 +7329,12 @@
       "Email subscriptions": [
         "Abonamente pe e-mail"
       ],
+      "Enter endpoints into your identity provider": [
+        "Introduceți puncte finale în furnizorul de identitate"
+      ],
+      "Enter SAML metadata": [
+        "Introducere metadate SAML"
+      ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduceți detaliile contului ${ BRAND_NAME } pentru a vă alătura la programul beta al ${ app }"
       ],
@@ -7304,6 +7460,9 @@
       "Recovery": [
         "Recuperare"
       ],
+      "Remove domain": [
+        "Eliminare domeniu"
+      ],
       "Remove user?": [
         "Eliminare utilizator?"
       ],
@@ -7333,6 +7492,9 @@
       ],
       "Revoke certificate": [
         "Anulare certificat"
+      ],
+      "SAML authentication": [
+        "Autentificare SAML"
       ],
       "Select a plan": [
         "Selectare plan"
@@ -7378,6 +7540,9 @@
       ],
       "Signed in to member account": [
         "Conectat în cont de membru"
+      ],
+      "Single Sign-On": [
+        "Autentificare unică (SSO)"
       ],
       "Status": [
         "Stare"
@@ -7506,11 +7671,26 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Comutare automată a temei preferate sincron cu modul luminos sau întunecat setat al sistemului."
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Copiați și inserați această adresă URL în câmpul URL ACS (Assertion Consumer Service) al furnizorului de identitate."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Copiați și lipiți această adresă URL în câmpul ID-ului entității furnizorului de identitate."
+      ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "Adresa URL a punctului final de la furnizorul de identitate (ex. https://idp.exemplu.com/sso/saml)"
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Cheia publică a furnizorului de identitate pentru a semna declarațiile de autentificare. Obțineți hash-ul certificatului de la furnizorul propriu de identitate."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Dacă ați cumpărat un cod cadou sau ați primit unul de la echipa de asistență, îl puteți folosi aici."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Membrii care nu folosesc A2F vor primi un mesaj pe e-mail solicitându-le să o activeze cât mai curând."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Specificați domeniul căruia i se permite autentificarea cu SAML SSO"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Noul ciclu de abonament începe la ${ formattedTime }."
@@ -7520,6 +7700,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Tema selectată va fi activă când sistemul va fi setat în „modul luminos”."
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "De obicei, o adresă URL care conține numele furnizorului de identitate."
       ],
       "Verified email address": [
         "Adresă de e-mail verificată."
@@ -7565,11 +7748,6 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "Autentificare unică (SSO)"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "Utilizator cu autentificare unică (SSO) oferit de furnizorul de identitate personal"
       ]
     },
     "Validation": {
