@@ -5,7 +5,13 @@
 
 :root,
 .ui-standard {
+  --primary-minor-2: #f0edff;
+  --primary-minor-1: #e2dbff;
   --primary: #6d4aff;
+  --primary-major-1: #6243e6;
+  --primary-major-2: #573bcc;
+  --primary-major-3: #4c34b3;
+  --primary-contrast: #ffffff;
   --primary-contrast: white;
   --signal-danger-minor-2: #fcebee;
   --signal-danger-minor-1: #f8d6dc;
@@ -97,7 +103,13 @@
 }
 
 .ui-prominent {
+  --primary-minor-2: #1c1633;
+  --primary-minor-1: #29214d;
   --primary: #8a6eff;
+  --primary-major-1: #967dff;
+  --primary-major-2: #a18bff;
+  --primary-major-3: #ad9aff;
+  --primary-contrast: #ffffff;
   --primary-contrast: white;
   --signal-danger-minor-2: #310b12;
   --signal-danger-minor-1: #4a111b;
