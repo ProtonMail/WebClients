@@ -22,7 +22,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { eventChannelFactory } from './channel.factory';
 import { channelEventsWorker, channelWakeupWorker } from './channel.worker';
 
-const NAMESPACE = 'Saga::InvitesChannel';
+const NAMESPACE = 'ServerEvents::Invites';
 
 function* onInvitesEvent(event: EventManagerEvent<InvitesGetResponse>) {
     if ('error' in event) throw event.error;
@@ -74,8 +74,8 @@ function* onInvitesEvent(event: EventManagerEvent<InvitesGetResponse>) {
                         itemCount: encryptedVault.ItemCount!,
                     },
                 };
-            } catch (err) {
-                logger.info(`[${NAMESPACE}] Could not decrypt invite "${logId(invite.InviteToken)}"`);
+            } catch (err: unknown) {
+                logger.warn(`[${NAMESPACE}] Could not decrypt invite "${logId(invite.InviteToken)}"`, err);
                 return null;
             }
         })
@@ -99,7 +99,7 @@ export function* invitesChannel(api: Api, options: RootSagaOptions) {
     const sharingEnabled: boolean = yield select(selectFeatureFlag(PassFeature.PassSharingV1));
     if (!sharingEnabled) return;
 
-    logger.info(`[${NAMESPACE}] start polling for invites`);
+    logger.info(`[${NAMESPACE}] start polling`);
 
     const eventsChannel = createInvitesChannel(api);
     const events = fork(channelEventsWorker<InvitesGetResponse>, eventsChannel, options);

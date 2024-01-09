@@ -40,16 +40,15 @@ const SearchBarRaw: VFC<Props> = ({ disabled, initial, trash }) => {
     const placeholder = useMemo(() => {
         const ITEM_TYPE_TO_LABEL_MAP = getItemTypeOptions();
         const pluralItemType = ITEM_TYPE_TO_LABEL_MAP[type].label.toLowerCase();
+        const vaultName = vault?.content.name.trim();
 
         switch (type) {
             case '*':
-                return vault
-                    ? c('Placeholder').t`Search in ${vault.content.name}`
-                    : c('Placeholder').t`Search in all vaults`;
+                return vault ? c('Placeholder').t`Search in ${vaultName}` : c('Placeholder').t`Search in all vaults`;
             default: {
                 // translator: ${pluralItemType} can be either "logins", "notes", "aliases", or "cards". Full sentence example: "Search notes in all vaults"
                 return vault
-                    ? c('Placeholder').t`Search ${pluralItemType} in ${vault.content.name}`
+                    ? c('Placeholder').t`Search ${pluralItemType} in ${vaultName}`
                     : c('Placeholder').t`Search ${pluralItemType} in all vaults`;
             }
         }

@@ -285,7 +285,7 @@ export const importItemsBatch = async (options: {
                             ModifyTime: modifyTime ?? null,
                         };
                     } catch (e) {
-                        logger.info(`[Saga::Import] could not import "${item.metadata.name}"`);
+                        logger.info(`[Import] could not import "${item.metadata.name}"`);
                         onSkippedItem?.(importIntent);
                         return;
                     }
