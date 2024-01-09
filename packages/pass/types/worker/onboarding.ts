@@ -8,7 +8,6 @@ export enum OnboardingMessage {
     STORAGE_ISSUE /* low disk space */,
     PENDING_SHARE_ACCESS /* new user waiting for admin confirm */,
     BLACK_FRIDAY_OFFER,
-    EARLY_ACCESS, /* Inform for early access to the web app */
 }
 
 export type OnboardingAcknowledgment = {

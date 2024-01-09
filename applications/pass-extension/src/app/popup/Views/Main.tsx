@@ -12,7 +12,6 @@ import { SubSidebar } from '@proton/pass/components/Layout/Section/SubSidebar';
 import { ItemSwitch } from '@proton/pass/components/Navigation/ItemSwitch';
 import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
-import { PersistentUpsellBar } from '@proton/pass/components/Upsell/PersistentUpsellBar';
 
 import { Header } from './Header/Header';
 
@@ -45,7 +44,6 @@ export const Main: VFC = () => {
                                     <Route component={ItemSwitch} />
                                 </Content>
                             </div>
-                            <PersistentUpsellBar />
                         </main>
                     </SpotlightProvider>
                 </PasswordProvider>
