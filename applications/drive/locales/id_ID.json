@@ -2423,6 +2423,9 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Terdapat kesalahan yang tidak terduga. Proses impor harus diulang."
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } events.": [
+        "Berkas ${ formattedFilename } milik Anda mengandung lebih dari ${ MAX_IMPORT_EVENTS } acara."
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Berkas ${ formattedFilename } tidak dapat diimpor karena mengandung metode yang tidak valid."
       ],
@@ -4884,6 +4887,14 @@
         "${ Label.Name } dibuat"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Dari: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Kepada: ${ to }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Panel samping"
@@ -5240,6 +5251,15 @@
       "Link copied to clipboard": [
         "Tautan disalin ke papan klip"
       ],
+      "Move ${ n } files": [
+        "Pindahkan ${ n } berkas"
+      ],
+      "Move ${ n } folders": [
+        "Pindahkan ${ n } folder"
+      ],
+      "Move ${ n } items": [
+        "Pindahkan ${ n } item"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Kapasitas penyimpanan tidak cukup untuk menampung ${ formattedTotal }"
       ],
@@ -5351,6 +5371,9 @@
       "Add to existing group": [
         "Tambah ke grup yang sudah ada"
       ],
+      "Automatic (${ value })": [
+        "Otomatis (${ value })"
+      ],
       "Create new group": [
         "Buat grup baru"
       ],
@@ -5449,6 +5472,9 @@
       ],
       "Search for name or email": [
         "Cari nama atau surel"
+      ],
+      "Search parent folder": [
+        "Cari pada folder induk"
       ],
       "Select": [
         "Pilih"
@@ -5728,7 +5754,7 @@
     },
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
-        "Dapatkan yang Tidak Terbatas"
+        "Dapatkan Unlimited"
       ]
     },
     "specialoffer: Countdown unit": {
@@ -5771,6 +5797,15 @@
       ],
       "Highest VPN speed": [
         "Kecepatan VPN tertinggi"
+      ],
+      "Premium ${ appName1 }": [
+        "${ appName1 } Premium"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "${ appName1 } & ${ appName2 } Premium"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "${ appName1 } & ${ appName2 } & ${ appName3 } Premium"
       ],
       "Premium early access": [
         "Akses dini Premium"
@@ -6204,6 +6239,9 @@
       "Delete ${ count } contacts": [
         "Hapus ${ count } kontak"
       ],
+      "Delete ${ value }": [
+        "Hapus ${ value }"
+      ],
       "Delete permanently": [
         "Hapus permanen"
       ],
@@ -6216,8 +6254,8 @@
       "Discard changes?": [
         "Batalkan perubahan?"
       ],
-      "Download ${ date }.zip": [
-        "Unduh ${ date }.zip"
+      "Download ${ date }": [
+        "Unduh ${ date }"
       ],
       "Download unverified file?": [
         "Unduh berkas yang tidak terverifikasi?"

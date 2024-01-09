@@ -4952,6 +4952,14 @@
         "${ Label.Name } criado"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "De: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Para: ${ to }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Painel lateral"
@@ -5329,6 +5337,18 @@
       "Link copied to clipboard": [
         "Link copiado para área de transferência"
       ],
+      "Move ${ n } file": [
+        "Mover ${ n } arquivo",
+        "Mover ${ n } arquivos"
+      ],
+      "Move ${ n } folder": [
+        "Mover ${ n } pasta",
+        "Mover ${ n } pastas"
+      ],
+      "Move ${ n } item": [
+        "Mover ${ n } item",
+        "Mover ${ n } itens"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Não há espaço suficiente para fazer o envio de ${ formattedTotal }"
       ],
@@ -5440,6 +5460,9 @@
     "Option": {
       "Add to existing group": [
         "Adicionar a um grupo existente"
+      ],
+      "Automatic (${ value })": [
+        "Automático (${ value })"
       ],
       "Create new group": [
         "Criar novo grupo"
@@ -6334,6 +6357,9 @@
         "Excluir ${ count } grupo de contatos",
         "Excluir ${ count } grupos de contatos"
       ],
+      "Delete ${ value }": [
+        "Excluir ${ value }"
+      ],
       "Delete permanently": [
         "Excluir permanentemente"
       ],
@@ -6346,8 +6372,8 @@
       "Discard changes?": [
         "Descartar alterações?"
       ],
-      "Download ${ date }.zip": [
-        "Baixar ${ date }.zip"
+      "Download ${ date }": [
+        "Baixar ${ date }"
       ],
       "Download unverified file?": [
         "Baixar arquivo não verificado?"
