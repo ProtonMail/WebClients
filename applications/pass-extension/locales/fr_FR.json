@@ -720,6 +720,10 @@
         "${ memberCount } membre",
         "${ memberCount } membres"
       ],
+      "${ n } item": [
+        "${ n } élément",
+        "${ n } éléments"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } affichera la vignette de l'élément en utilisant le proxy d'image anonyme ${ BRAND_NAME }."
       ],
@@ -1593,6 +1597,22 @@
       ],
       "You are about to create": [
         "Vous êtes sur le point de créer"
+      ]
+    },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Saisissez votre code PIN."
+      ],
+      "Sign in to your account": [
+        "Connectez-vous à votre compte"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Débloquer ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Bienvenue dans ${ brandNameJSX }"
       ]
     },
     "Onboarding": {

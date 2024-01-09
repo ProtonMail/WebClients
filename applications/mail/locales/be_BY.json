@@ -721,10 +721,10 @@
       "Not saved": [
         "Не захавана"
       ],
-      "Ok": [
+      "OK": [
         "Добра"
       ],
-      "OK": [
+      "Ok": [
         "Добра"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -2995,13 +2995,13 @@
     },
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
-        "Штодзень у ${ timesString }"
+        "Штодзень, ${ timesString }"
       ],
       "Every ${ interval } day, ${ timesString }": [
-        "Кожны ${ interval } дзень у ${ timesString }",
-        "Кожныя ${ interval } дні ў ${ timesString }",
-        "Кожных ${ interval } дзён у ${ timesString }",
-        "Кожных ${ interval } дзён у ${ timesString }"
+        "Кожны ${ interval } дзень, ${ timesString }",
+        "Кожныя ${ interval } дні, ${ timesString }",
+        "Кожных ${ interval } дзён, ${ timesString }",
+        "Кожных ${ interval } дзён, ${ timesString }"
       ]
     },
     "Daily recurring event, frequency (until)": {
@@ -3336,6 +3336,12 @@
       ],
       "Choose a date in the future.": [
         "Выберыце дату ў будучыні."
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Выберыце дату ў межах наступнага ${ n } дня.",
+        "Выберыце дату ў межах наступных ${ n } дзён.",
+        "Выберыце дату ў межах наступных ${ n } дзён.",
+        "Выберыце дату ў межах наступных ${ n } дзён."
       ],
       "Condition incomplete": [
         "Няпоўная ўмова"
@@ -4330,6 +4336,22 @@
         "з зорачкай"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "ліст быў адпраўлены ${ label }"
+      ],
+      "with attachments": [
+        "з далучэннямі"
+      ],
+      "without attachments": [
+        "без далучэнняў"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "ліст быў адпраўлены ${ label }"
+      ]
+    },
     "Font Face Default": {
       "Default": [
         "Прадвызначаны"
@@ -5030,6 +5052,12 @@
         "Не атрымалася перамясціць ${ messagesNotAuthorizedToMove } паведамленні.",
         "Не атрымалася перамясціць ${ messagesNotAuthorizedToMove } паведамленняў.",
         "Не атрымалася перамясціць ${ messagesNotAuthorizedToMove } паведамленні."
+      ],
+      "${ n } unread conversation": [
+        "${ n } непрачытаная размова",
+        "${ n } непрачытаныя размовы",
+        "${ n } непрачытаных размоў",
+        "${ n } непрачытаных размоў"
       ],
       "${ numberOfImageTrackers } email tracker blocked": [
         "Заблакіравана ${ numberOfImageTrackers } праграма сачэння электроннай пошты",
@@ -6132,6 +6160,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Гэта паведамленне падпісана далучаным ключом, які яшчэ не быў давераным."
       ],
+      "This message will be automatically deleted on ${ value }": [
+        "Гэта паведамленне будзе аўтаматычна выдалена ў ${ value }"
+      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Гэта паведамленне будзе пазначана як спам. Ці хочаце вы таксама скасаваць падпіску на будучыя лісты?",
         "Гэтыя паведамленні будуць пазначаны як спам. Ці хочаце вы таксама скасаваць падпіску на будучыя лісты?",
@@ -6158,6 +6189,15 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Тэрмін дзеяння гэтага паведамлення міне ${ formattedDate }"
+      ],
+      "This message will expire on ${ value }": [
+        "Тэрмін дзеяння гэтага паведамлення міне ${ value }"
+      ],
+      "This message will expire today at ${ value }": [
+        "Тэрмін дзеяння гэтага паведамлення міне сёння ў ${ value }"
+      ],
+      "This message will expire tomorrow at ${ value }": [
+        "Тэрмін дзеяння гэтага паведамлення міне заўтра ў ${ value }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Гэты публічны ключ будзе аўтаматычна выкарыстаны для шыфравання лістоў, якія адпраўляюцца на гэты адрас."
@@ -6371,6 +6411,9 @@
       ],
       "You do not have any messages here": [
         "Тут няма паведамленняў"
+      ],
+      "You have ${ unread } in your inbox.": [
+        "У вашай паштовай скрыні ${ unread }."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "У гэтай папцы ў вас захоўваецца **${ count } размова**",
@@ -7644,8 +7687,8 @@
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
         "Кожны ${ interval } месяц у ${ onDayString }, ${ timesString }",
         "Кожныя ${ interval } месяцы ў ${ onDayString }, ${ timesString }",
-        "Кожных ${ interval } месяцаў ${ onDayString }, ${ timesString }",
-        "Кожных ${ interval } месяцаў ${ onDayString }, ${ timesString }"
+        "Кожных ${ interval } месяцаў у ${ onDayString }, ${ timesString }",
+        "Кожных ${ interval } месяцаў у ${ onDayString }, ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "Штомесяц ${ onDayString }, ${ timesString }"
@@ -7655,8 +7698,8 @@
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
         "Кожны ${ interval } месяц у ${ onDayString }, ${ untilString }",
         "Кожныя ${ interval } месяцы ў ${ onDayString }, ${ untilString }",
-        "Кожныя ${ interval } месяцаў у ${ onDayString }, ${ untilString }",
-        "Кожныя ${ interval } месяцаў у ${ onDayString }, ${ untilString }"
+        "Кожных ${ interval } месяцаў у ${ onDayString }, ${ untilString }",
+        "Кожных ${ interval } месяцаў у ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Штомесяц ${ onDayString }, ${ untilString }"
@@ -8026,6 +8069,9 @@
       ],
       "All": [
         "Усе"
+      ],
+      "Automatic (${ value })": [
+        "Аўтаматычна (${ value })"
       ],
       "Create new group": [
         "Стварыць новую групу"
@@ -9605,6 +9651,9 @@
         "Выдаліць ${ count } паведамленні",
         "Выдаліць ${ count } паведамленняў",
         "Выдаліць ${ count } паведамленні"
+      ],
+      "Delete ${ value }": [
+        "Выдаліць ${ value }"
       ],
       "Delete all messages": [
         "Выдаліць усе паведамленні"

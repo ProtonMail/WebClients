@@ -3024,6 +3024,9 @@
       ]
     },
     "Daily recurring event, frequency (until)": {
+      "Daily, ${ untilString }": [
+        "Denně, ${ untilString }"
+      ],
       "Every ${ interval } day, ${ untilString }": [
         "Každý ${ interval } den, ${ untilString }",
         "Každé ${ interval } dny, ${ untilString }",
@@ -4239,6 +4242,12 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Došlo k neočekávané chybě. Import musí být restartován."
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } událost.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } události.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } událostí.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } událostí."
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Váš soubor ${ formattedFilename } má neplatnou metodu a nelze jej importovat."
       ],
@@ -5119,6 +5128,22 @@
         "s hvězdičkou"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "e-mail byl odeslán ${ label }"
+      ],
+      "with attachments": [
+        "s přílohami"
+      ],
+      "without attachments": [
+        "bez příloh"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "e-mail byl odeslán ${ label }"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Přidejte vlastní filtr, který automaticky provede určité akce, jako je přidání štítku nebo archivace zpráv."
@@ -5812,6 +5837,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Část obsahu vašeho kalendáře není podporována a nebude importována."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } klíče byl již nahrán"
+      ],
+      "Selected color:": [
+        "Vybraná barva:"
       ]
     },
     "Info": {
@@ -7903,6 +7939,9 @@
       "You can now close this window.": [
         "Nyní můžete toto okno zavřít."
       ],
+      "You can now return to the application to continue": [
+        "Nyní se můžete vrátit do aplikace a pokračovat"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
       ],
@@ -8094,17 +8133,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Váš předplatné je spravováno Mozillou. Kontaktujte prosím Mozilla podporu."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Byly zjištěny další duplicitní klíče. Pro více informací je prosím nahrajte jednotlivě."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } klíče byl již nahrán"
-      ],
-      "Selected color:": [
-        "Vybraná barva:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9451,6 +9479,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "Aktualizace produktu ${ app }"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "Beta oznámení ${ BRAND_NAME }"
       ],
@@ -9555,6 +9586,14 @@
       ],
       "Preference saved": [
         "Nastavení bylo uloženo"
+      ]
+    },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Od: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Komu: ${ to }"
       ]
     },
     "Limit of calendars reached": {
@@ -9763,6 +9802,9 @@
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Pořiďte si tarif Visionary a buďte součástí příběhu ${ BRAND_NAME }"
       ],
+      "Limited time offer": [
+        "Časově omezená nabídka"
+      ],
       "Secure email that protects your privacy": [
         "Zabezpečený e-mail, který chrání vaše soukromí"
       ]
@@ -9933,6 +9975,20 @@
         "Každé ${ interval } měsíce ${ onDayString }, ${ timesString }",
         "Každých ${ interval } měsíců ${ onDayString }, ${ timesString }",
         "Každých ${ interval } měsíců ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Měsíčně ${ onDayString }, ${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Každý ${ interval } měsíc ${ onDayString }, ${ untilString }",
+        "Každé ${ interval } měsíce ${ onDayString }, ${ untilString }",
+        "Každých ${ interval } měsíců ${ onDayString }, ${ untilString }",
+        "Každých ${ interval } měsíců ${ onDayString }, ${ untilString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Měsíčně ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -10233,12 +10289,6 @@
         "${ n } připojení VPN",
         "${ n } připojení VPN"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } připojení VPN na uživatele",
-        "${ n } připojení VPN na uživatele",
-        "${ n } připojení VPN na uživatele",
-        "${ n } připojení VPN na uživatele"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } s ${ n } aliasem hide-my-email",
         "${ PASS_APP_NAME } se ${ n } aliasy hide-my-email",
@@ -10259,9 +10309,6 @@
       ],
       "${ size } storage per user": [
         "${ size } prostoru na uživatele"
-      ],
-      "1 free VPN connection in total": [
-        "Celkem 1 bezplatné připojení VPN"
       ],
       "1 user": [
         "1 uživatel"
@@ -10514,6 +10561,12 @@
       ],
       "Unlimited volume/bandwidth": [
         "Neomezený objem/šířka pásma"
+      ],
+      "Up to ${ n } user": [
+        "Až ${ n } uživatel",
+        "Až ${ n } uživatelé",
+        "Až ${ n } uživatelů",
+        "Až ${ n } uživatelů"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Až ${ totalStorageSize } úložného prostoru"
@@ -10830,9 +10883,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "V pracovní dny, získejte podporu od týmu zákaznické podpory ${ BRAND_NAME } během 24 hodin od žádosti"
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Jedno VPN připojení umožňuje v jednom okamžiku použít ${ BRAND_NAME } VPN pouze jednomu zařízení. Například pro připojení telefonu a notebooku k ${ BRAND_NAME_TWO } VPN v jeden okamžik budete potřebovat dvě VPN připojení."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Možnost zobrazit ne-soukromé schránky uživatele, včetně zpráv a kontaktních detailů"
@@ -11315,7 +11365,7 @@
         "Žádná nadřazená složka"
       ],
       "No permission": [
-        "Nemáte dostatečné oprávnění"
+        "Bez oprávnění"
       ],
       "Normal": [
         "Normální"
@@ -11326,11 +11376,17 @@
       "On": [
         "Zapnuto"
       ],
+      "Organization only": [
+        "Pouze organizace"
+      ],
       "Permanent": [
         "Trvale"
       ],
       "Plain text": [
         "Prostý text"
+      ],
+      "Receive from all": [
+        "Přijímat od všech"
       ],
       "Repeat daily": [
         "Opakovat denně"
@@ -11760,7 +11816,13 @@
     },
     "Permission": {
       "No permission": [
-        "Nemáte dostatečné oprávnění"
+        "Bez oprávnění"
+      ],
+      "Organization only": [
+        "Pouze organizace"
+      ],
+      "Receive from all": [
+        "Přijímat od všech"
       ],
       "Send to all": [
         "Odeslat všem"
@@ -12669,6 +12731,15 @@
       ],
       "Highest VPN speed": [
         "Nejvyšší rychlost VPN"
+      ],
+      "Premium ${ appName1 }": [
+        "Prémiové funkce ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Prémiové funkce ${ appName1 } a ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Prémiové funkce ${ appName1 }, ${ appName2 } a ${ appName3 }"
       ],
       "Premium early access": [
         "Prémiový předběžný přístup"
@@ -13757,6 +13828,9 @@
       "Decrypt key": [
         "Dešifrovat klíč"
       ],
+      "Delete ${ value }": [
+        "Smazat ${ value }"
+      ],
       "Delete account": [
         "Smazat účet"
       ],
@@ -14294,6 +14368,12 @@
       "Success": [
         "Dokončeno"
       ],
+      "Successfully created ${ n } user account": [
+        "Úspěšně vytvořen ${ n } uživatelský účet",
+        "Úspěšně vytvořeny ${ n } uživatelské účty",
+        "Úspěšně vytvořeno ${ n } uživatelských účtů",
+        "Úspěšně vytvořeno ${ n } uživatelských účtů"
+      ],
       "Summary": [
         "Shrnutí"
       ],
@@ -14787,7 +14867,7 @@
       ]
     },
     "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
+      "SSO user provided by your identity provider": [
         "SSO uživatel poskytnutý poskytovatelem identity"
       ]
     },
@@ -15175,6 +15255,33 @@
         "Každé ${ interval } týdny ve středu, ${ timesString }",
         "Každých ${ interval } týdnů ve středu, ${ timesString }",
         "Každých ${ interval } týdnů ve středu, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Týdně v(ve) ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Týdně všechny dny, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Týdně v pátek, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Týdně v pondělí, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Týdně v sobotu, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Týdně v neděli, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Týdně ve čtvrtek, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Týdně v úterý, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Týdně ve středu, ${ timesString }"
       ]
     },
     "Weekly recurring event, frequency (until)": {
@@ -15231,6 +15338,33 @@
         "Každé ${ interval } týdny ve středu, ${ untilString }",
         "Každých ${ interval } týdnů ve středu, ${ untilString }",
         "Každých ${ interval } týdnů ve středu, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Týdně v(ve) ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Týdně všechny dny, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Týdně v pátek, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Týdně v pondělí, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Týdně v sobotu, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Týdně v neděli, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Týdně ve čtvrtek, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Týdně v úterý, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Týdně ve středu, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -15273,6 +15407,9 @@
         "Každé ${ interval } roky, ${ timesString }",
         "Každých ${ interval } let, ${ timesString }",
         "Každých ${ interval } let, ${ timesString }"
+      ],
+      "Yearly, ${ timesString }": [
+        "Ročně, ${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
@@ -15281,6 +15418,9 @@
         "Každé ${ interval } roky, ${ untilString }",
         "Každých ${ interval } let, ${ untilString }",
         "Každých ${ interval } let, ${ untilString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Ročně, ${ untilString }"
       ]
     }
   }

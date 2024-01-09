@@ -5530,6 +5530,24 @@
       "Link copied to clipboard": [
         "Link został skopiowany do schowka"
       ],
+      "Move ${ n } file": [
+        "Przenieś ${ n } plik",
+        "Przenieś ${ n } pliki",
+        "Przenieś ${ n } plików",
+        "Przenieś ${ n } plików"
+      ],
+      "Move ${ n } folder": [
+        "Przenieś ${ n } folder",
+        "Przenieś ${ n } foldery",
+        "Przenieś ${ n } folderów",
+        "Przenieś ${ n } folderów"
+      ],
+      "Move ${ n } item": [
+        "Przenieś ${ n } element",
+        "Przenieś ${ n } elementy",
+        "Przenieś ${ n } elementów",
+        "Przenieś ${ n } elementów"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Brak przestrzeni dyskowej do przesłania ${ formattedTotal }"
       ],
@@ -5643,6 +5661,9 @@
     "Option": {
       "Add to existing group": [
         "Dodaj do istniejącej grupy"
+      ],
+      "Automatic (${ value })": [
+        "Automatyczny (${ value })"
       ],
       "Create new group": [
         "Utwórz nową grupę"
@@ -6623,6 +6644,9 @@
         "Usuń ${ count } grup kontaktów",
         "Usuń ${ count } grupy kontaktów"
       ],
+      "Delete ${ value }": [
+        "Usuń ${ value }"
+      ],
       "Delete permanently": [
         "Usuń trwale"
       ],
@@ -6635,8 +6659,8 @@
       "Discard changes?": [
         "Czy chcesz odrzucić zmiany?"
       ],
-      "Download ${ date }.zip": [
-        "Pobierz ${ date }.zip"
+      "Download ${ date }": [
+        "Pobierz ${ date }"
       ],
       "Download unverified file?": [
         "Pobrać niezweryfikowany plik?"

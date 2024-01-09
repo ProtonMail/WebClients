@@ -721,11 +721,11 @@
       "Not saved": [
         "Neuloženo"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Otevřít ${ CALENDAR_APP_NAME }"
@@ -3005,6 +3005,9 @@
       ]
     },
     "Daily recurring event, frequency (until)": {
+      "Daily, ${ untilString }": [
+        "Denně, ${ untilString }"
+      ],
       "Every ${ interval } day, ${ untilString }": [
         "Každý ${ interval } den, ${ untilString }",
         "Každé ${ interval } dny, ${ untilString }",
@@ -3333,6 +3336,12 @@
       ],
       "Choose a date in the future.": [
         "Vyberte budoucí datum."
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Vyberte datum v příštím ${ n } dni.",
+        "Vyberte datum v příštích ${ n } dnech.",
+        "Vyberte datum v příštích ${ n } dnech.",
+        "Vyberte datum v příštích ${ n } dnech."
       ],
       "Condition incomplete": [
         "Neúplná podmínka"
@@ -3777,6 +3786,12 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Došlo k neočekávané chybě. Import musí být restartován."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } událost.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } události.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } událostí.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } událostí."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Váš soubor ${ formattedFilename } má neplatnou metodu a nelze jej importovat."
@@ -4319,6 +4334,22 @@
       ],
       "starred": [
         "s hvězdičkou"
+      ]
+    },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "e-mail byl odeslán ${ label }"
+      ],
+      "with attachments": [
+        "s přílohami"
+      ],
+      "without attachments": [
+        "bez příloh"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "e-mail byl odeslán ${ label }"
       ]
     },
     "Font Face Default": {
@@ -4935,6 +4966,54 @@
         "${ currentProgress } z ${ totalProgress }",
         "${ currentProgress } z ${ totalProgress }"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } konverzace bude označena jako:",
+        "${ elementsCount } konverzace budou označeny jako:",
+        "${ elementsCount } konverzací bude označeno jako:",
+        "${ elementsCount } konverzací bude označeno jako:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } konverzace bude označena jako přečtená.",
+        "${ elementsCount } konverzace budou označeny jako přečtené.",
+        "${ elementsCount } konverzací bude označeno jako přečtené.",
+        "${ elementsCount } konverzací bude označeno jako přečtené."
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } konverzace bude označena jako nepřečtená.",
+        "${ elementsCount } konverzace budou označeny jako nepřečtené.",
+        "${ elementsCount } konverzací bude označeno jako nepřečtené.",
+        "${ elementsCount } konverzací bude označeno jako nepřečtené."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } konverzace bude přesunuta",
+        "${ elementsCount } konverzace budou přesunuty",
+        "${ elementsCount } konverzací bude přesunuto",
+        "${ elementsCount } konverzací bude přesunuto"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } zpráva bude označena jako:",
+        "${ elementsCount } zprávy budou označeny jako:",
+        "${ elementsCount } zpráv bude označeno jako:",
+        "${ elementsCount } zpráv bude označeno jako:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } zpráva bude označena jako přečtená.",
+        "${ elementsCount } zprávy budou označeny jako přečtené.",
+        "${ elementsCount } zpráv bude označeno jako přečtené.",
+        "${ elementsCount } zpráv bude označeno jako přečtené."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } zpráva bude označena jako nepřečtená.",
+        "${ elementsCount } zprávy budou označeny jako nepřečtené.",
+        "${ elementsCount } zpráv bude označeno jako nepřečtené.",
+        "${ elementsCount } zpráv bude označeno jako nepřečtené."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } zpráva bude přesunuta",
+        "${ elementsCount } zprávy budou přesunuty",
+        "${ elementsCount } zpráv bude přesunuto",
+        "${ elementsCount } zpráv bude přesunuto"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } vložený obrázek",
         "${ embeddedAttachmentsCount } vložené obrázky",
@@ -4961,6 +5040,12 @@
         "${ messagesNotAuthorizedToMove } zprávy nemohly být přesunuty.",
         "${ messagesNotAuthorizedToMove } zpráv nemohlo být přesunuto.",
         "${ messagesNotAuthorizedToMove } zpráv nemohlo být přesunuto."
+      ],
+      "${ n } unread conversation": [
+        "${ n } nepřečtená konverzace",
+        "${ n } nepřečtené konverzace",
+        "${ n } nepřečtených konverzací",
+        "${ n } nepřečtených konverzací"
       ],
       "${ numberOfImageTrackers } email tracker blocked": [
         "${ numberOfImageTrackers } e-mailový sledovací prvek zablokován",
@@ -5237,6 +5322,9 @@
       ],
       "Clear data": [
         "Smazat data"
+      ],
+      "Clear selection": [
+        "Zrušit výběr"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Vymazání dat prohlížeče také deaktivuje vyhledávání obsahu zpráv v tomto zařízení. Pro vyhledávání ve všech zprávách bude nutné je znovu stáhnout."
@@ -6042,6 +6130,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Tato zpráva je podepsána přiloženým klíčem, který nebyl dosud označen jako důvěryhodný."
       ],
+      "This message will be automatically deleted on ${ value }": [
+        "Tato zpráva bude automaticky smazána v(ve) ${ value }"
+      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Tato zpráva bude označena jako spam. Chcete také odhlásit příjem budoucích e-mailů?",
         "Tyto zprávy budou označeny jako spam. Chcete také odhlásit příjem budoucích e-mailů?",
@@ -6069,11 +6160,23 @@
       "This message will expire ${ formattedDate }": [
         "Tato zpráva vyprší ${ formattedDate }"
       ],
+      "This message will expire on ${ value }": [
+        "Platnost této zprávy vyprší v(ve) ${ value }"
+      ],
+      "This message will expire today at ${ value }": [
+        "Platnost této zprávy vyprší dnes v(ve) ${ value }"
+      ],
+      "This message will expire tomorrow at ${ value }": [
+        "Platnost této zprávy vyprší zítra v(ve) ${ value }"
+      ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Tento veřejný klíč bude automaticky využit pro šifrování zpráv odesílaných na tuto adresu."
       ],
       "This sender's public key has not been trusted yet.": [
         "Veřejný klíč tohoto odesílatele nebyl dosud označen jako důvěryhodný."
+      ],
+      "to ${ destinationElement } folder.": [
+        "do složky ${ destinationElement }."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Abyste zamezili spamu a obtěžování, potvrďte, že jste člověk."
@@ -6264,6 +6367,9 @@
       "You can import one data type at a time.": [
         "Importovat můžete vždy jeden typ dat."
       ],
+      "You can now return to the application to continue": [
+        "Nyní se můžete vrátit do aplikace a pokračovat"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
       ],
@@ -6275,6 +6381,9 @@
       ],
       "You do not have any messages here": [
         "Zde nemáte žádné zprávy"
+      ],
+      "You have ${ unread } in your inbox.": [
+        "Máte ${ unread } v doručené poště."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "V této složce máte uloženou **${ count } konverzaci**",
@@ -7198,6 +7307,14 @@
         "${ Label.Name } byl vytvořen"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Od: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Komu: ${ to }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Postranní panel"
@@ -7542,6 +7659,20 @@
         "Každé ${ interval } měsíce ${ onDayString }, ${ timesString }",
         "Každých ${ interval } měsíců ${ onDayString }, ${ timesString }",
         "Každých ${ interval } měsíců ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Měsíčně ${ onDayString }, ${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Každý ${ interval } měsíc ${ onDayString }, ${ untilString }",
+        "Každé ${ interval } měsíce ${ onDayString }, ${ untilString }",
+        "Každých ${ interval } měsíců ${ onDayString }, ${ untilString }",
+        "Každých ${ interval } měsíců ${ onDayString }, ${ untilString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Měsíčně ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -8658,6 +8789,15 @@
       "Highest VPN speed": [
         "Nejvyšší rychlost VPN"
       ],
+      "Premium ${ appName1 }": [
+        "Prémiové funkce ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Prémiové funkce ${ appName1 } a ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Prémiové funkce ${ appName1 }, ${ appName2 } a ${ appName3 }"
+      ],
       "Premium early access": [
         "Prémiový předběžný přístup"
       ],
@@ -9470,6 +9610,9 @@
         "Smazat ${ count } zpráv",
         "Smazat ${ count } zpráv"
       ],
+      "Delete ${ value }": [
+        "Smazat ${ value }"
+      ],
       "Delete all messages": [
         "Smazat všechny zprávy"
       ],
@@ -9605,8 +9748,20 @@
       "Mark as unread": [
         "Označit jako nepřečtené"
       ],
+      "Mark conversations as read": [
+        "Označit konverzace jako přečtené"
+      ],
+      "Mark conversations as unread": [
+        "Označit konverzace jako nepřečtené"
+      ],
       "Mark email as legitimate": [
         "Označit e-mail jako legitimní"
+      ],
+      "Mark messages as read": [
+        "Označit zprávy jako přečtené"
+      ],
+      "Mark messages as unread": [
+        "Označit zprávy jako nepřečtené"
       ],
       "Merge contacts": [
         "Sloučit kontakty"
@@ -9637,6 +9792,12 @@
       ],
       "More selections": [
         "Další výběry"
+      ],
+      "Move all conversations": [
+        "Přesunout všechny konverzace"
+      ],
+      "Move all messages": [
+        "Přesunout všechny zprávy"
       ],
       "Move all messages to Archive": [
         "Přesunout všechny zprávy do Archivu"
@@ -10242,6 +10403,33 @@
         "Každé ${ interval } týdny ve středu, ${ timesString }",
         "Každých ${ interval } týdnů ve středu, ${ timesString }",
         "Každých ${ interval } týdnů ve středu, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Týdně v(ve) ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Týdně všechny dny, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Týdně v pátek, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Týdně v pondělí, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Týdně v sobotu, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Týdně v neděli, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Týdně ve čtvrtek, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Týdně v úterý, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Týdně ve středu, ${ timesString }"
       ]
     },
     "Weekly recurring event, frequency (until)": {
@@ -10298,6 +10486,33 @@
         "Každé ${ interval } týdny ve středu, ${ untilString }",
         "Každých ${ interval } týdnů ve středu, ${ untilString }",
         "Každých ${ interval } týdnů ve středu, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Týdně v(ve) ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Týdně všechny dny, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Týdně v pátek, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Týdně v pondělí, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Týdně v sobotu, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Týdně v neděli, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Týdně ve čtvrtek, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Týdně v úterý, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Týdně ve středu, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -10340,6 +10555,9 @@
         "Každé ${ interval } roky, ${ timesString }",
         "Každých ${ interval } let, ${ timesString }",
         "Každých ${ interval } let, ${ timesString }"
+      ],
+      "Yearly, ${ timesString }": [
+        "Ročně, ${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
@@ -10348,6 +10566,9 @@
         "Každé ${ interval } roky, ${ untilString }",
         "Každých ${ interval } let, ${ untilString }",
         "Každých ${ interval } let, ${ untilString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Ročně, ${ untilString }"
       ]
     }
   }

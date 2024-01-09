@@ -278,6 +278,9 @@
       "Pass for iOS": [
         "Έγκριση για το iOS"
       ],
+      "Pin item": [
+        "Καρφίτσωμα στοιχείου"
+      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
       ],
@@ -364,6 +367,9 @@
       ],
       "Try again": [
         "Δοκιμάστε ξανά"
+      ],
+      "Unpin item": [
+        "Ξεκαρφίτσωμα στοιχείου"
       ],
       "Update": [
         "Ενημέρωση"
@@ -528,11 +534,17 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Αποτυχία μετακίνησης όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
+      "Failed to pin item": [
+        "Αποτυχία καρφιτσώματος στοιχείου"
+      ],
       "Failed to remove user's access.": [
         "Αποτυχία κατάργησης πρόσβασης χρήστη."
       ],
       "Failed to transfer this vault's ownership.": [
         "Αποτυχία μεταβίβασης της ιδιοκτησίας αυτής της κρύπτης."
+      ],
+      "Failed to unpin item": [
+        "Αποτυχία ξεκαρφιτσώματος στοιχείου"
       ],
       "File could not be parsed": [
         "Δεν ήταν δυνατή η ανάλυση του αρχείου"
@@ -719,6 +731,10 @@
       "${ memberCount } member": [
         "${ memberCount } μέλος",
         "${ memberCount } μέλη"
+      ],
+      "${ n } item": [
+        "${ n } στοιχείο",
+        "${ n } στοιχεία"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "Το ${ PASS_APP_NAME } θα εμφανίσει το favicon του στοιχείου μέσω ανώνυμου διακομιστή μεσολάβησης εικόνας ${ BRAND_NAME }."
@@ -930,6 +946,12 @@
       ],
       "Item successfully moved": [
         "Στοιχείο μετακινήθηκε επιτυχώς"
+      ],
+      "Item successfully pinned": [
+        "Το στοιχείο καρφιτσώθηκε επιτυχώς"
+      ],
+      "Item successfully unpinned": [
+        "Το στοιχείο ξεκαρφιτσώθηκε επιτυχώς"
       ],
       "Leaving vault...": [
         "Αποχώρηση από την κρύπτη..."
@@ -1595,6 +1617,22 @@
         "Είστε έτοιμοι να δημιουργήσετε"
       ]
     },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Εισαγωγή κωδικού ΡΙΝ"
+      ],
+      "Sign in to your account": [
+        "Συνδεθείτε στον λογαριασμό σας"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Ξεκλειδώστε ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Καλώς ήρθατε στο ${ brandNameJSX }"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Καλώς ήρθατε στο ${ appName }"
@@ -1799,6 +1837,9 @@
       ],
       "Pin the extension": [
         "Καρφίτσωμα της προέκτασης"
+      ],
+      "Pinned (${ items.length })": [
+        "Καρφιτσώθηκαν (${ items.length })"
       ],
       "Secure your data": [
         "Ασφαλίστε τα δεδομένα σας"
