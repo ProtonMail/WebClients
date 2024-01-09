@@ -161,6 +161,14 @@ export const useOnboardingMessages = () => {
                 icon: ShieldIcon,
                 onClose: () => acknowledge(OnboardingMessage.B2B_ONBOARDING),
             },
+            [OnboardingMessage.EARLY_ACCESS]: {
+                id: 'early-access',
+                hidden: true,
+                title: c('Title').t`Upgrade to Unlock Premium Features`,
+                message: c('Info').t`Please upgrade to have early access ${PASS_APP_NAME} web app`,
+                weak: true,
+                onClose: () => acknowledge(OnboardingMessage.EARLY_ACCESS, () => setUpselling(null)),
+            },
         }),
         [user]
     );
