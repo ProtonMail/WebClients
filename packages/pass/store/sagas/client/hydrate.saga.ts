@@ -4,6 +4,7 @@ import { PassCrypto } from '@proton/pass/lib/crypto';
 import { decryptCachedState } from '@proton/pass/lib/crypto/utils/cache.decrypt';
 import { getUserState } from '@proton/pass/lib/user/user.requests';
 import {
+    cacheCancel,
     getUserAccessSuccess,
     getUserFeaturesSuccess,
     startEventPolling,
@@ -62,6 +63,7 @@ export function* hydrateFromCache(
 function* hydrateWorker(options: RootSagaOptions) {
     try {
         yield put(stopEventPolling());
+        yield put(cacheCancel());
         yield hydrateFromCache((_, incoming) => incoming, options);
         yield put(startEventPolling());
     } catch {}
