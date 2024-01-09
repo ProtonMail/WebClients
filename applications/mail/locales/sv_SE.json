@@ -713,11 +713,11 @@
       "Not saved": [
         "Inte sparad"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Öppna i ${ CALENDAR_APP_NAME }"
@@ -4907,6 +4907,10 @@
         "${ messagesNotAuthorizedToMove } meddelande kunde inte flyttas.",
         "${ messagesNotAuthorizedToMove } meddelanden kunde inte flyttas."
       ],
+      "${ n } unread conversation": [
+        "${ n } oläst konversation",
+        "${ n } olästa konversationer"
+      ],
       "${ numberOfImageTrackers } email tracker blocked": [
         "${ numberOfImageTrackers } e-postspårare blockerad",
         "${ numberOfImageTrackers } e-postspårare blockerade"
@@ -5932,6 +5936,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Detta meddelande är signerat med den bifogade nyckeln som inte har blivit betrodd ännu."
       ],
+      "This message will be automatically deleted on ${ value }": [
+        "Detta meddelande kommer tas bort automatiskt den ${ value }"
+      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Detta meddelande kommer att markeras som skräppost. Vill du också avsluta prenumeration på kommande e-postmeddelanden?",
         "Dessa meddelanden kommer att markeras som skräppost. Vill du också avsluta prenumeration på kommande e-postmeddelanden?"
@@ -5956,6 +5963,15 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Detta meddelande kommer löpa ut den ${ formattedDate }"
+      ],
+      "This message will expire on ${ value }": [
+        "Detta meddelande kommer löpa ut den ${ value }"
+      ],
+      "This message will expire today at ${ value }": [
+        "Detta meddelande kommer löpa ut idag kl. ${ value }"
+      ],
+      "This message will expire tomorrow at ${ value }": [
+        "Detta meddelande kommer löpa ut imorgon kl. ${ value }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Denna offentliga nyckel kommer automatiskt att användas för att kryptera e-post som skickas till denna adress."
@@ -6169,6 +6185,9 @@
       ],
       "You do not have any messages here": [
         "Du har inga meddelanden här"
+      ],
+      "You have ${ unread } in your inbox.": [
+        "Du har ${ unread } i din inkorg."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Du har **${ count } konversation** lagrad i denna mapp",
