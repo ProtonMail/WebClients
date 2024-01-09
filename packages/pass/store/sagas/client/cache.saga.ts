@@ -1,6 +1,5 @@
-import type { AnyAction } from 'redux';
-import type { Task } from 'redux-saga';
-import { cancel, fork, select, take, takeLatest } from 'redux-saga/effects';
+import type { Action, AnyAction } from 'redux';
+import { fork, race, select, take, takeLatest } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { CACHE_SALT_LENGTH, getCacheEncryptionKey } from '@proton/pass/lib/crypto/utils/cache.encrypt';
@@ -19,13 +18,13 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 
 const CACHE_THROTTLING_TIMEOUT = 1_000;
 
-function* cacheWorker({ type, meta }: WithCache<AnyAction>, { getAppState, getAuthStore, setCache }: RootSagaOptions) {
+function* cacheWorker({ meta, type }: WithCache<AnyAction>, { getAppState, getAuthStore, setCache }: RootSagaOptions) {
     if (meta.throttle) yield wait(CACHE_THROTTLING_TIMEOUT);
 
     const loggedIn = getAuthStore().hasSession();
     const booted = oneOf(AppStatus.READY, AppStatus.BOOTING)(getAppState().status);
 
-    if (loggedIn && booted) {
+    if (loggedIn && booted && PassCrypto.ready) {
         try {
             const sessionLockToken = getAuthStore().getLockToken();
             const cacheSalt = crypto.getRandomValues(new Uint8Array(CACHE_SALT_LENGTH));
@@ -57,22 +56,24 @@ function* cacheWorker({ type, meta }: WithCache<AnyAction>, { getAppState, getAu
                 PassEncryptionTag.Cache
             );
 
-            logger.info(`[Cache] Caching store and crypto state @ action["${type}"]`);
             yield setCache({
                 salt: uint8ArrayToString(cacheSalt),
                 state: uint8ArrayToString(encryptedData),
                 snapshot: uint8ArrayToString(encryptedWorkerSnapshot),
             });
+
+            logger.info(`[Cache] Caching store and crypto state @ action["${type}"]`);
         } catch {}
     }
 }
 
 export default function* watcher(options: RootSagaOptions) {
     yield takeLatest(isCachingAction, function* (action) {
-        const cacheTask: Task = yield fork(cacheWorker, action, options);
+        const result = (yield race({
+            cache: fork(cacheWorker, action, options),
+            cancel: take(cacheCancel.match),
+        })) as { cancel?: Action };
 
-        yield take(cacheCancel.match);
-        yield cancel(cacheTask);
-        logger.info(`[Cache] Invalidated all caching tasks`);
+        if (result.cancel) logger.info(`[Cache] Invalidated all caching tasks`);
     });
 }
