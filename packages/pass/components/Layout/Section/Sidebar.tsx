@@ -2,7 +2,6 @@
 import { type FC } from 'react';
 
 import { Logo } from '@proton/components/components';
-import { EarlyAccessBadge } from '@proton/pass/components/Upsell/EarlyAccessBadge';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -20,7 +19,6 @@ export const Sidebar: FC<Props> = ({ children, expanded = false, onToggle }) => 
             <h1 className="sr-only">{getAppName(APPS.PROTONPASS)}</h1>
             <div className="w-full logo-container hidden md:flex shrink-0 justify-space-between items-center flex-nowrap">
                 <Logo appName={APPS.PROTONPASS} />
-                <EarlyAccessBadge />
             </div>
 
             <div className="mt-1 md:mt-0" aria-hidden="true" />

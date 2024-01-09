@@ -103,12 +103,3 @@ export const createUserRatingRule = (store: Store<State>) =>
             return !previous && createdItemsCount >= ITEM_COUNT_RATING_PROMPT;
         },
     });
-
-export const createEarlyAccessRule = (store: Store<State>) =>
-    createOnboardingRule({
-        message: OnboardingMessage.EARLY_ACCESS,
-        when: (previous) => {
-            const passPlan = selectPassPlan(store.getState());
-            return !previous && passPlan !== UserPassPlan.PLUS;
-        },
-    });
