@@ -77,6 +77,9 @@
       "Close this banner": [
         "Κλείσιμο αυτού του banner"
       ],
+      "Configure SAML": [
+        "Διαμόρφωση SAML"
+      ],
       "Confirm": [
         "Επιβεβαίωση"
       ],
@@ -260,6 +263,9 @@
       "Hide plan features": [
         "Απόκρυψη δυνατοτήτων προγράμματος"
       ],
+      "Import new SAML metadata": [
+        "Εισαγωγή νέων μεταδεδομένων SAML"
+      ],
       "Increase": [
         "Αύξηση"
       ],
@@ -338,6 +344,9 @@
       "Remove bonuses": [
         "Αφαιρέστε τα μπόνους"
       ],
+      "Remove domain": [
+        "Αφαίρεση τομέα"
+      ],
       "Remove gift code": [
         "Αφαιρέστε τον κωδικό δώρου"
       ],
@@ -389,11 +398,17 @@
       "Save address": [
         "Αποθήκευση διεύθυνσης"
       ],
+      "Save SAML configuration": [
+        "Αποθήκευση διαμόρφωσης SAML"
+      ],
       "Search": [
         "Αναζήτηση"
       ],
       "Search countries": [
         "Αναζήτηση χωρών"
+      ],
+      "See DNS TXT record": [
+        "Εμφάνιση DNS TXT εγγραφής"
       ],
       "See how": [
         "Δείτε πως"
@@ -403,6 +418,9 @@
       ],
       "Select ${ planTitle }": [
         "Επιλογή ${ planTitle }"
+      ],
+      "Select file": [
+        "Επιλέξτε αρχείο"
       ],
       "Send code": [
         "Αποστολή κωδικού"
@@ -2066,6 +2084,12 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Παρακαλώ αναβαθμίστε σε επιχειρηματικό πλάνο με περισσότερους από 1 χρήστες ώστε να διαχειριστείτε πολλαπλούς χρήστες."
       ],
+      "Please upload an xml file": [
+        "Παρακαλούμε ανεβάστε ένα αρχείο xml"
+      ],
+      "Please upload only 1 file": [
+        "Παρακαλούμε ανεβάστε μόνο 1 αρχείο"
+      ],
       "Process aborted": [
         "Η διαδικασία ματαιώθηκε"
       ],
@@ -2116,6 +2140,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Δοκιμάστε να χρησιμοποιήσετε μόνο γράμματα, αριθμούς και _.-"
+      ],
+      "Unable to upload file": [
+        "Αδυναμία μεταφόρτωσης αρχείου"
       ],
       "Unknown error": [
         "Άγνωστο σφάλμα"
@@ -2736,6 +2763,11 @@
         "Όνομα χρήστη"
       ]
     },
+    "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Προσθέστε αυτήν την εγγραφή στον τομέα σας στον πίνακα ελέγχου του μητρώου καταχώρησης ονομάτων τομέα"
+      ]
+    },
     "Human verification method": {
       "Email": [
         "Email"
@@ -2858,6 +2890,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Προσθέστε άλλο ένα επίπεδο ασφάλειας στον λογαριασμό σας. Θα πρέπει να επαληθεύετε τον εαυτό σας με έλεγχο ταυτότητας δύο παραγόντων κάθε φορά που συνδέεστε."
       ],
+      "Add domain": [
+        "Προσθήκη τομέα"
+      ],
       "Add server (${ availableAddedCount } available)": [
         "Προσθήκη διακομιστή (${ availableAddedCount } διαθέσιμοι)",
         "Προσθήκη διακομιστή (${ availableAddedCount } διαθέσιμοι)"
@@ -2915,6 +2950,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Θέλετε σίγουρα να αφαιρέσετε τα προνόμια διαχειριστή από αυτόν τον χρήστη;"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "Είστε βέβαιοι ότι θέλετε να καταργήσετε τον τομέα ${ boldDomain };"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Ζητήστε από τον διαχειριστή του οργανισμού σας να ρυθμίσει τις Πύλες."
       ],
@@ -2966,8 +3004,20 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Azure or Onelogin. This will enable SAML for the whole organization.": [
+        "Ρυθμίστε τις παραμέτρους ελέγχου ταυτότητας SAML για τον οργανισμό σας μέσω μιας υπηρεσίας παροχής ταυτότητας όπως Okta, Azure ή Onelogin. Αυτό θα ενεργοποιήσει το SAML για ολόκληρο τον οργανισμό."
+      ],
       "Continue with ${ freeName }": [
         "Συνέχεια με το ${ freeName }"
+      ],
+      "Copied to clipboard": [
+        "Αντιγράφηκε στο πρόχειρο"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Αντιγράψτε και επικολλήστε αυτήν τη διεύθυνση URL στο πεδίο URL ACS (Assertion Consumer Service) του παρόχου ταυτότητάς σας"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Αντιγράψτε και επικολλήστε αυτήν τη διεύθυνση URL στο πεδίο αναγνωριστικού οντότητας της υπηρεσίας παροχής ταυτότητάς σας"
       ],
       "Copy the suggested password to clipboard": [
         "Αντιγράψτε τον προτεινόμενο κωδικό πρόσβασης στο πρόχειρο"
@@ -3019,11 +3069,23 @@
       "Discover ProtectBuy logo": [
         "λογότυπο Discover ProtectBuy"
       ],
+      "DNS TXT record": [
+        "DNS TXT εγγραφή"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "ΜΗΝ ξεχάσετε αυτόν τον κωδικό πρόσβασης. Αν τον ξεχάσετε, δεν θα είστε σε θέση να διαχειριστείτε τον οργανισμό σας."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "ΜΗΝ ξεχάσετε αυτόν τον κωδικό πρόσβασης. Αν το ξεχάσετε, δε θα μπορείτε να συνδεθείτε ή να αποκρυπτογραφήσετε τα μηνύματα σας."
+      ],
+      "Domain ownership failed verification.": [
+        "Η επαλήθευση αποτυχίας ιδιοκτησίας τομέα."
+      ],
+      "Domain ownership not verified.": [
+        "Η ιδιοκτησία τομέα δεν έχει επαληθευτεί."
+      ],
+      "Domain ownership verified.": [
+        "Επαληθεύτηκε η ιδιοκτησία τομέα."
       ],
       "Done": [
         "Ολοκληρώθηκε"
@@ -3040,6 +3102,12 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Κατεβάστε την αγαπημένη σας εφαρμογή σήμερα και πάρτε την ιδιωτικότητα σας όπου κι αν πάτε."
       ],
+      "Drop file here to upload": [
+        "Σύρετε ένα αρχείο εδώ για μεταφόρτωση"
+      ],
+      "Drop to import": [
+        "Απόθεση για εισαγωγή"
+      ],
       "Each code can only be used once": [
         "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μια φορά"
       ],
@@ -3054,6 +3122,9 @@
       ],
       "Emailing preference saved": [
         "Η προτίμηση email αποθηκεύτηκε"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "Διεύθυνση URL τελικού σημείου που λάβατε από τον πάροχο ταυτότητάς σας (π.χ. https://idp.example.com/sso/saml)."
       ],
       "Enhance your network security": [
         "Βελτιώστε την ασφάλεια του δικτύου σας"
@@ -3127,8 +3198,14 @@
       "Get ${ upsellPlanName }": [
         "Απόκτηση ${ upsellPlanName }"
       ],
+      "Go to your identity provider, get the the SAML metadata for ${ appName } and import it here.": [
+        "Μεταβείτε στον πάροχο ταυτότητάς σας, λάβετε τα μεταδεδομένα SAML για το ${ appName } και εισαγάγετε τα εδώ."
+      ],
       "here": [
         "εδώ"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Δημόσιο κλειδί της υπηρεσίας παροχής ταυτότητας για την υπογραφή ισχυρισμών ελέγχου ταυτότητας. Θα πρέπει να υπάρχει ένα μέρος για τη λήψη ή την αντιγραφή του κατακερματισμού πιστοποιητικού από την υπηρεσία παροχής ταυτότητας. Απλώς επικολλήστε τον κατακερματισμό του πιστοποιητικού στο πεδίο περιοχής κειμένου."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Εάν ένας άλλος διαχειριστής άλλαξε αυτόν τον κωδικό πρόσβασης, θα πρέπει να του ζητήσετε τον νέο κωδικό οργανισμού."
@@ -3292,6 +3369,9 @@
       "Optional": [
         "Προαιρετικό"
       ],
+      "or ${ selectFileButton }": [
+        "ή ${ selectFileButton }"
+      ],
       "Or select a particular server:": [
         "Ή επιλέξτε συγκεκριμένο διακομιστή:"
       ],
@@ -3417,6 +3497,9 @@
       "Revoke certificate ${ name }": [
         "Ανάκληση πιστοποιητικού ${ name }"
       ],
+      "SAML configuration saved": [
+        "Αποθηκεύτηκε η διαμόρφωση SAML"
+      ],
       "Save ${ percentage }": [
         "Εξοικονομήστε ${ percentage }"
       ],
@@ -3464,6 +3547,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Ορισμένοι από τους διαθέσιμους διακομιστές σας μπορούν να χρησιμοποιηθούν μόνο σε συγκεκριμένες χώρες λόγω πρόσφατων καταργήσεων"
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Καθορίστε τον τομέα στον οποίο επιτρέπεται ο έλεγχος ταυτότητας με SAML SSO."
       ],
       "Step ${ step }": [
         "Βήμα ${ step }",
@@ -3568,6 +3654,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Αυτός ο χρήστης είναι προς το παρόν υπεύθυνος για τις πληρωμές του οργανισμού σας. Με την υποβάθμιση αυτού του μέλους, θα είστε εσείς υπεύθυνοι για τις πληρωμές του οργανισμού σας."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Αυτή η επαλήθευση μπορεί να διαρκέσει έως και μία ώρα. Μπορείτε να συνεχίσετε με ασφάλεια στα επόμενα βήματα."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Αυτό θα ακυρώσει την τρέχουσα συνδρομή επί πληρωμή και θα χάσετε τυχόν οφέλη αφοσίωσης που έχετε συγκεντρώσει."
       ],
@@ -3594,6 +3683,9 @@
       ],
       "to ${ product } Business": [
         "στο ${ product } Business"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Για να επιτρέψετε στον τομέα ${ boldDomainName } να χρησιμοποιεί SAML SSO, πρέπει να επαληθεύσετε την κατοχή του προσθέτοντας την ακόλουθη εγγραφή DNS TXT στον τομέα σας στην υπηρεσία παροχής DNS."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Για να ακυρώσετε τη συνδρομή σας, επικοινωνήστε μαζί μας."
@@ -3655,6 +3747,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "Δυστυχώς δεν έχει αποθηκευτεί μέθοδος ανάκτησης για αυτόν τον λογαριασμό."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "Μοναδικό αναγνωριστικό που δημιουργείται από τον πάροχο ταυτότητάς σας, συνήθως με τη μορφή διεύθυνσης URL που περιέχει το όνομα του παρόχου ταυτότητας (π.χ. https://idp.example.com/XXXXX)."
+      ],
       "Unsaved changes": [
         "Μη αποθηκευμένες αλλαγές"
       ],
@@ -3693,6 +3788,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Η επαλήθευση θα ανοίξει μια νέα καρτέλα, παρακαλώ απενεργοποιήστε τον αποκλεισμό αναδυόμενων παραθύρων. Δεν θα χρεωθείτε. Κάθε ποσό που χρησιμοποιείται για την επαλήθευση της κάρτας θα επιστραφεί αμέσως."
+      ],
+      "Verify domain": [
+        "Επαλήθευση τομέα"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Επαληθεύστε την ταυτότητά σας με έναν κωδικό πρόσβασης μίας χρήσης βάσει χρόνου από μια εφαρμογή ελέγχου ταυτότητας"
@@ -3768,6 +3866,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Αναβαθμίζουμε το τρέχον πρόγραμμά σας με ένα βελτιωμένο πρόγραμμα που προσφέρει περισσότερα με το ίδιο κόστος. Κατά τη διάρκεια της αναβάθμισης των συστημάτων μας, δεν θα μπορείτε να πραγματοποιήσετε αλλαγές σε αυτό. Θα σας ειδοποιήσουμε μέσω email μόλις ολοκληρωθεί."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "Όταν ενεργοποιείτε το SAML για ${ appName } στην υπηρεσία παροχής ταυτότητας, ενδέχεται να σας ζητηθεί να χρησιμοποιήσετε τη διεύθυνση URL επιστροφής κλήσης (ACS) και το αναγνωριστικό εκδότη. Απλώς αντιγράψτε-επικολλήστε τα παρακάτω δεδομένα στα πεδία της υπηρεσίας παροχής ταυτότητάς σας."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
@@ -3918,6 +4019,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Τα υπάρχοντα μηνύματα, ημερολόγια ή επαφές σας θα κλειδωθούν. Για να ανακτήσετε αυτά τα δεδομένα, θα χρειαστείτε τη φράση ανάκτησης ή το ${ oldPassword } σας."
       ],
+      "Your files will be encrypted and then saved": [
+        "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Οι πληροφορίες σας είναι ασφαλείς μαζί μας. Θα επικοινωνήσουμε μαζί σας μόνο όταν απαιτείται για την παροχή των υπηρεσιών μας."
       ],
@@ -4064,11 +4168,20 @@
       "Allow recovery by phone": [
         "Άδεια ανάκτησης μέσω τηλεφώνου"
       ],
+      "Allowed domain": [
+        "Επιτρεπόμενος τομέας"
+      ],
+      "Allowed Domain": [
+        "Επιτρεπόμενος Τομέας"
+      ],
       "Amount": [
         "Ποσό"
       ],
       "Amount due": [
         "Οφειλόμενο ποσό"
+      ],
+      "Assertion Consumer Service URL": [
+        "Assertion Consumer Service URL"
       ],
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
@@ -4193,6 +4306,9 @@
       "Do you have any suggestions for our team?": [
         "Έχετε να προτείνετε κάτι στην ομάδα μας;"
       ],
+      "e.g. example.com": [
+        "π.χ. example.com"
+      ],
       "Email": [
         "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
@@ -4223,6 +4339,9 @@
       "Interval": [
         "Διάστημα"
       ],
+      "Issuer ID": [
+        "Issuer ID"
+      ],
       "Keep me signed in": [
         "Διατήρηση εισόδου μου"
       ],
@@ -4240,6 +4359,15 @@
       ],
       "Main": [
         "Κύριο"
+      ],
+      "Metadata file for ${ appName }": [
+        "Φάκελος μεταδεδομένων για ${ appName }"
+      ],
+      "Metadata URL for ${ appName }": [
+        "URL μεταδεδομένων για ${ appName }"
+      ],
+      "Method for importing metadata": [
+        "Μέθοδος εισαγωγής μεταδεδομένων"
       ],
       "Moderate NAT": [
         "Μέτριο NAT"
@@ -4337,6 +4465,9 @@
       "Proration": [
         "Προμήθεια"
       ],
+      "Public certificate (X.509)": [
+        "Δημόσιο πιστοποιητικό (X.509)"
+      ],
       "Recovery email address": [
         "Email Ανάκτησης"
       ],
@@ -4345,6 +4476,9 @@
       ],
       "Recovery phrase": [
         "Φράση ανάκτησης"
+      ],
+      "Reply (ACS) URL": [
+        "URL απάντησης (ACS)"
       ],
       "Require 2FA for administrators": [
         "Απαιτείται έλεγχος ταυτότητας δύο παραγόντων (2FA) για διαχειριστές"
@@ -4361,6 +4495,15 @@
       "Select your plan": [
         "Επιλέξτε το πλάνο σας"
       ],
+      "Single sign-on Entity ID": [
+        "Entity ID καθολικής σύνδεσης"
+      ],
+      "Single sign-on entity ID": [
+        "Entity ID καθολικής σύνδεσης"
+      ],
+      "Single sign-on URL": [
+        "URL καθολικής σύνδεσης"
+      ],
       "Start date": [
         "Ημερομηνία Έναρξης"
       ],
@@ -4376,6 +4519,9 @@
       "Two-password mode": [
         "Λειτουργία δύο κωδικών"
       ],
+      "Type": [
+        "Τύπος"
+      ],
       "User": [
         "Χρήστης"
       ],
@@ -4384,6 +4530,9 @@
       ],
       "Username": [
         "Όνομα Χρήστη"
+      ],
+      "Value": [
+        "Τιμή"
       ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
@@ -4763,10 +4912,6 @@
         "${ n } σύνδεση VPN",
         "${ n } συνδέσεις VPN"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } σύνδεση VPN ανά χρήστη",
-        "${ n } συνδέσεις VPN ανά χρήστη"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } με ${ n } hide-my-email ψευδώνυμο",
         "${ PASS_APP_NAME } με ${ n } hide-my-email ψευδώνυμα"
@@ -4785,9 +4930,6 @@
       ],
       "${ size } storage per user": [
         "${ size } αποθηκευτικός χώρος ανά χρήστη"
-      ],
-      "1 free VPN connection in total": [
-        "συνολικά 1 δωρεάν σύνδεση VPN"
       ],
       "1 user": [
         "1 χρήστης"
@@ -5297,9 +5439,6 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Τις εργάσιμες ημέρες, λάβετε υποστήριξη από την ομάδα υποστήριξης πελατών ${ BRAND_NAME } εντός 24 ωρών από τα αιτήματα"
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Μία σύνδεση VPN επιτρέπει σε μία συσκευή να συνδεθεί στο ${ BRAND_NAME } VPN ανά πάσα στιγμή. Για παράδειγμα, για να συνδέσετε ένα τηλέφωνο και ένα φορητό υπολογιστή στο ${ BRAND_NAME_TWO } VPN ταυτόχρονα, χρειάζεστε δύο συνδέσεις VPN."
-      ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Επιλογή προβολής εισερχομένων μην ιδιωτικού χρήστη όπως θα έκανε ο χρήστης, συμπεριλαμβανομένου του πλήρους μηνύματος και των στοιχείων επικοινωνίας"
       ],
@@ -5730,6 +5869,15 @@
       ],
       "Confirm": [
         "Επιβεβαίωση"
+      ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "π.χ. https://example.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "π.χ. https://idp.example.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "π.χ. https://idp.example.com/XXXXX"
       ],
       "Email address": [
         "Διεύθυνση email"
@@ -6681,6 +6829,9 @@
       ]
     },
     "Success message": {
+      "Domain deleted": [
+        "Ο τομέας διεγράφη"
+      ],
       "Sessions revoked": [
         "Η συνεδρία ανακλήθηκε"
       ],
@@ -7044,6 +7195,12 @@
       "Email subscriptions": [
         "Λίστες Εγγραφής E-mail"
       ],
+      "Enter endpoints into your identity provider": [
+        "Εισαγάγετε τα URL τελικού σημείου στον πάροχο ταυτότητάς σας"
+      ],
+      "Enter SAML metadata": [
+        "Εισαγωγή μεταδεδομένων SAML"
+      ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Εισαγάγετε τα στοιχεία του λογαριασμού σας ${ BRAND_NAME } για να συμμετάσχετε στο πρόγραμμα ${ app } Beta"
       ],
@@ -7168,6 +7325,9 @@
       "Recovery": [
         "Ανάκτηση"
       ],
+      "Remove domain": [
+        "Αφαίρεση τομέα"
+      ],
       "Remove user?": [
         "Κατάργηση χρήστη;"
       ],
@@ -7197,6 +7357,9 @@
       ],
       "Revoke certificate": [
         "Ανάκληση πιστοποιητικού"
+      ],
+      "SAML authentication": [
+        "Ταυτοποίηση SAML"
       ],
       "Select a plan": [
         "Επιλέξτε ένα πλάνο"
@@ -7242,6 +7405,9 @@
       ],
       "Signed in to member account": [
         "Σύνδεση στον λογαριασμό μέλους"
+      ],
+      "Single Sign-On": [
+        "Καθολική Σύνδεση"
       ],
       "Status": [
         "Κατάσταση"
@@ -7370,11 +7536,26 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Αυτόματη εναλλαγή μεταξύ των προτιμώμενων θεμάτων ημέρας και νύχτας σε συγχρονισμό με τις λειτουργίες ημέρας και νύχτας του συστήματός σας"
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Αντιγράψτε και επικολλήστε αυτήν τη διεύθυνση URL στο πεδίο URL ACS (Assertion Consumer Service) του παρόχου ταυτότητάς σας"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Αντιγράψτε και επικολλήστε αυτήν τη διεύθυνση URL στο πεδίο αναγνωριστικού οντότητας της υπηρεσίας παροχής ταυτότητάς σας"
+      ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "URL τελικού σημείου από πάροχο ταυτότητας (π.χ. https://idp.example.com/sso/saml)"
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Δημόσιο κλειδί της υπηρεσίας παροχής ταυτότητας για την υπογραφή ισχυρισμών ελέγχου ταυτότητας. Λάβετε τον κατακερματισμό πιστοποιητικού από την υπηρεσία παροχής ταυτότητάς σας."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Αν έχετε αγοράσει έναν κωδικό δώρου ή έχετε λάβει ένα από την ομάδα υποστήριξης, μπορείτε να τον εισάγετε εδώ."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Τα μέλη που δε χρησιμοποιούν το 2FA θα λάβουν ένα email που θα τους ζητά να το ενεργοποιήσουν το συντομότερο δυνατό."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Καθορίστε τον τομέα στον οποίο επιτρέπεται ο έλεγχος ταυτότητας με SAML SSO"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Ο νέος κύκλος συνδρομής ξεκινά στις ${ formattedTime }"
@@ -7384,6 +7565,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Το επιλεγμένο θέμα θα είναι ενεργό όταν το σύστημά σας έχει ρυθμιστεί σε \"λειτουργία φωτισμού\""
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Συνήθως μια διεύθυνση URL που περιέχει το όνομα της υπηρεσίας παροχής ταυτότητας μέσα"
       ],
       "Verified email address": [
         "Επαληθευμένη διεύθυνση ηλεκτρονικού ταχυδρομείου"
@@ -7429,11 +7613,6 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "Χρήστης SSO που παρέχεται από τον Πάροχο Ταυτότητάς σας"
       ]
     },
     "Validation": {
