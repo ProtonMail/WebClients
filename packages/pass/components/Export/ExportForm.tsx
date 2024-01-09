@@ -28,7 +28,12 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                 </Checkbox>
 
                 {form.values.encrypted ? (
-                    <Field name="passphrase" label={c('Label').t`Passphrase`} component={PasswordField} />
+                    <Field
+                        name="passphrase"
+                        label={c('Label').t`Passphrase`}
+                        component={PasswordField}
+                        autoComplete="off"
+                    />
                 ) : (
                     <em className="block text-sm color-weak mt-2">
                         {c('Info')
