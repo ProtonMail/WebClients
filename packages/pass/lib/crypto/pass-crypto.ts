@@ -91,6 +91,15 @@ export const createPassCrypto = (options: PassCryptoOptions): PassCryptoWorker =
     };
 
     const worker: PassCryptoWorker = {
+        get ready() {
+            try {
+                assertHydrated(context);
+                return true;
+            } catch {
+                return false;
+            }
+        },
+
         getContext: () => context,
 
         async hydrate({ user, addresses, keyPassword, snapshot }) {
