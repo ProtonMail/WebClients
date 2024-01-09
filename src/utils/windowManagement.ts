@@ -1,5 +1,4 @@
 import { BrowserWindow, BrowserWindowConstructorOptions, Rectangle, Session, WebContents, app } from "electron";
-import contextMenu from "electron-context-menu";
 import log from "electron-log/main";
 import { getWindowState, setWindowState } from "../store/windowsStore";
 import { getConfig } from "./config";
@@ -18,11 +17,6 @@ interface WindowCreationProps {
 
 const config = getConfig(app.isPackaged);
 export const windowMap = new Map<APP, BrowserWindow>();
-
-contextMenu({
-    showInspectElement: config.devTools,
-    showSaveImage: true,
-});
 
 const getOSSpecificConfig = (): BrowserWindowConstructorOptions => {
     if (isMac) {
@@ -56,7 +50,7 @@ const createWindow = (session: Session, url: string, visible: boolean, windowCon
         minWidth: WINDOW_SIZES.MIN_WIDTH,
         ...getOSSpecificConfig(),
         webPreferences: {
-            devTools: true,
+            devTools: config.devTools,
             preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
             spellcheck: true,
             // Security additions
