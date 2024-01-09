@@ -175,6 +175,7 @@ const AutoReplySection = () => {
                             modalLink={modalLink}
                             modalImage={modalImage}
                             modalDefaultFont={modalDefaultFont}
+                            mailSettings={mailSettings}
                         />
                     </div>
 

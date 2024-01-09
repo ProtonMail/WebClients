@@ -7,7 +7,7 @@ import { AUTO_REPLY_CHARACTER_COUNT_LIMIT } from '@proton/shared/lib/mail/consta
 import noop from '@proton/utils/noop';
 
 import { Alert, Editor, EditorActions, Toggle, Tooltip } from '../../../components';
-import { useUser } from '../../../hooks';
+import { useMailSettings, useUser } from '../../../hooks';
 import { Actions } from '../interfaces';
 
 interface Props {
@@ -18,6 +18,7 @@ interface Props {
 
 const FilterActionsFormAutoReplyRow = ({ isEdit, actions, handleUpdateActions }: Props) => {
     const [user] = useUser();
+    const [mailSettings] = useMailSettings();
     const { autoReply } = actions;
     const [editorVisible, setEditorVisible] = useState(!!autoReply);
     const [editorValue, setEditorValue] = useState(autoReply || '');
@@ -94,6 +95,7 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, actions, handleUpdateActions }:
                             modalLink={modalLink}
                             modalImage={modalImage}
                             modalDefaultFont={modalDefaultFont}
+                            mailSettings={mailSettings}
                         />
                     </div>
                 </>
