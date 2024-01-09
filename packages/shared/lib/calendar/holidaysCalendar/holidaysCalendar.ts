@@ -132,12 +132,14 @@ export const getJoinHolidaysCalendarData = async ({
     getAddressKeys,
     color,
     notifications,
+    priority,
 }: {
     holidaysCalendar: HolidaysDirectoryCalendar;
     addresses: Address[];
     getAddressKeys: GetAddressKeys;
     color: string;
     notifications: CalendarNotificationSettings[];
+    priority?: number;
 }) => {
     const {
         CalendarID,
@@ -173,6 +175,7 @@ export const getJoinHolidaysCalendarData = async ({
             Signature: signature,
             Color: color,
             DefaultFullDayNotifications: notifications,
+            Priority: priority,
         },
     };
 };
