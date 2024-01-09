@@ -278,6 +278,9 @@
       "Pass for iOS": [
         "Pass for iOS"
       ],
+      "Pin item": [
+        "Fest element"
+      ],
       "Refresh the page": [
         "Oppdater siden"
       ],
@@ -364,6 +367,9 @@
       ],
       "Try again": [
         "Prøv igjen"
+      ],
+      "Unpin item": [
+        "Løsne element"
       ],
       "Update": [
         "Oppdater"
@@ -528,11 +534,17 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Kunne ikke flytte alle elementer fra \"${ payload.content.name }\""
       ],
+      "Failed to pin item": [
+        "Kunne ikke feste element"
+      ],
       "Failed to remove user's access.": [
         "Kunne ikke fjerne brukerens tilgang."
       ],
       "Failed to transfer this vault's ownership.": [
         "Kunne ikke overføre hvelvets eierskap."
+      ],
+      "Failed to unpin item": [
+        "Kunne ikke løsne element"
       ],
       "File could not be parsed": [
         "Fil kunne ikke tolkes"
@@ -719,6 +731,10 @@
       "${ memberCount } member": [
         "${ memberCount } medlem",
         "${ memberCount } medlemmer"
+      ],
+      "${ n } item": [
+        "${ n } element",
+        "${ n } elementer"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } vil vise elementfavorittikonet via ${ BRAND_NAME }s anonymiserte bildeproxy."
@@ -930,6 +946,12 @@
       ],
       "Item successfully moved": [
         "Element flyttet"
+      ],
+      "Item successfully pinned": [
+        "Element festet"
+      ],
+      "Item successfully unpinned": [
+        "Element ikke festet"
       ],
       "Leaving vault...": [
         "Forlater hvelv..."
@@ -1595,6 +1617,22 @@
         "Du er i ferd med å opprette"
       ]
     },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Skriv inn din PIN-kode"
+      ],
+      "Sign in to your account": [
+        "Logg på kontoen din"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Lås opp ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Velkommen til ${ brandNameJSX }"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Velkommen til ${ appName }"
@@ -1799,6 +1837,9 @@
       ],
       "Pin the extension": [
         "Fest utvidelsen"
+      ],
+      "Pinned (${ items.length })": [
+        "Festet (${ items.length })"
       ],
       "Secure your data": [
         "Sikre dataene dine"

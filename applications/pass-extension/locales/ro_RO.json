@@ -278,6 +278,9 @@
       "Pass for iOS": [
         "Proton Pass pentru iOS"
       ],
+      "Pin item": [
+        "Fixare"
+      ],
       "Refresh the page": [
         "Împrospătare pagină"
       ],
@@ -364,6 +367,9 @@
       ],
       "Try again": [
         "Reîncercați"
+      ],
+      "Unpin item": [
+        "Anulare fixare"
       ],
       "Update": [
         "Actualizare"
@@ -529,11 +535,17 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Eșuare mutare toate articolele din „${ payload.content.name }”."
       ],
+      "Failed to pin item": [
+        "Fixarea articolului a eșuat."
+      ],
       "Failed to remove user's access.": [
         "Eșuare eliminare acces utilizator."
       ],
       "Failed to transfer this vault's ownership.": [
         "Eșuare transfer proprietar pentru acest seif."
+      ],
+      "Failed to unpin item": [
+        "Anularea fixării articolului a eșuat."
       ],
       "File could not be parsed": [
         "Fișierul nu a putut fi analizat."
@@ -727,6 +739,11 @@
         "${ memberCount } membru",
         "${ memberCount } membri",
         "${ memberCount } de membri"
+      ],
+      "${ n } item": [
+        "${ n } articol",
+        "${ n } articole",
+        "${ n } de articole"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } va afișa fișierul favicon prin proxy-ul de imagini anonim ${ BRAND_NAME }."
@@ -942,6 +959,9 @@
       ],
       "Item successfully moved": [
         "Articolul s-a mutat."
+      ],
+      "Item successfully unpinned": [
+        "Fixarea elementului s-a anulat."
       ],
       "Leaving vault...": [
         "Se părăsește seiful..."
@@ -1611,6 +1631,22 @@
         "Sunteți pe cale să creați"
       ]
     },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Introduceți codul PIN"
+      ],
+      "Sign in to your account": [
+        "Conectare la cont"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Deblocare ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Bun venit la ${ brandNameJSX }"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Bun venit la ${ appName }"
@@ -1816,6 +1852,9 @@
       ],
       "Pin the extension": [
         "Fixare extensie"
+      ],
+      "Pinned (${ items.length })": [
+        "Fixate (${ items.length })"
       ],
       "Secure your data": [
         "Securizați-vă datele"
