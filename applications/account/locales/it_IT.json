@@ -5070,6 +5070,22 @@
         "importante"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "l'email è stata inviata ${ label }"
+      ],
+      "with attachments": [
+        "con allegati"
+      ],
+      "without attachments": [
+        "senza allegati"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "l'email è stata inviata ${ label }"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Aggiungi un filtro personalizzato per eseguire automaticamente alcune azioni, come etichettare o archiviare messaggi."
@@ -5747,6 +5763,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Parte del contenuto del calendario non è supportata e non sarà importata."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La chiave ${ fingerprint } è già stata caricata"
+      ],
+      "Selected color:": [
+        "Colore selezionato:"
       ]
     },
     "Info": {
@@ -7948,17 +7975,6 @@
         "Il tuo abbonamento è gestito da Mozilla. Contatta l'assistenza di Mozilla."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Rilevate chiavi aggiuntive duplicate. Caricale singolarmente per maggiori informazioni."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La chiave ${ fingerprint } è già stata caricata"
-      ],
-      "Selected color:": [
-        "Colore selezionato:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Se abilitata, le sottocartelle prendono il colore della cartella principale."
@@ -9291,6 +9307,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "Aggiornamenti sul prodotto ${ app }"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "Comunicazioni ${ BRAND_NAME } sulle versioni beta"
       ],
@@ -10050,10 +10069,6 @@
         "${ n } connessione VPN",
         "${ n } connessioni VPN"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } connessione VPN per utente",
-        "${ n } connessioni VPN per utente"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } con ${ n } alias Hide-my-email",
         "${ PASS_APP_NAME } con ${ n } alias Hide-my-email"
@@ -10072,9 +10087,6 @@
       ],
       "${ size } storage per user": [
         "${ size } di spazio di archiviazione per utente"
-      ],
-      "1 free VPN connection in total": [
-        "1 connessione VPN gratuita in totale"
       ],
       "1 user": [
         "1 utente"
@@ -10321,6 +10333,10 @@
       ],
       "Unlimited volume/bandwidth": [
         "Larghezza di banda/volume illimitati"
+      ],
+      "Up to ${ n } user": [
+        "${ n } utente",
+        "Fino a ${ n } utenti"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Fino a ${ totalStorageSize } di archiviazione"
@@ -10635,8 +10651,8 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Nei giorni lavorativi, ricevi assistenza dal team di assistenza clienti di ${ BRAND_NAME } entro 24 ore dalle richieste"
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Una connessione VPN consente, in qualsiasi momento, la connessione di un singolo dispositivo a ${ BRAND_NAME } VPN. Ad esempio, per connettere contemporaneamente un telefono e un computer portatile a ${ BRAND_NAME_TWO } VPN, sono necessarie due connessioni VPN."
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Una connessione VPN consente, in qualsiasi momento, la connessione di un singolo dispositivo a ${ VPN_APP_NAME } VPN. Ad esempio, per connettere nello stesso momento un telefono e un computer portatile a ${ VPN_APP_NAME } VPN, sono necessarie due connessioni VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opzione di visualizzare le caselle di posta degli utenti non privati come farebbe l'utente, compresi i dettagli completi dei messaggi e dei contatti"
@@ -11060,6 +11076,9 @@
       ],
       "Auto": [
         "Automatico"
+      ],
+      "Automatic (${ value })": [
+        "Automatico (${ value })"
       ],
       "Country configs": [
         "Configurazioni dei paesi"
@@ -12657,6 +12676,10 @@
         "${ n } calendario per utente",
         "${ n } calendari per utente"
       ],
+      "${ n } free VPN connection per user": [
+        "${ n } connessione VPN gratuita per utente",
+        "${ n } connessioni VPN gratuite per utente"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } connessione VPN ad alta velocità",
         "${ n } connessioni VPN ad alta velocità"
@@ -13485,6 +13508,9 @@
       "Decrypt key": [
         "Decrittografa chiave"
       ],
+      "Delete ${ value }": [
+        "Elimina ${ value }"
+      ],
       "Delete account": [
         "Elimina account"
       ],
@@ -14016,6 +14042,10 @@
       "Success": [
         "Operazione riuscita"
       ],
+      "Successfully created ${ n } user account": [
+        "${ n } account utente creato",
+        "${ n } account utente creati"
+      ],
       "Summary": [
         "Riepilogo"
       ],
@@ -14507,7 +14537,7 @@
       ]
     },
     "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
+      "SSO user provided by your identity provider": [
         "Utente SSO fornito dal tuo fornitore di identità"
       ]
     },

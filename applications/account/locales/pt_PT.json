@@ -3361,7 +3361,7 @@
         "Introduza o texto ou palavra-chave"
       ],
       "Type text or keyword for this condition:": [
-        "Escreva um texto ou palavra-chave para esta condição:"
+        "Introduza o texto ou a palavra-chave para esta condição:"
       ]
     },
     "email_forwarding_2023: Status": {
@@ -5474,6 +5474,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Parte do conteúdo do seu calendário não é suportado e não será importado."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Foram detetadas chaves duplicadas adicionais. Carregue individualmente para obter mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "A chave ${ fingerprint } já foi carregada."
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
       ]
     },
     "Info": {
@@ -7641,17 +7652,6 @@
         "A sua subscrição é gerida pela Mozilla. Contacte o suporte da Mozilla."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Foram detetadas chaves duplicadas adicionais. Carregue individualmente para obter mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "A chave ${ fingerprint } já foi carregada."
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Quando ativado, as sub-pastas herdam a cor da pasta principal."
@@ -9672,10 +9672,6 @@
         "${ n } ligação VPN",
         "${ n } ligações VPN"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } ligação VPN por utilizador",
-        "${ n } ligações VPN por utilizador"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } com ${ n } alias hide-my-email",
         "${ PASS_APP_NAME } com ${ n } aliases hide-my-email"
@@ -9692,9 +9688,6 @@
       "${ size } storage per user": [
         "${ size } de armazenamento por utilizador"
       ],
-      "1 free VPN connection in total": [
-        "1 conexão de VPN grátis"
-      ],
       "1 user": [
         "1 utilizador"
       ],
@@ -9703,6 +9696,9 @@
       ],
       "99.95% SLA": [
         "SLA de 99,95%"
+      ],
+      "Ad-blocker and malware protection": [
+        "Bloqueador de anúncios e proteção de malware"
       ],
       "Admin console": [
         "Consola de administração"
@@ -10229,9 +10225,6 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Nos dias úteis, a equipa de apoio ao cliente de ${ BRAND_NAME } irá ajudá-lo no prazo de 24 horas após o seu pedido."
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Uma ligação VPN permite que um dispositivo se ligue a ${ BRAND_NAME } VPN em qualquer altura. Por exemplo, para ligar um telemóvel e um computador portátil à ${ BRAND_NAME_TWO } VPN ao mesmo tempo, são necessárias duas ligações VPN."
-      ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opção para ver as caixas de entrada de utilizadores não privados como o utilizador faria, incluindo todas as mensagens e detalhes de contacto"
       ],
@@ -10572,7 +10565,7 @@
         "19º do mês"
       ],
       "1st of the month": [
-        "1º do mês"
+        "1.º do mês"
       ],
       "20th of the month": [
         "20º do mês"
@@ -10584,46 +10577,46 @@
         "22º do mês"
       ],
       "23rd of the month": [
-        "23º do mês"
+        "23.º do mês"
       ],
       "24th of the month": [
-        "24º do mês"
+        "24.º do mês"
       ],
       "25th of the month": [
-        "25º do mês"
+        "25.º do mês"
       ],
       "26th of the month": [
-        "26º do mês"
+        "26.º do mês"
       ],
       "27th of the month": [
-        "27º do mês"
+        "27.º do mês"
       ],
       "28th of the month": [
-        "28º do mês"
+        "28.º do mês"
       ],
       "29th of the month": [
-        "29º do mês"
+        "29.º do mês"
       ],
       "2nd of the month": [
-        "2º do mês"
+        "2.º do mês"
       ],
       "30th of the month": [
-        "30º do mês"
+        "30.º do mês"
       ],
       "31st of the month": [
         "31º do mês"
       ],
       "3rd of the month": [
-        "3º do mês"
+        "3.º do mês"
       ],
       "4th of the month": [
-        "4º do mês"
+        "4.º do mês"
       ],
       "5th of the month": [
-        "5º do mês"
+        "5.º do mês"
       ],
       "6th of the month": [
-        "6º do mês"
+        "6.º do mês"
       ],
       "7th of the month": [
         "7º do mês"
@@ -10838,7 +10831,7 @@
         "Começar a utilizar o ${ appName }"
       ],
       "Upgrade my plan": [
-        "Actualizar o meu plano"
+        "Atualize o meu plano"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -10907,7 +10900,7 @@
         "Ao continuar, concorda com os nossos ${ termsAndConditions }"
       ],
       "Creating your account": [
-        "Criação da sua conta"
+        "A criar a sua conta"
       ],
       "Discover ${ PASS_APP_NAME },${ br }our new encrypted password manager": [
         "Descubra ${ PASS_APP_NAME },${ br }o nosso novo gestor de palavras-passe encriptadas"
@@ -10916,10 +10909,10 @@
         "Descarregue e instale as aplicações relevantes e as suas extensões para começar a utilizar o ${ PASS_APP_NAME }"
       ],
       "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
-        "Descarregue a aplicação do ${ PASS_APP_NAME } da Google Play e instale para começar a utilizar o ${ PASS_APP_NAME2 } no seu telefone."
+        "Descarregue a aplicação do ${ PASS_APP_NAME } da Google Play e instale para começar a utilizar o ${ PASS_APP_NAME2 } no seu telemóvel."
       ],
       "Download the ${ PASS_APP_NAME } app from the App Store and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
-        "Descarregue a aplicação do ${ PASS_APP_NAME } da App Store e instale para começar a utilizar o ${ PASS_APP_NAME2 } no seu telefone."
+        "Descarregue a aplicação do ${ PASS_APP_NAME } da App Store e instale para começar a utilizar o ${ PASS_APP_NAME2 } no seu telemóvel."
       ],
       "Encrypted password manager that also protects your identity": [
         "O gestor de palavras-passe encriptado que também protege a sua identidade"
@@ -10946,7 +10939,7 @@
         "Os aliases hide-my-email protegem o seu e-mail contra violações de dados."
       ],
       "If you get locked out of your ${ BRAND_NAME } Account, your **recovery kit** will allow you to sign in and recover your data.": [
-        "Se não conseguir entrar na sua conta da ${ BRAND_NAME }, o seu **kit de recuperação** permitirá que inicia sessão e recupere os seus dados."
+        "Se não conseguir entrar na sua conta da ${ BRAND_NAME }, o seu **kit de recuperação** permitirá que inicie sessão e recupere os seus dados."
       ],
       "Includes:": [
         "Incluí:"
@@ -10955,19 +10948,19 @@
         "Instalar o ${ PASS_APP_NAME }"
       ],
       "Install app": [
-        "Instala a aplicação"
+        "Instale a aplicação"
       ],
       "Install app and extension": [
         "Instale a aplicação e a extensão"
       ],
       "It’s the only way to fully restore your account, so make sure you keep this **recovery kit** somewhere safe.": [
-        "É a única maneira de restaurar totalmente a sua conta. Por isso, tenha certeza de manter o **kit de recuperação** em um lugar seguro."
+        "É a única maneira de restaurar totalmente a sua conta. Por isso, tenha certeza de manter o **kit de recuperação** num lugar seguro."
       ],
       "Join over 100 million people who have chosen ${ BRAND_NAME } to stay safe online": [
         "Junte-se a mais de 100 milhões de pessoas que escolheram a ${ BRAND_NAME } para se manterem seguras em linha."
       ],
       "Launching ${ PASS_APP_NAME }": [
-        "Início do ${ PASS_APP_NAME }"
+        "A iniciar ${ PASS_APP_NAME }"
       ],
       "One easy subscription.": [
         "Uma subscrição fácil."
@@ -11006,16 +10999,16 @@
         "A oferta selecionada não está disponível para subscritores de ${ currentPlanTitle }."
       ],
       "to start using ${ PASS_APP_NAME } on your phone": [
-        "para começar a utilizar o ${ PASS_APP_NAME } no seu telefone"
+        "para começar a utilizar o ${ PASS_APP_NAME } no seu telemóvel"
       ],
       "Unlock ${ PASS_APP_NAME } premium features by upgrading": [
         "Desbloqueie as funcionalidades premium do ${ PASS_APP_NAME } com a atualização do seu plano."
       ],
       "Updating your account": [
-        "Actualização da sua conta"
+        "A atualizar a sua conta"
       ],
       "Verifying your payment": [
-        "Verificação do seu pagamento"
+        "A verificar o seu pagamento"
       ],
       "Works on all devices": [
         "Funciona em todos os dispositivos"

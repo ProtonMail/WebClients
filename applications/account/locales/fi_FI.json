@@ -5057,6 +5057,22 @@
         "tähdellä"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "sähköposti lähetettiin ${ label }"
+      ],
+      "with attachments": [
+        "liitteiden kanssa"
+      ],
+      "without attachments": [
+        "ilman liitteitä"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "sähköposti lähetettiin ${ label }"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Automatisoi viestien merkinnän ja arkistoinnin kaltaisia toimintoja lisäämällä omia suodattimia."
@@ -5734,6 +5750,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Osaa kalenterisi sisällöstä ei tueta, eikä sitä tämän vuoksi tuoda."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Avain ${ fingerprint } on jo ladattu"
+      ],
+      "Selected color:": [
+        "Valittu väri:"
       ]
     },
     "Info": {
@@ -7932,17 +7959,6 @@
         "Tilaustasi hallinnoi Mozilla. Ota yhteyttä Mozillan tukeen."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Havaittiin lisää avainten kaksoiskappaleita. Lataa yksitellen nähdäksesi lisätietoja."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Avain ${ fingerprint } on jo ladattu"
-      ],
-      "Selected color:": [
-        "Valittu väri:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Tämän ollessa käytössä, alikansiot perivät yläkansioidensa värin."
@@ -9272,6 +9288,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "${ app } tuotepäivitykset"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME }in beta-julkaisut"
       ],
@@ -9571,6 +9590,9 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Ole Visionary ja olet osa ${ BRAND_NAME } tarinaa"
+      ],
+      "Limited time offer": [
+        "Tarjous voimassa rajoitetun ajan"
       ],
       "Secure email that protects your privacy": [
         "Turvallinen sähköposti, joka suojaa yksityisyyttäsi"
@@ -10002,10 +10024,6 @@
         "${ n } VPN-yhteys",
         "${ n } VPN-yhteyttä"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-yhteys/käyttäjä",
-        "${ n } VPN-yhteyttä/käyttäjä"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME }, jolla on ${ n } Hide-my-email-alias",
         "${ PASS_APP_NAME }, jolla on ${ n } Hide-my-email-aliasta"
@@ -10024,9 +10042,6 @@
       ],
       "${ size } storage per user": [
         "${ size } tallennustilaa/käyttäjä"
-      ],
-      "1 free VPN connection in total": [
-        "1 ilmainen VPN-yhteys"
       ],
       "1 user": [
         "1 käyttäjä"
@@ -10273,6 +10288,10 @@
       ],
       "Unlimited volume/bandwidth": [
         "Rajaton tiedonsiirto/kaistanleveys"
+      ],
+      "Up to ${ n } user": [
+        "Enintään ${ n } käyttäjää",
+        "Enintään ${ n } käyttäjää"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Jopa ${ totalStorageSize } tallennustilaa"
@@ -10583,9 +10602,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Arkipäivisin ${ BRAND_NAME }in asiakaspalvelu vastaa pyyntöihin 24 tunnin kuluessa"
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Yksi VPN-yhteys sallii ${ BRAND_NAME } VPN -yhteyden yhdelle laitteelle kerrallaan. Esimerkiksi matkapuhelimen ja kannettavan tietokoneen samanaikainen ${ BRAND_NAME_TWO } VPN -käyttö edellyttää kahta VPN-yhteyttä."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mahdollisuus tarkastella ei-yksityisien käyttäjien postilaatikoiden sisältöä, kuten viestejä ja yhteystietoja käyttäjän näkökulmasta"
@@ -13932,6 +13948,10 @@
       "Success": [
         "Onnistui"
       ],
+      "Successfully created ${ n } user account": [
+        "${ n } käyttäjätili luotiin",
+        "${ n } käyttäjätilit luotiin"
+      ],
       "Summary": [
         "Yhteenveto"
       ],
@@ -14420,11 +14440,6 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "Kertakirjautuminen"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "Identiteettitoimittajasi toimittama kertakirjautumiskäyttäjä"
       ]
     },
     "Validation": {
