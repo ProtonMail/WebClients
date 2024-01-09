@@ -18,7 +18,7 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import type { User, UserSettings } from '@proton/shared/lib/interfaces';
 
 export const getFeatureFlags = async (): Promise<FeatureFlagState> => {
-    logger.info(`[UserFeatures] syncing user feature flags`);
+    logger.info(`[User] syncing feature flags`);
     const { toggles } = await api<FeatureFlagsResponse>({ url: `feature/v2/frontend`, method: 'get' });
 
     return PassFeaturesValues.reduce<FeatureFlagState>((features, feat) => {
@@ -28,14 +28,14 @@ export const getFeatureFlags = async (): Promise<FeatureFlagState> => {
 };
 
 export const getUserAccess = async (apiOptions: ApiOptions = {}): Promise<SafeUserAccessState> => {
-    logger.info(`[UserPlan] syncing user access`);
+    logger.info(`[User] Syncing access & plan`);
     const { Access } = await api({ url: 'pass/v1/user/access', method: 'get', ...apiOptions });
     return { plan: Access!.Plan, waitingNewUserInvites: Access!.WaitingNewUserInvites };
 };
 
 export const getUserSettings = async (): Promise<UserSettingsState> => {
     try {
-        logger.info(`[UserSettings] syncing user settings`);
+        logger.info(`[User] syncing settings`);
         const { Email, Telemetry } = (await api<{ UserSettings: UserSettings }>(getSettings())).UserSettings;
         return {
             Email: { Status: Email.Status },

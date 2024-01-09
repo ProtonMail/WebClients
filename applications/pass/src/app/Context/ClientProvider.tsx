@@ -37,7 +37,7 @@ export const ClientProvider: FC = ({ children }) => {
                     state,
                     setStatus: (status) =>
                         setState((prev) => {
-                            logger.info(`[ClientContext] Status change : ${prev.status} -> ${status}`);
+                            logger.info(`[ClientProvider] Status change : ${prev.status} -> ${status}`);
                             const loggedIn = clientReady(status);
                             const localID = authStore.getLocalID();
                             const UID = authStore.getUID();
