@@ -34,11 +34,7 @@ export const NameCell = ({ item }: { item: DriveItem | SharedLinkItem | TrashIte
             ) : (
                 <FileIcon mimeType={item.isFile ? item.mimeType : 'Folder'} alt={iconText} className="mr-2" />
             )}
-            <SignatureIcon
-                signatureIssues={item.signatureIssues}
-                isFile={item.isFile}
-                className="mr-2 shrink-0"
-            />
+            <SignatureIcon signatureIssues={item.signatureIssues} isFile={item.isFile} className="mr-2 shrink-0" />
             <NameCellBase name={item.name} />
         </TableCell>
     );
@@ -88,7 +84,7 @@ export function SizeCell({ item }: { item: DriveItem | TrashItem }) {
 
 export const DeletedCell = ({ item }: { item: TrashItem }) => {
     return (
-        <TableCell className="m-0 w-1/4" data-testid="column-trashed">
+        <TableCell className="flex items-center m-0 w-1/4" data-testid="column-trashed">
             <TimeCell time={item.trashed || item.fileModifyTime} />
         </TableCell>
     );
@@ -96,7 +92,7 @@ export const DeletedCell = ({ item }: { item: TrashItem }) => {
 
 export const CreatedCell = ({ item }: { item: TrashItem }) => {
     return (
-        <TableCell className="m-0 w-1/6" data-testid="column-share-created">
+        <TableCell className="flex items-center m-0 w-1/6" data-testid="column-share-created">
             {item.shareUrl?.createTime && <TimeCell time={item.shareUrl.createTime} />}
         </TableCell>
     );
@@ -108,7 +104,7 @@ export const LocationCell = ({ item }: { item: TrashItem | SharedLinkItem }) => 
 
     return (
         <TableCell
-            className={clsx(['m-0', viewportWidth['>=large'] ? 'w-1/5' : 'w-1/4'])}
+            className={`flex items-center ${clsx(['m-0', viewportWidth['>=large'] ? 'w-1/5' : 'w-1/4'])}`}
             data-testid="column-location"
         >
             <LocationCellBase shareId={shareId} parentLinkId={item.parentLinkId} />
@@ -118,7 +114,7 @@ export const LocationCell = ({ item }: { item: TrashItem | SharedLinkItem }) => 
 
 export const AccessCountCell = ({ item }: { item: TrashItem }) => {
     return (
-        <TableCell className="m-0 w-1/6" data-testid="column-num-accesses">
+        <TableCell className="flex items-center m-0 w-1/6" data-testid="column-num-accesses">
             {formatAccessCount(item.shareUrl?.numAccesses)}
         </TableCell>
     );
@@ -146,7 +142,7 @@ export const ExpirationCell = ({ item }: { item: TrashItem }) => {
     }
 
     return (
-        <TableCell className="m-0 w-1/5" data-testid="column-share-expires">
+        <TableCell className="flex items-center m-0 w-1/5" data-testid="column-share-expires">
             {expiration}
         </TableCell>
     );
