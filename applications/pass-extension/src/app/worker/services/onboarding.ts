@@ -1,7 +1,6 @@
 import browser from '@proton/pass/lib/globals/browser';
 import {
     createBlackFridayRule,
-    createEarlyAccessRule,
     createPendingShareAccessRule,
     createPermissionsRule,
     createSecurityRule,
@@ -31,7 +30,6 @@ export const createOnboardingService = (storage: Storage<OnboardingStorageData>)
             createStorageIssueRule(withContext((ctx) => ctx.service.storage.getState().storageFull)),
             createUpdateRule(withContext((ctx) => ctx.service.activation.getAvailableUpdate())),
             createTrialRule(store),
-            createEarlyAccessRule(store),
             createBlackFridayRule(store),
             createSecurityRule(store),
             createUserRatingRule(store),
