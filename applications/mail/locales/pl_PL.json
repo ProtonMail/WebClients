@@ -721,11 +721,11 @@
       "Not saved": [
         "Nie zapisano"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Otwórz ${ CALENDAR_APP_NAME }"
@@ -3101,7 +3101,7 @@
         "Ulepsz plan, aby odblokować niestandardowe planowanie wiadomości i inne bonusy."
       ],
       "Unlock custom snooze times when you upgrade your plan.": [
-        "Ulepsz plan, aby odblokować niestandardowy czas odłożenia"
+        "Ulepsz plan, aby odblokować niestandardowy czas odłożenia."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Ulepsz konto, aby odblokować nieograniczoną liczbę filtrów i wiele więcej funkcji premium."
@@ -3330,6 +3330,12 @@
       ],
       "Choose a date in the future.": [
         "Wybierz przeszłą datę."
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Wybierz datę w ciągu najbliższego ${ n } dnia.",
+        "Wybierz datę w ciągu najbliższych ${ n } dni.",
+        "Wybierz datę w ciągu najbliższych ${ n } dni.",
+        "Wybierz datę w ciągu najbliższych ${ n } dni."
       ],
       "Condition incomplete": [
         "Warunek jest niekompletny"
@@ -4324,6 +4330,22 @@
         "wyróżnione"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "wiadomość została wysłana ${ label }"
+      ],
+      "with attachments": [
+        "z załącznikami"
+      ],
+      "without attachments": [
+        "bez załączników"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "wiadomość została wysłana ${ label }"
+      ]
+    },
     "Font Face Default": {
       "Default": [
         "Domyślna"
@@ -5024,6 +5046,12 @@
         "${ messagesNotAuthorizedToMove } wiadomości nie mogły zostać przeniesione.",
         "${ messagesNotAuthorizedToMove } wiadomości nie mogło zostać przeniesionych.",
         "${ messagesNotAuthorizedToMove } wiadomości nie mogło zostać przeniesionych."
+      ],
+      "${ n } unread conversation": [
+        "${ n } nieprzeczytany wątek",
+        "${ n } nieprzeczytane wątki",
+        "${ n } nieprzeczytanych wątków",
+        "${ n } nieprzeczytanych wątków"
       ],
       "${ numberOfImageTrackers } email tracker blocked": [
         "Zablokowano ${ numberOfImageTrackers } element śledzący",
@@ -6153,6 +6181,15 @@
       "This message will expire ${ formattedDate }": [
         "Wiadomość wygaśnie ${ formattedDate }"
       ],
+      "This message will expire on ${ value }": [
+        "Wiadomość wygaśnie w dniu: ${ value }"
+      ],
+      "This message will expire today at ${ value }": [
+        "Wiadomość wygaśnie o godzinie ${ value }"
+      ],
+      "This message will expire tomorrow at ${ value }": [
+        "Wiadomość wygaśnie jutro o godzinie ${ value }"
+      ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Klucz publiczny zostanie automatycznie użyty do zaszyfrowania wiadomości wysłanej na ten adres."
       ],
@@ -6365,6 +6402,9 @@
       ],
       "You do not have any messages here": [
         "Nie masz tutaj żadnych wiadomości"
+      ],
+      "You have ${ unread } in your inbox.": [
+        "Masz ${ unread } w swojej skrzynce odbiorczej."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Masz **${ count } wątek** w tym folderze",
@@ -8021,6 +8061,9 @@
       "All": [
         "Wszystkie"
       ],
+      "Automatic (${ value })": [
+        "Automatyczny (${ value })"
+      ],
       "Create new group": [
         "Utwórz nową grupę"
       ],
@@ -9599,6 +9642,9 @@
         "Usuń ${ count } wiadomości",
         "Usuń ${ count } wiadomości",
         "Usuń ${ count } wiadomości"
+      ],
+      "Delete ${ value }": [
+        "Usuń ${ value }"
       ],
       "Delete all messages": [
         "Usuń wszystkie wiadomości"

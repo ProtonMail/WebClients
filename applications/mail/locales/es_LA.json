@@ -713,10 +713,10 @@
       "Not saved": [
         "No guardado"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -3303,6 +3303,10 @@
       "Choose a date in the future.": [
         "Elija un día en el futuro."
       ],
+      "Choose a date within the next ${ n } day.": [
+        "Elija una fecha dentro de ${ n } día.",
+        "Elija una fecha dentro de ${ n } días."
+      ],
       "Condition incomplete": [
         "Condición incompleta"
       ],
@@ -4260,6 +4264,22 @@
         "destacado"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "el correo fue enviado ${ label }"
+      ],
+      "with attachments": [
+        "con archivos adjuntos"
+      ],
+      "without attachments": [
+        "sin archivos adjuntos"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "el correo fue enviado ${ label }"
+      ]
+    },
     "Font Face Default": {
       "Default": [
         "Por defecto"
@@ -4898,6 +4918,10 @@
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } mensaje no pudo ser movido.",
         "${ messagesNotAuthorizedToMove } mensajes no pudieron ser movidos."
+      ],
+      "${ n } unread conversation": [
+        "${ n } conversación sin leer",
+        "${ n } conversaciones sin leer"
       ],
       "${ numberOfImageTrackers } email tracker blocked": [
         "${ numberOfImageTrackers } rastreador de correo electrónico bloqueado",
@@ -5924,6 +5948,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Este mensaje está firmado con la clave adjunta que aún no ha sido confiada."
       ],
+      "This message will be automatically deleted on ${ value }": [
+        "Este mensaje se eliminará automáticamente a las ${ value }"
+      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Este mensaje será marcado como spam. ¿Le gustaría también cancelar la suscripción de correos futuros?",
         "Estos mensajes serán marcados como spam. ¿Le gustaría también cancelar la suscripción de correos futuros?"
@@ -5948,6 +5975,15 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Este mensaje expirará en ${ formattedDate }"
+      ],
+      "This message will expire on ${ value }": [
+        "Este mensaje expirará el ${ value }"
+      ],
+      "This message will expire today at ${ value }": [
+        "Este mensaje expira hoy a las ${ value }"
+      ],
+      "This message will expire tomorrow at ${ value }": [
+        "Este mensaje expirará mañana a las ${ value }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Esta clave pública se usará automáticamente para cifrar el correo electrónico enviado a esta dirección."
@@ -6161,6 +6197,9 @@
       ],
       "You do not have any messages here": [
         "No tiene ningún mensaje aquí"
+      ],
+      "You have ${ unread } in your inbox.": [
+        "Tiene ${ unread } en su bandeja de entrada."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Tiene **${ count } conversación** guardada en esta carpeta",
@@ -7757,6 +7796,9 @@
       "All": [
         "Todo"
       ],
+      "Automatic (${ value })": [
+        "Automático (${ value })"
+      ],
       "Create new group": [
         "Crear grupo nuevo"
       ],
@@ -9201,6 +9243,9 @@
       "Delete ${ count } message": [
         "Eliminar ${ count } mensaje",
         "Eliminar ${ count } mensajes"
+      ],
+      "Delete ${ value }": [
+        "Eliminar ${ value }"
       ],
       "Delete all messages": [
         "Eliminar todos los mensajes"
