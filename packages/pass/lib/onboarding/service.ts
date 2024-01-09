@@ -76,7 +76,7 @@ export const createOnboardingService = (options: OnboardingServiceOptions) => {
     /** Acknowledges the given onboarding message by either pushing
      * it to the acknowledged messages list or updating the entry */
     const acknowledge = (message: OnboardingMessage) => {
-        logger.info(`[Worker::Onboarding] Acknowledging "${OnboardingMessage[message]}"`);
+        logger.info(`[Onboarding] Acknowledging "${OnboardingMessage[message]}"`);
         const acknowledged = state.acknowledged.find((data) => data.message === message);
         const onAcknowledge = options.rules.find((rule) => rule.message === message)?.onAcknowledge ?? identity;
 

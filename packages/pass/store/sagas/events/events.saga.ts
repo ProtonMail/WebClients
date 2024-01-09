@@ -19,10 +19,10 @@ function* eventsWorker(options: RootSagaOptions): Generator {
 
 export default function* watcher(options: RootSagaOptions): Generator {
     while (yield take(startEventPolling.match)) {
-        logger.info(`[Saga::Events] start polling all event channels`);
+        logger.info(`[ServerEvents] start polling all event channels`);
         const events = (yield fork(eventsWorker, options)) as Task;
         const action = (yield take(stopEventPolling.match)) as AnyAction;
-        logger.info(`[Saga::Events] cancelling all event channels [${action.type}]`);
+        logger.info(`[ServerEvents] cancelling all event channels [${action.type}]`);
         yield cancel(events);
     }
 }

@@ -1,5 +1,6 @@
 import { type Reducer, combineReducers } from 'redux';
 
+import { PassCrypto } from '@proton/pass/lib/crypto';
 import { stateDestroy, stateHydrate } from '@proton/pass/store/actions';
 import type { State } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
@@ -45,7 +46,11 @@ const wrappedRootReducer: Reducer<State> = (previousState, action) => {
      * - on `stateSync` : merge the incoming state */
     return rootReducer(
         ((): Maybe<State> => {
-            if (stateDestroy.match(action)) return undefined;
+            if (stateDestroy.match(action)) {
+                PassCrypto?.clear();
+                return undefined;
+            }
+
             if (stateHydrate.match(action)) return action.payload.state;
 
             return previousState;
