@@ -6,7 +6,7 @@ import { Card } from '@proton/atoms';
 import type { IconName } from '@proton/components';
 import { Icon } from '@proton/components';
 import { PASS_SENTINEL_LINK } from '@proton/pass/constants';
-import { PASS_APP_NAME, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
+import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import type { UpsellType } from './UpsellingModal';
@@ -21,12 +21,6 @@ const PROTON_SENTINEL_LINK = (
 );
 
 const getFeatures = (): UpsellFeature[] => [
-    {
-        key: 'web',
-        className: 'ui-purple',
-        icon: 'tv',
-        label: c('Info').t`Early access to ${PASS_APP_NAME} web app`,
-    },
     {
         key: 'aliases',
         className: 'ui-teal',
