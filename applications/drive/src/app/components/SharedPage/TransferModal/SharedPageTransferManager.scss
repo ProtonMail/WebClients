@@ -6,7 +6,7 @@
 
 	&--failed {
 		.transfer-modal-header {
-			background-color: #fff1f4;
+			background-color: var(--signal-danger-minor-2);
 		}
 
 		.transfer-modal-content {
@@ -26,30 +26,15 @@
 }
 
 .transfer-modal-header {
-	background-color: #f4f1ff;
+	background-color: var(--primary-minor-2);
 }
 
 .transfer-modal-content {
 	border-block-start: 1px solid var(--primary);
-	max-block-size: 400px;
+	max-block-size: em(400);
 
 	&--minimized {
 		max-block-size: 0;
 		border-block-start: 0;
 	}
-}
-
-@keyframes rotate {
-	from {
-		transform: rotate(0deg);
-	}
-
-	to {
-		transform: rotate(360deg);
-	}
-}
-
-.spinner-circle {
-	animation: rotate 4s linear infinite;
-	transform-origin: center;
 }

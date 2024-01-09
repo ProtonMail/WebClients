@@ -253,11 +253,13 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
                     className="transfer-modal-header w-full flex items-center justify-space-between"
                     onClick={() => setIsMinimized(!isMinimized)}
                 >
-                    <div className="flex items-center gap-2 py-2 pl-3">
+                    <div className="flex items-center gap-2 pl-3">
                         {getHeaderText({ transferState: currentDownload.state, percentageValue })}
                     </div>
                     <Tooltip title={isMinimized ? c('Action').t`Maximize` : c('Action').t`Minimize`}>
-                        <Button
+                        <ButtonLike
+                            className="no-pointer-events"
+                            as="span"
                             icon
                             shape="ghost"
                             data-testid="transfer-modal:minimize-maximize"
@@ -267,12 +269,12 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
                                 name={isMinimized ? 'chevron-up' : 'chevron-down'}
                                 alt={isMinimized ? c('Action').t`Maximize` : c('Action').t`Minimize`}
                             />
-                        </Button>
+                        </ButtonLike>
                     </Tooltip>
                 </button>
             ) : (
                 <div className="transfer-modal-header w-full flex items-center justify-space-between">
-                    <div className="flex items-center gap-2 py-2 pl-3">
+                    <div className="flex items-center gap-2 pl-3">
                         {getHeaderText({ transferState: currentDownload.state, percentageValue })}
                     </div>
                     <Tooltip title={c('Action').t`Close`} onClick={() => clearDownloads()}>
@@ -306,7 +308,7 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
                     </div>
                 ) : (
                     <div className="px-4 py-5 flex items-center gap-2">
-                        <FileIcon mimeType={currentDownload.meta.mimeType} />
+                        <FileIcon size={32} mimeType={currentDownload.meta.mimeType} />
                         {getContentText({
                             transferState: currentDownload.state,
                             onRetry: () => restartDownloads(currentDownload.id),
