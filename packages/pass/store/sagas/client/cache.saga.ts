@@ -57,7 +57,7 @@ function* cacheWorker({ type, meta }: WithCache<AnyAction>, { getAppState, getAu
                 PassEncryptionTag.Cache
             );
 
-            logger.info(`[Saga::Cache] Caching store and crypto state @ action["${type}"]`);
+            logger.info(`[Cache] Caching store and crypto state @ action["${type}"]`);
             yield setCache({
                 salt: uint8ArrayToString(cacheSalt),
                 state: uint8ArrayToString(encryptedData),
@@ -73,6 +73,6 @@ export default function* watcher(options: RootSagaOptions) {
 
         yield take(cacheCancel.match);
         yield cancel(cacheTask);
-        logger.info(`[Saga::Cache] Invalidated all caching tasks`);
+        logger.info(`[Cache] Invalidated all caching tasks`);
     });
 }

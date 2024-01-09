@@ -11,7 +11,7 @@ import { notification } from '@proton/pass/store/actions';
 import { type ItemsByShareId, type SharesState, reducerMap } from '@proton/pass/store/reducers';
 import { selectAllShares, selectItems } from '@proton/pass/store/selectors';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
-import type { Maybe , ShareType } from '@proton/pass/types';
+import type { Maybe, ShareType } from '@proton/pass/types';
 import { type Share, type ShareGetResponse } from '@proton/pass/types';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 import { partition } from '@proton/pass/utils/array/partition';
@@ -94,7 +94,7 @@ export function* synchronize(options: SynchronizationOptions, { onShareDeleted }
         /* When syncing, if no owned writable vault exists, create it. This
          * accounts for first login, default vault being disabledl. */
         if (!hasDefaultVault) {
-            logger.info(`[Saga::Sync] No default vault found, creating initial vault..`);
+            logger.info(`[Sync] No default vault found, creating initial vault..`);
             const defaultVault: Share<ShareType.Vault> = yield createVault({
                 content: {
                     name: 'Personal',
@@ -106,12 +106,12 @@ export function* synchronize(options: SynchronizationOptions, { onShareDeleted }
             incomingShares.push(defaultVault);
         }
 
-        logger.info(`[Saga::Sync] Discovered ${cachedShareIds.length} share(s) in cache`);
-        logger.info(`[Saga::Sync] User has ${remote.length} share(s) in database`);
-        logger.info(`[Saga::Sync] ${deletedShareIds.length} share(s) deleted`);
-        logger.info(`[Saga::Sync] User has ${totalInactiveShares} total inactive share(s)`);
-        logger.info(`[Saga::Sync] ${incomingShares.length} share(s) need to be synced`);
-        logger.info(`[Saga::Sync] Performing ${options.type} sync`);
+        logger.info(`[Sync] Discovered ${cachedShareIds.length} share(s) in cache`);
+        logger.info(`[Sync] User has ${remote.length} share(s) in database`);
+        logger.info(`[Sync] ${deletedShareIds.length} share(s) deleted`);
+        logger.info(`[Sync] User has ${totalInactiveShares} total inactive share(s)`);
+        logger.info(`[Sync] ${incomingShares.length} share(s) need to be synced`);
+        logger.info(`[Sync] Performing ${options.type} sync`);
 
         /* On full sync : we want to request all items for each share
          * On partial sync : only request items for new shares (event-loop

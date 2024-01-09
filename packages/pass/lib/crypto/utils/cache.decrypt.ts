@@ -39,7 +39,7 @@ export const decryptCachedState = async (
     if (!salt) logger.warn(`[Cache::decrypt] Salt not found`);
 
     if (encryptedState && encryptedSnapshot && salt) {
-        logger.info(`[Cache::decrypt] Decrypting cache [sessionLockToken=${!!sessionLockToken}]`);
+        logger.info(`[Cache] Decrypting cache [sessionLockToken=${!!sessionLockToken}]`);
         const cacheKey = await getCacheEncryptionKey(stringToUint8Array(salt), sessionLockToken);
 
         const [state, snapshot] = await Promise.all([
