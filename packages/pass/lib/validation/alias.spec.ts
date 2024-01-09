@@ -28,5 +28,11 @@ describe('alias utils', () => {
             expect(deriveAliasPrefix('trailing..')).toEqual('trailing');
             expect(deriveAliasPrefix('trailing...')).toEqual('trailing');
         });
+
+        test('should remove leading dots if any', () => {
+            expect(deriveAliasPrefix('.leading')).toEqual('leading');
+            expect(deriveAliasPrefix('..leading')).toEqual('leading');
+            expect(deriveAliasPrefix('...leading')).toEqual('leading');
+        });
     });
 });
