@@ -17,7 +17,7 @@ import { validateItemErrors } from './item';
 /* Normalize unicode representation of the string
  * Remove diacritics (accents) + 20 max characters length
  * for the auto-derived alias name.
- * Removes trailing dots and dots at the beginning. */
+ * Removes trailing/leading dots. */
 export const deriveAliasPrefix = (name: string) => {
     const prefix = normalize(name, true)
         .replace(/[^a-z0-9\-\_.]/g, '')
