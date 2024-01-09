@@ -5070,6 +5070,22 @@
         "favoris"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "le message a été envoyé ${ label }"
+      ],
+      "with attachments": [
+        "avec pièces jointes"
+      ],
+      "without attachments": [
+        "sans pièce jointe"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "le message a été envoyé ${ label }"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Ajoutez un filtre personnalisé pour effectuer automatiquement certaines actions, comme labelliser ou archiver des messages."
@@ -5747,6 +5763,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Une partie du contenu de votre calendrier n'est pas prise en charge et ne sera pas importée."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clé ${ fingerprint } a déjà été chargée."
+      ],
+      "Selected color:": [
+        "Couleur sélectionnée :"
       ]
     },
     "Info": {
@@ -7945,17 +7972,6 @@
         "Votre abonnement est géré par Mozilla. Nous vous invitons à contacter le support Mozilla."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Des doublons de clés supplémentaires ont été détectés. Nous vous invitons à les télécharger individuellement pour plus d'informations."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clé ${ fingerprint } a déjà été chargée."
-      ],
-      "Selected color:": [
-        "Couleur sélectionnée :"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Quand cette option est activée, les sous-dossiers sont de la même couleur que le dossier dans lequel ils se trouvent."
@@ -9285,6 +9301,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "Mises à jour du produit ${ app }"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "Actualités des versions bêta ${ BRAND_NAME }"
       ],
@@ -10044,10 +10063,6 @@
         "${ n } connexion VPN",
         "${ n } connexions VPN"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } connexion VPN par utilisateur",
-        "${ n } connexions VPN par utilisateur"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } avec ${ n } alias « hide-my-email »",
         "${ PASS_APP_NAME } avec ${ n } alias « hide-my-email »"
@@ -10066,9 +10081,6 @@
       ],
       "${ size } storage per user": [
         "${ size } d'espace de stockage par utilisateur"
-      ],
-      "1 free VPN connection in total": [
-        "1 connexion VPN gratuite"
       ],
       "1 user": [
         "1 utilisateur"
@@ -10315,6 +10327,10 @@
       ],
       "Unlimited volume/bandwidth": [
         "Volume et bande passante illimités"
+      ],
+      "Up to ${ n } user": [
+        "Jusqu'à ${ n } utilisateur",
+        "Jusqu'à ${ n } utilisateurs"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Jusqu'à ${ totalStorageSize } d'espace de stockage"
@@ -10625,9 +10641,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Les jours ouvrés, l'équipe support client ${ BRAND_NAME } vous apporte son aide dans les 24 heures suivant votre demande."
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Une connexion VPN permet à un seul appareil de se connecter à ${ BRAND_NAME } VPN. Pour connecter en même temps un téléphone et un ordinateur portable à ${ BRAND_NAME_TWO } VPN par exemple, vous avez besoin de deux connexions VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Possibilité d'afficher les boites de réception des utilisateurs non privés telles qu'ils les voient, avec toutes les informations des messages et des contacts."
@@ -11048,6 +11061,9 @@
       ],
       "Auto": [
         "Automatique"
+      ],
+      "Automatic (${ value })": [
+        "Automatique (${ value })"
       ],
       "Country configs": [
         "Configurations pays"
@@ -13455,6 +13471,9 @@
       "Decrypt key": [
         "Déchiffrer la clé"
       ],
+      "Delete ${ value }": [
+        "Supprimer ${ value } "
+      ],
       "Delete account": [
         "Supprimer le compte"
       ],
@@ -14474,11 +14493,6 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "Authentification unique (SSO)"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "Authentification unique (SSO) de l'utilisateur fournie par votre fournisseur d'identité"
       ]
     },
     "Validation": {

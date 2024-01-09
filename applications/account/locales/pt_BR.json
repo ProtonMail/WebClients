@@ -5070,6 +5070,22 @@
         "com estrela"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "o e-mail foi enviado ${ label }"
+      ],
+      "with attachments": [
+        "com anexos"
+      ],
+      "without attachments": [
+        "sem anexos"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "o e-mail foi enviado ${ label }"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Adicione um filtro personalizado para executar automaticamente determinadas ações, como marcar ou arquivar mensagens."
@@ -5750,6 +5766,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Parte do conteúdo de seu calendário não é suportado e por isso não será importado."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Chave ${ fingerprint } já foi enviada"
+      ],
+      "Selected color:": [
+        "Cor selecionada:"
       ]
     },
     "Info": {
@@ -7948,17 +7975,6 @@
         "Sua assinatura é gerenciada pela Mozilla. Entre em contato com o suporte da Mozilla."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Chaves adicionais duplicadas detectadas. Envie individualmente para mais informações."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Chave ${ fingerprint } já foi enviada"
-      ],
-      "Selected color:": [
-        "Cor selecionada:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Quando habilitado, as subpastas herdam a cor da pasta pai."
@@ -9288,6 +9304,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "Atualizações de produto da ${ app }"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "Comunicados da ${ BRAND_NAME } beta"
       ],
@@ -9392,6 +9411,14 @@
       ],
       "Preference saved": [
         "Preferências salvas"
+      ]
+    },
+    "Label; import email": {
+      "From: ${ from }": [
+        "De: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Para: ${ to }"
       ]
     },
     "Limit of calendars reached": {
@@ -9587,6 +9614,9 @@
     "mail_signup_2023: Info": {
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Torne-se um Visionário e faça parte da história da ${ BRAND_NAME }"
+      ],
+      "Limited time offer": [
+        "Oferta por tempo limitado"
       ],
       "Secure email that protects your privacy": [
         "E-mail seguro que protege sua privacidade"
@@ -10027,10 +10057,6 @@
         "${ n } conexão VPN",
         "${ n } conexões VPN"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } conexão VPN por usuário",
-        "${ n } conexões VPN por usuário"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } com ${ n } alias de hide-my-email",
         "${ PASS_APP_NAME } com ${ n } aliases de hide-my-email"
@@ -10049,9 +10075,6 @@
       ],
       "${ size } storage per user": [
         "${ size } de armazenamento por usuário"
-      ],
-      "1 free VPN connection in total": [
-        "1 conexão VPN gratuita no total"
       ],
       "1 user": [
         "1 usuário"
@@ -10298,6 +10321,10 @@
       ],
       "Unlimited volume/bandwidth": [
         "Volume/largura de banda ilimitados"
+      ],
+      "Up to ${ n } user": [
+        "Até ${ n } usuário",
+        "Até ${ n } usuários"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Até ${ totalStorageSize } de armazenamento"
@@ -10608,9 +10635,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Em dias úteis, a equipe de suporte ao cliente da ${ BRAND_NAME } o ajudará em até 24 horas após a sua solicitação."
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Uma conexão VPN permite que um dispositivo se conecte a ${ BRAND_NAME } de cada vez. Por exemplo, para conectar um telefone e um portátil a ${ BRAND_NAME_TWO } em simultâneo, você precisa de duas conexões VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opção para visualizar caixas de entrada de usuários não privados da mesma forma que o próprio usuário, incluindo a mensagem completa e os detalhes de contato"
@@ -11031,6 +11055,9 @@
       ],
       "Auto": [
         "Automático"
+      ],
+      "Automatic (${ value })": [
+        "Automático (${ value })"
       ],
       "Country configs": [
         "Configurações do país"
@@ -12607,6 +12634,10 @@
         "${ n } calendário por usuario",
         "${ n } calendarios por usuario"
       ],
+      "${ n } free VPN connection per user": [
+        "${ n } conexão de VPN gratuita por usuário",
+        "${ n } conexões de VPN gratuitas por usuário"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } conexão VPN de alta velocidade",
         "${ n } conexões VPN de alta velocidade"
@@ -13435,6 +13466,9 @@
       "Decrypt key": [
         "Descriptografar chave"
       ],
+      "Delete ${ value }": [
+        "Excluir ${ value }"
+      ],
       "Delete account": [
         "Excluir conta"
       ],
@@ -13966,6 +14000,10 @@
       "Success": [
         "Sucesso"
       ],
+      "Successfully created ${ n } user account": [
+        "Conta de usuário ${ n } criada",
+        "Contas de usuário ${ n } criadas"
+      ],
       "Summary": [
         "Resumo"
       ],
@@ -14454,11 +14492,6 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "Usuário SSO fornecido pelo seu Provedor de Identidade"
       ]
     },
     "Validation": {
