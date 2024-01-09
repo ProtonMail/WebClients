@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { Scroll } from '@proton/atoms';
 import { Breakpoints, useHotkeys, useLabels } from '@proton/components';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
@@ -57,7 +58,16 @@ const MessageOnlyView = ({
 
     // Manage loading the message
     useEffect(() => {
-        if (!messageLoaded) {
+        if (
+            !messageLoaded &&
+            /**
+             * Draft content is not displayed, metadata is enough
+             * So we don't load draft message if we are in the drafts folder
+             * Composer will load it if we open it
+             */
+            labelID !== MAILBOX_LABEL_IDS.DRAFTS &&
+            labelID !== MAILBOX_LABEL_IDS.ALL_DRAFTS
+        ) {
             void load();
         }
     }, [messageLoaded]);
