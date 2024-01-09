@@ -2551,6 +2551,9 @@
       "Continue with ${ freeName }": [
         "Folytatás ezzel: ${ freeName }"
       ],
+      "Copied to clipboard": [
+        "Vágólapra másolva"
+      ],
       "Country code": [
         "Országkód"
       ],
@@ -2598,6 +2601,12 @@
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Töltse le a kedvenc alkalmazását, így a biztonságot bárhova magával viheti."
+      ],
+      "Drop file here to upload": [
+        "Húzza ide a fájlokat a feltöltéshez"
+      ],
+      "Drop to import": [
+        "Húzza ide az importáláshoz"
       ],
       "Each code can only be used once": [
         "Minden kódot csak egyszer lehet felhasználni"
@@ -2808,6 +2817,9 @@
       ],
       "Optional": [
         "Választható"
+      ],
+      "or ${ selectFileButton }": [
+        "vagy ${ selectFileButton }"
       ],
       "Or select a particular server:": [
         "Vagy válasszon ki egy adott szervert:"
@@ -3328,6 +3340,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "A meglévő üzenetei, naptárai, névjegyei lezárásra kerülnek. Ezen adatok visszaszerzéséhez szüksége lesz ${ oldPassword } visszaállítási jelmondatára."
       ],
+      "Your files will be encrypted and then saved": [
+        "A fájlok titkosításra majd pedig mentésre kerülnek"
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Adatai velünk biztonságban vannak. Csak akkor lépünk önnel kapcsolatba, ha ez a szolgáltatásunk biztosításához szükséges."
       ],
@@ -3761,6 +3776,9 @@
       "Two-password mode": [
         "Kétjelszavas mód"
       ],
+      "Type": [
+        "Típus"
+      ],
       "User": [
         "Felhasználó"
       ],
@@ -4081,10 +4099,6 @@
         "${ n } VPN kapcsolat",
         "${ n } VPN kapcsolat"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN kapcsolat felhasználónként",
-        "${ n } VPN kapcsolat felhasználónként"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } ${ n } hide-my-email e-mail álnévvel",
         "${ PASS_APP_NAME } ${ n } hide-my-email e-mail álnévvel"
@@ -4100,9 +4114,6 @@
       ],
       "${ size } storage per user": [
         "${ size } tárhely felhasználónként"
-      ],
-      "1 free VPN connection in total": [
-        "Összesen 1 ingyenes VPN kapcsolat"
       ],
       "1 user": [
         "1 felhasználó"
@@ -5572,6 +5583,9 @@
       ]
     },
     "Success message": {
+      "Domain deleted": [
+        "Domain név törölve"
+      ],
       "Sessions revoked": [
         "Munkafolyamatok visszavonva"
       ],

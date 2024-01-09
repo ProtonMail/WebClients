@@ -77,6 +77,9 @@
       "Close this banner": [
         "Sulje tämä ilmoituspalkki"
       ],
+      "Configure SAML": [
+        "Määritä SAML"
+      ],
       "Confirm": [
         "Vahvista"
       ],
@@ -260,6 +263,9 @@
       "Hide plan features": [
         "Piilota tilauksen ominaisuudet"
       ],
+      "Import new SAML metadata": [
+        "Tuo uudet SAML-metatiedot"
+      ],
       "Increase": [
         "Lisää"
       ],
@@ -338,6 +344,9 @@
       "Remove bonuses": [
         "Poista edut"
       ],
+      "Remove domain": [
+        "Poista verkkotunnus"
+      ],
       "Remove gift code": [
         "Poista lahjakoodi"
       ],
@@ -389,6 +398,9 @@
       "Save address": [
         "Tallenna osoite"
       ],
+      "Save SAML configuration": [
+        "Tallenna SAML-määritys"
+      ],
       "Search": [
         "Hae"
       ],
@@ -403,6 +415,9 @@
       ],
       "Select ${ planTitle }": [
         "Valitse ${ planTitle }"
+      ],
+      "Select file": [
+        "Valitse tiedosto"
       ],
       "Send code": [
         "Lähetä koodi"
@@ -2066,6 +2081,12 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Hallitaksesi useita käyttäjiä, päivitä yritystilaukseen, joka sisältää enemmän kuin yhden käyttäjän."
       ],
+      "Please upload an xml file": [
+        "Lähetä XML-tiedosto"
+      ],
+      "Please upload only 1 file": [
+        "Lähetä vain 1 tiedosto"
+      ],
       "Process aborted": [
         "Tapahtuma keskeytettiin"
       ],
@@ -2116,6 +2137,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Kokeile vain kirjaimia, numeroita ja merkkejä _.-"
+      ],
+      "Unable to upload file": [
+        "Tiedostoa ei voida lähettää"
       ],
       "Unknown error": [
         "Tuntematon virhe"
@@ -2858,6 +2882,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Lisää tilillesi yksi suojauskerros. Sinun on tunnistauduttava kaksivaiheisella todennuksella jokaisen kirjautumisen yhteydessä."
       ],
+      "Add domain": [
+        "Lisää verkkotunnus"
+      ],
       "Add server (${ availableAddedCount } available)": [
         "Lisää palvelin (${ availableAddedCount } käytettävissä)",
         "Lisää palvelin (${ availableAddedCount } käytettävissä)"
@@ -2915,6 +2942,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Haluatko varmasti poistaa ylläpito-oikeudet käyttäjältä?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "Haluatko varmasti poistaa verkkotunnuksen ${ boldDomain }?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Pyydä organisaatiosi ylläpitoa määrittämään yhdyskäytävät."
       ],
@@ -2968,6 +2998,9 @@
       ],
       "Continue with ${ freeName }": [
         "Jatka ${ freeName } -tilauksella"
+      ],
+      "Copied to clipboard": [
+        "Kopioitiin leikepöydälle"
       ],
       "Copy the suggested password to clipboard": [
         "Kopioi ehdotettu salasana leikepöydälle"
@@ -3025,6 +3058,15 @@
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "ÄLÄ unohda tätä salasanaa. Jos unohdat sen, et voi kirjautua sisään tai purkaa viestiesi salausta."
       ],
+      "Domain ownership failed verification.": [
+        "Verkkotunnuksen omistajuuden vahvistus epäonnistui."
+      ],
+      "Domain ownership not verified.": [
+        "Verkkotunnuksen omistajuutta ei ole vahvistettu."
+      ],
+      "Domain ownership verified.": [
+        "Verkkotunnuksen omistajuus on vahvistettu."
+      ],
       "Done": [
         "Valmis"
       ],
@@ -3040,6 +3082,12 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Lataa suosikkisovelluksesi tänään ja suojaa yksityisyytesi minne ikinä menetkin."
       ],
+      "Drop file here to upload": [
+        "Pudota ladattava tiedosto tähän"
+      ],
+      "Drop to import": [
+        "Tuo pudottamalla"
+      ],
       "Each code can only be used once": [
         "Koodit ovat kertakäyttöisiä"
       ],
@@ -3054,6 +3102,9 @@
       ],
       "Emailing preference saved": [
         "Sähköpostiasetukset tallennettiin"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "Identiteettipalveluntarjoajalta (esim. https://idp.esimerkki.fi/sso/saml) saatu päätepisteen URL-osoite."
       ],
       "Enhance your network security": [
         "Paranna verkkotietoturvaasi"
@@ -3292,6 +3343,9 @@
       "Optional": [
         "Valinnainen"
       ],
+      "or ${ selectFileButton }": [
+        "tai ${ selectFileButton }"
+      ],
       "Or select a particular server:": [
         "Tai valitse tietty palvelin:"
       ],
@@ -3416,6 +3470,9 @@
       ],
       "Revoke certificate ${ name }": [
         "Mitätöi varmenne ${ name }"
+      ],
+      "SAML configuration saved": [
+        "SAML-määritys on tallennettu"
       ],
       "Save ${ percentage }": [
         "Säästä ${ percentage }"
@@ -3568,6 +3625,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tämä käyttäjä vastaa tällä hetkellä organisaatiosi maksuista. Jos alennat käyttäjän, jäävät organisaatiosi maksut sinun vastuullesi."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Tämä vahvistus voi kestää jopa tunnin. Voit jatkaa turvallisesti seuraaviin vaiheisiin."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Tämä peruu nykyisen maksullisen tilauksesi ja menetät kaikki kertyneet uskollisuusetusi."
       ],
@@ -3655,6 +3715,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "Valitettavasti tilille ei ole määritetty palautustapoja."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "Identiteettipalveluntarjoajan luoma yksilöllinen tunnistetieto, yleensä identiteettipalveluntarjoajan nimen sisältävän URL-osoitteen muodossa (esim. https://idp.esimerkki.fi/XXXXX)."
+      ],
       "Unsaved changes": [
         "Tallentamattomia muutoksia"
       ],
@@ -3693,6 +3756,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Vahvistus avaa uuden välilehden, joten poista kaikki ponnahdusestot käytöstä. Sinua ei veloiteta ja kortin vahvistukseen käytetty summa palautetaan välittömästi."
+      ],
+      "Verify domain": [
+        "Vahvista verkkotunnus"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Vahvista henkilöllisyytesi todennussovelluksen näyttämällä aikaan perustuvalla kertakäyttökoodilla"
@@ -3921,6 +3987,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Olemassa olevat viestisi, kalenterisi tai yhteystietosi lukitaan. Tarvitset näiden tietojen palautukseen palautuslausekkeesi tai ${ oldPassword }."
       ],
+      "Your files will be encrypted and then saved": [
+        "Tiedostosi salataan ja tallennetaan"
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Tietosi ovat turvassa meillä. Otamme sinuun yhteyttä vain, kun se on tarpeen palveluidemme tarjoamiseksi."
       ],
@@ -4067,6 +4136,12 @@
       "Allow recovery by phone": [
         "Salli palautus puhelimitse"
       ],
+      "Allowed domain": [
+        "Sallittu verkkotunnus"
+      ],
+      "Allowed Domain": [
+        "Sallittu verkkotunnus"
+      ],
       "Amount": [
         "Summa"
       ],
@@ -4196,6 +4271,9 @@
       "Do you have any suggestions for our team?": [
         "Onko sinulla ehdotuksia tiimillemme?"
       ],
+      "e.g. example.com": [
+        "esim. esimerkki.fi"
+      ],
       "Email": [
         "Sähköposti"
       ],
@@ -4243,6 +4321,12 @@
       ],
       "Main": [
         "Pää"
+      ],
+      "Metadata file for ${ appName }": [
+        "Metatietotiedosto sovellukselle ${ appName }"
+      ],
+      "Metadata URL for ${ appName }": [
+        "Metatietojen URL-osoite sovellukselle ${ appName }"
       ],
       "Moderate NAT": [
         "Keskitason NAT"
@@ -4364,6 +4448,9 @@
       "Select your plan": [
         "Valitse tilauksesi"
       ],
+      "Single sign-on URL": [
+        "Kertakirjautumisen URL-osoite"
+      ],
       "Start date": [
         "Aloituspäivä"
       ],
@@ -4379,6 +4466,9 @@
       "Two-password mode": [
         "Kahden salasanan tila"
       ],
+      "Type": [
+        "Tyyppi"
+      ],
       "User": [
         "Käyttäjä"
       ],
@@ -4387,6 +4477,9 @@
       ],
       "Username": [
         "Käyttäjätunnus"
+      ],
+      "Value": [
+        "Arvo"
       ],
       "Verification code": [
         "Vahvistuskoodi"
@@ -4430,6 +4523,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "${ app } tuotepäivitykset"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME }in beta-julkaisut"
       ],
@@ -4766,10 +4862,6 @@
         "${ n } VPN-yhteys",
         "${ n } VPN-yhteyttä"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-yhteys/käyttäjä",
-        "${ n } VPN-yhteyttä/käyttäjä"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME }, jolla on ${ n } Hide-my-email-alias",
         "${ PASS_APP_NAME }, jolla on ${ n } Hide-my-email-aliasta"
@@ -4788,9 +4880,6 @@
       ],
       "${ size } storage per user": [
         "${ size } tallennustilaa/käyttäjä"
-      ],
-      "1 free VPN connection in total": [
-        "1 ilmainen VPN-yhteys"
       ],
       "1 user": [
         "1 käyttäjä"
@@ -5037,6 +5126,10 @@
       ],
       "Unlimited volume/bandwidth": [
         "Rajaton tiedonsiirto/kaistanleveys"
+      ],
+      "Up to ${ n } user": [
+        "Enintään ${ n } käyttäjää",
+        "Enintään ${ n } käyttäjää"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Jopa ${ totalStorageSize } tallennustilaa"
@@ -5299,9 +5392,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Arkipäivisin ${ BRAND_NAME }in asiakaspalvelu vastaa pyyntöihin 24 tunnin kuluessa"
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Yksi VPN-yhteys sallii ${ BRAND_NAME } VPN -yhteyden yhdelle laitteelle kerrallaan. Esimerkiksi matkapuhelimen ja kannettavan tietokoneen samanaikainen ${ BRAND_NAME_TWO } VPN -käyttö edellyttää kahta VPN-yhteyttä."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mahdollisuus tarkastella ei-yksityisien käyttäjien postilaatikoiden sisältöä, kuten viestejä ja yhteystietoja käyttäjän näkökulmasta"
@@ -5733,6 +5823,15 @@
       ],
       "Confirm": [
         "Vahvista"
+      ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "esim. https://esimerkki.fi/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "esim. https://idp.esimerkki.fi/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "esim. https://idp.esimerkki.fi/XXXXX"
       ],
       "Email address": [
         "Sähköpostiosoite"
@@ -6684,6 +6783,9 @@
       ]
     },
     "Success message": {
+      "Domain deleted": [
+        "Verkkotunnus poistettiin"
+      ],
       "Sessions revoked": [
         "Istunnot mitätöitiin"
       ],
@@ -7050,6 +7152,12 @@
       "Email subscriptions": [
         "Sähköpostitilaukset"
       ],
+      "Enter endpoints into your identity provider": [
+        "Syötä päätepisteet identiteettipalveluntarjoajallesi"
+      ],
+      "Enter SAML metadata": [
+        "Syötä SAML-metatiedot"
+      ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Syötä ${ BRAND_NAME }-tilisi tiedot liittyäksesi ${ app } Beta-ohjelmaan"
       ],
@@ -7174,6 +7282,9 @@
       "Recovery": [
         "Palautus"
       ],
+      "Remove domain": [
+        "Poista verkkotunnus"
+      ],
       "Remove user?": [
         "Poistetaanko käyttäjä?"
       ],
@@ -7203,6 +7314,9 @@
       ],
       "Revoke certificate": [
         "Mitätöi varmenne"
+      ],
+      "SAML authentication": [
+        "SAML-todennus"
       ],
       "Select a plan": [
         "Valitse tilaus"
@@ -7249,11 +7363,18 @@
       "Signed in to member account": [
         "Kirjaudu jäsentilille"
       ],
+      "Single Sign-On": [
+        "Kertakirjautuminen"
+      ],
       "Status": [
         "Tila"
       ],
       "Subscription": [
         "Tilaus"
+      ],
+      "Successfully created ${ n } user account": [
+        "${ n } käyttäjätili luotiin",
+        "${ n } käyttäjätilit luotiin"
       ],
       "Summary": [
         "Yhteenveto"
@@ -7376,6 +7497,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Vaihda valitsemasi päivä- ja yöteeman välillä automaattisesti järjestelmäsi päivä- ja yötilan vaihtuessa"
       ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "Identiteettipalveluntarjoajan (esim. https://idp.esimerkki.fi/sso/saml) päätepisteen URL-osoite."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Mikäli ostit lahjakoodin tai sait sellaisen tueltamme, voit syöttää sen tähän."
       ],
@@ -7390,6 +7514,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Valittu teema aktivoidaan järjestelmän ollessa \"vaaleassa tilassa\""
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Yleensä identiteettipalveluntarjoajan nimen sisältävä URL-osoite"
       ],
       "Verified email address": [
         "Vahvistettu sähköpostiosoite"
@@ -7435,11 +7562,6 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "Kertakirjautuminen"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "Identiteettitoimittajasi toimittama kertakirjautumiskäyttäjä"
       ]
     },
     "Validation": {

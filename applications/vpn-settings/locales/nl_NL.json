@@ -2913,6 +2913,9 @@
       "Continue with ${ freeName }": [
         "Ga verder met ${ freeName }"
       ],
+      "Copied to clipboard": [
+        "Gekopieerd naar het klembord"
+      ],
       "Copy the suggested password to clipboard": [
         "Kopieer het voorgestelde wachtwoord naar het klembord"
       ],
@@ -2983,6 +2986,12 @@
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Download uw favoriete app vandaag nog en neem uw privacy mee overal waar u gaat."
+      ],
+      "Drop file here to upload": [
+        "Sleep bestand hier om te uploaden"
+      ],
+      "Drop to import": [
+        "Neerzetten om te importeren"
       ],
       "Each code can only be used once": [
         "Elke code kan maar één keer gebruikt worden"
@@ -3232,6 +3241,9 @@
       ],
       "Optional": [
         "Optioneel"
+      ],
+      "or ${ selectFileButton }": [
+        "of ${ selectFileButton }"
       ],
       "Or select a particular server:": [
         "Of selecteer een specifieke server:"
@@ -3859,6 +3871,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Uw bestaande berichten, agenda's of contacten worden vergrendeld. Om deze gegevens te herstellen, heeft u uw herstelzin of uw ${ oldPassword } nodig."
       ],
+      "Your files will be encrypted and then saved": [
+        "Uw bestanden worden versleuteld en vervolgens opgeslagen"
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Uw gegevens zijn veilig bij ons. We nemen alleen contact met u op wanneer dit nodig is om onze diensten te leveren."
       ],
@@ -4314,6 +4329,9 @@
       "Two-password mode": [
         "Twee-wachtwoord modus"
       ],
+      "Type": [
+        "Soort"
+      ],
       "User": [
         "Gebruiker"
       ],
@@ -4701,10 +4719,6 @@
         "${ n } VPN-verbinding",
         "${ n } VPN-verbindingen"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-verbinding per gebruiker",
-        "${ n } VPN-verbindingen per gebruiker"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } met ${ n } hide-my-email-aliassen",
         "${ PASS_APP_NAME } met ${ n } hide-my-email aliassen"
@@ -4723,9 +4737,6 @@
       ],
       "${ size } storage per user": [
         "${ size } opslagruimte per gebruiker"
-      ],
-      "1 free VPN connection in total": [
-        "1 gratis VPN-verbinding"
       ],
       "1 user": [
         "1 gebruiker"
@@ -5231,9 +5242,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Ontvang op werkdagen binnen 24 uur na het indienen van uw verzoek ondersteuning van ${ BRAND_NAME }-klantenondersteuning"
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Met één VPN-verbinding kunt u één apparaat per keer verbinden met ${ BRAND_NAME }-VPN. Als u bijvoorbeeld tegelijkertijd een telefoon en een laptop met ${ BRAND_NAME_TWO }-VPN wilt verbinden, hebt u twee VPN-verbindingen nodig."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Optie om openbare gebruikersinboxen te bekijken zoals de gebruiker ze ziet, inclusief volledige bericht- en contactpersonengegevens"
@@ -6550,6 +6558,9 @@
       ]
     },
     "Success message": {
+      "Domain deleted": [
+        "Domein verwijderd"
+      ],
       "Sessions revoked": [
         "Sessies ingetrokken"
       ],

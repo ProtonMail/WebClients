@@ -77,6 +77,9 @@
       "Close this banner": [
         "Stäng denna banner"
       ],
+      "Configure SAML": [
+        "Konfigurera SAML"
+      ],
       "Confirm": [
         "Bekräfta"
       ],
@@ -260,6 +263,9 @@
       "Hide plan features": [
         "Dölj paketfunktioner"
       ],
+      "Import new SAML metadata": [
+        "Importera ny SAML-metadata"
+      ],
       "Increase": [
         "Öka"
       ],
@@ -338,6 +344,9 @@
       "Remove bonuses": [
         "Ta bort bonusar"
       ],
+      "Remove domain": [
+        "Ta bort domän"
+      ],
       "Remove gift code": [
         "Ta bort presentkod"
       ],
@@ -389,11 +398,17 @@
       "Save address": [
         "Spara adress"
       ],
+      "Save SAML configuration": [
+        "Spara SAML-konfiguration"
+      ],
       "Search": [
         "Sök"
       ],
       "Search countries": [
         "Sök länder"
+      ],
+      "See DNS TXT record": [
+        "Se DNS TXT-post"
       ],
       "See how": [
         "Se hur"
@@ -403,6 +418,9 @@
       ],
       "Select ${ planTitle }": [
         "Välj ${ planTitle }"
+      ],
+      "Select file": [
+        "Välj fil"
       ],
       "Send code": [
         "Skicka kod"
@@ -2066,6 +2084,12 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Uppgradera till ett företagspaket med mer än 1 användare för att hantera flera användare."
       ],
+      "Please upload an xml file": [
+        "Ladda upp en xml-fil"
+      ],
+      "Please upload only 1 file": [
+        "Ladda endast upp 1 fil"
+      ],
       "Process aborted": [
         "Process avbruten"
       ],
@@ -2116,6 +2140,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Prova använda endast bokstäver, siffror och _.-"
+      ],
+      "Unable to upload file": [
+        "Kan inte ladda upp fil"
       ],
       "Unknown error": [
         "Okänt fel"
@@ -2858,6 +2885,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Lägg till ytterligare ett lager av säkerhet till ditt konto. Du måste verifiera dig själv med 2FA varje gång du loggar in."
       ],
+      "Add domain": [
+        "Lägg till domän"
+      ],
       "Add server (${ availableAddedCount } available)": [
         "Lägg till server (${ availableAddedCount } tillgänglig)",
         "Lägg till server (${ availableAddedCount } tillgängliga)"
@@ -2915,6 +2945,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Är du säker på att du vill ta bort administrativa behörigheter från denna användare?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "Är det säker på att du vill ta bort domänen ${ boldDomain }?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Be din organisations administratör att ställa in gateways."
       ],
@@ -2966,8 +2999,17 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Azure or Onelogin. This will enable SAML for the whole organization.": [
+        "Konfigurera SAML-autentisering för din organisation genom en identitetsleverantör som Okta, Azure eller Onelogin. Detta kommer att aktivera SAML för hela organisationen."
+      ],
       "Continue with ${ freeName }": [
         "Fortsätt med ${ freeName }"
+      ],
+      "Copied to clipboard": [
+        "Kopierad till urklipp"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Kopiera och klistra in denna URL i ACS (Assertion Consumer Service) URL-fältet för din identitetsleverantör"
       ],
       "Copy the suggested password to clipboard": [
         "Kopiera det föreslagna lösenordet till urklipp"
@@ -3019,11 +3061,23 @@
       "Discover ProtectBuy logo": [
         "Logga för Discover ProtectBuy"
       ],
+      "DNS TXT record": [
+        "DNS TXT-post"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Glöm INTE det här lösenordet. Om du glömmer det kommer du inte att kunna hantera din organisation."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "Glöm INTE detta lösenord. Om du glömmer det kommer du inte att kunna logga in eller dekryptera dina meddelanden."
+      ],
+      "Domain ownership failed verification.": [
+        "Verifiering av domänens äganderätt misslyckades."
+      ],
+      "Domain ownership not verified.": [
+        "Domänens äganderätt inte verifierad."
+      ],
+      "Domain ownership verified.": [
+        "Domänens äganderätt verifierad."
       ],
       "Done": [
         "Klar"
@@ -3040,6 +3094,12 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Ladda ner din favoritapp idag och ta integritet med dig var du än går."
       ],
+      "Drop file here to upload": [
+        "Släpp filer här för att ladda upp"
+      ],
+      "Drop to import": [
+        "Släpp för att importera"
+      ],
       "Each code can only be used once": [
         "Varje kod kan endast användas en gång"
       ],
@@ -3054,6 +3114,9 @@
       ],
       "Emailing preference saved": [
         "E-postpreferenser sparade"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "Ändpunkts-URL mottagen från din identitetsleverantör (t.ex. https://idp.example.com/sso/saml)."
       ],
       "Enhance your network security": [
         "Förbättra din nätverkssäkerhet"
@@ -3126,6 +3189,9 @@
       ],
       "Get ${ upsellPlanName }": [
         "Skaffa ${ upsellPlanName }"
+      ],
+      "Go to your identity provider, get the the SAML metadata for ${ appName } and import it here.": [
+        "Gå till din identitetsleverantör, hämta SAML-metadata för ${ appName } och importera den här."
       ],
       "here": [
         "här"
@@ -3292,6 +3358,9 @@
       "Optional": [
         "Valfritt"
       ],
+      "or ${ selectFileButton }": [
+        "eller ${ selectFileButton }"
+      ],
       "Or select a particular server:": [
         "Eller välj en specifik server:"
       ],
@@ -3420,6 +3489,9 @@
       "Revoke certificate ${ name }": [
         "Återkalla certifikat ${ name }"
       ],
+      "SAML configuration saved": [
+        "SAML-konfiguration sparad"
+      ],
       "Save ${ percentage }": [
         "Spara ${ percentage }"
       ],
@@ -3467,6 +3539,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Vissa av dina tillgängliga servrar kan endast användas i specifika länder på grund av de senaste borttagningarna"
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Ange den domän som tillåts autentisera med SAML SSO."
       ],
       "Step ${ step }": [
         "Steg ${ step }",
@@ -3571,6 +3646,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Denna användare ansvarar för närvarande för betalningar för din organisation. Genom att degradera denna medlem, kommer du bli ansvarig för betalningar för din organisation."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Denna verifiering kan ta upp till en timme. Du kan säkert fortsätta till nästa steg."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Detta kommer avbryta din nuvarande betalda prenumeration och du kommer att förlora alla lojalitetsförmåner du har samlat på dig."
       ],
@@ -3597,6 +3675,9 @@
       ],
       "to ${ product } Business": [
         "till ${ product } Business"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "För att tillåta domänen ${ boldDomainName } att använda SAML SSO måste du verifiera äganderätten till den genom att lägga till följande DNS TXT-post till din domän i din DNS-leverantör."
       ],
       "To cancel your subscription, please reach out to us.": [
         "För att avbryta din prenumeration, kontakta oss."
@@ -3658,6 +3739,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "Det finns ingen återställningsmetod sparad för detta konto."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "Unikt ID genererat av din identitetsleverantör, vanligtvis i form av en URL som innehåller identitetsleverantörens namn (t.ex. https://idp.example.com/XXXXX)."
+      ],
       "Unsaved changes": [
         "Osparade ändringar"
       ],
@@ -3696,6 +3780,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verifiering kommer öppna en ny flik. Inaktivera alla popup-blockerare. Du kommer inte att debiteras. Eventuellt belopp som används för att verifiera kortet kommer att återbetalas omedelbart."
+      ],
+      "Verify domain": [
+        "Verifiera domän"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Bekräfta din identitet med ett tidsbaserat engångslösenord från en autentiseringsapp"
@@ -3924,6 +4011,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Dina befintliga meddelanden, kalendrar eller kontakter kommer att låsas. För att återställa dessa data behöver du din återställningsfras eller ditt ${ oldPassword }."
       ],
+      "Your files will be encrypted and then saved": [
+        "Dina filer kommer att krypteras och sedan sparas"
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din information är säker hos oss. Vi kommer endast kontakta dig när det krävs för att tillhandahålla våra tjänster."
       ],
@@ -4070,6 +4160,12 @@
       "Allow recovery by phone": [
         "Tillåt återställning via telefon"
       ],
+      "Allowed domain": [
+        "Tillåten domän"
+      ],
+      "Allowed Domain": [
+        "Tillåten domän"
+      ],
       "Amount": [
         "Belopp"
       ],
@@ -4199,6 +4295,9 @@
       "Do you have any suggestions for our team?": [
         "Har du några förslag till vårt team?"
       ],
+      "e.g. example.com": [
+        "t.ex. example.com"
+      ],
       "Email": [
         "E-post"
       ],
@@ -4246,6 +4345,15 @@
       ],
       "Main": [
         "Huvud"
+      ],
+      "Metadata file for ${ appName }": [
+        "Metadata-fil för ${ appName }"
+      ],
+      "Metadata URL for ${ appName }": [
+        "Metadata-URL för ${ appName }"
+      ],
+      "Method for importing metadata": [
+        "Metod för att importera metadata"
       ],
       "Moderate NAT": [
         "Måttlig NAT"
@@ -4343,6 +4451,9 @@
       "Proration": [
         "Proportionell beräkning"
       ],
+      "Public certificate (X.509)": [
+        "Offentligt certifikat (X.509)"
+      ],
       "Recovery email address": [
         "E-postadress för återställning"
       ],
@@ -4367,6 +4478,9 @@
       "Select your plan": [
         "Välj ditt paket"
       ],
+      "Single sign-on URL": [
+        "URL för enkel inloggning"
+      ],
       "Start date": [
         "Startdatum"
       ],
@@ -4382,6 +4496,9 @@
       "Two-password mode": [
         "Två-lösenordsläge"
       ],
+      "Type": [
+        "Typ"
+      ],
       "User": [
         "Användare"
       ],
@@ -4390,6 +4507,9 @@
       ],
       "Username": [
         "Användarnamn"
+      ],
+      "Value": [
+        "Värde"
       ],
       "Verification code": [
         "Verifieringskod"
@@ -4775,10 +4895,6 @@
         "${ n } VPN-anslutning",
         "${ n } VPN-anslutningar"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-anslutning per användare",
-        "${ n } VPN-anslutningar per användare"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias"
@@ -4797,9 +4913,6 @@
       ],
       "${ size } storage per user": [
         "${ size } lagringsutrymme per användare"
-      ],
-      "1 free VPN connection in total": [
-        "Totalt 1 gratis VPN-anslutning"
       ],
       "1 user": [
         "1 användare"
@@ -5313,9 +5426,6 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "På arbetsdagar får du support från ${ BRAND_NAME } kundsupportteam inom 24 timmar efter förfrågan"
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "En VPN-anslutning tillåter en enhet att ansluta till ${ BRAND_NAME } VPN vid varje given tidpunkt. Till exempel, för att ansluta en telefon och en bärbar dator till ${ BRAND_NAME_TWO } VPN samtidigt, behöver du två VPN-anslutningar."
-      ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Möjlighet att visa icke-privata användares inkorgar som användaren själv gör, inklusive fullständiga meddelanden och kontaktuppgifter"
       ],
@@ -5770,6 +5880,15 @@
       ],
       "Confirm": [
         "Bekräfta"
+      ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "t.ex. https://example.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "t.ex. https://idp.example.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "t.ex. https://idp.example.com/XXXXX"
       ],
       "Email address": [
         "E-postadress"
@@ -6508,6 +6627,10 @@
         "${ n } kalender per användare",
         "${ n } kalendrar per användare"
       ],
+      "${ n } free VPN connection per user": [
+        "${ n } gratis VPN-anslutning per användare",
+        "${ n } gratis VPN-anslutningar per användare"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } höghastighets VPN-anslutning",
         "${ n } höghastighets VPN-anslutningar"
@@ -6730,6 +6853,9 @@
       ]
     },
     "Success message": {
+      "Domain deleted": [
+        "Domän borttagen"
+      ],
       "Sessions revoked": [
         "Sessioner återkallade"
       ],
@@ -7099,6 +7225,12 @@
       "Email subscriptions": [
         "E-postprenumerationer"
       ],
+      "Enter endpoints into your identity provider": [
+        "Ange ändpunkter i din identitetsleverantör"
+      ],
+      "Enter SAML metadata": [
+        "Ange SAML-metadata"
+      ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Ange dina kontodetaljer för ${ BRAND_NAME } för att gå med il ${ app } Beta-program"
       ],
@@ -7223,6 +7355,9 @@
       "Recovery": [
         "Återställning"
       ],
+      "Remove domain": [
+        "Ta bort domän"
+      ],
       "Remove user?": [
         "Ta bort användare?"
       ],
@@ -7252,6 +7387,9 @@
       ],
       "Revoke certificate": [
         "Återkalla certifikat"
+      ],
+      "SAML authentication": [
+        "SAML-autentisering"
       ],
       "Select a plan": [
         "Välj ett paket"
@@ -7297,6 +7435,9 @@
       ],
       "Signed in to member account": [
         "Loggade in på medlemskonto"
+      ],
+      "Single Sign-On": [
+        "Enkel inloggning"
       ],
       "Status": [
         "Status"
@@ -7429,11 +7570,20 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Växla automatiskt mellan dina föredragna teman för dag och natt i synk med ditt systems dag- och nattlägen"
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Kopiera och klistra in denna URL i ACS (Assertion Consumer Service) URL-fältet för din identitetsleverantör"
+      ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "Ändpunkts-URL från identitetsleverantör (t.ex. https://idp.example.com/sso/saml)"
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Om du har köpt en presentkod eller fått en från vårt supportteam kan du ange den här."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Medlemmar som inte använder 2FA kommer få ett e-postmeddelande som ber dem att aktivera det så fort som möjligt."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Specificera domänen som tillåts autentisera med SAML SSO"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Den nya prenumerationscykeln startar den ${ formattedTime }"
@@ -7443,6 +7593,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Det valda temat kommer bli aktivt när ditt system är inställt på “ljust läge“"
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Vanligtvis en URL som innehåller identitetsleverantörens namn"
       ],
       "Verified email address": [
         "Verifierad e-postadress"
@@ -7491,7 +7644,7 @@
       ]
     },
     "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
+      "SSO user provided by your identity provider": [
         "SSO-användare tillhandahållen av din identitetsleverantör"
       ]
     },

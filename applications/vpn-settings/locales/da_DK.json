@@ -77,6 +77,9 @@
       "Close this banner": [
         "Luk dette banner"
       ],
+      "Configure SAML": [
+        "Konfigurér SAML"
+      ],
       "Confirm": [
         "Bekræft"
       ],
@@ -260,6 +263,9 @@
       "Hide plan features": [
         "Gem abonnementsfunktioner"
       ],
+      "Import new SAML metadata": [
+        "Importer nye SAML-metadata"
+      ],
       "Increase": [
         "Forøg"
       ],
@@ -338,6 +344,9 @@
       "Remove bonuses": [
         "Fjern bonusser"
       ],
+      "Remove domain": [
+        "Fjern domæne"
+      ],
       "Remove gift code": [
         "Fjern gavekode"
       ],
@@ -389,11 +398,17 @@
       "Save address": [
         "Gem adresse"
       ],
+      "Save SAML configuration": [
+        "Gem SAML-konfiguration"
+      ],
       "Search": [
         "Søg"
       ],
       "Search countries": [
         "Søg lande"
+      ],
+      "See DNS TXT record": [
+        "Se DNS TXT-post"
       ],
       "See how": [
         "Se hvordan"
@@ -403,6 +418,9 @@
       ],
       "Select ${ planTitle }": [
         "Vælg ${ planTitle }"
+      ],
+      "Select file": [
+        "Vælg fil"
       ],
       "Send code": [
         "Send kode"
@@ -2066,6 +2084,12 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Opgrader venligst til et erhversabonnement med mere end 1 bruger for at administrere flere brugere."
       ],
+      "Please upload an xml file": [
+        "Upload en xml-fil"
+      ],
+      "Please upload only 1 file": [
+        "Upload kun 1 fil"
+      ],
       "Process aborted": [
         "Proces afbrudt"
       ],
@@ -2116,6 +2140,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Prøv kun at bruge bogstaver, tal og _.-"
+      ],
+      "Unable to upload file": [
+        "Filen kan ikke uploades"
       ],
       "Unknown error": [
         "Ukendt fejl"
@@ -2736,6 +2763,11 @@
         "Brugernavn"
       ]
     },
+    "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Tilføj denne post til dit domæne i kontrolpanelet hos din domæneregistrator"
+      ]
+    },
     "Human verification method": {
       "Email": [
         "E-mail"
@@ -2858,6 +2890,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Tilføj endnu et lag af sikkerhed til din konto. Du skal bekræfte dig selv med 2FA, hver gang du logger på."
       ],
+      "Add domain": [
+        "Tilføj domæne"
+      ],
       "Add server (${ availableAddedCount } available)": [
         "Tilføj server (${ availableAddedCount } tilgængelig)",
         "Tilføje server (${ availableAddedCount } tilgængelige)"
@@ -2915,6 +2950,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Er du sikker på, at du vil fjerne administrative privilegier fra denne bruger?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "Er du sikker på, at du vil fjerne domænet ${ boldDomain }?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Bed din organisationsadministrator om at opsætte gateways."
       ],
@@ -2966,8 +3004,20 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Azure or Onelogin. This will enable SAML for the whole organization.": [
+        "Konfigurer SAML-godkendelse for din organisation via en identitetsudbyder som Okta, Azure eller Onelogin. Dette vil aktivere SAML for hele organisationen."
+      ],
       "Continue with ${ freeName }": [
         "Fortsæt med ${ freeName }"
+      ],
+      "Copied to clipboard": [
+        "Kopieret til udklipsholder"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Kopiér og indsæt denne URL i ACS-URL-feltet (Assertion Consumer Service) hos din identitetsudbyder"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Kopiér og indsæt denne URL i feltet Entity ID hos din identitetsudbyder"
       ],
       "Copy the suggested password to clipboard": [
         "Kopiér den foreslåede adgangskode til udklipsholderen"
@@ -3019,11 +3069,23 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
+      "DNS TXT record": [
+        "DNS TXT-post"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Glem IKKE denne adgangskode. Glemmer du den, vil du ikke være i stand til at administrere din organisation."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "Du må IKKE glemme denne adgangskode. Hvis du glemmer den, kan du ikke logge ind eller dekryptere dine beskeder."
+      ],
+      "Domain ownership failed verification.": [
+        "Verifikation af domæneejerskab mislykkedes."
+      ],
+      "Domain ownership not verified.": [
+        "Domæneejerskab ikke verificeret."
+      ],
+      "Domain ownership verified.": [
+        "Domæneejerskab verificeret."
       ],
       "Done": [
         "Udført"
@@ -3040,6 +3102,12 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Download din favoritapp i dag og tag dit privatliv med dig overalt."
       ],
+      "Drop file here to upload": [
+        "Træk fil hertil for at uploade"
+      ],
+      "Drop to import": [
+        "Slip for at importere"
+      ],
       "Each code can only be used once": [
         "Hver kode kan kun bruges én gang"
       ],
@@ -3054,6 +3122,9 @@
       ],
       "Emailing preference saved": [
         "E-mail-afsendelsespræference gemt"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "Endpoint URL modtaget fra din identitetsudbyder (f.eks. https://idp.example.com/sso/saml)."
       ],
       "Enhance your network security": [
         "Styrk din netværkssikkerhed"
@@ -3127,8 +3198,14 @@
       "Get ${ upsellPlanName }": [
         "Få ${ upsellPlanName }"
       ],
+      "Go to your identity provider, get the the SAML metadata for ${ appName } and import it here.": [
+        "Gå til din identitetsudbyder, hent SAML-metadataene for ${ appName }, og importér dem her."
+      ],
       "here": [
         "hér"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Identitetsudbyderens offentlige nøgle til at underskrive godkendelsespåstande. Der bør være et sted, hvor man kan downloade eller kopiere certifikatets hash fra identitetsudbyderen. Du skal bare indsætte certifikatets hash i tekstområdets felt."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Hvis en anden administrator ændrede denne adgangskode, må du bede dem om den nye Organisationsadgangskode."
@@ -3292,6 +3369,9 @@
       "Optional": [
         "Valgfri"
       ],
+      "or ${ selectFileButton }": [
+        "eller ${ selectFileButton }"
+      ],
       "Or select a particular server:": [
         "Eller vælg en bestemt server:"
       ],
@@ -3417,6 +3497,9 @@
       "Revoke certificate ${ name }": [
         "Tilbagekald certifikat ${ name }"
       ],
+      "SAML configuration saved": [
+        "SAML-konfiguration gemt"
+      ],
       "Save ${ percentage }": [
         "Spar ${ percentage }"
       ],
@@ -3464,6 +3547,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Nogle af dine tilgængelige servere kan kun bruges i specifikke lande på grund af nylige fjernelser"
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Angiv det domæne, der har tilladelse til at autentificere med SAML SSO."
       ],
       "Step ${ step }": [
         "Trin ${ step }",
@@ -3568,6 +3654,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Denne bruger er pt. ansvarlig for betalinger for din organisation. Ved at degradere dette medlem, bliver du ansvarlig for betalinger for din organisation."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Denne verifikation kan tage op til en time. Du kan roligt fortsætte til de næste trin."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Dette vil annullere dit nuværende betalte abonnement, og du vil miste eventuelle loyalitetsfordele, du har akkumuleret."
       ],
@@ -3594,6 +3683,9 @@
       ],
       "to ${ product } Business": [
         "til ${ product } Business"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "For at tillade domænet ${ boldDomainName } at bruge SAML SSO, skal du bekræfte ejerskabet af det ved at tilføje følgende DNS TXT-post til dit domæne hos din DNS-udbyder."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Kontakt os for at opsige dit abonnement."
@@ -3655,6 +3747,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "Desværre er der ingen gendannelsesmetode gemt for denne konto."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "Unikt ID genereret af din identitetsudbyder, normalt i form af en URL, der indeholder identitetsudbyderens navn (f.eks. https://idp.example.com/XXXXX)."
+      ],
       "Unsaved changes": [
         "Ikke-gemte ændringer"
       ],
@@ -3693,6 +3788,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Bekræftelsesprocessen åbner en ny fane. Deaktivér derfor pop-up blockere. Du vil ikke blive debiteret. Ethvert beløb anvendt til bekræftelse af kortet refunderes straks."
+      ],
+      "Verify domain": [
+        "Bekræft domæne"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Bekræft din identitet med en tidsbaseret engangsadgangskode fra en godkendelsesapp"
@@ -3768,6 +3866,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Vi opgraderer dit nuværende abonnement til et forbedret abonnement, der giver mere for den samme pris. Mens vores systemer opdateres, vil du ikke kunne ændre det. Vi sender dig en e-mail, så snart det er gjort."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "Når du aktiverer SAML for ${ appName } i din identitetsudbyder, bliver du muligvis bedt om at bruge callback-URL'en (ACS) og udsteder-ID'et. Du skal blot kopiere og indsætte nedenstående data i din identitetsudbyders felter."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
@@ -3918,6 +4019,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Dine eksisterende beskeder, kalender eller kontakter vil blive låst. For at gendanne disse data, har du brug for din gendannelsessætning eller din ${ oldPassword }."
       ],
+      "Your files will be encrypted and then saved": [
+        "Din filer vil blive krypteret og derefter gemt"
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din information er sikker hos os. Vi kontakter dig kun når det er nødvendigt for at levere vores tjenester."
       ],
@@ -4063,6 +4167,9 @@
       ],
       "Allow recovery by phone": [
         "Tillad gendannelse via telefon"
+      ],
+      "Allowed domain": [
+        "Tilladt domæne"
       ],
       "Amount": [
         "Beløb"
@@ -4223,6 +4330,9 @@
       "Interval": [
         "Interval"
       ],
+      "Issuer ID": [
+        "Udsteder-ID"
+      ],
       "Keep me signed in": [
         "Hold mig logget ind"
       ],
@@ -4240,6 +4350,15 @@
       ],
       "Main": [
         "Hjem"
+      ],
+      "Metadata file for ${ appName }": [
+        "Metadata-fil for ${ appName }"
+      ],
+      "Metadata URL for ${ appName }": [
+        "Metadata-URL for ${ appName }"
+      ],
+      "Method for importing metadata": [
+        "Metode til import af metadata"
       ],
       "Moderate NAT": [
         "Moderat NAT"
@@ -4376,6 +4495,9 @@
       "Two-password mode": [
         "To-adgangskodetilstand"
       ],
+      "Type": [
+        "Type"
+      ],
       "User": [
         "Bruger"
       ],
@@ -4384,6 +4506,9 @@
       ],
       "Username": [
         "Brugernavn"
+      ],
+      "Value": [
+        "Værdi"
       ],
       "Verification code": [
         "Verifikationskode"
@@ -4763,10 +4888,6 @@
         "${ n } VPN-forbindelse",
         "${ n } VPN-forbindelser"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-forbindelse pr. bruger",
-        "${ n } VPN-forbindelser pr. bruger"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
         "${ PASS_APP_NAME } med ${ n } hide-my-email-aliasser"
@@ -4785,9 +4906,6 @@
       ],
       "${ size } storage per user": [
         "${ size } lager pr. bruger"
-      ],
-      "1 free VPN connection in total": [
-        "1 gratis VPN-forbindelse i alt"
       ],
       "1 user": [
         "1 bruger"
@@ -5297,9 +5415,6 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "På hverdage kan du modtage support fra ${ BRAND_NAME } kundesupportteamet inden for 24 timer efter en henvendelse."
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Én VPN-forbindelse gør det muligt for én enhed at oprette forbindelse til ${ BRAND_NAME } VPN på ethvert givet tidspunkt. Hvis du f.eks. vil forbinde en telefon og en bærbar computer til ${ BRAND_NAME_TWO } VPN på samme tid, skal du bruge to VPN-forbindelser."
-      ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mulighed for at se ikke-private brugerindbakker som brugeren ville, herunder fulde besked- og kontaktoplysninger"
       ],
@@ -5730,6 +5845,15 @@
       ],
       "Confirm": [
         "Bekræft"
+      ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "f.eks. https://example.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "f.eks. https://idp.example.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "f.eks. https://idp.example.com/XXXXX"
       ],
       "Email address": [
         "E-mail"
@@ -6678,6 +6802,9 @@
       ]
     },
     "Success message": {
+      "Domain deleted": [
+        "Domæne slettet"
+      ],
       "Sessions revoked": [
         "Sessioner tilbagekaldt"
       ],
@@ -7044,6 +7171,9 @@
       "Email subscriptions": [
         "E-mail-abonnementer"
       ],
+      "Enter SAML metadata": [
+        "Indtast SAML-metadata"
+      ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Indtast dine ${ BRAND_NAME } kontooplysninger for at deltage i ${ app } beta-programmet"
       ],
@@ -7168,6 +7298,9 @@
       "Recovery": [
         "Gendannelse"
       ],
+      "Remove domain": [
+        "Fjern domæne"
+      ],
       "Remove user?": [
         "Fjern bruger?"
       ],
@@ -7197,6 +7330,9 @@
       ],
       "Revoke certificate": [
         "Tilbagekald certifikat"
+      ],
+      "SAML authentication": [
+        "SAML-godkendelse"
       ],
       "Select a plan": [
         "Vælg et abonnement"
@@ -7370,11 +7506,17 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Skift automatisk mellem dine foretrukne temaer for dag og nat synkront med dit systems dag- og nattilstande"
       ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Kopiér og indsæt denne URL i feltet Entity ID hos din identitetsudbyder"
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Hvis du har købt en gavekode eller modtaget en fra vores supportteam, kan du indtaste den her."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Medlemmer, der ikke bruger 2FA, vil modtage en e-mail, der beder dem om at aktivere det hurtigst muligt."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Angiv det domæne, der har tilladelse til at autentificere med SAML SSO."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Den nye abonnementscyklus starter ${ formattedTime }"
@@ -7429,11 +7571,6 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "SSO-bruger leveret af din identitetsudbyder"
       ]
     },
     "Validation": {
