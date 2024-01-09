@@ -35,10 +35,11 @@ export const queryRenameLink = (
     data,
 });
 
-export const queryMoveLink = (shareID: string, linkID: string, data: MoveLink) => ({
+export const queryMoveLink = (shareID: string, linkID: string, data: MoveLink, options?: { silence: boolean }) => ({
     method: 'put',
     url: `drive/shares/${shareID}/links/${linkID}/move`,
     data,
+    silence: options?.silence,
 });
 
 export const queryEvents = (shareID: string, eventID: string) => ({
