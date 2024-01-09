@@ -278,6 +278,9 @@
       "Pass for iOS": [
         "Pass för iOS"
       ],
+      "Pin item": [
+        "Fäst objekt"
+      ],
       "Refresh the page": [
         "Uppdatera sidan"
       ],
@@ -364,6 +367,9 @@
       ],
       "Try again": [
         "Försök igen"
+      ],
+      "Unpin item": [
+        "Lossa objekt"
       ],
       "Update": [
         "Uppdatera"
@@ -525,11 +531,17 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Misslyckades att flytta alla objekt från “${ payload.content.name }“"
       ],
+      "Failed to pin item": [
+        "Misslyckades att fästa objekt"
+      ],
       "Failed to remove user's access.": [
         "Misslyckades att ta bort användaråtkomst."
       ],
       "Failed to transfer this vault's ownership.": [
         "Misslyckades att överföra detta valvs äganderätt."
+      ],
+      "Failed to unpin item": [
+        "Misslyckades att lossa objekt"
       ],
       "File could not be parsed": [
         "Fil kunde inte analyseras"
@@ -931,6 +943,9 @@
       ],
       "Item successfully moved": [
         "Objekt flyttades"
+      ],
+      "Item successfully unpinned": [
+        "Objekt lossat"
       ],
       "Leaving vault...": [
         "Lämnar valv..."

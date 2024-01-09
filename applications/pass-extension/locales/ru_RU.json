@@ -62,6 +62,9 @@
       "Confirm access": [
         "Подтвердить доступ"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Подключите свой аккаунт ${ BRAND_NAME }"
+      ],
       "Continue": [
         "Продолжить"
       ],
@@ -82,6 +85,9 @@
       ],
       "Create a ${ BRAND_NAME } account": [
         "Создать аккаунт ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Создайте свой аккаунт ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
         "Создать новое хранилище для совместного использования"
@@ -128,11 +134,20 @@
       "Delete vault": [
         "Удалить хранилище"
       ],
+      "Disable autosave on this website": [
+        "Отключить автосохранение на этом веб-сайте"
+      ],
       "Discard": [
         "Сбросить"
       ],
       "Dismiss": [
         "Отклонить"
+      ],
+      "Do not show on this website": [
+        "Не показывать на этом веб-сайте"
+      ],
+      "Do not suggest on this website": [
+        "Не предлагать на этом веб-сайте"
       ],
       "Done": [
         "Готово"
@@ -200,6 +215,9 @@
       "Leave": [
         "Оставить"
       ],
+      "Leave vault": [
+        "Покинуть хранилище"
+      ],
       "Lock extension": [
         "Заблокировать расширение"
       ],
@@ -212,6 +230,9 @@
       "Make viewer": [
         "Сделать зрителем"
       ],
+      "Manage access": [
+        "Управление доступом"
+      ],
       "Manually sync your data": [
         "Синхронизировать ваши данные вручную"
       ],
@@ -220,6 +241,9 @@
       ],
       "More options": [
         "Дополнительные параметры"
+      ],
+      "Move all items": [
+        "Перенести все элементы"
       ],
       "Move to a shared vault": [
         "Переместите в общее хранилище"
@@ -245,6 +269,9 @@
       "Open navigation": [
         "Открыть панель навигации"
       ],
+      "Open web app": [
+        "Открыть веб-приложение"
+      ],
       "Pass for Android": [
         "Pass для Android"
       ],
@@ -269,6 +296,9 @@
       "Remove": [
         "Удалить"
       ],
+      "Remove access": [
+        "Отменить доступ"
+      ],
       "Request a feature": [
         "Запросить функцию"
       ],
@@ -286,6 +316,12 @@
       ],
       "Saving": [
         "Сохранение"
+      ],
+      "See members": [
+        "Просмотреть участников"
+      ],
+      "Send invite": [
+        "Отправить приглашение"
       ],
       "Send us a message": [
         "Отправить нам сообщение"
@@ -323,6 +359,9 @@
       "Submitting report...": [
         "Отправка отчёта..."
       ],
+      "Transfer ownership": [
+        "Передать права владельца"
+      ],
       "Try again": [
         "Попробовать снова"
       ],
@@ -357,6 +396,9 @@
     "Badge": {
       "Early access": [
         "Ранний доступ"
+      ],
+      "Limited time": [
+        "Ограниченный срок"
       ]
     },
     "bf2023: Info": {
@@ -387,6 +429,14 @@
         "Развернуть"
       ]
     },
+    "Description": {
+      "A checked box means the feature is disabled.": [
+        "Установленный флажок означает, что функция отключена."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Список доменов, в которых определенные автоматические функции в ${ PASS_SHORT_APP_NAME } (автозаполнение, автопредложение, автосохранение) не должны запускаться.${ infoText }"
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } не может быть обработан. ${ errorDetail }"
@@ -396,6 +446,9 @@
       ],
       "Authentication error": [
         "Ошибка аутентификации"
+      ],
+      "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
+        "Аутентификация не удалась. Подтвердите ваш пароль ${ BRAND_NAME } для продолжения экспорта"
       ],
       "Auto-lock could not be activated": [
         "Автоблокировка не может быть активирована"
@@ -480,6 +533,9 @@
       ],
       "File could not be parsed": [
         "Файл не может быть обработан"
+      ],
+      "File does not match expected format": [
+        "Файл не соответствует ожидаемому формату"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "Сбой при импорте для хранилища \"${ vaultData.name }\" : ${ description }"
@@ -675,6 +731,15 @@
         "${ memberCount } членов",
         "${ memberCount } член"
       ],
+      "${ n } item": [
+        "${ n } элемент",
+        "${ n } элемент",
+        "${ n } элемент",
+        "${ n } элемент"
+      ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } отобразит фавикон элемента через ${ BRAND_NAME } анонимизированный прокси-сервер изображений."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } будет импортировать только логины, заметки и кредитные карты."
       ],
@@ -723,11 +788,17 @@
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Все элементы из \"${ payload.content.name }\" успешно удалены"
       ],
+      "All trashed items permanently deleted": [
+        "Все элементы из корзины удалены безвозвратно"
+      ],
       "All trashed items successfully restored": [
         "Все элементы из корзины успешно восстановлены"
       ],
       "An item previously shared with you was removed": [
         "Элемент, которым ранее поделились с вами, был удален"
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Вы уверены, что хотите переместить все элементы из \"${ fromVaultName }\" в \"${ toVaultName }\" ?"
       ],
       "Auto-lock successfully disabled": [
         "Автоблокировка успешно отключена"
@@ -749,6 +820,9 @@
       ],
       "Can view items in this vault.": [
         "Может просматривать элементы в этом хранилище."
+      ],
+      "Click the icon to open it anytime.": [
+        "Нажмите на значок, чтобы открыть его в любое время."
       ],
       "Congratulations, your access has been confirmed": [
         "Congratulations, your access has been confirmed"
@@ -800,6 +874,12 @@
       ],
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "Экспорт зашифрован с помощью PGP и требует надежной кодовой фразы."
+      ],
+      "For easy access to your passwords and more.": [
+        "Для легкого доступа к паролям и прочего."
+      ],
+      "For security reason, your access needs to be confirmed": [
+        "В целях безопасности ваш доступ должен быть подтвержден"
       ],
       "For security reasons, your access needs to be confirmed": [
         "По причинам безопасности, ваш доступ должен быть подтверждён"
@@ -918,6 +998,9 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Владение успешно передано. Вы теперь не владелец этого хранилища."
       ],
+      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
+        "Pass Plus за ${ eoyRelativePrice }/месяц, включая ранний доступ к веб-приложению."
+      ],
       "Pass Plus trial": [
         "Проба Pass Plus"
       ],
@@ -935,6 +1018,9 @@
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-код успешно зарегистрирован. Используйте его для разблокировки ${ PASS_APP_NAME }"
+      ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "Подтвердите ваш пароль ${ BRAND_NAME } для экспорта ваших данных ${ PASS_APP_NAME }"
       ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "Пожалуйста, подтвердите свой PIN-код, чтобы снять регистрацию текущей блокировки.\nПриложение ${ PASS_APP_NAME } больше не будет блокироваться."
@@ -1013,6 +1099,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Спасибо, отчет о проблеме отправлен"
+      ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "Выпадающий список автозаполнения будет автоматически открываться при нажатии или наведении курсора на поле."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Следующий ${ result.ignored.length } элемент не может быть импортирован:",
@@ -1157,6 +1246,9 @@
       "15 minutes": [
         "15 минут"
       ],
+      "2FA secret key (TOTP)": [
+        "Секретный ключ двухфакторной аутентификации (TOTP)"
+      ],
       "2FA token (TOTP)": [
         "Токен 2ФА (TOTP)"
       ],
@@ -1204,6 +1296,9 @@
       ],
       "Autofill 2FA": [
         "Автозаполнение 2ФА"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "Автоматически открывать автозаполнение при выборе поля имя пользователя"
       ],
       "Autosave": [
         "Автосохранение"
@@ -1351,6 +1446,9 @@
       ],
       "Modified": [
         "Изменено"
+      ],
+      "More than a month": [
+        "Более одного месяца"
       ],
       "Most recent": [
         "Самые новые"
@@ -1530,6 +1628,22 @@
         "Вы собираетесь создать"
       ]
     },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Введите свой PIN-код"
+      ],
+      "Sign in to your account": [
+        "Войти в ваш аккаунт"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Разблокировать ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Добро пожаловать в ${ brandNameJSX }"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Добро пожаловать в ${ appName }"
@@ -1565,6 +1679,9 @@
       ]
     },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "Добавьте секретный ключ 2FA"
+      ],
       "Add hidden text": [
         "Добавить скрытый текст"
       ],
@@ -1609,6 +1726,12 @@
       ],
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Введите \"${ vaultName }\", чтобы подтвердить удаление"
+      ],
+      "Search ${ pluralItemType } in ${ vault.content.name }": [
+        "Искать ${ pluralItemType } в ${ vault.content.name }"
+      ],
+      "Search ${ pluralItemType } in all vaults": [
+        "Искать ${ pluralItemType } во всех хранилищах"
       ],
       "Search in ${ vault.content.name }": [
         "Искать в ${ vault.content.name }"
@@ -1656,6 +1779,9 @@
       "Confirm PIN code": [
         "Подтвердите ПИН-код"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Подключите свой аккаунт ${ BRAND_NAME }"
+      ],
       "Create PIN code": [
         "Создать PIN-код"
       ],
@@ -1695,11 +1821,20 @@
       "Import to vault(s)": [
         "Импорт в хранилище"
       ],
+      "Leave vault ?": [
+        "Оставить хранилище?"
+      ],
+      "Log in as...": [
+        "Войдите как..."
+      ],
       "Low disk space": [
         "Мало места на диске"
       ],
       "Member limit": [
         "Ограничение количества участников"
+      ],
+      "Move all items ?": [
+        "Переместить все элементы?"
       ],
       "Our welcome gift to you": [
         "Our welcome gift to you"
@@ -1722,6 +1857,9 @@
       "Set access level": [
         "Задать уровень доступа"
       ],
+      "Share with": [
+        "Поделиться с"
+      ],
       "Switching to ${ PASS_APP_NAME }?": [
         "Переключаетесь на ${ PASS_APP_NAME }?"
       ],
@@ -1730,6 +1868,9 @@
       ],
       "The extension is now ready to use.": [
         "Расширение теперь готово к использованию"
+      ],
+      "Transfer ownership": [
+        "Передать права владельца"
       ],
       "Trash empty": [
         "Корзина пуста"
@@ -1748,6 +1889,9 @@
       ],
       "Vault shared with you": [
         "Хранилище, предоставленное вам"
+      ],
+      "Welcome to your new password manager!": [
+        "Добро пожаловать в ваш новый менеджер паролей!"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "Почему ${ PASS_APP_NAME }?"
@@ -1905,6 +2049,21 @@
       ],
       "Your plan does not allow you to create more aliases": [
         "Ваш тариф не позволяет вам создать больше псевдонимов"
+      ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "На вашем тарифе автозаполнение разрешено только для первых двух хранилищ"
+      ],
+      "Your session could not be authorized.": [
+        "Ваш сеанс не может быть авторизован."
+      ],
+      "Your session could not be resumed.": [
+        "Ваш сеанс не может быть возобновлён."
+      ],
+      "Your session is inactive. Please log back in.": [
+        "Ваш сеанс неактивен. Авторизуйтесь снова."
+      ],
+      "Your session was locked.": [
+        "Ваш сеанс заблокирован."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша подписка не позволяет создавать несколько хранилищ. Все элементы будут импортированы в ваше первое хранилище. Для импорта в несколько хранилищ обновите подписку."
