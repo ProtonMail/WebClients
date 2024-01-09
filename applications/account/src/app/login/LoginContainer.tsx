@@ -29,7 +29,7 @@ import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import { APPS, APP_NAMES, BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { isElectronApp, isElectronPass } from '@proton/shared/lib/helpers/desktop';
 
 import type { Paths } from '../content/helper';
 import Content from '../public/Content';
@@ -223,13 +223,13 @@ const LoginContainer = ({
                                 <LoginForm
                                     loginFormRef={loginFormRef}
                                     api={silentApi}
-                                    modal={modal}
+                                    modal={modal || isElectronPass}
                                     externalSSO={APP_NAME === APPS.PROTONACCOUNT && getIsVPNApp(toApp)}
                                     externalSSOToken={state?.externalSSOToken}
                                     signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
                                     paths={paths}
                                     defaultUsername={previousUsernameRef.current}
-                                    hasRemember={hasRemember}
+                                    hasRemember={hasRemember && !isElectronPass}
                                     authType={authType}
                                     onChangeAuthType={(authType) => {
                                         setAuthType(authType);
@@ -393,6 +393,14 @@ const LoginContainer = ({
 
     if (modal) {
         return children;
+    }
+
+    if (isElectronPass) {
+        return (
+            <Layout>
+                <Main>{children}</Main>
+            </Layout>
+        );
     }
 
     return (
