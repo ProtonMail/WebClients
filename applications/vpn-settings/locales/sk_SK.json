@@ -77,6 +77,9 @@
       "Close this banner": [
         "Zatvoriť tento banner"
       ],
+      "Configure SAML": [
+        "Konfigurovať SAML"
+      ],
       "Confirm": [
         "Potvrdiť"
       ],
@@ -260,6 +263,9 @@
       "Hide plan features": [
         "Skryť funkcie plánu"
       ],
+      "Import new SAML metadata": [
+        "Importovať nové SAML metadáta"
+      ],
       "Increase": [
         "Zvýšiť"
       ],
@@ -338,6 +344,9 @@
       "Remove bonuses": [
         "Odstrániť bonusy"
       ],
+      "Remove domain": [
+        "Odstrániť doménu"
+      ],
       "Remove gift code": [
         "Odstrániť darčekový kód"
       ],
@@ -389,11 +398,17 @@
       "Save address": [
         "Uložiť adresu"
       ],
+      "Save SAML configuration": [
+        "Uložiť SAML konfiguráciu"
+      ],
       "Search": [
         "Hľadať"
       ],
       "Search countries": [
         "Vyhľadať krajiny"
+      ],
+      "See DNS TXT record": [
+        "Zobraziť DNS TXT záznam"
       ],
       "See how": [
         "Pozrieť ako"
@@ -403,6 +418,9 @@
       ],
       "Select ${ planTitle }": [
         "Vybrať ${ planTitle }"
+      ],
+      "Select file": [
+        "Vyberte súbor"
       ],
       "Send code": [
         "Odoslať kód"
@@ -2133,6 +2151,9 @@
       "Try using only letters, numerals, and _.-": [
         "Skúste používať iba písmená, číslice a _.-"
       ],
+      "Unable to upload file": [
+        "Nepodarilo sa nahrať súbor"
+      ],
       "Unknown error": [
         "Neznáma chyba"
       ],
@@ -2908,6 +2929,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Pridajte do svojho účtu ďalšiu úroveň zabezpečenia. Pri každom prihlásení sa budete musieť overiť pomocou 2FA."
       ],
+      "Add domain": [
+        "Pridať doménu"
+      ],
       "Add server (${ availableAddedCount } available)": [
         "Pridať server (${ availableAddedCount } dostupný)",
         "Pridať server (${ availableAddedCount } dostupné)",
@@ -2971,6 +2995,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Naozaj chcete tomuto používateľovi odobrať oprávnenie správcu?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "Skutočne chcete odstrániť doménu ${ boldDomain }?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Požiadajte správcu organizácie o nastavenie brány."
       ],
@@ -3024,6 +3051,9 @@
       ],
       "Continue with ${ freeName }": [
         "Pokračovať ako ${ freeName }"
+      ],
+      "Copied to clipboard": [
+        "Skopírované do schránky"
       ],
       "Copy the suggested password to clipboard": [
         "Skopírujte navrhované heslo do schránky"
@@ -3079,11 +3109,23 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
+      "DNS TXT record": [
+        "DNS TXT záznam"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Toto heslo NEZABUDNITE. Bez neho nebudete môcť spravovať svoju organizáciu."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "NEZABUDNITE toto heslo. Ak ho zabudnete, nebudete sa môcť prihlásiť ani dešifrovať svoje správy."
+      ],
+      "Domain ownership failed verification.": [
+        "Zlyhalo overenie vlastníctva domény."
+      ],
+      "Domain ownership not verified.": [
+        "Vlastníctvo domény nie je overené."
+      ],
+      "Domain ownership verified.": [
+        "Vlastníctvo domény je overené."
       ],
       "Done": [
         "Hotovo"
@@ -3099,6 +3141,12 @@
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Stiahnite si svoju obľúbenú aplikáciu ešte dnes a vezmite súkromie do svojich rúk, nech ste kdekoľvek."
+      ],
+      "Drop file here to upload": [
+        "Sem presuňte súbor na nahranie"
+      ],
+      "Drop to import": [
+        "Presuňte na import"
       ],
       "Each code can only be used once": [
         "Každý kód je možné použiť iba raz"
@@ -3189,6 +3237,9 @@
       ],
       "here": [
         "tu"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Verejný kľúč poskytovateľa identity na podpisovanie autentifikačných overení. Malo by tu byť miesto na stiahnutie alebo skopírovanie hash certifikátu od poskytovateľa identity. Stačí vložiť hash certifikátu do poľa textovej oblasti."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Pokiaľ niektorý zo správcov zmenil heslo, budete ho musiet požiadať o nové heslo organizácie."
@@ -3352,6 +3403,9 @@
       "Optional": [
         "Voliteľné"
       ],
+      "or ${ selectFileButton }": [
+        "alebo ${ selectFileButton }"
+      ],
       "Or select a particular server:": [
         "Alebo vyberte konkrétny server:"
       ],
@@ -3480,6 +3534,9 @@
       ],
       "Revoke certificate ${ name }": [
         "Zrušiť certifikát ${ name }"
+      ],
+      "SAML configuration saved": [
+        "Konfigurácia SAML bola uložená"
       ],
       "Save ${ percentage }": [
         "Ušetríte ${ percentage }"
@@ -3640,6 +3697,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tento užívateľ je aktuálne zodpovedný za platby vo vašej organizácii. Znížením úrovne tohto užívateľa sa stanete zodpovedným za platby vo vašej organizácii práve vy."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Toto overenie môže trvať až jednu hodinu. Môžete bezpečne pokračovať k ďalším krokom."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Týmto sa zruší vaše aktuálne platené predplatné a stratíte všetky nahromadené vernostné výhody."
       ],
@@ -3727,6 +3787,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "Pre tento účet, bohužiaľ, nie je uložená žiadna metóda obnovy."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "Jedinečné ID vygenerované poskytovateľom identity, zvyčajne vo forme adresy URL, ktorá obsahuje názov poskytovateľa identity (napr. https://idp.example.com/XXXXX)."
+      ],
       "Unsaved changes": [
         "Neuložené zmeny"
       ],
@@ -3765,6 +3828,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Pri overovaní sa otvorí nová karta, vypnite prosím blokovanie automaticky otváraných okien. Nebudú vám účtované žiadne poplatky. Akákoľvek suma použitá na overenie karty bude okamžite vrátená."
+      ],
+      "Verify domain": [
+        "Overiť doménu"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Overenie totožnosti pomocou časového jednorazového hesla z aplikácie autentifikátora"
@@ -4000,6 +4066,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Vaše existujúce správy, kalendáre alebo kontakty budú uzamknuté. Na obnovenie týchto údajov budete potrebovať obnovovaciu frázu alebo ${ oldPassword }."
       ],
+      "Your files will be encrypted and then saved": [
+        "Vaše súbory budú zašifrované a potom uložené"
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vaše informácie sú u nás v bezpečí. Budeme vás kontaktovať len vtedy, keď to bude potrebné na poskytovanie našich služieb."
       ],
@@ -4152,6 +4221,12 @@
       "Allow recovery by phone": [
         "Povoliť obnovenie telefónom"
       ],
+      "Allowed domain": [
+        "Povolená doména"
+      ],
+      "Allowed Domain": [
+        "Povolená doména"
+      ],
       "Amount": [
         "Čiastka"
       ],
@@ -4280,6 +4355,9 @@
       ],
       "Do you have any suggestions for our team?": [
         "Máte nejaké návrhy pre náš tým?"
+      ],
+      "e.g. example.com": [
+        "napr. priklad.sk"
       ],
       "Email": [
         "Email"
@@ -4464,6 +4542,9 @@
       "Two-password mode": [
         "Režim s dvomi heslami"
       ],
+      "Type": [
+        "Typ"
+      ],
       "User": [
         "Používateľ"
       ],
@@ -4472,6 +4553,9 @@
       ],
       "Username": [
         "Používateľské meno"
+      ],
+      "Value": [
+        "Hodnota"
       ],
       "Verification code": [
         "Overovací kód"
@@ -4879,12 +4963,6 @@
         "${ n } VPN pripojení",
         "${ n } VPN pripojení"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN pripojenie na používateľa",
-        "${ n } VPN pripojenia na používateľa",
-        "${ n } VPN pripojení na používateľa",
-        "${ n } VPN pripojení na používateľa"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } s ${ n } hide-my-email aliasom",
         "${ PASS_APP_NAME } s ${ n } hide-my-email aliasmi",
@@ -4905,9 +4983,6 @@
       ],
       "${ size } storage per user": [
         "${ size } úložisko na používateľa"
-      ],
-      "1 free VPN connection in total": [
-        "Celkovo jedno bezplatné pripojenie VPN"
       ],
       "1 user": [
         "1 používateľ"
@@ -5429,9 +5504,6 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Počas pracovných dní získate podporu od tímu zákazníckej podpory ${ BRAND_NAME } do 24 hodín od vyžiadania"
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Jedno pripojenie VPN umožňuje jednému zariadeniu pripojiť sa k ${ BRAND_NAME } VPN kedykoľvek. Napríklad na súčasné pripojenie telefónu a notebooku k ${ BRAND_NAME_TWO } VPN potrebujete dve pripojenia VPN."
-      ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Možnosť zobraziť nesúkromné schránky používateľov tak, ako by to urobil používateľ, vrátane celých správ a kontaktných údajov"
       ],
@@ -5864,6 +5936,15 @@
       ],
       "Confirm": [
         "Potvrdiť"
+      ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "napr. https://example.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "napr. https://idp.example.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "napr. https://idp.example.com/XXXXX"
       ],
       "Email address": [
         "Emailová adresa"
@@ -6881,6 +6962,9 @@
       ]
     },
     "Success message": {
+      "Domain deleted": [
+        "Doména bola odstránená"
+      ],
       "Sessions revoked": [
         "Relácia zrušená"
       ],
@@ -7182,6 +7266,9 @@
       "Delete": [
         "Vymazať"
       ],
+      "Delete ${ value }": [
+        "Vymazať ${ value }"
+      ],
       "Delete account": [
         "Zmazať účet"
       ],
@@ -7377,6 +7464,9 @@
       "Recovery": [
         "Obnovenie"
       ],
+      "Remove domain": [
+        "Odstrániť doménu"
+      ],
       "Remove user?": [
         "Odstrániť používateľa?"
       ],
@@ -7451,6 +7541,9 @@
       ],
       "Signed in to member account": [
         "Prihlásený do členského účtu"
+      ],
+      "Single Sign-On": [
+        "Jednotné prihlásenie"
       ],
       "Status": [
         "Stav"
@@ -7638,11 +7731,6 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "Používateľ SSO od vášho poskytovateľa identít"
       ]
     },
     "Validation": {

@@ -2820,6 +2820,9 @@
       "Continue with ${ freeName }": [
         "Continuar com ${ freeName }"
       ],
+      "Copied to clipboard": [
+        "Copiado para a área de transferência"
+      ],
       "Copy the suggested password to clipboard": [
         "Copie a palavra-passe sugerida para a área de transferência"
       ],
@@ -2890,6 +2893,12 @@
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Transfira hoje a sua aplicação favorita e usufrua de privacidade onde quer que vá."
+      ],
+      "Drop file here to upload": [
+        "Solte os ficheiros aqui para os carregar"
+      ],
+      "Drop to import": [
+        "Solte para importar"
       ],
       "Each code can only be used once": [
         "Cada código só pode ser utilizado uma vez"
@@ -3139,6 +3148,9 @@
       ],
       "Optional": [
         "Opcional"
+      ],
+      "or ${ selectFileButton }": [
+        "ou ${ selectFileButton }"
       ],
       "Or select a particular server:": [
         "Ou selecione um servidor particular:"
@@ -3766,6 +3778,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "As mensagens, calendários ou contactos existentes ficarão bloqueados. Para recuperar estes dados, necessitará da sua frase de recuperação ou da sua ${ oldPassword }."
       ],
+      "Your files will be encrypted and then saved": [
+        "Os seus ficheiros serão encriptados e depois guardados."
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "As suas informações estão seguras connosco. Só entraremos em contacto quando tal for necessário para fornecer os nossos serviços."
       ],
@@ -4218,6 +4233,9 @@
       "Two-password mode": [
         "Modo palavra-passe dupla"
       ],
+      "Type": [
+        "Tipo"
+      ],
       "User": [
         "Utilizador"
       ],
@@ -4602,10 +4620,6 @@
         "${ n } ligação VPN",
         "${ n } ligações VPN"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } ligação VPN por utilizador",
-        "${ n } ligações VPN por utilizador"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } com ${ n } alias hide-my-email",
         "${ PASS_APP_NAME } com ${ n } aliases hide-my-email"
@@ -4622,9 +4636,6 @@
       "${ size } storage per user": [
         "${ size } de armazenamento por utilizador"
       ],
-      "1 free VPN connection in total": [
-        "1 conexão de VPN grátis"
-      ],
       "1 user": [
         "1 utilizador"
       ],
@@ -4633,6 +4644,9 @@
       ],
       "99.95% SLA": [
         "SLA de 99,95%"
+      ],
+      "Ad-blocker and malware protection": [
+        "Bloqueador de anúncios e proteção de malware"
       ],
       "Admin console": [
         "Consola de administração"
@@ -5111,9 +5125,6 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Nos dias úteis, a equipa de apoio ao cliente de ${ BRAND_NAME } irá ajudá-lo no prazo de 24 horas após o seu pedido."
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Uma ligação VPN permite que um dispositivo se ligue a ${ BRAND_NAME } VPN em qualquer altura. Por exemplo, para ligar um telemóvel e um computador portátil à ${ BRAND_NAME_TWO } VPN ao mesmo tempo, são necessárias duas ligações VPN."
-      ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opção para ver as caixas de entrada de utilizadores não privados como o utilizador faria, incluindo todas as mensagens e detalhes de contacto"
       ],
@@ -5391,7 +5402,7 @@
         "Começar a utilizar o ${ appName }"
       ],
       "Upgrade my plan": [
-        "Actualizar o meu plano"
+        "Atualize o meu plano"
       ]
     },
     "pass_signup_2023: Feature": {
@@ -5424,7 +5435,7 @@
         "+ ${ relativePrice } por mês"
       ],
       "Creating your account": [
-        "Criação da sua conta"
+        "A criar a sua conta"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Por apenas **${ relativePrice } adicionais por mês**, tem acesso a todos os serviços premium da ${ BRAND_NAME }"
@@ -5460,10 +5471,10 @@
         "Protegido pelas leis de privacidade suíças"
       ],
       "Updating your account": [
-        "Actualização da sua conta"
+        "A atualizar a sua conta"
       ],
       "Verifying your payment": [
-        "Verificação do seu pagamento"
+        "A verificar o seu pagamento"
       ],
       "Works on all devices": [
         "Funciona em todos os dispositivos"
@@ -6401,6 +6412,9 @@
       ]
     },
     "Success message": {
+      "Domain deleted": [
+        "Domínio eliminado"
+      ],
       "Sessions revoked": [
         "Sessões revogadas"
       ],

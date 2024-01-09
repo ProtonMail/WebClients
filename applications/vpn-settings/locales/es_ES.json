@@ -77,6 +77,9 @@
       "Close this banner": [
         "Cerrar este banner"
       ],
+      "Configure SAML": [
+        "Configurar SAML"
+      ],
       "Confirm": [
         "Confirmar"
       ],
@@ -260,6 +263,9 @@
       "Hide plan features": [
         "Ocultar las funciones del plan"
       ],
+      "Import new SAML metadata": [
+        "Importar los metadatos SAML nuevos"
+      ],
       "Increase": [
         "Aumentar"
       ],
@@ -338,6 +344,9 @@
       "Remove bonuses": [
         "Borrar los beneficios"
       ],
+      "Remove domain": [
+        "Borrar el dominio"
+      ],
       "Remove gift code": [
         "Eliminar código de regalo"
       ],
@@ -389,11 +398,17 @@
       "Save address": [
         "Guardar dirección"
       ],
+      "Save SAML configuration": [
+        "Guardar la configuración SAML"
+      ],
       "Search": [
         "Buscar"
       ],
       "Search countries": [
         "Buscar países"
+      ],
+      "See DNS TXT record": [
+        "Ver el registro TXT de DNS"
       ],
       "See how": [
         "Ver cómo"
@@ -403,6 +418,9 @@
       ],
       "Select ${ planTitle }": [
         "Selecciona ${ planTitle }"
+      ],
+      "Select file": [
+        "Seleccionar un archivo"
       ],
       "Send code": [
         "Enviar código"
@@ -2066,6 +2084,12 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Pasa a un plan para empresa con más de 1 usuario para administrar varios usuarios."
       ],
+      "Please upload an xml file": [
+        "Carga un archivo XML."
+      ],
+      "Please upload only 1 file": [
+        "Carga solo un archivo."
+      ],
       "Process aborted": [
         "Proceso anulado"
       ],
@@ -2116,6 +2140,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Utiliza solo letras, números y _.-"
+      ],
+      "Unable to upload file": [
+        "No se puede cargar el archivo."
       ],
       "Unknown error": [
         "Error desconocido"
@@ -2736,6 +2763,11 @@
         "Nombre de usuario"
       ]
     },
+    "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Añade este registro en el panel de control de tu dominio en tu registrador de nombre de dominio."
+      ]
+    },
     "Human verification method": {
       "Email": [
         "Correo electrónico"
@@ -2858,6 +2890,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Añade una capa adicional de seguridad a tu cuenta con una autenticación de doble factor cada vez que inicies sesión."
       ],
+      "Add domain": [
+        "Añadir un dominio"
+      ],
       "Add server (${ availableAddedCount } available)": [
         "Añadir servidor (${ availableAddedCount } disponible)",
         "Añadir servidor (${ availableAddedCount } disponibles)"
@@ -2915,6 +2950,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "¿Estás seguro de que quieres borrar los privilegios administrativos de este usuario?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "¿Estás seguro de que quieres borrar el dominio ${ boldDomain }?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Pregunta al administrador de tu organización para configurar puertas de enlace."
       ],
@@ -2966,8 +3004,20 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Azure or Onelogin. This will enable SAML for the whole organization.": [
+        "Configura la autenticación SAML para tu organización mediante un proveedor de identidad como Okta, Azure o Onelogin. Esto habilitará SAML para toda la organización."
+      ],
       "Continue with ${ freeName }": [
         "Continuar con ${ freeName }"
+      ],
+      "Copied to clipboard": [
+        "Copiado al portapapeles"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Copia y pega esta URL en el campo URL ACS (Assertion Consumer Service) de tu proveedor de identidad."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Copia y pega esta URL en el campo ID de entidad de tu proveedor de identidad."
       ],
       "Copy the suggested password to clipboard": [
         "Copiar la contraseña sugerida en el portapapeles"
@@ -3019,11 +3069,23 @@
       "Discover ProtectBuy logo": [
         "Logo de Discover ProtectBuy"
       ],
+      "DNS TXT record": [
+        "Registro TXT de DNS"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "NO olvides esta contraseña. Si la olvidas, no podrás administrar tu organización."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "NO olvides esta contraseña. Si la olvidas, no podrás iniciar sesión ni descifrar tus mensajes."
+      ],
+      "Domain ownership failed verification.": [
+        "Error al verificar la propiedad del dominio."
+      ],
+      "Domain ownership not verified.": [
+        "La propiedad del dominio no ha sido verificada."
+      ],
+      "Domain ownership verified.": [
+        "La propiedad del dominio ha sido verificada."
       ],
       "Done": [
         "Hecho"
@@ -3040,6 +3102,12 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descarga hoy tu aplicación favorita y lleva la privacidad contigo donde quieras que vayas."
       ],
+      "Drop file here to upload": [
+        "Suelta tus archivos aquí para cargarlos"
+      ],
+      "Drop to import": [
+        "Suelta aquí para importar"
+      ],
       "Each code can only be used once": [
         "Cada código puede utilizarse solo una vez."
       ],
@@ -3054,6 +3122,9 @@
       ],
       "Emailing preference saved": [
         "Preferencias de correo guardadas"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "URL del punto final recibida de tu proveedor de identidad (por ejemplo, https://idp.ejemplo.es/sso/saml)."
       ],
       "Enhance your network security": [
         "Aumenta la seguridad de tu red"
@@ -3127,8 +3198,14 @@
       "Get ${ upsellPlanName }": [
         "Obtener ${ upsellPlanName }"
       ],
+      "Go to your identity provider, get the the SAML metadata for ${ appName } and import it here.": [
+        "Ve a tu proveedor de identidad, obtén los metadatos de SAML para ${ appName } e impórtalos aquí."
+      ],
       "here": [
         "aquí"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Clave pública del proveedor de identidad para firmar aserciones de autenticación. Debería haber un lugar para descargar o copiar el hash del certificado del proveedor de identidad. Simplemente pega el hash del certificado en el campo del área de texto."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Si otro administrador ha cambiado esta contraseña, necesitarás pedir la nueva contraseña de la organización."
@@ -3292,6 +3369,9 @@
       "Optional": [
         "Opcional"
       ],
+      "or ${ selectFileButton }": [
+        "o ${ selectFileButton }"
+      ],
       "Or select a particular server:": [
         "O selecciona un servidor en particular:"
       ],
@@ -3417,6 +3497,9 @@
       "Revoke certificate ${ name }": [
         "Revocar certificado ${ name }"
       ],
+      "SAML configuration saved": [
+        "La configuración SAML ha sido guardada."
+      ],
       "Save ${ percentage }": [
         "Ahorra un ${ percentage }"
       ],
@@ -3464,6 +3547,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Algunos de tus servidores disponibles solo pueden utilizarse en países específicos debido a eliminaciones recientes."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Especifica el dominio que puede autenticarse con SAML SSO."
       ],
       "Step ${ step }": [
         "Paso ${ step }",
@@ -3568,6 +3654,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Este usuario es actualmente responsable de los pagos de tu organización. Al darlo de baja, serás el responsable de los pagos de tu organización."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Esta verificación puede tomar hasta una hora. Puedes continuar a los siguientes pasos."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Esto cancelará tu suscripción de pago y perderás todas las ventajas de fidelidad acumuladas."
       ],
@@ -3594,6 +3683,9 @@
       ],
       "to ${ product } Business": [
         "a ${ product }·Business"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Para permitir que el dominio ${ boldDomainName } use SAML SSO, debes verificar la propiedad del mismo añadiendo el siguiente registro TXT de DNS a tu dominio en tu proveedor de DNS."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Contáctanos para cancelar la suscripción."
@@ -3655,6 +3747,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "Lamentablemente no hay ningún método de recuperación configurado para esta cuenta."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "ID único generado por tu proveedor de identidad, generalmente en forma de URL que contiene el nombre del proveedor de identidad (por ejemplo, https://idp.ejemplo.es/XXXXX)."
+      ],
       "Unsaved changes": [
         "Cambios no guardados"
       ],
@@ -3693,6 +3788,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "La verificación abrirá una nueva pestaña, desactiva cualquier bloqueador de ventanas emergentes. No se te cobrará este proceso. Cualquier monto utilizado para verificar la tarjeta te será reembolsado inmediatamente."
+      ],
+      "Verify domain": [
+        "Verificar el dominio"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifica tu identidad con una clave de uso único de duración definida desde la aplicación de autenticación."
@@ -3768,6 +3866,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Se está actualizando tu plan actual a un plan que ofrece más por el mismo precio. Mientras el sistema se actualiza, no podrás cambiarlo. Se te enviará un correo electrónico en cuanto esté listo."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "Al habilitar SAML para ${ appName } en tu proveedor de identidad, es posible que se te solicite que uses la URL de devolución de llamada (ACS) y el ID del emisor. Simplemente copia y pega los datos a continuación en los campos de tu proveedor de identidad."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Cuando configuras la autenticación de doble factor, te proporcionamos códigos de recuperación que puedes utilizar para iniciar sesión si pierdes el acceso a tu aplicación de autenticación."
@@ -3921,6 +4022,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Tus mensajes, calendarios o contactos existentes serán bloqueados. Para recuperar estos datos, necesitarás tu frase de recuperación o tu ${ oldPassword }."
       ],
+      "Your files will be encrypted and then saved": [
+        "Tus archivos serán cifrados y después guardados."
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Tu información está segura con nosotros. Solo te contactaremos cuando sea necesario para prestar nuestros servicios."
       ],
@@ -4067,11 +4171,20 @@
       "Allow recovery by phone": [
         "Permitir recuperación por teléfono"
       ],
+      "Allowed domain": [
+        "Dominio permitido"
+      ],
+      "Allowed Domain": [
+        "Dominio permitido"
+      ],
       "Amount": [
         "Cantidad"
       ],
       "Amount due": [
         "Importe a pagar"
+      ],
+      "Assertion Consumer Service URL": [
+        "URL de ACS (Assertion Consumer Service)"
       ],
       "Attach screenshot(s)": [
         "Adjuntar captura(s) de pantalla"
@@ -4196,6 +4309,9 @@
       "Do you have any suggestions for our team?": [
         "¿Tienes alguna sugerencia para nuestro equipo?"
       ],
+      "e.g. example.com": [
+        "por ejemplo ejemplo.com"
+      ],
       "Email": [
         "Correo electrónico"
       ],
@@ -4226,6 +4342,9 @@
       "Interval": [
         "Intervalo"
       ],
+      "Issuer ID": [
+        "ID del emisor"
+      ],
       "Keep me signed in": [
         "Mantener mi sesión iniciada"
       ],
@@ -4243,6 +4362,15 @@
       ],
       "Main": [
         "Principal"
+      ],
+      "Metadata file for ${ appName }": [
+        "Archivo de metadatos para ${ appName }"
+      ],
+      "Metadata URL for ${ appName }": [
+        "URL de metadatos para ${ appName }"
+      ],
+      "Method for importing metadata": [
+        "Método para importar metadatos"
       ],
       "Moderate NAT": [
         "NAT moderada"
@@ -4340,6 +4468,9 @@
       "Proration": [
         "Prorrateo"
       ],
+      "Public certificate (X.509)": [
+        "Certificado público (X.509)"
+      ],
       "Recovery email address": [
         "Correo electrónico de recuperación"
       ],
@@ -4348,6 +4479,9 @@
       ],
       "Recovery phrase": [
         "Frase de recuperación"
+      ],
+      "Reply (ACS) URL": [
+        "URL (ACS) de respuesta"
       ],
       "Require 2FA for administrators": [
         "Requerir 2FA para los administradores"
@@ -4364,6 +4498,15 @@
       "Select your plan": [
         "Elige tu suscripción"
       ],
+      "Single sign-on Entity ID": [
+        "ID de entidad de inicio de sesión único"
+      ],
+      "Single sign-on entity ID": [
+        "ID de entidad de inicio de sesión único"
+      ],
+      "Single sign-on URL": [
+        "URL de inicio de sesión único"
+      ],
       "Start date": [
         "Fecha de inicio"
       ],
@@ -4379,6 +4522,9 @@
       "Two-password mode": [
         "Modo de doble contraseña"
       ],
+      "Type": [
+        "Tipo"
+      ],
       "User": [
         "Usuario"
       ],
@@ -4387,6 +4533,9 @@
       ],
       "Username": [
         "Nombre de usuario"
+      ],
+      "Value": [
+        "Valor"
       ],
       "Verification code": [
         "Código de verificación"
@@ -4430,6 +4579,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "Actualizaciones del producto ${ app }"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "Comunicados beta de ${ BRAND_NAME }"
       ],
@@ -4766,10 +4918,6 @@
         "${ n } conexión VPN",
         "${ n } conexiones VPN"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } conexión VPN por usuario",
-        "${ n } conexiones VPN por usuario"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } con ${ n } alias hide-my-email",
         "${ PASS_APP_NAME } con ${ n } alias hide-my-email"
@@ -4788,9 +4936,6 @@
       ],
       "${ size } storage per user": [
         "${ size } de almacenamiento por usuario"
-      ],
-      "1 free VPN connection in total": [
-        "1 conexión VPN gratuita en total"
       ],
       "1 user": [
         "1 usuario"
@@ -5037,6 +5182,10 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ancho de banda ilimitado"
+      ],
+      "Up to ${ n } user": [
+        "Hasta ${ n } usuario",
+        "Hasta ${ n } usuarios"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Hasta ${ totalStorageSize } de almacenamiento"
@@ -5300,8 +5449,8 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "En días laborales, recibe soporte del equipo de servicio al cliente de ${ BRAND_NAME } en menos de 24 horas"
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Cada conexión VPN permite que un solo dispositivo se conecte a ${ BRAND_NAME } VPN en cualquier momento. Por ejemplo, para conectar un teléfono y un portátil a ${ BRAND_NAME_TWO } VPN a la vez, necesitas dos conexiones VPN."
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Cada conexión VPN permite que un solo dispositivo se conecte a ${ VPN_APP_NAME } en cualquier momento. Por ejemplo, para conectar un teléfono y un portátil a ${ VPN_APP_NAME } a la vez, necesitas dos conexiones VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opción para ver las bandejas de entrada de los usuarios no privados como ellos lo hacen, incluidos el mensaje completo y los datos de contacto"
@@ -5509,6 +5658,9 @@
       ]
     },
     "Option": {
+      "Automatic (${ value })": [
+        "Automático (${ value })"
+      ],
       "Country configs": [
         "Configuraciones de país"
       ],
@@ -5733,6 +5885,15 @@
       ],
       "Confirm": [
         "Confirmar"
+      ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "por ejemplo https://ejemplo.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "por ejemplo https://idp.ejemplo.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "por ejemplo https://idp.ejemplo.com/XXXXX"
       ],
       "Email address": [
         "Dirección de correo electrónico"
@@ -6471,6 +6632,10 @@
         "${ n } calendario por usuario",
         "${ n } calendarios por usuario"
       ],
+      "${ n } free VPN connection per user": [
+        "${ n } conexión VPN gratis por usuario",
+        "${ n } conexiones VPN gratis por usuario"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } conexión VPN de alta velocidad",
         "${ n } conexiones VPN de alta velocidad"
@@ -6693,6 +6858,9 @@
       ]
     },
     "Success message": {
+      "Domain deleted": [
+        "Dominio eliminado"
+      ],
       "Sessions revoked": [
         "Sesiones revocadas"
       ],
@@ -6992,6 +7160,9 @@
       "Delete": [
         "Eliminar"
       ],
+      "Delete ${ value }": [
+        "Eliminar ${ value }"
+      ],
       "Delete account": [
         "Eliminar cuenta"
       ],
@@ -7058,6 +7229,12 @@
       ],
       "Email subscriptions": [
         "Boletines electrónicos"
+      ],
+      "Enter endpoints into your identity provider": [
+        "Entra los puntos finales en tu proveedor de identidad."
+      ],
+      "Enter SAML metadata": [
+        "Entrar los metadatos de SAML"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduce los detalles de tu cuenta de ${ BRAND_NAME } para unirte al programa Beta de ${ app }"
@@ -7183,6 +7360,9 @@
       "Recovery": [
         "Recuperación"
       ],
+      "Remove domain": [
+        "Borrar el dominio"
+      ],
       "Remove user?": [
         "¿Eliminar usuario?"
       ],
@@ -7212,6 +7392,9 @@
       ],
       "Revoke certificate": [
         "Revocar certificado"
+      ],
+      "SAML authentication": [
+        "Autenticación SAML"
       ],
       "Select a plan": [
         "Selecciona un plan"
@@ -7258,11 +7441,18 @@
       "Signed in to member account": [
         "Sesión Iniciada en la cuenta de usuario"
       ],
+      "Single Sign-On": [
+        "Inicio de sesión único"
+      ],
       "Status": [
         "Estado"
       ],
       "Subscription": [
         "Suscripción"
+      ],
+      "Successfully created ${ n } user account": [
+        "${ n } cuenta de usuario creada",
+        "${ n } cuentas de usuario creadas"
       ],
       "Summary": [
         "Resumen"
@@ -7385,11 +7575,26 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Cambia automáticamente entre tus temas preferidos para el día y la noche en sincronía con los modos de día y noche de tu sistema."
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Copia y pega esta URL en el campo URL ACS (Assertion Consumer Service) de tu proveedor de identidad."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Copia y pega esta URL en el campo ID de entidad de tu proveedor de identidad."
+      ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "URL de punto final de tu proveedor de identidad (por ejemplo, https://idp.ejemplo.es/sso/saml)"
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Clave pública del proveedor de identidad para firmar aserciones de autenticación. Obtén el hash del certificado de tu proveedor de identidad."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Si has comprado un código de regalo o recibido uno de nuestro equipo de soporte, puedes introducirlo aquí."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Los miembros que no utilizan 2FA recibirán un correo electrónico pidiéndoles que la activen tan pronto como sea posible."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Especifica el dominio que puede autenticarse con SAML SSO."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "El nuevo ciclo de suscripción comienza el ${ formattedTime }"
@@ -7399,6 +7604,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "El tema seleccionado estará activo cuando tu sistema esté en \"modo claro\"."
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Generalmente una URL que contiene el nombre del proveedor de identidad dentro."
       ],
       "Verified email address": [
         "Correo electrónico verificado"
@@ -7447,8 +7655,8 @@
       ]
     },
     "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "Usuario SSO proporcionado por tu proveedor de identidad"
+      "SSO user provided by your identity provider": [
+        "El usuario SSO ha sido proporcionado por tu proveedor de identidad."
       ]
     },
     "Validation": {

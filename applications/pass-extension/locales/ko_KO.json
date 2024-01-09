@@ -712,6 +712,9 @@
       "${ memberCount } members": [
         "${ memberCount }명 회원"
       ],
+      "${ n } items": [
+        "${ n }개 항목"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME }가 항목 아이콘을 ${ BRAND_NAME } 비공개 이미지 프록시를 통해 표시합니다."
       ],
@@ -1577,6 +1580,22 @@
       ],
       "You are about to create": [
         "생성하려고 하는 주소:"
+      ]
+    },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "PIN 코드를 입력하세요"
+      ],
+      "Sign in to your account": [
+        "계정에 로그인하세요"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "${ brandNameJSX } 잠금 해제"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "${ brandNameJSX }에 오신 것을 환영합니다."
       ]
     },
     "Onboarding": {

@@ -720,6 +720,10 @@
         "${ memberCount } jäsen",
         "${ memberCount } jäsentä"
       ],
+      "${ n } item": [
+        "${ n } kohde",
+        "${ n } kohteen"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } näyttää kohteiden sivustokuvakkeet ${ BRAND_NAME }in anonymisoidun kuvavälityspalvelimen välityksellä."
       ],
@@ -1593,6 +1597,22 @@
       ],
       "You are about to create": [
         "Luot aliasta"
+      ]
+    },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Syötä PIN-koodisi"
+      ],
+      "Sign in to your account": [
+        "Kirjaudu tilillesi"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Avaa ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Tervetuloa ${ brandNameJSX }iin"
       ]
     },
     "Onboarding": {

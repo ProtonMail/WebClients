@@ -5077,6 +5077,17 @@
         "您的日程中有部分内容我们不支持，这些日程将不会被导入。"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "检测到多余的重复密钥，请单独上传以获取更多信息。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "密钥 ${ fingerprint } 已上传"
+      ],
+      "Selected color:": [
+        "所选颜色"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您授权${ enableDesktopNotifications }。"
@@ -7098,17 +7109,6 @@
         "您的账户是由 Mozilla 管理的，请联系 Mozilla 获取帮助。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "检测到多余的重复密钥，请单独上传以获取更多信息。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "密钥 ${ fingerprint } 已上传"
-      ],
-      "Selected color:": [
-        "所选颜色"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "令下层文件夹的颜色与上层文件夹一致"
@@ -9042,9 +9042,6 @@
       "${ n } VPN connections": [
         "${ n } 台设备可同时接入 VPN"
       ],
-      "${ n } VPN connections per user": [
-        "每位用户可通过 ${ n } 台设备同时接入 VPN"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email aliases": [
         "${ PASS_APP_NAME } 带有 ${ n } 个 hide-my-email 别名"
       ],
@@ -9059,9 +9056,6 @@
       ],
       "${ size } storage per user": [
         "每位用户 ${ size } 存储空间"
-      ],
-      "1 free VPN connection in total": [
-        "仅 1 台设备可免费接入 VPN"
       ],
       "1 user": [
         "1名用户"

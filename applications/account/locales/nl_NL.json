@@ -5656,6 +5656,17 @@
         "Een deel van je agenda-inhoud wordt niet ondersteund en zal niet worden geïmporteerd."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Sleutel ${ fingerprint } is al geüpload"
+      ],
+      "Selected color:": [
+        "Geselecteerde kleur:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
@@ -7819,17 +7830,6 @@
         "Uw abonnement wordt beheerd door Mozilla. Neem contact op met Mozilla support."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Extra dubbele sleutels gedetecteerd. Gelieve afzonderlijk te uploaden voor meer informatie."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Sleutel ${ fingerprint } is al geüpload"
-      ],
-      "Selected color:": [
-        "Geselecteerde kleur:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Indien ingeschakeld, nemen submappen de kleur van de bovenliggende map over."
@@ -9867,10 +9867,6 @@
         "${ n } VPN-verbinding",
         "${ n } VPN-verbindingen"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-verbinding per gebruiker",
-        "${ n } VPN-verbindingen per gebruiker"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } met ${ n } hide-my-email-aliassen",
         "${ PASS_APP_NAME } met ${ n } hide-my-email aliassen"
@@ -9889,9 +9885,6 @@
       ],
       "${ size } storage per user": [
         "${ size } opslagruimte per gebruiker"
-      ],
-      "1 free VPN connection in total": [
-        "1 gratis VPN-verbinding"
       ],
       "1 user": [
         "1 gebruiker"
@@ -10445,9 +10438,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Ontvang op werkdagen binnen 24 uur na het indienen van uw verzoek ondersteuning van ${ BRAND_NAME }-klantenondersteuning"
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Met één VPN-verbinding kunt u één apparaat per keer verbinden met ${ BRAND_NAME }-VPN. Als u bijvoorbeeld tegelijkertijd een telefoon en een laptop met ${ BRAND_NAME_TWO }-VPN wilt verbinden, hebt u twee VPN-verbindingen nodig."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Optie om openbare gebruikersinboxen te bekijken zoals de gebruiker ze ziet, inclusief volledige bericht- en contactpersonengegevens"

@@ -453,7 +453,7 @@
         "Ověření selhalo"
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
-        "Ověření se nezdařilo. Potvrďte své ${ BRAND_NAME } heslo, abyste mohli pokračovat v exportu."
+        "Ověření selhalo. Potvrďte své ${ BRAND_NAME } heslo, abyste mohli pokračovat v exportu"
       ],
       "Auto-lock could not be activated": [
         "Automatické zamykání nelze aktivovat"
@@ -735,6 +735,12 @@
         "${ memberCount } členové",
         "${ memberCount } členů",
         "${ memberCount } členů"
+      ],
+      "${ n } item": [
+        "${ n } položka",
+        "${ n } položky",
+        "${ n } položek",
+        "${ n } položek"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } zobrazí favicon položky prostřednictvím anonymizovaného obrázkového proxy serveru ${ BRAND_NAME }."
@@ -1625,6 +1631,22 @@
       ],
       "You are about to create": [
         "Chystáte se vytvořit"
+      ]
+    },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Zadejte PIN kód"
+      ],
+      "Sign in to your account": [
+        "Přihlaste se ke svému účtu"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Odemknout ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Vítejte v ${ brandNameJSX }"
       ]
     },
     "Onboarding": {

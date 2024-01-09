@@ -77,6 +77,9 @@
       "Close this banner": [
         "Zavřít tento banner"
       ],
+      "Configure SAML": [
+        "Nastavit SAML"
+      ],
       "Confirm": [
         "Potvrdit"
       ],
@@ -260,6 +263,9 @@
       "Hide plan features": [
         "Skrýt funkce tarifu"
       ],
+      "Import new SAML metadata": [
+        "Importovat nová SAML metadata"
+      ],
       "Increase": [
         "Zvýšit"
       ],
@@ -338,6 +344,9 @@
       "Remove bonuses": [
         "Odebrat bonusy"
       ],
+      "Remove domain": [
+        "Odstranit doménu"
+      ],
       "Remove gift code": [
         "Odstranit dárkový kód"
       ],
@@ -389,11 +398,17 @@
       "Save address": [
         "Uložit adresu"
       ],
+      "Save SAML configuration": [
+        "Uložit SAML konfiguraci"
+      ],
       "Search": [
         "Vyhledat"
       ],
       "Search countries": [
         "Vyhledat země"
+      ],
+      "See DNS TXT record": [
+        "Zobrazit DNS TXT záznam"
       ],
       "See how": [
         "Podívejte se, jak"
@@ -403,6 +418,9 @@
       ],
       "Select ${ planTitle }": [
         "Vybrat ${ planTitle }"
+      ],
+      "Select file": [
+        "Vybrat soubor"
       ],
       "Send code": [
         "Odeslat kód"
@@ -2133,6 +2151,9 @@
       "Try using only letters, numerals, and _.-": [
         "Zkuste používat pouze písmena, číslice a _.-"
       ],
+      "Unable to upload file": [
+        "Soubor nelze nahrát"
+      ],
       "Unknown error": [
         "Neznámá chyba"
       ],
@@ -2908,6 +2929,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Přidejte ke svému účtu další úroveň zabezpečení. Při každém přihlášení se musíte ověřit pomocí 2FA."
       ],
+      "Add domain": [
+        "Přidat doménu "
+      ],
       "Add server (${ availableAddedCount } available)": [
         "Přidat server (${ availableAddedCount } k dispozici)",
         "Přidat servery (${ availableAddedCount } k dispozici)",
@@ -3025,6 +3049,9 @@
       "Continue with ${ freeName }": [
         "Pokračovat jako ${ freeName }"
       ],
+      "Copied to clipboard": [
+        "Zkopírováno do schránky"
+      ],
       "Copy the suggested password to clipboard": [
         "Zkopírujte navržené heslo do schránky"
       ],
@@ -3079,6 +3106,9 @@
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
+      "DNS TXT record": [
+        "DNS TXT záznam"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Heslo NEZAPOMEŇTE. Bez hesla nebudete moci spravovat svou organizaci."
       ],
@@ -3099,6 +3129,12 @@
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Stáhněte si svou oblíbenou aplikaci ještě dnes a vezměte soukromí do svých rukou, ať jste kdekoli."
+      ],
+      "Drop file here to upload": [
+        "Sem přetáhněte soubor pro nahrání"
+      ],
+      "Drop to import": [
+        "Přetažením provedete import"
       ],
       "Each code can only be used once": [
         "Každý kód lze použít pouze jednou"
@@ -3351,6 +3387,9 @@
       ],
       "Optional": [
         "Volitelné"
+      ],
+      "or ${ selectFileButton }": [
+        "nebo si ${ selectFileButton }"
       ],
       "Or select a particular server:": [
         "Nebo vyberte konkrétní server:"
@@ -3643,6 +3682,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tento uživatel je aktuálně zodpovědný za platby za Vaši organizaci. Snížením úrovně toho uživatele, se stanete zodpovědní za platby za Vaši organizaci právě vy."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Tato verifikace může trvat až hodinu. Můžete nyní pokračovat bezpečné dál."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Tím se zruší vaše stávající předplatné a ztratíte veškeré věrnostní výhody, které jste nashromáždili."
       ],
@@ -3768,6 +3810,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Proces ověření otevře novou záložku, vypněte prosím veškerá blokování vyskakovacích oken. Nebude účtován žádný poplatek. Jakákoli částka použitá pro ověření karty bude obratem vrácena."
+      ],
+      "Verify domain": [
+        "Ověřte svou doménu"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Ověřte totožnost pomocí časově omezeného jednorázového hesla z autentizační aplikace"
@@ -3913,6 +3958,9 @@
       "You can now access and manage the account as an administrator.": [
         "Nyní můžete k účtu přistupovat a spravovat jej jako správce."
       ],
+      "You can now return to the application to continue": [
+        "Nyní se můžete vrátit do aplikace a pokračovat"
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Můžete mít otevřen pouze jeden chat. Prosíme, zavřete předchozí konverzace před zahájením nové."
       ],
@@ -4002,6 +4050,9 @@
       ],
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Vaše současné zprávy, kalendáře nebo kontakty budou uzamčeny. Pro obnovení těchto dat budete potřebovat vaši obnovovací frázi nebo vaše ${ oldPassword }."
+      ],
+      "Your files will be encrypted and then saved": [
+        "Vaše soubory budou zašifrovány a uloženy"
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vaše informace jsou u nás v bezpečí. Budeme vás kontaktovat pouze v případě, že to bude nutné pro poskytování našich služeb."
@@ -4154,6 +4205,9 @@
       ],
       "Allow recovery by phone": [
         "Povolit obnovení telefonem"
+      ],
+      "Allowed domain": [
+        "Povolená doména"
       ],
       "Amount": [
         "Částka"
@@ -4428,6 +4482,9 @@
       "Proration": [
         "Prorace"
       ],
+      "Public certificate (X.509)": [
+        "Veřejný certifikát (X.509)"
+      ],
       "Recovery email address": [
         "E-mailová adresa pro obnovení"
       ],
@@ -4467,6 +4524,9 @@
       "Two-password mode": [
         "Režim dvou hesel"
       ],
+      "Type": [
+        "Typ"
+      ],
       "User": [
         "Uživatel"
       ],
@@ -4475,6 +4535,9 @@
       ],
       "Username": [
         "Uživatelské jméno"
+      ],
+      "Value": [
+        "Hodnota"
       ],
       "Verification code": [
         "Ověřovací kód"
@@ -4521,6 +4584,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "Aktualizace produktu ${ app }"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "Beta oznámení ${ BRAND_NAME }"
       ],
@@ -4885,12 +4951,6 @@
         "${ n } připojení VPN",
         "${ n } připojení VPN"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } připojení VPN na uživatele",
-        "${ n } připojení VPN na uživatele",
-        "${ n } připojení VPN na uživatele",
-        "${ n } připojení VPN na uživatele"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } s ${ n } aliasem hide-my-email",
         "${ PASS_APP_NAME } se ${ n } aliasy hide-my-email",
@@ -4911,9 +4971,6 @@
       ],
       "${ size } storage per user": [
         "${ size } prostoru na uživatele"
-      ],
-      "1 free VPN connection in total": [
-        "Celkem 1 bezplatné připojení VPN"
       ],
       "1 user": [
         "1 uživatel"
@@ -5166,6 +5223,12 @@
       ],
       "Unlimited volume/bandwidth": [
         "Neomezený objem/šířka pásma"
+      ],
+      "Up to ${ n } user": [
+        "Až ${ n } uživatel",
+        "Až ${ n } uživatelé",
+        "Až ${ n } uživatelů",
+        "Až ${ n } uživatelů"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Až ${ totalStorageSize } úložného prostoru"
@@ -5435,9 +5498,6 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "V pracovní dny, získejte podporu od týmu zákaznické podpory ${ BRAND_NAME } během 24 hodin od žádosti"
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Jedno VPN připojení umožňuje v jednom okamžiku použít ${ BRAND_NAME } VPN pouze jednomu zařízení. Například pro připojení telefonu a notebooku k ${ BRAND_NAME_TWO } VPN v jeden okamžik budete potřebovat dvě VPN připojení."
-      ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Možnost zobrazit ne-soukromé schránky uživatele, včetně zpráv a kontaktních detailů"
       ],
@@ -5680,7 +5740,13 @@
         "Můj důvod není na seznamu"
       ],
       "No permission": [
-        "Nemáte dostatečné oprávnění"
+        "Bez oprávnění"
+      ],
+      "Organization only": [
+        "Pouze organizace"
+      ],
+      "Receive from all": [
+        "Přijímat od všech"
       ],
       "Router": [
         "Router"
@@ -5858,7 +5924,13 @@
     },
     "Permission": {
       "No permission": [
-        "Nemáte dostatečné oprávnění"
+        "Bez oprávnění"
+      ],
+      "Organization only": [
+        "Pouze organizace"
+      ],
+      "Receive from all": [
+        "Přijímat od všech"
       ],
       "Send to all": [
         "Odeslat všem"
@@ -6467,6 +6539,15 @@
       "Highest VPN speed": [
         "Nejvyšší rychlost VPN"
       ],
+      "Premium ${ appName1 }": [
+        "Prémiové funkce ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Prémiové funkce ${ appName1 } a ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Prémiové funkce ${ appName1 }, ${ appName2 } a ${ appName3 }"
+      ],
       "Premium early access": [
         "Prémiový předběžný přístup"
       ],
@@ -6902,6 +6983,9 @@
       ]
     },
     "Success message": {
+      "Domain deleted": [
+        "Doména byla odstraněna"
+      ],
       "Sessions revoked": [
         "Relace byla zrušena"
       ],
@@ -7203,6 +7287,9 @@
       "Delete": [
         "Smazat"
       ],
+      "Delete ${ value }": [
+        "Smazat ${ value }"
+      ],
       "Delete account": [
         "Smazat účet"
       ],
@@ -7398,6 +7485,9 @@
       "Recovery": [
         "Obnovení"
       ],
+      "Remove domain": [
+        "Odstranit doménu"
+      ],
       "Remove user?": [
         "Odebrat uživatele?"
       ],
@@ -7473,11 +7563,20 @@
       "Signed in to member account": [
         "Přihlášeno k členskému účtu"
       ],
+      "Single Sign-On": [
+        "Jednotné přihlášení"
+      ],
       "Status": [
         "Stav"
       ],
       "Subscription": [
         "Předplatné"
+      ],
+      "Successfully created ${ n } user account": [
+        "Úspěšně vytvořen ${ n } uživatelský účet",
+        "Úspěšně vytvořeny ${ n } uživatelské účty",
+        "Úspěšně vytvořeno ${ n } uživatelských účtů",
+        "Úspěšně vytvořeno ${ n } uživatelských účtů"
       ],
       "Summary": [
         "Shrnutí"
@@ -7662,7 +7761,7 @@
       ]
     },
     "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
+      "SSO user provided by your identity provider": [
         "SSO uživatel poskytnutý poskytovatelem identity"
       ]
     },

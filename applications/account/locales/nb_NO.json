@@ -5070,6 +5070,22 @@
         "stjernemerket"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "e-posten ble sendt ${ label }"
+      ],
+      "with attachments": [
+        "med vedlegg"
+      ],
+      "without attachments": [
+        "uten vedlegg"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "e-posten ble sendt ${ label }"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Legg til et tilpasset filter for automatisk å utføre bestemte handlinger, for eksempel merke eller arkivere meldinger."
@@ -5747,6 +5763,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Deler av kalenderinnholdet ditt støttes ikke, og kan ikke importeres."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
+      ],
+      "Selected color:": [
+        "Valgt farge:"
       ]
     },
     "Info": {
@@ -7948,17 +7975,6 @@
         "Abonnementet ditt administreres av Mozilla. Vennligst kontakt Mozilla-støtte."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Flere dupliserte nøkler oppdaget. Vennligst last opp individuelt for mer informasjon."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøkkel ${ fingerprint } er allerede blitt lastet opp"
-      ],
-      "Selected color:": [
-        "Valgt farge:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Når aktivert, arver undermapper fargen på den overordnede mappen."
@@ -9291,6 +9307,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "${ app } produktoppdateringer"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME } testversjonkunngjøringer"
       ],
@@ -10050,10 +10069,6 @@
         "${ n } VPN-tilkobling",
         "${ n } VPN-tilkoblinger"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-tilkobling per bruker",
-        "${ n } VPN-tilkoblinger per bruker"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
         "${ PASS_APP_NAME } med ${ n } hide-my-email-aliaser"
@@ -10072,9 +10087,6 @@
       ],
       "${ size } storage per user": [
         "${ size } lagringsplass per bruker"
-      ],
-      "1 free VPN connection in total": [
-        "Totalt 1 gratis VPN-forbindelse"
       ],
       "1 user": [
         "1 bruker"
@@ -10321,6 +10333,10 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ubegrenset volum/båndbredde"
+      ],
+      "Up to ${ n } user": [
+        "Opptil ${ n } bruker",
+        "Opptil ${ n } brukere"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Opptil ${ totalStorageSize } lagringsplass"
@@ -10632,8 +10648,8 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "På virkedager, motta støtte fra ${ BRAND_NAME }-brukerstøtteteamet innen 24 timer etter forespørsler."
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "En VPN-forbindelse tillater en enhet å koble til ${ BRAND_NAME }-VPN til enhver tid. For eksempel, for å koble en telefon og en bærbar datamaskiin til ${ BRAND_NAME_TWO }-VPN på samme tidspunkt, vil du trenge to VPN-forbindelser."
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "En VPN-forbindelse tillater en enhet å koble til ${ VPN_APP_NAME }-VPN til enhver tid. For eksempel, for å koble en telefon og en bærbar datamaskiin til ${ VPN_APP_NAME }-VPN på samme tidspunkt, vil du trenge to VPN-forbindelser."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mulighet for å se innbokser for ikke-private brukere på samme måte som brukeren, inkludert fullstendige meldings- og kontaktdetaljer."
@@ -11057,6 +11073,9 @@
       ],
       "Auto": [
         "Auto"
+      ],
+      "Automatic (${ value })": [
+        "Automatisk (${ value })"
       ],
       "Country configs": [
         "Landkonfigurasjoner"
@@ -12654,6 +12673,10 @@
         "${ n } kalender per bruker",
         "${ n } kalendere per bruker"
       ],
+      "${ n } free VPN connection per user": [
+        "${ n } gratis VPN-forbindelse per bruker",
+        "${ n } gratis VPN-forbindelser per bruker"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } høyhastighets VPN-tilkobling",
         "${ n } høyhastighets VPN-tilkoblinger"
@@ -13479,6 +13502,9 @@
       "Decrypt key": [
         "Dekrypter nøkkel"
       ],
+      "Delete ${ value }": [
+        "Slett ${ value }"
+      ],
       "Delete account": [
         "Slett konto"
       ],
@@ -14010,6 +14036,10 @@
       "Success": [
         "Suksess"
       ],
+      "Successfully created ${ n } user account": [
+        "Opprettet ${ n } brukerkonto",
+        "Opprettet ${ n } brukerkontoer"
+      ],
       "Summary": [
         "Sammendrag"
       ],
@@ -14501,7 +14531,7 @@
       ]
     },
     "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
+      "SSO user provided by your identity provider": [
         "SSO-bruker levert av identitetsleverandøren din"
       ]
     },
