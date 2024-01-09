@@ -97,13 +97,20 @@ const RecoveryModal = ({
         }
     };
 
+    const toProceed = c('Info').t`To proceed, we must verify the request.`;
+    const emailString = c('Info').t`We’ll send a reset code to the email address you provided for account recovery.`;
+    const phoneString = c('Info').t`We’ll send a reset code to the phone number you provided for account recovery.`;
+    const phraseString = c('Info').t`Enter your recovery phrase to change your password now.`;
+
     return (
         <Modal onClose={onClose} as={Form} onSubmit={() => withSubmitting(onSubmit())} {...rest}>
             <ModalHeader title={c('Title').t`Reset password`} subline={user.Email} />
             <ModalContent>
-                <div className="mb-2">
-                    {c('Info').t`To proceed, select an account recovery method so we can verify the request.`}
-                </div>
+                {availableRecoveryMethods.length > 1 && (
+                    <div className="mb-2">
+                        {c('Info').t`To proceed, select an account recovery method so we can verify the request.`}
+                    </div>
+                )}
 
                 <Tabs
                     fullWidth
@@ -112,12 +119,15 @@ const RecoveryModal = ({
                             title: c('Recovery method').t`Email`,
                             content: (
                                 <>
-                                    <div className="my-4 color-weak">
-                                        {c('Info')
-                                            .t`We’ll send a reset code to the email address you provided for account recovery.`}
-                                    </div>
+                                    {availableRecoveryMethods.length === 1 ? (
+                                        <div className="mt-2">
+                                            {toProceed} {emailString}
+                                        </div>
+                                    ) : (
+                                        <div className="color-weak">{emailString}</div>
+                                    )}
 
-                                    <InlineLinkButton className="mt-4" onClick={onInitiateSessionRecoveryClick}>
+                                    <InlineLinkButton className="mt-2" onClick={onInitiateSessionRecoveryClick}>
                                         {c('Info').t`Can’t access your recovery email?`}
                                     </InlineLinkButton>
                                 </>
@@ -127,12 +137,15 @@ const RecoveryModal = ({
                             title: c('Recovery method').t`Phone number`,
                             content: (
                                 <>
-                                    <div className="my-4 color-weak">
-                                        {c('Info')
-                                            .t`We’ll send a reset code to the phone number you provided for account recovery.`}
-                                    </div>
+                                    {availableRecoveryMethods.length === 1 ? (
+                                        <div className="mt-2">
+                                            {toProceed} {phoneString}
+                                        </div>
+                                    ) : (
+                                        <div className="color-weak">{phoneString}</div>
+                                    )}
 
-                                    <InlineLinkButton className="mt-4" onClick={onInitiateSessionRecoveryClick}>
+                                    <InlineLinkButton className="mt-2" onClick={onInitiateSessionRecoveryClick}>
                                         {c('Info').t`Can’t access your recovery phone?`}
                                     </InlineLinkButton>
                                 </>
@@ -142,9 +155,13 @@ const RecoveryModal = ({
                             title: c('Recovery method').t`Phrase`,
                             content: (
                                 <>
-                                    <div className="my-4 color-weak">
-                                        {c('Info').t`Enter your recovery phrase to change your password now.`}
-                                    </div>
+                                    {availableRecoveryMethods.length === 1 ? (
+                                        <div className="mt-2 mb-4">
+                                            {toProceed} {phraseString}
+                                        </div>
+                                    ) : (
+                                        <div className="mb-4 color-weak">{phraseString}</div>
+                                    )}
 
                                     <MnemonicInputField
                                         disableChange={submitting}
@@ -158,7 +175,7 @@ const RecoveryModal = ({
                                         )}
                                     />
 
-                                    <InlineLinkButton className="mt-4" onClick={onInitiateSessionRecoveryClick}>
+                                    <InlineLinkButton className="mt-2" onClick={onInitiateSessionRecoveryClick}>
                                         {c('Info').t`Don’t know your recovery phrase?`}
                                     </InlineLinkButton>
                                 </>
