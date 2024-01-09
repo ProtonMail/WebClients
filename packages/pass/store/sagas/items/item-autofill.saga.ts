@@ -8,12 +8,15 @@ import { logId, logger } from '@proton/pass/utils/logger';
 
 function* itemAutofilledWorker({ payload: { shareId, itemId } }: ReturnType<typeof itemAutofilled>) {
     try {
-        logger.info(`[Saga::Item] used item ${logId(itemId)} on share ${logId(shareId)}`);
+        logger.info(`[Item::Autofill] used item ${logId(itemId)} on share ${logId(shareId)}`);
         const encryptedItem: ItemRevisionContentsResponse = yield updateItemLastUseTime(shareId, itemId);
         const item: ItemRevision = yield parseItemRevision(shareId, encryptedItem);
         yield put(itemEditSync({ shareId, itemId, item }));
-    } catch (e) {
-        logger.warn(`[Saga::Item] lastUseTime update failed for item ${logId(itemId)} on share ${logId(shareId)}`, e);
+    } catch (err: unknown) {
+        logger.warn(
+            `[Item::Autofill] lastUseTime update failed for item ${logId(itemId)} on share ${logId(shareId)}`,
+            err
+        );
     }
 }
 
