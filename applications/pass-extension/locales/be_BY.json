@@ -278,6 +278,9 @@
       "Pass for iOS": [
         "Pass для iOS"
       ],
+      "Pin item": [
+        "Замацаваць элемент"
+      ],
       "Refresh the page": [
         "Абнавіць старонку"
       ],
@@ -364,6 +367,9 @@
       ],
       "Try again": [
         "Паспрабуйце яшчэ раз"
+      ],
+      "Unpin item": [
+        "Адмацаваць элемент"
       ],
       "Update": [
         "Абнавіць"
@@ -530,11 +536,17 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Не ўдалося выдаліць усе элементы з \"${ payload.content.name }\""
       ],
+      "Failed to pin item": [
+        "Не ўдалося замацаваць элемент"
+      ],
       "Failed to remove user's access.": [
         "Збой выдалення доступу карыстальніка."
       ],
       "Failed to transfer this vault's ownership.": [
         "Збой перадачы права ўласнасці гэтага сховішча"
+      ],
+      "Failed to unpin item": [
+        "Не ўдалося адмацаваць элемент"
       ],
       "File could not be parsed": [
         "Не атрымалася прааналізаваць файл"
@@ -735,6 +747,12 @@
         "${ memberCount } удзельнікі",
         "${ memberCount } удзельнікаў",
         "${ memberCount } удзельнікаў"
+      ],
+      "${ n } item": [
+        "${ n } элемент",
+        "Элементаў: ${ n }",
+        "Элементаў: ${ n }",
+        "Элементаў: ${ n }"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } будзе адлюстроўваць элемент піктаграмы сайта праз проксі-сервер ананімнага відарыса ${ BRAND_NAME }."
@@ -954,6 +972,12 @@
       ],
       "Item successfully moved": [
         "Элемент паспяхова перамешчаны"
+      ],
+      "Item successfully pinned": [
+        "Элемент паспяхова замацаваны"
+      ],
+      "Item successfully unpinned": [
+        "Элемент паспяхова адмацаваны"
       ],
       "Leaving vault...": [
         "Выхад са сховішча..."
@@ -1627,6 +1651,22 @@
         "Вы збіраецеся стварыць"
       ]
     },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Увядзіце свой PIN-код."
+      ],
+      "Sign in to your account": [
+        "Увайдзіце ў свой уліковы запіс"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Разблакіраваць ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Вітаем у ${ brandNameJSX }"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Вітаем у ${ appName }"
@@ -1833,6 +1873,9 @@
       ],
       "Pin the extension": [
         "Замацаваць пашырэнне"
+      ],
+      "Pinned (${ items.length })": [
+        "Замацавана (${ items.length })"
       ],
       "Secure your data": [
         "Бяспека вашых даных"

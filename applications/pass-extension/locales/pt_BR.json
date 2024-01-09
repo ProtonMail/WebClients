@@ -714,6 +714,10 @@
         "${ memberCount } membro",
         "${ memberCount } membros"
       ],
+      "${ n } item": [
+        "${ n } item",
+        "${ n } itens"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "O ${ PASS_APP_NAME } exibirá o favicon do item através do proxy de imagem anonimizado da ${ BRAND_NAME }."
       ],
@@ -1581,6 +1585,22 @@
       ],
       "You are about to create": [
         "Você está prestes a criar"
+      ]
+    },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Digite seu código PIN"
+      ],
+      "Sign in to your account": [
+        "Faça login em sua conta"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Desbloquear ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Boas-vindas ao ${ brandNameJSX }"
       ]
     },
     "Onboarding": {

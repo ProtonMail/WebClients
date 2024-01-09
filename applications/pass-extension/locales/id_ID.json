@@ -278,6 +278,9 @@
       "Pass for iOS": [
         "Pass untuk iOS"
       ],
+      "Pin item": [
+        "Sematkan item"
+      ],
       "Refresh the page": [
         "Muat ulang halaman"
       ],
@@ -364,6 +367,9 @@
       ],
       "Try again": [
         "Coba lagi"
+      ],
+      "Unpin item": [
+        "Lepas sematan item"
       ],
       "Update": [
         "Perbarui"
@@ -527,11 +533,17 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Gagal memindahkan semua item dari \"${ payload.content.name }\""
       ],
+      "Failed to pin item": [
+        "Item gagal disematkan"
+      ],
       "Failed to remove user's access.": [
         "Akses pengguna gagal dihapus."
       ],
       "Failed to transfer this vault's ownership.": [
         "Kepemilikan brankas gagal dipindahkan."
+      ],
+      "Failed to unpin item": [
+        "Sematan item gagal dilepas"
       ],
       "File could not be parsed": [
         "Berkas tidak dapat diurai"
@@ -711,6 +723,9 @@
       ],
       "${ memberCount } members": [
         "${ memberCount } anggota"
+      ],
+      "${ n } items": [
+        "${ n } item"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } akan menampilkan favicon item melalui proxy gambar anonim ${ BRAND_NAME }."
@@ -915,6 +930,12 @@
       ],
       "Item successfully moved": [
         "Item berhasil dipindahkan"
+      ],
+      "Item successfully pinned": [
+        "Item berhasil disematkan"
+      ],
+      "Item successfully unpinned": [
+        "Sematan item berhasil dilepas"
       ],
       "items": [
         "item"
@@ -1579,6 +1600,22 @@
         "Anda akan membuat"
       ]
     },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Masukkan kode PIN Anda"
+      ],
+      "Sign in to your account": [
+        "Masuk ke akun Anda"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Dapatkan ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Selamat datang di ${ brandNameJSX }"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Selamat datang di ${ appName }"
@@ -1782,6 +1819,9 @@
       ],
       "Pin the extension": [
         "Sematkan ekstensi"
+      ],
+      "Pinned (${ items.length })": [
+        "Disematkan (${ items.length })"
       ],
       "Secure your data": [
         "Amankan data Anda"

@@ -656,6 +656,9 @@
       "${ memberCount } members": [
         "${ memberCount } 位成員"
       ],
+      "${ n } items": [
+        "${ n } 項目"
+      ],
       "${ revisionNumber } times": [
         "${ revisionNumber }次數"
       ],
@@ -1401,6 +1404,22 @@
       ],
       "You are about to create": [
         "您將要創建"
+      ]
+    },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "輸入個人識別數字代碼"
+      ],
+      "Sign in to your account": [
+        "登入您的帳戶"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "解鎖${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "歡迎使用 ${ brandNameJSX }"
       ]
     },
     "Onboarding": {
