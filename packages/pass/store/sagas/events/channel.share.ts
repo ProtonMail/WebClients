@@ -48,7 +48,7 @@ const onShareEvent = (shareId: string) =>
         const { LatestEventID: eventId, DeletedItemIDs, UpdatedItems, UpdatedShare, LastUseItems } = Events;
         const currentEventId = ((yield select(selectShare(shareId))) as Maybe<ShareItem>)?.eventId;
 
-        logger.info(`[Saga::ShareChannel] event ${logId(eventId)} for share ${logId(shareId)}`);
+        logger.debug(`[ServerEvents::Share::${logId(shareId)}] event ${logId(eventId)}`);
 
         /* dispatch only if there was a change */
         if (currentEventId !== eventId) yield put(shareEvent({ ...event, shareId }));
@@ -92,7 +92,7 @@ const onShareEventError = (shareId: string) =>
 
         /* share was deleted or user lost access */
         if (code === 300004) {
-            logger.info(`[Saga::SharesChannel] share ${logId(shareId)} disabled`);
+            logger.info(`[ServerEvents::Share::${logId(shareId)}] share disabled`);
             channel.close();
 
             const share: Maybe<Share> = yield select(selectShare(shareId));
@@ -108,7 +108,7 @@ const onShareEventError = (shareId: string) =>
 const onShareDeleted = (shareId: string) =>
     function* ({ channel }: EventChannel<ShareEventResponse>): Generator {
         yield take((action: AnyAction) => vaultDeleteSuccess.match(action) && action.payload.shareId === shareId);
-        logger.info(`[Saga::ShareChannel] share ${logId(shareId)} deleted`);
+        logger.info(`[ServerEvents::Share::${logId(shareId)}] share deleted`);
         channel.close();
         yield discardDrafts(shareId);
     };
@@ -124,13 +124,13 @@ export const createShareChannel = (api: Api, { shareId, eventId }: Share) =>
         query: (eventId) => ({ url: `pass/v1/share/${shareId}/event/${eventId}`, method: 'get' }),
         getCursor: ({ Events }) => ({ EventID: Events.LatestEventID, More: Events.EventsPending }),
         getLatestEventID: () => getShareLatestEventId(shareId),
-        onClose: () => logger.info(`[Saga::ShareChannel] closing channel for ${logId(shareId)}`),
+        onClose: () => logger.info(`[ServerEvents::Share::${logId(shareId)}] closing channel`),
         onEvent: onShareEvent(shareId),
         onError: onShareEventError(shareId),
     });
 
 export const getShareChannelForks = (api: Api, options: RootSagaOptions) => (share: Share) => {
-    logger.info(`[Saga::ShareChannel] start polling for share ${logId(share.shareId)}`);
+    logger.info(`[ServerEvents::Share::${logId(share.shareId)}] start polling`);
     const eventsChannel = createShareChannel(api, share);
     const events = fork(channelEventsWorker<ShareEventResponse>, eventsChannel, options);
     const wakeup = fork(channelWakeupWorker<ShareEventResponse>, eventsChannel);

@@ -10,7 +10,6 @@ import { createAuthService as createCoreAuthService } from '@proton/pass/lib/aut
 import { SESSION_KEYS, isValidPersistedSession } from '@proton/pass/lib/auth/session';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import { clientAuthorized, clientLocked, clientReady, clientUnauthorized } from '@proton/pass/lib/client';
-import { PassCrypto } from '@proton/pass/lib/crypto';
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
 import {
@@ -81,17 +80,16 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         }),
 
         onUnauthorized: withContext((ctx, _) => {
-            store.dispatch(cacheCancel());
-            store.dispatch(stopEventPolling());
-
             /* important to call setStatus before dispatching the
              * the `stateDestroy` action : we might have active
              * clients currently consuming the store data */
             ctx.setStatus(AppStatus.UNAUTHORIZED);
+
+            store.dispatch(cacheCancel());
+            store.dispatch(stopEventPolling());
             store.dispatch(stateDestroy());
 
             setSentryUID(undefined);
-            PassCrypto.clear();
 
             ctx.service.formTracker.clear();
             ctx.service.onboarding.reset();
@@ -130,7 +128,6 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
         onSessionLocked: withContext((ctx, _) => {
             ctx.setStatus(AppStatus.LOCKED);
             ctx.service.autofill.clearTabsBadgeCount();
-            PassCrypto.clear();
 
             store.dispatch(cacheCancel());
             store.dispatch(stopEventPolling());
