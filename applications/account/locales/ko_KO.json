@@ -5693,6 +5693,17 @@
         "캘린더 콘텐츠 중 일부가 지원되지 않으며, 불러와지지 않습니다."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "추가적인 복제 키 감지됨. 자세한 정보를 위해 개별적으로 업로드하세요."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "${ fingerprint } 키가 업로드 되었습니다"
+      ],
+      "Selected color:": [
+        "선택한 색상:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }에서 ${ enableDesktopNotifications }하려면 권한이 필요합니다."
@@ -7843,17 +7854,6 @@
         "유료 구독은 Mozilla에서 관리합니다. Mozilla 지원에 연락하세요."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "추가적인 복제 키 감지됨. 자세한 정보를 위해 개별적으로 업로드하세요."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "${ fingerprint } 키가 업로드 되었습니다"
-      ],
-      "Selected color:": [
-        "선택한 색상:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "활성화되면, 하위 폴더는 상위 폴더의 색상과 일치됩니다."
@@ -9880,9 +9880,6 @@
       "${ n } VPN connections": [
         "${ n } 개 VPN 연결"
       ],
-      "${ n } VPN connections per user": [
-        "사용자 당 ${ n }개 VPN 연결"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email aliases": [
         "${ n }개의 Hide-my-email이 포함된 ${ PASS_APP_NAME }"
       ],
@@ -9900,9 +9897,6 @@
       ],
       "${ size } storage per user": [
         "사용자 당 ${ size } 스토리지"
-      ],
-      "1 free VPN connection in total": [
-        "총 1개의 무료 VPN 연결"
       ],
       "1 user": [
         "사용자 1명"
@@ -10453,9 +10447,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "영업일 기준, 요청 24시간 내에 ${ BRAND_NAME } 고객 지원팀으로부터 지원을 받습니다"
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "하나의 VPN 연결은 한 장치가 ${ BRAND_NAME } VPN에 동시에 연결될 수 있도록 합니다. 예를 들어, 전화와 노트북을 동시에 ${ BRAND_NAME_TWO } VPN에 연결하기 위해서는 두 개의 VPN 연결이 필요합니다."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "비공개가 아닌 사용자의 수신함을 사용자가 볼 수 있는 옵션으로, 전체 메시지와 연락처 세부사항을 포함하여 볼 수 있습니다"
@@ -14251,11 +14242,6 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "SSO가 사용자의 정보 제공사로 부터 제공되었습니다."
       ]
     },
     "Validation": {

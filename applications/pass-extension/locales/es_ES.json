@@ -278,6 +278,9 @@
       "Pass for iOS": [
         "Pass para iOS"
       ],
+      "Pin item": [
+        "Anclar elemento"
+      ],
       "Refresh the page": [
         "Actualizar la página"
       ],
@@ -364,6 +367,9 @@
       ],
       "Try again": [
         "Inténtalo de nuevo"
+      ],
+      "Unpin item": [
+        "Desanclar elemento"
       ],
       "Update": [
         "Actualizar"
@@ -528,11 +534,17 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Error al mover todos los elementos desde \"${ payload.content.name }\""
       ],
+      "Failed to pin item": [
+        "No se pudo anclar el elemento"
+      ],
       "Failed to remove user's access.": [
         "Error al borrar el acceso del usuario"
       ],
       "Failed to transfer this vault's ownership.": [
         "Error al transferir la propiedad de esta caja fuerte."
+      ],
+      "Failed to unpin item": [
+        "No se pudo desanclar el elemento"
       ],
       "File could not be parsed": [
         "No se ha podido analizar el archivo."
@@ -719,6 +731,10 @@
       "${ memberCount } member": [
         "${ memberCount } miembro",
         "${ memberCount } miembros"
+      ],
+      "${ n } item": [
+        "${ n } elemento",
+        "${ n } elementos"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } mostrará el favicono del elemento a través del proxy de imagen anónimo de ${ BRAND_NAME }."
@@ -930,6 +946,12 @@
       ],
       "Item successfully moved": [
         "Se ha movido el elemento"
+      ],
+      "Item successfully pinned": [
+        "Elemento anclado con éxito"
+      ],
+      "Item successfully unpinned": [
+        "Elemento desanclado con éxito"
       ],
       "Leaving vault...": [
         "Dejando la caja fuerte..."
@@ -1595,6 +1617,22 @@
         "Estás a punto de crear"
       ]
     },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Introduce tu código PIN."
+      ],
+      "Sign in to your account": [
+        "Iniciar sesión en tu cuenta"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Desbloquear ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Te damos la bienvenida a ${ brandNameJSX }"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Te damos la bienvenida a ${ appName }"
@@ -1799,6 +1837,9 @@
       ],
       "Pin the extension": [
         "Fija la extensión"
+      ],
+      "Pinned (${ items.length })": [
+        "Anclados (${ items.length })"
       ],
       "Secure your data": [
         "Asegura tus datos"

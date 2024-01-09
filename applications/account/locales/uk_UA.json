@@ -5383,6 +5383,14 @@
         "Частина вмісту вашого календаря не підтримується і не буде імпортована."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } вже вивантажено"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
@@ -7551,14 +7559,6 @@
         "Ваша передплата керується Mozilla. Зв'яжіться зі службою підтримки Mozilla."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Виявлено додаткові дублікати ключів. Завантажте індивідуально для отримання додаткової інформації."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } вже вивантажено"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Якщо увімкнено, підтеки успадковують колір теки вищого рівня."
@@ -9613,12 +9613,6 @@
         "${ n } VPN-з'єднань",
         "${ n } VPN-з'єднань"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-з'єднання на користувача",
-        "${ n } VPN-з'єднання на користувача",
-        "${ n } VPN-з'єднань на користувача",
-        "${ n } VPN-з'єднань на користувача"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } з ${ n } псевдонімом hide-my-email",
         "${ PASS_APP_NAME } з ${ n } псевдонімами hide-my-email",
@@ -9639,9 +9633,6 @@
       ],
       "${ size } storage per user": [
         "${ size } сховища на користувача"
-      ],
-      "1 free VPN connection in total": [
-        "Загалом 1 безплатне VPN-з'єднання"
       ],
       "1 user": [
         "1 користувач"
@@ -10177,9 +10168,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Отримуйте допомогу від команди підтримки клієнтів ${ BRAND_NAME } упродовж 24 годин після запиту в робочі дні"
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Одне VPN-з'єднання дає можливість одному пристрою під'єднуватися до ${ BRAND_NAME } VPN коли завгодно. Наприклад, щоб одночасно під'єднати телефон і ноутбук до ${ BRAND_NAME_TWO } VPN, потрібно два VPN-з'єднання."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Можливість перегляду не приватних вхідних скриньок користувача, включно з усіма повідомленнями та подробицями контактів"

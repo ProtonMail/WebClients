@@ -2022,6 +2022,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
       ],
+      "Copied to clipboard": [
+        "Kopirano u međuspremnik"
+      ],
       "Country code": [
         "Kod države"
       ],
@@ -2408,6 +2411,9 @@
       "Your email will only be used for this one-time verification.": [
         "Vaša adresa e-pošte koristit će se samo za ovu jednokratnu provjeru."
       ],
+      "Your files will be encrypted and then saved": [
+        "Vaše datoteke će biti šifrirane i spremljene"
+      ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Lozinka vaše organizacije može se dijeliti s drugim korisnicima kojima želite dati administratorske privilegije. To je i kôd za hitnu obnovu kako biste dobili pristup nad vašoj organizaciji u slučaju da izgubite pristup svom računu. Spremite ovu lozinku i čuvajte je na sigurnom."
       ],
@@ -2729,6 +2735,9 @@
       "Two-password mode": [
         "Način rada s dvije lozinke"
       ],
+      "Type": [
+        "Vrsta"
+      ],
       "User": [
         "Korisnik"
       ],
@@ -2959,11 +2968,6 @@
         "${ n } VPN veza",
         "${ n } VPN veze",
         "${ n } VPN veza"
-      ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN veza po korisniku",
-        "${ n } VPN veze po korisniku",
-        "${ n } VPN veza po korisniku"
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } program"
@@ -3683,6 +3687,9 @@
       ]
     },
     "Success message": {
+      "Domain deleted": [
+        "Domena je izbrisana"
+      ],
       "Sessions revoked": [
         "Sesije su opozvane"
       ],

@@ -720,6 +720,10 @@
         "${ memberCount } üye",
         "${ memberCount } üye"
       ],
+      "${ n } item": [
+        "${ n } öge",
+        "${ n } öge"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME }, ${ BRAND_NAME } anonimleştirilmiş görsel vekil sunucusunu kullanarak ögenin İnternet simgesini görüntüleyecek."
       ],
@@ -1593,6 +1597,22 @@
       ],
       "You are about to create": [
         "Şunu oluşturmak üzeresiniz"
+      ]
+    },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "PIN kodunuzu yazın"
+      ],
+      "Sign in to your account": [
+        "Hesabınızda oturum açın"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "${ brandNameJSX } kilidini aç"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "${ brandNameJSX } uygulamasına hoş geldiniz"
       ]
     },
     "Onboarding": {

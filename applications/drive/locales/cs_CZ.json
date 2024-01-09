@@ -2471,6 +2471,12 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Došlo k neočekávané chybě. Import musí být restartován."
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } událost.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } události.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } událostí.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS } událostí."
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Váš soubor ${ formattedFilename } má neplatnou metodu a nelze jej importovat."
       ],
@@ -4464,6 +4470,9 @@
       "You can import one data type at a time.": [
         "Importovat můžete vždy jeden typ dat."
       ],
+      "You can now return to the application to continue": [
+        "Nyní se můžete vrátit do aplikace a pokračovat"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
       ],
@@ -5100,6 +5109,14 @@
         "${ Label.Name } byl vytvořen"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Od: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Komu: ${ to }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Postranní panel"
@@ -5518,6 +5535,24 @@
       ],
       "Link copied to clipboard": [
         "Odkaz zkopírován do schránky"
+      ],
+      "Move ${ n } file": [
+        "Přesunout ${ n } soubor",
+        "Přesunout ${ n } soubory",
+        "Přesunout ${ n } souborů",
+        "Přesunout ${ n } souborů"
+      ],
+      "Move ${ n } folder": [
+        "Přesunout ${ n } složku",
+        "Přesunout ${ n } složky",
+        "Přesunout ${ n } složek",
+        "Přesunout ${ n } složek"
+      ],
+      "Move ${ n } item": [
+        "Přesunout ${ n } položku",
+        "Přesunout ${ n } položky",
+        "Přesunout ${ n } položek",
+        "Přesunout ${ n } položek"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Není dostatek místa pro nahrání ${ formattedTotal }"
@@ -6111,6 +6146,15 @@
       "Highest VPN speed": [
         "Nejvyšší rychlost VPN"
       ],
+      "Premium ${ appName1 }": [
+        "Prémiové funkce ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Prémiové funkce ${ appName1 } a ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Prémiové funkce ${ appName1 }, ${ appName2 } a ${ appName3 }"
+      ],
       "Premium early access": [
         "Prémiový předběžný přístup"
       ],
@@ -6600,6 +6644,9 @@
         "Smazat ${ count } skupin kontaktů",
         "Smazat ${ count } skupin kontaktů"
       ],
+      "Delete ${ value }": [
+        "Smazat ${ value }"
+      ],
       "Delete permanently": [
         "Trvale smazat"
       ],
@@ -6612,8 +6659,8 @@
       "Discard changes?": [
         "Zahodit změny?"
       ],
-      "Download ${ date }.zip": [
-        "Stáhnout ${ date }.zip"
+      "Download ${ date }": [
+        "Stáhnout ${ date }"
       ],
       "Download unverified file?": [
         "Stáhnout neověřený soubor?"
