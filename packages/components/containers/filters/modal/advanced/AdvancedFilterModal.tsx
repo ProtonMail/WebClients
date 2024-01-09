@@ -40,7 +40,7 @@ interface Props extends ModalProps {
 }
 
 const checkNameErrors = (name: string, filters: Filter[]): string => {
-    if (!name) {
+    if (!name || name.trim() === '') {
         return c('Error').t`This field is required`;
     }
     const trimmedName = name.trim();
