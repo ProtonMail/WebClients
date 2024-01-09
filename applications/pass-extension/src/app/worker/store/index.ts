@@ -6,6 +6,7 @@ import { isPopupPort } from 'proton-pass-extension/lib/utils/port';
 import { getExtensionVersion } from 'proton-pass-extension/lib/utils/version';
 import createSagaMiddleware from 'redux-saga';
 
+import { authStore } from '@proton/pass/lib/auth/store';
 import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import { draftsGarbageCollect, startEventPolling } from '@proton/pass/store/actions';
@@ -15,6 +16,7 @@ import { workerRootSaga } from '@proton/pass/store/sagas';
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import { AppStatus, ShareEventType, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
+import noop from '@proton/utils/noop';
 
 import { workerMiddleware } from './worker.middleware';
 
@@ -68,10 +70,24 @@ const options: RootSagaOptions = {
         if (res.ok) {
             store.dispatch(startEventPolling());
             store.dispatch(draftsGarbageCollect());
-            void ctx.service.telemetry?.start();
+
             ctx.setStatus(AppStatus.READY);
+            ctx.service.telemetry?.start().catch(noop);
+
             WorkerMessageBroker.buffer.flush();
 
+            const lockStatus = authStore.getLockStatus();
+            const lockTtl = authStore.getLockTTL();
+            /* If the boot is initiated following a session unlock, execute the
+             * `onSessionLockUpdate` effect after the sequence successfully completes.
+             * This step ensures the proper setup of the `SESSION_LOCK_ALARM` based on
+             * the current lock status and TTL */
+            if (lockStatus && lockTtl) {
+                void ctx.service.auth.config.onSessionLockUpdate?.({
+                    status: lockStatus,
+                    ttl: lockTtl,
+                });
+            }
         } else {
             ctx.setStatus(AppStatus.ERROR);
             if (res.clearCache) await ctx.service.storage.local.removeItems(['salt', 'state', 'snapshot']);
