@@ -45,15 +45,9 @@
 }
 
 @each $color in (norm, weak, strong) {
-	.bg-#{$color} {
-		background-color: var(--background-#{$color});
-	}
-
-	.bg-#{$color}-odd > *:nth-child(odd) {
-		background-color: var(--background-#{$color});
-	}
-
-	.bg-#{$color}-even > *:nth-child(even) {
+	.bg-#{$color},
+	.odd\:bg-#{$color} > *:nth-child(odd),
+	.even\:bg-#{$color} > *:nth-child(even) {
 		background-color: var(--background-#{$color});
 	}
 }
