@@ -25,7 +25,6 @@ import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/Drop
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { EarlyAccessBadge } from '@proton/pass/components/Upsell/EarlyAccessBadge';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { PASS_WEB_APP_URL, UpsellRef } from '@proton/pass/constants';
@@ -206,7 +205,6 @@ export const MenuDropdown: VFC = () => {
                             label={
                                 <div className="flex items-center flex-nowrap gap-2">
                                     <span>{c('Action').t`Open web app`}</span>
-                                    <EarlyAccessBadge />
                                 </div>
                             }
                             icon="arrow-out-square"
