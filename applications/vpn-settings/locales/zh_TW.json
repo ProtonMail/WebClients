@@ -2796,6 +2796,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "為您的帳戶增加一層保障。 其後在每次登入時，您將需使用 2FA 證明您的身份。"
       ],
+      "Add domain": [
+        "加入網域"
+      ],
       "Add server (${ availableAddedCount } available)": [
         "添加伺服器(${ availableAddedCount }可用)"
       ],
@@ -2904,6 +2907,9 @@
       "Continue with ${ freeName }": [
         "繼續使用 ${ freeName }"
       ],
+      "Copied to clipboard": [
+        "已複製到剪貼簿"
+      ],
       "Copy the suggested password to clipboard": [
         "複製建議的密碼至剪貼簿"
       ],
@@ -2952,11 +2958,20 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 標誌"
       ],
+      "DNS TXT record": [
+        "DNS的TXT紀錄"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "請切勿忘記此密碼。否則，您將無法管理您的組織。"
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "千萬別忘記此密碼。否則，您將無法登入或解密您的郵件。"
+      ],
+      "Domain ownership not verified.": [
+        "網域所有權未驗證。"
+      ],
+      "Domain ownership verified.": [
+        "網域所有權驗證。"
       ],
       "Done": [
         "已完成"
@@ -2972,6 +2987,12 @@
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "現在就下載您最愛的應用程式，隱私隨身帶著走。"
+      ],
+      "Drop file here to upload": [
+        "拖曳檔案到此處來上傳"
+      ],
+      "Drop to import": [
+        "拖放以匯入"
       ],
       "Each code can only be used once": [
         "每組驗證代碼只能使用一次"
@@ -3221,6 +3242,9 @@
       ],
       "Optional": [
         "選項"
+      ],
+      "or ${ selectFileButton }": [
+        "或${ selectFileButton }"
       ],
       "Or select a particular server:": [
         "或挑選特定的伺服器："
@@ -3612,6 +3636,9 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "驗證將開新索引標籤，請停用任何彈出式視窗攔截程式。您不會被收費。任何用於驗證信用卡的金額都會馬上退還。"
       ],
+      "Verify domain": [
+        "驗證網域"
+      ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "使用身份驗證應用程式生成基於時間的一次性密碼 (OTP) 來確保您的身份"
       ],
@@ -3818,6 +3845,9 @@
       ],
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "您現有的郵件、行事曆或聯絡人將會鎖定。若要還原此資料，您將需要您的還原短語或您的${ oldPassword }。"
+      ],
+      "Your files will be encrypted and then saved": [
+        "你的檔案將加密後再儲存"
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "您的各項資訊在我們安全保護下安全無虞，僅有提供服務前的身分驗證需求時，我們才會使用該資訊與您進行聯繫。"
@@ -4266,6 +4296,9 @@
       "Two-password mode": [
         "雙重密碼模式"
       ],
+      "Type": [
+        "類型"
+      ],
       "User": [
         "使用者"
       ],
@@ -4337,6 +4370,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } 歡迎電子郵件"
+      ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
+        "${ MAIL_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 新功能"
       ]
     },
     "Label on payment method": {
@@ -4633,9 +4669,6 @@
       "${ n } VPN connections": [
         "${ n } 個 VPN 連線"
       ],
-      "${ n } VPN connections per user": [
-        "每一位用戶${ n }個VPN連線"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email aliases": [
         "包含${ n }個 hide-my-email 別名的 ${ PASS_APP_NAME }"
       ],
@@ -4653,9 +4686,6 @@
       ],
       "${ size } storage per user": [
         "${ size } 可用空間 / 每位使用者"
-      ],
-      "1 free VPN connection in total": [
-        "1 個完全免費 VPN 連線"
       ],
       "1 user": [
         "1 位使用者"
@@ -5159,9 +5189,6 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "凡工作天，於提出需求後 24 小時內取得 ${ BRAND_NAME } 客戶服務團隊的支援"
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "單個 VPN 連線允許您在同一時間將單個裝置連線到 ${ BRAND_NAME } VPN。舉個例子，為了將手機與筆電同時連線至 ${ BRAND_NAME_TWO } VPN，您需要兩個 VPN 連線。"
-      ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "此選項可視作使用者般檢視非私人使用者的收件匣，包括完整郵件和聯絡人詳細資料"
       ],
@@ -5388,6 +5415,15 @@
       "My reason isn't listed": [
         "其實我的理由，你沒有懂"
       ],
+      "No permission": [
+        "權限不足"
+      ],
+      "Organization only": [
+        "僅限組織機構"
+      ],
+      "Receive from all": [
+        "從全部接收"
+      ],
       "Router": [
         "路由器"
       ],
@@ -5396,6 +5432,12 @@
       ],
       "Select who can access...": [
         "選取誰可存取"
+      ],
+      "Send to all": [
+        "傳送給所有人"
+      ],
+      "Setup incomplete": [
+        "設置未完成"
       ],
       "Standard server configs": [
         "標準伺服器組態設定"
@@ -5533,6 +5575,23 @@
       ],
       "New credit/debit card": [
         "加入信用卡/扣帳卡"
+      ]
+    },
+    "Permission": {
+      "No permission": [
+        "權限不足"
+      ],
+      "Organization only": [
+        "僅限組織機構"
+      ],
+      "Receive from all": [
+        "從全部接收"
+      ],
+      "Send to all": [
+        "傳送給所有人"
+      ],
+      "Setup incomplete": [
+        "設置未完成"
       ]
     },
     "Placeholder": {
@@ -6462,6 +6521,9 @@
       ]
     },
     "Success message": {
+      "Domain deleted": [
+        "網域已刪除"
+      ],
       "Sessions revoked": [
         "工作階段已撤銷"
       ],
@@ -7207,11 +7269,6 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "單一登入"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "您身份提供者提供的單一登入使用者"
       ]
     },
     "Validation": {

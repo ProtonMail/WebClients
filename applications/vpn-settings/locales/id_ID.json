@@ -77,6 +77,9 @@
       "Close this banner": [
         "Tutup spanduk ini"
       ],
+      "Configure SAML": [
+        "Atur SAML"
+      ],
       "Confirm": [
         "Konfirmasi"
       ],
@@ -260,6 +263,9 @@
       "Hide plan features": [
         "Sembunyikan fitur paket"
       ],
+      "Import new SAML metadata": [
+        "Impor metadata SAML baru"
+      ],
       "Increase": [
         "Tingkatkan"
       ],
@@ -338,6 +344,9 @@
       "Remove bonuses": [
         "Hapus bonus"
       ],
+      "Remove domain": [
+        "Hapus domain"
+      ],
       "Remove gift code": [
         "Hapus kode hadiah"
       ],
@@ -389,11 +398,17 @@
       "Save address": [
         "Simpan alamat"
       ],
+      "Save SAML configuration": [
+        "Simpan konfigurasi SAML"
+      ],
       "Search": [
         "Pencarian"
       ],
       "Search countries": [
         "Cari negara"
+      ],
+      "See DNS TXT record": [
+        "Lihat rekaman TXT DNS"
       ],
       "See how": [
         "Lihat caranya"
@@ -403,6 +418,9 @@
       ],
       "Select ${ planTitle }": [
         "Pilih ${ planTitle }"
+      ],
+      "Select file": [
+        "Pilih berkas"
       ],
       "Send code": [
         "Kirim kode"
@@ -2058,6 +2076,12 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Harap tingkatkan jenis akun Anda ke paket bisnis dengan lebih dari 1 pengguna untuk dapat mengelola banyak pengguna sekaligus."
       ],
+      "Please upload an xml file": [
+        "Silakan unggah berkas xml"
+      ],
+      "Please upload only 1 file": [
+        "Mohon hanya unggah 1 berkas"
+      ],
       "Process aborted": [
         "Proses dibatalkan"
       ],
@@ -2108,6 +2132,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Cobalah untuk hanya menggunakan huruf, angka, dan tanda _.-"
+      ],
+      "Unable to upload file": [
+        "Berkas tidak dapat diunggah"
       ],
       "Unknown error": [
         "Kesalahan yang tidak diketahui"
@@ -2719,6 +2746,11 @@
         "Nama pengguna"
       ]
     },
+    "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Tambahkan rekaman ini ke domain Anda pada panel kontrol pencatat nama domain Anda"
+      ]
+    },
     "Human verification method": {
       "Email": [
         "Surel"
@@ -2833,6 +2865,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Berikan akun Anda lapisan keamanan tambahan. Anda akan perlu untuk memverifikasi diri Anda dengan 2FA setiap kali Anda masuk."
       ],
+      "Add domain": [
+        "Tambah domain"
+      ],
       "Add server (${ availableAddedCount } available)": [
         "Tambah server (${ availableAddedCount } tersedia)"
       ],
@@ -2887,6 +2922,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Apakah Anda yakin untuk menghapus hak administratif pengguna ini?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "Apakah Anda yakin untuk menghapus domain ${ boldDomain }?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Mintalah admin organisasi Anda untuk mengatur Gateway."
       ],
@@ -2938,8 +2976,20 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Sunting\" untuk mengubahnya."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Azure or Onelogin. This will enable SAML for the whole organization.": [
+        "Atur autentikasi SAML untuk organisasi Anda melalui layanan penyedia identitas seperti Okta, Azure, atau Onelogin. Pengaturan ini akan mengaktifkan SAML untuk seluruh organisasi."
+      ],
       "Continue with ${ freeName }": [
         "Lanjutkan dengan ${ freeName }"
+      ],
+      "Copied to clipboard": [
+        "Disalin ke papan klip"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Salin dan tempel URL ini ke kolom URL ACS (Assertion Consumer Service) milik penyedia identitas Anda"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Salin dan tempel URL ini ke kolom ID entitas milik penyedia identitas Anda"
       ],
       "Copy the suggested password to clipboard": [
         "Salin kata sandi yang disarankan ke papan klip"
@@ -2989,11 +3039,23 @@
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
+      "DNS TXT record": [
+        "Rekaman TXT DNS"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "JANGAN melupakan kata sandi ini. Jika Anda lupa, Anda tidak akan dapat mengelola organisasi Anda."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "JANGAN lupakan kata sandi ini. Apabila Anda sampai lupa, Anda tidak akan dapat masuk ke akun Anda atau mendekripsi isi pesan Anda."
+      ],
+      "Domain ownership failed verification.": [
+        "Kemilikan domain tidak berhasil diverifikasi."
+      ],
+      "Domain ownership not verified.": [
+        "Kemilikan domain tidak diverifikasi."
+      ],
+      "Domain ownership verified.": [
+        "Kemilikan domain diverifikasi."
       ],
       "Done": [
         "Selesai"
@@ -3010,6 +3072,12 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Unduh aplikasi favorit Anda sekarang juga dan bawa privasi ke mana pun Anda pergi."
       ],
+      "Drop file here to upload": [
+        "Lepaskan berkas di sini untuk mengunggah"
+      ],
+      "Drop to import": [
+        "Lepaskan untuk mengimpor"
+      ],
       "Each code can only be used once": [
         "Masing-masing kode hanya dapat digunakan sekali"
       ],
@@ -3024,6 +3092,9 @@
       ],
       "Emailing preference saved": [
         "Preferensi surel disimpan"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "URL endpoint yang diperoleh dari penyedia identitas Anda (mis. https://idp.contoh.com/sso/saml)."
       ],
       "Enhance your network security": [
         "Tingkatkan keamanan jaringan Anda"
@@ -3097,8 +3168,14 @@
       "Get ${ upsellPlanName }": [
         "Dapatkan ${ upsellPlanName }"
       ],
+      "Go to your identity provider, get the the SAML metadata for ${ appName } and import it here.": [
+        "Tuju penyedia identitas Anda, dapatkan metadata SAML milik ${ appName }, dan impor metadata tersebut di sini."
+      ],
       "here": [
         "di sini"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Kunci publik penyedia identitas untuk menandatangani pernyataan autentikasi. Harus ada tempat untuk mengunduh atau menyalin hash sertifikat dari penyedia identitas. Cukup tempelkan hash sertifikat di bidang area teks."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Apabila administrator lain mengubah kata sandi ini, Anda harus menanyakan Kata Sandi Organisasi yang baru kepada mereka."
@@ -3262,6 +3339,9 @@
       "Optional": [
         "Opsional"
       ],
+      "or ${ selectFileButton }": [
+        "atau ${ selectFileButton }"
+      ],
       "Or select a particular server:": [
         "Atau pilih salah satu server berikut:"
       ],
@@ -3385,6 +3465,9 @@
       "Revoke certificate ${ name }": [
         "Cabut sertifikat ${ name }"
       ],
+      "SAML configuration saved": [
+        "Konfigurasi SAML disimpan"
+      ],
       "Save ${ percentage }": [
         "Hemat ${ percentage }"
       ],
@@ -3432,6 +3515,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Sebagian server milik Anda yang tersedia hanya dapat digunakan di negara tertentu karena pemutusan yang berlangsung baru-baru ini"
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Tentukan domain yang diizinkan untuk mengautentikasi dengan SSO SAML."
       ],
       "Step ${ step }": [
         "Langkah ${ step }"
@@ -3532,6 +3618,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Pengguna ini sedang bertanggung jawab atas pembayaran untuk organisasi Anda. Dengan menurunkan anggota ini, Anda akan bertanggung jawab atas pembayaran untuk organisasi Anda."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Proses verifikasi ini dapat berlangsung hingga satu jam. Anda dapat melanjutkan ke langkah selanjutnya secara aman."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Tindakan ini akan membatalkan langganan berbayar Anda saat ini dan Anda akan kehilangan manfaat loyalitas yang telah Anda kumpulkan."
       ],
@@ -3558,6 +3647,9 @@
       ],
       "to ${ product } Business": [
         "ke ${ product } Business"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Untuk memberikan izin penggunaan SAML SSO kepada domain ${ boldDomainName }, Anda harus memverifikasi kepemilikan domain ini dengan menambahkan rekaman TXT DNS berikut ke dalam domain Anda pada penyedia layanan DNS Anda."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Untuk membatalkan langganan Anda, silakan menghubungi kami."
@@ -3619,6 +3711,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "Sayangnya, tidak ada metode pemulihan yang ditetapkan untuk akun ini."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "ID unik yang dihasilkan oleh penyedia identitas Anda, yang pada umumnya berupa URL dengan nama penyedia identitas di dalamnya (mis. https://idp.contoh.com/XXXXX)"
+      ],
       "Unsaved changes": [
         "Perubahan yang belum disimpan"
       ],
@@ -3657,6 +3752,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Proses verifikasi akan berlangsung pada tab baru. Mohon nonaktifkan pemblokir popup yang Anda miliki. Proses ini tidak dipungut biaya. Apabila Anda diminta untuk mengeluarkan sejumlah uang, jumlah tersebut akan langsung dikembalikan."
+      ],
+      "Verify domain": [
+        "Verifikasi domain"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifikasi identitas Anda dengan kata sandi terbatas waktu yang dihasilkan oleh aplikasi autentikator"
@@ -3732,6 +3830,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Kami tengah meningkatkan paket Anda ke paket yang berharga sama namun lebih kaya akan fitur. Selama proses ini berlangsung, Anda tidak akan dapat mengubah status berlangganan Anda. Kami akan memberitahukan Anda melalui surel ketika proses ini telah selesai."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "Pada saat mengaktifkan SAML untuk ${ appName } di layanan penyedia identitas Anda, Anda mungkin akan diminta untuk menggunakan URL Callback (ACS) dan Issuer ID. Cukup salin dan tempel data di bawah ini ke kolom yang disediakan oleh penyedia identitas Anda."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Pada saat Anda menyiapkan autentikasi dua faktor, kami akan menyediakan beberapa kode pemulihan yang dapat Anda gunakan untuk masuk apabila Anda kehilangan akses ke aplikasi otentikator Anda."
@@ -3880,6 +3981,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Pesan, kalender, atau kontak Anda yang masih ada akan dikunci. Untuk memulihkan data ini, Anda memerlukan frasa pemulihan atau ${ oldPassword }."
       ],
+      "Your files will be encrypted and then saved": [
+        "Berkas Anda akan dienkripsi dan kemudian disimpan"
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Informasi Anda aman di tangan kami. Kami hanya akan menghubungi Anda ketika tindak lanjut Anda dibutuhkan untuk menghadirkan layanan kami."
       ],
@@ -4023,11 +4127,20 @@
       "Allow recovery by phone": [
         "Izinkan pemulihan akun melalui nomor ponsel"
       ],
+      "Allowed domain": [
+        "Domain yang diizinkan"
+      ],
+      "Allowed Domain": [
+        "Domain yang Diizinkan"
+      ],
       "Amount": [
         "Jumlah"
       ],
       "Amount due": [
         "Jumlah tagihan"
+      ],
+      "Assertion Consumer Service URL": [
+        "URL Assertion Consumer Service"
       ],
       "Attach screenshot(s)": [
         "Lampirkan tangkapan layar"
@@ -4152,6 +4265,9 @@
       "Do you have any suggestions for our team?": [
         "Apakah Anda memiliki saran untuk tim kami?"
       ],
+      "e.g. example.com": [
+        "mis. contoh.com"
+      ],
       "Email": [
         "Surel"
       ],
@@ -4182,6 +4298,9 @@
       "Interval": [
         "Interval"
       ],
+      "Issuer ID": [
+        "Issuer ID"
+      ],
       "Keep me signed in": [
         "Biarkan saya tetap masuk"
       ],
@@ -4199,6 +4318,15 @@
       ],
       "Main": [
         "Utama"
+      ],
+      "Metadata file for ${ appName }": [
+        "Berkas metadata untuk ${ appName }"
+      ],
+      "Metadata URL for ${ appName }": [
+        "URL metadata untuk ${ appName }"
+      ],
+      "Method for importing metadata": [
+        "Metode pengimporan metadata"
       ],
       "Moderate NAT": [
         "NAT Moderat"
@@ -4296,6 +4424,9 @@
       "Proration": [
         "Prorasi"
       ],
+      "Public certificate (X.509)": [
+        "Sertifikat publik (X.509)"
+      ],
       "Recovery email address": [
         "Alamat surel pemulihan"
       ],
@@ -4304,6 +4435,9 @@
       ],
       "Recovery phrase": [
         "Frasa pemulihan"
+      ],
+      "Reply (ACS) URL": [
+        "URL balasan (ACS)"
       ],
       "Require 2FA for administrators": [
         "Wajibkan penggunaan 2FA bagi administrator"
@@ -4320,6 +4454,15 @@
       "Select your plan": [
         "Pilih paket Anda"
       ],
+      "Single sign-on Entity ID": [
+        "ID entitas single sign-on"
+      ],
+      "Single sign-on entity ID": [
+        "ID entitas single sign-on"
+      ],
+      "Single sign-on URL": [
+        "URL single sign-on"
+      ],
       "Start date": [
         "Tanggal mulai"
       ],
@@ -4335,6 +4478,9 @@
       "Two-password mode": [
         "Mode kata sandi ganda"
       ],
+      "Type": [
+        "Jenis"
+      ],
       "User": [
         "Pengguna"
       ],
@@ -4343,6 +4489,9 @@
       ],
       "Username": [
         "Nama Pengguna"
+      ],
+      "Value": [
+        "Nilai"
       ],
       "Verification code": [
         "Kode verifikasi"
@@ -4386,6 +4535,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "Pembaruan produk ${ app }"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "Pengumuman akses beta ${ BRAND_NAME }"
       ],
@@ -4691,7 +4843,7 @@
         "${ n } folder"
       ],
       "${ n } folders and labels": [
-        "${ n } folder and label"
+        "${ n } folder dan label"
       ],
       "${ n } hide-my-email aliases": [
         "${ n } alias hide-my-email"
@@ -4707,9 +4859,6 @@
       ],
       "${ n } VPN connections": [
         "${ n } koneksi VPN"
-      ],
-      "${ n } VPN connections per user": [
-        "${ n } koneksi VPN per pengguna"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email aliases": [
         "${ PASS_APP_NAME } dengan ${ n } alias hide-my-email"
@@ -4728,9 +4877,6 @@
       ],
       "${ size } storage per user": [
         "Kuota penyimpanan ${ size } per pengguna"
-      ],
-      "1 free VPN connection in total": [
-        "1 koneksi VPN gratis"
       ],
       "1 user": [
         "1 pengguna"
@@ -4974,6 +5120,9 @@
       ],
       "Unlimited volume/bandwidth": [
         "Tanpa batasan bandwidth/volume penyimpanan"
+      ],
+      "Up to ${ n } users": [
+        "Hingga ${ n } pengguna"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Kuota penyimpanan hingga ${ totalStorageSize }"
@@ -5234,9 +5383,6 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Dapatkan dukungan dari tim Layanan Dukungan ${ BRAND_NAME } dalam rentang waktu 1 x 24 jam pada hari kerja"
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Satu koneksi VPN memungkinkan satu perangkat untuk menghubungkan ke ${ BRAND_NAME } VPN kapan pun. Misalnya, untuk menghubungkan ponsel dan laptop ke ${ BRAND_NAME_TWO } VPN di waktu yang sama, Anda memerlukan dua koneksi VPN."
-      ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opsi untuk melihat kotak masuk para pengguna non-privat sebagaimana yang mereka lihat, termasuk seluruh isi pesan dan rincian kontak mereka"
       ],
@@ -5442,6 +5588,9 @@
       ]
     },
     "Option": {
+      "Automatic (${ value })": [
+        "Otomatis (${ value })"
+      ],
       "Country configs": [
         "Konfigurasi negara"
       ],
@@ -5663,6 +5812,15 @@
       ],
       "Confirm": [
         "Konfirmasi"
+      ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "mis. https://contoh.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "mis. https://idp.contoh.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "mis. https://idp.contoh.com/XXXXX"
       ],
       "Email address": [
         "Alamat surel"
@@ -6141,7 +6299,7 @@
     },
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
-        "Dapatkan yang Tidak Terbatas"
+        "Dapatkan Unlimited"
       ]
     },
     "specialoffer: Countdown unit": {
@@ -6184,6 +6342,15 @@
       ],
       "Highest VPN speed": [
         "Kecepatan VPN tertinggi"
+      ],
+      "Premium ${ appName1 }": [
+        "${ appName1 } Premium"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "${ appName1 } & ${ appName2 } Premium"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "${ appName1 } & ${ appName2 } & ${ appName3 } Premium"
       ],
       "Premium early access": [
         "Akses dini Premium"
@@ -6581,6 +6748,9 @@
       ]
     },
     "Success message": {
+      "Domain deleted": [
+        "Domain berhasil dihapus"
+      ],
       "Sessions revoked": [
         "Sesi berhasil dicabut"
       ],
@@ -6879,6 +7049,9 @@
       "Delete": [
         "Hapus"
       ],
+      "Delete ${ value }": [
+        "Hapus ${ value }"
+      ],
       "Delete account": [
         "Hapus akun"
       ],
@@ -6944,6 +7117,12 @@
       ],
       "Email subscriptions": [
         "Surel berlangganan"
+      ],
+      "Enter endpoints into your identity provider": [
+        "Masukkan endpoint ke penyedia identitas Anda"
+      ],
+      "Enter SAML metadata": [
+        "Masukkan metadata SAML"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Masukkan rincian Akun ${ BRAND_NAME } Anda untuk bergabung ke program Beta ${ app }"
@@ -7068,6 +7247,9 @@
       "Recovery": [
         "Pemulihan"
       ],
+      "Remove domain": [
+        "Hapus domain"
+      ],
       "Remove user?": [
         "Keluarkan pengguna?"
       ],
@@ -7097,6 +7279,9 @@
       ],
       "Revoke certificate": [
         "Cabut sertifikat"
+      ],
+      "SAML authentication": [
+        "Autentikasi SAML"
       ],
       "Select a plan": [
         "Pilih paket"
@@ -7143,11 +7328,17 @@
       "Signed in to member account": [
         "Terdaftar masuk dengan akun anggota"
       ],
+      "Single Sign-On": [
+        "Single Sign-On"
+      ],
       "Status": [
         "Status"
       ],
       "Subscription": [
         "Langganan"
+      ],
+      "Successfully created ${ n } user accounts": [
+        "${ n } akun pengguna berhasil dibuat"
       ],
       "Summary": [
         "Ikhtisar"
@@ -7270,11 +7461,26 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Sesuaikan tema aplikasi dengan mode terang dan gelap pada sistem Anda secara otomatis"
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Salin dan tempel URL ini ke kolom URL ACS (Assertion Consumer Service) milik penyedia identitas Anda"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Salin dan tempel URL ini ke kolom ID entitas milik penyedia identitas Anda"
+      ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "URL endpoint dari penyedia identitas (mis. https://idp.contoh.com/sso/saml)"
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Kunci publik milik penyedia identitas yang digunakan untuk menandatangani pernyataan autentikasi. Dapatkan hash sertifikat ini dari penyedia identitas Anda."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Apabila Anda telah membeli kode hadiah atau telah menerima kode hadiah dari tim layanan dukungan kami, silakan masukkan kode tersebut di sini."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Anggota organisasi yang tidak menggunakan 2FA akan menerima surel yang meminta mereka untuk mengaktifkan 2FA sesegera mungkin."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Tentukan domain yang diizinkan untuk mengautentikasi dengan SSO SAML"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Siklus langganan baru akan dimulai pada ${ formattedTime }"
@@ -7284,6 +7490,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Tema yang dipilih akan aktif pada saat sistem Anda diatur ke \"mode terang\""
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Pada umumnya, URL yang mengandung nama penyedia identitas di dalamnya"
       ],
       "Verified email address": [
         "Alamat surel terverifikasi"
@@ -7332,8 +7541,8 @@
       ]
     },
     "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "Pengguna SSO disediakan oleh Penyedia Identitas Anda"
+      "SSO user provided by your identity provider": [
+        "Pengguna SSO disediakan oleh penyedia identitas Anda"
       ]
     },
     "Validation": {

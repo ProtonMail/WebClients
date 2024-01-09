@@ -2906,6 +2906,9 @@
       "Continue with ${ freeName }": [
         "Continua amb ${ freeName }"
       ],
+      "Copied to clipboard": [
+        "Copiat al porta-retalls"
+      ],
       "Copy the suggested password to clipboard": [
         "Copia la contrasenya suggerida al porta-retalls"
       ],
@@ -2965,6 +2968,12 @@
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Descarregueu la vostra aplicació favorita avui i porteu la privadesa amb vosaltres allà on aneu."
+      ],
+      "Drop file here to upload": [
+        "Arrossegueu el fitxer aquí per carregar-lo."
+      ],
+      "Drop to import": [
+        "Arrossegueu aquí per a importar"
       ],
       "Each code can only be used once": [
         "Cada codi només es pot utilitzar una vegada."
@@ -3199,6 +3208,9 @@
       ],
       "Optional": [
         "Opcional"
+      ],
+      "or ${ selectFileButton }": [
+        "o ${ selectFileButton }"
       ],
       "Or select a particular server:": [
         "O seleccioneu un servidor concret:"
@@ -3803,6 +3815,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Els vostres missatges, calendaris o contactes existents es bloquejaran. Per recuperar aquestes dades, necessitareu la vostra frase de recuperació o la vostra ${ oldPassword }."
       ],
+      "Your files will be encrypted and then saved": [
+        "Es xifraran els fitxers i després es desaran."
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "La vostra informació està segura amb nosaltres. Només ens posarem en contacte quan sigui necessari per oferir els nostres serveis."
       ],
@@ -4261,6 +4276,9 @@
       "Two-password mode": [
         "Mode de dues contrasenyes"
       ],
+      "Type": [
+        "Tipus"
+      ],
       "User": [
         "Usuari"
       ],
@@ -4648,10 +4666,6 @@
         "${ n } connexió VPN",
         "${ n } connexions VPN"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } connexió VPN per usuari",
-        "${ n } connexions VPN per usuari"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email",
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email"
@@ -4670,9 +4684,6 @@
       ],
       "${ size } storage per user": [
         "${ size } emmagatzematge per usuari"
-      ],
-      "1 free VPN connection in total": [
-        "1 connexió VPN gratuïta en total"
       ],
       "1 user": [
         "1 usuari"
@@ -5175,9 +5186,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "En dies laborables, rebeu suport del servei d'atenció al client de ${ BRAND_NAME } en les 24 hores següents a la sol·licitud"
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Una connexió VPN permet que un dispositiu es connecti a ${ BRAND_NAME } VPN en qualsevol moment. Per exemple, per connectar un telèfon i un portàtil alhora a ${ BRAND_NAME_TWO } VPN, necessiteu dues connexions VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opció per a veure les safates d'entrada no privades com ho faria l'usuari, incloent-hi el missatge complet i els detalls de contacte"
@@ -6540,6 +6548,9 @@
       ]
     },
     "Success message": {
+      "Domain deleted": [
+        "S'ha suprimit el domini"
+      ],
       "Sessions revoked": [
         "Sessions revocades"
       ],
@@ -7260,11 +7271,6 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "Inici de sessió únic (SSO)"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "Usuari SSO proporcionat pel vostre proveïdor d'identitat"
       ]
     },
     "Validation": {
