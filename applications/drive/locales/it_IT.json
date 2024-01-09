@@ -5346,6 +5346,18 @@
       "Link copied to clipboard": [
         "Link copiato negli appunti"
       ],
+      "Move ${ n } file": [
+        "Sposta ${ n } file",
+        "Sposta ${ n } file"
+      ],
+      "Move ${ n } folder": [
+        "Sposta ${ n } cartella",
+        "Sposta ${ n } cartelle"
+      ],
+      "Move ${ n } item": [
+        "Sposta ${ n } elemento",
+        "Sposta ${ n } elementi"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Spazio insufficiente per caricare ${ formattedTotal }"
       ],
@@ -5457,6 +5469,9 @@
     "Option": {
       "Add to existing group": [
         "Aggiungi al gruppo esistente"
+      ],
+      "Automatic (${ value })": [
+        "Automatico (${ value })"
       ],
       "Create new group": [
         "Crea nuovo gruppo"
@@ -6363,6 +6378,9 @@
         "Elimina ${ count } gruppo di contatti",
         "Elimina ${ count } gruppi di contatti"
       ],
+      "Delete ${ value }": [
+        "Elimina ${ value }"
+      ],
       "Delete permanently": [
         "Elimina definitivamente"
       ],
@@ -6375,8 +6393,8 @@
       "Discard changes?": [
         "Annullare le modifiche?"
       ],
-      "Download ${ date }.zip": [
-        "Scarica ${ date }.zip"
+      "Download ${ date }": [
+        "Scarica ${ date }"
       ],
       "Download unverified file?": [
         "Scaricare file non verificato?"
