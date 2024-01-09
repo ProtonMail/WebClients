@@ -31,7 +31,7 @@ interface Props {
 }
 
 const EditAddressesSection = ({ address }: Props) => {
-    const [{ Shortcuts } = DEFAULT_MAILSETTINGS] = useMailSettings();
+    const [mailSettings = DEFAULT_MAILSETTINGS] = useMailSettings();
     const api = useApi();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
@@ -71,7 +71,7 @@ const EditAddressesSection = ({ address }: Props) => {
         [
             ['Meta', 'Enter'],
             () => {
-                if (Shortcuts) {
+                if (mailSettings.Shortcuts) {
                     void withLoading(handleSubmit());
                 }
             },
@@ -139,6 +139,7 @@ const EditAddressesSection = ({ address }: Props) => {
                             modalImage={modalImage}
                             modalDefaultFont={modalDefaultFont}
                             isSmallViewportForToolbar={viewportWidth['<=medium']}
+                            mailSettings={mailSettings}
                         />
                     </div>
 
