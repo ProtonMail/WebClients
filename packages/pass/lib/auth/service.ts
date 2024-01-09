@@ -94,7 +94,7 @@ export interface AuthServiceConfig {
      * broadcast the locked session to other clients. */
     onSessionLocked?: (localID: Maybe<number>, broadcast: boolean) => void;
     /** Callback when session lock is created, updated or deleted */
-    onSessionLockUpdate?: (data: SessionLock) => void;
+    onSessionLockUpdate?: (data: SessionLock) => MaybePromise<void>;
     /** Called with the `sessionLockToken` when session is successfully unlocked */
     onSessionUnlocked?: (sessionLockToken: string) => void;
     /** Implement encrypted local session persistence using this hook. Called on every
@@ -259,7 +259,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             authStore.setLockToken(sessionLockToken);
             authStore.setLockTTL(ttl);
             authStore.setLockStatus(SessionLockStatus.REGISTERED);
-            config.onSessionLockUpdate?.({ status: SessionLockStatus.REGISTERED, ttl });
+            void config.onSessionLockUpdate?.({ status: SessionLockStatus.REGISTERED, ttl });
 
             void authService.persistSession();
         },
@@ -272,7 +272,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             authStore.setLockToken(undefined);
             authStore.setLockTTL(undefined);
             authStore.setLockStatus(SessionLockStatus.NONE);
-            config.onSessionLockUpdate?.({ status: SessionLockStatus.NONE });
+            void config.onSessionLockUpdate?.({ status: SessionLockStatus.NONE });
 
             void authService.persistSession();
         },
@@ -342,7 +342,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             authStore.setLockTTL(lock.ttl);
             authStore.setLockLastExtendTime(getEpoch());
 
-            config.onSessionLockUpdate?.(lock);
+            void config.onSessionLockUpdate?.(lock);
             return lock;
         },
 

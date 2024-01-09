@@ -165,7 +165,9 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 history.replace('/');
             },
 
-            onSessionLockUpdate: (lock) => store.dispatch(sessionLockSync(lock)),
+            onSessionLockUpdate: (lock) => {
+                store.dispatch(sessionLockSync(lock));
+            },
 
             onSessionRefresh: async (localID, data, broadcast) => {
                 logger.info('[AuthServiceProvider] Session tokens have been refreshed');
