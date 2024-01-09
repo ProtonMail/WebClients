@@ -683,6 +683,10 @@
         "${ memberCount } lid",
         "${ memberCount } leden"
       ],
+      "${ n } item": [
+        "${ n } item",
+        "${ n } items"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } zal het favicon van het item weergeven via de geanonimiseerde afbeeldingsproxy van ${ BRAND_NAME }."
       ],
@@ -1517,6 +1521,22 @@
       ],
       "You are about to create": [
         "U staat op het punt volgende aan te maken"
+      ]
+    },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Voer uw pincode in"
+      ],
+      "Sign in to your account": [
+        "Inloggen bij uw account"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Ontgrendel ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Welkom bij ${ brandNameJSX }"
       ]
     },
     "Onboarding": {

@@ -736,6 +736,12 @@
         "${ memberCount } členov",
         "${ memberCount } členov"
       ],
+      "${ n } item": [
+        "${ n } položka",
+        "${ n } položiek ",
+        "${ n } položiek ",
+        "${ n } položiek "
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } zobrazí webové ikony položiek prostredníctvom anonymizovaného ${ BRAND_NAME } proxy servera."
       ],
@@ -1625,6 +1631,22 @@
       ],
       "You are about to create": [
         "Chystáte sa vytvoriť"
+      ]
+    },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Zadajte PIN kód"
+      ],
+      "Sign in to your account": [
+        "Prihláste sa do svojho účtu"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Odomknúť ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Víta vás ${ brandNameJSX }"
       ]
     },
     "Onboarding": {

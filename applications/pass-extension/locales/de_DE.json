@@ -278,6 +278,9 @@
       "Pass for iOS": [
         "Pass für iOS"
       ],
+      "Pin item": [
+        "Eintrag anheften"
+      ],
       "Refresh the page": [
         "Seite aktualisieren"
       ],
@@ -364,6 +367,9 @@
       ],
       "Try again": [
         "Erneut versuchen"
+      ],
+      "Unpin item": [
+        "Eintrag loslösen"
       ],
       "Update": [
         "Aktualisieren"
@@ -525,14 +531,23 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Fehler beim Verschieben der Einträge von \"${ payload.content.name }\"."
       ],
+      "Failed to pin item": [
+        "Anheften des Eintrags fehlgeschlagen"
+      ],
       "Failed to remove user's access.": [
         "Fehler beim Löschen des Benutzerzugriffs."
       ],
       "Failed to transfer this vault's ownership.": [
         "Fehler beim Übertragen der Tresor-Inhaberschaft."
       ],
+      "Failed to unpin item": [
+        "Loslösen des Eintrags fehlgeschlagen"
+      ],
       "File could not be parsed": [
         "Datei konnte nicht geparst werden."
+      ],
+      "File does not match expected format": [
+        "Die Datei entspricht nicht dem erwarteten Format."
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "Import für Tresor \"${ vaultData.name }\" fehlgeschlagen: ${ description }"
@@ -713,6 +728,10 @@
       "${ memberCount } member": [
         "${ memberCount } Mitglied",
         "${ memberCount } Mitglieder"
+      ],
+      "${ n } item": [
+        "${ n } Eintrag",
+        "${ n } Einträge"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } zeigt das Website-Symbol des Eintrags über den anonymisierten Bild-Proxy von ${ BRAND_NAME } an."
@@ -924,6 +943,12 @@
       ],
       "Item successfully moved": [
         "Eintrag erfolgreich verschoben."
+      ],
+      "Item successfully pinned": [
+        "Eintrag erfolgreich angeheftet"
+      ],
+      "Item successfully unpinned": [
+        "Eintrag erfolgreich losgelöst"
       ],
       "Leaving vault...": [
         "Tresor wird verlassen..."
@@ -1586,6 +1611,22 @@
         "Folgender Alias wird erstellt:"
       ]
     },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "PIN-Code eingeben"
+      ],
+      "Sign in to your account": [
+        "Mit deinem Konto anmelden"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "${ brandNameJSX } entsperren"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Willkommen bei ${ brandNameJSX }"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Willkommen bei ${ appName }"
@@ -1790,6 +1831,9 @@
       ],
       "Pin the extension": [
         "Erweiterung anheften"
+      ],
+      "Pinned (${ items.length })": [
+        "Angeheftet (${ items.length })"
       ],
       "Secure your data": [
         "Schütze deine Daten"
