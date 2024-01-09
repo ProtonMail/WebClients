@@ -1,9 +1,8 @@
-import {joinHolidaysCalendar} from '../../../api/calendars';
-import {Address, Api} from '../../../interfaces';
-import {CalendarNotificationSettings, HolidaysDirectoryCalendar} from '../../../interfaces/calendar';
-import {GetAddressKeys} from '../../../interfaces/hooks/GetAddressKeys';
-import {getJoinHolidaysCalendarData} from '../../holidaysCalendar/holidaysCalendar';
-
+import { joinHolidaysCalendar } from '../../../api/calendars';
+import { Address, Api } from '../../../interfaces';
+import { CalendarNotificationSettings, HolidaysDirectoryCalendar } from '../../../interfaces/calendar';
+import { GetAddressKeys } from '../../../interfaces/hooks/GetAddressKeys';
+import { getJoinHolidaysCalendarData } from '../../holidaysCalendar/holidaysCalendar';
 
 interface Props {
     holidaysCalendar: HolidaysDirectoryCalendar;
@@ -11,15 +10,25 @@ interface Props {
     notifications: CalendarNotificationSettings[];
     addresses: Address[];
     getAddressKeys: GetAddressKeys;
+    priority?: number;
     api: Api;
 }
-const setupHolidaysCalendarHelper = async ({ holidaysCalendar, color, notifications, addresses, getAddressKeys, api  }: Props) => {
+const setupHolidaysCalendarHelper = async ({
+    holidaysCalendar,
+    color,
+    notifications,
+    addresses,
+    getAddressKeys,
+    priority,
+    api,
+}: Props) => {
     const { calendarID, addressID, payload } = await getJoinHolidaysCalendarData({
         holidaysCalendar,
         addresses,
         getAddressKeys,
         color,
         notifications,
+        priority,
     });
     return api(joinHolidaysCalendar(calendarID, addressID, payload));
 };
