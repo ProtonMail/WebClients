@@ -3,6 +3,7 @@ import { ChangeEvent, Fragment, useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useNotifications } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, Input, Option, Radio, SelectTwo, Tooltip } from '../../../components';
@@ -33,6 +34,7 @@ const FilterConditionsFormRow = ({
     displayDelete,
     isEdit,
 }: Props) => {
+    const { createNotification } = useNotifications();
     const typeOptions = TYPES.map(({ value }, i) => {
         return { text: getConditionTypeLabels(value), value, disabled: i === 0 };
     });
@@ -156,7 +158,19 @@ const FilterConditionsFormRow = ({
                             onKeyDown={(e) => {
                                 if (e.key === 'Enter') {
                                     e.preventDefault();
-                                    onAddNewToken();
+                                    if (inputValue.length === 0) {
+                                        createNotification({
+                                            text: c('Title').t`This field cannot be empty`,
+                                            type: 'error',
+                                        });
+                                    } else if (inputValue.trim() === '') {
+                                        createNotification({
+                                            text: c('Title').t`This field cannot contain only spaces`,
+                                            type: 'error',
+                                        });
+                                    } else {
+                                        onAddNewToken();
+                                    }
                                 }
                             }}
                         />
