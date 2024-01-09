@@ -27,7 +27,7 @@ export const readCSV = async <T extends Record<string, any>>(options: {
                 complete: ({ data, errors }) => {
                     if (errors.length > 0) {
                         const errorDetails = errors.map((err) => err.message).join(', ');
-                        logger.debug('[Importer::ReadCSV]', errorDetails);
+                        logger.warn('[Importer::ReadCSV]', errorDetails);
                         options?.onError?.(
                             // translator: ${errors.length} is a number
                             `[Error] ${c('Error').ngettext(
