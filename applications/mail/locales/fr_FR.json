@@ -713,10 +713,10 @@
       "Not saved": [
         "Non enregistré"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -4260,6 +4260,22 @@
         "favoris"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "le message a été envoyé ${ label }"
+      ],
+      "with attachments": [
+        "avec pièces jointes"
+      ],
+      "without attachments": [
+        "sans pièce jointe"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "le message a été envoyé ${ label }"
+      ]
+    },
     "Font Face Default": {
       "Default": [
         "Par défaut"
@@ -5948,6 +5964,9 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Ce message expirera le ${ formattedDate }."
+      ],
+      "This message will expire on ${ value }": [
+        "Ce message expirera le ${ value }."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Cette clé publique sera automatiquement utilisée pour chiffrer les messages envoyés à cette adresse."
@@ -7757,6 +7776,9 @@
       "All": [
         "Toutes"
       ],
+      "Automatic (${ value })": [
+        "Automatique (${ value })"
+      ],
       "Create new group": [
         "Créer un nouveau groupe"
       ],
@@ -9201,6 +9223,9 @@
       "Delete ${ count } message": [
         "Supprimer ${ count } message",
         "Supprimer ${ count } messages"
+      ],
+      "Delete ${ value }": [
+        "Supprimer ${ value } "
       ],
       "Delete all messages": [
         "Supprimer tous les messages"

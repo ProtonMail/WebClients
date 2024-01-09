@@ -709,10 +709,10 @@
       "Not saved": [
         "Belum disimpan"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -2962,6 +2962,14 @@
         "Setiap ${ interval } hari, ${ timesString }"
       ]
     },
+    "Daily recurring event, frequency (until)": {
+      "Daily, ${ untilString }": [
+        "Harian, ${ untilString }"
+      ],
+      "Every ${ interval } days, ${ untilString }": [
+        "Setiap ${ interval } hari, ${ untilString }"
+      ]
+    },
     "Date label": {
       "Today": [
         "Hari ini"
@@ -3277,6 +3285,9 @@
       ],
       "Choose a date in the future.": [
         "Pilih tanggal yang akan datang."
+      ],
+      "Choose a date within the next ${ n } days.": [
+        "Pilih tanggal yang berada dalam rentang ${ n } hari ke depan."
       ],
       "Condition incomplete": [
         "Kondisi tidak lengkap"
@@ -3688,6 +3699,9 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Terdapat kesalahan yang tidak terduga. Proses impor harus diulang."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } events.": [
+        "Berkas ${ formattedFilename } milik Anda mengandung lebih dari ${ MAX_IMPORT_EVENTS } acara."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Berkas ${ formattedFilename } tidak dapat diimpor karena mengandung metode yang tidak valid."
@@ -4212,6 +4226,22 @@
       ],
       "starred": [
         "dibintangi"
+      ]
+    },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "email terkirim ${ label }"
+      ],
+      "with attachments": [
+        "dengan lampiran"
+      ],
+      "without attachments": [
+        "tanpa lampiran"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "email terkirim ${ label }"
       ]
     },
     "Font Face Default": {
@@ -4774,6 +4804,36 @@
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } dari ${ totalProgress }"
       ],
+      "${ elementsCount } conversations will be labelled as:": [
+        "${ elementsCount } percakapan akan dilabeli sebagai:"
+      ],
+      "${ elementsCount } conversations will be marked as read.": [
+        "${ elementsCount } percakapan akan ditandai sebagai telah dibaca."
+      ],
+      "${ elementsCount } conversations will be marked as unread.": [
+        "${ elementsCount } percakapan akan ditandai sebagai belum dibaca."
+      ],
+      "${ elementsCount } conversations will be moved": [
+        "${ elementsCount } percakapan akan dipindahkan"
+      ],
+      "${ elementsCount } conversations will be unlabelled from:": [
+        "${ elementsCount } percakapan tidak akan dilabeli sebagai:"
+      ],
+      "${ elementsCount } messages will be labelled as:": [
+        "${ elementsCount } pesan akan dilabeli sebagai:"
+      ],
+      "${ elementsCount } messages will be marked as read.": [
+        "${ elementsCount } pesan akan ditandai sebagai telah dibaca."
+      ],
+      "${ elementsCount } messages will be marked as unread.": [
+        "${ elementsCount } pesan akan ditandai sebagai belum dibaca."
+      ],
+      "${ elementsCount } messages will be moved": [
+        "${ elementsCount } pesan akan dipindahkan"
+      ],
+      "${ elementsCount } messages will be unlabelled from:": [
+        "${ elementsCount } pesan tidak akan lagi dilabeli sebagai:"
+      ],
       "${ embeddedAttachmentsCount } embedded images": [
         "${ embeddedAttachmentsCount } gambar yang tersemat"
       ],
@@ -4791,6 +4851,9 @@
       ],
       "${ messagesNotAuthorizedToMove } messages could not be moved.": [
         "${ messagesNotAuthorizedToMove } pesan tidak dapat dipindahkan."
+      ],
+      "${ n } unread conversations": [
+        "${ n } percakapan yang belum dibaca"
       ],
       "${ numberOfImageTrackers } email trackers blocked": [
         "${ numberOfImageTrackers } pelacak surel diblokir"
@@ -4909,8 +4972,17 @@
       "and": [
         "dan"
       ],
+      "Any scheduled or snoozed messages will be cancelled.": [
+        "Seluruh pesan yang terjadwal atau ditunda akan dibatalkan."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Seluruh subfolder yang ada juga akan dihapus. Meskipun demikian, seluruh email yang tersimpan pada folder ${ nameDeleted } tidak akan dihapus dan tetap akan dapat ditemukan pada folder Semua Surat."
+      ],
+      "Applying actions to conversations": [
+        "Menerapkan tindakan pada percakapan"
+      ],
+      "Applying actions to messages": [
+        "Menerapkan tindakan pada pesan"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Apakah Anda yakin ingin menghapus semua pesan yang ada di folder ini?"
@@ -4992,6 +5064,9 @@
       ],
       "Clear data": [
         "Bersihkan data"
+      ],
+      "Clear selection": [
+        "Hapus pilihan"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Membersihkan data peramban akan menonaktikan pencarian konten pesan di perangkat ini. Semua pesan perlu dimuat lagi bila ingin dicari."
@@ -5338,6 +5413,9 @@
       "Merged": [
         "Tergabung"
       ],
+      "Message actions in progress. This may take a while.": [
+        "Tindakan pesan sedang berlangsung. Proses ini dapat memakan waktu sejenak."
+      ],
       "Message download status:": [
         "Status unduhan pesan:"
       ],
@@ -5575,6 +5653,9 @@
       "Select a service provider to start": [
         "Pilih layanan surel yang Anda gunakan untuk memulai"
       ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Pilih seluruh ${ elementsCount } pada ${ location }"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Pilih format surel yang akan digunakan setiap kali Anda mengirim surel ke alamat ini."
       ],
@@ -5764,6 +5845,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Pesan ini ditandatangani dengan kunci terlampir yang belum dipercaya."
       ],
+      "This message will be automatically deleted on ${ value }": [
+        "Pesan ini akan dihapus secara otomatis pada ${ value }"
+      ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Pesan ini akan secara otomatis berpindah ke Draf agar Anda dapat menyunting isi pesan ini di kemudian waktu. Anda harus mengatur ulang waktu pengiriman pesan ini."
       ],
@@ -5785,11 +5869,23 @@
       "This message will expire ${ formattedDate }": [
         "Pesan ini akan kedaluwarsa pada ${ formattedDate }"
       ],
+      "This message will expire on ${ value }": [
+        "Pesan ini akan kedaluwarsa pada ${ value }"
+      ],
+      "This message will expire today at ${ value }": [
+        "Pesan ini akan kedaluwarsa hari ini pada pukul ${ value }"
+      ],
+      "This message will expire tomorrow at ${ value }": [
+        "Pesan ini akan kedaluwarsa besok pada pukul ${ value }"
+      ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Kunci publik ini akan digunakan secara otomatis untuk mengenkripsi surel-surel yang dikirim ke alamat ini."
       ],
       "This sender's public key has not been trusted yet.": [
         "Kunci publik pengirim belum dipercaya."
+      ],
+      "to ${ destinationElement } folder.": [
+        "ke folder ${ destinationElement }."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Untuk melawan spam dan penyalahgunaan, mohon verifikasi bahwa Anda memang manusia."
@@ -5995,6 +6091,9 @@
       "You do not have any messages here": [
         "Anda tidak memiliki pesan apa pun di sini"
       ],
+      "You have ${ unread } in your inbox.": [
+        "Anda memiliki ${ unread } pada kotak masuk Anda."
+      ],
       "You have **${ count } conversations** stored in this folder": [
         "Anda memiliki **${ count } percakapan** di folder ini"
       ],
@@ -6033,6 +6132,18 @@
       ],
       "You selected **${ count } messages** with this label": [
         "Anda memilih **${ count } pesan** berlabel ini"
+      ],
+      "You selected **${ elementsCount } conversations** in ${ location }": [
+        "Anda memilih **${ elementsCount } percakapan** pada ${ location }."
+      ],
+      "You selected **${ elementsCount } conversations**.": [
+        "Anda memilih **${ elementsCount } percakapan**."
+      ],
+      "You selected **${ elementsCount } messages** in ${ location }": [
+        "Anda memilih **${ elementsCount } pesan** pada ${ location }."
+      ],
+      "You selected **${ elementsCount } messages**.": [
+        "Anda memilih **${ elementsCount } pesan**,"
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Anda menulis “${ attachmentsFoundKeyword }”, namun Anda tidak melampirkan berkas apa pun. Apakah Anda yakin untuk tetap mengirim pesan ini?"
@@ -6851,6 +6962,14 @@
         "${ Label.Name } dibuat"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Dari: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Kepada: ${ to }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Panel samping"
@@ -7169,6 +7288,22 @@
       ],
       "Monthly ${ onDayString }": [
         "Bulanan ${ onDayString }"
+      ]
+    },
+    "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } months ${ onDayString }, ${ timesString }": [
+        "Setiap ${ interval } bulan ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Bulanan ${ onDayString }, ${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } months ${ onDayString }, ${ untilString }": [
+        "Setiap ${ interval } bulan ${ onDayString }, ${ untilString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Bulanan ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -7524,6 +7659,9 @@
       "All": [
         "Semua"
       ],
+      "Automatic (${ value })": [
+        "Otomatis (${ value })"
+      ],
       "Create new group": [
         "Buat grup baru"
       ],
@@ -7651,6 +7789,9 @@
       ],
       "Search name, email or group": [
         "Cari nama, surel, atau grup"
+      ],
+      "Search parent folder": [
+        "Cari pada folder induk"
       ],
       "Select": [
         "Pilih"
@@ -8151,7 +8292,7 @@
     },
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
-        "Dapatkan yang Tidak Terbatas"
+        "Dapatkan Unlimited"
       ]
     },
     "specialoffer: Countdown unit": {
@@ -8194,6 +8335,15 @@
       ],
       "Highest VPN speed": [
         "Kecepatan VPN tertinggi"
+      ],
+      "Premium ${ appName1 }": [
+        "${ appName1 } Premium"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "${ appName1 } & ${ appName2 } Premium"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "${ appName1 } & ${ appName2 } & ${ appName3 } Premium"
       ],
       "Premium early access": [
         "Akses dini Premium"
@@ -8749,6 +8899,12 @@
       "Account suspended": [
         "Akun ditangguhkan"
       ],
+      "Action all conversations": [
+        "Terapkan pada seluruh percakapan"
+      ],
+      "Action all messages": [
+        "Terapkan pada seluruh pesan"
+      ],
       "Add contact group name": [
         "Tambah nama grup kontak"
       ],
@@ -8880,6 +9036,9 @@
       ],
       "Delete ${ count } messages": [
         "Hapus ${ count } pesan"
+      ],
+      "Delete ${ value }": [
+        "Hapus ${ value }"
       ],
       "Delete all messages": [
         "Hapus seluruh pesan"
@@ -9013,8 +9172,20 @@
       "Mark as unread": [
         "Tandai belum dibaca"
       ],
+      "Mark conversations as read": [
+        "Tandai percakapan sebagai telah dibaca"
+      ],
+      "Mark conversations as unread": [
+        "Tandai percakapan sebagai belum dibaca"
+      ],
       "Mark email as legitimate": [
         "Tandai sah pada pesan"
+      ],
+      "Mark messages as read": [
+        "Tandai pesan sebagai telah dibaca"
+      ],
+      "Mark messages as unread": [
+        "Tandai pesan sebagai belum dibaca"
       ],
       "Merge contacts": [
         "Gabungkan kontak"
@@ -9045,6 +9216,12 @@
       ],
       "More selections": [
         "Pilihan lainnya"
+      ],
+      "Move all conversations": [
+        "Pindahkan seluruh percakapan"
+      ],
+      "Move all messages": [
+        "Pindahkan seluruh pesan"
       ],
       "Move all messages to Archive": [
         "Pindahkan seluruh pesan ke Arsip"
@@ -9500,7 +9677,7 @@
         "Setiap ${ interval } minggu pada hari ${ multipleDaysString }"
       ],
       "Every ${ interval } weeks on all days": [
-        "Setiap ${ interval } minggu pada semua hari"
+        "Setiap ${ interval } minggu pada seluruh hari"
       ],
       "Every ${ interval } weeks on Friday": [
         "Setiap ${ interval } minggu pada hari Jumat"
@@ -9560,6 +9737,109 @@
         "Mingguan pada hari Rabu"
       ]
     },
+    "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } weeks on ${ multipleDaysString }, ${ timesString }": [
+        "Setiap ${ interval } pekan pada ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } weeks on all days, ${ timesString }": [
+        "Setiap ${ interval } pekan pada seluruh hari, ${ timesString }"
+      ],
+      "Every ${ interval } weeks on Friday, ${ timesString }": [
+        "Setiap ${ interval } pekan pada hari Jumat, ${ timesString }"
+      ],
+      "Every ${ interval } weeks on Saturday, ${ timesString }": [
+        "Setiap ${ interval } pekan pada hari Sabtu, ${ timesString }"
+      ],
+      "Every ${ interval } weeks on Thursday, ${ timesString }": [
+        "Setiap ${ interval } pekan pada hari Kamis, ${ timesString }"
+      ],
+      "Every ${ interval } weeks on Wednesday, ${ timesString }": [
+        "Setiap ${ interval } pekan pada hari Rabu, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Mingguan pada ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Mingguan pada seluruh hari, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Mingguan pada hari Jumat, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Mingguan pada hari Senin, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Mingguan pada hari Sabtu, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Mingguan pada hari Minggu, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Mingguan pada hari Kamis, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Mingguan pada hari Selasa, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Mingguan pada hari Rabu, ${ timesString }"
+      ]
+    },
+    "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } weeks on ${ multipleDaysString }, ${ untilString }": [
+        "Setiap ${ interval } pekan pada ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } weeks on all days, ${ untilString }": [
+        "Setiap ${ interval } pekan pada seluruh hari, ${ untilString }"
+      ],
+      "Every ${ interval } weeks on Friday, ${ untilString }": [
+        "Setiap ${ interval } pekan pada hari Jumat, ${ untilString }"
+      ],
+      "Every ${ interval } weeks on Monday, ${ untilString }": [
+        "Setiap ${ interval } pekan pada hari Senin, ${ untilString }"
+      ],
+      "Every ${ interval } weeks on Saturday, ${ untilString }": [
+        "Setiap ${ interval } pekan pada hari Sabtu, ${ untilString }"
+      ],
+      "Every ${ interval } weeks on Sunday, ${ untilString }": [
+        "Setiap ${ interval } pekan pada hari Minggu, ${ untilString }"
+      ],
+      "Every ${ interval } weeks on Thursday, ${ untilString }": [
+        "Setiap ${ interval } pekan pada hari Kamis, ${ untilString }"
+      ],
+      "Every ${ interval } weeks on Tuesday, ${ untilString }": [
+        "Setiap ${ interval } pekan pada hari Selasa, ${ untilString }"
+      ],
+      "Every ${ interval } weeks on Wednesday, ${ untilString }": [
+        "Setiap ${ interval } pekan pada hari Rabu, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Mingguan pada ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Mingguan pada seluruh hari, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Mingguan pada hari Jumat, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Mingguan pada hari Senin, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Mingguan pada hari Sabtu, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Mingguan pada hari Minggu, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Mingguan pada hari Kamis, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Mingguan pada hari Selasa, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Mingguan pada hari Rabu, ${ untilString }"
+      ]
+    },
     "Weekly recurring event, repeats on (multiple days), frequency": {
       "Friday": [
         "Jumat"
@@ -9589,6 +9869,22 @@
       ],
       "Yearly": [
         "Tahunan"
+      ]
+    },
+    "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } years, ${ timesString }": [
+        "Setiap ${ interval } tahun, ${ timesString }"
+      ],
+      "Yearly, ${ timesString }": [
+        "Tahunan, ${ timesString }"
+      ]
+    },
+    "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } years, ${ untilString }": [
+        "Setiap ${ interval } tahun, ${ untilString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Tahunan, ${ untilString }"
       ]
     }
   }
