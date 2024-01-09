@@ -4923,6 +4923,14 @@
         "आपके कैलेंडर कंटेंट का कुछ हिस्सा सपोर्ट नहीं किया जाता है और आयात नहीं किया जाएगा।"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } के लिए आपकी अनुमति की आवश्यकता है ${ enableDesktopNotifications }"
@@ -6740,14 +6748,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "आपकी सदस्यता का प्रबंधन मोज़िला द्वारा किया जाता है। कृपया मोज़िला समर्थन से संपर्क करें।"
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "अतिरिक्त डुप्लिकेट कुंजियों का पता चला। अधिक जानकारी के लिए कृपया व्यक्तिगत रूप से अपलोड करें।"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
       ]
     },
     "Info - folder colouring feature": {
@@ -8608,10 +8608,6 @@
         "${ n } VPN कनेक्शन",
         "${ n } VPN कनेक्शन"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN कनेक्शन प्रति यूज़र",
-        "${ n } VPN कनेक्शन प्रति यूज़र"
-      ],
       "${ size } attachment size": [
         "${ size } अटैचमेंट साइज़"
       ],
@@ -8620,9 +8616,6 @@
       ],
       "${ size } storage per user": [
         "${ size } स्टोरेज हर यूज़र पे"
-      ],
-      "1 free VPN connection in total": [
-        "कुल 1 मुफ्त वीपीएन कनेक्शन"
       ],
       "1 user": [
         "1 यूज़र"
@@ -9084,9 +9077,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "बिज़नेस दिनों में, मांगने के 24 घंटे के अंदर ${ BRAND_NAME } ग्राहक सहायता टीम से मदद पाएं।"
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "एक वीपीएन कनेक्शन एक डिवाइस को ${ BRAND_NAME } वीपीएन से एक समय में जुड़ने देता है। उदाहरण के लिए, एक फोन और एक लैपटॉप को ${ BRAND_NAME_TWO } वीपीएन से एक समय में जोड़ने के लिए आपको दो वीपीएन कनेक्शन चाहिए होंगे।"
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "पूरे संदेश और संपर्क जानकारी के साथ निजी-नहीं यूज़र इनबॉक्स देखने का विकल्प।"

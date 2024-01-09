@@ -2995,6 +2995,15 @@
         "Täglich, ${ timesString }"
       ]
     },
+    "Daily recurring event, frequency (until)": {
+      "Daily, ${ untilString }": [
+        "Täglich, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Jeden ${ interval } Tag, ${ untilString }",
+        "Alle ${ interval } Tage, ${ untilString }"
+      ]
+    },
     "Day": {
       "Friday": [
         "Freitag"
@@ -5732,6 +5741,17 @@
         "Ein Teil deines Kalenderinhalts wird nicht unterstützt und wird nicht importiert."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
+      ],
+      "Selected color:": [
+        "Ausgewählte Farbe:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
@@ -7928,17 +7948,6 @@
         "Dein Abonnement wird von Mozilla verwaltet. Bitte kontaktiere den Mozilla-Support."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Doppelt vorhandene Schlüssel erkannt. Für weitere Informationen lade diese bitte einzeln hoch."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Schlüssel ${ fingerprint } wurde bereits hochgeladen"
-      ],
-      "Selected color:": [
-        "Ausgewählte Farbe:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Wenn aktiviert, übernehmen Unterordner die Farbe des übergeordneten Ordners."
@@ -9374,6 +9383,14 @@
         "Einstellung gespeichert"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Von: ${ from }"
+      ],
+      "To: ${ to }": [
+        "An: ${ to }"
+      ]
+    },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
         "Um einen neuen Kalender hinzuzufügen, entferne einen bestehenden."
@@ -9568,6 +9585,9 @@
       "Become a Visionary and be part of ${ BRAND_NAME }'s story": [
         "Werde ein Visionary und sei Teil der Geschichte von ${ BRAND_NAME }."
       ],
+      "Limited time offer": [
+        "Zeitlich begrenztes Angebot"
+      ],
       "Secure email that protects your privacy": [
         "Sichere E-Mails, die deine Privatsphäre schützen"
       ]
@@ -9724,6 +9744,12 @@
       ],
       "Monthly ${ onDayString }": [
         "Monatlich ${ onDayString }"
+      ]
+    },
+    "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Jeden ${ interval } Monat am ${ onDayString }, ${ timesString }",
+        "Aller ${ interval } Monate am ${ onDayString }, ${ timesString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -9998,10 +10024,6 @@
         "${ n } VPN-Verbindung",
         "${ n } VPN-Verbindungen"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN‐Verbindung pro Benutzer",
-        "${ n } VPN-Verbindungen pro Benutzer"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } mit ${ n } hide-my-email-Alias",
         "${ PASS_APP_NAME } mit ${ n } hide-my-email-Aliassen"
@@ -10020,9 +10042,6 @@
       ],
       "${ size } storage per user": [
         "${ size } Speicherplatz pro Benutzer"
-      ],
-      "1 free VPN connection in total": [
-        "Insgesamt 1 kostenlose VPN-Verbindung"
       ],
       "1 user": [
         "1 Benutzer"
@@ -10269,6 +10288,10 @@
       ],
       "Unlimited volume/bandwidth": [
         "Volumen/Bandbreite unbegrenzt"
+      ],
+      "Up to ${ n } user": [
+        "Bis zu ${ n } Benutzer",
+        "Bis zu ${ n } Benutzer"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Bis zu ${ totalStorageSize } Speicherplatz"
@@ -10579,9 +10602,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "An Werktagen erhältst du innerhalb von 24 Stunden Unterstützung durch den Kundensupport von ${ BRAND_NAME }."
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Eine VPN-Verbindung erlaubt es einem Gerät, sich jederzeit mit ${ BRAND_NAME }-VPN zu verbinden. Um beispielsweise ein Handy und einen Laptop gleichzeitig mit ${ BRAND_NAME_TWO }-VPN zu verbinden, brauchst du zwei VPN-Verbindungen."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Option zum Anzeigen der Posteingänge nicht privater Benutzer aus seiner Sicht einschließlich aller Nachrichten- und Kontaktdetails."
@@ -11002,6 +11022,9 @@
       ],
       "Auto": [
         "Automatisch"
+      ],
+      "Automatic (${ value })": [
+        "Automatisch (${ value })"
       ],
       "Country configs": [
         "Länderkonfigurationen"
@@ -12353,6 +12376,15 @@
       "Highest VPN speed": [
         "Höchste VPN-Geschwindigkeit"
       ],
+      "Premium ${ appName1 }": [
+        "Premium-${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium-${ appName1 } & ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium-${ appName1 }, ${ appName2 } & ${ appName3 }"
+      ],
       "Premium early access": [
         "Premium-frühzeitiger Zugang"
       ],
@@ -12571,6 +12603,10 @@
       "${ n } calendar per user": [
         "${ n } Kalender je Nutzer",
         "${ n } Kalender je Nutzer"
+      ],
+      "${ n } free VPN connection per user": [
+        "${ n } kostenlose VPN‐Verbindung pro Benutzer",
+        "${ n } kostenlose VPN‐Verbindungen pro Benutzer"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } Hochgeschwindigkeits-VPN-Verbindung",
@@ -13400,6 +13436,9 @@
       "Decrypt key": [
         "Schlüssel entschlüsseln"
       ],
+      "Delete ${ value }": [
+        "${ value } löschen"
+      ],
       "Delete account": [
         "Konto löschen"
       ],
@@ -13931,6 +13970,10 @@
       "Success": [
         "Erfolgreich"
       ],
+      "Successfully created ${ n } user account": [
+        "${ n } Benutzerkonto erfolgreich erstellt",
+        "${ n } Benutzerkonten erfolgreich erstellt"
+      ],
       "Summary": [
         "Zusammenfassung"
       ],
@@ -14421,11 +14464,6 @@
         "SSO"
       ]
     },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "SSO Benutzer, der von deinem Identitätsanbieter bereitgestellt wird"
-      ]
-    },
     "Validation": {
       "Password must contain at least ${ length } character": [
         "Das Passwort muss mindestens ${ length } Zeichen enthalten",
@@ -14709,6 +14747,70 @@
       ],
       "Weekly on Wednesday": [
         "Wöchentlich am Mittwoch"
+      ]
+    },
+    "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Jede ${ interval } Woche am ${ multipleDaysString }, ${ timesString }",
+        "Alle ${ interval } Wochen am ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Jede ${ interval } Woche an allen Tagen, ${ timesString }",
+        "Alle ${ interval } Wochen an allen Tagen, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Jede ${ interval } Woche am Freitag, ${ timesString }",
+        "Alle ${ interval } Wochen am Freitag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Jede ${ interval } Woche am Samstag, ${ timesString }",
+        "Alle ${ interval } Wochen am Freitag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Jede ${ interval } Woche am Donnerstag, ${ timesString }",
+        "Alle ${ interval } Wochen am Donnerstag, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Jede ${ interval } Woche am Mittwoch, ${ timesString }",
+        "Alle ${ interval } Wochen am Mittwoch, ${ timesString }"
+      ]
+    },
+    "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Jede ${ interval } Woche am ${ multipleDaysString }, ${ untilString }",
+        "Alle ${ interval } Wochen am ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Jede ${ interval } Woche an allen Tagen, ${ untilString }",
+        "Alle ${ interval } Wochen an allen Tagen, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Jede ${ interval } Woche am Freitag, ${ untilString }",
+        "Alle ${ interval } Wochen am Freitag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Jede ${ interval } Woche am Montag, ${ untilString }",
+        "Alle ${ interval } Wochen am Montag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Jede ${ interval } Woche am Samstag, ${ untilString }",
+        "Alle ${ interval } Wochen am Samstag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Jede ${ interval } Woche am Sonntag, ${ untilString }",
+        "Alle ${ interval } Wochen am Sonntag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Jede ${ interval } Woche am Donnerstag, ${ untilString }",
+        "Alle ${ interval } Wochen am Donnerstag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Jede ${ interval } Woche am Dienstag, ${ untilString }",
+        "Alle ${ interval } Wochen am Dienstag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Jede ${ interval } Woche am Mittwoch, ${ untilString }",
+        "Alle ${ interval } Wochen am Mittwoch, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {

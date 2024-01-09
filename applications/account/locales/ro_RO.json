@@ -5761,6 +5761,17 @@
         "O parte din conținutul calendarului nu este suportat și nu va fi importat."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Cheia ${ fingerprint } a fost deja încărcată."
+      ],
+      "Selected color:": [
+        "Culoare selectată:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
@@ -8000,17 +8011,6 @@
         "Abonamentul vă este gestionat de Mozilla. Contactați Mozilla pentru suport."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Au fost detectate chei duplicate suplimentare. Încărcați-le individual pentru mai multe informații."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Cheia ${ fingerprint } a fost deja încărcată."
-      ],
-      "Selected color:": [
-        "Culoare selectată:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Când este activată, subfolderele moștenesc culoarea folderului părinte."
@@ -10089,11 +10089,6 @@
         "${ n } conexiuni VPN",
         "${ n } de conexiuni VPN"
       ],
-      "${ n } VPN connection per user": [
-        "O conexiune VPN per utilizator",
-        "${ n } conexiuni VPN per utilizator",
-        "${ n } de conexiuni VPN per utilizator"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } cu ${ n } alias hide-my-email",
         "${ PASS_APP_NAME } cu ${ n } aliasuri hide-my-email",
@@ -10113,9 +10108,6 @@
       ],
       "${ size } storage per user": [
         "${ size } spațiu per utilizator"
-      ],
-      "1 free VPN connection in total": [
-        "O conexiune VPN gratuită"
       ],
       "1 user": [
         "Un utilizator"
@@ -10678,9 +10670,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "În zilele lucrătoare, primiți asistență de la echipa de Asistență pentru clienți ${ BRAND_NAME } în termen de 24 de ore de la solicitări."
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "O conexiune VPN permite conectarea unui dispozitiv la ${ BRAND_NAME } VPN la un moment dat. De exemplu, pentru a conecta un telefon și un laptop la ${ BRAND_NAME_TWO } VPN în același timp, aveți nevoie de două conexiuni VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opțiunea de a vedea căsuțele de e-mail ale utilizatorilor neprivați, inclusiv mesajul complet și datele de contact."
@@ -14590,11 +14579,6 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "Autentificare unică (SSO)"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "Utilizator cu autentificare unică (SSO) oferit de furnizorul de identitate personal"
       ]
     },
     "Validation": {

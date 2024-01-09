@@ -5542,6 +5542,14 @@
         "カレンダーの内容の一部がサポートされていないため、インポートされません。"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "鍵 ${ fingerprint } は正常にアップロードされました"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
@@ -7659,14 +7667,6 @@
         "あなたのサブスクリプションはMozillaによって管理されています。Mozillaのサポートへお問い合わせください。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "追加の重複キーが検出されました。 詳細については個別にアップロードしてください。"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "鍵 ${ fingerprint } は正常にアップロードされました"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "有効にすると、サブフォルダーは親フォルダーの色を継承します。"
@@ -9673,9 +9673,6 @@
       "${ n } VPN connections": [
         "${ n } 件の VPN 接続"
       ],
-      "${ n } VPN connections per user": [
-        "1 ユーザーあたり ${ n } 件の VPN 接続"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email aliases": [
         "${ PASS_APP_NAME } と ${ n } hide-my-email エイリアス"
       ],
@@ -9693,9 +9690,6 @@
       ],
       "${ size } storage per user": [
         "1 ユーザーあたり ${ size } のストレージ"
-      ],
-      "1 free VPN connection in total": [
-        "合計 1 件の無料 VPN 接続"
       ],
       "1 user": [
         "1ユーザー"
@@ -10240,9 +10234,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "営業日であれば、リクエストから 24 時間以内に ${ BRAND_NAME } カスタマー サポート チームからのサポートを受けられます"
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "1 つの VPN 接続により、いつでも 1 つのデバイスが ${ BRAND_NAME } VPN に接続できます。 たとえば、電話とラップトップを ${ BRAND_NAME_TWO } VPN に同時に接続するには、2 つの VPN 接続が必要です。"
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "完全なメッセージと連絡先の詳細を含む、非プライベート ユーザーの受信箱をユーザーと同じように表示するオプション"
@@ -13943,11 +13934,6 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "ID プロバイダーによって提供された SSO ユーザー"
       ]
     },
     "Validation": {
