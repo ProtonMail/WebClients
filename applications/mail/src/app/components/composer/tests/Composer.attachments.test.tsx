@@ -1,5 +1,4 @@
-import { fireEvent, getByTitle, waitFor } from '@testing-library/react';
-import { act } from '@testing-library/react';
+import { fireEvent, getByTitle, act } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
 import { MIME_TYPES } from '@proton/shared/lib/constants';
@@ -26,10 +25,11 @@ import {
     tick,
     waitForNoNotification,
     waitForNotification,
+    waitForSpyCall,
 } from '../../../helpers/test/helper';
 import { store } from '../../../logic/store';
 import Composer from '../Composer';
-import { ID, prepareMessage, props, toAddress } from './Composer.test.helpers';
+import { ID, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
 
 loudRejection();
 
@@ -59,11 +59,11 @@ describe('Composer attachments', () => {
         const { resolve } = addApiResolver('mail/v4/attachments');
 
         updateSpy = jest.fn(({ data: { Message, AttachmentKeyPackets } }: any) => {
-            Message.Attachments.forEach((Attachment: any) => {
-                if (AttachmentKeyPackets?.[Attachment.ID]) {
-                    Attachment.KeyPackets = AttachmentKeyPackets[Attachment.ID];
-                }
-            });
+            Message.Attachments = Message.Attachments.map((Attachment: any) => (
+                AttachmentKeyPackets?.[Attachment.ID] ?
+                    { ...Attachment, KeyPackets: AttachmentKeyPackets[Attachment.ID] }
+                    : Attachment
+            ));
             return Promise.resolve({ Message });
         });
         addApiMock(`mail/v4/messages/${ID}`, updateSpy, 'put');
@@ -75,7 +75,7 @@ describe('Composer attachments', () => {
 
         const message = prepareMessage({
             localID: ID,
-            data: { AddressID: address1.ID, MIMEType, Sender: { Address: address1.ID, Name: address1.Email } },
+            data: { AddressID: address1.ID, MIMEType, Sender: { Address: address1.Email, Name: address1.ID } },
             messageDocument: { plainText: 'test', document: createDocument('hello') },
         });
 
@@ -96,16 +96,14 @@ describe('Composer attachments', () => {
         return { ...result, resolve, message, attachment, generatedSessionKey, updateSpy, sendSpy };
     };
 
-    const saveNow = async (container: HTMLElement) => {
-        fireEvent.keyDown(container, { key: 's', ctrlKey: true });
-        await tick();
-    };
-
     const waitForAutoSave = async () => {
+
         act(() => {
+            jest.useFakeTimers()
             jest.advanceTimersByTime(3000);
+            jest.useRealTimers()
         });
-        await tick();
+        await waitForSpyCall({ spy: updateSpy });
     };
 
     const switchAddress = async (getByTestId: (id: string) => HTMLElement) => {
@@ -131,17 +129,12 @@ describe('Composer attachments', () => {
 
     beforeEach(() => {
         clearAll();
-        jest.useFakeTimers();
         addKeysToAddressKeysCache(address1.ID, address1Keys);
         addKeysToAddressKeysCache(address2.ID, address2Keys);
     });
 
-    afterEach(() => {
-        jest.useRealTimers();
-    });
-
     it('should not show embedded modal when plaintext mode', async () => {
-        const { queryAllByText, findByText, resolve, container } = await setup();
+        const { queryAllByText, findByText, resolve, container, attachment } = await setup();
 
         const embeddedModalMatch = queryAllByText('Insert image');
         expect(embeddedModalMatch.length).toBe(0);
@@ -150,8 +143,7 @@ describe('Composer attachments', () => {
         const attachmentName = container.querySelector(`[aria-label="${fileName}"]`);
         expect(attachmentName).not.toBe(null);
 
-        resolve({ Attachment: { ID: 'AttachmentID' } });
-        await tick();
+        resolve({ Attachment: attachment });
 
         await waitForAutoSave();
 
@@ -160,7 +152,7 @@ describe('Composer attachments', () => {
     });
 
     it('should show embedded modal when html mode', async () => {
-        const { queryAllByText, getByTestId, findByText, resolve, container } = await setup(MIME_TYPES.DEFAULT);
+        const { queryAllByText, getByTestId, findByText, resolve, container, attachment } = await setup(MIME_TYPES.DEFAULT);
 
         const embeddedModalMatch = queryAllByText('Insert image');
         expect(embeddedModalMatch.length).toBeGreaterThanOrEqual(1);
@@ -173,21 +165,17 @@ describe('Composer attachments', () => {
         const attachmentName = container.querySelector(`[aria-label="${fileName}"]`);
         expect(attachmentName).not.toBe(null);
 
-        resolve({ Attachment: { ID: 'AttachmentID' } });
-        await tick();
+        resolve({ Attachment: attachment });
 
         await waitForAutoSave();
 
-        // file without an "s" mean only one
         await findByText('file attached');
     });
 
     it('should re-encrypt attachment key packets on sender address change', async () => {
         const { getByTestId, findByText, resolve, attachment, generatedSessionKey, container, updateSpy } =
             await setup();
-
         resolve({ Attachment: attachment });
-        await tick();
 
         await waitForAutoSave();
 
@@ -197,7 +185,7 @@ describe('Composer attachments', () => {
 
         await saveNow(container);
 
-        expect(updateSpy).toHaveBeenCalled();
+        await waitForSpyCall({ spy: updateSpy, callTimes: 2 });
 
         const requestData = (updateSpy.mock.calls[1] as any[])[0].data;
         const keyPackets = requestData.AttachmentKeyPackets[attachment.ID as string];
@@ -210,41 +198,23 @@ describe('Composer attachments', () => {
     });
 
     it('should re-encrypt attachment key packets on sender address change and send', async () => {
-        const { message, resolve, attachment, generatedSessionKey, updateSpy, sendSpy, ...renderResult } =
-            await setup();
+        const { message, resolve, attachment, generatedSessionKey, updateSpy, sendSpy, ...renderResult } = await setup();
 
         await switchAddress(renderResult.getByTestId);
 
         const sendButton = await renderResult.findByTestId('composer:send-button');
         fireEvent.click(sendButton);
-        await tick();
 
         await waitForNotification('Sending message...');
-
         resolve({ Attachment: attachment });
-        await tick();
 
-        await waitFor(
-            () => {
-                expect(updateSpy).toBeCalled();
-            },
-            { timeout: 20000 }
-        );
-
-        await tick();
-
-        await waitFor(
-            () => {
-                expect(sendSpy).toBeCalled();
-            },
-            { timeout: 20000 }
-        );
+        await waitForSpyCall({ spy: updateSpy });
+        await waitForSpyCall({ spy: sendSpy });
 
         await waitForNotification('Message sent');
-
         await waitForNoNotification();
 
-        const requestData = (updateSpy.mock.calls[1] as any[])[0].data;
+        const requestData = (updateSpy.mock.calls[0] as any[])[0].data;
         const keyPackets = requestData.AttachmentKeyPackets[attachment.ID as string];
 
         expect(keyPackets).toBeDefined();
