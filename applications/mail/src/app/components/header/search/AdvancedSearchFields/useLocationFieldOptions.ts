@@ -7,7 +7,6 @@ import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/fold
 import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
-import useSnooze from 'proton-mail/hooks/actions/useSnooze';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { getStandardFolders } from '../../../../helpers/labels';
@@ -104,7 +103,6 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
     const [folders] = useFolders();
     const treeview = buildTreeview(folders);
     const { canScheduleSend } = useScheduleSendFeature();
-    const { isSnoozeEnabled } = useSnooze();
 
     const DRAFT_TYPE = hasBit(mailSettings.ShowMoved, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS;
     const SENT_TYPE = hasBit(mailSettings.ShowMoved, SHOW_MOVED.SENT) ? ALL_SENT : SENT;
@@ -129,16 +127,12 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
             url: STANDARD_FOLDERS[INBOX].to,
             icon: STANDARD_FOLDERS[INBOX].icon,
         },
-        ...(isSnoozeEnabled
-            ? [
-                  {
-                      value: SNOOZED,
-                      text: STANDARD_FOLDERS[SNOOZED].name,
-                      url: STANDARD_FOLDERS[SNOOZED].to,
-                      icon: STANDARD_FOLDERS[SNOOZED].icon,
-                  },
-              ]
-            : []),
+        {
+            value: SNOOZED,
+            text: STANDARD_FOLDERS[SNOOZED].name,
+            url: STANDARD_FOLDERS[SNOOZED].to,
+            icon: STANDARD_FOLDERS[SNOOZED].icon,
+        },
         {
             value: DRAFT_TYPE,
             text: DRAFT_TYPE === ALL_DRAFTS ? STANDARD_FOLDERS[ALL_DRAFTS].name : STANDARD_FOLDERS[DRAFTS].name,

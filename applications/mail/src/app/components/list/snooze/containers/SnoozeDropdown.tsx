@@ -26,10 +26,9 @@ const SnoozeDropdown = ({ elements, size, labelID }: Props) => {
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
     const { anchorRef, isOpen, toggle, close: dropdownClose } = usePopperAnchor<HTMLButtonElement>();
-    const { canSnooze, canUnsnooze, isSnoozeEnabled, snooze, unsnooze, handleClose, handleCustomClick, snoozeState } =
-        useSnooze();
+    const { canSnooze, canUnsnooze, snooze, unsnooze, handleClose, handleCustomClick, snoozeState } = useSnooze();
 
-    if (!elements.length || !isSnoozeEnabled || (!canSnooze && !canUnsnooze)) {
+    if (!elements.length || (!canSnooze && !canUnsnooze)) {
         return null;
     }
 
