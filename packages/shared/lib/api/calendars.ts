@@ -363,6 +363,7 @@ export const joinHolidaysCalendar = (
         Signature: string;
         Color: string;
         DefaultFullDayNotifications: CalendarNotificationSettings[];
+        Priority?: number;
     }
 ) => ({
     url: `${CALENDAR_V1}/${calendarID}/invitations/${addressID}/join`,
