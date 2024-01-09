@@ -3,14 +3,12 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useRef, use
 
 import { c } from 'ttag';
 
-import { Button } from '@proton/atoms/Button';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useInviteContext } from '@proton/pass/components/Invite/InviteProvider';
 import { PendingShareAccessModal } from '@proton/pass/components/Share/PendingShareAccessModal';
 import type { UpsellType } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellingModal } from '@proton/pass/components/Upsell/UpsellingModal';
 import { UpsellRef } from '@proton/pass/constants';
-import { isEOY } from '@proton/pass/lib/onboarding/upselling';
 import type { Callback, MaybeNull, OnboardingMessage } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
@@ -134,17 +132,6 @@ export const SpotlightProvider: FC = ({ children }) => {
                 open={state.upselling !== null}
                 upsellType={state.upselling?.type ?? 'free-trial'}
                 upsellRef={state.upselling?.upsellRef ?? UpsellRef.DEFAULT}
-                {...(state.upselling?.type === 'early-access' && isEOY()
-                    ? {
-                          type: 'overlay',
-                          size: 'small',
-                          closable: false,
-                          extraActions: ({ onClose }) => [
-                              <Button pill shape="solid" color="weak" onClick={onClose} key="not-now">{c('Action')
-                                  .t`Not now`}</Button>,
-                          ],
-                      }
-                    : {})}
             />
 
             <PendingShareAccessModal open={state.pendingShareAccess} onClose={closePendingShareAccess} />
