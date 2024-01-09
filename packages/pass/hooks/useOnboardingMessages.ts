@@ -12,7 +12,7 @@ import { PASS_BF_MONTHLY_PRICE, PASS_LEARN_MORE_URL, UpsellRef } from '@proton/p
 import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { selectUser } from '@proton/pass/store/selectors';
 import { OnboardingMessage } from '@proton/pass/types';
-import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
+import { BRAND_NAME, DEFAULT_CURRENCY, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 export const useOnboardingMessages = () => {
@@ -134,7 +134,11 @@ export const useOnboardingMessages = () => {
                 id: 'black-friday',
                 title: c('bf2023: Title').t`Black Friday offer`,
                 message: (() => {
-                    const relativePrice = getSimplePriceString(user!.Currency, PASS_BF_MONTHLY_PRICE, '');
+                    const relativePrice = getSimplePriceString(
+                        user?.Currency ?? DEFAULT_CURRENCY,
+                        PASS_BF_MONTHLY_PRICE,
+                        ''
+                    );
                     return c('bf2023: Info')
                         .t`Save Smart. Get a year of Pass Plus for only ${relativePrice} per month.`;
                 })(),
