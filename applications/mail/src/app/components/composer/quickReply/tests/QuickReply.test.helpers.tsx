@@ -1,4 +1,4 @@
-import { act, findByTestId, fireEvent, waitFor } from '@testing-library/react';
+import { act, findByTestId, fireEvent } from '@testing-library/react';
 
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
@@ -10,7 +10,7 @@ import { MESSAGE_ACTIONS } from '../../../../constants';
 import { addApiMock } from '../../../../helpers/test/api';
 import { addToCache, minimalCache } from '../../../../helpers/test/cache';
 import { addApiKeys, addKeysToAddressKeysCache } from '../../../../helpers/test/crypto';
-import { getDropdown } from '../../../../helpers/test/helper';
+import { getDropdown, waitForSpyCall } from '../../../../helpers/test/helper';
 import { initialize } from '../../../../logic/messages/read/messagesReadActions';
 import { store } from '../../../../logic/store';
 import { addressID, setup } from '../../../message/tests/Message.test.helpers';
@@ -100,14 +100,6 @@ export const setupQuickReplyTests = async ({
         return recipientListContainer.innerHTML;
     };
 
-    const waitForSpy = (spy: jest.Mock<Promise<unknown>, [message: any]>) =>
-        waitFor(
-            () => {
-                expect(spy).toHaveBeenCalled();
-            },
-            { timeout: 10000 }
-        );
-
     const updateReplyType = async (type: MESSAGE_ACTIONS, isTriggeringCreate = false) => {
         const quickReplyTypeDropdown = await container.findByTestId('quick-reply-type-dropdown');
 
@@ -125,9 +117,9 @@ export const setupQuickReplyTests = async ({
                 fireEvent.click(quickReplyTypeReplyButton);
                 await wait(3000);
                 if (isTriggeringCreate) {
-                    await waitForSpy(createCall);
+                    await waitForSpyCall({ spy: createCall });
                 } else {
-                    await waitForSpy(updateCall);
+                    await waitForSpyCall({ spy: updateCall });
                 }
             });
         } else if (MESSAGE_ACTIONS.REPLY_ALL) {
@@ -135,9 +127,9 @@ export const setupQuickReplyTests = async ({
                 fireEvent.click(quickReplyTypeReplyAllButton);
                 await wait(3000);
                 if (isTriggeringCreate) {
-                    await waitForSpy(createCall);
+                    await waitForSpyCall({ spy: createCall });
                 } else {
-                    await waitForSpy(updateCall);
+                    await waitForSpyCall({ spy: updateCall });
                 }
             });
         }
@@ -162,7 +154,7 @@ export const setupQuickReplyTests = async ({
                 await act(async () => {
                     fireEvent.change(plainTextEditor, { target: { value: newContent } });
                     await wait(3000);
-                    await waitForSpy(createCall);
+                    await waitForSpyCall({ spy: createCall });
                 });
             }
         } else {
@@ -177,7 +169,7 @@ export const setupQuickReplyTests = async ({
 
                 fireEvent.input(roosterEditor);
                 await wait(3000);
-                await waitForSpy(createCall);
+                await waitForSpyCall({ spy: createCall });
             });
         }
     };
@@ -187,7 +179,7 @@ export const setupQuickReplyTests = async ({
 
         await act(async () => {
             fireEvent.click(sendButton);
-            await waitForSpy(sendCall);
+            await waitForSpyCall({ spy: sendCall });
         });
     };
 
@@ -204,6 +196,6 @@ export const setupQuickReplyTests = async ({
         expectedDefaultPlainTextContent,
         getRecipientList,
         updateReplyType,
-        waitForSpy,
+        waitForSpyCall,
     };
 };

@@ -1,4 +1,4 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -99,9 +99,10 @@ describe('message trackers', () => {
         await render(<MessageView {...props} />, false);
 
         // Check number of trackers before load
-        const trackersNumberBeforeLoad = screen.queryByTestId('privacy:icon-number-of-trackers');
-
-        expect(trackersNumberBeforeLoad?.innerHTML).toEqual('2');
+        await waitFor(() => {
+            const trackersNumberBeforeLoad = screen.getByTestId('privacy:icon-number-of-trackers');
+            expect(trackersNumberBeforeLoad.innerHTML).toEqual('2');
+        });
 
         const loadButton = screen.getByTestId('remote-content:load');
 

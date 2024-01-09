@@ -1,4 +1,4 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { act, fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { useFlag } from '@proton/components/index';
 import { WorkerDecryptionResult } from '@proton/crypto';
@@ -25,17 +25,16 @@ import {
     createAttachment,
     generateKeys,
     releaseCryptoProxy,
-    setupCryptoProxyForTesting,
-    tick,
+    setupCryptoProxyForTesting
 } from 'proton-mail/helpers/test/helper';
 import { render } from 'proton-mail/helpers/test/render';
 import { addAttachment } from 'proton-mail/logic/attachments/attachmentsActions';
 import { store } from 'proton-mail/logic/store';
 import { Conversation } from 'proton-mail/models/conversation';
 
-jest.mock('@proton/shared/lib/helpers/downloadFile', () => {
-    return jest.fn();
-});
+jest.mock('@proton/shared/lib/helpers/downloadFile'); // mocking left to individual tests
+const mockDownloadFile = downloadFile as jest.MockedFunction<typeof downloadFile>;
+
 const mockUseFlag = useFlag as unknown as jest.MockedFunction<any>;
 
 const fileContent = `test-content`;
@@ -262,16 +261,14 @@ describe('ItemAttachmentThumbnails - Preview', () => {
 
                 const attachmentPackets = await encryptAttachment(fileContent, file, false, keys.publicKeys, []);
                 // Trigger a fail during decrypt (when necessary) to test some scenarios (e.g. decryption failed)
-                const concatenatedPackets = decryptShouldFail
-                    ? []
-                    : mergeUint8Arrays(
-                          [attachmentPackets.data, attachmentPackets.keys, attachmentPackets.signature].filter(isTruthy)
-                      );
-
+                const attachmentKeyPackets = decryptShouldFail ? new Uint8Array() : attachmentPackets.keys
+                const concatenatedPackets = mergeUint8Arrays(
+                    [attachmentPackets.data, attachmentKeyPackets, attachmentPackets.signature].filter(isTruthy)
+                );
                 const attachmentSpy = jest.fn(() => concatenatedPackets);
                 const attachmentMetadataSpy = jest.fn(() => ({
                     Attachment: {
-                        KeyPackets: arrayToBase64(attachmentPackets.keys),
+                        KeyPackets: arrayToBase64(attachmentKeyPackets),
                         Sender: { Address: fromAddress },
                         AddressID,
                     },
@@ -286,6 +283,15 @@ describe('ItemAttachmentThumbnails - Preview', () => {
                 };
             })
         );
+    };
+
+    const waitForVisibleAttachmentPreview = async (
+        attachmentMetadata: AttachmentsMetadata,
+        preview: HTMLElement = screen.getByTestId('file-preview')
+    ) => {
+        expect(preview.textContent).toMatch(new RegExp(attachmentMetadata.Name));
+        // File content is visible
+        await waitFor(() => expect(preview.textContent).toMatch(new RegExp(fileContent)));
     };
 
     it('should preview an attachment that was already in Redux state', async () => {
@@ -319,12 +325,10 @@ describe('ItemAttachmentThumbnails - Preview', () => {
         await setup(attachmentsMetadata, numAttachments);
 
         const item = screen.getByTestId('attachment-thumbnail');
-
         fireEvent.click(item);
-        await tick();
 
         const preview = screen.getByTestId('file-preview');
-        expect(preview?.textContent).toMatch(new RegExp(attachmentsMetadata[0].Name));
+        await waitFor(() => expect(preview.textContent).toMatch(new RegExp(attachmentsMetadata[0].Name)));
 
         expect(mocks[0].attachmentSpy).not.toHaveBeenCalled();
         expect(mocks[0].attachmentMetadataSpy).not.toHaveBeenCalled();
@@ -341,18 +345,13 @@ describe('ItemAttachmentThumbnails - Preview', () => {
         await setup(attachmentsMetadata, numAttachments);
 
         const item = screen.getByTestId('attachment-thumbnail');
-
         fireEvent.click(item);
-        await tick();
 
         expect(mocks[0].attachmentSpy).toHaveBeenCalled();
         expect(mocks[0].attachmentMetadataSpy).toHaveBeenCalled();
 
-        const preview = screen.getByTestId('file-preview');
-        expect(preview?.textContent).toMatch(new RegExp(attachmentsMetadata[0].Name));
-        // File content is visible
-        expect(preview?.textContent).toMatch(new RegExp(fileContent));
-    });
+        await waitForVisibleAttachmentPreview(attachmentsMetadata[0]);
+    })
 
     it('should be possible to switch between attachments when Redux state is filled', async () => {
         window.URL.createObjectURL = jest.fn();
@@ -404,17 +403,15 @@ describe('ItemAttachmentThumbnails - Preview', () => {
 
         // Preview first item
         fireEvent.click(item[0]);
-        await tick();
 
         const preview = screen.getByTestId('file-preview');
-        expect(preview?.textContent).toMatch(new RegExp(attachmentsMetadata[0].Name));
+        await waitFor(() => expect(preview.textContent).toMatch(new RegExp(attachmentsMetadata[0].Name)));
 
         // Switch to next item
         const nextButton = screen.getByTestId('file-preview:navigation:next');
         fireEvent.click(nextButton);
-        await tick();
 
-        expect(preview?.textContent).toMatch(new RegExp(attachmentsMetadata[1].Name));
+        await waitFor(() => expect(preview.textContent).toMatch(new RegExp(attachmentsMetadata[1].Name)));
     });
 
     it('should show a message instead of preview when attachment decryption failed', async () => {
@@ -428,17 +425,15 @@ describe('ItemAttachmentThumbnails - Preview', () => {
         await setup(attachmentsMetadata, numAttachments);
 
         const item = screen.getByTestId('attachment-thumbnail');
-
         fireEvent.click(item);
-        await tick();
 
         expect(mocks[0].attachmentSpy).toHaveBeenCalled();
         expect(mocks[0].attachmentMetadataSpy).toHaveBeenCalled();
 
         const preview = screen.getByTestId('file-preview');
-        expect(preview?.textContent).toMatch(new RegExp(attachmentsMetadata[0].Name));
+        expect(preview.textContent).toMatch(new RegExp(attachmentsMetadata[0].Name));
         // File preview cannot be displayed because decryption failed
-        expect(preview?.textContent).toMatch(new RegExp('Preview for this file type is not supported'));
+        await waitFor(() => expect(preview.textContent).toMatch(new RegExp('Preview for this file type is not supported')));
     });
 
     it('should be possible to switch between attachments when not present in Redux state', async () => {
@@ -455,29 +450,30 @@ describe('ItemAttachmentThumbnails - Preview', () => {
 
         // Preview first item
         fireEvent.click(item[0]);
-        await tick();
 
         expect(mocks[0].attachmentSpy).toHaveBeenCalled();
         expect(mocks[0].attachmentMetadataSpy).toHaveBeenCalled();
 
         const preview = screen.getByTestId('file-preview');
-        expect(preview?.textContent).toMatch(new RegExp(attachmentsMetadata[0].Name));
+        await waitForVisibleAttachmentPreview(attachmentsMetadata[0], preview);
 
         // Switch to next item
         const nextButton = screen.getByTestId('file-preview:navigation:next');
         fireEvent.click(nextButton);
-        await tick();
 
         expect(mocks[1].attachmentSpy).toHaveBeenCalled();
         expect(mocks[1].attachmentMetadataSpy).toHaveBeenCalled();
 
-        expect(preview?.textContent).toMatch(new RegExp(attachmentsMetadata[1].Name));
+        await waitForVisibleAttachmentPreview(attachmentsMetadata[1], preview);
     });
 
     it('should download the attachment', async () => {
+        // Promise to ensure we wait until the async onClick callback is executed before carrying out the final checks
+        const downloadFileCalled = new Promise<void>(resolve => {
+            mockDownloadFile.mockImplementation(() => resolve())
+        });
         window.URL.createObjectURL = jest.fn();
         const numAttachments = 1;
-
         const attachmentsMetadata = generateAttachmentsMetadata(numAttachments, 'txt', 'text/plain');
 
         const { attachment } = await createAttachment(
@@ -502,21 +498,25 @@ describe('ItemAttachmentThumbnails - Preview', () => {
         await setup(attachmentsMetadata, numAttachments);
 
         const item = screen.getByTestId('attachment-thumbnail');
-
         fireEvent.click(item);
-        await tick();
 
         const preview = screen.getByTestId('file-preview');
-        expect(preview?.textContent).toMatch(new RegExp(attachmentsMetadata[0].Name));
+        await waitFor(() => expect(preview.textContent).toMatch(new RegExp(attachmentsMetadata[0].Name)));
 
         const downloadButton = screen.getByTestId('file-preview:actions:download');
         fireEvent.click(downloadButton);
-        await tick();
+
+        await act(() => downloadFileCalled);
 
         expect(downloadFile).toHaveBeenCalled();
     });
 
     it('should download a pgp attachment when decryption failed', async () => {
+        // Promise to ensure we wait until the async onClick callback is executed before carrying out the final checks
+        const downloadFileCalled = new Promise<void>(resolve => {
+            mockDownloadFile.mockImplementation(() => resolve())
+        });
+
         window.URL.createObjectURL = jest.fn();
         const numAttachments = 1;
 
@@ -527,22 +527,20 @@ describe('ItemAttachmentThumbnails - Preview', () => {
         await setup(attachmentsMetadata, numAttachments);
 
         const item = screen.getByTestId('attachment-thumbnail');
-
         fireEvent.click(item);
-        await tick();
 
         expect(mocks[0].attachmentSpy).toHaveBeenCalled();
         expect(mocks[0].attachmentMetadataSpy).toHaveBeenCalled();
 
         const preview = screen.getByTestId('file-preview');
-        expect(preview?.textContent).toMatch(new RegExp(attachmentsMetadata[0].Name));
+        expect(preview.textContent).toMatch(new RegExp(attachmentsMetadata[0].Name));
         // File preview cannot be displayed because decryption failed
-        expect(preview?.textContent).toMatch(new RegExp('Preview for this file type is not supported'));
+        await waitFor(() => expect(preview.textContent).toMatch(new RegExp('Preview for this file type is not supported')));
 
         // Download the encrypted attachment
         const downloadButton = screen.getByTestId('file-preview:actions:download');
         fireEvent.click(downloadButton);
-        await tick();
+        await act(() => downloadFileCalled);
 
         const blob = new Blob([mocks[0].attachmentPackets.data], {
             type: 'application/pgp-encrypted',

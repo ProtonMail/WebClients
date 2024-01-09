@@ -75,14 +75,15 @@ describe('Contact resign modal', () => {
 
         // Click on Re-sign button
         const resignButton = getByTestId('resign-contact');
+        await waitFor(() => expect(resignButton).not.toBeDisabled(), { timeout: 1000 });
         fireEvent.click(resignButton);
         await tick();
 
         // Contact update is called
-        expect(updateSpy).toHaveBeenCalled();
+        await waitFor(() => expect(updateSpy).toHaveBeenCalled());
 
         // Optional on Resign action is called
-        expect(onResignSpy).toHaveBeenCalled();
+        await waitFor(() => expect(onResignSpy).toHaveBeenCalled());
     });
 
     it('should resign the contact not render email rows', async () => {
@@ -102,13 +103,13 @@ describe('Contact resign modal', () => {
 
         // Click on Re-sign button
         const resignButton = getByTestId('resign-contact');
+        await waitFor(() => expect(resignButton).not.toBeDisabled());
         fireEvent.click(resignButton);
-        await tick();
 
         // Contact update is called
-        expect(updateSpy).toHaveBeenCalled();
+        await waitFor(() => expect(updateSpy).toHaveBeenCalled());
 
         // Optional on Resign action is called
-        expect(onResignSpy).toHaveBeenCalled();
+        await waitFor(() => expect(onResignSpy).toHaveBeenCalled());
     });
 });

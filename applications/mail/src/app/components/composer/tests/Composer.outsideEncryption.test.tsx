@@ -1,5 +1,4 @@
-import { fireEvent, getByTestId as getByTestIdDefault } from '@testing-library/react';
-import { act } from '@testing-library/react';
+import { fireEvent, getByTestId as getByTestIdDefault, waitFor } from '@testing-library/react';
 import { addHours } from 'date-fns';
 import loudRejection from 'loud-rejection';
 
@@ -16,10 +15,11 @@ import {
     render,
     setFeatureFlags,
     tick,
+    waitForNotification
 } from '../../../helpers/test/helper';
 import { store } from '../../../logic/store';
 import Composer from '../Composer';
-import { AddressID, ID, fromAddress, prepareMessage, props, toAddress } from './Composer.test.helpers';
+import { AddressID, ID, fromAddress, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
 
 loudRejection();
 
@@ -75,13 +75,12 @@ describe('Composer outside encryption', () => {
         const setEncryptionButton = getByTestId('modal-footer:set-button');
         fireEvent.click(setEncryptionButton);
 
+        await waitForNotification('Password has been set successfully');
+
         // The expiration banner is displayed
         getByText(/This message will expire/);
 
-        // Trigger manual save to avoid unhandledPromiseRejection
-        await act(async () => {
-            fireEvent.keyDown(container, { key: 'S', ctrlKey: true });
-        });
+        await saveNow(container);
     });
 
     it('should set outside encryption with a default expiration time', async () => {
@@ -99,7 +98,6 @@ describe('Composer outside encryption', () => {
 
         const expirationButton = getByTestId('composer:password-button');
         fireEvent.click(expirationButton);
-        await tick();
 
         // Modal and expiration date are displayed
         getByText('Edit encryption');
@@ -117,7 +115,6 @@ describe('Composer outside encryption', () => {
 
         const expirationButton = getByTestId('composer:password-button');
         fireEvent.click(expirationButton);
-        await tick();
 
         // modal is displayed and we can set a password
         getByText('Encrypt message');
@@ -128,10 +125,9 @@ describe('Composer outside encryption', () => {
         const setEncryptionButton = getByTestId('modal-footer:set-button');
         fireEvent.click(setEncryptionButton);
 
-        // Trigger manual save to avoid unhandledPromiseRejection
-        await act(async () => {
-            fireEvent.keyDown(container, { key: 'S', ctrlKey: true });
-        });
+        await waitForNotification('Password has been set successfully');
+        await saveNow(container);
+
 
         // Edit encryption
         // Open the encryption dropdown
@@ -142,19 +138,13 @@ describe('Composer outside encryption', () => {
 
         // Click on edit button
         const editEncryptionButton = getByTestIdDefault(dropdown, 'composer:edit-outside-encryption');
-        await act(async () => {
-            fireEvent.click(editEncryptionButton);
-        });
+        fireEvent.click(editEncryptionButton);
 
         const passwordInputAfterUpdate = getByTestId('encryption-modal:password-input') as HTMLInputElement;
         const passwordValue = passwordInputAfterUpdate.value;
 
         expect(passwordValue).toEqual(password);
 
-        // Trigger manual save to avoid unhandledPromiseRejection
-        await act(async () => {
-            fireEvent.keyDown(container, { key: 'S', ctrlKey: true });
-        });
     });
 
     it('should be able to remove encryption', async () => {
@@ -179,6 +169,8 @@ describe('Composer outside encryption', () => {
         const setEncryptionButton = getByTestId('modal-footer:set-button');
         fireEvent.click(setEncryptionButton);
 
+        await waitForNotification('Password has been set successfully');
+
         // Edit encryption
         // Open the encryption dropdown
         const encryptionDropdownButton = getByTestId('composer:encryption-options-button');
@@ -186,17 +178,15 @@ describe('Composer outside encryption', () => {
 
         const dropdown = await getDropdown();
 
+        await waitFor(
+            () => expect(getByText(/This message will expire on/)).toBeInTheDocument()
+        );
         // Click on remove button
         const editEncryptionButton = getByTestIdDefault(dropdown, 'composer:remove-outside-encryption');
-        await act(async () => {
-            fireEvent.click(editEncryptionButton);
-        });
+        fireEvent.click(editEncryptionButton);
 
-        expect(queryByText(/This message will self-destruct on/)).toBe(null);
+        expect(queryByText(/This message will expire on/)).toBe(null);
 
-        // Trigger manual save to avoid unhandledPromiseRejection
-        await act(async () => {
-            fireEvent.keyDown(container, { key: 'S', ctrlKey: true });
-        });
+        await saveNow(container);
     });
 });
