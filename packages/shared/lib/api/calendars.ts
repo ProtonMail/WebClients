@@ -101,6 +101,11 @@ export const removeCalendar = (calendarID: string) => ({
     method: 'delete',
 });
 
+export const removeHolidaysCalendar = (calendarID: string) => ({
+    url: `${CALENDAR_V1}/${calendarID}/managed`,
+    method: 'delete',
+});
+
 export const queryMembers = (calendarID: string, params?: PaginationParams) => ({
     url: `${CALENDAR_V1}/${calendarID}/members`,
     method: 'get',

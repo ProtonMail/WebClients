@@ -8,7 +8,12 @@ import { SettingsParagraph } from '@proton/components/containers';
 import { getNextDefaultCalendar } from '@proton/components/containers/calendar/settings/defaultCalendar';
 import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
 import { useLoading } from '@proton/hooks';
-import { removeCalendar, removeMember, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
+import {
+    removeCalendar,
+    removeHolidaysCalendar,
+    removeMember,
+    updateCalendarUserSettings,
+} from '@proton/shared/lib/api/calendars';
 import {
     getIsHolidaysCalendar,
     getIsOwnedCalendar,
@@ -124,7 +129,11 @@ const CalendarDeleteSection = ({ calendars, calendar, defaultCalendar, isShared 
                         await api(updateCalendarUserSettings({ DefaultCalendarID: newDefaultCalendarID })).catch(noop);
                     }
                 } else {
-                    await api(removeMember(calendar.ID, calendar.Members[0].ID));
+                    // If holiday calendar, we want to use the route which does not need password confirmation
+                    const removeCalendar = isHolidaysCalendar
+                        ? removeHolidaysCalendar(calendar.ID)
+                        : removeMember(calendar.ID, calendar.Members[0].ID);
+                    await api(removeCalendar);
                 }
 
                 await call();
