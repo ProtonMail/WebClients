@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import { useFlag } from '@proton/components/containers';
 import { useApi, useEventManager, useNotifications } from '@proton/components/hooks';
 import { snoozeConversations, unsnoozeConversations } from '@proton/shared/lib/api/conversations';
 import { MAILBOX_IDENTIFIERS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -24,8 +23,6 @@ type SnoozeProps = {
 
 const useSnooze = () => {
     const { labelID, conversationMode } = useSelector(params);
-
-    const isSnoozeEnabled = useFlag('SnoozeFeature');
 
     const api = useApi();
     const { createNotification } = useNotifications();
@@ -88,7 +85,6 @@ const useSnooze = () => {
     };
 
     return {
-        isSnoozeEnabled,
         canSnooze,
         canUnsnooze,
         snooze,
