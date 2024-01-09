@@ -1,8 +1,6 @@
-import { fireEvent } from '@testing-library/react';
-import { act } from '@testing-library/react';
+import { fireEvent, waitFor } from '@testing-library/react';
 
 import { PublicKeyReference } from '@proton/crypto';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 
 import { addApiMock } from '../../../helpers/test/api';
@@ -10,7 +8,7 @@ import { GeneratedKey, addKeysToUserKeysCache, generateKeys } from '../../../hel
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import { clearAll, waitForNotification } from '../../../helpers/test/helper';
 import { receiver, sender, setupContactsForPinKeys } from '../../../helpers/test/pinKeys';
-import { render, tick } from '../../../helpers/test/render';
+import { render } from '../../../helpers/test/render';
 import TrustPublicKeyModal from './TrustPublicKeyModal';
 
 const senderAddress = 'sender@outside.com';
@@ -58,14 +56,10 @@ describe('Trust public key modal', () => {
         // Click on Trust key button
         const submitButton = getByTestId('trust-key-modal:submit');
 
-        // Without the wait the test is sometimes failing because the call is not done
-        await act(async () => {
-            fireEvent.click(submitButton);
-            await wait(100);
-        });
+        fireEvent.click(submitButton);
 
         // Contact has been updated
-        expect(updateSpy).toHaveBeenCalled();
+        await waitFor(() => expect(updateSpy).toHaveBeenCalled());
     });
 
     it('should create a contact when trusting key if contact does not exists', async () => {
@@ -93,10 +87,9 @@ describe('Trust public key modal', () => {
         // Click on Trust key button
         const submitButton = getByTestId('trust-key-modal:submit');
         fireEvent.click(submitButton);
-        await tick();
 
         // Contact has been created
-        expect(createSpy).toHaveBeenCalled();
+        await waitFor(() => expect(createSpy).toHaveBeenCalled());
     });
 
     it('should display a notification when key could not be trusted', async () => {
@@ -124,10 +117,9 @@ describe('Trust public key modal', () => {
         // Click on Trust key button
         const submitButton = getByTestId('trust-key-modal:submit');
         fireEvent.click(submitButton);
-        await tick();
 
         // Contact has been created
-        expect(createSpy).toHaveBeenCalled();
+        await waitFor(() => expect(createSpy).toHaveBeenCalled());
 
         await waitForNotification('Public key could not be trusted');
     });

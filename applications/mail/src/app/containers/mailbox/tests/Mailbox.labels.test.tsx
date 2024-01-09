@@ -96,7 +96,7 @@ describe('Mailbox labels actions', () => {
 
             useLabelDropdown(getByTestId, [label3.ID]);
 
-            await waitForSpyCall(labelRequestSpy);
+            await waitForSpyCall({ spy: labelRequestSpy });
 
             expectLabels(getItems, {
                 [conversation1.ID as string]: { [label1.Name]: true, [label3.Name]: true },
@@ -126,7 +126,7 @@ describe('Mailbox labels actions', () => {
 
             useLabelDropdown(getByTestId, [label2.ID]);
 
-            await waitForSpyCall(labelRequestSpy);
+            await waitForSpyCall({ spy: labelRequestSpy });
 
             expectLabels(getItems, {
                 [conversation1.ID as string]: { [label2.Name]: true },
@@ -157,8 +157,8 @@ describe('Mailbox labels actions', () => {
 
             useLabelDropdown(getByTestId, [label2.ID, label3.ID]);
 
-            await waitForSpyCall(labelRequestSpy);
-            await waitForSpyCall(unlabelRequestSpy);
+            await waitForSpyCall({ spy: labelRequestSpy });
+            await waitForSpyCall({ spy: unlabelRequestSpy });
 
             expectLabels(getItems, {
                 [conversation1.ID as string]: {
@@ -209,7 +209,7 @@ describe('Mailbox labels actions', () => {
 
             await sendEvent({ ConversationCounts: [{ LabelID: folder1.ID, Total: 1, Unread: 0 }] });
 
-            await waitForSpyCall(labelRequestSpy);
+            await waitForSpyCall({ spy: labelRequestSpy });
 
             const items = getItems();
             expect(items.length).toBe(1);
@@ -240,7 +240,7 @@ describe('Mailbox labels actions', () => {
             const confirmButton = await findByTestId('confirm-empty-folder');
             fireEvent.click(confirmButton);
 
-            await waitForSpyCall(emptyRequestSpy);
+            await waitForSpyCall({ spy: emptyRequestSpy });
 
             items = queryAllByTestId('message-item', { exact: false });
             expect(items.length).toBe(0);
@@ -267,7 +267,7 @@ describe('Mailbox labels actions', () => {
             const submitButton = getByTestId('permanent-delete-modal:submit');
             fireEvent.click(submitButton);
 
-            await waitForSpyCall(deleteRequestSpy);
+            await waitForSpyCall({ spy: deleteRequestSpy });
         };
 
         it('should delete permanently conversations', async () => {
