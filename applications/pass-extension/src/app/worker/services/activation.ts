@@ -19,6 +19,7 @@ import { logger } from '@proton/pass/utils/logger';
 import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
 import { getEpoch, msToEpoch } from '@proton/pass/utils/time/epoch';
 import { parseUrl } from '@proton/pass/utils/url/parser';
+import noop from '@proton/utils/noop';
 
 import { checkExtensionPermissions } from '../../../lib/utils/permissions';
 import { isPopupPort } from '../../../lib/utils/port';
@@ -98,8 +99,10 @@ export const createActivationService = () => {
      * - Re-inject content-scripts to avoid stale extension contexts
      *   only on Chrome as Firefox handles content-script re-injection */
     const handleInstall = withContext(async (ctx, details: Runtime.OnInstalledDetailsType) => {
-        await browser.alarms.clearAll();
-        void setupUpdateAlarm();
+        await browser.alarms
+            .clearAll()
+            .then(() => setupUpdateAlarm())
+            .catch(noop);
 
         if (details.reason === 'update') {
             if (ENV === 'production') {
