@@ -5640,6 +5640,17 @@
         "Part del contingut del vostre calendari no és compatible i no s'importarà."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "La clau ${ fingerprint } ja s'ha carregat"
+      ],
+      "Selected color:": [
+        "Color seleccionat:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
@@ -7762,17 +7773,6 @@
         "La vostra subscripció és gestionada per Mozilla. Contacteu amb el suport de Mozilla."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "S'han detectat claus addicionals duplicades. Carregueu-les individualment per obtenir més informació."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "La clau ${ fingerprint } ja s'ha carregat"
-      ],
-      "Selected color:": [
-        "Color seleccionat:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Si s'activa, les subcarpetes hereten el color de la carpeta principal."
@@ -9855,10 +9855,6 @@
         "${ n } connexió VPN",
         "${ n } connexions VPN"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } connexió VPN per usuari",
-        "${ n } connexions VPN per usuari"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email",
         "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email"
@@ -9877,9 +9873,6 @@
       ],
       "${ size } storage per user": [
         "${ size } emmagatzematge per usuari"
-      ],
-      "1 free VPN connection in total": [
-        "1 connexió VPN gratuïta en total"
       ],
       "1 user": [
         "1 usuari"
@@ -10430,9 +10423,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "En dies laborables, rebeu suport del servei d'atenció al client de ${ BRAND_NAME } en les 24 hores següents a la sol·licitud"
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Una connexió VPN permet que un dispositiu es connecti a ${ BRAND_NAME } VPN en qualsevol moment. Per exemple, per connectar un telèfon i un portàtil alhora a ${ BRAND_NAME_TWO } VPN, necessiteu dues connexions VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opció per a veure les safates d'entrada no privades com ho faria l'usuari, incloent-hi el missatge complet i els detalls de contacte"
@@ -14204,11 +14194,6 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "Inici de sessió únic (SSO)"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "Usuari SSO proporcionat pel vostre proveïdor d'identitat"
       ]
     },
     "Validation": {

@@ -4957,6 +4957,14 @@
         "${ Label.Name } erstellt"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Von: ${ from }"
+      ],
+      "To: ${ to }": [
+        "An: ${ to }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Seitenleiste"
@@ -5334,6 +5342,14 @@
       "Link copied to clipboard": [
         "Link in die Zwischenablage kopiert"
       ],
+      "Move ${ n } file": [
+        "${ n } Datei verschieben",
+        "${ n } Dateien verschieben"
+      ],
+      "Move ${ n } folder": [
+        "${ n } Ordner verschieben",
+        "${ n } Ordner verschieben"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Nicht genug Speicherplatz, um ${ formattedTotal } hochzuladen"
       ],
@@ -5445,6 +5461,9 @@
     "Option": {
       "Add to existing group": [
         "Zu bestehender Gruppe hinzufügen"
+      ],
+      "Automatic (${ value })": [
+        "Automatisch (${ value })"
       ],
       "Create new group": [
         "Neue Gruppe erstellen"
@@ -5888,6 +5907,15 @@
       ],
       "Highest VPN speed": [
         "Höchste VPN-Geschwindigkeit"
+      ],
+      "Premium ${ appName1 }": [
+        "Premium-${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium-${ appName1 } & ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium-${ appName1 }, ${ appName2 } & ${ appName3 }"
       ],
       "Premium early access": [
         "Premium-frühzeitiger Zugang"
@@ -6342,6 +6370,9 @@
         "${ count } Kontaktgruppe löschen",
         "${ count } Kontaktgruppen löschen"
       ],
+      "Delete ${ value }": [
+        "${ value } löschen"
+      ],
       "Delete permanently": [
         "Dauerhaft löschen"
       ],
@@ -6354,8 +6385,8 @@
       "Discard changes?": [
         "Änderungen verwerfen?"
       ],
-      "Download ${ date }.zip": [
-        "${ date }.zip herunterladen"
+      "Download ${ date }": [
+        "${ date } herunterladen"
       ],
       "Download unverified file?": [
         "Ungeprüfte Datei herunterladen?"

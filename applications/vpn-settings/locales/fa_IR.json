@@ -2005,6 +2005,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "روی \"درخواست کد جدید\" کلیک کنید تا یک کد تایید جدید به ${ strong } ارسال شود. اگر این شماره تلفن نادرست است، جهت اصلاح آن روی \"ویرایش\" کلیک نمایید."
       ],
+      "Copied to clipboard": [
+        "به حافظه موقت روگرفت شد"
+      ],
       "Create a new account and share the email address and password with the user.": [
         "حسابی جدید ایجاد کنید و آدرس های ایمیل و رمزعبور را با کاربر به اشتراک بگذارید."
       ],
@@ -2512,6 +2515,9 @@
       "Your email will only be used for this one-time verification.": [
         "از رایانامه شما فقط برای این تایید یکبار مصرف استفاده خواهد شد."
       ],
+      "Your files will be encrypted and then saved": [
+        "فایل‌های شما رمزگذاری شده و سپس ذخیره می‌شوند"
+      ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "گذرواژه سازمان شما با سایر کاربرانی که می‌خواهید امتیازات مدیریتی بدهید، به اشتراک گذاشته می‌شود. این همچنین یک کد بازیابی اضطراری است تا در صورت عدم دسترسی به حساب خود، به سازمان خود دسترسی پیدا کنید. لطفا این گذرواژه را ذخیره کرده و ایمن نگه دارید."
       ],
@@ -2883,6 +2889,9 @@
       "Two-password mode": [
         "حالت دوگذرواژه"
       ],
+      "Type": [
+        "نوع"
+      ],
       "User": [
         "کاربر"
       ],
@@ -3158,10 +3167,6 @@
         "${ n } اتصال VPN",
         "${ n } اتصال VPN"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } اتصال VPN برای هر کاربر",
-        "${ n } اتصال VPN برای هر کاربر"
-      ],
       "${ size } attachment size": [
         "${ size } سایز پیوست"
       ],
@@ -3170,9 +3175,6 @@
       ],
       "${ size } storage per user": [
         "${ size } فضای ذخیره‌سازی برای هر کاربر"
-      ],
-      "1 free VPN connection in total": [
-        "درکل 1 اتصال VPN رایگان"
       ],
       "Admin console": [
         "کنسول مدیریت"
@@ -3486,9 +3488,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "در روزهای کاری، خدمات پشتیبانی را تا 24 ساعت بعد از در خواست ها از تیم پشتیبانی مشتریان ${ BRAND_NAME } دریافت کنید"
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "یک اتصال VPN به شما اجازه میدهد تا هر زمانی به ${ BRAND_NAME } متصل شوید. برای مثال، برای اتصال یک موبایل و یک لپ‌تاپ به ${ BRAND_NAME_TWO } در یک زمان، شما به دو اتصال VPN نیاز دارید."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "گزینه ای برای نمایش صندوق های دریافتی کاربر غیر خصوصی همانطور که آن کاربر میبیند، که شامل پیام های کامل و جزئیات مخاطبین است"
@@ -4038,6 +4037,9 @@
       ]
     },
     "Success message": {
+      "Domain deleted": [
+        "دامنه حذف شد"
+      ],
       "Sessions revoked": [
         "نشست‌ها لغو شدند"
       ],

@@ -4841,6 +4841,14 @@
         "${ Label.Name } criado"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "De: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Para: ${ to }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Painel lateral"
@@ -5483,6 +5491,9 @@
       ],
       "Auto": [
         "Automático"
+      ],
+      "Automatic (${ value })": [
+        "Automático (${ value })"
       ],
       "Create new group": [
         "Criar novo grupo"
@@ -6595,6 +6606,9 @@
       "Delete ${ count } contact group": [
         "Excluir ${ count } grupo de contatos",
         "Excluir ${ count } grupos de contatos"
+      ],
+      "Delete ${ value }": [
+        "Excluir ${ value }"
       ],
       "Delete event": [
         "Excluir evento"

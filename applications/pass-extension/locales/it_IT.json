@@ -278,6 +278,9 @@
       "Pass for iOS": [
         "Pass per iOS"
       ],
+      "Pin item": [
+        "Blocca elemento"
+      ],
       "Refresh the page": [
         "Aggiorna la pagina"
       ],
@@ -364,6 +367,9 @@
       ],
       "Try again": [
         "Riprova"
+      ],
+      "Unpin item": [
+        "Sblocca elemento"
       ],
       "Update": [
         "Aggiorna"
@@ -528,11 +534,17 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Spostamento di tutti gli elementi da \"${ payload.content.name }\" non riuscito"
       ],
+      "Failed to pin item": [
+        "Blocco dell'elemento non riuscito"
+      ],
       "Failed to remove user's access.": [
         "Rimozione dell'accesso dell'utente non riuscita."
       ],
       "Failed to transfer this vault's ownership.": [
         "Trasferimento della proprietà dalla cassaforte non riuscita."
+      ],
+      "Failed to unpin item": [
+        "Sblocco dell'elemento non riuscito"
       ],
       "File could not be parsed": [
         "Impossibile analizzare il file"
@@ -719,6 +731,10 @@
       "${ memberCount } member": [
         "${ memberCount } membro",
         "${ memberCount } membri"
+      ],
+      "${ n } item": [
+        "${ n } elemento",
+        "${ n } elementi"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } mostrerà la favicon dell'elemento tramite il proxy per le immagini anonimizzato di ${ BRAND_NAME }."
@@ -930,6 +946,12 @@
       ],
       "Item successfully moved": [
         "Elemento spostato con successo"
+      ],
+      "Item successfully pinned": [
+        "Elemento bloccato"
+      ],
+      "Item successfully unpinned": [
+        "Elemento sbloccato"
       ],
       "Leaving vault...": [
         "Abbandono della cassaforte in corso"
@@ -1595,6 +1617,22 @@
         "Stai per creare"
       ]
     },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Inserisci il tuo codice PIN"
+      ],
+      "Sign in to your account": [
+        "Effettua l'accesso al tuo account"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Sblocca ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Benvenuto in ${ brandNameJSX }"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Ti diamo il benvenuto in ${ appName }"
@@ -1799,6 +1837,9 @@
       ],
       "Pin the extension": [
         "Fissa l'estensione"
+      ],
+      "Pinned (${ items.length })": [
+        "Bloccati (${ items.length })"
       ],
       "Secure your data": [
         "Proteggi i tuoi dati"

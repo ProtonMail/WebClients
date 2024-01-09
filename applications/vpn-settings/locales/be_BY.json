@@ -77,6 +77,9 @@
       "Close this banner": [
         "Закрыць гэты банер"
       ],
+      "Configure SAML": [
+        "Канфігурацыя SAML"
+      ],
       "Confirm": [
         "Пацвердзіць"
       ],
@@ -260,6 +263,9 @@
       "Hide plan features": [
         "Схаваць функцыі тарыфнага плана"
       ],
+      "Import new SAML metadata": [
+        "Імпартаваць новыя метаданыя SAML"
+      ],
       "Increase": [
         "Павялічыць"
       ],
@@ -338,6 +344,9 @@
       "Remove bonuses": [
         "Выдаліць бонусы"
       ],
+      "Remove domain": [
+        "Выдаліць дамен"
+      ],
       "Remove gift code": [
         "Выдаліць падарункавы код"
       ],
@@ -389,11 +398,17 @@
       "Save address": [
         "Захаваць адрас"
       ],
+      "Save SAML configuration": [
+        "Захаваць канфігурацыю SAML"
+      ],
       "Search": [
         "Пошук"
       ],
       "Search countries": [
         "Пошук краін"
+      ],
+      "See DNS TXT record": [
+        "Паглядзець запіс DNS TXT"
       ],
       "See how": [
         "Паглядзець як"
@@ -403,6 +418,9 @@
       ],
       "Select ${ planTitle }": [
         "Выбраць ${ planTitle }"
+      ],
+      "Select file": [
+        "Выбраць файл"
       ],
       "Send code": [
         "Адправіць код"
@@ -2082,6 +2100,12 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Перайдзіце на тарыфны план для бізнесу з больш чым 1 карыстальнікам, каб атрымаць падтрымку шматкарыстальніцкага рэжыму."
       ],
+      "Please upload an xml file": [
+        "Запампуйце файл xml"
+      ],
+      "Please upload only 1 file": [
+        "Запампуйце толькі 1 файл"
+      ],
       "Process aborted": [
         "Працэс перарваны"
       ],
@@ -2132,6 +2156,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
+      ],
+      "Unable to upload file": [
+        "Немагчыма запампаваць файл"
       ],
       "Unknown error": [
         "Невядомая памылка"
@@ -2770,6 +2797,11 @@
         "Імя карыстальніка"
       ]
     },
+    "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Дадайце гэты запіс у свой дамен на кантрольнай панэлі свайго рэгістратара даменных імён"
+      ]
+    },
     "Human verification method": {
       "Email": [
         "Электронная пошта"
@@ -2908,6 +2940,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Дадайце яшчэ адзін слой абароны ў ваш уліковы запіс. Вам неабходна будзе пацвярджаць сваю асобу з дапамогай 2ФА пры кожным уваходзе."
       ],
+      "Add domain": [
+        "Дадаць дамен"
+      ],
       "Add server (${ availableAddedCount } available)": [
         "Дадаць сервер (${ availableAddedCount } даступны)",
         "Дадаць сервер (${ availableAddedCount } даступна)",
@@ -2971,6 +3006,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Вы сапраўды хочаце пазбавіць гэтага карыстальніка правоў адміністратара?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "Вы ўпэўнены, што хочаце выдаліць дамен ${ boldDomain }?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Папрасіце адміністратара сваёй арганізацыі наладзіць шлюзы."
       ],
@@ -3022,8 +3060,20 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы праверачны код на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Azure or Onelogin. This will enable SAML for the whole organization.": [
+        "Канфігурацыя аўтэнтыфікацыі SAML для вашай арганізацыі пры дапамозе пастаўшчыка пасведчанняў (такіх, як Okta, Azure або Onelogin). Гэта ўключыць SAML для ўсёй арганізацыі."
+      ],
       "Continue with ${ freeName }": [
         "Працягнуць з ${ freeName }"
+      ],
+      "Copied to clipboard": [
+        "Скапіявана ў буфер абмену"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Скапіюйце і ўстаўце гэты URL-адрас у поле URL-адраса ACS (Assertion Consumer Service) вашага пастаўшчыка пасведчанняў."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Скапіюйце і ўстаўце гэты URL-адрас у поле Entity ID вашага пастаўшчыка пасведчанняў."
       ],
       "Copy the suggested password to clipboard": [
         "Скапіяваць прапанаваны пароль у буфер абмену"
@@ -3079,11 +3129,23 @@
       "Discover ProtectBuy logo": [
         "Лагатып Discover ProtectBuy"
       ],
+      "DNS TXT record": [
+        "Запіс DNS TXT"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "НЕ забывайце гэты пароль. Калі вы яго забудзеце, то не зможаце кіраваць сваёй арганізацыяй."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "НЕ забывайце гэты пароль. Калі вы яго забудзеце, то не зможаце аўтарызавацца або расшыфраваць свае паведамленні."
+      ],
+      "Domain ownership failed verification.": [
+        "Збой праверкі ўладальніка дамена."
+      ],
+      "Domain ownership not verified.": [
+        "Уладальнік дамена не правераны."
+      ],
+      "Domain ownership verified.": [
+        "Уладальнік дамена правераны."
       ],
       "Done": [
         "Гатова"
@@ -3100,6 +3162,12 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Спампуйце вашу ўлюблёную праграму сёння і прыватнасць застанецца з вамі ў любым месцы."
       ],
+      "Drop file here to upload": [
+        "Перацягніце файл сюды, каб запампаваць"
+      ],
+      "Drop to import": [
+        "Перацягніце для імпартавання"
+      ],
       "Each code can only be used once": [
         "Кожны код можа выкарыстоўвацца толькі адзін раз"
       ],
@@ -3114,6 +3182,9 @@
       ],
       "Emailing preference saved": [
         "Параметры адпраўкі пошты захаваны"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "URL-адрас канцавога пункта атрыманы ад вашага пастаўшчыка пасведчанняў (напрыклад, https://idp.example.com/sso/saml)."
       ],
       "Enhance your network security": [
         "Паляпшэнне бяспекі вашай сеткі"
@@ -3187,8 +3258,14 @@
       "Get ${ upsellPlanName }": [
         "Атрымаць тарыфны план ${ upsellPlanName }"
       ],
+      "Go to your identity provider, get the the SAML metadata for ${ appName } and import it here.": [
+        "Перайдзіце да свайго пастаўшчыка пасведчанняў, каб атрымаць метаданыя SAML для ${ appName } і імпартаваць іх сюды."
+      ],
       "here": [
         "тут"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Публічны ключ пастаўшчыка пасведчанняў для подпісу сцвярджэння аўтэнтыфікацыі. Павінна быць месцам для спампоўвання або капіявання хэш сертыфіката ад пастаўшчыка пасведчанняў. Проста ўстаўце хэш сертыфіката ў тэкставае поле."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Калі іншы адміністратар змяніў гэты пароль, вам неабходна будзе спытаць у яго новы пароль арганізацыі."
@@ -3352,6 +3429,9 @@
       "Optional": [
         "Неабавязкова"
       ],
+      "or ${ selectFileButton }": [
+        "або ${ selectFileButton }"
+      ],
       "Or select a particular server:": [
         "Або выберыце пэўны сервер:"
       ],
@@ -3481,6 +3561,9 @@
       "Revoke certificate ${ name }": [
         "Адклікаць сертыфікат ${ name }"
       ],
+      "SAML configuration saved": [
+        "Канфігурацыя SAML захавана"
+      ],
       "Save ${ percentage }": [
         "Эканомія ${ percentage }"
       ],
@@ -3528,6 +3611,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Некаторыя з вашых даступных сервераў можна выкарыстоўваць толькі ў вызначаных краінах у сувязі з нядаўнім выдаленнем"
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Пазначыць дамен, які можна выкарыстоўваць для аўтэнтыфікацыі з SAML SSO."
       ],
       "Step ${ step }": [
         "Крок ${ step }",
@@ -3640,6 +3726,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Гэты карыстальнік з'яўляецца адказным за плацяжы ў вашай арганізацыі. Паніжэнне правоў гэтага ўдзельніка прывядзе да таго, што за плацяжы арганізацыі будзеце адказваць вы."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Гэта праверка можа заняць да адной гадзіны. Вы можаце бяспечна працягваць на наступных кроках."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Гэта скасуе вашу бягучую платную падпіску і вы страціце ўсе перавагі пастаяннага карыстальніка, якія вы назапасілі."
       ],
@@ -3666,6 +3755,9 @@
       ],
       "to ${ product } Business": [
         "у ${ product } Business"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Каб дазволіць дамену ${ boldDomainName } выкарыстоўваць SAML SSO, вы павінны праверыць яго ўладальніка дадаўшы наступны запіс DNS TXT у свой дамен у вашым пастаўшчыку DNS."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Звяжыцеся з намі, каб скасаваць сваю падпіску"
@@ -3727,6 +3819,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "На жаль, для гэтага ўліковага запісу адсутнічаюць метады аднаўлення."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "Унікальны ідэнтыфікатар згенерыраваны вашым пастаўшчыком пасведчанняў. Звычайна ён уяўляе сабой URL-адрас, які ўключае назву вашага пастаўшчыка пасведчанняў (напрыклад, https://idp.example.com/XXXXX)."
+      ],
       "Unsaved changes": [
         "Незахаваныя змены"
       ],
@@ -3765,6 +3860,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Праверка адкрые новую ўкладку, адключыце блакіроўку ўсплывальных вокнаў. З вас не будуць спаганяцца грашовыя сродкі. Любая сума, якая выкарыстоўваецца для праверкі вашай карткі, будзе неадкладна вернута."
+      ],
+      "Verify domain": [
+        "Праверыць дамен"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Пацвердзіце свае асабістыя даныя пры дапамозе аднаразовага пароля з абмежаваным тэрмінам дзеяння з праграмы аўтэнтыфікацыі"
@@ -3840,6 +3938,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Мы паляпшаем ваш бягучы тарыфны план на больш прасунуты, які прапануе больш функцый за тую ж самую плату. Пакуль наша сістэма абнаўляе тарыфны план, вы не зможаце яго змяніць. Мы адправім вам ліст, як толькі ўсё будзе гатова."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "Пры ўключэнні SAML для ${ appName } у вашым пастаўшчыку пасведчанняў, вам магчыма будзе прапанавана скарыстацца зваротным выклікам URL-адраса (ACS) і ідэнтыфікатарам імітэнта. Проста скапіюйце, а потым устаўце даныя ніжэй у палі вашага пастаўшчыка пасведчанняў."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Пры наладжванні двухфактарнай аўтэнтыфікацыі, мы забяспечваем вас кодамі аднаўлення, якія вы можаце выкарыстаць для ўваходу, калі страцілі доступ да праграмы аўтэнтыфікацыі."
@@ -4003,6 +4104,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Вашы існуючыя паведамленні, календары, або кантакты будуць заблакіраваны. Вам неабходна фраза аднаўлення або ${ oldPassword }, каб аднавіць гэтыя даныя."
       ],
+      "Your files will be encrypted and then saved": [
+        "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "З намі ваша інфармацыя ў бяспецы. Мы будзем звязвацца з вамі, толькі па меры неабходнасці, каб забяспечыць нашымі сэрвісамі."
       ],
@@ -4155,11 +4259,20 @@
       "Allow recovery by phone": [
         "Дазволіць аднаўленне доступу па нумары тэлефона"
       ],
+      "Allowed domain": [
+        "Дазволены дамен"
+      ],
+      "Allowed Domain": [
+        "Дазволены дамен"
+      ],
       "Amount": [
         "Сума"
       ],
       "Amount due": [
         "Да аплаты"
+      ],
+      "Assertion Consumer Service URL": [
+        "URL-адрас службы сцверджання кліентаў (ACS)"
       ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
@@ -4284,6 +4397,9 @@
       "Do you have any suggestions for our team?": [
         "Ці ёсць у вас нейкія прапановы для нашай каманды?"
       ],
+      "e.g. example.com": [
+        "напрыклад, pryklad.com"
+      ],
       "Email": [
         "Электронная пошта"
       ],
@@ -4314,6 +4430,9 @@
       "Interval": [
         "Інтэрвал"
       ],
+      "Issuer ID": [
+        "Ідэнтыфікатар імітэта"
+      ],
       "Keep me signed in": [
         "Заставацца ў сістэме"
       ],
@@ -4331,6 +4450,15 @@
       ],
       "Main": [
         "Галоўная"
+      ],
+      "Metadata file for ${ appName }": [
+        "Метаданыя файла для ${ appName }"
+      ],
+      "Metadata URL for ${ appName }": [
+        "Метаданыя URL-адрас для ${ appName }"
+      ],
+      "Method for importing metadata": [
+        "Метад для імпартавання метаданых"
       ],
       "Moderate NAT": [
         "Умераны NAT"
@@ -4428,6 +4556,9 @@
       "Proration": [
         "Прапарцыйнае размеркаванне"
       ],
+      "Public certificate (X.509)": [
+        "Публічны сертыфікат (X.509)"
+      ],
       "Recovery email address": [
         "Адрас электроннай пошты для аднаўлення доступу"
       ],
@@ -4436,6 +4567,9 @@
       ],
       "Recovery phrase": [
         "Фраза аднаўлення"
+      ],
+      "Reply (ACS) URL": [
+        "URL-адрас адказу (ACS)"
       ],
       "Require 2FA for administrators": [
         "Патрабаваць 2ФА для адміністратараў"
@@ -4452,6 +4586,15 @@
       "Select your plan": [
         "Выберыце тарыфны план"
       ],
+      "Single sign-on Entity ID": [
+        "Адзіны ўваход Entity ID"
+      ],
+      "Single sign-on entity ID": [
+        "Адзіны ўваход Entity ID"
+      ],
+      "Single sign-on URL": [
+        "Адзіны ўваход URL-адраса"
+      ],
       "Start date": [
         "Дата пачатку"
       ],
@@ -4467,6 +4610,9 @@
       "Two-password mode": [
         "Рэжым двух пароляў"
       ],
+      "Type": [
+        "Тып"
+      ],
       "User": [
         "Карыстальнік"
       ],
@@ -4475,6 +4621,9 @@
       ],
       "Username": [
         "Імя карыстальніка"
+      ],
+      "Value": [
+        "Значэнне"
       ],
       "Verification code": [
         "Праверачны код"
@@ -4518,6 +4667,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "Абнаўленні прадукту ${ app }"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "Апавяшчэнні ${ BRAND_NAME } бэта-версій"
       ],
@@ -4882,12 +5034,6 @@
         "${ n } падключэнняў па VPN",
         "${ n } падключэнні па VPN"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } падключэнне па VPN на карыстальніка",
-        "${ n } падключэнні па VPN на карыстальніка",
-        "${ n } падключэнняў па VPN на карыстальніка",
-        "${ n } падключэнні па VPN на карыстальніка"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімам",
         "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімамі",
@@ -4908,9 +5054,6 @@
       ],
       "${ size } storage per user": [
         "Аб'ём сховішча на карыстальніка: ${ size }"
-      ],
-      "1 free VPN connection in total": [
-        "Агулам 1 бясплатнае падключэнне па VPN"
       ],
       "1 user": [
         "1 карыстальнік"
@@ -5163,6 +5306,12 @@
       ],
       "Unlimited volume/bandwidth": [
         "Неабмежаваны аб'ём даных і паласа прапускання"
+      ],
+      "Up to ${ n } user": [
+        "Да ${ n } карыстальніка",
+        "Да ${ n } карыстальнікаў",
+        "Да ${ n } карыстальнікаў",
+        "Да ${ n } карыстальнікаў"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Да ${ totalStorageSize } сховішча"
@@ -5432,8 +5581,8 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "У працоўныя дні каманда падтрымкі кліентаў ${ BRAND_NAME } дапаможа вам на працягу 24 гадзін пасля атрымання запыту"
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Адно падключэнне па VPN дазваляе адной прыладзе падключыцца да ${ BRAND_NAME } VPN у любы час. Напрыклад, каб падключыць адначасова да ${ BRAND_NAME_TWO } VPN тэлефон і ноўтбук, вам спатрэбіцца два падключэнні па VPN."
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Адно падключэнне па VPN дазваляе адной прыладзе падключыцца да ${ VPN_APP_NAME } у любы час. Напрыклад, каб падключыць адначасова да ${ VPN_APP_NAME } тэлефон і ноўтбук, вам спатрэбіцца два падключэнні па VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Магчымасць прагляду непрыватных уваходных лістоў карыстальнікаў так, як гэта робіць сам карыстальнік, уключаючы поўную інфармацыю пра паведамленні і кантактныя звесткі"
@@ -5643,6 +5792,9 @@
       ]
     },
     "Option": {
+      "Automatic (${ value })": [
+        "Аўтаматычна (${ value })"
+      ],
       "Country configs": [
         "Канфігурацыі краіны"
       ],
@@ -5873,6 +6025,15 @@
       ],
       "Confirm": [
         "Пацвердзіць"
+      ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "напрыклад, https://example.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "напрыклад, https://idp.example.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "напрыклад, https://idp.example.com/XXXXX"
       ],
       "Email address": [
         "Адрас электроннай пошты"
@@ -6657,6 +6818,12 @@
         "${ n } календароў на карыстальніка",
         "${ n } календары на карыстальніка"
       ],
+      "${ n } free VPN connection per user": [
+        "${ n } бясплатнае падключэнне па VPN на карыстальніка",
+        "${ n } бясплатныя падключэнні па VPN на карыстальніка",
+        "${ n } бясплатных падключэнняў па VPN на карыстальніка",
+        "${ n } бясплатных падключэнняў па VPN на карыстальніка"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } высакахуткаснае падключэнне па VPN",
         "${ n } высакахуткасныя падключэнні па VPN",
@@ -6899,6 +7066,9 @@
       ]
     },
     "Success message": {
+      "Domain deleted": [
+        "Дамен выдалены"
+      ],
       "Sessions revoked": [
         "Сеансы адкліканы"
       ],
@@ -7200,6 +7370,9 @@
       "Delete": [
         "Выдаліць"
       ],
+      "Delete ${ value }": [
+        "Выдаліць ${ value }"
+      ],
       "Delete account": [
         "Выдаліць уліковы запіс"
       ],
@@ -7268,6 +7441,12 @@
       ],
       "Email subscriptions": [
         "Падпіскі электроннай пошты"
+      ],
+      "Enter endpoints into your identity provider": [
+        "Увядзіце канцавыя пункты ў свайго пастаўшчыка пасведчанняў"
+      ],
+      "Enter SAML metadata": [
+        "Увядзіце метаданыя SAML"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Увядзіце падрабязнасці вашага ўліковага запісу ${ BRAND_NAME }, каб далучыцца да бэта-праграмы ${ app }"
@@ -7395,6 +7574,9 @@
       "Recovery": [
         "Аднаўленне"
       ],
+      "Remove domain": [
+        "Выдаліць дамен"
+      ],
       "Remove user?": [
         "Выдаліць карыстальніка?"
       ],
@@ -7424,6 +7606,9 @@
       ],
       "Revoke certificate": [
         "Адклікаць сертыфікат"
+      ],
+      "SAML authentication": [
+        "Аўтэнтыфікацыя SAML"
       ],
       "Select a plan": [
         "Выбар тарыфнага плана"
@@ -7470,11 +7655,20 @@
       "Signed in to member account": [
         "Уваход ва ўліковы запіс удзельніка"
       ],
+      "Single Sign-On": [
+        "Адзіны ўваход"
+      ],
       "Status": [
         "Статус"
       ],
       "Subscription": [
         "Падпіска"
+      ],
+      "Successfully created ${ n } user account": [
+        "Паспяхова створаны ${ n } уліковы запіс карыстальніка",
+        "Паспяхова створана ${ n } уліковыя запісы карыстальніка",
+        "Паспяхова створана ${ n } уліковых запісаў карыстальніка",
+        "Паспяхова створана ${ n } уліковых запісаў карыстальніка"
       ],
       "Summary": [
         "Зводка"
@@ -7597,11 +7791,26 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Аўтаматычна пераключацца паміж вашымі пажаданымі тэмамі для дня і ночы згодна з начным і дзённым рэжымам вашай сістэмы."
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Скапіюйце і ўстаўце гэты URL-адрас у поле ACS (Assertion Consumer Service) URL-адраса ваша пастаўшчыка пасведчанняў."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Скапіюйце і ўстаўце гэты URL-адрас у поле Entity ID вашага пастаўшчыка пасведчанняў."
+      ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "URL-адрас канцавога пункта ад пастаўшчыка пасведчанняў (напрыклад, https://idp.example.com/sso/saml)"
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Публічны ключ пастаўшчыка пасведчанняў для подпісу сцвярджэння аўтэнтыфікацыі. Атрымайце сертыфікаваны хэш ад свайго пастаўшчыка пасведчанняў."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Калі вы купілі падарункавы код або атрымалі яго ад нашай службы падтрымкі, то можаце ўвесці яго тут."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Удзельнікі, якія не выкарыстоўваць 2ФА, атрымаюць ліст з просьбай як мага хутчэй уключыць двухфактарную аўтэнтыфікацыю."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Пазначыць дамен, які можна выкарыстоўваць для аўтэнтыфікацыі з SAML SSO"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Новы перыяд аплаты пачнецца ў ${ formattedTime }"
@@ -7611,6 +7820,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Выбраная тэма будзе актыўна, калі ў вашай сістэме зададзены \"светлы рэжым\""
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Звычайна гэта URL-адрас, які змяшчае назву вашага пастаўшчыка пасведчанняў."
       ],
       "Verified email address": [
         "Адрас электроннай пошты правераны"
@@ -7659,7 +7871,7 @@
       ]
     },
     "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
+      "SSO user provided by your identity provider": [
         "Карыстальнік SSO прадстаўляецца вашым пастаўшчыком пасведчанняў"
       ]
     },

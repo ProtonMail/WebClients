@@ -5774,6 +5774,14 @@
         "Часть содержимого вашего календаря не поддерживается и не будет импортирована."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } уже был загружен"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
@@ -8050,14 +8058,6 @@
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Обнаружены дополнительные дубликаты ключей. Для получения дополнительной информации загрузите их по отдельности."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } уже был загружен"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Когда включено, вложенные папки наследуют цвет родительской папки."
@@ -10159,12 +10159,6 @@
         "${ n } подключений к VPN",
         "${ n } подключений к VPN"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } подключение к VPN на пользователя",
-        "${ n } подключения к VPN на пользователя",
-        "${ n } подключений к VPN на пользователя",
-        "${ n } подключений к VPN на пользователя"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } с ${ n } псевдонимом hide-my-email",
         "${ PASS_APP_NAME } с ${ n } псевдонимами hide-my-email",
@@ -10185,9 +10179,6 @@
       ],
       "${ size } storage per user": [
         "Объем хранилища на пользователя: ${ size }"
-      ],
-      "1 free VPN connection in total": [
-        "Всего 1 бесплатное подключение к VPN"
       ],
       "1 user": [
         "1 пользователь"
@@ -10750,9 +10741,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "В рабочие дни получайте помощь от Службы Поддержки Клиентов ${ BRAND_NAME } в течение 24 часов после поступления запроса"
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Одно подключение к VPN позволяет одному устройству подключаться к ${ BRAND_NAME } VPN за раз. Например, чтобы одновременно подключить к ${ BRAND_NAME_TWO } VPN телефон и ноутбук, необходимо два подключения к VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Возможность просмотра публичных папок входящих сообщений пользователей, как это делает сам пользователь, включая полную информацию о сообщениях и контактах"
@@ -14609,11 +14597,6 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "Пользователь SSO, предоставленный вашим поставщиком идентификационных данных"
       ]
     },
     "Validation": {

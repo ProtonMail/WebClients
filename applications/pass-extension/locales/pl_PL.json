@@ -278,6 +278,9 @@
       "Pass for iOS": [
         "Proton Pass na iOS"
       ],
+      "Pin item": [
+        "Przypnij element"
+      ],
       "Refresh the page": [
         "Odśwież stronę"
       ],
@@ -364,6 +367,9 @@
       ],
       "Try again": [
         "Spróbuj ponownie"
+      ],
+      "Unpin item": [
+        "Odepnij element"
       ],
       "Update": [
         "Zaktualizuj"
@@ -530,11 +536,17 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\" nie powiodło się"
       ],
+      "Failed to pin item": [
+        "Nie udało się przypiąć elementu"
+      ],
       "Failed to remove user's access.": [
         "Nie udało się usunąć uprawień użytkownika."
       ],
       "Failed to transfer this vault's ownership.": [
         "Nie udało się zmienić właściciela sejfu."
+      ],
+      "Failed to unpin item": [
+        "Nie udało się odpiąć elementu"
       ],
       "File could not be parsed": [
         "Plik nie mógł zostać przetworzony"
@@ -735,6 +747,12 @@
         "${ memberCount } użytkowników",
         "${ memberCount } użytkowników",
         "${ memberCount } użytkowników"
+      ],
+      "${ n } item": [
+        "${ n } element",
+        "${ n } elementy",
+        "${ n } elementów",
+        "${ n } elementów"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } będzie wyświetlał ikonę stron przez anonimową proxy ${ BRAND_NAME }."
@@ -954,6 +972,12 @@
       ],
       "Item successfully moved": [
         "Element został przeniesiony"
+      ],
+      "Item successfully pinned": [
+        "Element został przypięty"
+      ],
+      "Item successfully unpinned": [
+        "Element został odpięty"
       ],
       "Leaving vault...": [
         "Opuszczanie sejfu..."
@@ -1624,6 +1648,22 @@
         "Utworzysz"
       ]
     },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Wpisz kod PIN"
+      ],
+      "Sign in to your account": [
+        "Zaloguj się"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Odblokuj ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Witaj w ${ brandNameJSX }"
+      ]
+    },
     "Onboarding": {
       "Welcome to ${ appName }": [
         "Witaj w ${ appName }"
@@ -1830,6 +1870,9 @@
       ],
       "Pin the extension": [
         "Przypnij rozszerzenie"
+      ],
+      "Pinned (${ items.length })": [
+        "Przypięte (${ items.length })"
       ],
       "Secure your data": [
         "Zabezpiecz swoje dane"

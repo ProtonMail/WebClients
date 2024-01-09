@@ -2760,6 +2760,11 @@
         "Invitert adresse finnes ikke"
       ]
     },
+    "Error changing answer of a calendar invitation": {
+      "Error changing answer": [
+        "Feil ved endring av svar"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Det oppstod en feil under lesing av filen ${ formattedFilename }. Filen har ikke riktig format."
@@ -5504,6 +5509,9 @@
       "Auto": [
         "Auto"
       ],
+      "Automatic (${ value })": [
+        "Automatisk (${ value })"
+      ],
       "Create new group": [
         "Opprett ny gruppe"
       ],
@@ -6627,6 +6635,9 @@
       "Delete ${ count } contact group": [
         "Slett ${ count } kontaktgruppe",
         "Slett ${ count } kontaktgrupper"
+      ],
+      "Delete ${ value }": [
+        "Slett ${ value }"
       ],
       "Delete event": [
         "Slett hendelse"

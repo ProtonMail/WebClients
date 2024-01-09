@@ -5727,6 +5727,17 @@
         "Μέρος του περιεχομένου του ημερολογίου σας δεν υποστηρίζεται και δεν θα εισαχθεί."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
+      ],
+      "Selected color:": [
+        "Επιλεγμένο χρώμα:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
@@ -7920,17 +7931,6 @@
         "Η συνδρομή σας διαχειρίζεται απο το Mozilla. Επικοινωνήστε με την υποστήριξη του Mozilla."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Εντοπίστηκαν πρόσθετα διπλότυπα κλειδιά. Παρακαλούμε ανεβάστε τα μεμονωμένα για περισσότερες πληροφορίες."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Το κλειδί ${ fingerprint } έχει ήδη ανεβεί"
-      ],
-      "Selected color:": [
-        "Επιλεγμένο χρώμα:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Όταν είναι ενεργό, οι υποφάκελοι κληρονομούν το χρώμα του γονικού φακέλου."
@@ -9980,10 +9980,6 @@
         "${ n } σύνδεση VPN",
         "${ n } συνδέσεις VPN"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } σύνδεση VPN ανά χρήστη",
-        "${ n } συνδέσεις VPN ανά χρήστη"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } με ${ n } hide-my-email ψευδώνυμο",
         "${ PASS_APP_NAME } με ${ n } hide-my-email ψευδώνυμα"
@@ -10002,9 +9998,6 @@
       ],
       "${ size } storage per user": [
         "${ size } αποθηκευτικός χώρος ανά χρήστη"
-      ],
-      "1 free VPN connection in total": [
-        "συνολικά 1 δωρεάν σύνδεση VPN"
       ],
       "1 user": [
         "1 χρήστης"
@@ -10561,9 +10554,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Τις εργάσιμες ημέρες, λάβετε υποστήριξη από την ομάδα υποστήριξης πελατών ${ BRAND_NAME } εντός 24 ωρών από τα αιτήματα"
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Μία σύνδεση VPN επιτρέπει σε μία συσκευή να συνδεθεί στο ${ BRAND_NAME } VPN ανά πάσα στιγμή. Για παράδειγμα, για να συνδέσετε ένα τηλέφωνο και ένα φορητό υπολογιστή στο ${ BRAND_NAME_TWO } VPN ταυτόχρονα, χρειάζεστε δύο συνδέσεις VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Επιλογή προβολής εισερχομένων μην ιδιωτικού χρήστη όπως θα έκανε ο χρήστης, συμπεριλαμβανομένου του πλήρους μηνύματος και των στοιχείων επικοινωνίας"
@@ -14395,11 +14385,6 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "Χρήστης SSO που παρέχεται από τον Πάροχο Ταυτότητάς σας"
       ]
     },
     "Validation": {

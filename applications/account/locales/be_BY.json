@@ -3014,13 +3014,13 @@
     },
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
-        "Штодзень у ${ timesString }"
+        "Штодзень, ${ timesString }"
       ],
       "Every ${ interval } day, ${ timesString }": [
-        "Кожны ${ interval } дзень у ${ timesString }",
-        "Кожныя ${ interval } дні ў ${ timesString }",
-        "Кожных ${ interval } дзён у ${ timesString }",
-        "Кожных ${ interval } дзён у ${ timesString }"
+        "Кожны ${ interval } дзень, ${ timesString }",
+        "Кожныя ${ interval } дні, ${ timesString }",
+        "Кожных ${ interval } дзён, ${ timesString }",
+        "Кожных ${ interval } дзён, ${ timesString }"
       ]
     },
     "Daily recurring event, frequency (until)": {
@@ -5128,6 +5128,22 @@
         "з зорачкай"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "ліст быў адпраўлены ${ label }"
+      ],
+      "with attachments": [
+        "з далучэннямі"
+      ],
+      "without attachments": [
+        "без далучэнняў"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "ліст быў адпраўлены ${ label }"
+      ]
+    },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
         "Дадайце ўласны фільтр для выканання такіх аўтаматычных дзеянняў, як пазначэнне меткай або архіваванне паведамленняў."
@@ -5821,6 +5837,17 @@
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Частка змесціва вашага календара не падтрымліваецца і не будзе імпартавана."
+      ]
+    },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Ключ ${ fingerprint } ужо быў запампаваны"
+      ],
+      "Selected color:": [
+        "Выбраны колер:"
       ]
     },
     "Info": {
@@ -7313,7 +7340,7 @@
         "Некаторыя з вашых даступных сервераў можна выкарыстоўваць толькі ў вызначаных краінах у сувязі з нядаўнім выдаленнем"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF выкарыстоўваецца для абазначэння тых, каму дазволена адпраўляць пошту ад імя дамена. Мы настойліва рэкамендуем дадаць ${ MAIL_APP_NAME } у ваш запіс SPF. Дадайце наступны запіс TXT у ваш DNS. Звычайна гэта можна зрабіць на кантрольнай панэлі вашага рэгістратара даменных імён."
+        "SPF выкарыстоўваецца для пазначэння тых, каму дазволена адпраўляць пошту ад імя дамена. Мы настойліва рэкамендуем дадаць ${ MAIL_APP_NAME } у ваш запіс SPF. Дадайце наступны запіс TXT у ваш DNS. Звычайна гэта можна зрабіць на кантрольнай панэлі вашага рэгістратара даменных імён."
       ],
       "Stay tuned for future promotions.": [
         "Будзьце ў курсе будучых рэкламных акцый."
@@ -8103,17 +8130,6 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша падпіска кіруецца Mozilla. Звяжыцеся са службай падтрымкі Mozilla."
-      ]
-    },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Выяўлены дадатковы дублікат ключоў. Запампуйце іх паасобку для атрымання больш падрабязнай інфармацыі."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Ключ ${ fingerprint } ужо быў запампаваны"
-      ],
-      "Selected color:": [
-        "Выбраны колер:"
       ]
     },
     "Info - folder colouring feature": {
@@ -9457,6 +9473,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "Абнаўленні прадукту ${ app }"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "Апавяшчэнні ${ BRAND_NAME } бэта-версій"
       ],
@@ -9948,8 +9967,8 @@
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
         "Кожны ${ interval } месяц у ${ onDayString }, ${ timesString }",
         "Кожныя ${ interval } месяцы ў ${ onDayString }, ${ timesString }",
-        "Кожных ${ interval } месяцаў ${ onDayString }, ${ timesString }",
-        "Кожных ${ interval } месяцаў ${ onDayString }, ${ timesString }"
+        "Кожных ${ interval } месяцаў у ${ onDayString }, ${ timesString }",
+        "Кожных ${ interval } месяцаў у ${ onDayString }, ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "Штомесяц ${ onDayString }, ${ timesString }"
@@ -9959,8 +9978,8 @@
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
         "Кожны ${ interval } месяц у ${ onDayString }, ${ untilString }",
         "Кожныя ${ interval } месяцы ў ${ onDayString }, ${ untilString }",
-        "Кожныя ${ interval } месяцаў у ${ onDayString }, ${ untilString }",
-        "Кожныя ${ interval } месяцаў у ${ onDayString }, ${ untilString }"
+        "Кожных ${ interval } месяцаў у ${ onDayString }, ${ untilString }",
+        "Кожных ${ interval } месяцаў у ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
         "Штомесяц ${ onDayString }, ${ untilString }"
@@ -10264,12 +10283,6 @@
         "${ n } падключэнняў па VPN",
         "${ n } падключэнні па VPN"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } падключэнне па VPN на карыстальніка",
-        "${ n } падключэнні па VPN на карыстальніка",
-        "${ n } падключэнняў па VPN на карыстальніка",
-        "${ n } падключэнні па VPN на карыстальніка"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімам",
         "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімамі",
@@ -10290,9 +10303,6 @@
       ],
       "${ size } storage per user": [
         "Аб'ём сховішча на карыстальніка: ${ size }"
-      ],
-      "1 free VPN connection in total": [
-        "Агулам 1 бясплатнае падключэнне па VPN"
       ],
       "1 user": [
         "1 карыстальнік"
@@ -10545,6 +10555,12 @@
       ],
       "Unlimited volume/bandwidth": [
         "Неабмежаваны аб'ём даных і паласа прапускання"
+      ],
+      "Up to ${ n } user": [
+        "Да ${ n } карыстальніка",
+        "Да ${ n } карыстальнікаў",
+        "Да ${ n } карыстальнікаў",
+        "Да ${ n } карыстальнікаў"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Да ${ totalStorageSize } сховішча"
@@ -10862,8 +10878,8 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "У працоўныя дні каманда падтрымкі кліентаў ${ BRAND_NAME } дапаможа вам на працягу 24 гадзін пасля атрымання запыту"
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Адно падключэнне па VPN дазваляе адной прыладзе падключыцца да ${ BRAND_NAME } VPN у любы час. Напрыклад, каб падключыць адначасова да ${ BRAND_NAME_TWO } VPN тэлефон і ноўтбук, вам спатрэбіцца два падключэнні па VPN."
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Адно падключэнне па VPN дазваляе адной прыладзе падключыцца да ${ VPN_APP_NAME } у любы час. Напрыклад, каб падключыць адначасова да ${ VPN_APP_NAME } тэлефон і ноўтбук, вам спатрэбіцца два падключэнні па VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Магчымасць прагляду непрыватных уваходных лістоў карыстальнікаў так, як гэта робіць сам карыстальнік, уключаючы поўную інфармацыю пра паведамленні і кантактныя звесткі"
@@ -11296,6 +11312,9 @@
       ],
       "Auto": [
         "Аўтаматычна"
+      ],
+      "Automatic (${ value })": [
+        "Аўтаматычна (${ value })"
       ],
       "Country configs": [
         "Канфігурацыі краіны"
@@ -12929,6 +12948,12 @@
         "${ n } календароў на карыстальніка",
         "${ n } календары на карыстальніка"
       ],
+      "${ n } free VPN connection per user": [
+        "${ n } бясплатнае падключэнне па VPN на карыстальніка",
+        "${ n } бясплатныя падключэнні па VPN на карыстальніка",
+        "${ n } бясплатных падключэнняў па VPN на карыстальніка",
+        "${ n } бясплатных падключэнняў па VPN на карыстальніка"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } высакахуткаснае падключэнне па VPN",
         "${ n } высакахуткасныя падключэнні па VPN",
@@ -13791,6 +13816,9 @@
       "Decrypt key": [
         "Расшыфраваць ключ"
       ],
+      "Delete ${ value }": [
+        "Выдаліць ${ value }"
+      ],
       "Delete account": [
         "Выдаліць уліковы запіс"
       ],
@@ -14328,6 +14356,12 @@
       "Success": [
         "Паспяхова"
       ],
+      "Successfully created ${ n } user account": [
+        "Паспяхова створаны ${ n } уліковы запіс карыстальніка",
+        "Паспяхова створана ${ n } уліковыя запісы карыстальніка",
+        "Паспяхова створана ${ n } уліковых запісаў карыстальніка",
+        "Паспяхова створана ${ n } уліковых запісаў карыстальніка"
+      ],
       "Summary": [
         "Зводка"
       ],
@@ -14821,7 +14855,7 @@
       ]
     },
     "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
+      "SSO user provided by your identity provider": [
         "Карыстальнік SSO прадстаўляецца вашым пастаўшчыком пасведчанняў"
       ]
     },

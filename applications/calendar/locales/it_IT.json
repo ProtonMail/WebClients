@@ -2760,6 +2760,11 @@
         "L'indirizzo invitato non esiste"
       ]
     },
+    "Error changing answer of a calendar invitation": {
+      "Error changing answer": [
+        "Errore nella modifica della risposta"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Si è verificato un errore durante la lettura del file ${ formattedFilename }. Formato file errato."
@@ -5504,6 +5509,9 @@
       "Auto": [
         "Automatico"
       ],
+      "Automatic (${ value })": [
+        "Automatico (${ value })"
+      ],
       "Create new group": [
         "Crea nuovo gruppo"
       ],
@@ -6627,6 +6635,9 @@
       "Delete ${ count } contact group": [
         "Elimina ${ count } gruppo di contatti",
         "Elimina ${ count } gruppi di contatti"
+      ],
+      "Delete ${ value }": [
+        "Elimina ${ value }"
       ],
       "Delete event": [
         "Elimina evento"

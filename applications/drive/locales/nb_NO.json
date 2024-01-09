@@ -5346,6 +5346,18 @@
       "Link copied to clipboard": [
         "Kobling kopiert til utklippstavlen"
       ],
+      "Move ${ n } file": [
+        "Flytt ${ n } fil",
+        "Flytt ${ n } filer"
+      ],
+      "Move ${ n } folder": [
+        "Flytt ${ n } mappe",
+        "Flytt ${ n } mapper"
+      ],
+      "Move ${ n } item": [
+        "Flytt ${ n } element",
+        "Flytt ${ n } elementer"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Ikke nok ledig plass til å laste opp ${ formattedTotal }"
       ],
@@ -5457,6 +5469,9 @@
     "Option": {
       "Add to existing group": [
         "Legg til eksisterende gruppe"
+      ],
+      "Automatic (${ value })": [
+        "Automatisk (${ value })"
       ],
       "Create new group": [
         "Opprett ny gruppe"
@@ -6363,6 +6378,9 @@
         "Slett ${ count } kontaktgruppe",
         "Slett ${ count } kontaktgrupper"
       ],
+      "Delete ${ value }": [
+        "Slett ${ value }"
+      ],
       "Delete permanently": [
         "Slett permanent"
       ],
@@ -6375,8 +6393,8 @@
       "Discard changes?": [
         "Forkaste endringer?"
       ],
-      "Download ${ date }.zip": [
-        "Nedlasting ${ date }.zip"
+      "Download ${ date }": [
+        "Nedlasting ${ date }"
       ],
       "Download unverified file?": [
         "Laste ned ubekreftet fil?"

@@ -5817,6 +5817,17 @@
         "Časť obsahu vášho kalendára nie je podporovaná a nebude importovaná."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Boli zistené ďalšie duplicitné kľúče. Pre viac informácií ich prosím nahrajte jednotlivo."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Kľúč ${ fingerprint } už bol nahraný"
+      ],
+      "Selected color:": [
+        "Vybraná farba:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
@@ -8096,17 +8107,6 @@
         "Vaše predplatné je spravované Mozillou. Kontaktujte prosím Mozilla podporu."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Boli zistené ďalšie duplicitné kľúče. Pre viac informácií ich prosím nahrajte jednotlivo."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Kľúč ${ fingerprint } už bol nahraný"
-      ],
-      "Selected color:": [
-        "Vybraná farba:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Ak je táto možnosť povolená, podpriečinky zdedia farbu nadradených priečinkov."
@@ -10222,12 +10222,6 @@
         "${ n } VPN pripojení",
         "${ n } VPN pripojení"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN pripojenie na používateľa",
-        "${ n } VPN pripojenia na používateľa",
-        "${ n } VPN pripojení na používateľa",
-        "${ n } VPN pripojení na používateľa"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } s ${ n } hide-my-email aliasom",
         "${ PASS_APP_NAME } s ${ n } hide-my-email aliasmi",
@@ -10248,9 +10242,6 @@
       ],
       "${ size } storage per user": [
         "${ size } úložisko na používateľa"
-      ],
-      "1 free VPN connection in total": [
-        "Celkovo jedno bezplatné pripojenie VPN"
       ],
       "1 user": [
         "1 používateľ"
@@ -10819,9 +10810,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Počas pracovných dní získate podporu od tímu zákazníckej podpory ${ BRAND_NAME } do 24 hodín od vyžiadania"
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Jedno pripojenie VPN umožňuje jednému zariadeniu pripojiť sa k ${ BRAND_NAME } VPN kedykoľvek. Napríklad na súčasné pripojenie telefónu a notebooku k ${ BRAND_NAME_TWO } VPN potrebujete dve pripojenia VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Možnosť zobraziť nesúkromné schránky používateľov tak, ako by to urobil používateľ, vrátane celých správ a kontaktných údajov"
@@ -13731,6 +13719,9 @@
       "Decrypt key": [
         "Dešifrovať kľúč"
       ],
+      "Delete ${ value }": [
+        "Vymazať ${ value }"
+      ],
       "Delete account": [
         "Zmazať účet"
       ],
@@ -14758,11 +14749,6 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "Používateľ SSO od vášho poskytovateľa identít"
       ]
     },
     "Validation": {
