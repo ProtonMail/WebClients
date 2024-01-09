@@ -2760,6 +2760,11 @@
         "L'adresse e-mail invitée n'existe pas."
       ]
     },
+    "Error changing answer of a calendar invitation": {
+      "Error changing answer": [
+        "Erreur lors de la modification de réponse"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Une erreur s'est produite lors de la lecture de votre fichier ${ formattedFilename }. Le fichier n'a pas le bon format."
@@ -5504,6 +5509,9 @@
       "Auto": [
         "Automatique"
       ],
+      "Automatic (${ value })": [
+        "Automatique (${ value })"
+      ],
       "Create new group": [
         "Créer un nouveau groupe"
       ],
@@ -6627,6 +6635,9 @@
       "Delete ${ count } contact group": [
         "Supprimer ${ count } groupe de contacts",
         "Supprimer ${ count } groupes de contacts"
+      ],
+      "Delete ${ value }": [
+        "Supprimer ${ value } "
       ],
       "Delete event": [
         "Supprimer l'événement"

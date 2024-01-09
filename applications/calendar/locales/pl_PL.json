@@ -2812,6 +2812,11 @@
         "Zaproszony adres nie istnieje"
       ]
     },
+    "Error changing answer of a calendar invitation": {
+      "Error changing answer": [
+        "Wystąpił błąd podczas zmiany odpowiedzi"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Wystąpił błąd podczas odczytywania pliku ${ formattedFilename }. Format pliku jest nieprawidłowy."
@@ -5710,6 +5715,9 @@
       "Auto": [
         "Automatyczny"
       ],
+      "Automatic (${ value })": [
+        "Automatyczny (${ value })"
+      ],
       "Create new group": [
         "Utwórz nową grupę"
       ],
@@ -6909,6 +6917,9 @@
         "Usuń ${ count } grupy kontaktów",
         "Usuń ${ count } grup kontaktów",
         "Usuń ${ count } grupy kontaktów"
+      ],
+      "Delete ${ value }": [
+        "Usuń ${ value }"
       ],
       "Delete event": [
         "Usuń wydarzenie"
