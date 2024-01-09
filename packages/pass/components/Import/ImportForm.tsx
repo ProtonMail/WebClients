@@ -127,7 +127,12 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
                         </Bordered>
                     </Dropzone>
                     {needsPassphrase && (
-                        <Field name="passphrase" label={c('Label').t`Passphrase`} component={PasswordField} />
+                        <Field
+                            name="passphrase"
+                            label={c('Label').t`Passphrase`}
+                            component={PasswordField}
+                            autoComplete="off"
+                        />
                     )}
                     {providerHasUnsupportedItemTypes(form.values.provider) && (
                         <em className="block text-sm color-weak mb-2">
