@@ -77,6 +77,9 @@
       "Close this banner": [
         "Zamknij powiadomienie"
       ],
+      "Configure SAML": [
+        "Skonfiguruj SAML"
+      ],
       "Confirm": [
         "Potwierdź"
       ],
@@ -260,6 +263,9 @@
       "Hide plan features": [
         "Ukryj funkcje planu"
       ],
+      "Import new SAML metadata": [
+        "Importuj nowe metadane SAML"
+      ],
       "Increase": [
         "Zwiększ"
       ],
@@ -338,6 +344,9 @@
       "Remove bonuses": [
         "Zrezygnuj z bonusów"
       ],
+      "Remove domain": [
+        "Usuń domenę"
+      ],
       "Remove gift code": [
         "Usuń kod podarunkowy"
       ],
@@ -389,11 +398,17 @@
       "Save address": [
         "Zapisz adres"
       ],
+      "Save SAML configuration": [
+        "Zapisz konfigurację SAML"
+      ],
       "Search": [
         "Szukaj"
       ],
       "Search countries": [
         "Szukaj krajów"
+      ],
+      "See DNS TXT record": [
+        "Zobacz rekord TXT"
       ],
       "See how": [
         "Zobacz jak"
@@ -403,6 +418,9 @@
       ],
       "Select ${ planTitle }": [
         "Wybierz ${ planTitle }"
+      ],
+      "Select file": [
+        "Wybierz plik"
       ],
       "Send code": [
         "Wyślij kod"
@@ -2076,6 +2094,12 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Ulepsz do planu biznesowego z więcej niż 1 użytkownikiem, aby zarządzać wieloma użytkownikami."
       ],
+      "Please upload an xml file": [
+        "Prześlij plik XML"
+      ],
+      "Please upload only 1 file": [
+        "Prześlij tylko 1 plik"
+      ],
       "Process aborted": [
         "Proces został przerwany"
       ],
@@ -2126,6 +2150,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Użyj tylko liter, cyfr i znaków _.-"
+      ],
+      "Unable to upload file": [
+        "Nie można przesłać pliku"
       ],
       "Unknown error": [
         "Wystąpił nieznany błąd"
@@ -2902,6 +2929,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Dodaj dodatkową warstwę bezpieczeństwa do swojego konta. Ustaw uwierzytelnianie dwustopniowe podczas logowania się do konta."
       ],
+      "Add domain": [
+        "Dodaj domenę"
+      ],
       "Add server (${ availableAddedCount } available)": [
         "Dodaj serwer (${ availableAddedCount } dostępny)",
         "Dodaj serwer (${ availableAddedCount } dostępne)",
@@ -2965,6 +2995,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Czy na pewno chcesz cofnąć uprawnienia administratora temu użytkownikowi?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "Czy na pewno chcesz usunąć domenę ${ boldDomain }?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Poproś administratora swojej organizacji, aby skonfigurował bramy."
       ],
@@ -3018,6 +3051,15 @@
       ],
       "Continue with ${ freeName }": [
         "Kontynuuj z planem ${ freeName }"
+      ],
+      "Copied to clipboard": [
+        "Skopiowano do schowka"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Skopiuj i wklej ten adres URL do pola adresu URL ACS (Assertion Consumer Service) swojego dostawcy tożsamości"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Kopiuj i wklej adres URL do pola identyfikatora jednostki u swojego dostawcy tożsamości"
       ],
       "Copy the suggested password to clipboard": [
         "Kopiuj sugerowane hasło do schowka"
@@ -3073,11 +3115,23 @@
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
+      "DNS TXT record": [
+        "Rekord TXT"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "ZAPAMIĘTAJ to hasło. Jeśli je zapomnisz, nie będziesz w stanie zarządzać organizacją."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "ZAPAMIĘTAJ to hasło. Jeśli je zapomnisz, nie będziesz mógł zalogować się ani odszyfrować wiadomości."
+      ],
+      "Domain ownership failed verification.": [
+        "Weryfikacja domeny nie powiodła się."
+      ],
+      "Domain ownership not verified.": [
+        "Domena nie została zweryfikowana."
+      ],
+      "Domain ownership verified.": [
+        "Domena została zweryfikowana"
       ],
       "Done": [
         "Gotowe"
@@ -3094,6 +3148,12 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Pobierz swoją ulubioną aplikację i ciesz się prywatnością, gdziekolwiek jesteś."
       ],
+      "Drop file here to upload": [
+        "Upuść, aby przesłać"
+      ],
+      "Drop to import": [
+        "Upuść, aby zaimportować"
+      ],
       "Each code can only be used once": [
         "Każdy kod może zostać użyty tylko jeden raz"
       ],
@@ -3108,6 +3168,9 @@
       ],
       "Emailing preference saved": [
         "Ustawienia list mailingowych zostały zapisane"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "Adres URL punktu końcowego otrzymany od dostawcy tożsamości \n(np. https://idp.example.com/sso/saml)."
       ],
       "Enhance your network security": [
         "Zwiększ bezpieczeństwo sieci"
@@ -3180,6 +3243,9 @@
       ],
       "Get ${ upsellPlanName }": [
         "Wybierz plan ${ upsellPlanName }"
+      ],
+      "Go to your identity provider, get the the SAML metadata for ${ appName } and import it here.": [
+        "Przejdź do swojego dostawcy tożsamości, pobierz metadane SAML dla ${ appName } i zaimportuj je tutaj."
       ],
       "here": [
         "tutaj"
@@ -3346,6 +3412,9 @@
       "Optional": [
         "Opcjonalnie"
       ],
+      "or ${ selectFileButton }": [
+        "lub ${ selectFileButton }"
+      ],
       "Or select a particular server:": [
         "Lub wybierz serwer:"
       ],
@@ -3474,6 +3543,9 @@
       ],
       "Revoke certificate ${ name }": [
         "Unieważnij certyfikat ${ name }"
+      ],
+      "SAML configuration saved": [
+        "Konfiguracja SAML została zapisana"
       ],
       "Save ${ percentage }": [
         "Zaoszczędź ${ percentage }"
@@ -3721,6 +3793,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "Brak zapisanych metod odzyskiwania dla tego konta."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "Unikalny identyfikator generowany przez dostawcę tożsamości, zwykle w postaci adresu URL zawierającego nazwę dostawcy tożsamości (np. https://idp.example.com/XXXXX)."
+      ],
       "Unsaved changes": [
         "Niezapisane zmiany"
       ],
@@ -3759,6 +3834,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Otworzy się nowa karta w celu potwierdzenia płatności. Wyłącz blokadę wyskakujących okien. Twoje konto nie zostanie obciążone, kwota pobrana w celu zweryfikowania karty płatniczej, zostanie od razu zwrócona."
+      ],
+      "Verify domain": [
+        "Zweryfikuj domenę"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Zweryfikuj swoją tożsamość za pomocą kodu z aplikacji uwierzytelniającej"
@@ -3997,6 +4075,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Obecne wiadomości, kalendarze i kontakty zostaną zablokowane. Aby odzyskać te dane, będziesz potrzebować hasła odzyskiwania lub ${ oldPassword }."
       ],
+      "Your files will be encrypted and then saved": [
+        "Twoje pliki, przed zapisaniem, zostaną zaszyfrowane"
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Twoje dane są u nas bezpieczne. Skontaktujemy się z Tobą tylko wtedy, gdy będzie to konieczne."
       ],
@@ -4149,11 +4230,20 @@
       "Allow recovery by phone": [
         "Zezwalaj na odzyskiwanie przez telefon"
       ],
+      "Allowed domain": [
+        "Dozwolona domena"
+      ],
+      "Allowed Domain": [
+        "Dozwolona domena"
+      ],
       "Amount": [
         "Kwota"
       ],
       "Amount due": [
         "Do zapłaty"
+      ],
+      "Assertion Consumer Service URL": [
+        "Adres URL usługi ACS"
       ],
       "Attach screenshot(s)": [
         "Dołącz zrzuty ekranu"
@@ -4278,6 +4368,9 @@
       "Do you have any suggestions for our team?": [
         "Czy masz sugestie dla naszego zespołu?"
       ],
+      "e.g. example.com": [
+        "np. przyklad.pl"
+      ],
       "Email": [
         "E-mail"
       ],
@@ -4308,6 +4401,9 @@
       "Interval": [
         "Częstotliwość"
       ],
+      "Issuer ID": [
+        "Identyfikator dostawcy"
+      ],
       "Keep me signed in": [
         "Zapamiętaj mnie"
       ],
@@ -4325,6 +4421,15 @@
       ],
       "Main": [
         "Główny"
+      ],
+      "Metadata file for ${ appName }": [
+        "Plik metadanych dla ${ appName }"
+      ],
+      "Metadata URL for ${ appName }": [
+        "Adres URL metadanych dla ${ appName }"
+      ],
+      "Method for importing metadata": [
+        "Metoda importowania metadanych"
       ],
       "Moderate NAT": [
         "Umiarkowany NAT"
@@ -4422,6 +4527,9 @@
       "Proration": [
         "Dzielenie proporcjonalne"
       ],
+      "Public certificate (X.509)": [
+        "Certyfikat publiczny (X.509)"
+      ],
       "Recovery email address": [
         "Adres pomocniczy"
       ],
@@ -4446,6 +4554,15 @@
       "Select your plan": [
         "Wybierz plan"
       ],
+      "Single sign-on Entity ID": [
+        "Identyfikator jednostki"
+      ],
+      "Single sign-on entity ID": [
+        "Identyfikator jednostki"
+      ],
+      "Single sign-on URL": [
+        "Adres URL logowania SSO"
+      ],
       "Start date": [
         "Data rozpoczęcia"
       ],
@@ -4461,6 +4578,9 @@
       "Two-password mode": [
         "Tryb podwójnego hasła"
       ],
+      "Type": [
+        "Typ"
+      ],
       "User": [
         "Użytkownik"
       ],
@@ -4469,6 +4589,9 @@
       ],
       "Username": [
         "Nazwa użytkownika"
+      ],
+      "Value": [
+        "Wartość"
       ],
       "Verification code": [
         "Kod weryfikacyjny"
@@ -4512,6 +4635,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "Aktualizacje usługi ${ app }"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "Ogłoszenia ${ BRAND_NAME } beta"
       ],
@@ -4876,12 +5002,6 @@
         "${ n } połączeń VPN",
         "${ n } połączeń VPN"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } połączenie VPN na użytkownika",
-        "${ n } połączenia VPN na użytkownika",
-        "${ n } połączeń VPN na użytkownika",
-        "${ n } połączeń VPN na użytkownika"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } z ${ n } aliasem hide-my-email",
         "${ PASS_APP_NAME } z ${ n } aliasami hide-my-email",
@@ -4902,9 +5022,6 @@
       ],
       "${ size } storage per user": [
         "${ size } przestrzeni dyskowej na użytkownika"
-      ],
-      "1 free VPN connection in total": [
-        "Łącznie 1 darmowe połączenie VPN"
       ],
       "1 user": [
         "1 użytkownik"
@@ -5157,6 +5274,12 @@
       ],
       "Unlimited volume/bandwidth": [
         "Nielimitowana przepustowość"
+      ],
+      "Up to ${ n } user": [
+        "${ n } użytkownik",
+        "Do ${ n } użytkowników",
+        "Do ${ n } użytkowników",
+        "Do ${ n } użytkowników"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Do ${ totalStorageSize } przestrzeni dyskowej"
@@ -5426,8 +5549,8 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "W dni robocze otrzymasz odpowiedź od zespołu wsparcia klienta ${ BRAND_NAME } w ciągu 24 godzin od zgłoszenia"
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Jedno połączenie VPN pozwala jednemu urządzeniu połączyć się z usługą ${ BRAND_NAME } VPN w danym momencie. Na przykład, aby podłączyć telefon i laptop do ${ BRAND_NAME_TWO } VPN w tym samym czasie, potrzebujesz 2 połączenia VPN."
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Jedno połączenie VPN pozwala jednemu urządzeniu połączyć się z usługą ${ VPN_APP_NAME } w danym momencie. Na przykład, aby podłączyć telefon i laptop do ${ VPN_APP_NAME } w tym samym czasie, potrzebujesz 2 połączenia VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Możliwość przeglądania służbowych skrzynek odbiorczych użytkowników w taki sam sposób, w jaki robi to użytkownik, łącznie z pełnymi wiadomościami i szczegółami kontaktu"
@@ -5637,6 +5760,9 @@
       ]
     },
     "Option": {
+      "Automatic (${ value })": [
+        "Automatyczny (${ value })"
+      ],
       "Country configs": [
         "Konfiguracje kraju"
       ],
@@ -5867,6 +5993,15 @@
       ],
       "Confirm": [
         "Potwierdź"
+      ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "np. https://przyklad.pl/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "np. https://przyklad.pl/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "np. https://idp.przyklad.pl/XXXXX"
       ],
       "Email address": [
         "Adres e-mail"
@@ -6651,6 +6786,12 @@
         "${ n } kalendarzy na użytkownika",
         "${ n } kalendarzy na użytkownika"
       ],
+      "${ n } free VPN connection per user": [
+        "${ n } bezpłatne połączenie VPN na użytkownika",
+        "${ n } bezpłatne połączenia VPN na użytkownika",
+        "${ n } bezpłatnych połączeń VPN na użytkownika",
+        "${ n } bezpłatnych połączeń VPN na użytkownika"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } szybkie połączenie VPN",
         "${ n } szybkie połączenia VPN",
@@ -6893,6 +7034,9 @@
       ]
     },
     "Success message": {
+      "Domain deleted": [
+        "Domena została usunięta"
+      ],
       "Sessions revoked": [
         "Sesje zostały unieważnione"
       ],
@@ -7194,6 +7338,9 @@
       "Delete": [
         "Usuń"
       ],
+      "Delete ${ value }": [
+        "Usuń ${ value }"
+      ],
       "Delete account": [
         "Usuń konto"
       ],
@@ -7262,6 +7409,9 @@
       ],
       "Email subscriptions": [
         "Listy mailingowe"
+      ],
+      "Enter SAML metadata": [
+        "Wpisz metadane SAML"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Wpisz szczegóły konta ${ BRAND_NAME }, aby dołączyć do ${ app } w wersji beta"
@@ -7389,6 +7539,9 @@
       "Recovery": [
         "Odzyskiwanie"
       ],
+      "Remove domain": [
+        "Usuń domenę"
+      ],
       "Remove user?": [
         "Usunąć użytkownika?"
       ],
@@ -7418,6 +7571,9 @@
       ],
       "Revoke certificate": [
         "Unieważnij certyfikat"
+      ],
+      "SAML authentication": [
+        "Uwierzytelnianie SAML"
       ],
       "Select a plan": [
         "Wybierz plan"
@@ -7464,11 +7620,20 @@
       "Signed in to member account": [
         "Zalogowano na konto użytkownika"
       ],
+      "Single Sign-On": [
+        "Logowanie SSO"
+      ],
       "Status": [
         "Status"
       ],
       "Subscription": [
         "Subskrypcja"
+      ],
+      "Successfully created ${ n } user account": [
+        "Utworzono ${ n } konto użytkownika",
+        "Utworzono ${ n } konta użytkowników",
+        "Utworzono ${ n } kont użytkowników",
+        "Utworzono ${ n } kont użytkowników"
       ],
       "Summary": [
         "Podsumowanie"
@@ -7591,6 +7756,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Przełączaj się między motywami na dzień i noc, synchronizując je z systemowymi trybami dziennymi i nocnymi"
       ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Kopiuj i wklej adres URL do pola identyfikatora jednostki u swojego dostawcy tożsamości"
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Kupiony lub otrzymany kod podarunkowy możesz wpisać tutaj."
       ],
@@ -7653,7 +7821,7 @@
       ]
     },
     "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
+      "SSO user provided by your identity provider": [
         "Użytkownik SSO od dostawcy tożsamości"
       ]
     },

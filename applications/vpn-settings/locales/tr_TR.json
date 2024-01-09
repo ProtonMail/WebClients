@@ -77,6 +77,9 @@
       "Close this banner": [
         "Bu uyarıyı kapat"
       ],
+      "Configure SAML": [
+        "SAML yapılandırması"
+      ],
       "Confirm": [
         "Onayla"
       ],
@@ -260,6 +263,9 @@
       "Hide plan features": [
         "Tarife özelliklerini gizle"
       ],
+      "Import new SAML metadata": [
+        "Yeni SAML üst verilerini içe aktar"
+      ],
       "Increase": [
         "Artır"
       ],
@@ -338,6 +344,9 @@
       "Remove bonuses": [
         "Hediyeleri kaldır"
       ],
+      "Remove domain": [
+        "Etki alanını kaldır"
+      ],
       "Remove gift code": [
         "Hediye kodunu kaldır"
       ],
@@ -389,11 +398,17 @@
       "Save address": [
         "Adresi kaydet"
       ],
+      "Save SAML configuration": [
+        "SAML yapılandırmasını kaydet"
+      ],
       "Search": [
         "Arama"
       ],
       "Search countries": [
         "Ülke ara"
+      ],
+      "See DNS TXT record": [
+        "DNS TXT kaydını görüntüle"
       ],
       "See how": [
         "Nasıl yapıldığını görün"
@@ -403,6 +418,9 @@
       ],
       "Select ${ planTitle }": [
         "${ planTitle } tarifesini seçin"
+      ],
+      "Select file": [
+        "Dosya seçin"
       ],
       "Send code": [
         "Kodu gönder"
@@ -2066,6 +2084,12 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Birden çok kullanıcıyı yönetmek için lütfen 1 taneden fazla kullanıcı içeren kurumsal bir tarifeye geçin."
       ],
+      "Please upload an xml file": [
+        "Lütfen bir XML dosyası yükleyin"
+      ],
+      "Please upload only 1 file": [
+        "Lütfen yalnızca 1 dosya yükleyin"
+      ],
       "Process aborted": [
         "İşlem iptal edildi"
       ],
@@ -2116,6 +2140,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
+      ],
+      "Unable to upload file": [
+        "Dosya yüklenemedi"
       ],
       "Unknown error": [
         "Bilinmeyen sorun"
@@ -2736,6 +2763,11 @@
         "Kullanıcı adı"
       ]
     },
+    "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Etki alanı kayıt kuruluşunuzun panosundan etki alanınıza bu kaydı ekleyin"
+      ]
+    },
     "Human verification method": {
       "Email": [
         "E-posta"
@@ -2858,6 +2890,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Hesabınıza bir güvenlik katmanı daha ekleyin. Her oturum açtığınızda iki adımlı doğrulama ile kimliğinizi doğrulamanız gerekir."
       ],
+      "Add domain": [
+        "Etki alanı ekle"
+      ],
       "Add server (${ availableAddedCount } available)": [
         "Sunucu ekle (${ availableAddedCount } kullanılabilir)",
         "Sunucu ekle (${ availableAddedCount } kullanılabilir)"
@@ -2915,6 +2950,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Bu kullanıcının yönetici yetkilerini kaldırmak istediğinize emin misiniz?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "${ boldDomain } etki alanını kaldırmak istediğinize emin misiniz?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Kuruluş yöneticinizden ağ geçitlerini kurmasını isteyin."
       ],
@@ -2966,8 +3004,20 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Azure or Onelogin. This will enable SAML for the whole organization.": [
+        "Okta, Azure ya da Onelogin gibi bir kimlik hizmeti sağlayıcı ile kuruluşunuz için SAML kimlik doğrulamasını yapılandırın. Bu işlem, tüm kuruluş için SAML özelliğini etkinleştirir."
+      ],
       "Continue with ${ freeName }": [
         "${ freeName } ile ilerle"
+      ],
+      "Copied to clipboard": [
+        "Panoya kopyalandı"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Bu adresi kopyalayıp kimlik hizmeti sağlayıcınızın ACS (Assertion Consumer Service) URL alanına yapıştırın"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Bu adresi kopyalayıp kimlik hizmeti sağlayıcınızın varlık kimliği alanına yapıştırın"
       ],
       "Copy the suggested password to clipboard": [
         "Önerilen parolayı panoya kopyala"
@@ -3019,11 +3069,23 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logosu"
       ],
+      "DNS TXT record": [
+        "DNS TXT kaydı"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Bu parolayı UNUTMAYIN. Unutursanız, kuruluşunuzu yönetemezsiniz."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "Bu parolayı UNUTMAYIN. Unutursanız, oturum açamaz veya iletilerinizin şifresini çözemezsiniz."
+      ],
+      "Domain ownership failed verification.": [
+        "Etki alanının sahipliği doğrulanamadı."
+      ],
+      "Domain ownership not verified.": [
+        "Etki alanının sahipliği doğrulanmamış."
+      ],
+      "Domain ownership verified.": [
+        "Etki alanının sahipliği doğrulanmış."
       ],
       "Done": [
         "Tamamlandı"
@@ -3040,6 +3102,12 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Kullanmak istediğiniz uygulamayı indirin ve gizliliğinizi gittiğiniz her yere götürün."
       ],
+      "Drop file here to upload": [
+        "Yüklemek için dosyayı buraya bırakın"
+      ],
+      "Drop to import": [
+        "İçe aktarmak için bırakın"
+      ],
       "Each code can only be used once": [
         "Her kod yalnızca bir kez kullanılabilir"
       ],
@@ -3054,6 +3122,9 @@
       ],
       "Emailing preference saved": [
         "E-posta ayarı kaydedildi"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "Kimlik hizmeti sağlayıcınızın uç nokta adresi (örnek: https://idp.ornek.com/sso/saml)."
       ],
       "Enhance your network security": [
         "Ağ güvenliğinizi artırın"
@@ -3127,8 +3198,14 @@
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } tarifesini edinin"
       ],
+      "Go to your identity provider, get the the SAML metadata for ${ appName } and import it here.": [
+        "Kimlik hizmeti sağlayıcınıza gidin, ${ appName } için SAML üst verilerini alın ve buradan içe aktarın."
+      ],
       "here": [
         "buraya"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Kimlik hizmeti sağlayıcının, kimlik doğrulama isteklerini imzalamakta kullanacağı herkese açık anahtarı. Kimlik hizmeti sağlayıcıdan sertifika karmasının indirileceği veya kopyalanacağı bir yer bulunmalıdır. Sertifika karmasını metin alanı alanına yapıştırmanız yeterlidir."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Bu parolayı başka bir yönetici değiştirdiyse, ondan yeni kuruluş parolasını istemeniz gerekecek."
@@ -3292,6 +3369,9 @@
       "Optional": [
         "İsteğe bağlı"
       ],
+      "or ${ selectFileButton }": [
+        "ya da ${ selectFileButton }un"
+      ],
       "Or select a particular server:": [
         "Ya da belirli bir sunucuyu seçin:"
       ],
@@ -3417,6 +3497,9 @@
       "Revoke certificate ${ name }": [
         "${ name } sertifikasını geçersiz kıl"
       ],
+      "SAML configuration saved": [
+        "SAML yapılandırması kaydedildi"
+      ],
       "Save ${ percentage }": [
         "${ percentage } indirim"
       ],
@@ -3464,6 +3547,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Kullanılabileceğiniz sunuculardan bazıları, son kaldırma işlemleri nedeniyle yalnızca belirli ülkelerde kullanılabilir"
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "SAML tek oturum açma ile kimlik doğrulamasına izin verilecek alanı belirtin."
       ],
       "Step ${ step }": [
         "${ step }. adım",
@@ -3568,6 +3654,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Şu anda kuruluşunuzun ödemelerinden bu kullanıcı sorumludur. Bu kullanıcının yetki düzeyini düşürürseniz kuruluşunuzun ödemelerinden siz sorumlu olacaksınız."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Bu doğrulama bir saat kadar sürebilir. Güvenle sonraki adımlara geçebilirsiniz."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Bu işlem, var olan ücretli aboneliğinizi iptal edecek ve kazandığınız sadık müşteri özelliklerini kaybedeceksiniz."
       ],
@@ -3594,6 +3683,9 @@
       ],
       "to ${ product } Business": [
         "${ product } Business"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "${ boldDomainName } etki alanının SAML tek oturum açma kullanmasını sağlamak için, aşağıdaki DNS TXT kaydını DNS hizmeti sağlayıcınıza ekleyerek etki alanının sahipliğini doğrulamanız gerekir."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Aboneliğinizi iptal etmek için lütfen bizimle görüşün."
@@ -3655,6 +3747,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "Ne yazık ki bu hesap için bir kurtarma yöntemi kaydedilmemiş."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "Kimlik hizmeti sağlayıcınız tarafından oluşturulan, genellikle kimlik hizmeti sağlayıcının adının bulunduğu bir adres biçimindeki benzersiz kimlik (örnek: https://idp.ornek.com/XXXXX)."
+      ],
       "Unsaved changes": [
         "Kaydedilmemiş değişiklikler"
       ],
@@ -3693,6 +3788,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Doğrulama için yeni bir sekme açılacak. Lütfen açılır pencere engelleyicileri kapatın. Ödeme alınmayacak. Kartı doğrulamak için kullanılan herhangi bir miktar hemen geri ödenir."
+      ],
+      "Verify domain": [
+        "Etki alanını doğrula"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Kimliğinizi, kimlik doğrulama uygulamasından alacağınız zamana dayalı tek kullanımlık parola ile doğrulayın"
@@ -3768,6 +3866,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Geçerli tarifenizi aynı ücrete daha fazlasını sunan iyileştirilmiş bir tarifeye yükseltiyoruz. Sistemlerimiz güncellenmekte olduğundan bunu değiştiremezsiniz. İşlem tamamlandığında size bir e-posta göndereceğiz."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "Kimlik hizmeti sağlayıcınızda ${ appName } için SAML özelliğini etkinleştirirken geri çağırma (ACS) adresini ve yayıncı kimliğini kullanmanız istenebilir. Aşağıdaki verileri kopyalayıp kimlik hizmeti sağlayıcı alanlarına yapıştırmanız yeterlidir."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları vereceğiz."
@@ -3918,6 +4019,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Var olan iletileriniz, takvimleriniz veya kişileriniz kilitlenir. Bu verileri kurtarmak için kurtarma ifadenize veya ${ oldPassword }nıza gerek duyacaksınız."
       ],
+      "Your files will be encrypted and then saved": [
+        "Dosyalarınız şifrelendikten sonra kaydedilir"
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Bilgileriniz bizimle güvende olur. Sizinle yalnızca hizmetlerimizi sağlamak için gerekli olduğunda iletişim kuracağız."
       ],
@@ -4064,11 +4168,20 @@
       "Allow recovery by phone": [
         "Telefon ile hesap kurtarılabilsin"
       ],
+      "Allowed domain": [
+        "İzin verilen etki alanı"
+      ],
+      "Allowed Domain": [
+        "İzin verilen etki alanı"
+      ],
       "Amount": [
         "Tutar"
       ],
       "Amount due": [
         "Ödenecek tutar"
+      ],
+      "Assertion Consumer Service URL": [
+        "Assertion Consumer Service adresi"
       ],
       "Attach screenshot(s)": [
         "Ekran görüntüsü ekle"
@@ -4193,6 +4306,9 @@
       "Do you have any suggestions for our team?": [
         "Ekibimizden herhangi bir öneri aldınız mı?"
       ],
+      "e.g. example.com": [
+        "örnek: ornek.com"
+      ],
       "Email": [
         "E-posta"
       ],
@@ -4223,6 +4339,9 @@
       "Interval": [
         "Aralık"
       ],
+      "Issuer ID": [
+        "Yayıncı kimliği"
+      ],
       "Keep me signed in": [
         "Oturumum açık kalsın"
       ],
@@ -4240,6 +4359,15 @@
       ],
       "Main": [
         "Ana"
+      ],
+      "Metadata file for ${ appName }": [
+        "${ appName } için üst veriler dosyası"
+      ],
+      "Metadata URL for ${ appName }": [
+        "${ appName } için üst veriler adresi"
+      ],
+      "Method for importing metadata": [
+        "Üst verileri içe aktarma yöntemi"
       ],
       "Moderate NAT": [
         "Ilımlı NAT"
@@ -4337,6 +4465,9 @@
       "Proration": [
         "Hesap bakiyesi"
       ],
+      "Public certificate (X.509)": [
+        "Herkese açık sertifika (X.509)"
+      ],
       "Recovery email address": [
         "Kurtarma e-posta adresi"
       ],
@@ -4345,6 +4476,9 @@
       ],
       "Recovery phrase": [
         "Kurtarma ifadesi"
+      ],
+      "Reply (ACS) URL": [
+        "Yanıt (ACS) adresi"
       ],
       "Require 2FA for administrators": [
         "İki adımlı doğrulama yöneticiler için zorunlu olsun"
@@ -4361,6 +4495,15 @@
       "Select your plan": [
         "Tarifenizi seçin"
       ],
+      "Single sign-on Entity ID": [
+        "Tek oturum açma varlık kimliği"
+      ],
+      "Single sign-on entity ID": [
+        "Tek oturum açma varlık kimliği"
+      ],
+      "Single sign-on URL": [
+        "Tek oturum açma adresi"
+      ],
       "Start date": [
         "Başlangıç tarihi"
       ],
@@ -4376,6 +4519,9 @@
       "Two-password mode": [
         "İki parola özelliği"
       ],
+      "Type": [
+        "Tür"
+      ],
       "User": [
         "Kullanıcı"
       ],
@@ -4384,6 +4530,9 @@
       ],
       "Username": [
         "Kullanıcı adı"
+      ],
+      "Value": [
+        "Değer"
       ],
       "Verification code": [
         "Doğrulama kodu"
@@ -4763,10 +4912,6 @@
         "${ n } VPN bağlantısı",
         "${ n } VPN bağlantısı"
       ],
-      "${ n } VPN connection per user": [
-        "Her kullanıcı için ${ n } VPN bağlantısı",
-        "Her kullanıcı için ${ n } VPN bağlantısı"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } ve ${ n } hide-my-email takma adı",
         "${ PASS_APP_NAME } ve ${ n } hide-my-email takma adı"
@@ -4785,9 +4930,6 @@
       ],
       "${ size } storage per user": [
         "Her kullanıcı için ${ size } depolama alanı"
-      ],
-      "1 free VPN connection in total": [
-        "Toplam 1 ücretsiz VPN bağlantısı"
       ],
       "1 user": [
         "1 kullanıcı"
@@ -5297,9 +5439,6 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Çalışma günlerinde, isteklerin ardından 24 saat içinde ${ BRAND_NAME } müşteri destek ekibinden yardım alın"
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Bir VPN bağlantısı, herhangi bir zamanda bir aygıtın ${ BRAND_NAME } VPN hizmetine bağlanmasını sağlar. Örneğin, bir telefon ve bir dizüstü bilgisayardan aynı anda ${ BRAND_NAME_TWO } VPN bağlantısı kurmak için iki VPN bağlantınız olması gerekir."
-      ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Korunmayan kullanıcı e-posta kutularını, tam ileti ve kişi bilgileri ile birlikte kullanıcının yaptığı gibi görüntüleme seçeneği"
       ],
@@ -5730,6 +5869,15 @@
       ],
       "Confirm": [
         "Onayla"
+      ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "örnek: https://ornek.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "örnek: https://idp.ornek.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "örnek: https://idp.ornek.com/XXXXX"
       ],
       "Email address": [
         "E-posta adresi"
@@ -6681,6 +6829,9 @@
       ]
     },
     "Success message": {
+      "Domain deleted": [
+        "Etki alanı silindi"
+      ],
       "Sessions revoked": [
         "Oturumlar kapatıldı"
       ],
@@ -7047,6 +7198,12 @@
       "Email subscriptions": [
         "E-posta abonelikleri"
       ],
+      "Enter endpoints into your identity provider": [
+        "Kimlik hizmeti sağlayıcınızın uç noktalarını ekleyin"
+      ],
+      "Enter SAML metadata": [
+        "SAML üst verilerini ekleyin"
+      ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } Beta programına katılmak için ${ BRAND_NAME } hesabınızın bilgilerini yazın"
       ],
@@ -7171,6 +7328,9 @@
       "Recovery": [
         "Kurtarma"
       ],
+      "Remove domain": [
+        "Etki alanını kaldır"
+      ],
       "Remove user?": [
         "Kullanıcı kaldırılsın mı?"
       ],
@@ -7200,6 +7360,9 @@
       ],
       "Revoke certificate": [
         "Sertifikayı geçersiz kıl"
+      ],
+      "SAML authentication": [
+        "SAML kimlik doğrulaması"
       ],
       "Select a plan": [
         "Bir tarife seçin"
@@ -7245,6 +7408,9 @@
       ],
       "Signed in to member account": [
         "Üye hesabıyla oturum açıldı"
+      ],
+      "Single Sign-On": [
+        "Tek oturum ama"
       ],
       "Status": [
         "Durum"
@@ -7373,11 +7539,26 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Sisteminizin gündüz ve gece durumuna uyarak gündüz ve gece için seçtiğiniz temalar arasında otomatik olarak geçiş yapın"
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Bu adresi kopyalayıp kimlik hizmeti sağlayıcınızın ACS (Assertion Consumer Service) URL alanına yapıştırın"
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Bu adresi kopyalayıp kimlik hizmeti sağlayıcınızın varlık kimliği alanına yapıştırın"
+      ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "Kimlik hizmeti sağlayıcınızın uç nokta adresi (örnek: https://idp.ornek.com/sso/saml)"
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Kimlik doğrulama hizmeti sağlayıcının, kimlik doğrulama isteklerini imzalamak için kullanacağı herkese açık anahtar. Kimlik hizmeti sağlayıcınızdan sertifika karmasını alın."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Satın aldığınız ya da destek ekibimizden verilen bir hediye kodunuz varsa, buraya yazabilirsiniz."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "İki adımlı doğrulama kullanmayan üyelere bu özelliği en kısa sürede açmalarını isteyen bir e-posta gönderilecek."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "SAML tek oturum açma ile kimlik doğrulamasına izin verilecek alanı belirtin"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Yeni gönderim döngüsü ${ formattedTime } zamanında başlayacak"
@@ -7387,6 +7568,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Sisteminiz \"açık temaya\" geçtiğinde seçilmiş tema kullanılacak"
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Genellikle kimlik hizmeti sağlayıcının adının bulunduğu bir adres"
       ],
       "Verified email address": [
         "E-posta adresi doğrulanmış"
@@ -7432,11 +7616,6 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "Tek oturum açma"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "Kimlik hizmeti sağlayıcınızın belirttiği tek oturum açma"
       ]
     },
     "Validation": {
