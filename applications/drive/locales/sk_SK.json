@@ -4570,13 +4570,13 @@
         "atribúty súboru"
       ],
       "file data": [
-        "údaje v súbore"
+        "údaje o súbore"
       ],
       "file data key": [
-        "kľúč k dátam súboru"
+        "kľúč k údajom o súbore"
       ],
       "file data order": [
-        "poradie dát súboru"
+        "poradie údajov o súbore"
       ],
       "hash key": [
         "hash kľúč"
@@ -4588,7 +4588,7 @@
         "názov"
       ],
       "thumbnail": [
-        "miniatúra"
+        "náhľad"
       ]
     },
     "Key badge": {
@@ -6601,6 +6601,9 @@
         "Zmazať ${ count } skupín kontaktov",
         "Zmazať ${ count } skupín kontaktov"
       ],
+      "Delete ${ value }": [
+        "Vymazať ${ value }"
+      ],
       "Delete permanently": [
         "Navždy zmazať"
       ],
@@ -6612,9 +6615,6 @@
       ],
       "Discard changes?": [
         "Zrušiť zmeny?"
-      ],
-      "Download ${ date }.zip": [
-        "Stiahnuť ${ date }.zip"
       ],
       "Download unverified file?": [
         "Stiahnuť neoverený súbor?"
