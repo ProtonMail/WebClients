@@ -11,7 +11,6 @@ import { type AuthService, createAuthService } from '@proton/pass/lib/auth/servi
 import { isValidPersistedSession } from '@proton/pass/lib/auth/session';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { clientReady } from '@proton/pass/lib/client';
-import { PassCrypto } from '@proton/pass/lib/crypto';
 import { bootIntent, cacheCancel, sessionLockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
 import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
@@ -118,7 +117,6 @@ export const AuthServiceProvider: FC = ({ children }) => {
             onUnauthorized: (userID, localID, broadcast) => {
                 if (broadcast) sw.send({ type: 'unauthorized', localID, broadcast: true });
                 if (userID) void deletePassDB(userID); /* wipe the local DB cache */
-                PassCrypto.clear();
 
                 onboarding.reset();
                 telemetry.stop();
@@ -159,7 +157,6 @@ export const AuthServiceProvider: FC = ({ children }) => {
             onSessionLocked: (localID, broadcast) => {
                 client.current.setStatus(AppStatus.LOCKED);
                 if (broadcast) sw.send({ type: 'locked', localID, broadcast: true });
-                PassCrypto.clear();
 
                 store.dispatch(cacheCancel());
                 store.dispatch(stopEventPolling());
