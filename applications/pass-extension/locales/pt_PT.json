@@ -549,6 +549,10 @@
         "${ memberCount } membro",
         "${ memberCount } membros"
       ],
+      "${ n } item": [
+        " ${ n } item",
+        "${ n } itens"
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } vez.",
         "${ revisionNumber } vezes."
@@ -1201,6 +1205,22 @@
       ],
       "You are about to create": [
         "Está prestes a criar"
+      ]
+    },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Introduza o seu código PIN"
+      ],
+      "Sign in to your account": [
+        "Iniciar sessão na sua conta"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Desbloquear ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Boas-vindas ao ${ brandNameJSX }"
       ]
     },
     "Onboarding": {
