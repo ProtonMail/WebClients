@@ -4,6 +4,8 @@
 @import '~@proton/styles/scss/lib';
 
 .sign-layout {
+	transform: translateZ(0); // to be rendered by GPU
+
 	&-main-header {
 		display: flex;
 		flex-wrap: nowrap;

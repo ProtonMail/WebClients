@@ -22,11 +22,6 @@ $breakpoint-2-columns: 1180 !default;
 	}
 }
 
-/* hardware-acceleration activation */
-.hardware-accelerated {
-	@include vendor-prefix(transform, translateZ(0));
-}
-
 /* to hide text with accessibility… a11y */
 .invisible,
 .sr-only {
