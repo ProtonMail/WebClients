@@ -1396,6 +1396,9 @@
       ],
       "6 users": [
         "6 位使用者"
+      ],
+      "Help us fight for online privacy": [
+        "協助我們爭取線上隱私"
       ]
     },
     "bf2023: Offers": {
@@ -3409,6 +3412,12 @@
       ],
       "Forwarding is active": [
         "轉寄已啟用"
+      ],
+      "No incoming forwarding rules": [
+        "未有轉寄寄入規則"
+      ],
+      "No outgoing forwarding rules": [
+        "未有轉寄寄出規則"
       ],
       "Please update your forwarding keys": [
         "請更新您的轉寄金鑰"
@@ -5580,6 +5589,17 @@
         "您的行事曆中有部分內容未受支援，因此不會匯入。"
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "金鑰 ${ fingerprint } 已上傳"
+      ],
+      "Selected color:": [
+        "已選取的色彩:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
@@ -7697,17 +7717,6 @@
         "您的訂購授權是由 Mozilla 管理。請聯絡 Mozilla 支援。"
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "偵測到其它重複的金鑰。請單獨上傳以取得更多資訊"
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "金鑰 ${ fingerprint } 已上傳"
-      ],
-      "Selected color:": [
-        "已選取的色彩:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "啟用時，子資料夾繼承上層資料夾的色彩。"
@@ -9038,6 +9047,9 @@
       ],
       "${ BRAND_NAME } welcome emails": [
         "${ BRAND_NAME } 歡迎電子郵件"
+      ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
+        "${ MAIL_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME } 新功能"
       ]
     },
     "Label in domain modal": {
@@ -9720,9 +9732,6 @@
       "${ n } VPN connections": [
         "${ n } 個 VPN 連線"
       ],
-      "${ n } VPN connections per user": [
-        "每一位用戶${ n }個VPN連線"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email aliases": [
         "包含${ n }個 hide-my-email 別名的 ${ PASS_APP_NAME }"
       ],
@@ -9740,9 +9749,6 @@
       ],
       "${ size } storage per user": [
         "${ size } 可用空間 / 每位使用者"
-      ],
-      "1 free VPN connection in total": [
-        "1 個完全免費 VPN 連線"
       ],
       "1 user": [
         "1 位使用者"
@@ -10294,9 +10300,6 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "凡工作天，於提出需求後 24 小時內取得 ${ BRAND_NAME } 客戶服務團隊的支援"
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "單個 VPN 連線允許您在同一時間將單個裝置連線到 ${ BRAND_NAME } VPN。舉個例子，為了將手機與筆電同時連線至 ${ BRAND_NAME_TWO } VPN，您需要兩個 VPN 連線。"
-      ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "此選項可視作使用者般檢視非私人使用者的收件匣，包括完整郵件和聯絡人詳細資料"
       ],
@@ -10747,6 +10750,9 @@
       "No parent folder": [
         "無上層資料夾"
       ],
+      "No permission": [
+        "權限不足"
+      ],
       "Normal": [
         "標準"
       ],
@@ -10756,11 +10762,17 @@
       "On": [
         "開啟"
       ],
+      "Organization only": [
+        "僅限組織機構"
+      ],
       "Permanent": [
         "永久"
       ],
       "Plain text": [
         "純文字"
+      ],
+      "Receive from all": [
+        "從全部接收"
       ],
       "Repeat daily": [
         "每日重複"
@@ -10782,6 +10794,12 @@
       ],
       "Select who can access...": [
         "選取誰可存取"
+      ],
+      "Send to all": [
+        "傳送給所有人"
+      ],
+      "Setup incomplete": [
+        "設置未完成"
       ],
       "Standard server configs": [
         "標準伺服器組態設定"
@@ -11147,6 +11165,23 @@
       ],
       "New credit/debit card": [
         "加入信用卡/扣帳卡"
+      ]
+    },
+    "Permission": {
+      "No permission": [
+        "權限不足"
+      ],
+      "Organization only": [
+        "僅限組織機構"
+      ],
+      "Receive from all": [
+        "從全部接收"
+      ],
+      "Send to all": [
+        "傳送給所有人"
+      ],
+      "Setup incomplete": [
+        "設置未完成"
       ]
     },
     "Personal calendar section description": {
@@ -14014,11 +14049,6 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "單一登入"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "您身份提供者提供的單一登入使用者"
       ]
     },
     "Validation": {

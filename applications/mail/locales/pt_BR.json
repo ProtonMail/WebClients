@@ -713,11 +713,11 @@
       "Not saved": [
         "Não salvo"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
@@ -4260,6 +4260,22 @@
         "com estrela"
       ]
     },
+    "filter: Label": {
+      "the email was sent ${ label }": [
+        "o e-mail foi enviado ${ label }"
+      ],
+      "with attachments": [
+        "com anexos"
+      ],
+      "without attachments": [
+        "sem anexos"
+      ]
+    },
+    "filter: Label, jt": {
+      "the email was sent ${ label }": [
+        "o e-mail foi enviado ${ label }"
+      ]
+    },
     "Font Face Default": {
       "Default": [
         "Padrão"
@@ -6970,6 +6986,14 @@
         "${ Label.Name } criado"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "De: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Para: ${ to }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Painel lateral"
@@ -7661,6 +7685,9 @@
       ],
       "All": [
         "Todos"
+      ],
+      "Automatic (${ value })": [
+        "Automático (${ value })"
       ],
       "Create new group": [
         "Criar novo grupo"
@@ -9089,6 +9116,9 @@
         "Excluir ${ count } mensagens",
         "Excluir ${ count } mensagens"
       ],
+      "Delete ${ value }": [
+        "Excluir ${ value }"
+      ],
       "Delete all messages": [
         "Excluir todas as mensagens"
       ],
@@ -9225,6 +9255,9 @@
       "Mark email as legitimate": [
         "Marcar e-mail como legítimo"
       ],
+      "Mark messages as read": [
+        "Marcar mensagens como lidas"
+      ],
       "Merge contacts": [
         "Mesclar contatos"
       ],
@@ -9254,6 +9287,9 @@
       ],
       "More selections": [
         "Mais seleções"
+      ],
+      "Move all conversations": [
+        "Mover todas as conversas"
       ],
       "Move all messages to Archive": [
         "Mover todas as mensagens para o Arquivo"

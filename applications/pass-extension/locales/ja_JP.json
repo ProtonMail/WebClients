@@ -660,6 +660,9 @@
       "${ memberCount } members": [
         "${ memberCount }人のメンバー"
       ],
+      "${ n } items": [
+        "${ n } アイテム"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } は、${ BRAND_NAME } の匿名化された画像プロキシを介してアイテムのファビコンを表示します。"
       ],
@@ -1477,6 +1480,22 @@
       ],
       "You are about to create": [
         "作成しようとしています"
+      ]
+    },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "PINコードの入力"
+      ],
+      "Sign in to your account": [
+        "アカウントにサインインする"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "${ brandNameJSX } のロックを解除します"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "${ brandNameJSX } へようこそ"
       ]
     },
     "Onboarding": {

@@ -2807,6 +2807,11 @@
         "Pozvaná adresa neexistuje"
       ]
     },
+    "Error changing answer of a calendar invitation": {
+      "Error changing answer": [
+        "Chyba pri zmene odpovede"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Vyskytla sa chyba pri čítaní vášho súboru ${ formattedFilename }. Nesprávny formát súboru."
@@ -6859,6 +6864,9 @@
         "Zmazať ${ count } skupiny kontaktov",
         "Zmazať ${ count } skupín kontaktov",
         "Zmazať ${ count } skupín kontaktov"
+      ],
+      "Delete ${ value }": [
+        "Vymazať ${ value }"
       ],
       "Delete event": [
         "Vymazať udalosť"

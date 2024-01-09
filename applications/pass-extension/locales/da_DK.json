@@ -720,6 +720,10 @@
         "${ memberCount } medlem",
         "${ memberCount } medlemmer"
       ],
+      "${ n } item": [
+        "${ n } element",
+        "${ n } elementer"
+      ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
         "${ PASS_APP_NAME } vil vise elementets favicon via ${ BRAND_NAME } anonymiseret billedproxy."
       ],
@@ -1593,6 +1597,22 @@
       ],
       "You are about to create": [
         "Du er ved at oprette"
+      ]
+    },
+    "lobby: Info": {
+      "Enter your PIN code": [
+        "Indtast din pinkode"
+      ],
+      "Sign in to your account": [
+        "Log ind på din konto"
+      ]
+    },
+    "lobby: Title": {
+      "Unlock ${ brandNameJSX }": [
+        "Lås op for ${ brandNameJSX }"
+      ],
+      "Welcome to ${ brandNameJSX }": [
+        "Velkommen til ${ brandNameJSX }"
       ]
     },
     "Onboarding": {

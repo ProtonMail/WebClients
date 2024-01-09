@@ -5727,6 +5727,17 @@
         "En del af dit kalenderindhold er ikke understøttet og vil ikke blive importeret."
       ]
     },
+    "info": {
+      "Additional duplicate keys detected. Please upload individually for more information.": [
+        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
+      ],
+      "Key ${ fingerprint } has already been uploaded": [
+        "Nøgle ${ fingerprint } er allerede blevet uploadet"
+      ],
+      "Selected color:": [
+        "Valgte farve:"
+      ]
+    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
@@ -7917,17 +7928,6 @@
         "Dit abonnement håndteres af Mozilla. Kontakt venligst Mozilla-support."
       ]
     },
-    "info": {
-      "Additional duplicate keys detected. Please upload individually for more information.": [
-        "Der er fundet yderligere dubletter af nøgler. Upload venligst hver for sig for at få flere oplysninger."
-      ],
-      "Key ${ fingerprint } has already been uploaded": [
-        "Nøgle ${ fingerprint } er allerede blevet uploadet"
-      ],
-      "Selected color:": [
-        "Valgte farve:"
-      ]
-    },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
         "Når aktiveret, arver undermapper farven på den overordnede mappe."
@@ -9977,10 +9977,6 @@
         "${ n } VPN-forbindelse",
         "${ n } VPN-forbindelser"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-forbindelse pr. bruger",
-        "${ n } VPN-forbindelser pr. bruger"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
         "${ PASS_APP_NAME } med ${ n } hide-my-email-aliasser"
@@ -9999,9 +9995,6 @@
       ],
       "${ size } storage per user": [
         "${ size } lager pr. bruger"
-      ],
-      "1 free VPN connection in total": [
-        "1 gratis VPN-forbindelse i alt"
       ],
       "1 user": [
         "1 bruger"
@@ -10558,9 +10551,6 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "På hverdage kan du modtage support fra ${ BRAND_NAME } kundesupportteamet inden for 24 timer efter en henvendelse."
-      ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "Én VPN-forbindelse gør det muligt for én enhed at oprette forbindelse til ${ BRAND_NAME } VPN på ethvert givet tidspunkt. Hvis du f.eks. vil forbinde en telefon og en bærbar computer til ${ BRAND_NAME_TWO } VPN på samme tid, skal du bruge to VPN-forbindelser."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mulighed for at se ikke-private brugerindbakker som brugeren ville, herunder fulde besked- og kontaktoplysninger"
@@ -14389,11 +14379,6 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
-      ]
-    },
-    "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
-        "SSO-bruger leveret af din identitetsudbyder"
       ]
     },
     "Validation": {

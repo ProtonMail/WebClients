@@ -77,6 +77,9 @@
       "Close this banner": [
         "Lukk dette banneret"
       ],
+      "Configure SAML": [
+        "Konfigurer SAML"
+      ],
       "Confirm": [
         "Bekreft"
       ],
@@ -260,6 +263,9 @@
       "Hide plan features": [
         "Skjul planfunksjoner"
       ],
+      "Import new SAML metadata": [
+        "Importer ny SAML-metadata"
+      ],
       "Increase": [
         "Øk"
       ],
@@ -338,6 +344,9 @@
       "Remove bonuses": [
         "Fjern bonuser"
       ],
+      "Remove domain": [
+        "Fjern domene"
+      ],
       "Remove gift code": [
         "Fjern gavekode"
       ],
@@ -389,11 +398,17 @@
       "Save address": [
         "Lagre adresse"
       ],
+      "Save SAML configuration": [
+        "Lagre SAML-konfigurasjon"
+      ],
       "Search": [
         "Søk"
       ],
       "Search countries": [
         "Søk etter land"
+      ],
+      "See DNS TXT record": [
+        "Se DNS TXT-post"
       ],
       "See how": [
         "Se hvordan"
@@ -403,6 +418,9 @@
       ],
       "Select ${ planTitle }": [
         "Velg ${ planTitle }"
+      ],
+      "Select file": [
+        "Velg fil"
       ],
       "Send code": [
         "Send kode"
@@ -2066,6 +2084,12 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Vennligst oppgrader til en forretningsplan med mer enn 1 bruker for å administrere flere brukere."
       ],
+      "Please upload an xml file": [
+        "Vennligst last opp en xml-fil"
+      ],
+      "Please upload only 1 file": [
+        "Vennligst last opp bare 1 fil"
+      ],
       "Process aborted": [
         "Prosessen ble avbrutt"
       ],
@@ -2116,6 +2140,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Prøv å bruke bare bokstaver, tall og _.-"
+      ],
+      "Unable to upload file": [
+        "Kan ikke laste opp fil"
       ],
       "Unknown error": [
         "Ukjent feil"
@@ -2736,6 +2763,11 @@
         "Brukernavn"
       ]
     },
+    "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Legg til denne posten i domenet ditt i kontrollpanelet til domenenavnregistratoren."
+      ]
+    },
     "Human verification method": {
       "Email": [
         "E-post"
@@ -2858,6 +2890,9 @@
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Legg til enda et lag av sikkerhet til din konto. Du vil behøve å verifisere deg selv hver gang du logger på med 2FA."
       ],
+      "Add domain": [
+        "Legg til domene"
+      ],
       "Add server (${ availableAddedCount } available)": [
         "Legg til tjener (${ availableAddedCount }) tilgjengelig",
         "Legg til tjenere (${ availableAddedCount }) tilgjengelige"
@@ -2915,6 +2950,9 @@
       "Are you sure you want to remove administrative privileges from this user?": [
         "Er du sikker du ønsker å fjerne administrative rettigheter fra denne brukeren?"
       ],
+      "Are you sure you want to remove the domain ${ boldDomain }?": [
+        "Er du sikker på at du ønsker å fjerne domenet ${ boldDomain }?"
+      ],
       "Ask your organisation admin to setup Gateways.": [
         "Be organisasjonsadministratoren om å konfigurere gatewayer."
       ],
@@ -2966,8 +3004,20 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikk \"be om ny kode\" for å få en ny verifiseringskode sendt til ${ strong }. Hvis dette telefonnummeret er feil, klikker du \"rediger\" for å rette det opp."
       ],
+      "Configure SAML authentication for your organization through an identity provider like Okta, Azure or Onelogin. This will enable SAML for the whole organization.": [
+        "Konfigurer SAML-autentisering for organisasjonen din gjennom en identitetsleverandør som Okta, Azure eller Onelogin. Dette vil aktivere SAML for hele organisasjonen."
+      ],
       "Continue with ${ freeName }": [
         "Fortsett med ${ freeName }"
+      ],
+      "Copied to clipboard": [
+        "Kopiert til utklippstavlen"
+      ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Kopier og lim inn denne URL-adressen i ACS (Assertion Consumer Service) URL-feltet til identitetsleverandøren din."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Kopier og lim inn denne URL-adressen i enhets-ID-feltet for identitetsleverandøren."
       ],
       "Copy the suggested password to clipboard": [
         "Kopier foreslått passord til utklippstavlen"
@@ -3019,11 +3069,23 @@
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
       ],
+      "DNS TXT record": [
+        "DNS TXT-post"
+      ],
       "Do NOT forget this password. If you forget it, you will not be able to manage your organization.": [
         "Ikke glem dette passordet. Hvis du glemmer det vil du ikke være i stand til å håndtere organisasjonen."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "IKKE glem dette passordet. Hvis du glemmer det, vil du ikke kunne logge på eller dekryptere meldingene dine."
+      ],
+      "Domain ownership failed verification.": [
+        "Domeneeierskap mislyktes verifisering."
+      ],
+      "Domain ownership not verified.": [
+        "Domeneeierskap er ikke verifisert."
+      ],
+      "Domain ownership verified.": [
+        "Domeneeierskap er verifisert."
       ],
       "Done": [
         "Ferdig"
@@ -3040,6 +3102,12 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Last ned favorittappen din i dag og ta personvern med deg hvor hen du går."
       ],
+      "Drop file here to upload": [
+        "Slipp fil her for å laste opp"
+      ],
+      "Drop to import": [
+        "Slipp for å importere"
+      ],
       "Each code can only be used once": [
         "Hver kode kan kun bli brukt en gang"
       ],
@@ -3054,6 +3122,9 @@
       ],
       "Emailing preference saved": [
         "Preferanse for sending av e-post lagret"
+      ],
+      "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
+        "Nettadresse for endepunkt mottatt fra identitetsleverandøren din (f.eks. https://idp.example.com/sso/saml)."
       ],
       "Enhance your network security": [
         "Forsterk nettverkssikkerheten sin"
@@ -3127,8 +3198,14 @@
       "Get ${ upsellPlanName }": [
         "Få ${ upsellPlanName }"
       ],
+      "Go to your identity provider, get the the SAML metadata for ${ appName } and import it here.": [
+        "Gå til identitetsleverandøren, hent SAML-metadataene for ${ appName } og importer dem her."
+      ],
       "here": [
         "her"
+      ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Identitetsleverandørens offentlige nøkkel for å signere godkjenningsdeklarasjoner. Det bør være et sted å laste ned eller kopiere sertifikatnummeret fra identitetsleverandøren. Bare lim inn sertifikathashen i tekstfeltfeltet."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Dersom en administrator endret dette passordet, må du be om det nye organisasjonspassordet."
@@ -3292,6 +3369,9 @@
       "Optional": [
         "Valgfritt"
       ],
+      "or ${ selectFileButton }": [
+        "eller ${ selectFileButton }"
+      ],
       "Or select a particular server:": [
         "Eller velg en spesiell tjener:"
       ],
@@ -3420,6 +3500,9 @@
       "Revoke certificate ${ name }": [
         "Tilbakekall sertifikat ${ name }"
       ],
+      "SAML configuration saved": [
+        "SAML-konfigurasjon lagret"
+      ],
       "Save ${ percentage }": [
         "Spar ${ percentage }"
       ],
@@ -3467,6 +3550,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Noen av de tilgjengelige tjenerne dine kan bare brukes i bestemte land på grunn av nylige fjerninger."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Spesifiser domenet som har tillatelse til å autentisere med SAML SSO."
       ],
       "Step ${ step }": [
         "Trinn ${ step }",
@@ -3571,6 +3657,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Denne brukeren er for øyeblikket ansvarlig for betalinger i organisasjonen din. Ved å degradere dette medlemmet, vil du bli ansvarlig for betalinger i organisasjonen din."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Denne verifiseringen kan ta opptil én time. Du kan trygt fortsette til de neste trinnene."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Dette vil avbryte ditt gjeldende betalte abonnement og du vil miste eventuelle lojalitetsfordeler du har akkumulert."
       ],
@@ -3597,6 +3686,9 @@
       ],
       "to ${ product } Business": [
         "til ${ product } Business"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Hvis du vil tillate at domenet ${ boldDomainName } bruker SAML SSO, må du bekrefte eierskapet av det ved å legge til følgende DNS TXT-post i domenet i DNS-leverandøren."
       ],
       "To cancel your subscription, please reach out to us.": [
         "For å avbryte abonnementet ditt, vennligst ta kontakt med oss."
@@ -3658,6 +3750,9 @@
       "Unfortunately there is no recovery method saved for this account.": [
         "Dessverre er det ingen gjenopprettingsmetode lagret for denne kontoen."
       ],
+      "Unique ID generated by your identity provider, usually in the form of a URL that contains the identity provider’s name within it (e.g. https://idp.example.com/XXXXX).": [
+        "Unik ID generert av identitetsleverandøren din, vanligvis i form av en URL som inneholder identitetsleverandørens navn (f.eks. https://idp.example.com/XXXXX)."
+      ],
       "Unsaved changes": [
         "Endringer som ikke er lagret"
       ],
@@ -3696,6 +3791,9 @@
       ],
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Verifisering vil åpne en ny fane, vennligst deaktiver eventuell blokkering av sprett-opp-vinduer. Du vil ikke bli belastet. Alle beløp som benyttes for å bekrefte kortet vil bli tilbakebetalt umiddelbart."
+      ],
+      "Verify domain": [
+        "Verifiser domene"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Verifiser din identitet med en tids-basert en-time passord fra en autentiseringsapp."
@@ -3771,6 +3869,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Vi oppgraderer din gjeldende plan til en forbedret plan som tilbyr mer for samme pris. Mens våres systemer oppdateres, vil du ikke være i stand til å endre den. Vi sender e-post straks det er gjort."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "Når du aktiverer SAML for ${ appName } i identitetsleverandøren, kan du bli bedt om å bruke URL-adressen for tilbakeringing (ACS) og utsteder-ID. Bare kopier og lim inn dataene nedenfor i identitetsleverandørfeltene dine."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du konfigurerer totrinnsverifisering, oppgir vi gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen."
@@ -3924,6 +4025,9 @@
       "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
         "Dine eksisterende meldinger, kalendere eller kontakter vil bli låst. For å gjenopprette denne dataen, vil du trenge din gjenoppretingsfrase eller ${ oldPassword }."
       ],
+      "Your files will be encrypted and then saved": [
+        "Filene dine vil bli kryptert og deretter lagret"
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Din informasjon er trygg hos oss. Vi kontakter deg kun når det kreves for å tilby våre tjenester."
       ],
@@ -4070,11 +4174,20 @@
       "Allow recovery by phone": [
         "Tillat gjenoppretting ved telefon"
       ],
+      "Allowed domain": [
+        "Tillatt domene"
+      ],
+      "Allowed Domain": [
+        "Tillatt domene"
+      ],
       "Amount": [
         "Beløp"
       ],
       "Amount due": [
         "Skyldig beløp"
+      ],
+      "Assertion Consumer Service URL": [
+        "URL-adresse for påstand om forbrukertjeneste"
       ],
       "Attach screenshot(s)": [
         "Legg ved skjermbilde(r)"
@@ -4199,6 +4312,9 @@
       "Do you have any suggestions for our team?": [
         "Har du noen forslag til teamet vårt?"
       ],
+      "e.g. example.com": [
+        "f.eks. eksempel.com"
+      ],
       "Email": [
         "E-post"
       ],
@@ -4229,6 +4345,9 @@
       "Interval": [
         "Intervall"
       ],
+      "Issuer ID": [
+        "Utsteder-ID"
+      ],
       "Keep me signed in": [
         "Hold meg pålogget"
       ],
@@ -4246,6 +4365,15 @@
       ],
       "Main": [
         "Hoved"
+      ],
+      "Metadata file for ${ appName }": [
+        "Metadata-fil for ${ appName }"
+      ],
+      "Metadata URL for ${ appName }": [
+        "URL-adresse for metadata for ${ appName }"
+      ],
+      "Method for importing metadata": [
+        "Metode for import av metadata"
       ],
       "Moderate NAT": [
         "Moderat NAT"
@@ -4343,6 +4471,9 @@
       "Proration": [
         "Avskriving"
       ],
+      "Public certificate (X.509)": [
+        "Offentlig sertifikat (X.509)"
+      ],
       "Recovery email address": [
         "Gjenopprettings-e-postadresse"
       ],
@@ -4351,6 +4482,9 @@
       ],
       "Recovery phrase": [
         "Gjenopprettingsfrase"
+      ],
+      "Reply (ACS) URL": [
+        "URL-adresse for svar (ACS)"
       ],
       "Require 2FA for administrators": [
         "Krev 2FA for administratorer"
@@ -4367,6 +4501,15 @@
       "Select your plan": [
         "Velg din plan"
       ],
+      "Single sign-on Entity ID": [
+        "Enhets-ID for enkeltpålogging"
+      ],
+      "Single sign-on entity ID": [
+        "Enhets-ID for enkeltpålogging"
+      ],
+      "Single sign-on URL": [
+        "URL for enkel pålogging"
+      ],
       "Start date": [
         "Startdato"
       ],
@@ -4382,6 +4525,9 @@
       "Two-password mode": [
         "To-passordmodus"
       ],
+      "Type": [
+        "Type"
+      ],
       "User": [
         "Bruker"
       ],
@@ -4390,6 +4536,9 @@
       ],
       "Username": [
         "Brukernavn"
+      ],
+      "Value": [
+        "Verdi"
       ],
       "Verification code": [
         "Verifiseringskode"
@@ -4436,6 +4585,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "${ app } produktoppdateringer"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME } testversjonkunngjøringer"
       ],
@@ -4772,10 +4924,6 @@
         "${ n } VPN-tilkobling",
         "${ n } VPN-tilkoblinger"
       ],
-      "${ n } VPN connection per user": [
-        "${ n } VPN-tilkobling per bruker",
-        "${ n } VPN-tilkoblinger per bruker"
-      ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
         "${ PASS_APP_NAME } med ${ n } hide-my-email-alias",
         "${ PASS_APP_NAME } med ${ n } hide-my-email-aliaser"
@@ -4794,9 +4942,6 @@
       ],
       "${ size } storage per user": [
         "${ size } lagringsplass per bruker"
-      ],
-      "1 free VPN connection in total": [
-        "Totalt 1 gratis VPN-forbindelse"
       ],
       "1 user": [
         "1 bruker"
@@ -5043,6 +5188,10 @@
       ],
       "Unlimited volume/bandwidth": [
         "Ubegrenset volum/båndbredde"
+      ],
+      "Up to ${ n } user": [
+        "Opptil ${ n } bruker",
+        "Opptil ${ n } brukere"
       ],
       "Up to ${ totalStorageSize } storage": [
         "Opptil ${ totalStorageSize } lagringsplass"
@@ -5306,8 +5455,8 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "På virkedager, motta støtte fra ${ BRAND_NAME }-brukerstøtteteamet innen 24 timer etter forespørsler."
       ],
-      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
-        "En VPN-forbindelse tillater en enhet å koble til ${ BRAND_NAME }-VPN til enhver tid. For eksempel, for å koble en telefon og en bærbar datamaskiin til ${ BRAND_NAME_TWO }-VPN på samme tidspunkt, vil du trenge to VPN-forbindelser."
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "En VPN-forbindelse tillater en enhet å koble til ${ VPN_APP_NAME }-VPN til enhver tid. For eksempel, for å koble en telefon og en bærbar datamaskiin til ${ VPN_APP_NAME }-VPN på samme tidspunkt, vil du trenge to VPN-forbindelser."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Mulighet for å se innbokser for ikke-private brukere på samme måte som brukeren, inkludert fullstendige meldings- og kontaktdetaljer."
@@ -5517,6 +5666,9 @@
     "Option": {
       "Android": [
         "Android"
+      ],
+      "Automatic (${ value })": [
+        "Automatisk (${ value })"
       ],
       "Country configs": [
         "Landkonfigurasjoner"
@@ -5760,6 +5912,15 @@
       ],
       "Confirm": [
         "Bekreft"
+      ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "f.eks. https://eksempel.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "f.eks. https://idp.eksempel.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "eks. https://idp.eksempel.com/XXXXX"
       ],
       "Email address": [
         "E-postadresse"
@@ -6498,6 +6659,10 @@
         "${ n } kalender per bruker",
         "${ n } kalendere per bruker"
       ],
+      "${ n } free VPN connection per user": [
+        "${ n } gratis VPN-forbindelse per bruker",
+        "${ n } gratis VPN-forbindelser per bruker"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } høyhastighets VPN-tilkobling",
         "${ n } høyhastighets VPN-tilkoblinger"
@@ -6720,6 +6885,9 @@
       ]
     },
     "Success message": {
+      "Domain deleted": [
+        "Domene slettet"
+      ],
       "Sessions revoked": [
         "Øktene opphevet"
       ],
@@ -7016,6 +7184,9 @@
       "Delete": [
         "Slett"
       ],
+      "Delete ${ value }": [
+        "Slett ${ value }"
+      ],
       "Delete account": [
         "Slett konto"
       ],
@@ -7082,6 +7253,12 @@
       ],
       "Email subscriptions": [
         "E-post abonnementer"
+      ],
+      "Enter endpoints into your identity provider": [
+        "Angi endepunkter i identitetsleverandøren"
+      ],
+      "Enter SAML metadata": [
+        "Angi SAML-metadata"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Angi din ${ BRAND_NAME }-kontoinformasjon for å bli med i ${ app }-testprogrammet"
@@ -7207,6 +7384,9 @@
       "Recovery": [
         "Gjenoppretting"
       ],
+      "Remove domain": [
+        "Fjern domene"
+      ],
       "Remove user?": [
         "Fjern bruker?"
       ],
@@ -7236,6 +7416,9 @@
       ],
       "Revoke certificate": [
         "Opphev sertifikat"
+      ],
+      "SAML authentication": [
+        "SAML-autentisering"
       ],
       "Select a plan": [
         "Velg en plan"
@@ -7282,11 +7465,18 @@
       "Signed in to member account": [
         "Logget på medlemskonto"
       ],
+      "Single Sign-On": [
+        "Enkel pålogging"
+      ],
       "Status": [
         "Status"
       ],
       "Subscription": [
         "Abonnement"
+      ],
+      "Successfully created ${ n } user account": [
+        "Opprettet ${ n } brukerkonto",
+        "Opprettet ${ n } brukerkontoer"
       ],
       "Summary": [
         "Sammendrag"
@@ -7409,11 +7599,26 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Bytt automatisk mellom foretrukket tema for dag og natt synkronisert med systemets dag- og nattmodus."
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Kopier og lim inn denne URL-adressen i ACS (Assertion Consumer Service) URL-feltet til identitetsleverandøren din."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Kopier og lim inn denne URL-adressen i enhets-ID-feltet for identitetsleverandøren."
+      ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "URL-adresse for endepunkt fra identitetsleverandøren (f.eks. https://idp.eksempel.com/sso/saml)."
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Identitetsleverandørens offentlige nøkkel for å signere godkjenningsdeklarasjoner. Få sertifikathashen fra identitetsleverandøren."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Hvis du kjøpte en gavekode eller mottok en fra vår kundestøtte, kan du angi den her."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Medlemmer som ikke bruker 2FA vil få en e-post som ber dem om å aktivere den så snart som mulig."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Spesifiser domenet som har tillatelse til å autentisere med SAML SSO"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Den nye abonnementssyklusen starter ${ formattedTime }"
@@ -7423,6 +7628,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Det valgte temaet vil være aktivt når systemet er satt til \"lys modus\"."
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Vanligvis en nettadresse som inneholder identitetsleverandørens navn."
       ],
       "Verified email address": [
         "Bekreftet e-postadresse"
@@ -7471,7 +7679,7 @@
       ]
     },
     "Users table: single sign-on tooltip": {
-      "SSO user provided by your Identity Provider": [
+      "SSO user provided by your identity provider": [
         "SSO-bruker levert av identitetsleverandøren din"
       ]
     },
