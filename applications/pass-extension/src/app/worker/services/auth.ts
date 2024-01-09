@@ -116,17 +116,14 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
 
                 const { ttl, status } = lock;
                 await browser.alarms.clear(SESSION_LOCK_ALARM);
-                const locked = clientLocked(ctx.getState().status);
+                const ready = clientReady(ctx.getState().status);
 
                 /* To avoid potential issues during the boot sequence, refrain from
                  * setting the `SESSION_LOCK_ALARM` immediately if the session is locked.
                  * This precaution is taken because the boot process might exceed the lock
                  * TTL duration, leading to an unsuccessful boot for the user */
-                if (!locked && status === SessionLockStatus.REGISTERED && ttl) {
-                    await browser.alarms
-                        .clear(SESSION_LOCK_ALARM)
-                        .then(() => browser.alarms.create(SESSION_LOCK_ALARM, { when: epochToMs(getEpoch() + ttl) }))
-                        .catch(noop);
+                if (ready && status === SessionLockStatus.REGISTERED && ttl) {
+                    browser.alarms.create(SESSION_LOCK_ALARM, { when: epochToMs(getEpoch() + ttl) });
                 }
             } catch {}
         }),
