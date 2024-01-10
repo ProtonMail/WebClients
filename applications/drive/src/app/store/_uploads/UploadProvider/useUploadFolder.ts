@@ -82,7 +82,7 @@ export default function useUploadFolder() {
                 filename: newName,
                 draftLinkId,
                 clientUid,
-            } = await findAvailableName(abortSignal, shareId, parentId, folderName);
+            } = await findAvailableName(abortSignal, { shareId, parentLinkId: parentId, filename: folderName });
             checkSignal(abortSignal, folderName);
             // Automatically replace file - previous draft was uploaded
             // by the same client.
