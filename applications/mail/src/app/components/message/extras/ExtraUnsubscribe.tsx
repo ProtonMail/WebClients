@@ -262,8 +262,8 @@ const ExtraUnsubscribe = ({ message }: Props) => {
             <div className="md:flex-1 flex flex-nowrap mb-2 md:mb-0">
                 <Icon
                     name="envelope"
-                    className="mt-custom ml-0.5 shrink-0"
-                    style={{ marginTop: '0.375rem' }}
+                    className="mt-0.5 md:mt-custom ml-0.5 shrink-0"
+                    style={{ '--md-mt-custom': '0.375rem' }}
                 />
                 <span className="px-1 flex flex-1 items-center">{c('Status')
                     .t`This message is from a mailing list.`}</span>
