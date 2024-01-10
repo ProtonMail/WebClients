@@ -10,6 +10,7 @@ export const UNSUPPORTED_SCHEMES = [
     'chrome-extension:',
     'chrome:',
     'brave:',
+    'edge:',
     'moz-extension:',
     'about:',
 ];
