@@ -10,6 +10,7 @@ import { InfoResponse } from '@proton/shared/lib/authentication/interface';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
 import { srpAuth } from '@proton/shared/lib/srp';
+import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import {
@@ -22,7 +23,7 @@ import {
     Tabs,
     useFormErrors,
 } from '../../components';
-import { useApi, useAuthentication, useUser } from '../../hooks';
+import { useApi, useAuthentication, useUser, useUserSettings } from '../../hooks';
 import MnemonicInputField, { useMnemonicInputValidation } from '../mnemonic/MnemonicInputField';
 import ChangePasswordModal, { MODES } from './ChangePasswordModal';
 
@@ -48,6 +49,7 @@ const RecoveryModal = ({
     const [user] = useUser();
     const authentication = useAuthentication();
     const { validator, onFormSubmit } = useFormErrors();
+    const [userSettings] = useUserSettings();
 
     const [submitting, withSubmitting] = useLoading();
     const [step, setStep] = useState(STEP.METHOD);
@@ -98,8 +100,11 @@ const RecoveryModal = ({
     };
 
     const toProceed = c('Info').t`To proceed, we must verify the request.`;
-    const emailString = c('Info').t`We’ll send a reset code to the email address you provided for account recovery.`;
-    const phoneString = c('Info').t`We’ll send a reset code to the phone number you provided for account recovery.`;
+    const codeResetString = (value: string) => {
+        const boldValue = <b key="bold-reset-method-value">{value}</b>;
+        // translator: boldValue will be the recovery email address or recovery phone number in bold
+        return c('Info').jt`We’ll send a reset code to ${boldValue}.`;
+    };
     const phraseString = c('Info').t`Enter your recovery phrase to change your password now.`;
 
     return (
@@ -119,13 +124,10 @@ const RecoveryModal = ({
                             title: c('Recovery method').t`Email`,
                             content: (
                                 <>
-                                    {availableRecoveryMethods.length === 1 ? (
-                                        <div className="mt-2">
-                                            {toProceed} {emailString}
-                                        </div>
-                                    ) : (
-                                        <div className="color-weak">{emailString}</div>
-                                    )}
+                                    <div className={clsx(availableRecoveryMethods.length === 1 && 'mt-2')}>
+                                        {availableRecoveryMethods.length === 1 && toProceed}{' '}
+                                        {codeResetString(userSettings.Email.Value)}
+                                    </div>
 
                                     <InlineLinkButton className="mt-2" onClick={onInitiateSessionRecoveryClick}>
                                         {c('Info').t`Can’t access your recovery email?`}
@@ -137,13 +139,10 @@ const RecoveryModal = ({
                             title: c('Recovery method').t`Phone number`,
                             content: (
                                 <>
-                                    {availableRecoveryMethods.length === 1 ? (
-                                        <div className="mt-2">
-                                            {toProceed} {phoneString}
-                                        </div>
-                                    ) : (
-                                        <div className="color-weak">{phoneString}</div>
-                                    )}
+                                    <div className={clsx(availableRecoveryMethods.length === 1 && 'mt-2')}>
+                                        {availableRecoveryMethods.length === 1 && toProceed}{' '}
+                                        {codeResetString(userSettings.Phone.Value)}
+                                    </div>
 
                                     <InlineLinkButton className="mt-2" onClick={onInitiateSessionRecoveryClick}>
                                         {c('Info').t`Can’t access your recovery phone?`}
@@ -155,13 +154,9 @@ const RecoveryModal = ({
                             title: c('Recovery method').t`Phrase`,
                             content: (
                                 <>
-                                    {availableRecoveryMethods.length === 1 ? (
-                                        <div className="mt-2 mb-4">
-                                            {toProceed} {phraseString}
-                                        </div>
-                                    ) : (
-                                        <div className="mb-4 color-weak">{phraseString}</div>
-                                    )}
+                                    <div className={clsx('mb-4', availableRecoveryMethods.length === 1 && 'mt-2')}>
+                                        {availableRecoveryMethods.length === 1 && toProceed} {phraseString}
+                                    </div>
 
                                     <MnemonicInputField
                                         disableChange={submitting}
