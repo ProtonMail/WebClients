@@ -41,7 +41,7 @@ export const MoreInfoDropdown: VFC<Props> = ({ info }) => {
                         {...(idx === info.length - 1 ? { ref: anchorRef } : {})}
                     >
                         <div className="mr-6 text-right w-custom" style={{ '--w-custom': '5rem' }}>{`${label}:`}</div>
-                        <div className="flex-1">
+                        <div className="flex-1 text-break">
                             {values.map((value) => (
                                 <div key={value}>{value}</div>
                             ))}
