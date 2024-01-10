@@ -167,7 +167,7 @@ const DayGrid = ({
                                 <div key={rowIndex} className="flex-1 flex flex-column h-full w-full relative">
                                     <div
                                         data-testid="calendar-month-view:week-row"
-                                        className="flex calendar-daygrid-columns no-pointer-events"
+                                        className="flex calendar-daygrid-columns pointer-events-none"
                                     >
                                         {days.map((day) => {
                                             return (

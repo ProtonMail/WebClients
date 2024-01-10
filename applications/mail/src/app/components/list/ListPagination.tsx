@@ -73,7 +73,7 @@ const ListPagination = ({ onPrevious, onNext, onPage, page, loading, total }: Pr
                                 size="small"
                                 aria-current={isActive}
                                 shape={isActive ? 'solid' : 'ghost'}
-                                className={clsx([isActive && 'text-bold no-pointer-events', 'px-2'])}
+                                className={clsx([isActive && 'text-bold pointer-events-none', 'px-2'])}
                                 disabled={loading}
                                 onClick={() => onPage(pageNumber)}
                                 data-testid={`pagination-row:go-to-page-${pageNumber}`}

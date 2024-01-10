@@ -122,7 +122,7 @@ const FilterActions = ({ filter = {}, mailSettings, onFilter, dropdown }: Props)
                         aria-pressed={isActive}
                         className={clsx([
                             'toolbar-button toolbar-button--small text-sm m-0',
-                            isActive && 'no-pointer-events bg-strong',
+                            isActive && 'pointer-events-none bg-strong',
                         ])}
                         onClick={onClick}
                     >

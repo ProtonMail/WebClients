@@ -179,7 +179,7 @@ const AddressesInput = ({
 
     const dragPlaceholder = (
         <div
-            className="composer-addresses-item-drag-placeholder my-1 mr-2 max-w-full no-pointer-events h-custom w-custom"
+            className="composer-addresses-item-drag-placeholder my-1 mr-2 max-w-full pointer-events-none h-custom w-custom"
             style={{
                 '--w-custom': `${placeholderSize?.width}px`,
                 '--h-custom': `${placeholderSize?.height}px`,

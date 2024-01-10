@@ -14,7 +14,7 @@ const Radio = ({ id, children, className = 'inline-flex', name, disabled = false
         htmlFor={id}
         className={clsx([
             !className?.includes('increase-click-surface') && 'relative',
-            disabled && 'opacity-50 no-pointer-events',
+            disabled && 'opacity-50 pointer-events-none',
             className,
         ])}
     >
