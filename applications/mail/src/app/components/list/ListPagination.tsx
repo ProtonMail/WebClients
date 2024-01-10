@@ -52,7 +52,7 @@ const ListPagination = ({ onPrevious, onNext, onPage, page, loading, total }: Pr
                         size="small"
                         icon
                         shape="ghost"
-                        className="on-rtl-mirror"
+                        className="rtl:mirror"
                         disabled={loading || disablePrevious}
                         onClick={() => onPrevious()}
                         data-testid="pagination-row:go-to-previous-page"
@@ -88,7 +88,7 @@ const ListPagination = ({ onPrevious, onNext, onPage, page, loading, total }: Pr
                     <Button
                         size="small"
                         shape="ghost"
-                        className="on-rtl-mirror"
+                        className="rtl:mirror"
                         icon
                         disabled={loading || disableNext}
                         onClick={() => onNext()}

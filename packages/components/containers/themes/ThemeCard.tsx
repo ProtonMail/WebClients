@@ -57,7 +57,7 @@ const ThemeCard = ({
             title={c('Action').t`Use ${label} theme`}
             data-testid={dataTestId}
         >
-            <ThemeSvg className={clsx('block theme-card-image on-rtl-mirror')} size={size} colors={colors} />
+            <ThemeSvg className={clsx('block theme-card-image rtl:mirror')} size={size} colors={colors} />
             <span
                 className={clsx(
                     size === 'small' && 'sr-only',

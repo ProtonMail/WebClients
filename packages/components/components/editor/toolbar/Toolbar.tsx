@@ -150,7 +150,7 @@ const Toolbar = ({
                         <Icon
                             name="list-bullets"
                             size={COMPOSER_TOOLBAR_ICON_SIZE}
-                            className="m-auto on-rtl-mirror"
+                            className="m-auto rtl:mirror"
                             alt={c('Action').t`Unordered list`}
                         />
                     </ToolbarButton>
@@ -164,7 +164,7 @@ const Toolbar = ({
                         <Icon
                             name="list-numbers"
                             size={COMPOSER_TOOLBAR_ICON_SIZE}
-                            className="m-auto on-rtl-mirror"
+                            className="m-auto rtl:mirror"
                             alt={c('Action').t`Ordered list`}
                         />
                     </ToolbarButton>
