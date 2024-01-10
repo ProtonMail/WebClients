@@ -134,7 +134,12 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
         - if it hasn't been touched by the user yet
         - a default alias prefix was not resolved  */
         void draftHydrated.then((hydrated) => {
-            if (!hydrated && !defaultAliasPrefix && !touched.aliasPrefix) {
+            // detect if aliasPrefix hasn't been touched by the user but was marked as touched because aliasPrefix got restored from draft
+            if (hydrated && touched.aliasPrefix && name && deriveAliasPrefix(name) === aliasPrefix) {
+                touched.aliasPrefix = false;
+            }
+
+            if (!defaultAliasPrefix && !touched.aliasPrefix && name) {
                 setFieldValue('aliasPrefix', deriveAliasPrefix(name), true).catch(noop);
             }
         });
