@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { obfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
-import { expirationDateMMYYYY } from '@proton/pass/lib/validation/credit-card';
 import type { Item, ItemImportIntent, Maybe, MaybeNull, UnsafeItemExtraField } from '@proton/pass/types';
 import { CardType } from '@proton/pass/types/protobuf/item-v1';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -113,36 +112,27 @@ export const importCreditCardItem = (options: {
     trashed?: boolean;
     createTime?: number;
     modifyTime?: number;
-}): ItemImportIntent<'creditCard'> => {
-    let validExpirationDate = '';
-    try {
-        if (options.expirationDate) {
-            validExpirationDate = expirationDateMMYYYY(options.expirationDate);
-        }
-    } catch (_) {}
+}): ItemImportIntent<'creditCard'> => ({
+    ...(obfuscateItem({
+        type: 'creditCard',
+        metadata: {
+            name: options.name || c('Label').t`Unnamed Credit Card`,
+            note: options.note || '',
+            itemUuid: uniqueId(),
+        },
+        content: {
+            cardType: CardType.Unspecified,
+            cardholderName: options.cardholderName || '',
+            number: options.number || '',
+            verificationNumber: options.verificationNumber || '',
+            expirationDate: options.expirationDate ?? '',
+            pin: options.pin || '',
+        },
 
-    return {
-        ...(obfuscateItem({
-            type: 'creditCard',
-            metadata: {
-                name: options.name || c('Label').t`Unnamed Credit Card`,
-                note: options.note || '',
-                itemUuid: uniqueId(),
-            },
-            content: {
-                cardType: CardType.Unspecified,
-                cardholderName: options.cardholderName || '',
-                number: options.number || '',
-                verificationNumber: options.verificationNumber || '',
-                expirationDate: validExpirationDate,
-                pin: options.pin || '',
-            },
-
-            extraFields: [],
-        }) as Item<'creditCard'>),
-        extraData: [],
-        trashed: options.trashed ?? false,
-        createTime: options.createTime,
-        modifyTime: options.modifyTime,
-    };
-};
+        extraFields: [],
+    }) as Item<'creditCard'>),
+    extraData: [],
+    trashed: options.trashed ?? false,
+    createTime: options.createTime,
+    modifyTime: options.modifyTime,
+});
