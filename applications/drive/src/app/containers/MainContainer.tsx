@@ -14,13 +14,13 @@ import { useLoading } from '@proton/hooks';
 
 import TransferManager from '../components/TransferManager/TransferManager';
 import DriveWindow from '../components/layout/DriveWindow';
+import DriveOnboardingModal from '../components/modals/DriveOnboardingModal';
 import DriveStartupModals from '../components/modals/DriveStartupModals';
 import GiftFloatingButton from '../components/onboarding/GiftFloatingButton';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import { DriveProvider, useDefaultShare, useDriveEventManager, usePhotosFeatureFlag, useSearchControl } from '../store';
 import DevicesContainer from './DevicesContainer';
 import FolderContainer from './FolderContainer';
-import OnboardingContainer from './OnboardingContainer';
 import { PhotosContainer } from './PhotosContainer';
 import { SearchContainer } from './SearchContainer';
 import SharedURLsContainer from './SharedLinksContainer';
@@ -89,20 +89,13 @@ const InitContainer = () => {
 
     const rootShare = { shareId: defaultShareRoot.shareId, linkId: defaultShareRoot.linkId };
 
-    if (!welcomeFlags.isDone) {
-        return (
-            <ActiveShareProvider defaultShareRoot={rootShare}>
-                <OnboardingContainer onDone={setWelcomeFlagsDone} />
-            </ActiveShareProvider>
-        );
-    }
-
     return (
         <ActiveShareProvider defaultShareRoot={rootShare}>
             <DriveStartupModals />
             <ModalsChildren />
             <TransferManager />
             <GiftFloatingButton />
+            {!welcomeFlags.isDone && <DriveOnboardingModal open onDone={setWelcomeFlagsDone} />}
             <DriveWindow>
                 <Switch>
                     <Route path="/devices" component={DevicesContainer} />
