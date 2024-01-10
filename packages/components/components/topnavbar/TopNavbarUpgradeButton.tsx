@@ -39,6 +39,7 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
                     as={SettingsLink}
                     iconName="upgrade"
                     path={upgradeUrl}
+                    responsive
                     title={c('specialoffer: Link').t`Go to subscription plans`}
                     data-testid="cta:upgrade-plan"
                 >{c('specialoffer: Link').t`Upgrade`}</PromotionButton>
