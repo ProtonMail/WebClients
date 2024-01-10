@@ -12,18 +12,19 @@ type Props = {
     onItemRender: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
     onItemRenderLoadedLink: (linkId: string, domRef: React.MutableRefObject<unknown>) => void;
     hasSelection: boolean;
-    isLoadingMore: boolean;
+    isLoading: boolean;
     onItemClick: (linkId: string) => void;
     onSelectChange: (index: number, isSelected: boolean) => void;
     isGroupSelected: (groupIndex: number) => boolean | 'some';
     isItemSelected: (linkId: string) => boolean;
+    categoryLoading?: string;
 };
 
 export const PhotosGrid: FC<Props> = ({
     data,
     onItemRender,
     onItemRenderLoadedLink,
-    isLoadingMore,
+    isLoading,
     onItemClick,
     onSelectChange,
     hasSelection,
@@ -134,6 +135,7 @@ export const PhotosGrid: FC<Props> = ({
                                 onSelectChange(i, isSelected);
                             }}
                             selected={isGroupSelected(i)}
+                            isLoading={isLoading}
                         />
                     );
                 }
@@ -192,14 +194,14 @@ export const PhotosGrid: FC<Props> = ({
         };
 
         return [items, innerStyle];
-    }, [data, isItemSelected, isGroupSelected, dimensions, scrollPosition]);
+    }, [data, isItemSelected, isGroupSelected, dimensions, scrollPosition, isLoading]);
 
     return (
         <div className="p-4 overflow-auto outline-none--at-all" ref={containerRef} onScroll={handleScroll}>
             <div className="relative w-full" style={innerStyle}>
                 {gridItems}
             </div>
-            {isLoadingMore && <Loader />}
+            {isLoading && <Loader />}
         </div>
     );
 };
