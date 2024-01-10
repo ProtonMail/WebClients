@@ -60,6 +60,7 @@ export const CreditCardNew: VFC<ItemNewViewProps<'creditCard'>> = ({ shareId, on
                 content: {
                     ...creditCardValues,
                     cardType: CardType.Unspecified,
+                    expirationDate: creditCardValues.expirationDate,
                     number: obfuscate(creditCardValues.number),
                     verificationNumber: obfuscate(creditCardValues.verificationNumber),
                     pin: obfuscate(creditCardValues.pin),
@@ -125,7 +126,7 @@ export const CreditCardNew: VFC<ItemNewViewProps<'creditCard'>> = ({ shareId, on
                                 icon="calendar-today"
                                 label={c('Label').t`Expiration date`}
                                 mask={expDateMask}
-                                placeholder={c('Placeholder').t`MM/YYYY`}
+                                placeholder={c('Placeholder').t`MM/YY`}
                             />
                             <Field
                                 hidden
