@@ -6,7 +6,6 @@ import { Button } from '@proton/atoms/Button';
 import useLoading from '@proton/hooks/useLoading';
 import { updateSAMLConfig } from '@proton/shared/lib/api/samlSSO';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { isEquivalent } from '@proton/shared/lib/helpers/object';
 import { Domain, SSO } from '@proton/shared/lib/interfaces';
 
 import { Info, InputFieldTwo, TextAreaTwo, useFormErrors } from '../../../components';
@@ -14,7 +13,7 @@ import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { SettingsLayout, SettingsLayoutLeft, SettingsLayoutRight } from '../../account';
 import ReadonlyFieldWithCopy from './ReadonlyFieldWithCopy';
 
-interface SSOInfoState {
+interface SSOInfo {
     url: string;
     entity: string;
     certificate: string;
@@ -26,37 +25,45 @@ interface Props {
     onImportSamlClick: () => void;
 }
 
-const SSOInfo = ({ domain, sso, onImportSamlClick }: Props) => {
+const SSOInfoForm = ({ domain, sso, onImportSamlClick }: Props) => {
     const { onFormSubmit, validator } = useFormErrors();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const api = useApi();
 
-    const defaultSSOInfo: SSOInfoState = {
+    const ssoInfo: SSOInfo = {
         url: sso.SSOURL,
         entity: sso.SSOEntityID,
         certificate: sso.Certificate,
     };
 
-    const [ssoInfo, setSsoInfo] = useState<SSOInfoState>(defaultSSOInfo);
-
-    const isFormDirty = !isEquivalent(ssoInfo, defaultSSOInfo);
+    const [ssoDiff, setSsoDiff] = useState<Partial<SSOInfo>>({});
+    const isFormDirty = Object.keys(ssoDiff).length;
 
     const [submitting, withSubmitting] = useLoading();
 
-    const onChange = (key: keyof SSOInfoState) => (value: string) => {
-        setSsoInfo((info) => ({
-            ...info,
-            [key]: value,
-        }));
+    const onChange = (key: keyof SSOInfo) => (value: string) => {
+        setSsoDiff((diff) => {
+            if (value === ssoInfo[key]) {
+                delete diff[key];
+                return { ...diff };
+            }
+            return {
+                ...diff,
+                [key]: value,
+            };
+        });
     };
+
+    const url = ssoDiff.url || ssoInfo.url;
+    const entity = ssoDiff.entity || ssoInfo.entity;
+    const certificate = ssoDiff.certificate || ssoInfo.certificate;
 
     const handleSubmit = async () => {
         if (!onFormSubmit()) {
             return;
         }
 
-        const { url, entity, certificate } = ssoInfo;
         await api(
             updateSAMLConfig(sso.ID, {
                 DomainID: domain.ID,
@@ -67,6 +74,7 @@ const SSOInfo = ({ domain, sso, onImportSamlClick }: Props) => {
         );
 
         await call();
+        setSsoDiff({});
 
         createNotification({ text: c('Info').t`SAML configuration saved` });
     };
@@ -91,9 +99,9 @@ const SSOInfo = ({ domain, sso, onImportSamlClick }: Props) => {
                 <SettingsLayoutRight className="w-full">
                     <InputFieldTwo
                         id="ssoUrl"
-                        value={ssoInfo.url}
+                        value={url}
                         onValue={onChange('url')}
-                        error={validator([requiredValidator(ssoInfo.url)])}
+                        error={validator([requiredValidator(url)])}
                         disableChange={submitting}
                     />
                 </SettingsLayoutRight>
@@ -111,9 +119,9 @@ const SSOInfo = ({ domain, sso, onImportSamlClick }: Props) => {
                 <SettingsLayoutRight className="w-full">
                     <InputFieldTwo
                         id="ssoEntity"
-                        value={ssoInfo.entity}
+                        value={entity}
                         onValue={onChange('entity')}
-                        error={validator([requiredValidator(ssoInfo.entity)])}
+                        error={validator([requiredValidator(entity)])}
                         disableChange={submitting}
                     />
                 </SettingsLayoutRight>
@@ -134,9 +142,9 @@ const SSOInfo = ({ domain, sso, onImportSamlClick }: Props) => {
                         id="ssoCertificate"
                         as={TextAreaTwo}
                         rows={12}
-                        value={ssoInfo.certificate}
+                        value={certificate}
                         onValue={onChange('certificate')}
-                        error={validator([requiredValidator(ssoInfo.certificate)])}
+                        error={validator([requiredValidator(certificate)])}
                         disableChange={submitting}
                     />
                 </SettingsLayoutRight>
@@ -182,4 +190,4 @@ const SSOInfo = ({ domain, sso, onImportSamlClick }: Props) => {
     );
 };
 
-export default SSOInfo;
+export default SSOInfoForm;
