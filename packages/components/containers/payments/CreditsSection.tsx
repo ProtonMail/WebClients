@@ -4,10 +4,9 @@ import { Button } from '@proton/atoms';
 import { isFreeSubscription } from '@proton/shared/lib/constants';
 import { getHasVpnB2BPlan, isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import { External } from '@proton/shared/lib/interfaces';
-import noop from '@proton/utils/noop';
 
-import { Loader } from '../../components';
-import { useModalState, useModalTwo } from '../../components/modalTwo';
+import { Loader, useModalTwoStatic } from '../../components';
+import { useModalState } from '../../components/modalTwo';
 import { useSubscription, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import CreditsModal from './CreditsModal';
@@ -16,7 +15,7 @@ import InAppPurchaseModal from './subscription/InAppPurchaseModal';
 const CreditsSection = () => {
     const [subscription] = useSubscription();
     const [creditModalProps, setCreditModalOpen, renderCreditModal] = useModalState();
-    const [externalSubscriptionModal, showExternalSubscriptionModal] = useModalTwo(InAppPurchaseModal);
+    const [externalSubscriptionModal, showExternalSubscriptionModal] = useModalTwoStatic(InAppPurchaseModal);
 
     const [{ Credit }] = useUser();
 
@@ -58,8 +57,7 @@ const CreditsSection = () => {
                             if (isManagedExternally(subscription)) {
                                 showExternalSubscriptionModal({
                                     subscription,
-                                    key: 'external-subscription-modal',
-                                }).catch(noop);
+                                });
                                 return;
                             }
 

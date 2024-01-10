@@ -34,8 +34,8 @@ interface Props extends ModalProps {
     onResign?: () => void;
     onNotResign?: () => void;
     onError?: () => void;
-    onResolve?: () => void;
-    onReject?: () => void;
+    onResolve: () => void;
+    onReject: () => void;
 }
 const ContactResignModal = ({
     title,

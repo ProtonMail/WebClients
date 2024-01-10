@@ -89,7 +89,7 @@ const useRevisionRetentionDays = (
                           c('Info').jt`${DRIVE_APP_NAME} will no longer keep previous versions of your files.`,
                       ]
                     : c('Info').t`This will delete all previous versions of your files older than ${rententionLabel}.`;
-            void showConfirmActionModal({
+            showConfirmActionModal({
                 title: c('Title').t`Delete version history?`,
                 onSubmit: updateRevisionRetentionDay,
                 onCancel: () => setRevisionRetentionDay(originalRevisionRetentionDays),

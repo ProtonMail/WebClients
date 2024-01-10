@@ -9,7 +9,7 @@ import {
     ModalTwoHeader,
     RevisionsUpgradeBanner,
     getRetentionLabel,
-    useModalTwo,
+    useModalTwoStatic,
     useUser,
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
@@ -83,5 +83,5 @@ const RevisionsModal = ({ link, ...modalProps }: Props & ModalStateProps) => {
 export default RevisionsModal;
 
 export const useRevisionsModal = () => {
-    return useModalTwo<Props, void>(RevisionsModal, false);
+    return useModalTwoStatic(RevisionsModal);
 };

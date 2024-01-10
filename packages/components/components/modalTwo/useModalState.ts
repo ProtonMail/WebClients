@@ -1,11 +1,10 @@
-import { useCallback, useMemo, useState } from 'react';
+import { Key, useCallback, useMemo, useState } from 'react';
 
 import useControlled from '@proton/hooks/useControlled';
 
 import { generateUID } from '../../helpers';
 
 export interface ModalStateProps {
-    key: string;
     open: boolean;
     onClose: () => void;
     onExit: () => void;
@@ -50,7 +49,7 @@ const useModalState = (options?: ModalStateOptions): ModalStateReturnTuple => {
         onExit?.();
     }, [onExit]);
 
-    const modalProps: ModalStateProps = useMemo(
+    const modalProps: ModalStateProps & { key: Key } = useMemo(
         () => ({
             key,
             open: !!open,

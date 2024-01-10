@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Icon, Tooltip, useModalTwo } from '@proton/components';
+import { Icon, Tooltip, useModalTwoStatic } from '@proton/components';
 
 import { useLockedVolume } from '../../../store';
 import FilesRecoveryModal from '../../modals/FilesRecoveryModal/FilesRecoveryModal';
@@ -10,7 +10,7 @@ interface Props {
 }
 
 const FileRecoveryIcon = ({ className }: Props) => {
-    const [fileRecoveryModal, showFileRecoveryModal] = useModalTwo(FilesRecoveryModal);
+    const [fileRecoveryModal, showFileRecoveryModal] = useModalTwoStatic(FilesRecoveryModal);
     const { hasVolumesForRestore } = useLockedVolume();
 
     return hasVolumesForRestore ? (
@@ -24,7 +24,7 @@ const FileRecoveryIcon = ({ className }: Props) => {
                         e.preventDefault();
                         e.stopPropagation();
 
-                        void showFileRecoveryModal({});
+                        showFileRecoveryModal({});
                     }}
                 />
             </Tooltip>

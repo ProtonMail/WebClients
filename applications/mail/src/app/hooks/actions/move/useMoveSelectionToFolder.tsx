@@ -76,10 +76,7 @@ export const useMoveSelectionToFolder = (setContainFocus?: Dispatch<SetStateActi
 
     const [moveScheduledModal, handleShowScheduledModal] = useModalTwo(MoveScheduledModal);
     const [moveSnoozedModal, handleMoveSnoozedModal] = useModalTwo(MoveSnoozedModal);
-    const [moveToSpamModal, handleShowSpamModal] = useModalTwo<
-        { isMessage: boolean; elements: Element[] },
-        { unsubscribe: boolean; remember: boolean }
-    >(MoveToSpamModal);
+    const [moveToSpamModal, handleShowSpamModal] = useModalTwo(MoveToSpamModal);
 
     const pageSize = useMailSelector(pageSizeSelector);
 

@@ -12,7 +12,7 @@ import {
     ModalTwoHeader,
     Row,
     useFormErrors,
-    useModalTwo,
+    useModalTwoStatic,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
@@ -103,5 +103,5 @@ const RemoveDeviceModal = ({ device, onClose, ...modalProps }: Props) => {
 
 export default RemoveDeviceModal;
 export const useRemoveDeviceModal = () => {
-    return useModalTwo<Props, void>(RemoveDeviceModal, false);
+    return useModalTwoStatic(RemoveDeviceModal);
 };

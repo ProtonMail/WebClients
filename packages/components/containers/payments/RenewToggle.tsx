@@ -14,10 +14,10 @@ import { Toggle } from '../../components/toggle';
 import { useSubscription } from '../../hooks';
 
 type DisableRenewModalOwnProps = { isVPNPlan: boolean };
-type DisableRenewModalPromiseProps = { onResolve: (result: boolean) => void };
+type DisableRenewModalPromiseProps = { onResolve: (result: boolean) => void; onReject: () => void };
 type DisableRenewModalProps = ModalProps & DisableRenewModalPromiseProps & DisableRenewModalOwnProps;
 
-export const DisableRenewModal = ({ isVPNPlan, onResolve, ...rest }: DisableRenewModalProps) => {
+export const DisableRenewModal = ({ isVPNPlan, onResolve, onReject, ...rest }: DisableRenewModalProps) => {
     return (
         <Prompt
             data-testid="disable-renew-modal"
@@ -59,9 +59,7 @@ export const useRenewToggle = ({ initialRenewState = Autopay.ENABLE }: UseRenewT
     const vpnPlans: (PLANS | ADDON_NAMES)[] = [PLANS.VPN, PLANS.VPNBASIC, PLANS.VPNPLUS];
     const isVPNPlan = !!subscription?.Plans?.some(({ Name }) => vpnPlans.includes(Name));
 
-    const [disableRenewModal, showDisableRenewModal] = useModalTwo<DisableRenewModalOwnProps, boolean>(
-        DisableRenewModal
-    );
+    const [disableRenewModal, showDisableRenewModal] = useModalTwo(DisableRenewModal);
 
     const [renewState, setRenewState] = useState(initialRenewState);
     const onChange = async (): Promise<Autopay | null> => {

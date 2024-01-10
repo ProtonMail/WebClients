@@ -13,7 +13,7 @@ import {
     PrimaryButton,
     Radio,
     Row,
-    useModalTwo,
+    useModalTwoStatic,
 } from '@proton/components';
 
 import { TransferConflictStrategy } from '../../store';
@@ -198,5 +198,5 @@ export default function ConflictModal({
 }
 
 export const useConflictModal = () => {
-    return useModalTwo<ConflictModalProps, void>(ConflictModal, false);
+    return useModalTwoStatic(ConflictModal);
 };

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FocusEvent, useState } from 'react';
+import { ChangeEvent, FocusEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -14,7 +14,7 @@ import {
     ModalTwoHeader,
     PrimaryButton,
     Row,
-    useModalTwo,
+    useModalTwoStatic,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import noop from '@proton/utils/noop';
@@ -113,5 +113,5 @@ const RenameModal = ({ item, onClose, ...modalProps }: Props & ModalStateProps) 
 export default RenameModal;
 
 export const useRenameModal = () => {
-    return useModalTwo<Props, void>(RenameModal, false);
+    return useModalTwoStatic(RenameModal);
 };

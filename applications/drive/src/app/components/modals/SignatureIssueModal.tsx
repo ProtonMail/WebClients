@@ -13,7 +13,7 @@ import {
     ModalTwoHeader,
     Radio,
     Row,
-    useModalTwo,
+    useModalTwoStatic,
 } from '@proton/components';
 
 import { SignatureIssues } from '../../store';
@@ -129,5 +129,5 @@ export default function SignatureIssueModal({
 }
 
 export const useSignatureIssueModal = () => {
-    return useModalTwo<ConflictModalProps, void>(SignatureIssueModal, false);
+    return useModalTwoStatic(SignatureIssueModal);
 };

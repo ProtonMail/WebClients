@@ -1,20 +1,21 @@
-import React, { useState } from 'react';
-
-
+import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-
-
 import { Button } from '@proton/atoms';
-import { ModalStateProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, RadioGroup, useModalTwo } from '@proton/components';
+import {
+    ModalStateProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    RadioGroup,
+    useModalTwoStatic,
+} from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-
-
 import { LockedVolumeResolveMethod } from '../ResolveLockedVolumes/KeyReactivation/interfaces';
-
 
 interface Props {
     defaultResolveMethod: LockedVolumeResolveMethod;
@@ -121,5 +122,5 @@ const KeyReactivationModal = ({
 export default KeyReactivationModal;
 
 export const useKeyReactivationModal = () => {
-    return useModalTwo<Props, void>(KeyReactivationModal, false);
+    return useModalTwoStatic(KeyReactivationModal);
 };

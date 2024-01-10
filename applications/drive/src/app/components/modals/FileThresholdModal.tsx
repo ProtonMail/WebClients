@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/index';
-import { BasicModal, ModalStateProps, PrimaryButton, useModalTwo } from '@proton/components';
+import { BasicModal, ModalStateProps, PrimaryButton, useModalTwoStatic } from '@proton/components';
 
 type Props = {
     type?: FileThresholdModalType;
@@ -59,5 +59,5 @@ export const FileThresholdModal = ({
 };
 
 export const useFileThresholdModal = () => {
-    return useModalTwo<Props, void>(FileThresholdModal, false);
+    return useModalTwoStatic(FileThresholdModal);
 };

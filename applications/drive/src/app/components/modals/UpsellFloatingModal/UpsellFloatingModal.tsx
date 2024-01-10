@@ -3,7 +3,7 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms/Button';
-import { DriveLogo, Icon, ModalProps, Tooltip, useModalTwo } from '@proton/components/components';
+import { DriveLogo, Icon, ModalProps, Tooltip, useModalTwoStatic } from '@proton/components/components';
 import Dialog from '@proton/components/components/dialog/Dialog';
 import { Portal } from '@proton/components/components/portal';
 import { useActiveBreakpoint } from '@proton/components/hooks';
@@ -23,7 +23,6 @@ interface ChildProps {
     open: boolean;
     onClose: () => void;
     onExit: () => void;
-    onBlockNewOpening: () => void;
 }
 
 const UpsellFloatingModalContent = ({ onClose }: Pick<ChildProps, 'onClose'>) => {
@@ -67,6 +66,7 @@ enum ExitState {
     exiting,
     exited,
 }
+
 const UpsellFloatingModal = ({ open, onClose }: ChildProps & ModalProps) => {
     const [exit, setExit] = useState(() => (open ? ExitState.idle : ExitState.exited));
     const active = exit !== ExitState.exited;
@@ -121,11 +121,8 @@ const UpsellFloatingModal = ({ open, onClose }: ChildProps & ModalProps) => {
 
 export default UpsellFloatingModal;
 
-export const useUpsellFloatingModal = (): ReturnType<typeof useModalTwo<ModalProps, unknown>> => {
-    const [renderUpsellFloatingModal, showUpsellFloatingModal] = useModalTwo<ModalProps | void, unknown>(
-        UpsellFloatingModal,
-        false
-    );
+export const useUpsellFloatingModal = () => {
+    const [renderUpsellFloatingModal, showUpsellFloatingModal] = useModalTwoStatic(UpsellFloatingModal);
 
     const { viewportWidth } = useActiveBreakpoint();
 
@@ -136,8 +133,8 @@ export const useUpsellFloatingModal = (): ReturnType<typeof useModalTwo<ModalPro
         if (hideModal) {
             return;
         }
-        void showUpsellFloatingModal();
+        showUpsellFloatingModal({});
     }, [hideModal, showUpsellFloatingModal]);
 
-    return [hideModal ? null : renderUpsellFloatingModal, showUpsellFloatingModal];
+    return [hideModal ? null : renderUpsellFloatingModal, showUpsellFloatingModal] as const;
 };

@@ -11,7 +11,7 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     Row,
-    useModalTwo,
+    useModalTwoStatic,
 } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
@@ -73,5 +73,5 @@ const FilesDetailsModal = ({ selectedItems, onClose, ...modalProps }: Props & Mo
 
 export default FilesDetailsModal;
 export const useFilesDetailsModal = () => {
-    return useModalTwo<Props, void>(FilesDetailsModal, false);
+    return useModalTwoStatic(FilesDetailsModal);
 };

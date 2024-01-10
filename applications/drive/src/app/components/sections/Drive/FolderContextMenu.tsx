@@ -61,9 +61,11 @@ export function FolderContextMenu({
             {fileSharingModal}
             {linkSharingModal}
             <ContextMenu isOpen={isOpen} close={close} position={position} anchorRef={anchorRef}>
-                {!isActiveLinkReadOnly && <CreateNewFolderButton close={close} action={showCreateFolderModal} />}
+                {!isActiveLinkReadOnly && (
+                    <CreateNewFolderButton close={close} action={() => showCreateFolderModal({})} />
+                )}
                 {isEditEnabled && !isActiveLinkReadOnly && (
-                    <CreateNewFileButton close={close} action={showCreateFileModal} />
+                    <CreateNewFileButton close={close} action={() => showCreateFileModal({})} />
                 )}
                 {!isActiveLinkReadOnly && <ContextSeparator />}
                 {!isActiveLinkReadOnly ? (

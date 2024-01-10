@@ -45,7 +45,7 @@ const LockedVolumesBanner = ({ onClose }: Props) => {
     const StartRecoveryButton = (
         <InlineLinkButton
             key="file-recovery-more"
-            onClick={() => showFilesRecoveryModal()}
+            onClick={() => showFilesRecoveryModal({})}
             data-testid="recovery-banner:start-recovery-button"
         >
             {c('Info').t`More`}

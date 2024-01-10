@@ -5,12 +5,8 @@ import { Renew, SubscriptionModel, UserModel } from '@proton/shared/lib/interfac
 
 import { useModalTwo } from '../../../../components/modalTwo';
 import { useApi, useEventManager, useNotifications } from '../../../../hooks';
-import FeedbackDowngradeModal, {
-    FeedbackDowngradeModalProps,
-    FeedbackDowngradeResult,
-    isKeepSubscription,
-} from '../FeedbackDowngradeModal';
-import { CancelSubscriptionModal, CancelSubscriptionModalProps } from './CancelSubscriptionModal';
+import FeedbackDowngradeModal, { isKeepSubscription } from '../FeedbackDowngradeModal';
+import { CancelSubscriptionModal } from './CancelSubscriptionModal';
 import { CancelSubscriptionResult } from './types';
 
 const SUBSCRIPTION_KEPT: CancelSubscriptionResult = {
@@ -34,14 +30,8 @@ export const useCancelSubscriptionFlow = ({ subscription, user }: UseCancelSubsc
     const api = useApi();
     const eventManager = useEventManager();
 
-    const [cancelSubscriptionModal, showCancelSubscriptionModal] = useModalTwo<
-        CancelSubscriptionModalProps,
-        CancelSubscriptionResult
-    >(CancelSubscriptionModal);
-    const [feedbackDowngradeModal, showFeedbackDowngradeModal] = useModalTwo<
-        FeedbackDowngradeModalProps,
-        FeedbackDowngradeResult
-    >(FeedbackDowngradeModal);
+    const [cancelSubscriptionModal, showCancelSubscriptionModal] = useModalTwo(CancelSubscriptionModal);
+    const [feedbackDowngradeModal, showFeedbackDowngradeModal] = useModalTwo(FeedbackDowngradeModal);
     const { createNotification, hideNotification } = useNotifications();
 
     const modals = (

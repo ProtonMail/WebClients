@@ -3,11 +3,14 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms';
 import { ModalProps, Prompt } from '@proton/components';
 
-interface Props extends ModalProps {
+export interface MoveScheduledModalProps {
     isMessage: boolean;
+    onCloseCustomAction?: () => void;
+}
+
+interface Props extends MoveScheduledModalProps, ModalProps {
     onResolve: () => void;
     onReject: () => void;
-    onCloseCustomAction?: () => void;
 }
 
 const MoveScheduledModal = ({ isMessage, onResolve, onReject, onCloseCustomAction, ...rest }: Props) => {

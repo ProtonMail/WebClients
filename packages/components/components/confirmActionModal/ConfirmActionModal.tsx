@@ -10,7 +10,7 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    useModalTwo,
+    useModalTwoStatic,
 } from '@proton/components';
 
 export interface ConfirmActionModalProps {
@@ -83,5 +83,5 @@ export const ConfirmActionModal = ({
 };
 
 export const useConfirmActionModal = () => {
-    return useModalTwo<ConfirmActionModalProps, void>(ConfirmActionModal, false);
+    return useModalTwoStatic(ConfirmActionModal);
 };

@@ -39,20 +39,20 @@ const useResolveLockedSharesFlow = ({ onSuccess, onError }: ReactivationParams) 
     const handleResolveMethodSelection = (type: LockedVolumeResolveMethod) => {
         switch (type) {
             case LockedVolumeResolveMethod.ResolveMethodSelection:
-                void showKeyReactivationModal({
+                showKeyReactivationModal({
                     onSubmit: handleResolveMethodSelection,
                     defaultResolveMethod: lastResolveMethod.current,
                     volumeCount: lockedVolumesCount,
                 });
                 break;
             case LockedVolumeResolveMethod.DeleteOldFiles:
-                void showDeleteLockedVolumesConfirmModal({
+                showDeleteLockedVolumesConfirmModal({
                     onSubmit: handleDeleteLockedVolumesSubmit,
                     volumeCount: lockedVolumesCount,
                 });
                 break;
             case LockedVolumeResolveMethod.ReactivateKeys:
-                void showUnlockDriveConfirmationDialog();
+                showUnlockDriveConfirmationDialog({});
                 break;
             case LockedVolumeResolveMethod.UnlockLater:
                 onSuccess?.();
@@ -63,7 +63,7 @@ const useResolveLockedSharesFlow = ({ onSuccess, onError }: ReactivationParams) 
     };
 
     const openKeyReactivationModal = () => {
-        void handleResolveMethodSelection(LockedVolumeResolveMethod.ResolveMethodSelection);
+        handleResolveMethodSelection(LockedVolumeResolveMethod.ResolveMethodSelection);
     };
 
     return {
