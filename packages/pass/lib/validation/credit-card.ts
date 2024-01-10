@@ -14,53 +14,73 @@ export type CreditCardItemFormValues = {
     note: string;
 };
 
-const isExpirationDateValid = (expirationDate: string) => {
-    if (expirationDate.length === 4) {
-        const month = parseInt(expirationDate.slice(0, 2));
-        const year = parseInt(expirationDate.slice(-2));
-        return !isNaN(month) && !isNaN(year) && month >= 1 && month <= 12 && year >= 0 && year <= 99;
+/** Returns a tuple `[MM, YY|YYYY]` from a raw expiration date string.
+ * Supported date formats for extraction :
+ * - YYYY-MM
+ * - MMYY
+ * - MMYYYY
+ * - MM[seperator]YY
+ * - MM[seperator]YYYY */
+const extractExpirationDateParts = (rawDate: string): [string, string] => {
+    /* account for YYYY-MM format */
+    if (/^(\d{4})-(\d{2})$/.test(rawDate)) return [rawDate.slice(-2), rawDate.slice(0, 4)];
+
+    const date = rawDate.replaceAll(/\/|-|\.|,|\s/g, '');
+    if (date.length === 4) return [date.slice(0, 2), date.slice(-2)];
+    if (date.length === 6) return [date.slice(0, 2), date.slice(-4)];
+    return ['', ''];
+};
+
+const isValidMonth = (maybeMonth: string): boolean => {
+    const month = parseInt(maybeMonth, 10);
+    return !isNaN(month) && month >= 1 && month <= 12;
+};
+const isValidYear = (maybeYear: string): boolean => {
+    const year = parseInt(maybeYear, 10);
+    return !isNaN(year) && year >= 0 && year <= 9999;
+};
+
+const isValidExpirationDate = (date: string): boolean => {
+    const [month, year] = extractExpirationDateParts(date);
+    return isValidMonth(month) && isValidYear(year);
+};
+
+export const formatExpirationDateMMYY = (date: string): string => {
+    const [month, year] = extractExpirationDateParts(date);
+    return isValidMonth(month) && isValidYear(year) ? `${month}${year.slice(-2)}` : '';
+};
+
+export const formatExpirationDateMMYYYY = (date: string): string => {
+    const [month, year] = extractExpirationDateParts(date);
+
+    if (isValidMonth(month) && isValidYear(year)) {
+        if (year.length === 4) return `${month}${year}`;
+        const yearBase = new Date().getFullYear().toString().slice(0, 2);
+        return `${month}${yearBase}${year}`;
     }
-    if (expirationDate.length === 6) {
-        const month = parseInt(expirationDate.slice(0, 2));
-        const year = parseInt(expirationDate.slice(-4));
-        return !isNaN(month) && !isNaN(year) && month >= 1 && month <= 12 && year >= 0 && year <= 9999;
+
+    return '';
+};
+
+/** Formats the provided date string as `YYYY-MM`.  */
+export const formatExpirationDateYYYYMM = (date: string): string => {
+    const [month, year] = extractExpirationDateParts(date);
+
+    if (isValidMonth(month) && isValidYear(year)) {
+        if (year.length === 4) return `${year}-${month}`;
+        const yearBase = new Date().getFullYear().toString().slice(0, 2);
+        return `${yearBase}${year}-${month}`;
     }
-    return false;
+
+    return '';
 };
 
 export const validateCreditCardForm = (values: CreditCardItemFormValues): FormikErrors<CreditCardItemFormValues> => {
     const errors: FormikErrors<CreditCardItemFormValues> = validateItemErrors(values);
 
-    if (values.expirationDate.length && !isExpirationDateValid(values.expirationDate)) {
+    if (values.expirationDate.length && !isValidExpirationDate(values.expirationDate)) {
         errors.expirationDate = c('Warning').t`Expiration Date is not in the format MM/YY`;
     }
 
     return { ...errors };
-};
-
-export const expirationDateMMYY = (expirationDate: string) => {
-    if (!expirationDate) return '';
-    if (!isExpirationDateValid(expirationDate)) {
-        throw new Error('Invalid card expiration date');
-    }
-    if (expirationDate.length === 4) return expirationDate;
-
-    const month = expirationDate.slice(0, 2);
-    const year = expirationDate.slice(-2);
-
-    return `${month}${year}`;
-};
-
-export const expirationDateMMYYYY = (expirationDate: string) => {
-    if (!expirationDate) return '';
-    if (!isExpirationDateValid(expirationDate)) {
-        throw new Error('Invalid card expiration date');
-    }
-    if (expirationDate.length === 6) return expirationDate;
-
-    const currentYear = new Date().getFullYear().toString();
-    const month = expirationDate.slice(0, 2);
-    const year = expirationDate.slice(-2);
-
-    return `${month}${currentYear.slice(0, 2)}${year}`;
 };

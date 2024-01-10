@@ -20,11 +20,7 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constan
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import type { CreditCardItemFormValues } from '@proton/pass/lib/validation/credit-card';
-import {
-    expirationDateMMYY,
-    expirationDateMMYYYY,
-    validateCreditCardForm,
-} from '@proton/pass/lib/validation/credit-card';
+import { formatExpirationDateMMYY, validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
 import { CardType } from '@proton/pass/types/protobuf/item-v1';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
@@ -39,17 +35,9 @@ export const CreditCardEdit: VFC<ItemEditViewProps<'creditCard'>> = ({ vault, re
         content,
     } = useDeobfuscatedItem(item);
 
-    const displayExpirationDateMMYY = (expirationDate: string) => {
-        try {
-            return expirationDateMMYY(expirationDate);
-        } catch (e) {
-            return '';
-        }
-    };
-
     const initialValues: CreditCardItemFormValues = {
         ...content,
-        expirationDate: content.expirationDate ? displayExpirationDateMMYY(content.expirationDate) : '',
+        expirationDate: formatExpirationDateMMYY(content.expirationDate),
         shareId,
         name,
         note,
@@ -67,7 +55,7 @@ export const CreditCardEdit: VFC<ItemEditViewProps<'creditCard'>> = ({ vault, re
                 metadata: { name, note: obfuscate(note), itemUuid },
                 content: {
                     ...creditCardValues,
-                    expirationDate: expirationDateMMYYYY(creditCardValues.expirationDate),
+                    expirationDate: creditCardValues.expirationDate,
                     cardType: CardType.Unspecified,
                     number: obfuscate(creditCardValues.number),
                     verificationNumber: obfuscate(creditCardValues.verificationNumber),
