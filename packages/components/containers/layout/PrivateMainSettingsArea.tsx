@@ -161,6 +161,7 @@ const PrivateMainSettingsArea = ({ setActiveSection, children, config }: Private
                 key={subsectionConfig.id}
                 id={subsectionConfig.id}
                 title={subsectionConfig.text}
+                beta={subsectionConfig.beta}
                 className="container-section-sticky-section"
             >
                 {child}

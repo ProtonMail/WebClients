@@ -244,6 +244,7 @@ export const getRoutes = ({ user, subscription, organization, ssoVpnSettingFeatu
                 {
                     text: c('Title').t`SAML authentication`,
                     id: 'saml-authentication',
+                    beta: true,
                 },
             ],
         },
