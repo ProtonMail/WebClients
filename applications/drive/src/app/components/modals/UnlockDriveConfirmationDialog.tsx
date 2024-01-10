@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { c } from 'ttag';
 
 import { Button, ButtonLike } from '@proton/atoms';
@@ -10,7 +8,7 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     SettingsLink,
-    useModalTwo,
+    useModalTwoStatic,
 } from '@proton/components';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
@@ -62,5 +60,5 @@ const UnlockDriveConfirmationDialog = ({ onClose = noop, onSubmit = noop, ...mod
 export default UnlockDriveConfirmationDialog;
 
 export const useUnlockDriveConfirmationDialog = () => {
-    return useModalTwo<Props | void, void>(UnlockDriveConfirmationDialog, false);
+    return useModalTwoStatic(UnlockDriveConfirmationDialog);
 };

@@ -2,6 +2,7 @@ import { fireEvent, waitFor } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import noop from '@proton/utils/noop';
 
 import { addApiMock, clearApiMocks } from '../../../helpers/test/api';
 import { getCompleteAddress } from '../../../helpers/test/cache';
@@ -42,7 +43,14 @@ describe('Contact resign modal', () => {
         const onResignSpy = jest.fn();
 
         const view = await render(
-            <ContactResignModal title={title} contacts={contacts} onResign={onResignSpy} open>
+            <ContactResignModal
+                title={title}
+                contacts={contacts}
+                onResign={onResignSpy}
+                onResolve={noop}
+                onReject={noop}
+                open
+            >
                 {children}
             </ContactResignModal>,
             {

@@ -23,7 +23,7 @@ interface Props {
     loading?: boolean;
     needUpsell: boolean;
     model: GatewayDto;
-    changeModel: <V extends GatewayDto[K], K extends keyof GatewayDto = keyof GatewayDto>(key: K, value: V) => void;
+    changeModel: (diff: Partial<GatewayDto>) => void;
 }
 
 export const GatewayCountrySelection = ({
@@ -45,7 +45,7 @@ export const GatewayCountrySelection = ({
     const totalCountExceeded = addedCount > remainingCount;
     const canBuyMore = ownedCount < MAX_IPS_ADDON;
 
-    const handleCountryChange = ({ value }: SelectChangeEvent<string>) => changeModel('country', value);
+    const handleCountryChange = ({ value }: SelectChangeEvent<string>) => changeModel({ country: value });
 
     return singleServer ? (
         <Row>
@@ -103,10 +103,10 @@ export const GatewayCountrySelection = ({
                             );
 
                             if (mainCountry !== model.country) {
-                                changeModel('country', mainCountry);
+                                changeModel({ country: mainCountry });
                             }
 
-                            changeModel('quantities', quantities);
+                            changeModel({ quantities });
                         }}
                         step={1}
                     />

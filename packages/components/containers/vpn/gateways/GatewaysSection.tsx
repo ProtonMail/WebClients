@@ -12,7 +12,7 @@ import gatewaySvg from '@proton/styles/assets/img/illustrations/gateway.svg';
 import gatewaysEmptyStateAdminsSvg from '@proton/styles/assets/img/illustrations/gateways-empty-state-admins.svg';
 import gatewaysEmptyStateUsersSvg from '@proton/styles/assets/img/illustrations/gateways-empty-state-users.svg';
 
-import { Loader, Row, Table, TableBody, TableCell, useModalTwo } from '../../../components';
+import { Loader, Row, Table, TableBody, TableCell, useModalTwoStatic } from '../../../components';
 import { useApi, useNotifications, useSortedList, useSubscription, useUser, useUserSettings } from '../../../hooks';
 import { Gateway } from './Gateway';
 import { GatewayLogical } from './GatewayLogical';
@@ -38,10 +38,10 @@ const getFeaturesAndUserIds = (data: Partial<GatewayModel>): [number, readonly s
 
 const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
     const api = useApi();
-    const [createModal, showCreateModal] = useModalTwo(GatewayModal);
-    const [renameModal, showRenameModal] = useModalTwo(GatewayRenameModal);
-    const [usersModal, showUsersModal] = useModalTwo(GatewayUsersModal);
-    const [serversModal, showServersModal] = useModalTwo(GatewayServersModal);
+    const [createModal, showCreateModal] = useModalTwoStatic(GatewayModal);
+    const [renameModal, showRenameModal] = useModalTwoStatic(GatewayRenameModal);
+    const [usersModal, showUsersModal] = useModalTwoStatic(GatewayUsersModal);
+    const [serversModal, showServersModal] = useModalTwoStatic(GatewayServersModal);
     const [user] = useUser();
     const { createNotification } = useNotifications();
     const [userSettings] = useUserSettings();
@@ -330,6 +330,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
 
     const editGatewayServers = (gateway: Gateway) => () =>
         showServersModal({
+            language,
             showCancelButton,
             gateway,
             countries,
@@ -430,12 +431,12 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
             },
         });
 
-    const renameGateway = (id: string, currentName: string) => async () => {
+    const renameGateway = (id: string, currentName: string) => () => {
         if (deletingLogicals.indexOf(id) !== -1) {
             return;
         }
 
-        await showRenameModal({
+        showRenameModal({
             showCancelButton,
             currentName,
             onSubmitDone: async ({ Name: newName }: { Name: string }) => {
