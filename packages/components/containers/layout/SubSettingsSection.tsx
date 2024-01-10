@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import ProtonBadge from '@proton/components/components/protonBadge/ProtonBadge';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
@@ -15,10 +16,11 @@ export interface SubSettingsSectionProps extends ComponentPropsWithoutRef<'div'>
     className?: string;
     observer?: IntersectionObserver;
     title?: string;
+    beta?: boolean;
     children: ReactNode;
 }
 
-const SubSettingsSection = ({ id, observer, title, children, className, ...rest }: SubSettingsSectionProps) => {
+const SubSettingsSection = ({ id, observer, title, beta, children, className, ...rest }: SubSettingsSectionProps) => {
     const ref = useRef<HTMLDivElement>(null);
     const { createNotification } = useNotifications();
 
@@ -69,6 +71,13 @@ const SubSettingsSection = ({ id, observer, title, children, className, ...rest 
                             <Icon name="link" />
                         </Link>
                         {title}
+                        {beta && (
+                            <ProtonBadge
+                                className="align-middle"
+                                text={c('Info').t`Beta`}
+                                tooltipText={c('Tooltip').t`Feature in early access`}
+                            />
+                        )}
                     </SettingsSectionTitle>
                 )}
                 {children}
