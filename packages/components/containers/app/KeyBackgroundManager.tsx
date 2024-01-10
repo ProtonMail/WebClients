@@ -157,20 +157,30 @@ const KeyBackgroundManager = ({
             if (!runActiveKeysCheckFlag) {
                 return;
             }
-            const addresses = await getAddresses();
-            const updatesHappened = await Promise.all(
-                addresses.map(async (address) => {
-                    const addressKeys = await getAddressKeys(address.ID);
-                    if (!hasActiveKeysMismatch(address, addressKeys)) {
-                        return false;
-                    }
-                    await updateActiveKeys(silentApi, address, addressKeys, keyTransparencyVerify);
-                    return true;
-                })
-            );
-            if (updatesHappened.some(Boolean)) {
-                const userKeys = await getUserKeys();
-                await keyTransparencyCommit(userKeys);
+            try {
+                const addresses = await getAddresses();
+                const updatesHappened = await Promise.all(
+                    addresses.map(async (address) => {
+                        const addressKeys = await getAddressKeys(address.ID);
+                        if (!hasActiveKeysMismatch(address, addressKeys)) {
+                            return false;
+                        }
+                        await updateActiveKeys(silentApi, address, addressKeys, keyTransparencyVerify);
+                        return true;
+                    })
+                );
+                if (updatesHappened.some(Boolean)) {
+                    const userKeys = await getUserKeys();
+                    await keyTransparencyCommit(userKeys);
+                }
+            } catch (error) {
+                const sentryError = getSentryError(error);
+                if (sentryError) {
+                    captureMessage('Active keys check or update failed', {
+                        extra: { sentryError, serverTime: serverTime(), isServerTime: wasServerTimeEverUpdated() },
+                    });
+                }
+                throw error;
             }
         };
 
