@@ -18,7 +18,7 @@ const BackButton = ({ onClick }: Props) => {
             onClick={onClick}
             title={c('Action').t`Back`}
         >
-            <Icon name="arrow-left" className="on-rtl-mirror" alt={c('Action').t`Back`} />
+            <Icon name="arrow-left" className="rtl:mirror" alt={c('Action').t`Back`} />
         </Button>
     );
 };

@@ -108,7 +108,7 @@ const PrivacyDropdown = ({ message }: Props) => {
             </span>
             <span className="flex-1">{imageTrackerText}</span>
             {hasImageTrackers && (
-                <span className="flex on-rtl-mirror ml-4">
+                <span className="flex rtl:mirror ml-4">
                     <Icon name="chevron-right" />
                 </span>
             )}
@@ -122,7 +122,7 @@ const PrivacyDropdown = ({ message }: Props) => {
             </span>
             <span className="flex-1">{utmTrackerText}</span>
             {hasUTMTrackers && (
-                <span className="flex on-rtl-mirror ml-4">
+                <span className="flex rtl:mirror ml-4">
                     <Icon name="chevron-right" />
                 </span>
             )}
