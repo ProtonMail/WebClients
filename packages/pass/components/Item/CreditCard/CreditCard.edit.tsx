@@ -20,7 +20,7 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constan
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import type { CreditCardItemFormValues } from '@proton/pass/lib/validation/credit-card';
-import { validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
+import { formatExpirationDateMMYY, validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
 import { CardType } from '@proton/pass/types/protobuf/item-v1';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
@@ -35,7 +35,13 @@ export const CreditCardEdit: VFC<ItemEditViewProps<'creditCard'>> = ({ vault, re
         content,
     } = useDeobfuscatedItem(item);
 
-    const initialValues: CreditCardItemFormValues = { ...content, shareId, name, note };
+    const initialValues: CreditCardItemFormValues = {
+        ...content,
+        expirationDate: formatExpirationDateMMYY(content.expirationDate),
+        shareId,
+        name,
+        note,
+    };
 
     const form = useFormik<CreditCardItemFormValues>({
         initialValues,
@@ -49,6 +55,7 @@ export const CreditCardEdit: VFC<ItemEditViewProps<'creditCard'>> = ({ vault, re
                 metadata: { name, note: obfuscate(note), itemUuid },
                 content: {
                     ...creditCardValues,
+                    expirationDate: creditCardValues.expirationDate,
                     cardType: CardType.Unspecified,
                     number: obfuscate(creditCardValues.number),
                     verificationNumber: obfuscate(creditCardValues.verificationNumber),
@@ -114,7 +121,7 @@ export const CreditCardEdit: VFC<ItemEditViewProps<'creditCard'>> = ({ vault, re
                                 icon="calendar-today"
                                 label={c('Label').t`Expiration date`}
                                 mask={expDateMask}
-                                placeholder={c('Placeholder').t`MM/YYYY`}
+                                placeholder={c('Placeholder').t`MM/YY`}
                             />
                             <Field
                                 hidden
