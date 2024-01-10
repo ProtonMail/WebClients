@@ -152,7 +152,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
                         <Label>{c('Label').t`Amount due`}</Label>
                         <Field>
                             <Input
-                                className="field--highlight no-pointer-events text-strong text-right"
+                                className="field--highlight pointer-events-none text-strong text-right"
                                 readOnly
                                 value={toPrice(amount, currency)}
                             />

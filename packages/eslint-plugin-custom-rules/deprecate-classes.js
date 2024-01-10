@@ -234,6 +234,10 @@ const deprecatedClassNames = [
         deprecatedClassName: 'ratio-container-5-1',
         suggestedClassName: 'ratio-5/1',
     },
+    {
+        deprecatedClassName: 'no-pointer-events',
+        suggestedClassName: 'pointer-events-none',
+    },
 ];
 
 module.exports = {

@@ -22,7 +22,7 @@ export const Panel: VFC<Props> = ({ header, children, className, loading }) => {
                 <Scroll
                     className={clsx(
                         'pass-panel--content absolute w-full h-full',
-                        loading && 'opacity-30 no-pointer-events'
+                        loading && 'opacity-30 pointer-events-none'
                     )}
                 >
                     <div className="px-4 pt-1 pb-3">{children}</div>
