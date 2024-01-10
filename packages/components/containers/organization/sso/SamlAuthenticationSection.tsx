@@ -16,7 +16,7 @@ import {
 import ConfigureSamlModal from './ConfigureSamlModal';
 import DomainVerificationState from './DomainVerificationState';
 import RemoveSSODomain from './RemoveSSODomain';
-import SSOInfo from './SSOInfo';
+import SSOInfoForm from './SSOInfoForm';
 import SetupSSODomainModal from './SetupSSODomainModal';
 
 const ConfigureSamlContent = ({
@@ -60,7 +60,7 @@ const ConfigureSamlContent = ({
                 </SettingsLayoutRight>
             </SettingsLayout>
             {ssoConfigForDomain ? (
-                <SSOInfo
+                <SSOInfoForm
                     domain={domain}
                     sso={ssoConfigForDomain}
                     onImportSamlClick={() => setConfigureSamlModalOpen(true)}
