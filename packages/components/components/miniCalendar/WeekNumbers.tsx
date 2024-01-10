@@ -116,7 +116,7 @@ const WeekNumbers = ({ days, numberOfWeeks, onClickWeekNumber, onSelectWeekRange
         <ul
             className={clsx([
                 'minicalendar-weeknumbers unstyled m-0 text-center',
-                !onSelectWeekRange && 'no-pointer-events-children',
+                !onSelectWeekRange && 'children-pointer-events-none',
             ])}
             style={style}
             onMouseDown={handleMouseDown}
@@ -137,10 +137,13 @@ const WeekNumbers = ({ days, numberOfWeeks, onClickWeekNumber, onSelectWeekRange
                                 data-i={weekNumber}
                                 aria-pressed={isPressed}
                                 type="button"
-                                className={clsx(['minicalendar-weeknumber', !onClickWeekNumber && 'no-pointer-events'])}
+                                className={clsx([
+                                    'minicalendar-weeknumber',
+                                    !onClickWeekNumber && 'pointer-events-none',
+                                ])}
                                 onClick={() => onClickWeekNumber?.(monday)}
                             >
-                                <span className="no-pointer-events">{weekNumber}</span>
+                                <span className="pointer-events-none">{weekNumber}</span>
                             </button>
                         </Tooltip>
                     </li>

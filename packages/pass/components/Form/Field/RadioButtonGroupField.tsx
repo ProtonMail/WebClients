@@ -58,7 +58,7 @@ export const RadioLabelledButton = <T extends RadioValue>({
             htmlFor={id}
             className={clsx([
                 'pass-radio-group--labelled-button w-full increase-click-surface relative',
-                disabled && 'opacity-50 no-pointer-events',
+                disabled && 'opacity-50 pointer-events-none',
             ])}
         >
             <input
