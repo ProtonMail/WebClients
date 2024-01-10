@@ -38,7 +38,7 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
         as,
         className,
         loading,
-        responsive = true,
+        responsive = false,
         ...rest
     }: PromotionButtonProps<E>,
     ref: ForwardedRef<Element>
@@ -73,7 +73,7 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
             color="weak"
             shape={shape}
             className={clsx(
-                'button-promotion',
+                'button-promotion max-w-full',
                 iconGradient && 'button-promotion--icon-gradient',
                 upsell && 'button-promotion--upgrade',
                 className
@@ -94,7 +94,7 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
                         style={{ fill: `url(#${uid}) var(--text-norm)` }}
                     />
                 )}
-                <span className={clsx(icon ? 'sr-only' : 'block shrink-0')}>{children}</span>
+                <span className={clsx(icon ? 'sr-only' : 'block text-ellipsis')}>{children}</span>
                 {loading && <CircleLoader />}
             </span>
             {iconName && iconGradient ? (
