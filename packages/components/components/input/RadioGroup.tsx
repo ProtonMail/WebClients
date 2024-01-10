@@ -29,9 +29,9 @@ const RadioGroup = <T extends string | number>({
 }: RadioGroupProps<T>) => {
     return (
         <>
-            {options.map((option) => (
+            {options.map((option, i) => (
                 <Radio
-                    id={`${option.value}`}
+                    id={`${name}-radio_${i}`}
                     key={option.value}
                     onChange={() => {
                         if (disableChange) {
