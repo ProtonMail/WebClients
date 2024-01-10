@@ -1,21 +1,3 @@
-/* RTL/others */
-.mirror,
-[dir='rtl'] .on-rtl-mirror {
-	transform: rotateY(180deg);
-}
-
-.rotateX-180 {
-	transform: rotateX(180deg);
-}
-
-.rotateZ-90 {
-	transform: rotateZ(90deg);
-}
-
-.rotateZ-270 {
-	transform: rotateZ(270deg);
-}
-
 /* increase surface click/tap */
 .increase-click-surface::before {
 	content: '';
