@@ -36,7 +36,9 @@ export const useDraftVerifications = () => {
 
             if (!isPaid(user) && findSender(addresses, referenceMessage?.data)?.Email.endsWith('@pm.me')) {
                 const email = findSender(addresses, referenceMessage?.data, true)?.Email;
-                await handleShowModal({ email });
+                if (email) {
+                    await handleShowModal({ email });
+                }
             }
         },
         [getUser, getAddresses]

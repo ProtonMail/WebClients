@@ -1,5 +1,3 @@
-import { ChangeEvent } from 'react';
-
 import { c } from 'ttag';
 
 import { InputFieldTwo } from '@proton/components/components';
@@ -7,25 +5,15 @@ import { maxLengthValidator, minLengthValidator, requiredValidator } from '@prot
 
 import { GatewayDto } from './GatewayDto';
 
-type FormInput = HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
-
 type GatewayName = Pick<GatewayDto, 'name'>;
 
 interface Props {
     model: GatewayName;
-    changeModel: <V extends GatewayName[K], K extends keyof GatewayName = keyof GatewayName>(key: K, value: V) => void;
+    changeModel: (diff: Partial<GatewayDto>) => void;
     validator: (validations: string[]) => string;
 }
 
 export const GatewayNameField = ({ model, changeModel, validator }: Props) => {
-    const handleTextFieldChange =
-        <T extends keyof GatewayName>(key: T, transformer?: (value: GatewayName[T]) => GatewayName[T]) =>
-        ({ target }: ChangeEvent<FormInput>) =>
-            changeModel(
-                key,
-                transformer ? transformer(target.value as GatewayName[T]) : (target.value as GatewayName[T])
-            );
-
     const noSpaceMessage = c('Info').t`Must not contain spaces.`;
     const formatMessage = c('Info').t`Must contain only letters, digits, and dashes (-).`;
     const startWithLetterMessage = c('Info').t`Must start with a letter.`;
@@ -43,7 +31,9 @@ export const GatewayNameField = ({ model, changeModel, validator }: Props) => {
                 label={c('Label').t`Gateway name`}
                 placeholder="MY-COMPANY-OFFICE"
                 value={name}
-                onChange={handleTextFieldChange('name', (v) => v?.toUpperCase())}
+                onValue={(value: string) => {
+                    changeModel({ name: value.toUpperCase() });
+                }}
                 error={validator([
                     requiredValidator(name),
                     minLengthValidator(name, 3),

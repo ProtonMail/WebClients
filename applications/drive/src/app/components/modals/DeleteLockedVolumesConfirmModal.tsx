@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -11,7 +11,7 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
     ModalTwoHeader,
-    useModalTwo,
+    useModalTwoStatic,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
@@ -81,5 +81,5 @@ const DeleteLockedVolumesConfirmModal = ({
 export default DeleteLockedVolumesConfirmModal;
 
 export const useDeleteLockedVolumesConfirmModal = () => {
-    return useModalTwo<Props, void>(DeleteLockedVolumesConfirmModal, false);
+    return useModalTwoStatic(DeleteLockedVolumesConfirmModal);
 };

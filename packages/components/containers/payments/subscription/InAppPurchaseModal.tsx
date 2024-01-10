@@ -2,10 +2,11 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
+import { FreeSubscription, isFreeSubscription } from '@proton/shared/lib/constants';
 import { External, Subscription } from '@proton/shared/lib/interfaces';
 
 interface Props extends ModalProps {
-    subscription: Subscription;
+    subscription: Subscription | FreeSubscription;
     onClose: NonNullable<ModalProps['onClose']>;
 }
 
@@ -46,6 +47,10 @@ export const InAppText = ({ subscription }: { subscription: Subscription | undef
 };
 
 const InAppPurchaseModal = ({ subscription, ...rest }: Props) => {
+    if (isFreeSubscription(subscription)) {
+        rest.onClose();
+        return null;
+    }
     if (subscription.External !== External.iOS && subscription.External !== External.Android) {
         rest.onClose();
         return null;
