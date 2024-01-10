@@ -17,6 +17,7 @@ import { ItemViewPanel } from '@proton/pass/components/Layout/Panel/ItemViewPane
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
+import { formatExpirationDateMMYY } from '@proton/pass/lib/validation/credit-card';
 import { selectPassPlan } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 
@@ -57,7 +58,7 @@ export const CreditCardView: VFC<ItemViewProps<'creditCard'>> = (itemViewProps) 
                     icon="calendar-today"
                     label={c('Label').t`Expiration date`}
                     mask={expDateMask}
-                    value={expirationDate}
+                    value={formatExpirationDateMMYY(expirationDate)}
                 />
                 <ValueControl
                     clickToCopy

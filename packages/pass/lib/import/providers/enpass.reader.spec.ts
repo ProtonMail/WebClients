@@ -6,7 +6,7 @@ import type { ItemExtraField, ItemImportIntent } from '@proton/pass/types';
 import type { ImportPayload } from '../types';
 import { readEnpassData } from './enpass.reader';
 
-describe('Import bitwarden json', () => {
+describe('Import Enpass json', () => {
     let sourceData: string;
     let payload: ImportPayload;
 
