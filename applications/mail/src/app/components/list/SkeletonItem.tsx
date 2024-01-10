@@ -71,6 +71,7 @@ const SkeletonItem = ({
                 <ItemLayout
                     isCompactView={isCompactView}
                     labelID={labelID}
+                    loading={loading}
                     elementID={element.ID}
                     element={element}
                     conversationMode={conversationMode}
