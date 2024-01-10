@@ -103,16 +103,6 @@ export const LoginView: VFC<ItemViewProps<'login'>> = (itemViewProps) => {
             <MoreInfoDropdown
                 info={[
                     {
-                        label: c('Label').t`Item ID`,
-                        // translator: label for item identification number
-                        values: [itemId],
-                    },
-                    {
-                        label: c('Label').t`Vault ID`,
-                        // translator: label for vault identification number
-                        values: [shareId],
-                    },
-                    {
                         label: c('Label').t`Last autofill`,
                         // translator: when this login was last used
                         values: [lastUseTime ? getFormattedDateFromTimestamp(lastUseTime) : c('Info').t`Never`],
@@ -129,6 +119,16 @@ export const LoginView: VFC<ItemViewProps<'login'>> = (itemViewProps) => {
                         ],
                     },
                     { label: c('Label').t`Created`, values: [getFormattedDateFromTimestamp(createTime)] },
+                    {
+                        label: c('Label').t`Item ID`,
+                        // translator: label for item identification number
+                        values: [itemId],
+                    },
+                    {
+                        label: c('Label').t`Vault ID`,
+                        // translator: label for vault identification number
+                        values: [shareId],
+                    },
                 ]}
             />
         </ItemViewPanel>
