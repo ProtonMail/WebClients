@@ -117,7 +117,7 @@ const SamlAuthenticationSection = () => {
             <SettingsSectionWide>
                 <SettingsParagraph learnMoreUrl="https://protonvpn.com/support/sso">
                     {c('Info')
-                        .t`Configure SAML authentication for your organization through an identity provider like Okta, Azure or Onelogin. This will enable SAML for the whole organization.`}
+                        .t`Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.`}
                 </SettingsParagraph>
 
                 {domains.length > 0 ? (
