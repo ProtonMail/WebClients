@@ -131,7 +131,7 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
                             name="passphrase"
                             label={c('Label').t`Passphrase`}
                             component={PasswordField}
-                            autoComplete="off"
+                            autoComplete="new-password"
                         />
                     )}
                     {providerHasUnsupportedItemTypes(form.values.provider) && (
