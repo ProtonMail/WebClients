@@ -238,7 +238,7 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
     };
 
     const applyFilter = async (filterId: string) => {
-        await reqApply.request([filterId]);
+        await reqApply.request({ FilterIDs: [filterId] });
     };
 
     const editFilter = async (filter: Filter) => {
