@@ -9,6 +9,7 @@ export interface SubSectionConfig {
     id: string;
     hide?: boolean;
     available?: boolean;
+    beta?: boolean;
 }
 
 export interface SettingsAreaConfig {
