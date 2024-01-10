@@ -55,9 +55,9 @@ const SSOInfoForm = ({ domain, sso, onImportSamlClick }: Props) => {
         });
     };
 
-    const url = ssoDiff.url || ssoInfo.url;
-    const entity = ssoDiff.entity || ssoInfo.entity;
-    const certificate = ssoDiff.certificate || ssoInfo.certificate;
+    const url = ssoDiff.url ?? ssoInfo.url;
+    const entity = ssoDiff.entity ?? ssoInfo.entity;
+    const certificate = ssoDiff.certificate ?? ssoInfo.certificate;
 
     const handleSubmit = async () => {
         if (!onFormSubmit()) {
