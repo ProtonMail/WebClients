@@ -112,29 +112,27 @@ export const importCreditCardItem = (options: {
     trashed?: boolean;
     createTime?: number;
     modifyTime?: number;
-}): ItemImportIntent<'creditCard'> => {
-    return {
-        ...(obfuscateItem({
-            type: 'creditCard',
-            metadata: {
-                name: options.name || c('Label').t`Unnamed Credit Card`,
-                note: options.note || '',
-                itemUuid: uniqueId(),
-            },
-            content: {
-                cardType: CardType.Unspecified,
-                cardholderName: options.cardholderName || '',
-                number: options.number || '',
-                verificationNumber: options.verificationNumber || '',
-                expirationDate: options.expirationDate || '',
-                pin: options.pin || '',
-            },
+}): ItemImportIntent<'creditCard'> => ({
+    ...(obfuscateItem({
+        type: 'creditCard',
+        metadata: {
+            name: options.name || c('Label').t`Unnamed Credit Card`,
+            note: options.note || '',
+            itemUuid: uniqueId(),
+        },
+        content: {
+            cardType: CardType.Unspecified,
+            cardholderName: options.cardholderName || '',
+            number: options.number || '',
+            verificationNumber: options.verificationNumber || '',
+            expirationDate: options.expirationDate ?? '',
+            pin: options.pin || '',
+        },
 
-            extraFields: [],
-        }) as Item<'creditCard'>),
-        extraData: [],
-        trashed: options.trashed ?? false,
-        createTime: options.createTime,
-        modifyTime: options.modifyTime,
-    };
-};
+        extraFields: [],
+    }) as Item<'creditCard'>),
+    extraData: [],
+    trashed: options.trashed ?? false,
+    createTime: options.createTime,
+    modifyTime: options.modifyTime,
+});
