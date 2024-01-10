@@ -32,7 +32,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                         name="passphrase"
                         label={c('Label').t`Passphrase`}
                         component={PasswordField}
-                        autoComplete="off"
+                        autoComplete="new-password"
                     />
                 ) : (
                     <em className="block text-sm color-weak mt-2">
