@@ -1,27 +1,5 @@
 @use 'sass:map';
 
-/*
- * Welcome boxes in a 2 column design
- * Make breakpoint overable
- */
-$breakpoint-2-columns: 1180 !default;
-
-@include media('<=#{em($breakpoint-2-columns, 16)}') {
-	.boxes-placeholder-container {
-		flex-direction: column;
-
-		& > * {
-			margin-block-end: 1em;
-			inline-size: 100%;
-			flex-basis: auto;
-		}
-	}
-
-	.boxes-placeholder-button {
-		margin-block-start: 0;
-	}
-}
-
 /* to hide text with accessibility… a11y */
 .invisible,
 .sr-only {
