@@ -388,8 +388,8 @@ const AccountStepDetails = ({
 
     const onEmailValue = (value: string) => {
         inputValuesRef.current.email = true;
-        setInputsDiff({ email: value });
         setInputsStateDiff({ email: { interactive: true } });
+        setInputsDiff({ email: value });
         const email = value.trim();
         const errors = getErrorDetails({
             signupType,
@@ -479,12 +479,23 @@ const AccountStepDetails = ({
             return;
         }
         const [local, defaultDomain] = getEmailParts(defaultEmail);
-        if (!defaultDomain || domains.includes(defaultDomain)) {
+        const protonDomain = (() => {
+            if (!defaultDomain) {
+                return domain;
+            }
+            const lowerCaseDomain = defaultDomain?.toLowerCase();
+            return domains.find((domain) => lowerCaseDomain === domain);
+        })();
+        if (protonDomain) {
             setSignupType(SignupType.Username);
-            onUsernameValue(local, domain || defaultDomain);
+            onUsernameValue(local, protonDomain);
+            // Ensures the error is displayed
+            setInputsStateDiff({ username: { focus: true } });
         } else if (signupTypes.includes(SignupType.Email)) {
             setSignupType(SignupType.Email);
             onEmailValue(defaultEmail);
+            // Ensures the error is displayed
+            setInputsStateDiff({ email: { focus: true } });
         }
     }, [defaultEmail, domains]);
 
