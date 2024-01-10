@@ -232,6 +232,7 @@ export type IconName =
     | 'map-pin'
     | 'minus'
     | 'minus-circle'
+    | 'minus-circle-filled'
     | 'mobile'
     | 'mobile-plus'
     | 'money-bills'

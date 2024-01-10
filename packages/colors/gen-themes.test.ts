@@ -11,7 +11,7 @@ describe('genThemes', () => {
         expect(fs.writeFileSync).toHaveBeenCalledTimes(1);
         expect(fs.writeFileSync).toHaveBeenCalledWith(
             './themes/dist/snow.theme.css',
-            expect.stringContaining(':root,\n' + '.ui-standard {\n' + '  --primary: #6d4aff;')
+            expect.stringContaining(':root,\n' + '.ui-standard {\n' + '  --primary-minor-2: #f0edff;')
         );
     });
 });
