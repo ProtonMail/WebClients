@@ -83,6 +83,10 @@ const CalendarSidebarListItem = ({
             id={`calendar-${ID}`}
             name={`calendar-${Name}`}
             onChange={({ target: { checked } }) => onChangeVisibility(ID, checked)}
+            aria-label={
+                // translator: <Name> is the calendar name
+                c('Info').t`Display events for calendar ${Name}`
+            }
         />
     );
 
@@ -115,9 +119,7 @@ const CalendarSidebarListItem = ({
                                 </div>
                             )}
                             {isCalendarDisabled && (
-                                <div className="shrink-0">
-                                    &nbsp;({c('Disabled calendar name suffix').t`Disabled`})
-                                </div>
+                                <div className="shrink-0">&nbsp;({c('Disabled calendar name suffix').t`Disabled`})</div>
                             )}
                         </div>
 
