@@ -80,7 +80,7 @@ const SnoozeDropdown = ({ elements, size, labelID }: Props) => {
 
     return (
         <>
-            <Tooltip title={labelText} tooltipClassName="no-pointer-events">
+            <Tooltip title={labelText} tooltipClassName="pointer-events-none">
                 <DropdownButton
                     ref={anchorRef}
                     isOpen={isOpen}

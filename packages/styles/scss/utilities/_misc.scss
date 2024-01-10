@@ -4,8 +4,3 @@
 	position: absolute;
 	inset: 0;
 }
-
-.no-pointer-events,
-.no-pointer-events-children * {
-	pointer-events: none;
-}

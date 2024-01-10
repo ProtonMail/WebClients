@@ -20,7 +20,7 @@ export const PinCodeInput: VFC<Props> = ({ value, onValue, loading = false, auto
     }, [autoFocus]);
 
     return (
-        <div className={clsx('pass-pin--input', loading && 'opacity-30 no-pointer-events')}>
+        <div className={clsx('pass-pin--input', loading && 'opacity-30 pointer-events-none')}>
             <TotpInput
                 ref={focusRef}
                 length={6}

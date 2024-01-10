@@ -46,8 +46,7 @@ export const getDiscountPrice = (discount: number, currency: Currency) => {
     ) : null;
 };
 
-const singleClassName =
-    'p-4 mb-4 border rounded bg-norm flex flex-nowrap items-stretch border-primary border-2';
+const singleClassName = 'p-4 mb-4 border rounded bg-norm flex flex-nowrap items-stretch border-primary border-2';
 
 export const SubscriptionItemView = ({
     title,
@@ -74,9 +73,7 @@ export const SubscriptionItemView = ({
                     </strong>
                 </div>
                 <div className="flex items-center">
-                    <span className="color-weak flex flex-auto">
-                        {loading ? <EllipsisLoader /> : bottomLeft}
-                    </span>
+                    <span className="color-weak flex flex-auto">{loading ? <EllipsisLoader /> : bottomLeft}</span>
                     <span className="color-success flex shrink-0">{loading ? null : bottomRight}</span>
                 </div>
             </div>
@@ -131,10 +128,7 @@ const CycleItemView = ({
                 </strong>
             </div>
             <div className="flex items-center">
-                <span
-                    className="color-weak flex flex-auto"
-                    data-testid={`price-per-user-per-month-${cycle}`}
-                >
+                <span className="color-weak flex flex-auto" data-testid={`price-per-user-per-month-${cycle}`}>
                     {loading ? (
                         <EllipsisLoader />
                     ) : (
@@ -246,7 +240,7 @@ const SubscriptionCycleSelector = ({
         return acc;
     }, {} as any);
 
-    const fadedClasses = clsx(faded && 'opacity-50 no-pointer-events-children');
+    const fadedClasses = clsx(faded && 'opacity-50 children-pointer-events-none');
 
     if (cycles.length === 1) {
         const cycle = cycles[0];
@@ -278,12 +272,7 @@ const SubscriptionCycleSelector = ({
                             <Option value={cycle} title={getShortBillingText(cycle)} key={cycle}>
                                 <div className="flex justify-space-between">
                                     <span className="shrink-0">{getShortBillingText(cycle)}</span>
-                                    <span
-                                        className={clsx([
-                                            'shrink-0',
-                                            cycle !== cycleSelected && 'color-success',
-                                        ])}
-                                    >
+                                    <span className={clsx(['shrink-0', cycle !== cycleSelected && 'color-success'])}>
                                         {getDiscountPrice(totals[cycle].discount, currency)}
                                     </span>
                                 </div>
