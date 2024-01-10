@@ -8,6 +8,7 @@ import { ThemeConfig, ThemeFileType } from './themes.config';
 
 function generateTheme({ source, type }: { source: string; type: ThemeFileType }) {
     const buttonBases = [
+        'primary',
         'signal-danger',
         'signal-warning',
         'signal-info',
