@@ -158,7 +158,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
                 }}
             >
                 {c('Action').t`View plans details`}
-                <Icon name="arrow-right" className="ml-2 on-rtl-mirror" />
+                <Icon name="arrow-right" className="ml-2 rtl:mirror" />
             </Button>
         </>
     );
