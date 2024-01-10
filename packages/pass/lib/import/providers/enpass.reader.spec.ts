@@ -80,7 +80,7 @@ describe('Import Enpass json', () => {
         expect(creditCardItem1.metadata.note).toEqual('');
         expect(creditCardItem1.content.cardholderName).toEqual('Emily Sample');
         expect(creditCardItem1.content.number).toEqual('1234 123456 00000');
-        expect(creditCardItem1.content.expirationDate).toEqual('032027');
+        expect(creditCardItem1.content.expirationDate).toEqual('03/27');
         expect(creditCardItem1.content.verificationNumber).toEqual('1234');
         expect(creditCardItem1.content.pin).toEqual('9874');
 

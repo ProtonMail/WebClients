@@ -86,30 +86,6 @@ const processNoteItem = (item: EnpassItem<EnpassCategory.NOTE>): ItemImportInten
 const processCreditCardItem = (item: EnpassItem<EnpassCategory.CREDIT_CARD>): ItemImportIntent[] => {
     const { extracted: extractedCCData, remaining } = extractCCFields(item.fields);
 
-    // Enpass expiration date can be any string, for example 03/27 or 202703 etc...
-    let formattedExpirationDate = '';
-    if (extractedCCData.ccExpiry && extractedCCData.ccExpiry.length === 4) {
-        const maybeMonth = extractedCCData.ccExpiry.slice(0, 2);
-        const maybeYear = extractedCCData.ccExpiry.slice(-2);
-
-        if (parseInt(maybeMonth) > 12 && parseInt(maybeYear) <= 12) {
-            // maybeMonth is actually the year while maybeYear is the month
-            formattedExpirationDate = `${maybeYear}${maybeMonth}`;
-        } else {
-            formattedExpirationDate = `${maybeMonth}${maybeYear}`;
-        }
-    } else {
-        const expirationDateMatches = extractedCCData.ccExpiry?.match(/(\d{1,4})(.?)(\d{1,4})/);
-        if (expirationDateMatches) {
-            const [, maybeMonth, , maybeYear] = expirationDateMatches;
-            if (parseInt(maybeMonth) > 12 && parseInt(maybeYear) <= 12) {
-                formattedExpirationDate = `${maybeYear}${maybeMonth}`;
-            } else {
-                formattedExpirationDate = `${maybeMonth}${maybeYear}`;
-            }
-        }
-    }
-
     const ccItem = importCreditCardItem({
         name: item.title,
         note: item.note,
@@ -118,7 +94,7 @@ const processCreditCardItem = (item: EnpassItem<EnpassCategory.CREDIT_CARD>): It
         modifyTime: item.updated_at,
         cardholderName: extractedCCData.ccName,
         pin: extractedCCData.ccPin,
-        expirationDate: formattedExpirationDate,
+        expirationDate: extractedCCData.ccExpiry,
         number: extractedCCData.ccNumber,
         verificationNumber: extractedCCData.ccCvc,
     });

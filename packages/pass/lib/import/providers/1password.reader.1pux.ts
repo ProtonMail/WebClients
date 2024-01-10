@@ -29,7 +29,7 @@ import {
     OnePasswordTypeMap,
 } from './1password.1pux.types';
 
-const formatMonthYear = (monthYear: Maybe<number>): string => {
+const formatCCExpirationDate = (monthYear: Maybe<number>): string => {
     const monthYearString = String(monthYear);
     if (!monthYear || monthYearString.length !== 6) return '';
     return `${monthYearString.slice(4, 6)}${monthYearString.slice(0, 4)}`;
@@ -92,7 +92,7 @@ const extractExtraFields = (item: OnePassItem): UnsafeItemExtraField[] => {
                         return {
                             fieldName: title || c('Label').t`Text`,
                             type: 'text',
-                            data: { content: formatMonthYear(value[valueKey]) ?? '' },
+                            data: { content: formatCCExpirationDate(value[valueKey]) ?? '' },
                         };
                     case OnePassFieldKey.STRING:
                     case OnePassFieldKey.URL:
@@ -195,7 +195,7 @@ const processCreditCardItem = (item: Extract<OnePassItem, { categoryUuid: OnePas
         cardholderName: cardholder?.value.string,
         number: ccnum?.value.creditCardNumber,
         verificationNumber: cvv?.value.concealed,
-        expirationDate: formatMonthYear(expiry?.value.monthYear),
+        expirationDate: formatCCExpirationDate(expiry?.value.monthYear),
         pin: pin?.value.concealed,
     });
 };
