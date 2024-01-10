@@ -19,11 +19,13 @@ import noop from '@proton/utils/noop';
 import { GatewayDto } from './GatewayDto';
 import { GatewayUser } from './GatewayUser';
 
+type PartialGateway = Pick<GatewayDto, 'features' | 'userIds'>;
+
 interface Props {
     loading: boolean;
     users: readonly GatewayUser[];
-    model: Pick<GatewayDto, 'features' | 'userIds'>;
-    changeModel: <V extends GatewayDto[K], K extends keyof GatewayDto = keyof GatewayDto>(key: K, value: V) => void;
+    model: PartialGateway;
+    changeModel: (model: Partial<PartialGateway>) => void;
 }
 
 export const GatewayUserSelection = ({ loading, users, model, changeModel }: Props) => {
@@ -32,26 +34,25 @@ export const GatewayUserSelection = ({ loading, users, model, changeModel }: Pro
         direction: SORT_DIRECTION.DESC,
     });
 
-    const handleFeatureChange = ({ value }: SelectChangeEvent<string>) => changeModel('features', Number(value));
+    const handleFeatureChange = ({ value }: SelectChangeEvent<string>) => changeModel({ features: Number(value) });
 
     const getSelectToggle = (id: string) =>
         loading
             ? noop
             : () =>
-                  changeModel(
-                      'userIds',
-                      model.userIds.indexOf(id) !== -1
-                          ? model.userIds.filter((selected) => selected !== id)
-                          : [...model.userIds, id]
-                  );
+                  changeModel({
+                      userIds:
+                          model.userIds.indexOf(id) !== -1
+                              ? model.userIds.filter((selected) => selected !== id)
+                              : [...model.userIds, id],
+                  });
 
     const selectAllToggle = loading
         ? noop
         : () =>
-              changeModel(
-                  'userIds',
-                  users.every(({ ID }) => model.userIds.indexOf(ID) !== -1) ? [] : users.map(({ ID }) => ID)
-              );
+              changeModel({
+                  userIds: users.every(({ ID }) => model.userIds.indexOf(ID) !== -1) ? [] : users.map(({ ID }) => ID),
+              });
 
     return (
         <>

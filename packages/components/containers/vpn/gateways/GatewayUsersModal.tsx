@@ -3,36 +3,34 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Form, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components/components';
+import {
+    Form,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+} from '@proton/components/components';
 
 import { GatewayDto } from './GatewayDto';
 import { GatewayModel } from './GatewayModel';
 import { GatewayUser } from './GatewayUser';
 import { GatewayUserSelection } from './GatewayUserSelection';
 
-interface Props {
-    model: GatewayDto;
+type PartialGateway = Pick<GatewayDto, 'features' | 'userIds'>;
+
+interface Props extends ModalProps<typeof Form> {
+    model: PartialGateway;
     users: readonly GatewayUser[];
     showCancelButton?: boolean;
     onSubmitDone: (gateway: Pick<GatewayModel, 'Features' | 'UserIds'>) => Promise<void>;
-    onResolve: () => void;
-    onReject: () => void;
 }
 
-const GatewayUsersModal = ({
-    model: initialModel,
-    users,
-    showCancelButton = false,
-    onSubmitDone,
-    onReject,
-    onResolve,
-    ...rest
-}: Props) => {
-    const [model, setModel] = useState({ ...initialModel });
+const GatewayUsersModal = ({ model: initialModel, users, showCancelButton = false, onSubmitDone, ...rest }: Props) => {
+    const [model, setModel] = useState<PartialGateway>({ ...initialModel });
     const [loading, setLoading] = useState(false);
 
-    const changeModel = <V extends GatewayDto[K], K extends keyof GatewayDto = keyof GatewayDto>(key: K, value: V) =>
-        setModel((model: GatewayDto) => ({ ...model, [key]: value }));
+    const changeModel = (diff: Partial<PartialGateway>) => setModel((model) => ({ ...model, ...diff }));
 
     const handleSubmit = async () => {
         const dtoBody = {
@@ -43,21 +41,21 @@ const GatewayUsersModal = ({
         try {
             setLoading(true);
             await onSubmitDone(dtoBody);
-            onResolve();
+            rest.onClose?.();
         } finally {
             setLoading(false);
         }
     };
 
     return (
-        <ModalTwo size="xlarge" {...rest} as={Form} onSubmit={handleSubmit} onClose={onReject}>
+        <ModalTwo size="xlarge" {...rest} as={Form} onSubmit={handleSubmit}>
             <ModalTwoHeader title={c('Title').t`Edit users`} />
             <ModalTwoContent>
                 <GatewayUserSelection loading={loading} users={users} model={model} changeModel={changeModel} />
             </ModalTwoContent>
             <ModalTwoFooter>
                 {showCancelButton ? (
-                    <Button color="weak" onClick={onReject}>
+                    <Button color="weak" onClick={rest.onClose}>
                         {c('Action').t`Cancel`}
                     </Button>
                 ) : (
