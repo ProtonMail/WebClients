@@ -21,7 +21,7 @@ const ActionCard = ({ iconName, title, subtitle, loading, disabled, ...rest }: A
             disabled={disabled || loading}
             {...rest}
         >
-            <ButtonLike as="div" shape="solid" icon className="shrink-0 bg-strong no-pointer-events">
+            <ButtonLike as="div" shape="solid" icon className="shrink-0 bg-strong pointer-events-none">
                 <Icon name={iconName} />
             </ButtonLike>
             <div className="mr-auto flex-1">

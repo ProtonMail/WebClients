@@ -102,13 +102,13 @@ const Scroll = ({ children, horizontal, className, customContainerRef, ...rest }
         <div {...rest} className={clsx(horizontal ? 'scroll-outer-horizontal' : 'scroll-outer-vertical', className)}>
             <div
                 className={clsx(
-                    'scroll-start-shadow no-pointer-events',
+                    'scroll-start-shadow pointer-events-none',
                     showStartShadow && 'scroll-start-shadow-visible'
                 )}
                 aria-hidden="true"
             />
             <div
-                className={clsx('scroll-end-shadow no-pointer-events', showEndShadow && 'scroll-end-shadow-visible')}
+                className={clsx('scroll-end-shadow pointer-events-none', showEndShadow && 'scroll-end-shadow-visible')}
                 aria-hidden="true"
             />
             <div className="scroll-inner" ref={containerRefs} onScroll={handleScroll}>
