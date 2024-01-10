@@ -11,6 +11,7 @@ import { ProtobufItem } from '@proton/pass/types';
 import type { ItemCreditCard } from '@proton/pass/types/protobuf/item-v1';
 import { omit } from '@proton/shared/lib/helpers/object';
 
+import { formatExpirationDateYYYYMM } from '../validation/credit-card';
 import { deobfuscateItem, obfuscateItem } from './item.obfuscation';
 
 const protobufToExtraField = ({ fieldName, ...field }: SafeProtobufExtraField): UnsafeItemExtraField => {
@@ -38,18 +39,13 @@ const protobufToExtraField = ({ fieldName, ...field }: SafeProtobufExtraField): 
     }
 };
 
-const protobufToCreditCardContent = (creditCard: ItemCreditCard): UnsafeItem<'creditCard'>['content'] => {
-    const [year, month] = (creditCard.expirationDate ?? '').split('-') as [string, string | undefined];
-
-    return {
-        ...creditCard,
-        number: creditCard.number,
-        verificationNumber: creditCard.verificationNumber,
-        pin: creditCard.pin,
-        /* YYYY-MM to MMYYYY */
-        expirationDate: year?.length && month?.length ? `${month}${year}` : '',
-    };
-};
+const protobufToCreditCardContent = (creditCard: ItemCreditCard): UnsafeItem<'creditCard'>['content'] => ({
+    ...creditCard,
+    number: creditCard.number,
+    verificationNumber: creditCard.verificationNumber,
+    pin: creditCard.pin,
+    expirationDate: creditCard.expirationDate,
+});
 
 const protobufToItem = (item: SafeProtobufItem): UnsafeItem => {
     const { platformSpecific, metadata, content: itemContent } = item;
@@ -116,20 +112,13 @@ const extraFieldToProtobuf = ({ fieldName, ...extraField }: UnsafeItemExtraField
     }
 };
 
-const creditCardContentToProtobuf = (creditCard: UnsafeItem<'creditCard'>['content']): ItemCreditCard => {
-    const expirationDate = creditCard.expirationDate?.length
-        ? `${creditCard.expirationDate.slice(2, 6)}-${creditCard.expirationDate.slice(0, 2)}`
-        : '';
-
-    return {
-        ...creditCard,
-        /* MMYYYY to YYYY-MM */
-        expirationDate,
-        number: creditCard.number,
-        verificationNumber: creditCard.verificationNumber,
-        pin: creditCard.pin,
-    };
-};
+const creditCardContentToProtobuf = (creditCard: UnsafeItem<'creditCard'>['content']): ItemCreditCard => ({
+    ...creditCard,
+    expirationDate: formatExpirationDateYYYYMM(creditCard.expirationDate),
+    number: creditCard.number,
+    verificationNumber: creditCard.verificationNumber,
+    pin: creditCard.pin,
+});
 
 const itemToProtobuf = (item: UnsafeItem): SafeProtobufItem => {
     const { platformSpecific, metadata } = item;
