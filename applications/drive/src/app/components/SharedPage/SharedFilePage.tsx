@@ -13,6 +13,7 @@ import HeaderSize from './Layout/HeaderSize';
 import SharedPageFooter from './Layout/SharedPageFooter';
 import SharedPageHeader from './Layout/SharedPageHeader';
 import SharedPageLayout from './Layout/SharedPageLayout';
+import SharedPageTransferManager from './TransferModal/SharedPageTransferManager';
 
 interface Props {
     token: string;
@@ -50,6 +51,7 @@ export default function SharedFilePage({ token, link }: Props) {
                     imgThumbnailUrl={link?.cachedThumbnailUrl}
                 />
             </SharedPageLayout>
+            <SharedPageTransferManager rootItem={link} />
             {renderUpsellFloatingModal}
         </FileBrowserStateProvider>
     );

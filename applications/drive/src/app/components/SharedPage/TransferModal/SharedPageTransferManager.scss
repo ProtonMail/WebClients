@@ -1,0 +1,40 @@
+@import '~@proton/styles/scss/lib';
+
+.transfer-modal {
+	background-color: white;
+	border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+
+	&--failed {
+		.transfer-modal-header {
+			background-color: var(--signal-danger-minor-2);
+		}
+
+		.transfer-modal-content {
+			border-color: var(--signal-danger);
+		}
+	}
+
+	&--canceled {
+		.transfer-modal-header {
+			background-color: var(--background-weak);
+		}
+
+		.transfer-modal-content {
+			border-color: var(--border-norm);
+		}
+	}
+}
+
+.transfer-modal-header {
+	background-color: var(--primary-minor-2);
+}
+
+.transfer-modal-content {
+	border-block-start: 1px solid var(--primary);
+	max-block-size: em(400);
+
+	&--minimized {
+		max-block-size: 0;
+		border-block-start: 0;
+	}
+}

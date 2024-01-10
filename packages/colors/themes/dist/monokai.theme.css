@@ -5,8 +5,13 @@
 
 :root,
 .ui-standard {
+  --primary-minor-2: #2e0a14;
+  --primary-minor-1: #450f1e;
   --primary: #e53265;
-  --primary-contrast: white;
+  --primary-major-1: #e84774;
+  --primary-major-2: #ea5b84;
+  --primary-major-3: #ed7093;
+  --primary-contrast: #ffffff;
   --signal-danger-minor-2: #311502;
   --signal-danger-minor-1: #4a1f03;
   --signal-danger: #f5680a;
