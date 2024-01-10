@@ -61,7 +61,6 @@ export const Basic = () => {
             <div className="">
                 <UpsellModal
                     modalProps={{
-                        key: 'upsell',
                         onClose: () => {
                             setOpened(false);
                         },

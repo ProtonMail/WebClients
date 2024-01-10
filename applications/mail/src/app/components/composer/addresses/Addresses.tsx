@@ -2,8 +2,6 @@ import { MouseEvent, MutableRefObject, useEffect, useRef, useState } from 'react
 
 import { ContactSelectorModal, useContactModals, useToggle } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
-import { ContactSelectorProps } from '@proton/components/containers/contacts/selector/ContactSelectorModal';
-import { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
@@ -39,9 +37,7 @@ const Addresses = ({ messageSendInfo, disabled, addressesBlurRef, addressesFocus
     };
 
     const { onEdit, onGroupDetails, modals: contactModals } = useContactModals({ onMailTo: noop });
-    const [contactSelectorModal, showContactSelector] = useModalTwo<ContactSelectorProps, Recipient[]>(
-        ContactSelectorModal
-    );
+    const [contactSelectorModal, showContactSelector] = useModalTwo(ContactSelectorModal);
 
     // Summary of selected addresses or addresses editor
     const { state: editor, set: setEditor } = useToggle(false);

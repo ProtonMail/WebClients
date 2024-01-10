@@ -66,7 +66,7 @@ export const useGateways = () => {
         },
         countries: result?.Countries,
         gateways: result?.Gateways,
-        users: result?.Users,
+        users: result?.Users || [],
         refresh,
     };
 };
