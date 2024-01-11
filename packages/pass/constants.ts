@@ -27,15 +27,12 @@ export const PASS_SENTINEL_LINK = 'https://proton.me/blog/sentinel-included-pass
 
 export const ITEM_COUNT_RATING_PROMPT = 10;
 
-export const PASS_UPGRADE_PATH = 'pass/upgrade';
-export const PASS_EOY_PATH = `pass/signup?plan=pass2023&cycle=12&coupon=EOY2023`;
+export const PASS_UPGRADE_PATH = 'pass/signup';
 
 export const PASS_BF_MONTHLY_PRICE = 199;
-export const PASS_EOY_MONTHLY_PRICE = 199;
 export const PASS_REGULAR_MONTHLY_PRICE = 399;
 
 export const PASS_BF_2023_DATES = [+new Date('2023-11-02T06:00:00'), +new Date('2023-12-04T00:00:00')] as const;
-export const PASS_EOY_DATE_END = +new Date('2024-01-03T09:00:00');
 
 export enum UpsellRefPrefix {
     Extension = 'pass_extension',
@@ -46,7 +43,6 @@ export enum UpsellRefPrefix {
 export enum UpsellRef {
     DEFAULT = 'banner',
     EARLY_ACCESS = 'early_access_banner',
-    EOY_2023 = 'eoy_2023_banner',
     FREE_TRIAL = 'free_trial_banner',
     LIMIT_2FA = '2fa_limit',
     LIMIT_ALIAS = 'alias_limit',
