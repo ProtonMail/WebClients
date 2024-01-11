@@ -2147,6 +2147,11 @@
         "Adresa URL"
       ]
     },
+    "Contact image": {
+      "Contact image": [
+        "Imagine contact"
+      ]
+    },
     "Contact type label": {
       "Fax": [
         "Fax"
@@ -2975,6 +2980,16 @@
         "până la ${ dateString }"
       ]
     },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "Zilnic, ${ timesString }"
+      ]
+    },
+    "Daily recurring event, frequency (until)": {
+      "Daily, ${ untilString }": [
+        "Zilnic, ${ untilString }"
+      ]
+    },
     "Date label": {
       "Today": [
         "Astăzi"
@@ -3294,6 +3309,11 @@
       ],
       "Choose a date in the future.": [
         "Alegeți o dată în viitor."
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Alegeți o dată mai târziu cu ${ n } zi.",
+        "Alegeți o dată în următoarele ${ n } zile.",
+        "Alegeți o dată în următoarele ${ n } de zile."
       ],
       "Condition incomplete": [
         "Condiție incompletă"
@@ -4861,6 +4881,56 @@
         "${ currentProgress } din ${ totalProgress }",
         "${ currentProgress } din ${ totalProgress }"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } conversație va fi etichetată cu:",
+        "${ elementsCount } conversații vor fi etichetate cu:",
+        "${ elementsCount } de conversații vor fi etichetate cu:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } conversație va fi marcată ca fiind citită.",
+        "${ elementsCount } conversații vor fi marcate ca fiind citite.",
+        "${ elementsCount } de conversații vor fi marcate ca fiind citite."
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } conversație va fi marcată ca fiind necitită.",
+        "${ elementsCount } conversații vor fi marcate ca fiind necitite.",
+        "${ elementsCount } de conversații vor fi marcate ca fiind necitite."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } conversație va fi mutată",
+        "${ elementsCount } conversații vor fi mutate",
+        "${ elementsCount } de conversații vor fi mutate"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } conversație nu va mai fi etichetată cu:",
+        "${ elementsCount } conversații nu vor mai fi etichetate cu:",
+        "${ elementsCount } de conversații nu vor mai fi etichetate cu:"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } mesaj va fi etichetat cu:",
+        "${ elementsCount } mesaje vor fi etichetate cu:",
+        "${ elementsCount } de mesaje vor fi etichetate cu:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } mesaj va fi marcat ca fiind citit.",
+        "${ elementsCount } mesaje vor fi marcate ca fiind citite.",
+        "${ elementsCount } de mesaje vor fi marcate ca fiind citite."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } mesaj va fi marcat ca fiind necitit.",
+        "${ elementsCount } mesaje vor fi marcate ca fiind necitite.",
+        "${ elementsCount } de mesaje vor fi marcate ca fiind necitite."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } mesaj va fi mutat",
+        "${ elementsCount } mesaje vor fi mutate",
+        "${ elementsCount } de mesaje vor fi mutate"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } mesaj nu va mai fi etichetat cu:",
+        "${ elementsCount } mesaje nu vor mai fi etichetate cu:",
+        "${ elementsCount } de mesaje nu vor mai fi etichetate cu:"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "O imagine inclusă.",
         "${ embeddedAttachmentsCount } imagini incluse.",
@@ -5046,8 +5116,17 @@
       "and": [
         "și"
       ],
+      "Any scheduled or snoozed messages will be cancelled.": [
+        "Orice mesaj programat sau amânat va fi anulat."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Va fi șters și orice subfolder. Totuși, mesajele stocate în folderul ${ nameDeleted } nu vor fi șterse și pot fi găsite în folderul «Toate mesajele»."
+      ],
+      "Applying actions to conversations": [
+        "Se aplică acțiunile la conversații"
+      ],
+      "Applying actions to messages": [
+        "Se aplică acțiunile la mesaje"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Sigur doriți să ștergeți toate mesajele din acest folder?"
@@ -5135,6 +5214,9 @@
       ],
       "Clear data": [
         "Ștergere date"
+      ],
+      "Clear selection": [
+        "Golire selectate"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Ștergerea datelor din navigator dezactivează şi căutarea conținutului din mesaje pe acest dispozitiv. Toate mesajele vor trebui să fie descărcate din nou pentru a căuta în ele."
@@ -5499,6 +5581,9 @@
       "Merged": [
         "Îmbinat"
       ],
+      "Message actions in progress. This may take a while.": [
+        "Acțiuni în desfășurare asupra mesajelor. Aceasta poate dura ceva timp."
+      ],
       "Message download status:": [
         "Stare descărcare mesaje:"
       ],
@@ -5738,6 +5823,11 @@
       "Select a service provider to start": [
         "Selectați un furnizor de servicii pentru a începe"
       ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Selectare toate articolele (${ elementsCount }) din ${ location }",
+        "Selectare toate articolele (${ elementsCount }) din ${ location }",
+        "Selectare toate articolele (${ elementsCount }) din ${ location }"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selectați formatul de e-mail care doriți să fie folosit implicit când trimiteți mesaje la această adresă."
       ],
@@ -5928,6 +6018,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Acest mesaj este semnat cu o cheie atașată care încă nu a fost încă aprobată."
       ],
+      "This message will be automatically deleted on ${ value }": [
+        "Acest mesaj va fi șters automat la ora ${ value }"
+      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Acest mesaj va fi marcat ca nedorit. Doriți să vă dezabonați și de la mesajele ulterioare?",
         "Aceste mesaje vor fi marcate ca nedorite. Doriți să vă dezabonați și de la mesajele ulterioare?",
@@ -5954,11 +6047,23 @@
       "This message will expire ${ formattedDate }": [
         "Acest mesaj va expira ${ formattedDate }"
       ],
+      "This message will expire on ${ value }": [
+        "Acest mesaj va expira ${ value }"
+      ],
+      "This message will expire today at ${ value }": [
+        "Acest mesaj va expira astăzi la ora ${ value }."
+      ],
+      "This message will expire tomorrow at ${ value }": [
+        "Acest mesaj va expira mâine la ora ${ value }."
+      ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Această cheie publică va fi folosită automat pentru criptarea mesajelor trimise la această adresă."
       ],
       "This sender's public key has not been trusted yet.": [
         "Cheia publică a acestui destinatar nu a fost încă aprobată."
+      ],
+      "to ${ destinationElement } folder.": [
+        "în folderul ${ destinationElement }."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
@@ -6149,6 +6254,9 @@
       "You can import one data type at a time.": [
         "Puteți importa un singur tip de date la un moment dat."
       ],
+      "You can now return to the application to continue": [
+        "Puteți reveni la aplicație pentru a continua"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puteți activa notificările pentru a primi alerte atunci când apar mesaje noi în acest folder."
       ],
@@ -6160,6 +6268,9 @@
       ],
       "You do not have any messages here": [
         "Nu aveți mesaje aici"
+      ],
+      "You have ${ unread } in your inbox.": [
+        "Aveți ${ unread } mesaje în «Primite»."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Aveți **o conversație** în acest folder",
@@ -6215,6 +6326,26 @@
         "Ați selectat **un messaj** cu această etichetă",
         "Ați selectat **${ count } mesaje** cu această etichetă",
         "Ați selectat **${ count } de mesaje** cu această etichetă"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Ați selectat **${ elementsCount } conversație** în ${ location }.",
+        "Ați selectat **${ elementsCount } conversații** în ${ location }.",
+        "Ați selectat **${ elementsCount } de conversații** în ${ location }."
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "Ați selectat **${ elementsCount } conversație**.",
+        "Ați selectat **${ elementsCount } conversații**.",
+        "Ați selectat **${ elementsCount } de conversații**."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Ați selectat **${ elementsCount } mesaj** în ${ location }.",
+        "Ați selectat **${ elementsCount } mesaje** în ${ location }.",
+        "Ați selectat **${ elementsCount } de mesaje** în ${ location }."
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Ați selectat **${ elementsCount } mesaj**.",
+        "Ați selectat **${ elementsCount } mesaje**.",
+        "Ați selectat **${ elementsCount } de mesaje**."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Ați scris „${ attachmentsFoundKeyword }”, dar nu a fost adăugat niciun atașament. Doriți să trimiteți totuși mesajul?"
@@ -7033,6 +7164,14 @@
         "${ Label.Name } creată"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "De la: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Către: ${ to }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Panou lateral"
@@ -7363,6 +7502,16 @@
       ],
       "Monthly ${ onDayString }": [
         "Lunar, ${ onDayString }"
+      ]
+    },
+    "Monthly recurring event, frequency (times)": {
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Lunar, ${ onDayString }, ${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Lunar, ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -7726,6 +7875,9 @@
       "All": [
         "Toate"
       ],
+      "Automatic (${ value })": [
+        "Automat (${ value })"
+      ],
       "Create new group": [
         "Creare grup"
       ],
@@ -7853,6 +8005,9 @@
       ],
       "Search name, email or group": [
         "Căutare nume, e-mail sau grup"
+      ],
+      "Search parent folder": [
+        "Căutare în folder părinte"
       ],
       "Select": [
         "Selectare"
@@ -8448,6 +8603,15 @@
       ],
       "Highest VPN speed": [
         "Viteză VPN maximă"
+      ],
+      "Premium ${ appName1 }": [
+        "${ appName1 } premium"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "${ appName1 } și ${ appName2 } premium"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "${ appName1 }, ${ appName2 } și ${ appName3 } premium"
       ],
       "Premium early access": [
         "Acces timpuriu premium"
@@ -9076,6 +9240,12 @@
       "Account suspended": [
         "Cont suspendat"
       ],
+      "Action all conversations": [
+        "Aplicare la toate conversațiile"
+      ],
+      "Action all messages": [
+        "Aplicare la toate mesajele"
+      ],
       "Add contact group name": [
         "Adăugare nume grup contacte"
       ],
@@ -9220,6 +9390,9 @@
         "Ștergere ${ count } mesaje",
         "Ștergere ${ count } de mesaje"
       ],
+      "Delete ${ value }": [
+        "Ștergere ${ value }"
+      ],
       "Delete all messages": [
         "Ștergere toate mesajele"
       ],
@@ -9354,8 +9527,20 @@
       "Mark as unread": [
         "Marcare ca necitit"
       ],
+      "Mark conversations as read": [
+        "Marcare conversații ca fiind citite"
+      ],
+      "Mark conversations as unread": [
+        "Marcare conversații ca fiind necitite"
+      ],
       "Mark email as legitimate": [
         "Marcare e-mail ca legitim"
+      ],
+      "Mark messages as read": [
+        "Marcare mesaje ca fiind citite"
+      ],
+      "Mark messages as unread": [
+        "Marcare mesaje ca fiind necitite"
       ],
       "Merge contacts": [
         "Îmbinare contacte"
@@ -9386,6 +9571,12 @@
       ],
       "More selections": [
         "Mai multe selecții"
+      ],
+      "Move all conversations": [
+        "Mutare toate conversațiile"
+      ],
+      "Move all messages": [
+        "Mutare toate mesajele"
       ],
       "Move all messages to Archive": [
         "Mutare toate mesajele în arhivă"
@@ -9686,6 +9877,9 @@
       "Hide side panel": [
         "Ascundere panou lateral"
       ],
+      "Load image": [
+        "Încărcare imagine"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."
       ],
@@ -9934,6 +10128,64 @@
         "Săptămânal, miercuri"
       ]
     },
+    "Weekly recurring event, frequency (times)": {
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Săptămânal, ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Săptămânal, toate zilele, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Săptămânal, vineri, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Săptămânal, luni, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Săptămânal, sâmbătă, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Săptămânal, duminică, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Săptămânal, joi, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Săptămânal, marți, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Săptămânal, miercuri, ${ timesString }"
+      ]
+    },
+    "Weekly recurring event, frequency (until)": {
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Săptămânal, ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Săptămânal, toate zilele, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Săptămânal, vineri, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Săptămânal, luni, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Săptămânal, sâmbătă, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Săptămânal, duminică, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Săptămânal, joi, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Săptămânal, marți, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Săptămânal, miercuri, ${ untilString }"
+      ]
+    },
     "Weekly recurring event, repeats on (multiple days), frequency": {
       "Friday": [
         "Vineri"
@@ -9965,6 +10217,16 @@
       ],
       "Yearly": [
         "Anual"
+      ]
+    },
+    "Yearly recurring event, frequency (times)": {
+      "Yearly, ${ timesString }": [
+        "Anual, ${ timesString }"
+      ]
+    },
+    "Yearly recurring event, frequency (until)": {
+      "Yearly, ${ untilString }": [
+        "Anual, ${ untilString }"
       ]
     }
   }

@@ -2136,6 +2136,11 @@
         "Διεύθυνση URL"
       ]
     },
+    "Contact image": {
+      "Contact image": [
+        "Εικόνας επαφής"
+      ]
+    },
     "Contact type label": {
       "Fax": [
         "Φαξ"
@@ -2962,6 +2967,24 @@
         "μέχρι ${ dateString }"
       ]
     },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "Καθημερινά, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Κάθε ${ interval } μέρα, ${ timesString }",
+        "Κάθε ${ interval } μέρες, ${ timesString }"
+      ]
+    },
+    "Daily recurring event, frequency (until)": {
+      "Daily, ${ untilString }": [
+        "Καθημερινά, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Κάθε ${ interval } μέρα, ${ untilString }",
+        "Κάθε ${ interval } μέρες, ${ untilString }"
+      ]
+    },
     "Date label": {
       "Today": [
         "Σήμερα"
@@ -3279,6 +3302,10 @@
       ],
       "Choose a date in the future.": [
         "Επιλογή μελλοντικής ημερομηνίας."
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Επιλέξτε μια ημερομηνία εντός της επόμενης ${ n } ημέρας",
+        "Επιλέξτε μια ημερομηνία εντός των επόμενων ${ n } ημερών."
       ],
       "Condition incomplete": [
         "Μη ολοκληρωμένη συνθήκη"
@@ -3701,6 +3728,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Παρουσιάστηκε μη αναμενόμενο σφάλμα. Πρέπει να γίνει επανεκκίνηση της εισαγωγής."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερο από ${ MAX_IMPORT_EVENTS } γεγονός.",
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS } γεγονότα."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Το αρχείο σας ${ formattedFilename } έχει μη έγκυρη μέθοδο και δεν μπορεί να εισαχθεί."
@@ -4811,6 +4842,46 @@
         "${ currentProgress } από ${ totalProgress }",
         "${ currentProgress } από ${ totalProgress }"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } συνομιλία θα φέρει την ετικέτα ως:",
+        "${ elementsCount } συνομιλίες θα φέρουν την ετικέτα ως:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } συνομιλία θα σημανθεί ως διαβασμένη.",
+        "${ elementsCount } συνομιλίες θα σημανθούν ως διαβασμένες."
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } συνομιλία θα σημανθεί ως μη διαβασμένη.",
+        "${ elementsCount } συνομιλίες θα σημανθούν ως μη διαβασμένες."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } συνομιλία θα μετακινηθεί",
+        "${ elementsCount } συνομιλίες θα μετακινηθούν"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } συνομιλία θα καταργηθεί από την ετικέτα από:",
+        "${ elementsCount } συνομιλίες θα καταργηθούν από την ετικέτα από:"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } μήνυμα θα φέρει την ετικέτα ως:",
+        "${ elementsCount } μηνύματα θα φέρουν την ετικέτα ως:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } μήνυμα θα σημανθεί ως διαβασμένο.",
+        "${ elementsCount } μηνύματα θα σημανθούν ως διαβασμένα."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } μήνυμα θα σημανθεί ως μη διαβασμένο.",
+        "${ elementsCount } μηνύματα θα σημανθούν ως μη διαβασμένα."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } μήνυμα θα μετακινηθεί",
+        "${ elementsCount } μηνύματα θα μετακινηθούν"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } μήνυμα θα καταργηθεί από την ετικέτα από:",
+        "${ elementsCount } μηνύματα θα καταργηθούν από την ετικέτα από:"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } ενσωματωμένη εικόνα",
         "${ embeddedAttachmentsCount } ενσωματωμένες εικόνες"
@@ -4831,6 +4902,10 @@
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } μήνυμα δεν μπόρεσε να μετακινηθεί.",
         "${ messagesNotAuthorizedToMove } μηνύματα δεν μπόρεσαν να μετακινηθούν."
+      ],
+      "${ n } unread conversation": [
+        "${ n } μη διαβασμένη συνομιλία",
+        "${ n } μη διαβασμένες συνομιλίες"
       ],
       "${ numberOfImageTrackers } email tracker blocked": [
         "${ numberOfImageTrackers } ιχνηλάτης μηνυμάτων εμποδίστηκε",
@@ -4971,8 +5046,17 @@
       "and": [
         "και"
       ],
+      "Any scheduled or snoozed messages will be cancelled.": [
+        "Τυχόν προγραμματισμένα μηνύματα ή μηνύματα που έχουν αναβληθεί θα ακυρωθούν."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Τυχόν υποφάκελοι θα διαγραφούν επίσης. Ωστόσο, τα μηνύματα ηλεκτρονικού ταχυδρομείου που είναι αποθηκευμένα σε αυτόν τον φάκελο ${ nameDeleted } δε θα διαγραφούν και μπορούν να βρεθούν στο φάκελο Όλα τα Mηνύματα."
+      ],
+      "Applying actions to conversations": [
+        "Εφαρμογή ενεργειών σε συνομιλίες"
+      ],
+      "Applying actions to messages": [
+        "Εφαρμογή ενεργειών σε μηνύματα"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Θέλετε σίγουρα να διαγράψετε όλα τα μηνύματα σε αυτόν τον φάκελο;"
@@ -5057,6 +5141,9 @@
       ],
       "Clear data": [
         "Εκκαθάριση δεδομένων"
+      ],
+      "Clear selection": [
+        "Αναίρεση επιλογής"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "Η εκκαθάριση δεδομένων περιηγητή επίσης απενεργοποιεί σε αυτήν τη συσκευή την αναζήτηση εντός περιεχομένου μηνυμάτων. Για δυνατότητα αναζήτησης εντός τους, θα πρέπει να κατεβούν ξανά."
@@ -5412,6 +5499,9 @@
       "Merged": [
         "Συγχωνευμένα"
       ],
+      "Message actions in progress. This may take a while.": [
+        "Ενέργειες μηνυμάτων σε εξέλιξη. Αυτό μπορεί να διαρκέσει λίγο."
+      ],
       "Message download status:": [
         "Κατάσταση λήψης μηνυμάτων:"
       ],
@@ -5650,6 +5740,10 @@
       "Select a service provider to start": [
         "Επιλογή παρόχου υπηρεσίας για ξεκίνημα"
       ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Επιλογή όλων ${ elementsCount } σε ${ location }",
+        "Επιλογή όλων ${ elementsCount } σε ${ location }"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Επιλέξτε τη μορφή ηλεκτρονικού ταχυδρομείου που θέλετε να χρησιμοποιηθεί από προεπιλογή κατά την αποστολή ενός E-mail σε αυτό το E-mail."
       ],
@@ -5838,6 +5932,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Αυτό το μήνυμα υπογράφεται από συνημμένο κλειδί που δεν έχει γίνει εμπιστεύσιμο ακόμη."
       ],
+      "This message will be automatically deleted on ${ value }": [
+        "Αυτό το μήνυμα θα διαγραφεί αυτόματα στις ${ value }"
+      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Αυτό το μήνυμα θα σημανθεί ως ενοχλητικό. Θα θέλατε επίσης να απεγγραφείτε από μελλοντικά μηνύματα;",
         "Αυτά τα μηνύματα θα σημανθούν ως ενοχλητικά. Θα θέλατε επίσης να απεγγραφείτε από μελλοντικά μηνύματα;"
@@ -5863,11 +5960,23 @@
       "This message will expire ${ formattedDate }": [
         "Αυτό το μήνυμα θα λήξει ${ formattedDate }"
       ],
+      "This message will expire on ${ value }": [
+        "Αυτό το μήνυμα θα λήξει τη ${ value }"
+      ],
+      "This message will expire today at ${ value }": [
+        "Αυτό το μήνυμα θα λήξει σήμερα στις ${ value }"
+      ],
+      "This message will expire tomorrow at ${ value }": [
+        "Αυτό το μήνυμα θα λήξει αύριο στις ${ value }"
+      ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Αυτό το δημόσιο κλειδί θα χρησιμοποιηθεί αυτόματα για την κρυπτογράφηση email που αποστέλλεται σε αυτήν τη διεύθυνση."
       ],
       "This sender's public key has not been trusted yet.": [
         "Το δημόσιο κλειδί αυτού του αποστολέα δεν έχει γίνει εμπιστεύσιμο ακόμα."
+      ],
+      "to ${ destinationElement } folder.": [
+        "στον φάκελο ${ destinationElement }."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
@@ -6058,6 +6167,9 @@
       "You can import one data type at a time.": [
         "Μπορεί να εισαχθεί ένας τύπος δεδομένων τη φορά."
       ],
+      "You can now return to the application to continue": [
+        "Τώρα μπορείτε να επιστρέψετε στην εφαρμογή για να συνεχίσετε"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Μπορείτε να ενεργοποιήσετε τις ειδοποιήσεις, για να λαμβάνετε ειδοποιήσεις όταν φτάνουν νέα email σε αυτόν το φάκελο."
       ],
@@ -6069,6 +6181,9 @@
       ],
       "You do not have any messages here": [
         "Δεν έχετε μηνύματα εδώ"
+      ],
+      "You have ${ unread } in your inbox.": [
+        "Έχετε ${ unread } στα εισερχόμενά σας."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "Έχετε **${ count } συνομιλία** αποθηκευμένη σε αυτόν το φάκελο",
@@ -6116,6 +6231,22 @@
       "You selected **${ count } message** with this label": [
         "Επιλέξατε **${ count } μήνυμα** με αυτή την ετικέτα",
         "Επιλέξατε **${ count } μηνύματα** με αυτή την ετικέτα"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Επιλέξατε **${ elementsCount } συνομιλία** σε ${ location }",
+        "Επιλέξατε **${ elementsCount } συνομιλίες** σε ${ location }"
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "Επιλέξατε **${ elementsCount } συνομιλία**.",
+        "Επιλέξατε **${ elementsCount } συνομιλίες**."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Επιλέξατε **${ elementsCount } μήμυμα** σε ${ location }",
+        "Επιλέξατε **${ elementsCount } μηνύματα** σε ${ location }"
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Επιλέξατε **${ elementsCount } μήνυμα**.",
+        "Επιλέξατε **${ elementsCount } μηνύματα**."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Γράψατε “${ attachmentsFoundKeyword }”, αλλά δεν έχει προστεθεί συνημμένο. Θέλετε να στείλετε το μήνυμά σας ούτως ή άλλως;"
@@ -6185,6 +6316,16 @@
     "Info on errors": {
       "Click for details": [
         "Κάντε κλικ για λεπτομέρειες"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } επιλεγμένος φάκελος",
+        "${ selectedFoldersCount } επιλεγμένοι φάκελοι"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } επιλεγμένη ετικέτα",
+        "${ selectedFoldersCount } επιλεγμένες ετικέτες"
       ]
     },
     "Key badge": {
@@ -6930,6 +7071,14 @@
         "${ Label.Name } δημιουργήθηκε"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Από: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Προς: ${ to }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Πλαϊνό πλαίσιο"
@@ -7254,6 +7403,24 @@
       ],
       "Monthly ${ onDayString }": [
         "Μηνιαίως ${ onDayString }"
+      ]
+    },
+    "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Κάθε ${ interval } μήνας ${ onDayString }, ${ timesString }",
+        "Κάθε ${ interval } μήνες ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Μηνιαίως ${ onDayString }, ${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Κάθε ${ interval } μήνας ${ onDayString }, ${ untilString }",
+        "Κάθε ${ interval } μήνες ${ onDayString }, ${ untilString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Μηνιαίως ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -7613,6 +7780,9 @@
       "All": [
         "Όλα"
       ],
+      "Automatic (${ value })": [
+        "Αυτόματο (${ value })"
+      ],
       "Create new group": [
         "Δημιουργία νέας ομάδας"
       ],
@@ -7740,6 +7910,9 @@
       ],
       "Search name, email or group": [
         "Όνομα αναζήτησης, email ή ομάδας"
+      ],
+      "Search parent folder": [
+        "Αναζήτηση στο γονικό φάκελο"
       ],
       "Select": [
         "Επιλογή"
@@ -8309,6 +8482,15 @@
       ],
       "Highest VPN speed": [
         "Ύψιστη ταχύτητα VPN"
+      ],
+      "Premium ${ appName1 }": [
+        "Premium ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium ${ appName1 } & ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
       "Premium early access": [
         "Premium πρώιμη πρόσβαση"
@@ -8902,6 +9084,12 @@
       "Account suspended": [
         "Ο λογαριασμός έχει ανασταλεί"
       ],
+      "Action all conversations": [
+        "Εφαρμογή σε όλες τις συνομιλίες"
+      ],
+      "Action all messages": [
+        "Εφαρμογή σε όλα τα μηνύματα"
+      ],
       "Add contact group name": [
         "Προσθήκη ονόματος ομάδας επαφών"
       ],
@@ -9040,6 +9228,9 @@
         "Διαγραφή ${ count } μηνύματος",
         "Διαγραφή ${ count } μηνυμάτων"
       ],
+      "Delete ${ value }": [
+        "Διαγραφή ${ value }"
+      ],
       "Delete all messages": [
         "Διαγραφή όλων των μηνυμάτων"
       ],
@@ -9173,8 +9364,20 @@
       "Mark as unread": [
         "Σήμανση ως μη διαβασμένο"
       ],
+      "Mark conversations as read": [
+        "Επισήμανση συνομιλιών ως αναγνωσμένων"
+      ],
+      "Mark conversations as unread": [
+        "Επισήμανση συνομιλιών ως μη αναγνωσμένων"
+      ],
       "Mark email as legitimate": [
         "Σήμανση μηνύματος ως αποδεκτού"
+      ],
+      "Mark messages as read": [
+        "Επισήμανση μηνυμάτων ως αναγνωσμένων"
+      ],
+      "Mark messages as unread": [
+        "Επισήμανση μηνυμάτων ως μη αναγνωσμένων"
       ],
       "Merge contacts": [
         "Συγχώνευση Επαφών"
@@ -9205,6 +9408,12 @@
       ],
       "More selections": [
         "Περισσότερες επιλογές"
+      ],
+      "Move all conversations": [
+        "Μετακίνηση όλων των συνομιλιών"
+      ],
+      "Move all messages": [
+        "Μετακίνηση όλων των μηνυμάτων"
       ],
       "Move all messages to Archive": [
         "Μετακίνηση όλων των μηνυμάτων στα Αρχειοθετημένα"
@@ -9503,6 +9712,9 @@
       "Hide side panel": [
         "Απόκρυψη πλαϊνού πλαισίου"
       ],
+      "Load image": [
+        "Φόρτωση εικόνας"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Επιλέξτε το σχέδιο PGP που θα χρησιμοποιηθεί κατά την υπογραφή ή την κρυπτογράφηση σε ένα χρήστη. Σημειώστε ότι το PGP / Inline αναγκάζει την προβολή ως απλά μηνύματα κειμένου"
       ],
@@ -9735,6 +9947,124 @@
         "Εβδομαδιαία την Τετάρτη"
       ]
     },
+    "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα στις ${ multipleDaysString }, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες στις ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα όλες τις μέρες, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες όλες τις ημέρες, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Παρασκευή, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Παρασκευή, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα το Σάββατο, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες το Σάββατο, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Πέμπτη, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Πέμπτη, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Τετάρτη, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Τετάρτη, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Εβδομαδιαία στις ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Εβδομαδιαία σε όλες τις μέρες, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Εβδομαδιαία την Παρασκευή, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Εβδομαδιαία την Δευτέρα, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Εβδομαδιαία το Σάββατο, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Εβδομαδιαία την Κυριακή, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Εβδομαδιαία την Πέμπτη, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Εβδομαδιαία την Τρίτη, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Εβδομαδιαία την Τετάρτη, ${ timesString }"
+      ]
+    },
+    "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα σε ${ multipleDaysString }, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες στις ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα όλες τις μέρες, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες σε όλες τις μέρες, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Παρασκευή, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Παρασκευή, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα τη Δευτέρα, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Δευτέρα, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα το Σάββατο, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες το Σάββατο, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Κυριακή, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Κυριακή, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Πέμπτη, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Πέμπτη, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Τρίτη, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Τρίτη, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Τετάρτη, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Τετάρτη, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Εβδομαδιαία στις ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Εβδομαδιαία σε όλες τις μέρες, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Εβδομαδιαία την Παρασκευή, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Εβδομαδιαία την Δευτέρα, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Εβδομαδιαία το Σάββατο, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Εβδομαδιαία την Κυριακή, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Εβδομαδιαία την Πέμπτη, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Εβδομαδιαία την Τρίτη, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Εβδομαδιαία την Τετάρτη, ${ untilString }"
+      ]
+    },
     "Weekly recurring event, repeats on (multiple days), frequency": {
       "Friday": [
         "Παρασκευή"
@@ -9765,6 +10095,24 @@
       ],
       "Yearly": [
         "Ετησίως"
+      ]
+    },
+    "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "Κάθε ${ interval } χρόνο, ${ timesString }",
+        "Κάθε ${ interval } χρόνια, ${ timesString }"
+      ],
+      "Yearly, ${ timesString }": [
+        "Ετησίως, ${ timesString }"
+      ]
+    },
+    "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "Κάθε ${ interval } χρόνο, ${ untilString }",
+        "Κάθε ${ interval } χρόνια, ${ untilString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Ετησίως, ${ untilString }"
       ]
     }
   }
