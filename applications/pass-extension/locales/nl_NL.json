@@ -173,9 +173,6 @@
       "Get mobile apps": [
         "Download mobiele apps"
       ],
-      "Get the deal": [
-        "Pak deze deal"
-      ],
       "Help us improve": [
         "Help ons verbeteren"
       ],
@@ -1601,9 +1598,6 @@
       "Full Name": [
         "Volledige naam"
       ],
-      "MM/YYYY": [
-        "MM/JJJJ"
-      ],
       "Other": [
         "Anders"
       ],
@@ -1619,14 +1613,14 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Typ nogmaals \"${ vaultName }\" om de verwijdering te bevestigen"
       ],
-      "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "Zoek ${ pluralItemType } in ${ vault.content.name }"
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Zoek ${ pluralItemType } in ${ vaultName }"
       ],
       "Search ${ pluralItemType } in all vaults": [
         "Zoek ${ pluralItemType } in alle kluizen"
       ],
-      "Search in ${ vault.content.name }": [
-        "Zoeken in ${ vault.content.name }"
+      "Search in ${ vaultName }": [
+        "Zoeken in ${ vaultName }"
       ],
       "Search in all vaults": [
         "Zoeken in alle kluizen"
@@ -1834,9 +1828,6 @@
       ],
       "Empty note": [
         "Lege notitie"
-      ],
-      "Expiration Date is incomplete": [
-        "Vervaldatum is onvolledig"
       ],
       "Invalid alias prefix": [
         "Ongeldig aliasvoorvoegsel"
