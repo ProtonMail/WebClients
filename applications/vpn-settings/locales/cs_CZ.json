@@ -345,7 +345,7 @@
         "Odebrat bonusy"
       ],
       "Remove domain": [
-        "Odstranit doménu"
+        "Odebrat doménu"
       ],
       "Remove gift code": [
         "Odstranit dárkový kód"
@@ -399,7 +399,7 @@
         "Uložit adresu"
       ],
       "Save SAML configuration": [
-        "Uložit SAML konfiguraci"
+        "Uložit nastavení SAML"
       ],
       "Search": [
         "Vyhledat"
@@ -2930,7 +2930,7 @@
         "Přidejte ke svému účtu další úroveň zabezpečení. Při každém přihlášení se musíte ověřit pomocí 2FA."
       ],
       "Add domain": [
-        "Přidat doménu "
+        "Přidat doménu"
       ],
       "Add server (${ availableAddedCount } available)": [
         "Přidat server (${ availableAddedCount } k dispozici)",
@@ -3389,7 +3389,7 @@
         "Volitelné"
       ],
       "or ${ selectFileButton }": [
-        "nebo si ${ selectFileButton }"
+        "nebo ${ selectFileButton }"
       ],
       "Or select a particular server:": [
         "Nebo vyberte konkrétní server:"
@@ -3683,7 +3683,7 @@
         "Tento uživatel je aktuálně zodpovědný za platby za Vaši organizaci. Snížením úrovně toho uživatele, se stanete zodpovědní za platby za Vaši organizaci právě vy."
       ],
       "This verification can take up to one hour. You can safely continue to the next steps.": [
-        "Tato verifikace může trvat až hodinu. Můžete nyní pokračovat bezpečné dál."
+        "Toto ověření může trvat až jednu hodinu. Můžete nyní bez obav pokračovat dalšími kroky."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Tím se zruší vaše stávající předplatné a ztratíte veškeré věrnostní výhody, které jste nashromáždili."
@@ -3812,7 +3812,7 @@
         "Proces ověření otevře novou záložku, vypněte prosím veškerá blokování vyskakovacích oken. Nebude účtován žádný poplatek. Jakákoli částka použitá pro ověření karty bude obratem vrácena."
       ],
       "Verify domain": [
-        "Ověřte svou doménu"
+        "Ověřte doménu"
       ],
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Ověřte totožnost pomocí časově omezeného jednorázového hesla z autentizační aplikace"
@@ -4207,6 +4207,9 @@
         "Povolit obnovení telefonem"
       ],
       "Allowed domain": [
+        "Povolená doména"
+      ],
+      "Allowed Domain": [
         "Povolená doména"
       ],
       "Amount": [
@@ -5708,6 +5711,9 @@
     "Option": {
       "Android": [
         "Android"
+      ],
+      "Automatic (${ value })": [
+        "Automatické (${ value })"
       ],
       "Country configs": [
         "Konfigurace země"
@@ -7486,7 +7492,7 @@
         "Obnovení"
       ],
       "Remove domain": [
-        "Odstranit doménu"
+        "Odebrat doménu"
       ],
       "Remove user?": [
         "Odebrat uživatele?"
