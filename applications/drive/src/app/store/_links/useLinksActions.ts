@@ -86,11 +86,13 @@ export function useLinksActions({
             newParentLinkId,
             linkId,
             newShareId = shareId,
+            silence = false,
         }: {
             shareId: string;
             newParentLinkId: string;
             linkId: string;
             newShareId?: string;
+            silence?: boolean;
         }
     ) => {
         const [
@@ -193,8 +195,8 @@ export function useLinksActions({
             )
         );
 
-        await debouncedRequest(
-            queryMoveLink(shareId, linkId, {
+        await debouncedRequest({
+            ...queryMoveLink(shareId, linkId, {
                 Name: encryptedName,
                 Hash,
                 ParentLinkID: newParentLinkId,
@@ -203,8 +205,9 @@ export function useLinksActions({
                 SignatureAddress: address.Email,
                 NewShareID: newShareId === shareId ? undefined : newShareId,
                 ContentHash,
-            })
-        ).catch((err) => {
+            }),
+            silence,
+        }).catch((err) => {
             if (INVALID_REQUEST_ERROR_CODES.includes(err?.data?.Code)) {
                 throw new ValidationError(err.data.Error);
             }
@@ -224,6 +227,7 @@ export function useLinksActions({
             newShareId,
             onMoved,
             onError,
+            silence,
         }: {
             shareId: string;
             linkIds: string[];
@@ -231,6 +235,7 @@ export function useLinksActions({
             newShareId?: string;
             onMoved?: (linkId: string) => void;
             onError?: (linkId: string) => void;
+            silence?: boolean;
         }
     ) => {
         return withLinkLock(shareId, linkIds, async () => {
@@ -239,7 +244,7 @@ export function useLinksActions({
             const failures: { [linkId: string]: any } = {};
 
             const moveQueue = linkIds.map((linkId) => async () => {
-                return moveLink(abortSignal, { shareId, newParentLinkId, linkId, newShareId })
+                return moveLink(abortSignal, { shareId, newParentLinkId, linkId, newShareId, silence })
                     .then((originalParentId) => {
                         successes.push(linkId);
                         originalParentIds[linkId] = originalParentId;
