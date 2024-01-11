@@ -1,4 +1,4 @@
-import { type VFC17, useRef } from 'react';
+import { type FC, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -12,7 +12,7 @@ import {
 
 type Props = { info: { label: string; values: string[] }[] };
 
-export const MoreInfoDropdown: VFC17<Props> = ({ info }) => {
+export const MoreInfoDropdown: FC<Props> = ({ info }) => {
     const anchorRef = useRef<HTMLDivElement>(null);
     const handleClick = () => setTimeout(() => anchorRef?.current?.scrollIntoView({ behavior: 'smooth' }), 50);
 

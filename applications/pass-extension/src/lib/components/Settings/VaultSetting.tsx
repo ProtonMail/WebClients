@@ -1,5 +1,5 @@
 /* TODO: move this to shared components */
-import { type VFC17 } from 'react';
+import { type FC } from 'react';
 import type { Selector } from 'react-redux';
 import { useSelector } from 'react-redux';
 
@@ -22,7 +22,7 @@ type Props = {
     valueSelector: Selector<State, Maybe<ShareItem<ShareType.Vault>>>;
 };
 
-export const VaultSetting: VFC17<Props> = ({ label, onSubmit, optionsSelector, valueSelector }) => {
+export const VaultSetting: FC<Props> = ({ label, onSubmit, optionsSelector, valueSelector }) => {
     const vaults = useSelector(optionsSelector);
     const shareId = useSelector(valueSelector)?.shareId;
 

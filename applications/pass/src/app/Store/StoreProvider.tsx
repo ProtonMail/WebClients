@@ -1,4 +1,4 @@
-import { type FC17, useEffect } from 'react';
+import { type FC, type PropsWithChildren, useEffect } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 
 import { useNotifications } from '@proton/components/hooks';
@@ -27,7 +27,7 @@ import { type ServiceWorkerMessageHandler, useServiceWorker } from '../ServiceWo
 import { rootSaga } from './root.saga';
 import { sagaMiddleware, store } from './store';
 
-export const StoreProvider: FC17 = ({ children }) => {
+export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
     const authService = useAuthService();
     const client = useClientRef();
     const sw = useServiceWorker();

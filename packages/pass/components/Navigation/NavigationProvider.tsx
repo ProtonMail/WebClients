@@ -1,4 +1,5 @@
-import { type FC17, createContext, useContext, useMemo } from 'react';
+import type { PropsWithChildren } from 'react';
+import { type FC, createContext, useContext, useMemo } from 'react';
 import { useHistory, useLocation, useRouteMatch } from 'react-router-dom';
 
 import type { ItemFilters, Maybe, MaybeNull, SelectedItem } from '@proton/pass/types';
@@ -52,7 +53,7 @@ export type NavigationContextValue = {
 
 const NavigationContext = createContext<MaybeNull<NavigationContextValue>>(null);
 
-export const NavigationProvider: FC17 = ({ children }) => {
+export const NavigationProvider: FC<PropsWithChildren> = ({ children }) => {
     const history = useHistory();
     const location = useLocation();
 

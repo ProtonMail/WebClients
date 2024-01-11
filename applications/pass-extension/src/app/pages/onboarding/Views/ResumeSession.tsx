@@ -1,4 +1,4 @@
-import { type VFC17, useEffect } from 'react';
+import { type FC, useEffect } from 'react';
 
 import { SSO_URL } from 'proton-pass-extension/app/config';
 
@@ -33,7 +33,7 @@ const bypass = async () => {
     }
 };
 
-export const ResumeSession: VFC17 = () => {
+export const ResumeSession: FC = () => {
     useEffect(() => {
         void bypass();
     }, []);

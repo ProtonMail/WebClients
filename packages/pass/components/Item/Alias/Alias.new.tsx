@@ -1,4 +1,4 @@
-import { type VFC17, useEffect, useMemo, useRef } from 'react';
+import { type FC, useEffect, useMemo, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -30,7 +30,7 @@ import noop from '@proton/utils/noop';
 
 const FORM_ID = 'new-alias';
 
-export const AliasNew: VFC17<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit, onCancel }) => {
+export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit, onCancel }) => {
     const { domain, subdomain, displayName } = url ?? {};
     const { needsUpgrade } = useSelector(selectAliasLimits);
     const { vaultTotalCount } = useSelector(selectVaultLimits);

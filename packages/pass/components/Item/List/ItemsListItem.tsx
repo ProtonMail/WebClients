@@ -1,4 +1,4 @@
-import { type VFC17, memo } from 'react';
+import { type FC, memo } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, type LinkProps } from 'react-router-dom';
 
@@ -27,7 +27,7 @@ type Props = Partial<LinkProps> &
         active?: boolean;
     };
 
-const ItemsListItemRaw: VFC17<Props> = ({ item, search = '', active = false, ...rest }) => {
+const ItemsListItemRaw: FC<Props> = ({ item, search = '', active = false, ...rest }) => {
     const { data, optimistic, failed, shareId } = item;
     const { heading, subheading } = presentListItem(item);
     const vault = useSelector(selectShare<ShareType.Vault>(shareId));

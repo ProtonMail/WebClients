@@ -1,4 +1,4 @@
-import { type VFC17, useEffect, useRef } from 'react';
+import { type FC, useEffect, useRef } from 'react';
 
 import { TotpInput } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
@@ -12,7 +12,7 @@ type Props = {
     onValue: (value: string) => void;
 };
 
-export const PinCodeInput: VFC17<Props> = ({ value, onValue, loading = false, autoFocus = true }) => {
+export const PinCodeInput: FC<Props> = ({ value, onValue, loading = false, autoFocus = true }) => {
     const focusRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {

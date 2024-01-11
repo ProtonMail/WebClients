@@ -1,4 +1,4 @@
-import { type VFC17, useMemo, useState } from 'react';
+import { type FC, useMemo, useState } from 'react';
 import type { Selector } from 'react-redux';
 import { useSelector } from 'react-redux';
 
@@ -33,14 +33,7 @@ export type Props = Omit<ModalProps, 'onSubmit'> & {
 /* if the user has downgraded : only allow him to select
  * his writable vaults as target. This rule applies when moving
  * an item to a vault or when selecting an item's vault */
-export const VaultSelect: VFC17<Props> = ({
-    downgradeMessage,
-    onSubmit,
-    optionsSelector,
-    shareId,
-    title,
-    ...props
-}) => {
+export const VaultSelect: FC<Props> = ({ downgradeMessage, onSubmit, optionsSelector, shareId, title, ...props }) => {
     const vaults = useSelector(optionsSelector);
     const { didDowngrade } = useSelector(selectVaultLimits);
 
