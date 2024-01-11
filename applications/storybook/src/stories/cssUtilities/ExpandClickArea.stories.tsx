@@ -1,7 +1,7 @@
 import { Checkbox } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
-import mdx from './IncreaseClickSurface.mdx';
+import mdx from './ExpandClickArea.mdx';
 
 export default {
     title: getTitle(__filename, false),
@@ -12,9 +12,9 @@ export default {
     },
 };
 
-export const IncreaseClickSurface = () => (
+export const ExpandClickArea = () => (
     <div className="relative p-7 bg-weak">
-        <Checkbox className="increase-click-surface" />
+        <Checkbox className="expand-click-area" />
         parent element (grey background)
     </div>
 );
