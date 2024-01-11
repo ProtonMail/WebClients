@@ -1,13 +1,12 @@
 import { ReactNode, useEffect, useState } from 'react';
 
 import * as H from 'history';
-import { c } from 'ttag';
 
 import { publicApp } from '@proton/account/bootstrap';
 import { StandardLoadErrorPage } from '@proton/components';
 import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { APPS } from '@proton/shared/lib/constants';
+import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 interface Props {
@@ -31,7 +30,7 @@ const VPNPublicApp = ({ pathLocale, loader, location, locales = {}, children }: 
 
         wrapUnloadError(run()).catch((error) => {
             setError({
-                message: getApiErrorMessage(error) || error?.message || c('Error').t`Unknown error`,
+                message: getNonEmptyErrorMessage(error),
             });
         });
     }, []);

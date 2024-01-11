@@ -22,7 +22,7 @@ import {
 import { authJwt, pullForkSession, setCookies, setRefreshCookies } from '@proton/shared/lib/api/auth';
 import { ApiWithListener } from '@proton/shared/lib/api/createApi';
 import { getLatestID } from '@proton/shared/lib/api/events';
-import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
 import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
@@ -30,6 +30,7 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
+import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import { getBrowserLocale, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
@@ -183,7 +184,7 @@ const Setup = ({ api, onLogin, UID, children }: Props) => {
             } else {
                 errorHandler(error);
                 setError({
-                    message: getApiErrorMessage(error) || error?.message,
+                    message: getNonEmptyErrorMessage(error),
                 });
             }
         };

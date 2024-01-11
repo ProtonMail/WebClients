@@ -1,12 +1,11 @@
 import { ReactNode, useEffect, useState } from 'react';
 
 import * as H from 'history';
-import { c } from 'ttag';
 
 import { publicApp } from '@proton/account/bootstrap';
 import { ProtonLoginCallback, StandardLoadErrorPage, useApi } from '@proton/components';
 import { wrapUnloadError } from '@proton/components/containers/app/errorRefresh';
-import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { InvalidPersistentSessionError } from '@proton/shared/lib/authentication/error';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import {
@@ -15,6 +14,7 @@ import {
     resumeSession,
 } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS } from '@proton/shared/lib/constants';
+import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 interface Props {
@@ -73,7 +73,7 @@ const AccountPublicApp = ({
 
         wrapUnloadError(run()).catch((error) => {
             setError({
-                message: getApiErrorMessage(error) || error?.message || c('Error').t`Unknown error`,
+                message: getNonEmptyErrorMessage(error),
             });
         });
     }, []);
