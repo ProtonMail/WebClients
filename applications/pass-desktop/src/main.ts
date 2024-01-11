@@ -19,6 +19,10 @@ import { getAppUrlFromApiUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
 
 import * as config from './app/config';
+import { isSquirrelStartup } from './startup';
+
+// Handle creating/removing shortcuts on Windows when installing/uninstalling.
+if (isSquirrelStartup()) app.quit();
 
 let mainWindow: BrowserWindow | null;
 let isAppQuitting = false;
