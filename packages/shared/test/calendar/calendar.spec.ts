@@ -43,8 +43,8 @@ describe('sortCalendars', () => {
         expect(sortCalendars([holidaysCalendar, subscribedCalendar, sharedCalendar, ownedCalendar])).toEqual([
             ownedCalendar,
             subscribedCalendar,
-            sharedCalendar,
             holidaysCalendar,
+            sharedCalendar,
         ]);
     });
 
@@ -63,9 +63,9 @@ describe('sortCalendars', () => {
                 ownedCalendar,
                 ownedCalendarB,
                 subscribedCalendar,
+                holidaysCalendar,
                 sharedCalendar,
                 sharedCalendarB,
-                holidaysCalendar,
             ]);
         });
     });
