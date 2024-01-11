@@ -201,9 +201,9 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
 
             // Using a function here so that we can extend to other applications without requiring retranslation of this string
             const getDescriptionString = (appName: typeof VPN_APP_NAME) => {
-                // translator: variable here is an application name. Example full sentence "Go to your identity provider, get the the SAML metadata for Proton VPN and import it here."
+                // translator: variable here is an application name. Example full sentence "Go to your identity provider, get the SAML metadata for Proton VPN and import it here."
                 return c('Info')
-                    .t`Go to your identity provider, get the the SAML metadata for ${appName} and import it here.`;
+                    .t`Go to your identity provider, get the SAML metadata for ${appName} and import it here.`;
             };
 
             // Using a function here so that we can extend to other applications without requiring retranslation of this string
