@@ -249,7 +249,15 @@ export const itemUsedSync = createAction(
 );
 
 export const itemPinIntent = createAction('item::pin::intent', (payload: UniqueItem) =>
-    withRequest({ type: 'start', id: itemPinRequest(payload.shareId, payload.itemId) })({ payload })
+    pipe(
+        withRequest({ type: 'start', id: itemPinRequest(payload.shareId, payload.itemId) }),
+        withNotification({
+            type: 'info',
+            text: c('Info').t`Pinning item...`,
+            loading: true,
+            expiration: -1,
+        })
+    )({ payload })
 );
 
 export const itemPinSuccess = createAction(
@@ -277,7 +285,15 @@ export const itemPinFailure = createAction(
 );
 
 export const itemUnpinIntent = createAction('item::unpin::intent', (payload: UniqueItem) =>
-    withRequest({ type: 'start', id: itemUnpinRequest(payload.shareId, payload.itemId) })({ payload })
+    pipe(
+        withRequest({ type: 'start', id: itemUnpinRequest(payload.shareId, payload.itemId) }),
+        withNotification({
+            type: 'info',
+            text: c('Info').t`Unpinning item...`,
+            loading: true,
+            expiration: -1,
+        })
+    )({ payload })
 );
 
 export const itemUnpinSuccess = createAction(
