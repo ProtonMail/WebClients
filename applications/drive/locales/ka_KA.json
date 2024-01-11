@@ -313,6 +313,9 @@
       "Get started": [
         "დაიწყეთ"
       ],
+      "Get Started": [
+        "დაიწყეთ"
+      ],
       "Get verification code": [
         "შემოწმების კოდის მიღება"
       ],
@@ -429,9 +432,6 @@
       ],
       "New message": [
         "ახალი შეტყობინება"
-      ],
-      "New upload": [
-        "ახლის ატვირთვა"
       ],
       "Next": [
         "შემდეგი"
@@ -2431,6 +2431,10 @@
       "An unexpected error occurred. Import must be restarted.": [
         "მოულოდნელი შეცდომა. შემოტანა თავიდან უნდა დაიწყოთ."
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "ფაილი ${ formattedFilename } ${ MAX_IMPORT_EVENTS }-ზე მეტ მოვლენას შეიცავს.",
+        "ფაილი ${ formattedFilename } ${ MAX_IMPORT_EVENTS }-ზე მეტ მოვლენას შეიცავს."
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "თქვენს ფაილს ${ formattedFilename } არასწორი მეთოდი აქვს და მისი შემოტანა შეუძლებელია."
       ],
@@ -4400,6 +4404,16 @@
         "დეტალებისთვის დააწკაპუნეთ აქ"
       ]
     },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "მონიშნულია ${ selectedFoldersCount } საქაღალდე",
+        "მონიშნულია ${ selectedFoldersCount } საქაღალდე"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "მონიშნულია ${ selectedFoldersCount } ჭდე",
+        "მონიშნულია ${ selectedFoldersCount } ჭდე"
+      ]
+    },
     "Item": {
       "file attributes": [
         "ფაილის ატრიბუტები"
@@ -4930,6 +4944,14 @@
         "${ Label.Name } შეიქმნა"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "გამომგზავნელი: ${ from }"
+      ],
+      "To: ${ to }": [
+        "მიმღები: ${ to }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "გვერდითი პანელი"
@@ -5307,6 +5329,14 @@
       "Link copied to clipboard": [
         "ბმული კოპირებულია ბუფერში"
       ],
+      "Move ${ n } file": [
+        "${ n } ფაილის გადატანა",
+        "${ n } ფაილის გადატანა"
+      ],
+      "Move ${ n } item": [
+        "${ n } ელემენტის გადატანა",
+        "${ n } ელემენტის გადატანა"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "არასაკმარისი ადგილი ${ formattedTotal }-ის ასატვირთად"
       ],
@@ -5418,6 +5448,9 @@
     "Option": {
       "Add to existing group": [
         "არსებულ ჯგუფში ჩამატება"
+      ],
+      "Automatic (${ value })": [
+        "ავტომატური (${ value })"
       ],
       "Create new group": [
         "ახალი ჯგუფის შექმნა"
@@ -5858,6 +5891,12 @@
       ],
       "Highest VPN speed": [
         "უსწრაფესი VPN"
+      ],
+      "Premium ${ appName1 }": [
+        "Premium ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium ${ appName1 } & ${ appName2 }"
       ],
       "Premium early access": [
         "ადრეული წვდომა ახალ ფუნქციებზე"
@@ -6312,6 +6351,9 @@
         "${ count } კონტაქტების ჯგუფის წაშლა",
         "${ count } კონტაქტების ჯგუფის წაშლა"
       ],
+      "Delete ${ value }": [
+        "${ value }-ის წაშლა"
+      ],
       "Delete permanently": [
         "სამუდამოდ წაშლა"
       ],
@@ -6323,6 +6365,9 @@
       ],
       "Discard changes?": [
         "ცვლილებების გაუქმება?"
+      ],
+      "Download ${ date }": [
+        "${ date }-ის გადმოწერა"
       ],
       "Download unverified file?": [
         "გადმოვწერო შეუმოწმებელი ფაილი?"
@@ -6704,6 +6749,9 @@
       ],
       "Hide side panel": [
         "გვერდითი პანელის დამალვა"
+      ],
+      "Load image": [
+        "გამოსახულების ჩატვირთვა"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "აირჩიეთ PGP-ის სქემა, რომელიც გამოყენებული იქნება ხელმოწერისა და შიფრაციისთვის. გაითვალისწინეთ, რომ PGP/Inline-ით ფორმატირებულ ელფოსტებს ვერ გააგზავნით"

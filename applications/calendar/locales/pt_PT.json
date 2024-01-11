@@ -2052,6 +2052,24 @@
         "até ${ dateString }"
       ]
     },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "Diariamente, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "A cada ${ interval } dia, ${ timesString }",
+        "A cada ${ interval } dias, ${ timesString }"
+      ]
+    },
+    "Daily recurring event, frequency (until)": {
+      "Daily, ${ untilString }": [
+        "Diariamente, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "A cada ${ interval } dia, ${ untilString }",
+        "A cada ${ interval } dias, ${ untilString }"
+      ]
+    },
     "Day": {
       "Friday": [
         "Sexta-feira"
@@ -2663,6 +2681,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Ocorreu um erro inesperado. A importação tem de ser reiniciada."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "O ficheiro ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS } evento.",
+        "O ficheiro ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS } eventos."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "O seu ficheiro ${ formattedFilename } tem um método inválido e não pode ser importado."
@@ -4252,6 +4274,16 @@
         "Clique para detalhes"
       ]
     },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } pasta selecionada",
+        "${ selectedFoldersCount } pastas selecionadas"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } etiqueta selecionada",
+        "${ selectedFoldersCount } etiquetas selecionadas"
+      ]
+    },
     "Info; access rights for shared calendar": {
       "View only": [
         "Ver apenas"
@@ -4712,6 +4744,11 @@
         "${ Label.Name } criada"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "De: ${ from }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Painel lateral"
@@ -4910,6 +4947,24 @@
       ],
       "Monthly ${ onDayString }": [
         "Mensalmente ${ onDayString }"
+      ]
+    },
+    "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "A cada ${ interval } mês, ${ onDayString }, ${ timesString }",
+        "A cada ${ interval } meses, ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Mensalmente ${ onDayString }, ${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "A cada ${ interval } mês, ${ onDayString }, ${ untilString }",
+        "A cada ${ interval } meses, ${ onDayString }, ${ untilString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Mensalmente ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -5339,6 +5394,9 @@
       ],
       "Auto": [
         "Automático"
+      ],
+      "Automatic (${ value })": [
+        "Automático (${ value })"
       ],
       "Create new group": [
         "Criar novo grupo"
@@ -5879,6 +5937,12 @@
       "Highest VPN speed": [
         "Velocidade VPN mais elevada"
       ],
+      "Premium ${ appName1 }": [
+        "Premium ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium ${ appName1 } & ${ appName2 }"
+      ],
       "Premium early access": [
         "Acesso antecipado premium"
       ],
@@ -6418,6 +6482,9 @@
         "Eliminar ${ count } grupo de contactos",
         "Eliminar ${ count } grupos de contactos"
       ],
+      "Delete ${ value }": [
+        "Eliminar ${ value }"
+      ],
       "Delete event": [
         "Eliminar evento"
       ],
@@ -6951,6 +7018,124 @@
         "Semanalmente, à Quarta-feira"
       ]
     },
+    "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "A cada ${ interval } semana, ${ multipleDaysString }, ${ timesString }",
+        "A cada ${ interval } semanas, ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "A cada ${ interval } semana, todos os dias, ${ timesString }",
+        "A cada ${ interval } semanas, todos os dias, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "A cada ${ interval } semana à Sexta-feira, ${ timesString }",
+        "A cada ${ interval } semanas à Sexta-feira, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "A cada ${ interval } semana ao Sábado, ${ timesString }",
+        "A cada ${ interval } semanas ao Sábado, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "A cada ${ interval } semana à Quinta-feira, ${ timesString }",
+        "A cada ${ interval } semanas à Quinta-feira, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "A cada ${ interval } semana à Quarta-feira, ${ timesString }",
+        "A cada ${ interval } semanas à Quarta-feira, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Semanalmente, ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Semanalmente, todos os dias, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Semanalmente à Sexta-feira, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Semanalmente à Segunda-feira, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Semanalmente ao Sábado, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Semanalmente ao Domingo, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Semanalmente à Quinta-feira, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Semanalmente à Terça-feira, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Semanalmente à Quarta-feira, ${ timesString }"
+      ]
+    },
+    "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "A cada ${ interval } semana, ${ multipleDaysString }, ${ untilString }",
+        "A cada ${ interval } semanas, ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "A cada ${ interval } semana, todos os dias, ${ untilString }",
+        "A cada ${ interval } semanas, todos os dias, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "A cada ${ interval } semana à Sexta-feira, ${ untilString }",
+        "A cada ${ interval } semanas à Sexta-feira, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "A cada ${ interval } semana à Segunda-feira, ${ untilString }",
+        "A cada ${ interval } semanas à Segunda-feira, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "A cada ${ interval } semana ao Sábado ${ untilString }",
+        "A cada ${ interval } semanas ao Sábado ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "A cada ${ interval } semana, ao Domingo, ${ untilString }",
+        "A cada ${ interval } semanas, ao Domingo, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "A cada ${ interval } semana à Quinta-feira, ${ untilString }",
+        "A cada ${ interval } semanas à Quinta-feira, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "A cada ${ interval } semana à Terça-feira, ${ untilString }",
+        "A cada ${ interval } semanas à Terça-feira, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "A cada ${ interval } semana à Quarta-feira, ${ untilString }",
+        "A cada ${ interval } semanas à Quarta-feira, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Semanalmente, ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Semanalmente, todos os dias, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Semanalmente à Segunda-feira, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Semanalmente à Segunda-feira, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Semanalmente ao Sábado, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Semanalmente ao Domingo, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Semanalmente à Quinta-feira, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Semanalmente à Terça-feira, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Semanalmente à Quarta-feira, ${ untilString }"
+      ]
+    },
     "Weekly recurring event, repeats on (multiple days), frequency": {
       "Friday": [
         "Sexta-feira"
@@ -6981,6 +7166,24 @@
       ],
       "Yearly": [
         "Anualmente"
+      ]
+    },
+    "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "A cada ${ interval } ano, ${ timesString }",
+        "A cada ${ interval } anos, ${ timesString }"
+      ],
+      "Yearly, ${ timesString }": [
+        "Anualmente, ${ timesString }"
+      ]
+    },
+    "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "A cada ${ interval } ano, ${ untilString }",
+        "A cada ${ interval } anos, ${ untilString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Anualmente, ${ untilString }"
       ]
     }
   }

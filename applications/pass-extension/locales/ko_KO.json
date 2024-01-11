@@ -182,9 +182,6 @@
       "Get mobile apps": [
         "모바일 앱 다운로드"
       ],
-      "Get the deal": [
-        "혜택 얻기"
-      ],
       "Help us improve": [
         "저희를 도와주세요"
       ],
@@ -391,14 +388,6 @@
       ],
       "Your password manager not here? Request it.": [
         "사용 중이신 비밀번호 관리자가 없으신가요? 알려주세요."
-      ]
-    },
-    "Badge": {
-      "Early access": [
-        "얼리 엑세스"
-      ],
-      "Limited time": [
-        "기간 한정"
       ]
     },
     "bf2023: Info": {
@@ -823,9 +812,6 @@
       "Drop to import": [
         "드래그해서 불러오기"
       ],
-      "Early access to ${ PASS_APP_NAME } web app": [
-        "${ PASS_APP_NAME } 웹 앱 얼리 엑세스"
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "기존 비밀번호를 ${ PASS_APP_NAME }로 쉽게 가져오세요."
       ],
@@ -964,9 +950,6 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "소유권 이전 완료. 이 금고에 대한 소유권이 더 이상 없습니다."
       ],
-      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
-        "웹 앱 얼리 엑세스 권한을 포함하는 ${ eoyRelativePrice }당/개월의 Pass Plus 플랜"
-      ],
       "Pass Plus trial": [
         "Pass Plus 체험"
       ],
@@ -1002,9 +985,6 @@
       ],
       "Please enter your current PIN code to continue": [
         "계속하려면 현재 PIN을 입력하세요."
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "${ PASS_APP_NAME } 웹 앱 얼리 엑세스 특전을 얻기 위해선 업그레이드 하세요."
       ],
       "Press Enter to copy": [
         "복사하기 위해 엔터 키를 누르세요"
@@ -1104,9 +1084,6 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } 업그레이드"
-      ],
-      "Upgrade Now to Unlock Premium Features": [
-        "프리미엄 기능 잠금해제 하려면 업그레이드"
       ],
       "Use vaults to share this item with others.": [
         "다른 사람과 이 항목을 공유하려면 금고를 사용하세요."
@@ -1663,9 +1640,6 @@
       "Full Name": [
         "성명"
       ],
-      "MM/YYYY": [
-        "월/년"
-      ],
       "Other": [
         "기타"
       ],
@@ -1681,14 +1655,14 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "삭제를 계속하려면 \"${ vaultName }\" 을(를) 재입력 해주세요."
       ],
-      "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "${ vault.content.name } 에서 ${ pluralItemType } 검색"
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "${ vaultName } 에서 ${ pluralItemType } 검색"
       ],
       "Search ${ pluralItemType } in all vaults": [
         "모든 금고에서 ${ pluralItemType } 검색"
       ],
-      "Search in ${ vault.content.name }": [
-        "${ vault.content.name } 에서 검색"
+      "Search in ${ vaultName }": [
+        "${ vaultName }에서 검색"
       ],
       "Search in all vaults": [
         "모든 금고에서 검색"
@@ -1832,9 +1806,6 @@
       "Update available": [
         "사용 가능한 업데이트가 있습니다"
       ],
-      "Upgrade to Unlock Premium Features": [
-        "프리미엄 기능을 잠금해제 하려면 업그레이드"
-      ],
       "Use my email": [
         "나의 이메일 사용"
       ],
@@ -1898,9 +1869,6 @@
       ],
       "Empty note": [
         "빈 메모"
-      ],
-      "Expiration Date is incomplete": [
-        "만료 일자 작성이 완료되지 않았습니다."
       ],
       "Invalid alias prefix": [
         "잘못된 별명 접두어 입니다."

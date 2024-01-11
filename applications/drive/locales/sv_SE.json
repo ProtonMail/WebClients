@@ -400,6 +400,9 @@
       "Mark for deletion": [
         "Markera för borttagning"
       ],
+      "Maximize": [
+        "Maximera"
+      ],
       "Maximize transfers": [
         "Maximera överföringar"
       ],
@@ -408,6 +411,9 @@
       ],
       "Merge contacts": [
         "Slå ihop kontakter"
+      ],
+      "Minimize": [
+        "Minimera"
       ],
       "Minimize transfers": [
         "Minimera överföringar"
@@ -432,9 +438,6 @@
       ],
       "New message": [
         "Nytt meddelande"
-      ],
-      "New upload": [
-        "Ny uppladdning"
       ],
       "Next": [
         "Nästa"
@@ -3306,6 +3309,14 @@
         "${ groupCounts } grupp hittades",
         "${ groupCounts } grupper hittades"
       ],
+      "${ nbFile } encrypted file": [
+        "${ nbFile } krypterad fil.",
+        "${ nbFile } krypterade filer."
+      ],
+      "${ nbFile } encrypted file...": [
+        "${ nbFile } krypterad fil...",
+        "${ nbFile } krypterade filer..."
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } pausad",
         "${ pausedCount } pausade"
@@ -3337,6 +3348,10 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etikett vald",
         "${ selectedFoldersCountLocalized } etiketter valda"
+      ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } hoppade över",
+        "${ skippedCount } hoppade över"
       ],
       "${ speed }/s": [
         "${ speed }/s"
@@ -3374,6 +3389,9 @@
       "All (${ totalFoldersCount } label)": [
         "Alla (${ totalFoldersCount } etikett)",
         "Alla (${ totalFoldersCount } etiketter)"
+      ],
+      "All encrypted files": [
+        "Alla krypterade filer"
       ],
       "All your changes will be lost.": [
         "Alla dina ändringar kommer att gå förlorade."
@@ -3567,11 +3585,17 @@
       "Download paused due to connection issue; it will resume automatically": [
         "Nedladdningen pausades på grund av anslutningsproblem. Det kommer att återupptas automatiskt"
       ],
+      "Download ready": [
+        "Nedladdning klar"
+      ],
       "Downloaded": [
         "Nerladdat"
       ],
       "Downloading": [
         "Laddar ner"
+      ],
+      "Downloading all encrypted files": [
+        "Laddar ner alla krypterade filer"
       ],
       "Drop file here to upload": [
         "Släpp filer här för att ladda upp"
@@ -4018,6 +4042,9 @@
       "Restoring Photos... Please keep the tab open": [
         "Återställer foton... Håll fliken öppen"
       ],
+      "Retry now": [
+        "Försök igen nu"
+      ],
       "Search cannot be enabled in this browser": [
         "Sökning kan inte aktiveras i denna webbläsare"
       ],
@@ -4075,6 +4102,9 @@
       "Signature issue": [
         "Problem med signatur"
       ],
+      "Skipped": [
+        "Hoppades över"
+      ],
       "Some files failed to download. Try downloading the files again.": [
         "Vissa filer kunde inte laddas ner. Försök att ladda ner filerna igen."
       ],
@@ -4086,6 +4116,9 @@
       ],
       "Something went wrong, please try again later.": [
         "Något gick fel, försök igen senare."
+      ],
+      "Something went wrong...": [
+        "Något gick fel..."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Prenumeration slutar: Återaktivera senast ${ byDate } för att behålla dina ${ planName }-förmåner. ${ reactivateLink }"
@@ -4131,6 +4164,9 @@
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Denna fil kan ha tagits bort, flyttats eller gjorts otillgänglig. Försök att kontakta filägaren."
+      ],
+      "This item already exists in your library": [
+        "Detta objekt finns redan i ditt bibliotek"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Denna länk leder till en webbplats som kanske försöker stjäla din information, såsom lösenord och kreditkortsuppgifter."
@@ -4383,6 +4419,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Din data är redo att importeras från ${ importedEmailAddressStrong } till ditt ${ BRAND_NAME }-konto."
       ],
+      "Your download is in progress": [
+        "Din nedladdningar pågår"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Din e-post kommer endast användas för denna engångsverifiering."
       ],
@@ -4621,6 +4660,9 @@
       ],
       "Download anyway": [
         "Ladda ner ändå"
+      ],
+      "Downloading": [
+        "Laddar ner"
       ],
       "Downloading ${ percentageValue }%": [
         "Laddar ner ${ percentageValue }%"

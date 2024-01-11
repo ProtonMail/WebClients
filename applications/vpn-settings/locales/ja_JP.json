@@ -2670,6 +2670,9 @@
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } 以上"
       ],
+      "${ remainingAddresses.length } more addresses": [
+        "${ remainingAddresses.length } 個のアドレスが追加されました"
+      ],
       "${ storage } storage": [
         "${ storage } ストレージ"
       ],
@@ -2981,6 +2984,9 @@
       ],
       "for choosing ${ product }": [
         "${ product } を選択した場合"
+      ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "シングル サインオン (SAML SSO) を使用する組織のメンバー向け"
       ],
       "Free forever": [
         "永久に無料"
@@ -3782,6 +3788,9 @@
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "組織パスワードは、管理者権限を与えたい他のユーザーと共有できます。アカウントにアクセスができなくなった際の緊急回復用コードとしても使用しますので、このパスワードは安全な場所に保管してください。"
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "あなたの組織ではシングル サインオン (SSO) を使用しています。 SSO プロバイダーを続行するには、「サインイン」を押します。"
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "支払いの詳細は TLS で暗号化され、スイスのプライバシー法によっても保護されています。"
@@ -5321,6 +5330,9 @@
       ]
     },
     "Option": {
+      "Automatic (${ value })": [
+        "自動 (${ value })"
+      ],
       "Country configs": [
         "各国の設定ファイル"
       ],
@@ -6010,6 +6022,12 @@
       ],
       "Highest VPN speed": [
         "最高速 VPN"
+      ],
+      "Premium ${ appName1 }": [
+        "${ appName1 } プレミアム"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "${ appName1 } と ${ appName2 } プレミアム"
       ],
       "Premium early access": [
         "プレミアム早期アクセス"
@@ -6707,6 +6725,9 @@
       ],
       "Delete": [
         "削除"
+      ],
+      "Delete ${ value }": [
+        "${ value } を削除しますか"
       ],
       "Delete account": [
         "アカウントの削除"

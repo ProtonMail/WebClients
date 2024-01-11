@@ -2983,6 +2983,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de que pueda enviar y recibir mensajes desde sus direcciones nuevas, necesita crear las claves de cifrado para ellas."
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billed at ${ price }": [
         "Al precio de ${ price }"
       ],
@@ -3004,8 +3007,8 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haga clic en \"Solicitar código nuevo\" para que se envíe un código de verificación nuevo a ${ strong }. Si este número telefónico es incorrecto, haga clic en \"Editar\" para corregirlo."
       ],
-      "Configure SAML authentication for your organization through an identity provider like Okta, Azure or Onelogin. This will enable SAML for the whole organization.": [
-        "Configure la autenticación SAML para su organización mediante un proveedor de identidad como Okta, Azure o Onelogin. Esto habilitará SAML para toda la organización."
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Configure la autenticación SAML para su organización mediante un proveedor de identidad (IdP). Esto habilitará SAML para toda la organización."
       ],
       "Continue with ${ freeName }": [
         "Continuar con ${ freeName }"
@@ -7583,6 +7586,9 @@
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL de punto final de su proveedor de identidad (por ejemplo, https://idp.ejemplo.com/sso/saml)"
+      ],
+      "Feature in early access": [
+        "Funcionalidad en acceso anticipado"
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Clave pública del proveedor de identidad para firmar aserciones de autenticación. Obtenga el hash del certificado de su proveedor de identidad."

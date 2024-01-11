@@ -5446,6 +5446,9 @@
       ]
     },
     "Option": {
+      "Automatic (${ value })": [
+        "Automatisch (${ value })"
+      ],
       "Country configs": [
         "Landconfiguraties"
       ],
@@ -6148,6 +6151,12 @@
       ],
       "Highest VPN speed": [
         "Hoogste VPN-snelheid"
+      ],
+      "Premium ${ appName1 }": [
+        "Premium ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium ${ appName1 } en ${ appName2 }"
       ],
       "Premium early access": [
         "Premium vroege toegang"
@@ -6859,6 +6868,9 @@
       ],
       "Delete": [
         "Verwijderen"
+      ],
+      "Delete ${ value }": [
+        "Verwijder ${ value }"
       ],
       "Delete account": [
         "Account verwijderen"

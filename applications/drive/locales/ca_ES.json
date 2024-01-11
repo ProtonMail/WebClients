@@ -433,9 +433,6 @@
       "New message": [
         "Nou missatge"
       ],
-      "New upload": [
-        "Puja fitxers"
-      ],
       "Next": [
         "Següent"
       ],
@@ -2438,6 +2435,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "S'ha produït un error inesperat. S'ha de reiniciar la importació."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS } esdeveniment.",
+        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS } esdeveniments."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "El fitxer ${ formattedFilename } conté un mètode invàlid i no es pot importar."
@@ -5342,6 +5343,14 @@
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls."
       ],
+      "Move ${ n } file": [
+        "Mou ${ n } fitxer",
+        "Mou ${ n } fitxers"
+      ],
+      "Move ${ n } item": [
+        "Mou ${ n } article",
+        "Mou ${ n } articles"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "No hi ha prou espai per carregar ${ formattedTotal }"
       ],
@@ -5453,6 +5462,9 @@
     "Option": {
       "Add to existing group": [
         "Afegeix a un grup existent"
+      ],
+      "Automatic (${ value })": [
+        "Automàtic (${ value })"
       ],
       "Create new group": [
         "Crea un grup nou"
@@ -6356,6 +6368,9 @@
         "Eliminar ${ count } grup de contactes",
         "Eliminar ${ count } grups de contactes"
       ],
+      "Delete ${ value }": [
+        "Elimina ${ value }"
+      ],
       "Delete permanently": [
         "Elimina de manera permanent"
       ],
@@ -6367,6 +6382,9 @@
       ],
       "Discard changes?": [
         "Voleu descartar els canvis?"
+      ],
+      "Download ${ date }": [
+        "Baixa ${ date }"
       ],
       "Download unverified file?": [
         "Baixa un fitxer no verificat?"

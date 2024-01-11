@@ -263,6 +263,9 @@
       "Hide plan features": [
         "Funktionen des Abonnements ausblenden"
       ],
+      "Import new SAML metadata": [
+        "Neue SAML-Metadaten importieren"
+      ],
       "Increase": [
         "Vergrößern"
       ],
@@ -394,6 +397,9 @@
       ],
       "Save address": [
         "E-Mail-Adresse speichern"
+      ],
+      "Save SAML configuration": [
+        "SAML-Konfiguration speichern"
       ],
       "Search": [
         "Suchen"
@@ -2075,6 +2081,9 @@
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         "Bitte upgrade auf ein Business-Abonnement mit mehr als einem Benutzer, um mehrere Benutzer zu verwalten."
       ],
+      "Please upload an xml file": [
+        "Bitte lade eine XML-Datei hoch."
+      ],
       "Please upload only 1 file": [
         "Bitte lade nur eine Datei hoch"
       ],
@@ -2128,6 +2137,9 @@
       ],
       "Try using only letters, numerals, and _.-": [
         "Bitte nur Buchstaben, Ziffern und die Zeichen _ . - verwenden"
+      ],
+      "Unable to upload file": [
+        "Fehler beim Hochladen der Datei."
       ],
       "Unknown error": [
         "Unbekannter Fehler"
@@ -3055,6 +3067,15 @@
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
         "Vergiss dieses Passwort NICHT. Solltest du es vergessen, kannst du dich weder anmelden noch deine Nachrichten entschlüsseln."
       ],
+      "Domain ownership failed verification.": [
+        "Die Überprüfung der Domäne schlug fehl"
+      ],
+      "Domain ownership not verified.": [
+        "Besitz der Domäne nicht überprüft"
+      ],
+      "Domain ownership verified.": [
+        "Besitz der Domäne überprüft"
+      ],
       "Done": [
         "Fertig"
       ],
@@ -3465,6 +3486,9 @@
       "Revoke certificate ${ name }": [
         "Zertifikat ${ name } widerrufen"
       ],
+      "SAML configuration saved": [
+        "SAML-Konfiguration gespeichert."
+      ],
       "Save ${ percentage }": [
         "Spare ${ percentage }"
       ],
@@ -3512,6 +3536,9 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Einige deiner verfügbaren Server können aufgrund kürzlicher Entfernungen nur in bestimmten Ländern verwendet werden."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Gib die Domain an, die sich mit SAML SSO authentifizieren darf."
       ],
       "Step ${ step }": [
         "Schritt ${ step }",
@@ -3615,6 +3642,9 @@
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Dieser Benutzer ist zurzeit für Zahlungen für deine Organisation zuständig. Wenn du den Benutzer zurückstufst, wirst du für die Zahlungen deiner Organisation zuständig."
+      ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Diese Verifizierung kann bis zu einer Stunde dauern. Du kannst gefahrlos mit den nächsten Schritten fortfahren."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Dadurch wird dein aktuelles bezahltes Abonnement gekündigt und du verlierst alle Treuevorteile, die du angesammelt hast."
@@ -4130,11 +4160,20 @@
       "Allow recovery by phone": [
         "Wiederherstellung per Telefon zulassen"
       ],
+      "Allowed domain": [
+        "Erlaubte Domain"
+      ],
+      "Allowed Domain": [
+        "Erlaubte Domain"
+      ],
       "Amount": [
         "Betrag"
       ],
       "Amount due": [
         "Fälliger Betrag"
+      ],
+      "Assertion Consumer Service URL": [
+        "Assertion Consumer Service URL"
       ],
       "Attach screenshot(s)": [
         "Screenshot(s) anhängen"
@@ -4259,6 +4298,9 @@
       "Do you have any suggestions for our team?": [
         "Hast du irgendwelche Vorschläge für unser Team?"
       ],
+      "e.g. example.com": [
+        "z. B. beispiel.com"
+      ],
       "Email": [
         "E-Mail-Adresse"
       ],
@@ -4289,6 +4331,9 @@
       "Interval": [
         "Intervall"
       ],
+      "Issuer ID": [
+        "Aussteller-ID"
+      ],
       "Keep me signed in": [
         "Angemeldet bleiben"
       ],
@@ -4306,6 +4351,12 @@
       ],
       "Main": [
         "Hauptebene"
+      ],
+      "Metadata file for ${ appName }": [
+        "Metadaten-Datei für ${ appName }"
+      ],
+      "Metadata URL for ${ appName }": [
+        "Metadaten-URL für ${ appName }"
       ],
       "Moderate NAT": [
         "Moderates NAT"
@@ -4403,6 +4454,9 @@
       "Proration": [
         "Anteilsmäßige Verrechnung"
       ],
+      "Public certificate (X.509)": [
+        "Öffentliches Zertifikat (X.509)"
+      ],
       "Recovery email address": [
         "Wiederherstellungs-E-Mail-Adresse"
       ],
@@ -4411,6 +4465,9 @@
       ],
       "Recovery phrase": [
         "Wiederherstellungsphrase"
+      ],
+      "Reply (ACS) URL": [
+        "Antwort-URL (ACS)"
       ],
       "Require 2FA for administrators": [
         "2FA für Administratoren erfordern"
@@ -4426,6 +4483,15 @@
       ],
       "Select your plan": [
         "Wähle dein Abonnement"
+      ],
+      "Single sign-on Entity ID": [
+        "Single Sign-on-Entitäts-ID"
+      ],
+      "Single sign-on entity ID": [
+        "Single Sign-on-Entitäts-ID"
+      ],
+      "Single sign-on URL": [
+        "Single Sign-on-URL"
       ],
       "Start date": [
         "Anfangsdatum"
@@ -4453,6 +4519,9 @@
       ],
       "Username": [
         "Benutzername"
+      ],
+      "Value": [
+        "Wert"
       ],
       "Verification code": [
         "Verifizierungscode"
@@ -4496,6 +4565,9 @@
       ]
     },
     "Label for news": {
+      "${ app } product updates": [
+        "${ app }-Produktaktualisierungen"
+      ],
       "${ BRAND_NAME } beta announcements": [
         "${ BRAND_NAME } Beta-Ankündigungen"
       ],
@@ -5363,6 +5435,9 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "An Werktagen erhältst du innerhalb von 24 Stunden Unterstützung durch den Kundensupport von ${ BRAND_NAME }."
       ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Eine VPN-Verbindung erlaubt es einem Gerät, sich jederzeit mit ${ VPN_APP_NAME }-VPN zu verbinden. Um beispielsweise ein Handy und einen Laptop gleichzeitig mit ${ VPN_APP_NAME }-VPN zu verbinden, brauchst du zwei VPN-Verbindungen."
+      ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Option zum Anzeigen der Posteingänge nicht privater Benutzer aus seiner Sicht einschließlich aller Nachrichten- und Kontaktdetails."
       ],
@@ -5796,6 +5871,15 @@
       ],
       "Confirm": [
         "Bestätigen"
+      ],
+      "e.g. https://example.com/app/protonvpn/XXXXX/sso/metadata": [
+        "z.B. https://beispiel.com/app/protonvpn/XXXXX/sso/metadata"
+      ],
+      "e.g. https://idp.example.com/sso/saml": [
+        "z.B. https://idp.beispiel.com/sso/saml"
+      ],
+      "e.g. https://idp.example.com/XXXXX": [
+        "z.B. https://idp.beispiel.com/XXXXX"
       ],
       "Email address": [
         "E-Mail-Adresse"
@@ -7132,6 +7216,9 @@
       "Email subscriptions": [
         "E‐Mail‐Abonnements"
       ],
+      "Enter SAML metadata": [
+        "SAML-Metadaten eingeben"
+      ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Gib deine ${ BRAND_NAME }-Kontodaten ein, um am ${ app } Beta-Programm teilzunehmen."
       ],
@@ -7289,6 +7376,9 @@
       "Revoke certificate": [
         "Zertifikat widerrufen"
       ],
+      "SAML authentication": [
+        "SAML-Authentifizierung"
+      ],
       "Select a plan": [
         "Abonnement auswählen"
       ],
@@ -7333,6 +7423,9 @@
       ],
       "Signed in to member account": [
         "In Mitgliedskonto angemeldet"
+      ],
+      "Single Sign-On": [
+        "Single Sign-on"
       ],
       "Status": [
         "Status"
@@ -7465,11 +7558,26 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatisches Umschalten zwischen deinen bevorzugten Farbschemata für Tag und Nacht, synchron mit dem Tag- und Nachtmodus deines Systems."
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Kopiere diese URL und füge sie in das ACS (Assertion Consumer Service) URL-Feld deines Identitätsanbieters ein."
+      ],
+      "Copy and paste this URL into the entity ID field of your identity provider": [
+        "Kopiere diese URL und füge sie in das Feld für die Entitäts-ID deines Identitätsanbieters ein."
+      ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "Endpunkt-URL des Identitätsanbieters (z.B. https://idp.beispiel.com/sso/saml)"
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Öffentlicher Schlüssel des Identitätsanbieters zum Signieren von Authentifizierungs-Assertions. Hole dir den Zertifikatshash von deinem Identitätsanbieter."
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Wenn du einen Geschenkgutschein erworben oder von unserem Support-Team erhalten hast, kannst du ihn hier eingeben."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Mitglieder, die keine 2FA verwenden, erhalten eine E-Mail mit der Aufforderung, sie so bald wie möglich zu aktivieren."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Gib die Domain an, die sich mit SAML SSO authentifizieren darf"
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Der neue Abonnementzyklus beginnt am ${ formattedTime }."
@@ -7479,6 +7587,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Das ausgewählte Farbschema ist aktiv, wenn dein System auf \"Heller Modus\" eingestellt ist."
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "In der Regel eine URL, die den Namen des Identitätsanbieters enthält"
       ],
       "Verified email address": [
         "E-Mail-Adresse bestätigt"
@@ -7524,6 +7635,11 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your identity provider": [
+        "SSO-Benutzer, der von deinem Identitätsanbieter bereitgestellt wird"
       ]
     },
     "Validation": {
