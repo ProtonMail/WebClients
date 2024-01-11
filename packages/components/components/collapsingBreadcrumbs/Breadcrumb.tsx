@@ -16,7 +16,7 @@ const Breadcrumb = (
     ref: Ref<HTMLLIElement>
 ) => {
     const textClass = clsx([
-        'text-pre p-1 m-0 text-ellipsis children-pointer-events-none',
+        'text-pre p-1 m-0 text-ellipsis *:pointer-events-none',
         active ? 'text-strong' : 'color-weak',
     ]);
     return (

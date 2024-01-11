@@ -136,7 +136,7 @@ const MonthDays = ({
                     (!rangeEnd && isIntervalBoundStart);
 
                 const className = clsx([
-                    'minicalendar-day children-pointer-events-none',
+                    'minicalendar-day *:pointer-events-none',
                     !isActiveMonth && 'minicalendar-day--out-of-month',
                     isInterval && 'minicalendar-day--range',
                     isIntervalBoundStart && 'minicalendar-day--range-bound-start',

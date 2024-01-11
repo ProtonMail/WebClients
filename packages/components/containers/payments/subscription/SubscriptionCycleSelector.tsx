@@ -240,7 +240,7 @@ const SubscriptionCycleSelector = ({
         return acc;
     }, {} as any);
 
-    const fadedClasses = clsx(faded && 'opacity-50 children-pointer-events-none');
+    const fadedClasses = clsx(faded && 'opacity-50 *:pointer-events-none');
 
     if (cycles.length === 1) {
         const cycle = cycles[0];
