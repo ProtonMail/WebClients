@@ -284,6 +284,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             if (!options?.soft) await forceSessionLock().catch(noop);
 
             api.unsubscribe();
+
             authStore.setLockStatus(SessionLockStatus.LOCKED);
             authStore.setLockToken(undefined);
             authStore.setLockLastExtendTime(undefined);
@@ -393,7 +394,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
                         authStore.setRefreshTime(persistedSession.RefreshTime);
 
                         /* Start listening for API errors before resuming the session in order
-                         * to gracefully handle inactive session errors during this sequence */
+                         * to gracefully handle inactive/locked session errors & token refresh. */
+                        await api.reset();
                         authService.listen();
 
                         const { session, sessionKey } = await resumeSession({
@@ -428,6 +430,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
                         /* if session is inactive : trigger unauthorized sequence */
                         if (api.getState().sessionInactive) await authService.logout({ soft: true, broadcast: true });
+                        else if (api.getState().sessionLocked) await authService.lock({ soft: true, broadcast: true });
                         else config.onSessionResumeFailure?.(options);
 
                         return false;
