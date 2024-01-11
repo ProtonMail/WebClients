@@ -1,4 +1,4 @@
-import { type RefObject, type VFC17 } from 'react';
+import { type FC, type RefObject } from 'react';
 
 import { type FactoryOpts } from 'imask/esm/masked/factory';
 
@@ -13,7 +13,7 @@ export type MaskedTextFieldProps = FieldBoxProps &
         mask: FactoryOpts;
     };
 
-export const MaskedTextField: VFC17<MaskedTextFieldProps> = (props) => {
+export const MaskedTextField: FC<MaskedTextFieldProps> = (props) => {
     const { actions, actionsContainerClassName, className, icon, mask, ...rest } = props;
     const { inputRef, maskedValue } = useFieldMask(props, mask);
 

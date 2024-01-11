@@ -1,5 +1,5 @@
-import type { MouseEvent } from 'react';
-import { type FC17, useEffect, useRef, useState } from 'react';
+import type { MouseEvent, PropsWithChildren } from 'react';
+import { type FC, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -8,7 +8,7 @@ import clsx from '@proton/utils/clsx';
 
 export type ClickToCopyProps = { className?: string; value?: string };
 
-export const ClickToCopy: FC17<ClickToCopyProps> = ({ className, children, value = '' }) => {
+export const ClickToCopy: FC<PropsWithChildren<ClickToCopyProps>> = ({ className, children, value = '' }) => {
     const ref = useRef<HTMLDivElement>(null);
     const copyToClipboard = useCopyToClipboard();
     const [selection, setSelection] = useState(false);

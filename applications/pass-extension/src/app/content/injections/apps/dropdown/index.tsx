@@ -1,6 +1,7 @@
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import { Dropdown } from './Dropdown';
 
-const root = document.getElementById('root') as HTMLElement;
-ReactDOM.render(<Dropdown />, root);
+const container = document.getElementById('root');
+const root = createRoot(container!);
+root.render(<Dropdown />);

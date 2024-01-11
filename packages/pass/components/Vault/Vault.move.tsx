@@ -1,4 +1,4 @@
-import type { FC17 } from 'react';
+import type { FC } from 'react';
 import { useCallback, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -18,7 +18,7 @@ type Props = { vault: VaultShareItem; onClose: () => void };
 
 type VaultMoveSteps = { view: 'select' | 'confirm'; destinationShareId: MaybeNull<string> };
 
-export const VaultMove: FC17<Props> = ({ vault, onClose }) => {
+export const VaultMove: FC<Props> = ({ vault, onClose }) => {
     const dispatch = useDispatch();
     const [step, setStep] = useState<VaultMoveSteps>({ view: 'select', destinationShareId: null });
     const destination = useSelector(selectShare<ShareType.Vault>(step.destinationShareId));

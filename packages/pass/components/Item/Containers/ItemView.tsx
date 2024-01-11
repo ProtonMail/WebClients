@@ -1,4 +1,4 @@
-import { type VFC17, useMemo, useState } from 'react';
+import { type FC, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useParams } from 'react-router-dom';
 
@@ -40,14 +40,14 @@ import type { ItemType, SelectedItem, ShareType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
-const itemTypeViewMap: { [T in ItemType]: VFC17<ItemViewProps<T>> } = {
+const itemTypeViewMap: { [T in ItemType]: FC<ItemViewProps<T>> } = {
     login: LoginView,
     note: NoteView,
     alias: AliasView,
     creditCard: CreditCardView,
 };
 
-export const ItemView: VFC17 = () => {
+export const ItemView: FC = () => {
     const { selectItem, matchTrash, preserveSearch } = useNavigation();
     const inviteContext = useInviteContext();
 
@@ -124,7 +124,7 @@ export const ItemView: VFC17 = () => {
 
     const handlePinClick = () => dispatch((item.pinned ? itemUnpinIntent : itemPinIntent)({ shareId, itemId }));
 
-    const ItemTypeViewComponent = itemTypeViewMap[item.data.type] as VFC17<ItemViewProps>;
+    const ItemTypeViewComponent = itemTypeViewMap[item.data.type] as FC<ItemViewProps>;
 
     return (
         <>
