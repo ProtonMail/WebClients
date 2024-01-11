@@ -6204,6 +6204,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Innan du kan börja skicka och ta emot e-postmeddelanden från dina nya adresser måste du skapa krypteringsnycklar för dem."
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billed at ${ price }": [
         "Fakturerad med ${ price }"
       ],
@@ -14861,6 +14864,14 @@
       ]
     },
     "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Varje ${ interval } vecka på måndag, ${ untilString }",
+        "Var ${ interval }:e vecka på måndag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Var ${ interval }:e vecka på söndag, ${ untilString }",
+        "Var ${ interval }:e vecka på söndag, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Varje vecka på ${ multipleDaysString }, ${ untilString }"
       ],
