@@ -2,7 +2,7 @@ import UAParser from 'ua-parser-js';
 
 import { SUPPORTED_ELECTRON_APP } from '@proton/components/hooks/useIsElectronApp';
 
-import { APP_NAMES } from '../constants';
+import { APPS, APP_NAMES } from '../constants';
 import { getBrowser, getOS, isMac, isWindows } from './browser';
 
 const uaParser = new UAParser();
@@ -22,6 +22,10 @@ export const isElectronOnWindows = () => {
 
 export const isElectronOnSupportedApps = (app: APP_NAMES) => {
     return isElectronApp() && SUPPORTED_ELECTRON_APP.includes(app);
+};
+
+export const isElectronOnInboxApps = (app: APP_NAMES) => {
+    return isElectronApp() && (app === APPS.PROTONCALENDAR || app === APPS.PROTONMAIL);
 };
 
 export const getTypeformDesktopUrl = (appVersion: string, appName: APP_NAMES) => {
