@@ -340,7 +340,7 @@ const ConfigureSamlModal = ({ domain, onClose, ...rest }: Props) => {
                                             .t`Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).`}
                                     />
                                     <InputFieldTwo
-                                        label={c('Label').t`Single sign-on Entity ID`}
+                                        label={c('Label').t`Single sign-on entity ID`}
                                         placeholder={c('Placeholder').t`e.g. https://idp.example.com/XXXXX`}
                                         value={metadata[METADATA_METHOD.TEXT].entityId}
                                         onValue={(value: string) =>
