@@ -11,6 +11,7 @@ const config = {
         asar: true,
         icon: 'assets/logo',
         extraResource: 'assets',
+        appBundleId: 'me.proton.pass.electron',
     },
     rebuildConfig: {},
     makers: [
@@ -19,6 +20,7 @@ const config = {
             loadingGif: path.join(__dirname, 'assets', 'installSpinner.gif'),
             iconUrl: path.join(__dirname, 'assets', 'logo.ico'),
             setupIcon: path.join(__dirname, 'assets', 'logo.ico'),
+            signWithParams: process.env.SQUIRREL_SIGNTOOL_ARGS,
         }),
     ],
     plugins: [
