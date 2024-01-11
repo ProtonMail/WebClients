@@ -102,7 +102,7 @@ export const ItemsListPlaceholder: FC<Props> = ({ noActions }) => {
                     {c('Info')
                         .t`You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.`}
                 </Card>
-                <UpgradeButton upsellRef={UpsellRef.LIMIT_VAULT} />
+                <UpgradeButton upsellRef={UpsellRef.LIMIT_VAULT} className="pass-sub-sidebar--hidable" />
             </div>
         );
     }
@@ -116,6 +116,7 @@ export const ItemsListPlaceholder: FC<Props> = ({ noActions }) => {
                         ? c('Info').t`Switch to another vault or create an item in this vault`
                         : c('Info').t`Let's get you started by creating your first item`}
                 </span>
+
                 {!noActions &&
                     quickActions.map(({ type, icon, label, onClick, subTheme }) => (
                         <Button
@@ -123,7 +124,7 @@ export const ItemsListPlaceholder: FC<Props> = ({ noActions }) => {
                             shape="solid"
                             color="weak"
                             key={`quick-action-${type}`}
-                            className={clsx('w-full relative', subTheme)}
+                            className={clsx('pass-sub-sidebar--hidable w-full relative', subTheme)}
                             onClick={onClick}
                             disabled={selectedShare && !isWritableVault(selectedShare)}
                         >
@@ -133,7 +134,7 @@ export const ItemsListPlaceholder: FC<Props> = ({ noActions }) => {
                                 className="absolute left-custom top-0 bottom-0 my-auto"
                                 style={{ '--left-custom': '1rem' }}
                             />
-                            <span>{label}</span>
+                            <span className="max-w-full p-8 text-ellipsis">{label}</span>
                         </Button>
                     ))}
             </div>
