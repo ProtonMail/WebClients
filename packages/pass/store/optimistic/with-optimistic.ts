@@ -1,5 +1,5 @@
 import type { Selector } from '@reduxjs/toolkit';
-import type { AnyAction, Reducer } from 'redux';
+import type { Action, Reducer } from 'redux';
 
 import type { MaybeArray } from '@proton/pass/types';
 
@@ -34,13 +34,13 @@ export const withInitialOptimisticState = <T extends object>(state: T): WrappedO
     };
 };
 
-const applyOptimisticMatcher = (action: AnyAction) => (matcher: OptimisticMatcher) =>
+const applyOptimisticMatcher = (action: Action) => (matcher: OptimisticMatcher) =>
     typeof matcher === 'string' ? matcher === action.type : matcher(action);
 
 const withOptimistic = <T extends object>(
     matchersList: OptimisticMatchers[],
     reducer: Reducer<T>,
-    options?: { sanitizeAction: (action: AnyAction) => AnyAction }
+    options?: { sanitizeAction: (action: Action) => Action }
 ): {
     reducer: WithOptimisticReducer<T>;
     selectors: {
@@ -51,7 +51,7 @@ const withOptimistic = <T extends object>(
     const initialState = reducer(undefined, { type: '__OPTIMISTIC_INIT__' });
     const initialOptimisticState = withInitialOptimisticState(initialState);
 
-    const wrappedReducer: WithOptimisticReducer<T> = (outer = initialOptimisticState, optimisticAction: AnyAction) => {
+    const wrappedReducer: WithOptimisticReducer<T> = (outer = initialOptimisticState, optimisticAction: Action) => {
         const action = options?.sanitizeAction?.(optimisticAction) ?? optimisticAction;
 
         const inner = unwrapOptimisticState(outer);
