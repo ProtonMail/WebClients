@@ -116,6 +116,28 @@ describe('useCalendarSearchPagination', () => {
             expect(mockHistoryPush).toHaveBeenCalledTimes(1);
             expect(mockHistoryPush).toHaveBeenCalledWith('/search');
         });
+
+        it('should compute maxPage correctly when the number of search items is a multiple of the page size', () => {
+            // array of search items whose length is twice the page size => we should have two pages of results
+            const arrayIsMultiple = new Array(2 * DEFAULT_MAX_ITEMS_PER_PAGE)
+                .fill(null)
+                .map((_, index) => generateTestVisualItem(index));
+            const { result } = renderHook(() => useCalendarSearchPagination(arrayIsMultiple, dummyDate));
+
+            // current page is first one => previous should be disabled, next enabled
+            expect(result.current.currentPage).toBe(0);
+            expect(result.current.isPreviousEnabled).toBe(false);
+            expect(result.current.isNextEnabled).toBe(true);
+
+            // go to second page
+            act(() => result.current.next());
+            mockHistoryPush.mockClear();
+
+            // current page is second one => previous should be enabled, next disabled
+            expect(result.current.currentPage).toBe(1);
+            expect(result.current.isNextEnabled).toBe(false);
+            expect(result.current.isPreviousEnabled).toBe(true);
+        });
     });
 
     describe('when maxItemsPerPage is provided', () => {
