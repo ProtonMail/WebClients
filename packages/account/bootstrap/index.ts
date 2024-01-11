@@ -233,7 +233,7 @@ export const onAbort = (signal: AbortSignal | undefined, cb: () => void) => {
 };
 
 export const unleashReady = ({ unleashClient }: { unleashClient: UnleashClient }) => {
-    return unleashClient.start().catch(noop);
+    return unleashClient.start();
 };
 
 const defaultQuery = (eventID: string) => getEvents(eventID);

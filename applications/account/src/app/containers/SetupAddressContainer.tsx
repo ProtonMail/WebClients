@@ -19,7 +19,6 @@ import {
 } from '@proton/components';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { AddressGeneration } from '@proton/components/containers/login/interface';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getSlugFromApp, stripSlugFromPathname } from '@proton/shared/lib/apps/slugHelper';
 import { getToAppName } from '@proton/shared/lib/authentication/apps';
@@ -27,6 +26,7 @@ import { persistSessionWithPassword } from '@proton/shared/lib/authentication/pe
 import { getValidatedApp } from '@proton/shared/lib/authentication/sessionForkValidation';
 import { APPS, APP_NAMES, SSO_PATHS } from '@proton/shared/lib/constants';
 import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from '@proton/shared/lib/helpers/crossTab';
+import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { User } from '@proton/shared/lib/interfaces';
 import {
     getAddressGenerationSetup,
@@ -234,7 +234,7 @@ const SetupAddressContainer = () => {
             .catch((error) => {
                 errorHandler(error);
                 setError({
-                    message: getApiErrorMessage(error) || error?.message,
+                    message: getNonEmptyErrorMessage(error),
                 });
             });
     }, []);

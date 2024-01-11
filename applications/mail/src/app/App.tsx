@@ -2,7 +2,6 @@ import { FunctionComponent, useState } from 'react';
 import { Router } from 'react-router-dom';
 
 import FlagProvider from '@protontech/proxy-client-react';
-import { c } from 'ttag';
 
 import {
     ApiProvider,
@@ -20,7 +19,7 @@ import {
 } from '@proton/components';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
 
 import { bootstrapApp } from './bootstrap';
@@ -53,7 +52,7 @@ const App = () => {
             } catch (error: any) {
                 setState({
                     error: {
-                        message: getApiErrorMessage(error) || error?.message || c('Error').t`Unknown error`,
+                        message: getNonEmptyErrorMessage(error),
                     },
                 });
             }
