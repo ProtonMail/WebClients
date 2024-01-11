@@ -2949,6 +2949,22 @@
         "${ dateString } 까지"
       ]
     },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "종일, ${ timesString }"
+      ],
+      "Every ${ interval } days, ${ timesString }": [
+        "매 ${ interval }일, ${ timesString }"
+      ]
+    },
+    "Daily recurring event, frequency (until)": {
+      "Daily, ${ untilString }": [
+        "종일, ${ untilString }"
+      ],
+      "Every ${ interval } days, ${ untilString }": [
+        "매 ${ interval }일, ${ untilString }"
+      ]
+    },
     "Date label": {
       "Today": [
         "오늘"
@@ -3675,6 +3691,9 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "알 수 없는 오류. 불러오기가 재시작되어야 함."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } events.": [
+        "파일 ${ formattedFilename }에 이벤트가 ${ MAX_IMPORT_EVENTS }개 넘게 포함되어 있습니다."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "사용자의 ${ formattedFilename } 파일은 유효하지 않은 방법이므로 불러올 수 없습니다."
@@ -4779,6 +4798,9 @@
       "${ messagesNotAuthorizedToMove } messages could not be moved.": [
         "${ messagesNotAuthorizedToMove } 메시지가 이동되지 않을 수 있습니다."
       ],
+      "${ n } unread conversations": [
+        "읽지 않은 대화 ${ n }개"
+      ],
       "${ numberOfImageTrackers } email trackers blocked": [
         "${ numberOfImageTrackers } 개 이메일 트래커 차단됨"
       ],
@@ -4979,6 +5001,9 @@
       ],
       "Clear data": [
         "데이터 지우기"
+      ],
+      "Clear selection": [
+        "선택 지우기"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
         "브라우저 데이터를 지우면 이 기기의 메시지 내용 검색도 비활성화됩니다. 메시지 내에서 검색하려면 모든 메시지를 다시 다운로드해야 합니다."
@@ -5751,6 +5776,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "이 메시지는 아직 신뢰되지 않은 키로 서명됩니다."
       ],
+      "This message will be automatically deleted on ${ value }": [
+        "메시지가 ${ value }에 자동으로 삭제됨"
+      ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "이 메시지가 임시보관함으로 이동되었으며, 편집할 수 있습니다. 전송될 때의 다시 예약이 필요합니다."
       ],
@@ -5771,6 +5799,15 @@
       ],
       "This message will expire ${ formattedDate }": [
         "메시지가 ${ formattedDate } 에 만료됨"
+      ],
+      "This message will expire on ${ value }": [
+        "메시지가 ${ value }에 만료됨"
+      ],
+      "This message will expire today at ${ value }": [
+        "이 메시지는 오늘 ${ value }에 만료됩니다"
+      ],
+      "This message will expire tomorrow at ${ value }": [
+        "이 메시지는 내일 ${ value }에 만료됩니다"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "이 공개 키는 이 주소에 암호화된 이메일을 전송할 때 자동으로 사용됩니다."
@@ -5979,6 +6016,9 @@
       "You do not have any messages here": [
         "여기엔 아무런 메시지가 없습니다"
       ],
+      "You have ${ unread } in your inbox.": [
+        "받은 편지함에 ${ unread } 를 가지고 있습니다."
+      ],
       "You have **${ count } conversations** stored in this folder": [
         "이 폴더에 **대화 ${ count }**개를 저장했습니다"
       ],
@@ -6084,6 +6124,14 @@
     "Info on errors": {
       "Click for details": [
         "자세한 내용을 보려면 클릭하세요"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folders selected": [
+        "${ selectedFoldersCount }개 폴더 선택함"
+      ],
+      "${ selectedFoldersCount } labels selected": [
+        "${ selectedFoldersCount } 개 라벨 선택함"
       ]
     },
     "Key badge": {
@@ -6827,6 +6875,11 @@
         "${ Label.Name } 생성됨"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "보낸 사람: ${ from }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "사이드 패널"
@@ -7145,6 +7198,22 @@
       ],
       "Monthly ${ onDayString }": [
         "매월 ${ onDayString }"
+      ]
+    },
+    "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } months ${ onDayString }, ${ timesString }": [
+        "매 ${ interval }개월 ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "매월 ${ onDayString }, ${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } months ${ onDayString }, ${ untilString }": [
+        "매 ${ interval }개월 ${ onDayString }, ${ untilString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "매월 ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -7499,6 +7568,9 @@
       ],
       "All": [
         "전체"
+      ],
+      "Automatic (${ value })": [
+        "자동 (${ value })"
       ],
       "Create new group": [
         "새 그룹 만들기"
@@ -8170,6 +8242,12 @@
       ],
       "Highest VPN speed": [
         "가장 빠른 VPN 속도"
+      ],
+      "Premium ${ appName1 }": [
+        "Premium ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium ${ appName1 } & ${ appName2 }"
       ],
       "Premium early access": [
         "프리미엄 얼리 엑세스"
@@ -8857,6 +8935,9 @@
       "Delete ${ count } messages": [
         "${ count } 개의 메시지 삭제"
       ],
+      "Delete ${ value }": [
+        "${ value }을(를) 삭제할까요"
+      ],
       "Delete all messages": [
         "모든 메시지 삭제"
       ],
@@ -9533,6 +9614,109 @@
         "주의 수요일"
       ]
     },
+    "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } weeks on ${ multipleDaysString }, ${ timesString }": [
+        "매 ${ interval } 주 ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } weeks on all days, ${ timesString }": [
+        "매 ${ interval }주 모든 요일, ${ timesString }"
+      ],
+      "Every ${ interval } weeks on Friday, ${ timesString }": [
+        "매 ${ interval }주 금요일, ${ timesString }"
+      ],
+      "Every ${ interval } weeks on Saturday, ${ timesString }": [
+        "매 ${ interval }주 토요일, ${ timesString }"
+      ],
+      "Every ${ interval } weeks on Thursday, ${ timesString }": [
+        "매 ${ interval }주 목요일, ${ timesString }"
+      ],
+      "Every ${ interval } weeks on Wednesday, ${ timesString }": [
+        "매 ${ interval }주 수요일, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "주의 ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "주의 종일, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "주의 금요일, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "주의 월요일, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "주의 토요일, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "주의 일요일, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "주의 목요일, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "주의 화요일, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "주의 수요일, ${ timesString }"
+      ]
+    },
+    "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } weeks on ${ multipleDaysString }, ${ untilString }": [
+        "매 ${ interval }주 ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } weeks on all days, ${ untilString }": [
+        "매 ${ interval }주 모든 요일, ${ untilString }"
+      ],
+      "Every ${ interval } weeks on Friday, ${ untilString }": [
+        "매 ${ interval }주 금요일, ${ untilString }"
+      ],
+      "Every ${ interval } weeks on Monday, ${ untilString }": [
+        "매 ${ interval }주 월요일, ${ untilString }"
+      ],
+      "Every ${ interval } weeks on Saturday, ${ untilString }": [
+        "매 ${ interval }주 토요일, ${ untilString }"
+      ],
+      "Every ${ interval } weeks on Sunday, ${ untilString }": [
+        "매 ${ interval }주 일요일, ${ untilString }"
+      ],
+      "Every ${ interval } weeks on Thursday, ${ untilString }": [
+        "매 ${ interval }주 목요일, ${ untilString }"
+      ],
+      "Every ${ interval } weeks on Tuesday, ${ untilString }": [
+        "매 ${ interval }주 화요일, ${ untilString }"
+      ],
+      "Every ${ interval } weeks on Wednesday, ${ untilString }": [
+        "매 ${ interval }주 수요일, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "주의 ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "주의 종일, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "주의 금요일, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "주의 월요일, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "주의 토요일, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "주의 일요일, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "주의 목요일, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "주의 화요일, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "주의 수요일, ${ untilString }"
+      ]
+    },
     "Weekly recurring event, repeats on (multiple days), frequency": {
       "Friday": [
         "금요일"
@@ -9562,6 +9746,22 @@
       ],
       "Yearly": [
         "연간"
+      ]
+    },
+    "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } years, ${ timesString }": [
+        "매 ${ interval }년, ${ timesString }"
+      ],
+      "Yearly, ${ timesString }": [
+        "년간, ${ timesString }"
+      ]
+    },
+    "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } years, ${ untilString }": [
+        "매 ${ interval }년, ${ untilString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "년간, ${ untilString }"
       ]
     }
   }
