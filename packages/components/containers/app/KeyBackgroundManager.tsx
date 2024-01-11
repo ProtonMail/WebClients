@@ -11,8 +11,10 @@ import {
     getDecryptedUserKeysHelper,
     getHasMigratedAddressKeys,
     getSentryError,
+    hasActiveKeysMismatch,
     migrateMemberAddressKeys,
     migrateUser,
+    updateActiveKeys,
 } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
@@ -27,6 +29,7 @@ import {
 } from '../../hooks';
 import useApi from '../../hooks/useApi';
 import { useKTVerifier, useKeyMigrationKTVerifier } from '../keyTransparency';
+import useFlag from '../unleash/useFlag';
 
 interface Props {
     hasPrivateMemberKeyGeneration?: boolean;
@@ -50,6 +53,7 @@ const KeyBackgroundManager = ({
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(silentApi, getUser);
     const { keyMigrationKTVerifier } = useKeyMigrationKTVerifier();
+    const runActiveKeysCheckFlag = useFlag('CryptoDisableUndecryptableKeys');
 
     useEffect(() => {
         const run = async () => {
@@ -149,11 +153,43 @@ const KeyBackgroundManager = ({
             }
         };
 
+        const runActiveKeysCheck = async () => {
+            if (!runActiveKeysCheckFlag) {
+                return;
+            }
+            try {
+                const addresses = await getAddresses();
+                const updatesHappened = await Promise.all(
+                    addresses.map(async (address) => {
+                        const addressKeys = await getAddressKeys(address.ID);
+                        if (!hasActiveKeysMismatch(address, addressKeys)) {
+                            return false;
+                        }
+                        await updateActiveKeys(silentApi, address, addressKeys, keyTransparencyVerify);
+                        return true;
+                    })
+                );
+                if (updatesHappened.some(Boolean)) {
+                    const userKeys = await getUserKeys();
+                    await keyTransparencyCommit(userKeys);
+                }
+            } catch (error) {
+                const sentryError = getSentryError(error);
+                if (sentryError) {
+                    captureMessage('Active keys check or update failed', {
+                        extra: { sentryError, serverTime: serverTime(), isServerTime: wasServerTimeEverUpdated() },
+                    });
+                }
+                throw error;
+            }
+        };
+
         if (!(hasMemberKeyMigration || hasPrivateMemberKeyGeneration || hasReadableMemberKeyActivation)) {
+            void runActiveKeysCheck().catch(noop);
             return;
         }
 
-        run()
+        void run()
             .then(() =>
                 hasMemberKeyMigration
                     ? runMigration().catch((e) => {
@@ -166,6 +202,7 @@ const KeyBackgroundManager = ({
                       })
                     : undefined
             )
+            .then(() => runActiveKeysCheck())
             .catch(noop);
     }, []);
 
