@@ -43,7 +43,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     const appName = config.APP_NAME;
 
     const run = async () => {
-        const appContainer = getAppContainer();
+        const appContainerPromise = getAppContainer();
         const session = await bootstrap.loadSession({ authentication, api, pathname });
 
         const history = bootstrap.createHistory({ basename: session.payload.basename, path: session.payload.path });
@@ -57,7 +57,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             dispatch(initEvent({ User: session.payload.User }));
         }
 
-        const setupModels = async () => {
+        const loadUser = async () => {
             const [user, userSettings, features] = await Promise.all([
                 dispatch(userThunk()),
                 dispatch(userSettingsThunk()),
@@ -70,10 +70,6 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
                         FeatureCode.SLIntegration,
                     ])
                 ),
-                dispatch(addressesThunk()),
-                dispatch(mailSettingsThunk()),
-                dispatch(contactEmailsThunk()),
-                dispatch(categoriesThunk()),
             ]);
 
             dispatch(welcomeFlagsActions.initial(userSettings));
@@ -86,25 +82,40 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope], scopes };
         };
 
-        const ignored = () => {
+        const loadPreload = () => {
+            return Promise.all([
+                dispatch(addressesThunk()),
+                dispatch(mailSettingsThunk()),
+                dispatch(contactEmailsThunk()),
+                dispatch(categoriesThunk()),
+            ]);
+        };
+
+        const loadPreloadButIgnored = () => {
             loadAllowedTimeZones(silentApi).catch(noop);
         };
 
-        const [models, eventManager] = await Promise.all([
-            setupModels(),
-            bootstrap.eventManager({
-                api: silentApi,
-                query: (eventID: string) => getEvents(eventID, { ConversationCounts: 1, MessageCounts: 1 }),
-            }),
-            bootstrap.unleashReady({ unleashClient }),
-            ignored(),
-        ]);
+        const userPromise = loadUser();
+        const preloadPromise = loadPreload();
+        const evPromise = bootstrap.eventManager({
+            api: silentApi,
+            query: (eventID: string) => getEvents(eventID, { ConversationCounts: 1, MessageCounts: 1 }),
+        });
+        const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
+        loadPreloadButIgnored();
 
+        await unleashPromise;
         // Needs unleash to be loaded.
         await bootstrap.loadCrypto({ appName, unleashClient });
-        const MainContainer = await appContainer;
+        const [MainContainer, userData, eventManager] = await Promise.all([
+            appContainerPromise,
+            userPromise,
+            evPromise,
+        ]);
         // Needs everything to be loaded.
-        await bootstrap.postLoad({ appName, authentication, ...models, history });
+        await bootstrap.postLoad({ appName, authentication, ...userData, history });
+        // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.
+        await preloadPromise;
 
         const calendarModelEventManager = createCalendarModelEventManager({ api: silentApi });
 
@@ -122,7 +133,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         });
 
         return {
-            ...models,
+            ...userData,
             eventManager,
             unleashClient,
             history,
