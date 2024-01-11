@@ -4659,6 +4659,9 @@
       ]
     },
     "Option": {
+      "Automatic (${ value })": [
+        "Automatikus (${ value })"
+      ],
       "Country configs": [
         "Ország konfigurációk"
       ],
@@ -5233,6 +5236,12 @@
       ],
       "Highest VPN speed": [
         "Legnagyobb VPN sebesség"
+      ],
+      "Premium ${ appName1 }": [
+        "Prémium ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Prémium ${ appName1 } és ${ appName2 }."
       ],
       "Premium early access": [
         "Prémium korai-hozzáférés"
@@ -5857,6 +5866,9 @@
       ],
       "Delete": [
         "Törlés"
+      ],
+      "Delete ${ value }": [
+        "${ value } törlése"
       ],
       "Delete account": [
         "Fiók törlése"

@@ -3060,9 +3060,6 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы праверачны код на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
       ],
-      "Configure SAML authentication for your organization through an identity provider like Okta, Azure or Onelogin. This will enable SAML for the whole organization.": [
-        "Канфігурацыя аўтэнтыфікацыі SAML для вашай арганізацыі пры дапамозе пастаўшчыка пасведчанняў (такіх, як Okta, Azure або Onelogin). Гэта ўключыць SAML для ўсёй арганізацыі."
-      ],
       "Continue with ${ freeName }": [
         "Працягнуць з ${ freeName }"
       ],
@@ -3265,7 +3262,7 @@
         "тут"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
-        "Публічны ключ пастаўшчыка пасведчанняў для подпісу сцвярджэння аўтэнтыфікацыі. Павінна быць месцам для спампоўвання або капіявання хэш сертыфіката ад пастаўшчыка пасведчанняў. Проста ўстаўце хэш сертыфіката ў тэкставае поле."
+        "Публічны ключ пастаўшчыка пасведчанняў для подпісу сцвярджэння аўтэнтыфікацыі. Павінна быць месцам для спампоўвання або капіявання хэшу сертыфіката ад пастаўшчыка пасведчанняў. Проста ўстаўце хэш сертыфіката ў тэкставае поле."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Калі іншы адміністратар змяніў гэты пароль, вам неабходна будзе спытаць у яго новы пароль арганізацыі."
@@ -4431,7 +4428,7 @@
         "Інтэрвал"
       ],
       "Issuer ID": [
-        "Ідэнтыфікатар імітэта"
+        "Ідэнтыфікатар эмітэнта"
       ],
       "Keep me signed in": [
         "Заставацца ў сістэме"
@@ -7801,7 +7798,7 @@
         "URL-адрас канцавога пункта ад пастаўшчыка пасведчанняў (напрыклад, https://idp.example.com/sso/saml)"
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
-        "Публічны ключ пастаўшчыка пасведчанняў для подпісу сцвярджэння аўтэнтыфікацыі. Атрымайце сертыфікаваны хэш ад свайго пастаўшчыка пасведчанняў."
+        "Публічны ключ пастаўшчыка пасведчанняў для подпісу сцвярджэння аўтэнтыфікацыі. Атрымайце хэш сертыфіката ад свайго пастаўшчыка пасведчанняў."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Калі вы купілі падарункавы код або атрымалі яго ад нашай службы падтрымкі, то можаце ўвесці яго тут."

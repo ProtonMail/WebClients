@@ -5599,6 +5599,9 @@
       ]
     },
     "Option": {
+      "Automatic (${ value })": [
+        "Automaattinen (${ value })"
+      ],
       "Country configs": [
         "Maakohtaiset määritykset"
       ],
@@ -6374,6 +6377,12 @@
       "Highest VPN speed": [
         "Korkein VPN-nopeus"
       ],
+      "Premium ${ appName1 }": [
+        "Premium ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium ${ appName1 } ja ${ appName2 }"
+      ],
       "Premium early access": [
         "Premium-ennakkokäyttö"
       ],
@@ -7084,6 +7093,9 @@
       ],
       "Delete": [
         "Poista"
+      ],
+      "Delete ${ value }": [
+        "Poista ${ value }"
       ],
       "Delete account": [
         "Poista tili"

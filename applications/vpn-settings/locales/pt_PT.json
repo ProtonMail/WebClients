@@ -5322,6 +5322,9 @@
       ]
     },
     "Option": {
+      "Automatic (${ value })": [
+        "Automático (${ value })"
+      ],
       "Country configs": [
         "Definições do país"
       ],
@@ -6008,6 +6011,12 @@
       ],
       "Highest VPN speed": [
         "Velocidade VPN mais elevada"
+      ],
+      "Premium ${ appName1 }": [
+        "Premium ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium ${ appName1 } & ${ appName2 }"
       ],
       "Premium early access": [
         "Acesso antecipado premium"
@@ -6713,6 +6722,9 @@
       ],
       "Delete": [
         "Eliminar"
+      ],
+      "Delete ${ value }": [
+        "Eliminar ${ value }"
       ],
       "Delete account": [
         "Eliminar conta"
