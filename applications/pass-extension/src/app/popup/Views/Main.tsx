@@ -36,7 +36,10 @@ export const Main: VFC = () => {
                             style={{ '--anime-delay': '50ms' }}
                         >
                             <Header />
-                            <div className="flex items-center justify-center flex-nowrap w-full h-full">
+                            <div
+                                id="pass-layout"
+                                className="flex items-center justify-center flex-nowrap w-full h-full"
+                            >
                                 <SubSidebar>
                                     <ItemsList />
                                 </SubSidebar>
