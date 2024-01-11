@@ -158,6 +158,16 @@ describe('getSupportedTimezone', () => {
         });
     });
 
+    it('should convert deprecated time zones', () => {
+        const expectedMap: SimpleMap<string> = {
+            'Australia/Currie': 'Australia/Hobart',
+        };
+
+        Object.keys(expectedMap).forEach((tzid) => {
+            expect(getSupportedTimezone(tzid)).toBe(expectedMap[tzid]);
+        });
+    });
+
     it('should be robust', () => {
         const tzids = ['Chamorro (UTC+10)', '(GMT-01:00) Azores', 'Mountain Time (U.S. & Canada)'];
         const expected = ['Pacific/Saipan', 'Atlantic/Azores', 'America/Denver'];
