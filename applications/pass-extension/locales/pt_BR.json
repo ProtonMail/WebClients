@@ -182,9 +182,6 @@
       "Get mobile apps": [
         "Baixar aplicativos móveis"
       ],
-      "Get the deal": [
-        "Obtenha a oferta"
-      ],
       "Help us improve": [
         "Ajude-nos a melhorar"
       ],
@@ -278,6 +275,9 @@
       "Pass for iOS": [
         "Pass para iOS"
       ],
+      "Pin item": [
+        "Fixar item"
+      ],
       "Refresh the page": [
         "Atualizar a página"
       ],
@@ -365,6 +365,9 @@
       "Try again": [
         "Tentar novamente"
       ],
+      "Unpin item": [
+        "Desafixar item"
+      ],
       "Update": [
         "Atualizar"
       ],
@@ -391,14 +394,6 @@
       ],
       "Your password manager not here? Request it.": [
         "Seu gerenciador de senhas não está aqui? Solicite."
-      ]
-    },
-    "Badge": {
-      "Early access": [
-        "Acesso antecipado"
-      ],
-      "Limited time": [
-        "Tempo limitado"
       ]
     },
     "bf2023: Info": {
@@ -525,14 +520,23 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Falha ao mover todos os itens de \"${ payload.content.name }\""
       ],
+      "Failed to pin item": [
+        "Falha ao fixar item"
+      ],
       "Failed to remove user's access.": [
         "Falha ao remover o acesso do usuário."
       ],
       "Failed to transfer this vault's ownership.": [
         "Falha ao transferir a propriedade deste cofre."
       ],
+      "Failed to unpin item": [
+        "Falha ao desafixar item"
+      ],
       "File could not be parsed": [
         "Não foi possível analisar o arquivo."
+      ],
+      "File does not match expected format": [
+        "O arquivo não corresponde ao formato esperado"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "Erro na importação para o cofre \"${ vaultData.name }\": ${ description }"
@@ -828,9 +832,6 @@
       "Drop to import": [
         "Solte para importar"
       ],
-      "Early access to ${ PASS_APP_NAME } web app": [
-        "Acesso antecipado ao aplicativo web do ${ PASS_APP_NAME }"
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Transfira suas senhas existentes para o ${ PASS_APP_NAME } de forma simples e rápida."
       ],
@@ -929,6 +930,12 @@
       "Item successfully moved": [
         "Item movido"
       ],
+      "Item successfully pinned": [
+        "Item fixado com sucesso"
+      ],
+      "Item successfully unpinned": [
+        "Item desafixado com sucesso"
+      ],
       "Leaving vault...": [
         "Saindo do cofre..."
       ],
@@ -989,6 +996,9 @@
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Código PIN registrado. Use-o para desbloquear o ${ PASS_APP_NAME }"
       ],
+      "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
+        "Confirme sua senha da ${ BRAND_NAME } para exportar seus dados do ${ PASS_APP_NAME }"
+      ],
       "Please confirm your PIN code in order to unregister your current lock.\n${ PASS_APP_NAME } will then never lock.": [
         "Confirme seu código PIN para cancelar o bloqueio atual.\nO ${ PASS_APP_NAME } nunca irá bloquea-lo."
       ],
@@ -1003,9 +1013,6 @@
       ],
       "Please enter your current PIN code to continue": [
         "Insira o seu código PIN atual para continuar"
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Faça upgrade para ter acesso antecipado ao aplicativo web do ${ PASS_APP_NAME }"
       ],
       "Press Enter to copy": [
         "Pressione Enter para copiar"
@@ -1106,9 +1113,6 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Atualizar o ${ PASS_APP_NAME }"
-      ],
-      "Upgrade Now to Unlock Premium Features": [
-        "Faça upgrade agora para desbloquear recursos premium"
       ],
       "Use vaults to share this item with others.": [
         "Use cofres para compartilhar este item com outros."
@@ -1592,7 +1596,7 @@
         "Digite seu código PIN"
       ],
       "Sign in to your account": [
-        "Faça login em sua conta"
+        "Iniciar sessão em sua conta"
       ]
     },
     "lobby: Title": {
@@ -1668,9 +1672,6 @@
       "Full Name": [
         "Nome completo"
       ],
-      "MM/YYYY": [
-        "MM/AAAA"
-      ],
       "Other": [
         "Outro"
       ],
@@ -1686,14 +1687,14 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Digite novamente \"${ vaultName }\" para confirmar a exclusão"
       ],
-      "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "Procurar ${ pluralItemType } em ${ vault.content.name }"
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Procurar ${ pluralItemType } em ${ vaultName }"
       ],
       "Search ${ pluralItemType } in all vaults": [
         "Procurar ${ pluralItemType } em todos os cofres"
       ],
-      "Search in ${ vault.content.name }": [
-        "Procurar em ${ vault.content.name }"
+      "Search in ${ vaultName }": [
+        "Pesquisar em ${ vaultName }"
       ],
       "Search in all vaults": [
         "Procurar em todos os cofres"
@@ -1808,6 +1809,9 @@
       "Pin the extension": [
         "Fixe a extensão"
       ],
+      "Pinned (${ items.length })": [
+        "Fixado(${ items.length })"
+      ],
       "Secure your data": [
         "Proteja seus dados"
       ],
@@ -1837,9 +1841,6 @@
       ],
       "Update available": [
         "Atualização disponível"
-      ],
-      "Upgrade to Unlock Premium Features": [
-        "Faça upgrade para desbloquear recursos premium"
       ],
       "Use my email": [
         "Usar meu e-mail"
@@ -1904,9 +1905,6 @@
       ],
       "Empty note": [
         "Nota vazia"
-      ],
-      "Expiration Date is incomplete": [
-        "A data de expiração não é válida."
       ],
       "Invalid alias prefix": [
         "O prefixo de alias não é valido."

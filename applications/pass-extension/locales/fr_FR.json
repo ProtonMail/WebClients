@@ -182,9 +182,6 @@
       "Get mobile apps": [
         "Télécharger les applications mobiles"
       ],
-      "Get the deal": [
-        "J'en profite"
-      ],
       "Help us improve": [
         "Aidez-nous à nous améliorer"
       ],
@@ -278,6 +275,9 @@
       "Pass for iOS": [
         "Pass pour iOS"
       ],
+      "Pin item": [
+        "Épingler l'élément"
+      ],
       "Refresh the page": [
         "Actualiser la page"
       ],
@@ -365,6 +365,9 @@
       "Try again": [
         "Réessayer"
       ],
+      "Unpin item": [
+        "Désépingler l'élément"
+      ],
       "Update": [
         "Mettre à jour"
       ],
@@ -391,14 +394,6 @@
       ],
       "Your password manager not here? Request it.": [
         "Vous ne trouvez pas votre gestionnaire de mots de passe ? Demandez-le."
-      ]
-    },
-    "Badge": {
-      "Early access": [
-        "Accès en avant-première"
-      ],
-      "Limited time": [
-        "Offre à durée limitée"
       ]
     },
     "bf2023: Info": {
@@ -528,11 +523,17 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Le déplacement de tous les éléments depuis « ${ payload.content.name } » n'a pas abouti."
       ],
+      "Failed to pin item": [
+        "L'épinglage de l'élément n'a pas abouti."
+      ],
       "Failed to remove user's access.": [
         "L'accès de l'utilisateur n'a pas pu être retiré."
       ],
       "Failed to transfer this vault's ownership.": [
         "Le transfert de la propriété de ce coffre-fort n'a pas abouti."
+      ],
+      "Failed to unpin item": [
+        "Le retrait de l'épinglage de l'élément n'a pas abouti."
       ],
       "File could not be parsed": [
         "Le fichier n'a pas pu être analysé."
@@ -834,9 +835,6 @@
       "Drop to import": [
         "Déposez ici pour importer"
       ],
-      "Early access to ${ PASS_APP_NAME } web app": [
-        "Accès en avant-première à l'application de bureau ${ PASS_APP_NAME }"
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importez facilement vos mots de passe dans ${ PASS_APP_NAME }."
       ],
@@ -935,6 +933,12 @@
       "Item successfully moved": [
         "L'élément a été déplacé."
       ],
+      "Item successfully pinned": [
+        "L'élément a été épinglé."
+      ],
+      "Item successfully unpinned": [
+        "L'élément a été désépinglé."
+      ],
       "Leaving vault...": [
         "Vous quittez le coffre-fort…"
       ],
@@ -977,9 +981,6 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "La propriété a été transférée. Vous n'êtes plus propriétaire de ce coffre-fort."
       ],
-      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
-        "Pass Plus pour ${ eoyRelativePrice }/mois, avec un accès en avant-première à l'application web."
-      ],
       "Pass Plus trial": [
         "Version d'essai de Proton Pass Plus"
       ],
@@ -1015,9 +1016,6 @@
       ],
       "Please enter your current PIN code to continue": [
         "Saisissez votre code PIN pour continuer."
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Changez d'abonnement pour bénéficier d'un accès en avant-première à l'application de bureau de ${ PASS_APP_NAME }."
       ],
       "Press Enter to copy": [
         "Appuyez sur Entrée pour copier."
@@ -1118,9 +1116,6 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Mettre à jour ${ PASS_APP_NAME }"
-      ],
-      "Upgrade Now to Unlock Premium Features": [
-        "Passez à la version supérieure dès maintenant pour profiter des fonctionnalités premium."
       ],
       "Use vaults to share this item with others.": [
         "Utilisez les coffres-forts pour partager cet élément avec d'autres personnes."
@@ -1385,6 +1380,9 @@
       "Invitations": [
         "Invitations"
       ],
+      "Item ID": [
+        "ID de l'élément"
+      ],
       "Language": [
         "Langue"
       ],
@@ -1586,6 +1584,9 @@
       "Vault": [
         "Coffre-fort"
       ],
+      "Vault ID": [
+        "ID du coffre-fort"
+      ],
       "View details": [
         "Afficher les informations"
       ],
@@ -1680,8 +1681,8 @@
       "Full Name": [
         "Nom complet"
       ],
-      "MM/YYYY": [
-        "MM/AAAA"
+      "MM/YY": [
+        "MM/AA"
       ],
       "Other": [
         "Autre"
@@ -1698,14 +1699,14 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Saisissez à nouveau « ${ vaultName } » pour confirmer la suppression."
       ],
-      "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "Recherchez les ${ pluralItemType } dans ${ vault.content.name }."
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Recherchez les ${ pluralItemType } dans ${ vaultName }."
       ],
       "Search ${ pluralItemType } in all vaults": [
         "Recherchez les ${ pluralItemType } dans tous les coffres-forts."
       ],
-      "Search in ${ vault.content.name }": [
-        "Recherchez dans ${ vault.content.name }."
+      "Search in ${ vaultName }": [
+        "Rechercher dans ${ vaultName }"
       ],
       "Search in all vaults": [
         "Recherchez dans tous les coffres-forts."
@@ -1820,6 +1821,9 @@
       "Pin the extension": [
         "Épinglez l'extension"
       ],
+      "Pinned (${ items.length })": [
+        "Épinglés (${ items.length }"
+      ],
       "Secure your data": [
         "Sécurisez vos données"
       ],
@@ -1849,9 +1853,6 @@
       ],
       "Update available": [
         "Mise à jour disponible"
-      ],
-      "Upgrade to Unlock Premium Features": [
-        "Passez à la version supérieure pour profiter des fonctionnalités premium."
       ],
       "Use my email": [
         "Utiliser mon e-mail"
@@ -1916,9 +1917,6 @@
       ],
       "Empty note": [
         "Note vide"
-      ],
-      "Expiration Date is incomplete": [
-        "La date d'expiration n'est pas complète."
       ],
       "Invalid alias prefix": [
         "Le préfixe de l'alias n'est pas valide."
