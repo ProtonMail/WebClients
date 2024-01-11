@@ -182,9 +182,6 @@
       "Get mobile apps": [
         "Pobierz aplikację mobilną"
       ],
-      "Get the deal": [
-        "Uzyskaj ofertę"
-      ],
       "Help us improve": [
         "Pomóż nam ulepszyć usługę"
       ],
@@ -397,14 +394,6 @@
       ],
       "Your password manager not here? Request it.": [
         "Nie ma Twojego menadżera haseł? Zgłoś to."
-      ]
-    },
-    "Badge": {
-      "Early access": [
-        "Wcześniejszy dostęp"
-      ],
-      "Limited time": [
-        "Oferta ograniczona czasowo"
       ]
     },
     "bf2023: Info": {
@@ -868,9 +857,6 @@
       "Drop to import": [
         "Upuść, aby zaimportować"
       ],
-      "Early access to ${ PASS_APP_NAME } web app": [
-        "Wcześniejszy dostęp do aplikacji internetowej ${ PASS_APP_NAME }"
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Łatwe importowanie haseł do ${ PASS_APP_NAME }."
       ],
@@ -1021,9 +1007,6 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Właściciel został zmieniony. Nie jesteś już właścicielem tego sejfu."
       ],
-      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
-        "Plan Pass Plus za ${ eoyRelativePrice } / miesiąc. Zawiera wcześniejszy dostęp do aplikacji internetowej."
-      ],
       "Pass Plus trial": [
         "Wersja próbna planu Pass Plus"
       ],
@@ -1059,9 +1042,6 @@
       ],
       "Please enter your current PIN code to continue": [
         "Wpisz kod PIN, aby kontynuować"
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Ulepsz konto, aby uzyskać wcześniejszy dostęp do aplikacji internetowej ${ PASS_APP_NAME }"
       ],
       "Press Enter to copy": [
         "Kliknij Enter, aby skopiować"
@@ -1164,9 +1144,6 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Ulepsz ${ PASS_APP_NAME }"
-      ],
-      "Upgrade Now to Unlock Premium Features": [
-        "Ulepsz konto, aby odblokować funkcje premium"
       ],
       "Use vaults to share this item with others.": [
         "Aby udostępnić element, udostępnij cały sejf."
@@ -1437,6 +1414,9 @@
       "Invitations": [
         "Zaproszenia"
       ],
+      "Item ID": [
+        "Identyfikator elementu"
+      ],
       "Language": [
         "Język"
       ],
@@ -1635,6 +1615,9 @@
       "Vault": [
         "Sejf"
       ],
+      "Vault ID": [
+        "Identyfikator sejfu"
+      ],
       "View details": [
         "Pokaż szczegóły"
       ],
@@ -1729,8 +1712,8 @@
       "Full Name": [
         "Właściciel karty"
       ],
-      "MM/YYYY": [
-        "MM/RRRR"
+      "MM/YY": [
+        "MM/RR"
       ],
       "Other": [
         "Inna"
@@ -1747,14 +1730,14 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Wpisz \"${ vaultName }\", aby potwierdzić usunięcie"
       ],
-      "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "Przeszukaj ${ pluralItemType } w ${ vault.content.name }"
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Przeszukaj ${ pluralItemType } w ${ vaultName }"
       ],
       "Search ${ pluralItemType } in all vaults": [
         "Przeszukaj ${ pluralItemType } we wszystkich sejfach"
       ],
-      "Search in ${ vault.content.name }": [
-        "Przeszukaj sejf ${ vault.content.name }"
+      "Search in ${ vaultName }": [
+        "Przeszukaj sejf ${ vaultName }"
       ],
       "Search in all vaults": [
         "Przeszukaj wszystkie sejfy"
@@ -1904,9 +1887,6 @@
       "Update available": [
         "Dostępna jest aktualizacja"
       ],
-      "Upgrade to Unlock Premium Features": [
-        "Ulepsz konto, aby odblokować funkcje premium"
-      ],
       "Use my email": [
         "Użyj mojego adresu"
       ],
@@ -1971,8 +1951,8 @@
       "Empty note": [
         "Notatka jest pusta"
       ],
-      "Expiration Date is incomplete": [
-        "Data wygaśnięcia jest niekompletna"
+      "Expiration Date is not in the format MM/YY": [
+        "Data wygaśnięcia nie jest w formacie MM/RR"
       ],
       "Invalid alias prefix": [
         "Przedrostek aliasu jest nieprawidłowy"

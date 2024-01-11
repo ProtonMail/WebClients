@@ -2760,6 +2760,11 @@
         "Endereço de convite não existe"
       ]
     },
+    "Error changing answer of a calendar invitation": {
+      "Error changing answer": [
+        "Erro ao alterar a resposta"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Ocorreu um erro ao ler o arquivo ${ formattedFilename }. O formato do aquivo não é correto."
@@ -5058,6 +5063,15 @@
         "Mensal ${ onDayString }, ${ timesString }"
       ]
     },
+    "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "A cada ${ interval } mês ${ onDayString }, ${ untilString }",
+        "A cada ${ interval } meses ${ onDayString }, ${ untilString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Mensalmente ${ onDayString }, ${ untilString }"
+      ]
+    },
     "Monthly recurring event, repeats on": {
       "on day ${ dayOfMonth }": [
         "no dia ${ dayOfMonth }"
@@ -6058,6 +6072,12 @@
       ],
       "Highest VPN speed": [
         "VPN de altíssima velocidade"
+      ],
+      "Premium ${ appName1 }": [
+        "${ appName1 } Premium"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium de ${ appName1 } e ${ appName2 }"
       ],
       "Premium early access": [
         "Acesso antecipado premium"
@@ -7147,6 +7167,10 @@
       ]
     },
     "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "A cada ${ interval } semana, na(o) ${ multipleDaysString }, ${ timesString }",
+        "A cada ${ interval } semanas, na(o) ${ multipleDaysString }, ${ timesString }"
+      ],
       "Every ${ interval } week on all days, ${ timesString }": [
         "A cada ${ interval } semana, todos os dias, às ${ timesString }",
         "A cada ${ interval } semanas, todos os dias, às ${ timesString }"
@@ -7196,6 +7220,14 @@
       ]
     },
     "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "A cada ${ interval } semana, na(o) ${ multipleDaysString }, ${ untilString }",
+        "A cada ${ interval } semanas, na(o) ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "A cada ${ interval } semana, todos os dias, ${ untilString }",
+        "A cada ${ interval } semanas, todos os dias, ${ untilString }"
+      ],
       "Every ${ interval } week on Friday, ${ untilString }": [
         "A cada ${ interval } semana, na sexta-feira, ${ untilString }",
         "A cada ${ interval } semanas, na sexta-feira, ${ untilString }"

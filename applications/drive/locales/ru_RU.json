@@ -436,9 +436,6 @@
       "New message": [
         "Новое сообщение"
       ],
-      "New upload": [
-        "Новая загрузка"
-      ],
       "Next": [
         "Далее"
       ],
@@ -2445,6 +2442,12 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Произошла непредвиденная ошибка. Необходимо начать импорт заново."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS } события.",
+        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS } событий.",
+        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS } событий.",
+        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS } событий."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Ваш файл ${ formattedFilename } имеет недопустимый метод и не может быть импортирован."
@@ -4502,6 +4505,20 @@
         "Нажмите, чтобы узнать подробности"
       ]
     },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } папка выбрана",
+        "${ selectedFoldersCount } папки выбрано",
+        "${ selectedFoldersCount } папок выбрано",
+        "${ selectedFoldersCount } папок выбрано"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } ярлык выбран",
+        "${ selectedFoldersCount } ярлыка выбрано",
+        "${ selectedFoldersCount } ярлыков выбрано",
+        "${ selectedFoldersCount } ярлыков выбрано"
+      ]
+    },
     "Item": {
       "file attributes": [
         "аттрибуты файла"
@@ -5038,6 +5055,11 @@
         "${ Label.Name } создан"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "От: ${ from }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Боковая панель"
@@ -5451,6 +5473,18 @@
       "Link copied to clipboard": [
         "Ссылка скопирована в буфер обмена"
       ],
+      "Move ${ n } file": [
+        "Переместить ${ n } файл",
+        "Переместить ${ n } файла",
+        "Переместить ${ n } файлов",
+        "Переместить ${ n } файлов"
+      ],
+      "Move ${ n } item": [
+        "Переместить ${ n } элемент",
+        "Переместить ${ n } элемента",
+        "Переместить ${ n } элементов",
+        "Переместить ${ n } элементов"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Недостаточно места для загрузки ${ formattedTotal }"
       ],
@@ -5558,6 +5592,9 @@
     "Option": {
       "Add to existing group": [
         "Добавить в существующую группу"
+      ],
+      "Automatic (${ value })": [
+        "Автоматический (${ value })"
       ],
       "Create new group": [
         "Создать новую группу"
@@ -5956,6 +5993,12 @@
       ],
       "Highest VPN speed": [
         "Высочайшая скорость VPN"
+      ],
+      "Premium ${ appName1 }": [
+        "Платная версия ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Платные версии ${ appName1 } и ${ appName2 }"
       ],
       "Premium early access": [
         "Ранний доступ"
@@ -6446,6 +6489,9 @@
         "Удаление ${ count } групп контактов",
         "Удаление ${ count } группы контактов"
       ],
+      "Delete ${ value }": [
+        "Удалить ${ value }"
+      ],
       "Delete permanently": [
         "Удалить безвозвратно"
       ],
@@ -6457,6 +6503,9 @@
       ],
       "Discard changes?": [
         "Сбросить изменения?"
+      ],
+      "Download ${ date }": [
+        "Скачать ${ date }"
       ],
       "Download unverified file?": [
         "Скачать непроверенный файл?"

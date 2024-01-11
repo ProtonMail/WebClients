@@ -3106,6 +3106,9 @@
       ]
     },
     "Option": {
+      "Automatic (${ value })": [
+        "Automatski (${ value })"
+      ],
       "Country configs": [
         "Postavke države"
       ],
@@ -3449,6 +3452,12 @@
       ],
       "Highest VPN speed": [
         "Najviša VPN brzina"
+      ],
+      "Premium ${ appName1 }": [
+        "Premium ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium ${ appName1 } i ${ appName2 }"
       ],
       "Secure streaming": [
         "Siguran streaming"
@@ -3877,6 +3886,9 @@
       ],
       "Delete": [
         "Izbriši"
+      ],
+      "Delete ${ value }": [
+        "Izbriši ${ value }"
       ],
       "Delete account": [
         "Ukloni račun"

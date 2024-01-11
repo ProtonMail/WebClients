@@ -182,9 +182,6 @@
       "Get mobile apps": [
         "Descargar apps móviles"
       ],
-      "Get the deal": [
-        "Obtener la promoción"
-      ],
       "Help us improve": [
         "Ayúdenos a mejorar"
       ],
@@ -397,14 +394,6 @@
       ],
       "Your password manager not here? Request it.": [
         "¿No aparece su gestor de contraseñas? Solicítelo."
-      ]
-    },
-    "Badge": {
-      "Early access": [
-        "Acceso anticipado"
-      ],
-      "Limited time": [
-        "Por tiempo limitado"
       ]
     },
     "bf2023: Info": {
@@ -846,9 +835,6 @@
       "Drop to import": [
         "Suelte aquí para importar"
       ],
-      "Early access to ${ PASS_APP_NAME } web app": [
-        "Acceso anticipado a la aplicación web de ${ PASS_APP_NAME }"
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importe fácilmente sus contraseñas existentes a ${ PASS_APP_NAME }."
       ],
@@ -995,9 +981,6 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "La propiedad fue transferida. Ya no tiene la propiedad de esta bóveda."
       ],
-      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
-        "Pass Plus por ${ eoyRelativePrice }/mes, incluyendo acceso anticipado a la app web."
-      ],
       "Pass Plus trial": [
         "Prueba de Proton Pass Plus"
       ],
@@ -1033,9 +1016,6 @@
       ],
       "Please enter your current PIN code to continue": [
         "Ingrese su código PIN actual para continuar"
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Mejore su plan para obtener acceso anticipado a la aplicación web de ${ PASS_APP_NAME }"
       ],
       "Press Enter to copy": [
         "Presione Enter para copiar"
@@ -1136,9 +1116,6 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Actualizar ${ PASS_APP_NAME }"
-      ],
-      "Upgrade Now to Unlock Premium Features": [
-        "Mejore ahora para desbloquear funciones premium"
       ],
       "Use vaults to share this item with others.": [
         "Use las bóvedas para compartir este elemento con otras personas."
@@ -1403,6 +1380,9 @@
       "Invitations": [
         "Invitaciones"
       ],
+      "Item ID": [
+        "ID de elemento"
+      ],
       "Language": [
         "Idioma"
       ],
@@ -1604,6 +1584,9 @@
       "Vault": [
         "Bóveda"
       ],
+      "Vault ID": [
+        "ID de bóveda"
+      ],
       "View details": [
         "Mostrar detalles"
       ],
@@ -1698,8 +1681,8 @@
       "Full Name": [
         "Nombre completo"
       ],
-      "MM/YYYY": [
-        "MM/AAAA"
+      "MM/YY": [
+        "MM/AA"
       ],
       "Other": [
         "Otro"
@@ -1716,14 +1699,14 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Reescriba \"${ vaultName }\" para confirmar la eliminación"
       ],
-      "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "Buscar ${ pluralItemType } en ${ vault.content.name }"
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Buscar ${ pluralItemType } en ${ vaultName }"
       ],
       "Search ${ pluralItemType } in all vaults": [
         "Buscar ${ pluralItemType } en todas las bóvedas"
       ],
-      "Search in ${ vault.content.name }": [
-        "Buscar en ${ vault.content.name }"
+      "Search in ${ vaultName }": [
+        "Buscar en ${ vaultName }"
       ],
       "Search in all vaults": [
         "Buscar en todas las bóvedas"
@@ -1871,9 +1854,6 @@
       "Update available": [
         "Actualización disponible"
       ],
-      "Upgrade to Unlock Premium Features": [
-        "Mejore para desbloquear funciones premium"
-      ],
       "Use my email": [
         "Usar mi correo"
       ],
@@ -1938,8 +1918,8 @@
       "Empty note": [
         "Nota vacía"
       ],
-      "Expiration Date is incomplete": [
-        "La fecha de expiración está incompleta"
+      "Expiration Date is not in the format MM/YY": [
+        "La fecha de expiración no está en formato MM/AA"
       ],
       "Invalid alias prefix": [
         "Prefijo de alias inválido"

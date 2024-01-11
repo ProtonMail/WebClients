@@ -424,9 +424,6 @@
       "New message": [
         "Nova mensagem"
       ],
-      "New upload": [
-        "Novo envio"
-      ],
       "Next": [
         "Seguinte"
       ],
@@ -2341,6 +2338,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Ocorreu um erro inesperado. A importação tem de ser reiniciada."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "O ficheiro ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS } evento.",
+        "O ficheiro ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS } eventos."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "O seu ficheiro ${ formattedFilename } tem um método inválido e não pode ser importado."
@@ -4296,6 +4297,16 @@
         "Clique para detalhes"
       ]
     },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } pasta selecionada",
+        "${ selectedFoldersCount } pastas selecionadas"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } etiqueta selecionada",
+        "${ selectedFoldersCount } etiquetas selecionadas"
+      ]
+    },
     "Item": {
       "file attributes": [
         "atributos do ficheiro"
@@ -4826,6 +4837,11 @@
         "${ Label.Name } criada"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "De: ${ from }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Painel lateral"
@@ -5200,6 +5216,14 @@
       "Link copied to clipboard": [
         "Ligação copiada para a área de transferência"
       ],
+      "Move ${ n } file": [
+        "Mover ${ n } ficheiro",
+        "Mover ${ n } ficheiros"
+      ],
+      "Move ${ n } item": [
+        "Mover ${ n } item",
+        "Mover ${ n } itens"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Não há espaço suficiente para carregar ${ formattedTotal }."
       ],
@@ -5308,6 +5332,9 @@
     "Option": {
       "Add to existing group": [
         "Adicionar a um grupo existente"
+      ],
+      "Automatic (${ value })": [
+        "Automático (${ value })"
       ],
       "Create new group": [
         "Criar novo grupo"
@@ -5723,6 +5750,12 @@
       ],
       "Highest VPN speed": [
         "Velocidade VPN mais elevada"
+      ],
+      "Premium ${ appName1 }": [
+        "Premium ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium ${ appName1 } & ${ appName2 }"
       ],
       "Premium early access": [
         "Acesso antecipado premium"
@@ -6177,6 +6210,9 @@
         "Eliminar ${ count } grupo de contactos",
         "Eliminar ${ count } grupos de contactos"
       ],
+      "Delete ${ value }": [
+        "Eliminar ${ value }"
+      ],
       "Delete permanently": [
         "Eliminar permanentemente"
       ],
@@ -6188,6 +6224,9 @@
       ],
       "Discard changes?": [
         "Descartar alterações?"
+      ],
+      "Download ${ date }": [
+        "Transferir ${ date }"
       ],
       "Download unverified file?": [
         "Descarregar um ficheiro não verificado?"

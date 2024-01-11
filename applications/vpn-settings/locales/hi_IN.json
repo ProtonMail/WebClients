@@ -4561,6 +4561,9 @@
       ]
     },
     "Option": {
+      "Automatic (${ value })": [
+        "स्वचालित (${ value })"
+      ],
       "Country configs": [
         "देश विन्यास"
       ],
@@ -5010,6 +5013,12 @@
       ],
       "Highest VPN speed": [
         "सबसे तेज़ वीपीएन रफ्तार"
+      ],
+      "Premium ${ appName1 }": [
+        "प्रीमियम ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "प्रीमियम ${ appName1 } और ${ appName2 }"
       ],
       "Premium early access": [
         "प्रीमियम जल्दी एक्सेस"
@@ -5622,6 +5631,9 @@
       ],
       "Delete": [
         "मिटाएं"
+      ],
+      "Delete ${ value }": [
+        "${ value } मिटाएं"
       ],
       "Delete account": [
         "खाता हटा दो"

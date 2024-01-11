@@ -316,6 +316,9 @@
       "Get started": [
         "Să începem"
       ],
+      "Get Started": [
+        "Începeți"
+      ],
       "Get verification code": [
         "Obținere cod de verificare"
       ],
@@ -432,9 +435,6 @@
       ],
       "New message": [
         "Mesaj nou"
-      ],
-      "New upload": [
-        "Încărcare nouă"
       ],
       "Next": [
         "Înainte"
@@ -1138,6 +1138,11 @@
       ],
       "URL": [
         "Adresa URL"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Imagine contact"
       ]
     },
     "Contact type label": {
@@ -3381,6 +3386,11 @@
         "S-au selectat ${ selectedFoldersCountLocalized } etichete",
         "S-au selectat ${ selectedFoldersCountLocalized } de etichete"
       ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } ignorat",
+        "${ skippedCount } ignorate",
+        "${ skippedCount } ignorate"
+      ],
       "${ speed }/s": [
         "${ speed }/s"
       ],
@@ -4129,6 +4139,9 @@
       "Signature issue": [
         "Problemă de semnătură"
       ],
+      "Skipped": [
+        "Ignorat"
+      ],
       "Some files failed to download. Try downloading the files again.": [
         "Unele fișiere nu s-au putut descărca. Încercați să le descărcați din nou."
       ],
@@ -4269,6 +4282,9 @@
       "Trash is empty": [
         "Coșul de gunoi este gol"
       ],
+      "Try ${ DRIVE_APP_NAME }: Free forever": [
+        "Încercați ${ DRIVE_APP_NAME }: gratuit pentru totdeauna"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Încercați noile funcții, actualizări și produse ${ BRAND_NAME } înainte ca acestea să fie lansate publicului. Aceasta va reporni aplicația."
       ],
@@ -4353,6 +4369,9 @@
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "va fi restaurat de la versiunea din ${ formattedRevisionDate }. Toate celelalte versiuni vor fi salvate în continuare."
       ],
+      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
+        "Cu ${ DRIVE_APP_NAME } datele vă sunt protejate cu criptare bilaterală."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
       ],
@@ -4382,6 +4401,9 @@
       ],
       "You can import one data type at a time.": [
         "Puteți importa un singur tip de date la un moment dat."
+      ],
+      "You can now return to the application to continue": [
+        "Puteți reveni la aplicație pentru a continua"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puteți activa notificările pentru a primi alerte atunci când apar mesaje noi în acest folder."
@@ -5001,6 +5023,14 @@
         "${ Label.Name } creată"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "De la: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Către: ${ to }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Panou lateral"
@@ -5399,6 +5429,11 @@
       "Link copied to clipboard": [
         "Legătura a fost copiată în memorie."
       ],
+      "Move ${ n } folder": [
+        "Mutare ${ n } folder",
+        "Mutare ${ n } foldere",
+        "Mutare ${ n } de foldere"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Nu este suficient spațiu pentru a încărca ${ formattedTotal }."
       ],
@@ -5512,6 +5547,9 @@
       "Add to existing group": [
         "Adăugare la grup existent"
       ],
+      "Automatic (${ value })": [
+        "Automat (${ value })"
+      ],
       "Create new group": [
         "Creare grup"
       ],
@@ -5610,6 +5648,9 @@
       ],
       "Search for name or email": [
         "Căutare după nume sau e-mail"
+      ],
+      "Search parent folder": [
+        "Căutare în folder părinte"
       ],
       "Select": [
         "Selectare"
@@ -5970,6 +6011,15 @@
       ],
       "Highest VPN speed": [
         "Viteză VPN maximă"
+      ],
+      "Premium ${ appName1 }": [
+        "${ appName1 } premium"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "${ appName1 } și ${ appName2 } premium"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "${ appName1 }, ${ appName2 } și ${ appName3 } premium"
       ],
       "Premium early access": [
         "Acces timpuriu premium"
@@ -6442,6 +6492,9 @@
         "Ștergere ${ count } grupuri de contacte",
         "Ștergere ${ count } de grupuri de contacte"
       ],
+      "Delete ${ value }": [
+        "Ștergere ${ value }"
+      ],
       "Delete permanently": [
         "Ștergere permanentă"
       ],
@@ -6453,6 +6506,9 @@
       ],
       "Discard changes?": [
         "Anulare modificări?"
+      ],
+      "Download ${ date }": [
+        "Descărcare ${ date }"
       ],
       "Download unverified file?": [
         "Descărcați un fișier neverificat?"
@@ -6836,6 +6892,9 @@
       ],
       "Hide side panel": [
         "Ascundere panou lateral"
+      ],
+      "Load image": [
+        "Încărcare imagine"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."

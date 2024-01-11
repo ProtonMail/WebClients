@@ -427,9 +427,6 @@
       "New message": [
         "Nieuw bericht"
       ],
-      "New upload": [
-        "Nieuwe upload"
-      ],
       "Next": [
         "Volgende"
       ],
@@ -2377,6 +2374,10 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Er is een onverwachte fout opgetreden. Importeren moet opnieuw gestart worden."
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS } afspraak.",
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS } afspraken."
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Uw bestand ${ formattedFilename } heeft een ongeldige methode en kan niet worden geïmporteerd."
       ],
@@ -4319,6 +4320,16 @@
         "Klik voor details"
       ]
     },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } map geselecteerd",
+        "${ selectedFoldersCount } mappen geselecteerd"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } label geselecteerd",
+        "${ selectedFoldersCount } labels geselecteerd"
+      ]
+    },
     "Item": {
       "file attributes": [
         "bestandsattributen"
@@ -4849,6 +4860,11 @@
         "${ Label.Name } aangemaakt"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Van: ${ from }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Zijpaneel"
@@ -5226,6 +5242,14 @@
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
       ],
+      "Move ${ n } file": [
+        "Verplaats ${ n } bestand",
+        "Verplaats ${ n } bestanden"
+      ],
+      "Move ${ n } item": [
+        "Verplaats ${ n } item",
+        "Verplaats ${ n } items"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Onvoldoende ruimte om ${ formattedTotal } te uploaden"
       ],
@@ -5334,6 +5358,9 @@
     "Option": {
       "Add to existing group": [
         "Toevoegen aan bestaande groep"
+      ],
+      "Automatic (${ value })": [
+        "Automatisch (${ value })"
       ],
       "Create new group": [
         "Nieuwe groep maken"
@@ -5749,6 +5776,12 @@
       ],
       "Highest VPN speed": [
         "Hoogste VPN-snelheid"
+      ],
+      "Premium ${ appName1 }": [
+        "Premium ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium ${ appName1 } en ${ appName2 }"
       ],
       "Premium early access": [
         "Premium vroege toegang"
@@ -6203,6 +6236,9 @@
         "${ count } contactgroep verwijderen",
         "${ count } contactgroepen verwijderen"
       ],
+      "Delete ${ value }": [
+        "Verwijder ${ value }"
+      ],
       "Delete permanently": [
         "Permanent verwijderen"
       ],
@@ -6214,6 +6250,9 @@
       ],
       "Discard changes?": [
         "Wijzigingen annuleren?"
+      ],
+      "Download ${ date }": [
+        "${ date } downloaden"
       ],
       "Download unverified file?": [
         "Ongeverifieerd bestand downloaden?"

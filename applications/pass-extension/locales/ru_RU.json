@@ -182,9 +182,6 @@
       "Get mobile apps": [
         "Получить мобильные приложения"
       ],
-      "Get the deal": [
-        "Воспользоваться"
-      ],
       "Help us improve": [
         "Помогите нам совершенствоваться"
       ],
@@ -391,14 +388,6 @@
       ],
       "Your password manager not here? Request it.": [
         "Вашего менеджера паролей здесь нет? Запросите его."
-      ]
-    },
-    "Badge": {
-      "Early access": [
-        "Ранний доступ"
-      ],
-      "Limited time": [
-        "Ограниченный срок"
       ]
     },
     "bf2023: Info": {
@@ -851,9 +840,6 @@
       "Drop to import": [
         "Импортировать"
       ],
-      "Early access to ${ PASS_APP_NAME } web app": [
-        "Ранний доступ к веб-приложению ${ PASS_APP_NAME }"
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Легко импортируйте ваше существующие пароли в ${ PASS_APP_NAME }."
       ],
@@ -998,9 +984,6 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Владение успешно передано. Вы теперь не владелец этого хранилища."
       ],
-      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
-        "Pass Plus за ${ eoyRelativePrice }/месяц, включая ранний доступ к веб-приложению."
-      ],
       "Pass Plus trial": [
         "Проба Pass Plus"
       ],
@@ -1036,9 +1019,6 @@
       ],
       "Please enter your current PIN code to continue": [
         "Пожалуйста, введите свой текущий PIN-код для продолжения"
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Улучшите, чтобы получить ранний доступ к веб-приложению ${ PASS_APP_NAME }"
       ],
       "Press Enter to copy": [
         "Нажмите Enter, чтобы скопировать"
@@ -1141,9 +1121,6 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Улучшить ${ PASS_APP_NAME }"
-      ],
-      "Upgrade Now to Unlock Premium Features": [
-        "Улучшите сейчас, чтобы получить платне функции"
       ],
       "Use vaults to share this item with others.": [
         "Используйте хранилища, чтобы поделиться этим элементом с другими."
@@ -1709,9 +1686,6 @@
       "Full Name": [
         "Полное имя"
       ],
-      "MM/YYYY": [
-        "ММ/ГГГГ"
-      ],
       "Other": [
         "Другое"
       ],
@@ -1727,14 +1701,14 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Введите \"${ vaultName }\", чтобы подтвердить удаление"
       ],
-      "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "Искать ${ pluralItemType } в ${ vault.content.name }"
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Искать ${ pluralItemType } в ${ vaultName }"
       ],
       "Search ${ pluralItemType } in all vaults": [
         "Искать ${ pluralItemType } во всех хранилищах"
       ],
-      "Search in ${ vault.content.name }": [
-        "Искать в ${ vault.content.name }"
+      "Search in ${ vaultName }": [
+        "Поиск в ${ vaultName }"
       ],
       "Search in all vaults": [
         "Искать во всех хранилищах"
@@ -1881,9 +1855,6 @@
       "Update available": [
         "Доступно обновление"
       ],
-      "Upgrade to Unlock Premium Features": [
-        "Улучшите для разблокировки платных функций"
-      ],
       "Use my email": [
         "Использовать мою эл. почту"
       ],
@@ -1947,9 +1918,6 @@
       ],
       "Empty note": [
         "Пустая заметка"
-      ],
-      "Expiration Date is incomplete": [
-        "Срок годности не заполнен до конца"
       ],
       "Invalid alias prefix": [
         "Недопустимый префикс псевдонима"

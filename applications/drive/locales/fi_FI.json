@@ -433,9 +433,6 @@
       "New message": [
         "Uusi viesti"
       ],
-      "New upload": [
-        "Uusi tallennus"
-      ],
       "Next": [
         "Seuraava"
       ],
@@ -2439,6 +2436,10 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Odottamaton virhe. Tuonti on aloitettava uudelleen."
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Tiedosto ${ formattedFilename } sisältää enemmän kuin ${ MAX_IMPORT_EVENTS } tapahtuman.",
+        "Tiedosto ${ formattedFilename } sisältää yli ${ MAX_IMPORT_EVENTS } tapahtumaa."
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Tiedostossa ${ formattedFilename } on virheellinen method-tietue, eikä sitä voida tuoda."
       ],
@@ -3334,6 +3335,10 @@
         "${ selectedFoldersCountLocalized } tunniste valittu",
         "${ selectedFoldersCountLocalized } tunnistetta valittu"
       ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } ohitettu",
+        "${ skippedCount } ohitettu"
+      ],
       "${ speed }/s": [
         "${ speed }/s"
       ],
@@ -4070,6 +4075,9 @@
       ],
       "Signature issue": [
         "Allekirjoitusongelma"
+      ],
+      "Skipped": [
+        "Ohitettu"
       ],
       "Some files failed to download. Try downloading the files again.": [
         "Joidenkin tiedostojen lataus epäonnistui. Yritä ladata ne uudelleen."
@@ -4957,6 +4965,11 @@
         "${ Label.Name } luotiin"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Lähettäjä: ${ from }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Sivupaneeli"
@@ -5334,6 +5347,14 @@
       "Link copied to clipboard": [
         "Linkki kopioitu leikepöydälle"
       ],
+      "Move ${ n } file": [
+        "Siirrä ${ n } tiedosto",
+        "Siirrä ${ n } tiedostoa"
+      ],
+      "Move ${ n } item": [
+        "Siirrä ${ n } kohde",
+        "Siirrä ${ n } kohdetta"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Tila ei riitä ${ formattedTotal } tiedoston tallennukseen"
       ],
@@ -5445,6 +5466,9 @@
     "Option": {
       "Add to existing group": [
         "Lisää olemassa olevaan ryhmään"
+      ],
+      "Automatic (${ value })": [
+        "Automaattinen (${ value })"
       ],
       "Create new group": [
         "Luo uusi ryhmä"
@@ -5885,6 +5909,12 @@
       ],
       "Highest VPN speed": [
         "Korkein VPN-nopeus"
+      ],
+      "Premium ${ appName1 }": [
+        "Premium ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium ${ appName1 } ja ${ appName2 }"
       ],
       "Premium early access": [
         "Premium-ennakkokäyttö"
@@ -6339,6 +6369,9 @@
         "Poista ${ count } yhteystietoryhmä",
         "Poista ${ count } yhteystietoryhmää"
       ],
+      "Delete ${ value }": [
+        "Poista ${ value }"
+      ],
       "Delete permanently": [
         "Poista pysyvästi"
       ],
@@ -6350,6 +6383,9 @@
       ],
       "Discard changes?": [
         "Hylätäänkö muutokset?"
+      ],
+      "Download ${ date }": [
+        "Lataa ${ date }"
       ],
       "Download unverified file?": [
         "Ladataanko vahvistamaton tiedosto?"
