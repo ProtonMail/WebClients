@@ -1,4 +1,4 @@
-import { type FC, type MouseEventHandler } from 'react';
+import { type FC, type MouseEventHandler, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -14,6 +14,7 @@ import { useNavigation } from '@proton/pass/components/Navigation/NavigationProv
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { useResponsiveHorizontalList } from '@proton/pass/hooks/useResponsiveHorizontalList';
 import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
+import { sortItems } from '@proton/pass/lib/items/item.utils';
 import { selectPinnedItems } from '@proton/pass/store/selectors';
 import type { ItemRevision } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
@@ -23,10 +24,11 @@ import './PinnedItemsBar.scss';
 
 export const PinnedItemsBar: FC = () => {
     const pinningEnabled = useFeatureFlag(PassFeature.PassPinningV1);
-    const { selectedItem, selectItem } = useNavigation();
+    const { selectedItem, selectItem, filters } = useNavigation();
     const { filtered } = useItems();
 
-    const items = useSelector(selectPinnedItems);
+    const pinnedItems = useSelector(selectPinnedItems);
+    const items = useMemo(() => sortItems(filters.sort)(pinnedItems), [pinnedItems, filters.sort]);
     const list = useResponsiveHorizontalList(items, { gap: 8, maxChildWidth: PINNED_ITEM_MAX_WIDTH_PX });
 
     const selectItemFactory =
