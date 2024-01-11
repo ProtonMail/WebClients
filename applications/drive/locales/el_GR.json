@@ -313,6 +313,9 @@
       "Get started": [
         "Ας ξεκινήσουμε"
       ],
+      "Get Started": [
+        "Ξεκινήστε"
+      ],
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
       ],
@@ -429,9 +432,6 @@
       ],
       "New message": [
         "Νέο μήνυμα"
-      ],
-      "New upload": [
-        "Νέο ανέβασμα"
       ],
       "Next": [
         "Επόμενο"
@@ -1129,6 +1129,11 @@
       ],
       "URL": [
         "Διεύθυνση URL"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Εικόνας επαφής"
       ]
     },
     "Contact type label": {
@@ -2431,6 +2436,10 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Παρουσιάστηκε μη αναμενόμενο σφάλμα. Πρέπει να γίνει επανεκκίνηση της εισαγωγής."
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερο από ${ MAX_IMPORT_EVENTS } γεγονός.",
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS } γεγονότα."
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Το αρχείο σας ${ formattedFilename } έχει μη έγκυρη μέθοδο και δεν μπορεί να εισαχθεί."
       ],
@@ -3326,6 +3335,10 @@
         "${ selectedFoldersCountLocalized } ετικέτα επιλέχθηκε",
         "${ selectedFoldersCountLocalized } ετικέτες επιλέχθηκαν"
       ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } παραλείφθηκαν",
+        "${ skippedCount } παραλείφθηκαν"
+      ],
       "${ speed }/s": [
         "${ speed }/δ"
       ],
@@ -4063,6 +4076,9 @@
       "Signature issue": [
         "Πρόβλημα υπογραφής"
       ],
+      "Skipped": [
+        "Παραλείφθηκε"
+      ],
       "Some files failed to download. Try downloading the files again.": [
         "Αποτυχία λήψης ορισμένων αρχείων. Δοκιμάστε ξανά να λάβετε τα αρχεία."
       ],
@@ -4202,6 +4218,9 @@
       "Trash is empty": [
         "Ο κάδος απορριμμάτων είναι άδειος"
       ],
+      "Try ${ DRIVE_APP_NAME }: Free forever": [
+        "Δοκιμάστε ${ DRIVE_APP_NAME }: Δωρεάν για πάντα"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Δοκιμάστε νέες δυνατότητες, ενημερώσεις και προϊόντα ${ BRAND_NAME } πριν κυκλοφορήσουν στο κοινό. Αυτό θα φορτώσει ξανά την εφαρμογή"
       ],
@@ -4286,6 +4305,9 @@
       "will be restored to the version from ${ formattedRevisionDate }. All other versions will still be saved.": [
         "θα γίνει επαναφορά στην έκδοση από ${ formattedRevisionDate }. Όλες οι άλλες εκδόσεις θα εξακολουθούν να αποθηκεύονται."
       ],
+      "With ${ DRIVE_APP_NAME } your data is protected by end-to-end encryption.": [
+        "Με το ${ DRIVE_APP_NAME } τα δεδομένα σας προστατεύονται με διατερματική κρυπτογράφηση."
+      ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Θέλετε να λάβετε έναν νέο κωδικό επαλήθευσης ή να χρησιμοποιήσετε μια εναλλακτική μέθοδο επαλήθευσης;"
       ],
@@ -4315,6 +4337,9 @@
       ],
       "You can import one data type at a time.": [
         "Μπορεί να εισαχθεί ένας τύπος δεδομένων τη φορά."
+      ],
+      "You can now return to the application to continue": [
+        "Τώρα μπορείτε να επιστρέψετε στην εφαρμογή για να συνεχίσετε"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Μπορείτε να ενεργοποιήσετε τις ειδοποιήσεις, για να λαμβάνετε ειδοποιήσεις όταν φτάνουν νέα email σε αυτόν το φάκελο."
@@ -4398,6 +4423,16 @@
     "Info on errors": {
       "Click for details": [
         "Κάντε κλικ για λεπτομέρειες"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } επιλεγμένος φάκελος",
+        "${ selectedFoldersCount } επιλεγμένοι φάκελοι"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } επιλεγμένη ετικέτα",
+        "${ selectedFoldersCount } επιλεγμένες ετικέτες"
       ]
     },
     "Item": {
@@ -4930,6 +4965,14 @@
         "${ Label.Name } δημιουργήθηκε"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Από: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Προς: ${ to }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Πλαϊνό πλαίσιο"
@@ -5307,6 +5350,18 @@
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
       ],
+      "Move ${ n } file": [
+        "Μετακίνηση ${ n } αρχείου",
+        "Μετακίνηση ${ n } αρχείων"
+      ],
+      "Move ${ n } folder": [
+        "Μετακίνηση ${ n } φακέλου",
+        "Μετακίνηση ${ n } φακέλων"
+      ],
+      "Move ${ n } item": [
+        "Μετακίνηση ${ n } στοιχείου",
+        "Μετακίνηση ${ n } στοιχείων"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Δεν υπάρχει αρκετός χώρος για αποστολή ${ formattedTotal }"
       ],
@@ -5419,6 +5474,9 @@
       "Add to existing group": [
         "Προσθήκη σε υπάρχουσα ομάδα"
       ],
+      "Automatic (${ value })": [
+        "Αυτόματο (${ value })"
+      ],
       "Create new group": [
         "Δημιουργία νέας ομάδας"
       ],
@@ -5517,6 +5575,9 @@
       ],
       "Search for name or email": [
         "Αναζήτηση βάσει ονόματος ή e-mail"
+      ],
+      "Search parent folder": [
+        "Αναζήτηση στο γονικό φάκελο"
       ],
       "Select": [
         "Επιλογή"
@@ -5858,6 +5919,15 @@
       ],
       "Highest VPN speed": [
         "Ύψιστη ταχύτητα VPN"
+      ],
+      "Premium ${ appName1 }": [
+        "Premium ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium ${ appName1 } & ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
       "Premium early access": [
         "Premium πρώιμη πρόσβαση"
@@ -6312,6 +6382,9 @@
         "Διαγραφή ${ count } ομάδα επαφών",
         "Διαγραφή ${ count } ομάδες επαφών"
       ],
+      "Delete ${ value }": [
+        "Διαγραφή ${ value }"
+      ],
       "Delete permanently": [
         "Οριστική διαγραφή"
       ],
@@ -6323,6 +6396,9 @@
       ],
       "Discard changes?": [
         "Απόρριψη αλλαγών;"
+      ],
+      "Download ${ date }": [
+        "Κατεβάστε ${ date }"
       ],
       "Download unverified file?": [
         "Λήψη μη επαληθευμένου αρχείου;"
@@ -6704,6 +6780,9 @@
       ],
       "Hide side panel": [
         "Απόκρυψη πλαϊνού πλαισίου"
+      ],
+      "Load image": [
+        "Φόρτωση εικόνας"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Επιλέξτε το σχέδιο PGP που θα χρησιμοποιηθεί κατά την υπογραφή ή την κρυπτογράφηση σε ένα χρήστη. Σημειώστε ότι το PGP / Inline αναγκάζει την προβολή ως απλά μηνύματα κειμένου"

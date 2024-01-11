@@ -411,9 +411,6 @@
       "New message": [
         "नया संदेश"
       ],
-      "New upload": [
-        "नया अपलोड"
-      ],
       "Next": [
         "अगला"
       ],
@@ -2294,6 +2291,10 @@
       "An unexpected error occurred. Import must be restarted.": [
         "एक अप्रत्याशित त्रुटि हुई। आयात फिर से शुरू होना चाहिए।"
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "आपके फाइल ${ formattedFilename } में ${ MAX_IMPORT_EVENTS } से ज़्यादा इवेंट हैं।",
+        "आपके फाइल ${ formattedFilename } में ${ MAX_IMPORT_EVENTS } से ज़्यादा इवेंट हैं।"
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "आपके फाइल ${ formattedFilename } में एक अमान्य तरीका है और आयात नहीं जा सकता"
       ],
@@ -4064,6 +4065,16 @@
         "विवरण देखने के लिए क्लिक करें"
       ]
     },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } फ़ोल्डर चयनित",
+        "${ selectedFoldersCount } फ़ोल्डर्स का चयन किया"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } लेबल चयनित",
+        "${ selectedFoldersCount } लेबल चयनित"
+      ]
+    },
     "Item": {
       "file attributes": [
         "फाइल विशेषता"
@@ -4585,6 +4596,11 @@
         "${ Label.Name } बनाया गया"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "प्रेषक: ${ from }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "साइड पैनल"
@@ -4947,6 +4963,14 @@
       "Link copied to clipboard": [
         "लिंक को क्लिपबोर्ड पर कॉपी किया गया"
       ],
+      "Move ${ n } file": [
+        "${ n } फाइल ले जाए",
+        "${ n } फाइलें ले जाए"
+      ],
+      "Move ${ n } item": [
+        "${ n } चीज़ ले जाए",
+        "${ n } चीज़े ले जाए"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "${ formattedTotal } अपलोड करने के लिए जगह काफी नहीं"
       ],
@@ -5052,6 +5076,9 @@
     "Option": {
       "Add to existing group": [
         "मौजूदा समूह में जोड़ें"
+      ],
+      "Automatic (${ value })": [
+        "स्वचालित (${ value })"
       ],
       "Create new group": [
         "नया ग्रुप बनाएं"
@@ -5386,6 +5413,12 @@
       ],
       "Highest VPN speed": [
         "सबसे तेज़ वीपीएन रफ्तार"
+      ],
+      "Premium ${ appName1 }": [
+        "प्रीमियम ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "प्रीमियम ${ appName1 } और ${ appName2 }"
       ],
       "Premium early access": [
         "प्रीमियम जल्दी एक्सेस"
@@ -5806,6 +5839,9 @@
         "${ count } संपर्क समूह हटाएं",
         "${ count } संपर्क समूह हटाएं"
       ],
+      "Delete ${ value }": [
+        "${ value } मिटाएं"
+      ],
       "Delete permanently": [
         "हमेशा के लिए मिटाएं"
       ],
@@ -5817,6 +5853,9 @@
       ],
       "Discard changes?": [
         "बदलाव रद्द करें?"
+      ],
+      "Download ${ date }": [
+        "${ date } डाउनलोड करें"
       ],
       "Download unverified file?": [
         "असत्यापित फाइल डाउनलोड करें?"
