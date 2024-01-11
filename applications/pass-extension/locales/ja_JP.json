@@ -176,9 +176,6 @@
       "Get mobile apps": [
         "モバイルアプリを入手する"
       ],
-      "Get the deal": [
-        "割引をゲット"
-      ],
       "Help us improve": [
         "改善にご協力ください"
       ],
@@ -1563,9 +1560,6 @@
       "Full Name": [
         "氏名"
       ],
-      "MM/YYYY": [
-        "MM/YYYY"
-      ],
       "Other": [
         "その他"
       ],
@@ -1581,14 +1575,14 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "削除を確認するには、「${ vaultName }」を再入力します。"
       ],
-      "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "${ vault.content.name } の ${ pluralItemType } を検索"
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "${ vaultName } の ${ pluralItemType } を検索"
       ],
       "Search ${ pluralItemType } in all vaults": [
         "すべての保管庫の ${ pluralItemType } を検索"
       ],
-      "Search in ${ vault.content.name }": [
-        "${ vault.content.name } を検索"
+      "Search in ${ vaultName }": [
+        "${ vaultName } で検索"
       ],
       "Search in all vaults": [
         "すべての保管庫を検索"
@@ -1787,9 +1781,6 @@
       ],
       "Empty note": [
         "空のメモ"
-      ],
-      "Expiration Date is incomplete": [
-        "有効期限が不完全です"
       ],
       "Invalid alias prefix": [
         "無効なエイリアスプレフィックス"
