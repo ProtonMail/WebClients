@@ -182,9 +182,6 @@
       "Get mobile apps": [
         "Få mobilapper"
       ],
-      "Get the deal": [
-        "Få avtalen"
-      ],
       "Help us improve": [
         "Hjelp oss å bli bedre"
       ],
@@ -397,14 +394,6 @@
       ],
       "Your password manager not here? Request it.": [
         "Passordbehandleren din er ikke her? Be om den."
-      ]
-    },
-    "Badge": {
-      "Early access": [
-        "Tidlig tilgang"
-      ],
-      "Limited time": [
-        "Kun i en begrenset periode"
       ]
     },
     "bf2023: Info": {
@@ -846,9 +835,6 @@
       "Drop to import": [
         "Slipp for å importere"
       ],
-      "Early access to ${ PASS_APP_NAME } web app": [
-        "Tidlig tilgang til ${ PASS_APP_NAME }-webapp"
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importer enkelt dine eksisterende passord til ${ PASS_APP_NAME }."
       ],
@@ -995,9 +981,6 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Eierskap overført. Du er ikke lenger eier av dette hvelvet."
       ],
-      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
-        "Pass Plus for ${ eoyRelativePrice }/måned, inkludert tidlig tilgang til webappen."
-      ],
       "Pass Plus trial": [
         "Pass Plus-prøveversjon"
       ],
@@ -1033,9 +1016,6 @@
       ],
       "Please enter your current PIN code to continue": [
         "Vennligst skriv inn din nåværende PIN-kode for å fortsette."
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Vennligst oppgrader for å få tidlig tilgang til ${ PASS_APP_NAME }-webapp"
       ],
       "Press Enter to copy": [
         "Trykk Enter for å kopiere"
@@ -1136,9 +1116,6 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Oppgrader ${ PASS_APP_NAME }"
-      ],
-      "Upgrade Now to Unlock Premium Features": [
-        "Oppgrader nå for å låse opp premiumfunksjoner"
       ],
       "Use vaults to share this item with others.": [
         "Bruk hvelv for å dele dette elementet med andre."
@@ -1403,6 +1380,9 @@
       "Invitations": [
         "Invitasjoner"
       ],
+      "Item ID": [
+        "Element ID"
+      ],
       "Language": [
         "Språk"
       ],
@@ -1604,6 +1584,9 @@
       "Vault": [
         "Hvelv"
       ],
+      "Vault ID": [
+        "Hvelv ID"
+      ],
       "View details": [
         "Vis detaljer"
       ],
@@ -1698,8 +1681,8 @@
       "Full Name": [
         "Fullt navn"
       ],
-      "MM/YYYY": [
-        "MM/ÅÅÅÅ"
+      "MM/YY": [
+        "MM/ÅÅ"
       ],
       "Other": [
         "Annet"
@@ -1716,14 +1699,14 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Skriv inn \"${ vaultName }\" for å bekrefte sletting"
       ],
-      "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "Søk ${ pluralItemType } i ${ vault.content.name }"
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Søk ${ pluralItemType } i ${ vaultName }"
       ],
       "Search ${ pluralItemType } in all vaults": [
         "Søk ${ pluralItemType } i alle hvelv"
       ],
-      "Search in ${ vault.content.name }": [
-        "Søk i ${ vault.content.name }"
+      "Search in ${ vaultName }": [
+        "Søk i ${ vaultName }"
       ],
       "Search in all vaults": [
         "Søk i alle hvelv"
@@ -1871,9 +1854,6 @@
       "Update available": [
         "Oppdatering tilgjengelig"
       ],
-      "Upgrade to Unlock Premium Features": [
-        "Oppgrader for å låse opp premiumfunksjoner"
-      ],
       "Use my email": [
         "Bruk min e-post"
       ],
@@ -1938,8 +1918,8 @@
       "Empty note": [
         "Tomt notat"
       ],
-      "Expiration Date is incomplete": [
-        "Utløpsdato er ufullstendig"
+      "Expiration Date is not in the format MM/YY": [
+        "Utløpsdato er ikke i formatet MM/ÅÅ"
       ],
       "Invalid alias prefix": [
         "Ugyldig aliasprefiks"

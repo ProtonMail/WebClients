@@ -176,9 +176,6 @@
       "Get mobile apps": [
         "取得手機應用程式"
       ],
-      "Get the deal": [
-        "取得優惠"
-      ],
       "Help us improve": [
         "幫助我們改善"
       ],
@@ -1487,9 +1484,6 @@
       "Full Name": [
         "全名"
       ],
-      "MM/YYYY": [
-        "月月/年年年年"
-      ],
       "Other": [
         "其它"
       ],
@@ -1505,14 +1499,14 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "重新輸入${ vaultName }以確認刪除"
       ],
-      "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "於${ vault.content.name }搜尋${ pluralItemType }"
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "於${ vaultName }搜尋${ pluralItemType }"
       ],
       "Search ${ pluralItemType } in all vaults": [
         "於保管庫中${ pluralItemType }"
       ],
-      "Search in ${ vault.content.name }": [
-        "在搜尋${ vault.content.name }"
+      "Search in ${ vaultName }": [
+        "於 ${ vaultName } 中搜尋"
       ],
       "Search in all vaults": [
         "搜尋所有層級"
@@ -1713,9 +1707,6 @@
       ],
       "Empty note": [
         "清空備註"
-      ],
-      "Expiration Date is incomplete": [
-        "到期日不完整"
       ],
       "Invalid alias prefix": [
         "別名前綴無效"

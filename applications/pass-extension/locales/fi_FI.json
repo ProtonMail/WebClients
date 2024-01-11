@@ -182,9 +182,6 @@
       "Get mobile apps": [
         "Hanki mobiilisovellukset"
       ],
-      "Get the deal": [
-        "Hanki tarjous"
-      ],
       "Help us improve": [
         "Auta meitä parantamaan"
       ],
@@ -278,6 +275,9 @@
       "Pass for iOS": [
         "Pass iOS:lle"
       ],
+      "Pin item": [
+        "Kiinnitä kohde"
+      ],
       "Refresh the page": [
         "Päivitä sivu"
       ],
@@ -365,6 +365,9 @@
       "Try again": [
         "Yritä uudelleen"
       ],
+      "Unpin item": [
+        "Irrota kohde"
+      ],
       "Update": [
         "Päivitä"
       ],
@@ -391,14 +394,6 @@
       ],
       "Your password manager not here? Request it.": [
         "Eikö salasanahallintasi ole täällä? Pyydä sitä."
-      ]
-    },
-    "Badge": {
-      "Early access": [
-        "Varhainen pääsy"
-      ],
-      "Limited time": [
-        "Rajoitetun ajan"
       ]
     },
     "bf2023: Info": {
@@ -528,11 +523,17 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Kaikkien kohteiden siirto sijainnista \"${ payload.content.name }\" ei onnistunut"
       ],
+      "Failed to pin item": [
+        "Kohteen kiinnitys epäonnistui"
+      ],
       "Failed to remove user's access.": [
         "Käyttäjän käyttöoikeuden poisto epäonnistui."
       ],
       "Failed to transfer this vault's ownership.": [
         "Tämän holvin omistajuuden siirto epäonnistui."
+      ],
+      "Failed to unpin item": [
+        "Kohteen irrotus epäonnistui"
       ],
       "File could not be parsed": [
         "Tiedostoa ei voitu jäsentää"
@@ -834,9 +835,6 @@
       "Drop to import": [
         "Tuo pudottamalla"
       ],
-      "Early access to ${ PASS_APP_NAME } web app": [
-        "Varhainen pääsy ${ PASS_APP_NAME } -verkkosovellukseen"
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Tuo olemassa olevat salasanasi ${ PASS_APP_NAME }iin helposti."
       ],
@@ -935,6 +933,12 @@
       "Item successfully moved": [
         "Kohde siirrettiin"
       ],
+      "Item successfully pinned": [
+        "Kohde kiinnitettiin"
+      ],
+      "Item successfully unpinned": [
+        "Kohde irrotettiin"
+      ],
       "Leaving vault...": [
         "Poistutaan holvista..."
       ],
@@ -977,9 +981,6 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Omistajuus siirretty onnistuneesti. Et ole enää tämän holvin omistaja."
       ],
-      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
-        "Pass Plus ${ eoyRelativePrice }/kk, sisältäen verkkosovelluksen ennakkokäytön."
-      ],
       "Pass Plus trial": [
         "Pass Plus -kokeilu"
       ],
@@ -1015,9 +1016,6 @@
       ],
       "Please enter your current PIN code to continue": [
         "Jatka syöttämällä nykyinen PIN-koodisi"
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Päivitä tilauksesi saadaksesi varhaisen pääsyn ${ PASS_APP_NAME } -verkkosovellukseen"
       ],
       "Press Enter to copy": [
         "Kopioi painamalla Enter-näppäintä"
@@ -1118,9 +1116,6 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Päivitä ${ PASS_APP_NAME }"
-      ],
-      "Upgrade Now to Unlock Premium Features": [
-        "Päivitä tilauksesi nyt avataksesi Premium-ominaisuudet"
       ],
       "Use vaults to share this item with others.": [
         "Jaa tämä kohde muiden kanssa holvien avulla."
@@ -1680,9 +1675,6 @@
       "Full Name": [
         "Koko nimi"
       ],
-      "MM/YYYY": [
-        "KK/VVVV"
-      ],
       "Other": [
         "Muu"
       ],
@@ -1698,14 +1690,14 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Vahvista poisto kirjoittamalla \"${ vaultName }\""
       ],
-      "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "Etsi ${ pluralItemType } holvista ${ vault.content.name }"
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Etsi ${ pluralItemType } holvista ${ vaultName }"
       ],
       "Search ${ pluralItemType } in all vaults": [
         "Etsi ${ pluralItemType } kaikista holveista"
       ],
-      "Search in ${ vault.content.name }": [
-        "Etsi holvista ${ vault.content.name }"
+      "Search in ${ vaultName }": [
+        "Etsi holvista ${ vaultName }"
       ],
       "Search in all vaults": [
         "Etsi kaikista holveista"
@@ -1820,6 +1812,9 @@
       "Pin the extension": [
         "Kiinnitä laajennus"
       ],
+      "Pinned (${ items.length })": [
+        "Kiinnitetty (${ items.length })"
+      ],
       "Secure your data": [
         "Suojaa tietosi"
       ],
@@ -1849,9 +1844,6 @@
       ],
       "Update available": [
         "Päivitys saatavilla"
-      ],
-      "Upgrade to Unlock Premium Features": [
-        "Avaa premium-ominaisuudet päivittämällä tilauksesi"
       ],
       "Use my email": [
         "Käytä sähköpostiosoitettani"
@@ -1916,9 +1908,6 @@
       ],
       "Empty note": [
         "Tyhjä muistiinpano"
-      ],
-      "Expiration Date is incomplete": [
-        "Voimassaolon päättymisaika on puutteellinen"
       ],
       "Invalid alias prefix": [
         "Virheellinen aliaksen etuliite"

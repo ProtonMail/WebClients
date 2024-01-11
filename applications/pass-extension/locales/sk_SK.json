@@ -182,9 +182,6 @@
       "Get mobile apps": [
         "Získať mobilné aplikácie"
       ],
-      "Get the deal": [
-        "Využiť ponuku"
-      ],
       "Help us improve": [
         "Pomôžte nám zlepšiť sa"
       ],
@@ -278,6 +275,9 @@
       "Pass for iOS": [
         "Proton Pass pre iOS"
       ],
+      "Pin item": [
+        "Pripnúť položku"
+      ],
       "Refresh the page": [
         "Obnoviť stránku"
       ],
@@ -365,6 +365,9 @@
       "Try again": [
         "Skús znova"
       ],
+      "Unpin item": [
+        "Odopnúť položku"
+      ],
       "Update": [
         "Aktualizovať"
       ],
@@ -391,14 +394,6 @@
       ],
       "Your password manager not here? Request it.": [
         "Chýba tu váš správca hesiel? Požiadajte oň."
-      ]
-    },
-    "Badge": {
-      "Early access": [
-        "Skorší prístup"
-      ],
-      "Limited time": [
-        "Časovo obmedzené"
       ]
     },
     "bf2023: Info": {
@@ -530,11 +525,17 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "Presun všetkých položiek z \"${ payload.content.name }\" zlyhal"
       ],
+      "Failed to pin item": [
+        "Pripnutie položky zlyhalo"
+      ],
       "Failed to remove user's access.": [
         "Odstránenie prístupu používateľa zlyhalo."
       ],
       "Failed to transfer this vault's ownership.": [
         "Nepodarilo sa preniesť vlastníctvo trezora."
+      ],
+      "Failed to unpin item": [
+        "Odopnutie položky zlyhalo"
       ],
       "File could not be parsed": [
         "Súbor sa nepodarilo analyzovať"
@@ -856,9 +857,6 @@
       "Drop to import": [
         "Presuňte na import"
       ],
-      "Early access to ${ PASS_APP_NAME } web app": [
-        "Skorší prístup k webovej aplikácii ${ PASS_APP_NAME }"
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Jednoducho importujte svoje existujúce heslá do ${ PASS_APP_NAME }."
       ],
@@ -961,6 +959,12 @@
       "Item successfully moved": [
         "Položka bola úspešne presunutá"
       ],
+      "Item successfully pinned": [
+        "Položka bola úspešne pripnutá"
+      ],
+      "Item successfully unpinned": [
+        "Položka bola úspešne odopnutá"
+      ],
       "Leaving vault...": [
         "Opustenie trezoru..."
       ],
@@ -1003,9 +1007,6 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Vlastníctvo bolo úspešne prenesené. Už nie ste vlastníkom trezora."
       ],
-      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
-        "Pass Plus za ${ eoyRelativePrice }/m, vrátane predčasného prístupu k webovej aplikácii."
-      ],
       "Pass Plus trial": [
         "Skúšobná verzia Pass Plus"
       ],
@@ -1041,9 +1042,6 @@
       ],
       "Please enter your current PIN code to continue": [
         "Pre pokračovanie zadajte váš aktuálny PIN kód"
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Aktualizujte, aby ste získali skorší prístup k webovej aplikácii ${ PASS_APP_NAME }"
       ],
       "Press Enter to copy": [
         "Pre skopírovanie stlačte Enter"
@@ -1146,9 +1144,6 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Upgradovať ${ PASS_APP_NAME }"
-      ],
-      "Upgrade Now to Unlock Premium Features": [
-        "Inovujte teraz na odomknutie prémiových funkcií"
       ],
       "Use vaults to share this item with others.": [
         "Pomocou trezorov môžete túto položku zdieľať s ostatnými."
@@ -1419,6 +1414,9 @@
       "Invitations": [
         "Pozvánky"
       ],
+      "Item ID": [
+        "ID položky"
+      ],
       "Language": [
         "Jazyk"
       ],
@@ -1620,6 +1618,9 @@
       "Vault": [
         "Trezor"
       ],
+      "Vault ID": [
+        "ID trezoru"
+      ],
       "View details": [
         "Zobraziť podrobnosti"
       ],
@@ -1714,9 +1715,6 @@
       "Full Name": [
         "Celé meno"
       ],
-      "MM/YYYY": [
-        "MM/RRRR"
-      ],
       "Other": [
         "Iné"
       ],
@@ -1732,14 +1730,14 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Opätovným zadaním \"${ vaultName }\" potvrdíte odstránenie"
       ],
-      "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "Hľadať ${ pluralItemType } v ${ vault.content.name }"
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Hľadať ${ pluralItemType } v ${ vaultName }"
       ],
       "Search ${ pluralItemType } in all vaults": [
         "Hľadať ${ pluralItemType } vo všetkých trezoroch"
       ],
-      "Search in ${ vault.content.name }": [
-        "Hľadať v ${ vault.content.name }"
+      "Search in ${ vaultName }": [
+        "Hľadať v ${ vaultName }"
       ],
       "Search in all vaults": [
         "Hľadať vo všetkých trezoroch"
@@ -1856,6 +1854,9 @@
       "Pin the extension": [
         "Pripnite rozšírenie"
       ],
+      "Pinned (${ items.length })": [
+        "Pripnuté (${ items.length })"
+      ],
       "Secure your data": [
         "Zabezpečte svoje údaje"
       ],
@@ -1885,9 +1886,6 @@
       ],
       "Update available": [
         "K dispozícii je aktualizácia"
-      ],
-      "Upgrade to Unlock Premium Features": [
-        "Inovujte na odomknutie prémiových funkcií"
       ],
       "Use my email": [
         "Použiť môj email"
@@ -1952,9 +1950,6 @@
       ],
       "Empty note": [
         "Prázdna poznámka"
-      ],
-      "Expiration Date is incomplete": [
-        "Koniec platnosti je neúplný"
       ],
       "Invalid alias prefix": [
         "Neplatná predpona aliasu"

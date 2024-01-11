@@ -182,9 +182,6 @@
       "Get mobile apps": [
         "Mobile Apps holen"
       ],
-      "Get the deal": [
-        "Jetzt zugreifen"
-      ],
       "Help us improve": [
         "Hilf uns, besser zu werden"
       ],
@@ -397,14 +394,6 @@
       ],
       "Your password manager not here? Request it.": [
         "Ist dein Passwort-Manager nicht dabei? Fordere ihn an."
-      ]
-    },
-    "Badge": {
-      "Early access": [
-        "Früherer Zugang"
-      ],
-      "Limited time": [
-        "Beschränkte Zeit"
       ]
     },
     "bf2023: Info": {
@@ -843,9 +832,6 @@
       "Drop to import": [
         "Ablegen zum Importieren"
       ],
-      "Early access to ${ PASS_APP_NAME } web app": [
-        "Früher Zugang zur ${ PASS_APP_NAME } Web-App"
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importiere bestehende Passwörter ganz einfach in ${ PASS_APP_NAME }."
       ],
@@ -992,9 +978,6 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Das Eigentumsrecht wurde erfolgreich übertragen. Du bist nicht mehr der Eigentümer dieses Tresors."
       ],
-      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
-        "Pass Plus für ${ eoyRelativePrice }/Monat, einschließlich frühem Zugang zur Web-App."
-      ],
       "Pass Plus trial": [
         "Pass Plus-Testversion"
       ],
@@ -1027,9 +1010,6 @@
       ],
       "Please enter your current PIN code to continue": [
         "Bitte gib deinen aktuellen PIN-Code ein, um fortzufahren."
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Bitte upgrade, um frühen Zugang zur ${ PASS_APP_NAME } Web-App zu erhalten."
       ],
       "Press Enter to copy": [
         "Drücke Enter zum Kopieren"
@@ -1130,9 +1110,6 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } upgraden"
-      ],
-      "Upgrade Now to Unlock Premium Features": [
-        "Upgrade jetzt zum Freischalten von Premiumfunktionen"
       ],
       "Use vaults to share this item with others.": [
         "Verwende Tresore, um diesen Eintrag mit anderen zu teilen."
@@ -1692,9 +1669,6 @@
       "Full Name": [
         "Vollständiger Name"
       ],
-      "MM/YYYY": [
-        "MM/JJJJ"
-      ],
       "Other": [
         "Weitere"
       ],
@@ -1710,14 +1684,14 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Gib \"${ vaultName }\" erneut ein, um die Löschung zu bestätigen."
       ],
-      "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "${ pluralItemType } in ${ vault.content.name } suchen"
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "${ pluralItemType } in ${ vaultName } suchen"
       ],
       "Search ${ pluralItemType } in all vaults": [
         "In allen Tresoren nach ${ pluralItemType } suchen"
       ],
-      "Search in ${ vault.content.name }": [
-        "In ${ vault.content.name } suchen"
+      "Search in ${ vaultName }": [
+        "Durchsuche ${ vaultName }"
       ],
       "Search in all vaults": [
         "In allen Tresoren suchen"
@@ -1865,9 +1839,6 @@
       "Update available": [
         "Update verfügbar"
       ],
-      "Upgrade to Unlock Premium Features": [
-        "Upgrade zum Freischalten von Premiumfunktionen"
-      ],
       "Use my email": [
         "Meine E-Mail-Adresse verwenden"
       ],
@@ -1931,9 +1902,6 @@
       ],
       "Empty note": [
         "Leere Notiz"
-      ],
-      "Expiration Date is incomplete": [
-        "Das Ablaufdatum ist unvollständig"
       ],
       "Invalid alias prefix": [
         "Ungültiges Alias-Präfix"
