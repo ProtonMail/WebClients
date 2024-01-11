@@ -406,6 +406,9 @@
       "Mark for deletion": [
         "Oznacz do usunięcia"
       ],
+      "Maximize": [
+        "Maksymalizuj"
+      ],
       "Maximize transfers": [
         "Maksymalizuj listę transferów"
       ],
@@ -414,6 +417,9 @@
       ],
       "Merge contacts": [
         "Scal kontakty"
+      ],
+      "Minimize": [
+        "Minimalizuj"
       ],
       "Minimize transfers": [
         "Minimalizuj listę transferów"
@@ -438,9 +444,6 @@
       ],
       "New message": [
         "Nowa wiadomość"
-      ],
-      "New upload": [
-        "Prześlij"
       ],
       "Next": [
         "Dalej"
@@ -3444,6 +3447,12 @@
         "${ selectedFoldersCountLocalized } zaznaczonych etykiet",
         "${ selectedFoldersCountLocalized } zaznaczonych etykiet"
       ],
+      "${ skippedCount } skipped": [
+        "Pominięto transfer ${ skippedCount } plików",
+        "Pominięto transfer ${ skippedCount } plików",
+        "Pominięto transfer ${ skippedCount } plików",
+        "Pominięto transfer ${ skippedCount } plików"
+      ],
       "${ speed }/s": [
         "${ speed }/s"
       ],
@@ -4214,6 +4223,9 @@
       ],
       "Something went wrong, please try again later.": [
         "Coś poszło nie tak. Spróbuj ponownie później."
+      ],
+      "Something went wrong...": [
+        "Coś poszło nie tak..."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Subskrypcja wkrótce się zakończy. Reaktywuj ją do ${ byDate }, aby zachować bonusy planu ${ planName }. ${ reactivateLink }"

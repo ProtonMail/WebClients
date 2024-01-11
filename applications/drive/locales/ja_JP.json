@@ -424,9 +424,6 @@
       "New message": [
         "新規メッセージ"
       ],
-      "New upload": [
-        "新規アップロード"
-      ],
       "Next": [
         "次へ"
       ],
@@ -2316,6 +2313,9 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "予期しないエラーが発生しました。インポートを再起動する必要があります。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } events.": [
+        "ファイル ${ formattedFilename } には ${ MAX_IMPORT_EVENTS } 以上の予定が含まれています。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "ファイル　${ formattedFilename }はメソッドが正しくなく、インポートできません。"
@@ -4211,6 +4211,14 @@
         "クリックして詳細を確認"
       ]
     },
+    "Info: partial": {
+      "${ selectedFoldersCount } folders selected": [
+        "${ selectedFoldersCount } 件のフォルダーを選択済み"
+      ],
+      "${ selectedFoldersCount } labels selected": [
+        "${ selectedFoldersCount } 件のラベルが選択済み"
+      ]
+    },
     "Item": {
       "file attributes": [
         "ファイル属性"
@@ -4738,6 +4746,11 @@
         "${ Label.Name } が作成されました"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "送信者: ${ from }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "サイドパネル"
@@ -5091,6 +5104,12 @@
       "Link copied to clipboard": [
         "クリップボードにリンクがコピーされました"
       ],
+      "Move ${ n } files": [
+        "${ n } 件のファイルの移動"
+      ],
+      "Move ${ n } items": [
+        "${ n } 件のアイテムの移動"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "${ formattedTotal }をアップロードする容量がありません"
       ],
@@ -5192,6 +5211,9 @@
     "Option": {
       "Add to existing group": [
         "既存のグループに追加"
+      ],
+      "Automatic (${ value })": [
+        "自動 (${ value })"
       ],
       "Create new group": [
         "新しいグループを作成"
@@ -5592,6 +5614,12 @@
       ],
       "Highest VPN speed": [
         "最高速 VPN"
+      ],
+      "Premium ${ appName1 }": [
+        "${ appName1 } プレミアム"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "${ appName1 } と ${ appName2 } プレミアム"
       ],
       "Premium early access": [
         "プレミアム早期アクセス"
@@ -6025,6 +6053,9 @@
       "Delete ${ count } contacts": [
         "${ count } 件の連絡先を削除"
       ],
+      "Delete ${ value }": [
+        "${ value } を削除しますか"
+      ],
       "Delete permanently": [
         "完全に削除"
       ],
@@ -6036,6 +6067,9 @@
       ],
       "Discard changes?": [
         "変更を破棄しますか?"
+      ],
+      "Download ${ date }": [
+        "${ date } をダウンロード"
       ],
       "Download unverified file?": [
         "未検証のファイルをダウンロードしますか?"

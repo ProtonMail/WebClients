@@ -9785,6 +9785,15 @@
         "Mensal ${ onDayString }, ${ timesString }"
       ]
     },
+    "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "A cada ${ interval } mês ${ onDayString }, ${ untilString }",
+        "A cada ${ interval } meses ${ onDayString }, ${ untilString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Mensalmente ${ onDayString }, ${ untilString }"
+      ]
+    },
     "Monthly recurring event, repeats on": {
       "on day ${ dayOfMonth }": [
         "no dia ${ dayOfMonth }"
@@ -12415,6 +12424,12 @@
       "Highest VPN speed": [
         "VPN de altíssima velocidade"
       ],
+      "Premium ${ appName1 }": [
+        "${ appName1 } Premium"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium de ${ appName1 } e ${ appName2 }"
+      ],
       "Premium early access": [
         "Acesso antecipado premium"
       ],
@@ -14494,6 +14509,11 @@
         "SSO"
       ]
     },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your identity provider": [
+        "Usuário SSO fornecido pelo seu provedor de identidade"
+      ]
+    },
     "Validation": {
       "Password must contain at least ${ length } character": [
         "A senha deve conter ao menos ${ length } caractere",
@@ -14785,6 +14805,10 @@
       ]
     },
     "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "A cada ${ interval } semana, na(o) ${ multipleDaysString }, ${ timesString }",
+        "A cada ${ interval } semanas, na(o) ${ multipleDaysString }, ${ timesString }"
+      ],
       "Every ${ interval } week on all days, ${ timesString }": [
         "A cada ${ interval } semana, todos os dias, às ${ timesString }",
         "A cada ${ interval } semanas, todos os dias, às ${ timesString }"
@@ -14834,6 +14858,14 @@
       ]
     },
     "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "A cada ${ interval } semana, na(o) ${ multipleDaysString }, ${ untilString }",
+        "A cada ${ interval } semanas, na(o) ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "A cada ${ interval } semana, todos os dias, ${ untilString }",
+        "A cada ${ interval } semanas, todos os dias, ${ untilString }"
+      ],
       "Every ${ interval } week on Friday, ${ untilString }": [
         "A cada ${ interval } semana, na sexta-feira, ${ untilString }",
         "A cada ${ interval } semanas, na sexta-feira, ${ untilString }"

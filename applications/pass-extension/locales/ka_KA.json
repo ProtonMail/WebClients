@@ -182,9 +182,6 @@
       "Get mobile apps": [
         "მობილური აპების დაყენება"
       ],
-      "Get the deal": [
-        "ფასდაკლების მიღება"
-      ],
       "Help us improve": [
         "დაგვეხმარეთ, გავუმჯობესდეთ"
       ],
@@ -397,14 +394,6 @@
       ],
       "Your password manager not here? Request it.": [
         "თქვენი პაროლების მმართველი აქ არაა? მოითხოვეთ ის."
-      ]
-    },
-    "Badge": {
-      "Early access": [
-        "ადრეული წვდომა"
-      ],
-      "Limited time": [
-        "შეზღუდული დრო"
       ]
     },
     "bf2023: Info": {
@@ -846,9 +835,6 @@
       "Drop to import": [
         "შემოსატანად დააგდეთ"
       ],
-      "Early access to ${ PASS_APP_NAME } web app": [
-        "ადრეული წვდომა ${ PASS_APP_NAME }-ის ვებაპზე"
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "ადვილად შემოიტანეთ თქვენი არსებული პაროლები ${ PASS_APP_NAME }-ში."
       ],
@@ -995,9 +981,6 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "მფლობელობის გადაცემა წარმატებით დასრულდა. ამ საცავის მფლობელი აღარ ბრძანდებით."
       ],
-      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
-        "Pass Plus ${ eoyRelativePrice }/თვე ფასად, ვებ-აპის ადრეული წვდომის ჩათვლით."
-      ],
       "Pass Plus trial": [
         "Pass Plus-ის საცდელი"
       ],
@@ -1033,9 +1016,6 @@
       ],
       "Please enter your current PIN code to continue": [
         "გასაგრძელებლად შეიყვანეთ სწორი PIN კოდი"
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "ასწიეთ სატარიფო გეგმა ${ PASS_APP_NAME }-ის ვებაპთან ადრეული წვდომის მისაღებად"
       ],
       "Press Enter to copy": [
         "დასაკოპირებლად დააჭირეთ Enter-ს"
@@ -1136,9 +1116,6 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის ტარიფის აწევა"
-      ],
-      "Upgrade Now to Unlock Premium Features": [
-        "დამატებითი ფუნქციების განსაბლოკად ასწიეთ სატარიფო გეგმა ახლავე"
       ],
       "Use vaults to share this item with others.": [
         "ამ ელემენტის სხვებთან გასაზიარებლად, საცავები გამოიყენეთ."
@@ -1403,6 +1380,9 @@
       "Invitations": [
         "მოწვევები"
       ],
+      "Item ID": [
+        "ელემენტის ID"
+      ],
       "Language": [
         "ენა"
       ],
@@ -1604,6 +1584,9 @@
       "Vault": [
         "საცავი"
       ],
+      "Vault ID": [
+        "საცავის ID"
+      ],
       "View details": [
         "დეტალების ხილვა"
       ],
@@ -1698,9 +1681,6 @@
       "Full Name": [
         "სახელი და გვარი"
       ],
-      "MM/YYYY": [
-        "თთ / წწწწ"
-      ],
       "Other": [
         "სხვა"
       ],
@@ -1716,14 +1696,14 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "წასაშლელად თავიდან აკრიფეთ \"${ vaultName }\""
       ],
-      "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "${ pluralItemType }-ის ძებნა ${ vault.content.name }-ში"
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "${ pluralItemType }-ის ძებნა ${ vaultName }-ში"
       ],
       "Search ${ pluralItemType } in all vaults": [
         "${ pluralItemType }-ის ყველა საცავში ძებნა"
       ],
-      "Search in ${ vault.content.name }": [
-        "${ vault.content.name }-ში ძებნა"
+      "Search in ${ vaultName }": [
+        "${ vaultName }-ში ძებნა"
       ],
       "Search in all vaults": [
         "ყველა საცავში ძებნა"
@@ -1871,9 +1851,6 @@
       "Update available": [
         "განახლება ხელმისაწვდომია"
       ],
-      "Upgrade to Unlock Premium Features": [
-        "დამატებითი ფუნქციების განსაბლოკად ასწიეთ სატარიფო გეგმა"
-      ],
       "Use my email": [
         "ჩემი ელფოსტის გამოყენება"
       ],
@@ -1937,9 +1914,6 @@
       ],
       "Empty note": [
         "ცარიელი შენიშვნა"
-      ],
-      "Expiration Date is incomplete": [
-        "ამოწურვის ვადა დაუსრულებელია."
       ],
       "Invalid alias prefix": [
         "არასწორი ფსევდონიმის პრეფიქსი"

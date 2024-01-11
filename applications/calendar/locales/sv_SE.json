@@ -3826,6 +3826,9 @@
       "Discard changes?": [
         "Ignorera ändringar?"
       ],
+      "Display events for calendar ${ Name }": [
+        "Visa händelser för kalender ${ Name }"
+      ],
       "Drop file here to upload": [
         "Släpp filer här för att ladda upp"
       ],
@@ -7190,6 +7193,14 @@
       ]
     },
     "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Varje ${ interval } vecka på måndag, ${ untilString }",
+        "Var ${ interval }:e vecka på måndag, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Var ${ interval }:e vecka på söndag, ${ untilString }",
+        "Var ${ interval }:e vecka på söndag, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Varje vecka på ${ multipleDaysString }, ${ untilString }"
       ],

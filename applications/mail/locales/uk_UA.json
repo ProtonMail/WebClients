@@ -3631,6 +3631,12 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Сталася неочікувана помилка. Потрібно перезапустити імпорт."
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } подію.",
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } події.",
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } подій.",
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } подій."
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Ваш файл ${ formattedFilename } має недійсний метод і його неможливо імпортувати."
       ],
@@ -4797,6 +4803,12 @@
         "${ messagesNotAuthorizedToMove } повідомлень не вдалося перемістити.",
         "${ messagesNotAuthorizedToMove } повідомлень не вдалося перемістити."
       ],
+      "${ n } unread conversation": [
+        "${ n } непрочитана розмова",
+        "${ n } непрочитані розмови",
+        "${ n } непрочитаних розмов",
+        "${ n } непрочитаних розмов"
+      ],
       "${ numberOfImageTrackers } email tracker blocked": [
         "Заблоковано ${ numberOfImageTrackers } поштовий вистежувач",
         "Заблоковано ${ numberOfImageTrackers } поштові вистежувачі",
@@ -5832,6 +5844,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Це повідомлення підписано вкладеним ключем, який ще не був довіреним."
       ],
+      "This message will be automatically deleted on ${ value }": [
+        "Це повідомлення автоматично видалиться о ${ value }"
+      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Це повідомлення буде позначено як спам. Бажаєте також відписатися від майбутніх листів?",
         "Ці повідомлення будуть позначені як спам. Бажаєте також відписатися від майбутніх листів?",
@@ -5858,6 +5873,15 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Термін дії цього повідомлення завершиться ${ formattedDate }"
+      ],
+      "This message will expire on ${ value }": [
+        "Термін дії цього повідомлення завершиться у ${ value }"
+      ],
+      "This message will expire today at ${ value }": [
+        "Термін дії цього повідомлення завершиться сьогодні ${ value }"
+      ],
+      "This message will expire tomorrow at ${ value }": [
+        "Термін дії цього повідомлення завершиться завтра ${ value }"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Відкритий ключ автоматично застосовуватиметься для шифрування листів, що надсилаються на цю адресу."
@@ -6063,6 +6087,9 @@
       "You do not have any messages here": [
         "Тут порожньо"
       ],
+      "You have ${ unread } in your inbox.": [
+        "У вашій поштовій скриньці ${ unread }."
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "У цій теці розміщена **${ count } розмова**",
         "У цій теці розміщені **${ count } розмови**",
@@ -6195,6 +6222,20 @@
     "Info on errors": {
       "Click for details": [
         "Натисніть для подробиць"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } вибрана тека",
+        "${ selectedFoldersCount } вибрані теки",
+        "${ selectedFoldersCount } вибраних тек",
+        "${ selectedFoldersCount } вибраних тек"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } вибрана мітка",
+        "${ selectedFoldersCount } вибрані мітки",
+        "${ selectedFoldersCount } вибраних міток",
+        "${ selectedFoldersCount } вибраних міток"
       ]
     },
     "Key badge": {
@@ -6931,6 +6972,11 @@
         "${ Label.Name } створено"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Від: ${ from }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Бічна панель"
@@ -7268,6 +7314,11 @@
         "Щомісяця ${ onDayString }, ${ timesString }"
       ]
     },
+    "Monthly recurring event, frequency (until)": {
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Щомісяця ${ onDayString }, ${ untilString }"
+      ]
+    },
     "Monthly recurring event, repeats on": {
       "on day ${ dayOfMonth }": [
         "${ dayOfMonth } дня"
@@ -7602,6 +7653,9 @@
       ],
       "All": [
         "Усі"
+      ],
+      "Automatic (${ value })": [
+        "Автоматично (${ value })"
       ],
       "Create new group": [
         "Створити нову групу"
@@ -8223,6 +8277,9 @@
       ],
       "Highest VPN speed": [
         "Найвища швидкість VPN"
+      ],
+      "Premium ${ appName1 }": [
+        "Преміум ${ appName1 }"
       ],
       "Premium early access": [
         "Ранній преміумдоступ"
@@ -9009,6 +9066,9 @@
         "Видалити ${ count } повідомлень",
         "Видалити ${ count } повідомлень"
       ],
+      "Delete ${ value }": [
+        "Видалити ${ value }"
+      ],
       "Delete all messages": [
         "Видалити всі повідомлення"
       ],
@@ -9723,6 +9783,9 @@
       ]
     },
     "Weekly recurring event, frequency (times)": {
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Щотижня ${ multipleDaysString }, ${ timesString }"
+      ],
       "Weekly on all days, ${ timesString }": [
         "Щотижня кожного дня, ${ timesString }"
       ],
@@ -9749,6 +9812,9 @@
       ]
     },
     "Weekly recurring event, frequency (until)": {
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Щотижня ${ multipleDaysString }, ${ untilString }"
+      ],
       "Weekly on all days, ${ untilString }": [
         "Щотижня кожного дня, ${ untilString }"
       ],
@@ -9814,6 +9880,12 @@
       ]
     },
     "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "Кожен ${ interval } рік, ${ untilString }",
+        "Кожні ${ interval } роки, ${ untilString }",
+        "Кожні ${ interval } років, ${ untilString }",
+        "Кожні ${ interval } років, ${ untilString }"
+      ],
       "Yearly, ${ untilString }": [
         "Щороку, ${ untilString }"
       ]

@@ -182,9 +182,6 @@
       "Get mobile apps": [
         "Descargar las aplicaciiones móviles"
       ],
-      "Get the deal": [
-        "Obtener la promoción"
-      ],
       "Help us improve": [
         "Ayúdanos a mejorar"
       ],
@@ -397,14 +394,6 @@
       ],
       "Your password manager not here? Request it.": [
         "¿No aparece tu gestor de contraseñas? Solicítalo."
-      ]
-    },
-    "Badge": {
-      "Early access": [
-        "Acceso anticipado"
-      ],
-      "Limited time": [
-        "Por tiempo limitado"
       ]
     },
     "bf2023: Info": {
@@ -846,9 +835,6 @@
       "Drop to import": [
         "Suelta aquí para importar"
       ],
-      "Early access to ${ PASS_APP_NAME } web app": [
-        "Acceso anticipado a la aplicación web de ${ PASS_APP_NAME }"
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importa fácilmente tus contraseñas existentes a ${ PASS_APP_NAME }."
       ],
@@ -995,9 +981,6 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "La propiedad ha sido transferida. Ya no tienes la propiedad de esta caja fuerte."
       ],
-      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
-        "Pass Plus por ${ eoyRelativePrice }/mes, incluyendo acceso anticipado a la aplicación web."
-      ],
       "Pass Plus trial": [
         "Prueba Pass Plus"
       ],
@@ -1033,9 +1016,6 @@
       ],
       "Please enter your current PIN code to continue": [
         "Introduce tu código PIN actual para continuar."
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Mejora tu plan para obtener un acceso anticipado a la aplicación web de ${ PASS_APP_NAME }."
       ],
       "Press Enter to copy": [
         "Presiona Enter para copiar"
@@ -1136,9 +1116,6 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Actualizar ${ PASS_APP_NAME }"
-      ],
-      "Upgrade Now to Unlock Premium Features": [
-        "Mejora ahora para desbloquear funciones premium"
       ],
       "Use vaults to share this item with others.": [
         "Utiliza las cajas fuertes para compartir este elemento con otras personas."
@@ -1403,6 +1380,9 @@
       "Invitations": [
         "Invitaciones"
       ],
+      "Item ID": [
+        "ID del elemento"
+      ],
       "Language": [
         "Idioma"
       ],
@@ -1604,6 +1584,9 @@
       "Vault": [
         "caja fuerte"
       ],
+      "Vault ID": [
+        "ID de caja fuerte"
+      ],
       "View details": [
         "Mostrar los detalles"
       ],
@@ -1698,9 +1681,6 @@
       "Full Name": [
         "Nombre completo"
       ],
-      "MM/YYYY": [
-        "MM/AAAA"
-      ],
       "Other": [
         "Otro"
       ],
@@ -1716,14 +1696,14 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Reescribe \"${ vaultName }\" para confirmar la eliminación."
       ],
-      "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "Buscar ${ pluralItemType } en ${ vault.content.name }"
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Buscar ${ pluralItemType } en ${ vaultName }"
       ],
       "Search ${ pluralItemType } in all vaults": [
         "Buscar ${ pluralItemType } en todas las cajas fuertes"
       ],
-      "Search in ${ vault.content.name }": [
-        "Buscar en ${ vault.content.name }"
+      "Search in ${ vaultName }": [
+        "Buscar en ${ vaultName }"
       ],
       "Search in all vaults": [
         "Buscar en todas las cajas fuertes"
@@ -1871,9 +1851,6 @@
       "Update available": [
         "Actualización disponible"
       ],
-      "Upgrade to Unlock Premium Features": [
-        "Mejora para desbloquear funciones premium"
-      ],
       "Use my email": [
         "Utilizar mi correo electrónico"
       ],
@@ -1937,9 +1914,6 @@
       ],
       "Empty note": [
         "Nota vacía"
-      ],
-      "Expiration Date is incomplete": [
-        "La fecha de expiración está incompleta."
       ],
       "Invalid alias prefix": [
         "Prefijo del alias no válido"
