@@ -2025,6 +2025,24 @@
         "${ dateString } तक"
       ]
     },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "दैनिक, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "हर ${ interval } दिन, ${ timesString }",
+        "हर ${ interval } दिन, ${ timesString }"
+      ]
+    },
+    "Daily recurring event, frequency (until)": {
+      "Daily, ${ untilString }": [
+        "दैनिक, ${ untilString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "हर ${ interval } दिन, ${ untilString }",
+        "हर ${ interval } दिन, ${ untilString }"
+      ]
+    },
     "Day": {
       "Friday": [
         "शुक्रवार"
@@ -2609,6 +2627,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "एक अप्रत्याशित त्रुटि हुई। आयात फिर से शुरू होना चाहिए।"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "आपके फाइल ${ formattedFilename } में ${ MAX_IMPORT_EVENTS } से ज़्यादा इवेंट हैं।",
+        "आपके फाइल ${ formattedFilename } में ${ MAX_IMPORT_EVENTS } से ज़्यादा इवेंट हैं।"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "आपके फाइल ${ formattedFilename } में एक अमान्य तरीका है और आयात नहीं जा सकता"
@@ -4073,6 +4095,16 @@
         "विवरण देखने के लिए क्लिक करें"
       ]
     },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } फ़ोल्डर चयनित",
+        "${ selectedFoldersCount } फ़ोल्डर्स का चयन किया"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } लेबल चयनित",
+        "${ selectedFoldersCount } लेबल चयनित"
+      ]
+    },
     "Info; access rights for shared calendar": {
       "View only": [
         "सिर्फ देखे"
@@ -4527,6 +4559,11 @@
         "${ Label.Name } बनाया गया"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "प्रेषक: ${ from }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "साइड पैनल"
@@ -4719,6 +4756,24 @@
       ],
       "Monthly ${ onDayString }": [
         "मासिक ${ onDayString }"
+      ]
+    },
+    "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "प्रत्येक ${ interval } महीना ${ onDayString }, ${ timesString } पर",
+        "प्रत्येक ${ interval } महीने ${ onDayString }, ${ timesString } पर"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "मासिक ${ onDayString }, ${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "प्रत्येक ${ interval } महीना ${ onDayString }, ${ untilString } पर",
+        "प्रत्येक ${ interval } महीने ${ onDayString }, ${ untilString } पर"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "मासिक ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -5130,6 +5185,9 @@
       ],
       "All events": [
         "सारे इवेंट"
+      ],
+      "Automatic (${ value })": [
+        "स्वचालित (${ value })"
       ],
       "Create new group": [
         "नया ग्रुप बनाएं"
@@ -5574,6 +5632,12 @@
       ],
       "Highest VPN speed": [
         "सबसे तेज़ वीपीएन रफ्तार"
+      ],
+      "Premium ${ appName1 }": [
+        "प्रीमियम ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "प्रीमियम ${ appName1 } और ${ appName2 }"
       ],
       "Premium early access": [
         "प्रीमियम जल्दी एक्सेस"
@@ -6080,6 +6144,9 @@
       "Delete ${ count } contact group": [
         "${ count } संपर्क समूह हटाएं",
         "${ count } संपर्क समूह हटाएं"
+      ],
+      "Delete ${ value }": [
+        "${ value } मिटाएं"
       ],
       "Delete event": [
         "इवेंट मिटाएं"
@@ -6593,6 +6660,120 @@
         "बुधवार को साप्ताहिक"
       ]
     },
+    "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ timesString } पर",
+        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ timesString } पर"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ timesString }",
+        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह शनिवार को, ${ timesString }",
+        "शनिवार को प्रत्येक ${ interval } सप्ताह, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ timesString }",
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "बुधवार को हर ${ interval } सप्ताह, ${ timesString }",
+        "बुधवार को हर ${ interval } सप्ताह, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "${ multipleDaysString }, ${ timesString } पर साप्ताहिक"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "साप्ताहिक रूप से सभी दिन, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "शुक्रवार को साप्ताहिक, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "सोमवार को साप्ताहिक, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "शनिवार को साप्ताहिक, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "रविवार को साप्ताहिक, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "गुरुवार को साप्ताहिक, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "साप्ताहिक रूप से मंगलवार को, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "बुधवार को साप्ताहिक, ${ timesString }"
+      ]
+    },
+    "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ untilString } पर",
+        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ untilString } पर"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "सभी दिनों पर हर ${ interval } सप्ताह, ${ untilString }",
+        "सभी दिनों पर हर ${ interval } सप्ताह, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "हर ${ interval } हफ्ते शनिवार को, ${ untilString }",
+        "शनिवार को प्रत्येक ${ interval } सप्ताह, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "बुधवार को हर ${ interval } सप्ताह, ${ untilString }",
+        "बुधवार को हर ${ interval } सप्ताह, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "${ multipleDaysString }, ${ untilString } पर साप्ताहिक"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "साप्ताहिक रूप से सभी दिन, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "शुक्रवार को साप्ताहिक, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "सोमवार को साप्ताहिक, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "शनिवार को साप्ताहिक, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "रविवार को साप्ताहिक, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "गुरुवार को साप्ताहिक, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "साप्ताहिक रूप से मंगलवार को, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "बुधवार को साप्ताहिक, ${ untilString }"
+      ]
+    },
     "Weekly recurring event, repeats on (multiple days), frequency": {
       "Friday": [
         "शुक्रवार"
@@ -6623,6 +6804,24 @@
       ],
       "Yearly": [
         "सालाना"
+      ]
+    },
+    "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "हर ${ interval } साल, ${ timesString }",
+        "हर ${ interval } वर्षों, ${ timesString }"
+      ],
+      "Yearly, ${ timesString }": [
+        "वार्षिक, ${ timesString }"
+      ]
+    },
+    "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "हर ${ interval } साल, ${ untilString }",
+        "हर ${ interval } वर्षों, ${ untilString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "वार्षिक, ${ untilString }"
       ]
     }
   }
