@@ -6,6 +6,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { Icon, InputFieldTwo } from '@proton/components/';
+import { maybeErrorMessage } from '@proton/pass/hooks/useFieldControl';
 import type { UrlGroupValues, UrlItem } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
@@ -100,7 +101,7 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
                                 placeholder="https://"
                                 name="url"
                                 value={values.url}
-                                error={errors.url}
+                                error={maybeErrorMessage(errors.url)}
                                 onChange={handleChange}
                                 onBlur={() => values.url && !errors.url && handleAdd(values.url)}
                                 onKeyDown={onKeyEnter}
