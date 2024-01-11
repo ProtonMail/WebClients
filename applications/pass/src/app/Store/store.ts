@@ -10,6 +10,5 @@ export const sagaMiddleware = createSagaMiddleware();
 
 export const store = configureStore({
     reducer,
-    middleware: [cacheMiddleware, requestMiddleware, sagaMiddleware],
-    devTools: ENV === 'development',
+    middleware: (mw) => mw().concat(cacheMiddleware, requestMiddleware, sagaMiddleware),
 });
