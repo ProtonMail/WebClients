@@ -1,7 +1,7 @@
-import type { ReactNode } from 'react';
+import type { PropsWithChildren, ReactNode } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 
-import { type AnyAction, configureStore, createAction } from '@reduxjs/toolkit';
+import { type UnknownAction, configureStore, createAction } from '@reduxjs/toolkit';
 import { act, renderHook } from '@testing-library/react-hooks';
 
 import { requestMiddleware } from '@proton/pass/store/middlewares/request-middleware';
@@ -20,8 +20,8 @@ const successCache = createAction('test::success::cache', () =>
     withRequest({ type: 'success', id: requestId, maxAge: 1 })({ payload: {} })
 );
 
-const buildHook = (useInitialRequestId: boolean = true, initialActions: AnyAction[] = []) => {
-    const store = configureStore({ reducer: { request }, middleware: [requestMiddleware] });
+const buildHook = (useInitialRequestId: boolean = true, initialActions: UnknownAction[] = []) => {
+    const store = configureStore({ reducer: { request }, middleware: (mw) => mw().concat(requestMiddleware) });
     initialActions.forEach((action) => store.dispatch(action));
 
     const onStart = jest.fn();
@@ -33,7 +33,7 @@ const buildHook = (useInitialRequestId: boolean = true, initialActions: AnyActio
         onStart,
         onSuccess,
         onFailure,
-        hook: renderHook(
+        hook: renderHook<PropsWithChildren, ReturnType<typeof useActionRequest>>(
             () =>
                 useActionRequest({
                     action: start,

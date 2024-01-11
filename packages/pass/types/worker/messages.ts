@@ -1,4 +1,4 @@
-import type { AnyAction } from 'redux';
+import type { Action } from 'redux';
 import type { Tabs } from 'webextension-polyfill';
 
 import type { AuthResumeOptions } from '@proton/pass/lib/auth/service';
@@ -143,7 +143,7 @@ export type SentryCSEventMessage = WithPayload<WorkerMessageType.SENTRY_CS_EVENT
 export type SettingsUpdateMessage = WithPayload<WorkerMessageType.SETTINGS_UPDATE, ProxiedSettings>;
 export type ShareServerEventMessage = WithPayload<WorkerMessageType.SHARE_SERVER_EVENT, ShareEventPayload>;
 export type StartContentScriptMessage = { type: WorkerMessageType.START_CONTENT_SCRIPT };
-export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_DISPATCH, { action: AnyAction }>;
+export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_DISPATCH, { action: Action }>;
 export type TelemetryEventMessage = WithPayload<WorkerMessageType.TELEMETRY_EVENT, { event: TelemetryEvent }>;
 export type UnloadContentScriptMessage = { type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT };
 export type UpdateAvailableMessage = { type: WorkerMessageType.UPDATE_AVAILABLE };

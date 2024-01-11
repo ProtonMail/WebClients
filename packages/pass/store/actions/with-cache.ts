@@ -1,11 +1,11 @@
-import type { AnyAction } from 'redux';
+import type { Action } from 'redux';
 
 import { merge } from '@proton/pass/utils/object/merge';
 
 export type CacheOptions = { cache: boolean; throttle?: boolean };
-export type WithCache<T = AnyAction> = T & { meta: CacheOptions };
+export type WithCache<T = Action> = T & { meta: CacheOptions };
 
-export const isCachingAction = <T extends AnyAction>(action?: T): action is WithCache<T> =>
+export const isCachingAction = <T extends Action>(action?: T): action is WithCache<T> =>
     (action as any)?.meta?.cache === true;
 
 export const withCache = <T extends object>(action: T): WithCache<T> => merge(action, { meta: { cache: true } });
