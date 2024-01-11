@@ -19,6 +19,7 @@ import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
+import { useItemFormKeyboardShortcuts } from '@proton/pass/hooks/useItemFormKeyboardShortcuts';
 import type { CreditCardItemFormValues } from '@proton/pass/lib/validation/credit-card';
 import { formatExpirationDateMMYY, validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
 import { CardType } from '@proton/pass/types/protobuf/item-v1';
@@ -75,6 +76,8 @@ export const CreditCardEdit: FC<ItemEditViewProps<'creditCard'>> = ({ vault, rev
         itemId,
         revision: lastRevision,
     });
+
+    useItemFormKeyboardShortcuts(form);
 
     return (
         <ItemEditPanel

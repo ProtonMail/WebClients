@@ -11,6 +11,7 @@ import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
+import { useItemFormKeyboardShortcuts } from '@proton/pass/hooks/useItemFormKeyboardShortcuts';
 import { validateNoteForm } from '@proton/pass/lib/validation/note';
 import type { NoteFormValues } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -46,6 +47,8 @@ export const NoteEdit: FC<ItemEditViewProps<'note'>> = ({ vault: { shareId }, re
         shareId: form.values.shareId,
         revision: lastRevision,
     });
+
+    useItemFormKeyboardShortcuts(form);
 
     return (
         <ItemEditPanel
