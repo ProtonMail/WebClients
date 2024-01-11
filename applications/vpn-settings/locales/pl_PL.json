@@ -2791,6 +2791,11 @@
         "Nazwa użytkownika"
       ]
     },
+    "Hint": {
+      "Add this record to your domain in the control panel of your domain name registrar": [
+        "Dodaj ten rekord do swojej domeny w panelu sterowania rejestratora nazw domen."
+      ]
+    },
     "Human verification method": {
       "Email": [
         "Adres e-mail"
@@ -2834,7 +2839,7 @@
         "${ number } miasto",
         "${ number } miasta",
         "${ number } miast",
-        "${ number } miast"
+        "${ number } miasta"
       ],
       "${ number } server": [
         "${ number } serwer",
@@ -3250,6 +3255,9 @@
       "here": [
         "tutaj"
       ],
+      "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
+        "Klucz publiczny dostawcy tożsamości do podpisywania asercji uwierzytelniania. Powinno być miejsce do pobrania lub skopiowania skrótu certyfikatu od dostawcy tożsamości. Wystarczy wkleić skrót certyfikatu w polu obszaru tekstowego."
+      ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Jeśli inny administrator zmienił to hasło, poproś go, aby przekazał Ci nowe hasło organizacji."
       ],
@@ -3595,6 +3603,9 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Niektóre z dostępnych serwerów mogą być używane tylko w określonych krajach z powodu niedawnych usunięć"
       ],
+      "Specify the domain which is allowed to authenticate with SAML SSO.": [
+        "Określ domenę, która może uwierzytelniać się za pomocą SAML SSO."
+      ],
       "Step ${ step }": [
         "Krok ${ step }",
         "Krok ${ step }",
@@ -3706,6 +3717,9 @@
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Ten użytkownik jest obecnie odpowiedzialny za płatności w Twojej organizacji. Obniżając status tego użytkownika, staniesz się jednocześnie odpowiedzialny za płatności."
       ],
+      "This verification can take up to one hour. You can safely continue to the next steps.": [
+        "Ta weryfikacja może potrwać do godziny. Możesz bezpiecznie przejść do kolejnych kroków."
+      ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated.": [
         "Spowoduje to anulowanie obecnej płatnej subskrypcji i utratę wszystkich zgromadzonych bonusów lojalnościowych."
       ],
@@ -3732,6 +3746,9 @@
       ],
       "to ${ product } Business": [
         "w ${ product } Business"
+      ],
+      "To allow the domain ${ boldDomainName } to use SAML SSO, you must verify ownership of it by adding the following DNS TXT record to your domain in your DNS provider.": [
+        "Aby zezwolić domenie ${ boldDomainName } na korzystanie z SAML SSO, należy zweryfikować jej własność, dodając następujący rekord DNS TXT do domeny u dostawcy DNS."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Skontaktuj się z nami, aby anulować subskrypcję."
@@ -3912,6 +3929,9 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Zmieniamy Twój obecny plan do ulepszonego, który oferuje więcej funkcji za tę samą cenę. Gdy nasze systemy rozpoczną aktualizację, nie będziesz mógł już go zmienić. Wyślemy wiadomość, kiedy proces zostanie zakończony."
+      ],
+      "When enabling SAML for ${ appName } in your identity provider, you might be prompted to use the callback (ACS) URL and issuer ID. Just copy-paste the data below into your identity provider fields.": [
+        "Podczas włączania SAML dla ${ appName } w dostawcy tożsamości może zostać wyświetlony monit o użycie adresu URL wywołania zwrotnego (ACS) i identyfikatora wystawcy. Wystarczy skopiować i wkleić poniższe dane do pól dostawcy tożsamości."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Podczas ustawiania uwierzytelniania dwustopniowego otrzymasz kody odzyskiwania, które możesz wykorzystać po utracie dostępu do aplikacji uwierzytelniającej."
@@ -7410,6 +7430,9 @@
       "Email subscriptions": [
         "Listy mailingowe"
       ],
+      "Enter endpoints into your identity provider": [
+        "Wprowadzanie punktów końcowych do dostawcy tożsamości"
+      ],
       "Enter SAML metadata": [
         "Wpisz metadane SAML"
       ],
@@ -7756,14 +7779,26 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Przełączaj się między motywami na dzień i noc, synchronizując je z systemowymi trybami dziennymi i nocnymi"
       ],
+      "Copy and paste this URL into the ACS (Assertion Consumer Service) URL field of your identity provider": [
+        "Skopiuj i wklej ten adres URL do pola adresu URL ACS (Assertion Consumer Service) swojego dostawcy tożsamości"
+      ],
       "Copy and paste this URL into the entity ID field of your identity provider": [
         "Kopiuj i wklej adres URL do pola identyfikatora jednostki u swojego dostawcy tożsamości"
+      ],
+      "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
+        "Adres URL punktu końcowego od dostawcy tożsamości (np. https://idp.example.com/sso/saml)"
+      ],
+      "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
+        "Klucz publiczny dostawcy tożsamości do podpisywania asercji uwierzytelniania. Pobierz skrót certyfikatu od dostawcy tożsamości."
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Kupiony lub otrzymany kod podarunkowy możesz wpisać tutaj."
       ],
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "Użytkownicy, którzy nie korzystają z uwierzytelniania dwustopniowego, otrzymają wiadomość z prośbą o jej włączenie."
+      ],
+      "Specify the domain which is allowed to authenticate with SAML SSO": [
+        "Określ domenę, która może uwierzytelniać się za pomocą SAML SSO."
       ],
       "The new subscription cycle starts on ${ formattedTime }": [
         "Nowa subskrypcja rozpocznie się ${ formattedTime }"
@@ -7773,6 +7808,9 @@
       ],
       "The selected theme will be active when your system is set to \"light mode\"": [
         "Wybrany motyw będzie aktywny, kiedy w systemie będzie ustawiony jasny motyw"
+      ],
+      "Usually an URL that contains the identity provider's name within": [
+        "Zazwyczaj jest to adres URL zawierający nazwę dostawcy tożsamości"
       ],
       "Verified email address": [
         "Adres e-mail został zweryfikowany"
