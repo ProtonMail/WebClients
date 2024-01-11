@@ -6,3 +6,11 @@
 	justify-content: flex-start;
 	align-items: stretch;
 }
+
+#pass-layout:has(#content:not(:empty)) {
+	#pass-sub-sidebar {
+		.pass-sub-sidebar--hidable {
+			display: none;
+		}
+	}
+}
