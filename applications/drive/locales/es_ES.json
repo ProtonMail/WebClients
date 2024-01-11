@@ -433,9 +433,6 @@
       "New message": [
         "Nuevo mensaje"
       ],
-      "New upload": [
-        "Cargar"
-      ],
       "Next": [
         "Siguiente"
       ],
@@ -3337,6 +3334,10 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etiqueta seleccionada",
         "${ selectedFoldersCountLocalized } etiquetas seleccionadas"
+      ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } omitidos",
+        "${ skippedCount } omitidos"
       ],
       "${ speed }/s": [
         "${ speed }/s"

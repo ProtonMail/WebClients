@@ -400,6 +400,9 @@
       "Mark for deletion": [
         "Seleziona per l'eliminazione"
       ],
+      "Maximize": [
+        "Ingrandisci"
+      ],
       "Maximize transfers": [
         "Massimizza i trasferimenti"
       ],
@@ -408,6 +411,9 @@
       ],
       "Merge contacts": [
         "Unisci contatti"
+      ],
+      "Minimize": [
+        "Riduci"
       ],
       "Minimize transfers": [
         "Minimizza i trasferimenti"
@@ -432,9 +438,6 @@
       ],
       "New message": [
         "Nuovo messaggio"
-      ],
-      "New upload": [
-        "Nuovo caricamento"
       ],
       "Next": [
         "Avanti"
@@ -3306,6 +3309,14 @@
         "${ groupCounts } gruppo trovato",
         "${ groupCounts } gruppi trovati"
       ],
+      "${ nbFile } encrypted file": [
+        "${ nbFile } file crittografato",
+        "${ nbFile } file crittografati."
+      ],
+      "${ nbFile } encrypted file...": [
+        "${ nbFile } file crittografato...",
+        "${ nbFile } file crittografati..."
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } in pausa",
         "${ pausedCount } in pausa"
@@ -3337,6 +3348,10 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etichetta selezionata",
         "${ selectedFoldersCountLocalized } etichette selezionate"
+      ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } ignorati",
+        "${ skippedCount } ignorati"
       ],
       "${ speed }/s": [
         "${ speed }/s"
@@ -3374,6 +3389,9 @@
       "All (${ totalFoldersCount } label)": [
         "Tutta la (${ totalFoldersCount } etichetta)",
         "Tutte le (${ totalFoldersCount } etichette)"
+      ],
+      "All encrypted files": [
+        "Tutti i file crittografati"
       ],
       "All your changes will be lost.": [
         "Tutte le modifiche andranno perse."
@@ -3567,11 +3585,17 @@
       "Download paused due to connection issue; it will resume automatically": [
         "Download in pausa a causa di un problema di connessione; verrà ripreso automaticamente"
       ],
+      "Download ready": [
+        "Download pronto"
+      ],
       "Downloaded": [
         "Scaricato"
       ],
       "Downloading": [
         "Scaricamento"
+      ],
+      "Downloading all encrypted files": [
+        "Download di tutti i file crittografati"
       ],
       "Drop file here to upload": [
         "Trascina qui i file da caricare."
@@ -3739,6 +3763,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importazione dei tuoi dati da ${ fromEmail } a ${ toEmail }."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "Nel frattempo registra il tuo account ${ DRIVE_APP_NAME }, proteggi i tuoi dati con la crittografia end-to-end e condividili in modo sicuro."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indicizzazione elemento ${ esProgress } di ${ totalProgressToShow }"
@@ -4018,11 +4045,24 @@
       "Restoring Photos... Please keep the tab open": [
         "Ripristino delle foto in corso. Mantieni aperta la scheda."
       ],
+      "Retry now": [
+        "Riprova ora"
+      ],
       "Search cannot be enabled in this browser": [
         "La ricerca non può essere abilitata in questo browser"
       ],
       "Search Enabled": [
         "Ricerca Abilitata"
+      ],
+      "Securely downloaded ${ nbFile } file": [
+        "${ nbFile } file scaricato in modo sicuro",
+        "${ nbFile } file scaricati in modo sicuro"
+      ],
+      "Securely downloaded all encrypted files": [
+        "Tutti i file crittografati sono stati scaricati in modo sicuro"
+      ],
+      "Securely downloaded all files": [
+        "Tutti i file sono stati scaricati in modo sicuro"
       ],
       "Select a folder to move to.": [
         "Seleziona la cartella di destinazione."
@@ -4066,6 +4106,9 @@
       "Shared link not found": [
         "Link condiviso non trovato"
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "Registra il tuo account ${ DRIVE_APP_NAME }, proteggi i tuoi dati con la crittografia end-to-end e condividili in modo sicuro."
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "La firma non può essere convalidata a causa di un errore di rete, riprova più tardi."
       ],
@@ -4074,6 +4117,9 @@
       ],
       "Signature issue": [
         "Problema di firma"
+      ],
+      "Skipped": [
+        "Ignorato"
       ],
       "Some files failed to download. Try downloading the files again.": [
         "Scaricamento di alcuni file non riuscito. Prova a scaricare nuovamente i file."
@@ -4086,6 +4132,9 @@
       ],
       "Something went wrong, please try again later.": [
         "Qualcosa è andato storto, riprova più tardi."
+      ],
+      "Something went wrong...": [
+        "Qualcosa è andato storto..."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Termine dell'abbonamento: riattivalo entro ${ byDate } per mantenere i vantaggi del tuo piano ${ planName }. ${ reactivateLink }"
@@ -4131,6 +4180,9 @@
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Questo file potrebbe essere stato eliminato, spostato o reso non disponibile. Prova a contattare il proprietario del file."
+      ],
+      "This item already exists in your library": [
+        "Questo elemento è già presente nella tua libreria"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Questo link conduce a un sito web che potrebbe tentare di rubare le tue informazioni, come password e dettagli della carta di credito."
@@ -4383,6 +4435,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "I tuoi dati sono pronti per essere importati da ${ importedEmailAddressStrong } al tuo account ${ BRAND_NAME }."
       ],
+      "Your download is in progress": [
+        "Download in corso"
+      ],
       "Your email will only be used for this one-time verification.": [
         "La tua email sarà utilizzata solo per questa verifica una tantum."
       ],
@@ -4621,6 +4676,9 @@
       ],
       "Download anyway": [
         "Scarica comunque"
+      ],
+      "Downloading": [
+        "Download in corso"
       ],
       "Downloading ${ percentageValue }%": [
         "Download ${ percentageValue }%"

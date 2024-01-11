@@ -400,6 +400,9 @@
       "Mark for deletion": [
         "Zum Löschen vormerken"
       ],
+      "Maximize": [
+        "Maximieren"
+      ],
       "Maximize transfers": [
         "Übertragungsfenster maximieren"
       ],
@@ -408,6 +411,9 @@
       ],
       "Merge contacts": [
         "Kontakte zusammenführen"
+      ],
+      "Minimize": [
+        "Minimieren"
       ],
       "Minimize transfers": [
         "Übertragungsfenster minimieren"
@@ -432,9 +438,6 @@
       ],
       "New message": [
         "Neue Nachricht"
-      ],
-      "New upload": [
-        "Neuer Upload"
       ],
       "Next": [
         "Weiter"
@@ -2439,6 +2442,10 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Ein unerwarteter Fehler ist aufgetreten. Der Import muss neu ausgeführt werden."
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Deine Datei „${ formattedFilename }“ enthält mehr als ${ MAX_IMPORT_EVENTS } Termin.",
+        "Deine Datei „${ formattedFilename }“ enthält mehr als ${ MAX_IMPORT_EVENTS } Termine."
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Deine Datei \"${ formattedFilename }\" enthält eine ungültige Methode und konnte nicht importiert werden."
       ],
@@ -3334,6 +3341,10 @@
         "${ selectedFoldersCountLocalized } Kategorie ausgewählt",
         "${ selectedFoldersCountLocalized } Kategorien ausgewählt"
       ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } übersprungen",
+        "${ skippedCount } übersprungen"
+      ],
       "${ speed }/s": [
         "${ speed }/s"
       ],
@@ -3562,6 +3573,9 @@
       ],
       "Download paused due to connection issue; it will resume automatically": [
         "Download wurde aufgrund eines Verbindungsproblems angehalten; er wird automatisch fortgesetzt"
+      ],
+      "Download ready": [
+        "Heruntergeladener Inhalt steht bereit"
       ],
       "Downloaded": [
         "Heruntergeladen"
@@ -4071,6 +4085,9 @@
       "Signature issue": [
         "Signaturproblem"
       ],
+      "Skipped": [
+        "Übersprungen"
+      ],
       "Some files failed to download. Try downloading the files again.": [
         "Einige Dateien konnten nicht heruntergeladen werden. Versuche, die Dateien erneut herunterzuladen."
       ],
@@ -4082,6 +4099,9 @@
       ],
       "Something went wrong, please try again later.": [
         "Ein Problem ist aufgetreten, bitte versuche es später noch einmal."
+      ],
+      "Something went wrong...": [
+        "Etwas ging schief…"
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Dein Abonnement endet bald: Reaktiviere es bis zum ${ byDate }, um deine ${ planName }-Vorteile zu behalten. ${ reactivateLink }"
@@ -5349,6 +5369,10 @@
       "Move ${ n } folder": [
         "${ n } Ordner verschieben",
         "${ n } Ordner verschieben"
+      ],
+      "Move ${ n } item": [
+        "${ n } Element verschieben",
+        "${ n } Elemente verschieben"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Nicht genug Speicherplatz, um ${ formattedTotal } hochzuladen"

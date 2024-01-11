@@ -439,9 +439,6 @@
       "New message": [
         "Nová správa"
       ],
-      "New upload": [
-        "Nové nahrávanie"
-      ],
       "Next": [
         "Ďalší"
       ],
@@ -3445,6 +3442,12 @@
         "${ selectedFoldersCountLocalized } vybratých štítkov",
         "${ selectedFoldersCountLocalized } vybratých štítkov"
       ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } preskočených",
+        "${ skippedCount } preskočených",
+        "${ skippedCount } preskočených",
+        "${ skippedCount } preskočených"
+      ],
       "${ speed }/s": [
         "${ speed }/s"
       ],
@@ -4203,6 +4206,9 @@
       ],
       "Signature issue": [
         "Problém s podpisom"
+      ],
+      "Skipped": [
+        "Preskočené"
       ],
       "Some files failed to download. Try downloading the files again.": [
         "Niektoré súbory sa nepodarilo stiahnuť. Skúste súbory stiahnuť znova."
@@ -5101,6 +5107,11 @@
         "Štítok ${ Label.Name } bol vytvorený"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Od: ${ from }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Bočný panel"
@@ -5520,6 +5531,24 @@
       "Link copied to clipboard": [
         "Odkaz bol skopírovaný do schránky"
       ],
+      "Move ${ n } file": [
+        "Presunúť ${ n } súbor",
+        "Presunúť ${ n } súbory",
+        "Presunúť ${ n } súborov",
+        "Presunúť ${ n } súboru"
+      ],
+      "Move ${ n } folder": [
+        "Presunúť ${ n } priečinok",
+        "Presunúť ${ n } priečinky",
+        "Presunúť ${ n } priečinkov",
+        "Presunúť ${ n } priečinkov"
+      ],
+      "Move ${ n } item": [
+        "Presunúť ${ n } položku",
+        "Presunúť ${ n } položky",
+        "Presunúť ${ n } položiek",
+        "Presunúť ${ n } položiek"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Nedostatok miesta na nahratie ${ formattedTotal }"
       ],
@@ -5633,6 +5662,9 @@
     "Option": {
       "Add to existing group": [
         "Pridať do existujúcej skupiny"
+      ],
+      "Automatic (${ value })": [
+        "Automaticky (${ value })"
       ],
       "Create new group": [
         "Vytvoriť novú skupinu"
@@ -6111,6 +6143,12 @@
       ],
       "Highest VPN speed": [
         "Najvyššia rýchlosť VPN"
+      ],
+      "Premium ${ appName1 }": [
+        "Prémiový ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Prémiový ${ appName1 } a ${ appName2 }"
       ],
       "Premium early access": [
         "Prémiový predbežný prístup"
@@ -6615,6 +6653,9 @@
       ],
       "Discard changes?": [
         "Zrušiť zmeny?"
+      ],
+      "Download ${ date }": [
+        "Stiahnuť ${ date }"
       ],
       "Download unverified file?": [
         "Stiahnuť neoverený súbor?"
