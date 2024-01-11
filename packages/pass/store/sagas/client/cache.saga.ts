@@ -1,4 +1,4 @@
-import type { AnyAction } from 'redux';
+import type { Action } from 'redux';
 import { select, takeLatest } from 'redux-saga/effects';
 
 import { clientReady } from '@proton/pass/lib/client';
@@ -19,7 +19,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 
 const CACHE_THROTTLING_TIMEOUT = 1_000;
 
-function* cacheWorker({ meta, type }: WithCache<AnyAction>, { getAppState, getAuthStore, setCache }: RootSagaOptions) {
+function* cacheWorker({ meta, type }: WithCache<Action>, { getAppState, getAuthStore, setCache }: RootSagaOptions) {
     if (meta.throttle) yield wait(CACHE_THROTTLING_TIMEOUT);
 
     const loggedIn = getAuthStore().hasSession();
