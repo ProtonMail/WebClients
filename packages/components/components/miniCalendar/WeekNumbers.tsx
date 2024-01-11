@@ -116,7 +116,7 @@ const WeekNumbers = ({ days, numberOfWeeks, onClickWeekNumber, onSelectWeekRange
         <ul
             className={clsx([
                 'minicalendar-weeknumbers unstyled m-0 text-center',
-                !onSelectWeekRange && 'children-pointer-events-none',
+                !onSelectWeekRange && '*:pointer-events-none',
             ])}
             style={style}
             onMouseDown={handleMouseDown}

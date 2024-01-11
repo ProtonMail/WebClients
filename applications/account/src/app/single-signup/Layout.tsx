@@ -76,12 +76,12 @@ const Layout = ({
     return (
         <div
             className={clsx(
-                'flex children-min-size-auto flex-nowrap flex-column h-full overflow-auto relative',
+                'flex *:min-size-auto flex-nowrap flex-column h-full overflow-auto relative',
                 background === 'dark'
                     ? 'signup-v1-bg--dark'
                     : background === 'bf2023'
-                        ? 'signup-v1-bg--bf2023'
-                        : 'signup-v1-bg',
+                      ? 'signup-v1-bg--bf2023'
+                      : 'signup-v1-bg',
                 className
             )}
         >

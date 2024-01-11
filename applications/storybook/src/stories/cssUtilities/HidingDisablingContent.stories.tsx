@@ -60,7 +60,7 @@ export const PointerEventsNone = () => (
         Applies <code>pointer-events: none</code> to element.
         <br />
         If you need to remove pointer events on all children of an element, you may use{' '}
-        <code>children-pointer-events-none</code> class.
+        <code>*:pointer-events-none</code> class.
     </div>
     <div class="w-1/2">
         <Source

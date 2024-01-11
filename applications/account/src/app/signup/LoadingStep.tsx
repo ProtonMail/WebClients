@@ -32,14 +32,11 @@ export const LoadingTextStepper = ({ steps }: { steps: string[] }) => {
                     <div className="text-lg" key={step}>
                         <div
                             className={clsx(
-                                'flex children-min-size-auto items-center flex-nowrap',
+                                'flex *:min-size-auto items-center flex-nowrap',
                                 isCurrentStep && 'color-primary'
                             )}
                         >
-                            <div
-                                className="mr-2 min-w-custom flex shrink-0"
-                                style={{ '--min-w-custom': '2em' }}
-                            >
+                            <div className="mr-2 min-w-custom flex shrink-0" style={{ '--min-w-custom': '2em' }}>
                                 {isCurrentStep ? (
                                     <CircleLoader size="small" className="ml-1" />
                                 ) : (

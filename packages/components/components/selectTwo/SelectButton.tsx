@@ -43,7 +43,7 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
                 className={clsx([
                     !unstyled && 'select field',
                     unstyled && 'select-unstyled',
-                    'outline-none w-full flex justify-space-between items-center flex-nowrap children-pointer-events-none',
+                    'outline-none w-full flex justify-space-between items-center flex-nowrap *:pointer-events-none',
                     className,
                 ])}
                 {...rest}
