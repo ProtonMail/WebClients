@@ -19,6 +19,7 @@ import {
     Icon,
     usePopperAnchor,
 } from '@proton/components';
+import { verticalPopperPlacements } from '@proton/components/components/popper/utils';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
@@ -109,7 +110,7 @@ export const MenuDropdown: VFC = () => {
                     autoClose={false}
                     isOpen={isOpen}
                     onClose={close}
-                    originalPlacement="bottom"
+                    availablePlacements={verticalPopperPlacements}
                     size={DROPDOWN_SIZE}
                 >
                     <DropdownMenu>
