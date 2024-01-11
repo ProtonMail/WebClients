@@ -7,6 +7,7 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
 import { initiateSessionRecovery } from '@proton/shared/lib/api/sessionRecovery';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import noop from '@proton/utils/noop';
 
 import {
@@ -84,10 +85,13 @@ const InitiateSessionRecoveryModal = ({ confirmedStep = false, onClose, ...rest 
                 onClose?.();
             }
         } catch (error) {
-            observeApiError(error, (status) =>
-                metrics.core_session_recovery_initiation_total.increment({
-                    status,
-                })
+            observeApiError(
+                error,
+                (status) =>
+                    metrics.core_session_recovery_initiation_total.increment({
+                        status,
+                    }),
+                [API_CUSTOM_ERROR_CODES.NOT_ALLOWED]
             );
         }
     };
