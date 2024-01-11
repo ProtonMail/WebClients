@@ -24,17 +24,21 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
     reducer,
-    middleware: [requestMiddleware, workerMiddleware, sagaMiddleware],
-    enhancers:
-        ENV === 'development'
-            ? [
-                  devToolsEnhancer({
-                      name: 'background',
-                      port: REDUX_DEVTOOLS_PORT,
-                      realtime: true,
-                  }),
-              ]
-            : [],
+    middleware: (mw) => mw().concat(requestMiddleware, workerMiddleware, sagaMiddleware),
+    enhancers: (e) =>
+        e().concat(
+            ENV === 'development'
+                ? [
+                      devToolsEnhancer({
+                          name: 'background',
+                          port: REDUX_DEVTOOLS_PORT,
+                          realtime: true,
+                      }),
+                  ]
+                : []
+        ),
+
+    devTools: false,
 });
 
 const options: RootSagaOptions = {

@@ -10,17 +10,21 @@ import { proxyActionsMiddleware } from './proxy-actions.middleware';
 export const createClientStore = (endpoint: ClientEndpoint, tabId: TabId) => {
     const store = configureStore({
         reducer,
-        middleware: [requestMiddleware, proxyActionsMiddleware({ endpoint, tabId })],
-        enhancers:
-            ENV === 'development'
-                ? [
-                      devToolsEnhancer({
-                          name: `${endpoint}-${tabId}`,
-                          realtime: true,
-                          port: REDUX_DEVTOOLS_PORT,
-                      }),
-                  ]
-                : [],
+        middleware: (mw) => mw().concat(requestMiddleware, proxyActionsMiddleware({ endpoint, tabId })),
+        enhancers: (e) =>
+            e().concat(
+                ENV === 'development'
+                    ? [
+                          devToolsEnhancer({
+                              name: 'background',
+                              port: REDUX_DEVTOOLS_PORT,
+                              realtime: true,
+                          }),
+                      ]
+                    : []
+            ),
+
+        devTools: false,
     });
 
     return store;
