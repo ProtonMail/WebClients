@@ -1,4 +1,5 @@
-import { type FC17, createContext, useContext, useMemo } from 'react';
+import type { PropsWithChildren } from 'react';
+import { type FC, createContext, useContext, useMemo } from 'react';
 
 import { c } from 'ttag';
 
@@ -14,7 +15,7 @@ const getInitialModalState = (): ModalState => ({
     assistiveText: c('Info').t`Please enter your current PIN code to continue`,
 });
 
-export const LockConfirmContextProvider: FC17 = ({ children }) => {
+export const LockConfirmContextProvider: FC<PropsWithChildren> = ({ children }) => {
     const { handler, abort, resolver, state } = useAsyncModalHandles<string, ModalState>({ getInitialModalState });
     const contextValue = useMemo<LockConfirmContextValue>(() => ({ confirmPin: handler }), [handler]);
 

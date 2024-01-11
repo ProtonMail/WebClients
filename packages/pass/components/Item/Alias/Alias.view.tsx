@@ -1,4 +1,4 @@
-import { type MouseEvent, type VFC17, useCallback, useEffect, useState } from 'react';
+import { type FC, type MouseEvent, useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
@@ -24,7 +24,7 @@ import { selectAliasDetails, selectLoginItemByUsername } from '@proton/pass/stor
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
-export const AliasView: VFC17<ItemViewProps<'alias'>> = (itemViewProps) => {
+export const AliasView: FC<ItemViewProps<'alias'>> = (itemViewProps) => {
     const { createNotification } = useNotifications();
     const { navigate } = useNavigation();
 

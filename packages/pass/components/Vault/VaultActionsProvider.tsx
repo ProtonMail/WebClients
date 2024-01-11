@@ -1,4 +1,5 @@
-import { type FC17, createContext, useCallback, useContext, useMemo, useState } from 'react';
+import type { PropsWithChildren } from 'react';
+import { type FC, createContext, useCallback, useContext, useMemo, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { c } from 'ttag';
@@ -50,7 +51,7 @@ export const VaultActionsContext = createContext<VaultActionsContextValue>({
 
 export const useVaultActions = () => useContext(VaultActionsContext);
 
-export const VaultActionsProvider: FC17 = ({ children }) => {
+export const VaultActionsProvider: FC<PropsWithChildren> = ({ children }) => {
     const inviteContext = useInviteContext();
     const { navigate, setFilters, filters } = useNavigation();
     const dispatch = useDispatch();

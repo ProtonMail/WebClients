@@ -1,4 +1,4 @@
-import { type VFC17 } from 'react';
+import { type FC } from 'react';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
@@ -26,7 +26,7 @@ import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
 
 const FORM_ID = 'edit-creditCard';
 
-export const CreditCardEdit: VFC17<ItemEditViewProps<'creditCard'>> = ({ vault, revision, onSubmit, onCancel }) => {
+export const CreditCardEdit: FC<ItemEditViewProps<'creditCard'>> = ({ vault, revision, onSubmit, onCancel }) => {
     const { shareId } = vault;
     const { data: item, itemId, revision: lastRevision } = revision;
 

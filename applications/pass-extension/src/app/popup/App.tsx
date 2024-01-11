@@ -1,4 +1,4 @@
-import type { VFC17 } from 'react';
+import type { FC } from 'react';
 import { Route, HashRouter as Router } from 'react-router-dom';
 
 import { usePopupContext } from 'proton-pass-extension/lib/components/Context/PopupProvider';
@@ -8,7 +8,7 @@ import { NavigationProvider } from '@proton/pass/components/Navigation/Navigatio
 import { Lobby } from './Views/Lobby/Lobby';
 import { Main } from './Views/Main';
 
-export const App: VFC17 = () => {
+export const App: FC = () => {
     const { state, initialized } = usePopupContext();
 
     /* navigate away from the `Lobby` only when the worker

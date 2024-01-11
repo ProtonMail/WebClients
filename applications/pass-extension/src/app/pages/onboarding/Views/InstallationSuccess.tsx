@@ -1,4 +1,4 @@
-import type { VFC17 } from 'react';
+import type { FC } from 'react';
 import { useEffect, useState } from 'react';
 
 import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/ExtensionHead';
@@ -38,7 +38,7 @@ const brandNameJSX = (
     <img src={passBrandText} className="ml-2 h-custom" style={{ '--h-custom': '1.75rem' }} key="brand" alt="" />
 );
 
-export const InstallationSuccess: VFC17 = () => {
+export const InstallationSuccess: FC = () => {
     const login = useRequestForkWithPermissions({ replace: true });
     const [isPinned, setIsPinned] = useState<MaybeNull<boolean>>(null);
 

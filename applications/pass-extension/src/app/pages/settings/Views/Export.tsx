@@ -1,4 +1,4 @@
-import type { FC17 } from 'react';
+import type { FC } from 'react';
 
 import { SettingsPanel } from 'proton-pass-extension/lib/components/Settings/SettingsPanel';
 import { c } from 'ttag';
@@ -30,7 +30,7 @@ const confirmPassword = async (password: string) => {
     return result.type === 'success' && result.ok;
 };
 
-export const Export: FC17 = () => {
+export const Export: FC = () => {
     return (
         <SettingsPanel title={c('Label').t`Export`}>
             <Exporter

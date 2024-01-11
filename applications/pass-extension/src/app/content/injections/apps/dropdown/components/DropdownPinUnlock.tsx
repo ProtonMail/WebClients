@@ -1,4 +1,4 @@
-import type { VFC17 } from 'react';
+import type { FC } from 'react';
 import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
@@ -15,7 +15,7 @@ import clsx from '@proton/utils/clsx';
 
 import { DropdownItemIcon } from './DropdownItemIcon';
 
-export const DropdownPinUnlock: VFC17<{
+export const DropdownPinUnlock: FC<{
     onUnlock?: () => void;
     visible?: boolean;
 }> = ({ onUnlock, visible }) => {
