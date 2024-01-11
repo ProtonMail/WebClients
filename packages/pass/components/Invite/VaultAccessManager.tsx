@@ -1,4 +1,4 @@
-import { type FC17, useMemo, useState } from 'react';
+import { type FC, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
@@ -30,7 +30,7 @@ type InviteListItem =
     | { key: string; type: 'existing'; invite: PendingInvite }
     | { key: string; type: 'new'; invite: NewUserPendingInvite };
 
-export const VaultAccessManager: FC17<Props> = ({ shareId }) => {
+export const VaultAccessManager: FC<Props> = ({ shareId }) => {
     const { createInvite, close } = useInviteContext();
     const vault = useSelector(selectShareOrThrow<ShareType.Vault>(shareId));
     const plan = useSelector(selectPassPlan);

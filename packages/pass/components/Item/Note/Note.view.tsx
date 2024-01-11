@@ -1,4 +1,4 @@
-import { type VFC17 } from 'react';
+import { type FC } from 'react';
 
 import { c } from 'ttag';
 
@@ -11,7 +11,7 @@ import { useCopyToClipboard } from '../../../hooks/useCopyToClipboard';
 import { useDeobfuscatedValue } from '../../../hooks/useDeobfuscatedValue';
 import { ItemViewPanel } from '../../Layout/Panel/ItemViewPanel';
 
-export const NoteView: VFC17<ItemViewProps<'note'>> = (itemViewProps) => {
+export const NoteView: FC<ItemViewProps<'note'>> = (itemViewProps) => {
     const note = useDeobfuscatedValue(itemViewProps.revision.data.metadata.note);
     const copyToClipboard = useCopyToClipboard();
 

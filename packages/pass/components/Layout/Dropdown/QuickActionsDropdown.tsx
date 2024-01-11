@@ -1,4 +1,4 @@
-import type { CSSProperties, FC17 } from 'react';
+import type { CSSProperties, FC, PropsWithChildren } from 'react';
 
 import { c } from 'ttag';
 
@@ -29,7 +29,7 @@ export type QuickActionsDropdownProps = {
     style?: CSSProperties;
 };
 
-export const QuickActionsDropdown: FC17<QuickActionsDropdownProps> = ({
+export const QuickActionsDropdown: FC<PropsWithChildren<QuickActionsDropdownProps>> = ({
     children,
     className,
     color,

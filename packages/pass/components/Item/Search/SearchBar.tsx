@@ -1,4 +1,4 @@
-import { type VFC17, memo, useEffect, useMemo, useRef, useState } from 'react';
+import { type FC, memo, useEffect, useMemo, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
@@ -25,7 +25,7 @@ type Props = {
 
 const SEARCH_DEBOUNCE_TIME = 75;
 
-const SearchBarRaw: VFC17<Props> = ({ disabled, initial, trash }) => {
+const SearchBarRaw: FC<Props> = ({ disabled, initial, trash }) => {
     const { onTelemetry } = usePassCore();
     const { filters, setFilters } = useNavigation();
 
