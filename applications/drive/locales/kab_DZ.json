@@ -411,9 +411,6 @@
       "New message": [
         "Izen amaynut"
       ],
-      "New upload": [
-        "Asali amaynut"
-      ],
       "Next": [
         "Ɣer sdat"
       ],
@@ -2190,6 +2187,10 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Tella-d tuccḍa ur nettwarǧa ara. Aktar ilaq ad yales asenker."
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Afaylu-inek·inem ${ formattedFilename } deg-s ugar n ${ MAX_IMPORT_EVENTS } n tedyant.",
+        "Afaylu-inek·inem ${ formattedFilename } deg-s ugar n ${ MAX_IMPORT_EVENTS } n tedyanin."
+      ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Afaylu-inek/m ${ formattedFilename } ur yesɛi ara tidyanin ara nsifeḍ."
       ],
@@ -3696,6 +3697,16 @@
         "Tekki i telqayt"
       ]
     },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } d akaram yettwafernen",
+        "${ selectedFoldersCount } d ikaramen yettwafernen"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } n tebzimt yettwafernen",
+        "${ selectedFoldersCount } n tebzimin yettwafernen"
+      ]
+    },
     "Item": {
       "file attributes": [
         "imyerren n ufaylu"
@@ -4217,6 +4228,11 @@
         "${ Label.Name } yettusnulfa-d"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Sɣur: ${ from }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Agalis adisan"
@@ -4541,6 +4557,14 @@
       "Link copied to clipboard": [
         "Aseɣwen yettwanɣel ɣer ɣefwafus"
       ],
+      "Move ${ n } file": [
+        "Smutti afaylu ${ n }",
+        "Smutti ifuyla ${ n }"
+      ],
+      "Move ${ n } item": [
+        "Smutti aferdis  ${ n }",
+        "Smutti aferdis  ${ n }"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Ulac tallunt i usali n ${ formattedTotal }"
       ],
@@ -4619,6 +4643,9 @@
     "Option": {
       "Add to existing group": [
         "Rnu ɣer ugraw yellan"
+      ],
+      "Automatic (${ value })": [
+        "Awurman (${ value })"
       ],
       "Create new group": [
         "Snulfu-d agraw amaynut"
@@ -5271,6 +5298,9 @@
         "Kkes ${ count } n ugraw n yinermisen",
         "Kkes ${ count } n yigrawen n yinermisen"
       ],
+      "Delete ${ value }": [
+        "Kkes ${ value }"
+      ],
       "Delete permanently": [
         "Kkes i lebda"
       ],
@@ -5282,6 +5312,9 @@
       ],
       "Discard changes?": [
         "Sefsex ibeddilen?"
+      ],
+      "Download ${ date }": [
+        "Sader ${ date }"
       ],
       "Download unverified file?": [
         "Sader afaylu ur yettwasneqden ara?"

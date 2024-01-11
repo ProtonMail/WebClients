@@ -406,6 +406,9 @@
       "Mark for deletion": [
         "Označit pro odstranění"
       ],
+      "Maximize": [
+        "Maximalizovat"
+      ],
       "Maximize transfers": [
         "Maximalizovat přenosy"
       ],
@@ -414,6 +417,9 @@
       ],
       "Merge contacts": [
         "Sloučit kontakty"
+      ],
+      "Minimize": [
+        "Minimalizovat"
       ],
       "Minimize transfers": [
         "Minimalizovat přenosy"
@@ -438,9 +444,6 @@
       ],
       "New message": [
         "Nová zpráva"
-      ],
-      "New upload": [
-        "Nové nahrávání"
       ],
       "Next": [
         "Další"
@@ -3402,6 +3405,18 @@
         "${ groupCounts } skupin nalezeno",
         "${ groupCounts } skupin nalezeno"
       ],
+      "${ nbFile } encrypted file": [
+        "${ nbFile } šifrovaný soubor",
+        "${ nbFile } šifrované soubory",
+        "${ nbFile } šifrovaných souborů",
+        "${ nbFile } šifrovaných souborů"
+      ],
+      "${ nbFile } encrypted file...": [
+        "${ nbFile } šifrovaný soubor...",
+        "${ nbFile } šifrované soubory...",
+        "${ nbFile } šifrovaných souborů...",
+        "${ nbFile } šifrovaných souborů..."
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } pozastaven",
         "${ pausedCount } pozastaveny",
@@ -3494,6 +3509,9 @@
         "Všechny (${ totalFoldersCount } štítky)",
         "Všech (${ totalFoldersCount } štítků)",
         "Všech (${ totalFoldersCount } štítků)"
+      ],
+      "All encrypted files": [
+        "Všechny šifrované soubory"
       ],
       "All your changes will be lost.": [
         "Veškeré vaše změny budou ztraceny."
@@ -3693,11 +3711,17 @@
       "Download paused due to connection issue; it will resume automatically": [
         "Stahování pozastaveno kvůli potíži s připojením; bude automaticky obnoveno"
       ],
+      "Download ready": [
+        "Stáhování je připraveno"
+      ],
       "Downloaded": [
         "Stažené"
       ],
       "Downloading": [
         "Stahování"
+      ],
+      "Downloading all encrypted files": [
+        "Stahování všech šifrovaných souborů"
       ],
       "Drop file here to upload": [
         "Sem přetáhněte soubor pro nahrání"
@@ -4152,6 +4176,9 @@
       "Restoring Photos... Please keep the tab open": [
         "Obnovování fotografií... Ponechte prosím záložku otevřenou"
       ],
+      "Retry now": [
+        "Zkusit znovu"
+      ],
       "Search cannot be enabled in this browser": [
         "V tomto prohlížeči nelze zapnout vyhledávání"
       ],
@@ -4220,6 +4247,9 @@
       ],
       "Something went wrong, please try again later.": [
         "Něco se pokazilo, prosím zkuste to později."
+      ],
+      "Something went wrong...": [
+        "Něco se pokazilo..."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Předplatné vyprší: opětovně aktivujte dne ${ byDate } pro zachování vašich výhod tarifu ${ planName }. ${ reactivateLink }"
@@ -5667,6 +5697,9 @@
     "Option": {
       "Add to existing group": [
         "Přidat do existující skupiny"
+      ],
+      "Automatic (${ value })": [
+        "Automatické (${ value })"
       ],
       "Create new group": [
         "Vytvořit novou skupinu"

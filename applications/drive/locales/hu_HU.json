@@ -430,9 +430,6 @@
       "New message": [
         "Új üzenet"
       ],
-      "New upload": [
-        "Új feltöltés"
-      ],
       "Next": [
         "Következő"
       ],
@@ -2340,6 +2337,10 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Váratlan hiba történt. Az importálást újra kell kezdeni."
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "A fájl több mint ${ MAX_IMPORT_EVENTS } eseményt tartalmaz: ${ formattedFilename }.",
+        "A fájl több mint ${ MAX_IMPORT_EVENTS } eseményt tartalmaz: ${ formattedFilename }."
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "A(z) ${ formattedFilename } fájl érvénytelen metódust tartalmaz és nem importálható."
       ],
@@ -4237,6 +4238,16 @@
         "Kattintson a részletekért"
       ]
     },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } mappa kiválasztva",
+        "${ selectedFoldersCount } mappa kiválasztva"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } címke kiválasztva",
+        "${ selectedFoldersCount } címke kiválasztva"
+      ]
+    },
     "Item": {
       "file attributes": [
         "fájl tulajdonságok"
@@ -4767,6 +4778,11 @@
         "${ Label.Name } létrehozva"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Feladó: ${ from }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Oldalsáv"
@@ -5129,6 +5145,14 @@
       "Link copied to clipboard": [
         "Hivatkozás a vágólapra másolva"
       ],
+      "Move ${ n } file": [
+        "${ n } fájl áthelyezése",
+        "${ n } fájl áthelyezése"
+      ],
+      "Move ${ n } item": [
+        "${ n } elem áthelyezése",
+        "${ n } elem áthelyezése"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Nincs elég hely a feltöltéshez: ${ formattedTotal }"
       ],
@@ -5231,6 +5255,9 @@
     "Option": {
       "Add to existing group": [
         "Hozzáadás meglévő csoporthoz"
+      ],
+      "Automatic (${ value })": [
+        "Automatikus (${ value })"
       ],
       "Create new group": [
         "Új csoport létrehozása"
@@ -5646,6 +5673,12 @@
       ],
       "Highest VPN speed": [
         "Legnagyobb VPN sebesség"
+      ],
+      "Premium ${ appName1 }": [
+        "Prémium ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Prémium ${ appName1 } és ${ appName2 }."
       ],
       "Premium early access": [
         "Prémium korai-hozzáférés"
@@ -6096,6 +6129,9 @@
         "${ count } névjegy csoport törlése",
         "${ count } névjegy csoport törlése"
       ],
+      "Delete ${ value }": [
+        "${ value } törlése"
+      ],
       "Delete permanently": [
         "Végleges törlés"
       ],
@@ -6107,6 +6143,9 @@
       ],
       "Discard changes?": [
         "Módosítások elvetése?"
+      ],
+      "Download ${ date }": [
+        "${ date } letöltése"
       ],
       "Download unverified file?": [
         "Ellenőrizetlen fájl letöltése?"
