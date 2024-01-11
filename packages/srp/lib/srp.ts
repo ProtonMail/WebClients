@@ -56,7 +56,7 @@ const getParameters = async ({ byteLength, generator, modulus, serverEphemeralAr
             serverEphemeralArray,
         });
 
-        if (scramblingParam.isZero()) {
+        if (scramblingParam.isZero() || clientEphemeral.isZero()) {
             continue;
         }
 
@@ -88,6 +88,49 @@ export const generateProofs = async ({
         throw new Error('SRP modulus has incorrect size');
     }
 
+    /**
+     * The following is a description of SRP-6a, the latest versions of SRP (from srp.stanford.edu/design.html):
+     *
+     *   N    A large safe prime (N = 2q+1, where q is prime)
+     *        All arithmetic is done modulo N.
+     *   g    A generator modulo N
+     *   k    Multiplier parameter (k = H(N, g)
+     *   s    User's salt
+     *   I    Username
+     *   p    Cleartext Password
+     *   H()  One-way hash function
+     *   ^    (Modular) Exponentiation
+     *   u    Random scrambling parameter
+     *   a,b  Secret ephemeral values
+     *   A,B  Public ephemeral values
+     *   x    Private key (derived from p and s)
+     *   v    Password verifier
+     * The host stores passwords using the following formula:
+     *   x = H(s, p)               (s is chosen randomly)
+     *   v = g^x                   (computes password verifier)
+     * The host then keeps {I, s, v} in its password database. The authentication protocol itself goes as follows:
+     * User -> Host:  I, A = g^a                  (identifies self, a = random number)
+     * Host -> User:  s, B = kv + g^b             (sends salt, b = random number)
+     *
+     *         Both:  u = H(A, B)
+     *
+     *         User:  x = H(s, p)                 (user enters password)
+     *         User:  S = (B - kg^x) ^ (a + ux)   (computes session key)
+     *         User:  K = H(S)
+     *
+     *         Host:  S = (Av^u) ^ b              (computes session key)
+     *         Host:  K = H(S)
+     *
+     * Now the two parties have a shared, strong session key K.
+     * To complete authentication, they need to prove to each other that their keys match. One possible way:
+     * User -> Host:  M = H(H(N) xor H(g), H(I), s, A, B, K)
+     * Host -> User:  H(A, M, K)
+     *
+     * The two parties also employ the following safeguards:
+     * The user will abort if he receives B == 0 (mod N) or u == 0.
+     * The host will abort if it detects that A == 0 (mod N).
+     */
+
     const generator = new BigInteger(2);
     const hashedArray = await srpHasher(mergeUint8Arrays([generator.toUint8Array('le', byteLength), modulusArray]));
 
@@ -98,15 +141,7 @@ export const generateProofs = async ({
     const modulusMinusOne = modulus.dec();
     const multiplierReduced = multiplier.mod(modulus);
 
-    if (multiplierReduced.isZero() || multiplierReduced.isOne() || multiplierReduced.gte(modulusMinusOne)) {
-        throw new Error('SRP multiplier is out of bounds');
-    }
-
-    if (generator.isZero() || generator.isOne() || generator.gte(modulusMinusOne)) {
-        throw new Error('SRP generator is out of bounds');
-    }
-
-    if (serverEphemeral.isZero() || serverEphemeral.isOne() || serverEphemeral.gte(modulusMinusOne)) {
+    if (serverEphemeral.isZero()) {
         throw new Error('SRP server ephemeral is out of bounds');
     }
 
@@ -118,12 +153,12 @@ export const generateProofs = async ({
     });
 
     const kgx = generator.modExp(hashedPassword, modulus).imul(multiplierReduced).imod(modulus);
-    const tExponent = scramblingParam.imul(hashedPassword).iadd(clientSecret).imod(modulusMinusOne);
-    const tBase = serverEphemeral.sub(kgx).imod(modulus);
-    const sharedSession = tBase.modExp(tExponent, modulus);
+    const sharedSessionKeyExponent = scramblingParam.imul(hashedPassword).iadd(clientSecret).imod(modulusMinusOne);
+    const sharedSessionKeyBase = serverEphemeral.sub(kgx).imod(modulus);
+    const sharedSessionKey = sharedSessionKeyBase.modExp(sharedSessionKeyExponent, modulus);
 
     const clientEphemeralArray = clientEphemeral.toUint8Array('le', byteLength);
-    const sharedSessionArray = sharedSession.toUint8Array('le', byteLength);
+    const sharedSessionArray = sharedSessionKey.toUint8Array('le', byteLength);
 
     const clientProof = await srpHasher(
         mergeUint8Arrays([clientEphemeralArray, serverEphemeralArray, sharedSessionArray])
