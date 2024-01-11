@@ -41,7 +41,7 @@ const CheckboxCellBase = ({
             >
                 <Checkbox
                     disabled={isDisabled}
-                    className="increase-click-surface"
+                    className="expand-click-area"
                     checked={isSelected}
                     onChange={onCheckboxChange}
                     onClick={onCheckboxClick}

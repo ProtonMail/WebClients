@@ -19,12 +19,9 @@ const DropdownMenuContainer = (
     return (
         <div
             ref={ref}
-            className={clsx([
-                'dropdown-item-container flex justify-space-between flex-nowrap relative',
-                className,
-            ])}
+            className={clsx(['dropdown-item-container flex justify-space-between flex-nowrap relative', className])}
         >
-            <DropdownMenuButton ref={buttonRef} className={clsx(['increase-click-surface', buttonClassName])} {...rest}>
+            <DropdownMenuButton ref={buttonRef} className={clsx(['expand-click-area', buttonClassName])} {...rest}>
                 {buttonContent}
             </DropdownMenuButton>
             {extraContent || null}

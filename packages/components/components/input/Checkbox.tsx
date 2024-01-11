@@ -1,14 +1,9 @@
 import { InputHTMLAttributes, LabelHTMLAttributes, Ref, forwardRef, useEffect, useRef } from 'react';
 
-
-
 import { useCombinedRefs } from '@proton/hooks';
 import clsx from '@proton/utils/clsx';
 
-
-
 import Icon from '../icon/Icon';
-
 
 export interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
     /**
@@ -65,11 +60,7 @@ const Checkbox = (
         <label
             {...labelProps}
             htmlFor={id}
-            className={clsx(
-                'checkbox-container',
-                !className?.includes('increase-click-surface') && 'relative',
-                className
-            )}
+            className={clsx('checkbox-container', !className?.includes('expand-click-area') && 'relative', className)}
             title={title}
             onClick={labelOnClick}
         >

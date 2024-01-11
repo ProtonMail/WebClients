@@ -65,7 +65,7 @@ const ExpandableRow = ({
                         <Button
                             disabled={isDisabled}
                             style={{ visibility: link.isFile ? 'hidden' : 'visible' }}
-                            className="folder-tree-list-item-expand-button increase-click-surface"
+                            className="folder-tree-list-item-expand-button expand-click-area"
                             onClick={(e) => {
                                 e.stopPropagation();
                                 e.currentTarget.blur();
@@ -80,10 +80,7 @@ const ExpandableRow = ({
                             />
                         </Button>
                     </div>
-                    <div
-                        key="Name"
-                        className="folder-tree-list-item-name flex items-center flex-nowrap w-full"
-                    >
+                    <div key="Name" className="folder-tree-list-item-name flex items-center flex-nowrap w-full">
                         <FileIcon mimeType={link.isFile ? link.mimeType : 'Folder'} className="mr-2" />
                         <Tooltip title={link.name} originalPlacement="bottom">
                             <span ref={floatingEllipsisVisibilityControlRef} className="text-nowrap pr-8">
