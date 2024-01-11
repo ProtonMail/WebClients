@@ -218,7 +218,6 @@ const AddressesInput = ({
                     hasLighterFieldDesign && 'composer-light-field',
                 ])}
                 onClick={handleClick}
-                aria-hidden="true"
                 {...containerDragHandlers}
             >
                 <div className="flex-1 flex flex-wrap max-w-full max-h-full gap-1 my-1 relative" ref={containerRef}>
