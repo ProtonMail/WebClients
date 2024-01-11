@@ -400,6 +400,9 @@
       "Mark for deletion": [
         "Sélectionner pour suppression"
       ],
+      "Maximize": [
+        "Agrandir"
+      ],
       "Maximize transfers": [
         "Agrandir les transferts"
       ],
@@ -408,6 +411,9 @@
       ],
       "Merge contacts": [
         "Fusionner les contacts"
+      ],
+      "Minimize": [
+        "Réduire"
       ],
       "Minimize transfers": [
         "Réduire les transferts"
@@ -432,9 +438,6 @@
       ],
       "New message": [
         "Nouveau message"
-      ],
-      "New upload": [
-        "Importer"
       ],
       "Next": [
         "Suivant"
@@ -3306,6 +3309,14 @@
         "${ groupCounts } groupe trouvé",
         "${ groupCounts } groupes trouvés"
       ],
+      "${ nbFile } encrypted file": [
+        "${ nbFile } fichier chiffré",
+        "${ nbFile } fichiers chiffrés"
+      ],
+      "${ nbFile } encrypted file...": [
+        "${ nbFile } fichier chiffré…",
+        "${ nbFile } fichiers chiffrés…"
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } en pause",
         "${ pausedCount } en pause"
@@ -3337,6 +3348,10 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } label sélectionné",
         "${ selectedFoldersCountLocalized } labels sélectionnés"
+      ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } ignorés",
+        "${ skippedCount } ignorés"
       ],
       "${ speed }/s": [
         "${ speed }/s"
@@ -3374,6 +3389,9 @@
       "All (${ totalFoldersCount } label)": [
         "Tous (${ totalFoldersCount } label)",
         "Tous (${ totalFoldersCount } labels)"
+      ],
+      "All encrypted files": [
+        "Tous les fichiers chiffrés"
       ],
       "All your changes will be lost.": [
         "Toutes vos modifications seront perdues."
@@ -3567,11 +3585,17 @@
       "Download paused due to connection issue; it will resume automatically": [
         "Le téléchargement a été interrompu à cause d'un problème de connexion. Il reprendra automatiquement."
       ],
+      "Download ready": [
+        "Le téléchargement est prêt."
+      ],
       "Downloaded": [
         "Téléchargé"
       ],
       "Downloading": [
         "Téléchargement en cours"
+      ],
+      "Downloading all encrypted files": [
+        "Téléchargement de tous les fichiers chiffrés"
       ],
       "Drop file here to upload": [
         "Déposez les fichiers ici pour les importer."
@@ -3739,6 +3763,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Vos données sont en cours d'importation depuis ${ fromEmail } vers ${ toEmail }."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "En attendant, créez votre propre compte ${ DRIVE_APP_NAME } : protégez vos données avec le chiffrement de bout en bout et partagez-les en toute sécurité."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indexation de ${ esProgress } sur ${ totalProgressToShow }"
@@ -4018,11 +4045,24 @@
       "Restoring Photos... Please keep the tab open": [
         "Restauration des photos en cours. Gardez l'onglet ouvert."
       ],
+      "Retry now": [
+        "Réessayer maintenant"
+      ],
       "Search cannot be enabled in this browser": [
         "La recherche ne peut pas être activée dans ce navigateur."
       ],
       "Search Enabled": [
         "Recherche activée"
+      ],
+      "Securely downloaded ${ nbFile } file": [
+        "${ nbFile } fichier a été téléchargé en toute sécurité",
+        "${ nbFile } fichiers ont été téléchargés en toute sécurité"
+      ],
+      "Securely downloaded all encrypted files": [
+        "Tous les fichiers chiffrés ont été téléchargés en toute sécurité."
+      ],
+      "Securely downloaded all files": [
+        "Tous les fichiers ont été téléchargés en toute sécurité."
       ],
       "Select a folder to move to.": [
         "Sélectionnez un dossier de destination."
@@ -4066,6 +4106,9 @@
       "Shared link not found": [
         "Le lien partagé n'a pas été trouvé."
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "Créez votre propre compte ${ DRIVE_APP_NAME } : protégez vos données avec le chiffrement de bout en bout et partagez-les en toute sécurité."
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "La signature ne peut pas être certifiée en raison d'une erreur de réseau, nous vous invitons à réessayer plus tard."
       ],
@@ -4086,6 +4129,9 @@
       ],
       "Something went wrong, please try again later.": [
         "Un problème est survenu, réessayez plus tard."
+      ],
+      "Something went wrong...": [
+        "Une erreur s’est produite…"
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "L'abonnement se termine : réactivez-le avant le ${ byDate } pour continuer à bénéficier des avantages de ${ planName }. ${ reactivateLink }"
@@ -4383,6 +4429,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Vos données sont prêtes à être importées depuis ${ importedEmailAddressStrong } vers votre compte ${ BRAND_NAME }."
       ],
+      "Your download is in progress": [
+        "Votre téléchargement est en cours."
+      ],
       "Your email will only be used for this one-time verification.": [
         "Votre adresse e-mail ne sera utilisée que pour cette vérification unique."
       ],
@@ -4621,6 +4670,9 @@
       ],
       "Download anyway": [
         "Télécharger quand même"
+      ],
+      "Downloading": [
+        "Téléchargement en cours"
       ],
       "Downloading ${ percentageValue }%": [
         "Téléchargement en cours ${ percentageValue } %"

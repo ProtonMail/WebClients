@@ -430,9 +430,6 @@
       "New message": [
         "Ny besked"
       ],
-      "New upload": [
-        "Nyt upload"
-      ],
       "Next": [
         "Næste"
       ],
@@ -2431,6 +2428,10 @@
       "An unexpected error occurred. Import must be restarted.": [
         "En uventet fejl opstod. Import skal genstartes."
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Din fil ${ formattedFilename } indeholder mere end ${ MAX_IMPORT_EVENTS } begivenhed.",
+        "Din fil ${ formattedFilename } indeholder mere end ${ MAX_IMPORT_EVENTS } begivenheder."
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Din fil ${ formattedFilename } har en ugyldig metode og kan ikke importeres."
       ],
@@ -3325,6 +3326,10 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etiket valgt",
         "${ selectedFoldersCountLocalized } etiketter valgt"
+      ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } sprunget over",
+        "${ skippedCount } sprunget over"
       ],
       "${ speed }/s": [
         "${ speed }/s"
@@ -4400,6 +4405,16 @@
         "Klik for detaljer"
       ]
     },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } mappe valgt",
+        "${ selectedFoldersCount } mapper valgt"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } etikette valgt",
+        "${ selectedFoldersCount } etiketter valgt"
+      ]
+    },
     "Item": {
       "file attributes": [
         "filegenskaber"
@@ -4930,6 +4945,11 @@
         "${ Label.Name } oprettet"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Fra: ${ from }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Sidepanel"
@@ -5307,6 +5327,14 @@
       "Link copied to clipboard": [
         "Link kopieret til udklipsholder"
       ],
+      "Move ${ n } file": [
+        "Flyt ${ n } fil",
+        "Flyt ${ n } filer"
+      ],
+      "Move ${ n } item": [
+        "Flyt ${ n } element",
+        "Flyt ${ n } elementer"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Ikke nok plads til at uploade ${ formattedTotal }"
       ],
@@ -5418,6 +5446,9 @@
     "Option": {
       "Add to existing group": [
         "Føj til eksisterende gruppe"
+      ],
+      "Automatic (${ value })": [
+        "Automatisk (${ value })"
       ],
       "Create new group": [
         "Opret ny gruppe"
@@ -5858,6 +5889,12 @@
       ],
       "Highest VPN speed": [
         "Højeste VPN-hastighed"
+      ],
+      "Premium ${ appName1 }": [
+        "Premium ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium ${ appName1 } & ${ appName2 }"
       ],
       "Premium early access": [
         "Premium tidlig adgang"
@@ -6312,6 +6349,9 @@
         "Slet ${ count } kontaktgruppe",
         "Slet ${ count } kontaktgrupper"
       ],
+      "Delete ${ value }": [
+        "Slet ${ value }"
+      ],
       "Delete permanently": [
         "Slet permanent"
       ],
@@ -6323,6 +6363,9 @@
       ],
       "Discard changes?": [
         "Kassér ændringer?"
+      ],
+      "Download ${ date }": [
+        "Download ${ date }"
       ],
       "Download unverified file?": [
         "Hent ubekræftet fil?"
