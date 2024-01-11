@@ -238,6 +238,10 @@ const deprecatedClassNames = [
         deprecatedClassName: 'no-pointer-events',
         suggestedClassName: 'pointer-events-none',
     },
+    {
+        deprecatedClassName: 'increase-click-surface',
+        suggestedClassName: 'expand-click-area',
+    },
 ];
 
 module.exports = {
