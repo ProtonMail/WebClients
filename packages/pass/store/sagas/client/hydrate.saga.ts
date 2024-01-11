@@ -31,7 +31,7 @@ function* resolveUserState(userId: string) {
 }
 
 /** Will try to decrypt the store cache and hydrate the store accordingly. Returns a
- * boolean flag indicating wether the cache was hydrated from cache or not. */
+ * boolean flag indicating wether hydration happened from cache or not. */
 export function* hydrateFromCache(
     /** define how we should merge the incoming state */
     merge: (existing: State, incoming: State) => State,
@@ -52,12 +52,10 @@ export function* hydrateFromCache(
     const user = userState.user;
     const addresses = Object.values(userState.addresses);
 
-    PassCrypto.clear();
-
     yield PassCrypto.hydrate({ user, keyPassword, addresses, snapshot: cache?.snapshot });
     yield put(stateHydrate(state));
 
-    return cache?.state !== undefined;
+    return cache?.state !== undefined && cache?.snapshot !== undefined;
 }
 
 function* hydrateWorker(options: RootSagaOptions) {
