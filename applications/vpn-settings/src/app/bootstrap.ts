@@ -2,6 +2,7 @@ import { initEvent, serverEvent, userSettingsThunk, userThunk, welcomeFlagsActio
 import * as bootstrap from '@proton/account/bootstrap';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces';
+import noop from '@proton/utils/noop';
 
 import { AccountStore, extendStore } from './store/store';
 import { extraThunkArguments } from './store/thunk';
@@ -25,7 +26,7 @@ export const bootstrapApp = async ({
     const appName = config.APP_NAME;
 
     const run = async () => {
-        const appContainer = getAppContainer();
+        const appContainerPromise = getAppContainer();
         const session = await bootstrap.loadSession({ authentication, api, pathname });
 
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
@@ -38,7 +39,7 @@ export const bootstrapApp = async ({
             dispatch(initEvent({ User: session.payload.User }));
         }
 
-        const setupModels = async () => {
+        const loadUser = async () => {
             const [user, userSettings] = await Promise.all([dispatch(userThunk()), dispatch(userSettingsThunk())]);
 
             dispatch(welcomeFlagsActions.initial(userSettings));
@@ -51,17 +52,20 @@ export const bootstrapApp = async ({
             return { user, userSettings, earlyAccessScope: undefined, scopes };
         };
 
-        const [models, eventManager] = await Promise.all([
-            setupModels(),
-            bootstrap.eventManager({ api: silentApi }),
-            bootstrap.unleashReady({ unleashClient }),
-        ]);
+        const userPromise = loadUser();
+        const evPromise = bootstrap.eventManager({ api: silentApi });
+        const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
 
+        await unleashPromise;
         // Needs unleash to be loaded.
         await bootstrap.loadCrypto({ appName, unleashClient });
-        const MainContainer = await appContainer;
+        const [MainContainer, userData, eventManager] = await Promise.all([
+            appContainerPromise,
+            userPromise,
+            evPromise,
+        ]);
         // Needs everything to be loaded.
-        await bootstrap.postLoad({ appName, authentication, ...models, history });
+        await bootstrap.postLoad({ appName, authentication, ...userData, history });
 
         extendStore({ eventManager });
         const unsubscribeEventManager = eventManager.subscribe((event) => {
@@ -77,7 +81,7 @@ export const bootstrapApp = async ({
         });
 
         return {
-            ...models,
+            ...userData,
             eventManager,
             unleashClient,
             history,

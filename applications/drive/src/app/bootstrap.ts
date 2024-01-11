@@ -42,7 +42,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
     const appName = config.APP_NAME;
 
     const run = async () => {
-        const appContainer = getAppContainer();
+        const appContainerPromise = getAppContainer();
         const session = await bootstrap.loadSession({ authentication, api, pathname });
         const history = bootstrap.createHistory({ basename: session.payload.basename, path: session.payload.path });
         const unleashClient = bootstrap.createUnleash({ api: silentApi });
@@ -55,12 +55,11 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             dispatch(initEvent({ User: session.payload.User }));
         }
 
-        const setupModels = async () => {
+        const loadUser = async () => {
             const [user, userSettings, features] = await Promise.all([
                 dispatch(userThunk()),
                 dispatch(userSettingsThunk()),
                 dispatch(fetchFeatures([FeatureCode.EarlyAccessScope])),
-                dispatch(addressesThunk()),
             ]);
 
             dispatch(welcomeFlagsActions.initial(userSettings));
@@ -72,23 +71,33 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
             return { user, userSettings, earlyAccessScope: features[FeatureCode.EarlyAccessScope], scopes };
         };
-        const ignored = () => {
+
+        const loadPreload = () => {
+            return Promise.all([api<UserSettingsResponse>(queryUserSettings()), dispatch(addressesThunk())]);
+        };
+
+        const loadPreloadButIgnored = () => {
             loadAllowedTimeZones(silentApi).catch(noop);
         };
 
-        const [models, eventManager, driveUserSettings] = await Promise.all([
-            setupModels(),
-            bootstrap.eventManager({ api: silentApi }),
-            api<UserSettingsResponse>(queryUserSettings()),
-            bootstrap.unleashReady({ unleashClient }),
-            ignored(),
-        ]);
+        const userPromise = loadUser();
+        const preloadPromise = loadPreload();
+        const evPromise = bootstrap.eventManager({ api: silentApi });
+        const unleashPromise = bootstrap.unleashReady({ unleashClient }).catch(noop);
+        loadPreloadButIgnored();
 
+        await unleashPromise;
         // Needs unleash to be loaded.
         await bootstrap.loadCrypto({ appName, unleashClient });
-        const MainContainer = await appContainer;
+        const [MainContainer, userData, eventManager] = await Promise.all([
+            appContainerPromise,
+            userPromise,
+            evPromise,
+        ]);
         // Needs everything to be loaded.
-        await bootstrap.postLoad({ appName, authentication, ...models, history });
+        await bootstrap.postLoad({ appName, authentication, ...userData, history });
+        // Preloaded models are not needed until the app starts, and also important do it postLoad as these requests might fail due to missing scopes.
+        const [driveUserSettings] = await preloadPromise;
 
         extendStore({ eventManager });
         const unsubscribeEventManager = eventManager.subscribe((event) => {
@@ -104,7 +113,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         });
 
         return {
-            ...models,
+            ...userData,
             eventManager,
             driveUserSettings,
             unleashClient,
