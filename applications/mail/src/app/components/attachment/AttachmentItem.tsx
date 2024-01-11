@@ -156,7 +156,7 @@ const AttachmentItem = ({
                 {showSecondaryAction && (
                     <button
                         type="button"
-                        className="inline-flex pr-2 pl-1 children-pointer-events-none rounded relative interactive-pseudo interactive--no-background message-attachmentSecondaryAction"
+                        className="inline-flex pr-2 pl-1 *:pointer-events-none rounded relative interactive-pseudo interactive--no-background message-attachmentSecondaryAction"
                         onClick={handleAction(false)}
                         title={secondaryActionTitle}
                         disabled={loading}

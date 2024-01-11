@@ -83,7 +83,7 @@ function CollapsedBreadcrumb({ breadcrumbs }: Props) {
                             <DropdownMenuButton
                                 {...omit(breadcrumbProps, ['noShrink'])}
                                 className={clsx([
-                                    'flex text-left flex-nowrap children-pointer-events-none',
+                                    'flex text-left flex-nowrap *:pointer-events-none',
                                     highlighted && 'text-strong',
                                 ])}
                                 title={text}
