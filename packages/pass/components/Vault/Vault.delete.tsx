@@ -23,7 +23,7 @@ const initialValues: ConfirmDeleteValues = { name: '' };
 
 export const VaultDelete: VFC<Props> = ({ vault, onClose, onSubmit }) => {
     const dispatch = useDispatch();
-    const vaultName = vault?.content?.name ?? '';
+    const vaultName = (vault?.content?.name ?? '').trim();
 
     const validateVaultDelete = ({ name }: ConfirmDeleteValues) => {
         const errors: FormikErrors<ConfirmDeleteValues> = {};
