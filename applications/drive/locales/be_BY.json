@@ -439,9 +439,6 @@
       "New message": [
         "Новае паведамленне"
       ],
-      "New upload": [
-        "Новае запампоўванне"
-      ],
       "Next": [
         "Далей"
       ],
@@ -3402,6 +3399,18 @@
         "Знойдзены ${ groupCounts } груп",
         "Знойдзены ${ groupCounts } групы"
       ],
+      "${ nbFile } encrypted file": [
+        "${ nbFile } зашыфраваны файл",
+        "${ nbFile } зашыфраваныя файлы",
+        "${ nbFile } зашыфраваных файлаў",
+        "${ nbFile } зашыфраваных файлаў"
+      ],
+      "${ nbFile } encrypted file...": [
+        "${ nbFile } зашыфраваны файл...",
+        "${ nbFile } зашыфраваныя файлы...",
+        "${ nbFile } зашыфраваных файлаў...",
+        "${ nbFile } зашыфраваных файлаў..."
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } прыпынены",
         "${ pausedCount } прыпынена",
@@ -3449,6 +3458,12 @@
         "Выбраны ${ selectedFoldersCountLocalized } меткі",
         "Выбраны ${ selectedFoldersCountLocalized } метак",
         "Выбраны ${ selectedFoldersCountLocalized } меткі"
+      ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } прапушчаны",
+        "${ skippedCount } прапушчаны",
+        "${ skippedCount } прапушчаны",
+        "${ skippedCount } прапушчаны"
       ],
       "${ speed }/s": [
         "${ speed }/с"
@@ -4209,6 +4224,9 @@
       "Signature issue": [
         "Праблема з подпісам"
       ],
+      "Skipped": [
+        "Прапушчана"
+      ],
       "Some files failed to download. Try downloading the files again.": [
         "Не ўдалося спампаваць некаторыя файлы. Паспрабуйце спампаваць файлы яшчэ раз."
       ],
@@ -4265,6 +4283,9 @@
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Гэты файл мог быць выдалены, перамешчаны або яго зрабілі недаступным. Паспрабуйце звязацца з уладальнікам файла."
+      ],
+      "This item already exists in your library": [
+        "Гэты элемент ужо існуе ў вашай бібліятэцы"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Гэта спасылка вядзе на вэб-сайт, на якім могуць паспрабаваць скрасці вашы даныя: паролі або інфармацыю аб крэдытных картках."

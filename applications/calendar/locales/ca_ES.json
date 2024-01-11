@@ -2776,6 +2776,10 @@
       "An unexpected error occurred. Import must be restarted.": [
         "S'ha produït un error inesperat. S'ha de reiniciar la importació."
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS } esdeveniment.",
+        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS } esdeveniments."
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "El fitxer ${ formattedFilename } conté un mètode invàlid i no es pot importar."
       ],
@@ -5500,6 +5504,9 @@
       "Auto": [
         "Automàtic"
       ],
+      "Automatic (${ value })": [
+        "Automàtic (${ value })"
+      ],
       "Create new group": [
         "Crea un grup nou"
       ],
@@ -6621,6 +6628,9 @@
         "Eliminar ${ count } grup de contactes",
         "Eliminar ${ count } grups de contactes"
       ],
+      "Delete ${ value }": [
+        "Elimina ${ value }"
+      ],
       "Delete event": [
         "Elimina l'esdeveniment"
       ],
@@ -7182,6 +7192,9 @@
         "Cada ${ interval } setmana, el dimecres a les ${ timesString }",
         "Cada ${ interval } setmanas, el dimecres a les ${ timesString }"
       ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Semanalment els ${ multipleDaysString }, ${ timesString }"
+      ],
       "Weekly on all days, ${ timesString }": [
         "Cada setmana, cada dia a les ${ timesString }"
       ],
@@ -7236,9 +7249,16 @@
         "Cada ${ interval } setmanes, el dijous fins ${ untilString }",
         "Cada ${ interval } setmanes, el dijous fins ${ untilString }"
       ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Cada ${ interval } setmana el Dimarts, ${ untilString }",
+        "Cada ${ interval } setmanes el Dimarts, ${ untilString }"
+      ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
         "Cada ${ interval } setmana, el dimecres fins ${ untilString }",
         "Cada ${ interval } setmanas, el dimecres fins ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Semanalment els ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days, ${ untilString }": [
         "Cada setmana, cada dia fins ${ untilString }"

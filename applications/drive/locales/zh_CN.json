@@ -421,9 +421,6 @@
       "New message": [
         "撰写邮件"
       ],
-      "New upload": [
-        "上传文件"
-      ],
       "Next": [
         "继续"
       ],
@@ -2337,6 +2334,9 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "出现意外错误，需重新开始导入。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } events.": [
+        "文件 ${ formattedFilename } 中的日程数已超过 ${ MAX_IMPORT_EVENTS }。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "您的文件 ${ formattedFilename } 包含一个无效的 method 属性，无法导入。"
@@ -4760,6 +4760,11 @@
         "${ Label.Name } 已创建"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "发件人：${ from }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "侧边栏"
@@ -5107,6 +5112,12 @@
       "Link copied to clipboard": [
         "链接已复制到剪贴板"
       ],
+      "Move ${ n } files": [
+        "移动 ${ n } 个文件"
+      ],
+      "Move ${ n } items": [
+        "移动 ${ n } 个项目"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "没有足够的空间来上传这 ${ formattedTotal }"
       ],
@@ -5214,6 +5225,9 @@
     "Option": {
       "Add to existing group": [
         "添加到已有队列"
+      ],
+      "Automatic (${ value })": [
+        "自动 (${ value })"
       ],
       "Create new group": [
         "创建群组"
@@ -5614,6 +5628,12 @@
       ],
       "Highest VPN speed": [
         "VPN 速度最快"
+      ],
+      "Premium ${ appName1 }": [
+        "高级 ${ appName1 } 账户"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "高级 ${ appName1 } 与 ${ appName2 } 账户"
       ],
       "Premium early access": [
         "抢先体验高级功能"
@@ -6047,6 +6067,9 @@
       "Delete ${ count } contacts": [
         "删除 ${ count } 联系人"
       ],
+      "Delete ${ value }": [
+        "删除 ${ value }"
+      ],
       "Delete permanently": [
         "永久删除"
       ],
@@ -6058,6 +6081,9 @@
       ],
       "Discard changes?": [
         "放弃更改？"
+      ],
+      "Download ${ date }": [
+        "下载 ${ date }"
       ],
       "Download unverified file?": [
         "下载未经验证的文件？"

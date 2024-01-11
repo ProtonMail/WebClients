@@ -400,6 +400,9 @@
       "Mark for deletion": [
         "Merk for sletting"
       ],
+      "Maximize": [
+        "Maksimer"
+      ],
       "Maximize transfers": [
         "Maksimer overføringer"
       ],
@@ -408,6 +411,9 @@
       ],
       "Merge contacts": [
         "Slå sammen kontakter"
+      ],
+      "Minimize": [
+        "Minimer"
       ],
       "Minimize transfers": [
         "Minimer overføringer"
@@ -432,9 +438,6 @@
       ],
       "New message": [
         "Ny melding"
-      ],
-      "New upload": [
-        "Ny opplasting"
       ],
       "Next": [
         "Neste"
@@ -3306,6 +3309,14 @@
         "${ groupCounts } gruppe funnet",
         "${ groupCounts } grupper funnet"
       ],
+      "${ nbFile } encrypted file": [
+        "${ nbFile } kryptert fil",
+        "${ nbFile } kryptert fil."
+      ],
+      "${ nbFile } encrypted file...": [
+        "${ nbFile } kryptert fil...",
+        "${ nbFile } krypterte filer..."
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } satt på pause",
         "${ pausedCount } satt på pause"
@@ -3337,6 +3348,10 @@
       "${ selectedFoldersCountLocalized } label selected": [
         "${ selectedFoldersCountLocalized } etikett valgt",
         "${ selectedFoldersCountLocalized } etiketter valgt"
+      ],
+      "${ skippedCount } skipped": [
+        "${ skippedCount } hoppet over",
+        "${ skippedCount } hoppet over"
       ],
       "${ speed }/s": [
         "${ speed }/s"
@@ -3374,6 +3389,9 @@
       "All (${ totalFoldersCount } label)": [
         "(${ totalFoldersCount } etikett)",
         "Alle (${ totalFoldersCount } etiketter)"
+      ],
+      "All encrypted files": [
+        "Alle krypterte filer"
       ],
       "All your changes will be lost.": [
         "Alle endringene dine vil gå tapt."
@@ -3567,11 +3585,17 @@
       "Download paused due to connection issue; it will resume automatically": [
         "Nedlastingen satt på pause på grunn av tilkoblingsproblem; den gjenopptas automatisk"
       ],
+      "Download ready": [
+        "Nedlasting klar"
+      ],
       "Downloaded": [
         "Nedlastet"
       ],
       "Downloading": [
         "Laster ned"
+      ],
+      "Downloading all encrypted files": [
+        "Laster ned alle krypterte filer"
       ],
       "Drop file here to upload": [
         "Slipp fil her for å laste opp"
@@ -3739,6 +3763,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "I mellomtiden kan du registrere for din egen ${ DRIVE_APP_NAME }-konto og beskytte dataene dine med ende-til-ende-kryptering og dele dem sikkert."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indekserer elementer ${ esProgress } av ${ totalProgressToShow }"
@@ -4018,11 +4045,24 @@
       "Restoring Photos... Please keep the tab open": [
         "Gjenoppretter bilder...Vennligst hold fanen åpen"
       ],
+      "Retry now": [
+        "Prøv igjen nå"
+      ],
       "Search cannot be enabled in this browser": [
         "Søk kan ikke aktiveres i denne nettleseren"
       ],
       "Search Enabled": [
         "Søk aktivert"
+      ],
+      "Securely downloaded ${ nbFile } file": [
+        "Lastet ned sikkert ${ nbFile } fil",
+        "Lastet ned sikkert ${ nbFile } filer"
+      ],
+      "Securely downloaded all encrypted files": [
+        "Lastet ned sikkert alle krypterte filer"
+      ],
+      "Securely downloaded all files": [
+        "Lastet sikkert ned alle filer"
       ],
       "Select a folder to move to.": [
         "Velg en mappe du vil flytte til."
@@ -4066,6 +4106,9 @@
       "Shared link not found": [
         "Delt kobling ikke funnet"
       ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "Registrer for din egen ${ DRIVE_APP_NAME }-konto og beskytt dataene dine med ende-til-ende-kryptering og del dem sikkert."
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Signaturen kan ikke valideres på grunn av nettverksfeil, vennligst prøv igjen senere."
       ],
@@ -4086,6 +4129,9 @@
       ],
       "Something went wrong, please try again later.": [
         "Noe gikk galt. Vennligst prøv igjen senere."
+      ],
+      "Something went wrong...": [
+        "Noe gikk galt..."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Abonnementet avsluttes: aktiver på nytt innen ${ byDate } for å beholde fordelene med ${ planName }. ${ reactivateLink }"
@@ -4383,6 +4429,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Dataene dine er klare til import fra ${ importedEmailAddressStrong } til din ${ BRAND_NAME }-konto."
       ],
+      "Your download is in progress": [
+        "Nedlastingen pågår"
+      ],
       "Your email will only be used for this one-time verification.": [
         "E-posten din vil kun bli brukt til denne engangsbekreftelsen."
       ],
@@ -4621,6 +4670,9 @@
       ],
       "Download anyway": [
         "Last ned uansett"
+      ],
+      "Downloading": [
+        "Laster ned"
       ],
       "Downloading ${ percentageValue }%": [
         "Laster ned ${ percentageValue }%"

@@ -430,9 +430,6 @@
       "New message": [
         "Нове повідомлення"
       ],
-      "New upload": [
-        "Нове вивантаження"
-      ],
       "Next": [
         "Далі"
       ],
@@ -2352,6 +2349,12 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Сталася неочікувана помилка. Потрібно перезапустити імпорт."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } подію.",
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } події.",
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } подій.",
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } подій."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Ваш файл ${ formattedFilename } має недійсний метод і його неможливо імпортувати."
@@ -4337,6 +4340,20 @@
         "Натисніть для подробиць"
       ]
     },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } вибрана тека",
+        "${ selectedFoldersCount } вибрані теки",
+        "${ selectedFoldersCount } вибраних тек",
+        "${ selectedFoldersCount } вибраних тек"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } вибрана мітка",
+        "${ selectedFoldersCount } вибрані мітки",
+        "${ selectedFoldersCount } вибраних міток",
+        "${ selectedFoldersCount } вибраних міток"
+      ]
+    },
     "Item": {
       "file attributes": [
         "атрибути фалу"
@@ -4873,6 +4890,11 @@
         "${ Label.Name } створено"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Від: ${ from }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Бічна панель"
@@ -5283,6 +5305,18 @@
       "Link copied to clipboard": [
         "Посилання скопійовано в буфер обміну"
       ],
+      "Move ${ n } file": [
+        "Перемістити ${ n } файл",
+        "Перемістити ${ n } файли",
+        "Перемістити ${ n } файлів",
+        "Перемістити ${ n } файлів"
+      ],
+      "Move ${ n } item": [
+        "Перемістити ${ n } елемент",
+        "Перемістити ${ n } елементи",
+        "Перемістити ${ n } елементів",
+        "Перемістити ${ n } елементів"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "Недостатньо місця для вивантаження ${ formattedTotal }"
       ],
@@ -5387,6 +5421,9 @@
     "Option": {
       "Add to existing group": [
         "Додати до наявної групи"
+      ],
+      "Automatic (${ value })": [
+        "Автоматично (${ value })"
       ],
       "Create new group": [
         "Створити нову групу"
@@ -5753,6 +5790,9 @@
       ],
       "Highest VPN speed": [
         "Найвища швидкість VPN"
+      ],
+      "Premium ${ appName1 }": [
+        "Преміум ${ appName1 }"
       ],
       "Premium early access": [
         "Ранній преміумдоступ"
@@ -6231,6 +6271,9 @@
         "Видалити ${ count } груп контактів",
         "Видалити ${ count } груп контактів"
       ],
+      "Delete ${ value }": [
+        "Видалити ${ value }"
+      ],
       "Delete permanently": [
         "Видалити остаточно"
       ],
@@ -6242,6 +6285,9 @@
       ],
       "Discard changes?": [
         "Відхилити зміни?"
+      ],
+      "Download ${ date }": [
+        "Завантажити ${ date }"
       ],
       "Download unverified file?": [
         "Завантажити неперевірені файли?"

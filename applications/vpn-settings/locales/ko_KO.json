@@ -2976,9 +2976,6 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong }(으)로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
       ],
-      "Configure SAML authentication for your organization through an identity provider like Okta, Azure or Onelogin. This will enable SAML for the whole organization.": [
-        "Okta, Azure 또는 Onelogin과 같은 인증 제공자를 통해 조직의 SAML 인증을 구성하십시오. 이 설정값은 전체 조직의 SAML 활성화가 진행됩니다."
-      ],
       "Continue with ${ freeName }": [
         "${ freeName }으로 계속"
       ],
@@ -5588,6 +5585,9 @@
       "Android": [
         "Android"
       ],
+      "Automatic (${ value })": [
+        "자동 (${ value })"
+      ],
       "Country configs": [
         "지역 설정"
       ],
@@ -6358,6 +6358,12 @@
       "Highest VPN speed": [
         "가장 빠른 VPN 속도"
       ],
+      "Premium ${ appName1 }": [
+        "Premium ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium ${ appName1 } & ${ appName2 }"
+      ],
       "Premium early access": [
         "프리미엄 얼리 엑세스"
       ],
@@ -7051,6 +7057,9 @@
       ],
       "Delete": [
         "삭제"
+      ],
+      "Delete ${ value }": [
+        "${ value }을(를) 삭제할까요"
       ],
       "Delete account": [
         "계정 삭제"

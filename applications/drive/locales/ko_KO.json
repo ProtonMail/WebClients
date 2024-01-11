@@ -427,9 +427,6 @@
       "New message": [
         "새 메세지"
       ],
-      "New upload": [
-        "새 업로드"
-      ],
       "Next": [
         "다음"
       ],
@@ -2415,6 +2412,9 @@
       "An unexpected error occurred. Import must be restarted.": [
         "알 수 없는 오류. 불러오기가 재시작되어야 함."
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } events.": [
+        "파일 ${ formattedFilename }에 이벤트가 ${ MAX_IMPORT_EVENTS }개 넘게 포함되어 있습니다."
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "사용자의 ${ formattedFilename } 파일은 유효하지 않은 방법이므로 불러올 수 없습니다."
       ],
@@ -4338,6 +4338,14 @@
         "자세한 내용을 보려면 클릭하세요"
       ]
     },
+    "Info: partial": {
+      "${ selectedFoldersCount } folders selected": [
+        "${ selectedFoldersCount }개 폴더 선택함"
+      ],
+      "${ selectedFoldersCount } labels selected": [
+        "${ selectedFoldersCount } 개 라벨 선택함"
+      ]
+    },
     "Item": {
       "file attributes": [
         "파일 속성"
@@ -4865,6 +4873,11 @@
         "${ Label.Name } 생성됨"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "보낸 사람: ${ from }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "사이드 패널"
@@ -5221,6 +5234,12 @@
       "Link copied to clipboard": [
         "링크가 클립보드에 복사됨"
       ],
+      "Move ${ n } files": [
+        "파일 ${ n }개 이동"
+      ],
+      "Move ${ n } items": [
+        "항목 ${ n }개 이동"
+      ],
       "Not enough space to upload ${ formattedTotal }": [
         "${ formattedTotal }을(를) 업로드할 공간이 없습니다"
       ],
@@ -5331,6 +5350,9 @@
     "Option": {
       "Add to existing group": [
         "병합할 그룹 추가"
+      ],
+      "Automatic (${ value })": [
+        "자동 (${ value })"
       ],
       "Create new group": [
         "새 그룹 만들기"
@@ -5752,6 +5774,12 @@
       ],
       "Highest VPN speed": [
         "가장 빠른 VPN 속도"
+      ],
+      "Premium ${ appName1 }": [
+        "Premium ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium ${ appName1 } & ${ appName2 }"
       ],
       "Premium early access": [
         "프리미엄 얼리 엑세스"
@@ -6185,6 +6213,9 @@
       "Delete ${ count } contacts": [
         "${ count }개의 연락처 삭제"
       ],
+      "Delete ${ value }": [
+        "${ value }을(를) 삭제할까요"
+      ],
       "Delete permanently": [
         "영구적으로 삭제"
       ],
@@ -6196,6 +6227,9 @@
       ],
       "Discard changes?": [
         "변경 사항을 취소할까요?"
+      ],
+      "Download ${ date }": [
+        "${ date } 다운로드"
       ],
       "Download unverified file?": [
         "인증되지 않은 파일을 다운로드할까요?"

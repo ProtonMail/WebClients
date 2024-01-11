@@ -155,9 +155,6 @@
       "Get mobile apps": [
         "Descarregue as aplicações móveis"
       ],
-      "Get the deal": [
-        "Obtenha a promoção"
-      ],
       "Help us improve": [
         "Ajude-nos a melhorar"
       ],
@@ -1282,9 +1279,6 @@
       "Full Name": [
         "Nome completo"
       ],
-      "MM/YYYY": [
-        "MM/AAAA"
-      ],
       "Other": [
         "Outro"
       ],
@@ -1300,14 +1294,14 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Introduza novamente \"${ vaultName }\" para confirmar a eliminação."
       ],
-      "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "Pesquisar ${ pluralItemType } em ${ vault.content.name }"
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Pesquisar ${ pluralItemType } em ${ vaultName }"
       ],
       "Search ${ pluralItemType } in all vaults": [
         "Pesquisar ${ pluralItemType } em todos os cofres"
       ],
-      "Search in ${ vault.content.name }": [
-        "Pesquisar em ${ vault.content.name }"
+      "Search in ${ vaultName }": [
+        "Pesquisar em ${ vaultName }"
       ],
       "Search in all vaults": [
         "Pesquisar em todos os cofres"
@@ -1470,9 +1464,6 @@
       ],
       "Empty note": [
         "Nota vazia"
-      ],
-      "Expiration Date is incomplete": [
-        "A data de expiração está incompleta"
       ],
       "Invalid alias prefix": [
         "Prefixo de alias inválido"
