@@ -196,7 +196,13 @@ export default function useActions() {
         }
 
         const linkIds = linksToMove.map(({ linkId }) => linkId);
-        const result = await links.moveLinks(abortSignal, { shareId, linkIds, newParentLinkId, newShareId });
+        const result = await links.moveLinks(abortSignal, {
+            shareId,
+            linkIds,
+            newParentLinkId,
+            newShareId,
+            silence: true,
+        });
 
         // This is a bit ugly, but the photo linkId cache is not connected
         // very well to the rest of our state.
@@ -219,6 +225,7 @@ export default function useActions() {
                             linkIds: toMoveBackIds,
                             newParentLinkId: parentLinkId,
                             newShareId,
+                            silence: true,
                         });
                     })
                 )
