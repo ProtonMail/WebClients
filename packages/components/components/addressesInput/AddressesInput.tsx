@@ -56,7 +56,7 @@ export const AddressesInputItem = forwardRef<HTMLDivElement, AddressesInputItemP
                 <Tooltip title={c('Action').t`Remove`}>
                     <button
                         {...removeProps}
-                        className="pill-remove inline-flex shrink-0 p-2 children-pointer-events-none h-full interactive"
+                        className="pill-remove inline-flex shrink-0 p-2 *:pointer-events-none h-full interactive"
                         onClick={onRemove}
                         type="button"
                     >
@@ -97,7 +97,7 @@ const AddressesInput = forwardRef<HTMLDivElement, AddressesInputProps>(function 
     return (
         <div className={clsx(['w-full flex-1 relative', className])} ref={ref} onClick={onClick}>
             <div
-                className={clsx(['flex children-min-size-auto flex-1', autocompleteContainerClassName])}
+                className={clsx(['flex *:min-size-auto flex-1', autocompleteContainerClassName])}
                 {...autocompleteContainerRest}
             >
                 <div className="flex-1 flex max-w-full max-h-full relative">

@@ -13,7 +13,7 @@ const DrawerAppSection = ({ children, className }: Props) => {
     return (
         <div
             className={clsx(
-                'drawerAppSection w-full flex children-min-size-auto flex-column gap-2 shrink-0 justify-center px-4 py-2 rounded-lg shadow-norm',
+                'drawerAppSection w-full flex *:min-size-auto flex-column gap-2 shrink-0 justify-center px-4 py-2 rounded-lg shadow-norm',
                 className
             )}
         >
