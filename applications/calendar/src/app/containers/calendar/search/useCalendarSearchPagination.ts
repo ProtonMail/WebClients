@@ -24,7 +24,7 @@ export const useCalendarSearchPagination = (
     const isFirstRenderRef = useRef(true);
     const [currentPage, setCurrentPage] = useState(getInitialPage(items, maxItemsPerPage));
 
-    const maxPage = Math.floor(items.length / maxItemsPerPage);
+    const maxPage = Math.ceil(items.length / maxItemsPerPage) - 1;
     const isPreviousEnabled = currentPage > 0;
     const isNextEnabled = currentPage < maxPage;
 
