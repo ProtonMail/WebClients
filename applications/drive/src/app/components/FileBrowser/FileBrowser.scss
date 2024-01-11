@@ -2,7 +2,7 @@
 
 .file-browser-header-checkbox-cell,
 .file-browser-list-checkbox-cell {
-	position: relative; // Because of .increase-click-surface
+	position: relative; // Because of .expand-click-area
 	padding-inline: 1em;
 	inline-size: calc(#{rem(16)} + 2em);
 }
