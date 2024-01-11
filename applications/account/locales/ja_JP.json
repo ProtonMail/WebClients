@@ -2912,6 +2912,22 @@
         "${ dateString } まで"
       ]
     },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "毎日、${ timesString }"
+      ],
+      "Every ${ interval } days, ${ timesString }": [
+        "${ interval } 日毎、${ timesString }"
+      ]
+    },
+    "Daily recurring event, frequency (until)": {
+      "Daily, ${ untilString }": [
+        "毎日、${ untilString }"
+      ],
+      "Every ${ interval } days, ${ untilString }": [
+        "${ interval } 日毎、${ untilString }"
+      ]
+    },
     "Day": {
       "Friday": [
         "金曜日"
@@ -4029,6 +4045,9 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "予期しないエラーが発生しました。インポートを再起動する必要があります。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } events.": [
+        "ファイル ${ formattedFilename } には ${ MAX_IMPORT_EVENTS } 以上の予定が含まれています。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "ファイル　${ formattedFilename }はメソッドが正しくなく、インポートできません。"
@@ -5644,6 +5663,9 @@
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } 以上"
       ],
+      "${ remainingAddresses.length } more addresses": [
+        "${ remainingAddresses.length } 個のアドレスが追加されました"
+      ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
         "${ providerCalendars.length } のうち ${ selectedCalendarsTotal } のカレンダー"
       ],
@@ -6232,6 +6254,9 @@
       "for choosing ${ product }": [
         "${ product } を選択した場合"
       ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "シングル サインオン (SAML SSO) を使用する組織のメンバー向け"
+      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "他のアカウントで受信したメールを、安全な ${ MAIL_APP_NAME } 受信トレイへ転送します。"
       ],
@@ -6589,6 +6614,9 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "自分のデバイス以外からサインインする場合はプライベートブラウジングウィンドウを使用し、作業完了後にウィンドウを閉じてください。${ learnMore }"
       ],
+      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
+        "現在ベータ版として利用できるデスクトップ アプリを使用すると、デスクトップから ${ MAIL_APP_NAME } を簡単に起動でき、ブラウザに邪魔されることなく集中力を維持できます。"
+      ],
       "Number of dedicated servers in the organization": [
         "組織内の専用サーバー数"
       ],
@@ -6708,6 +6736,9 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "注意: このドメインを削除することにより、このアドレスに関連付けられているすべてのアドレスは無効になります。"
+      ],
+      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "このフィルター ${ nameDeleted } を削除すると、トリガーされるすべての自動アクションの処理が停止されることに注意してください。"
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "確認ボタンをクリックすると、アカウントに ${ creditsRemaining } クレジットが残ります。"
@@ -7645,6 +7676,9 @@
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "組織パスワードは、管理者権限を与えたい他のユーザーと共有できます。アカウントにアクセスができなくなった際の緊急回復用コードとしても使用しますので、このパスワードは安全な場所に保管してください。"
       ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "あなたの組織ではシングル サインオン (SSO) を使用しています。 SSO プロバイダーを続行するには、「サインイン」を押します。"
+      ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "組織の電子メールは、組織キーを使用したエンドツーエンドの暗号化で保護されています。 このフィンガープリントを使用して、アカウントのすべての管理者が同じキーを持っていることを確認できます。"
       ],
@@ -7711,6 +7745,14 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "未払いによるサービスの中断を避けるため、少なくとも 1 つの有効な支払い方法を設定しておく必要があります。"
+      ]
+    },
+    "Info: partial": {
+      "${ selectedFoldersCount } folders selected": [
+        "${ selectedFoldersCount } 件のフォルダーを選択済み"
+      ],
+      "${ selectedFoldersCount } labels selected": [
+        "${ selectedFoldersCount } 件のラベルが選択済み"
       ]
     },
     "Info; access rights for shared calendar": {
@@ -9077,6 +9119,11 @@
         "設定が保存されました"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "送信者: ${ from }"
+      ]
+    },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
         "新しいカレンダーを追加するには、既存のカレンダーを削除します。"
@@ -9412,6 +9459,22 @@
       ],
       "Monthly ${ onDayString }": [
         "毎月 ${ onDayString }"
+      ]
+    },
+    "Monthly recurring event, frequency (times)": {
+      "Every ${ interval } months ${ onDayString }, ${ timesString }": [
+        "${ interval } か月毎の ${ onDayString } 、${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "毎月 ${ onDayString } 、${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } months ${ onDayString }, ${ untilString }": [
+        "${ interval } か月毎の ${ onDayString } 、${ untilString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "毎月 ${ onDayString } 、${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -10648,6 +10711,9 @@
       ],
       "Auto": [
         "自動"
+      ],
+      "Automatic (${ value })": [
+        "自動 (${ value })"
       ],
       "Country configs": [
         "各国の設定ファイル"
@@ -11916,6 +11982,12 @@
       "Highest VPN speed": [
         "最高速 VPN"
       ],
+      "Premium ${ appName1 }": [
+        "${ appName1 } プレミアム"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "${ appName1 } と ${ appName2 } プレミアム"
+      ],
       "Premium early access": [
         "プレミアム早期アクセス"
       ],
@@ -12939,6 +13011,9 @@
       ],
       "Decrypt key": [
         "キーを復号"
+      ],
+      "Delete ${ value }": [
+        "${ value } を削除しますか"
       ],
       "Delete account": [
         "アカウントの削除"
@@ -14201,6 +14276,109 @@
         "毎週水曜日"
       ]
     },
+    "Weekly recurring event, frequency (times)": {
+      "Every ${ interval } weeks on ${ multipleDaysString }, ${ timesString }": [
+        "${ interval } 週間毎の ${ multipleDaysString } 、${ timesString }"
+      ],
+      "Every ${ interval } weeks on all days, ${ timesString }": [
+        "${ interval } 週間毎の全曜日、${ timesString }"
+      ],
+      "Every ${ interval } weeks on Friday, ${ timesString }": [
+        "${ interval } 週間毎の金曜日、${ timesString }"
+      ],
+      "Every ${ interval } weeks on Saturday, ${ timesString }": [
+        "${ interval } 週間毎の土曜日、${ timesString }"
+      ],
+      "Every ${ interval } weeks on Thursday, ${ timesString }": [
+        "${ interval } 週間毎の木曜日、${ timesString }"
+      ],
+      "Every ${ interval } weeks on Wednesday, ${ timesString }": [
+        "${ interval } 週間毎の水曜日、${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "毎週 ${ multipleDaysString } 、${ timesString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "毎週の全曜日、${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "毎週金曜日、${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "毎週月曜日、${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "毎週土曜日、${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "毎週日曜日、${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "毎週木曜日、${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "毎週火曜日、${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "毎週水曜日、${ timesString }"
+      ]
+    },
+    "Weekly recurring event, frequency (until)": {
+      "Every ${ interval } weeks on ${ multipleDaysString }, ${ untilString }": [
+        "${ interval } 週間毎の ${ multipleDaysString } 、${ untilString }"
+      ],
+      "Every ${ interval } weeks on all days, ${ untilString }": [
+        "${ interval } 週間毎の全曜日、${ untilString }"
+      ],
+      "Every ${ interval } weeks on Friday, ${ untilString }": [
+        "${ interval } 週間毎の金曜日、${ untilString }"
+      ],
+      "Every ${ interval } weeks on Monday, ${ untilString }": [
+        "${ interval } 週間毎の月曜日、${ untilString }"
+      ],
+      "Every ${ interval } weeks on Saturday, ${ untilString }": [
+        "${ interval } 週間毎の土曜日、${ untilString }"
+      ],
+      "Every ${ interval } weeks on Sunday, ${ untilString }": [
+        "${ interval } 週間毎の日曜日、${ untilString }"
+      ],
+      "Every ${ interval } weeks on Thursday, ${ untilString }": [
+        "${ interval } 週間毎の木曜日、${ untilString }"
+      ],
+      "Every ${ interval } weeks on Tuesday, ${ untilString }": [
+        "${ interval } 週間毎の火曜日、${ untilString }"
+      ],
+      "Every ${ interval } weeks on Wednesday, ${ untilString }": [
+        "${ interval } 週間毎の水曜日、${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "毎週 ${ multipleDaysString } 、${ untilString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "毎週のすべての日、${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "毎週金曜日、${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "毎週月曜日、${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "毎週土曜日、${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "毎週日曜日、${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "毎週木曜日、${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "毎週火曜日、${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "毎週水曜日、${ untilString }"
+      ]
+    },
     "Weekly recurring event, repeats on (multiple days), frequency": {
       "Friday": [
         "金曜日"
@@ -14230,6 +14408,22 @@
       ],
       "Yearly": [
         "年払い"
+      ]
+    },
+    "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } years, ${ timesString }": [
+        "${ interval } 年毎、${ timesString }"
+      ],
+      "Yearly, ${ timesString }": [
+        "毎年、${ timesString }"
+      ]
+    },
+    "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } years, ${ untilString }": [
+        "${ interval } 年毎、${ untilString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "毎年、${ untilString }"
       ]
     }
   }

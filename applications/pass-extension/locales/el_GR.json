@@ -182,9 +182,6 @@
       "Get mobile apps": [
         "Αποκτήστε εφαρμογές κινητών"
       ],
-      "Get the deal": [
-        "Αποκτήστε την προσφορά"
-      ],
       "Help us improve": [
         "Βοηθήστε μας να βελτιωθούμε"
       ],
@@ -397,14 +394,6 @@
       ],
       "Your password manager not here? Request it.": [
         "Ο διαχειριστής κωδικών πρόσβασης σας δεν είναι εδώ; Ζητήστε το."
-      ]
-    },
-    "Badge": {
-      "Early access": [
-        "Πρώιμη πρόσβαση"
-      ],
-      "Limited time": [
-        "Περιορισμένος χρόνος"
       ]
     },
     "bf2023: Info": {
@@ -846,9 +835,6 @@
       "Drop to import": [
         "Απόθεση για εισαγωγή"
       ],
-      "Early access to ${ PASS_APP_NAME } web app": [
-        "Πρώιμη πρόσβαση στη ${ PASS_APP_NAME } εφαρμογή ιστού"
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Εισαγάγετε εύκολα τους υπάρχοντες κωδικούς πρόσβασής σας στο ${ PASS_APP_NAME }."
       ],
@@ -995,9 +981,6 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Η ιδιοκτησία μεταβιβάστηκε με επιτυχία. Δεν είστε πλέον ο κάτοχος αυτής της κρύπτης."
       ],
-      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
-        "Pass Plus για ${ eoyRelativePrice }/μήν, συμπεριλαμβανομένης της πρώιμης πρόσβασης στην εφαρμογή ιστού."
-      ],
       "Pass Plus trial": [
         "Δοκιμή Pass Plus"
       ],
@@ -1033,9 +1016,6 @@
       ],
       "Please enter your current PIN code to continue": [
         "Παρακαλούμε εισάγετε τον τρέχον κωδικό PIN σας για να συνεχίσετε"
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Αναβαθμίστε για να έχετε πρώιμη πρόσβαση στη ${ PASS_APP_NAME } εφαρμογή ιστού"
       ],
       "Press Enter to copy": [
         "Πατήστε Enter για αντιγραφή"
@@ -1136,9 +1116,6 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Αναβάθμιση ${ PASS_APP_NAME }"
-      ],
-      "Upgrade Now to Unlock Premium Features": [
-        "Αναβαθμίστε τώρα για να ξεκλειδώσετε Premium χαρακτηριστικά"
       ],
       "Use vaults to share this item with others.": [
         "Χρησιμοποιήστε κρύπτες για να μοιραστείτε αυτό το στοιχείο με άλλους."
@@ -1403,6 +1380,9 @@
       "Invitations": [
         "Προσκλήσεις"
       ],
+      "Item ID": [
+        "Αναγνωριστικό στοιχείου"
+      ],
       "Language": [
         "Γλώσσα"
       ],
@@ -1604,6 +1584,9 @@
       "Vault": [
         "Κρύπτη"
       ],
+      "Vault ID": [
+        "ID Κρύπτης"
+      ],
       "View details": [
         "Προβολή λεπτομερειών"
       ],
@@ -1698,9 +1681,6 @@
       "Full Name": [
         "Ονοματεπώνυμο"
       ],
-      "MM/YYYY": [
-        "MM/ΕΕΕΕ"
-      ],
       "Other": [
         "Άλλο"
       ],
@@ -1716,14 +1696,14 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Επαναπληκτρολογήστε \"${ vaultName }\" για να επιβεβαιώσετε τη διαγραφή"
       ],
-      "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "Αναζήτηση ${ pluralItemType } στη ${ vault.content.name }"
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Αναζήτηση ${ pluralItemType } στη ${ vaultName }"
       ],
       "Search ${ pluralItemType } in all vaults": [
         "Αναζήτηση ${ pluralItemType } σε όλες τις κρύπτες"
       ],
-      "Search in ${ vault.content.name }": [
-        "Αναζήτηση σε ${ vault.content.name }"
+      "Search in ${ vaultName }": [
+        "Αναζήτηση σε ${ vaultName }"
       ],
       "Search in all vaults": [
         "Αναζήτηση σε όλες τις κρύπτες"
@@ -1871,9 +1851,6 @@
       "Update available": [
         "Υπάρχει διαθέσιμη ενημέρωση"
       ],
-      "Upgrade to Unlock Premium Features": [
-        "Αναβαθμίστε για να Ξεκλειδώσετε Προηγμένες Λειτουργίες"
-      ],
       "Use my email": [
         "Χρήση της διεύθυνσης ηλεκτρονικού ταχυδρομείου μου"
       ],
@@ -1937,9 +1914,6 @@
       ],
       "Empty note": [
         "Κενή σημείωση"
-      ],
-      "Expiration Date is incomplete": [
-        "Η Ημερομηνία Λήξης είναι ελλιπής"
       ],
       "Invalid alias prefix": [
         "Μην έγκυρο πρόθεμα ψευδωνύμου"

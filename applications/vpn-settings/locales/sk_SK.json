@@ -5712,6 +5712,9 @@
       ]
     },
     "Option": {
+      "Automatic (${ value })": [
+        "Automaticky (${ value })"
+      ],
       "Country configs": [
         "Konfigurácia krajiny"
       ],
@@ -5732,6 +5735,9 @@
       ],
       "My reason isn't listed": [
         "Môj dôvod nie je na zozname"
+      ],
+      "No permission": [
+        "Žiadne oprávnenie"
       ],
       "Organization only": [
         "Len z organizácie"
@@ -5905,6 +5911,9 @@
       ]
     },
     "Permission": {
+      "No permission": [
+        "Žiadne oprávnenie"
+      ],
       "Organization only": [
         "Len z organizácie"
       ],
@@ -6526,6 +6535,12 @@
       ],
       "Highest VPN speed": [
         "Najvyššia rýchlosť VPN"
+      ],
+      "Premium ${ appName1 }": [
+        "Prémiový ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Prémiový ${ appName1 } a ${ appName2 }"
       ],
       "Premium early access": [
         "Prémiový predbežný prístup"
