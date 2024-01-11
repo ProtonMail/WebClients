@@ -1,35 +1,37 @@
+@use 'sass:map';
 @import '~@proton/styles/scss/lib';
 
-.transfer-modal {
+.share-transfer-manager {
 	background-color: white;
 	border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+	z-index: map.get($z-indexes, 'transfer-manager');
 
 	&--failed {
-		.transfer-modal-header {
+		.share-transfer-manager-header {
 			background-color: var(--signal-danger-minor-2);
 		}
 
-		.transfer-modal-content {
+		.share-transfer-manager-content {
 			border-color: var(--signal-danger);
 		}
 	}
 
 	&--canceled {
-		.transfer-modal-header {
+		.share-transfer-manager-header {
 			background-color: var(--background-weak);
 		}
 
-		.transfer-modal-content {
+		.share-transfer-manager-content {
 			border-color: var(--border-norm);
 		}
 	}
 }
 
-.transfer-modal-header {
+.share-transfer-manager-header {
 	background-color: var(--primary-minor-2);
 }
 
-.transfer-modal-content {
+.share-transfer-manager-content {
 	border-block-start: 1px solid var(--primary);
 	max-block-size: em(400);
 
