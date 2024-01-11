@@ -104,6 +104,7 @@ export const createPassCrypto = (options: PassCryptoOptions): PassCryptoWorker =
 
         async hydrate({ user, addresses, keyPassword, snapshot }) {
             logger.info('[PassCrypto] Hydrating crypto state');
+            worker.clear(); /* clear when re-hydrating */
 
             try {
                 const userKeys = await getDecryptedUserKeysHelper(user, keyPassword);
@@ -124,9 +125,10 @@ export const createPassCrypto = (options: PassCryptoOptions): PassCryptoWorker =
                     context.shareManagers = new Map(shareManagers);
                     logger.info('[PassCrypto] Hydrated from local snapshot');
                 }
-            } catch (e) {
-                logger.warn('[PassCrypto] Hydration failed', e);
-                throw new PassCryptoHydrationError('Hydration failure');
+            } catch (err) {
+                logger.warn('[PassCrypto] Hydration failed', err);
+                const message = err instanceof Error ? err.message : 'unknown error';
+                throw new PassCryptoHydrationError(`Hydration failure (${message})`);
             }
 
             unregisterInactiveShares();

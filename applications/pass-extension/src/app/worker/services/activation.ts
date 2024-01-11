@@ -19,7 +19,6 @@ import { logger } from '@proton/pass/utils/logger';
 import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
 import { getEpoch, msToEpoch } from '@proton/pass/utils/time/epoch';
 import { parseUrl } from '@proton/pass/utils/url/parser';
-import noop from '@proton/utils/noop';
 
 import { checkExtensionPermissions } from '../../../lib/utils/permissions';
 import { isPopupPort } from '../../../lib/utils/port';
@@ -72,8 +71,10 @@ export const createActivationService = () => {
     };
 
     /* throttle update checks for updates every hour */
-    const setupUpdateAlarm = async () => {
+    const handleActivation = async () => {
         try {
+            logger.info('[Activation] activating worker [alarms cleared - checking for update]');
+            await browser.alarms.clearAll();
             const alarmRegistered = await browser.alarms.get(UPDATE_ALARM_NAME);
             if (!alarmRegistered) browser.alarms.create(UPDATE_ALARM_NAME, { periodInMinutes: 60 });
         } catch {}
@@ -84,6 +85,7 @@ export const createActivationService = () => {
      * if not in production - use sync.html session to workaround the
      * the SSL handshake (net:ERR_SSL_CLIENT_AUTH_CERT_NEEDED) */
     const handleStartup = withContext(async (ctx) => {
+        await handleActivation();
         const loggedIn = await ctx.service.auth.init({ forceLock: true, retryable: true });
 
         if (ENV === 'development' && RESUME_FALLBACK) {
@@ -99,10 +101,7 @@ export const createActivationService = () => {
      * - Re-inject content-scripts to avoid stale extension contexts
      *   only on Chrome as Firefox handles content-script re-injection */
     const handleInstall = withContext(async (ctx, details: Runtime.OnInstalledDetailsType) => {
-        await browser.alarms
-            .clearAll()
-            .then(() => setupUpdateAlarm())
-            .catch(noop);
+        await handleActivation();
 
         if (details.reason === 'update') {
             if (ENV === 'production') {

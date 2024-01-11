@@ -11,13 +11,13 @@ import type { FieldProps } from 'formik';
 
 import { InputFieldTwo, PasswordInputTwo } from '@proton/components';
 import type { InputFieldOwnProps } from '@proton/components/components/v2/field/InputField';
+import { useFieldControl } from '@proton/pass/hooks/useFieldControl';
 
 type PasswordFieldProps = FieldProps & InputFieldOwnProps;
 
-export const PasswordField: FC<PasswordFieldProps> = ({ field, form, ...rest }) => {
-    const { name } = field;
-    const { touched, errors } = form;
-    const error = touched[name] && errors[name];
+export const PasswordField: FC<PasswordFieldProps> = (fieldProps) => {
+    const { field, form, ...rest } = fieldProps;
+    const { error } = useFieldControl(fieldProps);
 
     return (
         <div className="flex flex-nowrap items-end mb-3">

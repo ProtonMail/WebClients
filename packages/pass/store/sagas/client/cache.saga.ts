@@ -1,6 +1,7 @@
 import type { Action, AnyAction } from 'redux';
 import { fork, race, select, take, takeLatest } from 'redux-saga/effects';
 
+import { clientReady } from '@proton/pass/lib/client';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { CACHE_SALT_LENGTH, getCacheEncryptionKey } from '@proton/pass/lib/crypto/utils/cache.encrypt';
 import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
@@ -9,8 +10,7 @@ import { type WithCache, isCachingAction } from '@proton/pass/store/actions/with
 import { asIfNotOptimistic } from '@proton/pass/store/optimistic/selectors/select-is-optimistic';
 import { reducerMap } from '@proton/pass/store/reducers';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
-import { AppStatus, PassEncryptionTag } from '@proton/pass/types';
-import { oneOf } from '@proton/pass/utils/fp/predicates';
+import { PassEncryptionTag } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { objectFilter } from '@proton/pass/utils/object/filter';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
@@ -22,7 +22,7 @@ function* cacheWorker({ meta, type }: WithCache<AnyAction>, { getAppState, getAu
     if (meta.throttle) yield wait(CACHE_THROTTLING_TIMEOUT);
 
     const loggedIn = getAuthStore().hasSession();
-    const booted = oneOf(AppStatus.READY, AppStatus.BOOTING)(getAppState().status);
+    const booted = clientReady(getAppState().status);
 
     if (loggedIn && booted && PassCrypto.ready) {
         try {
