@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { c } from 'ttag';
-
 import * as bootstrap from '@proton/account/bootstrap';
 import {
     ApiProvider,
@@ -18,7 +16,7 @@ import {
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import createApi from '@proton/shared/lib/api/createApi';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 
 import * as config from './config';
 import PublicSharedLinkContainer from './containers/PublicSharedLinkContainer';
@@ -50,7 +48,7 @@ const UrlsApp = () => {
                 setState({ store });
             } catch (error: any) {
                 setState({
-                    error: getApiErrorMessage(error) || error?.message || c('Error').t`Unknown error`,
+                    error: getNonEmptyErrorMessage(error),
                 });
             }
         })();

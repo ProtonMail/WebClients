@@ -1,7 +1,6 @@
 import { FunctionComponent, useState } from 'react';
 
 import FlagProvider from '@protontech/proxy-client-react';
-import { c } from 'ttag';
 
 import {
     ErrorBoundary,
@@ -12,7 +11,7 @@ import {
 } from '@proton/components';
 import StandardPrivateApp from '@proton/components/containers/app/StandardPrivateApp';
 import useEffectOnce from '@proton/hooks/useEffectOnce';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 import { bootstrapApp } from './bootstrap';
@@ -42,7 +41,7 @@ const PrivateApp = ({ store, locales }: Props) => {
             } catch (error: any) {
                 setState({
                     error: {
-                        message: getApiErrorMessage(error) || error?.message || c('Error').t`Unknown error`,
+                        message: getNonEmptyErrorMessage(error),
                     },
                 });
             }

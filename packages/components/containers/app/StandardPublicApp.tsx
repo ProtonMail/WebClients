@@ -1,11 +1,9 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { c } from 'ttag';
-
 import * as bootstrap from '@proton/account/bootstrap';
 import { NotificationsChildren } from '@proton/components/containers';
-import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 import { useConfig } from '../../hooks';
@@ -34,7 +32,7 @@ const StandardPublicApp = ({ loader, locales = {}, children }: Props) => {
             .then(() => setLoading(false))
             .catch((error) => {
                 setError({
-                    message: getApiErrorMessage(error) || error?.message || c('Error').t`Unknown error`,
+                    message: getNonEmptyErrorMessage(error),
                 });
             });
     }, []);
