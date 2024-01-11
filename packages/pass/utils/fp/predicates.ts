@@ -1,6 +1,22 @@
 import type { Unpack } from '@proton/pass/types';
 
-type Predicate<Params extends any[] = any[]> = (...args: Params) => boolean;
+type Predicate<T extends any[] = any[]> = (...a: T) => boolean;
+type TypePredicate<A, B extends A> = (a: A) => a is B;
+
+type PredicateCombinator<P extends Predicate<any>, T extends P[], R = Unpack<T>> = R extends TypePredicate<
+    infer A,
+    infer B
+>
+    ? (a: A) => a is B
+    : R extends (a: infer A) => boolean
+      ? (a: A) => boolean
+      : never;
+
+export const or = <P extends Predicate<any>, T extends P[]>(...guards: T) =>
+    ((arg: any) => guards.some((guard) => guard(arg))) as PredicateCombinator<P, T>;
+
+export const and = <P extends Predicate<any>, T extends P[]>(...guards: T) =>
+    ((arg: any) => guards.every((guard) => guard(arg))) as PredicateCombinator<P, T>;
 
 /* inverts a predicate function :
  * const isPositive = (x: number) => x >= 0;
@@ -9,20 +25,6 @@ export const invert =
     <T extends Predicate = Predicate>(predicate: T): ((...args: Parameters<T>) => boolean) =>
     (...args: Parameters<T>) =>
         !predicate(...args);
-
-export const or =
-    <T extends Predicate[] = Predicate[], P extends Predicate = Unpack<T>>(
-        ...predicates: T
-    ): ((...args: Parameters<P>) => boolean) =>
-    (...args: Parameters<P>) =>
-        predicates.some((fn) => fn(...args));
-
-export const and =
-    <T extends Predicate[] = Predicate[], P extends Predicate = Unpack<T>>(
-        ...predicates: T
-    ): ((...args: Parameters<P>) => boolean) =>
-    (...args: Parameters<P>) =>
-        predicates.every((fn) => fn(...args));
 
 export const oneOf =
     <T extends any>(...args: T[]) =>
