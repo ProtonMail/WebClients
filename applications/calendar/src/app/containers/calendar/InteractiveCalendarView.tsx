@@ -136,6 +136,7 @@ import {
     UpdatePersonalPartOperation,
 } from '../../interfaces/Invite';
 import CalendarView from './CalendarView';
+import { EscapeTryBlockError } from './EscapeTryBlockError';
 import CloseConfirmationModal from './confirmationModals/CloseConfirmation';
 import DeleteConfirmModal from './confirmationModals/DeleteConfirmModal';
 import DeleteRecurringConfirmModal from './confirmationModals/DeleteRecurringConfirmModal';
@@ -340,7 +341,7 @@ const InteractiveCalendarView = ({
         createEventModal,
     } = modalsMap;
 
-    const confirm = useRef<{ resolve: (param?: any) => any; reject: () => any }>();
+    const confirm = useRef<{ resolve: (param?: any) => void; reject: (error: EscapeTryBlockError) => void }>();
 
     const contacts = useContactEmails()[0] || [];
     const displayNameEmailMap = useMemo(() => {
@@ -1361,7 +1362,15 @@ const InteractiveCalendarView = ({
                 changeDate(newStartDate, hasChanged);
             }
         } catch (e: any) {
-            createNotification({ text: getNonEmptyErrorMessage(e), type: 'error' });
+            if (e instanceof EscapeTryBlockError) {
+                if (e.recursive) {
+                    // we need to escape the outer block
+                    throw new EscapeTryBlockError();
+                }
+                // else we ignore the error as its only purpose is to escape the try block
+            } else {
+                createNotification({ text: getNonEmptyErrorMessage(e), type: 'error' });
+            }
         } finally {
             isSavingEvent.current = false;
         }
@@ -1420,7 +1429,15 @@ const InteractiveCalendarView = ({
             // call the calendar event managers to trigger an ES IndexedDB sync (needed in case you search immediately for the events you just deleted)
             void calendarCall(uniqueCalendarIDs);
         } catch (e: any) {
-            createNotification({ text: getNonEmptyErrorMessage(e), type: 'error' });
+            if (e instanceof EscapeTryBlockError) {
+                if (e.recursive) {
+                    // we need to escape the outer block
+                    throw new EscapeTryBlockError();
+                }
+                // else we ignore the error as its only purpose is to escape the try block
+            } else {
+                createNotification({ text: getNonEmptyErrorMessage(e), type: 'error' });
+            }
         }
     };
 
@@ -1575,7 +1592,7 @@ const InteractiveCalendarView = ({
                     {...sendWithErrorsConfirmationModal.props}
                     onClose={() => {
                         closeModal('sendWithErrorsConfirmationModal');
-                        confirm.current?.reject();
+                        confirm.current?.reject(new EscapeTryBlockError(true));
                     }}
                     onConfirm={(props) => {
                         closeModal('sendWithErrorsConfirmationModal');
@@ -1587,7 +1604,7 @@ const InteractiveCalendarView = ({
                 <DeleteConfirmModal
                     isOpen={deleteConfirmModal.isOpen}
                     onClose={() => {
-                        confirm.current?.reject();
+                        confirm.current?.reject(new EscapeTryBlockError(true));
                         closeModal('deleteConfirmModal');
                     }}
                     onConfirm={(data) => {
@@ -1602,7 +1619,7 @@ const InteractiveCalendarView = ({
                     isOpen={deleteRecurringConfirmModal.isOpen}
                     {...deleteRecurringConfirmModal.props}
                     onClose={() => {
-                        confirm.current?.reject();
+                        confirm.current?.reject(new EscapeTryBlockError(true));
                         closeModal('deleteRecurringConfirmModal');
                     }}
                     onConfirm={(data) => {
@@ -1616,7 +1633,7 @@ const InteractiveCalendarView = ({
                     isOpen={equivalentAttendeesModal.isOpen}
                     {...equivalentAttendeesModal.props}
                     onClose={() => {
-                        confirm.current?.reject();
+                        confirm.current?.reject(new EscapeTryBlockError(true));
                         closeModal('equivalentAttendeesModal');
                     }}
                 />
@@ -1626,7 +1643,7 @@ const InteractiveCalendarView = ({
                 isOpen={confirmModal.isOpen}
                 onClose={() => {
                     closeModal('confirmModal');
-                    confirm.current?.reject();
+                    confirm.current?.reject(new EscapeTryBlockError());
                 }}
                 onSubmit={() => {
                     closeModal('confirmModal');
@@ -1644,7 +1661,7 @@ const InteractiveCalendarView = ({
                     inviteActions={editRecurringConfirmModal.props.inviteActions}
                     onClose={() => {
                         closeModal('editRecurringConfirmModal');
-                        confirm.current?.reject();
+                        confirm.current?.reject(new EscapeTryBlockError(true));
                     }}
                     onConfirm={(data) => {
                         closeModal('editRecurringConfirmModal');
@@ -1659,7 +1676,7 @@ const InteractiveCalendarView = ({
                     {...editSingleConfirmModal.props}
                     onClose={() => {
                         closeModal('editSingleConfirmModal');
-                        confirm.current?.reject();
+                        confirm.current?.reject(new EscapeTryBlockError(true));
                     }}
                     onConfirm={(data) => {
                         closeModal('editSingleConfirmModal');
