@@ -240,17 +240,17 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
     return (
         <div
             className={clsx(
-                'transfer-modal fixed bottom-0 right-0 border border-primary w-full md:min-w-custom max-w-custom m-0 md:mr-10 overflow-hidden',
-                currentDownload.state === TransferState.Canceled && 'transfer-modal--canceled border-norm',
+                'share-transfer-manager fixed bottom-0 right-0 border border-primary w-full md:min-w-custom max-w-custom m-0 md:mr-10 overflow-hidden',
+                currentDownload.state === TransferState.Canceled && 'share-transfer-manager--canceled border-norm',
                 (currentDownload.state === TransferState.Error ||
                     currentDownload.state === TransferState.NetworkError) &&
-                    'transfer-modal--failed border-danger'
+                    'share-transfer-manager--failed border-danger'
             )}
             style={{ '--min-w-custom': '27.5em', '--max-w-custom': '31.25em' }}
         >
             {currentDownload.state === TransferState.Progress ? (
                 <button
-                    className="transfer-modal-header w-full flex items-center justify-space-between"
+                    className="share-transfer-manager-header w-full flex items-center justify-space-between"
                     onClick={() => setIsMinimized(!isMinimized)}
                 >
                     <div className="flex items-center gap-2 pl-3">
@@ -262,7 +262,7 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
                             as="span"
                             icon
                             shape="ghost"
-                            data-testid="transfer-modal:minimize-maximize"
+                            data-testid="share-transfer-manager:minimize-maximize"
                             onClick={() => setIsMinimized(!isMinimized)}
                         >
                             <Icon
@@ -273,12 +273,12 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
                     </Tooltip>
                 </button>
             ) : (
-                <div className="transfer-modal-header w-full flex items-center justify-space-between">
+                <div className="share-transfer-manager-header w-full flex items-center justify-space-between">
                     <div className="flex items-center gap-2 pl-3">
                         {getHeaderText({ transferState: currentDownload.state, percentageValue })}
                     </div>
                     <Tooltip title={c('Action').t`Close`} onClick={() => clearDownloads()}>
-                        <Button icon shape="ghost" data-testid="transfer-modal:close">
+                        <Button icon shape="ghost" data-testid="share-transfer-manager:close">
                             <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
                         </Button>
                     </Tooltip>
@@ -286,10 +286,10 @@ const SharedPageTransferManager = ({ rootItem }: Props) => {
             )}
             <div
                 className={clsx(
-                    'transfer-modal-content',
+                    'share-transfer-manager-content',
                     isMinimized &&
                         currentDownload.state === TransferState.Progress &&
-                        'transfer-modal-content--minimized'
+                        'share-transfer-manager-content--minimized'
                 )}
             >
                 {!isProtonUser &&
