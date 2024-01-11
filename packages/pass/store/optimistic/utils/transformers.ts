@@ -1,4 +1,4 @@
-import type { AnyAction } from 'redux';
+import type { Action } from 'redux';
 
 import type { HistoryItem, OptimisticReducersMapObject, WrappedOptimisticState } from '../types';
 import { isCombinedOptimisticReducer } from './assertions';
@@ -21,7 +21,7 @@ export const unwrapOptimisticState = <T>(state: WrappedOptimisticState<T>): T =>
 };
 
 /* Unwraps the underlying actionfrom an OptimisticHistoryItem */
-export const getActionFromHistoryItem = (item: HistoryItem): AnyAction => item.action;
+export const getActionFromHistoryItem = (item: HistoryItem): Action => item.action;
 
 /**
  * Sanitizes an optimistic reducer map object by recursively
