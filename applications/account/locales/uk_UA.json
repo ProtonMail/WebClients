@@ -3832,6 +3832,12 @@
       "An unexpected error occurred. Import must be restarted.": [
         "Сталася неочікувана помилка. Потрібно перезапустити імпорт."
       ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } подію.",
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } події.",
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } подій.",
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS } подій."
+      ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Ваш файл ${ formattedFilename } має недійсний метод і його неможливо імпортувати."
       ],
@@ -7600,6 +7606,20 @@
         "Щоб уникнути будь-яких переривань роботи сервісу через несплачені рахунки, будь ласка, переконайтеся, що у вас є збережений принаймні 1 дійсний спосіб оплати."
       ]
     },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } вибрана тека",
+        "${ selectedFoldersCount } вибрані теки",
+        "${ selectedFoldersCount } вибраних тек",
+        "${ selectedFoldersCount } вибраних тек"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } вибрана мітка",
+        "${ selectedFoldersCount } вибрані мітки",
+        "${ selectedFoldersCount } вибраних міток",
+        "${ selectedFoldersCount } вибраних міток"
+      ]
+    },
     "Info; access rights for shared calendar": {
       "View only": [
         "Тільки перегляд"
@@ -8954,6 +8974,11 @@
         "Налаштування збережено"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Від: ${ from }"
+      ]
+    },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
         "Щоб додати новий календар, вилучіть наявний."
@@ -9313,6 +9338,11 @@
     "Monthly recurring event, frequency (times)": {
       "Monthly ${ onDayString }, ${ timesString }": [
         "Щомісяця ${ onDayString }, ${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Щомісяця ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -10589,6 +10619,9 @@
       "Auto": [
         "Авто"
       ],
+      "Automatic (${ value })": [
+        "Автоматично (${ value })"
+      ],
       "Country configs": [
         "Конфігурації країн"
       ],
@@ -11677,6 +11710,9 @@
       "Highest VPN speed": [
         "Найвища швидкість VPN"
       ],
+      "Premium ${ appName1 }": [
+        "Преміум ${ appName1 }"
+      ],
       "Premium early access": [
         "Ранній преміумдоступ"
       ],
@@ -12742,6 +12778,9 @@
       ],
       "Decrypt key": [
         "Розшифрувати ключ"
+      ],
+      "Delete ${ value }": [
+        "Видалити ${ value }"
       ],
       "Delete account": [
         "Видалити обліковий запис"
@@ -14036,6 +14075,9 @@
       ]
     },
     "Weekly recurring event, frequency (times)": {
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Щотижня ${ multipleDaysString }, ${ timesString }"
+      ],
       "Weekly on all days, ${ timesString }": [
         "Щотижня кожного дня, ${ timesString }"
       ],
@@ -14062,6 +14104,9 @@
       ]
     },
     "Weekly recurring event, frequency (until)": {
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Щотижня ${ multipleDaysString }, ${ untilString }"
+      ],
       "Weekly on all days, ${ untilString }": [
         "Щотижня кожного дня, ${ untilString }"
       ],
@@ -14127,6 +14172,12 @@
       ]
     },
     "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "Кожен ${ interval } рік, ${ untilString }",
+        "Кожні ${ interval } роки, ${ untilString }",
+        "Кожні ${ interval } років, ${ untilString }",
+        "Кожні ${ interval } років, ${ untilString }"
+      ],
       "Yearly, ${ untilString }": [
         "Щороку, ${ untilString }"
       ]
