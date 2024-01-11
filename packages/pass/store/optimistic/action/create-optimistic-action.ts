@@ -1,4 +1,4 @@
-import type { AnyAction, PayloadActionCreator, PrepareAction } from '@reduxjs/toolkit';
+import type { Action, PayloadActionCreator, PrepareAction } from '@reduxjs/toolkit';
 import { createAction } from '@reduxjs/toolkit';
 
 import type { OptimisticMatcherResult } from '../types';
@@ -17,17 +17,17 @@ import type { OptimisticMatcherResult } from '../types';
 export const createOptimisticAction = <
     PA extends PrepareAction<any>,
     T extends string = string,
-    OptimisticAction = ReturnType<PayloadActionCreator<ReturnType<PA>['payload'], T, PA>>
+    OptimisticAction = ReturnType<PayloadActionCreator<ReturnType<PA>['payload'], T, PA>>,
 >(
     type: T,
     prepare: PA,
     optimisticIdFactory: (action: OptimisticAction) => string
 ) => {
     const actionCreator = createAction(type, prepare) as PayloadActionCreator<ReturnType<PA>['payload'], T, PA> & {
-        optimisticMatch: (action: AnyAction) => OptimisticMatcherResult;
+        optimisticMatch: (action: Action) => OptimisticMatcherResult;
     };
 
-    actionCreator.optimisticMatch = (action: AnyAction) =>
+    actionCreator.optimisticMatch = (action: Action) =>
         actionCreator.match(action) && optimisticIdFactory(action as OptimisticAction);
 
     return actionCreator;
