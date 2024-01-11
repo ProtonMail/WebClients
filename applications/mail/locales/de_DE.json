@@ -2970,6 +2970,10 @@
     "Daily recurring event, frequency (times)": {
       "Daily, ${ timesString }": [
         "Täglich, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Jeden ${ interval } Tag, ${ timesString }",
+        "Alle ${ interval } Tage, ${ timesString }"
       ]
     },
     "Daily recurring event, frequency (until)": {
@@ -3298,6 +3302,10 @@
       ],
       "Choose a date in the future.": [
         "Wähle ein Datum, das in der Zukunft liegt."
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "Wähle ein Datum innerhalb des nächsten ${ n } Tages.",
+        "Wähle ein Datum innerhalb der nächsten ${ n } Tage."
       ],
       "Condition incomplete": [
         "Bedingung unvollständig"
@@ -3720,6 +3728,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Ein unerwarteter Fehler ist aufgetreten. Der Import muss neu ausgeführt werden."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
+        "Deine Datei „${ formattedFilename }“ enthält mehr als ${ MAX_IMPORT_EVENTS } Termin.",
+        "Deine Datei „${ formattedFilename }“ enthält mehr als ${ MAX_IMPORT_EVENTS } Termine."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Deine Datei \"${ formattedFilename }\" enthält eine ungültige Methode und konnte nicht importiert werden."
@@ -4250,6 +4262,14 @@
       ],
       "starred": [
         "Markiert"
+      ]
+    },
+    "filter: Label": {
+      "with attachments": [
+        "mit Anhang"
+      ],
+      "without attachments": [
+        "ohne Anhang"
       ]
     },
     "Font Face Default": {
@@ -4830,6 +4850,38 @@
         "${ currentProgress } von ${ totalProgress }",
         "${ currentProgress } von ${ totalProgress }"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } Unterhaltung wird kategorisiert als:",
+        "${ elementsCount } Unterhaltungen werden kategorisiert als:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } Unterhaltung wird als gelesen markiert.",
+        "${ elementsCount } Unterhaltungen werden als gelesen markieren."
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } Unterhaltung wird als ungelesen markiert.",
+        "${ elementsCount } Unterhaltungen werden als ungelesen markiert."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } Unterhaltung wird verschoben",
+        "${ elementsCount } Unterhaltungen werden verschoben"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } Nachricht wird kategorisiert als:",
+        "${ elementsCount } Nachrichten werden kategorisiert als:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } Nachricht wird als gelesen markiert.",
+        "${ elementsCount } Nachrichten werden als gelesen markiert."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } Nachricht wird als ungelesen markiert.",
+        "${ elementsCount } Nachrichten werden als ungelesen markiert."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } Nachricht wird verschoben",
+        "${ elementsCount } Nachrichten werden verschoben"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } eingebettetes Bild",
         "${ embeddedAttachmentsCount } eingebettete Bilder"
@@ -4850,6 +4902,10 @@
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } Nachricht konnte nicht verschoben werden.",
         "${ messagesNotAuthorizedToMove } Nachrichten konnten nicht verschoben werden."
+      ],
+      "${ n } unread conversation": [
+        "${ n } ungelesene Unterhaltung",
+        "${ n } ungelesene Unterhaltungen"
       ],
       "${ numberOfImageTrackers } email tracker blocked": [
         "${ numberOfImageTrackers } E-Mail-Tracker gesperrt",
@@ -4992,6 +5048,12 @@
       ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Alle Unterordner werden ebenfalls gelöscht. E-Mails, die im Ordner ${ nameDeleted } gespeichert sind, werden jedoch nicht gelöscht und können im Ordner \"Alle E-Mails\" gefunden werden."
+      ],
+      "Applying actions to conversations": [
+        "Aktionen werden auf Unterhaltungen angewandt"
+      ],
+      "Applying actions to messages": [
+        "Aktionen werden auf Nachrichten angewandt"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Möchtest du wirklich alle Nachrichten in diesem Ordner löschen?"
@@ -5672,6 +5734,10 @@
       "Select a service provider to start": [
         "Wähle einen Dienstanbieter, um anzufangen"
       ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "Alle ${ elementsCount } in ${ location } auswählen",
+        "Alle ${ elementsCount } in ${ location } auswählen"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Wähle das Nachrichtenformat, das standardmäßig verwendet werden soll, wenn eine Nachricht an diese E-Mail-Adresse gesendet wird."
       ],
@@ -5860,6 +5926,9 @@
       "This message is signed by the key attached, that has not been trusted yet.": [
         "Diese Nachricht ist mit dem beigefügten Schlüssel signiert, dem noch nicht vertraut wurde."
       ],
+      "This message will be automatically deleted on ${ value }": [
+        "Diese Nachricht wird am ${ value } automatisch gelöscht."
+      ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Diese Nachricht wird als Spam markiert. Möchtest du dich auch von zukünftigen E-Mails abmelden?",
         "Diese Nachrichten werden als Spam markiert. Möchtest du dich auch von zukünftigen E-Mails abmelden?"
@@ -5884,6 +5953,15 @@
       ],
       "This message will expire ${ formattedDate }": [
         "Diese Nachricht verfällt am ${ formattedDate }"
+      ],
+      "This message will expire on ${ value }": [
+        "Diese Nachricht verfällt am ${ value }."
+      ],
+      "This message will expire today at ${ value }": [
+        "Diese Nachricht verfällt heute um ${ value }."
+      ],
+      "This message will expire tomorrow at ${ value }": [
+        "Diese Nachricht verfällt morgen um ${ value }."
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
         "Dieser öffentliche Schlüssel wird automatisch für die Verschlüsselung von E-Mails verwendet, die an diese Adresse gesendet werden."
@@ -6095,6 +6173,9 @@
       "You do not have any messages here": [
         "Noch keine Nachrichten vorhanden"
       ],
+      "You have ${ unread } in your inbox.": [
+        "Du hast ${ unread } in deinem Posteingang."
+      ],
       "You have **${ count } conversation** stored in this folder": [
         "Du hast **${ count } Unterhaltung** in diesem Ordner gespeichert",
         "Du hast **${ count } Unterhaltungen** in diesem Ordner gespeichert"
@@ -6141,6 +6222,22 @@
       "You selected **${ count } message** with this label": [
         "Du hast **${ count } Nachricht** mit dieser Kategorie ausgewählt",
         "Du hast **${ count } Nachrichten** mit dieser Kategorie ausgewählt"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "Du hast **${ elementsCount } Unterhaltung** in ${ location } ausgewählt.",
+        "Du hast **${ elementsCount } Unterhaltungen** in ${ location } ausgewählt."
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "Du hast **${ elementsCount } Unterhaltung** ausgewählt.",
+        "Du hast **${ elementsCount } Unterhaltungen** ausgewählt."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "Du hast **${ elementsCount } Nachricht** in ${ location } ausgewählt.",
+        "Du hast **${ elementsCount } Nachrichten** in ${ location } ausgewählt."
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "Du hast **${ elementsCount } Nachricht** ausgewählt.",
+        "Du hast **${ elementsCount } Nachrichten** ausgewählt."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Deine Nachricht enthält das Schlüsselwort „${ attachmentsFoundKeyword }“, es wurde jedoch kein Anhang hinzugefügt. Möchtest du deine Nachricht trotzdem senden?"
@@ -7303,6 +7400,18 @@
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
         "Jeden ${ interval } Monat am ${ onDayString }, ${ timesString }",
         "Aller ${ interval } Monate am ${ onDayString }, ${ timesString }"
+      ],
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Monatlich ${ onDayString }, ${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Jeden ${ interval } Monat ${ onDayString }, ${ untilString }",
+        "Alle ${ interval } Monate ${ onDayString }, ${ untilString }"
+      ],
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Monatlich ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -9847,6 +9956,33 @@
       "Every ${ interval } week on Wednesday, ${ timesString }": [
         "Jede ${ interval } Woche am Mittwoch, ${ timesString }",
         "Alle ${ interval } Wochen am Mittwoch, ${ timesString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Wöchentlich am ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Wöchentlich an allen Tagen, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Wöchentlich am Freitag, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Wöchentlich am Montag, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Wöchentlich am Samstag, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Wöchentlich am Sonntag, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Wöchentlich am Donnerstag, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Wöchentlich am Dienstag, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Wöchentlich am Mittwoch, ${ timesString }"
       ]
     },
     "Weekly recurring event, frequency (until)": {
@@ -9885,6 +10021,33 @@
       "Every ${ interval } week on Wednesday, ${ untilString }": [
         "Jede ${ interval } Woche am Mittwoch, ${ untilString }",
         "Alle ${ interval } Wochen am Mittwoch, ${ untilString }"
+      ],
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Wöchentlich am ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Wöchentlich an allen Tagen, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Wöchentlich am Freitag, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Wöchentlich am Montag, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Wöchentlich am Samstag, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Wöchentlich am Sonntag, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Wöchentlich am Donnerstag, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Wöchentlich am Dienstag, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Wöchentlich am Mittwoch, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -9917,6 +10080,24 @@
       ],
       "Yearly": [
         "Jährlich"
+      ]
+    },
+    "Yearly recurring event, frequency (times)": {
+      "Every ${ interval } year, ${ timesString }": [
+        "Jedes ${ interval } Jahr, ${ timesString }",
+        "Alle ${ interval } Jahre, ${ timesString }"
+      ],
+      "Yearly, ${ timesString }": [
+        "Jährlich, ${ timesString }"
+      ]
+    },
+    "Yearly recurring event, frequency (until)": {
+      "Every ${ interval } year, ${ untilString }": [
+        "Jedes ${ interval } Jahr, ${ untilString }",
+        "Alle ${ interval } Jahre, ${ untilString }"
+      ],
+      "Yearly, ${ untilString }": [
+        "Jährlich, ${ untilString }"
       ]
     }
   }
