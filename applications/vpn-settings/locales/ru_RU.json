@@ -5620,6 +5620,9 @@
       ]
     },
     "Option": {
+      "Automatic (${ value })": [
+        "Автоматический (${ value })"
+      ],
       "Country configs": [
         "Конфигурации стран"
       ],
@@ -6348,6 +6351,12 @@
       ],
       "Highest VPN speed": [
         "Высочайшая скорость VPN"
+      ],
+      "Premium ${ appName1 }": [
+        "Платная версия ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Платные версии ${ appName1 } и ${ appName2 }"
       ],
       "Premium early access": [
         "Ранний доступ"
@@ -7084,6 +7093,9 @@
       ],
       "Delete": [
         "Удалить"
+      ],
+      "Delete ${ value }": [
+        "Удалить ${ value }"
       ],
       "Delete account": [
         "Удалить аккаунт"
