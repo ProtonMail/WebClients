@@ -2818,6 +2818,11 @@
         "Pozvaná adresa neexistuje"
       ]
     },
+    "Error changing answer of a calendar invitation": {
+      "Error changing answer": [
+        "Chyba při změně odpovědi"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Došlo k chybě při čtení souboru ${ formattedFilename }. Soubor nemá správný formát."
@@ -3959,6 +3964,9 @@
       ],
       "Discard changes?": [
         "Zahodit změny?"
+      ],
+      "Display events for calendar ${ Name }": [
+        "Zobrazit události pro kalendář ${ Name }"
       ],
       "Drop file here to upload": [
         "Sem přetáhněte soubor pro nahrání"
@@ -5715,6 +5723,9 @@
       ],
       "Auto": [
         "Automaticky"
+      ],
+      "Automatic (${ value })": [
+        "Automatické (${ value })"
       ],
       "Create new group": [
         "Vytvořit novou skupinu"
