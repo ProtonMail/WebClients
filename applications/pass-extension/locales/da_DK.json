@@ -182,9 +182,6 @@
       "Get mobile apps": [
         "Hent mobilapps"
       ],
-      "Get the deal": [
-        "Gør brug af tilbuddet"
-      ],
       "Help us improve": [
         "Hjælp os med at blive bedre"
       ],
@@ -391,14 +388,6 @@
       ],
       "Your password manager not here? Request it.": [
         "Er din adgangskodeadministrator her ikke? Anmod om den."
-      ]
-    },
-    "Badge": {
-      "Early access": [
-        "Tidlig adgang"
-      ],
-      "Limited time": [
-        "Begrænset tid"
       ]
     },
     "bf2023: Info": {
@@ -834,9 +823,6 @@
       "Drop to import": [
         "Slip for at importere"
       ],
-      "Early access to ${ PASS_APP_NAME } web app": [
-        "Tidlig adgang til ${ PASS_APP_NAME } webapp"
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importer nemt dine eksisterende adgangskoder til ${ PASS_APP_NAME }."
       ],
@@ -977,9 +963,6 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Ejerskab overført. Du er ikke længere ejer af denne boks."
       ],
-      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
-        "Pass Plus for ${ eoyRelativePrice }/md, inklusive tidlig adgang til webappen."
-      ],
       "Pass Plus trial": [
         "Pass Plus prøveversion"
       ],
@@ -1015,9 +998,6 @@
       ],
       "Please enter your current PIN code to continue": [
         "Indtast din nuværende pinkode for at fortsætte"
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Opgrader for at få tidlig adgang ${ PASS_APP_NAME } webapp"
       ],
       "Press Enter to copy": [
         "Tryk Enter for at kopiere"
@@ -1118,9 +1098,6 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Opgradér ${ PASS_APP_NAME }"
-      ],
-      "Upgrade Now to Unlock Premium Features": [
-        "Opgradér nu for at låse op for premium-funktioner"
       ],
       "Use vaults to share this item with others.": [
         "Brug bokse til at dele dette element med andre."
@@ -1680,9 +1657,6 @@
       "Full Name": [
         "Fuldt navn"
       ],
-      "MM/YYYY": [
-        "MM/ÅÅÅÅ"
-      ],
       "Other": [
         "Andet"
       ],
@@ -1698,14 +1672,14 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Indtast \"${ vaultName }\" igen for at bekræfte sletning"
       ],
-      "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "Søg ${ pluralItemType } i ${ vault.content.name }"
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Søg ${ pluralItemType } i ${ vaultName }"
       ],
       "Search ${ pluralItemType } in all vaults": [
         "Søg ${ pluralItemType } i alle bokse"
       ],
-      "Search in ${ vault.content.name }": [
-        "Søg i ${ vault.content.name }"
+      "Search in ${ vaultName }": [
+        "Søg i ${ vaultName }"
       ],
       "Search in all vaults": [
         "Søg i alle bokse"
@@ -1850,9 +1824,6 @@
       "Update available": [
         "Opdatering tilgængelig"
       ],
-      "Upgrade to Unlock Premium Features": [
-        "Opgradér for at låse op for premium-funktioner"
-      ],
       "Use my email": [
         "Brug min e-mail"
       ],
@@ -1916,9 +1887,6 @@
       ],
       "Empty note": [
         "Tom note"
-      ],
-      "Expiration Date is incomplete": [
-        "Udløbsdato er ukomplet"
       ],
       "Invalid alias prefix": [
         "Ugyldigt alias-præfiks"

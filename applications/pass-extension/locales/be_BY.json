@@ -182,9 +182,6 @@
       "Get mobile apps": [
         "Атрымаць мабільныя праграмы"
       ],
-      "Get the deal": [
-        "Скарыстацца прапановай"
-      ],
       "Help us improve": [
         "Дапамажыце нам палепшыць наш сэрвіс"
       ],
@@ -397,14 +394,6 @@
       ],
       "Your password manager not here? Request it.": [
         "Адсутнічае ваш менеджар пароля? Запытайце яго."
-      ]
-    },
-    "Badge": {
-      "Early access": [
-        "Ранні доступ"
-      ],
-      "Limited time": [
-        "Абмежаваны час"
       ]
     },
     "bf2023: Info": {
@@ -868,9 +857,6 @@
       "Drop to import": [
         "Перацягніце для імпартавання"
       ],
-      "Early access to ${ PASS_APP_NAME } web app": [
-        "Ранні доступ да вэб-праграмы ${ PASS_APP_NAME }"
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Без намаганняў імпартуйце вашы існуючыя паролі ў ${ PASS_APP_NAME }."
       ],
@@ -1021,9 +1007,6 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Правы ўласнасці паспяхова перададзены. Цяпер вы больш не з'яўляецеся ўладальнікам гэтага сховішча."
       ],
-      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
-        "Pass Plus за ${ eoyRelativePrice } у месяц. Уключае ранні доступ да вэб-праграмы."
-      ],
       "Pass Plus trial": [
         "Пробны перыяд Pass Plus"
       ],
@@ -1059,9 +1042,6 @@
       ],
       "Please enter your current PIN code to continue": [
         "Увядзіце свой бягучы PIN-код для працягу"
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "Палепшыце, каб мець ранні доступ да вэб-праграмы ${ PASS_APP_NAME }"
       ],
       "Press Enter to copy": [
         "Націсніце Enter, каб скапіяваць"
@@ -1164,9 +1144,6 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Палепшыць ${ PASS_APP_NAME }"
-      ],
-      "Upgrade Now to Unlock Premium Features": [
-        "Палепшыце свой тарыфны план, каб разблакіраваць прэміяльныя функцыі"
       ],
       "Use vaults to share this item with others.": [
         "Выкарыстанне сховішча для абагулення элементаў з іншымі."
@@ -1437,6 +1414,9 @@
       "Invitations": [
         "Запрашэнні"
       ],
+      "Item ID": [
+        "Ідэнтыфікатар элемента"
+      ],
       "Language": [
         "Мова"
       ],
@@ -1638,6 +1618,9 @@
       "Vault": [
         "Сховішча"
       ],
+      "Vault ID": [
+        "Ідэнтыфікатар сховішча"
+      ],
       "View details": [
         "Паглядзець падрабязнасці"
       ],
@@ -1732,9 +1715,6 @@
       "Full Name": [
         "Поўнае імя"
       ],
-      "MM/YYYY": [
-        "ММ/ГГГГ"
-      ],
       "Other": [
         "Іншае"
       ],
@@ -1750,14 +1730,14 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Увядзіце паўторна \"${ vaultName }\", каб пацвердзіць выдаленне"
       ],
-      "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "Пошук ${ pluralItemType } у ${ vault.content.name }"
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Пошук ${ pluralItemType } у ${ vaultName }"
       ],
       "Search ${ pluralItemType } in all vaults": [
         "Пошук ${ pluralItemType } ва ўсіх сховішчах"
       ],
-      "Search in ${ vault.content.name }": [
-        "Шукаць у ${ vault.content.name }"
+      "Search in ${ vaultName }": [
+        "Пошук у ${ vaultName }"
       ],
       "Search in all vaults": [
         "Пошук ва ўсіх сховішчах"
@@ -1907,9 +1887,6 @@
       "Update available": [
         "Даступна абнаўленне"
       ],
-      "Upgrade to Unlock Premium Features": [
-        "Палепшыце свой тарыфны план, каб разблакіраваць прэміяльныя функцыі"
-      ],
       "Use my email": [
         "Выкарыстоўваць маю электронную пошту"
       ],
@@ -1973,9 +1950,6 @@
       ],
       "Empty note": [
         "Пустая нататка"
-      ],
-      "Expiration Date is incomplete": [
-        "Няпоўны тэрмін дзеяння"
       ],
       "Invalid alias prefix": [
         "Памылковы прэфікс псеўданіма"

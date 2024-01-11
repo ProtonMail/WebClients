@@ -170,9 +170,6 @@
       "Get mobile apps": [
         "Baixeu l'aplicació mòbil"
       ],
-      "Get the deal": [
-        "Obteniu l’oferta"
-      ],
       "Help us improve": [
         "Ajudeu-nos a millorar"
       ],
@@ -370,14 +367,6 @@
       ],
       "Write us on Twitter": [
         "Escriu-nos a Twitter"
-      ]
-    },
-    "Badge": {
-      "Early access": [
-        "Accés anticipat"
-      ],
-      "Limited time": [
-        "Oferta per temps limitat"
       ]
     },
     "bf2023: Label": {
@@ -1538,9 +1527,6 @@
       "Full Name": [
         "Nom complert"
       ],
-      "MM/YYYY": [
-        "MM/AAAA"
-      ],
       "Other": [
         "Altres"
       ],
@@ -1556,14 +1542,14 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Torneu a escriure \"${ vaultName }\" per confirmar la supressió"
       ],
-      "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "Cerca ${ pluralItemType } a ${ vault.content.name }"
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Cerca ${ pluralItemType } a ${ vaultName }"
       ],
       "Search ${ pluralItemType } in all vaults": [
         "Cerca ${ pluralItemType } en totes les caixes fortes"
       ],
-      "Search in ${ vault.content.name }": [
-        "Cerca en ${ vault.content.name }"
+      "Search in ${ vaultName }": [
+        "Cerca en ${ vaultName }"
       ],
       "Search in all vaults": [
         "Cerca en totes les caixes fortes"
@@ -1771,9 +1757,6 @@
       ],
       "Empty note": [
         "Nota buida"
-      ],
-      "Expiration Date is incomplete": [
-        "La data de caducitat no està completa."
       ],
       "Invalid alias prefix": [
         "El prefix de l'àlies no és vàlid"

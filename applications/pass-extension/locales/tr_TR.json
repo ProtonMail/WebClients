@@ -182,9 +182,6 @@
       "Get mobile apps": [
         "Mobil uygulamaları edinin"
       ],
-      "Get the deal": [
-        "Tekliften yararlanın"
-      ],
       "Help us improve": [
         "Kendimizi geliştirmemize yardımcı olun"
       ],
@@ -278,6 +275,9 @@
       "Pass for iOS": [
         "iOS için Proton Pass"
       ],
+      "Pin item": [
+        "Ögeyi sabitle"
+      ],
       "Refresh the page": [
         "Sayfayı yenile"
       ],
@@ -365,6 +365,9 @@
       "Try again": [
         "Yeniden dene"
       ],
+      "Unpin item": [
+        "Ögenin sabitlemesini kaldır"
+      ],
       "Update": [
         "Güncelle"
       ],
@@ -391,14 +394,6 @@
       ],
       "Your password manager not here? Request it.": [
         "Parola yöneticiniz burada yok mu? İstekte bulunun."
-      ]
-    },
-    "Badge": {
-      "Early access": [
-        "Erken erişim"
-      ],
-      "Limited time": [
-        "Sınırlı süreyle"
       ]
     },
     "bf2023: Info": {
@@ -528,11 +523,17 @@
       "Failed to move all items from \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınamadı"
       ],
+      "Failed to pin item": [
+        "Öge sabitlenemedi"
+      ],
       "Failed to remove user's access.": [
         "Kullanıcının erişimi kaldırılamadı."
       ],
       "Failed to transfer this vault's ownership.": [
         "Bu kasanın sahipliği aktarılamadı"
+      ],
+      "Failed to unpin item": [
+        "Ögenin sabitlemesi kaldırılamadı"
       ],
       "File could not be parsed": [
         "Dosya işlenemedi"
@@ -834,9 +835,6 @@
       "Drop to import": [
         "İçe aktarmak için bırakın"
       ],
-      "Early access to ${ PASS_APP_NAME } web app": [
-        "${ PASS_APP_NAME } İnternet uygulamasına erken erişim"
-      ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Var olan parolalarınızı kolayca ${ PASS_APP_NAME } içine aktarın."
       ],
@@ -935,6 +933,12 @@
       "Item successfully moved": [
         "Öge taşındı"
       ],
+      "Item successfully pinned": [
+        "Öge sabitlendi"
+      ],
+      "Item successfully unpinned": [
+        "Ögenin sabitlemesi kaldırıldı"
+      ],
       "Leaving vault...": [
         "Kasa bırakılıyor..."
       ],
@@ -977,9 +981,6 @@
       "Ownership successfully transfered. You are no long the owner of this vault.": [
         "Sahiplik aktarıldı. Artık bu kasanın sahibi değilsiniz."
       ],
-      "Pass Plus for ${ eoyRelativePrice }/m, including early access to the web app.": [
-        "${ eoyRelativePrice }/ay tutarla Pass Plus, İnternet uygulamasına erken erişim ile."
-      ],
       "Pass Plus trial": [
         "Proton Pass Plus denemesi"
       ],
@@ -1015,9 +1016,6 @@
       ],
       "Please enter your current PIN code to continue": [
         "İlerlemek için lütfen geçerli PIN kodunuzu yazın"
-      ],
-      "Please upgrade to have early access ${ PASS_APP_NAME } web app": [
-        "${ PASS_APP_NAME } İnternet uygulamasına erken erişmek için lütfen tarifenizi yükseltin"
       ],
       "Press Enter to copy": [
         "Kopyalamak için Enter tuşuna basın"
@@ -1118,9 +1116,6 @@
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } uygulamasını yükselt"
-      ],
-      "Upgrade Now to Unlock Premium Features": [
-        "Ücretli özellikleri kullanabilmek için tarifenizi yükseltin"
       ],
       "Use vaults to share this item with others.": [
         "Bu ögeyi başkaları ile paylaşmak için kasaları kullanın."
@@ -1680,9 +1675,6 @@
       "Full Name": [
         "Ad Soyad"
       ],
-      "MM/YYYY": [
-        "AA/YYYY"
-      ],
       "Other": [
         "Diğer"
       ],
@@ -1698,14 +1690,14 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Silinmesini onaylamak için yeniden \"${ vaultName }\" yazın"
       ],
-      "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "${ vault.content.name } içinde ${ pluralItemType } ara"
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "${ vaultName } içinde ${ pluralItemType } ara"
       ],
       "Search ${ pluralItemType } in all vaults": [
         "Tüm kasalarda ${ pluralItemType } ara"
       ],
-      "Search in ${ vault.content.name }": [
-        "${ vault.content.name } içinde ara"
+      "Search in ${ vaultName }": [
+        "${ vaultName } içinde ara"
       ],
       "Search in all vaults": [
         "Tüm kasalarda ara"
@@ -1820,6 +1812,9 @@
       "Pin the extension": [
         "Eklentiyi sabitle"
       ],
+      "Pinned (${ items.length })": [
+        "Sabitlenmiş (${ items.length })"
+      ],
       "Secure your data": [
         "Verilerinizi koruyun"
       ],
@@ -1849,9 +1844,6 @@
       ],
       "Update available": [
         "Güncelleme yayınlanmış"
-      ],
-      "Upgrade to Unlock Premium Features": [
-        "Ücretli özellikleri kullanabilmek için tarifenizi yükseltin"
       ],
       "Use my email": [
         "E-postamı kullan"
@@ -1916,9 +1908,6 @@
       ],
       "Empty note": [
         "Boş not"
-      ],
-      "Expiration Date is incomplete": [
-        "Son kullanma tarihi eksik."
       ],
       "Invalid alias prefix": [
         "Takma ad ön eki geçersiz"

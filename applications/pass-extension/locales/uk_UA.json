@@ -167,9 +167,6 @@
       "Get mobile apps": [
         "Отримати програму для мобільного пристрою"
       ],
-      "Get the deal": [
-        "Скористатися пропозицією"
-      ],
       "Help us improve": [
         "Допоможіть нам вдосконалитися"
       ],
@@ -1459,9 +1456,6 @@
       "Full Name": [
         "Повне ім'я"
       ],
-      "MM/YYYY": [
-        "ММ/РРРР"
-      ],
       "Other": [
         "Інше"
       ],
@@ -1477,14 +1471,14 @@
       "Retype \"${ vaultName }\" to confirm deletion": [
         "Повторно введіть \"${ vaultName }\", щоб підтвердити видалення"
       ],
-      "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "Шукати ${ pluralItemType } в ${ vault.content.name }"
+      "Search ${ pluralItemType } in ${ vaultName }": [
+        "Шукати ${ pluralItemType } в ${ vaultName }"
       ],
       "Search ${ pluralItemType } in all vaults": [
         "Шукати ${ pluralItemType } у всіх сховищах"
       ],
-      "Search in ${ vault.content.name }": [
-        "Шукати в ${ vault.content.name }"
+      "Search in ${ vaultName }": [
+        "Пошук у ${ vaultName }"
       ],
       "Search in all vaults": [
         "Пошук у всіх сховищах"
@@ -1650,9 +1644,6 @@
       ],
       "Empty note": [
         "Порожня нотатка"
-      ],
-      "Expiration Date is incomplete": [
-        "Термін дії неповний"
       ],
       "Invalid alias prefix": [
         "Недійсний префікс псевдоніма"
