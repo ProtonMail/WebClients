@@ -1,4 +1,4 @@
-import type { AnyAction, Reducer } from 'redux';
+import type { Action, Reducer } from 'redux';
 
 import { requestInvalidate, requestProgress } from '@proton/pass/store/actions';
 import type { RequestType } from '@proton/pass/store/actions/with-request';
@@ -16,7 +16,7 @@ export type RequestEntry<Type extends RequestType = RequestType, Data = undefine
 
 export type RequestState = { [requestId: string]: RequestEntry };
 
-const requestReducer: Reducer<RequestState> = (state = {}, action: AnyAction) => {
+const requestReducer: Reducer<RequestState> = (state = {}, action: Action) => {
     if (isActionWithRequest(action)) {
         const { request } = action.meta;
         const nextState = { ...state };
