@@ -1,4 +1,4 @@
-import { type VFC17, useEffect } from 'react';
+import { type FC, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -26,7 +26,7 @@ import { VaultForm, type VaultFormValues } from './Vault.form';
 type Props = Omit<ModalProps, 'onSubmit'> & { onSuccess: (shareId: string) => void };
 const FORM_ID = 'vault-create';
 
-export const VaultNew: VFC17<Props> = ({ onSuccess, ...modalProps }) => {
+export const VaultNew: FC<Props> = ({ onSuccess, ...modalProps }) => {
     const { vaultLimitReached } = useSelector(selectVaultLimits);
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
 

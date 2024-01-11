@@ -1,4 +1,4 @@
-import type { FC17 } from 'react';
+import type { FC } from 'react';
 import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
@@ -8,7 +8,7 @@ import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { PASS_BLOG_TRIAL_URL } from '@proton/pass/constants';
 import { selectTrialDaysRemaining } from '@proton/pass/store/selectors';
 
-export const FreeTrialActions: FC17 = () => {
+export const FreeTrialActions: FC = () => {
     const daysRemaining = useSelector(selectTrialDaysRemaining);
     const { onLink } = usePassCore();
 

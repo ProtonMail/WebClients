@@ -1,4 +1,4 @@
-import { type FC17, type ReactElement, useEffect } from 'react';
+import { type FC, type ReactElement, useEffect } from 'react';
 
 import { c } from 'ttag';
 
@@ -19,7 +19,7 @@ import { onboarding } from '../../../lib/onboarding';
 
 type Props = { hamburger?: ReactElement; searchable?: boolean; title?: string };
 
-export const Header: FC17<Props> = ({ hamburger }) => {
+export const Header: FC<Props> = ({ hamburger }) => {
     const { filters, navigate, matchSettings } = useNavigation();
     const onCreate = (type: ItemType) => navigate(getLocalPath(`item/new/${type}`));
 

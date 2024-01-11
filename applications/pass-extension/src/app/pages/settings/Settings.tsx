@@ -1,5 +1,5 @@
-import type { VFC17 } from 'react';
-import { type ComponentProps, type FC17, useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import type { FC } from 'react';
+import { type ComponentProps, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { Provider as ReduxProvider, useSelector } from 'react-redux';
 import { HashRouter, Route, Switch, useHistory } from 'react-router-dom';
 
@@ -83,7 +83,7 @@ const getSettingsTabs: () => (Tab & { pathname: string })[] = () => {
     return tabs;
 };
 
-const SettingsTabs: FC17<{ pathname: string }> = ({ pathname }) => {
+const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     const context = useExtensionConnect();
     const user = useSelector(selectUser);
     const passPlan = useSelector(selectPassPlan);
@@ -177,7 +177,7 @@ const SettingsTabs: FC17<{ pathname: string }> = ({ pathname }) => {
     );
 };
 
-const SettingsApp: VFC17 = () => {
+const SettingsApp: FC = () => {
     const { createNotification } = useNotifications();
 
     const handleWorkerMessage = useCallback((message: WorkerMessageWithSender) => {
@@ -208,7 +208,7 @@ const SettingsApp: VFC17 = () => {
     );
 };
 
-export const Settings: VFC17 = () => {
+export const Settings: FC = () => {
     const store = useRef<ReturnType<typeof createClientStore>>();
 
     return (

@@ -1,4 +1,4 @@
-import { type FC17 } from 'react';
+import { type FC } from 'react';
 
 import { type IFrameCloseOptions } from 'proton-pass-extension/app/content/types/iframe';
 
@@ -16,7 +16,7 @@ type Props = {
     visible?: boolean;
     onClose?: (options?: IFrameCloseOptions) => void;
 };
-export const PauseListDropdown: FC17<Props> = ({ criteria, dense, hostname, label, visible, onClose }) => {
+export const PauseListDropdown: FC<Props> = ({ criteria, dense, hostname, label, visible, onClose }) => {
     const addToPauseList = () => {
         if (hostname) {
             void sendMessage(
