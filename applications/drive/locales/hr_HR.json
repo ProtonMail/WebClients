@@ -357,9 +357,6 @@
       "New message": [
         "Nova poruka"
       ],
-      "New upload": [
-        "Novo učitavanje"
-      ],
       "Next": [
         "Sljedeće"
       ],
@@ -2942,6 +2939,18 @@
         "Kliknite za prikaz detalja"
       ]
     },
+    "Info: partial": {
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } mapa odabrana",
+        "${ selectedFoldersCount } mape odabrane",
+        "${ selectedFoldersCount } mapa odabrano"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } oznaka odabrana",
+        "${ selectedFoldersCount } oznake odabrane",
+        "${ selectedFoldersCount } oznaka odabrano"
+      ]
+    },
     "Item": {
       "keys": [
         "ključevi"
@@ -3350,6 +3359,11 @@
         "${ Label.Name } stvoreno"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "Od: ${ from }"
+      ]
+    },
     "Link": {
       "clearing your browser cache": [
         "čišćenje predmemorije preglednika"
@@ -3458,6 +3472,16 @@
       "Failed to move, please try again": [
         "Neuspješno premještanje, pokušajte ponovo"
       ],
+      "Move ${ n } file": [
+        "Premjesti ${ n } datoteku",
+        "Premjesti ${ n } datoteke",
+        "Premjesti ${ n } datoteka"
+      ],
+      "Move ${ n } item": [
+        "Premjesti ${ n } stavku",
+        "Premjesti ${ n } stavke",
+        "Premjesti ${ n } stavki"
+      ],
       "The link to \"${ name }\" was deleted": [
         "Poveznica do \"${ name }\" je izbrisana."
       ],
@@ -3500,6 +3524,9 @@
     "Option": {
       "Add to existing group": [
         "Dodaj u postojeću grupu"
+      ],
+      "Automatic (${ value })": [
+        "Automatski (${ value })"
       ],
       "Create new group": [
         "Stvori novu grupu"
@@ -3772,6 +3799,12 @@
       ],
       "Highest VPN speed": [
         "Najviša VPN brzina"
+      ],
+      "Premium ${ appName1 }": [
+        "Premium ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium ${ appName1 } i ${ appName2 }"
       ],
       "Secure streaming": [
         "Siguran streaming"
@@ -4073,6 +4106,9 @@
         "Izbriši ${ count } grupe kontakata",
         "Izbriši ${ count } grupa kontakata"
       ],
+      "Delete ${ value }": [
+        "Izbriši ${ value }"
+      ],
       "Delete permanently": [
         "Ukloni trajno"
       ],
@@ -4084,6 +4120,9 @@
       ],
       "Discard changes?": [
         "Odbaci promjene?"
+      ],
+      "Download ${ date }": [
+        "Preuzmi ${ date }"
       ],
       "Duplicate file found": [
         "Pronađen je duplikat datoteke"
