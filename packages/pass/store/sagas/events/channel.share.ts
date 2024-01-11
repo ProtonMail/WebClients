@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-throw-literal, curly */
-import type { AnyAction } from 'redux';
+import type { Action } from 'redux';
 import { all, call, fork, put, select, take } from 'redux-saga/effects';
 
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
@@ -107,7 +107,7 @@ const onShareEventError = (shareId: string) =>
 
 const onShareDeleted = (shareId: string) =>
     function* ({ channel }: EventChannel<ShareEventResponse>): Generator {
-        yield take((action: AnyAction) => vaultDeleteSuccess.match(action) && action.payload.shareId === shareId);
+        yield take((action: Action) => vaultDeleteSuccess.match(action) && action.payload.shareId === shareId);
         logger.info(`[ServerEvents::Share::${logId(shareId)}] share deleted`);
         channel.close();
         yield discardDrafts(shareId);

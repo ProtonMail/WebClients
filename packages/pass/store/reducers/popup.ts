@@ -1,4 +1,4 @@
-import type { AnyAction, Reducer } from 'redux';
+import type { Action, Reducer } from 'redux';
 
 import { popupTabStateGarbageCollect, popupTabStateSave } from '@proton/pass/store/actions/creators/popup';
 import type { ItemFilters, MaybeNull, SelectedItem, TabId } from '@proton/pass/types';
@@ -19,7 +19,7 @@ export type PopupState = {
 
 const INITIAL_STATE: PopupState = { tabs: {}, filters: null };
 
-const popupReducer: Reducer<PopupState> = (state = INITIAL_STATE, action: AnyAction) => {
+const popupReducer: Reducer<PopupState> = (state = INITIAL_STATE, action: Action) => {
     if (popupTabStateSave.match(action)) {
         return merge(state, {
             filters: action.payload.filters ?? state.filters,

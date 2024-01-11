@@ -24,9 +24,9 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
     reducer,
-    middleware: (mw) => mw().concat(requestMiddleware, workerMiddleware, sagaMiddleware),
-    enhancers: (e) =>
-        e().concat(
+    middleware: (middlewares) => middlewares().concat(requestMiddleware, workerMiddleware, sagaMiddleware),
+    enhancers: (enhancers) =>
+        enhancers().concat(
             ENV === 'development'
                 ? [
                       devToolsEnhancer({
