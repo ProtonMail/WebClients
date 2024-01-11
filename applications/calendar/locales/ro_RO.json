@@ -1282,6 +1282,11 @@
         "Adresa URL"
       ]
     },
+    "Contact image": {
+      "Contact image": [
+        "Imagine contact"
+      ]
+    },
     "Contact type label": {
       "Fax": [
         "Fax"
@@ -2111,6 +2116,16 @@
         "până la ${ dateString }"
       ]
     },
+    "Daily recurring event, frequency (times)": {
+      "Daily, ${ timesString }": [
+        "Zilnic, ${ timesString }"
+      ]
+    },
+    "Daily recurring event, frequency (until)": {
+      "Daily, ${ untilString }": [
+        "Zilnic, ${ untilString }"
+      ]
+    },
     "Day": {
       "Friday": [
         "Vineri"
@@ -2762,6 +2777,11 @@
     "Error accepting calendar invitation": {
       "Invited address does not exist": [
         "Adresa invitată nu există."
+      ]
+    },
+    "Error changing answer of a calendar invitation": {
+      "Error changing answer": [
+        "Eroare modificare răspuns."
       ]
     },
     "Error importing calendar": {
@@ -3864,6 +3884,9 @@
       "Discard changes?": [
         "Anulare modificări?"
       ],
+      "Display events for calendar ${ Name }": [
+        "Afișare evenimente pentru calendarul ${ Name }"
+      ],
       "Drop file here to upload": [
         "Plasați fișiere aici pentru încărcare"
       ],
@@ -4301,6 +4324,9 @@
       ],
       "You can import one data type at a time.": [
         "Puteți importa un singur tip de date la un moment dat."
+      ],
+      "You can now return to the application to continue": [
+        "Puteți reveni la aplicație pentru a continua"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puteți activa notificările pentru a primi alerte atunci când apar mesaje noi în acest folder."
@@ -4872,6 +4898,14 @@
         "${ Label.Name } creată"
       ]
     },
+    "Label; import email": {
+      "From: ${ from }": [
+        "De la: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Către: ${ to }"
+      ]
+    },
     "Landmarks": {
       "Side panel": [
         "Panou lateral"
@@ -5076,6 +5110,16 @@
       ],
       "Monthly ${ onDayString }": [
         "Lunar, ${ onDayString }"
+      ]
+    },
+    "Monthly recurring event, frequency (times)": {
+      "Monthly ${ onDayString }, ${ timesString }": [
+        "Lunar, ${ onDayString }, ${ timesString }"
+      ]
+    },
+    "Monthly recurring event, frequency (until)": {
+      "Monthly ${ onDayString }, ${ untilString }": [
+        "Lunar, ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -5537,6 +5581,9 @@
       "Auto": [
         "Automat"
       ],
+      "Automatic (${ value })": [
+        "Automat (${ value })"
+      ],
       "Create new group": [
         "Creare grup"
       ],
@@ -5701,6 +5748,9 @@
       ],
       "Search for name or email": [
         "Căutare după nume sau e-mail"
+      ],
+      "Search parent folder": [
+        "Căutare în folder părinte"
       ],
       "Select": [
         "Selectare"
@@ -6124,6 +6174,15 @@
       ],
       "Highest VPN speed": [
         "Viteză VPN maximă"
+      ],
+      "Premium ${ appName1 }": [
+        "${ appName1 } premium"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "${ appName1 } și ${ appName2 } premium"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "${ appName1 }, ${ appName2 } și ${ appName3 } premium"
       ],
       "Premium early access": [
         "Acces timpuriu premium"
@@ -6687,6 +6746,9 @@
         "Ștergere ${ count } grupuri de contacte",
         "Ștergere ${ count } de grupuri de contacte"
       ],
+      "Delete ${ value }": [
+        "Ștergere ${ value }"
+      ],
       "Delete event": [
         "Ștergere eveniment"
       ],
@@ -7008,6 +7070,9 @@
       "Hide side panel": [
         "Ascundere panou lateral"
       ],
+      "Load image": [
+        "Încărcare imagine"
+      ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Selectați schema PGP ce va fi folosită la semnare sau criptare de către un utilizator. Rețineți că PGP integrat forțează folosirea mesajelor simple."
       ],
@@ -7236,6 +7301,64 @@
         "Săptămânal, miercuri"
       ]
     },
+    "Weekly recurring event, frequency (times)": {
+      "Weekly on ${ multipleDaysString }, ${ timesString }": [
+        "Săptămânal, ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Weekly on all days, ${ timesString }": [
+        "Săptămânal, toate zilele, ${ timesString }"
+      ],
+      "Weekly on Friday, ${ timesString }": [
+        "Săptămânal, vineri, ${ timesString }"
+      ],
+      "Weekly on Monday, ${ timesString }": [
+        "Săptămânal, luni, ${ timesString }"
+      ],
+      "Weekly on Saturday, ${ timesString }": [
+        "Săptămânal, sâmbătă, ${ timesString }"
+      ],
+      "Weekly on Sunday, ${ timesString }": [
+        "Săptămânal, duminică, ${ timesString }"
+      ],
+      "Weekly on Thursday, ${ timesString }": [
+        "Săptămânal, joi, ${ timesString }"
+      ],
+      "Weekly on Tuesday, ${ timesString }": [
+        "Săptămânal, marți, ${ timesString }"
+      ],
+      "Weekly on Wednesday, ${ timesString }": [
+        "Săptămânal, miercuri, ${ timesString }"
+      ]
+    },
+    "Weekly recurring event, frequency (until)": {
+      "Weekly on ${ multipleDaysString }, ${ untilString }": [
+        "Săptămânal, ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Weekly on all days, ${ untilString }": [
+        "Săptămânal, toate zilele, ${ untilString }"
+      ],
+      "Weekly on Friday, ${ untilString }": [
+        "Săptămânal, vineri, ${ untilString }"
+      ],
+      "Weekly on Monday, ${ untilString }": [
+        "Săptămânal, luni, ${ untilString }"
+      ],
+      "Weekly on Saturday, ${ untilString }": [
+        "Săptămânal, sâmbătă, ${ untilString }"
+      ],
+      "Weekly on Sunday, ${ untilString }": [
+        "Săptămânal, duminică, ${ untilString }"
+      ],
+      "Weekly on Thursday, ${ untilString }": [
+        "Săptămânal, joi, ${ untilString }"
+      ],
+      "Weekly on Tuesday, ${ untilString }": [
+        "Săptămânal, marți, ${ untilString }"
+      ],
+      "Weekly on Wednesday, ${ untilString }": [
+        "Săptămânal, miercuri, ${ untilString }"
+      ]
+    },
     "Weekly recurring event, repeats on (multiple days), frequency": {
       "Friday": [
         "Vineri"
@@ -7267,6 +7390,16 @@
       ],
       "Yearly": [
         "Anual"
+      ]
+    },
+    "Yearly recurring event, frequency (times)": {
+      "Yearly, ${ timesString }": [
+        "Anual, ${ timesString }"
+      ]
+    },
+    "Yearly recurring event, frequency (until)": {
+      "Yearly, ${ untilString }": [
+        "Anual, ${ untilString }"
       ]
     }
   }
