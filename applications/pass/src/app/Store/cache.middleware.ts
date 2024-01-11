@@ -3,6 +3,7 @@ import { type Middleware, isAction } from 'redux';
 import { authStore } from '@proton/pass/lib/auth/store';
 import { isCachingAction } from '@proton/pass/store/actions/with-cache';
 import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/with-callback';
+import type { State } from '@proton/pass/store/types';
 
 import { ServiceWorkerClientID, ServiceWorkerEnabled } from '../ServiceWorker/ServiceWorkerProvider';
 import type { ServiceWorkerMessage, WithOrigin } from '../ServiceWorker/channel';
@@ -10,7 +11,7 @@ import type { ServiceWorkerMessage, WithOrigin } from '../ServiceWorker/channel'
 /** Broadcast any cache-triggering actions to other tabs via service
  * worker messaging. This allows syncing state accross tabs without
  * having to worry about race-conditions when writing cache to IDB */
-export const cacheMiddleware: Middleware = () => (next) => (action: unknown) => {
+export const cacheMiddleware: Middleware<{}, State> = () => (next) => (action: unknown) => {
     if (isAction(action) && isCachingAction(action)) {
         const sanitized = sanitizeWithCallbackAction({ ...action });
         sanitized.meta.cache = false;
