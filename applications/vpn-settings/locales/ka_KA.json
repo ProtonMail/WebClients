@@ -3004,9 +3004,6 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "დააწკაპუნეთ \"ახალი კოდის გამოთხოვნაზე\" და თქვენ ${ strong }-ზე ახალი კოდი გამოგეგზავნებათ. თუ ტელეფონის ეს ნომერი არასწორია, ჩაასწორეთ ის."
       ],
-      "Configure SAML authentication for your organization through an identity provider like Okta, Azure or Onelogin. This will enable SAML for the whole organization.": [
-        "მოირგეთ SAML ავთენტიკაცია თქვენი ორგანიზაციისთვის ისეთი იდენტიფიკატორის მომწოდებლებისთვის, როგორიცაა Okta, Azure ან Onelogin. ეს ჩართავს SAML-ს მთელი ორგანიზაციისთვის."
-      ],
       "Continue with ${ freeName }": [
         "გაგრძელება ${ freeName }-ით"
       ],
@@ -5645,6 +5642,9 @@
       ]
     },
     "Option": {
+      "Automatic (${ value })": [
+        "ავტომატური (${ value })"
+      ],
       "Country configs": [
         "ქვეყნების მორგება"
       ],
@@ -6420,6 +6420,12 @@
       "Highest VPN speed": [
         "უსწრაფესი VPN"
       ],
+      "Premium ${ appName1 }": [
+        "Premium ${ appName1 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 }": [
+        "Premium ${ appName1 } & ${ appName2 }"
+      ],
       "Premium early access": [
         "ადრეული წვდომა ახალ ფუნქციებზე"
       ],
@@ -7130,6 +7136,9 @@
       ],
       "Delete": [
         "წაშლა"
+      ],
+      "Delete ${ value }": [
+        "${ value }-ის წაშლა"
       ],
       "Delete account": [
         "ანგარიშის წაშლა"

@@ -2983,6 +2983,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Avant de pouvoir envoyer et recevoir des messages avec vos nouvelles adresses, vous devez leur créer des clés de chiffrement."
       ],
+      "Beta": [
+        "Version bêta"
+      ],
       "Billed at ${ price }": [
         "Facturé ${ price }"
       ],
@@ -3003,9 +3006,6 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur Demander un nouveau code pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone n'est pas correct, cliquez sur Modifier pour le corriger."
-      ],
-      "Configure SAML authentication for your organization through an identity provider like Okta, Azure or Onelogin. This will enable SAML for the whole organization.": [
-        "Configurez l'authentification SAML de votre organisation avec un fournisseur d'identité comme Okta, Azure ou Onelogin. Vous activerez ainsi le langage SAML pour toute votre organisation."
       ],
       "Continue with ${ freeName }": [
         "Continuer avec ${ freeName }"
@@ -5449,6 +5449,9 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Les jours ouvrés, l'équipe support client ${ BRAND_NAME } vous apporte son aide dans les 24 heures suivant votre demande."
       ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Une connexion VPN permet à un seul appareil de se connecter à ${ VPN_APP_NAME }. Pour connecter en même temps un téléphone et un ordinateur portable à ${ VPN_APP_NAME } par exemple, vous avez besoin de deux connexions VPN."
+      ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Possibilité d'afficher les boites de réception des utilisateurs non privés telles qu'ils les voient, avec toutes les informations des messages et des contacts."
       ],
@@ -6629,6 +6632,10 @@
         "${ n } calendrier par utilisateur",
         "${ n } calendriers par utilisateur"
       ],
+      "${ n } free VPN connection per user": [
+        "${ n } connexion VPN gratuite par utilisateur",
+        "${ n } connexions VPN gratuites par utilisateur"
+      ],
       "${ n } high-speed VPN connection": [
         "${ n } connexion VPN haut débit",
         "${ n } connexions VPN haut débit"
@@ -7443,6 +7450,10 @@
       "Subscription": [
         "Abonnement"
       ],
+      "Successfully created ${ n } user account": [
+        "${ n } compte utilisateur a été créé.",
+        "${ n } comptes utilisateur ont été créés."
+      ],
       "Summary": [
         "Résumé"
       ],
@@ -7641,6 +7652,11 @@
     "Users table: single sign-on enabled": {
       "SSO": [
         "Authentification unique (SSO)"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your identity provider": [
+        "Authentification unique (SSO) de l'utilisateur indiquée par votre fournisseur d'identité"
       ]
     },
     "Validation": {
