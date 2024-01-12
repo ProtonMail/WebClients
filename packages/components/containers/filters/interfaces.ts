@@ -150,7 +150,7 @@ export interface Filter {
     ID: string;
     Name: string;
     Status: number;
-    Priority?: number;
+    Priority: number;
     Version: 1 | 2;
     Simple?: SimpleObject;
     Sieve?: string;

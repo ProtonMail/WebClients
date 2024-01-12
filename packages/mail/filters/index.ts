@@ -5,7 +5,7 @@ import type { Filter } from '@proton/components/containers/filters/interfaces';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store/interface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { queryFilters } from '@proton/shared/lib/api/filters';
-import updateCollection from '@proton/shared/lib/helpers/updateCollection';
+import updateCollection, { sortCollection } from '@proton/shared/lib/helpers/updateCollection';
 
 const name = 'filters' as const;
 
@@ -20,7 +20,11 @@ export const selectFilters = (state: State) => state.filters;
 
 const modelThunk = createAsyncModelThunk<Model, State, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument }) => {
-        return extraArgument.api<{ Filters: Filter[] }>(queryFilters()).then(({ Filters }) => Filters);
+        return extraArgument
+            .api<{
+                Filters: Filter[];
+            }>(queryFilters())
+            .then(({ Filters }) => sortCollection('Priority', [...Filters]));
     },
     previous: previousSelector(selectFilters),
 });
@@ -37,11 +41,14 @@ const slice = createSlice({
         handleAsyncModel(builder, modelThunk);
         builder.addCase(serverEvent, (state, action) => {
             if (state.value && action.payload.Filters) {
-                state.value = updateCollection({
-                    model: state.value,
-                    events: action.payload.Filters,
-                    itemKey: 'Filter',
-                });
+                state.value = sortCollection(
+                    'Priority',
+                    updateCollection({
+                        model: state.value,
+                        events: action.payload.Filters,
+                        itemKey: 'Filter',
+                    })
+                );
             }
         });
     },

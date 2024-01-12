@@ -52,7 +52,6 @@ const slice = createSlice({
                             model: state.value,
                             events: action.payload.Addresses,
                             itemKey: 'Address',
-                            sortByKey: false,
                         })
                     );
                 }
