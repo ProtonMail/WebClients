@@ -1,3 +1,146 @@
+### Version 1.10.0
+
+-   Enable item pinning (behind feature flag)
+-   Remove spaces when copying card number
+-   Display YY instead of YYYY for card expiration year
+-   Migrate extension to common pass routing architecture
+-   Support totpUri with only secret without scheme
+-   Reset selected share filter when leaving vault
+-   Trim vault name in search bar
+-   Add item ID and vault ID in more info panel
+-   Fine-tune alias title validation
+-   Clear all alarms on browser start-up
+-   Fix race condition when boot sequence surpasses lock TTL
+-   Fix duplicate lock check during export sequence
+
+### Version 1.9.6
+
+-   Refactor force lock on browser startup sequence
+-   Improve auto-resume sequence via browser alarms
+-   Improve unlock view loading state UI
+-   Increase number of session resume retries with backpressure
+-   Handle session resume errors in injected dropdown
+-   Add confirm password step before export
+-   Fix enpass import file validation
+-   Fix OTP sanitization & parsing edge-case on incomplete URIs
+-   Fix extra-field not resizing on visibility change
+-   Improve error handling of extension APIs
+
+### Version 1.9.5
+
+-   Fix popup window not autoclosing on firefox
+-   Add early access link to web-app from menu
+
+### Version 1.9.4
+
+-   Hotfix domain image proxy url in extension
+-   Clear API Proxy cache on extension Update
+
+### Version 1.9.3
+
+-   Handle unlock anomaly on session lock is removed (webapp/extension sync)
+-   Support payloads larger than 65kB when obfuscating (eg. notes)
+-   Support abort signals for domain image loading
+
+### Version 1.9.2
+
+-   Ensure runtime reloads do not get flagged as suspicious
+-   Exclude pass domains from content-script injections
+-   Fine-tune activity probing for automatic lock extension
+-   Auto-resume on popup-initiated wakeup calls if worker is errored
+-   Show rating prompt in real time after item creation
+-   Fix unnecessary lock sequence if session already locked
+-   Fix login autofill unable to scroll to bottom
+-   Fix imports from Bitwarden for Organisations
+
+### Version 1.9.1
+
+-   Support importing Bitwarden folders to separate vaults
+-   Hotfix for failing autofill
+
+### Version 1.9.0
+
+-   Allow moving all vault items to another vault
+-   Improved autofill & autosave: SPA support, domain/subdomain matching
+-   Account for protocol when autosaving
+-   Prevent injection on non-HTML documents, for example XML files
+-   Short-circuit favicon fetch on reserved domains
+-   Set minimum compatible Chrome version
+-   Force lock on browser restart
+-   Allow adding webpages to pauselist from injected notification or dropdown
+-   Support parsing legacy OTP URLs containing spaces in the secret
+-   Automatically discard drafts when items are deleted or share disabled
+-   Garbage collect password history on app boot
+-   Prevent exporting if session invalid or locked
+-   Authentication service refactor
+-   Fix import button disabled when max vaults reached
+-   Fix credit card expiration dates for Dashlane imports
+-   Fix hamburger icon when in trash
+-   Fix LastPass CRCRLF case
+-   Fix event polling continuing after invalid/locked session
+-   Fix Dashlane importer when no credit card in CSV
+-   Fix shared alias mailbox value when mailbox cannot be managed
+-   Fix long passwords line break
+
+### Version 1.8.4
+
+-   Support Roboform imports
+-   Support NordPass imports
+-   Support Enpass imports
+-   Fix Keepass XML file trimming
+-   Setup black friday spotlight messages
+-   Fine-tune empty vault screen
+-   Fix pass icon injection breaking `display: grid`
+-   Increase relative injected dropdown z-index position
+-   Fine-tune transition/animation edge-cases in injected styles
+-   Autosuggest password based on user preferences
+-   Fix importing into multiple new vaults
+
+### Version 1.8.3
+
+-   Fix firefox sources generation script
+
+### Version 1.8.2
+
+-   Safeguard against version mismatches between the worker and components during extension updates
+-   Automatically switch to the created vault upon success
+-   Support inviting external & unverified users
+-   Fix the "open in new window" functionality on Firefox
+-   Support sharing directly from the item view
+-   Display a notification in the vault list if a new user invite can be confirmed
+-   Correct the text color for disabled fields
+-   Resolve bug related to oldest vault deletion
+-   Enhance loading states when responding to an invite (progress bar)
+-   Fix quick actions for empty vaults
+-   Handle shared vault limits appropriately
+-   Eliminate legacy access requests during authentication
+-   Fine-tune cache rehydration process during boot sequence
+-   Improve state updates during event polling (detect noops and support invite polling)
+-   Refine vault and item actions based on permissions and shared flag
+-   Add a custom onboarding sequence for pending vault access for unverified users
+-   Update the endpoint for resolving user public address keys
+-   Fix PIN for credit card imports from 1password 1pif/1pux files
+
+### Version 1.8.1
+
+-   Removed primary vault usage, replaced by autosave vault with backwards compatibility
+-   Added support for localization via settings
+-   Improved word matching in items query with more accurate search results
+-   Enabled expanding popup to a new window
+-   Fine-tuned item actions based on current user permissions
+-   Improved settings UI
+
+### Version 1.8.0
+
+-   Sharing functionality enabled for both internal and external users
+-   Update copy for enhanced clarity
+-   Fine-tune dropdown menu
+-   Improve long vault name display to ensure readability
+-   Enhanced request invalidation via max age/acknowledgement
+-   Fix vault deletion confirmation modal close issue ensuring proper state reset.
+-   Validate popup tab state on initialization to prevent potential issues.
+-   Deduplicate notifications on alias request errors
+
 ## Version 1.7.1
 
 -   Hotfix: add cache versioning in order to alleviate update sequence cache resets
