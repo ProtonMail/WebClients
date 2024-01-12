@@ -10,7 +10,15 @@ export const addSieveFilter = ({ Name, Sieve, Version }: AddSieveFilterParams) =
 });
 
 export const addTreeFilter = (
-    { ID, Name, Status, Version, Simple, Tree, Sieve }: Filter,
+    {
+        ID,
+        Name,
+        Status,
+        Version,
+        Simple,
+        Tree,
+        Sieve,
+    }: Pick<Filter, 'ID' | 'Name' | 'Status' | 'Version' | 'Simple' | 'Tree' | 'Sieve'>,
     Source?: 'AutoLabel' | 'AutoFolder'
 ) => ({
     method: 'post',
@@ -29,10 +37,27 @@ export const clearFilters = () => ({
     url: 'mail/v4/filters',
 });
 
-export const updateFilter = (filterID: string, { Name, Status, Version, Sieve, Simple, Tree }: Omit<Filter, 'ID'>) => ({
+export const updateFilter = (
+    filterID: string,
+    {
+        Name,
+        Status,
+        Version,
+        Sieve,
+        Simple,
+        Tree,
+    }: Pick<Filter, 'ID' | 'Name' | 'Status' | 'Version' | 'Simple' | 'Tree' | 'Sieve'>
+) => ({
     method: 'put',
     url: `mail/v4/filters/${filterID}`,
-    data: { Name, Status, Version, Simple, Tree, Sieve },
+    data: {
+        Name,
+        Status,
+        Version,
+        Simple,
+        Tree,
+        Sieve,
+    },
 });
 
 export const checkSieveFilter = (
