@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 
 import { Breakpoints, useConversationCounts, useFlag, useItemsDraggable, useMessageCounts } from '@proton/components';
+import useInboxDesktopBadgeCount from '@proton/components/hooks/useInboxDesktopBadgeCount';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { CHECKLIST_DISPLAY_TYPE, UserSettings } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
@@ -11,7 +12,6 @@ import clsx from '@proton/utils/clsx';
 
 import SelectAllBanner from 'proton-mail/components/list/select-all/SelectAllBanner';
 import { getCanDisplaySelectAllBanner } from 'proton-mail/helpers/selectAll';
-import useDesktopAppIpc from 'proton-mail/hooks/useDesktopAppIpc';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { RootState } from 'proton-mail/logic/store';
@@ -148,7 +148,7 @@ const List = (
     const [conversationCounts] = useConversationCounts();
 
     // Handle IPC communication between React and Electron
-    useDesktopAppIpc();
+    useInboxDesktopBadgeCount();
 
     // Reduce the checklist if there are more than 4 elements in the view
     useEffect(() => {
