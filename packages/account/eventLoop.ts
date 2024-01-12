@@ -19,6 +19,7 @@ import type {
     User,
     UserSettings,
 } from '@proton/shared/lib/interfaces';
+import type { Category } from '@proton/shared/lib/interfaces/Category';
 import type { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
 import type {
     CalendarEventManager,
@@ -40,7 +41,7 @@ export interface EventLoop {
     UserSettings?: UserSettings;
     MailSettings?: MailSettings;
     UserInvitations?: EventItemUpdate<PendingInvitation, 'UserInvitation'>[];
-    Labels?: EventItemUpdate<any, 'Label'>[];
+    Labels?: EventItemUpdate<Category, 'Label'>[];
     Members?: EventItemUpdate<Member, 'Member'>[];
     MessageCounts?: LabelCount[];
     ConversationCounts?: LabelCount[];
