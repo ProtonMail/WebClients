@@ -19,13 +19,14 @@ import type { User } from '@proton/shared/lib/interfaces';
 
 import type { AuthSession } from './session';
 
-export type RequestForkOptions = { host?: string; app: APP_NAMES; type?: FORK_TYPE };
-export type RequestForkResult = { url: string; state: string };
+export type RequestForkOptions = { app: APP_NAMES; host?: string; localID?: number; type?: FORK_TYPE };
+export type RequestForkResult = { state: string; url: string };
 
 export const requestFork = ({
-    host = getAppHref('/', APPS.PROTONACCOUNT),
-    type,
     app,
+    host = getAppHref('/', APPS.PROTONACCOUNT),
+    localID,
+    type,
 }: RequestForkOptions): RequestForkResult => {
     const state = encodeBase64URL(uint8ArrayToString(crypto.getRandomValues(new Uint8Array(32))));
 
@@ -33,6 +34,8 @@ export const requestFork = ({
     searchParams.append('app', app);
     searchParams.append('state', state);
     searchParams.append('independent', '0');
+
+    if (localID !== undefined) searchParams.append('u', `${localID}`);
     if (type) searchParams.append('t', type);
 
     return { url: `${host}${SSO_PATHS.AUTHORIZE}?${searchParams.toString()}`, state };
