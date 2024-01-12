@@ -8,6 +8,7 @@
 import Counter from './lib/Counter';
 import MetricsBase from './lib/MetricsBase';
 import IMetricsRequestService from './lib/types/IMetricsRequestService';
+import { WebCoreDeleteAccountTotal } from './types/web_core_delete_account_total_v1.schema';
 import { WebCoreSessionRecoveryAbortTotal } from './types/web_core_session_recovery_abort_total_v1.schema';
 import { WebCoreSessionRecoveryCancellationModalLoadTotal } from './types/web_core_session_recovery_cancellation_modal_load_total_v1.schema';
 import { WebCoreSessionRecoveryConsumeTotal } from './types/web_core_session_recovery_consume_total_v1.schema';
@@ -26,6 +27,14 @@ import { WebCoreSignupRecoveryStepSetRecoveryMethodTotal } from './types/web_cor
 import { WebCoreSignupReferralStepPlanSelectionTotal } from './types/web_core_signup_referralStep_planSelection_total_v2.schema';
 import { WebCoreSignupUpsellStepPlanSelectionTotal } from './types/web_core_signup_upsellStep_planSelection_total_v2.schema';
 import { WebCoreSignupVerificationStepVerificationTotal } from './types/web_core_signup_verificationStep_verification_total_v2.schema';
+import { WebCoreSSORemoveDomainModalLoadTotal } from './types/web_core_sso_remove_domain_modal_load_total_v1.schema';
+import { WebCoreSSORemoveDomainTotal } from './types/web_core_sso_remove_domain_total_v1.schema';
+import { WebCoreSSOSamlInfoSectionLoadTotal } from './types/web_core_sso_saml_info_page_load_total_v1.schema';
+import { WebCoreSSOSamlSetupModalLoadTotal } from './types/web_core_sso_saml_setup_modal_load_total_v1.schema';
+import { WebCoreSSOSamlSetupTotal } from './types/web_core_sso_saml_setup_total_v1.schema';
+import { WebCoreSSOSamlUpdateInfoTotal } from './types/web_core_sso_saml_update_info_total_v1.schema';
+import { WebCoreSSOSetupDomainModalLoadTotal } from './types/web_core_sso_setup_domain_modal_load_total_v1.schema';
+import { WebCoreSSOSetupDomainTotal } from './types/web_core_sso_setup_domain_total_v1.schema';
 import { WebCoreVpnSingleSignupFetchDependencies2Total } from './types/web_core_vpn_single_signup_fetchDependencies_2_total_v1.schema';
 import { WebCoreVpnSingleSignupFetchDependenciesTotal } from './types/web_core_vpn_single_signup_fetchDependencies_total_v1.schema';
 import { WebCoreVpnSingleSignupPageLoad2Total } from './types/web_core_vpn_single_signup_pageLoad_2_total_v1.schema';
@@ -55,6 +64,8 @@ import { WebPaymentsSubscriptionStepsTotal } from './types/web_payments_subscrip
 import { WebPaymentsSubscriptionTotal } from './types/web_payments_subscription_total_v1.schema';
 
 class Metrics extends MetricsBase {
+    public core_delete_account_total: Counter<WebCoreDeleteAccountTotal>;
+
     public core_session_recovery_abort_total: Counter<WebCoreSessionRecoveryAbortTotal>;
 
     public core_session_recovery_cancellation_modal_load_total: Counter<WebCoreSessionRecoveryCancellationModalLoadTotal>;
@@ -90,6 +101,22 @@ class Metrics extends MetricsBase {
     public core_signup_upsellStep_planSelection_total: Counter<WebCoreSignupUpsellStepPlanSelectionTotal>;
 
     public core_signup_verificationStep_verification_total: Counter<WebCoreSignupVerificationStepVerificationTotal>;
+
+    public core_sso_remove_domain_modal_load_total: Counter<WebCoreSSORemoveDomainModalLoadTotal>;
+
+    public core_sso_remove_domain_total: Counter<WebCoreSSORemoveDomainTotal>;
+
+    public core_sso_saml_info_page_load_total: Counter<WebCoreSSOSamlInfoSectionLoadTotal>;
+
+    public core_sso_saml_setup_modal_load_total: Counter<WebCoreSSOSamlSetupModalLoadTotal>;
+
+    public core_sso_saml_setup_total: Counter<WebCoreSSOSamlSetupTotal>;
+
+    public core_sso_saml_update_info_total: Counter<WebCoreSSOSamlUpdateInfoTotal>;
+
+    public core_sso_setup_domain_modal_load_total: Counter<WebCoreSSOSetupDomainModalLoadTotal>;
+
+    public core_sso_setup_domain_total: Counter<WebCoreSSOSetupDomainTotal>;
 
     public core_vpn_single_signup_fetchDependencies_2_total: Counter<WebCoreVpnSingleSignupFetchDependencies2Total>;
 
@@ -147,6 +174,11 @@ class Metrics extends MetricsBase {
 
     constructor(requestService: IMetricsRequestService) {
         super(requestService);
+
+        this.core_delete_account_total = new Counter<WebCoreDeleteAccountTotal>(
+            { name: 'web_core_delete_account_total', version: 1 },
+            this.requestService
+        );
 
         this.core_session_recovery_abort_total = new Counter<WebCoreSessionRecoveryAbortTotal>(
             { name: 'web_core_session_recovery_abort_total', version: 1 },
@@ -243,6 +275,46 @@ class Metrics extends MetricsBase {
                 { name: 'web_core_signup_verificationStep_verification_total', version: 2 },
                 this.requestService
             );
+
+        this.core_sso_remove_domain_modal_load_total = new Counter<WebCoreSSORemoveDomainModalLoadTotal>(
+            { name: 'web_core_sso_remove_domain_modal_load_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_sso_remove_domain_total = new Counter<WebCoreSSORemoveDomainTotal>(
+            { name: 'web_core_sso_remove_domain_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_sso_saml_info_page_load_total = new Counter<WebCoreSSOSamlInfoSectionLoadTotal>(
+            { name: 'web_core_sso_saml_info_page_load_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_sso_saml_setup_modal_load_total = new Counter<WebCoreSSOSamlSetupModalLoadTotal>(
+            { name: 'web_core_sso_saml_setup_modal_load_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_sso_saml_setup_total = new Counter<WebCoreSSOSamlSetupTotal>(
+            { name: 'web_core_sso_saml_setup_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_sso_saml_update_info_total = new Counter<WebCoreSSOSamlUpdateInfoTotal>(
+            { name: 'web_core_sso_saml_update_info_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_sso_setup_domain_modal_load_total = new Counter<WebCoreSSOSetupDomainModalLoadTotal>(
+            { name: 'web_core_sso_setup_domain_modal_load_total', version: 1 },
+            this.requestService
+        );
+
+        this.core_sso_setup_domain_total = new Counter<WebCoreSSOSetupDomainTotal>(
+            { name: 'web_core_sso_setup_domain_total', version: 1 },
+            this.requestService
+        );
 
         this.core_vpn_single_signup_fetchDependencies_2_total =
             new Counter<WebCoreVpnSingleSignupFetchDependencies2Total>(
