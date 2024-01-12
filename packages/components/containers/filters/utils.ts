@@ -4,6 +4,7 @@ import { fromSieveTree, toSieveTree } from '@proton/sieve';
 
 import { COMPARATORS, FILTER_VERSION, OPERATORS, TYPES, getDefaultFolders } from './constants';
 import {
+    CreateFilter,
     Filter,
     FilterActions,
     FilterCondition,
@@ -12,7 +13,7 @@ import {
     SimpleFilterModalModel,
 } from './interfaces';
 
-export const computeFromTree = (filter: Filter) => {
+export const computeFromTree = (filter: CreateFilter) => {
     const ignoreComment = ({ Type }: any) => Type !== 'Comment';
 
     const simple = fromSieveTree(filter.Tree);
@@ -83,7 +84,7 @@ const convertActions = ({ actions }: SimpleFilterModalModel): FilterActions => {
     };
 };
 
-export const convertModel = (modalModel: FilterModalModelBase, isSieve = false): Filter => {
+export const convertModel = (modalModel: FilterModalModelBase, isSieve = false): CreateFilter => {
     const config = {
         ID: modalModel.id || '',
         Name: modalModel.name || '',
@@ -134,7 +135,7 @@ spamtest :value "ge" :comparator "i;ascii-numeric" "\${1}")
 `,
 };
 
-export const newFilter = (): Filter => {
+export const newFilter = (): CreateFilter => {
     return {
         ID: '',
         Name: '',
@@ -179,10 +180,10 @@ export const createDefaultLabelsFilter = (
     labels: { ID: string; Name: string; Path: string }[],
     filters: Filter[]
 ) => {
-    return senders.map<Filter>((sender) => {
+    return senders.map((sender) => {
         const labelNames = labels.map((label) => label.Name).join(', ');
         const Name = createUniqueName(`${sender} - ${labelNames}`, filters);
-        const filter: Filter = {
+        const filter: CreateFilter = {
             ID: '',
             Name,
             Status: 1,

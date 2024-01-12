@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
+import { useLoading } from '@proton/hooks';
 import { updateCatchAll } from '@proton/shared/lib/api/domains';
 import { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 
 import { Checkbox } from '../../components';
-import { useApiWithoutResult, useNotifications } from '../../hooks';
+import { useApi, useNotifications } from '../../hooks';
 
 interface Props {
     address: DomainAddress;
@@ -14,8 +15,15 @@ interface Props {
 }
 
 const AddressCatchAll = ({ address, domain, onChange, disabled }: Props) => {
-    const { request, loading } = useApiWithoutResult(updateCatchAll);
+    const api = useApi();
     const { createNotification } = useNotifications();
+    const [loading, withLoading] = useLoading();
+
+    const update = async (newValue: boolean) => {
+        await api(updateCatchAll(domain.ID, newValue ? address.ID : null));
+        onChange(address.ID, newValue);
+        createNotification({ text: c('Success').t`Catch-all address updated` });
+    };
 
     return (
         <Checkbox
@@ -23,10 +31,7 @@ const AddressCatchAll = ({ address, domain, onChange, disabled }: Props) => {
             disabled={loading || disabled}
             checked={!!address.CatchAll}
             onChange={async ({ target }) => {
-                const newValue = target.checked;
-                await request(domain.ID, newValue ? address.ID : null);
-                onChange(address.ID, newValue);
-                createNotification({ text: c('Success').t`Catch-all address updated` });
+                withLoading(update(target.checked));
             }}
         />
     );

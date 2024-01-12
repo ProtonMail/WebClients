@@ -8,7 +8,7 @@ import { buyCredit, validateCredit } from '@proton/shared/lib/api/payments';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { InputFieldTwo, useFormErrors } from '../../components';
-import { useApiWithoutResult, useEventManager, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useNotifications } from '../../hooks';
 import { SettingsSection } from '../account';
 import SettingsParagraph from '../account/SettingsParagraph';
 
@@ -16,8 +16,7 @@ const GiftCodeSection = () => {
     const [value, setValue] = useState('');
     const { validator, reset, onFormSubmit } = useFormErrors();
     const [loading, withLoading] = useLoading();
-    const { request: requestBuyCredit } = useApiWithoutResult(buyCredit);
-    const { request: requestValidateCredit } = useApiWithoutResult(validateCredit);
+    const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
 
@@ -26,8 +25,8 @@ const GiftCodeSection = () => {
     };
 
     const submit = async () => {
-        await requestValidateCredit({ GiftCode: value });
-        await requestBuyCredit({ GiftCode: value, Amount: 0 });
+        await api(validateCredit({ GiftCode: value }));
+        await api(buyCredit({ GiftCode: value, Amount: 0 }));
         await call();
         setValue('');
         reset();

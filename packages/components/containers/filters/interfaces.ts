@@ -156,3 +156,5 @@ export interface Filter {
     Sieve?: string;
     Tree?: any;
 }
+
+export type CreateFilter = Omit<Filter, 'Priority'>;
