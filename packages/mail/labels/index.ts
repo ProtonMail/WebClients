@@ -4,7 +4,7 @@ import { ModelState, serverEvent } from '@proton/account';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store/interface';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getContactGroup, getFolders, getLabels, getSystemFolders } from '@proton/shared/lib/api/labels';
-import updateCollection from '@proton/shared/lib/helpers/updateCollection';
+import updateCollection, { sortCollection } from '@proton/shared/lib/helpers/updateCollection';
 import { Api, Label } from '@proton/shared/lib/interfaces';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
@@ -22,7 +22,7 @@ const getLabelsModel = async (api: Api) => {
         api(getContactGroup()).then(extractLabels),
         api(getSystemFolders()).then(extractLabels),
     ]);
-    return [...labels, ...folders, ...contactGroups, ...systemFolders];
+    return sortCollection('Order', [...labels, ...folders, ...contactGroups, ...systemFolders]);
 };
 
 export interface CategoriesState {
@@ -53,13 +53,16 @@ const slice = createSlice({
         handleAsyncModel(builder, modelThunk);
         builder.addCase(serverEvent, (state, action) => {
             if (state.value && action.payload.Labels) {
-                state.value = updateCollection({
-                    model: state.value,
-                    events: action.payload.Labels,
-                    itemKey: 'Label',
-                    // Event updates don't return e.g. ParentID so it's better that the old value gets completely dropped instead of merged
-                    merge: (_, b) => b,
-                });
+                state.value = sortCollection(
+                    'Order',
+                    updateCollection({
+                        model: state.value,
+                        events: action.payload.Labels,
+                        itemKey: 'Label',
+                        // Event updates don't return e.g. ParentID so it's better that the old value gets completely dropped instead of merged
+                        merge: (_, b) => b,
+                    })
+                );
             }
         });
     },

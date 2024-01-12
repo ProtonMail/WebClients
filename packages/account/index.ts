@@ -15,6 +15,7 @@ export * from './organization';
 export * from './organizationKey';
 export * from './organizationKey/listener';
 export * from './members';
+export * from './members/useMemberAddresses';
 export * from './plans';
 export * from './domains';
 export * from './domainsAddresses';
