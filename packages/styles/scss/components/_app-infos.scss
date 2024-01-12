@@ -9,7 +9,7 @@
 	}
 
 	a#{&}-storage,
-	&-version {
+	&-version[type='button'] {
 		&:hover,
 		&:focus {
 			color: var(--text-norm);
