@@ -113,7 +113,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
     const [addresses = []] = useAddresses();
     const [contactEmails = []] = useContactEmails();
     const contactEmailsSorted = useMemo(() => {
-        const uniqueEmails = uniqueBy(contactEmails, ({ Email }) => Email);
+        const uniqueEmails = uniqueBy(contactEmails, ({ Email }) => Email.toLowerCase());
         const sortedEmails = [...uniqueEmails].sort(compareContactEmailByEmail);
         return sortedEmails;
     }, [contactEmails]);
