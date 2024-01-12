@@ -19,7 +19,7 @@ describe('sortWithCategories', () => {
         },
     };
 
-    describe('getTimeDateSource', () => {
+    describe('getFormattedDateTime', () => {
         /*  Preferance order of capture date time is:
          * DateTimeOriginal (time when the picture was actually taken)
          * DateTimeDigitized (time when the picture was converted from analog, but also known as CreateDate)
@@ -43,6 +43,16 @@ describe('sortWithCategories', () => {
             const mock = {};
             const formattedDateTime = getFormattedDateTime(mock);
             expect(formattedDateTime).toBe(undefined);
+        });
+        it('should parse first parsable date', () => {
+            const mock = { ...mockExif };
+            mock.DateTimeOriginal.value[0] = 'some random text';
+
+            // should return date from DateTimeDigitized
+            expect(getFormattedDateTime(mock)).toBe('2024-01-07 08:00:53');
+            mock.DateTimeDigitized.value = [];
+            // should return date from DateTime
+            expect(getFormattedDateTime(mock)).toBe('2024-01-07 10:00:53');
         });
     });
     // FIXME `toISOString()` return timezone releated output.
