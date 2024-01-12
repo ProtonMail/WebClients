@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
+import { CircleLoader } from '@proton/atoms/CircleLoader';
+import { Address, CachedOrganizationKey, Member, PartialMemberAddress, UserModel } from '@proton/shared/lib/interfaces';
 
 import { Table, TableBody, TableHeader, TableRow } from '../../components';
 import AddressActions from './AddressActions';
@@ -12,7 +13,7 @@ interface AddressesTableProps {
     hasUsername: boolean;
     user: UserModel;
     members: Member[];
-    memberAddresses?: { [key: string]: Address[] };
+    memberAddressesMap?: { [key: string]: (Address | PartialMemberAddress)[] | undefined };
     organizationKey?: CachedOrganizationKey;
 }
 
@@ -21,7 +22,7 @@ const AddressesTable = ({
     hasUsername,
     user,
     members,
-    memberAddresses,
+    memberAddressesMap,
     organizationKey,
 }: AddressesTableProps) => {
     return (
@@ -36,32 +37,56 @@ const AddressesTable = ({
             />
             <TableBody colSpan={hasUsername ? 4 : 3} loading={loading}>
                 {members.flatMap((member) => {
-                    const formattedAddresses = memberAddresses?.[member.ID] || [];
-                    return formattedAddresses.map((address, i) => (
-                        <TableRow
-                            key={address.ID}
-                            cells={[
-                                <div className="text-ellipsis" title={address.Email}>
-                                    {address.Email}
-                                </div>,
-                                hasUsername && member.Name,
-                                <AddressStatus {...getStatus(address, i)} />,
-                                <AddressActions
-                                    member={member}
-                                    address={address}
-                                    user={user}
-                                    permissions={getPermissions({
-                                        addressIndex: i,
-                                        member,
-                                        address,
-                                        addresses: formattedAddresses,
-                                        user,
-                                        organizationKey,
-                                    })}
-                                />,
-                            ].filter(Boolean)}
-                        />
-                    ));
+                    const memberAddresses = memberAddressesMap?.[member.ID] || [];
+                    return memberAddresses.map((address, i) => {
+                        const emailCell = (
+                            <div className="text-ellipsis" title={address.Email}>
+                                {address.Email}
+                            </div>
+                        );
+                        const nameCell = hasUsername && member.Name;
+
+                        // Partial address getting loaded
+                        if (!('Keys' in address)) {
+                            return (
+                                <TableRow
+                                    key={address.ID}
+                                    cells={[
+                                        emailCell,
+                                        nameCell,
+                                        <div className="visibility-hidden">
+                                            <AddressStatus isActive />
+                                        </div>,
+                                        <CircleLoader />,
+                                    ].filter(Boolean)}
+                                />
+                            );
+                        }
+
+                        return (
+                            <TableRow
+                                key={address.ID}
+                                cells={[
+                                    emailCell,
+                                    nameCell,
+                                    <AddressStatus {...getStatus(address, i)} />,
+                                    <AddressActions
+                                        member={member}
+                                        address={address}
+                                        user={user}
+                                        permissions={getPermissions({
+                                            addressIndex: i,
+                                            member,
+                                            address,
+                                            addresses: memberAddresses,
+                                            user,
+                                            organizationKey,
+                                        })}
+                                    />,
+                                ].filter(Boolean)}
+                            />
+                        );
+                    });
                 })}
             </TableBody>
         </Table>

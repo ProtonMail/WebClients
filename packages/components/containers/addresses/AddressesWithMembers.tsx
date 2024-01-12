@@ -2,7 +2,9 @@ import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useMemberAddresses } from '@proton/account';
 import { Button, Href } from '@proton/atoms';
+import { GenericError } from '@proton/components/containers';
 import { getDomainAdressError } from '@proton/components/containers/members/validateAddUser';
 import { ALL_MEMBERS_ID, BRAND_NAME, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains } from '@proton/shared/lib/helpers/address';
@@ -13,7 +15,6 @@ import { Alert, Loader, SettingsLink, useModalState } from '../../components';
 import {
     useAddresses,
     useCustomDomains,
-    useMemberAddresses,
     useMembers,
     useNotifications,
     useOrganizationKey,
@@ -76,7 +77,10 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
         return [];
     }, [members, memberIndex]);
 
-    const [memberAddressesMap, loadingMemberAddresses] = useMemberAddresses(selectedMembers);
+    const { value: memberAddressesMap, retry } = useMemberAddresses({
+        members: selectedMembers,
+        partial: false,
+    });
 
     const hasUsernameDisplay = memberIndex === ALL_MEMBERS_ID;
     const isSelfSelected = useMemo(() => {
@@ -114,6 +118,10 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
     const activateLink = (
         <SettingsLink path="/organization-keys" key="activate">{c('Action').t`activate`}</SettingsLink>
     );
+
+    const membersWithError = selectedMembers.filter((member) => {
+        return member.addressState === 'rejected';
+    });
 
     const children = (
         <>
@@ -153,27 +161,39 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
                 </div>
             )}
 
-            {isSelfSelected ? (
-                <AddressesWithUser
-                    user={user}
-                    member={currentMember}
-                    organizationKey={organizationKey}
-                    hasDescription={false}
-                />
-            ) : (
-                <AddressesTable
-                    hasUsername={hasUsernameDisplay}
-                    loading={selectedMembers.some(({ ID }) => !Array.isArray(memberAddressesMap?.[ID]))}
-                    user={user}
-                    members={selectedMembers}
-                    memberAddresses={memberAddressesMap}
-                />
-            )}
+            {(() => {
+                if (isSelfSelected) {
+                    return (
+                        <AddressesWithUser
+                            user={user}
+                            member={currentMember}
+                            organizationKey={organizationKey}
+                            hasDescription={false}
+                        />
+                    );
+                }
+
+                if (membersWithError.length) {
+                    return (
+                        <GenericError>
+                            <Button onClick={() => retry(membersWithError)}>{c('Action').t`Retry`}</Button>
+                        </GenericError>
+                    );
+                }
+
+                return (
+                    <AddressesTable
+                        hasUsername={hasUsernameDisplay}
+                        loading={selectedMembers.some(({ ID }) => !Array.isArray(memberAddressesMap?.[ID]))}
+                        user={user}
+                        members={selectedMembers}
+                        memberAddressesMap={memberAddressesMap}
+                    />
+                );
+            })()}
         </>
     );
-
-    const loading =
-        loadingMembers || loadingAddresses || memberIndex === -1 || (loadingMemberAddresses && !memberAddressesMap);
+    const loading = loadingMembers || loadingAddresses || memberIndex === -1;
 
     return (
         <>

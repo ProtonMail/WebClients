@@ -4,7 +4,7 @@ import type { SavedPaymentMethod } from '@proton/components/payments/core';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
-import updateCollection from '@proton/shared/lib/helpers/updateCollection';
+import updateCollection, { sortCollection } from '@proton/shared/lib/helpers/updateCollection';
 
 import { serverEvent } from '../eventLoop';
 import type { ModelState } from '../interface';
@@ -27,7 +27,7 @@ const modelThunk = createAsyncModelThunk<Model, PaymentMethodsState, ProtonThunk
                 PaymentMethods: SavedPaymentMethod[];
             }>(queryPaymentMethods())
             .then(({ PaymentMethods }) => {
-                return PaymentMethods;
+                return sortCollection('Order', [...PaymentMethods]);
             });
     },
     previous: previousSelector(selectPaymentMethods),
@@ -45,11 +45,14 @@ const slice = createSlice({
         handleAsyncModel(builder, modelThunk);
         builder.addCase(serverEvent, (state, action) => {
             if (state.value && action.payload.PaymentMethods) {
-                state.value = updateCollection({
-                    model: state.value,
-                    events: action.payload.PaymentMethods,
-                    itemKey: 'PaymentMethod',
-                });
+                state.value = sortCollection(
+                    'Order',
+                    updateCollection({
+                        model: state.value,
+                        events: action.payload.PaymentMethods,
+                        itemKey: 'PaymentMethod',
+                    })
+                );
             }
         });
     },
