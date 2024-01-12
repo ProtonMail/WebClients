@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { useMemberAddresses } from '@proton/account';
 import { Avatar, Button } from '@proton/atoms';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { removeMember, updateRole } from '@proton/shared/lib/api/members';
@@ -31,7 +32,6 @@ import {
     useCustomDomains,
     useEventManager,
     useGetOrganizationKey,
-    useMemberAddresses,
     useMembers,
     useNotifications,
     useOrganization,
@@ -68,7 +68,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const [subscription] = useSubscription();
     const [user] = useUser();
     const [openSubscriptionModal] = useSubscriptionModal();
-    const [memberAddressesMap] = useMemberAddresses(members, true);
+    const { value: memberAddressesMap } = useMemberAddresses({ members, partial: true });
     const [keywords, setKeywords] = useState('');
     const [tmpMember, setTmpMember] = useState<Member | null>(null);
     const api = useApi();

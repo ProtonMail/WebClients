@@ -48,7 +48,6 @@ export const getStatus = (address: Address, i: number) => {
 
 export const getPermissions = ({
     member,
-    address: { ID, Status, HasKeys, Type, Priority, ConfirmationState },
     address,
     addresses,
     user,
@@ -58,11 +57,12 @@ export const getPermissions = ({
     addressIndex: number;
     member?: Member;
     address: Address;
-    addresses: Address[];
+    addresses: PartialMemberAddress[];
     user: UserModel;
     organizationKey?: CachedOrganizationKey;
 }) => {
     const { isAdmin, canPay, isSubUser } = user;
+    const { ID, Status, HasKeys, Type, Priority, ConfirmationState } = address;
 
     const isSpecialAddress = Type === TYPE_ORIGINAL || Type === TYPE_PREMIUM;
 
