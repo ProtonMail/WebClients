@@ -28,7 +28,6 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     primary?: ReactNode;
     children?: ReactNode;
     version?: ReactNode;
-    storageGift?: ReactNode;
     hasAppLinks?: boolean;
     appsDropdown: ReactNode;
     contactsButton?: ReactNode;
@@ -58,7 +57,6 @@ const Sidebar = ({
     primary,
     children,
     version,
-    storageGift,
     contactsButton,
     extraFooter,
     growContent = true,
@@ -197,7 +195,6 @@ const Sidebar = ({
                                 ) : (
                                     <span className="app-infos-storage text-xs m-0">{storageText}</span>
                                 )}
-                                {storageGift}
                             </span>
 
                             <span className="app-infos-compact">{version}</span>
