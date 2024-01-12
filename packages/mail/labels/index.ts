@@ -5,11 +5,7 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store/interface'
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 import { getContactGroup, getFolders, getLabels, getSystemFolders } from '@proton/shared/lib/api/labels';
 import updateCollection, { sortCollection } from '@proton/shared/lib/helpers/updateCollection';
-import { Api, Label } from '@proton/shared/lib/interfaces';
-import type { Folder } from '@proton/shared/lib/interfaces/Folder';
-import type { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
-
-export type Category = Folder | Label | ContactGroup;
+import type { Api, Category } from '@proton/shared/lib/interfaces';
 
 const name = 'categories' as const;
 
@@ -60,7 +56,7 @@ const slice = createSlice({
                         events: action.payload.Labels,
                         itemKey: 'Label',
                         // Event updates don't return e.g. ParentID so it's better that the old value gets completely dropped instead of merged
-                        merge: (_, b) => b,
+                        merge: (_, b) => b as Category,
                     })
                 );
             }
