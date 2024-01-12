@@ -5,6 +5,7 @@ import { APP_NAMES } from '@proton/shared/lib/constants';
 import BadAppVersionBanner from './BadAppVersionBanner';
 import DelinquentTopBanner from './DelinquentTopBanner';
 import DesktopNotificationTopBanner from './DesktopNotificationTopBanner';
+import InboxDesktopOutdatedApp from './InboxDesktopOutdatedApp';
 import OnlineTopBanner from './OnlineTopBanner';
 import PendingInvitationTopBanner from './PendingInvitationTopBanner';
 import ReferralTopBanner from './ReferralTopBanner';
@@ -33,6 +34,7 @@ const TopBanners = ({ children, app }: Props) => {
             <PendingInvitationTopBanner />
             <SubscriptionEndsBanner />
             <SessionRecoveryBanners />
+            <InboxDesktopOutdatedApp />
             {children}
         </>
     );
