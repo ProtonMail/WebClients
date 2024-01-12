@@ -302,6 +302,7 @@ const HolidaysCalendarModalWithDirectory = ({
                             getAddressKeys,
                             color,
                             notifications: formattedNotifications,
+                            priority: inputHolidaysCalendar.Priority,
                             api,
                         }).catch(() => {
                             createNotification({
