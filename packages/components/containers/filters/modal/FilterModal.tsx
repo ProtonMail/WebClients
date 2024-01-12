@@ -20,18 +20,12 @@ import {
     useModalState,
 } from '../../../components';
 import { generateUID } from '../../../helpers';
-import {
-    useApiWithoutResult,
-    useEventManager,
-    useFilters,
-    useFolders,
-    useLabels,
-    useNotifications,
-} from '../../../hooks';
+import { useApi, useEventManager, useFilters, useFolders, useLabels, useNotifications } from '../../../hooks';
 import { getDefaultFolders, noFolderValue } from '../constants';
 import {
     Actions,
     Condition,
+    CreateFilter,
     Errors,
     Filter,
     FilterActions,
@@ -53,7 +47,7 @@ import HeaderFilterModal from './HeaderFilterModal';
 import './Filtermodal.scss';
 
 interface Props extends ModalProps {
-    filter?: Filter;
+    filter?: CreateFilter;
     onCloseCustomAction?: () => void;
 }
 
@@ -119,6 +113,7 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
     const [filters = []] = useFilters();
     const [labels = [], loadingLabels] = useLabels();
     const [folders = [], loadingFolders] = useFolders();
+    const api = useApi();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
@@ -128,7 +123,7 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
 
     const { onClose } = rest;
 
-    const initializeModel = (filter?: Filter) => {
+    const initializeModel = (filter?: CreateFilter) => {
         const computedFilter = filter ? computeFromTree(filter) : {};
 
         const {
@@ -212,18 +207,14 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
         };
     }, [name, actions, conditions]);
 
-    const reqCreate = useApiWithoutResult<{ Filter: Filter }>(addTreeFilter);
-    const reqUpdate = useApiWithoutResult<{ Filter: Filter }>(updateFilter);
-    const reqApply = useApiWithoutResult<{ Filter: Filter }>(applyFilters);
-
     const handleCloseModal = () => {
         onCloseCustomAction?.();
         onClose?.();
     };
 
-    const createFilter = async (filter: Filter) => {
+    const createFilter = async (filter: CreateFilter) => {
         try {
-            const { Filter } = await reqCreate.request(filter);
+            const { Filter } = await api(addTreeFilter(filter));
             createNotification({
                 text: c('Notification').t`${Filter.Name} created`,
             });
@@ -237,12 +228,8 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
         }
     };
 
-    const applyFilter = async (filterId: string) => {
-        await reqApply.request({ FilterIDs: [filterId] });
-    };
-
-    const editFilter = async (filter: Filter) => {
-        const { Filter } = await reqUpdate.request(filter.ID, filter);
+    const editFilter = async (filter: CreateFilter) => {
+        const { Filter } = await api(updateFilter(filter.ID, filter));
         await call();
         createNotification({
             text: c('Filter notification').t`Filter ${Filter.Name} updated`,
@@ -279,7 +266,7 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
         }
 
         if (newModel.apply && apiResult) {
-            await applyFilter(apiResult.ID);
+            await api(applyFilters({ FilterIDs: [apiResult.ID] }));
         }
     };
 
