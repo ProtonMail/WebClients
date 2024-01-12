@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 import { Input, InputProps } from '@proton/atoms';
 import { findLongestMatchingIndex } from '@proton/shared/lib/helpers/string';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import noop from '@proton/utils/noop';
 import withDecimalPrecision from '@proton/utils/withDecimalPrecision';
 
 import { generateUID } from '../../helpers';
@@ -138,6 +139,45 @@ const TimeInput = ({
     const valueMinutes = getMinutes(value);
     const normalizedMinutes = valueMinutes - minMinutes;
 
+    const options = useMemo(() => {
+        const totalMinutes = preventNextDayOverflow ? getBaseDateMinutes(base, interval) : MAX_MINUTES;
+        const length = Math.floor(totalMinutes / interval);
+        const minutes = Array.from({ length }, (a, i) => i * interval);
+
+        return minutes.map((minutes) => {
+            const value = addMinutes(base, minutes);
+            const label = toFormatted(value, dateLocale);
+            return {
+                minutes,
+                value,
+                label,
+                display: displayDuration ? (
+                    <>
+                        {label} ({getDurationOptionDisplay(label, minutes)})
+                    </>
+                ) : (
+                    label
+                ),
+            };
+        });
+    }, [normalizedMinutes, base]);
+
+    const filteredOptions = useMemo(() => {
+        return options.filter(({ value }) => {
+            const minCondition = min ? value >= min : true;
+            const maxCondition = max ? value <= max : true;
+            return minCondition && maxCondition;
+        });
+    }, [options, min, max]);
+
+    const matchingIndex = useMemo(() => {
+        const idx = findLongestMatchingIndex(
+            filteredOptions.map(({ label }) => label),
+            temporaryInput
+        );
+        return idx === -1 ? undefined : idx;
+    }, [filteredOptions, temporaryInput]);
+
     const handleSelectDate = (newDate: Date) => {
         const newMinutes = getMinutes(newDate);
 
@@ -159,16 +199,30 @@ const TimeInput = ({
     };
 
     const parseAndSetDate = (temporaryInput: string) => {
+        let hasSet = false;
         try {
-            const newDate = fromFormatted(temporaryInput, dateLocale);
-            const newDateTime = +newDate;
-            if (!Number.isNaN(newDateTime)) {
-                handleSelectDate(newDate);
+            const matchingOption = matchingIndex !== undefined ? filteredOptions[matchingIndex] : undefined;
+            if (matchingOption?.value && matchingOption?.label?.includes(temporaryInput)) {
+                // if we highlighted an option in the UI, select that one
+                handleSelectDate(matchingOption.value);
+                setTemporaryInput(toFormatted(matchingOption.value, dateLocale));
+                hasSet = true;
+            } else {
+                const newDate = fromFormatted(temporaryInput, dateLocale);
+                const newDateTime = +newDate;
+                if (!Number.isNaN(newDateTime)) {
+                    handleSelectDate(newDate);
+                    setTemporaryInput(toFormatted(newDate, dateLocale));
+                    hasSet = true;
+                }
             }
-            // eslint-disable-next-line no-empty
-        } catch (e: any) {}
-
-        setTemporaryInput(toFormatted(value, dateLocale));
+        } catch {
+            noop();
+        } finally {
+            if (!hasSet) {
+                setTemporaryInput(toFormatted(value, dateLocale));
+            }
+        }
     };
 
     const handleBlur = () => {
@@ -228,45 +282,6 @@ const TimeInput = ({
     const scrollRef = useRef<HTMLDivElement>(null);
     const listRef = useRef<HTMLUListElement>(null);
 
-    const options = useMemo(() => {
-        const totalMinutes = preventNextDayOverflow ? getBaseDateMinutes(base, interval) : MAX_MINUTES;
-        const length = Math.floor(totalMinutes / interval);
-        const minutes = Array.from({ length }, (a, i) => i * interval);
-
-        return minutes.map((minutes) => {
-            const value = addMinutes(base, minutes);
-            const label = toFormatted(value, dateLocale);
-            return {
-                minutes,
-                value,
-                label,
-                display: displayDuration ? (
-                    <>
-                        {label} ({getDurationOptionDisplay(label, minutes)})
-                    </>
-                ) : (
-                    label
-                ),
-            };
-        });
-    }, [normalizedMinutes, base]);
-
-    const filteredOptions = useMemo(() => {
-        return options.filter(({ value }) => {
-            const minCondition = min ? value >= min : true;
-            const maxCondition = max ? value <= max : true;
-            return minCondition && maxCondition;
-        });
-    }, [options, min, max]);
-
-    const matchingIndex = useMemo(() => {
-        const idx = findLongestMatchingIndex(
-            filteredOptions.map(({ label }) => label),
-            temporaryInput
-        );
-        return idx === -1 ? undefined : idx;
-    }, [filteredOptions, temporaryInput]);
-
     const scrollToSelection = () => {
         if (!isOpen) {
             return;
@@ -295,9 +310,9 @@ const TimeInput = ({
             <Input
                 type="text"
                 ref={anchorRef}
-                onFocus={() => open()}
+                onFocus={open}
                 onBlur={handleBlur}
-                onClick={() => open()}
+                onClick={open}
                 value={temporaryInput}
                 onChange={({ target: { value } }: ChangeEvent<HTMLInputElement>) => setTemporaryInput(value)}
                 {...rest}
