@@ -38,16 +38,27 @@ export async function encryptExifInfo(
     return encodeBase64(message);
 }
 
-export const getTimeDateSource = (exif?: ExifTags) => {
+export const getFormattedDateTime = (exif?: ExifTags) => {
     if (!exif) {
         return undefined;
     }
-    return exif.DateTimeOriginal || exif.DateTimeDigitized || exif.DateTime || undefined;
+    const sources = [exif.DateTimeOriginal, exif.DateTimeDigitized, exif.DateTime];
+    for (let i = 0; i < sources.length; i++) {
+        const source = sources[i];
+        if (!source?.value[0]) {
+            continue;
+        }
+        try {
+            return formatExifDateTime(source.value[0]);
+        } catch {
+            continue;
+        }
+    }
+    return undefined;
 };
 
 export const getCaptureDateTime = (file: File, exif?: ExifTags) => {
-    const source = getTimeDateSource(exif);
-    const formattedDateTime = source?.value[0] ? formatExifDateTime(source.value[0]) : undefined;
+    const formattedDateTime = getFormattedDateTime(exif);
 
     // If file.lastModified is not know, current date will be returned:
     // https://developer.mozilla.org/en-US/docs/Web/API/File/lastModified
@@ -62,8 +73,8 @@ export const getPhotoDimensions = ({ exif, png }: ExpandedTags): { width?: numbe
 });
 
 export const getCaptureDateTimeString = (exif?: ExifTags) => {
-    const source = getTimeDateSource(exif);
-    return source?.value[0] ? new Date(formatExifDateTime(source.value[0])).toISOString() : undefined;
+    const formattedDateTime = getFormattedDateTime(exif);
+    return formattedDateTime ? new Date(formattedDateTime).toISOString() : undefined;
 };
 
 export const getPhotoExtendedAttributes = ({ exif, gps }: ExpandedTags) => ({
