@@ -1,7 +1,10 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { useLoading } from '@proton/hooks';
+import metrics, { observeApiError } from '@proton/metrics';
 import { deleteDomain } from '@proton/shared/lib/api/domains';
 import { Domain } from '@proton/shared/lib/interfaces';
 
@@ -18,11 +21,28 @@ const RemoveSSODomain = ({ domain, ...rest }: Props) => {
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
 
+    useEffect(() => {
+        void metrics.core_sso_remove_domain_modal_load_total.increment({ step: 'remove-domain' });
+    }, []);
+
     const handleConfirmDelete = async () => {
-        await api(deleteDomain(domain.ID));
-        await call();
-        rest.onClose?.();
-        createNotification({ text: c('Success message').t`Domain deleted` });
+        try {
+            await api(deleteDomain(domain.ID));
+            await call();
+            rest.onClose?.();
+            createNotification({ text: c('Success message').t`Domain deleted` });
+
+            metrics.core_sso_remove_domain_total.increment({
+                status: 'success',
+            });
+        } catch (error) {
+            observeApiError(error, (status) =>
+                metrics.core_sso_remove_domain_total.increment({
+                    status,
+                })
+            );
+            throw error;
+        }
     };
 
     const boldDomain = <b key="remove-sso-domain-name">{domain.DomainName}</b>;
