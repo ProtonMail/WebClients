@@ -95,7 +95,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
                  * we are likely dealing with an app-switch request from another client.
                  * In this case, redirect to account through a fork request */
                 if (!loggedIn && client.current.state.status !== AppStatus.LOCKED && pathLocalID !== undefined) {
-                    authService.requestFork({ app: APPS.PROTONPASS, host: config.SSO_URL });
+                    authService.requestFork({ app: APPS.PROTONPASS, host: config.SSO_URL, localID: pathLocalID });
                 }
 
                 return loggedIn;
