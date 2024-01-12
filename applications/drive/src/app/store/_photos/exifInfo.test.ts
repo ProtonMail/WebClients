@@ -1,4 +1,4 @@
-import { getCaptureDateTimeString, getTimeDateSource } from './exifInfo';
+import { getCaptureDateTimeString, getFormattedDateTime } from './exifInfo';
 
 describe('sortWithCategories', () => {
     const mockExif = {
@@ -26,23 +26,23 @@ describe('sortWithCategories', () => {
          * DateTime (what we currently have)
          */
         it('should return `DateTimeOriginal` when all params present', () => {
-            const source = getTimeDateSource(mockExif);
-            expect(source?.value[0]).toBe('2024:01:07 09:00:53');
+            const formattedDateTime = getFormattedDateTime(mockExif);
+            expect(formattedDateTime).toBe('2024-01-07 09:00:53');
         });
         it('should return `DateTimeDigitized` if `DateTimeOriginal` is missing', () => {
             const mock = { ...mockExif, DateTimeOriginal: undefined };
-            const source = getTimeDateSource(mock);
-            expect(source?.value[0]).toBe('2024:01:07 08:00:53');
+            const formattedDateTime = getFormattedDateTime(mock);
+            expect(formattedDateTime).toBe('2024-01-07 08:00:53');
         });
         it('should return `DateTime` if `DateTimeDigitized` and `DateTimeOriginal` is missing', () => {
             const mock = { ...mockExif, DateTimeOriginal: undefined, DateTimeDigitized: undefined };
-            const source = getTimeDateSource(mock);
-            expect(source?.value[0]).toBe('2024:01:07 10:00:53');
+            const formattedDateTime = getFormattedDateTime(mock);
+            expect(formattedDateTime).toBe('2024-01-07 10:00:53');
         });
         it('should return `undefined` if none of prefered props are present', () => {
             const mock = {};
-            const source = getTimeDateSource(mock);
-            expect(source?.value[0]).toBe(undefined);
+            const formattedDateTime = getFormattedDateTime(mock);
+            expect(formattedDateTime).toBe(undefined);
         });
     });
     // FIXME `toISOString()` return timezone releated output.
