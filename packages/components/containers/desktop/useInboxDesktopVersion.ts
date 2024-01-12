@@ -62,6 +62,7 @@ const fetchDesktopClient = async (platform: 'windows' | 'macos'): Promise<Deskto
                     Url: res.early.File.Url ?? undefined,
                     Sha512CheckSum: res.early.File.Sha512CheckSum ?? '',
                 },
+                ManualUpdate: res.early.ManualUpdate ?? [],
             },
         };
         return result;

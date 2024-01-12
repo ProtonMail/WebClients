@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button';
-import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import mailHeaderImage from '@proton/styles/assets/img/illustrations/upsell-mail-header.svg';
 
 import { ModalStateProps, ModalTwo, ModalTwoContent, ModalTwoHeader } from '../modalTwo';
@@ -24,7 +24,7 @@ const DesktopAppLoginErrorUpsell = (modalProps: ModalStateProps) => {
                             {c('Desktop app upsell').t`Access to the desktop app is limited`}
                         </h1>
                         <p className="mt-0 mb-4">{c('Desktop app upsell')
-                            .t`The beta version of the ${MAIL_APP_NAME} desktop app is currently limited to ${BRAND_NAME} Visionary subscribers. It will be available to all users in early 2024.`}</p>
+                            .t`The beta version of the ${MAIL_APP_NAME} desktop app is currently available to anyone with a paid ${MAIL_APP_NAME} plan. It will soon be available to everyone.`}</p>
                         <p className="my-0">{c('Desktop app upsell')
                             .t`Upgrade today or check again in early 2024 for access.`}</p>
                     </div>
@@ -33,10 +33,10 @@ const DesktopAppLoginErrorUpsell = (modalProps: ModalStateProps) => {
                         fullWidth
                         color="norm"
                         size="large"
-                        href="https://proton.me/visionary"
+                        href="https://proton.me/mail/pricing"
                         target="_blank"
                     >
-                        {c('Action').t`Upgrade to Visionary`}
+                        {c('Action').t`Upgrade`}
                     </ButtonLike>
                 </div>
             </ModalTwoContent>
