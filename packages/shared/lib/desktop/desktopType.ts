@@ -6,6 +6,5 @@
  * The object is not put globally to avoid polluting the type and ensure that it is used only when needed.
  */
 export type ProtonDesktopAPI = {
-    desktop: boolean;
     updateNotification: (count: number) => void;
 };
