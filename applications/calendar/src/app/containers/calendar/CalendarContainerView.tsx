@@ -15,6 +15,7 @@ import {
     FeatureCode,
     FloatingButton,
     Icon,
+    InboxDesktopOutdatedAppTopBanner,
     LocalizedMiniCalendar,
     MainLogo,
     PrimaryButton,
@@ -390,7 +391,12 @@ const CalendarContainerView = ({
         setExpand(false);
     }, [window.location.pathname]);
 
-    const top = !isDrawerApp && <TopBanners />;
+    const top = !isDrawerApp && (
+        <>
+            <InboxDesktopOutdatedAppTopBanner />
+            <TopBanners />
+        </>
+    );
 
     const logo = <MainLogo to="/" />;
 
