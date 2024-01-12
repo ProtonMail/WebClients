@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useLoading } from '@proton/hooks';
 import { updateInvoiceText } from '@proton/shared/lib/api/settings';
 
 import {
@@ -17,7 +18,7 @@ import {
     PrimaryButton,
     TextAreaTwo,
 } from '../../components';
-import { useApiWithoutResult, useEventManager, useNotifications, useUserSettings } from '../../hooks';
+import { useApi, useEventManager, useNotifications, useUserSettings } from '../../hooks';
 
 export interface Props {
     onClose?: () => void;
@@ -29,10 +30,11 @@ const InvoiceTextModal = (props: ModalProps) => {
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const [invoiceText, setInvoiceText] = useState(InvoiceText);
-    const { request, loading } = useApiWithoutResult(() => updateInvoiceText(invoiceText));
+    const api = useApi();
+    const [loading, withLoading] = useLoading();
 
     const handleSubmit = async () => {
-        await request();
+        await api(updateInvoiceText(invoiceText));
         await call();
         props.onClose?.();
         createNotification({ text: c('Success').t`Invoice customized` });
@@ -58,7 +60,12 @@ const InvoiceTextModal = (props: ModalProps) => {
 
             <ModalTwoFooter>
                 <Button onClick={props.onClose}>{c('Action').t`Cancel`}</Button>
-                <PrimaryButton onClick={handleSubmit} loading={loading}>{c('Action').t`Save`}</PrimaryButton>
+                <PrimaryButton
+                    onClick={() => {
+                        withLoading(handleSubmit());
+                    }}
+                    loading={loading}
+                >{c('Action').t`Save`}</PrimaryButton>
             </ModalTwoFooter>
         </ModalTwo>
     );

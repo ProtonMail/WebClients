@@ -17,16 +17,9 @@ import {
     useDebounceInput,
     useModalState,
 } from '../../../../components';
-import {
-    useApi,
-    useApiWithoutResult,
-    useEventManager,
-    useFilters,
-    useNotifications,
-    useUserSettings,
-} from '../../../../hooks';
+import { useApi, useEventManager, useFilters, useNotifications, useUserSettings } from '../../../../hooks';
 import { FILTER_VERSION } from '../../constants';
-import { AdvancedSimpleFilterModalModel, ErrorsSieve, Filter } from '../../interfaces';
+import { AdvancedSimpleFilterModalModel, CreateFilter, ErrorsSieve, Filter } from '../../interfaces';
 import { convertModel, sieveTemplates } from '../../utils';
 import CloseFilterModal from '../CloseFilterModal';
 import FilterNameForm from '../FilterNameForm';
@@ -95,12 +88,9 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
         };
     }, [model.name, model.sieve, model.issues]);
 
-    const reqCreate = useApiWithoutResult<{ Filter: Filter }>(addTreeFilter);
-    const reqUpdate = useApiWithoutResult<{ Filter: Filter }>(updateFilter);
-
-    const createFilter = async (filter: Filter) => {
+    const createFilter = async (filter: CreateFilter) => {
         try {
-            const { Filter } = await reqCreate.request(filter);
+            const { Filter } = await api(addTreeFilter(filter));
             createNotification({
                 text: c('Notification').t`${Filter.Name} created`,
             });
@@ -112,8 +102,8 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
         }
     };
 
-    const editFilter = async (filter: Filter) => {
-        const { Filter } = await reqUpdate.request(filter.ID, filter);
+    const editFilter = async (filter: CreateFilter) => {
+        const { Filter } = await api(updateFilter(filter.ID, filter));
         await call();
         createNotification({
             text: c('Filter notification').t`Filter ${Filter.Name} updated`,
