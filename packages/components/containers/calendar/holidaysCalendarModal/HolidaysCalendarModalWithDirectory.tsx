@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { useLoading } from '@proton/hooks';
-import { removeMember } from '@proton/shared/lib/api/calendars';
+import { removeHolidaysCalendar } from '@proton/shared/lib/api/calendars';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
 import { modelToNotifications } from '@proton/shared/lib/calendar/alarms/modelToNotifications';
 import { notificationsToModel } from '@proton/shared/lib/calendar/alarms/notificationsToModel';
@@ -294,7 +294,9 @@ const HolidaysCalendarModalWithDirectory = ({
                     } else {
                         // 2 - Leave old holidays calendar and join a new one
                         // 2bis - If input holidays calendar doesn't exist anymore, we remove it and join new one
-                        await api(removeMember(inputHolidaysCalendar.ID, inputHolidaysCalendar.Members[0].ID));
+
+                        // Use route which does not need password confirmation to remove the calendar
+                        await api(removeHolidaysCalendar(inputHolidaysCalendar.ID));
 
                         await setupHolidaysCalendarHelper({
                             holidaysCalendar: computedCalendar,
