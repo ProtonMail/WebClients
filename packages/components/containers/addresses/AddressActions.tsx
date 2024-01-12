@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useLoading } from '@proton/hooks';
 import { deleteAddress, disableAddress, enableAddress } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
-import { Address, Member, UserModel } from '@proton/shared/lib/interfaces';
+import type { Address, Member, UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions, useModalState } from '../../components';

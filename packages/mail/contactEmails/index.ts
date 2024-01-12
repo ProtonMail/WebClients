@@ -8,7 +8,7 @@ import queryPages from '@proton/shared/lib/api/helpers/queryPages';
 import { CONTACTS_REQUESTS_PER_SECOND, CONTACT_EMAILS_LIMIT } from '@proton/shared/lib/constants';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import updateCollection from '@proton/shared/lib/helpers/updateCollection';
+import updateCollection, { sortCollection } from '@proton/shared/lib/helpers/updateCollection';
 import type { Api } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
@@ -30,7 +30,10 @@ export const getContactEmailsModel = (api: Api) => {
             delayPerChunk: 1000,
         }
     ).then((pages) => {
-        return pages.flatMap(({ ContactEmails }) => ContactEmails);
+        return sortCollection(
+            'Order',
+            pages.flatMap(({ ContactEmails }) => ContactEmails)
+        );
     });
 };
 
@@ -62,11 +65,14 @@ const slice = createSlice({
         handleAsyncModel(builder, modelThunk);
         builder.addCase(serverEvent, (state, action) => {
             if (state.value && action.payload.ContactEmails) {
-                state.value = updateCollection({
-                    model: state.value,
-                    events: action.payload.ContactEmails,
-                    itemKey: 'ContactEmail',
-                });
+                state.value = sortCollection(
+                    'Order',
+                    updateCollection({
+                        model: state.value,
+                        events: action.payload.ContactEmails,
+                        itemKey: 'ContactEmail',
+                    })
+                );
             }
             if (state.value && hasBit(action.payload.Refresh, EVENT_ERRORS.CONTACTS)) {
                 delete state.value;
