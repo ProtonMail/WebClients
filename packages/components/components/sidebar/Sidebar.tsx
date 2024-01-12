@@ -173,7 +173,7 @@ const Sidebar = ({
                     {contactsButton}
                     {children}
                 </div>
-                {APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
+                {APP_NAME !== APPS.PROTONVPN_SETTINGS && MaxSpace > 0 ? (
                     <div className="shrink-0 app-infos px-3 mt-2">
                         <SidebarStorageMeter
                             label={`${c('Storage').t`Your current storage:`} ${humanSize(UsedSpace)} / ${humanSize(
