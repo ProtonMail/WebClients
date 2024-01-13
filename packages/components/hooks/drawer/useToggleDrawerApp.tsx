@@ -5,11 +5,11 @@ import useApiStatus from '@proton/components/hooks/useApiStatus';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { addParentAppToUrl, getIsIframedDrawerApp, postMessageToIframe } from '@proton/shared/lib/drawer/helpers';
-import { DRAWER_APPS, DRAWER_EVENTS, IframeSrcMap, OpenDrawerArgs } from '@proton/shared/lib/drawer/interfaces';
+import { DRAWER_EVENTS, DrawerApp, IframeSrcMap, OpenDrawerArgs } from '@proton/shared/lib/drawer/interfaces';
 
 interface Props {
-    appInView: DRAWER_APPS | undefined;
-    setAppInView: Dispatch<SetStateAction<DRAWER_APPS | undefined>>;
+    appInView: DrawerApp | undefined;
+    setAppInView: Dispatch<SetStateAction<DrawerApp | undefined>>;
     iframeSrcMap: IframeSrcMap;
     setIframeSrcMap: Dispatch<SetStateAction<IframeSrcMap>>;
 }
