@@ -11,12 +11,23 @@ export interface ModalStateProps {
     onExit: () => void;
 }
 
-const useModalState = (options?: { open?: boolean; onClose?: () => void; onExit?: () => void }) => {
+interface ModalPropsReturnedValues {
+    key: string;
+    open: boolean;
+    onClose: () => void;
+    onExit: () => void;
+}
+
+const useModalState = (options?: {
+    open?: boolean;
+    onClose?: () => void;
+    onExit?: () => void;
+}): [modalProps: ModalPropsReturnedValues, openModal: (newValue: boolean) => void, renderModal: boolean] => {
     const { open: controlledOpen, onClose, onExit } = options || {};
 
     const [key, setKey] = useState(() => generateUID());
     const [open, setOpen] = useControlled(controlledOpen);
-    const [render, setRender] = useState(open);
+    const [render, setRender] = useState(!!open);
 
     const handleSetOpen = useCallback((newValue: boolean) => {
         if (newValue) {
