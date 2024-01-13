@@ -146,11 +146,12 @@ const DrawerContactView = ({ onCompose, onMailTo = noop, customActions = [] }: P
                 tab={tab}
                 onSelectDrawerOption={setTab}
                 options={options}
-                content={getContent(tab.value as CONTACT_TAB)}
                 footerButtons={getFooterButtons(tab.value as CONTACT_TAB)}
                 onAnimationEnd={onFocusSearchInput}
                 id="drawer-app-proton-contact"
-            />
+            >
+                {getContent(tab.value as CONTACT_TAB)}
+            </DrawerView>
             {modals}
             {importModal}
             {mergeModals}
