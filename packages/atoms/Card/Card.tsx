@@ -7,6 +7,7 @@ export interface CardOwnProps {
     bordered?: boolean;
     rounded?: boolean;
     background?: boolean;
+    padded?: boolean;
 }
 
 export type CardProps<E extends ElementType> = PolymorphicPropsWithoutRef<CardOwnProps, E>;
@@ -18,13 +19,20 @@ const Card = <E extends ElementType = typeof defaultElement>({
     bordered = true,
     rounded = false,
     background = true,
+    padded = true,
     as,
     ...rest
 }: CardProps<E>) => {
     const Element: ElementType = as || defaultElement;
     return (
         <Element
-            className={clsx('p-4', className, rounded && 'rounded', bordered && 'border', background && 'bg-weak')}
+            className={clsx(
+                padded && 'p-4',
+                className,
+                rounded && 'rounded',
+                bordered && 'border',
+                background && 'bg-weak'
+            )}
             {...rest}
         />
     );
