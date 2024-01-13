@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { useConfig, useDrawer } from '@proton/components/hooks';
 import { postMessageFromIframe } from '@proton/shared/lib/drawer/helpers';
-import { DRAWER_APPS, DRAWER_EVENTS } from '@proton/shared/lib/drawer/interfaces';
+import { DRAWER_EVENTS, DrawerApp } from '@proton/shared/lib/drawer/interfaces';
 
 const useObserveDrawerIframeAppLocation = () => {
     const { APP_NAME } = useConfig();
@@ -15,7 +15,7 @@ const useObserveDrawerIframeAppLocation = () => {
                     type: DRAWER_EVENTS.CHILD_URL_UPDATE,
                     payload: {
                         url: window.location.href,
-                        app: APP_NAME as DRAWER_APPS,
+                        app: APP_NAME as DrawerApp,
                     },
                 },
                 parentApp

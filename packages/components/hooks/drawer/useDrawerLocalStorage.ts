@@ -2,10 +2,10 @@ import { useEffect, useRef } from 'react';
 
 import { useGetUser } from '@proton/components/hooks';
 import { getLocalStorageUserDrawerKey } from '@proton/shared/lib/drawer/helpers';
-import { DRAWER_APPS, DrawerLocalStorageValue, IframeSrcMap } from '@proton/shared/lib/drawer/interfaces';
+import { DrawerApp, DrawerLocalStorageValue, IframeSrcMap } from '@proton/shared/lib/drawer/interfaces';
 import { removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
-const useDrawerLocalStorage = (iframeSrcMap: IframeSrcMap, drawerIsReady: boolean, appInView?: DRAWER_APPS) => {
+const useDrawerLocalStorage = (iframeSrcMap: IframeSrcMap, drawerIsReady: boolean, appInView?: DrawerApp) => {
     const getUser = useGetUser();
 
     /**

@@ -2,18 +2,18 @@ import { ReactNode } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-import './QuickSettingsSection.scss';
+import './DrawerAppSection.scss';
 
 interface Props {
     children: ReactNode;
     className?: string;
 }
 
-const QuickSettingsSection = ({ children, className }: Props) => {
+const DrawerAppSection = ({ children, className }: Props) => {
     return (
         <div
             className={clsx(
-                'quickSettingsSection w-full flex children-min-size-auto flex-column gap-2 shrink-0 justify-center px-4 py-2 rounded-lg shadow-norm',
+                'drawerAppSection w-full flex children-min-size-auto flex-column gap-2 shrink-0 justify-center px-4 py-2 rounded-lg shadow-norm',
                 className
             )}
         >
@@ -22,4 +22,4 @@ const QuickSettingsSection = ({ children, className }: Props) => {
     );
 };
 
-export default QuickSettingsSection;
+export default DrawerAppSection;
