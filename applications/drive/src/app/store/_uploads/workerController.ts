@@ -1,6 +1,7 @@
 import { CryptoProxy, PrivateKeyReference, SessionKey, serverTime, updateServerTime } from '@proton/crypto';
 import { SafeErrorObject, getSafeErrorObject } from '@proton/utils/getSafeErrorObject';
 
+import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { getRefreshError } from '../../utils/errorHandling/RefreshError';
 import { HEARTBEAT_INTERVAL, HEARTBEAT_WAIT_TIME, WORKER_INIT_WAIT_TIME } from './constants';
 import type {
@@ -515,8 +516,18 @@ export class UploadWorkerController {
                     onError(data.error);
                     break;
                 case 'notify_sentry':
+                    let error;
+
+                    if (data.error.name === 'EnrichedError') {
+                        error = new EnrichedError(data.error.message, data.error.context);
+                    } else {
+                        error = new Error(data.error.message);
+                    }
+                    error.name = data.error.name;
+                    error.stack = data.error.stack;
+
                     log(`Notifying Sentry with: ${data.error}`);
-                    notifySentry(data.error);
+                    notifySentry(error);
                     break;
                 case 'heartbeat':
                     log('Got heartbeat');

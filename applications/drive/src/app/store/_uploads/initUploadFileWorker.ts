@@ -1,6 +1,5 @@
-import { traceError } from '@proton/shared/lib/helpers/sentry';
-
 import { TransferCancel } from '../../components/TransferManager/transfer';
+import { sendErrorReport } from '../../utils/errorHandling';
 import type {
     FileKeys,
     FileRequestBlock,
@@ -104,7 +103,7 @@ export function initUploadFileWorker(
                     reject(new Error(error));
                 },
                 notifySentry: (error: Error) => {
-                    traceError(error);
+                    sendErrorReport(error);
                 },
                 onCancel: () => {
                     reject(new TransferCancel({ message: `Transfer canceled for ${file.name}` }));

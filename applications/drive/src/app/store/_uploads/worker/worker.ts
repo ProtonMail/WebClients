@@ -108,7 +108,7 @@ async function start(
                 addressPrivateKey,
                 privateKey,
                 sessionKey,
-                uploadWorker.postNotifySentry,
+                (e) => uploadWorker.postNotifySentry(e),
                 hashInstance,
                 verifier
             ),
