@@ -66,7 +66,12 @@ const ParentFolderSelector = ({ id, value, label, onChange, className, disableOp
             value={value}
         >
             {options.map((option) => (
-                <Option key={option.value} value={option.value} title={option.text.toString()} />
+                <Option
+                    key={option.value}
+                    value={option.value}
+                    title={option.text.toString()}
+                    disabled={option.disabled}
+                />
             ))}
         </InputFieldTwo>
     );
