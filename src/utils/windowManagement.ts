@@ -1,6 +1,7 @@
 import { BrowserWindow, BrowserWindowConstructorOptions, Rectangle, Session, WebContents, app } from "electron";
 import log from "electron-log/main";
 import { getWindowState, setWindowState } from "../store/windowsStore";
+import { handleBeforeHandle } from "./beforeUnload";
 import { getConfig } from "./config";
 import { APP, WINDOW_SIZES } from "./constants";
 import { areAllWindowsClosedOrHidden, isMac, isWindows } from "./helpers";
@@ -63,6 +64,7 @@ const createWindow = (session: Session, url: string, visible: boolean, windowCon
     });
 
     setApplicationMenu(app.isPackaged);
+    handleBeforeHandle(window);
     window.loadURL(url);
 
     if (visible) {
