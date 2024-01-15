@@ -1,4 +1,4 @@
-import type { ApiAuth, ApiCallFn, Maybe } from '@proton/pass/types';
+import type { ApiAuth, ApiCallFn, Maybe, MaybePromise } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { setRefreshCookies as refreshTokens } from '@proton/shared/lib/api/auth';
 import { retryHandler } from '@proton/shared/lib/api/helpers/retryHandler';
@@ -14,7 +14,7 @@ import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 export type RefreshHandler = (responseDate?: Date) => Promise<void>;
 export type RefreshSessionData = RefreshSessionResponse & { RefreshTime: number };
-export type OnRefreshCallback = (response: RefreshSessionData) => void;
+export type OnRefreshCallback = (response: RefreshSessionData) => MaybePromise<void>;
 
 type CreateRefreshHandlerOptions = {
     call: ApiCallFn;
@@ -80,8 +80,8 @@ export const createRefreshHandler = ({ call, getAuth, onRefresh }: CreateRefresh
                         const result: RefreshSessionResponse = await response.json();
 
                         logger.info('[API] Successfully refreshed session tokens');
-                        onRefresh({ ...result, RefreshTime: +timestamp });
 
+                        await onRefresh({ ...result, RefreshTime: +timestamp });
                         await wait(50);
                     }
                 })

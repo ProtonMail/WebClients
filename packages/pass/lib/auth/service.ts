@@ -394,12 +394,12 @@ export const createAuthService = (config: AuthServiceConfig) => {
                 case 'session': {
                     if (event.status === 'inactive') {
                         config.onNotification?.({ text: c('Warning').t`Your session is inactive.` });
-                        return authService.logout({ soft: true, broadcast: true });
+                        await authService.logout({ soft: true, broadcast: true });
                     }
 
                     if (event.status === 'locked') {
                         config.onNotification?.({ text: c('Warning').t`Your session was locked.` });
-                        return authService.lock({ soft: true, broadcast: true });
+                        await authService.lock({ soft: true, broadcast: true });
                     }
 
                     break;
