@@ -2,6 +2,7 @@ import { CryptoProxy, PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { queryShareMeta } from '@proton/shared/lib/api/drive/share';
 import { ShareMeta } from '@proton/shared/lib/interfaces/drive/share';
 
+import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { shareMetaToShareWithKey, useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { useDebouncedFunction } from '../_utils';
@@ -66,10 +67,12 @@ export default function useShare() {
 
         const { decryptedPassphrase, sessionKey } = await driveCrypto.decryptSharePassphrase(share).catch((e) =>
             Promise.reject(
-                new Error('Failed to decrypt share passphrase', {
-                    cause: {
-                        e,
+                new EnrichedError('Failed to decrypt share passphrase', {
+                    tags: {
                         shareId,
+                    },
+                    extra: {
+                        e,
                     },
                 })
             )
@@ -79,11 +82,11 @@ export default function useShare() {
             passphrase: decryptedPassphrase,
         }).catch((e) =>
             Promise.reject(
-                new Error('Failed to import share private key', {
-                    cause: {
-                        e,
+                new EnrichedError('Failed to import share private key', {
+                    tags: {
                         shareId,
                     },
+                    extra: { e },
                 })
             )
         );

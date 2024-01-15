@@ -8,7 +8,8 @@ export type SafeErrorObject = {
     name: string;
     message: string;
     stack?: string;
-    cause?: SafeObject;
+    // Used by Drive errors
+    context?: SafeObject;
 };
 
 /**
@@ -79,6 +80,8 @@ export function getSafeErrorObject(error: Error): SafeErrorObject {
         name: error.name,
         message: error.message,
         stack: error.stack,
-        cause: getSafeObject(error.cause),
+
+        // Used by Drive errors to provide additional data to Sentry
+        context: getSafeObject((error as any).context),
     };
 }
