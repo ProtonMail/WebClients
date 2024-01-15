@@ -32,7 +32,7 @@ export interface WorkerPoolInterface extends CryptoApiInterface {
 }
 
 const errorReporter = (err: Error) => {
-    if (err.message?.toLowerCase() === 'transient signing failure') {
+    if (err.message?.toLowerCase().includes('transient signing failure')) {
         captureMessage('EdDSA faulty signature', {
             level: 'info',
         });
