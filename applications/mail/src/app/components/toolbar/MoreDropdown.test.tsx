@@ -53,7 +53,6 @@ describe('MoreDropdown', () => {
     beforeAll(() => {
         useLabelActionMock.mockReturnValue([[''], ['']]);
         useSnoozeMock.mockReturnValue({
-            isSnoozeEnabled: true,
             canSnooze: jest.fn(),
             canUnsnooze: jest.fn(),
         });
@@ -101,21 +100,6 @@ describe('MoreDropdown', () => {
         expect(screen.queryByTestId('toolbar:more-dropdown--moveto')).toBeNull();
         expect(screen.queryByTestId('toolbar:more-dropdown--labelas')).toBeNull();
         expect(screen.queryByTestId('toolbar:more-dropdown--snooze')).toBeNull();
-    });
-
-    it('should have move and label action when snooze is disabled and screen tiny', async () => {
-        useSnoozeMock.mockReturnValue({
-            isSnoozeEnabled: false,
-            canSnooze: jest.fn(),
-            canUnsnooze: jest.fn(),
-        });
-
-        await render(<MoreDropdown {...isTinyProps} />);
-        const moreButton = screen.getByTestId('toolbar:more-dropdown');
-        fireEvent.click(moreButton);
-
-        expect(screen.getByTestId('toolbar:more-dropdown--moveto'));
-        expect(screen.getByTestId('toolbar:more-dropdown--labelas'));
     });
 
     it('should have all move actions returned by useLabelAction hook', async () => {
