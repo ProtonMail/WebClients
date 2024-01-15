@@ -410,9 +410,10 @@ const getSaveEventActions = async ({
         canOnlySaveAll:
             actualEventRecurrence.isSingleOccurrence ||
             hasModifiedCalendar ||
-            (canEditOnlyPersonalPart && !isSingleEdit) ||
-            (!isAttendee && (isSendInviteType || hasAttendees)),
+            (canEditOnlyPersonalPart && !isSingleEdit),
         canOnlySaveThis: canEditOnlyPersonalPart && isSingleEdit,
+        // if we have to notify participants or the event has participants and we did no modification of event details
+        cannotDeleteThisAndFuture: isSendInviteType || hasAttendees,
         hasModifiedRrule,
         hasModifiedCalendar,
         isBreakingChange,

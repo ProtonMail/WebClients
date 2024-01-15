@@ -17,12 +17,23 @@ export const getTexts = (types: RECURRING_TYPES[], inviteActions: InviteActions)
     const { type: inviteType, addedAttendees, removedAttendees, hasRemovedAllAttendees } = inviteActions;
     const hasAddedAttendees = !!addedAttendees?.length;
     const hasRemovedAttendees = !!removedAttendees?.length;
+    const isSendInviteType = [INVITE_ACTION_TYPES.SEND_INVITATION, INVITE_ACTION_TYPES.SEND_UPDATE].includes(
+        inviteType
+    );
 
     const defaultTexts = getDefaultTexts();
     const saveText = c('Title').t`Save`;
     const saveChangesText = c('Title').t`Save changes`;
 
+
     if (types.length !== 1) {
+        if (isSendInviteType) {
+            return {
+                ...defaultTexts,
+                alertText: c('Info')
+                    .t`An invitation will be sent to all participants. Which event would you like to update?`,
+            };
+        }
         return defaultTexts;
     }
     if (types[0] === RECURRING_TYPES.SINGLE) {
