@@ -14,6 +14,7 @@ import type {
 import noop from '@proton/utils/noop';
 
 type StorageState = { storageFull: boolean };
+
 export interface ExtensionStorage<T, K extends StorageKeys<T>> extends Storage<T> {
     getItems: GetItems<T, K[]>;
     setItems: SetItems<T>;
@@ -26,20 +27,33 @@ export const createStorageService = () => {
 
     const state: StorageState = { storageFull: false };
 
+    const handleStorageError = <T extends (...args: any[]) => Promise<any>>(fn: T) =>
+        ((...args) =>
+            fn(...args)
+                .then((res) => {
+                    state.storageFull = false;
+                    return res;
+                })
+                .catch((err) => {
+                    if (err instanceof Error) {
+                        const message = err.message.toLowerCase();
+                        if (
+                            err.name === 'QuotaExceededError' ||
+                            message.includes('quota') ||
+                            message.includes('storage')
+                        ) {
+                            state.storageFull = true;
+                        }
+                    }
+
+                    throw err;
+                })) as T;
+
     const local: ExtensionStorage<LocalStoreData, LocalStoreKeys> = {
         getItem: (key) => localStorage.getItem(key).catch(() => null),
         getItems: (keys) => localStorage.getItems(keys).catch(() => ({})),
-        setItem: (key, value) =>
-            localStorage
-                .setItem(key, value)
-                .then((result) => {
-                    state.storageFull = false;
-                    return result;
-                })
-                .catch(() => {
-                    state.storageFull = true;
-                }),
-        setItems: (items) => localStorage.setItems(items).catch(noop),
+        setItem: handleStorageError(localStorage.setItem),
+        setItems: handleStorageError(localStorage.setItems),
         removeItem: (key) => localStorage.removeItem(key).catch(noop),
         removeItems: (keys) => localStorage.removeItems(keys).catch(noop),
         clear: () => localStorage.clear().catch(noop),
