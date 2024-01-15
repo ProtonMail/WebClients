@@ -13,7 +13,6 @@ import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreate
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
-import { useItemFormKeyboardShortcuts } from '@proton/pass/hooks/useItemFormKeyboardShortcuts';
 import { validateNoteForm } from '@proton/pass/lib/validation/note';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
 import type { NoteFormValues } from '@proton/pass/types';
@@ -48,8 +47,6 @@ export const NoteNew: FC<ItemNewViewProps<'note'>> = ({ shareId, onSubmit, onCan
     });
 
     const draft = useItemDraft<NoteFormValues>(form, { mode: 'new', type: 'note' });
-
-    useItemFormKeyboardShortcuts(form);
 
     return (
         <ItemCreatePanel

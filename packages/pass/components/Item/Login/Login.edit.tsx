@@ -25,7 +25,6 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/p
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { useItemDraft, useItemDraftLocationState } from '@proton/pass/hooks/useItemDraft';
-import { useItemFormKeyboardShortcuts } from '@proton/pass/hooks/useItemFormKeyboardShortcuts';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { getSecretOrUri, parseOTPValue } from '@proton/pass/lib/otp/otp';
 import {
@@ -173,8 +172,6 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
         sanitizeSave: sanitizeLoginAliasSave,
         sanitizeHydration: sanitizeLoginAliasHydration(aliasModal.aliasOptions),
     });
-
-    useItemFormKeyboardShortcuts(form);
 
     return (
         <>
