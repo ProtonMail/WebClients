@@ -142,8 +142,8 @@ export const getSubscribedCalendars = (calendars: VisualCalendar[] = []) => {
 enum CALENDAR_WEIGHT {
     PERSONAL = 0,
     SUBSCRIBED = 1,
-    SHARED = 2,
-    HOLIDAYS = 3,
+    HOLIDAYS = 2,
+    SHARED = 3,
     UNKNOWN = 4,
 }
 
