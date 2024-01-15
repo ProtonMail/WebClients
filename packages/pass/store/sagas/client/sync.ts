@@ -1,5 +1,6 @@
 import { put, select } from 'redux-saga/effects';
 
+import { api } from '@proton/pass/lib/api/api';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
@@ -139,6 +140,7 @@ export function* synchronize(options: SynchronizationOptions, { onShareDeleted }
 
         return result;
     } catch (err) {
-        if (!options.allowFailure) throw err;
+        const { sessionInactive, sessionLocked } = api.getState();
+        if (sessionInactive || sessionLocked || !options.allowFailure) throw err;
     }
 }
