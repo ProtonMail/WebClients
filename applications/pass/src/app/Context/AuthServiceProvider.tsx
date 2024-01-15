@@ -83,9 +83,10 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 const initialLocalID = pathLocalID ?? getDefaultLocalID();
                 const session = authStore.getSession();
 
-                /* remove any in-memory lock status to force
+                /* remove any in-memory lock status/tokens to force
                  * session lock revalidation on init */
                 authStore.setLockStatus(undefined);
+                authStore.setLockToken(undefined);
 
                 const loggedIn = await (authStore.hasSession(pathLocalID)
                     ? auth.login(session)
@@ -171,8 +172,8 @@ export const AuthServiceProvider: FC = ({ children }) => {
 
             onSessionRefresh: async (localID, data, broadcast) => {
                 logger.info('[AuthServiceProvider] Session tokens have been refreshed');
-                if (broadcast) sw.send({ type: 'refresh', localID, data, broadcast: true });
                 const persistedSession = await auth.config.getPersistedSession(localID);
+                if (broadcast) sw.send({ type: 'refresh', localID, data, broadcast: true });
 
                 if (persistedSession) {
                     const { AccessToken, RefreshTime, RefreshToken } = data;
