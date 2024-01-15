@@ -42,10 +42,20 @@ const FilterNameForm = ({ isSieveFilter = false, model, errors, onChange, loadin
                 } as SimpleFilterModalModel);
             } else {
                 // If there is an error in the name, it can be for two reasons:
-                // - The filter has no name
+                // - The filter has no name or contains spaces only
                 // - The filter has a name that is already used
-                // For the 2nd case, we want to display an error notification
-                if (model.name.length > 0) {
+
+                if (model.name.length === 0) {
+                    createNotification({
+                        text: c('Title').t`A filter name is required`,
+                        type: 'error',
+                    });
+                } else if (model.name.trim() === '') {
+                    createNotification({
+                        text: c('Title').t`Filter name cannot contain only spaces`,
+                        type: 'error',
+                    });
+                } else if (model.name.length > 0) {
                     createNotification({
                         text: c('Title').t`A filter with this name already exists`,
                         type: 'error',
