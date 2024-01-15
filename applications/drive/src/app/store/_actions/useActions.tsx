@@ -69,9 +69,16 @@ export default function useActions() {
 
     const createFile = async (shareId: string, parentLinkId: string, name: string) => {
         const file = new File([], name, { type: 'text/plain' });
-        const controls = initFileUpload(shareId, parentLinkId, file, async () => {
-            throw new ValidationError(c('Error').t`"${name}" already exists`);
-        });
+        const controls = initFileUpload(
+            shareId,
+            parentLinkId,
+            file,
+            async () => {
+                throw new ValidationError(c('Error').t`"${name}" already exists`);
+            },
+            // Logging is not useful for single file creation.
+            () => {}
+        );
         await controls
             .start()
             .then(() => {
@@ -101,7 +108,14 @@ export default function useActions() {
         // by other client. But this is enough for first version to play with
         // the feature and see what all needs to be changed and implemented.
         const file = new File(content, name, { type: mimeType });
-        const controls = initFileUpload(shareId, parentLinkId, file, async () => TransferConflictStrategy.Replace);
+        const controls = initFileUpload(
+            shareId,
+            parentLinkId,
+            file,
+            async () => TransferConflictStrategy.Replace,
+            // Logging is not useful for single file updates.
+            () => {}
+        );
         await controls
             .start()
             .then(() => {

@@ -19,6 +19,7 @@ import {
     isTransferRetry,
     isTransferSkipError,
 } from '../../../utils/transfer';
+import { useTransferLog } from '../../_transfer';
 import { MAX_UPLOAD_BLOCKS_LOAD, MAX_UPLOAD_FOLDER_LOAD } from '../constants';
 import { UploadFileItem, UploadFileList } from '../interface';
 import { UploadModalContainer } from './UploadModalContainer';
@@ -37,7 +38,8 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
     const { createNotification } = useNotifications();
     const { preventLeave } = usePreventLeave();
 
-    const queue = useUploadQueue();
+    const { log, downloadLogs, clearLogs } = useTransferLog('upload');
+    const queue = useUploadQueue((id, message) => log(id, `queue: ${message}`));
     const control = useUploadControl(queue.fileUploads, queue.updateWithCallback, queue.remove, queue.clear);
     const { getFolderConflictHandler, getFileConflictHandler, conflictModal } = useUploadConflict(
         queue.fileUploads,
@@ -164,7 +166,8 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
             nextFolderUpload.parentId,
             nextFolderUpload.name,
             nextFolderUpload.modificationTime,
-            getFolderConflictHandler(nextFolderUpload.id)
+            getFolderConflictHandler(nextFolderUpload.id),
+            (message: string) => log(nextFolderUpload.id, `folderUploader: ${message}`)
         );
         control.add(nextFolderUpload.id, controls);
         void preventLeave(
@@ -206,6 +209,7 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
             nextFileUpload.parentId,
             nextFileUpload.file,
             getFileConflictHandler(nextFileUpload.id),
+            (message: string) => log(nextFileUpload.id, `fileUploader: ${message}`),
             nextFileUpload.isForPhotos
         );
         control.add(nextFileUpload.id, controls);
@@ -218,6 +222,7 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
                     },
                     onProgress: (increment: number) => {
                         control.updateProgress(nextFileUpload.id, increment);
+                        log(nextFileUpload.id, `progress: Uploaded ${increment} bytes`);
                     },
                     onNetworkError: (error: any) => {
                         queue.updateWithData(nextFileUpload.id, TransferState.NetworkError, { error });
@@ -249,6 +254,7 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
                     // with other uploads in the queue and fail fast, otherwise
                     // it just triggers more strict jails and leads to nowhere.
                     if (error?.status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
+                        log(nextFileUpload.id, `Got 429, canceling ongoing uploads`);
                         control.cancelUploads(isTransferOngoing);
                     }
                 })
@@ -282,7 +288,11 @@ export default function useUpload(): [UploadProviderState, UploadModalContainer]
             cancelUploads: control.cancelUploads,
             restartUploads,
             removeUploads: control.removeUploads,
-            clearUploads: control.clearUploads,
+            clearUploads: () => {
+                control.clearUploads();
+                clearLogs();
+            },
+            downloadUploadLogs: downloadLogs,
         },
         {
             fileThresholdModal,
