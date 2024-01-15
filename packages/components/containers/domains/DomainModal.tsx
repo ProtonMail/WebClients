@@ -63,11 +63,11 @@ import VerifySection from './VerifySection';
 const STEPS = {
     DOMAIN: 0,
     VERIFY: 1,
-    MX: 2,
-    SPF: 3,
-    DKIM: 4,
-    DMARC: 5,
-    ADDRESSES: 6,
+    ADDRESSES: 2,
+    MX: 3,
+    SPF: 4,
+    DKIM: 5,
+    DMARC: 6,
 };
 
 const verifyDomain = (domain?: Domain) => {
@@ -230,11 +230,11 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
     const breadcrumbLabels = [
         c('Label in domain modal').t`Domain`,
         c('Label in domain modal').t`Verify`,
+        c('Label in domain modal').t`Addresses`,
         'MX',
         'SPF',
         'DKIM',
         'DMARC',
-        c('Label in domain modal').t`Addresses`,
     ];
 
     const breadcrumbIcons = [
@@ -254,6 +254,9 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                 name={domainModel.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD ? 'checkmark' : 'cross'}
             />
         ),
+        domainAddresses.length ? (
+            <RoundedIcon className="mr-1 md:mr-2 p-1 md:p-0" key="addresses-icon" type="success" name="checkmark" />
+        ) : null,
         domainModel.MxState === MX_STATE.MX_STATE_DEFAULT || !domainModel.MxState ? null : (
             <RoundedIcon
                 className="mr-1 md:mr-2 p-1 md:p-0"
@@ -283,9 +286,6 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                 name={domainModel.DmarcState === DMARC_STATE.DMARC_STATE_GOOD ? 'checkmark' : 'cross'}
             />
         ),
-        domainAddresses.length ? (
-            <RoundedIcon className="mr-1 md:mr-2 p-1 md:p-0" key="addresses-icon" type="success" name="checkmark" />
-        ) : null,
     ];
 
     const { section, onSubmit, submit } = (() => {
@@ -348,6 +348,14 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
             };
         }
 
+        if (step === STEPS.ADDRESSES) {
+            return {
+                section: <AddressesSection onClose={handleClose} />,
+                submit: undefined,
+                onSubmit: next,
+            };
+        }
+
         if (step === STEPS.MX) {
             return {
                 section: <MXSection />,
@@ -375,14 +383,6 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
         if (step === STEPS.DMARC) {
             return {
                 section: <DMARCSection />,
-                submit: undefined,
-                onSubmit: next,
-            };
-        }
-
-        if (step === STEPS.ADDRESSES) {
-            return {
-                section: <AddressesSection onClose={handleClose} />,
                 submit: c('Action').t`Done`,
                 onSubmit: rest.onClose,
             };
