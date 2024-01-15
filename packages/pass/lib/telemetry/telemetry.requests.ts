@@ -39,7 +39,7 @@ export const sendTelemetryBundle = async (
         await sendTelemetryEvents(bundle.events);
         return { ok: true };
     } catch (e) {
-        logger.warn(`[Telemetry] failed to send telemetry bundle`);
+        logger.warn(`[Telemetry] failed to send telemetry bundle`, e);
         return { ok: false, retry: true };
     }
 };

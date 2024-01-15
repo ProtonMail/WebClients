@@ -25,15 +25,17 @@ export type SessionStoreData = AuthSession;
 export type SessionStoreKeys = keyof SessionStoreData;
 
 export type LocalStoreData = {
-    version: string;
-    state: string;
-    snapshot: string;
-    salt: string;
-    ps: string;
-    onboarding: string;
-    telemetry: string;
-    settings: string;
+    /** flag indicating if we should force lock on next resume */
+    forceLock: boolean;
     lastReload: number;
+    onboarding: string;
+    ps: string;
+    salt: string;
+    settings: string;
+    snapshot: string;
+    state: string;
+    telemetry: string;
+    version: string;
 };
 
 export type LocalStoreKeys = keyof LocalStoreData;

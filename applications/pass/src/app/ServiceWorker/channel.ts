@@ -15,6 +15,7 @@ export type ServiceWorkerMessage = ServiceWorkerMessageBase &
         | { type: 'ping' }
         | { type: 'unauthorized' }
         | { type: 'locked' }
+        | { type: 'unlocked' }
         | { type: 'refresh'; data: RefreshSessionData }
         | { type: 'action'; action: AnyAction }
         | { type: 'abort'; requestUrl: string }
