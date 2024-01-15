@@ -17,6 +17,7 @@ import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
+import { semver } from '@proton/pass/utils/string/semver';
 import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
 import { getEpoch, msToEpoch } from '@proton/pass/utils/time/epoch';
 import { parseUrl } from '@proton/pass/utils/url/parser';
@@ -37,6 +38,7 @@ type ActivationServiceState = {
 
 const RUNTIME_RELOAD_TIME = 10; /* seconds */
 const UPDATE_ALARM_NAME = 'PassUpdateAlarm';
+const MIN_VERSION_CACHE = '1.10.0';
 
 export const createActivationService = () => {
     const state: ActivationServiceState = { updateAvailable: null, checkedUpdateAt: 0, permissionsGranted: false };
@@ -58,7 +60,7 @@ export const createActivationService = () => {
                 const [updateStatus] = await browser.runtime.requestUpdateCheck();
 
                 if (updateStatus === 'update_available') {
-                    logger.info('[ActivationService] update detected');
+                    logger.info('[Activation] update detected');
                     return true;
                 }
             }
@@ -109,10 +111,13 @@ export const createActivationService = () => {
         await handleActivation();
 
         if (details.reason === 'update') {
-            if (ENV === 'production') {
-                /* in production clear the cache on each extension
-                 * update in case the state/snapshot data-structure
-                 * has changed. FIXME: use version migrations */
+            const previous = await ctx.service.storage.local.getItem('version');
+            logger.info(`[Activation] update [before=${previous},after=${VERSION}]`);
+
+            /* clear the cache if the previous cache version does not match
+             * this build's minimum cache version validity. FIXME: use migrations */
+            if (!previous || semver(previous) < semver(MIN_VERSION_CACHE)) {
+                logger.info(`[Activation] update requires cache clear [before=${previous},min=${MIN_VERSION_CACHE}]`);
                 await ctx.service.storage.local.removeItems(['salt', 'state', 'snapshot']);
             }
 
@@ -128,7 +133,7 @@ export const createActivationService = () => {
                 const url = browser.runtime.getURL('/onboarding.html#/success');
                 await browser.tabs.create({ url });
             } catch (error: any) {
-                logger.warn(`[ActivationService] requesting fork failed: ${getErrorMessage(error)}`);
+                logger.warn(`[Activation] requesting fork failed: ${getErrorMessage(error)}`);
             }
 
             void ctx.service.settings.onInstall();
@@ -139,7 +144,7 @@ export const createActivationService = () => {
 
     const checkPermissionsUpdate = async () => {
         state.permissionsGranted = await checkExtensionPermissions();
-        if (!state.permissionsGranted) logger.info(`[ActivationService] missing permissions`);
+        if (!state.permissionsGranted) logger.info(`[Activation] missing permissions`);
 
         WorkerMessageBroker.ports.broadcast(
             backgroundMessage({
@@ -189,7 +194,7 @@ export const createActivationService = () => {
                         const delay = scheduledTime - getEpoch();
                         if (!resumeAlarm && delay <= 0) return true;
 
-                        logger.info(`[ActivationService] Automatic session resume stalled for ${delay}s`);
+                        logger.info(`[Activation] Automatic session resume stalled for ${delay}s`);
                     }
                 }
 
@@ -270,7 +275,7 @@ export const createActivationService = () => {
 
     const handleOnUpdateAvailable = (details: Runtime.OnUpdateAvailableDetailsType) => {
         if (details.version) {
-            logger.info(`[ActivationService] update available ${details.version}`);
+            logger.info(`[Activation] update available ${details.version}`);
             state.updateAvailable = details.version;
 
             const popupPorts = WorkerMessageBroker.ports.query(isPopupPort());
@@ -281,7 +286,7 @@ export const createActivationService = () => {
 
             /* if we have ports opened to a popup : notify them in order
              * to manually prompt the user for a runtime reload */
-            logger.info(`[ActivationService] update deferred because popup is active`);
+            logger.info(`[Activation] update deferred because popup is active`);
             popupPorts.forEach((port) =>
                 port.postMessage(
                     backgroundMessage({
