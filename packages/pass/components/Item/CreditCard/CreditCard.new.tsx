@@ -20,7 +20,6 @@ import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreate
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
-import { useItemFormKeyboardShortcuts } from '@proton/pass/hooks/useItemFormKeyboardShortcuts';
 import type { CreditCardItemFormValues } from '@proton/pass/lib/validation/credit-card';
 import { validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
@@ -75,8 +74,6 @@ export const CreditCardNew: FC<ItemNewViewProps<'creditCard'>> = ({ shareId, onS
     });
 
     useItemDraft<CreditCardItemFormValues>(form, { mode: 'new', type: 'creditCard' });
-
-    useItemFormKeyboardShortcuts(form);
 
     return (
         <ItemCreatePanel
