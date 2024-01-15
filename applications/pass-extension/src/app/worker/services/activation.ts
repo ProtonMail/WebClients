@@ -1,5 +1,6 @@
 import { type Runtime } from 'webextension-polyfill';
 
+import { api } from '@proton/pass/lib/api/api';
 import { clientCanBoot, clientErrored, clientStale } from '@proton/pass/lib/client';
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
@@ -26,7 +27,7 @@ import { isVivaldiBrowser } from '../../../lib/utils/vivaldi';
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 import store from '../store';
-import { getSessionResumeAlarm, getSessionResumeDelay } from './auth';
+import { getSessionResumeAlarm, getSessionResumeDelay, shouldForceLock } from './auth';
 
 type ActivationServiceState = {
     updateAvailable: MaybeNull<string>;
@@ -86,6 +87,10 @@ export const createActivationService = () => {
      * the SSL handshake (net:ERR_SSL_CLIENT_AUTH_CERT_NEEDED) */
     const handleStartup = withContext(async (ctx) => {
         await handleActivation();
+
+        /* set `forceLock` flag for subsequent authentication inits to
+         * account for startup artifically force locking the session */
+        await ctx.service.storage.local.setItem('forceLock', true);
         const loggedIn = await ctx.service.auth.init({ forceLock: true, retryable: true });
 
         if (ENV === 'development' && RESUME_FALLBACK) {
@@ -113,7 +118,8 @@ export const createActivationService = () => {
 
             if (BUILD_TARGET === 'chrome') void ctx.service.injection.updateInjections();
             ctx.service.onboarding.onUpdate();
-            return ctx.service.auth.init({ forceLock: false, retryable: true });
+
+            return ctx.service.auth.init({ forceLock: await shouldForceLock(), retryable: true });
         }
 
         if (details.reason === 'install') {
@@ -190,7 +196,7 @@ export const createActivationService = () => {
                 return false;
             })();
 
-            if (shouldResume) void ctx.service.auth.init({ forceLock: true, retryable: false });
+            if (shouldResume) void ctx.service.auth.init({ forceLock: await shouldForceLock(), retryable: false });
 
             /* dispatch a wakeup action for this specific receiver.
              * tracking the wakeup's request metadata can be consumed
@@ -256,6 +262,7 @@ export const createActivationService = () => {
             const lastReload = (await ctx.service.storage.local.getItem('lastReload')) ?? 0;
             if (lastReload + RUNTIME_RELOAD_TIME > now) return;
 
+            await api.idle(); /* wait for API idle before reloading in case a refresh was ongoing */
             await ctx.service.storage.local.setItem('lastReload', now);
             browser.runtime.reload();
         })

@@ -25,7 +25,7 @@ const bypass = async () => {
         await sendMessage(
             pageMessage({
                 type: WorkerMessageType.AUTH_INIT,
-                options: { forceLock: true, retryable: true },
+                options: { retryable: true },
             })
         );
     } finally {
