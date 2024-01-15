@@ -13,6 +13,7 @@ import {
     isHostAllowed,
     isHostCalendar,
     isHostMail,
+    isHostOAuth,
     isLogginOut,
     isMac,
     isUpsellURL,
@@ -116,6 +117,7 @@ app.on("web-contents-created", (_ev, contents) => {
     };
 
     contents.on("did-navigate-in-page", (ev, url) => {
+        log.info("did-navigate-in-page");
         if (!isHostAllowed(url, app.isPackaged)) {
             return preventDefault(ev);
         }
@@ -130,6 +132,7 @@ app.on("web-contents-created", (_ev, contents) => {
     contents.on("will-attach-webview", preventDefault);
 
     contents.on("will-navigate", (details) => {
+        log.info("will-navigate");
         if (isLogginOut(details.url)) {
             log.info("User is login out, clearing application data");
             // We add a small timeout to let the logout process finish
@@ -137,7 +140,7 @@ app.on("web-contents-created", (_ev, contents) => {
             return details;
         }
 
-        if (!isHostAllowed(details.url, app.isPackaged)) {
+        if (!isHostAllowed(details.url, app.isPackaged) && !isHostOAuth(details.url)) {
             return preventDefault(details);
         }
 
@@ -170,6 +173,9 @@ app.on("web-contents-created", (_ev, contents) => {
             return { action: "allow" };
         } else if (isHostAllowed(url, app.isPackaged)) {
             log.info("Open internal link", url);
+            return { action: "allow" };
+        } else if (isHostOAuth(url)) {
+            log.info("Open OAuth link", url);
             return { action: "allow" };
         } else {
             log.info("Open external link", url);

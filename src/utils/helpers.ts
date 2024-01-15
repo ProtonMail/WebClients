@@ -3,6 +3,7 @@ import log from "electron-log/main";
 import { join } from "path";
 import { setWindowState } from "../store/windowsStore";
 import { getConfig } from "./config";
+import { ALLOWED_OAUTH_URLS } from "./constants";
 
 export const isMac = process.platform === "darwin";
 export const isWindows = process.platform === "win32";
@@ -94,6 +95,16 @@ export const isUpsellURL = (host: string) => {
         return hostURl.pathname.includes("/signup") && (plan || billing || currency || coupon);
     } catch (error) {
         log.error("isUpsellURL", error);
+        return false;
+    }
+};
+
+export const isHostOAuth = (host: string) => {
+    try {
+        log.info("isHostOAuth", host);
+        return ALLOWED_OAUTH_URLS.some((url) => host.startsWith(url));
+    } catch (error) {
+        log.error("isHostOAuth", error);
         return false;
     }
 };
