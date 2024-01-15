@@ -37,23 +37,23 @@ const refresh = async (options: {
     const auth = getAuth();
 
     try {
-        if (auth === undefined || !auth.UID) throw InactiveSessionError();
+        if (auth === undefined) throw InactiveSessionError();
         return await call(withUIDHeaders(auth.UID, refreshTokens({ RefreshToken: auth.RefreshToken })));
     } catch (error: any) {
         if (attempt >= maxAttempts) throw error;
 
         const { status, name } = error;
-        const next = () => refresh({ call, getAuth, attempt: attempt + 1, maxAttempts: OFFLINE_RETRY_ATTEMPTS_MAX });
+        const next = (max: number) => refresh({ call, getAuth, attempt: attempt + 1, maxAttempts: max });
 
         if (['OfflineError', 'TimeoutError'].includes(name)) {
             if (attempt > OFFLINE_RETRY_ATTEMPTS_MAX) throw error;
             await wait(name === 'OfflineError' ? OFFLINE_RETRY_DELAY : 0);
-            return next();
+            return next(OFFLINE_RETRY_ATTEMPTS_MAX);
         }
 
         if (status === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
             await retryHandler(error);
-            return next();
+            return next(maxAttempts);
         }
 
         throw error;
@@ -65,14 +65,14 @@ export const createRefreshHandler = ({ call, getAuth, onRefresh }: CreateRefresh
 
     return (responseDate) => {
         const auth = getAuth();
-        if (auth === undefined || !auth.UID) throw InactiveSessionError();
+        if (auth === undefined) throw InactiveSessionError();
 
         if (!refreshHandlers.has(auth.UID)) {
             refreshHandlers.set(
                 auth.UID,
                 createOnceHandler(async (responseDate?: Date) => {
                     await wait(randomIntFromInterval(100, 2000));
-                    const lastRefreshDate = auth.RefreshTime;
+                    const lastRefreshDate = getAuth()?.RefreshTime;
 
                     if (lastRefreshDate === undefined || +(responseDate ?? new Date()) > lastRefreshDate) {
                         const response = await refresh({ call, getAuth, attempt: 1, maxAttempts: RETRY_ATTEMPTS_MAX });
