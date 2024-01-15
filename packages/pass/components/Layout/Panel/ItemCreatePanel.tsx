@@ -5,7 +5,8 @@ import { c } from 'ttag';
 import { Button, Kbd } from '@proton/atoms';
 import { Icon, Tooltip } from '@proton/components';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
-import type { ItemType } from '@proton/pass/types';
+import { useSaveShortcut } from '@proton/pass/hooks/useSaveShortcut';
+import type { ItemType, MaybeNull } from '@proton/pass/types';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
 
 import { DiscardableModalPanel, type DiscardableModalProps } from './DiscardableModalPanel';
@@ -43,56 +44,65 @@ export const ItemCreatePanel = ({
     handleCancelClick,
     renderSubmitButton,
     children,
-}: Props) => (
-    <DiscardableModalPanel onDiscard={handleCancelClick} discardable={discardable}>
-        {(props) => (
-            <Panel
-                className={itemTypeToSubThemeClassName[type]}
-                header={
-                    <PanelHeader
-                        actions={[
-                            <Button
-                                key="cancel-button"
-                                icon
-                                pill
-                                shape="solid"
-                                color="weak"
-                                onClick={() => (discardable ? handleCancelClick() : props.confirm())}
-                                title={c('Action').t`Cancel`}
-                            >
-                                <Icon name="cross" alt={c('Action').t`Cancel`} />
-                            </Button>,
-                            renderSubmitButton || (
-                                <Tooltip
-                                    key="submit-button"
-                                    openDelay={500}
-                                    originalPlacement={'bottom'}
-                                    title={
-                                        <>
-                                            <Kbd shortcut={metaKey} /> + <Kbd shortcut="S" />
-                                        </>
-                                    }
+}: Props) => {
+    useSaveShortcut(() => {
+        if (valid && !discardable) {
+            const form = document.getElementById(formId) as MaybeNull<HTMLFormElement>;
+            form?.requestSubmit();
+        }
+    });
+
+    return (
+        <DiscardableModalPanel onDiscard={handleCancelClick} discardable={discardable}>
+            {(props) => (
+                <Panel
+                    className={itemTypeToSubThemeClassName[type]}
+                    header={
+                        <PanelHeader
+                            actions={[
+                                <Button
+                                    key="cancel-button"
+                                    icon
+                                    pill
+                                    shape="solid"
+                                    color="weak"
+                                    onClick={() => (discardable ? handleCancelClick() : props.confirm())}
+                                    title={c('Action').t`Cancel`}
                                 >
-                                    <Button
-                                        className="text-sm"
+                                    <Icon name="cross" alt={c('Action').t`Cancel`} />
+                                </Button>,
+                                renderSubmitButton || (
+                                    <Tooltip
                                         key="submit-button"
-                                        pill
-                                        shape="solid"
-                                        color="norm"
-                                        type="submit"
-                                        form={formId}
-                                        disabled={!valid}
+                                        openDelay={500}
+                                        originalPlacement={'bottom'}
+                                        title={
+                                            <>
+                                                <Kbd shortcut={metaKey} /> + <Kbd shortcut="S" />
+                                            </>
+                                        }
                                     >
-                                        {getItemTypeSubmitButtonLabel(type)}
-                                    </Button>
-                                </Tooltip>
-                            ),
-                        ]}
-                    />
-                }
-            >
-                {children(props)}
-            </Panel>
-        )}
-    </DiscardableModalPanel>
-);
+                                        <Button
+                                            className="text-sm"
+                                            key="submit-button"
+                                            pill
+                                            shape="solid"
+                                            color="norm"
+                                            type="submit"
+                                            form={formId}
+                                            disabled={!valid}
+                                        >
+                                            {getItemTypeSubmitButtonLabel(type)}
+                                        </Button>
+                                    </Tooltip>
+                                ),
+                            ]}
+                        />
+                    }
+                >
+                    {children(props)}
+                </Panel>
+            )}
+        </DiscardableModalPanel>
+    );
+};

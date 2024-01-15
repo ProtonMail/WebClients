@@ -27,7 +27,6 @@ import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
 import { useItemDraft, useItemDraftLocationState } from '@proton/pass/hooks/useItemDraft';
-import { useItemFormKeyboardShortcuts } from '@proton/pass/hooks/useItemFormKeyboardShortcuts';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import {
@@ -171,8 +170,6 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel
         sanitizeSave: sanitizeLoginAliasSave,
         sanitizeHydration: sanitizeLoginAliasHydration(aliasModal.aliasOptions),
     });
-
-    useItemFormKeyboardShortcuts(form);
 
     useEffect(
         () => () => {

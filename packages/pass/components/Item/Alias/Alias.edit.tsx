@@ -17,7 +17,6 @@ import { useAliasDetails } from '@proton/pass/hooks/useAliasDetails';
 import { useAliasOptions } from '@proton/pass/hooks/useAliasOptions';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
-import { useItemFormKeyboardShortcuts } from '@proton/pass/hooks/useItemFormKeyboardShortcuts';
 import { createEditAliasFormValidator } from '@proton/pass/lib/validation/alias';
 import type { AliasMailbox, EditAliasFormValues } from '@proton/pass/types';
 import { type MaybeNull } from '@proton/pass/types';
@@ -115,8 +114,6 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ vault, revision, onC
         revision: lastRevision,
         onHydrated: draftHydrated.resolve,
     });
-
-    useItemFormKeyboardShortcuts(form);
 
     const loading = (aliasDetails.loading && aliasDetails.value.length === 0) || aliasOptions.loading;
 
