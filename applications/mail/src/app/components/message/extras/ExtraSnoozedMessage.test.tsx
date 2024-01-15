@@ -21,7 +21,6 @@ jest.mock('../../../hooks/actions/useSnooze', () => ({
     default: jest.fn().mockReturnValue({
         canSnooze: true,
         canUnsnooze: true,
-        isSnoozeEnabled: true,
         snooze: jest.fn(),
         unsnooze: jest.fn(),
         handleClose: jest.fn(),
