@@ -91,6 +91,7 @@ export enum WorkerMessageType {
     TELEMETRY_EVENT = 'TELEMETRY_EVENT',
     UNLOAD_CONTENT_SCRIPT = 'UNLOAD_CONTENT_SCRIPT',
     UPDATE_AVAILABLE = 'UPDATE_AVAILABLE',
+    WORKER_RELOAD = 'WORKER_RELOAD',
     WORKER_STATUS = 'WORKER_STATUS',
     WORKER_WAKEUP = 'WORKER_WAKEUP',
 }
@@ -146,6 +147,7 @@ export type StoreActionMessage = WithPayload<WorkerMessageType.STORE_DISPATCH, {
 export type TelemetryEventMessage = WithPayload<WorkerMessageType.TELEMETRY_EVENT, { event: TelemetryEvent }>;
 export type UnloadContentScriptMessage = { type: WorkerMessageType.UNLOAD_CONTENT_SCRIPT };
 export type UpdateAvailableMessage = { type: WorkerMessageType.UPDATE_AVAILABLE };
+export type WorkerReloadMessage = { type: WorkerMessageType.WORKER_RELOAD };
 export type WorkerStatusMessage = WithPayload<WorkerMessageType.WORKER_STATUS, { state: AppState }>;
 export type WorkerWakeUpMessage = WithPayload<WorkerMessageType.WORKER_WAKEUP, { tabId: TabId }>;
 
@@ -200,6 +202,7 @@ export type WorkerMessage =
     | TelemetryEventMessage
     | UnloadContentScriptMessage
     | UpdateAvailableMessage
+    | WorkerReloadMessage
     | WorkerStatusMessage
     | WorkerWakeUpMessage;
 
