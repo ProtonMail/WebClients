@@ -42,12 +42,21 @@ export const getSessionResumeDelay = (retryCount: number) => {
     return SESSION_RESUME_RETRY_TIMEOUT * FIBONACCI_LIST[retryIdx];
 };
 
+export const shouldForceLock = withContext<() => Promise<boolean>>(async (ctx) => {
+    try {
+        return (await ctx.service.storage.local.getItem('forceLock')) ?? false;
+    } catch {
+        return false;
+    }
+});
+
 export const createAuthService = (api: Api, authStore: AuthStore) => {
     const authService = createCoreAuthService({
         api,
         authStore,
         onInit: withContext(async (ctx, options) => {
             browser.alarms.clear(SESSION_RESUME_ALARM).catch(noop);
+            browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
 
             /* if worker is logged out (unauthorized or locked) during an init call,
              * this means the login or resumeSession calls failed - we can safely early
@@ -76,6 +85,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             ctx.setStatus(AppStatus.AUTHORIZED);
             ctx.service.activation.boot();
             ctx.service.autofill.updateTabsBadgeCount();
+            void ctx.service.storage.local.removeItem('forceLock');
             setSentryUID(authStore.getUID());
         }),
 
@@ -136,10 +146,15 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
             store.dispatch(stopEventPolling());
             store.dispatch(stateDestroy());
 
+            /** set the `forceLock` flag for subsequent auth inits and
+             * clear the in-memory session storage */
+            void ctx.service.storage.local.setItem('forceLock', true);
+            void ctx.service.storage.session.clear();
+
             browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
         }),
 
-        onSessionPersist: withContext((ctx, encryptedSession) => {
+        onSessionPersist: withContext(async (ctx, encryptedSession) => {
             void ctx.service.storage.local.setItem('ps', encryptedSession);
             void ctx.service.storage.session.setItems(authStore.getSession());
         }),
@@ -176,14 +191,15 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                 persistedSession.RefreshToken = RefreshToken;
                 persistedSession.RefreshTime = RefreshTime;
 
-                void ctx.service.storage.local.setItem('ps', JSON.stringify(persistedSession));
+                await ctx.service.storage.local.setItem('ps', JSON.stringify(persistedSession));
                 void ctx.service.storage.session.setItems({ AccessToken, RefreshToken, RefreshTime });
             }
         }),
     });
 
-    const handleInit = withContext<MessageHandlerCallback<WorkerMessageType.AUTH_INIT>>(async (ctx, message) => {
-        await ctx.service.auth.init(message.options);
+    const handleInit = withContext<MessageHandlerCallback<WorkerMessageType.AUTH_INIT>>(async (ctx, { options }) => {
+        options.forceLock = await shouldForceLock();
+        await ctx.service.auth.init(options);
         return ctx.getState();
     });
 
@@ -258,14 +274,26 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
     WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_INIT, handleInit);
     WorkerMessageBroker.registerMessage(WorkerMessageType.AUTH_UNLOCK, handleUnlock);
 
-    browser.alarms.onAlarm.addListener(({ name }) => {
-        switch (name) {
-            case SESSION_LOCK_ALARM:
-                return authService.lock({ soft: false });
-            case SESSION_RESUME_ALARM:
-                return authService.init({ forceLock: true, retryable: true });
-        }
-    });
+    /** These alarms may be triggered while the service worker was idle,
+     * as such, we should check for the app status before triggering any effects
+     * that would make API calls to avoid unauthenticated requests being sent out */
+    browser.alarms.onAlarm.addListener(
+        withContext(async (ctx, { name }) => {
+            switch (name) {
+                case SESSION_LOCK_ALARM: {
+                    const ready = clientReady(ctx.getState().status);
+                    logger.info(`[AuthService] session lock alarm detected [ready=${ready}]`);
+                    await ctx.service.storage.local.setItem('forceLock', true);
+                    if (ready) return authService.lock({ soft: false });
+                    else return authService.init({ forceLock: true, retryable: false });
+                }
+                case SESSION_RESUME_ALARM: {
+                    logger.info(`[AuthService] session resume alarm detected`);
+                    return authService.init({ forceLock: await shouldForceLock(), retryable: true });
+                }
+            }
+        })
+    );
 
     return authService;
 };

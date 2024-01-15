@@ -10,7 +10,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { LockedSessionError } from './errors';
 import type { RefreshHandler } from './refresh';
-import { SESSION_LOCK_CODE, isPassSessionRoute } from './utils';
+import { SESSION_LOCK_CODE } from './utils';
 
 type ApiHandlersOptions = {
     call: ApiCallFn;
@@ -35,7 +35,7 @@ export const withApiHandlers = ({ call, getAuth, refreshHandler, state }: ApiHan
         const next = async (attempts: number, maxAttempts?: number): Promise<any> => {
             if (state.sessionInactive) throw InactiveSessionError();
             if (state.appVersionBad) throw AppVersionBadError();
-            if (state.sessionLocked && !isPassSessionRoute(options?.url)) throw LockedSessionError();
+            if (state.sessionLocked) throw LockedSessionError();
 
             try {
                 const auth = getAuth();

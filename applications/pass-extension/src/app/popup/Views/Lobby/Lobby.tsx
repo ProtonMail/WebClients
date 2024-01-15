@@ -25,7 +25,7 @@ export const Lobby: VFC = () => {
             ? sendMessage(
                   popupMessage({
                       type: WorkerMessageType.AUTH_INIT,
-                      options: { forceLock: true, retryable: false },
+                      options: { retryable: false },
                   })
               )
             : login();

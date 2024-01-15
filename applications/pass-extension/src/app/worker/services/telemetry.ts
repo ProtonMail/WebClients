@@ -1,3 +1,4 @@
+import { clientReady } from '@proton/pass/lib/client';
 import browser from '@proton/pass/lib/globals/browser';
 import type { TelemetryStorageData } from '@proton/pass/lib/telemetry/service';
 import { createCoreTelemetryService } from '@proton/pass/lib/telemetry/service';
@@ -7,6 +8,7 @@ import { WorkerMessageType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 import WorkerMessageBroker from '../channel';
+import { withContext } from '../context';
 import store from '../store';
 
 export const TELEMETRY_ALARM_NAME = 'PassTelemetryAlarm';
@@ -24,7 +26,16 @@ export const createTelemetryService = (storage: Storage<TelemetryStorageData>) =
     });
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.TELEMETRY_EVENT, ({ payload: { event } }) => push(event));
-    browser.alarms.onAlarm.addListener(({ name }) => name === TELEMETRY_ALARM_NAME && send());
+
+    browser.alarms.onAlarm.addListener(
+        withContext((ctx, { name }) => {
+            /** Ensure the worker is ready before attempting to send events,
+             * as this will be an authenticated call. If the alarm goes off and
+             * the worker has not booted, the bundle will be sent on the next boot. */
+            const ready = clientReady(ctx.getState().status);
+            if (ready && name === TELEMETRY_ALARM_NAME) return send();
+        })
+    );
 
     return { start, stop, push };
 };
