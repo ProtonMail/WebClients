@@ -13,6 +13,7 @@ import { Address, DecryptedKey, ForwardingType, OutgoingAddressForwarding } from
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { addAddressKeysProcess, getEmailFromKey, splitKeys } from '@proton/shared/lib/keys';
 import illustration from '@proton/styles/assets/img/illustrations/forward-email-verification.svg';
+import uniqueBy from '@proton/utils/uniqueBy';
 
 import { useKTVerifier } from '..';
 import {
@@ -111,7 +112,11 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
     const isEditing = !!forward;
     const [addresses = []] = useAddresses();
     const [contactEmails = []] = useContactEmails();
-    const contactEmailsSorted = useMemo(() => [...contactEmails].sort(compareContactEmailByEmail), [contactEmails]);
+    const contactEmailsSorted = useMemo(() => {
+        const uniqueEmails = uniqueBy(contactEmails, ({ Email }) => Email.toLowerCase());
+        const sortedEmails = [...uniqueEmails].sort(compareContactEmailByEmail);
+        return sortedEmails;
+    }, [contactEmails]);
     const api = useApi();
     const getUser = useGetUser();
     const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
