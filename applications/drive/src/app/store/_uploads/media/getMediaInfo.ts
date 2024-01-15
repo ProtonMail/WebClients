@@ -7,9 +7,11 @@ import { scaleSvgFile } from './svg';
 import { getVideoInfo } from './video';
 
 export interface ThumbnailGenerator {
-    (file: Blob, thumbnailTypes: ThumbnailType[] | never, mimeType: string | never): Promise<
-        (Media & { thumbnails?: ThumbnailInfo[] }) | undefined
-    >;
+    (
+        file: Blob,
+        thumbnailTypes: ThumbnailType[] | never,
+        mimeType: string | never
+    ): Promise<(Media & { thumbnails?: ThumbnailInfo[] }) | undefined>;
 }
 
 interface CheckerThumbnailCreatorPair {

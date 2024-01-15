@@ -2,6 +2,7 @@ import { CryptoProxy, PrivateKeyReference, PublicKeyReference, VERIFICATION_STAT
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 
+import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { DeepPartial } from '../../utils/type/DeepPartial';
 
 export interface ExtendedAttributes {
@@ -191,10 +192,12 @@ async function encryptExtendedAttributes(
 
         return message;
     } catch (e) {
-        throw new Error('Failed to encrypt extended attributes', {
-            cause: {
-                e,
+        throw new EnrichedError('Failed to encrypt extended attributes', {
+            tags: {
                 addressKeyId: addressPrivateKey.getKeyID(),
+            },
+            extra: {
+                e,
             },
         });
     }
@@ -217,8 +220,8 @@ export async function decryptExtendedAttributes(
             verified,
         };
     } catch (e) {
-        throw new Error('Failed to decrypt extended attributes', {
-            cause: {
+        throw new EnrichedError('Failed to decrypt extended attributes', {
+            extra: {
                 e,
                 addressKeyIds: (Array.isArray(addressPublicKey) ? addressPublicKey : [addressPublicKey]).map((key) =>
                     key.getKeyID()

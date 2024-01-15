@@ -4,6 +4,7 @@ import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
 import { TransferCancel, TransferMeta } from '../../../components/TransferManager/transfer';
+import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { isValidationError } from '../../../utils/errorHandling/ValidationError';
 import { streamToBuffer } from '../../../utils/stream';
 import { isTransferCancelError } from '../../../utils/transfer';
@@ -70,7 +71,9 @@ class FileSaver {
                 if (isValidationError(err)) {
                     throw err;
                 }
-                throw new Error(`Download failed: ${err.message || err}`, { cause: err });
+                throw new EnrichedError(`Download failed: ${err.message || err}`, {
+                    extra: { err },
+                });
             }
         }
     }

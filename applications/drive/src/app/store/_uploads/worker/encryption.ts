@@ -4,6 +4,7 @@ import { CryptoProxy, PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 import { generateContentHash } from '@proton/shared/lib/keys/driveKeys';
 
+import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import ChunkFileReader from '../ChunkFileReader';
 import { MAX_BLOCK_VERIFICATION_RETRIES } from '../constants';
 import { EncryptedBlock, ThumbnailEncryptedBlock } from '../interface';
@@ -111,7 +112,7 @@ async function encryptBlock(
         } catch (e) {
             // Only trace the error to sentry once
             if (retryCount === 0) {
-                postNotifySentry(new Error('Verification failed and retried', { cause: { e } }));
+                postNotifySentry(new EnrichedError('Verification failed and retried', { extra: { e } }));
             }
 
             if (retryCount < MAX_BLOCK_VERIFICATION_RETRIES) {
@@ -119,7 +120,7 @@ async function encryptBlock(
             }
 
             // Give up after max retries reached, something's wrong
-            throw new Error('Upload failed: Verification of data failed', { cause: { e } });
+            throw new EnrichedError('Upload failed: Verification of data failed', { extra: { e } });
         }
 
         // Encrypt the block signature after verification
