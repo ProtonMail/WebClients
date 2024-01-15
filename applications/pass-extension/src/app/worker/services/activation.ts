@@ -299,6 +299,7 @@ export const createActivationService = () => {
     WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_WAKEUP, handleWakeup);
     WorkerMessageBroker.registerMessage(WorkerMessageType.POPUP_INIT, handlePopupInit);
     WorkerMessageBroker.registerMessage(WorkerMessageType.RESOLVE_TAB, (_, { tab }) => ({ tab }));
+    WorkerMessageBroker.registerMessage(WorkerMessageType.WORKER_RELOAD, reload);
 
     void checkAvailableUpdate();
     void checkPermissionsUpdate();
