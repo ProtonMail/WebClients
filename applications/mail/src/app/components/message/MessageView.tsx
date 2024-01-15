@@ -66,6 +66,7 @@ interface Props {
     containerRef?: React.RefObject<HTMLElement>;
     wrapperRef?: React.RefObject<HTMLDivElement>;
     onOpenQuickReply?: (index?: number) => void;
+    onReadMessage?: (messageID?: string) => void;
 }
 
 export interface MessageViewRef {
@@ -95,6 +96,7 @@ const MessageView = (
         containerRef,
         wrapperRef,
         onOpenQuickReply,
+        onReadMessage,
     }: Props,
     ref: Ref<MessageViewRef>
 ) => {
@@ -165,6 +167,9 @@ const MessageView = (
         // he will have a flash due to messageDocument computation after receiving API response
         if (!message.draftFlags?.sending) {
             setExpanded(value);
+            if (value) {
+                onReadMessage?.(message.data?.ID);
+            }
         }
     };
 
@@ -216,6 +221,7 @@ const MessageView = (
             // Should be prevented before, but as an extra security...
             if (!isDraft(message.data)) {
                 setExpanded(true);
+                onReadMessage?.(message.data?.ID);
             }
         },
     }));

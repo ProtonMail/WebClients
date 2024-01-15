@@ -13,6 +13,7 @@ import clsx from '@proton/utils/clsx';
 
 import { selectComposersCount } from 'proton-mail/logic/composers/composerSelectors';
 import { useAppSelector } from 'proton-mail/logic/store';
+import useUnreadNotifications from 'proton-mail/hooks/useUnreadNotifications';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { hasLabel } from '../../helpers/elements';
@@ -110,6 +111,13 @@ const ConversationView = ({
         })
         .sort((a, b) => a.Time - b.Time);
 
+    // "messagesWithoutQuickReplies" contains filtered messages to display or not in the conversation view.
+    // We can use this variable to get unread notifications since trashed or inbox messages (depending on the current location) will be filtered or not.
+    const { unreadMessageAfterTimeMarkerIds, handleReadMessage } = useUnreadNotifications(
+        messagesWithoutQuickReplies,
+        conversationID
+    );
+
     const showTrashWarning = !loadingMessages && filteredMessages.length !== messages.length;
     const messageInUrl = conversationState?.Messages?.find((message) => message.ID === messageID);
     const loading = loadingConversation || loadingMessages;
@@ -175,7 +183,8 @@ const ConversationView = ({
         handleScrollToMessage(messageIndex, 'end');
     };
 
-    const handleClickUnread = (messageID: string) => {
+    const handleClickUnreadNotification = (messageID: string) => {
+        handleReadMessage(messageID);
         expandMessage(messageID);
     };
 
@@ -234,15 +243,13 @@ const ConversationView = ({
                             containerRef={containerRef}
                             wrapperRef={wrapperRef}
                             onOpenQuickReply={handleOpenQuickReply}
+                            onReadMessage={handleReadMessage}
                         />
                     ))}
                 </div>
             </div>
-            <UnreadMessages
-                conversationID={conversationID}
-                messages={conversationState?.Messages}
-                onClick={handleClickUnread}
-            />
+
+            <UnreadMessages messagesIDs={unreadMessageAfterTimeMarkerIds} onClick={handleClickUnreadNotification} />
         </Scroll>
     );
 };
