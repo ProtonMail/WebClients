@@ -1,6 +1,7 @@
 import { type FC, type ReactElement, useEffect, useMemo, useRef } from 'react';
 import type { List } from 'react-virtualized';
 
+import { useBulkSelect } from '@proton/pass/components/Bulk/BulkSelectProvider';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsListItem';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
@@ -19,6 +20,7 @@ type Props = {
 
 export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelect, placeholder }) => {
     const listRef = useRef<List>(null);
+    const bulk = useBulkSelect();
 
     useEffect(() => listRef.current?.scrollToRow(0), [filters.type, filters.sort]);
 
@@ -48,7 +50,7 @@ export const ItemsListBase: FC<Props> = ({ items, filters, selectedItem, onSelec
                                 return (
                                     <div style={style} key={key}>
                                         <ItemsListItem
-                                            active={selectedItem && itemEq(selectedItem)(item)}
+                                            active={!bulk.isBulk && selectedItem && itemEq(selectedItem)(item)}
                                             id={id}
                                             item={item}
                                             key={id}
