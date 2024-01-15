@@ -4,7 +4,8 @@ import { Download, TransferType, Upload } from './transfer';
 
 function useTransferControls() {
     const { pauseDownloads, resumeDownloads, restartDownloads, cancelDownloads, removeDownloads } = useDownload();
-    const { pauseUploads, resumeUploads, restartUploads, cancelUploads, removeUploads } = useUpload();
+    const { pauseUploads, resumeUploads, restartUploads, cancelUploads, removeUploads, downloadUploadLogs } =
+        useUpload();
 
     const cancel = (transfer: Download | Upload, type: TransferType) => {
         if (type === TransferType.Download) {
@@ -69,6 +70,10 @@ function useTransferControls() {
         applyToTransfers(entries, restartDownloads, restartUploads);
     };
 
+    const downloadLogs = () => {
+        downloadUploadLogs();
+    };
+
     return {
         cancel,
         remove,
@@ -78,6 +83,7 @@ function useTransferControls() {
         resumeTransfers,
         cancelTransfers,
         restartTransfers,
+        downloadLogs,
     };
 }
 

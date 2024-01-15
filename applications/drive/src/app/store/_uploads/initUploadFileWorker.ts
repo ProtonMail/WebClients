@@ -14,6 +14,8 @@ import { getMediaInfo } from './media';
 import { mimeTypeFromFile } from './mimeTypeParser/mimeTypeParser';
 import { UploadWorkerController } from './workerController';
 
+type LogCallback = (message: string) => void;
+
 class TransferRetry extends Error {
     constructor(options: { message: string }) {
         super(options.message);
@@ -24,7 +26,8 @@ class TransferRetry extends Error {
 export function initUploadFileWorker(
     file: File,
     isForPhotos: boolean,
-    { initialize, createFileRevision, createBlockLinks, getVerificationData, finalize, onError }: UploadCallbacks
+    { initialize, createFileRevision, createBlockLinks, getVerificationData, finalize, onError }: UploadCallbacks,
+    log: LogCallback
 ): UploadFileControls {
     const abortController = new AbortController();
     let workerApi: UploadWorkerController;
@@ -45,7 +48,7 @@ export function initUploadFileWorker(
                 new URL('./worker/worker.ts', import.meta.url)
             );
 
-            workerApi = new UploadWorkerController(worker, {
+            workerApi = new UploadWorkerController(worker, log, {
                 keysGenerated: (keys: FileKeys) => {
                     mimeTypePromise
                         .then(async (mimeType) => {
