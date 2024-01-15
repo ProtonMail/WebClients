@@ -79,7 +79,7 @@ export const getOnlineAccounts = (): OnlineAccountGroup[] => {
                 {
                     key: '49bfd630-8841-41f5-a5ff-d5d93df71c8a',
                     name: 'Amazon',
-                    url: 'https://www.amazon.com/gp/css/homepage.html',
+                    url: 'https://www.amazon.com/gp/css/account/info/view.html',
                     img: amazon,
                     usOnly: false,
                     done: false,
