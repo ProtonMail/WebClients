@@ -186,6 +186,7 @@ function FloatingSpotlight({
                 color={color}
                 className="w-custom h-custom"
                 style={{ '--w-custom': '3em', '--h-custom': '3em', '--right': `${rightOffset}rem` }}
+                data-testid="gift-floating-button"
             >
                 <Icon size={24} name={icon} className="m-auto" />
             </FloatingButton>
@@ -282,6 +283,7 @@ function WelcomeAction({
             onClick={isDone ? undefined : action}
             onMouseEnter={() => setOnHover(true)}
             onMouseLeave={() => setOnHover(false)}
+            data-testid="welcome-actions"
         >
             <div
                 className={clsx([
@@ -290,10 +292,11 @@ function WelcomeAction({
                     isDone ? 'bg-success' : 'bg-weak',
                 ])}
                 style={{ '--w-custom': '2.5em', '--h-custom': '2.5em' }}
+                data-testid="welcome-actions-icons"
             >
                 <Icon name={icon} />
             </div>
-            <div className={clsx(['flex-1', isDone && 'text-strike color-weak'])}>
+            <div className={clsx(['flex-1', isDone && 'text-strike color-weak'])} data-testid="welcome-actions-text">
                 {title}
                 {!isDone && text && <div className="color-weak">{text}</div>}
             </div>
