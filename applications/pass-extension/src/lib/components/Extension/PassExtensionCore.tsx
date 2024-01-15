@@ -105,7 +105,8 @@ const exportData: PassCoreContextValue['exportData'] = (payload) =>
         return transferableToFile(res.file);
     });
 
-const onForceUpdate = () => browser.runtime.reload();
+const onForceUpdate: PassCoreContextValue['onForceUpdate'] = () =>
+    sendMessage(pageMessage({ type: WorkerMessageType.WORKER_RELOAD }));
 
 export const PassExtensionCore: FC<{ endpoint: ClientEndpoint }> = ({ children, endpoint }) => {
     const currentTabUrl = useRef<MaybeNull<ParsedUrl>>(null);

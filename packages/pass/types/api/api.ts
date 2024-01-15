@@ -35,6 +35,7 @@ export type Api = {
         config: ApiOptions<U, M>
     ): Promise<ApiResult<T, U, M>>;
     getState: () => ApiState;
+    idle: () => Promise<void>;
     reset: () => Promise<void>;
     subscribe: (subscribe: Subscriber<ApiSubscribtionEvent>) => () => void;
     unsubscribe: () => void;
