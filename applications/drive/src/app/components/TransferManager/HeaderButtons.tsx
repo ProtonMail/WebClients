@@ -99,6 +99,14 @@ const HeaderButton = ({ entries, className }: HeaderButtonProps) => {
             iconName: 'arrow-rotate-right',
             testId: testIdPrefix + 'restart',
         },
+        {
+            onClick: () => {
+                transferManagerControls.downloadLogs();
+            },
+            title: c('Action').t`Download debug logs`,
+            iconName: 'bug',
+            testId: testIdPrefix + 'logs',
+        },
     ];
 
     return (
