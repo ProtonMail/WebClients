@@ -21,7 +21,7 @@ interface Props {
 }
 
 const SnoozeToolbarDropdown = ({ selectedIDs, labelID }: Props) => {
-    const { canSnooze, canUnsnooze, isSnoozeEnabled } = useSnooze();
+    const { canSnooze, canUnsnooze } = useSnooze();
     const { selectAll } = useSelectAll({ labelID });
 
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
@@ -31,7 +31,7 @@ const SnoozeToolbarDropdown = ({ selectedIDs, labelID }: Props) => {
     // The title is set to undefined when the spotlight is present to avoid having the tooltip displayed when hovering the spotlight
     const tooltipTitle = show ? undefined : c('Title').t`Snooze`;
 
-    if (!selectedIDs.length || !isSnoozeEnabled || (!canSnooze && !canUnsnooze)) {
+    if (!selectedIDs.length || (!canSnooze && !canUnsnooze)) {
         return null;
     }
 
