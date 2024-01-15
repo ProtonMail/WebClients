@@ -44,6 +44,8 @@ import { ConflictStrategyHandler, UploadUserError } from './interface';
 import { generateClientUid } from './uploadClientUid';
 import useUploadHelper from './useUploadHelper';
 
+type LogCallback = (message: string) => void;
+
 interface FileRevision {
     isNewFile: boolean;
     filename: string;
@@ -73,6 +75,7 @@ export default function useUploadFile() {
         parentId: string,
         file: File,
         getFileConflictStrategy: ConflictStrategyHandler,
+        log: LogCallback,
         isForPhotos: boolean = false
     ): UploadFileControls => {
         let shareKeysCache: Awaited<ReturnType<typeof getShareCreatorKeys>>;
@@ -285,6 +288,7 @@ export default function useUploadFile() {
                 // Automatically replace file - previous draft was uploaded
                 // by the same client.
                 if (draftLinkId && clientUid) {
+                    log(`Automatically replacing draft`);
                     // Careful: uploading duplicate file has different name and
                     // this newName has to be used, not file.name.
                     // Example: upload A, then do it again with adding number
@@ -300,20 +304,26 @@ export default function useUploadFile() {
                 }
 
                 if (file.name === newName) {
+                    log(`Creating new file`);
                     return createFile(abortSignal, file.name, mimeType, hash, keys);
                 }
-                const link = await getLinkByName(abortSignal, shareId, parentId, file.name);
 
+                log(`Name conflict`);
+                const link = await getLinkByName(abortSignal, shareId, parentId, file.name);
                 const originalIsFolder = link ? !link.isFile : false;
 
                 const conflictStrategy = await getFileConflictStrategy(abortSignal, !!draftLinkId, originalIsFolder);
+                log(`Conflict resolved with: ${conflictStrategy}`);
                 if (conflictStrategy === TransferConflictStrategy.Rename) {
+                    log(`Creating new file`);
                     return createFile(abortSignal, newName, mimeType, hash, keys);
                 }
                 if (conflictStrategy === TransferConflictStrategy.Replace) {
                     if (draftLinkId) {
+                        log(`Replacing draft`);
                         return replaceDraft(abortSignal, file.name, mimeType, hash, keys, draftLinkId);
                     }
+                    log(`Replacing file`);
                     return replaceFile(abortSignal, mimeType, keys);
                 }
                 if (conflictStrategy === TransferConflictStrategy.Skip) {
@@ -338,186 +348,219 @@ export default function useUploadFile() {
         // with created file or revision to do proper clean-up.
         let createdFileRevisionPromise: Promise<FileRevision>;
 
-        return initUploadFileWorker(file, isForPhotos, {
-            initialize: async (abortSignal: AbortSignal) => {
-                const [addressKeyInfo, parentPrivateKey] = await Promise.all([
-                    getShareKeys(abortSignal),
-                    getLinkPrivateKey(abortSignal, shareId, parentId),
-                ]);
-                return {
-                    addressPrivateKey: addressKeyInfo.privateKey,
-                    parentPrivateKey,
-                };
-            },
-            createFileRevision: async (abortSignal: AbortSignal, mimeType: string, keys: FileKeys) => {
-                createdFileRevisionPromise = createFileRevision(abortSignal, mimeType, keys);
-                const [createdFileRevision, addressKeyInfo, parentHashKey] = await Promise.all([
-                    createdFileRevisionPromise,
-                    getShareKeys(abortSignal),
-                    getLinkHashKey(abortSignal, shareId, parentId),
-                ]);
-                checkSignal(abortSignal, createdFileRevision.filename);
-
-                return {
-                    fileName: createdFileRevision.filename,
-                    privateKey: createdFileRevision.privateKey,
-                    sessionKey: createdFileRevision.sessionKey,
-                    parentHashKey,
-                    address: {
-                        privateKey: addressKeyInfo.privateKey,
-                        email: addressKeyInfo.address.Email,
-                    },
-                };
-            },
-            getVerificationData: async (abortSignal: AbortSignal) => {
-                const createdFileRevision = await createdFileRevisionPromise;
-                if (!createdFileRevision) {
-                    throw new Error(`Draft for "${file.name}" hasn't been created prior to verifying`);
-                }
-
-                try {
-                    const { VerificationCode, ContentKeyPacket } = await debouncedRequest<GetVerificationDataResult>(
-                        queryVerificationData(shareId, createdFileRevision.fileID, createdFileRevision.revisionID),
-                        abortSignal
-                    );
-
-                    const verifierSessionKey = await CryptoProxy.decryptSessionKey({
-                        binaryMessage: base64StringToUint8Array(ContentKeyPacket),
-                        decryptionKeys: createdFileRevision.privateKey,
-                    });
-
-                    if (!verifierSessionKey) {
-                        throw new Error('Verification session key could not be decrypted');
-                    }
+        return initUploadFileWorker(
+            file,
+            isForPhotos,
+            {
+                initialize: async (abortSignal: AbortSignal) => {
+                    log(`Loading parent keys`);
+                    const [addressKeyInfo, parentPrivateKey] = await Promise.all([
+                        getShareKeys(abortSignal),
+                        getLinkPrivateKey(abortSignal, shareId, parentId),
+                    ]);
+                    return {
+                        addressPrivateKey: addressKeyInfo.privateKey,
+                        parentPrivateKey,
+                    };
+                },
+                createFileRevision: async (abortSignal: AbortSignal, mimeType: string, keys: FileKeys) => {
+                    createdFileRevisionPromise = createFileRevision(abortSignal, mimeType, keys);
+                    const [createdFileRevision, addressKeyInfo, parentHashKey] = await Promise.all([
+                        createdFileRevisionPromise,
+                        getShareKeys(abortSignal),
+                        getLinkHashKey(abortSignal, shareId, parentId),
+                    ]);
+                    checkSignal(abortSignal, createdFileRevision.filename);
+                    log(`Link ID: ${createdFileRevision.fileID}, revision ID: ${createdFileRevision.revisionID}`);
 
                     return {
-                        verificationCode: base64StringToUint8Array(VerificationCode),
-                        verifierSessionKey,
-                    } satisfies VerificationData;
-                } catch (e) {
-                    throw new Error('Upload failed: Verification of data failed', {
-                        cause: e,
-                    });
-                }
-            },
-            createBlockLinks: async (
-                abortSignal: AbortSignal,
-                fileBlocks: FileRequestBlock[],
-                thumbnailBlocks?: ThumbnailRequestBlock[]
-            ) => {
-                const createdFileRevision = await createdFileRevisionPromise;
-                if (!createdFileRevision) {
-                    throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
-                }
-                const addressKeyInfo = await getShareKeys(abortSignal);
-                const { UploadLinks, ThumbnailLinks } = await debouncedRequest<RequestUploadResult>(
-                    queryRequestUpload({
-                        BlockList: fileBlocks.map((block) => ({
-                            Index: block.index,
-                            Hash: uint8ArrayToBase64String(block.hash),
-                            EncSignature: block.signature,
-                            Size: block.size,
-                            Verifier: {
-                                Token: uint8ArrayToBase64String(block.verificationToken),
-                            },
-                        })),
-                        AddressID: addressKeyInfo.address.ID,
-                        LinkID: createdFileRevision.fileID,
-                        RevisionID: createdFileRevision.revisionID,
-                        ShareID: shareId,
-                        ThumbnailList: thumbnailBlocks?.map((block) => ({
-                            Hash: uint8ArrayToBase64String(block.hash),
-                            Size: block.size,
-                            Type: block.type,
-                        })),
-                    }),
-                    abortSignal
-                );
-                return {
-                    fileLinks: UploadLinks.map((link, index) => ({
-                        index: fileBlocks[index].index,
-                        token: link.Token,
-                        url: link.BareURL,
-                    })),
-                    thumbnailLinks: ThumbnailLinks?.map((link, index) => ({
-                        index,
-                        token: link.Token,
-                        url: link.BareURL,
-                    })),
-                };
-            },
-            finalize: queuedFunction(
-                'upload_finalize',
-                async (signature: string, signatureAddress: string, xattr: string, photo?: PhotoUpload) => {
+                        fileName: createdFileRevision.filename,
+                        privateKey: createdFileRevision.privateKey,
+                        sessionKey: createdFileRevision.sessionKey,
+                        parentHashKey,
+                        address: {
+                            privateKey: addressKeyInfo.privateKey,
+                            email: addressKeyInfo.address.Email,
+                        },
+                    };
+                },
+                getVerificationData: async (abortSignal: AbortSignal) => {
+                    const createdFileRevision = await createdFileRevisionPromise;
+                    if (!createdFileRevision) {
+                        throw new Error(`Draft for "${file.name}" hasn't been created prior to verifying`);
+                    }
+
+                    log(`Requesting verifier data`);
+                    try {
+                        const { VerificationCode, ContentKeyPacket } =
+                            await debouncedRequest<GetVerificationDataResult>(
+                                queryVerificationData(
+                                    shareId,
+                                    createdFileRevision.fileID,
+                                    createdFileRevision.revisionID
+                                ),
+                                abortSignal
+                            );
+
+                        const verifierSessionKey = await CryptoProxy.decryptSessionKey({
+                            binaryMessage: base64StringToUint8Array(ContentKeyPacket),
+                            decryptionKeys: createdFileRevision.privateKey,
+                        });
+
+                        if (!verifierSessionKey) {
+                            throw new Error('Verification session key could not be decrypted');
+                        }
+
+                        return {
+                            verificationCode: base64StringToUint8Array(VerificationCode),
+                            verifierSessionKey,
+                        } satisfies VerificationData;
+                    } catch (e) {
+                        throw new Error('Upload failed: Verification of data failed', {
+                            cause: e,
+                        });
+                    }
+                },
+                createBlockLinks: async (
+                    abortSignal: AbortSignal,
+                    fileBlocks: FileRequestBlock[],
+                    thumbnailBlocks?: ThumbnailRequestBlock[]
+                ) => {
                     const createdFileRevision = await createdFileRevisionPromise;
                     if (!createdFileRevision) {
                         throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
                     }
+                    log(
+                        `Requesting tokens for ${fileBlocks.length} blocks and ${
+                            thumbnailBlocks?.length || 0
+                        } thumbnail blocks`
+                    );
+                    const addressKeyInfo = await getShareKeys(abortSignal);
+                    const { UploadLinks, ThumbnailLinks } = await debouncedRequest<RequestUploadResult>(
+                        queryRequestUpload({
+                            BlockList: fileBlocks.map((block) => ({
+                                Index: block.index,
+                                Hash: uint8ArrayToBase64String(block.hash),
+                                EncSignature: block.signature,
+                                Size: block.size,
+                                Verifier: {
+                                    Token: uint8ArrayToBase64String(block.verificationToken),
+                                },
+                            })),
+                            AddressID: addressKeyInfo.address.ID,
+                            LinkID: createdFileRevision.fileID,
+                            RevisionID: createdFileRevision.revisionID,
+                            ShareID: shareId,
+                            ThumbnailList: thumbnailBlocks?.map((block) => ({
+                                Hash: uint8ArrayToBase64String(block.hash),
+                                Size: block.size,
+                                Type: block.type,
+                            })),
+                        }),
+                        abortSignal
+                    );
+                    log(
+                        `Got tokens for ${UploadLinks.length} blocks and ${
+                            ThumbnailLinks?.length || 0
+                        } thumbnail blocks`
+                    );
+                    return {
+                        fileLinks: UploadLinks.map((link, index) => ({
+                            index: fileBlocks[index].index,
+                            token: link.Token,
+                            url: link.BareURL,
+                        })),
+                        thumbnailLinks: ThumbnailLinks?.map((link, index) => ({
+                            index,
+                            token: link.Token,
+                            url: link.BareURL,
+                        })),
+                    };
+                },
+                finalize: queuedFunction(
+                    'upload_finalize',
+                    async (signature: string, signatureAddress: string, xattr: string, photo?: PhotoUpload) => {
+                        const createdFileRevision = await createdFileRevisionPromise;
+                        if (!createdFileRevision) {
+                            throw new Error(`Draft for "${file.name}" hasn't been created prior to uploading`);
+                        }
 
-                    if (finalizeCalled) {
+                        if (finalizeCalled) {
+                            return;
+                        }
+                        finalizeCalled = true;
+
+                        log(`Commiting revision`);
+                        await debouncedRequest(
+                            queryUpdateFileRevision(
+                                shareId,
+                                createdFileRevision.fileID,
+                                createdFileRevision.revisionID,
+                                {
+                                    ManifestSignature: signature,
+                                    SignatureAddress: signatureAddress,
+                                    XAttr: xattr,
+                                    Photo: photo
+                                        ? {
+                                              MainPhotoLinkID: null, // This is for live photos
+                                              CaptureTime: photo.captureTime,
+                                              Exif: photo.encryptedExif,
+                                              ContentHash: photo.contentHash,
+                                          }
+                                        : undefined,
+                                }
+                            )
+                        );
+                        log(`Revision commited`);
+
+                        createdFileRevision.uploadFinished();
+
+                        const volumeId = volumeState.findVolumeId(shareId);
+                        if (volumeId) {
+                            await driveEventManager.pollEvents.volumes(volumeId, {
+                                includeCommon: true,
+                            });
+                        }
+                    },
+                    5
+                ),
+                onError: async (err) => {
+                    if (finalizeCalled && err.name === 'AbortError') {
                         return;
                     }
                     finalizeCalled = true;
 
-                    await debouncedRequest(
-                        queryUpdateFileRevision(shareId, createdFileRevision.fileID, createdFileRevision.revisionID, {
-                            ManifestSignature: signature,
-                            SignatureAddress: signatureAddress,
-                            XAttr: xattr,
-                            Photo: photo
-                                ? {
-                                      MainPhotoLinkID: null, // This is for live photos
-                                      CaptureTime: photo.captureTime,
-                                      Exif: photo.encryptedExif,
-                                      ContentHash: photo.contentHash,
-                                  }
-                                : undefined,
-                        })
-                    );
-
-                    createdFileRevision.uploadFinished();
-
-                    const volumeId = volumeState.findVolumeId(shareId);
-                    if (volumeId) {
-                        await driveEventManager.pollEvents.volumes(volumeId, {
-                            includeCommon: true,
-                        });
+                    // If creation of revision failed, it is already processed by
+                    // this handler. Do not throw it here again.
+                    const createdFileRevision = await createdFileRevisionPromise?.catch(() => undefined);
+                    try {
+                        if (createdFileRevision) {
+                            createdFileRevision.uploadFailed();
+                            if (createdFileRevision.isNewFile) {
+                                log(`Deleting file`);
+                                // Cleanup should not be able to abort.
+                                await deleteChildrenLinks(new AbortController().signal, shareId, parentId, [
+                                    createdFileRevision.fileID,
+                                ]);
+                            } else {
+                                log(`Deleting revision`);
+                                await debouncedRequest(
+                                    queryDeleteFileRevision(
+                                        shareId,
+                                        createdFileRevision.fileID,
+                                        createdFileRevision.revisionID
+                                    )
+                                );
+                            }
+                        }
+                    } catch (err: any) {
+                        log(`Cleanup failed due to ${err}`);
+                        logError(err);
                     }
                 },
-                5
-            ),
-            onError: async (err) => {
-                if (finalizeCalled && err.name === 'AbortError') {
-                    return;
-                }
-                finalizeCalled = true;
-
-                // If creation of revision failed, it is already processed by
-                // this handler. Do not throw it here again.
-                const createdFileRevision = await createdFileRevisionPromise?.catch(() => undefined);
-                try {
-                    if (createdFileRevision) {
-                        createdFileRevision.uploadFailed();
-                        if (createdFileRevision.isNewFile) {
-                            // Cleanup should not be able to abort.
-                            await deleteChildrenLinks(new AbortController().signal, shareId, parentId, [
-                                createdFileRevision.fileID,
-                            ]);
-                        } else {
-                            await debouncedRequest(
-                                queryDeleteFileRevision(
-                                    shareId,
-                                    createdFileRevision.fileID,
-                                    createdFileRevision.revisionID
-                                )
-                            );
-                        }
-                    }
-                } catch (err: any) {
-                    logError(err);
-                }
             },
-        });
+            (message) => log(`worker: ${message}`)
+        );
     };
 
     return {

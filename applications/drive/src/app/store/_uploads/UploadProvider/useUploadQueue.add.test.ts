@@ -16,6 +16,8 @@ function createEmptyQueue(): UploadQueue {
 }
 
 describe('useUploadQueue::add', () => {
+    const mockLogCallback = jest.fn();
+
     let hook: {
         current: {
             fileUploads: FileUpload[];
@@ -26,7 +28,7 @@ describe('useUploadQueue::add', () => {
 
     beforeEach(() => {
         mockGlobalFile();
-        const { result } = renderHook(() => useUploadQueue());
+        const { result } = renderHook(() => useUploadQueue(mockLogCallback));
         hook = result;
     });
 
@@ -70,68 +72,71 @@ describe('useUploadQueue::add', () => {
 
     it('throws error when adding file with empty name', () => {
         expect(() => {
-            addItemToQueue('shareId', createEmptyQueue(), { path: [], file: testFile('') });
+            addItemToQueue(mockLogCallback, 'shareId', createEmptyQueue(), { path: [], file: testFile('') });
         }).toThrow('File or folder is missing a name');
     });
 
     it('throws error when adding folder with empty name', () => {
         expect(() => {
-            addItemToQueue('shareId', createEmptyQueue(), { path: [], folder: '' });
+            addItemToQueue(mockLogCallback, 'shareId', createEmptyQueue(), { path: [], folder: '' });
         }).toThrow('File or folder is missing a name');
     });
 
     it('throws error when adding file to non-existing folder', () => {
         expect(() => {
-            addItemToQueue('shareId', createEmptyQueue(), { path: ['folder'], file: testFile('a.txt') });
+            addItemToQueue(mockLogCallback, 'shareId', createEmptyQueue(), {
+                path: ['folder'],
+                file: testFile('a.txt'),
+            });
         }).toThrow('Wrong file or folder structure');
     });
 
     it('throws error when adding the same file again', () => {
         const queue = createEmptyQueue();
-        addItemToQueue('shareId', queue, { path: [], file: testFile('a.txt') });
+        addItemToQueue(mockLogCallback, 'shareId', queue, { path: [], file: testFile('a.txt') });
         expect(() => {
-            addItemToQueue('shareId', queue, { path: [], file: testFile('a.txt') });
+            addItemToQueue(mockLogCallback, 'shareId', queue, { path: [], file: testFile('a.txt') });
         }).toThrow('File or folder "a.txt" is already uploading');
-        addItemToQueue('shareId', queue, { path: [], folder: 'folder' });
-        addItemToQueue('shareId', queue, { path: ['folder'], file: testFile('a.txt') });
+        addItemToQueue(mockLogCallback, 'shareId', queue, { path: [], folder: 'folder' });
+        addItemToQueue(mockLogCallback, 'shareId', queue, { path: ['folder'], file: testFile('a.txt') });
         expect(() => {
-            addItemToQueue('shareId', queue, { path: ['folder'], file: testFile('a.txt') });
+            addItemToQueue(mockLogCallback, 'shareId', queue, { path: ['folder'], file: testFile('a.txt') });
         }).toThrow('File or folder "a.txt" is already uploading');
     });
 
     it('throws error when adding the same folder again', () => {
         const queue = createEmptyQueue();
-        addItemToQueue('shareId', queue, { path: [], folder: 'folder' });
+        addItemToQueue(mockLogCallback, 'shareId', queue, { path: [], folder: 'folder' });
         expect(() => {
-            addItemToQueue('shareId', queue, { path: [], folder: 'folder' });
+            addItemToQueue(mockLogCallback, 'shareId', queue, { path: [], folder: 'folder' });
         }).toThrow('File or folder "folder" is already uploading');
-        addItemToQueue('shareId', queue, { path: ['folder'], folder: 'subfolder' });
+        addItemToQueue(mockLogCallback, 'shareId', queue, { path: ['folder'], folder: 'subfolder' });
         expect(() => {
-            addItemToQueue('shareId', queue, { path: ['folder'], folder: 'subfolder' });
+            addItemToQueue(mockLogCallback, 'shareId', queue, { path: ['folder'], folder: 'subfolder' });
         }).toThrow('File or folder "subfolder" is already uploading');
     });
 
     it('throws error when adding the same folder again with unfinished childs', () => {
         const queue = createEmptyQueue();
-        addItemToQueue('shareId', queue, { path: [], folder: 'folder' });
-        addItemToQueue('shareId', queue, { path: ['folder'], file: testFile('a.txt') });
+        addItemToQueue(mockLogCallback, 'shareId', queue, { path: [], folder: 'folder' });
+        addItemToQueue(mockLogCallback, 'shareId', queue, { path: ['folder'], file: testFile('a.txt') });
 
         queue.folders[0].state = TransferState.Done;
         expect(() => {
-            addItemToQueue('shareId', queue, { path: [], folder: 'folder' });
+            addItemToQueue(mockLogCallback, 'shareId', queue, { path: [], folder: 'folder' });
         }).toThrow('File or folder "folder" is already uploading');
 
         queue.folders[0].files[0].state = TransferState.Done;
-        addItemToQueue('shareId', queue, { path: [], folder: 'folder' });
+        addItemToQueue(mockLogCallback, 'shareId', queue, { path: [], folder: 'folder' });
     });
 
     it('adds files to the latest folder', () => {
         const queue = createEmptyQueue();
-        addItemToQueue('shareId', queue, { path: [], folder: 'folder' });
+        addItemToQueue(mockLogCallback, 'shareId', queue, { path: [], folder: 'folder' });
         queue.folders[0].state = TransferState.Done;
 
-        addItemToQueue('shareId', queue, { path: [], folder: 'folder' });
-        addItemToQueue('shareId', queue, { path: ['folder'], file: testFile('b.txt') });
+        addItemToQueue(mockLogCallback, 'shareId', queue, { path: [], folder: 'folder' });
+        addItemToQueue(mockLogCallback, 'shareId', queue, { path: ['folder'], file: testFile('b.txt') });
         expect(queue.folders[0].files.length).toBe(0);
         expect(queue.folders[1].files.length).toBe(1);
         expect(queue.folders[1].files[0].meta.filename).toBe('b.txt');
@@ -139,10 +144,10 @@ describe('useUploadQueue::add', () => {
 
     it('adds files to already prepared filter with pending state', () => {
         const queue = createEmptyQueue();
-        addItemToQueue('shareId', queue, { path: [], folder: 'folder' });
+        addItemToQueue(mockLogCallback, 'shareId', queue, { path: [], folder: 'folder' });
 
         // The first file, before folder is done, is set to init state.
-        addItemToQueue('shareId', queue, { path: ['folder'], file: testFile('a.txt') });
+        addItemToQueue(mockLogCallback, 'shareId', queue, { path: ['folder'], file: testFile('a.txt') });
         expect(queue.folders[0].files[0]).toMatchObject({
             meta: { filename: 'a.txt' },
             state: TransferState.Initializing,
@@ -151,7 +156,7 @@ describe('useUploadQueue::add', () => {
         // The second file, after folder is done, is set to pending state.
         queue.folders[0].state = TransferState.Done;
         queue.folders[0].linkId = 'folderId';
-        addItemToQueue('shareId', queue, { path: ['folder'], file: testFile('b.txt') });
+        addItemToQueue(mockLogCallback, 'shareId', queue, { path: ['folder'], file: testFile('b.txt') });
         expect(queue.folders[0].files[1]).toMatchObject({
             meta: { filename: 'b.txt' },
             state: TransferState.Pending,

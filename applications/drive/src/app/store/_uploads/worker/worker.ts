@@ -122,6 +122,8 @@ async function start(
 
     const uploadingBlocksGenerator = buffer.generateUploadingBlocks();
     const finish = async () => {
+        uploadWorker.postLog(`Computing and validating manifest`);
+
         const fileHash = buffer.hash;
         const sha1Digest = hashInstance.finish().result;
 
@@ -191,7 +193,8 @@ async function start(
         pauser,
         uploadingBlocksGenerator,
         (progress: number) => uploadWorker.postProgress(progress),
-        (error: string) => uploadWorker.postNetworkError(error)
+        (error: string) => uploadWorker.postNetworkError(error),
+        (message: string) => uploadWorker.postLog(message)
     )
         .then(finish)
         .catch((err) => uploadWorker.postError(getErrorString(err)));
