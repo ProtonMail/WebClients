@@ -2,7 +2,7 @@ import { useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { SettingsLink, useConfig, useSubscription, useUser } from '@proton/components';
+import { SettingsLink, useActiveBreakpoint, useConfig, useSubscription, useUser } from '@proton/components';
 import { APP_NAMES, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { isTrial } from '@proton/shared/lib/helpers/subscription';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
@@ -22,6 +22,8 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
 
     const upgradePathname = getUpgradePath({ user, subscription, app: APP_NAME });
 
+    const { viewportWidth } = useActiveBreakpoint();
+
     const upsellRef = getUpsellRefFromApp({
         app: APP_NAME,
         feature: '1',
@@ -31,18 +33,23 @@ const TopNavbarUpgradeButton = ({ app }: Props) => {
     // We want to have metrics from where the user has clicked on the upgrade button
     const upgradeUrl = addUpsellPath(upgradePathname, upsellRef);
     const displayUpgradeButton = (user.isFree || isTrial(subscription)) && !location.pathname.endsWith(upgradePathname);
+    const upgradeText = c('specialoffer: Link').t`Upgrade`;
+    const upgradeIcon = upgradeText.length > 20 && viewportWidth['>=large'] ? undefined : 'upgrade';
 
     if (displayUpgradeButton) {
         return (
             <TopNavbarListItem noCollapse>
                 <PromotionButton
                     as={SettingsLink}
-                    iconName="upgrade"
+                    iconName={upgradeIcon}
                     path={upgradeUrl}
+                    size={upgradeText.length > 14 ? 'small' : 'medium'}
                     responsive
                     title={c('specialoffer: Link').t`Go to subscription plans`}
                     data-testid="cta:upgrade-plan"
-                >{c('specialoffer: Link').t`Upgrade`}</PromotionButton>
+                >
+                    {upgradeText}
+                </PromotionButton>
             </TopNavbarListItem>
         );
     }
