@@ -31,7 +31,7 @@ export const useNotificationEnhancer = () => {
     const { onLink } = usePassCore();
 
     return useCallback((notification: Notification): Notification => {
-        const reactivateLink = <ReactivateLink onLink={onLink} />;
+        const reactivateLink = <ReactivateLink onLink={onLink} key="reactactivate-link" />;
 
         switch (notification.key) {
             case NotificationKey.INACTIVE_SHARES: {
