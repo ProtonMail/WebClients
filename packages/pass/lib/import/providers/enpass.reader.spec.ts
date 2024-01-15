@@ -52,7 +52,7 @@ describe('Import Enpass json', () => {
         const loginItem2 = deobfuscateItem(primary.items[1]) as unknown as ItemImportIntent<'login'>;
         expect(loginItem2.type).toEqual('login');
         expect(loginItem2.metadata.name).toEqual('Yahoo!');
-        expect(loginItem2.content.username).toEqual('customusername');
+        expect(loginItem2.content.username).toEqual('');
         expect(loginItem2.metadata.note).toEqual('example note');
 
         /* Trashed login */

@@ -58,7 +58,7 @@ const mapToExtraField = ({ value, label, sensitive }: RemainingField): UnsafeIte
 const processLoginItem = (
     item: EnpassItem<EnpassCategory.LOGIN> | EnpassItem<EnpassCategory.PASSWORD>
 ): ItemImportIntent<'login'> => {
-    const { extracted, remaining } = extractLoginFields(item.fields);
+    const { extracted, remaining } = extractLoginFields(item.fields ?? []);
 
     return importLoginItem({
         name: item.title,
@@ -84,7 +84,7 @@ const processNoteItem = (item: EnpassItem<EnpassCategory.NOTE>): ItemImportInten
     });
 
 const processCreditCardItem = (item: EnpassItem<EnpassCategory.CREDIT_CARD>): ItemImportIntent[] => {
-    const { extracted: extractedCCData, remaining } = extractCCFields(item.fields);
+    const { extracted: extractedCCData, remaining } = extractCCFields(item.fields ?? []);
 
     const ccItem = importCreditCardItem({
         name: item.title,
