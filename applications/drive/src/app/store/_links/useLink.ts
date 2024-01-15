@@ -13,6 +13,7 @@ import { LinkMetaResult } from '@proton/shared/lib/interfaces/drive/link';
 import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 import { decryptPassphrase, getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 
+import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { linkMetaToEncryptedLink, revisionPayloadToRevision, useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { ShareType, useShare } from '../_shares';
@@ -244,12 +245,12 @@ export function useLinkInner(
                     passphraseSessionKey,
                 };
             } catch (e) {
-                throw new Error('Failed to decrypt link passphrase', {
-                    cause: {
-                        e,
+                throw new EnrichedError('Failed to decrypt link passphrase', {
+                    tags: {
                         shareId,
                         linkId,
                     },
+                    extra: { e },
                 });
             }
         }
@@ -272,12 +273,12 @@ export function useLinkInner(
             try {
                 privateKey = await importPrivateKey({ armoredKey: encryptedLink.nodeKey, passphrase });
             } catch (e) {
-                throw new Error('Failed to import link private key', {
-                    cause: {
-                        e,
+                throw new EnrichedError('Failed to import link private key', {
+                    tags: {
                         shareId,
                         linkId,
                     },
+                    extra: { e },
                 });
             }
 
@@ -312,12 +313,12 @@ export function useLinkInner(
                     privateKeys: privateKey,
                 });
             } catch (e) {
-                throw new Error('Failed to decrypt link session key', {
-                    cause: {
-                        e,
+                throw new EnrichedError('Failed to decrypt link session key', {
+                    tags: {
                         shareId,
                         linkId,
                     },
+                    extra: { e },
                 });
             }
 
@@ -402,12 +403,12 @@ export function useLinkInner(
                 linksKeys.setHashKey(shareId, linkId, hashKey);
                 return hashKey;
             } catch (e) {
-                throw new Error('Failed to decrypt link hash key', {
-                    cause: {
-                        e,
+                throw new EnrichedError('Failed to decrypt link hash key', {
+                    tags: {
                         shareId,
                         linkId,
                     },
+                    extra: { e },
                 });
             }
         }
@@ -577,12 +578,12 @@ export function useLinkInner(
 
                 return decrypted;
             } catch (e) {
-                throw new Error('Failed to decrypt link', {
-                    cause: {
-                        e,
+                throw new EnrichedError('Failed to decrypt link', {
+                    tags: {
                         shareId,
                         linkId,
                     },
+                    extra: { e },
                 });
             }
         }
@@ -608,12 +609,12 @@ export function useLinkInner(
 
             return linksState.getLink(shareId, linkId)?.decrypted as DecryptedLink;
         } catch (e) {
-            throw new Error('Failed to decrypt link', {
-                cause: {
-                    e,
+            throw new EnrichedError('Failed to decrypt link', {
+                tags: {
                     shareId,
                     linkId,
                 },
+                extra: { e },
             });
         }
     };

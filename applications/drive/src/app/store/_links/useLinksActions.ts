@@ -16,6 +16,7 @@ import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase'
 import chunk from '@proton/utils/chunk';
 import groupWith from '@proton/utils/groupWith';
 
+import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { useDebouncedRequest } from '../_api';
 import { useDriveEventManager } from '../_events';
@@ -118,41 +119,41 @@ export function useLinksActions({
                 getLinkPrivateKey(abortSignal, shareId, link.parentLinkId),
                 generateLookupHash(link.name, newParentHashKey).catch((e) =>
                     Promise.reject(
-                        new Error('Failed to generate lookup hash during move', {
-                            cause: {
-                                e,
+                        new EnrichedError('Failed to generate lookup hash during move', {
+                            tags: {
                                 shareId,
                                 newParentLinkId,
                                 newShareId: newShareId === shareId ? undefined : newShareId,
                                 linkId,
                             },
+                            extra: { e },
                         })
                     )
                 ),
                 link.digests?.sha1 &&
                     generateLookupHash(link.digests.sha1, newParentHashKey).catch((e) =>
                         Promise.reject(
-                            new Error('Failed to generate content hash during move', {
-                                cause: {
-                                    e,
+                            new EnrichedError('Failed to generate content hash during move', {
+                                tags: {
                                     shareId,
                                     newParentLinkId,
                                     newShareId: newShareId === shareId ? undefined : newShareId,
                                     linkId,
                                 },
+                                extra: { e },
                             })
                         )
                     ),
                 encryptPassphrase(newParentPrivateKey, addressKey, passphrase, passphraseSessionKey).catch((e) =>
                     Promise.reject(
-                        new Error('Failed to encrypt link passphrase during move', {
-                            cause: {
-                                e,
+                        new EnrichedError('Failed to encrypt link passphrase during move', {
+                            tags: {
                                 shareId,
                                 newParentLinkId,
                                 newShareId: newShareId === shareId ? undefined : newShareId,
                                 linkId,
                             },
+                            extra: { e },
                         })
                     )
                 ),
@@ -163,14 +164,14 @@ export function useLinksActions({
             privateKeys: currentParentPrivateKey,
         }).catch((e) =>
             Promise.reject(
-                new Error('Failed to decrypt link name session key during move', {
-                    cause: {
-                        e,
+                new EnrichedError('Failed to decrypt link name session key during move', {
+                    tags: {
                         shareId,
                         newParentLinkId,
                         newShareId: newShareId === shareId ? undefined : newShareId,
                         linkId,
                     },
+                    extra: { e },
                 })
             )
         );
@@ -183,14 +184,14 @@ export function useLinksActions({
             signingKeys: addressKey,
         }).catch((e) =>
             Promise.reject(
-                new Error('Failed to encrypt link name during move', {
-                    cause: {
-                        e,
+                new EnrichedError('Failed to encrypt link name during move', {
+                    tags: {
                         shareId,
                         newParentLinkId,
                         newShareId: newShareId === shareId ? undefined : newShareId,
                         linkId,
                     },
+                    extra: { e },
                 })
             )
         );
