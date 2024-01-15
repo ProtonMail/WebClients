@@ -31,7 +31,7 @@ describe('getSafeValue', () => {
 describe('getSafeErrorObject', () => {
     it(`should accept errors`, () => {
         const value = new Error('blah');
-        const expected = { name: 'Error', message: 'blah', cause: undefined };
+        const expected = { name: 'Error', message: 'blah', context: undefined };
 
         const result = getSafeValue(value);
 
@@ -39,9 +39,10 @@ describe('getSafeErrorObject', () => {
         expect(result).toMatchObject(expected);
     });
 
-    it(`should accept errors with cause`, () => {
-        const value = new Error('blah', { cause: { something: true } });
-        const expected = { name: 'Error', message: 'blah', cause: { something: true } };
+    it(`should accept errors with context`, () => {
+        const value = new Error('blah');
+        (value as any).context = { something: true };
+        const expected = { name: 'Error', message: 'blah', context: { something: true } };
 
         const result = getSafeValue(value);
 
@@ -49,18 +50,19 @@ describe('getSafeErrorObject', () => {
         expect(result).toMatchObject(expected);
     });
 
-    it(`should accept errors with nested errors in cause`, () => {
-        const value = new Error('blah', { cause: { e: new Error('oh no') } });
+    it(`should accept errors with nested errors in context`, () => {
+        const value = new Error('blah');
+        (value as any).context = { e: new Error('oh no') };
         const expected = {
             name: 'Error',
             message: 'blah',
-            cause: { e: { name: 'Error', message: 'oh no', cause: undefined } },
+            context: { e: { name: 'Error', message: 'oh no' } },
         };
 
         const result = getSafeValue(value);
 
         expect(result).toHaveProperty('stack');
-        expect(result).toHaveProperty('cause.e.stack');
+        expect(result).toHaveProperty('context.e.stack');
         expect(result).toMatchObject(expected);
     });
 });

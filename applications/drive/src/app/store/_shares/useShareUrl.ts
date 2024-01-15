@@ -37,6 +37,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import unique from '@proton/utils/unique';
 
 import { sendErrorReport } from '../../utils/errorHandling';
+import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { shareUrlPayloadToShareUrl, useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { useDriveEventManager } from '../_events';
@@ -95,11 +96,13 @@ export default function useShareUrl() {
             privateKey: privateKeys,
         }).catch((e) =>
             Promise.reject(
-                new Error('Failed to decrypt share URL password', {
-                    cause: {
-                        e,
+                new EnrichedError('Failed to decrypt share URL password', {
+                    tags: {
                         shareId: rest.shareId,
-                        keyId: privateKeys.map((key) => key.getKeyID()),
+                    },
+                    extra: {
+                        e,
+                        keyIds: privateKeys.map((key) => key.getKeyID()),
                     },
                 })
             )
@@ -111,18 +114,18 @@ export default function useShareUrl() {
             sharedLinkPassword
         ).catch((e) =>
             Promise.reject(
-                new Error('Failed to decrypt share session key for shared URL', {
-                    cause: {
-                        e,
+                new EnrichedError('Failed to decrypt share session key for shared URL', {
+                    tags: {
                         shareId: rest.shareId,
                     },
+                    extra: { e },
                 })
             )
         );
 
         if (!shareSessionKey) {
-            throw new Error('Failed to decrypt share session key for shared URL', {
-                cause: {
+            throw new EnrichedError('Failed to decrypt share session key for shared URL', {
+                tags: {
                     shareId: rest.shareId,
                 },
             });
@@ -201,23 +204,23 @@ export default function useShareUrl() {
         ] = await Promise.all([
             getSharedLinkPassphraseSaltAndKeyPacket().catch((e) =>
                 Promise.reject(
-                    new Error('Failed to encrypt share URL session key', {
-                        cause: {
-                            e,
+                    new EnrichedError('Failed to encrypt share URL session key', {
+                        tags: {
                             shareId,
                             linkShareId,
                         },
+                        extra: { e },
                     })
                 )
             ),
             encryptShareUrlPassword(password, share.creator).catch((e) =>
                 Promise.reject(
-                    new Error('Failed to encrypt share URL password', {
-                        cause: {
-                            e,
+                    new EnrichedError('Failed to encrypt share URL password', {
+                        tags: {
                             shareId,
                             linkShareId,
                         },
+                        extra: { e },
                     })
                 )
             ),
@@ -378,19 +381,15 @@ export default function useShareUrl() {
                 .then((sharedLinkPassword) => encryptSymmetricSessionKey(shareSessionKey, sharedLinkPassword))
                 .catch((e) =>
                     Promise.reject(
-                        new Error('Failed to encrypt share URL session key', {
-                            cause: {
-                                e,
-                            },
+                        new EnrichedError('Failed to encrypt share URL session key', {
+                            extra: { e },
                         })
                     )
                 ),
             encryptShareUrlPassword(newPassword, creatorEmail).catch((e) =>
                 Promise.reject(
-                    new Error('Failed to encrypt share URL password', {
-                        cause: {
-                            e,
-                        },
+                    new EnrichedError('Failed to encrypt share URL password', {
+                        extra: { e },
                     })
                 )
             ),
@@ -437,12 +436,12 @@ export default function useShareUrl() {
                 keyInfo
             ).catch((e) =>
                 Promise.reject(
-                    new Error('Failed to update share URL password', {
-                        cause: {
-                            e,
+                    new EnrichedError('Failed to update share URL password', {
+                        tags: {
                             shareId,
                             shareUrlId,
                         },
+                        extra: { e },
                     })
                 )
             );
