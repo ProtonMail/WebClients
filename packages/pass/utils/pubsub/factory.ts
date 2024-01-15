@@ -1,9 +1,14 @@
-export type Subscriber<E> = (event: E) => void;
+import type { MaybePromise } from '@proton/pass/types';
+
+export type Subscriber<E> = (event: E) => MaybePromise<void>;
 
 export interface PubSub<E> {
     subscribe: (subscriber: Subscriber<E>) => void;
     unsubscribe: () => void;
     publish: (event: E) => void;
+    /** Publishes an event and wait for all subscribers to have resolved.
+     * If any subscribers reject, `publishAsync` will throw. */
+    publishAsync: (event: E) => Promise<void>;
 }
 
 type PubSubContext<E> = {
@@ -29,5 +34,9 @@ export const createPubSub = <E extends any>(): PubSub<E> => {
         Object.values(ctx.subscribers).forEach((subscriber) => subscriber(event));
     };
 
-    return { publish, subscribe, unsubscribe };
+    const publishAsync = async (event: E) => {
+        await Promise.all(Object.values(ctx.subscribers).map((subscriber) => subscriber(event)));
+    };
+
+    return { publish, publishAsync, subscribe, unsubscribe };
 };
