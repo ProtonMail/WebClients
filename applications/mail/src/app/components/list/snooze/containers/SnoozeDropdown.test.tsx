@@ -20,7 +20,6 @@ jest.mock('proton-mail/hooks/actions/useSnooze', () => ({
     default: jest.fn().mockReturnValue({
         canSnooze: true,
         canUnsnooze: true,
-        isSnoozeEnabled: true,
         snooze: jest.fn(),
         unsnooze: jest.fn(),
         handleClose: jest.fn(),
@@ -32,7 +31,6 @@ jest.mock('proton-mail/hooks/actions/useSnooze', () => ({
 const useSnoozeProps = {
     canSnooze: true,
     canUnsnooze: true,
-    isSnoozeEnabled: true,
     snooze: jest.fn(),
     unsnooze: jest.fn(),
     handleClose: jest.fn(),
@@ -63,13 +61,6 @@ describe('Snooze dropdown', () => {
         useSnoozeMock.mockClear();
         useAppDispatchMock.mockClear();
         useUserSettingsMock.mockClear();
-    });
-
-    it('should not return anything when flag is disabled', async () => {
-        useSnoozeMock.mockReturnValue({ ...useSnoozeProps, isSnoozeEnabled: false });
-
-        const { queryByTestId } = render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
-        expect(queryByTestId('dropdown-button')).toBeNull();
     });
 
     it('should not return anything when cannot snooze or unsnooze', async () => {

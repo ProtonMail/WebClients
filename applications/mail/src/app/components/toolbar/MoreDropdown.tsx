@@ -92,7 +92,7 @@ const MoreDropdown = ({
         actions = [...firstActions, ...actions];
     }
 
-    const { isSnoozeEnabled, canSnooze, canUnsnooze } = useSnooze();
+    const { canSnooze, canUnsnooze } = useSnooze();
 
     const { emptyLabel, modal: deleteAllModal } = useEmptyLabel();
     const { moveAll, modal: moveAllModal } = useMoveAll();
@@ -227,7 +227,7 @@ const MoreDropdown = ({
           ]
         : undefined;
 
-    if (isSnoozeEnabled && selectedIDs.length && (canSnooze || canUnsnooze)) {
+    if (selectedIDs.length && (canSnooze || canUnsnooze)) {
         additionalDropdowns?.push({
             contentProps: SnoozeToolbarDropdownStepWrapperProps,
             render: ({ onClose, onLock }) => (
@@ -272,7 +272,7 @@ const MoreDropdown = ({
                                         <Icon name="tag" className="mr-2" />
                                         {c('Title').t`Label as`}
                                     </DropdownMenuButton>
-                                    {isSnoozeEnabled && (canSnooze || canUnsnooze) && (
+                                    {(canSnooze || canUnsnooze) && (
                                         <DropdownMenuButton
                                             className="text-left"
                                             onClick={() => onOpenAdditional(2)}
