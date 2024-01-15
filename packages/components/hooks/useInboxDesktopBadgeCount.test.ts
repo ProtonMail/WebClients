@@ -21,14 +21,14 @@ describe('useInboxDesktopBadgeCount', () => {
     const isElectronAppMock = isElectronApp as jest.Mock;
     const useConversationCountsMock = useConversationCounts as jest.Mock;
     const useMailSettingsMock = useMailSettings as jest.Mock;
-    const protonDesktopAPIMock = {
-        updateNotification: jest.fn(),
+    const ipcInboxMessageBrokerMock = {
+        send: jest.fn(),
     };
 
     beforeEach(() => {
         // @ts-ignore
         const windowSpy = jest.spyOn(global, 'window', 'get');
-        windowSpy.mockReturnValue({ ...originalWindow, protonDesktopAPI: protonDesktopAPIMock });
+        windowSpy.mockReturnValue({ ...originalWindow, ipcInboxMessageBroker: ipcInboxMessageBrokerMock });
     });
 
     afterEach(() => {
@@ -41,7 +41,7 @@ describe('useInboxDesktopBadgeCount', () => {
         useMailSettingsMock.mockReturnValue([{}]);
 
         renderHook(() => useInboxDesktopBadgeCount());
-        expect(protonDesktopAPIMock.updateNotification).not.toHaveBeenCalled();
+        expect(ipcInboxMessageBrokerMock.send).not.toHaveBeenCalled();
     });
 
     it('should call with 0 when unread favicon is disabled', () => {
@@ -50,7 +50,7 @@ describe('useInboxDesktopBadgeCount', () => {
         useMailSettingsMock.mockReturnValue([{ UnreadFavicon: UNREAD_FAVICON.DISABLED }]);
 
         renderHook(() => useInboxDesktopBadgeCount());
-        expect(protonDesktopAPIMock.updateNotification).toHaveBeenCalledWith(0);
+        expect(ipcInboxMessageBrokerMock.send).toHaveBeenCalledWith('updateNotification', 0);
     });
 
     it('should call with not call when unread enabled but no count', () => {
@@ -59,7 +59,7 @@ describe('useInboxDesktopBadgeCount', () => {
         useMailSettingsMock.mockReturnValue([{ UnreadFavicon: UNREAD_FAVICON.ENABLED }]);
 
         renderHook(() => useInboxDesktopBadgeCount());
-        expect(protonDesktopAPIMock.updateNotification).not.toHaveBeenCalled();
+        expect(ipcInboxMessageBrokerMock.send).not.toHaveBeenCalled();
     });
 
     it('should call with 1 when unread enabled and count', () => {
@@ -68,7 +68,7 @@ describe('useInboxDesktopBadgeCount', () => {
         useMailSettingsMock.mockReturnValue([{ UnreadFavicon: UNREAD_FAVICON.ENABLED }]);
 
         renderHook(() => useInboxDesktopBadgeCount());
-        expect(protonDesktopAPIMock.updateNotification).toHaveBeenCalledWith(1);
+        expect(ipcInboxMessageBrokerMock.send).toHaveBeenCalledWith('updateNotification', 1);
     });
 
     it('should call with 100 when unread enabled and count', () => {
@@ -77,7 +77,7 @@ describe('useInboxDesktopBadgeCount', () => {
         useMailSettingsMock.mockReturnValue([{ UnreadFavicon: UNREAD_FAVICON.ENABLED }]);
 
         renderHook(() => useInboxDesktopBadgeCount());
-        expect(protonDesktopAPIMock.updateNotification).toHaveBeenCalledWith(100);
+        expect(ipcInboxMessageBrokerMock.send).toHaveBeenCalledWith('updateNotification', 100);
     });
 
     it('should call with 0 when unread enabled and no unread', () => {
@@ -86,6 +86,6 @@ describe('useInboxDesktopBadgeCount', () => {
         useMailSettingsMock.mockReturnValue([{ UnreadFavicon: UNREAD_FAVICON.ENABLED }]);
 
         renderHook(() => useInboxDesktopBadgeCount());
-        expect(protonDesktopAPIMock.updateNotification).toHaveBeenCalledWith(0);
+        expect(ipcInboxMessageBrokerMock.send).toHaveBeenCalledWith('updateNotification', 0);
     });
 });
