@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { getBlogURL } from '@proton/shared/lib/helpers/url';
 import { DKIM_STATE } from '@proton/shared/lib/interfaces';
 
 import { Alert, Copy, Table, TableBody, TableCell, TableHeader, TableRow } from '../../components';
@@ -20,10 +20,12 @@ const DKIMSection = ({ domain }) => {
         <>
             <Alert className="mb-4">
                 {c('Info')
-                    .t`${MAIL_APP_NAME} supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.`}
-                <div>
-                    <Href href={getKnowledgeBaseUrl('/anti-spoofing-custom-domain')}>{c('Link').t`Learn more`}</Href>
-                </div>
+                    .t`Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.`}
+                <br />
+                {c('Info')
+                    .t`DKIM allows ${BRAND_NAME} to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).`}
+                <br />
+                <Href href={getBlogURL('/what-is-dkim')}>{c('Link').t`Learn more`}</Href>
             </Alert>
             {State === DKIM_STATE.DKIM_STATE_ERROR && (
                 <Alert className="mb-4" type="error">
@@ -39,9 +41,9 @@ const DKIMSection = ({ domain }) => {
             )}
             <p className="mb-4">
                 {c('Label')
-                    .t`Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.`}
+                    .t`Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.`}
             </p>
-            <Table responsive="cards">
+            <Table responsive="cards" className="mt-4">
                 <TableHeader>
                     <TableRow>
                         <TableCell type="header" className="w-1/6">
@@ -81,10 +83,7 @@ const DKIMSection = ({ domain }) => {
             </Table>
             <Alert className="mb-4" type="warning">
                 {c('Info')
-                    .t`IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.`}
-            </Alert>
-            <Alert className="mb-4" type="warning">
-                {c('Info').t`Keep those records in your DNS for as long as you want to use DKIM.`}
+                    .t`IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.`}
             </Alert>
         </>
     );
