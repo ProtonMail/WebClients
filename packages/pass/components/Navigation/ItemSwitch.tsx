@@ -6,10 +6,15 @@ import { ItemEdit } from '@proton/pass/components/Item/Containers/ItemEdit';
 import { ItemNew } from '@proton/pass/components/Item/Containers/ItemNew';
 import { ItemView } from '@proton/pass/components/Item/Containers/ItemView';
 
+import { useBulkSelect } from '../Bulk/BulkSelectProvider';
+import { BulkView } from '../Bulk/BulkView';
 import { Autoselect } from './Autoselect';
 
 export const ItemSwitch: FC<RouteChildrenProps> = ({ match }) => {
     const sub = (path: string) => `${match?.path}/${path}`;
+    const { isBulk } = useBulkSelect();
+
+    if (isBulk) return <BulkView />;
 
     return match ? (
         <Switch>
