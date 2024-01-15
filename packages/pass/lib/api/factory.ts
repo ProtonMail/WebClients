@@ -44,7 +44,6 @@ export const getAPIAuth = () => {
     const RefreshToken = authStore.getRefreshToken();
     const RefreshTime = authStore.getRefreshTime();
     const UID = authStore.getUID();
-
     if (!(UID && AccessToken && RefreshToken)) return undefined;
     return { UID, AccessToken, RefreshToken, RefreshTime };
 };
@@ -68,7 +67,7 @@ export const createApi = ({ config, getAuth = getAPIAuth }: ApiFactoryOptions): 
     const refreshHandler = createRefreshHandler({
         call,
         getAuth,
-        onRefresh: (data) => pubsub.publish({ type: 'refresh', data }),
+        onRefresh: (data) => pubsub.publishAsync({ type: 'refresh', data }),
     });
     const apiCall = withApiHandlers({ call, getAuth, refreshHandler, state });
 
@@ -123,7 +122,7 @@ export const createApi = ({ config, getAuth = getAPIAuth }: ApiFactoryOptions): 
 
     api.getState = () => state;
 
-    api.reset = async () => {
+    api.idle = async () => {
         /* if API has pending requests - wait for API to be completely idle before
          * resetting state - this allows propagating API error state correctly.
          * For instance, on an inactive session, we want to avoid resetting the state
@@ -132,6 +131,10 @@ export const createApi = ({ config, getAuth = getAPIAuth }: ApiFactoryOptions): 
             logger.info(`[API] Reset deferred until API idle`);
             await waitUntil(() => api.getState().pendingCount === 0, 50, DEFAULT_TIMEOUT).catch(noop);
         }
+    };
+
+    api.reset = async () => {
+        await api.idle();
 
         state.pendingCount = 0;
         state.serverTime = undefined;

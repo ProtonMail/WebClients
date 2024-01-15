@@ -35,6 +35,17 @@ export const createAuthStore = (store: Store) => {
             UserID: authStore.getUserID() ?? '',
         }),
 
+        setSession: (session: Partial<AuthSession>) => {
+            if (session.AccessToken) authStore.setAccessToken(session.AccessToken);
+            if (session.keyPassword) authStore.setPassword(session.keyPassword);
+            if (session.LocalID) authStore.setLocalID(session.LocalID);
+            if (session.RefreshTime) authStore.setRefreshTime(session.RefreshTime);
+            if (session.RefreshToken) authStore.setRefreshToken(session.RefreshToken);
+            if (session.sessionLockToken) authStore.setLockToken(session.sessionLockToken);
+            if (session.UID) authStore.setUID(session.UID);
+            if (session.UserID) authStore.setUserID(session.UserID);
+        },
+
         setAccessToken: (accessToken: Maybe<string>): void => store.set(PASS_ACCESS_TOKEN_KEY, accessToken),
         getAccessToken: (): Maybe<string> => store.get(PASS_ACCESS_TOKEN_KEY),
         setRefreshToken: (refreshToken: Maybe<string>): void => store.set(PASS_REFRESH_TOKEN_KEY, refreshToken),

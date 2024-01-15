@@ -61,15 +61,30 @@ export const encryptPersistedSessionWithKey = async (
         blob: await getEncryptedBlob(sessionKey, JSON.stringify({ keyPassword, sessionLockToken })),
     });
 
+/** Ensures that an AuthSession contains the latest tokens in
+ * case they were refreshed during the sequence preceding this call */
+export const mergeSessionTokens = (session: AuthSession, authStore: AuthStore): AuthSession => ({
+    ...session,
+    AccessToken: authStore.getAccessToken() ?? session.AccessToken,
+    RefreshTime: authStore.getRefreshTime() ?? session.RefreshTime,
+    RefreshToken: authStore.getRefreshToken() ?? session.RefreshToken,
+    UID: authStore.getUID() ?? session.UID,
+});
+
 /** Encrypts the `AuthSession` with a new encryption key. Will throw if local
- * key cannot be registered back-end side. */
-export const encryptPersistedSession = async (api: Api, session: AuthSession): Promise<string> => {
+ * key cannot be registered back-end side. Merge session tokens if the call to
+ * `setLocalKey` triggered a refresh sequence. */
+type EncryptSessionOptions = { api: Api; authStore: AuthStore };
+export const encryptPersistedSession = async ({ api, authStore }: EncryptSessionOptions): Promise<string> => {
+    const session = authStore.getSession();
+    if (!isValidSession(session)) throw new Error('Trying to persist invalid session');
+
     const rawKey = crypto.getRandomValues(new Uint8Array(32));
     const sessionKey = await getKey(rawKey);
     const base64StringKey = uint8ArrayToBase64String(rawKey);
 
     await api<LocalKeyResponse>(withAuthHeaders(session.UID, session.AccessToken, setLocalKey(base64StringKey)));
-    return encryptPersistedSessionWithKey(session, sessionKey);
+    return encryptPersistedSessionWithKey(mergeSessionTokens(session, authStore), sessionKey);
 };
 
 /** Retrieves the current local key to decrypt the persisted session */
@@ -130,15 +145,12 @@ export const resumeSession = async ({
         ]);
 
         if (persistedSession.UserID !== User.ID) throw InactiveSessionError();
-        const ps = await decryptPersistedSession(sessionKey, persistedSession.blob);
+        const { blob, ...session } = persistedSession;
+        const { keyPassword, sessionLockToken } = await decryptPersistedSession(sessionKey, blob);
 
         return {
             sessionKey,
-            session: {
-                ...authStore.getSession(),
-                keyPassword: ps.keyPassword,
-                sessionLockToken: ps.sessionLockToken,
-            },
+            session: mergeSessionTokens({ ...session, keyPassword, sessionLockToken }, authStore),
         };
     } catch (error: any) {
         if (error instanceof InvalidPersistentSessionError) onSessionInvalid?.();
