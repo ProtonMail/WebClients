@@ -153,6 +153,11 @@ type WorkerAliveMessage = {
     command: 'alive';
 };
 
+type LogMessage = {
+    command: 'log';
+    message: string;
+};
+
 /**
  * WorkerEvent contains all possible events which can come from the upload
  * web worker to the main thread.
@@ -167,7 +172,8 @@ type WorkerEvent = {
         | ErrorMessage
         | NotifySentryMessage
         | HeartbeatMessage
-        | WorkerAliveMessage;
+        | WorkerAliveMessage
+        | LogMessage;
 };
 
 /**
@@ -404,6 +410,13 @@ export class UploadWorker {
             command: 'alive',
         } satisfies WorkerAliveMessage);
     }
+
+    postLog(message: string) {
+        this.worker.postMessage({
+            command: 'log',
+            message,
+        } satisfies LogMessage);
+    }
 }
 
 /**
@@ -430,6 +443,7 @@ export class UploadWorkerController {
 
     constructor(
         worker: Worker,
+        log: (message: string) => void,
         {
             keysGenerated,
             createBlocks,
@@ -453,9 +467,11 @@ export class UploadWorkerController {
         worker.addEventListener('message', ({ data }: WorkerEvent) => {
             switch (data.command) {
                 case 'alive':
+                    log('Worker alive');
                     clearTimeout(this.workerTimeout);
                     break;
                 case 'keys_generated':
+                    log('File keys generated');
                     (async (data) => {
                         const privateKey = await CryptoProxy.importPrivateKey({
                             binaryKey: data.privateKey,
@@ -499,12 +515,16 @@ export class UploadWorkerController {
                     onError(data.error);
                     break;
                 case 'notify_sentry':
+                    log(`Notifying Sentry with: ${data.error}`);
                     notifySentry(data.error);
                     break;
                 case 'heartbeat':
+                    log('Got heartbeat');
                     this.clearHeartbeatTimeout();
 
                     this.heartbeatTimeout = setTimeout(() => {
+                        log('Heartbeat timeout');
+
                         notifySentry(new Error('Heartbeat was not received in time'));
 
                         onHeartbeatTimeout();
@@ -513,6 +533,9 @@ export class UploadWorkerController {
                         this.worker.terminate();
                     }, HEARTBEAT_WAIT_TIME);
 
+                    break;
+                case 'log':
+                    log(data.message);
                     break;
                 default:
                     // Type linters should prevent this error.

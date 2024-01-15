@@ -12,6 +12,8 @@ import { MAX_RETRIES_BEFORE_FAIL, MAX_TOO_MANY_REQUESTS_WAIT, MAX_UPLOAD_JOBS } 
 import { UploadingBlockControl } from './interface';
 import { Pauser } from './pauser';
 
+type LogCallback = (message: string) => void;
+
 /**
  * startUploadJobs starts MAX_UPLOAD_JOBS jobs to read uploading blocks
  * and upload the date to the backend.
@@ -21,12 +23,13 @@ export default async function startUploadJobs(
     generator: AsyncGenerator<UploadingBlockControl>,
     progressCallback: (progress: number) => void,
     networkErrorCallback: (error: string) => void,
+    log: LogCallback,
     uploadBlockDataCallback = uploadBlockData
 ) {
     const promises: Promise<void>[] = [];
     for (let idx = 0; idx < MAX_UPLOAD_JOBS; idx++) {
         promises.push(
-            startUploadJob(pauser, generator, progressCallback, networkErrorCallback, uploadBlockDataCallback)
+            startUploadJob(pauser, generator, progressCallback, networkErrorCallback, log, uploadBlockDataCallback)
         );
     }
     return Promise.all(promises);
@@ -37,6 +40,7 @@ async function startUploadJob(
     generator: AsyncGenerator<UploadingBlockControl>,
     progressCallback: (progress: number) => void,
     networkErrorCallback: (error: string) => void,
+    log: LogCallback,
     uploadBlockDataCallback = uploadBlockData
 ) {
     // Ideally here would be this line:
@@ -49,7 +53,14 @@ async function startUploadJob(
             break;
         }
         await pauser.waitIfPaused();
-        await uploadBlock(block, pauser, progressCallback, networkErrorCallback, uploadBlockDataCallback);
+        await uploadBlock(
+            block,
+            pauser,
+            progressCallback,
+            networkErrorCallback,
+            (message: string) => log(`block ${block.index}: ${message}`),
+            uploadBlockDataCallback
+        );
     }
 }
 
@@ -58,6 +69,7 @@ async function uploadBlock(
     pauser: Pauser,
     progressCallback: (progress: number) => void,
     networkErrorCallback: (error: string) => void,
+    log: LogCallback,
     uploadBlockDataCallback = uploadBlockData,
     numRetries = 0
 ): Promise<void> {
@@ -86,6 +98,7 @@ async function uploadBlock(
     };
 
     try {
+        log('Requesting upload');
         await uploadBlockDataCallback(
             block.uploadLink,
             block.uploadToken,
@@ -93,20 +106,32 @@ async function uploadBlock(
             onProgress,
             pauser.abortController.signal
         );
+        log('Finished upload');
         block.finish();
     } catch (err: any | XHRError) {
         resetProgress();
 
         if (pauser.isPaused) {
+            log('Paused upload, waiting');
             await pauser.waitIfPaused();
-            return uploadBlock(block, pauser, progressCallback, networkErrorCallback, uploadBlockDataCallback, 0);
+            log('Upload resumed');
+            return uploadBlock(block, pauser, progressCallback, networkErrorCallback, log, uploadBlockDataCallback, 0);
         }
 
         // Upload can be rate limited. Lets wait defined time by server
         // before making another attempt.
         if (err.statusCode === HTTP_ERROR_CODES.TOO_MANY_REQUESTS) {
+            log('Too many requests, waiting');
             return retryHandler(err, MAX_TOO_MANY_REQUESTS_WAIT).then(() =>
-                uploadBlock(block, pauser, progressCallback, networkErrorCallback, uploadBlockDataCallback, numRetries)
+                uploadBlock(
+                    block,
+                    pauser,
+                    progressCallback,
+                    networkErrorCallback,
+                    log,
+                    uploadBlockDataCallback,
+                    numRetries
+                )
             );
         }
 
@@ -121,6 +146,7 @@ async function uploadBlock(
         // try upload again.
         // If its 2023, it's super safe to remove.
         if (err.errorCode === RESPONSE_CODE.ALREADY_EXISTS) {
+            log('Block token exists. Asking for new upload token.');
             console.warn(`Block token #${block.index} already exists. Asking for new upload token.`);
             block.onTokenExpiration();
             return;
@@ -132,6 +158,7 @@ async function uploadBlock(
         // window because of different start of expiration measurmement.
         // Anyway, we can simply ask for new tokens here as well.
         if (err.errorCode === RESPONSE_CODE.NOT_FOUND || err.statusCode === HTTP_STATUS_CODE.NOT_FOUND) {
+            log('Expired block token. Asking for new upload token.');
             console.warn(`Expired block token #${block.index}. Asking for new upload token.`);
             block.onTokenExpiration();
             return;
@@ -143,31 +170,37 @@ async function uploadBlock(
         // for our servers - if we have traffic issue, retrying too
         // many times could lead to longer downtime.
         if (numRetries === 0 && getIsConnectionIssue(err)) {
+            log(`Connection issue, automatic retry: ${err}`);
             console.warn(`Connection issue for block #${block.index} upload. Retrying one more time.`);
             return uploadBlock(
                 block,
                 pauser,
                 progressCallback,
                 networkErrorCallback,
+                log,
                 uploadBlockDataCallback,
                 numRetries + 1
             );
         }
 
         if (networkErrorCallback && getIsConnectionIssue(err)) {
+            log(`Connection issue, waiting for network: ${err}`);
             pauser.pause();
             networkErrorCallback(err.message || err.status);
             await pauser.waitIfPaused();
-            return uploadBlock(block, pauser, progressCallback, networkErrorCallback, uploadBlockDataCallback, 0);
+            log(`Resuming upload`);
+            return uploadBlock(block, pauser, progressCallback, networkErrorCallback, log, uploadBlockDataCallback, 0);
         }
 
         if (numRetries < MAX_RETRIES_BEFORE_FAIL) {
+            log(`Failed block upload (retry num: ${numRetries}, error: ${err})`);
             console.warn(`Failed block #${block.index} upload. Retry num: ${numRetries}`);
             return uploadBlock(
                 block,
                 pauser,
                 progressCallback,
                 networkErrorCallback,
+                log,
                 uploadBlockDataCallback,
                 numRetries + 1
             );

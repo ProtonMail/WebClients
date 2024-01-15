@@ -28,7 +28,9 @@ import {
     UploadUserError,
 } from './interface';
 
-export default function useUploadQueue() {
+type LogCallback = (id: string, message: string) => void;
+
+export default function useUploadQueue(log: LogCallback) {
     const [queue, setQueue] = useState<UploadQueue[]>([]);
 
     const fileUploads = useMemo((): FileUpload[] => {
@@ -92,7 +94,7 @@ export default function useUploadQueue() {
                             continue;
                         }
                         try {
-                            addItemToQueue(shareId, queueItem, item, isForPhotos);
+                            addItemToQueue(log, shareId, queueItem, item, isForPhotos);
                         } catch (err: any) {
                             if ((err as Error).name === 'UploadConflictError') {
                                 conflictErrors.push(err);
@@ -150,6 +152,7 @@ export default function useUploadQueue() {
                     item.originalIsFolder = originalIsFolder;
                 }
                 item.error = error;
+                log(item.id, `Updated queue (state: ${newState}, error: ${error || ''})`);
             };
             const updateFile = (file: FileUpload): FileUpload => {
                 if (filter(file)) {
@@ -163,21 +166,38 @@ export default function useUploadQueue() {
                     // in initializing state - therefore we need to cancel
                     // recursively all children.
                     if (newStateCallback(folder) === TransferState.Canceled) {
-                        folder = recursiveCancel(folder);
+                        folder = recursiveCancel(log, folder);
                     }
                     updateFileOrFolder(folder);
                     if (folderId) {
                         folder.linkId = folderId;
-                        folder.files = folder.files.map((file) => ({
-                            ...file,
-                            parentId: folderId,
-                            state: file.state === TransferState.Initializing ? TransferState.Pending : file.state,
-                        }));
-                        folder.folders = folder.folders.map((folder) => ({
-                            ...folder,
-                            parentId: folderId,
-                            state: folder.state === TransferState.Initializing ? TransferState.Pending : folder.state,
-                        }));
+                        folder.files = folder.files.map((file) => {
+                            log(
+                                file.id,
+                                `Updated child (state: ${
+                                    file.state === TransferState.Initializing ? TransferState.Pending : file.state
+                                })`
+                            );
+                            return {
+                                ...file,
+                                parentId: folderId,
+                                state: file.state === TransferState.Initializing ? TransferState.Pending : file.state,
+                            };
+                        });
+                        folder.folders = folder.folders.map((folder) => {
+                            log(
+                                folder.id,
+                                `Updated child (state: ${
+                                    folder.state === TransferState.Initializing ? TransferState.Pending : folder.state
+                                })`
+                            );
+                            return {
+                                ...folder,
+                                parentId: folderId,
+                                state:
+                                    folder.state === TransferState.Initializing ? TransferState.Pending : folder.state,
+                            };
+                        });
                     }
                 }
                 folder.files = folder.files.map(updateFile);
@@ -279,6 +299,7 @@ function convertNewStateToFunction(newStateOrCallback: UpdateState) {
 }
 
 export function addItemToQueue(
+    log: LogCallback,
     shareId: string,
     newQueue: UploadQueue,
     item: UploadFileItem | UploadFolderItem,
@@ -294,11 +315,13 @@ export function addItemToQueue(
         throw new UploadConflictError(name);
     }
 
+    const id = generateUID();
+    const state = part.linkId ? TransferState.Pending : TransferState.Initializing;
     const generalAttributes = {
-        id: generateUID(),
+        id,
         shareId,
         parentId: part.linkId,
-        state: part.linkId ? TransferState.Pending : TransferState.Initializing,
+        state,
         startDate: new Date(),
         isForPhotos,
     };
@@ -313,6 +336,10 @@ export function addItemToQueue(
                 mimeType: fileItem.file.type,
             },
         });
+        log(
+            id,
+            `Added file to the queue (state: ${state}, parent: ${part.id}, type: ${fileItem.file.type}, size: ${fileItem.file.size} bytes)`
+        );
     } else {
         const folderItem = item as UploadFolderItem;
         part.folders.push({
@@ -327,12 +354,19 @@ export function addItemToQueue(
                 mimeType: 'Folder',
             },
         });
+        log(id, `Added folder to the queue (state: ${state}, parent: ${part.id})`);
     }
 }
 
-function findUploadQueueFolder(part: UploadQueue | FolderUpload, path: string[]): UploadQueue | FolderUpload {
+function findUploadQueueFolder(
+    part: UploadQueue | FolderUpload,
+    path: string[]
+): (UploadQueue & { id: string }) | FolderUpload {
     if (path.length === 0) {
-        return part;
+        return {
+            id: 'root',
+            ...part,
+        };
     }
 
     const nextStep = path[0];
@@ -369,19 +403,25 @@ function isNameAlreadyUploading(part: UploadQueue | FolderUpload, name: string):
     );
 }
 
-function recursiveCancel(folder: FolderUpload): FolderUpload {
+function recursiveCancel(log: LogCallback, folder: FolderUpload): FolderUpload {
     return {
         ...folder,
-        files: folder.files.map((file) => ({
-            ...file,
-            state: TransferState.Canceled,
-        })),
-        folders: folder.folders
-            .map((folder) => ({
-                ...folder,
+        files: folder.files.map((file) => {
+            log(file.id, 'Canceled by parent');
+            return {
+                ...file,
                 state: TransferState.Canceled,
-            }))
-            .map(recursiveCancel),
+            };
+        }),
+        folders: folder.folders
+            .map((folder) => {
+                log(folder.id, 'Canceled by parent');
+                return {
+                    ...folder,
+                    state: TransferState.Canceled,
+                };
+            })
+            .map((subfolder) => recursiveCancel(log, subfolder)),
     };
 }
 
