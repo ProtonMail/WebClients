@@ -398,7 +398,10 @@ export const createAuthService = (config: AuthServiceConfig) => {
                     }
 
                     if (event.status === 'locked') {
-                        config.onNotification?.({ text: c('Warning').t`Your session was locked.` });
+                        if (authStore.getLockStatus() !== SessionLockStatus.LOCKED) {
+                            config.onNotification?.({ text: c('Warning').t`Your session was locked.` });
+                        }
+
                         await authService.lock({ soft: true, broadcast: true });
                     }
 
