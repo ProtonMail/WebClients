@@ -166,8 +166,18 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 history.replace('/');
             },
 
-            onSessionLockUpdate: (lock) => {
+            onSessionLockUpdate: (lock, broadcast) => {
                 store.dispatch(sessionLockSync(lock));
+                const localID = authStore.getLocalID();
+
+                if (broadcast) {
+                    switch (lock.status) {
+                        case SessionLockStatus.REGISTERED:
+                            return sw.send({ type: 'locked', localID, broadcast: true });
+                        case SessionLockStatus.NONE:
+                            return sw.send({ type: 'unlocked', localID, broadcast: true });
+                    }
+                }
             },
 
             onSessionRefresh: async (localID, data, broadcast) => {
@@ -219,6 +229,17 @@ export const AuthServiceProvider: FC = ({ children }) => {
             if (authStore.hasSession(localID) && unlocked) void authService.lock({ soft: true, broadcast: false });
         };
 
+        const handleUnlocked: ServiceWorkerMessageHandler<'unlocked'> = ({ localID }) => {
+            const locked = authStore.getLockStatus() === SessionLockStatus.LOCKED;
+            if (authStore.hasSession(localID)) {
+                authStore.setLockLastExtendTime(undefined);
+                authStore.setLockTTL(undefined);
+                authStore.setLockStatus(SessionLockStatus.NONE);
+                authStore.setLockToken(undefined);
+                if (locked) void authService.init({ forceLock: false });
+            }
+        };
+
         const handleRefresh: ServiceWorkerMessageHandler<'refresh'> = ({ localID, data }) => {
             if (authStore.hasSession(localID)) {
                 authStore.setAccessToken(data.AccessToken);
@@ -231,6 +252,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
 
         sw.on('unauthorized', handleUnauthorized);
         sw.on('locked', handleLocked);
+        sw.on('unlocked', handleUnlocked);
         sw.on('refresh', handleRefresh);
 
         return () => {
