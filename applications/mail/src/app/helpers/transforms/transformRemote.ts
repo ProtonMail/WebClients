@@ -5,6 +5,8 @@ import { hasShowRemote } from '@proton/shared/lib/mail/images';
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 
+import { removeLineBreaks } from 'proton-mail/helpers/string';
+
 import { MessageRemoteImage, MessageState } from '../../logic/messages/messagesTypes';
 import { querySelectorAll } from '../message/messageContent';
 import { getRemoteImages, insertImageAnchor } from '../message/messageImages';
@@ -109,14 +111,29 @@ export const transformRemote = (
         // Some elements might not have a URL at this point, e.g. img tag with only a srcset attribute
         // We don't want to display an error placeholder, so we don't add them
         if (url) {
-            remoteImages.push({
-                type: 'remote',
-                url,
-                original: match,
-                id,
-                tracker: undefined,
-                status: 'not-loaded',
-            });
+            try {
+                // Some URLs cannot be loaded because they are encoded, and they do contain line breaks at the end of the string
+                // To prevent errors, we are decoding the url and removing potential line breaks.
+                const cleanedURL = removeLineBreaks(decodeURI(url));
+
+                remoteImages.push({
+                    type: 'remote',
+                    url: cleanedURL,
+                    original: match,
+                    id,
+                    tracker: undefined,
+                    status: 'not-loaded',
+                });
+            } catch {
+                remoteImages.push({
+                    type: 'remote',
+                    url,
+                    original: match,
+                    id,
+                    tracker: undefined,
+                    status: 'not-loaded',
+                });
+            }
         }
     });
 
