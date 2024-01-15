@@ -67,7 +67,7 @@ export const createApi = ({ config, getAuth = getAPIAuth }: ApiFactoryOptions): 
     const refreshHandler = createRefreshHandler({
         call,
         getAuth,
-        onRefresh: (data) => pubsub.publish({ type: 'refresh', data }),
+        onRefresh: (data) => pubsub.publishAsync({ type: 'refresh', data }),
     });
     const apiCall = withApiHandlers({ call, getAuth, refreshHandler, state });
 
