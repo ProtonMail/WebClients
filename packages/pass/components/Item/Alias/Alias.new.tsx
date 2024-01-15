@@ -18,7 +18,6 @@ import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH, UpsellRef } from '@proton/pass/constants';
 import { useAliasOptions } from '@proton/pass/hooks/useAliasOptions';
 import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
-import { useItemFormKeyboardShortcuts } from '@proton/pass/hooks/useItemFormKeyboardShortcuts';
 import { deriveAliasPrefix, reconciliateAliasFromDraft, validateNewAliasForm } from '@proton/pass/lib/validation/alias';
 import { selectAliasLimits, selectUserVerified, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { MaybeNull, NewAliasFormValues } from '@proton/pass/types';
@@ -127,8 +126,6 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
         onHydrated: draftHydrated.resolve,
     });
 
-    useItemFormKeyboardShortcuts(form, { canSubmit: !needsUpgrade });
-
     const { values, touched, setFieldValue } = form;
     const { name, aliasPrefix, aliasSuffix } = values;
 
@@ -148,7 +145,7 @@ export const AliasNew: FC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmit
             type="alias"
             formId={FORM_ID}
             handleCancelClick={onCancel}
-            valid={form.isValid && userVerified}
+            valid={form.isValid && userVerified && !needsUpgrade}
             discardable={!form.dirty}
             /* if user has reached his alias limit: disable submit and prompt for upgrade */
             renderSubmitButton={
