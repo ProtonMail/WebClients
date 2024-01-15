@@ -27,7 +27,7 @@ export type EnpassItem<T extends EnpassCategory> = {
         updated_at: number;
         uuid: string;
         folders?: string[];
-    } & (K extends EnpassCategory.NOTE ? {} : { fields: EnpassField[] });
+    } & (K extends EnpassCategory.NOTE ? {} : { fields?: EnpassField[] });
 }[T];
 
 export enum EnpassCategory {
