@@ -18,6 +18,7 @@ interface OwnProps extends Omit<ButtonLikeProps<'button'>, 'as' | 'ref'> {
     iconGradient?: boolean;
     upsell?: boolean;
     shape?: ButtonButtonLikeProps['shape'];
+    size?: ButtonButtonLikeProps['size'];
     className?: string;
     loading?: boolean;
     responsive?: boolean;
@@ -34,6 +35,7 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
         icon,
         iconGradient = true,
         shape = 'outline',
+        size = 'medium',
         upsell,
         as,
         className,
@@ -47,7 +49,7 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
     const { viewportWidth } = useActiveBreakpoint();
 
     switch (true) {
-        case icon && upsell:
+        case (icon && upsell) || size === 'small':
             iconSize = 4;
             break;
         default:
@@ -58,6 +60,7 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
     if (responsive && !viewportWidth['>=large']) {
         shape = 'ghost';
         icon = true;
+        iconSize = 5;
     }
 
     const Element: ElementType = as || defaultElement;
@@ -72,17 +75,20 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
             icon={icon}
             color="weak"
             shape={shape}
+            size={size}
             className={clsx(
-                'button-promotion max-w-full',
+                'button-promotion max-w-full flex items-center',
                 iconGradient && 'button-promotion--icon-gradient',
                 upsell && 'button-promotion--upgrade',
+                size === 'small' && 'text-sm',
                 className
             )}
             {...rest}
         >
             <span
                 className={clsx(
-                    'relative flex flex-nowrap items-center gap-2',
+                    'relative flex flex-nowrap items-center',
+                    size === 'small' ? 'gap-1' : 'gap-2',
                     responsive && viewportWidth['>=large'] ? 'w-full' : undefined
                 )}
             >
