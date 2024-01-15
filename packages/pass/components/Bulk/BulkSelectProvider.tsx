@@ -3,6 +3,7 @@ import React, { createContext, useContext, useMemo, useState } from 'react';
 import type { MaybeNull, SelectedItem } from '@proton/pass/types';
 
 type BulkSelectContextType = {
+    count: number;
     isBulk: boolean;
     selection: Map<string, Set<string>>;
     clear: () => void;
@@ -20,31 +21,31 @@ export const BulkSelectProvider: React.FC = ({ children }) => {
     const [isBulk, setIsBulk] = useState(false);
 
     const context = useMemo<BulkSelectContextType>(() => {
-        const isSelected = ({ shareId, itemId }: SelectedItem) => selection.get(shareId)?.has(itemId) ?? false;
-
-        const selectItem = ({ shareId, itemId }: SelectedItem) =>
-            setSelection((curr) => {
-                const shareSet = curr.get(shareId) ?? new Set();
-                shareSet.add(itemId);
-                return new Map(curr.set(shareId, shareSet));
-            });
-
-        const unselectItem = ({ shareId, itemId }: SelectedItem): void =>
-            setSelection((curr) => {
-                curr.get(shareId)?.delete(itemId);
-                return new Map(curr);
-            });
-
         const clear = () => setSelection(new Map());
 
-        const enable = () => setIsBulk(true);
-
-        const disable = () => {
-            setIsBulk(false);
-            clear();
+        return {
+            count: Array.from(selection.values()).reduce((count, { size }) => count + size, 0),
+            isBulk,
+            selection,
+            clear,
+            disable: () => {
+                setIsBulk(false);
+                clear();
+            },
+            enable: () => setIsBulk(true),
+            isSelected: ({ shareId, itemId }) => selection.get(shareId)?.has(itemId) ?? false,
+            selectItem: ({ shareId, itemId }) =>
+                setSelection((curr) => {
+                    const shareSet = curr.get(shareId) ?? new Set();
+                    shareSet.add(itemId);
+                    return new Map(curr.set(shareId, shareSet));
+                }),
+            unselectItem: ({ shareId, itemId }) =>
+                setSelection((curr) => {
+                    curr.get(shareId)?.delete(itemId);
+                    return new Map(curr);
+                }),
         };
-
-        return { selection, isBulk, enable, disable, isSelected, clear, selectItem, unselectItem };
     }, [selection, isBulk]);
 
     return <BulkSelectContext.Provider value={context}>{children}</BulkSelectContext.Provider>;
