@@ -229,17 +229,16 @@ export const createAuthService = (config: AuthServiceConfig) => {
         },
 
         lock: async (options: { soft: boolean; broadcast?: boolean }): Promise<void> => {
-            if (authStore.getLockStatus() !== SessionLockStatus.LOCKED) {
-                logger.info(`[AuthService] Locking session [soft: ${options.soft}]`);
+            logger.info(`[AuthService] Locking session [soft: ${options.soft}]`);
+            config.onSessionLocked?.(authStore.getLocalID(), options.broadcast ?? false);
 
-                if (!options?.soft) await forceSessionLock().catch(noop);
-
-                authStore.setLockStatus(SessionLockStatus.LOCKED);
-                authStore.setLockToken(undefined);
-                authStore.setLockLastExtendTime(undefined);
-
-                config.onSessionLocked?.(authStore.getLocalID(), options.broadcast ?? false);
+            if (authStore.getLockStatus() !== SessionLockStatus.LOCKED && !options?.soft) {
+                await forceSessionLock().catch(noop);
             }
+
+            authStore.setLockStatus(SessionLockStatus.LOCKED);
+            authStore.setLockToken(undefined);
+            authStore.setLockLastExtendTime(undefined);
         },
 
         unlock: async (pin: string): Promise<void> => {
@@ -267,9 +266,9 @@ export const createAuthService = (config: AuthServiceConfig) => {
 
                 await authService.checkLock();
                 await authService.persistSession();
-                await authService.login(authStore.getSession());
+                const loggedIn = await authService.login(authStore.getSession());
 
-                if (sessionLockToken) config.onSessionUnlocked?.(sessionLockToken);
+                if (loggedIn && sessionLockToken) config.onSessionUnlocked?.(sessionLockToken);
             } catch (error) {
                 logger.warn(`[AuthService] Session unlock failure`, error);
                 throw error; /** error is thrown for clients to consume */
