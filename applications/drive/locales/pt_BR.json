@@ -400,6 +400,9 @@
       "Mark for deletion": [
         "Marcar para exclusão"
       ],
+      "Maximize": [
+        "Maximizar"
+      ],
       "Maximize transfers": [
         "Maximizar transferências"
       ],
@@ -408,6 +411,9 @@
       ],
       "Merge contacts": [
         "Mesclar contatos"
+      ],
+      "Minimize": [
+        "Minimizar"
       ],
       "Minimize transfers": [
         "Minimizar transferências"
@@ -3303,6 +3309,14 @@
         "${ groupCounts } grupo(s) encontrado(s)",
         "${ groupCounts } grupo(s) encontrado(s)"
       ],
+      "${ nbFile } encrypted file": [
+        "${ nbFile } arquivo citografado",
+        "${ nbFile } arquivos citografados."
+      ],
+      "${ nbFile } encrypted file...": [
+        "${ nbFile } arquivo citografado...",
+        "${ nbFile } arquivos citografados..."
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } pausado",
         "${ pausedCount } pausados"
@@ -4015,6 +4029,9 @@
       "Restoring Photos... Please keep the tab open": [
         "Restaurando fotos... Mantenha a guia aberta"
       ],
+      "Retry now": [
+        "Tente novamente agora"
+      ],
       "Search cannot be enabled in this browser": [
         "Não é possível ativar a pesquisa nesse navegador."
       ],
@@ -4072,6 +4089,9 @@
       "Signature issue": [
         "Problema de assinatura"
       ],
+      "Skipped": [
+        "Pulado"
+      ],
       "Some files failed to download. Try downloading the files again.": [
         "Não foi possível baixar alguns arquivos. Tente baixar os arquivos novamente."
       ],
@@ -4083,6 +4103,9 @@
       ],
       "Something went wrong, please try again later.": [
         "Ocorreu um erro. Tente novamente mais tarde.."
+      ],
+      "Something went wrong...": [
+        "Algo deu errado..."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Assinatura encerrada: Reative até ${ byDate } para manter os benefícios do seu ${ planName } ${ reactivateLink }"
@@ -4609,6 +4632,9 @@
       ],
       "Download anyway": [
         "Baixar mesmo assim"
+      ],
+      "Downloading": [
+        "Baixando"
       ],
       "Downloading ${ percentageValue }%": [
         "Baixando ${ percentageValue }%"
