@@ -57,7 +57,6 @@ const getSaveSingleEventActionsHelper = async ({
     inviteActions,
     hasDefaultNotifications,
     canEditOnlyPersonalPart,
-    isOrganizer,
     isAttendee,
     onEquivalentAttendees,
     handleSyncActions,
@@ -74,7 +73,6 @@ const getSaveSingleEventActionsHelper = async ({
     inviteActions: InviteActions;
     hasDefaultNotifications: boolean;
     canEditOnlyPersonalPart: boolean;
-    isOrganizer: boolean;
     isAttendee: boolean;
     handleSyncActions: (actions: SyncEventActionOperations[]) => Promise<SyncMultipleApiResponse[]>;
 }) => {
@@ -114,7 +112,6 @@ const getSaveSingleEventActionsHelper = async ({
         inviteActions: updatedInviteActions,
         hasDefaultNotifications,
         canEditOnlyPersonalPart,
-        isOrganizer,
         isAttendee,
         sendIcs,
         reencryptSharedEvent,
@@ -245,7 +242,9 @@ const getSaveEventActions = async ({
         addressID: newAddressID,
     };
 
-    // Creation
+    /**
+     * CREATION
+     */
     if (!oldEventData) {
         // add sequence and WKST (if needed)
         const wkst = isDuplicatingEvent ? dayToNumericDay(frequencyModel.vcalRruleValue?.wkst || 'MO') : weekStartsOn;
@@ -269,7 +268,6 @@ const getSaveEventActions = async ({
             },
             hasDefaultNotifications,
             canEditOnlyPersonalPart,
-            isOrganizer,
             isAttendee,
             selfAddress,
             inviteActions: updatedInviteActions,
@@ -290,7 +288,9 @@ const getSaveEventActions = async ({
         };
     }
 
-    // Edition
+    /**
+     * EDITION
+     */
     const calendarBootstrap = getCalendarBootstrap(oldEventData.CalendarID);
     if (!calendarBootstrap) {
         throw new Error('Trying to edit event without a calendar');
@@ -313,7 +313,9 @@ const getSaveEventActions = async ({
     newEditEventData.veventComponent = withVeventRruleWkst(omit(newVeventComponent, ['exdate']), newWkst);
 
     const isSingleEdit = !!oldEditEventData.recurrenceID;
-    // If it's not an occurrence of a recurring event, or a single edit of a recurring event
+    /**
+     * If it's not an occurrence of a recurring event, or a single edit of a recurring event
+     */
     if (!eventRecurrence && !isSingleEdit) {
         return getSaveSingleEventActionsHelper({
             newEditEventData,
@@ -321,7 +323,6 @@ const getSaveEventActions = async ({
             inviteActions: inviteActionsWithSelfAddress,
             hasDefaultNotifications,
             canEditOnlyPersonalPart,
-            isOrganizer,
             isAttendee,
             getAddressKeys,
             getCalendarKeys,
@@ -337,7 +338,10 @@ const getSaveEventActions = async ({
     const recurrences = await getAllEventsByUID(api, oldEditEventData.calendarID, oldEditEventData.uid);
     const originalEventData = getOriginalEvent(recurrences);
     const isOrphanSingleEdit = isSingleEdit && !originalEventData;
-    // If it's an orphan single edit, treat as a single event
+
+    /**
+     * If it's an orphan single edit, treat as a single event
+     */
     if (isOrphanSingleEdit) {
         return getSaveSingleEventActionsHelper({
             newEditEventData,
@@ -345,7 +349,6 @@ const getSaveEventActions = async ({
             inviteActions: inviteActionsWithSelfAddress,
             hasDefaultNotifications,
             canEditOnlyPersonalPart,
-            isOrganizer,
             isAttendee,
             getAddressKeys,
             getCalendarKeys,
@@ -358,6 +361,9 @@ const getSaveEventActions = async ({
         });
     }
 
+    /**
+     * We're editing an occurrence of a recurring event
+     */
     const originalEventResult = originalEventData ? await getEventDecrypted(originalEventData).catch(noop) : undefined;
     if (!originalEventData || !originalEventResult?.[0]) {
         throw new Error('Original event not found');
@@ -442,6 +448,7 @@ const getSaveEventActions = async ({
         newEditEventData,
         oldEditEventData,
         originalEditEventData,
+        addresses,
         getAddressKeys,
         getCalendarKeys,
         inviteActions: updatedInviteActions,
@@ -451,7 +458,10 @@ const getSaveEventActions = async ({
         isAttendee,
         isBreakingChange,
         sendIcs,
+        handleSyncActions,
         reencryptSharedEvent,
+        onEquivalentAttendees: handleEquivalentAttendees,
+        onSendPrefsErrors,
         selfAttendeeToken,
     });
     const successText = getRecurringEventUpdatedText(saveType, saveInviteActions);
