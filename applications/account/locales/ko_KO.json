@@ -2989,7 +2989,7 @@
     },
     "Daily recurring event, frequency (until)": {
       "Daily, ${ untilString }": [
-        "종일, ${ untilString }"
+        "매일, ${ untilString }"
       ],
       "Every ${ interval } days, ${ untilString }": [
         "매 ${ interval }일, ${ untilString }"
@@ -3669,7 +3669,7 @@
         "6 TB"
       ],
       "6 users": [
-        "6 명의 사용자"
+        "6명의 사용자"
       ],
       "Early access to new apps and features": [
         "새 앱 및 기능을 위해 얼리 엑세스 시작"
@@ -4157,7 +4157,7 @@
         "SMTP 제출 토큰을 생성하려면 사용자 지정 도메인 주소가 있어야 합니다."
       ],
       "You've reached the maximum character number. Please shorten your message.": [
-        "최대 메시지 글자수 도달. 메시지를 글자수를 줄여보세요."
+        "최대 메시지 글자수 도달. 메시지의 글자 수를 줄여보세요."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "사용자의 계정 및 조직에 연체된 요금이 존재합니다. 연체된 요금을 지불해 주세요."
@@ -5778,14 +5778,8 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } 은 로그인 및 사서함 암호를 모두 대체하는 단일 암호와 함께 사용할 수도 있습니다. 단일 비밀번호 모드로 전환하려면 사용하려는 단일 비밀번호를 입력하고 저장을 클릭하십시오."
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } 은 커스텀 도메인에 로그인하는 데 DKIM을 지원합니다. DKIM 인증을 이용하기 위해서는 도메인을 위한 DNS 설정에 다음 CNAME 기록을 추가하세요. 일반적으로는 도메인 이름 등록 기관의 제어판에서도 이 작업을 수행할 수 있습니다."
-      ],
       "${ n } addresses": [
         "${ n } 주소"
-      ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } 는 이메일 전달에 영향을 미치지 않지만, 더 나은 보안을 위해 ${ quarantine } 을(를) 권장합니다."
       ],
       "${ number } cities": [
         "${ number } 도시"
@@ -6126,9 +6120,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "새 인증 코드를 요청하기 전에 스팸 폴더를 확인하고 ${ strong } 이(가) 올바른 주소인지 확인하세요."
       ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } 의 커스텀 도메인 주소로 이메일을 받기 전에 DNS에 다음 MX 기록을 추가해야합니다. 일반적으로는 도메인 이름 관리 기관의 제어판에서 할 수 있습니다."
-      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "새 주소에서 이메일을 주고 받기 전에 암호화 키를 만들어야 합니다."
       ],
@@ -6468,9 +6459,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "시스템 표준 시간대가 현재 표준 시간대 기본 설정과 일치하지 않는 경우 업데이트가 필요하다는 내용의 메시지가 표시됩니다 (최대 하루에 한 번 표시됩니다.)."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "이 도메인이 이메일 수신을 위해 사용되고 있다면, 매끄러운 이동을 위해 ${ boldAddresses } 탭을 선택 후 활성화된 모든 이메일을 추가하십시오."
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "이전 비밀번호 재설정으로 인한 것이라면 메시지가 다시 표시되지 않도록 할 수 있어요."
       ],
@@ -6495,9 +6483,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "만약 이중인증을 사용하지 않았다면, ${ guideButton } 사용하는 것을 강력하게 권장합니다."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "SPF와 DKIM을 모두 설정한 경우, DMARC는 SPF와 DKIM검사가 모두 실패한 경우 다른 이메일 서비스에서 이메일을 어떻게 전달할지 지정할 수 있습니다. 이 기능은 스패머가 당신을 가장하는것을 방지할 수 있지만, 제대로 설정하지 않았다면 발송에 문제를 일으킬 수 있습니다."
-      ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "로그인 비밀번호를 잃어버리거나 계정 초기화가 필요할시, ${ boldImperative } ${ boldAccountRecovery } 가 있습니다."
       ],
@@ -6518,9 +6503,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "최근에 비밀번호를 재설정한 경우 데이터 복구 방법을 사용하여 데이터 잠금을 해제할 수 있어요."
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "기존의 SPF 기록을 유지하고 싶다면 ${ spfValue } 뒤에 ${ spf } 를 추가하시면 됩니다. 여러 SPF 기록을 만들지 마세요."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "만약 이 계정을 다른 계정과 합치려는 경우, 절대로 삭제하지 마세요."
@@ -6551,9 +6533,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "중요: 복구 코드를 저장했는지 확인하십시오. 그렇지 않으면 2단계 인증 기기를 분실형 경우 계정에 대한 접근권한이 영구히 손실될 수 있습니다."
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "중요: 일부 등록 기관은 끝에 마침표가 있는 CNAME 값을 허용하지 않습니다 (다른 등록 기관에서는 필요). 등록 기관이 CNAME 기록을 수락하지 않는 경우 각 CNAME 값 끝에 있는 마침표를 삭제하고 다시 시도해 보세요."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "${ toEmail } 에서 ${ fromEmail } 로 데이터를 가져오세요."
@@ -6601,7 +6580,7 @@
         "인터넷 연결이 복원되었습니다."
       ],
       "Invites successfully sent": [
-        "초대장를 성공적으로 보냄"
+        "초대장을 성공적으로 보냄"
       ],
       "It appears some of your data is encrypted and locked.": [
         "일부 데이터가 암호화되어 잠겨있어요."
@@ -6617,9 +6596,6 @@
       ],
       "Just send them your personal referral link.": [
         "내 추천인 링크를 보내세요."
-      ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "계속 DKIM을 사용하고 싶다면 DNS에 있는 기록을 유지하세요."
       ],
       "Key deletion is irreversible!": [
         "키 삭제는 되돌릴 수 없습니다!"
@@ -7116,9 +7092,6 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "사용 가능한 서버 중 일부는 최근 제거로 인해 특정 국가에서만 사용할 수 있습니다."
       ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF는 도메인에 이메일을 보낼 수 있는 사람을 지정하는 데 사용되므로 SPF 기록에 ${ MAIL_APP_NAME }을 추가하는 것을 추천합니다. 다음 TXT 레코드를 DNS에 추가하세요. 일반적으로는 도메인 이름 등록 기관의 제어판에서도 이 작업을 수행할 수 있습니다."
-      ],
       "Stay tuned for future promotions.": [
         "향후 프로모션을 계속 지켜봐 주시기 바랍니다."
       ],
@@ -7345,7 +7318,7 @@
         "계속하려면, 데이터 삭제를 원하는 사용자의 이름을 입력하십시오."
       ],
       "to continue to ${ product }": [
-        "${ product } 로 진행하기 위해서"
+        "${ product }로 계속하기"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "서비스를 지속적으로 개선하기 위해, 애플리케이션의 적절한 기능을 모니터링하기 위해 데이터를 수집할 수 있습니다. 이 정보는 제3자 서비스와 공유되지 않습니다."
@@ -7689,6 +7662,9 @@
       "You can now close this window.": [
         "이 창을 이제 닫을 수 있습니다."
       ],
+      "You can now return to the application to continue": [
+        "계속하기 위해 다시 애플리케이션으로 돌아갈 수 있습니다."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "만약 이 폴더에 새로운 이메일 메시지가 도착한다면 알림을 켜서 알 수 있습니다."
       ],
@@ -7884,14 +7860,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "조직의 모든 사용자를 위해 새 주소를 추가하세요."
-      ],
       "Add a new user to your organization and create an address for it.": [
         "조직에 새로운 사용자를 추가하여 주소를 생성하세요."
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "보안 상의 이유로, 사용자가 ${ domainName } 의 소유자가 맞는지 확인하는 절차가 필요합니다. 다음 DNS TXT 레코드를 소유하고 계신 도메인에 추가해 주세요. 이를 도메인 제공사의 제어판 (컨트롤 센터) 를 통해 입력할 수 있습니다."
       ]
     },
     "Info for payment methods": {
@@ -8705,9 +8675,6 @@
       "Gift code": [
         "기프트 코드"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "다음은 리포트를 보내는 것을 제외하면 아무것도 하지 않는 기본 DMARC 레코드입니다."
-      ],
       "Hide password": [
         "비밀번호 숨기기"
       ],
@@ -8927,15 +8894,6 @@
       "Phrase consists of 12 unique words in a specific order": [
         "구문은 특정 순서로 12개의 독특한 단어로 구성되어 있습니다."
       ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "다음의 모든 세가지 CNAME 기록을 추가하세요. DNS 기록은 업데이트하는 데 몇 시간이 걸릴 수 있습니다."
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "다음 MX 기록을 추가하세요. DNS 기록은 업데이트하는 데 몇 시간이 걸릴 수 있습니다."
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "다음 TXT 기록을 추가하세요. DNS 기록은 업데이트하는 데 몇 시간이 걸릴 수 있습니다."
-      ],
       "Please select files to upload": [
         "업로드할 파일을 선택하세요"
       ],
@@ -8979,10 +8937,10 @@
         "비밀번호 확인"
       ],
       "Require 2FA for administrators": [
-        "관리자에 2FA가 필요합니다."
+        "관리자에 2FA가 필요"
       ],
       "Require 2FA for everyone": [
-        "모두에게 2FA가 필요합니다."
+        "전체 구성원에 2FA가 필요"
       ],
       "Reveal password": [
         "비밀번호 표시"
@@ -9182,11 +9140,6 @@
         "기간"
       ]
     },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "다음 TXT 레코드를 추가해 주세요:"
-      ]
-    },
     "Label for new member": {
       "Admin": [
         "관리자"
@@ -9308,6 +9261,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "보낸 사람: ${ from }"
+      ],
+      "To: ${ to }": [
+        "받는 사람: ${ to }"
       ]
     },
     "Limit of calendars reached": {
@@ -10983,7 +10939,7 @@
         "일반 텍스트"
       ],
       "Receive from all": [
-        "전체로 부터 받기"
+        "모두에게서 받기"
       ],
       "Repeat daily": [
         "매일 반복"
@@ -11266,7 +11222,7 @@
         "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 비밀번호 관리자를 사용하실 수 있습니다!"
       ],
       "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
-        "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 서비스를 사용하실 수 있습니다!"
+        "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 VPN 서비스를 사용하실 수 있습니다!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 서비스를 사용하실 수 있습니다!"
@@ -11410,7 +11366,7 @@
         "조직 전용"
       ],
       "Receive from all": [
-        "전체로 부터 받기"
+        "모두에게서 받기"
       ],
       "Send to all": [
         "모두에게 보내기"
@@ -11507,6 +11463,9 @@
       ],
       "Search for a user or address": [
         "사용자 및 주소를 검색하세요"
+      ],
+      "Search parent folder": [
+        "상위 폴더 검색"
       ],
       "Search users": [
         "사용자 검색"
@@ -11796,13 +11755,13 @@
     },
     "session_recovery:available:info": {
       " You have ${ timeRemaining.inHours } hours to reset your password.": [
-        " 비밀번호 재설정까지 ${ timeRemaining.inHours } 시간 남았습니다."
+        " 비밀번호 재설정까지 ${ timeRemaining.inHours }시간 남았습니다."
       ],
       " You have ${ timeRemaining.inMinutes } minutes to reset your password.": [
-        " 비밀번호 재설정까지 ${ timeRemaining.inMinutes } 분 남았습니다."
+        " 비밀번호 재설정까지 ${ timeRemaining.inMinutes }분 남았습니다."
       ],
       " You have ${ timeRemaining.inSeconds } seconds to reset your password.": [
-        " 비밀번호 재설정까지 ${ timeRemaining.inSeconds } 초 남았습니다."
+        " 비밀번호 재설정까지 ${ timeRemaining.inSeconds }초 남았습니다."
       ],
       "${ timeRemaining.inDays } days": [
         "${ timeRemaining.inDays }일"
@@ -11844,7 +11803,7 @@
         "${ boldDate }까지 비밀번호 재설정이 가능합니다."
       ],
       "You have ${ timeRemaining.inDays } days to reset your password.": [
-        "비밀번호 재설정까지 ${ timeRemaining.inDays } 일 남았습니다."
+        "비밀번호 재설정까지 ${ timeRemaining.inDays }일 남았습니다."
       ]
     },
     "session_recovery:available:link": {
@@ -12262,6 +12221,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } & ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "프리미엄 ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
       "Premium early access": [
         "프리미엄 얼리 엑세스"
@@ -13843,7 +13805,7 @@
         "2단계 인증"
       ],
       "Two-factor authentication enforcement": [
-        "2단계 인증을 활성화 했습니다."
+        "2단계 인증 활성화 시행 사항"
       ],
       "Two-factor authentication reminders": [
         "2단계 인증 알리미"
@@ -14217,7 +14179,7 @@
     },
     "Tooltip for news": {
       "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "${ BRAND_NAME } 생태계의 새 기능 및 제품과 따끈따근한 프라이버시 뉴스를 받아보세요."
+        "${ BRAND_NAME } 생태계의 새 기능 및 제품과 따끈따끈한 프라이버시 뉴스를 받아보세요."
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "${ BRAND_NAME } 서비스 개선을 위한 설문 조사 참여"
@@ -14517,9 +14479,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "인증을 성공하면, TXT 레코드를 삭제하지 마십시오. 등록된 도메인을 계속 소유하고 있는지에 대한 확인이 필요합니다."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "DNS 변경이 업데이트 되는데에 최대 하루가 소요될 수 있습니다."
       ]
     },
     "Weak personal key warning": {
@@ -14615,7 +14574,7 @@
         "주의 ${ multipleDaysString }, ${ timesString }"
       ],
       "Weekly on all days, ${ timesString }": [
-        "주의 종일, ${ timesString }"
+        "주의 모든 요일, ${ timesString }"
       ],
       "Weekly on Friday, ${ timesString }": [
         "주의 금요일, ${ timesString }"
@@ -14671,7 +14630,7 @@
         "주의 ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "주의 종일, ${ untilString }"
+        "주의 모든 요일, ${ untilString }"
       ],
       "Weekly on Friday, ${ untilString }": [
         "주의 금요일, ${ untilString }"
@@ -14731,7 +14690,7 @@
         "매 ${ interval }년, ${ timesString }"
       ],
       "Yearly, ${ timesString }": [
-        "년간, ${ timesString }"
+        "연간, ${ timesString }"
       ]
     },
     "Yearly recurring event, frequency (until)": {
@@ -14739,7 +14698,7 @@
         "매 ${ interval }년, ${ untilString }"
       ],
       "Yearly, ${ untilString }": [
-        "년간, ${ untilString }"
+        "연간, ${ untilString }"
       ]
     }
   }
