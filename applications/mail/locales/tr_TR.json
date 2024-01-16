@@ -320,7 +320,7 @@
         "Tüm iletilerin seçimini kaldır"
       ],
       "Details": [
-        "Ayrıntılar"
+        "Bilgiler"
       ],
       "Discard": [
         "Sil"
@@ -464,10 +464,10 @@
         "Gelişmiş PGP ayarlarını gizle"
       ],
       "Hide attachment details": [
-        "Ek dosya ayrıntılarını gizle"
+        "Ek dosya bilgilerini gizle"
       ],
       "Hide details": [
-        "Ayrıntıları gizle"
+        "Bilgileri gizle"
       ],
       "Hide messages": [
         "İletileri gizle"
@@ -681,7 +681,7 @@
         "Yardım gerekiyor mu?"
       ],
       "Never show": [
-        "Asla gösterme"
+        "Asla görüntüleme"
       ],
       "New message": [
         "Yeni ileti"
@@ -713,10 +713,10 @@
       "Not saved": [
         "Kaydedilmemiş"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -951,31 +951,31 @@
         "Paylaşım seçenekleri"
       ],
       "Show": [
-        "Göster"
+        "Görüntüle"
       ],
       "Show advanced PGP settings": [
-        "Gelişmiş PGP ayarlarını göster"
+        "Gelişmiş PGP ayarlarını görüntüle"
       ],
       "Show attachment details": [
-        "Ek dosya ayrıntılarını göster"
+        "Ek dosya bilgilerini görüntüle"
       ],
       "Show details": [
-        "Ayrıntıları göster"
+        "Bilgileri görüntüle"
       ],
       "Show fewer search options": [
-        "Daha az arama seçeneği göster"
+        "Daha az arama seçeneği görüntüle"
       ],
       "Show less": [
-        "Daha az göster"
+        "Daha az görüntüle"
       ],
       "Show messages": [
-        "İletileri göster"
+        "İletileri görüntüle"
       ],
       "Show more search options": [
-        "Daha fazla arama seçeneği göster"
+        "Daha fazla arama seçeneği görüntüle"
       ],
       "Show preview": [
-        "Ön izlemeyi göster"
+        "Ön izlemeyi görüntüle"
       ],
       "Show side panel": [
         "Yan panoyu görüntüle"
@@ -1156,13 +1156,13 @@
         "Faturayı görüntüle"
       ],
       "View keys": [
-        "Anahtarları göster"
+        "Anahtarları görüntüle"
       ],
       "View message details": [
-        "İleti ayrıntılarını görüntüle"
+        "İleti bilgilerini görüntüle"
       ],
       "View recipients": [
-        "Alıcıları göster"
+        "Alıcıları görüntüle"
       ],
       "View rendered HTML": [
         "HTML olarak görüntüle"
@@ -2134,6 +2134,11 @@
       ],
       "URL": [
         "İnternet adresi"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Kişi görseli"
       ]
     },
     "Contact type label": {
@@ -3298,6 +3303,10 @@
       "Choose a date in the future.": [
         "Gelecekte bir zaman seçin."
       ],
+      "Choose a date within the next ${ n } day.": [
+        "Sonraki ${ n } gün içinde bir tarih seçin.",
+        "Sonraki ${ n } gün içinde bir tarih seçin."
+      ],
       "Condition incomplete": [
         "Koşul eksik"
       ],
@@ -3721,8 +3730,8 @@
         "Beklenmedik bir sorun çıktı. İçe aktarma işlemi yeniden başlatılmalı."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS } etkinlikten daha fazla etkinlik var.",
-        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS } etkinlikten daha fazla etkinlik var."
+        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS } taneden fazla etkinlik var.",
+        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS } taneden fazla etkinlik var."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "${ formattedFilename } dosyanız geçersiz bir yöntem içerdiğinden içe aktarılamıyor."
@@ -4154,7 +4163,7 @@
     },
     "Filter": {
       "Show": [
-        "Göster"
+        "Görüntüle"
       ]
     },
     "Filter Actions": {
@@ -4236,7 +4245,7 @@
         "Okunmuş"
       ],
       "Show moved message": [
-        "Taşınmış iletiyi göster"
+        "Taşınmış iletiyi görüntüle"
       ],
       "Unread": [
         "Okunmamış"
@@ -4542,7 +4551,7 @@
     },
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        "${ CALENDAR_APP_NAME } şu anda belirli etkinlik türlerini, ayrıntılarını ve biçimlerini desteklemiyor."
+        "${ CALENDAR_APP_NAME } şu anda belirli etkinlik türlerini, bilgilerini ve biçimlerini desteklemiyor."
       ],
       "vCard versions < 3.0": [
         "vCard 3.0 sürümü öncesi"
@@ -4550,7 +4559,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "İçe aktarılan davetler ${ CALENDAR_APP_NAME } içinde düzenleyici ve katılımcı ayrıntıları olmadan sıradan etkinlikler olarak görüntülenir. Etkinlik güncellemelerini almak ve katılımcıları görmek için düzenleyicilerden ${ BRAND_NAME } e-posta adresinizi kullanarak sizi davet etmelerini isteyin."
+        "İçe aktarılan davetler ${ CALENDAR_APP_NAME } içinde düzenleyici ve katılımcı bilgileri olmadan sıradan etkinlikler olarak görüntülenir. Etkinlik güncellemelerini almak ve katılımcıları görmek için düzenleyicilerden ${ BRAND_NAME } e-posta adresinizi kullanarak sizi davet etmelerini isteyin."
       ],
       "This file contains an event invitation:": [
         "Bu dosyada bir etkinlik daveti bulunuyor:",
@@ -4774,14 +4783,14 @@
         "${ totalContactsDiscarded }/${ totalContacts } kişi içe aktarılmayacak. Ayrıntılı bilgi almak için tıklayın"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Ayrıntılar için genişletin.",
-        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Ayrıntılar için genişletin."
+        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Bilgileri görmek için genişletin.",
+        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Bilgileri görmek için genişletin."
       ],
       "No contact can be imported. Click for details": [
-        "Herhangi bir kişi içe aktarılamadı. Ayrıntılar için tıklayın"
+        "Herhangi bir kişi içe aktarılamadı. Ayrıntılı bilgi almak için tıklayın"
       ],
       "No event can be imported. Expand for details.": [
-        "Herhangi bir etkinlik içe aktarılamadı. Ayrıntılar için genişletin."
+        "Herhangi bir etkinlik içe aktarılamadı. Bilgi almak için genişletin."
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Takvim içeriğinizin bir bölümü desteklenmiyor ve içe aktarılmayacak."
@@ -4832,6 +4841,46 @@
       "${ currentProgress } out of ${ totalProgress }": [
         "${ currentProgress } / ${ totalProgress }",
         "${ currentProgress } / ${ totalProgress }"
+      ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } yazışmaya şu etiket eklenecek:",
+        "${ elementsCount } yazışmaya şu etiket eklenecek:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } yazışma okunmuş olarak işaretlenecek.",
+        "${ elementsCount } yazışma okunmuş olarak işaretlenecek."
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } yazışma okunmamış olarak işaretlenecek.",
+        "${ elementsCount } yazışma okunmamış olarak işaretlenecek."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "${ elementsCount } yazışma taşınacak",
+        "${ elementsCount } yazışma taşınacak"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } yazışmadan şu etiket kaldırılacak:",
+        "${ elementsCount } yazışmadan şu etiket kaldırılacak:"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } iletiye şu etiket eklenecek:",
+        "${ elementsCount } iletiye şu etiket eklenecek:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } ileti okunmuş olarak işaretlenecek.",
+        "${ elementsCount } ileti okunmuş olarak işaretlenecek."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } ileti okunmamış olarak işaretlenecek.",
+        "${ elementsCount } ileti okunmamış olarak işaretlenecek."
+      ],
+      "${ elementsCount } message will be moved": [
+        "${ elementsCount } ileti taşınacak",
+        "${ elementsCount } ileti taşınacak"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } iletiden şu etiket kaldırılacak:",
+        "${ elementsCount } iletiden şu etiket kaldırılacak:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } gömülmüş görsel",
@@ -4997,8 +5046,17 @@
       "and": [
         "ve"
       ],
+      "Any scheduled or snoozed messages will be cancelled.": [
+        "Zamanlanmış ya da ertelenmiş iletiler iptal edilecek."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "Alt klasörler de silinecek. Ancak ${ nameDeleted } klasöründeki e-postalar silinmeyecek ve Tüm e-postalar klasöründe bulunabilecek."
+      ],
+      "Applying actions to conversations": [
+        "İşlemler yazışmalara uygulanıyor"
+      ],
+      "Applying actions to messages": [
+        "İşlemler iletilere uygulanıyor"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "Bu klasördeki tüm iletileri silmek istediğinize emin misiniz?"
@@ -5441,6 +5499,9 @@
       "Merged": [
         "Birleştirilmiş"
       ],
+      "Message actions in progress. This may take a while.": [
+        "İleti işlemleri yapılıyor. İşlemin tamamlanması biraz zaman alabilir."
+      ],
       "Message download status:": [
         "İleti indirme durumu:"
       ],
@@ -5679,6 +5740,10 @@
       "Select a service provider to start": [
         "Başlamak için bir hizmet sağlayıcı seçin"
       ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "${ location } içindeki ${ elementsCount } ögeyi seç",
+        "${ location } içindeki ${ elementsCount } ögeyi seç"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Bu adrese, bir e-posta gönderilirken varsayılan olarak kullanılmasını istediğiniz e-posta biçimini seçin."
       ],
@@ -5719,7 +5784,7 @@
         "PGP kurarak, PGP uyumlu bir hizmet kullanan ancak ${ BRAND_NAME } kullanmayan bir kullanıcıya uçtan uca şifrelenmiş e-postalar gönderebilirsiniz."
       ],
       "Show original message": [
-        "Özgün iletiyi göster"
+        "Özgün iletiyi görüntüle"
       ],
       "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
         "SimpleLogin bir ${ BRAND_NAME } hizmetidir ve ${ BRAND_NAME_TWO } hesabınızda hide-my-email takma adları kullanılmasını sağlar. E-posta adresinizi gizlemeye başlamak için SimpleLogin sitesine gidin ve ilk takma adınızı oluşturun."
@@ -5868,7 +5933,7 @@
         "Bu ileti, ekteki henüz güvenilmemiş anahtar ile imzalanmış."
       ],
       "This message will be automatically deleted on ${ value }": [
-        "Bu iletinin ${ value } zamanında otomatik olarak silinecek"
+        "Bu ileti ${ value } zamanında otomatik olarak silinecek"
       ],
       "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
         "Bu ileti istenmeyen olarak işaretlenecek. Gelecekte bu e-postaları almamak için abonelikten ayrılmayı da ister misiniz?",
@@ -5909,6 +5974,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "Henüz bu göndericinin herkese açık anahtarına güvenilmemiş."
+      ],
+      "to ${ destinationElement } folder.": [
+        "${ destinationElement } klasörüne."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
@@ -6099,6 +6167,9 @@
       "You can import one data type at a time.": [
         "Bir seferde bir veri türünü içe aktarabilirsiniz."
       ],
+      "You can now return to the application to continue": [
+        "Şimdi uygulamaya dönebilirsiniz"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bu klasöre yeni e-posta iletileri geldiğinde uyarı almak için bildirimleri açabilirsiniz."
       ],
@@ -6160,6 +6231,22 @@
       "You selected **${ count } message** with this label": [
         "Bu etiketi taşıyan **${ count } ileti** seçtiniz",
         "Bu etiketi taşıyan **${ count } ileti** seçtiniz"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "${ location } içindeki **${ elementsCount } yazışmayı** seçtiniz",
+        "${ location } içindeki **${ elementsCount } yazışmayı** seçtiniz"
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "**${ elementsCount } yazışmayı** seçtiniz.",
+        "**${ elementsCount } yazışmayı** seçtiniz."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "${ location } içindeki **${ elementsCount } iletiyi** seçtiniz",
+        "${ location } içindeki **${ elementsCount } iletiyi** seçtiniz"
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "**${ elementsCount } iletiyi** seçtiniz.",
+        "**${ elementsCount } iletiyi** seçtiniz."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "“${ attachmentsFoundKeyword }” yazdınız ama bir dosya eklemediniz. İletinizi yine de göndermek istiyor musunuz?"
@@ -6228,7 +6315,7 @@
     },
     "Info on errors": {
       "Click for details": [
-        "Ayrıntılar için tıklayın"
+        "Bilgiler için tıklayın"
       ]
     },
     "Info: partial": {
@@ -6428,13 +6515,13 @@
         "E-posta gönder"
       ],
       "Show all emails": [
-        "Tüm e-postaları göster"
+        "Tüm e-postaları görüntüle"
       ],
       "Show original message": [
-        "Özgün iletiyi göster"
+        "Özgün iletiyi görüntüle"
       ],
       "Show unread emails": [
-        "Okunmamış e-postaları göster"
+        "Okunmamış e-postaları görüntüle"
       ],
       "Star": [
         "Yıldız koy/kaldır"
@@ -6618,7 +6705,7 @@
         "Bir daha sorma"
       ],
       "Don't show this again": [
-        "Bunu bir daha gösterme"
+        "Bu bir daha görüntülenmesin"
       ],
       "Email": [
         "E-posta"
@@ -6987,6 +7074,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "Kimden: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Nereye: ${ to }"
       ]
     },
     "Landmarks": {
@@ -7066,7 +7156,7 @@
         "Ayrıntılı bilgi alın"
       ],
       "Less": [
-        "Daha az göster"
+        "Daha az görüntüle"
       ],
       "Manage blocked email addresses": [
         "Engellenmiş e-posta adresleri yönetimi"
@@ -7821,6 +7911,9 @@
       "Search name, email or group": [
         "Ad, e-posta ya da grup arayın"
       ],
+      "Search parent folder": [
+        "Üst klasörü ara"
+      ],
       "Select": [
         "Seçin"
       ],
@@ -8333,7 +8426,7 @@
         "Kapat"
       ],
       "Don't show this offer again": [
-        "Bu teklifi bir daha gösterme"
+        "Bu teklif bir daha görüntülenmesin"
       ],
       "Special offer": [
         "Özel teklif"
@@ -8395,6 +8488,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Ücretli ${ appName1 } ve ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Ücretli ${ appName1 } ve ${ appName2 } ve ${ appName3 }"
       ],
       "Premium early access": [
         "Öncelikli erken erişim"
@@ -8988,6 +9084,12 @@
       "Account suspended": [
         "Hesap askıya alınmış"
       ],
+      "Action all conversations": [
+        "Tüm yazışmalara uygula"
+      ],
+      "Action all messages": [
+        "Tüm iletilere uygula"
+      ],
       "Add contact group name": [
         "Kişi grubu adı ekle"
       ],
@@ -9262,8 +9364,20 @@
       "Mark as unread": [
         "Okunmamış olarak işaretle"
       ],
+      "Mark conversations as read": [
+        "Yazışmaları okunmuş olarak işaretle"
+      ],
+      "Mark conversations as unread": [
+        "Yazışmaları okunmamış olarak işaretle"
+      ],
       "Mark email as legitimate": [
         "E-postayı göründüğü gibi olarak işaretle"
+      ],
+      "Mark messages as read": [
+        "İletileri okunmuş olarak işaretle"
+      ],
+      "Mark messages as unread": [
+        "İletileri okunmamış olarak işaretle"
       ],
       "Merge contacts": [
         "Kişileri birleştir"
@@ -9272,7 +9386,7 @@
         "Kişileri birleştirme"
       ],
       "Message details": [
-        "İleti ayrıntıları"
+        "İleti bilgileri"
       ],
       "Message list": [
         "İleti listesi"
@@ -9294,6 +9408,12 @@
       ],
       "More selections": [
         "Diğer seçimler"
+      ],
+      "Move all conversations": [
+        "Tüm yazışmaları taşı"
+      ],
+      "Move all messages": [
+        "Tüm iletileri taşı"
       ],
       "Move all messages to Archive": [
         "Tüm iletileri arşivle"
@@ -9591,6 +9711,9 @@
       ],
       "Hide side panel": [
         "Yan panoyu gizle"
+      ],
+      "Load image": [
+        "Görsel yükle"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"

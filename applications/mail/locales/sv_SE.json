@@ -713,11 +713,11 @@
       "Not saved": [
         "Inte sparad"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Öppna i ${ CALENDAR_APP_NAME }"
@@ -4885,6 +4885,10 @@
       "${ elementsCount } message will be moved": [
         "${ elementsCount } meddelande kommer att flyttas",
         "${ elementsCount } meddelanden kommer att flyttas"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } meddelande kommer att avmärkas från:",
+        "${ elementsCount } meddelanden kommer att avmärkas från:"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } inbäddad bild",
@@ -9074,6 +9078,12 @@
       "(active)": [
         "(aktiv)"
       ],
+      "A filter name is required": [
+        "Ett filternamn är obligatoriskt"
+      ],
+      "A filter with this name already exists": [
+        "Ett filter med detta namn finns redan"
+      ],
       "Account suspended": [
         "Konto avstängt"
       ],
@@ -9292,6 +9302,9 @@
       ],
       "Feedback": [
         "Feedback"
+      ],
+      "Filter name cannot contain only spaces": [
+        "Filternamn kan inte bara innehålla mellanslag"
       ],
       "Filter on...": [
         "Filtrera på..."
@@ -9599,6 +9612,12 @@
       ],
       "Subject missing": [
         "Ämne saknas"
+      ],
+      "This field cannot be empty": [
+        "Detta fält kan inte vara tomt"
+      ],
+      "This field cannot contain only spaces": [
+        "Detta fält kan inte bara innehålla mellanslag"
       ],
       "To": [
         "Till"

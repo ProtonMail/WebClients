@@ -721,10 +721,10 @@
       "Not saved": [
         "Не захавана"
       ],
-      "OK": [
+      "Ok": [
         "Добра"
       ],
-      "Ok": [
+      "OK": [
         "Добра"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -9493,14 +9493,20 @@
       "(active)": [
         "(актыўная)"
       ],
+      "A filter name is required": [
+        "Патрабуецца назва фільтра"
+      ],
+      "A filter with this name already exists": [
+        "Фільтр з такой назвай ужо існуе"
+      ],
       "Account suspended": [
         "Уліковы запіс прыпынены"
       ],
       "Action all conversations": [
-        "Дзеянне да ўсіх размоў"
+        "Прымяніць да ўсіх размоў"
       ],
       "Action all messages": [
-        "Дзеянне да ўсіх паведамленняў"
+        "Прымяніць да ўсіх паведамленняў"
       ],
       "Add contact group name": [
         "Дадаць назву групы кантактаў"
@@ -9724,6 +9730,9 @@
       "Feedback": [
         "Водгук"
       ],
+      "Filter name cannot contain only spaces": [
+        "Назва фільтра не можа змяшчаць толькі прабелы"
+      ],
       "Filter on...": [
         "Фільтраваць па..."
       ],
@@ -9839,7 +9848,7 @@
         "Перамясціць усе размовы"
       ],
       "Move all messages": [
-        "Перамясціць усе паведамлення"
+        "Перамясціць усе паведамленні"
       ],
       "Move all messages to Archive": [
         "Перамясціць усе паведамленні ў Архіў"
@@ -10032,6 +10041,12 @@
       ],
       "Subject missing": [
         "Няма тэмы"
+      ],
+      "This field cannot be empty": [
+        "Гэтае поле не можа быць пустым"
+      ],
+      "This field cannot contain only spaces": [
+        "Гэта поле не можа змяшчаць толькі прабелы"
       ],
       "To": [
         "Каму"

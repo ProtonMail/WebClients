@@ -709,11 +709,11 @@
       "Not saved": [
         "尚未儲存"
       ],
-      "OK": [
-        "好"
-      ],
       "Ok": [
         "確定"
+      ],
+      "OK": [
+        "好"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "開啟 ${ CALENDAR_APP_NAME }"
@@ -3257,6 +3257,9 @@
       "Choose a date in the future.": [
         "選擇一個未來的日期。"
       ],
+      "Choose a date within the next ${ n } days.": [
+        "在接下來的${ n }天內選擇一個日期。"
+      ],
       "Condition incomplete": [
         "條件不完整"
       ],
@@ -4756,6 +4759,36 @@
       "${ currentProgress } out of ${ totalProgress }": [
         "${ totalProgress } 中的 ${ currentProgress }"
       ],
+      "${ elementsCount } conversations will be labelled as:": [
+        "${ elementsCount }對話內容將被標記為:"
+      ],
+      "${ elementsCount } conversations will be marked as read.": [
+        "${ elementsCount } 則往來對話將被標記為已讀。"
+      ],
+      "${ elementsCount } conversations will be marked as unread.": [
+        "${ elementsCount } 則往來對話將被標記為未讀。"
+      ],
+      "${ elementsCount } conversations will be moved": [
+        "${ elementsCount }則對話內容將被移動"
+      ],
+      "${ elementsCount } conversations will be unlabelled from:": [
+        "${ elementsCount }對話內容將被取消標記:"
+      ],
+      "${ elementsCount } messages will be labelled as:": [
+        "${ elementsCount }訊息將被標記為:"
+      ],
+      "${ elementsCount } messages will be marked as read.": [
+        "${ elementsCount } 封郵件將被標記為已讀。"
+      ],
+      "${ elementsCount } messages will be marked as unread.": [
+        "${ elementsCount } 封郵件將被標記為未讀。"
+      ],
+      "${ elementsCount } messages will be moved": [
+        "${ elementsCount }則訊息將被移動"
+      ],
+      "${ elementsCount } messages will be unlabelled from:": [
+        "${ elementsCount }訊息將被取消標記:"
+      ],
       "${ embeddedAttachmentsCount } embedded images": [
         "${ embeddedAttachmentsCount } 個內嵌圖像"
       ],
@@ -4893,6 +4926,12 @@
       ],
       "and": [
         "和"
+      ],
+      "Applying actions to conversations": [
+        "於對話內容套用程序"
+      ],
+      "Applying actions to messages": [
+        "於訊息套用程序"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "您確定要刪除此資料夾中的全部郵件？"
@@ -5323,6 +5362,9 @@
       "Merged": [
         "合併的"
       ],
+      "Message actions in progress. This may take a while.": [
+        "訊息處理程序進行中。此需要一些時間。"
+      ],
       "Message download status:": [
         "訊息下載狀態:"
       ],
@@ -5560,6 +5602,9 @@
       "Select a service provider to start": [
         "選取您的服務提供者以開始"
       ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "選取於${ location }全部的${ elementsCount }"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "請選擇用於傳送至該電郵位址時使用的預設電郵格式。"
       ],
@@ -5787,6 +5832,9 @@
       ],
       "This sender's public key has not been trusted yet.": [
         "此寄件人的公開金鑰尚未信任。"
+      ],
+      "to ${ destinationElement } folder.": [
+        "至${ destinationElement }資料夾。"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "為防止垃圾郵件及濫用行為，請驗證您是真人。"
@@ -6030,6 +6078,18 @@
       ],
       "You selected **${ count } messages** with this label": [
         "您選取了有此標籤的 **${ count } 則訊息**"
+      ],
+      "You selected **${ elementsCount } conversations** in ${ location }": [
+        "您選擇**${ elementsCount }則於${ location }的對話內容**。"
+      ],
+      "You selected **${ elementsCount } conversations**.": [
+        "您選擇**${ elementsCount }則對話內容**。"
+      ],
+      "You selected **${ elementsCount } messages** in ${ location }": [
+        "您選擇**${ elementsCount }則於${ location }的訊息**。"
+      ],
+      "You selected **${ elementsCount } messages**.": [
+        "您選擇**${ elementsCount }則訊息**。"
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "您編寫了「${ attachmentsFoundKeyword }」，但沒有加入對應的附件。無論如何寄出此封郵件？"
@@ -8209,6 +8269,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "進階版 ${ appName1 } 與 ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "進階 ${ appName1 }、${ appName2 } 與 ${ appName3 }"
       ],
       "Premium early access": [
         "進階版搶先體驗"

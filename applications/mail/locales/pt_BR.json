@@ -713,11 +713,11 @@
       "Not saved": [
         "Não salvo"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
@@ -6182,6 +6182,10 @@
         "Você selecionou **${ count } mensagem** com este marcador",
         "Você selecionou **${ count } mensagens** com este marcador"
       ],
+      "You selected **${ elementsCount } conversation**.": [
+        "Você selecionou **${ elementsCount } conversa**.",
+        "Você selecionou **${ elementsCount } conversas**."
+      ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Você escreveu \"${ attachmentsFoundKeyword }\", mas nenhum anexo foi adicionado. Quer enviar a mensagem assim mesmo?"
       ],
@@ -9324,6 +9328,9 @@
       ],
       "Move all conversations": [
         "Mover todas as conversas"
+      ],
+      "Move all messages": [
+        "Mover todas as mensagens"
       ],
       "Move all messages to Archive": [
         "Mover todas as mensagens para o Arquivo"
