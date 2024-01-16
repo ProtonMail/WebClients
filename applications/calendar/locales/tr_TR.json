@@ -517,22 +517,22 @@
         "Paylaş"
       ],
       "Show advanced PGP settings": [
-        "Gelişmiş PGP ayarlarını göster"
+        "Gelişmiş PGP ayarlarını görüntüle"
       ],
       "Show affected calendars": [
         "Etkilenen takvimleri görüntüle"
       ],
       "Show less": [
-        "Daha az göster"
+        "Daha az görüntüle"
       ],
       "Show more": [
-        "Daha fazla göster"
+        "Daha fazla görüntüle"
       ],
       "Show side panel": [
         "Yan panoyu görüntüle"
       ],
       "Show time zones": [
-        "Saat dilimlerini göster"
+        "Saat dilimlerini görüntüle"
       ],
       "Sign in": [
         "Oturum aç"
@@ -1268,6 +1268,11 @@
       ],
       "URL": [
         "İnternet adresi"
+      ]
+    },
+    "Contact image": {
+      "Contact image": [
+        "Kişi görseli"
       ]
     },
     "Contact type label": {
@@ -2755,6 +2760,11 @@
         "Davet edilen adres bulunamadı"
       ]
     },
+    "Error changing answer of a calendar invitation": {
+      "Error changing answer": [
+        "Yanıt değiştirilirken sorun çıktı"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "${ formattedFilename } dosyanız okunurken bir sorun çıktı. Dosya biçimi doğru değil."
@@ -2772,8 +2782,8 @@
         "Beklenmedik bir sorun çıktı. İçe aktarma işlemi yeniden başlatılmalı."
       ],
       "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS } event.": [
-        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS } etkinlikten daha fazla etkinlik var.",
-        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS } etkinlikten daha fazla etkinlik var."
+        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS } taneden fazla etkinlik var.",
+        "${ formattedFilename } dosyanızda ${ MAX_IMPORT_EVENTS } taneden fazla etkinlik var."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "${ formattedFilename } dosyanız geçersiz bir yöntem içerdiğinden içe aktarılamıyor."
@@ -3358,7 +3368,7 @@
     },
     "Import calendar warning": {
       "${ CALENDAR_APP_NAME } currently does not support certain event types, details and formats.": [
-        "${ CALENDAR_APP_NAME } şu anda belirli etkinlik türlerini, ayrıntılarını ve biçimlerini desteklemiyor."
+        "${ CALENDAR_APP_NAME } şu anda belirli etkinlik türlerini, bilgilerini ve biçimlerini desteklemiyor."
       ],
       "vCard versions < 3.0": [
         "vCard 3.0 sürümü öncesi"
@@ -3366,7 +3376,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
-        "İçe aktarılan davetler ${ CALENDAR_APP_NAME } içinde düzenleyici ve katılımcı ayrıntıları olmadan sıradan etkinlikler olarak görüntülenir. Etkinlik güncellemelerini almak ve katılımcıları görmek için düzenleyicilerden ${ BRAND_NAME } e-posta adresinizi kullanarak sizi davet etmelerini isteyin."
+        "İçe aktarılan davetler ${ CALENDAR_APP_NAME } içinde düzenleyici ve katılımcı bilgileri olmadan sıradan etkinlikler olarak görüntülenir. Etkinlik güncellemelerini almak ve katılımcıları görmek için düzenleyicilerden ${ BRAND_NAME } e-posta adresinizi kullanarak sizi davet etmelerini isteyin."
       ],
       "This file contains an event invitation:": [
         "Bu dosyada bir etkinlik daveti bulunuyor:",
@@ -3582,14 +3592,14 @@
         "${ totalContactsDiscarded }/${ totalContacts } kişi içe aktarılmayacak. Ayrıntılı bilgi almak için tıklayın"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Ayrıntılar için genişletin.",
-        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Ayrıntılar için genişletin."
+        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Bilgileri görmek için genişletin.",
+        "${ totalEvents } / ${ totalEventsDiscarded } etkinlik içe aktarılmayacak. Bilgileri görmek için genişletin."
       ],
       "No contact can be imported. Click for details": [
-        "Herhangi bir kişi içe aktarılamadı. Ayrıntılar için tıklayın"
+        "Herhangi bir kişi içe aktarılamadı. Ayrıntılı bilgi almak için tıklayın"
       ],
       "No event can be imported. Expand for details.": [
-        "Herhangi bir etkinlik içe aktarılamadı. Ayrıntılar için genişletin."
+        "Herhangi bir etkinlik içe aktarılamadı. Bilgi almak için genişletin."
       ],
       "Part of your calendar content is not supported and will not be imported.": [
         "Takvim içeriğinizin bir bölümü desteklenmiyor ve içe aktarılmayacak."
@@ -3721,10 +3731,10 @@
         "ve"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "Bu bağlantıya sahip olan herkes bu takvimdeki etkinliklerin başlık, yer veya katılımcılar gibi tüm ayrıntılarını görebilir."
+        "Bu bağlantıya sahip olan herkes bu takvimdeki etkinliklerin başlık, yer veya katılımcılar gibi tüm bilgileri görebilir."
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "Bu bağlantıya sahip olan herkes, takviminizde uygun ve meşgul olduğunuz zamanları görebilir. Başlık, konum veya katılımcılar gibi etkinlik ayrıntılarını göremez."
+        "Bu bağlantıya sahip olan herkes, takviminizde uygun ve meşgul olduğunuz zamanları görebilir. Başlık, konum veya katılımcılar gibi etkinlik bilgilerini göremez."
       ],
       "Are you sure you want to discard your import?": [
         "İçe aktarma işleminden vazgeçmek istediğinize emin misiniz?"
@@ -3739,7 +3749,7 @@
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
-        "Bu takvimin tüm etkinlik ayrıntılarını paylaşarak, bu takvimin şifrelenmiş bilgilerine ${ BRAND_NAME } tarafından erişilmesine izin vermiş olursunuz."
+        "Bu takvimin tüm etkinlik bilgilerini paylaşarak, bu takvimin şifrelenmiş bilgilerine ${ BRAND_NAME } tarafından erişilmesine izin vermiş olursunuz."
       ],
       "Calendar side panel": [
         "Takvim yan panosu"
@@ -3822,6 +3832,9 @@
       ],
       "Discard changes?": [
         "Değişiklikler yok sayılsın mı?"
+      ],
+      "Display events for calendar ${ Name }": [
+        "${ Name } takvimindeki etkinlikleri görüntüle"
       ],
       "Drop file here to upload": [
         "Yüklemek için dosyayı buraya bırakın"
@@ -4258,6 +4271,9 @@
       "You can import one data type at a time.": [
         "Bir seferde bir veri türünü içe aktarabilirsiniz."
       ],
+      "You can now return to the application to continue": [
+        "Şimdi uygulamaya dönebilirsiniz"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Bu klasöre yeni e-posta iletileri geldiğinde uyarı almak için bildirimleri açabilirsiniz."
       ],
@@ -4363,7 +4379,7 @@
     },
     "Info on errors": {
       "Click for details": [
-        "Ayrıntılar için tıklayın"
+        "Bilgiler için tıklayın"
       ]
     },
     "Info: partial": {
@@ -4383,10 +4399,10 @@
     },
     "Info; reset calendar keys modal; part 1": {
       "Some of your calendars will not show details of previously created events.": [
-        "Bazı takvimlerinizde daha önce oluşturulmuş etkinliklerin ayrıntıları görüntülenmeyecek."
+        "Bazı takvimlerinizde daha önce oluşturulmuş etkinliklerin bilgileri görüntülenmeyecek."
       ],
       "Your calendars will not show details of previously created events.": [
-        "Takvimlerinizde daha önce oluşturulmuş etkinliklerin ayrıntıları görüntülenmeyecek."
+        "Takvimlerinizde daha önce oluşturulmuş etkinliklerin bilgileri görüntülenmeyecek."
       ]
     },
     "Info; reset calendar keys modal; part 2": {
@@ -4839,6 +4855,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "Kimden: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Nereye: ${ to }"
       ]
     },
     "Landmarks": {
@@ -5657,6 +5676,9 @@
       "Search for name or email": [
         "Ad veya e-posta adresi ile arayın"
       ],
+      "Search parent folder": [
+        "Üst klasörü ara"
+      ],
       "Select": [
         "Seçin"
       ],
@@ -6003,7 +6025,7 @@
         "Kapat"
       ],
       "Don't show this offer again": [
-        "Bu teklifi bir daha gösterme"
+        "Bu teklif bir daha görüntülenmesin"
       ],
       "Special offer": [
         "Özel teklif"
@@ -6065,6 +6087,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Ücretli ${ appName1 } ve ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Ücretli ${ appName1 } ve ${ appName2 } ve ${ appName3 }"
       ],
       "Premium early access": [
         "Öncelikli erken erişim"
@@ -6820,7 +6845,7 @@
         "Ayarlar"
       ],
       "Show time zones for event start and end times": [
-        "Etkinlik başlangıç ve bitiş saatlerinin saat dilimlerini gösterir"
+        "Etkinlik başlangıç ve bitiş saatlerinin saat dilimlerini görüntüler"
       ],
       "Sign in and grant access": [
         "Oturum açın ve erişim izni verin"
@@ -6936,6 +6961,9 @@
       ],
       "Hide side panel": [
         "Yan panoyu gizle"
+      ],
+      "Load image": [
+        "Görsel yükle"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Bir kullanıcı için imzalama veya şifreleme sırasında kullanılacak PGP şemasını seçin. PGP/Inline için iletilerin düz metin biçiminde olması gerektiğini unutmayın"
