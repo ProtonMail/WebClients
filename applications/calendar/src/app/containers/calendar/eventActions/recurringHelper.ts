@@ -6,6 +6,7 @@ import { getDtendProperty } from '@proton/shared/lib/calendar/vcalConverter';
 import { getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsAllDay, getRecurrenceId } from '@proton/shared/lib/calendar/veventHelper';
 import { fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';
+import { omit } from '@proton/shared/lib/helpers/object';
 import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import { VcalDateOrDateTimeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
@@ -38,7 +39,7 @@ export const getCurrentVevent = (
     );
 
     return {
-        ...originalComponent,
+        ...omit(originalComponent, ['rrule', 'exdate', 'recurrence-id']),
         dtstart: recurrenceDtstart,
         dtend: recurrenceDtend,
     };
