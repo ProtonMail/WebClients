@@ -140,6 +140,9 @@
       "Authenticate": [
         "Автентифікація"
       ],
+      "Authenticating": [
+        "Автентифікація"
+      ],
       "Back": [
         "Назад"
       ],
@@ -236,11 +239,17 @@
       "Copy address": [
         "Копіювати адресу"
       ],
+      "Copy key to the clipboard": [
+        "Скопіювати ключ до буфера обміну"
+      ],
       "Copy link": [
         "Копіювати посилання"
       ],
       "Create": [
         "Створити"
+      ],
+      "Create a link to share with anyone outside ${ BRAND_NAME }": [
+        "Створити посилання для будь-кого поза ${ BRAND_NAME }"
       ],
       "Create account": [
         "Зареєструватися"
@@ -295,6 +304,9 @@
       ],
       "Delete Gateway": [
         "Видалити мережевий шлюз"
+      ],
+      "Delete link": [
+        "Видалити посилання"
       ],
       "Delete permanently": [
         "Видалити остаточно"
@@ -358,6 +370,9 @@
       ],
       "Download recovery file": [
         "Завантажити файл відновлення"
+      ],
+      "Download the ${ MAIL_APP_NAME } Export Tool": [
+        "Завантажити ${ MAIL_APP_NAME } Export Tool"
       ],
       "Edit": [
         "Змінити"
@@ -550,6 +565,9 @@
       ],
       "Keep": [
         "Залишити"
+      ],
+      "Keep my Plus subscription": [
+        "Зберегти передплату Plus"
       ],
       "label emails as": [
         "позначати листи міткою"
@@ -3794,6 +3812,9 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Ви вже використали усіх користувачів у своєму тарифному плані. Щоб додати нового користувача, необхідно покращити тарифний план."
       ],
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Щоб створити неприватних користувачів і отримати доступ до їхніх облікових записів, вам потрібно активувати ключі організації."
+      ],
       "You must privatize all users before generating new organization keys": [
         "Ви повинні зробити приватними всіх користувачів перед генеруванням нових ключів організації"
       ],
@@ -5455,17 +5476,11 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } також можна використовувати з єдиним паролем, який замінює пароль входу та пароль поштової скриньки. Щоб перемкнутись на однопарольний режим, введіть єдиний пароль, який ви бажаєте використовувати, а потім натисніть кнопку Зберегти."
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } підтримує підписування DKIM для власних доменів. Щоб використовувати перевірку DKIM, додайте такий запис CNAME до своїх налаштувань DNS для цього домену. Зазвичай це можна зробити на панелі керування вашого доменного реєстратора."
-      ],
       "${ n } address": [
         "${ n } адреса",
         "${ n } адреси",
         "${ n } адрес",
         "${ n } адрес"
-      ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } не впливає на доставлення електронної пошти, але ми рекомендуємо ${ quarantine } для кращої безпеки."
       ],
       "${ number } city": [
         "${ number } місто",
@@ -5484,6 +5499,9 @@
         "${ numberOfNonPrivateKeys } вивантажені файли не є чинним приватними ключами. Перевірте їх та повторіть спробу.",
         "${ numberOfNonPrivateKeys } вивантажених файлів не є чинним приватними ключами. Перевірте їх та повторіть спробу.",
         "${ numberOfNonPrivateKeys } вивантажені файли не є чинним приватними ключами. Перевірте їх та повторіть спробу."
+      ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "Тарифний план ${ plan } вилучено. Пакетна пропозиція не доступна для 1-місячного тарифного плану."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } вимагає щонайменше 1 виділений сервер вартістю ${ serverPricePerMonth }"
@@ -5514,6 +5532,12 @@
         "ще ${ remainingAddresses.length }",
         "ще ${ remainingAddresses.length }",
         "ще ${ remainingAddresses.length }"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "ще ${ remainingAddresses.length } адреса",
+        "ще ${ remainingAddresses.length } адреси",
+        "ще ${ remainingAddresses.length } адрес",
+        "ще ${ remainingAddresses.length } адрес"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } з ${ providerCalendars.length } календар",
@@ -5851,9 +5875,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перш ніж запитувати новий код підтвердження, перевірте теку зі спамом та перевірте, чи правильно вказано адресу ${ strong }."
       ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Перш ніж ви зможете отримувати електронну пошту на адреси власного домену в ${ MAIL_APP_NAME }, необхідно додати такі записи MX до налаштувань DNS. Зазвичай це можна зробити з панелі керування вашого реєстратора доменних імен."
-      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перш ніж ви зможете почати надсилати й отримувати електронні листи зі своїх нових адрес, необхідно створити для них ключі шифрування."
       ],
@@ -5877,6 +5898,9 @@
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Поширюючи всі подробиці про подію з цього календаря, ви погоджуєтеся надати доступ для ${ BRAND_NAME } до зашифрованої інформації цього календаря."
+      ],
+      "Cancel anytime": [
+        "Скасувати будь-коли"
       ],
       "Center": [
         "По центру"
@@ -6145,6 +6169,9 @@
       "for choosing ${ product }": [
         "за вибір ${ product }"
       ],
+      "For members of organizations using single sign-on (SAML SSO)": [
+        "Для членів організацій, що користуються єдиним входом (SAML SSO)"
+      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Пересилайте вхідні повідомлення з іншого облікового запису до своєї захищеної поштової скриньки ${ MAIL_APP_NAME }."
       ],
@@ -6190,9 +6217,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Якщо часовий пояс системи не збігається з налаштуваннями поточного часового поясу, вам буде запропоновано його оновити (не частіше ніж один раз на день)."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Якщо цей домен зараз отримує електронну пошту, виберіть вкладку ${ boldAddresses } і додайте всі активні електронні адреси перед зміною MX запису для безперебійного переходу."
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Якщо це пов'язано зі скиданням старого пароля, ви можете запобігти повторному показу повідомлення"
       ],
@@ -6217,9 +6241,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Якщо раніше ви ніколи не використовували двоетапну перевірку, ми наполегливо рекомендуємо вам ${ guideButton }."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Якщо ви встановили обидва SPF та DKIM, DMARC дозволить вам вказати, як інші сервіси електронної пошти повинні доставляти пошту для вашого домену, якщо обидві перевірки SPF та DKIM не пройшли. Це може перешкоджати спамерам представлятися вашим іменем, але також може спричиняти проблеми доставлення при неправильному налаштуванні."
-      ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Якщо ви втратите свій пароль і вам необхідно буде відновити доступ, ${ boldImperative }, щоб у вас був налаштований ${ boldAccountRecovery }."
       ],
@@ -6240,9 +6261,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Якщо ви нещодавно скинули пароль, можете скористатися способом відновлення для розблокування своїх даних"
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Якщо ви хочете зберегти наявний запис SPF, ви можете просто додати ${ spf } до нього після ${ spfValue }. Не створюйте додаткових записів SPF."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Якщо ви хочете об'єднати цей обліковий запис з іншим, НЕ видаляйте його."
@@ -6276,9 +6294,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Важливо: Впевніться, що ви зберегли коди відновлення. Інакше ви можете назавжди втратити доступ до свого облікового запису в разі втрати пристрою двоетапної перевірки."
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "ВАЖЛИВО: Деякі реєстратори не схвалюють значення CNAME, які закінчуються крапкою (попри те, що інші це вимагають). Якщо ваш реєстратор не схвалює записи CNAME, видаліть крапку в кінці кожного значення CNAME і спробуйте знову."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ fromEmail } до ${ toEmail }."
@@ -6346,9 +6361,6 @@
       "Just send them your personal referral link.": [
         "Просто надішліть їм ваше особисте реферальне посилання."
       ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Тримайте ці записи у вашому DNS стільки часу, скільки хочете використовувати DKIM."
-      ],
       "Key deletion is irreversible!": [
         "Видалення ключа незворотне!"
       ],
@@ -6387,6 +6399,9 @@
       ],
       "Link deleted": [
         "Посилання видалено"
+      ],
+      "Link expired": [
+        "Посилання протерміноване"
       ],
       "Link type": [
         "Тип посилання"
@@ -6501,6 +6516,9 @@
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Користуєтеся чужим пристроєм? Використовуйте вікно приватного перегляду, щоб увійти та завершити сеанс, коли все готово. ${ learnMore }"
+      ],
+      "Now available in beta, the desktop app lets you conveniently launch ${ MAIL_APP_NAME } right from your desktop and stay focused with no browser distractions.": [
+        "Доступний у бета-версії настільний застосунок дозволяє зручно запускати ${ MAIL_APP_NAME } просто з робочого столу і зосереджуватися без відволікань на браузер."
       ],
       "Number of dedicated servers in the organization": [
         "Кількість виділених серверів у організації"
@@ -6630,6 +6648,9 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "Зверніть увагу, що якщо ви видалите цей домен, усі пов'язані з ним адреси будуть вимкнені."
+      ],
+      "Please note that if you delete this filter ${ nameDeleted } we will stop processing all the automated actions it triggers.": [
+        "Зверніть увагу, що, якщо ви видалите цей фільтр ${ nameDeleted }, ми припинимо обробку всіх автоматизованих дій, які він запускає."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Зверніть увагу, що натискаючи кнопку Підтвердити, на вашому рахунку залишиться ${ creditsRemaining }."
@@ -6832,9 +6853,6 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Деякі з ваших доступних серверів можна використовувати лише в певних країнах через нещодавнє видалення"
       ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "У SPF вказують, кому дозволено надсилати пошту на домен. Тому ми наполегливо радимо включити ${ MAIL_APP_NAME } у свій SPF запис. Додайте такий TXT запис у ваш DNS. Зазвичай це можна зробити у панелі керування вашого реєстратора доменних імен."
-      ],
       "Step ${ step }": [
         "Крок ${ step }",
         "Крок ${ step }",
@@ -6861,6 +6879,15 @@
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Відправте депозит за вказаною адресою або скануйте QR-код. Після підтвердження ваш депозит буде врахований у вашому рахунку."
+      ],
+      "Subscription auto-renews every 12 months.": [
+        "Передплата автоматично подовжується що 12 місяців."
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "Передплата автоматично подовжується що 24 місяці."
+      ],
+      "Subscription auto-renews every month.": [
+        "Передплата автоматично подовжується щомісяця."
       ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "Передплата закінчується: повторно активуйте її до ${ byDate }, щоб зберегти переваги ${ planName }. ${ reactivateLink }"
@@ -6892,8 +6919,14 @@
       "Thank you": [
         "Дякуємо"
       ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "Дякуємо за підтримку нашої місії створити кращий інтернет, де конфіденційність і свобода стоять на першому місці."
+      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Повідомлення ${ boldDataLocked } більше не буде показано, але ви все ще можете розблокувати свої дані в ${ encryptionAndKeysLink }."
+      ],
+      "The ${ MAIL_APP_NAME } Export Tool lets you export decrypted emails from your ${ MAIL_APP_NAME } account to your device. You can then view the messages or import them into another email account or email client.": [
+        "${ MAIL_APP_NAME } Export Tool дозволяє експортувати розшифровані електронні листи з вашого облікового запису ${ MAIL_APP_NAME } на пристрій. Після цього ви можете переглянути повідомлення або імпортувати їх до іншого облікового запису чи поштового клієнта."
       ],
       "The calendar will be removed from your account.": [
         "Календар буде вилучено з вашого облікового запису."
@@ -6948,6 +6981,9 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Ці облікові дані не можна використати для входу в наші офіційні програми ${ VPN_APP_NAME }. ${ learnMore }"
+      ],
+      "They will be removed from your organization": [
+        "Їх буде вилучено з вашої організації"
       ],
       "They'll receive a free month of ${ planName }.": [
         "Вони отримають безплатно один місяць ${ planName }."
@@ -7156,6 +7192,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Передплатіть зараз, щоб отримати преміумфункції, продукти та сховище за спеціальною ціною"
       ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Покращити тарифний план до ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } або ${ PLAN_NAMES[PLANS.BUNDLE_PRO] }, щоб отримати доступ до ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Передплатіть тарифний план, щоб додати до облікового запису коротку адресу @pm.me, якою легше ділитися. Вона розшифровується як \"${ MAIL_APP_NAME } me\" або \"Private Message me\"."
       ],
@@ -7213,6 +7252,9 @@
       "Version history": [
         "Історія версій"
       ],
+      "View, download, and manage your invoices.": [
+        "Перегляд, завантаження та керування інвойсами."
+      ],
       "Visa Secure logo": [
         "Логотип Visa Secure"
       ],
@@ -7233,6 +7275,9 @@
       ],
       "We generated a strong password for you": [
         "Ми згенерували для вас надійний пароль"
+      ],
+      "We just sent you a new link.": [
+        "Ми надіслали вам нове посилання."
       ],
       "We need to authenticate your payment method with your bank.": [
         "Потрібно підтвердити вказаний спосіб оплати у вашому банку."
@@ -7369,6 +7414,9 @@
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "Ви можете увімкнути журнал авторизації, щоб бачити хто і з якої IP-адреси мав доступ до вашого облікового запису. Ми записуватимемо IP-адреси та час отримання доступу, а також невдалі спроби."
       ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Ви можете негайно розблокувати наведені вище налаштування, додавши ${ specificCountryCount } до кількості IP-адрес у вашому тарифному плані, або звернутися до нас по індивідуальні рішення."
+      ],
       "You can import one data type at a time.": [
         "Ви можете імпортувати один тип даних за один раз."
       ],
@@ -7462,6 +7510,12 @@
       "You will be redirected to ${ destination } after signing in.": [
         "Після входу ви будете перенаправлені на ${ destination }."
       ],
+      "You will lose access to Plus features on this date.": [
+        "З цієї дати ви втратите доступ до функцій Plus."
+      ],
+      "You will lose access to Plus servers and features on this date.": [
+        "З цієї дати ви втратите доступ до серверів і функцій Plus."
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Для користування ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME } потрібна адреса ${ BRAND_NAME }"
       ],
@@ -7473,6 +7527,9 @@
       ],
       "You won’t be able to recover locked data using your downloaded recovery files.": [
         "Ви не зможете відновити заблоковані дані за допомогою завантажених файлів відновлення."
+      ],
+      "You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.": [
+        "Ви не зможете відновити заблоковані дані за допомогою завантажених файлів відновлення. Це також вимкне відновлення довірених пристроїв."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Сеанс буде активним навіть після закриття браузера."
@@ -7507,6 +7564,9 @@
       "Your account recovery method is set": [
         "Ваш спосіб відновлення облікового запису налаштовано"
       ],
+      "Your account was successfully updated with this promotion": [
+        "Ваш обліковий запис успішно оновлено за цією акцією"
+      ],
       "Your account will be updated once the payment is cleared.": [
         "Ваш обліковий запис оновиться одразу після підтвердження платежу."
       ],
@@ -7540,8 +7600,14 @@
       "Your login information will not be saved after the import is completed.": [
         "Ваша реєстраційна інформація не буде збережена після завершення імпорту."
       ],
+      "Your next billing date is ${ renewalTime }.": [
+        "Наступна дата оплати – ${ renewalTime }."
+      ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "Пароль вашої організації можна надати іншим учасникам, яких ви бажаєте зробити адміністраторами. Він також може бути резервним кодом відновлення для отримання доступу до організації у випадку втрати доступу до облікового запису. Зберігайте цей пароль у надійному місці."
+      ],
+      "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
+        "Ваша організація користується єдиним входом (SSO). Натисніть Увійти, щоб продовжити роботу з постачальником SSO."
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         "Електронні листи вашої організації захищаються наскрізним шифруванням з використанням ключа організації. Цей відбиток можна використати для перевірки того, що всі адміністратори у вашому обліковому записі мають однаковий ключ."
@@ -7576,14 +7642,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "Додайте нову адресу для будь-якого користувача вашої організації."
-      ],
       "Add a new user to your organization and create an address for it.": [
         "Додайте нового користувача до вашої організації та створіть для нього адресу."
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "З міркувань безпеки нам необхідно пересвідчитися що ви є власником домену ${ domainName }. Будь ласка, додайте такий DNS TXT запис для свого домену. Зазвичай це можна зробити за допомогою контрольної панелі вашого реєстратора доменних імен."
       ]
     },
     "Info for payment methods": {
@@ -8392,9 +8452,6 @@
       "Gift code": [
         "Подарунковий код"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Це простий запис DMARC, який нічого не робить, окрім надсилання звітів."
-      ],
       "Hide password": [
         "Приховати пароль"
       ],
@@ -8610,15 +8667,6 @@
       ],
       "Phrase consists of 12 unique words in a specific order": [
         "Фраза складається з 12 унікальних слів у певному порядку"
-      ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Додайте усі 3 вказані записи CNAME. Зверніть увагу, що оновлення DNS-записів може тривати декілька годин."
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Додайте такий MX запис. Зверніть увагу, що оновлення записів DNS може тривати кілька годин."
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Додайте такий TXT запис. Зверніть увагу, що оновлення записів DNS може тривати кілька годин."
       ],
       "Please select files to upload": [
         "Оберіть файли для вивантаження"
@@ -8855,11 +8903,6 @@
     "Label for default event settings": {
       "Duration": [
         "Тривалість"
-      ]
-    },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Додайте такий TXT запис:"
       ]
     },
     "Label for new member": {
@@ -9921,6 +9964,12 @@
       ],
       "User session management": [
         "Керування сеансами користувачів"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Спільне використання сховища (до ${ n } особи)",
+        "Спільне використання сховища (до ${ n } осіб)",
+        "Спільне використання сховища (до ${ n } осіб)",
+        "Спільне використання сховища (до ${ n } осіб)"
       ]
     },
     "new_plans: feature info": {
@@ -11156,6 +11205,14 @@
         "yourdomain.com"
       ]
     },
+    "plan customizer, ips": {
+      "Should you need more than ${ maxIPs } IP, ": [
+        "Якщо потребуєте більше ніж ${ maxIPs } IP-адресу, ",
+        "Якщо потребуєте більше ніж ${ maxIPs } IP-адреси, ",
+        "Якщо потребуєте більше ніж ${ maxIPs } IP-адрес, ",
+        "Якщо потребуєте більше ніж ${ maxIPs } IP-адрес, "
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "зверніться"
@@ -11464,6 +11521,14 @@
         "Докладніше"
       ]
     },
+    "session_recovery:in_progress:info": {
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Ви можете змінити пароль за ${ gracePeriodHoursRemaining } годину",
+        "Ви можете змінити пароль за ${ gracePeriodHoursRemaining } години",
+        "Ви можете змінити пароль за ${ gracePeriodHoursRemaining } годин",
+        "Ви можете змінити пароль за ${ gracePeriodHoursRemaining } годин"
+      ]
+    },
     "session_recovery:in_progress:link": {
       "View request": [
         "Переглянути запит"
@@ -11477,6 +11542,14 @@
     "session_recovery:initiation:action": {
       "Got it": [
         "Зрозуміло"
+      ]
+    },
+    "session_recovery:initiation:title": {
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Ви зможете скинути пароль за ${ gracePeriodHoursRemaining } годину",
+        "Ви зможете скинути пароль за ${ gracePeriodHoursRemaining } години",
+        "Ви зможете скинути пароль за ${ gracePeriodHoursRemaining } годин",
+        "Ви зможете скинути пароль за ${ gracePeriodHoursRemaining } годин"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -13963,9 +14036,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Після успішної перевірки не вилучайте цей TXT запис, оскільки він потрібен для підтвердження вашої власності домену."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "Оновлення DNS може тривати цілий день."
       ]
     },
     "Weak personal key warning": {

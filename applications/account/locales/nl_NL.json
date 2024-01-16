@@ -5746,15 +5746,9 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan ook met een enkel wachtwoord gebruikt worden dat beide het inlog en mailbox wachtwoord vervangt. Om te schakelen naar een enkel wachtwoord, vul het enkele wachtwoord naar keuze in en klik op opslaan."
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } ondersteunt DKIM-ondertekening voor aangepaste domeinen. Voeg het volgende CNAME record toe aan uw DNS-instellingen voor dit domein om DKIM-authenticatie te gebruiken. Dit kan meestal worden gedaan in het beheerpaneel van uw domeinnaamlijst."
-      ],
       "${ n } address": [
         "${ n } adres",
         "${ n } adressen"
-      ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } heeft geen effect op de e-mailbezorging, maar wij raden ${ quarantine } aan voor een betere beveiliging."
       ],
       "${ number } city": [
         "${ number } stad",
@@ -6109,9 +6103,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
       ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Voordat u e-mails voor uw eigen domeinnaam op ${ MAIL_APP_NAME } kan ontvangen, moet u de volgende MX-records toevoegen aan uw DNS. Dit kan u meestal doen in het beheerderspaneel van uw domeinnamenregister of hostingprovider."
-      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Voordat u e-mails kunt verzenden en ontvangen van uw nieuwe adressen, moet u versleutelingssleutels aanmaken."
       ],
@@ -6449,9 +6440,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Als de tijdzone niet overeenkomt met de huidige tijdzone, dan zal u worden gevraagd om deze bij te werken (maximaal één keer per dag)."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Als dit domein momenteel e-mails ontvangt, selecteer het tabblad ${ boldAddresses } en voeg alle actieve e-mailadressen toe voordat u het MX-record wijzigt om een soepele overgang te garanderen."
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Als dit gebeurt wegens een oude wachtwoord reset, kan u voorkomen dat dit bericht opnieuw wordt weergegeven"
       ],
@@ -6476,9 +6464,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Als u nog nooit eerder tweestapsverificatie heeft gebruikt, raden we u aan om ${ guideButton }."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Indien u zowel SPF als DKIM ingesteld hebt, geeft het DMARC-record voor andere e-maildiensten aan wat er moet gebeuren als er iets misgaat tijdens het controleren van uw SPF- en DKIM-records. Dit maakt het moeilijker voor spammers om zich voor te doen als u, maar dit kan ook afleverproblemen veroorzaken ten gevolge van een foutieve configuratie."
-      ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Als u uw wachtwoord verliest en uw account moet resetten, ${ boldImperative } dat u een ${ boldAccountRecovery } hebt."
       ],
@@ -6499,9 +6484,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Als u recent uw wachtwoord gereset heeft, kan u de data herstelmethode gebruiken om uw data te ontgrendelen"
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Als u een bestaande SPF-record wilt behouden, kunt u gewoon ${ spf } eraan toevoegen na de ${ spfValue }. Maak niet meerdere SPF-records."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Als u dit account met een ander account wilt combineren, verwijder deze dan NIET."
@@ -6533,9 +6515,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Belangrijk: Zorg ervoor dat u de herstelcodes opslaat. Anders kunt u permanent toegang tot uw account verliezen als u uw tweestapsverificatieapparaat kwijtraakt."
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "BELANGRIJK: Sommige registrars accepteren geen CNAME-waarden met een periode aan het einde (terwijl andere gebruikers dit nodig hebben). Als uw registratie uw CNAME-records niet accepteert, verwijder dan de periode aan het einde van elke CNAME-waarde en probeer het opnieuw."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ fromEmail } naar ${ toEmail }."
@@ -6600,9 +6579,6 @@
       ],
       "Just send them your personal referral link.": [
         "Stuur ze gewoon uw persoonlijke doorverwijslink."
-      ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Houd deze records in uw DNS voor zolang u DKIM wilt gebruiken."
       ],
       "Key deletion is irreversible!": [
         "Het verwijderen van een sleutel is onomkeerbaar!"
@@ -7092,9 +7068,6 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Sommige van uw beschikbare servers kunnen alleen worden gebruikt in specifieke landen door recente opheffingen"
-      ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Met SPF kan u bepalen wie uw domein mag gebruiken om e-mails te versturen. Het is raadzaam om ${ MAIL_APP_NAME } toe te voegen aan uw SPF-record. Voeg het volgende TXT-record toe aan uw DNS. Dit kunt u meestal doen in het beheerpaneel van uw domeinnaamregistrar of hostingprovider."
       ],
       "Stay tuned for future promotions.": [
         "Blijf kijken voor toekomstige promoties."
@@ -7863,14 +7836,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "Voeg een nieuw adres toe voor een gebruiker van uw organisatie."
-      ],
       "Add a new user to your organization and create an address for it.": [
         "Voeg een nieuwe gebruiker toe aan uw organisatie en maak er een adres voor aan."
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Om veiligheidsredenen moeten we controleren of u de eigenaar van ${ domainName }. Voeg het volgende TXT-record toe aan de DNS van uw domein. Dit kan meestal worden gedaan in het beheerpaneel van uw domeinnaamlijst."
       ]
     },
     "Info for payment methods": {
@@ -8687,9 +8654,6 @@
       "Gift code": [
         "Geschenkcode"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Hier is een DMARC-record dat u alleen verslagen toestuurt."
-      ],
       "Hide password": [
         "Wachtwoord verbergen"
       ],
@@ -8908,15 +8872,6 @@
       ],
       "Phrase consists of 12 unique words in a specific order": [
         "Zin bestaat uit 12 unieke woorden in een specifieke volgorde"
-      ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Voeg alle 3 van de volgende CNAME records toe. Let op, DNS records kunnen enkele uren duren om te updaten."
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Voeg alstublieft het volgende MX-record toe. Let op, het kan enkele uren duren voordat DNS-records worden bijgewerkt."
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Voeg het volgende TXT-record toe. Let op, het updaten van DNS-records kan enige tijd duren."
       ],
       "Please select files to upload": [
         "Selecteer bestanden die u wil uploaden"
@@ -9156,11 +9111,6 @@
     "Label for default event settings": {
       "Duration": [
         "Duur"
-      ]
-    },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Voeg het volgende TXT-record toe:"
       ]
     },
     "Label for new member": {
@@ -10146,7 +10096,7 @@
         "Begin met het beschermen van uw organisatie"
       ],
       "Start protecting yourself online in 2 easy steps": [
-        "Begin jezelf online te beschermen in 2 eenvoudige stappen"
+        "Begin uzelf online te beschermen in 2 eenvoudige stappen"
       ],
       "Strict no-logs policy": [
         "Strikt geen-logboekbeleid"
@@ -13349,7 +13299,7 @@
         "Versleuteling en sleutels"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
-        "Vul uw ${ BRAND_NAME } Account gegevens in om deel te nemen aan het ${ app } Bèta programma"
+        "Vul uw ${ BRAND_NAME } account gegevens in om deel te nemen aan het ${ app } Bèta programma"
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"
@@ -14435,9 +14385,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Na een succesvolle verificatie mag u dit TXT-record niet verwijderen, omdat het nodig is om te bevestigen dat u de eigenaar van het domein blijft."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "Het kan een dag duren voordat DNS-veranderingen zijn bijgewerkt."
       ]
     },
     "Weak personal key warning": {

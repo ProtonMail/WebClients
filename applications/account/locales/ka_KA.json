@@ -240,7 +240,7 @@
         "მისამართის კოპირება"
       ],
       "Copy key to the clipboard": [
-        "დააკოპირე გასაღებები კლიპბორდში"
+        "გასაღების დაკოპირება ბუფერში"
       ],
       "Copy link": [
         "ბმულის კოპირება"
@@ -1391,7 +1391,7 @@
         "აირჩით თქვენი კიბერკვირის შეთავაზება"
       ],
       "Select your End of Year offer": [
-        "აირჩიეთ თქვენი წლის ბოლოს შეთავაზება"
+        "აირჩიეთ წლის ბოლოს შეთავაზება"
       ]
     },
     "bf2023: info": {
@@ -3131,7 +3131,7 @@
     },
     "Desktop app upsell": {
       "Access to the desktop app is limited": [
-        "კომპიუტერის აპთან წვომა შეზღუდულია"
+        "კომპიუტერის აპთან წვდომა შეზღუდულია"
       ],
       "The beta version of the ${ MAIL_APP_NAME } desktop app is currently limited to ${ BRAND_NAME } Visionary subscribers. It will be available to all users in early 2024.": [
         "${ MAIL_APP_NAME }-ის სამუშაო მაგიდის აპის ბეტა ვერსია ამჟამად ${ BRAND_NAME } Visionary გამომწერზეა შეზღუდული. ის ყველა მომხმარებლისთვის 2024-ის დასაწყისში გახდება ხელმისაწვდომი."
@@ -5817,15 +5817,9 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } ერთი პაროლითაც შეგიძლიათ, გამოიყენოთ, რომელიც ორივე, შესვლის და საფოსტო ყუთის პაროლებს შეცვლის. ერთპაროლიან რეჟიმში გადასართავად შეიყვანეთ პაროლი და შენახვას დააჭირეთ."
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME }-ს ხელით მითითებულ დომენებზე DKIM ხელმოწერების მხარდაჭერა სრულად გააჩნია. მის გამოსაყენებლად თქვენი დომენის DNS-ში შემდეგი CNAME ჩანაწერების გაკეთებაა საჭირო. ეს ძირითადად, თქვენი დომენის რეგისტრატორის საკონტროლო პანელიდანაა ხოლმე შესაძლებელი."
-      ],
       "${ n } address": [
         "${ n } მისამართი",
         "${ n } მისამართი"
-      ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none }-ს ელფოსტის მიღებაზე გავლენა არ გააჩნია, მაგრამ მეტი უსაფრთხოებისთვის გირჩევთ ${ quarantine }."
       ],
       "${ number } city": [
         "${ number } ქალაქი",
@@ -6186,9 +6180,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "შემოწმების ახალი კოდის მოთხოვნამდე შეამოწმეთ თქვენი სპამის საქაღალდე და რომ ${ strong } სწორი მისამართია."
       ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "სანამ თქვენს დომენზე ${ MAIL_APP_NAME } ელფოსტის მიღებას შეძლებთ, დომენის DNS-ში შემდეგი MX ჩანაწერების დამატებაა საჭირო. ეს, ჩვეულებრივ, რეგისტრატორის კონტროლის პანელიდან ხდება."
-      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "ახალი მისამართებით ფოსტის მიღებისა და გაგზავნის დაწყებამდე მათთვის დაშიფვრის გასაღებების შექმნაა საჭირო."
       ],
@@ -6532,9 +6523,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "თუ სისტემის დროის სარტყელი არ ემთხვევა მის მიმდინარე მნიშვნელობას, თქვენ გთხოვენ, რომ განაახლოთ ის (მაქსიმუმ, დღეში ერთხელ)."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "თუ ეს დომენი ამჟამად ელფოსტებს უკვე იღებს, დომენის რბილად გადასატანად, MX ჩანაწერის შეცვლამდე, აირჩიეთ ${ boldAddresses } ჩანართი და დაამატეთ ყველა არსებული მისამართი."
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "თუ ეს ძველი პაროლის დაბრუნების გამოა, შეგიძლიათ, თავიდან მოიშოროთ ეს შეტყობინება"
       ],
@@ -6559,9 +6547,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "თუ 2FA არასდროს გამოგიყენებიათ, დაჟინებით გირჩევთ ეწვიოთ ${ guideButton }."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "თუ გაქვთ ორივე, SPF და DKIM, DMARC საშუალებას გაძლევთ მიუთითოთ, ელფოსტის სხვა სერვისებმა როგორ უნდა მოგიტანონ ფოსტა, თუ ორივე, SPF და DKIM-ის შემოწმება შეცდომით დამთავრდა. ეს ნაბიჯი ოდნავ ამაღლებს დაცვას ჰაკერების წინააღმდეგ, მაგრამ არასწორად განხორციელების შემთხვევაში, პრობლემებიც შეუძლია გამოიწვიოს."
-      ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "თუ დაკარგავთ თქვენი ავტორიზაციის დეტალებს და გჭირდებათ, შეცვალოთ ისინი, ${ boldImperative } რომ გაქვთ ${ boldAccountRecovery }."
       ],
@@ -6582,9 +6567,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "თუ თქვენ ახლახან შეცვალეთ პაროლი, შეგიძლიათ, გამოიყენოთ მონაცემების აღდგენის ტიპი თქვენი მონაცემების განსაბლოკად"
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "იმ შემთხვევაში, თუ გნებავთ, დაიტოვოთ არსებული SPF ჩნაწერი, შეგიძლიათ, დაამატოთ ${ spf } მასში ${ spfValue }-ის შემდეგ. ერთზე მეტ SPF ჩანაწერს ნუ შექმნით."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "თუ გნებავთ ამ ანგარიშის სხვა ანგარიშთან გაერთიანება, არ წაშალოთ ის."
@@ -6616,9 +6598,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "მნიშვნელოვანია: დარწმუნდით, რომ აღდგენის კოდები საიმედოდ შეინახეთ. წინააღმდეგ შემთხვევაში თუ 2FA მოწყობილობას დაკარგავთ, თქვენს ანგარიშზე წვდომა სამუდამოდ გაგიუქმდებათ."
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "მნიშვნელოვანია: ზოგიერთ რეგისტრატორს არ შეუძლია CNAME ტიპის ისეთი ჩანაწერის დამატება, რომელიც წერტილით მთავრდება. (ზოგიერთს კი ეს აუცილებელ მოთხოვნებში აქვს). თუ თქვენს რეგისტრატორს არ მოსწონს თქვენი CNAME ჩანაწერები, სცადეთ, ბოლოში წერტილები წაუშალოთ."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "მიმდინარეობს მონაცემების ${ fromEmail }-დან ${ toEmail }-ში შემოტანა."
@@ -6683,9 +6662,6 @@
       ],
       "Just send them your personal referral link.": [
         "უბრალოდ, გაუგზავნეთ მოწვევის თქვენი პირადი ბმული."
-      ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "შეინახეთ ეს ჩანაწერები თქვენს DNS-ში მანამ, სანამ გსურთ, გამოიყენოთ DKIM."
       ],
       "Key deletion is irreversible!": [
         "გასაღების წაშლა შეუქცევადი პროცესია!"
@@ -7181,9 +7157,6 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "ზოგიერთი თქვენი გამოყოფილი სერვერი, შეიძლება, მხოლოდ, შესაბამის ქვეყნებში იყოს ხელმისაწვდომი უახლესი წაშლების გამო"
-      ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF გამოიყენება იმის მისათითებლად, ვის შეუძლია ამ დომენიდან ელფოსტის გაგზავნა. ასე რომ, ჩვენ დაჟინებით გთხოვთ, მასში${ MAIL_APP_NAME }-იც ჩასვათ. თქვენს DNS ჩანაწერებში საჭიროა შემდეგი TXT ჩანაწერის შექმნა. ეს, ჩვეულებრივ, თქვენს DNS რეგისტრატორთან ხდება."
       ],
       "Stay tuned for future promotions.": [
         "გამოგვიწერეთ ჩვენი მომავალი სარეკლამო აქციებისთვის."
@@ -7763,6 +7736,9 @@
       "You can now close this window.": [
         "ახლა შეგიძლიათ, დახუროთ ეს ფანჯარა."
       ],
+      "You can now return to the application to continue": [
+        "ახლა გასაგრძელებლად შეგიძლიათ აპლიკაციაზე დაბრუნდეთ"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "შეგიძლიათ, ჩართოთ ამ საქაღალდეში ელფოსტის ახალი შეტყობინების მოსვლის გაფრთხილება."
       ],
@@ -7961,14 +7937,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "დაამატეთ თქვენი ორგანიზაციის ნებისმიერ მომხმარებელს ახალი მისამართი."
-      ],
       "Add a new user to your organization and create an address for it.": [
         "დაამატეთ ორგანიზაციის ახალი მომხმარებელი და მისამართი."
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "უსაფრთხოებისთვის საჭიროა, შევამოწმოთ, რომ თქვენ ${ domainName }-ის მფლობელი ბრძანდებით. დაამატეთ შემდეგი DNS TXT ჩანაწერები თქვენი დომენისთვის. ეს, ჩვეულებრივ, რეგისტრატორის პანელიდან ხდება."
       ]
     },
     "Info for payment methods": {
@@ -8788,9 +8758,6 @@
       "Gift code": [
         "სასაჩუქრე კოდი"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "ეს საბაზისო DMARC ჩანაწერია, რომელიც არაფერს აკეთებს თქვენთვის ანგარიშების გზავნის გარდა."
-      ],
       "Hide password": [
         "პაროლის დამალვა"
       ],
@@ -9009,15 +8976,6 @@
       ],
       "Phrase consists of 12 unique words in a specific order": [
         "ფრაზა მითითებული მიმდევრობით დალაგებული 12 უნიკალური სიტყვისგან შედგება"
-      ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "დაამატეთ ეს 3 CNAME ჩანაწერი. გაითვალისწინეთ, რომ DNS ჩანაწერების განახლებას რამდენიმე საათი შეიძლება, დასჭირდეს."
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "დაამატეთ ეს MX ჩანაწერი. გაითვალისწინეთ, რომ DNS ჩანაწერების განახლებას რამდენიმე საათი შეიძლება დასჭირდეს."
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "დაამატეთ ეს TXT ჩანაწერი. გაითვალისწინეთ, რომ DNS ჩანაწერების განახლებას რამდენიმე საათი შეიძლება, დასჭირდეს."
       ],
       "Please select files to upload": [
         "აირჩიეთ ასატვირთი ფაილი"
@@ -9260,11 +9218,6 @@
     "Label for default event settings": {
       "Duration": [
         "ხანგრძლივობა"
-      ]
-    },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "დაამატეთ შემდეგი „TXT“ ტიპის ჩანაწერი:"
       ]
     },
     "Label for new member": {
@@ -11610,6 +11563,9 @@
       "Search for a user or address": [
         "მომხმარებლის ან მისამართის ძებნა"
       ],
+      "Search parent folder": [
+        "მშობელ საქაღალდეში ძებნა"
+      ],
       "Search users": [
         "მომხმარებლების ძებნა"
       ],
@@ -12385,6 +12341,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } & ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "ფასიანი ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
       "Premium early access": [
         "ადრეული წვდომა ახალ ფუნქციებზე"
@@ -14652,9 +14611,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "წარმატებული შემოწმების შემდეგ ნუ წაშლით ამ TXT ჩანაწერს. ის იმ ფაქტის შესამოწმებლად გამოიყენება, რომ დომენი, ჯერ კიდევ, თქვენ გეკუთვნით."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "DNS-ის ცვლილებების განახლებას 1 დღემდე შეიძლება დასჭირდეს."
       ]
     },
     "Weak personal key warning": {
