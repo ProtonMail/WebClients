@@ -313,6 +313,7 @@ const TransferManager = ({
                                 <HeaderButtons
                                     className="transfers-manager-header-buttons p-2 pr-4"
                                     entries={entries}
+                                    showDownloadLog={activeTabIndex === TransferGroup.FAILURE}
                                 />
                             )}
                         </>
