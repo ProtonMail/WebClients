@@ -2983,6 +2983,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de que puedas enviar y recibir mensajes desde tus direcciones nuevas, necesitas crear las claves de cifrado para ellas."
       ],
+      "Beta": [
+        "Beta"
+      ],
       "Billed at ${ price }": [
         "Al precio de ${ price }"
       ],
@@ -3003,6 +3006,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
+      ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Configura la autenticación SAML para tu organización mediante un proveedor de identidad (IdP). Esto habilitará SAML para toda la organización."
       ],
       "Continue with ${ freeName }": [
         "Continuar con ${ freeName }"
@@ -3195,7 +3201,7 @@
       "Get ${ upsellPlanName }": [
         "Obtener ${ upsellPlanName }"
       ],
-      "Go to your identity provider, get the the SAML metadata for ${ appName } and import it here.": [
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Ve a tu proveedor de identidad, obtén los metadatos de SAML para ${ appName } e impórtalos aquí."
       ],
       "here": [
@@ -4494,9 +4500,6 @@
       ],
       "Select your plan": [
         "Elige tu suscripción"
-      ],
-      "Single sign-on Entity ID": [
-        "ID de entidad de inicio de sesión único"
       ],
       "Single sign-on entity ID": [
         "ID de entidad de inicio de sesión único"
@@ -7580,6 +7583,9 @@
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "URL de punto final de tu proveedor de identidad (por ejemplo, https://idp.ejemplo.es/sso/saml)"
+      ],
+      "Feature in early access": [
+        "Funcionalidad en acceso anticipado"
       ],
       "Identity provider’s public key to sign authentication assertions. Get the certificate hash from your identity provider.": [
         "Clave pública del proveedor de identidad para firmar aserciones de autenticación. Obtén el hash del certificado de tu proveedor de identidad."
