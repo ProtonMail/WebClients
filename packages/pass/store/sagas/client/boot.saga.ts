@@ -1,7 +1,15 @@
-import { put, takeLeading } from 'redux-saga/effects';
+import type { AnyAction } from 'redux';
+import { put, race, take, takeLeading } from 'redux-saga/effects';
 
 import { isPassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
-import { bootFailure, bootIntent, bootSuccess, stopEventPolling, syncLocalSettings } from '@proton/pass/store/actions';
+import {
+    bootFailure,
+    bootIntent,
+    bootSuccess,
+    stateDestroy,
+    stopEventPolling,
+    syncLocalSettings,
+} from '@proton/pass/store/actions';
 import { SyncType, synchronize } from '@proton/pass/store/sagas/client/sync';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import { logger } from '@proton/pass/utils/logger';
@@ -34,5 +42,12 @@ function* bootWorker(options: RootSagaOptions) {
 }
 
 export default function* watcher(options: RootSagaOptions) {
-    yield takeLeading(bootIntent.match, bootWorker, options);
+    yield takeLeading(bootIntent.match, function* () {
+        const { cancel } = (yield race({
+            start: bootWorker(options),
+            cancel: take(stateDestroy.match),
+        })) as { cancel?: AnyAction };
+
+        if (cancel) logger.warn('[Saga::Boot] cancelled because of state destruction');
+    });
 }
