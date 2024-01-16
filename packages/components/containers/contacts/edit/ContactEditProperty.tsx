@@ -92,8 +92,8 @@ const ContactEditProperty = (
         <div className="flex flex-nowrap shrink-0" data-contact-property-id={vCardProperty.uid}>
             {sortable ? (
                 <OrderableHandle key="icon">
-                    <div className="cursor-row-resize mr-2 flex shrink-0 mb-4">
-                        <Icon name="text-align-justify" className="mt-3 " />
+                    <div className="cursor-row-resize mr-2 flex shrink-0 mb-4 mt-0.5">
+                        <Icon name="text-align-justify" className="mt-2" />
                     </div>
                 </OrderableHandle>
             ) : (
