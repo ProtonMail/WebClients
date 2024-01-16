@@ -7,11 +7,10 @@ import {
     DefaultQuickSettings,
     QuickSettingsButton,
     QuickSettingsButtonSection,
-    QuickSettingsMain,
-    QuickSettingsSection,
     QuickSettingsSectionRow,
 } from '@proton/components/components/drawer/views/quickSettings';
 import DrawerAllSettingsView from '@proton/components/components/drawer/views/quickSettings/DrawerAllSettingsView';
+import { DrawerAppScrollContainer, DrawerAppSection } from '@proton/components/components/drawer/views/shared';
 import { KeyTransparencyDetailsModal } from '@proton/components/components/keyTransparency';
 import { MailShortcutsModal, useKeyTransparencyContext } from '@proton/components/containers';
 import ShortcutsToggle from '@proton/components/containers/general/ShortcutsToggle';
@@ -159,10 +158,10 @@ const MailQuickSettings = () => {
     }, [showKT, keyTransparencyNotification]);
 
     return (
-        <QuickSettingsMain>
+        <DrawerAppScrollContainer>
             <DrawerAllSettingsView />
 
-            <QuickSettingsSection>
+            <DrawerAppSection>
                 <QuickSettingsSectionRow
                     // translator: As in Mailbox layout
                     label={c('Label').t`Layout`}
@@ -270,9 +269,9 @@ const MailQuickSettings = () => {
                         </SelectTwo>
                     }
                 />
-            </QuickSettingsSection>
+            </DrawerAppSection>
 
-            <QuickSettingsSection>
+            <DrawerAppSection>
                 <QuickSettingsSectionRow
                     label={c('Label').t`Keyboard shortcuts`}
                     labelInfo={
@@ -289,7 +288,7 @@ const MailQuickSettings = () => {
                         />
                     }
                 />
-            </QuickSettingsSection>
+            </DrawerAppSection>
 
             <DefaultQuickSettings inAppReminders={mailReminders} />
 
@@ -336,7 +335,7 @@ const MailQuickSettings = () => {
             <MailShortcutsModal {...mailShortcutsProps} />
             <KeyTransparencyDetailsModal {...keyTransparencyDetailsModalProps} />
             <OnboardingChecklistModal {...onboardingChecklistProps} />
-        </QuickSettingsMain>
+        </DrawerAppScrollContainer>
     );
 };
 

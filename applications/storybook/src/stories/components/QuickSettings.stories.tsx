@@ -2,18 +2,18 @@ import { useState } from 'react';
 
 import { Button } from '@proton/atoms/Button';
 import { Info, Option, SelectTwo, Toggle } from '@proton/components/components';
+import { QuickSettingsSectionRow } from '@proton/components/components/drawer/views/quickSettings';
 import {
-    QuickSettingsMain,
-    QuickSettingsSection,
-    QuickSettingsSectionHeadline,
-    QuickSettingsSectionRow,
-} from '@proton/components/components/drawer/views/quickSettings';
+    DrawerAppHeadline,
+    DrawerAppScrollContainer,
+    DrawerAppSection,
+} from '@proton/components/components/drawer/views/shared';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './QuickSettings.mdx';
 
 export default {
-    component: QuickSettingsMain,
+    component: DrawerAppScrollContainer,
     title: getTitle(__filename, false),
     parameters: {
         docs: {
@@ -31,8 +31,8 @@ export const Basic = () => {
 
     return (
         <div className="quickSettings py-2" style={{ width: '280px', 'min-height': '400px' }}>
-            <QuickSettingsMain>
-                <QuickSettingsSection>
+            <DrawerAppScrollContainer>
+                <DrawerAppSection>
                     <QuickSettingsSectionRow
                         label="Select"
                         action={
@@ -47,8 +47,8 @@ export const Basic = () => {
                             </SelectTwo>
                         }
                     />
-                </QuickSettingsSection>
-                <QuickSettingsSection>
+                </DrawerAppSection>
+                <DrawerAppSection>
                     <QuickSettingsSectionRow
                         label="Toggle"
                         labelInfo={<Info title="Optional info tooltip" />}
@@ -62,9 +62,9 @@ export const Basic = () => {
                             />
                         }
                     />
-                </QuickSettingsSection>
-                <QuickSettingsSection>
-                    <QuickSettingsSectionHeadline>Optional Headline</QuickSettingsSectionHeadline>
+                </DrawerAppSection>
+                <DrawerAppSection>
+                    <DrawerAppHeadline>Optional Headline</DrawerAppHeadline>
                     <QuickSettingsSectionRow
                         label="Layout"
                         action={
@@ -107,12 +107,12 @@ export const Basic = () => {
                             />
                         }
                     />
-                </QuickSettingsSection>
+                </DrawerAppSection>
 
                 <Button onClick={() => {}} className="shrink-0 text-sm mx-auto" shape="ghost" color="norm">
                     Action
                 </Button>
-            </QuickSettingsMain>
+            </DrawerAppScrollContainer>
         </div>
     );
 };
