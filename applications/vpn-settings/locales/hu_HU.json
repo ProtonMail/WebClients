@@ -2403,7 +2403,7 @@
       ],
       "${ remainingAddresses.length } more address": [
         "${ remainingAddresses.length } további cím",
-        "${ remainingAddresses.length } több cím"
+        "${ remainingAddresses.length } további cím"
       ],
       "${ storage } storage": [
         "${ storage } tárhely"
@@ -2702,7 +2702,7 @@
         "Ha úgy gondolja ez tévedés, vegye fel velük a kapcsolatot ${ contactLink }."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Ha lemond, ${ planTitle } előfizetése nem újul meg, amikor lejár a következő napon: ${ expiryDate }."
+        "Ha lemondja, ${ planTitle } előfizetése nem újul meg, amikor lejár a következő napon: ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."

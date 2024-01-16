@@ -713,10 +713,10 @@
       "Not saved": [
         "No guardado"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -9097,6 +9097,12 @@
       "(active)": [
         "(activo)"
       ],
+      "A filter name is required": [
+        "El nombre del filtro es requerido"
+      ],
+      "A filter with this name already exists": [
+        "Ya existe un filtro con este nombre"
+      ],
       "Account suspended": [
         "Cuenta suspendida"
       ],
@@ -9315,6 +9321,9 @@
       ],
       "Feedback": [
         "Comentarios"
+      ],
+      "Filter name cannot contain only spaces": [
+        "El nombre del filtro no puede contener solo espacios"
       ],
       "Filter on...": [
         "Filtrar por..."
@@ -9622,6 +9631,12 @@
       ],
       "Subject missing": [
         "Falta el asunto"
+      ],
+      "This field cannot be empty": [
+        "Este campo no puede estar vacío"
+      ],
+      "This field cannot contain only spaces": [
+        "Este campo no puede contener solo espacios"
       ],
       "To": [
         "Para"

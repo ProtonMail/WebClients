@@ -448,7 +448,7 @@
         "Памылка аўтэнтыфікацыі"
       ],
       "Authentication failed. Confirm your ${ BRAND_NAME } password in order to proceed with the export": [
-        "Збой аўтэнтыфікацыі. Пацвердзіце пароль ${ BRAND_NAME }, каб працягнуць экспартаванне"
+        "Збой аўтэнтыфікацыі. Пацвердзіце ваш пароль ${ BRAND_NAME }, каб працягнуць экспартаванне"
       ],
       "Auto-lock could not be activated": [
         "Не атрымалася актываваць аўтаблакіроўку"
@@ -1025,6 +1025,9 @@
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-код паспяхова зарэгістраваны. Вы можаце выкарыстоўваць яго, каб разблакіраваць ${ PASS_APP_NAME }"
       ],
+      "Pinning item...": [
+        "Замацаванне элемента..."
+      ],
       "Please confirm your ${ BRAND_NAME } password in order to export your ${ PASS_APP_NAME } data": [
         "Пацвердзіце пароль ${ BRAND_NAME } для таго, каб экспартаваць даныя ${ PASS_APP_NAME }"
       ],
@@ -1138,6 +1141,9 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Разблакіруйце яго з дапамогай PIN, каб атрымаць доступ да налад"
+      ],
+      "Unpinning item...": [
+        "Адмацаванне элемента..."
       ],
       "Update login": [
         "Абнавіць запіс уваходу"
@@ -1715,6 +1721,9 @@
       "Full Name": [
         "Поўнае імя"
       ],
+      "MM/YY": [
+        "ММ/ГГ"
+      ],
       "Other": [
         "Іншае"
       ],
@@ -1951,6 +1960,9 @@
       "Empty note": [
         "Пустая нататка"
       ],
+      "Expiration Date is not in the format MM/YY": [
+        "Дата завяршэння тэрміну не адпавядае фармату ММ/ГГ"
+      ],
       "Invalid alias prefix": [
         "Памылковы прэфікс псеўданіма"
       ],
@@ -2059,8 +2071,8 @@
       "Your session could not be resumed.": [
         "Не атрымалася ўзнавіць ваш сеанс."
       ],
-      "Your session is inactive. Please log back in.": [
-        "Ваш сеанс неактыўны. Увайдзіце ў сістэму паўторна."
+      "Your session is inactive.": [
+        "Ваш сеанс неактыўны."
       ],
       "Your session was locked.": [
         "Ваш сеанс быў заблакіраваны."

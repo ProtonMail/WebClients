@@ -5833,15 +5833,9 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan også bli brukt med et enkelt passord som erstatter både innloggings- og postbokspassordet. For å bytte til enkel passordmodus, angi det enkelt passordet du ønsker å bruke og klikk Lagre."
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } støtter DKIM-signering for egendefinerte domener. For å bruke DKIM-autentisering, vennligst legg til følgende CNAME-post i DNS-innstillingene for dette domenet. Dette kan vanligvis gjøres i kontrollpanelet for domenenavnet ditt."
-      ],
       "${ n } address": [
         "${ n } adresse",
         "${ n } adresser"
-      ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } har ingen effekt på levering av e-post, men vi anbefaler ${ quarantine } for bedre sikkerhet."
       ],
       "${ number } city": [
         "${ number } by",
@@ -6202,11 +6196,11 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du ber om en ny verifiseringskode, sjekk søppelpostmappen din og sjekk at ${ strong } er riktig adresse."
       ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Før du kan motta e-post for dine egendefinerte domeneadresser hos ${ MAIL_APP_NAME }, må du legge til de følgende MX-postene i DNS. Dette kan vanligvis gjøres i kontrollpanelet for domenenavnet ditt."
-      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Før du kan starte med å sende og motta e-poster fra dine nye adresser må du opprette krypteringsnøkler for dem."
+      ],
+      "Beta": [
+        "Testversjon"
       ],
       "Billed at ${ price }": [
         "Faktureres til ${ price }"
@@ -6548,9 +6542,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Hvis systemets tidssone ikke samsvarer med gjeldende tidssoneinnstilling, blir du bedt om å oppdatere den (på det meste en gang per dag)."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Hvis domenet på nåværende tidspunkt mottar e-poster, velg ${ boldAddresses }-fanen og legg til alle aktive e-postadresser før endring av MX-posten for å sikre en myk overgang."
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Hvis dette skyldes en gammel tilbakestilling av passord, kan du hindre meldingen fra å vises igjen"
       ],
@@ -6575,9 +6566,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Hvis du aldri har brukt tofaktorautentisering før, anbefaler vi deg sterkt ${ guideButton }."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Hvis du har angitt både SPF og DKIM, vil DMARC tillate deg å spesifisere hvordan andre e-posttjenester skal levere e-post for domenet ditt hvis både SPF- og DKIM-kontroller har mislyktes. Dette kan gjøre det vanskeligere for utsendere av søppelpost som utgir seg for å være deg, men kan også forårsake leveringsproblemer hvis det ikke gjøres riktig."
-      ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Hvis du mister passordet og behøver å tilbakestille kontoen din, ${ boldImperative } at du har en ${ boldAccountRecovery } på plass."
       ],
@@ -6598,9 +6586,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Hvis du nylig tilbakestilte passordet ditt, kan du bruke en datagjenopprettingsmetode til å låse opp dine data."
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Hvis du vil beholde en eksisterende SPF-post, kan du bare legge til ${ spf } i den etter ${ spfValue }. Ikke opprett flere SPF-poster."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Hvis du ønker å kombinere denne kontoen med en annen, IKKE slett den."
@@ -6632,9 +6617,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Viktig: Vennligst sørg for å lagre gjenopprettingskodene. Ellers kan du permanent miste tilgang til kontoen din hvis du mister tofaktorautentiseringsenheten."
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "VIKTIG: Noen registre godtar ikke CNAME-verdier med et punktum på slutten (mens andre krever det). Dersom registeret ikke godtar CNAME-postene dine, vennligst slett punktum på slutten av hver CNAME-verdi og prøv igjen."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
@@ -6699,9 +6681,6 @@
       ],
       "Just send them your personal referral link.": [
         "Bare send dem din personlige vervekobling."
-      ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Behold disse postene i DNS så lenge du vil bruke DKIM."
       ],
       "Key deletion is irreversible!": [
         "Nøkkelsletting er irreversibel!"
@@ -7203,9 +7182,6 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Noen av de tilgjengelige tjenerne dine kan bare brukes i bestemte land på grunn av nylige fjerninger."
-      ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF blir brukt for å spesifisere hvem som har tillatelse til å sende e-post for domenet, så vi anbefaler sterkt å inkludere ${ MAIL_APP_NAME } i SPF-posten. Vennligst legg til følgende TXT-post inn i din DNS. Dette kan vanligvis gjøres i kontrollpanelet for domenenavnet ditt."
       ],
       "Stay tuned for future promotions.": [
         "Følg med for fremtidige kampanjer."
@@ -7986,14 +7962,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "Legge til en ny adresse for hvilken som helst bruker i organisasjonen."
-      ],
       "Add a new user to your organization and create an address for it.": [
         "Legg til en ny bruker til din organisasjon og opprett en adresse for den."
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Av sikkerhetsmessige årsaker trenger vi å verifisere at du er eieren av ${ domainName }. Vennligst legg til følgende DNS TXT-post til domenet. Dette kan vanligvis gjøres i kontrollpanelet til domenenavnregistratoren."
       ]
     },
     "Info for payment methods": {
@@ -8813,9 +8783,6 @@
       "Gift code": [
         "Gavekode"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Her er en enkel DMARC-post som ikke gjør noe annent enn å sende deg rapporter på e-post."
-      ],
       "Hide password": [
         "Skjul passord"
       ],
@@ -9034,15 +9001,6 @@
       ],
       "Phrase consists of 12 unique words in a specific order": [
         "Frase består av 12 unike ord i en spesifikk rekkefølge"
-      ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Vennligst legg til de 3 følgende CNAME-postene. Merk, det kan ta flere timer å oppdatere DNS-poster."
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Vennligst legg til følgende MX-post. Merk, det kan ta flere timer å oppdatere DNS-poster."
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Vennligst legg til følgende TXT-post. Merk, det kan ta flere timer å oppdatere DNS-poster."
       ],
       "Please select files to upload": [
         "Vennligst velg filer for opplasting"
@@ -9288,11 +9246,6 @@
     "Label for default event settings": {
       "Duration": [
         "Varighet"
-      ]
-    },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Vennligst legg til følgende TXT-post:"
       ]
     },
     "Label for new member": {
@@ -13225,6 +13178,9 @@
       "4. Select a server to connect to": [
         "4. Velg en tjener å koble til"
       ],
+      "A filter with this name already exists": [
+        "Et filter med dette navnet eksisterer allerede"
+      ],
       "Accessibility": [
         "Tilgjengelighet"
       ],
@@ -14058,6 +14014,12 @@
       "Theme": [
         "Tema"
       ],
+      "This field cannot be empty": [
+        "Feltet kan ikke stå tomt"
+      ],
+      "This field cannot contain only spaces": [
+        "Feltet kan ikke kun innholde mellomrom"
+      ],
       "Time zone": [
         "Tidssone"
       ],
@@ -14306,6 +14268,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Aktivering av avanserte logger registrerer IP-adressen for hver hendelse i sikkerhetsloggen."
+      ],
+      "Feature in early access": [
+        "Funksjon i tidlig tilgang"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail kategoriserer automatisk noen e-poster som 'sosialt' eller 'kampanjer'. Du kan velge hvor du vil importere disse e-postene til."
@@ -14756,9 +14721,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Etter vellykket verifisering, ikke fjern denne TXT-posten da den trengs for å bekrefte at du fortsetter å eie domenet."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "Det kan ta opptil en dag før DNS-endringer oppdateres."
       ]
     },
     "Weak personal key warning": {

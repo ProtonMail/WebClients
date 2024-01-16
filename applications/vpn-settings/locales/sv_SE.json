@@ -3002,6 +3002,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
       ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Konfigurera SAML-autentisering för din organisation genom en identitetsleverantör (IdP). Detta kommer att aktivera SAML för hela organisationen."
+      ],
       "Continue with ${ freeName }": [
         "Fortsätt med ${ freeName }"
       ],
@@ -3190,7 +3193,7 @@
       "Get ${ upsellPlanName }": [
         "Skaffa ${ upsellPlanName }"
       ],
-      "Go to your identity provider, get the the SAML metadata for ${ appName } and import it here.": [
+      "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå till din identitetsleverantör, hämta SAML-metadata för ${ appName } och importera den här."
       ],
       "here": [
@@ -5426,6 +5429,9 @@
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "På arbetsdagar får du support från ${ BRAND_NAME } kundsupportteam inom 24 timmar efter förfrågan"
       ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "En VPN-anslutning tillåter en enhet att ansluta till ${ VPN_APP_NAME } när som helst. Till exempel, för att ansluta en telefon och en bärbar dator till ${ VPN_APP_NAME } samtidigt, behöver du två VPN-anslutningar."
+      ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Möjlighet att visa icke-privata användares inkorgar som användaren själv gör, inklusive fullständiga meddelanden och kontaktuppgifter"
       ],
@@ -7575,6 +7581,9 @@
       ],
       "Endpoint URL from identity provider (e.g. https://idp.example.com/sso/saml)": [
         "Ändpunkts-URL från identitetsleverantör (t.ex. https://idp.example.com/sso/saml)"
+      ],
+      "Feature in early access": [
+        "Funktion i förhandstillgång"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Om du har köpt en presentkod eller fått en från vårt supportteam kan du ange den här."

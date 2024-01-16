@@ -1294,6 +1294,11 @@
         "Odkaz"
       ]
     },
+    "Contact image": {
+      "Contact image": [
+        "Obrázok kontaktu"
+      ]
+    },
     "Contact type label": {
       "Fax": [
         "Fax"
@@ -4404,6 +4409,9 @@
       "You can import one data type at a time.": [
         "Importovať môžete vždy jeden typ údajov."
       ],
+      "You can now return to the application to continue": [
+        "Teraz sa môžete vrátiť do aplikácie a pokračovať"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Môžete zapnúť notifikácie, aby ste dostali upozornenie, keď vám do tohto priečinka prídu nové správy."
       ],
@@ -4517,7 +4525,7 @@
         "${ selectedFoldersCount } vybratá zložka",
         "${ selectedFoldersCount } vybraté zložky",
         "${ selectedFoldersCount } vybratých zložiek",
-        "${ selectedFoldersCount } vybratých zložiek"
+        "${ selectedFoldersCount } vybratých priečinkov"
       ],
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } vybratý štítok",
@@ -4993,6 +5001,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "Od: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Komu: ${ to }"
       ]
     },
     "Landmarks": {
@@ -6329,10 +6340,13 @@
         "Najvyššia rýchlosť VPN"
       ],
       "Premium ${ appName1 }": [
-        "Prémiový ${ appName1 }"
+        "Prémiové funkcie ${ appName1 }"
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
-        "Prémiový ${ appName1 } a ${ appName2 }"
+        "Prémiové funkcie ${ appName1 } a ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Prémiové funkcie ${ appName1 }, ${ appName2 } a ${ appName3 }"
       ],
       "Premium early access": [
         "Prémiový predbežný prístup"
@@ -7234,6 +7248,9 @@
       ],
       "Hide side panel": [
         "Skryť bočný panel"
+      ],
+      "Load image": [
+        "Načítať obrázok"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "Vyberte PGP schému, ktorá sa použije pri podpisovaní, alebo šifrovanie užívateľa. Nezabudnite, že PGP/Inline vyžaduje správy vo formáte obyčajného textu"

@@ -4968,6 +4968,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "Lähettäjä: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Vastaanottaja: ${ to }"
       ]
     },
     "Landmarks": {
@@ -5351,6 +5354,10 @@
         "Siirrä ${ n } tiedosto",
         "Siirrä ${ n } tiedostoa"
       ],
+      "Move ${ n } folder": [
+        "Siirrä ${ n } kansio",
+        "Siirrä ${ n } kansiota"
+      ],
       "Move ${ n } item": [
         "Siirrä ${ n } kohde",
         "Siirrä ${ n } kohdetta"
@@ -5568,6 +5575,9 @@
       ],
       "Search for name or email": [
         "Etsi nimeä tai sähköpostiosoitetta"
+      ],
+      "Search parent folder": [
+        "Etsi yläkansiosta"
       ],
       "Select": [
         "Valitse"
@@ -5915,6 +5925,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } ja ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium ${ appName1 }, ${ appName2 } ja ${ appName3 }"
       ],
       "Premium early access": [
         "Premium-ennakkokäyttö"
