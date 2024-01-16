@@ -35,11 +35,11 @@ export const Header: FC<Props> = ({ hamburger }) => {
     return (
         <>
             <CoreHeader className="border-bottom h-auto p-2">
-                {hamburger}
                 {(() => {
                     if (matchSettings) {
                         return (
                             <div className="flex items-center gap-2">
+                                {hamburger}
                                 <Button
                                     className="shrink-0"
                                     size="small"
@@ -62,6 +62,7 @@ export const Header: FC<Props> = ({ hamburger }) => {
 
                     return (
                         <div className="flex items-center gap-x-2 w-full">
+                            {hamburger}
                             <SearchBar initial={filters.search} />
                             <ItemQuickActions onCreate={onCreate} />
                             <Spotlight />
