@@ -60,6 +60,7 @@ export const isMaybeTorLessThan11 = () => {
     return isMaybeTor && !!ua.browser.major && +ua.browser.major < 91;
 };
 export const isChrome = () => ua.browser.name === 'Chrome';
+export const isChromiumBased = () => 'chrome' in window;
 export const isJSDom = () => navigator.userAgent.includes('jsdom');
 export const isMac = () => ua.os.name === 'Mac OS';
 export const isWindows = () => ua.os.name === 'Windows';

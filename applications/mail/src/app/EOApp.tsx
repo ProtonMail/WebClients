@@ -23,7 +23,6 @@ import { initSafariFontFixClassnames } from '@proton/shared/lib/helpers/initSafa
 
 import * as config from './config';
 import EOContainer from './containers/eo/EOContainer';
-import { registerMailToProtocolHandler } from './helpers/url';
 import locales from './locales';
 import { setupStore } from './store/eo/eoStore';
 
@@ -31,10 +30,6 @@ const boostrapApp = () => {
     const api = createApi({ config });
     const authentication = bootstrap.createAuthentication({ initialAuth: false });
     bootstrap.init({ config, locales, authentication });
-    // If the browser is Chromium based, register automatically the mailto protocol handler
-    if ('chrome' in window) {
-        registerMailToProtocolHandler();
-    }
     initSafariFontFixClassnames();
     const cache = createCache();
 
