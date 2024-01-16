@@ -16,7 +16,7 @@
 
 	.dropdown-content ul {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(var(--apps-dropdown-repeat), 1fr);
 		gap: var(--space-6);
 		justify-items: center;
 	}

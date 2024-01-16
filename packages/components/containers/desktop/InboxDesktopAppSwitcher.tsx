@@ -1,8 +1,8 @@
-import { Button } from '@proton/atoms/Button';
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import { ButtonLike } from '@proton/atoms/Button';
+import { AppLink, Icon } from '@proton/components/components';
+import { useConfig } from '@proton/components/hooks';
+import { APPS, APP_NAMES, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
-
-import { AppLink, Icon, useConfig } from '../..';
 
 interface Props {
     appToLinkTo?: APP_NAMES;
@@ -15,20 +15,38 @@ const InboxDesktopAppSwitcher = ({ appToLinkTo }: Props) => {
 
     return (
         <div className="flex flex-col gap-2">
-            <AppLink to="/" toApp={APPS.PROTONMAIL} target="_blank">
-                <Button shape="ghost" size="small" className={clsx(isAppMail && 'bg-weak')}>
-                    <Icon name="inbox" className={clsx(isAppMail ? 'color-norm' : 'color-weak')} strokeWidth={2} />
-                </Button>
-            </AppLink>
-            <AppLink to="/" toApp={APPS.PROTONCALENDAR} target="_blank">
-                <Button shape="ghost" size="small" className={clsx(isAppCalendar && 'bg-weak')}>
-                    <Icon
-                        name="calendar-grid"
-                        className={clsx(isAppCalendar ? 'color-norm' : 'color-weak')}
-                        strokeWidth={2}
-                    />
-                </Button>
-            </AppLink>
+            <ButtonLike
+                as={AppLink}
+                to="/"
+                toApp={APPS.PROTONMAIL}
+                target="_blank"
+                shape={isAppMail ? 'solid' : 'ghost'}
+                size="small"
+                aria-current={isAppMail}
+            >
+                <Icon
+                    name="inbox"
+                    alt={MAIL_APP_NAME}
+                    className={clsx(isAppMail ? 'color-norm' : 'color-weak')}
+                    strokeWidth={2}
+                />
+            </ButtonLike>
+            <ButtonLike
+                as={AppLink}
+                to="/"
+                toApp={APPS.PROTONCALENDAR}
+                target="_blank"
+                shape={isAppCalendar ? 'solid' : 'ghost'}
+                size="small"
+                aria-current={isAppCalendar}
+            >
+                <Icon
+                    name="calendar-grid"
+                    alt={CALENDAR_APP_NAME}
+                    className={clsx(isAppCalendar ? 'color-norm' : 'color-weak')}
+                    strokeWidth={2}
+                />
+            </ButtonLike>
         </div>
     );
 };
