@@ -36,6 +36,8 @@ interface EncryptedSearchParams {
     onPage: (page: number) => void;
 }
 
+const MAX_TOTAL_RESULTS = 10000;
+
 export const useApplyEncryptedSearch = ({
     conversationMode,
     labelID,
@@ -73,7 +75,7 @@ export const useApplyEncryptedSearch = ({
                 success = await encryptedSearch(setEncryptedSearchResults);
             }
             if (!success) {
-                if (page >= 200) {
+                if (page >= MAX_TOTAL_RESULTS / pageSize) {
                     // This block will most likely be called two times
                     // Fortunately notification system use a de-duplication system
                     createNotification({
