@@ -2760,6 +2760,11 @@
         "Kutsuttua osoitetta ei ole olemassa"
       ]
     },
+    "Error changing answer of a calendar invitation": {
+      "Error changing answer": [
+        "Virhe vastauksen muuttamisessa"
+      ]
+    },
     "Error importing calendar": {
       "An error occurred reading your file ${ formattedFilename }. Incorrect file format.": [
         "Virhe luettaessa tiedostoa \"${ formattedFilename }\". Väärä tiedostomuoto."
@@ -3828,6 +3833,9 @@
       "Discard changes?": [
         "Hylätäänkö muutokset?"
       ],
+      "Display events for calendar ${ Name }": [
+        "Näytä kalenterin ${ Name } tapahtumat"
+      ],
       "Drop file here to upload": [
         "Pudota ladattava tiedosto tähän"
       ],
@@ -4847,6 +4855,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "Lähettäjä: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Vastaanottaja: ${ to }"
       ]
     },
     "Landmarks": {
@@ -5665,6 +5676,9 @@
       "Search for name or email": [
         "Etsi nimeä tai sähköpostiosoitetta"
       ],
+      "Search parent folder": [
+        "Etsi yläkansiosta"
+      ],
       "Select": [
         "Valitse"
       ],
@@ -6073,6 +6087,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } ja ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium ${ appName1 }, ${ appName2 } ja ${ appName3 }"
       ],
       "Premium early access": [
         "Premium-ennakkokäyttö"
