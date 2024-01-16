@@ -5833,15 +5833,9 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME }ia voidaan käyttää myös yhdellä salasanalla, joka korvaa sekä kirjautumisen, että postilaatikon salasanan. Vaihda yhden salasanan tilaan syöttämällä haluamasi yksittäinen salasana ja painamalla Tallenna."
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } tukee DKIM-allekirjoitusta omilla verkkotunnuksilla. Jos haluat käyttää DKIM-todennusta, lisää seuraava CNAME-tietue tämän verkkotunnuksen DNS-asetuksiin. Yleensä tämä onnistuu verkkotunnuksen toimittajan hallintapaneelista."
-      ],
       "${ n } address": [
         "${ n } osoite",
         "${ n } osoitetta"
-      ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } ei vaikuta viestien toimitukseen, mutta suosittelemme ${ quarantine } parempaa suojausta varten."
       ],
       "${ number } city": [
         "${ number } kaupungissa",
@@ -6202,9 +6196,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Ennen kuin pyydät uuden vahvistuskoodin, tarkista roskapostikansiosi ja varmista, että osoite ${ strong } on oikea."
       ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Ennen kuin voit vastaanottaa viestejä oman verkkotunnuksesi osoitteista ${ MAIL_APP_NAME }iin, on sinun lisättävä seuraavat MX-tietueet verkkotunnuksesi DNS-asetuksiin. Yleensä tämä onnistuu verkkotunnuksen toimittajan hallintapaneelista."
-      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Ennen kuin voit aloittaa sähköpostien lähettämisen ja vastaanottamisen uusista osoitteistasi, sinun on luotava niille salausavaimet."
       ],
@@ -6548,9 +6539,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Jos järjestelmän aikavyöhyke ei vastaa nykyistä aikavyöhykeasetustasi, sinua pyydetään päivittämään se (enintään kerran päivässä)."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Jos tätä verkkotunnusta käytetään tällä hetkellä viestien vastaanottoon, valitse ${ boldAddresses }-välilehti ja varmista sulava siirtymä lisäämällä sinne kaikki aktiiviset sähköpostiosoitteet ennen MX-tietueiden vaihtoa."
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Jos tämä johtuu vanhasta salasanan nollauksesta, voit estää viestiä näkymästä uudelleen"
       ],
@@ -6575,9 +6563,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Jos et ole koskaan käyttänyt kaksivaiheista todennusta, suosittelemme vahvasti, että ${ guideButton }."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Mikäli olet määrittänyt sekä SPF-, että DKIM-todennuksen, voidaan DMARC-asetuksilla määrittää miten muiden sähköpostipalveluiden tulee toimittaa viestit verkkotunnukseesi SPF- ja DKIM-todennuksen epäonnistuessa. Tämä voi tehdä identiteettisi varastamisesta roskapostittajille vaikeampaa, mutta se voi aiheuttaa myös toimitusongelmia, jos määrityksiä ei ole tehty oikein."
-      ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Jos kadotat salasanasi ja joudut palauttamaan tilisi, ${ boldImperative } määrittää ${ boldAccountRecovery }."
       ],
@@ -6598,9 +6583,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Jos olet hiljattain nollannut salasanasi, voit avata tietosi tilisi tietojenpalautustapojen avulla"
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Jos haluat säilyttää olemassa olevan SPF-tietueen, lisää siihen ${ spfValue } jälkeen ${ spf }. Älä luo useita SPF-tietueita."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Jos haluat yhdistää tämän tilin toiseen tiliin, ÄLÄ poista sitä."
@@ -6632,9 +6614,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Tärkeää: Varmista, että tallennat palautuskoodisi. Muutoin saatat menettää pääsyn tilillesi pysyvästi, jos menetät todennuslaitteesi."
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "TÄRKEÄÄ: Jotkin toimittajat eivät hyväksy pisteeseen päättyviä CNAME-arvoja (toiset puolestaan edellyttävät sitä). Jos toimittajasi ei hyväksy CNAME-tietueitasi, poista piste jokaisen CNAME-arvon lopusta ja kokeile uudelleen."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Tietojasi tuodaan tililtä ${ fromEmail } tilille ${ toEmail }."
@@ -6699,9 +6678,6 @@
       ],
       "Just send them your personal referral link.": [
         "Lähetä heille vain henkilökohtainen suosituslinkkisi."
-      ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Säilytä tietueet DNS-asetuksissasi niin kauan kun haluat käyttää DKIM-todennusta."
       ],
       "Key deletion is irreversible!": [
         "Avaimen poisto on peruuttamatonta!"
@@ -7200,9 +7176,6 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Osaa palvelimistasi voidaan hiljattaisten poistojen vuoksi käyttää vain tietyissä maissa"
-      ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF-todennuksella määritetään tahot, jotka voivat lähettää viestejä verkkotunnuksellasi, joten suosittelemme vahvasti, että lisäät ${ MAIL_APP_NAME }in SFP-tietueeseesi. Lisää seuraavat TXT-tietueet verkkotunnuksesi DNS-asetuksiin. Yleensä tämä onnistuu verkkotunnuksen toimittajan hallintapaneelista."
       ],
       "Stay tuned for future promotions.": [
         "Pysy kuulolla tulevista kampanjoista."
@@ -7983,14 +7956,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "Lisää uusi osoite mille tahansa organisaatiosi käyttäjälle."
-      ],
       "Add a new user to your organization and create an address for it.": [
         "Lisää organisaatioosi uusi käyttäjä ja luo hänelle uusi osoite."
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Turvallisuussyistä meidän on vahvistettava, että olet verkkotunnuksen ${ domainName } omistaja. Lisää seuraavat DBS TXT -tietueet verkkotunnuksellesi. Yleensä tämä onnistuu verkkotunnuksen toimittajan hallintapaneelista."
       ]
     },
     "Info for payment methods": {
@@ -8810,9 +8777,6 @@
       "Gift code": [
         "Lahjakoodi"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Tässä on yksinkertainen DMARC-tietue, joka ei tee mitään muuta kuin lähettää sinulle raportteja sähköpostitse."
-      ],
       "Hide password": [
         "Piilota salasana"
       ],
@@ -9031,15 +8995,6 @@
       ],
       "Phrase consists of 12 unique words in a specific order": [
         "Lauseke sisältää 12 ainutlaatuista sanaa tietyssä järjestyksessä"
-      ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Lisää seuraavat kolme CNAME-tietuetta. Huomioi, että DNS-tietueiden päivittyminen voi kestää useita tunteja."
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Lisää seuraava MX-tietue. Huomioi, että DNS-tietueiden päivittyminen voi kestää useita tunteja."
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Lisää seuraava TXT-tietue. Huomioi, että DNS-tietueiden päivittyminen voi kestää useita tunteja."
       ],
       "Please select files to upload": [
         "Valitse ladattavat tiedostot"
@@ -9284,11 +9239,6 @@
         "Kesto"
       ]
     },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Lisää seuraava TXT-tietue:"
-      ]
-    },
     "Label for new member": {
       "Admin": [
         "Ylläpitäjä"
@@ -9413,6 +9363,9 @@
     "Label; import email": {
       "From: ${ from }": [
         "Lähettäjä: ${ from }"
+      ],
+      "To: ${ to }": [
+        "Vastaanottaja: ${ to }"
       ]
     },
     "Limit of calendars reached": {
@@ -11639,6 +11592,9 @@
       "Search for a user or address": [
         "Etsi käyttäjää tai osoitetta"
       ],
+      "Search parent folder": [
+        "Etsi yläkansiosta"
+      ],
       "Search users": [
         "Etsi käyttäjiä"
       ],
@@ -12414,6 +12370,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } ja ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "Premium ${ appName1 }, ${ appName2 } ja ${ appName3 }"
       ],
       "Premium early access": [
         "Premium-ennakkokäyttö"
@@ -14688,9 +14647,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Älä poista tätä TXT-tietuetta onnistuneen vahvistuksen jälkeen, koska sen avulla varmistetaan verkkotunnuksen kuuluvan sinulle myös jatkossa."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "DNS-muutosten päivittyminen saattaa kestää jopa vuorokauden."
       ]
     },
     "Weak personal key warning": {

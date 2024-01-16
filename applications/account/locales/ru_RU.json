@@ -5866,17 +5866,11 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } можно также использовать с одним паролем, который заменяет и логин, и пароль почтового ящика. Чтобы перейти в режим единого пароля, введите единый пароль, который вы хотите использовать, и нажмите кнопку Сохранить."
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } поддерживает подпись DKIM для своих доменов. Чтобы использовать аутентификацию DKIM, пожалуйста, добавьте следующую запись CNAME в настройки DNS для этого домена. Обычно это можно сделать в панели управления вашего регистратора доменов."
-      ],
       "${ n } address": [
         "${ n } адрес",
         "${ n } адреса",
         "${ n } адресов",
         "${ n } адресов"
-      ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } не влияет на доставку электронной почты, но мы рекомендуем ${ quarantine } для большей безопасности."
       ],
       "${ number } city": [
         "${ number } город",
@@ -6277,9 +6271,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
       ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Прежде чем вы сможете получать электронную почту для своих доменных адресов на ${ MAIL_APP_NAME }, вам необходимо добавить следующие записи MX в ваш DNS. Обычно это можно сделать в панели управления вашего регистратора доменов."
-      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Перед тем, как начать отправлять и принимать электронную почту, для ваших новых адресов необходимо создать ключи шифрования."
       ],
@@ -6631,9 +6622,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Если системный часовой пояс не соответствует текущему предпочтению часового пояса, вам будет предложено обновить его (не чаще одного раза в день)."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Если этот домен в настоящее время получает письма, выберите вкладку ${ boldAddresses } и добавьте все активные адреса электронной почты перед изменением записи MX для обеспечения плавного перехода."
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Если это произошло из-за сброса старого пароля, вы можете отключить повторное отображение сообщения"
       ],
@@ -6658,9 +6646,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Если вы никогда не использовали двухфакторную аутентификацию, мы настоятельно рекомендуем вам ${ guideButton }."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Если у вас настроены и SPF, и DKIM, DMARC позволит вам указать, как другие почтовые службы должны доставлять почту для вашего домена, если проверки и SPF, и DKIM были неудачны. Это может осложнить спамерам возможность притворяться вами, но также может вызвать проблемы доставки в случае ненадлежащей настройки."
-      ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "В случае утери пароля и необходимости восстановления аккаунта ${ boldImperative }, что у вас есть ${ boldAccountRecovery }."
       ],
@@ -6681,9 +6666,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Если вы недавно сбросили пароль, для разблокировки данных можно воспользоваться методом восстановления данных"
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Если вы хотите оставить существующую запись SPF, то вы можете просто добавить ${ spf } к ней после ${ spfValue }. Не создавайте несколько записей SPF."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Если вы хотите объединить эту учетную запись с другой, НЕ удаляйте ее."
@@ -6717,9 +6699,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Важно: пожалуйста, убедитесь, что вы сохранили коды восстановления. Иначе вы можете навсегда потерять доступ к своей учётной записи, если потеряете своё устройство для двухфакторной аутентификации."
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "ВАЖНО: Некоторые регистраторы не принимают значения CNAME с точкой в конце (в то время как другие ее требуют). Если регистратор не принимает ваши записи CNAME, удалите точку в конце каждого значения CNAME и повторите попытку."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Импорт данных из ${ fromEmail } в ${ toEmail }."
@@ -6786,9 +6765,6 @@
       ],
       "Just send them your personal referral link.": [
         "Просто отправьте им свою личную реферальную ссылку."
-      ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Сохраняйте эти записи в вашем DNS на все время использования DKIM."
       ],
       "Key deletion is irreversible!": [
         "Удаление ключа необратимо!"
@@ -7290,9 +7266,6 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Некоторые из доступных вам серверов могут быть использованы только в определенных странах из-за недавних удалений"
-      ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF используется для указания того, кому разрешено отправлять электронную почту для домена, поэтому мы настоятельно рекомендуем включить ${ MAIL_APP_NAME } в вашу запись SPF. Пожалуйста, добавьте следующую запись TXT в ваш DNS. Обычно это можно сделать в панели управления вашего регистратора доменов."
       ],
       "Stay tuned for future promotions.": [
         "Следите за будущими акциями."
@@ -8092,14 +8065,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "Добавить новый адрес для любого пользователя в вашей организации."
-      ],
       "Add a new user to your organization and create an address for it.": [
         "Добавить нового пользователя в вашу организацию и создать для него адрес."
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Из соображений безопасности мы должны убедиться, что вы являетесь владельцем ${ domainName }. Добавьте следующую запись DNS TXT в свой домен. Обычно это можно сделать в панели управления доменом у вашего регистратора."
       ]
     },
     "Info for payment methods": {
@@ -8931,9 +8898,6 @@
       "Gift code": [
         "Подарочный код"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Это – базовая DMARC-запись, которая не делает ничего, кроме отправки вам отчётов."
-      ],
       "Hide password": [
         "Скрыть пароль"
       ],
@@ -9152,15 +9116,6 @@
       ],
       "Phrase consists of 12 unique words in a specific order": [
         "Фраза состоит из 12 уникальных слов, расположенных в определенном порядке"
-      ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Пожалуйста, добавьте все три указанные записи CNAME. Заметьте, что обновление записей DNS может занять несколько часов."
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Добавьте эту запись MX. Заметьте, что обновление записей DNS может занять несколько часов."
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Пожалуйста, добавьте эту запись TXT. Обратите внимание, что обновление записей DNS может занять несколько часов."
       ],
       "Please select files to upload": [
         "Пожалуйста, выберите файлы для загрузки"
@@ -9403,11 +9358,6 @@
     "Label for default event settings": {
       "Duration": [
         "Продолжительность"
-      ]
-    },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Добавьте, пожалуйста, следующую запись TXT:"
       ]
     },
     "Label for new member": {
@@ -14889,9 +14839,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "После успешной проверки не удаляйте эту TXT-запись, так как она необходима для подтверждения того, что вы остаётесь владельцем домена."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "Обновление настроек DNS может занять до 1 дня."
       ]
     },
     "Weak personal key warning": {

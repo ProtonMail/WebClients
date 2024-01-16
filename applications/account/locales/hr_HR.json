@@ -3668,9 +3668,6 @@
         "${ n } adrese",
         "${ n } adresa"
       ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } nema utjecaja na slanje e-pošte, ali preporučujemo ${ quarantine } za veću sigurnost."
-      ],
       "${ number } city": [
         "${ number } grad",
         "${ number } grada",
@@ -3975,9 +3972,6 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Ako je drugi administrator promijenio ovu lozinku, morat ćete ih pitati za novu lozinku organizacije."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Ako ova domena trenutno prima e-poštu, odaberite karticu ${ boldAddresses } i dodajte sve aktivne adrese e-pošte prije promjene MX zapisa kako biste osigurali nesmetan prijelaz."
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ako imate poteškoća s otvaranjem računa, zatražite pozivnicu i odgovorit ćemo vam u roku jednog radnog dana."
       ],
@@ -3996,17 +3990,11 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Ukoliko prije niste upotrebljavali dvofaktorsku autentikaciju, preporučujemo da ${ guideButton }."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Ako ste postavili SPF i DKIM, DMARC vam omogućuje da odredite kako bi drugi pružatelji usluge e-pošte trebali dostaviti e-poštu za vašu domenu, ako SPF i DKIM provjere nisu uspjele. Ovo može otežati pošiljateljima neželjenih poruka koji se pretvaraju da ste vi, ali može uzrokovati i probleme s isporukom ako se ne provede ispravno."
-      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Ako nastavite s snižavanjem statusa, izgubit ćete pristup plaćenim ${ MAIL_APP_NAME } i ${ VPN_APP_NAME } značajkama."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
         "Ako nastavite s snižavanjem statusa, izgubiti će te pristup plaćenim značajkama ${ MAIL_APP_NAME }-a, uključujući dodatni prostor za pohranu i filtre."
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Ako želite zadržati postojeći SPF zapis, možete jednostavno dodati ${ spf } u njega nakon ${ spfValue }. Ne stvarajte više SPF zapisa."
       ],
       "Image URL": [
         "URL slike"
@@ -4022,9 +4010,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Važno: Molimo spremite kodove za oporavak. U suprotnom možete trajno izgubiti pristup računu ako izgubite svoj uređaj za dvofaktorsku autentikaciju."
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "VAŽNO: Neki registri ne prihvaćaju CNAME vrijednosti s točkom na kraju (dok drugi to zahtijevaju). Ako vaš registar ne prihvaća vaše CNAME zapise, izbrišite točku na kraju svake CNAME vrijednosti i pokušajte ponovo."
       ],
       "Inherited from parent folder": [
         "Nasljedno iz roditeljske mape"
@@ -4055,9 +4040,6 @@
       ],
       "Internet connection restored.": [
         "Uspostavljena je internetska veza."
-      ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Čuvajte ove zapise u svom DNS-u onoliko dugo koliko želite koristiti DKIM."
       ],
       "Label all imported messages as": [
         "Označi sve uvezene poruke kao"
@@ -4523,14 +4505,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "Dodajte novu adresu za bilo kojeg korisnika vaše organizacije."
-      ],
       "Add a new user to your organization and create an address for it.": [
         "Dodajte novog korisnika u svoju organizaciju i stvorite adresu za njega."
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Iz sigurnosnih razloga moramo potvrditi da ste vlasnik ${ domainName } domene. Dodajte sljedeći DNS TXT zapis za svoju domenu. To se obično može obaviti na upravljačkoj ploči registrara domene."
       ]
     },
     "Info for payment methods": {
@@ -5177,9 +5153,6 @@
       "Gift code": [
         "Darovni kôd"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Ovo je osnovni DMARC zapis koji ne radi ništa osim slanja izvješća vama putem e-pošte."
-      ],
       "Hide password": [
         "Sakrij lozinku"
       ],
@@ -5351,15 +5324,6 @@
       "Phrase": [
         "Fraza"
       ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Dodajte sva tri CNAME zapisa. Napomena, ažuriranje DNS zapisa može trajati nekoliko sati."
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Dodajte sljedeći MX zapis. Napomena, ažuriranje DNS zapisa može trajati nekoliko sati."
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Dodajte sljedeći TXT zapis. Napomena, ažuriranje DNS zapisa može trajati nekoliko sati."
-      ],
       "Please select files to upload": [
         "Odaberi datoteke za učitavanje"
       ],
@@ -5521,11 +5485,6 @@
     "Label for default event settings": {
       "Duration": [
         "Trajanje"
-      ]
-    },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Dodajte sljedeći TXT zapis:"
       ]
     },
     "Label for new member": {
@@ -8367,9 +8326,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Nakon uspješne provjere, ne uklanjajte ovaj TXT zapis jer je potreban za potvrdu da i dalje posjedujete domenu."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "Može potrajati do jedan dan da se DNS promjene ažuriraju."
       ]
     },
     "Weekly recurring event, frequency": {
