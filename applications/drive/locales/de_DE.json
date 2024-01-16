@@ -3309,6 +3309,14 @@
         "${ groupCounts } Gruppe gefunden",
         "${ groupCounts } Gruppen gefunden"
       ],
+      "${ nbFile } encrypted file": [
+        "${ nbFile } verschlüsselte Datei",
+        "${ nbFile } verschlüsselte Dateien"
+      ],
+      "${ nbFile } encrypted file...": [
+        "${ nbFile } verschlüsselte Datei...",
+        "${ nbFile } verschlüsselte Dateien..."
+      ],
       "${ pausedCount } paused": [
         "${ pausedCount } pausiert",
         "${ pausedCount } pausiert"
@@ -3381,6 +3389,9 @@
       "All (${ totalFoldersCount } label)": [
         "Alle (${ totalFoldersCount } Kategorie)",
         "Alle (${ totalFoldersCount } Kategorien)"
+      ],
+      "All encrypted files": [
+        "Alle verschlüsselten Dateien"
       ],
       "All your changes will be lost.": [
         "Alle deine Änderungen gehen dabei verloren."
@@ -3583,6 +3594,9 @@
       "Downloading": [
         "Wird heruntergeladen"
       ],
+      "Downloading all encrypted files": [
+        "Lade alle verschlüsselten Dateien herunter"
+      ],
       "Drop file here to upload": [
         "Ziehe Dateien hierher, um sie hochzuladen"
       ],
@@ -3749,6 +3763,9 @@
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Deine Daten werden von ${ fromEmail } nach ${ toEmail } importiert."
+      ],
+      "In the meantime, sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "Erstelle in der Zwischenzeit dein eigenes ${ DRIVE_APP_NAME }-Konto, um deine Daten mit Ende-zu-Ende-Verschlüsselung zu schützen und sie sicher zu teilen."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "${ esProgress } von ${ totalProgressToShow } Elementen wurden indiziert"
@@ -4028,11 +4045,24 @@
       "Restoring Photos... Please keep the tab open": [
         "Fotos werden wiederhergestellt... bitte behalte die Registerkarte offen."
       ],
+      "Retry now": [
+        "Jetzt erneut versuchen"
+      ],
       "Search cannot be enabled in this browser": [
         "Die Suche kann in diesem Browser nicht aktiviert werden"
       ],
       "Search Enabled": [
         "Suche aktiviert"
+      ],
+      "Securely downloaded ${ nbFile } file": [
+        "${ nbFile } Datei sicher heruntergeladen.",
+        "${ nbFile } Dateien sicher heruntergeladen."
+      ],
+      "Securely downloaded all encrypted files": [
+        "Alle verschlüsselten Dateien wurden sicher heruntergeladen."
+      ],
+      "Securely downloaded all files": [
+        "Alle Dateien wurden sicher heruntergeladen."
       ],
       "Select a folder to move to.": [
         "Wähle ein Zielverzeichnis für das Verschieben aus."
@@ -4075,6 +4105,9 @@
       ],
       "Shared link not found": [
         "Geteilten Link nicht gefunden"
+      ],
+      "Sign-up for your own ${ DRIVE_APP_NAME } account and protected your data with end-to-end encryption and share it securely.": [
+        "Erstelle dein eigenes ${ DRIVE_APP_NAME }-Konto, um deine Daten mit Ende-zu-Ende-Verschlüsselung zu schützen und sie sicher zu teilen."
       ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Die Signatur kann aufgrund eines Netzwerkfehlers nicht validiert werden, bitte versuche es später erneut."
@@ -4147,6 +4180,9 @@
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Die Datei wurde möglicherweise gelöscht, verschoben oder nicht mehr verfügbar gemacht. Versuche den Eigentümer der Datei zu kontaktieren."
+      ],
+      "This item already exists in your library": [
+        "Dieses Element existiert bereits in deiner Bibliothek."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Dieser Link führt zu einer Website, die möglicherweise versucht, deine Informationen wie Passwörter und Kreditkartendaten zu stehlen."
@@ -4399,6 +4435,9 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Deine Daten sind bereit für den Import von ${ importedEmailAddressStrong } in dein ${ BRAND_NAME }-Konto."
       ],
+      "Your download is in progress": [
+        "Dein Download läuft gerade"
+      ],
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
@@ -4637,6 +4676,9 @@
       ],
       "Download anyway": [
         "Trotzdem herunterladen"
+      ],
+      "Downloading": [
+        "Wird heruntergeladen"
       ],
       "Downloading ${ percentageValue }%": [
         "${ percentageValue }% heruntergeladen"

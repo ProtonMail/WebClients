@@ -5817,15 +5817,9 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan også benyttes med én enkelt adgangskode, der erstatter både log ind- og postkasseadgangskoden. Skift til enkeltadgangskodetilstand ved at angive den ønskede enkelte adgangskode, og tryk Gem."
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } understøtter DKIM signatur for brugerdomæner. For at anvende DKIM autentificering, tilføj følgende CNAME optegnelse i dine DNS indstillinger for domæne. Det gøres normalt via kontrolpanelet hos din domæneudbyder."
-      ],
       "${ n } address": [
         "${ n } adresse",
         "${ n } adresser"
-      ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } har ingen effekt på levering af e-mail, men vi anbefaler ${ quarantine } for bedre sikkerhed."
       ],
       "${ number } city": [
         "${ number } by",
@@ -6186,9 +6180,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
       ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Inden du kan modtage e-mails til dine brugerdomæneadresser i ${ MAIL_APP_NAME }, skal du tilføje følgende MX-poster til din DNS. Dette kan typisk gøres via et webkontrolpanel hos din domæneudbyder."
-      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Inden du kan begynde at sende og modtage e-mails fra dine nye adresser, skal du oprette krypteringsnøgler til dem."
       ],
@@ -6532,9 +6523,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Hvis systemets tidszone ikke matcher den aktuelle tidszonepræference, vil du blive bedt om at opdatere den (højst én gang om dagen)."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Hvis dette domæne i øjeblikket modtager e-mails, vælg fanen ${ boldAddresses } og tilføj alle aktive e-mailadresser, før du ændrer MX-posten for at sikre en jævn overgang."
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Hvis dette skyldes en gammel nulstilling af adgangskoden, kan du forhindre, at meddelelsen vises igen"
       ],
@@ -6559,9 +6547,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Hvis du aldrig tidligere har benyttet to-faktor-godkendelse, anbefaler vi dig stærkt at ${ guideButton }."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Har du indstillet både SPF og DKIM, giver DMARC dig mulighed for at specificere, hvordan andre e-mail-tjenester skal levere e-mail til dit domæne, hvis både SPF- og DKIM-tjeks er fejlet. Dette kan gøre det sværere for spammere at foregive at være dig, men kan også forårsage leveringsproblemer, hvis det ikke er korrekt udført."
-      ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Hvis du mister din adgangskode og har brug for at nulstille din konto, ${ boldImperative } at du har en ${ boldAccountRecovery } indstillet."
       ],
@@ -6582,9 +6567,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Hvis du for nylig har nulstillet din adgangskode, kan du bruge en datagendannelsesmetode til at låse dine data op"
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Hvis du ønsker at beholde en existerende SPF optegnelse, så tilføj ${ spf } efter ${ spfValue }. Skab ikke mere end en SPF optegnelse."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Slet IKKE denne konto, hvis du ønsker at kombinere den med en anden."
@@ -6616,9 +6598,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Vigtigt: Sørg for at du har gemt gendannelseskoderne. Ellers risikerer du at miste adgangen til din konto permanent, hvis du mister din 2FA-enhed."
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "VIGTIGT: Nogle registratorer accepterer ikke CNAME værdier med et punktum i slutningen (mens andre kræver\n det). Hvis din registrator ikke accepterer dine CNAME-registreringer, slet venligst punktummet i slutningen af\n hver CNAME-værdi og prøv igen."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Importerer dine data fra ${ fromEmail } til ${ toEmail }."
@@ -6683,9 +6662,6 @@
       ],
       "Just send them your personal referral link.": [
         "Du skal blot sende dem dit personlige henvisningslink."
-      ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Behold disse poster i din DNS, så længe du ønsker at bruge DKIM."
       ],
       "Key deletion is irreversible!": [
         "Sletning af nøgle er uigenkaldelig!"
@@ -7181,9 +7157,6 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Nogle af dine tilgængelige servere kan kun bruges i specifikke lande på grund af nylige fjernelser"
-      ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF benyttes til at angive, hvem der må sende e-mail fra domænet, så det anbefales kraftigt at inkludere ${ MAIL_APP_NAME } i din SPF-post. Tilføj følgende TXT-post i din DNS. Dette kan typisk gøres i webkontrolpanelet hos din domæneudbyder."
       ],
       "Stay tuned for future promotions.": [
         "Hold øje med fremtidige kampagner."
@@ -7961,14 +7934,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "Tilføj en ny adresse for enhver bruger af din organisation."
-      ],
       "Add a new user to your organization and create an address for it.": [
         "Tilføj en ny bruger til din organisation og opret en adresse til den."
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Af sikkerhedsmæssige årsager skal vi verificere, at du er ejer af ${ domainName }. Tilføj følgende DNS TXT-post til dit domæne. Det kan du typisk gøre via kontrolpanelet hos din domænenavnsregistrator."
       ]
     },
     "Info for payment methods": {
@@ -8788,9 +8755,6 @@
       "Gift code": [
         "Gavekode"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Her er en grundlæggende DMARC-post, der ikke gør andet end at e-maile dig rapporter."
-      ],
       "Hide password": [
         "Skjul adgangskode"
       ],
@@ -9009,15 +8973,6 @@
       ],
       "Phrase consists of 12 unique words in a specific order": [
         "Sætning består af 12 unikke ord i en bestemt rækkefølge"
-      ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Tilføj følgende 3 CNAME-poster. Bemærk, at DNS-poster kan tage flere timer om at opdatere."
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Tilføj følgende MX-post. Bemærk, at DNS-poster kan tage flere timer om at opdatere."
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Tilføj følgende TXT-post. Bemærk at DNS-poster kan tage flere timer at opdatere."
       ],
       "Please select files to upload": [
         "Vælg filer til upload"
@@ -9260,11 +9215,6 @@
     "Label for default event settings": {
       "Duration": [
         "Varighed"
-      ]
-    },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Tilføj følgende TXT-post:"
       ]
     },
     "Label for new member": {
@@ -14646,9 +14596,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Efter vellykket verifikation skal du ikke fjerne denne TXT-post, da den er nødvendig for at bekræfte, at du fortsætter med at eje domænet."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "DNS-ændringer kan tage op til én dag at effektuere."
       ]
     },
     "Weak personal key warning": {

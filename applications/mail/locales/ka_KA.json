@@ -713,10 +713,10 @@
       "Not saved": [
         "არაა შენახული"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -2136,6 +2136,11 @@
         "URL"
       ]
     },
+    "Contact image": {
+      "Contact image": [
+        "კონტაქტის გამოსახულება"
+      ]
+    },
     "Contact type label": {
       "Fax": [
         "ფაქსი"
@@ -3297,6 +3302,10 @@
       ],
       "Choose a date in the future.": [
         "თარიღი მომავალში უნდა იყოს."
+      ],
+      "Choose a date within the next ${ n } day.": [
+        "აირჩიეთ თარიღი შემდეგი ${ n } დღის განმავლობაში.",
+        "აირჩიეთ თარიღი შემდეგი ${ n } დღის განმავლობაში."
       ],
       "Condition incomplete": [
         "არასრული პირობა"
@@ -4833,6 +4842,46 @@
         "${ currentProgress } ${ totalProgress }-დან",
         "${ currentProgress } ${ totalProgress }-დან"
       ],
+      "${ elementsCount } conversation will be labelled as:": [
+        "${ elementsCount } საუბარს დაესმება ჭდე:",
+        "${ elementsCount } საუბარს დაესმება ჭდე:"
+      ],
+      "${ elementsCount } conversation will be marked as read.": [
+        "${ elementsCount } საუბარი მოინიშნება, როგორც წაკითხული.",
+        "${ elementsCount } საუბარი მოინიშნება, როგორც წაკითხული."
+      ],
+      "${ elementsCount } conversation will be marked as unread.": [
+        "${ elementsCount } საუბარი მოინიშნება, როგორც წაუკითხავი.",
+        "${ elementsCount } საუბარი მოინიშნება, როგორც წაუკითხავი."
+      ],
+      "${ elementsCount } conversation will be moved": [
+        "გადატანილი იქნება ${ elementsCount } საუბარი",
+        "გადატანილი იქნება ${ elementsCount } საუბარი"
+      ],
+      "${ elementsCount } conversation will be unlabelled from:": [
+        "${ elementsCount } საუბარს მოეხსნება დაესმება ჭდე:",
+        "${ elementsCount } საუბარს მოეხსნება დაესმება ჭდე:"
+      ],
+      "${ elementsCount } message will be labelled as:": [
+        "${ elementsCount } შეტყობინება მოინიშნება, როგორც:",
+        "${ elementsCount } შეტყობინება მოინიშნება, როგორც:"
+      ],
+      "${ elementsCount } message will be marked as read.": [
+        "${ elementsCount } შეტყობინება მოინიშნება, როგორც წაკითხული.",
+        "${ elementsCount } შეტყობინება მოინიშნება, როგორც წაკითხული."
+      ],
+      "${ elementsCount } message will be marked as unread.": [
+        "${ elementsCount } შეტყობინება მოინიშნება, როგორც წაუკითხავი.",
+        "${ elementsCount } შეტყობინება მოინიშნება, როგორც წაუკითხავი."
+      ],
+      "${ elementsCount } message will be moved": [
+        "წაიშლება ${ elementsCount } შეტყობინება",
+        "წაიშლება ${ elementsCount } შეტყობინება"
+      ],
+      "${ elementsCount } message will be unlabelled from:": [
+        "${ elementsCount } შეტყობინებას მოეხსნება ჭდე საქაღალდიდან:",
+        "${ elementsCount } შეტყობინებას მოეხსნება ჭდე საქაღალდიდან:"
+      ],
       "${ embeddedAttachmentsCount } embedded image": [
         "${ embeddedAttachmentsCount } ჩადგმული გამოსახულება",
         "${ embeddedAttachmentsCount } ჩადგმული გამოსახულება"
@@ -4997,8 +5046,17 @@
       "and": [
         "და"
       ],
+      "Any scheduled or snoozed messages will be cancelled.": [
+        "ყველა დაგეგმილი ან დადუმებული შეტყობინება გაუქმდება."
+      ],
       "Any subfolders will also be deleted. However, emails stored in this folder ${ nameDeleted } will not be deleted and can be found in All Mail folder.": [
         "წაშლება ასევე ყველა ქვესაქაღალდეც. მაგრამ ელფოსტა, რომელიც დამახსოვრებულია საქაღალდეში ${ nameDeleted }, არ წაიშლება და შეგიძლიათ, ყველა ელფოსტის საქაღალდეში იპოვოთ."
+      ],
+      "Applying actions to conversations": [
+        "ქმედებების გადატარება საუბრებზე"
+      ],
+      "Applying actions to messages": [
+        "ქმედებების გადატარება შეტყობინებებზე"
       ],
       "Are you sure you want to delete all messages in this folder?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ ამ საქაღალდეში ყველა შეტყობინების წაშლა?"
@@ -5441,6 +5499,9 @@
       "Merged": [
         "შერწყმული"
       ],
+      "Message actions in progress. This may take a while.": [
+        "მიმდინარეობს შეტყობინების ქმედებები. ამას კარგა ხანი შეიძლება, დასჭირდეს."
+      ],
       "Message download status:": [
         "შეტყობინების გადმოწერის სტატუსი:"
       ],
@@ -5679,6 +5740,10 @@
       "Select a service provider to start": [
         "დასაწყებად აირჩიეთ მომსახურების მომწოდებელი"
       ],
+      "Select all ${ elementsCount } in ${ location }": [
+        "${ location }-ში ყველა ${ elementsCount }-ის მონიშვნა",
+        "${ location }-ში ყველა ${ elementsCount }-ის მონიშვნა"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "აირჩიეთ მითითებულ მისამართზე ელფოსტის გაგზავნისას გამოყენებული ფორმატი."
       ],
@@ -5910,6 +5975,9 @@
       "This sender's public key has not been trusted yet.": [
         "გამოგზავნის საჯარო გასაღები ჯერ სანდო არაა."
       ],
+      "to ${ destinationElement } folder.": [
+        "საქაღალდეში ${ destinationElement }."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "სპამისაგან თავდასაცავად გთხოვთ, დაამტკიცოთ, რომ ადამიანი ხართ."
       ],
@@ -6099,6 +6167,9 @@
       "You can import one data type at a time.": [
         "ერთ ცდაზე მონაცემების, მხოლოდ, ერთი ტიპის შემოტანა შეგიძლიათ."
       ],
+      "You can now return to the application to continue": [
+        "ახლა გასაგრძელებლად შეგიძლიათ აპლიკაციაზე დაბრუნდეთ"
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "შეგიძლიათ, ჩართოთ ამ საქაღალდეში ელფოსტის ახალი შეტყობინების მოსვლის გაფრთხილება."
       ],
@@ -6160,6 +6231,22 @@
       "You selected **${ count } message** with this label": [
         "მონიშნული გაქვთ ამ ჭდის მატარებელი **${ count } შეტყობინება **",
         "მონიშნული გაქვთ ამ ჭდის მატარებელი **${ count } შეტყობინება **"
+      ],
+      "You selected **${ elementsCount } conversation** in ${ location }": [
+        "მონიშნეთ **${ elementsCount } საუბარი** ${ location }-ში",
+        "მონიშნეთ **${ elementsCount } საუბარი** ${ location }-ში"
+      ],
+      "You selected **${ elementsCount } conversation**.": [
+        "მონიშნეთ **${ elementsCount } საუბარი**.",
+        "მონიშნეთ **${ elementsCount } საუბარი**."
+      ],
+      "You selected **${ elementsCount } message** in ${ location }": [
+        "მონიშნეთ **${ elementsCount } შეტყობინება** ${ location }-ში",
+        "მონიშნეთ **${ elementsCount } შეტყობინება** ${ location }-ში"
+      ],
+      "You selected **${ elementsCount } message**.": [
+        "მონიშნეთ **${ elementsCount } შეტყობინება**.",
+        "მონიშნეთ **${ elementsCount } შეტყობინება**."
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "თქვენ დაწერეთ \"${ attachmentsFoundKeyword }\", მაგრამ ფაილი არ მიგიმაგრებიათ. მაინც გააგზავნით შეტყობინებას?"
@@ -7824,6 +7911,9 @@
       "Search name, email or group": [
         "სახელის, ელფოსტის ან ჯგუფის მოძებნა"
       ],
+      "Search parent folder": [
+        "მშობელ საქაღალდეში ძებნა"
+      ],
       "Select": [
         "აირჩიეთ"
       ],
@@ -8398,6 +8488,9 @@
       ],
       "Premium ${ appName1 } & ${ appName2 }": [
         "Premium ${ appName1 } & ${ appName2 }"
+      ],
+      "Premium ${ appName1 } & ${ appName2 } & ${ appName3 }": [
+        "ფასიანი ${ appName1 } & ${ appName2 } & ${ appName3 }"
       ],
       "Premium early access": [
         "ადრეული წვდომა ახალ ფუნქციებზე"
@@ -8991,6 +9084,12 @@
       "Account suspended": [
         "ანგარიში შეჩერებულია"
       ],
+      "Action all conversations": [
+        "გადატარება ყველა საუბარზე"
+      ],
+      "Action all messages": [
+        "გადატარება ყველა შეტყობნებაზე"
+      ],
       "Add contact group name": [
         "დაამატეთ კონტაქტის ჯგუფის სახელი"
       ],
@@ -9265,8 +9364,20 @@
       "Mark as unread": [
         "წაუკითხავად მონიშვნა"
       ],
+      "Mark conversations as read": [
+        "საუბრების მონიშვნა წაკითხულად"
+      ],
+      "Mark conversations as unread": [
+        "საუბრების მონიშვნა წაუკითხავად"
+      ],
       "Mark email as legitimate": [
         "ელფოსტის მონიშვნა, როგორც სანდოსი"
+      ],
+      "Mark messages as read": [
+        "შეტყობინებების მონიშვნა წაკითხულად"
+      ],
+      "Mark messages as unread": [
+        "შეტყობინების მონიშვნა წაუკითხავად"
       ],
       "Merge contacts": [
         "კონტაქტების შერწყმა"
@@ -9297,6 +9408,12 @@
       ],
       "More selections": [
         "მეტი არჩევანი"
+      ],
+      "Move all conversations": [
+        "ყველა საუბრის გადატანა"
+      ],
+      "Move all messages": [
+        "ყველა შეტყობინების გადატანა"
       ],
       "Move all messages to Archive": [
         "ყველა შეტყობინების არქივში გადატანა"

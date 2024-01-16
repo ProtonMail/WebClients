@@ -3032,6 +3032,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
       ],
+      "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
+        "Configurați autentificarea SAML pentru organizația proprie printr-un furnizor de identitate (IdP). Acest lucru va activa SAML pentru întreaga organizație."
+      ],
       "Continue with ${ freeName }": [
         "Continuare cu ${ freeName }"
       ],
@@ -3224,9 +3227,6 @@
       ],
       "Get ${ upsellPlanName }": [
         "Luați ${ upsellPlanName }"
-      ],
-      "Go to your identity provider, get the the SAML metadata for ${ appName } and import it here.": [
-        "Accesați furnizorul de identitate, obțineți metadatele SAML pentru ${ appName } și importați-le aici."
       ],
       "here": [
         "aici"
@@ -4541,9 +4541,6 @@
       ],
       "Select your plan": [
         "Selectați planul"
-      ],
-      "Single sign-on Entity ID": [
-        "ID entitate SSO"
       ],
       "Single sign-on entity ID": [
         "ID entitate SSO"

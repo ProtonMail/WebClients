@@ -5794,14 +5794,8 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } juga mendukung penggunaan kata sandi tunggal yang dapat digunakan baik untuk masuk ataupun untuk mengakses kotak surat Anda. Untuk beralih ke mode kata sandi tunggal, masukkan kata sandi yang hendak Anda gunakan dan klik Simpan."
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } mendukung penandatanganan DKIM untuk domain khusus. Untuk menggunakan autentikasi DKIM, mohon tambahkan data CNAME berikut ke pengaturan DNS Anda pada domain ini. Tindakan ini pada umumnya dapat dilakukan melalui panel kontrol registrar nama domain Anda."
-      ],
       "${ n } addresses": [
         "${ n } alamat"
-      ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } tidak berpengaruh pada pengiriman surel, tetapi kami merekomendasikan ${ quarantine } untuk keamanan yang lebih baik."
       ],
       "${ number } cities": [
         "${ number } kota"
@@ -6142,11 +6136,11 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat surel yang benar."
       ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Sebelum Anda dapat menerima surel pada alamat domain khusus ${ MAIL_APP_NAME } Anda, Anda harus terlebih dahulu menambahkan data MX berikut ke DNS Anda. Hal ini pada umumnya dapat dilakukan melalui panel kontrol registrar nama domain Anda."
-      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Sebelum Anda dapat mulai mengirim dan menerima surel dari alamat baru Anda, Anda perlu membuat kunci enkripsi untuk alamat tersebut."
+      ],
+      "Beta": [
+        "Beta"
       ],
       "Billed at ${ price }": [
         "Tertagih dengan harga ${ price }"
@@ -6484,9 +6478,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Apabila zona waktu sistem tidak sesuai dengan preferensi zona waktu saat ini, Anda akan diminta untuk memperbaruinya (paling banyak sekali per hari)."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Jika domain ini saat ini menerima surel, pilih tab ${ boldAddresses } dan tambahkan semua alamat surel aktif sebelum mengubah data MX untuk memastikan kelancaran transisi."
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Apabila hal ini disebabkan oleh pengaturan ulang kata sandi yang telah lama, Anda dapat mengatur agar pesan ini tidak lagi muncul ke depannya"
       ],
@@ -6511,9 +6502,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Apabila Anda belum pernah menggunakan autentikasi dua faktor sebelumnya, kami sangat menyarankan Anda untuk ${ guideButton }."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Jika Anda telah menyetel SPF dan DKIM, DMARC memungkinkan Anda untuk menentukan bagaimana layanan surel lain harus mengirimkan surel untuk domain Anda jika pemeriksaan SPF dan DKIM gagal. Hal ini dapat mempersulit pelaku spam yang berpura-pura menjadi Anda, tetapi juga dapat menyebabkan masalah pengiriman jika tidak dilakukan dengan benar."
-      ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Apabila Anda kehilangan kata sandi Anda dan perlu untuk menyetel ulang akun, ${ boldImperative } bagi Anda untuk memiliki ${ boldAccountRecovery } yang aktif."
       ],
@@ -6534,9 +6522,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Apabila Anda baru saja mengatur ulang kata sandi Anda, Anda dapat menggunakan salah satu metode pemulihan untuk membuka kunci data Anda"
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Apabila Anda ingin mempertahankan data SPF yang telah ada, Anda hanya perlu untuk menambahkan ${ spf } setelah ${ spfValue }. Anda tidak disarankan untuk membuat lebih dari satu data SPF."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Apabila Anda ingin menggabungkan akun ini dengan akun lain, JANGAN hapus akun ini."
@@ -6567,9 +6552,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Penting: Pastikan Anda menyimpan kode pemulihan. Jika tidak, Anda dapat kehilangan akses ke akun Anda secara permanen jika kehilangan perangkat autentikasi dua faktor Anda."
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "PENTING: Beberapa registrar tidak menerima nilai CNAME dengan titik di belakang (sementara yang lain menerima). Jika registrar Anda tidak menerima data CNAME Anda, mohon hapus titik di belakang pada setiap nilai CNAME dan coba lagi."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Mengimpor data Anda dari ${ fromEmail } ke ${ toEmail }."
@@ -6633,9 +6615,6 @@
       ],
       "Just send them your personal referral link.": [
         "Kirimkan saja tautan rujukan Anda kepada mereka."
-      ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Simpan rekaman data ini di DNS Anda selama Anda masih ingin menggunakan DKIM."
       ],
       "Key deletion is irreversible!": [
         "Penghapusan kunci tidak dapat diurungkan!"
@@ -7131,9 +7110,6 @@
       ],
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Sebagian server milik Anda yang tersedia hanya dapat digunakan di negara tertentu karena pemutusan yang berlangsung baru-baru ini"
-      ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Berhubung SPF digunakan untuk menentukan siapa-siapa saja yang dapat mengirim surel pada domain ini, kami sangat menyarankan Anda untuk menyertakan ${ MAIL_APP_NAME } dalam data SPF Anda. Mohon tambahkan informasi TXT berikut ke dalam DNS Anda. Hal ini pada umumnya dapat dilakukan melalui panel kontrol registrar nama domain Anda."
       ],
       "Stay tuned for future promotions.": [
         "Jangan lewatkan promosi lainnya yang akan datang."
@@ -7903,14 +7879,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "Tambah alamat baru untuk pengguna manapun yang terdapat pada organisasi Anda."
-      ],
       "Add a new user to your organization and create an address for it.": [
         "Tambah pengguna baru ke organisasi Anda dan buat alamat untuknya."
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Demi keamanan, kami perlu memverifikasi bahwa Anda adalah pemilik ${ domainName }. Harap tambahkan rekam DNS TXT berikut ke domain Anda. Ini biasanya dapat dilakukan di kontrol panel registrar nama domain Anda."
       ]
     },
     "Info for payment methods": {
@@ -8015,7 +7985,7 @@
     },
     "Key generation": {
       "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "Kunci dengan algoritma enkripsi yang sama telah ada. Dengan menghasilkan kunci baru, waktu muat akun Anda akan menjadi lebih lama. Apakah Anda yakin untuk melanjutkan?"
+        "Kunci dengan algoritma enkripsi yang sama sudah ada. Dengan menghasilkan kunci baru, waktu muat akun Anda akan menjadi lebih lama. Apakah Anda yakin untuk melanjutkan?"
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
         "Kunci dengan algoritma enkripsi yang sama telah aktif untuk alamat ini. Dengan menghasilkan kunci baru, waktu muat akun Anda menjadi lebih lama dan masalah tertentu akan dapat timbul apabila kunci ini dihapus. Apabila Anda menghasilkan kunci baru karena kunci lama Anda bocor, mohon tandai kunci tersebut sebagai kunci yang bocor. Apakah Anda yakin untuk melanjutkan?"
@@ -8724,9 +8694,6 @@
       "Gift code": [
         "Kode hadiah"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Berikut merupakan rekaman DMARC dasar yang fungsinya semata-mata adalah untuk mengirimkan laporan ke surel Anda."
-      ],
       "Hide password": [
         "Sembunyikan kata sandi"
       ],
@@ -8945,15 +8912,6 @@
       ],
       "Phrase consists of 12 unique words in a specific order": [
         "Frasa tersusun atas 12 kata berbeda yang terangkai dalam urutan yang spesifik"
-      ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Harap tambahkan 3 data CNAME berikut. Catatan, data DNS memerlukan waktu beberapa jam untuk diperbarui."
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Harap tambahkan data MX berikut. Catatan, data DNS perlu waktu beberapa jam untuk diperbarui."
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Harap tambahkan data TXT berikut ini. Catatan, data DNS perlu waktu beberapa jam untuk diperbarui."
       ],
       "Please select files to upload": [
         "Silakan pilih berkas untuk diunggah"
@@ -9196,11 +9154,6 @@
     "Label for default event settings": {
       "Duration": [
         "Durasi"
-      ]
-    },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Harap tambahkan data TXT berikut ini:"
       ]
     },
     "Label for new member": {
@@ -10523,6 +10476,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "Dapatkan dukungan dari tim Layanan Dukungan ${ BRAND_NAME } dalam rentang waktu 1 x 24 jam pada hari kerja"
+      ],
+      "One VPN connection allows one device to connect to ${ VPN_APP_NAME } at any given time. For instance, to connect a phone and a laptop to ${ VPN_APP_NAME } at the same time, you need two VPN connections.": [
+        "Masing-masing koneksi VPN memungkinkan satu perangkat untuk dapat terhubung ke ${ VPN_APP_NAME } dalam satu waktu. Semisal Anda ingin menghubungkan ponsel dan laptop Anda ke ${ VPN_APP_NAME } secara bersamaan, Anda akan butuh dua koneksi VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opsi untuk melihat kotak masuk para pengguna non-privat sebagaimana yang mereka lihat, termasuk seluruh isi pesan dan rincian kontak mereka"
@@ -12492,6 +12448,9 @@
       "${ n } calendars per user": [
         "${ n } kalender per pengguna"
       ],
+      "${ n } free VPN connections per user": [
+        "${ n } koneksi VPN gratis per pengguna"
+      ],
       "${ n } high-speed VPN connections": [
         "${ n } koneksi VPN berkecepatan tinggi"
       ],
@@ -13026,6 +12985,9 @@
       ],
       "4. Select a server to connect to": [
         "4. Pilih sebuah server untuk disambungkan"
+      ],
+      "A filter with this name already exists": [
+        "Filter dengan nama ini sudah ada"
       ],
       "Accessibility": [
         "Aksesibilitas"
@@ -13855,6 +13817,12 @@
       "Theme": [
         "Tema"
       ],
+      "This field cannot be empty": [
+        "Kolom ini tidak boleh kosong"
+      ],
+      "This field cannot contain only spaces": [
+        "Kolom ini tidak boleh diisi hanya dengan spasi"
+      ],
       "Time zone": [
         "Zona waktu"
       ],
@@ -14103,6 +14071,9 @@
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Log lanjutan akan merekam alamat IP untuk setiap peristiwa yang tercatat pada log keamanan."
+      ],
+      "Feature in early access": [
+        "Fitur dalam masa akses dini"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmail secara otomatis mengelompokkan surel tertentu ke dalam kategori seperti Sosial dan Promosi. Anda dapat menentukan ke kategori mana surel berikut akan diimpor."
@@ -14521,9 +14492,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Setelah proses verifikasi sukses, jangan hapus data TXT ini karena data ini akan dibutuhkan untuk mengkonfirmasi status kepemilikan Anda pada domain yang bersangkutan ke depannya."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "Pembaruan perubahan DNS perlu waktu sampai satu hari."
       ]
     },
     "Weak personal key warning": {
