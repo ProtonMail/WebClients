@@ -1,3 +1,11 @@
+### Version 1.10.1
+
+-   Improve cross tab synchronization
+-   Fix crash on non-latin character search queries
+-   Fix inactive/locked session detection during boot sequence
+-   Fix enpass import edge-case where fields are undefined
+-   Fix account automatic session forking from path
+
 ### Version 1.10.0
 
 -   Web app available to all users
