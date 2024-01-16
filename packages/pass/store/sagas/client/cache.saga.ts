@@ -1,16 +1,17 @@
-import type { Action, AnyAction } from 'redux';
-import { fork, race, select, take, takeLatest } from 'redux-saga/effects';
+import type { AnyAction } from 'redux';
+import { select, takeLatest } from 'redux-saga/effects';
 
 import { clientReady } from '@proton/pass/lib/client';
 import { PassCrypto } from '@proton/pass/lib/crypto';
 import { CACHE_SALT_LENGTH, getCacheEncryptionKey } from '@proton/pass/lib/crypto/utils/cache.encrypt';
 import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { cacheCancel } from '@proton/pass/store/actions';
+import { cacheCancel, stateDestroy } from '@proton/pass/store/actions';
 import { type WithCache, isCachingAction } from '@proton/pass/store/actions/with-cache';
 import { asIfNotOptimistic } from '@proton/pass/store/optimistic/selectors/select-is-optimistic';
 import { reducerMap } from '@proton/pass/store/reducers';
 import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import { PassEncryptionTag } from '@proton/pass/types';
+import { or } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { objectFilter } from '@proton/pass/utils/object/filter';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
@@ -68,12 +69,8 @@ function* cacheWorker({ meta, type }: WithCache<AnyAction>, { getAppState, getAu
 }
 
 export default function* watcher(options: RootSagaOptions) {
-    yield takeLatest(isCachingAction, function* (action) {
-        const result = (yield race({
-            cache: fork(cacheWorker, action, options),
-            cancel: take(cacheCancel.match),
-        })) as { cancel?: Action };
-
-        if (result.cancel) logger.info(`[Cache] Invalidated all caching tasks`);
+    yield takeLatest(or(isCachingAction, cacheCancel.match, stateDestroy.match), function* (action) {
+        if (isCachingAction(action)) yield cacheWorker(action, options);
+        else logger.info(`[Cache] Invalidated all caching tasks`);
     });
 }
