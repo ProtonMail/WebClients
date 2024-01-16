@@ -20,7 +20,7 @@ const exampleVevent = {
         value: { year: 2020, month: 3, day: 12, hours: 9, minutes: 30, seconds: 0, isUTC: false },
         parameters: { tzid: 'America/New_York' },
     },
-    rrule: { value: { freq: 'WEEKLY', until: { year: 2020, month: 5, day: 15 } } },
+    rrule: { value: { freq: 'WEEKLY', until: { year: 2030, month: 5, day: 15 } } },
     location: { value: 'asd' },
     sequence: { value: 0 },
     attendee: [
@@ -68,7 +68,7 @@ UID:test-event
 DTSTAMP:20200901T120000Z
 DTSTART;TZID=Europe/Zurich:20200312T083000
 DTEND;TZID=America/New_York:20200312T093000
-RRULE:FREQ=WEEKLY;UNTIL=20200515
+RRULE:FREQ=WEEKLY;UNTIL=20300515
 LOCATION:asd
 SEQUENCE:0
 ATTENDEE;CN=Unknown attendee 1;PARTSTAT=ACCEPTED:emailto:name1@proton.me
@@ -106,7 +106,7 @@ UID:test-event
 DTSTART;TZID=Europe/Zurich:20200312T083000
 DTEND;TZID=America/New_York:20200312T093000
 SEQUENCE:0
-RRULE:FREQ=WEEKLY;UNTIL=20200515
+RRULE:FREQ=WEEKLY;UNTIL=20300515
 LOCATION:asd
 DTSTAMP:20200901T120000Z
 X-PM-PROTON-REPLY;VALUE=BOOLEAN:TRUE
@@ -138,7 +138,7 @@ UID:test-event
 DTSTART;TZID=Europe/Zurich:20200312T083000
 DTEND;TZID=America/New_York:20200312T093000
 SEQUENCE:0
-RRULE:FREQ=WEEKLY;UNTIL=20200515
+RRULE:FREQ=WEEKLY;UNTIL=20300515
 LOCATION:asd
 SUMMARY:
 DTSTAMP:20200901T120000Z
@@ -204,7 +204,7 @@ UID:test-event
 DTSTART;TZID=Europe/Zurich:20200312T083000
 DTEND;TZID=America/New_York:20200312T093000
 SEQUENCE:0
-RRULE:FREQ=WEEKLY;UNTIL=20200515
+RRULE:FREQ=WEEKLY;UNTIL=20300515
 LOCATION:asd
 DTSTAMP:20200901T120000Z
 ATTENDEE;PARTSTAT=DECLINED:mailto:name@proton.me
@@ -239,7 +239,7 @@ UID:test-event
 DTSTART;TZID=Europe/Zurich:20200312T083000
 DTEND;TZID=America/New_York:20200312T093000
 SEQUENCE:0
-RRULE:FREQ=WEEKLY;UNTIL=20200515
+RRULE:FREQ=WEEKLY;UNTIL=20300515
 LOCATION:asd
 DTSTAMP:20200901T120000Z
 X-PM-SHARED-EVENT-ID:bbGoXaSj-v8UdMSbebf1GkWPkEiuSYqFU7KddqOMZ8bT63uah7OO8b
@@ -471,6 +471,33 @@ Description: I am a good description`;
                 vevent,
                 method: ICAL_METHOD.REQUEST,
                 isCreateEvent: false,
+                options: { locale: enUS },
+            })
+        ).toEqual(expected);
+    });
+
+    it('should return the expected body for an update to a single edit of a part-day recurring event', () => {
+        const vevent = {
+            ...omit(exampleVevent, ['rrule']),
+            dtstart: {
+                value: { year: 2024, month: 1, day: 17, hours: 8, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Zurich' },
+            },
+            dtend: {
+                value: { year: 2024, month: 1, day: 17, hours: 9, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'America/New_York' },
+            },
+            'recurrence-id': {
+                value: { year: 2024, month: 1, day: 18, hours: 8, minutes: 30, seconds: 0, isUTC: false },
+                parameters: { tzid: 'Europe/Zurich' },
+            },
+        };
+        const expected = 'This occurrence of (no title) has been updated.';
+        expect(
+            generateEmailBody({
+                vevent,
+                method: ICAL_METHOD.REQUEST,
+                isCreateEvent: true,
                 options: { locale: enUS },
             })
         ).toEqual(expected);

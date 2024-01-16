@@ -529,6 +529,9 @@ export const generateEmailBody = ({
     const { eventTitle, eventDetailsText } = getEmailBodyTexts(vevent, options);
 
     if (method === ICAL_METHOD.REQUEST) {
+        if (getHasRecurrenceId(vevent)) {
+            return c('Email body for invitation').t`This occurrence of ${eventTitle} has been updated.`;
+        }
         if (isCreateEvent) {
             return c('Email body for invitation').t`You are invited to ${eventTitle}
 ${eventDetailsText}`;
