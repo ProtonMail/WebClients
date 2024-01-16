@@ -4657,15 +4657,9 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } yezmer daɣen ad yettwaseqdec s yiwen kan n wawal uffir ara yemselsin win n tuqqna d win n tnaka urmas. Akken ad tuɣaleḍ ar uskar n yiwen n wawal uffir, sekcem awal uffir i tebɣid ad tesqedceḍ sakin sit ɣef Sekles."
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } issefrak izmulen DKIM i tɣula tudmawanin. Akken ad tesqedceḍ asesteb DKIM, rnu ma ulac aɣilif akalas-agi CNAME ar iɣewwaṛen DNS inek i taɣlut-agi. Ayagi yezmer ad yettwag deg ugalis n usenqed n taɣult-ik deg usmel anida i teskelseḍ iqem n taɣult."
-      ],
       "${ n } address": [
         "${ n } tansa",
         "${ n } tansiwin"
-      ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } ur yesɛi kra ara d-yeglu ɣef usiweḍ n yimayl, maca ad ak-nwelleh ɣef ${ quarantine } i tɣellist tufrint."
       ],
       "${ number } city": [
         "${ number } n temdint",
@@ -4919,9 +4913,6 @@
       "Basic, Plus or Visionary subscription required": [
         "Deg ujerred azadur, Plus neɣ Visionary yettusra"
       ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Send ad tizmireḍ ad d-tremseḍ imaylen n taɣult-ik tudmawant di ${ MAIL_APP_NAME }, yessefk ad ternuḍ akalas-agi MX ar iqeddacen DNS. Ayagi yezmer ad yettwag seg ugrudem n tedbelt n umsefrak-ik n yismawen n taɣult."
-      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Uqbel ad tizmireḍ ad tazneḍ neɣ ad teṭṭfeḍ imaylen s tansiwin-ik timaynutin, ilaq ad asent-id-tesnulfuḍ tisura n uwgelhen."
       ],
@@ -5161,9 +5152,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Ma yella izḍi usrid n unagraw ur yemṣada ara d usmenyif n yizḍi usrid amiran, ad d-yettusuter deg-s ad t-tleqqmeḍ (ma aṭas yiwet n tikkelt i wass)."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Ma yella taɣult-agi tettaṭtaf-d akka tura imaylen, fren iccer ${ boldAddresses } sakin rnu akk tansiwin imayl iremden uqbel ad tbeddeleḍ akalas MX akken ad yili uɛeddi s telweɣ."
-      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ma tufiḍ ugur deg usnulfu n umiḍan-inek/m, ttxil-k/m suter tinnubga ad d-nerr deg yiwen n wass uxeddim."
       ],
@@ -5182,9 +5170,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Ma yella urǧun tesqdced yakan asesteb s snat n tarrayin, ad ak-nwelleh ${ guideButton }."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Ma tremdeḍ SPF akked DKIM, DMARC ad k-yeǧǧ ad temmleḍ amek ilaq imeẓlala n yimayl ad aznen imaylen ar taɣult-ik ma yella SPF akked DKIM ccḍen. Aya izmer ad yiwɛir i wid yettaznen ispamen ad ilin d kečč, maca izmer daɣen ad d-yeglu s wuguren ma yella ur yettwag ara akken iwata."
-      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Ma tesruḥeḍ ibenk-ik n usesteb s snat n tarrayin, tingalin-agi zemren-t ad ttwasqedcent i tuqqna ar ulmiḍan-ik deg umdiq n tingalin n 6 n iwzilen. Yal tangalt ad tettwaseqdec kan yiwet n tikkelt."
       ],
@@ -5196,9 +5181,6 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Ma tkemmleḍ deg usader deg lqem, ad tesruḥeḍ anekcum ɣer tmahilin s lexlaṣ n ${ VPN_APP_NAME }."
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Ma tebɣiḍ ad teǧǧeḍ akalas SPF i yellan, rnu kan ${ spf } ɣur-s seld ${ spfValue }. Ur rennu ara ikalasen usgiten SPF."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Ma yella tebɣiḍ ad tsuddseḍ amiḍan-a akked yiwen-nniḍen, UR t-ttekkes ARA."
@@ -5227,9 +5209,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Axatar: Ma ulac aɣilif, ḍmen d akken teskelseḍ akk tingalin n tririt. Ma ulac, zemren ad k-ṛuḥen i lebda ar umiḍan-ik ma yella tesṛuḥeḍ ibenk-ik n usesteb s snat n tarrayin."
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "Ɣur-k·m: Kra n lbiruwat n uklas ur qebblen ara azalen n CNAME s twala deg taggara (deg wadeg i ssuturen wiyaḍ ayenni). Ma yella aseklas ur iqbil ara isekalasen-inek·inem CNAME, ttxil-k·m kkes tawala deg taggara n yal azal n CNAME value syen ɛreḍ tikkelt-nniḍen."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Taktert n yisefka-inek•inem seg ${ fromEmail } ɣer ${ toEmail }."
@@ -5276,9 +5255,6 @@
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Sentem kan tafrayt-inek•inem nekni ad neg ayen iqqimen."
-      ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Ḥrez ikalasen-a deg DNS inek.inem i wakud tebɣiḍ ad tesqedceḍ DKIM."
       ],
       "Label all imported messages as": [
         "Creḍ ɣef meṛṛa iznan yettwaketren d"
@@ -5615,9 +5591,6 @@
       ],
       "Some keys successfully reactivated": [
         "Kra n tsura ulsent asermed akken iwata"
-      ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF ittuseqdac i tumla n wid izemren ad yazen imayl i taɣult, ihi, ad k-nwelleh ad tsedduḍ ${ MAIL_APP_NAME } deg ukalas SPF. Akken ad teggeḍ aya, rnu akalas TXT di twila-ik DNS. Abeddel-agi yezmer ad yettwag deg ugalis n usenqed n taɣulut-ik n umsefrak n yismawen n taɣult."
       ],
       "Step ${ step }": [
         "Takkayt ${ step }",
@@ -6046,14 +6019,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "Rnu tansa tamaynut i yal aseqdac n tuddsa-inek m."
-      ],
       "Add a new user to your organization and create an address for it.": [
         "Rnu aseqdac amaynut ɣer tuddsa-inek m yerna snulfu-yas-d tansa."
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Ɣef ddemma n tɣellist, nesra ad nsenqed ma yella d kečč i d bab n ${ domainName }. Ma ulac aɣilif, rnu asekles-a DNS TXT ɣer taɣult-ik·im. S umata, tawila-a deg ugalis n usenqed n useklas-inek·inem n yismawen n taɣult."
       ]
     },
     "Info for payment methods": {
@@ -6800,9 +6767,6 @@
       "Gift code": [
         "Tangalt n usefk"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Atan ujerred DMARC yettaznen kan ineqqisen s yimayl."
-      ],
       "Hide password": [
         "Ffer awal uffir"
       ],
@@ -7000,15 +6964,6 @@
       ],
       "Phrase": [
         "Tafyirt"
-      ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Ma ulac aɣilif rnu akk i 3 n ikalasen-agi CNAME. Ẓer d akken, ikalasen DNS zemren ad awin ddeqs n yisragen akken ad ttwaleqmen."
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Rnu akalas-agi MX. Ẓer d akken, ikalasen DNS zemren ad ṭṭfen ddeqs n yisragen akken ad ttwaleqqmen."
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Rnu akalas-agi TXT. Ẓer d akken, ikalasen DNS zemren ad ṭṭfen ddeqs n yisragen akken ad ttwaleqqmen."
       ],
       "Please select files to upload": [
         "Ma ulac aɣilif fren ifuyla ara tessaliḍ"
@@ -7236,11 +7191,6 @@
     "Label for default event settings": {
       "Duration": [
         "Tanzagt"
-      ]
-    },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Ttxil-k rnu akalas-agi TXT:"
       ]
     },
     "Label for new member": {
@@ -11135,9 +11085,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Seld asenqed igerrzen, ur tekkes ara asekles-a TXT acku laq i usentem belli d kečč i d bab n taɣult."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "Asnifel n DNS izmer ad yeṭṭef yiwen wass akken ad yettwaleqqem."
       ]
     },
     "Weekly recurring event, frequency": {

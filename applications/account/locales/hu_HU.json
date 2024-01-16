@@ -219,7 +219,7 @@
         "Folytatás Google fiókkal"
       ],
       "Continue with Outlook": [
-        "Folytassa az Outlookkal"
+        "Folytatás az Outlookkal"
       ],
       "Continue with this password": [
         "Folytatás ezzel a jelszóval"
@@ -2826,7 +2826,7 @@
         "Válassza külön élete különböző részeit több e-mail címmel és érjen el még több prémium funkciót, nagyobb csomagra váltással."
       ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
-        "Névjegyeinek importálásához a Google-ból vagy az Outlookból: ${ easySwitchLink }."
+        "Névjegyeinek importálásához a Google-ból vagy az Outlookból ${ easySwitchLink }."
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "A ${ MAIL_APP_NAME } lábléc eltávolításához, váltson nagyobb csomagra és érjen el még több prémium funkciót."
@@ -5048,15 +5048,9 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "A ${ MAIL_APP_NAME } egy-jelszavas módban is használható, amely leváltja a külön bejelentkezési és e-mail titkosítási jelszavakat. Egy-jelszavas módra váltáshoz, adja meg a kívánt jelszót, majd kattintson a Mentés gombra."
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "A ${ MAIL_APP_NAME } támogatja a DKIM ellenőrzést saját domainekhez. A DKIM ellenőrzéshez, vegye fel a következő CNAME rekordot a DNS beállításaiban. Ezt általában a domain név regisztrátor adminisztrálási felületén állathatja be."
-      ],
       "${ n } address": [
         "${ n } cím",
         "${ n } cím"
-      ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } nincs hatással a levelek kézbesítésére, de a nagyobb biztonság érdekében a ${ quarantine } beállítást javasoljuk."
       ],
       "${ number } city": [
         "${ number } város",
@@ -5090,7 +5084,7 @@
       ],
       "${ remainingAddresses.length } more address": [
         "${ remainingAddresses.length } további cím",
-        "${ remainingAddresses.length } több cím"
+        "${ remainingAddresses.length } további cím"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból",
@@ -5385,9 +5379,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Mielőtt új megerősítő kódot igényelne, kérjük tekintse meg a spam mappát illetve bizonyosodjon meg arról, hogy ${ strong } a megfelelő cím."
-      ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Mielőtt saját domain nevével fogadhatna e-maileket a ${ MAIL_APP_NAME }-nél, a következő DNS MX rekordok hozzáadására van szükség. Ez általában a domain név regisztrátor kezelőfelületén történik."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Mielőtt elkezdhetne küldeni és fogadni e-maileket az új címével, létre kell hoznia titkosítási kulcsokat hozzá."
@@ -5688,9 +5679,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Amikor a rendszer időzónája eltér az aktuális időzóna beállításától, rákérdez, hogy frissítse-e a beállítást (maximum naponta egyszer)."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Ha erre a domain névre jelenleg is érkeznek levelek, a zökkenőmentes átálláshoz, válassza ki a ${ boldAddresses } fület és hozza létre az összes már létező e-mail címet, mielőtt megváltoztatná az MX rekordokat."
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Ha ez egy régi jelszó visszaállításból adódik, megtilthatja az üzenet újbóli megjelenését"
       ],
@@ -5701,7 +5689,7 @@
         "Ha úgy gondolja ez tévedés, vegye fel velük a kapcsolatot ${ contactLink }."
       ],
       "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
-        "Ha lemond, ${ planTitle } előfizetése nem újul meg, amikor lejár a következő napon: ${ expiryDate }."
+        "Ha lemondja, ${ planTitle } előfizetése nem újul meg, amikor lejár a következő napon: ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
@@ -5714,9 +5702,6 @@
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Ha még sosem használt kétlépcsős hitelesítést, javasolt ${ guideButton }."
-      ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Amennyiben az SPF és a DKIM rekordokat már beállította, a DMARC beállítása lehetőséget biztosít annak szabályozására, hogy más e-mail szolgáltatások hogyan fogadhatnak levelet a domain nevével, ha mind az SPF, mind a DKIM ellenőrzések meghiúsultak. Ez megnehezítheti, hogy spammerek levélszemetet küldjenek a domain nevével, de az ön leveleinek továbbításában is fennakadásokat okozhat, ha hibásan van beállítva."
       ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Ha elveszíti a jelszavát és vissza kell állítania a fiókját, ${ boldImperative } hogy legyen ${ boldAccountRecovery } beállítva."
@@ -5738,9 +5723,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Ha nemrégiben visszaállította a jelszavát, továbbra is hozzáférhet az adataihoz, valamelyik helyreállítási módszer használatával"
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Amennyiben meg kívánja tartani a jelenlegi SPF rekordot, csak írja hozzá a ${ spf } értéket a ${ spfValue } után. Ne hozzon létre több különálló SPF rekordot."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Ha egy másik fiókkal szeretné összevonni ezt a fiókot, NE törölje."
@@ -5772,9 +5754,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Fontos: Mindenképpen mentese el a helyreállító kódokat. Különben véglegesen elveszíti a fiókját, ha elveszik a kétlépcsős hitelesítéshez használt eszköze."
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "FONTOS: Bizonyos regisztrátorok nem engednek pontra végződő CNAME értéket (míg mások megkövetelik a pontot). Ha a regisztrátor nem megfelelőnek találja a CNAME rekordokat, törölje a pontot minden CNAME érték végéről és próbálja meg újra."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "Adatok importálása innen: ${ fromEmail }, ide: ${ toEmail }."
@@ -5833,9 +5812,6 @@
       ],
       "Just send them your personal referral link.": [
         "Csak küldje el nekik az ön ajánló hivatkozását."
-      ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Tartsa meg ezt a DNS beállítást mindaddig amíg a DKIM-et használni szeretné."
       ],
       "Key deletion is irreversible!": [
         "A kulcs törlése visszafordíthatatlan!"
@@ -6262,9 +6238,6 @@
       ],
       "Some keys successfully reactivated": [
         "Néhány kulcsot sikerült újraaktiválni"
-      ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Az SPF feladata, hogy meghatározza, kik küldhetnek levelet az adott domain névvel. Emiatt erősen javasolt a ${ MAIL_APP_NAME } felvétele az SPF rekordba. Kérjük vegye fel a következő TXT rekordot a DNS beállításaiban. Ezt általában a domain név regisztrátor adminisztrálási felületén állathatja be."
       ],
       "Step ${ step }": [
         "${ step }. lépés",
@@ -6944,14 +6917,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "Készítsen egy új címet a szervezet bármelyik felhasználójának."
-      ],
       "Add a new user to your organization and create an address for it.": [
         "Vegyen fel egy új felhasználót a szervezethez és készítsen neki címet."
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Biztonsági okokból ellenőriznünk kell, hogy ön a tulajdonosa a domain névnek (${ domainName }). Kérjük, az alábbi TXT rekordot vegye fel a DNS beállításaiba. Ezt általában a domain név regisztrátor adminisztrálási felületén teheti meg."
       ]
     },
     "Info for payment methods": {
@@ -7755,9 +7722,6 @@
       "Gift code": [
         "Ajándék kód"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Ez egy alapszintű DMARC rekord ami nem csinál mást mint e-mail jelentéseket küld."
-      ],
       "Hide password": [
         "Jelszó elrejtése"
       ],
@@ -7970,15 +7934,6 @@
       ],
       "Phrase consists of 12 unique words in a specific order": [
         "A jelmondat 12 szóból áll, egy megfelelő sorrendben"
-      ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Vegye fel a következő 3 CNAME rekordot. Megjegyzés: A DNS rekordok frissülése akár órákig is eltarthat."
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Vegye fel a következő MX rekordot. Megjegyzés: A DNS rekordok frissülése akár órákig is eltarthat."
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Vegye fel a következő TXT rekordot. Megjegyzés: A DNS rekordok frissülése akár órákig is eltarthat."
       ],
       "Please select files to upload": [
         "Válassza ki a fájlokat a feltöltéshez"
@@ -8218,11 +8173,6 @@
     "Label for default event settings": {
       "Duration": [
         "Időtartam"
-      ]
-    },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Vegye fel a következő TXT rekordot:"
       ]
     },
     "Label for new member": {
@@ -12705,9 +12655,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "A sikeres ellenőrzés után se távolítsa el a TXT rekordot, annak megerősítésére, hogy továbbra is öné a domain név."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "A DNS frissülése akár egy napig is eltarthat."
       ]
     },
     "Weak personal key warning": {

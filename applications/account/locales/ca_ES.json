@@ -5712,15 +5712,9 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } també es pot usar amb una sola contrasenya que reemplaça tant la contrasenya d'inici de sessió com la de correu electrònic. Per a canviar al mode de contrasenya única, introduïu la contrasenya que voleu utilitzar i feu clic a Desa."
       ],
-      "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        "${ MAIL_APP_NAME } admet la signatura DKIM per a dominis personalitzats. Per a utilitzar l'autenticació DKIM, afegiu el següent registre CNAME en les preferències del DNS per a aquest domini. Això normalment es pot fer en el tauler de control del vostre registrador de noms de domini."
-      ],
       "${ n } address": [
         "${ n } adreça",
         "${ n } adreces"
-      ],
-      "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } no té cap efecte en l’enviament de correu electrònic, però us recomanem ${ quarantine } per a una millor seguretat."
       ],
       "${ number } city": [
         "${ number } ciutat",
@@ -6062,9 +6056,6 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
       ],
-      "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "Abans de rebre correus a les adreces del vostre domini personalitzat de ${ MAIL_APP_NAME }, cal que afegiu els següents registres MX al DNS. Això es pot fer normalment en el tauler de control del vostre registrador de noms de domini."
-      ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Abans que pugueu enviar i rebre missatges des de les noves direccions, necessiteu crear les seves claus de xifrat respectives."
       ],
@@ -6394,9 +6385,6 @@
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
         "Si el fus horari del sistema no coincideix amb la configuració del fus horari actual, us demanarem que l’actualitzeu (com a màxim una vegada al dia)."
       ],
-      "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "Si actualment aquest domini rep correus electrònics, seleccioneu la pestanya ${ boldAddresses } i afegiu totes les adreces de correu electrònic actives abans de canviar el registre MX per garantir una transició fluida."
-      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Si això és a causa d'un restabliment antic de la contrasenya, podeu evitar que el missatge torni a aparèixer"
       ],
@@ -6421,9 +6409,6 @@
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
         "Si mai no heu utilitzat l'autenticació de dos factors abans, us recomanem que us en feu ${ guideButton }."
       ],
-      "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "Si heu definit SPF i DKIM, DMARC us permet especificar com altres serveis de correu electrònic haurien de lliurar el correu electrònic per al vostre domini si tant les comprovacions SPF com DKIM no han funcionat. Això pot fer més difícil que els spammers us suplantin, però també pot causar problemes de lliurament si no es fa correctament."
-      ],
       "If you lose your password and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
         "Si perdeu la contrasenya i necessiteu restablir el compte, ${ boldImperative } que teniu un ${ boldAccountRecovery } al seu lloc."
       ],
@@ -6444,9 +6429,6 @@
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Si recentment heu restablert la vostra contrasenya, podeu utilitzar un mètode de recuperació de dades per desbloquejar les vostres dades."
-      ],
-      "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "Si voleu conservar un registre SPF existent, només podeu afegir-hi ${ spf } després del ${ spfValue }. No creeu diversos registres SPF."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Si voleu combinar aquest compte amb un altre, NO l'elimineu."
@@ -6478,9 +6460,6 @@
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Important: assegureu-vos de desar els codis de recuperació. En cas contrari, podeu perdre l'accés al vostre compte permanentment si perdeu el dispositiu d'autenticació de dos factors."
-      ],
-      "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
-        "IMPORTANT: Alguns registradors no accepten els valors CNAME amb un període al final (mentre que altres ho requereixen). Si el registrador no accepta els vostres registres CNAME, elimineu el període al final de cada valor CNAME i torna-ho a provar."
       ],
       "Importing your data from ${ fromEmail } to ${ toEmail }.": [
         "S'estan important les vostres dades des de ${ fromEmail } a ${ toEmail }."
@@ -6545,9 +6524,6 @@
       ],
       "Just send them your personal referral link.": [
         "Envieu-los el vostre enllaç de referència personal."
-      ],
-      "Keep those records in your DNS for as long as you want to use DKIM.": [
-        "Mantingueu aquest registre al DNS durant el temps que vulgueu fer servir el DKIM."
       ],
       "Key deletion is irreversible!": [
         "L'eliminació de claus és irreversible."
@@ -7025,9 +7001,6 @@
       ],
       "Some keys successfully reactivated": [
         "S'han reactivat correctament algunes claus"
-      ],
-      "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        "SPF s'utilitza per a especificar a qui se li permet enviar correu electrònic per al domini, per la qual cosa recomanem que inclogueu ${ MAIL_APP_NAME } en el vostre registre SPF. Afegiu el següent registre TXT al vostre DNS. Això es pot fer normalment al tauler de control del vostre registrador de noms de domini."
       ],
       "Stay tuned for future promotions.": [
         "Estigueu atent a futures promocions."
@@ -7788,14 +7761,8 @@
       ]
     },
     "Info for domain modal": {
-      "Add a new address for any user of your organization.": [
-        "Afegiu una adreça nova per a qualsevol usuari de la vostra organització."
-      ],
       "Add a new user to your organization and create an address for it.": [
         "Afegiu un usuari nou a la vostra organització i creeu-ne una adreça."
-      ],
-      "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "Per motius de seguretat, hem de verificar que sou el propietari de ${ domainName }. Afegiu el següent registre DNS TXT al vostre domini. Normalment es pot fer al tauler de control del registre del vostre nom de domini."
       ]
     },
     "Info for payment methods": {
@@ -8615,9 +8582,6 @@
       "Gift code": [
         "Codi regal"
       ],
-      "Here is a basic DMARC record that does nothing except email you reports.": [
-        "Això és un registre DMARC bàsic que l'únic que fa és enviar-vos informes."
-      ],
       "Hide password": [
         "Amaga la contrasenya"
       ],
@@ -8836,15 +8800,6 @@
       ],
       "Phrase consists of 12 unique words in a specific order": [
         "La frase consta de 12 paraules úniques en un ordre específic"
-      ],
-      "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "Si us plan, afegiu els següents tres registres CNAME. Tingueu en compte que els registres DNS poden trigar diverses hores a actualitzar-se."
-      ],
-      "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "Afegiu el següent registre MX. Recordeu que els registres DNS poden trigar diverses hores a actualitzar-se."
-      ],
-      "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "Afegiu el següent registre TXT. Recordeu que els registres DNS poden trigar diverses hores a actualitzar-se."
       ],
       "Please select files to upload": [
         "Seleccioneu els fitxers que voleu carregar"
@@ -9087,11 +9042,6 @@
     "Label for default event settings": {
       "Duration": [
         "Durada"
-      ]
-    },
-    "Label for domain modal": {
-      "Please add the following TXT record:": [
-        "Afegiu el següent registre TXT:"
       ]
     },
     "Label for new member": {
@@ -14404,9 +14354,6 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Després de la verificació, no esborreu aquest registre TXT, ja que cal confirmar que continueu posseint el domini."
-      ],
-      "It can take up to a day for DNS changes to update.": [
-        "Els canvis DNS poden trigar fins a un dia a actualitzar-se."
       ]
     },
     "Weak personal key warning": {
